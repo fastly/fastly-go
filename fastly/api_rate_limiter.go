@@ -1,0 +1,488 @@
+// Package fastly is an API client library for interacting with most facets of the Fastly API.
+package fastly
+
+/*
+Fastly API
+
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
+
+API version: 1.0.0
+Contact: oss@fastly.com
+*/
+
+// This code is auto-generated; DO NOT EDIT.
+
+
+import (
+	"bytes"
+	"context"
+	"io/ioutil"
+	"net/http"
+	gourl "net/url"
+	"strconv"
+	"strings"
+)
+
+// Linger please
+var (
+	_ context.Context
+)
+
+// RateLimiterAPI defines an interface for interacting with the resource.
+type RateLimiterAPI interface {
+
+	/*
+	DeleteRateLimiter Delete a rate limiter
+
+	Delete a rate limiter by its ID.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param rateLimiterID Alphanumeric string identifying the rate limiter.
+	 @return APIDeleteRateLimiterRequest
+	*/
+	DeleteRateLimiter(ctx context.Context, rateLimiterID string) APIDeleteRateLimiterRequest
+
+	// DeleteRateLimiterExecute executes the request
+	//  @return InlineResponse200
+	DeleteRateLimiterExecute(r APIDeleteRateLimiterRequest) (*InlineResponse200, *http.Response, error)
+
+	/*
+	GetRateLimiter Get a rate limiter
+
+	Get a rate limiter by its ID.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param rateLimiterID Alphanumeric string identifying the rate limiter.
+	 @return APIGetRateLimiterRequest
+	*/
+	GetRateLimiter(ctx context.Context, rateLimiterID string) APIGetRateLimiterRequest
+
+	// GetRateLimiterExecute executes the request
+	//  @return RateLimiterResponse
+	GetRateLimiterExecute(r APIGetRateLimiterRequest) (*RateLimiterResponse, *http.Response, error)
+
+	/*
+	ListRateLimiters List rate limiters
+
+	List all rate limiters for a particular service and version.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param serviceID Alphanumeric string identifying the service.
+	 @param versionID Integer identifying a service version.
+	 @return APIListRateLimitersRequest
+	*/
+	ListRateLimiters(ctx context.Context, serviceID string, versionID int32) APIListRateLimitersRequest
+
+	// ListRateLimitersExecute executes the request
+	//  @return []RateLimiterResponse
+	ListRateLimitersExecute(r APIListRateLimitersRequest) ([]RateLimiterResponse, *http.Response, error)
+}
+
+// RateLimiterAPIService RateLimiterAPI service
+type RateLimiterAPIService service
+
+// APIDeleteRateLimiterRequest represents a request for the resource.
+type APIDeleteRateLimiterRequest struct {
+	ctx context.Context
+	APIService RateLimiterAPI
+	rateLimiterID string
+}
+
+
+// Execute calls the API using the request data configured.
+func (r APIDeleteRateLimiterRequest) Execute() (*InlineResponse200, *http.Response, error) {
+	return r.APIService.DeleteRateLimiterExecute(r)
+}
+
+/*
+DeleteRateLimiter Delete a rate limiter
+
+Delete a rate limiter by its ID.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param rateLimiterID Alphanumeric string identifying the rate limiter.
+ @return APIDeleteRateLimiterRequest
+*/
+func (a *RateLimiterAPIService) DeleteRateLimiter(ctx context.Context, rateLimiterID string) APIDeleteRateLimiterRequest {
+	return APIDeleteRateLimiterRequest{
+		APIService: a,
+		ctx: ctx,
+		rateLimiterID: rateLimiterID,
+	}
+}
+
+// DeleteRateLimiterExecute executes the request
+//  @return InlineResponse200
+func (a *RateLimiterAPIService) DeleteRateLimiterExecute(r APIDeleteRateLimiterRequest) (*InlineResponse200, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *InlineResponse200
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimiterAPIService.DeleteRateLimiter")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/rate-limiters/{rate_limiter_id}"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rate_limiter_id"+"}", gourl.PathEscape(parameterToString(r.rateLimiterID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIGetRateLimiterRequest represents a request for the resource.
+type APIGetRateLimiterRequest struct {
+	ctx context.Context
+	APIService RateLimiterAPI
+	rateLimiterID string
+}
+
+
+// Execute calls the API using the request data configured.
+func (r APIGetRateLimiterRequest) Execute() (*RateLimiterResponse, *http.Response, error) {
+	return r.APIService.GetRateLimiterExecute(r)
+}
+
+/*
+GetRateLimiter Get a rate limiter
+
+Get a rate limiter by its ID.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param rateLimiterID Alphanumeric string identifying the rate limiter.
+ @return APIGetRateLimiterRequest
+*/
+func (a *RateLimiterAPIService) GetRateLimiter(ctx context.Context, rateLimiterID string) APIGetRateLimiterRequest {
+	return APIGetRateLimiterRequest{
+		APIService: a,
+		ctx: ctx,
+		rateLimiterID: rateLimiterID,
+	}
+}
+
+// GetRateLimiterExecute executes the request
+//  @return RateLimiterResponse
+func (a *RateLimiterAPIService) GetRateLimiterExecute(r APIGetRateLimiterRequest) (*RateLimiterResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *RateLimiterResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimiterAPIService.GetRateLimiter")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/rate-limiters/{rate_limiter_id}"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rate_limiter_id"+"}", gourl.PathEscape(parameterToString(r.rateLimiterID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIListRateLimitersRequest represents a request for the resource.
+type APIListRateLimitersRequest struct {
+	ctx context.Context
+	APIService RateLimiterAPI
+	serviceID string
+	versionID int32
+}
+
+
+// Execute calls the API using the request data configured.
+func (r APIListRateLimitersRequest) Execute() ([]RateLimiterResponse, *http.Response, error) {
+	return r.APIService.ListRateLimitersExecute(r)
+}
+
+/*
+ListRateLimiters List rate limiters
+
+List all rate limiters for a particular service and version.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
+ @return APIListRateLimitersRequest
+*/
+func (a *RateLimiterAPIService) ListRateLimiters(ctx context.Context, serviceID string, versionID int32) APIListRateLimitersRequest {
+	return APIListRateLimitersRequest{
+		APIService: a,
+		ctx: ctx,
+		serviceID: serviceID,
+		versionID: versionID,
+	}
+}
+
+// ListRateLimitersExecute executes the request
+//  @return []RateLimiterResponse
+func (a *RateLimiterAPIService) ListRateLimitersExecute(r APIListRateLimitersRequest) ([]RateLimiterResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  []RateLimiterResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimiterAPIService.ListRateLimiters")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/rate-limiters"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}

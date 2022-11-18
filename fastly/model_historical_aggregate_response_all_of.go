@@ -1,0 +1,155 @@
+// Package fastly is an API client library for interacting with most facets of the Fastly API.
+package fastly
+
+/*
+Fastly API
+
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
+
+API version: 1.0.0
+Contact: oss@fastly.com
+*/
+
+// This code is auto-generated; DO NOT EDIT.
+
+
+import (
+	"encoding/json"
+)
+
+// HistoricalAggregateResponseAllOf struct for HistoricalAggregateResponseAllOf
+type HistoricalAggregateResponseAllOf struct {
+	Data []Results `json:"data,omitempty"`
+	AdditionalProperties map[string]any
+}
+
+type _HistoricalAggregateResponseAllOf HistoricalAggregateResponseAllOf
+
+// NewHistoricalAggregateResponseAllOf instantiates a new HistoricalAggregateResponseAllOf object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewHistoricalAggregateResponseAllOf() *HistoricalAggregateResponseAllOf {
+	this := HistoricalAggregateResponseAllOf{}
+	return &this
+}
+
+// NewHistoricalAggregateResponseAllOfWithDefaults instantiates a new HistoricalAggregateResponseAllOf object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewHistoricalAggregateResponseAllOfWithDefaults() *HistoricalAggregateResponseAllOf {
+	this := HistoricalAggregateResponseAllOf{}
+	return &this
+}
+
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *HistoricalAggregateResponseAllOf) GetData() []Results {
+	if o == nil || o.Data == nil {
+		var ret []Results
+		return ret
+	}
+	return o.Data
+}
+
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HistoricalAggregateResponseAllOf) GetDataOk() ([]Results, bool) {
+	if o == nil || o.Data == nil {
+		return nil, false
+	}
+	return o.Data, true
+}
+
+// HasData returns a boolean if a field has been set.
+func (o *HistoricalAggregateResponseAllOf) HasData() bool {
+	if o != nil && o.Data != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given []Results and assigns it to the Data field.
+func (o *HistoricalAggregateResponseAllOf) SetData(v []Results) {
+	o.Data = v
+}
+
+// MarshalJSON implements the json.Marshaler interface.
+// Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
+func (o HistoricalAggregateResponseAllOf) MarshalJSON() ([]byte, error) {
+	toSerialize := map[string]any{}
+	if o.Data != nil {
+		toSerialize["data"] = o.Data
+	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
+	return json.Marshal(toSerialize)
+}
+
+// UnmarshalJSON implements the Unmarshaler interface.
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+func (o *HistoricalAggregateResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
+	varHistoricalAggregateResponseAllOf := _HistoricalAggregateResponseAllOf{}
+
+	if err = json.Unmarshal(bytes, &varHistoricalAggregateResponseAllOf); err == nil {
+		*o = HistoricalAggregateResponseAllOf(varHistoricalAggregateResponseAllOf)
+	}
+
+	additionalProperties := make(map[string]any)
+
+	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		delete(additionalProperties, "data")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// NullableHistoricalAggregateResponseAllOf is a helper abstraction for handling nullable historicalaggregateresponseallof types. 
+type NullableHistoricalAggregateResponseAllOf struct {
+	value *HistoricalAggregateResponseAllOf
+	isSet bool
+}
+
+// Get returns the value.
+func (v NullableHistoricalAggregateResponseAllOf) Get() *HistoricalAggregateResponseAllOf {
+	return v.value
+}
+
+// Set modifies the value.
+func (v *NullableHistoricalAggregateResponseAllOf) Set(val *HistoricalAggregateResponseAllOf) {
+	v.value = val
+	v.isSet = true
+}
+
+// IsSet indicates if the value was set.
+func (v NullableHistoricalAggregateResponseAllOf) IsSet() bool {
+	return v.isSet
+}
+
+// Unset removes the value.
+func (v *NullableHistoricalAggregateResponseAllOf) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+// NewNullableHistoricalAggregateResponseAllOf returns a pointer to a new instance of NullableHistoricalAggregateResponseAllOf.
+func NewNullableHistoricalAggregateResponseAllOf(val *HistoricalAggregateResponseAllOf) *NullableHistoricalAggregateResponseAllOf {
+	return &NullableHistoricalAggregateResponseAllOf{value: val, isSet: true}
+}
+
+// MarshalJSON implements the json.Marshaler interface.
+// Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
+func (v NullableHistoricalAggregateResponseAllOf) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+// UnmarshalJSON implements the Unmarshaler interface.
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+func (v *NullableHistoricalAggregateResponseAllOf) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}
