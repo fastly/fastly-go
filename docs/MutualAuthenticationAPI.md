@@ -160,11 +160,12 @@ import (
 
 func main() {
     mutualAuthenticationID := "mutualAuthenticationId_example" // string | Alphanumeric string identifying a mutual authentication.
+    include := "include_example" // string | Comma-separated list of related objects to include (optional). Permitted values: `tls_activations`. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication.  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.MutualAuthenticationAPI.GetMutualAuthentication(ctx, mutualAuthenticationID).Execute()
+    resp, r, err := apiClient.MutualAuthenticationAPI.GetMutualAuthentication(ctx, mutualAuthenticationID).Include(include).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MutualAuthenticationAPI.GetMutualAuthentication`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -189,7 +190,7 @@ Other parameters are passed through a pointer to a apiGetMutualAuthenticationReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
+ **include** | **string** | Comma-separated list of related objects to include (optional). Permitted values: `tls_activations`. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication.  | 
 
 ### Return type
 
@@ -226,13 +227,14 @@ import (
 )
 
 func main() {
+    include := "include_example" // string | Comma-separated list of related objects to include (optional). Permitted values: `tls_activations`. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication.  (optional)
     pageNumber := int32(1) // int32 | Current page. (optional)
     pageSize := int32(20) // int32 | Number of records per page. (optional) (default to 20)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.MutualAuthenticationAPI.ListMutualAuthentications(ctx).PageNumber(pageNumber).PageSize(pageSize).Execute()
+    resp, r, err := apiClient.MutualAuthenticationAPI.ListMutualAuthentications(ctx).Include(include).PageNumber(pageNumber).PageSize(pageSize).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MutualAuthenticationAPI.ListMutualAuthentications`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +255,7 @@ Other parameters are passed through a pointer to a apiListMutualAuthenticationsR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20]
+ **include** | **string** | Comma-separated list of related objects to include (optional). Permitted values: `tls_activations`. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication.  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20]
 
 ### Return type
 
