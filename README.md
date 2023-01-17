@@ -363,6 +363,7 @@ Class | Method | HTTP request | Description
 *ServiceAuthorizationsAPI* | [**ShowServiceAuthorization**](docs/ServiceAuthorizationsAPI.md#showserviceauthorization) | **GET** `/service-authorizations/{service_authorization_id}` | Show service authorization
 *ServiceAuthorizationsAPI* | [**UpdateServiceAuthorization**](docs/ServiceAuthorizationsAPI.md#updateserviceauthorization) | **PATCH** `/service-authorizations/{service_authorization_id}` | Update service authorization
 *SettingsAPI* | [**GetServiceSettings**](docs/SettingsAPI.md#getservicesettings) | **GET** `/service/{service_id}/version/{version_id}/settings` | Get service settings
+*SettingsAPI* | [**UpdateServiceSettings**](docs/SettingsAPI.md#updateservicesettings) | **PUT** `/service/{service_id}/version/{version_id}/settings` | Update service settings
 *SnippetAPI* | [**CreateSnippet**](docs/SnippetAPI.md#createsnippet) | **POST** `/service/{service_id}/version/{version_id}/snippet` | Create a snippet
 *SnippetAPI* | [**DeleteSnippet**](docs/SnippetAPI.md#deletesnippet) | **DELETE** `/service/{service_id}/version/{version_id}/snippet/{snippet_name}` | Delete a snippet
 *SnippetAPI* | [**GetSnippet**](docs/SnippetAPI.md#getsnippet) | **GET** `/service/{service_id}/version/{version_id}/snippet/{snippet_name}` | Get a versioned snippet
@@ -496,6 +497,13 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/metrics/domains/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/domain-inspector/historical) (GET)
 - [`/metrics/origins/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/origin-inspector/historical) (GET)
 - [`/rate-limiters/{rate_limiter_id}`](https://developer.fastly.com/reference/api/vcl-services/rate-limiter) (PUT)
+- [`/resources/stores/config/{config_store_id}/info`](https://developer.fastly.com/reference/api/services/resources/config_store) (GET)
+- [`/resources/stores/config/{config_store_id}/item/{config_store_item_key}`](https://developer.fastly.com/reference/api/services/resources/config_store_item) (DELETE, GET, PATCH, PUT)
+- [`/resources/stores/config/{config_store_id}/item`](https://developer.fastly.com/reference/api/services/resources/config_store_item) (POST)
+- [`/resources/stores/config/{config_store_id}/items`](https://developer.fastly.com/reference/api/services/resources/config_store_item) (GET, PATCH)
+- [`/resources/stores/config/{config_store_id}/services`](https://developer.fastly.com/reference/api/services/resources/config_store) (GET)
+- [`/resources/stores/config/{config_store_id}`](https://developer.fastly.com/reference/api/services/resources/config_store) (DELETE, GET, PUT)
+- [`/resources/stores/config`](https://developer.fastly.com/reference/api/services/resources/config_store) (GET, POST)
 - [`/resources/stores/object/{store_id}/keys/{key_name}`](https://developer.fastly.com/reference/api/) (DELETE, GET, PUT)
 - [`/resources/stores/object/{store_id}/keys`](https://developer.fastly.com/reference/api/) (GET)
 - [`/resources/stores/object/{store_id}`](https://developer.fastly.com/reference/api/) (DELETE, GET)
@@ -523,7 +531,6 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/service/{service_id}/version/{version_id}/request_settings`](https://developer.fastly.com/reference/api/vcl-services/request-settings) (POST)
 - [`/service/{service_id}/version/{version_id}/response_object/{response_object_name}`](https://developer.fastly.com/reference/api/vcl-services/response-object) (PUT)
 - [`/service/{service_id}/version/{version_id}/response_object`](https://developer.fastly.com/reference/api/vcl-services/response-object) (POST)
-- [`/service/{service_id}/version/{version_id}/settings`](https://developer.fastly.com/reference/api/vcl-services/settings) (PUT)
 - [`/service/{service_id}/version/{version_id}/snippet/{snippet_name}`](https://developer.fastly.com/reference/api/vcl-services/snippet) (PUT)
 - [`/service/{service_id}/version/{version_id}/vcl/{vcl_name}/content`](https://developer.fastly.com/reference/api/vcl-services/vcl) (GET)
 - [`/service/{service_id}/version/{version_id}/wafs/{firewall_id}`](https://developer.fastly.com/reference/api/legacy-waf/firewall) (GET, PATCH)

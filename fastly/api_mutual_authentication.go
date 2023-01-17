@@ -373,8 +373,14 @@ type APIGetMutualAuthenticationRequest struct {
 	ctx context.Context
 	APIService MutualAuthenticationAPI
 	mutualAuthenticationID string
+	include *string
 }
 
+// Include Comma-separated list of related objects to include (optional). Permitted values: &#x60;tls_activations&#x60;. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication. 
+func (r *APIGetMutualAuthenticationRequest) Include(include string) *APIGetMutualAuthenticationRequest {
+	r.include = &include
+	return r
+}
 
 // Execute calls the API using the request data configured.
 func (r APIGetMutualAuthenticationRequest) Execute() (*MutualAuthenticationResponse, *http.Response, error) {
@@ -420,6 +426,9 @@ func (a *MutualAuthenticationAPIService) GetMutualAuthenticationExecute(r APIGet
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
+	if r.include != nil {
+		localVarQueryParams.Add("include", parameterToString(*r.include, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -506,10 +515,16 @@ func (a *MutualAuthenticationAPIService) GetMutualAuthenticationExecute(r APIGet
 type APIListMutualAuthenticationsRequest struct {
 	ctx context.Context
 	APIService MutualAuthenticationAPI
+	include *string
 	pageNumber *int32
 	pageSize *int32
 }
 
+// Include Comma-separated list of related objects to include (optional). Permitted values: &#x60;tls_activations&#x60;. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication. 
+func (r *APIListMutualAuthenticationsRequest) Include(include string) *APIListMutualAuthenticationsRequest {
+	r.include = &include
+	return r
+}
 // PageNumber Current page.
 func (r *APIListMutualAuthenticationsRequest) PageNumber(pageNumber int32) *APIListMutualAuthenticationsRequest {
 	r.pageNumber = &pageNumber
@@ -562,6 +577,9 @@ func (a *MutualAuthenticationAPIService) ListMutualAuthenticationsExecute(r APIL
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
+	if r.include != nil {
+		localVarQueryParams.Add("include", parameterToString(*r.include, ""))
+	}
 	if r.pageNumber != nil {
 		localVarQueryParams.Add("page[number]", parameterToString(*r.pageNumber, ""))
 	}
