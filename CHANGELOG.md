@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.0.0-beta.1](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.1) (2023-01-18)
+
+**Enhancements:**
+
+* Update service settings API endpoint [commit](https://github.com/fastly/fastly-go/commit/0c29f6af943304085de0c999e45407e151600e3a) 
+* Config Store API endpoints [commit](https://github.com/fastly/fastly-go/commit/0c29f6af943304085de0c999e45407e151600e3a) 
+
 ## [v1.0.0-beta.0](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.0) (2022-12-15)
 
 **Enhancements:**
