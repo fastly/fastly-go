@@ -1,6 +1,12 @@
 # Changelog
 
-## [v1.0.0-beta.1](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.1) (2023-01-18)
+## [v1.0.0-beta.2](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.2) (2023-01-18)
+
+**Bug fixes:**
+
+* Fixed OpenAPI schemas to produce missing methods for updating service settings [commit](https://github.com/fastly/fastly-go/commit/4c0423bfccbb4f62cb90f894f630b26306ffdc1a) 
+
+## [v1.0.0-beta.1](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.1) (2023-01-17)
 
 **Enhancements:**
 
