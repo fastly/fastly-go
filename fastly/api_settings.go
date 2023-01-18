@@ -212,8 +212,32 @@ type APIUpdateServiceSettingsRequest struct {
 	APIService SettingsAPI
 	serviceID string
 	versionID int32
+	generalDefaultHost *string
+	generalDefaultTTL *int32
+	generalStaleIfError *bool
+	generalStaleIfErrorTTL *int32
 }
 
+// GeneralDefaultHost The default host name for the version.
+func (r *APIUpdateServiceSettingsRequest) GeneralDefaultHost(generalDefaultHost string) *APIUpdateServiceSettingsRequest {
+	r.generalDefaultHost = &generalDefaultHost
+	return r
+}
+// GeneralDefaultTTL The default time-to-live (TTL) for the version.
+func (r *APIUpdateServiceSettingsRequest) GeneralDefaultTTL(generalDefaultTTL int32) *APIUpdateServiceSettingsRequest {
+	r.generalDefaultTTL = &generalDefaultTTL
+	return r
+}
+// GeneralStaleIfError Enables serving a stale object if there is an error.
+func (r *APIUpdateServiceSettingsRequest) GeneralStaleIfError(generalStaleIfError bool) *APIUpdateServiceSettingsRequest {
+	r.generalStaleIfError = &generalStaleIfError
+	return r
+}
+// GeneralStaleIfErrorTTL The default time-to-live (TTL) for serving the stale object for the version.
+func (r *APIUpdateServiceSettingsRequest) GeneralStaleIfErrorTTL(generalStaleIfErrorTTL int32) *APIUpdateServiceSettingsRequest {
+	r.generalStaleIfErrorTTL = &generalStaleIfErrorTTL
+	return r
+}
 
 // Execute calls the API using the request data configured.
 func (r APIUpdateServiceSettingsRequest) Execute() (*SettingsResponse, *http.Response, error) {
@@ -279,6 +303,18 @@ func (a *SettingsAPIService) UpdateServiceSettingsExecute(r APIUpdateServiceSett
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.generalDefaultHost != nil {
+		localVarFormParams.Add("general.default_host", parameterToString(*r.generalDefaultHost, ""))
+	}
+	if r.generalDefaultTTL != nil {
+		localVarFormParams.Add("general.default_ttl", parameterToString(*r.generalDefaultTTL, ""))
+	}
+	if r.generalStaleIfError != nil {
+		localVarFormParams.Add("general.stale_if_error", parameterToString(*r.generalStaleIfError, ""))
+	}
+	if r.generalStaleIfErrorTTL != nil {
+		localVarFormParams.Add("general.stale_if_error_ttl", parameterToString(*r.generalStaleIfErrorTTL, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
