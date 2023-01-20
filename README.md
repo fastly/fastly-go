@@ -313,6 +313,14 @@ Class | Method | HTTP request | Description
 *MutualAuthenticationAPI* | [**GetMutualAuthentication**](docs/MutualAuthenticationAPI.md#getmutualauthentication) | **GET** `/tls/mutual_authentications/{mutual_authentication_id}` | Get a Mutual Authentication
 *MutualAuthenticationAPI* | [**ListMutualAuthentications**](docs/MutualAuthenticationAPI.md#listmutualauthentications) | **GET** `/tls/mutual_authentications` | List Mutual Authentications
 *MutualAuthenticationAPI* | [**PatchMutualAuthentication**](docs/MutualAuthenticationAPI.md#patchmutualauthentication) | **PATCH** `/tls/mutual_authentications/{mutual_authentication_id}` | Update a Mutual Authentication
+*ObjectStoreAPI* | [**CreateStore**](docs/ObjectStoreAPI.md#createstore) | **POST** `/resources/stores/object` | Create an object store.
+*ObjectStoreAPI* | [**DeleteKeyFromStore**](docs/ObjectStoreAPI.md#deletekeyfromstore) | **DELETE** `/resources/stores/object/{store_id}/keys/{key_name}` | Delete object store key.
+*ObjectStoreAPI* | [**DeleteStore**](docs/ObjectStoreAPI.md#deletestore) | **DELETE** `/resources/stores/object/{store_id}` | Delete an object store.
+*ObjectStoreAPI* | [**GetKeys**](docs/ObjectStoreAPI.md#getkeys) | **GET** `/resources/stores/object/{store_id}/keys` | List object store keys.
+*ObjectStoreAPI* | [**GetStore**](docs/ObjectStoreAPI.md#getstore) | **GET** `/resources/stores/object/{store_id}` | Describe an object store.
+*ObjectStoreAPI* | [**GetStores**](docs/ObjectStoreAPI.md#getstores) | **GET** `/resources/stores/object` | List object stores.
+*ObjectStoreAPI* | [**GetValueForKey**](docs/ObjectStoreAPI.md#getvalueforkey) | **GET** `/resources/stores/object/{store_id}/keys/{key_name}` | Get object store key value.
+*ObjectStoreAPI* | [**SetValueForKey**](docs/ObjectStoreAPI.md#setvalueforkey) | **PUT** `/resources/stores/object/{store_id}/keys/{key_name}` | Insert object store key-value.
 *PackageAPI* | [**GetPackage**](docs/PackageAPI.md#getpackage) | **GET** `/service/{service_id}/version/{version_id}/package` | Get details of the service's Compute@Edge package.
 *PackageAPI* | [**PutPackage**](docs/PackageAPI.md#putpackage) | **PUT** `/service/{service_id}/version/{version_id}/package` | Upload a Compute@Edge package.
 *PoolAPI* | [**CreateServerPool**](docs/PoolAPI.md#createserverpool) | **POST** `/service/{service_id}/version/{version_id}/pool` | Create a server pool
@@ -504,10 +512,6 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/resources/stores/config/{config_store_id}/services`](https://developer.fastly.com/reference/api/services/resources/config_store) (GET)
 - [`/resources/stores/config/{config_store_id}`](https://developer.fastly.com/reference/api/services/resources/config_store) (DELETE, GET, PUT)
 - [`/resources/stores/config`](https://developer.fastly.com/reference/api/services/resources/config_store) (GET, POST)
-- [`/resources/stores/object/{store_id}/keys/{key_name}`](https://developer.fastly.com/reference/api/) (DELETE, GET, PUT)
-- [`/resources/stores/object/{store_id}/keys`](https://developer.fastly.com/reference/api/) (GET)
-- [`/resources/stores/object/{store_id}`](https://developer.fastly.com/reference/api/) (DELETE, GET)
-- [`/resources/stores/object`](https://developer.fastly.com/reference/api/) (GET, POST)
 - [`/resources/stores/secret/{store_id}/secrets/{secret_name}`](https://developer.fastly.com/reference/api/) (DELETE, GET)
 - [`/resources/stores/secret/{store_id}/secrets`](https://developer.fastly.com/reference/api/) (GET, POST)
 - [`/resources/stores/secret/{store_id}`](https://developer.fastly.com/reference/api/) (DELETE, GET)

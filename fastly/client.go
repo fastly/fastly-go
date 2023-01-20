@@ -178,6 +178,8 @@ type APIClient struct {
 
 	MutualAuthenticationAPI MutualAuthenticationAPI
 
+	ObjectStoreAPI ObjectStoreAPI
+
 	PackageAPI PackageAPI
 
 	PoolAPI PoolAPI
@@ -329,6 +331,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingSumologicAPI = (*LoggingSumologicAPIService)(&c.common)
 	c.LoggingSyslogAPI = (*LoggingSyslogAPIService)(&c.common)
 	c.MutualAuthenticationAPI = (*MutualAuthenticationAPIService)(&c.common)
+	c.ObjectStoreAPI = (*ObjectStoreAPIService)(&c.common)
 	c.PackageAPI = (*PackageAPIService)(&c.common)
 	c.PoolAPI = (*PoolAPIService)(&c.common)
 	c.PopAPI = (*PopAPIService)(&c.common)
