@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.0.0-beta.3](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.3) (2023-01-20)
+
+**Enhancements:**
+
+* Object Store API [commit](https://github.com/fastly/fastly-go/commit/e69498474f02c2208072160821a0d49c6999087d) 
+
 ## [v1.0.0-beta.2](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.2) (2023-01-18)
 
 **Bug fixes:**
