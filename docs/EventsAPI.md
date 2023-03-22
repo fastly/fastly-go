@@ -100,6 +100,7 @@ func main() {
     filterServiceID := "filterServiceId_example" // string | Limit the results returned to a specific service. (optional)
     filterUserID := "filterUserId_example" // string | Limit the results returned to a specific user. (optional)
     filterTokenID := "filterTokenId_example" // string | Limit the returned events to a specific token. (optional)
+    filterCreatedAt := "filterCreatedAt_example" // string | Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]=2022-01-12).  (optional)
     pageNumber := int32(1) // int32 | Current page. (optional)
     pageSize := int32(20) // int32 | Number of records per page. (optional) (default to 20)
     sort := "created_at" // string | The order in which to list the results by creation date. (optional) (default to "created_at")
@@ -107,7 +108,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.EventsAPI.ListEvents(ctx).FilterCustomerID(filterCustomerID).FilterEventType(filterEventType).FilterServiceID(filterServiceID).FilterUserID(filterUserID).FilterTokenID(filterTokenID).PageNumber(pageNumber).PageSize(pageSize).Sort(sort).Execute()
+    resp, r, err := apiClient.EventsAPI.ListEvents(ctx).FilterCustomerID(filterCustomerID).FilterEventType(filterEventType).FilterServiceID(filterServiceID).FilterUserID(filterUserID).FilterTokenID(filterTokenID).FilterCreatedAt(filterCreatedAt).PageNumber(pageNumber).PageSize(pageSize).Sort(sort).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EventsAPI.ListEvents`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -128,7 +129,7 @@ Other parameters are passed through a pointer to a apiListEventsRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filterCustomerID** | **string** | Limit the results returned to a specific customer. |  **filterEventType** | **string** | Limit the returned events to a specific `event_type`. |  **filterServiceID** | **string** | Limit the results returned to a specific service. |  **filterUserID** | **string** | Limit the results returned to a specific user. |  **filterTokenID** | **string** | Limit the returned events to a specific token. |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | The order in which to list the results by creation date. | [default to &quot;created_at&quot;]
+ **filterCustomerID** | **string** | Limit the results returned to a specific customer. |  **filterEventType** | **string** | Limit the returned events to a specific `event_type`. |  **filterServiceID** | **string** | Limit the results returned to a specific service. |  **filterUserID** | **string** | Limit the results returned to a specific user. |  **filterTokenID** | **string** | Limit the returned events to a specific token. |  **filterCreatedAt** | **string** | Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]&#x3D;2022-01-12).  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | The order in which to list the results by creation date. | [default to &quot;created_at&quot;]
 
 ### Return type
 

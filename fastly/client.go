@@ -100,6 +100,8 @@ type APIClient struct {
 
 	DomainAPI DomainAPI
 
+	DomainOwnershipsAPI DomainOwnershipsAPI
+
 	EnabledProductsAPI EnabledProductsAPI
 
 	EventsAPI EventsAPI
@@ -179,6 +181,8 @@ type APIClient struct {
 	MutualAuthenticationAPI MutualAuthenticationAPI
 
 	ObjectStoreAPI ObjectStoreAPI
+
+	ObjectStoreItemAPI ObjectStoreItemAPI
 
 	PackageAPI PackageAPI
 
@@ -292,6 +296,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.DirectorAPI = (*DirectorAPIService)(&c.common)
 	c.DirectorBackendAPI = (*DirectorBackendAPIService)(&c.common)
 	c.DomainAPI = (*DomainAPIService)(&c.common)
+	c.DomainOwnershipsAPI = (*DomainOwnershipsAPIService)(&c.common)
 	c.EnabledProductsAPI = (*EnabledProductsAPIService)(&c.common)
 	c.EventsAPI = (*EventsAPIService)(&c.common)
 	c.GzipAPI = (*GzipAPIService)(&c.common)
@@ -332,6 +337,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingSyslogAPI = (*LoggingSyslogAPIService)(&c.common)
 	c.MutualAuthenticationAPI = (*MutualAuthenticationAPIService)(&c.common)
 	c.ObjectStoreAPI = (*ObjectStoreAPIService)(&c.common)
+	c.ObjectStoreItemAPI = (*ObjectStoreItemAPIService)(&c.common)
 	c.PackageAPI = (*PackageAPIService)(&c.common)
 	c.PoolAPI = (*PoolAPIService)(&c.common)
 	c.PopAPI = (*PopAPIService)(&c.common)

@@ -34,7 +34,7 @@ type EnabledProductsAPI interface {
 	/*
 	DisableProduct Disable a product
 
-	Disable a product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+	Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param productID
@@ -49,7 +49,7 @@ type EnabledProductsAPI interface {
 	/*
 	EnableProduct Enable a product
 
-	Enable a product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+	Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param productID
@@ -59,13 +59,13 @@ type EnabledProductsAPI interface {
 	EnableProduct(ctx context.Context, productID string, serviceID string) APIEnableProductRequest
 
 	// EnableProductExecute executes the request
-	//  @return EnabledProduct
-	EnableProductExecute(r APIEnableProductRequest) (*EnabledProduct, *http.Response, error)
+	//  @return EnabledProductResponse
+	EnableProductExecute(r APIEnableProductRequest) (*EnabledProductResponse, *http.Response, error)
 
 	/*
 	GetEnabledProduct Get enabled product
 
-	Get enabled product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+	Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param productID
@@ -75,8 +75,8 @@ type EnabledProductsAPI interface {
 	GetEnabledProduct(ctx context.Context, productID string, serviceID string) APIGetEnabledProductRequest
 
 	// GetEnabledProductExecute executes the request
-	//  @return EnabledProduct
-	GetEnabledProductExecute(r APIGetEnabledProductRequest) (*EnabledProduct, *http.Response, error)
+	//  @return EnabledProductResponse
+	GetEnabledProductExecute(r APIGetEnabledProductRequest) (*EnabledProductResponse, *http.Response, error)
 }
 
 // EnabledProductsAPIService EnabledProductsAPI service
@@ -99,7 +99,7 @@ func (r APIDisableProductRequest) Execute() (*http.Response, error) {
 /*
 DisableProduct Disable a product
 
-Disable a product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param productID
@@ -219,14 +219,14 @@ type APIEnableProductRequest struct {
 
 
 // Execute calls the API using the request data configured.
-func (r APIEnableProductRequest) Execute() (*EnabledProduct, *http.Response, error) {
+func (r APIEnableProductRequest) Execute() (*EnabledProductResponse, *http.Response, error) {
 	return r.APIService.EnableProductExecute(r)
 }
 
 /*
 EnableProduct Enable a product
 
-Enable a product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param productID
@@ -243,13 +243,13 @@ func (a *EnabledProductsAPIService) EnableProduct(ctx context.Context, productID
 }
 
 // EnableProductExecute executes the request
-//  @return EnabledProduct
-func (a *EnabledProductsAPIService) EnableProductExecute(r APIEnableProductRequest) (*EnabledProduct, *http.Response, error) {
+//  @return EnabledProductResponse
+func (a *EnabledProductsAPIService) EnableProductExecute(r APIEnableProductRequest) (*EnabledProductResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *EnabledProduct
+		localVarReturnValue  *EnabledProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnabledProductsAPIService.EnableProduct")
@@ -357,14 +357,14 @@ type APIGetEnabledProductRequest struct {
 
 
 // Execute calls the API using the request data configured.
-func (r APIGetEnabledProductRequest) Execute() (*EnabledProduct, *http.Response, error) {
+func (r APIGetEnabledProductRequest) Execute() (*EnabledProductResponse, *http.Response, error) {
 	return r.APIService.GetEnabledProductExecute(r)
 }
 
 /*
 GetEnabledProduct Get enabled product
 
-Get enabled product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param productID
@@ -381,13 +381,13 @@ func (a *EnabledProductsAPIService) GetEnabledProduct(ctx context.Context, produ
 }
 
 // GetEnabledProductExecute executes the request
-//  @return EnabledProduct
-func (a *EnabledProductsAPIService) GetEnabledProductExecute(r APIGetEnabledProductRequest) (*EnabledProduct, *http.Response, error) {
+//  @return EnabledProductResponse
+func (a *EnabledProductsAPIService) GetEnabledProductExecute(r APIGetEnabledProductRequest) (*EnabledProductResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *EnabledProduct
+		localVarReturnValue  *EnabledProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnabledProductsAPIService.GetEnabledProduct")

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**State** | Pointer to **string** | The current state of your subscription. | [optional] [readonly] 
+**State** | Pointer to **string** | The current state of your subscription. | [optional] 
 
 ## Methods
 

@@ -369,7 +369,7 @@ import (
 )
 
 func main() {
-    filterState := "filterState_example" // string | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, and `renewing`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`).  (optional)
+    filterState := "filterState_example" // string | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`).  (optional)
     filterTLSDomainsID := "filterTLSDomainsId_example" // string | Limit the returned subscriptions to those that include the specific domain. (optional)
     filterHasActiveOrder := true // bool | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  (optional)
     include := "tls_authorizations" // string | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`.  (optional)
@@ -401,7 +401,7 @@ Other parameters are passed through a pointer to a apiListTLSSubsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filterState** | **string** | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, and `renewing`. Accepts parameters: `not` (e.g., `filter[state][not]&#x3D;renewing`).  |  **filterTLSDomainsID** | **string** | Limit the returned subscriptions to those that include the specific domain. |  **filterHasActiveOrder** | **bool** | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  |  **include** | **string** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`.  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | The order in which to list the results by creation date. | [default to &quot;created_at&quot;]
+ **filterState** | **string** | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]&#x3D;renewing`).  |  **filterTLSDomainsID** | **string** | Limit the returned subscriptions to those that include the specific domain. |  **filterHasActiveOrder** | **bool** | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  |  **include** | **string** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`.  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | The order in which to list the results by creation date. | [default to &quot;created_at&quot;]
 
 ### Return type
 

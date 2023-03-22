@@ -4,17 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**Group** | Pointer to **string** |  | [optional] 
+**Code** | **string** | the three-letter code for the [POP](https://developer.fastly.com/learning/concepts/pop/) | 
+**Name** | **string** | the name of the POP | 
+**Group** | **string** |  | 
+**Region** | **string** |  | 
+**StatsRegion** | **string** | the region used for stats reporting | 
+**BillingRegion** | **string** | the region used for billing | 
 **Coordinates** | Pointer to [**PopCoordinates**](PopCoordinates.md) |  | [optional] 
-**Shield** | Pointer to **string** |  | [optional] 
+**Shield** | Pointer to **string** | the name of the [shield code](https://developer.fastly.com/learning/concepts/shielding/#choosing-a-shield-location) if this POP is suitable for shielding | [optional] 
 
 ## Methods
 
 ### NewPop
 
-`func NewPop() *Pop`
+`func NewPop(code string, name string, group string, region string, statsRegion string, billingRegion string, ) *Pop`
 
 NewPop instantiates a new Pop object
 This constructor will assign default values to properties that have it defined,
@@ -48,11 +51,6 @@ and a boolean to check if the value has been set.
 
 SetCode sets Code field to given value.
 
-### HasCode
-
-`func (o *Pop) HasCode() bool`
-
-HasCode returns a boolean if a field has been set.
 
 ### GetName
 
@@ -73,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *Pop) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetGroup
 
@@ -98,11 +91,66 @@ and a boolean to check if the value has been set.
 
 SetGroup sets Group field to given value.
 
-### HasGroup
 
-`func (o *Pop) HasGroup() bool`
+### GetRegion
 
-HasGroup returns a boolean if a field has been set.
+`func (o *Pop) GetRegion() string`
+
+GetRegion returns the Region field if non-nil, zero value otherwise.
+
+### GetRegionOk
+
+`func (o *Pop) GetRegionOk() (*string, bool)`
+
+GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegion
+
+`func (o *Pop) SetRegion(v string)`
+
+SetRegion sets Region field to given value.
+
+
+### GetStatsRegion
+
+`func (o *Pop) GetStatsRegion() string`
+
+GetStatsRegion returns the StatsRegion field if non-nil, zero value otherwise.
+
+### GetStatsRegionOk
+
+`func (o *Pop) GetStatsRegionOk() (*string, bool)`
+
+GetStatsRegionOk returns a tuple with the StatsRegion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatsRegion
+
+`func (o *Pop) SetStatsRegion(v string)`
+
+SetStatsRegion sets StatsRegion field to given value.
+
+
+### GetBillingRegion
+
+`func (o *Pop) GetBillingRegion() string`
+
+GetBillingRegion returns the BillingRegion field if non-nil, zero value otherwise.
+
+### GetBillingRegionOk
+
+`func (o *Pop) GetBillingRegionOk() (*string, bool)`
+
+GetBillingRegionOk returns a tuple with the BillingRegion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBillingRegion
+
+`func (o *Pop) SetBillingRegion(v string)`
+
+SetBillingRegion sets BillingRegion field to given value.
+
 
 ### GetCoordinates
 

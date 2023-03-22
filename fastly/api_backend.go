@@ -211,7 +211,7 @@ func (r *APICreateBackendRequest) Ipv6(ipv6 string) *APICreateBackendRequest {
 	r.ipv6 = &ipv6
 	return r
 }
-// KeepaliveTime How long to keep a persistent connection to the backend between requests.
+// KeepaliveTime How long in seconds to keep a persistent connection to the backend between requests.
 func (r *APICreateBackendRequest) KeepaliveTime(keepaliveTime int32) *APICreateBackendRequest {
 	r.keepaliveTime = &keepaliveTime
 	return r
@@ -1042,7 +1042,7 @@ func (r *APIUpdateBackendRequest) Ipv6(ipv6 string) *APIUpdateBackendRequest {
 	r.ipv6 = &ipv6
 	return r
 }
-// KeepaliveTime How long to keep a persistent connection to the backend between requests.
+// KeepaliveTime How long in seconds to keep a persistent connection to the backend between requests.
 func (r *APIUpdateBackendRequest) KeepaliveTime(keepaliveTime int32) *APIUpdateBackendRequest {
 	r.keepaliveTime = &keepaliveTime
 	return r

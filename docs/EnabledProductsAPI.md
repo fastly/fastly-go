@@ -107,7 +107,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `EnabledProductsAPI.EnableProduct`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `EnableProduct`: EnabledProduct
+    // response from `EnableProduct`: EnabledProductResponse
     fmt.Fprintf(os.Stdout, "Response from `EnabledProductsAPI.EnableProduct`: %v\n", resp)
 }
 ```
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EnabledProduct**](EnabledProduct.md)
+[**EnabledProductResponse**](EnabledProductResponse.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `EnabledProductsAPI.GetEnabledProduct`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetEnabledProduct`: EnabledProduct
+    // response from `GetEnabledProduct`: EnabledProductResponse
     fmt.Fprintf(os.Stdout, "Response from `EnabledProductsAPI.GetEnabledProduct`: %v\n", resp)
 }
 ```
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EnabledProduct**](EnabledProduct.md)
+[**EnabledProductResponse**](EnabledProductResponse.md)
 
 ### Authorization
 

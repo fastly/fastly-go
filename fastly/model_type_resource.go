@@ -24,11 +24,15 @@ type TypeResource string
 // List of resourceTyperesource
 const (
 	TYPERESOURCE_OBJECT_STORE TypeResource = "object-store"
+	TYPERESOURCE_SECRET_STORE TypeResource = "secret-store"
+	TYPERESOURCE_CONFIG_STORE TypeResource = "config-store"
 )
 
 // AllowedTypeResourceEnumValues All allowed values of TypeResource enum
 var AllowedTypeResourceEnumValues = []TypeResource{
 	"object-store",
+	"secret-store",
+	"config-store",
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.

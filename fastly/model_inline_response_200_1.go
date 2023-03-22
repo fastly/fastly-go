@@ -17,70 +17,70 @@ import (
 	"encoding/json"
 )
 
-// ResourceCreateAllOf struct for ResourceCreateAllOf
-type ResourceCreateAllOf struct {
-	// The ID of the linked resource.
-	ResourceID *string `json:"resource_id,omitempty"`
+// InlineResponse2001 struct for InlineResponse2001
+type InlineResponse2001 struct {
+	// Time-stamp (GMT) when the domain_ownership validation will expire.
+	ExpiresAt *string `json:"expires_at,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _ResourceCreateAllOf ResourceCreateAllOf
+type _InlineResponse2001 InlineResponse2001
 
-// NewResourceCreateAllOf instantiates a new ResourceCreateAllOf object
+// NewInlineResponse2001 instantiates a new InlineResponse2001 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewResourceCreateAllOf() *ResourceCreateAllOf {
-	this := ResourceCreateAllOf{}
+func NewInlineResponse2001() *InlineResponse2001 {
+	this := InlineResponse2001{}
 	return &this
 }
 
-// NewResourceCreateAllOfWithDefaults instantiates a new ResourceCreateAllOf object
+// NewInlineResponse2001WithDefaults instantiates a new InlineResponse2001 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewResourceCreateAllOfWithDefaults() *ResourceCreateAllOf {
-	this := ResourceCreateAllOf{}
+func NewInlineResponse2001WithDefaults() *InlineResponse2001 {
+	this := InlineResponse2001{}
 	return &this
 }
 
-// GetResourceID returns the ResourceID field value if set, zero value otherwise.
-func (o *ResourceCreateAllOf) GetResourceID() string {
-	if o == nil || o.ResourceID == nil {
+// GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise.
+func (o *InlineResponse2001) GetExpiresAt() string {
+	if o == nil || o.ExpiresAt == nil {
 		var ret string
 		return ret
 	}
-	return *o.ResourceID
+	return *o.ExpiresAt
 }
 
-// GetResourceIDOk returns a tuple with the ResourceID field value if set, nil otherwise
+// GetExpiresAtOk returns a tuple with the ExpiresAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResourceCreateAllOf) GetResourceIDOk() (*string, bool) {
-	if o == nil || o.ResourceID == nil {
+func (o *InlineResponse2001) GetExpiresAtOk() (*string, bool) {
+	if o == nil || o.ExpiresAt == nil {
 		return nil, false
 	}
-	return o.ResourceID, true
+	return o.ExpiresAt, true
 }
 
-// HasResourceID returns a boolean if a field has been set.
-func (o *ResourceCreateAllOf) HasResourceID() bool {
-	if o != nil && o.ResourceID != nil {
+// HasExpiresAt returns a boolean if a field has been set.
+func (o *InlineResponse2001) HasExpiresAt() bool {
+	if o != nil && o.ExpiresAt != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceID gets a reference to the given string and assigns it to the ResourceID field.
-func (o *ResourceCreateAllOf) SetResourceID(v string) {
-	o.ResourceID = &v
+// SetExpiresAt gets a reference to the given string and assigns it to the ExpiresAt field.
+func (o *InlineResponse2001) SetExpiresAt(v string) {
+	o.ExpiresAt = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ResourceCreateAllOf) MarshalJSON() ([]byte, error) {
+func (o InlineResponse2001) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ResourceID != nil {
-		toSerialize["resource_id"] = o.ResourceID
+	if o.ExpiresAt != nil {
+		toSerialize["expires_at"] = o.ExpiresAt
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -92,65 +92,65 @@ func (o ResourceCreateAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *ResourceCreateAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varResourceCreateAllOf := _ResourceCreateAllOf{}
+func (o *InlineResponse2001) UnmarshalJSON(bytes []byte) (err error) {
+	varInlineResponse2001 := _InlineResponse2001{}
 
-	if err = json.Unmarshal(bytes, &varResourceCreateAllOf); err == nil {
-		*o = ResourceCreateAllOf(varResourceCreateAllOf)
+	if err = json.Unmarshal(bytes, &varInlineResponse2001); err == nil {
+		*o = InlineResponse2001(varInlineResponse2001)
 	}
 
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "resource_id")
+		delete(additionalProperties, "expires_at")
 		o.AdditionalProperties = additionalProperties
 	}
 
 	return err
 }
 
-// NullableResourceCreateAllOf is a helper abstraction for handling nullable resourcecreateallof types. 
-type NullableResourceCreateAllOf struct {
-	value *ResourceCreateAllOf
+// NullableInlineResponse2001 is a helper abstraction for handling nullable inlineresponse2001 types. 
+type NullableInlineResponse2001 struct {
+	value *InlineResponse2001
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableResourceCreateAllOf) Get() *ResourceCreateAllOf {
+func (v NullableInlineResponse2001) Get() *InlineResponse2001 {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableResourceCreateAllOf) Set(val *ResourceCreateAllOf) {
+func (v *NullableInlineResponse2001) Set(val *InlineResponse2001) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableResourceCreateAllOf) IsSet() bool {
+func (v NullableInlineResponse2001) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableResourceCreateAllOf) Unset() {
+func (v *NullableInlineResponse2001) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableResourceCreateAllOf returns a pointer to a new instance of NullableResourceCreateAllOf.
-func NewNullableResourceCreateAllOf(val *ResourceCreateAllOf) *NullableResourceCreateAllOf {
-	return &NullableResourceCreateAllOf{value: val, isSet: true}
+// NewNullableInlineResponse2001 returns a pointer to a new instance of NullableInlineResponse2001.
+func NewNullableInlineResponse2001(val *InlineResponse2001) *NullableInlineResponse2001 {
+	return &NullableInlineResponse2001{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableResourceCreateAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableInlineResponse2001) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableResourceCreateAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableInlineResponse2001) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -1,4 +1,4 @@
-# GetStoresResponseMeta
+# InlineResponse2002Meta
 
 ## Properties
 
@@ -9,70 +9,70 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewGetStoresResponseMeta
+### NewInlineResponse2002Meta
 
-`func NewGetStoresResponseMeta() *GetStoresResponseMeta`
+`func NewInlineResponse2002Meta() *InlineResponse2002Meta`
 
-NewGetStoresResponseMeta instantiates a new GetStoresResponseMeta object
+NewInlineResponse2002Meta instantiates a new InlineResponse2002Meta object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetStoresResponseMetaWithDefaults
+### NewInlineResponse2002MetaWithDefaults
 
-`func NewGetStoresResponseMetaWithDefaults() *GetStoresResponseMeta`
+`func NewInlineResponse2002MetaWithDefaults() *InlineResponse2002Meta`
 
-NewGetStoresResponseMetaWithDefaults instantiates a new GetStoresResponseMeta object
+NewInlineResponse2002MetaWithDefaults instantiates a new InlineResponse2002Meta object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetNextCursor
 
-`func (o *GetStoresResponseMeta) GetNextCursor() string`
+`func (o *InlineResponse2002Meta) GetNextCursor() string`
 
 GetNextCursor returns the NextCursor field if non-nil, zero value otherwise.
 
 ### GetNextCursorOk
 
-`func (o *GetStoresResponseMeta) GetNextCursorOk() (*string, bool)`
+`func (o *InlineResponse2002Meta) GetNextCursorOk() (*string, bool)`
 
 GetNextCursorOk returns a tuple with the NextCursor field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNextCursor
 
-`func (o *GetStoresResponseMeta) SetNextCursor(v string)`
+`func (o *InlineResponse2002Meta) SetNextCursor(v string)`
 
 SetNextCursor sets NextCursor field to given value.
 
 ### HasNextCursor
 
-`func (o *GetStoresResponseMeta) HasNextCursor() bool`
+`func (o *InlineResponse2002Meta) HasNextCursor() bool`
 
 HasNextCursor returns a boolean if a field has been set.
 
 ### GetLimit
 
-`func (o *GetStoresResponseMeta) GetLimit() int32`
+`func (o *InlineResponse2002Meta) GetLimit() int32`
 
 GetLimit returns the Limit field if non-nil, zero value otherwise.
 
 ### GetLimitOk
 
-`func (o *GetStoresResponseMeta) GetLimitOk() (*int32, bool)`
+`func (o *InlineResponse2002Meta) GetLimitOk() (*int32, bool)`
 
 GetLimitOk returns a tuple with the Limit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLimit
 
-`func (o *GetStoresResponseMeta) SetLimit(v int32)`
+`func (o *InlineResponse2002Meta) SetLimit(v int32)`
 
 SetLimit sets Limit field to given value.
 
 ### HasLimit
 
-`func (o *GetStoresResponseMeta) HasLimit() bool`
+`func (o *InlineResponse2002Meta) HasLimit() bool`
 
 HasLimit returns a boolean if a field has been set.
 

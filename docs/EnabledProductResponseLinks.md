@@ -1,78 +1,78 @@
-# EnabledProductLinks
+# EnabledProductResponseLinks
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Self** | Pointer to **string** |  | [optional] 
-**Service** | Pointer to **string** |  | [optional] 
+**Self** | Pointer to **string** | Location of resource | [optional] 
+**Service** | Pointer to **string** | Location of the service resource | [optional] 
 
 ## Methods
 
-### NewEnabledProductLinks
+### NewEnabledProductResponseLinks
 
-`func NewEnabledProductLinks() *EnabledProductLinks`
+`func NewEnabledProductResponseLinks() *EnabledProductResponseLinks`
 
-NewEnabledProductLinks instantiates a new EnabledProductLinks object
+NewEnabledProductResponseLinks instantiates a new EnabledProductResponseLinks object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewEnabledProductLinksWithDefaults
+### NewEnabledProductResponseLinksWithDefaults
 
-`func NewEnabledProductLinksWithDefaults() *EnabledProductLinks`
+`func NewEnabledProductResponseLinksWithDefaults() *EnabledProductResponseLinks`
 
-NewEnabledProductLinksWithDefaults instantiates a new EnabledProductLinks object
+NewEnabledProductResponseLinksWithDefaults instantiates a new EnabledProductResponseLinks object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetSelf
 
-`func (o *EnabledProductLinks) GetSelf() string`
+`func (o *EnabledProductResponseLinks) GetSelf() string`
 
 GetSelf returns the Self field if non-nil, zero value otherwise.
 
 ### GetSelfOk
 
-`func (o *EnabledProductLinks) GetSelfOk() (*string, bool)`
+`func (o *EnabledProductResponseLinks) GetSelfOk() (*string, bool)`
 
 GetSelfOk returns a tuple with the Self field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSelf
 
-`func (o *EnabledProductLinks) SetSelf(v string)`
+`func (o *EnabledProductResponseLinks) SetSelf(v string)`
 
 SetSelf sets Self field to given value.
 
 ### HasSelf
 
-`func (o *EnabledProductLinks) HasSelf() bool`
+`func (o *EnabledProductResponseLinks) HasSelf() bool`
 
 HasSelf returns a boolean if a field has been set.
 
 ### GetService
 
-`func (o *EnabledProductLinks) GetService() string`
+`func (o *EnabledProductResponseLinks) GetService() string`
 
 GetService returns the Service field if non-nil, zero value otherwise.
 
 ### GetServiceOk
 
-`func (o *EnabledProductLinks) GetServiceOk() (*string, bool)`
+`func (o *EnabledProductResponseLinks) GetServiceOk() (*string, bool)`
 
 GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetService
 
-`func (o *EnabledProductLinks) SetService(v string)`
+`func (o *EnabledProductResponseLinks) SetService(v string)`
 
 SetService sets Service field to given value.
 
 ### HasService
 
-`func (o *EnabledProductLinks) HasService() bool`
+`func (o *EnabledProductResponseLinks) HasService() bool`
 
 HasService returns a boolean if a field has been set.
 

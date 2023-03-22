@@ -41,7 +41,7 @@ type Backend struct {
 	Ipv4 NullableString `json:"ipv4,omitempty"`
 	// IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
 	Ipv6 NullableString `json:"ipv6,omitempty"`
-	// How long to keep a persistent connection to the backend between requests.
+	// How long in seconds to keep a persistent connection to the backend between requests.
 	KeepaliveTime NullableInt32 `json:"keepalive_time,omitempty"`
 	// Maximum number of concurrent connections this backend will accept.
 	MaxConn *int32 `json:"max_conn,omitempty"`

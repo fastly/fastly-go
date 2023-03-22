@@ -1,78 +1,78 @@
-# GetStoresResponse
+# InlineResponse2002
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | Pointer to [**[]StoreResponse**](StoreResponse.md) |  | [optional] 
-**Meta** | Pointer to [**GetStoresResponseMeta**](GetStoresResponseMeta.md) |  | [optional] 
+**Meta** | Pointer to [**InlineResponse2002Meta**](InlineResponse2002Meta.md) |  | [optional] 
 
 ## Methods
 
-### NewGetStoresResponse
+### NewInlineResponse2002
 
-`func NewGetStoresResponse() *GetStoresResponse`
+`func NewInlineResponse2002() *InlineResponse2002`
 
-NewGetStoresResponse instantiates a new GetStoresResponse object
+NewInlineResponse2002 instantiates a new InlineResponse2002 object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewGetStoresResponseWithDefaults
+### NewInlineResponse2002WithDefaults
 
-`func NewGetStoresResponseWithDefaults() *GetStoresResponse`
+`func NewInlineResponse2002WithDefaults() *InlineResponse2002`
 
-NewGetStoresResponseWithDefaults instantiates a new GetStoresResponse object
+NewInlineResponse2002WithDefaults instantiates a new InlineResponse2002 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GetStoresResponse) GetData() []StoreResponse`
+`func (o *InlineResponse2002) GetData() []StoreResponse`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GetStoresResponse) GetDataOk() (*[]StoreResponse, bool)`
+`func (o *InlineResponse2002) GetDataOk() (*[]StoreResponse, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GetStoresResponse) SetData(v []StoreResponse)`
+`func (o *InlineResponse2002) SetData(v []StoreResponse)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *GetStoresResponse) HasData() bool`
+`func (o *InlineResponse2002) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *GetStoresResponse) GetMeta() GetStoresResponseMeta`
+`func (o *InlineResponse2002) GetMeta() InlineResponse2002Meta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *GetStoresResponse) GetMetaOk() (*GetStoresResponseMeta, bool)`
+`func (o *InlineResponse2002) GetMetaOk() (*InlineResponse2002Meta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *GetStoresResponse) SetMeta(v GetStoresResponseMeta)`
+`func (o *InlineResponse2002) SetMeta(v InlineResponse2002Meta)`
 
 SetMeta sets Meta field to given value.
 
 ### HasMeta
 
-`func (o *GetStoresResponse) HasMeta() bool`
+`func (o *InlineResponse2002) HasMeta() bool`
 
 HasMeta returns a boolean if a field has been set.
 

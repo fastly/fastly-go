@@ -17,34 +17,36 @@ import (
 	"encoding/json"
 )
 
-// EnabledProductProduct struct for EnabledProductProduct
-type EnabledProductProduct struct {
+// EnabledProductResponseService struct for EnabledProductResponseService
+type EnabledProductResponseService struct {
+	// Service identifier
 	ID *string `json:"id,omitempty"`
+	// Name of the object
 	Object *string `json:"object,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _EnabledProductProduct EnabledProductProduct
+type _EnabledProductResponseService EnabledProductResponseService
 
-// NewEnabledProductProduct instantiates a new EnabledProductProduct object
+// NewEnabledProductResponseService instantiates a new EnabledProductResponseService object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEnabledProductProduct() *EnabledProductProduct {
-	this := EnabledProductProduct{}
+func NewEnabledProductResponseService() *EnabledProductResponseService {
+	this := EnabledProductResponseService{}
 	return &this
 }
 
-// NewEnabledProductProductWithDefaults instantiates a new EnabledProductProduct object
+// NewEnabledProductResponseServiceWithDefaults instantiates a new EnabledProductResponseService object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewEnabledProductProductWithDefaults() *EnabledProductProduct {
-	this := EnabledProductProduct{}
+func NewEnabledProductResponseServiceWithDefaults() *EnabledProductResponseService {
+	this := EnabledProductResponseService{}
 	return &this
 }
 
 // GetID returns the ID field value if set, zero value otherwise.
-func (o *EnabledProductProduct) GetID() string {
+func (o *EnabledProductResponseService) GetID() string {
 	if o == nil || o.ID == nil {
 		var ret string
 		return ret
@@ -54,7 +56,7 @@ func (o *EnabledProductProduct) GetID() string {
 
 // GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EnabledProductProduct) GetIDOk() (*string, bool) {
+func (o *EnabledProductResponseService) GetIDOk() (*string, bool) {
 	if o == nil || o.ID == nil {
 		return nil, false
 	}
@@ -62,7 +64,7 @@ func (o *EnabledProductProduct) GetIDOk() (*string, bool) {
 }
 
 // HasID returns a boolean if a field has been set.
-func (o *EnabledProductProduct) HasID() bool {
+func (o *EnabledProductResponseService) HasID() bool {
 	if o != nil && o.ID != nil {
 		return true
 	}
@@ -71,12 +73,12 @@ func (o *EnabledProductProduct) HasID() bool {
 }
 
 // SetID gets a reference to the given string and assigns it to the ID field.
-func (o *EnabledProductProduct) SetID(v string) {
+func (o *EnabledProductResponseService) SetID(v string) {
 	o.ID = &v
 }
 
 // GetObject returns the Object field value if set, zero value otherwise.
-func (o *EnabledProductProduct) GetObject() string {
+func (o *EnabledProductResponseService) GetObject() string {
 	if o == nil || o.Object == nil {
 		var ret string
 		return ret
@@ -86,7 +88,7 @@ func (o *EnabledProductProduct) GetObject() string {
 
 // GetObjectOk returns a tuple with the Object field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EnabledProductProduct) GetObjectOk() (*string, bool) {
+func (o *EnabledProductResponseService) GetObjectOk() (*string, bool) {
 	if o == nil || o.Object == nil {
 		return nil, false
 	}
@@ -94,7 +96,7 @@ func (o *EnabledProductProduct) GetObjectOk() (*string, bool) {
 }
 
 // HasObject returns a boolean if a field has been set.
-func (o *EnabledProductProduct) HasObject() bool {
+func (o *EnabledProductResponseService) HasObject() bool {
 	if o != nil && o.Object != nil {
 		return true
 	}
@@ -103,13 +105,13 @@ func (o *EnabledProductProduct) HasObject() bool {
 }
 
 // SetObject gets a reference to the given string and assigns it to the Object field.
-func (o *EnabledProductProduct) SetObject(v string) {
+func (o *EnabledProductResponseService) SetObject(v string) {
 	o.Object = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o EnabledProductProduct) MarshalJSON() ([]byte, error) {
+func (o EnabledProductResponseService) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.ID != nil {
 		toSerialize["id"] = o.ID
@@ -127,11 +129,11 @@ func (o EnabledProductProduct) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *EnabledProductProduct) UnmarshalJSON(bytes []byte) (err error) {
-	varEnabledProductProduct := _EnabledProductProduct{}
+func (o *EnabledProductResponseService) UnmarshalJSON(bytes []byte) (err error) {
+	varEnabledProductResponseService := _EnabledProductResponseService{}
 
-	if err = json.Unmarshal(bytes, &varEnabledProductProduct); err == nil {
-		*o = EnabledProductProduct(varEnabledProductProduct)
+	if err = json.Unmarshal(bytes, &varEnabledProductResponseService); err == nil {
+		*o = EnabledProductResponseService(varEnabledProductResponseService)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -145,48 +147,48 @@ func (o *EnabledProductProduct) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableEnabledProductProduct is a helper abstraction for handling nullable enabledproductproduct types. 
-type NullableEnabledProductProduct struct {
-	value *EnabledProductProduct
+// NullableEnabledProductResponseService is a helper abstraction for handling nullable enabledproductresponseservice types. 
+type NullableEnabledProductResponseService struct {
+	value *EnabledProductResponseService
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableEnabledProductProduct) Get() *EnabledProductProduct {
+func (v NullableEnabledProductResponseService) Get() *EnabledProductResponseService {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableEnabledProductProduct) Set(val *EnabledProductProduct) {
+func (v *NullableEnabledProductResponseService) Set(val *EnabledProductResponseService) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableEnabledProductProduct) IsSet() bool {
+func (v NullableEnabledProductResponseService) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableEnabledProductProduct) Unset() {
+func (v *NullableEnabledProductResponseService) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableEnabledProductProduct returns a pointer to a new instance of NullableEnabledProductProduct.
-func NewNullableEnabledProductProduct(val *EnabledProductProduct) *NullableEnabledProductProduct {
-	return &NullableEnabledProductProduct{value: val, isSet: true}
+// NewNullableEnabledProductResponseService returns a pointer to a new instance of NullableEnabledProductResponseService.
+func NewNullableEnabledProductResponseService(val *EnabledProductResponseService) *NullableEnabledProductResponseService {
+	return &NullableEnabledProductResponseService{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableEnabledProductProduct) MarshalJSON() ([]byte, error) {
+func (v NullableEnabledProductResponseService) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableEnabledProductProduct) UnmarshalJSON(src []byte) error {
+func (v *NullableEnabledProductResponseService) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

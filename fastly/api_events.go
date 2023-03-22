@@ -207,6 +207,7 @@ type APIListEventsRequest struct {
 	filterServiceID *string
 	filterUserID *string
 	filterTokenID *string
+	filterCreatedAt *string
 	pageNumber *int32
 	pageSize *int32
 	sort *string
@@ -235,6 +236,11 @@ func (r *APIListEventsRequest) FilterUserID(filterUserID string) *APIListEventsR
 // FilterTokenID Limit the returned events to a specific token.
 func (r *APIListEventsRequest) FilterTokenID(filterTokenID string) *APIListEventsRequest {
 	r.filterTokenID = &filterTokenID
+	return r
+}
+// FilterCreatedAt Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]&#x3D;2022-01-12). 
+func (r *APIListEventsRequest) FilterCreatedAt(filterCreatedAt string) *APIListEventsRequest {
+	r.filterCreatedAt = &filterCreatedAt
 	return r
 }
 // PageNumber Current page.
@@ -308,6 +314,9 @@ func (a *EventsAPIService) ListEventsExecute(r APIListEventsRequest) (*EventsRes
 	}
 	if r.filterTokenID != nil {
 		localVarQueryParams.Add("filter[token_id]", parameterToString(*r.filterTokenID, ""))
+	}
+	if r.filterCreatedAt != nil {
+		localVarQueryParams.Add("filter[created_at]", parameterToString(*r.filterCreatedAt, ""))
 	}
 	if r.pageNumber != nil {
 		localVarQueryParams.Add("page[number]", parameterToString(*r.pageNumber, ""))

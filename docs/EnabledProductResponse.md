@@ -1,104 +1,104 @@
-# EnabledProduct
+# EnabledProductResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Product** | Pointer to [**EnabledProductProduct**](EnabledProductProduct.md) |  | [optional] 
-**Service** | Pointer to [**EnabledProductProduct**](EnabledProductProduct.md) |  | [optional] 
-**Links** | Pointer to [**EnabledProductLinks**](EnabledProductLinks.md) |  | [optional] 
+**Product** | Pointer to [**EnabledProductResponseProduct**](EnabledProductResponseProduct.md) |  | [optional] 
+**Service** | Pointer to [**EnabledProductResponseService**](EnabledProductResponseService.md) |  | [optional] 
+**Links** | Pointer to [**EnabledProductResponseLinks**](EnabledProductResponseLinks.md) |  | [optional] 
 
 ## Methods
 
-### NewEnabledProduct
+### NewEnabledProductResponse
 
-`func NewEnabledProduct() *EnabledProduct`
+`func NewEnabledProductResponse() *EnabledProductResponse`
 
-NewEnabledProduct instantiates a new EnabledProduct object
+NewEnabledProductResponse instantiates a new EnabledProductResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewEnabledProductWithDefaults
+### NewEnabledProductResponseWithDefaults
 
-`func NewEnabledProductWithDefaults() *EnabledProduct`
+`func NewEnabledProductResponseWithDefaults() *EnabledProductResponse`
 
-NewEnabledProductWithDefaults instantiates a new EnabledProduct object
+NewEnabledProductResponseWithDefaults instantiates a new EnabledProductResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetProduct
 
-`func (o *EnabledProduct) GetProduct() EnabledProductProduct`
+`func (o *EnabledProductResponse) GetProduct() EnabledProductResponseProduct`
 
 GetProduct returns the Product field if non-nil, zero value otherwise.
 
 ### GetProductOk
 
-`func (o *EnabledProduct) GetProductOk() (*EnabledProductProduct, bool)`
+`func (o *EnabledProductResponse) GetProductOk() (*EnabledProductResponseProduct, bool)`
 
 GetProductOk returns a tuple with the Product field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProduct
 
-`func (o *EnabledProduct) SetProduct(v EnabledProductProduct)`
+`func (o *EnabledProductResponse) SetProduct(v EnabledProductResponseProduct)`
 
 SetProduct sets Product field to given value.
 
 ### HasProduct
 
-`func (o *EnabledProduct) HasProduct() bool`
+`func (o *EnabledProductResponse) HasProduct() bool`
 
 HasProduct returns a boolean if a field has been set.
 
 ### GetService
 
-`func (o *EnabledProduct) GetService() EnabledProductProduct`
+`func (o *EnabledProductResponse) GetService() EnabledProductResponseService`
 
 GetService returns the Service field if non-nil, zero value otherwise.
 
 ### GetServiceOk
 
-`func (o *EnabledProduct) GetServiceOk() (*EnabledProductProduct, bool)`
+`func (o *EnabledProductResponse) GetServiceOk() (*EnabledProductResponseService, bool)`
 
 GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetService
 
-`func (o *EnabledProduct) SetService(v EnabledProductProduct)`
+`func (o *EnabledProductResponse) SetService(v EnabledProductResponseService)`
 
 SetService sets Service field to given value.
 
 ### HasService
 
-`func (o *EnabledProduct) HasService() bool`
+`func (o *EnabledProductResponse) HasService() bool`
 
 HasService returns a boolean if a field has been set.
 
 ### GetLinks
 
-`func (o *EnabledProduct) GetLinks() EnabledProductLinks`
+`func (o *EnabledProductResponse) GetLinks() EnabledProductResponseLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *EnabledProduct) GetLinksOk() (*EnabledProductLinks, bool)`
+`func (o *EnabledProductResponse) GetLinksOk() (*EnabledProductResponseLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *EnabledProduct) SetLinks(v EnabledProductLinks)`
+`func (o *EnabledProductResponse) SetLinks(v EnabledProductResponseLinks)`
 
 SetLinks sets Links field to given value.
 
 ### HasLinks
 
-`func (o *EnabledProduct) HasLinks() bool`
+`func (o *EnabledProductResponse) HasLinks() bool`
 
 HasLinks returns a boolean if a field has been set.
 

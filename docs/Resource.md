@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** | The name of the resource. | [optional] 
+**ResourceID** | Pointer to **string** | The ID of the underlying linked resource. | [optional] 
+**Name** | Pointer to **string** | The name of the resource link. | [optional] 
 
 ## Methods
 
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewResourceWithDefaults instantiates a new Resource object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetResourceID
+
+`func (o *Resource) GetResourceID() string`
+
+GetResourceID returns the ResourceID field if non-nil, zero value otherwise.
+
+### GetResourceIDOk
+
+`func (o *Resource) GetResourceIDOk() (*string, bool)`
+
+GetResourceIDOk returns a tuple with the ResourceID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceID
+
+`func (o *Resource) SetResourceID(v string)`
+
+SetResourceID sets ResourceID field to given value.
+
+### HasResourceID
+
+`func (o *Resource) HasResourceID() bool`
+
+HasResourceID returns a boolean if a field has been set.
 
 ### GetName
 

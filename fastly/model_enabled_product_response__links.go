@@ -17,34 +17,36 @@ import (
 	"encoding/json"
 )
 
-// EnabledProductLinks struct for EnabledProductLinks
-type EnabledProductLinks struct {
+// EnabledProductResponseLinks struct for EnabledProductResponseLinks
+type EnabledProductResponseLinks struct {
+	// Location of resource
 	Self *string `json:"self,omitempty"`
+	// Location of the service resource
 	Service *string `json:"service,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _EnabledProductLinks EnabledProductLinks
+type _EnabledProductResponseLinks EnabledProductResponseLinks
 
-// NewEnabledProductLinks instantiates a new EnabledProductLinks object
+// NewEnabledProductResponseLinks instantiates a new EnabledProductResponseLinks object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEnabledProductLinks() *EnabledProductLinks {
-	this := EnabledProductLinks{}
+func NewEnabledProductResponseLinks() *EnabledProductResponseLinks {
+	this := EnabledProductResponseLinks{}
 	return &this
 }
 
-// NewEnabledProductLinksWithDefaults instantiates a new EnabledProductLinks object
+// NewEnabledProductResponseLinksWithDefaults instantiates a new EnabledProductResponseLinks object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewEnabledProductLinksWithDefaults() *EnabledProductLinks {
-	this := EnabledProductLinks{}
+func NewEnabledProductResponseLinksWithDefaults() *EnabledProductResponseLinks {
+	this := EnabledProductResponseLinks{}
 	return &this
 }
 
 // GetSelf returns the Self field value if set, zero value otherwise.
-func (o *EnabledProductLinks) GetSelf() string {
+func (o *EnabledProductResponseLinks) GetSelf() string {
 	if o == nil || o.Self == nil {
 		var ret string
 		return ret
@@ -54,7 +56,7 @@ func (o *EnabledProductLinks) GetSelf() string {
 
 // GetSelfOk returns a tuple with the Self field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EnabledProductLinks) GetSelfOk() (*string, bool) {
+func (o *EnabledProductResponseLinks) GetSelfOk() (*string, bool) {
 	if o == nil || o.Self == nil {
 		return nil, false
 	}
@@ -62,7 +64,7 @@ func (o *EnabledProductLinks) GetSelfOk() (*string, bool) {
 }
 
 // HasSelf returns a boolean if a field has been set.
-func (o *EnabledProductLinks) HasSelf() bool {
+func (o *EnabledProductResponseLinks) HasSelf() bool {
 	if o != nil && o.Self != nil {
 		return true
 	}
@@ -71,12 +73,12 @@ func (o *EnabledProductLinks) HasSelf() bool {
 }
 
 // SetSelf gets a reference to the given string and assigns it to the Self field.
-func (o *EnabledProductLinks) SetSelf(v string) {
+func (o *EnabledProductResponseLinks) SetSelf(v string) {
 	o.Self = &v
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *EnabledProductLinks) GetService() string {
+func (o *EnabledProductResponseLinks) GetService() string {
 	if o == nil || o.Service == nil {
 		var ret string
 		return ret
@@ -86,7 +88,7 @@ func (o *EnabledProductLinks) GetService() string {
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EnabledProductLinks) GetServiceOk() (*string, bool) {
+func (o *EnabledProductResponseLinks) GetServiceOk() (*string, bool) {
 	if o == nil || o.Service == nil {
 		return nil, false
 	}
@@ -94,7 +96,7 @@ func (o *EnabledProductLinks) GetServiceOk() (*string, bool) {
 }
 
 // HasService returns a boolean if a field has been set.
-func (o *EnabledProductLinks) HasService() bool {
+func (o *EnabledProductResponseLinks) HasService() bool {
 	if o != nil && o.Service != nil {
 		return true
 	}
@@ -103,13 +105,13 @@ func (o *EnabledProductLinks) HasService() bool {
 }
 
 // SetService gets a reference to the given string and assigns it to the Service field.
-func (o *EnabledProductLinks) SetService(v string) {
+func (o *EnabledProductResponseLinks) SetService(v string) {
 	o.Service = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o EnabledProductLinks) MarshalJSON() ([]byte, error) {
+func (o EnabledProductResponseLinks) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Self != nil {
 		toSerialize["self"] = o.Self
@@ -127,11 +129,11 @@ func (o EnabledProductLinks) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *EnabledProductLinks) UnmarshalJSON(bytes []byte) (err error) {
-	varEnabledProductLinks := _EnabledProductLinks{}
+func (o *EnabledProductResponseLinks) UnmarshalJSON(bytes []byte) (err error) {
+	varEnabledProductResponseLinks := _EnabledProductResponseLinks{}
 
-	if err = json.Unmarshal(bytes, &varEnabledProductLinks); err == nil {
-		*o = EnabledProductLinks(varEnabledProductLinks)
+	if err = json.Unmarshal(bytes, &varEnabledProductResponseLinks); err == nil {
+		*o = EnabledProductResponseLinks(varEnabledProductResponseLinks)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -145,48 +147,48 @@ func (o *EnabledProductLinks) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableEnabledProductLinks is a helper abstraction for handling nullable enabledproductlinks types. 
-type NullableEnabledProductLinks struct {
-	value *EnabledProductLinks
+// NullableEnabledProductResponseLinks is a helper abstraction for handling nullable enabledproductresponselinks types. 
+type NullableEnabledProductResponseLinks struct {
+	value *EnabledProductResponseLinks
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableEnabledProductLinks) Get() *EnabledProductLinks {
+func (v NullableEnabledProductResponseLinks) Get() *EnabledProductResponseLinks {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableEnabledProductLinks) Set(val *EnabledProductLinks) {
+func (v *NullableEnabledProductResponseLinks) Set(val *EnabledProductResponseLinks) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableEnabledProductLinks) IsSet() bool {
+func (v NullableEnabledProductResponseLinks) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableEnabledProductLinks) Unset() {
+func (v *NullableEnabledProductResponseLinks) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableEnabledProductLinks returns a pointer to a new instance of NullableEnabledProductLinks.
-func NewNullableEnabledProductLinks(val *EnabledProductLinks) *NullableEnabledProductLinks {
-	return &NullableEnabledProductLinks{value: val, isSet: true}
+// NewNullableEnabledProductResponseLinks returns a pointer to a new instance of NullableEnabledProductResponseLinks.
+func NewNullableEnabledProductResponseLinks(val *EnabledProductResponseLinks) *NullableEnabledProductResponseLinks {
+	return &NullableEnabledProductResponseLinks{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableEnabledProductLinks) MarshalJSON() ([]byte, error) {
+func (v NullableEnabledProductResponseLinks) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableEnabledProductLinks) UnmarshalJSON(src []byte) error {
+func (v *NullableEnabledProductResponseLinks) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

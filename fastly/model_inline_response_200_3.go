@@ -17,34 +17,34 @@ import (
 	"encoding/json"
 )
 
-// KeyResponse struct for KeyResponse
-type KeyResponse struct {
+// InlineResponse2003 struct for InlineResponse2003
+type InlineResponse2003 struct {
 	Data []string `json:"data,omitempty"`
-	Meta *GetStoresResponseMeta `json:"meta,omitempty"`
+	Meta *InlineResponse2003Meta `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _KeyResponse KeyResponse
+type _InlineResponse2003 InlineResponse2003
 
-// NewKeyResponse instantiates a new KeyResponse object
+// NewInlineResponse2003 instantiates a new InlineResponse2003 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKeyResponse() *KeyResponse {
-	this := KeyResponse{}
+func NewInlineResponse2003() *InlineResponse2003 {
+	this := InlineResponse2003{}
 	return &this
 }
 
-// NewKeyResponseWithDefaults instantiates a new KeyResponse object
+// NewInlineResponse2003WithDefaults instantiates a new InlineResponse2003 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewKeyResponseWithDefaults() *KeyResponse {
-	this := KeyResponse{}
+func NewInlineResponse2003WithDefaults() *InlineResponse2003 {
+	this := InlineResponse2003{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *KeyResponse) GetData() []string {
+func (o *InlineResponse2003) GetData() []string {
 	if o == nil || o.Data == nil {
 		var ret []string
 		return ret
@@ -54,7 +54,7 @@ func (o *KeyResponse) GetData() []string {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyResponse) GetDataOk() ([]string, bool) {
+func (o *InlineResponse2003) GetDataOk() ([]string, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -62,7 +62,7 @@ func (o *KeyResponse) GetDataOk() ([]string, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *KeyResponse) HasData() bool {
+func (o *InlineResponse2003) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -71,14 +71,14 @@ func (o *KeyResponse) HasData() bool {
 }
 
 // SetData gets a reference to the given []string and assigns it to the Data field.
-func (o *KeyResponse) SetData(v []string) {
+func (o *InlineResponse2003) SetData(v []string) {
 	o.Data = v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *KeyResponse) GetMeta() GetStoresResponseMeta {
+func (o *InlineResponse2003) GetMeta() InlineResponse2003Meta {
 	if o == nil || o.Meta == nil {
-		var ret GetStoresResponseMeta
+		var ret InlineResponse2003Meta
 		return ret
 	}
 	return *o.Meta
@@ -86,7 +86,7 @@ func (o *KeyResponse) GetMeta() GetStoresResponseMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KeyResponse) GetMetaOk() (*GetStoresResponseMeta, bool) {
+func (o *InlineResponse2003) GetMetaOk() (*InlineResponse2003Meta, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -94,7 +94,7 @@ func (o *KeyResponse) GetMetaOk() (*GetStoresResponseMeta, bool) {
 }
 
 // HasMeta returns a boolean if a field has been set.
-func (o *KeyResponse) HasMeta() bool {
+func (o *InlineResponse2003) HasMeta() bool {
 	if o != nil && o.Meta != nil {
 		return true
 	}
@@ -102,14 +102,14 @@ func (o *KeyResponse) HasMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given GetStoresResponseMeta and assigns it to the Meta field.
-func (o *KeyResponse) SetMeta(v GetStoresResponseMeta) {
+// SetMeta gets a reference to the given InlineResponse2003Meta and assigns it to the Meta field.
+func (o *InlineResponse2003) SetMeta(v InlineResponse2003Meta) {
 	o.Meta = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o KeyResponse) MarshalJSON() ([]byte, error) {
+func (o InlineResponse2003) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -127,11 +127,11 @@ func (o KeyResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *KeyResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varKeyResponse := _KeyResponse{}
+func (o *InlineResponse2003) UnmarshalJSON(bytes []byte) (err error) {
+	varInlineResponse2003 := _InlineResponse2003{}
 
-	if err = json.Unmarshal(bytes, &varKeyResponse); err == nil {
-		*o = KeyResponse(varKeyResponse)
+	if err = json.Unmarshal(bytes, &varInlineResponse2003); err == nil {
+		*o = InlineResponse2003(varInlineResponse2003)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -145,48 +145,48 @@ func (o *KeyResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableKeyResponse is a helper abstraction for handling nullable keyresponse types. 
-type NullableKeyResponse struct {
-	value *KeyResponse
+// NullableInlineResponse2003 is a helper abstraction for handling nullable inlineresponse2003 types. 
+type NullableInlineResponse2003 struct {
+	value *InlineResponse2003
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableKeyResponse) Get() *KeyResponse {
+func (v NullableInlineResponse2003) Get() *InlineResponse2003 {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableKeyResponse) Set(val *KeyResponse) {
+func (v *NullableInlineResponse2003) Set(val *InlineResponse2003) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableKeyResponse) IsSet() bool {
+func (v NullableInlineResponse2003) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableKeyResponse) Unset() {
+func (v *NullableInlineResponse2003) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableKeyResponse returns a pointer to a new instance of NullableKeyResponse.
-func NewNullableKeyResponse(val *KeyResponse) *NullableKeyResponse {
-	return &NullableKeyResponse{value: val, isSet: true}
+// NewNullableInlineResponse2003 returns a pointer to a new instance of NullableInlineResponse2003.
+func NewNullableInlineResponse2003(val *InlineResponse2003) *NullableInlineResponse2003 {
+	return &NullableInlineResponse2003{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableKeyResponse) MarshalJSON() ([]byte, error) {
+func (v NullableInlineResponse2003) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableKeyResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableInlineResponse2003) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

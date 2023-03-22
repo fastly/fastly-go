@@ -19,7 +19,7 @@ import (
 
 // ResourceResponseAllOf struct for ResourceResponseAllOf
 type ResourceResponseAllOf struct {
-	// An alphanumeric string identifying the resource.
+	// An alphanumeric string identifying the resource link.
 	ID *string `json:"id,omitempty"`
 	// The path to the resource.
 	Href *string `json:"href,omitempty"`

@@ -39,7 +39,7 @@ type Results struct {
 	Restarts *int32 `json:"restarts,omitempty"`
 	// Ratio of cache hits to cache misses (between 0 and 1).
 	HitRatio NullableFloat32 `json:"hit_ratio,omitempty"`
-	// Total bytes delivered (`resp_header_bytes` + `resp_body_bytes` + `bereq_header_bytes` + `bereq_body_bytes` + `compute_resp_header_bytes` + `compute_resp_body_bytes` + `compute_bereq_header_bytes` + `compute_bereq_body_bytes` + `websocket_resp_header_bytes` + `websocket_resp_body_bytes` + `websocket_bereq_header_bytes` + `websocket_bereq_body_bytes`).
+	// Total bytes delivered (`resp_header_bytes` + `resp_body_bytes` + `bereq_header_bytes` + `bereq_body_bytes` + `compute_resp_header_bytes` + `compute_resp_body_bytes` + `compute_bereq_header_bytes` + `compute_bereq_body_bytes` + `websocket_resp_header_bytes` + `websocket_resp_body_bytes` + `websocket_bereq_header_bytes` + `websocket_bereq_body_bytes` + `fanout_resp_header_bytes` + `fanout_resp_body_bytes` + `fanout_bereq_header_bytes` + `fanout_bereq_body_bytes`).
 	Bandwidth *int32 `json:"bandwidth,omitempty"`
 	// Total body bytes delivered (alias for resp_body_bytes).
 	BodySize *int32 `json:"body_size,omitempty"`
@@ -411,9 +411,15 @@ type Results struct {
 	FanoutRecvPublishes *int32 `json:"fanout_recv_publishes,omitempty"`
 	// Total published messages sent to end users.
 	FanoutSendPublishes *int32 `json:"fanout_send_publishes,omitempty"`
-	// The total number of reads received for the object store.
+	// The total number of class a operations for the object store.
+	ObjectStoreClassAOperations *int32 `json:"object_store_class_a_operations,omitempty"`
+	// The total number of class b operations for the object store.
+	ObjectStoreClassBOperations *int32 `json:"object_store_class_b_operations,omitempty"`
+	// Use object_store_class_b_operations.
+	// Deprecated
 	ObjectStoreReadRequests *int32 `json:"object_store_read_requests,omitempty"`
-	// The total number of writes received for the object store.
+	// Use object_store_class_a_operations.
+	// Deprecated
 	ObjectStoreWriteRequests *int32 `json:"object_store_write_requests,omitempty"`
 	// Total header bytes received from end users over Fanout connections.
 	FanoutReqHeaderBytes *int32 `json:"fanout_req_header_bytes,omitempty"`
@@ -6737,7 +6743,72 @@ func (o *Results) SetFanoutSendPublishes(v int32) {
 	o.FanoutSendPublishes = &v
 }
 
+// GetObjectStoreClassAOperations returns the ObjectStoreClassAOperations field value if set, zero value otherwise.
+func (o *Results) GetObjectStoreClassAOperations() int32 {
+	if o == nil || o.ObjectStoreClassAOperations == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ObjectStoreClassAOperations
+}
+
+// GetObjectStoreClassAOperationsOk returns a tuple with the ObjectStoreClassAOperations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetObjectStoreClassAOperationsOk() (*int32, bool) {
+	if o == nil || o.ObjectStoreClassAOperations == nil {
+		return nil, false
+	}
+	return o.ObjectStoreClassAOperations, true
+}
+
+// HasObjectStoreClassAOperations returns a boolean if a field has been set.
+func (o *Results) HasObjectStoreClassAOperations() bool {
+	if o != nil && o.ObjectStoreClassAOperations != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetObjectStoreClassAOperations gets a reference to the given int32 and assigns it to the ObjectStoreClassAOperations field.
+func (o *Results) SetObjectStoreClassAOperations(v int32) {
+	o.ObjectStoreClassAOperations = &v
+}
+
+// GetObjectStoreClassBOperations returns the ObjectStoreClassBOperations field value if set, zero value otherwise.
+func (o *Results) GetObjectStoreClassBOperations() int32 {
+	if o == nil || o.ObjectStoreClassBOperations == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ObjectStoreClassBOperations
+}
+
+// GetObjectStoreClassBOperationsOk returns a tuple with the ObjectStoreClassBOperations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetObjectStoreClassBOperationsOk() (*int32, bool) {
+	if o == nil || o.ObjectStoreClassBOperations == nil {
+		return nil, false
+	}
+	return o.ObjectStoreClassBOperations, true
+}
+
+// HasObjectStoreClassBOperations returns a boolean if a field has been set.
+func (o *Results) HasObjectStoreClassBOperations() bool {
+	if o != nil && o.ObjectStoreClassBOperations != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetObjectStoreClassBOperations gets a reference to the given int32 and assigns it to the ObjectStoreClassBOperations field.
+func (o *Results) SetObjectStoreClassBOperations(v int32) {
+	o.ObjectStoreClassBOperations = &v
+}
+
 // GetObjectStoreReadRequests returns the ObjectStoreReadRequests field value if set, zero value otherwise.
+// Deprecated
 func (o *Results) GetObjectStoreReadRequests() int32 {
 	if o == nil || o.ObjectStoreReadRequests == nil {
 		var ret int32
@@ -6748,6 +6819,7 @@ func (o *Results) GetObjectStoreReadRequests() int32 {
 
 // GetObjectStoreReadRequestsOk returns a tuple with the ObjectStoreReadRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *Results) GetObjectStoreReadRequestsOk() (*int32, bool) {
 	if o == nil || o.ObjectStoreReadRequests == nil {
 		return nil, false
@@ -6765,11 +6837,13 @@ func (o *Results) HasObjectStoreReadRequests() bool {
 }
 
 // SetObjectStoreReadRequests gets a reference to the given int32 and assigns it to the ObjectStoreReadRequests field.
+// Deprecated
 func (o *Results) SetObjectStoreReadRequests(v int32) {
 	o.ObjectStoreReadRequests = &v
 }
 
 // GetObjectStoreWriteRequests returns the ObjectStoreWriteRequests field value if set, zero value otherwise.
+// Deprecated
 func (o *Results) GetObjectStoreWriteRequests() int32 {
 	if o == nil || o.ObjectStoreWriteRequests == nil {
 		var ret int32
@@ -6780,6 +6854,7 @@ func (o *Results) GetObjectStoreWriteRequests() int32 {
 
 // GetObjectStoreWriteRequestsOk returns a tuple with the ObjectStoreWriteRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *Results) GetObjectStoreWriteRequestsOk() (*int32, bool) {
 	if o == nil || o.ObjectStoreWriteRequests == nil {
 		return nil, false
@@ -6797,6 +6872,7 @@ func (o *Results) HasObjectStoreWriteRequests() bool {
 }
 
 // SetObjectStoreWriteRequests gets a reference to the given int32 and assigns it to the ObjectStoreWriteRequests field.
+// Deprecated
 func (o *Results) SetObjectStoreWriteRequests(v int32) {
 	o.ObjectStoreWriteRequests = &v
 }
@@ -7681,6 +7757,12 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.FanoutSendPublishes != nil {
 		toSerialize["fanout_send_publishes"] = o.FanoutSendPublishes
 	}
+	if o.ObjectStoreClassAOperations != nil {
+		toSerialize["object_store_class_a_operations"] = o.ObjectStoreClassAOperations
+	}
+	if o.ObjectStoreClassBOperations != nil {
+		toSerialize["object_store_class_b_operations"] = o.ObjectStoreClassBOperations
+	}
 	if o.ObjectStoreReadRequests != nil {
 		toSerialize["object_store_read_requests"] = o.ObjectStoreReadRequests
 	}
@@ -7930,6 +8012,8 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "websocket_conn_time_ms")
 		delete(additionalProperties, "fanout_recv_publishes")
 		delete(additionalProperties, "fanout_send_publishes")
+		delete(additionalProperties, "object_store_class_a_operations")
+		delete(additionalProperties, "object_store_class_b_operations")
 		delete(additionalProperties, "object_store_read_requests")
 		delete(additionalProperties, "object_store_write_requests")
 		delete(additionalProperties, "fanout_req_header_bytes")

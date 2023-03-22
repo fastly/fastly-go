@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ID** | Pointer to **string** | An alphanumeric string identifying the resource. | [optional] 
+**ID** | Pointer to **string** | An alphanumeric string identifying the resource link. | [optional] 
 **Href** | Pointer to **string** | The path to the resource. | [optional] 
 **ServiceID** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
 **Version** | Pointer to **int32** | Integer identifying a service version. | [optional] 

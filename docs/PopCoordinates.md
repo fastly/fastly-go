@@ -4,16 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**X** | Pointer to **float32** |  | [optional] 
-**Y** | Pointer to **float32** |  | [optional] 
-**Latitude** | Pointer to **float32** |  | [optional] 
-**Longitude** | Pointer to **float32** |  | [optional] 
+**Latitude** | **float32** |  | 
+**Longitude** | **float32** |  | 
 
 ## Methods
 
 ### NewPopCoordinates
 
-`func NewPopCoordinates() *PopCoordinates`
+`func NewPopCoordinates(latitude float32, longitude float32, ) *PopCoordinates`
 
 NewPopCoordinates instantiates a new PopCoordinates object
 This constructor will assign default values to properties that have it defined,
@@ -27,56 +25,6 @@ will change when the set of required properties is changed
 NewPopCoordinatesWithDefaults instantiates a new PopCoordinates object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetX
-
-`func (o *PopCoordinates) GetX() float32`
-
-GetX returns the X field if non-nil, zero value otherwise.
-
-### GetXOk
-
-`func (o *PopCoordinates) GetXOk() (*float32, bool)`
-
-GetXOk returns a tuple with the X field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetX
-
-`func (o *PopCoordinates) SetX(v float32)`
-
-SetX sets X field to given value.
-
-### HasX
-
-`func (o *PopCoordinates) HasX() bool`
-
-HasX returns a boolean if a field has been set.
-
-### GetY
-
-`func (o *PopCoordinates) GetY() float32`
-
-GetY returns the Y field if non-nil, zero value otherwise.
-
-### GetYOk
-
-`func (o *PopCoordinates) GetYOk() (*float32, bool)`
-
-GetYOk returns a tuple with the Y field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetY
-
-`func (o *PopCoordinates) SetY(v float32)`
-
-SetY sets Y field to given value.
-
-### HasY
-
-`func (o *PopCoordinates) HasY() bool`
-
-HasY returns a boolean if a field has been set.
 
 ### GetLatitude
 
@@ -97,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetLatitude sets Latitude field to given value.
 
-### HasLatitude
-
-`func (o *PopCoordinates) HasLatitude() bool`
-
-HasLatitude returns a boolean if a field has been set.
 
 ### GetLongitude
 
@@ -122,11 +65,6 @@ and a boolean to check if the value has been set.
 
 SetLongitude sets Longitude field to given value.
 
-### HasLongitude
-
-`func (o *PopCoordinates) HasLongitude() bool`
-
-HasLongitude returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

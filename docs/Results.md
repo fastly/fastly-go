@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **Errors** | Pointer to **int32** | Number of cache errors. | [optional] 
 **Restarts** | Pointer to **int32** | Number of restarts performed. | [optional] 
 **HitRatio** | Pointer to **NullableFloat32** | Ratio of cache hits to cache misses (between 0 and 1). | [optional] 
-**Bandwidth** | Pointer to **int32** | Total bytes delivered (`resp_header_bytes` + `resp_body_bytes` + `bereq_header_bytes` + `bereq_body_bytes` + `compute_resp_header_bytes` + `compute_resp_body_bytes` + `compute_bereq_header_bytes` + `compute_bereq_body_bytes` + `websocket_resp_header_bytes` + `websocket_resp_body_bytes` + `websocket_bereq_header_bytes` + `websocket_bereq_body_bytes`). | [optional] 
+**Bandwidth** | Pointer to **int32** | Total bytes delivered (`resp_header_bytes` + `resp_body_bytes` + `bereq_header_bytes` + `bereq_body_bytes` + `compute_resp_header_bytes` + `compute_resp_body_bytes` + `compute_bereq_header_bytes` + `compute_bereq_body_bytes` + `websocket_resp_header_bytes` + `websocket_resp_body_bytes` + `websocket_bereq_header_bytes` + `websocket_bereq_body_bytes` + `fanout_resp_header_bytes` + `fanout_resp_body_bytes` + `fanout_bereq_header_bytes` + `fanout_bereq_body_bytes`). | [optional] 
 **BodySize** | Pointer to **int32** | Total body bytes delivered (alias for resp_body_bytes). | [optional] 
 **HeaderSize** | Pointer to **int32** | Total header bytes delivered (alias for resp_header_bytes). | [optional] 
 **ReqBodyBytes** | Pointer to **int32** | Total body bytes received. | [optional] 
@@ -200,8 +200,10 @@ Name | Type | Description | Notes
 **WebsocketConnTimeMs** | Pointer to **int32** | Total duration of passthrough WebSocket connections with end users. | [optional] 
 **FanoutRecvPublishes** | Pointer to **int32** | Total published messages received from the publish API endpoint. | [optional] 
 **FanoutSendPublishes** | Pointer to **int32** | Total published messages sent to end users. | [optional] 
-**ObjectStoreReadRequests** | Pointer to **int32** | The total number of reads received for the object store. | [optional] 
-**ObjectStoreWriteRequests** | Pointer to **int32** | The total number of writes received for the object store. | [optional] 
+**ObjectStoreClassAOperations** | Pointer to **int32** | The total number of class a operations for the object store. | [optional] 
+**ObjectStoreClassBOperations** | Pointer to **int32** | The total number of class b operations for the object store. | [optional] 
+**ObjectStoreReadRequests** | Pointer to **int32** | Use object_store_class_b_operations. | [optional] 
+**ObjectStoreWriteRequests** | Pointer to **int32** | Use object_store_class_a_operations. | [optional] 
 **FanoutReqHeaderBytes** | Pointer to **int32** | Total header bytes received from end users over Fanout connections. | [optional] 
 **FanoutReqBodyBytes** | Pointer to **int32** | Total body or message content bytes received from end users over Fanout connections. | [optional] 
 **FanoutRespHeaderBytes** | Pointer to **int32** | Total header bytes sent to end users over Fanout connections. | [optional] 
@@ -5140,6 +5142,56 @@ SetFanoutSendPublishes sets FanoutSendPublishes field to given value.
 `func (o *Results) HasFanoutSendPublishes() bool`
 
 HasFanoutSendPublishes returns a boolean if a field has been set.
+
+### GetObjectStoreClassAOperations
+
+`func (o *Results) GetObjectStoreClassAOperations() int32`
+
+GetObjectStoreClassAOperations returns the ObjectStoreClassAOperations field if non-nil, zero value otherwise.
+
+### GetObjectStoreClassAOperationsOk
+
+`func (o *Results) GetObjectStoreClassAOperationsOk() (*int32, bool)`
+
+GetObjectStoreClassAOperationsOk returns a tuple with the ObjectStoreClassAOperations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObjectStoreClassAOperations
+
+`func (o *Results) SetObjectStoreClassAOperations(v int32)`
+
+SetObjectStoreClassAOperations sets ObjectStoreClassAOperations field to given value.
+
+### HasObjectStoreClassAOperations
+
+`func (o *Results) HasObjectStoreClassAOperations() bool`
+
+HasObjectStoreClassAOperations returns a boolean if a field has been set.
+
+### GetObjectStoreClassBOperations
+
+`func (o *Results) GetObjectStoreClassBOperations() int32`
+
+GetObjectStoreClassBOperations returns the ObjectStoreClassBOperations field if non-nil, zero value otherwise.
+
+### GetObjectStoreClassBOperationsOk
+
+`func (o *Results) GetObjectStoreClassBOperationsOk() (*int32, bool)`
+
+GetObjectStoreClassBOperationsOk returns a tuple with the ObjectStoreClassBOperations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObjectStoreClassBOperations
+
+`func (o *Results) SetObjectStoreClassBOperations(v int32)`
+
+SetObjectStoreClassBOperations sets ObjectStoreClassBOperations field to given value.
+
+### HasObjectStoreClassBOperations
+
+`func (o *Results) HasObjectStoreClassBOperations() bool`
+
+HasObjectStoreClassBOperations returns a boolean if a field has been set.
 
 ### GetObjectStoreReadRequests
 

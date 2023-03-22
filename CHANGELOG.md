@@ -1,5 +1,27 @@
 # Changelog
 
+## [v1.0.0-beta.4](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.4) (2023-03-22)
+
+**Bug fixes:**
+
+- fix(purge): switch authentication type to 'token'
+
+**Enhancements:**
+
+- feat(domain-ownerships): List domain-ownerships
+- feat(events): implement 'filter_created_at' property
+
+**Documentation:**
+
+- docs(backend): keepalive_time
+- docs(object-store): restructure of the API documentation
+- docs(pop): region, shield, latitude, longitude
+- docs(product-enablement): brotli_compression
+- docs(resource): terminology
+- docs(results): fanout properties
+- docs(tls/subscriptions): new 'failed' state
+- docs(user): 'login' modification note removed
+
 ## [v1.0.0-beta.3](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.3) (2023-01-20)
 
 **Enhancements:**

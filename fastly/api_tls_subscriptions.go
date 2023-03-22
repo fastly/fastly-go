@@ -124,7 +124,7 @@ type TLSSubscriptionsAPI interface {
 	/*
 	PatchTLSSub Update a TLS subscription
 
-	Change the TLS domains or common name associated with this subscription, or update the TLS configuration for this set of domains.
+	Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state `failed` by setting the state to `retry`.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
@@ -844,7 +844,7 @@ type APIListTLSSubsRequest struct {
 	sort *string
 }
 
-// FilterState Limit the returned subscriptions by state. Valid values are &#x60;pending&#x60;, &#x60;processing&#x60;, &#x60;issued&#x60;, and &#x60;renewing&#x60;. Accepts parameters: &#x60;not&#x60; (e.g., &#x60;filter[state][not]&#x3D;renewing&#x60;). 
+// FilterState Limit the returned subscriptions by state. Valid values are &#x60;pending&#x60;, &#x60;processing&#x60;, &#x60;issued&#x60;, &#x60;renewing&#x60;, and &#x60;failed&#x60;. Accepts parameters: &#x60;not&#x60; (e.g., &#x60;filter[state][not]&#x3D;renewing&#x60;). 
 func (r *APIListTLSSubsRequest) FilterState(filterState string) *APIListTLSSubsRequest {
 	r.filterState = &filterState
 	return r
@@ -1052,7 +1052,7 @@ func (r APIPatchTLSSubRequest) Execute() (*TLSSubscriptionResponse, *http.Respon
 /*
 PatchTLSSub Update a TLS subscription
 
-Change the TLS domains or common name associated with this subscription, or update the TLS configuration for this set of domains.
+Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state `failed` by setting the state to `retry`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.

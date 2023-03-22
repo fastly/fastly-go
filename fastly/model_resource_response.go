@@ -20,17 +20,17 @@ import (
 
 // ResourceResponse struct for ResourceResponse
 type ResourceResponse struct {
+	// The ID of the underlying linked resource.
+	ResourceID *string `json:"resource_id,omitempty"`
+	// The name of the resource link.
+	Name *string `json:"name,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	// The name of the resource.
-	Name *string `json:"name,omitempty"`
-	// The ID of the linked resource.
-	ResourceID *string `json:"resource_id,omitempty"`
-	// An alphanumeric string identifying the resource.
+	// An alphanumeric string identifying the resource link.
 	ID *string `json:"id,omitempty"`
 	// The path to the resource.
 	Href *string `json:"href,omitempty"`
@@ -63,6 +63,70 @@ func NewResourceResponseWithDefaults() *ResourceResponse {
 	var resourceType TypeResource = TYPERESOURCE_OBJECT_STORE
 	this.ResourceType = &resourceType
 	return &this
+}
+
+// GetResourceID returns the ResourceID field value if set, zero value otherwise.
+func (o *ResourceResponse) GetResourceID() string {
+	if o == nil || o.ResourceID == nil {
+		var ret string
+		return ret
+	}
+	return *o.ResourceID
+}
+
+// GetResourceIDOk returns a tuple with the ResourceID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceResponse) GetResourceIDOk() (*string, bool) {
+	if o == nil || o.ResourceID == nil {
+		return nil, false
+	}
+	return o.ResourceID, true
+}
+
+// HasResourceID returns a boolean if a field has been set.
+func (o *ResourceResponse) HasResourceID() bool {
+	if o != nil && o.ResourceID != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceID gets a reference to the given string and assigns it to the ResourceID field.
+func (o *ResourceResponse) SetResourceID(v string) {
+	o.ResourceID = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *ResourceResponse) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ResourceResponse) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *ResourceResponse) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *ResourceResponse) SetName(v string) {
+	o.Name = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -189,70 +253,6 @@ func (o *ResourceResponse) SetUpdatedAtNil() {
 // UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 func (o *ResourceResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *ResourceResponse) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResourceResponse) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *ResourceResponse) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ResourceResponse) SetName(v string) {
-	o.Name = &v
-}
-
-// GetResourceID returns the ResourceID field value if set, zero value otherwise.
-func (o *ResourceResponse) GetResourceID() string {
-	if o == nil || o.ResourceID == nil {
-		var ret string
-		return ret
-	}
-	return *o.ResourceID
-}
-
-// GetResourceIDOk returns a tuple with the ResourceID field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ResourceResponse) GetResourceIDOk() (*string, bool) {
-	if o == nil || o.ResourceID == nil {
-		return nil, false
-	}
-	return o.ResourceID, true
-}
-
-// HasResourceID returns a boolean if a field has been set.
-func (o *ResourceResponse) HasResourceID() bool {
-	if o != nil && o.ResourceID != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetResourceID gets a reference to the given string and assigns it to the ResourceID field.
-func (o *ResourceResponse) SetResourceID(v string) {
-	o.ResourceID = &v
 }
 
 // GetID returns the ID field value if set, zero value otherwise.
@@ -419,6 +419,12 @@ func (o *ResourceResponse) SetResourceType(v TypeResource) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o ResourceResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
+	if o.ResourceID != nil {
+		toSerialize["resource_id"] = o.ResourceID
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
+	}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
 	}
@@ -427,12 +433,6 @@ func (o ResourceResponse) MarshalJSON() ([]byte, error) {
 	}
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
-	if o.ResourceID != nil {
-		toSerialize["resource_id"] = o.ResourceID
 	}
 	if o.ID != nil {
 		toSerialize["id"] = o.ID
@@ -469,11 +469,11 @@ func (o *ResourceResponse) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		delete(additionalProperties, "resource_id")
+		delete(additionalProperties, "name")
 		delete(additionalProperties, "created_at")
 		delete(additionalProperties, "deleted_at")
 		delete(additionalProperties, "updated_at")
-		delete(additionalProperties, "name")
-		delete(additionalProperties, "resource_id")
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "href")
 		delete(additionalProperties, "service_id")

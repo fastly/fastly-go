@@ -17,36 +17,34 @@ import (
 	"encoding/json"
 )
 
-// GetStoresResponseMeta Meta for the pagination.
-type GetStoresResponseMeta struct {
-	// Cursor for the next page.
+// InlineResponse2003Meta struct for InlineResponse2003Meta
+type InlineResponse2003Meta struct {
 	NextCursor *string `json:"next_cursor,omitempty"`
-	// Entries returned.
 	Limit *int32 `json:"limit,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _GetStoresResponseMeta GetStoresResponseMeta
+type _InlineResponse2003Meta InlineResponse2003Meta
 
-// NewGetStoresResponseMeta instantiates a new GetStoresResponseMeta object
+// NewInlineResponse2003Meta instantiates a new InlineResponse2003Meta object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGetStoresResponseMeta() *GetStoresResponseMeta {
-	this := GetStoresResponseMeta{}
+func NewInlineResponse2003Meta() *InlineResponse2003Meta {
+	this := InlineResponse2003Meta{}
 	return &this
 }
 
-// NewGetStoresResponseMetaWithDefaults instantiates a new GetStoresResponseMeta object
+// NewInlineResponse2003MetaWithDefaults instantiates a new InlineResponse2003Meta object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewGetStoresResponseMetaWithDefaults() *GetStoresResponseMeta {
-	this := GetStoresResponseMeta{}
+func NewInlineResponse2003MetaWithDefaults() *InlineResponse2003Meta {
+	this := InlineResponse2003Meta{}
 	return &this
 }
 
 // GetNextCursor returns the NextCursor field value if set, zero value otherwise.
-func (o *GetStoresResponseMeta) GetNextCursor() string {
+func (o *InlineResponse2003Meta) GetNextCursor() string {
 	if o == nil || o.NextCursor == nil {
 		var ret string
 		return ret
@@ -56,7 +54,7 @@ func (o *GetStoresResponseMeta) GetNextCursor() string {
 
 // GetNextCursorOk returns a tuple with the NextCursor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetStoresResponseMeta) GetNextCursorOk() (*string, bool) {
+func (o *InlineResponse2003Meta) GetNextCursorOk() (*string, bool) {
 	if o == nil || o.NextCursor == nil {
 		return nil, false
 	}
@@ -64,7 +62,7 @@ func (o *GetStoresResponseMeta) GetNextCursorOk() (*string, bool) {
 }
 
 // HasNextCursor returns a boolean if a field has been set.
-func (o *GetStoresResponseMeta) HasNextCursor() bool {
+func (o *InlineResponse2003Meta) HasNextCursor() bool {
 	if o != nil && o.NextCursor != nil {
 		return true
 	}
@@ -73,12 +71,12 @@ func (o *GetStoresResponseMeta) HasNextCursor() bool {
 }
 
 // SetNextCursor gets a reference to the given string and assigns it to the NextCursor field.
-func (o *GetStoresResponseMeta) SetNextCursor(v string) {
+func (o *InlineResponse2003Meta) SetNextCursor(v string) {
 	o.NextCursor = &v
 }
 
 // GetLimit returns the Limit field value if set, zero value otherwise.
-func (o *GetStoresResponseMeta) GetLimit() int32 {
+func (o *InlineResponse2003Meta) GetLimit() int32 {
 	if o == nil || o.Limit == nil {
 		var ret int32
 		return ret
@@ -88,7 +86,7 @@ func (o *GetStoresResponseMeta) GetLimit() int32 {
 
 // GetLimitOk returns a tuple with the Limit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GetStoresResponseMeta) GetLimitOk() (*int32, bool) {
+func (o *InlineResponse2003Meta) GetLimitOk() (*int32, bool) {
 	if o == nil || o.Limit == nil {
 		return nil, false
 	}
@@ -96,7 +94,7 @@ func (o *GetStoresResponseMeta) GetLimitOk() (*int32, bool) {
 }
 
 // HasLimit returns a boolean if a field has been set.
-func (o *GetStoresResponseMeta) HasLimit() bool {
+func (o *InlineResponse2003Meta) HasLimit() bool {
 	if o != nil && o.Limit != nil {
 		return true
 	}
@@ -105,13 +103,13 @@ func (o *GetStoresResponseMeta) HasLimit() bool {
 }
 
 // SetLimit gets a reference to the given int32 and assigns it to the Limit field.
-func (o *GetStoresResponseMeta) SetLimit(v int32) {
+func (o *InlineResponse2003Meta) SetLimit(v int32) {
 	o.Limit = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o GetStoresResponseMeta) MarshalJSON() ([]byte, error) {
+func (o InlineResponse2003Meta) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.NextCursor != nil {
 		toSerialize["next_cursor"] = o.NextCursor
@@ -129,11 +127,11 @@ func (o GetStoresResponseMeta) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *GetStoresResponseMeta) UnmarshalJSON(bytes []byte) (err error) {
-	varGetStoresResponseMeta := _GetStoresResponseMeta{}
+func (o *InlineResponse2003Meta) UnmarshalJSON(bytes []byte) (err error) {
+	varInlineResponse2003Meta := _InlineResponse2003Meta{}
 
-	if err = json.Unmarshal(bytes, &varGetStoresResponseMeta); err == nil {
-		*o = GetStoresResponseMeta(varGetStoresResponseMeta)
+	if err = json.Unmarshal(bytes, &varInlineResponse2003Meta); err == nil {
+		*o = InlineResponse2003Meta(varInlineResponse2003Meta)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -147,48 +145,48 @@ func (o *GetStoresResponseMeta) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableGetStoresResponseMeta is a helper abstraction for handling nullable getstoresresponsemeta types. 
-type NullableGetStoresResponseMeta struct {
-	value *GetStoresResponseMeta
+// NullableInlineResponse2003Meta is a helper abstraction for handling nullable inlineresponse2003meta types. 
+type NullableInlineResponse2003Meta struct {
+	value *InlineResponse2003Meta
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableGetStoresResponseMeta) Get() *GetStoresResponseMeta {
+func (v NullableInlineResponse2003Meta) Get() *InlineResponse2003Meta {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableGetStoresResponseMeta) Set(val *GetStoresResponseMeta) {
+func (v *NullableInlineResponse2003Meta) Set(val *InlineResponse2003Meta) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableGetStoresResponseMeta) IsSet() bool {
+func (v NullableInlineResponse2003Meta) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableGetStoresResponseMeta) Unset() {
+func (v *NullableInlineResponse2003Meta) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableGetStoresResponseMeta returns a pointer to a new instance of NullableGetStoresResponseMeta.
-func NewNullableGetStoresResponseMeta(val *GetStoresResponseMeta) *NullableGetStoresResponseMeta {
-	return &NullableGetStoresResponseMeta{value: val, isSet: true}
+// NewNullableInlineResponse2003Meta returns a pointer to a new instance of NullableInlineResponse2003Meta.
+func NewNullableInlineResponse2003Meta(val *InlineResponse2003Meta) *NullableInlineResponse2003Meta {
+	return &NullableInlineResponse2003Meta{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableGetStoresResponseMeta) MarshalJSON() ([]byte, error) {
+func (v NullableInlineResponse2003Meta) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableGetStoresResponseMeta) UnmarshalJSON(src []byte) error {
+func (v *NullableInlineResponse2003Meta) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
