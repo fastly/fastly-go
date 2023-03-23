@@ -23,3 +23,5 @@ jobs:
           name: ${{ github.ref_name }}
         env:
           GITHUB_REPOSITORY: fastly/fastly-go
+      - name: Force quicker pkg.go.dev indexing
+        run: curl 'https://proxy.golang.org/github.com/fastly/fastly-go/@v/${{ github.ref_name }}.info'
