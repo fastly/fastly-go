@@ -443,6 +443,18 @@ type RealtimeMeasurements struct {
 	FanoutBerespBodyBytes *int32 `json:"fanout_beresp_body_bytes,omitempty"`
 	// Total duration of Fanout connections with end users.
 	FanoutConnTimeMs *int32 `json:"fanout_conn_time_ms,omitempty"`
+	// For HTTP/2, the number of connections the limit-streams action was applied to. The limit-streams action caps the allowed number of concurrent streams in a connection.
+	DdosActionLimitStreamsConnections *int32 `json:"ddos_action_limit_streams_connections,omitempty"`
+	// For HTTP/2, the number of requests made on a connection for which the limit-streams action was taken. The limit-streams action caps the allowed number of concurrent streams in a connection.
+	DdosActionLimitStreamsRequests *int32 `json:"ddos_action_limit_streams_requests,omitempty"`
+	// The number of times the tarpit-accept action was taken. The tarpit-accept action adds a delay when accepting future connections.
+	DdosActionTarpitAccept *int32 `json:"ddos_action_tarpit_accept,omitempty"`
+	// The number of times the tarpit action was taken. The tarpit action delays writing the response to the client.
+	DdosActionTarpit *int32 `json:"ddos_action_tarpit,omitempty"`
+	// The number of times the close action was taken. The close action aborts the connection as soon as possible. The close action takes effect either right after accept, right after the client hello, or right after the response was sent.
+	DdosActionClose *int32 `json:"ddos_action_close,omitempty"`
+	// The number of times the blackhole action was taken. The blackhole action quietly closes a TCP connection without sending a reset. The blackhole action quietly closes a TCP connection without notifying its peer (all TCP state is dropped).
+	DdosActionBlackhole *int32 `json:"ddos_action_blackhole,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -7223,6 +7235,198 @@ func (o *RealtimeMeasurements) SetFanoutConnTimeMs(v int32) {
 	o.FanoutConnTimeMs = &v
 }
 
+// GetDdosActionLimitStreamsConnections returns the DdosActionLimitStreamsConnections field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetDdosActionLimitStreamsConnections() int32 {
+	if o == nil || o.DdosActionLimitStreamsConnections == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosActionLimitStreamsConnections
+}
+
+// GetDdosActionLimitStreamsConnectionsOk returns a tuple with the DdosActionLimitStreamsConnections field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetDdosActionLimitStreamsConnectionsOk() (*int32, bool) {
+	if o == nil || o.DdosActionLimitStreamsConnections == nil {
+		return nil, false
+	}
+	return o.DdosActionLimitStreamsConnections, true
+}
+
+// HasDdosActionLimitStreamsConnections returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasDdosActionLimitStreamsConnections() bool {
+	if o != nil && o.DdosActionLimitStreamsConnections != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosActionLimitStreamsConnections gets a reference to the given int32 and assigns it to the DdosActionLimitStreamsConnections field.
+func (o *RealtimeMeasurements) SetDdosActionLimitStreamsConnections(v int32) {
+	o.DdosActionLimitStreamsConnections = &v
+}
+
+// GetDdosActionLimitStreamsRequests returns the DdosActionLimitStreamsRequests field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetDdosActionLimitStreamsRequests() int32 {
+	if o == nil || o.DdosActionLimitStreamsRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosActionLimitStreamsRequests
+}
+
+// GetDdosActionLimitStreamsRequestsOk returns a tuple with the DdosActionLimitStreamsRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetDdosActionLimitStreamsRequestsOk() (*int32, bool) {
+	if o == nil || o.DdosActionLimitStreamsRequests == nil {
+		return nil, false
+	}
+	return o.DdosActionLimitStreamsRequests, true
+}
+
+// HasDdosActionLimitStreamsRequests returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasDdosActionLimitStreamsRequests() bool {
+	if o != nil && o.DdosActionLimitStreamsRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosActionLimitStreamsRequests gets a reference to the given int32 and assigns it to the DdosActionLimitStreamsRequests field.
+func (o *RealtimeMeasurements) SetDdosActionLimitStreamsRequests(v int32) {
+	o.DdosActionLimitStreamsRequests = &v
+}
+
+// GetDdosActionTarpitAccept returns the DdosActionTarpitAccept field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetDdosActionTarpitAccept() int32 {
+	if o == nil || o.DdosActionTarpitAccept == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosActionTarpitAccept
+}
+
+// GetDdosActionTarpitAcceptOk returns a tuple with the DdosActionTarpitAccept field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetDdosActionTarpitAcceptOk() (*int32, bool) {
+	if o == nil || o.DdosActionTarpitAccept == nil {
+		return nil, false
+	}
+	return o.DdosActionTarpitAccept, true
+}
+
+// HasDdosActionTarpitAccept returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasDdosActionTarpitAccept() bool {
+	if o != nil && o.DdosActionTarpitAccept != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosActionTarpitAccept gets a reference to the given int32 and assigns it to the DdosActionTarpitAccept field.
+func (o *RealtimeMeasurements) SetDdosActionTarpitAccept(v int32) {
+	o.DdosActionTarpitAccept = &v
+}
+
+// GetDdosActionTarpit returns the DdosActionTarpit field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetDdosActionTarpit() int32 {
+	if o == nil || o.DdosActionTarpit == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosActionTarpit
+}
+
+// GetDdosActionTarpitOk returns a tuple with the DdosActionTarpit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetDdosActionTarpitOk() (*int32, bool) {
+	if o == nil || o.DdosActionTarpit == nil {
+		return nil, false
+	}
+	return o.DdosActionTarpit, true
+}
+
+// HasDdosActionTarpit returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasDdosActionTarpit() bool {
+	if o != nil && o.DdosActionTarpit != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosActionTarpit gets a reference to the given int32 and assigns it to the DdosActionTarpit field.
+func (o *RealtimeMeasurements) SetDdosActionTarpit(v int32) {
+	o.DdosActionTarpit = &v
+}
+
+// GetDdosActionClose returns the DdosActionClose field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetDdosActionClose() int32 {
+	if o == nil || o.DdosActionClose == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosActionClose
+}
+
+// GetDdosActionCloseOk returns a tuple with the DdosActionClose field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetDdosActionCloseOk() (*int32, bool) {
+	if o == nil || o.DdosActionClose == nil {
+		return nil, false
+	}
+	return o.DdosActionClose, true
+}
+
+// HasDdosActionClose returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasDdosActionClose() bool {
+	if o != nil && o.DdosActionClose != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosActionClose gets a reference to the given int32 and assigns it to the DdosActionClose field.
+func (o *RealtimeMeasurements) SetDdosActionClose(v int32) {
+	o.DdosActionClose = &v
+}
+
+// GetDdosActionBlackhole returns the DdosActionBlackhole field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetDdosActionBlackhole() int32 {
+	if o == nil || o.DdosActionBlackhole == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosActionBlackhole
+}
+
+// GetDdosActionBlackholeOk returns a tuple with the DdosActionBlackhole field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetDdosActionBlackholeOk() (*int32, bool) {
+	if o == nil || o.DdosActionBlackhole == nil {
+		return nil, false
+	}
+	return o.DdosActionBlackhole, true
+}
+
+// HasDdosActionBlackhole returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasDdosActionBlackhole() bool {
+	if o != nil && o.DdosActionBlackhole != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosActionBlackhole gets a reference to the given int32 and assigns it to the DdosActionBlackhole field.
+func (o *RealtimeMeasurements) SetDdosActionBlackhole(v int32) {
+	o.DdosActionBlackhole = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o RealtimeMeasurements) MarshalJSON() ([]byte, error) {
@@ -7860,6 +8064,24 @@ func (o RealtimeMeasurements) MarshalJSON() ([]byte, error) {
 	if o.FanoutConnTimeMs != nil {
 		toSerialize["fanout_conn_time_ms"] = o.FanoutConnTimeMs
 	}
+	if o.DdosActionLimitStreamsConnections != nil {
+		toSerialize["ddos_action_limit_streams_connections"] = o.DdosActionLimitStreamsConnections
+	}
+	if o.DdosActionLimitStreamsRequests != nil {
+		toSerialize["ddos_action_limit_streams_requests"] = o.DdosActionLimitStreamsRequests
+	}
+	if o.DdosActionTarpitAccept != nil {
+		toSerialize["ddos_action_tarpit_accept"] = o.DdosActionTarpitAccept
+	}
+	if o.DdosActionTarpit != nil {
+		toSerialize["ddos_action_tarpit"] = o.DdosActionTarpit
+	}
+	if o.DdosActionClose != nil {
+		toSerialize["ddos_action_close"] = o.DdosActionClose
+	}
+	if o.DdosActionBlackhole != nil {
+		toSerialize["ddos_action_blackhole"] = o.DdosActionBlackhole
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -8091,6 +8313,12 @@ func (o *RealtimeMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "fanout_beresp_header_bytes")
 		delete(additionalProperties, "fanout_beresp_body_bytes")
 		delete(additionalProperties, "fanout_conn_time_ms")
+		delete(additionalProperties, "ddos_action_limit_streams_connections")
+		delete(additionalProperties, "ddos_action_limit_streams_requests")
+		delete(additionalProperties, "ddos_action_tarpit_accept")
+		delete(additionalProperties, "ddos_action_tarpit")
+		delete(additionalProperties, "ddos_action_close")
+		delete(additionalProperties, "ddos_action_blackhole")
 		o.AdditionalProperties = additionalProperties
 	}
 

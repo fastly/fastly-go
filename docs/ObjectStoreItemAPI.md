@@ -32,11 +32,12 @@ import (
 func main() {
     storeID := "storeId_example" // string | 
     keyName := "keyName_example" // string | 
+    force := true // bool |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObjectStoreItemAPI.DeleteKeyFromStore(ctx, storeID, keyName).Execute()
+    resp, r, err := apiClient.ObjectStoreItemAPI.DeleteKeyFromStore(ctx, storeID, keyName).Force(force).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreItemAPI.DeleteKeyFromStore`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -60,7 +61,7 @@ Other parameters are passed through a pointer to a apiDeleteKeyFromStoreRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
+ **force** | **bool** |  | 
 
 ### Return type
 
@@ -100,11 +101,12 @@ func main() {
     storeID := "storeId_example" // string | 
     cursor := "cursor_example" // string |  (optional)
     limit := int32(56) // int32 |  (optional) (default to 100)
+    prefix := "prefix_example" // string |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObjectStoreItemAPI.GetKeys(ctx, storeID).Cursor(cursor).Limit(limit).Execute()
+    resp, r, err := apiClient.ObjectStoreItemAPI.GetKeys(ctx, storeID).Cursor(cursor).Limit(limit).Prefix(prefix).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreItemAPI.GetKeys`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -129,7 +131,7 @@ Other parameters are passed through a pointer to a apiGetKeysRequest struct via 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **string** |  |  **limit** | **int32** |  | [default to 100]
+ **cursor** | **string** |  |  **limit** | **int32** |  | [default to 100] **prefix** | **string** |  | 
 
 ### Return type
 
@@ -237,12 +239,19 @@ import (
 func main() {
     storeID := "storeId_example" // string | 
     keyName := "keyName_example" // string | 
+    ifGenerationMatch := int32(56) // int32 |  (optional)
+    timeToLiveSec := int32(56) // int32 |  (optional)
+    metadata := "metadata_example" // string |  (optional)
+    add := true // bool |  (optional)
+    append := true // bool |  (optional)
+    prepend := true // bool |  (optional)
+    backgroundFetch := true // bool |  (optional)
     body := os.NewFile(1234, "some_file") // *os.File |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObjectStoreItemAPI.SetValueForKey(ctx, storeID, keyName).Body(body).Execute()
+    resp, r, err := apiClient.ObjectStoreItemAPI.SetValueForKey(ctx, storeID, keyName).IfGenerationMatch(ifGenerationMatch).TimeToLiveSec(timeToLiveSec).Metadata(metadata).Add(add).Append(append).Prepend(prepend).BackgroundFetch(backgroundFetch).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreItemAPI.SetValueForKey`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -268,7 +277,7 @@ Other parameters are passed through a pointer to a apiSetValueForKeyRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | ***os.File** |  | 
+ **ifGenerationMatch** | **int32** |  |  **timeToLiveSec** | **int32** |  |  **metadata** | **string** |  |  **add** | **bool** |  |  **append** | **bool** |  |  **prepend** | **bool** |  |  **backgroundFetch** | **bool** |  |  **body** | ***os.File** |  | 
 
 ### Return type
 

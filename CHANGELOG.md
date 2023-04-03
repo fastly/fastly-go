@@ -1,5 +1,19 @@
 # Changelog
 
+## [v1.0.0-beta.5](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.5) (2023-04-03)
+
+**Enhancements:**
+
+- feat(object-store): add 'location' property to 'create_store'
+- feat(object-store): add 'force' property to 'delete_store'
+- feat(realtime): additional DDoS properties
+
+**Documentation:**
+
+- docs(acl-entries): document batch updating
+- docs(logentries): deprecation notice
+- docs(object-store): new properties for 'SetValueForKey'
+
 ## [v1.0.0-beta.4](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.4) (2023-03-22)
 
 **Bug fixes:**

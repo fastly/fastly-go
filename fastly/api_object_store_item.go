@@ -104,8 +104,14 @@ type APIDeleteKeyFromStoreRequest struct {
 	APIService ObjectStoreItemAPI
 	storeID string
 	keyName string
+	force *bool
 }
 
+// Force returns a pointer to a request.
+func (r *APIDeleteKeyFromStoreRequest) Force(force bool) *APIDeleteKeyFromStoreRequest {
+	r.force = &force
+	return r
+}
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteKeyFromStoreRequest) Execute() (*http.Response, error) {
@@ -152,6 +158,9 @@ func (a *ObjectStoreItemAPIService) DeleteKeyFromStoreExecute(r APIDeleteKeyFrom
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
+	if r.force != nil {
+		localVarQueryParams.Add("force", parameterToString(*r.force, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -232,6 +241,7 @@ type APIGetKeysRequest struct {
 	storeID string
 	cursor *string
 	limit *int32
+	prefix *string
 }
 
 // Cursor returns a pointer to a request.
@@ -242,6 +252,11 @@ func (r *APIGetKeysRequest) Cursor(cursor string) *APIGetKeysRequest {
 // Limit returns a pointer to a request.
 func (r *APIGetKeysRequest) Limit(limit int32) *APIGetKeysRequest {
 	r.limit = &limit
+	return r
+}
+// Prefix returns a pointer to a request.
+func (r *APIGetKeysRequest) Prefix(prefix string) *APIGetKeysRequest {
+	r.prefix = &prefix
 	return r
 }
 
@@ -294,6 +309,9 @@ func (a *ObjectStoreItemAPIService) GetKeysExecute(r APIGetKeysRequest) (*Inline
 	}
 	if r.limit != nil {
 		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	}
+	if r.prefix != nil {
+		localVarQueryParams.Add("prefix", parameterToString(*r.prefix, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -521,9 +539,51 @@ type APISetValueForKeyRequest struct {
 	APIService ObjectStoreItemAPI
 	storeID string
 	keyName string
+	ifGenerationMatch *int32
+	timeToLiveSec *int32
+	metadata *string
+	add *bool
+	append *bool
+	prepend *bool
+	backgroundFetch *bool
 	body **os.File
 }
 
+// IfGenerationMatch returns a pointer to a request.
+func (r *APISetValueForKeyRequest) IfGenerationMatch(ifGenerationMatch int32) *APISetValueForKeyRequest {
+	r.ifGenerationMatch = &ifGenerationMatch
+	return r
+}
+// TimeToLiveSec returns a pointer to a request.
+func (r *APISetValueForKeyRequest) TimeToLiveSec(timeToLiveSec int32) *APISetValueForKeyRequest {
+	r.timeToLiveSec = &timeToLiveSec
+	return r
+}
+// Metadata returns a pointer to a request.
+func (r *APISetValueForKeyRequest) Metadata(metadata string) *APISetValueForKeyRequest {
+	r.metadata = &metadata
+	return r
+}
+// Add returns a pointer to a request.
+func (r *APISetValueForKeyRequest) Add(add bool) *APISetValueForKeyRequest {
+	r.add = &add
+	return r
+}
+// Append returns a pointer to a request.
+func (r *APISetValueForKeyRequest) Append(append bool) *APISetValueForKeyRequest {
+	r.append = &append
+	return r
+}
+// Prepend returns a pointer to a request.
+func (r *APISetValueForKeyRequest) Prepend(prepend bool) *APISetValueForKeyRequest {
+	r.prepend = &prepend
+	return r
+}
+// BackgroundFetch returns a pointer to a request.
+func (r *APISetValueForKeyRequest) BackgroundFetch(backgroundFetch bool) *APISetValueForKeyRequest {
+	r.backgroundFetch = &backgroundFetch
+	return r
+}
 // Body returns a pointer to a request.
 func (r *APISetValueForKeyRequest) Body(body *os.File) *APISetValueForKeyRequest {
 	r.body = &body
@@ -577,6 +637,18 @@ func (a *ObjectStoreItemAPIService) SetValueForKeyExecute(r APISetValueForKeyReq
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
+	if r.add != nil {
+		localVarQueryParams.Add("add", parameterToString(*r.add, ""))
+	}
+	if r.append != nil {
+		localVarQueryParams.Add("append", parameterToString(*r.append, ""))
+	}
+	if r.prepend != nil {
+		localVarQueryParams.Add("prepend", parameterToString(*r.prepend, ""))
+	}
+	if r.backgroundFetch != nil {
+		localVarQueryParams.Add("background_fetch", parameterToString(*r.backgroundFetch, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/octet-stream"}
 
@@ -593,6 +665,15 @@ func (a *ObjectStoreItemAPIService) SetValueForKeyExecute(r APISetValueForKeyReq
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ifGenerationMatch != nil {
+		localVarHeaderParams["if-generation-match"] = parameterToString(*r.ifGenerationMatch, "")
+	}
+	if r.timeToLiveSec != nil {
+		localVarHeaderParams["time_to_live_sec"] = parameterToString(*r.timeToLiveSec, "")
+	}
+	if r.metadata != nil {
+		localVarHeaderParams["metadata"] = parameterToString(*r.metadata, "")
 	}
 	// body params
 	localVarPostBody = r.body

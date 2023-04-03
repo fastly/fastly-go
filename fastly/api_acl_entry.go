@@ -34,7 +34,7 @@ type ACLEntryAPI interface {
 	/*
 	BulkUpdateACLEntries Update multiple ACL entries
 
-	Update multiple ACL entries on the same ACL.
+	Update multiple ACL entries on the same ACL. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 entries. [Contact support](https://support.fastly.com/) to discuss raising this limit.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param serviceID Alphanumeric string identifying the service.
@@ -157,7 +157,7 @@ func (r APIBulkUpdateACLEntriesRequest) Execute() (*InlineResponse200, *http.Res
 /*
 BulkUpdateACLEntries Update multiple ACL entries
 
-Update multiple ACL entries on the same ACL.
+Update multiple ACL entries on the same ACL. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 entries. [Contact support](https://support.fastly.com/) to discuss raising this limit.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceID Alphanumeric string identifying the service.

@@ -213,6 +213,12 @@ Name | Type | Description | Notes
 **FanoutBerespHeaderBytes** | Pointer to **int32** | Total header bytes received from backends over Fanout connections. | [optional] 
 **FanoutBerespBodyBytes** | Pointer to **int32** | Total body or message content bytes received from backends over Fanout connections. | [optional] 
 **FanoutConnTimeMs** | Pointer to **int32** | Total duration of Fanout connections with end users. | [optional] 
+**DdosActionLimitStreamsConnections** | Pointer to **int32** | For HTTP/2, the number of connections the limit-streams action was applied to. The limit-streams action caps the allowed number of concurrent streams in a connection. | [optional] 
+**DdosActionLimitStreamsRequests** | Pointer to **int32** | For HTTP/2, the number of requests made on a connection for which the limit-streams action was taken. The limit-streams action caps the allowed number of concurrent streams in a connection. | [optional] 
+**DdosActionTarpitAccept** | Pointer to **int32** | The number of times the tarpit-accept action was taken. The tarpit-accept action adds a delay when accepting future connections. | [optional] 
+**DdosActionTarpit** | Pointer to **int32** | The number of times the tarpit action was taken. The tarpit action delays writing the response to the client. | [optional] 
+**DdosActionClose** | Pointer to **int32** | The number of times the close action was taken. The close action aborts the connection as soon as possible. The close action takes effect either right after accept, right after the client hello, or right after the response was sent. | [optional] 
+**DdosActionBlackhole** | Pointer to **int32** | The number of times the blackhole action was taken. The blackhole action quietly closes a TCP connection without sending a reset. The blackhole action quietly closes a TCP connection without notifying its peer (all TCP state is dropped). | [optional] 
 
 ## Methods
 
@@ -5467,6 +5473,156 @@ SetFanoutConnTimeMs sets FanoutConnTimeMs field to given value.
 `func (o *Results) HasFanoutConnTimeMs() bool`
 
 HasFanoutConnTimeMs returns a boolean if a field has been set.
+
+### GetDdosActionLimitStreamsConnections
+
+`func (o *Results) GetDdosActionLimitStreamsConnections() int32`
+
+GetDdosActionLimitStreamsConnections returns the DdosActionLimitStreamsConnections field if non-nil, zero value otherwise.
+
+### GetDdosActionLimitStreamsConnectionsOk
+
+`func (o *Results) GetDdosActionLimitStreamsConnectionsOk() (*int32, bool)`
+
+GetDdosActionLimitStreamsConnectionsOk returns a tuple with the DdosActionLimitStreamsConnections field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosActionLimitStreamsConnections
+
+`func (o *Results) SetDdosActionLimitStreamsConnections(v int32)`
+
+SetDdosActionLimitStreamsConnections sets DdosActionLimitStreamsConnections field to given value.
+
+### HasDdosActionLimitStreamsConnections
+
+`func (o *Results) HasDdosActionLimitStreamsConnections() bool`
+
+HasDdosActionLimitStreamsConnections returns a boolean if a field has been set.
+
+### GetDdosActionLimitStreamsRequests
+
+`func (o *Results) GetDdosActionLimitStreamsRequests() int32`
+
+GetDdosActionLimitStreamsRequests returns the DdosActionLimitStreamsRequests field if non-nil, zero value otherwise.
+
+### GetDdosActionLimitStreamsRequestsOk
+
+`func (o *Results) GetDdosActionLimitStreamsRequestsOk() (*int32, bool)`
+
+GetDdosActionLimitStreamsRequestsOk returns a tuple with the DdosActionLimitStreamsRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosActionLimitStreamsRequests
+
+`func (o *Results) SetDdosActionLimitStreamsRequests(v int32)`
+
+SetDdosActionLimitStreamsRequests sets DdosActionLimitStreamsRequests field to given value.
+
+### HasDdosActionLimitStreamsRequests
+
+`func (o *Results) HasDdosActionLimitStreamsRequests() bool`
+
+HasDdosActionLimitStreamsRequests returns a boolean if a field has been set.
+
+### GetDdosActionTarpitAccept
+
+`func (o *Results) GetDdosActionTarpitAccept() int32`
+
+GetDdosActionTarpitAccept returns the DdosActionTarpitAccept field if non-nil, zero value otherwise.
+
+### GetDdosActionTarpitAcceptOk
+
+`func (o *Results) GetDdosActionTarpitAcceptOk() (*int32, bool)`
+
+GetDdosActionTarpitAcceptOk returns a tuple with the DdosActionTarpitAccept field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosActionTarpitAccept
+
+`func (o *Results) SetDdosActionTarpitAccept(v int32)`
+
+SetDdosActionTarpitAccept sets DdosActionTarpitAccept field to given value.
+
+### HasDdosActionTarpitAccept
+
+`func (o *Results) HasDdosActionTarpitAccept() bool`
+
+HasDdosActionTarpitAccept returns a boolean if a field has been set.
+
+### GetDdosActionTarpit
+
+`func (o *Results) GetDdosActionTarpit() int32`
+
+GetDdosActionTarpit returns the DdosActionTarpit field if non-nil, zero value otherwise.
+
+### GetDdosActionTarpitOk
+
+`func (o *Results) GetDdosActionTarpitOk() (*int32, bool)`
+
+GetDdosActionTarpitOk returns a tuple with the DdosActionTarpit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosActionTarpit
+
+`func (o *Results) SetDdosActionTarpit(v int32)`
+
+SetDdosActionTarpit sets DdosActionTarpit field to given value.
+
+### HasDdosActionTarpit
+
+`func (o *Results) HasDdosActionTarpit() bool`
+
+HasDdosActionTarpit returns a boolean if a field has been set.
+
+### GetDdosActionClose
+
+`func (o *Results) GetDdosActionClose() int32`
+
+GetDdosActionClose returns the DdosActionClose field if non-nil, zero value otherwise.
+
+### GetDdosActionCloseOk
+
+`func (o *Results) GetDdosActionCloseOk() (*int32, bool)`
+
+GetDdosActionCloseOk returns a tuple with the DdosActionClose field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosActionClose
+
+`func (o *Results) SetDdosActionClose(v int32)`
+
+SetDdosActionClose sets DdosActionClose field to given value.
+
+### HasDdosActionClose
+
+`func (o *Results) HasDdosActionClose() bool`
+
+HasDdosActionClose returns a boolean if a field has been set.
+
+### GetDdosActionBlackhole
+
+`func (o *Results) GetDdosActionBlackhole() int32`
+
+GetDdosActionBlackhole returns the DdosActionBlackhole field if non-nil, zero value otherwise.
+
+### GetDdosActionBlackholeOk
+
+`func (o *Results) GetDdosActionBlackholeOk() (*int32, bool)`
+
+GetDdosActionBlackholeOk returns a tuple with the DdosActionBlackhole field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosActionBlackhole
+
+`func (o *Results) SetDdosActionBlackhole(v int32)`
+
+SetDdosActionBlackhole sets DdosActionBlackhole field to given value.
+
+### HasDdosActionBlackhole
+
+`func (o *Results) HasDdosActionBlackhole() bool`
+
+HasDdosActionBlackhole returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

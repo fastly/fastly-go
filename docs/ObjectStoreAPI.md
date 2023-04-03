@@ -30,12 +30,13 @@ import (
 )
 
 func main() {
+    location := "location_example" // string |  (optional)
     store := *openapiclient.NewStore() // Store |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObjectStoreAPI.CreateStore(ctx).Store(store).Execute()
+    resp, r, err := apiClient.ObjectStoreAPI.CreateStore(ctx).Location(location).Store(store).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreAPI.CreateStore`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -56,7 +57,7 @@ Other parameters are passed through a pointer to a apiCreateStoreRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **store** | [**Store**](Store.md) |  | 
+ **location** | **string** |  |  **store** | [**Store**](Store.md) |  | 
 
 ### Return type
 
@@ -94,11 +95,12 @@ import (
 
 func main() {
     storeID := "storeId_example" // string | 
+    force := true // bool |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObjectStoreAPI.DeleteStore(ctx, storeID).Execute()
+    resp, r, err := apiClient.ObjectStoreAPI.DeleteStore(ctx, storeID).Force(force).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreAPI.DeleteStore`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -121,7 +123,7 @@ Other parameters are passed through a pointer to a apiDeleteStoreRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
+ **force** | **bool** |  | 
 
 ### Return type
 

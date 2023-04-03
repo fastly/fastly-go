@@ -96,9 +96,15 @@ type ObjectStoreAPIService service
 type APICreateStoreRequest struct {
 	ctx context.Context
 	APIService ObjectStoreAPI
+	location *string
 	store *Store
 }
 
+// Location returns a pointer to a request.
+func (r *APICreateStoreRequest) Location(location string) *APICreateStoreRequest {
+	r.location = &location
+	return r
+}
 // Store returns a pointer to a request.
 func (r *APICreateStoreRequest) Store(store Store) *APICreateStoreRequest {
 	r.store = &store
@@ -146,6 +152,9 @@ func (a *ObjectStoreAPIService) CreateStoreExecute(r APICreateStoreRequest) (*St
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
+	if r.location != nil {
+		localVarQueryParams.Add("location", parameterToString(*r.location, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json"}
 
@@ -235,8 +244,14 @@ type APIDeleteStoreRequest struct {
 	ctx context.Context
 	APIService ObjectStoreAPI
 	storeID string
+	force *bool
 }
 
+// Force returns a pointer to a request.
+func (r *APIDeleteStoreRequest) Force(force bool) *APIDeleteStoreRequest {
+	r.force = &force
+	return r
+}
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteStoreRequest) Execute() (*http.Response, error) {
@@ -296,6 +311,9 @@ func (a *ObjectStoreAPIService) DeleteStoreExecute(r APIDeleteStoreRequest) (*ht
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.force != nil {
+		localVarHeaderParams["force"] = parameterToString(*r.force, "")
 	}
 	if r.ctx != nil {
 		// API Key Authentication

@@ -40,11 +40,14 @@ type LoggingLogentriesAPI interface {
 	 @param serviceID Alphanumeric string identifying the service.
 	 @param versionID Integer identifying a service version.
 	 @return APICreateLogLogentriesRequest
+
+	Deprecated
 	*/
 	CreateLogLogentries(ctx context.Context, serviceID string, versionID int32) APICreateLogLogentriesRequest
 
 	// CreateLogLogentriesExecute executes the request
 	//  @return LoggingLogentriesResponse
+	// Deprecated
 	CreateLogLogentriesExecute(r APICreateLogLogentriesRequest) (*LoggingLogentriesResponse, *http.Response, error)
 
 	/*
@@ -57,11 +60,14 @@ type LoggingLogentriesAPI interface {
 	 @param versionID Integer identifying a service version.
 	 @param loggingLogentriesName The name for the real-time logging configuration.
 	 @return APIDeleteLogLogentriesRequest
+
+	Deprecated
 	*/
 	DeleteLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIDeleteLogLogentriesRequest
 
 	// DeleteLogLogentriesExecute executes the request
 	//  @return InlineResponse200
+	// Deprecated
 	DeleteLogLogentriesExecute(r APIDeleteLogLogentriesRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
@@ -74,11 +80,14 @@ type LoggingLogentriesAPI interface {
 	 @param versionID Integer identifying a service version.
 	 @param loggingLogentriesName The name for the real-time logging configuration.
 	 @return APIGetLogLogentriesRequest
+
+	Deprecated
 	*/
 	GetLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIGetLogLogentriesRequest
 
 	// GetLogLogentriesExecute executes the request
 	//  @return LoggingLogentriesResponse
+	// Deprecated
 	GetLogLogentriesExecute(r APIGetLogLogentriesRequest) (*LoggingLogentriesResponse, *http.Response, error)
 
 	/*
@@ -90,11 +99,14 @@ type LoggingLogentriesAPI interface {
 	 @param serviceID Alphanumeric string identifying the service.
 	 @param versionID Integer identifying a service version.
 	 @return APIListLogLogentriesRequest
+
+	Deprecated
 	*/
 	ListLogLogentries(ctx context.Context, serviceID string, versionID int32) APIListLogLogentriesRequest
 
 	// ListLogLogentriesExecute executes the request
 	//  @return []LoggingLogentriesResponse
+	// Deprecated
 	ListLogLogentriesExecute(r APIListLogLogentriesRequest) ([]LoggingLogentriesResponse, *http.Response, error)
 
 	/*
@@ -107,11 +119,14 @@ type LoggingLogentriesAPI interface {
 	 @param versionID Integer identifying a service version.
 	 @param loggingLogentriesName The name for the real-time logging configuration.
 	 @return APIUpdateLogLogentriesRequest
+
+	Deprecated
 	*/
 	UpdateLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIUpdateLogLogentriesRequest
 
 	// UpdateLogLogentriesExecute executes the request
 	//  @return LoggingLogentriesResponse
+	// Deprecated
 	UpdateLogLogentriesExecute(r APIUpdateLogLogentriesRequest) (*LoggingLogentriesResponse, *http.Response, error)
 }
 
@@ -195,6 +210,8 @@ Create a Logentry for a particular service and version.
  @param serviceID Alphanumeric string identifying the service.
  @param versionID Integer identifying a service version.
  @return APICreateLogLogentriesRequest
+
+Deprecated
 */
 func (a *LoggingLogentriesAPIService) CreateLogLogentries(ctx context.Context, serviceID string, versionID int32) APICreateLogLogentriesRequest {
 	return APICreateLogLogentriesRequest{
@@ -207,6 +224,7 @@ func (a *LoggingLogentriesAPIService) CreateLogLogentries(ctx context.Context, s
 
 // CreateLogLogentriesExecute executes the request
 //  @return LoggingLogentriesResponse
+// Deprecated
 func (a *LoggingLogentriesAPIService) CreateLogLogentriesExecute(r APICreateLogLogentriesRequest) (*LoggingLogentriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
@@ -362,6 +380,8 @@ Delete the Logentry for a particular service and version.
  @param versionID Integer identifying a service version.
  @param loggingLogentriesName The name for the real-time logging configuration.
  @return APIDeleteLogLogentriesRequest
+
+Deprecated
 */
 func (a *LoggingLogentriesAPIService) DeleteLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIDeleteLogLogentriesRequest {
 	return APIDeleteLogLogentriesRequest{
@@ -375,6 +395,7 @@ func (a *LoggingLogentriesAPIService) DeleteLogLogentries(ctx context.Context, s
 
 // DeleteLogLogentriesExecute executes the request
 //  @return InlineResponse200
+// Deprecated
 func (a *LoggingLogentriesAPIService) DeleteLogLogentriesExecute(r APIDeleteLogLogentriesRequest) (*InlineResponse200, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
@@ -504,6 +525,8 @@ Get the Logentry for a particular service and version.
  @param versionID Integer identifying a service version.
  @param loggingLogentriesName The name for the real-time logging configuration.
  @return APIGetLogLogentriesRequest
+
+Deprecated
 */
 func (a *LoggingLogentriesAPIService) GetLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIGetLogLogentriesRequest {
 	return APIGetLogLogentriesRequest{
@@ -517,6 +540,7 @@ func (a *LoggingLogentriesAPIService) GetLogLogentries(ctx context.Context, serv
 
 // GetLogLogentriesExecute executes the request
 //  @return LoggingLogentriesResponse
+// Deprecated
 func (a *LoggingLogentriesAPIService) GetLogLogentriesExecute(r APIGetLogLogentriesRequest) (*LoggingLogentriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -644,6 +668,8 @@ List all of the Logentries for a particular service and version.
  @param serviceID Alphanumeric string identifying the service.
  @param versionID Integer identifying a service version.
  @return APIListLogLogentriesRequest
+
+Deprecated
 */
 func (a *LoggingLogentriesAPIService) ListLogLogentries(ctx context.Context, serviceID string, versionID int32) APIListLogLogentriesRequest {
 	return APIListLogLogentriesRequest{
@@ -656,6 +682,7 @@ func (a *LoggingLogentriesAPIService) ListLogLogentries(ctx context.Context, ser
 
 // ListLogLogentriesExecute executes the request
 //  @return []LoggingLogentriesResponse
+// Deprecated
 func (a *LoggingLogentriesAPIService) ListLogLogentriesExecute(r APIListLogLogentriesRequest) ([]LoggingLogentriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
@@ -838,6 +865,8 @@ Update the Logentry for a particular service and version.
  @param versionID Integer identifying a service version.
  @param loggingLogentriesName The name for the real-time logging configuration.
  @return APIUpdateLogLogentriesRequest
+
+Deprecated
 */
 func (a *LoggingLogentriesAPIService) UpdateLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIUpdateLogLogentriesRequest {
 	return APIUpdateLogLogentriesRequest{
@@ -851,6 +880,7 @@ func (a *LoggingLogentriesAPIService) UpdateLogLogentries(ctx context.Context, s
 
 // UpdateLogLogentriesExecute executes the request
 //  @return LoggingLogentriesResponse
+// Deprecated
 func (a *LoggingLogentriesAPIService) UpdateLogLogentriesExecute(r APIUpdateLogLogentriesRequest) (*LoggingLogentriesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
