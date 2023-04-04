@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.0.0-beta.6](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.6) (2023-04-04)
+
+**Bug fixes:**
+
+- fix(purge): avoid PathEscape with x-allow-reserved
+
 ## [v1.0.0-beta.5](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.5) (2023-04-03)
 
 **Enhancements:**

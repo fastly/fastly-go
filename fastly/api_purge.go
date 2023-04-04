@@ -273,7 +273,7 @@ func (a *PurgeAPIService) PurgeSingleURLExecute(r APIPurgeSingleURLRequest) (*Pu
 	}
 
 	localVarPath := localBasePath + "/purge/{cached_url}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"cached_url"+"}", gourl.PathEscape(parameterToString(r.cachedURL, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"cached_url"+"}", parameterToString(r.cachedURL, ""))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
