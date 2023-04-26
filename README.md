@@ -12,7 +12,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go vv1.0.0-beta.6
+	github.com/fastly/fastly-go vv1.0.0-beta.7
 )
 ```
 
@@ -402,7 +402,6 @@ Class | Method | HTTP request | Description
 *TLSConfigurationsAPI* | [**GetTLSConfig**](docs/TlsConfigurationsAPI.md#gettlsconfig) | **GET** `/tls/configurations/{tls_configuration_id}` | Get a TLS configuration
 *TLSConfigurationsAPI* | [**ListTLSConfigs**](docs/TlsConfigurationsAPI.md#listtlsconfigs) | **GET** `/tls/configurations` | List TLS configurations
 *TLSConfigurationsAPI* | [**UpdateTLSConfig**](docs/TlsConfigurationsAPI.md#updatetlsconfig) | **PATCH** `/tls/configurations/{tls_configuration_id}` | Update a TLS configuration
-*TLSCsrsAPI* | [**CreateCsr**](docs/TlsCsrsAPI.md#createcsr) | **POST** `/tls/certificate_signing_requests` | Create CSR
 *TLSDomainsAPI* | [**ListTLSDomains**](docs/TlsDomainsAPI.md#listtlsdomains) | **GET** `/tls/domains` | List TLS domains
 *TLSPrivateKeysAPI* | [**CreateTLSKey**](docs/TlsPrivateKeysAPI.md#createtlskey) | **POST** `/tls/private_keys` | Create a TLS private key
 *TLSPrivateKeysAPI* | [**DeleteTLSKey**](docs/TlsPrivateKeysAPI.md#deletetlskey) | **DELETE** `/tls/private_keys/{tls_private_key_id}` | Delete a TLS private key

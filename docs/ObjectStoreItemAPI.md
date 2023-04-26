@@ -179,7 +179,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreItemAPI.GetValueForKey`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetValueForKey`: *os.File
+    // response from `GetValueForKey`: string
     fmt.Fprintf(os.Stdout, "Response from `ObjectStoreItemAPI.GetValueForKey`: %v\n", resp)
 }
 ```
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[***os.File**](*os.File.md)
+**string**
 
 ### Authorization
 
@@ -246,7 +246,7 @@ func main() {
     append := true // bool |  (optional)
     prepend := true // bool |  (optional)
     backgroundFetch := true // bool |  (optional)
-    body := os.NewFile(1234, "some_file") // *os.File |  (optional)
+    body := string(BYTE_ARRAY_DATA_HERE) // string |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -256,7 +256,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreItemAPI.SetValueForKey`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SetValueForKey`: *os.File
+    // response from `SetValueForKey`: string
     fmt.Fprintf(os.Stdout, "Response from `ObjectStoreItemAPI.SetValueForKey`: %v\n", resp)
 }
 ```
@@ -277,11 +277,11 @@ Other parameters are passed through a pointer to a apiSetValueForKeyRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ifGenerationMatch** | **int32** |  |  **timeToLiveSec** | **int32** |  |  **metadata** | **string** |  |  **add** | **bool** |  |  **append** | **bool** |  |  **prepend** | **bool** |  |  **backgroundFetch** | **bool** |  |  **body** | ***os.File** |  | 
+ **ifGenerationMatch** | **int32** |  |  **timeToLiveSec** | **int32** |  |  **metadata** | **string** |  |  **add** | **bool** |  |  **append** | **bool** |  |  **prepend** | **bool** |  |  **backgroundFetch** | **bool** |  |  **body** | **string** |  | 
 
 ### Return type
 
-[***os.File**](*os.File.md)
+**string**
 
 ### Authorization
 

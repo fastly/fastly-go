@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.0.0-beta.7](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.7) (2023-04-26)
+
+**Bug fixes:**
+
+- fix(object-store-item): use correct type for key value.
+- fix(tls-csrs): remove internal endpoint.
+
 ## [v1.0.0-beta.6](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.6) (2023-04-04)
 
 **Bug fixes:**

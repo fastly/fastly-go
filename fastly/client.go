@@ -228,8 +228,6 @@ type APIClient struct {
 
 	TLSConfigurationsAPI TLSConfigurationsAPI
 
-	TLSCsrsAPI TLSCsrsAPI
-
 	TLSDomainsAPI TLSDomainsAPI
 
 	TLSPrivateKeysAPI TLSPrivateKeysAPI
@@ -360,7 +358,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.TLSBulkCertificatesAPI = (*TLSBulkCertificatesAPIService)(&c.common)
 	c.TLSCertificatesAPI = (*TLSCertificatesAPIService)(&c.common)
 	c.TLSConfigurationsAPI = (*TLSConfigurationsAPIService)(&c.common)
-	c.TLSCsrsAPI = (*TLSCsrsAPIService)(&c.common)
 	c.TLSDomainsAPI = (*TLSDomainsAPIService)(&c.common)
 	c.TLSPrivateKeysAPI = (*TLSPrivateKeysAPIService)(&c.common)
 	c.TLSSubscriptionsAPI = (*TLSSubscriptionsAPIService)(&c.common)

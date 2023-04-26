@@ -21,7 +21,6 @@ import (
 	gourl "net/url"
 	"strconv"
 	"strings"
-	"os"
 )
 
 // Linger please
@@ -75,8 +74,8 @@ type ObjectStoreItemAPI interface {
 	GetValueForKey(ctx context.Context, storeID string, keyName string) APIGetValueForKeyRequest
 
 	// GetValueForKeyExecute executes the request
-	//  @return *os.File
-	GetValueForKeyExecute(r APIGetValueForKeyRequest) (**os.File, *http.Response, error)
+	//  @return string
+	GetValueForKeyExecute(r APIGetValueForKeyRequest) (string, *http.Response, error)
 
 	/*
 	SetValueForKey Insert an item into an object store
@@ -91,8 +90,8 @@ type ObjectStoreItemAPI interface {
 	SetValueForKey(ctx context.Context, storeID string, keyName string) APISetValueForKeyRequest
 
 	// SetValueForKeyExecute executes the request
-	//  @return *os.File
-	SetValueForKeyExecute(r APISetValueForKeyRequest) (**os.File, *http.Response, error)
+	//  @return string
+	SetValueForKeyExecute(r APISetValueForKeyRequest) (string, *http.Response, error)
 }
 
 // ObjectStoreItemAPIService ObjectStoreItemAPI service
@@ -405,7 +404,7 @@ type APIGetValueForKeyRequest struct {
 
 
 // Execute calls the API using the request data configured.
-func (r APIGetValueForKeyRequest) Execute() (**os.File, *http.Response, error) {
+func (r APIGetValueForKeyRequest) Execute() (string, *http.Response, error) {
 	return r.APIService.GetValueForKeyExecute(r)
 }
 
@@ -429,13 +428,13 @@ func (a *ObjectStoreItemAPIService) GetValueForKey(ctx context.Context, storeID 
 }
 
 // GetValueForKeyExecute executes the request
-//  @return *os.File
-func (a *ObjectStoreItemAPIService) GetValueForKeyExecute(r APIGetValueForKeyRequest) (**os.File, *http.Response, error) {
+//  @return string
+func (a *ObjectStoreItemAPIService) GetValueForKeyExecute(r APIGetValueForKeyRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  **os.File
+		localVarReturnValue  string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObjectStoreItemAPIService.GetValueForKey")
@@ -546,7 +545,7 @@ type APISetValueForKeyRequest struct {
 	append *bool
 	prepend *bool
 	backgroundFetch *bool
-	body **os.File
+	body *string
 }
 
 // IfGenerationMatch returns a pointer to a request.
@@ -585,13 +584,13 @@ func (r *APISetValueForKeyRequest) BackgroundFetch(backgroundFetch bool) *APISet
 	return r
 }
 // Body returns a pointer to a request.
-func (r *APISetValueForKeyRequest) Body(body *os.File) *APISetValueForKeyRequest {
+func (r *APISetValueForKeyRequest) Body(body string) *APISetValueForKeyRequest {
 	r.body = &body
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APISetValueForKeyRequest) Execute() (**os.File, *http.Response, error) {
+func (r APISetValueForKeyRequest) Execute() (string, *http.Response, error) {
 	return r.APIService.SetValueForKeyExecute(r)
 }
 
@@ -615,13 +614,13 @@ func (a *ObjectStoreItemAPIService) SetValueForKey(ctx context.Context, storeID 
 }
 
 // SetValueForKeyExecute executes the request
-//  @return *os.File
-func (a *ObjectStoreItemAPIService) SetValueForKeyExecute(r APISetValueForKeyRequest) (**os.File, *http.Response, error) {
+//  @return string
+func (a *ObjectStoreItemAPIService) SetValueForKeyExecute(r APISetValueForKeyRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  **os.File
+		localVarReturnValue  string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObjectStoreItemAPIService.SetValueForKey")
