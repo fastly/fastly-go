@@ -31,6 +31,8 @@ type PackageMetadata struct {
 	Size *int32 `json:"size,omitempty"`
 	// Hash of the Compute@Edge package.
 	Hashsum *string `json:"hashsum,omitempty"`
+	// Hash of the files within the Compute@Edge package.
+	FilesHash *string `json:"files_hash,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -245,6 +247,38 @@ func (o *PackageMetadata) SetHashsum(v string) {
 	o.Hashsum = &v
 }
 
+// GetFilesHash returns the FilesHash field value if set, zero value otherwise.
+func (o *PackageMetadata) GetFilesHash() string {
+	if o == nil || o.FilesHash == nil {
+		var ret string
+		return ret
+	}
+	return *o.FilesHash
+}
+
+// GetFilesHashOk returns a tuple with the FilesHash field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PackageMetadata) GetFilesHashOk() (*string, bool) {
+	if o == nil || o.FilesHash == nil {
+		return nil, false
+	}
+	return o.FilesHash, true
+}
+
+// HasFilesHash returns a boolean if a field has been set.
+func (o *PackageMetadata) HasFilesHash() bool {
+	if o != nil && o.FilesHash != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFilesHash gets a reference to the given string and assigns it to the FilesHash field.
+func (o *PackageMetadata) SetFilesHash(v string) {
+	o.FilesHash = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o PackageMetadata) MarshalJSON() ([]byte, error) {
@@ -266,6 +300,9 @@ func (o PackageMetadata) MarshalJSON() ([]byte, error) {
 	}
 	if o.Hashsum != nil {
 		toSerialize["hashsum"] = o.Hashsum
+	}
+	if o.FilesHash != nil {
+		toSerialize["files_hash"] = o.FilesHash
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -293,6 +330,7 @@ func (o *PackageMetadata) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "language")
 		delete(additionalProperties, "size")
 		delete(additionalProperties, "hashsum")
+		delete(additionalProperties, "files_hash")
 		o.AdditionalProperties = additionalProperties
 	}
 

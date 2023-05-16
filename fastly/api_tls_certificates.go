@@ -506,6 +506,7 @@ func (a *TLSCertificatesAPIService) GetTLSCertExecute(r APIGetTLSCertRequest) (*
 type APIListTLSCertsRequest struct {
 	ctx context.Context
 	APIService TLSCertificatesAPI
+	filterInUse *string
 	filterNotAfter *string
 	filterTLSDomainsID *string
 	include *string
@@ -514,6 +515,11 @@ type APIListTLSCertsRequest struct {
 	sort *string
 }
 
+// FilterInUse Optional. Limit the returned certificates to those currently using Fastly to terminate TLS (that is, certificates associated with an activation). Permitted values: true, false.
+func (r *APIListTLSCertsRequest) FilterInUse(filterInUse string) *APIListTLSCertsRequest {
+	r.filterInUse = &filterInUse
+	return r
+}
 // FilterNotAfter Limit the returned certificates to those that expire prior to the specified date in UTC. Accepts parameters: lte (e.g., filter[not_after][lte]&#x3D;2020-05-05). 
 func (r *APIListTLSCertsRequest) FilterNotAfter(filterNotAfter string) *APIListTLSCertsRequest {
 	r.filterNotAfter = &filterNotAfter
@@ -586,6 +592,9 @@ func (a *TLSCertificatesAPIService) ListTLSCertsExecute(r APIListTLSCertsRequest
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
+	if r.filterInUse != nil {
+		localVarQueryParams.Add("filter[in_use]", parameterToString(*r.filterInUse, ""))
+	}
 	if r.filterNotAfter != nil {
 		localVarQueryParams.Add("filter[not_after]", parameterToString(*r.filterNotAfter, ""))
 	}

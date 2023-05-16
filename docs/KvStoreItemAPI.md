@@ -1,19 +1,19 @@
-# ObjectStoreItemAPI
+# KvStoreItemAPI
 
 All URIs are relative to *https://api.fastly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteKeyFromStore**](ObjectStoreItemAPI.md#DeleteKeyFromStore) | **DELETE** `/resources/stores/object/{store_id}/keys/{key_name}` | Delete object store item.
-[**GetKeys**](ObjectStoreItemAPI.md#GetKeys) | **GET** `/resources/stores/object/{store_id}/keys` | List object store keys.
-[**GetValueForKey**](ObjectStoreItemAPI.md#GetValueForKey) | **GET** `/resources/stores/object/{store_id}/keys/{key_name}` | Get the value of an object store item
-[**SetValueForKey**](ObjectStoreItemAPI.md#SetValueForKey) | **PUT** `/resources/stores/object/{store_id}/keys/{key_name}` | Insert an item into an object store
+[**DeleteKeyFromStore**](KvStoreItemAPI.md#DeleteKeyFromStore) | **DELETE** `/resources/stores/kv/{store_id}/keys/{key_name}` | Delete kv store item.
+[**GetKeys**](KvStoreItemAPI.md#GetKeys) | **GET** `/resources/stores/kv/{store_id}/keys` | List kv store keys.
+[**GetValueForKey**](KvStoreItemAPI.md#GetValueForKey) | **GET** `/resources/stores/kv/{store_id}/keys/{key_name}` | Get the value of an kv store item
+[**SetValueForKey**](KvStoreItemAPI.md#SetValueForKey) | **PUT** `/resources/stores/kv/{store_id}/keys/{key_name}` | Insert an item into an kv store
 
 
 
 ## DeleteKeyFromStore
 
-Delete object store item.
+Delete kv store item.
 
 
 
@@ -37,9 +37,9 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObjectStoreItemAPI.DeleteKeyFromStore(ctx, storeID, keyName).Force(force).Execute()
+    resp, r, err := apiClient.KvStoreItemAPI.DeleteKeyFromStore(ctx, storeID, keyName).Force(force).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreItemAPI.DeleteKeyFromStore`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.DeleteKeyFromStore`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## GetKeys
 
-List object store keys.
+List kv store keys.
 
 
 
@@ -106,13 +106,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObjectStoreItemAPI.GetKeys(ctx, storeID).Cursor(cursor).Limit(limit).Prefix(prefix).Execute()
+    resp, r, err := apiClient.KvStoreItemAPI.GetKeys(ctx, storeID).Cursor(cursor).Limit(limit).Prefix(prefix).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreItemAPI.GetKeys`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.GetKeys`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetKeys`: InlineResponse2003
-    fmt.Fprintf(os.Stdout, "Response from `ObjectStoreItemAPI.GetKeys`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KvStoreItemAPI.GetKeys`: %v\n", resp)
 }
 ```
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GetValueForKey
 
-Get the value of an object store item
+Get the value of an kv store item
 
 
 
@@ -174,13 +174,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObjectStoreItemAPI.GetValueForKey(ctx, storeID, keyName).Execute()
+    resp, r, err := apiClient.KvStoreItemAPI.GetValueForKey(ctx, storeID, keyName).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreItemAPI.GetValueForKey`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.GetValueForKey`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetValueForKey`: string
-    fmt.Fprintf(os.Stdout, "Response from `ObjectStoreItemAPI.GetValueForKey`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KvStoreItemAPI.GetValueForKey`: %v\n", resp)
 }
 ```
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## SetValueForKey
 
-Insert an item into an object store
+Insert an item into an kv store
 
 
 
@@ -251,13 +251,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObjectStoreItemAPI.SetValueForKey(ctx, storeID, keyName).IfGenerationMatch(ifGenerationMatch).TimeToLiveSec(timeToLiveSec).Metadata(metadata).Add(add).Append(append).Prepend(prepend).BackgroundFetch(backgroundFetch).Body(body).Execute()
+    resp, r, err := apiClient.KvStoreItemAPI.SetValueForKey(ctx, storeID, keyName).IfGenerationMatch(ifGenerationMatch).TimeToLiveSec(timeToLiveSec).Metadata(metadata).Add(add).Append(append).Prepend(prepend).BackgroundFetch(backgroundFetch).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreItemAPI.SetValueForKey`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.SetValueForKey`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `SetValueForKey`: string
-    fmt.Fprintf(os.Stdout, "Response from `ObjectStoreItemAPI.SetValueForKey`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KvStoreItemAPI.SetValueForKey`: %v\n", resp)
 }
 ```
 

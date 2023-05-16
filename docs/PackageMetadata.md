@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Language** | Pointer to **string** | The language of the Compute@Edge package. | [optional] 
 **Size** | Pointer to **int32** | Size of the Compute@Edge package in bytes. | [optional] 
 **Hashsum** | Pointer to **string** | Hash of the Compute@Edge package. | [optional] 
+**FilesHash** | Pointer to **string** | Hash of the files within the Compute@Edge package. | [optional] 
 
 ## Methods
 
@@ -179,6 +180,31 @@ SetHashsum sets Hashsum field to given value.
 `func (o *PackageMetadata) HasHashsum() bool`
 
 HasHashsum returns a boolean if a field has been set.
+
+### GetFilesHash
+
+`func (o *PackageMetadata) GetFilesHash() string`
+
+GetFilesHash returns the FilesHash field if non-nil, zero value otherwise.
+
+### GetFilesHashOk
+
+`func (o *PackageMetadata) GetFilesHashOk() (*string, bool)`
+
+GetFilesHashOk returns a tuple with the FilesHash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFilesHash
+
+`func (o *PackageMetadata) SetFilesHash(v string)`
+
+SetFilesHash sets FilesHash field to given value.
+
+### HasFilesHash
+
+`func (o *PackageMetadata) HasFilesHash() bool`
+
+HasFilesHash returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

@@ -12,7 +12,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go vv1.0.0-beta.7
+	github.com/fastly/fastly-go vv1.0.0-beta.8
 )
 ```
 
@@ -109,6 +109,7 @@ Class | Method | HTTP request | Description
 *DictionaryAPI* | [**ListDictionaries**](docs/DictionaryAPI.md#listdictionaries) | **GET** `/service/{service_id}/version/{version_id}/dictionary` | List edge dictionaries
 *DictionaryAPI* | [**UpdateDictionary**](docs/DictionaryAPI.md#updatedictionary) | **PUT** `/service/{service_id}/version/{version_id}/dictionary/{dictionary_name}` | Update an edge dictionary
 *DictionaryInfoAPI* | [**GetDictionaryInfo**](docs/DictionaryInfoAPI.md#getdictionaryinfo) | **GET** `/service/{service_id}/version/{version_id}/dictionary/{dictionary_id}/info` | Get edge dictionary metadata
+*DictionaryItemAPI* | [**BulkUpdateDictionaryItem**](docs/DictionaryItemAPI.md#bulkupdatedictionaryitem) | **PATCH** `/service/{service_id}/dictionary/{dictionary_id}/items` | Update multiple entries in an edge dictionary
 *DictionaryItemAPI* | [**CreateDictionaryItem**](docs/DictionaryItemAPI.md#createdictionaryitem) | **POST** `/service/{service_id}/dictionary/{dictionary_id}/item` | Create an entry in an edge dictionary
 *DictionaryItemAPI* | [**DeleteDictionaryItem**](docs/DictionaryItemAPI.md#deletedictionaryitem) | **DELETE** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Delete an item from an edge dictionary
 *DictionaryItemAPI* | [**GetDictionaryItem**](docs/DictionaryItemAPI.md#getdictionaryitem) | **GET** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Get an item from an edge dictionary
@@ -181,6 +182,14 @@ Class | Method | HTTP request | Description
 *InvitationsAPI* | [**CreateInvitation**](docs/InvitationsAPI.md#createinvitation) | **POST** `/invitations` | Create an invitation
 *InvitationsAPI* | [**DeleteInvitation**](docs/InvitationsAPI.md#deleteinvitation) | **DELETE** `/invitations/{invitation_id}` | Delete an invitation
 *InvitationsAPI* | [**ListInvitations**](docs/InvitationsAPI.md#listinvitations) | **GET** `/invitations` | List invitations
+*KvStoreAPI* | [**CreateStore**](docs/KvStoreAPI.md#createstore) | **POST** `/resources/stores/kv` | Create an kv store.
+*KvStoreAPI* | [**DeleteStore**](docs/KvStoreAPI.md#deletestore) | **DELETE** `/resources/stores/kv/{store_id}` | Delete an kv store.
+*KvStoreAPI* | [**GetStore**](docs/KvStoreAPI.md#getstore) | **GET** `/resources/stores/kv/{store_id}` | Describe an kv store.
+*KvStoreAPI* | [**GetStores**](docs/KvStoreAPI.md#getstores) | **GET** `/resources/stores/kv` | List kv stores.
+*KvStoreItemAPI* | [**DeleteKeyFromStore**](docs/KvStoreItemAPI.md#deletekeyfromstore) | **DELETE** `/resources/stores/kv/{store_id}/keys/{key_name}` | Delete kv store item.
+*KvStoreItemAPI* | [**GetKeys**](docs/KvStoreItemAPI.md#getkeys) | **GET** `/resources/stores/kv/{store_id}/keys` | List kv store keys.
+*KvStoreItemAPI* | [**GetValueForKey**](docs/KvStoreItemAPI.md#getvalueforkey) | **GET** `/resources/stores/kv/{store_id}/keys/{key_name}` | Get the value of an kv store item
+*KvStoreItemAPI* | [**SetValueForKey**](docs/KvStoreItemAPI.md#setvalueforkey) | **PUT** `/resources/stores/kv/{store_id}/keys/{key_name}` | Insert an item into an kv store
 *LoggingAzureblobAPI* | [**CreateLogAzure**](docs/LoggingAzureblobAPI.md#createlogazure) | **POST** `/service/{service_id}/version/{version_id}/logging/azureblob` | Create an Azure Blob Storage log endpoint
 *LoggingAzureblobAPI* | [**DeleteLogAzure**](docs/LoggingAzureblobAPI.md#deletelogazure) | **DELETE** `/service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name}` | Delete the Azure Blob Storage log endpoint
 *LoggingAzureblobAPI* | [**GetLogAzure**](docs/LoggingAzureblobAPI.md#getlogazure) | **GET** `/service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name}` | Get an Azure Blob Storage log endpoint
@@ -314,14 +323,6 @@ Class | Method | HTTP request | Description
 *MutualAuthenticationAPI* | [**GetMutualAuthentication**](docs/MutualAuthenticationAPI.md#getmutualauthentication) | **GET** `/tls/mutual_authentications/{mutual_authentication_id}` | Get a Mutual Authentication
 *MutualAuthenticationAPI* | [**ListMutualAuthentications**](docs/MutualAuthenticationAPI.md#listmutualauthentications) | **GET** `/tls/mutual_authentications` | List Mutual Authentications
 *MutualAuthenticationAPI* | [**PatchMutualAuthentication**](docs/MutualAuthenticationAPI.md#patchmutualauthentication) | **PATCH** `/tls/mutual_authentications/{mutual_authentication_id}` | Update a Mutual Authentication
-*ObjectStoreAPI* | [**CreateStore**](docs/ObjectStoreAPI.md#createstore) | **POST** `/resources/stores/object` | Create an object store.
-*ObjectStoreAPI* | [**DeleteStore**](docs/ObjectStoreAPI.md#deletestore) | **DELETE** `/resources/stores/object/{store_id}` | Delete an object store.
-*ObjectStoreAPI* | [**GetStore**](docs/ObjectStoreAPI.md#getstore) | **GET** `/resources/stores/object/{store_id}` | Describe an object store.
-*ObjectStoreAPI* | [**GetStores**](docs/ObjectStoreAPI.md#getstores) | **GET** `/resources/stores/object` | List object stores.
-*ObjectStoreItemAPI* | [**DeleteKeyFromStore**](docs/ObjectStoreItemAPI.md#deletekeyfromstore) | **DELETE** `/resources/stores/object/{store_id}/keys/{key_name}` | Delete object store item.
-*ObjectStoreItemAPI* | [**GetKeys**](docs/ObjectStoreItemAPI.md#getkeys) | **GET** `/resources/stores/object/{store_id}/keys` | List object store keys.
-*ObjectStoreItemAPI* | [**GetValueForKey**](docs/ObjectStoreItemAPI.md#getvalueforkey) | **GET** `/resources/stores/object/{store_id}/keys/{key_name}` | Get the value of an object store item
-*ObjectStoreItemAPI* | [**SetValueForKey**](docs/ObjectStoreItemAPI.md#setvalueforkey) | **PUT** `/resources/stores/object/{store_id}/keys/{key_name}` | Insert an item into an object store
 *PackageAPI* | [**GetPackage**](docs/PackageAPI.md#getpackage) | **GET** `/service/{service_id}/version/{version_id}/package` | Get details of the service's Compute@Edge package.
 *PackageAPI* | [**PutPackage**](docs/PackageAPI.md#putpackage) | **PUT** `/service/{service_id}/version/{version_id}/package` | Upload a Compute@Edge package.
 *PoolAPI* | [**CreateServerPool**](docs/PoolAPI.md#createserverpool) | **POST** `/service/{service_id}/version/{version_id}/pool` | Create a server pool
@@ -515,7 +516,7 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/resources/stores/secret/client-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (POST)
 - [`/resources/stores/secret/signing-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (GET)
 - [`/resources/stores/secret/{store_id}/secrets/{secret_name}`](https://developer.fastly.com/reference/api/services/resources/secret) (DELETE, GET)
-- [`/resources/stores/secret/{store_id}/secrets`](https://developer.fastly.com/reference/api/services/resources/secret) (GET, POST)
+- [`/resources/stores/secret/{store_id}/secrets`](https://developer.fastly.com/reference/api/services/resources/secret) (GET, PATCH, POST, PUT)
 - [`/resources/stores/secret/{store_id}`](https://developer.fastly.com/reference/api/services/resources/secret-store) (DELETE, GET)
 - [`/resources/stores/secret`](https://developer.fastly.com/reference/api/services/resources/secret-store) (GET, POST)
 - [`/roles/{role_id}/permissions`](https://developer.fastly.com/reference/api/account/roles) (DELETE, POST)
@@ -525,7 +526,6 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/service-groups/{service_group_id}/services`](https://developer.fastly.com/reference/api/account/service-groups) (DELETE, POST)
 - [`/service-groups/{service_group_id}`](https://developer.fastly.com/reference/api/account/service-groups) (PATCH)
 - [`/service-groups`](https://developer.fastly.com/reference/api/account/service-groups) (POST)
-- [`/service/{service_id}/dictionary/{dictionary_id}/items`](https://developer.fastly.com/reference/api/dictionaries/dictionary-item) (PATCH)
 - [`/service/{service_id}/lint`](https://developer.fastly.com/reference/api/vcl-services/vcl) (POST)
 - [`/service/{service_id}/purge`](https://developer.fastly.com/reference/api/purging) (POST)
 - [`/service/{service_id}/version/{version_id}/apex-redirects`](https://developer.fastly.com/reference/api/vcl-services/apex-redirect) (POST)

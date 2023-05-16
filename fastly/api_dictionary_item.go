@@ -32,6 +32,22 @@ var (
 type DictionaryItemAPI interface {
 
 	/*
+	BulkUpdateDictionaryItem Update multiple entries in an edge dictionary
+
+	Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. [Contact support](https://support.fastly.com/) to discuss raising this limit.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param serviceID Alphanumeric string identifying the service.
+	 @param dictionaryID Alphanumeric string identifying a Dictionary.
+	 @return APIBulkUpdateDictionaryItemRequest
+	*/
+	BulkUpdateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string) APIBulkUpdateDictionaryItemRequest
+
+	// BulkUpdateDictionaryItemExecute executes the request
+	//  @return InlineResponse200
+	BulkUpdateDictionaryItemExecute(r APIBulkUpdateDictionaryItemRequest) (*InlineResponse200, *http.Response, error)
+
+	/*
 	CreateDictionaryItem Create an entry in an edge dictionary
 
 	Create DictionaryItem given service, dictionary ID, item key, and item value.
@@ -134,6 +150,152 @@ type DictionaryItemAPI interface {
 
 // DictionaryItemAPIService DictionaryItemAPI service
 type DictionaryItemAPIService service
+
+// APIBulkUpdateDictionaryItemRequest represents a request for the resource.
+type APIBulkUpdateDictionaryItemRequest struct {
+	ctx context.Context
+	APIService DictionaryItemAPI
+	serviceID string
+	dictionaryID string
+	bulkUpdateDictionaryListRequest *BulkUpdateDictionaryListRequest
+}
+
+// BulkUpdateDictionaryListRequest returns a pointer to a request.
+func (r *APIBulkUpdateDictionaryItemRequest) BulkUpdateDictionaryListRequest(bulkUpdateDictionaryListRequest BulkUpdateDictionaryListRequest) *APIBulkUpdateDictionaryItemRequest {
+	r.bulkUpdateDictionaryListRequest = &bulkUpdateDictionaryListRequest
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIBulkUpdateDictionaryItemRequest) Execute() (*InlineResponse200, *http.Response, error) {
+	return r.APIService.BulkUpdateDictionaryItemExecute(r)
+}
+
+/*
+BulkUpdateDictionaryItem Update multiple entries in an edge dictionary
+
+Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. [Contact support](https://support.fastly.com/) to discuss raising this limit.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serviceID Alphanumeric string identifying the service.
+ @param dictionaryID Alphanumeric string identifying a Dictionary.
+ @return APIBulkUpdateDictionaryItemRequest
+*/
+func (a *DictionaryItemAPIService) BulkUpdateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string) APIBulkUpdateDictionaryItemRequest {
+	return APIBulkUpdateDictionaryItemRequest{
+		APIService: a,
+		ctx: ctx,
+		serviceID: serviceID,
+		dictionaryID: dictionaryID,
+	}
+}
+
+// BulkUpdateDictionaryItemExecute executes the request
+//  @return InlineResponse200
+func (a *DictionaryItemAPIService) BulkUpdateDictionaryItemExecute(r APIBulkUpdateDictionaryItemRequest) (*InlineResponse200, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *InlineResponse200
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryItemAPIService.BulkUpdateDictionaryItem")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/service/{service_id}/dictionary/{dictionary_id}/items"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bulkUpdateDictionaryListRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 // APICreateDictionaryItemRequest represents a request for the resource.
 type APICreateDictionaryItemRequest struct {

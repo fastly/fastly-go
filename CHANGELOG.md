@@ -1,5 +1,17 @@
 # Changelog
 
+## [v1.0.0-beta.8](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.8) (2023-05-16)
+
+**Breaking changes:**
+
+- breaking(object_store): rename to kv_store
+
+**Enhancements:**
+
+- feat(dictionary_item): add 'bulk' PATCH endpoint.
+- feat(package): add `files_hash` metadata property.
+- feat(tls_certificates): add `filter[in_use]` parameter.
+
 ## [v1.0.0-beta.7](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.7) (2023-04-26)
 
 **Bug fixes:**

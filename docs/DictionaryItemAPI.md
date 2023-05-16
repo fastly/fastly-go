@@ -4,6 +4,7 @@ All URIs are relative to *https://api.fastly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**BulkUpdateDictionaryItem**](DictionaryItemAPI.md#BulkUpdateDictionaryItem) | **PATCH** `/service/{service_id}/dictionary/{dictionary_id}/items` | Update multiple entries in an edge dictionary
 [**CreateDictionaryItem**](DictionaryItemAPI.md#CreateDictionaryItem) | **POST** `/service/{service_id}/dictionary/{dictionary_id}/item` | Create an entry in an edge dictionary
 [**DeleteDictionaryItem**](DictionaryItemAPI.md#DeleteDictionaryItem) | **DELETE** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Delete an item from an edge dictionary
 [**GetDictionaryItem**](DictionaryItemAPI.md#GetDictionaryItem) | **GET** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Get an item from an edge dictionary
@@ -11,6 +12,76 @@ Method | HTTP request | Description
 [**UpdateDictionaryItem**](DictionaryItemAPI.md#UpdateDictionaryItem) | **PATCH** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Update an entry in an edge dictionary
 [**UpsertDictionaryItem**](DictionaryItemAPI.md#UpsertDictionaryItem) | **PUT** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Insert or update an entry in an edge dictionary
 
+
+
+## BulkUpdateDictionaryItem
+
+Update multiple entries in an edge dictionary
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    dictionaryID := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
+    bulkUpdateDictionaryListRequest := *openapiclient.NewBulkUpdateDictionaryListRequest() // BulkUpdateDictionaryListRequest |  (optional)
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.DictionaryItemAPI.BulkUpdateDictionaryItem(ctx, serviceID, dictionaryID).BulkUpdateDictionaryListRequest(bulkUpdateDictionaryListRequest).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DictionaryItemAPI.BulkUpdateDictionaryItem`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BulkUpdateDictionaryItem`: InlineResponse200
+    fmt.Fprintf(os.Stdout, "Response from `DictionaryItemAPI.BulkUpdateDictionaryItem`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**dictionaryID** | **string** | Alphanumeric string identifying a Dictionary. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBulkUpdateDictionaryItemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bulkUpdateDictionaryListRequest** | [**BulkUpdateDictionaryListRequest**](BulkUpdateDictionaryListRequest.md) |  | 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+[API Token](https://developer.fastly.com/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
 ## CreateDictionaryItem

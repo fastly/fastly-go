@@ -28,13 +28,13 @@ var (
 	_ context.Context
 )
 
-// ObjectStoreItemAPI defines an interface for interacting with the resource.
-type ObjectStoreItemAPI interface {
+// KvStoreItemAPI defines an interface for interacting with the resource.
+type KvStoreItemAPI interface {
 
 	/*
-	DeleteKeyFromStore Delete object store item.
+	DeleteKeyFromStore Delete kv store item.
 
-	Delete an item from an object store
+	Delete an item from an kv store
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param storeID
@@ -47,9 +47,9 @@ type ObjectStoreItemAPI interface {
 	DeleteKeyFromStoreExecute(r APIDeleteKeyFromStoreRequest) (*http.Response, error)
 
 	/*
-	GetKeys List object store keys.
+	GetKeys List kv store keys.
 
-	List the keys of all items within an object store.
+	List the keys of all items within an kv store.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param storeID
@@ -62,7 +62,7 @@ type ObjectStoreItemAPI interface {
 	GetKeysExecute(r APIGetKeysRequest) (*InlineResponse2003, *http.Response, error)
 
 	/*
-	GetValueForKey Get the value of an object store item
+	GetValueForKey Get the value of an kv store item
 
 	Get the value associated with a key.
 
@@ -78,9 +78,9 @@ type ObjectStoreItemAPI interface {
 	GetValueForKeyExecute(r APIGetValueForKeyRequest) (string, *http.Response, error)
 
 	/*
-	SetValueForKey Insert an item into an object store
+	SetValueForKey Insert an item into an kv store
 
-	Set a new value for a new or existing key in an object store.
+	Set a new value for a new or existing key in an kv store.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param storeID
@@ -94,13 +94,13 @@ type ObjectStoreItemAPI interface {
 	SetValueForKeyExecute(r APISetValueForKeyRequest) (string, *http.Response, error)
 }
 
-// ObjectStoreItemAPIService ObjectStoreItemAPI service
-type ObjectStoreItemAPIService service
+// KvStoreItemAPIService KvStoreItemAPI service
+type KvStoreItemAPIService service
 
 // APIDeleteKeyFromStoreRequest represents a request for the resource.
 type APIDeleteKeyFromStoreRequest struct {
 	ctx context.Context
-	APIService ObjectStoreItemAPI
+	APIService KvStoreItemAPI
 	storeID string
 	keyName string
 	force *bool
@@ -118,16 +118,16 @@ func (r APIDeleteKeyFromStoreRequest) Execute() (*http.Response, error) {
 }
 
 /*
-DeleteKeyFromStore Delete object store item.
+DeleteKeyFromStore Delete kv store item.
 
-Delete an item from an object store
+Delete an item from an kv store
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param storeID
  @param keyName
  @return APIDeleteKeyFromStoreRequest
 */
-func (a *ObjectStoreItemAPIService) DeleteKeyFromStore(ctx context.Context, storeID string, keyName string) APIDeleteKeyFromStoreRequest {
+func (a *KvStoreItemAPIService) DeleteKeyFromStore(ctx context.Context, storeID string, keyName string) APIDeleteKeyFromStoreRequest {
 	return APIDeleteKeyFromStoreRequest{
 		APIService: a,
 		ctx: ctx,
@@ -137,19 +137,19 @@ func (a *ObjectStoreItemAPIService) DeleteKeyFromStore(ctx context.Context, stor
 }
 
 // DeleteKeyFromStoreExecute executes the request
-func (a *ObjectStoreItemAPIService) DeleteKeyFromStoreExecute(r APIDeleteKeyFromStoreRequest) (*http.Response, error) {
+func (a *KvStoreItemAPIService) DeleteKeyFromStoreExecute(r APIDeleteKeyFromStoreRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     any
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObjectStoreItemAPIService.DeleteKeyFromStore")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreItemAPIService.DeleteKeyFromStore")
 	if err != nil {
 		return nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/resources/stores/object/{store_id}/keys/{key_name}"
+	localVarPath := localBasePath + "/resources/stores/kv/{store_id}/keys/{key_name}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_name"+"}", gourl.PathEscape(parameterToString(r.keyName, "")))
 
@@ -236,7 +236,7 @@ func (a *ObjectStoreItemAPIService) DeleteKeyFromStoreExecute(r APIDeleteKeyFrom
 // APIGetKeysRequest represents a request for the resource.
 type APIGetKeysRequest struct {
 	ctx context.Context
-	APIService ObjectStoreItemAPI
+	APIService KvStoreItemAPI
 	storeID string
 	cursor *string
 	limit *int32
@@ -265,15 +265,15 @@ func (r APIGetKeysRequest) Execute() (*InlineResponse2003, *http.Response, error
 }
 
 /*
-GetKeys List object store keys.
+GetKeys List kv store keys.
 
-List the keys of all items within an object store.
+List the keys of all items within an kv store.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param storeID
  @return APIGetKeysRequest
 */
-func (a *ObjectStoreItemAPIService) GetKeys(ctx context.Context, storeID string) APIGetKeysRequest {
+func (a *KvStoreItemAPIService) GetKeys(ctx context.Context, storeID string) APIGetKeysRequest {
 	return APIGetKeysRequest{
 		APIService: a,
 		ctx: ctx,
@@ -283,7 +283,7 @@ func (a *ObjectStoreItemAPIService) GetKeys(ctx context.Context, storeID string)
 
 // GetKeysExecute executes the request
 //  @return InlineResponse2003
-func (a *ObjectStoreItemAPIService) GetKeysExecute(r APIGetKeysRequest) (*InlineResponse2003, *http.Response, error) {
+func (a *KvStoreItemAPIService) GetKeysExecute(r APIGetKeysRequest) (*InlineResponse2003, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
@@ -291,12 +291,12 @@ func (a *ObjectStoreItemAPIService) GetKeysExecute(r APIGetKeysRequest) (*Inline
 		localVarReturnValue  *InlineResponse2003
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObjectStoreItemAPIService.GetKeys")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreItemAPIService.GetKeys")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/resources/stores/object/{store_id}/keys"
+	localVarPath := localBasePath + "/resources/stores/kv/{store_id}/keys"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -397,7 +397,7 @@ func (a *ObjectStoreItemAPIService) GetKeysExecute(r APIGetKeysRequest) (*Inline
 // APIGetValueForKeyRequest represents a request for the resource.
 type APIGetValueForKeyRequest struct {
 	ctx context.Context
-	APIService ObjectStoreItemAPI
+	APIService KvStoreItemAPI
 	storeID string
 	keyName string
 }
@@ -409,7 +409,7 @@ func (r APIGetValueForKeyRequest) Execute() (string, *http.Response, error) {
 }
 
 /*
-GetValueForKey Get the value of an object store item
+GetValueForKey Get the value of an kv store item
 
 Get the value associated with a key.
 
@@ -418,7 +418,7 @@ Get the value associated with a key.
  @param keyName
  @return APIGetValueForKeyRequest
 */
-func (a *ObjectStoreItemAPIService) GetValueForKey(ctx context.Context, storeID string, keyName string) APIGetValueForKeyRequest {
+func (a *KvStoreItemAPIService) GetValueForKey(ctx context.Context, storeID string, keyName string) APIGetValueForKeyRequest {
 	return APIGetValueForKeyRequest{
 		APIService: a,
 		ctx: ctx,
@@ -429,7 +429,7 @@ func (a *ObjectStoreItemAPIService) GetValueForKey(ctx context.Context, storeID 
 
 // GetValueForKeyExecute executes the request
 //  @return string
-func (a *ObjectStoreItemAPIService) GetValueForKeyExecute(r APIGetValueForKeyRequest) (string, *http.Response, error) {
+func (a *KvStoreItemAPIService) GetValueForKeyExecute(r APIGetValueForKeyRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
@@ -437,12 +437,12 @@ func (a *ObjectStoreItemAPIService) GetValueForKeyExecute(r APIGetValueForKeyReq
 		localVarReturnValue  string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObjectStoreItemAPIService.GetValueForKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreItemAPIService.GetValueForKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/resources/stores/object/{store_id}/keys/{key_name}"
+	localVarPath := localBasePath + "/resources/stores/kv/{store_id}/keys/{key_name}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_name"+"}", gourl.PathEscape(parameterToString(r.keyName, "")))
 
@@ -535,7 +535,7 @@ func (a *ObjectStoreItemAPIService) GetValueForKeyExecute(r APIGetValueForKeyReq
 // APISetValueForKeyRequest represents a request for the resource.
 type APISetValueForKeyRequest struct {
 	ctx context.Context
-	APIService ObjectStoreItemAPI
+	APIService KvStoreItemAPI
 	storeID string
 	keyName string
 	ifGenerationMatch *int32
@@ -595,16 +595,16 @@ func (r APISetValueForKeyRequest) Execute() (string, *http.Response, error) {
 }
 
 /*
-SetValueForKey Insert an item into an object store
+SetValueForKey Insert an item into an kv store
 
-Set a new value for a new or existing key in an object store.
+Set a new value for a new or existing key in an kv store.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param storeID
  @param keyName
  @return APISetValueForKeyRequest
 */
-func (a *ObjectStoreItemAPIService) SetValueForKey(ctx context.Context, storeID string, keyName string) APISetValueForKeyRequest {
+func (a *KvStoreItemAPIService) SetValueForKey(ctx context.Context, storeID string, keyName string) APISetValueForKeyRequest {
 	return APISetValueForKeyRequest{
 		APIService: a,
 		ctx: ctx,
@@ -615,7 +615,7 @@ func (a *ObjectStoreItemAPIService) SetValueForKey(ctx context.Context, storeID 
 
 // SetValueForKeyExecute executes the request
 //  @return string
-func (a *ObjectStoreItemAPIService) SetValueForKeyExecute(r APISetValueForKeyRequest) (string, *http.Response, error) {
+func (a *KvStoreItemAPIService) SetValueForKeyExecute(r APISetValueForKeyRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     any
@@ -623,12 +623,12 @@ func (a *ObjectStoreItemAPIService) SetValueForKeyExecute(r APISetValueForKeyReq
 		localVarReturnValue  string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObjectStoreItemAPIService.SetValueForKey")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreItemAPIService.SetValueForKey")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/resources/stores/object/{store_id}/keys/{key_name}"
+	localVarPath := localBasePath + "/resources/stores/kv/{store_id}/keys/{key_name}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"key_name"+"}", gourl.PathEscape(parameterToString(r.keyName, "")))
 

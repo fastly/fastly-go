@@ -126,6 +126,10 @@ type APIClient struct {
 
 	InvitationsAPI InvitationsAPI
 
+	KvStoreAPI KvStoreAPI
+
+	KvStoreItemAPI KvStoreItemAPI
+
 	LoggingAzureblobAPI LoggingAzureblobAPI
 
 	LoggingBigqueryAPI LoggingBigqueryAPI
@@ -179,10 +183,6 @@ type APIClient struct {
 	LoggingSyslogAPI LoggingSyslogAPI
 
 	MutualAuthenticationAPI MutualAuthenticationAPI
-
-	ObjectStoreAPI ObjectStoreAPI
-
-	ObjectStoreItemAPI ObjectStoreItemAPI
 
 	PackageAPI PackageAPI
 
@@ -307,6 +307,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.IamServiceGroupsAPI = (*IamServiceGroupsAPIService)(&c.common)
 	c.IamUserGroupsAPI = (*IamUserGroupsAPIService)(&c.common)
 	c.InvitationsAPI = (*InvitationsAPIService)(&c.common)
+	c.KvStoreAPI = (*KvStoreAPIService)(&c.common)
+	c.KvStoreItemAPI = (*KvStoreItemAPIService)(&c.common)
 	c.LoggingAzureblobAPI = (*LoggingAzureblobAPIService)(&c.common)
 	c.LoggingBigqueryAPI = (*LoggingBigqueryAPIService)(&c.common)
 	c.LoggingCloudfilesAPI = (*LoggingCloudfilesAPIService)(&c.common)
@@ -334,8 +336,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingSumologicAPI = (*LoggingSumologicAPIService)(&c.common)
 	c.LoggingSyslogAPI = (*LoggingSyslogAPIService)(&c.common)
 	c.MutualAuthenticationAPI = (*MutualAuthenticationAPIService)(&c.common)
-	c.ObjectStoreAPI = (*ObjectStoreAPIService)(&c.common)
-	c.ObjectStoreItemAPI = (*ObjectStoreItemAPIService)(&c.common)
 	c.PackageAPI = (*PackageAPIService)(&c.common)
 	c.PoolAPI = (*PoolAPIService)(&c.common)
 	c.PopAPI = (*PopAPIService)(&c.common)

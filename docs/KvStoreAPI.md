@@ -1,19 +1,19 @@
-# ObjectStoreAPI
+# KvStoreAPI
 
 All URIs are relative to *https://api.fastly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateStore**](ObjectStoreAPI.md#CreateStore) | **POST** `/resources/stores/object` | Create an object store.
-[**DeleteStore**](ObjectStoreAPI.md#DeleteStore) | **DELETE** `/resources/stores/object/{store_id}` | Delete an object store.
-[**GetStore**](ObjectStoreAPI.md#GetStore) | **GET** `/resources/stores/object/{store_id}` | Describe an object store.
-[**GetStores**](ObjectStoreAPI.md#GetStores) | **GET** `/resources/stores/object` | List object stores.
+[**CreateStore**](KvStoreAPI.md#CreateStore) | **POST** `/resources/stores/kv` | Create an kv store.
+[**DeleteStore**](KvStoreAPI.md#DeleteStore) | **DELETE** `/resources/stores/kv/{store_id}` | Delete an kv store.
+[**GetStore**](KvStoreAPI.md#GetStore) | **GET** `/resources/stores/kv/{store_id}` | Describe an kv store.
+[**GetStores**](KvStoreAPI.md#GetStores) | **GET** `/resources/stores/kv` | List kv stores.
 
 
 
 ## CreateStore
 
-Create an object store.
+Create an kv store.
 
 
 
@@ -36,13 +36,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObjectStoreAPI.CreateStore(ctx).Location(location).Store(store).Execute()
+    resp, r, err := apiClient.KvStoreAPI.CreateStore(ctx).Location(location).Store(store).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreAPI.CreateStore`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.CreateStore`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `CreateStore`: StoreResponse
-    fmt.Fprintf(os.Stdout, "Response from `ObjectStoreAPI.CreateStore`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KvStoreAPI.CreateStore`: %v\n", resp)
 }
 ```
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ## DeleteStore
 
-Delete an object store.
+Delete an kv store.
 
 
 
@@ -100,9 +100,9 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObjectStoreAPI.DeleteStore(ctx, storeID).Force(force).Execute()
+    resp, r, err := apiClient.KvStoreAPI.DeleteStore(ctx, storeID).Force(force).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreAPI.DeleteStore`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.DeleteStore`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ## GetStore
 
-Describe an object store.
+Describe an kv store.
 
 
 
@@ -165,13 +165,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObjectStoreAPI.GetStore(ctx, storeID).Execute()
+    resp, r, err := apiClient.KvStoreAPI.GetStore(ctx, storeID).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreAPI.GetStore`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.GetStore`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetStore`: StoreResponse
-    fmt.Fprintf(os.Stdout, "Response from `ObjectStoreAPI.GetStore`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KvStoreAPI.GetStore`: %v\n", resp)
 }
 ```
 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ## GetStores
 
-List object stores.
+List kv stores.
 
 
 
@@ -233,13 +233,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ObjectStoreAPI.GetStores(ctx).Cursor(cursor).Limit(limit).Execute()
+    resp, r, err := apiClient.KvStoreAPI.GetStores(ctx).Cursor(cursor).Limit(limit).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ObjectStoreAPI.GetStores`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.GetStores`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
     // response from `GetStores`: InlineResponse2002
-    fmt.Fprintf(os.Stdout, "Response from `ObjectStoreAPI.GetStores`: %v\n", resp)
+    fmt.Fprintf(os.Stdout, "Response from `KvStoreAPI.GetStores`: %v\n", resp)
 }
 ```
 

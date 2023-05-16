@@ -28,13 +28,13 @@ var (
 	_ context.Context
 )
 
-// ObjectStoreAPI defines an interface for interacting with the resource.
-type ObjectStoreAPI interface {
+// KvStoreAPI defines an interface for interacting with the resource.
+type KvStoreAPI interface {
 
 	/*
-	CreateStore Create an object store.
+	CreateStore Create an kv store.
 
-	Create a new object store.
+	Create a new kv store.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @return APICreateStoreRequest
@@ -46,9 +46,9 @@ type ObjectStoreAPI interface {
 	CreateStoreExecute(r APICreateStoreRequest) (*StoreResponse, *http.Response, error)
 
 	/*
-	DeleteStore Delete an object store.
+	DeleteStore Delete an kv store.
 
-	An object store must be empty before it can be deleted.  Deleting an object store that still contains keys will result in a `409` (Conflict).
+	An kv store must be empty before it can be deleted.  Deleting an kv store that still contains keys will result in a `409` (Conflict).
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param storeID
@@ -60,9 +60,9 @@ type ObjectStoreAPI interface {
 	DeleteStoreExecute(r APIDeleteStoreRequest) (*http.Response, error)
 
 	/*
-	GetStore Describe an object store.
+	GetStore Describe an kv store.
 
-	Get an object store by ID.
+	Get an kv store by ID.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param storeID
@@ -75,7 +75,7 @@ type ObjectStoreAPI interface {
 	GetStoreExecute(r APIGetStoreRequest) (*StoreResponse, *http.Response, error)
 
 	/*
-	GetStores List object stores.
+	GetStores List kv stores.
 
 	Get all stores for a given customer.
 
@@ -89,13 +89,13 @@ type ObjectStoreAPI interface {
 	GetStoresExecute(r APIGetStoresRequest) (*InlineResponse2002, *http.Response, error)
 }
 
-// ObjectStoreAPIService ObjectStoreAPI service
-type ObjectStoreAPIService service
+// KvStoreAPIService KvStoreAPI service
+type KvStoreAPIService service
 
 // APICreateStoreRequest represents a request for the resource.
 type APICreateStoreRequest struct {
 	ctx context.Context
-	APIService ObjectStoreAPI
+	APIService KvStoreAPI
 	location *string
 	store *Store
 }
@@ -117,14 +117,14 @@ func (r APICreateStoreRequest) Execute() (*StoreResponse, *http.Response, error)
 }
 
 /*
-CreateStore Create an object store.
+CreateStore Create an kv store.
 
-Create a new object store.
+Create a new kv store.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return APICreateStoreRequest
 */
-func (a *ObjectStoreAPIService) CreateStore(ctx context.Context) APICreateStoreRequest {
+func (a *KvStoreAPIService) CreateStore(ctx context.Context) APICreateStoreRequest {
 	return APICreateStoreRequest{
 		APIService: a,
 		ctx: ctx,
@@ -133,7 +133,7 @@ func (a *ObjectStoreAPIService) CreateStore(ctx context.Context) APICreateStoreR
 
 // CreateStoreExecute executes the request
 //  @return StoreResponse
-func (a *ObjectStoreAPIService) CreateStoreExecute(r APICreateStoreRequest) (*StoreResponse, *http.Response, error) {
+func (a *KvStoreAPIService) CreateStoreExecute(r APICreateStoreRequest) (*StoreResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     any
@@ -141,12 +141,12 @@ func (a *ObjectStoreAPIService) CreateStoreExecute(r APICreateStoreRequest) (*St
 		localVarReturnValue  *StoreResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObjectStoreAPIService.CreateStore")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.CreateStore")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/resources/stores/object"
+	localVarPath := localBasePath + "/resources/stores/kv"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -242,7 +242,7 @@ func (a *ObjectStoreAPIService) CreateStoreExecute(r APICreateStoreRequest) (*St
 // APIDeleteStoreRequest represents a request for the resource.
 type APIDeleteStoreRequest struct {
 	ctx context.Context
-	APIService ObjectStoreAPI
+	APIService KvStoreAPI
 	storeID string
 	force *bool
 }
@@ -259,15 +259,15 @@ func (r APIDeleteStoreRequest) Execute() (*http.Response, error) {
 }
 
 /*
-DeleteStore Delete an object store.
+DeleteStore Delete an kv store.
 
-An object store must be empty before it can be deleted.  Deleting an object store that still contains keys will result in a `409` (Conflict).
+An kv store must be empty before it can be deleted.  Deleting an kv store that still contains keys will result in a `409` (Conflict).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param storeID
  @return APIDeleteStoreRequest
 */
-func (a *ObjectStoreAPIService) DeleteStore(ctx context.Context, storeID string) APIDeleteStoreRequest {
+func (a *KvStoreAPIService) DeleteStore(ctx context.Context, storeID string) APIDeleteStoreRequest {
 	return APIDeleteStoreRequest{
 		APIService: a,
 		ctx: ctx,
@@ -276,19 +276,19 @@ func (a *ObjectStoreAPIService) DeleteStore(ctx context.Context, storeID string)
 }
 
 // DeleteStoreExecute executes the request
-func (a *ObjectStoreAPIService) DeleteStoreExecute(r APIDeleteStoreRequest) (*http.Response, error) {
+func (a *KvStoreAPIService) DeleteStoreExecute(r APIDeleteStoreRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     any
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObjectStoreAPIService.DeleteStore")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.DeleteStore")
 	if err != nil {
 		return nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/resources/stores/object/{store_id}"
+	localVarPath := localBasePath + "/resources/stores/kv/{store_id}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -374,7 +374,7 @@ func (a *ObjectStoreAPIService) DeleteStoreExecute(r APIDeleteStoreRequest) (*ht
 // APIGetStoreRequest represents a request for the resource.
 type APIGetStoreRequest struct {
 	ctx context.Context
-	APIService ObjectStoreAPI
+	APIService KvStoreAPI
 	storeID string
 }
 
@@ -385,15 +385,15 @@ func (r APIGetStoreRequest) Execute() (*StoreResponse, *http.Response, error) {
 }
 
 /*
-GetStore Describe an object store.
+GetStore Describe an kv store.
 
-Get an object store by ID.
+Get an kv store by ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param storeID
  @return APIGetStoreRequest
 */
-func (a *ObjectStoreAPIService) GetStore(ctx context.Context, storeID string) APIGetStoreRequest {
+func (a *KvStoreAPIService) GetStore(ctx context.Context, storeID string) APIGetStoreRequest {
 	return APIGetStoreRequest{
 		APIService: a,
 		ctx: ctx,
@@ -403,7 +403,7 @@ func (a *ObjectStoreAPIService) GetStore(ctx context.Context, storeID string) AP
 
 // GetStoreExecute executes the request
 //  @return StoreResponse
-func (a *ObjectStoreAPIService) GetStoreExecute(r APIGetStoreRequest) (*StoreResponse, *http.Response, error) {
+func (a *KvStoreAPIService) GetStoreExecute(r APIGetStoreRequest) (*StoreResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
@@ -411,12 +411,12 @@ func (a *ObjectStoreAPIService) GetStoreExecute(r APIGetStoreRequest) (*StoreRes
 		localVarReturnValue  *StoreResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObjectStoreAPIService.GetStore")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.GetStore")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/resources/stores/object/{store_id}"
+	localVarPath := localBasePath + "/resources/stores/kv/{store_id}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -508,7 +508,7 @@ func (a *ObjectStoreAPIService) GetStoreExecute(r APIGetStoreRequest) (*StoreRes
 // APIGetStoresRequest represents a request for the resource.
 type APIGetStoresRequest struct {
 	ctx context.Context
-	APIService ObjectStoreAPI
+	APIService KvStoreAPI
 	cursor *string
 	limit *int32
 }
@@ -530,14 +530,14 @@ func (r APIGetStoresRequest) Execute() (*InlineResponse2002, *http.Response, err
 }
 
 /*
-GetStores List object stores.
+GetStores List kv stores.
 
 Get all stores for a given customer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return APIGetStoresRequest
 */
-func (a *ObjectStoreAPIService) GetStores(ctx context.Context) APIGetStoresRequest {
+func (a *KvStoreAPIService) GetStores(ctx context.Context) APIGetStoresRequest {
 	return APIGetStoresRequest{
 		APIService: a,
 		ctx: ctx,
@@ -546,7 +546,7 @@ func (a *ObjectStoreAPIService) GetStores(ctx context.Context) APIGetStoresReque
 
 // GetStoresExecute executes the request
 //  @return InlineResponse2002
-func (a *ObjectStoreAPIService) GetStoresExecute(r APIGetStoresRequest) (*InlineResponse2002, *http.Response, error) {
+func (a *KvStoreAPIService) GetStoresExecute(r APIGetStoresRequest) (*InlineResponse2002, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
@@ -554,12 +554,12 @@ func (a *ObjectStoreAPIService) GetStoresExecute(r APIGetStoresRequest) (*Inline
 		localVarReturnValue  *InlineResponse2002
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObjectStoreAPIService.GetStores")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.GetStores")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/resources/stores/object"
+	localVarPath := localBasePath + "/resources/stores/kv"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
