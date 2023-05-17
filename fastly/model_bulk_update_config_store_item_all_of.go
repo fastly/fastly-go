@@ -17,33 +17,33 @@ import (
 	"encoding/json"
 )
 
-// BulkUpdateDictionaryItemAllOf struct for BulkUpdateDictionaryItemAllOf
-type BulkUpdateDictionaryItemAllOf struct {
+// BulkUpdateConfigStoreItemAllOf struct for BulkUpdateConfigStoreItemAllOf
+type BulkUpdateConfigStoreItemAllOf struct {
 	Op *string `json:"op,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _BulkUpdateDictionaryItemAllOf BulkUpdateDictionaryItemAllOf
+type _BulkUpdateConfigStoreItemAllOf BulkUpdateConfigStoreItemAllOf
 
-// NewBulkUpdateDictionaryItemAllOf instantiates a new BulkUpdateDictionaryItemAllOf object
+// NewBulkUpdateConfigStoreItemAllOf instantiates a new BulkUpdateConfigStoreItemAllOf object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBulkUpdateDictionaryItemAllOf() *BulkUpdateDictionaryItemAllOf {
-	this := BulkUpdateDictionaryItemAllOf{}
+func NewBulkUpdateConfigStoreItemAllOf() *BulkUpdateConfigStoreItemAllOf {
+	this := BulkUpdateConfigStoreItemAllOf{}
 	return &this
 }
 
-// NewBulkUpdateDictionaryItemAllOfWithDefaults instantiates a new BulkUpdateDictionaryItemAllOf object
+// NewBulkUpdateConfigStoreItemAllOfWithDefaults instantiates a new BulkUpdateConfigStoreItemAllOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewBulkUpdateDictionaryItemAllOfWithDefaults() *BulkUpdateDictionaryItemAllOf {
-	this := BulkUpdateDictionaryItemAllOf{}
+func NewBulkUpdateConfigStoreItemAllOfWithDefaults() *BulkUpdateConfigStoreItemAllOf {
+	this := BulkUpdateConfigStoreItemAllOf{}
 	return &this
 }
 
 // GetOp returns the Op field value if set, zero value otherwise.
-func (o *BulkUpdateDictionaryItemAllOf) GetOp() string {
+func (o *BulkUpdateConfigStoreItemAllOf) GetOp() string {
 	if o == nil || o.Op == nil {
 		var ret string
 		return ret
@@ -53,7 +53,7 @@ func (o *BulkUpdateDictionaryItemAllOf) GetOp() string {
 
 // GetOpOk returns a tuple with the Op field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BulkUpdateDictionaryItemAllOf) GetOpOk() (*string, bool) {
+func (o *BulkUpdateConfigStoreItemAllOf) GetOpOk() (*string, bool) {
 	if o == nil || o.Op == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *BulkUpdateDictionaryItemAllOf) GetOpOk() (*string, bool) {
 }
 
 // HasOp returns a boolean if a field has been set.
-func (o *BulkUpdateDictionaryItemAllOf) HasOp() bool {
+func (o *BulkUpdateConfigStoreItemAllOf) HasOp() bool {
 	if o != nil && o.Op != nil {
 		return true
 	}
@@ -70,13 +70,13 @@ func (o *BulkUpdateDictionaryItemAllOf) HasOp() bool {
 }
 
 // SetOp gets a reference to the given string and assigns it to the Op field.
-func (o *BulkUpdateDictionaryItemAllOf) SetOp(v string) {
+func (o *BulkUpdateConfigStoreItemAllOf) SetOp(v string) {
 	o.Op = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o BulkUpdateDictionaryItemAllOf) MarshalJSON() ([]byte, error) {
+func (o BulkUpdateConfigStoreItemAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Op != nil {
 		toSerialize["op"] = o.Op
@@ -91,11 +91,11 @@ func (o BulkUpdateDictionaryItemAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *BulkUpdateDictionaryItemAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varBulkUpdateDictionaryItemAllOf := _BulkUpdateDictionaryItemAllOf{}
+func (o *BulkUpdateConfigStoreItemAllOf) UnmarshalJSON(bytes []byte) (err error) {
+	varBulkUpdateConfigStoreItemAllOf := _BulkUpdateConfigStoreItemAllOf{}
 
-	if err = json.Unmarshal(bytes, &varBulkUpdateDictionaryItemAllOf); err == nil {
-		*o = BulkUpdateDictionaryItemAllOf(varBulkUpdateDictionaryItemAllOf)
+	if err = json.Unmarshal(bytes, &varBulkUpdateConfigStoreItemAllOf); err == nil {
+		*o = BulkUpdateConfigStoreItemAllOf(varBulkUpdateConfigStoreItemAllOf)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -108,48 +108,48 @@ func (o *BulkUpdateDictionaryItemAllOf) UnmarshalJSON(bytes []byte) (err error) 
 	return err
 }
 
-// NullableBulkUpdateDictionaryItemAllOf is a helper abstraction for handling nullable bulkupdatedictionaryitemallof types. 
-type NullableBulkUpdateDictionaryItemAllOf struct {
-	value *BulkUpdateDictionaryItemAllOf
+// NullableBulkUpdateConfigStoreItemAllOf is a helper abstraction for handling nullable bulkupdateconfigstoreitemallof types. 
+type NullableBulkUpdateConfigStoreItemAllOf struct {
+	value *BulkUpdateConfigStoreItemAllOf
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableBulkUpdateDictionaryItemAllOf) Get() *BulkUpdateDictionaryItemAllOf {
+func (v NullableBulkUpdateConfigStoreItemAllOf) Get() *BulkUpdateConfigStoreItemAllOf {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableBulkUpdateDictionaryItemAllOf) Set(val *BulkUpdateDictionaryItemAllOf) {
+func (v *NullableBulkUpdateConfigStoreItemAllOf) Set(val *BulkUpdateConfigStoreItemAllOf) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableBulkUpdateDictionaryItemAllOf) IsSet() bool {
+func (v NullableBulkUpdateConfigStoreItemAllOf) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableBulkUpdateDictionaryItemAllOf) Unset() {
+func (v *NullableBulkUpdateConfigStoreItemAllOf) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableBulkUpdateDictionaryItemAllOf returns a pointer to a new instance of NullableBulkUpdateDictionaryItemAllOf.
-func NewNullableBulkUpdateDictionaryItemAllOf(val *BulkUpdateDictionaryItemAllOf) *NullableBulkUpdateDictionaryItemAllOf {
-	return &NullableBulkUpdateDictionaryItemAllOf{value: val, isSet: true}
+// NewNullableBulkUpdateConfigStoreItemAllOf returns a pointer to a new instance of NullableBulkUpdateConfigStoreItemAllOf.
+func NewNullableBulkUpdateConfigStoreItemAllOf(val *BulkUpdateConfigStoreItemAllOf) *NullableBulkUpdateConfigStoreItemAllOf {
+	return &NullableBulkUpdateConfigStoreItemAllOf{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableBulkUpdateDictionaryItemAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableBulkUpdateConfigStoreItemAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableBulkUpdateDictionaryItemAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableBulkUpdateConfigStoreItemAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

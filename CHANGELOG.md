@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.0.0-beta.9](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.9) (2023-05-17)
+
+**Enhancements:**
+
+- feat(config_store): add Config Store endpoints.
+
 ## [v1.0.0-beta.8](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.8) (2023-05-16)
 
 **Breaking changes:**

@@ -12,7 +12,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go vv1.0.0-beta.8
+	github.com/fastly/fastly-go vv1.0.0-beta.9
 )
 ```
 
@@ -95,6 +95,20 @@ Class | Method | HTTP request | Description
 *ConditionAPI* | [**GetCondition**](docs/ConditionAPI.md#getcondition) | **GET** `/service/{service_id}/version/{version_id}/condition/{condition_name}` | Describe a condition
 *ConditionAPI* | [**ListConditions**](docs/ConditionAPI.md#listconditions) | **GET** `/service/{service_id}/version/{version_id}/condition` | List conditions
 *ConditionAPI* | [**UpdateCondition**](docs/ConditionAPI.md#updatecondition) | **PUT** `/service/{service_id}/version/{version_id}/condition/{condition_name}` | Update a condition
+*ConfigStoreAPI* | [**CreateConfigStore**](docs/ConfigStoreAPI.md#createconfigstore) | **POST** `/resources/stores/config` | Create a config store
+*ConfigStoreAPI* | [**DeleteConfigStore**](docs/ConfigStoreAPI.md#deleteconfigstore) | **DELETE** `/resources/stores/config/{config_store_id}` | Delete a config store
+*ConfigStoreAPI* | [**GetConfigStore**](docs/ConfigStoreAPI.md#getconfigstore) | **GET** `/resources/stores/config/{config_store_id}` | Describe a config store
+*ConfigStoreAPI* | [**GetConfigStoreInfo**](docs/ConfigStoreAPI.md#getconfigstoreinfo) | **GET** `/resources/stores/config/{config_store_id}/info` | Get config store metadata
+*ConfigStoreAPI* | [**ListConfigStoreServices**](docs/ConfigStoreAPI.md#listconfigstoreservices) | **GET** `/resources/stores/config/{config_store_id}/services` | List linked services
+*ConfigStoreAPI* | [**ListConfigStores**](docs/ConfigStoreAPI.md#listconfigstores) | **GET** `/resources/stores/config` | List config stores
+*ConfigStoreAPI* | [**UpdateConfigStore**](docs/ConfigStoreAPI.md#updateconfigstore) | **PUT** `/resources/stores/config/{config_store_id}` | Update a config store
+*ConfigStoreItemAPI* | [**BulkUpdateConfigStoreItem**](docs/ConfigStoreItemAPI.md#bulkupdateconfigstoreitem) | **PATCH** `/resources/stores/config/{config_store_id}/items` | Update multiple entries in a config store
+*ConfigStoreItemAPI* | [**CreateConfigStoreItem**](docs/ConfigStoreItemAPI.md#createconfigstoreitem) | **POST** `/resources/stores/config/{config_store_id}/item` | Create an entry in a config store
+*ConfigStoreItemAPI* | [**DeleteConfigStoreItem**](docs/ConfigStoreItemAPI.md#deleteconfigstoreitem) | **DELETE** `/resources/stores/config/{config_store_id}/item/{config_store_item_key}` | Delete an item from a config store
+*ConfigStoreItemAPI* | [**GetConfigStoreItem**](docs/ConfigStoreItemAPI.md#getconfigstoreitem) | **GET** `/resources/stores/config/{config_store_id}/item/{config_store_item_key}` | Get an item from a config store
+*ConfigStoreItemAPI* | [**ListConfigStoreItems**](docs/ConfigStoreItemAPI.md#listconfigstoreitems) | **GET** `/resources/stores/config/{config_store_id}/items` | List items in a config store
+*ConfigStoreItemAPI* | [**UpdateConfigStoreItem**](docs/ConfigStoreItemAPI.md#updateconfigstoreitem) | **PATCH** `/resources/stores/config/{config_store_id}/item/{config_store_item_key}` | Update an entry in a config store
+*ConfigStoreItemAPI* | [**UpsertConfigStoreItem**](docs/ConfigStoreItemAPI.md#upsertconfigstoreitem) | **PUT** `/resources/stores/config/{config_store_id}/item/{config_store_item_key}` | Insert or update an entry in a config store
 *ContactAPI* | [**DeleteContact**](docs/ContactAPI.md#deletecontact) | **DELETE** `/customer/{customer_id}/contact/{contact_id}` | Delete a contact
 *ContactAPI* | [**ListContacts**](docs/ContactAPI.md#listcontacts) | **GET** `/customer/{customer_id}/contacts` | List contacts
 *ContentAPI* | [**ContentCheck**](docs/ContentAPI.md#contentcheck) | **GET** `/content/edge_check` | Check status of content in each POP's cache
@@ -506,13 +520,6 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/metrics/domains/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/domain-inspector/historical) (GET)
 - [`/metrics/origins/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/origin-inspector/historical) (GET)
 - [`/rate-limiters/{rate_limiter_id}`](https://developer.fastly.com/reference/api/vcl-services/rate-limiter) (PUT)
-- [`/resources/stores/config/{config_store_id}/info`](https://developer.fastly.com/reference/api/services/resources/config-store) (GET)
-- [`/resources/stores/config/{config_store_id}/item/{config_store_item_key}`](https://developer.fastly.com/reference/api/services/resources/config-store-item) (DELETE, GET, PATCH, PUT)
-- [`/resources/stores/config/{config_store_id}/item`](https://developer.fastly.com/reference/api/services/resources/config-store-item) (POST)
-- [`/resources/stores/config/{config_store_id}/items`](https://developer.fastly.com/reference/api/services/resources/config-store-item) (GET, PATCH)
-- [`/resources/stores/config/{config_store_id}/services`](https://developer.fastly.com/reference/api/services/resources/config-store) (GET)
-- [`/resources/stores/config/{config_store_id}`](https://developer.fastly.com/reference/api/services/resources/config-store) (DELETE, GET, PUT)
-- [`/resources/stores/config`](https://developer.fastly.com/reference/api/services/resources/config-store) (GET, POST)
 - [`/resources/stores/secret/client-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (POST)
 - [`/resources/stores/secret/signing-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (GET)
 - [`/resources/stores/secret/{store_id}/secrets/{secret_name}`](https://developer.fastly.com/reference/api/services/resources/secret) (DELETE, GET)

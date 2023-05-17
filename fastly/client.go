@@ -80,6 +80,10 @@ type APIClient struct {
 
 	ConditionAPI ConditionAPI
 
+	ConfigStoreAPI ConfigStoreAPI
+
+	ConfigStoreItemAPI ConfigStoreItemAPI
+
 	ContactAPI ContactAPI
 
 	ContentAPI ContentAPI
@@ -284,6 +288,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.BillingAddressAPI = (*BillingAddressAPIService)(&c.common)
 	c.CacheSettingsAPI = (*CacheSettingsAPIService)(&c.common)
 	c.ConditionAPI = (*ConditionAPIService)(&c.common)
+	c.ConfigStoreAPI = (*ConfigStoreAPIService)(&c.common)
+	c.ConfigStoreItemAPI = (*ConfigStoreItemAPIService)(&c.common)
 	c.ContactAPI = (*ContactAPIService)(&c.common)
 	c.ContentAPI = (*ContentAPIService)(&c.common)
 	c.CustomerAPI = (*CustomerAPIService)(&c.common)
