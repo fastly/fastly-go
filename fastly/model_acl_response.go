@@ -29,7 +29,8 @@ type ACLResponse struct {
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	// String representing the number identifying a version of the service.
+	Version *string `json:"version,omitempty"`
 	ID *string `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -244,9 +245,9 @@ func (o *ACLResponse) SetServiceID(v string) {
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *ACLResponse) GetVersion() int32 {
+func (o *ACLResponse) GetVersion() string {
 	if o == nil || o.Version == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Version
@@ -254,7 +255,7 @@ func (o *ACLResponse) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ACLResponse) GetVersionOk() (*int32, bool) {
+func (o *ACLResponse) GetVersionOk() (*string, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -270,8 +271,8 @@ func (o *ACLResponse) HasVersion() bool {
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *ACLResponse) SetVersion(v int32) {
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *ACLResponse) SetVersion(v string) {
 	o.Version = &v
 }
 

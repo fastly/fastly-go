@@ -65,7 +65,7 @@ type BackendResponse struct {
 	// Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all.
 	SslCertHostname NullableString `json:"ssl_cert_hostname,omitempty"`
 	// Be strict on checking SSL certs.
-	SslCheckCert *bool `json:"ssl_check_cert,omitempty"`
+	SslCheckCert NullableBool `json:"ssl_check_cert,omitempty"`
 	// List of [OpenSSL ciphers](https://www.openssl.org/docs/manmaster/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
 	SslCiphers NullableString `json:"ssl_ciphers,omitempty"`
 	// Client certificate attached to origin.
@@ -103,7 +103,7 @@ type _BackendResponse BackendResponse
 func NewBackendResponse() *BackendResponse {
 	this := BackendResponse{}
 	var sslCheckCert bool = true
-	this.SslCheckCert = &sslCheckCert
+	this.SslCheckCert = *NewNullableBool(&sslCheckCert)
 	return &this
 }
 
@@ -113,7 +113,7 @@ func NewBackendResponse() *BackendResponse {
 func NewBackendResponseWithDefaults() *BackendResponse {
 	this := BackendResponse{}
 	var sslCheckCert bool = true
-	this.SslCheckCert = &sslCheckCert
+	this.SslCheckCert = *NewNullableBool(&sslCheckCert)
 	return &this
 }
 
@@ -951,36 +951,46 @@ func (o *BackendResponse) UnsetSslCertHostname() {
 	o.SslCertHostname.Unset()
 }
 
-// GetSslCheckCert returns the SslCheckCert field value if set, zero value otherwise.
+// GetSslCheckCert returns the SslCheckCert field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackendResponse) GetSslCheckCert() bool {
-	if o == nil || o.SslCheckCert == nil {
+	if o == nil || o.SslCheckCert.Get() == nil {
 		var ret bool
 		return ret
 	}
-	return *o.SslCheckCert
+	return *o.SslCheckCert.Get()
 }
 
 // GetSslCheckCertOk returns a tuple with the SslCheckCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetSslCheckCertOk() (*bool, bool) {
-	if o == nil || o.SslCheckCert == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.SslCheckCert, true
+	return o.SslCheckCert.Get(), o.SslCheckCert.IsSet()
 }
 
 // HasSslCheckCert returns a boolean if a field has been set.
 func (o *BackendResponse) HasSslCheckCert() bool {
-	if o != nil && o.SslCheckCert != nil {
+	if o != nil && o.SslCheckCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSslCheckCert gets a reference to the given bool and assigns it to the SslCheckCert field.
+// SetSslCheckCert gets a reference to the given NullableBool and assigns it to the SslCheckCert field.
 func (o *BackendResponse) SetSslCheckCert(v bool) {
-	o.SslCheckCert = &v
+	o.SslCheckCert.Set(&v)
+}
+// SetSslCheckCertNil sets the value for SslCheckCert to be an explicit nil
+func (o *BackendResponse) SetSslCheckCertNil() {
+	o.SslCheckCert.Set(nil)
+}
+
+// UnsetSslCheckCert ensures that no value is present for SslCheckCert, not even an explicit nil
+func (o *BackendResponse) UnsetSslCheckCert() {
+	o.SslCheckCert.Unset()
 }
 
 // GetSslCiphers returns the SslCiphers field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1552,8 +1562,8 @@ func (o BackendResponse) MarshalJSON() ([]byte, error) {
 	if o.SslCertHostname.IsSet() {
 		toSerialize["ssl_cert_hostname"] = o.SslCertHostname.Get()
 	}
-	if o.SslCheckCert != nil {
-		toSerialize["ssl_check_cert"] = o.SslCheckCert
+	if o.SslCheckCert.IsSet() {
+		toSerialize["ssl_check_cert"] = o.SslCheckCert.Get()
 	}
 	if o.SslCiphers.IsSet() {
 		toSerialize["ssl_ciphers"] = o.SslCiphers.Get()

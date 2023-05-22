@@ -28,7 +28,7 @@ type Snippet struct {
 	// The VCL code that specifies exactly what the snippet does.
 	Content *string `json:"content,omitempty"`
 	// Priority determines execution order. Lower numbers execute first.
-	Priority *int32 `json:"priority,omitempty"`
+	Priority *string `json:"priority,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -40,7 +40,7 @@ type _Snippet Snippet
 // will change when the set of required properties is changed
 func NewSnippet() *Snippet {
 	this := Snippet{}
-	var priority int32 = 100
+	var priority string = "100"
 	this.Priority = &priority
 	return &this
 }
@@ -50,7 +50,7 @@ func NewSnippet() *Snippet {
 // but it doesn't guarantee that properties required by API are set
 func NewSnippetWithDefaults() *Snippet {
 	this := Snippet{}
-	var priority int32 = 100
+	var priority string = "100"
 	this.Priority = &priority
 	return &this
 }
@@ -184,9 +184,9 @@ func (o *Snippet) SetContent(v string) {
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *Snippet) GetPriority() int32 {
+func (o *Snippet) GetPriority() string {
 	if o == nil || o.Priority == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Priority
@@ -194,7 +194,7 @@ func (o *Snippet) GetPriority() int32 {
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Snippet) GetPriorityOk() (*int32, bool) {
+func (o *Snippet) GetPriorityOk() (*string, bool) {
 	if o == nil || o.Priority == nil {
 		return nil, false
 	}
@@ -210,8 +210,8 @@ func (o *Snippet) HasPriority() bool {
 	return false
 }
 
-// SetPriority gets a reference to the given int32 and assigns it to the Priority field.
-func (o *Snippet) SetPriority(v int32) {
+// SetPriority gets a reference to the given string and assigns it to the Priority field.
+func (o *Snippet) SetPriority(v string) {
 	o.Priority = &v
 }
 

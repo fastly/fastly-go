@@ -29,15 +29,16 @@ type SnippetResponse struct {
 	// The VCL code that specifies exactly what the snippet does.
 	Content *string `json:"content,omitempty"`
 	// Priority determines execution order. Lower numbers execute first.
-	Priority *int32 `json:"priority,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Priority *string `json:"priority,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
+	ServiceID *string `json:"service_id,omitempty"`
+	// String representing the number identifying a version of the service.
+	Version *string `json:"version,omitempty"`
 	ID *string `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -50,7 +51,7 @@ type _SnippetResponse SnippetResponse
 // will change when the set of required properties is changed
 func NewSnippetResponse() *SnippetResponse {
 	this := SnippetResponse{}
-	var priority int32 = 100
+	var priority string = "100"
 	this.Priority = &priority
 	return &this
 }
@@ -60,7 +61,7 @@ func NewSnippetResponse() *SnippetResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewSnippetResponseWithDefaults() *SnippetResponse {
 	this := SnippetResponse{}
-	var priority int32 = 100
+	var priority string = "100"
 	this.Priority = &priority
 	return &this
 }
@@ -194,9 +195,9 @@ func (o *SnippetResponse) SetContent(v string) {
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *SnippetResponse) GetPriority() int32 {
+func (o *SnippetResponse) GetPriority() string {
 	if o == nil || o.Priority == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Priority
@@ -204,7 +205,7 @@ func (o *SnippetResponse) GetPriority() int32 {
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SnippetResponse) GetPriorityOk() (*int32, bool) {
+func (o *SnippetResponse) GetPriorityOk() (*string, bool) {
 	if o == nil || o.Priority == nil {
 		return nil, false
 	}
@@ -220,73 +221,9 @@ func (o *SnippetResponse) HasPriority() bool {
 	return false
 }
 
-// SetPriority gets a reference to the given int32 and assigns it to the Priority field.
-func (o *SnippetResponse) SetPriority(v int32) {
+// SetPriority gets a reference to the given string and assigns it to the Priority field.
+func (o *SnippetResponse) SetPriority(v string) {
 	o.Priority = &v
-}
-
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *SnippetResponse) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
-		var ret string
-		return ret
-	}
-	return *o.ServiceID
-}
-
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SnippetResponse) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
-		return nil, false
-	}
-	return o.ServiceID, true
-}
-
-// HasServiceID returns a boolean if a field has been set.
-func (o *SnippetResponse) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *SnippetResponse) SetServiceID(v string) {
-	o.ServiceID = &v
-}
-
-// GetVersion returns the Version field value if set, zero value otherwise.
-func (o *SnippetResponse) GetVersion() int32 {
-	if o == nil || o.Version == nil {
-		var ret int32
-		return ret
-	}
-	return *o.Version
-}
-
-// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *SnippetResponse) GetVersionOk() (*int32, bool) {
-	if o == nil || o.Version == nil {
-		return nil, false
-	}
-	return o.Version, true
-}
-
-// HasVersion returns a boolean if a field has been set.
-func (o *SnippetResponse) HasVersion() bool {
-	if o != nil && o.Version != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *SnippetResponse) SetVersion(v int32) {
-	o.Version = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -415,6 +352,70 @@ func (o *SnippetResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *SnippetResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
+		var ret string
+		return ret
+	}
+	return *o.ServiceID
+}
+
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnippetResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
+		return nil, false
+	}
+	return o.ServiceID, true
+}
+
+// HasServiceID returns a boolean if a field has been set.
+func (o *SnippetResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *SnippetResponse) SetServiceID(v string) {
+	o.ServiceID = &v
+}
+
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *SnippetResponse) GetVersion() string {
+	if o == nil || o.Version == nil {
+		var ret string
+		return ret
+	}
+	return *o.Version
+}
+
+// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnippetResponse) GetVersionOk() (*string, bool) {
+	if o == nil || o.Version == nil {
+		return nil, false
+	}
+	return o.Version, true
+}
+
+// HasVersion returns a boolean if a field has been set.
+func (o *SnippetResponse) HasVersion() bool {
+	if o != nil && o.Version != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *SnippetResponse) SetVersion(v string) {
+	o.Version = &v
+}
+
 // GetID returns the ID field value if set, zero value otherwise.
 func (o *SnippetResponse) GetID() string {
 	if o == nil || o.ID == nil {
@@ -466,12 +467,6 @@ func (o SnippetResponse) MarshalJSON() ([]byte, error) {
 	if o.Priority != nil {
 		toSerialize["priority"] = o.Priority
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
-	}
-	if o.Version != nil {
-		toSerialize["version"] = o.Version
-	}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
 	}
@@ -480,6 +475,12 @@ func (o SnippetResponse) MarshalJSON() ([]byte, error) {
 	}
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
+	}
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
+	}
+	if o.Version != nil {
+		toSerialize["version"] = o.Version
 	}
 	if o.ID != nil {
 		toSerialize["id"] = o.ID
@@ -509,11 +510,11 @@ func (o *SnippetResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "type")
 		delete(additionalProperties, "content")
 		delete(additionalProperties, "priority")
-		delete(additionalProperties, "service_id")
-		delete(additionalProperties, "version")
 		delete(additionalProperties, "created_at")
 		delete(additionalProperties, "deleted_at")
 		delete(additionalProperties, "updated_at")
+		delete(additionalProperties, "service_id")
+		delete(additionalProperties, "version")
 		delete(additionalProperties, "id")
 		o.AdditionalProperties = additionalProperties
 	}

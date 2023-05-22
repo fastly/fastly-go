@@ -8,12 +8,12 @@ Name | Type | Description | Notes
 **Dynamic** | Pointer to **int32** | Sets the snippet version. | [optional] 
 **Type** | Pointer to **string** | The location in generated VCL where the snippet should be placed. | [optional] 
 **Content** | Pointer to **string** | The VCL code that specifies exactly what the snippet does. | [optional] 
-**Priority** | Pointer to **int32** | Priority determines execution order. Lower numbers execute first. | [optional] [default to 100]
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **int32** |  | [optional] [readonly] 
+**Priority** | Pointer to **string** | Priority determines execution order. Lower numbers execute first. | [optional] [default to "100"]
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**Version** | Pointer to **string** | String representing the number identifying a version of the service. | [optional] [readonly] 
 **ID** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
@@ -137,20 +137,20 @@ HasContent returns a boolean if a field has been set.
 
 ### GetPriority
 
-`func (o *SchemasSnippetResponse) GetPriority() int32`
+`func (o *SchemasSnippetResponse) GetPriority() string`
 
 GetPriority returns the Priority field if non-nil, zero value otherwise.
 
 ### GetPriorityOk
 
-`func (o *SchemasSnippetResponse) GetPriorityOk() (*int32, bool)`
+`func (o *SchemasSnippetResponse) GetPriorityOk() (*string, bool)`
 
 GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriority
 
-`func (o *SchemasSnippetResponse) SetPriority(v int32)`
+`func (o *SchemasSnippetResponse) SetPriority(v string)`
 
 SetPriority sets Priority field to given value.
 
@@ -159,56 +159,6 @@ SetPriority sets Priority field to given value.
 `func (o *SchemasSnippetResponse) HasPriority() bool`
 
 HasPriority returns a boolean if a field has been set.
-
-### GetServiceID
-
-`func (o *SchemasSnippetResponse) GetServiceID() string`
-
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
-
-### GetServiceIDOk
-
-`func (o *SchemasSnippetResponse) GetServiceIDOk() (*string, bool)`
-
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceID
-
-`func (o *SchemasSnippetResponse) SetServiceID(v string)`
-
-SetServiceID sets ServiceID field to given value.
-
-### HasServiceID
-
-`func (o *SchemasSnippetResponse) HasServiceID() bool`
-
-HasServiceID returns a boolean if a field has been set.
-
-### GetVersion
-
-`func (o *SchemasSnippetResponse) GetVersion() int32`
-
-GetVersion returns the Version field if non-nil, zero value otherwise.
-
-### GetVersionOk
-
-`func (o *SchemasSnippetResponse) GetVersionOk() (*int32, bool)`
-
-GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVersion
-
-`func (o *SchemasSnippetResponse) SetVersion(v int32)`
-
-SetVersion sets Version field to given value.
-
-### HasVersion
-
-`func (o *SchemasSnippetResponse) HasVersion() bool`
-
-HasVersion returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -315,6 +265,56 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *SchemasSnippetResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
+### GetServiceID
+
+`func (o *SchemasSnippetResponse) GetServiceID() string`
+
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+
+### GetServiceIDOk
+
+`func (o *SchemasSnippetResponse) GetServiceIDOk() (*string, bool)`
+
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceID
+
+`func (o *SchemasSnippetResponse) SetServiceID(v string)`
+
+SetServiceID sets ServiceID field to given value.
+
+### HasServiceID
+
+`func (o *SchemasSnippetResponse) HasServiceID() bool`
+
+HasServiceID returns a boolean if a field has been set.
+
+### GetVersion
+
+`func (o *SchemasSnippetResponse) GetVersion() string`
+
+GetVersion returns the Version field if non-nil, zero value otherwise.
+
+### GetVersionOk
+
+`func (o *SchemasSnippetResponse) GetVersionOk() (*string, bool)`
+
+GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersion
+
+`func (o *SchemasSnippetResponse) SetVersion(v string)`
+
+SetVersion sets Version field to given value.
+
+### HasVersion
+
+`func (o *SchemasSnippetResponse) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
+
 ### GetID
 
 `func (o *SchemasSnippetResponse) GetID() string`

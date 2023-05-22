@@ -19,6 +19,9 @@ import (
 
 // SnippetResponseAllOf struct for SnippetResponseAllOf
 type SnippetResponseAllOf struct {
+	ServiceID *string `json:"service_id,omitempty"`
+	// String representing the number identifying a version of the service.
+	Version *string `json:"version,omitempty"`
 	ID *string `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -40,6 +43,70 @@ func NewSnippetResponseAllOf() *SnippetResponseAllOf {
 func NewSnippetResponseAllOfWithDefaults() *SnippetResponseAllOf {
 	this := SnippetResponseAllOf{}
 	return &this
+}
+
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *SnippetResponseAllOf) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
+		var ret string
+		return ret
+	}
+	return *o.ServiceID
+}
+
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnippetResponseAllOf) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
+		return nil, false
+	}
+	return o.ServiceID, true
+}
+
+// HasServiceID returns a boolean if a field has been set.
+func (o *SnippetResponseAllOf) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *SnippetResponseAllOf) SetServiceID(v string) {
+	o.ServiceID = &v
+}
+
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *SnippetResponseAllOf) GetVersion() string {
+	if o == nil || o.Version == nil {
+		var ret string
+		return ret
+	}
+	return *o.Version
+}
+
+// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SnippetResponseAllOf) GetVersionOk() (*string, bool) {
+	if o == nil || o.Version == nil {
+		return nil, false
+	}
+	return o.Version, true
+}
+
+// HasVersion returns a boolean if a field has been set.
+func (o *SnippetResponseAllOf) HasVersion() bool {
+	if o != nil && o.Version != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *SnippetResponseAllOf) SetVersion(v string) {
+	o.Version = &v
 }
 
 // GetID returns the ID field value if set, zero value otherwise.
@@ -78,6 +145,12 @@ func (o *SnippetResponseAllOf) SetID(v string) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o SnippetResponseAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
+	}
+	if o.Version != nil {
+		toSerialize["version"] = o.Version
+	}
 	if o.ID != nil {
 		toSerialize["id"] = o.ID
 	}
@@ -101,6 +174,8 @@ func (o *SnippetResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		delete(additionalProperties, "service_id")
+		delete(additionalProperties, "version")
 		delete(additionalProperties, "id")
 		o.AdditionalProperties = additionalProperties
 	}

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Dynamic** | Pointer to **int32** | Sets the snippet version. | [optional] 
 **Type** | Pointer to **string** | The location in generated VCL where the snippet should be placed. | [optional] 
 **Content** | Pointer to **string** | The VCL code that specifies exactly what the snippet does. | [optional] 
-**Priority** | Pointer to **int32** | Priority determines execution order. Lower numbers execute first. | [optional] [default to 100]
+**Priority** | Pointer to **string** | Priority determines execution order. Lower numbers execute first. | [optional] [default to "100"]
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasContent returns a boolean if a field has been set.
 
 ### GetPriority
 
-`func (o *Snippet) GetPriority() int32`
+`func (o *Snippet) GetPriority() string`
 
 GetPriority returns the Priority field if non-nil, zero value otherwise.
 
 ### GetPriorityOk
 
-`func (o *Snippet) GetPriorityOk() (*int32, bool)`
+`func (o *Snippet) GetPriorityOk() (*string, bool)`
 
 GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriority
 
-`func (o *Snippet) SetPriority(v int32)`
+`func (o *Snippet) SetPriority(v string)`
 
 SetPriority sets Priority field to given value.
 

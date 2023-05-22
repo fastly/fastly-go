@@ -38,7 +38,7 @@ func main() {
     dynamic := int32(56) // int32 | Sets the snippet version. (optional)
     resourceType := "resourceType_example" // string | The location in generated VCL where the snippet should be placed. (optional)
     content := "content_example" // string | The VCL code that specifies exactly what the snippet does. (optional)
-    priority := int32(56) // int32 | Priority determines execution order. Lower numbers execute first. (optional) (default to 100)
+    priority := "priority_example" // string | Priority determines execution order. Lower numbers execute first. (optional) (default to "100")
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -69,7 +69,7 @@ Other parameters are passed through a pointer to a apiCreateSnippetRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string** | The name for the snippet. |  **dynamic** | **int32** | Sets the snippet version. |  **resourceType** | **string** | The location in generated VCL where the snippet should be placed. |  **content** | **string** | The VCL code that specifies exactly what the snippet does. |  **priority** | **int32** | Priority determines execution order. Lower numbers execute first. | [default to 100]
+ **name** | **string** | The name for the snippet. |  **dynamic** | **int32** | Sets the snippet version. |  **resourceType** | **string** | The location in generated VCL where the snippet should be placed. |  **content** | **string** | The VCL code that specifies exactly what the snippet does. |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
 
 ### Return type
 
@@ -392,7 +392,7 @@ func main() {
     dynamic := int32(56) // int32 | Sets the snippet version. (optional)
     resourceType := "resourceType_example" // string | The location in generated VCL where the snippet should be placed. (optional)
     content := "content_example" // string | The VCL code that specifies exactly what the snippet does. (optional)
-    priority := int32(56) // int32 | Priority determines execution order. Lower numbers execute first. (optional) (default to 100)
+    priority := "priority_example" // string | Priority determines execution order. Lower numbers execute first. (optional) (default to "100")
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -423,7 +423,7 @@ Other parameters are passed through a pointer to a apiUpdateSnippetDynamicReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string** | The name for the snippet. |  **dynamic** | **int32** | Sets the snippet version. |  **resourceType** | **string** | The location in generated VCL where the snippet should be placed. |  **content** | **string** | The VCL code that specifies exactly what the snippet does. |  **priority** | **int32** | Priority determines execution order. Lower numbers execute first. | [default to 100]
+ **name** | **string** | The name for the snippet. |  **dynamic** | **int32** | Sets the snippet version. |  **resourceType** | **string** | The location in generated VCL where the snippet should be placed. |  **content** | **string** | The VCL code that specifies exactly what the snippet does. |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
 
 ### Return type
 

@@ -1,5 +1,16 @@
 # Changelog
 
+## [v1.0.0-beta.10](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.10) (2023-05-22)
+
+**Bug fixes:**
+
+- fix(acl): change `version` from int to string.
+- fix(acl): add missing methods for `service_id` and `service_version` properties.
+- fix(backend): make `ssl_check_cert` nullable.
+- fix(purge): skip URL escape for `surrogate_key` param.
+- fix(snippets): change `priority` and `version` from int to string.
+- fix(snippets): add missing methods for `service_id` and `service_version` properties.
+
 ## [v1.0.0-beta.9](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.9) (2023-05-17)
 
 **Enhancements:**

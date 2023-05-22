@@ -420,7 +420,7 @@ func (a *PurgeAPIService) PurgeTagExecute(r APIPurgeTagRequest) (*PurgeResponse,
 
 	localVarPath := localBasePath + "/service/{service_id}/purge/{surrogate_key}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"surrogate_key"+"}", gourl.PathEscape(parameterToString(r.surrogateKey, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"surrogate_key"+"}", parameterToString(r.surrogateKey, ""))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

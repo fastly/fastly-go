@@ -143,7 +143,7 @@ type APICreateSnippetRequest struct {
 	dynamic *int32
 	resourceType *string
 	content *string
-	priority *int32
+	priority *string
 }
 
 // Name The name for the snippet.
@@ -167,7 +167,7 @@ func (r *APICreateSnippetRequest) Content(content string) *APICreateSnippetReque
 	return r
 }
 // Priority Priority determines execution order. Lower numbers execute first.
-func (r *APICreateSnippetRequest) Priority(priority int32) *APICreateSnippetRequest {
+func (r *APICreateSnippetRequest) Priority(priority string) *APICreateSnippetRequest {
 	r.priority = &priority
 	return r
 }
@@ -886,7 +886,7 @@ type APIUpdateSnippetDynamicRequest struct {
 	dynamic *int32
 	resourceType *string
 	content *string
-	priority *int32
+	priority *string
 }
 
 // Name The name for the snippet.
@@ -910,7 +910,7 @@ func (r *APIUpdateSnippetDynamicRequest) Content(content string) *APIUpdateSnipp
 	return r
 }
 // Priority Priority determines execution order. Lower numbers execute first.
-func (r *APIUpdateSnippetDynamicRequest) Priority(priority int32) *APIUpdateSnippetDynamicRequest {
+func (r *APIUpdateSnippetDynamicRequest) Priority(priority string) *APIUpdateSnippetDynamicRequest {
 	r.priority = &priority
 	return r
 }

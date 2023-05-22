@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **Shield** | Pointer to **NullableString** | Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding). | [optional] 
 **SslCaCert** | Pointer to **NullableString** | CA certificate attached to origin. | [optional] 
 **SslCertHostname** | Pointer to **NullableString** | Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all. | [optional] 
-**SslCheckCert** | Pointer to **bool** | Be strict on checking SSL certs. | [optional] [default to true]
+**SslCheckCert** | Pointer to **NullableBool** | Be strict on checking SSL certs. | [optional] [default to true]
 **SslCiphers** | Pointer to **NullableString** | List of [OpenSSL ciphers](https://www.openssl.org/docs/manmaster/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
 **SslClientCert** | Pointer to **NullableString** | Client certificate attached to origin. | [optional] 
 **SslClientKey** | Pointer to **NullableString** | Client key attached to origin. | [optional] 
@@ -765,6 +765,16 @@ SetSslCheckCert sets SslCheckCert field to given value.
 
 HasSslCheckCert returns a boolean if a field has been set.
 
+### SetSslCheckCertNil
+
+`func (o *BackendResponse) SetSslCheckCertNil(b bool)`
+
+ SetSslCheckCertNil sets the value for SslCheckCert to be an explicit nil
+
+### UnsetSslCheckCert
+`func (o *BackendResponse) UnsetSslCheckCert()`
+
+UnsetSslCheckCert ensures that no value is present for SslCheckCert, not even an explicit nil
 ### GetSslCiphers
 
 `func (o *BackendResponse) GetSslCiphers() string`

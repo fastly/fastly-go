@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **int32** |  | [optional] [readonly] 
+**Version** | Pointer to **string** | String representing the number identifying a version of the service. | [optional] [readonly] 
 **ID** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
@@ -188,20 +188,20 @@ HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *ACLResponse) GetVersion() int32`
+`func (o *ACLResponse) GetVersion() string`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *ACLResponse) GetVersionOk() (*int32, bool)`
+`func (o *ACLResponse) GetVersionOk() (*string, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *ACLResponse) SetVersion(v int32)`
+`func (o *ACLResponse) SetVersion(v string)`
 
 SetVersion sets Version field to given value.
 
