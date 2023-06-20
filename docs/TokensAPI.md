@@ -4,12 +4,80 @@ All URIs are relative to *https://api.fastly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GetToken**](TokensAPI.md#GetToken) | **GET** `/tokens/{token_id}` | Get a token
 [**GetTokenCurrent**](TokensAPI.md#GetTokenCurrent) | **GET** `/tokens/self` | Get the current token
 [**ListTokensCustomer**](TokensAPI.md#ListTokensCustomer) | **GET** `/customer/{customer_id}/tokens` | List tokens for a customer
 [**ListTokensUser**](TokensAPI.md#ListTokensUser) | **GET** `/tokens` | List tokens for the authenticated user
 [**RevokeToken**](TokensAPI.md#RevokeToken) | **DELETE** `/tokens/{token_id}` | Revoke a token
 [**RevokeTokenCurrent**](TokensAPI.md#RevokeTokenCurrent) | **DELETE** `/tokens/self` | Revoke the current token
 
+
+
+## GetToken
+
+Get a token
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    tokenID := "tokenId_example" // string | Alphanumeric string identifying a token.
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.TokensAPI.GetToken(ctx, tokenID).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `TokensAPI.GetToken`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetToken`: TokenResponse
+    fmt.Fprintf(os.Stdout, "Response from `TokensAPI.GetToken`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**tokenID** | **string** | Alphanumeric string identifying a token. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTokenRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**TokenResponse**](TokenResponse.md)
+
+### Authorization
+
+[API Token](https://developer.fastly.com/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
 ## GetTokenCurrent

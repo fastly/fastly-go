@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** | Whether or not we were able to successfully execute the query. | [optional] 
 **Meta** | Pointer to [**HistoricalMeta**](HistoricalMeta.md) |  | [optional] 
 **Msg** | Pointer to **NullableString** | If the query was not successful, this will provide a string that explains why. | [optional] 
-**Data** | Pointer to **[]map[string]string** |  | [optional] 
+**Data** | Pointer to [**[]HistoricalFieldResultsAttributes**](HistoricalFieldResultsAttributes.md) |  | [optional] 
 
 ## Methods
 
@@ -115,20 +115,20 @@ HasMsg returns a boolean if a field has been set.
 UnsetMsg ensures that no value is present for Msg, not even an explicit nil
 ### GetData
 
-`func (o *HistoricalFieldAggregateResponse) GetData() []map[string]string`
+`func (o *HistoricalFieldAggregateResponse) GetData() []HistoricalFieldResultsAttributes`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *HistoricalFieldAggregateResponse) GetDataOk() (*[]map[string]string, bool)`
+`func (o *HistoricalFieldAggregateResponse) GetDataOk() (*[]HistoricalFieldResultsAttributes, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *HistoricalFieldAggregateResponse) SetData(v []map[string]string)`
+`func (o *HistoricalFieldAggregateResponse) SetData(v []HistoricalFieldResultsAttributes)`
 
 SetData sets Data field to given value.
 

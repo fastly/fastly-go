@@ -19,7 +19,7 @@ import (
 
 // HistoricalFieldAggregateResponseAllOf struct for HistoricalFieldAggregateResponseAllOf
 type HistoricalFieldAggregateResponseAllOf struct {
-	Data []map[string]string `json:"data,omitempty"`
+	Data []HistoricalFieldResultsAttributes `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -43,9 +43,9 @@ func NewHistoricalFieldAggregateResponseAllOfWithDefaults() *HistoricalFieldAggr
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *HistoricalFieldAggregateResponseAllOf) GetData() []map[string]string {
+func (o *HistoricalFieldAggregateResponseAllOf) GetData() []HistoricalFieldResultsAttributes {
 	if o == nil || o.Data == nil {
-		var ret []map[string]string
+		var ret []HistoricalFieldResultsAttributes
 		return ret
 	}
 	return o.Data
@@ -53,7 +53,7 @@ func (o *HistoricalFieldAggregateResponseAllOf) GetData() []map[string]string {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalFieldAggregateResponseAllOf) GetDataOk() ([]map[string]string, bool) {
+func (o *HistoricalFieldAggregateResponseAllOf) GetDataOk() ([]HistoricalFieldResultsAttributes, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *HistoricalFieldAggregateResponseAllOf) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []map[string]string and assigns it to the Data field.
-func (o *HistoricalFieldAggregateResponseAllOf) SetData(v []map[string]string) {
+// SetData gets a reference to the given []HistoricalFieldResultsAttributes and assigns it to the Data field.
+func (o *HistoricalFieldAggregateResponseAllOf) SetData(v []HistoricalFieldResultsAttributes) {
 	o.Data = v
 }
 

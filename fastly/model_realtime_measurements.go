@@ -57,6 +57,8 @@ type RealtimeMeasurements struct {
 	ComputeRAMUsed *int32 `json:"compute_ram_used,omitempty"`
 	// The total, actual amount of time used to process your requests, including active CPU time (in milliseconds).
 	ComputeRequestTimeMs *float32 `json:"compute_request_time_ms,omitempty"`
+	// The total amount of request processing time you will be billed for, measured in 50 millisecond increments.
+	ComputeRequestTimeBilledMs *float32 `json:"compute_request_time_billed_ms,omitempty"`
 	// Number of requests from edge to the shield POP.
 	Shield *int32 `json:"shield,omitempty"`
 	// Number of requests that were received over IPv6.
@@ -415,16 +417,16 @@ type RealtimeMeasurements struct {
 	FanoutRecvPublishes *int32 `json:"fanout_recv_publishes,omitempty"`
 	// Total published messages sent to end users.
 	FanoutSendPublishes *int32 `json:"fanout_send_publishes,omitempty"`
-	// The total number of class a operations for the object store.
+	// The total number of class a operations for the KV store.
+	KvStoreClassAOperations *int32 `json:"kv_store_class_a_operations,omitempty"`
+	// The total number of class b operations for the KV store.
+	KvStoreClassBOperations *int32 `json:"kv_store_class_b_operations,omitempty"`
+	// Use kv_store_class_a_operations.
+	// Deprecated
 	ObjectStoreClassAOperations *int32 `json:"object_store_class_a_operations,omitempty"`
-	// The total number of class b operations for the object store.
+	// Use kv_store_class_b_operations.
+	// Deprecated
 	ObjectStoreClassBOperations *int32 `json:"object_store_class_b_operations,omitempty"`
-	// Use object_store_class_b_operations.
-	// Deprecated
-	ObjectStoreReadRequests *int32 `json:"object_store_read_requests,omitempty"`
-	// Use object_store_class_a_operations.
-	// Deprecated
-	ObjectStoreWriteRequests *int32 `json:"object_store_write_requests,omitempty"`
 	// Total header bytes received from end users over Fanout connections.
 	FanoutReqHeaderBytes *int32 `json:"fanout_req_header_bytes,omitempty"`
 	// Total body or message content bytes received from end users over Fanout connections.
@@ -1083,6 +1085,38 @@ func (o *RealtimeMeasurements) HasComputeRequestTimeMs() bool {
 // SetComputeRequestTimeMs gets a reference to the given float32 and assigns it to the ComputeRequestTimeMs field.
 func (o *RealtimeMeasurements) SetComputeRequestTimeMs(v float32) {
 	o.ComputeRequestTimeMs = &v
+}
+
+// GetComputeRequestTimeBilledMs returns the ComputeRequestTimeBilledMs field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeRequestTimeBilledMs() float32 {
+	if o == nil || o.ComputeRequestTimeBilledMs == nil {
+		var ret float32
+		return ret
+	}
+	return *o.ComputeRequestTimeBilledMs
+}
+
+// GetComputeRequestTimeBilledMsOk returns a tuple with the ComputeRequestTimeBilledMs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeRequestTimeBilledMsOk() (*float32, bool) {
+	if o == nil || o.ComputeRequestTimeBilledMs == nil {
+		return nil, false
+	}
+	return o.ComputeRequestTimeBilledMs, true
+}
+
+// HasComputeRequestTimeBilledMs returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeRequestTimeBilledMs() bool {
+	if o != nil && o.ComputeRequestTimeBilledMs != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRequestTimeBilledMs gets a reference to the given float32 and assigns it to the ComputeRequestTimeBilledMs field.
+func (o *RealtimeMeasurements) SetComputeRequestTimeBilledMs(v float32) {
+	o.ComputeRequestTimeBilledMs = &v
 }
 
 // GetShield returns the Shield field value if set, zero value otherwise.
@@ -6813,7 +6847,72 @@ func (o *RealtimeMeasurements) SetFanoutSendPublishes(v int32) {
 	o.FanoutSendPublishes = &v
 }
 
+// GetKvStoreClassAOperations returns the KvStoreClassAOperations field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetKvStoreClassAOperations() int32 {
+	if o == nil || o.KvStoreClassAOperations == nil {
+		var ret int32
+		return ret
+	}
+	return *o.KvStoreClassAOperations
+}
+
+// GetKvStoreClassAOperationsOk returns a tuple with the KvStoreClassAOperations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetKvStoreClassAOperationsOk() (*int32, bool) {
+	if o == nil || o.KvStoreClassAOperations == nil {
+		return nil, false
+	}
+	return o.KvStoreClassAOperations, true
+}
+
+// HasKvStoreClassAOperations returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasKvStoreClassAOperations() bool {
+	if o != nil && o.KvStoreClassAOperations != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetKvStoreClassAOperations gets a reference to the given int32 and assigns it to the KvStoreClassAOperations field.
+func (o *RealtimeMeasurements) SetKvStoreClassAOperations(v int32) {
+	o.KvStoreClassAOperations = &v
+}
+
+// GetKvStoreClassBOperations returns the KvStoreClassBOperations field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetKvStoreClassBOperations() int32 {
+	if o == nil || o.KvStoreClassBOperations == nil {
+		var ret int32
+		return ret
+	}
+	return *o.KvStoreClassBOperations
+}
+
+// GetKvStoreClassBOperationsOk returns a tuple with the KvStoreClassBOperations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetKvStoreClassBOperationsOk() (*int32, bool) {
+	if o == nil || o.KvStoreClassBOperations == nil {
+		return nil, false
+	}
+	return o.KvStoreClassBOperations, true
+}
+
+// HasKvStoreClassBOperations returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasKvStoreClassBOperations() bool {
+	if o != nil && o.KvStoreClassBOperations != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetKvStoreClassBOperations gets a reference to the given int32 and assigns it to the KvStoreClassBOperations field.
+func (o *RealtimeMeasurements) SetKvStoreClassBOperations(v int32) {
+	o.KvStoreClassBOperations = &v
+}
+
 // GetObjectStoreClassAOperations returns the ObjectStoreClassAOperations field value if set, zero value otherwise.
+// Deprecated
 func (o *RealtimeMeasurements) GetObjectStoreClassAOperations() int32 {
 	if o == nil || o.ObjectStoreClassAOperations == nil {
 		var ret int32
@@ -6824,6 +6923,7 @@ func (o *RealtimeMeasurements) GetObjectStoreClassAOperations() int32 {
 
 // GetObjectStoreClassAOperationsOk returns a tuple with the ObjectStoreClassAOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *RealtimeMeasurements) GetObjectStoreClassAOperationsOk() (*int32, bool) {
 	if o == nil || o.ObjectStoreClassAOperations == nil {
 		return nil, false
@@ -6841,11 +6941,13 @@ func (o *RealtimeMeasurements) HasObjectStoreClassAOperations() bool {
 }
 
 // SetObjectStoreClassAOperations gets a reference to the given int32 and assigns it to the ObjectStoreClassAOperations field.
+// Deprecated
 func (o *RealtimeMeasurements) SetObjectStoreClassAOperations(v int32) {
 	o.ObjectStoreClassAOperations = &v
 }
 
 // GetObjectStoreClassBOperations returns the ObjectStoreClassBOperations field value if set, zero value otherwise.
+// Deprecated
 func (o *RealtimeMeasurements) GetObjectStoreClassBOperations() int32 {
 	if o == nil || o.ObjectStoreClassBOperations == nil {
 		var ret int32
@@ -6856,6 +6958,7 @@ func (o *RealtimeMeasurements) GetObjectStoreClassBOperations() int32 {
 
 // GetObjectStoreClassBOperationsOk returns a tuple with the ObjectStoreClassBOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *RealtimeMeasurements) GetObjectStoreClassBOperationsOk() (*int32, bool) {
 	if o == nil || o.ObjectStoreClassBOperations == nil {
 		return nil, false
@@ -6873,78 +6976,9 @@ func (o *RealtimeMeasurements) HasObjectStoreClassBOperations() bool {
 }
 
 // SetObjectStoreClassBOperations gets a reference to the given int32 and assigns it to the ObjectStoreClassBOperations field.
+// Deprecated
 func (o *RealtimeMeasurements) SetObjectStoreClassBOperations(v int32) {
 	o.ObjectStoreClassBOperations = &v
-}
-
-// GetObjectStoreReadRequests returns the ObjectStoreReadRequests field value if set, zero value otherwise.
-// Deprecated
-func (o *RealtimeMeasurements) GetObjectStoreReadRequests() int32 {
-	if o == nil || o.ObjectStoreReadRequests == nil {
-		var ret int32
-		return ret
-	}
-	return *o.ObjectStoreReadRequests
-}
-
-// GetObjectStoreReadRequestsOk returns a tuple with the ObjectStoreReadRequests field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealtimeMeasurements) GetObjectStoreReadRequestsOk() (*int32, bool) {
-	if o == nil || o.ObjectStoreReadRequests == nil {
-		return nil, false
-	}
-	return o.ObjectStoreReadRequests, true
-}
-
-// HasObjectStoreReadRequests returns a boolean if a field has been set.
-func (o *RealtimeMeasurements) HasObjectStoreReadRequests() bool {
-	if o != nil && o.ObjectStoreReadRequests != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectStoreReadRequests gets a reference to the given int32 and assigns it to the ObjectStoreReadRequests field.
-// Deprecated
-func (o *RealtimeMeasurements) SetObjectStoreReadRequests(v int32) {
-	o.ObjectStoreReadRequests = &v
-}
-
-// GetObjectStoreWriteRequests returns the ObjectStoreWriteRequests field value if set, zero value otherwise.
-// Deprecated
-func (o *RealtimeMeasurements) GetObjectStoreWriteRequests() int32 {
-	if o == nil || o.ObjectStoreWriteRequests == nil {
-		var ret int32
-		return ret
-	}
-	return *o.ObjectStoreWriteRequests
-}
-
-// GetObjectStoreWriteRequestsOk returns a tuple with the ObjectStoreWriteRequests field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// Deprecated
-func (o *RealtimeMeasurements) GetObjectStoreWriteRequestsOk() (*int32, bool) {
-	if o == nil || o.ObjectStoreWriteRequests == nil {
-		return nil, false
-	}
-	return o.ObjectStoreWriteRequests, true
-}
-
-// HasObjectStoreWriteRequests returns a boolean if a field has been set.
-func (o *RealtimeMeasurements) HasObjectStoreWriteRequests() bool {
-	if o != nil && o.ObjectStoreWriteRequests != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetObjectStoreWriteRequests gets a reference to the given int32 and assigns it to the ObjectStoreWriteRequests field.
-// Deprecated
-func (o *RealtimeMeasurements) SetObjectStoreWriteRequests(v int32) {
-	o.ObjectStoreWriteRequests = &v
 }
 
 // GetFanoutReqHeaderBytes returns the FanoutReqHeaderBytes field value if set, zero value otherwise.
@@ -7488,6 +7522,9 @@ func (o RealtimeMeasurements) MarshalJSON() ([]byte, error) {
 	if o.ComputeRequestTimeMs != nil {
 		toSerialize["compute_request_time_ms"] = o.ComputeRequestTimeMs
 	}
+	if o.ComputeRequestTimeBilledMs != nil {
+		toSerialize["compute_request_time_billed_ms"] = o.ComputeRequestTimeBilledMs
+	}
 	if o.Shield != nil {
 		toSerialize["shield"] = o.Shield
 	}
@@ -8025,17 +8062,17 @@ func (o RealtimeMeasurements) MarshalJSON() ([]byte, error) {
 	if o.FanoutSendPublishes != nil {
 		toSerialize["fanout_send_publishes"] = o.FanoutSendPublishes
 	}
+	if o.KvStoreClassAOperations != nil {
+		toSerialize["kv_store_class_a_operations"] = o.KvStoreClassAOperations
+	}
+	if o.KvStoreClassBOperations != nil {
+		toSerialize["kv_store_class_b_operations"] = o.KvStoreClassBOperations
+	}
 	if o.ObjectStoreClassAOperations != nil {
 		toSerialize["object_store_class_a_operations"] = o.ObjectStoreClassAOperations
 	}
 	if o.ObjectStoreClassBOperations != nil {
 		toSerialize["object_store_class_b_operations"] = o.ObjectStoreClassBOperations
-	}
-	if o.ObjectStoreReadRequests != nil {
-		toSerialize["object_store_read_requests"] = o.ObjectStoreReadRequests
-	}
-	if o.ObjectStoreWriteRequests != nil {
-		toSerialize["object_store_write_requests"] = o.ObjectStoreWriteRequests
 	}
 	if o.FanoutReqHeaderBytes != nil {
 		toSerialize["fanout_req_header_bytes"] = o.FanoutReqHeaderBytes
@@ -8121,6 +8158,7 @@ func (o *RealtimeMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "compute_execution_time_ms")
 		delete(additionalProperties, "compute_ram_used")
 		delete(additionalProperties, "compute_request_time_ms")
+		delete(additionalProperties, "compute_request_time_billed_ms")
 		delete(additionalProperties, "shield")
 		delete(additionalProperties, "ipv6")
 		delete(additionalProperties, "imgopto")
@@ -8300,10 +8338,10 @@ func (o *RealtimeMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "websocket_resp_body_bytes")
 		delete(additionalProperties, "fanout_recv_publishes")
 		delete(additionalProperties, "fanout_send_publishes")
+		delete(additionalProperties, "kv_store_class_a_operations")
+		delete(additionalProperties, "kv_store_class_b_operations")
 		delete(additionalProperties, "object_store_class_a_operations")
 		delete(additionalProperties, "object_store_class_b_operations")
-		delete(additionalProperties, "object_store_read_requests")
-		delete(additionalProperties, "object_store_write_requests")
 		delete(additionalProperties, "fanout_req_header_bytes")
 		delete(additionalProperties, "fanout_req_body_bytes")
 		delete(additionalProperties, "fanout_resp_header_bytes")

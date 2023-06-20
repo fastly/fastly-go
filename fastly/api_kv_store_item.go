@@ -103,14 +103,8 @@ type APIDeleteKeyFromStoreRequest struct {
 	APIService KvStoreItemAPI
 	storeID string
 	keyName string
-	force *bool
 }
 
-// Force returns a pointer to a request.
-func (r *APIDeleteKeyFromStoreRequest) Force(force bool) *APIDeleteKeyFromStoreRequest {
-	r.force = &force
-	return r
-}
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteKeyFromStoreRequest) Execute() (*http.Response, error) {
@@ -157,9 +151,6 @@ func (a *KvStoreItemAPIService) DeleteKeyFromStoreExecute(r APIDeleteKeyFromStor
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
-	if r.force != nil {
-		localVarQueryParams.Add("force", parameterToString(*r.force, ""))
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

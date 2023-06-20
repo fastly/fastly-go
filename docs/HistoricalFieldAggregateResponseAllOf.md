@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to **[]map[string]string** |  | [optional] 
+**Data** | Pointer to [**[]HistoricalFieldResultsAttributes**](HistoricalFieldResultsAttributes.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *HistoricalFieldAggregateResponseAllOf) GetData() []map[string]string`
+`func (o *HistoricalFieldAggregateResponseAllOf) GetData() []HistoricalFieldResultsAttributes`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *HistoricalFieldAggregateResponseAllOf) GetDataOk() (*[]map[string]string, bool)`
+`func (o *HistoricalFieldAggregateResponseAllOf) GetDataOk() (*[]HistoricalFieldResultsAttributes, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *HistoricalFieldAggregateResponseAllOf) SetData(v []map[string]string)`
+`func (o *HistoricalFieldAggregateResponseAllOf) SetData(v []HistoricalFieldResultsAttributes)`
 
 SetData sets Data field to given value.
 

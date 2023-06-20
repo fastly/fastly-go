@@ -24,7 +24,7 @@ type HistoricalFieldAggregateResponse struct {
 	Meta *HistoricalMeta `json:"meta,omitempty"`
 	// If the query was not successful, this will provide a string that explains why.
 	Msg NullableString `json:"msg,omitempty"`
-	Data []map[string]string `json:"data,omitempty"`
+	Data []HistoricalFieldResultsAttributes `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -154,9 +154,9 @@ func (o *HistoricalFieldAggregateResponse) UnsetMsg() {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *HistoricalFieldAggregateResponse) GetData() []map[string]string {
+func (o *HistoricalFieldAggregateResponse) GetData() []HistoricalFieldResultsAttributes {
 	if o == nil || o.Data == nil {
-		var ret []map[string]string
+		var ret []HistoricalFieldResultsAttributes
 		return ret
 	}
 	return o.Data
@@ -164,7 +164,7 @@ func (o *HistoricalFieldAggregateResponse) GetData() []map[string]string {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalFieldAggregateResponse) GetDataOk() ([]map[string]string, bool) {
+func (o *HistoricalFieldAggregateResponse) GetDataOk() ([]HistoricalFieldResultsAttributes, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -180,8 +180,8 @@ func (o *HistoricalFieldAggregateResponse) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []map[string]string and assigns it to the Data field.
-func (o *HistoricalFieldAggregateResponse) SetData(v []map[string]string) {
+// SetData gets a reference to the given []HistoricalFieldResultsAttributes and assigns it to the Data field.
+func (o *HistoricalFieldAggregateResponse) SetData(v []HistoricalFieldResultsAttributes) {
 	o.Data = v
 }
 

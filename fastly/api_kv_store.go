@@ -244,14 +244,8 @@ type APIDeleteStoreRequest struct {
 	ctx context.Context
 	APIService KvStoreAPI
 	storeID string
-	force *bool
 }
 
-// Force returns a pointer to a request.
-func (r *APIDeleteStoreRequest) Force(force bool) *APIDeleteStoreRequest {
-	r.force = &force
-	return r
-}
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteStoreRequest) Execute() (*http.Response, error) {
@@ -311,9 +305,6 @@ func (a *KvStoreAPIService) DeleteStoreExecute(r APIDeleteStoreRequest) (*http.R
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	if r.force != nil {
-		localVarHeaderParams["force"] = parameterToString(*r.force, "")
 	}
 	if r.ctx != nil {
 		// API Key Authentication

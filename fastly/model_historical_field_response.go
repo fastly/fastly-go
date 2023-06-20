@@ -24,7 +24,7 @@ type HistoricalFieldResponse struct {
 	Meta *HistoricalMeta `json:"meta,omitempty"`
 	// If the query was not successful, this will provide a string that explains why.
 	Msg NullableString `json:"msg,omitempty"`
-	Data *map[string][]map[string]string `json:"data,omitempty"`
+	Data *map[string][]HistoricalFieldResultsAttributes `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -154,9 +154,9 @@ func (o *HistoricalFieldResponse) UnsetMsg() {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *HistoricalFieldResponse) GetData() map[string][]map[string]string {
+func (o *HistoricalFieldResponse) GetData() map[string][]HistoricalFieldResultsAttributes {
 	if o == nil || o.Data == nil {
-		var ret map[string][]map[string]string
+		var ret map[string][]HistoricalFieldResultsAttributes
 		return ret
 	}
 	return *o.Data
@@ -164,7 +164,7 @@ func (o *HistoricalFieldResponse) GetData() map[string][]map[string]string {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalFieldResponse) GetDataOk() (*map[string][]map[string]string, bool) {
+func (o *HistoricalFieldResponse) GetDataOk() (*map[string][]HistoricalFieldResultsAttributes, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -180,8 +180,8 @@ func (o *HistoricalFieldResponse) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given map[string][]map[string]string and assigns it to the Data field.
-func (o *HistoricalFieldResponse) SetData(v map[string][]map[string]string) {
+// SetData gets a reference to the given map[string][]HistoricalFieldResultsAttributes and assigns it to the Data field.
+func (o *HistoricalFieldResponse) SetData(v map[string][]HistoricalFieldResultsAttributes) {
 	o.Data = &v
 }
 

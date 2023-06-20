@@ -95,12 +95,11 @@ import (
 
 func main() {
     storeID := "storeId_example" // string | 
-    force := true // bool |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreAPI.DeleteStore(ctx, storeID).Force(force).Execute()
+    resp, r, err := apiClient.KvStoreAPI.DeleteStore(ctx, storeID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.DeleteStore`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -123,7 +122,7 @@ Other parameters are passed through a pointer to a apiDeleteStoreRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **force** | **bool** |  | 
+
 
 ### Return type
 

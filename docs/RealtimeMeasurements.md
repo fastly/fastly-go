@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **ComputeExecutionTimeMs** | Pointer to **float32** | The amount of active CPU time used to process your requests (in milliseconds). | [optional] 
 **ComputeRAMUsed** | Pointer to **int32** | The amount of RAM used for your service by Fastly (in bytes). | [optional] 
 **ComputeRequestTimeMs** | Pointer to **float32** | The total, actual amount of time used to process your requests, including active CPU time (in milliseconds). | [optional] 
+**ComputeRequestTimeBilledMs** | Pointer to **float32** | The total amount of request processing time you will be billed for, measured in 50 millisecond increments. | [optional] 
 **Shield** | Pointer to **int32** | Number of requests from edge to the shield POP. | [optional] 
 **Ipv6** | Pointer to **int32** | Number of requests that were received over IPv6. | [optional] 
 **Imgopto** | Pointer to **int32** | Number of responses that came from the Fastly Image Optimizer service. If the service receives 10 requests for an image, this stat will be 10 regardless of how many times the image was transformed. | [optional] 
@@ -202,10 +203,10 @@ Name | Type | Description | Notes
 **WebsocketRespBodyBytes** | Pointer to **int32** | Total message content bytes sent to end users over passthrough WebSocket connections. | [optional] 
 **FanoutRecvPublishes** | Pointer to **int32** | Total published messages received from the publish API endpoint. | [optional] 
 **FanoutSendPublishes** | Pointer to **int32** | Total published messages sent to end users. | [optional] 
-**ObjectStoreClassAOperations** | Pointer to **int32** | The total number of class a operations for the object store. | [optional] 
-**ObjectStoreClassBOperations** | Pointer to **int32** | The total number of class b operations for the object store. | [optional] 
-**ObjectStoreReadRequests** | Pointer to **int32** | Use object_store_class_b_operations. | [optional] 
-**ObjectStoreWriteRequests** | Pointer to **int32** | Use object_store_class_a_operations. | [optional] 
+**KvStoreClassAOperations** | Pointer to **int32** | The total number of class a operations for the KV store. | [optional] 
+**KvStoreClassBOperations** | Pointer to **int32** | The total number of class b operations for the KV store. | [optional] 
+**ObjectStoreClassAOperations** | Pointer to **int32** | Use kv_store_class_a_operations. | [optional] 
+**ObjectStoreClassBOperations** | Pointer to **int32** | Use kv_store_class_b_operations. | [optional] 
 **FanoutReqHeaderBytes** | Pointer to **int32** | Total header bytes received from end users over Fanout connections. | [optional] 
 **FanoutReqBodyBytes** | Pointer to **int32** | Total body or message content bytes received from end users over Fanout connections. | [optional] 
 **FanoutRespHeaderBytes** | Pointer to **int32** | Total header bytes sent to end users over Fanout connections. | [optional] 
@@ -715,6 +716,31 @@ SetComputeRequestTimeMs sets ComputeRequestTimeMs field to given value.
 `func (o *RealtimeMeasurements) HasComputeRequestTimeMs() bool`
 
 HasComputeRequestTimeMs returns a boolean if a field has been set.
+
+### GetComputeRequestTimeBilledMs
+
+`func (o *RealtimeMeasurements) GetComputeRequestTimeBilledMs() float32`
+
+GetComputeRequestTimeBilledMs returns the ComputeRequestTimeBilledMs field if non-nil, zero value otherwise.
+
+### GetComputeRequestTimeBilledMsOk
+
+`func (o *RealtimeMeasurements) GetComputeRequestTimeBilledMsOk() (*float32, bool)`
+
+GetComputeRequestTimeBilledMsOk returns a tuple with the ComputeRequestTimeBilledMs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRequestTimeBilledMs
+
+`func (o *RealtimeMeasurements) SetComputeRequestTimeBilledMs(v float32)`
+
+SetComputeRequestTimeBilledMs sets ComputeRequestTimeBilledMs field to given value.
+
+### HasComputeRequestTimeBilledMs
+
+`func (o *RealtimeMeasurements) HasComputeRequestTimeBilledMs() bool`
+
+HasComputeRequestTimeBilledMs returns a boolean if a field has been set.
 
 ### GetShield
 
@@ -5191,6 +5217,56 @@ SetFanoutSendPublishes sets FanoutSendPublishes field to given value.
 
 HasFanoutSendPublishes returns a boolean if a field has been set.
 
+### GetKvStoreClassAOperations
+
+`func (o *RealtimeMeasurements) GetKvStoreClassAOperations() int32`
+
+GetKvStoreClassAOperations returns the KvStoreClassAOperations field if non-nil, zero value otherwise.
+
+### GetKvStoreClassAOperationsOk
+
+`func (o *RealtimeMeasurements) GetKvStoreClassAOperationsOk() (*int32, bool)`
+
+GetKvStoreClassAOperationsOk returns a tuple with the KvStoreClassAOperations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKvStoreClassAOperations
+
+`func (o *RealtimeMeasurements) SetKvStoreClassAOperations(v int32)`
+
+SetKvStoreClassAOperations sets KvStoreClassAOperations field to given value.
+
+### HasKvStoreClassAOperations
+
+`func (o *RealtimeMeasurements) HasKvStoreClassAOperations() bool`
+
+HasKvStoreClassAOperations returns a boolean if a field has been set.
+
+### GetKvStoreClassBOperations
+
+`func (o *RealtimeMeasurements) GetKvStoreClassBOperations() int32`
+
+GetKvStoreClassBOperations returns the KvStoreClassBOperations field if non-nil, zero value otherwise.
+
+### GetKvStoreClassBOperationsOk
+
+`func (o *RealtimeMeasurements) GetKvStoreClassBOperationsOk() (*int32, bool)`
+
+GetKvStoreClassBOperationsOk returns a tuple with the KvStoreClassBOperations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKvStoreClassBOperations
+
+`func (o *RealtimeMeasurements) SetKvStoreClassBOperations(v int32)`
+
+SetKvStoreClassBOperations sets KvStoreClassBOperations field to given value.
+
+### HasKvStoreClassBOperations
+
+`func (o *RealtimeMeasurements) HasKvStoreClassBOperations() bool`
+
+HasKvStoreClassBOperations returns a boolean if a field has been set.
+
 ### GetObjectStoreClassAOperations
 
 `func (o *RealtimeMeasurements) GetObjectStoreClassAOperations() int32`
@@ -5240,56 +5316,6 @@ SetObjectStoreClassBOperations sets ObjectStoreClassBOperations field to given v
 `func (o *RealtimeMeasurements) HasObjectStoreClassBOperations() bool`
 
 HasObjectStoreClassBOperations returns a boolean if a field has been set.
-
-### GetObjectStoreReadRequests
-
-`func (o *RealtimeMeasurements) GetObjectStoreReadRequests() int32`
-
-GetObjectStoreReadRequests returns the ObjectStoreReadRequests field if non-nil, zero value otherwise.
-
-### GetObjectStoreReadRequestsOk
-
-`func (o *RealtimeMeasurements) GetObjectStoreReadRequestsOk() (*int32, bool)`
-
-GetObjectStoreReadRequestsOk returns a tuple with the ObjectStoreReadRequests field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObjectStoreReadRequests
-
-`func (o *RealtimeMeasurements) SetObjectStoreReadRequests(v int32)`
-
-SetObjectStoreReadRequests sets ObjectStoreReadRequests field to given value.
-
-### HasObjectStoreReadRequests
-
-`func (o *RealtimeMeasurements) HasObjectStoreReadRequests() bool`
-
-HasObjectStoreReadRequests returns a boolean if a field has been set.
-
-### GetObjectStoreWriteRequests
-
-`func (o *RealtimeMeasurements) GetObjectStoreWriteRequests() int32`
-
-GetObjectStoreWriteRequests returns the ObjectStoreWriteRequests field if non-nil, zero value otherwise.
-
-### GetObjectStoreWriteRequestsOk
-
-`func (o *RealtimeMeasurements) GetObjectStoreWriteRequestsOk() (*int32, bool)`
-
-GetObjectStoreWriteRequestsOk returns a tuple with the ObjectStoreWriteRequests field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetObjectStoreWriteRequests
-
-`func (o *RealtimeMeasurements) SetObjectStoreWriteRequests(v int32)`
-
-SetObjectStoreWriteRequests sets ObjectStoreWriteRequests field to given value.
-
-### HasObjectStoreWriteRequests
-
-`func (o *RealtimeMeasurements) HasObjectStoreWriteRequests() bool`
-
-HasObjectStoreWriteRequests returns a boolean if a field has been set.
 
 ### GetFanoutReqHeaderBytes
 

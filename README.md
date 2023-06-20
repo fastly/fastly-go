@@ -12,7 +12,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go vv1.0.0-beta.10
+	github.com/fastly/fastly-go v1.0.0-beta.11
 )
 ```
 
@@ -429,6 +429,7 @@ Class | Method | HTTP request | Description
 *TLSSubscriptionsAPI* | [**GetTLSSub**](docs/TlsSubscriptionsAPI.md#gettlssub) | **GET** `/tls/subscriptions/{tls_subscription_id}` | Get a TLS subscription
 *TLSSubscriptionsAPI* | [**ListTLSSubs**](docs/TlsSubscriptionsAPI.md#listtlssubs) | **GET** `/tls/subscriptions` | List TLS subscriptions
 *TLSSubscriptionsAPI* | [**PatchTLSSub**](docs/TlsSubscriptionsAPI.md#patchtlssub) | **PATCH** `/tls/subscriptions/{tls_subscription_id}` | Update a TLS subscription
+*TokensAPI* | [**GetToken**](docs/TokensAPI.md#gettoken) | **GET** `/tokens/{token_id}` | Get a token
 *TokensAPI* | [**GetTokenCurrent**](docs/TokensAPI.md#gettokencurrent) | **GET** `/tokens/self` | Get the current token
 *TokensAPI* | [**ListTokensCustomer**](docs/TokensAPI.md#listtokenscustomer) | **GET** `/customer/{customer_id}/tokens` | List tokens for a customer
 *TokensAPI* | [**ListTokensUser**](docs/TokensAPI.md#listtokensuser) | **GET** `/tokens` | List tokens for the authenticated user

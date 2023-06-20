@@ -17,8 +17,8 @@ import (
 	"encoding/json"
 )
 
-// Results The [results](#results-data-model) of the query, grouped by service (and optionally, region), and aggregated over the appropriate time span.
-type Results struct {
+// HistoricalFieldResultsAttributes struct for HistoricalFieldResultsAttributes
+type HistoricalFieldResultsAttributes struct {
 	// Number of requests processed.
 	Requests *int32 `json:"requests,omitempty"`
 	// Number of cache hits.
@@ -453,30 +453,32 @@ type Results struct {
 	DdosActionClose *int32 `json:"ddos_action_close,omitempty"`
 	// The number of times the blackhole action was taken. The blackhole action quietly closes a TCP connection without sending a reset. The blackhole action quietly closes a TCP connection without notifying its peer (all TCP state is dropped).
 	DdosActionBlackhole *int32 `json:"ddos_action_blackhole,omitempty"`
+	ServiceID string `json:"service_id,omitempty"`
+	StartTime *int32 `json:"start_time,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _Results Results
+type _HistoricalFieldResultsAttributes HistoricalFieldResultsAttributes
 
-// NewResults instantiates a new Results object
+// NewHistoricalFieldResultsAttributes instantiates a new HistoricalFieldResultsAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewResults() *Results {
-	this := Results{}
+func NewHistoricalFieldResultsAttributes() *HistoricalFieldResultsAttributes {
+	this := HistoricalFieldResultsAttributes{}
 	return &this
 }
 
-// NewResultsWithDefaults instantiates a new Results object
+// NewHistoricalFieldResultsAttributesWithDefaults instantiates a new HistoricalFieldResultsAttributes object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewResultsWithDefaults() *Results {
-	this := Results{}
+func NewHistoricalFieldResultsAttributesWithDefaults() *HistoricalFieldResultsAttributes {
+	this := HistoricalFieldResultsAttributes{}
 	return &this
 }
 
 // GetRequests returns the Requests field value if set, zero value otherwise.
-func (o *Results) GetRequests() int32 {
+func (o *HistoricalFieldResultsAttributes) GetRequests() int32 {
 	if o == nil || o.Requests == nil {
 		var ret int32
 		return ret
@@ -486,7 +488,7 @@ func (o *Results) GetRequests() int32 {
 
 // GetRequestsOk returns a tuple with the Requests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetRequestsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetRequestsOk() (*int32, bool) {
 	if o == nil || o.Requests == nil {
 		return nil, false
 	}
@@ -494,7 +496,7 @@ func (o *Results) GetRequestsOk() (*int32, bool) {
 }
 
 // HasRequests returns a boolean if a field has been set.
-func (o *Results) HasRequests() bool {
+func (o *HistoricalFieldResultsAttributes) HasRequests() bool {
 	if o != nil && o.Requests != nil {
 		return true
 	}
@@ -503,12 +505,12 @@ func (o *Results) HasRequests() bool {
 }
 
 // SetRequests gets a reference to the given int32 and assigns it to the Requests field.
-func (o *Results) SetRequests(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetRequests(v int32) {
 	o.Requests = &v
 }
 
 // GetHits returns the Hits field value if set, zero value otherwise.
-func (o *Results) GetHits() int32 {
+func (o *HistoricalFieldResultsAttributes) GetHits() int32 {
 	if o == nil || o.Hits == nil {
 		var ret int32
 		return ret
@@ -518,7 +520,7 @@ func (o *Results) GetHits() int32 {
 
 // GetHitsOk returns a tuple with the Hits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetHitsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetHitsOk() (*int32, bool) {
 	if o == nil || o.Hits == nil {
 		return nil, false
 	}
@@ -526,7 +528,7 @@ func (o *Results) GetHitsOk() (*int32, bool) {
 }
 
 // HasHits returns a boolean if a field has been set.
-func (o *Results) HasHits() bool {
+func (o *HistoricalFieldResultsAttributes) HasHits() bool {
 	if o != nil && o.Hits != nil {
 		return true
 	}
@@ -535,12 +537,12 @@ func (o *Results) HasHits() bool {
 }
 
 // SetHits gets a reference to the given int32 and assigns it to the Hits field.
-func (o *Results) SetHits(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetHits(v int32) {
 	o.Hits = &v
 }
 
 // GetHitsTime returns the HitsTime field value if set, zero value otherwise.
-func (o *Results) GetHitsTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetHitsTime() float32 {
 	if o == nil || o.HitsTime == nil {
 		var ret float32
 		return ret
@@ -550,7 +552,7 @@ func (o *Results) GetHitsTime() float32 {
 
 // GetHitsTimeOk returns a tuple with the HitsTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetHitsTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetHitsTimeOk() (*float32, bool) {
 	if o == nil || o.HitsTime == nil {
 		return nil, false
 	}
@@ -558,7 +560,7 @@ func (o *Results) GetHitsTimeOk() (*float32, bool) {
 }
 
 // HasHitsTime returns a boolean if a field has been set.
-func (o *Results) HasHitsTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasHitsTime() bool {
 	if o != nil && o.HitsTime != nil {
 		return true
 	}
@@ -567,12 +569,12 @@ func (o *Results) HasHitsTime() bool {
 }
 
 // SetHitsTime gets a reference to the given float32 and assigns it to the HitsTime field.
-func (o *Results) SetHitsTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetHitsTime(v float32) {
 	o.HitsTime = &v
 }
 
 // GetMiss returns the Miss field value if set, zero value otherwise.
-func (o *Results) GetMiss() int32 {
+func (o *HistoricalFieldResultsAttributes) GetMiss() int32 {
 	if o == nil || o.Miss == nil {
 		var ret int32
 		return ret
@@ -582,7 +584,7 @@ func (o *Results) GetMiss() int32 {
 
 // GetMissOk returns a tuple with the Miss field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetMissOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetMissOk() (*int32, bool) {
 	if o == nil || o.Miss == nil {
 		return nil, false
 	}
@@ -590,7 +592,7 @@ func (o *Results) GetMissOk() (*int32, bool) {
 }
 
 // HasMiss returns a boolean if a field has been set.
-func (o *Results) HasMiss() bool {
+func (o *HistoricalFieldResultsAttributes) HasMiss() bool {
 	if o != nil && o.Miss != nil {
 		return true
 	}
@@ -599,12 +601,12 @@ func (o *Results) HasMiss() bool {
 }
 
 // SetMiss gets a reference to the given int32 and assigns it to the Miss field.
-func (o *Results) SetMiss(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetMiss(v int32) {
 	o.Miss = &v
 }
 
 // GetMissTime returns the MissTime field value if set, zero value otherwise.
-func (o *Results) GetMissTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetMissTime() float32 {
 	if o == nil || o.MissTime == nil {
 		var ret float32
 		return ret
@@ -614,7 +616,7 @@ func (o *Results) GetMissTime() float32 {
 
 // GetMissTimeOk returns a tuple with the MissTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetMissTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetMissTimeOk() (*float32, bool) {
 	if o == nil || o.MissTime == nil {
 		return nil, false
 	}
@@ -622,7 +624,7 @@ func (o *Results) GetMissTimeOk() (*float32, bool) {
 }
 
 // HasMissTime returns a boolean if a field has been set.
-func (o *Results) HasMissTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasMissTime() bool {
 	if o != nil && o.MissTime != nil {
 		return true
 	}
@@ -631,12 +633,12 @@ func (o *Results) HasMissTime() bool {
 }
 
 // SetMissTime gets a reference to the given float32 and assigns it to the MissTime field.
-func (o *Results) SetMissTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetMissTime(v float32) {
 	o.MissTime = &v
 }
 
 // GetPass returns the Pass field value if set, zero value otherwise.
-func (o *Results) GetPass() int32 {
+func (o *HistoricalFieldResultsAttributes) GetPass() int32 {
 	if o == nil || o.Pass == nil {
 		var ret int32
 		return ret
@@ -646,7 +648,7 @@ func (o *Results) GetPass() int32 {
 
 // GetPassOk returns a tuple with the Pass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetPassOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetPassOk() (*int32, bool) {
 	if o == nil || o.Pass == nil {
 		return nil, false
 	}
@@ -654,7 +656,7 @@ func (o *Results) GetPassOk() (*int32, bool) {
 }
 
 // HasPass returns a boolean if a field has been set.
-func (o *Results) HasPass() bool {
+func (o *HistoricalFieldResultsAttributes) HasPass() bool {
 	if o != nil && o.Pass != nil {
 		return true
 	}
@@ -663,12 +665,12 @@ func (o *Results) HasPass() bool {
 }
 
 // SetPass gets a reference to the given int32 and assigns it to the Pass field.
-func (o *Results) SetPass(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetPass(v int32) {
 	o.Pass = &v
 }
 
 // GetPassTime returns the PassTime field value if set, zero value otherwise.
-func (o *Results) GetPassTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetPassTime() float32 {
 	if o == nil || o.PassTime == nil {
 		var ret float32
 		return ret
@@ -678,7 +680,7 @@ func (o *Results) GetPassTime() float32 {
 
 // GetPassTimeOk returns a tuple with the PassTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetPassTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetPassTimeOk() (*float32, bool) {
 	if o == nil || o.PassTime == nil {
 		return nil, false
 	}
@@ -686,7 +688,7 @@ func (o *Results) GetPassTimeOk() (*float32, bool) {
 }
 
 // HasPassTime returns a boolean if a field has been set.
-func (o *Results) HasPassTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasPassTime() bool {
 	if o != nil && o.PassTime != nil {
 		return true
 	}
@@ -695,12 +697,12 @@ func (o *Results) HasPassTime() bool {
 }
 
 // SetPassTime gets a reference to the given float32 and assigns it to the PassTime field.
-func (o *Results) SetPassTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetPassTime(v float32) {
 	o.PassTime = &v
 }
 
 // GetErrors returns the Errors field value if set, zero value otherwise.
-func (o *Results) GetErrors() int32 {
+func (o *HistoricalFieldResultsAttributes) GetErrors() int32 {
 	if o == nil || o.Errors == nil {
 		var ret int32
 		return ret
@@ -710,7 +712,7 @@ func (o *Results) GetErrors() int32 {
 
 // GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetErrorsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetErrorsOk() (*int32, bool) {
 	if o == nil || o.Errors == nil {
 		return nil, false
 	}
@@ -718,7 +720,7 @@ func (o *Results) GetErrorsOk() (*int32, bool) {
 }
 
 // HasErrors returns a boolean if a field has been set.
-func (o *Results) HasErrors() bool {
+func (o *HistoricalFieldResultsAttributes) HasErrors() bool {
 	if o != nil && o.Errors != nil {
 		return true
 	}
@@ -727,12 +729,12 @@ func (o *Results) HasErrors() bool {
 }
 
 // SetErrors gets a reference to the given int32 and assigns it to the Errors field.
-func (o *Results) SetErrors(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetErrors(v int32) {
 	o.Errors = &v
 }
 
 // GetRestarts returns the Restarts field value if set, zero value otherwise.
-func (o *Results) GetRestarts() int32 {
+func (o *HistoricalFieldResultsAttributes) GetRestarts() int32 {
 	if o == nil || o.Restarts == nil {
 		var ret int32
 		return ret
@@ -742,7 +744,7 @@ func (o *Results) GetRestarts() int32 {
 
 // GetRestartsOk returns a tuple with the Restarts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetRestartsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetRestartsOk() (*int32, bool) {
 	if o == nil || o.Restarts == nil {
 		return nil, false
 	}
@@ -750,7 +752,7 @@ func (o *Results) GetRestartsOk() (*int32, bool) {
 }
 
 // HasRestarts returns a boolean if a field has been set.
-func (o *Results) HasRestarts() bool {
+func (o *HistoricalFieldResultsAttributes) HasRestarts() bool {
 	if o != nil && o.Restarts != nil {
 		return true
 	}
@@ -759,12 +761,12 @@ func (o *Results) HasRestarts() bool {
 }
 
 // SetRestarts gets a reference to the given int32 and assigns it to the Restarts field.
-func (o *Results) SetRestarts(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetRestarts(v int32) {
 	o.Restarts = &v
 }
 
 // GetHitRatio returns the HitRatio field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Results) GetHitRatio() float32 {
+func (o *HistoricalFieldResultsAttributes) GetHitRatio() float32 {
 	if o == nil || o.HitRatio.Get() == nil {
 		var ret float32
 		return ret
@@ -775,7 +777,7 @@ func (o *Results) GetHitRatio() float32 {
 // GetHitRatioOk returns a tuple with the HitRatio field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Results) GetHitRatioOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetHitRatioOk() (*float32, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -783,7 +785,7 @@ func (o *Results) GetHitRatioOk() (*float32, bool) {
 }
 
 // HasHitRatio returns a boolean if a field has been set.
-func (o *Results) HasHitRatio() bool {
+func (o *HistoricalFieldResultsAttributes) HasHitRatio() bool {
 	if o != nil && o.HitRatio.IsSet() {
 		return true
 	}
@@ -792,21 +794,21 @@ func (o *Results) HasHitRatio() bool {
 }
 
 // SetHitRatio gets a reference to the given NullableFloat32 and assigns it to the HitRatio field.
-func (o *Results) SetHitRatio(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetHitRatio(v float32) {
 	o.HitRatio.Set(&v)
 }
 // SetHitRatioNil sets the value for HitRatio to be an explicit nil
-func (o *Results) SetHitRatioNil() {
+func (o *HistoricalFieldResultsAttributes) SetHitRatioNil() {
 	o.HitRatio.Set(nil)
 }
 
 // UnsetHitRatio ensures that no value is present for HitRatio, not even an explicit nil
-func (o *Results) UnsetHitRatio() {
+func (o *HistoricalFieldResultsAttributes) UnsetHitRatio() {
 	o.HitRatio.Unset()
 }
 
 // GetBandwidth returns the Bandwidth field value if set, zero value otherwise.
-func (o *Results) GetBandwidth() int32 {
+func (o *HistoricalFieldResultsAttributes) GetBandwidth() int32 {
 	if o == nil || o.Bandwidth == nil {
 		var ret int32
 		return ret
@@ -816,7 +818,7 @@ func (o *Results) GetBandwidth() int32 {
 
 // GetBandwidthOk returns a tuple with the Bandwidth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetBandwidthOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetBandwidthOk() (*int32, bool) {
 	if o == nil || o.Bandwidth == nil {
 		return nil, false
 	}
@@ -824,7 +826,7 @@ func (o *Results) GetBandwidthOk() (*int32, bool) {
 }
 
 // HasBandwidth returns a boolean if a field has been set.
-func (o *Results) HasBandwidth() bool {
+func (o *HistoricalFieldResultsAttributes) HasBandwidth() bool {
 	if o != nil && o.Bandwidth != nil {
 		return true
 	}
@@ -833,12 +835,12 @@ func (o *Results) HasBandwidth() bool {
 }
 
 // SetBandwidth gets a reference to the given int32 and assigns it to the Bandwidth field.
-func (o *Results) SetBandwidth(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetBandwidth(v int32) {
 	o.Bandwidth = &v
 }
 
 // GetBodySize returns the BodySize field value if set, zero value otherwise.
-func (o *Results) GetBodySize() int32 {
+func (o *HistoricalFieldResultsAttributes) GetBodySize() int32 {
 	if o == nil || o.BodySize == nil {
 		var ret int32
 		return ret
@@ -848,7 +850,7 @@ func (o *Results) GetBodySize() int32 {
 
 // GetBodySizeOk returns a tuple with the BodySize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetBodySizeOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetBodySizeOk() (*int32, bool) {
 	if o == nil || o.BodySize == nil {
 		return nil, false
 	}
@@ -856,7 +858,7 @@ func (o *Results) GetBodySizeOk() (*int32, bool) {
 }
 
 // HasBodySize returns a boolean if a field has been set.
-func (o *Results) HasBodySize() bool {
+func (o *HistoricalFieldResultsAttributes) HasBodySize() bool {
 	if o != nil && o.BodySize != nil {
 		return true
 	}
@@ -865,12 +867,12 @@ func (o *Results) HasBodySize() bool {
 }
 
 // SetBodySize gets a reference to the given int32 and assigns it to the BodySize field.
-func (o *Results) SetBodySize(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetBodySize(v int32) {
 	o.BodySize = &v
 }
 
 // GetHeaderSize returns the HeaderSize field value if set, zero value otherwise.
-func (o *Results) GetHeaderSize() int32 {
+func (o *HistoricalFieldResultsAttributes) GetHeaderSize() int32 {
 	if o == nil || o.HeaderSize == nil {
 		var ret int32
 		return ret
@@ -880,7 +882,7 @@ func (o *Results) GetHeaderSize() int32 {
 
 // GetHeaderSizeOk returns a tuple with the HeaderSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetHeaderSizeOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetHeaderSizeOk() (*int32, bool) {
 	if o == nil || o.HeaderSize == nil {
 		return nil, false
 	}
@@ -888,7 +890,7 @@ func (o *Results) GetHeaderSizeOk() (*int32, bool) {
 }
 
 // HasHeaderSize returns a boolean if a field has been set.
-func (o *Results) HasHeaderSize() bool {
+func (o *HistoricalFieldResultsAttributes) HasHeaderSize() bool {
 	if o != nil && o.HeaderSize != nil {
 		return true
 	}
@@ -897,12 +899,12 @@ func (o *Results) HasHeaderSize() bool {
 }
 
 // SetHeaderSize gets a reference to the given int32 and assigns it to the HeaderSize field.
-func (o *Results) SetHeaderSize(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetHeaderSize(v int32) {
 	o.HeaderSize = &v
 }
 
 // GetReqBodyBytes returns the ReqBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetReqBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetReqBodyBytes() int32 {
 	if o == nil || o.ReqBodyBytes == nil {
 		var ret int32
 		return ret
@@ -912,7 +914,7 @@ func (o *Results) GetReqBodyBytes() int32 {
 
 // GetReqBodyBytesOk returns a tuple with the ReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetReqBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetReqBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ReqBodyBytes == nil {
 		return nil, false
 	}
@@ -920,7 +922,7 @@ func (o *Results) GetReqBodyBytesOk() (*int32, bool) {
 }
 
 // HasReqBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasReqBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasReqBodyBytes() bool {
 	if o != nil && o.ReqBodyBytes != nil {
 		return true
 	}
@@ -929,12 +931,12 @@ func (o *Results) HasReqBodyBytes() bool {
 }
 
 // SetReqBodyBytes gets a reference to the given int32 and assigns it to the ReqBodyBytes field.
-func (o *Results) SetReqBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetReqBodyBytes(v int32) {
 	o.ReqBodyBytes = &v
 }
 
 // GetReqHeaderBytes returns the ReqHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetReqHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetReqHeaderBytes() int32 {
 	if o == nil || o.ReqHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -944,7 +946,7 @@ func (o *Results) GetReqHeaderBytes() int32 {
 
 // GetReqHeaderBytesOk returns a tuple with the ReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetReqHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetReqHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -952,7 +954,7 @@ func (o *Results) GetReqHeaderBytesOk() (*int32, bool) {
 }
 
 // HasReqHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasReqHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasReqHeaderBytes() bool {
 	if o != nil && o.ReqHeaderBytes != nil {
 		return true
 	}
@@ -961,12 +963,12 @@ func (o *Results) HasReqHeaderBytes() bool {
 }
 
 // SetReqHeaderBytes gets a reference to the given int32 and assigns it to the ReqHeaderBytes field.
-func (o *Results) SetReqHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetReqHeaderBytes(v int32) {
 	o.ReqHeaderBytes = &v
 }
 
 // GetRespBodyBytes returns the RespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetRespBodyBytes() int32 {
 	if o == nil || o.RespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -976,7 +978,7 @@ func (o *Results) GetRespBodyBytes() int32 {
 
 // GetRespBodyBytesOk returns a tuple with the RespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.RespBodyBytes == nil {
 		return nil, false
 	}
@@ -984,7 +986,7 @@ func (o *Results) GetRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasRespBodyBytes() bool {
 	if o != nil && o.RespBodyBytes != nil {
 		return true
 	}
@@ -993,12 +995,12 @@ func (o *Results) HasRespBodyBytes() bool {
 }
 
 // SetRespBodyBytes gets a reference to the given int32 and assigns it to the RespBodyBytes field.
-func (o *Results) SetRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetRespBodyBytes(v int32) {
 	o.RespBodyBytes = &v
 }
 
 // GetRespHeaderBytes returns the RespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetRespHeaderBytes() int32 {
 	if o == nil || o.RespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -1008,7 +1010,7 @@ func (o *Results) GetRespHeaderBytes() int32 {
 
 // GetRespHeaderBytesOk returns a tuple with the RespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.RespHeaderBytes == nil {
 		return nil, false
 	}
@@ -1016,7 +1018,7 @@ func (o *Results) GetRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasRespHeaderBytes() bool {
 	if o != nil && o.RespHeaderBytes != nil {
 		return true
 	}
@@ -1025,12 +1027,12 @@ func (o *Results) HasRespHeaderBytes() bool {
 }
 
 // SetRespHeaderBytes gets a reference to the given int32 and assigns it to the RespHeaderBytes field.
-func (o *Results) SetRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetRespHeaderBytes(v int32) {
 	o.RespHeaderBytes = &v
 }
 
 // GetBereqBodyBytes returns the BereqBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetBereqBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetBereqBodyBytes() int32 {
 	if o == nil || o.BereqBodyBytes == nil {
 		var ret int32
 		return ret
@@ -1040,7 +1042,7 @@ func (o *Results) GetBereqBodyBytes() int32 {
 
 // GetBereqBodyBytesOk returns a tuple with the BereqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetBereqBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetBereqBodyBytesOk() (*int32, bool) {
 	if o == nil || o.BereqBodyBytes == nil {
 		return nil, false
 	}
@@ -1048,7 +1050,7 @@ func (o *Results) GetBereqBodyBytesOk() (*int32, bool) {
 }
 
 // HasBereqBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasBereqBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasBereqBodyBytes() bool {
 	if o != nil && o.BereqBodyBytes != nil {
 		return true
 	}
@@ -1057,12 +1059,12 @@ func (o *Results) HasBereqBodyBytes() bool {
 }
 
 // SetBereqBodyBytes gets a reference to the given int32 and assigns it to the BereqBodyBytes field.
-func (o *Results) SetBereqBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetBereqBodyBytes(v int32) {
 	o.BereqBodyBytes = &v
 }
 
 // GetBereqHeaderBytes returns the BereqHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetBereqHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetBereqHeaderBytes() int32 {
 	if o == nil || o.BereqHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -1072,7 +1074,7 @@ func (o *Results) GetBereqHeaderBytes() int32 {
 
 // GetBereqHeaderBytesOk returns a tuple with the BereqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetBereqHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetBereqHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.BereqHeaderBytes == nil {
 		return nil, false
 	}
@@ -1080,7 +1082,7 @@ func (o *Results) GetBereqHeaderBytesOk() (*int32, bool) {
 }
 
 // HasBereqHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasBereqHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasBereqHeaderBytes() bool {
 	if o != nil && o.BereqHeaderBytes != nil {
 		return true
 	}
@@ -1089,12 +1091,12 @@ func (o *Results) HasBereqHeaderBytes() bool {
 }
 
 // SetBereqHeaderBytes gets a reference to the given int32 and assigns it to the BereqHeaderBytes field.
-func (o *Results) SetBereqHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetBereqHeaderBytes(v int32) {
 	o.BereqHeaderBytes = &v
 }
 
 // GetUncacheable returns the Uncacheable field value if set, zero value otherwise.
-func (o *Results) GetUncacheable() int32 {
+func (o *HistoricalFieldResultsAttributes) GetUncacheable() int32 {
 	if o == nil || o.Uncacheable == nil {
 		var ret int32
 		return ret
@@ -1104,7 +1106,7 @@ func (o *Results) GetUncacheable() int32 {
 
 // GetUncacheableOk returns a tuple with the Uncacheable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetUncacheableOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetUncacheableOk() (*int32, bool) {
 	if o == nil || o.Uncacheable == nil {
 		return nil, false
 	}
@@ -1112,7 +1114,7 @@ func (o *Results) GetUncacheableOk() (*int32, bool) {
 }
 
 // HasUncacheable returns a boolean if a field has been set.
-func (o *Results) HasUncacheable() bool {
+func (o *HistoricalFieldResultsAttributes) HasUncacheable() bool {
 	if o != nil && o.Uncacheable != nil {
 		return true
 	}
@@ -1121,12 +1123,12 @@ func (o *Results) HasUncacheable() bool {
 }
 
 // SetUncacheable gets a reference to the given int32 and assigns it to the Uncacheable field.
-func (o *Results) SetUncacheable(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetUncacheable(v int32) {
 	o.Uncacheable = &v
 }
 
 // GetPipe returns the Pipe field value if set, zero value otherwise.
-func (o *Results) GetPipe() int32 {
+func (o *HistoricalFieldResultsAttributes) GetPipe() int32 {
 	if o == nil || o.Pipe == nil {
 		var ret int32
 		return ret
@@ -1136,7 +1138,7 @@ func (o *Results) GetPipe() int32 {
 
 // GetPipeOk returns a tuple with the Pipe field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetPipeOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetPipeOk() (*int32, bool) {
 	if o == nil || o.Pipe == nil {
 		return nil, false
 	}
@@ -1144,7 +1146,7 @@ func (o *Results) GetPipeOk() (*int32, bool) {
 }
 
 // HasPipe returns a boolean if a field has been set.
-func (o *Results) HasPipe() bool {
+func (o *HistoricalFieldResultsAttributes) HasPipe() bool {
 	if o != nil && o.Pipe != nil {
 		return true
 	}
@@ -1153,12 +1155,12 @@ func (o *Results) HasPipe() bool {
 }
 
 // SetPipe gets a reference to the given int32 and assigns it to the Pipe field.
-func (o *Results) SetPipe(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetPipe(v int32) {
 	o.Pipe = &v
 }
 
 // GetSynth returns the Synth field value if set, zero value otherwise.
-func (o *Results) GetSynth() int32 {
+func (o *HistoricalFieldResultsAttributes) GetSynth() int32 {
 	if o == nil || o.Synth == nil {
 		var ret int32
 		return ret
@@ -1168,7 +1170,7 @@ func (o *Results) GetSynth() int32 {
 
 // GetSynthOk returns a tuple with the Synth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetSynthOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetSynthOk() (*int32, bool) {
 	if o == nil || o.Synth == nil {
 		return nil, false
 	}
@@ -1176,7 +1178,7 @@ func (o *Results) GetSynthOk() (*int32, bool) {
 }
 
 // HasSynth returns a boolean if a field has been set.
-func (o *Results) HasSynth() bool {
+func (o *HistoricalFieldResultsAttributes) HasSynth() bool {
 	if o != nil && o.Synth != nil {
 		return true
 	}
@@ -1185,12 +1187,12 @@ func (o *Results) HasSynth() bool {
 }
 
 // SetSynth gets a reference to the given int32 and assigns it to the Synth field.
-func (o *Results) SetSynth(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetSynth(v int32) {
 	o.Synth = &v
 }
 
 // GetTLS returns the TLS field value if set, zero value otherwise.
-func (o *Results) GetTLS() int32 {
+func (o *HistoricalFieldResultsAttributes) GetTLS() int32 {
 	if o == nil || o.TLS == nil {
 		var ret int32
 		return ret
@@ -1200,7 +1202,7 @@ func (o *Results) GetTLS() int32 {
 
 // GetTLSOk returns a tuple with the TLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetTLSOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetTLSOk() (*int32, bool) {
 	if o == nil || o.TLS == nil {
 		return nil, false
 	}
@@ -1208,7 +1210,7 @@ func (o *Results) GetTLSOk() (*int32, bool) {
 }
 
 // HasTLS returns a boolean if a field has been set.
-func (o *Results) HasTLS() bool {
+func (o *HistoricalFieldResultsAttributes) HasTLS() bool {
 	if o != nil && o.TLS != nil {
 		return true
 	}
@@ -1217,12 +1219,12 @@ func (o *Results) HasTLS() bool {
 }
 
 // SetTLS gets a reference to the given int32 and assigns it to the TLS field.
-func (o *Results) SetTLS(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetTLS(v int32) {
 	o.TLS = &v
 }
 
 // GetTLSV10 returns the TLSV10 field value if set, zero value otherwise.
-func (o *Results) GetTLSV10() int32 {
+func (o *HistoricalFieldResultsAttributes) GetTLSV10() int32 {
 	if o == nil || o.TLSV10 == nil {
 		var ret int32
 		return ret
@@ -1232,7 +1234,7 @@ func (o *Results) GetTLSV10() int32 {
 
 // GetTLSV10Ok returns a tuple with the TLSV10 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetTLSV10Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetTLSV10Ok() (*int32, bool) {
 	if o == nil || o.TLSV10 == nil {
 		return nil, false
 	}
@@ -1240,7 +1242,7 @@ func (o *Results) GetTLSV10Ok() (*int32, bool) {
 }
 
 // HasTLSV10 returns a boolean if a field has been set.
-func (o *Results) HasTLSV10() bool {
+func (o *HistoricalFieldResultsAttributes) HasTLSV10() bool {
 	if o != nil && o.TLSV10 != nil {
 		return true
 	}
@@ -1249,12 +1251,12 @@ func (o *Results) HasTLSV10() bool {
 }
 
 // SetTLSV10 gets a reference to the given int32 and assigns it to the TLSV10 field.
-func (o *Results) SetTLSV10(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetTLSV10(v int32) {
 	o.TLSV10 = &v
 }
 
 // GetTLSV11 returns the TLSV11 field value if set, zero value otherwise.
-func (o *Results) GetTLSV11() int32 {
+func (o *HistoricalFieldResultsAttributes) GetTLSV11() int32 {
 	if o == nil || o.TLSV11 == nil {
 		var ret int32
 		return ret
@@ -1264,7 +1266,7 @@ func (o *Results) GetTLSV11() int32 {
 
 // GetTLSV11Ok returns a tuple with the TLSV11 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetTLSV11Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetTLSV11Ok() (*int32, bool) {
 	if o == nil || o.TLSV11 == nil {
 		return nil, false
 	}
@@ -1272,7 +1274,7 @@ func (o *Results) GetTLSV11Ok() (*int32, bool) {
 }
 
 // HasTLSV11 returns a boolean if a field has been set.
-func (o *Results) HasTLSV11() bool {
+func (o *HistoricalFieldResultsAttributes) HasTLSV11() bool {
 	if o != nil && o.TLSV11 != nil {
 		return true
 	}
@@ -1281,12 +1283,12 @@ func (o *Results) HasTLSV11() bool {
 }
 
 // SetTLSV11 gets a reference to the given int32 and assigns it to the TLSV11 field.
-func (o *Results) SetTLSV11(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetTLSV11(v int32) {
 	o.TLSV11 = &v
 }
 
 // GetTLSV12 returns the TLSV12 field value if set, zero value otherwise.
-func (o *Results) GetTLSV12() int32 {
+func (o *HistoricalFieldResultsAttributes) GetTLSV12() int32 {
 	if o == nil || o.TLSV12 == nil {
 		var ret int32
 		return ret
@@ -1296,7 +1298,7 @@ func (o *Results) GetTLSV12() int32 {
 
 // GetTLSV12Ok returns a tuple with the TLSV12 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetTLSV12Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetTLSV12Ok() (*int32, bool) {
 	if o == nil || o.TLSV12 == nil {
 		return nil, false
 	}
@@ -1304,7 +1306,7 @@ func (o *Results) GetTLSV12Ok() (*int32, bool) {
 }
 
 // HasTLSV12 returns a boolean if a field has been set.
-func (o *Results) HasTLSV12() bool {
+func (o *HistoricalFieldResultsAttributes) HasTLSV12() bool {
 	if o != nil && o.TLSV12 != nil {
 		return true
 	}
@@ -1313,12 +1315,12 @@ func (o *Results) HasTLSV12() bool {
 }
 
 // SetTLSV12 gets a reference to the given int32 and assigns it to the TLSV12 field.
-func (o *Results) SetTLSV12(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetTLSV12(v int32) {
 	o.TLSV12 = &v
 }
 
 // GetTLSV13 returns the TLSV13 field value if set, zero value otherwise.
-func (o *Results) GetTLSV13() int32 {
+func (o *HistoricalFieldResultsAttributes) GetTLSV13() int32 {
 	if o == nil || o.TLSV13 == nil {
 		var ret int32
 		return ret
@@ -1328,7 +1330,7 @@ func (o *Results) GetTLSV13() int32 {
 
 // GetTLSV13Ok returns a tuple with the TLSV13 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetTLSV13Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetTLSV13Ok() (*int32, bool) {
 	if o == nil || o.TLSV13 == nil {
 		return nil, false
 	}
@@ -1336,7 +1338,7 @@ func (o *Results) GetTLSV13Ok() (*int32, bool) {
 }
 
 // HasTLSV13 returns a boolean if a field has been set.
-func (o *Results) HasTLSV13() bool {
+func (o *HistoricalFieldResultsAttributes) HasTLSV13() bool {
 	if o != nil && o.TLSV13 != nil {
 		return true
 	}
@@ -1345,12 +1347,12 @@ func (o *Results) HasTLSV13() bool {
 }
 
 // SetTLSV13 gets a reference to the given int32 and assigns it to the TLSV13 field.
-func (o *Results) SetTLSV13(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetTLSV13(v int32) {
 	o.TLSV13 = &v
 }
 
 // GetEdgeRequests returns the EdgeRequests field value if set, zero value otherwise.
-func (o *Results) GetEdgeRequests() int32 {
+func (o *HistoricalFieldResultsAttributes) GetEdgeRequests() int32 {
 	if o == nil || o.EdgeRequests == nil {
 		var ret int32
 		return ret
@@ -1360,7 +1362,7 @@ func (o *Results) GetEdgeRequests() int32 {
 
 // GetEdgeRequestsOk returns a tuple with the EdgeRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetEdgeRequestsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetEdgeRequestsOk() (*int32, bool) {
 	if o == nil || o.EdgeRequests == nil {
 		return nil, false
 	}
@@ -1368,7 +1370,7 @@ func (o *Results) GetEdgeRequestsOk() (*int32, bool) {
 }
 
 // HasEdgeRequests returns a boolean if a field has been set.
-func (o *Results) HasEdgeRequests() bool {
+func (o *HistoricalFieldResultsAttributes) HasEdgeRequests() bool {
 	if o != nil && o.EdgeRequests != nil {
 		return true
 	}
@@ -1377,12 +1379,12 @@ func (o *Results) HasEdgeRequests() bool {
 }
 
 // SetEdgeRequests gets a reference to the given int32 and assigns it to the EdgeRequests field.
-func (o *Results) SetEdgeRequests(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetEdgeRequests(v int32) {
 	o.EdgeRequests = &v
 }
 
 // GetEdgeRespHeaderBytes returns the EdgeRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetEdgeRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetEdgeRespHeaderBytes() int32 {
 	if o == nil || o.EdgeRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -1392,7 +1394,7 @@ func (o *Results) GetEdgeRespHeaderBytes() int32 {
 
 // GetEdgeRespHeaderBytesOk returns a tuple with the EdgeRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetEdgeRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetEdgeRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.EdgeRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -1400,7 +1402,7 @@ func (o *Results) GetEdgeRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasEdgeRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasEdgeRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasEdgeRespHeaderBytes() bool {
 	if o != nil && o.EdgeRespHeaderBytes != nil {
 		return true
 	}
@@ -1409,12 +1411,12 @@ func (o *Results) HasEdgeRespHeaderBytes() bool {
 }
 
 // SetEdgeRespHeaderBytes gets a reference to the given int32 and assigns it to the EdgeRespHeaderBytes field.
-func (o *Results) SetEdgeRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetEdgeRespHeaderBytes(v int32) {
 	o.EdgeRespHeaderBytes = &v
 }
 
 // GetEdgeRespBodyBytes returns the EdgeRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetEdgeRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetEdgeRespBodyBytes() int32 {
 	if o == nil || o.EdgeRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -1424,7 +1426,7 @@ func (o *Results) GetEdgeRespBodyBytes() int32 {
 
 // GetEdgeRespBodyBytesOk returns a tuple with the EdgeRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetEdgeRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetEdgeRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.EdgeRespBodyBytes == nil {
 		return nil, false
 	}
@@ -1432,7 +1434,7 @@ func (o *Results) GetEdgeRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasEdgeRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasEdgeRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasEdgeRespBodyBytes() bool {
 	if o != nil && o.EdgeRespBodyBytes != nil {
 		return true
 	}
@@ -1441,12 +1443,12 @@ func (o *Results) HasEdgeRespBodyBytes() bool {
 }
 
 // SetEdgeRespBodyBytes gets a reference to the given int32 and assigns it to the EdgeRespBodyBytes field.
-func (o *Results) SetEdgeRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetEdgeRespBodyBytes(v int32) {
 	o.EdgeRespBodyBytes = &v
 }
 
 // GetEdgeHitRequests returns the EdgeHitRequests field value if set, zero value otherwise.
-func (o *Results) GetEdgeHitRequests() int32 {
+func (o *HistoricalFieldResultsAttributes) GetEdgeHitRequests() int32 {
 	if o == nil || o.EdgeHitRequests == nil {
 		var ret int32
 		return ret
@@ -1456,7 +1458,7 @@ func (o *Results) GetEdgeHitRequests() int32 {
 
 // GetEdgeHitRequestsOk returns a tuple with the EdgeHitRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetEdgeHitRequestsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetEdgeHitRequestsOk() (*int32, bool) {
 	if o == nil || o.EdgeHitRequests == nil {
 		return nil, false
 	}
@@ -1464,7 +1466,7 @@ func (o *Results) GetEdgeHitRequestsOk() (*int32, bool) {
 }
 
 // HasEdgeHitRequests returns a boolean if a field has been set.
-func (o *Results) HasEdgeHitRequests() bool {
+func (o *HistoricalFieldResultsAttributes) HasEdgeHitRequests() bool {
 	if o != nil && o.EdgeHitRequests != nil {
 		return true
 	}
@@ -1473,12 +1475,12 @@ func (o *Results) HasEdgeHitRequests() bool {
 }
 
 // SetEdgeHitRequests gets a reference to the given int32 and assigns it to the EdgeHitRequests field.
-func (o *Results) SetEdgeHitRequests(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetEdgeHitRequests(v int32) {
 	o.EdgeHitRequests = &v
 }
 
 // GetEdgeMissRequests returns the EdgeMissRequests field value if set, zero value otherwise.
-func (o *Results) GetEdgeMissRequests() int32 {
+func (o *HistoricalFieldResultsAttributes) GetEdgeMissRequests() int32 {
 	if o == nil || o.EdgeMissRequests == nil {
 		var ret int32
 		return ret
@@ -1488,7 +1490,7 @@ func (o *Results) GetEdgeMissRequests() int32 {
 
 // GetEdgeMissRequestsOk returns a tuple with the EdgeMissRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetEdgeMissRequestsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetEdgeMissRequestsOk() (*int32, bool) {
 	if o == nil || o.EdgeMissRequests == nil {
 		return nil, false
 	}
@@ -1496,7 +1498,7 @@ func (o *Results) GetEdgeMissRequestsOk() (*int32, bool) {
 }
 
 // HasEdgeMissRequests returns a boolean if a field has been set.
-func (o *Results) HasEdgeMissRequests() bool {
+func (o *HistoricalFieldResultsAttributes) HasEdgeMissRequests() bool {
 	if o != nil && o.EdgeMissRequests != nil {
 		return true
 	}
@@ -1505,12 +1507,12 @@ func (o *Results) HasEdgeMissRequests() bool {
 }
 
 // SetEdgeMissRequests gets a reference to the given int32 and assigns it to the EdgeMissRequests field.
-func (o *Results) SetEdgeMissRequests(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetEdgeMissRequests(v int32) {
 	o.EdgeMissRequests = &v
 }
 
 // GetOriginFetches returns the OriginFetches field value if set, zero value otherwise.
-func (o *Results) GetOriginFetches() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOriginFetches() int32 {
 	if o == nil || o.OriginFetches == nil {
 		var ret int32
 		return ret
@@ -1520,7 +1522,7 @@ func (o *Results) GetOriginFetches() int32 {
 
 // GetOriginFetchesOk returns a tuple with the OriginFetches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOriginFetchesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOriginFetchesOk() (*int32, bool) {
 	if o == nil || o.OriginFetches == nil {
 		return nil, false
 	}
@@ -1528,7 +1530,7 @@ func (o *Results) GetOriginFetchesOk() (*int32, bool) {
 }
 
 // HasOriginFetches returns a boolean if a field has been set.
-func (o *Results) HasOriginFetches() bool {
+func (o *HistoricalFieldResultsAttributes) HasOriginFetches() bool {
 	if o != nil && o.OriginFetches != nil {
 		return true
 	}
@@ -1537,12 +1539,12 @@ func (o *Results) HasOriginFetches() bool {
 }
 
 // SetOriginFetches gets a reference to the given int32 and assigns it to the OriginFetches field.
-func (o *Results) SetOriginFetches(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOriginFetches(v int32) {
 	o.OriginFetches = &v
 }
 
 // GetOriginFetchHeaderBytes returns the OriginFetchHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetOriginFetchHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOriginFetchHeaderBytes() int32 {
 	if o == nil || o.OriginFetchHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -1552,7 +1554,7 @@ func (o *Results) GetOriginFetchHeaderBytes() int32 {
 
 // GetOriginFetchHeaderBytesOk returns a tuple with the OriginFetchHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOriginFetchHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOriginFetchHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.OriginFetchHeaderBytes == nil {
 		return nil, false
 	}
@@ -1560,7 +1562,7 @@ func (o *Results) GetOriginFetchHeaderBytesOk() (*int32, bool) {
 }
 
 // HasOriginFetchHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasOriginFetchHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasOriginFetchHeaderBytes() bool {
 	if o != nil && o.OriginFetchHeaderBytes != nil {
 		return true
 	}
@@ -1569,12 +1571,12 @@ func (o *Results) HasOriginFetchHeaderBytes() bool {
 }
 
 // SetOriginFetchHeaderBytes gets a reference to the given int32 and assigns it to the OriginFetchHeaderBytes field.
-func (o *Results) SetOriginFetchHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOriginFetchHeaderBytes(v int32) {
 	o.OriginFetchHeaderBytes = &v
 }
 
 // GetOriginFetchBodyBytes returns the OriginFetchBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetOriginFetchBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOriginFetchBodyBytes() int32 {
 	if o == nil || o.OriginFetchBodyBytes == nil {
 		var ret int32
 		return ret
@@ -1584,7 +1586,7 @@ func (o *Results) GetOriginFetchBodyBytes() int32 {
 
 // GetOriginFetchBodyBytesOk returns a tuple with the OriginFetchBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOriginFetchBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOriginFetchBodyBytesOk() (*int32, bool) {
 	if o == nil || o.OriginFetchBodyBytes == nil {
 		return nil, false
 	}
@@ -1592,7 +1594,7 @@ func (o *Results) GetOriginFetchBodyBytesOk() (*int32, bool) {
 }
 
 // HasOriginFetchBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasOriginFetchBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasOriginFetchBodyBytes() bool {
 	if o != nil && o.OriginFetchBodyBytes != nil {
 		return true
 	}
@@ -1601,12 +1603,12 @@ func (o *Results) HasOriginFetchBodyBytes() bool {
 }
 
 // SetOriginFetchBodyBytes gets a reference to the given int32 and assigns it to the OriginFetchBodyBytes field.
-func (o *Results) SetOriginFetchBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOriginFetchBodyBytes(v int32) {
 	o.OriginFetchBodyBytes = &v
 }
 
 // GetOriginFetchRespHeaderBytes returns the OriginFetchRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetOriginFetchRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOriginFetchRespHeaderBytes() int32 {
 	if o == nil || o.OriginFetchRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -1616,7 +1618,7 @@ func (o *Results) GetOriginFetchRespHeaderBytes() int32 {
 
 // GetOriginFetchRespHeaderBytesOk returns a tuple with the OriginFetchRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOriginFetchRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOriginFetchRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.OriginFetchRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -1624,7 +1626,7 @@ func (o *Results) GetOriginFetchRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasOriginFetchRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasOriginFetchRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasOriginFetchRespHeaderBytes() bool {
 	if o != nil && o.OriginFetchRespHeaderBytes != nil {
 		return true
 	}
@@ -1633,12 +1635,12 @@ func (o *Results) HasOriginFetchRespHeaderBytes() bool {
 }
 
 // SetOriginFetchRespHeaderBytes gets a reference to the given int32 and assigns it to the OriginFetchRespHeaderBytes field.
-func (o *Results) SetOriginFetchRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOriginFetchRespHeaderBytes(v int32) {
 	o.OriginFetchRespHeaderBytes = &v
 }
 
 // GetOriginFetchRespBodyBytes returns the OriginFetchRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetOriginFetchRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOriginFetchRespBodyBytes() int32 {
 	if o == nil || o.OriginFetchRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -1648,7 +1650,7 @@ func (o *Results) GetOriginFetchRespBodyBytes() int32 {
 
 // GetOriginFetchRespBodyBytesOk returns a tuple with the OriginFetchRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOriginFetchRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOriginFetchRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.OriginFetchRespBodyBytes == nil {
 		return nil, false
 	}
@@ -1656,7 +1658,7 @@ func (o *Results) GetOriginFetchRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasOriginFetchRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasOriginFetchRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasOriginFetchRespBodyBytes() bool {
 	if o != nil && o.OriginFetchRespBodyBytes != nil {
 		return true
 	}
@@ -1665,12 +1667,12 @@ func (o *Results) HasOriginFetchRespBodyBytes() bool {
 }
 
 // SetOriginFetchRespBodyBytes gets a reference to the given int32 and assigns it to the OriginFetchRespBodyBytes field.
-func (o *Results) SetOriginFetchRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOriginFetchRespBodyBytes(v int32) {
 	o.OriginFetchRespBodyBytes = &v
 }
 
 // GetOriginRevalidations returns the OriginRevalidations field value if set, zero value otherwise.
-func (o *Results) GetOriginRevalidations() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOriginRevalidations() int32 {
 	if o == nil || o.OriginRevalidations == nil {
 		var ret int32
 		return ret
@@ -1680,7 +1682,7 @@ func (o *Results) GetOriginRevalidations() int32 {
 
 // GetOriginRevalidationsOk returns a tuple with the OriginRevalidations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOriginRevalidationsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOriginRevalidationsOk() (*int32, bool) {
 	if o == nil || o.OriginRevalidations == nil {
 		return nil, false
 	}
@@ -1688,7 +1690,7 @@ func (o *Results) GetOriginRevalidationsOk() (*int32, bool) {
 }
 
 // HasOriginRevalidations returns a boolean if a field has been set.
-func (o *Results) HasOriginRevalidations() bool {
+func (o *HistoricalFieldResultsAttributes) HasOriginRevalidations() bool {
 	if o != nil && o.OriginRevalidations != nil {
 		return true
 	}
@@ -1697,12 +1699,12 @@ func (o *Results) HasOriginRevalidations() bool {
 }
 
 // SetOriginRevalidations gets a reference to the given int32 and assigns it to the OriginRevalidations field.
-func (o *Results) SetOriginRevalidations(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOriginRevalidations(v int32) {
 	o.OriginRevalidations = &v
 }
 
 // GetOriginCacheFetches returns the OriginCacheFetches field value if set, zero value otherwise.
-func (o *Results) GetOriginCacheFetches() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOriginCacheFetches() int32 {
 	if o == nil || o.OriginCacheFetches == nil {
 		var ret int32
 		return ret
@@ -1712,7 +1714,7 @@ func (o *Results) GetOriginCacheFetches() int32 {
 
 // GetOriginCacheFetchesOk returns a tuple with the OriginCacheFetches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOriginCacheFetchesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOriginCacheFetchesOk() (*int32, bool) {
 	if o == nil || o.OriginCacheFetches == nil {
 		return nil, false
 	}
@@ -1720,7 +1722,7 @@ func (o *Results) GetOriginCacheFetchesOk() (*int32, bool) {
 }
 
 // HasOriginCacheFetches returns a boolean if a field has been set.
-func (o *Results) HasOriginCacheFetches() bool {
+func (o *HistoricalFieldResultsAttributes) HasOriginCacheFetches() bool {
 	if o != nil && o.OriginCacheFetches != nil {
 		return true
 	}
@@ -1729,12 +1731,12 @@ func (o *Results) HasOriginCacheFetches() bool {
 }
 
 // SetOriginCacheFetches gets a reference to the given int32 and assigns it to the OriginCacheFetches field.
-func (o *Results) SetOriginCacheFetches(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOriginCacheFetches(v int32) {
 	o.OriginCacheFetches = &v
 }
 
 // GetShield returns the Shield field value if set, zero value otherwise.
-func (o *Results) GetShield() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShield() int32 {
 	if o == nil || o.Shield == nil {
 		var ret int32
 		return ret
@@ -1744,7 +1746,7 @@ func (o *Results) GetShield() int32 {
 
 // GetShieldOk returns a tuple with the Shield field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldOk() (*int32, bool) {
 	if o == nil || o.Shield == nil {
 		return nil, false
 	}
@@ -1752,7 +1754,7 @@ func (o *Results) GetShieldOk() (*int32, bool) {
 }
 
 // HasShield returns a boolean if a field has been set.
-func (o *Results) HasShield() bool {
+func (o *HistoricalFieldResultsAttributes) HasShield() bool {
 	if o != nil && o.Shield != nil {
 		return true
 	}
@@ -1761,12 +1763,12 @@ func (o *Results) HasShield() bool {
 }
 
 // SetShield gets a reference to the given int32 and assigns it to the Shield field.
-func (o *Results) SetShield(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShield(v int32) {
 	o.Shield = &v
 }
 
 // GetShieldRespBodyBytes returns the ShieldRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetShieldRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldRespBodyBytes() int32 {
 	if o == nil || o.ShieldRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -1776,7 +1778,7 @@ func (o *Results) GetShieldRespBodyBytes() int32 {
 
 // GetShieldRespBodyBytesOk returns a tuple with the ShieldRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ShieldRespBodyBytes == nil {
 		return nil, false
 	}
@@ -1784,7 +1786,7 @@ func (o *Results) GetShieldRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasShieldRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasShieldRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldRespBodyBytes() bool {
 	if o != nil && o.ShieldRespBodyBytes != nil {
 		return true
 	}
@@ -1793,12 +1795,12 @@ func (o *Results) HasShieldRespBodyBytes() bool {
 }
 
 // SetShieldRespBodyBytes gets a reference to the given int32 and assigns it to the ShieldRespBodyBytes field.
-func (o *Results) SetShieldRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldRespBodyBytes(v int32) {
 	o.ShieldRespBodyBytes = &v
 }
 
 // GetShieldRespHeaderBytes returns the ShieldRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetShieldRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldRespHeaderBytes() int32 {
 	if o == nil || o.ShieldRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -1808,7 +1810,7 @@ func (o *Results) GetShieldRespHeaderBytes() int32 {
 
 // GetShieldRespHeaderBytesOk returns a tuple with the ShieldRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ShieldRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -1816,7 +1818,7 @@ func (o *Results) GetShieldRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasShieldRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasShieldRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldRespHeaderBytes() bool {
 	if o != nil && o.ShieldRespHeaderBytes != nil {
 		return true
 	}
@@ -1825,12 +1827,12 @@ func (o *Results) HasShieldRespHeaderBytes() bool {
 }
 
 // SetShieldRespHeaderBytes gets a reference to the given int32 and assigns it to the ShieldRespHeaderBytes field.
-func (o *Results) SetShieldRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldRespHeaderBytes(v int32) {
 	o.ShieldRespHeaderBytes = &v
 }
 
 // GetShieldFetches returns the ShieldFetches field value if set, zero value otherwise.
-func (o *Results) GetShieldFetches() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldFetches() int32 {
 	if o == nil || o.ShieldFetches == nil {
 		var ret int32
 		return ret
@@ -1840,7 +1842,7 @@ func (o *Results) GetShieldFetches() int32 {
 
 // GetShieldFetchesOk returns a tuple with the ShieldFetches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldFetchesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldFetchesOk() (*int32, bool) {
 	if o == nil || o.ShieldFetches == nil {
 		return nil, false
 	}
@@ -1848,7 +1850,7 @@ func (o *Results) GetShieldFetchesOk() (*int32, bool) {
 }
 
 // HasShieldFetches returns a boolean if a field has been set.
-func (o *Results) HasShieldFetches() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldFetches() bool {
 	if o != nil && o.ShieldFetches != nil {
 		return true
 	}
@@ -1857,12 +1859,12 @@ func (o *Results) HasShieldFetches() bool {
 }
 
 // SetShieldFetches gets a reference to the given int32 and assigns it to the ShieldFetches field.
-func (o *Results) SetShieldFetches(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldFetches(v int32) {
 	o.ShieldFetches = &v
 }
 
 // GetShieldFetchHeaderBytes returns the ShieldFetchHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetShieldFetchHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldFetchHeaderBytes() int32 {
 	if o == nil || o.ShieldFetchHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -1872,7 +1874,7 @@ func (o *Results) GetShieldFetchHeaderBytes() int32 {
 
 // GetShieldFetchHeaderBytesOk returns a tuple with the ShieldFetchHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldFetchHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldFetchHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ShieldFetchHeaderBytes == nil {
 		return nil, false
 	}
@@ -1880,7 +1882,7 @@ func (o *Results) GetShieldFetchHeaderBytesOk() (*int32, bool) {
 }
 
 // HasShieldFetchHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasShieldFetchHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldFetchHeaderBytes() bool {
 	if o != nil && o.ShieldFetchHeaderBytes != nil {
 		return true
 	}
@@ -1889,12 +1891,12 @@ func (o *Results) HasShieldFetchHeaderBytes() bool {
 }
 
 // SetShieldFetchHeaderBytes gets a reference to the given int32 and assigns it to the ShieldFetchHeaderBytes field.
-func (o *Results) SetShieldFetchHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldFetchHeaderBytes(v int32) {
 	o.ShieldFetchHeaderBytes = &v
 }
 
 // GetShieldFetchBodyBytes returns the ShieldFetchBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetShieldFetchBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldFetchBodyBytes() int32 {
 	if o == nil || o.ShieldFetchBodyBytes == nil {
 		var ret int32
 		return ret
@@ -1904,7 +1906,7 @@ func (o *Results) GetShieldFetchBodyBytes() int32 {
 
 // GetShieldFetchBodyBytesOk returns a tuple with the ShieldFetchBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldFetchBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldFetchBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ShieldFetchBodyBytes == nil {
 		return nil, false
 	}
@@ -1912,7 +1914,7 @@ func (o *Results) GetShieldFetchBodyBytesOk() (*int32, bool) {
 }
 
 // HasShieldFetchBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasShieldFetchBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldFetchBodyBytes() bool {
 	if o != nil && o.ShieldFetchBodyBytes != nil {
 		return true
 	}
@@ -1921,12 +1923,12 @@ func (o *Results) HasShieldFetchBodyBytes() bool {
 }
 
 // SetShieldFetchBodyBytes gets a reference to the given int32 and assigns it to the ShieldFetchBodyBytes field.
-func (o *Results) SetShieldFetchBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldFetchBodyBytes(v int32) {
 	o.ShieldFetchBodyBytes = &v
 }
 
 // GetShieldFetchRespHeaderBytes returns the ShieldFetchRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetShieldFetchRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldFetchRespHeaderBytes() int32 {
 	if o == nil || o.ShieldFetchRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -1936,7 +1938,7 @@ func (o *Results) GetShieldFetchRespHeaderBytes() int32 {
 
 // GetShieldFetchRespHeaderBytesOk returns a tuple with the ShieldFetchRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldFetchRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldFetchRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ShieldFetchRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -1944,7 +1946,7 @@ func (o *Results) GetShieldFetchRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasShieldFetchRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasShieldFetchRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldFetchRespHeaderBytes() bool {
 	if o != nil && o.ShieldFetchRespHeaderBytes != nil {
 		return true
 	}
@@ -1953,12 +1955,12 @@ func (o *Results) HasShieldFetchRespHeaderBytes() bool {
 }
 
 // SetShieldFetchRespHeaderBytes gets a reference to the given int32 and assigns it to the ShieldFetchRespHeaderBytes field.
-func (o *Results) SetShieldFetchRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldFetchRespHeaderBytes(v int32) {
 	o.ShieldFetchRespHeaderBytes = &v
 }
 
 // GetShieldFetchRespBodyBytes returns the ShieldFetchRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetShieldFetchRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldFetchRespBodyBytes() int32 {
 	if o == nil || o.ShieldFetchRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -1968,7 +1970,7 @@ func (o *Results) GetShieldFetchRespBodyBytes() int32 {
 
 // GetShieldFetchRespBodyBytesOk returns a tuple with the ShieldFetchRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldFetchRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldFetchRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ShieldFetchRespBodyBytes == nil {
 		return nil, false
 	}
@@ -1976,7 +1978,7 @@ func (o *Results) GetShieldFetchRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasShieldFetchRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasShieldFetchRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldFetchRespBodyBytes() bool {
 	if o != nil && o.ShieldFetchRespBodyBytes != nil {
 		return true
 	}
@@ -1985,12 +1987,12 @@ func (o *Results) HasShieldFetchRespBodyBytes() bool {
 }
 
 // SetShieldFetchRespBodyBytes gets a reference to the given int32 and assigns it to the ShieldFetchRespBodyBytes field.
-func (o *Results) SetShieldFetchRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldFetchRespBodyBytes(v int32) {
 	o.ShieldFetchRespBodyBytes = &v
 }
 
 // GetShieldRevalidations returns the ShieldRevalidations field value if set, zero value otherwise.
-func (o *Results) GetShieldRevalidations() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldRevalidations() int32 {
 	if o == nil || o.ShieldRevalidations == nil {
 		var ret int32
 		return ret
@@ -2000,7 +2002,7 @@ func (o *Results) GetShieldRevalidations() int32 {
 
 // GetShieldRevalidationsOk returns a tuple with the ShieldRevalidations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldRevalidationsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldRevalidationsOk() (*int32, bool) {
 	if o == nil || o.ShieldRevalidations == nil {
 		return nil, false
 	}
@@ -2008,7 +2010,7 @@ func (o *Results) GetShieldRevalidationsOk() (*int32, bool) {
 }
 
 // HasShieldRevalidations returns a boolean if a field has been set.
-func (o *Results) HasShieldRevalidations() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldRevalidations() bool {
 	if o != nil && o.ShieldRevalidations != nil {
 		return true
 	}
@@ -2017,12 +2019,12 @@ func (o *Results) HasShieldRevalidations() bool {
 }
 
 // SetShieldRevalidations gets a reference to the given int32 and assigns it to the ShieldRevalidations field.
-func (o *Results) SetShieldRevalidations(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldRevalidations(v int32) {
 	o.ShieldRevalidations = &v
 }
 
 // GetShieldCacheFetches returns the ShieldCacheFetches field value if set, zero value otherwise.
-func (o *Results) GetShieldCacheFetches() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldCacheFetches() int32 {
 	if o == nil || o.ShieldCacheFetches == nil {
 		var ret int32
 		return ret
@@ -2032,7 +2034,7 @@ func (o *Results) GetShieldCacheFetches() int32 {
 
 // GetShieldCacheFetchesOk returns a tuple with the ShieldCacheFetches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldCacheFetchesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldCacheFetchesOk() (*int32, bool) {
 	if o == nil || o.ShieldCacheFetches == nil {
 		return nil, false
 	}
@@ -2040,7 +2042,7 @@ func (o *Results) GetShieldCacheFetchesOk() (*int32, bool) {
 }
 
 // HasShieldCacheFetches returns a boolean if a field has been set.
-func (o *Results) HasShieldCacheFetches() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldCacheFetches() bool {
 	if o != nil && o.ShieldCacheFetches != nil {
 		return true
 	}
@@ -2049,12 +2051,12 @@ func (o *Results) HasShieldCacheFetches() bool {
 }
 
 // SetShieldCacheFetches gets a reference to the given int32 and assigns it to the ShieldCacheFetches field.
-func (o *Results) SetShieldCacheFetches(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldCacheFetches(v int32) {
 	o.ShieldCacheFetches = &v
 }
 
 // GetIpv6 returns the Ipv6 field value if set, zero value otherwise.
-func (o *Results) GetIpv6() int32 {
+func (o *HistoricalFieldResultsAttributes) GetIpv6() int32 {
 	if o == nil || o.Ipv6 == nil {
 		var ret int32
 		return ret
@@ -2064,7 +2066,7 @@ func (o *Results) GetIpv6() int32 {
 
 // GetIpv6Ok returns a tuple with the Ipv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetIpv6Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetIpv6Ok() (*int32, bool) {
 	if o == nil || o.Ipv6 == nil {
 		return nil, false
 	}
@@ -2072,7 +2074,7 @@ func (o *Results) GetIpv6Ok() (*int32, bool) {
 }
 
 // HasIpv6 returns a boolean if a field has been set.
-func (o *Results) HasIpv6() bool {
+func (o *HistoricalFieldResultsAttributes) HasIpv6() bool {
 	if o != nil && o.Ipv6 != nil {
 		return true
 	}
@@ -2081,12 +2083,12 @@ func (o *Results) HasIpv6() bool {
 }
 
 // SetIpv6 gets a reference to the given int32 and assigns it to the Ipv6 field.
-func (o *Results) SetIpv6(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetIpv6(v int32) {
 	o.Ipv6 = &v
 }
 
 // GetOtfp returns the Otfp field value if set, zero value otherwise.
-func (o *Results) GetOtfp() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOtfp() int32 {
 	if o == nil || o.Otfp == nil {
 		var ret int32
 		return ret
@@ -2096,7 +2098,7 @@ func (o *Results) GetOtfp() int32 {
 
 // GetOtfpOk returns a tuple with the Otfp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOtfpOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOtfpOk() (*int32, bool) {
 	if o == nil || o.Otfp == nil {
 		return nil, false
 	}
@@ -2104,7 +2106,7 @@ func (o *Results) GetOtfpOk() (*int32, bool) {
 }
 
 // HasOtfp returns a boolean if a field has been set.
-func (o *Results) HasOtfp() bool {
+func (o *HistoricalFieldResultsAttributes) HasOtfp() bool {
 	if o != nil && o.Otfp != nil {
 		return true
 	}
@@ -2113,12 +2115,12 @@ func (o *Results) HasOtfp() bool {
 }
 
 // SetOtfp gets a reference to the given int32 and assigns it to the Otfp field.
-func (o *Results) SetOtfp(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOtfp(v int32) {
 	o.Otfp = &v
 }
 
 // GetOtfpRespBodyBytes returns the OtfpRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetOtfpRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOtfpRespBodyBytes() int32 {
 	if o == nil || o.OtfpRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -2128,7 +2130,7 @@ func (o *Results) GetOtfpRespBodyBytes() int32 {
 
 // GetOtfpRespBodyBytesOk returns a tuple with the OtfpRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOtfpRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOtfpRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.OtfpRespBodyBytes == nil {
 		return nil, false
 	}
@@ -2136,7 +2138,7 @@ func (o *Results) GetOtfpRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasOtfpRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasOtfpRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasOtfpRespBodyBytes() bool {
 	if o != nil && o.OtfpRespBodyBytes != nil {
 		return true
 	}
@@ -2145,12 +2147,12 @@ func (o *Results) HasOtfpRespBodyBytes() bool {
 }
 
 // SetOtfpRespBodyBytes gets a reference to the given int32 and assigns it to the OtfpRespBodyBytes field.
-func (o *Results) SetOtfpRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOtfpRespBodyBytes(v int32) {
 	o.OtfpRespBodyBytes = &v
 }
 
 // GetOtfpRespHeaderBytes returns the OtfpRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetOtfpRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOtfpRespHeaderBytes() int32 {
 	if o == nil || o.OtfpRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -2160,7 +2162,7 @@ func (o *Results) GetOtfpRespHeaderBytes() int32 {
 
 // GetOtfpRespHeaderBytesOk returns a tuple with the OtfpRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOtfpRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOtfpRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.OtfpRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -2168,7 +2170,7 @@ func (o *Results) GetOtfpRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasOtfpRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasOtfpRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasOtfpRespHeaderBytes() bool {
 	if o != nil && o.OtfpRespHeaderBytes != nil {
 		return true
 	}
@@ -2177,12 +2179,12 @@ func (o *Results) HasOtfpRespHeaderBytes() bool {
 }
 
 // SetOtfpRespHeaderBytes gets a reference to the given int32 and assigns it to the OtfpRespHeaderBytes field.
-func (o *Results) SetOtfpRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOtfpRespHeaderBytes(v int32) {
 	o.OtfpRespHeaderBytes = &v
 }
 
 // GetOtfpShieldRespBodyBytes returns the OtfpShieldRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetOtfpShieldRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOtfpShieldRespBodyBytes() int32 {
 	if o == nil || o.OtfpShieldRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -2192,7 +2194,7 @@ func (o *Results) GetOtfpShieldRespBodyBytes() int32 {
 
 // GetOtfpShieldRespBodyBytesOk returns a tuple with the OtfpShieldRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOtfpShieldRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOtfpShieldRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.OtfpShieldRespBodyBytes == nil {
 		return nil, false
 	}
@@ -2200,7 +2202,7 @@ func (o *Results) GetOtfpShieldRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasOtfpShieldRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasOtfpShieldRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasOtfpShieldRespBodyBytes() bool {
 	if o != nil && o.OtfpShieldRespBodyBytes != nil {
 		return true
 	}
@@ -2209,12 +2211,12 @@ func (o *Results) HasOtfpShieldRespBodyBytes() bool {
 }
 
 // SetOtfpShieldRespBodyBytes gets a reference to the given int32 and assigns it to the OtfpShieldRespBodyBytes field.
-func (o *Results) SetOtfpShieldRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOtfpShieldRespBodyBytes(v int32) {
 	o.OtfpShieldRespBodyBytes = &v
 }
 
 // GetOtfpShieldRespHeaderBytes returns the OtfpShieldRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetOtfpShieldRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOtfpShieldRespHeaderBytes() int32 {
 	if o == nil || o.OtfpShieldRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -2224,7 +2226,7 @@ func (o *Results) GetOtfpShieldRespHeaderBytes() int32 {
 
 // GetOtfpShieldRespHeaderBytesOk returns a tuple with the OtfpShieldRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOtfpShieldRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOtfpShieldRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.OtfpShieldRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -2232,7 +2234,7 @@ func (o *Results) GetOtfpShieldRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasOtfpShieldRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasOtfpShieldRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasOtfpShieldRespHeaderBytes() bool {
 	if o != nil && o.OtfpShieldRespHeaderBytes != nil {
 		return true
 	}
@@ -2241,12 +2243,12 @@ func (o *Results) HasOtfpShieldRespHeaderBytes() bool {
 }
 
 // SetOtfpShieldRespHeaderBytes gets a reference to the given int32 and assigns it to the OtfpShieldRespHeaderBytes field.
-func (o *Results) SetOtfpShieldRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOtfpShieldRespHeaderBytes(v int32) {
 	o.OtfpShieldRespHeaderBytes = &v
 }
 
 // GetOtfpManifests returns the OtfpManifests field value if set, zero value otherwise.
-func (o *Results) GetOtfpManifests() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOtfpManifests() int32 {
 	if o == nil || o.OtfpManifests == nil {
 		var ret int32
 		return ret
@@ -2256,7 +2258,7 @@ func (o *Results) GetOtfpManifests() int32 {
 
 // GetOtfpManifestsOk returns a tuple with the OtfpManifests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOtfpManifestsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOtfpManifestsOk() (*int32, bool) {
 	if o == nil || o.OtfpManifests == nil {
 		return nil, false
 	}
@@ -2264,7 +2266,7 @@ func (o *Results) GetOtfpManifestsOk() (*int32, bool) {
 }
 
 // HasOtfpManifests returns a boolean if a field has been set.
-func (o *Results) HasOtfpManifests() bool {
+func (o *HistoricalFieldResultsAttributes) HasOtfpManifests() bool {
 	if o != nil && o.OtfpManifests != nil {
 		return true
 	}
@@ -2273,12 +2275,12 @@ func (o *Results) HasOtfpManifests() bool {
 }
 
 // SetOtfpManifests gets a reference to the given int32 and assigns it to the OtfpManifests field.
-func (o *Results) SetOtfpManifests(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOtfpManifests(v int32) {
 	o.OtfpManifests = &v
 }
 
 // GetOtfpDeliverTime returns the OtfpDeliverTime field value if set, zero value otherwise.
-func (o *Results) GetOtfpDeliverTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetOtfpDeliverTime() float32 {
 	if o == nil || o.OtfpDeliverTime == nil {
 		var ret float32
 		return ret
@@ -2288,7 +2290,7 @@ func (o *Results) GetOtfpDeliverTime() float32 {
 
 // GetOtfpDeliverTimeOk returns a tuple with the OtfpDeliverTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOtfpDeliverTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOtfpDeliverTimeOk() (*float32, bool) {
 	if o == nil || o.OtfpDeliverTime == nil {
 		return nil, false
 	}
@@ -2296,7 +2298,7 @@ func (o *Results) GetOtfpDeliverTimeOk() (*float32, bool) {
 }
 
 // HasOtfpDeliverTime returns a boolean if a field has been set.
-func (o *Results) HasOtfpDeliverTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasOtfpDeliverTime() bool {
 	if o != nil && o.OtfpDeliverTime != nil {
 		return true
 	}
@@ -2305,12 +2307,12 @@ func (o *Results) HasOtfpDeliverTime() bool {
 }
 
 // SetOtfpDeliverTime gets a reference to the given float32 and assigns it to the OtfpDeliverTime field.
-func (o *Results) SetOtfpDeliverTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetOtfpDeliverTime(v float32) {
 	o.OtfpDeliverTime = &v
 }
 
 // GetOtfpShieldTime returns the OtfpShieldTime field value if set, zero value otherwise.
-func (o *Results) GetOtfpShieldTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetOtfpShieldTime() float32 {
 	if o == nil || o.OtfpShieldTime == nil {
 		var ret float32
 		return ret
@@ -2320,7 +2322,7 @@ func (o *Results) GetOtfpShieldTime() float32 {
 
 // GetOtfpShieldTimeOk returns a tuple with the OtfpShieldTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOtfpShieldTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOtfpShieldTimeOk() (*float32, bool) {
 	if o == nil || o.OtfpShieldTime == nil {
 		return nil, false
 	}
@@ -2328,7 +2330,7 @@ func (o *Results) GetOtfpShieldTimeOk() (*float32, bool) {
 }
 
 // HasOtfpShieldTime returns a boolean if a field has been set.
-func (o *Results) HasOtfpShieldTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasOtfpShieldTime() bool {
 	if o != nil && o.OtfpShieldTime != nil {
 		return true
 	}
@@ -2337,12 +2339,12 @@ func (o *Results) HasOtfpShieldTime() bool {
 }
 
 // SetOtfpShieldTime gets a reference to the given float32 and assigns it to the OtfpShieldTime field.
-func (o *Results) SetOtfpShieldTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetOtfpShieldTime(v float32) {
 	o.OtfpShieldTime = &v
 }
 
 // GetVideo returns the Video field value if set, zero value otherwise.
-func (o *Results) GetVideo() int32 {
+func (o *HistoricalFieldResultsAttributes) GetVideo() int32 {
 	if o == nil || o.Video == nil {
 		var ret int32
 		return ret
@@ -2352,7 +2354,7 @@ func (o *Results) GetVideo() int32 {
 
 // GetVideoOk returns a tuple with the Video field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetVideoOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetVideoOk() (*int32, bool) {
 	if o == nil || o.Video == nil {
 		return nil, false
 	}
@@ -2360,7 +2362,7 @@ func (o *Results) GetVideoOk() (*int32, bool) {
 }
 
 // HasVideo returns a boolean if a field has been set.
-func (o *Results) HasVideo() bool {
+func (o *HistoricalFieldResultsAttributes) HasVideo() bool {
 	if o != nil && o.Video != nil {
 		return true
 	}
@@ -2369,12 +2371,12 @@ func (o *Results) HasVideo() bool {
 }
 
 // SetVideo gets a reference to the given int32 and assigns it to the Video field.
-func (o *Results) SetVideo(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetVideo(v int32) {
 	o.Video = &v
 }
 
 // GetPci returns the Pci field value if set, zero value otherwise.
-func (o *Results) GetPci() int32 {
+func (o *HistoricalFieldResultsAttributes) GetPci() int32 {
 	if o == nil || o.Pci == nil {
 		var ret int32
 		return ret
@@ -2384,7 +2386,7 @@ func (o *Results) GetPci() int32 {
 
 // GetPciOk returns a tuple with the Pci field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetPciOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetPciOk() (*int32, bool) {
 	if o == nil || o.Pci == nil {
 		return nil, false
 	}
@@ -2392,7 +2394,7 @@ func (o *Results) GetPciOk() (*int32, bool) {
 }
 
 // HasPci returns a boolean if a field has been set.
-func (o *Results) HasPci() bool {
+func (o *HistoricalFieldResultsAttributes) HasPci() bool {
 	if o != nil && o.Pci != nil {
 		return true
 	}
@@ -2401,12 +2403,12 @@ func (o *Results) HasPci() bool {
 }
 
 // SetPci gets a reference to the given int32 and assigns it to the Pci field.
-func (o *Results) SetPci(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetPci(v int32) {
 	o.Pci = &v
 }
 
 // GetLog returns the Log field value if set, zero value otherwise.
-func (o *Results) GetLog() int32 {
+func (o *HistoricalFieldResultsAttributes) GetLog() int32 {
 	if o == nil || o.Log == nil {
 		var ret int32
 		return ret
@@ -2416,7 +2418,7 @@ func (o *Results) GetLog() int32 {
 
 // GetLogOk returns a tuple with the Log field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetLogOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetLogOk() (*int32, bool) {
 	if o == nil || o.Log == nil {
 		return nil, false
 	}
@@ -2424,7 +2426,7 @@ func (o *Results) GetLogOk() (*int32, bool) {
 }
 
 // HasLog returns a boolean if a field has been set.
-func (o *Results) HasLog() bool {
+func (o *HistoricalFieldResultsAttributes) HasLog() bool {
 	if o != nil && o.Log != nil {
 		return true
 	}
@@ -2433,12 +2435,12 @@ func (o *Results) HasLog() bool {
 }
 
 // SetLog gets a reference to the given int32 and assigns it to the Log field.
-func (o *Results) SetLog(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetLog(v int32) {
 	o.Log = &v
 }
 
 // GetLogBytes returns the LogBytes field value if set, zero value otherwise.
-func (o *Results) GetLogBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetLogBytes() int32 {
 	if o == nil || o.LogBytes == nil {
 		var ret int32
 		return ret
@@ -2448,7 +2450,7 @@ func (o *Results) GetLogBytes() int32 {
 
 // GetLogBytesOk returns a tuple with the LogBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetLogBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetLogBytesOk() (*int32, bool) {
 	if o == nil || o.LogBytes == nil {
 		return nil, false
 	}
@@ -2456,7 +2458,7 @@ func (o *Results) GetLogBytesOk() (*int32, bool) {
 }
 
 // HasLogBytes returns a boolean if a field has been set.
-func (o *Results) HasLogBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasLogBytes() bool {
 	if o != nil && o.LogBytes != nil {
 		return true
 	}
@@ -2465,12 +2467,12 @@ func (o *Results) HasLogBytes() bool {
 }
 
 // SetLogBytes gets a reference to the given int32 and assigns it to the LogBytes field.
-func (o *Results) SetLogBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetLogBytes(v int32) {
 	o.LogBytes = &v
 }
 
 // GetHTTP2 returns the HTTP2 field value if set, zero value otherwise.
-func (o *Results) GetHTTP2() int32 {
+func (o *HistoricalFieldResultsAttributes) GetHTTP2() int32 {
 	if o == nil || o.HTTP2 == nil {
 		var ret int32
 		return ret
@@ -2480,7 +2482,7 @@ func (o *Results) GetHTTP2() int32 {
 
 // GetHTTP2Ok returns a tuple with the HTTP2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetHTTP2Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetHTTP2Ok() (*int32, bool) {
 	if o == nil || o.HTTP2 == nil {
 		return nil, false
 	}
@@ -2488,7 +2490,7 @@ func (o *Results) GetHTTP2Ok() (*int32, bool) {
 }
 
 // HasHTTP2 returns a boolean if a field has been set.
-func (o *Results) HasHTTP2() bool {
+func (o *HistoricalFieldResultsAttributes) HasHTTP2() bool {
 	if o != nil && o.HTTP2 != nil {
 		return true
 	}
@@ -2497,12 +2499,12 @@ func (o *Results) HasHTTP2() bool {
 }
 
 // SetHTTP2 gets a reference to the given int32 and assigns it to the HTTP2 field.
-func (o *Results) SetHTTP2(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetHTTP2(v int32) {
 	o.HTTP2 = &v
 }
 
 // GetHTTP3 returns the HTTP3 field value if set, zero value otherwise.
-func (o *Results) GetHTTP3() int32 {
+func (o *HistoricalFieldResultsAttributes) GetHTTP3() int32 {
 	if o == nil || o.HTTP3 == nil {
 		var ret int32
 		return ret
@@ -2512,7 +2514,7 @@ func (o *Results) GetHTTP3() int32 {
 
 // GetHTTP3Ok returns a tuple with the HTTP3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetHTTP3Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetHTTP3Ok() (*int32, bool) {
 	if o == nil || o.HTTP3 == nil {
 		return nil, false
 	}
@@ -2520,7 +2522,7 @@ func (o *Results) GetHTTP3Ok() (*int32, bool) {
 }
 
 // HasHTTP3 returns a boolean if a field has been set.
-func (o *Results) HasHTTP3() bool {
+func (o *HistoricalFieldResultsAttributes) HasHTTP3() bool {
 	if o != nil && o.HTTP3 != nil {
 		return true
 	}
@@ -2529,12 +2531,12 @@ func (o *Results) HasHTTP3() bool {
 }
 
 // SetHTTP3 gets a reference to the given int32 and assigns it to the HTTP3 field.
-func (o *Results) SetHTTP3(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetHTTP3(v int32) {
 	o.HTTP3 = &v
 }
 
 // GetWafLogged returns the WafLogged field value if set, zero value otherwise.
-func (o *Results) GetWafLogged() int32 {
+func (o *HistoricalFieldResultsAttributes) GetWafLogged() int32 {
 	if o == nil || o.WafLogged == nil {
 		var ret int32
 		return ret
@@ -2544,7 +2546,7 @@ func (o *Results) GetWafLogged() int32 {
 
 // GetWafLoggedOk returns a tuple with the WafLogged field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetWafLoggedOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetWafLoggedOk() (*int32, bool) {
 	if o == nil || o.WafLogged == nil {
 		return nil, false
 	}
@@ -2552,7 +2554,7 @@ func (o *Results) GetWafLoggedOk() (*int32, bool) {
 }
 
 // HasWafLogged returns a boolean if a field has been set.
-func (o *Results) HasWafLogged() bool {
+func (o *HistoricalFieldResultsAttributes) HasWafLogged() bool {
 	if o != nil && o.WafLogged != nil {
 		return true
 	}
@@ -2561,12 +2563,12 @@ func (o *Results) HasWafLogged() bool {
 }
 
 // SetWafLogged gets a reference to the given int32 and assigns it to the WafLogged field.
-func (o *Results) SetWafLogged(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetWafLogged(v int32) {
 	o.WafLogged = &v
 }
 
 // GetWafBlocked returns the WafBlocked field value if set, zero value otherwise.
-func (o *Results) GetWafBlocked() int32 {
+func (o *HistoricalFieldResultsAttributes) GetWafBlocked() int32 {
 	if o == nil || o.WafBlocked == nil {
 		var ret int32
 		return ret
@@ -2576,7 +2578,7 @@ func (o *Results) GetWafBlocked() int32 {
 
 // GetWafBlockedOk returns a tuple with the WafBlocked field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetWafBlockedOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetWafBlockedOk() (*int32, bool) {
 	if o == nil || o.WafBlocked == nil {
 		return nil, false
 	}
@@ -2584,7 +2586,7 @@ func (o *Results) GetWafBlockedOk() (*int32, bool) {
 }
 
 // HasWafBlocked returns a boolean if a field has been set.
-func (o *Results) HasWafBlocked() bool {
+func (o *HistoricalFieldResultsAttributes) HasWafBlocked() bool {
 	if o != nil && o.WafBlocked != nil {
 		return true
 	}
@@ -2593,12 +2595,12 @@ func (o *Results) HasWafBlocked() bool {
 }
 
 // SetWafBlocked gets a reference to the given int32 and assigns it to the WafBlocked field.
-func (o *Results) SetWafBlocked(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetWafBlocked(v int32) {
 	o.WafBlocked = &v
 }
 
 // GetWafPassed returns the WafPassed field value if set, zero value otherwise.
-func (o *Results) GetWafPassed() int32 {
+func (o *HistoricalFieldResultsAttributes) GetWafPassed() int32 {
 	if o == nil || o.WafPassed == nil {
 		var ret int32
 		return ret
@@ -2608,7 +2610,7 @@ func (o *Results) GetWafPassed() int32 {
 
 // GetWafPassedOk returns a tuple with the WafPassed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetWafPassedOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetWafPassedOk() (*int32, bool) {
 	if o == nil || o.WafPassed == nil {
 		return nil, false
 	}
@@ -2616,7 +2618,7 @@ func (o *Results) GetWafPassedOk() (*int32, bool) {
 }
 
 // HasWafPassed returns a boolean if a field has been set.
-func (o *Results) HasWafPassed() bool {
+func (o *HistoricalFieldResultsAttributes) HasWafPassed() bool {
 	if o != nil && o.WafPassed != nil {
 		return true
 	}
@@ -2625,12 +2627,12 @@ func (o *Results) HasWafPassed() bool {
 }
 
 // SetWafPassed gets a reference to the given int32 and assigns it to the WafPassed field.
-func (o *Results) SetWafPassed(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetWafPassed(v int32) {
 	o.WafPassed = &v
 }
 
 // GetAttackReqBodyBytes returns the AttackReqBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetAttackReqBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetAttackReqBodyBytes() int32 {
 	if o == nil || o.AttackReqBodyBytes == nil {
 		var ret int32
 		return ret
@@ -2640,7 +2642,7 @@ func (o *Results) GetAttackReqBodyBytes() int32 {
 
 // GetAttackReqBodyBytesOk returns a tuple with the AttackReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetAttackReqBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetAttackReqBodyBytesOk() (*int32, bool) {
 	if o == nil || o.AttackReqBodyBytes == nil {
 		return nil, false
 	}
@@ -2648,7 +2650,7 @@ func (o *Results) GetAttackReqBodyBytesOk() (*int32, bool) {
 }
 
 // HasAttackReqBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasAttackReqBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasAttackReqBodyBytes() bool {
 	if o != nil && o.AttackReqBodyBytes != nil {
 		return true
 	}
@@ -2657,12 +2659,12 @@ func (o *Results) HasAttackReqBodyBytes() bool {
 }
 
 // SetAttackReqBodyBytes gets a reference to the given int32 and assigns it to the AttackReqBodyBytes field.
-func (o *Results) SetAttackReqBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetAttackReqBodyBytes(v int32) {
 	o.AttackReqBodyBytes = &v
 }
 
 // GetAttackReqHeaderBytes returns the AttackReqHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetAttackReqHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetAttackReqHeaderBytes() int32 {
 	if o == nil || o.AttackReqHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -2672,7 +2674,7 @@ func (o *Results) GetAttackReqHeaderBytes() int32 {
 
 // GetAttackReqHeaderBytesOk returns a tuple with the AttackReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetAttackReqHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetAttackReqHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.AttackReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -2680,7 +2682,7 @@ func (o *Results) GetAttackReqHeaderBytesOk() (*int32, bool) {
 }
 
 // HasAttackReqHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasAttackReqHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasAttackReqHeaderBytes() bool {
 	if o != nil && o.AttackReqHeaderBytes != nil {
 		return true
 	}
@@ -2689,12 +2691,12 @@ func (o *Results) HasAttackReqHeaderBytes() bool {
 }
 
 // SetAttackReqHeaderBytes gets a reference to the given int32 and assigns it to the AttackReqHeaderBytes field.
-func (o *Results) SetAttackReqHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetAttackReqHeaderBytes(v int32) {
 	o.AttackReqHeaderBytes = &v
 }
 
 // GetAttackLoggedReqBodyBytes returns the AttackLoggedReqBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetAttackLoggedReqBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetAttackLoggedReqBodyBytes() int32 {
 	if o == nil || o.AttackLoggedReqBodyBytes == nil {
 		var ret int32
 		return ret
@@ -2704,7 +2706,7 @@ func (o *Results) GetAttackLoggedReqBodyBytes() int32 {
 
 // GetAttackLoggedReqBodyBytesOk returns a tuple with the AttackLoggedReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetAttackLoggedReqBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetAttackLoggedReqBodyBytesOk() (*int32, bool) {
 	if o == nil || o.AttackLoggedReqBodyBytes == nil {
 		return nil, false
 	}
@@ -2712,7 +2714,7 @@ func (o *Results) GetAttackLoggedReqBodyBytesOk() (*int32, bool) {
 }
 
 // HasAttackLoggedReqBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasAttackLoggedReqBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasAttackLoggedReqBodyBytes() bool {
 	if o != nil && o.AttackLoggedReqBodyBytes != nil {
 		return true
 	}
@@ -2721,12 +2723,12 @@ func (o *Results) HasAttackLoggedReqBodyBytes() bool {
 }
 
 // SetAttackLoggedReqBodyBytes gets a reference to the given int32 and assigns it to the AttackLoggedReqBodyBytes field.
-func (o *Results) SetAttackLoggedReqBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetAttackLoggedReqBodyBytes(v int32) {
 	o.AttackLoggedReqBodyBytes = &v
 }
 
 // GetAttackLoggedReqHeaderBytes returns the AttackLoggedReqHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetAttackLoggedReqHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetAttackLoggedReqHeaderBytes() int32 {
 	if o == nil || o.AttackLoggedReqHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -2736,7 +2738,7 @@ func (o *Results) GetAttackLoggedReqHeaderBytes() int32 {
 
 // GetAttackLoggedReqHeaderBytesOk returns a tuple with the AttackLoggedReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetAttackLoggedReqHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetAttackLoggedReqHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.AttackLoggedReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -2744,7 +2746,7 @@ func (o *Results) GetAttackLoggedReqHeaderBytesOk() (*int32, bool) {
 }
 
 // HasAttackLoggedReqHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasAttackLoggedReqHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasAttackLoggedReqHeaderBytes() bool {
 	if o != nil && o.AttackLoggedReqHeaderBytes != nil {
 		return true
 	}
@@ -2753,12 +2755,12 @@ func (o *Results) HasAttackLoggedReqHeaderBytes() bool {
 }
 
 // SetAttackLoggedReqHeaderBytes gets a reference to the given int32 and assigns it to the AttackLoggedReqHeaderBytes field.
-func (o *Results) SetAttackLoggedReqHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetAttackLoggedReqHeaderBytes(v int32) {
 	o.AttackLoggedReqHeaderBytes = &v
 }
 
 // GetAttackBlockedReqBodyBytes returns the AttackBlockedReqBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetAttackBlockedReqBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetAttackBlockedReqBodyBytes() int32 {
 	if o == nil || o.AttackBlockedReqBodyBytes == nil {
 		var ret int32
 		return ret
@@ -2768,7 +2770,7 @@ func (o *Results) GetAttackBlockedReqBodyBytes() int32 {
 
 // GetAttackBlockedReqBodyBytesOk returns a tuple with the AttackBlockedReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetAttackBlockedReqBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetAttackBlockedReqBodyBytesOk() (*int32, bool) {
 	if o == nil || o.AttackBlockedReqBodyBytes == nil {
 		return nil, false
 	}
@@ -2776,7 +2778,7 @@ func (o *Results) GetAttackBlockedReqBodyBytesOk() (*int32, bool) {
 }
 
 // HasAttackBlockedReqBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasAttackBlockedReqBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasAttackBlockedReqBodyBytes() bool {
 	if o != nil && o.AttackBlockedReqBodyBytes != nil {
 		return true
 	}
@@ -2785,12 +2787,12 @@ func (o *Results) HasAttackBlockedReqBodyBytes() bool {
 }
 
 // SetAttackBlockedReqBodyBytes gets a reference to the given int32 and assigns it to the AttackBlockedReqBodyBytes field.
-func (o *Results) SetAttackBlockedReqBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetAttackBlockedReqBodyBytes(v int32) {
 	o.AttackBlockedReqBodyBytes = &v
 }
 
 // GetAttackBlockedReqHeaderBytes returns the AttackBlockedReqHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetAttackBlockedReqHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetAttackBlockedReqHeaderBytes() int32 {
 	if o == nil || o.AttackBlockedReqHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -2800,7 +2802,7 @@ func (o *Results) GetAttackBlockedReqHeaderBytes() int32 {
 
 // GetAttackBlockedReqHeaderBytesOk returns a tuple with the AttackBlockedReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetAttackBlockedReqHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetAttackBlockedReqHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.AttackBlockedReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -2808,7 +2810,7 @@ func (o *Results) GetAttackBlockedReqHeaderBytesOk() (*int32, bool) {
 }
 
 // HasAttackBlockedReqHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasAttackBlockedReqHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasAttackBlockedReqHeaderBytes() bool {
 	if o != nil && o.AttackBlockedReqHeaderBytes != nil {
 		return true
 	}
@@ -2817,12 +2819,12 @@ func (o *Results) HasAttackBlockedReqHeaderBytes() bool {
 }
 
 // SetAttackBlockedReqHeaderBytes gets a reference to the given int32 and assigns it to the AttackBlockedReqHeaderBytes field.
-func (o *Results) SetAttackBlockedReqHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetAttackBlockedReqHeaderBytes(v int32) {
 	o.AttackBlockedReqHeaderBytes = &v
 }
 
 // GetAttackPassedReqBodyBytes returns the AttackPassedReqBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetAttackPassedReqBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetAttackPassedReqBodyBytes() int32 {
 	if o == nil || o.AttackPassedReqBodyBytes == nil {
 		var ret int32
 		return ret
@@ -2832,7 +2834,7 @@ func (o *Results) GetAttackPassedReqBodyBytes() int32 {
 
 // GetAttackPassedReqBodyBytesOk returns a tuple with the AttackPassedReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetAttackPassedReqBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetAttackPassedReqBodyBytesOk() (*int32, bool) {
 	if o == nil || o.AttackPassedReqBodyBytes == nil {
 		return nil, false
 	}
@@ -2840,7 +2842,7 @@ func (o *Results) GetAttackPassedReqBodyBytesOk() (*int32, bool) {
 }
 
 // HasAttackPassedReqBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasAttackPassedReqBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasAttackPassedReqBodyBytes() bool {
 	if o != nil && o.AttackPassedReqBodyBytes != nil {
 		return true
 	}
@@ -2849,12 +2851,12 @@ func (o *Results) HasAttackPassedReqBodyBytes() bool {
 }
 
 // SetAttackPassedReqBodyBytes gets a reference to the given int32 and assigns it to the AttackPassedReqBodyBytes field.
-func (o *Results) SetAttackPassedReqBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetAttackPassedReqBodyBytes(v int32) {
 	o.AttackPassedReqBodyBytes = &v
 }
 
 // GetAttackPassedReqHeaderBytes returns the AttackPassedReqHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetAttackPassedReqHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetAttackPassedReqHeaderBytes() int32 {
 	if o == nil || o.AttackPassedReqHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -2864,7 +2866,7 @@ func (o *Results) GetAttackPassedReqHeaderBytes() int32 {
 
 // GetAttackPassedReqHeaderBytesOk returns a tuple with the AttackPassedReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetAttackPassedReqHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetAttackPassedReqHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.AttackPassedReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -2872,7 +2874,7 @@ func (o *Results) GetAttackPassedReqHeaderBytesOk() (*int32, bool) {
 }
 
 // HasAttackPassedReqHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasAttackPassedReqHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasAttackPassedReqHeaderBytes() bool {
 	if o != nil && o.AttackPassedReqHeaderBytes != nil {
 		return true
 	}
@@ -2881,12 +2883,12 @@ func (o *Results) HasAttackPassedReqHeaderBytes() bool {
 }
 
 // SetAttackPassedReqHeaderBytes gets a reference to the given int32 and assigns it to the AttackPassedReqHeaderBytes field.
-func (o *Results) SetAttackPassedReqHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetAttackPassedReqHeaderBytes(v int32) {
 	o.AttackPassedReqHeaderBytes = &v
 }
 
 // GetAttackRespSynthBytes returns the AttackRespSynthBytes field value if set, zero value otherwise.
-func (o *Results) GetAttackRespSynthBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetAttackRespSynthBytes() int32 {
 	if o == nil || o.AttackRespSynthBytes == nil {
 		var ret int32
 		return ret
@@ -2896,7 +2898,7 @@ func (o *Results) GetAttackRespSynthBytes() int32 {
 
 // GetAttackRespSynthBytesOk returns a tuple with the AttackRespSynthBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetAttackRespSynthBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetAttackRespSynthBytesOk() (*int32, bool) {
 	if o == nil || o.AttackRespSynthBytes == nil {
 		return nil, false
 	}
@@ -2904,7 +2906,7 @@ func (o *Results) GetAttackRespSynthBytesOk() (*int32, bool) {
 }
 
 // HasAttackRespSynthBytes returns a boolean if a field has been set.
-func (o *Results) HasAttackRespSynthBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasAttackRespSynthBytes() bool {
 	if o != nil && o.AttackRespSynthBytes != nil {
 		return true
 	}
@@ -2913,12 +2915,12 @@ func (o *Results) HasAttackRespSynthBytes() bool {
 }
 
 // SetAttackRespSynthBytes gets a reference to the given int32 and assigns it to the AttackRespSynthBytes field.
-func (o *Results) SetAttackRespSynthBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetAttackRespSynthBytes(v int32) {
 	o.AttackRespSynthBytes = &v
 }
 
 // GetImgopto returns the Imgopto field value if set, zero value otherwise.
-func (o *Results) GetImgopto() int32 {
+func (o *HistoricalFieldResultsAttributes) GetImgopto() int32 {
 	if o == nil || o.Imgopto == nil {
 		var ret int32
 		return ret
@@ -2928,7 +2930,7 @@ func (o *Results) GetImgopto() int32 {
 
 // GetImgoptoOk returns a tuple with the Imgopto field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetImgoptoOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetImgoptoOk() (*int32, bool) {
 	if o == nil || o.Imgopto == nil {
 		return nil, false
 	}
@@ -2936,7 +2938,7 @@ func (o *Results) GetImgoptoOk() (*int32, bool) {
 }
 
 // HasImgopto returns a boolean if a field has been set.
-func (o *Results) HasImgopto() bool {
+func (o *HistoricalFieldResultsAttributes) HasImgopto() bool {
 	if o != nil && o.Imgopto != nil {
 		return true
 	}
@@ -2945,12 +2947,12 @@ func (o *Results) HasImgopto() bool {
 }
 
 // SetImgopto gets a reference to the given int32 and assigns it to the Imgopto field.
-func (o *Results) SetImgopto(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetImgopto(v int32) {
 	o.Imgopto = &v
 }
 
 // GetImgoptoRespBodyBytes returns the ImgoptoRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetImgoptoRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetImgoptoRespBodyBytes() int32 {
 	if o == nil || o.ImgoptoRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -2960,7 +2962,7 @@ func (o *Results) GetImgoptoRespBodyBytes() int32 {
 
 // GetImgoptoRespBodyBytesOk returns a tuple with the ImgoptoRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetImgoptoRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetImgoptoRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ImgoptoRespBodyBytes == nil {
 		return nil, false
 	}
@@ -2968,7 +2970,7 @@ func (o *Results) GetImgoptoRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasImgoptoRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasImgoptoRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasImgoptoRespBodyBytes() bool {
 	if o != nil && o.ImgoptoRespBodyBytes != nil {
 		return true
 	}
@@ -2977,12 +2979,12 @@ func (o *Results) HasImgoptoRespBodyBytes() bool {
 }
 
 // SetImgoptoRespBodyBytes gets a reference to the given int32 and assigns it to the ImgoptoRespBodyBytes field.
-func (o *Results) SetImgoptoRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetImgoptoRespBodyBytes(v int32) {
 	o.ImgoptoRespBodyBytes = &v
 }
 
 // GetImgoptoRespHeaderBytes returns the ImgoptoRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetImgoptoRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetImgoptoRespHeaderBytes() int32 {
 	if o == nil || o.ImgoptoRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -2992,7 +2994,7 @@ func (o *Results) GetImgoptoRespHeaderBytes() int32 {
 
 // GetImgoptoRespHeaderBytesOk returns a tuple with the ImgoptoRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetImgoptoRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetImgoptoRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ImgoptoRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -3000,7 +3002,7 @@ func (o *Results) GetImgoptoRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasImgoptoRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasImgoptoRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasImgoptoRespHeaderBytes() bool {
 	if o != nil && o.ImgoptoRespHeaderBytes != nil {
 		return true
 	}
@@ -3009,12 +3011,12 @@ func (o *Results) HasImgoptoRespHeaderBytes() bool {
 }
 
 // SetImgoptoRespHeaderBytes gets a reference to the given int32 and assigns it to the ImgoptoRespHeaderBytes field.
-func (o *Results) SetImgoptoRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetImgoptoRespHeaderBytes(v int32) {
 	o.ImgoptoRespHeaderBytes = &v
 }
 
 // GetImgoptoShieldRespBodyBytes returns the ImgoptoShieldRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetImgoptoShieldRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetImgoptoShieldRespBodyBytes() int32 {
 	if o == nil || o.ImgoptoShieldRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -3024,7 +3026,7 @@ func (o *Results) GetImgoptoShieldRespBodyBytes() int32 {
 
 // GetImgoptoShieldRespBodyBytesOk returns a tuple with the ImgoptoShieldRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetImgoptoShieldRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetImgoptoShieldRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ImgoptoShieldRespBodyBytes == nil {
 		return nil, false
 	}
@@ -3032,7 +3034,7 @@ func (o *Results) GetImgoptoShieldRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasImgoptoShieldRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasImgoptoShieldRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasImgoptoShieldRespBodyBytes() bool {
 	if o != nil && o.ImgoptoShieldRespBodyBytes != nil {
 		return true
 	}
@@ -3041,12 +3043,12 @@ func (o *Results) HasImgoptoShieldRespBodyBytes() bool {
 }
 
 // SetImgoptoShieldRespBodyBytes gets a reference to the given int32 and assigns it to the ImgoptoShieldRespBodyBytes field.
-func (o *Results) SetImgoptoShieldRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetImgoptoShieldRespBodyBytes(v int32) {
 	o.ImgoptoShieldRespBodyBytes = &v
 }
 
 // GetImgoptoShieldRespHeaderBytes returns the ImgoptoShieldRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetImgoptoShieldRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetImgoptoShieldRespHeaderBytes() int32 {
 	if o == nil || o.ImgoptoShieldRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -3056,7 +3058,7 @@ func (o *Results) GetImgoptoShieldRespHeaderBytes() int32 {
 
 // GetImgoptoShieldRespHeaderBytesOk returns a tuple with the ImgoptoShieldRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetImgoptoShieldRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetImgoptoShieldRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ImgoptoShieldRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -3064,7 +3066,7 @@ func (o *Results) GetImgoptoShieldRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasImgoptoShieldRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasImgoptoShieldRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasImgoptoShieldRespHeaderBytes() bool {
 	if o != nil && o.ImgoptoShieldRespHeaderBytes != nil {
 		return true
 	}
@@ -3073,12 +3075,12 @@ func (o *Results) HasImgoptoShieldRespHeaderBytes() bool {
 }
 
 // SetImgoptoShieldRespHeaderBytes gets a reference to the given int32 and assigns it to the ImgoptoShieldRespHeaderBytes field.
-func (o *Results) SetImgoptoShieldRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetImgoptoShieldRespHeaderBytes(v int32) {
 	o.ImgoptoShieldRespHeaderBytes = &v
 }
 
 // GetImgvideo returns the Imgvideo field value if set, zero value otherwise.
-func (o *Results) GetImgvideo() int32 {
+func (o *HistoricalFieldResultsAttributes) GetImgvideo() int32 {
 	if o == nil || o.Imgvideo == nil {
 		var ret int32
 		return ret
@@ -3088,7 +3090,7 @@ func (o *Results) GetImgvideo() int32 {
 
 // GetImgvideoOk returns a tuple with the Imgvideo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetImgvideoOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoOk() (*int32, bool) {
 	if o == nil || o.Imgvideo == nil {
 		return nil, false
 	}
@@ -3096,7 +3098,7 @@ func (o *Results) GetImgvideoOk() (*int32, bool) {
 }
 
 // HasImgvideo returns a boolean if a field has been set.
-func (o *Results) HasImgvideo() bool {
+func (o *HistoricalFieldResultsAttributes) HasImgvideo() bool {
 	if o != nil && o.Imgvideo != nil {
 		return true
 	}
@@ -3105,12 +3107,12 @@ func (o *Results) HasImgvideo() bool {
 }
 
 // SetImgvideo gets a reference to the given int32 and assigns it to the Imgvideo field.
-func (o *Results) SetImgvideo(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetImgvideo(v int32) {
 	o.Imgvideo = &v
 }
 
 // GetImgvideoFrames returns the ImgvideoFrames field value if set, zero value otherwise.
-func (o *Results) GetImgvideoFrames() int32 {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoFrames() int32 {
 	if o == nil || o.ImgvideoFrames == nil {
 		var ret int32
 		return ret
@@ -3120,7 +3122,7 @@ func (o *Results) GetImgvideoFrames() int32 {
 
 // GetImgvideoFramesOk returns a tuple with the ImgvideoFrames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetImgvideoFramesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoFramesOk() (*int32, bool) {
 	if o == nil || o.ImgvideoFrames == nil {
 		return nil, false
 	}
@@ -3128,7 +3130,7 @@ func (o *Results) GetImgvideoFramesOk() (*int32, bool) {
 }
 
 // HasImgvideoFrames returns a boolean if a field has been set.
-func (o *Results) HasImgvideoFrames() bool {
+func (o *HistoricalFieldResultsAttributes) HasImgvideoFrames() bool {
 	if o != nil && o.ImgvideoFrames != nil {
 		return true
 	}
@@ -3137,12 +3139,12 @@ func (o *Results) HasImgvideoFrames() bool {
 }
 
 // SetImgvideoFrames gets a reference to the given int32 and assigns it to the ImgvideoFrames field.
-func (o *Results) SetImgvideoFrames(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetImgvideoFrames(v int32) {
 	o.ImgvideoFrames = &v
 }
 
 // GetImgvideoRespHeaderBytes returns the ImgvideoRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetImgvideoRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoRespHeaderBytes() int32 {
 	if o == nil || o.ImgvideoRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -3152,7 +3154,7 @@ func (o *Results) GetImgvideoRespHeaderBytes() int32 {
 
 // GetImgvideoRespHeaderBytesOk returns a tuple with the ImgvideoRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetImgvideoRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ImgvideoRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -3160,7 +3162,7 @@ func (o *Results) GetImgvideoRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasImgvideoRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasImgvideoRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasImgvideoRespHeaderBytes() bool {
 	if o != nil && o.ImgvideoRespHeaderBytes != nil {
 		return true
 	}
@@ -3169,12 +3171,12 @@ func (o *Results) HasImgvideoRespHeaderBytes() bool {
 }
 
 // SetImgvideoRespHeaderBytes gets a reference to the given int32 and assigns it to the ImgvideoRespHeaderBytes field.
-func (o *Results) SetImgvideoRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetImgvideoRespHeaderBytes(v int32) {
 	o.ImgvideoRespHeaderBytes = &v
 }
 
 // GetImgvideoRespBodyBytes returns the ImgvideoRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetImgvideoRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoRespBodyBytes() int32 {
 	if o == nil || o.ImgvideoRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -3184,7 +3186,7 @@ func (o *Results) GetImgvideoRespBodyBytes() int32 {
 
 // GetImgvideoRespBodyBytesOk returns a tuple with the ImgvideoRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetImgvideoRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ImgvideoRespBodyBytes == nil {
 		return nil, false
 	}
@@ -3192,7 +3194,7 @@ func (o *Results) GetImgvideoRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasImgvideoRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasImgvideoRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasImgvideoRespBodyBytes() bool {
 	if o != nil && o.ImgvideoRespBodyBytes != nil {
 		return true
 	}
@@ -3201,12 +3203,12 @@ func (o *Results) HasImgvideoRespBodyBytes() bool {
 }
 
 // SetImgvideoRespBodyBytes gets a reference to the given int32 and assigns it to the ImgvideoRespBodyBytes field.
-func (o *Results) SetImgvideoRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetImgvideoRespBodyBytes(v int32) {
 	o.ImgvideoRespBodyBytes = &v
 }
 
 // GetImgvideoShieldRespHeaderBytes returns the ImgvideoShieldRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetImgvideoShieldRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoShieldRespHeaderBytes() int32 {
 	if o == nil || o.ImgvideoShieldRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -3216,7 +3218,7 @@ func (o *Results) GetImgvideoShieldRespHeaderBytes() int32 {
 
 // GetImgvideoShieldRespHeaderBytesOk returns a tuple with the ImgvideoShieldRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetImgvideoShieldRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoShieldRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ImgvideoShieldRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -3224,7 +3226,7 @@ func (o *Results) GetImgvideoShieldRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasImgvideoShieldRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasImgvideoShieldRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasImgvideoShieldRespHeaderBytes() bool {
 	if o != nil && o.ImgvideoShieldRespHeaderBytes != nil {
 		return true
 	}
@@ -3233,12 +3235,12 @@ func (o *Results) HasImgvideoShieldRespHeaderBytes() bool {
 }
 
 // SetImgvideoShieldRespHeaderBytes gets a reference to the given int32 and assigns it to the ImgvideoShieldRespHeaderBytes field.
-func (o *Results) SetImgvideoShieldRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetImgvideoShieldRespHeaderBytes(v int32) {
 	o.ImgvideoShieldRespHeaderBytes = &v
 }
 
 // GetImgvideoShieldRespBodyBytes returns the ImgvideoShieldRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetImgvideoShieldRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoShieldRespBodyBytes() int32 {
 	if o == nil || o.ImgvideoShieldRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -3248,7 +3250,7 @@ func (o *Results) GetImgvideoShieldRespBodyBytes() int32 {
 
 // GetImgvideoShieldRespBodyBytesOk returns a tuple with the ImgvideoShieldRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetImgvideoShieldRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoShieldRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ImgvideoShieldRespBodyBytes == nil {
 		return nil, false
 	}
@@ -3256,7 +3258,7 @@ func (o *Results) GetImgvideoShieldRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasImgvideoShieldRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasImgvideoShieldRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasImgvideoShieldRespBodyBytes() bool {
 	if o != nil && o.ImgvideoShieldRespBodyBytes != nil {
 		return true
 	}
@@ -3265,12 +3267,12 @@ func (o *Results) HasImgvideoShieldRespBodyBytes() bool {
 }
 
 // SetImgvideoShieldRespBodyBytes gets a reference to the given int32 and assigns it to the ImgvideoShieldRespBodyBytes field.
-func (o *Results) SetImgvideoShieldRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetImgvideoShieldRespBodyBytes(v int32) {
 	o.ImgvideoShieldRespBodyBytes = &v
 }
 
 // GetImgvideoShield returns the ImgvideoShield field value if set, zero value otherwise.
-func (o *Results) GetImgvideoShield() int32 {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoShield() int32 {
 	if o == nil || o.ImgvideoShield == nil {
 		var ret int32
 		return ret
@@ -3280,7 +3282,7 @@ func (o *Results) GetImgvideoShield() int32 {
 
 // GetImgvideoShieldOk returns a tuple with the ImgvideoShield field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetImgvideoShieldOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoShieldOk() (*int32, bool) {
 	if o == nil || o.ImgvideoShield == nil {
 		return nil, false
 	}
@@ -3288,7 +3290,7 @@ func (o *Results) GetImgvideoShieldOk() (*int32, bool) {
 }
 
 // HasImgvideoShield returns a boolean if a field has been set.
-func (o *Results) HasImgvideoShield() bool {
+func (o *HistoricalFieldResultsAttributes) HasImgvideoShield() bool {
 	if o != nil && o.ImgvideoShield != nil {
 		return true
 	}
@@ -3297,12 +3299,12 @@ func (o *Results) HasImgvideoShield() bool {
 }
 
 // SetImgvideoShield gets a reference to the given int32 and assigns it to the ImgvideoShield field.
-func (o *Results) SetImgvideoShield(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetImgvideoShield(v int32) {
 	o.ImgvideoShield = &v
 }
 
 // GetImgvideoShieldFrames returns the ImgvideoShieldFrames field value if set, zero value otherwise.
-func (o *Results) GetImgvideoShieldFrames() int32 {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoShieldFrames() int32 {
 	if o == nil || o.ImgvideoShieldFrames == nil {
 		var ret int32
 		return ret
@@ -3312,7 +3314,7 @@ func (o *Results) GetImgvideoShieldFrames() int32 {
 
 // GetImgvideoShieldFramesOk returns a tuple with the ImgvideoShieldFrames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetImgvideoShieldFramesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetImgvideoShieldFramesOk() (*int32, bool) {
 	if o == nil || o.ImgvideoShieldFrames == nil {
 		return nil, false
 	}
@@ -3320,7 +3322,7 @@ func (o *Results) GetImgvideoShieldFramesOk() (*int32, bool) {
 }
 
 // HasImgvideoShieldFrames returns a boolean if a field has been set.
-func (o *Results) HasImgvideoShieldFrames() bool {
+func (o *HistoricalFieldResultsAttributes) HasImgvideoShieldFrames() bool {
 	if o != nil && o.ImgvideoShieldFrames != nil {
 		return true
 	}
@@ -3329,12 +3331,12 @@ func (o *Results) HasImgvideoShieldFrames() bool {
 }
 
 // SetImgvideoShieldFrames gets a reference to the given int32 and assigns it to the ImgvideoShieldFrames field.
-func (o *Results) SetImgvideoShieldFrames(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetImgvideoShieldFrames(v int32) {
 	o.ImgvideoShieldFrames = &v
 }
 
 // GetStatus200 returns the Status200 field value if set, zero value otherwise.
-func (o *Results) GetStatus200() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus200() int32 {
 	if o == nil || o.Status200 == nil {
 		var ret int32
 		return ret
@@ -3344,7 +3346,7 @@ func (o *Results) GetStatus200() int32 {
 
 // GetStatus200Ok returns a tuple with the Status200 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus200Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus200Ok() (*int32, bool) {
 	if o == nil || o.Status200 == nil {
 		return nil, false
 	}
@@ -3352,7 +3354,7 @@ func (o *Results) GetStatus200Ok() (*int32, bool) {
 }
 
 // HasStatus200 returns a boolean if a field has been set.
-func (o *Results) HasStatus200() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus200() bool {
 	if o != nil && o.Status200 != nil {
 		return true
 	}
@@ -3361,12 +3363,12 @@ func (o *Results) HasStatus200() bool {
 }
 
 // SetStatus200 gets a reference to the given int32 and assigns it to the Status200 field.
-func (o *Results) SetStatus200(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus200(v int32) {
 	o.Status200 = &v
 }
 
 // GetStatus204 returns the Status204 field value if set, zero value otherwise.
-func (o *Results) GetStatus204() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus204() int32 {
 	if o == nil || o.Status204 == nil {
 		var ret int32
 		return ret
@@ -3376,7 +3378,7 @@ func (o *Results) GetStatus204() int32 {
 
 // GetStatus204Ok returns a tuple with the Status204 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus204Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus204Ok() (*int32, bool) {
 	if o == nil || o.Status204 == nil {
 		return nil, false
 	}
@@ -3384,7 +3386,7 @@ func (o *Results) GetStatus204Ok() (*int32, bool) {
 }
 
 // HasStatus204 returns a boolean if a field has been set.
-func (o *Results) HasStatus204() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus204() bool {
 	if o != nil && o.Status204 != nil {
 		return true
 	}
@@ -3393,12 +3395,12 @@ func (o *Results) HasStatus204() bool {
 }
 
 // SetStatus204 gets a reference to the given int32 and assigns it to the Status204 field.
-func (o *Results) SetStatus204(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus204(v int32) {
 	o.Status204 = &v
 }
 
 // GetStatus206 returns the Status206 field value if set, zero value otherwise.
-func (o *Results) GetStatus206() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus206() int32 {
 	if o == nil || o.Status206 == nil {
 		var ret int32
 		return ret
@@ -3408,7 +3410,7 @@ func (o *Results) GetStatus206() int32 {
 
 // GetStatus206Ok returns a tuple with the Status206 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus206Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus206Ok() (*int32, bool) {
 	if o == nil || o.Status206 == nil {
 		return nil, false
 	}
@@ -3416,7 +3418,7 @@ func (o *Results) GetStatus206Ok() (*int32, bool) {
 }
 
 // HasStatus206 returns a boolean if a field has been set.
-func (o *Results) HasStatus206() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus206() bool {
 	if o != nil && o.Status206 != nil {
 		return true
 	}
@@ -3425,12 +3427,12 @@ func (o *Results) HasStatus206() bool {
 }
 
 // SetStatus206 gets a reference to the given int32 and assigns it to the Status206 field.
-func (o *Results) SetStatus206(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus206(v int32) {
 	o.Status206 = &v
 }
 
 // GetStatus301 returns the Status301 field value if set, zero value otherwise.
-func (o *Results) GetStatus301() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus301() int32 {
 	if o == nil || o.Status301 == nil {
 		var ret int32
 		return ret
@@ -3440,7 +3442,7 @@ func (o *Results) GetStatus301() int32 {
 
 // GetStatus301Ok returns a tuple with the Status301 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus301Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus301Ok() (*int32, bool) {
 	if o == nil || o.Status301 == nil {
 		return nil, false
 	}
@@ -3448,7 +3450,7 @@ func (o *Results) GetStatus301Ok() (*int32, bool) {
 }
 
 // HasStatus301 returns a boolean if a field has been set.
-func (o *Results) HasStatus301() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus301() bool {
 	if o != nil && o.Status301 != nil {
 		return true
 	}
@@ -3457,12 +3459,12 @@ func (o *Results) HasStatus301() bool {
 }
 
 // SetStatus301 gets a reference to the given int32 and assigns it to the Status301 field.
-func (o *Results) SetStatus301(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus301(v int32) {
 	o.Status301 = &v
 }
 
 // GetStatus302 returns the Status302 field value if set, zero value otherwise.
-func (o *Results) GetStatus302() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus302() int32 {
 	if o == nil || o.Status302 == nil {
 		var ret int32
 		return ret
@@ -3472,7 +3474,7 @@ func (o *Results) GetStatus302() int32 {
 
 // GetStatus302Ok returns a tuple with the Status302 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus302Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus302Ok() (*int32, bool) {
 	if o == nil || o.Status302 == nil {
 		return nil, false
 	}
@@ -3480,7 +3482,7 @@ func (o *Results) GetStatus302Ok() (*int32, bool) {
 }
 
 // HasStatus302 returns a boolean if a field has been set.
-func (o *Results) HasStatus302() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus302() bool {
 	if o != nil && o.Status302 != nil {
 		return true
 	}
@@ -3489,12 +3491,12 @@ func (o *Results) HasStatus302() bool {
 }
 
 // SetStatus302 gets a reference to the given int32 and assigns it to the Status302 field.
-func (o *Results) SetStatus302(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus302(v int32) {
 	o.Status302 = &v
 }
 
 // GetStatus304 returns the Status304 field value if set, zero value otherwise.
-func (o *Results) GetStatus304() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus304() int32 {
 	if o == nil || o.Status304 == nil {
 		var ret int32
 		return ret
@@ -3504,7 +3506,7 @@ func (o *Results) GetStatus304() int32 {
 
 // GetStatus304Ok returns a tuple with the Status304 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus304Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus304Ok() (*int32, bool) {
 	if o == nil || o.Status304 == nil {
 		return nil, false
 	}
@@ -3512,7 +3514,7 @@ func (o *Results) GetStatus304Ok() (*int32, bool) {
 }
 
 // HasStatus304 returns a boolean if a field has been set.
-func (o *Results) HasStatus304() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus304() bool {
 	if o != nil && o.Status304 != nil {
 		return true
 	}
@@ -3521,12 +3523,12 @@ func (o *Results) HasStatus304() bool {
 }
 
 // SetStatus304 gets a reference to the given int32 and assigns it to the Status304 field.
-func (o *Results) SetStatus304(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus304(v int32) {
 	o.Status304 = &v
 }
 
 // GetStatus400 returns the Status400 field value if set, zero value otherwise.
-func (o *Results) GetStatus400() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus400() int32 {
 	if o == nil || o.Status400 == nil {
 		var ret int32
 		return ret
@@ -3536,7 +3538,7 @@ func (o *Results) GetStatus400() int32 {
 
 // GetStatus400Ok returns a tuple with the Status400 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus400Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus400Ok() (*int32, bool) {
 	if o == nil || o.Status400 == nil {
 		return nil, false
 	}
@@ -3544,7 +3546,7 @@ func (o *Results) GetStatus400Ok() (*int32, bool) {
 }
 
 // HasStatus400 returns a boolean if a field has been set.
-func (o *Results) HasStatus400() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus400() bool {
 	if o != nil && o.Status400 != nil {
 		return true
 	}
@@ -3553,12 +3555,12 @@ func (o *Results) HasStatus400() bool {
 }
 
 // SetStatus400 gets a reference to the given int32 and assigns it to the Status400 field.
-func (o *Results) SetStatus400(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus400(v int32) {
 	o.Status400 = &v
 }
 
 // GetStatus401 returns the Status401 field value if set, zero value otherwise.
-func (o *Results) GetStatus401() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus401() int32 {
 	if o == nil || o.Status401 == nil {
 		var ret int32
 		return ret
@@ -3568,7 +3570,7 @@ func (o *Results) GetStatus401() int32 {
 
 // GetStatus401Ok returns a tuple with the Status401 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus401Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus401Ok() (*int32, bool) {
 	if o == nil || o.Status401 == nil {
 		return nil, false
 	}
@@ -3576,7 +3578,7 @@ func (o *Results) GetStatus401Ok() (*int32, bool) {
 }
 
 // HasStatus401 returns a boolean if a field has been set.
-func (o *Results) HasStatus401() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus401() bool {
 	if o != nil && o.Status401 != nil {
 		return true
 	}
@@ -3585,12 +3587,12 @@ func (o *Results) HasStatus401() bool {
 }
 
 // SetStatus401 gets a reference to the given int32 and assigns it to the Status401 field.
-func (o *Results) SetStatus401(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus401(v int32) {
 	o.Status401 = &v
 }
 
 // GetStatus403 returns the Status403 field value if set, zero value otherwise.
-func (o *Results) GetStatus403() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus403() int32 {
 	if o == nil || o.Status403 == nil {
 		var ret int32
 		return ret
@@ -3600,7 +3602,7 @@ func (o *Results) GetStatus403() int32 {
 
 // GetStatus403Ok returns a tuple with the Status403 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus403Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus403Ok() (*int32, bool) {
 	if o == nil || o.Status403 == nil {
 		return nil, false
 	}
@@ -3608,7 +3610,7 @@ func (o *Results) GetStatus403Ok() (*int32, bool) {
 }
 
 // HasStatus403 returns a boolean if a field has been set.
-func (o *Results) HasStatus403() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus403() bool {
 	if o != nil && o.Status403 != nil {
 		return true
 	}
@@ -3617,12 +3619,12 @@ func (o *Results) HasStatus403() bool {
 }
 
 // SetStatus403 gets a reference to the given int32 and assigns it to the Status403 field.
-func (o *Results) SetStatus403(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus403(v int32) {
 	o.Status403 = &v
 }
 
 // GetStatus404 returns the Status404 field value if set, zero value otherwise.
-func (o *Results) GetStatus404() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus404() int32 {
 	if o == nil || o.Status404 == nil {
 		var ret int32
 		return ret
@@ -3632,7 +3634,7 @@ func (o *Results) GetStatus404() int32 {
 
 // GetStatus404Ok returns a tuple with the Status404 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus404Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus404Ok() (*int32, bool) {
 	if o == nil || o.Status404 == nil {
 		return nil, false
 	}
@@ -3640,7 +3642,7 @@ func (o *Results) GetStatus404Ok() (*int32, bool) {
 }
 
 // HasStatus404 returns a boolean if a field has been set.
-func (o *Results) HasStatus404() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus404() bool {
 	if o != nil && o.Status404 != nil {
 		return true
 	}
@@ -3649,12 +3651,12 @@ func (o *Results) HasStatus404() bool {
 }
 
 // SetStatus404 gets a reference to the given int32 and assigns it to the Status404 field.
-func (o *Results) SetStatus404(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus404(v int32) {
 	o.Status404 = &v
 }
 
 // GetStatus406 returns the Status406 field value if set, zero value otherwise.
-func (o *Results) GetStatus406() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus406() int32 {
 	if o == nil || o.Status406 == nil {
 		var ret int32
 		return ret
@@ -3664,7 +3666,7 @@ func (o *Results) GetStatus406() int32 {
 
 // GetStatus406Ok returns a tuple with the Status406 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus406Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus406Ok() (*int32, bool) {
 	if o == nil || o.Status406 == nil {
 		return nil, false
 	}
@@ -3672,7 +3674,7 @@ func (o *Results) GetStatus406Ok() (*int32, bool) {
 }
 
 // HasStatus406 returns a boolean if a field has been set.
-func (o *Results) HasStatus406() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus406() bool {
 	if o != nil && o.Status406 != nil {
 		return true
 	}
@@ -3681,12 +3683,12 @@ func (o *Results) HasStatus406() bool {
 }
 
 // SetStatus406 gets a reference to the given int32 and assigns it to the Status406 field.
-func (o *Results) SetStatus406(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus406(v int32) {
 	o.Status406 = &v
 }
 
 // GetStatus416 returns the Status416 field value if set, zero value otherwise.
-func (o *Results) GetStatus416() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus416() int32 {
 	if o == nil || o.Status416 == nil {
 		var ret int32
 		return ret
@@ -3696,7 +3698,7 @@ func (o *Results) GetStatus416() int32 {
 
 // GetStatus416Ok returns a tuple with the Status416 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus416Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus416Ok() (*int32, bool) {
 	if o == nil || o.Status416 == nil {
 		return nil, false
 	}
@@ -3704,7 +3706,7 @@ func (o *Results) GetStatus416Ok() (*int32, bool) {
 }
 
 // HasStatus416 returns a boolean if a field has been set.
-func (o *Results) HasStatus416() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus416() bool {
 	if o != nil && o.Status416 != nil {
 		return true
 	}
@@ -3713,12 +3715,12 @@ func (o *Results) HasStatus416() bool {
 }
 
 // SetStatus416 gets a reference to the given int32 and assigns it to the Status416 field.
-func (o *Results) SetStatus416(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus416(v int32) {
 	o.Status416 = &v
 }
 
 // GetStatus429 returns the Status429 field value if set, zero value otherwise.
-func (o *Results) GetStatus429() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus429() int32 {
 	if o == nil || o.Status429 == nil {
 		var ret int32
 		return ret
@@ -3728,7 +3730,7 @@ func (o *Results) GetStatus429() int32 {
 
 // GetStatus429Ok returns a tuple with the Status429 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus429Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus429Ok() (*int32, bool) {
 	if o == nil || o.Status429 == nil {
 		return nil, false
 	}
@@ -3736,7 +3738,7 @@ func (o *Results) GetStatus429Ok() (*int32, bool) {
 }
 
 // HasStatus429 returns a boolean if a field has been set.
-func (o *Results) HasStatus429() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus429() bool {
 	if o != nil && o.Status429 != nil {
 		return true
 	}
@@ -3745,12 +3747,12 @@ func (o *Results) HasStatus429() bool {
 }
 
 // SetStatus429 gets a reference to the given int32 and assigns it to the Status429 field.
-func (o *Results) SetStatus429(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus429(v int32) {
 	o.Status429 = &v
 }
 
 // GetStatus500 returns the Status500 field value if set, zero value otherwise.
-func (o *Results) GetStatus500() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus500() int32 {
 	if o == nil || o.Status500 == nil {
 		var ret int32
 		return ret
@@ -3760,7 +3762,7 @@ func (o *Results) GetStatus500() int32 {
 
 // GetStatus500Ok returns a tuple with the Status500 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus500Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus500Ok() (*int32, bool) {
 	if o == nil || o.Status500 == nil {
 		return nil, false
 	}
@@ -3768,7 +3770,7 @@ func (o *Results) GetStatus500Ok() (*int32, bool) {
 }
 
 // HasStatus500 returns a boolean if a field has been set.
-func (o *Results) HasStatus500() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus500() bool {
 	if o != nil && o.Status500 != nil {
 		return true
 	}
@@ -3777,12 +3779,12 @@ func (o *Results) HasStatus500() bool {
 }
 
 // SetStatus500 gets a reference to the given int32 and assigns it to the Status500 field.
-func (o *Results) SetStatus500(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus500(v int32) {
 	o.Status500 = &v
 }
 
 // GetStatus501 returns the Status501 field value if set, zero value otherwise.
-func (o *Results) GetStatus501() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus501() int32 {
 	if o == nil || o.Status501 == nil {
 		var ret int32
 		return ret
@@ -3792,7 +3794,7 @@ func (o *Results) GetStatus501() int32 {
 
 // GetStatus501Ok returns a tuple with the Status501 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus501Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus501Ok() (*int32, bool) {
 	if o == nil || o.Status501 == nil {
 		return nil, false
 	}
@@ -3800,7 +3802,7 @@ func (o *Results) GetStatus501Ok() (*int32, bool) {
 }
 
 // HasStatus501 returns a boolean if a field has been set.
-func (o *Results) HasStatus501() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus501() bool {
 	if o != nil && o.Status501 != nil {
 		return true
 	}
@@ -3809,12 +3811,12 @@ func (o *Results) HasStatus501() bool {
 }
 
 // SetStatus501 gets a reference to the given int32 and assigns it to the Status501 field.
-func (o *Results) SetStatus501(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus501(v int32) {
 	o.Status501 = &v
 }
 
 // GetStatus502 returns the Status502 field value if set, zero value otherwise.
-func (o *Results) GetStatus502() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus502() int32 {
 	if o == nil || o.Status502 == nil {
 		var ret int32
 		return ret
@@ -3824,7 +3826,7 @@ func (o *Results) GetStatus502() int32 {
 
 // GetStatus502Ok returns a tuple with the Status502 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus502Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus502Ok() (*int32, bool) {
 	if o == nil || o.Status502 == nil {
 		return nil, false
 	}
@@ -3832,7 +3834,7 @@ func (o *Results) GetStatus502Ok() (*int32, bool) {
 }
 
 // HasStatus502 returns a boolean if a field has been set.
-func (o *Results) HasStatus502() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus502() bool {
 	if o != nil && o.Status502 != nil {
 		return true
 	}
@@ -3841,12 +3843,12 @@ func (o *Results) HasStatus502() bool {
 }
 
 // SetStatus502 gets a reference to the given int32 and assigns it to the Status502 field.
-func (o *Results) SetStatus502(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus502(v int32) {
 	o.Status502 = &v
 }
 
 // GetStatus503 returns the Status503 field value if set, zero value otherwise.
-func (o *Results) GetStatus503() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus503() int32 {
 	if o == nil || o.Status503 == nil {
 		var ret int32
 		return ret
@@ -3856,7 +3858,7 @@ func (o *Results) GetStatus503() int32 {
 
 // GetStatus503Ok returns a tuple with the Status503 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus503Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus503Ok() (*int32, bool) {
 	if o == nil || o.Status503 == nil {
 		return nil, false
 	}
@@ -3864,7 +3866,7 @@ func (o *Results) GetStatus503Ok() (*int32, bool) {
 }
 
 // HasStatus503 returns a boolean if a field has been set.
-func (o *Results) HasStatus503() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus503() bool {
 	if o != nil && o.Status503 != nil {
 		return true
 	}
@@ -3873,12 +3875,12 @@ func (o *Results) HasStatus503() bool {
 }
 
 // SetStatus503 gets a reference to the given int32 and assigns it to the Status503 field.
-func (o *Results) SetStatus503(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus503(v int32) {
 	o.Status503 = &v
 }
 
 // GetStatus504 returns the Status504 field value if set, zero value otherwise.
-func (o *Results) GetStatus504() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus504() int32 {
 	if o == nil || o.Status504 == nil {
 		var ret int32
 		return ret
@@ -3888,7 +3890,7 @@ func (o *Results) GetStatus504() int32 {
 
 // GetStatus504Ok returns a tuple with the Status504 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus504Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus504Ok() (*int32, bool) {
 	if o == nil || o.Status504 == nil {
 		return nil, false
 	}
@@ -3896,7 +3898,7 @@ func (o *Results) GetStatus504Ok() (*int32, bool) {
 }
 
 // HasStatus504 returns a boolean if a field has been set.
-func (o *Results) HasStatus504() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus504() bool {
 	if o != nil && o.Status504 != nil {
 		return true
 	}
@@ -3905,12 +3907,12 @@ func (o *Results) HasStatus504() bool {
 }
 
 // SetStatus504 gets a reference to the given int32 and assigns it to the Status504 field.
-func (o *Results) SetStatus504(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus504(v int32) {
 	o.Status504 = &v
 }
 
 // GetStatus505 returns the Status505 field value if set, zero value otherwise.
-func (o *Results) GetStatus505() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus505() int32 {
 	if o == nil || o.Status505 == nil {
 		var ret int32
 		return ret
@@ -3920,7 +3922,7 @@ func (o *Results) GetStatus505() int32 {
 
 // GetStatus505Ok returns a tuple with the Status505 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus505Ok() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus505Ok() (*int32, bool) {
 	if o == nil || o.Status505 == nil {
 		return nil, false
 	}
@@ -3928,7 +3930,7 @@ func (o *Results) GetStatus505Ok() (*int32, bool) {
 }
 
 // HasStatus505 returns a boolean if a field has been set.
-func (o *Results) HasStatus505() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus505() bool {
 	if o != nil && o.Status505 != nil {
 		return true
 	}
@@ -3937,12 +3939,12 @@ func (o *Results) HasStatus505() bool {
 }
 
 // SetStatus505 gets a reference to the given int32 and assigns it to the Status505 field.
-func (o *Results) SetStatus505(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus505(v int32) {
 	o.Status505 = &v
 }
 
 // GetStatus1xx returns the Status1xx field value if set, zero value otherwise.
-func (o *Results) GetStatus1xx() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus1xx() int32 {
 	if o == nil || o.Status1xx == nil {
 		var ret int32
 		return ret
@@ -3952,7 +3954,7 @@ func (o *Results) GetStatus1xx() int32 {
 
 // GetStatus1xxOk returns a tuple with the Status1xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus1xxOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus1xxOk() (*int32, bool) {
 	if o == nil || o.Status1xx == nil {
 		return nil, false
 	}
@@ -3960,7 +3962,7 @@ func (o *Results) GetStatus1xxOk() (*int32, bool) {
 }
 
 // HasStatus1xx returns a boolean if a field has been set.
-func (o *Results) HasStatus1xx() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus1xx() bool {
 	if o != nil && o.Status1xx != nil {
 		return true
 	}
@@ -3969,12 +3971,12 @@ func (o *Results) HasStatus1xx() bool {
 }
 
 // SetStatus1xx gets a reference to the given int32 and assigns it to the Status1xx field.
-func (o *Results) SetStatus1xx(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus1xx(v int32) {
 	o.Status1xx = &v
 }
 
 // GetStatus2xx returns the Status2xx field value if set, zero value otherwise.
-func (o *Results) GetStatus2xx() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus2xx() int32 {
 	if o == nil || o.Status2xx == nil {
 		var ret int32
 		return ret
@@ -3984,7 +3986,7 @@ func (o *Results) GetStatus2xx() int32 {
 
 // GetStatus2xxOk returns a tuple with the Status2xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus2xxOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus2xxOk() (*int32, bool) {
 	if o == nil || o.Status2xx == nil {
 		return nil, false
 	}
@@ -3992,7 +3994,7 @@ func (o *Results) GetStatus2xxOk() (*int32, bool) {
 }
 
 // HasStatus2xx returns a boolean if a field has been set.
-func (o *Results) HasStatus2xx() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus2xx() bool {
 	if o != nil && o.Status2xx != nil {
 		return true
 	}
@@ -4001,12 +4003,12 @@ func (o *Results) HasStatus2xx() bool {
 }
 
 // SetStatus2xx gets a reference to the given int32 and assigns it to the Status2xx field.
-func (o *Results) SetStatus2xx(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus2xx(v int32) {
 	o.Status2xx = &v
 }
 
 // GetStatus3xx returns the Status3xx field value if set, zero value otherwise.
-func (o *Results) GetStatus3xx() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus3xx() int32 {
 	if o == nil || o.Status3xx == nil {
 		var ret int32
 		return ret
@@ -4016,7 +4018,7 @@ func (o *Results) GetStatus3xx() int32 {
 
 // GetStatus3xxOk returns a tuple with the Status3xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus3xxOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus3xxOk() (*int32, bool) {
 	if o == nil || o.Status3xx == nil {
 		return nil, false
 	}
@@ -4024,7 +4026,7 @@ func (o *Results) GetStatus3xxOk() (*int32, bool) {
 }
 
 // HasStatus3xx returns a boolean if a field has been set.
-func (o *Results) HasStatus3xx() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus3xx() bool {
 	if o != nil && o.Status3xx != nil {
 		return true
 	}
@@ -4033,12 +4035,12 @@ func (o *Results) HasStatus3xx() bool {
 }
 
 // SetStatus3xx gets a reference to the given int32 and assigns it to the Status3xx field.
-func (o *Results) SetStatus3xx(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus3xx(v int32) {
 	o.Status3xx = &v
 }
 
 // GetStatus4xx returns the Status4xx field value if set, zero value otherwise.
-func (o *Results) GetStatus4xx() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus4xx() int32 {
 	if o == nil || o.Status4xx == nil {
 		var ret int32
 		return ret
@@ -4048,7 +4050,7 @@ func (o *Results) GetStatus4xx() int32 {
 
 // GetStatus4xxOk returns a tuple with the Status4xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus4xxOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus4xxOk() (*int32, bool) {
 	if o == nil || o.Status4xx == nil {
 		return nil, false
 	}
@@ -4056,7 +4058,7 @@ func (o *Results) GetStatus4xxOk() (*int32, bool) {
 }
 
 // HasStatus4xx returns a boolean if a field has been set.
-func (o *Results) HasStatus4xx() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus4xx() bool {
 	if o != nil && o.Status4xx != nil {
 		return true
 	}
@@ -4065,12 +4067,12 @@ func (o *Results) HasStatus4xx() bool {
 }
 
 // SetStatus4xx gets a reference to the given int32 and assigns it to the Status4xx field.
-func (o *Results) SetStatus4xx(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus4xx(v int32) {
 	o.Status4xx = &v
 }
 
 // GetStatus5xx returns the Status5xx field value if set, zero value otherwise.
-func (o *Results) GetStatus5xx() int32 {
+func (o *HistoricalFieldResultsAttributes) GetStatus5xx() int32 {
 	if o == nil || o.Status5xx == nil {
 		var ret int32
 		return ret
@@ -4080,7 +4082,7 @@ func (o *Results) GetStatus5xx() int32 {
 
 // GetStatus5xxOk returns a tuple with the Status5xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetStatus5xxOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetStatus5xxOk() (*int32, bool) {
 	if o == nil || o.Status5xx == nil {
 		return nil, false
 	}
@@ -4088,7 +4090,7 @@ func (o *Results) GetStatus5xxOk() (*int32, bool) {
 }
 
 // HasStatus5xx returns a boolean if a field has been set.
-func (o *Results) HasStatus5xx() bool {
+func (o *HistoricalFieldResultsAttributes) HasStatus5xx() bool {
 	if o != nil && o.Status5xx != nil {
 		return true
 	}
@@ -4097,12 +4099,12 @@ func (o *Results) HasStatus5xx() bool {
 }
 
 // SetStatus5xx gets a reference to the given int32 and assigns it to the Status5xx field.
-func (o *Results) SetStatus5xx(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetStatus5xx(v int32) {
 	o.Status5xx = &v
 }
 
 // GetObjectSize1k returns the ObjectSize1k field value if set, zero value otherwise.
-func (o *Results) GetObjectSize1k() int32 {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize1k() int32 {
 	if o == nil || o.ObjectSize1k == nil {
 		var ret int32
 		return ret
@@ -4112,7 +4114,7 @@ func (o *Results) GetObjectSize1k() int32 {
 
 // GetObjectSize1kOk returns a tuple with the ObjectSize1k field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetObjectSize1kOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize1kOk() (*int32, bool) {
 	if o == nil || o.ObjectSize1k == nil {
 		return nil, false
 	}
@@ -4120,7 +4122,7 @@ func (o *Results) GetObjectSize1kOk() (*int32, bool) {
 }
 
 // HasObjectSize1k returns a boolean if a field has been set.
-func (o *Results) HasObjectSize1k() bool {
+func (o *HistoricalFieldResultsAttributes) HasObjectSize1k() bool {
 	if o != nil && o.ObjectSize1k != nil {
 		return true
 	}
@@ -4129,12 +4131,12 @@ func (o *Results) HasObjectSize1k() bool {
 }
 
 // SetObjectSize1k gets a reference to the given int32 and assigns it to the ObjectSize1k field.
-func (o *Results) SetObjectSize1k(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetObjectSize1k(v int32) {
 	o.ObjectSize1k = &v
 }
 
 // GetObjectSize10k returns the ObjectSize10k field value if set, zero value otherwise.
-func (o *Results) GetObjectSize10k() int32 {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize10k() int32 {
 	if o == nil || o.ObjectSize10k == nil {
 		var ret int32
 		return ret
@@ -4144,7 +4146,7 @@ func (o *Results) GetObjectSize10k() int32 {
 
 // GetObjectSize10kOk returns a tuple with the ObjectSize10k field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetObjectSize10kOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize10kOk() (*int32, bool) {
 	if o == nil || o.ObjectSize10k == nil {
 		return nil, false
 	}
@@ -4152,7 +4154,7 @@ func (o *Results) GetObjectSize10kOk() (*int32, bool) {
 }
 
 // HasObjectSize10k returns a boolean if a field has been set.
-func (o *Results) HasObjectSize10k() bool {
+func (o *HistoricalFieldResultsAttributes) HasObjectSize10k() bool {
 	if o != nil && o.ObjectSize10k != nil {
 		return true
 	}
@@ -4161,12 +4163,12 @@ func (o *Results) HasObjectSize10k() bool {
 }
 
 // SetObjectSize10k gets a reference to the given int32 and assigns it to the ObjectSize10k field.
-func (o *Results) SetObjectSize10k(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetObjectSize10k(v int32) {
 	o.ObjectSize10k = &v
 }
 
 // GetObjectSize100k returns the ObjectSize100k field value if set, zero value otherwise.
-func (o *Results) GetObjectSize100k() int32 {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize100k() int32 {
 	if o == nil || o.ObjectSize100k == nil {
 		var ret int32
 		return ret
@@ -4176,7 +4178,7 @@ func (o *Results) GetObjectSize100k() int32 {
 
 // GetObjectSize100kOk returns a tuple with the ObjectSize100k field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetObjectSize100kOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize100kOk() (*int32, bool) {
 	if o == nil || o.ObjectSize100k == nil {
 		return nil, false
 	}
@@ -4184,7 +4186,7 @@ func (o *Results) GetObjectSize100kOk() (*int32, bool) {
 }
 
 // HasObjectSize100k returns a boolean if a field has been set.
-func (o *Results) HasObjectSize100k() bool {
+func (o *HistoricalFieldResultsAttributes) HasObjectSize100k() bool {
 	if o != nil && o.ObjectSize100k != nil {
 		return true
 	}
@@ -4193,12 +4195,12 @@ func (o *Results) HasObjectSize100k() bool {
 }
 
 // SetObjectSize100k gets a reference to the given int32 and assigns it to the ObjectSize100k field.
-func (o *Results) SetObjectSize100k(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetObjectSize100k(v int32) {
 	o.ObjectSize100k = &v
 }
 
 // GetObjectSize1m returns the ObjectSize1m field value if set, zero value otherwise.
-func (o *Results) GetObjectSize1m() int32 {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize1m() int32 {
 	if o == nil || o.ObjectSize1m == nil {
 		var ret int32
 		return ret
@@ -4208,7 +4210,7 @@ func (o *Results) GetObjectSize1m() int32 {
 
 // GetObjectSize1mOk returns a tuple with the ObjectSize1m field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetObjectSize1mOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize1mOk() (*int32, bool) {
 	if o == nil || o.ObjectSize1m == nil {
 		return nil, false
 	}
@@ -4216,7 +4218,7 @@ func (o *Results) GetObjectSize1mOk() (*int32, bool) {
 }
 
 // HasObjectSize1m returns a boolean if a field has been set.
-func (o *Results) HasObjectSize1m() bool {
+func (o *HistoricalFieldResultsAttributes) HasObjectSize1m() bool {
 	if o != nil && o.ObjectSize1m != nil {
 		return true
 	}
@@ -4225,12 +4227,12 @@ func (o *Results) HasObjectSize1m() bool {
 }
 
 // SetObjectSize1m gets a reference to the given int32 and assigns it to the ObjectSize1m field.
-func (o *Results) SetObjectSize1m(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetObjectSize1m(v int32) {
 	o.ObjectSize1m = &v
 }
 
 // GetObjectSize10m returns the ObjectSize10m field value if set, zero value otherwise.
-func (o *Results) GetObjectSize10m() int32 {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize10m() int32 {
 	if o == nil || o.ObjectSize10m == nil {
 		var ret int32
 		return ret
@@ -4240,7 +4242,7 @@ func (o *Results) GetObjectSize10m() int32 {
 
 // GetObjectSize10mOk returns a tuple with the ObjectSize10m field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetObjectSize10mOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize10mOk() (*int32, bool) {
 	if o == nil || o.ObjectSize10m == nil {
 		return nil, false
 	}
@@ -4248,7 +4250,7 @@ func (o *Results) GetObjectSize10mOk() (*int32, bool) {
 }
 
 // HasObjectSize10m returns a boolean if a field has been set.
-func (o *Results) HasObjectSize10m() bool {
+func (o *HistoricalFieldResultsAttributes) HasObjectSize10m() bool {
 	if o != nil && o.ObjectSize10m != nil {
 		return true
 	}
@@ -4257,12 +4259,12 @@ func (o *Results) HasObjectSize10m() bool {
 }
 
 // SetObjectSize10m gets a reference to the given int32 and assigns it to the ObjectSize10m field.
-func (o *Results) SetObjectSize10m(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetObjectSize10m(v int32) {
 	o.ObjectSize10m = &v
 }
 
 // GetObjectSize100m returns the ObjectSize100m field value if set, zero value otherwise.
-func (o *Results) GetObjectSize100m() int32 {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize100m() int32 {
 	if o == nil || o.ObjectSize100m == nil {
 		var ret int32
 		return ret
@@ -4272,7 +4274,7 @@ func (o *Results) GetObjectSize100m() int32 {
 
 // GetObjectSize100mOk returns a tuple with the ObjectSize100m field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetObjectSize100mOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize100mOk() (*int32, bool) {
 	if o == nil || o.ObjectSize100m == nil {
 		return nil, false
 	}
@@ -4280,7 +4282,7 @@ func (o *Results) GetObjectSize100mOk() (*int32, bool) {
 }
 
 // HasObjectSize100m returns a boolean if a field has been set.
-func (o *Results) HasObjectSize100m() bool {
+func (o *HistoricalFieldResultsAttributes) HasObjectSize100m() bool {
 	if o != nil && o.ObjectSize100m != nil {
 		return true
 	}
@@ -4289,12 +4291,12 @@ func (o *Results) HasObjectSize100m() bool {
 }
 
 // SetObjectSize100m gets a reference to the given int32 and assigns it to the ObjectSize100m field.
-func (o *Results) SetObjectSize100m(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetObjectSize100m(v int32) {
 	o.ObjectSize100m = &v
 }
 
 // GetObjectSize1g returns the ObjectSize1g field value if set, zero value otherwise.
-func (o *Results) GetObjectSize1g() int32 {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize1g() int32 {
 	if o == nil || o.ObjectSize1g == nil {
 		var ret int32
 		return ret
@@ -4304,7 +4306,7 @@ func (o *Results) GetObjectSize1g() int32 {
 
 // GetObjectSize1gOk returns a tuple with the ObjectSize1g field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetObjectSize1gOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetObjectSize1gOk() (*int32, bool) {
 	if o == nil || o.ObjectSize1g == nil {
 		return nil, false
 	}
@@ -4312,7 +4314,7 @@ func (o *Results) GetObjectSize1gOk() (*int32, bool) {
 }
 
 // HasObjectSize1g returns a boolean if a field has been set.
-func (o *Results) HasObjectSize1g() bool {
+func (o *HistoricalFieldResultsAttributes) HasObjectSize1g() bool {
 	if o != nil && o.ObjectSize1g != nil {
 		return true
 	}
@@ -4321,12 +4323,12 @@ func (o *Results) HasObjectSize1g() bool {
 }
 
 // SetObjectSize1g gets a reference to the given int32 and assigns it to the ObjectSize1g field.
-func (o *Results) SetObjectSize1g(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetObjectSize1g(v int32) {
 	o.ObjectSize1g = &v
 }
 
 // GetRecvSubTime returns the RecvSubTime field value if set, zero value otherwise.
-func (o *Results) GetRecvSubTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetRecvSubTime() float32 {
 	if o == nil || o.RecvSubTime == nil {
 		var ret float32
 		return ret
@@ -4336,7 +4338,7 @@ func (o *Results) GetRecvSubTime() float32 {
 
 // GetRecvSubTimeOk returns a tuple with the RecvSubTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetRecvSubTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetRecvSubTimeOk() (*float32, bool) {
 	if o == nil || o.RecvSubTime == nil {
 		return nil, false
 	}
@@ -4344,7 +4346,7 @@ func (o *Results) GetRecvSubTimeOk() (*float32, bool) {
 }
 
 // HasRecvSubTime returns a boolean if a field has been set.
-func (o *Results) HasRecvSubTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasRecvSubTime() bool {
 	if o != nil && o.RecvSubTime != nil {
 		return true
 	}
@@ -4353,12 +4355,12 @@ func (o *Results) HasRecvSubTime() bool {
 }
 
 // SetRecvSubTime gets a reference to the given float32 and assigns it to the RecvSubTime field.
-func (o *Results) SetRecvSubTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetRecvSubTime(v float32) {
 	o.RecvSubTime = &v
 }
 
 // GetRecvSubCount returns the RecvSubCount field value if set, zero value otherwise.
-func (o *Results) GetRecvSubCount() int32 {
+func (o *HistoricalFieldResultsAttributes) GetRecvSubCount() int32 {
 	if o == nil || o.RecvSubCount == nil {
 		var ret int32
 		return ret
@@ -4368,7 +4370,7 @@ func (o *Results) GetRecvSubCount() int32 {
 
 // GetRecvSubCountOk returns a tuple with the RecvSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetRecvSubCountOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetRecvSubCountOk() (*int32, bool) {
 	if o == nil || o.RecvSubCount == nil {
 		return nil, false
 	}
@@ -4376,7 +4378,7 @@ func (o *Results) GetRecvSubCountOk() (*int32, bool) {
 }
 
 // HasRecvSubCount returns a boolean if a field has been set.
-func (o *Results) HasRecvSubCount() bool {
+func (o *HistoricalFieldResultsAttributes) HasRecvSubCount() bool {
 	if o != nil && o.RecvSubCount != nil {
 		return true
 	}
@@ -4385,12 +4387,12 @@ func (o *Results) HasRecvSubCount() bool {
 }
 
 // SetRecvSubCount gets a reference to the given int32 and assigns it to the RecvSubCount field.
-func (o *Results) SetRecvSubCount(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetRecvSubCount(v int32) {
 	o.RecvSubCount = &v
 }
 
 // GetHashSubTime returns the HashSubTime field value if set, zero value otherwise.
-func (o *Results) GetHashSubTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetHashSubTime() float32 {
 	if o == nil || o.HashSubTime == nil {
 		var ret float32
 		return ret
@@ -4400,7 +4402,7 @@ func (o *Results) GetHashSubTime() float32 {
 
 // GetHashSubTimeOk returns a tuple with the HashSubTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetHashSubTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetHashSubTimeOk() (*float32, bool) {
 	if o == nil || o.HashSubTime == nil {
 		return nil, false
 	}
@@ -4408,7 +4410,7 @@ func (o *Results) GetHashSubTimeOk() (*float32, bool) {
 }
 
 // HasHashSubTime returns a boolean if a field has been set.
-func (o *Results) HasHashSubTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasHashSubTime() bool {
 	if o != nil && o.HashSubTime != nil {
 		return true
 	}
@@ -4417,12 +4419,12 @@ func (o *Results) HasHashSubTime() bool {
 }
 
 // SetHashSubTime gets a reference to the given float32 and assigns it to the HashSubTime field.
-func (o *Results) SetHashSubTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetHashSubTime(v float32) {
 	o.HashSubTime = &v
 }
 
 // GetHashSubCount returns the HashSubCount field value if set, zero value otherwise.
-func (o *Results) GetHashSubCount() int32 {
+func (o *HistoricalFieldResultsAttributes) GetHashSubCount() int32 {
 	if o == nil || o.HashSubCount == nil {
 		var ret int32
 		return ret
@@ -4432,7 +4434,7 @@ func (o *Results) GetHashSubCount() int32 {
 
 // GetHashSubCountOk returns a tuple with the HashSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetHashSubCountOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetHashSubCountOk() (*int32, bool) {
 	if o == nil || o.HashSubCount == nil {
 		return nil, false
 	}
@@ -4440,7 +4442,7 @@ func (o *Results) GetHashSubCountOk() (*int32, bool) {
 }
 
 // HasHashSubCount returns a boolean if a field has been set.
-func (o *Results) HasHashSubCount() bool {
+func (o *HistoricalFieldResultsAttributes) HasHashSubCount() bool {
 	if o != nil && o.HashSubCount != nil {
 		return true
 	}
@@ -4449,12 +4451,12 @@ func (o *Results) HasHashSubCount() bool {
 }
 
 // SetHashSubCount gets a reference to the given int32 and assigns it to the HashSubCount field.
-func (o *Results) SetHashSubCount(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetHashSubCount(v int32) {
 	o.HashSubCount = &v
 }
 
 // GetMissSubTime returns the MissSubTime field value if set, zero value otherwise.
-func (o *Results) GetMissSubTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetMissSubTime() float32 {
 	if o == nil || o.MissSubTime == nil {
 		var ret float32
 		return ret
@@ -4464,7 +4466,7 @@ func (o *Results) GetMissSubTime() float32 {
 
 // GetMissSubTimeOk returns a tuple with the MissSubTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetMissSubTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetMissSubTimeOk() (*float32, bool) {
 	if o == nil || o.MissSubTime == nil {
 		return nil, false
 	}
@@ -4472,7 +4474,7 @@ func (o *Results) GetMissSubTimeOk() (*float32, bool) {
 }
 
 // HasMissSubTime returns a boolean if a field has been set.
-func (o *Results) HasMissSubTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasMissSubTime() bool {
 	if o != nil && o.MissSubTime != nil {
 		return true
 	}
@@ -4481,12 +4483,12 @@ func (o *Results) HasMissSubTime() bool {
 }
 
 // SetMissSubTime gets a reference to the given float32 and assigns it to the MissSubTime field.
-func (o *Results) SetMissSubTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetMissSubTime(v float32) {
 	o.MissSubTime = &v
 }
 
 // GetMissSubCount returns the MissSubCount field value if set, zero value otherwise.
-func (o *Results) GetMissSubCount() int32 {
+func (o *HistoricalFieldResultsAttributes) GetMissSubCount() int32 {
 	if o == nil || o.MissSubCount == nil {
 		var ret int32
 		return ret
@@ -4496,7 +4498,7 @@ func (o *Results) GetMissSubCount() int32 {
 
 // GetMissSubCountOk returns a tuple with the MissSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetMissSubCountOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetMissSubCountOk() (*int32, bool) {
 	if o == nil || o.MissSubCount == nil {
 		return nil, false
 	}
@@ -4504,7 +4506,7 @@ func (o *Results) GetMissSubCountOk() (*int32, bool) {
 }
 
 // HasMissSubCount returns a boolean if a field has been set.
-func (o *Results) HasMissSubCount() bool {
+func (o *HistoricalFieldResultsAttributes) HasMissSubCount() bool {
 	if o != nil && o.MissSubCount != nil {
 		return true
 	}
@@ -4513,12 +4515,12 @@ func (o *Results) HasMissSubCount() bool {
 }
 
 // SetMissSubCount gets a reference to the given int32 and assigns it to the MissSubCount field.
-func (o *Results) SetMissSubCount(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetMissSubCount(v int32) {
 	o.MissSubCount = &v
 }
 
 // GetFetchSubTime returns the FetchSubTime field value if set, zero value otherwise.
-func (o *Results) GetFetchSubTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetFetchSubTime() float32 {
 	if o == nil || o.FetchSubTime == nil {
 		var ret float32
 		return ret
@@ -4528,7 +4530,7 @@ func (o *Results) GetFetchSubTime() float32 {
 
 // GetFetchSubTimeOk returns a tuple with the FetchSubTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetFetchSubTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetFetchSubTimeOk() (*float32, bool) {
 	if o == nil || o.FetchSubTime == nil {
 		return nil, false
 	}
@@ -4536,7 +4538,7 @@ func (o *Results) GetFetchSubTimeOk() (*float32, bool) {
 }
 
 // HasFetchSubTime returns a boolean if a field has been set.
-func (o *Results) HasFetchSubTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasFetchSubTime() bool {
 	if o != nil && o.FetchSubTime != nil {
 		return true
 	}
@@ -4545,12 +4547,12 @@ func (o *Results) HasFetchSubTime() bool {
 }
 
 // SetFetchSubTime gets a reference to the given float32 and assigns it to the FetchSubTime field.
-func (o *Results) SetFetchSubTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetFetchSubTime(v float32) {
 	o.FetchSubTime = &v
 }
 
 // GetFetchSubCount returns the FetchSubCount field value if set, zero value otherwise.
-func (o *Results) GetFetchSubCount() int32 {
+func (o *HistoricalFieldResultsAttributes) GetFetchSubCount() int32 {
 	if o == nil || o.FetchSubCount == nil {
 		var ret int32
 		return ret
@@ -4560,7 +4562,7 @@ func (o *Results) GetFetchSubCount() int32 {
 
 // GetFetchSubCountOk returns a tuple with the FetchSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetFetchSubCountOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetFetchSubCountOk() (*int32, bool) {
 	if o == nil || o.FetchSubCount == nil {
 		return nil, false
 	}
@@ -4568,7 +4570,7 @@ func (o *Results) GetFetchSubCountOk() (*int32, bool) {
 }
 
 // HasFetchSubCount returns a boolean if a field has been set.
-func (o *Results) HasFetchSubCount() bool {
+func (o *HistoricalFieldResultsAttributes) HasFetchSubCount() bool {
 	if o != nil && o.FetchSubCount != nil {
 		return true
 	}
@@ -4577,12 +4579,12 @@ func (o *Results) HasFetchSubCount() bool {
 }
 
 // SetFetchSubCount gets a reference to the given int32 and assigns it to the FetchSubCount field.
-func (o *Results) SetFetchSubCount(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetFetchSubCount(v int32) {
 	o.FetchSubCount = &v
 }
 
 // GetPassSubTime returns the PassSubTime field value if set, zero value otherwise.
-func (o *Results) GetPassSubTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetPassSubTime() float32 {
 	if o == nil || o.PassSubTime == nil {
 		var ret float32
 		return ret
@@ -4592,7 +4594,7 @@ func (o *Results) GetPassSubTime() float32 {
 
 // GetPassSubTimeOk returns a tuple with the PassSubTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetPassSubTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetPassSubTimeOk() (*float32, bool) {
 	if o == nil || o.PassSubTime == nil {
 		return nil, false
 	}
@@ -4600,7 +4602,7 @@ func (o *Results) GetPassSubTimeOk() (*float32, bool) {
 }
 
 // HasPassSubTime returns a boolean if a field has been set.
-func (o *Results) HasPassSubTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasPassSubTime() bool {
 	if o != nil && o.PassSubTime != nil {
 		return true
 	}
@@ -4609,12 +4611,12 @@ func (o *Results) HasPassSubTime() bool {
 }
 
 // SetPassSubTime gets a reference to the given float32 and assigns it to the PassSubTime field.
-func (o *Results) SetPassSubTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetPassSubTime(v float32) {
 	o.PassSubTime = &v
 }
 
 // GetPassSubCount returns the PassSubCount field value if set, zero value otherwise.
-func (o *Results) GetPassSubCount() int32 {
+func (o *HistoricalFieldResultsAttributes) GetPassSubCount() int32 {
 	if o == nil || o.PassSubCount == nil {
 		var ret int32
 		return ret
@@ -4624,7 +4626,7 @@ func (o *Results) GetPassSubCount() int32 {
 
 // GetPassSubCountOk returns a tuple with the PassSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetPassSubCountOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetPassSubCountOk() (*int32, bool) {
 	if o == nil || o.PassSubCount == nil {
 		return nil, false
 	}
@@ -4632,7 +4634,7 @@ func (o *Results) GetPassSubCountOk() (*int32, bool) {
 }
 
 // HasPassSubCount returns a boolean if a field has been set.
-func (o *Results) HasPassSubCount() bool {
+func (o *HistoricalFieldResultsAttributes) HasPassSubCount() bool {
 	if o != nil && o.PassSubCount != nil {
 		return true
 	}
@@ -4641,12 +4643,12 @@ func (o *Results) HasPassSubCount() bool {
 }
 
 // SetPassSubCount gets a reference to the given int32 and assigns it to the PassSubCount field.
-func (o *Results) SetPassSubCount(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetPassSubCount(v int32) {
 	o.PassSubCount = &v
 }
 
 // GetPipeSubTime returns the PipeSubTime field value if set, zero value otherwise.
-func (o *Results) GetPipeSubTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetPipeSubTime() float32 {
 	if o == nil || o.PipeSubTime == nil {
 		var ret float32
 		return ret
@@ -4656,7 +4658,7 @@ func (o *Results) GetPipeSubTime() float32 {
 
 // GetPipeSubTimeOk returns a tuple with the PipeSubTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetPipeSubTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetPipeSubTimeOk() (*float32, bool) {
 	if o == nil || o.PipeSubTime == nil {
 		return nil, false
 	}
@@ -4664,7 +4666,7 @@ func (o *Results) GetPipeSubTimeOk() (*float32, bool) {
 }
 
 // HasPipeSubTime returns a boolean if a field has been set.
-func (o *Results) HasPipeSubTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasPipeSubTime() bool {
 	if o != nil && o.PipeSubTime != nil {
 		return true
 	}
@@ -4673,12 +4675,12 @@ func (o *Results) HasPipeSubTime() bool {
 }
 
 // SetPipeSubTime gets a reference to the given float32 and assigns it to the PipeSubTime field.
-func (o *Results) SetPipeSubTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetPipeSubTime(v float32) {
 	o.PipeSubTime = &v
 }
 
 // GetPipeSubCount returns the PipeSubCount field value if set, zero value otherwise.
-func (o *Results) GetPipeSubCount() int32 {
+func (o *HistoricalFieldResultsAttributes) GetPipeSubCount() int32 {
 	if o == nil || o.PipeSubCount == nil {
 		var ret int32
 		return ret
@@ -4688,7 +4690,7 @@ func (o *Results) GetPipeSubCount() int32 {
 
 // GetPipeSubCountOk returns a tuple with the PipeSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetPipeSubCountOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetPipeSubCountOk() (*int32, bool) {
 	if o == nil || o.PipeSubCount == nil {
 		return nil, false
 	}
@@ -4696,7 +4698,7 @@ func (o *Results) GetPipeSubCountOk() (*int32, bool) {
 }
 
 // HasPipeSubCount returns a boolean if a field has been set.
-func (o *Results) HasPipeSubCount() bool {
+func (o *HistoricalFieldResultsAttributes) HasPipeSubCount() bool {
 	if o != nil && o.PipeSubCount != nil {
 		return true
 	}
@@ -4705,12 +4707,12 @@ func (o *Results) HasPipeSubCount() bool {
 }
 
 // SetPipeSubCount gets a reference to the given int32 and assigns it to the PipeSubCount field.
-func (o *Results) SetPipeSubCount(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetPipeSubCount(v int32) {
 	o.PipeSubCount = &v
 }
 
 // GetDeliverSubTime returns the DeliverSubTime field value if set, zero value otherwise.
-func (o *Results) GetDeliverSubTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetDeliverSubTime() float32 {
 	if o == nil || o.DeliverSubTime == nil {
 		var ret float32
 		return ret
@@ -4720,7 +4722,7 @@ func (o *Results) GetDeliverSubTime() float32 {
 
 // GetDeliverSubTimeOk returns a tuple with the DeliverSubTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetDeliverSubTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetDeliverSubTimeOk() (*float32, bool) {
 	if o == nil || o.DeliverSubTime == nil {
 		return nil, false
 	}
@@ -4728,7 +4730,7 @@ func (o *Results) GetDeliverSubTimeOk() (*float32, bool) {
 }
 
 // HasDeliverSubTime returns a boolean if a field has been set.
-func (o *Results) HasDeliverSubTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasDeliverSubTime() bool {
 	if o != nil && o.DeliverSubTime != nil {
 		return true
 	}
@@ -4737,12 +4739,12 @@ func (o *Results) HasDeliverSubTime() bool {
 }
 
 // SetDeliverSubTime gets a reference to the given float32 and assigns it to the DeliverSubTime field.
-func (o *Results) SetDeliverSubTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetDeliverSubTime(v float32) {
 	o.DeliverSubTime = &v
 }
 
 // GetDeliverSubCount returns the DeliverSubCount field value if set, zero value otherwise.
-func (o *Results) GetDeliverSubCount() int32 {
+func (o *HistoricalFieldResultsAttributes) GetDeliverSubCount() int32 {
 	if o == nil || o.DeliverSubCount == nil {
 		var ret int32
 		return ret
@@ -4752,7 +4754,7 @@ func (o *Results) GetDeliverSubCount() int32 {
 
 // GetDeliverSubCountOk returns a tuple with the DeliverSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetDeliverSubCountOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetDeliverSubCountOk() (*int32, bool) {
 	if o == nil || o.DeliverSubCount == nil {
 		return nil, false
 	}
@@ -4760,7 +4762,7 @@ func (o *Results) GetDeliverSubCountOk() (*int32, bool) {
 }
 
 // HasDeliverSubCount returns a boolean if a field has been set.
-func (o *Results) HasDeliverSubCount() bool {
+func (o *HistoricalFieldResultsAttributes) HasDeliverSubCount() bool {
 	if o != nil && o.DeliverSubCount != nil {
 		return true
 	}
@@ -4769,12 +4771,12 @@ func (o *Results) HasDeliverSubCount() bool {
 }
 
 // SetDeliverSubCount gets a reference to the given int32 and assigns it to the DeliverSubCount field.
-func (o *Results) SetDeliverSubCount(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetDeliverSubCount(v int32) {
 	o.DeliverSubCount = &v
 }
 
 // GetErrorSubTime returns the ErrorSubTime field value if set, zero value otherwise.
-func (o *Results) GetErrorSubTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetErrorSubTime() float32 {
 	if o == nil || o.ErrorSubTime == nil {
 		var ret float32
 		return ret
@@ -4784,7 +4786,7 @@ func (o *Results) GetErrorSubTime() float32 {
 
 // GetErrorSubTimeOk returns a tuple with the ErrorSubTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetErrorSubTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetErrorSubTimeOk() (*float32, bool) {
 	if o == nil || o.ErrorSubTime == nil {
 		return nil, false
 	}
@@ -4792,7 +4794,7 @@ func (o *Results) GetErrorSubTimeOk() (*float32, bool) {
 }
 
 // HasErrorSubTime returns a boolean if a field has been set.
-func (o *Results) HasErrorSubTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasErrorSubTime() bool {
 	if o != nil && o.ErrorSubTime != nil {
 		return true
 	}
@@ -4801,12 +4803,12 @@ func (o *Results) HasErrorSubTime() bool {
 }
 
 // SetErrorSubTime gets a reference to the given float32 and assigns it to the ErrorSubTime field.
-func (o *Results) SetErrorSubTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetErrorSubTime(v float32) {
 	o.ErrorSubTime = &v
 }
 
 // GetErrorSubCount returns the ErrorSubCount field value if set, zero value otherwise.
-func (o *Results) GetErrorSubCount() int32 {
+func (o *HistoricalFieldResultsAttributes) GetErrorSubCount() int32 {
 	if o == nil || o.ErrorSubCount == nil {
 		var ret int32
 		return ret
@@ -4816,7 +4818,7 @@ func (o *Results) GetErrorSubCount() int32 {
 
 // GetErrorSubCountOk returns a tuple with the ErrorSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetErrorSubCountOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetErrorSubCountOk() (*int32, bool) {
 	if o == nil || o.ErrorSubCount == nil {
 		return nil, false
 	}
@@ -4824,7 +4826,7 @@ func (o *Results) GetErrorSubCountOk() (*int32, bool) {
 }
 
 // HasErrorSubCount returns a boolean if a field has been set.
-func (o *Results) HasErrorSubCount() bool {
+func (o *HistoricalFieldResultsAttributes) HasErrorSubCount() bool {
 	if o != nil && o.ErrorSubCount != nil {
 		return true
 	}
@@ -4833,12 +4835,12 @@ func (o *Results) HasErrorSubCount() bool {
 }
 
 // SetErrorSubCount gets a reference to the given int32 and assigns it to the ErrorSubCount field.
-func (o *Results) SetErrorSubCount(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetErrorSubCount(v int32) {
 	o.ErrorSubCount = &v
 }
 
 // GetHitSubTime returns the HitSubTime field value if set, zero value otherwise.
-func (o *Results) GetHitSubTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetHitSubTime() float32 {
 	if o == nil || o.HitSubTime == nil {
 		var ret float32
 		return ret
@@ -4848,7 +4850,7 @@ func (o *Results) GetHitSubTime() float32 {
 
 // GetHitSubTimeOk returns a tuple with the HitSubTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetHitSubTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetHitSubTimeOk() (*float32, bool) {
 	if o == nil || o.HitSubTime == nil {
 		return nil, false
 	}
@@ -4856,7 +4858,7 @@ func (o *Results) GetHitSubTimeOk() (*float32, bool) {
 }
 
 // HasHitSubTime returns a boolean if a field has been set.
-func (o *Results) HasHitSubTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasHitSubTime() bool {
 	if o != nil && o.HitSubTime != nil {
 		return true
 	}
@@ -4865,12 +4867,12 @@ func (o *Results) HasHitSubTime() bool {
 }
 
 // SetHitSubTime gets a reference to the given float32 and assigns it to the HitSubTime field.
-func (o *Results) SetHitSubTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetHitSubTime(v float32) {
 	o.HitSubTime = &v
 }
 
 // GetHitSubCount returns the HitSubCount field value if set, zero value otherwise.
-func (o *Results) GetHitSubCount() int32 {
+func (o *HistoricalFieldResultsAttributes) GetHitSubCount() int32 {
 	if o == nil || o.HitSubCount == nil {
 		var ret int32
 		return ret
@@ -4880,7 +4882,7 @@ func (o *Results) GetHitSubCount() int32 {
 
 // GetHitSubCountOk returns a tuple with the HitSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetHitSubCountOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetHitSubCountOk() (*int32, bool) {
 	if o == nil || o.HitSubCount == nil {
 		return nil, false
 	}
@@ -4888,7 +4890,7 @@ func (o *Results) GetHitSubCountOk() (*int32, bool) {
 }
 
 // HasHitSubCount returns a boolean if a field has been set.
-func (o *Results) HasHitSubCount() bool {
+func (o *HistoricalFieldResultsAttributes) HasHitSubCount() bool {
 	if o != nil && o.HitSubCount != nil {
 		return true
 	}
@@ -4897,12 +4899,12 @@ func (o *Results) HasHitSubCount() bool {
 }
 
 // SetHitSubCount gets a reference to the given int32 and assigns it to the HitSubCount field.
-func (o *Results) SetHitSubCount(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetHitSubCount(v int32) {
 	o.HitSubCount = &v
 }
 
 // GetPrehashSubTime returns the PrehashSubTime field value if set, zero value otherwise.
-func (o *Results) GetPrehashSubTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetPrehashSubTime() float32 {
 	if o == nil || o.PrehashSubTime == nil {
 		var ret float32
 		return ret
@@ -4912,7 +4914,7 @@ func (o *Results) GetPrehashSubTime() float32 {
 
 // GetPrehashSubTimeOk returns a tuple with the PrehashSubTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetPrehashSubTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetPrehashSubTimeOk() (*float32, bool) {
 	if o == nil || o.PrehashSubTime == nil {
 		return nil, false
 	}
@@ -4920,7 +4922,7 @@ func (o *Results) GetPrehashSubTimeOk() (*float32, bool) {
 }
 
 // HasPrehashSubTime returns a boolean if a field has been set.
-func (o *Results) HasPrehashSubTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasPrehashSubTime() bool {
 	if o != nil && o.PrehashSubTime != nil {
 		return true
 	}
@@ -4929,12 +4931,12 @@ func (o *Results) HasPrehashSubTime() bool {
 }
 
 // SetPrehashSubTime gets a reference to the given float32 and assigns it to the PrehashSubTime field.
-func (o *Results) SetPrehashSubTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetPrehashSubTime(v float32) {
 	o.PrehashSubTime = &v
 }
 
 // GetPrehashSubCount returns the PrehashSubCount field value if set, zero value otherwise.
-func (o *Results) GetPrehashSubCount() int32 {
+func (o *HistoricalFieldResultsAttributes) GetPrehashSubCount() int32 {
 	if o == nil || o.PrehashSubCount == nil {
 		var ret int32
 		return ret
@@ -4944,7 +4946,7 @@ func (o *Results) GetPrehashSubCount() int32 {
 
 // GetPrehashSubCountOk returns a tuple with the PrehashSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetPrehashSubCountOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetPrehashSubCountOk() (*int32, bool) {
 	if o == nil || o.PrehashSubCount == nil {
 		return nil, false
 	}
@@ -4952,7 +4954,7 @@ func (o *Results) GetPrehashSubCountOk() (*int32, bool) {
 }
 
 // HasPrehashSubCount returns a boolean if a field has been set.
-func (o *Results) HasPrehashSubCount() bool {
+func (o *HistoricalFieldResultsAttributes) HasPrehashSubCount() bool {
 	if o != nil && o.PrehashSubCount != nil {
 		return true
 	}
@@ -4961,12 +4963,12 @@ func (o *Results) HasPrehashSubCount() bool {
 }
 
 // SetPrehashSubCount gets a reference to the given int32 and assigns it to the PrehashSubCount field.
-func (o *Results) SetPrehashSubCount(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetPrehashSubCount(v int32) {
 	o.PrehashSubCount = &v
 }
 
 // GetPredeliverSubTime returns the PredeliverSubTime field value if set, zero value otherwise.
-func (o *Results) GetPredeliverSubTime() float32 {
+func (o *HistoricalFieldResultsAttributes) GetPredeliverSubTime() float32 {
 	if o == nil || o.PredeliverSubTime == nil {
 		var ret float32
 		return ret
@@ -4976,7 +4978,7 @@ func (o *Results) GetPredeliverSubTime() float32 {
 
 // GetPredeliverSubTimeOk returns a tuple with the PredeliverSubTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetPredeliverSubTimeOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetPredeliverSubTimeOk() (*float32, bool) {
 	if o == nil || o.PredeliverSubTime == nil {
 		return nil, false
 	}
@@ -4984,7 +4986,7 @@ func (o *Results) GetPredeliverSubTimeOk() (*float32, bool) {
 }
 
 // HasPredeliverSubTime returns a boolean if a field has been set.
-func (o *Results) HasPredeliverSubTime() bool {
+func (o *HistoricalFieldResultsAttributes) HasPredeliverSubTime() bool {
 	if o != nil && o.PredeliverSubTime != nil {
 		return true
 	}
@@ -4993,12 +4995,12 @@ func (o *Results) HasPredeliverSubTime() bool {
 }
 
 // SetPredeliverSubTime gets a reference to the given float32 and assigns it to the PredeliverSubTime field.
-func (o *Results) SetPredeliverSubTime(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetPredeliverSubTime(v float32) {
 	o.PredeliverSubTime = &v
 }
 
 // GetPredeliverSubCount returns the PredeliverSubCount field value if set, zero value otherwise.
-func (o *Results) GetPredeliverSubCount() int32 {
+func (o *HistoricalFieldResultsAttributes) GetPredeliverSubCount() int32 {
 	if o == nil || o.PredeliverSubCount == nil {
 		var ret int32
 		return ret
@@ -5008,7 +5010,7 @@ func (o *Results) GetPredeliverSubCount() int32 {
 
 // GetPredeliverSubCountOk returns a tuple with the PredeliverSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetPredeliverSubCountOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetPredeliverSubCountOk() (*int32, bool) {
 	if o == nil || o.PredeliverSubCount == nil {
 		return nil, false
 	}
@@ -5016,7 +5018,7 @@ func (o *Results) GetPredeliverSubCountOk() (*int32, bool) {
 }
 
 // HasPredeliverSubCount returns a boolean if a field has been set.
-func (o *Results) HasPredeliverSubCount() bool {
+func (o *HistoricalFieldResultsAttributes) HasPredeliverSubCount() bool {
 	if o != nil && o.PredeliverSubCount != nil {
 		return true
 	}
@@ -5025,12 +5027,12 @@ func (o *Results) HasPredeliverSubCount() bool {
 }
 
 // SetPredeliverSubCount gets a reference to the given int32 and assigns it to the PredeliverSubCount field.
-func (o *Results) SetPredeliverSubCount(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetPredeliverSubCount(v int32) {
 	o.PredeliverSubCount = &v
 }
 
 // GetTLSHandshakeSentBytes returns the TLSHandshakeSentBytes field value if set, zero value otherwise.
-func (o *Results) GetTLSHandshakeSentBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetTLSHandshakeSentBytes() int32 {
 	if o == nil || o.TLSHandshakeSentBytes == nil {
 		var ret int32
 		return ret
@@ -5040,7 +5042,7 @@ func (o *Results) GetTLSHandshakeSentBytes() int32 {
 
 // GetTLSHandshakeSentBytesOk returns a tuple with the TLSHandshakeSentBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetTLSHandshakeSentBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetTLSHandshakeSentBytesOk() (*int32, bool) {
 	if o == nil || o.TLSHandshakeSentBytes == nil {
 		return nil, false
 	}
@@ -5048,7 +5050,7 @@ func (o *Results) GetTLSHandshakeSentBytesOk() (*int32, bool) {
 }
 
 // HasTLSHandshakeSentBytes returns a boolean if a field has been set.
-func (o *Results) HasTLSHandshakeSentBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasTLSHandshakeSentBytes() bool {
 	if o != nil && o.TLSHandshakeSentBytes != nil {
 		return true
 	}
@@ -5057,12 +5059,12 @@ func (o *Results) HasTLSHandshakeSentBytes() bool {
 }
 
 // SetTLSHandshakeSentBytes gets a reference to the given int32 and assigns it to the TLSHandshakeSentBytes field.
-func (o *Results) SetTLSHandshakeSentBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetTLSHandshakeSentBytes(v int32) {
 	o.TLSHandshakeSentBytes = &v
 }
 
 // GetHitRespBodyBytes returns the HitRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetHitRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetHitRespBodyBytes() int32 {
 	if o == nil || o.HitRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -5072,7 +5074,7 @@ func (o *Results) GetHitRespBodyBytes() int32 {
 
 // GetHitRespBodyBytesOk returns a tuple with the HitRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetHitRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetHitRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.HitRespBodyBytes == nil {
 		return nil, false
 	}
@@ -5080,7 +5082,7 @@ func (o *Results) GetHitRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasHitRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasHitRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasHitRespBodyBytes() bool {
 	if o != nil && o.HitRespBodyBytes != nil {
 		return true
 	}
@@ -5089,12 +5091,12 @@ func (o *Results) HasHitRespBodyBytes() bool {
 }
 
 // SetHitRespBodyBytes gets a reference to the given int32 and assigns it to the HitRespBodyBytes field.
-func (o *Results) SetHitRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetHitRespBodyBytes(v int32) {
 	o.HitRespBodyBytes = &v
 }
 
 // GetMissRespBodyBytes returns the MissRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetMissRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetMissRespBodyBytes() int32 {
 	if o == nil || o.MissRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -5104,7 +5106,7 @@ func (o *Results) GetMissRespBodyBytes() int32 {
 
 // GetMissRespBodyBytesOk returns a tuple with the MissRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetMissRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetMissRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.MissRespBodyBytes == nil {
 		return nil, false
 	}
@@ -5112,7 +5114,7 @@ func (o *Results) GetMissRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasMissRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasMissRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasMissRespBodyBytes() bool {
 	if o != nil && o.MissRespBodyBytes != nil {
 		return true
 	}
@@ -5121,12 +5123,12 @@ func (o *Results) HasMissRespBodyBytes() bool {
 }
 
 // SetMissRespBodyBytes gets a reference to the given int32 and assigns it to the MissRespBodyBytes field.
-func (o *Results) SetMissRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetMissRespBodyBytes(v int32) {
 	o.MissRespBodyBytes = &v
 }
 
 // GetPassRespBodyBytes returns the PassRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetPassRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetPassRespBodyBytes() int32 {
 	if o == nil || o.PassRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -5136,7 +5138,7 @@ func (o *Results) GetPassRespBodyBytes() int32 {
 
 // GetPassRespBodyBytesOk returns a tuple with the PassRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetPassRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetPassRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.PassRespBodyBytes == nil {
 		return nil, false
 	}
@@ -5144,7 +5146,7 @@ func (o *Results) GetPassRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasPassRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasPassRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasPassRespBodyBytes() bool {
 	if o != nil && o.PassRespBodyBytes != nil {
 		return true
 	}
@@ -5153,12 +5155,12 @@ func (o *Results) HasPassRespBodyBytes() bool {
 }
 
 // SetPassRespBodyBytes gets a reference to the given int32 and assigns it to the PassRespBodyBytes field.
-func (o *Results) SetPassRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetPassRespBodyBytes(v int32) {
 	o.PassRespBodyBytes = &v
 }
 
 // GetSegblockOriginFetches returns the SegblockOriginFetches field value if set, zero value otherwise.
-func (o *Results) GetSegblockOriginFetches() int32 {
+func (o *HistoricalFieldResultsAttributes) GetSegblockOriginFetches() int32 {
 	if o == nil || o.SegblockOriginFetches == nil {
 		var ret int32
 		return ret
@@ -5168,7 +5170,7 @@ func (o *Results) GetSegblockOriginFetches() int32 {
 
 // GetSegblockOriginFetchesOk returns a tuple with the SegblockOriginFetches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetSegblockOriginFetchesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetSegblockOriginFetchesOk() (*int32, bool) {
 	if o == nil || o.SegblockOriginFetches == nil {
 		return nil, false
 	}
@@ -5176,7 +5178,7 @@ func (o *Results) GetSegblockOriginFetchesOk() (*int32, bool) {
 }
 
 // HasSegblockOriginFetches returns a boolean if a field has been set.
-func (o *Results) HasSegblockOriginFetches() bool {
+func (o *HistoricalFieldResultsAttributes) HasSegblockOriginFetches() bool {
 	if o != nil && o.SegblockOriginFetches != nil {
 		return true
 	}
@@ -5185,12 +5187,12 @@ func (o *Results) HasSegblockOriginFetches() bool {
 }
 
 // SetSegblockOriginFetches gets a reference to the given int32 and assigns it to the SegblockOriginFetches field.
-func (o *Results) SetSegblockOriginFetches(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetSegblockOriginFetches(v int32) {
 	o.SegblockOriginFetches = &v
 }
 
 // GetSegblockShieldFetches returns the SegblockShieldFetches field value if set, zero value otherwise.
-func (o *Results) GetSegblockShieldFetches() int32 {
+func (o *HistoricalFieldResultsAttributes) GetSegblockShieldFetches() int32 {
 	if o == nil || o.SegblockShieldFetches == nil {
 		var ret int32
 		return ret
@@ -5200,7 +5202,7 @@ func (o *Results) GetSegblockShieldFetches() int32 {
 
 // GetSegblockShieldFetchesOk returns a tuple with the SegblockShieldFetches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetSegblockShieldFetchesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetSegblockShieldFetchesOk() (*int32, bool) {
 	if o == nil || o.SegblockShieldFetches == nil {
 		return nil, false
 	}
@@ -5208,7 +5210,7 @@ func (o *Results) GetSegblockShieldFetchesOk() (*int32, bool) {
 }
 
 // HasSegblockShieldFetches returns a boolean if a field has been set.
-func (o *Results) HasSegblockShieldFetches() bool {
+func (o *HistoricalFieldResultsAttributes) HasSegblockShieldFetches() bool {
 	if o != nil && o.SegblockShieldFetches != nil {
 		return true
 	}
@@ -5217,12 +5219,12 @@ func (o *Results) HasSegblockShieldFetches() bool {
 }
 
 // SetSegblockShieldFetches gets a reference to the given int32 and assigns it to the SegblockShieldFetches field.
-func (o *Results) SetSegblockShieldFetches(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetSegblockShieldFetches(v int32) {
 	o.SegblockShieldFetches = &v
 }
 
 // GetComputeRequests returns the ComputeRequests field value if set, zero value otherwise.
-func (o *Results) GetComputeRequests() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeRequests() int32 {
 	if o == nil || o.ComputeRequests == nil {
 		var ret int32
 		return ret
@@ -5232,7 +5234,7 @@ func (o *Results) GetComputeRequests() int32 {
 
 // GetComputeRequestsOk returns a tuple with the ComputeRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeRequestsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeRequestsOk() (*int32, bool) {
 	if o == nil || o.ComputeRequests == nil {
 		return nil, false
 	}
@@ -5240,7 +5242,7 @@ func (o *Results) GetComputeRequestsOk() (*int32, bool) {
 }
 
 // HasComputeRequests returns a boolean if a field has been set.
-func (o *Results) HasComputeRequests() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeRequests() bool {
 	if o != nil && o.ComputeRequests != nil {
 		return true
 	}
@@ -5249,12 +5251,12 @@ func (o *Results) HasComputeRequests() bool {
 }
 
 // SetComputeRequests gets a reference to the given int32 and assigns it to the ComputeRequests field.
-func (o *Results) SetComputeRequests(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeRequests(v int32) {
 	o.ComputeRequests = &v
 }
 
 // GetComputeRequestTimeMs returns the ComputeRequestTimeMs field value if set, zero value otherwise.
-func (o *Results) GetComputeRequestTimeMs() float32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeRequestTimeMs() float32 {
 	if o == nil || o.ComputeRequestTimeMs == nil {
 		var ret float32
 		return ret
@@ -5264,7 +5266,7 @@ func (o *Results) GetComputeRequestTimeMs() float32 {
 
 // GetComputeRequestTimeMsOk returns a tuple with the ComputeRequestTimeMs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeRequestTimeMsOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeRequestTimeMsOk() (*float32, bool) {
 	if o == nil || o.ComputeRequestTimeMs == nil {
 		return nil, false
 	}
@@ -5272,7 +5274,7 @@ func (o *Results) GetComputeRequestTimeMsOk() (*float32, bool) {
 }
 
 // HasComputeRequestTimeMs returns a boolean if a field has been set.
-func (o *Results) HasComputeRequestTimeMs() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeRequestTimeMs() bool {
 	if o != nil && o.ComputeRequestTimeMs != nil {
 		return true
 	}
@@ -5281,12 +5283,12 @@ func (o *Results) HasComputeRequestTimeMs() bool {
 }
 
 // SetComputeRequestTimeMs gets a reference to the given float32 and assigns it to the ComputeRequestTimeMs field.
-func (o *Results) SetComputeRequestTimeMs(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeRequestTimeMs(v float32) {
 	o.ComputeRequestTimeMs = &v
 }
 
 // GetComputeRequestTimeBilledMs returns the ComputeRequestTimeBilledMs field value if set, zero value otherwise.
-func (o *Results) GetComputeRequestTimeBilledMs() float32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeRequestTimeBilledMs() float32 {
 	if o == nil || o.ComputeRequestTimeBilledMs == nil {
 		var ret float32
 		return ret
@@ -5296,7 +5298,7 @@ func (o *Results) GetComputeRequestTimeBilledMs() float32 {
 
 // GetComputeRequestTimeBilledMsOk returns a tuple with the ComputeRequestTimeBilledMs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeRequestTimeBilledMsOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeRequestTimeBilledMsOk() (*float32, bool) {
 	if o == nil || o.ComputeRequestTimeBilledMs == nil {
 		return nil, false
 	}
@@ -5304,7 +5306,7 @@ func (o *Results) GetComputeRequestTimeBilledMsOk() (*float32, bool) {
 }
 
 // HasComputeRequestTimeBilledMs returns a boolean if a field has been set.
-func (o *Results) HasComputeRequestTimeBilledMs() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeRequestTimeBilledMs() bool {
 	if o != nil && o.ComputeRequestTimeBilledMs != nil {
 		return true
 	}
@@ -5313,12 +5315,12 @@ func (o *Results) HasComputeRequestTimeBilledMs() bool {
 }
 
 // SetComputeRequestTimeBilledMs gets a reference to the given float32 and assigns it to the ComputeRequestTimeBilledMs field.
-func (o *Results) SetComputeRequestTimeBilledMs(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeRequestTimeBilledMs(v float32) {
 	o.ComputeRequestTimeBilledMs = &v
 }
 
 // GetComputeRAMUsed returns the ComputeRAMUsed field value if set, zero value otherwise.
-func (o *Results) GetComputeRAMUsed() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeRAMUsed() int32 {
 	if o == nil || o.ComputeRAMUsed == nil {
 		var ret int32
 		return ret
@@ -5328,7 +5330,7 @@ func (o *Results) GetComputeRAMUsed() int32 {
 
 // GetComputeRAMUsedOk returns a tuple with the ComputeRAMUsed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeRAMUsedOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeRAMUsedOk() (*int32, bool) {
 	if o == nil || o.ComputeRAMUsed == nil {
 		return nil, false
 	}
@@ -5336,7 +5338,7 @@ func (o *Results) GetComputeRAMUsedOk() (*int32, bool) {
 }
 
 // HasComputeRAMUsed returns a boolean if a field has been set.
-func (o *Results) HasComputeRAMUsed() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeRAMUsed() bool {
 	if o != nil && o.ComputeRAMUsed != nil {
 		return true
 	}
@@ -5345,12 +5347,12 @@ func (o *Results) HasComputeRAMUsed() bool {
 }
 
 // SetComputeRAMUsed gets a reference to the given int32 and assigns it to the ComputeRAMUsed field.
-func (o *Results) SetComputeRAMUsed(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeRAMUsed(v int32) {
 	o.ComputeRAMUsed = &v
 }
 
 // GetComputeExecutionTimeMs returns the ComputeExecutionTimeMs field value if set, zero value otherwise.
-func (o *Results) GetComputeExecutionTimeMs() float32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeExecutionTimeMs() float32 {
 	if o == nil || o.ComputeExecutionTimeMs == nil {
 		var ret float32
 		return ret
@@ -5360,7 +5362,7 @@ func (o *Results) GetComputeExecutionTimeMs() float32 {
 
 // GetComputeExecutionTimeMsOk returns a tuple with the ComputeExecutionTimeMs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeExecutionTimeMsOk() (*float32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeExecutionTimeMsOk() (*float32, bool) {
 	if o == nil || o.ComputeExecutionTimeMs == nil {
 		return nil, false
 	}
@@ -5368,7 +5370,7 @@ func (o *Results) GetComputeExecutionTimeMsOk() (*float32, bool) {
 }
 
 // HasComputeExecutionTimeMs returns a boolean if a field has been set.
-func (o *Results) HasComputeExecutionTimeMs() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeExecutionTimeMs() bool {
 	if o != nil && o.ComputeExecutionTimeMs != nil {
 		return true
 	}
@@ -5377,12 +5379,12 @@ func (o *Results) HasComputeExecutionTimeMs() bool {
 }
 
 // SetComputeExecutionTimeMs gets a reference to the given float32 and assigns it to the ComputeExecutionTimeMs field.
-func (o *Results) SetComputeExecutionTimeMs(v float32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeExecutionTimeMs(v float32) {
 	o.ComputeExecutionTimeMs = &v
 }
 
 // GetComputeReqHeaderBytes returns the ComputeReqHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetComputeReqHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeReqHeaderBytes() int32 {
 	if o == nil || o.ComputeReqHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -5392,7 +5394,7 @@ func (o *Results) GetComputeReqHeaderBytes() int32 {
 
 // GetComputeReqHeaderBytesOk returns a tuple with the ComputeReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeReqHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeReqHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ComputeReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -5400,7 +5402,7 @@ func (o *Results) GetComputeReqHeaderBytesOk() (*int32, bool) {
 }
 
 // HasComputeReqHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasComputeReqHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeReqHeaderBytes() bool {
 	if o != nil && o.ComputeReqHeaderBytes != nil {
 		return true
 	}
@@ -5409,12 +5411,12 @@ func (o *Results) HasComputeReqHeaderBytes() bool {
 }
 
 // SetComputeReqHeaderBytes gets a reference to the given int32 and assigns it to the ComputeReqHeaderBytes field.
-func (o *Results) SetComputeReqHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeReqHeaderBytes(v int32) {
 	o.ComputeReqHeaderBytes = &v
 }
 
 // GetComputeReqBodyBytes returns the ComputeReqBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetComputeReqBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeReqBodyBytes() int32 {
 	if o == nil || o.ComputeReqBodyBytes == nil {
 		var ret int32
 		return ret
@@ -5424,7 +5426,7 @@ func (o *Results) GetComputeReqBodyBytes() int32 {
 
 // GetComputeReqBodyBytesOk returns a tuple with the ComputeReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeReqBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeReqBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ComputeReqBodyBytes == nil {
 		return nil, false
 	}
@@ -5432,7 +5434,7 @@ func (o *Results) GetComputeReqBodyBytesOk() (*int32, bool) {
 }
 
 // HasComputeReqBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasComputeReqBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeReqBodyBytes() bool {
 	if o != nil && o.ComputeReqBodyBytes != nil {
 		return true
 	}
@@ -5441,12 +5443,12 @@ func (o *Results) HasComputeReqBodyBytes() bool {
 }
 
 // SetComputeReqBodyBytes gets a reference to the given int32 and assigns it to the ComputeReqBodyBytes field.
-func (o *Results) SetComputeReqBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeReqBodyBytes(v int32) {
 	o.ComputeReqBodyBytes = &v
 }
 
 // GetComputeRespHeaderBytes returns the ComputeRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetComputeRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespHeaderBytes() int32 {
 	if o == nil || o.ComputeRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -5456,7 +5458,7 @@ func (o *Results) GetComputeRespHeaderBytes() int32 {
 
 // GetComputeRespHeaderBytesOk returns a tuple with the ComputeRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ComputeRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -5464,7 +5466,7 @@ func (o *Results) GetComputeRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasComputeRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasComputeRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeRespHeaderBytes() bool {
 	if o != nil && o.ComputeRespHeaderBytes != nil {
 		return true
 	}
@@ -5473,12 +5475,12 @@ func (o *Results) HasComputeRespHeaderBytes() bool {
 }
 
 // SetComputeRespHeaderBytes gets a reference to the given int32 and assigns it to the ComputeRespHeaderBytes field.
-func (o *Results) SetComputeRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeRespHeaderBytes(v int32) {
 	o.ComputeRespHeaderBytes = &v
 }
 
 // GetComputeRespBodyBytes returns the ComputeRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetComputeRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespBodyBytes() int32 {
 	if o == nil || o.ComputeRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -5488,7 +5490,7 @@ func (o *Results) GetComputeRespBodyBytes() int32 {
 
 // GetComputeRespBodyBytesOk returns a tuple with the ComputeRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ComputeRespBodyBytes == nil {
 		return nil, false
 	}
@@ -5496,7 +5498,7 @@ func (o *Results) GetComputeRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasComputeRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasComputeRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeRespBodyBytes() bool {
 	if o != nil && o.ComputeRespBodyBytes != nil {
 		return true
 	}
@@ -5505,12 +5507,12 @@ func (o *Results) HasComputeRespBodyBytes() bool {
 }
 
 // SetComputeRespBodyBytes gets a reference to the given int32 and assigns it to the ComputeRespBodyBytes field.
-func (o *Results) SetComputeRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeRespBodyBytes(v int32) {
 	o.ComputeRespBodyBytes = &v
 }
 
 // GetComputeRespStatus1xx returns the ComputeRespStatus1xx field value if set, zero value otherwise.
-func (o *Results) GetComputeRespStatus1xx() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespStatus1xx() int32 {
 	if o == nil || o.ComputeRespStatus1xx == nil {
 		var ret int32
 		return ret
@@ -5520,7 +5522,7 @@ func (o *Results) GetComputeRespStatus1xx() int32 {
 
 // GetComputeRespStatus1xxOk returns a tuple with the ComputeRespStatus1xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeRespStatus1xxOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespStatus1xxOk() (*int32, bool) {
 	if o == nil || o.ComputeRespStatus1xx == nil {
 		return nil, false
 	}
@@ -5528,7 +5530,7 @@ func (o *Results) GetComputeRespStatus1xxOk() (*int32, bool) {
 }
 
 // HasComputeRespStatus1xx returns a boolean if a field has been set.
-func (o *Results) HasComputeRespStatus1xx() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeRespStatus1xx() bool {
 	if o != nil && o.ComputeRespStatus1xx != nil {
 		return true
 	}
@@ -5537,12 +5539,12 @@ func (o *Results) HasComputeRespStatus1xx() bool {
 }
 
 // SetComputeRespStatus1xx gets a reference to the given int32 and assigns it to the ComputeRespStatus1xx field.
-func (o *Results) SetComputeRespStatus1xx(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeRespStatus1xx(v int32) {
 	o.ComputeRespStatus1xx = &v
 }
 
 // GetComputeRespStatus2xx returns the ComputeRespStatus2xx field value if set, zero value otherwise.
-func (o *Results) GetComputeRespStatus2xx() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespStatus2xx() int32 {
 	if o == nil || o.ComputeRespStatus2xx == nil {
 		var ret int32
 		return ret
@@ -5552,7 +5554,7 @@ func (o *Results) GetComputeRespStatus2xx() int32 {
 
 // GetComputeRespStatus2xxOk returns a tuple with the ComputeRespStatus2xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeRespStatus2xxOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespStatus2xxOk() (*int32, bool) {
 	if o == nil || o.ComputeRespStatus2xx == nil {
 		return nil, false
 	}
@@ -5560,7 +5562,7 @@ func (o *Results) GetComputeRespStatus2xxOk() (*int32, bool) {
 }
 
 // HasComputeRespStatus2xx returns a boolean if a field has been set.
-func (o *Results) HasComputeRespStatus2xx() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeRespStatus2xx() bool {
 	if o != nil && o.ComputeRespStatus2xx != nil {
 		return true
 	}
@@ -5569,12 +5571,12 @@ func (o *Results) HasComputeRespStatus2xx() bool {
 }
 
 // SetComputeRespStatus2xx gets a reference to the given int32 and assigns it to the ComputeRespStatus2xx field.
-func (o *Results) SetComputeRespStatus2xx(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeRespStatus2xx(v int32) {
 	o.ComputeRespStatus2xx = &v
 }
 
 // GetComputeRespStatus3xx returns the ComputeRespStatus3xx field value if set, zero value otherwise.
-func (o *Results) GetComputeRespStatus3xx() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespStatus3xx() int32 {
 	if o == nil || o.ComputeRespStatus3xx == nil {
 		var ret int32
 		return ret
@@ -5584,7 +5586,7 @@ func (o *Results) GetComputeRespStatus3xx() int32 {
 
 // GetComputeRespStatus3xxOk returns a tuple with the ComputeRespStatus3xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeRespStatus3xxOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespStatus3xxOk() (*int32, bool) {
 	if o == nil || o.ComputeRespStatus3xx == nil {
 		return nil, false
 	}
@@ -5592,7 +5594,7 @@ func (o *Results) GetComputeRespStatus3xxOk() (*int32, bool) {
 }
 
 // HasComputeRespStatus3xx returns a boolean if a field has been set.
-func (o *Results) HasComputeRespStatus3xx() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeRespStatus3xx() bool {
 	if o != nil && o.ComputeRespStatus3xx != nil {
 		return true
 	}
@@ -5601,12 +5603,12 @@ func (o *Results) HasComputeRespStatus3xx() bool {
 }
 
 // SetComputeRespStatus3xx gets a reference to the given int32 and assigns it to the ComputeRespStatus3xx field.
-func (o *Results) SetComputeRespStatus3xx(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeRespStatus3xx(v int32) {
 	o.ComputeRespStatus3xx = &v
 }
 
 // GetComputeRespStatus4xx returns the ComputeRespStatus4xx field value if set, zero value otherwise.
-func (o *Results) GetComputeRespStatus4xx() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespStatus4xx() int32 {
 	if o == nil || o.ComputeRespStatus4xx == nil {
 		var ret int32
 		return ret
@@ -5616,7 +5618,7 @@ func (o *Results) GetComputeRespStatus4xx() int32 {
 
 // GetComputeRespStatus4xxOk returns a tuple with the ComputeRespStatus4xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeRespStatus4xxOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespStatus4xxOk() (*int32, bool) {
 	if o == nil || o.ComputeRespStatus4xx == nil {
 		return nil, false
 	}
@@ -5624,7 +5626,7 @@ func (o *Results) GetComputeRespStatus4xxOk() (*int32, bool) {
 }
 
 // HasComputeRespStatus4xx returns a boolean if a field has been set.
-func (o *Results) HasComputeRespStatus4xx() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeRespStatus4xx() bool {
 	if o != nil && o.ComputeRespStatus4xx != nil {
 		return true
 	}
@@ -5633,12 +5635,12 @@ func (o *Results) HasComputeRespStatus4xx() bool {
 }
 
 // SetComputeRespStatus4xx gets a reference to the given int32 and assigns it to the ComputeRespStatus4xx field.
-func (o *Results) SetComputeRespStatus4xx(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeRespStatus4xx(v int32) {
 	o.ComputeRespStatus4xx = &v
 }
 
 // GetComputeRespStatus5xx returns the ComputeRespStatus5xx field value if set, zero value otherwise.
-func (o *Results) GetComputeRespStatus5xx() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespStatus5xx() int32 {
 	if o == nil || o.ComputeRespStatus5xx == nil {
 		var ret int32
 		return ret
@@ -5648,7 +5650,7 @@ func (o *Results) GetComputeRespStatus5xx() int32 {
 
 // GetComputeRespStatus5xxOk returns a tuple with the ComputeRespStatus5xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeRespStatus5xxOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeRespStatus5xxOk() (*int32, bool) {
 	if o == nil || o.ComputeRespStatus5xx == nil {
 		return nil, false
 	}
@@ -5656,7 +5658,7 @@ func (o *Results) GetComputeRespStatus5xxOk() (*int32, bool) {
 }
 
 // HasComputeRespStatus5xx returns a boolean if a field has been set.
-func (o *Results) HasComputeRespStatus5xx() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeRespStatus5xx() bool {
 	if o != nil && o.ComputeRespStatus5xx != nil {
 		return true
 	}
@@ -5665,12 +5667,12 @@ func (o *Results) HasComputeRespStatus5xx() bool {
 }
 
 // SetComputeRespStatus5xx gets a reference to the given int32 and assigns it to the ComputeRespStatus5xx field.
-func (o *Results) SetComputeRespStatus5xx(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeRespStatus5xx(v int32) {
 	o.ComputeRespStatus5xx = &v
 }
 
 // GetComputeBereqHeaderBytes returns the ComputeBereqHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetComputeBereqHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeBereqHeaderBytes() int32 {
 	if o == nil || o.ComputeBereqHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -5680,7 +5682,7 @@ func (o *Results) GetComputeBereqHeaderBytes() int32 {
 
 // GetComputeBereqHeaderBytesOk returns a tuple with the ComputeBereqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeBereqHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeBereqHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ComputeBereqHeaderBytes == nil {
 		return nil, false
 	}
@@ -5688,7 +5690,7 @@ func (o *Results) GetComputeBereqHeaderBytesOk() (*int32, bool) {
 }
 
 // HasComputeBereqHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasComputeBereqHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeBereqHeaderBytes() bool {
 	if o != nil && o.ComputeBereqHeaderBytes != nil {
 		return true
 	}
@@ -5697,12 +5699,12 @@ func (o *Results) HasComputeBereqHeaderBytes() bool {
 }
 
 // SetComputeBereqHeaderBytes gets a reference to the given int32 and assigns it to the ComputeBereqHeaderBytes field.
-func (o *Results) SetComputeBereqHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeBereqHeaderBytes(v int32) {
 	o.ComputeBereqHeaderBytes = &v
 }
 
 // GetComputeBereqBodyBytes returns the ComputeBereqBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetComputeBereqBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeBereqBodyBytes() int32 {
 	if o == nil || o.ComputeBereqBodyBytes == nil {
 		var ret int32
 		return ret
@@ -5712,7 +5714,7 @@ func (o *Results) GetComputeBereqBodyBytes() int32 {
 
 // GetComputeBereqBodyBytesOk returns a tuple with the ComputeBereqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeBereqBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeBereqBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ComputeBereqBodyBytes == nil {
 		return nil, false
 	}
@@ -5720,7 +5722,7 @@ func (o *Results) GetComputeBereqBodyBytesOk() (*int32, bool) {
 }
 
 // HasComputeBereqBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasComputeBereqBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeBereqBodyBytes() bool {
 	if o != nil && o.ComputeBereqBodyBytes != nil {
 		return true
 	}
@@ -5729,12 +5731,12 @@ func (o *Results) HasComputeBereqBodyBytes() bool {
 }
 
 // SetComputeBereqBodyBytes gets a reference to the given int32 and assigns it to the ComputeBereqBodyBytes field.
-func (o *Results) SetComputeBereqBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeBereqBodyBytes(v int32) {
 	o.ComputeBereqBodyBytes = &v
 }
 
 // GetComputeBerespHeaderBytes returns the ComputeBerespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetComputeBerespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeBerespHeaderBytes() int32 {
 	if o == nil || o.ComputeBerespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -5744,7 +5746,7 @@ func (o *Results) GetComputeBerespHeaderBytes() int32 {
 
 // GetComputeBerespHeaderBytesOk returns a tuple with the ComputeBerespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeBerespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeBerespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ComputeBerespHeaderBytes == nil {
 		return nil, false
 	}
@@ -5752,7 +5754,7 @@ func (o *Results) GetComputeBerespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasComputeBerespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasComputeBerespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeBerespHeaderBytes() bool {
 	if o != nil && o.ComputeBerespHeaderBytes != nil {
 		return true
 	}
@@ -5761,12 +5763,12 @@ func (o *Results) HasComputeBerespHeaderBytes() bool {
 }
 
 // SetComputeBerespHeaderBytes gets a reference to the given int32 and assigns it to the ComputeBerespHeaderBytes field.
-func (o *Results) SetComputeBerespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeBerespHeaderBytes(v int32) {
 	o.ComputeBerespHeaderBytes = &v
 }
 
 // GetComputeBerespBodyBytes returns the ComputeBerespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetComputeBerespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeBerespBodyBytes() int32 {
 	if o == nil || o.ComputeBerespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -5776,7 +5778,7 @@ func (o *Results) GetComputeBerespBodyBytes() int32 {
 
 // GetComputeBerespBodyBytesOk returns a tuple with the ComputeBerespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeBerespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeBerespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ComputeBerespBodyBytes == nil {
 		return nil, false
 	}
@@ -5784,7 +5786,7 @@ func (o *Results) GetComputeBerespBodyBytesOk() (*int32, bool) {
 }
 
 // HasComputeBerespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasComputeBerespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeBerespBodyBytes() bool {
 	if o != nil && o.ComputeBerespBodyBytes != nil {
 		return true
 	}
@@ -5793,12 +5795,12 @@ func (o *Results) HasComputeBerespBodyBytes() bool {
 }
 
 // SetComputeBerespBodyBytes gets a reference to the given int32 and assigns it to the ComputeBerespBodyBytes field.
-func (o *Results) SetComputeBerespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeBerespBodyBytes(v int32) {
 	o.ComputeBerespBodyBytes = &v
 }
 
 // GetComputeBereqs returns the ComputeBereqs field value if set, zero value otherwise.
-func (o *Results) GetComputeBereqs() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeBereqs() int32 {
 	if o == nil || o.ComputeBereqs == nil {
 		var ret int32
 		return ret
@@ -5808,7 +5810,7 @@ func (o *Results) GetComputeBereqs() int32 {
 
 // GetComputeBereqsOk returns a tuple with the ComputeBereqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeBereqsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeBereqsOk() (*int32, bool) {
 	if o == nil || o.ComputeBereqs == nil {
 		return nil, false
 	}
@@ -5816,7 +5818,7 @@ func (o *Results) GetComputeBereqsOk() (*int32, bool) {
 }
 
 // HasComputeBereqs returns a boolean if a field has been set.
-func (o *Results) HasComputeBereqs() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeBereqs() bool {
 	if o != nil && o.ComputeBereqs != nil {
 		return true
 	}
@@ -5825,12 +5827,12 @@ func (o *Results) HasComputeBereqs() bool {
 }
 
 // SetComputeBereqs gets a reference to the given int32 and assigns it to the ComputeBereqs field.
-func (o *Results) SetComputeBereqs(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeBereqs(v int32) {
 	o.ComputeBereqs = &v
 }
 
 // GetComputeBereqErrors returns the ComputeBereqErrors field value if set, zero value otherwise.
-func (o *Results) GetComputeBereqErrors() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeBereqErrors() int32 {
 	if o == nil || o.ComputeBereqErrors == nil {
 		var ret int32
 		return ret
@@ -5840,7 +5842,7 @@ func (o *Results) GetComputeBereqErrors() int32 {
 
 // GetComputeBereqErrorsOk returns a tuple with the ComputeBereqErrors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeBereqErrorsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeBereqErrorsOk() (*int32, bool) {
 	if o == nil || o.ComputeBereqErrors == nil {
 		return nil, false
 	}
@@ -5848,7 +5850,7 @@ func (o *Results) GetComputeBereqErrorsOk() (*int32, bool) {
 }
 
 // HasComputeBereqErrors returns a boolean if a field has been set.
-func (o *Results) HasComputeBereqErrors() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeBereqErrors() bool {
 	if o != nil && o.ComputeBereqErrors != nil {
 		return true
 	}
@@ -5857,12 +5859,12 @@ func (o *Results) HasComputeBereqErrors() bool {
 }
 
 // SetComputeBereqErrors gets a reference to the given int32 and assigns it to the ComputeBereqErrors field.
-func (o *Results) SetComputeBereqErrors(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeBereqErrors(v int32) {
 	o.ComputeBereqErrors = &v
 }
 
 // GetComputeResourceLimitExceeded returns the ComputeResourceLimitExceeded field value if set, zero value otherwise.
-func (o *Results) GetComputeResourceLimitExceeded() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeResourceLimitExceeded() int32 {
 	if o == nil || o.ComputeResourceLimitExceeded == nil {
 		var ret int32
 		return ret
@@ -5872,7 +5874,7 @@ func (o *Results) GetComputeResourceLimitExceeded() int32 {
 
 // GetComputeResourceLimitExceededOk returns a tuple with the ComputeResourceLimitExceeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeResourceLimitExceededOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeResourceLimitExceededOk() (*int32, bool) {
 	if o == nil || o.ComputeResourceLimitExceeded == nil {
 		return nil, false
 	}
@@ -5880,7 +5882,7 @@ func (o *Results) GetComputeResourceLimitExceededOk() (*int32, bool) {
 }
 
 // HasComputeResourceLimitExceeded returns a boolean if a field has been set.
-func (o *Results) HasComputeResourceLimitExceeded() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeResourceLimitExceeded() bool {
 	if o != nil && o.ComputeResourceLimitExceeded != nil {
 		return true
 	}
@@ -5889,12 +5891,12 @@ func (o *Results) HasComputeResourceLimitExceeded() bool {
 }
 
 // SetComputeResourceLimitExceeded gets a reference to the given int32 and assigns it to the ComputeResourceLimitExceeded field.
-func (o *Results) SetComputeResourceLimitExceeded(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeResourceLimitExceeded(v int32) {
 	o.ComputeResourceLimitExceeded = &v
 }
 
 // GetComputeHeapLimitExceeded returns the ComputeHeapLimitExceeded field value if set, zero value otherwise.
-func (o *Results) GetComputeHeapLimitExceeded() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeHeapLimitExceeded() int32 {
 	if o == nil || o.ComputeHeapLimitExceeded == nil {
 		var ret int32
 		return ret
@@ -5904,7 +5906,7 @@ func (o *Results) GetComputeHeapLimitExceeded() int32 {
 
 // GetComputeHeapLimitExceededOk returns a tuple with the ComputeHeapLimitExceeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeHeapLimitExceededOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeHeapLimitExceededOk() (*int32, bool) {
 	if o == nil || o.ComputeHeapLimitExceeded == nil {
 		return nil, false
 	}
@@ -5912,7 +5914,7 @@ func (o *Results) GetComputeHeapLimitExceededOk() (*int32, bool) {
 }
 
 // HasComputeHeapLimitExceeded returns a boolean if a field has been set.
-func (o *Results) HasComputeHeapLimitExceeded() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeHeapLimitExceeded() bool {
 	if o != nil && o.ComputeHeapLimitExceeded != nil {
 		return true
 	}
@@ -5921,12 +5923,12 @@ func (o *Results) HasComputeHeapLimitExceeded() bool {
 }
 
 // SetComputeHeapLimitExceeded gets a reference to the given int32 and assigns it to the ComputeHeapLimitExceeded field.
-func (o *Results) SetComputeHeapLimitExceeded(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeHeapLimitExceeded(v int32) {
 	o.ComputeHeapLimitExceeded = &v
 }
 
 // GetComputeStackLimitExceeded returns the ComputeStackLimitExceeded field value if set, zero value otherwise.
-func (o *Results) GetComputeStackLimitExceeded() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeStackLimitExceeded() int32 {
 	if o == nil || o.ComputeStackLimitExceeded == nil {
 		var ret int32
 		return ret
@@ -5936,7 +5938,7 @@ func (o *Results) GetComputeStackLimitExceeded() int32 {
 
 // GetComputeStackLimitExceededOk returns a tuple with the ComputeStackLimitExceeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeStackLimitExceededOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeStackLimitExceededOk() (*int32, bool) {
 	if o == nil || o.ComputeStackLimitExceeded == nil {
 		return nil, false
 	}
@@ -5944,7 +5946,7 @@ func (o *Results) GetComputeStackLimitExceededOk() (*int32, bool) {
 }
 
 // HasComputeStackLimitExceeded returns a boolean if a field has been set.
-func (o *Results) HasComputeStackLimitExceeded() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeStackLimitExceeded() bool {
 	if o != nil && o.ComputeStackLimitExceeded != nil {
 		return true
 	}
@@ -5953,12 +5955,12 @@ func (o *Results) HasComputeStackLimitExceeded() bool {
 }
 
 // SetComputeStackLimitExceeded gets a reference to the given int32 and assigns it to the ComputeStackLimitExceeded field.
-func (o *Results) SetComputeStackLimitExceeded(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeStackLimitExceeded(v int32) {
 	o.ComputeStackLimitExceeded = &v
 }
 
 // GetComputeGlobalsLimitExceeded returns the ComputeGlobalsLimitExceeded field value if set, zero value otherwise.
-func (o *Results) GetComputeGlobalsLimitExceeded() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeGlobalsLimitExceeded() int32 {
 	if o == nil || o.ComputeGlobalsLimitExceeded == nil {
 		var ret int32
 		return ret
@@ -5968,7 +5970,7 @@ func (o *Results) GetComputeGlobalsLimitExceeded() int32 {
 
 // GetComputeGlobalsLimitExceededOk returns a tuple with the ComputeGlobalsLimitExceeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeGlobalsLimitExceededOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeGlobalsLimitExceededOk() (*int32, bool) {
 	if o == nil || o.ComputeGlobalsLimitExceeded == nil {
 		return nil, false
 	}
@@ -5976,7 +5978,7 @@ func (o *Results) GetComputeGlobalsLimitExceededOk() (*int32, bool) {
 }
 
 // HasComputeGlobalsLimitExceeded returns a boolean if a field has been set.
-func (o *Results) HasComputeGlobalsLimitExceeded() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeGlobalsLimitExceeded() bool {
 	if o != nil && o.ComputeGlobalsLimitExceeded != nil {
 		return true
 	}
@@ -5985,12 +5987,12 @@ func (o *Results) HasComputeGlobalsLimitExceeded() bool {
 }
 
 // SetComputeGlobalsLimitExceeded gets a reference to the given int32 and assigns it to the ComputeGlobalsLimitExceeded field.
-func (o *Results) SetComputeGlobalsLimitExceeded(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeGlobalsLimitExceeded(v int32) {
 	o.ComputeGlobalsLimitExceeded = &v
 }
 
 // GetComputeGuestErrors returns the ComputeGuestErrors field value if set, zero value otherwise.
-func (o *Results) GetComputeGuestErrors() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeGuestErrors() int32 {
 	if o == nil || o.ComputeGuestErrors == nil {
 		var ret int32
 		return ret
@@ -6000,7 +6002,7 @@ func (o *Results) GetComputeGuestErrors() int32 {
 
 // GetComputeGuestErrorsOk returns a tuple with the ComputeGuestErrors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeGuestErrorsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeGuestErrorsOk() (*int32, bool) {
 	if o == nil || o.ComputeGuestErrors == nil {
 		return nil, false
 	}
@@ -6008,7 +6010,7 @@ func (o *Results) GetComputeGuestErrorsOk() (*int32, bool) {
 }
 
 // HasComputeGuestErrors returns a boolean if a field has been set.
-func (o *Results) HasComputeGuestErrors() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeGuestErrors() bool {
 	if o != nil && o.ComputeGuestErrors != nil {
 		return true
 	}
@@ -6017,12 +6019,12 @@ func (o *Results) HasComputeGuestErrors() bool {
 }
 
 // SetComputeGuestErrors gets a reference to the given int32 and assigns it to the ComputeGuestErrors field.
-func (o *Results) SetComputeGuestErrors(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeGuestErrors(v int32) {
 	o.ComputeGuestErrors = &v
 }
 
 // GetComputeRuntimeErrors returns the ComputeRuntimeErrors field value if set, zero value otherwise.
-func (o *Results) GetComputeRuntimeErrors() int32 {
+func (o *HistoricalFieldResultsAttributes) GetComputeRuntimeErrors() int32 {
 	if o == nil || o.ComputeRuntimeErrors == nil {
 		var ret int32
 		return ret
@@ -6032,7 +6034,7 @@ func (o *Results) GetComputeRuntimeErrors() int32 {
 
 // GetComputeRuntimeErrorsOk returns a tuple with the ComputeRuntimeErrors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeRuntimeErrorsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetComputeRuntimeErrorsOk() (*int32, bool) {
 	if o == nil || o.ComputeRuntimeErrors == nil {
 		return nil, false
 	}
@@ -6040,7 +6042,7 @@ func (o *Results) GetComputeRuntimeErrorsOk() (*int32, bool) {
 }
 
 // HasComputeRuntimeErrors returns a boolean if a field has been set.
-func (o *Results) HasComputeRuntimeErrors() bool {
+func (o *HistoricalFieldResultsAttributes) HasComputeRuntimeErrors() bool {
 	if o != nil && o.ComputeRuntimeErrors != nil {
 		return true
 	}
@@ -6049,12 +6051,12 @@ func (o *Results) HasComputeRuntimeErrors() bool {
 }
 
 // SetComputeRuntimeErrors gets a reference to the given int32 and assigns it to the ComputeRuntimeErrors field.
-func (o *Results) SetComputeRuntimeErrors(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetComputeRuntimeErrors(v int32) {
 	o.ComputeRuntimeErrors = &v
 }
 
 // GetEdgeHitRespBodyBytes returns the EdgeHitRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetEdgeHitRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetEdgeHitRespBodyBytes() int32 {
 	if o == nil || o.EdgeHitRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -6064,7 +6066,7 @@ func (o *Results) GetEdgeHitRespBodyBytes() int32 {
 
 // GetEdgeHitRespBodyBytesOk returns a tuple with the EdgeHitRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetEdgeHitRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetEdgeHitRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.EdgeHitRespBodyBytes == nil {
 		return nil, false
 	}
@@ -6072,7 +6074,7 @@ func (o *Results) GetEdgeHitRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasEdgeHitRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasEdgeHitRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasEdgeHitRespBodyBytes() bool {
 	if o != nil && o.EdgeHitRespBodyBytes != nil {
 		return true
 	}
@@ -6081,12 +6083,12 @@ func (o *Results) HasEdgeHitRespBodyBytes() bool {
 }
 
 // SetEdgeHitRespBodyBytes gets a reference to the given int32 and assigns it to the EdgeHitRespBodyBytes field.
-func (o *Results) SetEdgeHitRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetEdgeHitRespBodyBytes(v int32) {
 	o.EdgeHitRespBodyBytes = &v
 }
 
 // GetEdgeHitRespHeaderBytes returns the EdgeHitRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetEdgeHitRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetEdgeHitRespHeaderBytes() int32 {
 	if o == nil || o.EdgeHitRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -6096,7 +6098,7 @@ func (o *Results) GetEdgeHitRespHeaderBytes() int32 {
 
 // GetEdgeHitRespHeaderBytesOk returns a tuple with the EdgeHitRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetEdgeHitRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetEdgeHitRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.EdgeHitRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6104,7 +6106,7 @@ func (o *Results) GetEdgeHitRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasEdgeHitRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasEdgeHitRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasEdgeHitRespHeaderBytes() bool {
 	if o != nil && o.EdgeHitRespHeaderBytes != nil {
 		return true
 	}
@@ -6113,12 +6115,12 @@ func (o *Results) HasEdgeHitRespHeaderBytes() bool {
 }
 
 // SetEdgeHitRespHeaderBytes gets a reference to the given int32 and assigns it to the EdgeHitRespHeaderBytes field.
-func (o *Results) SetEdgeHitRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetEdgeHitRespHeaderBytes(v int32) {
 	o.EdgeHitRespHeaderBytes = &v
 }
 
 // GetEdgeMissRespBodyBytes returns the EdgeMissRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetEdgeMissRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetEdgeMissRespBodyBytes() int32 {
 	if o == nil || o.EdgeMissRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -6128,7 +6130,7 @@ func (o *Results) GetEdgeMissRespBodyBytes() int32 {
 
 // GetEdgeMissRespBodyBytesOk returns a tuple with the EdgeMissRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetEdgeMissRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetEdgeMissRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.EdgeMissRespBodyBytes == nil {
 		return nil, false
 	}
@@ -6136,7 +6138,7 @@ func (o *Results) GetEdgeMissRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasEdgeMissRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasEdgeMissRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasEdgeMissRespBodyBytes() bool {
 	if o != nil && o.EdgeMissRespBodyBytes != nil {
 		return true
 	}
@@ -6145,12 +6147,12 @@ func (o *Results) HasEdgeMissRespBodyBytes() bool {
 }
 
 // SetEdgeMissRespBodyBytes gets a reference to the given int32 and assigns it to the EdgeMissRespBodyBytes field.
-func (o *Results) SetEdgeMissRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetEdgeMissRespBodyBytes(v int32) {
 	o.EdgeMissRespBodyBytes = &v
 }
 
 // GetEdgeMissRespHeaderBytes returns the EdgeMissRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetEdgeMissRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetEdgeMissRespHeaderBytes() int32 {
 	if o == nil || o.EdgeMissRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -6160,7 +6162,7 @@ func (o *Results) GetEdgeMissRespHeaderBytes() int32 {
 
 // GetEdgeMissRespHeaderBytesOk returns a tuple with the EdgeMissRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetEdgeMissRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetEdgeMissRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.EdgeMissRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6168,7 +6170,7 @@ func (o *Results) GetEdgeMissRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasEdgeMissRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasEdgeMissRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasEdgeMissRespHeaderBytes() bool {
 	if o != nil && o.EdgeMissRespHeaderBytes != nil {
 		return true
 	}
@@ -6177,12 +6179,12 @@ func (o *Results) HasEdgeMissRespHeaderBytes() bool {
 }
 
 // SetEdgeMissRespHeaderBytes gets a reference to the given int32 and assigns it to the EdgeMissRespHeaderBytes field.
-func (o *Results) SetEdgeMissRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetEdgeMissRespHeaderBytes(v int32) {
 	o.EdgeMissRespHeaderBytes = &v
 }
 
 // GetOriginCacheFetchRespBodyBytes returns the OriginCacheFetchRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetOriginCacheFetchRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOriginCacheFetchRespBodyBytes() int32 {
 	if o == nil || o.OriginCacheFetchRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -6192,7 +6194,7 @@ func (o *Results) GetOriginCacheFetchRespBodyBytes() int32 {
 
 // GetOriginCacheFetchRespBodyBytesOk returns a tuple with the OriginCacheFetchRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOriginCacheFetchRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOriginCacheFetchRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.OriginCacheFetchRespBodyBytes == nil {
 		return nil, false
 	}
@@ -6200,7 +6202,7 @@ func (o *Results) GetOriginCacheFetchRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasOriginCacheFetchRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasOriginCacheFetchRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasOriginCacheFetchRespBodyBytes() bool {
 	if o != nil && o.OriginCacheFetchRespBodyBytes != nil {
 		return true
 	}
@@ -6209,12 +6211,12 @@ func (o *Results) HasOriginCacheFetchRespBodyBytes() bool {
 }
 
 // SetOriginCacheFetchRespBodyBytes gets a reference to the given int32 and assigns it to the OriginCacheFetchRespBodyBytes field.
-func (o *Results) SetOriginCacheFetchRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOriginCacheFetchRespBodyBytes(v int32) {
 	o.OriginCacheFetchRespBodyBytes = &v
 }
 
 // GetOriginCacheFetchRespHeaderBytes returns the OriginCacheFetchRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetOriginCacheFetchRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetOriginCacheFetchRespHeaderBytes() int32 {
 	if o == nil || o.OriginCacheFetchRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -6224,7 +6226,7 @@ func (o *Results) GetOriginCacheFetchRespHeaderBytes() int32 {
 
 // GetOriginCacheFetchRespHeaderBytesOk returns a tuple with the OriginCacheFetchRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetOriginCacheFetchRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetOriginCacheFetchRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.OriginCacheFetchRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6232,7 +6234,7 @@ func (o *Results) GetOriginCacheFetchRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasOriginCacheFetchRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasOriginCacheFetchRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasOriginCacheFetchRespHeaderBytes() bool {
 	if o != nil && o.OriginCacheFetchRespHeaderBytes != nil {
 		return true
 	}
@@ -6241,12 +6243,12 @@ func (o *Results) HasOriginCacheFetchRespHeaderBytes() bool {
 }
 
 // SetOriginCacheFetchRespHeaderBytes gets a reference to the given int32 and assigns it to the OriginCacheFetchRespHeaderBytes field.
-func (o *Results) SetOriginCacheFetchRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetOriginCacheFetchRespHeaderBytes(v int32) {
 	o.OriginCacheFetchRespHeaderBytes = &v
 }
 
 // GetShieldHitRequests returns the ShieldHitRequests field value if set, zero value otherwise.
-func (o *Results) GetShieldHitRequests() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldHitRequests() int32 {
 	if o == nil || o.ShieldHitRequests == nil {
 		var ret int32
 		return ret
@@ -6256,7 +6258,7 @@ func (o *Results) GetShieldHitRequests() int32 {
 
 // GetShieldHitRequestsOk returns a tuple with the ShieldHitRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldHitRequestsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldHitRequestsOk() (*int32, bool) {
 	if o == nil || o.ShieldHitRequests == nil {
 		return nil, false
 	}
@@ -6264,7 +6266,7 @@ func (o *Results) GetShieldHitRequestsOk() (*int32, bool) {
 }
 
 // HasShieldHitRequests returns a boolean if a field has been set.
-func (o *Results) HasShieldHitRequests() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldHitRequests() bool {
 	if o != nil && o.ShieldHitRequests != nil {
 		return true
 	}
@@ -6273,12 +6275,12 @@ func (o *Results) HasShieldHitRequests() bool {
 }
 
 // SetShieldHitRequests gets a reference to the given int32 and assigns it to the ShieldHitRequests field.
-func (o *Results) SetShieldHitRequests(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldHitRequests(v int32) {
 	o.ShieldHitRequests = &v
 }
 
 // GetShieldMissRequests returns the ShieldMissRequests field value if set, zero value otherwise.
-func (o *Results) GetShieldMissRequests() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldMissRequests() int32 {
 	if o == nil || o.ShieldMissRequests == nil {
 		var ret int32
 		return ret
@@ -6288,7 +6290,7 @@ func (o *Results) GetShieldMissRequests() int32 {
 
 // GetShieldMissRequestsOk returns a tuple with the ShieldMissRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldMissRequestsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldMissRequestsOk() (*int32, bool) {
 	if o == nil || o.ShieldMissRequests == nil {
 		return nil, false
 	}
@@ -6296,7 +6298,7 @@ func (o *Results) GetShieldMissRequestsOk() (*int32, bool) {
 }
 
 // HasShieldMissRequests returns a boolean if a field has been set.
-func (o *Results) HasShieldMissRequests() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldMissRequests() bool {
 	if o != nil && o.ShieldMissRequests != nil {
 		return true
 	}
@@ -6305,12 +6307,12 @@ func (o *Results) HasShieldMissRequests() bool {
 }
 
 // SetShieldMissRequests gets a reference to the given int32 and assigns it to the ShieldMissRequests field.
-func (o *Results) SetShieldMissRequests(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldMissRequests(v int32) {
 	o.ShieldMissRequests = &v
 }
 
 // GetShieldHitRespHeaderBytes returns the ShieldHitRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetShieldHitRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldHitRespHeaderBytes() int32 {
 	if o == nil || o.ShieldHitRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -6320,7 +6322,7 @@ func (o *Results) GetShieldHitRespHeaderBytes() int32 {
 
 // GetShieldHitRespHeaderBytesOk returns a tuple with the ShieldHitRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldHitRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldHitRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ShieldHitRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6328,7 +6330,7 @@ func (o *Results) GetShieldHitRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasShieldHitRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasShieldHitRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldHitRespHeaderBytes() bool {
 	if o != nil && o.ShieldHitRespHeaderBytes != nil {
 		return true
 	}
@@ -6337,12 +6339,12 @@ func (o *Results) HasShieldHitRespHeaderBytes() bool {
 }
 
 // SetShieldHitRespHeaderBytes gets a reference to the given int32 and assigns it to the ShieldHitRespHeaderBytes field.
-func (o *Results) SetShieldHitRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldHitRespHeaderBytes(v int32) {
 	o.ShieldHitRespHeaderBytes = &v
 }
 
 // GetShieldHitRespBodyBytes returns the ShieldHitRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetShieldHitRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldHitRespBodyBytes() int32 {
 	if o == nil || o.ShieldHitRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -6352,7 +6354,7 @@ func (o *Results) GetShieldHitRespBodyBytes() int32 {
 
 // GetShieldHitRespBodyBytesOk returns a tuple with the ShieldHitRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldHitRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldHitRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ShieldHitRespBodyBytes == nil {
 		return nil, false
 	}
@@ -6360,7 +6362,7 @@ func (o *Results) GetShieldHitRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasShieldHitRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasShieldHitRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldHitRespBodyBytes() bool {
 	if o != nil && o.ShieldHitRespBodyBytes != nil {
 		return true
 	}
@@ -6369,12 +6371,12 @@ func (o *Results) HasShieldHitRespBodyBytes() bool {
 }
 
 // SetShieldHitRespBodyBytes gets a reference to the given int32 and assigns it to the ShieldHitRespBodyBytes field.
-func (o *Results) SetShieldHitRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldHitRespBodyBytes(v int32) {
 	o.ShieldHitRespBodyBytes = &v
 }
 
 // GetShieldMissRespHeaderBytes returns the ShieldMissRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetShieldMissRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldMissRespHeaderBytes() int32 {
 	if o == nil || o.ShieldMissRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -6384,7 +6386,7 @@ func (o *Results) GetShieldMissRespHeaderBytes() int32 {
 
 // GetShieldMissRespHeaderBytesOk returns a tuple with the ShieldMissRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldMissRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldMissRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.ShieldMissRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6392,7 +6394,7 @@ func (o *Results) GetShieldMissRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasShieldMissRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasShieldMissRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldMissRespHeaderBytes() bool {
 	if o != nil && o.ShieldMissRespHeaderBytes != nil {
 		return true
 	}
@@ -6401,12 +6403,12 @@ func (o *Results) HasShieldMissRespHeaderBytes() bool {
 }
 
 // SetShieldMissRespHeaderBytes gets a reference to the given int32 and assigns it to the ShieldMissRespHeaderBytes field.
-func (o *Results) SetShieldMissRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldMissRespHeaderBytes(v int32) {
 	o.ShieldMissRespHeaderBytes = &v
 }
 
 // GetShieldMissRespBodyBytes returns the ShieldMissRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetShieldMissRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetShieldMissRespBodyBytes() int32 {
 	if o == nil || o.ShieldMissRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -6416,7 +6418,7 @@ func (o *Results) GetShieldMissRespBodyBytes() int32 {
 
 // GetShieldMissRespBodyBytesOk returns a tuple with the ShieldMissRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetShieldMissRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetShieldMissRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.ShieldMissRespBodyBytes == nil {
 		return nil, false
 	}
@@ -6424,7 +6426,7 @@ func (o *Results) GetShieldMissRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasShieldMissRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasShieldMissRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasShieldMissRespBodyBytes() bool {
 	if o != nil && o.ShieldMissRespBodyBytes != nil {
 		return true
 	}
@@ -6433,12 +6435,12 @@ func (o *Results) HasShieldMissRespBodyBytes() bool {
 }
 
 // SetShieldMissRespBodyBytes gets a reference to the given int32 and assigns it to the ShieldMissRespBodyBytes field.
-func (o *Results) SetShieldMissRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetShieldMissRespBodyBytes(v int32) {
 	o.ShieldMissRespBodyBytes = &v
 }
 
 // GetWebsocketReqHeaderBytes returns the WebsocketReqHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetWebsocketReqHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketReqHeaderBytes() int32 {
 	if o == nil || o.WebsocketReqHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -6448,7 +6450,7 @@ func (o *Results) GetWebsocketReqHeaderBytes() int32 {
 
 // GetWebsocketReqHeaderBytesOk returns a tuple with the WebsocketReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetWebsocketReqHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketReqHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.WebsocketReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -6456,7 +6458,7 @@ func (o *Results) GetWebsocketReqHeaderBytesOk() (*int32, bool) {
 }
 
 // HasWebsocketReqHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasWebsocketReqHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasWebsocketReqHeaderBytes() bool {
 	if o != nil && o.WebsocketReqHeaderBytes != nil {
 		return true
 	}
@@ -6465,12 +6467,12 @@ func (o *Results) HasWebsocketReqHeaderBytes() bool {
 }
 
 // SetWebsocketReqHeaderBytes gets a reference to the given int32 and assigns it to the WebsocketReqHeaderBytes field.
-func (o *Results) SetWebsocketReqHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetWebsocketReqHeaderBytes(v int32) {
 	o.WebsocketReqHeaderBytes = &v
 }
 
 // GetWebsocketReqBodyBytes returns the WebsocketReqBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetWebsocketReqBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketReqBodyBytes() int32 {
 	if o == nil || o.WebsocketReqBodyBytes == nil {
 		var ret int32
 		return ret
@@ -6480,7 +6482,7 @@ func (o *Results) GetWebsocketReqBodyBytes() int32 {
 
 // GetWebsocketReqBodyBytesOk returns a tuple with the WebsocketReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetWebsocketReqBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketReqBodyBytesOk() (*int32, bool) {
 	if o == nil || o.WebsocketReqBodyBytes == nil {
 		return nil, false
 	}
@@ -6488,7 +6490,7 @@ func (o *Results) GetWebsocketReqBodyBytesOk() (*int32, bool) {
 }
 
 // HasWebsocketReqBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasWebsocketReqBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasWebsocketReqBodyBytes() bool {
 	if o != nil && o.WebsocketReqBodyBytes != nil {
 		return true
 	}
@@ -6497,12 +6499,12 @@ func (o *Results) HasWebsocketReqBodyBytes() bool {
 }
 
 // SetWebsocketReqBodyBytes gets a reference to the given int32 and assigns it to the WebsocketReqBodyBytes field.
-func (o *Results) SetWebsocketReqBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetWebsocketReqBodyBytes(v int32) {
 	o.WebsocketReqBodyBytes = &v
 }
 
 // GetWebsocketRespHeaderBytes returns the WebsocketRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetWebsocketRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketRespHeaderBytes() int32 {
 	if o == nil || o.WebsocketRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -6512,7 +6514,7 @@ func (o *Results) GetWebsocketRespHeaderBytes() int32 {
 
 // GetWebsocketRespHeaderBytesOk returns a tuple with the WebsocketRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetWebsocketRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.WebsocketRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6520,7 +6522,7 @@ func (o *Results) GetWebsocketRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasWebsocketRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasWebsocketRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasWebsocketRespHeaderBytes() bool {
 	if o != nil && o.WebsocketRespHeaderBytes != nil {
 		return true
 	}
@@ -6529,12 +6531,12 @@ func (o *Results) HasWebsocketRespHeaderBytes() bool {
 }
 
 // SetWebsocketRespHeaderBytes gets a reference to the given int32 and assigns it to the WebsocketRespHeaderBytes field.
-func (o *Results) SetWebsocketRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetWebsocketRespHeaderBytes(v int32) {
 	o.WebsocketRespHeaderBytes = &v
 }
 
 // GetWebsocketRespBodyBytes returns the WebsocketRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetWebsocketRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketRespBodyBytes() int32 {
 	if o == nil || o.WebsocketRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -6544,7 +6546,7 @@ func (o *Results) GetWebsocketRespBodyBytes() int32 {
 
 // GetWebsocketRespBodyBytesOk returns a tuple with the WebsocketRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetWebsocketRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.WebsocketRespBodyBytes == nil {
 		return nil, false
 	}
@@ -6552,7 +6554,7 @@ func (o *Results) GetWebsocketRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasWebsocketRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasWebsocketRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasWebsocketRespBodyBytes() bool {
 	if o != nil && o.WebsocketRespBodyBytes != nil {
 		return true
 	}
@@ -6561,12 +6563,12 @@ func (o *Results) HasWebsocketRespBodyBytes() bool {
 }
 
 // SetWebsocketRespBodyBytes gets a reference to the given int32 and assigns it to the WebsocketRespBodyBytes field.
-func (o *Results) SetWebsocketRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetWebsocketRespBodyBytes(v int32) {
 	o.WebsocketRespBodyBytes = &v
 }
 
 // GetWebsocketBereqHeaderBytes returns the WebsocketBereqHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetWebsocketBereqHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketBereqHeaderBytes() int32 {
 	if o == nil || o.WebsocketBereqHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -6576,7 +6578,7 @@ func (o *Results) GetWebsocketBereqHeaderBytes() int32 {
 
 // GetWebsocketBereqHeaderBytesOk returns a tuple with the WebsocketBereqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetWebsocketBereqHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketBereqHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.WebsocketBereqHeaderBytes == nil {
 		return nil, false
 	}
@@ -6584,7 +6586,7 @@ func (o *Results) GetWebsocketBereqHeaderBytesOk() (*int32, bool) {
 }
 
 // HasWebsocketBereqHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasWebsocketBereqHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasWebsocketBereqHeaderBytes() bool {
 	if o != nil && o.WebsocketBereqHeaderBytes != nil {
 		return true
 	}
@@ -6593,12 +6595,12 @@ func (o *Results) HasWebsocketBereqHeaderBytes() bool {
 }
 
 // SetWebsocketBereqHeaderBytes gets a reference to the given int32 and assigns it to the WebsocketBereqHeaderBytes field.
-func (o *Results) SetWebsocketBereqHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetWebsocketBereqHeaderBytes(v int32) {
 	o.WebsocketBereqHeaderBytes = &v
 }
 
 // GetWebsocketBereqBodyBytes returns the WebsocketBereqBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetWebsocketBereqBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketBereqBodyBytes() int32 {
 	if o == nil || o.WebsocketBereqBodyBytes == nil {
 		var ret int32
 		return ret
@@ -6608,7 +6610,7 @@ func (o *Results) GetWebsocketBereqBodyBytes() int32 {
 
 // GetWebsocketBereqBodyBytesOk returns a tuple with the WebsocketBereqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetWebsocketBereqBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketBereqBodyBytesOk() (*int32, bool) {
 	if o == nil || o.WebsocketBereqBodyBytes == nil {
 		return nil, false
 	}
@@ -6616,7 +6618,7 @@ func (o *Results) GetWebsocketBereqBodyBytesOk() (*int32, bool) {
 }
 
 // HasWebsocketBereqBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasWebsocketBereqBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasWebsocketBereqBodyBytes() bool {
 	if o != nil && o.WebsocketBereqBodyBytes != nil {
 		return true
 	}
@@ -6625,12 +6627,12 @@ func (o *Results) HasWebsocketBereqBodyBytes() bool {
 }
 
 // SetWebsocketBereqBodyBytes gets a reference to the given int32 and assigns it to the WebsocketBereqBodyBytes field.
-func (o *Results) SetWebsocketBereqBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetWebsocketBereqBodyBytes(v int32) {
 	o.WebsocketBereqBodyBytes = &v
 }
 
 // GetWebsocketBerespHeaderBytes returns the WebsocketBerespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetWebsocketBerespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketBerespHeaderBytes() int32 {
 	if o == nil || o.WebsocketBerespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -6640,7 +6642,7 @@ func (o *Results) GetWebsocketBerespHeaderBytes() int32 {
 
 // GetWebsocketBerespHeaderBytesOk returns a tuple with the WebsocketBerespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetWebsocketBerespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketBerespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.WebsocketBerespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6648,7 +6650,7 @@ func (o *Results) GetWebsocketBerespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasWebsocketBerespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasWebsocketBerespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasWebsocketBerespHeaderBytes() bool {
 	if o != nil && o.WebsocketBerespHeaderBytes != nil {
 		return true
 	}
@@ -6657,12 +6659,12 @@ func (o *Results) HasWebsocketBerespHeaderBytes() bool {
 }
 
 // SetWebsocketBerespHeaderBytes gets a reference to the given int32 and assigns it to the WebsocketBerespHeaderBytes field.
-func (o *Results) SetWebsocketBerespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetWebsocketBerespHeaderBytes(v int32) {
 	o.WebsocketBerespHeaderBytes = &v
 }
 
 // GetWebsocketBerespBodyBytes returns the WebsocketBerespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetWebsocketBerespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketBerespBodyBytes() int32 {
 	if o == nil || o.WebsocketBerespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -6672,7 +6674,7 @@ func (o *Results) GetWebsocketBerespBodyBytes() int32 {
 
 // GetWebsocketBerespBodyBytesOk returns a tuple with the WebsocketBerespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetWebsocketBerespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketBerespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.WebsocketBerespBodyBytes == nil {
 		return nil, false
 	}
@@ -6680,7 +6682,7 @@ func (o *Results) GetWebsocketBerespBodyBytesOk() (*int32, bool) {
 }
 
 // HasWebsocketBerespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasWebsocketBerespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasWebsocketBerespBodyBytes() bool {
 	if o != nil && o.WebsocketBerespBodyBytes != nil {
 		return true
 	}
@@ -6689,12 +6691,12 @@ func (o *Results) HasWebsocketBerespBodyBytes() bool {
 }
 
 // SetWebsocketBerespBodyBytes gets a reference to the given int32 and assigns it to the WebsocketBerespBodyBytes field.
-func (o *Results) SetWebsocketBerespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetWebsocketBerespBodyBytes(v int32) {
 	o.WebsocketBerespBodyBytes = &v
 }
 
 // GetWebsocketConnTimeMs returns the WebsocketConnTimeMs field value if set, zero value otherwise.
-func (o *Results) GetWebsocketConnTimeMs() int32 {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketConnTimeMs() int32 {
 	if o == nil || o.WebsocketConnTimeMs == nil {
 		var ret int32
 		return ret
@@ -6704,7 +6706,7 @@ func (o *Results) GetWebsocketConnTimeMs() int32 {
 
 // GetWebsocketConnTimeMsOk returns a tuple with the WebsocketConnTimeMs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetWebsocketConnTimeMsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetWebsocketConnTimeMsOk() (*int32, bool) {
 	if o == nil || o.WebsocketConnTimeMs == nil {
 		return nil, false
 	}
@@ -6712,7 +6714,7 @@ func (o *Results) GetWebsocketConnTimeMsOk() (*int32, bool) {
 }
 
 // HasWebsocketConnTimeMs returns a boolean if a field has been set.
-func (o *Results) HasWebsocketConnTimeMs() bool {
+func (o *HistoricalFieldResultsAttributes) HasWebsocketConnTimeMs() bool {
 	if o != nil && o.WebsocketConnTimeMs != nil {
 		return true
 	}
@@ -6721,12 +6723,12 @@ func (o *Results) HasWebsocketConnTimeMs() bool {
 }
 
 // SetWebsocketConnTimeMs gets a reference to the given int32 and assigns it to the WebsocketConnTimeMs field.
-func (o *Results) SetWebsocketConnTimeMs(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetWebsocketConnTimeMs(v int32) {
 	o.WebsocketConnTimeMs = &v
 }
 
 // GetFanoutRecvPublishes returns the FanoutRecvPublishes field value if set, zero value otherwise.
-func (o *Results) GetFanoutRecvPublishes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetFanoutRecvPublishes() int32 {
 	if o == nil || o.FanoutRecvPublishes == nil {
 		var ret int32
 		return ret
@@ -6736,7 +6738,7 @@ func (o *Results) GetFanoutRecvPublishes() int32 {
 
 // GetFanoutRecvPublishesOk returns a tuple with the FanoutRecvPublishes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetFanoutRecvPublishesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetFanoutRecvPublishesOk() (*int32, bool) {
 	if o == nil || o.FanoutRecvPublishes == nil {
 		return nil, false
 	}
@@ -6744,7 +6746,7 @@ func (o *Results) GetFanoutRecvPublishesOk() (*int32, bool) {
 }
 
 // HasFanoutRecvPublishes returns a boolean if a field has been set.
-func (o *Results) HasFanoutRecvPublishes() bool {
+func (o *HistoricalFieldResultsAttributes) HasFanoutRecvPublishes() bool {
 	if o != nil && o.FanoutRecvPublishes != nil {
 		return true
 	}
@@ -6753,12 +6755,12 @@ func (o *Results) HasFanoutRecvPublishes() bool {
 }
 
 // SetFanoutRecvPublishes gets a reference to the given int32 and assigns it to the FanoutRecvPublishes field.
-func (o *Results) SetFanoutRecvPublishes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetFanoutRecvPublishes(v int32) {
 	o.FanoutRecvPublishes = &v
 }
 
 // GetFanoutSendPublishes returns the FanoutSendPublishes field value if set, zero value otherwise.
-func (o *Results) GetFanoutSendPublishes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetFanoutSendPublishes() int32 {
 	if o == nil || o.FanoutSendPublishes == nil {
 		var ret int32
 		return ret
@@ -6768,7 +6770,7 @@ func (o *Results) GetFanoutSendPublishes() int32 {
 
 // GetFanoutSendPublishesOk returns a tuple with the FanoutSendPublishes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetFanoutSendPublishesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetFanoutSendPublishesOk() (*int32, bool) {
 	if o == nil || o.FanoutSendPublishes == nil {
 		return nil, false
 	}
@@ -6776,7 +6778,7 @@ func (o *Results) GetFanoutSendPublishesOk() (*int32, bool) {
 }
 
 // HasFanoutSendPublishes returns a boolean if a field has been set.
-func (o *Results) HasFanoutSendPublishes() bool {
+func (o *HistoricalFieldResultsAttributes) HasFanoutSendPublishes() bool {
 	if o != nil && o.FanoutSendPublishes != nil {
 		return true
 	}
@@ -6785,12 +6787,12 @@ func (o *Results) HasFanoutSendPublishes() bool {
 }
 
 // SetFanoutSendPublishes gets a reference to the given int32 and assigns it to the FanoutSendPublishes field.
-func (o *Results) SetFanoutSendPublishes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetFanoutSendPublishes(v int32) {
 	o.FanoutSendPublishes = &v
 }
 
 // GetKvStoreClassAOperations returns the KvStoreClassAOperations field value if set, zero value otherwise.
-func (o *Results) GetKvStoreClassAOperations() int32 {
+func (o *HistoricalFieldResultsAttributes) GetKvStoreClassAOperations() int32 {
 	if o == nil || o.KvStoreClassAOperations == nil {
 		var ret int32
 		return ret
@@ -6800,7 +6802,7 @@ func (o *Results) GetKvStoreClassAOperations() int32 {
 
 // GetKvStoreClassAOperationsOk returns a tuple with the KvStoreClassAOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetKvStoreClassAOperationsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetKvStoreClassAOperationsOk() (*int32, bool) {
 	if o == nil || o.KvStoreClassAOperations == nil {
 		return nil, false
 	}
@@ -6808,7 +6810,7 @@ func (o *Results) GetKvStoreClassAOperationsOk() (*int32, bool) {
 }
 
 // HasKvStoreClassAOperations returns a boolean if a field has been set.
-func (o *Results) HasKvStoreClassAOperations() bool {
+func (o *HistoricalFieldResultsAttributes) HasKvStoreClassAOperations() bool {
 	if o != nil && o.KvStoreClassAOperations != nil {
 		return true
 	}
@@ -6817,12 +6819,12 @@ func (o *Results) HasKvStoreClassAOperations() bool {
 }
 
 // SetKvStoreClassAOperations gets a reference to the given int32 and assigns it to the KvStoreClassAOperations field.
-func (o *Results) SetKvStoreClassAOperations(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetKvStoreClassAOperations(v int32) {
 	o.KvStoreClassAOperations = &v
 }
 
 // GetKvStoreClassBOperations returns the KvStoreClassBOperations field value if set, zero value otherwise.
-func (o *Results) GetKvStoreClassBOperations() int32 {
+func (o *HistoricalFieldResultsAttributes) GetKvStoreClassBOperations() int32 {
 	if o == nil || o.KvStoreClassBOperations == nil {
 		var ret int32
 		return ret
@@ -6832,7 +6834,7 @@ func (o *Results) GetKvStoreClassBOperations() int32 {
 
 // GetKvStoreClassBOperationsOk returns a tuple with the KvStoreClassBOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetKvStoreClassBOperationsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetKvStoreClassBOperationsOk() (*int32, bool) {
 	if o == nil || o.KvStoreClassBOperations == nil {
 		return nil, false
 	}
@@ -6840,7 +6842,7 @@ func (o *Results) GetKvStoreClassBOperationsOk() (*int32, bool) {
 }
 
 // HasKvStoreClassBOperations returns a boolean if a field has been set.
-func (o *Results) HasKvStoreClassBOperations() bool {
+func (o *HistoricalFieldResultsAttributes) HasKvStoreClassBOperations() bool {
 	if o != nil && o.KvStoreClassBOperations != nil {
 		return true
 	}
@@ -6849,13 +6851,13 @@ func (o *Results) HasKvStoreClassBOperations() bool {
 }
 
 // SetKvStoreClassBOperations gets a reference to the given int32 and assigns it to the KvStoreClassBOperations field.
-func (o *Results) SetKvStoreClassBOperations(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetKvStoreClassBOperations(v int32) {
 	o.KvStoreClassBOperations = &v
 }
 
 // GetObjectStoreClassAOperations returns the ObjectStoreClassAOperations field value if set, zero value otherwise.
 // Deprecated
-func (o *Results) GetObjectStoreClassAOperations() int32 {
+func (o *HistoricalFieldResultsAttributes) GetObjectStoreClassAOperations() int32 {
 	if o == nil || o.ObjectStoreClassAOperations == nil {
 		var ret int32
 		return ret
@@ -6866,7 +6868,7 @@ func (o *Results) GetObjectStoreClassAOperations() int32 {
 // GetObjectStoreClassAOperationsOk returns a tuple with the ObjectStoreClassAOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // Deprecated
-func (o *Results) GetObjectStoreClassAOperationsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetObjectStoreClassAOperationsOk() (*int32, bool) {
 	if o == nil || o.ObjectStoreClassAOperations == nil {
 		return nil, false
 	}
@@ -6874,7 +6876,7 @@ func (o *Results) GetObjectStoreClassAOperationsOk() (*int32, bool) {
 }
 
 // HasObjectStoreClassAOperations returns a boolean if a field has been set.
-func (o *Results) HasObjectStoreClassAOperations() bool {
+func (o *HistoricalFieldResultsAttributes) HasObjectStoreClassAOperations() bool {
 	if o != nil && o.ObjectStoreClassAOperations != nil {
 		return true
 	}
@@ -6884,13 +6886,13 @@ func (o *Results) HasObjectStoreClassAOperations() bool {
 
 // SetObjectStoreClassAOperations gets a reference to the given int32 and assigns it to the ObjectStoreClassAOperations field.
 // Deprecated
-func (o *Results) SetObjectStoreClassAOperations(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetObjectStoreClassAOperations(v int32) {
 	o.ObjectStoreClassAOperations = &v
 }
 
 // GetObjectStoreClassBOperations returns the ObjectStoreClassBOperations field value if set, zero value otherwise.
 // Deprecated
-func (o *Results) GetObjectStoreClassBOperations() int32 {
+func (o *HistoricalFieldResultsAttributes) GetObjectStoreClassBOperations() int32 {
 	if o == nil || o.ObjectStoreClassBOperations == nil {
 		var ret int32
 		return ret
@@ -6901,7 +6903,7 @@ func (o *Results) GetObjectStoreClassBOperations() int32 {
 // GetObjectStoreClassBOperationsOk returns a tuple with the ObjectStoreClassBOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // Deprecated
-func (o *Results) GetObjectStoreClassBOperationsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetObjectStoreClassBOperationsOk() (*int32, bool) {
 	if o == nil || o.ObjectStoreClassBOperations == nil {
 		return nil, false
 	}
@@ -6909,7 +6911,7 @@ func (o *Results) GetObjectStoreClassBOperationsOk() (*int32, bool) {
 }
 
 // HasObjectStoreClassBOperations returns a boolean if a field has been set.
-func (o *Results) HasObjectStoreClassBOperations() bool {
+func (o *HistoricalFieldResultsAttributes) HasObjectStoreClassBOperations() bool {
 	if o != nil && o.ObjectStoreClassBOperations != nil {
 		return true
 	}
@@ -6919,12 +6921,12 @@ func (o *Results) HasObjectStoreClassBOperations() bool {
 
 // SetObjectStoreClassBOperations gets a reference to the given int32 and assigns it to the ObjectStoreClassBOperations field.
 // Deprecated
-func (o *Results) SetObjectStoreClassBOperations(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetObjectStoreClassBOperations(v int32) {
 	o.ObjectStoreClassBOperations = &v
 }
 
 // GetFanoutReqHeaderBytes returns the FanoutReqHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetFanoutReqHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetFanoutReqHeaderBytes() int32 {
 	if o == nil || o.FanoutReqHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -6934,7 +6936,7 @@ func (o *Results) GetFanoutReqHeaderBytes() int32 {
 
 // GetFanoutReqHeaderBytesOk returns a tuple with the FanoutReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetFanoutReqHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetFanoutReqHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.FanoutReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -6942,7 +6944,7 @@ func (o *Results) GetFanoutReqHeaderBytesOk() (*int32, bool) {
 }
 
 // HasFanoutReqHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasFanoutReqHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasFanoutReqHeaderBytes() bool {
 	if o != nil && o.FanoutReqHeaderBytes != nil {
 		return true
 	}
@@ -6951,12 +6953,12 @@ func (o *Results) HasFanoutReqHeaderBytes() bool {
 }
 
 // SetFanoutReqHeaderBytes gets a reference to the given int32 and assigns it to the FanoutReqHeaderBytes field.
-func (o *Results) SetFanoutReqHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetFanoutReqHeaderBytes(v int32) {
 	o.FanoutReqHeaderBytes = &v
 }
 
 // GetFanoutReqBodyBytes returns the FanoutReqBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetFanoutReqBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetFanoutReqBodyBytes() int32 {
 	if o == nil || o.FanoutReqBodyBytes == nil {
 		var ret int32
 		return ret
@@ -6966,7 +6968,7 @@ func (o *Results) GetFanoutReqBodyBytes() int32 {
 
 // GetFanoutReqBodyBytesOk returns a tuple with the FanoutReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetFanoutReqBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetFanoutReqBodyBytesOk() (*int32, bool) {
 	if o == nil || o.FanoutReqBodyBytes == nil {
 		return nil, false
 	}
@@ -6974,7 +6976,7 @@ func (o *Results) GetFanoutReqBodyBytesOk() (*int32, bool) {
 }
 
 // HasFanoutReqBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasFanoutReqBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasFanoutReqBodyBytes() bool {
 	if o != nil && o.FanoutReqBodyBytes != nil {
 		return true
 	}
@@ -6983,12 +6985,12 @@ func (o *Results) HasFanoutReqBodyBytes() bool {
 }
 
 // SetFanoutReqBodyBytes gets a reference to the given int32 and assigns it to the FanoutReqBodyBytes field.
-func (o *Results) SetFanoutReqBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetFanoutReqBodyBytes(v int32) {
 	o.FanoutReqBodyBytes = &v
 }
 
 // GetFanoutRespHeaderBytes returns the FanoutRespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetFanoutRespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetFanoutRespHeaderBytes() int32 {
 	if o == nil || o.FanoutRespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -6998,7 +7000,7 @@ func (o *Results) GetFanoutRespHeaderBytes() int32 {
 
 // GetFanoutRespHeaderBytesOk returns a tuple with the FanoutRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetFanoutRespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetFanoutRespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.FanoutRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -7006,7 +7008,7 @@ func (o *Results) GetFanoutRespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasFanoutRespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasFanoutRespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasFanoutRespHeaderBytes() bool {
 	if o != nil && o.FanoutRespHeaderBytes != nil {
 		return true
 	}
@@ -7015,12 +7017,12 @@ func (o *Results) HasFanoutRespHeaderBytes() bool {
 }
 
 // SetFanoutRespHeaderBytes gets a reference to the given int32 and assigns it to the FanoutRespHeaderBytes field.
-func (o *Results) SetFanoutRespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetFanoutRespHeaderBytes(v int32) {
 	o.FanoutRespHeaderBytes = &v
 }
 
 // GetFanoutRespBodyBytes returns the FanoutRespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetFanoutRespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetFanoutRespBodyBytes() int32 {
 	if o == nil || o.FanoutRespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -7030,7 +7032,7 @@ func (o *Results) GetFanoutRespBodyBytes() int32 {
 
 // GetFanoutRespBodyBytesOk returns a tuple with the FanoutRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetFanoutRespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetFanoutRespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.FanoutRespBodyBytes == nil {
 		return nil, false
 	}
@@ -7038,7 +7040,7 @@ func (o *Results) GetFanoutRespBodyBytesOk() (*int32, bool) {
 }
 
 // HasFanoutRespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasFanoutRespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasFanoutRespBodyBytes() bool {
 	if o != nil && o.FanoutRespBodyBytes != nil {
 		return true
 	}
@@ -7047,12 +7049,12 @@ func (o *Results) HasFanoutRespBodyBytes() bool {
 }
 
 // SetFanoutRespBodyBytes gets a reference to the given int32 and assigns it to the FanoutRespBodyBytes field.
-func (o *Results) SetFanoutRespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetFanoutRespBodyBytes(v int32) {
 	o.FanoutRespBodyBytes = &v
 }
 
 // GetFanoutBereqHeaderBytes returns the FanoutBereqHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetFanoutBereqHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetFanoutBereqHeaderBytes() int32 {
 	if o == nil || o.FanoutBereqHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -7062,7 +7064,7 @@ func (o *Results) GetFanoutBereqHeaderBytes() int32 {
 
 // GetFanoutBereqHeaderBytesOk returns a tuple with the FanoutBereqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetFanoutBereqHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetFanoutBereqHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.FanoutBereqHeaderBytes == nil {
 		return nil, false
 	}
@@ -7070,7 +7072,7 @@ func (o *Results) GetFanoutBereqHeaderBytesOk() (*int32, bool) {
 }
 
 // HasFanoutBereqHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasFanoutBereqHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasFanoutBereqHeaderBytes() bool {
 	if o != nil && o.FanoutBereqHeaderBytes != nil {
 		return true
 	}
@@ -7079,12 +7081,12 @@ func (o *Results) HasFanoutBereqHeaderBytes() bool {
 }
 
 // SetFanoutBereqHeaderBytes gets a reference to the given int32 and assigns it to the FanoutBereqHeaderBytes field.
-func (o *Results) SetFanoutBereqHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetFanoutBereqHeaderBytes(v int32) {
 	o.FanoutBereqHeaderBytes = &v
 }
 
 // GetFanoutBereqBodyBytes returns the FanoutBereqBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetFanoutBereqBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetFanoutBereqBodyBytes() int32 {
 	if o == nil || o.FanoutBereqBodyBytes == nil {
 		var ret int32
 		return ret
@@ -7094,7 +7096,7 @@ func (o *Results) GetFanoutBereqBodyBytes() int32 {
 
 // GetFanoutBereqBodyBytesOk returns a tuple with the FanoutBereqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetFanoutBereqBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetFanoutBereqBodyBytesOk() (*int32, bool) {
 	if o == nil || o.FanoutBereqBodyBytes == nil {
 		return nil, false
 	}
@@ -7102,7 +7104,7 @@ func (o *Results) GetFanoutBereqBodyBytesOk() (*int32, bool) {
 }
 
 // HasFanoutBereqBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasFanoutBereqBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasFanoutBereqBodyBytes() bool {
 	if o != nil && o.FanoutBereqBodyBytes != nil {
 		return true
 	}
@@ -7111,12 +7113,12 @@ func (o *Results) HasFanoutBereqBodyBytes() bool {
 }
 
 // SetFanoutBereqBodyBytes gets a reference to the given int32 and assigns it to the FanoutBereqBodyBytes field.
-func (o *Results) SetFanoutBereqBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetFanoutBereqBodyBytes(v int32) {
 	o.FanoutBereqBodyBytes = &v
 }
 
 // GetFanoutBerespHeaderBytes returns the FanoutBerespHeaderBytes field value if set, zero value otherwise.
-func (o *Results) GetFanoutBerespHeaderBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetFanoutBerespHeaderBytes() int32 {
 	if o == nil || o.FanoutBerespHeaderBytes == nil {
 		var ret int32
 		return ret
@@ -7126,7 +7128,7 @@ func (o *Results) GetFanoutBerespHeaderBytes() int32 {
 
 // GetFanoutBerespHeaderBytesOk returns a tuple with the FanoutBerespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetFanoutBerespHeaderBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetFanoutBerespHeaderBytesOk() (*int32, bool) {
 	if o == nil || o.FanoutBerespHeaderBytes == nil {
 		return nil, false
 	}
@@ -7134,7 +7136,7 @@ func (o *Results) GetFanoutBerespHeaderBytesOk() (*int32, bool) {
 }
 
 // HasFanoutBerespHeaderBytes returns a boolean if a field has been set.
-func (o *Results) HasFanoutBerespHeaderBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasFanoutBerespHeaderBytes() bool {
 	if o != nil && o.FanoutBerespHeaderBytes != nil {
 		return true
 	}
@@ -7143,12 +7145,12 @@ func (o *Results) HasFanoutBerespHeaderBytes() bool {
 }
 
 // SetFanoutBerespHeaderBytes gets a reference to the given int32 and assigns it to the FanoutBerespHeaderBytes field.
-func (o *Results) SetFanoutBerespHeaderBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetFanoutBerespHeaderBytes(v int32) {
 	o.FanoutBerespHeaderBytes = &v
 }
 
 // GetFanoutBerespBodyBytes returns the FanoutBerespBodyBytes field value if set, zero value otherwise.
-func (o *Results) GetFanoutBerespBodyBytes() int32 {
+func (o *HistoricalFieldResultsAttributes) GetFanoutBerespBodyBytes() int32 {
 	if o == nil || o.FanoutBerespBodyBytes == nil {
 		var ret int32
 		return ret
@@ -7158,7 +7160,7 @@ func (o *Results) GetFanoutBerespBodyBytes() int32 {
 
 // GetFanoutBerespBodyBytesOk returns a tuple with the FanoutBerespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetFanoutBerespBodyBytesOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetFanoutBerespBodyBytesOk() (*int32, bool) {
 	if o == nil || o.FanoutBerespBodyBytes == nil {
 		return nil, false
 	}
@@ -7166,7 +7168,7 @@ func (o *Results) GetFanoutBerespBodyBytesOk() (*int32, bool) {
 }
 
 // HasFanoutBerespBodyBytes returns a boolean if a field has been set.
-func (o *Results) HasFanoutBerespBodyBytes() bool {
+func (o *HistoricalFieldResultsAttributes) HasFanoutBerespBodyBytes() bool {
 	if o != nil && o.FanoutBerespBodyBytes != nil {
 		return true
 	}
@@ -7175,12 +7177,12 @@ func (o *Results) HasFanoutBerespBodyBytes() bool {
 }
 
 // SetFanoutBerespBodyBytes gets a reference to the given int32 and assigns it to the FanoutBerespBodyBytes field.
-func (o *Results) SetFanoutBerespBodyBytes(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetFanoutBerespBodyBytes(v int32) {
 	o.FanoutBerespBodyBytes = &v
 }
 
 // GetFanoutConnTimeMs returns the FanoutConnTimeMs field value if set, zero value otherwise.
-func (o *Results) GetFanoutConnTimeMs() int32 {
+func (o *HistoricalFieldResultsAttributes) GetFanoutConnTimeMs() int32 {
 	if o == nil || o.FanoutConnTimeMs == nil {
 		var ret int32
 		return ret
@@ -7190,7 +7192,7 @@ func (o *Results) GetFanoutConnTimeMs() int32 {
 
 // GetFanoutConnTimeMsOk returns a tuple with the FanoutConnTimeMs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetFanoutConnTimeMsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetFanoutConnTimeMsOk() (*int32, bool) {
 	if o == nil || o.FanoutConnTimeMs == nil {
 		return nil, false
 	}
@@ -7198,7 +7200,7 @@ func (o *Results) GetFanoutConnTimeMsOk() (*int32, bool) {
 }
 
 // HasFanoutConnTimeMs returns a boolean if a field has been set.
-func (o *Results) HasFanoutConnTimeMs() bool {
+func (o *HistoricalFieldResultsAttributes) HasFanoutConnTimeMs() bool {
 	if o != nil && o.FanoutConnTimeMs != nil {
 		return true
 	}
@@ -7207,12 +7209,12 @@ func (o *Results) HasFanoutConnTimeMs() bool {
 }
 
 // SetFanoutConnTimeMs gets a reference to the given int32 and assigns it to the FanoutConnTimeMs field.
-func (o *Results) SetFanoutConnTimeMs(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetFanoutConnTimeMs(v int32) {
 	o.FanoutConnTimeMs = &v
 }
 
 // GetDdosActionLimitStreamsConnections returns the DdosActionLimitStreamsConnections field value if set, zero value otherwise.
-func (o *Results) GetDdosActionLimitStreamsConnections() int32 {
+func (o *HistoricalFieldResultsAttributes) GetDdosActionLimitStreamsConnections() int32 {
 	if o == nil || o.DdosActionLimitStreamsConnections == nil {
 		var ret int32
 		return ret
@@ -7222,7 +7224,7 @@ func (o *Results) GetDdosActionLimitStreamsConnections() int32 {
 
 // GetDdosActionLimitStreamsConnectionsOk returns a tuple with the DdosActionLimitStreamsConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetDdosActionLimitStreamsConnectionsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetDdosActionLimitStreamsConnectionsOk() (*int32, bool) {
 	if o == nil || o.DdosActionLimitStreamsConnections == nil {
 		return nil, false
 	}
@@ -7230,7 +7232,7 @@ func (o *Results) GetDdosActionLimitStreamsConnectionsOk() (*int32, bool) {
 }
 
 // HasDdosActionLimitStreamsConnections returns a boolean if a field has been set.
-func (o *Results) HasDdosActionLimitStreamsConnections() bool {
+func (o *HistoricalFieldResultsAttributes) HasDdosActionLimitStreamsConnections() bool {
 	if o != nil && o.DdosActionLimitStreamsConnections != nil {
 		return true
 	}
@@ -7239,12 +7241,12 @@ func (o *Results) HasDdosActionLimitStreamsConnections() bool {
 }
 
 // SetDdosActionLimitStreamsConnections gets a reference to the given int32 and assigns it to the DdosActionLimitStreamsConnections field.
-func (o *Results) SetDdosActionLimitStreamsConnections(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetDdosActionLimitStreamsConnections(v int32) {
 	o.DdosActionLimitStreamsConnections = &v
 }
 
 // GetDdosActionLimitStreamsRequests returns the DdosActionLimitStreamsRequests field value if set, zero value otherwise.
-func (o *Results) GetDdosActionLimitStreamsRequests() int32 {
+func (o *HistoricalFieldResultsAttributes) GetDdosActionLimitStreamsRequests() int32 {
 	if o == nil || o.DdosActionLimitStreamsRequests == nil {
 		var ret int32
 		return ret
@@ -7254,7 +7256,7 @@ func (o *Results) GetDdosActionLimitStreamsRequests() int32 {
 
 // GetDdosActionLimitStreamsRequestsOk returns a tuple with the DdosActionLimitStreamsRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetDdosActionLimitStreamsRequestsOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetDdosActionLimitStreamsRequestsOk() (*int32, bool) {
 	if o == nil || o.DdosActionLimitStreamsRequests == nil {
 		return nil, false
 	}
@@ -7262,7 +7264,7 @@ func (o *Results) GetDdosActionLimitStreamsRequestsOk() (*int32, bool) {
 }
 
 // HasDdosActionLimitStreamsRequests returns a boolean if a field has been set.
-func (o *Results) HasDdosActionLimitStreamsRequests() bool {
+func (o *HistoricalFieldResultsAttributes) HasDdosActionLimitStreamsRequests() bool {
 	if o != nil && o.DdosActionLimitStreamsRequests != nil {
 		return true
 	}
@@ -7271,12 +7273,12 @@ func (o *Results) HasDdosActionLimitStreamsRequests() bool {
 }
 
 // SetDdosActionLimitStreamsRequests gets a reference to the given int32 and assigns it to the DdosActionLimitStreamsRequests field.
-func (o *Results) SetDdosActionLimitStreamsRequests(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetDdosActionLimitStreamsRequests(v int32) {
 	o.DdosActionLimitStreamsRequests = &v
 }
 
 // GetDdosActionTarpitAccept returns the DdosActionTarpitAccept field value if set, zero value otherwise.
-func (o *Results) GetDdosActionTarpitAccept() int32 {
+func (o *HistoricalFieldResultsAttributes) GetDdosActionTarpitAccept() int32 {
 	if o == nil || o.DdosActionTarpitAccept == nil {
 		var ret int32
 		return ret
@@ -7286,7 +7288,7 @@ func (o *Results) GetDdosActionTarpitAccept() int32 {
 
 // GetDdosActionTarpitAcceptOk returns a tuple with the DdosActionTarpitAccept field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetDdosActionTarpitAcceptOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetDdosActionTarpitAcceptOk() (*int32, bool) {
 	if o == nil || o.DdosActionTarpitAccept == nil {
 		return nil, false
 	}
@@ -7294,7 +7296,7 @@ func (o *Results) GetDdosActionTarpitAcceptOk() (*int32, bool) {
 }
 
 // HasDdosActionTarpitAccept returns a boolean if a field has been set.
-func (o *Results) HasDdosActionTarpitAccept() bool {
+func (o *HistoricalFieldResultsAttributes) HasDdosActionTarpitAccept() bool {
 	if o != nil && o.DdosActionTarpitAccept != nil {
 		return true
 	}
@@ -7303,12 +7305,12 @@ func (o *Results) HasDdosActionTarpitAccept() bool {
 }
 
 // SetDdosActionTarpitAccept gets a reference to the given int32 and assigns it to the DdosActionTarpitAccept field.
-func (o *Results) SetDdosActionTarpitAccept(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetDdosActionTarpitAccept(v int32) {
 	o.DdosActionTarpitAccept = &v
 }
 
 // GetDdosActionTarpit returns the DdosActionTarpit field value if set, zero value otherwise.
-func (o *Results) GetDdosActionTarpit() int32 {
+func (o *HistoricalFieldResultsAttributes) GetDdosActionTarpit() int32 {
 	if o == nil || o.DdosActionTarpit == nil {
 		var ret int32
 		return ret
@@ -7318,7 +7320,7 @@ func (o *Results) GetDdosActionTarpit() int32 {
 
 // GetDdosActionTarpitOk returns a tuple with the DdosActionTarpit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetDdosActionTarpitOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetDdosActionTarpitOk() (*int32, bool) {
 	if o == nil || o.DdosActionTarpit == nil {
 		return nil, false
 	}
@@ -7326,7 +7328,7 @@ func (o *Results) GetDdosActionTarpitOk() (*int32, bool) {
 }
 
 // HasDdosActionTarpit returns a boolean if a field has been set.
-func (o *Results) HasDdosActionTarpit() bool {
+func (o *HistoricalFieldResultsAttributes) HasDdosActionTarpit() bool {
 	if o != nil && o.DdosActionTarpit != nil {
 		return true
 	}
@@ -7335,12 +7337,12 @@ func (o *Results) HasDdosActionTarpit() bool {
 }
 
 // SetDdosActionTarpit gets a reference to the given int32 and assigns it to the DdosActionTarpit field.
-func (o *Results) SetDdosActionTarpit(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetDdosActionTarpit(v int32) {
 	o.DdosActionTarpit = &v
 }
 
 // GetDdosActionClose returns the DdosActionClose field value if set, zero value otherwise.
-func (o *Results) GetDdosActionClose() int32 {
+func (o *HistoricalFieldResultsAttributes) GetDdosActionClose() int32 {
 	if o == nil || o.DdosActionClose == nil {
 		var ret int32
 		return ret
@@ -7350,7 +7352,7 @@ func (o *Results) GetDdosActionClose() int32 {
 
 // GetDdosActionCloseOk returns a tuple with the DdosActionClose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetDdosActionCloseOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetDdosActionCloseOk() (*int32, bool) {
 	if o == nil || o.DdosActionClose == nil {
 		return nil, false
 	}
@@ -7358,7 +7360,7 @@ func (o *Results) GetDdosActionCloseOk() (*int32, bool) {
 }
 
 // HasDdosActionClose returns a boolean if a field has been set.
-func (o *Results) HasDdosActionClose() bool {
+func (o *HistoricalFieldResultsAttributes) HasDdosActionClose() bool {
 	if o != nil && o.DdosActionClose != nil {
 		return true
 	}
@@ -7367,12 +7369,12 @@ func (o *Results) HasDdosActionClose() bool {
 }
 
 // SetDdosActionClose gets a reference to the given int32 and assigns it to the DdosActionClose field.
-func (o *Results) SetDdosActionClose(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetDdosActionClose(v int32) {
 	o.DdosActionClose = &v
 }
 
 // GetDdosActionBlackhole returns the DdosActionBlackhole field value if set, zero value otherwise.
-func (o *Results) GetDdosActionBlackhole() int32 {
+func (o *HistoricalFieldResultsAttributes) GetDdosActionBlackhole() int32 {
 	if o == nil || o.DdosActionBlackhole == nil {
 		var ret int32
 		return ret
@@ -7382,7 +7384,7 @@ func (o *Results) GetDdosActionBlackhole() int32 {
 
 // GetDdosActionBlackholeOk returns a tuple with the DdosActionBlackhole field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetDdosActionBlackholeOk() (*int32, bool) {
+func (o *HistoricalFieldResultsAttributes) GetDdosActionBlackholeOk() (*int32, bool) {
 	if o == nil || o.DdosActionBlackhole == nil {
 		return nil, false
 	}
@@ -7390,7 +7392,7 @@ func (o *Results) GetDdosActionBlackholeOk() (*int32, bool) {
 }
 
 // HasDdosActionBlackhole returns a boolean if a field has been set.
-func (o *Results) HasDdosActionBlackhole() bool {
+func (o *HistoricalFieldResultsAttributes) HasDdosActionBlackhole() bool {
 	if o != nil && o.DdosActionBlackhole != nil {
 		return true
 	}
@@ -7399,13 +7401,78 @@ func (o *Results) HasDdosActionBlackhole() bool {
 }
 
 // SetDdosActionBlackhole gets a reference to the given int32 and assigns it to the DdosActionBlackhole field.
-func (o *Results) SetDdosActionBlackhole(v int32) {
+func (o *HistoricalFieldResultsAttributes) SetDdosActionBlackhole(v int32) {
 	o.DdosActionBlackhole = &v
+}
+
+// GetServiceID returns the ServiceID field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *HistoricalFieldResultsAttributes) GetServiceID() string {
+	if o == nil  {
+		var ret string
+		return ret
+	}
+	return o.ServiceID
+}
+
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *HistoricalFieldResultsAttributes) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
+		return nil, false
+	}
+	return &o.ServiceID, true
+}
+
+// HasServiceID returns a boolean if a field has been set.
+func (o *HistoricalFieldResultsAttributes) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *HistoricalFieldResultsAttributes) SetServiceID(v string) {
+	o.ServiceID = v
+}
+
+// GetStartTime returns the StartTime field value if set, zero value otherwise.
+func (o *HistoricalFieldResultsAttributes) GetStartTime() int32 {
+	if o == nil || o.StartTime == nil {
+		var ret int32
+		return ret
+	}
+	return *o.StartTime
+}
+
+// GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HistoricalFieldResultsAttributes) GetStartTimeOk() (*int32, bool) {
+	if o == nil || o.StartTime == nil {
+		return nil, false
+	}
+	return o.StartTime, true
+}
+
+// HasStartTime returns a boolean if a field has been set.
+func (o *HistoricalFieldResultsAttributes) HasStartTime() bool {
+	if o != nil && o.StartTime != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStartTime gets a reference to the given int32 and assigns it to the StartTime field.
+func (o *HistoricalFieldResultsAttributes) SetStartTime(v int32) {
+	o.StartTime = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o Results) MarshalJSON() ([]byte, error) {
+func (o HistoricalFieldResultsAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Requests != nil {
 		toSerialize["requests"] = o.Requests
@@ -8055,6 +8122,12 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.DdosActionBlackhole != nil {
 		toSerialize["ddos_action_blackhole"] = o.DdosActionBlackhole
 	}
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
+	}
+	if o.StartTime != nil {
+		toSerialize["start_time"] = o.StartTime
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -8065,11 +8138,11 @@ func (o Results) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
-	varResults := _Results{}
+func (o *HistoricalFieldResultsAttributes) UnmarshalJSON(bytes []byte) (err error) {
+	varHistoricalFieldResultsAttributes := _HistoricalFieldResultsAttributes{}
 
-	if err = json.Unmarshal(bytes, &varResults); err == nil {
-		*o = Results(varResults)
+	if err = json.Unmarshal(bytes, &varHistoricalFieldResultsAttributes); err == nil {
+		*o = HistoricalFieldResultsAttributes(varHistoricalFieldResultsAttributes)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -8291,54 +8364,56 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "ddos_action_tarpit")
 		delete(additionalProperties, "ddos_action_close")
 		delete(additionalProperties, "ddos_action_blackhole")
+		delete(additionalProperties, "service_id")
+		delete(additionalProperties, "start_time")
 		o.AdditionalProperties = additionalProperties
 	}
 
 	return err
 }
 
-// NullableResults is a helper abstraction for handling nullable results types. 
-type NullableResults struct {
-	value *Results
+// NullableHistoricalFieldResultsAttributes is a helper abstraction for handling nullable historicalfieldresultsattributes types. 
+type NullableHistoricalFieldResultsAttributes struct {
+	value *HistoricalFieldResultsAttributes
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableResults) Get() *Results {
+func (v NullableHistoricalFieldResultsAttributes) Get() *HistoricalFieldResultsAttributes {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableResults) Set(val *Results) {
+func (v *NullableHistoricalFieldResultsAttributes) Set(val *HistoricalFieldResultsAttributes) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableResults) IsSet() bool {
+func (v NullableHistoricalFieldResultsAttributes) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableResults) Unset() {
+func (v *NullableHistoricalFieldResultsAttributes) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableResults returns a pointer to a new instance of NullableResults.
-func NewNullableResults(val *Results) *NullableResults {
-	return &NullableResults{value: val, isSet: true}
+// NewNullableHistoricalFieldResultsAttributes returns a pointer to a new instance of NullableHistoricalFieldResultsAttributes.
+func NewNullableHistoricalFieldResultsAttributes(val *HistoricalFieldResultsAttributes) *NullableHistoricalFieldResultsAttributes {
+	return &NullableHistoricalFieldResultsAttributes{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableResults) MarshalJSON() ([]byte, error) {
+func (v NullableHistoricalFieldResultsAttributes) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableResults) UnmarshalJSON(src []byte) error {
+func (v *NullableHistoricalFieldResultsAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
