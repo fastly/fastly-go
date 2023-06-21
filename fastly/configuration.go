@@ -105,7 +105,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "fastly-go/v1.0.0-beta.11",
+		UserAgent:        "fastly-go/v1.0.0-beta.12",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{

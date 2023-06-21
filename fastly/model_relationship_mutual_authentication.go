@@ -17,7 +17,7 @@ import (
 	"encoding/json"
 )
 
-// RelationshipMutualAuthentication struct for RelationshipMutualAuthentication
+// RelationshipMutualAuthentication The [Mutual Authentication](/reference/api/tls/mutual-tls/authentication/) for client-to-server authentication. Optional.
 type RelationshipMutualAuthentication struct {
 	MutualAuthentication *RelationshipMutualAuthenticationMutualAuthentication `json:"mutual_authentication,omitempty"`
 	AdditionalProperties map[string]any

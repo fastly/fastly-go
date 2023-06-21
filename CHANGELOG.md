@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.0.0-beta.12](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.12) (2023-06-21)
+
+**Bug fixes:**
+
+- fix(tls_activation): add tls_configuration and tls_domains.
+- fix(tls_subscription): add tls_configuration and common name.
+
 ## [v1.0.0-beta.11](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.11) (2023-06-20)
 
 **Enhancements:**

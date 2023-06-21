@@ -22,7 +22,7 @@ import (
 type RelationshipsForTLSSubscription struct {
 	RelationshipCommonName *RelationshipCommonName
 	RelationshipTLSCertificates *RelationshipTLSCertificates
-	RelationshipTLSConfiguration *RelationshipTLSConfiguration
+	RelationshipTLSConfigurationForTLSSubscription *RelationshipTLSConfigurationForTLSSubscription
 	RelationshipTLSDomains *RelationshipTLSDomains
 }
 
@@ -54,16 +54,16 @@ func (o *RelationshipsForTLSSubscription) UnmarshalJSON(data []byte) error {
 		o.RelationshipTLSCertificates = nil
 	}
 
-	// try to unmarshal JSON data into RelationshipTLSConfiguration
-	err = json.Unmarshal(data, &o.RelationshipTLSConfiguration);
+	// try to unmarshal JSON data into RelationshipTLSConfigurationForTLSSubscription
+	err = json.Unmarshal(data, &o.RelationshipTLSConfigurationForTLSSubscription);
 	if err == nil {
-		jsonRelationshipTLSConfiguration, _ := json.Marshal(o.RelationshipTLSConfiguration)
-		if string(jsonRelationshipTLSConfiguration) != "{}" { // empty struct
-			return nil // data stored in o.RelationshipTLSConfiguration, return on the first match
+		jsonRelationshipTLSConfigurationForTLSSubscription, _ := json.Marshal(o.RelationshipTLSConfigurationForTLSSubscription)
+		if string(jsonRelationshipTLSConfigurationForTLSSubscription) != "{}" { // empty struct
+			return nil // data stored in o.RelationshipTLSConfigurationForTLSSubscription, return on the first match
 		}
-    o.RelationshipTLSConfiguration = nil
+    o.RelationshipTLSConfigurationForTLSSubscription = nil
 	} else {
-		o.RelationshipTLSConfiguration = nil
+		o.RelationshipTLSConfigurationForTLSSubscription = nil
 	}
 
 	// try to unmarshal JSON data into RelationshipTLSDomains
@@ -92,8 +92,8 @@ func (o *RelationshipsForTLSSubscription) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&o.RelationshipTLSCertificates)
 	}
 
-	if o.RelationshipTLSConfiguration != nil {
-		return json.Marshal(&o.RelationshipTLSConfiguration)
+	if o.RelationshipTLSConfigurationForTLSSubscription != nil {
+		return json.Marshal(&o.RelationshipTLSConfigurationForTLSSubscription)
 	}
 
 	if o.RelationshipTLSDomains != nil {

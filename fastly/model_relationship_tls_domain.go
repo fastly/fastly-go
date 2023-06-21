@@ -17,7 +17,7 @@ import (
 	"encoding/json"
 )
 
-// RelationshipTLSDomain struct for RelationshipTLSDomain
+// RelationshipTLSDomain The [TLS domain](/reference/api/tls/custom-certs/domains/) being enabled for TLS traffic. Required.
 type RelationshipTLSDomain struct {
 	TLSDomain *RelationshipTLSDomainTLSDomain `json:"tls_domain,omitempty"`
 	AdditionalProperties map[string]any

@@ -20,6 +20,8 @@ import (
 // RelationshipsForTLSActivation struct for RelationshipsForTLSActivation
 type RelationshipsForTLSActivation struct {
 	TLSCertificate *RelationshipTLSCertificateTLSCertificate `json:"tls_certificate,omitempty"`
+	TLSConfiguration *RelationshipTLSConfigurationTLSConfiguration `json:"tls_configuration,omitempty"`
+	TLSDomain *RelationshipTLSDomainTLSDomain `json:"tls_domain,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -74,12 +76,82 @@ func (o *RelationshipsForTLSActivation) SetTLSCertificate(v RelationshipTLSCerti
 	o.TLSCertificate = &v
 }
 
+// GetTLSConfiguration returns the TLSConfiguration field value if set, zero value otherwise.
+func (o *RelationshipsForTLSActivation) GetTLSConfiguration() RelationshipTLSConfigurationTLSConfiguration {
+	if o == nil || o.TLSConfiguration == nil {
+		var ret RelationshipTLSConfigurationTLSConfiguration
+		return ret
+	}
+	return *o.TLSConfiguration
+}
+
+// GetTLSConfigurationOk returns a tuple with the TLSConfiguration field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RelationshipsForTLSActivation) GetTLSConfigurationOk() (*RelationshipTLSConfigurationTLSConfiguration, bool) {
+	if o == nil || o.TLSConfiguration == nil {
+		return nil, false
+	}
+	return o.TLSConfiguration, true
+}
+
+// HasTLSConfiguration returns a boolean if a field has been set.
+func (o *RelationshipsForTLSActivation) HasTLSConfiguration() bool {
+	if o != nil && o.TLSConfiguration != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTLSConfiguration gets a reference to the given RelationshipTLSConfigurationTLSConfiguration and assigns it to the TLSConfiguration field.
+func (o *RelationshipsForTLSActivation) SetTLSConfiguration(v RelationshipTLSConfigurationTLSConfiguration) {
+	o.TLSConfiguration = &v
+}
+
+// GetTLSDomain returns the TLSDomain field value if set, zero value otherwise.
+func (o *RelationshipsForTLSActivation) GetTLSDomain() RelationshipTLSDomainTLSDomain {
+	if o == nil || o.TLSDomain == nil {
+		var ret RelationshipTLSDomainTLSDomain
+		return ret
+	}
+	return *o.TLSDomain
+}
+
+// GetTLSDomainOk returns a tuple with the TLSDomain field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RelationshipsForTLSActivation) GetTLSDomainOk() (*RelationshipTLSDomainTLSDomain, bool) {
+	if o == nil || o.TLSDomain == nil {
+		return nil, false
+	}
+	return o.TLSDomain, true
+}
+
+// HasTLSDomain returns a boolean if a field has been set.
+func (o *RelationshipsForTLSActivation) HasTLSDomain() bool {
+	if o != nil && o.TLSDomain != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTLSDomain gets a reference to the given RelationshipTLSDomainTLSDomain and assigns it to the TLSDomain field.
+func (o *RelationshipsForTLSActivation) SetTLSDomain(v RelationshipTLSDomainTLSDomain) {
+	o.TLSDomain = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o RelationshipsForTLSActivation) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.TLSCertificate != nil {
 		toSerialize["tls_certificate"] = o.TLSCertificate
+	}
+	if o.TLSConfiguration != nil {
+		toSerialize["tls_configuration"] = o.TLSConfiguration
+	}
+	if o.TLSDomain != nil {
+		toSerialize["tls_domain"] = o.TLSDomain
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -102,6 +174,8 @@ func (o *RelationshipsForTLSActivation) UnmarshalJSON(bytes []byte) (err error) 
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "tls_certificate")
+		delete(additionalProperties, "tls_configuration")
+		delete(additionalProperties, "tls_domain")
 		o.AdditionalProperties = additionalProperties
 	}
 
