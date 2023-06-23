@@ -19,7 +19,7 @@ import (
 
 // HistoricalUsageMonthResponseAllOf struct for HistoricalUsageMonthResponseAllOf
 type HistoricalUsageMonthResponseAllOf struct {
-	Data *HistoricalUsageMonthResponseAllOfData `json:"data,omitempty"`
+	Data *HistoricalUsageMonthResponseData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -43,9 +43,9 @@ func NewHistoricalUsageMonthResponseAllOfWithDefaults() *HistoricalUsageMonthRes
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *HistoricalUsageMonthResponseAllOf) GetData() HistoricalUsageMonthResponseAllOfData {
+func (o *HistoricalUsageMonthResponseAllOf) GetData() HistoricalUsageMonthResponseData {
 	if o == nil || o.Data == nil {
-		var ret HistoricalUsageMonthResponseAllOfData
+		var ret HistoricalUsageMonthResponseData
 		return ret
 	}
 	return *o.Data
@@ -53,7 +53,7 @@ func (o *HistoricalUsageMonthResponseAllOf) GetData() HistoricalUsageMonthRespon
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalUsageMonthResponseAllOf) GetDataOk() (*HistoricalUsageMonthResponseAllOfData, bool) {
+func (o *HistoricalUsageMonthResponseAllOf) GetDataOk() (*HistoricalUsageMonthResponseData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *HistoricalUsageMonthResponseAllOf) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given HistoricalUsageMonthResponseAllOfData and assigns it to the Data field.
-func (o *HistoricalUsageMonthResponseAllOf) SetData(v HistoricalUsageMonthResponseAllOfData) {
+// SetData gets a reference to the given HistoricalUsageMonthResponseData and assigns it to the Data field.
+func (o *HistoricalUsageMonthResponseAllOf) SetData(v HistoricalUsageMonthResponseData) {
 	o.Data = &v
 }
 

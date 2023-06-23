@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**HistoricalUsageMonthResponseAllOfData**](HistoricalUsageMonthResponseAllOfData.md) |  | [optional] 
+**Data** | Pointer to [**HistoricalUsageMonthResponseData**](HistoricalUsageMonthResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *HistoricalUsageMonthResponseAllOf) GetData() HistoricalUsageMonthResponseAllOfData`
+`func (o *HistoricalUsageMonthResponseAllOf) GetData() HistoricalUsageMonthResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *HistoricalUsageMonthResponseAllOf) GetDataOk() (*HistoricalUsageMonthResponseAllOfData, bool)`
+`func (o *HistoricalUsageMonthResponseAllOf) GetDataOk() (*HistoricalUsageMonthResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *HistoricalUsageMonthResponseAllOf) SetData(v HistoricalUsageMonthResponseAllOfData)`
+`func (o *HistoricalUsageMonthResponseAllOf) SetData(v HistoricalUsageMonthResponseData)`
 
 SetData sets Data field to given value.
 

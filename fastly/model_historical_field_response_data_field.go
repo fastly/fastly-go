@@ -17,36 +17,35 @@ import (
 	"encoding/json"
 )
 
-// HistoricalResponseAllOf struct for HistoricalResponseAllOf
-type HistoricalResponseAllOf struct {
-	// Contains the results of the query, organized by *service ID*, into arrays where each element describes one service over a *time span*.
-	Data *map[string][]Results `json:"data,omitempty"`
+// HistoricalFieldResponseDataField struct for HistoricalFieldResponseDataField
+type HistoricalFieldResponseDataField struct {
+	Data *map[string][]HistoricalFieldResultsAttributes `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _HistoricalResponseAllOf HistoricalResponseAllOf
+type _HistoricalFieldResponseDataField HistoricalFieldResponseDataField
 
-// NewHistoricalResponseAllOf instantiates a new HistoricalResponseAllOf object
+// NewHistoricalFieldResponseDataField instantiates a new HistoricalFieldResponseDataField object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHistoricalResponseAllOf() *HistoricalResponseAllOf {
-	this := HistoricalResponseAllOf{}
+func NewHistoricalFieldResponseDataField() *HistoricalFieldResponseDataField {
+	this := HistoricalFieldResponseDataField{}
 	return &this
 }
 
-// NewHistoricalResponseAllOfWithDefaults instantiates a new HistoricalResponseAllOf object
+// NewHistoricalFieldResponseDataFieldWithDefaults instantiates a new HistoricalFieldResponseDataField object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewHistoricalResponseAllOfWithDefaults() *HistoricalResponseAllOf {
-	this := HistoricalResponseAllOf{}
+func NewHistoricalFieldResponseDataFieldWithDefaults() *HistoricalFieldResponseDataField {
+	this := HistoricalFieldResponseDataField{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *HistoricalResponseAllOf) GetData() map[string][]Results {
+func (o *HistoricalFieldResponseDataField) GetData() map[string][]HistoricalFieldResultsAttributes {
 	if o == nil || o.Data == nil {
-		var ret map[string][]Results
+		var ret map[string][]HistoricalFieldResultsAttributes
 		return ret
 	}
 	return *o.Data
@@ -54,7 +53,7 @@ func (o *HistoricalResponseAllOf) GetData() map[string][]Results {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalResponseAllOf) GetDataOk() (*map[string][]Results, bool) {
+func (o *HistoricalFieldResponseDataField) GetDataOk() (*map[string][]HistoricalFieldResultsAttributes, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -62,7 +61,7 @@ func (o *HistoricalResponseAllOf) GetDataOk() (*map[string][]Results, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *HistoricalResponseAllOf) HasData() bool {
+func (o *HistoricalFieldResponseDataField) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -70,14 +69,14 @@ func (o *HistoricalResponseAllOf) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given map[string][]Results and assigns it to the Data field.
-func (o *HistoricalResponseAllOf) SetData(v map[string][]Results) {
+// SetData gets a reference to the given map[string][]HistoricalFieldResultsAttributes and assigns it to the Data field.
+func (o *HistoricalFieldResponseDataField) SetData(v map[string][]HistoricalFieldResultsAttributes) {
 	o.Data = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o HistoricalResponseAllOf) MarshalJSON() ([]byte, error) {
+func (o HistoricalFieldResponseDataField) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -92,11 +91,11 @@ func (o HistoricalResponseAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *HistoricalResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varHistoricalResponseAllOf := _HistoricalResponseAllOf{}
+func (o *HistoricalFieldResponseDataField) UnmarshalJSON(bytes []byte) (err error) {
+	varHistoricalFieldResponseDataField := _HistoricalFieldResponseDataField{}
 
-	if err = json.Unmarshal(bytes, &varHistoricalResponseAllOf); err == nil {
-		*o = HistoricalResponseAllOf(varHistoricalResponseAllOf)
+	if err = json.Unmarshal(bytes, &varHistoricalFieldResponseDataField); err == nil {
+		*o = HistoricalFieldResponseDataField(varHistoricalFieldResponseDataField)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -109,48 +108,48 @@ func (o *HistoricalResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableHistoricalResponseAllOf is a helper abstraction for handling nullable historicalresponseallof types. 
-type NullableHistoricalResponseAllOf struct {
-	value *HistoricalResponseAllOf
+// NullableHistoricalFieldResponseDataField is a helper abstraction for handling nullable historicalfieldresponsedatafield types. 
+type NullableHistoricalFieldResponseDataField struct {
+	value *HistoricalFieldResponseDataField
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableHistoricalResponseAllOf) Get() *HistoricalResponseAllOf {
+func (v NullableHistoricalFieldResponseDataField) Get() *HistoricalFieldResponseDataField {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableHistoricalResponseAllOf) Set(val *HistoricalResponseAllOf) {
+func (v *NullableHistoricalFieldResponseDataField) Set(val *HistoricalFieldResponseDataField) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableHistoricalResponseAllOf) IsSet() bool {
+func (v NullableHistoricalFieldResponseDataField) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableHistoricalResponseAllOf) Unset() {
+func (v *NullableHistoricalFieldResponseDataField) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableHistoricalResponseAllOf returns a pointer to a new instance of NullableHistoricalResponseAllOf.
-func NewNullableHistoricalResponseAllOf(val *HistoricalResponseAllOf) *NullableHistoricalResponseAllOf {
-	return &NullableHistoricalResponseAllOf{value: val, isSet: true}
+// NewNullableHistoricalFieldResponseDataField returns a pointer to a new instance of NullableHistoricalFieldResponseDataField.
+func NewNullableHistoricalFieldResponseDataField(val *HistoricalFieldResponseDataField) *NullableHistoricalFieldResponseDataField {
+	return &NullableHistoricalFieldResponseDataField{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableHistoricalResponseAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableHistoricalFieldResponseDataField) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableHistoricalResponseAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableHistoricalFieldResponseDataField) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

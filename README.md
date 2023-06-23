@@ -12,7 +12,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go v1.0.0-beta.12
+	github.com/fastly/fastly-go v1.0.0-beta.13
 )
 ```
 

@@ -24,7 +24,7 @@ type HistoricalUsageMonthResponse struct {
 	Meta *HistoricalMeta `json:"meta,omitempty"`
 	// If the query was not successful, this will provide a string that explains why.
 	Msg NullableString `json:"msg,omitempty"`
-	Data *HistoricalUsageMonthResponseAllOfData `json:"data,omitempty"`
+	Data *HistoricalUsageMonthResponseData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -154,9 +154,9 @@ func (o *HistoricalUsageMonthResponse) UnsetMsg() {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *HistoricalUsageMonthResponse) GetData() HistoricalUsageMonthResponseAllOfData {
+func (o *HistoricalUsageMonthResponse) GetData() HistoricalUsageMonthResponseData {
 	if o == nil || o.Data == nil {
-		var ret HistoricalUsageMonthResponseAllOfData
+		var ret HistoricalUsageMonthResponseData
 		return ret
 	}
 	return *o.Data
@@ -164,7 +164,7 @@ func (o *HistoricalUsageMonthResponse) GetData() HistoricalUsageMonthResponseAll
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalUsageMonthResponse) GetDataOk() (*HistoricalUsageMonthResponseAllOfData, bool) {
+func (o *HistoricalUsageMonthResponse) GetDataOk() (*HistoricalUsageMonthResponseData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -180,8 +180,8 @@ func (o *HistoricalUsageMonthResponse) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given HistoricalUsageMonthResponseAllOfData and assigns it to the Data field.
-func (o *HistoricalUsageMonthResponse) SetData(v HistoricalUsageMonthResponseAllOfData) {
+// SetData gets a reference to the given HistoricalUsageMonthResponseData and assigns it to the Data field.
+func (o *HistoricalUsageMonthResponse) SetData(v HistoricalUsageMonthResponseData) {
 	o.Data = &v
 }
 

@@ -1,4 +1,4 @@
-# HistoricalFieldResponseAllOf
+# HistoricalFieldResponseDataField
 
 ## Properties
 
@@ -8,45 +8,45 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewHistoricalFieldResponseAllOf
+### NewHistoricalFieldResponseDataField
 
-`func NewHistoricalFieldResponseAllOf() *HistoricalFieldResponseAllOf`
+`func NewHistoricalFieldResponseDataField() *HistoricalFieldResponseDataField`
 
-NewHistoricalFieldResponseAllOf instantiates a new HistoricalFieldResponseAllOf object
+NewHistoricalFieldResponseDataField instantiates a new HistoricalFieldResponseDataField object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewHistoricalFieldResponseAllOfWithDefaults
+### NewHistoricalFieldResponseDataFieldWithDefaults
 
-`func NewHistoricalFieldResponseAllOfWithDefaults() *HistoricalFieldResponseAllOf`
+`func NewHistoricalFieldResponseDataFieldWithDefaults() *HistoricalFieldResponseDataField`
 
-NewHistoricalFieldResponseAllOfWithDefaults instantiates a new HistoricalFieldResponseAllOf object
+NewHistoricalFieldResponseDataFieldWithDefaults instantiates a new HistoricalFieldResponseDataField object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *HistoricalFieldResponseAllOf) GetData() map[string][]HistoricalFieldResultsAttributes`
+`func (o *HistoricalFieldResponseDataField) GetData() map[string][]HistoricalFieldResultsAttributes`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *HistoricalFieldResponseAllOf) GetDataOk() (*map[string][]HistoricalFieldResultsAttributes, bool)`
+`func (o *HistoricalFieldResponseDataField) GetDataOk() (*map[string][]HistoricalFieldResultsAttributes, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *HistoricalFieldResponseAllOf) SetData(v map[string][]HistoricalFieldResultsAttributes)`
+`func (o *HistoricalFieldResponseDataField) SetData(v map[string][]HistoricalFieldResultsAttributes)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *HistoricalFieldResponseAllOf) HasData() bool`
+`func (o *HistoricalFieldResponseDataField) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 
