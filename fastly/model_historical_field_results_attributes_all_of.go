@@ -19,7 +19,7 @@ import (
 
 // HistoricalFieldResultsAttributesAllOf struct for HistoricalFieldResultsAttributesAllOf
 type HistoricalFieldResultsAttributesAllOf struct {
-	ServiceID string `json:"service_id,omitempty"`
+	ServiceID *ReadOnlyIDService `json:"service_id,omitempty"`
 	StartTime *int32 `json:"start_time,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -43,23 +43,22 @@ func NewHistoricalFieldResultsAttributesAllOfWithDefaults() *HistoricalFieldResu
 	return &this
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *HistoricalFieldResultsAttributesAllOf) GetServiceID() string {
-	if o == nil  {
-		var ret string
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *HistoricalFieldResultsAttributesAllOf) GetServiceID() ReadOnlyIDService {
+	if o == nil || o.ServiceID == nil {
+		var ret ReadOnlyIDService
 		return ret
 	}
-	return o.ServiceID
+	return *o.ServiceID
 }
 
 // GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *HistoricalFieldResultsAttributesAllOf) GetServiceIDOk() (*string, bool) {
+func (o *HistoricalFieldResultsAttributesAllOf) GetServiceIDOk() (*ReadOnlyIDService, bool) {
 	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return &o.ServiceID, true
+	return o.ServiceID, true
 }
 
 // HasServiceID returns a boolean if a field has been set.
@@ -71,9 +70,9 @@ func (o *HistoricalFieldResultsAttributesAllOf) HasServiceID() bool {
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *HistoricalFieldResultsAttributesAllOf) SetServiceID(v string) {
-	o.ServiceID = v
+// SetServiceID gets a reference to the given ReadOnlyIDService and assigns it to the ServiceID field.
+func (o *HistoricalFieldResultsAttributesAllOf) SetServiceID(v ReadOnlyIDService) {
+	o.ServiceID = &v
 }
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.

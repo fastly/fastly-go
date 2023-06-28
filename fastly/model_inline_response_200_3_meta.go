@@ -17,9 +17,11 @@ import (
 	"encoding/json"
 )
 
-// InlineResponse2003Meta struct for InlineResponse2003Meta
+// InlineResponse2003Meta Meta for the pagination.
 type InlineResponse2003Meta struct {
+	// Cursor for the next page.
 	NextCursor *string `json:"next_cursor,omitempty"`
+	// Entries returned.
 	Limit *int32 `json:"limit,omitempty"`
 	AdditionalProperties map[string]any
 }

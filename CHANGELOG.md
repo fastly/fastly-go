@@ -1,5 +1,16 @@
 # Changelog
 
+## [v1.0.0-beta.14](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.14) (2023-06-27)
+
+**Enhancements:**
+
+- feat(automation_tokens): implement endpoints.
+- feat(rate_limiter): implement POST/PUT endpoints.
+
+**Bug fixes:**
+
+- fix(historical_stats): extract primitive into custom type.
+
 ## [v1.0.0-beta.13](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.13) (2023-06-23)
 
 **Bug fixes:**

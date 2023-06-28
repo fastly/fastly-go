@@ -453,7 +453,7 @@ type HistoricalFieldResultsAttributes struct {
 	DdosActionClose *int32 `json:"ddos_action_close,omitempty"`
 	// The number of times the blackhole action was taken. The blackhole action quietly closes a TCP connection without sending a reset. The blackhole action quietly closes a TCP connection without notifying its peer (all TCP state is dropped).
 	DdosActionBlackhole *int32 `json:"ddos_action_blackhole,omitempty"`
-	ServiceID string `json:"service_id,omitempty"`
+	ServiceID *ReadOnlyIDService `json:"service_id,omitempty"`
 	StartTime *int32 `json:"start_time,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -7405,23 +7405,22 @@ func (o *HistoricalFieldResultsAttributes) SetDdosActionBlackhole(v int32) {
 	o.DdosActionBlackhole = &v
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *HistoricalFieldResultsAttributes) GetServiceID() string {
-	if o == nil  {
-		var ret string
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *HistoricalFieldResultsAttributes) GetServiceID() ReadOnlyIDService {
+	if o == nil || o.ServiceID == nil {
+		var ret ReadOnlyIDService
 		return ret
 	}
-	return o.ServiceID
+	return *o.ServiceID
 }
 
 // GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *HistoricalFieldResultsAttributes) GetServiceIDOk() (*string, bool) {
+func (o *HistoricalFieldResultsAttributes) GetServiceIDOk() (*ReadOnlyIDService, bool) {
 	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return &o.ServiceID, true
+	return o.ServiceID, true
 }
 
 // HasServiceID returns a boolean if a field has been set.
@@ -7433,9 +7432,9 @@ func (o *HistoricalFieldResultsAttributes) HasServiceID() bool {
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *HistoricalFieldResultsAttributes) SetServiceID(v string) {
-	o.ServiceID = v
+// SetServiceID gets a reference to the given ReadOnlyIDService and assigns it to the ServiceID field.
+func (o *HistoricalFieldResultsAttributes) SetServiceID(v ReadOnlyIDService) {
+	o.ServiceID = &v
 }
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.

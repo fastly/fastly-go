@@ -17,36 +17,36 @@ import (
 	"encoding/json"
 )
 
-// InlineResponse2003 struct for InlineResponse2003
-type InlineResponse2003 struct {
-	Data []StoreResponse `json:"data,omitempty"`
-	Meta *InlineResponse2003Meta `json:"meta,omitempty"`
+// InlineResponse2004 struct for InlineResponse2004
+type InlineResponse2004 struct {
+	Data []string `json:"data,omitempty"`
+	Meta *InlineResponse2004Meta `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _InlineResponse2003 InlineResponse2003
+type _InlineResponse2004 InlineResponse2004
 
-// NewInlineResponse2003 instantiates a new InlineResponse2003 object
+// NewInlineResponse2004 instantiates a new InlineResponse2004 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInlineResponse2003() *InlineResponse2003 {
-	this := InlineResponse2003{}
+func NewInlineResponse2004() *InlineResponse2004 {
+	this := InlineResponse2004{}
 	return &this
 }
 
-// NewInlineResponse2003WithDefaults instantiates a new InlineResponse2003 object
+// NewInlineResponse2004WithDefaults instantiates a new InlineResponse2004 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewInlineResponse2003WithDefaults() *InlineResponse2003 {
-	this := InlineResponse2003{}
+func NewInlineResponse2004WithDefaults() *InlineResponse2004 {
+	this := InlineResponse2004{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse2003) GetData() []StoreResponse {
+func (o *InlineResponse2004) GetData() []string {
 	if o == nil || o.Data == nil {
-		var ret []StoreResponse
+		var ret []string
 		return ret
 	}
 	return o.Data
@@ -54,7 +54,7 @@ func (o *InlineResponse2003) GetData() []StoreResponse {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2003) GetDataOk() ([]StoreResponse, bool) {
+func (o *InlineResponse2004) GetDataOk() ([]string, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -62,7 +62,7 @@ func (o *InlineResponse2003) GetDataOk() ([]StoreResponse, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *InlineResponse2003) HasData() bool {
+func (o *InlineResponse2004) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -70,15 +70,15 @@ func (o *InlineResponse2003) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []StoreResponse and assigns it to the Data field.
-func (o *InlineResponse2003) SetData(v []StoreResponse) {
+// SetData gets a reference to the given []string and assigns it to the Data field.
+func (o *InlineResponse2004) SetData(v []string) {
 	o.Data = v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *InlineResponse2003) GetMeta() InlineResponse2003Meta {
+func (o *InlineResponse2004) GetMeta() InlineResponse2004Meta {
 	if o == nil || o.Meta == nil {
-		var ret InlineResponse2003Meta
+		var ret InlineResponse2004Meta
 		return ret
 	}
 	return *o.Meta
@@ -86,7 +86,7 @@ func (o *InlineResponse2003) GetMeta() InlineResponse2003Meta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2003) GetMetaOk() (*InlineResponse2003Meta, bool) {
+func (o *InlineResponse2004) GetMetaOk() (*InlineResponse2004Meta, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -94,7 +94,7 @@ func (o *InlineResponse2003) GetMetaOk() (*InlineResponse2003Meta, bool) {
 }
 
 // HasMeta returns a boolean if a field has been set.
-func (o *InlineResponse2003) HasMeta() bool {
+func (o *InlineResponse2004) HasMeta() bool {
 	if o != nil && o.Meta != nil {
 		return true
 	}
@@ -102,14 +102,14 @@ func (o *InlineResponse2003) HasMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given InlineResponse2003Meta and assigns it to the Meta field.
-func (o *InlineResponse2003) SetMeta(v InlineResponse2003Meta) {
+// SetMeta gets a reference to the given InlineResponse2004Meta and assigns it to the Meta field.
+func (o *InlineResponse2004) SetMeta(v InlineResponse2004Meta) {
 	o.Meta = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o InlineResponse2003) MarshalJSON() ([]byte, error) {
+func (o InlineResponse2004) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -127,11 +127,11 @@ func (o InlineResponse2003) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *InlineResponse2003) UnmarshalJSON(bytes []byte) (err error) {
-	varInlineResponse2003 := _InlineResponse2003{}
+func (o *InlineResponse2004) UnmarshalJSON(bytes []byte) (err error) {
+	varInlineResponse2004 := _InlineResponse2004{}
 
-	if err = json.Unmarshal(bytes, &varInlineResponse2003); err == nil {
-		*o = InlineResponse2003(varInlineResponse2003)
+	if err = json.Unmarshal(bytes, &varInlineResponse2004); err == nil {
+		*o = InlineResponse2004(varInlineResponse2004)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -145,48 +145,48 @@ func (o *InlineResponse2003) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableInlineResponse2003 is a helper abstraction for handling nullable inlineresponse2003 types. 
-type NullableInlineResponse2003 struct {
-	value *InlineResponse2003
+// NullableInlineResponse2004 is a helper abstraction for handling nullable inlineresponse2004 types. 
+type NullableInlineResponse2004 struct {
+	value *InlineResponse2004
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableInlineResponse2003) Get() *InlineResponse2003 {
+func (v NullableInlineResponse2004) Get() *InlineResponse2004 {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableInlineResponse2003) Set(val *InlineResponse2003) {
+func (v *NullableInlineResponse2004) Set(val *InlineResponse2004) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableInlineResponse2003) IsSet() bool {
+func (v NullableInlineResponse2004) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableInlineResponse2003) Unset() {
+func (v *NullableInlineResponse2004) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableInlineResponse2003 returns a pointer to a new instance of NullableInlineResponse2003.
-func NewNullableInlineResponse2003(val *InlineResponse2003) *NullableInlineResponse2003 {
-	return &NullableInlineResponse2003{value: val, isSet: true}
+// NewNullableInlineResponse2004 returns a pointer to a new instance of NullableInlineResponse2004.
+func NewNullableInlineResponse2004(val *InlineResponse2004) *NullableInlineResponse2004 {
+	return &NullableInlineResponse2004{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableInlineResponse2003) MarshalJSON() ([]byte, error) {
+func (v NullableInlineResponse2004) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableInlineResponse2003) UnmarshalJSON(src []byte) error {
+func (v *NullableInlineResponse2004) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

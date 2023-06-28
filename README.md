@@ -12,7 +12,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go v1.0.0-beta.13
+	github.com/fastly/fastly-go v1.0.0-beta.14
 )
 ```
 
@@ -73,6 +73,11 @@ Class | Method | HTTP request | Description
 *ApexRedirectAPI* | [**GetApexRedirect**](docs/ApexRedirectAPI.md#getapexredirect) | **GET** `/apex-redirects/{apex_redirect_id}` | Get an apex redirect
 *ApexRedirectAPI* | [**ListApexRedirects**](docs/ApexRedirectAPI.md#listapexredirects) | **GET** `/service/{service_id}/version/{version_id}/apex-redirects` | List apex redirects
 *ApexRedirectAPI* | [**UpdateApexRedirect**](docs/ApexRedirectAPI.md#updateapexredirect) | **PUT** `/apex-redirects/{apex_redirect_id}` | Update an apex redirect
+*AutomationTokensAPI* | [**CreateAutomationToken**](docs/AutomationTokensAPI.md#createautomationtoken) | **POST** `/automation-tokens` | Create Automation Token
+*AutomationTokensAPI* | [**GetAutomationTokenID**](docs/AutomationTokensAPI.md#getautomationtokenid) | **GET** `/automation-tokens/{id}` | Retrieve an Automation Token by ID
+*AutomationTokensAPI* | [**GetAutomationTokensIDServices**](docs/AutomationTokensAPI.md#getautomationtokensidservices) | **GET** `/automation-tokens/{id}/services` | List Automation Token Services
+*AutomationTokensAPI* | [**ListAutomationTokens**](docs/AutomationTokensAPI.md#listautomationtokens) | **GET** `/automation-tokens` | List Customer Automation Tokens
+*AutomationTokensAPI* | [**RevokeAutomationTokenID**](docs/AutomationTokensAPI.md#revokeautomationtokenid) | **DELETE** `/automation-tokens/{id}` | Revoke an Automation Token by ID
 *BackendAPI* | [**CreateBackend**](docs/BackendAPI.md#createbackend) | **POST** `/service/{service_id}/version/{version_id}/backend` | Create a backend
 *BackendAPI* | [**DeleteBackend**](docs/BackendAPI.md#deletebackend) | **DELETE** `/service/{service_id}/version/{version_id}/backend/{backend_name}` | Delete a backend
 *BackendAPI* | [**GetBackend**](docs/BackendAPI.md#getbackend) | **GET** `/service/{service_id}/version/{version_id}/backend/{backend_name}` | Describe a backend
@@ -350,9 +355,11 @@ Class | Method | HTTP request | Description
 *PurgeAPI* | [**PurgeAll**](docs/PurgeAPI.md#purgeall) | **POST** `/service/{service_id}/purge_all` | Purge everything from a service
 *PurgeAPI* | [**PurgeSingleURL**](docs/PurgeAPI.md#purgesingleurl) | **POST** `/purge/{cached_url}` | Purge a URL
 *PurgeAPI* | [**PurgeTag**](docs/PurgeAPI.md#purgetag) | **POST** `/service/{service_id}/purge/{surrogate_key}` | Purge by surrogate key tag
+*RateLimiterAPI* | [**CreateRateLimiter**](docs/RateLimiterAPI.md#createratelimiter) | **POST** `/service/{service_id}/version/{version_id}/rate-limiters` | Create a rate limiter
 *RateLimiterAPI* | [**DeleteRateLimiter**](docs/RateLimiterAPI.md#deleteratelimiter) | **DELETE** `/rate-limiters/{rate_limiter_id}` | Delete a rate limiter
 *RateLimiterAPI* | [**GetRateLimiter**](docs/RateLimiterAPI.md#getratelimiter) | **GET** `/rate-limiters/{rate_limiter_id}` | Get a rate limiter
 *RateLimiterAPI* | [**ListRateLimiters**](docs/RateLimiterAPI.md#listratelimiters) | **GET** `/service/{service_id}/version/{version_id}/rate-limiters` | List rate limiters
+*RateLimiterAPI* | [**UpdateRateLimiter**](docs/RateLimiterAPI.md#updateratelimiter) | **PUT** `/rate-limiters/{rate_limiter_id}` | Update a rate limiter
 *RealtimeAPI* | [**GetStatsLast120Seconds**](docs/RealtimeAPI.md#getstatslast120seconds) | **GET** `/v1/channel/{service_id}/ts/h` | Get real-time data for the last 120 seconds
 *RealtimeAPI* | [**GetStatsLast120SecondsLimitEntries**](docs/RealtimeAPI.md#getstatslast120secondslimitentries) | **GET** `/v1/channel/{service_id}/ts/h/limit/{max_entries}` | Get a limited number of real-time data entries
 *RealtimeAPI* | [**GetStatsLastSecond**](docs/RealtimeAPI.md#getstatslastsecond) | **GET** `/v1/channel/{service_id}/ts/{timestamp_in_seconds}` | Get real-time data from specified time
@@ -511,16 +518,12 @@ Each of these functions takes a value of the given basic type and returns a poin
 
 The fastly-go API client currently does not support the following endpoints:
 
-- [`/automation-tokens/{id}/services`](https://developer.fastly.com/reference/api/auth-tokens/automation) (GET)
-- [`/automation-tokens/{id}`](https://developer.fastly.com/reference/api/auth-tokens/automation) (DELETE, GET)
-- [`/automation-tokens`](https://developer.fastly.com/reference/api/auth-tokens/automation) (GET, POST)
 - [`/customer/{customer_id}/contacts`](https://developer.fastly.com/reference/api/account/contact) (POST)
 - [`/docs/section/{section}`](https://developer.fastly.com/reference/api/utils/docs) (GET)
 - [`/docs/subject/{subject}`](https://developer.fastly.com/reference/api/utils/docs) (GET)
 - [`/docs`](https://developer.fastly.com/reference/api/utils/docs) (GET)
 - [`/metrics/domains/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/domain-inspector/historical) (GET)
 - [`/metrics/origins/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/origin-inspector/historical) (GET)
-- [`/rate-limiters/{rate_limiter_id}`](https://developer.fastly.com/reference/api/vcl-services/rate-limiter) (PUT)
 - [`/resources/stores/secret/client-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (POST)
 - [`/resources/stores/secret/signing-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (GET)
 - [`/resources/stores/secret/{store_id}/secrets/{secret_name}`](https://developer.fastly.com/reference/api/services/resources/secret) (DELETE, GET)
@@ -541,7 +544,6 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/service/{service_id}/version/{version_id}/generated_vcl/content`](https://developer.fastly.com/reference/api/vcl-services/vcl) (GET)
 - [`/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}`](https://developer.fastly.com/reference/api/logging/kafka) (PUT)
 - [`/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}`](https://developer.fastly.com/reference/api/logging/kinesis) (PUT)
-- [`/service/{service_id}/version/{version_id}/rate-limiters`](https://developer.fastly.com/reference/api/vcl-services/rate-limiter) (POST)
 - [`/service/{service_id}/version/{version_id}/request_settings`](https://developer.fastly.com/reference/api/vcl-services/request-settings) (POST)
 - [`/service/{service_id}/version/{version_id}/response_object/{response_object_name}`](https://developer.fastly.com/reference/api/vcl-services/response-object) (PUT)
 - [`/service/{service_id}/version/{version_id}/response_object`](https://developer.fastly.com/reference/api/vcl-services/response-object) (POST)

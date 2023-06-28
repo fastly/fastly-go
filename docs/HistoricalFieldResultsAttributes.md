@@ -220,7 +220,7 @@ Name | Type | Description | Notes
 **DdosActionTarpit** | Pointer to **int32** | The number of times the tarpit action was taken. The tarpit action delays writing the response to the client. | [optional] 
 **DdosActionClose** | Pointer to **int32** | The number of times the close action was taken. The close action aborts the connection as soon as possible. The close action takes effect either right after accept, right after the client hello, or right after the response was sent. | [optional] 
 **DdosActionBlackhole** | Pointer to **int32** | The number of times the blackhole action was taken. The blackhole action quietly closes a TCP connection without sending a reset. The blackhole action quietly closes a TCP connection without notifying its peer (all TCP state is dropped). | [optional] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to [**ReadOnlyIDService**](ReadOnlyIDService.md) |  | [optional] 
 **StartTime** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -5654,20 +5654,20 @@ HasDdosActionBlackhole returns a boolean if a field has been set.
 
 ### GetServiceID
 
-`func (o *HistoricalFieldResultsAttributes) GetServiceID() string`
+`func (o *HistoricalFieldResultsAttributes) GetServiceID() ReadOnlyIDService`
 
 GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
 ### GetServiceIDOk
 
-`func (o *HistoricalFieldResultsAttributes) GetServiceIDOk() (*string, bool)`
+`func (o *HistoricalFieldResultsAttributes) GetServiceIDOk() (*ReadOnlyIDService, bool)`
 
 GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServiceID
 
-`func (o *HistoricalFieldResultsAttributes) SetServiceID(v string)`
+`func (o *HistoricalFieldResultsAttributes) SetServiceID(v ReadOnlyIDService)`
 
 SetServiceID sets ServiceID field to given value.
 
@@ -5677,16 +5677,6 @@ SetServiceID sets ServiceID field to given value.
 
 HasServiceID returns a boolean if a field has been set.
 
-### SetServiceIDNil
-
-`func (o *HistoricalFieldResultsAttributes) SetServiceIDNil(b bool)`
-
- SetServiceIDNil sets the value for ServiceID to be an explicit nil
-
-### UnsetServiceID
-`func (o *HistoricalFieldResultsAttributes) UnsetServiceID()`
-
-UnsetServiceID ensures that no value is present for ServiceID, not even an explicit nil
 ### GetStartTime
 
 `func (o *HistoricalFieldResultsAttributes) GetStartTime() int32`

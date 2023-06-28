@@ -105,7 +105,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "fastly-go/v1.0.0-beta.13",
+		UserAgent:        "fastly-go/v1.0.0-beta.14",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -203,6 +203,36 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"ApexRedirectAPIService.UpdateApexRedirect": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AutomationTokensAPIService.CreateAutomationToken": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AutomationTokensAPIService.GetAutomationTokenID": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AutomationTokensAPIService.GetAutomationTokensIDServices": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AutomationTokensAPIService.ListAutomationTokens": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AutomationTokensAPIService.RevokeAutomationTokenID": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",
@@ -1870,6 +1900,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"RateLimiterAPIService.CreateRateLimiter": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"RateLimiterAPIService.DeleteRateLimiter": {
 				{
 					URL: "https://api.fastly.com",
@@ -1883,6 +1919,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"RateLimiterAPIService.ListRateLimiters": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"RateLimiterAPIService.UpdateRateLimiter": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",

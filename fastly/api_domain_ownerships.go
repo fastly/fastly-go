@@ -41,8 +41,8 @@ type DomainOwnershipsAPI interface {
 	ListDomainOwnerships(ctx context.Context) APIListDomainOwnershipsRequest
 
 	// ListDomainOwnershipsExecute executes the request
-	//  @return InlineResponse2001
-	ListDomainOwnershipsExecute(r APIListDomainOwnershipsRequest) (*InlineResponse2001, *http.Response, error)
+	//  @return InlineResponse2002
+	ListDomainOwnershipsExecute(r APIListDomainOwnershipsRequest) (*InlineResponse2002, *http.Response, error)
 }
 
 // DomainOwnershipsAPIService DomainOwnershipsAPI service
@@ -56,7 +56,7 @@ type APIListDomainOwnershipsRequest struct {
 
 
 // Execute calls the API using the request data configured.
-func (r APIListDomainOwnershipsRequest) Execute() (*InlineResponse2001, *http.Response, error) {
+func (r APIListDomainOwnershipsRequest) Execute() (*InlineResponse2002, *http.Response, error) {
 	return r.APIService.ListDomainOwnershipsExecute(r)
 }
 
@@ -76,13 +76,13 @@ func (a *DomainOwnershipsAPIService) ListDomainOwnerships(ctx context.Context) A
 }
 
 // ListDomainOwnershipsExecute executes the request
-//  @return InlineResponse2001
-func (a *DomainOwnershipsAPIService) ListDomainOwnershipsExecute(r APIListDomainOwnershipsRequest) (*InlineResponse2001, *http.Response, error) {
+//  @return InlineResponse2002
+func (a *DomainOwnershipsAPIService) ListDomainOwnershipsExecute(r APIListDomainOwnershipsRequest) (*InlineResponse2002, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponse2001
+		localVarReturnValue  *InlineResponse2002
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainOwnershipsAPIService.ListDomainOwnerships")

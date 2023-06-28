@@ -19,8 +19,8 @@ import (
 
 // InlineResponse2002 struct for InlineResponse2002
 type InlineResponse2002 struct {
-	Data []StoreResponse `json:"data,omitempty"`
-	Meta *InlineResponse2002Meta `json:"meta,omitempty"`
+	// Time-stamp (GMT) when the domain_ownership validation will expire.
+	ExpiresAt *string `json:"expires_at,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -43,79 +43,44 @@ func NewInlineResponse2002WithDefaults() *InlineResponse2002 {
 	return &this
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse2002) GetData() []StoreResponse {
-	if o == nil || o.Data == nil {
-		var ret []StoreResponse
+// GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise.
+func (o *InlineResponse2002) GetExpiresAt() string {
+	if o == nil || o.ExpiresAt == nil {
+		var ret string
 		return ret
 	}
-	return o.Data
+	return *o.ExpiresAt
 }
 
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// GetExpiresAtOk returns a tuple with the ExpiresAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2002) GetDataOk() ([]StoreResponse, bool) {
-	if o == nil || o.Data == nil {
+func (o *InlineResponse2002) GetExpiresAtOk() (*string, bool) {
+	if o == nil || o.ExpiresAt == nil {
 		return nil, false
 	}
-	return o.Data, true
+	return o.ExpiresAt, true
 }
 
-// HasData returns a boolean if a field has been set.
-func (o *InlineResponse2002) HasData() bool {
-	if o != nil && o.Data != nil {
+// HasExpiresAt returns a boolean if a field has been set.
+func (o *InlineResponse2002) HasExpiresAt() bool {
+	if o != nil && o.ExpiresAt != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given []StoreResponse and assigns it to the Data field.
-func (o *InlineResponse2002) SetData(v []StoreResponse) {
-	o.Data = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *InlineResponse2002) GetMeta() InlineResponse2002Meta {
-	if o == nil || o.Meta == nil {
-		var ret InlineResponse2002Meta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InlineResponse2002) GetMetaOk() (*InlineResponse2002Meta, bool) {
-	if o == nil || o.Meta == nil {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *InlineResponse2002) HasMeta() bool {
-	if o != nil && o.Meta != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given InlineResponse2002Meta and assigns it to the Meta field.
-func (o *InlineResponse2002) SetMeta(v InlineResponse2002Meta) {
-	o.Meta = &v
+// SetExpiresAt gets a reference to the given string and assigns it to the ExpiresAt field.
+func (o *InlineResponse2002) SetExpiresAt(v string) {
+	o.ExpiresAt = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o InlineResponse2002) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
-	}
-	if o.Meta != nil {
-		toSerialize["meta"] = o.Meta
+	if o.ExpiresAt != nil {
+		toSerialize["expires_at"] = o.ExpiresAt
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -137,8 +102,7 @@ func (o *InlineResponse2002) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "data")
-		delete(additionalProperties, "meta")
+		delete(additionalProperties, "expires_at")
 		o.AdditionalProperties = additionalProperties
 	}
 

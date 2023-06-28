@@ -36,7 +36,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DomainOwnershipsAPI.ListDomainOwnerships`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListDomainOwnerships`: InlineResponse2001
+    // response from `ListDomainOwnerships`: InlineResponse2002
     fmt.Fprintf(os.Stdout, "Response from `DomainOwnershipsAPI.ListDomainOwnerships`: %v\n", resp)
 }
 ```
@@ -53,7 +53,7 @@ Other parameters are passed through a pointer to a apiListDomainOwnershipsReques
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 

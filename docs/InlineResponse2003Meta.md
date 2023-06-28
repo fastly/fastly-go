@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**NextCursor** | Pointer to **string** |  | [optional] 
-**Limit** | Pointer to **int32** |  | [optional] 
+**NextCursor** | Pointer to **string** | Cursor for the next page. | [optional] 
+**Limit** | Pointer to **int32** | Entries returned. | [optional] 
 
 ## Methods
 

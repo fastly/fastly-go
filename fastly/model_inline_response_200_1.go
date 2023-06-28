@@ -19,8 +19,8 @@ import (
 
 // InlineResponse2001 struct for InlineResponse2001
 type InlineResponse2001 struct {
-	// Time-stamp (GMT) when the domain_ownership validation will expire.
-	ExpiresAt *string `json:"expires_at,omitempty"`
+	// The service IDs of the services the token will have access to. Separate service IDs with a space.
+	Data []string `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -43,44 +43,44 @@ func NewInlineResponse2001WithDefaults() *InlineResponse2001 {
 	return &this
 }
 
-// GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise.
-func (o *InlineResponse2001) GetExpiresAt() string {
-	if o == nil || o.ExpiresAt == nil {
-		var ret string
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *InlineResponse2001) GetData() []string {
+	if o == nil || o.Data == nil {
+		var ret []string
 		return ret
 	}
-	return *o.ExpiresAt
+	return o.Data
 }
 
-// GetExpiresAtOk returns a tuple with the ExpiresAt field value if set, nil otherwise
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2001) GetExpiresAtOk() (*string, bool) {
-	if o == nil || o.ExpiresAt == nil {
+func (o *InlineResponse2001) GetDataOk() ([]string, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return o.ExpiresAt, true
+	return o.Data, true
 }
 
-// HasExpiresAt returns a boolean if a field has been set.
-func (o *InlineResponse2001) HasExpiresAt() bool {
-	if o != nil && o.ExpiresAt != nil {
+// HasData returns a boolean if a field has been set.
+func (o *InlineResponse2001) HasData() bool {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetExpiresAt gets a reference to the given string and assigns it to the ExpiresAt field.
-func (o *InlineResponse2001) SetExpiresAt(v string) {
-	o.ExpiresAt = &v
+// SetData gets a reference to the given []string and assigns it to the Data field.
+func (o *InlineResponse2001) SetData(v []string) {
+	o.Data = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o InlineResponse2001) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ExpiresAt != nil {
-		toSerialize["expires_at"] = o.ExpiresAt
+	if o.Data != nil {
+		toSerialize["data"] = o.Data
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -102,7 +102,7 @@ func (o *InlineResponse2001) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "expires_at")
+		delete(additionalProperties, "data")
 		o.AdditionalProperties = additionalProperties
 	}
 

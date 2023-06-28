@@ -36,7 +36,8 @@ type RateLimiterResponse struct {
 	PenaltyBoxDuration *int32 `json:"penalty_box_duration,omitempty"`
 	// The action to take when a rate limiter violation is detected.
 	Action *string `json:"action,omitempty"`
-	Response NullableRateLimiterResponse1 `json:"response,omitempty"`
+	// Custom response to be sent when the rate limit is exceeded. Required if `action` is `response`.
+	Response map[string]string `json:"response,omitempty"`
 	// Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
 	ResponseObjectName NullableString `json:"response_object_name,omitempty"`
 	// Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
@@ -342,45 +343,36 @@ func (o *RateLimiterResponse) SetAction(v string) {
 }
 
 // GetResponse returns the Response field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RateLimiterResponse) GetResponse() RateLimiterResponse1 {
-	if o == nil || o.Response.Get() == nil {
-		var ret RateLimiterResponse1
+func (o *RateLimiterResponse) GetResponse() map[string]string {
+	if o == nil  {
+		var ret map[string]string
 		return ret
 	}
-	return *o.Response.Get()
+	return o.Response
 }
 
 // GetResponseOk returns a tuple with the Response field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RateLimiterResponse) GetResponseOk() (*RateLimiterResponse1, bool) {
-	if o == nil  {
+func (o *RateLimiterResponse) GetResponseOk() (*map[string]string, bool) {
+	if o == nil || o.Response == nil {
 		return nil, false
 	}
-	return o.Response.Get(), o.Response.IsSet()
+	return &o.Response, true
 }
 
 // HasResponse returns a boolean if a field has been set.
 func (o *RateLimiterResponse) HasResponse() bool {
-	if o != nil && o.Response.IsSet() {
+	if o != nil && o.Response != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetResponse gets a reference to the given NullableRateLimiterResponse1 and assigns it to the Response field.
-func (o *RateLimiterResponse) SetResponse(v RateLimiterResponse1) {
-	o.Response.Set(&v)
-}
-// SetResponseNil sets the value for Response to be an explicit nil
-func (o *RateLimiterResponse) SetResponseNil() {
-	o.Response.Set(nil)
-}
-
-// UnsetResponse ensures that no value is present for Response, not even an explicit nil
-func (o *RateLimiterResponse) UnsetResponse() {
-	o.Response.Unset()
+// SetResponse gets a reference to the given map[string]string and assigns it to the Response field.
+func (o *RateLimiterResponse) SetResponse(v map[string]string) {
+	o.Response = v
 }
 
 // GetResponseObjectName returns the ResponseObjectName field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -739,8 +731,8 @@ func (o RateLimiterResponse) MarshalJSON() ([]byte, error) {
 	if o.Action != nil {
 		toSerialize["action"] = o.Action
 	}
-	if o.Response.IsSet() {
-		toSerialize["response"] = o.Response.Get()
+	if o.Response != nil {
+		toSerialize["response"] = o.Response
 	}
 	if o.ResponseObjectName.IsSet() {
 		toSerialize["response_object_name"] = o.ResponseObjectName.Get()

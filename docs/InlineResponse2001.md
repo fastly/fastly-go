@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExpiresAt** | Pointer to **string** | Time-stamp (GMT) when the domain_ownership validation will expire. | [optional] [readonly] 
+**Data** | Pointer to **[]string** | The service IDs of the services the token will have access to. Separate service IDs with a space. | [optional] 
 
 ## Methods
 
@@ -25,30 +25,30 @@ NewInlineResponse2001WithDefaults instantiates a new InlineResponse2001 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetExpiresAt
+### GetData
 
-`func (o *InlineResponse2001) GetExpiresAt() string`
+`func (o *InlineResponse2001) GetData() []string`
 
-GetExpiresAt returns the ExpiresAt field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetExpiresAtOk
+### GetDataOk
 
-`func (o *InlineResponse2001) GetExpiresAtOk() (*string, bool)`
+`func (o *InlineResponse2001) GetDataOk() (*[]string, bool)`
 
-GetExpiresAtOk returns a tuple with the ExpiresAt field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExpiresAt
+### SetData
 
-`func (o *InlineResponse2001) SetExpiresAt(v string)`
+`func (o *InlineResponse2001) SetData(v []string)`
 
-SetExpiresAt sets ExpiresAt field to given value.
+SetData sets Data field to given value.
 
-### HasExpiresAt
+### HasData
 
-`func (o *InlineResponse2001) HasExpiresAt() bool`
+`func (o *InlineResponse2001) HasData() bool`
 
-HasExpiresAt returns a boolean if a field has been set.
+HasData returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

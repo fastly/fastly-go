@@ -58,8 +58,8 @@ type KvStoreItemAPI interface {
 	GetKeys(ctx context.Context, storeID string) APIGetKeysRequest
 
 	// GetKeysExecute executes the request
-	//  @return InlineResponse2003
-	GetKeysExecute(r APIGetKeysRequest) (*InlineResponse2003, *http.Response, error)
+	//  @return InlineResponse2004
+	GetKeysExecute(r APIGetKeysRequest) (*InlineResponse2004, *http.Response, error)
 
 	/*
 	GetValueForKey Get the value of an kv store item
@@ -251,7 +251,7 @@ func (r *APIGetKeysRequest) Prefix(prefix string) *APIGetKeysRequest {
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetKeysRequest) Execute() (*InlineResponse2003, *http.Response, error) {
+func (r APIGetKeysRequest) Execute() (*InlineResponse2004, *http.Response, error) {
 	return r.APIService.GetKeysExecute(r)
 }
 
@@ -273,13 +273,13 @@ func (a *KvStoreItemAPIService) GetKeys(ctx context.Context, storeID string) API
 }
 
 // GetKeysExecute executes the request
-//  @return InlineResponse2003
-func (a *KvStoreItemAPIService) GetKeysExecute(r APIGetKeysRequest) (*InlineResponse2003, *http.Response, error) {
+//  @return InlineResponse2004
+func (a *KvStoreItemAPIService) GetKeysExecute(r APIGetKeysRequest) (*InlineResponse2004, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *InlineResponse2003
+		localVarReturnValue  *InlineResponse2004
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreItemAPIService.GetKeys")

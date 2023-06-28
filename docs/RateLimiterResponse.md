@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ClientKey** | Pointer to **[]string** | Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`. | [optional] 
 **PenaltyBoxDuration** | Pointer to **int32** | Length of time in minutes that the rate limiter is in effect after the initial violation is detected. | [optional] 
 **Action** | Pointer to **string** | The action to take when a rate limiter violation is detected. | [optional] 
-**Response** | Pointer to [**NullableRateLimiterResponse1**](RateLimiterResponse1.md) |  | [optional] 
+**Response** | Pointer to **map[string]string** | Custom response to be sent when the rate limit is exceeded. Required if `action` is `response`. | [optional] 
 **ResponseObjectName** | Pointer to **NullableString** | Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration. | [optional] 
 **LoggerType** | Pointer to **string** | Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries. | [optional] 
 **FeatureRevision** | Pointer to **int32** | Revision number of the rate limiting feature implementation. Defaults to the most recent revision. | [optional] 
@@ -254,20 +254,20 @@ HasAction returns a boolean if a field has been set.
 
 ### GetResponse
 
-`func (o *RateLimiterResponse) GetResponse() RateLimiterResponse1`
+`func (o *RateLimiterResponse) GetResponse() map[string]string`
 
 GetResponse returns the Response field if non-nil, zero value otherwise.
 
 ### GetResponseOk
 
-`func (o *RateLimiterResponse) GetResponseOk() (*RateLimiterResponse1, bool)`
+`func (o *RateLimiterResponse) GetResponseOk() (*map[string]string, bool)`
 
 GetResponseOk returns a tuple with the Response field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResponse
 
-`func (o *RateLimiterResponse) SetResponse(v RateLimiterResponse1)`
+`func (o *RateLimiterResponse) SetResponse(v map[string]string)`
 
 SetResponse sets Response field to given value.
 

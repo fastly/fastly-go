@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceID** | Pointer to [**ReadOnlyIDService**](ReadOnlyIDService.md) |  | [optional] 
 **StartTime** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetServiceID
 
-`func (o *HistoricalFieldResultsAttributesAllOf) GetServiceID() string`
+`func (o *HistoricalFieldResultsAttributesAllOf) GetServiceID() ReadOnlyIDService`
 
 GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
 ### GetServiceIDOk
 
-`func (o *HistoricalFieldResultsAttributesAllOf) GetServiceIDOk() (*string, bool)`
+`func (o *HistoricalFieldResultsAttributesAllOf) GetServiceIDOk() (*ReadOnlyIDService, bool)`
 
 GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServiceID
 
-`func (o *HistoricalFieldResultsAttributesAllOf) SetServiceID(v string)`
+`func (o *HistoricalFieldResultsAttributesAllOf) SetServiceID(v ReadOnlyIDService)`
 
 SetServiceID sets ServiceID field to given value.
 
@@ -51,16 +51,6 @@ SetServiceID sets ServiceID field to given value.
 
 HasServiceID returns a boolean if a field has been set.
 
-### SetServiceIDNil
-
-`func (o *HistoricalFieldResultsAttributesAllOf) SetServiceIDNil(b bool)`
-
- SetServiceIDNil sets the value for ServiceID to be an explicit nil
-
-### UnsetServiceID
-`func (o *HistoricalFieldResultsAttributesAllOf) UnsetServiceID()`
-
-UnsetServiceID ensures that no value is present for ServiceID, not even an explicit nil
 ### GetStartTime
 
 `func (o *HistoricalFieldResultsAttributesAllOf) GetStartTime() int32`
