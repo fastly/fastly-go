@@ -35,7 +35,7 @@ func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     versionID := int32(56) // int32 | Integer identifying a service version.
     name := "name_example" // string | The name for the snippet. (optional)
-    dynamic := int32(56) // int32 | Sets the snippet version. (optional)
+    dynamic := "dynamic_example" // string | Sets the snippet version. (optional)
     resourceType := "resourceType_example" // string | The location in generated VCL where the snippet should be placed. (optional)
     content := "content_example" // string | The VCL code that specifies exactly what the snippet does. (optional)
     priority := "priority_example" // string | Priority determines execution order. Lower numbers execute first. (optional) (default to "100")
@@ -69,7 +69,7 @@ Other parameters are passed through a pointer to a apiCreateSnippetRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string** | The name for the snippet. |  **dynamic** | **int32** | Sets the snippet version. |  **resourceType** | **string** | The location in generated VCL where the snippet should be placed. |  **content** | **string** | The VCL code that specifies exactly what the snippet does. |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
+ **name** | **string** | The name for the snippet. |  **dynamic** | **string** | Sets the snippet version. |  **resourceType** | **string** | The location in generated VCL where the snippet should be placed. |  **content** | **string** | The VCL code that specifies exactly what the snippet does. |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
 
 ### Return type
 
@@ -389,7 +389,7 @@ func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     snippetID := "snippetId_example" // string | Alphanumeric string identifying a VCL Snippet.
     name := "name_example" // string | The name for the snippet. (optional)
-    dynamic := int32(56) // int32 | Sets the snippet version. (optional)
+    dynamic := "dynamic_example" // string | Sets the snippet version. (optional)
     resourceType := "resourceType_example" // string | The location in generated VCL where the snippet should be placed. (optional)
     content := "content_example" // string | The VCL code that specifies exactly what the snippet does. (optional)
     priority := "priority_example" // string | Priority determines execution order. Lower numbers execute first. (optional) (default to "100")
@@ -423,7 +423,7 @@ Other parameters are passed through a pointer to a apiUpdateSnippetDynamicReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string** | The name for the snippet. |  **dynamic** | **int32** | Sets the snippet version. |  **resourceType** | **string** | The location in generated VCL where the snippet should be placed. |  **content** | **string** | The VCL code that specifies exactly what the snippet does. |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
+ **name** | **string** | The name for the snippet. |  **dynamic** | **string** | Sets the snippet version. |  **resourceType** | **string** | The location in generated VCL where the snippet should be placed. |  **content** | **string** | The VCL code that specifies exactly what the snippet does. |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
 
 ### Return type
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The name for the snippet. | [optional] 
-**Dynamic** | Pointer to **int32** | Sets the snippet version. | [optional] 
+**Dynamic** | Pointer to **string** | Sets the snippet version. | [optional] 
 **Type** | Pointer to **string** | The location in generated VCL where the snippet should be placed. | [optional] 
 **Content** | Pointer to **string** | The VCL code that specifies exactly what the snippet does. | [optional] 
 **Priority** | Pointer to **string** | Priority determines execution order. Lower numbers execute first. | [optional] [default to "100"]
@@ -56,20 +56,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetDynamic
 
-`func (o *Snippet) GetDynamic() int32`
+`func (o *Snippet) GetDynamic() string`
 
 GetDynamic returns the Dynamic field if non-nil, zero value otherwise.
 
 ### GetDynamicOk
 
-`func (o *Snippet) GetDynamicOk() (*int32, bool)`
+`func (o *Snippet) GetDynamicOk() (*string, bool)`
 
 GetDynamicOk returns a tuple with the Dynamic field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDynamic
 
-`func (o *Snippet) SetDynamic(v int32)`
+`func (o *Snippet) SetDynamic(v string)`
 
 SetDynamic sets Dynamic field to given value.
 

@@ -140,7 +140,7 @@ type APICreateSnippetRequest struct {
 	serviceID string
 	versionID int32
 	name *string
-	dynamic *int32
+	dynamic *string
 	resourceType *string
 	content *string
 	priority *string
@@ -152,7 +152,7 @@ func (r *APICreateSnippetRequest) Name(name string) *APICreateSnippetRequest {
 	return r
 }
 // Dynamic Sets the snippet version.
-func (r *APICreateSnippetRequest) Dynamic(dynamic int32) *APICreateSnippetRequest {
+func (r *APICreateSnippetRequest) Dynamic(dynamic string) *APICreateSnippetRequest {
 	r.dynamic = &dynamic
 	return r
 }
@@ -883,7 +883,7 @@ type APIUpdateSnippetDynamicRequest struct {
 	serviceID string
 	snippetID string
 	name *string
-	dynamic *int32
+	dynamic *string
 	resourceType *string
 	content *string
 	priority *string
@@ -895,7 +895,7 @@ func (r *APIUpdateSnippetDynamicRequest) Name(name string) *APIUpdateSnippetDyna
 	return r
 }
 // Dynamic Sets the snippet version.
-func (r *APIUpdateSnippetDynamicRequest) Dynamic(dynamic int32) *APIUpdateSnippetDynamicRequest {
+func (r *APIUpdateSnippetDynamicRequest) Dynamic(dynamic string) *APIUpdateSnippetDynamicRequest {
 	r.dynamic = &dynamic
 	return r
 }

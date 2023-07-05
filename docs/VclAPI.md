@@ -9,7 +9,11 @@ Method | HTTP request | Description
 [**GetCustomVcl**](VclAPI.md#GetCustomVcl) | **GET** `/service/{service_id}/version/{version_id}/vcl/{vcl_name}` | Get a custom VCL file
 [**GetCustomVclBoilerplate**](VclAPI.md#GetCustomVclBoilerplate) | **GET** `/service/{service_id}/version/{version_id}/boilerplate` | Get boilerplate VCL
 [**GetCustomVclGenerated**](VclAPI.md#GetCustomVclGenerated) | **GET** `/service/{service_id}/version/{version_id}/generated_vcl` | Get the generated VCL for a service
+[**GetCustomVclGeneratedHighlighted**](VclAPI.md#GetCustomVclGeneratedHighlighted) | **GET** `/service/{service_id}/version/{version_id}/generated_vcl/content` | Get the generated VCL with syntax highlighting
+[**GetCustomVclHighlighted**](VclAPI.md#GetCustomVclHighlighted) | **GET** `/service/{service_id}/version/{version_id}/vcl/{vcl_name}/content` | Get a custom VCL file with syntax highlighting
 [**GetCustomVclRaw**](VclAPI.md#GetCustomVclRaw) | **GET** `/service/{service_id}/version/{version_id}/vcl/{vcl_name}/download` | Download a custom VCL file
+[**LintVclDefault**](VclAPI.md#LintVclDefault) | **POST** `/vcl_lint` | Lint (validate) VCL using a default set of flags.
+[**LintVclForService**](VclAPI.md#LintVclForService) | **POST** `/service/{service_id}/lint` | Lint (validate) VCL using flags set for the service.
 [**ListCustomVcl**](VclAPI.md#ListCustomVcl) | **GET** `/service/{service_id}/version/{version_id}/vcl` | List custom VCL files
 [**SetCustomVclMain**](VclAPI.md#SetCustomVclMain) | **PUT** `/service/{service_id}/version/{version_id}/vcl/{vcl_name}/main` | Set a custom VCL file as main
 [**UpdateCustomVcl**](VclAPI.md#UpdateCustomVcl) | **PUT** `/service/{service_id}/version/{version_id}/vcl/{vcl_name}` | Update a custom VCL file
@@ -369,6 +373,146 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
+## GetCustomVclGeneratedHighlighted
+
+Get the generated VCL with syntax highlighting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionID := int32(56) // int32 | Integer identifying a service version.
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.VclAPI.GetCustomVclGeneratedHighlighted(ctx, serviceID, versionID).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VclAPI.GetCustomVclGeneratedHighlighted`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetCustomVclGeneratedHighlighted`: VclSyntaxHighlightingResponse
+    fmt.Fprintf(os.Stdout, "Response from `VclAPI.GetCustomVclGeneratedHighlighted`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**versionID** | **int32** | Integer identifying a service version. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomVclGeneratedHighlightedRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**VclSyntaxHighlightingResponse**](VclSyntaxHighlightingResponse.md)
+
+### Authorization
+
+[API Token](https://developer.fastly.com/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## GetCustomVclHighlighted
+
+Get a custom VCL file with syntax highlighting
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionID := int32(56) // int32 | Integer identifying a service version.
+    vclName := "vclName_example" // string | The name of this VCL.
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.VclAPI.GetCustomVclHighlighted(ctx, serviceID, versionID, vclName).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VclAPI.GetCustomVclHighlighted`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetCustomVclHighlighted`: VclSyntaxHighlightingResponse
+    fmt.Fprintf(os.Stdout, "Response from `VclAPI.GetCustomVclHighlighted`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**versionID** | **int32** | Integer identifying a service version. | 
+**vclName** | **string** | The name of this VCL. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCustomVclHighlightedRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**VclSyntaxHighlightingResponse**](VclSyntaxHighlightingResponse.md)
+
+### Authorization
+
+[API Token](https://developer.fastly.com/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
 ## GetCustomVclRaw
 
 Download a custom VCL file
@@ -436,6 +580,137 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: text/plain
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## LintVclDefault
+
+Lint (validate) VCL using a default set of flags.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    inlineObject1 := *openapiclient.NewInlineObject1("Vcl_example") // InlineObject1 | 
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.VclAPI.LintVclDefault(ctx).InlineObject1(inlineObject1).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VclAPI.LintVclDefault`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `LintVclDefault`: ValidatorResult
+    fmt.Fprintf(os.Stdout, "Response from `VclAPI.LintVclDefault`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLintVclDefaultRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inlineObject1** | [**InlineObject1**](InlineObject1.md) |  | 
+
+### Return type
+
+[**ValidatorResult**](ValidatorResult.md)
+
+### Authorization
+
+[API Token](https://developer.fastly.com/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## LintVclForService
+
+Lint (validate) VCL using flags set for the service.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    inlineObject := *openapiclient.NewInlineObject("Vcl_example") // InlineObject | 
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.VclAPI.LintVclForService(ctx, serviceID).InlineObject(inlineObject).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VclAPI.LintVclForService`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `LintVclForService`: ValidatorResult
+    fmt.Fprintf(os.Stdout, "Response from `VclAPI.LintVclForService`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiLintVclForServiceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **inlineObject** | [**InlineObject**](InlineObject.md) |  | 
+
+### Return type
+
+[**ValidatorResult**](ValidatorResult.md)
+
+### Authorization
+
+[API Token](https://developer.fastly.com/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 

@@ -23,7 +23,7 @@ type SchemasSnippetResponse struct {
 	// The name for the snippet.
 	Name *string `json:"name,omitempty"`
 	// Sets the snippet version.
-	Dynamic *int32 `json:"dynamic,omitempty"`
+	Dynamic *string `json:"dynamic,omitempty"`
 	// The location in generated VCL where the snippet should be placed.
 	Type *string `json:"type,omitempty"`
 	// The VCL code that specifies exactly what the snippet does.
@@ -99,9 +99,9 @@ func (o *SchemasSnippetResponse) SetName(v string) {
 }
 
 // GetDynamic returns the Dynamic field value if set, zero value otherwise.
-func (o *SchemasSnippetResponse) GetDynamic() int32 {
+func (o *SchemasSnippetResponse) GetDynamic() string {
 	if o == nil || o.Dynamic == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Dynamic
@@ -109,7 +109,7 @@ func (o *SchemasSnippetResponse) GetDynamic() int32 {
 
 // GetDynamicOk returns a tuple with the Dynamic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SchemasSnippetResponse) GetDynamicOk() (*int32, bool) {
+func (o *SchemasSnippetResponse) GetDynamicOk() (*string, bool) {
 	if o == nil || o.Dynamic == nil {
 		return nil, false
 	}
@@ -125,8 +125,8 @@ func (o *SchemasSnippetResponse) HasDynamic() bool {
 	return false
 }
 
-// SetDynamic gets a reference to the given int32 and assigns it to the Dynamic field.
-func (o *SchemasSnippetResponse) SetDynamic(v int32) {
+// SetDynamic gets a reference to the given string and assigns it to the Dynamic field.
+func (o *SchemasSnippetResponse) SetDynamic(v string) {
 	o.Dynamic = &v
 }
 

@@ -1,5 +1,21 @@
 # Changelog
 
+## [v1.0.0-beta.15](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.15) (2023-07-05)
+
+**Enhancements:**
+
+- feat(purge): support purge of multiple surrogate keys.
+- feat(vcl): support vcl content endpoints.
+- feat(vcl): support vcl linting endpoints.
+
+**Bug fixes:**
+
+- fix(snippet): dynamic field switched from int to string.
+
+**Documentation:**
+
+- docs: remove deprecated docs endpoints from README 'issues' list.
+
 ## [v1.0.0-beta.14](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.14) (2023-06-27)
 
 **Enhancements:**

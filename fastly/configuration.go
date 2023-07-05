@@ -105,7 +105,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "fastly-go/v1.0.0-beta.14",
+		UserAgent:        "fastly-go/v1.0.0-beta.15",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -1882,6 +1882,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"PurgeAPIService.BulkPurgeTag": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"PurgeAPIService.PurgeAll": {
 				{
 					URL: "https://api.fastly.com",
@@ -2494,7 +2500,31 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"VclAPIService.GetCustomVclGeneratedHighlighted": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"VclAPIService.GetCustomVclHighlighted": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"VclAPIService.GetCustomVclRaw": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"VclAPIService.LintVclDefault": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"VclAPIService.LintVclForService": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",

@@ -4,10 +4,81 @@ All URIs are relative to *https://api.fastly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**BulkPurgeTag**](PurgeAPI.md#BulkPurgeTag) | **POST** `/service/{service_id}/purge` | Purge multiple surrogate key tags
 [**PurgeAll**](PurgeAPI.md#PurgeAll) | **POST** `/service/{service_id}/purge_all` | Purge everything from a service
 [**PurgeSingleURL**](PurgeAPI.md#PurgeSingleURL) | **POST** `/purge/{cached_url}` | Purge a URL
 [**PurgeTag**](PurgeAPI.md#PurgeTag) | **POST** `/service/{service_id}/purge/{surrogate_key}` | Purge by surrogate key tag
 
+
+
+## BulkPurgeTag
+
+Purge multiple surrogate key tags
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    fastlySoftPurge := int32(1) // int32 | If present, this header triggers the purge to be 'soft', which marks the affected object as stale rather than making it inaccessible.  Typically set to \"1\" when used, but the value is not important. (optional)
+    surrogateKey := "key_1 key_2 key_3" // string | Purge multiple surrogate key tags using a request header. Not required if a JSON POST body is specified. (optional)
+    purgeResponse := *openapiclient.NewPurgeResponse() // PurgeResponse |  (optional)
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.PurgeAPI.BulkPurgeTag(ctx, serviceID).FastlySoftPurge(fastlySoftPurge).SurrogateKey(surrogateKey).PurgeResponse(purgeResponse).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PurgeAPI.BulkPurgeTag`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `BulkPurgeTag`: map[string]string
+    fmt.Fprintf(os.Stdout, "Response from `PurgeAPI.BulkPurgeTag`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiBulkPurgeTagRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fastlySoftPurge** | **int32** | If present, this header triggers the purge to be &#39;soft&#39;, which marks the affected object as stale rather than making it inaccessible.  Typically set to \&quot;1\&quot; when used, but the value is not important. |  **surrogateKey** | **string** | Purge multiple surrogate key tags using a request header. Not required if a JSON POST body is specified. |  **purgeResponse** | [**PurgeResponse**](PurgeResponse.md) |  | 
+
+### Return type
+
+**map[string]string**
+
+### Authorization
+
+[API Token](https://developer.fastly.com/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
 ## PurgeAll
