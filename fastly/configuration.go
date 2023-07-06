@@ -105,7 +105,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "fastly-go/v1.0.0-beta.15",
+		UserAgent:        "fastly-go/v1.0.0-beta.16",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -179,6 +179,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"ACLEntryAPIService.UpdateACLEntry": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApexRedirectAPIService.CreateApexRedirect": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",
@@ -454,6 +460,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"ContactAPIService.CreateContacts": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"ContactAPIService.DeleteContact": {
 				{
 					URL: "https://api.fastly.com",
@@ -610,6 +622,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"DirectorAPIService.UpdateDirector": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"DirectorBackendAPIService.CreateDirectorBackend": {
 				{
 					URL: "https://api.fastly.com",
@@ -667,6 +685,30 @@ func NewConfiguration() *Configuration {
 			"DomainAPIService.UpdateDomain": {
 				{
 					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DomainInspectorHistoricalAPIService.GetDomainInspectorHistorical": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DomainInspectorRealtimeAPIService.GetDomainInspectorLast120Seconds": {
+				{
+					URL: "https://rt.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DomainInspectorRealtimeAPIService.GetDomainInspectorLastMaxEntries": {
+				{
+					URL: "https://rt.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DomainInspectorRealtimeAPIService.GetDomainInspectorLastSecond": {
+				{
+					URL: "https://rt.fastly.com",
 					Description: "No description provided",
 				},
 			},
@@ -874,6 +916,18 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"IamRolesAPIService.AddRolePermissions": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamRolesAPIService.CreateARole": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"IamRolesAPIService.DeleteARole": {
 				{
 					URL: "https://api.fastly.com",
@@ -898,6 +952,30 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"IamRolesAPIService.RemoveRolePermissions": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamRolesAPIService.UpdateARole": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamServiceGroupsAPIService.AddServiceGroupServices": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamServiceGroupsAPIService.CreateAServiceGroup": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"IamServiceGroupsAPIService.DeleteAServiceGroup": {
 				{
 					URL: "https://api.fastly.com",
@@ -917,6 +995,42 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"IamServiceGroupsAPIService.ListServiceGroups": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamServiceGroupsAPIService.RemoveServiceGroupServices": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamServiceGroupsAPIService.UpdateAServiceGroup": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamUserGroupsAPIService.AddUserGroupMembers": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamUserGroupsAPIService.AddUserGroupRoles": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamUserGroupsAPIService.AddUserGroupServiceGroups": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamUserGroupsAPIService.CreateAUserGroup": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",
@@ -953,6 +1067,30 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"IamUserGroupsAPIService.ListUserGroups": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamUserGroupsAPIService.RemoveUserGroupMembers": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamUserGroupsAPIService.RemoveUserGroupRoles": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamUserGroupsAPIService.RemoveUserGroupServiceGroups": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"IamUserGroupsAPIService.UpdateAUserGroup": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",
@@ -1019,6 +1157,174 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"KvStoreItemAPIService.SetValueForKey": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafConfigurationSetsAPIService.ListWafConfigSets": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafConfigurationSetsAPIService.ListWafsConfigSet": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafConfigurationSetsAPIService.UseWafConfigSet": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafFirewallAPIService.CreateLegacyWafFirewallService": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafFirewallAPIService.DisableLegacyWafFirewall": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafFirewallAPIService.EnableLegacyWafFirewall": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafFirewallAPIService.GetLegacyWafFirewall": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafFirewallAPIService.GetLegacyWafFirewallService": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafFirewallAPIService.ListLegacyWafFirewalls": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafFirewallAPIService.ListLegacyWafFirewallsService": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafFirewallAPIService.UpdateLegacyWafFirewallService": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafOwaspAPIService.CreateOwaspSettings": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafOwaspAPIService.GetOwaspSettings": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafOwaspAPIService.UpdateOwaspSettings": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafRuleAPIService.GetLegacyWafFirewallRuleVcl": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafRuleAPIService.GetLegacyWafRule": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafRuleAPIService.GetLegacyWafRuleVcl": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafRuleAPIService.ListLegacyWafRules": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafRuleStatusAPIService.GetWafFirewallRuleStatus": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafRuleStatusAPIService.ListWafFirewallRuleStatuses": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafRuleStatusAPIService.UpdateWafFirewallRuleStatus": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafRuleStatusAPIService.UpdateWafFirewallRuleStatusesTag": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafRulesetAPIService.GetWafRuleset": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafRulesetAPIService.GetWafRulesetVcl": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafRulesetAPIService.UpdateWafRuleset": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafTagAPIService.ListLegacyWafTags": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafUpdateStatusAPIService.GetWafUpdateStatus": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LegacyWafUpdateStatusAPIService.ListWafUpdateStatuses": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",
@@ -1378,6 +1684,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"LoggingKafkaAPIService.UpdateLogKafka": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"LoggingKinesisAPIService.CreateLogKinesis": {
 				{
 					URL: "https://api.fastly.com",
@@ -1397,6 +1709,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"LoggingKinesisAPIService.ListLogKinesis": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LoggingKinesisAPIService.UpdateLogKinesis": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",
@@ -1822,6 +2140,30 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"OriginInspectorHistoricalAPIService.GetOriginInspectorHistorical": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"OriginInspectorRealtimeAPIService.GetOriginInspectorLast120Seconds": {
+				{
+					URL: "https://rt.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"OriginInspectorRealtimeAPIService.GetOriginInspectorLastMaxEntries": {
+				{
+					URL: "https://rt.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"OriginInspectorRealtimeAPIService.GetOriginInspectorLastSecond": {
+				{
+					URL: "https://rt.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"PackageAPIService.GetPackage": {
 				{
 					URL: "https://api.fastly.com",
@@ -1954,6 +2296,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"RequestSettingsAPIService.CreateRequestSettings": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"RequestSettingsAPIService.DeleteRequestSettings": {
 				{
 					URL: "https://api.fastly.com",
@@ -2008,6 +2356,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"ResponseObjectAPIService.CreateResponseObject": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"ResponseObjectAPIService.DeleteResponseObject": {
 				{
 					URL: "https://api.fastly.com",
@@ -2021,6 +2375,84 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"ResponseObjectAPIService.ListResponseObjects": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ResponseObjectAPIService.UpdateResponseObject": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"SecretStoreAPIService.ClientKey": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"SecretStoreAPIService.CreateSecretStore": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"SecretStoreAPIService.DeleteSecretStore": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"SecretStoreAPIService.GetSecretStore": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"SecretStoreAPIService.GetSecretStores": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"SecretStoreAPIService.SigningKey": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"SecretStoreItemAPIService.CreateSecret": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"SecretStoreItemAPIService.DeleteSecret": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"SecretStoreItemAPIService.GetSecret": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"SecretStoreItemAPIService.GetSecrets": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"SecretStoreItemAPIService.MustRecreateSecret": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"SecretStoreItemAPIService.RecreateSecret": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",
@@ -2116,6 +2548,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"ServiceAuthorizationsAPIService.DeleteServiceAuthorization2": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"ServiceAuthorizationsAPIService.ListServiceAuthorization": {
 				{
 					URL: "https://api.fastly.com",
@@ -2129,6 +2567,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"ServiceAuthorizationsAPIService.UpdateServiceAuthorization": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ServiceAuthorizationsAPIService.UpdateServiceAuthorization2": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",
@@ -2176,6 +2620,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"SnippetAPIService.UpdateSnippet": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"SnippetAPIService.UpdateSnippetDynamic": {
 				{
 					URL: "https://api.fastly.com",
@@ -2207,6 +2657,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"StatsAPIService.GetServiceStats": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"SudoAPIService.RequestSudoAccess": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",
@@ -2387,6 +2843,18 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"TLSSubscriptionsAPIService.PatchTLSSub": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"TokensAPIService.BulkRevokeTokens": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"TokensAPIService.CreateToken": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",
@@ -2603,6 +3071,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"VersionAPIService.ValidateServiceVersion": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"WafActiveRulesAPIService.BulkDeleteWafActiveRules": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",

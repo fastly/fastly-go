@@ -60,6 +60,20 @@ type ServiceAuthorizationsAPI interface {
 	DeleteServiceAuthorizationExecute(r APIDeleteServiceAuthorizationRequest) (*http.Response, error)
 
 	/*
+	DeleteServiceAuthorization2 Delete service authorizations
+
+	Delete service authorizations.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @return APIDeleteServiceAuthorization2Request
+	*/
+	DeleteServiceAuthorization2(ctx context.Context) APIDeleteServiceAuthorization2Request
+
+	// DeleteServiceAuthorization2Execute executes the request
+	//  @return InlineResponse2007
+	DeleteServiceAuthorization2Execute(r APIDeleteServiceAuthorization2Request) (*InlineResponse2007, *http.Response, error)
+
+	/*
 	ListServiceAuthorization List service authorizations
 
 	List service authorizations.
@@ -102,6 +116,20 @@ type ServiceAuthorizationsAPI interface {
 	// UpdateServiceAuthorizationExecute executes the request
 	//  @return ServiceAuthorizationResponse
 	UpdateServiceAuthorizationExecute(r APIUpdateServiceAuthorizationRequest) (*ServiceAuthorizationResponse, *http.Response, error)
+
+	/*
+	UpdateServiceAuthorization2 Update service authorizations
+
+	Update service authorizations.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @return APIUpdateServiceAuthorization2Request
+	*/
+	UpdateServiceAuthorization2(ctx context.Context) APIUpdateServiceAuthorization2Request
+
+	// UpdateServiceAuthorization2Execute executes the request
+	//  @return ServiceAuthorizationsResponse
+	UpdateServiceAuthorization2Execute(r APIUpdateServiceAuthorization2Request) (*ServiceAuthorizationsResponse, *http.Response, error)
 }
 
 // ServiceAuthorizationsAPIService ServiceAuthorizationsAPI service
@@ -366,6 +394,144 @@ func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorizationExecute(r AP
 	}
 
 	return localVarHTTPResponse, nil
+}
+
+// APIDeleteServiceAuthorization2Request represents a request for the resource.
+type APIDeleteServiceAuthorization2Request struct {
+	ctx context.Context
+	APIService ServiceAuthorizationsAPI
+	requestBody *map[string]map[string]any
+}
+
+// RequestBody returns a pointer to a request.
+func (r *APIDeleteServiceAuthorization2Request) RequestBody(requestBody map[string]map[string]any) *APIDeleteServiceAuthorization2Request {
+	r.requestBody = &requestBody
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIDeleteServiceAuthorization2Request) Execute() (*InlineResponse2007, *http.Response, error) {
+	return r.APIService.DeleteServiceAuthorization2Execute(r)
+}
+
+/*
+DeleteServiceAuthorization2 Delete service authorizations
+
+Delete service authorizations.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return APIDeleteServiceAuthorization2Request
+*/
+func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization2(ctx context.Context) APIDeleteServiceAuthorization2Request {
+	return APIDeleteServiceAuthorization2Request{
+		APIService: a,
+		ctx: ctx,
+	}
+}
+
+// DeleteServiceAuthorization2Execute executes the request
+//  @return InlineResponse2007
+func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization2Execute(r APIDeleteServiceAuthorization2Request) (*InlineResponse2007, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *InlineResponse2007
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthorizationsAPIService.DeleteServiceAuthorization2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/service-authorizations"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/vnd.api+json; ext=bulk"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json; ext=bulk"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.requestBody
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 // APIListServiceAuthorizationRequest represents a request for the resource.
@@ -727,6 +893,144 @@ func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorizationExecute(r AP
 	}
 	// body params
 	localVarPostBody = r.serviceAuthorization
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIUpdateServiceAuthorization2Request represents a request for the resource.
+type APIUpdateServiceAuthorization2Request struct {
+	ctx context.Context
+	APIService ServiceAuthorizationsAPI
+	requestBody *map[string]map[string]any
+}
+
+// RequestBody returns a pointer to a request.
+func (r *APIUpdateServiceAuthorization2Request) RequestBody(requestBody map[string]map[string]any) *APIUpdateServiceAuthorization2Request {
+	r.requestBody = &requestBody
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIUpdateServiceAuthorization2Request) Execute() (*ServiceAuthorizationsResponse, *http.Response, error) {
+	return r.APIService.UpdateServiceAuthorization2Execute(r)
+}
+
+/*
+UpdateServiceAuthorization2 Update service authorizations
+
+Update service authorizations.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return APIUpdateServiceAuthorization2Request
+*/
+func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorization2(ctx context.Context) APIUpdateServiceAuthorization2Request {
+	return APIUpdateServiceAuthorization2Request{
+		APIService: a,
+		ctx: ctx,
+	}
+}
+
+// UpdateServiceAuthorization2Execute executes the request
+//  @return ServiceAuthorizationsResponse
+func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorization2Execute(r APIUpdateServiceAuthorization2Request) (*ServiceAuthorizationsResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *ServiceAuthorizationsResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthorizationsAPIService.UpdateServiceAuthorization2")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/service-authorizations"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/vnd.api+json; ext=bulk"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json; ext=bulk"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.requestBody
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

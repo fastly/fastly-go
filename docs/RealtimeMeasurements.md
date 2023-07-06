@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Errors** | Pointer to **int32** | Number of cache errors. | [optional] 
 **HitsTime** | Pointer to **float32** | Total amount of time spent processing cache hits (in seconds). | [optional] 
 **MissTime** | Pointer to **float32** | Total amount of time spent processing cache misses (in seconds). | [optional] 
-**MissHistogram** | Pointer to **map[string]any** | A histogram. Each key represents the upper bound of a span of 10 milliseconds and the values represent the number of requests to origin during that 10ms period. Any origin request that takes more than 60 seconds to return will be in the 60000 bucket. | [optional] 
+**MissHistogram** | Pointer to **map[string]map[string]any** | A histogram. Each key represents the upper bound of a span of 10 milliseconds and the values represent the number of requests to origin during that 10ms period. Any origin request that takes more than 60 seconds to return will be in the 60000 bucket. | [optional] 
 **ComputeRequests** | Pointer to **int32** | The total number of requests that were received for your service by Fastly. | [optional] 
 **ComputeExecutionTimeMs** | Pointer to **float32** | The amount of active CPU time used to process your requests (in milliseconds). | [optional] 
 **ComputeRAMUsed** | Pointer to **int32** | The amount of RAM used for your service by Fastly (in bytes). | [optional] 
@@ -594,20 +594,20 @@ HasMissTime returns a boolean if a field has been set.
 
 ### GetMissHistogram
 
-`func (o *RealtimeMeasurements) GetMissHistogram() map[string]any`
+`func (o *RealtimeMeasurements) GetMissHistogram() map[string]map[string]any`
 
 GetMissHistogram returns the MissHistogram field if non-nil, zero value otherwise.
 
 ### GetMissHistogramOk
 
-`func (o *RealtimeMeasurements) GetMissHistogramOk() (*map[string]any, bool)`
+`func (o *RealtimeMeasurements) GetMissHistogramOk() (*map[string]map[string]any, bool)`
 
 GetMissHistogramOk returns a tuple with the MissHistogram field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMissHistogram
 
-`func (o *RealtimeMeasurements) SetMissHistogram(v map[string]any)`
+`func (o *RealtimeMeasurements) SetMissHistogram(v map[string]map[string]any)`
 
 SetMissHistogram sets MissHistogram field to given value.
 

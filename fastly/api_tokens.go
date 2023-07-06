@@ -32,6 +32,34 @@ var (
 type TokensAPI interface {
 
 	/*
+	BulkRevokeTokens Revoke multiple tokens
+
+	Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @return APIBulkRevokeTokensRequest
+	*/
+	BulkRevokeTokens(ctx context.Context) APIBulkRevokeTokensRequest
+
+	// BulkRevokeTokensExecute executes the request
+	BulkRevokeTokensExecute(r APIBulkRevokeTokensRequest) (*http.Response, error)
+
+	/*
+	CreateToken Create a token
+
+	Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth-tokens/user/) for including a one-time password in the request.
+
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @return APICreateTokenRequest
+	*/
+	CreateToken(ctx context.Context) APICreateTokenRequest
+
+	// CreateTokenExecute executes the request
+	//  @return TokenCreatedResponse
+	CreateTokenExecute(r APICreateTokenRequest) (*TokenCreatedResponse, *http.Response, error)
+
+	/*
 	GetToken Get a token
 
 	Get a single token by its id.
@@ -119,6 +147,274 @@ type TokensAPI interface {
 
 // TokensAPIService TokensAPI service
 type TokensAPIService service
+
+// APIBulkRevokeTokensRequest represents a request for the resource.
+type APIBulkRevokeTokensRequest struct {
+	ctx context.Context
+	APIService TokensAPI
+	requestBody *map[string]map[string]any
+}
+
+// RequestBody returns a pointer to a request.
+func (r *APIBulkRevokeTokensRequest) RequestBody(requestBody map[string]map[string]any) *APIBulkRevokeTokensRequest {
+	r.requestBody = &requestBody
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIBulkRevokeTokensRequest) Execute() (*http.Response, error) {
+	return r.APIService.BulkRevokeTokensExecute(r)
+}
+
+/*
+BulkRevokeTokens Revoke multiple tokens
+
+Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return APIBulkRevokeTokensRequest
+*/
+func (a *TokensAPIService) BulkRevokeTokens(ctx context.Context) APIBulkRevokeTokensRequest {
+	return APIBulkRevokeTokensRequest{
+		APIService: a,
+		ctx: ctx,
+	}
+}
+
+// BulkRevokeTokensExecute executes the request
+func (a *TokensAPIService) BulkRevokeTokensExecute(r APIBulkRevokeTokensRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     any
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokensAPIService.BulkRevokeTokens")
+	if err != nil {
+		return nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/tokens"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/vnd.api+json; ext=bulk"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.requestBody
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+// APICreateTokenRequest represents a request for the resource.
+type APICreateTokenRequest struct {
+	ctx context.Context
+	APIService TokensAPI
+}
+
+
+// Execute calls the API using the request data configured.
+func (r APICreateTokenRequest) Execute() (*TokenCreatedResponse, *http.Response, error) {
+	return r.APIService.CreateTokenExecute(r)
+}
+
+/*
+CreateToken Create a token
+
+Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth-tokens/user/) for including a one-time password in the request.
+
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return APICreateTokenRequest
+*/
+func (a *TokensAPIService) CreateToken(ctx context.Context) APICreateTokenRequest {
+	return APICreateTokenRequest{
+		APIService: a,
+		ctx: ctx,
+	}
+}
+
+// CreateTokenExecute executes the request
+//  @return TokenCreatedResponse
+func (a *TokensAPIService) CreateTokenExecute(r APICreateTokenRequest) (*TokenCreatedResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *TokenCreatedResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokensAPIService.CreateToken")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/tokens"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/x-www-form-urlencoded"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v InlineResponse400
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 // APIGetTokenRequest represents a request for the resource.
 type APIGetTokenRequest struct {

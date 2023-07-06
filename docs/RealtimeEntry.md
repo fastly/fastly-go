@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Recorded** | Pointer to **int32** | The Unix timestamp at which this record&#39;s data was generated. | [optional] 
-**Aggregated** | Pointer to [**RealtimeMeasurements**](realtime_measurements.md) | Aggregates [measurements](#measurements-data-model) across all Fastly POPs. | [optional] 
+**Recorded** | Pointer to [**RealtimeEntryRecorded**](RealtimeEntryRecorded.md) |  | [optional] 
+**Aggregated** | Pointer to [**RealtimeEntryAggregated**](RealtimeEntryAggregated.md) |  | [optional] 
 **Datacenter** | Pointer to [**map[string]RealtimeMeasurements**](RealtimeMeasurements.md) | Groups [measurements](#measurements-data-model) by POP. See the [POPs API](/reference/api/utils/pops/) for details of POP identifiers. | [optional] 
 
 ## Methods
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRecorded
 
-`func (o *RealtimeEntry) GetRecorded() int32`
+`func (o *RealtimeEntry) GetRecorded() RealtimeEntryRecorded`
 
 GetRecorded returns the Recorded field if non-nil, zero value otherwise.
 
 ### GetRecordedOk
 
-`func (o *RealtimeEntry) GetRecordedOk() (*int32, bool)`
+`func (o *RealtimeEntry) GetRecordedOk() (*RealtimeEntryRecorded, bool)`
 
 GetRecordedOk returns a tuple with the Recorded field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRecorded
 
-`func (o *RealtimeEntry) SetRecorded(v int32)`
+`func (o *RealtimeEntry) SetRecorded(v RealtimeEntryRecorded)`
 
 SetRecorded sets Recorded field to given value.
 
@@ -54,20 +54,20 @@ HasRecorded returns a boolean if a field has been set.
 
 ### GetAggregated
 
-`func (o *RealtimeEntry) GetAggregated() RealtimeMeasurements`
+`func (o *RealtimeEntry) GetAggregated() RealtimeEntryAggregated`
 
 GetAggregated returns the Aggregated field if non-nil, zero value otherwise.
 
 ### GetAggregatedOk
 
-`func (o *RealtimeEntry) GetAggregatedOk() (*RealtimeMeasurements, bool)`
+`func (o *RealtimeEntry) GetAggregatedOk() (*RealtimeEntryAggregated, bool)`
 
 GetAggregatedOk returns a tuple with the Aggregated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAggregated
 
-`func (o *RealtimeEntry) SetAggregated(v RealtimeMeasurements)`
+`func (o *RealtimeEntry) SetAggregated(v RealtimeEntryAggregated)`
 
 SetAggregated sets Aggregated field to given value.
 

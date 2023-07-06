@@ -4,11 +4,81 @@ All URIs are relative to *https://api.fastly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CreateRequestSettings**](RequestSettingsAPI.md#CreateRequestSettings) | **POST** `/service/{service_id}/version/{version_id}/request_settings` | Create a Request Settings object
 [**DeleteRequestSettings**](RequestSettingsAPI.md#DeleteRequestSettings) | **DELETE** `/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}` | Delete a Request Settings object
 [**GetRequestSettings**](RequestSettingsAPI.md#GetRequestSettings) | **GET** `/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}` | Get a Request Settings object
 [**ListRequestSettings**](RequestSettingsAPI.md#ListRequestSettings) | **GET** `/service/{service_id}/version/{version_id}/request_settings` | List Request Settings objects
 [**UpdateRequestSettings**](RequestSettingsAPI.md#UpdateRequestSettings) | **PUT** `/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}` | Update a Request Settings object
 
+
+
+## CreateRequestSettings
+
+Create a Request Settings object
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionID := int32(56) // int32 | Integer identifying a service version.
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.RequestSettingsAPI.CreateRequestSettings(ctx, serviceID, versionID).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `RequestSettingsAPI.CreateRequestSettings`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateRequestSettings`: RequestSettingsResponse
+    fmt.Fprintf(os.Stdout, "Response from `RequestSettingsAPI.CreateRequestSettings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**versionID** | **int32** | Integer identifying a service version. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateRequestSettingsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**RequestSettingsResponse**](RequestSettingsResponse.md)
+
+### Authorization
+
+[API Token](https://developer.fastly.com/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: application/x-www-form-urlencoded
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
 ## DeleteRequestSettings

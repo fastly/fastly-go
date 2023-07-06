@@ -114,6 +114,23 @@ type SnippetAPI interface {
 	ListSnippetsExecute(r APIListSnippetsRequest) ([]SnippetResponse, *http.Response, error)
 
 	/*
+	UpdateSnippet Update a versioned snippet
+
+	Update a specific snippet for a particular service and version.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param serviceID Alphanumeric string identifying the service.
+	 @param versionID Integer identifying a service version.
+	 @param snippetName The name for the snippet.
+	 @return APIUpdateSnippetRequest
+	*/
+	UpdateSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIUpdateSnippetRequest
+
+	// UpdateSnippetExecute executes the request
+	//  @return SnippetResponse
+	UpdateSnippetExecute(r APIUpdateSnippetRequest) (*SnippetResponse, *http.Response, error)
+
+	/*
 	UpdateSnippetDynamic Update a dynamic snippet
 
 	Update a dynamic snippet for a particular service.
@@ -796,6 +813,148 @@ func (a *SnippetAPIService) ListSnippetsExecute(r APIListSnippetsRequest) ([]Sni
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIUpdateSnippetRequest represents a request for the resource.
+type APIUpdateSnippetRequest struct {
+	ctx context.Context
+	APIService SnippetAPI
+	serviceID string
+	versionID int32
+	snippetName string
+}
+
+
+// Execute calls the API using the request data configured.
+func (r APIUpdateSnippetRequest) Execute() (*SnippetResponse, *http.Response, error) {
+	return r.APIService.UpdateSnippetExecute(r)
+}
+
+/*
+UpdateSnippet Update a versioned snippet
+
+Update a specific snippet for a particular service and version.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
+ @param snippetName The name for the snippet.
+ @return APIUpdateSnippetRequest
+*/
+func (a *SnippetAPIService) UpdateSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIUpdateSnippetRequest {
+	return APIUpdateSnippetRequest{
+		APIService: a,
+		ctx: ctx,
+		serviceID: serviceID,
+		versionID: versionID,
+		snippetName: snippetName,
+	}
+}
+
+// UpdateSnippetExecute executes the request
+//  @return SnippetResponse
+func (a *SnippetAPIService) UpdateSnippetExecute(r APIUpdateSnippetRequest) (*SnippetResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *SnippetResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnippetAPIService.UpdateSnippet")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/snippet/{snippet_name}"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"snippet_name"+"}", gourl.PathEscape(parameterToString(r.snippetName, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)

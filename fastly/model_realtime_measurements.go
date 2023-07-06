@@ -48,7 +48,7 @@ type RealtimeMeasurements struct {
 	// Total amount of time spent processing cache misses (in seconds).
 	MissTime *float32 `json:"miss_time,omitempty"`
 	// A histogram. Each key represents the upper bound of a span of 10 milliseconds and the values represent the number of requests to origin during that 10ms period. Any origin request that takes more than 60 seconds to return will be in the 60000 bucket.
-	MissHistogram map[string]any `json:"miss_histogram,omitempty"`
+	MissHistogram map[string]map[string]any `json:"miss_histogram,omitempty"`
 	// The total number of requests that were received for your service by Fastly.
 	ComputeRequests *int32 `json:"compute_requests,omitempty"`
 	// The amount of active CPU time used to process your requests (in milliseconds).
@@ -928,9 +928,9 @@ func (o *RealtimeMeasurements) SetMissTime(v float32) {
 }
 
 // GetMissHistogram returns the MissHistogram field value if set, zero value otherwise.
-func (o *RealtimeMeasurements) GetMissHistogram() map[string]any {
+func (o *RealtimeMeasurements) GetMissHistogram() map[string]map[string]any {
 	if o == nil || o.MissHistogram == nil {
-		var ret map[string]any
+		var ret map[string]map[string]any
 		return ret
 	}
 	return o.MissHistogram
@@ -938,7 +938,7 @@ func (o *RealtimeMeasurements) GetMissHistogram() map[string]any {
 
 // GetMissHistogramOk returns a tuple with the MissHistogram field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeMeasurements) GetMissHistogramOk() (map[string]any, bool) {
+func (o *RealtimeMeasurements) GetMissHistogramOk() (map[string]map[string]any, bool) {
 	if o == nil || o.MissHistogram == nil {
 		return nil, false
 	}
@@ -954,8 +954,8 @@ func (o *RealtimeMeasurements) HasMissHistogram() bool {
 	return false
 }
 
-// SetMissHistogram gets a reference to the given map[string]any and assigns it to the MissHistogram field.
-func (o *RealtimeMeasurements) SetMissHistogram(v map[string]any) {
+// SetMissHistogram gets a reference to the given map[string]map[string]any and assigns it to the MissHistogram field.
+func (o *RealtimeMeasurements) SetMissHistogram(v map[string]map[string]any) {
 	o.MissHistogram = v
 }
 

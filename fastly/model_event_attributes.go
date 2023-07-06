@@ -32,7 +32,7 @@ type EventAttributes struct {
 	// IP addresses that the event was requested from.
 	IP *string `json:"ip,omitempty"`
 	// Hash of key value pairs of additional information.
-	Metadata map[string]any `json:"metadata,omitempty"`
+	Metadata map[string]map[string]any `json:"metadata,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
 	UserID *string `json:"user_id,omitempty"`
 	TokenID *string `json:"token_id,omitempty"`
@@ -261,9 +261,9 @@ func (o *EventAttributes) SetIP(v string) {
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *EventAttributes) GetMetadata() map[string]any {
+func (o *EventAttributes) GetMetadata() map[string]map[string]any {
 	if o == nil || o.Metadata == nil {
-		var ret map[string]any
+		var ret map[string]map[string]any
 		return ret
 	}
 	return o.Metadata
@@ -271,7 +271,7 @@ func (o *EventAttributes) GetMetadata() map[string]any {
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventAttributes) GetMetadataOk() (map[string]any, bool) {
+func (o *EventAttributes) GetMetadataOk() (map[string]map[string]any, bool) {
 	if o == nil || o.Metadata == nil {
 		return nil, false
 	}
@@ -287,8 +287,8 @@ func (o *EventAttributes) HasMetadata() bool {
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]any and assigns it to the Metadata field.
-func (o *EventAttributes) SetMetadata(v map[string]any) {
+// SetMetadata gets a reference to the given map[string]map[string]any and assigns it to the Metadata field.
+func (o *EventAttributes) SetMetadata(v map[string]map[string]any) {
 	o.Metadata = v
 }
 

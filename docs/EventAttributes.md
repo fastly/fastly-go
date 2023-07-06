@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Description of the event. | [optional] 
 **EventType** | Pointer to **string** | Type of event. Can be used with `filter[event_type]` | [optional] 
 **IP** | Pointer to **string** | IP addresses that the event was requested from. | [optional] 
-**Metadata** | Pointer to **map[string]any** | Hash of key value pairs of additional information. | [optional] 
+**Metadata** | Pointer to **map[string]map[string]any** | Hash of key value pairs of additional information. | [optional] 
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **UserID** | Pointer to **string** |  | [optional] [readonly] 
 **TokenID** | Pointer to **string** |  | [optional] [readonly] 
@@ -196,20 +196,20 @@ HasIP returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *EventAttributes) GetMetadata() map[string]any`
+`func (o *EventAttributes) GetMetadata() map[string]map[string]any`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *EventAttributes) GetMetadataOk() (*map[string]any, bool)`
+`func (o *EventAttributes) GetMetadataOk() (*map[string]map[string]any, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *EventAttributes) SetMetadata(v map[string]any)`
+`func (o *EventAttributes) SetMetadata(v map[string]map[string]any)`
 
 SetMetadata sets Metadata field to given value.
 

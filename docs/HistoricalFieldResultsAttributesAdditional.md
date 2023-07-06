@@ -1,4 +1,4 @@
-# HistoricalFieldResultsAttributesAllOf
+# HistoricalFieldResultsAttributesAdditional
 
 ## Properties
 
@@ -9,70 +9,70 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewHistoricalFieldResultsAttributesAllOf
+### NewHistoricalFieldResultsAttributesAdditional
 
-`func NewHistoricalFieldResultsAttributesAllOf() *HistoricalFieldResultsAttributesAllOf`
+`func NewHistoricalFieldResultsAttributesAdditional() *HistoricalFieldResultsAttributesAdditional`
 
-NewHistoricalFieldResultsAttributesAllOf instantiates a new HistoricalFieldResultsAttributesAllOf object
+NewHistoricalFieldResultsAttributesAdditional instantiates a new HistoricalFieldResultsAttributesAdditional object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewHistoricalFieldResultsAttributesAllOfWithDefaults
+### NewHistoricalFieldResultsAttributesAdditionalWithDefaults
 
-`func NewHistoricalFieldResultsAttributesAllOfWithDefaults() *HistoricalFieldResultsAttributesAllOf`
+`func NewHistoricalFieldResultsAttributesAdditionalWithDefaults() *HistoricalFieldResultsAttributesAdditional`
 
-NewHistoricalFieldResultsAttributesAllOfWithDefaults instantiates a new HistoricalFieldResultsAttributesAllOf object
+NewHistoricalFieldResultsAttributesAdditionalWithDefaults instantiates a new HistoricalFieldResultsAttributesAdditional object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetServiceID
 
-`func (o *HistoricalFieldResultsAttributesAllOf) GetServiceID() ReadOnlyIDService`
+`func (o *HistoricalFieldResultsAttributesAdditional) GetServiceID() ReadOnlyIDService`
 
 GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
 ### GetServiceIDOk
 
-`func (o *HistoricalFieldResultsAttributesAllOf) GetServiceIDOk() (*ReadOnlyIDService, bool)`
+`func (o *HistoricalFieldResultsAttributesAdditional) GetServiceIDOk() (*ReadOnlyIDService, bool)`
 
 GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServiceID
 
-`func (o *HistoricalFieldResultsAttributesAllOf) SetServiceID(v ReadOnlyIDService)`
+`func (o *HistoricalFieldResultsAttributesAdditional) SetServiceID(v ReadOnlyIDService)`
 
 SetServiceID sets ServiceID field to given value.
 
 ### HasServiceID
 
-`func (o *HistoricalFieldResultsAttributesAllOf) HasServiceID() bool`
+`func (o *HistoricalFieldResultsAttributesAdditional) HasServiceID() bool`
 
 HasServiceID returns a boolean if a field has been set.
 
 ### GetStartTime
 
-`func (o *HistoricalFieldResultsAttributesAllOf) GetStartTime() int32`
+`func (o *HistoricalFieldResultsAttributesAdditional) GetStartTime() int32`
 
 GetStartTime returns the StartTime field if non-nil, zero value otherwise.
 
 ### GetStartTimeOk
 
-`func (o *HistoricalFieldResultsAttributesAllOf) GetStartTimeOk() (*int32, bool)`
+`func (o *HistoricalFieldResultsAttributesAdditional) GetStartTimeOk() (*int32, bool)`
 
 GetStartTimeOk returns a tuple with the StartTime field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStartTime
 
-`func (o *HistoricalFieldResultsAttributesAllOf) SetStartTime(v int32)`
+`func (o *HistoricalFieldResultsAttributesAdditional) SetStartTime(v int32)`
 
 SetStartTime sets StartTime field to given value.
 
 ### HasStartTime
 
-`func (o *HistoricalFieldResultsAttributesAllOf) HasStartTime() bool`
+`func (o *HistoricalFieldResultsAttributesAdditional) HasStartTime() bool`
 
 HasStartTime returns a boolean if a field has been set.
 

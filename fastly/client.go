@@ -106,6 +106,10 @@ type APIClient struct {
 
 	DomainAPI DomainAPI
 
+	DomainInspectorHistoricalAPI DomainInspectorHistoricalAPI
+
+	DomainInspectorRealtimeAPI DomainInspectorRealtimeAPI
+
 	DomainOwnershipsAPI DomainOwnershipsAPI
 
 	EnabledProductsAPI EnabledProductsAPI
@@ -135,6 +139,22 @@ type APIClient struct {
 	KvStoreAPI KvStoreAPI
 
 	KvStoreItemAPI KvStoreItemAPI
+
+	LegacyWafConfigurationSetsAPI LegacyWafConfigurationSetsAPI
+
+	LegacyWafFirewallAPI LegacyWafFirewallAPI
+
+	LegacyWafOwaspAPI LegacyWafOwaspAPI
+
+	LegacyWafRuleAPI LegacyWafRuleAPI
+
+	LegacyWafRuleStatusAPI LegacyWafRuleStatusAPI
+
+	LegacyWafRulesetAPI LegacyWafRulesetAPI
+
+	LegacyWafTagAPI LegacyWafTagAPI
+
+	LegacyWafUpdateStatusAPI LegacyWafUpdateStatusAPI
 
 	LoggingAzureblobAPI LoggingAzureblobAPI
 
@@ -190,6 +210,10 @@ type APIClient struct {
 
 	MutualAuthenticationAPI MutualAuthenticationAPI
 
+	OriginInspectorHistoricalAPI OriginInspectorHistoricalAPI
+
+	OriginInspectorRealtimeAPI OriginInspectorRealtimeAPI
+
 	PackageAPI PackageAPI
 
 	PoolAPI PoolAPI
@@ -212,6 +236,10 @@ type APIClient struct {
 
 	ResponseObjectAPI ResponseObjectAPI
 
+	SecretStoreAPI SecretStoreAPI
+
+	SecretStoreItemAPI SecretStoreItemAPI
+
 	ServerAPI ServerAPI
 
 	ServiceAPI ServiceAPI
@@ -225,6 +253,8 @@ type APIClient struct {
 	StarAPI StarAPI
 
 	StatsAPI StatsAPI
+
+	SudoAPI SudoAPI
 
 	TLSActivationsAPI TLSActivationsAPI
 
@@ -303,6 +333,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.DirectorAPI = (*DirectorAPIService)(&c.common)
 	c.DirectorBackendAPI = (*DirectorBackendAPIService)(&c.common)
 	c.DomainAPI = (*DomainAPIService)(&c.common)
+	c.DomainInspectorHistoricalAPI = (*DomainInspectorHistoricalAPIService)(&c.common)
+	c.DomainInspectorRealtimeAPI = (*DomainInspectorRealtimeAPIService)(&c.common)
 	c.DomainOwnershipsAPI = (*DomainOwnershipsAPIService)(&c.common)
 	c.EnabledProductsAPI = (*EnabledProductsAPIService)(&c.common)
 	c.EventsAPI = (*EventsAPIService)(&c.common)
@@ -318,6 +350,14 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.InvitationsAPI = (*InvitationsAPIService)(&c.common)
 	c.KvStoreAPI = (*KvStoreAPIService)(&c.common)
 	c.KvStoreItemAPI = (*KvStoreItemAPIService)(&c.common)
+	c.LegacyWafConfigurationSetsAPI = (*LegacyWafConfigurationSetsAPIService)(&c.common)
+	c.LegacyWafFirewallAPI = (*LegacyWafFirewallAPIService)(&c.common)
+	c.LegacyWafOwaspAPI = (*LegacyWafOwaspAPIService)(&c.common)
+	c.LegacyWafRuleAPI = (*LegacyWafRuleAPIService)(&c.common)
+	c.LegacyWafRuleStatusAPI = (*LegacyWafRuleStatusAPIService)(&c.common)
+	c.LegacyWafRulesetAPI = (*LegacyWafRulesetAPIService)(&c.common)
+	c.LegacyWafTagAPI = (*LegacyWafTagAPIService)(&c.common)
+	c.LegacyWafUpdateStatusAPI = (*LegacyWafUpdateStatusAPIService)(&c.common)
 	c.LoggingAzureblobAPI = (*LoggingAzureblobAPIService)(&c.common)
 	c.LoggingBigqueryAPI = (*LoggingBigqueryAPIService)(&c.common)
 	c.LoggingCloudfilesAPI = (*LoggingCloudfilesAPIService)(&c.common)
@@ -345,6 +385,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingSumologicAPI = (*LoggingSumologicAPIService)(&c.common)
 	c.LoggingSyslogAPI = (*LoggingSyslogAPIService)(&c.common)
 	c.MutualAuthenticationAPI = (*MutualAuthenticationAPIService)(&c.common)
+	c.OriginInspectorHistoricalAPI = (*OriginInspectorHistoricalAPIService)(&c.common)
+	c.OriginInspectorRealtimeAPI = (*OriginInspectorRealtimeAPIService)(&c.common)
 	c.PackageAPI = (*PackageAPIService)(&c.common)
 	c.PoolAPI = (*PoolAPIService)(&c.common)
 	c.PopAPI = (*PopAPIService)(&c.common)
@@ -356,6 +398,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.RequestSettingsAPI = (*RequestSettingsAPIService)(&c.common)
 	c.ResourceAPI = (*ResourceAPIService)(&c.common)
 	c.ResponseObjectAPI = (*ResponseObjectAPIService)(&c.common)
+	c.SecretStoreAPI = (*SecretStoreAPIService)(&c.common)
+	c.SecretStoreItemAPI = (*SecretStoreItemAPIService)(&c.common)
 	c.ServerAPI = (*ServerAPIService)(&c.common)
 	c.ServiceAPI = (*ServiceAPIService)(&c.common)
 	c.ServiceAuthorizationsAPI = (*ServiceAuthorizationsAPIService)(&c.common)
@@ -363,6 +407,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.SnippetAPI = (*SnippetAPIService)(&c.common)
 	c.StarAPI = (*StarAPIService)(&c.common)
 	c.StatsAPI = (*StatsAPIService)(&c.common)
+	c.SudoAPI = (*SudoAPIService)(&c.common)
 	c.TLSActivationsAPI = (*TLSActivationsAPIService)(&c.common)
 	c.TLSBulkCertificatesAPI = (*TLSBulkCertificatesAPIService)(&c.common)
 	c.TLSCertificatesAPI = (*TLSCertificatesAPIService)(&c.common)

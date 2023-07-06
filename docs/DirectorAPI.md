@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DeleteDirector**](DirectorAPI.md#DeleteDirector) | **DELETE** `/service/{service_id}/version/{version_id}/director/{director_name}` | Delete a director
 [**GetDirector**](DirectorAPI.md#GetDirector) | **GET** `/service/{service_id}/version/{version_id}/director/{director_name}` | Get a director
 [**ListDirectors**](DirectorAPI.md#ListDirectors) | **GET** `/service/{service_id}/version/{version_id}/director` | List directors
+[**UpdateDirector**](DirectorAPI.md#UpdateDirector) | **PUT** `/service/{service_id}/version/{version_id}/director/{director_name}` | Update a director
 
 
 
@@ -294,6 +295,77 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## UpdateDirector
+
+Update a director
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionID := int32(56) // int32 | Integer identifying a service version.
+    directorName := "directorName_example" // string | Name for the Director.
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.DirectorAPI.UpdateDirector(ctx, serviceID, versionID, directorName).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DirectorAPI.UpdateDirector`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateDirector`: DirectorResponse
+    fmt.Fprintf(os.Stdout, "Response from `DirectorAPI.UpdateDirector`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**versionID** | **int32** | Integer identifying a service version. | 
+**directorName** | **string** | Name for the Director. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateDirectorRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**DirectorResponse**](DirectorResponse.md)
+
+### Authorization
+
+[API Token](https://developer.fastly.com/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

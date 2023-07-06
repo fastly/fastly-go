@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**GetSnippet**](SnippetAPI.md#GetSnippet) | **GET** `/service/{service_id}/version/{version_id}/snippet/{snippet_name}` | Get a versioned snippet
 [**GetSnippetDynamic**](SnippetAPI.md#GetSnippetDynamic) | **GET** `/service/{service_id}/snippet/{snippet_id}` | Get a dynamic snippet
 [**ListSnippets**](SnippetAPI.md#ListSnippets) | **GET** `/service/{service_id}/version/{version_id}/snippet` | List snippets
+[**UpdateSnippet**](SnippetAPI.md#UpdateSnippet) | **PUT** `/service/{service_id}/version/{version_id}/snippet/{snippet_name}` | Update a versioned snippet
 [**UpdateSnippetDynamic**](SnippetAPI.md#UpdateSnippetDynamic) | **PUT** `/service/{service_id}/snippet/{snippet_id}` | Update a dynamic snippet
 
 
@@ -362,6 +363,77 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## UpdateSnippet
+
+Update a versioned snippet
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionID := int32(56) // int32 | Integer identifying a service version.
+    snippetName := "snippetName_example" // string | The name for the snippet.
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.SnippetAPI.UpdateSnippet(ctx, serviceID, versionID, snippetName).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SnippetAPI.UpdateSnippet`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateSnippet`: SnippetResponse
+    fmt.Fprintf(os.Stdout, "Response from `SnippetAPI.UpdateSnippet`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**versionID** | **int32** | Integer identifying a service version. | 
+**snippetName** | **string** | The name for the snippet. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSnippetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SnippetResponse**](SnippetResponse.md)
+
+### Authorization
+
+[API Token](https://developer.fastly.com/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

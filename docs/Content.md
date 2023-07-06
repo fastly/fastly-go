@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Hash** | Pointer to **string** |  | [optional] 
-**Request** | Pointer to **map[string]any** |  | [optional] 
-**Response** | Pointer to **map[string]any** |  | [optional] 
+**Request** | Pointer to **map[string]map[string]any** |  | [optional] 
+**Response** | Pointer to **map[string]map[string]any** |  | [optional] 
 **ResponseTime** | Pointer to **float32** |  | [optional] 
 **Server** | Pointer to **string** |  | [optional] 
 **Pop** | Pointer to **string** |  | [optional] 
@@ -57,20 +57,20 @@ HasHash returns a boolean if a field has been set.
 
 ### GetRequest
 
-`func (o *Content) GetRequest() map[string]any`
+`func (o *Content) GetRequest() map[string]map[string]any`
 
 GetRequest returns the Request field if non-nil, zero value otherwise.
 
 ### GetRequestOk
 
-`func (o *Content) GetRequestOk() (*map[string]any, bool)`
+`func (o *Content) GetRequestOk() (*map[string]map[string]any, bool)`
 
 GetRequestOk returns a tuple with the Request field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequest
 
-`func (o *Content) SetRequest(v map[string]any)`
+`func (o *Content) SetRequest(v map[string]map[string]any)`
 
 SetRequest sets Request field to given value.
 
@@ -82,20 +82,20 @@ HasRequest returns a boolean if a field has been set.
 
 ### GetResponse
 
-`func (o *Content) GetResponse() map[string]any`
+`func (o *Content) GetResponse() map[string]map[string]any`
 
 GetResponse returns the Response field if non-nil, zero value otherwise.
 
 ### GetResponseOk
 
-`func (o *Content) GetResponseOk() (*map[string]any, bool)`
+`func (o *Content) GetResponseOk() (*map[string]map[string]any, bool)`
 
 GetResponseOk returns a tuple with the Response field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResponse
 
-`func (o *Content) SetResponse(v map[string]any)`
+`func (o *Content) SetResponse(v map[string]map[string]any)`
 
 SetResponse sets Response field to given value.
 

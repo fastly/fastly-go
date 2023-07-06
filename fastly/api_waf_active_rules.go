@@ -32,6 +32,24 @@ var (
 type WafActiveRulesAPI interface {
 
 	/*
+	BulkDeleteWafActiveRules Delete multiple active rules from a WAF
+
+	Delete many active rules on a particular firewall version using the active rule ID. Limited to 500 rules per request.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param firewallID Alphanumeric string identifying a WAF Firewall.
+	 @param versionID Integer identifying a service version.
+	 @return APIBulkDeleteWafActiveRulesRequest
+
+	Deprecated
+	*/
+	BulkDeleteWafActiveRules(ctx context.Context, firewallID string, versionID int32) APIBulkDeleteWafActiveRulesRequest
+
+	// BulkDeleteWafActiveRulesExecute executes the request
+	// Deprecated
+	BulkDeleteWafActiveRulesExecute(r APIBulkDeleteWafActiveRulesRequest) (*http.Response, error)
+
+	/*
 	BulkUpdateWafActiveRules Update multiple active rules
 
 	Bulk update all active rules on a [firewall version](https://developer.fastly.com/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.
@@ -168,6 +186,144 @@ type WafActiveRulesAPI interface {
 
 // WafActiveRulesAPIService WafActiveRulesAPI service
 type WafActiveRulesAPIService service
+
+// APIBulkDeleteWafActiveRulesRequest represents a request for the resource.
+type APIBulkDeleteWafActiveRulesRequest struct {
+	ctx context.Context
+	APIService WafActiveRulesAPI
+	firewallID string
+	versionID int32
+	requestBody *map[string]map[string]any
+}
+
+// RequestBody returns a pointer to a request.
+func (r *APIBulkDeleteWafActiveRulesRequest) RequestBody(requestBody map[string]map[string]any) *APIBulkDeleteWafActiveRulesRequest {
+	r.requestBody = &requestBody
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIBulkDeleteWafActiveRulesRequest) Execute() (*http.Response, error) {
+	return r.APIService.BulkDeleteWafActiveRulesExecute(r)
+}
+
+/*
+BulkDeleteWafActiveRules Delete multiple active rules from a WAF
+
+Delete many active rules on a particular firewall version using the active rule ID. Limited to 500 rules per request.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param firewallID Alphanumeric string identifying a WAF Firewall.
+ @param versionID Integer identifying a service version.
+ @return APIBulkDeleteWafActiveRulesRequest
+
+Deprecated
+*/
+func (a *WafActiveRulesAPIService) BulkDeleteWafActiveRules(ctx context.Context, firewallID string, versionID int32) APIBulkDeleteWafActiveRulesRequest {
+	return APIBulkDeleteWafActiveRulesRequest{
+		APIService: a,
+		ctx: ctx,
+		firewallID: firewallID,
+		versionID: versionID,
+	}
+}
+
+// BulkDeleteWafActiveRulesExecute executes the request
+// Deprecated
+func (a *WafActiveRulesAPIService) BulkDeleteWafActiveRulesExecute(r APIBulkDeleteWafActiveRulesRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     any
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WafActiveRulesAPIService.BulkDeleteWafActiveRules")
+	if err != nil {
+		return nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"firewall_id"+"}", gourl.PathEscape(parameterToString(r.firewallID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/vnd.api+json; ext=bulk"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.requestBody
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarHTTPResponse, nil
+}
 
 // APIBulkUpdateWafActiveRulesRequest represents a request for the resource.
 type APIBulkUpdateWafActiveRulesRequest struct {

@@ -17,7 +17,7 @@ import (
 	"encoding/json"
 )
 
-// Domain struct for Domain
+// Domain Domain details
 type Domain struct {
 	// A freeform descriptive note.
 	Comment NullableString `json:"comment,omitempty"`

@@ -20,8 +20,8 @@ import (
 // Content struct for Content
 type Content struct {
 	Hash *string `json:"hash,omitempty"`
-	Request map[string]any `json:"request,omitempty"`
-	Response map[string]any `json:"response,omitempty"`
+	Request map[string]map[string]any `json:"request,omitempty"`
+	Response map[string]map[string]any `json:"response,omitempty"`
 	ResponseTime *float32 `json:"response_time,omitempty"`
 	Server *string `json:"server,omitempty"`
 	Pop *string `json:"pop,omitempty"`
@@ -80,9 +80,9 @@ func (o *Content) SetHash(v string) {
 }
 
 // GetRequest returns the Request field value if set, zero value otherwise.
-func (o *Content) GetRequest() map[string]any {
+func (o *Content) GetRequest() map[string]map[string]any {
 	if o == nil || o.Request == nil {
-		var ret map[string]any
+		var ret map[string]map[string]any
 		return ret
 	}
 	return o.Request
@@ -90,7 +90,7 @@ func (o *Content) GetRequest() map[string]any {
 
 // GetRequestOk returns a tuple with the Request field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Content) GetRequestOk() (map[string]any, bool) {
+func (o *Content) GetRequestOk() (map[string]map[string]any, bool) {
 	if o == nil || o.Request == nil {
 		return nil, false
 	}
@@ -106,15 +106,15 @@ func (o *Content) HasRequest() bool {
 	return false
 }
 
-// SetRequest gets a reference to the given map[string]any and assigns it to the Request field.
-func (o *Content) SetRequest(v map[string]any) {
+// SetRequest gets a reference to the given map[string]map[string]any and assigns it to the Request field.
+func (o *Content) SetRequest(v map[string]map[string]any) {
 	o.Request = v
 }
 
 // GetResponse returns the Response field value if set, zero value otherwise.
-func (o *Content) GetResponse() map[string]any {
+func (o *Content) GetResponse() map[string]map[string]any {
 	if o == nil || o.Response == nil {
-		var ret map[string]any
+		var ret map[string]map[string]any
 		return ret
 	}
 	return o.Response
@@ -122,7 +122,7 @@ func (o *Content) GetResponse() map[string]any {
 
 // GetResponseOk returns a tuple with the Response field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Content) GetResponseOk() (map[string]any, bool) {
+func (o *Content) GetResponseOk() (map[string]map[string]any, bool) {
 	if o == nil || o.Response == nil {
 		return nil, false
 	}
@@ -138,8 +138,8 @@ func (o *Content) HasResponse() bool {
 	return false
 }
 
-// SetResponse gets a reference to the given map[string]any and assigns it to the Response field.
-func (o *Content) SetResponse(v map[string]any) {
+// SetResponse gets a reference to the given map[string]map[string]any and assigns it to the Response field.
+func (o *Content) SetResponse(v map[string]map[string]any) {
 	o.Response = v
 }
 

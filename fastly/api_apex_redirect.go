@@ -33,6 +33,22 @@ var (
 type ApexRedirectAPI interface {
 
 	/*
+	CreateApexRedirect Create an apex redirect
+
+	Create an apex redirect for a particular service and version.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param serviceID Alphanumeric string identifying the service.
+	 @param versionID Integer identifying a service version.
+	 @return APICreateApexRedirectRequest
+	*/
+	CreateApexRedirect(ctx context.Context, serviceID string, versionID int32) APICreateApexRedirectRequest
+
+	// CreateApexRedirectExecute executes the request
+	//  @return ApexRedirect
+	CreateApexRedirectExecute(r APICreateApexRedirectRequest) (*ApexRedirect, *http.Response, error)
+
+	/*
 	DeleteApexRedirect Delete an apex redirect
 
 	Delete an apex redirect by its ID.
@@ -96,6 +112,224 @@ type ApexRedirectAPI interface {
 
 // ApexRedirectAPIService ApexRedirectAPI service
 type ApexRedirectAPIService service
+
+// APICreateApexRedirectRequest represents a request for the resource.
+type APICreateApexRedirectRequest struct {
+	ctx context.Context
+	APIService ApexRedirectAPI
+	serviceID string
+	versionID int32
+	serviceID2 *string
+	version *int32
+	createdAt *time.Time
+	deletedAt *time.Time
+	updatedAt *time.Time
+	statusCode *int32
+	domains *[]string
+	featureRevision *int32
+}
+
+// ServiceID2 returns a pointer to a request.
+func (r *APICreateApexRedirectRequest) ServiceID2(serviceID2 string) *APICreateApexRedirectRequest {
+	r.serviceID2 = &serviceID2
+	return r
+}
+// Version returns a pointer to a request.
+func (r *APICreateApexRedirectRequest) Version(version int32) *APICreateApexRedirectRequest {
+	r.version = &version
+	return r
+}
+// CreatedAt Date and time in ISO 8601 format.
+func (r *APICreateApexRedirectRequest) CreatedAt(createdAt time.Time) *APICreateApexRedirectRequest {
+	r.createdAt = &createdAt
+	return r
+}
+// DeletedAt Date and time in ISO 8601 format.
+func (r *APICreateApexRedirectRequest) DeletedAt(deletedAt time.Time) *APICreateApexRedirectRequest {
+	r.deletedAt = &deletedAt
+	return r
+}
+// UpdatedAt Date and time in ISO 8601 format.
+func (r *APICreateApexRedirectRequest) UpdatedAt(updatedAt time.Time) *APICreateApexRedirectRequest {
+	r.updatedAt = &updatedAt
+	return r
+}
+// StatusCode HTTP status code used to redirect the client.
+func (r *APICreateApexRedirectRequest) StatusCode(statusCode int32) *APICreateApexRedirectRequest {
+	r.statusCode = &statusCode
+	return r
+}
+// Domains Array of apex domains that should redirect to their WWW subdomain.
+func (r *APICreateApexRedirectRequest) Domains(domains []string) *APICreateApexRedirectRequest {
+	r.domains = &domains
+	return r
+}
+// FeatureRevision Revision number of the apex redirect feature implementation. Defaults to the most recent revision.
+func (r *APICreateApexRedirectRequest) FeatureRevision(featureRevision int32) *APICreateApexRedirectRequest {
+	r.featureRevision = &featureRevision
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APICreateApexRedirectRequest) Execute() (*ApexRedirect, *http.Response, error) {
+	return r.APIService.CreateApexRedirectExecute(r)
+}
+
+/*
+CreateApexRedirect Create an apex redirect
+
+Create an apex redirect for a particular service and version.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
+ @return APICreateApexRedirectRequest
+*/
+func (a *ApexRedirectAPIService) CreateApexRedirect(ctx context.Context, serviceID string, versionID int32) APICreateApexRedirectRequest {
+	return APICreateApexRedirectRequest{
+		APIService: a,
+		ctx: ctx,
+		serviceID: serviceID,
+		versionID: versionID,
+	}
+}
+
+// CreateApexRedirectExecute executes the request
+//  @return ApexRedirect
+func (a *ApexRedirectAPIService) CreateApexRedirectExecute(r APICreateApexRedirectRequest) (*ApexRedirect, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *ApexRedirect
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApexRedirectAPIService.CreateApexRedirect")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/apex-redirects"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/x-www-form-urlencoded"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.serviceID2 != nil {
+		paramJSON, err := parameterToJSON(*r.serviceID2)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("service_id", paramJSON)
+	}
+	if r.version != nil {
+		paramJSON, err := parameterToJSON(*r.version)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("version", paramJSON)
+	}
+	if r.createdAt != nil {
+		localVarFormParams.Add("created_at", parameterToString(*r.createdAt, ""))
+	}
+	if r.deletedAt != nil {
+		localVarFormParams.Add("deleted_at", parameterToString(*r.deletedAt, ""))
+	}
+	if r.updatedAt != nil {
+		localVarFormParams.Add("updated_at", parameterToString(*r.updatedAt, ""))
+	}
+	if r.statusCode != nil {
+		localVarFormParams.Add("status_code", parameterToString(*r.statusCode, ""))
+	}
+	if r.domains != nil {
+		localVarFormParams.Add("domains", parameterToString(*r.domains, "csv"))
+	}
+	if r.featureRevision != nil {
+		localVarFormParams.Add("feature_revision", parameterToString(*r.featureRevision, ""))
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 // APIDeleteApexRedirectRequest represents a request for the resource.
 type APIDeleteApexRedirectRequest struct {

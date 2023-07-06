@@ -12,7 +12,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go v1.0.0-beta.15
+	github.com/fastly/fastly-go v1.0.0-beta.16
 )
 ```
 
@@ -69,6 +69,7 @@ Class | Method | HTTP request | Description
 *ACLEntryAPI* | [**GetACLEntry**](docs/AclEntryAPI.md#getaclentry) | **GET** `/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}` | Describe an ACL entry
 *ACLEntryAPI* | [**ListACLEntries**](docs/AclEntryAPI.md#listaclentries) | **GET** `/service/{service_id}/acl/{acl_id}/entries` | List ACL entries
 *ACLEntryAPI* | [**UpdateACLEntry**](docs/AclEntryAPI.md#updateaclentry) | **PATCH** `/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}` | Update an ACL entry
+*ApexRedirectAPI* | [**CreateApexRedirect**](docs/ApexRedirectAPI.md#createapexredirect) | **POST** `/service/{service_id}/version/{version_id}/apex-redirects` | Create an apex redirect
 *ApexRedirectAPI* | [**DeleteApexRedirect**](docs/ApexRedirectAPI.md#deleteapexredirect) | **DELETE** `/apex-redirects/{apex_redirect_id}` | Delete an apex redirect
 *ApexRedirectAPI* | [**GetApexRedirect**](docs/ApexRedirectAPI.md#getapexredirect) | **GET** `/apex-redirects/{apex_redirect_id}` | Get an apex redirect
 *ApexRedirectAPI* | [**ListApexRedirects**](docs/ApexRedirectAPI.md#listapexredirects) | **GET** `/service/{service_id}/version/{version_id}/apex-redirects` | List apex redirects
@@ -114,6 +115,7 @@ Class | Method | HTTP request | Description
 *ConfigStoreItemAPI* | [**ListConfigStoreItems**](docs/ConfigStoreItemAPI.md#listconfigstoreitems) | **GET** `/resources/stores/config/{config_store_id}/items` | List items in a config store
 *ConfigStoreItemAPI* | [**UpdateConfigStoreItem**](docs/ConfigStoreItemAPI.md#updateconfigstoreitem) | **PATCH** `/resources/stores/config/{config_store_id}/item/{config_store_item_key}` | Update an entry in a config store
 *ConfigStoreItemAPI* | [**UpsertConfigStoreItem**](docs/ConfigStoreItemAPI.md#upsertconfigstoreitem) | **PUT** `/resources/stores/config/{config_store_id}/item/{config_store_item_key}` | Insert or update an entry in a config store
+*ContactAPI* | [**CreateContacts**](docs/ContactAPI.md#createcontacts) | **POST** `/customer/{customer_id}/contacts` | Add a new customer contact
 *ContactAPI* | [**DeleteContact**](docs/ContactAPI.md#deletecontact) | **DELETE** `/customer/{customer_id}/contact/{contact_id}` | Delete a contact
 *ContactAPI* | [**ListContacts**](docs/ContactAPI.md#listcontacts) | **GET** `/customer/{customer_id}/contacts` | List contacts
 *ContentAPI* | [**ContentCheck**](docs/ContentAPI.md#contentcheck) | **GET** `/content/edge_check` | Check status of content in each POP's cache
@@ -140,6 +142,7 @@ Class | Method | HTTP request | Description
 *DirectorAPI* | [**DeleteDirector**](docs/DirectorAPI.md#deletedirector) | **DELETE** `/service/{service_id}/version/{version_id}/director/{director_name}` | Delete a director
 *DirectorAPI* | [**GetDirector**](docs/DirectorAPI.md#getdirector) | **GET** `/service/{service_id}/version/{version_id}/director/{director_name}` | Get a director
 *DirectorAPI* | [**ListDirectors**](docs/DirectorAPI.md#listdirectors) | **GET** `/service/{service_id}/version/{version_id}/director` | List directors
+*DirectorAPI* | [**UpdateDirector**](docs/DirectorAPI.md#updatedirector) | **PUT** `/service/{service_id}/version/{version_id}/director/{director_name}` | Update a director
 *DirectorBackendAPI* | [**CreateDirectorBackend**](docs/DirectorBackendAPI.md#createdirectorbackend) | **POST** `/service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name}` | Create a director-backend relationship
 *DirectorBackendAPI* | [**DeleteDirectorBackend**](docs/DirectorBackendAPI.md#deletedirectorbackend) | **DELETE** `/service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name}` | Delete a director-backend relationship
 *DirectorBackendAPI* | [**GetDirectorBackend**](docs/DirectorBackendAPI.md#getdirectorbackend) | **GET** `/service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name}` | Get a director-backend relationship
@@ -150,6 +153,10 @@ Class | Method | HTTP request | Description
 *DomainAPI* | [**GetDomain**](docs/DomainAPI.md#getdomain) | **GET** `/service/{service_id}/version/{version_id}/domain/{domain_name}` | Describe a domain
 *DomainAPI* | [**ListDomains**](docs/DomainAPI.md#listdomains) | **GET** `/service/{service_id}/version/{version_id}/domain` | List domains
 *DomainAPI* | [**UpdateDomain**](docs/DomainAPI.md#updatedomain) | **PUT** `/service/{service_id}/version/{version_id}/domain/{domain_name}` | Update a domain
+*DomainInspectorHistoricalAPI* | [**GetDomainInspectorHistorical**](docs/DomainInspectorHistoricalAPI.md#getdomaininspectorhistorical) | **GET** `/metrics/domains/services/{service_id}` | Get historical domain data for a service
+*DomainInspectorRealtimeAPI* | [**GetDomainInspectorLast120Seconds**](docs/DomainInspectorRealtimeAPI.md#getdomaininspectorlast120seconds) | **GET** `/v1/domains/{service_id}/ts/h` | Get real-time domain data for the last 120 seconds
+*DomainInspectorRealtimeAPI* | [**GetDomainInspectorLastMaxEntries**](docs/DomainInspectorRealtimeAPI.md#getdomaininspectorlastmaxentries) | **GET** `/v1/domains/{service_id}/ts/h/limit/{max_entries}` | Get a limited number of real-time domain data entries
+*DomainInspectorRealtimeAPI* | [**GetDomainInspectorLastSecond**](docs/DomainInspectorRealtimeAPI.md#getdomaininspectorlastsecond) | **GET** `/v1/domains/{service_id}/ts/{start_timestamp}` | Get real-time domain data from a specified time
 *DomainOwnershipsAPI* | [**ListDomainOwnerships**](docs/DomainOwnershipsAPI.md#listdomainownerships) | **GET** `/domain-ownerships` | List domain-ownerships
 *EnabledProductsAPI* | [**DisableProduct**](docs/EnabledProductsAPI.md#disableproduct) | **DELETE** `/enabled-products/{product_id}/services/{service_id}` | Disable a product
 *EnabledProductsAPI* | [**EnableProduct**](docs/EnabledProductsAPI.md#enableproduct) | **PUT** `/enabled-products/{product_id}/services/{service_id}` | Enable a product
@@ -184,20 +191,36 @@ Class | Method | HTTP request | Description
 *HTTP3API* | [**DeleteHTTP3**](docs/Http3API.md#deletehttp3) | **DELETE** `/service/{service_id}/version/{version_id}/http3` | Disable support for HTTP/3
 *HTTP3API* | [**GetHTTP3**](docs/Http3API.md#gethttp3) | **GET** `/service/{service_id}/version/{version_id}/http3` | Get HTTP/3 status
 *IamPermissionsAPI* | [**ListPermissions**](docs/IamPermissionsAPI.md#listpermissions) | **GET** `/permissions` | List permissions
+*IamRolesAPI* | [**AddRolePermissions**](docs/IamRolesAPI.md#addrolepermissions) | **POST** `/roles/{role_id}/permissions` | Add permissions to a role
+*IamRolesAPI* | [**CreateARole**](docs/IamRolesAPI.md#createarole) | **POST** `/roles` | Create a role
 *IamRolesAPI* | [**DeleteARole**](docs/IamRolesAPI.md#deletearole) | **DELETE** `/roles/{role_id}` | Delete a role
 *IamRolesAPI* | [**GetARole**](docs/IamRolesAPI.md#getarole) | **GET** `/roles/{role_id}` | Get a role
 *IamRolesAPI* | [**ListRolePermissions**](docs/IamRolesAPI.md#listrolepermissions) | **GET** `/roles/{role_id}/permissions` | List permissions in a role
 *IamRolesAPI* | [**ListRoles**](docs/IamRolesAPI.md#listroles) | **GET** `/roles` | List roles
+*IamRolesAPI* | [**RemoveRolePermissions**](docs/IamRolesAPI.md#removerolepermissions) | **DELETE** `/roles/{role_id}/permissions` | Remove permissions from a role
+*IamRolesAPI* | [**UpdateARole**](docs/IamRolesAPI.md#updatearole) | **PATCH** `/roles/{role_id}` | Update a role
+*IamServiceGroupsAPI* | [**AddServiceGroupServices**](docs/IamServiceGroupsAPI.md#addservicegroupservices) | **POST** `/service-groups/{service_group_id}/services` | Add services in a service group
+*IamServiceGroupsAPI* | [**CreateAServiceGroup**](docs/IamServiceGroupsAPI.md#createaservicegroup) | **POST** `/service-groups` | Create a service group
 *IamServiceGroupsAPI* | [**DeleteAServiceGroup**](docs/IamServiceGroupsAPI.md#deleteaservicegroup) | **DELETE** `/service-groups/{service_group_id}` | Delete a service group
 *IamServiceGroupsAPI* | [**GetAServiceGroup**](docs/IamServiceGroupsAPI.md#getaservicegroup) | **GET** `/service-groups/{service_group_id}` | Get a service group
 *IamServiceGroupsAPI* | [**ListServiceGroupServices**](docs/IamServiceGroupsAPI.md#listservicegroupservices) | **GET** `/service-groups/{service_group_id}/services` | List services to a service group
 *IamServiceGroupsAPI* | [**ListServiceGroups**](docs/IamServiceGroupsAPI.md#listservicegroups) | **GET** `/service-groups` | List service groups
+*IamServiceGroupsAPI* | [**RemoveServiceGroupServices**](docs/IamServiceGroupsAPI.md#removeservicegroupservices) | **DELETE** `/service-groups/{service_group_id}/services` | Remove services from a service group
+*IamServiceGroupsAPI* | [**UpdateAServiceGroup**](docs/IamServiceGroupsAPI.md#updateaservicegroup) | **PATCH** `/service-groups/{service_group_id}` | Update a service group
+*IamUserGroupsAPI* | [**AddUserGroupMembers**](docs/IamUserGroupsAPI.md#addusergroupmembers) | **POST** `/user-groups/{user_group_id}/members` | Add members to a user group
+*IamUserGroupsAPI* | [**AddUserGroupRoles**](docs/IamUserGroupsAPI.md#addusergrouproles) | **POST** `/user-groups/{user_group_id}/roles` | Add roles to a user group
+*IamUserGroupsAPI* | [**AddUserGroupServiceGroups**](docs/IamUserGroupsAPI.md#addusergroupservicegroups) | **POST** `/user-groups/{user_group_id}/service-groups` | Add service groups to a user group
+*IamUserGroupsAPI* | [**CreateAUserGroup**](docs/IamUserGroupsAPI.md#createausergroup) | **POST** `/user-groups` | Create a user group
 *IamUserGroupsAPI* | [**DeleteAUserGroup**](docs/IamUserGroupsAPI.md#deleteausergroup) | **DELETE** `/user-groups/{user_group_id}` | Delete a user group
 *IamUserGroupsAPI* | [**GetAUserGroup**](docs/IamUserGroupsAPI.md#getausergroup) | **GET** `/user-groups/{user_group_id}` | Get a user group
 *IamUserGroupsAPI* | [**ListUserGroupMembers**](docs/IamUserGroupsAPI.md#listusergroupmembers) | **GET** `/user-groups/{user_group_id}/members` | List members of a user group
 *IamUserGroupsAPI* | [**ListUserGroupRoles**](docs/IamUserGroupsAPI.md#listusergrouproles) | **GET** `/user-groups/{user_group_id}/roles` | List roles in a user group
 *IamUserGroupsAPI* | [**ListUserGroupServiceGroups**](docs/IamUserGroupsAPI.md#listusergroupservicegroups) | **GET** `/user-groups/{user_group_id}/service-groups` | List service groups in a user group
 *IamUserGroupsAPI* | [**ListUserGroups**](docs/IamUserGroupsAPI.md#listusergroups) | **GET** `/user-groups` | List user groups
+*IamUserGroupsAPI* | [**RemoveUserGroupMembers**](docs/IamUserGroupsAPI.md#removeusergroupmembers) | **DELETE** `/user-groups/{user_group_id}/members` | Remove members of a user group
+*IamUserGroupsAPI* | [**RemoveUserGroupRoles**](docs/IamUserGroupsAPI.md#removeusergrouproles) | **DELETE** `/user-groups/{user_group_id}/roles` | Remove roles from a user group
+*IamUserGroupsAPI* | [**RemoveUserGroupServiceGroups**](docs/IamUserGroupsAPI.md#removeusergroupservicegroups) | **DELETE** `/user-groups/{user_group_id}/service-groups` | Remove service groups from a user group
+*IamUserGroupsAPI* | [**UpdateAUserGroup**](docs/IamUserGroupsAPI.md#updateausergroup) | **PATCH** `/user-groups/{user_group_id}` | Update a user group
 *InvitationsAPI* | [**CreateInvitation**](docs/InvitationsAPI.md#createinvitation) | **POST** `/invitations` | Create an invitation
 *InvitationsAPI* | [**DeleteInvitation**](docs/InvitationsAPI.md#deleteinvitation) | **DELETE** `/invitations/{invitation_id}` | Delete an invitation
 *InvitationsAPI* | [**ListInvitations**](docs/InvitationsAPI.md#listinvitations) | **GET** `/invitations` | List invitations
@@ -209,6 +232,34 @@ Class | Method | HTTP request | Description
 *KvStoreItemAPI* | [**GetKeys**](docs/KvStoreItemAPI.md#getkeys) | **GET** `/resources/stores/kv/{store_id}/keys` | List kv store keys.
 *KvStoreItemAPI* | [**GetValueForKey**](docs/KvStoreItemAPI.md#getvalueforkey) | **GET** `/resources/stores/kv/{store_id}/keys/{key_name}` | Get the value of an kv store item
 *KvStoreItemAPI* | [**SetValueForKey**](docs/KvStoreItemAPI.md#setvalueforkey) | **PUT** `/resources/stores/kv/{store_id}/keys/{key_name}` | Insert an item into an kv store
+*LegacyWafConfigurationSetsAPI* | [**ListWafConfigSets**](docs/LegacyWafConfigurationSetsAPI.md#listwafconfigsets) | **GET** `/wafs/configuration_sets` | List configuration sets
+*LegacyWafConfigurationSetsAPI* | [**ListWafsConfigSet**](docs/LegacyWafConfigurationSetsAPI.md#listwafsconfigset) | **GET** `/wafs/configuration_sets/{configuration_set_id}/relationships/wafs` | List WAFs currently using a configuration set
+*LegacyWafConfigurationSetsAPI* | [**UseWafConfigSet**](docs/LegacyWafConfigurationSetsAPI.md#usewafconfigset) | **PATCH** `/wafs/configuration_sets/{configuration_set_id}/relationships/wafs` | Apply a configuration set to a WAF
+*LegacyWafFirewallAPI* | [**CreateLegacyWafFirewallService**](docs/LegacyWafFirewallAPI.md#createlegacywaffirewallservice) | **POST** `/service/{service_id}/version/{version_id}/wafs` | Create a firewall
+*LegacyWafFirewallAPI* | [**DisableLegacyWafFirewall**](docs/LegacyWafFirewallAPI.md#disablelegacywaffirewall) | **PATCH** `/wafs/{firewall_id}/disable` | Disable a firewall
+*LegacyWafFirewallAPI* | [**EnableLegacyWafFirewall**](docs/LegacyWafFirewallAPI.md#enablelegacywaffirewall) | **PATCH** `/wafs/{firewall_id}/enable` | Enable a firewall
+*LegacyWafFirewallAPI* | [**GetLegacyWafFirewall**](docs/LegacyWafFirewallAPI.md#getlegacywaffirewall) | **GET** `/wafs/{firewall_id}` | Get a firewall object
+*LegacyWafFirewallAPI* | [**GetLegacyWafFirewallService**](docs/LegacyWafFirewallAPI.md#getlegacywaffirewallservice) | **GET** `/service/{service_id}/version/{version_id}/wafs/{firewall_id}` | Get a firewall
+*LegacyWafFirewallAPI* | [**ListLegacyWafFirewalls**](docs/LegacyWafFirewallAPI.md#listlegacywaffirewalls) | **GET** `/wafs` | List active firewalls
+*LegacyWafFirewallAPI* | [**ListLegacyWafFirewallsService**](docs/LegacyWafFirewallAPI.md#listlegacywaffirewallsservice) | **GET** `/service/{service_id}/version/{version_id}/wafs` | List firewalls
+*LegacyWafFirewallAPI* | [**UpdateLegacyWafFirewallService**](docs/LegacyWafFirewallAPI.md#updatelegacywaffirewallservice) | **PATCH** `/service/{service_id}/version/{version_id}/wafs/{firewall_id}` | Update a firewall
+*LegacyWafOwaspAPI* | [**CreateOwaspSettings**](docs/LegacyWafOwaspAPI.md#createowaspsettings) | **POST** `/service/{service_id}/wafs/{firewall_id}/owasp` | Create an OWASP settings object
+*LegacyWafOwaspAPI* | [**GetOwaspSettings**](docs/LegacyWafOwaspAPI.md#getowaspsettings) | **GET** `/service/{service_id}/wafs/{firewall_id}/owasp` | Get the OWASP settings object
+*LegacyWafOwaspAPI* | [**UpdateOwaspSettings**](docs/LegacyWafOwaspAPI.md#updateowaspsettings) | **PATCH** `/service/{service_id}/wafs/{firewall_id}/owasp` | Update the OWASP settings object
+*LegacyWafRuleAPI* | [**GetLegacyWafFirewallRuleVcl**](docs/LegacyWafRuleAPI.md#getlegacywaffirewallrulevcl) | **GET** `/wafs/{firewall_id}/rules/{waf_rule_id}/vcl` | Get VCL for a rule associated with a firewall
+*LegacyWafRuleAPI* | [**GetLegacyWafRule**](docs/LegacyWafRuleAPI.md#getlegacywafrule) | **GET** `/wafs/rules/{waf_rule_id}` | Get a rule
+*LegacyWafRuleAPI* | [**GetLegacyWafRuleVcl**](docs/LegacyWafRuleAPI.md#getlegacywafrulevcl) | **GET** `/wafs/rules/{waf_rule_id}/vcl` | Get VCL for a rule
+*LegacyWafRuleAPI* | [**ListLegacyWafRules**](docs/LegacyWafRuleAPI.md#listlegacywafrules) | **GET** `/wafs/rules` | List rules in the latest configuration set
+*LegacyWafRuleStatusAPI* | [**GetWafFirewallRuleStatus**](docs/LegacyWafRuleStatusAPI.md#getwaffirewallrulestatus) | **GET** `/service/{service_id}/wafs/{firewall_id}/rules/{waf_rule_id}/rule_status` | Get the status of a rule on a firewall
+*LegacyWafRuleStatusAPI* | [**ListWafFirewallRuleStatuses**](docs/LegacyWafRuleStatusAPI.md#listwaffirewallrulestatuses) | **GET** `/service/{service_id}/wafs/{firewall_id}/rule_statuses` | List rule statuses
+*LegacyWafRuleStatusAPI* | [**UpdateWafFirewallRuleStatus**](docs/LegacyWafRuleStatusAPI.md#updatewaffirewallrulestatus) | **PATCH** `/service/{service_id}/wafs/{firewall_id}/rules/{waf_rule_id}/rule_status` | Update the status of a rule
+*LegacyWafRuleStatusAPI* | [**UpdateWafFirewallRuleStatusesTag**](docs/LegacyWafRuleStatusAPI.md#updatewaffirewallrulestatusestag) | **POST** `/service/{service_id}/wafs/{firewall_id}/rule_statuses` | Create or update status of a tagged group of rules
+*LegacyWafRulesetAPI* | [**GetWafRuleset**](docs/LegacyWafRulesetAPI.md#getwafruleset) | **GET** `/service/{service_id}/wafs/{firewall_id}/ruleset` | Get a WAF ruleset
+*LegacyWafRulesetAPI* | [**GetWafRulesetVcl**](docs/LegacyWafRulesetAPI.md#getwafrulesetvcl) | **GET** `/service/{service_id}/wafs/{firewall_id}/ruleset/preview` | Generate WAF ruleset VCL
+*LegacyWafRulesetAPI* | [**UpdateWafRuleset**](docs/LegacyWafRulesetAPI.md#updatewafruleset) | **PATCH** `/service/{service_id}/wafs/{firewall_id}/ruleset` | Update a WAF ruleset
+*LegacyWafTagAPI* | [**ListLegacyWafTags**](docs/LegacyWafTagAPI.md#listlegacywaftags) | **GET** `/wafs/tags` | List WAF tags
+*LegacyWafUpdateStatusAPI* | [**GetWafUpdateStatus**](docs/LegacyWafUpdateStatusAPI.md#getwafupdatestatus) | **GET** `/service/{service_id}/wafs/{firewall_id}/update_statuses/{update_status_id}` | Get the status of a WAF update
+*LegacyWafUpdateStatusAPI* | [**ListWafUpdateStatuses**](docs/LegacyWafUpdateStatusAPI.md#listwafupdatestatuses) | **GET** `/service/{service_id}/wafs/{firewall_id}/update_statuses` | List update statuses
 *LoggingAzureblobAPI* | [**CreateLogAzure**](docs/LoggingAzureblobAPI.md#createlogazure) | **POST** `/service/{service_id}/version/{version_id}/logging/azureblob` | Create an Azure Blob Storage log endpoint
 *LoggingAzureblobAPI* | [**DeleteLogAzure**](docs/LoggingAzureblobAPI.md#deletelogazure) | **DELETE** `/service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name}` | Delete the Azure Blob Storage log endpoint
 *LoggingAzureblobAPI* | [**GetLogAzure**](docs/LoggingAzureblobAPI.md#getlogazure) | **GET** `/service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name}` | Get an Azure Blob Storage log endpoint
@@ -268,10 +319,12 @@ Class | Method | HTTP request | Description
 *LoggingKafkaAPI* | [**DeleteLogKafka**](docs/LoggingKafkaAPI.md#deletelogkafka) | **DELETE** `/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}` | Delete the Kafka log endpoint
 *LoggingKafkaAPI* | [**GetLogKafka**](docs/LoggingKafkaAPI.md#getlogkafka) | **GET** `/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}` | Get a Kafka log endpoint
 *LoggingKafkaAPI* | [**ListLogKafka**](docs/LoggingKafkaAPI.md#listlogkafka) | **GET** `/service/{service_id}/version/{version_id}/logging/kafka` | List Kafka log endpoints
+*LoggingKafkaAPI* | [**UpdateLogKafka**](docs/LoggingKafkaAPI.md#updatelogkafka) | **PUT** `/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}` | Update the Kafka log endpoint
 *LoggingKinesisAPI* | [**CreateLogKinesis**](docs/LoggingKinesisAPI.md#createlogkinesis) | **POST** `/service/{service_id}/version/{version_id}/logging/kinesis` | Create  an Amazon Kinesis log endpoint
 *LoggingKinesisAPI* | [**DeleteLogKinesis**](docs/LoggingKinesisAPI.md#deletelogkinesis) | **DELETE** `/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}` | Delete the Amazon Kinesis log endpoint
 *LoggingKinesisAPI* | [**GetLogKinesis**](docs/LoggingKinesisAPI.md#getlogkinesis) | **GET** `/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}` | Get an Amazon Kinesis log endpoint
 *LoggingKinesisAPI* | [**ListLogKinesis**](docs/LoggingKinesisAPI.md#listlogkinesis) | **GET** `/service/{service_id}/version/{version_id}/logging/kinesis` | List Amazon Kinesis log endpoints
+*LoggingKinesisAPI* | [**UpdateLogKinesis**](docs/LoggingKinesisAPI.md#updatelogkinesis) | **PUT** `/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}` | Update the Amazon Kinesis log endpoint
 *LoggingLogentriesAPI* | [**CreateLogLogentries**](docs/LoggingLogentriesAPI.md#createloglogentries) | **POST** `/service/{service_id}/version/{version_id}/logging/logentries` | Create a Logentries log endpoint
 *LoggingLogentriesAPI* | [**DeleteLogLogentries**](docs/LoggingLogentriesAPI.md#deleteloglogentries) | **DELETE** `/service/{service_id}/version/{version_id}/logging/logentries/{logging_logentries_name}` | Delete a Logentries log endpoint
 *LoggingLogentriesAPI* | [**GetLogLogentries**](docs/LoggingLogentriesAPI.md#getloglogentries) | **GET** `/service/{service_id}/version/{version_id}/logging/logentries/{logging_logentries_name}` | Get a Logentries log endpoint
@@ -342,6 +395,10 @@ Class | Method | HTTP request | Description
 *MutualAuthenticationAPI* | [**GetMutualAuthentication**](docs/MutualAuthenticationAPI.md#getmutualauthentication) | **GET** `/tls/mutual_authentications/{mutual_authentication_id}` | Get a Mutual Authentication
 *MutualAuthenticationAPI* | [**ListMutualAuthentications**](docs/MutualAuthenticationAPI.md#listmutualauthentications) | **GET** `/tls/mutual_authentications` | List Mutual Authentications
 *MutualAuthenticationAPI* | [**PatchMutualAuthentication**](docs/MutualAuthenticationAPI.md#patchmutualauthentication) | **PATCH** `/tls/mutual_authentications/{mutual_authentication_id}` | Update a Mutual Authentication
+*OriginInspectorHistoricalAPI* | [**GetOriginInspectorHistorical**](docs/OriginInspectorHistoricalAPI.md#getorigininspectorhistorical) | **GET** `/metrics/origins/services/{service_id}` | Get historical origin data for a service
+*OriginInspectorRealtimeAPI* | [**GetOriginInspectorLast120Seconds**](docs/OriginInspectorRealtimeAPI.md#getorigininspectorlast120seconds) | **GET** `/v1/origins/{service_id}/ts/h` | Get real-time origin data for the last 120 seconds
+*OriginInspectorRealtimeAPI* | [**GetOriginInspectorLastMaxEntries**](docs/OriginInspectorRealtimeAPI.md#getorigininspectorlastmaxentries) | **GET** `/v1/origins/{service_id}/ts/h/limit/{max_entries}` | Get a limited number of real-time origin data entries
+*OriginInspectorRealtimeAPI* | [**GetOriginInspectorLastSecond**](docs/OriginInspectorRealtimeAPI.md#getorigininspectorlastsecond) | **GET** `/v1/origins/{service_id}/ts/{start_timestamp}` | Get real-time origin data from specific time.
 *PackageAPI* | [**GetPackage**](docs/PackageAPI.md#getpackage) | **GET** `/service/{service_id}/version/{version_id}/package` | Get details of the service's Compute@Edge package.
 *PackageAPI* | [**PutPackage**](docs/PackageAPI.md#putpackage) | **PUT** `/service/{service_id}/version/{version_id}/package` | Upload a Compute@Edge package.
 *PoolAPI* | [**CreateServerPool**](docs/PoolAPI.md#createserverpool) | **POST** `/service/{service_id}/version/{version_id}/pool` | Create a server pool
@@ -364,6 +421,7 @@ Class | Method | HTTP request | Description
 *RealtimeAPI* | [**GetStatsLast120Seconds**](docs/RealtimeAPI.md#getstatslast120seconds) | **GET** `/v1/channel/{service_id}/ts/h` | Get real-time data for the last 120 seconds
 *RealtimeAPI* | [**GetStatsLast120SecondsLimitEntries**](docs/RealtimeAPI.md#getstatslast120secondslimitentries) | **GET** `/v1/channel/{service_id}/ts/h/limit/{max_entries}` | Get a limited number of real-time data entries
 *RealtimeAPI* | [**GetStatsLastSecond**](docs/RealtimeAPI.md#getstatslastsecond) | **GET** `/v1/channel/{service_id}/ts/{timestamp_in_seconds}` | Get real-time data from specified time
+*RequestSettingsAPI* | [**CreateRequestSettings**](docs/RequestSettingsAPI.md#createrequestsettings) | **POST** `/service/{service_id}/version/{version_id}/request_settings` | Create a Request Settings object
 *RequestSettingsAPI* | [**DeleteRequestSettings**](docs/RequestSettingsAPI.md#deleterequestsettings) | **DELETE** `/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}` | Delete a Request Settings object
 *RequestSettingsAPI* | [**GetRequestSettings**](docs/RequestSettingsAPI.md#getrequestsettings) | **GET** `/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}` | Get a Request Settings object
 *RequestSettingsAPI* | [**ListRequestSettings**](docs/RequestSettingsAPI.md#listrequestsettings) | **GET** `/service/{service_id}/version/{version_id}/request_settings` | List Request Settings objects
@@ -373,9 +431,23 @@ Class | Method | HTTP request | Description
 *ResourceAPI* | [**GetResource**](docs/ResourceAPI.md#getresource) | **GET** `/service/{service_id}/version/{version_id}/resource/{id}` | Display a resource link
 *ResourceAPI* | [**ListResources**](docs/ResourceAPI.md#listresources) | **GET** `/service/{service_id}/version/{version_id}/resource` | List resource links
 *ResourceAPI* | [**UpdateResource**](docs/ResourceAPI.md#updateresource) | **PUT** `/service/{service_id}/version/{version_id}/resource/{id}` | Update a resource link
+*ResponseObjectAPI* | [**CreateResponseObject**](docs/ResponseObjectAPI.md#createresponseobject) | **POST** `/service/{service_id}/version/{version_id}/response_object` | Create a Response object
 *ResponseObjectAPI* | [**DeleteResponseObject**](docs/ResponseObjectAPI.md#deleteresponseobject) | **DELETE** `/service/{service_id}/version/{version_id}/response_object/{response_object_name}` | Delete a Response Object
 *ResponseObjectAPI* | [**GetResponseObject**](docs/ResponseObjectAPI.md#getresponseobject) | **GET** `/service/{service_id}/version/{version_id}/response_object/{response_object_name}` | Get a Response object
 *ResponseObjectAPI* | [**ListResponseObjects**](docs/ResponseObjectAPI.md#listresponseobjects) | **GET** `/service/{service_id}/version/{version_id}/response_object` | List Response objects
+*ResponseObjectAPI* | [**UpdateResponseObject**](docs/ResponseObjectAPI.md#updateresponseobject) | **PUT** `/service/{service_id}/version/{version_id}/response_object/{response_object_name}` | Update a Response object
+*SecretStoreAPI* | [**ClientKey**](docs/SecretStoreAPI.md#clientkey) | **POST** `/resources/stores/secret/client-key` | Create new client key
+*SecretStoreAPI* | [**CreateSecretStore**](docs/SecretStoreAPI.md#createsecretstore) | **POST** `/resources/stores/secret` | Create new secret store
+*SecretStoreAPI* | [**DeleteSecretStore**](docs/SecretStoreAPI.md#deletesecretstore) | **DELETE** `/resources/stores/secret/{store_id}` | Delete secret store
+*SecretStoreAPI* | [**GetSecretStore**](docs/SecretStoreAPI.md#getsecretstore) | **GET** `/resources/stores/secret/{store_id}` | Create secret store by ID
+*SecretStoreAPI* | [**GetSecretStores**](docs/SecretStoreAPI.md#getsecretstores) | **GET** `/resources/stores/secret` | Get all secret stores
+*SecretStoreAPI* | [**SigningKey**](docs/SecretStoreAPI.md#signingkey) | **GET** `/resources/stores/secret/signing-key` | Get public key
+*SecretStoreItemAPI* | [**CreateSecret**](docs/SecretStoreItemAPI.md#createsecret) | **POST** `/resources/stores/secret/{store_id}/secrets` | Create a new secret in a store.
+*SecretStoreItemAPI* | [**DeleteSecret**](docs/SecretStoreItemAPI.md#deletesecret) | **DELETE** `/resources/stores/secret/{store_id}/secrets/{secret_name}` | Delete a secret from a store.
+*SecretStoreItemAPI* | [**GetSecret**](docs/SecretStoreItemAPI.md#getsecret) | **GET** `/resources/stores/secret/{store_id}/secrets/{secret_name}` | Get secret metadata.
+*SecretStoreItemAPI* | [**GetSecrets**](docs/SecretStoreItemAPI.md#getsecrets) | **GET** `/resources/stores/secret/{store_id}/secrets` | List secrets within a store.
+*SecretStoreItemAPI* | [**MustRecreateSecret**](docs/SecretStoreItemAPI.md#mustrecreatesecret) | **PATCH** `/resources/stores/secret/{store_id}/secrets` | Recreate a secret in a store.
+*SecretStoreItemAPI* | [**RecreateSecret**](docs/SecretStoreItemAPI.md#recreatesecret) | **PUT** `/resources/stores/secret/{store_id}/secrets` | Create or recreate a secret in a store.
 *ServerAPI* | [**CreatePoolServer**](docs/ServerAPI.md#createpoolserver) | **POST** `/service/{service_id}/pool/{pool_id}/server` | Add a server to a pool
 *ServerAPI* | [**DeletePoolServer**](docs/ServerAPI.md#deletepoolserver) | **DELETE** `/service/{service_id}/pool/{pool_id}/server/{server_id}` | Delete a server from a pool
 *ServerAPI* | [**GetPoolServer**](docs/ServerAPI.md#getpoolserver) | **GET** `/service/{service_id}/pool/{pool_id}/server/{server_id}` | Get a pool server
@@ -391,9 +463,11 @@ Class | Method | HTTP request | Description
 *ServiceAPI* | [**UpdateService**](docs/ServiceAPI.md#updateservice) | **PUT** `/service/{service_id}` | Update a service
 *ServiceAuthorizationsAPI* | [**CreateServiceAuthorization**](docs/ServiceAuthorizationsAPI.md#createserviceauthorization) | **POST** `/service-authorizations` | Create service authorization
 *ServiceAuthorizationsAPI* | [**DeleteServiceAuthorization**](docs/ServiceAuthorizationsAPI.md#deleteserviceauthorization) | **DELETE** `/service-authorizations/{service_authorization_id}` | Delete service authorization
+*ServiceAuthorizationsAPI* | [**DeleteServiceAuthorization2**](docs/ServiceAuthorizationsAPI.md#deleteserviceauthorization2) | **DELETE** `/service-authorizations` | Delete service authorizations
 *ServiceAuthorizationsAPI* | [**ListServiceAuthorization**](docs/ServiceAuthorizationsAPI.md#listserviceauthorization) | **GET** `/service-authorizations` | List service authorizations
 *ServiceAuthorizationsAPI* | [**ShowServiceAuthorization**](docs/ServiceAuthorizationsAPI.md#showserviceauthorization) | **GET** `/service-authorizations/{service_authorization_id}` | Show service authorization
 *ServiceAuthorizationsAPI* | [**UpdateServiceAuthorization**](docs/ServiceAuthorizationsAPI.md#updateserviceauthorization) | **PATCH** `/service-authorizations/{service_authorization_id}` | Update service authorization
+*ServiceAuthorizationsAPI* | [**UpdateServiceAuthorization2**](docs/ServiceAuthorizationsAPI.md#updateserviceauthorization2) | **PATCH** `/service-authorizations` | Update service authorizations
 *SettingsAPI* | [**GetServiceSettings**](docs/SettingsAPI.md#getservicesettings) | **GET** `/service/{service_id}/version/{version_id}/settings` | Get service settings
 *SettingsAPI* | [**UpdateServiceSettings**](docs/SettingsAPI.md#updateservicesettings) | **PUT** `/service/{service_id}/version/{version_id}/settings` | Update service settings
 *SnippetAPI* | [**CreateSnippet**](docs/SnippetAPI.md#createsnippet) | **POST** `/service/{service_id}/version/{version_id}/snippet` | Create a snippet
@@ -401,12 +475,14 @@ Class | Method | HTTP request | Description
 *SnippetAPI* | [**GetSnippet**](docs/SnippetAPI.md#getsnippet) | **GET** `/service/{service_id}/version/{version_id}/snippet/{snippet_name}` | Get a versioned snippet
 *SnippetAPI* | [**GetSnippetDynamic**](docs/SnippetAPI.md#getsnippetdynamic) | **GET** `/service/{service_id}/snippet/{snippet_id}` | Get a dynamic snippet
 *SnippetAPI* | [**ListSnippets**](docs/SnippetAPI.md#listsnippets) | **GET** `/service/{service_id}/version/{version_id}/snippet` | List snippets
+*SnippetAPI* | [**UpdateSnippet**](docs/SnippetAPI.md#updatesnippet) | **PUT** `/service/{service_id}/version/{version_id}/snippet/{snippet_name}` | Update a versioned snippet
 *SnippetAPI* | [**UpdateSnippetDynamic**](docs/SnippetAPI.md#updatesnippetdynamic) | **PUT** `/service/{service_id}/snippet/{snippet_id}` | Update a dynamic snippet
 *StarAPI* | [**CreateServiceStar**](docs/StarAPI.md#createservicestar) | **POST** `/stars` | Create a star
 *StarAPI* | [**DeleteServiceStar**](docs/StarAPI.md#deleteservicestar) | **DELETE** `/stars/{star_id}` | Delete a star
 *StarAPI* | [**GetServiceStar**](docs/StarAPI.md#getservicestar) | **GET** `/stars/{star_id}` | Get a star
 *StarAPI* | [**ListServiceStars**](docs/StarAPI.md#listservicestars) | **GET** `/stars` | List stars
 *StatsAPI* | [**GetServiceStats**](docs/StatsAPI.md#getservicestats) | **GET** `/service/{service_id}/stats/summary` | Get stats for a service
+*SudoAPI* | [**RequestSudoAccess**](docs/SudoAPI.md#requestsudoaccess) | **POST** `/sudo` | Request Sudo access
 *TLSActivationsAPI* | [**CreateTLSActivation**](docs/TlsActivationsAPI.md#createtlsactivation) | **POST** `/tls/activations` | Enable TLS for a domain using a custom certificate
 *TLSActivationsAPI* | [**DeleteTLSActivation**](docs/TlsActivationsAPI.md#deletetlsactivation) | **DELETE** `/tls/activations/{tls_activation_id}` | Disable TLS on a domain
 *TLSActivationsAPI* | [**GetTLSActivation**](docs/TlsActivationsAPI.md#gettlsactivation) | **GET** `/tls/activations/{tls_activation_id}` | Get a TLS activation
@@ -437,6 +513,8 @@ Class | Method | HTTP request | Description
 *TLSSubscriptionsAPI* | [**GetTLSSub**](docs/TlsSubscriptionsAPI.md#gettlssub) | **GET** `/tls/subscriptions/{tls_subscription_id}` | Get a TLS subscription
 *TLSSubscriptionsAPI* | [**ListTLSSubs**](docs/TlsSubscriptionsAPI.md#listtlssubs) | **GET** `/tls/subscriptions` | List TLS subscriptions
 *TLSSubscriptionsAPI* | [**PatchTLSSub**](docs/TlsSubscriptionsAPI.md#patchtlssub) | **PATCH** `/tls/subscriptions/{tls_subscription_id}` | Update a TLS subscription
+*TokensAPI* | [**BulkRevokeTokens**](docs/TokensAPI.md#bulkrevoketokens) | **DELETE** `/tokens` | Revoke multiple tokens
+*TokensAPI* | [**CreateToken**](docs/TokensAPI.md#createtoken) | **POST** `/tokens` | Create a token
 *TokensAPI* | [**GetToken**](docs/TokensAPI.md#gettoken) | **GET** `/tokens/{token_id}` | Get a token
 *TokensAPI* | [**GetTokenCurrent**](docs/TokensAPI.md#gettokencurrent) | **GET** `/tokens/self` | Get the current token
 *TokensAPI* | [**ListTokensCustomer**](docs/TokensAPI.md#listtokenscustomer) | **GET** `/customer/{customer_id}/tokens` | List tokens for a customer
@@ -473,6 +551,7 @@ Class | Method | HTTP request | Description
 *VersionAPI* | [**LockServiceVersion**](docs/VersionAPI.md#lockserviceversion) | **PUT** `/service/{service_id}/version/{version_id}/lock` | Lock a service version
 *VersionAPI* | [**UpdateServiceVersion**](docs/VersionAPI.md#updateserviceversion) | **PUT** `/service/{service_id}/version/{version_id}` | Update a service version
 *VersionAPI* | [**ValidateServiceVersion**](docs/VersionAPI.md#validateserviceversion) | **GET** `/service/{service_id}/version/{version_id}/validate` | Validate a service version
+*WafActiveRulesAPI* | [**BulkDeleteWafActiveRules**](docs/WafActiveRulesAPI.md#bulkdeletewafactiverules) | **DELETE** `/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules` | Delete multiple active rules from a WAF
 *WafActiveRulesAPI* | [**BulkUpdateWafActiveRules**](docs/WafActiveRulesAPI.md#bulkupdatewafactiverules) | **PATCH** `/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules/bulk` | Update multiple active rules
 *WafActiveRulesAPI* | [**CreateWafActiveRule**](docs/WafActiveRulesAPI.md#createwafactiverule) | **POST** `/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules` | Add a rule to a WAF as an active rule
 *WafActiveRulesAPI* | [**CreateWafActiveRulesTag**](docs/WafActiveRulesAPI.md#createwafactiverulestag) | **POST** `/waf/firewalls/{firewall_id}/versions/{version_id}/tags/{waf_tag_name}/active-rules` | Create active rules by tag
@@ -523,70 +602,12 @@ Each of these functions takes a value of the given basic type and returns a poin
 
 The fastly-go API client currently does not support the following endpoints:
 
-- [`/customer/{customer_id}/contacts`](https://developer.fastly.com/reference/api/account/contact) (POST)
-- [`/metrics/domains/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/domain-inspector/historical) (GET)
-- [`/metrics/origins/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/origin-inspector/historical) (GET)
 - [`/resources/stores/kv/{store_id}/batch`](https://developer.fastly.com/reference/api/services/resources/kv-store-item) (PUT)
-- [`/resources/stores/secret/client-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (POST)
-- [`/resources/stores/secret/signing-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (GET)
-- [`/resources/stores/secret/{store_id}/secrets/{secret_name}`](https://developer.fastly.com/reference/api/services/resources/secret) (DELETE, GET)
-- [`/resources/stores/secret/{store_id}/secrets`](https://developer.fastly.com/reference/api/services/resources/secret) (GET, PATCH, POST, PUT)
-- [`/resources/stores/secret/{store_id}`](https://developer.fastly.com/reference/api/services/resources/secret-store) (DELETE, GET)
-- [`/resources/stores/secret`](https://developer.fastly.com/reference/api/services/resources/secret-store) (GET, POST)
-- [`/roles/{role_id}/permissions`](https://developer.fastly.com/reference/api/account/roles) (DELETE, POST)
-- [`/roles/{role_id}`](https://developer.fastly.com/reference/api/account/roles) (PATCH)
-- [`/roles`](https://developer.fastly.com/reference/api/account/roles) (POST)
-- [`/service-authorizations`](https://developer.fastly.com/reference/api/account/service-authorization) (DELETE, PATCH)
-- [`/service-groups/{service_group_id}/services`](https://developer.fastly.com/reference/api/account/service-groups) (DELETE, POST)
-- [`/service-groups/{service_group_id}`](https://developer.fastly.com/reference/api/account/service-groups) (PATCH)
-- [`/service-groups`](https://developer.fastly.com/reference/api/account/service-groups) (POST)
-- [`/service/{service_id}/version/{version_id}/apex-redirects`](https://developer.fastly.com/reference/api/vcl-services/apex-redirect) (POST)
-- [`/service/{service_id}/version/{version_id}/director/{director_name}`](https://developer.fastly.com/reference/api/load-balancing/directors/director) (PUT)
-- [`/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}`](https://developer.fastly.com/reference/api/logging/kafka) (PUT)
-- [`/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}`](https://developer.fastly.com/reference/api/logging/kinesis) (PUT)
-- [`/service/{service_id}/version/{version_id}/request_settings`](https://developer.fastly.com/reference/api/vcl-services/request-settings) (POST)
-- [`/service/{service_id}/version/{version_id}/response_object/{response_object_name}`](https://developer.fastly.com/reference/api/vcl-services/response-object) (PUT)
-- [`/service/{service_id}/version/{version_id}/response_object`](https://developer.fastly.com/reference/api/vcl-services/response-object) (POST)
-- [`/service/{service_id}/version/{version_id}/snippet/{snippet_name}`](https://developer.fastly.com/reference/api/vcl-services/snippet) (PUT)
-- [`/service/{service_id}/version/{version_id}/wafs/{firewall_id}`](https://developer.fastly.com/reference/api/legacy-waf/firewall) (GET, PATCH)
-- [`/service/{service_id}/version/{version_id}/wafs`](https://developer.fastly.com/reference/api/legacy-waf/firewall) (GET, POST)
-- [`/service/{service_id}/wafs/{firewall_id}/owasp`](https://developer.fastly.com/reference/api/legacy-waf/owasp) (GET, PATCH, POST)
-- [`/service/{service_id}/wafs/{firewall_id}/rule_statuses`](https://developer.fastly.com/reference/api/legacy-waf/rule-status) (GET, POST)
-- [`/service/{service_id}/wafs/{firewall_id}/rules/{waf_rule_id}/rule_status`](https://developer.fastly.com/reference/api/legacy-waf/rule-status) (GET, PATCH)
-- [`/service/{service_id}/wafs/{firewall_id}/ruleset/preview`](https://developer.fastly.com/reference/api/legacy-waf/ruleset) (GET)
-- [`/service/{service_id}/wafs/{firewall_id}/ruleset`](https://developer.fastly.com/reference/api/legacy-waf/ruleset) (GET, PATCH)
-- [`/service/{service_id}/wafs/{firewall_id}/update_statuses/{update_status_id}`](https://developer.fastly.com/reference/api/legacy-waf/update-status) (GET)
-- [`/service/{service_id}/wafs/{firewall_id}/update_statuses`](https://developer.fastly.com/reference/api/legacy-waf/update-status) (GET)
-- [`/sudo`](https://developer.fastly.com/reference/api/utils/sudo) (POST)
 - [`/tls/activations/{tls_activation_id}`](https://developer.fastly.com/reference/api/tls/mutual-tls/activations) (GET, PATCH)
 - [`/tls/activations`](https://developer.fastly.com/reference/api/tls/mutual-tls/activations) (GET)
-- [`/tokens`](https://developer.fastly.com/reference/api/auth-tokens/user) (DELETE, POST)
-- [`/user-groups/{user_group_id}/members`](https://developer.fastly.com/reference/api/account/user-groups) (DELETE, POST)
-- [`/user-groups/{user_group_id}/roles`](https://developer.fastly.com/reference/api/account/user-groups) (DELETE, POST)
-- [`/user-groups/{user_group_id}/service-groups`](https://developer.fastly.com/reference/api/account/user-groups) (DELETE, POST)
-- [`/user-groups/{user_group_id}`](https://developer.fastly.com/reference/api/account/user-groups) (PATCH)
-- [`/user-groups`](https://developer.fastly.com/reference/api/account/user-groups) (POST)
 - [`/v1/channel/{service_id}/ts/h/limit/{max_entries}`](https://developer.fastly.com/reference/api/metrics-stats/origin-insights) (GET)
 - [`/v1/channel/{service_id}/ts/h`](https://developer.fastly.com/reference/api/metrics-stats/origin-insights) (GET)
 - [`/v1/channel/{service_id}/ts/{start_timestamp}`](https://developer.fastly.com/reference/api/metrics-stats/origin-insights) (GET)
-- [`/v1/domains/{service_id}/ts/h/limit/{max_entries}`](https://developer.fastly.com/reference/api/metrics-stats/domain-inspector/real-time) (GET)
-- [`/v1/domains/{service_id}/ts/h`](https://developer.fastly.com/reference/api/metrics-stats/domain-inspector/real-time) (GET)
-- [`/v1/domains/{service_id}/ts/{start_timestamp}`](https://developer.fastly.com/reference/api/metrics-stats/domain-inspector/real-time) (GET)
-- [`/v1/origins/{service_id}/ts/h/limit/{max_entries}`](https://developer.fastly.com/reference/api/metrics-stats/origin-inspector/real-time) (GET)
-- [`/v1/origins/{service_id}/ts/h`](https://developer.fastly.com/reference/api/metrics-stats/origin-inspector/real-time) (GET)
-- [`/v1/origins/{service_id}/ts/{start_timestamp}`](https://developer.fastly.com/reference/api/metrics-stats/origin-inspector/real-time) (GET)
-- [`/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules`](https://developer.fastly.com/reference/api/waf/rules/active) (DELETE)
-- [`/wafs/configuration_sets/{configuration_set_id}/relationships/wafs`](https://developer.fastly.com/reference/api/legacy-waf/configuration-set) (GET, PATCH)
-- [`/wafs/configuration_sets`](https://developer.fastly.com/reference/api/legacy-waf/configuration-set) (GET)
-- [`/wafs/rules/{waf_rule_id}/vcl`](https://developer.fastly.com/reference/api/legacy-waf/rule) (GET)
-- [`/wafs/rules/{waf_rule_id}`](https://developer.fastly.com/reference/api/legacy-waf/rule) (GET)
-- [`/wafs/rules`](https://developer.fastly.com/reference/api/legacy-waf/rule) (GET)
-- [`/wafs/tags`](https://developer.fastly.com/reference/api/legacy-waf/tag) (GET)
-- [`/wafs/{firewall_id}/disable`](https://developer.fastly.com/reference/api/legacy-waf/firewall) (PATCH)
-- [`/wafs/{firewall_id}/enable`](https://developer.fastly.com/reference/api/legacy-waf/firewall) (PATCH)
-- [`/wafs/{firewall_id}/rules/{waf_rule_id}/vcl`](https://developer.fastly.com/reference/api/legacy-waf/rule) (GET)
-- [`/wafs/{firewall_id}`](https://developer.fastly.com/reference/api/legacy-waf/firewall) (GET)
-- [`/wafs`](https://developer.fastly.com/reference/api/legacy-waf/firewall) (GET)
 
 
 If you encounter any non-security-related bug or unexpected behavior, please [file an issue][bug]

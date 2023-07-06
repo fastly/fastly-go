@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DeleteLogKafka**](LoggingKafkaAPI.md#DeleteLogKafka) | **DELETE** `/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}` | Delete the Kafka log endpoint
 [**GetLogKafka**](LoggingKafkaAPI.md#GetLogKafka) | **GET** `/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}` | Get a Kafka log endpoint
 [**ListLogKafka**](LoggingKafkaAPI.md#ListLogKafka) | **GET** `/service/{service_id}/version/{version_id}/logging/kafka` | List Kafka log endpoints
+[**UpdateLogKafka**](LoggingKafkaAPI.md#UpdateLogKafka) | **PUT** `/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}` | Update the Kafka log endpoint
 
 
 
@@ -305,6 +306,77 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## UpdateLogKafka
+
+Update the Kafka log endpoint
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionID := int32(56) // int32 | Integer identifying a service version.
+    loggingKafkaName := "loggingKafkaName_example" // string | The name for the real-time logging configuration.
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.LoggingKafkaAPI.UpdateLogKafka(ctx, serviceID, versionID, loggingKafkaName).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `LoggingKafkaAPI.UpdateLogKafka`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateLogKafka`: LoggingKafkaResponse
+    fmt.Fprintf(os.Stdout, "Response from `LoggingKafkaAPI.UpdateLogKafka`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**versionID** | **int32** | Integer identifying a service version. | 
+**loggingKafkaName** | **string** | The name for the real-time logging configuration. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateLogKafkaRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**LoggingKafkaResponse**](LoggingKafkaResponse.md)
+
+### Authorization
+
+[API Token](https://developer.fastly.com/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: application/x-www-form-urlencoded
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

@@ -19,10 +19,8 @@ import (
 
 // RealtimeEntry A list of records, each representing one second of time. The `Data` property provides access to [measurement data](#measurements-data-model) for that time period, grouped in various ways.
 type RealtimeEntry struct {
-	// The Unix timestamp at which this record's data was generated.
-	Recorded *int32 `json:"recorded,omitempty"`
-	// Aggregates [measurements](#measurements-data-model) across all Fastly POPs.
-	Aggregated *RealtimeMeasurements `json:"aggregated,omitempty"`
+	Recorded *RealtimeEntryRecorded `json:"recorded,omitempty"`
+	Aggregated *RealtimeEntryAggregated `json:"aggregated,omitempty"`
 	// Groups [measurements](#measurements-data-model) by POP. See the [POPs API](/reference/api/utils/pops/) for details of POP identifiers.
 	Datacenter *map[string]RealtimeMeasurements `json:"datacenter,omitempty"`
 	AdditionalProperties map[string]any
@@ -48,9 +46,9 @@ func NewRealtimeEntryWithDefaults() *RealtimeEntry {
 }
 
 // GetRecorded returns the Recorded field value if set, zero value otherwise.
-func (o *RealtimeEntry) GetRecorded() int32 {
+func (o *RealtimeEntry) GetRecorded() RealtimeEntryRecorded {
 	if o == nil || o.Recorded == nil {
-		var ret int32
+		var ret RealtimeEntryRecorded
 		return ret
 	}
 	return *o.Recorded
@@ -58,7 +56,7 @@ func (o *RealtimeEntry) GetRecorded() int32 {
 
 // GetRecordedOk returns a tuple with the Recorded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntry) GetRecordedOk() (*int32, bool) {
+func (o *RealtimeEntry) GetRecordedOk() (*RealtimeEntryRecorded, bool) {
 	if o == nil || o.Recorded == nil {
 		return nil, false
 	}
@@ -74,15 +72,15 @@ func (o *RealtimeEntry) HasRecorded() bool {
 	return false
 }
 
-// SetRecorded gets a reference to the given int32 and assigns it to the Recorded field.
-func (o *RealtimeEntry) SetRecorded(v int32) {
+// SetRecorded gets a reference to the given RealtimeEntryRecorded and assigns it to the Recorded field.
+func (o *RealtimeEntry) SetRecorded(v RealtimeEntryRecorded) {
 	o.Recorded = &v
 }
 
 // GetAggregated returns the Aggregated field value if set, zero value otherwise.
-func (o *RealtimeEntry) GetAggregated() RealtimeMeasurements {
+func (o *RealtimeEntry) GetAggregated() RealtimeEntryAggregated {
 	if o == nil || o.Aggregated == nil {
-		var ret RealtimeMeasurements
+		var ret RealtimeEntryAggregated
 		return ret
 	}
 	return *o.Aggregated
@@ -90,7 +88,7 @@ func (o *RealtimeEntry) GetAggregated() RealtimeMeasurements {
 
 // GetAggregatedOk returns a tuple with the Aggregated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntry) GetAggregatedOk() (*RealtimeMeasurements, bool) {
+func (o *RealtimeEntry) GetAggregatedOk() (*RealtimeEntryAggregated, bool) {
 	if o == nil || o.Aggregated == nil {
 		return nil, false
 	}
@@ -106,8 +104,8 @@ func (o *RealtimeEntry) HasAggregated() bool {
 	return false
 }
 
-// SetAggregated gets a reference to the given RealtimeMeasurements and assigns it to the Aggregated field.
-func (o *RealtimeEntry) SetAggregated(v RealtimeMeasurements) {
+// SetAggregated gets a reference to the given RealtimeEntryAggregated and assigns it to the Aggregated field.
+func (o *RealtimeEntry) SetAggregated(v RealtimeEntryAggregated) {
 	o.Aggregated = &v
 }
 

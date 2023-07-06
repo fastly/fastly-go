@@ -96,6 +96,23 @@ type LoggingKafkaAPI interface {
 	// ListLogKafkaExecute executes the request
 	//  @return []LoggingKafkaResponse
 	ListLogKafkaExecute(r APIListLogKafkaRequest) ([]LoggingKafkaResponse, *http.Response, error)
+
+	/*
+	UpdateLogKafka Update the Kafka log endpoint
+
+	Update the Kafka logging endpoint for a particular service and version.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param serviceID Alphanumeric string identifying the service.
+	 @param versionID Integer identifying a service version.
+	 @param loggingKafkaName The name for the real-time logging configuration.
+	 @return APIUpdateLogKafkaRequest
+	*/
+	UpdateLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIUpdateLogKafkaRequest
+
+	// UpdateLogKafkaExecute executes the request
+	//  @return LoggingKafkaResponse
+	UpdateLogKafkaExecute(r APIUpdateLogKafkaRequest) (*LoggingKafkaResponse, *http.Response, error)
 }
 
 // LoggingKafkaAPIService LoggingKafkaAPI service
@@ -752,6 +769,148 @@ func (a *LoggingKafkaAPIService) ListLogKafkaExecute(r APIListLogKafkaRequest) (
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIUpdateLogKafkaRequest represents a request for the resource.
+type APIUpdateLogKafkaRequest struct {
+	ctx context.Context
+	APIService LoggingKafkaAPI
+	serviceID string
+	versionID int32
+	loggingKafkaName string
+}
+
+
+// Execute calls the API using the request data configured.
+func (r APIUpdateLogKafkaRequest) Execute() (*LoggingKafkaResponse, *http.Response, error) {
+	return r.APIService.UpdateLogKafkaExecute(r)
+}
+
+/*
+UpdateLogKafka Update the Kafka log endpoint
+
+Update the Kafka logging endpoint for a particular service and version.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
+ @param loggingKafkaName The name for the real-time logging configuration.
+ @return APIUpdateLogKafkaRequest
+*/
+func (a *LoggingKafkaAPIService) UpdateLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIUpdateLogKafkaRequest {
+	return APIUpdateLogKafkaRequest{
+		APIService: a,
+		ctx: ctx,
+		serviceID: serviceID,
+		versionID: versionID,
+		loggingKafkaName: loggingKafkaName,
+	}
+}
+
+// UpdateLogKafkaExecute executes the request
+//  @return LoggingKafkaResponse
+func (a *LoggingKafkaAPIService) UpdateLogKafkaExecute(r APIUpdateLogKafkaRequest) (*LoggingKafkaResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *LoggingKafkaResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingKafkaAPIService.UpdateLogKafka")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_kafka_name"+"}", gourl.PathEscape(parameterToString(r.loggingKafkaName, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/x-www-form-urlencoded"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)

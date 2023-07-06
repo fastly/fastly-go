@@ -32,6 +32,35 @@ var (
 type IamServiceGroupsAPI interface {
 
 	/*
+	AddServiceGroupServices Add services in a service group
+
+	Add services in a service group.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param serviceGroupID Alphanumeric string identifying the service group.
+	 @return APIAddServiceGroupServicesRequest
+	*/
+	AddServiceGroupServices(ctx context.Context, serviceGroupID string) APIAddServiceGroupServicesRequest
+
+	// AddServiceGroupServicesExecute executes the request
+	//  @return map[string]any
+	AddServiceGroupServicesExecute(r APIAddServiceGroupServicesRequest) (map[string]any, *http.Response, error)
+
+	/*
+	CreateAServiceGroup Create a service group
+
+	Create a service group.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @return APICreateAServiceGroupRequest
+	*/
+	CreateAServiceGroup(ctx context.Context) APICreateAServiceGroupRequest
+
+	// CreateAServiceGroupExecute executes the request
+	//  @return map[string]any
+	CreateAServiceGroupExecute(r APICreateAServiceGroupRequest) (map[string]any, *http.Response, error)
+
+	/*
 	DeleteAServiceGroup Delete a service group
 
 	Delete a service group.
@@ -88,10 +117,319 @@ type IamServiceGroupsAPI interface {
 	// ListServiceGroupsExecute executes the request
 	//  @return map[string]any
 	ListServiceGroupsExecute(r APIListServiceGroupsRequest) (map[string]any, *http.Response, error)
+
+	/*
+	RemoveServiceGroupServices Remove services from a service group
+
+	Remove services from a service group.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param serviceGroupID Alphanumeric string identifying the service group.
+	 @return APIRemoveServiceGroupServicesRequest
+	*/
+	RemoveServiceGroupServices(ctx context.Context, serviceGroupID string) APIRemoveServiceGroupServicesRequest
+
+	// RemoveServiceGroupServicesExecute executes the request
+	RemoveServiceGroupServicesExecute(r APIRemoveServiceGroupServicesRequest) (*http.Response, error)
+
+	/*
+	UpdateAServiceGroup Update a service group
+
+	Update a service group.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param serviceGroupID Alphanumeric string identifying the service group.
+	 @return APIUpdateAServiceGroupRequest
+	*/
+	UpdateAServiceGroup(ctx context.Context, serviceGroupID string) APIUpdateAServiceGroupRequest
+
+	// UpdateAServiceGroupExecute executes the request
+	//  @return map[string]any
+	UpdateAServiceGroupExecute(r APIUpdateAServiceGroupRequest) (map[string]any, *http.Response, error)
 }
 
 // IamServiceGroupsAPIService IamServiceGroupsAPI service
 type IamServiceGroupsAPIService service
+
+// APIAddServiceGroupServicesRequest represents a request for the resource.
+type APIAddServiceGroupServicesRequest struct {
+	ctx context.Context
+	APIService IamServiceGroupsAPI
+	serviceGroupID string
+	requestBody *map[string]map[string]any
+}
+
+// RequestBody returns a pointer to a request.
+func (r *APIAddServiceGroupServicesRequest) RequestBody(requestBody map[string]map[string]any) *APIAddServiceGroupServicesRequest {
+	r.requestBody = &requestBody
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIAddServiceGroupServicesRequest) Execute() (map[string]any, *http.Response, error) {
+	return r.APIService.AddServiceGroupServicesExecute(r)
+}
+
+/*
+AddServiceGroupServices Add services in a service group
+
+Add services in a service group.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serviceGroupID Alphanumeric string identifying the service group.
+ @return APIAddServiceGroupServicesRequest
+*/
+func (a *IamServiceGroupsAPIService) AddServiceGroupServices(ctx context.Context, serviceGroupID string) APIAddServiceGroupServicesRequest {
+	return APIAddServiceGroupServicesRequest{
+		APIService: a,
+		ctx: ctx,
+		serviceGroupID: serviceGroupID,
+	}
+}
+
+// AddServiceGroupServicesExecute executes the request
+//  @return map[string]any
+func (a *IamServiceGroupsAPIService) AddServiceGroupServicesExecute(r APIAddServiceGroupServicesRequest) (map[string]any, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  map[string]any
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.AddServiceGroupServices")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/service-groups/{service_group_id}/services"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.requestBody
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APICreateAServiceGroupRequest represents a request for the resource.
+type APICreateAServiceGroupRequest struct {
+	ctx context.Context
+	APIService IamServiceGroupsAPI
+	requestBody *map[string]map[string]any
+}
+
+// RequestBody returns a pointer to a request.
+func (r *APICreateAServiceGroupRequest) RequestBody(requestBody map[string]map[string]any) *APICreateAServiceGroupRequest {
+	r.requestBody = &requestBody
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APICreateAServiceGroupRequest) Execute() (map[string]any, *http.Response, error) {
+	return r.APIService.CreateAServiceGroupExecute(r)
+}
+
+/*
+CreateAServiceGroup Create a service group
+
+Create a service group.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return APICreateAServiceGroupRequest
+*/
+func (a *IamServiceGroupsAPIService) CreateAServiceGroup(ctx context.Context) APICreateAServiceGroupRequest {
+	return APICreateAServiceGroupRequest{
+		APIService: a,
+		ctx: ctx,
+	}
+}
+
+// CreateAServiceGroupExecute executes the request
+//  @return map[string]any
+func (a *IamServiceGroupsAPIService) CreateAServiceGroupExecute(r APICreateAServiceGroupRequest) (map[string]any, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  map[string]any
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.CreateAServiceGroup")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/service-groups"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.requestBody
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 // APIDeleteAServiceGroupRequest represents a request for the resource.
 type APIDeleteAServiceGroupRequest struct {
@@ -585,6 +923,279 @@ func (a *IamServiceGroupsAPIService) ListServiceGroupsExecute(r APIListServiceGr
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIRemoveServiceGroupServicesRequest represents a request for the resource.
+type APIRemoveServiceGroupServicesRequest struct {
+	ctx context.Context
+	APIService IamServiceGroupsAPI
+	serviceGroupID string
+	requestBody *map[string]map[string]any
+}
+
+// RequestBody returns a pointer to a request.
+func (r *APIRemoveServiceGroupServicesRequest) RequestBody(requestBody map[string]map[string]any) *APIRemoveServiceGroupServicesRequest {
+	r.requestBody = &requestBody
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIRemoveServiceGroupServicesRequest) Execute() (*http.Response, error) {
+	return r.APIService.RemoveServiceGroupServicesExecute(r)
+}
+
+/*
+RemoveServiceGroupServices Remove services from a service group
+
+Remove services from a service group.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serviceGroupID Alphanumeric string identifying the service group.
+ @return APIRemoveServiceGroupServicesRequest
+*/
+func (a *IamServiceGroupsAPIService) RemoveServiceGroupServices(ctx context.Context, serviceGroupID string) APIRemoveServiceGroupServicesRequest {
+	return APIRemoveServiceGroupServicesRequest{
+		APIService: a,
+		ctx: ctx,
+		serviceGroupID: serviceGroupID,
+	}
+}
+
+// RemoveServiceGroupServicesExecute executes the request
+func (a *IamServiceGroupsAPIService) RemoveServiceGroupServicesExecute(r APIRemoveServiceGroupServicesRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     any
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.RemoveServiceGroupServices")
+	if err != nil {
+		return nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/service-groups/{service_group_id}/services"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.requestBody
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+// APIUpdateAServiceGroupRequest represents a request for the resource.
+type APIUpdateAServiceGroupRequest struct {
+	ctx context.Context
+	APIService IamServiceGroupsAPI
+	serviceGroupID string
+	requestBody *map[string]map[string]any
+}
+
+// RequestBody returns a pointer to a request.
+func (r *APIUpdateAServiceGroupRequest) RequestBody(requestBody map[string]map[string]any) *APIUpdateAServiceGroupRequest {
+	r.requestBody = &requestBody
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIUpdateAServiceGroupRequest) Execute() (map[string]any, *http.Response, error) {
+	return r.APIService.UpdateAServiceGroupExecute(r)
+}
+
+/*
+UpdateAServiceGroup Update a service group
+
+Update a service group.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serviceGroupID Alphanumeric string identifying the service group.
+ @return APIUpdateAServiceGroupRequest
+*/
+func (a *IamServiceGroupsAPIService) UpdateAServiceGroup(ctx context.Context, serviceGroupID string) APIUpdateAServiceGroupRequest {
+	return APIUpdateAServiceGroupRequest{
+		APIService: a,
+		ctx: ctx,
+		serviceGroupID: serviceGroupID,
+	}
+}
+
+// UpdateAServiceGroupExecute executes the request
+//  @return map[string]any
+func (a *IamServiceGroupsAPIService) UpdateAServiceGroupExecute(r APIUpdateAServiceGroupRequest) (map[string]any, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  map[string]any
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.UpdateAServiceGroup")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/service-groups/{service_group_id}"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.requestBody
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
