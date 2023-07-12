@@ -17,8 +17,8 @@ import (
 	"encoding/json"
 )
 
-// UserResponseAllOf struct for UserResponseAllOf
-type UserResponseAllOf struct {
+// UserResponseReadOnly struct for UserResponseReadOnly
+type UserResponseReadOnly struct {
 	ID *string `json:"id,omitempty"`
 	// The alphanumeric string identifying a email login.
 	EmailHash *string `json:"email_hash,omitempty"`
@@ -26,27 +26,27 @@ type UserResponseAllOf struct {
 	AdditionalProperties map[string]any
 }
 
-type _UserResponseAllOf UserResponseAllOf
+type _UserResponseReadOnly UserResponseReadOnly
 
-// NewUserResponseAllOf instantiates a new UserResponseAllOf object
+// NewUserResponseReadOnly instantiates a new UserResponseReadOnly object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewUserResponseAllOf() *UserResponseAllOf {
-	this := UserResponseAllOf{}
+func NewUserResponseReadOnly() *UserResponseReadOnly {
+	this := UserResponseReadOnly{}
 	return &this
 }
 
-// NewUserResponseAllOfWithDefaults instantiates a new UserResponseAllOf object
+// NewUserResponseReadOnlyWithDefaults instantiates a new UserResponseReadOnly object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewUserResponseAllOfWithDefaults() *UserResponseAllOf {
-	this := UserResponseAllOf{}
+func NewUserResponseReadOnlyWithDefaults() *UserResponseReadOnly {
+	this := UserResponseReadOnly{}
 	return &this
 }
 
 // GetID returns the ID field value if set, zero value otherwise.
-func (o *UserResponseAllOf) GetID() string {
+func (o *UserResponseReadOnly) GetID() string {
 	if o == nil || o.ID == nil {
 		var ret string
 		return ret
@@ -56,7 +56,7 @@ func (o *UserResponseAllOf) GetID() string {
 
 // GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserResponseAllOf) GetIDOk() (*string, bool) {
+func (o *UserResponseReadOnly) GetIDOk() (*string, bool) {
 	if o == nil || o.ID == nil {
 		return nil, false
 	}
@@ -64,7 +64,7 @@ func (o *UserResponseAllOf) GetIDOk() (*string, bool) {
 }
 
 // HasID returns a boolean if a field has been set.
-func (o *UserResponseAllOf) HasID() bool {
+func (o *UserResponseReadOnly) HasID() bool {
 	if o != nil && o.ID != nil {
 		return true
 	}
@@ -73,12 +73,12 @@ func (o *UserResponseAllOf) HasID() bool {
 }
 
 // SetID gets a reference to the given string and assigns it to the ID field.
-func (o *UserResponseAllOf) SetID(v string) {
+func (o *UserResponseReadOnly) SetID(v string) {
 	o.ID = &v
 }
 
 // GetEmailHash returns the EmailHash field value if set, zero value otherwise.
-func (o *UserResponseAllOf) GetEmailHash() string {
+func (o *UserResponseReadOnly) GetEmailHash() string {
 	if o == nil || o.EmailHash == nil {
 		var ret string
 		return ret
@@ -88,7 +88,7 @@ func (o *UserResponseAllOf) GetEmailHash() string {
 
 // GetEmailHashOk returns a tuple with the EmailHash field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserResponseAllOf) GetEmailHashOk() (*string, bool) {
+func (o *UserResponseReadOnly) GetEmailHashOk() (*string, bool) {
 	if o == nil || o.EmailHash == nil {
 		return nil, false
 	}
@@ -96,7 +96,7 @@ func (o *UserResponseAllOf) GetEmailHashOk() (*string, bool) {
 }
 
 // HasEmailHash returns a boolean if a field has been set.
-func (o *UserResponseAllOf) HasEmailHash() bool {
+func (o *UserResponseReadOnly) HasEmailHash() bool {
 	if o != nil && o.EmailHash != nil {
 		return true
 	}
@@ -105,12 +105,12 @@ func (o *UserResponseAllOf) HasEmailHash() bool {
 }
 
 // SetEmailHash gets a reference to the given string and assigns it to the EmailHash field.
-func (o *UserResponseAllOf) SetEmailHash(v string) {
+func (o *UserResponseReadOnly) SetEmailHash(v string) {
 	o.EmailHash = &v
 }
 
 // GetCustomerID returns the CustomerID field value if set, zero value otherwise.
-func (o *UserResponseAllOf) GetCustomerID() string {
+func (o *UserResponseReadOnly) GetCustomerID() string {
 	if o == nil || o.CustomerID == nil {
 		var ret string
 		return ret
@@ -120,7 +120,7 @@ func (o *UserResponseAllOf) GetCustomerID() string {
 
 // GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserResponseAllOf) GetCustomerIDOk() (*string, bool) {
+func (o *UserResponseReadOnly) GetCustomerIDOk() (*string, bool) {
 	if o == nil || o.CustomerID == nil {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *UserResponseAllOf) GetCustomerIDOk() (*string, bool) {
 }
 
 // HasCustomerID returns a boolean if a field has been set.
-func (o *UserResponseAllOf) HasCustomerID() bool {
+func (o *UserResponseReadOnly) HasCustomerID() bool {
 	if o != nil && o.CustomerID != nil {
 		return true
 	}
@@ -137,13 +137,13 @@ func (o *UserResponseAllOf) HasCustomerID() bool {
 }
 
 // SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
-func (o *UserResponseAllOf) SetCustomerID(v string) {
+func (o *UserResponseReadOnly) SetCustomerID(v string) {
 	o.CustomerID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o UserResponseAllOf) MarshalJSON() ([]byte, error) {
+func (o UserResponseReadOnly) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.ID != nil {
 		toSerialize["id"] = o.ID
@@ -164,11 +164,11 @@ func (o UserResponseAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *UserResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varUserResponseAllOf := _UserResponseAllOf{}
+func (o *UserResponseReadOnly) UnmarshalJSON(bytes []byte) (err error) {
+	varUserResponseReadOnly := _UserResponseReadOnly{}
 
-	if err = json.Unmarshal(bytes, &varUserResponseAllOf); err == nil {
-		*o = UserResponseAllOf(varUserResponseAllOf)
+	if err = json.Unmarshal(bytes, &varUserResponseReadOnly); err == nil {
+		*o = UserResponseReadOnly(varUserResponseReadOnly)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -183,48 +183,48 @@ func (o *UserResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableUserResponseAllOf is a helper abstraction for handling nullable userresponseallof types. 
-type NullableUserResponseAllOf struct {
-	value *UserResponseAllOf
+// NullableUserResponseReadOnly is a helper abstraction for handling nullable userresponsereadonly types. 
+type NullableUserResponseReadOnly struct {
+	value *UserResponseReadOnly
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableUserResponseAllOf) Get() *UserResponseAllOf {
+func (v NullableUserResponseReadOnly) Get() *UserResponseReadOnly {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableUserResponseAllOf) Set(val *UserResponseAllOf) {
+func (v *NullableUserResponseReadOnly) Set(val *UserResponseReadOnly) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableUserResponseAllOf) IsSet() bool {
+func (v NullableUserResponseReadOnly) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableUserResponseAllOf) Unset() {
+func (v *NullableUserResponseReadOnly) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableUserResponseAllOf returns a pointer to a new instance of NullableUserResponseAllOf.
-func NewNullableUserResponseAllOf(val *UserResponseAllOf) *NullableUserResponseAllOf {
-	return &NullableUserResponseAllOf{value: val, isSet: true}
+// NewNullableUserResponseReadOnly returns a pointer to a new instance of NullableUserResponseReadOnly.
+func NewNullableUserResponseReadOnly(val *UserResponseReadOnly) *NullableUserResponseReadOnly {
+	return &NullableUserResponseReadOnly{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableUserResponseAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableUserResponseReadOnly) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableUserResponseAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableUserResponseReadOnly) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

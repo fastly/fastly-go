@@ -1,4 +1,4 @@
-# UserResponseAllOf
+# UserResponseReadOnly
 
 ## Properties
 
@@ -10,95 +10,95 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewUserResponseAllOf
+### NewUserResponseReadOnly
 
-`func NewUserResponseAllOf() *UserResponseAllOf`
+`func NewUserResponseReadOnly() *UserResponseReadOnly`
 
-NewUserResponseAllOf instantiates a new UserResponseAllOf object
+NewUserResponseReadOnly instantiates a new UserResponseReadOnly object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewUserResponseAllOfWithDefaults
+### NewUserResponseReadOnlyWithDefaults
 
-`func NewUserResponseAllOfWithDefaults() *UserResponseAllOf`
+`func NewUserResponseReadOnlyWithDefaults() *UserResponseReadOnly`
 
-NewUserResponseAllOfWithDefaults instantiates a new UserResponseAllOf object
+NewUserResponseReadOnlyWithDefaults instantiates a new UserResponseReadOnly object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetID
 
-`func (o *UserResponseAllOf) GetID() string`
+`func (o *UserResponseReadOnly) GetID() string`
 
 GetID returns the ID field if non-nil, zero value otherwise.
 
 ### GetIDOk
 
-`func (o *UserResponseAllOf) GetIDOk() (*string, bool)`
+`func (o *UserResponseReadOnly) GetIDOk() (*string, bool)`
 
 GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetID
 
-`func (o *UserResponseAllOf) SetID(v string)`
+`func (o *UserResponseReadOnly) SetID(v string)`
 
 SetID sets ID field to given value.
 
 ### HasID
 
-`func (o *UserResponseAllOf) HasID() bool`
+`func (o *UserResponseReadOnly) HasID() bool`
 
 HasID returns a boolean if a field has been set.
 
 ### GetEmailHash
 
-`func (o *UserResponseAllOf) GetEmailHash() string`
+`func (o *UserResponseReadOnly) GetEmailHash() string`
 
 GetEmailHash returns the EmailHash field if non-nil, zero value otherwise.
 
 ### GetEmailHashOk
 
-`func (o *UserResponseAllOf) GetEmailHashOk() (*string, bool)`
+`func (o *UserResponseReadOnly) GetEmailHashOk() (*string, bool)`
 
 GetEmailHashOk returns a tuple with the EmailHash field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEmailHash
 
-`func (o *UserResponseAllOf) SetEmailHash(v string)`
+`func (o *UserResponseReadOnly) SetEmailHash(v string)`
 
 SetEmailHash sets EmailHash field to given value.
 
 ### HasEmailHash
 
-`func (o *UserResponseAllOf) HasEmailHash() bool`
+`func (o *UserResponseReadOnly) HasEmailHash() bool`
 
 HasEmailHash returns a boolean if a field has been set.
 
 ### GetCustomerID
 
-`func (o *UserResponseAllOf) GetCustomerID() string`
+`func (o *UserResponseReadOnly) GetCustomerID() string`
 
 GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
 
 ### GetCustomerIDOk
 
-`func (o *UserResponseAllOf) GetCustomerIDOk() (*string, bool)`
+`func (o *UserResponseReadOnly) GetCustomerIDOk() (*string, bool)`
 
 GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerID
 
-`func (o *UserResponseAllOf) SetCustomerID(v string)`
+`func (o *UserResponseReadOnly) SetCustomerID(v string)`
 
 SetCustomerID sets CustomerID field to given value.
 
 ### HasCustomerID
 
-`func (o *UserResponseAllOf) HasCustomerID() bool`
+`func (o *UserResponseReadOnly) HasCustomerID() bool`
 
 HasCustomerID returns a boolean if a field has been set.
 

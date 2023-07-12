@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **Login** | Pointer to **string** |  | [optional] [readonly] 
 **Name** | Pointer to **string** | The real life name of the user. | [optional] 
 **LimitServices** | Pointer to **bool** | Indicates that the user has limited access to the customer&#39;s services. | [optional] 
-**Locked** | Pointer to **bool** | Indicates whether the is account is locked for editing or not. | [optional] 
-**RequireNewPassword** | Pointer to **bool** | Indicates if a new password is required at next login. | [optional] 
+**Locked** | Pointer to **NullableBool** | Indicates whether the is account is locked for editing or not. | [optional] 
+**RequireNewPassword** | Pointer to **NullableBool** | Indicates if a new password is required at next login. | [optional] 
 **Role** | Pointer to [**RoleUser**](RoleUser.md) |  | [optional] 
-**TwoFactorAuthEnabled** | Pointer to **bool** | Indicates if 2FA is enabled on the user. | [optional] 
+**TwoFactorAuthEnabled** | Pointer to **NullableBool** | Indicates if 2FA is enabled on the user. | [optional] 
 **TwoFactorSetupRequired** | Pointer to **bool** | Indicates if 2FA is required by the user&#39;s customer account. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -138,6 +138,16 @@ SetLocked sets Locked field to given value.
 
 HasLocked returns a boolean if a field has been set.
 
+### SetLockedNil
+
+`func (o *UserResponse) SetLockedNil(b bool)`
+
+ SetLockedNil sets the value for Locked to be an explicit nil
+
+### UnsetLocked
+`func (o *UserResponse) UnsetLocked()`
+
+UnsetLocked ensures that no value is present for Locked, not even an explicit nil
 ### GetRequireNewPassword
 
 `func (o *UserResponse) GetRequireNewPassword() bool`
@@ -163,6 +173,16 @@ SetRequireNewPassword sets RequireNewPassword field to given value.
 
 HasRequireNewPassword returns a boolean if a field has been set.
 
+### SetRequireNewPasswordNil
+
+`func (o *UserResponse) SetRequireNewPasswordNil(b bool)`
+
+ SetRequireNewPasswordNil sets the value for RequireNewPassword to be an explicit nil
+
+### UnsetRequireNewPassword
+`func (o *UserResponse) UnsetRequireNewPassword()`
+
+UnsetRequireNewPassword ensures that no value is present for RequireNewPassword, not even an explicit nil
 ### GetRole
 
 `func (o *UserResponse) GetRole() RoleUser`
@@ -213,6 +233,16 @@ SetTwoFactorAuthEnabled sets TwoFactorAuthEnabled field to given value.
 
 HasTwoFactorAuthEnabled returns a boolean if a field has been set.
 
+### SetTwoFactorAuthEnabledNil
+
+`func (o *UserResponse) SetTwoFactorAuthEnabledNil(b bool)`
+
+ SetTwoFactorAuthEnabledNil sets the value for TwoFactorAuthEnabled to be an explicit nil
+
+### UnsetTwoFactorAuthEnabled
+`func (o *UserResponse) UnsetTwoFactorAuthEnabled()`
+
+UnsetTwoFactorAuthEnabled ensures that no value is present for TwoFactorAuthEnabled, not even an explicit nil
 ### GetTwoFactorSetupRequired
 
 `func (o *UserResponse) GetTwoFactorSetupRequired() bool`

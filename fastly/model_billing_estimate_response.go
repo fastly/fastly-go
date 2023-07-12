@@ -32,7 +32,7 @@ type BillingEstimateResponse struct {
 	Total *BillingTotal `json:"total,omitempty"`
 	// Breakdown of regional data for products that are region based.
 	Regions *map[string]map[string]map[string]any `json:"regions,omitempty"`
-	Lines []BillingEstimateResponseAllOfLines `json:"lines,omitempty"`
+	LineItems []BillingEstimateLinesLineItems `json:"line_items,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -331,36 +331,36 @@ func (o *BillingEstimateResponse) SetRegions(v map[string]map[string]map[string]
 	o.Regions = &v
 }
 
-// GetLines returns the Lines field value if set, zero value otherwise.
-func (o *BillingEstimateResponse) GetLines() []BillingEstimateResponseAllOfLines {
-	if o == nil || o.Lines == nil {
-		var ret []BillingEstimateResponseAllOfLines
+// GetLineItems returns the LineItems field value if set, zero value otherwise.
+func (o *BillingEstimateResponse) GetLineItems() []BillingEstimateLinesLineItems {
+	if o == nil || o.LineItems == nil {
+		var ret []BillingEstimateLinesLineItems
 		return ret
 	}
-	return o.Lines
+	return o.LineItems
 }
 
-// GetLinesOk returns a tuple with the Lines field value if set, nil otherwise
+// GetLineItemsOk returns a tuple with the LineItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingEstimateResponse) GetLinesOk() ([]BillingEstimateResponseAllOfLines, bool) {
-	if o == nil || o.Lines == nil {
+func (o *BillingEstimateResponse) GetLineItemsOk() ([]BillingEstimateLinesLineItems, bool) {
+	if o == nil || o.LineItems == nil {
 		return nil, false
 	}
-	return o.Lines, true
+	return o.LineItems, true
 }
 
-// HasLines returns a boolean if a field has been set.
-func (o *BillingEstimateResponse) HasLines() bool {
-	if o != nil && o.Lines != nil {
+// HasLineItems returns a boolean if a field has been set.
+func (o *BillingEstimateResponse) HasLineItems() bool {
+	if o != nil && o.LineItems != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetLines gets a reference to the given []BillingEstimateResponseAllOfLines and assigns it to the Lines field.
-func (o *BillingEstimateResponse) SetLines(v []BillingEstimateResponseAllOfLines) {
-	o.Lines = v
+// SetLineItems gets a reference to the given []BillingEstimateLinesLineItems and assigns it to the LineItems field.
+func (o *BillingEstimateResponse) SetLineItems(v []BillingEstimateLinesLineItems) {
+	o.LineItems = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -391,8 +391,8 @@ func (o BillingEstimateResponse) MarshalJSON() ([]byte, error) {
 	if o.Regions != nil {
 		toSerialize["regions"] = o.Regions
 	}
-	if o.Lines != nil {
-		toSerialize["lines"] = o.Lines
+	if o.LineItems != nil {
+		toSerialize["line_items"] = o.LineItems
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -422,7 +422,7 @@ func (o *BillingEstimateResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "status")
 		delete(additionalProperties, "total")
 		delete(additionalProperties, "regions")
-		delete(additionalProperties, "lines")
+		delete(additionalProperties, "line_items")
 		o.AdditionalProperties = additionalProperties
 	}
 

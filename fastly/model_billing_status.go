@@ -22,8 +22,9 @@ import (
 type BillingStatus struct {
 	// What the current status of this invoice can be.
 	Status *string `json:"status,omitempty"`
+	// Date and time in ISO 8601 format.
 	// Deprecated
-	SentAt *time.Time `json:"sent_at,omitempty"`
+	SentAt NullableTime `json:"sent_at,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -78,39 +79,49 @@ func (o *BillingStatus) SetStatus(v string) {
 	o.Status = &v
 }
 
-// GetSentAt returns the SentAt field value if set, zero value otherwise.
+// GetSentAt returns the SentAt field value if set, zero value otherwise (both if not set or set to explicit null).
 // Deprecated
 func (o *BillingStatus) GetSentAt() time.Time {
-	if o == nil || o.SentAt == nil {
+	if o == nil || o.SentAt.Get() == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.SentAt
+	return *o.SentAt.Get()
 }
 
 // GetSentAtOk returns a tuple with the SentAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 // Deprecated
 func (o *BillingStatus) GetSentAtOk() (*time.Time, bool) {
-	if o == nil || o.SentAt == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.SentAt, true
+	return o.SentAt.Get(), o.SentAt.IsSet()
 }
 
 // HasSentAt returns a boolean if a field has been set.
 func (o *BillingStatus) HasSentAt() bool {
-	if o != nil && o.SentAt != nil {
+	if o != nil && o.SentAt.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSentAt gets a reference to the given time.Time and assigns it to the SentAt field.
+// SetSentAt gets a reference to the given NullableTime and assigns it to the SentAt field.
 // Deprecated
 func (o *BillingStatus) SetSentAt(v time.Time) {
-	o.SentAt = &v
+	o.SentAt.Set(&v)
+}
+// SetSentAtNil sets the value for SentAt to be an explicit nil
+func (o *BillingStatus) SetSentAtNil() {
+	o.SentAt.Set(nil)
+}
+
+// UnsetSentAt ensures that no value is present for SentAt, not even an explicit nil
+func (o *BillingStatus) UnsetSentAt() {
+	o.SentAt.Unset()
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -120,8 +131,8 @@ func (o BillingStatus) MarshalJSON() ([]byte, error) {
 	if o.Status != nil {
 		toSerialize["status"] = o.Status
 	}
-	if o.SentAt != nil {
-		toSerialize["sent_at"] = o.SentAt
+	if o.SentAt.IsSet() {
+		toSerialize["sent_at"] = o.SentAt.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

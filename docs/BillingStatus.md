@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Status** | Pointer to **string** | What the current status of this invoice can be. | [optional] 
-**SentAt** | Pointer to [**time.Time**](time.Time.md) |  | [optional] 
+**SentAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 
 ## Methods
 
@@ -76,5 +76,15 @@ SetSentAt sets SentAt field to given value.
 
 HasSentAt returns a boolean if a field has been set.
 
+### SetSentAtNil
+
+`func (o *BillingStatus) SetSentAtNil(b bool)`
+
+ SetSentAtNil sets the value for SentAt to be an explicit nil
+
+### UnsetSentAt
+`func (o *BillingStatus) UnsetSentAt()`
+
+UnsetSentAt ensures that no value is present for SentAt, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

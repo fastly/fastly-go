@@ -26,12 +26,12 @@ type SchemasUserResponse struct {
 	// Indicates that the user has limited access to the customer's services.
 	LimitServices *bool `json:"limit_services,omitempty"`
 	// Indicates whether the is account is locked for editing or not.
-	Locked *bool `json:"locked,omitempty"`
+	Locked NullableBool `json:"locked,omitempty"`
 	// Indicates if a new password is required at next login.
-	RequireNewPassword *bool `json:"require_new_password,omitempty"`
+	RequireNewPassword NullableBool `json:"require_new_password,omitempty"`
 	Role *RoleUser `json:"role,omitempty"`
 	// Indicates if 2FA is enabled on the user.
-	TwoFactorAuthEnabled *bool `json:"two_factor_auth_enabled,omitempty"`
+	TwoFactorAuthEnabled NullableBool `json:"two_factor_auth_enabled,omitempty"`
 	// Indicates if 2FA is required by the user's customer account.
 	TwoFactorSetupRequired *bool `json:"two_factor_setup_required,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -162,68 +162,88 @@ func (o *SchemasUserResponse) SetLimitServices(v bool) {
 	o.LimitServices = &v
 }
 
-// GetLocked returns the Locked field value if set, zero value otherwise.
+// GetLocked returns the Locked field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SchemasUserResponse) GetLocked() bool {
-	if o == nil || o.Locked == nil {
+	if o == nil || o.Locked.Get() == nil {
 		var ret bool
 		return ret
 	}
-	return *o.Locked
+	return *o.Locked.Get()
 }
 
 // GetLockedOk returns a tuple with the Locked field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasUserResponse) GetLockedOk() (*bool, bool) {
-	if o == nil || o.Locked == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Locked, true
+	return o.Locked.Get(), o.Locked.IsSet()
 }
 
 // HasLocked returns a boolean if a field has been set.
 func (o *SchemasUserResponse) HasLocked() bool {
-	if o != nil && o.Locked != nil {
+	if o != nil && o.Locked.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLocked gets a reference to the given bool and assigns it to the Locked field.
+// SetLocked gets a reference to the given NullableBool and assigns it to the Locked field.
 func (o *SchemasUserResponse) SetLocked(v bool) {
-	o.Locked = &v
+	o.Locked.Set(&v)
+}
+// SetLockedNil sets the value for Locked to be an explicit nil
+func (o *SchemasUserResponse) SetLockedNil() {
+	o.Locked.Set(nil)
 }
 
-// GetRequireNewPassword returns the RequireNewPassword field value if set, zero value otherwise.
+// UnsetLocked ensures that no value is present for Locked, not even an explicit nil
+func (o *SchemasUserResponse) UnsetLocked() {
+	o.Locked.Unset()
+}
+
+// GetRequireNewPassword returns the RequireNewPassword field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SchemasUserResponse) GetRequireNewPassword() bool {
-	if o == nil || o.RequireNewPassword == nil {
+	if o == nil || o.RequireNewPassword.Get() == nil {
 		var ret bool
 		return ret
 	}
-	return *o.RequireNewPassword
+	return *o.RequireNewPassword.Get()
 }
 
 // GetRequireNewPasswordOk returns a tuple with the RequireNewPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasUserResponse) GetRequireNewPasswordOk() (*bool, bool) {
-	if o == nil || o.RequireNewPassword == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.RequireNewPassword, true
+	return o.RequireNewPassword.Get(), o.RequireNewPassword.IsSet()
 }
 
 // HasRequireNewPassword returns a boolean if a field has been set.
 func (o *SchemasUserResponse) HasRequireNewPassword() bool {
-	if o != nil && o.RequireNewPassword != nil {
+	if o != nil && o.RequireNewPassword.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRequireNewPassword gets a reference to the given bool and assigns it to the RequireNewPassword field.
+// SetRequireNewPassword gets a reference to the given NullableBool and assigns it to the RequireNewPassword field.
 func (o *SchemasUserResponse) SetRequireNewPassword(v bool) {
-	o.RequireNewPassword = &v
+	o.RequireNewPassword.Set(&v)
+}
+// SetRequireNewPasswordNil sets the value for RequireNewPassword to be an explicit nil
+func (o *SchemasUserResponse) SetRequireNewPasswordNil() {
+	o.RequireNewPassword.Set(nil)
+}
+
+// UnsetRequireNewPassword ensures that no value is present for RequireNewPassword, not even an explicit nil
+func (o *SchemasUserResponse) UnsetRequireNewPassword() {
+	o.RequireNewPassword.Unset()
 }
 
 // GetRole returns the Role field value if set, zero value otherwise.
@@ -258,36 +278,46 @@ func (o *SchemasUserResponse) SetRole(v RoleUser) {
 	o.Role = &v
 }
 
-// GetTwoFactorAuthEnabled returns the TwoFactorAuthEnabled field value if set, zero value otherwise.
+// GetTwoFactorAuthEnabled returns the TwoFactorAuthEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SchemasUserResponse) GetTwoFactorAuthEnabled() bool {
-	if o == nil || o.TwoFactorAuthEnabled == nil {
+	if o == nil || o.TwoFactorAuthEnabled.Get() == nil {
 		var ret bool
 		return ret
 	}
-	return *o.TwoFactorAuthEnabled
+	return *o.TwoFactorAuthEnabled.Get()
 }
 
 // GetTwoFactorAuthEnabledOk returns a tuple with the TwoFactorAuthEnabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasUserResponse) GetTwoFactorAuthEnabledOk() (*bool, bool) {
-	if o == nil || o.TwoFactorAuthEnabled == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.TwoFactorAuthEnabled, true
+	return o.TwoFactorAuthEnabled.Get(), o.TwoFactorAuthEnabled.IsSet()
 }
 
 // HasTwoFactorAuthEnabled returns a boolean if a field has been set.
 func (o *SchemasUserResponse) HasTwoFactorAuthEnabled() bool {
-	if o != nil && o.TwoFactorAuthEnabled != nil {
+	if o != nil && o.TwoFactorAuthEnabled.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTwoFactorAuthEnabled gets a reference to the given bool and assigns it to the TwoFactorAuthEnabled field.
+// SetTwoFactorAuthEnabled gets a reference to the given NullableBool and assigns it to the TwoFactorAuthEnabled field.
 func (o *SchemasUserResponse) SetTwoFactorAuthEnabled(v bool) {
-	o.TwoFactorAuthEnabled = &v
+	o.TwoFactorAuthEnabled.Set(&v)
+}
+// SetTwoFactorAuthEnabledNil sets the value for TwoFactorAuthEnabled to be an explicit nil
+func (o *SchemasUserResponse) SetTwoFactorAuthEnabledNil() {
+	o.TwoFactorAuthEnabled.Set(nil)
+}
+
+// UnsetTwoFactorAuthEnabled ensures that no value is present for TwoFactorAuthEnabled, not even an explicit nil
+func (o *SchemasUserResponse) UnsetTwoFactorAuthEnabled() {
+	o.TwoFactorAuthEnabled.Unset()
 }
 
 // GetTwoFactorSetupRequired returns the TwoFactorSetupRequired field value if set, zero value otherwise.
@@ -557,17 +587,17 @@ func (o SchemasUserResponse) MarshalJSON() ([]byte, error) {
 	if o.LimitServices != nil {
 		toSerialize["limit_services"] = o.LimitServices
 	}
-	if o.Locked != nil {
-		toSerialize["locked"] = o.Locked
+	if o.Locked.IsSet() {
+		toSerialize["locked"] = o.Locked.Get()
 	}
-	if o.RequireNewPassword != nil {
-		toSerialize["require_new_password"] = o.RequireNewPassword
+	if o.RequireNewPassword.IsSet() {
+		toSerialize["require_new_password"] = o.RequireNewPassword.Get()
 	}
 	if o.Role != nil {
 		toSerialize["role"] = o.Role
 	}
-	if o.TwoFactorAuthEnabled != nil {
-		toSerialize["two_factor_auth_enabled"] = o.TwoFactorAuthEnabled
+	if o.TwoFactorAuthEnabled.IsSet() {
+		toSerialize["two_factor_auth_enabled"] = o.TwoFactorAuthEnabled.Get()
 	}
 	if o.TwoFactorSetupRequired != nil {
 		toSerialize["two_factor_setup_required"] = o.TwoFactorSetupRequired

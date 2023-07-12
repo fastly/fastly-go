@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to [**BillingStatus**](BillingStatus.md) |  | [optional] 
 **Total** | Pointer to [**BillingTotal**](BillingTotal.md) |  | [optional] 
 **Regions** | Pointer to **map[string]map[string]map[string]any** | Breakdown of regional data for products that are region based. | [optional] 
-**Lines** | Pointer to [**[]BillingEstimateResponseAllOfLines**](BillingEstimateResponseAllOfLines.md) |  | [optional] 
+**LineItems** | Pointer to [**[]BillingEstimateLinesLineItems**](BillingEstimateLinesLineItems.md) |  | [optional] 
 
 ## Methods
 
@@ -253,30 +253,30 @@ SetRegions sets Regions field to given value.
 
 HasRegions returns a boolean if a field has been set.
 
-### GetLines
+### GetLineItems
 
-`func (o *BillingEstimateResponse) GetLines() []BillingEstimateResponseAllOfLines`
+`func (o *BillingEstimateResponse) GetLineItems() []BillingEstimateLinesLineItems`
 
-GetLines returns the Lines field if non-nil, zero value otherwise.
+GetLineItems returns the LineItems field if non-nil, zero value otherwise.
 
-### GetLinesOk
+### GetLineItemsOk
 
-`func (o *BillingEstimateResponse) GetLinesOk() (*[]BillingEstimateResponseAllOfLines, bool)`
+`func (o *BillingEstimateResponse) GetLineItemsOk() (*[]BillingEstimateLinesLineItems, bool)`
 
-GetLinesOk returns a tuple with the Lines field if it's non-nil, zero value otherwise
+GetLineItemsOk returns a tuple with the LineItems field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLines
+### SetLineItems
 
-`func (o *BillingEstimateResponse) SetLines(v []BillingEstimateResponseAllOfLines)`
+`func (o *BillingEstimateResponse) SetLineItems(v []BillingEstimateLinesLineItems)`
 
-SetLines sets Lines field to given value.
+SetLineItems sets LineItems field to given value.
 
-### HasLines
+### HasLineItems
 
-`func (o *BillingEstimateResponse) HasLines() bool`
+`func (o *BillingEstimateResponse) HasLineItems() bool`
 
-HasLines returns a boolean if a field has been set.
+HasLineItems returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

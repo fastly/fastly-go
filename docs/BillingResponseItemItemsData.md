@@ -1,4 +1,4 @@
-# BillingResponseAllOf
+# BillingResponseItemItemsData
 
 ## Properties
 
@@ -8,45 +8,45 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewBillingResponseAllOf
+### NewBillingResponseItemItemsData
 
-`func NewBillingResponseAllOf() *BillingResponseAllOf`
+`func NewBillingResponseItemItemsData() *BillingResponseItemItemsData`
 
-NewBillingResponseAllOf instantiates a new BillingResponseAllOf object
+NewBillingResponseItemItemsData instantiates a new BillingResponseItemItemsData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewBillingResponseAllOfWithDefaults
+### NewBillingResponseItemItemsDataWithDefaults
 
-`func NewBillingResponseAllOfWithDefaults() *BillingResponseAllOf`
+`func NewBillingResponseItemItemsDataWithDefaults() *BillingResponseItemItemsData`
 
-NewBillingResponseAllOfWithDefaults instantiates a new BillingResponseAllOf object
+NewBillingResponseItemItemsDataWithDefaults instantiates a new BillingResponseItemItemsData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetLineItems
 
-`func (o *BillingResponseAllOf) GetLineItems() []BillingResponseLineItem`
+`func (o *BillingResponseItemItemsData) GetLineItems() []BillingResponseLineItem`
 
 GetLineItems returns the LineItems field if non-nil, zero value otherwise.
 
 ### GetLineItemsOk
 
-`func (o *BillingResponseAllOf) GetLineItemsOk() (*[]BillingResponseLineItem, bool)`
+`func (o *BillingResponseItemItemsData) GetLineItemsOk() (*[]BillingResponseLineItem, bool)`
 
 GetLineItemsOk returns a tuple with the LineItems field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLineItems
 
-`func (o *BillingResponseAllOf) SetLineItems(v []BillingResponseLineItem)`
+`func (o *BillingResponseItemItemsData) SetLineItems(v []BillingResponseLineItem)`
 
 SetLineItems sets LineItems field to given value.
 
 ### HasLineItems
 
-`func (o *BillingResponseAllOf) HasLineItems() bool`
+`func (o *BillingResponseItemItemsData) HasLineItems() bool`
 
 HasLineItems returns a boolean if a field has been set.
 

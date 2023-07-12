@@ -17,8 +17,8 @@ import (
 	"encoding/json"
 )
 
-// BillingEstimateResponseAllOfLine struct for BillingEstimateResponseAllOfLine
-type BillingEstimateResponseAllOfLine struct {
+// BillingEstimateLinesLineItems struct for BillingEstimateLinesLineItems
+type BillingEstimateLinesLineItems struct {
 	PlanNo *int32 `json:"plan_no,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Units *float32 `json:"units,omitempty"`
@@ -31,27 +31,27 @@ type BillingEstimateResponseAllOfLine struct {
 	AdditionalProperties map[string]any
 }
 
-type _BillingEstimateResponseAllOfLine BillingEstimateResponseAllOfLine
+type _BillingEstimateLinesLineItems BillingEstimateLinesLineItems
 
-// NewBillingEstimateResponseAllOfLine instantiates a new BillingEstimateResponseAllOfLine object
+// NewBillingEstimateLinesLineItems instantiates a new BillingEstimateLinesLineItems object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBillingEstimateResponseAllOfLine() *BillingEstimateResponseAllOfLine {
-	this := BillingEstimateResponseAllOfLine{}
+func NewBillingEstimateLinesLineItems() *BillingEstimateLinesLineItems {
+	this := BillingEstimateLinesLineItems{}
 	return &this
 }
 
-// NewBillingEstimateResponseAllOfLineWithDefaults instantiates a new BillingEstimateResponseAllOfLine object
+// NewBillingEstimateLinesLineItemsWithDefaults instantiates a new BillingEstimateLinesLineItems object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewBillingEstimateResponseAllOfLineWithDefaults() *BillingEstimateResponseAllOfLine {
-	this := BillingEstimateResponseAllOfLine{}
+func NewBillingEstimateLinesLineItemsWithDefaults() *BillingEstimateLinesLineItems {
+	this := BillingEstimateLinesLineItems{}
 	return &this
 }
 
 // GetPlanNo returns the PlanNo field value if set, zero value otherwise.
-func (o *BillingEstimateResponseAllOfLine) GetPlanNo() int32 {
+func (o *BillingEstimateLinesLineItems) GetPlanNo() int32 {
 	if o == nil || o.PlanNo == nil {
 		var ret int32
 		return ret
@@ -61,7 +61,7 @@ func (o *BillingEstimateResponseAllOfLine) GetPlanNo() int32 {
 
 // GetPlanNoOk returns a tuple with the PlanNo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingEstimateResponseAllOfLine) GetPlanNoOk() (*int32, bool) {
+func (o *BillingEstimateLinesLineItems) GetPlanNoOk() (*int32, bool) {
 	if o == nil || o.PlanNo == nil {
 		return nil, false
 	}
@@ -69,7 +69,7 @@ func (o *BillingEstimateResponseAllOfLine) GetPlanNoOk() (*int32, bool) {
 }
 
 // HasPlanNo returns a boolean if a field has been set.
-func (o *BillingEstimateResponseAllOfLine) HasPlanNo() bool {
+func (o *BillingEstimateLinesLineItems) HasPlanNo() bool {
 	if o != nil && o.PlanNo != nil {
 		return true
 	}
@@ -78,12 +78,12 @@ func (o *BillingEstimateResponseAllOfLine) HasPlanNo() bool {
 }
 
 // SetPlanNo gets a reference to the given int32 and assigns it to the PlanNo field.
-func (o *BillingEstimateResponseAllOfLine) SetPlanNo(v int32) {
+func (o *BillingEstimateLinesLineItems) SetPlanNo(v int32) {
 	o.PlanNo = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
-func (o *BillingEstimateResponseAllOfLine) GetDescription() string {
+func (o *BillingEstimateLinesLineItems) GetDescription() string {
 	if o == nil || o.Description == nil {
 		var ret string
 		return ret
@@ -93,7 +93,7 @@ func (o *BillingEstimateResponseAllOfLine) GetDescription() string {
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingEstimateResponseAllOfLine) GetDescriptionOk() (*string, bool) {
+func (o *BillingEstimateLinesLineItems) GetDescriptionOk() (*string, bool) {
 	if o == nil || o.Description == nil {
 		return nil, false
 	}
@@ -101,7 +101,7 @@ func (o *BillingEstimateResponseAllOfLine) GetDescriptionOk() (*string, bool) {
 }
 
 // HasDescription returns a boolean if a field has been set.
-func (o *BillingEstimateResponseAllOfLine) HasDescription() bool {
+func (o *BillingEstimateLinesLineItems) HasDescription() bool {
 	if o != nil && o.Description != nil {
 		return true
 	}
@@ -110,12 +110,12 @@ func (o *BillingEstimateResponseAllOfLine) HasDescription() bool {
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *BillingEstimateResponseAllOfLine) SetDescription(v string) {
+func (o *BillingEstimateLinesLineItems) SetDescription(v string) {
 	o.Description = &v
 }
 
 // GetUnits returns the Units field value if set, zero value otherwise.
-func (o *BillingEstimateResponseAllOfLine) GetUnits() float32 {
+func (o *BillingEstimateLinesLineItems) GetUnits() float32 {
 	if o == nil || o.Units == nil {
 		var ret float32
 		return ret
@@ -125,7 +125,7 @@ func (o *BillingEstimateResponseAllOfLine) GetUnits() float32 {
 
 // GetUnitsOk returns a tuple with the Units field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingEstimateResponseAllOfLine) GetUnitsOk() (*float32, bool) {
+func (o *BillingEstimateLinesLineItems) GetUnitsOk() (*float32, bool) {
 	if o == nil || o.Units == nil {
 		return nil, false
 	}
@@ -133,7 +133,7 @@ func (o *BillingEstimateResponseAllOfLine) GetUnitsOk() (*float32, bool) {
 }
 
 // HasUnits returns a boolean if a field has been set.
-func (o *BillingEstimateResponseAllOfLine) HasUnits() bool {
+func (o *BillingEstimateLinesLineItems) HasUnits() bool {
 	if o != nil && o.Units != nil {
 		return true
 	}
@@ -142,12 +142,12 @@ func (o *BillingEstimateResponseAllOfLine) HasUnits() bool {
 }
 
 // SetUnits gets a reference to the given float32 and assigns it to the Units field.
-func (o *BillingEstimateResponseAllOfLine) SetUnits(v float32) {
+func (o *BillingEstimateLinesLineItems) SetUnits(v float32) {
 	o.Units = &v
 }
 
 // GetPerUnitCost returns the PerUnitCost field value if set, zero value otherwise.
-func (o *BillingEstimateResponseAllOfLine) GetPerUnitCost() float32 {
+func (o *BillingEstimateLinesLineItems) GetPerUnitCost() float32 {
 	if o == nil || o.PerUnitCost == nil {
 		var ret float32
 		return ret
@@ -157,7 +157,7 @@ func (o *BillingEstimateResponseAllOfLine) GetPerUnitCost() float32 {
 
 // GetPerUnitCostOk returns a tuple with the PerUnitCost field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingEstimateResponseAllOfLine) GetPerUnitCostOk() (*float32, bool) {
+func (o *BillingEstimateLinesLineItems) GetPerUnitCostOk() (*float32, bool) {
 	if o == nil || o.PerUnitCost == nil {
 		return nil, false
 	}
@@ -165,7 +165,7 @@ func (o *BillingEstimateResponseAllOfLine) GetPerUnitCostOk() (*float32, bool) {
 }
 
 // HasPerUnitCost returns a boolean if a field has been set.
-func (o *BillingEstimateResponseAllOfLine) HasPerUnitCost() bool {
+func (o *BillingEstimateLinesLineItems) HasPerUnitCost() bool {
 	if o != nil && o.PerUnitCost != nil {
 		return true
 	}
@@ -174,12 +174,12 @@ func (o *BillingEstimateResponseAllOfLine) HasPerUnitCost() bool {
 }
 
 // SetPerUnitCost gets a reference to the given float32 and assigns it to the PerUnitCost field.
-func (o *BillingEstimateResponseAllOfLine) SetPerUnitCost(v float32) {
+func (o *BillingEstimateLinesLineItems) SetPerUnitCost(v float32) {
 	o.PerUnitCost = &v
 }
 
 // GetServiceNo returns the ServiceNo field value if set, zero value otherwise.
-func (o *BillingEstimateResponseAllOfLine) GetServiceNo() float32 {
+func (o *BillingEstimateLinesLineItems) GetServiceNo() float32 {
 	if o == nil || o.ServiceNo == nil {
 		var ret float32
 		return ret
@@ -189,7 +189,7 @@ func (o *BillingEstimateResponseAllOfLine) GetServiceNo() float32 {
 
 // GetServiceNoOk returns a tuple with the ServiceNo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingEstimateResponseAllOfLine) GetServiceNoOk() (*float32, bool) {
+func (o *BillingEstimateLinesLineItems) GetServiceNoOk() (*float32, bool) {
 	if o == nil || o.ServiceNo == nil {
 		return nil, false
 	}
@@ -197,7 +197,7 @@ func (o *BillingEstimateResponseAllOfLine) GetServiceNoOk() (*float32, bool) {
 }
 
 // HasServiceNo returns a boolean if a field has been set.
-func (o *BillingEstimateResponseAllOfLine) HasServiceNo() bool {
+func (o *BillingEstimateLinesLineItems) HasServiceNo() bool {
 	if o != nil && o.ServiceNo != nil {
 		return true
 	}
@@ -206,12 +206,12 @@ func (o *BillingEstimateResponseAllOfLine) HasServiceNo() bool {
 }
 
 // SetServiceNo gets a reference to the given float32 and assigns it to the ServiceNo field.
-func (o *BillingEstimateResponseAllOfLine) SetServiceNo(v float32) {
+func (o *BillingEstimateLinesLineItems) SetServiceNo(v float32) {
 	o.ServiceNo = &v
 }
 
 // GetServiceType returns the ServiceType field value if set, zero value otherwise.
-func (o *BillingEstimateResponseAllOfLine) GetServiceType() string {
+func (o *BillingEstimateLinesLineItems) GetServiceType() string {
 	if o == nil || o.ServiceType == nil {
 		var ret string
 		return ret
@@ -221,7 +221,7 @@ func (o *BillingEstimateResponseAllOfLine) GetServiceType() string {
 
 // GetServiceTypeOk returns a tuple with the ServiceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingEstimateResponseAllOfLine) GetServiceTypeOk() (*string, bool) {
+func (o *BillingEstimateLinesLineItems) GetServiceTypeOk() (*string, bool) {
 	if o == nil || o.ServiceType == nil {
 		return nil, false
 	}
@@ -229,7 +229,7 @@ func (o *BillingEstimateResponseAllOfLine) GetServiceTypeOk() (*string, bool) {
 }
 
 // HasServiceType returns a boolean if a field has been set.
-func (o *BillingEstimateResponseAllOfLine) HasServiceType() bool {
+func (o *BillingEstimateLinesLineItems) HasServiceType() bool {
 	if o != nil && o.ServiceType != nil {
 		return true
 	}
@@ -238,12 +238,12 @@ func (o *BillingEstimateResponseAllOfLine) HasServiceType() bool {
 }
 
 // SetServiceType gets a reference to the given string and assigns it to the ServiceType field.
-func (o *BillingEstimateResponseAllOfLine) SetServiceType(v string) {
+func (o *BillingEstimateLinesLineItems) SetServiceType(v string) {
 	o.ServiceType = &v
 }
 
 // GetAmount returns the Amount field value if set, zero value otherwise.
-func (o *BillingEstimateResponseAllOfLine) GetAmount() float32 {
+func (o *BillingEstimateLinesLineItems) GetAmount() float32 {
 	if o == nil || o.Amount == nil {
 		var ret float32
 		return ret
@@ -253,7 +253,7 @@ func (o *BillingEstimateResponseAllOfLine) GetAmount() float32 {
 
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingEstimateResponseAllOfLine) GetAmountOk() (*float32, bool) {
+func (o *BillingEstimateLinesLineItems) GetAmountOk() (*float32, bool) {
 	if o == nil || o.Amount == nil {
 		return nil, false
 	}
@@ -261,7 +261,7 @@ func (o *BillingEstimateResponseAllOfLine) GetAmountOk() (*float32, bool) {
 }
 
 // HasAmount returns a boolean if a field has been set.
-func (o *BillingEstimateResponseAllOfLine) HasAmount() bool {
+func (o *BillingEstimateLinesLineItems) HasAmount() bool {
 	if o != nil && o.Amount != nil {
 		return true
 	}
@@ -270,12 +270,12 @@ func (o *BillingEstimateResponseAllOfLine) HasAmount() bool {
 }
 
 // SetAmount gets a reference to the given float32 and assigns it to the Amount field.
-func (o *BillingEstimateResponseAllOfLine) SetAmount(v float32) {
+func (o *BillingEstimateLinesLineItems) SetAmount(v float32) {
 	o.Amount = &v
 }
 
 // GetClientServiceID returns the ClientServiceID field value if set, zero value otherwise.
-func (o *BillingEstimateResponseAllOfLine) GetClientServiceID() string {
+func (o *BillingEstimateLinesLineItems) GetClientServiceID() string {
 	if o == nil || o.ClientServiceID == nil {
 		var ret string
 		return ret
@@ -285,7 +285,7 @@ func (o *BillingEstimateResponseAllOfLine) GetClientServiceID() string {
 
 // GetClientServiceIDOk returns a tuple with the ClientServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingEstimateResponseAllOfLine) GetClientServiceIDOk() (*string, bool) {
+func (o *BillingEstimateLinesLineItems) GetClientServiceIDOk() (*string, bool) {
 	if o == nil || o.ClientServiceID == nil {
 		return nil, false
 	}
@@ -293,7 +293,7 @@ func (o *BillingEstimateResponseAllOfLine) GetClientServiceIDOk() (*string, bool
 }
 
 // HasClientServiceID returns a boolean if a field has been set.
-func (o *BillingEstimateResponseAllOfLine) HasClientServiceID() bool {
+func (o *BillingEstimateLinesLineItems) HasClientServiceID() bool {
 	if o != nil && o.ClientServiceID != nil {
 		return true
 	}
@@ -302,12 +302,12 @@ func (o *BillingEstimateResponseAllOfLine) HasClientServiceID() bool {
 }
 
 // SetClientServiceID gets a reference to the given string and assigns it to the ClientServiceID field.
-func (o *BillingEstimateResponseAllOfLine) SetClientServiceID(v string) {
+func (o *BillingEstimateLinesLineItems) SetClientServiceID(v string) {
 	o.ClientServiceID = &v
 }
 
 // GetClientPlanID returns the ClientPlanID field value if set, zero value otherwise.
-func (o *BillingEstimateResponseAllOfLine) GetClientPlanID() string {
+func (o *BillingEstimateLinesLineItems) GetClientPlanID() string {
 	if o == nil || o.ClientPlanID == nil {
 		var ret string
 		return ret
@@ -317,7 +317,7 @@ func (o *BillingEstimateResponseAllOfLine) GetClientPlanID() string {
 
 // GetClientPlanIDOk returns a tuple with the ClientPlanID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingEstimateResponseAllOfLine) GetClientPlanIDOk() (*string, bool) {
+func (o *BillingEstimateLinesLineItems) GetClientPlanIDOk() (*string, bool) {
 	if o == nil || o.ClientPlanID == nil {
 		return nil, false
 	}
@@ -325,7 +325,7 @@ func (o *BillingEstimateResponseAllOfLine) GetClientPlanIDOk() (*string, bool) {
 }
 
 // HasClientPlanID returns a boolean if a field has been set.
-func (o *BillingEstimateResponseAllOfLine) HasClientPlanID() bool {
+func (o *BillingEstimateLinesLineItems) HasClientPlanID() bool {
 	if o != nil && o.ClientPlanID != nil {
 		return true
 	}
@@ -334,13 +334,13 @@ func (o *BillingEstimateResponseAllOfLine) HasClientPlanID() bool {
 }
 
 // SetClientPlanID gets a reference to the given string and assigns it to the ClientPlanID field.
-func (o *BillingEstimateResponseAllOfLine) SetClientPlanID(v string) {
+func (o *BillingEstimateLinesLineItems) SetClientPlanID(v string) {
 	o.ClientPlanID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o BillingEstimateResponseAllOfLine) MarshalJSON() ([]byte, error) {
+func (o BillingEstimateLinesLineItems) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.PlanNo != nil {
 		toSerialize["plan_no"] = o.PlanNo
@@ -379,11 +379,11 @@ func (o BillingEstimateResponseAllOfLine) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *BillingEstimateResponseAllOfLine) UnmarshalJSON(bytes []byte) (err error) {
-	varBillingEstimateResponseAllOfLine := _BillingEstimateResponseAllOfLine{}
+func (o *BillingEstimateLinesLineItems) UnmarshalJSON(bytes []byte) (err error) {
+	varBillingEstimateLinesLineItems := _BillingEstimateLinesLineItems{}
 
-	if err = json.Unmarshal(bytes, &varBillingEstimateResponseAllOfLine); err == nil {
-		*o = BillingEstimateResponseAllOfLine(varBillingEstimateResponseAllOfLine)
+	if err = json.Unmarshal(bytes, &varBillingEstimateLinesLineItems); err == nil {
+		*o = BillingEstimateLinesLineItems(varBillingEstimateLinesLineItems)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -404,48 +404,48 @@ func (o *BillingEstimateResponseAllOfLine) UnmarshalJSON(bytes []byte) (err erro
 	return err
 }
 
-// NullableBillingEstimateResponseAllOfLine is a helper abstraction for handling nullable billingestimateresponseallofline types. 
-type NullableBillingEstimateResponseAllOfLine struct {
-	value *BillingEstimateResponseAllOfLine
+// NullableBillingEstimateLinesLineItems is a helper abstraction for handling nullable billingestimatelineslineitems types. 
+type NullableBillingEstimateLinesLineItems struct {
+	value *BillingEstimateLinesLineItems
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableBillingEstimateResponseAllOfLine) Get() *BillingEstimateResponseAllOfLine {
+func (v NullableBillingEstimateLinesLineItems) Get() *BillingEstimateLinesLineItems {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableBillingEstimateResponseAllOfLine) Set(val *BillingEstimateResponseAllOfLine) {
+func (v *NullableBillingEstimateLinesLineItems) Set(val *BillingEstimateLinesLineItems) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableBillingEstimateResponseAllOfLine) IsSet() bool {
+func (v NullableBillingEstimateLinesLineItems) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableBillingEstimateResponseAllOfLine) Unset() {
+func (v *NullableBillingEstimateLinesLineItems) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableBillingEstimateResponseAllOfLine returns a pointer to a new instance of NullableBillingEstimateResponseAllOfLine.
-func NewNullableBillingEstimateResponseAllOfLine(val *BillingEstimateResponseAllOfLine) *NullableBillingEstimateResponseAllOfLine {
-	return &NullableBillingEstimateResponseAllOfLine{value: val, isSet: true}
+// NewNullableBillingEstimateLinesLineItems returns a pointer to a new instance of NullableBillingEstimateLinesLineItems.
+func NewNullableBillingEstimateLinesLineItems(val *BillingEstimateLinesLineItems) *NullableBillingEstimateLinesLineItems {
+	return &NullableBillingEstimateLinesLineItems{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableBillingEstimateResponseAllOfLine) MarshalJSON() ([]byte, error) {
+func (v NullableBillingEstimateLinesLineItems) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableBillingEstimateResponseAllOfLine) UnmarshalJSON(src []byte) error {
+func (v *NullableBillingEstimateLinesLineItems) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
