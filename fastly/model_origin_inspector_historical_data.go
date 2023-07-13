@@ -20,7 +20,8 @@ import (
 // OriginInspectorHistoricalData struct for OriginInspectorHistoricalData
 type OriginInspectorHistoricalData struct {
 	Dimensions *OriginInspectorDimensions `json:"dimensions,omitempty"`
-	Values *Values `json:"values,omitempty"`
+	// An array of values representing the metric values at each point in time. Note that this dataset is sparse: only the keys with non-zero values will be included in the record. 
+	Values []OriginInspectorValues `json:"values,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -76,17 +77,17 @@ func (o *OriginInspectorHistoricalData) SetDimensions(v OriginInspectorDimension
 }
 
 // GetValues returns the Values field value if set, zero value otherwise.
-func (o *OriginInspectorHistoricalData) GetValues() Values {
+func (o *OriginInspectorHistoricalData) GetValues() []OriginInspectorValues {
 	if o == nil || o.Values == nil {
-		var ret Values
+		var ret []OriginInspectorValues
 		return ret
 	}
-	return *o.Values
+	return o.Values
 }
 
 // GetValuesOk returns a tuple with the Values field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorHistoricalData) GetValuesOk() (*Values, bool) {
+func (o *OriginInspectorHistoricalData) GetValuesOk() ([]OriginInspectorValues, bool) {
 	if o == nil || o.Values == nil {
 		return nil, false
 	}
@@ -102,9 +103,9 @@ func (o *OriginInspectorHistoricalData) HasValues() bool {
 	return false
 }
 
-// SetValues gets a reference to the given Values and assigns it to the Values field.
-func (o *OriginInspectorHistoricalData) SetValues(v Values) {
-	o.Values = &v
+// SetValues gets a reference to the given []OriginInspectorValues and assigns it to the Values field.
+func (o *OriginInspectorHistoricalData) SetValues(v []OriginInspectorValues) {
+	o.Values = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.

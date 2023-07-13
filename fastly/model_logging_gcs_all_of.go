@@ -21,7 +21,6 @@ import (
 type LoggingGcsAllOf struct {
 	// The name of the GCS bucket.
 	BucketName *string `json:"bucket_name,omitempty"`
-	// The path to upload logs to.
 	Path *string `json:"path,omitempty"`
 	// A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 	PublicKey NullableString `json:"public_key,omitempty"`
@@ -38,6 +37,8 @@ type _LoggingGcsAllOf LoggingGcsAllOf
 // will change when the set of required properties is changed
 func NewLoggingGcsAllOf() *LoggingGcsAllOf {
 	this := LoggingGcsAllOf{}
+	var path string = "/"
+	this.Path = &path
 	var publicKey string = "null"
 	this.PublicKey = *NewNullableString(&publicKey)
 	return &this
@@ -48,6 +49,8 @@ func NewLoggingGcsAllOf() *LoggingGcsAllOf {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingGcsAllOfWithDefaults() *LoggingGcsAllOf {
 	this := LoggingGcsAllOf{}
+	var path string = "/"
+	this.Path = &path
 	var publicKey string = "null"
 	this.PublicKey = *NewNullableString(&publicKey)
 	return &this

@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.0.0-beta.18](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.18) (2023-07-13)
+
+**Bug fixes:**
+
+- fix(logging_gcs): set expected default value for 'path'.
+- fix(origin_inspector_historical): use correct type for 'values'.
+- fix(tls_subscriptions): fix argument order for deleting globalsign email challenge.
+
 ## [v1.0.0-beta.17](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.17) (2023-07-12)
 
 **Bug fixes:**

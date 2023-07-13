@@ -47,7 +47,6 @@ type LoggingGcs struct {
 	AccountName *string `json:"account_name,omitempty"`
 	// The name of the GCS bucket.
 	BucketName *string `json:"bucket_name,omitempty"`
-	// The path to upload logs to.
 	Path *string `json:"path,omitempty"`
 	// A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 	PublicKey NullableString `json:"public_key,omitempty"`
@@ -74,6 +73,8 @@ func NewLoggingGcs() *LoggingGcs {
 	this.Period = &period
 	var gzipLevel int32 = 0
 	this.GzipLevel = &gzipLevel
+	var path string = "/"
+	this.Path = &path
 	var publicKey string = "null"
 	this.PublicKey = *NewNullableString(&publicKey)
 	return &this
@@ -94,6 +95,8 @@ func NewLoggingGcsWithDefaults() *LoggingGcs {
 	this.Period = &period
 	var gzipLevel int32 = 0
 	this.GzipLevel = &gzipLevel
+	var path string = "/"
+	this.Path = &path
 	var publicKey string = "null"
 	this.PublicKey = *NewNullableString(&publicKey)
 	return &this

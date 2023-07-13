@@ -69,11 +69,11 @@ type TLSSubscriptionsAPI interface {
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
-	 @param globalsignEmailChallengeID Alphanumeric string identifying a GlobalSign email challenge.
 	 @param tlsAuthorizationID Alphanumeric string identifying a TLS subscription.
+	 @param globalsignEmailChallengeID Alphanumeric string identifying a GlobalSign email challenge.
 	 @return APIDeleteGlobalsignEmailChallengeRequest
 	*/
-	DeleteGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionID string, globalsignEmailChallengeID string, tlsAuthorizationID string) APIDeleteGlobalsignEmailChallengeRequest
+	DeleteGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionID string, tlsAuthorizationID string, globalsignEmailChallengeID string) APIDeleteGlobalsignEmailChallengeRequest
 
 	// DeleteGlobalsignEmailChallengeExecute executes the request
 	DeleteGlobalsignEmailChallengeExecute(r APIDeleteGlobalsignEmailChallengeRequest) (*http.Response, error)
@@ -439,8 +439,8 @@ type APIDeleteGlobalsignEmailChallengeRequest struct {
 	ctx context.Context
 	APIService TLSSubscriptionsAPI
 	tlsSubscriptionID string
-	globalsignEmailChallengeID string
 	tlsAuthorizationID string
+	globalsignEmailChallengeID string
 }
 
 
@@ -456,17 +456,17 @@ Deletes a GlobalSign email challenge. After a GlobalSign email challenge is dele
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
- @param globalsignEmailChallengeID Alphanumeric string identifying a GlobalSign email challenge.
  @param tlsAuthorizationID Alphanumeric string identifying a TLS subscription.
+ @param globalsignEmailChallengeID Alphanumeric string identifying a GlobalSign email challenge.
  @return APIDeleteGlobalsignEmailChallengeRequest
 */
-func (a *TLSSubscriptionsAPIService) DeleteGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionID string, globalsignEmailChallengeID string, tlsAuthorizationID string) APIDeleteGlobalsignEmailChallengeRequest {
+func (a *TLSSubscriptionsAPIService) DeleteGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionID string, tlsAuthorizationID string, globalsignEmailChallengeID string) APIDeleteGlobalsignEmailChallengeRequest {
 	return APIDeleteGlobalsignEmailChallengeRequest{
 		APIService: a,
 		ctx: ctx,
 		tlsSubscriptionID: tlsSubscriptionID,
-		globalsignEmailChallengeID: globalsignEmailChallengeID,
 		tlsAuthorizationID: tlsAuthorizationID,
+		globalsignEmailChallengeID: globalsignEmailChallengeID,
 	}
 }
 
@@ -485,8 +485,8 @@ func (a *TLSSubscriptionsAPIService) DeleteGlobalsignEmailChallengeExecute(r API
 
 	localVarPath := localBasePath + "/tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges/{globalsign_email_challenge_id}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_subscription_id"+"}", gourl.PathEscape(parameterToString(r.tlsSubscriptionID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"globalsign_email_challenge_id"+"}", gourl.PathEscape(parameterToString(r.globalsignEmailChallengeID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_authorization_id"+"}", gourl.PathEscape(parameterToString(r.tlsAuthorizationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"globalsign_email_challenge_id"+"}", gourl.PathEscape(parameterToString(r.globalsignEmailChallengeID, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

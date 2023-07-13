@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Dimensions** | Pointer to [**OriginInspectorDimensions**](OriginInspectorDimensions.md) |  | [optional] 
-**Values** | Pointer to [**Values**](Values.md) |  | [optional] 
+**Values** | Pointer to [**[]OriginInspectorValues**](OriginInspectorValues.md) | An array of values representing the metric values at each point in time. Note that this dataset is sparse: only the keys with non-zero values will be included in the record.  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasDimensions returns a boolean if a field has been set.
 
 ### GetValues
 
-`func (o *OriginInspectorHistoricalData) GetValues() Values`
+`func (o *OriginInspectorHistoricalData) GetValues() []OriginInspectorValues`
 
 GetValues returns the Values field if non-nil, zero value otherwise.
 
 ### GetValuesOk
 
-`func (o *OriginInspectorHistoricalData) GetValuesOk() (*Values, bool)`
+`func (o *OriginInspectorHistoricalData) GetValuesOk() (*[]OriginInspectorValues, bool)`
 
 GetValuesOk returns a tuple with the Values field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValues
 
-`func (o *OriginInspectorHistoricalData) SetValues(v Values)`
+`func (o *OriginInspectorHistoricalData) SetValues(v []OriginInspectorValues)`
 
 SetValues sets Values field to given value.
 

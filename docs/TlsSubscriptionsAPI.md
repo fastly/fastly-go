@@ -168,13 +168,13 @@ import (
 
 func main() {
     tlsSubscriptionID := "tlsSubscriptionId_example" // string | Alphanumeric string identifying a TLS subscription.
-    globalsignEmailChallengeID := "gU3guUGZzb2W9Euo4Mo0r" // string | Alphanumeric string identifying a GlobalSign email challenge.
     tlsAuthorizationID := "tlsAuthorizationId_example" // string | Alphanumeric string identifying a TLS subscription.
+    globalsignEmailChallengeID := "gU3guUGZzb2W9Euo4Mo0r" // string | Alphanumeric string identifying a GlobalSign email challenge.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSSubscriptionsAPI.DeleteGlobalsignEmailChallenge(ctx, tlsSubscriptionID, globalsignEmailChallengeID, tlsAuthorizationID).Execute()
+    resp, r, err := apiClient.TLSSubscriptionsAPI.DeleteGlobalsignEmailChallenge(ctx, tlsSubscriptionID, tlsAuthorizationID, globalsignEmailChallengeID).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TLSSubscriptionsAPI.DeleteGlobalsignEmailChallenge`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -189,8 +189,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **tlsSubscriptionID** | **string** | Alphanumeric string identifying a TLS subscription. | 
-**globalsignEmailChallengeID** | **string** | Alphanumeric string identifying a GlobalSign email challenge. | 
 **tlsAuthorizationID** | **string** | Alphanumeric string identifying a TLS subscription. | 
+**globalsignEmailChallengeID** | **string** | Alphanumeric string identifying a GlobalSign email challenge. | 
 
 ### Other Parameters
 

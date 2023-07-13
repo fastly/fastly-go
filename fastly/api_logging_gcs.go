@@ -213,7 +213,7 @@ func (r *APICreateLogGcsRequest) BucketName(bucketName string) *APICreateLogGcsR
 	r.bucketName = &bucketName
 	return r
 }
-// Path The path to upload logs to.
+// Path returns a pointer to a request.
 func (r *APICreateLogGcsRequest) Path(path string) *APICreateLogGcsRequest {
 	r.path = &path
 	return r
@@ -931,7 +931,7 @@ func (r *APIUpdateLogGcsRequest) BucketName(bucketName string) *APIUpdateLogGcsR
 	r.bucketName = &bucketName
 	return r
 }
-// Path The path to upload logs to.
+// Path returns a pointer to a request.
 func (r *APIUpdateLogGcsRequest) Path(path string) *APIUpdateLogGcsRequest {
 	r.path = &path
 	return r
