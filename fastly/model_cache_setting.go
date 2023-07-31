@@ -26,9 +26,9 @@ type CacheSetting struct {
 	// Name for the cache settings object.
 	Name *string `json:"name,omitempty"`
 	// Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
-	StaleTTL *int32 `json:"stale_ttl,omitempty"`
+	StaleTTL *string `json:"stale_ttl,omitempty"`
 	// Maximum time to consider the object fresh in the cache (the cache 'time to live').
-	TTL *int32 `json:"ttl,omitempty"`
+	TTL *string `json:"ttl,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -168,9 +168,9 @@ func (o *CacheSetting) SetName(v string) {
 }
 
 // GetStaleTTL returns the StaleTTL field value if set, zero value otherwise.
-func (o *CacheSetting) GetStaleTTL() int32 {
+func (o *CacheSetting) GetStaleTTL() string {
 	if o == nil || o.StaleTTL == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.StaleTTL
@@ -178,7 +178,7 @@ func (o *CacheSetting) GetStaleTTL() int32 {
 
 // GetStaleTTLOk returns a tuple with the StaleTTL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CacheSetting) GetStaleTTLOk() (*int32, bool) {
+func (o *CacheSetting) GetStaleTTLOk() (*string, bool) {
 	if o == nil || o.StaleTTL == nil {
 		return nil, false
 	}
@@ -194,15 +194,15 @@ func (o *CacheSetting) HasStaleTTL() bool {
 	return false
 }
 
-// SetStaleTTL gets a reference to the given int32 and assigns it to the StaleTTL field.
-func (o *CacheSetting) SetStaleTTL(v int32) {
+// SetStaleTTL gets a reference to the given string and assigns it to the StaleTTL field.
+func (o *CacheSetting) SetStaleTTL(v string) {
 	o.StaleTTL = &v
 }
 
 // GetTTL returns the TTL field value if set, zero value otherwise.
-func (o *CacheSetting) GetTTL() int32 {
+func (o *CacheSetting) GetTTL() string {
 	if o == nil || o.TTL == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.TTL
@@ -210,7 +210,7 @@ func (o *CacheSetting) GetTTL() int32 {
 
 // GetTTLOk returns a tuple with the TTL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CacheSetting) GetTTLOk() (*int32, bool) {
+func (o *CacheSetting) GetTTLOk() (*string, bool) {
 	if o == nil || o.TTL == nil {
 		return nil, false
 	}
@@ -226,8 +226,8 @@ func (o *CacheSetting) HasTTL() bool {
 	return false
 }
 
-// SetTTL gets a reference to the given int32 and assigns it to the TTL field.
-func (o *CacheSetting) SetTTL(v int32) {
+// SetTTL gets a reference to the given string and assigns it to the TTL field.
+func (o *CacheSetting) SetTTL(v string) {
 	o.TTL = &v
 }
 

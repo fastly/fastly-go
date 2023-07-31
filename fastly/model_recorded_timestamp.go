@@ -19,10 +19,7 @@ import (
 
 // RecordedTimestamp The Unix timestamp at which this record's data was generated.
 type RecordedTimestamp struct {
-	AdditionalProperties map[string]any
 }
-
-type _RecordedTimestamp RecordedTimestamp
 
 // NewRecordedTimestamp instantiates a new RecordedTimestamp object
 // This constructor will assign default values to properties that have it defined,
@@ -45,30 +42,7 @@ func NewRecordedTimestampWithDefaults() *RecordedTimestamp {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o RecordedTimestamp) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *RecordedTimestamp) UnmarshalJSON(bytes []byte) (err error) {
-	varRecordedTimestamp := _RecordedTimestamp{}
-
-	if err = json.Unmarshal(bytes, &varRecordedTimestamp); err == nil {
-		*o = RecordedTimestamp(varRecordedTimestamp)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableRecordedTimestamp is a helper abstraction for handling nullable recordedtimestamp types. 

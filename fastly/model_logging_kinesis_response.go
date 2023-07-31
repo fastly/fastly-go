@@ -23,7 +23,6 @@ type LoggingKinesisResponse struct {
 	// The name for the real-time logging configuration.
 	Name *string `json:"name,omitempty"`
 	Placement NullableLoggingPlacement `json:"placement,omitempty"`
-	FormatVersion *LoggingFormatVersion `json:"format_version,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Kinesis can ingest.
 	Format *string `json:"format,omitempty"`
 	// The Amazon Kinesis stream to send logs to. Required.
@@ -35,6 +34,8 @@ type LoggingKinesisResponse struct {
 	AccessKey NullableString `json:"access_key,omitempty"`
 	// The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
 	IamRole NullableString `json:"iam_role,omitempty"`
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	FormatVersion *string `json:"format_version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -42,7 +43,7 @@ type LoggingKinesisResponse struct {
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Version *string `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -54,10 +55,10 @@ type _LoggingKinesisResponse LoggingKinesisResponse
 // will change when the set of required properties is changed
 func NewLoggingKinesisResponse() *LoggingKinesisResponse {
 	this := LoggingKinesisResponse{}
-	var formatVersion LoggingFormatVersion = LOGGINGFORMATVERSION_v2
-	this.FormatVersion = &formatVersion
 	var format string = "{\"timestamp\":\"%{begin:%Y-%m-%dT%H:%M:%S}t\",\"time_elapsed\":\"%{time.elapsed.usec}V\",\"is_tls\":\"%{if(req.is_ssl, \\\"true\\\", \\\"false\\\")}V\",\"client_ip\":\"%{req.http.Fastly-Client-IP}V\",\"geo_city\":\"%{client.geo.city}V\",\"geo_country_code\":\"%{client.geo.country_code}V\",\"request\":\"%{req.request}V\",\"host\":\"%{req.http.Fastly-Orig-Host}V\",\"url\":\"%{json.escape(req.url)}V\",\"request_referer\":\"%{json.escape(req.http.Referer)}V\",\"request_user_agent\":\"%{json.escape(req.http.User-Agent)}V\",\"request_accept_language\":\"%{json.escape(req.http.Accept-Language)}V\",\"request_accept_charset\":\"%{json.escape(req.http.Accept-Charset)}V\",\"cache_status\":\"%{regsub(fastly_info.state, \\\"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\\\", \\\"\\\\2\\\\3\\\") }V\"}"
 	this.Format = &format
+	var formatVersion string = "2"
+	this.FormatVersion = &formatVersion
 	return &this
 }
 
@@ -66,10 +67,10 @@ func NewLoggingKinesisResponse() *LoggingKinesisResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingKinesisResponseWithDefaults() *LoggingKinesisResponse {
 	this := LoggingKinesisResponse{}
-	var formatVersion LoggingFormatVersion = LOGGINGFORMATVERSION_v2
-	this.FormatVersion = &formatVersion
 	var format string = "{\"timestamp\":\"%{begin:%Y-%m-%dT%H:%M:%S}t\",\"time_elapsed\":\"%{time.elapsed.usec}V\",\"is_tls\":\"%{if(req.is_ssl, \\\"true\\\", \\\"false\\\")}V\",\"client_ip\":\"%{req.http.Fastly-Client-IP}V\",\"geo_city\":\"%{client.geo.city}V\",\"geo_country_code\":\"%{client.geo.country_code}V\",\"request\":\"%{req.request}V\",\"host\":\"%{req.http.Fastly-Orig-Host}V\",\"url\":\"%{json.escape(req.url)}V\",\"request_referer\":\"%{json.escape(req.http.Referer)}V\",\"request_user_agent\":\"%{json.escape(req.http.User-Agent)}V\",\"request_accept_language\":\"%{json.escape(req.http.Accept-Language)}V\",\"request_accept_charset\":\"%{json.escape(req.http.Accept-Charset)}V\",\"cache_status\":\"%{regsub(fastly_info.state, \\\"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\\\", \\\"\\\\2\\\\3\\\") }V\"}"
 	this.Format = &format
+	var formatVersion string = "2"
+	this.FormatVersion = &formatVersion
 	return &this
 }
 
@@ -145,38 +146,6 @@ func (o *LoggingKinesisResponse) SetPlacementNil() {
 // UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
 func (o *LoggingKinesisResponse) UnsetPlacement() {
 	o.Placement.Unset()
-}
-
-// GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
-func (o *LoggingKinesisResponse) GetFormatVersion() LoggingFormatVersion {
-	if o == nil || o.FormatVersion == nil {
-		var ret LoggingFormatVersion
-		return ret
-	}
-	return *o.FormatVersion
-}
-
-// GetFormatVersionOk returns a tuple with the FormatVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingKinesisResponse) GetFormatVersionOk() (*LoggingFormatVersion, bool) {
-	if o == nil || o.FormatVersion == nil {
-		return nil, false
-	}
-	return o.FormatVersion, true
-}
-
-// HasFormatVersion returns a boolean if a field has been set.
-func (o *LoggingKinesisResponse) HasFormatVersion() bool {
-	if o != nil && o.FormatVersion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFormatVersion gets a reference to the given LoggingFormatVersion and assigns it to the FormatVersion field.
-func (o *LoggingKinesisResponse) SetFormatVersion(v LoggingFormatVersion) {
-	o.FormatVersion = &v
 }
 
 // GetFormat returns the Format field value if set, zero value otherwise.
@@ -401,6 +370,38 @@ func (o *LoggingKinesisResponse) UnsetIamRole() {
 	o.IamRole.Unset()
 }
 
+// GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
+func (o *LoggingKinesisResponse) GetFormatVersion() string {
+	if o == nil || o.FormatVersion == nil {
+		var ret string
+		return ret
+	}
+	return *o.FormatVersion
+}
+
+// GetFormatVersionOk returns a tuple with the FormatVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingKinesisResponse) GetFormatVersionOk() (*string, bool) {
+	if o == nil || o.FormatVersion == nil {
+		return nil, false
+	}
+	return o.FormatVersion, true
+}
+
+// HasFormatVersion returns a boolean if a field has been set.
+func (o *LoggingKinesisResponse) HasFormatVersion() bool {
+	if o != nil && o.FormatVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFormatVersion gets a reference to the given string and assigns it to the FormatVersion field.
+func (o *LoggingKinesisResponse) SetFormatVersion(v string) {
+	o.FormatVersion = &v
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LoggingKinesisResponse) GetCreatedAt() time.Time {
 	if o == nil || o.CreatedAt.Get() == nil {
@@ -560,9 +561,9 @@ func (o *LoggingKinesisResponse) SetServiceID(v string) {
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *LoggingKinesisResponse) GetVersion() int32 {
+func (o *LoggingKinesisResponse) GetVersion() string {
 	if o == nil || o.Version == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Version
@@ -570,7 +571,7 @@ func (o *LoggingKinesisResponse) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingKinesisResponse) GetVersionOk() (*int32, bool) {
+func (o *LoggingKinesisResponse) GetVersionOk() (*string, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -586,8 +587,8 @@ func (o *LoggingKinesisResponse) HasVersion() bool {
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *LoggingKinesisResponse) SetVersion(v int32) {
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *LoggingKinesisResponse) SetVersion(v string) {
 	o.Version = &v
 }
 
@@ -600,9 +601,6 @@ func (o LoggingKinesisResponse) MarshalJSON() ([]byte, error) {
 	}
 	if o.Placement.IsSet() {
 		toSerialize["placement"] = o.Placement.Get()
-	}
-	if o.FormatVersion != nil {
-		toSerialize["format_version"] = o.FormatVersion
 	}
 	if o.Format != nil {
 		toSerialize["format"] = o.Format
@@ -621,6 +619,9 @@ func (o LoggingKinesisResponse) MarshalJSON() ([]byte, error) {
 	}
 	if o.IamRole.IsSet() {
 		toSerialize["iam_role"] = o.IamRole.Get()
+	}
+	if o.FormatVersion != nil {
+		toSerialize["format_version"] = o.FormatVersion
 	}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
@@ -659,13 +660,13 @@ func (o *LoggingKinesisResponse) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "placement")
-		delete(additionalProperties, "format_version")
 		delete(additionalProperties, "format")
 		delete(additionalProperties, "topic")
 		delete(additionalProperties, "region")
 		delete(additionalProperties, "secret_key")
 		delete(additionalProperties, "access_key")
 		delete(additionalProperties, "iam_role")
+		delete(additionalProperties, "format_version")
 		delete(additionalProperties, "created_at")
 		delete(additionalProperties, "deleted_at")
 		delete(additionalProperties, "updated_at")

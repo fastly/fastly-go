@@ -29,7 +29,7 @@ type GzipResponse struct {
 	// Name of the gzip configuration.
 	Name *string `json:"name,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Version *string `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -249,9 +249,9 @@ func (o *GzipResponse) SetServiceID(v string) {
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *GzipResponse) GetVersion() int32 {
+func (o *GzipResponse) GetVersion() string {
 	if o == nil || o.Version == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Version
@@ -259,7 +259,7 @@ func (o *GzipResponse) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GzipResponse) GetVersionOk() (*int32, bool) {
+func (o *GzipResponse) GetVersionOk() (*string, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -275,8 +275,8 @@ func (o *GzipResponse) HasVersion() bool {
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *GzipResponse) SetVersion(v int32) {
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *GzipResponse) SetVersion(v string) {
 	o.Version = &v
 }
 

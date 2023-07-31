@@ -24,12 +24,12 @@ type LoggingGooglePubsubResponse struct {
 	Name *string `json:"name,omitempty"`
 	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
 	Placement NullableString `json:"placement,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
-	FormatVersion *int32 `json:"format_version,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	FormatVersion *string `json:"format_version,omitempty"`
 	// Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
 	User *string `json:"user,omitempty"`
 	// Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
@@ -47,7 +47,7 @@ type LoggingGooglePubsubResponse struct {
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Version *string `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -59,10 +59,10 @@ type _LoggingGooglePubsubResponse LoggingGooglePubsubResponse
 // will change when the set of required properties is changed
 func NewLoggingGooglePubsubResponse() *LoggingGooglePubsubResponse {
 	this := LoggingGooglePubsubResponse{}
-	var formatVersion int32 = 2
-	this.FormatVersion = &formatVersion
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
+	var formatVersion string = "2"
+	this.FormatVersion = &formatVersion
 	return &this
 }
 
@@ -71,10 +71,10 @@ func NewLoggingGooglePubsubResponse() *LoggingGooglePubsubResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingGooglePubsubResponseWithDefaults() *LoggingGooglePubsubResponse {
 	this := LoggingGooglePubsubResponse{}
-	var formatVersion int32 = 2
-	this.FormatVersion = &formatVersion
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
+	var formatVersion string = "2"
+	this.FormatVersion = &formatVersion
 	return &this
 }
 
@@ -152,38 +152,6 @@ func (o *LoggingGooglePubsubResponse) UnsetPlacement() {
 	o.Placement.Unset()
 }
 
-// GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
-func (o *LoggingGooglePubsubResponse) GetFormatVersion() int32 {
-	if o == nil || o.FormatVersion == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FormatVersion
-}
-
-// GetFormatVersionOk returns a tuple with the FormatVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingGooglePubsubResponse) GetFormatVersionOk() (*int32, bool) {
-	if o == nil || o.FormatVersion == nil {
-		return nil, false
-	}
-	return o.FormatVersion, true
-}
-
-// HasFormatVersion returns a boolean if a field has been set.
-func (o *LoggingGooglePubsubResponse) HasFormatVersion() bool {
-	if o != nil && o.FormatVersion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFormatVersion gets a reference to the given int32 and assigns it to the FormatVersion field.
-func (o *LoggingGooglePubsubResponse) SetFormatVersion(v int32) {
-	o.FormatVersion = &v
-}
-
 // GetResponseCondition returns the ResponseCondition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LoggingGooglePubsubResponse) GetResponseCondition() string {
 	if o == nil || o.ResponseCondition.Get() == nil {
@@ -256,6 +224,38 @@ func (o *LoggingGooglePubsubResponse) HasFormat() bool {
 // SetFormat gets a reference to the given string and assigns it to the Format field.
 func (o *LoggingGooglePubsubResponse) SetFormat(v string) {
 	o.Format = &v
+}
+
+// GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
+func (o *LoggingGooglePubsubResponse) GetFormatVersion() string {
+	if o == nil || o.FormatVersion == nil {
+		var ret string
+		return ret
+	}
+	return *o.FormatVersion
+}
+
+// GetFormatVersionOk returns a tuple with the FormatVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingGooglePubsubResponse) GetFormatVersionOk() (*string, bool) {
+	if o == nil || o.FormatVersion == nil {
+		return nil, false
+	}
+	return o.FormatVersion, true
+}
+
+// HasFormatVersion returns a boolean if a field has been set.
+func (o *LoggingGooglePubsubResponse) HasFormatVersion() bool {
+	if o != nil && o.FormatVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFormatVersion gets a reference to the given string and assigns it to the FormatVersion field.
+func (o *LoggingGooglePubsubResponse) SetFormatVersion(v string) {
+	o.FormatVersion = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -577,9 +577,9 @@ func (o *LoggingGooglePubsubResponse) SetServiceID(v string) {
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *LoggingGooglePubsubResponse) GetVersion() int32 {
+func (o *LoggingGooglePubsubResponse) GetVersion() string {
 	if o == nil || o.Version == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Version
@@ -587,7 +587,7 @@ func (o *LoggingGooglePubsubResponse) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingGooglePubsubResponse) GetVersionOk() (*int32, bool) {
+func (o *LoggingGooglePubsubResponse) GetVersionOk() (*string, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -603,8 +603,8 @@ func (o *LoggingGooglePubsubResponse) HasVersion() bool {
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *LoggingGooglePubsubResponse) SetVersion(v int32) {
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *LoggingGooglePubsubResponse) SetVersion(v string) {
 	o.Version = &v
 }
 
@@ -618,14 +618,14 @@ func (o LoggingGooglePubsubResponse) MarshalJSON() ([]byte, error) {
 	if o.Placement.IsSet() {
 		toSerialize["placement"] = o.Placement.Get()
 	}
-	if o.FormatVersion != nil {
-		toSerialize["format_version"] = o.FormatVersion
-	}
 	if o.ResponseCondition.IsSet() {
 		toSerialize["response_condition"] = o.ResponseCondition.Get()
 	}
 	if o.Format != nil {
 		toSerialize["format"] = o.Format
+	}
+	if o.FormatVersion != nil {
+		toSerialize["format_version"] = o.FormatVersion
 	}
 	if o.User != nil {
 		toSerialize["user"] = o.User
@@ -679,9 +679,9 @@ func (o *LoggingGooglePubsubResponse) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "placement")
-		delete(additionalProperties, "format_version")
 		delete(additionalProperties, "response_condition")
 		delete(additionalProperties, "format")
+		delete(additionalProperties, "format_version")
 		delete(additionalProperties, "user")
 		delete(additionalProperties, "secret_key")
 		delete(additionalProperties, "account_name")

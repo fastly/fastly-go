@@ -19,10 +19,7 @@ import (
 
 // SubsequentRequestTimestamp Value to use for subsequent requests.
 type SubsequentRequestTimestamp struct {
-	AdditionalProperties map[string]any
 }
-
-type _SubsequentRequestTimestamp SubsequentRequestTimestamp
 
 // NewSubsequentRequestTimestamp instantiates a new SubsequentRequestTimestamp object
 // This constructor will assign default values to properties that have it defined,
@@ -45,30 +42,7 @@ func NewSubsequentRequestTimestampWithDefaults() *SubsequentRequestTimestamp {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o SubsequentRequestTimestamp) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *SubsequentRequestTimestamp) UnmarshalJSON(bytes []byte) (err error) {
-	varSubsequentRequestTimestamp := _SubsequentRequestTimestamp{}
-
-	if err = json.Unmarshal(bytes, &varSubsequentRequestTimestamp); err == nil {
-		*o = SubsequentRequestTimestamp(varSubsequentRequestTimestamp)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableSubsequentRequestTimestamp is a helper abstraction for handling nullable subsequentrequesttimestamp types. 

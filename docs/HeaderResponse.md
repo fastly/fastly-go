@@ -7,17 +7,17 @@ Name | Type | Description | Notes
 **Action** | Pointer to **string** | Accepts a string value. | [optional] 
 **CacheCondition** | Pointer to **NullableString** | Name of the cache condition controlling when this configuration applies. | [optional] 
 **Dst** | Pointer to **string** | Header to set. | [optional] 
-**IgnoreIfSet** | Pointer to **int32** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. | [optional] 
 **Name** | Pointer to **string** | A handle to refer to this Header object. | [optional] 
-**Priority** | Pointer to **int32** | Priority determines execution order. Lower numbers execute first. | [optional] [default to 100]
 **Regex** | Pointer to **NullableString** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. | [optional] 
 **RequestCondition** | Pointer to **NullableString** | Condition which, if met, will select this configuration during a request. Optional. | [optional] 
 **ResponseCondition** | Pointer to **NullableString** | Optional name of a response condition to apply. | [optional] 
 **Src** | Pointer to **NullableString** | Variable to be used as a source for the header content. Does not apply to `delete` action. | [optional] 
 **Substitution** | Pointer to **NullableString** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. | [optional] 
 **Type** | Pointer to **string** | Accepts a string value. | [optional] 
+**IgnoreIfSet** | Pointer to **string** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. Numerical value (\&quot;0\&quot; &#x3D; false, \&quot;1\&quot; &#x3D; true) | [optional] 
+**Priority** | Pointer to **string** | Priority determines execution order. Lower numbers execute first. | [optional] [default to "100"]
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **int32** |  | [optional] [readonly] 
+**Version** | Pointer to **string** |  | [optional] [readonly] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -126,31 +126,6 @@ SetDst sets Dst field to given value.
 
 HasDst returns a boolean if a field has been set.
 
-### GetIgnoreIfSet
-
-`func (o *HeaderResponse) GetIgnoreIfSet() int32`
-
-GetIgnoreIfSet returns the IgnoreIfSet field if non-nil, zero value otherwise.
-
-### GetIgnoreIfSetOk
-
-`func (o *HeaderResponse) GetIgnoreIfSetOk() (*int32, bool)`
-
-GetIgnoreIfSetOk returns a tuple with the IgnoreIfSet field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIgnoreIfSet
-
-`func (o *HeaderResponse) SetIgnoreIfSet(v int32)`
-
-SetIgnoreIfSet sets IgnoreIfSet field to given value.
-
-### HasIgnoreIfSet
-
-`func (o *HeaderResponse) HasIgnoreIfSet() bool`
-
-HasIgnoreIfSet returns a boolean if a field has been set.
-
 ### GetName
 
 `func (o *HeaderResponse) GetName() string`
@@ -175,31 +150,6 @@ SetName sets Name field to given value.
 `func (o *HeaderResponse) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetPriority
-
-`func (o *HeaderResponse) GetPriority() int32`
-
-GetPriority returns the Priority field if non-nil, zero value otherwise.
-
-### GetPriorityOk
-
-`func (o *HeaderResponse) GetPriorityOk() (*int32, bool)`
-
-GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPriority
-
-`func (o *HeaderResponse) SetPriority(v int32)`
-
-SetPriority sets Priority field to given value.
-
-### HasPriority
-
-`func (o *HeaderResponse) HasPriority() bool`
-
-HasPriority returns a boolean if a field has been set.
 
 ### GetRegex
 
@@ -401,6 +351,56 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### GetIgnoreIfSet
+
+`func (o *HeaderResponse) GetIgnoreIfSet() string`
+
+GetIgnoreIfSet returns the IgnoreIfSet field if non-nil, zero value otherwise.
+
+### GetIgnoreIfSetOk
+
+`func (o *HeaderResponse) GetIgnoreIfSetOk() (*string, bool)`
+
+GetIgnoreIfSetOk returns a tuple with the IgnoreIfSet field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIgnoreIfSet
+
+`func (o *HeaderResponse) SetIgnoreIfSet(v string)`
+
+SetIgnoreIfSet sets IgnoreIfSet field to given value.
+
+### HasIgnoreIfSet
+
+`func (o *HeaderResponse) HasIgnoreIfSet() bool`
+
+HasIgnoreIfSet returns a boolean if a field has been set.
+
+### GetPriority
+
+`func (o *HeaderResponse) GetPriority() string`
+
+GetPriority returns the Priority field if non-nil, zero value otherwise.
+
+### GetPriorityOk
+
+`func (o *HeaderResponse) GetPriorityOk() (*string, bool)`
+
+GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriority
+
+`func (o *HeaderResponse) SetPriority(v string)`
+
+SetPriority sets Priority field to given value.
+
+### HasPriority
+
+`func (o *HeaderResponse) HasPriority() bool`
+
+HasPriority returns a boolean if a field has been set.
+
 ### GetServiceID
 
 `func (o *HeaderResponse) GetServiceID() string`
@@ -428,20 +428,20 @@ HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *HeaderResponse) GetVersion() int32`
+`func (o *HeaderResponse) GetVersion() string`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *HeaderResponse) GetVersionOk() (*int32, bool)`
+`func (o *HeaderResponse) GetVersionOk() (*string, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *HeaderResponse) SetVersion(v int32)`
+`func (o *HeaderResponse) SetVersion(v string)`
 
 SetVersion sets Version field to given value.
 

@@ -126,14 +126,14 @@ type APICreateLogAzureRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *string
 	timestampFormat *string
+	compressionCodec *string
 	period *int32
 	gzipLevel *int32
-	compressionCodec *string
 	path *string
 	accountName *string
 	container *string
@@ -152,11 +152,6 @@ func (r *APICreateLogAzureRequest) Placement(placement string) *APICreateLogAzur
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogAzureRequest) FormatVersion(formatVersion int32) *APICreateLogAzureRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogAzureRequest) ResponseCondition(responseCondition string) *APICreateLogAzureRequest {
 	r.responseCondition = &responseCondition
@@ -165,6 +160,11 @@ func (r *APICreateLogAzureRequest) ResponseCondition(responseCondition string) *
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogAzureRequest) Format(format string) *APICreateLogAzureRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogAzureRequest) FormatVersion(formatVersion int32) *APICreateLogAzureRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType How the message should be formatted.
@@ -177,6 +177,11 @@ func (r *APICreateLogAzureRequest) TimestampFormat(timestampFormat string) *APIC
 	r.timestampFormat = &timestampFormat
 	return r
 }
+// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
+func (r *APICreateLogAzureRequest) CompressionCodec(compressionCodec string) *APICreateLogAzureRequest {
+	r.compressionCodec = &compressionCodec
+	return r
+}
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APICreateLogAzureRequest) Period(period int32) *APICreateLogAzureRequest {
 	r.period = &period
@@ -185,11 +190,6 @@ func (r *APICreateLogAzureRequest) Period(period int32) *APICreateLogAzureReques
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APICreateLogAzureRequest) GzipLevel(gzipLevel int32) *APICreateLogAzureRequest {
 	r.gzipLevel = &gzipLevel
-	return r
-}
-// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
-func (r *APICreateLogAzureRequest) CompressionCodec(compressionCodec string) *APICreateLogAzureRequest {
-	r.compressionCodec = &compressionCodec
 	return r
 }
 // Path The path to upload logs to.
@@ -293,14 +293,14 @@ func (a *LoggingAzureblobAPIService) CreateLogAzureExecute(r APICreateLogAzureRe
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))
@@ -308,14 +308,14 @@ func (a *LoggingAzureblobAPIService) CreateLogAzureExecute(r APICreateLogAzureRe
 	if r.timestampFormat != nil {
 		localVarFormParams.Add("timestamp_format", parameterToString(*r.timestampFormat, ""))
 	}
+	if r.compressionCodec != nil {
+		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
+	}
 	if r.period != nil {
 		localVarFormParams.Add("period", parameterToString(*r.period, ""))
 	}
 	if r.gzipLevel != nil {
 		localVarFormParams.Add("gzip_level", parameterToString(*r.gzipLevel, ""))
-	}
-	if r.compressionCodec != nil {
-		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
 	}
 	if r.path != nil {
 		localVarFormParams.Add("path", parameterToString(*r.path, ""))
@@ -831,14 +831,14 @@ type APIUpdateLogAzureRequest struct {
 	loggingAzureblobName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *string
 	timestampFormat *string
+	compressionCodec *string
 	period *int32
 	gzipLevel *int32
-	compressionCodec *string
 	path *string
 	accountName *string
 	container *string
@@ -857,11 +857,6 @@ func (r *APIUpdateLogAzureRequest) Placement(placement string) *APIUpdateLogAzur
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogAzureRequest) FormatVersion(formatVersion int32) *APIUpdateLogAzureRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogAzureRequest) ResponseCondition(responseCondition string) *APIUpdateLogAzureRequest {
 	r.responseCondition = &responseCondition
@@ -870,6 +865,11 @@ func (r *APIUpdateLogAzureRequest) ResponseCondition(responseCondition string) *
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogAzureRequest) Format(format string) *APIUpdateLogAzureRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogAzureRequest) FormatVersion(formatVersion int32) *APIUpdateLogAzureRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType How the message should be formatted.
@@ -882,6 +882,11 @@ func (r *APIUpdateLogAzureRequest) TimestampFormat(timestampFormat string) *APIU
 	r.timestampFormat = &timestampFormat
 	return r
 }
+// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
+func (r *APIUpdateLogAzureRequest) CompressionCodec(compressionCodec string) *APIUpdateLogAzureRequest {
+	r.compressionCodec = &compressionCodec
+	return r
+}
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APIUpdateLogAzureRequest) Period(period int32) *APIUpdateLogAzureRequest {
 	r.period = &period
@@ -890,11 +895,6 @@ func (r *APIUpdateLogAzureRequest) Period(period int32) *APIUpdateLogAzureReques
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APIUpdateLogAzureRequest) GzipLevel(gzipLevel int32) *APIUpdateLogAzureRequest {
 	r.gzipLevel = &gzipLevel
-	return r
-}
-// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
-func (r *APIUpdateLogAzureRequest) CompressionCodec(compressionCodec string) *APIUpdateLogAzureRequest {
-	r.compressionCodec = &compressionCodec
 	return r
 }
 // Path The path to upload logs to.
@@ -1001,14 +1001,14 @@ func (a *LoggingAzureblobAPIService) UpdateLogAzureExecute(r APIUpdateLogAzureRe
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))
@@ -1016,14 +1016,14 @@ func (a *LoggingAzureblobAPIService) UpdateLogAzureExecute(r APIUpdateLogAzureRe
 	if r.timestampFormat != nil {
 		localVarFormParams.Add("timestamp_format", parameterToString(*r.timestampFormat, ""))
 	}
+	if r.compressionCodec != nil {
+		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
+	}
 	if r.period != nil {
 		localVarFormParams.Add("period", parameterToString(*r.period, ""))
 	}
 	if r.gzipLevel != nil {
 		localVarFormParams.Add("gzip_level", parameterToString(*r.gzipLevel, ""))
-	}
-	if r.compressionCodec != nil {
-		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
 	}
 	if r.path != nil {
 		localVarFormParams.Add("path", parameterToString(*r.path, ""))

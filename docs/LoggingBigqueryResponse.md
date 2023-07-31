@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The name of the BigQuery logging object. Used as a primary key for API access. | [optional] 
 **Placement** | Pointer to **NullableString** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] 
-**FormatVersion** | Pointer to **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to 2]
 **ResponseCondition** | Pointer to **NullableString** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
 **Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table. | [optional] 
+**FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
 **User** | Pointer to **string** | Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified. | [optional] 
 **SecretKey** | Pointer to **string** | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified. | [optional] 
 **AccountName** | Pointer to **string** | The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided. | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **int32** |  | [optional] [readonly] 
+**Version** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -101,31 +101,6 @@ HasPlacement returns a boolean if a field has been set.
 `func (o *LoggingBigqueryResponse) UnsetPlacement()`
 
 UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
-### GetFormatVersion
-
-`func (o *LoggingBigqueryResponse) GetFormatVersion() int32`
-
-GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
-
-### GetFormatVersionOk
-
-`func (o *LoggingBigqueryResponse) GetFormatVersionOk() (*int32, bool)`
-
-GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFormatVersion
-
-`func (o *LoggingBigqueryResponse) SetFormatVersion(v int32)`
-
-SetFormatVersion sets FormatVersion field to given value.
-
-### HasFormatVersion
-
-`func (o *LoggingBigqueryResponse) HasFormatVersion() bool`
-
-HasFormatVersion returns a boolean if a field has been set.
-
 ### GetResponseCondition
 
 `func (o *LoggingBigqueryResponse) GetResponseCondition() string`
@@ -185,6 +160,31 @@ SetFormat sets Format field to given value.
 `func (o *LoggingBigqueryResponse) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+### GetFormatVersion
+
+`func (o *LoggingBigqueryResponse) GetFormatVersion() string`
+
+GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
+
+### GetFormatVersionOk
+
+`func (o *LoggingBigqueryResponse) GetFormatVersionOk() (*string, bool)`
+
+GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormatVersion
+
+`func (o *LoggingBigqueryResponse) SetFormatVersion(v string)`
+
+SetFormatVersion sets FormatVersion field to given value.
+
+### HasFormatVersion
+
+`func (o *LoggingBigqueryResponse) HasFormatVersion() bool`
+
+HasFormatVersion returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -503,20 +503,20 @@ HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *LoggingBigqueryResponse) GetVersion() int32`
+`func (o *LoggingBigqueryResponse) GetVersion() string`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *LoggingBigqueryResponse) GetVersionOk() (*int32, bool)`
+`func (o *LoggingBigqueryResponse) GetVersionOk() (*string, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *LoggingBigqueryResponse) SetVersion(v int32)`
+`func (o *LoggingBigqueryResponse) SetVersion(v string)`
 
 SetVersion sets Version field to given value.
 

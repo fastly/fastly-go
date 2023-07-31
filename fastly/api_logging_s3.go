@@ -126,14 +126,14 @@ type APICreateLogAwsS3Request struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *string
 	timestampFormat *string
+	compressionCodec *string
 	period *int32
 	gzipLevel *int32
-	compressionCodec *string
 	accessKey *string
 	acl *string
 	bucketName *string
@@ -157,11 +157,6 @@ func (r *APICreateLogAwsS3Request) Placement(placement string) *APICreateLogAwsS
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogAwsS3Request) FormatVersion(formatVersion int32) *APICreateLogAwsS3Request {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogAwsS3Request) ResponseCondition(responseCondition string) *APICreateLogAwsS3Request {
 	r.responseCondition = &responseCondition
@@ -170,6 +165,11 @@ func (r *APICreateLogAwsS3Request) ResponseCondition(responseCondition string) *
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogAwsS3Request) Format(format string) *APICreateLogAwsS3Request {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogAwsS3Request) FormatVersion(formatVersion int32) *APICreateLogAwsS3Request {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType How the message should be formatted.
@@ -182,6 +182,11 @@ func (r *APICreateLogAwsS3Request) TimestampFormat(timestampFormat string) *APIC
 	r.timestampFormat = &timestampFormat
 	return r
 }
+// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
+func (r *APICreateLogAwsS3Request) CompressionCodec(compressionCodec string) *APICreateLogAwsS3Request {
+	r.compressionCodec = &compressionCodec
+	return r
+}
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APICreateLogAwsS3Request) Period(period int32) *APICreateLogAwsS3Request {
 	r.period = &period
@@ -190,11 +195,6 @@ func (r *APICreateLogAwsS3Request) Period(period int32) *APICreateLogAwsS3Reques
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APICreateLogAwsS3Request) GzipLevel(gzipLevel int32) *APICreateLogAwsS3Request {
 	r.gzipLevel = &gzipLevel
-	return r
-}
-// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
-func (r *APICreateLogAwsS3Request) CompressionCodec(compressionCodec string) *APICreateLogAwsS3Request {
-	r.compressionCodec = &compressionCodec
 	return r
 }
 // AccessKey The access key for your S3 account. Not required if &#x60;iam_role&#x60; is provided.
@@ -323,14 +323,14 @@ func (a *LoggingS3APIService) CreateLogAwsS3Execute(r APICreateLogAwsS3Request) 
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))
@@ -338,14 +338,14 @@ func (a *LoggingS3APIService) CreateLogAwsS3Execute(r APICreateLogAwsS3Request) 
 	if r.timestampFormat != nil {
 		localVarFormParams.Add("timestamp_format", parameterToString(*r.timestampFormat, ""))
 	}
+	if r.compressionCodec != nil {
+		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
+	}
 	if r.period != nil {
 		localVarFormParams.Add("period", parameterToString(*r.period, ""))
 	}
 	if r.gzipLevel != nil {
 		localVarFormParams.Add("gzip_level", parameterToString(*r.gzipLevel, ""))
-	}
-	if r.compressionCodec != nil {
-		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
 	}
 	if r.accessKey != nil {
 		localVarFormParams.Add("access_key", parameterToString(*r.accessKey, ""))
@@ -876,14 +876,14 @@ type APIUpdateLogAwsS3Request struct {
 	loggingS3Name string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *string
 	timestampFormat *string
+	compressionCodec *string
 	period *int32
 	gzipLevel *int32
-	compressionCodec *string
 	accessKey *string
 	acl *string
 	bucketName *string
@@ -907,11 +907,6 @@ func (r *APIUpdateLogAwsS3Request) Placement(placement string) *APIUpdateLogAwsS
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogAwsS3Request) FormatVersion(formatVersion int32) *APIUpdateLogAwsS3Request {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogAwsS3Request) ResponseCondition(responseCondition string) *APIUpdateLogAwsS3Request {
 	r.responseCondition = &responseCondition
@@ -920,6 +915,11 @@ func (r *APIUpdateLogAwsS3Request) ResponseCondition(responseCondition string) *
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogAwsS3Request) Format(format string) *APIUpdateLogAwsS3Request {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogAwsS3Request) FormatVersion(formatVersion int32) *APIUpdateLogAwsS3Request {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType How the message should be formatted.
@@ -932,6 +932,11 @@ func (r *APIUpdateLogAwsS3Request) TimestampFormat(timestampFormat string) *APIU
 	r.timestampFormat = &timestampFormat
 	return r
 }
+// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
+func (r *APIUpdateLogAwsS3Request) CompressionCodec(compressionCodec string) *APIUpdateLogAwsS3Request {
+	r.compressionCodec = &compressionCodec
+	return r
+}
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APIUpdateLogAwsS3Request) Period(period int32) *APIUpdateLogAwsS3Request {
 	r.period = &period
@@ -940,11 +945,6 @@ func (r *APIUpdateLogAwsS3Request) Period(period int32) *APIUpdateLogAwsS3Reques
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APIUpdateLogAwsS3Request) GzipLevel(gzipLevel int32) *APIUpdateLogAwsS3Request {
 	r.gzipLevel = &gzipLevel
-	return r
-}
-// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
-func (r *APIUpdateLogAwsS3Request) CompressionCodec(compressionCodec string) *APIUpdateLogAwsS3Request {
-	r.compressionCodec = &compressionCodec
 	return r
 }
 // AccessKey The access key for your S3 account. Not required if &#x60;iam_role&#x60; is provided.
@@ -1076,14 +1076,14 @@ func (a *LoggingS3APIService) UpdateLogAwsS3Execute(r APIUpdateLogAwsS3Request) 
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))
@@ -1091,14 +1091,14 @@ func (a *LoggingS3APIService) UpdateLogAwsS3Execute(r APIUpdateLogAwsS3Request) 
 	if r.timestampFormat != nil {
 		localVarFormParams.Add("timestamp_format", parameterToString(*r.timestampFormat, ""))
 	}
+	if r.compressionCodec != nil {
+		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
+	}
 	if r.period != nil {
 		localVarFormParams.Add("period", parameterToString(*r.period, ""))
 	}
 	if r.gzipLevel != nil {
 		localVarFormParams.Add("gzip_level", parameterToString(*r.gzipLevel, ""))
-	}
-	if r.compressionCodec != nil {
-		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
 	}
 	if r.accessKey != nil {
 		localVarFormParams.Add("access_key", parameterToString(*r.accessKey, ""))

@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **Action** | Pointer to **NullableString** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  | [optional] 
 **CacheCondition** | Pointer to **NullableString** | Name of the cache condition controlling when this configuration applies. | [optional] 
 **Name** | Pointer to **string** | Name for the cache settings object. | [optional] 
-**StaleTTL** | Pointer to **int32** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). | [optional] 
-**TTL** | Pointer to **int32** | Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;). | [optional] 
+**StaleTTL** | Pointer to **string** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). | [optional] 
+**TTL** | Pointer to **string** | Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;). | [optional] 
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **int32** |  | [optional] [readonly] 
+**Version** | Pointer to **string** |  | [optional] [readonly] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -131,20 +131,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetStaleTTL
 
-`func (o *CacheSettingResponse) GetStaleTTL() int32`
+`func (o *CacheSettingResponse) GetStaleTTL() string`
 
 GetStaleTTL returns the StaleTTL field if non-nil, zero value otherwise.
 
 ### GetStaleTTLOk
 
-`func (o *CacheSettingResponse) GetStaleTTLOk() (*int32, bool)`
+`func (o *CacheSettingResponse) GetStaleTTLOk() (*string, bool)`
 
 GetStaleTTLOk returns a tuple with the StaleTTL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStaleTTL
 
-`func (o *CacheSettingResponse) SetStaleTTL(v int32)`
+`func (o *CacheSettingResponse) SetStaleTTL(v string)`
 
 SetStaleTTL sets StaleTTL field to given value.
 
@@ -156,20 +156,20 @@ HasStaleTTL returns a boolean if a field has been set.
 
 ### GetTTL
 
-`func (o *CacheSettingResponse) GetTTL() int32`
+`func (o *CacheSettingResponse) GetTTL() string`
 
 GetTTL returns the TTL field if non-nil, zero value otherwise.
 
 ### GetTTLOk
 
-`func (o *CacheSettingResponse) GetTTLOk() (*int32, bool)`
+`func (o *CacheSettingResponse) GetTTLOk() (*string, bool)`
 
 GetTTLOk returns a tuple with the TTL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTTL
 
-`func (o *CacheSettingResponse) SetTTL(v int32)`
+`func (o *CacheSettingResponse) SetTTL(v string)`
 
 SetTTL sets TTL field to given value.
 
@@ -206,20 +206,20 @@ HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *CacheSettingResponse) GetVersion() int32`
+`func (o *CacheSettingResponse) GetVersion() string`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *CacheSettingResponse) GetVersionOk() (*int32, bool)`
+`func (o *CacheSettingResponse) GetVersionOk() (*string, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *CacheSettingResponse) SetVersion(v int32)`
+`func (o *CacheSettingResponse) SetVersion(v string)`
 
 SetVersion sets Version field to given value.
 

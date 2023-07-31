@@ -23,10 +23,6 @@ type LoggingGenericCommon struct {
 	MessageType *string `json:"message_type,omitempty"`
 	// A timestamp format
 	TimestampFormat NullableString `json:"timestamp_format,omitempty"`
-	// How frequently log files are finalized so they can be available for reading (in seconds).
-	Period *int32 `json:"period,omitempty"`
-	// The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-	GzipLevel *int32 `json:"gzip_level,omitempty"`
 	// The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
 	CompressionCodec *string `json:"compression_codec,omitempty"`
 	AdditionalProperties map[string]any
@@ -42,10 +38,6 @@ func NewLoggingGenericCommon() *LoggingGenericCommon {
 	this := LoggingGenericCommon{}
 	var messageType string = "classic"
 	this.MessageType = &messageType
-	var period int32 = 3600
-	this.Period = &period
-	var gzipLevel int32 = 0
-	this.GzipLevel = &gzipLevel
 	return &this
 }
 
@@ -56,10 +48,6 @@ func NewLoggingGenericCommonWithDefaults() *LoggingGenericCommon {
 	this := LoggingGenericCommon{}
 	var messageType string = "classic"
 	this.MessageType = &messageType
-	var period int32 = 3600
-	this.Period = &period
-	var gzipLevel int32 = 0
-	this.GzipLevel = &gzipLevel
 	return &this
 }
 
@@ -137,70 +125,6 @@ func (o *LoggingGenericCommon) UnsetTimestampFormat() {
 	o.TimestampFormat.Unset()
 }
 
-// GetPeriod returns the Period field value if set, zero value otherwise.
-func (o *LoggingGenericCommon) GetPeriod() int32 {
-	if o == nil || o.Period == nil {
-		var ret int32
-		return ret
-	}
-	return *o.Period
-}
-
-// GetPeriodOk returns a tuple with the Period field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingGenericCommon) GetPeriodOk() (*int32, bool) {
-	if o == nil || o.Period == nil {
-		return nil, false
-	}
-	return o.Period, true
-}
-
-// HasPeriod returns a boolean if a field has been set.
-func (o *LoggingGenericCommon) HasPeriod() bool {
-	if o != nil && o.Period != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPeriod gets a reference to the given int32 and assigns it to the Period field.
-func (o *LoggingGenericCommon) SetPeriod(v int32) {
-	o.Period = &v
-}
-
-// GetGzipLevel returns the GzipLevel field value if set, zero value otherwise.
-func (o *LoggingGenericCommon) GetGzipLevel() int32 {
-	if o == nil || o.GzipLevel == nil {
-		var ret int32
-		return ret
-	}
-	return *o.GzipLevel
-}
-
-// GetGzipLevelOk returns a tuple with the GzipLevel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingGenericCommon) GetGzipLevelOk() (*int32, bool) {
-	if o == nil || o.GzipLevel == nil {
-		return nil, false
-	}
-	return o.GzipLevel, true
-}
-
-// HasGzipLevel returns a boolean if a field has been set.
-func (o *LoggingGenericCommon) HasGzipLevel() bool {
-	if o != nil && o.GzipLevel != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetGzipLevel gets a reference to the given int32 and assigns it to the GzipLevel field.
-func (o *LoggingGenericCommon) SetGzipLevel(v int32) {
-	o.GzipLevel = &v
-}
-
 // GetCompressionCodec returns the CompressionCodec field value if set, zero value otherwise.
 func (o *LoggingGenericCommon) GetCompressionCodec() string {
 	if o == nil || o.CompressionCodec == nil {
@@ -243,12 +167,6 @@ func (o LoggingGenericCommon) MarshalJSON() ([]byte, error) {
 	if o.TimestampFormat.IsSet() {
 		toSerialize["timestamp_format"] = o.TimestampFormat.Get()
 	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.GzipLevel != nil {
-		toSerialize["gzip_level"] = o.GzipLevel
-	}
 	if o.CompressionCodec != nil {
 		toSerialize["compression_codec"] = o.CompressionCodec
 	}
@@ -274,8 +192,6 @@ func (o *LoggingGenericCommon) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "message_type")
 		delete(additionalProperties, "timestamp_format")
-		delete(additionalProperties, "period")
-		delete(additionalProperties, "gzip_level")
 		delete(additionalProperties, "compression_codec")
 		o.AdditionalProperties = additionalProperties
 	}

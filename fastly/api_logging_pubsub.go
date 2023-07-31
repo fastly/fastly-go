@@ -126,9 +126,9 @@ type APICreateLogGcpPubsubRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	user *string
 	secretKey *string
 	accountName *string
@@ -146,11 +146,6 @@ func (r *APICreateLogGcpPubsubRequest) Placement(placement string) *APICreateLog
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogGcpPubsubRequest) FormatVersion(formatVersion int32) *APICreateLogGcpPubsubRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogGcpPubsubRequest) ResponseCondition(responseCondition string) *APICreateLogGcpPubsubRequest {
 	r.responseCondition = &responseCondition
@@ -159,6 +154,11 @@ func (r *APICreateLogGcpPubsubRequest) ResponseCondition(responseCondition strin
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogGcpPubsubRequest) Format(format string) *APICreateLogGcpPubsubRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogGcpPubsubRequest) FormatVersion(formatVersion int32) *APICreateLogGcpPubsubRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // User Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Not required if &#x60;account_name&#x60; is specified.
@@ -257,14 +257,14 @@ func (a *LoggingPubsubAPIService) CreateLogGcpPubsubExecute(r APICreateLogGcpPub
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.user != nil {
 		localVarFormParams.Add("user", parameterToString(*r.user, ""))
@@ -777,9 +777,9 @@ type APIUpdateLogGcpPubsubRequest struct {
 	loggingGooglePubsubName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	user *string
 	secretKey *string
 	accountName *string
@@ -797,11 +797,6 @@ func (r *APIUpdateLogGcpPubsubRequest) Placement(placement string) *APIUpdateLog
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogGcpPubsubRequest) FormatVersion(formatVersion int32) *APIUpdateLogGcpPubsubRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogGcpPubsubRequest) ResponseCondition(responseCondition string) *APIUpdateLogGcpPubsubRequest {
 	r.responseCondition = &responseCondition
@@ -810,6 +805,11 @@ func (r *APIUpdateLogGcpPubsubRequest) ResponseCondition(responseCondition strin
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogGcpPubsubRequest) Format(format string) *APIUpdateLogGcpPubsubRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogGcpPubsubRequest) FormatVersion(formatVersion int32) *APIUpdateLogGcpPubsubRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // User Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Not required if &#x60;account_name&#x60; is specified.
@@ -911,14 +911,14 @@ func (a *LoggingPubsubAPIService) UpdateLogGcpPubsubExecute(r APIUpdateLogGcpPub
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.user != nil {
 		localVarFormParams.Add("user", parameterToString(*r.user, ""))

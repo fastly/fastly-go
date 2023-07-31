@@ -126,9 +126,9 @@ type APICreateLogNewrelicRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	token *string
 	region *string
 }
@@ -143,11 +143,6 @@ func (r *APICreateLogNewrelicRequest) Placement(placement string) *APICreateLogN
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogNewrelicRequest) FormatVersion(formatVersion int32) *APICreateLogNewrelicRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogNewrelicRequest) ResponseCondition(responseCondition string) *APICreateLogNewrelicRequest {
 	r.responseCondition = &responseCondition
@@ -156,6 +151,11 @@ func (r *APICreateLogNewrelicRequest) ResponseCondition(responseCondition string
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
 func (r *APICreateLogNewrelicRequest) Format(format string) *APICreateLogNewrelicRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogNewrelicRequest) FormatVersion(formatVersion int32) *APICreateLogNewrelicRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Token The Insert API key from the Account page of your New Relic account. Required.
@@ -239,14 +239,14 @@ func (a *LoggingNewrelicAPIService) CreateLogNewrelicExecute(r APICreateLogNewre
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))
@@ -750,9 +750,9 @@ type APIUpdateLogNewrelicRequest struct {
 	loggingNewrelicName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	token *string
 	region *string
 }
@@ -767,11 +767,6 @@ func (r *APIUpdateLogNewrelicRequest) Placement(placement string) *APIUpdateLogN
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogNewrelicRequest) FormatVersion(formatVersion int32) *APIUpdateLogNewrelicRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogNewrelicRequest) ResponseCondition(responseCondition string) *APIUpdateLogNewrelicRequest {
 	r.responseCondition = &responseCondition
@@ -780,6 +775,11 @@ func (r *APIUpdateLogNewrelicRequest) ResponseCondition(responseCondition string
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
 func (r *APIUpdateLogNewrelicRequest) Format(format string) *APIUpdateLogNewrelicRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogNewrelicRequest) FormatVersion(formatVersion int32) *APIUpdateLogNewrelicRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Token The Insert API key from the Account page of your New Relic account. Required.
@@ -866,14 +866,14 @@ func (a *LoggingNewrelicAPIService) UpdateLogNewrelicExecute(r APIUpdateLogNewre
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))

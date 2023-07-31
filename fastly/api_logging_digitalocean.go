@@ -126,14 +126,14 @@ type APICreateLogDigoceanRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *string
 	timestampFormat *string
+	compressionCodec *string
 	period *int32
 	gzipLevel *int32
-	compressionCodec *string
 	bucketName *string
 	accessKey *string
 	secretKey *string
@@ -152,11 +152,6 @@ func (r *APICreateLogDigoceanRequest) Placement(placement string) *APICreateLogD
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogDigoceanRequest) FormatVersion(formatVersion int32) *APICreateLogDigoceanRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogDigoceanRequest) ResponseCondition(responseCondition string) *APICreateLogDigoceanRequest {
 	r.responseCondition = &responseCondition
@@ -165,6 +160,11 @@ func (r *APICreateLogDigoceanRequest) ResponseCondition(responseCondition string
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogDigoceanRequest) Format(format string) *APICreateLogDigoceanRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogDigoceanRequest) FormatVersion(formatVersion int32) *APICreateLogDigoceanRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType How the message should be formatted.
@@ -177,6 +177,11 @@ func (r *APICreateLogDigoceanRequest) TimestampFormat(timestampFormat string) *A
 	r.timestampFormat = &timestampFormat
 	return r
 }
+// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
+func (r *APICreateLogDigoceanRequest) CompressionCodec(compressionCodec string) *APICreateLogDigoceanRequest {
+	r.compressionCodec = &compressionCodec
+	return r
+}
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APICreateLogDigoceanRequest) Period(period int32) *APICreateLogDigoceanRequest {
 	r.period = &period
@@ -185,11 +190,6 @@ func (r *APICreateLogDigoceanRequest) Period(period int32) *APICreateLogDigocean
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APICreateLogDigoceanRequest) GzipLevel(gzipLevel int32) *APICreateLogDigoceanRequest {
 	r.gzipLevel = &gzipLevel
-	return r
-}
-// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
-func (r *APICreateLogDigoceanRequest) CompressionCodec(compressionCodec string) *APICreateLogDigoceanRequest {
-	r.compressionCodec = &compressionCodec
 	return r
 }
 // BucketName The name of the DigitalOcean Space.
@@ -293,14 +293,14 @@ func (a *LoggingDigitaloceanAPIService) CreateLogDigoceanExecute(r APICreateLogD
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))
@@ -308,14 +308,14 @@ func (a *LoggingDigitaloceanAPIService) CreateLogDigoceanExecute(r APICreateLogD
 	if r.timestampFormat != nil {
 		localVarFormParams.Add("timestamp_format", parameterToString(*r.timestampFormat, ""))
 	}
+	if r.compressionCodec != nil {
+		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
+	}
 	if r.period != nil {
 		localVarFormParams.Add("period", parameterToString(*r.period, ""))
 	}
 	if r.gzipLevel != nil {
 		localVarFormParams.Add("gzip_level", parameterToString(*r.gzipLevel, ""))
-	}
-	if r.compressionCodec != nil {
-		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
 	}
 	if r.bucketName != nil {
 		localVarFormParams.Add("bucket_name", parameterToString(*r.bucketName, ""))
@@ -831,14 +831,14 @@ type APIUpdateLogDigoceanRequest struct {
 	loggingDigitaloceanName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *string
 	timestampFormat *string
+	compressionCodec *string
 	period *int32
 	gzipLevel *int32
-	compressionCodec *string
 	bucketName *string
 	accessKey *string
 	secretKey *string
@@ -857,11 +857,6 @@ func (r *APIUpdateLogDigoceanRequest) Placement(placement string) *APIUpdateLogD
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogDigoceanRequest) FormatVersion(formatVersion int32) *APIUpdateLogDigoceanRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogDigoceanRequest) ResponseCondition(responseCondition string) *APIUpdateLogDigoceanRequest {
 	r.responseCondition = &responseCondition
@@ -870,6 +865,11 @@ func (r *APIUpdateLogDigoceanRequest) ResponseCondition(responseCondition string
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogDigoceanRequest) Format(format string) *APIUpdateLogDigoceanRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogDigoceanRequest) FormatVersion(formatVersion int32) *APIUpdateLogDigoceanRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType How the message should be formatted.
@@ -882,6 +882,11 @@ func (r *APIUpdateLogDigoceanRequest) TimestampFormat(timestampFormat string) *A
 	r.timestampFormat = &timestampFormat
 	return r
 }
+// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
+func (r *APIUpdateLogDigoceanRequest) CompressionCodec(compressionCodec string) *APIUpdateLogDigoceanRequest {
+	r.compressionCodec = &compressionCodec
+	return r
+}
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APIUpdateLogDigoceanRequest) Period(period int32) *APIUpdateLogDigoceanRequest {
 	r.period = &period
@@ -890,11 +895,6 @@ func (r *APIUpdateLogDigoceanRequest) Period(period int32) *APIUpdateLogDigocean
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APIUpdateLogDigoceanRequest) GzipLevel(gzipLevel int32) *APIUpdateLogDigoceanRequest {
 	r.gzipLevel = &gzipLevel
-	return r
-}
-// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
-func (r *APIUpdateLogDigoceanRequest) CompressionCodec(compressionCodec string) *APIUpdateLogDigoceanRequest {
-	r.compressionCodec = &compressionCodec
 	return r
 }
 // BucketName The name of the DigitalOcean Space.
@@ -1001,14 +1001,14 @@ func (a *LoggingDigitaloceanAPIService) UpdateLogDigoceanExecute(r APIUpdateLogD
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))
@@ -1016,14 +1016,14 @@ func (a *LoggingDigitaloceanAPIService) UpdateLogDigoceanExecute(r APIUpdateLogD
 	if r.timestampFormat != nil {
 		localVarFormParams.Add("timestamp_format", parameterToString(*r.timestampFormat, ""))
 	}
+	if r.compressionCodec != nil {
+		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
+	}
 	if r.period != nil {
 		localVarFormParams.Add("period", parameterToString(*r.period, ""))
 	}
 	if r.gzipLevel != nil {
 		localVarFormParams.Add("gzip_level", parameterToString(*r.gzipLevel, ""))
-	}
-	if r.compressionCodec != nil {
-		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
 	}
 	if r.bucketName != nil {
 		localVarFormParams.Add("bucket_name", parameterToString(*r.bucketName, ""))

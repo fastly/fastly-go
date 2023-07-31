@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **Action** | Pointer to **NullableString** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  | [optional] 
 **CacheCondition** | Pointer to **NullableString** | Name of the cache condition controlling when this configuration applies. | [optional] 
 **Name** | Pointer to **string** | Name for the cache settings object. | [optional] 
-**StaleTTL** | Pointer to **int32** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). | [optional] 
-**TTL** | Pointer to **int32** | Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;). | [optional] 
+**StaleTTL** | Pointer to **string** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). | [optional] 
+**TTL** | Pointer to **string** | Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;). | [optional] 
 
 ## Methods
 
@@ -126,20 +126,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetStaleTTL
 
-`func (o *CacheSetting) GetStaleTTL() int32`
+`func (o *CacheSetting) GetStaleTTL() string`
 
 GetStaleTTL returns the StaleTTL field if non-nil, zero value otherwise.
 
 ### GetStaleTTLOk
 
-`func (o *CacheSetting) GetStaleTTLOk() (*int32, bool)`
+`func (o *CacheSetting) GetStaleTTLOk() (*string, bool)`
 
 GetStaleTTLOk returns a tuple with the StaleTTL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStaleTTL
 
-`func (o *CacheSetting) SetStaleTTL(v int32)`
+`func (o *CacheSetting) SetStaleTTL(v string)`
 
 SetStaleTTL sets StaleTTL field to given value.
 
@@ -151,20 +151,20 @@ HasStaleTTL returns a boolean if a field has been set.
 
 ### GetTTL
 
-`func (o *CacheSetting) GetTTL() int32`
+`func (o *CacheSetting) GetTTL() string`
 
 GetTTL returns the TTL field if non-nil, zero value otherwise.
 
 ### GetTTLOk
 
-`func (o *CacheSetting) GetTTLOk() (*int32, bool)`
+`func (o *CacheSetting) GetTTLOk() (*string, bool)`
 
 GetTTLOk returns a tuple with the TTL field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTTL
 
-`func (o *CacheSetting) SetTTL(v int32)`
+`func (o *CacheSetting) SetTTL(v string)`
 
 SetTTL sets TTL field to given value.
 

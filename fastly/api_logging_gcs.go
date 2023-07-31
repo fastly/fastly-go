@@ -126,14 +126,14 @@ type APICreateLogGcsRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *string
 	timestampFormat *string
+	compressionCodec *string
 	period *int32
 	gzipLevel *int32
-	compressionCodec *string
 	user *string
 	secretKey *string
 	accountName *string
@@ -153,11 +153,6 @@ func (r *APICreateLogGcsRequest) Placement(placement string) *APICreateLogGcsReq
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogGcsRequest) FormatVersion(formatVersion int32) *APICreateLogGcsRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogGcsRequest) ResponseCondition(responseCondition string) *APICreateLogGcsRequest {
 	r.responseCondition = &responseCondition
@@ -166,6 +161,11 @@ func (r *APICreateLogGcsRequest) ResponseCondition(responseCondition string) *AP
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogGcsRequest) Format(format string) *APICreateLogGcsRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogGcsRequest) FormatVersion(formatVersion int32) *APICreateLogGcsRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType How the message should be formatted.
@@ -178,6 +178,11 @@ func (r *APICreateLogGcsRequest) TimestampFormat(timestampFormat string) *APICre
 	r.timestampFormat = &timestampFormat
 	return r
 }
+// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
+func (r *APICreateLogGcsRequest) CompressionCodec(compressionCodec string) *APICreateLogGcsRequest {
+	r.compressionCodec = &compressionCodec
+	return r
+}
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APICreateLogGcsRequest) Period(period int32) *APICreateLogGcsRequest {
 	r.period = &period
@@ -186,11 +191,6 @@ func (r *APICreateLogGcsRequest) Period(period int32) *APICreateLogGcsRequest {
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APICreateLogGcsRequest) GzipLevel(gzipLevel int32) *APICreateLogGcsRequest {
 	r.gzipLevel = &gzipLevel
-	return r
-}
-// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
-func (r *APICreateLogGcsRequest) CompressionCodec(compressionCodec string) *APICreateLogGcsRequest {
-	r.compressionCodec = &compressionCodec
 	return r
 }
 // User Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Not required if &#x60;account_name&#x60; is specified.
@@ -299,14 +299,14 @@ func (a *LoggingGcsAPIService) CreateLogGcsExecute(r APICreateLogGcsRequest) (*L
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))
@@ -314,14 +314,14 @@ func (a *LoggingGcsAPIService) CreateLogGcsExecute(r APICreateLogGcsRequest) (*L
 	if r.timestampFormat != nil {
 		localVarFormParams.Add("timestamp_format", parameterToString(*r.timestampFormat, ""))
 	}
+	if r.compressionCodec != nil {
+		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
+	}
 	if r.period != nil {
 		localVarFormParams.Add("period", parameterToString(*r.period, ""))
 	}
 	if r.gzipLevel != nil {
 		localVarFormParams.Add("gzip_level", parameterToString(*r.gzipLevel, ""))
-	}
-	if r.compressionCodec != nil {
-		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
 	}
 	if r.user != nil {
 		localVarFormParams.Add("user", parameterToString(*r.user, ""))
@@ -844,14 +844,14 @@ type APIUpdateLogGcsRequest struct {
 	loggingGcsName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *string
 	timestampFormat *string
+	compressionCodec *string
 	period *int32
 	gzipLevel *int32
-	compressionCodec *string
 	user *string
 	secretKey *string
 	accountName *string
@@ -871,11 +871,6 @@ func (r *APIUpdateLogGcsRequest) Placement(placement string) *APIUpdateLogGcsReq
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogGcsRequest) FormatVersion(formatVersion int32) *APIUpdateLogGcsRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogGcsRequest) ResponseCondition(responseCondition string) *APIUpdateLogGcsRequest {
 	r.responseCondition = &responseCondition
@@ -884,6 +879,11 @@ func (r *APIUpdateLogGcsRequest) ResponseCondition(responseCondition string) *AP
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogGcsRequest) Format(format string) *APIUpdateLogGcsRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogGcsRequest) FormatVersion(formatVersion int32) *APIUpdateLogGcsRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType How the message should be formatted.
@@ -896,6 +896,11 @@ func (r *APIUpdateLogGcsRequest) TimestampFormat(timestampFormat string) *APIUpd
 	r.timestampFormat = &timestampFormat
 	return r
 }
+// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
+func (r *APIUpdateLogGcsRequest) CompressionCodec(compressionCodec string) *APIUpdateLogGcsRequest {
+	r.compressionCodec = &compressionCodec
+	return r
+}
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APIUpdateLogGcsRequest) Period(period int32) *APIUpdateLogGcsRequest {
 	r.period = &period
@@ -904,11 +909,6 @@ func (r *APIUpdateLogGcsRequest) Period(period int32) *APIUpdateLogGcsRequest {
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APIUpdateLogGcsRequest) GzipLevel(gzipLevel int32) *APIUpdateLogGcsRequest {
 	r.gzipLevel = &gzipLevel
-	return r
-}
-// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
-func (r *APIUpdateLogGcsRequest) CompressionCodec(compressionCodec string) *APIUpdateLogGcsRequest {
-	r.compressionCodec = &compressionCodec
 	return r
 }
 // User Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Not required if &#x60;account_name&#x60; is specified.
@@ -1020,14 +1020,14 @@ func (a *LoggingGcsAPIService) UpdateLogGcsExecute(r APIUpdateLogGcsRequest) (*L
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))
@@ -1035,14 +1035,14 @@ func (a *LoggingGcsAPIService) UpdateLogGcsExecute(r APIUpdateLogGcsRequest) (*L
 	if r.timestampFormat != nil {
 		localVarFormParams.Add("timestamp_format", parameterToString(*r.timestampFormat, ""))
 	}
+	if r.compressionCodec != nil {
+		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
+	}
 	if r.period != nil {
 		localVarFormParams.Add("period", parameterToString(*r.period, ""))
 	}
 	if r.gzipLevel != nil {
 		localVarFormParams.Add("gzip_level", parameterToString(*r.gzipLevel, ""))
-	}
-	if r.compressionCodec != nil {
-		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
 	}
 	if r.user != nil {
 		localVarFormParams.Add("user", parameterToString(*r.user, ""))

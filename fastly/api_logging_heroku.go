@@ -126,9 +126,9 @@ type APICreateLogHerokuRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	token *string
 	url *string
 }
@@ -143,11 +143,6 @@ func (r *APICreateLogHerokuRequest) Placement(placement string) *APICreateLogHer
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogHerokuRequest) FormatVersion(formatVersion int32) *APICreateLogHerokuRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogHerokuRequest) ResponseCondition(responseCondition string) *APICreateLogHerokuRequest {
 	r.responseCondition = &responseCondition
@@ -156,6 +151,11 @@ func (r *APICreateLogHerokuRequest) ResponseCondition(responseCondition string) 
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogHerokuRequest) Format(format string) *APICreateLogHerokuRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogHerokuRequest) FormatVersion(formatVersion int32) *APICreateLogHerokuRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Token The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
@@ -239,14 +239,14 @@ func (a *LoggingHerokuAPIService) CreateLogHerokuExecute(r APICreateLogHerokuReq
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))
@@ -750,9 +750,9 @@ type APIUpdateLogHerokuRequest struct {
 	loggingHerokuName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	token *string
 	url *string
 }
@@ -767,11 +767,6 @@ func (r *APIUpdateLogHerokuRequest) Placement(placement string) *APIUpdateLogHer
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogHerokuRequest) FormatVersion(formatVersion int32) *APIUpdateLogHerokuRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogHerokuRequest) ResponseCondition(responseCondition string) *APIUpdateLogHerokuRequest {
 	r.responseCondition = &responseCondition
@@ -780,6 +775,11 @@ func (r *APIUpdateLogHerokuRequest) ResponseCondition(responseCondition string) 
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogHerokuRequest) Format(format string) *APIUpdateLogHerokuRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogHerokuRequest) FormatVersion(formatVersion int32) *APIUpdateLogHerokuRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Token The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
@@ -866,14 +866,14 @@ func (a *LoggingHerokuAPIService) UpdateLogHerokuExecute(r APIUpdateLogHerokuReq
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))

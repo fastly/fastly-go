@@ -45,7 +45,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DomainAPI.CheckDomain`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CheckDomain`: []DomainCheckItem
+    // response from `CheckDomain`: []any
     fmt.Fprintf(os.Stdout, "Response from `DomainAPI.CheckDomain`: %v\n", resp)
 }
 ```
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]DomainCheckItem**](DomainCheckItem.md)
+**[]any**
 
 ### Authorization
 
@@ -115,7 +115,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DomainAPI.CheckDomains`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CheckDomains`: [][]DomainCheckItem
+    // response from `CheckDomains`: [][]any
     fmt.Fprintf(os.Stdout, "Response from `DomainAPI.CheckDomains`: %v\n", resp)
 }
 ```
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[][]DomainCheckItem**](array.md)
+[**[][]any**](array.md)
 
 ### Authorization
 

@@ -127,8 +127,8 @@ type APICreateCacheSettingsRequest struct {
 	action *string
 	cacheCondition *string
 	name *string
-	staleTTL *int32
-	ttl *int32
+	staleTTL *string
+	ttl *string
 }
 
 // Action If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
@@ -147,12 +147,12 @@ func (r *APICreateCacheSettingsRequest) Name(name string) *APICreateCacheSetting
 	return r
 }
 // StaleTTL Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;).
-func (r *APICreateCacheSettingsRequest) StaleTTL(staleTTL int32) *APICreateCacheSettingsRequest {
+func (r *APICreateCacheSettingsRequest) StaleTTL(staleTTL string) *APICreateCacheSettingsRequest {
 	r.staleTTL = &staleTTL
 	return r
 }
 // TTL Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;).
-func (r *APICreateCacheSettingsRequest) TTL(ttl int32) *APICreateCacheSettingsRequest {
+func (r *APICreateCacheSettingsRequest) TTL(ttl string) *APICreateCacheSettingsRequest {
 	r.ttl = &ttl
 	return r
 }
@@ -733,8 +733,8 @@ type APIUpdateCacheSettingsRequest struct {
 	action *string
 	cacheCondition *string
 	name *string
-	staleTTL *int32
-	ttl *int32
+	staleTTL *string
+	ttl *string
 }
 
 // Action If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
@@ -753,12 +753,12 @@ func (r *APIUpdateCacheSettingsRequest) Name(name string) *APIUpdateCacheSetting
 	return r
 }
 // StaleTTL Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;).
-func (r *APIUpdateCacheSettingsRequest) StaleTTL(staleTTL int32) *APIUpdateCacheSettingsRequest {
+func (r *APIUpdateCacheSettingsRequest) StaleTTL(staleTTL string) *APIUpdateCacheSettingsRequest {
 	r.staleTTL = &staleTTL
 	return r
 }
 // TTL Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;).
-func (r *APIUpdateCacheSettingsRequest) TTL(ttl int32) *APIUpdateCacheSettingsRequest {
+func (r *APIUpdateCacheSettingsRequest) TTL(ttl string) *APIUpdateCacheSettingsRequest {
 	r.ttl = &ttl
 	return r
 }

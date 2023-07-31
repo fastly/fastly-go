@@ -28,7 +28,7 @@ type ResponseObject struct {
 	// Name for the request settings.
 	Name *string `json:"name,omitempty"`
 	// The HTTP status code.
-	Status *int32 `json:"status,omitempty"`
+	Status *string `json:"status,omitempty"`
 	// The HTTP response.
 	Response *string `json:"response,omitempty"`
 	// Condition which, if met, will select this configuration during a request. Optional.
@@ -44,7 +44,7 @@ type _ResponseObject ResponseObject
 // will change when the set of required properties is changed
 func NewResponseObject() *ResponseObject {
 	this := ResponseObject{}
-	var status int32 = 200
+	var status string = "200"
 	this.Status = &status
 	var response string = "Ok"
 	this.Response = &response
@@ -56,7 +56,7 @@ func NewResponseObject() *ResponseObject {
 // but it doesn't guarantee that properties required by API are set
 func NewResponseObjectWithDefaults() *ResponseObject {
 	this := ResponseObject{}
-	var status int32 = 200
+	var status string = "200"
 	this.Status = &status
 	var response string = "Ok"
 	this.Response = &response
@@ -212,9 +212,9 @@ func (o *ResponseObject) SetName(v string) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *ResponseObject) GetStatus() int32 {
+func (o *ResponseObject) GetStatus() string {
 	if o == nil || o.Status == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Status
@@ -222,7 +222,7 @@ func (o *ResponseObject) GetStatus() int32 {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResponseObject) GetStatusOk() (*int32, bool) {
+func (o *ResponseObject) GetStatusOk() (*string, bool) {
 	if o == nil || o.Status == nil {
 		return nil, false
 	}
@@ -238,8 +238,8 @@ func (o *ResponseObject) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given int32 and assigns it to the Status field.
-func (o *ResponseObject) SetStatus(v int32) {
+// SetStatus gets a reference to the given string and assigns it to the Status field.
+func (o *ResponseObject) SetStatus(v string) {
 	o.Status = &v
 }
 

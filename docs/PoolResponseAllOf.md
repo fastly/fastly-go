@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Quorum** | Pointer to **string** | Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up. | [optional] [default to "75"]
 
 ## Methods
 
@@ -25,30 +25,30 @@ NewPoolResponseAllOfWithDefaults instantiates a new PoolResponseAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetID
+### GetQuorum
 
-`func (o *PoolResponseAllOf) GetID() string`
+`func (o *PoolResponseAllOf) GetQuorum() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetQuorum returns the Quorum field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetQuorumOk
 
-`func (o *PoolResponseAllOf) GetIDOk() (*string, bool)`
+`func (o *PoolResponseAllOf) GetQuorumOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetQuorumOk returns a tuple with the Quorum field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetQuorum
 
-`func (o *PoolResponseAllOf) SetID(v string)`
+`func (o *PoolResponseAllOf) SetQuorum(v string)`
 
-SetID sets ID field to given value.
+SetQuorum sets Quorum field to given value.
 
-### HasID
+### HasQuorum
 
-`func (o *PoolResponseAllOf) HasID() bool`
+`func (o *PoolResponseAllOf) HasQuorum() bool`
 
-HasID returns a boolean if a field has been set.
+HasQuorum returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

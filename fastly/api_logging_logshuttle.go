@@ -126,9 +126,9 @@ type APICreateLogLogshuttleRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	token *string
 	url *string
 }
@@ -143,11 +143,6 @@ func (r *APICreateLogLogshuttleRequest) Placement(placement string) *APICreateLo
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogLogshuttleRequest) FormatVersion(formatVersion int32) *APICreateLogLogshuttleRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogLogshuttleRequest) ResponseCondition(responseCondition string) *APICreateLogLogshuttleRequest {
 	r.responseCondition = &responseCondition
@@ -156,6 +151,11 @@ func (r *APICreateLogLogshuttleRequest) ResponseCondition(responseCondition stri
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogLogshuttleRequest) Format(format string) *APICreateLogLogshuttleRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogLogshuttleRequest) FormatVersion(formatVersion int32) *APICreateLogLogshuttleRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Token The data authentication token associated with this endpoint.
@@ -239,14 +239,14 @@ func (a *LoggingLogshuttleAPIService) CreateLogLogshuttleExecute(r APICreateLogL
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))
@@ -750,9 +750,9 @@ type APIUpdateLogLogshuttleRequest struct {
 	loggingLogshuttleName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	token *string
 	url *string
 }
@@ -767,11 +767,6 @@ func (r *APIUpdateLogLogshuttleRequest) Placement(placement string) *APIUpdateLo
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogLogshuttleRequest) FormatVersion(formatVersion int32) *APIUpdateLogLogshuttleRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogLogshuttleRequest) ResponseCondition(responseCondition string) *APIUpdateLogLogshuttleRequest {
 	r.responseCondition = &responseCondition
@@ -780,6 +775,11 @@ func (r *APIUpdateLogLogshuttleRequest) ResponseCondition(responseCondition stri
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogLogshuttleRequest) Format(format string) *APIUpdateLogLogshuttleRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogLogshuttleRequest) FormatVersion(formatVersion int32) *APIUpdateLogLogshuttleRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Token The data authentication token associated with this endpoint.
@@ -866,14 +866,14 @@ func (a *LoggingLogshuttleAPIService) UpdateLogLogshuttleExecute(r APIUpdateLogL
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))

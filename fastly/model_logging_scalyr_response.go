@@ -24,12 +24,12 @@ type LoggingScalyrResponse struct {
 	Name *string `json:"name,omitempty"`
 	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
 	Placement NullableString `json:"placement,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
-	FormatVersion *int32 `json:"format_version,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	FormatVersion *string `json:"format_version,omitempty"`
 	// The region that log data will be sent to.
 	Region *string `json:"region,omitempty"`
 	// The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
@@ -43,7 +43,7 @@ type LoggingScalyrResponse struct {
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Version *string `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -55,10 +55,10 @@ type _LoggingScalyrResponse LoggingScalyrResponse
 // will change when the set of required properties is changed
 func NewLoggingScalyrResponse() *LoggingScalyrResponse {
 	this := LoggingScalyrResponse{}
-	var formatVersion int32 = 2
-	this.FormatVersion = &formatVersion
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
+	var formatVersion string = "2"
+	this.FormatVersion = &formatVersion
 	var region string = "US"
 	this.Region = &region
 	var projectID string = "logplex"
@@ -71,10 +71,10 @@ func NewLoggingScalyrResponse() *LoggingScalyrResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingScalyrResponseWithDefaults() *LoggingScalyrResponse {
 	this := LoggingScalyrResponse{}
-	var formatVersion int32 = 2
-	this.FormatVersion = &formatVersion
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
+	var formatVersion string = "2"
+	this.FormatVersion = &formatVersion
 	var region string = "US"
 	this.Region = &region
 	var projectID string = "logplex"
@@ -156,38 +156,6 @@ func (o *LoggingScalyrResponse) UnsetPlacement() {
 	o.Placement.Unset()
 }
 
-// GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
-func (o *LoggingScalyrResponse) GetFormatVersion() int32 {
-	if o == nil || o.FormatVersion == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FormatVersion
-}
-
-// GetFormatVersionOk returns a tuple with the FormatVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingScalyrResponse) GetFormatVersionOk() (*int32, bool) {
-	if o == nil || o.FormatVersion == nil {
-		return nil, false
-	}
-	return o.FormatVersion, true
-}
-
-// HasFormatVersion returns a boolean if a field has been set.
-func (o *LoggingScalyrResponse) HasFormatVersion() bool {
-	if o != nil && o.FormatVersion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFormatVersion gets a reference to the given int32 and assigns it to the FormatVersion field.
-func (o *LoggingScalyrResponse) SetFormatVersion(v int32) {
-	o.FormatVersion = &v
-}
-
 // GetResponseCondition returns the ResponseCondition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LoggingScalyrResponse) GetResponseCondition() string {
 	if o == nil || o.ResponseCondition.Get() == nil {
@@ -260,6 +228,38 @@ func (o *LoggingScalyrResponse) HasFormat() bool {
 // SetFormat gets a reference to the given string and assigns it to the Format field.
 func (o *LoggingScalyrResponse) SetFormat(v string) {
 	o.Format = &v
+}
+
+// GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
+func (o *LoggingScalyrResponse) GetFormatVersion() string {
+	if o == nil || o.FormatVersion == nil {
+		var ret string
+		return ret
+	}
+	return *o.FormatVersion
+}
+
+// GetFormatVersionOk returns a tuple with the FormatVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingScalyrResponse) GetFormatVersionOk() (*string, bool) {
+	if o == nil || o.FormatVersion == nil {
+		return nil, false
+	}
+	return o.FormatVersion, true
+}
+
+// HasFormatVersion returns a boolean if a field has been set.
+func (o *LoggingScalyrResponse) HasFormatVersion() bool {
+	if o != nil && o.FormatVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFormatVersion gets a reference to the given string and assigns it to the FormatVersion field.
+func (o *LoggingScalyrResponse) SetFormatVersion(v string) {
+	o.FormatVersion = &v
 }
 
 // GetRegion returns the Region field value if set, zero value otherwise.
@@ -517,9 +517,9 @@ func (o *LoggingScalyrResponse) SetServiceID(v string) {
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *LoggingScalyrResponse) GetVersion() int32 {
+func (o *LoggingScalyrResponse) GetVersion() string {
 	if o == nil || o.Version == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Version
@@ -527,7 +527,7 @@ func (o *LoggingScalyrResponse) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingScalyrResponse) GetVersionOk() (*int32, bool) {
+func (o *LoggingScalyrResponse) GetVersionOk() (*string, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -543,8 +543,8 @@ func (o *LoggingScalyrResponse) HasVersion() bool {
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *LoggingScalyrResponse) SetVersion(v int32) {
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *LoggingScalyrResponse) SetVersion(v string) {
 	o.Version = &v
 }
 
@@ -558,14 +558,14 @@ func (o LoggingScalyrResponse) MarshalJSON() ([]byte, error) {
 	if o.Placement.IsSet() {
 		toSerialize["placement"] = o.Placement.Get()
 	}
-	if o.FormatVersion != nil {
-		toSerialize["format_version"] = o.FormatVersion
-	}
 	if o.ResponseCondition.IsSet() {
 		toSerialize["response_condition"] = o.ResponseCondition.Get()
 	}
 	if o.Format != nil {
 		toSerialize["format"] = o.Format
+	}
+	if o.FormatVersion != nil {
+		toSerialize["format_version"] = o.FormatVersion
 	}
 	if o.Region != nil {
 		toSerialize["region"] = o.Region
@@ -613,9 +613,9 @@ func (o *LoggingScalyrResponse) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "placement")
-		delete(additionalProperties, "format_version")
 		delete(additionalProperties, "response_condition")
 		delete(additionalProperties, "format")
+		delete(additionalProperties, "format_version")
 		delete(additionalProperties, "region")
 		delete(additionalProperties, "token")
 		delete(additionalProperties, "project_id")

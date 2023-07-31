@@ -7,9 +7,7 @@ Name | Type | Description | Notes
 **Action** | Pointer to **string** | Accepts a string value. | [optional] 
 **CacheCondition** | Pointer to **NullableString** | Name of the cache condition controlling when this configuration applies. | [optional] 
 **Dst** | Pointer to **string** | Header to set. | [optional] 
-**IgnoreIfSet** | Pointer to **int32** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. | [optional] 
 **Name** | Pointer to **string** | A handle to refer to this Header object. | [optional] 
-**Priority** | Pointer to **int32** | Priority determines execution order. Lower numbers execute first. | [optional] [default to 100]
 **Regex** | Pointer to **NullableString** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. | [optional] 
 **RequestCondition** | Pointer to **NullableString** | Condition which, if met, will select this configuration during a request. Optional. | [optional] 
 **ResponseCondition** | Pointer to **NullableString** | Optional name of a response condition to apply. | [optional] 
@@ -121,31 +119,6 @@ SetDst sets Dst field to given value.
 
 HasDst returns a boolean if a field has been set.
 
-### GetIgnoreIfSet
-
-`func (o *Header) GetIgnoreIfSet() int32`
-
-GetIgnoreIfSet returns the IgnoreIfSet field if non-nil, zero value otherwise.
-
-### GetIgnoreIfSetOk
-
-`func (o *Header) GetIgnoreIfSetOk() (*int32, bool)`
-
-GetIgnoreIfSetOk returns a tuple with the IgnoreIfSet field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIgnoreIfSet
-
-`func (o *Header) SetIgnoreIfSet(v int32)`
-
-SetIgnoreIfSet sets IgnoreIfSet field to given value.
-
-### HasIgnoreIfSet
-
-`func (o *Header) HasIgnoreIfSet() bool`
-
-HasIgnoreIfSet returns a boolean if a field has been set.
-
 ### GetName
 
 `func (o *Header) GetName() string`
@@ -170,31 +143,6 @@ SetName sets Name field to given value.
 `func (o *Header) HasName() bool`
 
 HasName returns a boolean if a field has been set.
-
-### GetPriority
-
-`func (o *Header) GetPriority() int32`
-
-GetPriority returns the Priority field if non-nil, zero value otherwise.
-
-### GetPriorityOk
-
-`func (o *Header) GetPriorityOk() (*int32, bool)`
-
-GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPriority
-
-`func (o *Header) SetPriority(v int32)`
-
-SetPriority sets Priority field to given value.
-
-### HasPriority
-
-`func (o *Header) HasPriority() bool`
-
-HasPriority returns a boolean if a field has been set.
 
 ### GetRegex
 

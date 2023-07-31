@@ -126,9 +126,9 @@ type APICreateLogSumologicRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *LoggingMessageType
 	url *string
 }
@@ -143,11 +143,6 @@ func (r *APICreateLogSumologicRequest) Placement(placement string) *APICreateLog
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogSumologicRequest) FormatVersion(formatVersion int32) *APICreateLogSumologicRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogSumologicRequest) ResponseCondition(responseCondition string) *APICreateLogSumologicRequest {
 	r.responseCondition = &responseCondition
@@ -156,6 +151,11 @@ func (r *APICreateLogSumologicRequest) ResponseCondition(responseCondition strin
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogSumologicRequest) Format(format string) *APICreateLogSumologicRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogSumologicRequest) FormatVersion(formatVersion int32) *APICreateLogSumologicRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType returns a pointer to a request.
@@ -239,14 +239,14 @@ func (a *LoggingSumologicAPIService) CreateLogSumologicExecute(r APICreateLogSum
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))
@@ -750,9 +750,9 @@ type APIUpdateLogSumologicRequest struct {
 	loggingSumologicName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *LoggingMessageType
 	url *string
 }
@@ -767,11 +767,6 @@ func (r *APIUpdateLogSumologicRequest) Placement(placement string) *APIUpdateLog
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogSumologicRequest) FormatVersion(formatVersion int32) *APIUpdateLogSumologicRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogSumologicRequest) ResponseCondition(responseCondition string) *APIUpdateLogSumologicRequest {
 	r.responseCondition = &responseCondition
@@ -780,6 +775,11 @@ func (r *APIUpdateLogSumologicRequest) ResponseCondition(responseCondition strin
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogSumologicRequest) Format(format string) *APIUpdateLogSumologicRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogSumologicRequest) FormatVersion(formatVersion int32) *APIUpdateLogSumologicRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType returns a pointer to a request.
@@ -866,14 +866,14 @@ func (a *LoggingSumologicAPIService) UpdateLogSumologicExecute(r APIUpdateLogSum
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))

@@ -6,27 +6,27 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The name for the real-time logging configuration. | [optional] 
 **Placement** | Pointer to **NullableString** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] 
-**FormatVersion** | Pointer to **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to 2]
 **ResponseCondition** | Pointer to **NullableString** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
 **Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
+**FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
 **MessageType** | Pointer to **string** | How the message should be formatted. | [optional] [default to "classic"]
 **TimestampFormat** | Pointer to **NullableString** | A timestamp format | [optional] [readonly] 
-**Period** | Pointer to **int32** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
-**GzipLevel** | Pointer to **int32** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [default to 0]
 **CompressionCodec** | Pointer to **string** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] 
-**Address** | Pointer to **string** | A hostname or IPv4 address. | [optional] 
-**Port** | Pointer to **int32** | The port number. | [optional] [default to 22]
+**CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**Version** | Pointer to **string** |  | [optional] [readonly] 
 **Password** | Pointer to **string** | The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference. | [optional] 
 **Path** | Pointer to **NullableString** | The path to upload logs to. | [optional] [default to "null"]
 **PublicKey** | Pointer to **NullableString** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to "null"]
 **SecretKey** | Pointer to **NullableString** | The SSH private key for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference. | [optional] [default to "null"]
 **SSHKnownHosts** | Pointer to **string** | A list of host keys for all hosts we can connect to over SFTP. | [optional] 
 **User** | Pointer to **string** | The username for the server. | [optional] 
-**CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **int32** |  | [optional] [readonly] 
+**Address** | Pointer to **string** | A hostname or IPv4 address. | [optional] 
+**Port** | Pointer to **string** | The port number. | [optional] [default to "22"]
+**Period** | Pointer to **string** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to "3600"]
+**GzipLevel** | Pointer to **int32** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [default to 0]
 
 ## Methods
 
@@ -107,31 +107,6 @@ HasPlacement returns a boolean if a field has been set.
 `func (o *LoggingSftpResponse) UnsetPlacement()`
 
 UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
-### GetFormatVersion
-
-`func (o *LoggingSftpResponse) GetFormatVersion() int32`
-
-GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
-
-### GetFormatVersionOk
-
-`func (o *LoggingSftpResponse) GetFormatVersionOk() (*int32, bool)`
-
-GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFormatVersion
-
-`func (o *LoggingSftpResponse) SetFormatVersion(v int32)`
-
-SetFormatVersion sets FormatVersion field to given value.
-
-### HasFormatVersion
-
-`func (o *LoggingSftpResponse) HasFormatVersion() bool`
-
-HasFormatVersion returns a boolean if a field has been set.
-
 ### GetResponseCondition
 
 `func (o *LoggingSftpResponse) GetResponseCondition() string`
@@ -191,6 +166,31 @@ SetFormat sets Format field to given value.
 `func (o *LoggingSftpResponse) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+### GetFormatVersion
+
+`func (o *LoggingSftpResponse) GetFormatVersion() string`
+
+GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
+
+### GetFormatVersionOk
+
+`func (o *LoggingSftpResponse) GetFormatVersionOk() (*string, bool)`
+
+GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormatVersion
+
+`func (o *LoggingSftpResponse) SetFormatVersion(v string)`
+
+SetFormatVersion sets FormatVersion field to given value.
+
+### HasFormatVersion
+
+`func (o *LoggingSftpResponse) HasFormatVersion() bool`
+
+HasFormatVersion returns a boolean if a field has been set.
 
 ### GetMessageType
 
@@ -252,56 +252,6 @@ HasTimestampFormat returns a boolean if a field has been set.
 `func (o *LoggingSftpResponse) UnsetTimestampFormat()`
 
 UnsetTimestampFormat ensures that no value is present for TimestampFormat, not even an explicit nil
-### GetPeriod
-
-`func (o *LoggingSftpResponse) GetPeriod() int32`
-
-GetPeriod returns the Period field if non-nil, zero value otherwise.
-
-### GetPeriodOk
-
-`func (o *LoggingSftpResponse) GetPeriodOk() (*int32, bool)`
-
-GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPeriod
-
-`func (o *LoggingSftpResponse) SetPeriod(v int32)`
-
-SetPeriod sets Period field to given value.
-
-### HasPeriod
-
-`func (o *LoggingSftpResponse) HasPeriod() bool`
-
-HasPeriod returns a boolean if a field has been set.
-
-### GetGzipLevel
-
-`func (o *LoggingSftpResponse) GetGzipLevel() int32`
-
-GetGzipLevel returns the GzipLevel field if non-nil, zero value otherwise.
-
-### GetGzipLevelOk
-
-`func (o *LoggingSftpResponse) GetGzipLevelOk() (*int32, bool)`
-
-GetGzipLevelOk returns a tuple with the GzipLevel field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGzipLevel
-
-`func (o *LoggingSftpResponse) SetGzipLevel(v int32)`
-
-SetGzipLevel sets GzipLevel field to given value.
-
-### HasGzipLevel
-
-`func (o *LoggingSftpResponse) HasGzipLevel() bool`
-
-HasGzipLevel returns a boolean if a field has been set.
-
 ### GetCompressionCodec
 
 `func (o *LoggingSftpResponse) GetCompressionCodec() string`
@@ -327,55 +277,160 @@ SetCompressionCodec sets CompressionCodec field to given value.
 
 HasCompressionCodec returns a boolean if a field has been set.
 
-### GetAddress
+### GetCreatedAt
 
-`func (o *LoggingSftpResponse) GetAddress() string`
+`func (o *LoggingSftpResponse) GetCreatedAt() time.Time`
 
-GetAddress returns the Address field if non-nil, zero value otherwise.
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
-### GetAddressOk
+### GetCreatedAtOk
 
-`func (o *LoggingSftpResponse) GetAddressOk() (*string, bool)`
+`func (o *LoggingSftpResponse) GetCreatedAtOk() (*time.Time, bool)`
 
-GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAddress
+### SetCreatedAt
 
-`func (o *LoggingSftpResponse) SetAddress(v string)`
+`func (o *LoggingSftpResponse) SetCreatedAt(v time.Time)`
 
-SetAddress sets Address field to given value.
+SetCreatedAt sets CreatedAt field to given value.
 
-### HasAddress
+### HasCreatedAt
 
-`func (o *LoggingSftpResponse) HasAddress() bool`
+`func (o *LoggingSftpResponse) HasCreatedAt() bool`
 
-HasAddress returns a boolean if a field has been set.
+HasCreatedAt returns a boolean if a field has been set.
 
-### GetPort
+### SetCreatedAtNil
 
-`func (o *LoggingSftpResponse) GetPort() int32`
+`func (o *LoggingSftpResponse) SetCreatedAtNil(b bool)`
 
-GetPort returns the Port field if non-nil, zero value otherwise.
+ SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 
-### GetPortOk
+### UnsetCreatedAt
+`func (o *LoggingSftpResponse) UnsetCreatedAt()`
 
-`func (o *LoggingSftpResponse) GetPortOk() (*int32, bool)`
+UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
+### GetDeletedAt
 
-GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
+`func (o *LoggingSftpResponse) GetDeletedAt() time.Time`
+
+GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
+
+### GetDeletedAtOk
+
+`func (o *LoggingSftpResponse) GetDeletedAtOk() (*time.Time, bool)`
+
+GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPort
+### SetDeletedAt
 
-`func (o *LoggingSftpResponse) SetPort(v int32)`
+`func (o *LoggingSftpResponse) SetDeletedAt(v time.Time)`
 
-SetPort sets Port field to given value.
+SetDeletedAt sets DeletedAt field to given value.
 
-### HasPort
+### HasDeletedAt
 
-`func (o *LoggingSftpResponse) HasPort() bool`
+`func (o *LoggingSftpResponse) HasDeletedAt() bool`
 
-HasPort returns a boolean if a field has been set.
+HasDeletedAt returns a boolean if a field has been set.
+
+### SetDeletedAtNil
+
+`func (o *LoggingSftpResponse) SetDeletedAtNil(b bool)`
+
+ SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
+
+### UnsetDeletedAt
+`func (o *LoggingSftpResponse) UnsetDeletedAt()`
+
+UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
+### GetUpdatedAt
+
+`func (o *LoggingSftpResponse) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *LoggingSftpResponse) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *LoggingSftpResponse) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+### HasUpdatedAt
+
+`func (o *LoggingSftpResponse) HasUpdatedAt() bool`
+
+HasUpdatedAt returns a boolean if a field has been set.
+
+### SetUpdatedAtNil
+
+`func (o *LoggingSftpResponse) SetUpdatedAtNil(b bool)`
+
+ SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+
+### UnsetUpdatedAt
+`func (o *LoggingSftpResponse) UnsetUpdatedAt()`
+
+UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
+### GetServiceID
+
+`func (o *LoggingSftpResponse) GetServiceID() string`
+
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+
+### GetServiceIDOk
+
+`func (o *LoggingSftpResponse) GetServiceIDOk() (*string, bool)`
+
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceID
+
+`func (o *LoggingSftpResponse) SetServiceID(v string)`
+
+SetServiceID sets ServiceID field to given value.
+
+### HasServiceID
+
+`func (o *LoggingSftpResponse) HasServiceID() bool`
+
+HasServiceID returns a boolean if a field has been set.
+
+### GetVersion
+
+`func (o *LoggingSftpResponse) GetVersion() string`
+
+GetVersion returns the Version field if non-nil, zero value otherwise.
+
+### GetVersionOk
+
+`func (o *LoggingSftpResponse) GetVersionOk() (*string, bool)`
+
+GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersion
+
+`func (o *LoggingSftpResponse) SetVersion(v string)`
+
+SetVersion sets Version field to given value.
+
+### HasVersion
+
+`func (o *LoggingSftpResponse) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
 
 ### GetPassword
 
@@ -557,160 +612,105 @@ SetUser sets User field to given value.
 
 HasUser returns a boolean if a field has been set.
 
-### GetCreatedAt
+### GetAddress
 
-`func (o *LoggingSftpResponse) GetCreatedAt() time.Time`
+`func (o *LoggingSftpResponse) GetAddress() string`
 
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+GetAddress returns the Address field if non-nil, zero value otherwise.
 
-### GetCreatedAtOk
+### GetAddressOk
 
-`func (o *LoggingSftpResponse) GetCreatedAtOk() (*time.Time, bool)`
+`func (o *LoggingSftpResponse) GetAddressOk() (*string, bool)`
 
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCreatedAt
+### SetAddress
 
-`func (o *LoggingSftpResponse) SetCreatedAt(v time.Time)`
+`func (o *LoggingSftpResponse) SetAddress(v string)`
 
-SetCreatedAt sets CreatedAt field to given value.
+SetAddress sets Address field to given value.
 
-### HasCreatedAt
+### HasAddress
 
-`func (o *LoggingSftpResponse) HasCreatedAt() bool`
+`func (o *LoggingSftpResponse) HasAddress() bool`
 
-HasCreatedAt returns a boolean if a field has been set.
+HasAddress returns a boolean if a field has been set.
 
-### SetCreatedAtNil
+### GetPort
 
-`func (o *LoggingSftpResponse) SetCreatedAtNil(b bool)`
+`func (o *LoggingSftpResponse) GetPort() string`
 
- SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
+GetPort returns the Port field if non-nil, zero value otherwise.
 
-### UnsetCreatedAt
-`func (o *LoggingSftpResponse) UnsetCreatedAt()`
+### GetPortOk
 
-UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-### GetDeletedAt
+`func (o *LoggingSftpResponse) GetPortOk() (*string, bool)`
 
-`func (o *LoggingSftpResponse) GetDeletedAt() time.Time`
-
-GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
-
-### GetDeletedAtOk
-
-`func (o *LoggingSftpResponse) GetDeletedAtOk() (*time.Time, bool)`
-
-GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDeletedAt
+### SetPort
 
-`func (o *LoggingSftpResponse) SetDeletedAt(v time.Time)`
+`func (o *LoggingSftpResponse) SetPort(v string)`
 
-SetDeletedAt sets DeletedAt field to given value.
+SetPort sets Port field to given value.
 
-### HasDeletedAt
+### HasPort
 
-`func (o *LoggingSftpResponse) HasDeletedAt() bool`
+`func (o *LoggingSftpResponse) HasPort() bool`
 
-HasDeletedAt returns a boolean if a field has been set.
+HasPort returns a boolean if a field has been set.
 
-### SetDeletedAtNil
+### GetPeriod
 
-`func (o *LoggingSftpResponse) SetDeletedAtNil(b bool)`
+`func (o *LoggingSftpResponse) GetPeriod() string`
 
- SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
+GetPeriod returns the Period field if non-nil, zero value otherwise.
 
-### UnsetDeletedAt
-`func (o *LoggingSftpResponse) UnsetDeletedAt()`
+### GetPeriodOk
 
-UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-### GetUpdatedAt
+`func (o *LoggingSftpResponse) GetPeriodOk() (*string, bool)`
 
-`func (o *LoggingSftpResponse) GetUpdatedAt() time.Time`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *LoggingSftpResponse) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUpdatedAt
+### SetPeriod
 
-`func (o *LoggingSftpResponse) SetUpdatedAt(v time.Time)`
+`func (o *LoggingSftpResponse) SetPeriod(v string)`
 
-SetUpdatedAt sets UpdatedAt field to given value.
+SetPeriod sets Period field to given value.
 
-### HasUpdatedAt
+### HasPeriod
 
-`func (o *LoggingSftpResponse) HasUpdatedAt() bool`
+`func (o *LoggingSftpResponse) HasPeriod() bool`
 
-HasUpdatedAt returns a boolean if a field has been set.
+HasPeriod returns a boolean if a field has been set.
 
-### SetUpdatedAtNil
+### GetGzipLevel
 
-`func (o *LoggingSftpResponse) SetUpdatedAtNil(b bool)`
+`func (o *LoggingSftpResponse) GetGzipLevel() int32`
 
- SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+GetGzipLevel returns the GzipLevel field if non-nil, zero value otherwise.
 
-### UnsetUpdatedAt
-`func (o *LoggingSftpResponse) UnsetUpdatedAt()`
+### GetGzipLevelOk
 
-UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceID
+`func (o *LoggingSftpResponse) GetGzipLevelOk() (*int32, bool)`
 
-`func (o *LoggingSftpResponse) GetServiceID() string`
-
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
-
-### GetServiceIDOk
-
-`func (o *LoggingSftpResponse) GetServiceIDOk() (*string, bool)`
-
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetGzipLevelOk returns a tuple with the GzipLevel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetGzipLevel
 
-`func (o *LoggingSftpResponse) SetServiceID(v string)`
+`func (o *LoggingSftpResponse) SetGzipLevel(v int32)`
 
-SetServiceID sets ServiceID field to given value.
+SetGzipLevel sets GzipLevel field to given value.
 
-### HasServiceID
+### HasGzipLevel
 
-`func (o *LoggingSftpResponse) HasServiceID() bool`
+`func (o *LoggingSftpResponse) HasGzipLevel() bool`
 
-HasServiceID returns a boolean if a field has been set.
-
-### GetVersion
-
-`func (o *LoggingSftpResponse) GetVersion() int32`
-
-GetVersion returns the Version field if non-nil, zero value otherwise.
-
-### GetVersionOk
-
-`func (o *LoggingSftpResponse) GetVersionOk() (*int32, bool)`
-
-GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVersion
-
-`func (o *LoggingSftpResponse) SetVersion(v int32)`
-
-SetVersion sets Version field to given value.
-
-### HasVersion
-
-`func (o *LoggingSftpResponse) HasVersion() bool`
-
-HasVersion returns a boolean if a field has been set.
+HasGzipLevel returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

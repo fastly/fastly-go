@@ -24,35 +24,28 @@ type LoggingGcsResponse struct {
 	Name *string `json:"name,omitempty"`
 	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
 	Placement NullableString `json:"placement,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
-	FormatVersion *int32 `json:"format_version,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	FormatVersion *string `json:"format_version,omitempty"`
 	// How the message should be formatted.
 	MessageType *string `json:"message_type,omitempty"`
 	// A timestamp format
 	TimestampFormat NullableString `json:"timestamp_format,omitempty"`
-	// How frequently log files are finalized so they can be available for reading (in seconds).
-	Period *int32 `json:"period,omitempty"`
-	// The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-	GzipLevel *int32 `json:"gzip_level,omitempty"`
 	// The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
 	CompressionCodec *string `json:"compression_codec,omitempty"`
+	// How frequently log files are finalized so they can be available for reading (in seconds).
+	Period *string `json:"period,omitempty"`
+	// The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+	GzipLevel *string `json:"gzip_level,omitempty"`
 	// Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
 	User *string `json:"user,omitempty"`
 	// Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
 	SecretKey *string `json:"secret_key,omitempty"`
 	// The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
 	AccountName *string `json:"account_name,omitempty"`
-	// The name of the GCS bucket.
-	BucketName *string `json:"bucket_name,omitempty"`
-	Path *string `json:"path,omitempty"`
-	// A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-	PublicKey NullableString `json:"public_key,omitempty"`
-	// Your Google Cloud Platform project ID. Required
-	ProjectID *string `json:"project_id,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -60,7 +53,14 @@ type LoggingGcsResponse struct {
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Version *string `json:"version,omitempty"`
+	// The name of the GCS bucket.
+	BucketName *string `json:"bucket_name,omitempty"`
+	Path *string `json:"path,omitempty"`
+	// A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+	PublicKey NullableString `json:"public_key,omitempty"`
+	// Your Google Cloud Platform project ID. Required
+	ProjectID *string `json:"project_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -72,15 +72,15 @@ type _LoggingGcsResponse LoggingGcsResponse
 // will change when the set of required properties is changed
 func NewLoggingGcsResponse() *LoggingGcsResponse {
 	this := LoggingGcsResponse{}
-	var formatVersion int32 = 2
-	this.FormatVersion = &formatVersion
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
+	var formatVersion string = "2"
+	this.FormatVersion = &formatVersion
 	var messageType string = "classic"
 	this.MessageType = &messageType
-	var period int32 = 3600
+	var period string = "3600"
 	this.Period = &period
-	var gzipLevel int32 = 0
+	var gzipLevel string = "0"
 	this.GzipLevel = &gzipLevel
 	var path string = "/"
 	this.Path = &path
@@ -94,15 +94,15 @@ func NewLoggingGcsResponse() *LoggingGcsResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingGcsResponseWithDefaults() *LoggingGcsResponse {
 	this := LoggingGcsResponse{}
-	var formatVersion int32 = 2
-	this.FormatVersion = &formatVersion
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
+	var formatVersion string = "2"
+	this.FormatVersion = &formatVersion
 	var messageType string = "classic"
 	this.MessageType = &messageType
-	var period int32 = 3600
+	var period string = "3600"
 	this.Period = &period
-	var gzipLevel int32 = 0
+	var gzipLevel string = "0"
 	this.GzipLevel = &gzipLevel
 	var path string = "/"
 	this.Path = &path
@@ -185,38 +185,6 @@ func (o *LoggingGcsResponse) UnsetPlacement() {
 	o.Placement.Unset()
 }
 
-// GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
-func (o *LoggingGcsResponse) GetFormatVersion() int32 {
-	if o == nil || o.FormatVersion == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FormatVersion
-}
-
-// GetFormatVersionOk returns a tuple with the FormatVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingGcsResponse) GetFormatVersionOk() (*int32, bool) {
-	if o == nil || o.FormatVersion == nil {
-		return nil, false
-	}
-	return o.FormatVersion, true
-}
-
-// HasFormatVersion returns a boolean if a field has been set.
-func (o *LoggingGcsResponse) HasFormatVersion() bool {
-	if o != nil && o.FormatVersion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFormatVersion gets a reference to the given int32 and assigns it to the FormatVersion field.
-func (o *LoggingGcsResponse) SetFormatVersion(v int32) {
-	o.FormatVersion = &v
-}
-
 // GetResponseCondition returns the ResponseCondition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LoggingGcsResponse) GetResponseCondition() string {
 	if o == nil || o.ResponseCondition.Get() == nil {
@@ -289,6 +257,38 @@ func (o *LoggingGcsResponse) HasFormat() bool {
 // SetFormat gets a reference to the given string and assigns it to the Format field.
 func (o *LoggingGcsResponse) SetFormat(v string) {
 	o.Format = &v
+}
+
+// GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
+func (o *LoggingGcsResponse) GetFormatVersion() string {
+	if o == nil || o.FormatVersion == nil {
+		var ret string
+		return ret
+	}
+	return *o.FormatVersion
+}
+
+// GetFormatVersionOk returns a tuple with the FormatVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingGcsResponse) GetFormatVersionOk() (*string, bool) {
+	if o == nil || o.FormatVersion == nil {
+		return nil, false
+	}
+	return o.FormatVersion, true
+}
+
+// HasFormatVersion returns a boolean if a field has been set.
+func (o *LoggingGcsResponse) HasFormatVersion() bool {
+	if o != nil && o.FormatVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFormatVersion gets a reference to the given string and assigns it to the FormatVersion field.
+func (o *LoggingGcsResponse) SetFormatVersion(v string) {
+	o.FormatVersion = &v
 }
 
 // GetMessageType returns the MessageType field value if set, zero value otherwise.
@@ -365,70 +365,6 @@ func (o *LoggingGcsResponse) UnsetTimestampFormat() {
 	o.TimestampFormat.Unset()
 }
 
-// GetPeriod returns the Period field value if set, zero value otherwise.
-func (o *LoggingGcsResponse) GetPeriod() int32 {
-	if o == nil || o.Period == nil {
-		var ret int32
-		return ret
-	}
-	return *o.Period
-}
-
-// GetPeriodOk returns a tuple with the Period field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingGcsResponse) GetPeriodOk() (*int32, bool) {
-	if o == nil || o.Period == nil {
-		return nil, false
-	}
-	return o.Period, true
-}
-
-// HasPeriod returns a boolean if a field has been set.
-func (o *LoggingGcsResponse) HasPeriod() bool {
-	if o != nil && o.Period != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPeriod gets a reference to the given int32 and assigns it to the Period field.
-func (o *LoggingGcsResponse) SetPeriod(v int32) {
-	o.Period = &v
-}
-
-// GetGzipLevel returns the GzipLevel field value if set, zero value otherwise.
-func (o *LoggingGcsResponse) GetGzipLevel() int32 {
-	if o == nil || o.GzipLevel == nil {
-		var ret int32
-		return ret
-	}
-	return *o.GzipLevel
-}
-
-// GetGzipLevelOk returns a tuple with the GzipLevel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingGcsResponse) GetGzipLevelOk() (*int32, bool) {
-	if o == nil || o.GzipLevel == nil {
-		return nil, false
-	}
-	return o.GzipLevel, true
-}
-
-// HasGzipLevel returns a boolean if a field has been set.
-func (o *LoggingGcsResponse) HasGzipLevel() bool {
-	if o != nil && o.GzipLevel != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetGzipLevel gets a reference to the given int32 and assigns it to the GzipLevel field.
-func (o *LoggingGcsResponse) SetGzipLevel(v int32) {
-	o.GzipLevel = &v
-}
-
 // GetCompressionCodec returns the CompressionCodec field value if set, zero value otherwise.
 func (o *LoggingGcsResponse) GetCompressionCodec() string {
 	if o == nil || o.CompressionCodec == nil {
@@ -459,6 +395,70 @@ func (o *LoggingGcsResponse) HasCompressionCodec() bool {
 // SetCompressionCodec gets a reference to the given string and assigns it to the CompressionCodec field.
 func (o *LoggingGcsResponse) SetCompressionCodec(v string) {
 	o.CompressionCodec = &v
+}
+
+// GetPeriod returns the Period field value if set, zero value otherwise.
+func (o *LoggingGcsResponse) GetPeriod() string {
+	if o == nil || o.Period == nil {
+		var ret string
+		return ret
+	}
+	return *o.Period
+}
+
+// GetPeriodOk returns a tuple with the Period field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingGcsResponse) GetPeriodOk() (*string, bool) {
+	if o == nil || o.Period == nil {
+		return nil, false
+	}
+	return o.Period, true
+}
+
+// HasPeriod returns a boolean if a field has been set.
+func (o *LoggingGcsResponse) HasPeriod() bool {
+	if o != nil && o.Period != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPeriod gets a reference to the given string and assigns it to the Period field.
+func (o *LoggingGcsResponse) SetPeriod(v string) {
+	o.Period = &v
+}
+
+// GetGzipLevel returns the GzipLevel field value if set, zero value otherwise.
+func (o *LoggingGcsResponse) GetGzipLevel() string {
+	if o == nil || o.GzipLevel == nil {
+		var ret string
+		return ret
+	}
+	return *o.GzipLevel
+}
+
+// GetGzipLevelOk returns a tuple with the GzipLevel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingGcsResponse) GetGzipLevelOk() (*string, bool) {
+	if o == nil || o.GzipLevel == nil {
+		return nil, false
+	}
+	return o.GzipLevel, true
+}
+
+// HasGzipLevel returns a boolean if a field has been set.
+func (o *LoggingGcsResponse) HasGzipLevel() bool {
+	if o != nil && o.GzipLevel != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGzipLevel gets a reference to the given string and assigns it to the GzipLevel field.
+func (o *LoggingGcsResponse) SetGzipLevel(v string) {
+	o.GzipLevel = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -555,144 +555,6 @@ func (o *LoggingGcsResponse) HasAccountName() bool {
 // SetAccountName gets a reference to the given string and assigns it to the AccountName field.
 func (o *LoggingGcsResponse) SetAccountName(v string) {
 	o.AccountName = &v
-}
-
-// GetBucketName returns the BucketName field value if set, zero value otherwise.
-func (o *LoggingGcsResponse) GetBucketName() string {
-	if o == nil || o.BucketName == nil {
-		var ret string
-		return ret
-	}
-	return *o.BucketName
-}
-
-// GetBucketNameOk returns a tuple with the BucketName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingGcsResponse) GetBucketNameOk() (*string, bool) {
-	if o == nil || o.BucketName == nil {
-		return nil, false
-	}
-	return o.BucketName, true
-}
-
-// HasBucketName returns a boolean if a field has been set.
-func (o *LoggingGcsResponse) HasBucketName() bool {
-	if o != nil && o.BucketName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBucketName gets a reference to the given string and assigns it to the BucketName field.
-func (o *LoggingGcsResponse) SetBucketName(v string) {
-	o.BucketName = &v
-}
-
-// GetPath returns the Path field value if set, zero value otherwise.
-func (o *LoggingGcsResponse) GetPath() string {
-	if o == nil || o.Path == nil {
-		var ret string
-		return ret
-	}
-	return *o.Path
-}
-
-// GetPathOk returns a tuple with the Path field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingGcsResponse) GetPathOk() (*string, bool) {
-	if o == nil || o.Path == nil {
-		return nil, false
-	}
-	return o.Path, true
-}
-
-// HasPath returns a boolean if a field has been set.
-func (o *LoggingGcsResponse) HasPath() bool {
-	if o != nil && o.Path != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPath gets a reference to the given string and assigns it to the Path field.
-func (o *LoggingGcsResponse) SetPath(v string) {
-	o.Path = &v
-}
-
-// GetPublicKey returns the PublicKey field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingGcsResponse) GetPublicKey() string {
-	if o == nil || o.PublicKey.Get() == nil {
-		var ret string
-		return ret
-	}
-	return *o.PublicKey.Get()
-}
-
-// GetPublicKeyOk returns a tuple with the PublicKey field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingGcsResponse) GetPublicKeyOk() (*string, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.PublicKey.Get(), o.PublicKey.IsSet()
-}
-
-// HasPublicKey returns a boolean if a field has been set.
-func (o *LoggingGcsResponse) HasPublicKey() bool {
-	if o != nil && o.PublicKey.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetPublicKey gets a reference to the given NullableString and assigns it to the PublicKey field.
-func (o *LoggingGcsResponse) SetPublicKey(v string) {
-	o.PublicKey.Set(&v)
-}
-// SetPublicKeyNil sets the value for PublicKey to be an explicit nil
-func (o *LoggingGcsResponse) SetPublicKeyNil() {
-	o.PublicKey.Set(nil)
-}
-
-// UnsetPublicKey ensures that no value is present for PublicKey, not even an explicit nil
-func (o *LoggingGcsResponse) UnsetPublicKey() {
-	o.PublicKey.Unset()
-}
-
-// GetProjectID returns the ProjectID field value if set, zero value otherwise.
-func (o *LoggingGcsResponse) GetProjectID() string {
-	if o == nil || o.ProjectID == nil {
-		var ret string
-		return ret
-	}
-	return *o.ProjectID
-}
-
-// GetProjectIDOk returns a tuple with the ProjectID field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingGcsResponse) GetProjectIDOk() (*string, bool) {
-	if o == nil || o.ProjectID == nil {
-		return nil, false
-	}
-	return o.ProjectID, true
-}
-
-// HasProjectID returns a boolean if a field has been set.
-func (o *LoggingGcsResponse) HasProjectID() bool {
-	if o != nil && o.ProjectID != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetProjectID gets a reference to the given string and assigns it to the ProjectID field.
-func (o *LoggingGcsResponse) SetProjectID(v string) {
-	o.ProjectID = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -854,9 +716,9 @@ func (o *LoggingGcsResponse) SetServiceID(v string) {
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *LoggingGcsResponse) GetVersion() int32 {
+func (o *LoggingGcsResponse) GetVersion() string {
 	if o == nil || o.Version == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Version
@@ -864,7 +726,7 @@ func (o *LoggingGcsResponse) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingGcsResponse) GetVersionOk() (*int32, bool) {
+func (o *LoggingGcsResponse) GetVersionOk() (*string, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -880,9 +742,147 @@ func (o *LoggingGcsResponse) HasVersion() bool {
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *LoggingGcsResponse) SetVersion(v int32) {
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *LoggingGcsResponse) SetVersion(v string) {
 	o.Version = &v
+}
+
+// GetBucketName returns the BucketName field value if set, zero value otherwise.
+func (o *LoggingGcsResponse) GetBucketName() string {
+	if o == nil || o.BucketName == nil {
+		var ret string
+		return ret
+	}
+	return *o.BucketName
+}
+
+// GetBucketNameOk returns a tuple with the BucketName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingGcsResponse) GetBucketNameOk() (*string, bool) {
+	if o == nil || o.BucketName == nil {
+		return nil, false
+	}
+	return o.BucketName, true
+}
+
+// HasBucketName returns a boolean if a field has been set.
+func (o *LoggingGcsResponse) HasBucketName() bool {
+	if o != nil && o.BucketName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBucketName gets a reference to the given string and assigns it to the BucketName field.
+func (o *LoggingGcsResponse) SetBucketName(v string) {
+	o.BucketName = &v
+}
+
+// GetPath returns the Path field value if set, zero value otherwise.
+func (o *LoggingGcsResponse) GetPath() string {
+	if o == nil || o.Path == nil {
+		var ret string
+		return ret
+	}
+	return *o.Path
+}
+
+// GetPathOk returns a tuple with the Path field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingGcsResponse) GetPathOk() (*string, bool) {
+	if o == nil || o.Path == nil {
+		return nil, false
+	}
+	return o.Path, true
+}
+
+// HasPath returns a boolean if a field has been set.
+func (o *LoggingGcsResponse) HasPath() bool {
+	if o != nil && o.Path != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPath gets a reference to the given string and assigns it to the Path field.
+func (o *LoggingGcsResponse) SetPath(v string) {
+	o.Path = &v
+}
+
+// GetPublicKey returns the PublicKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingGcsResponse) GetPublicKey() string {
+	if o == nil || o.PublicKey.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.PublicKey.Get()
+}
+
+// GetPublicKeyOk returns a tuple with the PublicKey field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *LoggingGcsResponse) GetPublicKeyOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.PublicKey.Get(), o.PublicKey.IsSet()
+}
+
+// HasPublicKey returns a boolean if a field has been set.
+func (o *LoggingGcsResponse) HasPublicKey() bool {
+	if o != nil && o.PublicKey.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPublicKey gets a reference to the given NullableString and assigns it to the PublicKey field.
+func (o *LoggingGcsResponse) SetPublicKey(v string) {
+	o.PublicKey.Set(&v)
+}
+// SetPublicKeyNil sets the value for PublicKey to be an explicit nil
+func (o *LoggingGcsResponse) SetPublicKeyNil() {
+	o.PublicKey.Set(nil)
+}
+
+// UnsetPublicKey ensures that no value is present for PublicKey, not even an explicit nil
+func (o *LoggingGcsResponse) UnsetPublicKey() {
+	o.PublicKey.Unset()
+}
+
+// GetProjectID returns the ProjectID field value if set, zero value otherwise.
+func (o *LoggingGcsResponse) GetProjectID() string {
+	if o == nil || o.ProjectID == nil {
+		var ret string
+		return ret
+	}
+	return *o.ProjectID
+}
+
+// GetProjectIDOk returns a tuple with the ProjectID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingGcsResponse) GetProjectIDOk() (*string, bool) {
+	if o == nil || o.ProjectID == nil {
+		return nil, false
+	}
+	return o.ProjectID, true
+}
+
+// HasProjectID returns a boolean if a field has been set.
+func (o *LoggingGcsResponse) HasProjectID() bool {
+	if o != nil && o.ProjectID != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProjectID gets a reference to the given string and assigns it to the ProjectID field.
+func (o *LoggingGcsResponse) SetProjectID(v string) {
+	o.ProjectID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -895,14 +895,14 @@ func (o LoggingGcsResponse) MarshalJSON() ([]byte, error) {
 	if o.Placement.IsSet() {
 		toSerialize["placement"] = o.Placement.Get()
 	}
-	if o.FormatVersion != nil {
-		toSerialize["format_version"] = o.FormatVersion
-	}
 	if o.ResponseCondition.IsSet() {
 		toSerialize["response_condition"] = o.ResponseCondition.Get()
 	}
 	if o.Format != nil {
 		toSerialize["format"] = o.Format
+	}
+	if o.FormatVersion != nil {
+		toSerialize["format_version"] = o.FormatVersion
 	}
 	if o.MessageType != nil {
 		toSerialize["message_type"] = o.MessageType
@@ -910,14 +910,14 @@ func (o LoggingGcsResponse) MarshalJSON() ([]byte, error) {
 	if o.TimestampFormat.IsSet() {
 		toSerialize["timestamp_format"] = o.TimestampFormat.Get()
 	}
+	if o.CompressionCodec != nil {
+		toSerialize["compression_codec"] = o.CompressionCodec
+	}
 	if o.Period != nil {
 		toSerialize["period"] = o.Period
 	}
 	if o.GzipLevel != nil {
 		toSerialize["gzip_level"] = o.GzipLevel
-	}
-	if o.CompressionCodec != nil {
-		toSerialize["compression_codec"] = o.CompressionCodec
 	}
 	if o.User != nil {
 		toSerialize["user"] = o.User
@@ -927,18 +927,6 @@ func (o LoggingGcsResponse) MarshalJSON() ([]byte, error) {
 	}
 	if o.AccountName != nil {
 		toSerialize["account_name"] = o.AccountName
-	}
-	if o.BucketName != nil {
-		toSerialize["bucket_name"] = o.BucketName
-	}
-	if o.Path != nil {
-		toSerialize["path"] = o.Path
-	}
-	if o.PublicKey.IsSet() {
-		toSerialize["public_key"] = o.PublicKey.Get()
-	}
-	if o.ProjectID != nil {
-		toSerialize["project_id"] = o.ProjectID
 	}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
@@ -954,6 +942,18 @@ func (o LoggingGcsResponse) MarshalJSON() ([]byte, error) {
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
+	}
+	if o.BucketName != nil {
+		toSerialize["bucket_name"] = o.BucketName
+	}
+	if o.Path != nil {
+		toSerialize["path"] = o.Path
+	}
+	if o.PublicKey.IsSet() {
+		toSerialize["public_key"] = o.PublicKey.Get()
+	}
+	if o.ProjectID != nil {
+		toSerialize["project_id"] = o.ProjectID
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -977,26 +977,26 @@ func (o *LoggingGcsResponse) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "placement")
-		delete(additionalProperties, "format_version")
 		delete(additionalProperties, "response_condition")
 		delete(additionalProperties, "format")
+		delete(additionalProperties, "format_version")
 		delete(additionalProperties, "message_type")
 		delete(additionalProperties, "timestamp_format")
+		delete(additionalProperties, "compression_codec")
 		delete(additionalProperties, "period")
 		delete(additionalProperties, "gzip_level")
-		delete(additionalProperties, "compression_codec")
 		delete(additionalProperties, "user")
 		delete(additionalProperties, "secret_key")
 		delete(additionalProperties, "account_name")
-		delete(additionalProperties, "bucket_name")
-		delete(additionalProperties, "path")
-		delete(additionalProperties, "public_key")
-		delete(additionalProperties, "project_id")
 		delete(additionalProperties, "created_at")
 		delete(additionalProperties, "deleted_at")
 		delete(additionalProperties, "updated_at")
 		delete(additionalProperties, "service_id")
 		delete(additionalProperties, "version")
+		delete(additionalProperties, "bucket_name")
+		delete(additionalProperties, "path")
+		delete(additionalProperties, "public_key")
+		delete(additionalProperties, "project_id")
 		o.AdditionalProperties = additionalProperties
 	}
 

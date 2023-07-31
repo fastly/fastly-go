@@ -19,10 +19,7 @@ import (
 
 // ReadOnlyServiceID struct for ReadOnlyServiceID
 type ReadOnlyServiceID struct {
-	AdditionalProperties map[string]any
 }
-
-type _ReadOnlyServiceID ReadOnlyServiceID
 
 // NewReadOnlyServiceID instantiates a new ReadOnlyServiceID object
 // This constructor will assign default values to properties that have it defined,
@@ -45,30 +42,7 @@ func NewReadOnlyServiceIDWithDefaults() *ReadOnlyServiceID {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o ReadOnlyServiceID) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *ReadOnlyServiceID) UnmarshalJSON(bytes []byte) (err error) {
-	varReadOnlyServiceID := _ReadOnlyServiceID{}
-
-	if err = json.Unmarshal(bytes, &varReadOnlyServiceID); err == nil {
-		*o = ReadOnlyServiceID(varReadOnlyServiceID)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableReadOnlyServiceID is a helper abstraction for handling nullable readonlyserviceid types. 

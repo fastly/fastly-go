@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The name for the real-time logging configuration. | [optional] 
 **Placement** | Pointer to **NullableString** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] 
-**FormatVersion** | Pointer to **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to 2]
 **ResponseCondition** | Pointer to **NullableString** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
 **Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
+**FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
 **TLSCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
 **TLSClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
 **TLSClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **int32** |  | [optional] [readonly] 
+**Version** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -103,31 +103,6 @@ HasPlacement returns a boolean if a field has been set.
 `func (o *LoggingSplunkResponse) UnsetPlacement()`
 
 UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
-### GetFormatVersion
-
-`func (o *LoggingSplunkResponse) GetFormatVersion() int32`
-
-GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
-
-### GetFormatVersionOk
-
-`func (o *LoggingSplunkResponse) GetFormatVersionOk() (*int32, bool)`
-
-GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFormatVersion
-
-`func (o *LoggingSplunkResponse) SetFormatVersion(v int32)`
-
-SetFormatVersion sets FormatVersion field to given value.
-
-### HasFormatVersion
-
-`func (o *LoggingSplunkResponse) HasFormatVersion() bool`
-
-HasFormatVersion returns a boolean if a field has been set.
-
 ### GetResponseCondition
 
 `func (o *LoggingSplunkResponse) GetResponseCondition() string`
@@ -187,6 +162,31 @@ SetFormat sets Format field to given value.
 `func (o *LoggingSplunkResponse) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+### GetFormatVersion
+
+`func (o *LoggingSplunkResponse) GetFormatVersion() string`
+
+GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
+
+### GetFormatVersionOk
+
+`func (o *LoggingSplunkResponse) GetFormatVersionOk() (*string, bool)`
+
+GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormatVersion
+
+`func (o *LoggingSplunkResponse) SetFormatVersion(v string)`
+
+SetFormatVersion sets FormatVersion field to given value.
+
+### HasFormatVersion
+
+`func (o *LoggingSplunkResponse) HasFormatVersion() bool`
+
+HasFormatVersion returns a boolean if a field has been set.
 
 ### GetTLSCaCert
 
@@ -585,20 +585,20 @@ HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *LoggingSplunkResponse) GetVersion() int32`
+`func (o *LoggingSplunkResponse) GetVersion() string`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *LoggingSplunkResponse) GetVersionOk() (*int32, bool)`
+`func (o *LoggingSplunkResponse) GetVersionOk() (*string, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *LoggingSplunkResponse) SetVersion(v int32)`
+`func (o *LoggingSplunkResponse) SetVersion(v string)`
 
 SetVersion sets Version field to given value.
 

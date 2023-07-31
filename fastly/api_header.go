@@ -127,15 +127,15 @@ type APICreateHeaderObjectRequest struct {
 	action *string
 	cacheCondition *string
 	dst *string
-	ignoreIfSet *int32
 	name *string
-	priority *int32
 	regex *string
 	requestCondition *string
 	responseCondition *string
 	src *string
 	substitution *string
 	resourceType *string
+	ignoreIfSet *int32
+	priority *int32
 }
 
 // Action Accepts a string value.
@@ -153,19 +153,9 @@ func (r *APICreateHeaderObjectRequest) Dst(dst string) *APICreateHeaderObjectReq
 	r.dst = &dst
 	return r
 }
-// IgnoreIfSet Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action.
-func (r *APICreateHeaderObjectRequest) IgnoreIfSet(ignoreIfSet int32) *APICreateHeaderObjectRequest {
-	r.ignoreIfSet = &ignoreIfSet
-	return r
-}
 // Name A handle to refer to this Header object.
 func (r *APICreateHeaderObjectRequest) Name(name string) *APICreateHeaderObjectRequest {
 	r.name = &name
-	return r
-}
-// Priority Priority determines execution order. Lower numbers execute first.
-func (r *APICreateHeaderObjectRequest) Priority(priority int32) *APICreateHeaderObjectRequest {
-	r.priority = &priority
 	return r
 }
 // Regex Regular expression to use. Only applies to &#x60;regex&#x60; and &#x60;regex_repeat&#x60; actions.
@@ -196,6 +186,16 @@ func (r *APICreateHeaderObjectRequest) Substitution(substitution string) *APICre
 // ResourceType Accepts a string value.
 func (r *APICreateHeaderObjectRequest) ResourceType(resourceType string) *APICreateHeaderObjectRequest {
 	r.resourceType = &resourceType
+	return r
+}
+// IgnoreIfSet Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action.
+func (r *APICreateHeaderObjectRequest) IgnoreIfSet(ignoreIfSet int32) *APICreateHeaderObjectRequest {
+	r.ignoreIfSet = &ignoreIfSet
+	return r
+}
+// Priority Priority determines execution order. Lower numbers execute first.
+func (r *APICreateHeaderObjectRequest) Priority(priority int32) *APICreateHeaderObjectRequest {
+	r.priority = &priority
 	return r
 }
 
@@ -272,14 +272,8 @@ func (a *HeaderAPIService) CreateHeaderObjectExecute(r APICreateHeaderObjectRequ
 	if r.dst != nil {
 		localVarFormParams.Add("dst", parameterToString(*r.dst, ""))
 	}
-	if r.ignoreIfSet != nil {
-		localVarFormParams.Add("ignore_if_set", parameterToString(*r.ignoreIfSet, ""))
-	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
-	}
-	if r.priority != nil {
-		localVarFormParams.Add("priority", parameterToString(*r.priority, ""))
 	}
 	if r.regex != nil {
 		localVarFormParams.Add("regex", parameterToString(*r.regex, ""))
@@ -302,6 +296,12 @@ func (a *HeaderAPIService) CreateHeaderObjectExecute(r APICreateHeaderObjectRequ
 	}
 	if r.resourceType != nil {
 		localVarFormParams.Add("type", parameterToString(*r.resourceType, ""))
+	}
+	if r.ignoreIfSet != nil {
+		localVarFormParams.Add("ignore_if_set", parameterToString(*r.ignoreIfSet, ""))
+	}
+	if r.priority != nil {
+		localVarFormParams.Add("priority", parameterToString(*r.priority, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -800,15 +800,15 @@ type APIUpdateHeaderObjectRequest struct {
 	action *string
 	cacheCondition *string
 	dst *string
-	ignoreIfSet *int32
 	name *string
-	priority *int32
 	regex *string
 	requestCondition *string
 	responseCondition *string
 	src *string
 	substitution *string
 	resourceType *string
+	ignoreIfSet *int32
+	priority *int32
 }
 
 // Action Accepts a string value.
@@ -826,19 +826,9 @@ func (r *APIUpdateHeaderObjectRequest) Dst(dst string) *APIUpdateHeaderObjectReq
 	r.dst = &dst
 	return r
 }
-// IgnoreIfSet Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action.
-func (r *APIUpdateHeaderObjectRequest) IgnoreIfSet(ignoreIfSet int32) *APIUpdateHeaderObjectRequest {
-	r.ignoreIfSet = &ignoreIfSet
-	return r
-}
 // Name A handle to refer to this Header object.
 func (r *APIUpdateHeaderObjectRequest) Name(name string) *APIUpdateHeaderObjectRequest {
 	r.name = &name
-	return r
-}
-// Priority Priority determines execution order. Lower numbers execute first.
-func (r *APIUpdateHeaderObjectRequest) Priority(priority int32) *APIUpdateHeaderObjectRequest {
-	r.priority = &priority
 	return r
 }
 // Regex Regular expression to use. Only applies to &#x60;regex&#x60; and &#x60;regex_repeat&#x60; actions.
@@ -869,6 +859,16 @@ func (r *APIUpdateHeaderObjectRequest) Substitution(substitution string) *APIUpd
 // ResourceType Accepts a string value.
 func (r *APIUpdateHeaderObjectRequest) ResourceType(resourceType string) *APIUpdateHeaderObjectRequest {
 	r.resourceType = &resourceType
+	return r
+}
+// IgnoreIfSet Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action.
+func (r *APIUpdateHeaderObjectRequest) IgnoreIfSet(ignoreIfSet int32) *APIUpdateHeaderObjectRequest {
+	r.ignoreIfSet = &ignoreIfSet
+	return r
+}
+// Priority Priority determines execution order. Lower numbers execute first.
+func (r *APIUpdateHeaderObjectRequest) Priority(priority int32) *APIUpdateHeaderObjectRequest {
+	r.priority = &priority
 	return r
 }
 
@@ -948,14 +948,8 @@ func (a *HeaderAPIService) UpdateHeaderObjectExecute(r APIUpdateHeaderObjectRequ
 	if r.dst != nil {
 		localVarFormParams.Add("dst", parameterToString(*r.dst, ""))
 	}
-	if r.ignoreIfSet != nil {
-		localVarFormParams.Add("ignore_if_set", parameterToString(*r.ignoreIfSet, ""))
-	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
-	}
-	if r.priority != nil {
-		localVarFormParams.Add("priority", parameterToString(*r.priority, ""))
 	}
 	if r.regex != nil {
 		localVarFormParams.Add("regex", parameterToString(*r.regex, ""))
@@ -978,6 +972,12 @@ func (a *HeaderAPIService) UpdateHeaderObjectExecute(r APIUpdateHeaderObjectRequ
 	}
 	if r.resourceType != nil {
 		localVarFormParams.Add("type", parameterToString(*r.resourceType, ""))
+	}
+	if r.ignoreIfSet != nil {
+		localVarFormParams.Add("ignore_if_set", parameterToString(*r.ignoreIfSet, ""))
+	}
+	if r.priority != nil {
+		localVarFormParams.Add("priority", parameterToString(*r.priority, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

@@ -25,12 +25,8 @@ type Header struct {
 	CacheCondition NullableString `json:"cache_condition,omitempty"`
 	// Header to set.
 	Dst *string `json:"dst,omitempty"`
-	// Don't add the header if it is added already. Only applies to 'set' action.
-	IgnoreIfSet *int32 `json:"ignore_if_set,omitempty"`
 	// A handle to refer to this Header object.
 	Name *string `json:"name,omitempty"`
-	// Priority determines execution order. Lower numbers execute first.
-	Priority *int32 `json:"priority,omitempty"`
 	// Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
 	Regex NullableString `json:"regex,omitempty"`
 	// Condition which, if met, will select this configuration during a request. Optional.
@@ -54,8 +50,6 @@ type _Header Header
 // will change when the set of required properties is changed
 func NewHeader() *Header {
 	this := Header{}
-	var priority int32 = 100
-	this.Priority = &priority
 	return &this
 }
 
@@ -64,8 +58,6 @@ func NewHeader() *Header {
 // but it doesn't guarantee that properties required by API are set
 func NewHeaderWithDefaults() *Header {
 	this := Header{}
-	var priority int32 = 100
-	this.Priority = &priority
 	return &this
 }
 
@@ -175,38 +167,6 @@ func (o *Header) SetDst(v string) {
 	o.Dst = &v
 }
 
-// GetIgnoreIfSet returns the IgnoreIfSet field value if set, zero value otherwise.
-func (o *Header) GetIgnoreIfSet() int32 {
-	if o == nil || o.IgnoreIfSet == nil {
-		var ret int32
-		return ret
-	}
-	return *o.IgnoreIfSet
-}
-
-// GetIgnoreIfSetOk returns a tuple with the IgnoreIfSet field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Header) GetIgnoreIfSetOk() (*int32, bool) {
-	if o == nil || o.IgnoreIfSet == nil {
-		return nil, false
-	}
-	return o.IgnoreIfSet, true
-}
-
-// HasIgnoreIfSet returns a boolean if a field has been set.
-func (o *Header) HasIgnoreIfSet() bool {
-	if o != nil && o.IgnoreIfSet != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIgnoreIfSet gets a reference to the given int32 and assigns it to the IgnoreIfSet field.
-func (o *Header) SetIgnoreIfSet(v int32) {
-	o.IgnoreIfSet = &v
-}
-
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *Header) GetName() string {
 	if o == nil || o.Name == nil {
@@ -237,38 +197,6 @@ func (o *Header) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *Header) SetName(v string) {
 	o.Name = &v
-}
-
-// GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *Header) GetPriority() int32 {
-	if o == nil || o.Priority == nil {
-		var ret int32
-		return ret
-	}
-	return *o.Priority
-}
-
-// GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Header) GetPriorityOk() (*int32, bool) {
-	if o == nil || o.Priority == nil {
-		return nil, false
-	}
-	return o.Priority, true
-}
-
-// HasPriority returns a boolean if a field has been set.
-func (o *Header) HasPriority() bool {
-	if o != nil && o.Priority != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPriority gets a reference to the given int32 and assigns it to the Priority field.
-func (o *Header) SetPriority(v int32) {
-	o.Priority = &v
 }
 
 // GetRegex returns the Regex field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -526,14 +454,8 @@ func (o Header) MarshalJSON() ([]byte, error) {
 	if o.Dst != nil {
 		toSerialize["dst"] = o.Dst
 	}
-	if o.IgnoreIfSet != nil {
-		toSerialize["ignore_if_set"] = o.IgnoreIfSet
-	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
-	}
-	if o.Priority != nil {
-		toSerialize["priority"] = o.Priority
 	}
 	if o.Regex.IsSet() {
 		toSerialize["regex"] = o.Regex.Get()
@@ -576,9 +498,7 @@ func (o *Header) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "action")
 		delete(additionalProperties, "cache_condition")
 		delete(additionalProperties, "dst")
-		delete(additionalProperties, "ignore_if_set")
 		delete(additionalProperties, "name")
-		delete(additionalProperties, "priority")
 		delete(additionalProperties, "regex")
 		delete(additionalProperties, "request_condition")
 		delete(additionalProperties, "response_condition")

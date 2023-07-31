@@ -6,13 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The name for the real-time logging configuration. | [optional] 
 **Placement** | Pointer to **NullableString** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] 
-**FormatVersion** | Pointer to **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to 2]
 **ResponseCondition** | Pointer to **NullableString** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
 **Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
+**FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
 **TLSCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
 **TLSClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
 **TLSClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
 **TLSHostname** | Pointer to **NullableString** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to "null"]
+**CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**Version** | Pointer to **string** |  | [optional] [readonly] 
 **Topic** | Pointer to **string** | The Kafka topic to send logs to. Required. | [optional] 
 **Brokers** | Pointer to **string** | A comma-separated list of IP addresses or hostnames of Kafka brokers. Required. | [optional] 
 **CompressionCodec** | Pointer to **NullableString** | The codec used for compression of your logs. | [optional] 
@@ -23,11 +28,6 @@ Name | Type | Description | Notes
 **User** | Pointer to **string** | SASL user. | [optional] 
 **Password** | Pointer to **string** | SASL password. | [optional] 
 **UseTLS** | Pointer to [**LoggingUseTLS**](LoggingUseTLS.md) |  | [optional] [default to LOGGINGUSETLS_no_tls]
-**CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -108,31 +108,6 @@ HasPlacement returns a boolean if a field has been set.
 `func (o *LoggingKafkaResponse) UnsetPlacement()`
 
 UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
-### GetFormatVersion
-
-`func (o *LoggingKafkaResponse) GetFormatVersion() int32`
-
-GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
-
-### GetFormatVersionOk
-
-`func (o *LoggingKafkaResponse) GetFormatVersionOk() (*int32, bool)`
-
-GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFormatVersion
-
-`func (o *LoggingKafkaResponse) SetFormatVersion(v int32)`
-
-SetFormatVersion sets FormatVersion field to given value.
-
-### HasFormatVersion
-
-`func (o *LoggingKafkaResponse) HasFormatVersion() bool`
-
-HasFormatVersion returns a boolean if a field has been set.
-
 ### GetResponseCondition
 
 `func (o *LoggingKafkaResponse) GetResponseCondition() string`
@@ -192,6 +167,31 @@ SetFormat sets Format field to given value.
 `func (o *LoggingKafkaResponse) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+### GetFormatVersion
+
+`func (o *LoggingKafkaResponse) GetFormatVersion() string`
+
+GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
+
+### GetFormatVersionOk
+
+`func (o *LoggingKafkaResponse) GetFormatVersionOk() (*string, bool)`
+
+GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormatVersion
+
+`func (o *LoggingKafkaResponse) SetFormatVersion(v string)`
+
+SetFormatVersion sets FormatVersion field to given value.
+
+### HasFormatVersion
+
+`func (o *LoggingKafkaResponse) HasFormatVersion() bool`
+
+HasFormatVersion returns a boolean if a field has been set.
 
 ### GetTLSCaCert
 
@@ -333,6 +333,161 @@ HasTLSHostname returns a boolean if a field has been set.
 `func (o *LoggingKafkaResponse) UnsetTLSHostname()`
 
 UnsetTLSHostname ensures that no value is present for TLSHostname, not even an explicit nil
+### GetCreatedAt
+
+`func (o *LoggingKafkaResponse) GetCreatedAt() time.Time`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *LoggingKafkaResponse) GetCreatedAtOk() (*time.Time, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *LoggingKafkaResponse) SetCreatedAt(v time.Time)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+### HasCreatedAt
+
+`func (o *LoggingKafkaResponse) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
+
+### SetCreatedAtNil
+
+`func (o *LoggingKafkaResponse) SetCreatedAtNil(b bool)`
+
+ SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
+
+### UnsetCreatedAt
+`func (o *LoggingKafkaResponse) UnsetCreatedAt()`
+
+UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
+### GetDeletedAt
+
+`func (o *LoggingKafkaResponse) GetDeletedAt() time.Time`
+
+GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
+
+### GetDeletedAtOk
+
+`func (o *LoggingKafkaResponse) GetDeletedAtOk() (*time.Time, bool)`
+
+GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeletedAt
+
+`func (o *LoggingKafkaResponse) SetDeletedAt(v time.Time)`
+
+SetDeletedAt sets DeletedAt field to given value.
+
+### HasDeletedAt
+
+`func (o *LoggingKafkaResponse) HasDeletedAt() bool`
+
+HasDeletedAt returns a boolean if a field has been set.
+
+### SetDeletedAtNil
+
+`func (o *LoggingKafkaResponse) SetDeletedAtNil(b bool)`
+
+ SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
+
+### UnsetDeletedAt
+`func (o *LoggingKafkaResponse) UnsetDeletedAt()`
+
+UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
+### GetUpdatedAt
+
+`func (o *LoggingKafkaResponse) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *LoggingKafkaResponse) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *LoggingKafkaResponse) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+### HasUpdatedAt
+
+`func (o *LoggingKafkaResponse) HasUpdatedAt() bool`
+
+HasUpdatedAt returns a boolean if a field has been set.
+
+### SetUpdatedAtNil
+
+`func (o *LoggingKafkaResponse) SetUpdatedAtNil(b bool)`
+
+ SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+
+### UnsetUpdatedAt
+`func (o *LoggingKafkaResponse) UnsetUpdatedAt()`
+
+UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
+### GetServiceID
+
+`func (o *LoggingKafkaResponse) GetServiceID() string`
+
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+
+### GetServiceIDOk
+
+`func (o *LoggingKafkaResponse) GetServiceIDOk() (*string, bool)`
+
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceID
+
+`func (o *LoggingKafkaResponse) SetServiceID(v string)`
+
+SetServiceID sets ServiceID field to given value.
+
+### HasServiceID
+
+`func (o *LoggingKafkaResponse) HasServiceID() bool`
+
+HasServiceID returns a boolean if a field has been set.
+
+### GetVersion
+
+`func (o *LoggingKafkaResponse) GetVersion() string`
+
+GetVersion returns the Version field if non-nil, zero value otherwise.
+
+### GetVersionOk
+
+`func (o *LoggingKafkaResponse) GetVersionOk() (*string, bool)`
+
+GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersion
+
+`func (o *LoggingKafkaResponse) SetVersion(v string)`
+
+SetVersion sets Version field to given value.
+
+### HasVersion
+
+`func (o *LoggingKafkaResponse) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
+
 ### GetTopic
 
 `func (o *LoggingKafkaResponse) GetTopic() string`
@@ -592,161 +747,6 @@ SetUseTLS sets UseTLS field to given value.
 `func (o *LoggingKafkaResponse) HasUseTLS() bool`
 
 HasUseTLS returns a boolean if a field has been set.
-
-### GetCreatedAt
-
-`func (o *LoggingKafkaResponse) GetCreatedAt() time.Time`
-
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
-
-### GetCreatedAtOk
-
-`func (o *LoggingKafkaResponse) GetCreatedAtOk() (*time.Time, bool)`
-
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAt
-
-`func (o *LoggingKafkaResponse) SetCreatedAt(v time.Time)`
-
-SetCreatedAt sets CreatedAt field to given value.
-
-### HasCreatedAt
-
-`func (o *LoggingKafkaResponse) HasCreatedAt() bool`
-
-HasCreatedAt returns a boolean if a field has been set.
-
-### SetCreatedAtNil
-
-`func (o *LoggingKafkaResponse) SetCreatedAtNil(b bool)`
-
- SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
-
-### UnsetCreatedAt
-`func (o *LoggingKafkaResponse) UnsetCreatedAt()`
-
-UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-### GetDeletedAt
-
-`func (o *LoggingKafkaResponse) GetDeletedAt() time.Time`
-
-GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
-
-### GetDeletedAtOk
-
-`func (o *LoggingKafkaResponse) GetDeletedAtOk() (*time.Time, bool)`
-
-GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeletedAt
-
-`func (o *LoggingKafkaResponse) SetDeletedAt(v time.Time)`
-
-SetDeletedAt sets DeletedAt field to given value.
-
-### HasDeletedAt
-
-`func (o *LoggingKafkaResponse) HasDeletedAt() bool`
-
-HasDeletedAt returns a boolean if a field has been set.
-
-### SetDeletedAtNil
-
-`func (o *LoggingKafkaResponse) SetDeletedAtNil(b bool)`
-
- SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
-
-### UnsetDeletedAt
-`func (o *LoggingKafkaResponse) UnsetDeletedAt()`
-
-UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-### GetUpdatedAt
-
-`func (o *LoggingKafkaResponse) GetUpdatedAt() time.Time`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *LoggingKafkaResponse) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedAt
-
-`func (o *LoggingKafkaResponse) SetUpdatedAt(v time.Time)`
-
-SetUpdatedAt sets UpdatedAt field to given value.
-
-### HasUpdatedAt
-
-`func (o *LoggingKafkaResponse) HasUpdatedAt() bool`
-
-HasUpdatedAt returns a boolean if a field has been set.
-
-### SetUpdatedAtNil
-
-`func (o *LoggingKafkaResponse) SetUpdatedAtNil(b bool)`
-
- SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-
-### UnsetUpdatedAt
-`func (o *LoggingKafkaResponse) UnsetUpdatedAt()`
-
-UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceID
-
-`func (o *LoggingKafkaResponse) GetServiceID() string`
-
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
-
-### GetServiceIDOk
-
-`func (o *LoggingKafkaResponse) GetServiceIDOk() (*string, bool)`
-
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceID
-
-`func (o *LoggingKafkaResponse) SetServiceID(v string)`
-
-SetServiceID sets ServiceID field to given value.
-
-### HasServiceID
-
-`func (o *LoggingKafkaResponse) HasServiceID() bool`
-
-HasServiceID returns a boolean if a field has been set.
-
-### GetVersion
-
-`func (o *LoggingKafkaResponse) GetVersion() int32`
-
-GetVersion returns the Version field if non-nil, zero value otherwise.
-
-### GetVersionOk
-
-`func (o *LoggingKafkaResponse) GetVersionOk() (*int32, bool)`
-
-GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVersion
-
-`func (o *LoggingKafkaResponse) SetVersion(v int32)`
-
-SetVersion sets Version field to given value.
-
-### HasVersion
-
-`func (o *LoggingKafkaResponse) HasVersion() bool`
-
-HasVersion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

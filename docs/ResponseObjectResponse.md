@@ -8,11 +8,11 @@ Name | Type | Description | Notes
 **Content** | Pointer to **string** | The content to deliver for the response object, can be empty. | [optional] 
 **ContentType** | Pointer to **NullableString** | The MIME type of the content, can be empty. | [optional] 
 **Name** | Pointer to **string** | Name for the request settings. | [optional] 
-**Status** | Pointer to **int32** | The HTTP status code. | [optional] [default to 200]
+**Status** | Pointer to **string** | The HTTP status code. | [optional] [default to "200"]
 **Response** | Pointer to **string** | The HTTP response. | [optional] [default to "Ok"]
 **RequestCondition** | Pointer to **NullableString** | Condition which, if met, will select this configuration during a request. Optional. | [optional] 
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **int32** |  | [optional] [readonly] 
+**Version** | Pointer to **string** |  | [optional] [readonly] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -158,20 +158,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *ResponseObjectResponse) GetStatus() int32`
+`func (o *ResponseObjectResponse) GetStatus() string`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *ResponseObjectResponse) GetStatusOk() (*int32, bool)`
+`func (o *ResponseObjectResponse) GetStatusOk() (*string, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *ResponseObjectResponse) SetStatus(v int32)`
+`func (o *ResponseObjectResponse) SetStatus(v string)`
 
 SetStatus sets Status field to given value.
 
@@ -268,20 +268,20 @@ HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *ResponseObjectResponse) GetVersion() int32`
+`func (o *ResponseObjectResponse) GetVersion() string`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *ResponseObjectResponse) GetVersionOk() (*int32, bool)`
+`func (o *ResponseObjectResponse) GetVersionOk() (*string, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *ResponseObjectResponse) SetVersion(v int32)`
+`func (o *ResponseObjectResponse) SetVersion(v string)`
 
 SetVersion sets Version field to given value.
 

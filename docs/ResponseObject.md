@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Content** | Pointer to **string** | The content to deliver for the response object, can be empty. | [optional] 
 **ContentType** | Pointer to **NullableString** | The MIME type of the content, can be empty. | [optional] 
 **Name** | Pointer to **string** | Name for the request settings. | [optional] 
-**Status** | Pointer to **int32** | The HTTP status code. | [optional] [default to 200]
+**Status** | Pointer to **string** | The HTTP status code. | [optional] [default to "200"]
 **Response** | Pointer to **string** | The HTTP response. | [optional] [default to "Ok"]
 **RequestCondition** | Pointer to **NullableString** | Condition which, if met, will select this configuration during a request. Optional. | [optional] 
 
@@ -153,20 +153,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetStatus
 
-`func (o *ResponseObject) GetStatus() int32`
+`func (o *ResponseObject) GetStatus() string`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *ResponseObject) GetStatusOk() (*int32, bool)`
+`func (o *ResponseObject) GetStatusOk() (*string, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *ResponseObject) SetStatus(v int32)`
+`func (o *ResponseObject) SetStatus(v string)`
 
 SetStatus sets Status field to given value.
 

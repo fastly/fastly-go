@@ -26,12 +26,8 @@ type HeaderResponse struct {
 	CacheCondition NullableString `json:"cache_condition,omitempty"`
 	// Header to set.
 	Dst *string `json:"dst,omitempty"`
-	// Don't add the header if it is added already. Only applies to 'set' action.
-	IgnoreIfSet *int32 `json:"ignore_if_set,omitempty"`
 	// A handle to refer to this Header object.
 	Name *string `json:"name,omitempty"`
-	// Priority determines execution order. Lower numbers execute first.
-	Priority *int32 `json:"priority,omitempty"`
 	// Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
 	Regex NullableString `json:"regex,omitempty"`
 	// Condition which, if met, will select this configuration during a request. Optional.
@@ -44,8 +40,12 @@ type HeaderResponse struct {
 	Substitution NullableString `json:"substitution,omitempty"`
 	// Accepts a string value.
 	Type *string `json:"type,omitempty"`
+	// Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\"0\" = false, \"1\" = true)
+	IgnoreIfSet *string `json:"ignore_if_set,omitempty"`
+	// Priority determines execution order. Lower numbers execute first.
+	Priority *string `json:"priority,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Version *string `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -63,7 +63,7 @@ type _HeaderResponse HeaderResponse
 // will change when the set of required properties is changed
 func NewHeaderResponse() *HeaderResponse {
 	this := HeaderResponse{}
-	var priority int32 = 100
+	var priority string = "100"
 	this.Priority = &priority
 	return &this
 }
@@ -73,7 +73,7 @@ func NewHeaderResponse() *HeaderResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewHeaderResponseWithDefaults() *HeaderResponse {
 	this := HeaderResponse{}
-	var priority int32 = 100
+	var priority string = "100"
 	this.Priority = &priority
 	return &this
 }
@@ -184,38 +184,6 @@ func (o *HeaderResponse) SetDst(v string) {
 	o.Dst = &v
 }
 
-// GetIgnoreIfSet returns the IgnoreIfSet field value if set, zero value otherwise.
-func (o *HeaderResponse) GetIgnoreIfSet() int32 {
-	if o == nil || o.IgnoreIfSet == nil {
-		var ret int32
-		return ret
-	}
-	return *o.IgnoreIfSet
-}
-
-// GetIgnoreIfSetOk returns a tuple with the IgnoreIfSet field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HeaderResponse) GetIgnoreIfSetOk() (*int32, bool) {
-	if o == nil || o.IgnoreIfSet == nil {
-		return nil, false
-	}
-	return o.IgnoreIfSet, true
-}
-
-// HasIgnoreIfSet returns a boolean if a field has been set.
-func (o *HeaderResponse) HasIgnoreIfSet() bool {
-	if o != nil && o.IgnoreIfSet != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIgnoreIfSet gets a reference to the given int32 and assigns it to the IgnoreIfSet field.
-func (o *HeaderResponse) SetIgnoreIfSet(v int32) {
-	o.IgnoreIfSet = &v
-}
-
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *HeaderResponse) GetName() string {
 	if o == nil || o.Name == nil {
@@ -246,38 +214,6 @@ func (o *HeaderResponse) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *HeaderResponse) SetName(v string) {
 	o.Name = &v
-}
-
-// GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *HeaderResponse) GetPriority() int32 {
-	if o == nil || o.Priority == nil {
-		var ret int32
-		return ret
-	}
-	return *o.Priority
-}
-
-// GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *HeaderResponse) GetPriorityOk() (*int32, bool) {
-	if o == nil || o.Priority == nil {
-		return nil, false
-	}
-	return o.Priority, true
-}
-
-// HasPriority returns a boolean if a field has been set.
-func (o *HeaderResponse) HasPriority() bool {
-	if o != nil && o.Priority != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPriority gets a reference to the given int32 and assigns it to the Priority field.
-func (o *HeaderResponse) SetPriority(v int32) {
-	o.Priority = &v
 }
 
 // GetRegex returns the Regex field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -522,6 +458,70 @@ func (o *HeaderResponse) SetType(v string) {
 	o.Type = &v
 }
 
+// GetIgnoreIfSet returns the IgnoreIfSet field value if set, zero value otherwise.
+func (o *HeaderResponse) GetIgnoreIfSet() string {
+	if o == nil || o.IgnoreIfSet == nil {
+		var ret string
+		return ret
+	}
+	return *o.IgnoreIfSet
+}
+
+// GetIgnoreIfSetOk returns a tuple with the IgnoreIfSet field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HeaderResponse) GetIgnoreIfSetOk() (*string, bool) {
+	if o == nil || o.IgnoreIfSet == nil {
+		return nil, false
+	}
+	return o.IgnoreIfSet, true
+}
+
+// HasIgnoreIfSet returns a boolean if a field has been set.
+func (o *HeaderResponse) HasIgnoreIfSet() bool {
+	if o != nil && o.IgnoreIfSet != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIgnoreIfSet gets a reference to the given string and assigns it to the IgnoreIfSet field.
+func (o *HeaderResponse) SetIgnoreIfSet(v string) {
+	o.IgnoreIfSet = &v
+}
+
+// GetPriority returns the Priority field value if set, zero value otherwise.
+func (o *HeaderResponse) GetPriority() string {
+	if o == nil || o.Priority == nil {
+		var ret string
+		return ret
+	}
+	return *o.Priority
+}
+
+// GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HeaderResponse) GetPriorityOk() (*string, bool) {
+	if o == nil || o.Priority == nil {
+		return nil, false
+	}
+	return o.Priority, true
+}
+
+// HasPriority returns a boolean if a field has been set.
+func (o *HeaderResponse) HasPriority() bool {
+	if o != nil && o.Priority != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPriority gets a reference to the given string and assigns it to the Priority field.
+func (o *HeaderResponse) SetPriority(v string) {
+	o.Priority = &v
+}
+
 // GetServiceID returns the ServiceID field value if set, zero value otherwise.
 func (o *HeaderResponse) GetServiceID() string {
 	if o == nil || o.ServiceID == nil {
@@ -555,9 +555,9 @@ func (o *HeaderResponse) SetServiceID(v string) {
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *HeaderResponse) GetVersion() int32 {
+func (o *HeaderResponse) GetVersion() string {
 	if o == nil || o.Version == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Version
@@ -565,7 +565,7 @@ func (o *HeaderResponse) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HeaderResponse) GetVersionOk() (*int32, bool) {
+func (o *HeaderResponse) GetVersionOk() (*string, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -581,8 +581,8 @@ func (o *HeaderResponse) HasVersion() bool {
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *HeaderResponse) SetVersion(v int32) {
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *HeaderResponse) SetVersion(v string) {
 	o.Version = &v
 }
 
@@ -725,14 +725,8 @@ func (o HeaderResponse) MarshalJSON() ([]byte, error) {
 	if o.Dst != nil {
 		toSerialize["dst"] = o.Dst
 	}
-	if o.IgnoreIfSet != nil {
-		toSerialize["ignore_if_set"] = o.IgnoreIfSet
-	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
-	}
-	if o.Priority != nil {
-		toSerialize["priority"] = o.Priority
 	}
 	if o.Regex.IsSet() {
 		toSerialize["regex"] = o.Regex.Get()
@@ -751,6 +745,12 @@ func (o HeaderResponse) MarshalJSON() ([]byte, error) {
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
+	}
+	if o.IgnoreIfSet != nil {
+		toSerialize["ignore_if_set"] = o.IgnoreIfSet
+	}
+	if o.Priority != nil {
+		toSerialize["priority"] = o.Priority
 	}
 	if o.ServiceID != nil {
 		toSerialize["service_id"] = o.ServiceID
@@ -790,15 +790,15 @@ func (o *HeaderResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "action")
 		delete(additionalProperties, "cache_condition")
 		delete(additionalProperties, "dst")
-		delete(additionalProperties, "ignore_if_set")
 		delete(additionalProperties, "name")
-		delete(additionalProperties, "priority")
 		delete(additionalProperties, "regex")
 		delete(additionalProperties, "request_condition")
 		delete(additionalProperties, "response_condition")
 		delete(additionalProperties, "src")
 		delete(additionalProperties, "substitution")
 		delete(additionalProperties, "type")
+		delete(additionalProperties, "ignore_if_set")
+		delete(additionalProperties, "priority")
 		delete(additionalProperties, "service_id")
 		delete(additionalProperties, "version")
 		delete(additionalProperties, "created_at")

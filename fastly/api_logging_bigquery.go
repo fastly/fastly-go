@@ -126,9 +126,9 @@ type APICreateLogBigqueryRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	user *string
 	secretKey *string
 	accountName *string
@@ -148,11 +148,6 @@ func (r *APICreateLogBigqueryRequest) Placement(placement string) *APICreateLogB
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogBigqueryRequest) FormatVersion(formatVersion int32) *APICreateLogBigqueryRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogBigqueryRequest) ResponseCondition(responseCondition string) *APICreateLogBigqueryRequest {
 	r.responseCondition = &responseCondition
@@ -161,6 +156,11 @@ func (r *APICreateLogBigqueryRequest) ResponseCondition(responseCondition string
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
 func (r *APICreateLogBigqueryRequest) Format(format string) *APICreateLogBigqueryRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogBigqueryRequest) FormatVersion(formatVersion int32) *APICreateLogBigqueryRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // User Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Not required if &#x60;account_name&#x60; is specified.
@@ -269,14 +269,14 @@ func (a *LoggingBigqueryAPIService) CreateLogBigqueryExecute(r APICreateLogBigqu
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.user != nil {
 		localVarFormParams.Add("user", parameterToString(*r.user, ""))
@@ -795,9 +795,9 @@ type APIUpdateLogBigqueryRequest struct {
 	loggingBigqueryName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	user *string
 	secretKey *string
 	accountName *string
@@ -817,11 +817,6 @@ func (r *APIUpdateLogBigqueryRequest) Placement(placement string) *APIUpdateLogB
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogBigqueryRequest) FormatVersion(formatVersion int32) *APIUpdateLogBigqueryRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogBigqueryRequest) ResponseCondition(responseCondition string) *APIUpdateLogBigqueryRequest {
 	r.responseCondition = &responseCondition
@@ -830,6 +825,11 @@ func (r *APIUpdateLogBigqueryRequest) ResponseCondition(responseCondition string
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
 func (r *APIUpdateLogBigqueryRequest) Format(format string) *APIUpdateLogBigqueryRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogBigqueryRequest) FormatVersion(formatVersion int32) *APIUpdateLogBigqueryRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // User Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Not required if &#x60;account_name&#x60; is specified.
@@ -941,14 +941,14 @@ func (a *LoggingBigqueryAPIService) UpdateLogBigqueryExecute(r APIUpdateLogBigqu
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.user != nil {
 		localVarFormParams.Add("user", parameterToString(*r.user, ""))

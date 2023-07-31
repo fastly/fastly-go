@@ -19,7 +19,8 @@ import (
 
 // PoolResponseAllOf struct for PoolResponseAllOf
 type PoolResponseAllOf struct {
-	ID *string `json:"id,omitempty"`
+	// Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
+	Quorum *string `json:"quorum,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -31,6 +32,8 @@ type _PoolResponseAllOf PoolResponseAllOf
 // will change when the set of required properties is changed
 func NewPoolResponseAllOf() *PoolResponseAllOf {
 	this := PoolResponseAllOf{}
+	var quorum string = "75"
+	this.Quorum = &quorum
 	return &this
 }
 
@@ -39,47 +42,49 @@ func NewPoolResponseAllOf() *PoolResponseAllOf {
 // but it doesn't guarantee that properties required by API are set
 func NewPoolResponseAllOfWithDefaults() *PoolResponseAllOf {
 	this := PoolResponseAllOf{}
+	var quorum string = "75"
+	this.Quorum = &quorum
 	return &this
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *PoolResponseAllOf) GetID() string {
-	if o == nil || o.ID == nil {
+// GetQuorum returns the Quorum field value if set, zero value otherwise.
+func (o *PoolResponseAllOf) GetQuorum() string {
+	if o == nil || o.Quorum == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Quorum
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetQuorumOk returns a tuple with the Quorum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PoolResponseAllOf) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *PoolResponseAllOf) GetQuorumOk() (*string, bool) {
+	if o == nil || o.Quorum == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Quorum, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *PoolResponseAllOf) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasQuorum returns a boolean if a field has been set.
+func (o *PoolResponseAllOf) HasQuorum() bool {
+	if o != nil && o.Quorum != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *PoolResponseAllOf) SetID(v string) {
-	o.ID = &v
+// SetQuorum gets a reference to the given string and assigns it to the Quorum field.
+func (o *PoolResponseAllOf) SetQuorum(v string) {
+	o.Quorum = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o PoolResponseAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Quorum != nil {
+		toSerialize["quorum"] = o.Quorum
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -101,7 +106,7 @@ func (o *PoolResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
+		delete(additionalProperties, "quorum")
 		o.AdditionalProperties = additionalProperties
 	}
 

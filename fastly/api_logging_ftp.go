@@ -126,22 +126,22 @@ type APICreateLogFtpRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *string
 	timestampFormat *string
+	compressionCodec *string
 	period *int32
 	gzipLevel *int32
-	compressionCodec *string
 	address *string
 	hostname *string
 	ipv4 *string
 	password *string
 	path *string
-	port *int32
 	publicKey *string
 	user *string
+	port *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -154,11 +154,6 @@ func (r *APICreateLogFtpRequest) Placement(placement string) *APICreateLogFtpReq
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogFtpRequest) FormatVersion(formatVersion int32) *APICreateLogFtpRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogFtpRequest) ResponseCondition(responseCondition string) *APICreateLogFtpRequest {
 	r.responseCondition = &responseCondition
@@ -167,6 +162,11 @@ func (r *APICreateLogFtpRequest) ResponseCondition(responseCondition string) *AP
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogFtpRequest) Format(format string) *APICreateLogFtpRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogFtpRequest) FormatVersion(formatVersion int32) *APICreateLogFtpRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType How the message should be formatted.
@@ -179,6 +179,11 @@ func (r *APICreateLogFtpRequest) TimestampFormat(timestampFormat string) *APICre
 	r.timestampFormat = &timestampFormat
 	return r
 }
+// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
+func (r *APICreateLogFtpRequest) CompressionCodec(compressionCodec string) *APICreateLogFtpRequest {
+	r.compressionCodec = &compressionCodec
+	return r
+}
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APICreateLogFtpRequest) Period(period int32) *APICreateLogFtpRequest {
 	r.period = &period
@@ -187,11 +192,6 @@ func (r *APICreateLogFtpRequest) Period(period int32) *APICreateLogFtpRequest {
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APICreateLogFtpRequest) GzipLevel(gzipLevel int32) *APICreateLogFtpRequest {
 	r.gzipLevel = &gzipLevel
-	return r
-}
-// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
-func (r *APICreateLogFtpRequest) CompressionCodec(compressionCodec string) *APICreateLogFtpRequest {
-	r.compressionCodec = &compressionCodec
 	return r
 }
 // Address An hostname or IPv4 address.
@@ -219,11 +219,6 @@ func (r *APICreateLogFtpRequest) Path(path string) *APICreateLogFtpRequest {
 	r.path = &path
 	return r
 }
-// Port The port number.
-func (r *APICreateLogFtpRequest) Port(port int32) *APICreateLogFtpRequest {
-	r.port = &port
-	return r
-}
 // PublicKey A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 func (r *APICreateLogFtpRequest) PublicKey(publicKey string) *APICreateLogFtpRequest {
 	r.publicKey = &publicKey
@@ -232,6 +227,11 @@ func (r *APICreateLogFtpRequest) PublicKey(publicKey string) *APICreateLogFtpReq
 // User The username for the server. Can be anonymous.
 func (r *APICreateLogFtpRequest) User(user string) *APICreateLogFtpRequest {
 	r.user = &user
+	return r
+}
+// Port The port number.
+func (r *APICreateLogFtpRequest) Port(port int32) *APICreateLogFtpRequest {
+	r.port = &port
 	return r
 }
 
@@ -305,14 +305,14 @@ func (a *LoggingFtpAPIService) CreateLogFtpExecute(r APICreateLogFtpRequest) (*L
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))
@@ -320,14 +320,14 @@ func (a *LoggingFtpAPIService) CreateLogFtpExecute(r APICreateLogFtpRequest) (*L
 	if r.timestampFormat != nil {
 		localVarFormParams.Add("timestamp_format", parameterToString(*r.timestampFormat, ""))
 	}
+	if r.compressionCodec != nil {
+		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
+	}
 	if r.period != nil {
 		localVarFormParams.Add("period", parameterToString(*r.period, ""))
 	}
 	if r.gzipLevel != nil {
 		localVarFormParams.Add("gzip_level", parameterToString(*r.gzipLevel, ""))
-	}
-	if r.compressionCodec != nil {
-		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
 	}
 	if r.address != nil {
 		localVarFormParams.Add("address", parameterToString(*r.address, ""))
@@ -344,14 +344,14 @@ func (a *LoggingFtpAPIService) CreateLogFtpExecute(r APICreateLogFtpRequest) (*L
 	if r.path != nil {
 		localVarFormParams.Add("path", parameterToString(*r.path, ""))
 	}
-	if r.port != nil {
-		localVarFormParams.Add("port", parameterToString(*r.port, ""))
-	}
 	if r.publicKey != nil {
 		localVarFormParams.Add("public_key", parameterToString(*r.publicKey, ""))
 	}
 	if r.user != nil {
 		localVarFormParams.Add("user", parameterToString(*r.user, ""))
+	}
+	if r.port != nil {
+		localVarFormParams.Add("port", parameterToString(*r.port, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -849,22 +849,22 @@ type APIUpdateLogFtpRequest struct {
 	loggingFtpName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *string
 	timestampFormat *string
+	compressionCodec *string
 	period *int32
 	gzipLevel *int32
-	compressionCodec *string
 	address *string
 	hostname *string
 	ipv4 *string
 	password *string
 	path *string
-	port *int32
 	publicKey *string
 	user *string
+	port *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -877,11 +877,6 @@ func (r *APIUpdateLogFtpRequest) Placement(placement string) *APIUpdateLogFtpReq
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogFtpRequest) FormatVersion(formatVersion int32) *APIUpdateLogFtpRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogFtpRequest) ResponseCondition(responseCondition string) *APIUpdateLogFtpRequest {
 	r.responseCondition = &responseCondition
@@ -890,6 +885,11 @@ func (r *APIUpdateLogFtpRequest) ResponseCondition(responseCondition string) *AP
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogFtpRequest) Format(format string) *APIUpdateLogFtpRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogFtpRequest) FormatVersion(formatVersion int32) *APIUpdateLogFtpRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType How the message should be formatted.
@@ -902,6 +902,11 @@ func (r *APIUpdateLogFtpRequest) TimestampFormat(timestampFormat string) *APIUpd
 	r.timestampFormat = &timestampFormat
 	return r
 }
+// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
+func (r *APIUpdateLogFtpRequest) CompressionCodec(compressionCodec string) *APIUpdateLogFtpRequest {
+	r.compressionCodec = &compressionCodec
+	return r
+}
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APIUpdateLogFtpRequest) Period(period int32) *APIUpdateLogFtpRequest {
 	r.period = &period
@@ -910,11 +915,6 @@ func (r *APIUpdateLogFtpRequest) Period(period int32) *APIUpdateLogFtpRequest {
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APIUpdateLogFtpRequest) GzipLevel(gzipLevel int32) *APIUpdateLogFtpRequest {
 	r.gzipLevel = &gzipLevel
-	return r
-}
-// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
-func (r *APIUpdateLogFtpRequest) CompressionCodec(compressionCodec string) *APIUpdateLogFtpRequest {
-	r.compressionCodec = &compressionCodec
 	return r
 }
 // Address An hostname or IPv4 address.
@@ -942,11 +942,6 @@ func (r *APIUpdateLogFtpRequest) Path(path string) *APIUpdateLogFtpRequest {
 	r.path = &path
 	return r
 }
-// Port The port number.
-func (r *APIUpdateLogFtpRequest) Port(port int32) *APIUpdateLogFtpRequest {
-	r.port = &port
-	return r
-}
 // PublicKey A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 func (r *APIUpdateLogFtpRequest) PublicKey(publicKey string) *APIUpdateLogFtpRequest {
 	r.publicKey = &publicKey
@@ -955,6 +950,11 @@ func (r *APIUpdateLogFtpRequest) PublicKey(publicKey string) *APIUpdateLogFtpReq
 // User The username for the server. Can be anonymous.
 func (r *APIUpdateLogFtpRequest) User(user string) *APIUpdateLogFtpRequest {
 	r.user = &user
+	return r
+}
+// Port The port number.
+func (r *APIUpdateLogFtpRequest) Port(port int32) *APIUpdateLogFtpRequest {
+	r.port = &port
 	return r
 }
 
@@ -1031,14 +1031,14 @@ func (a *LoggingFtpAPIService) UpdateLogFtpExecute(r APIUpdateLogFtpRequest) (*L
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))
@@ -1046,14 +1046,14 @@ func (a *LoggingFtpAPIService) UpdateLogFtpExecute(r APIUpdateLogFtpRequest) (*L
 	if r.timestampFormat != nil {
 		localVarFormParams.Add("timestamp_format", parameterToString(*r.timestampFormat, ""))
 	}
+	if r.compressionCodec != nil {
+		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
+	}
 	if r.period != nil {
 		localVarFormParams.Add("period", parameterToString(*r.period, ""))
 	}
 	if r.gzipLevel != nil {
 		localVarFormParams.Add("gzip_level", parameterToString(*r.gzipLevel, ""))
-	}
-	if r.compressionCodec != nil {
-		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
 	}
 	if r.address != nil {
 		localVarFormParams.Add("address", parameterToString(*r.address, ""))
@@ -1070,14 +1070,14 @@ func (a *LoggingFtpAPIService) UpdateLogFtpExecute(r APIUpdateLogFtpRequest) (*L
 	if r.path != nil {
 		localVarFormParams.Add("path", parameterToString(*r.path, ""))
 	}
-	if r.port != nil {
-		localVarFormParams.Add("port", parameterToString(*r.port, ""))
-	}
 	if r.publicKey != nil {
 		localVarFormParams.Add("public_key", parameterToString(*r.publicKey, ""))
 	}
 	if r.user != nil {
 		localVarFormParams.Add("user", parameterToString(*r.user, ""))
+	}
+	if r.port != nil {
+		localVarFormParams.Add("port", parameterToString(*r.port, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

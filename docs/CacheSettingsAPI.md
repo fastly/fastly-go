@@ -36,8 +36,8 @@ func main() {
     action := "action_example" // string | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  (optional)
     cacheCondition := "cacheCondition_example" // string | Name of the cache condition controlling when this configuration applies. (optional)
     name := "name_example" // string | Name for the cache settings object. (optional)
-    staleTTL := int32(56) // int32 | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error'). (optional)
-    ttl := int32(56) // int32 | Maximum time to consider the object fresh in the cache (the cache 'time to live'). (optional)
+    staleTTL := "staleTtl_example" // string | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error'). (optional)
+    ttl := "ttl_example" // string | Maximum time to consider the object fresh in the cache (the cache 'time to live'). (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -68,7 +68,7 @@ Other parameters are passed through a pointer to a apiCreateCacheSettingsRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **string** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **name** | **string** | Name for the cache settings object. |  **staleTTL** | **int32** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). |  **ttl** | **int32** | Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;). | 
+ **action** | **string** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **name** | **string** | Name for the cache settings object. |  **staleTTL** | **string** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). |  **ttl** | **string** | Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;). | 
 
 ### Return type
 
@@ -322,8 +322,8 @@ func main() {
     action := "action_example" // string | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  (optional)
     cacheCondition := "cacheCondition_example" // string | Name of the cache condition controlling when this configuration applies. (optional)
     name := "name_example" // string | Name for the cache settings object. (optional)
-    staleTTL := int32(56) // int32 | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error'). (optional)
-    ttl := int32(56) // int32 | Maximum time to consider the object fresh in the cache (the cache 'time to live'). (optional)
+    staleTTL := "staleTtl_example" // string | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error'). (optional)
+    ttl := "ttl_example" // string | Maximum time to consider the object fresh in the cache (the cache 'time to live'). (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -355,7 +355,7 @@ Other parameters are passed through a pointer to a apiUpdateCacheSettingsRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **string** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **name** | **string** | Name for the cache settings object. |  **staleTTL** | **int32** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). |  **ttl** | **int32** | Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;). | 
+ **action** | **string** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **name** | **string** | Name for the cache settings object. |  **staleTTL** | **string** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). |  **ttl** | **string** | Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;). | 
 
 ### Return type
 

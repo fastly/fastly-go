@@ -19,10 +19,7 @@ import (
 
 // OriginInspectorRealtimeEntryRecorded The Unix timestamp at which this record's data was generated.
 type OriginInspectorRealtimeEntryRecorded struct {
-	AdditionalProperties map[string]any
 }
-
-type _OriginInspectorRealtimeEntryRecorded OriginInspectorRealtimeEntryRecorded
 
 // NewOriginInspectorRealtimeEntryRecorded instantiates a new OriginInspectorRealtimeEntryRecorded object
 // This constructor will assign default values to properties that have it defined,
@@ -45,30 +42,7 @@ func NewOriginInspectorRealtimeEntryRecordedWithDefaults() *OriginInspectorRealt
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o OriginInspectorRealtimeEntryRecorded) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *OriginInspectorRealtimeEntryRecorded) UnmarshalJSON(bytes []byte) (err error) {
-	varOriginInspectorRealtimeEntryRecorded := _OriginInspectorRealtimeEntryRecorded{}
-
-	if err = json.Unmarshal(bytes, &varOriginInspectorRealtimeEntryRecorded); err == nil {
-		*o = OriginInspectorRealtimeEntryRecorded(varOriginInspectorRealtimeEntryRecorded)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableOriginInspectorRealtimeEntryRecorded is a helper abstraction for handling nullable origininspectorrealtimeentryrecorded types. 

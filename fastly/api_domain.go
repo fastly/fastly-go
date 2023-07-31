@@ -45,8 +45,8 @@ type DomainAPI interface {
 	CheckDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APICheckDomainRequest
 
 	// CheckDomainExecute executes the request
-	//  @return []DomainCheckItem
-	CheckDomainExecute(r APICheckDomainRequest) ([]DomainCheckItem, *http.Response, error)
+	//  @return []any
+	CheckDomainExecute(r APICheckDomainRequest) ([]any, *http.Response, error)
 
 	/*
 	CheckDomains Validate DNS configuration for all domains on a service
@@ -61,8 +61,8 @@ type DomainAPI interface {
 	CheckDomains(ctx context.Context, serviceID string, versionID int32) APICheckDomainsRequest
 
 	// CheckDomainsExecute executes the request
-	//  @return [][]DomainCheckItem
-	CheckDomainsExecute(r APICheckDomainsRequest) ([][]DomainCheckItem, *http.Response, error)
+	//  @return [][]any
+	CheckDomainsExecute(r APICheckDomainsRequest) ([][]any, *http.Response, error)
 
 	/*
 	CreateDomain Add a domain name to a service
@@ -162,7 +162,7 @@ type APICheckDomainRequest struct {
 
 
 // Execute calls the API using the request data configured.
-func (r APICheckDomainRequest) Execute() ([]DomainCheckItem, *http.Response, error) {
+func (r APICheckDomainRequest) Execute() ([]any, *http.Response, error) {
 	return r.APIService.CheckDomainExecute(r)
 }
 
@@ -188,13 +188,13 @@ func (a *DomainAPIService) CheckDomain(ctx context.Context, serviceID string, ve
 }
 
 // CheckDomainExecute executes the request
-//  @return []DomainCheckItem
-func (a *DomainAPIService) CheckDomainExecute(r APICheckDomainRequest) ([]DomainCheckItem, *http.Response, error) {
+//  @return []any
+func (a *DomainAPIService) CheckDomainExecute(r APICheckDomainRequest) ([]any, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  []DomainCheckItem
+		localVarReturnValue  []any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainAPIService.CheckDomain")
@@ -303,7 +303,7 @@ type APICheckDomainsRequest struct {
 
 
 // Execute calls the API using the request data configured.
-func (r APICheckDomainsRequest) Execute() ([][]DomainCheckItem, *http.Response, error) {
+func (r APICheckDomainsRequest) Execute() ([][]any, *http.Response, error) {
 	return r.APIService.CheckDomainsExecute(r)
 }
 
@@ -327,13 +327,13 @@ func (a *DomainAPIService) CheckDomains(ctx context.Context, serviceID string, v
 }
 
 // CheckDomainsExecute executes the request
-//  @return [][]DomainCheckItem
-func (a *DomainAPIService) CheckDomainsExecute(r APICheckDomainsRequest) ([][]DomainCheckItem, *http.Response, error) {
+//  @return [][]any
+func (a *DomainAPIService) CheckDomainsExecute(r APICheckDomainsRequest) ([][]any, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  [][]DomainCheckItem
+		localVarReturnValue  [][]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainAPIService.CheckDomains")

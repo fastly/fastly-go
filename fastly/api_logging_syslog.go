@@ -126,9 +126,9 @@ type APICreateLogSyslogRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	tlsCaCert *string
 	tlsClientCert *string
 	tlsClientKey *string
@@ -152,11 +152,6 @@ func (r *APICreateLogSyslogRequest) Placement(placement string) *APICreateLogSys
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogSyslogRequest) FormatVersion(formatVersion int32) *APICreateLogSyslogRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogSyslogRequest) ResponseCondition(responseCondition string) *APICreateLogSyslogRequest {
 	r.responseCondition = &responseCondition
@@ -165,6 +160,11 @@ func (r *APICreateLogSyslogRequest) ResponseCondition(responseCondition string) 
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogSyslogRequest) Format(format string) *APICreateLogSyslogRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogSyslogRequest) FormatVersion(formatVersion int32) *APICreateLogSyslogRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
@@ -293,14 +293,14 @@ func (a *LoggingSyslogAPIService) CreateLogSyslogExecute(r APICreateLogSyslogReq
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.tlsCaCert != nil {
 		localVarFormParams.Add("tls_ca_cert", parameterToString(*r.tlsCaCert, ""))
@@ -831,9 +831,9 @@ type APIUpdateLogSyslogRequest struct {
 	loggingSyslogName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	tlsCaCert *string
 	tlsClientCert *string
 	tlsClientKey *string
@@ -857,11 +857,6 @@ func (r *APIUpdateLogSyslogRequest) Placement(placement string) *APIUpdateLogSys
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogSyslogRequest) FormatVersion(formatVersion int32) *APIUpdateLogSyslogRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogSyslogRequest) ResponseCondition(responseCondition string) *APIUpdateLogSyslogRequest {
 	r.responseCondition = &responseCondition
@@ -870,6 +865,11 @@ func (r *APIUpdateLogSyslogRequest) ResponseCondition(responseCondition string) 
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogSyslogRequest) Format(format string) *APIUpdateLogSyslogRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogSyslogRequest) FormatVersion(formatVersion int32) *APIUpdateLogSyslogRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
@@ -1001,14 +1001,14 @@ func (a *LoggingSyslogAPIService) UpdateLogSyslogExecute(r APIUpdateLogSyslogReq
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.tlsCaCert != nil {
 		localVarFormParams.Add("tls_ca_cert", parameterToString(*r.tlsCaCert, ""))

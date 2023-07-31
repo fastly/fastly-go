@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The name for the real-time logging configuration. | [optional] 
 **Placement** | Pointer to **NullableString** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] 
-**FormatVersion** | Pointer to **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to 2]
 **ResponseCondition** | Pointer to **NullableString** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
 **Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
 
@@ -89,31 +88,6 @@ HasPlacement returns a boolean if a field has been set.
 `func (o *LoggingCommon) UnsetPlacement()`
 
 UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
-### GetFormatVersion
-
-`func (o *LoggingCommon) GetFormatVersion() int32`
-
-GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
-
-### GetFormatVersionOk
-
-`func (o *LoggingCommon) GetFormatVersionOk() (*int32, bool)`
-
-GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFormatVersion
-
-`func (o *LoggingCommon) SetFormatVersion(v int32)`
-
-SetFormatVersion sets FormatVersion field to given value.
-
-### HasFormatVersion
-
-`func (o *LoggingCommon) HasFormatVersion() bool`
-
-HasFormatVersion returns a boolean if a field has been set.
-
 ### GetResponseCondition
 
 `func (o *LoggingCommon) GetResponseCondition() string`

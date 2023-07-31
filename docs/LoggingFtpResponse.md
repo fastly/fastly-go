@@ -6,27 +6,27 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The name for the real-time logging configuration. | [optional] 
 **Placement** | Pointer to **NullableString** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] 
-**FormatVersion** | Pointer to **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to 2]
 **ResponseCondition** | Pointer to **NullableString** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
 **Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
+**FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
 **MessageType** | Pointer to **string** | How the message should be formatted. | [optional] [default to "classic"]
 **TimestampFormat** | Pointer to **NullableString** | A timestamp format | [optional] [readonly] 
-**Period** | Pointer to **int32** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
-**GzipLevel** | Pointer to **int32** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [default to 0]
 **CompressionCodec** | Pointer to **string** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] 
+**Period** | Pointer to **string** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to "3600"]
+**GzipLevel** | Pointer to **string** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [default to "0"]
+**CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**Version** | Pointer to **string** |  | [optional] [readonly] 
 **Address** | Pointer to **string** | An hostname or IPv4 address. | [optional] 
 **Hostname** | Pointer to **string** | Hostname used. | [optional] 
 **Ipv4** | Pointer to **string** | IPv4 address of the host. | [optional] 
 **Password** | Pointer to **string** | The password for the server. For anonymous use an email address. | [optional] 
 **Path** | Pointer to **string** | The path to upload log files to. If the path ends in `/` then it is treated as a directory. | [optional] 
-**Port** | Pointer to **int32** | The port number. | [optional] [default to 21]
 **PublicKey** | Pointer to **NullableString** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to "null"]
 **User** | Pointer to **string** | The username for the server. Can be anonymous. | [optional] 
-**CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **int32** |  | [optional] [readonly] 
+**Port** | Pointer to **string** | The port number. | [optional] [default to "21"]
 
 ## Methods
 
@@ -107,31 +107,6 @@ HasPlacement returns a boolean if a field has been set.
 `func (o *LoggingFtpResponse) UnsetPlacement()`
 
 UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
-### GetFormatVersion
-
-`func (o *LoggingFtpResponse) GetFormatVersion() int32`
-
-GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
-
-### GetFormatVersionOk
-
-`func (o *LoggingFtpResponse) GetFormatVersionOk() (*int32, bool)`
-
-GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFormatVersion
-
-`func (o *LoggingFtpResponse) SetFormatVersion(v int32)`
-
-SetFormatVersion sets FormatVersion field to given value.
-
-### HasFormatVersion
-
-`func (o *LoggingFtpResponse) HasFormatVersion() bool`
-
-HasFormatVersion returns a boolean if a field has been set.
-
 ### GetResponseCondition
 
 `func (o *LoggingFtpResponse) GetResponseCondition() string`
@@ -191,6 +166,31 @@ SetFormat sets Format field to given value.
 `func (o *LoggingFtpResponse) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+### GetFormatVersion
+
+`func (o *LoggingFtpResponse) GetFormatVersion() string`
+
+GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
+
+### GetFormatVersionOk
+
+`func (o *LoggingFtpResponse) GetFormatVersionOk() (*string, bool)`
+
+GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormatVersion
+
+`func (o *LoggingFtpResponse) SetFormatVersion(v string)`
+
+SetFormatVersion sets FormatVersion field to given value.
+
+### HasFormatVersion
+
+`func (o *LoggingFtpResponse) HasFormatVersion() bool`
+
+HasFormatVersion returns a boolean if a field has been set.
 
 ### GetMessageType
 
@@ -252,56 +252,6 @@ HasTimestampFormat returns a boolean if a field has been set.
 `func (o *LoggingFtpResponse) UnsetTimestampFormat()`
 
 UnsetTimestampFormat ensures that no value is present for TimestampFormat, not even an explicit nil
-### GetPeriod
-
-`func (o *LoggingFtpResponse) GetPeriod() int32`
-
-GetPeriod returns the Period field if non-nil, zero value otherwise.
-
-### GetPeriodOk
-
-`func (o *LoggingFtpResponse) GetPeriodOk() (*int32, bool)`
-
-GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPeriod
-
-`func (o *LoggingFtpResponse) SetPeriod(v int32)`
-
-SetPeriod sets Period field to given value.
-
-### HasPeriod
-
-`func (o *LoggingFtpResponse) HasPeriod() bool`
-
-HasPeriod returns a boolean if a field has been set.
-
-### GetGzipLevel
-
-`func (o *LoggingFtpResponse) GetGzipLevel() int32`
-
-GetGzipLevel returns the GzipLevel field if non-nil, zero value otherwise.
-
-### GetGzipLevelOk
-
-`func (o *LoggingFtpResponse) GetGzipLevelOk() (*int32, bool)`
-
-GetGzipLevelOk returns a tuple with the GzipLevel field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGzipLevel
-
-`func (o *LoggingFtpResponse) SetGzipLevel(v int32)`
-
-SetGzipLevel sets GzipLevel field to given value.
-
-### HasGzipLevel
-
-`func (o *LoggingFtpResponse) HasGzipLevel() bool`
-
-HasGzipLevel returns a boolean if a field has been set.
-
 ### GetCompressionCodec
 
 `func (o *LoggingFtpResponse) GetCompressionCodec() string`
@@ -327,215 +277,55 @@ SetCompressionCodec sets CompressionCodec field to given value.
 
 HasCompressionCodec returns a boolean if a field has been set.
 
-### GetAddress
+### GetPeriod
 
-`func (o *LoggingFtpResponse) GetAddress() string`
+`func (o *LoggingFtpResponse) GetPeriod() string`
 
-GetAddress returns the Address field if non-nil, zero value otherwise.
+GetPeriod returns the Period field if non-nil, zero value otherwise.
 
-### GetAddressOk
+### GetPeriodOk
 
-`func (o *LoggingFtpResponse) GetAddressOk() (*string, bool)`
+`func (o *LoggingFtpResponse) GetPeriodOk() (*string, bool)`
 
-GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
+GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAddress
+### SetPeriod
 
-`func (o *LoggingFtpResponse) SetAddress(v string)`
+`func (o *LoggingFtpResponse) SetPeriod(v string)`
 
-SetAddress sets Address field to given value.
+SetPeriod sets Period field to given value.
 
-### HasAddress
+### HasPeriod
 
-`func (o *LoggingFtpResponse) HasAddress() bool`
+`func (o *LoggingFtpResponse) HasPeriod() bool`
 
-HasAddress returns a boolean if a field has been set.
+HasPeriod returns a boolean if a field has been set.
 
-### GetHostname
+### GetGzipLevel
 
-`func (o *LoggingFtpResponse) GetHostname() string`
+`func (o *LoggingFtpResponse) GetGzipLevel() string`
 
-GetHostname returns the Hostname field if non-nil, zero value otherwise.
+GetGzipLevel returns the GzipLevel field if non-nil, zero value otherwise.
 
-### GetHostnameOk
+### GetGzipLevelOk
 
-`func (o *LoggingFtpResponse) GetHostnameOk() (*string, bool)`
+`func (o *LoggingFtpResponse) GetGzipLevelOk() (*string, bool)`
 
-GetHostnameOk returns a tuple with the Hostname field if it's non-nil, zero value otherwise
+GetGzipLevelOk returns a tuple with the GzipLevel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHostname
+### SetGzipLevel
 
-`func (o *LoggingFtpResponse) SetHostname(v string)`
+`func (o *LoggingFtpResponse) SetGzipLevel(v string)`
 
-SetHostname sets Hostname field to given value.
+SetGzipLevel sets GzipLevel field to given value.
 
-### HasHostname
+### HasGzipLevel
 
-`func (o *LoggingFtpResponse) HasHostname() bool`
+`func (o *LoggingFtpResponse) HasGzipLevel() bool`
 
-HasHostname returns a boolean if a field has been set.
-
-### GetIpv4
-
-`func (o *LoggingFtpResponse) GetIpv4() string`
-
-GetIpv4 returns the Ipv4 field if non-nil, zero value otherwise.
-
-### GetIpv4Ok
-
-`func (o *LoggingFtpResponse) GetIpv4Ok() (*string, bool)`
-
-GetIpv4Ok returns a tuple with the Ipv4 field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIpv4
-
-`func (o *LoggingFtpResponse) SetIpv4(v string)`
-
-SetIpv4 sets Ipv4 field to given value.
-
-### HasIpv4
-
-`func (o *LoggingFtpResponse) HasIpv4() bool`
-
-HasIpv4 returns a boolean if a field has been set.
-
-### GetPassword
-
-`func (o *LoggingFtpResponse) GetPassword() string`
-
-GetPassword returns the Password field if non-nil, zero value otherwise.
-
-### GetPasswordOk
-
-`func (o *LoggingFtpResponse) GetPasswordOk() (*string, bool)`
-
-GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPassword
-
-`func (o *LoggingFtpResponse) SetPassword(v string)`
-
-SetPassword sets Password field to given value.
-
-### HasPassword
-
-`func (o *LoggingFtpResponse) HasPassword() bool`
-
-HasPassword returns a boolean if a field has been set.
-
-### GetPath
-
-`func (o *LoggingFtpResponse) GetPath() string`
-
-GetPath returns the Path field if non-nil, zero value otherwise.
-
-### GetPathOk
-
-`func (o *LoggingFtpResponse) GetPathOk() (*string, bool)`
-
-GetPathOk returns a tuple with the Path field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPath
-
-`func (o *LoggingFtpResponse) SetPath(v string)`
-
-SetPath sets Path field to given value.
-
-### HasPath
-
-`func (o *LoggingFtpResponse) HasPath() bool`
-
-HasPath returns a boolean if a field has been set.
-
-### GetPort
-
-`func (o *LoggingFtpResponse) GetPort() int32`
-
-GetPort returns the Port field if non-nil, zero value otherwise.
-
-### GetPortOk
-
-`func (o *LoggingFtpResponse) GetPortOk() (*int32, bool)`
-
-GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPort
-
-`func (o *LoggingFtpResponse) SetPort(v int32)`
-
-SetPort sets Port field to given value.
-
-### HasPort
-
-`func (o *LoggingFtpResponse) HasPort() bool`
-
-HasPort returns a boolean if a field has been set.
-
-### GetPublicKey
-
-`func (o *LoggingFtpResponse) GetPublicKey() string`
-
-GetPublicKey returns the PublicKey field if non-nil, zero value otherwise.
-
-### GetPublicKeyOk
-
-`func (o *LoggingFtpResponse) GetPublicKeyOk() (*string, bool)`
-
-GetPublicKeyOk returns a tuple with the PublicKey field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPublicKey
-
-`func (o *LoggingFtpResponse) SetPublicKey(v string)`
-
-SetPublicKey sets PublicKey field to given value.
-
-### HasPublicKey
-
-`func (o *LoggingFtpResponse) HasPublicKey() bool`
-
-HasPublicKey returns a boolean if a field has been set.
-
-### SetPublicKeyNil
-
-`func (o *LoggingFtpResponse) SetPublicKeyNil(b bool)`
-
- SetPublicKeyNil sets the value for PublicKey to be an explicit nil
-
-### UnsetPublicKey
-`func (o *LoggingFtpResponse) UnsetPublicKey()`
-
-UnsetPublicKey ensures that no value is present for PublicKey, not even an explicit nil
-### GetUser
-
-`func (o *LoggingFtpResponse) GetUser() string`
-
-GetUser returns the User field if non-nil, zero value otherwise.
-
-### GetUserOk
-
-`func (o *LoggingFtpResponse) GetUserOk() (*string, bool)`
-
-GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUser
-
-`func (o *LoggingFtpResponse) SetUser(v string)`
-
-SetUser sets User field to given value.
-
-### HasUser
-
-`func (o *LoggingFtpResponse) HasUser() bool`
-
-HasUser returns a boolean if a field has been set.
+HasGzipLevel returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -669,20 +459,20 @@ HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *LoggingFtpResponse) GetVersion() int32`
+`func (o *LoggingFtpResponse) GetVersion() string`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *LoggingFtpResponse) GetVersionOk() (*int32, bool)`
+`func (o *LoggingFtpResponse) GetVersionOk() (*string, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *LoggingFtpResponse) SetVersion(v int32)`
+`func (o *LoggingFtpResponse) SetVersion(v string)`
 
 SetVersion sets Version field to given value.
 
@@ -691,6 +481,216 @@ SetVersion sets Version field to given value.
 `func (o *LoggingFtpResponse) HasVersion() bool`
 
 HasVersion returns a boolean if a field has been set.
+
+### GetAddress
+
+`func (o *LoggingFtpResponse) GetAddress() string`
+
+GetAddress returns the Address field if non-nil, zero value otherwise.
+
+### GetAddressOk
+
+`func (o *LoggingFtpResponse) GetAddressOk() (*string, bool)`
+
+GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAddress
+
+`func (o *LoggingFtpResponse) SetAddress(v string)`
+
+SetAddress sets Address field to given value.
+
+### HasAddress
+
+`func (o *LoggingFtpResponse) HasAddress() bool`
+
+HasAddress returns a boolean if a field has been set.
+
+### GetHostname
+
+`func (o *LoggingFtpResponse) GetHostname() string`
+
+GetHostname returns the Hostname field if non-nil, zero value otherwise.
+
+### GetHostnameOk
+
+`func (o *LoggingFtpResponse) GetHostnameOk() (*string, bool)`
+
+GetHostnameOk returns a tuple with the Hostname field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHostname
+
+`func (o *LoggingFtpResponse) SetHostname(v string)`
+
+SetHostname sets Hostname field to given value.
+
+### HasHostname
+
+`func (o *LoggingFtpResponse) HasHostname() bool`
+
+HasHostname returns a boolean if a field has been set.
+
+### GetIpv4
+
+`func (o *LoggingFtpResponse) GetIpv4() string`
+
+GetIpv4 returns the Ipv4 field if non-nil, zero value otherwise.
+
+### GetIpv4Ok
+
+`func (o *LoggingFtpResponse) GetIpv4Ok() (*string, bool)`
+
+GetIpv4Ok returns a tuple with the Ipv4 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIpv4
+
+`func (o *LoggingFtpResponse) SetIpv4(v string)`
+
+SetIpv4 sets Ipv4 field to given value.
+
+### HasIpv4
+
+`func (o *LoggingFtpResponse) HasIpv4() bool`
+
+HasIpv4 returns a boolean if a field has been set.
+
+### GetPassword
+
+`func (o *LoggingFtpResponse) GetPassword() string`
+
+GetPassword returns the Password field if non-nil, zero value otherwise.
+
+### GetPasswordOk
+
+`func (o *LoggingFtpResponse) GetPasswordOk() (*string, bool)`
+
+GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPassword
+
+`func (o *LoggingFtpResponse) SetPassword(v string)`
+
+SetPassword sets Password field to given value.
+
+### HasPassword
+
+`func (o *LoggingFtpResponse) HasPassword() bool`
+
+HasPassword returns a boolean if a field has been set.
+
+### GetPath
+
+`func (o *LoggingFtpResponse) GetPath() string`
+
+GetPath returns the Path field if non-nil, zero value otherwise.
+
+### GetPathOk
+
+`func (o *LoggingFtpResponse) GetPathOk() (*string, bool)`
+
+GetPathOk returns a tuple with the Path field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPath
+
+`func (o *LoggingFtpResponse) SetPath(v string)`
+
+SetPath sets Path field to given value.
+
+### HasPath
+
+`func (o *LoggingFtpResponse) HasPath() bool`
+
+HasPath returns a boolean if a field has been set.
+
+### GetPublicKey
+
+`func (o *LoggingFtpResponse) GetPublicKey() string`
+
+GetPublicKey returns the PublicKey field if non-nil, zero value otherwise.
+
+### GetPublicKeyOk
+
+`func (o *LoggingFtpResponse) GetPublicKeyOk() (*string, bool)`
+
+GetPublicKeyOk returns a tuple with the PublicKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublicKey
+
+`func (o *LoggingFtpResponse) SetPublicKey(v string)`
+
+SetPublicKey sets PublicKey field to given value.
+
+### HasPublicKey
+
+`func (o *LoggingFtpResponse) HasPublicKey() bool`
+
+HasPublicKey returns a boolean if a field has been set.
+
+### SetPublicKeyNil
+
+`func (o *LoggingFtpResponse) SetPublicKeyNil(b bool)`
+
+ SetPublicKeyNil sets the value for PublicKey to be an explicit nil
+
+### UnsetPublicKey
+`func (o *LoggingFtpResponse) UnsetPublicKey()`
+
+UnsetPublicKey ensures that no value is present for PublicKey, not even an explicit nil
+### GetUser
+
+`func (o *LoggingFtpResponse) GetUser() string`
+
+GetUser returns the User field if non-nil, zero value otherwise.
+
+### GetUserOk
+
+`func (o *LoggingFtpResponse) GetUserOk() (*string, bool)`
+
+GetUserOk returns a tuple with the User field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUser
+
+`func (o *LoggingFtpResponse) SetUser(v string)`
+
+SetUser sets User field to given value.
+
+### HasUser
+
+`func (o *LoggingFtpResponse) HasUser() bool`
+
+HasUser returns a boolean if a field has been set.
+
+### GetPort
+
+`func (o *LoggingFtpResponse) GetPort() string`
+
+GetPort returns the Port field if non-nil, zero value otherwise.
+
+### GetPortOk
+
+`func (o *LoggingFtpResponse) GetPortOk() (*string, bool)`
+
+GetPortOk returns a tuple with the Port field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPort
+
+`func (o *LoggingFtpResponse) SetPort(v string)`
+
+SetPort sets Port field to given value.
+
+### HasPort
+
+`func (o *LoggingFtpResponse) HasPort() bool`
+
+HasPort returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

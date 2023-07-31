@@ -126,9 +126,9 @@ type APICreateLogDatadogRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	region *string
 	token *string
 }
@@ -143,11 +143,6 @@ func (r *APICreateLogDatadogRequest) Placement(placement string) *APICreateLogDa
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogDatadogRequest) FormatVersion(formatVersion int32) *APICreateLogDatadogRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogDatadogRequest) ResponseCondition(responseCondition string) *APICreateLogDatadogRequest {
 	r.responseCondition = &responseCondition
@@ -156,6 +151,11 @@ func (r *APICreateLogDatadogRequest) ResponseCondition(responseCondition string)
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
 func (r *APICreateLogDatadogRequest) Format(format string) *APICreateLogDatadogRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogDatadogRequest) FormatVersion(formatVersion int32) *APICreateLogDatadogRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Region The region that log data will be sent to.
@@ -239,14 +239,14 @@ func (a *LoggingDatadogAPIService) CreateLogDatadogExecute(r APICreateLogDatadog
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.region != nil {
 		localVarFormParams.Add("region", parameterToString(*r.region, ""))
@@ -750,9 +750,9 @@ type APIUpdateLogDatadogRequest struct {
 	loggingDatadogName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	region *string
 	token *string
 }
@@ -767,11 +767,6 @@ func (r *APIUpdateLogDatadogRequest) Placement(placement string) *APIUpdateLogDa
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogDatadogRequest) FormatVersion(formatVersion int32) *APIUpdateLogDatadogRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogDatadogRequest) ResponseCondition(responseCondition string) *APIUpdateLogDatadogRequest {
 	r.responseCondition = &responseCondition
@@ -780,6 +775,11 @@ func (r *APIUpdateLogDatadogRequest) ResponseCondition(responseCondition string)
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
 func (r *APIUpdateLogDatadogRequest) Format(format string) *APIUpdateLogDatadogRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogDatadogRequest) FormatVersion(formatVersion int32) *APIUpdateLogDatadogRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Region The region that log data will be sent to.
@@ -866,14 +866,14 @@ func (a *LoggingDatadogAPIService) UpdateLogDatadogExecute(r APIUpdateLogDatadog
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.region != nil {
 		localVarFormParams.Add("region", parameterToString(*r.region, ""))

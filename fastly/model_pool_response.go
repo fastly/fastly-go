@@ -29,27 +29,25 @@ type PoolResponse struct {
 	// The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
 	TLSCertHostname NullableString `json:"tls_cert_hostname,omitempty"`
 	// Whether to use TLS.
-	UseTLS *int32 `json:"use_tls,omitempty"`
+	UseTLS *string `json:"use_tls,omitempty"`
+	// Date and time in ISO 8601 format.
+	CreatedAt NullableTime `json:"created_at,omitempty"`
+	// Date and time in ISO 8601 format.
+	DeletedAt NullableTime `json:"deleted_at,omitempty"`
+	// Date and time in ISO 8601 format.
+	UpdatedAt NullableTime `json:"updated_at,omitempty"`
+	ServiceID *string `json:"service_id,omitempty"`
+	Version *string `json:"version,omitempty"`
 	// Name for the Pool.
 	Name *string `json:"name,omitempty"`
 	// Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
 	Shield NullableString `json:"shield,omitempty"`
 	// Condition which, if met, will select this configuration during a request. Optional.
 	RequestCondition NullableString `json:"request_condition,omitempty"`
-	// Maximum number of connections. Optional.
-	MaxConnDefault *int32 `json:"max_conn_default,omitempty"`
-	// How long to wait for a timeout in milliseconds. Optional.
-	ConnectTimeout *int32 `json:"connect_timeout,omitempty"`
-	// How long to wait for the first byte in milliseconds. Optional.
-	FirstByteTimeout *int32 `json:"first_byte_timeout,omitempty"`
-	// Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
-	Quorum *int32 `json:"quorum,omitempty"`
 	// List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
 	TLSCiphers NullableString `json:"tls_ciphers,omitempty"`
 	// SNI hostname. Optional.
 	TLSSniHostname NullableString `json:"tls_sni_hostname,omitempty"`
-	// Be strict on checking TLS certs. Optional.
-	TLSCheckCert NullableInt32 `json:"tls_check_cert,omitempty"`
 	// Minimum allowed TLS version on connections to this server. Optional.
 	MinTLSVersion NullableInt32 `json:"min_tls_version,omitempty"`
 	// Maximum allowed TLS version on connections to this server. Optional.
@@ -62,15 +60,19 @@ type PoolResponse struct {
 	Type *string `json:"type,omitempty"`
 	// The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
 	OverrideHost NullableString `json:"override_host,omitempty"`
-	// Date and time in ISO 8601 format.
-	CreatedAt NullableTime `json:"created_at,omitempty"`
-	// Date and time in ISO 8601 format.
-	DeletedAt NullableTime `json:"deleted_at,omitempty"`
-	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	// Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+	BetweenBytesTimeout *string `json:"between_bytes_timeout,omitempty"`
+	// How long to wait for a timeout in milliseconds.
+	ConnectTimeout *string `json:"connect_timeout,omitempty"`
+	// How long to wait for the first byte in milliseconds.
+	FirstByteTimeout *string `json:"first_byte_timeout,omitempty"`
+	// Maximum number of connections.
+	MaxConnDefault *string `json:"max_conn_default,omitempty"`
+	// Be strict on checking TLS certs.
+	TLSCheckCert NullableString `json:"tls_check_cert,omitempty"`
 	ID *string `json:"id,omitempty"`
+	// Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
+	Quorum *string `json:"quorum,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -90,16 +92,16 @@ func NewPoolResponse() *PoolResponse {
 	this.TLSClientKey = *NewNullableString(&tlsClientKey)
 	var tlsCertHostname string = "null"
 	this.TLSCertHostname = *NewNullableString(&tlsCertHostname)
-	var useTLS int32 = 0
+	var useTLS string = "0"
 	this.UseTLS = &useTLS
 	var shield string = "null"
 	this.Shield = *NewNullableString(&shield)
-	var maxConnDefault int32 = 200
-	this.MaxConnDefault = &maxConnDefault
-	var quorum int32 = 75
-	this.Quorum = &quorum
 	var overrideHost string = "null"
 	this.OverrideHost = *NewNullableString(&overrideHost)
+	var maxConnDefault string = "200"
+	this.MaxConnDefault = &maxConnDefault
+	var quorum string = "75"
+	this.Quorum = &quorum
 	return &this
 }
 
@@ -116,16 +118,16 @@ func NewPoolResponseWithDefaults() *PoolResponse {
 	this.TLSClientKey = *NewNullableString(&tlsClientKey)
 	var tlsCertHostname string = "null"
 	this.TLSCertHostname = *NewNullableString(&tlsCertHostname)
-	var useTLS int32 = 0
+	var useTLS string = "0"
 	this.UseTLS = &useTLS
 	var shield string = "null"
 	this.Shield = *NewNullableString(&shield)
-	var maxConnDefault int32 = 200
-	this.MaxConnDefault = &maxConnDefault
-	var quorum int32 = 75
-	this.Quorum = &quorum
 	var overrideHost string = "null"
 	this.OverrideHost = *NewNullableString(&overrideHost)
+	var maxConnDefault string = "200"
+	this.MaxConnDefault = &maxConnDefault
+	var quorum string = "75"
+	this.Quorum = &quorum
 	return &this
 }
 
@@ -298,9 +300,9 @@ func (o *PoolResponse) UnsetTLSCertHostname() {
 }
 
 // GetUseTLS returns the UseTLS field value if set, zero value otherwise.
-func (o *PoolResponse) GetUseTLS() int32 {
+func (o *PoolResponse) GetUseTLS() string {
 	if o == nil || o.UseTLS == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.UseTLS
@@ -308,7 +310,7 @@ func (o *PoolResponse) GetUseTLS() int32 {
 
 // GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PoolResponse) GetUseTLSOk() (*int32, bool) {
+func (o *PoolResponse) GetUseTLSOk() (*string, bool) {
 	if o == nil || o.UseTLS == nil {
 		return nil, false
 	}
@@ -324,9 +326,199 @@ func (o *PoolResponse) HasUseTLS() bool {
 	return false
 }
 
-// SetUseTLS gets a reference to the given int32 and assigns it to the UseTLS field.
-func (o *PoolResponse) SetUseTLS(v int32) {
+// SetUseTLS gets a reference to the given string and assigns it to the UseTLS field.
+func (o *PoolResponse) SetUseTLS(v string) {
 	o.UseTLS = &v
+}
+
+// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponse) GetCreatedAt() time.Time {
+	if o == nil || o.CreatedAt.Get() == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.CreatedAt.Get()
+}
+
+// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PoolResponse) GetCreatedAtOk() (*time.Time, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
+}
+
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *PoolResponse) HasCreatedAt() bool {
+	if o != nil && o.CreatedAt.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedAt gets a reference to the given NullableTime and assigns it to the CreatedAt field.
+func (o *PoolResponse) SetCreatedAt(v time.Time) {
+	o.CreatedAt.Set(&v)
+}
+// SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
+func (o *PoolResponse) SetCreatedAtNil() {
+	o.CreatedAt.Set(nil)
+}
+
+// UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
+func (o *PoolResponse) UnsetCreatedAt() {
+	o.CreatedAt.Unset()
+}
+
+// GetDeletedAt returns the DeletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponse) GetDeletedAt() time.Time {
+	if o == nil || o.DeletedAt.Get() == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.DeletedAt.Get()
+}
+
+// GetDeletedAtOk returns a tuple with the DeletedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PoolResponse) GetDeletedAtOk() (*time.Time, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
+}
+
+// HasDeletedAt returns a boolean if a field has been set.
+func (o *PoolResponse) HasDeletedAt() bool {
+	if o != nil && o.DeletedAt.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDeletedAt gets a reference to the given NullableTime and assigns it to the DeletedAt field.
+func (o *PoolResponse) SetDeletedAt(v time.Time) {
+	o.DeletedAt.Set(&v)
+}
+// SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
+func (o *PoolResponse) SetDeletedAtNil() {
+	o.DeletedAt.Set(nil)
+}
+
+// UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
+func (o *PoolResponse) UnsetDeletedAt() {
+	o.DeletedAt.Unset()
+}
+
+// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponse) GetUpdatedAt() time.Time {
+	if o == nil || o.UpdatedAt.Get() == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.UpdatedAt.Get()
+}
+
+// GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PoolResponse) GetUpdatedAtOk() (*time.Time, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
+}
+
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *PoolResponse) HasUpdatedAt() bool {
+	if o != nil && o.UpdatedAt.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetUpdatedAt gets a reference to the given NullableTime and assigns it to the UpdatedAt field.
+func (o *PoolResponse) SetUpdatedAt(v time.Time) {
+	o.UpdatedAt.Set(&v)
+}
+// SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+func (o *PoolResponse) SetUpdatedAtNil() {
+	o.UpdatedAt.Set(nil)
+}
+
+// UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
+func (o *PoolResponse) UnsetUpdatedAt() {
+	o.UpdatedAt.Unset()
+}
+
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *PoolResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
+		var ret string
+		return ret
+	}
+	return *o.ServiceID
+}
+
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PoolResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
+		return nil, false
+	}
+	return o.ServiceID, true
+}
+
+// HasServiceID returns a boolean if a field has been set.
+func (o *PoolResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *PoolResponse) SetServiceID(v string) {
+	o.ServiceID = &v
+}
+
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *PoolResponse) GetVersion() string {
+	if o == nil || o.Version == nil {
+		var ret string
+		return ret
+	}
+	return *o.Version
+}
+
+// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PoolResponse) GetVersionOk() (*string, bool) {
+	if o == nil || o.Version == nil {
+		return nil, false
+	}
+	return o.Version, true
+}
+
+// HasVersion returns a boolean if a field has been set.
+func (o *PoolResponse) HasVersion() bool {
+	if o != nil && o.Version != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *PoolResponse) SetVersion(v string) {
+	o.Version = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -445,134 +637,6 @@ func (o *PoolResponse) UnsetRequestCondition() {
 	o.RequestCondition.Unset()
 }
 
-// GetMaxConnDefault returns the MaxConnDefault field value if set, zero value otherwise.
-func (o *PoolResponse) GetMaxConnDefault() int32 {
-	if o == nil || o.MaxConnDefault == nil {
-		var ret int32
-		return ret
-	}
-	return *o.MaxConnDefault
-}
-
-// GetMaxConnDefaultOk returns a tuple with the MaxConnDefault field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PoolResponse) GetMaxConnDefaultOk() (*int32, bool) {
-	if o == nil || o.MaxConnDefault == nil {
-		return nil, false
-	}
-	return o.MaxConnDefault, true
-}
-
-// HasMaxConnDefault returns a boolean if a field has been set.
-func (o *PoolResponse) HasMaxConnDefault() bool {
-	if o != nil && o.MaxConnDefault != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetMaxConnDefault gets a reference to the given int32 and assigns it to the MaxConnDefault field.
-func (o *PoolResponse) SetMaxConnDefault(v int32) {
-	o.MaxConnDefault = &v
-}
-
-// GetConnectTimeout returns the ConnectTimeout field value if set, zero value otherwise.
-func (o *PoolResponse) GetConnectTimeout() int32 {
-	if o == nil || o.ConnectTimeout == nil {
-		var ret int32
-		return ret
-	}
-	return *o.ConnectTimeout
-}
-
-// GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PoolResponse) GetConnectTimeoutOk() (*int32, bool) {
-	if o == nil || o.ConnectTimeout == nil {
-		return nil, false
-	}
-	return o.ConnectTimeout, true
-}
-
-// HasConnectTimeout returns a boolean if a field has been set.
-func (o *PoolResponse) HasConnectTimeout() bool {
-	if o != nil && o.ConnectTimeout != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetConnectTimeout gets a reference to the given int32 and assigns it to the ConnectTimeout field.
-func (o *PoolResponse) SetConnectTimeout(v int32) {
-	o.ConnectTimeout = &v
-}
-
-// GetFirstByteTimeout returns the FirstByteTimeout field value if set, zero value otherwise.
-func (o *PoolResponse) GetFirstByteTimeout() int32 {
-	if o == nil || o.FirstByteTimeout == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FirstByteTimeout
-}
-
-// GetFirstByteTimeoutOk returns a tuple with the FirstByteTimeout field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PoolResponse) GetFirstByteTimeoutOk() (*int32, bool) {
-	if o == nil || o.FirstByteTimeout == nil {
-		return nil, false
-	}
-	return o.FirstByteTimeout, true
-}
-
-// HasFirstByteTimeout returns a boolean if a field has been set.
-func (o *PoolResponse) HasFirstByteTimeout() bool {
-	if o != nil && o.FirstByteTimeout != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFirstByteTimeout gets a reference to the given int32 and assigns it to the FirstByteTimeout field.
-func (o *PoolResponse) SetFirstByteTimeout(v int32) {
-	o.FirstByteTimeout = &v
-}
-
-// GetQuorum returns the Quorum field value if set, zero value otherwise.
-func (o *PoolResponse) GetQuorum() int32 {
-	if o == nil || o.Quorum == nil {
-		var ret int32
-		return ret
-	}
-	return *o.Quorum
-}
-
-// GetQuorumOk returns a tuple with the Quorum field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *PoolResponse) GetQuorumOk() (*int32, bool) {
-	if o == nil || o.Quorum == nil {
-		return nil, false
-	}
-	return o.Quorum, true
-}
-
-// HasQuorum returns a boolean if a field has been set.
-func (o *PoolResponse) HasQuorum() bool {
-	if o != nil && o.Quorum != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetQuorum gets a reference to the given int32 and assigns it to the Quorum field.
-func (o *PoolResponse) SetQuorum(v int32) {
-	o.Quorum = &v
-}
-
 // GetTLSCiphers returns the TLSCiphers field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PoolResponse) GetTLSCiphers() string {
 	if o == nil || o.TLSCiphers.Get() == nil {
@@ -655,48 +719,6 @@ func (o *PoolResponse) SetTLSSniHostnameNil() {
 // UnsetTLSSniHostname ensures that no value is present for TLSSniHostname, not even an explicit nil
 func (o *PoolResponse) UnsetTLSSniHostname() {
 	o.TLSSniHostname.Unset()
-}
-
-// GetTLSCheckCert returns the TLSCheckCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponse) GetTLSCheckCert() int32 {
-	if o == nil || o.TLSCheckCert.Get() == nil {
-		var ret int32
-		return ret
-	}
-	return *o.TLSCheckCert.Get()
-}
-
-// GetTLSCheckCertOk returns a tuple with the TLSCheckCert field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponse) GetTLSCheckCertOk() (*int32, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.TLSCheckCert.Get(), o.TLSCheckCert.IsSet()
-}
-
-// HasTLSCheckCert returns a boolean if a field has been set.
-func (o *PoolResponse) HasTLSCheckCert() bool {
-	if o != nil && o.TLSCheckCert.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetTLSCheckCert gets a reference to the given NullableInt32 and assigns it to the TLSCheckCert field.
-func (o *PoolResponse) SetTLSCheckCert(v int32) {
-	o.TLSCheckCert.Set(&v)
-}
-// SetTLSCheckCertNil sets the value for TLSCheckCert to be an explicit nil
-func (o *PoolResponse) SetTLSCheckCertNil() {
-	o.TLSCheckCert.Set(nil)
-}
-
-// UnsetTLSCheckCert ensures that no value is present for TLSCheckCert, not even an explicit nil
-func (o *PoolResponse) UnsetTLSCheckCert() {
-	o.TLSCheckCert.Unset()
 }
 
 // GetMinTLSVersion returns the MinTLSVersion field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -941,194 +963,174 @@ func (o *PoolResponse) UnsetOverrideHost() {
 	o.OverrideHost.Unset()
 }
 
-// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponse) GetCreatedAt() time.Time {
-	if o == nil || o.CreatedAt.Get() == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.CreatedAt.Get()
-}
-
-// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
-}
-
-// HasCreatedAt returns a boolean if a field has been set.
-func (o *PoolResponse) HasCreatedAt() bool {
-	if o != nil && o.CreatedAt.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedAt gets a reference to the given NullableTime and assigns it to the CreatedAt field.
-func (o *PoolResponse) SetCreatedAt(v time.Time) {
-	o.CreatedAt.Set(&v)
-}
-// SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
-func (o *PoolResponse) SetCreatedAtNil() {
-	o.CreatedAt.Set(nil)
-}
-
-// UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-func (o *PoolResponse) UnsetCreatedAt() {
-	o.CreatedAt.Unset()
-}
-
-// GetDeletedAt returns the DeletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponse) GetDeletedAt() time.Time {
-	if o == nil || o.DeletedAt.Get() == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.DeletedAt.Get()
-}
-
-// GetDeletedAtOk returns a tuple with the DeletedAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
-}
-
-// HasDeletedAt returns a boolean if a field has been set.
-func (o *PoolResponse) HasDeletedAt() bool {
-	if o != nil && o.DeletedAt.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetDeletedAt gets a reference to the given NullableTime and assigns it to the DeletedAt field.
-func (o *PoolResponse) SetDeletedAt(v time.Time) {
-	o.DeletedAt.Set(&v)
-}
-// SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
-func (o *PoolResponse) SetDeletedAtNil() {
-	o.DeletedAt.Set(nil)
-}
-
-// UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-func (o *PoolResponse) UnsetDeletedAt() {
-	o.DeletedAt.Unset()
-}
-
-// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponse) GetUpdatedAt() time.Time {
-	if o == nil || o.UpdatedAt.Get() == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.UpdatedAt.Get()
-}
-
-// GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
-}
-
-// HasUpdatedAt returns a boolean if a field has been set.
-func (o *PoolResponse) HasUpdatedAt() bool {
-	if o != nil && o.UpdatedAt.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetUpdatedAt gets a reference to the given NullableTime and assigns it to the UpdatedAt field.
-func (o *PoolResponse) SetUpdatedAt(v time.Time) {
-	o.UpdatedAt.Set(&v)
-}
-// SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-func (o *PoolResponse) SetUpdatedAtNil() {
-	o.UpdatedAt.Set(nil)
-}
-
-// UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-func (o *PoolResponse) UnsetUpdatedAt() {
-	o.UpdatedAt.Unset()
-}
-
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *PoolResponse) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetBetweenBytesTimeout returns the BetweenBytesTimeout field value if set, zero value otherwise.
+func (o *PoolResponse) GetBetweenBytesTimeout() string {
+	if o == nil || o.BetweenBytesTimeout == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.BetweenBytesTimeout
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetBetweenBytesTimeoutOk returns a tuple with the BetweenBytesTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PoolResponse) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *PoolResponse) GetBetweenBytesTimeoutOk() (*string, bool) {
+	if o == nil || o.BetweenBytesTimeout == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.BetweenBytesTimeout, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *PoolResponse) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasBetweenBytesTimeout returns a boolean if a field has been set.
+func (o *PoolResponse) HasBetweenBytesTimeout() bool {
+	if o != nil && o.BetweenBytesTimeout != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *PoolResponse) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetBetweenBytesTimeout gets a reference to the given string and assigns it to the BetweenBytesTimeout field.
+func (o *PoolResponse) SetBetweenBytesTimeout(v string) {
+	o.BetweenBytesTimeout = &v
 }
 
-// GetVersion returns the Version field value if set, zero value otherwise.
-func (o *PoolResponse) GetVersion() int32 {
-	if o == nil || o.Version == nil {
-		var ret int32
+// GetConnectTimeout returns the ConnectTimeout field value if set, zero value otherwise.
+func (o *PoolResponse) GetConnectTimeout() string {
+	if o == nil || o.ConnectTimeout == nil {
+		var ret string
 		return ret
 	}
-	return *o.Version
+	return *o.ConnectTimeout
 }
 
-// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
+// GetConnectTimeoutOk returns a tuple with the ConnectTimeout field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PoolResponse) GetVersionOk() (*int32, bool) {
-	if o == nil || o.Version == nil {
+func (o *PoolResponse) GetConnectTimeoutOk() (*string, bool) {
+	if o == nil || o.ConnectTimeout == nil {
 		return nil, false
 	}
-	return o.Version, true
+	return o.ConnectTimeout, true
 }
 
-// HasVersion returns a boolean if a field has been set.
-func (o *PoolResponse) HasVersion() bool {
-	if o != nil && o.Version != nil {
+// HasConnectTimeout returns a boolean if a field has been set.
+func (o *PoolResponse) HasConnectTimeout() bool {
+	if o != nil && o.ConnectTimeout != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *PoolResponse) SetVersion(v int32) {
-	o.Version = &v
+// SetConnectTimeout gets a reference to the given string and assigns it to the ConnectTimeout field.
+func (o *PoolResponse) SetConnectTimeout(v string) {
+	o.ConnectTimeout = &v
+}
+
+// GetFirstByteTimeout returns the FirstByteTimeout field value if set, zero value otherwise.
+func (o *PoolResponse) GetFirstByteTimeout() string {
+	if o == nil || o.FirstByteTimeout == nil {
+		var ret string
+		return ret
+	}
+	return *o.FirstByteTimeout
+}
+
+// GetFirstByteTimeoutOk returns a tuple with the FirstByteTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PoolResponse) GetFirstByteTimeoutOk() (*string, bool) {
+	if o == nil || o.FirstByteTimeout == nil {
+		return nil, false
+	}
+	return o.FirstByteTimeout, true
+}
+
+// HasFirstByteTimeout returns a boolean if a field has been set.
+func (o *PoolResponse) HasFirstByteTimeout() bool {
+	if o != nil && o.FirstByteTimeout != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFirstByteTimeout gets a reference to the given string and assigns it to the FirstByteTimeout field.
+func (o *PoolResponse) SetFirstByteTimeout(v string) {
+	o.FirstByteTimeout = &v
+}
+
+// GetMaxConnDefault returns the MaxConnDefault field value if set, zero value otherwise.
+func (o *PoolResponse) GetMaxConnDefault() string {
+	if o == nil || o.MaxConnDefault == nil {
+		var ret string
+		return ret
+	}
+	return *o.MaxConnDefault
+}
+
+// GetMaxConnDefaultOk returns a tuple with the MaxConnDefault field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PoolResponse) GetMaxConnDefaultOk() (*string, bool) {
+	if o == nil || o.MaxConnDefault == nil {
+		return nil, false
+	}
+	return o.MaxConnDefault, true
+}
+
+// HasMaxConnDefault returns a boolean if a field has been set.
+func (o *PoolResponse) HasMaxConnDefault() bool {
+	if o != nil && o.MaxConnDefault != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxConnDefault gets a reference to the given string and assigns it to the MaxConnDefault field.
+func (o *PoolResponse) SetMaxConnDefault(v string) {
+	o.MaxConnDefault = &v
+}
+
+// GetTLSCheckCert returns the TLSCheckCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponse) GetTLSCheckCert() string {
+	if o == nil || o.TLSCheckCert.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.TLSCheckCert.Get()
+}
+
+// GetTLSCheckCertOk returns a tuple with the TLSCheckCert field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PoolResponse) GetTLSCheckCertOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.TLSCheckCert.Get(), o.TLSCheckCert.IsSet()
+}
+
+// HasTLSCheckCert returns a boolean if a field has been set.
+func (o *PoolResponse) HasTLSCheckCert() bool {
+	if o != nil && o.TLSCheckCert.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetTLSCheckCert gets a reference to the given NullableString and assigns it to the TLSCheckCert field.
+func (o *PoolResponse) SetTLSCheckCert(v string) {
+	o.TLSCheckCert.Set(&v)
+}
+// SetTLSCheckCertNil sets the value for TLSCheckCert to be an explicit nil
+func (o *PoolResponse) SetTLSCheckCertNil() {
+	o.TLSCheckCert.Set(nil)
+}
+
+// UnsetTLSCheckCert ensures that no value is present for TLSCheckCert, not even an explicit nil
+func (o *PoolResponse) UnsetTLSCheckCert() {
+	o.TLSCheckCert.Unset()
 }
 
 // GetID returns the ID field value if set, zero value otherwise.
@@ -1163,6 +1165,38 @@ func (o *PoolResponse) SetID(v string) {
 	o.ID = &v
 }
 
+// GetQuorum returns the Quorum field value if set, zero value otherwise.
+func (o *PoolResponse) GetQuorum() string {
+	if o == nil || o.Quorum == nil {
+		var ret string
+		return ret
+	}
+	return *o.Quorum
+}
+
+// GetQuorumOk returns a tuple with the Quorum field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PoolResponse) GetQuorumOk() (*string, bool) {
+	if o == nil || o.Quorum == nil {
+		return nil, false
+	}
+	return o.Quorum, true
+}
+
+// HasQuorum returns a boolean if a field has been set.
+func (o *PoolResponse) HasQuorum() bool {
+	if o != nil && o.Quorum != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetQuorum gets a reference to the given string and assigns it to the Quorum field.
+func (o *PoolResponse) SetQuorum(v string) {
+	o.Quorum = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o PoolResponse) MarshalJSON() ([]byte, error) {
@@ -1182,6 +1216,21 @@ func (o PoolResponse) MarshalJSON() ([]byte, error) {
 	if o.UseTLS != nil {
 		toSerialize["use_tls"] = o.UseTLS
 	}
+	if o.CreatedAt.IsSet() {
+		toSerialize["created_at"] = o.CreatedAt.Get()
+	}
+	if o.DeletedAt.IsSet() {
+		toSerialize["deleted_at"] = o.DeletedAt.Get()
+	}
+	if o.UpdatedAt.IsSet() {
+		toSerialize["updated_at"] = o.UpdatedAt.Get()
+	}
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
+	}
+	if o.Version != nil {
+		toSerialize["version"] = o.Version
+	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
@@ -1191,26 +1240,11 @@ func (o PoolResponse) MarshalJSON() ([]byte, error) {
 	if o.RequestCondition.IsSet() {
 		toSerialize["request_condition"] = o.RequestCondition.Get()
 	}
-	if o.MaxConnDefault != nil {
-		toSerialize["max_conn_default"] = o.MaxConnDefault
-	}
-	if o.ConnectTimeout != nil {
-		toSerialize["connect_timeout"] = o.ConnectTimeout
-	}
-	if o.FirstByteTimeout != nil {
-		toSerialize["first_byte_timeout"] = o.FirstByteTimeout
-	}
-	if o.Quorum != nil {
-		toSerialize["quorum"] = o.Quorum
-	}
 	if o.TLSCiphers.IsSet() {
 		toSerialize["tls_ciphers"] = o.TLSCiphers.Get()
 	}
 	if o.TLSSniHostname.IsSet() {
 		toSerialize["tls_sni_hostname"] = o.TLSSniHostname.Get()
-	}
-	if o.TLSCheckCert.IsSet() {
-		toSerialize["tls_check_cert"] = o.TLSCheckCert.Get()
 	}
 	if o.MinTLSVersion.IsSet() {
 		toSerialize["min_tls_version"] = o.MinTLSVersion.Get()
@@ -1230,23 +1264,26 @@ func (o PoolResponse) MarshalJSON() ([]byte, error) {
 	if o.OverrideHost.IsSet() {
 		toSerialize["override_host"] = o.OverrideHost.Get()
 	}
-	if o.CreatedAt.IsSet() {
-		toSerialize["created_at"] = o.CreatedAt.Get()
+	if o.BetweenBytesTimeout != nil {
+		toSerialize["between_bytes_timeout"] = o.BetweenBytesTimeout
 	}
-	if o.DeletedAt.IsSet() {
-		toSerialize["deleted_at"] = o.DeletedAt.Get()
+	if o.ConnectTimeout != nil {
+		toSerialize["connect_timeout"] = o.ConnectTimeout
 	}
-	if o.UpdatedAt.IsSet() {
-		toSerialize["updated_at"] = o.UpdatedAt.Get()
+	if o.FirstByteTimeout != nil {
+		toSerialize["first_byte_timeout"] = o.FirstByteTimeout
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.MaxConnDefault != nil {
+		toSerialize["max_conn_default"] = o.MaxConnDefault
 	}
-	if o.Version != nil {
-		toSerialize["version"] = o.Version
+	if o.TLSCheckCert.IsSet() {
+		toSerialize["tls_check_cert"] = o.TLSCheckCert.Get()
 	}
 	if o.ID != nil {
 		toSerialize["id"] = o.ID
+	}
+	if o.Quorum != nil {
+		toSerialize["quorum"] = o.Quorum
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -1273,28 +1310,29 @@ func (o *PoolResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "tls_client_key")
 		delete(additionalProperties, "tls_cert_hostname")
 		delete(additionalProperties, "use_tls")
+		delete(additionalProperties, "created_at")
+		delete(additionalProperties, "deleted_at")
+		delete(additionalProperties, "updated_at")
+		delete(additionalProperties, "service_id")
+		delete(additionalProperties, "version")
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "shield")
 		delete(additionalProperties, "request_condition")
-		delete(additionalProperties, "max_conn_default")
-		delete(additionalProperties, "connect_timeout")
-		delete(additionalProperties, "first_byte_timeout")
-		delete(additionalProperties, "quorum")
 		delete(additionalProperties, "tls_ciphers")
 		delete(additionalProperties, "tls_sni_hostname")
-		delete(additionalProperties, "tls_check_cert")
 		delete(additionalProperties, "min_tls_version")
 		delete(additionalProperties, "max_tls_version")
 		delete(additionalProperties, "healthcheck")
 		delete(additionalProperties, "comment")
 		delete(additionalProperties, "type")
 		delete(additionalProperties, "override_host")
-		delete(additionalProperties, "created_at")
-		delete(additionalProperties, "deleted_at")
-		delete(additionalProperties, "updated_at")
-		delete(additionalProperties, "service_id")
-		delete(additionalProperties, "version")
+		delete(additionalProperties, "between_bytes_timeout")
+		delete(additionalProperties, "connect_timeout")
+		delete(additionalProperties, "first_byte_timeout")
+		delete(additionalProperties, "max_conn_default")
+		delete(additionalProperties, "tls_check_cert")
 		delete(additionalProperties, "id")
+		delete(additionalProperties, "quorum")
 		o.AdditionalProperties = additionalProperties
 	}
 

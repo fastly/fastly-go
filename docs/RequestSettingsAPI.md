@@ -315,22 +315,22 @@ func main() {
     versionID := int32(56) // int32 | Integer identifying a service version.
     requestSettingsName := "requestSettingsName_example" // string | Name for the request settings.
     action := "action_example" // string | Allows you to terminate request handling and immediately perform an action. (optional)
-    bypassBusyWait := int32(56) // int32 | Disable collapsed forwarding, so you don't wait for other objects to origin. (optional)
     defaultHost := "defaultHost_example" // string | Sets the host header. (optional)
+    hashKeys := "hashKeys_example" // string | Comma separated list of varnish request object fields that should be in the hash key. (optional)
+    name := "name_example" // string | Name for the request settings. (optional)
+    requestCondition := "requestCondition_example" // string | Condition which, if met, will select this configuration during a request. Optional. (optional)
+    xff := "xff_example" // string | Short for X-Forwarded-For. (optional)
+    bypassBusyWait := int32(56) // int32 | Disable collapsed forwarding, so you don't wait for other objects to origin. (optional)
     forceMiss := int32(56) // int32 | Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable. (optional)
     forceSsl := int32(56) // int32 | Forces the request use SSL (redirects a non-SSL to SSL). (optional)
     geoHeaders := int32(56) // int32 | Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers. (optional)
-    hashKeys := "hashKeys_example" // string | Comma separated list of varnish request object fields that should be in the hash key. (optional)
     maxStaleAge := int32(56) // int32 | How old an object is allowed to be to serve stale-if-error or stale-while-revalidate. (optional)
-    name := "name_example" // string | Name for the request settings. (optional)
-    requestCondition := "requestCondition_example" // string | Condition which, if met, will select this configuration during a request. Optional. (optional)
     timerSupport := int32(56) // int32 | Injects the X-Timer info into the request for viewing origin fetch durations. (optional)
-    xff := "xff_example" // string | Short for X-Forwarded-For. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RequestSettingsAPI.UpdateRequestSettings(ctx, serviceID, versionID, requestSettingsName).Action(action).BypassBusyWait(bypassBusyWait).DefaultHost(defaultHost).ForceMiss(forceMiss).ForceSsl(forceSsl).GeoHeaders(geoHeaders).HashKeys(hashKeys).MaxStaleAge(maxStaleAge).Name(name).RequestCondition(requestCondition).TimerSupport(timerSupport).Xff(xff).Execute()
+    resp, r, err := apiClient.RequestSettingsAPI.UpdateRequestSettings(ctx, serviceID, versionID, requestSettingsName).Action(action).DefaultHost(defaultHost).HashKeys(hashKeys).Name(name).RequestCondition(requestCondition).Xff(xff).BypassBusyWait(bypassBusyWait).ForceMiss(forceMiss).ForceSsl(forceSsl).GeoHeaders(geoHeaders).MaxStaleAge(maxStaleAge).TimerSupport(timerSupport).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RequestSettingsAPI.UpdateRequestSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -357,7 +357,7 @@ Other parameters are passed through a pointer to a apiUpdateRequestSettingsReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **string** | Allows you to terminate request handling and immediately perform an action. |  **bypassBusyWait** | **int32** | Disable collapsed forwarding, so you don&#39;t wait for other objects to origin. |  **defaultHost** | **string** | Sets the host header. |  **forceMiss** | **int32** | Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable. |  **forceSsl** | **int32** | Forces the request use SSL (redirects a non-SSL to SSL). |  **geoHeaders** | **int32** | Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers. |  **hashKeys** | **string** | Comma separated list of varnish request object fields that should be in the hash key. |  **maxStaleAge** | **int32** | How old an object is allowed to be to serve stale-if-error or stale-while-revalidate. |  **name** | **string** | Name for the request settings. |  **requestCondition** | **string** | Condition which, if met, will select this configuration during a request. Optional. |  **timerSupport** | **int32** | Injects the X-Timer info into the request for viewing origin fetch durations. |  **xff** | **string** | Short for X-Forwarded-For. | 
+ **action** | **string** | Allows you to terminate request handling and immediately perform an action. |  **defaultHost** | **string** | Sets the host header. |  **hashKeys** | **string** | Comma separated list of varnish request object fields that should be in the hash key. |  **name** | **string** | Name for the request settings. |  **requestCondition** | **string** | Condition which, if met, will select this configuration during a request. Optional. |  **xff** | **string** | Short for X-Forwarded-For. |  **bypassBusyWait** | **int32** | Disable collapsed forwarding, so you don&#39;t wait for other objects to origin. |  **forceMiss** | **int32** | Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable. |  **forceSsl** | **int32** | Forces the request use SSL (redirects a non-SSL to SSL). |  **geoHeaders** | **int32** | Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers. |  **maxStaleAge** | **int32** | How old an object is allowed to be to serve stale-if-error or stale-while-revalidate. |  **timerSupport** | **int32** | Injects the X-Timer info into the request for viewing origin fetch durations. | 
 
 ### Return type
 

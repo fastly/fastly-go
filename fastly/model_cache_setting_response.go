@@ -27,11 +27,11 @@ type CacheSettingResponse struct {
 	// Name for the cache settings object.
 	Name *string `json:"name,omitempty"`
 	// Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
-	StaleTTL *int32 `json:"stale_ttl,omitempty"`
+	StaleTTL *string `json:"stale_ttl,omitempty"`
 	// Maximum time to consider the object fresh in the cache (the cache 'time to live').
-	TTL *int32 `json:"ttl,omitempty"`
+	TTL *string `json:"ttl,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Version *string `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -177,9 +177,9 @@ func (o *CacheSettingResponse) SetName(v string) {
 }
 
 // GetStaleTTL returns the StaleTTL field value if set, zero value otherwise.
-func (o *CacheSettingResponse) GetStaleTTL() int32 {
+func (o *CacheSettingResponse) GetStaleTTL() string {
 	if o == nil || o.StaleTTL == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.StaleTTL
@@ -187,7 +187,7 @@ func (o *CacheSettingResponse) GetStaleTTL() int32 {
 
 // GetStaleTTLOk returns a tuple with the StaleTTL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CacheSettingResponse) GetStaleTTLOk() (*int32, bool) {
+func (o *CacheSettingResponse) GetStaleTTLOk() (*string, bool) {
 	if o == nil || o.StaleTTL == nil {
 		return nil, false
 	}
@@ -203,15 +203,15 @@ func (o *CacheSettingResponse) HasStaleTTL() bool {
 	return false
 }
 
-// SetStaleTTL gets a reference to the given int32 and assigns it to the StaleTTL field.
-func (o *CacheSettingResponse) SetStaleTTL(v int32) {
+// SetStaleTTL gets a reference to the given string and assigns it to the StaleTTL field.
+func (o *CacheSettingResponse) SetStaleTTL(v string) {
 	o.StaleTTL = &v
 }
 
 // GetTTL returns the TTL field value if set, zero value otherwise.
-func (o *CacheSettingResponse) GetTTL() int32 {
+func (o *CacheSettingResponse) GetTTL() string {
 	if o == nil || o.TTL == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.TTL
@@ -219,7 +219,7 @@ func (o *CacheSettingResponse) GetTTL() int32 {
 
 // GetTTLOk returns a tuple with the TTL field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CacheSettingResponse) GetTTLOk() (*int32, bool) {
+func (o *CacheSettingResponse) GetTTLOk() (*string, bool) {
 	if o == nil || o.TTL == nil {
 		return nil, false
 	}
@@ -235,8 +235,8 @@ func (o *CacheSettingResponse) HasTTL() bool {
 	return false
 }
 
-// SetTTL gets a reference to the given int32 and assigns it to the TTL field.
-func (o *CacheSettingResponse) SetTTL(v int32) {
+// SetTTL gets a reference to the given string and assigns it to the TTL field.
+func (o *CacheSettingResponse) SetTTL(v string) {
 	o.TTL = &v
 }
 
@@ -273,9 +273,9 @@ func (o *CacheSettingResponse) SetServiceID(v string) {
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *CacheSettingResponse) GetVersion() int32 {
+func (o *CacheSettingResponse) GetVersion() string {
 	if o == nil || o.Version == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Version
@@ -283,7 +283,7 @@ func (o *CacheSettingResponse) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CacheSettingResponse) GetVersionOk() (*int32, bool) {
+func (o *CacheSettingResponse) GetVersionOk() (*string, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -299,8 +299,8 @@ func (o *CacheSettingResponse) HasVersion() bool {
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *CacheSettingResponse) SetVersion(v int32) {
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *CacheSettingResponse) SetVersion(v string) {
 	o.Version = &v
 }
 

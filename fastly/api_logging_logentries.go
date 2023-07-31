@@ -141,9 +141,9 @@ type APICreateLogLogentriesRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	port *int32
 	token *string
 	useTLS *LoggingUseTLS
@@ -160,11 +160,6 @@ func (r *APICreateLogLogentriesRequest) Placement(placement string) *APICreateLo
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogLogentriesRequest) FormatVersion(formatVersion int32) *APICreateLogLogentriesRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogLogentriesRequest) ResponseCondition(responseCondition string) *APICreateLogLogentriesRequest {
 	r.responseCondition = &responseCondition
@@ -173,6 +168,11 @@ func (r *APICreateLogLogentriesRequest) ResponseCondition(responseCondition stri
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogLogentriesRequest) Format(format string) *APICreateLogLogentriesRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogLogentriesRequest) FormatVersion(formatVersion int32) *APICreateLogLogentriesRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Port The port number.
@@ -269,14 +269,14 @@ func (a *LoggingLogentriesAPIService) CreateLogLogentriesExecute(r APICreateLogL
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.port != nil {
 		localVarFormParams.Add("port", parameterToString(*r.port, ""))
@@ -795,9 +795,9 @@ type APIUpdateLogLogentriesRequest struct {
 	loggingLogentriesName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	port *int32
 	token *string
 	useTLS *LoggingUseTLS
@@ -814,11 +814,6 @@ func (r *APIUpdateLogLogentriesRequest) Placement(placement string) *APIUpdateLo
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogLogentriesRequest) FormatVersion(formatVersion int32) *APIUpdateLogLogentriesRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogLogentriesRequest) ResponseCondition(responseCondition string) *APIUpdateLogLogentriesRequest {
 	r.responseCondition = &responseCondition
@@ -827,6 +822,11 @@ func (r *APIUpdateLogLogentriesRequest) ResponseCondition(responseCondition stri
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogLogentriesRequest) Format(format string) *APIUpdateLogLogentriesRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogLogentriesRequest) FormatVersion(formatVersion int32) *APIUpdateLogLogentriesRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Port The port number.
@@ -926,14 +926,14 @@ func (a *LoggingLogentriesAPIService) UpdateLogLogentriesExecute(r APIUpdateLogL
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.port != nil {
 		localVarFormParams.Add("port", parameterToString(*r.port, ""))

@@ -6,18 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The name for the real-time logging configuration. | [optional] 
 **Placement** | Pointer to [**NullableLoggingPlacement**](LoggingPlacement.md) |  | [optional] 
-**FormatVersion** | Pointer to [**LoggingFormatVersion**](LoggingFormatVersion.md) |  | [optional] [default to LOGGINGFORMATVERSION_v2]
 **Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Kinesis can ingest. | [optional] [default to "{\"timestamp\":\"%{begin:%Y-%m-%dT%H:%M:%S}t\",\"time_elapsed\":\"%{time.elapsed.usec}V\",\"is_tls\":\"%{if(req.is_ssl, \\\"true\\\", \\\"false\\\")}V\",\"client_ip\":\"%{req.http.Fastly-Client-IP}V\",\"geo_city\":\"%{client.geo.city}V\",\"geo_country_code\":\"%{client.geo.country_code}V\",\"request\":\"%{req.request}V\",\"host\":\"%{req.http.Fastly-Orig-Host}V\",\"url\":\"%{json.escape(req.url)}V\",\"request_referer\":\"%{json.escape(req.http.Referer)}V\",\"request_user_agent\":\"%{json.escape(req.http.User-Agent)}V\",\"request_accept_language\":\"%{json.escape(req.http.Accept-Language)}V\",\"request_accept_charset\":\"%{json.escape(req.http.Accept-Charset)}V\",\"cache_status\":\"%{regsub(fastly_info.state, \\\"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\\\", \\\"\\\\2\\\\3\\\") }V\"}"]
 **Topic** | Pointer to **string** | The Amazon Kinesis stream to send logs to. Required. | [optional] 
 **Region** | Pointer to [**AwsRegion**](AwsRegion.md) |  | [optional] 
 **SecretKey** | Pointer to **NullableString** | The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified. | [optional] 
 **AccessKey** | Pointer to **NullableString** | The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified. | [optional] 
 **IamRole** | Pointer to **NullableString** | The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided. | [optional] 
+**FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **int32** |  | [optional] [readonly] 
+**Version** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -98,31 +98,6 @@ HasPlacement returns a boolean if a field has been set.
 `func (o *LoggingKinesisResponse) UnsetPlacement()`
 
 UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
-### GetFormatVersion
-
-`func (o *LoggingKinesisResponse) GetFormatVersion() LoggingFormatVersion`
-
-GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
-
-### GetFormatVersionOk
-
-`func (o *LoggingKinesisResponse) GetFormatVersionOk() (*LoggingFormatVersion, bool)`
-
-GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFormatVersion
-
-`func (o *LoggingKinesisResponse) SetFormatVersion(v LoggingFormatVersion)`
-
-SetFormatVersion sets FormatVersion field to given value.
-
-### HasFormatVersion
-
-`func (o *LoggingKinesisResponse) HasFormatVersion() bool`
-
-HasFormatVersion returns a boolean if a field has been set.
-
 ### GetFormat
 
 `func (o *LoggingKinesisResponse) GetFormat() string`
@@ -303,6 +278,31 @@ HasIamRole returns a boolean if a field has been set.
 `func (o *LoggingKinesisResponse) UnsetIamRole()`
 
 UnsetIamRole ensures that no value is present for IamRole, not even an explicit nil
+### GetFormatVersion
+
+`func (o *LoggingKinesisResponse) GetFormatVersion() string`
+
+GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
+
+### GetFormatVersionOk
+
+`func (o *LoggingKinesisResponse) GetFormatVersionOk() (*string, bool)`
+
+GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormatVersion
+
+`func (o *LoggingKinesisResponse) SetFormatVersion(v string)`
+
+SetFormatVersion sets FormatVersion field to given value.
+
+### HasFormatVersion
+
+`func (o *LoggingKinesisResponse) HasFormatVersion() bool`
+
+HasFormatVersion returns a boolean if a field has been set.
+
 ### GetCreatedAt
 
 `func (o *LoggingKinesisResponse) GetCreatedAt() time.Time`
@@ -435,20 +435,20 @@ HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *LoggingKinesisResponse) GetVersion() int32`
+`func (o *LoggingKinesisResponse) GetVersion() string`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *LoggingKinesisResponse) GetVersionOk() (*int32, bool)`
+`func (o *LoggingKinesisResponse) GetVersionOk() (*string, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *LoggingKinesisResponse) SetVersion(v int32)`
+`func (o *LoggingKinesisResponse) SetVersion(v string)`
 
 SetVersion sets Version field to given value.
 

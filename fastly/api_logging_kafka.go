@@ -44,8 +44,8 @@ type LoggingKafkaAPI interface {
 	CreateLogKafka(ctx context.Context, serviceID string, versionID int32) APICreateLogKafkaRequest
 
 	// CreateLogKafkaExecute executes the request
-	//  @return LoggingKafkaResponse
-	CreateLogKafkaExecute(r APICreateLogKafkaRequest) (*LoggingKafkaResponse, *http.Response, error)
+	//  @return LoggingKafkaResponsePost
+	CreateLogKafkaExecute(r APICreateLogKafkaRequest) (*LoggingKafkaResponsePost, *http.Response, error)
 
 	/*
 	DeleteLogKafka Delete the Kafka log endpoint
@@ -126,9 +126,9 @@ type APICreateLogKafkaRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	tlsCaCert *string
 	tlsClientCert *string
 	tlsClientKey *string
@@ -155,11 +155,6 @@ func (r *APICreateLogKafkaRequest) Placement(placement string) *APICreateLogKafk
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogKafkaRequest) FormatVersion(formatVersion int32) *APICreateLogKafkaRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogKafkaRequest) ResponseCondition(responseCondition string) *APICreateLogKafkaRequest {
 	r.responseCondition = &responseCondition
@@ -168,6 +163,11 @@ func (r *APICreateLogKafkaRequest) ResponseCondition(responseCondition string) *
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogKafkaRequest) Format(format string) *APICreateLogKafkaRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogKafkaRequest) FormatVersion(formatVersion int32) *APICreateLogKafkaRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
@@ -242,7 +242,7 @@ func (r *APICreateLogKafkaRequest) UseTLS(useTLS LoggingUseTLS) *APICreateLogKaf
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateLogKafkaRequest) Execute() (*LoggingKafkaResponse, *http.Response, error) {
+func (r APICreateLogKafkaRequest) Execute() (*LoggingKafkaResponsePost, *http.Response, error) {
 	return r.APIService.CreateLogKafkaExecute(r)
 }
 
@@ -266,13 +266,13 @@ func (a *LoggingKafkaAPIService) CreateLogKafka(ctx context.Context, serviceID s
 }
 
 // CreateLogKafkaExecute executes the request
-//  @return LoggingKafkaResponse
-func (a *LoggingKafkaAPIService) CreateLogKafkaExecute(r APICreateLogKafkaRequest) (*LoggingKafkaResponse, *http.Response, error) {
+//  @return LoggingKafkaResponsePost
+func (a *LoggingKafkaAPIService) CreateLogKafkaExecute(r APICreateLogKafkaRequest) (*LoggingKafkaResponsePost, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *LoggingKafkaResponse
+		localVarReturnValue  *LoggingKafkaResponsePost
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingKafkaAPIService.CreateLogKafka")
@@ -311,14 +311,14 @@ func (a *LoggingKafkaAPIService) CreateLogKafkaExecute(r APICreateLogKafkaReques
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.tlsCaCert != nil {
 		localVarFormParams.Add("tls_ca_cert", parameterToString(*r.tlsCaCert, ""))

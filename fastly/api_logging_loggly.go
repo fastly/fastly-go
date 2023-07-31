@@ -126,9 +126,9 @@ type APICreateLogLogglyRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	token *string
 }
 
@@ -142,11 +142,6 @@ func (r *APICreateLogLogglyRequest) Placement(placement string) *APICreateLogLog
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogLogglyRequest) FormatVersion(formatVersion int32) *APICreateLogLogglyRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogLogglyRequest) ResponseCondition(responseCondition string) *APICreateLogLogglyRequest {
 	r.responseCondition = &responseCondition
@@ -155,6 +150,11 @@ func (r *APICreateLogLogglyRequest) ResponseCondition(responseCondition string) 
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogLogglyRequest) Format(format string) *APICreateLogLogglyRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogLogglyRequest) FormatVersion(formatVersion int32) *APICreateLogLogglyRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Token The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
@@ -233,14 +233,14 @@ func (a *LoggingLogglyAPIService) CreateLogLogglyExecute(r APICreateLogLogglyReq
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))
@@ -741,9 +741,9 @@ type APIUpdateLogLogglyRequest struct {
 	loggingLogglyName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	token *string
 }
 
@@ -757,11 +757,6 @@ func (r *APIUpdateLogLogglyRequest) Placement(placement string) *APIUpdateLogLog
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogLogglyRequest) FormatVersion(formatVersion int32) *APIUpdateLogLogglyRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogLogglyRequest) ResponseCondition(responseCondition string) *APIUpdateLogLogglyRequest {
 	r.responseCondition = &responseCondition
@@ -770,6 +765,11 @@ func (r *APIUpdateLogLogglyRequest) ResponseCondition(responseCondition string) 
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogLogglyRequest) Format(format string) *APIUpdateLogLogglyRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogLogglyRequest) FormatVersion(formatVersion int32) *APIUpdateLogLogglyRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Token The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
@@ -851,14 +851,14 @@ func (a *LoggingLogglyAPIService) UpdateLogLogglyExecute(r APIUpdateLogLogglyReq
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))

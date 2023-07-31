@@ -126,9 +126,9 @@ type APICreateLogElasticsearchRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	tlsCaCert *string
 	tlsClientCert *string
 	tlsClientKey *string
@@ -152,11 +152,6 @@ func (r *APICreateLogElasticsearchRequest) Placement(placement string) *APICreat
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogElasticsearchRequest) FormatVersion(formatVersion int32) *APICreateLogElasticsearchRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogElasticsearchRequest) ResponseCondition(responseCondition string) *APICreateLogElasticsearchRequest {
 	r.responseCondition = &responseCondition
@@ -165,6 +160,11 @@ func (r *APICreateLogElasticsearchRequest) ResponseCondition(responseCondition s
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
 func (r *APICreateLogElasticsearchRequest) Format(format string) *APICreateLogElasticsearchRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogElasticsearchRequest) FormatVersion(formatVersion int32) *APICreateLogElasticsearchRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
@@ -293,14 +293,14 @@ func (a *LoggingElasticsearchAPIService) CreateLogElasticsearchExecute(r APICrea
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.tlsCaCert != nil {
 		localVarFormParams.Add("tls_ca_cert", parameterToString(*r.tlsCaCert, ""))
@@ -831,9 +831,9 @@ type APIUpdateLogElasticsearchRequest struct {
 	loggingElasticsearchName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	tlsCaCert *string
 	tlsClientCert *string
 	tlsClientKey *string
@@ -857,11 +857,6 @@ func (r *APIUpdateLogElasticsearchRequest) Placement(placement string) *APIUpdat
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogElasticsearchRequest) FormatVersion(formatVersion int32) *APIUpdateLogElasticsearchRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogElasticsearchRequest) ResponseCondition(responseCondition string) *APIUpdateLogElasticsearchRequest {
 	r.responseCondition = &responseCondition
@@ -870,6 +865,11 @@ func (r *APIUpdateLogElasticsearchRequest) ResponseCondition(responseCondition s
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
 func (r *APIUpdateLogElasticsearchRequest) Format(format string) *APIUpdateLogElasticsearchRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogElasticsearchRequest) FormatVersion(formatVersion int32) *APIUpdateLogElasticsearchRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
@@ -1001,14 +1001,14 @@ func (a *LoggingElasticsearchAPIService) UpdateLogElasticsearchExecute(r APIUpda
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.tlsCaCert != nil {
 		localVarFormParams.Add("tls_ca_cert", parameterToString(*r.tlsCaCert, ""))

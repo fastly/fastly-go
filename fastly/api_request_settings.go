@@ -686,17 +686,17 @@ type APIUpdateRequestSettingsRequest struct {
 	versionID int32
 	requestSettingsName string
 	action *string
-	bypassBusyWait *int32
 	defaultHost *string
+	hashKeys *string
+	name *string
+	requestCondition *string
+	xff *string
+	bypassBusyWait *int32
 	forceMiss *int32
 	forceSsl *int32
 	geoHeaders *int32
-	hashKeys *string
 	maxStaleAge *int32
-	name *string
-	requestCondition *string
 	timerSupport *int32
-	xff *string
 }
 
 // Action Allows you to terminate request handling and immediately perform an action.
@@ -704,14 +704,34 @@ func (r *APIUpdateRequestSettingsRequest) Action(action string) *APIUpdateReques
 	r.action = &action
 	return r
 }
-// BypassBusyWait Disable collapsed forwarding, so you don&#39;t wait for other objects to origin.
-func (r *APIUpdateRequestSettingsRequest) BypassBusyWait(bypassBusyWait int32) *APIUpdateRequestSettingsRequest {
-	r.bypassBusyWait = &bypassBusyWait
-	return r
-}
 // DefaultHost Sets the host header.
 func (r *APIUpdateRequestSettingsRequest) DefaultHost(defaultHost string) *APIUpdateRequestSettingsRequest {
 	r.defaultHost = &defaultHost
+	return r
+}
+// HashKeys Comma separated list of varnish request object fields that should be in the hash key.
+func (r *APIUpdateRequestSettingsRequest) HashKeys(hashKeys string) *APIUpdateRequestSettingsRequest {
+	r.hashKeys = &hashKeys
+	return r
+}
+// Name Name for the request settings.
+func (r *APIUpdateRequestSettingsRequest) Name(name string) *APIUpdateRequestSettingsRequest {
+	r.name = &name
+	return r
+}
+// RequestCondition Condition which, if met, will select this configuration during a request. Optional.
+func (r *APIUpdateRequestSettingsRequest) RequestCondition(requestCondition string) *APIUpdateRequestSettingsRequest {
+	r.requestCondition = &requestCondition
+	return r
+}
+// Xff Short for X-Forwarded-For.
+func (r *APIUpdateRequestSettingsRequest) Xff(xff string) *APIUpdateRequestSettingsRequest {
+	r.xff = &xff
+	return r
+}
+// BypassBusyWait Disable collapsed forwarding, so you don&#39;t wait for other objects to origin.
+func (r *APIUpdateRequestSettingsRequest) BypassBusyWait(bypassBusyWait int32) *APIUpdateRequestSettingsRequest {
+	r.bypassBusyWait = &bypassBusyWait
 	return r
 }
 // ForceMiss Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable.
@@ -729,34 +749,14 @@ func (r *APIUpdateRequestSettingsRequest) GeoHeaders(geoHeaders int32) *APIUpdat
 	r.geoHeaders = &geoHeaders
 	return r
 }
-// HashKeys Comma separated list of varnish request object fields that should be in the hash key.
-func (r *APIUpdateRequestSettingsRequest) HashKeys(hashKeys string) *APIUpdateRequestSettingsRequest {
-	r.hashKeys = &hashKeys
-	return r
-}
 // MaxStaleAge How old an object is allowed to be to serve stale-if-error or stale-while-revalidate.
 func (r *APIUpdateRequestSettingsRequest) MaxStaleAge(maxStaleAge int32) *APIUpdateRequestSettingsRequest {
 	r.maxStaleAge = &maxStaleAge
 	return r
 }
-// Name Name for the request settings.
-func (r *APIUpdateRequestSettingsRequest) Name(name string) *APIUpdateRequestSettingsRequest {
-	r.name = &name
-	return r
-}
-// RequestCondition Condition which, if met, will select this configuration during a request. Optional.
-func (r *APIUpdateRequestSettingsRequest) RequestCondition(requestCondition string) *APIUpdateRequestSettingsRequest {
-	r.requestCondition = &requestCondition
-	return r
-}
 // TimerSupport Injects the X-Timer info into the request for viewing origin fetch durations.
 func (r *APIUpdateRequestSettingsRequest) TimerSupport(timerSupport int32) *APIUpdateRequestSettingsRequest {
 	r.timerSupport = &timerSupport
-	return r
-}
-// Xff Short for X-Forwarded-For.
-func (r *APIUpdateRequestSettingsRequest) Xff(xff string) *APIUpdateRequestSettingsRequest {
-	r.xff = &xff
 	return r
 }
 
@@ -830,11 +830,23 @@ func (a *RequestSettingsAPIService) UpdateRequestSettingsExecute(r APIUpdateRequ
 	if r.action != nil {
 		localVarFormParams.Add("action", parameterToString(*r.action, ""))
 	}
-	if r.bypassBusyWait != nil {
-		localVarFormParams.Add("bypass_busy_wait", parameterToString(*r.bypassBusyWait, ""))
-	}
 	if r.defaultHost != nil {
 		localVarFormParams.Add("default_host", parameterToString(*r.defaultHost, ""))
+	}
+	if r.hashKeys != nil {
+		localVarFormParams.Add("hash_keys", parameterToString(*r.hashKeys, ""))
+	}
+	if r.name != nil {
+		localVarFormParams.Add("name", parameterToString(*r.name, ""))
+	}
+	if r.requestCondition != nil {
+		localVarFormParams.Add("request_condition", parameterToString(*r.requestCondition, ""))
+	}
+	if r.xff != nil {
+		localVarFormParams.Add("xff", parameterToString(*r.xff, ""))
+	}
+	if r.bypassBusyWait != nil {
+		localVarFormParams.Add("bypass_busy_wait", parameterToString(*r.bypassBusyWait, ""))
 	}
 	if r.forceMiss != nil {
 		localVarFormParams.Add("force_miss", parameterToString(*r.forceMiss, ""))
@@ -845,23 +857,11 @@ func (a *RequestSettingsAPIService) UpdateRequestSettingsExecute(r APIUpdateRequ
 	if r.geoHeaders != nil {
 		localVarFormParams.Add("geo_headers", parameterToString(*r.geoHeaders, ""))
 	}
-	if r.hashKeys != nil {
-		localVarFormParams.Add("hash_keys", parameterToString(*r.hashKeys, ""))
-	}
 	if r.maxStaleAge != nil {
 		localVarFormParams.Add("max_stale_age", parameterToString(*r.maxStaleAge, ""))
 	}
-	if r.name != nil {
-		localVarFormParams.Add("name", parameterToString(*r.name, ""))
-	}
-	if r.requestCondition != nil {
-		localVarFormParams.Add("request_condition", parameterToString(*r.requestCondition, ""))
-	}
 	if r.timerSupport != nil {
 		localVarFormParams.Add("timer_support", parameterToString(*r.timerSupport, ""))
-	}
-	if r.xff != nil {
-		localVarFormParams.Add("xff", parameterToString(*r.xff, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

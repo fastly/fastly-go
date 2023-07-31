@@ -126,14 +126,14 @@ type APICreateLogSftpRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *string
 	timestampFormat *string
+	compressionCodec *string
 	period *int32
 	gzipLevel *int32
-	compressionCodec *string
 	address *string
 	port *int32
 	password *string
@@ -154,11 +154,6 @@ func (r *APICreateLogSftpRequest) Placement(placement string) *APICreateLogSftpR
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogSftpRequest) FormatVersion(formatVersion int32) *APICreateLogSftpRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogSftpRequest) ResponseCondition(responseCondition string) *APICreateLogSftpRequest {
 	r.responseCondition = &responseCondition
@@ -167,6 +162,11 @@ func (r *APICreateLogSftpRequest) ResponseCondition(responseCondition string) *A
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogSftpRequest) Format(format string) *APICreateLogSftpRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogSftpRequest) FormatVersion(formatVersion int32) *APICreateLogSftpRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType How the message should be formatted.
@@ -179,6 +179,11 @@ func (r *APICreateLogSftpRequest) TimestampFormat(timestampFormat string) *APICr
 	r.timestampFormat = &timestampFormat
 	return r
 }
+// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
+func (r *APICreateLogSftpRequest) CompressionCodec(compressionCodec string) *APICreateLogSftpRequest {
+	r.compressionCodec = &compressionCodec
+	return r
+}
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APICreateLogSftpRequest) Period(period int32) *APICreateLogSftpRequest {
 	r.period = &period
@@ -187,11 +192,6 @@ func (r *APICreateLogSftpRequest) Period(period int32) *APICreateLogSftpRequest 
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APICreateLogSftpRequest) GzipLevel(gzipLevel int32) *APICreateLogSftpRequest {
 	r.gzipLevel = &gzipLevel
-	return r
-}
-// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
-func (r *APICreateLogSftpRequest) CompressionCodec(compressionCodec string) *APICreateLogSftpRequest {
-	r.compressionCodec = &compressionCodec
 	return r
 }
 // Address A hostname or IPv4 address.
@@ -305,14 +305,14 @@ func (a *LoggingSftpAPIService) CreateLogSftpExecute(r APICreateLogSftpRequest) 
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))
@@ -320,14 +320,14 @@ func (a *LoggingSftpAPIService) CreateLogSftpExecute(r APICreateLogSftpRequest) 
 	if r.timestampFormat != nil {
 		localVarFormParams.Add("timestamp_format", parameterToString(*r.timestampFormat, ""))
 	}
+	if r.compressionCodec != nil {
+		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
+	}
 	if r.period != nil {
 		localVarFormParams.Add("period", parameterToString(*r.period, ""))
 	}
 	if r.gzipLevel != nil {
 		localVarFormParams.Add("gzip_level", parameterToString(*r.gzipLevel, ""))
-	}
-	if r.compressionCodec != nil {
-		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
 	}
 	if r.address != nil {
 		localVarFormParams.Add("address", parameterToString(*r.address, ""))
@@ -849,14 +849,14 @@ type APIUpdateLogSftpRequest struct {
 	loggingSftpName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	messageType *string
 	timestampFormat *string
+	compressionCodec *string
 	period *int32
 	gzipLevel *int32
-	compressionCodec *string
 	address *string
 	port *int32
 	password *string
@@ -877,11 +877,6 @@ func (r *APIUpdateLogSftpRequest) Placement(placement string) *APIUpdateLogSftpR
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogSftpRequest) FormatVersion(formatVersion int32) *APIUpdateLogSftpRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogSftpRequest) ResponseCondition(responseCondition string) *APIUpdateLogSftpRequest {
 	r.responseCondition = &responseCondition
@@ -890,6 +885,11 @@ func (r *APIUpdateLogSftpRequest) ResponseCondition(responseCondition string) *A
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogSftpRequest) Format(format string) *APIUpdateLogSftpRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogSftpRequest) FormatVersion(formatVersion int32) *APIUpdateLogSftpRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // MessageType How the message should be formatted.
@@ -902,6 +902,11 @@ func (r *APIUpdateLogSftpRequest) TimestampFormat(timestampFormat string) *APIUp
 	r.timestampFormat = &timestampFormat
 	return r
 }
+// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
+func (r *APIUpdateLogSftpRequest) CompressionCodec(compressionCodec string) *APIUpdateLogSftpRequest {
+	r.compressionCodec = &compressionCodec
+	return r
+}
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APIUpdateLogSftpRequest) Period(period int32) *APIUpdateLogSftpRequest {
 	r.period = &period
@@ -910,11 +915,6 @@ func (r *APIUpdateLogSftpRequest) Period(period int32) *APIUpdateLogSftpRequest 
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APIUpdateLogSftpRequest) GzipLevel(gzipLevel int32) *APIUpdateLogSftpRequest {
 	r.gzipLevel = &gzipLevel
-	return r
-}
-// CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
-func (r *APIUpdateLogSftpRequest) CompressionCodec(compressionCodec string) *APIUpdateLogSftpRequest {
-	r.compressionCodec = &compressionCodec
 	return r
 }
 // Address A hostname or IPv4 address.
@@ -1031,14 +1031,14 @@ func (a *LoggingSftpAPIService) UpdateLogSftpExecute(r APIUpdateLogSftpRequest) 
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.messageType != nil {
 		localVarFormParams.Add("message_type", parameterToString(*r.messageType, ""))
@@ -1046,14 +1046,14 @@ func (a *LoggingSftpAPIService) UpdateLogSftpExecute(r APIUpdateLogSftpRequest) 
 	if r.timestampFormat != nil {
 		localVarFormParams.Add("timestamp_format", parameterToString(*r.timestampFormat, ""))
 	}
+	if r.compressionCodec != nil {
+		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
+	}
 	if r.period != nil {
 		localVarFormParams.Add("period", parameterToString(*r.period, ""))
 	}
 	if r.gzipLevel != nil {
 		localVarFormParams.Add("gzip_level", parameterToString(*r.gzipLevel, ""))
-	}
-	if r.compressionCodec != nil {
-		localVarFormParams.Add("compression_codec", parameterToString(*r.compressionCodec, ""))
 	}
 	if r.address != nil {
 		localVarFormParams.Add("address", parameterToString(*r.address, ""))

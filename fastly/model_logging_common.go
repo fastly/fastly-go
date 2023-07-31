@@ -23,8 +23,6 @@ type LoggingCommon struct {
 	Name *string `json:"name,omitempty"`
 	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
 	Placement NullableString `json:"placement,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
-	FormatVersion *int32 `json:"format_version,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
@@ -40,8 +38,6 @@ type _LoggingCommon LoggingCommon
 // will change when the set of required properties is changed
 func NewLoggingCommon() *LoggingCommon {
 	this := LoggingCommon{}
-	var formatVersion int32 = 2
-	this.FormatVersion = &formatVersion
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
 	return &this
@@ -52,8 +48,6 @@ func NewLoggingCommon() *LoggingCommon {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingCommonWithDefaults() *LoggingCommon {
 	this := LoggingCommon{}
-	var formatVersion int32 = 2
-	this.FormatVersion = &formatVersion
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
 	return &this
@@ -131,38 +125,6 @@ func (o *LoggingCommon) SetPlacementNil() {
 // UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
 func (o *LoggingCommon) UnsetPlacement() {
 	o.Placement.Unset()
-}
-
-// GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
-func (o *LoggingCommon) GetFormatVersion() int32 {
-	if o == nil || o.FormatVersion == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FormatVersion
-}
-
-// GetFormatVersionOk returns a tuple with the FormatVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingCommon) GetFormatVersionOk() (*int32, bool) {
-	if o == nil || o.FormatVersion == nil {
-		return nil, false
-	}
-	return o.FormatVersion, true
-}
-
-// HasFormatVersion returns a boolean if a field has been set.
-func (o *LoggingCommon) HasFormatVersion() bool {
-	if o != nil && o.FormatVersion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFormatVersion gets a reference to the given int32 and assigns it to the FormatVersion field.
-func (o *LoggingCommon) SetFormatVersion(v int32) {
-	o.FormatVersion = &v
 }
 
 // GetResponseCondition returns the ResponseCondition field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -249,9 +211,6 @@ func (o LoggingCommon) MarshalJSON() ([]byte, error) {
 	if o.Placement.IsSet() {
 		toSerialize["placement"] = o.Placement.Get()
 	}
-	if o.FormatVersion != nil {
-		toSerialize["format_version"] = o.FormatVersion
-	}
 	if o.ResponseCondition.IsSet() {
 		toSerialize["response_condition"] = o.ResponseCondition.Get()
 	}
@@ -280,7 +239,6 @@ func (o *LoggingCommon) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "placement")
-		delete(additionalProperties, "format_version")
 		delete(additionalProperties, "response_condition")
 		delete(additionalProperties, "format")
 		o.AdditionalProperties = additionalProperties

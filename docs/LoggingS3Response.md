@@ -6,14 +6,19 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The name for the real-time logging configuration. | [optional] 
 **Placement** | Pointer to **NullableString** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] 
-**FormatVersion** | Pointer to **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to 2]
 **ResponseCondition** | Pointer to **NullableString** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
 **Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
+**FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
 **MessageType** | Pointer to **string** | How the message should be formatted. | [optional] [default to "classic"]
 **TimestampFormat** | Pointer to **NullableString** | A timestamp format | [optional] [readonly] 
-**Period** | Pointer to **int32** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
-**GzipLevel** | Pointer to **int32** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [default to 0]
 **CompressionCodec** | Pointer to **string** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] 
+**Period** | Pointer to **string** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to "3600"]
+**GzipLevel** | Pointer to **string** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [default to "0"]
+**CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**Version** | Pointer to **string** |  | [optional] [readonly] 
 **AccessKey** | Pointer to **NullableString** | The access key for your S3 account. Not required if `iam_role` is provided. | [optional] 
 **ACL** | Pointer to **string** | The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information. | [optional] 
 **BucketName** | Pointer to **string** | The bucket name for S3 account. | [optional] 
@@ -25,11 +30,6 @@ Name | Type | Description | Notes
 **SecretKey** | Pointer to **NullableString** | The secret key for your S3 account. Not required if `iam_role` is provided. | [optional] 
 **ServerSideEncryptionKmsKeyID** | Pointer to **NullableString** | Optional server-side KMS Key ID. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. | [optional] [default to "null"]
 **ServerSideEncryption** | Pointer to **NullableString** | Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption. | [optional] [default to "null"]
-**CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -110,31 +110,6 @@ HasPlacement returns a boolean if a field has been set.
 `func (o *LoggingS3Response) UnsetPlacement()`
 
 UnsetPlacement ensures that no value is present for Placement, not even an explicit nil
-### GetFormatVersion
-
-`func (o *LoggingS3Response) GetFormatVersion() int32`
-
-GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
-
-### GetFormatVersionOk
-
-`func (o *LoggingS3Response) GetFormatVersionOk() (*int32, bool)`
-
-GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFormatVersion
-
-`func (o *LoggingS3Response) SetFormatVersion(v int32)`
-
-SetFormatVersion sets FormatVersion field to given value.
-
-### HasFormatVersion
-
-`func (o *LoggingS3Response) HasFormatVersion() bool`
-
-HasFormatVersion returns a boolean if a field has been set.
-
 ### GetResponseCondition
 
 `func (o *LoggingS3Response) GetResponseCondition() string`
@@ -194,6 +169,31 @@ SetFormat sets Format field to given value.
 `func (o *LoggingS3Response) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+### GetFormatVersion
+
+`func (o *LoggingS3Response) GetFormatVersion() string`
+
+GetFormatVersion returns the FormatVersion field if non-nil, zero value otherwise.
+
+### GetFormatVersionOk
+
+`func (o *LoggingS3Response) GetFormatVersionOk() (*string, bool)`
+
+GetFormatVersionOk returns a tuple with the FormatVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormatVersion
+
+`func (o *LoggingS3Response) SetFormatVersion(v string)`
+
+SetFormatVersion sets FormatVersion field to given value.
+
+### HasFormatVersion
+
+`func (o *LoggingS3Response) HasFormatVersion() bool`
+
+HasFormatVersion returns a boolean if a field has been set.
 
 ### GetMessageType
 
@@ -255,56 +255,6 @@ HasTimestampFormat returns a boolean if a field has been set.
 `func (o *LoggingS3Response) UnsetTimestampFormat()`
 
 UnsetTimestampFormat ensures that no value is present for TimestampFormat, not even an explicit nil
-### GetPeriod
-
-`func (o *LoggingS3Response) GetPeriod() int32`
-
-GetPeriod returns the Period field if non-nil, zero value otherwise.
-
-### GetPeriodOk
-
-`func (o *LoggingS3Response) GetPeriodOk() (*int32, bool)`
-
-GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPeriod
-
-`func (o *LoggingS3Response) SetPeriod(v int32)`
-
-SetPeriod sets Period field to given value.
-
-### HasPeriod
-
-`func (o *LoggingS3Response) HasPeriod() bool`
-
-HasPeriod returns a boolean if a field has been set.
-
-### GetGzipLevel
-
-`func (o *LoggingS3Response) GetGzipLevel() int32`
-
-GetGzipLevel returns the GzipLevel field if non-nil, zero value otherwise.
-
-### GetGzipLevelOk
-
-`func (o *LoggingS3Response) GetGzipLevelOk() (*int32, bool)`
-
-GetGzipLevelOk returns a tuple with the GzipLevel field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGzipLevel
-
-`func (o *LoggingS3Response) SetGzipLevel(v int32)`
-
-SetGzipLevel sets GzipLevel field to given value.
-
-### HasGzipLevel
-
-`func (o *LoggingS3Response) HasGzipLevel() bool`
-
-HasGzipLevel returns a boolean if a field has been set.
-
 ### GetCompressionCodec
 
 `func (o *LoggingS3Response) GetCompressionCodec() string`
@@ -329,6 +279,211 @@ SetCompressionCodec sets CompressionCodec field to given value.
 `func (o *LoggingS3Response) HasCompressionCodec() bool`
 
 HasCompressionCodec returns a boolean if a field has been set.
+
+### GetPeriod
+
+`func (o *LoggingS3Response) GetPeriod() string`
+
+GetPeriod returns the Period field if non-nil, zero value otherwise.
+
+### GetPeriodOk
+
+`func (o *LoggingS3Response) GetPeriodOk() (*string, bool)`
+
+GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPeriod
+
+`func (o *LoggingS3Response) SetPeriod(v string)`
+
+SetPeriod sets Period field to given value.
+
+### HasPeriod
+
+`func (o *LoggingS3Response) HasPeriod() bool`
+
+HasPeriod returns a boolean if a field has been set.
+
+### GetGzipLevel
+
+`func (o *LoggingS3Response) GetGzipLevel() string`
+
+GetGzipLevel returns the GzipLevel field if non-nil, zero value otherwise.
+
+### GetGzipLevelOk
+
+`func (o *LoggingS3Response) GetGzipLevelOk() (*string, bool)`
+
+GetGzipLevelOk returns a tuple with the GzipLevel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGzipLevel
+
+`func (o *LoggingS3Response) SetGzipLevel(v string)`
+
+SetGzipLevel sets GzipLevel field to given value.
+
+### HasGzipLevel
+
+`func (o *LoggingS3Response) HasGzipLevel() bool`
+
+HasGzipLevel returns a boolean if a field has been set.
+
+### GetCreatedAt
+
+`func (o *LoggingS3Response) GetCreatedAt() time.Time`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *LoggingS3Response) GetCreatedAtOk() (*time.Time, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *LoggingS3Response) SetCreatedAt(v time.Time)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+### HasCreatedAt
+
+`func (o *LoggingS3Response) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
+
+### SetCreatedAtNil
+
+`func (o *LoggingS3Response) SetCreatedAtNil(b bool)`
+
+ SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
+
+### UnsetCreatedAt
+`func (o *LoggingS3Response) UnsetCreatedAt()`
+
+UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
+### GetDeletedAt
+
+`func (o *LoggingS3Response) GetDeletedAt() time.Time`
+
+GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
+
+### GetDeletedAtOk
+
+`func (o *LoggingS3Response) GetDeletedAtOk() (*time.Time, bool)`
+
+GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeletedAt
+
+`func (o *LoggingS3Response) SetDeletedAt(v time.Time)`
+
+SetDeletedAt sets DeletedAt field to given value.
+
+### HasDeletedAt
+
+`func (o *LoggingS3Response) HasDeletedAt() bool`
+
+HasDeletedAt returns a boolean if a field has been set.
+
+### SetDeletedAtNil
+
+`func (o *LoggingS3Response) SetDeletedAtNil(b bool)`
+
+ SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
+
+### UnsetDeletedAt
+`func (o *LoggingS3Response) UnsetDeletedAt()`
+
+UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
+### GetUpdatedAt
+
+`func (o *LoggingS3Response) GetUpdatedAt() time.Time`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *LoggingS3Response) GetUpdatedAtOk() (*time.Time, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *LoggingS3Response) SetUpdatedAt(v time.Time)`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+### HasUpdatedAt
+
+`func (o *LoggingS3Response) HasUpdatedAt() bool`
+
+HasUpdatedAt returns a boolean if a field has been set.
+
+### SetUpdatedAtNil
+
+`func (o *LoggingS3Response) SetUpdatedAtNil(b bool)`
+
+ SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+
+### UnsetUpdatedAt
+`func (o *LoggingS3Response) UnsetUpdatedAt()`
+
+UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
+### GetServiceID
+
+`func (o *LoggingS3Response) GetServiceID() string`
+
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+
+### GetServiceIDOk
+
+`func (o *LoggingS3Response) GetServiceIDOk() (*string, bool)`
+
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceID
+
+`func (o *LoggingS3Response) SetServiceID(v string)`
+
+SetServiceID sets ServiceID field to given value.
+
+### HasServiceID
+
+`func (o *LoggingS3Response) HasServiceID() bool`
+
+HasServiceID returns a boolean if a field has been set.
+
+### GetVersion
+
+`func (o *LoggingS3Response) GetVersion() string`
+
+GetVersion returns the Version field if non-nil, zero value otherwise.
+
+### GetVersionOk
+
+`func (o *LoggingS3Response) GetVersionOk() (*string, bool)`
+
+GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersion
+
+`func (o *LoggingS3Response) SetVersion(v string)`
+
+SetVersion sets Version field to given value.
+
+### HasVersion
+
+`func (o *LoggingS3Response) HasVersion() bool`
+
+HasVersion returns a boolean if a field has been set.
 
 ### GetAccessKey
 
@@ -685,160 +840,5 @@ HasServerSideEncryption returns a boolean if a field has been set.
 `func (o *LoggingS3Response) UnsetServerSideEncryption()`
 
 UnsetServerSideEncryption ensures that no value is present for ServerSideEncryption, not even an explicit nil
-### GetCreatedAt
-
-`func (o *LoggingS3Response) GetCreatedAt() time.Time`
-
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
-
-### GetCreatedAtOk
-
-`func (o *LoggingS3Response) GetCreatedAtOk() (*time.Time, bool)`
-
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAt
-
-`func (o *LoggingS3Response) SetCreatedAt(v time.Time)`
-
-SetCreatedAt sets CreatedAt field to given value.
-
-### HasCreatedAt
-
-`func (o *LoggingS3Response) HasCreatedAt() bool`
-
-HasCreatedAt returns a boolean if a field has been set.
-
-### SetCreatedAtNil
-
-`func (o *LoggingS3Response) SetCreatedAtNil(b bool)`
-
- SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
-
-### UnsetCreatedAt
-`func (o *LoggingS3Response) UnsetCreatedAt()`
-
-UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-### GetDeletedAt
-
-`func (o *LoggingS3Response) GetDeletedAt() time.Time`
-
-GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
-
-### GetDeletedAtOk
-
-`func (o *LoggingS3Response) GetDeletedAtOk() (*time.Time, bool)`
-
-GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeletedAt
-
-`func (o *LoggingS3Response) SetDeletedAt(v time.Time)`
-
-SetDeletedAt sets DeletedAt field to given value.
-
-### HasDeletedAt
-
-`func (o *LoggingS3Response) HasDeletedAt() bool`
-
-HasDeletedAt returns a boolean if a field has been set.
-
-### SetDeletedAtNil
-
-`func (o *LoggingS3Response) SetDeletedAtNil(b bool)`
-
- SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
-
-### UnsetDeletedAt
-`func (o *LoggingS3Response) UnsetDeletedAt()`
-
-UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-### GetUpdatedAt
-
-`func (o *LoggingS3Response) GetUpdatedAt() time.Time`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *LoggingS3Response) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedAt
-
-`func (o *LoggingS3Response) SetUpdatedAt(v time.Time)`
-
-SetUpdatedAt sets UpdatedAt field to given value.
-
-### HasUpdatedAt
-
-`func (o *LoggingS3Response) HasUpdatedAt() bool`
-
-HasUpdatedAt returns a boolean if a field has been set.
-
-### SetUpdatedAtNil
-
-`func (o *LoggingS3Response) SetUpdatedAtNil(b bool)`
-
- SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-
-### UnsetUpdatedAt
-`func (o *LoggingS3Response) UnsetUpdatedAt()`
-
-UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceID
-
-`func (o *LoggingS3Response) GetServiceID() string`
-
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
-
-### GetServiceIDOk
-
-`func (o *LoggingS3Response) GetServiceIDOk() (*string, bool)`
-
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetServiceID
-
-`func (o *LoggingS3Response) SetServiceID(v string)`
-
-SetServiceID sets ServiceID field to given value.
-
-### HasServiceID
-
-`func (o *LoggingS3Response) HasServiceID() bool`
-
-HasServiceID returns a boolean if a field has been set.
-
-### GetVersion
-
-`func (o *LoggingS3Response) GetVersion() int32`
-
-GetVersion returns the Version field if non-nil, zero value otherwise.
-
-### GetVersionOk
-
-`func (o *LoggingS3Response) GetVersionOk() (*int32, bool)`
-
-GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVersion
-
-`func (o *LoggingS3Response) SetVersion(v int32)`
-
-SetVersion sets Version field to given value.
-
-### HasVersion
-
-`func (o *LoggingS3Response) HasVersion() bool`
-
-HasVersion returns a boolean if a field has been set.
-
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

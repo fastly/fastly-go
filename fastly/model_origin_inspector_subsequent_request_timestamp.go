@@ -19,10 +19,7 @@ import (
 
 // OriginInspectorSubsequentRequestTimestamp Value to use for subsequent requests.
 type OriginInspectorSubsequentRequestTimestamp struct {
-	AdditionalProperties map[string]any
 }
-
-type _OriginInspectorSubsequentRequestTimestamp OriginInspectorSubsequentRequestTimestamp
 
 // NewOriginInspectorSubsequentRequestTimestamp instantiates a new OriginInspectorSubsequentRequestTimestamp object
 // This constructor will assign default values to properties that have it defined,
@@ -45,30 +42,7 @@ func NewOriginInspectorSubsequentRequestTimestampWithDefaults() *OriginInspector
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o OriginInspectorSubsequentRequestTimestamp) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *OriginInspectorSubsequentRequestTimestamp) UnmarshalJSON(bytes []byte) (err error) {
-	varOriginInspectorSubsequentRequestTimestamp := _OriginInspectorSubsequentRequestTimestamp{}
-
-	if err = json.Unmarshal(bytes, &varOriginInspectorSubsequentRequestTimestamp); err == nil {
-		*o = OriginInspectorSubsequentRequestTimestamp(varOriginInspectorSubsequentRequestTimestamp)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableOriginInspectorSubsequentRequestTimestamp is a helper abstraction for handling nullable origininspectorsubsequentrequesttimestamp types. 

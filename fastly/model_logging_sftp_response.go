@@ -24,26 +24,26 @@ type LoggingSftpResponse struct {
 	Name *string `json:"name,omitempty"`
 	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
 	Placement NullableString `json:"placement,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
-	FormatVersion *int32 `json:"format_version,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	FormatVersion *string `json:"format_version,omitempty"`
 	// How the message should be formatted.
 	MessageType *string `json:"message_type,omitempty"`
 	// A timestamp format
 	TimestampFormat NullableString `json:"timestamp_format,omitempty"`
-	// How frequently log files are finalized so they can be available for reading (in seconds).
-	Period *int32 `json:"period,omitempty"`
-	// The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-	GzipLevel *int32 `json:"gzip_level,omitempty"`
 	// The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
 	CompressionCodec *string `json:"compression_codec,omitempty"`
-	// A hostname or IPv4 address.
-	Address *string `json:"address,omitempty"`
-	// The port number.
-	Port *int32 `json:"port,omitempty"`
+	// Date and time in ISO 8601 format.
+	CreatedAt NullableTime `json:"created_at,omitempty"`
+	// Date and time in ISO 8601 format.
+	DeletedAt NullableTime `json:"deleted_at,omitempty"`
+	// Date and time in ISO 8601 format.
+	UpdatedAt NullableTime `json:"updated_at,omitempty"`
+	ServiceID *string `json:"service_id,omitempty"`
+	Version *string `json:"version,omitempty"`
 	// The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference.
 	Password *string `json:"password,omitempty"`
 	// The path to upload logs to.
@@ -56,14 +56,14 @@ type LoggingSftpResponse struct {
 	SSHKnownHosts *string `json:"ssh_known_hosts,omitempty"`
 	// The username for the server.
 	User *string `json:"user,omitempty"`
-	// Date and time in ISO 8601 format.
-	CreatedAt NullableTime `json:"created_at,omitempty"`
-	// Date and time in ISO 8601 format.
-	DeletedAt NullableTime `json:"deleted_at,omitempty"`
-	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	// A hostname or IPv4 address.
+	Address *string `json:"address,omitempty"`
+	// The port number.
+	Port *string `json:"port,omitempty"`
+	// How frequently log files are finalized so they can be available for reading (in seconds).
+	Period *string `json:"period,omitempty"`
+	// The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+	GzipLevel *int32 `json:"gzip_level,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -75,24 +75,24 @@ type _LoggingSftpResponse LoggingSftpResponse
 // will change when the set of required properties is changed
 func NewLoggingSftpResponse() *LoggingSftpResponse {
 	this := LoggingSftpResponse{}
-	var formatVersion int32 = 2
-	this.FormatVersion = &formatVersion
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
+	var formatVersion string = "2"
+	this.FormatVersion = &formatVersion
 	var messageType string = "classic"
 	this.MessageType = &messageType
-	var period int32 = 3600
-	this.Period = &period
-	var gzipLevel int32 = 0
-	this.GzipLevel = &gzipLevel
-	var port int32 = 22
-	this.Port = &port
 	var path string = "null"
 	this.Path = *NewNullableString(&path)
 	var publicKey string = "null"
 	this.PublicKey = *NewNullableString(&publicKey)
 	var secretKey string = "null"
 	this.SecretKey = *NewNullableString(&secretKey)
+	var port string = "22"
+	this.Port = &port
+	var period string = "3600"
+	this.Period = &period
+	var gzipLevel int32 = 0
+	this.GzipLevel = &gzipLevel
 	return &this
 }
 
@@ -101,24 +101,24 @@ func NewLoggingSftpResponse() *LoggingSftpResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingSftpResponseWithDefaults() *LoggingSftpResponse {
 	this := LoggingSftpResponse{}
-	var formatVersion int32 = 2
-	this.FormatVersion = &formatVersion
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
+	var formatVersion string = "2"
+	this.FormatVersion = &formatVersion
 	var messageType string = "classic"
 	this.MessageType = &messageType
-	var period int32 = 3600
-	this.Period = &period
-	var gzipLevel int32 = 0
-	this.GzipLevel = &gzipLevel
-	var port int32 = 22
-	this.Port = &port
 	var path string = "null"
 	this.Path = *NewNullableString(&path)
 	var publicKey string = "null"
 	this.PublicKey = *NewNullableString(&publicKey)
 	var secretKey string = "null"
 	this.SecretKey = *NewNullableString(&secretKey)
+	var port string = "22"
+	this.Port = &port
+	var period string = "3600"
+	this.Period = &period
+	var gzipLevel int32 = 0
+	this.GzipLevel = &gzipLevel
 	return &this
 }
 
@@ -196,38 +196,6 @@ func (o *LoggingSftpResponse) UnsetPlacement() {
 	o.Placement.Unset()
 }
 
-// GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
-func (o *LoggingSftpResponse) GetFormatVersion() int32 {
-	if o == nil || o.FormatVersion == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FormatVersion
-}
-
-// GetFormatVersionOk returns a tuple with the FormatVersion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingSftpResponse) GetFormatVersionOk() (*int32, bool) {
-	if o == nil || o.FormatVersion == nil {
-		return nil, false
-	}
-	return o.FormatVersion, true
-}
-
-// HasFormatVersion returns a boolean if a field has been set.
-func (o *LoggingSftpResponse) HasFormatVersion() bool {
-	if o != nil && o.FormatVersion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFormatVersion gets a reference to the given int32 and assigns it to the FormatVersion field.
-func (o *LoggingSftpResponse) SetFormatVersion(v int32) {
-	o.FormatVersion = &v
-}
-
 // GetResponseCondition returns the ResponseCondition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *LoggingSftpResponse) GetResponseCondition() string {
 	if o == nil || o.ResponseCondition.Get() == nil {
@@ -300,6 +268,38 @@ func (o *LoggingSftpResponse) HasFormat() bool {
 // SetFormat gets a reference to the given string and assigns it to the Format field.
 func (o *LoggingSftpResponse) SetFormat(v string) {
 	o.Format = &v
+}
+
+// GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
+func (o *LoggingSftpResponse) GetFormatVersion() string {
+	if o == nil || o.FormatVersion == nil {
+		var ret string
+		return ret
+	}
+	return *o.FormatVersion
+}
+
+// GetFormatVersionOk returns a tuple with the FormatVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingSftpResponse) GetFormatVersionOk() (*string, bool) {
+	if o == nil || o.FormatVersion == nil {
+		return nil, false
+	}
+	return o.FormatVersion, true
+}
+
+// HasFormatVersion returns a boolean if a field has been set.
+func (o *LoggingSftpResponse) HasFormatVersion() bool {
+	if o != nil && o.FormatVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFormatVersion gets a reference to the given string and assigns it to the FormatVersion field.
+func (o *LoggingSftpResponse) SetFormatVersion(v string) {
+	o.FormatVersion = &v
 }
 
 // GetMessageType returns the MessageType field value if set, zero value otherwise.
@@ -376,70 +376,6 @@ func (o *LoggingSftpResponse) UnsetTimestampFormat() {
 	o.TimestampFormat.Unset()
 }
 
-// GetPeriod returns the Period field value if set, zero value otherwise.
-func (o *LoggingSftpResponse) GetPeriod() int32 {
-	if o == nil || o.Period == nil {
-		var ret int32
-		return ret
-	}
-	return *o.Period
-}
-
-// GetPeriodOk returns a tuple with the Period field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingSftpResponse) GetPeriodOk() (*int32, bool) {
-	if o == nil || o.Period == nil {
-		return nil, false
-	}
-	return o.Period, true
-}
-
-// HasPeriod returns a boolean if a field has been set.
-func (o *LoggingSftpResponse) HasPeriod() bool {
-	if o != nil && o.Period != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPeriod gets a reference to the given int32 and assigns it to the Period field.
-func (o *LoggingSftpResponse) SetPeriod(v int32) {
-	o.Period = &v
-}
-
-// GetGzipLevel returns the GzipLevel field value if set, zero value otherwise.
-func (o *LoggingSftpResponse) GetGzipLevel() int32 {
-	if o == nil || o.GzipLevel == nil {
-		var ret int32
-		return ret
-	}
-	return *o.GzipLevel
-}
-
-// GetGzipLevelOk returns a tuple with the GzipLevel field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *LoggingSftpResponse) GetGzipLevelOk() (*int32, bool) {
-	if o == nil || o.GzipLevel == nil {
-		return nil, false
-	}
-	return o.GzipLevel, true
-}
-
-// HasGzipLevel returns a boolean if a field has been set.
-func (o *LoggingSftpResponse) HasGzipLevel() bool {
-	if o != nil && o.GzipLevel != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetGzipLevel gets a reference to the given int32 and assigns it to the GzipLevel field.
-func (o *LoggingSftpResponse) SetGzipLevel(v int32) {
-	o.GzipLevel = &v
-}
-
 // GetCompressionCodec returns the CompressionCodec field value if set, zero value otherwise.
 func (o *LoggingSftpResponse) GetCompressionCodec() string {
 	if o == nil || o.CompressionCodec == nil {
@@ -472,68 +408,194 @@ func (o *LoggingSftpResponse) SetCompressionCodec(v string) {
 	o.CompressionCodec = &v
 }
 
-// GetAddress returns the Address field value if set, zero value otherwise.
-func (o *LoggingSftpResponse) GetAddress() string {
-	if o == nil || o.Address == nil {
+// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingSftpResponse) GetCreatedAt() time.Time {
+	if o == nil || o.CreatedAt.Get() == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.CreatedAt.Get()
+}
+
+// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *LoggingSftpResponse) GetCreatedAtOk() (*time.Time, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
+}
+
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *LoggingSftpResponse) HasCreatedAt() bool {
+	if o != nil && o.CreatedAt.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedAt gets a reference to the given NullableTime and assigns it to the CreatedAt field.
+func (o *LoggingSftpResponse) SetCreatedAt(v time.Time) {
+	o.CreatedAt.Set(&v)
+}
+// SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
+func (o *LoggingSftpResponse) SetCreatedAtNil() {
+	o.CreatedAt.Set(nil)
+}
+
+// UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
+func (o *LoggingSftpResponse) UnsetCreatedAt() {
+	o.CreatedAt.Unset()
+}
+
+// GetDeletedAt returns the DeletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingSftpResponse) GetDeletedAt() time.Time {
+	if o == nil || o.DeletedAt.Get() == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.DeletedAt.Get()
+}
+
+// GetDeletedAtOk returns a tuple with the DeletedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *LoggingSftpResponse) GetDeletedAtOk() (*time.Time, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
+}
+
+// HasDeletedAt returns a boolean if a field has been set.
+func (o *LoggingSftpResponse) HasDeletedAt() bool {
+	if o != nil && o.DeletedAt.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDeletedAt gets a reference to the given NullableTime and assigns it to the DeletedAt field.
+func (o *LoggingSftpResponse) SetDeletedAt(v time.Time) {
+	o.DeletedAt.Set(&v)
+}
+// SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
+func (o *LoggingSftpResponse) SetDeletedAtNil() {
+	o.DeletedAt.Set(nil)
+}
+
+// UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
+func (o *LoggingSftpResponse) UnsetDeletedAt() {
+	o.DeletedAt.Unset()
+}
+
+// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingSftpResponse) GetUpdatedAt() time.Time {
+	if o == nil || o.UpdatedAt.Get() == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.UpdatedAt.Get()
+}
+
+// GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *LoggingSftpResponse) GetUpdatedAtOk() (*time.Time, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
+}
+
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *LoggingSftpResponse) HasUpdatedAt() bool {
+	if o != nil && o.UpdatedAt.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetUpdatedAt gets a reference to the given NullableTime and assigns it to the UpdatedAt field.
+func (o *LoggingSftpResponse) SetUpdatedAt(v time.Time) {
+	o.UpdatedAt.Set(&v)
+}
+// SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+func (o *LoggingSftpResponse) SetUpdatedAtNil() {
+	o.UpdatedAt.Set(nil)
+}
+
+// UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
+func (o *LoggingSftpResponse) UnsetUpdatedAt() {
+	o.UpdatedAt.Unset()
+}
+
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *LoggingSftpResponse) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
 	}
-	return *o.Address
+	return *o.ServiceID
 }
 
-// GetAddressOk returns a tuple with the Address field value if set, nil otherwise
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSftpResponse) GetAddressOk() (*string, bool) {
-	if o == nil || o.Address == nil {
+func (o *LoggingSftpResponse) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
-	return o.Address, true
+	return o.ServiceID, true
 }
 
-// HasAddress returns a boolean if a field has been set.
-func (o *LoggingSftpResponse) HasAddress() bool {
-	if o != nil && o.Address != nil {
+// HasServiceID returns a boolean if a field has been set.
+func (o *LoggingSftpResponse) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetAddress gets a reference to the given string and assigns it to the Address field.
-func (o *LoggingSftpResponse) SetAddress(v string) {
-	o.Address = &v
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *LoggingSftpResponse) SetServiceID(v string) {
+	o.ServiceID = &v
 }
 
-// GetPort returns the Port field value if set, zero value otherwise.
-func (o *LoggingSftpResponse) GetPort() int32 {
-	if o == nil || o.Port == nil {
-		var ret int32
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *LoggingSftpResponse) GetVersion() string {
+	if o == nil || o.Version == nil {
+		var ret string
 		return ret
 	}
-	return *o.Port
+	return *o.Version
 }
 
-// GetPortOk returns a tuple with the Port field value if set, nil otherwise
+// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSftpResponse) GetPortOk() (*int32, bool) {
-	if o == nil || o.Port == nil {
+func (o *LoggingSftpResponse) GetVersionOk() (*string, bool) {
+	if o == nil || o.Version == nil {
 		return nil, false
 	}
-	return o.Port, true
+	return o.Version, true
 }
 
-// HasPort returns a boolean if a field has been set.
-func (o *LoggingSftpResponse) HasPort() bool {
-	if o != nil && o.Port != nil {
+// HasVersion returns a boolean if a field has been set.
+func (o *LoggingSftpResponse) HasVersion() bool {
+	if o != nil && o.Version != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPort gets a reference to the given int32 and assigns it to the Port field.
-func (o *LoggingSftpResponse) SetPort(v int32) {
-	o.Port = &v
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *LoggingSftpResponse) SetVersion(v string) {
+	o.Version = &v
 }
 
 // GetPassword returns the Password field value if set, zero value otherwise.
@@ -758,194 +820,132 @@ func (o *LoggingSftpResponse) SetUser(v string) {
 	o.User = &v
 }
 
-// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingSftpResponse) GetCreatedAt() time.Time {
-	if o == nil || o.CreatedAt.Get() == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.CreatedAt.Get()
-}
-
-// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingSftpResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
-}
-
-// HasCreatedAt returns a boolean if a field has been set.
-func (o *LoggingSftpResponse) HasCreatedAt() bool {
-	if o != nil && o.CreatedAt.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedAt gets a reference to the given NullableTime and assigns it to the CreatedAt field.
-func (o *LoggingSftpResponse) SetCreatedAt(v time.Time) {
-	o.CreatedAt.Set(&v)
-}
-// SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
-func (o *LoggingSftpResponse) SetCreatedAtNil() {
-	o.CreatedAt.Set(nil)
-}
-
-// UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-func (o *LoggingSftpResponse) UnsetCreatedAt() {
-	o.CreatedAt.Unset()
-}
-
-// GetDeletedAt returns the DeletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingSftpResponse) GetDeletedAt() time.Time {
-	if o == nil || o.DeletedAt.Get() == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.DeletedAt.Get()
-}
-
-// GetDeletedAtOk returns a tuple with the DeletedAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingSftpResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
-}
-
-// HasDeletedAt returns a boolean if a field has been set.
-func (o *LoggingSftpResponse) HasDeletedAt() bool {
-	if o != nil && o.DeletedAt.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetDeletedAt gets a reference to the given NullableTime and assigns it to the DeletedAt field.
-func (o *LoggingSftpResponse) SetDeletedAt(v time.Time) {
-	o.DeletedAt.Set(&v)
-}
-// SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
-func (o *LoggingSftpResponse) SetDeletedAtNil() {
-	o.DeletedAt.Set(nil)
-}
-
-// UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-func (o *LoggingSftpResponse) UnsetDeletedAt() {
-	o.DeletedAt.Unset()
-}
-
-// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingSftpResponse) GetUpdatedAt() time.Time {
-	if o == nil || o.UpdatedAt.Get() == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.UpdatedAt.Get()
-}
-
-// GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingSftpResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
-		return nil, false
-	}
-	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
-}
-
-// HasUpdatedAt returns a boolean if a field has been set.
-func (o *LoggingSftpResponse) HasUpdatedAt() bool {
-	if o != nil && o.UpdatedAt.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetUpdatedAt gets a reference to the given NullableTime and assigns it to the UpdatedAt field.
-func (o *LoggingSftpResponse) SetUpdatedAt(v time.Time) {
-	o.UpdatedAt.Set(&v)
-}
-// SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-func (o *LoggingSftpResponse) SetUpdatedAtNil() {
-	o.UpdatedAt.Set(nil)
-}
-
-// UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-func (o *LoggingSftpResponse) UnsetUpdatedAt() {
-	o.UpdatedAt.Unset()
-}
-
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *LoggingSftpResponse) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetAddress returns the Address field value if set, zero value otherwise.
+func (o *LoggingSftpResponse) GetAddress() string {
+	if o == nil || o.Address == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.Address
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSftpResponse) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *LoggingSftpResponse) GetAddressOk() (*string, bool) {
+	if o == nil || o.Address == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.Address, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *LoggingSftpResponse) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasAddress returns a boolean if a field has been set.
+func (o *LoggingSftpResponse) HasAddress() bool {
+	if o != nil && o.Address != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *LoggingSftpResponse) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetAddress gets a reference to the given string and assigns it to the Address field.
+func (o *LoggingSftpResponse) SetAddress(v string) {
+	o.Address = &v
 }
 
-// GetVersion returns the Version field value if set, zero value otherwise.
-func (o *LoggingSftpResponse) GetVersion() int32 {
-	if o == nil || o.Version == nil {
+// GetPort returns the Port field value if set, zero value otherwise.
+func (o *LoggingSftpResponse) GetPort() string {
+	if o == nil || o.Port == nil {
+		var ret string
+		return ret
+	}
+	return *o.Port
+}
+
+// GetPortOk returns a tuple with the Port field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingSftpResponse) GetPortOk() (*string, bool) {
+	if o == nil || o.Port == nil {
+		return nil, false
+	}
+	return o.Port, true
+}
+
+// HasPort returns a boolean if a field has been set.
+func (o *LoggingSftpResponse) HasPort() bool {
+	if o != nil && o.Port != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPort gets a reference to the given string and assigns it to the Port field.
+func (o *LoggingSftpResponse) SetPort(v string) {
+	o.Port = &v
+}
+
+// GetPeriod returns the Period field value if set, zero value otherwise.
+func (o *LoggingSftpResponse) GetPeriod() string {
+	if o == nil || o.Period == nil {
+		var ret string
+		return ret
+	}
+	return *o.Period
+}
+
+// GetPeriodOk returns a tuple with the Period field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingSftpResponse) GetPeriodOk() (*string, bool) {
+	if o == nil || o.Period == nil {
+		return nil, false
+	}
+	return o.Period, true
+}
+
+// HasPeriod returns a boolean if a field has been set.
+func (o *LoggingSftpResponse) HasPeriod() bool {
+	if o != nil && o.Period != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPeriod gets a reference to the given string and assigns it to the Period field.
+func (o *LoggingSftpResponse) SetPeriod(v string) {
+	o.Period = &v
+}
+
+// GetGzipLevel returns the GzipLevel field value if set, zero value otherwise.
+func (o *LoggingSftpResponse) GetGzipLevel() int32 {
+	if o == nil || o.GzipLevel == nil {
 		var ret int32
 		return ret
 	}
-	return *o.Version
+	return *o.GzipLevel
 }
 
-// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
+// GetGzipLevelOk returns a tuple with the GzipLevel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSftpResponse) GetVersionOk() (*int32, bool) {
-	if o == nil || o.Version == nil {
+func (o *LoggingSftpResponse) GetGzipLevelOk() (*int32, bool) {
+	if o == nil || o.GzipLevel == nil {
 		return nil, false
 	}
-	return o.Version, true
+	return o.GzipLevel, true
 }
 
-// HasVersion returns a boolean if a field has been set.
-func (o *LoggingSftpResponse) HasVersion() bool {
-	if o != nil && o.Version != nil {
+// HasGzipLevel returns a boolean if a field has been set.
+func (o *LoggingSftpResponse) HasGzipLevel() bool {
+	if o != nil && o.GzipLevel != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *LoggingSftpResponse) SetVersion(v int32) {
-	o.Version = &v
+// SetGzipLevel gets a reference to the given int32 and assigns it to the GzipLevel field.
+func (o *LoggingSftpResponse) SetGzipLevel(v int32) {
+	o.GzipLevel = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -958,14 +958,14 @@ func (o LoggingSftpResponse) MarshalJSON() ([]byte, error) {
 	if o.Placement.IsSet() {
 		toSerialize["placement"] = o.Placement.Get()
 	}
-	if o.FormatVersion != nil {
-		toSerialize["format_version"] = o.FormatVersion
-	}
 	if o.ResponseCondition.IsSet() {
 		toSerialize["response_condition"] = o.ResponseCondition.Get()
 	}
 	if o.Format != nil {
 		toSerialize["format"] = o.Format
+	}
+	if o.FormatVersion != nil {
+		toSerialize["format_version"] = o.FormatVersion
 	}
 	if o.MessageType != nil {
 		toSerialize["message_type"] = o.MessageType
@@ -973,20 +973,23 @@ func (o LoggingSftpResponse) MarshalJSON() ([]byte, error) {
 	if o.TimestampFormat.IsSet() {
 		toSerialize["timestamp_format"] = o.TimestampFormat.Get()
 	}
-	if o.Period != nil {
-		toSerialize["period"] = o.Period
-	}
-	if o.GzipLevel != nil {
-		toSerialize["gzip_level"] = o.GzipLevel
-	}
 	if o.CompressionCodec != nil {
 		toSerialize["compression_codec"] = o.CompressionCodec
 	}
-	if o.Address != nil {
-		toSerialize["address"] = o.Address
+	if o.CreatedAt.IsSet() {
+		toSerialize["created_at"] = o.CreatedAt.Get()
 	}
-	if o.Port != nil {
-		toSerialize["port"] = o.Port
+	if o.DeletedAt.IsSet() {
+		toSerialize["deleted_at"] = o.DeletedAt.Get()
+	}
+	if o.UpdatedAt.IsSet() {
+		toSerialize["updated_at"] = o.UpdatedAt.Get()
+	}
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
+	}
+	if o.Version != nil {
+		toSerialize["version"] = o.Version
 	}
 	if o.Password != nil {
 		toSerialize["password"] = o.Password
@@ -1006,20 +1009,17 @@ func (o LoggingSftpResponse) MarshalJSON() ([]byte, error) {
 	if o.User != nil {
 		toSerialize["user"] = o.User
 	}
-	if o.CreatedAt.IsSet() {
-		toSerialize["created_at"] = o.CreatedAt.Get()
+	if o.Address != nil {
+		toSerialize["address"] = o.Address
 	}
-	if o.DeletedAt.IsSet() {
-		toSerialize["deleted_at"] = o.DeletedAt.Get()
+	if o.Port != nil {
+		toSerialize["port"] = o.Port
 	}
-	if o.UpdatedAt.IsSet() {
-		toSerialize["updated_at"] = o.UpdatedAt.Get()
+	if o.Period != nil {
+		toSerialize["period"] = o.Period
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
-	}
-	if o.Version != nil {
-		toSerialize["version"] = o.Version
+	if o.GzipLevel != nil {
+		toSerialize["gzip_level"] = o.GzipLevel
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -1043,27 +1043,27 @@ func (o *LoggingSftpResponse) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "placement")
-		delete(additionalProperties, "format_version")
 		delete(additionalProperties, "response_condition")
 		delete(additionalProperties, "format")
+		delete(additionalProperties, "format_version")
 		delete(additionalProperties, "message_type")
 		delete(additionalProperties, "timestamp_format")
-		delete(additionalProperties, "period")
-		delete(additionalProperties, "gzip_level")
 		delete(additionalProperties, "compression_codec")
-		delete(additionalProperties, "address")
-		delete(additionalProperties, "port")
+		delete(additionalProperties, "created_at")
+		delete(additionalProperties, "deleted_at")
+		delete(additionalProperties, "updated_at")
+		delete(additionalProperties, "service_id")
+		delete(additionalProperties, "version")
 		delete(additionalProperties, "password")
 		delete(additionalProperties, "path")
 		delete(additionalProperties, "public_key")
 		delete(additionalProperties, "secret_key")
 		delete(additionalProperties, "ssh_known_hosts")
 		delete(additionalProperties, "user")
-		delete(additionalProperties, "created_at")
-		delete(additionalProperties, "deleted_at")
-		delete(additionalProperties, "updated_at")
-		delete(additionalProperties, "service_id")
-		delete(additionalProperties, "version")
+		delete(additionalProperties, "address")
+		delete(additionalProperties, "port")
+		delete(additionalProperties, "period")
+		delete(additionalProperties, "gzip_level")
 		o.AdditionalProperties = additionalProperties
 	}
 

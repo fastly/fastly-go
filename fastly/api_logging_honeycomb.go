@@ -44,8 +44,8 @@ type LoggingHoneycombAPI interface {
 	CreateLogHoneycomb(ctx context.Context, serviceID string, versionID int32) APICreateLogHoneycombRequest
 
 	// CreateLogHoneycombExecute executes the request
-	//  @return LoggingHoneycomb
-	CreateLogHoneycombExecute(r APICreateLogHoneycombRequest) (*LoggingHoneycomb, *http.Response, error)
+	//  @return LoggingHoneycombResponse
+	CreateLogHoneycombExecute(r APICreateLogHoneycombRequest) (*LoggingHoneycombResponse, *http.Response, error)
 
 	/*
 	DeleteLogHoneycomb Delete the Honeycomb log endpoint
@@ -78,8 +78,8 @@ type LoggingHoneycombAPI interface {
 	GetLogHoneycomb(ctx context.Context, serviceID string, versionID int32, loggingHoneycombName string) APIGetLogHoneycombRequest
 
 	// GetLogHoneycombExecute executes the request
-	//  @return LoggingHoneycomb
-	GetLogHoneycombExecute(r APIGetLogHoneycombRequest) (*LoggingHoneycomb, *http.Response, error)
+	//  @return LoggingHoneycombResponse
+	GetLogHoneycombExecute(r APIGetLogHoneycombRequest) (*LoggingHoneycombResponse, *http.Response, error)
 
 	/*
 	ListLogHoneycomb List Honeycomb log endpoints
@@ -126,9 +126,9 @@ type APICreateLogHoneycombRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	dataset *string
 	token *string
 }
@@ -143,11 +143,6 @@ func (r *APICreateLogHoneycombRequest) Placement(placement string) *APICreateLog
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogHoneycombRequest) FormatVersion(formatVersion int32) *APICreateLogHoneycombRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogHoneycombRequest) ResponseCondition(responseCondition string) *APICreateLogHoneycombRequest {
 	r.responseCondition = &responseCondition
@@ -156,6 +151,11 @@ func (r *APICreateLogHoneycombRequest) ResponseCondition(responseCondition strin
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
 func (r *APICreateLogHoneycombRequest) Format(format string) *APICreateLogHoneycombRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogHoneycombRequest) FormatVersion(formatVersion int32) *APICreateLogHoneycombRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Dataset The Honeycomb Dataset you want to log to.
@@ -170,7 +170,7 @@ func (r *APICreateLogHoneycombRequest) Token(token string) *APICreateLogHoneycom
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateLogHoneycombRequest) Execute() (*LoggingHoneycomb, *http.Response, error) {
+func (r APICreateLogHoneycombRequest) Execute() (*LoggingHoneycombResponse, *http.Response, error) {
 	return r.APIService.CreateLogHoneycombExecute(r)
 }
 
@@ -194,13 +194,13 @@ func (a *LoggingHoneycombAPIService) CreateLogHoneycomb(ctx context.Context, ser
 }
 
 // CreateLogHoneycombExecute executes the request
-//  @return LoggingHoneycomb
-func (a *LoggingHoneycombAPIService) CreateLogHoneycombExecute(r APICreateLogHoneycombRequest) (*LoggingHoneycomb, *http.Response, error) {
+//  @return LoggingHoneycombResponse
+func (a *LoggingHoneycombAPIService) CreateLogHoneycombExecute(r APICreateLogHoneycombRequest) (*LoggingHoneycombResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *LoggingHoneycomb
+		localVarReturnValue  *LoggingHoneycombResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHoneycombAPIService.CreateLogHoneycomb")
@@ -239,14 +239,14 @@ func (a *LoggingHoneycombAPIService) CreateLogHoneycombExecute(r APICreateLogHon
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.dataset != nil {
 		localVarFormParams.Add("dataset", parameterToString(*r.dataset, ""))
@@ -472,7 +472,7 @@ type APIGetLogHoneycombRequest struct {
 
 
 // Execute calls the API using the request data configured.
-func (r APIGetLogHoneycombRequest) Execute() (*LoggingHoneycomb, *http.Response, error) {
+func (r APIGetLogHoneycombRequest) Execute() (*LoggingHoneycombResponse, *http.Response, error) {
 	return r.APIService.GetLogHoneycombExecute(r)
 }
 
@@ -498,13 +498,13 @@ func (a *LoggingHoneycombAPIService) GetLogHoneycomb(ctx context.Context, servic
 }
 
 // GetLogHoneycombExecute executes the request
-//  @return LoggingHoneycomb
-func (a *LoggingHoneycombAPIService) GetLogHoneycombExecute(r APIGetLogHoneycombRequest) (*LoggingHoneycomb, *http.Response, error) {
+//  @return LoggingHoneycombResponse
+func (a *LoggingHoneycombAPIService) GetLogHoneycombExecute(r APIGetLogHoneycombRequest) (*LoggingHoneycombResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *LoggingHoneycomb
+		localVarReturnValue  *LoggingHoneycombResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHoneycombAPIService.GetLogHoneycomb")
@@ -750,9 +750,9 @@ type APIUpdateLogHoneycombRequest struct {
 	loggingHoneycombName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	dataset *string
 	token *string
 }
@@ -767,11 +767,6 @@ func (r *APIUpdateLogHoneycombRequest) Placement(placement string) *APIUpdateLog
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogHoneycombRequest) FormatVersion(formatVersion int32) *APIUpdateLogHoneycombRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogHoneycombRequest) ResponseCondition(responseCondition string) *APIUpdateLogHoneycombRequest {
 	r.responseCondition = &responseCondition
@@ -780,6 +775,11 @@ func (r *APIUpdateLogHoneycombRequest) ResponseCondition(responseCondition strin
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
 func (r *APIUpdateLogHoneycombRequest) Format(format string) *APIUpdateLogHoneycombRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogHoneycombRequest) FormatVersion(formatVersion int32) *APIUpdateLogHoneycombRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Dataset The Honeycomb Dataset you want to log to.
@@ -866,14 +866,14 @@ func (a *LoggingHoneycombAPIService) UpdateLogHoneycombExecute(r APIUpdateLogHon
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.dataset != nil {
 		localVarFormParams.Add("dataset", parameterToString(*r.dataset, ""))

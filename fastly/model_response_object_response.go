@@ -29,13 +29,13 @@ type ResponseObjectResponse struct {
 	// Name for the request settings.
 	Name *string `json:"name,omitempty"`
 	// The HTTP status code.
-	Status *int32 `json:"status,omitempty"`
+	Status *string `json:"status,omitempty"`
 	// The HTTP response.
 	Response *string `json:"response,omitempty"`
 	// Condition which, if met, will select this configuration during a request. Optional.
 	RequestCondition NullableString `json:"request_condition,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Version *string `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -53,7 +53,7 @@ type _ResponseObjectResponse ResponseObjectResponse
 // will change when the set of required properties is changed
 func NewResponseObjectResponse() *ResponseObjectResponse {
 	this := ResponseObjectResponse{}
-	var status int32 = 200
+	var status string = "200"
 	this.Status = &status
 	var response string = "Ok"
 	this.Response = &response
@@ -65,7 +65,7 @@ func NewResponseObjectResponse() *ResponseObjectResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewResponseObjectResponseWithDefaults() *ResponseObjectResponse {
 	this := ResponseObjectResponse{}
-	var status int32 = 200
+	var status string = "200"
 	this.Status = &status
 	var response string = "Ok"
 	this.Response = &response
@@ -221,9 +221,9 @@ func (o *ResponseObjectResponse) SetName(v string) {
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *ResponseObjectResponse) GetStatus() int32 {
+func (o *ResponseObjectResponse) GetStatus() string {
 	if o == nil || o.Status == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Status
@@ -231,7 +231,7 @@ func (o *ResponseObjectResponse) GetStatus() int32 {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResponseObjectResponse) GetStatusOk() (*int32, bool) {
+func (o *ResponseObjectResponse) GetStatusOk() (*string, bool) {
 	if o == nil || o.Status == nil {
 		return nil, false
 	}
@@ -247,8 +247,8 @@ func (o *ResponseObjectResponse) HasStatus() bool {
 	return false
 }
 
-// SetStatus gets a reference to the given int32 and assigns it to the Status field.
-func (o *ResponseObjectResponse) SetStatus(v int32) {
+// SetStatus gets a reference to the given string and assigns it to the Status field.
+func (o *ResponseObjectResponse) SetStatus(v string) {
 	o.Status = &v
 }
 
@@ -359,9 +359,9 @@ func (o *ResponseObjectResponse) SetServiceID(v string) {
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *ResponseObjectResponse) GetVersion() int32 {
+func (o *ResponseObjectResponse) GetVersion() string {
 	if o == nil || o.Version == nil {
-		var ret int32
+		var ret string
 		return ret
 	}
 	return *o.Version
@@ -369,7 +369,7 @@ func (o *ResponseObjectResponse) GetVersion() int32 {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ResponseObjectResponse) GetVersionOk() (*int32, bool) {
+func (o *ResponseObjectResponse) GetVersionOk() (*string, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -385,8 +385,8 @@ func (o *ResponseObjectResponse) HasVersion() bool {
 	return false
 }
 
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *ResponseObjectResponse) SetVersion(v int32) {
+// SetVersion gets a reference to the given string and assigns it to the Version field.
+func (o *ResponseObjectResponse) SetVersion(v string) {
 	o.Version = &v
 }
 

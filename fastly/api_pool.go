@@ -21,6 +21,7 @@ import (
 	gourl "net/url"
 	"strconv"
 	"strings"
+	"time"
 )
 
 // Linger please
@@ -44,8 +45,8 @@ type PoolAPI interface {
 	CreateServerPool(ctx context.Context, serviceID string, versionID int32) APICreateServerPoolRequest
 
 	// CreateServerPoolExecute executes the request
-	//  @return PoolResponse
-	CreateServerPoolExecute(r APICreateServerPoolRequest) (*PoolResponse, *http.Response, error)
+	//  @return PoolResponsePost
+	CreateServerPoolExecute(r APICreateServerPoolRequest) (*PoolResponsePost, *http.Response, error)
 
 	/*
 	DeleteServerPool Delete a server pool
@@ -129,22 +130,28 @@ type APICreateServerPoolRequest struct {
 	tlsClientKey *string
 	tlsCertHostname *string
 	useTLS *int32
+	createdAt *time.Time
+	deletedAt *time.Time
+	updatedAt *time.Time
+	serviceID2 *string
+	version *string
 	name *string
 	shield *string
 	requestCondition *string
-	maxConnDefault *int32
-	connectTimeout *int32
-	firstByteTimeout *int32
-	quorum *int32
 	tlsCiphers *string
 	tlsSniHostname *string
-	tlsCheckCert *int32
 	minTLSVersion *int32
 	maxTLSVersion *int32
 	healthcheck *string
 	comment *string
 	resourceType *string
 	overrideHost *string
+	betweenBytesTimeout *int32
+	connectTimeout *int32
+	firstByteTimeout *int32
+	maxConnDefault *int32
+	quorum *int32
+	tlsCheckCert *int32
 }
 
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
@@ -172,6 +179,31 @@ func (r *APICreateServerPoolRequest) UseTLS(useTLS int32) *APICreateServerPoolRe
 	r.useTLS = &useTLS
 	return r
 }
+// CreatedAt Date and time in ISO 8601 format.
+func (r *APICreateServerPoolRequest) CreatedAt(createdAt time.Time) *APICreateServerPoolRequest {
+	r.createdAt = &createdAt
+	return r
+}
+// DeletedAt Date and time in ISO 8601 format.
+func (r *APICreateServerPoolRequest) DeletedAt(deletedAt time.Time) *APICreateServerPoolRequest {
+	r.deletedAt = &deletedAt
+	return r
+}
+// UpdatedAt Date and time in ISO 8601 format.
+func (r *APICreateServerPoolRequest) UpdatedAt(updatedAt time.Time) *APICreateServerPoolRequest {
+	r.updatedAt = &updatedAt
+	return r
+}
+// ServiceID2 returns a pointer to a request.
+func (r *APICreateServerPoolRequest) ServiceID2(serviceID2 string) *APICreateServerPoolRequest {
+	r.serviceID2 = &serviceID2
+	return r
+}
+// Version returns a pointer to a request.
+func (r *APICreateServerPoolRequest) Version(version string) *APICreateServerPoolRequest {
+	r.version = &version
+	return r
+}
 // Name Name for the Pool.
 func (r *APICreateServerPoolRequest) Name(name string) *APICreateServerPoolRequest {
 	r.name = &name
@@ -187,26 +219,6 @@ func (r *APICreateServerPoolRequest) RequestCondition(requestCondition string) *
 	r.requestCondition = &requestCondition
 	return r
 }
-// MaxConnDefault Maximum number of connections. Optional.
-func (r *APICreateServerPoolRequest) MaxConnDefault(maxConnDefault int32) *APICreateServerPoolRequest {
-	r.maxConnDefault = &maxConnDefault
-	return r
-}
-// ConnectTimeout How long to wait for a timeout in milliseconds. Optional.
-func (r *APICreateServerPoolRequest) ConnectTimeout(connectTimeout int32) *APICreateServerPoolRequest {
-	r.connectTimeout = &connectTimeout
-	return r
-}
-// FirstByteTimeout How long to wait for the first byte in milliseconds. Optional.
-func (r *APICreateServerPoolRequest) FirstByteTimeout(firstByteTimeout int32) *APICreateServerPoolRequest {
-	r.firstByteTimeout = &firstByteTimeout
-	return r
-}
-// Quorum Percentage of capacity (&#x60;0-100&#x60;) that needs to be operationally available for a pool to be considered up.
-func (r *APICreateServerPoolRequest) Quorum(quorum int32) *APICreateServerPoolRequest {
-	r.quorum = &quorum
-	return r
-}
 // TLSCiphers List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
 func (r *APICreateServerPoolRequest) TLSCiphers(tlsCiphers string) *APICreateServerPoolRequest {
 	r.tlsCiphers = &tlsCiphers
@@ -215,11 +227,6 @@ func (r *APICreateServerPoolRequest) TLSCiphers(tlsCiphers string) *APICreateSer
 // TLSSniHostname SNI hostname. Optional.
 func (r *APICreateServerPoolRequest) TLSSniHostname(tlsSniHostname string) *APICreateServerPoolRequest {
 	r.tlsSniHostname = &tlsSniHostname
-	return r
-}
-// TLSCheckCert Be strict on checking TLS certs. Optional.
-func (r *APICreateServerPoolRequest) TLSCheckCert(tlsCheckCert int32) *APICreateServerPoolRequest {
-	r.tlsCheckCert = &tlsCheckCert
 	return r
 }
 // MinTLSVersion Minimum allowed TLS version on connections to this server. Optional.
@@ -252,9 +259,39 @@ func (r *APICreateServerPoolRequest) OverrideHost(overrideHost string) *APICreat
 	r.overrideHost = &overrideHost
 	return r
 }
+// BetweenBytesTimeout Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using &#x60;bereq.between_bytes_timeout&#x60;.
+func (r *APICreateServerPoolRequest) BetweenBytesTimeout(betweenBytesTimeout int32) *APICreateServerPoolRequest {
+	r.betweenBytesTimeout = &betweenBytesTimeout
+	return r
+}
+// ConnectTimeout How long to wait for a timeout in milliseconds. Optional.
+func (r *APICreateServerPoolRequest) ConnectTimeout(connectTimeout int32) *APICreateServerPoolRequest {
+	r.connectTimeout = &connectTimeout
+	return r
+}
+// FirstByteTimeout How long to wait for the first byte in milliseconds. Optional.
+func (r *APICreateServerPoolRequest) FirstByteTimeout(firstByteTimeout int32) *APICreateServerPoolRequest {
+	r.firstByteTimeout = &firstByteTimeout
+	return r
+}
+// MaxConnDefault Maximum number of connections. Optional.
+func (r *APICreateServerPoolRequest) MaxConnDefault(maxConnDefault int32) *APICreateServerPoolRequest {
+	r.maxConnDefault = &maxConnDefault
+	return r
+}
+// Quorum Percentage of capacity (&#x60;0-100&#x60;) that needs to be operationally available for a pool to be considered up.
+func (r *APICreateServerPoolRequest) Quorum(quorum int32) *APICreateServerPoolRequest {
+	r.quorum = &quorum
+	return r
+}
+// TLSCheckCert Be strict on checking TLS certs. Optional.
+func (r *APICreateServerPoolRequest) TLSCheckCert(tlsCheckCert int32) *APICreateServerPoolRequest {
+	r.tlsCheckCert = &tlsCheckCert
+	return r
+}
 
 // Execute calls the API using the request data configured.
-func (r APICreateServerPoolRequest) Execute() (*PoolResponse, *http.Response, error) {
+func (r APICreateServerPoolRequest) Execute() (*PoolResponsePost, *http.Response, error) {
 	return r.APIService.CreateServerPoolExecute(r)
 }
 
@@ -278,13 +315,13 @@ func (a *PoolAPIService) CreateServerPool(ctx context.Context, serviceID string,
 }
 
 // CreateServerPoolExecute executes the request
-//  @return PoolResponse
-func (a *PoolAPIService) CreateServerPoolExecute(r APICreateServerPoolRequest) (*PoolResponse, *http.Response, error) {
+//  @return PoolResponsePost
+func (a *PoolAPIService) CreateServerPoolExecute(r APICreateServerPoolRequest) (*PoolResponsePost, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *PoolResponse
+		localVarReturnValue  *PoolResponsePost
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PoolAPIService.CreateServerPool")
@@ -332,6 +369,29 @@ func (a *PoolAPIService) CreateServerPoolExecute(r APICreateServerPoolRequest) (
 	if r.useTLS != nil {
 		localVarFormParams.Add("use_tls", parameterToString(*r.useTLS, ""))
 	}
+	if r.createdAt != nil {
+		localVarFormParams.Add("created_at", parameterToString(*r.createdAt, ""))
+	}
+	if r.deletedAt != nil {
+		localVarFormParams.Add("deleted_at", parameterToString(*r.deletedAt, ""))
+	}
+	if r.updatedAt != nil {
+		localVarFormParams.Add("updated_at", parameterToString(*r.updatedAt, ""))
+	}
+	if r.serviceID2 != nil {
+		paramJSON, err := parameterToJSON(*r.serviceID2)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("service_id", paramJSON)
+	}
+	if r.version != nil {
+		paramJSON, err := parameterToJSON(*r.version)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("version", paramJSON)
+	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
 	}
@@ -341,26 +401,11 @@ func (a *PoolAPIService) CreateServerPoolExecute(r APICreateServerPoolRequest) (
 	if r.requestCondition != nil {
 		localVarFormParams.Add("request_condition", parameterToString(*r.requestCondition, ""))
 	}
-	if r.maxConnDefault != nil {
-		localVarFormParams.Add("max_conn_default", parameterToString(*r.maxConnDefault, ""))
-	}
-	if r.connectTimeout != nil {
-		localVarFormParams.Add("connect_timeout", parameterToString(*r.connectTimeout, ""))
-	}
-	if r.firstByteTimeout != nil {
-		localVarFormParams.Add("first_byte_timeout", parameterToString(*r.firstByteTimeout, ""))
-	}
-	if r.quorum != nil {
-		localVarFormParams.Add("quorum", parameterToString(*r.quorum, ""))
-	}
 	if r.tlsCiphers != nil {
 		localVarFormParams.Add("tls_ciphers", parameterToString(*r.tlsCiphers, ""))
 	}
 	if r.tlsSniHostname != nil {
 		localVarFormParams.Add("tls_sni_hostname", parameterToString(*r.tlsSniHostname, ""))
-	}
-	if r.tlsCheckCert != nil {
-		localVarFormParams.Add("tls_check_cert", parameterToString(*r.tlsCheckCert, ""))
 	}
 	if r.minTLSVersion != nil {
 		localVarFormParams.Add("min_tls_version", parameterToString(*r.minTLSVersion, ""))
@@ -379,6 +424,24 @@ func (a *PoolAPIService) CreateServerPoolExecute(r APICreateServerPoolRequest) (
 	}
 	if r.overrideHost != nil {
 		localVarFormParams.Add("override_host", parameterToString(*r.overrideHost, ""))
+	}
+	if r.betweenBytesTimeout != nil {
+		localVarFormParams.Add("between_bytes_timeout", parameterToString(*r.betweenBytesTimeout, ""))
+	}
+	if r.connectTimeout != nil {
+		localVarFormParams.Add("connect_timeout", parameterToString(*r.connectTimeout, ""))
+	}
+	if r.firstByteTimeout != nil {
+		localVarFormParams.Add("first_byte_timeout", parameterToString(*r.firstByteTimeout, ""))
+	}
+	if r.maxConnDefault != nil {
+		localVarFormParams.Add("max_conn_default", parameterToString(*r.maxConnDefault, ""))
+	}
+	if r.quorum != nil {
+		localVarFormParams.Add("quorum", parameterToString(*r.quorum, ""))
+	}
+	if r.tlsCheckCert != nil {
+		localVarFormParams.Add("tls_check_cert", parameterToString(*r.tlsCheckCert, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -879,22 +942,28 @@ type APIUpdateServerPoolRequest struct {
 	tlsClientKey *string
 	tlsCertHostname *string
 	useTLS *int32
+	createdAt *time.Time
+	deletedAt *time.Time
+	updatedAt *time.Time
+	serviceID2 *string
+	version *string
 	name *string
 	shield *string
 	requestCondition *string
-	maxConnDefault *int32
-	connectTimeout *int32
-	firstByteTimeout *int32
-	quorum *int32
 	tlsCiphers *string
 	tlsSniHostname *string
-	tlsCheckCert *int32
 	minTLSVersion *int32
 	maxTLSVersion *int32
 	healthcheck *string
 	comment *string
 	resourceType *string
 	overrideHost *string
+	betweenBytesTimeout *int32
+	connectTimeout *int32
+	firstByteTimeout *int32
+	maxConnDefault *int32
+	quorum *int32
+	tlsCheckCert *int32
 }
 
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
@@ -922,6 +991,31 @@ func (r *APIUpdateServerPoolRequest) UseTLS(useTLS int32) *APIUpdateServerPoolRe
 	r.useTLS = &useTLS
 	return r
 }
+// CreatedAt Date and time in ISO 8601 format.
+func (r *APIUpdateServerPoolRequest) CreatedAt(createdAt time.Time) *APIUpdateServerPoolRequest {
+	r.createdAt = &createdAt
+	return r
+}
+// DeletedAt Date and time in ISO 8601 format.
+func (r *APIUpdateServerPoolRequest) DeletedAt(deletedAt time.Time) *APIUpdateServerPoolRequest {
+	r.deletedAt = &deletedAt
+	return r
+}
+// UpdatedAt Date and time in ISO 8601 format.
+func (r *APIUpdateServerPoolRequest) UpdatedAt(updatedAt time.Time) *APIUpdateServerPoolRequest {
+	r.updatedAt = &updatedAt
+	return r
+}
+// ServiceID2 returns a pointer to a request.
+func (r *APIUpdateServerPoolRequest) ServiceID2(serviceID2 string) *APIUpdateServerPoolRequest {
+	r.serviceID2 = &serviceID2
+	return r
+}
+// Version returns a pointer to a request.
+func (r *APIUpdateServerPoolRequest) Version(version string) *APIUpdateServerPoolRequest {
+	r.version = &version
+	return r
+}
 // Name Name for the Pool.
 func (r *APIUpdateServerPoolRequest) Name(name string) *APIUpdateServerPoolRequest {
 	r.name = &name
@@ -937,26 +1031,6 @@ func (r *APIUpdateServerPoolRequest) RequestCondition(requestCondition string) *
 	r.requestCondition = &requestCondition
 	return r
 }
-// MaxConnDefault Maximum number of connections. Optional.
-func (r *APIUpdateServerPoolRequest) MaxConnDefault(maxConnDefault int32) *APIUpdateServerPoolRequest {
-	r.maxConnDefault = &maxConnDefault
-	return r
-}
-// ConnectTimeout How long to wait for a timeout in milliseconds. Optional.
-func (r *APIUpdateServerPoolRequest) ConnectTimeout(connectTimeout int32) *APIUpdateServerPoolRequest {
-	r.connectTimeout = &connectTimeout
-	return r
-}
-// FirstByteTimeout How long to wait for the first byte in milliseconds. Optional.
-func (r *APIUpdateServerPoolRequest) FirstByteTimeout(firstByteTimeout int32) *APIUpdateServerPoolRequest {
-	r.firstByteTimeout = &firstByteTimeout
-	return r
-}
-// Quorum Percentage of capacity (&#x60;0-100&#x60;) that needs to be operationally available for a pool to be considered up.
-func (r *APIUpdateServerPoolRequest) Quorum(quorum int32) *APIUpdateServerPoolRequest {
-	r.quorum = &quorum
-	return r
-}
 // TLSCiphers List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
 func (r *APIUpdateServerPoolRequest) TLSCiphers(tlsCiphers string) *APIUpdateServerPoolRequest {
 	r.tlsCiphers = &tlsCiphers
@@ -965,11 +1039,6 @@ func (r *APIUpdateServerPoolRequest) TLSCiphers(tlsCiphers string) *APIUpdateSer
 // TLSSniHostname SNI hostname. Optional.
 func (r *APIUpdateServerPoolRequest) TLSSniHostname(tlsSniHostname string) *APIUpdateServerPoolRequest {
 	r.tlsSniHostname = &tlsSniHostname
-	return r
-}
-// TLSCheckCert Be strict on checking TLS certs. Optional.
-func (r *APIUpdateServerPoolRequest) TLSCheckCert(tlsCheckCert int32) *APIUpdateServerPoolRequest {
-	r.tlsCheckCert = &tlsCheckCert
 	return r
 }
 // MinTLSVersion Minimum allowed TLS version on connections to this server. Optional.
@@ -1000,6 +1069,36 @@ func (r *APIUpdateServerPoolRequest) ResourceType(resourceType string) *APIUpdat
 // OverrideHost The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to &#x60;null&#x60; meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
 func (r *APIUpdateServerPoolRequest) OverrideHost(overrideHost string) *APIUpdateServerPoolRequest {
 	r.overrideHost = &overrideHost
+	return r
+}
+// BetweenBytesTimeout Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using &#x60;bereq.between_bytes_timeout&#x60;.
+func (r *APIUpdateServerPoolRequest) BetweenBytesTimeout(betweenBytesTimeout int32) *APIUpdateServerPoolRequest {
+	r.betweenBytesTimeout = &betweenBytesTimeout
+	return r
+}
+// ConnectTimeout How long to wait for a timeout in milliseconds. Optional.
+func (r *APIUpdateServerPoolRequest) ConnectTimeout(connectTimeout int32) *APIUpdateServerPoolRequest {
+	r.connectTimeout = &connectTimeout
+	return r
+}
+// FirstByteTimeout How long to wait for the first byte in milliseconds. Optional.
+func (r *APIUpdateServerPoolRequest) FirstByteTimeout(firstByteTimeout int32) *APIUpdateServerPoolRequest {
+	r.firstByteTimeout = &firstByteTimeout
+	return r
+}
+// MaxConnDefault Maximum number of connections. Optional.
+func (r *APIUpdateServerPoolRequest) MaxConnDefault(maxConnDefault int32) *APIUpdateServerPoolRequest {
+	r.maxConnDefault = &maxConnDefault
+	return r
+}
+// Quorum Percentage of capacity (&#x60;0-100&#x60;) that needs to be operationally available for a pool to be considered up.
+func (r *APIUpdateServerPoolRequest) Quorum(quorum int32) *APIUpdateServerPoolRequest {
+	r.quorum = &quorum
+	return r
+}
+// TLSCheckCert Be strict on checking TLS certs. Optional.
+func (r *APIUpdateServerPoolRequest) TLSCheckCert(tlsCheckCert int32) *APIUpdateServerPoolRequest {
+	r.tlsCheckCert = &tlsCheckCert
 	return r
 }
 
@@ -1085,6 +1184,29 @@ func (a *PoolAPIService) UpdateServerPoolExecute(r APIUpdateServerPoolRequest) (
 	if r.useTLS != nil {
 		localVarFormParams.Add("use_tls", parameterToString(*r.useTLS, ""))
 	}
+	if r.createdAt != nil {
+		localVarFormParams.Add("created_at", parameterToString(*r.createdAt, ""))
+	}
+	if r.deletedAt != nil {
+		localVarFormParams.Add("deleted_at", parameterToString(*r.deletedAt, ""))
+	}
+	if r.updatedAt != nil {
+		localVarFormParams.Add("updated_at", parameterToString(*r.updatedAt, ""))
+	}
+	if r.serviceID2 != nil {
+		paramJSON, err := parameterToJSON(*r.serviceID2)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("service_id", paramJSON)
+	}
+	if r.version != nil {
+		paramJSON, err := parameterToJSON(*r.version)
+		if err != nil {
+			return localVarReturnValue, nil, err
+		}
+		localVarFormParams.Add("version", paramJSON)
+	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
 	}
@@ -1094,26 +1216,11 @@ func (a *PoolAPIService) UpdateServerPoolExecute(r APIUpdateServerPoolRequest) (
 	if r.requestCondition != nil {
 		localVarFormParams.Add("request_condition", parameterToString(*r.requestCondition, ""))
 	}
-	if r.maxConnDefault != nil {
-		localVarFormParams.Add("max_conn_default", parameterToString(*r.maxConnDefault, ""))
-	}
-	if r.connectTimeout != nil {
-		localVarFormParams.Add("connect_timeout", parameterToString(*r.connectTimeout, ""))
-	}
-	if r.firstByteTimeout != nil {
-		localVarFormParams.Add("first_byte_timeout", parameterToString(*r.firstByteTimeout, ""))
-	}
-	if r.quorum != nil {
-		localVarFormParams.Add("quorum", parameterToString(*r.quorum, ""))
-	}
 	if r.tlsCiphers != nil {
 		localVarFormParams.Add("tls_ciphers", parameterToString(*r.tlsCiphers, ""))
 	}
 	if r.tlsSniHostname != nil {
 		localVarFormParams.Add("tls_sni_hostname", parameterToString(*r.tlsSniHostname, ""))
-	}
-	if r.tlsCheckCert != nil {
-		localVarFormParams.Add("tls_check_cert", parameterToString(*r.tlsCheckCert, ""))
 	}
 	if r.minTLSVersion != nil {
 		localVarFormParams.Add("min_tls_version", parameterToString(*r.minTLSVersion, ""))
@@ -1132,6 +1239,24 @@ func (a *PoolAPIService) UpdateServerPoolExecute(r APIUpdateServerPoolRequest) (
 	}
 	if r.overrideHost != nil {
 		localVarFormParams.Add("override_host", parameterToString(*r.overrideHost, ""))
+	}
+	if r.betweenBytesTimeout != nil {
+		localVarFormParams.Add("between_bytes_timeout", parameterToString(*r.betweenBytesTimeout, ""))
+	}
+	if r.connectTimeout != nil {
+		localVarFormParams.Add("connect_timeout", parameterToString(*r.connectTimeout, ""))
+	}
+	if r.firstByteTimeout != nil {
+		localVarFormParams.Add("first_byte_timeout", parameterToString(*r.firstByteTimeout, ""))
+	}
+	if r.maxConnDefault != nil {
+		localVarFormParams.Add("max_conn_default", parameterToString(*r.maxConnDefault, ""))
+	}
+	if r.quorum != nil {
+		localVarFormParams.Add("quorum", parameterToString(*r.quorum, ""))
+	}
+	if r.tlsCheckCert != nil {
+		localVarFormParams.Add("tls_check_cert", parameterToString(*r.tlsCheckCert, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

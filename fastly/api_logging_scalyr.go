@@ -126,9 +126,9 @@ type APICreateLogScalyrRequest struct {
 	versionID int32
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	region *string
 	token *string
 	projectID *string
@@ -144,11 +144,6 @@ func (r *APICreateLogScalyrRequest) Placement(placement string) *APICreateLogSca
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APICreateLogScalyrRequest) FormatVersion(formatVersion int32) *APICreateLogScalyrRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogScalyrRequest) ResponseCondition(responseCondition string) *APICreateLogScalyrRequest {
 	r.responseCondition = &responseCondition
@@ -157,6 +152,11 @@ func (r *APICreateLogScalyrRequest) ResponseCondition(responseCondition string) 
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogScalyrRequest) Format(format string) *APICreateLogScalyrRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogScalyrRequest) FormatVersion(formatVersion int32) *APICreateLogScalyrRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Region The region that log data will be sent to.
@@ -245,14 +245,14 @@ func (a *LoggingScalyrAPIService) CreateLogScalyrExecute(r APICreateLogScalyrReq
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.region != nil {
 		localVarFormParams.Add("region", parameterToString(*r.region, ""))
@@ -759,9 +759,9 @@ type APIUpdateLogScalyrRequest struct {
 	loggingScalyrName string
 	name *string
 	placement *string
-	formatVersion *int32
 	responseCondition *string
 	format *string
+	formatVersion *int32
 	region *string
 	token *string
 	projectID *string
@@ -777,11 +777,6 @@ func (r *APIUpdateLogScalyrRequest) Placement(placement string) *APIUpdateLogSca
 	r.placement = &placement
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
-func (r *APIUpdateLogScalyrRequest) FormatVersion(formatVersion int32) *APIUpdateLogScalyrRequest {
-	r.formatVersion = &formatVersion
-	return r
-}
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogScalyrRequest) ResponseCondition(responseCondition string) *APIUpdateLogScalyrRequest {
 	r.responseCondition = &responseCondition
@@ -790,6 +785,11 @@ func (r *APIUpdateLogScalyrRequest) ResponseCondition(responseCondition string) 
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogScalyrRequest) Format(format string) *APIUpdateLogScalyrRequest {
 	r.format = &format
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APIUpdateLogScalyrRequest) FormatVersion(formatVersion int32) *APIUpdateLogScalyrRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 // Region The region that log data will be sent to.
@@ -881,14 +881,14 @@ func (a *LoggingScalyrAPIService) UpdateLogScalyrExecute(r APIUpdateLogScalyrReq
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.responseCondition != nil {
 		localVarFormParams.Add("response_condition", parameterToString(*r.responseCondition, ""))
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.region != nil {
 		localVarFormParams.Add("region", parameterToString(*r.region, ""))

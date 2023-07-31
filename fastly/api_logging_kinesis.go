@@ -126,13 +126,13 @@ type APICreateLogKinesisRequest struct {
 	versionID int32
 	name *string
 	placement *LoggingPlacement
-	formatVersion *LoggingFormatVersion
 	format *string
 	topic *string
 	region *AwsRegion
 	secretKey *string
 	accessKey *string
 	iamRole *string
+	formatVersion *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -143,11 +143,6 @@ func (r *APICreateLogKinesisRequest) Name(name string) *APICreateLogKinesisReque
 // Placement returns a pointer to a request.
 func (r *APICreateLogKinesisRequest) Placement(placement LoggingPlacement) *APICreateLogKinesisRequest {
 	r.placement = &placement
-	return r
-}
-// FormatVersion returns a pointer to a request.
-func (r *APICreateLogKinesisRequest) FormatVersion(formatVersion LoggingFormatVersion) *APICreateLogKinesisRequest {
-	r.formatVersion = &formatVersion
 	return r
 }
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Kinesis can ingest.
@@ -178,6 +173,11 @@ func (r *APICreateLogKinesisRequest) AccessKey(accessKey string) *APICreateLogKi
 // IamRole The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if &#x60;access_key&#x60; and &#x60;secret_key&#x60; are provided.
 func (r *APICreateLogKinesisRequest) IamRole(iamRole string) *APICreateLogKinesisRequest {
 	r.iamRole = &iamRole
+	return r
+}
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+func (r *APICreateLogKinesisRequest) FormatVersion(formatVersion int32) *APICreateLogKinesisRequest {
+	r.formatVersion = &formatVersion
 	return r
 }
 
@@ -251,9 +251,6 @@ func (a *LoggingKinesisAPIService) CreateLogKinesisExecute(r APICreateLogKinesis
 	if r.placement != nil {
 		localVarFormParams.Add("placement", parameterToString(*r.placement, ""))
 	}
-	if r.formatVersion != nil {
-		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
-	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
 	}
@@ -271,6 +268,9 @@ func (a *LoggingKinesisAPIService) CreateLogKinesisExecute(r APICreateLogKinesis
 	}
 	if r.iamRole != nil {
 		localVarFormParams.Add("iam_role", parameterToString(*r.iamRole, ""))
+	}
+	if r.formatVersion != nil {
+		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
