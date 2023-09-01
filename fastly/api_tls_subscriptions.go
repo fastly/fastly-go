@@ -696,7 +696,7 @@ type APIGetTLSSubRequest struct {
 	include *string
 }
 
-// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60; and &#x60;tls_authorizations.globalsign_email_challenge&#x60;. 
+// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, and &#x60;tls_authorizations.self_managed_http_challenge&#x60;. 
 func (r *APIGetTLSSubRequest) Include(include string) *APIGetTLSSubRequest {
 	r.include = &include
 	return r
@@ -859,7 +859,7 @@ func (r *APIListTLSSubsRequest) FilterHasActiveOrder(filterHasActiveOrder bool) 
 	r.filterHasActiveOrder = &filterHasActiveOrder
 	return r
 }
-// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60; and &#x60;tls_authorizations.globalsign_email_challenge&#x60;. 
+// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, and &#x60;tls_authorizations.self_managed_http_challenge&#x60;. 
 func (r *APIListTLSSubsRequest) Include(include string) *APIListTLSSubsRequest {
 	r.include = &include
 	return r

@@ -105,7 +105,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "fastly-go/v1.0.0-beta.19",
+		UserAgent:        "fastly-go/v1.0.0-beta.20",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -1835,6 +1835,36 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"LoggingNewrelicAPIService.UpdateLogNewrelic": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LoggingNewrelicotlpAPIService.CreateLogNewrelicotlp": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LoggingNewrelicotlpAPIService.DeleteLogNewrelicotlp": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LoggingNewrelicotlpAPIService.GetLogNewrelicotlp": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LoggingNewrelicotlpAPIService.ListLogNewrelicotlp": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LoggingNewrelicotlpAPIService.UpdateLogNewrelicotlp": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",

@@ -14,7 +14,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go v1.0.0-beta.19
+	github.com/fastly/fastly-go v1.0.0-beta.20
 )
 ```
 
@@ -347,6 +347,11 @@ Class | Method | HTTP request | Description
 *LoggingNewrelicAPI* | [**GetLogNewrelic**](docs/LoggingNewrelicAPI.md#getlognewrelic) | **GET** `/service/{service_id}/version/{version_id}/logging/newrelic/{logging_newrelic_name}` | Get a New Relic log endpoint
 *LoggingNewrelicAPI* | [**ListLogNewrelic**](docs/LoggingNewrelicAPI.md#listlognewrelic) | **GET** `/service/{service_id}/version/{version_id}/logging/newrelic` | List New Relic log endpoints
 *LoggingNewrelicAPI* | [**UpdateLogNewrelic**](docs/LoggingNewrelicAPI.md#updatelognewrelic) | **PUT** `/service/{service_id}/version/{version_id}/logging/newrelic/{logging_newrelic_name}` | Update a New Relic log endpoint
+*LoggingNewrelicotlpAPI* | [**CreateLogNewrelicotlp**](docs/LoggingNewrelicotlpAPI.md#createlognewrelicotlp) | **POST** `/service/{service_id}/version/{version_id}/logging/newrelicotlp` | Create a New Relic OTLP endpoint
+*LoggingNewrelicotlpAPI* | [**DeleteLogNewrelicotlp**](docs/LoggingNewrelicotlpAPI.md#deletelognewrelicotlp) | **DELETE** `/service/{service_id}/version/{version_id}/logging/newrelicotlp/{logging_newrelicotlp_name}` | Delete a New Relic OTLP endpoint
+*LoggingNewrelicotlpAPI* | [**GetLogNewrelicotlp**](docs/LoggingNewrelicotlpAPI.md#getlognewrelicotlp) | **GET** `/service/{service_id}/version/{version_id}/logging/newrelicotlp/{logging_newrelicotlp_name}` | Get a New Relic OTLP endpoint
+*LoggingNewrelicotlpAPI* | [**ListLogNewrelicotlp**](docs/LoggingNewrelicotlpAPI.md#listlognewrelicotlp) | **GET** `/service/{service_id}/version/{version_id}/logging/newrelicotlp` | List New Relic OTLP endpoints
+*LoggingNewrelicotlpAPI* | [**UpdateLogNewrelicotlp**](docs/LoggingNewrelicotlpAPI.md#updatelognewrelicotlp) | **PUT** `/service/{service_id}/version/{version_id}/logging/newrelicotlp/{logging_newrelicotlp_name}` | Update a New Relic log endpoint
 *LoggingOpenstackAPI* | [**CreateLogOpenstack**](docs/LoggingOpenstackAPI.md#createlogopenstack) | **POST** `/service/{service_id}/version/{version_id}/logging/openstack` | Create an OpenStack log endpoint
 *LoggingOpenstackAPI* | [**DeleteLogOpenstack**](docs/LoggingOpenstackAPI.md#deletelogopenstack) | **DELETE** `/service/{service_id}/version/{version_id}/logging/openstack/{logging_openstack_name}` | Delete an OpenStack log endpoint
 *LoggingOpenstackAPI* | [**GetLogOpenstack**](docs/LoggingOpenstackAPI.md#getlogopenstack) | **GET** `/service/{service_id}/version/{version_id}/logging/openstack/{logging_openstack_name}` | Get an OpenStack log endpoint
@@ -441,7 +446,7 @@ Class | Method | HTTP request | Description
 *SecretStoreAPI* | [**ClientKey**](docs/SecretStoreAPI.md#clientkey) | **POST** `/resources/stores/secret/client-key` | Create new client key
 *SecretStoreAPI* | [**CreateSecretStore**](docs/SecretStoreAPI.md#createsecretstore) | **POST** `/resources/stores/secret` | Create new secret store
 *SecretStoreAPI* | [**DeleteSecretStore**](docs/SecretStoreAPI.md#deletesecretstore) | **DELETE** `/resources/stores/secret/{store_id}` | Delete secret store
-*SecretStoreAPI* | [**GetSecretStore**](docs/SecretStoreAPI.md#getsecretstore) | **GET** `/resources/stores/secret/{store_id}` | Create secret store by ID
+*SecretStoreAPI* | [**GetSecretStore**](docs/SecretStoreAPI.md#getsecretstore) | **GET** `/resources/stores/secret/{store_id}` | Get secret store by ID
 *SecretStoreAPI* | [**GetSecretStores**](docs/SecretStoreAPI.md#getsecretstores) | **GET** `/resources/stores/secret` | Get all secret stores
 *SecretStoreAPI* | [**SigningKey**](docs/SecretStoreAPI.md#signingkey) | **GET** `/resources/stores/secret/signing-key` | Get public key
 *SecretStoreItemAPI* | [**CreateSecret**](docs/SecretStoreItemAPI.md#createsecret) | **POST** `/resources/stores/secret/{store_id}/secrets` | Create a new secret in a store.

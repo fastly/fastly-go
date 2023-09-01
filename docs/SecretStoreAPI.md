@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**ClientKey**](SecretStoreAPI.md#ClientKey) | **POST** `/resources/stores/secret/client-key` | Create new client key
 [**CreateSecretStore**](SecretStoreAPI.md#CreateSecretStore) | **POST** `/resources/stores/secret` | Create new secret store
 [**DeleteSecretStore**](SecretStoreAPI.md#DeleteSecretStore) | **DELETE** `/resources/stores/secret/{store_id}` | Delete secret store
-[**GetSecretStore**](SecretStoreAPI.md#GetSecretStore) | **GET** `/resources/stores/secret/{store_id}` | Create secret store by ID
+[**GetSecretStore**](SecretStoreAPI.md#GetSecretStore) | **GET** `/resources/stores/secret/{store_id}` | Get secret store by ID
 [**GetSecretStores**](SecretStoreAPI.md#GetSecretStores) | **GET** `/resources/stores/secret` | Get all secret stores
 [**SigningKey**](SecretStoreAPI.md#SigningKey) | **GET** `/resources/stores/secret/signing-key` | Get public key
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ## GetSecretStore
 
-Create secret store by ID
+Get secret store by ID
 
 
 

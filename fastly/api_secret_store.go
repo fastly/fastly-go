@@ -74,7 +74,7 @@ type SecretStoreAPI interface {
 	DeleteSecretStoreExecute(r APIDeleteSecretStoreRequest) (*http.Response, error)
 
 	/*
-	GetSecretStore Create secret store by ID
+	GetSecretStore Get secret store by ID
 
 	Get a secret store by ID.
 
@@ -525,7 +525,7 @@ func (r APIGetSecretStoreRequest) Execute() (*SecretStoreResponse, *http.Respons
 }
 
 /*
-GetSecretStore Create secret store by ID
+GetSecretStore Get secret store by ID
 
 Get a secret store by ID.
 

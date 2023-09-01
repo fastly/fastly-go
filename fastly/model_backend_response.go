@@ -58,6 +58,8 @@ type BackendResponse struct {
 	Port *int32 `json:"port,omitempty"`
 	// Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests.
 	RequestCondition *string `json:"request_condition,omitempty"`
+	// Value that when shared across backends will enable those backends to share the same health check.
+	ShareKey NullableString `json:"share_key,omitempty"`
 	// Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
 	Shield NullableString `json:"shield,omitempty"`
 	// CA certificate attached to origin.
@@ -825,6 +827,48 @@ func (o *BackendResponse) SetRequestCondition(v string) {
 	o.RequestCondition = &v
 }
 
+// GetShareKey returns the ShareKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetShareKey() string {
+	if o == nil || o.ShareKey.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.ShareKey.Get()
+}
+
+// GetShareKeyOk returns a tuple with the ShareKey field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BackendResponse) GetShareKeyOk() (*string, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.ShareKey.Get(), o.ShareKey.IsSet()
+}
+
+// HasShareKey returns a boolean if a field has been set.
+func (o *BackendResponse) HasShareKey() bool {
+	if o != nil && o.ShareKey.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetShareKey gets a reference to the given NullableString and assigns it to the ShareKey field.
+func (o *BackendResponse) SetShareKey(v string) {
+	o.ShareKey.Set(&v)
+}
+// SetShareKeyNil sets the value for ShareKey to be an explicit nil
+func (o *BackendResponse) SetShareKeyNil() {
+	o.ShareKey.Set(nil)
+}
+
+// UnsetShareKey ensures that no value is present for ShareKey, not even an explicit nil
+func (o *BackendResponse) UnsetShareKey() {
+	o.ShareKey.Unset()
+}
+
 // GetShield returns the Shield field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackendResponse) GetShield() string {
 	if o == nil || o.Shield.Get() == nil {
@@ -1553,6 +1597,9 @@ func (o BackendResponse) MarshalJSON() ([]byte, error) {
 	if o.RequestCondition != nil {
 		toSerialize["request_condition"] = o.RequestCondition
 	}
+	if o.ShareKey.IsSet() {
+		toSerialize["share_key"] = o.ShareKey.Get()
+	}
 	if o.Shield.IsSet() {
 		toSerialize["shield"] = o.Shield.Get()
 	}
@@ -1643,6 +1690,7 @@ func (o *BackendResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "override_host")
 		delete(additionalProperties, "port")
 		delete(additionalProperties, "request_condition")
+		delete(additionalProperties, "share_key")
 		delete(additionalProperties, "shield")
 		delete(additionalProperties, "ssl_ca_cert")
 		delete(additionalProperties, "ssl_cert_hostname")

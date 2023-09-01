@@ -302,7 +302,7 @@ import (
 
 func main() {
     tlsSubscriptionID := "tlsSubscriptionId_example" // string | Alphanumeric string identifying a TLS subscription.
-    include := "tls_authorizations" // string | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`.  (optional)
+    include := "tls_authorizations" // string | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`.  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -332,7 +332,7 @@ Other parameters are passed through a pointer to a apiGetTLSSubRequest struct vi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **include** | **string** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`.  | 
+ **include** | **string** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`.  | 
 
 ### Return type
 
@@ -372,7 +372,7 @@ func main() {
     filterState := "filterState_example" // string | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`).  (optional)
     filterTLSDomainsID := "filterTLSDomainsId_example" // string | Limit the returned subscriptions to those that include the specific domain. (optional)
     filterHasActiveOrder := true // bool | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  (optional)
-    include := "tls_authorizations" // string | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`.  (optional)
+    include := "tls_authorizations" // string | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`.  (optional)
     pageNumber := int32(1) // int32 | Current page. (optional)
     pageSize := int32(20) // int32 | Number of records per page. (optional) (default to 20)
     sort := "created_at" // string | The order in which to list the results by creation date. (optional) (default to "created_at")
@@ -401,7 +401,7 @@ Other parameters are passed through a pointer to a apiListTLSSubsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filterState** | **string** | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]&#x3D;renewing`).  |  **filterTLSDomainsID** | **string** | Limit the returned subscriptions to those that include the specific domain. |  **filterHasActiveOrder** | **bool** | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  |  **include** | **string** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`.  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | The order in which to list the results by creation date. | [default to &quot;created_at&quot;]
+ **filterState** | **string** | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]&#x3D;renewing`).  |  **filterTLSDomainsID** | **string** | Limit the returned subscriptions to those that include the specific domain. |  **filterHasActiveOrder** | **bool** | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  |  **include** | **string** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`.  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | The order in which to list the results by creation date. | [default to &quot;created_at&quot;]
 
 ### Return type
 

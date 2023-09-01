@@ -1,5 +1,18 @@
 # Changelog
 
+## [v1.0.0-beta.20](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.20) (2023-09-01)
+
+**Enhancements:**
+
+- feat(backend): support share_key field.
+- feat(events): support extra created_at filters.
+- feat(logging/newrelic): add OTLP endpoints.
+- feat(tls/subscriptions): support self_managed_http_challenge field.
+
+**Documentation:**
+
+- doc(secretstore): correct description for GET endpoint.
+
 ## [v1.0.0-beta.19](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.19) (2023-07-31)
 
 **Breaking:**

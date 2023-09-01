@@ -143,6 +143,7 @@ type APICreateBackendRequest struct {
 	overrideHost *string
 	port *int32
 	requestCondition *string
+	shareKey *string
 	shield *string
 	sslCaCert *string
 	sslCertHostname *string
@@ -249,6 +250,11 @@ func (r *APICreateBackendRequest) Port(port int32) *APICreateBackendRequest {
 // RequestCondition Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any &#x60;auto_loadbalance&#x60; setting. By default, the first backend added to a service is selected for all requests.
 func (r *APICreateBackendRequest) RequestCondition(requestCondition string) *APICreateBackendRequest {
 	r.requestCondition = &requestCondition
+	return r
+}
+// ShareKey Value that when shared across backends will enable those backends to share the same health check.
+func (r *APICreateBackendRequest) ShareKey(shareKey string) *APICreateBackendRequest {
+	r.shareKey = &shareKey
 	return r
 }
 // Shield Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
@@ -427,6 +433,9 @@ func (a *BackendAPIService) CreateBackendExecute(r APICreateBackendRequest) (*Ba
 	}
 	if r.requestCondition != nil {
 		localVarFormParams.Add("request_condition", parameterToString(*r.requestCondition, ""))
+	}
+	if r.shareKey != nil {
+		localVarFormParams.Add("share_key", parameterToString(*r.shareKey, ""))
 	}
 	if r.shield != nil {
 		localVarFormParams.Add("shield", parameterToString(*r.shield, ""))
@@ -974,6 +983,7 @@ type APIUpdateBackendRequest struct {
 	overrideHost *string
 	port *int32
 	requestCondition *string
+	shareKey *string
 	shield *string
 	sslCaCert *string
 	sslCertHostname *string
@@ -1080,6 +1090,11 @@ func (r *APIUpdateBackendRequest) Port(port int32) *APIUpdateBackendRequest {
 // RequestCondition Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any &#x60;auto_loadbalance&#x60; setting. By default, the first backend added to a service is selected for all requests.
 func (r *APIUpdateBackendRequest) RequestCondition(requestCondition string) *APIUpdateBackendRequest {
 	r.requestCondition = &requestCondition
+	return r
+}
+// ShareKey Value that when shared across backends will enable those backends to share the same health check.
+func (r *APIUpdateBackendRequest) ShareKey(shareKey string) *APIUpdateBackendRequest {
+	r.shareKey = &shareKey
 	return r
 }
 // Shield Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
@@ -1261,6 +1276,9 @@ func (a *BackendAPIService) UpdateBackendExecute(r APIUpdateBackendRequest) (*Ba
 	}
 	if r.requestCondition != nil {
 		localVarFormParams.Add("request_condition", parameterToString(*r.requestCondition, ""))
+	}
+	if r.shareKey != nil {
+		localVarFormParams.Add("share_key", parameterToString(*r.shareKey, ""))
 	}
 	if r.shield != nil {
 		localVarFormParams.Add("shield", parameterToString(*r.shield, ""))

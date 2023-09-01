@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **OverrideHost** | Pointer to **NullableString** | If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL. | [optional] 
 **Port** | Pointer to **int32** | Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request. | [optional] 
 **RequestCondition** | Pointer to **string** | Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests. | [optional] 
+**ShareKey** | Pointer to **NullableString** | Value that when shared across backends will enable those backends to share the same health check. | [optional] 
 **Shield** | Pointer to **NullableString** | Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding). | [optional] 
 **SslCaCert** | Pointer to **NullableString** | CA certificate attached to origin. | [optional] 
 **SslCertHostname** | Pointer to **NullableString** | Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all. | [optional] 
@@ -635,6 +636,41 @@ SetRequestCondition sets RequestCondition field to given value.
 
 HasRequestCondition returns a boolean if a field has been set.
 
+### GetShareKey
+
+`func (o *BackendResponse) GetShareKey() string`
+
+GetShareKey returns the ShareKey field if non-nil, zero value otherwise.
+
+### GetShareKeyOk
+
+`func (o *BackendResponse) GetShareKeyOk() (*string, bool)`
+
+GetShareKeyOk returns a tuple with the ShareKey field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShareKey
+
+`func (o *BackendResponse) SetShareKey(v string)`
+
+SetShareKey sets ShareKey field to given value.
+
+### HasShareKey
+
+`func (o *BackendResponse) HasShareKey() bool`
+
+HasShareKey returns a boolean if a field has been set.
+
+### SetShareKeyNil
+
+`func (o *BackendResponse) SetShareKeyNil(b bool)`
+
+ SetShareKeyNil sets the value for ShareKey to be an explicit nil
+
+### UnsetShareKey
+`func (o *BackendResponse) UnsetShareKey()`
+
+UnsetShareKey ensures that no value is present for ShareKey, not even an explicit nil
 ### GetShield
 
 `func (o *BackendResponse) GetShield() string`

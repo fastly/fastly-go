@@ -76,7 +76,7 @@ func (r *APIListTLSDomainsRequest) FilterTLSSubscriptionsID(filterTLSSubscriptio
 	r.filterTLSSubscriptionsID = &filterTLSSubscriptionsID
 	return r
 }
-// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_activations&#x60;, &#x60;tls_certificates&#x60;, &#x60;tls_subscriptions&#x60;, &#x60;tls_subscriptions.tls_authorizations&#x60;, and &#x60;tls_authorizations.globalsign_email_challenge&#x60;. 
+// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_activations&#x60;, &#x60;tls_certificates&#x60;, &#x60;tls_subscriptions&#x60;, &#x60;tls_subscriptions.tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, and &#x60;tls_authorizations.self_managed_http_challenge&#x60;. 
 func (r *APIListTLSDomainsRequest) Include(include string) *APIListTLSDomainsRequest {
 	r.include = &include
 	return r

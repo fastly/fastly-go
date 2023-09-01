@@ -190,6 +190,8 @@ type APIClient struct {
 
 	LoggingNewrelicAPI LoggingNewrelicAPI
 
+	LoggingNewrelicotlpAPI LoggingNewrelicotlpAPI
+
 	LoggingOpenstackAPI LoggingOpenstackAPI
 
 	LoggingPapertrailAPI LoggingPapertrailAPI
@@ -375,6 +377,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingLogglyAPI = (*LoggingLogglyAPIService)(&c.common)
 	c.LoggingLogshuttleAPI = (*LoggingLogshuttleAPIService)(&c.common)
 	c.LoggingNewrelicAPI = (*LoggingNewrelicAPIService)(&c.common)
+	c.LoggingNewrelicotlpAPI = (*LoggingNewrelicotlpAPIService)(&c.common)
 	c.LoggingOpenstackAPI = (*LoggingOpenstackAPIService)(&c.common)
 	c.LoggingPapertrailAPI = (*LoggingPapertrailAPIService)(&c.common)
 	c.LoggingPubsubAPI = (*LoggingPubsubAPIService)(&c.common)
