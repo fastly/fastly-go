@@ -208,6 +208,10 @@ type APIListEventsRequest struct {
 	filterUserID *string
 	filterTokenID *string
 	filterCreatedAt *string
+	filterCreatedAtLte *string
+	filterCreatedAtLt *string
+	filterCreatedAtGte *string
+	filterCreatedAtGt *string
 	pageNumber *int32
 	pageSize *int32
 	sort *string
@@ -241,6 +245,26 @@ func (r *APIListEventsRequest) FilterTokenID(filterTokenID string) *APIListEvent
 // FilterCreatedAt Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]&#x3D;2022-01-12). 
 func (r *APIListEventsRequest) FilterCreatedAt(filterCreatedAt string) *APIListEventsRequest {
 	r.filterCreatedAt = &filterCreatedAt
+	return r
+}
+// FilterCreatedAtLte Return events on and before a date and time in ISO 8601 format. 
+func (r *APIListEventsRequest) FilterCreatedAtLte(filterCreatedAtLte string) *APIListEventsRequest {
+	r.filterCreatedAtLte = &filterCreatedAtLte
+	return r
+}
+// FilterCreatedAtLt Return events before a date and time in ISO 8601 format. 
+func (r *APIListEventsRequest) FilterCreatedAtLt(filterCreatedAtLt string) *APIListEventsRequest {
+	r.filterCreatedAtLt = &filterCreatedAtLt
+	return r
+}
+// FilterCreatedAtGte Return events on and after a date and time in ISO 8601 format. 
+func (r *APIListEventsRequest) FilterCreatedAtGte(filterCreatedAtGte string) *APIListEventsRequest {
+	r.filterCreatedAtGte = &filterCreatedAtGte
+	return r
+}
+// FilterCreatedAtGt Return events after a date and time in ISO 8601 format. 
+func (r *APIListEventsRequest) FilterCreatedAtGt(filterCreatedAtGt string) *APIListEventsRequest {
+	r.filterCreatedAtGt = &filterCreatedAtGt
 	return r
 }
 // PageNumber Current page.
@@ -317,6 +341,18 @@ func (a *EventsAPIService) ListEventsExecute(r APIListEventsRequest) (*EventsRes
 	}
 	if r.filterCreatedAt != nil {
 		localVarQueryParams.Add("filter[created_at]", parameterToString(*r.filterCreatedAt, ""))
+	}
+	if r.filterCreatedAtLte != nil {
+		localVarQueryParams.Add("filter[created_at][lte]", parameterToString(*r.filterCreatedAtLte, ""))
+	}
+	if r.filterCreatedAtLt != nil {
+		localVarQueryParams.Add("filter[created_at][lt]", parameterToString(*r.filterCreatedAtLt, ""))
+	}
+	if r.filterCreatedAtGte != nil {
+		localVarQueryParams.Add("filter[created_at][gte]", parameterToString(*r.filterCreatedAtGte, ""))
+	}
+	if r.filterCreatedAtGt != nil {
+		localVarQueryParams.Add("filter[created_at][gt]", parameterToString(*r.filterCreatedAtGt, ""))
 	}
 	if r.pageNumber != nil {
 		localVarQueryParams.Add("page[number]", parameterToString(*r.pageNumber, ""))
