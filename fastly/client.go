@@ -295,6 +295,8 @@ type APIClient struct {
 	WafRulesAPI WafRulesAPI
 
 	WafTagsAPI WafTagsAPI
+
+	WholePlatformDdosHistoricalAPI WholePlatformDdosHistoricalAPI
 }
 
 type service struct {
@@ -430,6 +432,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.WafRuleRevisionsAPI = (*WafRuleRevisionsAPIService)(&c.common)
 	c.WafRulesAPI = (*WafRulesAPIService)(&c.common)
 	c.WafTagsAPI = (*WafTagsAPIService)(&c.common)
+	c.WholePlatformDdosHistoricalAPI = (*WholePlatformDdosHistoricalAPIService)(&c.common)
 
 	return c
 }

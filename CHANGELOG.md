@@ -1,5 +1,16 @@
 # Changelog
 
+## [v1.0.0-beta.22](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.22) (2023-10-24)
+
+**Enhancements:**
+
+- feat(stats): add historical DDoS metrics.
+- feat(stats): add bot challenges.
+
+**Bug fixes:**
+
+- fix(snippets): ensure POST response's dynamic field is numerical.
+
 ## [v1.0.0-beta.21](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.21) (2023-09-01)
 
 **Enhancements:**

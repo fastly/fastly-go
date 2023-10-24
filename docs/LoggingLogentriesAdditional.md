@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Port** | Pointer to **int32** | The port number. | [optional] [default to 20000]
-**Token** | Pointer to **string** | Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)). | [optional] 
+**Token** | Pointer to **string** | Use token based authentication. | [optional] 
 **UseTLS** | Pointer to [**LoggingUseTLS**](LoggingUseTLS.md) |  | [optional] [default to LOGGINGUSETLS_no_tls]
 **Region** | Pointer to **string** | The region to which to stream logs. | [optional] 
 

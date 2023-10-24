@@ -453,6 +453,24 @@ type Results struct {
 	DdosActionClose *int32 `json:"ddos_action_close,omitempty"`
 	// The number of times the blackhole action was taken. The blackhole action quietly closes a TCP connection without sending a reset. The blackhole action quietly closes a TCP connection without notifying its peer (all TCP state is dropped).
 	DdosActionBlackhole *int32 `json:"ddos_action_blackhole,omitempty"`
+	// The number of challenge-start tokens created.
+	BotChallengeStarts *int32 `json:"bot_challenge_starts,omitempty"`
+	// The number of challenge-complete tokens that passed validation.
+	BotChallengeCompleteTokensPassed *int32 `json:"bot_challenge_complete_tokens_passed,omitempty"`
+	// The number of challenge-complete tokens that failed validation.
+	BotChallengeCompleteTokensFailed *int32 `json:"bot_challenge_complete_tokens_failed,omitempty"`
+	// The number of challenge-complete tokens checked.
+	BotChallengeCompleteTokensChecked *int32 `json:"bot_challenge_complete_tokens_checked,omitempty"`
+	// The number of challenge-complete tokens not checked because the feature was disabled.
+	BotChallengeCompleteTokensDisabled *int32 `json:"bot_challenge_complete_tokens_disabled,omitempty"`
+	// The number of challenge-complete tokens issued. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success.
+	BotChallengeCompleteTokensIssued *int32 `json:"bot_challenge_complete_tokens_issued,omitempty"`
+	// The number of challenges issued. For example, the issuance of a CAPTCHA challenge.
+	BotChallengesIssued *int32 `json:"bot_challenges_issued,omitempty"`
+	// The number of successful challenge solutions processed. For example, a correct CAPTCHA solution.
+	BotChallengesSucceeded *int32 `json:"bot_challenges_succeeded,omitempty"`
+	// The number of failed challenge solutions processed. For example, an incorrect CAPTCHA solution.
+	BotChallengesFailed *int32 `json:"bot_challenges_failed,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -7403,6 +7421,294 @@ func (o *Results) SetDdosActionBlackhole(v int32) {
 	o.DdosActionBlackhole = &v
 }
 
+// GetBotChallengeStarts returns the BotChallengeStarts field value if set, zero value otherwise.
+func (o *Results) GetBotChallengeStarts() int32 {
+	if o == nil || o.BotChallengeStarts == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotChallengeStarts
+}
+
+// GetBotChallengeStartsOk returns a tuple with the BotChallengeStarts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetBotChallengeStartsOk() (*int32, bool) {
+	if o == nil || o.BotChallengeStarts == nil {
+		return nil, false
+	}
+	return o.BotChallengeStarts, true
+}
+
+// HasBotChallengeStarts returns a boolean if a field has been set.
+func (o *Results) HasBotChallengeStarts() bool {
+	if o != nil && o.BotChallengeStarts != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotChallengeStarts gets a reference to the given int32 and assigns it to the BotChallengeStarts field.
+func (o *Results) SetBotChallengeStarts(v int32) {
+	o.BotChallengeStarts = &v
+}
+
+// GetBotChallengeCompleteTokensPassed returns the BotChallengeCompleteTokensPassed field value if set, zero value otherwise.
+func (o *Results) GetBotChallengeCompleteTokensPassed() int32 {
+	if o == nil || o.BotChallengeCompleteTokensPassed == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotChallengeCompleteTokensPassed
+}
+
+// GetBotChallengeCompleteTokensPassedOk returns a tuple with the BotChallengeCompleteTokensPassed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetBotChallengeCompleteTokensPassedOk() (*int32, bool) {
+	if o == nil || o.BotChallengeCompleteTokensPassed == nil {
+		return nil, false
+	}
+	return o.BotChallengeCompleteTokensPassed, true
+}
+
+// HasBotChallengeCompleteTokensPassed returns a boolean if a field has been set.
+func (o *Results) HasBotChallengeCompleteTokensPassed() bool {
+	if o != nil && o.BotChallengeCompleteTokensPassed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotChallengeCompleteTokensPassed gets a reference to the given int32 and assigns it to the BotChallengeCompleteTokensPassed field.
+func (o *Results) SetBotChallengeCompleteTokensPassed(v int32) {
+	o.BotChallengeCompleteTokensPassed = &v
+}
+
+// GetBotChallengeCompleteTokensFailed returns the BotChallengeCompleteTokensFailed field value if set, zero value otherwise.
+func (o *Results) GetBotChallengeCompleteTokensFailed() int32 {
+	if o == nil || o.BotChallengeCompleteTokensFailed == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotChallengeCompleteTokensFailed
+}
+
+// GetBotChallengeCompleteTokensFailedOk returns a tuple with the BotChallengeCompleteTokensFailed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetBotChallengeCompleteTokensFailedOk() (*int32, bool) {
+	if o == nil || o.BotChallengeCompleteTokensFailed == nil {
+		return nil, false
+	}
+	return o.BotChallengeCompleteTokensFailed, true
+}
+
+// HasBotChallengeCompleteTokensFailed returns a boolean if a field has been set.
+func (o *Results) HasBotChallengeCompleteTokensFailed() bool {
+	if o != nil && o.BotChallengeCompleteTokensFailed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotChallengeCompleteTokensFailed gets a reference to the given int32 and assigns it to the BotChallengeCompleteTokensFailed field.
+func (o *Results) SetBotChallengeCompleteTokensFailed(v int32) {
+	o.BotChallengeCompleteTokensFailed = &v
+}
+
+// GetBotChallengeCompleteTokensChecked returns the BotChallengeCompleteTokensChecked field value if set, zero value otherwise.
+func (o *Results) GetBotChallengeCompleteTokensChecked() int32 {
+	if o == nil || o.BotChallengeCompleteTokensChecked == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotChallengeCompleteTokensChecked
+}
+
+// GetBotChallengeCompleteTokensCheckedOk returns a tuple with the BotChallengeCompleteTokensChecked field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetBotChallengeCompleteTokensCheckedOk() (*int32, bool) {
+	if o == nil || o.BotChallengeCompleteTokensChecked == nil {
+		return nil, false
+	}
+	return o.BotChallengeCompleteTokensChecked, true
+}
+
+// HasBotChallengeCompleteTokensChecked returns a boolean if a field has been set.
+func (o *Results) HasBotChallengeCompleteTokensChecked() bool {
+	if o != nil && o.BotChallengeCompleteTokensChecked != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotChallengeCompleteTokensChecked gets a reference to the given int32 and assigns it to the BotChallengeCompleteTokensChecked field.
+func (o *Results) SetBotChallengeCompleteTokensChecked(v int32) {
+	o.BotChallengeCompleteTokensChecked = &v
+}
+
+// GetBotChallengeCompleteTokensDisabled returns the BotChallengeCompleteTokensDisabled field value if set, zero value otherwise.
+func (o *Results) GetBotChallengeCompleteTokensDisabled() int32 {
+	if o == nil || o.BotChallengeCompleteTokensDisabled == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotChallengeCompleteTokensDisabled
+}
+
+// GetBotChallengeCompleteTokensDisabledOk returns a tuple with the BotChallengeCompleteTokensDisabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetBotChallengeCompleteTokensDisabledOk() (*int32, bool) {
+	if o == nil || o.BotChallengeCompleteTokensDisabled == nil {
+		return nil, false
+	}
+	return o.BotChallengeCompleteTokensDisabled, true
+}
+
+// HasBotChallengeCompleteTokensDisabled returns a boolean if a field has been set.
+func (o *Results) HasBotChallengeCompleteTokensDisabled() bool {
+	if o != nil && o.BotChallengeCompleteTokensDisabled != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotChallengeCompleteTokensDisabled gets a reference to the given int32 and assigns it to the BotChallengeCompleteTokensDisabled field.
+func (o *Results) SetBotChallengeCompleteTokensDisabled(v int32) {
+	o.BotChallengeCompleteTokensDisabled = &v
+}
+
+// GetBotChallengeCompleteTokensIssued returns the BotChallengeCompleteTokensIssued field value if set, zero value otherwise.
+func (o *Results) GetBotChallengeCompleteTokensIssued() int32 {
+	if o == nil || o.BotChallengeCompleteTokensIssued == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotChallengeCompleteTokensIssued
+}
+
+// GetBotChallengeCompleteTokensIssuedOk returns a tuple with the BotChallengeCompleteTokensIssued field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetBotChallengeCompleteTokensIssuedOk() (*int32, bool) {
+	if o == nil || o.BotChallengeCompleteTokensIssued == nil {
+		return nil, false
+	}
+	return o.BotChallengeCompleteTokensIssued, true
+}
+
+// HasBotChallengeCompleteTokensIssued returns a boolean if a field has been set.
+func (o *Results) HasBotChallengeCompleteTokensIssued() bool {
+	if o != nil && o.BotChallengeCompleteTokensIssued != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotChallengeCompleteTokensIssued gets a reference to the given int32 and assigns it to the BotChallengeCompleteTokensIssued field.
+func (o *Results) SetBotChallengeCompleteTokensIssued(v int32) {
+	o.BotChallengeCompleteTokensIssued = &v
+}
+
+// GetBotChallengesIssued returns the BotChallengesIssued field value if set, zero value otherwise.
+func (o *Results) GetBotChallengesIssued() int32 {
+	if o == nil || o.BotChallengesIssued == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotChallengesIssued
+}
+
+// GetBotChallengesIssuedOk returns a tuple with the BotChallengesIssued field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetBotChallengesIssuedOk() (*int32, bool) {
+	if o == nil || o.BotChallengesIssued == nil {
+		return nil, false
+	}
+	return o.BotChallengesIssued, true
+}
+
+// HasBotChallengesIssued returns a boolean if a field has been set.
+func (o *Results) HasBotChallengesIssued() bool {
+	if o != nil && o.BotChallengesIssued != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotChallengesIssued gets a reference to the given int32 and assigns it to the BotChallengesIssued field.
+func (o *Results) SetBotChallengesIssued(v int32) {
+	o.BotChallengesIssued = &v
+}
+
+// GetBotChallengesSucceeded returns the BotChallengesSucceeded field value if set, zero value otherwise.
+func (o *Results) GetBotChallengesSucceeded() int32 {
+	if o == nil || o.BotChallengesSucceeded == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotChallengesSucceeded
+}
+
+// GetBotChallengesSucceededOk returns a tuple with the BotChallengesSucceeded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetBotChallengesSucceededOk() (*int32, bool) {
+	if o == nil || o.BotChallengesSucceeded == nil {
+		return nil, false
+	}
+	return o.BotChallengesSucceeded, true
+}
+
+// HasBotChallengesSucceeded returns a boolean if a field has been set.
+func (o *Results) HasBotChallengesSucceeded() bool {
+	if o != nil && o.BotChallengesSucceeded != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotChallengesSucceeded gets a reference to the given int32 and assigns it to the BotChallengesSucceeded field.
+func (o *Results) SetBotChallengesSucceeded(v int32) {
+	o.BotChallengesSucceeded = &v
+}
+
+// GetBotChallengesFailed returns the BotChallengesFailed field value if set, zero value otherwise.
+func (o *Results) GetBotChallengesFailed() int32 {
+	if o == nil || o.BotChallengesFailed == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotChallengesFailed
+}
+
+// GetBotChallengesFailedOk returns a tuple with the BotChallengesFailed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetBotChallengesFailedOk() (*int32, bool) {
+	if o == nil || o.BotChallengesFailed == nil {
+		return nil, false
+	}
+	return o.BotChallengesFailed, true
+}
+
+// HasBotChallengesFailed returns a boolean if a field has been set.
+func (o *Results) HasBotChallengesFailed() bool {
+	if o != nil && o.BotChallengesFailed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotChallengesFailed gets a reference to the given int32 and assigns it to the BotChallengesFailed field.
+func (o *Results) SetBotChallengesFailed(v int32) {
+	o.BotChallengesFailed = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o Results) MarshalJSON() ([]byte, error) {
@@ -8055,6 +8361,33 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.DdosActionBlackhole != nil {
 		toSerialize["ddos_action_blackhole"] = o.DdosActionBlackhole
 	}
+	if o.BotChallengeStarts != nil {
+		toSerialize["bot_challenge_starts"] = o.BotChallengeStarts
+	}
+	if o.BotChallengeCompleteTokensPassed != nil {
+		toSerialize["bot_challenge_complete_tokens_passed"] = o.BotChallengeCompleteTokensPassed
+	}
+	if o.BotChallengeCompleteTokensFailed != nil {
+		toSerialize["bot_challenge_complete_tokens_failed"] = o.BotChallengeCompleteTokensFailed
+	}
+	if o.BotChallengeCompleteTokensChecked != nil {
+		toSerialize["bot_challenge_complete_tokens_checked"] = o.BotChallengeCompleteTokensChecked
+	}
+	if o.BotChallengeCompleteTokensDisabled != nil {
+		toSerialize["bot_challenge_complete_tokens_disabled"] = o.BotChallengeCompleteTokensDisabled
+	}
+	if o.BotChallengeCompleteTokensIssued != nil {
+		toSerialize["bot_challenge_complete_tokens_issued"] = o.BotChallengeCompleteTokensIssued
+	}
+	if o.BotChallengesIssued != nil {
+		toSerialize["bot_challenges_issued"] = o.BotChallengesIssued
+	}
+	if o.BotChallengesSucceeded != nil {
+		toSerialize["bot_challenges_succeeded"] = o.BotChallengesSucceeded
+	}
+	if o.BotChallengesFailed != nil {
+		toSerialize["bot_challenges_failed"] = o.BotChallengesFailed
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -8291,6 +8624,15 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "ddos_action_tarpit")
 		delete(additionalProperties, "ddos_action_close")
 		delete(additionalProperties, "ddos_action_blackhole")
+		delete(additionalProperties, "bot_challenge_starts")
+		delete(additionalProperties, "bot_challenge_complete_tokens_passed")
+		delete(additionalProperties, "bot_challenge_complete_tokens_failed")
+		delete(additionalProperties, "bot_challenge_complete_tokens_checked")
+		delete(additionalProperties, "bot_challenge_complete_tokens_disabled")
+		delete(additionalProperties, "bot_challenge_complete_tokens_issued")
+		delete(additionalProperties, "bot_challenges_issued")
+		delete(additionalProperties, "bot_challenges_succeeded")
+		delete(additionalProperties, "bot_challenges_failed")
 		o.AdditionalProperties = additionalProperties
 	}
 

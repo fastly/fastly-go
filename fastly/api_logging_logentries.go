@@ -180,7 +180,7 @@ func (r *APICreateLogLogentriesRequest) Port(port int32) *APICreateLogLogentries
 	r.port = &port
 	return r
 }
-// Token Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+// Token Use token based authentication.
 func (r *APICreateLogLogentriesRequest) Token(token string) *APICreateLogLogentriesRequest {
 	r.token = &token
 	return r
@@ -834,7 +834,7 @@ func (r *APIUpdateLogLogentriesRequest) Port(port int32) *APIUpdateLogLogentries
 	r.port = &port
 	return r
 }
-// Token Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+// Token Use token based authentication.
 func (r *APIUpdateLogLogentriesRequest) Token(token string) *APIUpdateLogLogentriesRequest {
 	r.token = &token
 	return r

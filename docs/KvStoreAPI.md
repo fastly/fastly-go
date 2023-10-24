@@ -4,16 +4,16 @@ All URIs are relative to *https://api.fastly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateStore**](KvStoreAPI.md#CreateStore) | **POST** `/resources/stores/kv` | Create an kv store.
-[**DeleteStore**](KvStoreAPI.md#DeleteStore) | **DELETE** `/resources/stores/kv/{store_id}` | Delete an kv store.
-[**GetStore**](KvStoreAPI.md#GetStore) | **GET** `/resources/stores/kv/{store_id}` | Describe an kv store.
-[**GetStores**](KvStoreAPI.md#GetStores) | **GET** `/resources/stores/kv` | List kv stores.
+[**CreateStore**](KvStoreAPI.md#CreateStore) | **POST** `/resources/stores/kv` | Create a KV store.
+[**DeleteStore**](KvStoreAPI.md#DeleteStore) | **DELETE** `/resources/stores/kv/{store_id}` | Delete a KV store.
+[**GetStore**](KvStoreAPI.md#GetStore) | **GET** `/resources/stores/kv/{store_id}` | Describe a KV store.
+[**GetStores**](KvStoreAPI.md#GetStores) | **GET** `/resources/stores/kv` | List KV stores.
 
 
 
 ## CreateStore
 
-Create an kv store.
+Create a KV store.
 
 
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ## DeleteStore
 
-Delete an kv store.
+Delete a KV store.
 
 
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ## GetStore
 
-Describe an kv store.
+Describe a KV store.
 
 
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ## GetStores
 
-List kv stores.
+List KV stores.
 
 
 

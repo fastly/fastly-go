@@ -14,7 +14,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go v1.0.0-beta.21
+	github.com/fastly/fastly-go v1.0.0-beta.22
 )
 ```
 
@@ -226,10 +226,10 @@ Class | Method | HTTP request | Description
 *InvitationsAPI* | [**CreateInvitation**](docs/InvitationsAPI.md#createinvitation) | **POST** `/invitations` | Create an invitation
 *InvitationsAPI* | [**DeleteInvitation**](docs/InvitationsAPI.md#deleteinvitation) | **DELETE** `/invitations/{invitation_id}` | Delete an invitation
 *InvitationsAPI* | [**ListInvitations**](docs/InvitationsAPI.md#listinvitations) | **GET** `/invitations` | List invitations
-*KvStoreAPI* | [**CreateStore**](docs/KvStoreAPI.md#createstore) | **POST** `/resources/stores/kv` | Create an kv store.
-*KvStoreAPI* | [**DeleteStore**](docs/KvStoreAPI.md#deletestore) | **DELETE** `/resources/stores/kv/{store_id}` | Delete an kv store.
-*KvStoreAPI* | [**GetStore**](docs/KvStoreAPI.md#getstore) | **GET** `/resources/stores/kv/{store_id}` | Describe an kv store.
-*KvStoreAPI* | [**GetStores**](docs/KvStoreAPI.md#getstores) | **GET** `/resources/stores/kv` | List kv stores.
+*KvStoreAPI* | [**CreateStore**](docs/KvStoreAPI.md#createstore) | **POST** `/resources/stores/kv` | Create a KV store.
+*KvStoreAPI* | [**DeleteStore**](docs/KvStoreAPI.md#deletestore) | **DELETE** `/resources/stores/kv/{store_id}` | Delete a KV store.
+*KvStoreAPI* | [**GetStore**](docs/KvStoreAPI.md#getstore) | **GET** `/resources/stores/kv/{store_id}` | Describe a KV store.
+*KvStoreAPI* | [**GetStores**](docs/KvStoreAPI.md#getstores) | **GET** `/resources/stores/kv` | List KV stores.
 *KvStoreItemAPI* | [**DeleteKeyFromStore**](docs/KvStoreItemAPI.md#deletekeyfromstore) | **DELETE** `/resources/stores/kv/{store_id}/keys/{key_name}` | Delete kv store item.
 *KvStoreItemAPI* | [**GetKeys**](docs/KvStoreItemAPI.md#getkeys) | **GET** `/resources/stores/kv/{store_id}/keys` | List kv store keys.
 *KvStoreItemAPI* | [**GetValueForKey**](docs/KvStoreItemAPI.md#getvalueforkey) | **GET** `/resources/stores/kv/{store_id}/keys/{key_name}` | Get the value of an kv store item
@@ -587,6 +587,7 @@ Class | Method | HTTP request | Description
 *WafRulesAPI* | [**GetWafRule**](docs/WafRulesAPI.md#getwafrule) | **GET** `/waf/rules/{waf_rule_id}` | Get a rule
 *WafRulesAPI* | [**ListWafRules**](docs/WafRulesAPI.md#listwafrules) | **GET** `/waf/rules` | List available WAF rules
 *WafTagsAPI* | [**ListWafTags**](docs/WafTagsAPI.md#listwaftags) | **GET** `/waf/tags` | List tags
+*WholePlatformDdosHistoricalAPI* | [**GetPlatformDdosHistorical**](docs/WholePlatformDdosHistoricalAPI.md#getplatformddoshistorical) | **GET** `/metrics/platform/ddos` | Get historical DDoS metrics for the entire Fastly platform
 
 
 ## Documentation for Utility Methods

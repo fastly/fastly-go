@@ -17,8 +17,8 @@ import (
 	"encoding/json"
 )
 
-// SnippetResponseAllOf struct for SnippetResponseAllOf
-type SnippetResponseAllOf struct {
+// SnippetResponseCommonAllOf struct for SnippetResponseCommonAllOf
+type SnippetResponseCommonAllOf struct {
 	ServiceID *string `json:"service_id,omitempty"`
 	// String representing the number identifying a version of the service.
 	Version *string `json:"version,omitempty"`
@@ -26,27 +26,27 @@ type SnippetResponseAllOf struct {
 	AdditionalProperties map[string]any
 }
 
-type _SnippetResponseAllOf SnippetResponseAllOf
+type _SnippetResponseCommonAllOf SnippetResponseCommonAllOf
 
-// NewSnippetResponseAllOf instantiates a new SnippetResponseAllOf object
+// NewSnippetResponseCommonAllOf instantiates a new SnippetResponseCommonAllOf object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSnippetResponseAllOf() *SnippetResponseAllOf {
-	this := SnippetResponseAllOf{}
+func NewSnippetResponseCommonAllOf() *SnippetResponseCommonAllOf {
+	this := SnippetResponseCommonAllOf{}
 	return &this
 }
 
-// NewSnippetResponseAllOfWithDefaults instantiates a new SnippetResponseAllOf object
+// NewSnippetResponseCommonAllOfWithDefaults instantiates a new SnippetResponseCommonAllOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewSnippetResponseAllOfWithDefaults() *SnippetResponseAllOf {
-	this := SnippetResponseAllOf{}
+func NewSnippetResponseCommonAllOfWithDefaults() *SnippetResponseCommonAllOf {
+	this := SnippetResponseCommonAllOf{}
 	return &this
 }
 
 // GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *SnippetResponseAllOf) GetServiceID() string {
+func (o *SnippetResponseCommonAllOf) GetServiceID() string {
 	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
@@ -56,7 +56,7 @@ func (o *SnippetResponseAllOf) GetServiceID() string {
 
 // GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SnippetResponseAllOf) GetServiceIDOk() (*string, bool) {
+func (o *SnippetResponseCommonAllOf) GetServiceIDOk() (*string, bool) {
 	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
@@ -64,7 +64,7 @@ func (o *SnippetResponseAllOf) GetServiceIDOk() (*string, bool) {
 }
 
 // HasServiceID returns a boolean if a field has been set.
-func (o *SnippetResponseAllOf) HasServiceID() bool {
+func (o *SnippetResponseCommonAllOf) HasServiceID() bool {
 	if o != nil && o.ServiceID != nil {
 		return true
 	}
@@ -73,12 +73,12 @@ func (o *SnippetResponseAllOf) HasServiceID() bool {
 }
 
 // SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *SnippetResponseAllOf) SetServiceID(v string) {
+func (o *SnippetResponseCommonAllOf) SetServiceID(v string) {
 	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *SnippetResponseAllOf) GetVersion() string {
+func (o *SnippetResponseCommonAllOf) GetVersion() string {
 	if o == nil || o.Version == nil {
 		var ret string
 		return ret
@@ -88,7 +88,7 @@ func (o *SnippetResponseAllOf) GetVersion() string {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SnippetResponseAllOf) GetVersionOk() (*string, bool) {
+func (o *SnippetResponseCommonAllOf) GetVersionOk() (*string, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -96,7 +96,7 @@ func (o *SnippetResponseAllOf) GetVersionOk() (*string, bool) {
 }
 
 // HasVersion returns a boolean if a field has been set.
-func (o *SnippetResponseAllOf) HasVersion() bool {
+func (o *SnippetResponseCommonAllOf) HasVersion() bool {
 	if o != nil && o.Version != nil {
 		return true
 	}
@@ -105,12 +105,12 @@ func (o *SnippetResponseAllOf) HasVersion() bool {
 }
 
 // SetVersion gets a reference to the given string and assigns it to the Version field.
-func (o *SnippetResponseAllOf) SetVersion(v string) {
+func (o *SnippetResponseCommonAllOf) SetVersion(v string) {
 	o.Version = &v
 }
 
 // GetID returns the ID field value if set, zero value otherwise.
-func (o *SnippetResponseAllOf) GetID() string {
+func (o *SnippetResponseCommonAllOf) GetID() string {
 	if o == nil || o.ID == nil {
 		var ret string
 		return ret
@@ -120,7 +120,7 @@ func (o *SnippetResponseAllOf) GetID() string {
 
 // GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SnippetResponseAllOf) GetIDOk() (*string, bool) {
+func (o *SnippetResponseCommonAllOf) GetIDOk() (*string, bool) {
 	if o == nil || o.ID == nil {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *SnippetResponseAllOf) GetIDOk() (*string, bool) {
 }
 
 // HasID returns a boolean if a field has been set.
-func (o *SnippetResponseAllOf) HasID() bool {
+func (o *SnippetResponseCommonAllOf) HasID() bool {
 	if o != nil && o.ID != nil {
 		return true
 	}
@@ -137,13 +137,13 @@ func (o *SnippetResponseAllOf) HasID() bool {
 }
 
 // SetID gets a reference to the given string and assigns it to the ID field.
-func (o *SnippetResponseAllOf) SetID(v string) {
+func (o *SnippetResponseCommonAllOf) SetID(v string) {
 	o.ID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o SnippetResponseAllOf) MarshalJSON() ([]byte, error) {
+func (o SnippetResponseCommonAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.ServiceID != nil {
 		toSerialize["service_id"] = o.ServiceID
@@ -164,11 +164,11 @@ func (o SnippetResponseAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *SnippetResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varSnippetResponseAllOf := _SnippetResponseAllOf{}
+func (o *SnippetResponseCommonAllOf) UnmarshalJSON(bytes []byte) (err error) {
+	varSnippetResponseCommonAllOf := _SnippetResponseCommonAllOf{}
 
-	if err = json.Unmarshal(bytes, &varSnippetResponseAllOf); err == nil {
-		*o = SnippetResponseAllOf(varSnippetResponseAllOf)
+	if err = json.Unmarshal(bytes, &varSnippetResponseCommonAllOf); err == nil {
+		*o = SnippetResponseCommonAllOf(varSnippetResponseCommonAllOf)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -183,48 +183,48 @@ func (o *SnippetResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableSnippetResponseAllOf is a helper abstraction for handling nullable snippetresponseallof types. 
-type NullableSnippetResponseAllOf struct {
-	value *SnippetResponseAllOf
+// NullableSnippetResponseCommonAllOf is a helper abstraction for handling nullable snippetresponsecommonallof types. 
+type NullableSnippetResponseCommonAllOf struct {
+	value *SnippetResponseCommonAllOf
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableSnippetResponseAllOf) Get() *SnippetResponseAllOf {
+func (v NullableSnippetResponseCommonAllOf) Get() *SnippetResponseCommonAllOf {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableSnippetResponseAllOf) Set(val *SnippetResponseAllOf) {
+func (v *NullableSnippetResponseCommonAllOf) Set(val *SnippetResponseCommonAllOf) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableSnippetResponseAllOf) IsSet() bool {
+func (v NullableSnippetResponseCommonAllOf) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableSnippetResponseAllOf) Unset() {
+func (v *NullableSnippetResponseCommonAllOf) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableSnippetResponseAllOf returns a pointer to a new instance of NullableSnippetResponseAllOf.
-func NewNullableSnippetResponseAllOf(val *SnippetResponseAllOf) *NullableSnippetResponseAllOf {
-	return &NullableSnippetResponseAllOf{value: val, isSet: true}
+// NewNullableSnippetResponseCommonAllOf returns a pointer to a new instance of NullableSnippetResponseCommonAllOf.
+func NewNullableSnippetResponseCommonAllOf(val *SnippetResponseCommonAllOf) *NullableSnippetResponseCommonAllOf {
+	return &NullableSnippetResponseCommonAllOf{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableSnippetResponseAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableSnippetResponseCommonAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableSnippetResponseAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableSnippetResponseCommonAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -18,8 +18,8 @@ import (
 	"time"
 )
 
-// SchemasSnippetResponse struct for SchemasSnippetResponse
-type SchemasSnippetResponse struct {
+// SnippetResponsePost struct for SnippetResponsePost
+type SnippetResponsePost struct {
 	// The name for the snippet.
 	Name *string `json:"name,omitempty"`
 	// The location in generated VCL where the snippet should be placed.
@@ -29,7 +29,7 @@ type SchemasSnippetResponse struct {
 	// Priority determines execution order. Lower numbers execute first.
 	Priority *string `json:"priority,omitempty"`
 	// Sets the snippet version.
-	Dynamic *string `json:"dynamic,omitempty"`
+	Dynamic *float32 `json:"dynamic,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -43,31 +43,31 @@ type SchemasSnippetResponse struct {
 	AdditionalProperties map[string]any
 }
 
-type _SchemasSnippetResponse SchemasSnippetResponse
+type _SnippetResponsePost SnippetResponsePost
 
-// NewSchemasSnippetResponse instantiates a new SchemasSnippetResponse object
+// NewSnippetResponsePost instantiates a new SnippetResponsePost object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSchemasSnippetResponse() *SchemasSnippetResponse {
-	this := SchemasSnippetResponse{}
+func NewSnippetResponsePost() *SnippetResponsePost {
+	this := SnippetResponsePost{}
 	var priority string = "100"
 	this.Priority = &priority
 	return &this
 }
 
-// NewSchemasSnippetResponseWithDefaults instantiates a new SchemasSnippetResponse object
+// NewSnippetResponsePostWithDefaults instantiates a new SnippetResponsePost object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewSchemasSnippetResponseWithDefaults() *SchemasSnippetResponse {
-	this := SchemasSnippetResponse{}
+func NewSnippetResponsePostWithDefaults() *SnippetResponsePost {
+	this := SnippetResponsePost{}
 	var priority string = "100"
 	this.Priority = &priority
 	return &this
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *SchemasSnippetResponse) GetName() string {
+func (o *SnippetResponsePost) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -77,7 +77,7 @@ func (o *SchemasSnippetResponse) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SchemasSnippetResponse) GetNameOk() (*string, bool) {
+func (o *SnippetResponsePost) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -85,7 +85,7 @@ func (o *SchemasSnippetResponse) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *SchemasSnippetResponse) HasName() bool {
+func (o *SnippetResponsePost) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -94,12 +94,12 @@ func (o *SchemasSnippetResponse) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *SchemasSnippetResponse) SetName(v string) {
+func (o *SnippetResponsePost) SetName(v string) {
 	o.Name = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *SchemasSnippetResponse) GetType() string {
+func (o *SnippetResponsePost) GetType() string {
 	if o == nil || o.Type == nil {
 		var ret string
 		return ret
@@ -109,7 +109,7 @@ func (o *SchemasSnippetResponse) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SchemasSnippetResponse) GetTypeOk() (*string, bool) {
+func (o *SnippetResponsePost) GetTypeOk() (*string, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -117,7 +117,7 @@ func (o *SchemasSnippetResponse) GetTypeOk() (*string, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *SchemasSnippetResponse) HasType() bool {
+func (o *SnippetResponsePost) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -126,12 +126,12 @@ func (o *SchemasSnippetResponse) HasType() bool {
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
-func (o *SchemasSnippetResponse) SetType(v string) {
+func (o *SnippetResponsePost) SetType(v string) {
 	o.Type = &v
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
-func (o *SchemasSnippetResponse) GetContent() string {
+func (o *SnippetResponsePost) GetContent() string {
 	if o == nil || o.Content == nil {
 		var ret string
 		return ret
@@ -141,7 +141,7 @@ func (o *SchemasSnippetResponse) GetContent() string {
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SchemasSnippetResponse) GetContentOk() (*string, bool) {
+func (o *SnippetResponsePost) GetContentOk() (*string, bool) {
 	if o == nil || o.Content == nil {
 		return nil, false
 	}
@@ -149,7 +149,7 @@ func (o *SchemasSnippetResponse) GetContentOk() (*string, bool) {
 }
 
 // HasContent returns a boolean if a field has been set.
-func (o *SchemasSnippetResponse) HasContent() bool {
+func (o *SnippetResponsePost) HasContent() bool {
 	if o != nil && o.Content != nil {
 		return true
 	}
@@ -158,12 +158,12 @@ func (o *SchemasSnippetResponse) HasContent() bool {
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.
-func (o *SchemasSnippetResponse) SetContent(v string) {
+func (o *SnippetResponsePost) SetContent(v string) {
 	o.Content = &v
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *SchemasSnippetResponse) GetPriority() string {
+func (o *SnippetResponsePost) GetPriority() string {
 	if o == nil || o.Priority == nil {
 		var ret string
 		return ret
@@ -173,7 +173,7 @@ func (o *SchemasSnippetResponse) GetPriority() string {
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SchemasSnippetResponse) GetPriorityOk() (*string, bool) {
+func (o *SnippetResponsePost) GetPriorityOk() (*string, bool) {
 	if o == nil || o.Priority == nil {
 		return nil, false
 	}
@@ -181,7 +181,7 @@ func (o *SchemasSnippetResponse) GetPriorityOk() (*string, bool) {
 }
 
 // HasPriority returns a boolean if a field has been set.
-func (o *SchemasSnippetResponse) HasPriority() bool {
+func (o *SnippetResponsePost) HasPriority() bool {
 	if o != nil && o.Priority != nil {
 		return true
 	}
@@ -190,14 +190,14 @@ func (o *SchemasSnippetResponse) HasPriority() bool {
 }
 
 // SetPriority gets a reference to the given string and assigns it to the Priority field.
-func (o *SchemasSnippetResponse) SetPriority(v string) {
+func (o *SnippetResponsePost) SetPriority(v string) {
 	o.Priority = &v
 }
 
 // GetDynamic returns the Dynamic field value if set, zero value otherwise.
-func (o *SchemasSnippetResponse) GetDynamic() string {
+func (o *SnippetResponsePost) GetDynamic() float32 {
 	if o == nil || o.Dynamic == nil {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.Dynamic
@@ -205,7 +205,7 @@ func (o *SchemasSnippetResponse) GetDynamic() string {
 
 // GetDynamicOk returns a tuple with the Dynamic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SchemasSnippetResponse) GetDynamicOk() (*string, bool) {
+func (o *SnippetResponsePost) GetDynamicOk() (*float32, bool) {
 	if o == nil || o.Dynamic == nil {
 		return nil, false
 	}
@@ -213,7 +213,7 @@ func (o *SchemasSnippetResponse) GetDynamicOk() (*string, bool) {
 }
 
 // HasDynamic returns a boolean if a field has been set.
-func (o *SchemasSnippetResponse) HasDynamic() bool {
+func (o *SnippetResponsePost) HasDynamic() bool {
 	if o != nil && o.Dynamic != nil {
 		return true
 	}
@@ -221,13 +221,13 @@ func (o *SchemasSnippetResponse) HasDynamic() bool {
 	return false
 }
 
-// SetDynamic gets a reference to the given string and assigns it to the Dynamic field.
-func (o *SchemasSnippetResponse) SetDynamic(v string) {
+// SetDynamic gets a reference to the given float32 and assigns it to the Dynamic field.
+func (o *SnippetResponsePost) SetDynamic(v float32) {
 	o.Dynamic = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SchemasSnippetResponse) GetCreatedAt() time.Time {
+func (o *SnippetResponsePost) GetCreatedAt() time.Time {
 	if o == nil || o.CreatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -238,7 +238,7 @@ func (o *SchemasSnippetResponse) GetCreatedAt() time.Time {
 // GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SchemasSnippetResponse) GetCreatedAtOk() (*time.Time, bool) {
+func (o *SnippetResponsePost) GetCreatedAtOk() (*time.Time, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -246,7 +246,7 @@ func (o *SchemasSnippetResponse) GetCreatedAtOk() (*time.Time, bool) {
 }
 
 // HasCreatedAt returns a boolean if a field has been set.
-func (o *SchemasSnippetResponse) HasCreatedAt() bool {
+func (o *SnippetResponsePost) HasCreatedAt() bool {
 	if o != nil && o.CreatedAt.IsSet() {
 		return true
 	}
@@ -255,21 +255,21 @@ func (o *SchemasSnippetResponse) HasCreatedAt() bool {
 }
 
 // SetCreatedAt gets a reference to the given NullableTime and assigns it to the CreatedAt field.
-func (o *SchemasSnippetResponse) SetCreatedAt(v time.Time) {
+func (o *SnippetResponsePost) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
-func (o *SchemasSnippetResponse) SetCreatedAtNil() {
+func (o *SnippetResponsePost) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
 }
 
 // UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-func (o *SchemasSnippetResponse) UnsetCreatedAt() {
+func (o *SnippetResponsePost) UnsetCreatedAt() {
 	o.CreatedAt.Unset()
 }
 
 // GetDeletedAt returns the DeletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SchemasSnippetResponse) GetDeletedAt() time.Time {
+func (o *SnippetResponsePost) GetDeletedAt() time.Time {
 	if o == nil || o.DeletedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -280,7 +280,7 @@ func (o *SchemasSnippetResponse) GetDeletedAt() time.Time {
 // GetDeletedAtOk returns a tuple with the DeletedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SchemasSnippetResponse) GetDeletedAtOk() (*time.Time, bool) {
+func (o *SnippetResponsePost) GetDeletedAtOk() (*time.Time, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -288,7 +288,7 @@ func (o *SchemasSnippetResponse) GetDeletedAtOk() (*time.Time, bool) {
 }
 
 // HasDeletedAt returns a boolean if a field has been set.
-func (o *SchemasSnippetResponse) HasDeletedAt() bool {
+func (o *SnippetResponsePost) HasDeletedAt() bool {
 	if o != nil && o.DeletedAt.IsSet() {
 		return true
 	}
@@ -297,21 +297,21 @@ func (o *SchemasSnippetResponse) HasDeletedAt() bool {
 }
 
 // SetDeletedAt gets a reference to the given NullableTime and assigns it to the DeletedAt field.
-func (o *SchemasSnippetResponse) SetDeletedAt(v time.Time) {
+func (o *SnippetResponsePost) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
-func (o *SchemasSnippetResponse) SetDeletedAtNil() {
+func (o *SnippetResponsePost) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
 }
 
 // UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-func (o *SchemasSnippetResponse) UnsetDeletedAt() {
+func (o *SnippetResponsePost) UnsetDeletedAt() {
 	o.DeletedAt.Unset()
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *SchemasSnippetResponse) GetUpdatedAt() time.Time {
+func (o *SnippetResponsePost) GetUpdatedAt() time.Time {
 	if o == nil || o.UpdatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -322,7 +322,7 @@ func (o *SchemasSnippetResponse) GetUpdatedAt() time.Time {
 // GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *SchemasSnippetResponse) GetUpdatedAtOk() (*time.Time, bool) {
+func (o *SnippetResponsePost) GetUpdatedAtOk() (*time.Time, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -330,7 +330,7 @@ func (o *SchemasSnippetResponse) GetUpdatedAtOk() (*time.Time, bool) {
 }
 
 // HasUpdatedAt returns a boolean if a field has been set.
-func (o *SchemasSnippetResponse) HasUpdatedAt() bool {
+func (o *SnippetResponsePost) HasUpdatedAt() bool {
 	if o != nil && o.UpdatedAt.IsSet() {
 		return true
 	}
@@ -339,21 +339,21 @@ func (o *SchemasSnippetResponse) HasUpdatedAt() bool {
 }
 
 // SetUpdatedAt gets a reference to the given NullableTime and assigns it to the UpdatedAt field.
-func (o *SchemasSnippetResponse) SetUpdatedAt(v time.Time) {
+func (o *SnippetResponsePost) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-func (o *SchemasSnippetResponse) SetUpdatedAtNil() {
+func (o *SnippetResponsePost) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
 }
 
 // UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-func (o *SchemasSnippetResponse) UnsetUpdatedAt() {
+func (o *SnippetResponsePost) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
 // GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *SchemasSnippetResponse) GetServiceID() string {
+func (o *SnippetResponsePost) GetServiceID() string {
 	if o == nil || o.ServiceID == nil {
 		var ret string
 		return ret
@@ -363,7 +363,7 @@ func (o *SchemasSnippetResponse) GetServiceID() string {
 
 // GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SchemasSnippetResponse) GetServiceIDOk() (*string, bool) {
+func (o *SnippetResponsePost) GetServiceIDOk() (*string, bool) {
 	if o == nil || o.ServiceID == nil {
 		return nil, false
 	}
@@ -371,7 +371,7 @@ func (o *SchemasSnippetResponse) GetServiceIDOk() (*string, bool) {
 }
 
 // HasServiceID returns a boolean if a field has been set.
-func (o *SchemasSnippetResponse) HasServiceID() bool {
+func (o *SnippetResponsePost) HasServiceID() bool {
 	if o != nil && o.ServiceID != nil {
 		return true
 	}
@@ -380,12 +380,12 @@ func (o *SchemasSnippetResponse) HasServiceID() bool {
 }
 
 // SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *SchemasSnippetResponse) SetServiceID(v string) {
+func (o *SnippetResponsePost) SetServiceID(v string) {
 	o.ServiceID = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
-func (o *SchemasSnippetResponse) GetVersion() string {
+func (o *SnippetResponsePost) GetVersion() string {
 	if o == nil || o.Version == nil {
 		var ret string
 		return ret
@@ -395,7 +395,7 @@ func (o *SchemasSnippetResponse) GetVersion() string {
 
 // GetVersionOk returns a tuple with the Version field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SchemasSnippetResponse) GetVersionOk() (*string, bool) {
+func (o *SnippetResponsePost) GetVersionOk() (*string, bool) {
 	if o == nil || o.Version == nil {
 		return nil, false
 	}
@@ -403,7 +403,7 @@ func (o *SchemasSnippetResponse) GetVersionOk() (*string, bool) {
 }
 
 // HasVersion returns a boolean if a field has been set.
-func (o *SchemasSnippetResponse) HasVersion() bool {
+func (o *SnippetResponsePost) HasVersion() bool {
 	if o != nil && o.Version != nil {
 		return true
 	}
@@ -412,12 +412,12 @@ func (o *SchemasSnippetResponse) HasVersion() bool {
 }
 
 // SetVersion gets a reference to the given string and assigns it to the Version field.
-func (o *SchemasSnippetResponse) SetVersion(v string) {
+func (o *SnippetResponsePost) SetVersion(v string) {
 	o.Version = &v
 }
 
 // GetID returns the ID field value if set, zero value otherwise.
-func (o *SchemasSnippetResponse) GetID() string {
+func (o *SnippetResponsePost) GetID() string {
 	if o == nil || o.ID == nil {
 		var ret string
 		return ret
@@ -427,7 +427,7 @@ func (o *SchemasSnippetResponse) GetID() string {
 
 // GetIDOk returns a tuple with the ID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SchemasSnippetResponse) GetIDOk() (*string, bool) {
+func (o *SnippetResponsePost) GetIDOk() (*string, bool) {
 	if o == nil || o.ID == nil {
 		return nil, false
 	}
@@ -435,7 +435,7 @@ func (o *SchemasSnippetResponse) GetIDOk() (*string, bool) {
 }
 
 // HasID returns a boolean if a field has been set.
-func (o *SchemasSnippetResponse) HasID() bool {
+func (o *SnippetResponsePost) HasID() bool {
 	if o != nil && o.ID != nil {
 		return true
 	}
@@ -444,13 +444,13 @@ func (o *SchemasSnippetResponse) HasID() bool {
 }
 
 // SetID gets a reference to the given string and assigns it to the ID field.
-func (o *SchemasSnippetResponse) SetID(v string) {
+func (o *SnippetResponsePost) SetID(v string) {
 	o.ID = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o SchemasSnippetResponse) MarshalJSON() ([]byte, error) {
+func (o SnippetResponsePost) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -495,11 +495,11 @@ func (o SchemasSnippetResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *SchemasSnippetResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varSchemasSnippetResponse := _SchemasSnippetResponse{}
+func (o *SnippetResponsePost) UnmarshalJSON(bytes []byte) (err error) {
+	varSnippetResponsePost := _SnippetResponsePost{}
 
-	if err = json.Unmarshal(bytes, &varSchemasSnippetResponse); err == nil {
-		*o = SchemasSnippetResponse(varSchemasSnippetResponse)
+	if err = json.Unmarshal(bytes, &varSnippetResponsePost); err == nil {
+		*o = SnippetResponsePost(varSnippetResponsePost)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -522,48 +522,48 @@ func (o *SchemasSnippetResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableSchemasSnippetResponse is a helper abstraction for handling nullable schemassnippetresponse types. 
-type NullableSchemasSnippetResponse struct {
-	value *SchemasSnippetResponse
+// NullableSnippetResponsePost is a helper abstraction for handling nullable snippetresponsepost types. 
+type NullableSnippetResponsePost struct {
+	value *SnippetResponsePost
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableSchemasSnippetResponse) Get() *SchemasSnippetResponse {
+func (v NullableSnippetResponsePost) Get() *SnippetResponsePost {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableSchemasSnippetResponse) Set(val *SchemasSnippetResponse) {
+func (v *NullableSnippetResponsePost) Set(val *SnippetResponsePost) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableSchemasSnippetResponse) IsSet() bool {
+func (v NullableSnippetResponsePost) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableSchemasSnippetResponse) Unset() {
+func (v *NullableSnippetResponsePost) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableSchemasSnippetResponse returns a pointer to a new instance of NullableSchemasSnippetResponse.
-func NewNullableSchemasSnippetResponse(val *SchemasSnippetResponse) *NullableSchemasSnippetResponse {
-	return &NullableSchemasSnippetResponse{value: val, isSet: true}
+// NewNullableSnippetResponsePost returns a pointer to a new instance of NullableSnippetResponsePost.
+func NewNullableSnippetResponsePost(val *SnippetResponsePost) *NullableSnippetResponsePost {
+	return &NullableSnippetResponsePost{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableSchemasSnippetResponse) MarshalJSON() ([]byte, error) {
+func (v NullableSnippetResponsePost) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableSchemasSnippetResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableSnippetResponsePost) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

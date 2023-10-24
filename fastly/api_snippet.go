@@ -44,8 +44,8 @@ type SnippetAPI interface {
 	CreateSnippet(ctx context.Context, serviceID string, versionID int32) APICreateSnippetRequest
 
 	// CreateSnippetExecute executes the request
-	//  @return SnippetResponse
-	CreateSnippetExecute(r APICreateSnippetRequest) (*SnippetResponse, *http.Response, error)
+	//  @return SnippetResponsePost
+	CreateSnippetExecute(r APICreateSnippetRequest) (*SnippetResponsePost, *http.Response, error)
 
 	/*
 	DeleteSnippet Delete a snippet
@@ -157,20 +157,15 @@ type APICreateSnippetRequest struct {
 	serviceID string
 	versionID int32
 	name *string
-	dynamic *string
 	resourceType *string
 	content *string
 	priority *string
+	dynamic *string
 }
 
 // Name The name for the snippet.
 func (r *APICreateSnippetRequest) Name(name string) *APICreateSnippetRequest {
 	r.name = &name
-	return r
-}
-// Dynamic Sets the snippet version.
-func (r *APICreateSnippetRequest) Dynamic(dynamic string) *APICreateSnippetRequest {
-	r.dynamic = &dynamic
 	return r
 }
 // ResourceType The location in generated VCL where the snippet should be placed.
@@ -188,9 +183,14 @@ func (r *APICreateSnippetRequest) Priority(priority string) *APICreateSnippetReq
 	r.priority = &priority
 	return r
 }
+// Dynamic Sets the snippet version.
+func (r *APICreateSnippetRequest) Dynamic(dynamic string) *APICreateSnippetRequest {
+	r.dynamic = &dynamic
+	return r
+}
 
 // Execute calls the API using the request data configured.
-func (r APICreateSnippetRequest) Execute() (*SnippetResponse, *http.Response, error) {
+func (r APICreateSnippetRequest) Execute() (*SnippetResponsePost, *http.Response, error) {
 	return r.APIService.CreateSnippetExecute(r)
 }
 
@@ -214,13 +214,13 @@ func (a *SnippetAPIService) CreateSnippet(ctx context.Context, serviceID string,
 }
 
 // CreateSnippetExecute executes the request
-//  @return SnippetResponse
-func (a *SnippetAPIService) CreateSnippetExecute(r APICreateSnippetRequest) (*SnippetResponse, *http.Response, error) {
+//  @return SnippetResponsePost
+func (a *SnippetAPIService) CreateSnippetExecute(r APICreateSnippetRequest) (*SnippetResponsePost, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *SnippetResponse
+		localVarReturnValue  *SnippetResponsePost
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnippetAPIService.CreateSnippet")
@@ -256,9 +256,6 @@ func (a *SnippetAPIService) CreateSnippetExecute(r APICreateSnippetRequest) (*Sn
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
 	}
-	if r.dynamic != nil {
-		localVarFormParams.Add("dynamic", parameterToString(*r.dynamic, ""))
-	}
 	if r.resourceType != nil {
 		localVarFormParams.Add("type", parameterToString(*r.resourceType, ""))
 	}
@@ -267,6 +264,9 @@ func (a *SnippetAPIService) CreateSnippetExecute(r APICreateSnippetRequest) (*Sn
 	}
 	if r.priority != nil {
 		localVarFormParams.Add("priority", parameterToString(*r.priority, ""))
+	}
+	if r.dynamic != nil {
+		localVarFormParams.Add("dynamic", parameterToString(*r.dynamic, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -1042,20 +1042,15 @@ type APIUpdateSnippetDynamicRequest struct {
 	serviceID string
 	snippetID string
 	name *string
-	dynamic *string
 	resourceType *string
 	content *string
 	priority *string
+	dynamic *string
 }
 
 // Name The name for the snippet.
 func (r *APIUpdateSnippetDynamicRequest) Name(name string) *APIUpdateSnippetDynamicRequest {
 	r.name = &name
-	return r
-}
-// Dynamic Sets the snippet version.
-func (r *APIUpdateSnippetDynamicRequest) Dynamic(dynamic string) *APIUpdateSnippetDynamicRequest {
-	r.dynamic = &dynamic
 	return r
 }
 // ResourceType The location in generated VCL where the snippet should be placed.
@@ -1071,6 +1066,11 @@ func (r *APIUpdateSnippetDynamicRequest) Content(content string) *APIUpdateSnipp
 // Priority Priority determines execution order. Lower numbers execute first.
 func (r *APIUpdateSnippetDynamicRequest) Priority(priority string) *APIUpdateSnippetDynamicRequest {
 	r.priority = &priority
+	return r
+}
+// Dynamic Sets the snippet version.
+func (r *APIUpdateSnippetDynamicRequest) Dynamic(dynamic string) *APIUpdateSnippetDynamicRequest {
+	r.dynamic = &dynamic
 	return r
 }
 
@@ -1141,9 +1141,6 @@ func (a *SnippetAPIService) UpdateSnippetDynamicExecute(r APIUpdateSnippetDynami
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
 	}
-	if r.dynamic != nil {
-		localVarFormParams.Add("dynamic", parameterToString(*r.dynamic, ""))
-	}
 	if r.resourceType != nil {
 		localVarFormParams.Add("type", parameterToString(*r.resourceType, ""))
 	}
@@ -1152,6 +1149,9 @@ func (a *SnippetAPIService) UpdateSnippetDynamicExecute(r APIUpdateSnippetDynami
 	}
 	if r.priority != nil {
 		localVarFormParams.Add("priority", parameterToString(*r.priority, ""))
+	}
+	if r.dynamic != nil {
+		localVarFormParams.Add("dynamic", parameterToString(*r.dynamic, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

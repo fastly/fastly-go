@@ -36,20 +36,20 @@ func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     versionID := int32(56) // int32 | Integer identifying a service version.
     name := "name_example" // string | The name for the snippet. (optional)
-    dynamic := "dynamic_example" // string | Sets the snippet version. (optional)
     resourceType := "resourceType_example" // string | The location in generated VCL where the snippet should be placed. (optional)
     content := "content_example" // string | The VCL code that specifies exactly what the snippet does. (optional)
     priority := "priority_example" // string | Priority determines execution order. Lower numbers execute first. (optional) (default to "100")
+    dynamic := "dynamic_example" // string | Sets the snippet version. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SnippetAPI.CreateSnippet(ctx, serviceID, versionID).Name(name).Dynamic(dynamic).ResourceType(resourceType).Content(content).Priority(priority).Execute()
+    resp, r, err := apiClient.SnippetAPI.CreateSnippet(ctx, serviceID, versionID).Name(name).ResourceType(resourceType).Content(content).Priority(priority).Dynamic(dynamic).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SnippetAPI.CreateSnippet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateSnippet`: SnippetResponse
+    // response from `CreateSnippet`: SnippetResponsePost
     fmt.Fprintf(os.Stdout, "Response from `SnippetAPI.CreateSnippet`: %v\n", resp)
 }
 ```
@@ -70,11 +70,11 @@ Other parameters are passed through a pointer to a apiCreateSnippetRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string** | The name for the snippet. |  **dynamic** | **string** | Sets the snippet version. |  **resourceType** | **string** | The location in generated VCL where the snippet should be placed. |  **content** | **string** | The VCL code that specifies exactly what the snippet does. |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
+ **name** | **string** | The name for the snippet. |  **resourceType** | **string** | The location in generated VCL where the snippet should be placed. |  **content** | **string** | The VCL code that specifies exactly what the snippet does. |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;] **dynamic** | **string** | Sets the snippet version. | 
 
 ### Return type
 
-[**SnippetResponse**](SnippetResponse.md)
+[**SnippetResponsePost**](SnippetResponsePost.md)
 
 ### Authorization
 
@@ -461,15 +461,15 @@ func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     snippetID := "snippetId_example" // string | Alphanumeric string identifying a VCL Snippet.
     name := "name_example" // string | The name for the snippet. (optional)
-    dynamic := "dynamic_example" // string | Sets the snippet version. (optional)
     resourceType := "resourceType_example" // string | The location in generated VCL where the snippet should be placed. (optional)
     content := "content_example" // string | The VCL code that specifies exactly what the snippet does. (optional)
     priority := "priority_example" // string | Priority determines execution order. Lower numbers execute first. (optional) (default to "100")
+    dynamic := "dynamic_example" // string | Sets the snippet version. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SnippetAPI.UpdateSnippetDynamic(ctx, serviceID, snippetID).Name(name).Dynamic(dynamic).ResourceType(resourceType).Content(content).Priority(priority).Execute()
+    resp, r, err := apiClient.SnippetAPI.UpdateSnippetDynamic(ctx, serviceID, snippetID).Name(name).ResourceType(resourceType).Content(content).Priority(priority).Dynamic(dynamic).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SnippetAPI.UpdateSnippetDynamic`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -495,7 +495,7 @@ Other parameters are passed through a pointer to a apiUpdateSnippetDynamicReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string** | The name for the snippet. |  **dynamic** | **string** | Sets the snippet version. |  **resourceType** | **string** | The location in generated VCL where the snippet should be placed. |  **content** | **string** | The VCL code that specifies exactly what the snippet does. |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
+ **name** | **string** | The name for the snippet. |  **resourceType** | **string** | The location in generated VCL where the snippet should be placed. |  **content** | **string** | The VCL code that specifies exactly what the snippet does. |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;] **dynamic** | **string** | Sets the snippet version. | 
 
 ### Return type
 

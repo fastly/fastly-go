@@ -17,8 +17,8 @@ import (
 	"encoding/json"
 )
 
-// Snippet struct for Snippet
-type Snippet struct {
+// SnippetWithDynamicNumber struct for SnippetWithDynamicNumber
+type SnippetWithDynamicNumber struct {
 	// The name for the snippet.
 	Name *string `json:"name,omitempty"`
 	// The location in generated VCL where the snippet should be placed.
@@ -28,35 +28,35 @@ type Snippet struct {
 	// Priority determines execution order. Lower numbers execute first.
 	Priority *string `json:"priority,omitempty"`
 	// Sets the snippet version.
-	Dynamic *string `json:"dynamic,omitempty"`
+	Dynamic *float32 `json:"dynamic,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _Snippet Snippet
+type _SnippetWithDynamicNumber SnippetWithDynamicNumber
 
-// NewSnippet instantiates a new Snippet object
+// NewSnippetWithDynamicNumber instantiates a new SnippetWithDynamicNumber object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSnippet() *Snippet {
-	this := Snippet{}
+func NewSnippetWithDynamicNumber() *SnippetWithDynamicNumber {
+	this := SnippetWithDynamicNumber{}
 	var priority string = "100"
 	this.Priority = &priority
 	return &this
 }
 
-// NewSnippetWithDefaults instantiates a new Snippet object
+// NewSnippetWithDynamicNumberWithDefaults instantiates a new SnippetWithDynamicNumber object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewSnippetWithDefaults() *Snippet {
-	this := Snippet{}
+func NewSnippetWithDynamicNumberWithDefaults() *SnippetWithDynamicNumber {
+	this := SnippetWithDynamicNumber{}
 	var priority string = "100"
 	this.Priority = &priority
 	return &this
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *Snippet) GetName() string {
+func (o *SnippetWithDynamicNumber) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -66,7 +66,7 @@ func (o *Snippet) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Snippet) GetNameOk() (*string, bool) {
+func (o *SnippetWithDynamicNumber) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -74,7 +74,7 @@ func (o *Snippet) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *Snippet) HasName() bool {
+func (o *SnippetWithDynamicNumber) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -83,12 +83,12 @@ func (o *Snippet) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *Snippet) SetName(v string) {
+func (o *SnippetWithDynamicNumber) SetName(v string) {
 	o.Name = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *Snippet) GetType() string {
+func (o *SnippetWithDynamicNumber) GetType() string {
 	if o == nil || o.Type == nil {
 		var ret string
 		return ret
@@ -98,7 +98,7 @@ func (o *Snippet) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Snippet) GetTypeOk() (*string, bool) {
+func (o *SnippetWithDynamicNumber) GetTypeOk() (*string, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -106,7 +106,7 @@ func (o *Snippet) GetTypeOk() (*string, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *Snippet) HasType() bool {
+func (o *SnippetWithDynamicNumber) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -115,12 +115,12 @@ func (o *Snippet) HasType() bool {
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
-func (o *Snippet) SetType(v string) {
+func (o *SnippetWithDynamicNumber) SetType(v string) {
 	o.Type = &v
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
-func (o *Snippet) GetContent() string {
+func (o *SnippetWithDynamicNumber) GetContent() string {
 	if o == nil || o.Content == nil {
 		var ret string
 		return ret
@@ -130,7 +130,7 @@ func (o *Snippet) GetContent() string {
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Snippet) GetContentOk() (*string, bool) {
+func (o *SnippetWithDynamicNumber) GetContentOk() (*string, bool) {
 	if o == nil || o.Content == nil {
 		return nil, false
 	}
@@ -138,7 +138,7 @@ func (o *Snippet) GetContentOk() (*string, bool) {
 }
 
 // HasContent returns a boolean if a field has been set.
-func (o *Snippet) HasContent() bool {
+func (o *SnippetWithDynamicNumber) HasContent() bool {
 	if o != nil && o.Content != nil {
 		return true
 	}
@@ -147,12 +147,12 @@ func (o *Snippet) HasContent() bool {
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.
-func (o *Snippet) SetContent(v string) {
+func (o *SnippetWithDynamicNumber) SetContent(v string) {
 	o.Content = &v
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *Snippet) GetPriority() string {
+func (o *SnippetWithDynamicNumber) GetPriority() string {
 	if o == nil || o.Priority == nil {
 		var ret string
 		return ret
@@ -162,7 +162,7 @@ func (o *Snippet) GetPriority() string {
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Snippet) GetPriorityOk() (*string, bool) {
+func (o *SnippetWithDynamicNumber) GetPriorityOk() (*string, bool) {
 	if o == nil || o.Priority == nil {
 		return nil, false
 	}
@@ -170,7 +170,7 @@ func (o *Snippet) GetPriorityOk() (*string, bool) {
 }
 
 // HasPriority returns a boolean if a field has been set.
-func (o *Snippet) HasPriority() bool {
+func (o *SnippetWithDynamicNumber) HasPriority() bool {
 	if o != nil && o.Priority != nil {
 		return true
 	}
@@ -179,14 +179,14 @@ func (o *Snippet) HasPriority() bool {
 }
 
 // SetPriority gets a reference to the given string and assigns it to the Priority field.
-func (o *Snippet) SetPriority(v string) {
+func (o *SnippetWithDynamicNumber) SetPriority(v string) {
 	o.Priority = &v
 }
 
 // GetDynamic returns the Dynamic field value if set, zero value otherwise.
-func (o *Snippet) GetDynamic() string {
+func (o *SnippetWithDynamicNumber) GetDynamic() float32 {
 	if o == nil || o.Dynamic == nil {
-		var ret string
+		var ret float32
 		return ret
 	}
 	return *o.Dynamic
@@ -194,7 +194,7 @@ func (o *Snippet) GetDynamic() string {
 
 // GetDynamicOk returns a tuple with the Dynamic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Snippet) GetDynamicOk() (*string, bool) {
+func (o *SnippetWithDynamicNumber) GetDynamicOk() (*float32, bool) {
 	if o == nil || o.Dynamic == nil {
 		return nil, false
 	}
@@ -202,7 +202,7 @@ func (o *Snippet) GetDynamicOk() (*string, bool) {
 }
 
 // HasDynamic returns a boolean if a field has been set.
-func (o *Snippet) HasDynamic() bool {
+func (o *SnippetWithDynamicNumber) HasDynamic() bool {
 	if o != nil && o.Dynamic != nil {
 		return true
 	}
@@ -210,14 +210,14 @@ func (o *Snippet) HasDynamic() bool {
 	return false
 }
 
-// SetDynamic gets a reference to the given string and assigns it to the Dynamic field.
-func (o *Snippet) SetDynamic(v string) {
+// SetDynamic gets a reference to the given float32 and assigns it to the Dynamic field.
+func (o *SnippetWithDynamicNumber) SetDynamic(v float32) {
 	o.Dynamic = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o Snippet) MarshalJSON() ([]byte, error) {
+func (o SnippetWithDynamicNumber) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -244,11 +244,11 @@ func (o Snippet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *Snippet) UnmarshalJSON(bytes []byte) (err error) {
-	varSnippet := _Snippet{}
+func (o *SnippetWithDynamicNumber) UnmarshalJSON(bytes []byte) (err error) {
+	varSnippetWithDynamicNumber := _SnippetWithDynamicNumber{}
 
-	if err = json.Unmarshal(bytes, &varSnippet); err == nil {
-		*o = Snippet(varSnippet)
+	if err = json.Unmarshal(bytes, &varSnippetWithDynamicNumber); err == nil {
+		*o = SnippetWithDynamicNumber(varSnippetWithDynamicNumber)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -265,48 +265,48 @@ func (o *Snippet) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableSnippet is a helper abstraction for handling nullable snippet types. 
-type NullableSnippet struct {
-	value *Snippet
+// NullableSnippetWithDynamicNumber is a helper abstraction for handling nullable snippetwithdynamicnumber types. 
+type NullableSnippetWithDynamicNumber struct {
+	value *SnippetWithDynamicNumber
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableSnippet) Get() *Snippet {
+func (v NullableSnippetWithDynamicNumber) Get() *SnippetWithDynamicNumber {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableSnippet) Set(val *Snippet) {
+func (v *NullableSnippetWithDynamicNumber) Set(val *SnippetWithDynamicNumber) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableSnippet) IsSet() bool {
+func (v NullableSnippetWithDynamicNumber) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableSnippet) Unset() {
+func (v *NullableSnippetWithDynamicNumber) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableSnippet returns a pointer to a new instance of NullableSnippet.
-func NewNullableSnippet(val *Snippet) *NullableSnippet {
-	return &NullableSnippet{value: val, isSet: true}
+// NewNullableSnippetWithDynamicNumber returns a pointer to a new instance of NullableSnippetWithDynamicNumber.
+func NewNullableSnippetWithDynamicNumber(val *SnippetWithDynamicNumber) *NullableSnippetWithDynamicNumber {
+	return &NullableSnippetWithDynamicNumber{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableSnippet) MarshalJSON() ([]byte, error) {
+func (v NullableSnippetWithDynamicNumber) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableSnippet) UnmarshalJSON(src []byte) error {
+func (v *NullableSnippetWithDynamicNumber) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

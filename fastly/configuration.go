@@ -105,7 +105,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "fastly-go/v1.0.0-beta.21",
+		UserAgent:        "fastly-go/v1.0.0-beta.22",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -3275,6 +3275,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"WafTagsAPIService.ListWafTags": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"WholePlatformDdosHistoricalAPIService.GetPlatformDdosHistorical": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",

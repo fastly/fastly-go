@@ -32,9 +32,9 @@ var (
 type KvStoreAPI interface {
 
 	/*
-	CreateStore Create an kv store.
+	CreateStore Create a KV store.
 
-	Create a new kv store.
+	Create a new KV store.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @return APICreateStoreRequest
@@ -46,9 +46,9 @@ type KvStoreAPI interface {
 	CreateStoreExecute(r APICreateStoreRequest) (*StoreResponse, *http.Response, error)
 
 	/*
-	DeleteStore Delete an kv store.
+	DeleteStore Delete a KV store.
 
-	An kv store must be empty before it can be deleted.  Deleting an kv store that still contains keys will result in a `409` (Conflict).
+	A KV store must be empty before it can be deleted.  Deleting a KV store that still contains keys will result in a `409` (Conflict).
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param storeID
@@ -60,9 +60,9 @@ type KvStoreAPI interface {
 	DeleteStoreExecute(r APIDeleteStoreRequest) (*http.Response, error)
 
 	/*
-	GetStore Describe an kv store.
+	GetStore Describe a KV store.
 
-	Get an kv store by ID.
+	Get a KV store by ID.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param storeID
@@ -75,7 +75,7 @@ type KvStoreAPI interface {
 	GetStoreExecute(r APIGetStoreRequest) (*StoreResponse, *http.Response, error)
 
 	/*
-	GetStores List kv stores.
+	GetStores List KV stores.
 
 	Get all stores for a given customer.
 
@@ -117,9 +117,9 @@ func (r APICreateStoreRequest) Execute() (*StoreResponse, *http.Response, error)
 }
 
 /*
-CreateStore Create an kv store.
+CreateStore Create a KV store.
 
-Create a new kv store.
+Create a new KV store.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return APICreateStoreRequest
@@ -253,9 +253,9 @@ func (r APIDeleteStoreRequest) Execute() (*http.Response, error) {
 }
 
 /*
-DeleteStore Delete an kv store.
+DeleteStore Delete a KV store.
 
-An kv store must be empty before it can be deleted.  Deleting an kv store that still contains keys will result in a `409` (Conflict).
+A KV store must be empty before it can be deleted.  Deleting a KV store that still contains keys will result in a `409` (Conflict).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param storeID
@@ -376,9 +376,9 @@ func (r APIGetStoreRequest) Execute() (*StoreResponse, *http.Response, error) {
 }
 
 /*
-GetStore Describe an kv store.
+GetStore Describe a KV store.
 
-Get an kv store by ID.
+Get a KV store by ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param storeID
@@ -521,7 +521,7 @@ func (r APIGetStoresRequest) Execute() (*InlineResponse2003, *http.Response, err
 }
 
 /*
-GetStores List kv stores.
+GetStores List KV stores.
 
 Get all stores for a given customer.
 

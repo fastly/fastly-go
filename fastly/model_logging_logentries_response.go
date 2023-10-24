@@ -32,7 +32,7 @@ type LoggingLogentriesResponse struct {
 	FormatVersion *string `json:"format_version,omitempty"`
 	// The port number.
 	Port *int32 `json:"port,omitempty"`
-	// Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+	// Use token based authentication.
 	Token *string `json:"token,omitempty"`
 	UseTLS *LoggingUseTLS `json:"use_tls,omitempty"`
 	// The region to which to stream logs.

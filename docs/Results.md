@@ -220,6 +220,15 @@ Name | Type | Description | Notes
 **DdosActionTarpit** | Pointer to **int32** | The number of times the tarpit action was taken. The tarpit action delays writing the response to the client. | [optional] 
 **DdosActionClose** | Pointer to **int32** | The number of times the close action was taken. The close action aborts the connection as soon as possible. The close action takes effect either right after accept, right after the client hello, or right after the response was sent. | [optional] 
 **DdosActionBlackhole** | Pointer to **int32** | The number of times the blackhole action was taken. The blackhole action quietly closes a TCP connection without sending a reset. The blackhole action quietly closes a TCP connection without notifying its peer (all TCP state is dropped). | [optional] 
+**BotChallengeStarts** | Pointer to **int32** | The number of challenge-start tokens created. | [optional] 
+**BotChallengeCompleteTokensPassed** | Pointer to **int32** | The number of challenge-complete tokens that passed validation. | [optional] 
+**BotChallengeCompleteTokensFailed** | Pointer to **int32** | The number of challenge-complete tokens that failed validation. | [optional] 
+**BotChallengeCompleteTokensChecked** | Pointer to **int32** | The number of challenge-complete tokens checked. | [optional] 
+**BotChallengeCompleteTokensDisabled** | Pointer to **int32** | The number of challenge-complete tokens not checked because the feature was disabled. | [optional] 
+**BotChallengeCompleteTokensIssued** | Pointer to **int32** | The number of challenge-complete tokens issued. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success. | [optional] 
+**BotChallengesIssued** | Pointer to **int32** | The number of challenges issued. For example, the issuance of a CAPTCHA challenge. | [optional] 
+**BotChallengesSucceeded** | Pointer to **int32** | The number of successful challenge solutions processed. For example, a correct CAPTCHA solution. | [optional] 
+**BotChallengesFailed** | Pointer to **int32** | The number of failed challenge solutions processed. For example, an incorrect CAPTCHA solution. | [optional] 
 
 ## Methods
 
@@ -5649,6 +5658,231 @@ SetDdosActionBlackhole sets DdosActionBlackhole field to given value.
 `func (o *Results) HasDdosActionBlackhole() bool`
 
 HasDdosActionBlackhole returns a boolean if a field has been set.
+
+### GetBotChallengeStarts
+
+`func (o *Results) GetBotChallengeStarts() int32`
+
+GetBotChallengeStarts returns the BotChallengeStarts field if non-nil, zero value otherwise.
+
+### GetBotChallengeStartsOk
+
+`func (o *Results) GetBotChallengeStartsOk() (*int32, bool)`
+
+GetBotChallengeStartsOk returns a tuple with the BotChallengeStarts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotChallengeStarts
+
+`func (o *Results) SetBotChallengeStarts(v int32)`
+
+SetBotChallengeStarts sets BotChallengeStarts field to given value.
+
+### HasBotChallengeStarts
+
+`func (o *Results) HasBotChallengeStarts() bool`
+
+HasBotChallengeStarts returns a boolean if a field has been set.
+
+### GetBotChallengeCompleteTokensPassed
+
+`func (o *Results) GetBotChallengeCompleteTokensPassed() int32`
+
+GetBotChallengeCompleteTokensPassed returns the BotChallengeCompleteTokensPassed field if non-nil, zero value otherwise.
+
+### GetBotChallengeCompleteTokensPassedOk
+
+`func (o *Results) GetBotChallengeCompleteTokensPassedOk() (*int32, bool)`
+
+GetBotChallengeCompleteTokensPassedOk returns a tuple with the BotChallengeCompleteTokensPassed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotChallengeCompleteTokensPassed
+
+`func (o *Results) SetBotChallengeCompleteTokensPassed(v int32)`
+
+SetBotChallengeCompleteTokensPassed sets BotChallengeCompleteTokensPassed field to given value.
+
+### HasBotChallengeCompleteTokensPassed
+
+`func (o *Results) HasBotChallengeCompleteTokensPassed() bool`
+
+HasBotChallengeCompleteTokensPassed returns a boolean if a field has been set.
+
+### GetBotChallengeCompleteTokensFailed
+
+`func (o *Results) GetBotChallengeCompleteTokensFailed() int32`
+
+GetBotChallengeCompleteTokensFailed returns the BotChallengeCompleteTokensFailed field if non-nil, zero value otherwise.
+
+### GetBotChallengeCompleteTokensFailedOk
+
+`func (o *Results) GetBotChallengeCompleteTokensFailedOk() (*int32, bool)`
+
+GetBotChallengeCompleteTokensFailedOk returns a tuple with the BotChallengeCompleteTokensFailed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotChallengeCompleteTokensFailed
+
+`func (o *Results) SetBotChallengeCompleteTokensFailed(v int32)`
+
+SetBotChallengeCompleteTokensFailed sets BotChallengeCompleteTokensFailed field to given value.
+
+### HasBotChallengeCompleteTokensFailed
+
+`func (o *Results) HasBotChallengeCompleteTokensFailed() bool`
+
+HasBotChallengeCompleteTokensFailed returns a boolean if a field has been set.
+
+### GetBotChallengeCompleteTokensChecked
+
+`func (o *Results) GetBotChallengeCompleteTokensChecked() int32`
+
+GetBotChallengeCompleteTokensChecked returns the BotChallengeCompleteTokensChecked field if non-nil, zero value otherwise.
+
+### GetBotChallengeCompleteTokensCheckedOk
+
+`func (o *Results) GetBotChallengeCompleteTokensCheckedOk() (*int32, bool)`
+
+GetBotChallengeCompleteTokensCheckedOk returns a tuple with the BotChallengeCompleteTokensChecked field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotChallengeCompleteTokensChecked
+
+`func (o *Results) SetBotChallengeCompleteTokensChecked(v int32)`
+
+SetBotChallengeCompleteTokensChecked sets BotChallengeCompleteTokensChecked field to given value.
+
+### HasBotChallengeCompleteTokensChecked
+
+`func (o *Results) HasBotChallengeCompleteTokensChecked() bool`
+
+HasBotChallengeCompleteTokensChecked returns a boolean if a field has been set.
+
+### GetBotChallengeCompleteTokensDisabled
+
+`func (o *Results) GetBotChallengeCompleteTokensDisabled() int32`
+
+GetBotChallengeCompleteTokensDisabled returns the BotChallengeCompleteTokensDisabled field if non-nil, zero value otherwise.
+
+### GetBotChallengeCompleteTokensDisabledOk
+
+`func (o *Results) GetBotChallengeCompleteTokensDisabledOk() (*int32, bool)`
+
+GetBotChallengeCompleteTokensDisabledOk returns a tuple with the BotChallengeCompleteTokensDisabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotChallengeCompleteTokensDisabled
+
+`func (o *Results) SetBotChallengeCompleteTokensDisabled(v int32)`
+
+SetBotChallengeCompleteTokensDisabled sets BotChallengeCompleteTokensDisabled field to given value.
+
+### HasBotChallengeCompleteTokensDisabled
+
+`func (o *Results) HasBotChallengeCompleteTokensDisabled() bool`
+
+HasBotChallengeCompleteTokensDisabled returns a boolean if a field has been set.
+
+### GetBotChallengeCompleteTokensIssued
+
+`func (o *Results) GetBotChallengeCompleteTokensIssued() int32`
+
+GetBotChallengeCompleteTokensIssued returns the BotChallengeCompleteTokensIssued field if non-nil, zero value otherwise.
+
+### GetBotChallengeCompleteTokensIssuedOk
+
+`func (o *Results) GetBotChallengeCompleteTokensIssuedOk() (*int32, bool)`
+
+GetBotChallengeCompleteTokensIssuedOk returns a tuple with the BotChallengeCompleteTokensIssued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotChallengeCompleteTokensIssued
+
+`func (o *Results) SetBotChallengeCompleteTokensIssued(v int32)`
+
+SetBotChallengeCompleteTokensIssued sets BotChallengeCompleteTokensIssued field to given value.
+
+### HasBotChallengeCompleteTokensIssued
+
+`func (o *Results) HasBotChallengeCompleteTokensIssued() bool`
+
+HasBotChallengeCompleteTokensIssued returns a boolean if a field has been set.
+
+### GetBotChallengesIssued
+
+`func (o *Results) GetBotChallengesIssued() int32`
+
+GetBotChallengesIssued returns the BotChallengesIssued field if non-nil, zero value otherwise.
+
+### GetBotChallengesIssuedOk
+
+`func (o *Results) GetBotChallengesIssuedOk() (*int32, bool)`
+
+GetBotChallengesIssuedOk returns a tuple with the BotChallengesIssued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotChallengesIssued
+
+`func (o *Results) SetBotChallengesIssued(v int32)`
+
+SetBotChallengesIssued sets BotChallengesIssued field to given value.
+
+### HasBotChallengesIssued
+
+`func (o *Results) HasBotChallengesIssued() bool`
+
+HasBotChallengesIssued returns a boolean if a field has been set.
+
+### GetBotChallengesSucceeded
+
+`func (o *Results) GetBotChallengesSucceeded() int32`
+
+GetBotChallengesSucceeded returns the BotChallengesSucceeded field if non-nil, zero value otherwise.
+
+### GetBotChallengesSucceededOk
+
+`func (o *Results) GetBotChallengesSucceededOk() (*int32, bool)`
+
+GetBotChallengesSucceededOk returns a tuple with the BotChallengesSucceeded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotChallengesSucceeded
+
+`func (o *Results) SetBotChallengesSucceeded(v int32)`
+
+SetBotChallengesSucceeded sets BotChallengesSucceeded field to given value.
+
+### HasBotChallengesSucceeded
+
+`func (o *Results) HasBotChallengesSucceeded() bool`
+
+HasBotChallengesSucceeded returns a boolean if a field has been set.
+
+### GetBotChallengesFailed
+
+`func (o *Results) GetBotChallengesFailed() int32`
+
+GetBotChallengesFailed returns the BotChallengesFailed field if non-nil, zero value otherwise.
+
+### GetBotChallengesFailedOk
+
+`func (o *Results) GetBotChallengesFailedOk() (*int32, bool)`
+
+GetBotChallengesFailedOk returns a tuple with the BotChallengesFailed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotChallengesFailed
+
+`func (o *Results) SetBotChallengesFailed(v int32)`
+
+SetBotChallengesFailed sets BotChallengesFailed field to given value.
+
+### HasBotChallengesFailed
+
+`func (o *Results) HasBotChallengesFailed() bool`
+
+HasBotChallengesFailed returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

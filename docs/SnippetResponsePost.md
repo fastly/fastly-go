@@ -1,4 +1,4 @@
-# SchemasSnippetResponse
+# SnippetResponsePost
 
 ## Properties
 
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The location in generated VCL where the snippet should be placed. | [optional] 
 **Content** | Pointer to **string** | The VCL code that specifies exactly what the snippet does. | [optional] 
 **Priority** | Pointer to **string** | Priority determines execution order. Lower numbers execute first. | [optional] [default to "100"]
-**Dynamic** | Pointer to **string** | Sets the snippet version. | [optional] 
+**Dynamic** | Pointer to **float32** | Sets the snippet version. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -18,325 +18,325 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewSchemasSnippetResponse
+### NewSnippetResponsePost
 
-`func NewSchemasSnippetResponse() *SchemasSnippetResponse`
+`func NewSnippetResponsePost() *SnippetResponsePost`
 
-NewSchemasSnippetResponse instantiates a new SchemasSnippetResponse object
+NewSnippetResponsePost instantiates a new SnippetResponsePost object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewSchemasSnippetResponseWithDefaults
+### NewSnippetResponsePostWithDefaults
 
-`func NewSchemasSnippetResponseWithDefaults() *SchemasSnippetResponse`
+`func NewSnippetResponsePostWithDefaults() *SnippetResponsePost`
 
-NewSchemasSnippetResponseWithDefaults instantiates a new SchemasSnippetResponse object
+NewSnippetResponsePostWithDefaults instantiates a new SnippetResponsePost object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetName
 
-`func (o *SchemasSnippetResponse) GetName() string`
+`func (o *SnippetResponsePost) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *SchemasSnippetResponse) GetNameOk() (*string, bool)`
+`func (o *SnippetResponsePost) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *SchemasSnippetResponse) SetName(v string)`
+`func (o *SnippetResponsePost) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *SchemasSnippetResponse) HasName() bool`
+`func (o *SnippetResponsePost) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *SchemasSnippetResponse) GetType() string`
+`func (o *SnippetResponsePost) GetType() string`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *SchemasSnippetResponse) GetTypeOk() (*string, bool)`
+`func (o *SnippetResponsePost) GetTypeOk() (*string, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *SchemasSnippetResponse) SetType(v string)`
+`func (o *SnippetResponsePost) SetType(v string)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *SchemasSnippetResponse) HasType() bool`
+`func (o *SnippetResponsePost) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
 ### GetContent
 
-`func (o *SchemasSnippetResponse) GetContent() string`
+`func (o *SnippetResponsePost) GetContent() string`
 
 GetContent returns the Content field if non-nil, zero value otherwise.
 
 ### GetContentOk
 
-`func (o *SchemasSnippetResponse) GetContentOk() (*string, bool)`
+`func (o *SnippetResponsePost) GetContentOk() (*string, bool)`
 
 GetContentOk returns a tuple with the Content field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContent
 
-`func (o *SchemasSnippetResponse) SetContent(v string)`
+`func (o *SnippetResponsePost) SetContent(v string)`
 
 SetContent sets Content field to given value.
 
 ### HasContent
 
-`func (o *SchemasSnippetResponse) HasContent() bool`
+`func (o *SnippetResponsePost) HasContent() bool`
 
 HasContent returns a boolean if a field has been set.
 
 ### GetPriority
 
-`func (o *SchemasSnippetResponse) GetPriority() string`
+`func (o *SnippetResponsePost) GetPriority() string`
 
 GetPriority returns the Priority field if non-nil, zero value otherwise.
 
 ### GetPriorityOk
 
-`func (o *SchemasSnippetResponse) GetPriorityOk() (*string, bool)`
+`func (o *SnippetResponsePost) GetPriorityOk() (*string, bool)`
 
 GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriority
 
-`func (o *SchemasSnippetResponse) SetPriority(v string)`
+`func (o *SnippetResponsePost) SetPriority(v string)`
 
 SetPriority sets Priority field to given value.
 
 ### HasPriority
 
-`func (o *SchemasSnippetResponse) HasPriority() bool`
+`func (o *SnippetResponsePost) HasPriority() bool`
 
 HasPriority returns a boolean if a field has been set.
 
 ### GetDynamic
 
-`func (o *SchemasSnippetResponse) GetDynamic() string`
+`func (o *SnippetResponsePost) GetDynamic() float32`
 
 GetDynamic returns the Dynamic field if non-nil, zero value otherwise.
 
 ### GetDynamicOk
 
-`func (o *SchemasSnippetResponse) GetDynamicOk() (*string, bool)`
+`func (o *SnippetResponsePost) GetDynamicOk() (*float32, bool)`
 
 GetDynamicOk returns a tuple with the Dynamic field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDynamic
 
-`func (o *SchemasSnippetResponse) SetDynamic(v string)`
+`func (o *SnippetResponsePost) SetDynamic(v float32)`
 
 SetDynamic sets Dynamic field to given value.
 
 ### HasDynamic
 
-`func (o *SchemasSnippetResponse) HasDynamic() bool`
+`func (o *SnippetResponsePost) HasDynamic() bool`
 
 HasDynamic returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
-`func (o *SchemasSnippetResponse) GetCreatedAt() time.Time`
+`func (o *SnippetResponsePost) GetCreatedAt() time.Time`
 
 GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
 ### GetCreatedAtOk
 
-`func (o *SchemasSnippetResponse) GetCreatedAtOk() (*time.Time, bool)`
+`func (o *SnippetResponsePost) GetCreatedAtOk() (*time.Time, bool)`
 
 GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedAt
 
-`func (o *SchemasSnippetResponse) SetCreatedAt(v time.Time)`
+`func (o *SnippetResponsePost) SetCreatedAt(v time.Time)`
 
 SetCreatedAt sets CreatedAt field to given value.
 
 ### HasCreatedAt
 
-`func (o *SchemasSnippetResponse) HasCreatedAt() bool`
+`func (o *SnippetResponsePost) HasCreatedAt() bool`
 
 HasCreatedAt returns a boolean if a field has been set.
 
 ### SetCreatedAtNil
 
-`func (o *SchemasSnippetResponse) SetCreatedAtNil(b bool)`
+`func (o *SnippetResponsePost) SetCreatedAtNil(b bool)`
 
  SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 
 ### UnsetCreatedAt
-`func (o *SchemasSnippetResponse) UnsetCreatedAt()`
+`func (o *SnippetResponsePost) UnsetCreatedAt()`
 
 UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
 ### GetDeletedAt
 
-`func (o *SchemasSnippetResponse) GetDeletedAt() time.Time`
+`func (o *SnippetResponsePost) GetDeletedAt() time.Time`
 
 GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
 
 ### GetDeletedAtOk
 
-`func (o *SchemasSnippetResponse) GetDeletedAtOk() (*time.Time, bool)`
+`func (o *SnippetResponsePost) GetDeletedAtOk() (*time.Time, bool)`
 
 GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeletedAt
 
-`func (o *SchemasSnippetResponse) SetDeletedAt(v time.Time)`
+`func (o *SnippetResponsePost) SetDeletedAt(v time.Time)`
 
 SetDeletedAt sets DeletedAt field to given value.
 
 ### HasDeletedAt
 
-`func (o *SchemasSnippetResponse) HasDeletedAt() bool`
+`func (o *SnippetResponsePost) HasDeletedAt() bool`
 
 HasDeletedAt returns a boolean if a field has been set.
 
 ### SetDeletedAtNil
 
-`func (o *SchemasSnippetResponse) SetDeletedAtNil(b bool)`
+`func (o *SnippetResponsePost) SetDeletedAtNil(b bool)`
 
  SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 
 ### UnsetDeletedAt
-`func (o *SchemasSnippetResponse) UnsetDeletedAt()`
+`func (o *SnippetResponsePost) UnsetDeletedAt()`
 
 UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
 ### GetUpdatedAt
 
-`func (o *SchemasSnippetResponse) GetUpdatedAt() time.Time`
+`func (o *SnippetResponsePost) GetUpdatedAt() time.Time`
 
 GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
 ### GetUpdatedAtOk
 
-`func (o *SchemasSnippetResponse) GetUpdatedAtOk() (*time.Time, bool)`
+`func (o *SnippetResponsePost) GetUpdatedAtOk() (*time.Time, bool)`
 
 GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedAt
 
-`func (o *SchemasSnippetResponse) SetUpdatedAt(v time.Time)`
+`func (o *SnippetResponsePost) SetUpdatedAt(v time.Time)`
 
 SetUpdatedAt sets UpdatedAt field to given value.
 
 ### HasUpdatedAt
 
-`func (o *SchemasSnippetResponse) HasUpdatedAt() bool`
+`func (o *SnippetResponsePost) HasUpdatedAt() bool`
 
 HasUpdatedAt returns a boolean if a field has been set.
 
 ### SetUpdatedAtNil
 
-`func (o *SchemasSnippetResponse) SetUpdatedAtNil(b bool)`
+`func (o *SnippetResponsePost) SetUpdatedAtNil(b bool)`
 
  SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 
 ### UnsetUpdatedAt
-`func (o *SchemasSnippetResponse) UnsetUpdatedAt()`
+`func (o *SnippetResponsePost) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 ### GetServiceID
 
-`func (o *SchemasSnippetResponse) GetServiceID() string`
+`func (o *SnippetResponsePost) GetServiceID() string`
 
 GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
 
 ### GetServiceIDOk
 
-`func (o *SchemasSnippetResponse) GetServiceIDOk() (*string, bool)`
+`func (o *SnippetResponsePost) GetServiceIDOk() (*string, bool)`
 
 GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServiceID
 
-`func (o *SchemasSnippetResponse) SetServiceID(v string)`
+`func (o *SnippetResponsePost) SetServiceID(v string)`
 
 SetServiceID sets ServiceID field to given value.
 
 ### HasServiceID
 
-`func (o *SchemasSnippetResponse) HasServiceID() bool`
+`func (o *SnippetResponsePost) HasServiceID() bool`
 
 HasServiceID returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *SchemasSnippetResponse) GetVersion() string`
+`func (o *SnippetResponsePost) GetVersion() string`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *SchemasSnippetResponse) GetVersionOk() (*string, bool)`
+`func (o *SnippetResponsePost) GetVersionOk() (*string, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *SchemasSnippetResponse) SetVersion(v string)`
+`func (o *SnippetResponsePost) SetVersion(v string)`
 
 SetVersion sets Version field to given value.
 
 ### HasVersion
 
-`func (o *SchemasSnippetResponse) HasVersion() bool`
+`func (o *SnippetResponsePost) HasVersion() bool`
 
 HasVersion returns a boolean if a field has been set.
 
 ### GetID
 
-`func (o *SchemasSnippetResponse) GetID() string`
+`func (o *SnippetResponsePost) GetID() string`
 
 GetID returns the ID field if non-nil, zero value otherwise.
 
 ### GetIDOk
 
-`func (o *SchemasSnippetResponse) GetIDOk() (*string, bool)`
+`func (o *SnippetResponsePost) GetIDOk() (*string, bool)`
 
 GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetID
 
-`func (o *SchemasSnippetResponse) SetID(v string)`
+`func (o *SnippetResponsePost) SetID(v string)`
 
 SetID sets ID field to given value.
 
 ### HasID
 
-`func (o *SchemasSnippetResponse) HasID() bool`
+`func (o *SnippetResponsePost) HasID() bool`
 
 HasID returns a boolean if a field has been set.
 

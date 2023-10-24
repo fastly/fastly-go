@@ -17,8 +17,8 @@ import (
 	"encoding/json"
 )
 
-// Snippet struct for Snippet
-type Snippet struct {
+// SnippetCommon struct for SnippetCommon
+type SnippetCommon struct {
 	// The name for the snippet.
 	Name *string `json:"name,omitempty"`
 	// The location in generated VCL where the snippet should be placed.
@@ -27,36 +27,34 @@ type Snippet struct {
 	Content *string `json:"content,omitempty"`
 	// Priority determines execution order. Lower numbers execute first.
 	Priority *string `json:"priority,omitempty"`
-	// Sets the snippet version.
-	Dynamic *string `json:"dynamic,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _Snippet Snippet
+type _SnippetCommon SnippetCommon
 
-// NewSnippet instantiates a new Snippet object
+// NewSnippetCommon instantiates a new SnippetCommon object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSnippet() *Snippet {
-	this := Snippet{}
+func NewSnippetCommon() *SnippetCommon {
+	this := SnippetCommon{}
 	var priority string = "100"
 	this.Priority = &priority
 	return &this
 }
 
-// NewSnippetWithDefaults instantiates a new Snippet object
+// NewSnippetCommonWithDefaults instantiates a new SnippetCommon object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewSnippetWithDefaults() *Snippet {
-	this := Snippet{}
+func NewSnippetCommonWithDefaults() *SnippetCommon {
+	this := SnippetCommon{}
 	var priority string = "100"
 	this.Priority = &priority
 	return &this
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *Snippet) GetName() string {
+func (o *SnippetCommon) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -66,7 +64,7 @@ func (o *Snippet) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Snippet) GetNameOk() (*string, bool) {
+func (o *SnippetCommon) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -74,7 +72,7 @@ func (o *Snippet) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *Snippet) HasName() bool {
+func (o *SnippetCommon) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -83,12 +81,12 @@ func (o *Snippet) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *Snippet) SetName(v string) {
+func (o *SnippetCommon) SetName(v string) {
 	o.Name = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *Snippet) GetType() string {
+func (o *SnippetCommon) GetType() string {
 	if o == nil || o.Type == nil {
 		var ret string
 		return ret
@@ -98,7 +96,7 @@ func (o *Snippet) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Snippet) GetTypeOk() (*string, bool) {
+func (o *SnippetCommon) GetTypeOk() (*string, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -106,7 +104,7 @@ func (o *Snippet) GetTypeOk() (*string, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *Snippet) HasType() bool {
+func (o *SnippetCommon) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -115,12 +113,12 @@ func (o *Snippet) HasType() bool {
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
-func (o *Snippet) SetType(v string) {
+func (o *SnippetCommon) SetType(v string) {
 	o.Type = &v
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
-func (o *Snippet) GetContent() string {
+func (o *SnippetCommon) GetContent() string {
 	if o == nil || o.Content == nil {
 		var ret string
 		return ret
@@ -130,7 +128,7 @@ func (o *Snippet) GetContent() string {
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Snippet) GetContentOk() (*string, bool) {
+func (o *SnippetCommon) GetContentOk() (*string, bool) {
 	if o == nil || o.Content == nil {
 		return nil, false
 	}
@@ -138,7 +136,7 @@ func (o *Snippet) GetContentOk() (*string, bool) {
 }
 
 // HasContent returns a boolean if a field has been set.
-func (o *Snippet) HasContent() bool {
+func (o *SnippetCommon) HasContent() bool {
 	if o != nil && o.Content != nil {
 		return true
 	}
@@ -147,12 +145,12 @@ func (o *Snippet) HasContent() bool {
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.
-func (o *Snippet) SetContent(v string) {
+func (o *SnippetCommon) SetContent(v string) {
 	o.Content = &v
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
-func (o *Snippet) GetPriority() string {
+func (o *SnippetCommon) GetPriority() string {
 	if o == nil || o.Priority == nil {
 		var ret string
 		return ret
@@ -162,7 +160,7 @@ func (o *Snippet) GetPriority() string {
 
 // GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Snippet) GetPriorityOk() (*string, bool) {
+func (o *SnippetCommon) GetPriorityOk() (*string, bool) {
 	if o == nil || o.Priority == nil {
 		return nil, false
 	}
@@ -170,7 +168,7 @@ func (o *Snippet) GetPriorityOk() (*string, bool) {
 }
 
 // HasPriority returns a boolean if a field has been set.
-func (o *Snippet) HasPriority() bool {
+func (o *SnippetCommon) HasPriority() bool {
 	if o != nil && o.Priority != nil {
 		return true
 	}
@@ -179,45 +177,13 @@ func (o *Snippet) HasPriority() bool {
 }
 
 // SetPriority gets a reference to the given string and assigns it to the Priority field.
-func (o *Snippet) SetPriority(v string) {
+func (o *SnippetCommon) SetPriority(v string) {
 	o.Priority = &v
-}
-
-// GetDynamic returns the Dynamic field value if set, zero value otherwise.
-func (o *Snippet) GetDynamic() string {
-	if o == nil || o.Dynamic == nil {
-		var ret string
-		return ret
-	}
-	return *o.Dynamic
-}
-
-// GetDynamicOk returns a tuple with the Dynamic field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *Snippet) GetDynamicOk() (*string, bool) {
-	if o == nil || o.Dynamic == nil {
-		return nil, false
-	}
-	return o.Dynamic, true
-}
-
-// HasDynamic returns a boolean if a field has been set.
-func (o *Snippet) HasDynamic() bool {
-	if o != nil && o.Dynamic != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDynamic gets a reference to the given string and assigns it to the Dynamic field.
-func (o *Snippet) SetDynamic(v string) {
-	o.Dynamic = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o Snippet) MarshalJSON() ([]byte, error) {
+func (o SnippetCommon) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -231,9 +197,6 @@ func (o Snippet) MarshalJSON() ([]byte, error) {
 	if o.Priority != nil {
 		toSerialize["priority"] = o.Priority
 	}
-	if o.Dynamic != nil {
-		toSerialize["dynamic"] = o.Dynamic
-	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -244,11 +207,11 @@ func (o Snippet) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *Snippet) UnmarshalJSON(bytes []byte) (err error) {
-	varSnippet := _Snippet{}
+func (o *SnippetCommon) UnmarshalJSON(bytes []byte) (err error) {
+	varSnippetCommon := _SnippetCommon{}
 
-	if err = json.Unmarshal(bytes, &varSnippet); err == nil {
-		*o = Snippet(varSnippet)
+	if err = json.Unmarshal(bytes, &varSnippetCommon); err == nil {
+		*o = SnippetCommon(varSnippetCommon)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -258,55 +221,54 @@ func (o *Snippet) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "type")
 		delete(additionalProperties, "content")
 		delete(additionalProperties, "priority")
-		delete(additionalProperties, "dynamic")
 		o.AdditionalProperties = additionalProperties
 	}
 
 	return err
 }
 
-// NullableSnippet is a helper abstraction for handling nullable snippet types. 
-type NullableSnippet struct {
-	value *Snippet
+// NullableSnippetCommon is a helper abstraction for handling nullable snippetcommon types. 
+type NullableSnippetCommon struct {
+	value *SnippetCommon
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableSnippet) Get() *Snippet {
+func (v NullableSnippetCommon) Get() *SnippetCommon {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableSnippet) Set(val *Snippet) {
+func (v *NullableSnippetCommon) Set(val *SnippetCommon) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableSnippet) IsSet() bool {
+func (v NullableSnippetCommon) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableSnippet) Unset() {
+func (v *NullableSnippetCommon) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableSnippet returns a pointer to a new instance of NullableSnippet.
-func NewNullableSnippet(val *Snippet) *NullableSnippet {
-	return &NullableSnippet{value: val, isSet: true}
+// NewNullableSnippetCommon returns a pointer to a new instance of NullableSnippetCommon.
+func NewNullableSnippetCommon(val *SnippetCommon) *NullableSnippetCommon {
+	return &NullableSnippetCommon{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableSnippet) MarshalJSON() ([]byte, error) {
+func (v NullableSnippetCommon) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableSnippet) UnmarshalJSON(src []byte) error {
+func (v *NullableSnippetCommon) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
