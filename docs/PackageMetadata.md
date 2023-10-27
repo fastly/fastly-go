@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** | Name of the Compute@Edge package. | [optional] 
-**Description** | Pointer to **string** | Description of the Compute@Edge package. | [optional] 
+**Name** | Pointer to **string** | Name of the Compute package. | [optional] 
+**Description** | Pointer to **string** | Description of the Compute package. | [optional] 
 **Authors** | Pointer to **[]string** | A list of package authors&#39; email addresses. | [optional] 
-**Language** | Pointer to **string** | The language of the Compute@Edge package. | [optional] 
-**Size** | Pointer to **int32** | Size of the Compute@Edge package in bytes. | [optional] 
-**Hashsum** | Pointer to **string** | Hash of the Compute@Edge package. | [optional] 
-**FilesHash** | Pointer to **string** | Hash of the files within the Compute@Edge package. | [optional] 
+**Language** | Pointer to **string** | The language of the Compute package. | [optional] 
+**Size** | Pointer to **int32** | Size of the Compute package in bytes. | [optional] 
+**Hashsum** | Pointer to **string** | Hash of the Compute package. | [optional] 
+**FilesHash** | Pointer to **string** | Hash of the files within the Compute package. | [optional] 
 
 ## Methods
 

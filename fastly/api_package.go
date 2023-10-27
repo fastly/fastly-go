@@ -33,9 +33,9 @@ var (
 type PackageAPI interface {
 
 	/*
-	GetPackage Get details of the service's Compute@Edge package.
+	GetPackage Get details of the service's Compute package.
 
-	List detailed information about the Compute@Edge package for the specified service.
+	List detailed information about the Compute package for the specified service.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param serviceID Alphanumeric string identifying the service.
@@ -49,9 +49,9 @@ type PackageAPI interface {
 	GetPackageExecute(r APIGetPackageRequest) (*PackageResponse, *http.Response, error)
 
 	/*
-	PutPackage Upload a Compute@Edge package.
+	PutPackage Upload a Compute package.
 
-	Upload a Compute@Edge package associated with the specified service version.
+	Upload a Compute package associated with the specified service version.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param serviceID Alphanumeric string identifying the service.
@@ -83,9 +83,9 @@ func (r APIGetPackageRequest) Execute() (*PackageResponse, *http.Response, error
 }
 
 /*
-GetPackage Get details of the service's Compute@Edge package.
+GetPackage Get details of the service's Compute package.
 
-List detailed information about the Compute@Edge package for the specified service.
+List detailed information about the Compute package for the specified service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceID Alphanumeric string identifying the service.
@@ -233,9 +233,9 @@ func (r APIPutPackageRequest) Execute() (*PackageResponse, *http.Response, error
 }
 
 /*
-PutPackage Upload a Compute@Edge package.
+PutPackage Upload a Compute package.
 
-Upload a Compute@Edge package associated with the specified service version.
+Upload a Compute package associated with the specified service version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceID Alphanumeric string identifying the service.

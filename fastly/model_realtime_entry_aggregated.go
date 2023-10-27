@@ -269,13 +269,13 @@ type RealtimeEntryAggregated struct {
 	MissRespBodyBytes *int32 `json:"miss_resp_body_bytes,omitempty"`
 	// Total body bytes delivered for cache passes.
 	PassRespBodyBytes *int32 `json:"pass_resp_body_bytes,omitempty"`
-	// Total header bytes received by Compute@Edge.
+	// Total header bytes received by the Compute platform.
 	ComputeReqHeaderBytes *int32 `json:"compute_req_header_bytes,omitempty"`
-	// Total body bytes received by Compute@Edge.
+	// Total body bytes received by the Compute platform.
 	ComputeReqBodyBytes *int32 `json:"compute_req_body_bytes,omitempty"`
-	// Total header bytes sent from Compute@Edge to end user.
+	// Total header bytes sent from Compute to end user.
 	ComputeRespHeaderBytes *int32 `json:"compute_resp_header_bytes,omitempty"`
-	// Total body bytes sent from Compute@Edge to end user.
+	// Total body bytes sent from Compute to end user.
 	ComputeRespBodyBytes *int32 `json:"compute_resp_body_bytes,omitempty"`
 	// Number of video responses that came from the Fastly Image Optimizer service.
 	Imgvideo *int32 `json:"imgvideo,omitempty"`
@@ -329,27 +329,27 @@ type RealtimeEntryAggregated struct {
 	SegblockOriginFetches *int32 `json:"segblock_origin_fetches,omitempty"`
 	// Number of `Range` requests to a shield for segments of resources when using segmented caching.
 	SegblockShieldFetches *int32 `json:"segblock_shield_fetches,omitempty"`
-	// Number of \"Informational\" category status codes delivered by Compute@Edge.
+	// Number of \"Informational\" category status codes delivered by the Compute platform.
 	ComputeRespStatus1xx *int32 `json:"compute_resp_status_1xx,omitempty"`
-	// Number of \"Success\" category status codes delivered by Compute@Edge.
+	// Number of \"Success\" category status codes delivered by the Compute platform.
 	ComputeRespStatus2xx *int32 `json:"compute_resp_status_2xx,omitempty"`
-	// Number of \"Redirection\" category status codes delivered by Compute@Edge.
+	// Number of \"Redirection\" category status codes delivered by the Compute platform.
 	ComputeRespStatus3xx *int32 `json:"compute_resp_status_3xx,omitempty"`
-	// Number of \"Client Error\" category status codes delivered by Compute@Edge.
+	// Number of \"Client Error\" category status codes delivered by the Compute platform.
 	ComputeRespStatus4xx *int32 `json:"compute_resp_status_4xx,omitempty"`
-	// Number of \"Server Error\" category status codes delivered by Compute@Edge.
+	// Number of \"Server Error\" category status codes delivered by the Compute platform.
 	ComputeRespStatus5xx *int32 `json:"compute_resp_status_5xx,omitempty"`
 	// Number of requests sent by end users to Fastly that resulted in a hit at the edge.
 	EdgeHitRequests *int32 `json:"edge_hit_requests,omitempty"`
 	// Number of requests sent by end users to Fastly that resulted in a miss at the edge.
 	EdgeMissRequests *int32 `json:"edge_miss_requests,omitempty"`
-	// Total header bytes sent to backends (origins) by Compute@Edge.
+	// Total header bytes sent to backends (origins) by the Compute platform.
 	ComputeBereqHeaderBytes *int32 `json:"compute_bereq_header_bytes,omitempty"`
-	// Total body bytes sent to backends (origins) by Compute@Edge.
+	// Total body bytes sent to backends (origins) by the Compute platform.
 	ComputeBereqBodyBytes *int32 `json:"compute_bereq_body_bytes,omitempty"`
-	// Total header bytes received from backends (origins) by Compute@Edge.
+	// Total header bytes received from backends (origins) by the Compute platform.
 	ComputeBerespHeaderBytes *int32 `json:"compute_beresp_header_bytes,omitempty"`
-	// Total body bytes received from backends (origins) by Compute@Edge.
+	// Total body bytes received from backends (origins) by the Compute platform.
 	ComputeBerespBodyBytes *int32 `json:"compute_beresp_body_bytes,omitempty"`
 	// The total number of completed requests made to backends (origins) that returned cacheable content.
 	OriginCacheFetches *int32 `json:"origin_cache_fetches,omitempty"`

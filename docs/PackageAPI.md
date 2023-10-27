@@ -4,14 +4,14 @@ All URIs are relative to *https://api.fastly.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetPackage**](PackageAPI.md#GetPackage) | **GET** `/service/{service_id}/version/{version_id}/package` | Get details of the service&#39;s Compute@Edge package.
-[**PutPackage**](PackageAPI.md#PutPackage) | **PUT** `/service/{service_id}/version/{version_id}/package` | Upload a Compute@Edge package.
+[**GetPackage**](PackageAPI.md#GetPackage) | **GET** `/service/{service_id}/version/{version_id}/package` | Get details of the service&#39;s Compute package.
+[**PutPackage**](PackageAPI.md#PutPackage) | **PUT** `/service/{service_id}/version/{version_id}/package` | Upload a Compute package.
 
 
 
 ## GetPackage
 
-Get details of the service's Compute@Edge package.
+Get details of the service's Compute package.
 
 
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## PutPackage
 
-Upload a Compute@Edge package.
+Upload a Compute package.
 
 
 

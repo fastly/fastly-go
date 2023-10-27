@@ -19,19 +19,19 @@ import (
 
 // PackageMetadata [Package metadata](#metadata-model) that has been extracted from the uploaded package. 
 type PackageMetadata struct {
-	// Name of the Compute@Edge package.
+	// Name of the Compute package.
 	Name *string `json:"name,omitempty"`
-	// Description of the Compute@Edge package.
+	// Description of the Compute package.
 	Description *string `json:"description,omitempty"`
 	// A list of package authors' email addresses.
 	Authors []string `json:"authors,omitempty"`
-	// The language of the Compute@Edge package.
+	// The language of the Compute package.
 	Language *string `json:"language,omitempty"`
-	// Size of the Compute@Edge package in bytes.
+	// Size of the Compute package in bytes.
 	Size *int32 `json:"size,omitempty"`
-	// Hash of the Compute@Edge package.
+	// Hash of the Compute package.
 	Hashsum *string `json:"hashsum,omitempty"`
-	// Hash of the files within the Compute@Edge package.
+	// Hash of the files within the Compute package.
 	FilesHash *string `json:"files_hash,omitempty"`
 	AdditionalProperties map[string]any
 }

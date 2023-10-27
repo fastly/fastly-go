@@ -2,7 +2,7 @@
 
 A Go client library for interacting with most facets of the [Fastly API](https://developer.fastly.com/reference/api).
 
-> **NOTE:** This API client is auto-generated from Fastly's OpenAPI specification and may not function correctly when used on the Compute@Edge platform. Support for Compute@Edge is on the roadmap but has not yet been prioritised.
+> **NOTE:** This API client is auto-generated from Fastly's OpenAPI specification and may not function correctly when used on the Compute platform. Support for Compute is on the roadmap but has not yet been prioritised.
 
 ## Requirements
 
@@ -14,7 +14,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go v1.0.0-beta.22
+	github.com/fastly/fastly-go v1.0.0-beta.23
 )
 ```
 
@@ -406,8 +406,8 @@ Class | Method | HTTP request | Description
 *OriginInspectorRealtimeAPI* | [**GetOriginInspectorLast120Seconds**](docs/OriginInspectorRealtimeAPI.md#getorigininspectorlast120seconds) | **GET** `/v1/origins/{service_id}/ts/h` | Get real-time origin data for the last 120 seconds
 *OriginInspectorRealtimeAPI* | [**GetOriginInspectorLastMaxEntries**](docs/OriginInspectorRealtimeAPI.md#getorigininspectorlastmaxentries) | **GET** `/v1/origins/{service_id}/ts/h/limit/{max_entries}` | Get a limited number of real-time origin data entries
 *OriginInspectorRealtimeAPI* | [**GetOriginInspectorLastSecond**](docs/OriginInspectorRealtimeAPI.md#getorigininspectorlastsecond) | **GET** `/v1/origins/{service_id}/ts/{start_timestamp}` | Get real-time origin data from specific time.
-*PackageAPI* | [**GetPackage**](docs/PackageAPI.md#getpackage) | **GET** `/service/{service_id}/version/{version_id}/package` | Get details of the service's Compute@Edge package.
-*PackageAPI* | [**PutPackage**](docs/PackageAPI.md#putpackage) | **PUT** `/service/{service_id}/version/{version_id}/package` | Upload a Compute@Edge package.
+*PackageAPI* | [**GetPackage**](docs/PackageAPI.md#getpackage) | **GET** `/service/{service_id}/version/{version_id}/package` | Get details of the service's Compute package.
+*PackageAPI* | [**PutPackage**](docs/PackageAPI.md#putpackage) | **PUT** `/service/{service_id}/version/{version_id}/package` | Upload a Compute package.
 *PoolAPI* | [**CreateServerPool**](docs/PoolAPI.md#createserverpool) | **POST** `/service/{service_id}/version/{version_id}/pool` | Create a server pool
 *PoolAPI* | [**DeleteServerPool**](docs/PoolAPI.md#deleteserverpool) | **DELETE** `/service/{service_id}/version/{version_id}/pool/{pool_name}` | Delete a server pool
 *PoolAPI* | [**GetServerPool**](docs/PoolAPI.md#getserverpool) | **GET** `/service/{service_id}/version/{version_id}/pool/{pool_name}` | Get a server pool

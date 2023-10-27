@@ -325,31 +325,31 @@ type HistoricalFieldResultsAttributes struct {
 	ComputeRAMUsed *int32 `json:"compute_ram_used,omitempty"`
 	// The amount of active CPU time used to process your requests (in milliseconds).
 	ComputeExecutionTimeMs *float32 `json:"compute_execution_time_ms,omitempty"`
-	// Total header bytes received by Compute@Edge.
+	// Total header bytes received by the Compute platform.
 	ComputeReqHeaderBytes *int32 `json:"compute_req_header_bytes,omitempty"`
-	// Total body bytes received by Compute@Edge.
+	// Total body bytes received by the Compute platform.
 	ComputeReqBodyBytes *int32 `json:"compute_req_body_bytes,omitempty"`
-	// Total header bytes sent from Compute@Edge to end user.
+	// Total header bytes sent from Compute to end user.
 	ComputeRespHeaderBytes *int32 `json:"compute_resp_header_bytes,omitempty"`
-	// Total body bytes sent from Compute@Edge to end user.
+	// Total body bytes sent from Compute to end user.
 	ComputeRespBodyBytes *int32 `json:"compute_resp_body_bytes,omitempty"`
-	// Number of \"Informational\" category status codes delivered by Compute@Edge.
+	// Number of \"Informational\" category status codes delivered by the Compute platform.
 	ComputeRespStatus1xx *int32 `json:"compute_resp_status_1xx,omitempty"`
-	// Number of \"Success\" category status codes delivered by Compute@Edge.
+	// Number of \"Success\" category status codes delivered by the Compute platform.
 	ComputeRespStatus2xx *int32 `json:"compute_resp_status_2xx,omitempty"`
-	// Number of \"Redirection\" category status codes delivered by Compute@Edge.
+	// Number of \"Redirection\" category status codes delivered by the Compute platform.
 	ComputeRespStatus3xx *int32 `json:"compute_resp_status_3xx,omitempty"`
-	// Number of \"Client Error\" category status codes delivered by Compute@Edge.
+	// Number of \"Client Error\" category status codes delivered by the Compute platform.
 	ComputeRespStatus4xx *int32 `json:"compute_resp_status_4xx,omitempty"`
-	// Number of \"Server Error\" category status codes delivered by Compute@Edge.
+	// Number of \"Server Error\" category status codes delivered by the Compute platform.
 	ComputeRespStatus5xx *int32 `json:"compute_resp_status_5xx,omitempty"`
-	// Total header bytes sent to backends (origins) by Compute@Edge.
+	// Total header bytes sent to backends (origins) by the Compute platform.
 	ComputeBereqHeaderBytes *int32 `json:"compute_bereq_header_bytes,omitempty"`
-	// Total body bytes sent to backends (origins) by Compute@Edge.
+	// Total body bytes sent to backends (origins) by the Compute platform.
 	ComputeBereqBodyBytes *int32 `json:"compute_bereq_body_bytes,omitempty"`
-	// Total header bytes received from backends (origins) by Compute@Edge.
+	// Total header bytes received from backends (origins) by the Compute platform.
 	ComputeBerespHeaderBytes *int32 `json:"compute_beresp_header_bytes,omitempty"`
-	// Total body bytes received from backends (origins) by Compute@Edge.
+	// Total body bytes received from backends (origins) by the Compute platform.
 	ComputeBerespBodyBytes *int32 `json:"compute_beresp_body_bytes,omitempty"`
 	// Number of backend requests started.
 	ComputeBereqs *int32 `json:"compute_bereqs,omitempty"`

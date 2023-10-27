@@ -171,81 +171,81 @@ type OriginInspectorValues struct {
 	WafLatency10000To60000ms *int32 `json:"waf_latency_10000_to_60000ms,omitempty"`
 	// Number of responses with latency of 60,000 milliseconds and above received for origin requests made by the Fastly WAF.
 	WafLatency60000ms *int32 `json:"waf_latency_60000ms,omitempty"`
-	// Number of responses for origin received by Compute@Edge.
+	// Number of responses for origin received by the Compute platform.
 	ComputeResponses *int32 `json:"compute_responses,omitempty"`
-	// Number of header bytes for origin received by Compute@Edge.
+	// Number of header bytes for origin received by the Compute platform.
 	ComputeRespHeaderBytes *int32 `json:"compute_resp_header_bytes,omitempty"`
-	// Number of body bytes for origin received by Compute@Edge.
+	// Number of body bytes for origin received by the Compute platform.
 	ComputeRespBodyBytes *int32 `json:"compute_resp_body_bytes,omitempty"`
-	// Number of 1xx \"Informational\" status codes for origin received by Compute@Edge.
+	// Number of 1xx \"Informational\" status codes for origin received by the Compute platform.
 	ComputeStatus1xx *int32 `json:"compute_status_1xx,omitempty"`
-	// Number of 2xx \"Success\" status codes for origin received by Compute@Edge.
+	// Number of 2xx \"Success\" status codes for origin received by the Compute platform.
 	ComputeStatus2xx *int32 `json:"compute_status_2xx,omitempty"`
-	// Number of 3xx \"Redirection\" codes for origin received by Compute@Edge.
+	// Number of 3xx \"Redirection\" codes for origin received by the Compute platform.
 	ComputeStatus3xx *int32 `json:"compute_status_3xx,omitempty"`
-	// Number of 4xx \"Client Error\" codes for origin received by Compute@Edge.
+	// Number of 4xx \"Client Error\" codes for origin received by the Compute platform.
 	ComputeStatus4xx *int32 `json:"compute_status_4xx,omitempty"`
-	// Number of 5xx \"Server Error\" codes for origin received by Compute@Edge.
+	// Number of 5xx \"Server Error\" codes for origin received by the Compute platform.
 	ComputeStatus5xx *int32 `json:"compute_status_5xx,omitempty"`
-	// Number of responses received with status code 200 (Success) for origin received by Compute@Edge.
+	// Number of responses received with status code 200 (Success) for origin received by the Compute platform.
 	ComputeStatus200 *int32 `json:"compute_status_200,omitempty"`
-	// Number of responses received with status code 204 (No Content) for origin received by Compute@Edge.
+	// Number of responses received with status code 204 (No Content) for origin received by the Compute platform.
 	ComputeStatus204 *int32 `json:"compute_status_204,omitempty"`
-	// Number of responses received with status code 206 (Partial Content) for origin received by Compute@Edge.
+	// Number of responses received with status code 206 (Partial Content) for origin received by the Compute platform.
 	ComputeStatus206 *int32 `json:"compute_status_206,omitempty"`
-	// Number of responses received with status code 301 (Moved Permanently) for origin received by Compute@Edge.
+	// Number of responses received with status code 301 (Moved Permanently) for origin received by the Compute platform.
 	ComputeStatus301 *int32 `json:"compute_status_301,omitempty"`
-	// Number of responses received with status code 302 (Found) for origin received by Compute@Edge.
+	// Number of responses received with status code 302 (Found) for origin received by the Compute platform.
 	ComputeStatus302 *int32 `json:"compute_status_302,omitempty"`
-	// Number of responses received with status code 304 (Not Modified) for origin received by Compute@Edge.
+	// Number of responses received with status code 304 (Not Modified) for origin received by the Compute platform.
 	ComputeStatus304 *int32 `json:"compute_status_304,omitempty"`
-	// Number of responses received with status code 400 (Bad Request) for origin received by Compute@Edge.
+	// Number of responses received with status code 400 (Bad Request) for origin received by the Compute platform.
 	ComputeStatus400 *int32 `json:"compute_status_400,omitempty"`
-	// Number of responses received with status code 401 (Unauthorized) for origin received by Compute@Edge.
+	// Number of responses received with status code 401 (Unauthorized) for origin received by the Compute platform.
 	ComputeStatus401 *int32 `json:"compute_status_401,omitempty"`
-	// Number of responses received with status code 403 (Forbidden) for origin received by Compute@Edge.
+	// Number of responses received with status code 403 (Forbidden) for origin received by the Compute platform.
 	ComputeStatus403 *int32 `json:"compute_status_403,omitempty"`
-	// Number of responses received with status code 404 (Not Found) for origin received by Compute@Edge.
+	// Number of responses received with status code 404 (Not Found) for origin received by the Compute platform.
 	ComputeStatus404 *int32 `json:"compute_status_404,omitempty"`
-	// Number of responses received with status code 416 (Range Not Satisfiable) for origin received by Compute@Edge.
+	// Number of responses received with status code 416 (Range Not Satisfiable) for origin received by the Compute platform.
 	ComputeStatus416 *int32 `json:"compute_status_416,omitempty"`
-	// Number of responses received with status code 429 (Too Many Requests) for origin received by Compute@Edge.
+	// Number of responses received with status code 429 (Too Many Requests) for origin received by the Compute platform.
 	ComputeStatus429 *int32 `json:"compute_status_429,omitempty"`
-	// Number of responses received with status code 500 (Internal Server Error) for origin received by Compute@Edge.
+	// Number of responses received with status code 500 (Internal Server Error) for origin received by the Compute platform.
 	ComputeStatus500 *int32 `json:"compute_status_500,omitempty"`
-	// Number of responses received with status code 501 (Not Implemented) for origin received by Compute@Edge.
+	// Number of responses received with status code 501 (Not Implemented) for origin received by the Compute platform.
 	ComputeStatus501 *int32 `json:"compute_status_501,omitempty"`
-	// Number of responses received with status code 502 (Bad Gateway) for origin received by Compute@Edge.
+	// Number of responses received with status code 502 (Bad Gateway) for origin received by the Compute platform.
 	ComputeStatus502 *int32 `json:"compute_status_502,omitempty"`
-	// Number of responses received with status code 503 (Service Unavailable) for origin received by Compute@Edge.
+	// Number of responses received with status code 503 (Service Unavailable) for origin received by the Compute platform.
 	ComputeStatus503 *int32 `json:"compute_status_503,omitempty"`
-	// Number of responses received with status code 504 (Gateway Timeout) for origin received by Compute@Edge.
+	// Number of responses received with status code 504 (Gateway Timeout) for origin received by the Compute platform.
 	ComputeStatus504 *int32 `json:"compute_status_504,omitempty"`
-	// Number of responses received with status code 505 (HTTP Version Not Supported) for origin received by Compute@Edge.
+	// Number of responses received with status code 505 (HTTP Version Not Supported) for origin received by the Compute platform.
 	ComputeStatus505 *int32 `json:"compute_status_505,omitempty"`
-	// Number of responses with latency between 0 and 1 millisecond for origin received by Compute@Edge.
+	// Number of responses with latency between 0 and 1 millisecond for origin received by the Compute platform.
 	ComputeLatency0To1ms *int32 `json:"compute_latency_0_to_1ms,omitempty"`
-	// Number of responses with latency between 1 and 5 milliseconds for origin received by Compute@Edge.
+	// Number of responses with latency between 1 and 5 milliseconds for origin received by the Compute platform.
 	ComputeLatency1To5ms *int32 `json:"compute_latency_1_to_5ms,omitempty"`
-	// Number of responses with latency between 5 and 10 milliseconds for origin received by Compute@Edge.
+	// Number of responses with latency between 5 and 10 milliseconds for origin received by the Compute platform.
 	ComputeLatency5To10ms *int32 `json:"compute_latency_5_to_10ms,omitempty"`
-	// Number of responses with latency between 10 and 50 milliseconds for origin received by Compute@Edge.
+	// Number of responses with latency between 10 and 50 milliseconds for origin received by the Compute platform.
 	ComputeLatency10To50ms *int32 `json:"compute_latency_10_to_50ms,omitempty"`
-	// Number of responses with latency between 50 and 100 milliseconds for origin received by Compute@Edge.
+	// Number of responses with latency between 50 and 100 milliseconds for origin received by the Compute platform.
 	ComputeLatency50To100ms *int32 `json:"compute_latency_50_to_100ms,omitempty"`
-	// Number of responses with latency between 100 and 250 milliseconds for origin received by Compute@Edge.
+	// Number of responses with latency between 100 and 250 milliseconds for origin received by the Compute platform.
 	ComputeLatency100To250ms *int32 `json:"compute_latency_100_to_250ms,omitempty"`
-	// Number of responses with latency between 250 and 500 milliseconds for origin received by Compute@Edge.
+	// Number of responses with latency between 250 and 500 milliseconds for origin received by the Compute platform.
 	ComputeLatency250To500ms *int32 `json:"compute_latency_250_to_500ms,omitempty"`
-	// Number of responses with latency between 500 and 1,000 milliseconds for origin received by Compute@Edge.
+	// Number of responses with latency between 500 and 1,000 milliseconds for origin received by the Compute platform.
 	ComputeLatency500To1000ms *int32 `json:"compute_latency_500_to_1000ms,omitempty"`
-	// Number of responses with latency between 1,000 and 5,000 milliseconds for origin received by Compute@Edge.
+	// Number of responses with latency between 1,000 and 5,000 milliseconds for origin received by the Compute platform.
 	ComputeLatency1000To5000ms *int32 `json:"compute_latency_1000_to_5000ms,omitempty"`
-	// Number of responses with latency between 5,000 and 10,000 milliseconds for origin received by Compute@Edge.
+	// Number of responses with latency between 5,000 and 10,000 milliseconds for origin received by the Compute platform.
 	ComputeLatency5000To10000ms *int32 `json:"compute_latency_5000_to_10000ms,omitempty"`
-	// Number of responses with latency between 10,000 and 60,000 milliseconds for origin received by Compute@Edge.
+	// Number of responses with latency between 10,000 and 60,000 milliseconds for origin received by the Compute platform.
 	ComputeLatency10000To60000ms *int32 `json:"compute_latency_10000_to_60000ms,omitempty"`
-	// Number of responses with latency of 60,000 milliseconds and above for origin received by Compute@Edge.
+	// Number of responses with latency of 60,000 milliseconds and above for origin received by the Compute platform.
 	ComputeLatency60000ms *int32 `json:"compute_latency_60000ms,omitempty"`
 	// Number of responses received for origin requests made by all sources.
 	AllResponses *int32 `json:"all_responses,omitempty"`
