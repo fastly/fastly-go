@@ -817,8 +817,14 @@ func (a *ConfigStoreAPIService) ListConfigStoreServicesExecute(r APIListConfigSt
 type APIListConfigStoresRequest struct {
 	ctx context.Context
 	APIService ConfigStoreAPI
+	name *string
 }
 
+// Name Returns a one-element array containing the details for the named config store.
+func (r *APIListConfigStoresRequest) Name(name string) *APIListConfigStoresRequest {
+	r.name = &name
+	return r
+}
 
 // Execute calls the API using the request data configured.
 func (r APIListConfigStoresRequest) Execute() ([]ConfigStoreResponse, *http.Response, error) {
@@ -861,6 +867,9 @@ func (a *ConfigStoreAPIService) ListConfigStoresExecute(r APIListConfigStoresReq
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
+	if r.name != nil {
+		localVarQueryParams.Add("name", parameterToString(*r.name, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

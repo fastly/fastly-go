@@ -364,11 +364,12 @@ import (
 )
 
 func main() {
+    name := "name_example" // string | Returns a one-element array containing the details for the named config store. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConfigStoreAPI.ListConfigStores(ctx).Execute()
+    resp, r, err := apiClient.ConfigStoreAPI.ListConfigStores(ctx).Name(name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.ListConfigStores`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -380,13 +381,16 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiListConfigStoresRequest struct via the builder pattern
 
 
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **string** | Returns a one-element array containing the details for the named config store. | 
 
 ### Return type
 
