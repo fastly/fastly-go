@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.0.0-beta.24](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.24) (2023-11-07)
+
+**Enhancements:**
+
+- feat(config_store): add `name` query param to list endpoint.
+
 ## [v1.0.0-beta.23](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.23) (2023-10-27)
 
 **Documentation:**
