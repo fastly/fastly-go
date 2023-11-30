@@ -17,38 +17,39 @@ import (
 	"encoding/json"
 )
 
-// HistoricalFieldAggregateResponse struct for HistoricalFieldAggregateResponse
-type HistoricalFieldAggregateResponse struct {
+// HistoricalUsageAggregatedResponse struct for HistoricalUsageAggregatedResponse
+type HistoricalUsageAggregatedResponse struct {
 	// Whether or not we were able to successfully execute the query.
 	Status *string `json:"status,omitempty"`
 	Meta *HistoricalMeta `json:"meta,omitempty"`
 	// If the query was not successful, this will provide a string that explains why.
 	Msg NullableString `json:"msg,omitempty"`
-	Data []HistoricalFieldResultsAttributes `json:"data,omitempty"`
+	// Organized by *region*.
+	Data *map[string]HistoricalUsageData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _HistoricalFieldAggregateResponse HistoricalFieldAggregateResponse
+type _HistoricalUsageAggregatedResponse HistoricalUsageAggregatedResponse
 
-// NewHistoricalFieldAggregateResponse instantiates a new HistoricalFieldAggregateResponse object
+// NewHistoricalUsageAggregatedResponse instantiates a new HistoricalUsageAggregatedResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHistoricalFieldAggregateResponse() *HistoricalFieldAggregateResponse {
-	this := HistoricalFieldAggregateResponse{}
+func NewHistoricalUsageAggregatedResponse() *HistoricalUsageAggregatedResponse {
+	this := HistoricalUsageAggregatedResponse{}
 	return &this
 }
 
-// NewHistoricalFieldAggregateResponseWithDefaults instantiates a new HistoricalFieldAggregateResponse object
+// NewHistoricalUsageAggregatedResponseWithDefaults instantiates a new HistoricalUsageAggregatedResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewHistoricalFieldAggregateResponseWithDefaults() *HistoricalFieldAggregateResponse {
-	this := HistoricalFieldAggregateResponse{}
+func NewHistoricalUsageAggregatedResponseWithDefaults() *HistoricalUsageAggregatedResponse {
+	this := HistoricalUsageAggregatedResponse{}
 	return &this
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *HistoricalFieldAggregateResponse) GetStatus() string {
+func (o *HistoricalUsageAggregatedResponse) GetStatus() string {
 	if o == nil || o.Status == nil {
 		var ret string
 		return ret
@@ -58,7 +59,7 @@ func (o *HistoricalFieldAggregateResponse) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalFieldAggregateResponse) GetStatusOk() (*string, bool) {
+func (o *HistoricalUsageAggregatedResponse) GetStatusOk() (*string, bool) {
 	if o == nil || o.Status == nil {
 		return nil, false
 	}
@@ -66,7 +67,7 @@ func (o *HistoricalFieldAggregateResponse) GetStatusOk() (*string, bool) {
 }
 
 // HasStatus returns a boolean if a field has been set.
-func (o *HistoricalFieldAggregateResponse) HasStatus() bool {
+func (o *HistoricalUsageAggregatedResponse) HasStatus() bool {
 	if o != nil && o.Status != nil {
 		return true
 	}
@@ -75,12 +76,12 @@ func (o *HistoricalFieldAggregateResponse) HasStatus() bool {
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *HistoricalFieldAggregateResponse) SetStatus(v string) {
+func (o *HistoricalUsageAggregatedResponse) SetStatus(v string) {
 	o.Status = &v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *HistoricalFieldAggregateResponse) GetMeta() HistoricalMeta {
+func (o *HistoricalUsageAggregatedResponse) GetMeta() HistoricalMeta {
 	if o == nil || o.Meta == nil {
 		var ret HistoricalMeta
 		return ret
@@ -90,7 +91,7 @@ func (o *HistoricalFieldAggregateResponse) GetMeta() HistoricalMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalFieldAggregateResponse) GetMetaOk() (*HistoricalMeta, bool) {
+func (o *HistoricalUsageAggregatedResponse) GetMetaOk() (*HistoricalMeta, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -98,7 +99,7 @@ func (o *HistoricalFieldAggregateResponse) GetMetaOk() (*HistoricalMeta, bool) {
 }
 
 // HasMeta returns a boolean if a field has been set.
-func (o *HistoricalFieldAggregateResponse) HasMeta() bool {
+func (o *HistoricalUsageAggregatedResponse) HasMeta() bool {
 	if o != nil && o.Meta != nil {
 		return true
 	}
@@ -107,12 +108,12 @@ func (o *HistoricalFieldAggregateResponse) HasMeta() bool {
 }
 
 // SetMeta gets a reference to the given HistoricalMeta and assigns it to the Meta field.
-func (o *HistoricalFieldAggregateResponse) SetMeta(v HistoricalMeta) {
+func (o *HistoricalUsageAggregatedResponse) SetMeta(v HistoricalMeta) {
 	o.Meta = &v
 }
 
 // GetMsg returns the Msg field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *HistoricalFieldAggregateResponse) GetMsg() string {
+func (o *HistoricalUsageAggregatedResponse) GetMsg() string {
 	if o == nil || o.Msg.Get() == nil {
 		var ret string
 		return ret
@@ -123,7 +124,7 @@ func (o *HistoricalFieldAggregateResponse) GetMsg() string {
 // GetMsgOk returns a tuple with the Msg field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *HistoricalFieldAggregateResponse) GetMsgOk() (*string, bool) {
+func (o *HistoricalUsageAggregatedResponse) GetMsgOk() (*string, bool) {
 	if o == nil  {
 		return nil, false
 	}
@@ -131,7 +132,7 @@ func (o *HistoricalFieldAggregateResponse) GetMsgOk() (*string, bool) {
 }
 
 // HasMsg returns a boolean if a field has been set.
-func (o *HistoricalFieldAggregateResponse) HasMsg() bool {
+func (o *HistoricalUsageAggregatedResponse) HasMsg() bool {
 	if o != nil && o.Msg.IsSet() {
 		return true
 	}
@@ -140,31 +141,31 @@ func (o *HistoricalFieldAggregateResponse) HasMsg() bool {
 }
 
 // SetMsg gets a reference to the given NullableString and assigns it to the Msg field.
-func (o *HistoricalFieldAggregateResponse) SetMsg(v string) {
+func (o *HistoricalUsageAggregatedResponse) SetMsg(v string) {
 	o.Msg.Set(&v)
 }
 // SetMsgNil sets the value for Msg to be an explicit nil
-func (o *HistoricalFieldAggregateResponse) SetMsgNil() {
+func (o *HistoricalUsageAggregatedResponse) SetMsgNil() {
 	o.Msg.Set(nil)
 }
 
 // UnsetMsg ensures that no value is present for Msg, not even an explicit nil
-func (o *HistoricalFieldAggregateResponse) UnsetMsg() {
+func (o *HistoricalUsageAggregatedResponse) UnsetMsg() {
 	o.Msg.Unset()
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *HistoricalFieldAggregateResponse) GetData() []HistoricalFieldResultsAttributes {
+func (o *HistoricalUsageAggregatedResponse) GetData() map[string]HistoricalUsageData {
 	if o == nil || o.Data == nil {
-		var ret []HistoricalFieldResultsAttributes
+		var ret map[string]HistoricalUsageData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalFieldAggregateResponse) GetDataOk() ([]HistoricalFieldResultsAttributes, bool) {
+func (o *HistoricalUsageAggregatedResponse) GetDataOk() (*map[string]HistoricalUsageData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -172,7 +173,7 @@ func (o *HistoricalFieldAggregateResponse) GetDataOk() ([]HistoricalFieldResults
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *HistoricalFieldAggregateResponse) HasData() bool {
+func (o *HistoricalUsageAggregatedResponse) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -180,14 +181,14 @@ func (o *HistoricalFieldAggregateResponse) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []HistoricalFieldResultsAttributes and assigns it to the Data field.
-func (o *HistoricalFieldAggregateResponse) SetData(v []HistoricalFieldResultsAttributes) {
-	o.Data = v
+// SetData gets a reference to the given map[string]HistoricalUsageData and assigns it to the Data field.
+func (o *HistoricalUsageAggregatedResponse) SetData(v map[string]HistoricalUsageData) {
+	o.Data = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o HistoricalFieldAggregateResponse) MarshalJSON() ([]byte, error) {
+func (o HistoricalUsageAggregatedResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Status != nil {
 		toSerialize["status"] = o.Status
@@ -211,11 +212,11 @@ func (o HistoricalFieldAggregateResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *HistoricalFieldAggregateResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varHistoricalFieldAggregateResponse := _HistoricalFieldAggregateResponse{}
+func (o *HistoricalUsageAggregatedResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varHistoricalUsageAggregatedResponse := _HistoricalUsageAggregatedResponse{}
 
-	if err = json.Unmarshal(bytes, &varHistoricalFieldAggregateResponse); err == nil {
-		*o = HistoricalFieldAggregateResponse(varHistoricalFieldAggregateResponse)
+	if err = json.Unmarshal(bytes, &varHistoricalUsageAggregatedResponse); err == nil {
+		*o = HistoricalUsageAggregatedResponse(varHistoricalUsageAggregatedResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -231,48 +232,48 @@ func (o *HistoricalFieldAggregateResponse) UnmarshalJSON(bytes []byte) (err erro
 	return err
 }
 
-// NullableHistoricalFieldAggregateResponse is a helper abstraction for handling nullable historicalfieldaggregateresponse types. 
-type NullableHistoricalFieldAggregateResponse struct {
-	value *HistoricalFieldAggregateResponse
+// NullableHistoricalUsageAggregatedResponse is a helper abstraction for handling nullable historicalusageaggregatedresponse types. 
+type NullableHistoricalUsageAggregatedResponse struct {
+	value *HistoricalUsageAggregatedResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableHistoricalFieldAggregateResponse) Get() *HistoricalFieldAggregateResponse {
+func (v NullableHistoricalUsageAggregatedResponse) Get() *HistoricalUsageAggregatedResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableHistoricalFieldAggregateResponse) Set(val *HistoricalFieldAggregateResponse) {
+func (v *NullableHistoricalUsageAggregatedResponse) Set(val *HistoricalUsageAggregatedResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableHistoricalFieldAggregateResponse) IsSet() bool {
+func (v NullableHistoricalUsageAggregatedResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableHistoricalFieldAggregateResponse) Unset() {
+func (v *NullableHistoricalUsageAggregatedResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableHistoricalFieldAggregateResponse returns a pointer to a new instance of NullableHistoricalFieldAggregateResponse.
-func NewNullableHistoricalFieldAggregateResponse(val *HistoricalFieldAggregateResponse) *NullableHistoricalFieldAggregateResponse {
-	return &NullableHistoricalFieldAggregateResponse{value: val, isSet: true}
+// NewNullableHistoricalUsageAggregatedResponse returns a pointer to a new instance of NullableHistoricalUsageAggregatedResponse.
+func NewNullableHistoricalUsageAggregatedResponse(val *HistoricalUsageAggregatedResponse) *NullableHistoricalUsageAggregatedResponse {
+	return &NullableHistoricalUsageAggregatedResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableHistoricalFieldAggregateResponse) MarshalJSON() ([]byte, error) {
+func (v NullableHistoricalUsageAggregatedResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableHistoricalFieldAggregateResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableHistoricalUsageAggregatedResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

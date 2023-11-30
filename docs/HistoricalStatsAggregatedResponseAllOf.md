@@ -1,4 +1,4 @@
-# HistoricalAggregateResponseAllOf
+# HistoricalStatsAggregatedResponseAllOf
 
 ## Properties
 
@@ -8,45 +8,45 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewHistoricalAggregateResponseAllOf
+### NewHistoricalStatsAggregatedResponseAllOf
 
-`func NewHistoricalAggregateResponseAllOf() *HistoricalAggregateResponseAllOf`
+`func NewHistoricalStatsAggregatedResponseAllOf() *HistoricalStatsAggregatedResponseAllOf`
 
-NewHistoricalAggregateResponseAllOf instantiates a new HistoricalAggregateResponseAllOf object
+NewHistoricalStatsAggregatedResponseAllOf instantiates a new HistoricalStatsAggregatedResponseAllOf object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewHistoricalAggregateResponseAllOfWithDefaults
+### NewHistoricalStatsAggregatedResponseAllOfWithDefaults
 
-`func NewHistoricalAggregateResponseAllOfWithDefaults() *HistoricalAggregateResponseAllOf`
+`func NewHistoricalStatsAggregatedResponseAllOfWithDefaults() *HistoricalStatsAggregatedResponseAllOf`
 
-NewHistoricalAggregateResponseAllOfWithDefaults instantiates a new HistoricalAggregateResponseAllOf object
+NewHistoricalStatsAggregatedResponseAllOfWithDefaults instantiates a new HistoricalStatsAggregatedResponseAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *HistoricalAggregateResponseAllOf) GetData() []Results`
+`func (o *HistoricalStatsAggregatedResponseAllOf) GetData() []Results`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *HistoricalAggregateResponseAllOf) GetDataOk() (*[]Results, bool)`
+`func (o *HistoricalStatsAggregatedResponseAllOf) GetDataOk() (*[]Results, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *HistoricalAggregateResponseAllOf) SetData(v []Results)`
+`func (o *HistoricalStatsAggregatedResponseAllOf) SetData(v []Results)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *HistoricalAggregateResponseAllOf) HasData() bool`
+`func (o *HistoricalStatsAggregatedResponseAllOf) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** | Whether or not we were able to successfully execute the query. | [optional] 
 **Meta** | Pointer to [**HistoricalMeta**](HistoricalMeta.md) |  | [optional] 
 **Msg** | Pointer to **NullableString** | If the query was not successful, this will provide a string that explains why. | [optional] 
-**Data** | Pointer to [**HistoricalUsageResults**](HistoricalUsageResults.md) |  | [optional] 
+**Data** | Pointer to [**map[string]map[string]HistoricalUsageData**](map.md) | Organized by *region*. | [optional] 
 
 ## Methods
 
@@ -115,20 +115,20 @@ HasMsg returns a boolean if a field has been set.
 UnsetMsg ensures that no value is present for Msg, not even an explicit nil
 ### GetData
 
-`func (o *HistoricalUsageServiceResponse) GetData() HistoricalUsageResults`
+`func (o *HistoricalUsageServiceResponse) GetData() map[string]map[string]HistoricalUsageData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *HistoricalUsageServiceResponse) GetDataOk() (*HistoricalUsageResults, bool)`
+`func (o *HistoricalUsageServiceResponse) GetDataOk() (*map[string]map[string]HistoricalUsageData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *HistoricalUsageServiceResponse) SetData(v HistoricalUsageResults)`
+`func (o *HistoricalUsageServiceResponse) SetData(v map[string]map[string]HistoricalUsageData)`
 
 SetData sets Data field to given value.
 

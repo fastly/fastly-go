@@ -1,5 +1,19 @@
 # Changelog
 
+## [v1.0.0-beta.25](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.25) (2023-11-29)
+
+**Breaking:**
+
+- breaking(historical): restructure OpenAPI schema to avoid duplicated data rendering.
+
+**Bug fixes:**
+
+- fix: no longer display Markdown syntax in code comments.
+
+**Enhancements:**
+
+- feat(stats): expose new `service_id` and `start_time` fields.
+
 ## [v1.0.0-beta.24](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.24) (2023-11-07)
 
 **Enhancements:**

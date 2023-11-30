@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CustomerID** | Pointer to **string** |  | [optional] [readonly] 
-**Services** | Pointer to [**map[string]HistoricalService**](HistoricalService.md) |  | [optional] 
-**Total** | Pointer to [**HistoricalUsageResults**](HistoricalUsageResults.md) |  | [optional] 
+**Services** | Pointer to [**map[string]HistoricalUsageService**](HistoricalUsageService.md) | Organized by *service id*. | [optional] 
+**Total** | Pointer to [**map[string]HistoricalUsageData**](HistoricalUsageData.md) | Organized by *region*. | [optional] 
 
 ## Methods
 
@@ -54,20 +54,20 @@ HasCustomerID returns a boolean if a field has been set.
 
 ### GetServices
 
-`func (o *HistoricalUsageMonthResponseData) GetServices() map[string]HistoricalService`
+`func (o *HistoricalUsageMonthResponseData) GetServices() map[string]HistoricalUsageService`
 
 GetServices returns the Services field if non-nil, zero value otherwise.
 
 ### GetServicesOk
 
-`func (o *HistoricalUsageMonthResponseData) GetServicesOk() (*map[string]HistoricalService, bool)`
+`func (o *HistoricalUsageMonthResponseData) GetServicesOk() (*map[string]HistoricalUsageService, bool)`
 
 GetServicesOk returns a tuple with the Services field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetServices
 
-`func (o *HistoricalUsageMonthResponseData) SetServices(v map[string]HistoricalService)`
+`func (o *HistoricalUsageMonthResponseData) SetServices(v map[string]HistoricalUsageService)`
 
 SetServices sets Services field to given value.
 
@@ -79,20 +79,20 @@ HasServices returns a boolean if a field has been set.
 
 ### GetTotal
 
-`func (o *HistoricalUsageMonthResponseData) GetTotal() HistoricalUsageResults`
+`func (o *HistoricalUsageMonthResponseData) GetTotal() map[string]HistoricalUsageData`
 
 GetTotal returns the Total field if non-nil, zero value otherwise.
 
 ### GetTotalOk
 
-`func (o *HistoricalUsageMonthResponseData) GetTotalOk() (*HistoricalUsageResults, bool)`
+`func (o *HistoricalUsageMonthResponseData) GetTotalOk() (*map[string]HistoricalUsageData, bool)`
 
 GetTotalOk returns a tuple with the Total field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotal
 
-`func (o *HistoricalUsageMonthResponseData) SetTotal(v HistoricalUsageResults)`
+`func (o *HistoricalUsageMonthResponseData) SetTotal(v map[string]HistoricalUsageData)`
 
 SetTotal sets Total field to given value.
 

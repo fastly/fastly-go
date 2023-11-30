@@ -1,4 +1,4 @@
-# HistoricalAggregateResponse
+# HistoricalStatsAggregatedResponse
 
 ## Properties
 
@@ -11,130 +11,130 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewHistoricalAggregateResponse
+### NewHistoricalStatsAggregatedResponse
 
-`func NewHistoricalAggregateResponse() *HistoricalAggregateResponse`
+`func NewHistoricalStatsAggregatedResponse() *HistoricalStatsAggregatedResponse`
 
-NewHistoricalAggregateResponse instantiates a new HistoricalAggregateResponse object
+NewHistoricalStatsAggregatedResponse instantiates a new HistoricalStatsAggregatedResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewHistoricalAggregateResponseWithDefaults
+### NewHistoricalStatsAggregatedResponseWithDefaults
 
-`func NewHistoricalAggregateResponseWithDefaults() *HistoricalAggregateResponse`
+`func NewHistoricalStatsAggregatedResponseWithDefaults() *HistoricalStatsAggregatedResponse`
 
-NewHistoricalAggregateResponseWithDefaults instantiates a new HistoricalAggregateResponse object
+NewHistoricalStatsAggregatedResponseWithDefaults instantiates a new HistoricalStatsAggregatedResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetStatus
 
-`func (o *HistoricalAggregateResponse) GetStatus() string`
+`func (o *HistoricalStatsAggregatedResponse) GetStatus() string`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *HistoricalAggregateResponse) GetStatusOk() (*string, bool)`
+`func (o *HistoricalStatsAggregatedResponse) GetStatusOk() (*string, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *HistoricalAggregateResponse) SetStatus(v string)`
+`func (o *HistoricalStatsAggregatedResponse) SetStatus(v string)`
 
 SetStatus sets Status field to given value.
 
 ### HasStatus
 
-`func (o *HistoricalAggregateResponse) HasStatus() bool`
+`func (o *HistoricalStatsAggregatedResponse) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *HistoricalAggregateResponse) GetMeta() HistoricalMeta`
+`func (o *HistoricalStatsAggregatedResponse) GetMeta() HistoricalMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *HistoricalAggregateResponse) GetMetaOk() (*HistoricalMeta, bool)`
+`func (o *HistoricalStatsAggregatedResponse) GetMetaOk() (*HistoricalMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *HistoricalAggregateResponse) SetMeta(v HistoricalMeta)`
+`func (o *HistoricalStatsAggregatedResponse) SetMeta(v HistoricalMeta)`
 
 SetMeta sets Meta field to given value.
 
 ### HasMeta
 
-`func (o *HistoricalAggregateResponse) HasMeta() bool`
+`func (o *HistoricalStatsAggregatedResponse) HasMeta() bool`
 
 HasMeta returns a boolean if a field has been set.
 
 ### GetMsg
 
-`func (o *HistoricalAggregateResponse) GetMsg() string`
+`func (o *HistoricalStatsAggregatedResponse) GetMsg() string`
 
 GetMsg returns the Msg field if non-nil, zero value otherwise.
 
 ### GetMsgOk
 
-`func (o *HistoricalAggregateResponse) GetMsgOk() (*string, bool)`
+`func (o *HistoricalStatsAggregatedResponse) GetMsgOk() (*string, bool)`
 
 GetMsgOk returns a tuple with the Msg field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMsg
 
-`func (o *HistoricalAggregateResponse) SetMsg(v string)`
+`func (o *HistoricalStatsAggregatedResponse) SetMsg(v string)`
 
 SetMsg sets Msg field to given value.
 
 ### HasMsg
 
-`func (o *HistoricalAggregateResponse) HasMsg() bool`
+`func (o *HistoricalStatsAggregatedResponse) HasMsg() bool`
 
 HasMsg returns a boolean if a field has been set.
 
 ### SetMsgNil
 
-`func (o *HistoricalAggregateResponse) SetMsgNil(b bool)`
+`func (o *HistoricalStatsAggregatedResponse) SetMsgNil(b bool)`
 
  SetMsgNil sets the value for Msg to be an explicit nil
 
 ### UnsetMsg
-`func (o *HistoricalAggregateResponse) UnsetMsg()`
+`func (o *HistoricalStatsAggregatedResponse) UnsetMsg()`
 
 UnsetMsg ensures that no value is present for Msg, not even an explicit nil
 ### GetData
 
-`func (o *HistoricalAggregateResponse) GetData() []Results`
+`func (o *HistoricalStatsAggregatedResponse) GetData() []Results`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *HistoricalAggregateResponse) GetDataOk() (*[]Results, bool)`
+`func (o *HistoricalStatsAggregatedResponse) GetDataOk() (*[]Results, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *HistoricalAggregateResponse) SetData(v []Results)`
+`func (o *HistoricalStatsAggregatedResponse) SetData(v []Results)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *HistoricalAggregateResponse) HasData() bool`
+`func (o *HistoricalStatsAggregatedResponse) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 

@@ -20,8 +20,10 @@ import (
 // HistoricalUsageMonthResponseData struct for HistoricalUsageMonthResponseData
 type HistoricalUsageMonthResponseData struct {
 	CustomerID *string `json:"customer_id,omitempty"`
-	Services *map[string]HistoricalService `json:"services,omitempty"`
-	Total *HistoricalUsageResults `json:"total,omitempty"`
+	// Organized by *service id*.
+	Services *map[string]HistoricalUsageService `json:"services,omitempty"`
+	// Organized by *region*.
+	Total *map[string]HistoricalUsageData `json:"total,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -77,9 +79,9 @@ func (o *HistoricalUsageMonthResponseData) SetCustomerID(v string) {
 }
 
 // GetServices returns the Services field value if set, zero value otherwise.
-func (o *HistoricalUsageMonthResponseData) GetServices() map[string]HistoricalService {
+func (o *HistoricalUsageMonthResponseData) GetServices() map[string]HistoricalUsageService {
 	if o == nil || o.Services == nil {
-		var ret map[string]HistoricalService
+		var ret map[string]HistoricalUsageService
 		return ret
 	}
 	return *o.Services
@@ -87,7 +89,7 @@ func (o *HistoricalUsageMonthResponseData) GetServices() map[string]HistoricalSe
 
 // GetServicesOk returns a tuple with the Services field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalUsageMonthResponseData) GetServicesOk() (*map[string]HistoricalService, bool) {
+func (o *HistoricalUsageMonthResponseData) GetServicesOk() (*map[string]HistoricalUsageService, bool) {
 	if o == nil || o.Services == nil {
 		return nil, false
 	}
@@ -103,15 +105,15 @@ func (o *HistoricalUsageMonthResponseData) HasServices() bool {
 	return false
 }
 
-// SetServices gets a reference to the given map[string]HistoricalService and assigns it to the Services field.
-func (o *HistoricalUsageMonthResponseData) SetServices(v map[string]HistoricalService) {
+// SetServices gets a reference to the given map[string]HistoricalUsageService and assigns it to the Services field.
+func (o *HistoricalUsageMonthResponseData) SetServices(v map[string]HistoricalUsageService) {
 	o.Services = &v
 }
 
 // GetTotal returns the Total field value if set, zero value otherwise.
-func (o *HistoricalUsageMonthResponseData) GetTotal() HistoricalUsageResults {
+func (o *HistoricalUsageMonthResponseData) GetTotal() map[string]HistoricalUsageData {
 	if o == nil || o.Total == nil {
-		var ret HistoricalUsageResults
+		var ret map[string]HistoricalUsageData
 		return ret
 	}
 	return *o.Total
@@ -119,7 +121,7 @@ func (o *HistoricalUsageMonthResponseData) GetTotal() HistoricalUsageResults {
 
 // GetTotalOk returns a tuple with the Total field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalUsageMonthResponseData) GetTotalOk() (*HistoricalUsageResults, bool) {
+func (o *HistoricalUsageMonthResponseData) GetTotalOk() (*map[string]HistoricalUsageData, bool) {
 	if o == nil || o.Total == nil {
 		return nil, false
 	}
@@ -135,8 +137,8 @@ func (o *HistoricalUsageMonthResponseData) HasTotal() bool {
 	return false
 }
 
-// SetTotal gets a reference to the given HistoricalUsageResults and assigns it to the Total field.
-func (o *HistoricalUsageMonthResponseData) SetTotal(v HistoricalUsageResults) {
+// SetTotal gets a reference to the given map[string]HistoricalUsageData and assigns it to the Total field.
+func (o *HistoricalUsageMonthResponseData) SetTotal(v map[string]HistoricalUsageData) {
 	o.Total = &v
 }
 

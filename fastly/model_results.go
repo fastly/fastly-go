@@ -17,7 +17,7 @@ import (
 	"encoding/json"
 )
 
-// Results The [results](#results-data-model) of the query, grouped by service (and optionally, region), and aggregated over the appropriate time span.
+// Results The results of stats queries, may be grouped by service depending on endpoint, and aggregated over the appropriate time span.
 type Results struct {
 	// Number of requests processed.
 	Requests *int32 `json:"requests,omitempty"`
@@ -471,6 +471,9 @@ type Results struct {
 	BotChallengesSucceeded *int32 `json:"bot_challenges_succeeded,omitempty"`
 	// The number of failed challenge solutions processed. For example, an incorrect CAPTCHA solution.
 	BotChallengesFailed *int32 `json:"bot_challenges_failed,omitempty"`
+	ServiceID *string `json:"service_id,omitempty"`
+	// Timestamp for the start of the time period being reported
+	StartTime *int32 `json:"start_time,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -7709,6 +7712,70 @@ func (o *Results) SetBotChallengesFailed(v int32) {
 	o.BotChallengesFailed = &v
 }
 
+// GetServiceID returns the ServiceID field value if set, zero value otherwise.
+func (o *Results) GetServiceID() string {
+	if o == nil || o.ServiceID == nil {
+		var ret string
+		return ret
+	}
+	return *o.ServiceID
+}
+
+// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetServiceIDOk() (*string, bool) {
+	if o == nil || o.ServiceID == nil {
+		return nil, false
+	}
+	return o.ServiceID, true
+}
+
+// HasServiceID returns a boolean if a field has been set.
+func (o *Results) HasServiceID() bool {
+	if o != nil && o.ServiceID != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
+func (o *Results) SetServiceID(v string) {
+	o.ServiceID = &v
+}
+
+// GetStartTime returns the StartTime field value if set, zero value otherwise.
+func (o *Results) GetStartTime() int32 {
+	if o == nil || o.StartTime == nil {
+		var ret int32
+		return ret
+	}
+	return *o.StartTime
+}
+
+// GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetStartTimeOk() (*int32, bool) {
+	if o == nil || o.StartTime == nil {
+		return nil, false
+	}
+	return o.StartTime, true
+}
+
+// HasStartTime returns a boolean if a field has been set.
+func (o *Results) HasStartTime() bool {
+	if o != nil && o.StartTime != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStartTime gets a reference to the given int32 and assigns it to the StartTime field.
+func (o *Results) SetStartTime(v int32) {
+	o.StartTime = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o Results) MarshalJSON() ([]byte, error) {
@@ -8388,6 +8455,12 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.BotChallengesFailed != nil {
 		toSerialize["bot_challenges_failed"] = o.BotChallengesFailed
 	}
+	if o.ServiceID != nil {
+		toSerialize["service_id"] = o.ServiceID
+	}
+	if o.StartTime != nil {
+		toSerialize["start_time"] = o.StartTime
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -8633,6 +8706,8 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "bot_challenges_issued")
 		delete(additionalProperties, "bot_challenges_succeeded")
 		delete(additionalProperties, "bot_challenges_failed")
+		delete(additionalProperties, "service_id")
+		delete(additionalProperties, "start_time")
 		o.AdditionalProperties = additionalProperties
 	}
 

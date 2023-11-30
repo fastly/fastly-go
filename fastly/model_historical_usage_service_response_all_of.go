@@ -19,7 +19,8 @@ import (
 
 // HistoricalUsageServiceResponseAllOf struct for HistoricalUsageServiceResponseAllOf
 type HistoricalUsageServiceResponseAllOf struct {
-	Data *HistoricalUsageResults `json:"data,omitempty"`
+	// Organized by *region*.
+	Data *map[string]map[string]HistoricalUsageData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -43,9 +44,9 @@ func NewHistoricalUsageServiceResponseAllOfWithDefaults() *HistoricalUsageServic
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *HistoricalUsageServiceResponseAllOf) GetData() HistoricalUsageResults {
+func (o *HistoricalUsageServiceResponseAllOf) GetData() map[string]map[string]HistoricalUsageData {
 	if o == nil || o.Data == nil {
-		var ret HistoricalUsageResults
+		var ret map[string]map[string]HistoricalUsageData
 		return ret
 	}
 	return *o.Data
@@ -53,7 +54,7 @@ func (o *HistoricalUsageServiceResponseAllOf) GetData() HistoricalUsageResults {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalUsageServiceResponseAllOf) GetDataOk() (*HistoricalUsageResults, bool) {
+func (o *HistoricalUsageServiceResponseAllOf) GetDataOk() (*map[string]map[string]HistoricalUsageData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -69,8 +70,8 @@ func (o *HistoricalUsageServiceResponseAllOf) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given HistoricalUsageResults and assigns it to the Data field.
-func (o *HistoricalUsageServiceResponseAllOf) SetData(v HistoricalUsageResults) {
+// SetData gets a reference to the given map[string]map[string]HistoricalUsageData and assigns it to the Data field.
+func (o *HistoricalUsageServiceResponseAllOf) SetData(v map[string]map[string]HistoricalUsageData) {
 	o.Data = &v
 }
 

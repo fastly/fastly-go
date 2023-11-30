@@ -17,31 +17,31 @@ import (
 	"encoding/json"
 )
 
-// HistoricalService struct for HistoricalService
-type HistoricalService struct {
+// HistoricalUsageService struct for HistoricalUsageService
+type HistoricalUsageService struct {
 	// The name of the service.
 	Name *string `json:"name,omitempty"`
 }
 
-// NewHistoricalService instantiates a new HistoricalService object
+// NewHistoricalUsageService instantiates a new HistoricalUsageService object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHistoricalService() *HistoricalService {
-	this := HistoricalService{}
+func NewHistoricalUsageService() *HistoricalUsageService {
+	this := HistoricalUsageService{}
 	return &this
 }
 
-// NewHistoricalServiceWithDefaults instantiates a new HistoricalService object
+// NewHistoricalUsageServiceWithDefaults instantiates a new HistoricalUsageService object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewHistoricalServiceWithDefaults() *HistoricalService {
-	this := HistoricalService{}
+func NewHistoricalUsageServiceWithDefaults() *HistoricalUsageService {
+	this := HistoricalUsageService{}
 	return &this
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *HistoricalService) GetName() string {
+func (o *HistoricalUsageService) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -51,7 +51,7 @@ func (o *HistoricalService) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalService) GetNameOk() (*string, bool) {
+func (o *HistoricalUsageService) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -59,7 +59,7 @@ func (o *HistoricalService) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *HistoricalService) HasName() bool {
+func (o *HistoricalUsageService) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -68,13 +68,13 @@ func (o *HistoricalService) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *HistoricalService) SetName(v string) {
+func (o *HistoricalUsageService) SetName(v string) {
 	o.Name = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o HistoricalService) MarshalJSON() ([]byte, error) {
+func (o HistoricalUsageService) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -82,48 +82,48 @@ func (o HistoricalService) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-// NullableHistoricalService is a helper abstraction for handling nullable historicalservice types. 
-type NullableHistoricalService struct {
-	value *HistoricalService
+// NullableHistoricalUsageService is a helper abstraction for handling nullable historicalusageservice types. 
+type NullableHistoricalUsageService struct {
+	value *HistoricalUsageService
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableHistoricalService) Get() *HistoricalService {
+func (v NullableHistoricalUsageService) Get() *HistoricalUsageService {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableHistoricalService) Set(val *HistoricalService) {
+func (v *NullableHistoricalUsageService) Set(val *HistoricalUsageService) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableHistoricalService) IsSet() bool {
+func (v NullableHistoricalUsageService) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableHistoricalService) Unset() {
+func (v *NullableHistoricalUsageService) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableHistoricalService returns a pointer to a new instance of NullableHistoricalService.
-func NewNullableHistoricalService(val *HistoricalService) *NullableHistoricalService {
-	return &NullableHistoricalService{value: val, isSet: true}
+// NewNullableHistoricalUsageService returns a pointer to a new instance of NullableHistoricalUsageService.
+func NewNullableHistoricalUsageService(val *HistoricalUsageService) *NullableHistoricalUsageService {
+	return &NullableHistoricalUsageService{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableHistoricalService) MarshalJSON() ([]byte, error) {
+func (v NullableHistoricalUsageService) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableHistoricalService) UnmarshalJSON(src []byte) error {
+func (v *NullableHistoricalUsageService) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

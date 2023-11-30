@@ -229,6 +229,8 @@ Name | Type | Description | Notes
 **BotChallengesIssued** | Pointer to **int32** | The number of challenges issued. For example, the issuance of a CAPTCHA challenge. | [optional] 
 **BotChallengesSucceeded** | Pointer to **int32** | The number of successful challenge solutions processed. For example, a correct CAPTCHA solution. | [optional] 
 **BotChallengesFailed** | Pointer to **int32** | The number of failed challenge solutions processed. For example, an incorrect CAPTCHA solution. | [optional] 
+**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**StartTime** | Pointer to **int32** | Timestamp for the start of the time period being reported | [optional] 
 
 ## Methods
 
@@ -5883,6 +5885,56 @@ SetBotChallengesFailed sets BotChallengesFailed field to given value.
 `func (o *Results) HasBotChallengesFailed() bool`
 
 HasBotChallengesFailed returns a boolean if a field has been set.
+
+### GetServiceID
+
+`func (o *Results) GetServiceID() string`
+
+GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+
+### GetServiceIDOk
+
+`func (o *Results) GetServiceIDOk() (*string, bool)`
+
+GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceID
+
+`func (o *Results) SetServiceID(v string)`
+
+SetServiceID sets ServiceID field to given value.
+
+### HasServiceID
+
+`func (o *Results) HasServiceID() bool`
+
+HasServiceID returns a boolean if a field has been set.
+
+### GetStartTime
+
+`func (o *Results) GetStartTime() int32`
+
+GetStartTime returns the StartTime field if non-nil, zero value otherwise.
+
+### GetStartTimeOk
+
+`func (o *Results) GetStartTimeOk() (*int32, bool)`
+
+GetStartTimeOk returns a tuple with the StartTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartTime
+
+`func (o *Results) SetStartTime(v int32)`
+
+SetStartTime sets StartTime field to given value.
+
+### HasStartTime
+
+`func (o *Results) HasStartTime() bool`
+
+HasStartTime returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

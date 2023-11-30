@@ -42,8 +42,8 @@ type HistoricalAPI interface {
 	GetHistStats(ctx context.Context) APIGetHistStatsRequest
 
 	// GetHistStatsExecute executes the request
-	//  @return HistoricalResponse
-	GetHistStatsExecute(r APIGetHistStatsRequest) (*HistoricalResponse, *http.Response, error)
+	//  @return HistoricalStatsByServiceResponse
+	GetHistStatsExecute(r APIGetHistStatsRequest) (*HistoricalStatsByServiceResponse, *http.Response, error)
 
 	/*
 	GetHistStatsAggregated Get aggregated historical stats
@@ -56,8 +56,8 @@ type HistoricalAPI interface {
 	GetHistStatsAggregated(ctx context.Context) APIGetHistStatsAggregatedRequest
 
 	// GetHistStatsAggregatedExecute executes the request
-	//  @return HistoricalAggregateResponse
-	GetHistStatsAggregatedExecute(r APIGetHistStatsAggregatedRequest) (*HistoricalAggregateResponse, *http.Response, error)
+	//  @return HistoricalStatsAggregatedResponse
+	GetHistStatsAggregatedExecute(r APIGetHistStatsAggregatedRequest) (*HistoricalStatsAggregatedResponse, *http.Response, error)
 
 	/*
 	GetHistStatsField Get historical stats for a single field
@@ -71,8 +71,8 @@ type HistoricalAPI interface {
 	GetHistStatsField(ctx context.Context, field string) APIGetHistStatsFieldRequest
 
 	// GetHistStatsFieldExecute executes the request
-	//  @return HistoricalFieldResponse
-	GetHistStatsFieldExecute(r APIGetHistStatsFieldRequest) (*HistoricalFieldResponse, *http.Response, error)
+	//  @return HistoricalStatsByServiceResponse
+	GetHistStatsFieldExecute(r APIGetHistStatsFieldRequest) (*HistoricalStatsByServiceResponse, *http.Response, error)
 
 	/*
 	GetHistStatsService Get historical stats for a single service
@@ -86,8 +86,8 @@ type HistoricalAPI interface {
 	GetHistStatsService(ctx context.Context, serviceID string) APIGetHistStatsServiceRequest
 
 	// GetHistStatsServiceExecute executes the request
-	//  @return HistoricalAggregateResponse
-	GetHistStatsServiceExecute(r APIGetHistStatsServiceRequest) (*HistoricalAggregateResponse, *http.Response, error)
+	//  @return HistoricalStatsAggregatedResponse
+	GetHistStatsServiceExecute(r APIGetHistStatsServiceRequest) (*HistoricalStatsAggregatedResponse, *http.Response, error)
 
 	/*
 	GetHistStatsServiceField Get historical stats for a single service/field combination
@@ -102,8 +102,8 @@ type HistoricalAPI interface {
 	GetHistStatsServiceField(ctx context.Context, serviceID string, field string) APIGetHistStatsServiceFieldRequest
 
 	// GetHistStatsServiceFieldExecute executes the request
-	//  @return HistoricalFieldAggregateResponse
-	GetHistStatsServiceFieldExecute(r APIGetHistStatsServiceFieldRequest) (*HistoricalFieldAggregateResponse, *http.Response, error)
+	//  @return HistoricalStatsAggregatedResponse
+	GetHistStatsServiceFieldExecute(r APIGetHistStatsServiceFieldRequest) (*HistoricalStatsAggregatedResponse, *http.Response, error)
 
 	/*
 	GetRegions Get region codes
@@ -130,8 +130,8 @@ type HistoricalAPI interface {
 	GetUsage(ctx context.Context) APIGetUsageRequest
 
 	// GetUsageExecute executes the request
-	//  @return HistoricalUsageAggregateResponse
-	GetUsageExecute(r APIGetUsageRequest) (*HistoricalUsageAggregateResponse, *http.Response, error)
+	//  @return HistoricalUsageAggregatedResponse
+	GetUsageExecute(r APIGetUsageRequest) (*HistoricalUsageAggregatedResponse, *http.Response, error)
 
 	/*
 	GetUsageMonth Get month-to-date usage statistics
@@ -197,7 +197,7 @@ func (r *APIGetHistStatsRequest) Region(region string) *APIGetHistStatsRequest {
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetHistStatsRequest) Execute() (*HistoricalResponse, *http.Response, error) {
+func (r APIGetHistStatsRequest) Execute() (*HistoricalStatsByServiceResponse, *http.Response, error) {
 	return r.APIService.GetHistStatsExecute(r)
 }
 
@@ -217,13 +217,13 @@ func (a *HistoricalAPIService) GetHistStats(ctx context.Context) APIGetHistStats
 }
 
 // GetHistStatsExecute executes the request
-//  @return HistoricalResponse
-func (a *HistoricalAPIService) GetHistStatsExecute(r APIGetHistStatsRequest) (*HistoricalResponse, *http.Response, error) {
+//  @return HistoricalStatsByServiceResponse
+func (a *HistoricalAPIService) GetHistStatsExecute(r APIGetHistStatsRequest) (*HistoricalStatsByServiceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *HistoricalResponse
+		localVarReturnValue  *HistoricalStatsByServiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoricalAPIService.GetHistStats")
@@ -363,7 +363,7 @@ func (r *APIGetHistStatsAggregatedRequest) Region(region string) *APIGetHistStat
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetHistStatsAggregatedRequest) Execute() (*HistoricalAggregateResponse, *http.Response, error) {
+func (r APIGetHistStatsAggregatedRequest) Execute() (*HistoricalStatsAggregatedResponse, *http.Response, error) {
 	return r.APIService.GetHistStatsAggregatedExecute(r)
 }
 
@@ -383,13 +383,13 @@ func (a *HistoricalAPIService) GetHistStatsAggregated(ctx context.Context) APIGe
 }
 
 // GetHistStatsAggregatedExecute executes the request
-//  @return HistoricalAggregateResponse
-func (a *HistoricalAPIService) GetHistStatsAggregatedExecute(r APIGetHistStatsAggregatedRequest) (*HistoricalAggregateResponse, *http.Response, error) {
+//  @return HistoricalStatsAggregatedResponse
+func (a *HistoricalAPIService) GetHistStatsAggregatedExecute(r APIGetHistStatsAggregatedRequest) (*HistoricalStatsAggregatedResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *HistoricalAggregateResponse
+		localVarReturnValue  *HistoricalStatsAggregatedResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoricalAPIService.GetHistStatsAggregated")
@@ -530,7 +530,7 @@ func (r *APIGetHistStatsFieldRequest) Region(region string) *APIGetHistStatsFiel
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetHistStatsFieldRequest) Execute() (*HistoricalFieldResponse, *http.Response, error) {
+func (r APIGetHistStatsFieldRequest) Execute() (*HistoricalStatsByServiceResponse, *http.Response, error) {
 	return r.APIService.GetHistStatsFieldExecute(r)
 }
 
@@ -552,13 +552,13 @@ func (a *HistoricalAPIService) GetHistStatsField(ctx context.Context, field stri
 }
 
 // GetHistStatsFieldExecute executes the request
-//  @return HistoricalFieldResponse
-func (a *HistoricalAPIService) GetHistStatsFieldExecute(r APIGetHistStatsFieldRequest) (*HistoricalFieldResponse, *http.Response, error) {
+//  @return HistoricalStatsByServiceResponse
+func (a *HistoricalAPIService) GetHistStatsFieldExecute(r APIGetHistStatsFieldRequest) (*HistoricalStatsByServiceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *HistoricalFieldResponse
+		localVarReturnValue  *HistoricalStatsByServiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoricalAPIService.GetHistStatsField")
@@ -700,7 +700,7 @@ func (r *APIGetHistStatsServiceRequest) Region(region string) *APIGetHistStatsSe
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetHistStatsServiceRequest) Execute() (*HistoricalAggregateResponse, *http.Response, error) {
+func (r APIGetHistStatsServiceRequest) Execute() (*HistoricalStatsAggregatedResponse, *http.Response, error) {
 	return r.APIService.GetHistStatsServiceExecute(r)
 }
 
@@ -722,13 +722,13 @@ func (a *HistoricalAPIService) GetHistStatsService(ctx context.Context, serviceI
 }
 
 // GetHistStatsServiceExecute executes the request
-//  @return HistoricalAggregateResponse
-func (a *HistoricalAPIService) GetHistStatsServiceExecute(r APIGetHistStatsServiceRequest) (*HistoricalAggregateResponse, *http.Response, error) {
+//  @return HistoricalStatsAggregatedResponse
+func (a *HistoricalAPIService) GetHistStatsServiceExecute(r APIGetHistStatsServiceRequest) (*HistoricalStatsAggregatedResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *HistoricalAggregateResponse
+		localVarReturnValue  *HistoricalStatsAggregatedResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoricalAPIService.GetHistStatsService")
@@ -871,7 +871,7 @@ func (r *APIGetHistStatsServiceFieldRequest) Region(region string) *APIGetHistSt
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetHistStatsServiceFieldRequest) Execute() (*HistoricalFieldAggregateResponse, *http.Response, error) {
+func (r APIGetHistStatsServiceFieldRequest) Execute() (*HistoricalStatsAggregatedResponse, *http.Response, error) {
 	return r.APIService.GetHistStatsServiceFieldExecute(r)
 }
 
@@ -895,13 +895,13 @@ func (a *HistoricalAPIService) GetHistStatsServiceField(ctx context.Context, ser
 }
 
 // GetHistStatsServiceFieldExecute executes the request
-//  @return HistoricalFieldAggregateResponse
-func (a *HistoricalAPIService) GetHistStatsServiceFieldExecute(r APIGetHistStatsServiceFieldRequest) (*HistoricalFieldAggregateResponse, *http.Response, error) {
+//  @return HistoricalStatsAggregatedResponse
+func (a *HistoricalAPIService) GetHistStatsServiceFieldExecute(r APIGetHistStatsServiceFieldRequest) (*HistoricalStatsAggregatedResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *HistoricalFieldAggregateResponse
+		localVarReturnValue  *HistoricalStatsAggregatedResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoricalAPIService.GetHistStatsServiceField")
@@ -1161,7 +1161,7 @@ func (r *APIGetUsageRequest) To(to string) *APIGetUsageRequest {
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetUsageRequest) Execute() (*HistoricalUsageAggregateResponse, *http.Response, error) {
+func (r APIGetUsageRequest) Execute() (*HistoricalUsageAggregatedResponse, *http.Response, error) {
 	return r.APIService.GetUsageExecute(r)
 }
 
@@ -1181,13 +1181,13 @@ func (a *HistoricalAPIService) GetUsage(ctx context.Context) APIGetUsageRequest 
 }
 
 // GetUsageExecute executes the request
-//  @return HistoricalUsageAggregateResponse
-func (a *HistoricalAPIService) GetUsageExecute(r APIGetUsageRequest) (*HistoricalUsageAggregateResponse, *http.Response, error) {
+//  @return HistoricalUsageAggregatedResponse
+func (a *HistoricalAPIService) GetUsageExecute(r APIGetUsageRequest) (*HistoricalUsageAggregatedResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *HistoricalUsageAggregateResponse
+		localVarReturnValue  *HistoricalUsageAggregatedResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HistoricalAPIService.GetUsage")

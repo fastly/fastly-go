@@ -48,7 +48,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoricalAPI.GetHistStats`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetHistStats`: HistoricalResponse
+    // response from `GetHistStats`: HistoricalStatsByServiceResponse
     fmt.Fprintf(os.Stdout, "Response from `HistoricalAPI.GetHistStats`: %v\n", resp)
 }
 ```
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HistoricalResponse**](HistoricalResponse.md)
+[**HistoricalStatsByServiceResponse**](HistoricalStatsByServiceResponse.md)
 
 ### Authorization
 
@@ -114,7 +114,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoricalAPI.GetHistStatsAggregated`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetHistStatsAggregated`: HistoricalAggregateResponse
+    // response from `GetHistStatsAggregated`: HistoricalStatsAggregatedResponse
     fmt.Fprintf(os.Stdout, "Response from `HistoricalAPI.GetHistStatsAggregated`: %v\n", resp)
 }
 ```
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HistoricalAggregateResponse**](HistoricalAggregateResponse.md)
+[**HistoricalStatsAggregatedResponse**](HistoricalStatsAggregatedResponse.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoricalAPI.GetHistStatsField`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetHistStatsField`: HistoricalFieldResponse
+    // response from `GetHistStatsField`: HistoricalStatsByServiceResponse
     fmt.Fprintf(os.Stdout, "Response from `HistoricalAPI.GetHistStatsField`: %v\n", resp)
 }
 ```
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HistoricalFieldResponse**](HistoricalFieldResponse.md)
+[**HistoricalStatsByServiceResponse**](HistoricalStatsByServiceResponse.md)
 
 ### Authorization
 
@@ -252,7 +252,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoricalAPI.GetHistStatsService`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetHistStatsService`: HistoricalAggregateResponse
+    // response from `GetHistStatsService`: HistoricalStatsAggregatedResponse
     fmt.Fprintf(os.Stdout, "Response from `HistoricalAPI.GetHistStatsService`: %v\n", resp)
 }
 ```
@@ -276,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HistoricalAggregateResponse**](HistoricalAggregateResponse.md)
+[**HistoricalStatsAggregatedResponse**](HistoricalStatsAggregatedResponse.md)
 
 ### Authorization
 
@@ -324,7 +324,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoricalAPI.GetHistStatsServiceField`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetHistStatsServiceField`: HistoricalFieldAggregateResponse
+    // response from `GetHistStatsServiceField`: HistoricalStatsAggregatedResponse
     fmt.Fprintf(os.Stdout, "Response from `HistoricalAPI.GetHistStatsServiceField`: %v\n", resp)
 }
 ```
@@ -349,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HistoricalFieldAggregateResponse**](HistoricalFieldAggregateResponse.md)
+[**HistoricalStatsAggregatedResponse**](HistoricalStatsAggregatedResponse.md)
 
 ### Authorization
 
@@ -452,7 +452,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoricalAPI.GetUsage`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetUsage`: HistoricalUsageAggregateResponse
+    // response from `GetUsage`: HistoricalUsageAggregatedResponse
     fmt.Fprintf(os.Stdout, "Response from `HistoricalAPI.GetUsage`: %v\n", resp)
 }
 ```
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HistoricalUsageAggregateResponse**](HistoricalUsageAggregateResponse.md)
+[**HistoricalUsageAggregatedResponse**](HistoricalUsageAggregatedResponse.md)
 
 ### Authorization
 

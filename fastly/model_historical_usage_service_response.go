@@ -24,7 +24,8 @@ type HistoricalUsageServiceResponse struct {
 	Meta *HistoricalMeta `json:"meta,omitempty"`
 	// If the query was not successful, this will provide a string that explains why.
 	Msg NullableString `json:"msg,omitempty"`
-	Data *HistoricalUsageResults `json:"data,omitempty"`
+	// Organized by *region*.
+	Data *map[string]map[string]HistoricalUsageData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -154,9 +155,9 @@ func (o *HistoricalUsageServiceResponse) UnsetMsg() {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *HistoricalUsageServiceResponse) GetData() HistoricalUsageResults {
+func (o *HistoricalUsageServiceResponse) GetData() map[string]map[string]HistoricalUsageData {
 	if o == nil || o.Data == nil {
-		var ret HistoricalUsageResults
+		var ret map[string]map[string]HistoricalUsageData
 		return ret
 	}
 	return *o.Data
@@ -164,7 +165,7 @@ func (o *HistoricalUsageServiceResponse) GetData() HistoricalUsageResults {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HistoricalUsageServiceResponse) GetDataOk() (*HistoricalUsageResults, bool) {
+func (o *HistoricalUsageServiceResponse) GetDataOk() (*map[string]map[string]HistoricalUsageData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -180,8 +181,8 @@ func (o *HistoricalUsageServiceResponse) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given HistoricalUsageResults and assigns it to the Data field.
-func (o *HistoricalUsageServiceResponse) SetData(v HistoricalUsageResults) {
+// SetData gets a reference to the given map[string]map[string]HistoricalUsageData and assigns it to the Data field.
+func (o *HistoricalUsageServiceResponse) SetData(v map[string]map[string]HistoricalUsageData) {
 	o.Data = &v
 }
 

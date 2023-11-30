@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**HistoricalUsageResults**](HistoricalUsageResults.md) |  | [optional] 
+**Data** | Pointer to [**map[string]map[string]HistoricalUsageData**](map.md) | Organized by *region*. | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *HistoricalUsageServiceResponseAllOf) GetData() HistoricalUsageResults`
+`func (o *HistoricalUsageServiceResponseAllOf) GetData() map[string]map[string]HistoricalUsageData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *HistoricalUsageServiceResponseAllOf) GetDataOk() (*HistoricalUsageResults, bool)`
+`func (o *HistoricalUsageServiceResponseAllOf) GetDataOk() (*map[string]map[string]HistoricalUsageData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *HistoricalUsageServiceResponseAllOf) SetData(v HistoricalUsageResults)`
+`func (o *HistoricalUsageServiceResponseAllOf) SetData(v map[string]map[string]HistoricalUsageData)`
 
 SetData sets Data field to given value.
 
