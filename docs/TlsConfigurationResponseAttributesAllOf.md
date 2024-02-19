@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Default** | Pointer to **bool** | Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](/reference/api/tls/custom-certs/activations/). | [optional] [readonly] 
 **HTTPProtocols** | Pointer to **[]string** | HTTP protocols available on your configuration. | [optional] [readonly] 
-**TLSProtocols** | Pointer to **[]float32** | TLS protocols available on your configuration. | [optional] [readonly] 
+**TLSProtocols** | Pointer to **[]string** | TLS protocols available on your configuration. | [optional] [readonly] 
 **Bulk** | Pointer to **bool** | Signifies whether the configuration is used for Platform TLS or not. | [optional] [readonly] 
 
 ## Methods
@@ -80,20 +80,20 @@ HasHTTPProtocols returns a boolean if a field has been set.
 
 ### GetTLSProtocols
 
-`func (o *TLSConfigurationResponseAttributesAllOf) GetTLSProtocols() []float32`
+`func (o *TLSConfigurationResponseAttributesAllOf) GetTLSProtocols() []string`
 
 GetTLSProtocols returns the TLSProtocols field if non-nil, zero value otherwise.
 
 ### GetTLSProtocolsOk
 
-`func (o *TLSConfigurationResponseAttributesAllOf) GetTLSProtocolsOk() (*[]float32, bool)`
+`func (o *TLSConfigurationResponseAttributesAllOf) GetTLSProtocolsOk() (*[]string, bool)`
 
 GetTLSProtocolsOk returns a tuple with the TLSProtocols field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTLSProtocols
 
-`func (o *TLSConfigurationResponseAttributesAllOf) SetTLSProtocols(v []float32)`
+`func (o *TLSConfigurationResponseAttributesAllOf) SetTLSProtocols(v []string)`
 
 SetTLSProtocols sets TLSProtocols field to given value.
 

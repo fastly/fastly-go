@@ -24,7 +24,7 @@ type TLSConfigurationResponseAttributesAllOf struct {
 	// HTTP protocols available on your configuration.
 	HTTPProtocols []string `json:"http_protocols,omitempty"`
 	// TLS protocols available on your configuration.
-	TLSProtocols []float32 `json:"tls_protocols,omitempty"`
+	TLSProtocols []string `json:"tls_protocols,omitempty"`
 	// Signifies whether the configuration is used for Platform TLS or not.
 	Bulk *bool `json:"bulk,omitempty"`
 	AdditionalProperties map[string]any
@@ -114,9 +114,9 @@ func (o *TLSConfigurationResponseAttributesAllOf) SetHTTPProtocols(v []string) {
 }
 
 // GetTLSProtocols returns the TLSProtocols field value if set, zero value otherwise.
-func (o *TLSConfigurationResponseAttributesAllOf) GetTLSProtocols() []float32 {
+func (o *TLSConfigurationResponseAttributesAllOf) GetTLSProtocols() []string {
 	if o == nil || o.TLSProtocols == nil {
-		var ret []float32
+		var ret []string
 		return ret
 	}
 	return o.TLSProtocols
@@ -124,7 +124,7 @@ func (o *TLSConfigurationResponseAttributesAllOf) GetTLSProtocols() []float32 {
 
 // GetTLSProtocolsOk returns a tuple with the TLSProtocols field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSConfigurationResponseAttributesAllOf) GetTLSProtocolsOk() ([]float32, bool) {
+func (o *TLSConfigurationResponseAttributesAllOf) GetTLSProtocolsOk() ([]string, bool) {
 	if o == nil || o.TLSProtocols == nil {
 		return nil, false
 	}
@@ -140,8 +140,8 @@ func (o *TLSConfigurationResponseAttributesAllOf) HasTLSProtocols() bool {
 	return false
 }
 
-// SetTLSProtocols gets a reference to the given []float32 and assigns it to the TLSProtocols field.
-func (o *TLSConfigurationResponseAttributesAllOf) SetTLSProtocols(v []float32) {
+// SetTLSProtocols gets a reference to the given []string and assigns it to the TLSProtocols field.
+func (o *TLSConfigurationResponseAttributesAllOf) SetTLSProtocols(v []string) {
 	o.TLSProtocols = v
 }
 

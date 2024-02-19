@@ -33,11 +33,12 @@ import (
 func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     versionID := int32(56) // int32 | Integer identifying a service version.
+    createResponseObjectRequest := *openapiclient.NewCreateResponseObjectRequest() // CreateResponseObjectRequest |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ResponseObjectAPI.CreateResponseObject(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.ResponseObjectAPI.CreateResponseObject(ctx, serviceID, versionID).CreateResponseObjectRequest(createResponseObjectRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ResponseObjectAPI.CreateResponseObject`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -63,7 +64,7 @@ Other parameters are passed through a pointer to a apiCreateResponseObjectReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
+ **createResponseObjectRequest** | [**CreateResponseObjectRequest**](CreateResponseObjectRequest.md) |  | 
 
 ### Return type
 
@@ -75,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
@@ -314,11 +315,12 @@ func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     versionID := int32(56) // int32 | Integer identifying a service version.
     responseObjectName := "responseObjectName_example" // string | Name for the request settings.
+    createResponseObjectRequest := *openapiclient.NewCreateResponseObjectRequest() // CreateResponseObjectRequest |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ResponseObjectAPI.UpdateResponseObject(ctx, serviceID, versionID, responseObjectName).Execute()
+    resp, r, err := apiClient.ResponseObjectAPI.UpdateResponseObject(ctx, serviceID, versionID, responseObjectName).CreateResponseObjectRequest(createResponseObjectRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ResponseObjectAPI.UpdateResponseObject`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -345,7 +347,7 @@ Other parameters are passed through a pointer to a apiUpdateResponseObjectReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
+ **createResponseObjectRequest** | [**CreateResponseObjectRequest**](CreateResponseObjectRequest.md) |  | 
 
 ### Return type
 
@@ -357,7 +359,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/x-www-form-urlencoded
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

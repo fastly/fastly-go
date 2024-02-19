@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.0.0-beta.26](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.26) (2024-02-19)
+
+**Bug fixes:**
+
+- fix(response_object): strongly type response_object create_update requests
+- fix(tls_configurations): fix `tls_protocols` field to be a string array type
+
 ## [v1.0.0-beta.25](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.25) (2023-11-29)
 
 **Breaking:**

@@ -124,8 +124,14 @@ type APICreateResponseObjectRequest struct {
 	APIService ResponseObjectAPI
 	serviceID string
 	versionID int32
+	createResponseObjectRequest *CreateResponseObjectRequest
 }
 
+// CreateResponseObjectRequest returns a pointer to a request.
+func (r *APICreateResponseObjectRequest) CreateResponseObjectRequest(createResponseObjectRequest CreateResponseObjectRequest) *APICreateResponseObjectRequest {
+	r.createResponseObjectRequest = &createResponseObjectRequest
+	return r
+}
 
 // Execute calls the API using the request data configured.
 func (r APICreateResponseObjectRequest) Execute() (*ResponseObjectResponse, *http.Response, error) {
@@ -175,7 +181,7 @@ func (a *ResponseObjectAPIService) CreateResponseObjectExecute(r APICreateRespon
 	localVarFormParams := gourl.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -191,6 +197,8 @@ func (a *ResponseObjectAPIService) CreateResponseObjectExecute(r APICreateRespon
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.createResponseObjectRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -685,8 +693,14 @@ type APIUpdateResponseObjectRequest struct {
 	serviceID string
 	versionID int32
 	responseObjectName string
+	createResponseObjectRequest *CreateResponseObjectRequest
 }
 
+// CreateResponseObjectRequest returns a pointer to a request.
+func (r *APIUpdateResponseObjectRequest) CreateResponseObjectRequest(createResponseObjectRequest CreateResponseObjectRequest) *APIUpdateResponseObjectRequest {
+	r.createResponseObjectRequest = &createResponseObjectRequest
+	return r
+}
 
 // Execute calls the API using the request data configured.
 func (r APIUpdateResponseObjectRequest) Execute() (*ResponseObjectResponse, *http.Response, error) {
@@ -739,7 +753,7 @@ func (a *ResponseObjectAPIService) UpdateResponseObjectExecute(r APIUpdateRespon
 	localVarFormParams := gourl.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/x-www-form-urlencoded"}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -755,6 +769,8 @@ func (a *ResponseObjectAPIService) UpdateResponseObjectExecute(r APIUpdateRespon
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.createResponseObjectRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
