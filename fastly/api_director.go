@@ -159,7 +159,7 @@ func (r *APICreateDirectorRequest) Quorum(quorum int32) *APICreateDirectorReques
 	r.quorum = &quorum
 	return r
 }
-// Shield Selected POP to serve as a shield for the backends. Defaults to &#x60;null&#x60; meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+// Shield Selected POP to serve as a shield for the backends. Defaults to &#x60;null&#x60; meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
 func (r *APICreateDirectorRequest) Shield(shield string) *APICreateDirectorRequest {
 	r.shield = &shield
 	return r

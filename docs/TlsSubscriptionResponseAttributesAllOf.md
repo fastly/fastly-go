@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **State** | Pointer to **string** | The current state of your subscription. | [optional] 
+**HasActiveOrder** | Pointer to **bool** | Subscription has an active order | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetState sets State field to given value.
 `func (o *TLSSubscriptionResponseAttributesAllOf) HasState() bool`
 
 HasState returns a boolean if a field has been set.
+
+### GetHasActiveOrder
+
+`func (o *TLSSubscriptionResponseAttributesAllOf) GetHasActiveOrder() bool`
+
+GetHasActiveOrder returns the HasActiveOrder field if non-nil, zero value otherwise.
+
+### GetHasActiveOrderOk
+
+`func (o *TLSSubscriptionResponseAttributesAllOf) GetHasActiveOrderOk() (*bool, bool)`
+
+GetHasActiveOrderOk returns a tuple with the HasActiveOrder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasActiveOrder
+
+`func (o *TLSSubscriptionResponseAttributesAllOf) SetHasActiveOrder(v bool)`
+
+SetHasActiveOrder sets HasActiveOrder field to given value.
+
+### HasHasActiveOrder
+
+`func (o *TLSSubscriptionResponseAttributesAllOf) HasHasActiveOrder() bool`
+
+HasHasActiveOrder returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

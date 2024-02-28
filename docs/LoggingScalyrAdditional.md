@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Region** | Pointer to **string** | The region that log data will be sent to. | [optional] [default to "US"]
-**Token** | Pointer to **string** | The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)). | [optional] 
+**Token** | Pointer to **string** | The token to use for authentication. | [optional] 
 **ProjectID** | Pointer to **string** | The name of the logfile within Scalyr. | [optional] [default to "logplex"]
 
 ## Methods

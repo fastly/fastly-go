@@ -21,7 +21,7 @@ import (
 type PoolAdditional struct {
 	// Name for the Pool.
 	Name *string `json:"name,omitempty"`
-	// Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+	// Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
 	Shield NullableString `json:"shield,omitempty"`
 	// Condition which, if met, will select this configuration during a request. Optional.
 	RequestCondition NullableString `json:"request_condition,omitempty"`

@@ -19,7 +19,7 @@ import (
 
 // TLSConfigurationResponseAttributesAllOf struct for TLSConfigurationResponseAttributesAllOf
 type TLSConfigurationResponseAttributesAllOf struct {
-	// Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](/reference/api/tls/custom-certs/activations/).
+	// Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](https://www.fastly.com/documentation/reference/api/tls/custom-certs/activations/).
 	Default *bool `json:"default,omitempty"`
 	// HTTP protocols available on your configuration.
 	HTTPProtocols []string `json:"http_protocols,omitempty"`

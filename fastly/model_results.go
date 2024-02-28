@@ -177,10 +177,14 @@ type Results struct {
 	ImgoptoRespBodyBytes *int32 `json:"imgopto_resp_body_bytes,omitempty"`
 	// Total header bytes delivered from the Fastly Image Optimizer service, including shield traffic.
 	ImgoptoRespHeaderBytes *int32 `json:"imgopto_resp_header_bytes,omitempty"`
+	// Number of responses that came from the Fastly Image Optimizer service via a shield.
+	ImgoptoShield *int32 `json:"imgopto_shield,omitempty"`
 	// Total body bytes delivered via a shield from the Fastly Image Optimizer service.
 	ImgoptoShieldRespBodyBytes *int32 `json:"imgopto_shield_resp_body_bytes,omitempty"`
 	// Total header bytes delivered via a shield from the Fastly Image Optimizer service.
 	ImgoptoShieldRespHeaderBytes *int32 `json:"imgopto_shield_resp_header_bytes,omitempty"`
+	// Number of transforms performed by the Fastly Image Optimizer service.
+	ImgoptoTransforms *int32 `json:"imgopto_transforms,omitempty"`
 	// Number of video responses that came from the Fastly Image Optimizer service.
 	Imgvideo *int32 `json:"imgvideo,omitempty"`
 	// Number of video frames that came from the Fastly Image Optimizer service. A video frame is an individual image within a sequence of video.
@@ -3034,6 +3038,38 @@ func (o *Results) SetImgoptoRespHeaderBytes(v int32) {
 	o.ImgoptoRespHeaderBytes = &v
 }
 
+// GetImgoptoShield returns the ImgoptoShield field value if set, zero value otherwise.
+func (o *Results) GetImgoptoShield() int32 {
+	if o == nil || o.ImgoptoShield == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ImgoptoShield
+}
+
+// GetImgoptoShieldOk returns a tuple with the ImgoptoShield field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetImgoptoShieldOk() (*int32, bool) {
+	if o == nil || o.ImgoptoShield == nil {
+		return nil, false
+	}
+	return o.ImgoptoShield, true
+}
+
+// HasImgoptoShield returns a boolean if a field has been set.
+func (o *Results) HasImgoptoShield() bool {
+	if o != nil && o.ImgoptoShield != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImgoptoShield gets a reference to the given int32 and assigns it to the ImgoptoShield field.
+func (o *Results) SetImgoptoShield(v int32) {
+	o.ImgoptoShield = &v
+}
+
 // GetImgoptoShieldRespBodyBytes returns the ImgoptoShieldRespBodyBytes field value if set, zero value otherwise.
 func (o *Results) GetImgoptoShieldRespBodyBytes() int32 {
 	if o == nil || o.ImgoptoShieldRespBodyBytes == nil {
@@ -3096,6 +3132,38 @@ func (o *Results) HasImgoptoShieldRespHeaderBytes() bool {
 // SetImgoptoShieldRespHeaderBytes gets a reference to the given int32 and assigns it to the ImgoptoShieldRespHeaderBytes field.
 func (o *Results) SetImgoptoShieldRespHeaderBytes(v int32) {
 	o.ImgoptoShieldRespHeaderBytes = &v
+}
+
+// GetImgoptoTransforms returns the ImgoptoTransforms field value if set, zero value otherwise.
+func (o *Results) GetImgoptoTransforms() int32 {
+	if o == nil || o.ImgoptoTransforms == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ImgoptoTransforms
+}
+
+// GetImgoptoTransformsOk returns a tuple with the ImgoptoTransforms field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetImgoptoTransformsOk() (*int32, bool) {
+	if o == nil || o.ImgoptoTransforms == nil {
+		return nil, false
+	}
+	return o.ImgoptoTransforms, true
+}
+
+// HasImgoptoTransforms returns a boolean if a field has been set.
+func (o *Results) HasImgoptoTransforms() bool {
+	if o != nil && o.ImgoptoTransforms != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImgoptoTransforms gets a reference to the given int32 and assigns it to the ImgoptoTransforms field.
+func (o *Results) SetImgoptoTransforms(v int32) {
+	o.ImgoptoTransforms = &v
 }
 
 // GetImgvideo returns the Imgvideo field value if set, zero value otherwise.
@@ -8017,11 +8085,17 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.ImgoptoRespHeaderBytes != nil {
 		toSerialize["imgopto_resp_header_bytes"] = o.ImgoptoRespHeaderBytes
 	}
+	if o.ImgoptoShield != nil {
+		toSerialize["imgopto_shield"] = o.ImgoptoShield
+	}
 	if o.ImgoptoShieldRespBodyBytes != nil {
 		toSerialize["imgopto_shield_resp_body_bytes"] = o.ImgoptoShieldRespBodyBytes
 	}
 	if o.ImgoptoShieldRespHeaderBytes != nil {
 		toSerialize["imgopto_shield_resp_header_bytes"] = o.ImgoptoShieldRespHeaderBytes
+	}
+	if o.ImgoptoTransforms != nil {
+		toSerialize["imgopto_transforms"] = o.ImgoptoTransforms
 	}
 	if o.Imgvideo != nil {
 		toSerialize["imgvideo"] = o.Imgvideo
@@ -8560,8 +8634,10 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "imgopto")
 		delete(additionalProperties, "imgopto_resp_body_bytes")
 		delete(additionalProperties, "imgopto_resp_header_bytes")
+		delete(additionalProperties, "imgopto_shield")
 		delete(additionalProperties, "imgopto_shield_resp_body_bytes")
 		delete(additionalProperties, "imgopto_shield_resp_header_bytes")
+		delete(additionalProperties, "imgopto_transforms")
 		delete(additionalProperties, "imgvideo")
 		delete(additionalProperties, "imgvideo_frames")
 		delete(additionalProperties, "imgvideo_resp_header_bytes")

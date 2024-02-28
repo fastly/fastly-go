@@ -101,8 +101,8 @@ type AutomationTokensAPI interface {
 	RevokeAutomationTokenID(ctx context.Context, id string) APIRevokeAutomationTokenIDRequest
 
 	// RevokeAutomationTokenIDExecute executes the request
-	//  @return ErrorResponse
-	RevokeAutomationTokenIDExecute(r APIRevokeAutomationTokenIDRequest) (*ErrorResponse, *http.Response, error)
+	//  @return AutomationTokenErrorResponse
+	RevokeAutomationTokenIDExecute(r APIRevokeAutomationTokenIDRequest) (*AutomationTokenErrorResponse, *http.Response, error)
 }
 
 // AutomationTokensAPIService AutomationTokensAPI service
@@ -352,7 +352,7 @@ func (a *AutomationTokensAPIService) GetAutomationTokenIDExecute(r APIGetAutomat
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v ErrorResponse
+			var v AutomationTokenErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -362,7 +362,7 @@ func (a *AutomationTokensAPIService) GetAutomationTokenIDExecute(r APIGetAutomat
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ErrorResponse
+			var v AutomationTokenErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -523,7 +523,7 @@ func (a *AutomationTokensAPIService) GetAutomationTokensIDServicesExecute(r APIG
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v ErrorResponse
+			var v AutomationTokenErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -533,7 +533,7 @@ func (a *AutomationTokensAPIService) GetAutomationTokensIDServicesExecute(r APIG
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ErrorResponse
+			var v AutomationTokenErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -690,7 +690,7 @@ func (a *AutomationTokensAPIService) ListAutomationTokensExecute(r APIListAutoma
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v ErrorResponse
+			var v AutomationTokenErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -700,7 +700,7 @@ func (a *AutomationTokensAPIService) ListAutomationTokensExecute(r APIListAutoma
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ErrorResponse
+			var v AutomationTokenErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -746,7 +746,7 @@ type APIRevokeAutomationTokenIDRequest struct {
 
 
 // Execute calls the API using the request data configured.
-func (r APIRevokeAutomationTokenIDRequest) Execute() (*ErrorResponse, *http.Response, error) {
+func (r APIRevokeAutomationTokenIDRequest) Execute() (*AutomationTokenErrorResponse, *http.Response, error) {
 	return r.APIService.RevokeAutomationTokenIDExecute(r)
 }
 
@@ -768,13 +768,13 @@ func (a *AutomationTokensAPIService) RevokeAutomationTokenID(ctx context.Context
 }
 
 // RevokeAutomationTokenIDExecute executes the request
-//  @return ErrorResponse
-func (a *AutomationTokensAPIService) RevokeAutomationTokenIDExecute(r APIRevokeAutomationTokenIDRequest) (*ErrorResponse, *http.Response, error) {
+//  @return AutomationTokenErrorResponse
+func (a *AutomationTokensAPIService) RevokeAutomationTokenIDExecute(r APIRevokeAutomationTokenIDRequest) (*AutomationTokenErrorResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *ErrorResponse
+		localVarReturnValue  *AutomationTokenErrorResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.RevokeAutomationTokenID")
@@ -843,7 +843,7 @@ func (a *AutomationTokensAPIService) RevokeAutomationTokenIDExecute(r APIRevokeA
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 400 {
-			var v ErrorResponse
+			var v AutomationTokenErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -853,7 +853,7 @@ func (a *AutomationTokensAPIService) RevokeAutomationTokenIDExecute(r APIRevokeA
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v ErrorResponse
+			var v AutomationTokenErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -863,7 +863,7 @@ func (a *AutomationTokensAPIService) RevokeAutomationTokenIDExecute(r APIRevokeA
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v ErrorResponse
+			var v AutomationTokenErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -873,7 +873,7 @@ func (a *AutomationTokensAPIService) RevokeAutomationTokenIDExecute(r APIRevokeA
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v ErrorResponse
+			var v AutomationTokenErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

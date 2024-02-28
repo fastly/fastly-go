@@ -21,7 +21,7 @@ import (
 type LoggingScalyrAdditional struct {
 	// The region that log data will be sent to.
 	Region *string `json:"region,omitempty"`
-	// The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+	// The token to use for authentication.
 	Token *string `json:"token,omitempty"`
 	// The name of the logfile within Scalyr.
 	ProjectID *string `json:"project_id,omitempty"`

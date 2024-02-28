@@ -52,7 +52,7 @@ type WafActiveRulesAPI interface {
 	/*
 	BulkUpdateWafActiveRules Update multiple active rules
 
-	Bulk update all active rules on a [firewall version](https://developer.fastly.com/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.
+	Bulk update all active rules on a [firewall version](https://www.fastly.com/documentation/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param firewallID Alphanumeric string identifying a WAF Firewall.
@@ -348,7 +348,7 @@ func (r APIBulkUpdateWafActiveRulesRequest) Execute() (*http.Response, error) {
 /*
 BulkUpdateWafActiveRules Update multiple active rules
 
-Bulk update all active rules on a [firewall version](https://developer.fastly.com/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.
+Bulk update all active rules on a [firewall version](https://www.fastly.com/documentation/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param firewallID Alphanumeric string identifying a WAF Firewall.

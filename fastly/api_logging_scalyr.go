@@ -164,7 +164,7 @@ func (r *APICreateLogScalyrRequest) Region(region string) *APICreateLogScalyrReq
 	r.region = &region
 	return r
 }
-// Token The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+// Token The token to use for authentication.
 func (r *APICreateLogScalyrRequest) Token(token string) *APICreateLogScalyrRequest {
 	r.token = &token
 	return r
@@ -797,7 +797,7 @@ func (r *APIUpdateLogScalyrRequest) Region(region string) *APIUpdateLogScalyrReq
 	r.region = &region
 	return r
 }
-// Token The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+// Token The token to use for authentication.
 func (r *APIUpdateLogScalyrRequest) Token(token string) *APIUpdateLogScalyrRequest {
 	r.token = &token
 	return r

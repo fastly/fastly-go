@@ -38,7 +38,7 @@ func main() {
     comment := "comment_example" // string | A freeform descriptive note. (optional)
     name := "name_example" // string | Name for the Director. (optional)
     quorum := int32(56) // int32 | The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`. (optional) (default to 75)
-    shield := "shield_example" // string | Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding. (optional) (default to "null")
+    shield := "shield_example" // string | Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding. (optional) (default to "null")
     resourceType := int32(56) // int32 | What type of load balance group to use. (optional) (default to 1)
     retries := int32(56) // int32 | How many backends to search if it fails. (optional) (default to 5)
 
@@ -71,7 +71,7 @@ Other parameters are passed through a pointer to a apiCreateDirectorRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **backends** | [**[]Backend**](Backend.md) | List of backends associated to a director. |  **capacity** | **int32** | Unused. |  **comment** | **string** | A freeform descriptive note. |  **name** | **string** | Name for the Director. |  **quorum** | **int32** | The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`. | [default to 75] **shield** | **string** | Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding. | [default to &quot;null&quot;] **resourceType** | **int32** | What type of load balance group to use. | [default to 1] **retries** | **int32** | How many backends to search if it fails. | [default to 5]
+ **backends** | [**[]Backend**](Backend.md) | List of backends associated to a director. |  **capacity** | **int32** | Unused. |  **comment** | **string** | A freeform descriptive note. |  **name** | **string** | Name for the Director. |  **quorum** | **int32** | The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`. | [default to 75] **shield** | **string** | Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding. | [default to &quot;null&quot;] **resourceType** | **int32** | What type of load balance group to use. | [default to 1] **retries** | **int32** | How many backends to search if it fails. | [default to 5]
 
 ### Return type
 

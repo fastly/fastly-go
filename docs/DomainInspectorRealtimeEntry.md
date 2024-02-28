@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Recorded** | Pointer to [**RecordedTimestamp**](RecordedTimestamp.md) |  | [optional] 
 **Aggregated** | Pointer to [**map[string]DomainInspectorMeasurements**](domain_inspector_measurements.md) | Groups [measurements](#measurements-data-model) by backend name and then by IP address. | [optional] 
-**Datacenter** | Pointer to [**map[string]map[string]DomainInspectorMeasurements**](map.md) | Groups [measurements](#measurements-data-model) by POP, then backend name, and then IP address. See the [POPs API](/reference/api/utils/pops/) for details about POP identifiers. | [optional] 
+**Datacenter** | Pointer to [**map[string]map[string]DomainInspectorMeasurements**](map.md) | Groups [measurements](#measurements-data-model) by POP, then backend name, and then IP address. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details about POP identifiers. | [optional] 
 
 ## Methods
 

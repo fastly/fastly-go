@@ -651,9 +651,10 @@ type APIGetSecretStoresRequest struct {
 	APIService SecretStoreAPI
 	cursor *string
 	limit *string
+	name *string
 }
 
-// Cursor Cursor value from a previous response to retrieve the next page. To request the first page, this should be empty.
+// Cursor Cursor value from the &#x60;next_cursor&#x60; field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
 func (r *APIGetSecretStoresRequest) Cursor(cursor string) *APIGetSecretStoresRequest {
 	r.cursor = &cursor
 	return r
@@ -661,6 +662,11 @@ func (r *APIGetSecretStoresRequest) Cursor(cursor string) *APIGetSecretStoresReq
 // Limit Number of results per page. The maximum is 200.
 func (r *APIGetSecretStoresRequest) Limit(limit string) *APIGetSecretStoresRequest {
 	r.limit = &limit
+	return r
+}
+// Name Returns a one-element array containing the details for the named secret store.
+func (r *APIGetSecretStoresRequest) Name(name string) *APIGetSecretStoresRequest {
+	r.name = &name
 	return r
 }
 
@@ -710,6 +716,9 @@ func (a *SecretStoreAPIService) GetSecretStoresExecute(r APIGetSecretStoresReque
 	}
 	if r.limit != nil {
 		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	}
+	if r.name != nil {
+		localVarQueryParams.Add("name", parameterToString(*r.name, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **State** | Pointer to **string** | The current state of your subscription. | [optional] 
+**HasActiveOrder** | Pointer to **bool** | Subscription has an active order | [optional] 
 
 ## Methods
 
@@ -157,6 +158,31 @@ SetState sets State field to given value.
 `func (o *TLSSubscriptionResponseAttributes) HasState() bool`
 
 HasState returns a boolean if a field has been set.
+
+### GetHasActiveOrder
+
+`func (o *TLSSubscriptionResponseAttributes) GetHasActiveOrder() bool`
+
+GetHasActiveOrder returns the HasActiveOrder field if non-nil, zero value otherwise.
+
+### GetHasActiveOrderOk
+
+`func (o *TLSSubscriptionResponseAttributes) GetHasActiveOrderOk() (*bool, bool)`
+
+GetHasActiveOrderOk returns a tuple with the HasActiveOrder field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasActiveOrder
+
+`func (o *TLSSubscriptionResponseAttributes) SetHasActiveOrder(v bool)`
+
+SetHasActiveOrder sets HasActiveOrder field to given value.
+
+### HasHasActiveOrder
+
+`func (o *TLSSubscriptionResponseAttributes) HasHasActiveOrder() bool`
+
+HasHasActiveOrder returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

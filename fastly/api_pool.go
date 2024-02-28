@@ -209,7 +209,7 @@ func (r *APICreateServerPoolRequest) Name(name string) *APICreateServerPoolReque
 	r.name = &name
 	return r
 }
-// Shield Selected POP to serve as a shield for the servers. Defaults to &#x60;null&#x60; meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+// Shield Selected POP to serve as a shield for the servers. Defaults to &#x60;null&#x60; meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
 func (r *APICreateServerPoolRequest) Shield(shield string) *APICreateServerPoolRequest {
 	r.shield = &shield
 	return r
@@ -1021,7 +1021,7 @@ func (r *APIUpdateServerPoolRequest) Name(name string) *APIUpdateServerPoolReque
 	r.name = &name
 	return r
 }
-// Shield Selected POP to serve as a shield for the servers. Defaults to &#x60;null&#x60; meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+// Shield Selected POP to serve as a shield for the servers. Defaults to &#x60;null&#x60; meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
 func (r *APIUpdateServerPoolRequest) Shield(shield string) *APIUpdateServerPoolRequest {
 	r.shield = &shield
 	return r

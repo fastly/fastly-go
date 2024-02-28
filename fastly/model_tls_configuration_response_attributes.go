@@ -26,7 +26,7 @@ type TLSConfigurationResponseAttributes struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	// Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](/reference/api/tls/custom-certs/activations/).
+	// Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](https://www.fastly.com/documentation/reference/api/tls/custom-certs/activations/).
 	Default *bool `json:"default,omitempty"`
 	// HTTP protocols available on your configuration.
 	HTTPProtocols []string `json:"http_protocols,omitempty"`

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Code** | **string** | the three-letter code for the [POP](https://developer.fastly.com/learning/concepts/pop/) | 
+**Code** | **string** | the three-letter code for the [POP](https://www.fastly.com/documentation/learning/concepts/pop/) | 
 **Name** | **string** | the name of the POP | 
 **Group** | **string** |  | 
 **Region** | **string** |  | 
 **StatsRegion** | **string** | the region used for stats reporting | 
 **BillingRegion** | **string** | the region used for billing | 
 **Coordinates** | Pointer to [**PopCoordinates**](PopCoordinates.md) |  | [optional] 
-**Shield** | Pointer to **string** | the name of the [shield code](https://developer.fastly.com/learning/concepts/shielding/#choosing-a-shield-location) if this POP is suitable for shielding | [optional] 
+**Shield** | Pointer to **string** | the name of the [shield code](https://www.fastly.com/documentation/learning/concepts/shielding/#choosing-a-shield-location) if this POP is suitable for shielding | [optional] 
 
 ## Methods
 

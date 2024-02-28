@@ -67,7 +67,7 @@ type Backend struct {
 	SslCertHostname NullableString `json:"ssl_cert_hostname,omitempty"`
 	// Be strict on checking SSL certs.
 	SslCheckCert NullableBool `json:"ssl_check_cert,omitempty"`
-	// List of [OpenSSL ciphers](https://www.openssl.org/docs/manmaster/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
+	// List of [OpenSSL ciphers](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
 	SslCiphers NullableString `json:"ssl_ciphers,omitempty"`
 	// Client certificate attached to origin.
 	SslClientCert NullableString `json:"ssl_client_cert,omitempty"`

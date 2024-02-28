@@ -227,7 +227,7 @@ import (
 
 func main() {
     cursor := "cursor_example" // string |  (optional)
-    limit := int32(56) // int32 |  (optional) (default to 100)
+    limit := int32(56) // int32 |  (optional) (default to 1000)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -253,7 +253,7 @@ Other parameters are passed through a pointer to a apiGetStoresRequest struct vi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **string** |  |  **limit** | **int32** |  | [default to 100]
+ **cursor** | **string** |  |  **limit** | **int32** |  | [default to 1000]
 
 ### Return type
 

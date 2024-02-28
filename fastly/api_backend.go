@@ -277,7 +277,7 @@ func (r *APICreateBackendRequest) SslCheckCert(sslCheckCert bool) *APICreateBack
 	r.sslCheckCert = &sslCheckCert
 	return r
 }
-// SslCiphers List of [OpenSSL ciphers](https://www.openssl.org/docs/manmaster/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
+// SslCiphers List of [OpenSSL ciphers](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
 func (r *APICreateBackendRequest) SslCiphers(sslCiphers string) *APICreateBackendRequest {
 	r.sslCiphers = &sslCiphers
 	return r
@@ -1117,7 +1117,7 @@ func (r *APIUpdateBackendRequest) SslCheckCert(sslCheckCert bool) *APIUpdateBack
 	r.sslCheckCert = &sslCheckCert
 	return r
 }
-// SslCiphers List of [OpenSSL ciphers](https://www.openssl.org/docs/manmaster/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
+// SslCiphers List of [OpenSSL ciphers](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
 func (r *APIUpdateBackendRequest) SslCiphers(sslCiphers string) *APIUpdateBackendRequest {
 	r.sslCiphers = &sslCiphers
 	return r

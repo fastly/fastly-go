@@ -83,8 +83,10 @@ Name | Type | Description | Notes
 **Imgopto** | Pointer to **int32** | Number of responses that came from the Fastly Image Optimizer service. If the service receives 10 requests for an image, this stat will be 10 regardless of how many times the image was transformed. | [optional] 
 **ImgoptoRespBodyBytes** | Pointer to **int32** | Total body bytes delivered from the Fastly Image Optimizer service, including shield traffic. | [optional] 
 **ImgoptoRespHeaderBytes** | Pointer to **int32** | Total header bytes delivered from the Fastly Image Optimizer service, including shield traffic. | [optional] 
+**ImgoptoShield** | Pointer to **int32** | Number of responses that came from the Fastly Image Optimizer service via a shield. | [optional] 
 **ImgoptoShieldRespBodyBytes** | Pointer to **int32** | Total body bytes delivered via a shield from the Fastly Image Optimizer service. | [optional] 
 **ImgoptoShieldRespHeaderBytes** | Pointer to **int32** | Total header bytes delivered via a shield from the Fastly Image Optimizer service. | [optional] 
+**ImgoptoTransforms** | Pointer to **int32** | Number of transforms performed by the Fastly Image Optimizer service. | [optional] 
 **Imgvideo** | Pointer to **int32** | Number of video responses that came from the Fastly Image Optimizer service. | [optional] 
 **ImgvideoFrames** | Pointer to **int32** | Number of video frames that came from the Fastly Image Optimizer service. A video frame is an individual image within a sequence of video. | [optional] 
 **ImgvideoRespHeaderBytes** | Pointer to **int32** | Total header bytes of video delivered from the Fastly Image Optimizer service. | [optional] 
@@ -2236,6 +2238,31 @@ SetImgoptoRespHeaderBytes sets ImgoptoRespHeaderBytes field to given value.
 
 HasImgoptoRespHeaderBytes returns a boolean if a field has been set.
 
+### GetImgoptoShield
+
+`func (o *Results) GetImgoptoShield() int32`
+
+GetImgoptoShield returns the ImgoptoShield field if non-nil, zero value otherwise.
+
+### GetImgoptoShieldOk
+
+`func (o *Results) GetImgoptoShieldOk() (*int32, bool)`
+
+GetImgoptoShieldOk returns a tuple with the ImgoptoShield field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoShield
+
+`func (o *Results) SetImgoptoShield(v int32)`
+
+SetImgoptoShield sets ImgoptoShield field to given value.
+
+### HasImgoptoShield
+
+`func (o *Results) HasImgoptoShield() bool`
+
+HasImgoptoShield returns a boolean if a field has been set.
+
 ### GetImgoptoShieldRespBodyBytes
 
 `func (o *Results) GetImgoptoShieldRespBodyBytes() int32`
@@ -2285,6 +2312,31 @@ SetImgoptoShieldRespHeaderBytes sets ImgoptoShieldRespHeaderBytes field to given
 `func (o *Results) HasImgoptoShieldRespHeaderBytes() bool`
 
 HasImgoptoShieldRespHeaderBytes returns a boolean if a field has been set.
+
+### GetImgoptoTransforms
+
+`func (o *Results) GetImgoptoTransforms() int32`
+
+GetImgoptoTransforms returns the ImgoptoTransforms field if non-nil, zero value otherwise.
+
+### GetImgoptoTransformsOk
+
+`func (o *Results) GetImgoptoTransformsOk() (*int32, bool)`
+
+GetImgoptoTransformsOk returns a tuple with the ImgoptoTransforms field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoTransforms
+
+`func (o *Results) SetImgoptoTransforms(v int32)`
+
+SetImgoptoTransforms sets ImgoptoTransforms field to given value.
+
+### HasImgoptoTransforms
+
+`func (o *Results) HasImgoptoTransforms() bool`
+
+HasImgoptoTransforms returns a boolean if a field has been set.
 
 ### GetImgvideo
 

@@ -83,7 +83,7 @@ func (r *APIGetOriginInspectorHistoricalRequest) Downsample(downsample string) *
 	r.downsample = &downsample
 	return r
 }
-// Metric The metric to retrieve. Up to ten comma-separated metrics are accepted.
+// Metric The metrics to retrieve. Multiple values should be comma-separated.
 func (r *APIGetOriginInspectorHistoricalRequest) Metric(metric string) *APIGetOriginInspectorHistoricalRequest {
 	r.metric = &metric
 	return r
@@ -98,7 +98,7 @@ func (r *APIGetOriginInspectorHistoricalRequest) Limit(limit string) *APIGetOrig
 	r.limit = &limit
 	return r
 }
-// Cursor Cursor value from a previous response to retrieve the next page. To request the first page, this should be empty.
+// Cursor Cursor value from the &#x60;next_cursor&#x60; field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
 func (r *APIGetOriginInspectorHistoricalRequest) Cursor(cursor string) *APIGetOriginInspectorHistoricalRequest {
 	r.cursor = &cursor
 	return r

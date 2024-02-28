@@ -17,7 +17,7 @@ import (
 	"encoding/json"
 )
 
-// RelationshipTLSCertificate The [TLS certificate](/reference/api/tls/custom-certs/certificates/) being used to terminate TLS traffic for a domain. Required.
+// RelationshipTLSCertificate The [TLS certificate](https://www.fastly.com/documentation/reference/api/tls/custom-certs/certificates/) being used to terminate TLS traffic for a domain. Required.
 type RelationshipTLSCertificate struct {
 	TLSCertificate *RelationshipTLSCertificateTLSCertificate `json:"tls_certificate,omitempty"`
 	AdditionalProperties map[string]any

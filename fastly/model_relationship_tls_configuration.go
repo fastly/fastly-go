@@ -17,7 +17,7 @@ import (
 	"encoding/json"
 )
 
-// RelationshipTLSConfiguration The [TLS configuration](/reference/api/tls/custom-certs/configuration/) being used to terminate TLS traffic. Optional.
+// RelationshipTLSConfiguration The [TLS configuration](https://www.fastly.com/documentation/reference/api/tls/custom-certs/configuration/) being used to terminate TLS traffic. Optional.
 type RelationshipTLSConfiguration struct {
 	TLSConfiguration *RelationshipTLSConfigurationTLSConfiguration `json:"tls_configuration,omitempty"`
 	AdditionalProperties map[string]any

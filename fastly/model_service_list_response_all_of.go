@@ -20,9 +20,9 @@ import (
 // ServiceListResponseAllOf struct for ServiceListResponseAllOf
 type ServiceListResponseAllOf struct {
 	ID *string `json:"id,omitempty"`
-	// Current [version](/reference/api/services/version/) of the service.
+	// Current [version](https://www.fastly.com/documentation/reference/api/services/version/) of the service.
 	Version *int32 `json:"version,omitempty"`
-	// A list of [versions](/reference/api/services/version/) associated with the service.
+	// A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service.
 	Versions []SchemasVersionResponse `json:"versions,omitempty"`
 	AdditionalProperties map[string]any
 }

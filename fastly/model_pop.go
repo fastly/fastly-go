@@ -19,7 +19,7 @@ import (
 
 // Pop struct for Pop
 type Pop struct {
-	// the three-letter code for the [POP](https://developer.fastly.com/learning/concepts/pop/)
+	// the three-letter code for the [POP](https://www.fastly.com/documentation/learning/concepts/pop/)
 	Code string `json:"code"`
 	// the name of the POP
 	Name string `json:"name"`
@@ -30,7 +30,7 @@ type Pop struct {
 	// the region used for billing
 	BillingRegion string `json:"billing_region"`
 	Coordinates *PopCoordinates `json:"coordinates,omitempty"`
-	// the name of the [shield code](https://developer.fastly.com/learning/concepts/shielding/#choosing-a-shield-location) if this POP is suitable for shielding
+	// the name of the [shield code](https://www.fastly.com/documentation/learning/concepts/shielding/#choosing-a-shield-location) if this POP is suitable for shielding
 	Shield *string `json:"shield,omitempty"`
 	AdditionalProperties map[string]any
 }

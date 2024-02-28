@@ -17,8 +17,8 @@ import (
 	"encoding/json"
 )
 
-// ErrorResponse struct for ErrorResponse
-type ErrorResponse struct {
+// AutomationTokenErrorResponse struct for AutomationTokenErrorResponse
+type AutomationTokenErrorResponse struct {
 	Detail *string `json:"detail,omitempty"`
 	Errors []any `json:"errors,omitempty"`
 	Status *int32 `json:"status,omitempty"`
@@ -26,27 +26,27 @@ type ErrorResponse struct {
 	AdditionalProperties map[string]any
 }
 
-type _ErrorResponse ErrorResponse
+type _AutomationTokenErrorResponse AutomationTokenErrorResponse
 
-// NewErrorResponse instantiates a new ErrorResponse object
+// NewAutomationTokenErrorResponse instantiates a new AutomationTokenErrorResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewErrorResponse() *ErrorResponse {
-	this := ErrorResponse{}
+func NewAutomationTokenErrorResponse() *AutomationTokenErrorResponse {
+	this := AutomationTokenErrorResponse{}
 	return &this
 }
 
-// NewErrorResponseWithDefaults instantiates a new ErrorResponse object
+// NewAutomationTokenErrorResponseWithDefaults instantiates a new AutomationTokenErrorResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewErrorResponseWithDefaults() *ErrorResponse {
-	this := ErrorResponse{}
+func NewAutomationTokenErrorResponseWithDefaults() *AutomationTokenErrorResponse {
+	this := AutomationTokenErrorResponse{}
 	return &this
 }
 
 // GetDetail returns the Detail field value if set, zero value otherwise.
-func (o *ErrorResponse) GetDetail() string {
+func (o *AutomationTokenErrorResponse) GetDetail() string {
 	if o == nil || o.Detail == nil {
 		var ret string
 		return ret
@@ -56,7 +56,7 @@ func (o *ErrorResponse) GetDetail() string {
 
 // GetDetailOk returns a tuple with the Detail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ErrorResponse) GetDetailOk() (*string, bool) {
+func (o *AutomationTokenErrorResponse) GetDetailOk() (*string, bool) {
 	if o == nil || o.Detail == nil {
 		return nil, false
 	}
@@ -64,7 +64,7 @@ func (o *ErrorResponse) GetDetailOk() (*string, bool) {
 }
 
 // HasDetail returns a boolean if a field has been set.
-func (o *ErrorResponse) HasDetail() bool {
+func (o *AutomationTokenErrorResponse) HasDetail() bool {
 	if o != nil && o.Detail != nil {
 		return true
 	}
@@ -73,12 +73,12 @@ func (o *ErrorResponse) HasDetail() bool {
 }
 
 // SetDetail gets a reference to the given string and assigns it to the Detail field.
-func (o *ErrorResponse) SetDetail(v string) {
+func (o *AutomationTokenErrorResponse) SetDetail(v string) {
 	o.Detail = &v
 }
 
 // GetErrors returns the Errors field value if set, zero value otherwise.
-func (o *ErrorResponse) GetErrors() []any {
+func (o *AutomationTokenErrorResponse) GetErrors() []any {
 	if o == nil || o.Errors == nil {
 		var ret []any
 		return ret
@@ -88,7 +88,7 @@ func (o *ErrorResponse) GetErrors() []any {
 
 // GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ErrorResponse) GetErrorsOk() ([]any, bool) {
+func (o *AutomationTokenErrorResponse) GetErrorsOk() ([]any, bool) {
 	if o == nil || o.Errors == nil {
 		return nil, false
 	}
@@ -96,7 +96,7 @@ func (o *ErrorResponse) GetErrorsOk() ([]any, bool) {
 }
 
 // HasErrors returns a boolean if a field has been set.
-func (o *ErrorResponse) HasErrors() bool {
+func (o *AutomationTokenErrorResponse) HasErrors() bool {
 	if o != nil && o.Errors != nil {
 		return true
 	}
@@ -105,12 +105,12 @@ func (o *ErrorResponse) HasErrors() bool {
 }
 
 // SetErrors gets a reference to the given []any and assigns it to the Errors field.
-func (o *ErrorResponse) SetErrors(v []any) {
+func (o *AutomationTokenErrorResponse) SetErrors(v []any) {
 	o.Errors = v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *ErrorResponse) GetStatus() int32 {
+func (o *AutomationTokenErrorResponse) GetStatus() int32 {
 	if o == nil || o.Status == nil {
 		var ret int32
 		return ret
@@ -120,7 +120,7 @@ func (o *ErrorResponse) GetStatus() int32 {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ErrorResponse) GetStatusOk() (*int32, bool) {
+func (o *AutomationTokenErrorResponse) GetStatusOk() (*int32, bool) {
 	if o == nil || o.Status == nil {
 		return nil, false
 	}
@@ -128,7 +128,7 @@ func (o *ErrorResponse) GetStatusOk() (*int32, bool) {
 }
 
 // HasStatus returns a boolean if a field has been set.
-func (o *ErrorResponse) HasStatus() bool {
+func (o *AutomationTokenErrorResponse) HasStatus() bool {
 	if o != nil && o.Status != nil {
 		return true
 	}
@@ -137,12 +137,12 @@ func (o *ErrorResponse) HasStatus() bool {
 }
 
 // SetStatus gets a reference to the given int32 and assigns it to the Status field.
-func (o *ErrorResponse) SetStatus(v int32) {
+func (o *AutomationTokenErrorResponse) SetStatus(v int32) {
 	o.Status = &v
 }
 
 // GetTitle returns the Title field value if set, zero value otherwise.
-func (o *ErrorResponse) GetTitle() string {
+func (o *AutomationTokenErrorResponse) GetTitle() string {
 	if o == nil || o.Title == nil {
 		var ret string
 		return ret
@@ -152,7 +152,7 @@ func (o *ErrorResponse) GetTitle() string {
 
 // GetTitleOk returns a tuple with the Title field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ErrorResponse) GetTitleOk() (*string, bool) {
+func (o *AutomationTokenErrorResponse) GetTitleOk() (*string, bool) {
 	if o == nil || o.Title == nil {
 		return nil, false
 	}
@@ -160,7 +160,7 @@ func (o *ErrorResponse) GetTitleOk() (*string, bool) {
 }
 
 // HasTitle returns a boolean if a field has been set.
-func (o *ErrorResponse) HasTitle() bool {
+func (o *AutomationTokenErrorResponse) HasTitle() bool {
 	if o != nil && o.Title != nil {
 		return true
 	}
@@ -169,13 +169,13 @@ func (o *ErrorResponse) HasTitle() bool {
 }
 
 // SetTitle gets a reference to the given string and assigns it to the Title field.
-func (o *ErrorResponse) SetTitle(v string) {
+func (o *AutomationTokenErrorResponse) SetTitle(v string) {
 	o.Title = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ErrorResponse) MarshalJSON() ([]byte, error) {
+func (o AutomationTokenErrorResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Detail != nil {
 		toSerialize["detail"] = o.Detail
@@ -199,11 +199,11 @@ func (o ErrorResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *ErrorResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varErrorResponse := _ErrorResponse{}
+func (o *AutomationTokenErrorResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varAutomationTokenErrorResponse := _AutomationTokenErrorResponse{}
 
-	if err = json.Unmarshal(bytes, &varErrorResponse); err == nil {
-		*o = ErrorResponse(varErrorResponse)
+	if err = json.Unmarshal(bytes, &varAutomationTokenErrorResponse); err == nil {
+		*o = AutomationTokenErrorResponse(varAutomationTokenErrorResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -219,48 +219,48 @@ func (o *ErrorResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableErrorResponse is a helper abstraction for handling nullable errorresponse types. 
-type NullableErrorResponse struct {
-	value *ErrorResponse
+// NullableAutomationTokenErrorResponse is a helper abstraction for handling nullable automationtokenerrorresponse types. 
+type NullableAutomationTokenErrorResponse struct {
+	value *AutomationTokenErrorResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableErrorResponse) Get() *ErrorResponse {
+func (v NullableAutomationTokenErrorResponse) Get() *AutomationTokenErrorResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableErrorResponse) Set(val *ErrorResponse) {
+func (v *NullableAutomationTokenErrorResponse) Set(val *AutomationTokenErrorResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableErrorResponse) IsSet() bool {
+func (v NullableAutomationTokenErrorResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableErrorResponse) Unset() {
+func (v *NullableAutomationTokenErrorResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableErrorResponse returns a pointer to a new instance of NullableErrorResponse.
-func NewNullableErrorResponse(val *ErrorResponse) *NullableErrorResponse {
-	return &NullableErrorResponse{value: val, isSet: true}
+// NewNullableAutomationTokenErrorResponse returns a pointer to a new instance of NullableAutomationTokenErrorResponse.
+func NewNullableAutomationTokenErrorResponse(val *AutomationTokenErrorResponse) *NullableAutomationTokenErrorResponse {
+	return &NullableAutomationTokenErrorResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableErrorResponse) MarshalJSON() ([]byte, error) {
+func (v NullableAutomationTokenErrorResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableErrorResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableAutomationTokenErrorResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

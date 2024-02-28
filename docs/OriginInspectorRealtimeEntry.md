@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Recorded** | Pointer to [**OriginInspectorRealtimeEntryRecorded**](OriginInspectorRealtimeEntryRecorded.md) |  | [optional] 
 **Aggregated** | Pointer to [**map[string]OriginInspectorMeasurements**](OriginInspectorMeasurements.md) | Groups [measurements](#measurements-data-model) by backend name. | [optional] 
-**Datacenter** | Pointer to [**map[string]map[string]OriginInspectorMeasurements**](map.md) | Groups [measurements](#measurements-data-model) by POP, then backend name. See the [POPs API](/reference/api/utils/pops/) for details about POP identifiers. | [optional] 
+**Datacenter** | Pointer to [**map[string]map[string]OriginInspectorMeasurements**](map.md) | Groups [measurements](#measurements-data-model) by POP, then backend name. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details about POP identifiers. | [optional] 
 
 ## Methods
 

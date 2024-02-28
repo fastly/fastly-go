@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Recorded** | Pointer to [**RealtimeEntryRecorded**](RealtimeEntryRecorded.md) |  | [optional] 
 **Aggregated** | Pointer to [**RealtimeEntryAggregated**](RealtimeEntryAggregated.md) |  | [optional] 
-**Datacenter** | Pointer to [**map[string]RealtimeMeasurements**](RealtimeMeasurements.md) | Groups [measurements](#measurements-data-model) by POP. See the [POPs API](/reference/api/utils/pops/) for details of POP identifiers. | [optional] 
+**Datacenter** | Pointer to [**map[string]RealtimeMeasurements**](RealtimeMeasurements.md) | Groups [measurements](#measurements-data-model) by POP. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details of POP identifiers. | [optional] 
 
 ## Methods
 

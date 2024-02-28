@@ -84,7 +84,7 @@ type VclAPI interface {
 	/*
 	GetCustomVclBoilerplate Get boilerplate VCL
 
-	Return boilerplate VCL with the service's TTL from the [settings](/reference/api/vcl-services/settings/).
+	Return boilerplate VCL with the service's TTL from the [settings](https://www.fastly.com/documentation/reference/api/vcl-services/settings/).
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param serviceID Alphanumeric string identifying the service.
@@ -721,7 +721,7 @@ func (r APIGetCustomVclBoilerplateRequest) Execute() (string, *http.Response, er
 /*
 GetCustomVclBoilerplate Get boilerplate VCL
 
-Return boilerplate VCL with the service's TTL from the [settings](/reference/api/vcl-services/settings/).
+Return boilerplate VCL with the service's TTL from the [settings](https://www.fastly.com/documentation/reference/api/vcl-services/settings/).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceID Alphanumeric string identifying the service.

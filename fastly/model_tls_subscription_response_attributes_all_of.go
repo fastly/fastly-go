@@ -21,6 +21,8 @@ import (
 type TLSSubscriptionResponseAttributesAllOf struct {
 	// The current state of your subscription.
 	State *string `json:"state,omitempty"`
+	// Subscription has an active order
+	HasActiveOrder *bool `json:"has_active_order,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -75,12 +77,47 @@ func (o *TLSSubscriptionResponseAttributesAllOf) SetState(v string) {
 	o.State = &v
 }
 
+// GetHasActiveOrder returns the HasActiveOrder field value if set, zero value otherwise.
+func (o *TLSSubscriptionResponseAttributesAllOf) GetHasActiveOrder() bool {
+	if o == nil || o.HasActiveOrder == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HasActiveOrder
+}
+
+// GetHasActiveOrderOk returns a tuple with the HasActiveOrder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TLSSubscriptionResponseAttributesAllOf) GetHasActiveOrderOk() (*bool, bool) {
+	if o == nil || o.HasActiveOrder == nil {
+		return nil, false
+	}
+	return o.HasActiveOrder, true
+}
+
+// HasHasActiveOrder returns a boolean if a field has been set.
+func (o *TLSSubscriptionResponseAttributesAllOf) HasHasActiveOrder() bool {
+	if o != nil && o.HasActiveOrder != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHasActiveOrder gets a reference to the given bool and assigns it to the HasActiveOrder field.
+func (o *TLSSubscriptionResponseAttributesAllOf) SetHasActiveOrder(v bool) {
+	o.HasActiveOrder = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o TLSSubscriptionResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.State != nil {
 		toSerialize["state"] = o.State
+	}
+	if o.HasActiveOrder != nil {
+		toSerialize["has_active_order"] = o.HasActiveOrder
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -103,6 +140,7 @@ func (o *TLSSubscriptionResponseAttributesAllOf) UnmarshalJSON(bytes []byte) (er
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "state")
+		delete(additionalProperties, "has_active_order")
 		o.AdditionalProperties = additionalProperties
 	}
 

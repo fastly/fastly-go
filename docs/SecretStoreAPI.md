@@ -286,13 +286,14 @@ import (
 )
 
 func main() {
-    cursor := "cursor_example" // string | Cursor value from a previous response to retrieve the next page. To request the first page, this should be empty. (optional)
+    cursor := "cursor_example" // string | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. (optional)
     limit := "limit_example" // string | Number of results per page. The maximum is 200. (optional) (default to "100")
+    name := "name_example" // string | Returns a one-element array containing the details for the named secret store. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SecretStoreAPI.GetSecretStores(ctx).Cursor(cursor).Limit(limit).Execute()
+    resp, r, err := apiClient.SecretStoreAPI.GetSecretStores(ctx).Cursor(cursor).Limit(limit).Name(name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecretStoreAPI.GetSecretStores`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -313,7 +314,7 @@ Other parameters are passed through a pointer to a apiGetSecretStoresRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **string** | Cursor value from a previous response to retrieve the next page. To request the first page, this should be empty. |  **limit** | **string** | Number of results per page. The maximum is 200. | [default to &quot;100&quot;]
+ **cursor** | **string** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. |  **limit** | **string** | Number of results per page. The maximum is 200. | [default to &quot;100&quot;] **name** | **string** | Returns a one-element array containing the details for the named secret store. | 
 
 ### Return type
 

@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 **CustomerID** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
 **Type** | Pointer to **string** | The type of this service. | [optional] 
 **ID** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **int32** | Current [version](/reference/api/services/version/) of the service. | [optional] 
-**Versions** | Pointer to [**[]SchemasVersionResponse**](SchemasVersionResponse.md) | A list of [versions](/reference/api/services/version/) associated with the service. | [optional] 
+**Version** | Pointer to **int32** | Current [version](https://www.fastly.com/documentation/reference/api/services/version/) of the service. | [optional] 
+**Versions** | Pointer to [**[]SchemasVersionResponse**](SchemasVersionResponse.md) | A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service. | [optional] 
 
 ## Methods
 

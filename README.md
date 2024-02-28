@@ -14,7 +14,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go v1.0.0-beta.26
+	github.com/fastly/fastly-go v1.0.0-beta.27
 )
 ```
 
@@ -93,6 +93,8 @@ Class | Method | HTTP request | Description
 *BillingAddressAPI* | [**DeleteBillingAddr**](docs/BillingAddressAPI.md#deletebillingaddr) | **DELETE** `/customer/{customer_id}/billing_address` | Delete a billing address
 *BillingAddressAPI* | [**GetBillingAddr**](docs/BillingAddressAPI.md#getbillingaddr) | **GET** `/customer/{customer_id}/billing_address` | Get a billing address
 *BillingAddressAPI* | [**UpdateBillingAddr**](docs/BillingAddressAPI.md#updatebillingaddr) | **PATCH** `/customer/{customer_id}/billing_address` | Update a billing address
+*BillingInvoicesAPI* | [**GetInvoiceByInvoiceID**](docs/BillingInvoicesAPI.md#getinvoicebyinvoiceid) | **GET** `/billing/v3/invoices/{invoice_id}` | Get invoice by ID.
+*BillingInvoicesAPI* | [**ListInvoices**](docs/BillingInvoicesAPI.md#listinvoices) | **GET** `/billing/v3/invoices` | List of invoices.
 *CacheSettingsAPI* | [**CreateCacheSettings**](docs/CacheSettingsAPI.md#createcachesettings) | **POST** `/service/{service_id}/version/{version_id}/cache_settings` | Create a cache settings object
 *CacheSettingsAPI* | [**DeleteCacheSettings**](docs/CacheSettingsAPI.md#deletecachesettings) | **DELETE** `/service/{service_id}/version/{version_id}/cache_settings/{cache_settings_name}` | Delete a cache settings object
 *CacheSettingsAPI* | [**GetCacheSettings**](docs/CacheSettingsAPI.md#getcachesettings) | **GET** `/service/{service_id}/version/{version_id}/cache_settings/{cache_settings_name}` | Get a cache settings object
@@ -508,6 +510,7 @@ Class | Method | HTTP request | Description
 *TLSConfigurationsAPI* | [**GetTLSConfig**](docs/TlsConfigurationsAPI.md#gettlsconfig) | **GET** `/tls/configurations/{tls_configuration_id}` | Get a TLS configuration
 *TLSConfigurationsAPI* | [**ListTLSConfigs**](docs/TlsConfigurationsAPI.md#listtlsconfigs) | **GET** `/tls/configurations` | List TLS configurations
 *TLSConfigurationsAPI* | [**UpdateTLSConfig**](docs/TlsConfigurationsAPI.md#updatetlsconfig) | **PATCH** `/tls/configurations/{tls_configuration_id}` | Update a TLS configuration
+*TLSCsrsAPI* | [**CreateCsr**](docs/TlsCsrsAPI.md#createcsr) | **POST** `/tls/certificate_signing_requests` | Create CSR
 *TLSDomainsAPI* | [**ListTLSDomains**](docs/TlsDomainsAPI.md#listtlsdomains) | **GET** `/tls/domains` | List TLS domains
 *TLSPrivateKeysAPI* | [**CreateTLSKey**](docs/TlsPrivateKeysAPI.md#createtlskey) | **POST** `/tls/private_keys` | Create a TLS private key
 *TLSPrivateKeysAPI* | [**DeleteTLSKey**](docs/TlsPrivateKeysAPI.md#deletetlskey) | **DELETE** `/tls/private_keys/{tls_private_key_id}` | Delete a TLS private key
@@ -610,12 +613,15 @@ Each of these functions takes a value of the given basic type and returns a poin
 
 The fastly-go API client currently does not support the following endpoints:
 
-- [`/resources/stores/kv/{store_id}/batch`](https://developer.fastly.com/reference/api/services/resources/kv-store-item) (PUT)
-- [`/tls/activations/{tls_activation_id}`](https://developer.fastly.com/reference/api/tls/mutual-tls/activations) (GET, PATCH)
-- [`/tls/activations`](https://developer.fastly.com/reference/api/tls/mutual-tls/activations) (GET)
-- [`/v1/channel/{service_id}/ts/h/limit/{max_entries}`](https://developer.fastly.com/reference/api/metrics-stats/origin-insights) (GET)
-- [`/v1/channel/{service_id}/ts/h`](https://developer.fastly.com/reference/api/metrics-stats/origin-insights) (GET)
-- [`/v1/channel/{service_id}/ts/{start_timestamp}`](https://developer.fastly.com/reference/api/metrics-stats/origin-insights) (GET)
+- [`/alerts/definitions/{definition_id}`](https://www.fastly.com/documentation/reference/api/observability/alerts/definitions) (DELETE, GET, PUT)
+- [`/alerts/definitions`](https://www.fastly.com/documentation/reference/api/observability/alerts/definitions) (GET, POST)
+- [`/alerts/history`](https://www.fastly.com/documentation/reference/api/observability/alerts/history) (GET)
+- [`/resources/stores/kv/{store_id}/batch`](https://www.fastly.com/documentation/reference/api/services/resources/kv-store-item) (PUT)
+- [`/tls/activations/{tls_activation_id}`](https://www.fastly.com/documentation/reference/api/tls/mutual-tls/activations) (GET, PATCH)
+- [`/tls/activations`](https://www.fastly.com/documentation/reference/api/tls/mutual-tls/activations) (GET)
+- [`/v1/channel/{service_id}/ts/h/limit/{max_entries}`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
+- [`/v1/channel/{service_id}/ts/h`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
+- [`/v1/channel/{service_id}/ts/{start_timestamp}`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
 
 
 If you encounter any non-security-related bug or unexpected behavior, please [file an issue][bug]

@@ -39,7 +39,7 @@ type ServiceDetail struct {
 	PublishKey *string `json:"publish_key,omitempty"`
 	// Whether the service is paused. Services are paused due to a lack of traffic for an extended period of time. Services are resumed either when a draft version is activated or a locked version is cloned and reactivated.
 	Paused *bool `json:"paused,omitempty"`
-	// A list of [versions](/reference/api/services/version/) associated with the service.
+	// A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service.
 	Versions []SchemasVersionResponse `json:"versions,omitempty"`
 	ActiveVersion NullableServiceVersionDetailOrNull `json:"active_version,omitempty"`
 	Version *ServiceVersionDetail `json:"version,omitempty"`

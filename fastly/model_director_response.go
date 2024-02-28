@@ -30,7 +30,7 @@ type DirectorResponse struct {
 	Name *string `json:"name,omitempty"`
 	// The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`.
 	Quorum *int32 `json:"quorum,omitempty"`
-	// Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+	// Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
 	Shield NullableString `json:"shield,omitempty"`
 	// What type of load balance group to use.
 	Type *int32 `json:"type,omitempty"`

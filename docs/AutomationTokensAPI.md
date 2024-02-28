@@ -304,7 +304,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationTokensAPI.RevokeAutomationTokenID`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `RevokeAutomationTokenID`: ErrorResponse
+    // response from `RevokeAutomationTokenID`: AutomationTokenErrorResponse
     fmt.Fprintf(os.Stdout, "Response from `AutomationTokensAPI.RevokeAutomationTokenID`: %v\n", resp)
 }
 ```
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ErrorResponse**](ErrorResponse.md)
+[**AutomationTokenErrorResponse**](AutomationTokenErrorResponse.md)
 
 ### Authorization
 

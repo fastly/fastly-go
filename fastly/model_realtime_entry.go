@@ -21,7 +21,7 @@ import (
 type RealtimeEntry struct {
 	Recorded *RealtimeEntryRecorded `json:"recorded,omitempty"`
 	Aggregated *RealtimeEntryAggregated `json:"aggregated,omitempty"`
-	// Groups [measurements](#measurements-data-model) by POP. See the [POPs API](/reference/api/utils/pops/) for details of POP identifiers.
+	// Groups [measurements](#measurements-data-model) by POP. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details of POP identifiers.
 	Datacenter *map[string]RealtimeMeasurements `json:"datacenter,omitempty"`
 	AdditionalProperties map[string]any
 }

@@ -564,7 +564,7 @@ type APIGetSecretsRequest struct {
 	limit *string
 }
 
-// Cursor Cursor value from a previous response to retrieve the next page. To request the first page, this should be empty.
+// Cursor Cursor value from the &#x60;next_cursor&#x60; field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
 func (r *APIGetSecretsRequest) Cursor(cursor string) *APIGetSecretsRequest {
 	r.cursor = &cursor
 	return r

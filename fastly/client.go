@@ -78,6 +78,8 @@ type APIClient struct {
 
 	BillingAddressAPI BillingAddressAPI
 
+	BillingInvoicesAPI BillingInvoicesAPI
+
 	CacheSettingsAPI CacheSettingsAPI
 
 	ConditionAPI ConditionAPI
@@ -266,6 +268,8 @@ type APIClient struct {
 
 	TLSConfigurationsAPI TLSConfigurationsAPI
 
+	TLSCsrsAPI TLSCsrsAPI
+
 	TLSDomainsAPI TLSDomainsAPI
 
 	TLSPrivateKeysAPI TLSPrivateKeysAPI
@@ -323,6 +327,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.BackendAPI = (*BackendAPIService)(&c.common)
 	c.BillingAPI = (*BillingAPIService)(&c.common)
 	c.BillingAddressAPI = (*BillingAddressAPIService)(&c.common)
+	c.BillingInvoicesAPI = (*BillingInvoicesAPIService)(&c.common)
 	c.CacheSettingsAPI = (*CacheSettingsAPIService)(&c.common)
 	c.ConditionAPI = (*ConditionAPIService)(&c.common)
 	c.ConfigStoreAPI = (*ConfigStoreAPIService)(&c.common)
@@ -417,6 +422,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.TLSBulkCertificatesAPI = (*TLSBulkCertificatesAPIService)(&c.common)
 	c.TLSCertificatesAPI = (*TLSCertificatesAPIService)(&c.common)
 	c.TLSConfigurationsAPI = (*TLSConfigurationsAPIService)(&c.common)
+	c.TLSCsrsAPI = (*TLSCsrsAPIService)(&c.common)
 	c.TLSDomainsAPI = (*TLSDomainsAPIService)(&c.common)
 	c.TLSPrivateKeysAPI = (*TLSPrivateKeysAPIService)(&c.common)
 	c.TLSSubscriptionsAPI = (*TLSSubscriptionsAPIService)(&c.common)
