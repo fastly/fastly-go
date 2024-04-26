@@ -2,7 +2,13 @@
 
 A Go client library for interacting with most facets of the [Fastly API](https://developer.fastly.com/reference/api).
 
-> **NOTE:** This API client is auto-generated from Fastly's OpenAPI specification and may not function correctly when used on the Compute platform. Support for Compute is on the roadmap but has not yet been prioritised.
+> [!WARNING]
+> This API client is auto-generated from Fastly's OpenAPI specification and may not function correctly when used on the Compute platform. Support for Compute is on the roadmap but has not yet been prioritised.
+
+***
+
+> [!TIP]
+> If you'd like to use the hand-written API client instead, see [go-fastly](https://github.com/fastly/go-fastly).
 
 ## Requirements
 
