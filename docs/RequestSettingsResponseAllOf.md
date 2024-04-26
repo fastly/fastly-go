@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BypassBusyWait** | Pointer to **string** | Disable collapsed forwarding, so you don&#39;t wait for other objects to origin. | [optional] 
-**ForceMiss** | Pointer to **string** | Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable. | [optional] 
+**BypassBusyWait** | Pointer to **NullableString** | Disable collapsed forwarding, so you don&#39;t wait for other objects to origin. | [optional] 
+**ForceMiss** | Pointer to **NullableString** | Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable. | [optional] 
 **ForceSsl** | Pointer to **string** | Forces the request use SSL (redirects a non-SSL to SSL). | [optional] 
-**GeoHeaders** | Pointer to **string** | Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers. | [optional] 
-**MaxStaleAge** | Pointer to **string** | How old an object is allowed to be to serve stale-if-error or stale-while-revalidate. | [optional] 
-**TimerSupport** | Pointer to **string** | Injects the X-Timer info into the request for viewing origin fetch durations. | [optional] 
+**GeoHeaders** | Pointer to **NullableString** | Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers. | [optional] 
+**MaxStaleAge** | Pointer to **NullableString** | How old an object is allowed to be to serve stale-if-error or stale-while-revalidate. | [optional] 
+**TimerSupport** | Pointer to **NullableString** | Injects the X-Timer info into the request for viewing origin fetch durations. | [optional] 
 
 ## Methods
 
@@ -55,6 +55,16 @@ SetBypassBusyWait sets BypassBusyWait field to given value.
 
 HasBypassBusyWait returns a boolean if a field has been set.
 
+### SetBypassBusyWaitNil
+
+`func (o *RequestSettingsResponseAllOf) SetBypassBusyWaitNil(b bool)`
+
+ SetBypassBusyWaitNil sets the value for BypassBusyWait to be an explicit nil
+
+### UnsetBypassBusyWait
+`func (o *RequestSettingsResponseAllOf) UnsetBypassBusyWait()`
+
+UnsetBypassBusyWait ensures that no value is present for BypassBusyWait, not even an explicit nil
 ### GetForceMiss
 
 `func (o *RequestSettingsResponseAllOf) GetForceMiss() string`
@@ -80,6 +90,16 @@ SetForceMiss sets ForceMiss field to given value.
 
 HasForceMiss returns a boolean if a field has been set.
 
+### SetForceMissNil
+
+`func (o *RequestSettingsResponseAllOf) SetForceMissNil(b bool)`
+
+ SetForceMissNil sets the value for ForceMiss to be an explicit nil
+
+### UnsetForceMiss
+`func (o *RequestSettingsResponseAllOf) UnsetForceMiss()`
+
+UnsetForceMiss ensures that no value is present for ForceMiss, not even an explicit nil
 ### GetForceSsl
 
 `func (o *RequestSettingsResponseAllOf) GetForceSsl() string`
@@ -130,6 +150,16 @@ SetGeoHeaders sets GeoHeaders field to given value.
 
 HasGeoHeaders returns a boolean if a field has been set.
 
+### SetGeoHeadersNil
+
+`func (o *RequestSettingsResponseAllOf) SetGeoHeadersNil(b bool)`
+
+ SetGeoHeadersNil sets the value for GeoHeaders to be an explicit nil
+
+### UnsetGeoHeaders
+`func (o *RequestSettingsResponseAllOf) UnsetGeoHeaders()`
+
+UnsetGeoHeaders ensures that no value is present for GeoHeaders, not even an explicit nil
 ### GetMaxStaleAge
 
 `func (o *RequestSettingsResponseAllOf) GetMaxStaleAge() string`
@@ -155,6 +185,16 @@ SetMaxStaleAge sets MaxStaleAge field to given value.
 
 HasMaxStaleAge returns a boolean if a field has been set.
 
+### SetMaxStaleAgeNil
+
+`func (o *RequestSettingsResponseAllOf) SetMaxStaleAgeNil(b bool)`
+
+ SetMaxStaleAgeNil sets the value for MaxStaleAge to be an explicit nil
+
+### UnsetMaxStaleAge
+`func (o *RequestSettingsResponseAllOf) UnsetMaxStaleAge()`
+
+UnsetMaxStaleAge ensures that no value is present for MaxStaleAge, not even an explicit nil
 ### GetTimerSupport
 
 `func (o *RequestSettingsResponseAllOf) GetTimerSupport() string`
@@ -180,5 +220,15 @@ SetTimerSupport sets TimerSupport field to given value.
 
 HasTimerSupport returns a boolean if a field has been set.
 
+### SetTimerSupportNil
+
+`func (o *RequestSettingsResponseAllOf) SetTimerSupportNil(b bool)`
+
+ SetTimerSupportNil sets the value for TimerSupport to be an explicit nil
+
+### UnsetTimerSupport
+`func (o *RequestSettingsResponseAllOf) UnsetTimerSupport()`
+
+UnsetTimerSupport ensures that no value is present for TimerSupport, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

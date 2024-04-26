@@ -30,7 +30,7 @@ type RequestSettingsAdditional struct {
 	// Condition which, if met, will select this configuration during a request. Optional.
 	RequestCondition NullableString `json:"request_condition,omitempty"`
 	// Short for X-Forwarded-For.
-	Xff *string `json:"xff,omitempty"`
+	Xff NullableString `json:"xff,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -253,36 +253,46 @@ func (o *RequestSettingsAdditional) UnsetRequestCondition() {
 	o.RequestCondition.Unset()
 }
 
-// GetXff returns the Xff field value if set, zero value otherwise.
+// GetXff returns the Xff field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RequestSettingsAdditional) GetXff() string {
-	if o == nil || o.Xff == nil {
+	if o == nil || o.Xff.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.Xff
+	return *o.Xff.Get()
 }
 
 // GetXffOk returns a tuple with the Xff field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsAdditional) GetXffOk() (*string, bool) {
-	if o == nil || o.Xff == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Xff, true
+	return o.Xff.Get(), o.Xff.IsSet()
 }
 
 // HasXff returns a boolean if a field has been set.
 func (o *RequestSettingsAdditional) HasXff() bool {
-	if o != nil && o.Xff != nil {
+	if o != nil && o.Xff.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetXff gets a reference to the given string and assigns it to the Xff field.
+// SetXff gets a reference to the given NullableString and assigns it to the Xff field.
 func (o *RequestSettingsAdditional) SetXff(v string) {
-	o.Xff = &v
+	o.Xff.Set(&v)
+}
+// SetXffNil sets the value for Xff to be an explicit nil
+func (o *RequestSettingsAdditional) SetXffNil() {
+	o.Xff.Set(nil)
+}
+
+// UnsetXff ensures that no value is present for Xff, not even an explicit nil
+func (o *RequestSettingsAdditional) UnsetXff() {
+	o.Xff.Unset()
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -304,8 +314,8 @@ func (o RequestSettingsAdditional) MarshalJSON() ([]byte, error) {
 	if o.RequestCondition.IsSet() {
 		toSerialize["request_condition"] = o.RequestCondition.Get()
 	}
-	if o.Xff != nil {
-		toSerialize["xff"] = o.Xff
+	if o.Xff.IsSet() {
+		toSerialize["xff"] = o.Xff.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

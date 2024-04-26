@@ -153,6 +153,10 @@ type APICreateBackendRequest struct {
 	sslClientKey *string
 	sslHostname *string
 	sslSniHostname *string
+	tcpKeepaliveEnable *bool
+	tcpKeepaliveInterval *int32
+	tcpKeepaliveProbes *int32
+	tcpKeepaliveTime *int32
 	useSsl *bool
 	weight *int32
 }
@@ -300,6 +304,26 @@ func (r *APICreateBackendRequest) SslHostname(sslHostname string) *APICreateBack
 // SslSniHostname Overrides &#x60;ssl_hostname&#x60;, but only for SNI in the handshake. Does not affect cert validation at all.
 func (r *APICreateBackendRequest) SslSniHostname(sslSniHostname string) *APICreateBackendRequest {
 	r.sslSniHostname = &sslSniHostname
+	return r
+}
+// TcpKeepaliveEnable Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified.
+func (r *APICreateBackendRequest) TcpKeepaliveEnable(tcpKeepaliveEnable bool) *APICreateBackendRequest {
+	r.tcpKeepaliveEnable = &tcpKeepaliveEnable
+	return r
+}
+// TcpKeepaliveInterval Interval in seconds between subsequent keepalive probes.
+func (r *APICreateBackendRequest) TcpKeepaliveInterval(tcpKeepaliveInterval int32) *APICreateBackendRequest {
+	r.tcpKeepaliveInterval = &tcpKeepaliveInterval
+	return r
+}
+// TcpKeepaliveProbes Number of unacknowledged probes to send before considering the connection dead.
+func (r *APICreateBackendRequest) TcpKeepaliveProbes(tcpKeepaliveProbes int32) *APICreateBackendRequest {
+	r.tcpKeepaliveProbes = &tcpKeepaliveProbes
+	return r
+}
+// TcpKeepaliveTime Interval in seconds between the last data packet sent and the first keepalive probe.
+func (r *APICreateBackendRequest) TcpKeepaliveTime(tcpKeepaliveTime int32) *APICreateBackendRequest {
+	r.tcpKeepaliveTime = &tcpKeepaliveTime
 	return r
 }
 // UseSsl Whether or not to require TLS for connections to this backend.
@@ -463,6 +487,18 @@ func (a *BackendAPIService) CreateBackendExecute(r APICreateBackendRequest) (*Ba
 	}
 	if r.sslSniHostname != nil {
 		localVarFormParams.Add("ssl_sni_hostname", parameterToString(*r.sslSniHostname, ""))
+	}
+	if r.tcpKeepaliveEnable != nil {
+		localVarFormParams.Add("tcp_keepalive_enable", parameterToString(*r.tcpKeepaliveEnable, ""))
+	}
+	if r.tcpKeepaliveInterval != nil {
+		localVarFormParams.Add("tcp_keepalive_interval", parameterToString(*r.tcpKeepaliveInterval, ""))
+	}
+	if r.tcpKeepaliveProbes != nil {
+		localVarFormParams.Add("tcp_keepalive_probes", parameterToString(*r.tcpKeepaliveProbes, ""))
+	}
+	if r.tcpKeepaliveTime != nil {
+		localVarFormParams.Add("tcp_keepalive_time", parameterToString(*r.tcpKeepaliveTime, ""))
 	}
 	if r.useSsl != nil {
 		localVarFormParams.Add("use_ssl", parameterToString(*r.useSsl, ""))
@@ -993,6 +1029,10 @@ type APIUpdateBackendRequest struct {
 	sslClientKey *string
 	sslHostname *string
 	sslSniHostname *string
+	tcpKeepaliveEnable *bool
+	tcpKeepaliveInterval *int32
+	tcpKeepaliveProbes *int32
+	tcpKeepaliveTime *int32
 	useSsl *bool
 	weight *int32
 }
@@ -1140,6 +1180,26 @@ func (r *APIUpdateBackendRequest) SslHostname(sslHostname string) *APIUpdateBack
 // SslSniHostname Overrides &#x60;ssl_hostname&#x60;, but only for SNI in the handshake. Does not affect cert validation at all.
 func (r *APIUpdateBackendRequest) SslSniHostname(sslSniHostname string) *APIUpdateBackendRequest {
 	r.sslSniHostname = &sslSniHostname
+	return r
+}
+// TcpKeepaliveEnable Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified.
+func (r *APIUpdateBackendRequest) TcpKeepaliveEnable(tcpKeepaliveEnable bool) *APIUpdateBackendRequest {
+	r.tcpKeepaliveEnable = &tcpKeepaliveEnable
+	return r
+}
+// TcpKeepaliveInterval Interval in seconds between subsequent keepalive probes.
+func (r *APIUpdateBackendRequest) TcpKeepaliveInterval(tcpKeepaliveInterval int32) *APIUpdateBackendRequest {
+	r.tcpKeepaliveInterval = &tcpKeepaliveInterval
+	return r
+}
+// TcpKeepaliveProbes Number of unacknowledged probes to send before considering the connection dead.
+func (r *APIUpdateBackendRequest) TcpKeepaliveProbes(tcpKeepaliveProbes int32) *APIUpdateBackendRequest {
+	r.tcpKeepaliveProbes = &tcpKeepaliveProbes
+	return r
+}
+// TcpKeepaliveTime Interval in seconds between the last data packet sent and the first keepalive probe.
+func (r *APIUpdateBackendRequest) TcpKeepaliveTime(tcpKeepaliveTime int32) *APIUpdateBackendRequest {
+	r.tcpKeepaliveTime = &tcpKeepaliveTime
 	return r
 }
 // UseSsl Whether or not to require TLS for connections to this backend.
@@ -1306,6 +1366,18 @@ func (a *BackendAPIService) UpdateBackendExecute(r APIUpdateBackendRequest) (*Ba
 	}
 	if r.sslSniHostname != nil {
 		localVarFormParams.Add("ssl_sni_hostname", parameterToString(*r.sslSniHostname, ""))
+	}
+	if r.tcpKeepaliveEnable != nil {
+		localVarFormParams.Add("tcp_keepalive_enable", parameterToString(*r.tcpKeepaliveEnable, ""))
+	}
+	if r.tcpKeepaliveInterval != nil {
+		localVarFormParams.Add("tcp_keepalive_interval", parameterToString(*r.tcpKeepaliveInterval, ""))
+	}
+	if r.tcpKeepaliveProbes != nil {
+		localVarFormParams.Add("tcp_keepalive_probes", parameterToString(*r.tcpKeepaliveProbes, ""))
+	}
+	if r.tcpKeepaliveTime != nil {
+		localVarFormParams.Add("tcp_keepalive_time", parameterToString(*r.tcpKeepaliveTime, ""))
 	}
 	if r.useSsl != nil {
 		localVarFormParams.Add("use_ssl", parameterToString(*r.useSsl, ""))

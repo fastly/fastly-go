@@ -475,6 +475,48 @@ type Results struct {
 	BotChallengesSucceeded *int32 `json:"bot_challenges_succeeded,omitempty"`
 	// The number of failed challenge solutions processed. For example, an incorrect CAPTCHA solution.
 	BotChallengesFailed *int32 `json:"bot_challenges_failed,omitempty"`
+	// The number of times the downgrade action was taken. The downgrade action restricts the client to http1.
+	DdosActionDowngrade *int32 `json:"ddos_action_downgrade,omitempty"`
+	// The number of connections the downgrade action was applied to. The downgrade action restricts the connection to http1.
+	DdosActionDowngradedConnections *int32 `json:"ddos_action_downgraded_connections,omitempty"`
+	// Number of cache hits for a VCL service running on Compute.
+	VclOnComputeHitRequests *int32 `json:"vcl_on_compute_hit_requests,omitempty"`
+	// Number of cache misses for a VCL service running on Compute.
+	VclOnComputeMissRequests *int32 `json:"vcl_on_compute_miss_requests,omitempty"`
+	// Number of requests that passed through the CDN without being cached for a VCL service running on Compute.
+	VclOnComputePassRequests *int32 `json:"vcl_on_compute_pass_requests,omitempty"`
+	// Number of cache errors for a VCL service running on Compute.
+	VclOnComputeErrorRequests *int32 `json:"vcl_on_compute_error_requests,omitempty"`
+	// Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service running on Compute.
+	VclOnComputeSynthRequests *int32 `json:"vcl_on_compute_synth_requests,omitempty"`
+	// Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service running on Compute.
+	VclOnComputeEdgeHitRequests *int32 `json:"vcl_on_compute_edge_hit_requests,omitempty"`
+	// Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service running on Compute.
+	VclOnComputeEdgeMissRequests *int32 `json:"vcl_on_compute_edge_miss_requests,omitempty"`
+	// Number of cache hits for a VCL service.
+	AllHitRequests *int32 `json:"all_hit_requests,omitempty"`
+	// Number of cache misses for a VCL service.
+	AllMissRequests *int32 `json:"all_miss_requests,omitempty"`
+	// Number of requests that passed through the CDN without being cached for a VCL service.
+	AllPassRequests *int32 `json:"all_pass_requests,omitempty"`
+	// Number of cache errors for a VCL service.
+	AllErrorRequests *int32 `json:"all_error_requests,omitempty"`
+	// Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service.
+	AllSynthRequests *int32 `json:"all_synth_requests,omitempty"`
+	// Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service.
+	AllEdgeHitRequests *int32 `json:"all_edge_hit_requests,omitempty"`
+	// Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service.
+	AllEdgeMissRequests *int32 `json:"all_edge_miss_requests,omitempty"`
+	// Number of \"Informational\" category status codes delivered for all sources.
+	AllStatus1xx *int32 `json:"all_status_1xx,omitempty"`
+	// Number of \"Success\" status codes delivered for all sources.
+	AllStatus2xx *int32 `json:"all_status_2xx,omitempty"`
+	// Number of \"Redirection\" codes delivered for all sources.
+	AllStatus3xx *int32 `json:"all_status_3xx,omitempty"`
+	// Number of \"Client Error\" codes delivered for all sources.
+	AllStatus4xx *int32 `json:"all_status_4xx,omitempty"`
+	// Number of \"Server Error\" codes delivered for all sources.
+	AllStatus5xx *int32 `json:"all_status_5xx,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
 	// Timestamp for the start of the time period being reported
 	StartTime *int32 `json:"start_time,omitempty"`
@@ -7780,6 +7822,678 @@ func (o *Results) SetBotChallengesFailed(v int32) {
 	o.BotChallengesFailed = &v
 }
 
+// GetDdosActionDowngrade returns the DdosActionDowngrade field value if set, zero value otherwise.
+func (o *Results) GetDdosActionDowngrade() int32 {
+	if o == nil || o.DdosActionDowngrade == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosActionDowngrade
+}
+
+// GetDdosActionDowngradeOk returns a tuple with the DdosActionDowngrade field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetDdosActionDowngradeOk() (*int32, bool) {
+	if o == nil || o.DdosActionDowngrade == nil {
+		return nil, false
+	}
+	return o.DdosActionDowngrade, true
+}
+
+// HasDdosActionDowngrade returns a boolean if a field has been set.
+func (o *Results) HasDdosActionDowngrade() bool {
+	if o != nil && o.DdosActionDowngrade != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosActionDowngrade gets a reference to the given int32 and assigns it to the DdosActionDowngrade field.
+func (o *Results) SetDdosActionDowngrade(v int32) {
+	o.DdosActionDowngrade = &v
+}
+
+// GetDdosActionDowngradedConnections returns the DdosActionDowngradedConnections field value if set, zero value otherwise.
+func (o *Results) GetDdosActionDowngradedConnections() int32 {
+	if o == nil || o.DdosActionDowngradedConnections == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosActionDowngradedConnections
+}
+
+// GetDdosActionDowngradedConnectionsOk returns a tuple with the DdosActionDowngradedConnections field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetDdosActionDowngradedConnectionsOk() (*int32, bool) {
+	if o == nil || o.DdosActionDowngradedConnections == nil {
+		return nil, false
+	}
+	return o.DdosActionDowngradedConnections, true
+}
+
+// HasDdosActionDowngradedConnections returns a boolean if a field has been set.
+func (o *Results) HasDdosActionDowngradedConnections() bool {
+	if o != nil && o.DdosActionDowngradedConnections != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosActionDowngradedConnections gets a reference to the given int32 and assigns it to the DdosActionDowngradedConnections field.
+func (o *Results) SetDdosActionDowngradedConnections(v int32) {
+	o.DdosActionDowngradedConnections = &v
+}
+
+// GetVclOnComputeHitRequests returns the VclOnComputeHitRequests field value if set, zero value otherwise.
+func (o *Results) GetVclOnComputeHitRequests() int32 {
+	if o == nil || o.VclOnComputeHitRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.VclOnComputeHitRequests
+}
+
+// GetVclOnComputeHitRequestsOk returns a tuple with the VclOnComputeHitRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetVclOnComputeHitRequestsOk() (*int32, bool) {
+	if o == nil || o.VclOnComputeHitRequests == nil {
+		return nil, false
+	}
+	return o.VclOnComputeHitRequests, true
+}
+
+// HasVclOnComputeHitRequests returns a boolean if a field has been set.
+func (o *Results) HasVclOnComputeHitRequests() bool {
+	if o != nil && o.VclOnComputeHitRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVclOnComputeHitRequests gets a reference to the given int32 and assigns it to the VclOnComputeHitRequests field.
+func (o *Results) SetVclOnComputeHitRequests(v int32) {
+	o.VclOnComputeHitRequests = &v
+}
+
+// GetVclOnComputeMissRequests returns the VclOnComputeMissRequests field value if set, zero value otherwise.
+func (o *Results) GetVclOnComputeMissRequests() int32 {
+	if o == nil || o.VclOnComputeMissRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.VclOnComputeMissRequests
+}
+
+// GetVclOnComputeMissRequestsOk returns a tuple with the VclOnComputeMissRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetVclOnComputeMissRequestsOk() (*int32, bool) {
+	if o == nil || o.VclOnComputeMissRequests == nil {
+		return nil, false
+	}
+	return o.VclOnComputeMissRequests, true
+}
+
+// HasVclOnComputeMissRequests returns a boolean if a field has been set.
+func (o *Results) HasVclOnComputeMissRequests() bool {
+	if o != nil && o.VclOnComputeMissRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVclOnComputeMissRequests gets a reference to the given int32 and assigns it to the VclOnComputeMissRequests field.
+func (o *Results) SetVclOnComputeMissRequests(v int32) {
+	o.VclOnComputeMissRequests = &v
+}
+
+// GetVclOnComputePassRequests returns the VclOnComputePassRequests field value if set, zero value otherwise.
+func (o *Results) GetVclOnComputePassRequests() int32 {
+	if o == nil || o.VclOnComputePassRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.VclOnComputePassRequests
+}
+
+// GetVclOnComputePassRequestsOk returns a tuple with the VclOnComputePassRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetVclOnComputePassRequestsOk() (*int32, bool) {
+	if o == nil || o.VclOnComputePassRequests == nil {
+		return nil, false
+	}
+	return o.VclOnComputePassRequests, true
+}
+
+// HasVclOnComputePassRequests returns a boolean if a field has been set.
+func (o *Results) HasVclOnComputePassRequests() bool {
+	if o != nil && o.VclOnComputePassRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVclOnComputePassRequests gets a reference to the given int32 and assigns it to the VclOnComputePassRequests field.
+func (o *Results) SetVclOnComputePassRequests(v int32) {
+	o.VclOnComputePassRequests = &v
+}
+
+// GetVclOnComputeErrorRequests returns the VclOnComputeErrorRequests field value if set, zero value otherwise.
+func (o *Results) GetVclOnComputeErrorRequests() int32 {
+	if o == nil || o.VclOnComputeErrorRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.VclOnComputeErrorRequests
+}
+
+// GetVclOnComputeErrorRequestsOk returns a tuple with the VclOnComputeErrorRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetVclOnComputeErrorRequestsOk() (*int32, bool) {
+	if o == nil || o.VclOnComputeErrorRequests == nil {
+		return nil, false
+	}
+	return o.VclOnComputeErrorRequests, true
+}
+
+// HasVclOnComputeErrorRequests returns a boolean if a field has been set.
+func (o *Results) HasVclOnComputeErrorRequests() bool {
+	if o != nil && o.VclOnComputeErrorRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVclOnComputeErrorRequests gets a reference to the given int32 and assigns it to the VclOnComputeErrorRequests field.
+func (o *Results) SetVclOnComputeErrorRequests(v int32) {
+	o.VclOnComputeErrorRequests = &v
+}
+
+// GetVclOnComputeSynthRequests returns the VclOnComputeSynthRequests field value if set, zero value otherwise.
+func (o *Results) GetVclOnComputeSynthRequests() int32 {
+	if o == nil || o.VclOnComputeSynthRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.VclOnComputeSynthRequests
+}
+
+// GetVclOnComputeSynthRequestsOk returns a tuple with the VclOnComputeSynthRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetVclOnComputeSynthRequestsOk() (*int32, bool) {
+	if o == nil || o.VclOnComputeSynthRequests == nil {
+		return nil, false
+	}
+	return o.VclOnComputeSynthRequests, true
+}
+
+// HasVclOnComputeSynthRequests returns a boolean if a field has been set.
+func (o *Results) HasVclOnComputeSynthRequests() bool {
+	if o != nil && o.VclOnComputeSynthRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVclOnComputeSynthRequests gets a reference to the given int32 and assigns it to the VclOnComputeSynthRequests field.
+func (o *Results) SetVclOnComputeSynthRequests(v int32) {
+	o.VclOnComputeSynthRequests = &v
+}
+
+// GetVclOnComputeEdgeHitRequests returns the VclOnComputeEdgeHitRequests field value if set, zero value otherwise.
+func (o *Results) GetVclOnComputeEdgeHitRequests() int32 {
+	if o == nil || o.VclOnComputeEdgeHitRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.VclOnComputeEdgeHitRequests
+}
+
+// GetVclOnComputeEdgeHitRequestsOk returns a tuple with the VclOnComputeEdgeHitRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetVclOnComputeEdgeHitRequestsOk() (*int32, bool) {
+	if o == nil || o.VclOnComputeEdgeHitRequests == nil {
+		return nil, false
+	}
+	return o.VclOnComputeEdgeHitRequests, true
+}
+
+// HasVclOnComputeEdgeHitRequests returns a boolean if a field has been set.
+func (o *Results) HasVclOnComputeEdgeHitRequests() bool {
+	if o != nil && o.VclOnComputeEdgeHitRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVclOnComputeEdgeHitRequests gets a reference to the given int32 and assigns it to the VclOnComputeEdgeHitRequests field.
+func (o *Results) SetVclOnComputeEdgeHitRequests(v int32) {
+	o.VclOnComputeEdgeHitRequests = &v
+}
+
+// GetVclOnComputeEdgeMissRequests returns the VclOnComputeEdgeMissRequests field value if set, zero value otherwise.
+func (o *Results) GetVclOnComputeEdgeMissRequests() int32 {
+	if o == nil || o.VclOnComputeEdgeMissRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.VclOnComputeEdgeMissRequests
+}
+
+// GetVclOnComputeEdgeMissRequestsOk returns a tuple with the VclOnComputeEdgeMissRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetVclOnComputeEdgeMissRequestsOk() (*int32, bool) {
+	if o == nil || o.VclOnComputeEdgeMissRequests == nil {
+		return nil, false
+	}
+	return o.VclOnComputeEdgeMissRequests, true
+}
+
+// HasVclOnComputeEdgeMissRequests returns a boolean if a field has been set.
+func (o *Results) HasVclOnComputeEdgeMissRequests() bool {
+	if o != nil && o.VclOnComputeEdgeMissRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVclOnComputeEdgeMissRequests gets a reference to the given int32 and assigns it to the VclOnComputeEdgeMissRequests field.
+func (o *Results) SetVclOnComputeEdgeMissRequests(v int32) {
+	o.VclOnComputeEdgeMissRequests = &v
+}
+
+// GetAllHitRequests returns the AllHitRequests field value if set, zero value otherwise.
+func (o *Results) GetAllHitRequests() int32 {
+	if o == nil || o.AllHitRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AllHitRequests
+}
+
+// GetAllHitRequestsOk returns a tuple with the AllHitRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetAllHitRequestsOk() (*int32, bool) {
+	if o == nil || o.AllHitRequests == nil {
+		return nil, false
+	}
+	return o.AllHitRequests, true
+}
+
+// HasAllHitRequests returns a boolean if a field has been set.
+func (o *Results) HasAllHitRequests() bool {
+	if o != nil && o.AllHitRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllHitRequests gets a reference to the given int32 and assigns it to the AllHitRequests field.
+func (o *Results) SetAllHitRequests(v int32) {
+	o.AllHitRequests = &v
+}
+
+// GetAllMissRequests returns the AllMissRequests field value if set, zero value otherwise.
+func (o *Results) GetAllMissRequests() int32 {
+	if o == nil || o.AllMissRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AllMissRequests
+}
+
+// GetAllMissRequestsOk returns a tuple with the AllMissRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetAllMissRequestsOk() (*int32, bool) {
+	if o == nil || o.AllMissRequests == nil {
+		return nil, false
+	}
+	return o.AllMissRequests, true
+}
+
+// HasAllMissRequests returns a boolean if a field has been set.
+func (o *Results) HasAllMissRequests() bool {
+	if o != nil && o.AllMissRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllMissRequests gets a reference to the given int32 and assigns it to the AllMissRequests field.
+func (o *Results) SetAllMissRequests(v int32) {
+	o.AllMissRequests = &v
+}
+
+// GetAllPassRequests returns the AllPassRequests field value if set, zero value otherwise.
+func (o *Results) GetAllPassRequests() int32 {
+	if o == nil || o.AllPassRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AllPassRequests
+}
+
+// GetAllPassRequestsOk returns a tuple with the AllPassRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetAllPassRequestsOk() (*int32, bool) {
+	if o == nil || o.AllPassRequests == nil {
+		return nil, false
+	}
+	return o.AllPassRequests, true
+}
+
+// HasAllPassRequests returns a boolean if a field has been set.
+func (o *Results) HasAllPassRequests() bool {
+	if o != nil && o.AllPassRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllPassRequests gets a reference to the given int32 and assigns it to the AllPassRequests field.
+func (o *Results) SetAllPassRequests(v int32) {
+	o.AllPassRequests = &v
+}
+
+// GetAllErrorRequests returns the AllErrorRequests field value if set, zero value otherwise.
+func (o *Results) GetAllErrorRequests() int32 {
+	if o == nil || o.AllErrorRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AllErrorRequests
+}
+
+// GetAllErrorRequestsOk returns a tuple with the AllErrorRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetAllErrorRequestsOk() (*int32, bool) {
+	if o == nil || o.AllErrorRequests == nil {
+		return nil, false
+	}
+	return o.AllErrorRequests, true
+}
+
+// HasAllErrorRequests returns a boolean if a field has been set.
+func (o *Results) HasAllErrorRequests() bool {
+	if o != nil && o.AllErrorRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllErrorRequests gets a reference to the given int32 and assigns it to the AllErrorRequests field.
+func (o *Results) SetAllErrorRequests(v int32) {
+	o.AllErrorRequests = &v
+}
+
+// GetAllSynthRequests returns the AllSynthRequests field value if set, zero value otherwise.
+func (o *Results) GetAllSynthRequests() int32 {
+	if o == nil || o.AllSynthRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AllSynthRequests
+}
+
+// GetAllSynthRequestsOk returns a tuple with the AllSynthRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetAllSynthRequestsOk() (*int32, bool) {
+	if o == nil || o.AllSynthRequests == nil {
+		return nil, false
+	}
+	return o.AllSynthRequests, true
+}
+
+// HasAllSynthRequests returns a boolean if a field has been set.
+func (o *Results) HasAllSynthRequests() bool {
+	if o != nil && o.AllSynthRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllSynthRequests gets a reference to the given int32 and assigns it to the AllSynthRequests field.
+func (o *Results) SetAllSynthRequests(v int32) {
+	o.AllSynthRequests = &v
+}
+
+// GetAllEdgeHitRequests returns the AllEdgeHitRequests field value if set, zero value otherwise.
+func (o *Results) GetAllEdgeHitRequests() int32 {
+	if o == nil || o.AllEdgeHitRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AllEdgeHitRequests
+}
+
+// GetAllEdgeHitRequestsOk returns a tuple with the AllEdgeHitRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetAllEdgeHitRequestsOk() (*int32, bool) {
+	if o == nil || o.AllEdgeHitRequests == nil {
+		return nil, false
+	}
+	return o.AllEdgeHitRequests, true
+}
+
+// HasAllEdgeHitRequests returns a boolean if a field has been set.
+func (o *Results) HasAllEdgeHitRequests() bool {
+	if o != nil && o.AllEdgeHitRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllEdgeHitRequests gets a reference to the given int32 and assigns it to the AllEdgeHitRequests field.
+func (o *Results) SetAllEdgeHitRequests(v int32) {
+	o.AllEdgeHitRequests = &v
+}
+
+// GetAllEdgeMissRequests returns the AllEdgeMissRequests field value if set, zero value otherwise.
+func (o *Results) GetAllEdgeMissRequests() int32 {
+	if o == nil || o.AllEdgeMissRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AllEdgeMissRequests
+}
+
+// GetAllEdgeMissRequestsOk returns a tuple with the AllEdgeMissRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetAllEdgeMissRequestsOk() (*int32, bool) {
+	if o == nil || o.AllEdgeMissRequests == nil {
+		return nil, false
+	}
+	return o.AllEdgeMissRequests, true
+}
+
+// HasAllEdgeMissRequests returns a boolean if a field has been set.
+func (o *Results) HasAllEdgeMissRequests() bool {
+	if o != nil && o.AllEdgeMissRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllEdgeMissRequests gets a reference to the given int32 and assigns it to the AllEdgeMissRequests field.
+func (o *Results) SetAllEdgeMissRequests(v int32) {
+	o.AllEdgeMissRequests = &v
+}
+
+// GetAllStatus1xx returns the AllStatus1xx field value if set, zero value otherwise.
+func (o *Results) GetAllStatus1xx() int32 {
+	if o == nil || o.AllStatus1xx == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AllStatus1xx
+}
+
+// GetAllStatus1xxOk returns a tuple with the AllStatus1xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetAllStatus1xxOk() (*int32, bool) {
+	if o == nil || o.AllStatus1xx == nil {
+		return nil, false
+	}
+	return o.AllStatus1xx, true
+}
+
+// HasAllStatus1xx returns a boolean if a field has been set.
+func (o *Results) HasAllStatus1xx() bool {
+	if o != nil && o.AllStatus1xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllStatus1xx gets a reference to the given int32 and assigns it to the AllStatus1xx field.
+func (o *Results) SetAllStatus1xx(v int32) {
+	o.AllStatus1xx = &v
+}
+
+// GetAllStatus2xx returns the AllStatus2xx field value if set, zero value otherwise.
+func (o *Results) GetAllStatus2xx() int32 {
+	if o == nil || o.AllStatus2xx == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AllStatus2xx
+}
+
+// GetAllStatus2xxOk returns a tuple with the AllStatus2xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetAllStatus2xxOk() (*int32, bool) {
+	if o == nil || o.AllStatus2xx == nil {
+		return nil, false
+	}
+	return o.AllStatus2xx, true
+}
+
+// HasAllStatus2xx returns a boolean if a field has been set.
+func (o *Results) HasAllStatus2xx() bool {
+	if o != nil && o.AllStatus2xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllStatus2xx gets a reference to the given int32 and assigns it to the AllStatus2xx field.
+func (o *Results) SetAllStatus2xx(v int32) {
+	o.AllStatus2xx = &v
+}
+
+// GetAllStatus3xx returns the AllStatus3xx field value if set, zero value otherwise.
+func (o *Results) GetAllStatus3xx() int32 {
+	if o == nil || o.AllStatus3xx == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AllStatus3xx
+}
+
+// GetAllStatus3xxOk returns a tuple with the AllStatus3xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetAllStatus3xxOk() (*int32, bool) {
+	if o == nil || o.AllStatus3xx == nil {
+		return nil, false
+	}
+	return o.AllStatus3xx, true
+}
+
+// HasAllStatus3xx returns a boolean if a field has been set.
+func (o *Results) HasAllStatus3xx() bool {
+	if o != nil && o.AllStatus3xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllStatus3xx gets a reference to the given int32 and assigns it to the AllStatus3xx field.
+func (o *Results) SetAllStatus3xx(v int32) {
+	o.AllStatus3xx = &v
+}
+
+// GetAllStatus4xx returns the AllStatus4xx field value if set, zero value otherwise.
+func (o *Results) GetAllStatus4xx() int32 {
+	if o == nil || o.AllStatus4xx == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AllStatus4xx
+}
+
+// GetAllStatus4xxOk returns a tuple with the AllStatus4xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetAllStatus4xxOk() (*int32, bool) {
+	if o == nil || o.AllStatus4xx == nil {
+		return nil, false
+	}
+	return o.AllStatus4xx, true
+}
+
+// HasAllStatus4xx returns a boolean if a field has been set.
+func (o *Results) HasAllStatus4xx() bool {
+	if o != nil && o.AllStatus4xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllStatus4xx gets a reference to the given int32 and assigns it to the AllStatus4xx field.
+func (o *Results) SetAllStatus4xx(v int32) {
+	o.AllStatus4xx = &v
+}
+
+// GetAllStatus5xx returns the AllStatus5xx field value if set, zero value otherwise.
+func (o *Results) GetAllStatus5xx() int32 {
+	if o == nil || o.AllStatus5xx == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AllStatus5xx
+}
+
+// GetAllStatus5xxOk returns a tuple with the AllStatus5xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetAllStatus5xxOk() (*int32, bool) {
+	if o == nil || o.AllStatus5xx == nil {
+		return nil, false
+	}
+	return o.AllStatus5xx, true
+}
+
+// HasAllStatus5xx returns a boolean if a field has been set.
+func (o *Results) HasAllStatus5xx() bool {
+	if o != nil && o.AllStatus5xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllStatus5xx gets a reference to the given int32 and assigns it to the AllStatus5xx field.
+func (o *Results) SetAllStatus5xx(v int32) {
+	o.AllStatus5xx = &v
+}
+
 // GetServiceID returns the ServiceID field value if set, zero value otherwise.
 func (o *Results) GetServiceID() string {
 	if o == nil || o.ServiceID == nil {
@@ -8529,6 +9243,69 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.BotChallengesFailed != nil {
 		toSerialize["bot_challenges_failed"] = o.BotChallengesFailed
 	}
+	if o.DdosActionDowngrade != nil {
+		toSerialize["ddos_action_downgrade"] = o.DdosActionDowngrade
+	}
+	if o.DdosActionDowngradedConnections != nil {
+		toSerialize["ddos_action_downgraded_connections"] = o.DdosActionDowngradedConnections
+	}
+	if o.VclOnComputeHitRequests != nil {
+		toSerialize["vcl_on_compute_hit_requests"] = o.VclOnComputeHitRequests
+	}
+	if o.VclOnComputeMissRequests != nil {
+		toSerialize["vcl_on_compute_miss_requests"] = o.VclOnComputeMissRequests
+	}
+	if o.VclOnComputePassRequests != nil {
+		toSerialize["vcl_on_compute_pass_requests"] = o.VclOnComputePassRequests
+	}
+	if o.VclOnComputeErrorRequests != nil {
+		toSerialize["vcl_on_compute_error_requests"] = o.VclOnComputeErrorRequests
+	}
+	if o.VclOnComputeSynthRequests != nil {
+		toSerialize["vcl_on_compute_synth_requests"] = o.VclOnComputeSynthRequests
+	}
+	if o.VclOnComputeEdgeHitRequests != nil {
+		toSerialize["vcl_on_compute_edge_hit_requests"] = o.VclOnComputeEdgeHitRequests
+	}
+	if o.VclOnComputeEdgeMissRequests != nil {
+		toSerialize["vcl_on_compute_edge_miss_requests"] = o.VclOnComputeEdgeMissRequests
+	}
+	if o.AllHitRequests != nil {
+		toSerialize["all_hit_requests"] = o.AllHitRequests
+	}
+	if o.AllMissRequests != nil {
+		toSerialize["all_miss_requests"] = o.AllMissRequests
+	}
+	if o.AllPassRequests != nil {
+		toSerialize["all_pass_requests"] = o.AllPassRequests
+	}
+	if o.AllErrorRequests != nil {
+		toSerialize["all_error_requests"] = o.AllErrorRequests
+	}
+	if o.AllSynthRequests != nil {
+		toSerialize["all_synth_requests"] = o.AllSynthRequests
+	}
+	if o.AllEdgeHitRequests != nil {
+		toSerialize["all_edge_hit_requests"] = o.AllEdgeHitRequests
+	}
+	if o.AllEdgeMissRequests != nil {
+		toSerialize["all_edge_miss_requests"] = o.AllEdgeMissRequests
+	}
+	if o.AllStatus1xx != nil {
+		toSerialize["all_status_1xx"] = o.AllStatus1xx
+	}
+	if o.AllStatus2xx != nil {
+		toSerialize["all_status_2xx"] = o.AllStatus2xx
+	}
+	if o.AllStatus3xx != nil {
+		toSerialize["all_status_3xx"] = o.AllStatus3xx
+	}
+	if o.AllStatus4xx != nil {
+		toSerialize["all_status_4xx"] = o.AllStatus4xx
+	}
+	if o.AllStatus5xx != nil {
+		toSerialize["all_status_5xx"] = o.AllStatus5xx
+	}
 	if o.ServiceID != nil {
 		toSerialize["service_id"] = o.ServiceID
 	}
@@ -8782,6 +9559,27 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "bot_challenges_issued")
 		delete(additionalProperties, "bot_challenges_succeeded")
 		delete(additionalProperties, "bot_challenges_failed")
+		delete(additionalProperties, "ddos_action_downgrade")
+		delete(additionalProperties, "ddos_action_downgraded_connections")
+		delete(additionalProperties, "vcl_on_compute_hit_requests")
+		delete(additionalProperties, "vcl_on_compute_miss_requests")
+		delete(additionalProperties, "vcl_on_compute_pass_requests")
+		delete(additionalProperties, "vcl_on_compute_error_requests")
+		delete(additionalProperties, "vcl_on_compute_synth_requests")
+		delete(additionalProperties, "vcl_on_compute_edge_hit_requests")
+		delete(additionalProperties, "vcl_on_compute_edge_miss_requests")
+		delete(additionalProperties, "all_hit_requests")
+		delete(additionalProperties, "all_miss_requests")
+		delete(additionalProperties, "all_pass_requests")
+		delete(additionalProperties, "all_error_requests")
+		delete(additionalProperties, "all_synth_requests")
+		delete(additionalProperties, "all_edge_hit_requests")
+		delete(additionalProperties, "all_edge_miss_requests")
+		delete(additionalProperties, "all_status_1xx")
+		delete(additionalProperties, "all_status_2xx")
+		delete(additionalProperties, "all_status_3xx")
+		delete(additionalProperties, "all_status_4xx")
+		delete(additionalProperties, "all_status_5xx")
 		delete(additionalProperties, "service_id")
 		delete(additionalProperties, "start_time")
 		o.AdditionalProperties = additionalProperties

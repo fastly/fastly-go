@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **HashKeys** | Pointer to **NullableString** | Comma separated list of varnish request object fields that should be in the hash key. | [optional] 
 **Name** | Pointer to **string** | Name for the request settings. | [optional] 
 **RequestCondition** | Pointer to **NullableString** | Condition which, if met, will select this configuration during a request. Optional. | [optional] 
-**Xff** | Pointer to **string** | Short for X-Forwarded-For. | [optional] 
+**Xff** | Pointer to **NullableString** | Short for X-Forwarded-For. | [optional] 
 
 ## Methods
 
@@ -220,5 +220,15 @@ SetXff sets Xff field to given value.
 
 HasXff returns a boolean if a field has been set.
 
+### SetXffNil
+
+`func (o *RequestSettingsAdditional) SetXffNil(b bool)`
+
+ SetXffNil sets the value for Xff to be an explicit nil
+
+### UnsetXff
+`func (o *RequestSettingsAdditional) UnsetXff()`
+
+UnsetXff ensures that no value is present for Xff, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

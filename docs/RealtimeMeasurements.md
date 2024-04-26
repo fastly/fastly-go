@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **Errors** | Pointer to **int32** | Number of cache errors. | [optional] 
 **HitsTime** | Pointer to **float32** | Total amount of time spent processing cache hits (in seconds). | [optional] 
 **MissTime** | Pointer to **float32** | Total amount of time spent processing cache misses (in seconds). | [optional] 
-**MissHistogram** | Pointer to **map[string]map[string]any** | A histogram. Each key represents the upper bound of a span of 10 milliseconds and the values represent the number of requests to origin during that 10ms period. Any origin request that takes more than 60 seconds to return will be in the 60000 bucket. | [optional] 
+**MissHistogram** | Pointer to **map[string]map[string]any** | A histogram. The value in each bucket is the number of requests to the origin whose responses arrived during the time period represented by the bucket. The key of each bucket represents the upper bound (in response time) of that bucket. The buckets vary in width and cover the time periods 0-10ms (in 1ms increments), 10-250ms (in 10ms increments), 250-1,000ms (in 50ms increments), 1,000-3,000ms (in 100ms increments), 3,000-10,000ms (in 500 ms increments), 10,000-20,000ms (in 1,000ms increments), 20,000-60,000ms (in 5,000ms increments), and 60,000ms through infinity (in a single bucket). | [optional] 
 **ComputeRequests** | Pointer to **int32** | The total number of requests that were received for your service by Fastly. | [optional] 
 **ComputeExecutionTimeMs** | Pointer to **float32** | The amount of active CPU time used to process your requests (in milliseconds). | [optional] 
 **ComputeRAMUsed** | Pointer to **int32** | The amount of RAM used for your service by Fastly (in bytes). | [optional] 
@@ -231,6 +231,27 @@ Name | Type | Description | Notes
 **BotChallengesSucceeded** | Pointer to **int32** | The number of successful challenge solutions processed. For example, a correct CAPTCHA solution. | [optional] 
 **BotChallengesFailed** | Pointer to **int32** | The number of failed challenge solutions processed. For example, an incorrect CAPTCHA solution. | [optional] 
 **BotChallengeCompleteTokensIssued** | Pointer to **int32** | The number of challenge-complete tokens issued. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success. | [optional] 
+**DdosActionDowngrade** | Pointer to **int32** | The number of times the downgrade action was taken. The downgrade action restricts the client to http1. | [optional] 
+**DdosActionDowngradedConnections** | Pointer to **int32** | The number of connections the downgrade action was applied to. The downgrade action restricts the connection to http1. | [optional] 
+**VclOnComputeHitRequests** | Pointer to **int32** | Number of cache hits for a VCL service running on Compute. | [optional] 
+**VclOnComputeMissRequests** | Pointer to **int32** | Number of cache misses for a VCL service running on Compute. | [optional] 
+**VclOnComputePassRequests** | Pointer to **int32** | Number of requests that passed through the CDN without being cached for a VCL service running on Compute. | [optional] 
+**VclOnComputeErrorRequests** | Pointer to **int32** | Number of cache errors for a VCL service running on Compute. | [optional] 
+**VclOnComputeSynthRequests** | Pointer to **int32** | Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service running on Compute. | [optional] 
+**VclOnComputeEdgeHitRequests** | Pointer to **int32** | Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service running on Compute. | [optional] 
+**VclOnComputeEdgeMissRequests** | Pointer to **int32** | Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service running on Compute. | [optional] 
+**AllHitRequests** | Pointer to **int32** | Number of cache hits for a VCL service. | [optional] 
+**AllMissRequests** | Pointer to **int32** | Number of cache misses for a VCL service. | [optional] 
+**AllPassRequests** | Pointer to **int32** | Number of requests that passed through the CDN without being cached for a VCL service. | [optional] 
+**AllErrorRequests** | Pointer to **int32** | Number of cache errors for a VCL service. | [optional] 
+**AllSynthRequests** | Pointer to **int32** | Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service. | [optional] 
+**AllEdgeHitRequests** | Pointer to **int32** | Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service. | [optional] 
+**AllEdgeMissRequests** | Pointer to **int32** | Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service. | [optional] 
+**AllStatus1xx** | Pointer to **int32** | Number of \&quot;Informational\&quot; category status codes delivered for all sources. | [optional] 
+**AllStatus2xx** | Pointer to **int32** | Number of \&quot;Success\&quot; status codes delivered for all sources. | [optional] 
+**AllStatus3xx** | Pointer to **int32** | Number of \&quot;Redirection\&quot; codes delivered for all sources. | [optional] 
+**AllStatus4xx** | Pointer to **int32** | Number of \&quot;Client Error\&quot; codes delivered for all sources. | [optional] 
+**AllStatus5xx** | Pointer to **int32** | Number of \&quot;Server Error\&quot; codes delivered for all sources. | [optional] 
 
 ## Methods
 
@@ -5925,6 +5946,531 @@ SetBotChallengeCompleteTokensIssued sets BotChallengeCompleteTokensIssued field 
 `func (o *RealtimeMeasurements) HasBotChallengeCompleteTokensIssued() bool`
 
 HasBotChallengeCompleteTokensIssued returns a boolean if a field has been set.
+
+### GetDdosActionDowngrade
+
+`func (o *RealtimeMeasurements) GetDdosActionDowngrade() int32`
+
+GetDdosActionDowngrade returns the DdosActionDowngrade field if non-nil, zero value otherwise.
+
+### GetDdosActionDowngradeOk
+
+`func (o *RealtimeMeasurements) GetDdosActionDowngradeOk() (*int32, bool)`
+
+GetDdosActionDowngradeOk returns a tuple with the DdosActionDowngrade field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosActionDowngrade
+
+`func (o *RealtimeMeasurements) SetDdosActionDowngrade(v int32)`
+
+SetDdosActionDowngrade sets DdosActionDowngrade field to given value.
+
+### HasDdosActionDowngrade
+
+`func (o *RealtimeMeasurements) HasDdosActionDowngrade() bool`
+
+HasDdosActionDowngrade returns a boolean if a field has been set.
+
+### GetDdosActionDowngradedConnections
+
+`func (o *RealtimeMeasurements) GetDdosActionDowngradedConnections() int32`
+
+GetDdosActionDowngradedConnections returns the DdosActionDowngradedConnections field if non-nil, zero value otherwise.
+
+### GetDdosActionDowngradedConnectionsOk
+
+`func (o *RealtimeMeasurements) GetDdosActionDowngradedConnectionsOk() (*int32, bool)`
+
+GetDdosActionDowngradedConnectionsOk returns a tuple with the DdosActionDowngradedConnections field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosActionDowngradedConnections
+
+`func (o *RealtimeMeasurements) SetDdosActionDowngradedConnections(v int32)`
+
+SetDdosActionDowngradedConnections sets DdosActionDowngradedConnections field to given value.
+
+### HasDdosActionDowngradedConnections
+
+`func (o *RealtimeMeasurements) HasDdosActionDowngradedConnections() bool`
+
+HasDdosActionDowngradedConnections returns a boolean if a field has been set.
+
+### GetVclOnComputeHitRequests
+
+`func (o *RealtimeMeasurements) GetVclOnComputeHitRequests() int32`
+
+GetVclOnComputeHitRequests returns the VclOnComputeHitRequests field if non-nil, zero value otherwise.
+
+### GetVclOnComputeHitRequestsOk
+
+`func (o *RealtimeMeasurements) GetVclOnComputeHitRequestsOk() (*int32, bool)`
+
+GetVclOnComputeHitRequestsOk returns a tuple with the VclOnComputeHitRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVclOnComputeHitRequests
+
+`func (o *RealtimeMeasurements) SetVclOnComputeHitRequests(v int32)`
+
+SetVclOnComputeHitRequests sets VclOnComputeHitRequests field to given value.
+
+### HasVclOnComputeHitRequests
+
+`func (o *RealtimeMeasurements) HasVclOnComputeHitRequests() bool`
+
+HasVclOnComputeHitRequests returns a boolean if a field has been set.
+
+### GetVclOnComputeMissRequests
+
+`func (o *RealtimeMeasurements) GetVclOnComputeMissRequests() int32`
+
+GetVclOnComputeMissRequests returns the VclOnComputeMissRequests field if non-nil, zero value otherwise.
+
+### GetVclOnComputeMissRequestsOk
+
+`func (o *RealtimeMeasurements) GetVclOnComputeMissRequestsOk() (*int32, bool)`
+
+GetVclOnComputeMissRequestsOk returns a tuple with the VclOnComputeMissRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVclOnComputeMissRequests
+
+`func (o *RealtimeMeasurements) SetVclOnComputeMissRequests(v int32)`
+
+SetVclOnComputeMissRequests sets VclOnComputeMissRequests field to given value.
+
+### HasVclOnComputeMissRequests
+
+`func (o *RealtimeMeasurements) HasVclOnComputeMissRequests() bool`
+
+HasVclOnComputeMissRequests returns a boolean if a field has been set.
+
+### GetVclOnComputePassRequests
+
+`func (o *RealtimeMeasurements) GetVclOnComputePassRequests() int32`
+
+GetVclOnComputePassRequests returns the VclOnComputePassRequests field if non-nil, zero value otherwise.
+
+### GetVclOnComputePassRequestsOk
+
+`func (o *RealtimeMeasurements) GetVclOnComputePassRequestsOk() (*int32, bool)`
+
+GetVclOnComputePassRequestsOk returns a tuple with the VclOnComputePassRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVclOnComputePassRequests
+
+`func (o *RealtimeMeasurements) SetVclOnComputePassRequests(v int32)`
+
+SetVclOnComputePassRequests sets VclOnComputePassRequests field to given value.
+
+### HasVclOnComputePassRequests
+
+`func (o *RealtimeMeasurements) HasVclOnComputePassRequests() bool`
+
+HasVclOnComputePassRequests returns a boolean if a field has been set.
+
+### GetVclOnComputeErrorRequests
+
+`func (o *RealtimeMeasurements) GetVclOnComputeErrorRequests() int32`
+
+GetVclOnComputeErrorRequests returns the VclOnComputeErrorRequests field if non-nil, zero value otherwise.
+
+### GetVclOnComputeErrorRequestsOk
+
+`func (o *RealtimeMeasurements) GetVclOnComputeErrorRequestsOk() (*int32, bool)`
+
+GetVclOnComputeErrorRequestsOk returns a tuple with the VclOnComputeErrorRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVclOnComputeErrorRequests
+
+`func (o *RealtimeMeasurements) SetVclOnComputeErrorRequests(v int32)`
+
+SetVclOnComputeErrorRequests sets VclOnComputeErrorRequests field to given value.
+
+### HasVclOnComputeErrorRequests
+
+`func (o *RealtimeMeasurements) HasVclOnComputeErrorRequests() bool`
+
+HasVclOnComputeErrorRequests returns a boolean if a field has been set.
+
+### GetVclOnComputeSynthRequests
+
+`func (o *RealtimeMeasurements) GetVclOnComputeSynthRequests() int32`
+
+GetVclOnComputeSynthRequests returns the VclOnComputeSynthRequests field if non-nil, zero value otherwise.
+
+### GetVclOnComputeSynthRequestsOk
+
+`func (o *RealtimeMeasurements) GetVclOnComputeSynthRequestsOk() (*int32, bool)`
+
+GetVclOnComputeSynthRequestsOk returns a tuple with the VclOnComputeSynthRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVclOnComputeSynthRequests
+
+`func (o *RealtimeMeasurements) SetVclOnComputeSynthRequests(v int32)`
+
+SetVclOnComputeSynthRequests sets VclOnComputeSynthRequests field to given value.
+
+### HasVclOnComputeSynthRequests
+
+`func (o *RealtimeMeasurements) HasVclOnComputeSynthRequests() bool`
+
+HasVclOnComputeSynthRequests returns a boolean if a field has been set.
+
+### GetVclOnComputeEdgeHitRequests
+
+`func (o *RealtimeMeasurements) GetVclOnComputeEdgeHitRequests() int32`
+
+GetVclOnComputeEdgeHitRequests returns the VclOnComputeEdgeHitRequests field if non-nil, zero value otherwise.
+
+### GetVclOnComputeEdgeHitRequestsOk
+
+`func (o *RealtimeMeasurements) GetVclOnComputeEdgeHitRequestsOk() (*int32, bool)`
+
+GetVclOnComputeEdgeHitRequestsOk returns a tuple with the VclOnComputeEdgeHitRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVclOnComputeEdgeHitRequests
+
+`func (o *RealtimeMeasurements) SetVclOnComputeEdgeHitRequests(v int32)`
+
+SetVclOnComputeEdgeHitRequests sets VclOnComputeEdgeHitRequests field to given value.
+
+### HasVclOnComputeEdgeHitRequests
+
+`func (o *RealtimeMeasurements) HasVclOnComputeEdgeHitRequests() bool`
+
+HasVclOnComputeEdgeHitRequests returns a boolean if a field has been set.
+
+### GetVclOnComputeEdgeMissRequests
+
+`func (o *RealtimeMeasurements) GetVclOnComputeEdgeMissRequests() int32`
+
+GetVclOnComputeEdgeMissRequests returns the VclOnComputeEdgeMissRequests field if non-nil, zero value otherwise.
+
+### GetVclOnComputeEdgeMissRequestsOk
+
+`func (o *RealtimeMeasurements) GetVclOnComputeEdgeMissRequestsOk() (*int32, bool)`
+
+GetVclOnComputeEdgeMissRequestsOk returns a tuple with the VclOnComputeEdgeMissRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVclOnComputeEdgeMissRequests
+
+`func (o *RealtimeMeasurements) SetVclOnComputeEdgeMissRequests(v int32)`
+
+SetVclOnComputeEdgeMissRequests sets VclOnComputeEdgeMissRequests field to given value.
+
+### HasVclOnComputeEdgeMissRequests
+
+`func (o *RealtimeMeasurements) HasVclOnComputeEdgeMissRequests() bool`
+
+HasVclOnComputeEdgeMissRequests returns a boolean if a field has been set.
+
+### GetAllHitRequests
+
+`func (o *RealtimeMeasurements) GetAllHitRequests() int32`
+
+GetAllHitRequests returns the AllHitRequests field if non-nil, zero value otherwise.
+
+### GetAllHitRequestsOk
+
+`func (o *RealtimeMeasurements) GetAllHitRequestsOk() (*int32, bool)`
+
+GetAllHitRequestsOk returns a tuple with the AllHitRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllHitRequests
+
+`func (o *RealtimeMeasurements) SetAllHitRequests(v int32)`
+
+SetAllHitRequests sets AllHitRequests field to given value.
+
+### HasAllHitRequests
+
+`func (o *RealtimeMeasurements) HasAllHitRequests() bool`
+
+HasAllHitRequests returns a boolean if a field has been set.
+
+### GetAllMissRequests
+
+`func (o *RealtimeMeasurements) GetAllMissRequests() int32`
+
+GetAllMissRequests returns the AllMissRequests field if non-nil, zero value otherwise.
+
+### GetAllMissRequestsOk
+
+`func (o *RealtimeMeasurements) GetAllMissRequestsOk() (*int32, bool)`
+
+GetAllMissRequestsOk returns a tuple with the AllMissRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllMissRequests
+
+`func (o *RealtimeMeasurements) SetAllMissRequests(v int32)`
+
+SetAllMissRequests sets AllMissRequests field to given value.
+
+### HasAllMissRequests
+
+`func (o *RealtimeMeasurements) HasAllMissRequests() bool`
+
+HasAllMissRequests returns a boolean if a field has been set.
+
+### GetAllPassRequests
+
+`func (o *RealtimeMeasurements) GetAllPassRequests() int32`
+
+GetAllPassRequests returns the AllPassRequests field if non-nil, zero value otherwise.
+
+### GetAllPassRequestsOk
+
+`func (o *RealtimeMeasurements) GetAllPassRequestsOk() (*int32, bool)`
+
+GetAllPassRequestsOk returns a tuple with the AllPassRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllPassRequests
+
+`func (o *RealtimeMeasurements) SetAllPassRequests(v int32)`
+
+SetAllPassRequests sets AllPassRequests field to given value.
+
+### HasAllPassRequests
+
+`func (o *RealtimeMeasurements) HasAllPassRequests() bool`
+
+HasAllPassRequests returns a boolean if a field has been set.
+
+### GetAllErrorRequests
+
+`func (o *RealtimeMeasurements) GetAllErrorRequests() int32`
+
+GetAllErrorRequests returns the AllErrorRequests field if non-nil, zero value otherwise.
+
+### GetAllErrorRequestsOk
+
+`func (o *RealtimeMeasurements) GetAllErrorRequestsOk() (*int32, bool)`
+
+GetAllErrorRequestsOk returns a tuple with the AllErrorRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllErrorRequests
+
+`func (o *RealtimeMeasurements) SetAllErrorRequests(v int32)`
+
+SetAllErrorRequests sets AllErrorRequests field to given value.
+
+### HasAllErrorRequests
+
+`func (o *RealtimeMeasurements) HasAllErrorRequests() bool`
+
+HasAllErrorRequests returns a boolean if a field has been set.
+
+### GetAllSynthRequests
+
+`func (o *RealtimeMeasurements) GetAllSynthRequests() int32`
+
+GetAllSynthRequests returns the AllSynthRequests field if non-nil, zero value otherwise.
+
+### GetAllSynthRequestsOk
+
+`func (o *RealtimeMeasurements) GetAllSynthRequestsOk() (*int32, bool)`
+
+GetAllSynthRequestsOk returns a tuple with the AllSynthRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllSynthRequests
+
+`func (o *RealtimeMeasurements) SetAllSynthRequests(v int32)`
+
+SetAllSynthRequests sets AllSynthRequests field to given value.
+
+### HasAllSynthRequests
+
+`func (o *RealtimeMeasurements) HasAllSynthRequests() bool`
+
+HasAllSynthRequests returns a boolean if a field has been set.
+
+### GetAllEdgeHitRequests
+
+`func (o *RealtimeMeasurements) GetAllEdgeHitRequests() int32`
+
+GetAllEdgeHitRequests returns the AllEdgeHitRequests field if non-nil, zero value otherwise.
+
+### GetAllEdgeHitRequestsOk
+
+`func (o *RealtimeMeasurements) GetAllEdgeHitRequestsOk() (*int32, bool)`
+
+GetAllEdgeHitRequestsOk returns a tuple with the AllEdgeHitRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllEdgeHitRequests
+
+`func (o *RealtimeMeasurements) SetAllEdgeHitRequests(v int32)`
+
+SetAllEdgeHitRequests sets AllEdgeHitRequests field to given value.
+
+### HasAllEdgeHitRequests
+
+`func (o *RealtimeMeasurements) HasAllEdgeHitRequests() bool`
+
+HasAllEdgeHitRequests returns a boolean if a field has been set.
+
+### GetAllEdgeMissRequests
+
+`func (o *RealtimeMeasurements) GetAllEdgeMissRequests() int32`
+
+GetAllEdgeMissRequests returns the AllEdgeMissRequests field if non-nil, zero value otherwise.
+
+### GetAllEdgeMissRequestsOk
+
+`func (o *RealtimeMeasurements) GetAllEdgeMissRequestsOk() (*int32, bool)`
+
+GetAllEdgeMissRequestsOk returns a tuple with the AllEdgeMissRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllEdgeMissRequests
+
+`func (o *RealtimeMeasurements) SetAllEdgeMissRequests(v int32)`
+
+SetAllEdgeMissRequests sets AllEdgeMissRequests field to given value.
+
+### HasAllEdgeMissRequests
+
+`func (o *RealtimeMeasurements) HasAllEdgeMissRequests() bool`
+
+HasAllEdgeMissRequests returns a boolean if a field has been set.
+
+### GetAllStatus1xx
+
+`func (o *RealtimeMeasurements) GetAllStatus1xx() int32`
+
+GetAllStatus1xx returns the AllStatus1xx field if non-nil, zero value otherwise.
+
+### GetAllStatus1xxOk
+
+`func (o *RealtimeMeasurements) GetAllStatus1xxOk() (*int32, bool)`
+
+GetAllStatus1xxOk returns a tuple with the AllStatus1xx field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllStatus1xx
+
+`func (o *RealtimeMeasurements) SetAllStatus1xx(v int32)`
+
+SetAllStatus1xx sets AllStatus1xx field to given value.
+
+### HasAllStatus1xx
+
+`func (o *RealtimeMeasurements) HasAllStatus1xx() bool`
+
+HasAllStatus1xx returns a boolean if a field has been set.
+
+### GetAllStatus2xx
+
+`func (o *RealtimeMeasurements) GetAllStatus2xx() int32`
+
+GetAllStatus2xx returns the AllStatus2xx field if non-nil, zero value otherwise.
+
+### GetAllStatus2xxOk
+
+`func (o *RealtimeMeasurements) GetAllStatus2xxOk() (*int32, bool)`
+
+GetAllStatus2xxOk returns a tuple with the AllStatus2xx field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllStatus2xx
+
+`func (o *RealtimeMeasurements) SetAllStatus2xx(v int32)`
+
+SetAllStatus2xx sets AllStatus2xx field to given value.
+
+### HasAllStatus2xx
+
+`func (o *RealtimeMeasurements) HasAllStatus2xx() bool`
+
+HasAllStatus2xx returns a boolean if a field has been set.
+
+### GetAllStatus3xx
+
+`func (o *RealtimeMeasurements) GetAllStatus3xx() int32`
+
+GetAllStatus3xx returns the AllStatus3xx field if non-nil, zero value otherwise.
+
+### GetAllStatus3xxOk
+
+`func (o *RealtimeMeasurements) GetAllStatus3xxOk() (*int32, bool)`
+
+GetAllStatus3xxOk returns a tuple with the AllStatus3xx field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllStatus3xx
+
+`func (o *RealtimeMeasurements) SetAllStatus3xx(v int32)`
+
+SetAllStatus3xx sets AllStatus3xx field to given value.
+
+### HasAllStatus3xx
+
+`func (o *RealtimeMeasurements) HasAllStatus3xx() bool`
+
+HasAllStatus3xx returns a boolean if a field has been set.
+
+### GetAllStatus4xx
+
+`func (o *RealtimeMeasurements) GetAllStatus4xx() int32`
+
+GetAllStatus4xx returns the AllStatus4xx field if non-nil, zero value otherwise.
+
+### GetAllStatus4xxOk
+
+`func (o *RealtimeMeasurements) GetAllStatus4xxOk() (*int32, bool)`
+
+GetAllStatus4xxOk returns a tuple with the AllStatus4xx field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllStatus4xx
+
+`func (o *RealtimeMeasurements) SetAllStatus4xx(v int32)`
+
+SetAllStatus4xx sets AllStatus4xx field to given value.
+
+### HasAllStatus4xx
+
+`func (o *RealtimeMeasurements) HasAllStatus4xx() bool`
+
+HasAllStatus4xx returns a boolean if a field has been set.
+
+### GetAllStatus5xx
+
+`func (o *RealtimeMeasurements) GetAllStatus5xx() int32`
+
+GetAllStatus5xx returns the AllStatus5xx field if non-nil, zero value otherwise.
+
+### GetAllStatus5xxOk
+
+`func (o *RealtimeMeasurements) GetAllStatus5xxOk() (*int32, bool)`
+
+GetAllStatus5xxOk returns a tuple with the AllStatus5xx field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllStatus5xx
+
+`func (o *RealtimeMeasurements) SetAllStatus5xx(v int32)`
+
+SetAllStatus5xx sets AllStatus5xx field to given value.
+
+### HasAllStatus5xx
+
+`func (o *RealtimeMeasurements) HasAllStatus5xx() bool`
+
+HasAllStatus5xx returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

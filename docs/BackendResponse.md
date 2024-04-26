@@ -33,6 +33,10 @@ Name | Type | Description | Notes
 **SslClientKey** | Pointer to **NullableString** | Client key attached to origin. | [optional] 
 **SslHostname** | Pointer to **NullableString** | Use `ssl_cert_hostname` and `ssl_sni_hostname` to configure certificate validation. | [optional] 
 **SslSniHostname** | Pointer to **NullableString** | Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all. | [optional] 
+**TcpKeepaliveEnable** | Pointer to **bool** | Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified. | [optional] 
+**TcpKeepaliveInterval** | Pointer to **NullableInt32** | Interval in seconds between subsequent keepalive probes. | [optional] 
+**TcpKeepaliveProbes** | Pointer to **NullableInt32** | Number of unacknowledged probes to send before considering the connection dead. | [optional] 
+**TcpKeepaliveTime** | Pointer to **NullableInt32** | Interval in seconds between the last data packet sent and the first keepalive probe. | [optional] 
 **UseSsl** | Pointer to **bool** | Whether or not to require TLS for connections to this backend. | [optional] 
 **Weight** | Pointer to **int32** | Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -986,6 +990,136 @@ HasSslSniHostname returns a boolean if a field has been set.
 `func (o *BackendResponse) UnsetSslSniHostname()`
 
 UnsetSslSniHostname ensures that no value is present for SslSniHostname, not even an explicit nil
+### GetTcpKeepaliveEnable
+
+`func (o *BackendResponse) GetTcpKeepaliveEnable() bool`
+
+GetTcpKeepaliveEnable returns the TcpKeepaliveEnable field if non-nil, zero value otherwise.
+
+### GetTcpKeepaliveEnableOk
+
+`func (o *BackendResponse) GetTcpKeepaliveEnableOk() (*bool, bool)`
+
+GetTcpKeepaliveEnableOk returns a tuple with the TcpKeepaliveEnable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTcpKeepaliveEnable
+
+`func (o *BackendResponse) SetTcpKeepaliveEnable(v bool)`
+
+SetTcpKeepaliveEnable sets TcpKeepaliveEnable field to given value.
+
+### HasTcpKeepaliveEnable
+
+`func (o *BackendResponse) HasTcpKeepaliveEnable() bool`
+
+HasTcpKeepaliveEnable returns a boolean if a field has been set.
+
+### GetTcpKeepaliveInterval
+
+`func (o *BackendResponse) GetTcpKeepaliveInterval() int32`
+
+GetTcpKeepaliveInterval returns the TcpKeepaliveInterval field if non-nil, zero value otherwise.
+
+### GetTcpKeepaliveIntervalOk
+
+`func (o *BackendResponse) GetTcpKeepaliveIntervalOk() (*int32, bool)`
+
+GetTcpKeepaliveIntervalOk returns a tuple with the TcpKeepaliveInterval field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTcpKeepaliveInterval
+
+`func (o *BackendResponse) SetTcpKeepaliveInterval(v int32)`
+
+SetTcpKeepaliveInterval sets TcpKeepaliveInterval field to given value.
+
+### HasTcpKeepaliveInterval
+
+`func (o *BackendResponse) HasTcpKeepaliveInterval() bool`
+
+HasTcpKeepaliveInterval returns a boolean if a field has been set.
+
+### SetTcpKeepaliveIntervalNil
+
+`func (o *BackendResponse) SetTcpKeepaliveIntervalNil(b bool)`
+
+ SetTcpKeepaliveIntervalNil sets the value for TcpKeepaliveInterval to be an explicit nil
+
+### UnsetTcpKeepaliveInterval
+`func (o *BackendResponse) UnsetTcpKeepaliveInterval()`
+
+UnsetTcpKeepaliveInterval ensures that no value is present for TcpKeepaliveInterval, not even an explicit nil
+### GetTcpKeepaliveProbes
+
+`func (o *BackendResponse) GetTcpKeepaliveProbes() int32`
+
+GetTcpKeepaliveProbes returns the TcpKeepaliveProbes field if non-nil, zero value otherwise.
+
+### GetTcpKeepaliveProbesOk
+
+`func (o *BackendResponse) GetTcpKeepaliveProbesOk() (*int32, bool)`
+
+GetTcpKeepaliveProbesOk returns a tuple with the TcpKeepaliveProbes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTcpKeepaliveProbes
+
+`func (o *BackendResponse) SetTcpKeepaliveProbes(v int32)`
+
+SetTcpKeepaliveProbes sets TcpKeepaliveProbes field to given value.
+
+### HasTcpKeepaliveProbes
+
+`func (o *BackendResponse) HasTcpKeepaliveProbes() bool`
+
+HasTcpKeepaliveProbes returns a boolean if a field has been set.
+
+### SetTcpKeepaliveProbesNil
+
+`func (o *BackendResponse) SetTcpKeepaliveProbesNil(b bool)`
+
+ SetTcpKeepaliveProbesNil sets the value for TcpKeepaliveProbes to be an explicit nil
+
+### UnsetTcpKeepaliveProbes
+`func (o *BackendResponse) UnsetTcpKeepaliveProbes()`
+
+UnsetTcpKeepaliveProbes ensures that no value is present for TcpKeepaliveProbes, not even an explicit nil
+### GetTcpKeepaliveTime
+
+`func (o *BackendResponse) GetTcpKeepaliveTime() int32`
+
+GetTcpKeepaliveTime returns the TcpKeepaliveTime field if non-nil, zero value otherwise.
+
+### GetTcpKeepaliveTimeOk
+
+`func (o *BackendResponse) GetTcpKeepaliveTimeOk() (*int32, bool)`
+
+GetTcpKeepaliveTimeOk returns a tuple with the TcpKeepaliveTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTcpKeepaliveTime
+
+`func (o *BackendResponse) SetTcpKeepaliveTime(v int32)`
+
+SetTcpKeepaliveTime sets TcpKeepaliveTime field to given value.
+
+### HasTcpKeepaliveTime
+
+`func (o *BackendResponse) HasTcpKeepaliveTime() bool`
+
+HasTcpKeepaliveTime returns a boolean if a field has been set.
+
+### SetTcpKeepaliveTimeNil
+
+`func (o *BackendResponse) SetTcpKeepaliveTimeNil(b bool)`
+
+ SetTcpKeepaliveTimeNil sets the value for TcpKeepaliveTime to be an explicit nil
+
+### UnsetTcpKeepaliveTime
+`func (o *BackendResponse) UnsetTcpKeepaliveTime()`
+
+UnsetTcpKeepaliveTime ensures that no value is present for TcpKeepaliveTime, not even an explicit nil
 ### GetUseSsl
 
 `func (o *BackendResponse) GetUseSsl() bool`

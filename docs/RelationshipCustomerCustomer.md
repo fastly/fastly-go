@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**[]RelationshipMemberCustomer**](RelationshipMemberCustomer.md) |  | [optional] 
+**Data** | Pointer to [**RelationshipMemberCustomer**](RelationshipMemberCustomer.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *RelationshipCustomerCustomer) GetData() []RelationshipMemberCustomer`
+`func (o *RelationshipCustomerCustomer) GetData() RelationshipMemberCustomer`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *RelationshipCustomerCustomer) GetDataOk() (*[]RelationshipMemberCustomer, bool)`
+`func (o *RelationshipCustomerCustomer) GetDataOk() (*RelationshipMemberCustomer, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *RelationshipCustomerCustomer) SetData(v []RelationshipMemberCustomer)`
+`func (o *RelationshipCustomerCustomer) SetData(v RelationshipMemberCustomer)`
 
 SetData sets Data field to given value.
 

@@ -79,6 +79,14 @@ type BackendResponse struct {
 	SslHostname NullableString `json:"ssl_hostname,omitempty"`
 	// Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
 	SslSniHostname NullableString `json:"ssl_sni_hostname,omitempty"`
+	// Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified.
+	TcpKeepaliveEnable *bool `json:"tcp_keepalive_enable,omitempty"`
+	// Interval in seconds between subsequent keepalive probes.
+	TcpKeepaliveInterval NullableInt32 `json:"tcp_keepalive_interval,omitempty"`
+	// Number of unacknowledged probes to send before considering the connection dead.
+	TcpKeepaliveProbes NullableInt32 `json:"tcp_keepalive_probes,omitempty"`
+	// Interval in seconds between the last data packet sent and the first keepalive probe.
+	TcpKeepaliveTime NullableInt32 `json:"tcp_keepalive_time,omitempty"`
 	// Whether or not to require TLS for connections to this backend.
 	UseSsl *bool `json:"use_ssl,omitempty"`
 	// Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
@@ -1250,6 +1258,164 @@ func (o *BackendResponse) UnsetSslSniHostname() {
 	o.SslSniHostname.Unset()
 }
 
+// GetTcpKeepaliveEnable returns the TcpKeepaliveEnable field value if set, zero value otherwise.
+func (o *BackendResponse) GetTcpKeepaliveEnable() bool {
+	if o == nil || o.TcpKeepaliveEnable == nil {
+		var ret bool
+		return ret
+	}
+	return *o.TcpKeepaliveEnable
+}
+
+// GetTcpKeepaliveEnableOk returns a tuple with the TcpKeepaliveEnable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BackendResponse) GetTcpKeepaliveEnableOk() (*bool, bool) {
+	if o == nil || o.TcpKeepaliveEnable == nil {
+		return nil, false
+	}
+	return o.TcpKeepaliveEnable, true
+}
+
+// HasTcpKeepaliveEnable returns a boolean if a field has been set.
+func (o *BackendResponse) HasTcpKeepaliveEnable() bool {
+	if o != nil && o.TcpKeepaliveEnable != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTcpKeepaliveEnable gets a reference to the given bool and assigns it to the TcpKeepaliveEnable field.
+func (o *BackendResponse) SetTcpKeepaliveEnable(v bool) {
+	o.TcpKeepaliveEnable = &v
+}
+
+// GetTcpKeepaliveInterval returns the TcpKeepaliveInterval field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetTcpKeepaliveInterval() int32 {
+	if o == nil || o.TcpKeepaliveInterval.Get() == nil {
+		var ret int32
+		return ret
+	}
+	return *o.TcpKeepaliveInterval.Get()
+}
+
+// GetTcpKeepaliveIntervalOk returns a tuple with the TcpKeepaliveInterval field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BackendResponse) GetTcpKeepaliveIntervalOk() (*int32, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.TcpKeepaliveInterval.Get(), o.TcpKeepaliveInterval.IsSet()
+}
+
+// HasTcpKeepaliveInterval returns a boolean if a field has been set.
+func (o *BackendResponse) HasTcpKeepaliveInterval() bool {
+	if o != nil && o.TcpKeepaliveInterval.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetTcpKeepaliveInterval gets a reference to the given NullableInt32 and assigns it to the TcpKeepaliveInterval field.
+func (o *BackendResponse) SetTcpKeepaliveInterval(v int32) {
+	o.TcpKeepaliveInterval.Set(&v)
+}
+// SetTcpKeepaliveIntervalNil sets the value for TcpKeepaliveInterval to be an explicit nil
+func (o *BackendResponse) SetTcpKeepaliveIntervalNil() {
+	o.TcpKeepaliveInterval.Set(nil)
+}
+
+// UnsetTcpKeepaliveInterval ensures that no value is present for TcpKeepaliveInterval, not even an explicit nil
+func (o *BackendResponse) UnsetTcpKeepaliveInterval() {
+	o.TcpKeepaliveInterval.Unset()
+}
+
+// GetTcpKeepaliveProbes returns the TcpKeepaliveProbes field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetTcpKeepaliveProbes() int32 {
+	if o == nil || o.TcpKeepaliveProbes.Get() == nil {
+		var ret int32
+		return ret
+	}
+	return *o.TcpKeepaliveProbes.Get()
+}
+
+// GetTcpKeepaliveProbesOk returns a tuple with the TcpKeepaliveProbes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BackendResponse) GetTcpKeepaliveProbesOk() (*int32, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.TcpKeepaliveProbes.Get(), o.TcpKeepaliveProbes.IsSet()
+}
+
+// HasTcpKeepaliveProbes returns a boolean if a field has been set.
+func (o *BackendResponse) HasTcpKeepaliveProbes() bool {
+	if o != nil && o.TcpKeepaliveProbes.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetTcpKeepaliveProbes gets a reference to the given NullableInt32 and assigns it to the TcpKeepaliveProbes field.
+func (o *BackendResponse) SetTcpKeepaliveProbes(v int32) {
+	o.TcpKeepaliveProbes.Set(&v)
+}
+// SetTcpKeepaliveProbesNil sets the value for TcpKeepaliveProbes to be an explicit nil
+func (o *BackendResponse) SetTcpKeepaliveProbesNil() {
+	o.TcpKeepaliveProbes.Set(nil)
+}
+
+// UnsetTcpKeepaliveProbes ensures that no value is present for TcpKeepaliveProbes, not even an explicit nil
+func (o *BackendResponse) UnsetTcpKeepaliveProbes() {
+	o.TcpKeepaliveProbes.Unset()
+}
+
+// GetTcpKeepaliveTime returns the TcpKeepaliveTime field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetTcpKeepaliveTime() int32 {
+	if o == nil || o.TcpKeepaliveTime.Get() == nil {
+		var ret int32
+		return ret
+	}
+	return *o.TcpKeepaliveTime.Get()
+}
+
+// GetTcpKeepaliveTimeOk returns a tuple with the TcpKeepaliveTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BackendResponse) GetTcpKeepaliveTimeOk() (*int32, bool) {
+	if o == nil  {
+		return nil, false
+	}
+	return o.TcpKeepaliveTime.Get(), o.TcpKeepaliveTime.IsSet()
+}
+
+// HasTcpKeepaliveTime returns a boolean if a field has been set.
+func (o *BackendResponse) HasTcpKeepaliveTime() bool {
+	if o != nil && o.TcpKeepaliveTime.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetTcpKeepaliveTime gets a reference to the given NullableInt32 and assigns it to the TcpKeepaliveTime field.
+func (o *BackendResponse) SetTcpKeepaliveTime(v int32) {
+	o.TcpKeepaliveTime.Set(&v)
+}
+// SetTcpKeepaliveTimeNil sets the value for TcpKeepaliveTime to be an explicit nil
+func (o *BackendResponse) SetTcpKeepaliveTimeNil() {
+	o.TcpKeepaliveTime.Set(nil)
+}
+
+// UnsetTcpKeepaliveTime ensures that no value is present for TcpKeepaliveTime, not even an explicit nil
+func (o *BackendResponse) UnsetTcpKeepaliveTime() {
+	o.TcpKeepaliveTime.Unset()
+}
+
 // GetUseSsl returns the UseSsl field value if set, zero value otherwise.
 func (o *BackendResponse) GetUseSsl() bool {
 	if o == nil || o.UseSsl == nil {
@@ -1627,6 +1793,18 @@ func (o BackendResponse) MarshalJSON() ([]byte, error) {
 	if o.SslSniHostname.IsSet() {
 		toSerialize["ssl_sni_hostname"] = o.SslSniHostname.Get()
 	}
+	if o.TcpKeepaliveEnable != nil {
+		toSerialize["tcp_keepalive_enable"] = o.TcpKeepaliveEnable
+	}
+	if o.TcpKeepaliveInterval.IsSet() {
+		toSerialize["tcp_keepalive_interval"] = o.TcpKeepaliveInterval.Get()
+	}
+	if o.TcpKeepaliveProbes.IsSet() {
+		toSerialize["tcp_keepalive_probes"] = o.TcpKeepaliveProbes.Get()
+	}
+	if o.TcpKeepaliveTime.IsSet() {
+		toSerialize["tcp_keepalive_time"] = o.TcpKeepaliveTime.Get()
+	}
 	if o.UseSsl != nil {
 		toSerialize["use_ssl"] = o.UseSsl
 	}
@@ -1700,6 +1878,10 @@ func (o *BackendResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "ssl_client_key")
 		delete(additionalProperties, "ssl_hostname")
 		delete(additionalProperties, "ssl_sni_hostname")
+		delete(additionalProperties, "tcp_keepalive_enable")
+		delete(additionalProperties, "tcp_keepalive_interval")
+		delete(additionalProperties, "tcp_keepalive_probes")
+		delete(additionalProperties, "tcp_keepalive_time")
 		delete(additionalProperties, "use_ssl")
 		delete(additionalProperties, "weight")
 		delete(additionalProperties, "created_at")

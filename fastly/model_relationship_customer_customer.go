@@ -19,7 +19,7 @@ import (
 
 // RelationshipCustomerCustomer struct for RelationshipCustomerCustomer
 type RelationshipCustomerCustomer struct {
-	Data []RelationshipMemberCustomer `json:"data,omitempty"`
+	Data *RelationshipMemberCustomer `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -43,17 +43,17 @@ func NewRelationshipCustomerCustomerWithDefaults() *RelationshipCustomerCustomer
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *RelationshipCustomerCustomer) GetData() []RelationshipMemberCustomer {
+func (o *RelationshipCustomerCustomer) GetData() RelationshipMemberCustomer {
 	if o == nil || o.Data == nil {
-		var ret []RelationshipMemberCustomer
+		var ret RelationshipMemberCustomer
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipCustomerCustomer) GetDataOk() ([]RelationshipMemberCustomer, bool) {
+func (o *RelationshipCustomerCustomer) GetDataOk() (*RelationshipMemberCustomer, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -69,9 +69,9 @@ func (o *RelationshipCustomerCustomer) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []RelationshipMemberCustomer and assigns it to the Data field.
-func (o *RelationshipCustomerCustomer) SetData(v []RelationshipMemberCustomer) {
-	o.Data = v
+// SetData gets a reference to the given RelationshipMemberCustomer and assigns it to the Data field.
+func (o *RelationshipCustomerCustomer) SetData(v RelationshipMemberCustomer) {
+	o.Data = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.

@@ -39,19 +39,19 @@ type RequestSettingsResponse struct {
 	// Condition which, if met, will select this configuration during a request. Optional.
 	RequestCondition NullableString `json:"request_condition,omitempty"`
 	// Short for X-Forwarded-For.
-	Xff *string `json:"xff,omitempty"`
+	Xff NullableString `json:"xff,omitempty"`
 	// Disable collapsed forwarding, so you don't wait for other objects to origin.
-	BypassBusyWait *string `json:"bypass_busy_wait,omitempty"`
+	BypassBusyWait NullableString `json:"bypass_busy_wait,omitempty"`
 	// Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable.
-	ForceMiss *string `json:"force_miss,omitempty"`
+	ForceMiss NullableString `json:"force_miss,omitempty"`
 	// Forces the request use SSL (redirects a non-SSL to SSL).
 	ForceSsl *string `json:"force_ssl,omitempty"`
 	// Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers.
-	GeoHeaders *string `json:"geo_headers,omitempty"`
+	GeoHeaders NullableString `json:"geo_headers,omitempty"`
 	// How old an object is allowed to be to serve stale-if-error or stale-while-revalidate.
-	MaxStaleAge *string `json:"max_stale_age,omitempty"`
+	MaxStaleAge NullableString `json:"max_stale_age,omitempty"`
 	// Injects the X-Timer info into the request for viewing origin fetch durations.
-	TimerSupport *string `json:"timer_support,omitempty"`
+	TimerSupport NullableString `json:"timer_support,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -464,100 +464,130 @@ func (o *RequestSettingsResponse) UnsetRequestCondition() {
 	o.RequestCondition.Unset()
 }
 
-// GetXff returns the Xff field value if set, zero value otherwise.
+// GetXff returns the Xff field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RequestSettingsResponse) GetXff() string {
-	if o == nil || o.Xff == nil {
+	if o == nil || o.Xff.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.Xff
+	return *o.Xff.Get()
 }
 
 // GetXffOk returns a tuple with the Xff field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsResponse) GetXffOk() (*string, bool) {
-	if o == nil || o.Xff == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Xff, true
+	return o.Xff.Get(), o.Xff.IsSet()
 }
 
 // HasXff returns a boolean if a field has been set.
 func (o *RequestSettingsResponse) HasXff() bool {
-	if o != nil && o.Xff != nil {
+	if o != nil && o.Xff.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetXff gets a reference to the given string and assigns it to the Xff field.
+// SetXff gets a reference to the given NullableString and assigns it to the Xff field.
 func (o *RequestSettingsResponse) SetXff(v string) {
-	o.Xff = &v
+	o.Xff.Set(&v)
+}
+// SetXffNil sets the value for Xff to be an explicit nil
+func (o *RequestSettingsResponse) SetXffNil() {
+	o.Xff.Set(nil)
 }
 
-// GetBypassBusyWait returns the BypassBusyWait field value if set, zero value otherwise.
+// UnsetXff ensures that no value is present for Xff, not even an explicit nil
+func (o *RequestSettingsResponse) UnsetXff() {
+	o.Xff.Unset()
+}
+
+// GetBypassBusyWait returns the BypassBusyWait field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RequestSettingsResponse) GetBypassBusyWait() string {
-	if o == nil || o.BypassBusyWait == nil {
+	if o == nil || o.BypassBusyWait.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.BypassBusyWait
+	return *o.BypassBusyWait.Get()
 }
 
 // GetBypassBusyWaitOk returns a tuple with the BypassBusyWait field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsResponse) GetBypassBusyWaitOk() (*string, bool) {
-	if o == nil || o.BypassBusyWait == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.BypassBusyWait, true
+	return o.BypassBusyWait.Get(), o.BypassBusyWait.IsSet()
 }
 
 // HasBypassBusyWait returns a boolean if a field has been set.
 func (o *RequestSettingsResponse) HasBypassBusyWait() bool {
-	if o != nil && o.BypassBusyWait != nil {
+	if o != nil && o.BypassBusyWait.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBypassBusyWait gets a reference to the given string and assigns it to the BypassBusyWait field.
+// SetBypassBusyWait gets a reference to the given NullableString and assigns it to the BypassBusyWait field.
 func (o *RequestSettingsResponse) SetBypassBusyWait(v string) {
-	o.BypassBusyWait = &v
+	o.BypassBusyWait.Set(&v)
+}
+// SetBypassBusyWaitNil sets the value for BypassBusyWait to be an explicit nil
+func (o *RequestSettingsResponse) SetBypassBusyWaitNil() {
+	o.BypassBusyWait.Set(nil)
 }
 
-// GetForceMiss returns the ForceMiss field value if set, zero value otherwise.
+// UnsetBypassBusyWait ensures that no value is present for BypassBusyWait, not even an explicit nil
+func (o *RequestSettingsResponse) UnsetBypassBusyWait() {
+	o.BypassBusyWait.Unset()
+}
+
+// GetForceMiss returns the ForceMiss field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RequestSettingsResponse) GetForceMiss() string {
-	if o == nil || o.ForceMiss == nil {
+	if o == nil || o.ForceMiss.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ForceMiss
+	return *o.ForceMiss.Get()
 }
 
 // GetForceMissOk returns a tuple with the ForceMiss field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsResponse) GetForceMissOk() (*string, bool) {
-	if o == nil || o.ForceMiss == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.ForceMiss, true
+	return o.ForceMiss.Get(), o.ForceMiss.IsSet()
 }
 
 // HasForceMiss returns a boolean if a field has been set.
 func (o *RequestSettingsResponse) HasForceMiss() bool {
-	if o != nil && o.ForceMiss != nil {
+	if o != nil && o.ForceMiss.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetForceMiss gets a reference to the given string and assigns it to the ForceMiss field.
+// SetForceMiss gets a reference to the given NullableString and assigns it to the ForceMiss field.
 func (o *RequestSettingsResponse) SetForceMiss(v string) {
-	o.ForceMiss = &v
+	o.ForceMiss.Set(&v)
+}
+// SetForceMissNil sets the value for ForceMiss to be an explicit nil
+func (o *RequestSettingsResponse) SetForceMissNil() {
+	o.ForceMiss.Set(nil)
+}
+
+// UnsetForceMiss ensures that no value is present for ForceMiss, not even an explicit nil
+func (o *RequestSettingsResponse) UnsetForceMiss() {
+	o.ForceMiss.Unset()
 }
 
 // GetForceSsl returns the ForceSsl field value if set, zero value otherwise.
@@ -592,100 +622,130 @@ func (o *RequestSettingsResponse) SetForceSsl(v string) {
 	o.ForceSsl = &v
 }
 
-// GetGeoHeaders returns the GeoHeaders field value if set, zero value otherwise.
+// GetGeoHeaders returns the GeoHeaders field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RequestSettingsResponse) GetGeoHeaders() string {
-	if o == nil || o.GeoHeaders == nil {
+	if o == nil || o.GeoHeaders.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.GeoHeaders
+	return *o.GeoHeaders.Get()
 }
 
 // GetGeoHeadersOk returns a tuple with the GeoHeaders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsResponse) GetGeoHeadersOk() (*string, bool) {
-	if o == nil || o.GeoHeaders == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.GeoHeaders, true
+	return o.GeoHeaders.Get(), o.GeoHeaders.IsSet()
 }
 
 // HasGeoHeaders returns a boolean if a field has been set.
 func (o *RequestSettingsResponse) HasGeoHeaders() bool {
-	if o != nil && o.GeoHeaders != nil {
+	if o != nil && o.GeoHeaders.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetGeoHeaders gets a reference to the given string and assigns it to the GeoHeaders field.
+// SetGeoHeaders gets a reference to the given NullableString and assigns it to the GeoHeaders field.
 func (o *RequestSettingsResponse) SetGeoHeaders(v string) {
-	o.GeoHeaders = &v
+	o.GeoHeaders.Set(&v)
+}
+// SetGeoHeadersNil sets the value for GeoHeaders to be an explicit nil
+func (o *RequestSettingsResponse) SetGeoHeadersNil() {
+	o.GeoHeaders.Set(nil)
 }
 
-// GetMaxStaleAge returns the MaxStaleAge field value if set, zero value otherwise.
+// UnsetGeoHeaders ensures that no value is present for GeoHeaders, not even an explicit nil
+func (o *RequestSettingsResponse) UnsetGeoHeaders() {
+	o.GeoHeaders.Unset()
+}
+
+// GetMaxStaleAge returns the MaxStaleAge field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RequestSettingsResponse) GetMaxStaleAge() string {
-	if o == nil || o.MaxStaleAge == nil {
+	if o == nil || o.MaxStaleAge.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxStaleAge
+	return *o.MaxStaleAge.Get()
 }
 
 // GetMaxStaleAgeOk returns a tuple with the MaxStaleAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsResponse) GetMaxStaleAgeOk() (*string, bool) {
-	if o == nil || o.MaxStaleAge == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.MaxStaleAge, true
+	return o.MaxStaleAge.Get(), o.MaxStaleAge.IsSet()
 }
 
 // HasMaxStaleAge returns a boolean if a field has been set.
 func (o *RequestSettingsResponse) HasMaxStaleAge() bool {
-	if o != nil && o.MaxStaleAge != nil {
+	if o != nil && o.MaxStaleAge.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxStaleAge gets a reference to the given string and assigns it to the MaxStaleAge field.
+// SetMaxStaleAge gets a reference to the given NullableString and assigns it to the MaxStaleAge field.
 func (o *RequestSettingsResponse) SetMaxStaleAge(v string) {
-	o.MaxStaleAge = &v
+	o.MaxStaleAge.Set(&v)
+}
+// SetMaxStaleAgeNil sets the value for MaxStaleAge to be an explicit nil
+func (o *RequestSettingsResponse) SetMaxStaleAgeNil() {
+	o.MaxStaleAge.Set(nil)
 }
 
-// GetTimerSupport returns the TimerSupport field value if set, zero value otherwise.
+// UnsetMaxStaleAge ensures that no value is present for MaxStaleAge, not even an explicit nil
+func (o *RequestSettingsResponse) UnsetMaxStaleAge() {
+	o.MaxStaleAge.Unset()
+}
+
+// GetTimerSupport returns the TimerSupport field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RequestSettingsResponse) GetTimerSupport() string {
-	if o == nil || o.TimerSupport == nil {
+	if o == nil || o.TimerSupport.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TimerSupport
+	return *o.TimerSupport.Get()
 }
 
 // GetTimerSupportOk returns a tuple with the TimerSupport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsResponse) GetTimerSupportOk() (*string, bool) {
-	if o == nil || o.TimerSupport == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.TimerSupport, true
+	return o.TimerSupport.Get(), o.TimerSupport.IsSet()
 }
 
 // HasTimerSupport returns a boolean if a field has been set.
 func (o *RequestSettingsResponse) HasTimerSupport() bool {
-	if o != nil && o.TimerSupport != nil {
+	if o != nil && o.TimerSupport.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTimerSupport gets a reference to the given string and assigns it to the TimerSupport field.
+// SetTimerSupport gets a reference to the given NullableString and assigns it to the TimerSupport field.
 func (o *RequestSettingsResponse) SetTimerSupport(v string) {
-	o.TimerSupport = &v
+	o.TimerSupport.Set(&v)
+}
+// SetTimerSupportNil sets the value for TimerSupport to be an explicit nil
+func (o *RequestSettingsResponse) SetTimerSupportNil() {
+	o.TimerSupport.Set(nil)
+}
+
+// UnsetTimerSupport ensures that no value is present for TimerSupport, not even an explicit nil
+func (o *RequestSettingsResponse) UnsetTimerSupport() {
+	o.TimerSupport.Unset()
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -722,26 +782,26 @@ func (o RequestSettingsResponse) MarshalJSON() ([]byte, error) {
 	if o.RequestCondition.IsSet() {
 		toSerialize["request_condition"] = o.RequestCondition.Get()
 	}
-	if o.Xff != nil {
-		toSerialize["xff"] = o.Xff
+	if o.Xff.IsSet() {
+		toSerialize["xff"] = o.Xff.Get()
 	}
-	if o.BypassBusyWait != nil {
-		toSerialize["bypass_busy_wait"] = o.BypassBusyWait
+	if o.BypassBusyWait.IsSet() {
+		toSerialize["bypass_busy_wait"] = o.BypassBusyWait.Get()
 	}
-	if o.ForceMiss != nil {
-		toSerialize["force_miss"] = o.ForceMiss
+	if o.ForceMiss.IsSet() {
+		toSerialize["force_miss"] = o.ForceMiss.Get()
 	}
 	if o.ForceSsl != nil {
 		toSerialize["force_ssl"] = o.ForceSsl
 	}
-	if o.GeoHeaders != nil {
-		toSerialize["geo_headers"] = o.GeoHeaders
+	if o.GeoHeaders.IsSet() {
+		toSerialize["geo_headers"] = o.GeoHeaders.Get()
 	}
-	if o.MaxStaleAge != nil {
-		toSerialize["max_stale_age"] = o.MaxStaleAge
+	if o.MaxStaleAge.IsSet() {
+		toSerialize["max_stale_age"] = o.MaxStaleAge.Get()
 	}
-	if o.TimerSupport != nil {
-		toSerialize["timer_support"] = o.TimerSupport
+	if o.TimerSupport.IsSet() {
+		toSerialize["timer_support"] = o.TimerSupport.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

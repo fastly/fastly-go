@@ -14,13 +14,13 @@ Name | Type | Description | Notes
 **HashKeys** | Pointer to **NullableString** | Comma separated list of varnish request object fields that should be in the hash key. | [optional] 
 **Name** | Pointer to **string** | Name for the request settings. | [optional] 
 **RequestCondition** | Pointer to **NullableString** | Condition which, if met, will select this configuration during a request. Optional. | [optional] 
-**Xff** | Pointer to **string** | Short for X-Forwarded-For. | [optional] 
-**BypassBusyWait** | Pointer to **string** | Disable collapsed forwarding, so you don&#39;t wait for other objects to origin. | [optional] 
-**ForceMiss** | Pointer to **string** | Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable. | [optional] 
+**Xff** | Pointer to **NullableString** | Short for X-Forwarded-For. | [optional] 
+**BypassBusyWait** | Pointer to **NullableString** | Disable collapsed forwarding, so you don&#39;t wait for other objects to origin. | [optional] 
+**ForceMiss** | Pointer to **NullableString** | Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable. | [optional] 
 **ForceSsl** | Pointer to **string** | Forces the request use SSL (redirects a non-SSL to SSL). | [optional] 
-**GeoHeaders** | Pointer to **string** | Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers. | [optional] 
-**MaxStaleAge** | Pointer to **string** | How old an object is allowed to be to serve stale-if-error or stale-while-revalidate. | [optional] 
-**TimerSupport** | Pointer to **string** | Injects the X-Timer info into the request for viewing origin fetch durations. | [optional] 
+**GeoHeaders** | Pointer to **NullableString** | Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers. | [optional] 
+**MaxStaleAge** | Pointer to **NullableString** | How old an object is allowed to be to serve stale-if-error or stale-while-revalidate. | [optional] 
+**TimerSupport** | Pointer to **NullableString** | Injects the X-Timer info into the request for viewing origin fetch durations. | [optional] 
 
 ## Methods
 
@@ -386,6 +386,16 @@ SetXff sets Xff field to given value.
 
 HasXff returns a boolean if a field has been set.
 
+### SetXffNil
+
+`func (o *RequestSettingsResponse) SetXffNil(b bool)`
+
+ SetXffNil sets the value for Xff to be an explicit nil
+
+### UnsetXff
+`func (o *RequestSettingsResponse) UnsetXff()`
+
+UnsetXff ensures that no value is present for Xff, not even an explicit nil
 ### GetBypassBusyWait
 
 `func (o *RequestSettingsResponse) GetBypassBusyWait() string`
@@ -411,6 +421,16 @@ SetBypassBusyWait sets BypassBusyWait field to given value.
 
 HasBypassBusyWait returns a boolean if a field has been set.
 
+### SetBypassBusyWaitNil
+
+`func (o *RequestSettingsResponse) SetBypassBusyWaitNil(b bool)`
+
+ SetBypassBusyWaitNil sets the value for BypassBusyWait to be an explicit nil
+
+### UnsetBypassBusyWait
+`func (o *RequestSettingsResponse) UnsetBypassBusyWait()`
+
+UnsetBypassBusyWait ensures that no value is present for BypassBusyWait, not even an explicit nil
 ### GetForceMiss
 
 `func (o *RequestSettingsResponse) GetForceMiss() string`
@@ -436,6 +456,16 @@ SetForceMiss sets ForceMiss field to given value.
 
 HasForceMiss returns a boolean if a field has been set.
 
+### SetForceMissNil
+
+`func (o *RequestSettingsResponse) SetForceMissNil(b bool)`
+
+ SetForceMissNil sets the value for ForceMiss to be an explicit nil
+
+### UnsetForceMiss
+`func (o *RequestSettingsResponse) UnsetForceMiss()`
+
+UnsetForceMiss ensures that no value is present for ForceMiss, not even an explicit nil
 ### GetForceSsl
 
 `func (o *RequestSettingsResponse) GetForceSsl() string`
@@ -486,6 +516,16 @@ SetGeoHeaders sets GeoHeaders field to given value.
 
 HasGeoHeaders returns a boolean if a field has been set.
 
+### SetGeoHeadersNil
+
+`func (o *RequestSettingsResponse) SetGeoHeadersNil(b bool)`
+
+ SetGeoHeadersNil sets the value for GeoHeaders to be an explicit nil
+
+### UnsetGeoHeaders
+`func (o *RequestSettingsResponse) UnsetGeoHeaders()`
+
+UnsetGeoHeaders ensures that no value is present for GeoHeaders, not even an explicit nil
 ### GetMaxStaleAge
 
 `func (o *RequestSettingsResponse) GetMaxStaleAge() string`
@@ -511,6 +551,16 @@ SetMaxStaleAge sets MaxStaleAge field to given value.
 
 HasMaxStaleAge returns a boolean if a field has been set.
 
+### SetMaxStaleAgeNil
+
+`func (o *RequestSettingsResponse) SetMaxStaleAgeNil(b bool)`
+
+ SetMaxStaleAgeNil sets the value for MaxStaleAge to be an explicit nil
+
+### UnsetMaxStaleAge
+`func (o *RequestSettingsResponse) UnsetMaxStaleAge()`
+
+UnsetMaxStaleAge ensures that no value is present for MaxStaleAge, not even an explicit nil
 ### GetTimerSupport
 
 `func (o *RequestSettingsResponse) GetTimerSupport() string`
@@ -536,5 +586,15 @@ SetTimerSupport sets TimerSupport field to given value.
 
 HasTimerSupport returns a boolean if a field has been set.
 
+### SetTimerSupportNil
+
+`func (o *RequestSettingsResponse) SetTimerSupportNil(b bool)`
+
+ SetTimerSupportNil sets the value for TimerSupport to be an explicit nil
+
+### UnsetTimerSupport
+`func (o *RequestSettingsResponse) UnsetTimerSupport()`
+
+UnsetTimerSupport ensures that no value is present for TimerSupport, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
