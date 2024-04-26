@@ -5,8 +5,6 @@ A Go client library for interacting with most facets of the [Fastly API](https:/
 > [!WARNING]
 > This API client is auto-generated from Fastly's OpenAPI specification and may not function correctly when used on the Compute platform. Support for Compute is on the roadmap but has not yet been prioritised.
 
-***
-
 > [!TIP]
 > If you'd like to use the hand-written API client instead, see [go-fastly](https://github.com/fastly/go-fastly).
 
@@ -26,7 +24,8 @@ require (
 
 ## Usage
 
-> **NOTE**: The Fastly API requires an [API token](https://developer.fastly.com/reference/api/#authentication) for most operations.
+> [!NOTE]
+> The Fastly API requires an [API token](https://developer.fastly.com/reference/api/#authentication) for most operations.
 
 ```go
 package main
@@ -62,14 +61,15 @@ func main() {
 
 ## API Endpoints
 
-> **NOTE:** All URIs are relative to `https://api.fastly.com`
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
 
 <details>
 
-<summary>Expand full table</summary>
+<summary>Table of API endpoints</summary>
 
 Class | Method | HTTP request | Description
------------- | ------------- | ------------- | -------------
+----- | ------ | ------------ | -----------
 *ACLAPI* | [**CreateACL**](docs/AclAPI.md#createacl) | **POST** `/service/{service_id}/version/{version_id}/acl` | Create a new ACL
 *ACLAPI* | [**DeleteACL**](docs/AclAPI.md#deleteacl) | **DELETE** `/service/{service_id}/version/{version_id}/acl/{acl_name}` | Delete an ACL
 *ACLAPI* | [**GetACL**](docs/AclAPI.md#getacl) | **GET** `/service/{service_id}/version/{version_id}/acl/{acl_name}` | Describe an ACL
