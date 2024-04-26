@@ -60,9 +60,13 @@ func main() {
 }
 ```
 
-## Documentation for API Endpoints
+## API Endpoints
 
-All URIs are relative to *https://api.fastly.com*
+> **NOTE:** All URIs are relative to `https://api.fastly.com`
+
+<details>
+
+<summary>Expand full table</summary>
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -598,8 +602,9 @@ Class | Method | HTTP request | Description
 *WafTagsAPI* | [**ListWafTags**](docs/WafTagsAPI.md#listwaftags) | **GET** `/waf/tags` | List tags
 *WholePlatformDdosHistoricalAPI* | [**GetPlatformDdosHistorical**](docs/WholePlatformDdosHistoricalAPI.md#getplatformddoshistorical) | **GET** `/metrics/platform/ddos` | Get historical DDoS metrics for the entire Fastly platform
 
+</details>
 
-## Documentation for Utility Methods
+## Utility Methods
 
 Due to the fact that model structure members are all pointers, this package contains
 a number of utility functions to easily obtain pointers to values of basic types.
