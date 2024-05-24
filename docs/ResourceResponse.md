@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Href** | Pointer to **string** | The path to the resource. | [optional] 
 **ServiceID** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
 **Version** | Pointer to **int32** | Integer identifying a service version. | [optional] 
-**ResourceType** | Pointer to [**TypeResource**](TypeResource.md) |  | [optional] [default to TYPERESOURCE_OBJECT_STORE]
+**ResourceType** | Pointer to [**TypeResource**](TypeResource.md) |  | [optional] 
 
 ## Methods
 

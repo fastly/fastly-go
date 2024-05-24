@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 **SslClientKey** | Pointer to **NullableString** | Client key attached to origin. | [optional] 
 **SslHostname** | Pointer to **NullableString** | Use `ssl_cert_hostname` and `ssl_sni_hostname` to configure certificate validation. | [optional] 
 **SslSniHostname** | Pointer to **NullableString** | Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all. | [optional] 
-**TcpKeepaliveEnable** | Pointer to **bool** | Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified. | [optional] 
+**TcpKeepaliveEnable** | Pointer to **NullableBool** | Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified. | [optional] 
 **TcpKeepaliveInterval** | Pointer to **NullableInt32** | Interval in seconds between subsequent keepalive probes. | [optional] 
 **TcpKeepaliveProbes** | Pointer to **NullableInt32** | Number of unacknowledged probes to send before considering the connection dead. | [optional] 
 **TcpKeepaliveTime** | Pointer to **NullableInt32** | Interval in seconds between the last data packet sent and the first keepalive probe. | [optional] 
@@ -1009,6 +1009,16 @@ SetTcpKeepaliveEnable sets TcpKeepaliveEnable field to given value.
 
 HasTcpKeepaliveEnable returns a boolean if a field has been set.
 
+### SetTcpKeepaliveEnableNil
+
+`func (o *Backend) SetTcpKeepaliveEnableNil(b bool)`
+
+ SetTcpKeepaliveEnableNil sets the value for TcpKeepaliveEnable to be an explicit nil
+
+### UnsetTcpKeepaliveEnable
+`func (o *Backend) UnsetTcpKeepaliveEnable()`
+
+UnsetTcpKeepaliveEnable ensures that no value is present for TcpKeepaliveEnable, not even an explicit nil
 ### GetTcpKeepaliveInterval
 
 `func (o *Backend) GetTcpKeepaliveInterval() int32`

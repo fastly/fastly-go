@@ -1,6 +1,7 @@
 # DictionaryItemAPI
 
-All URIs are relative to *https://api.fastly.com*
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -74,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Token](https://developer.fastly.com/reference/api/#authentication)
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
 
 ### HTTP request headers
 
@@ -145,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Token](https://developer.fastly.com/reference/api/#authentication)
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
 
 ### HTTP request headers
 
@@ -216,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Token](https://developer.fastly.com/reference/api/#authentication)
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
 
 ### HTTP request headers
 
@@ -287,7 +288,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Token](https://developer.fastly.com/reference/api/#authentication)
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
 
 ### HTTP request headers
 
@@ -360,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Token](https://developer.fastly.com/reference/api/#authentication)
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
 
 ### HTTP request headers
 
@@ -433,7 +434,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Token](https://developer.fastly.com/reference/api/#authentication)
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
 
 ### HTTP request headers
 
@@ -506,7 +507,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Token](https://developer.fastly.com/reference/api/#authentication)
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
 
 ### HTTP request headers
 

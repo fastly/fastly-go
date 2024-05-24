@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -696,7 +696,7 @@ type APIGetTLSSubRequest struct {
 	include *string
 }
 
-// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, and &#x60;tls_authorizations.self_managed_http_challenge&#x60;. 
+// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, &#x60;tls_authorizations.self_managed_http_challenge&#x60;, and &#x60;tls_certificates&#x60;. 
 func (r *APIGetTLSSubRequest) Include(include string) *APIGetTLSSubRequest {
 	r.include = &include
 	return r
@@ -838,6 +838,7 @@ type APIListTLSSubsRequest struct {
 	filterState *string
 	filterTLSDomainsID *string
 	filterHasActiveOrder *bool
+	filterCertificateAuthority *string
 	include *string
 	pageNumber *int32
 	pageSize *int32
@@ -859,7 +860,12 @@ func (r *APIListTLSSubsRequest) FilterHasActiveOrder(filterHasActiveOrder bool) 
 	r.filterHasActiveOrder = &filterHasActiveOrder
 	return r
 }
-// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, and &#x60;tls_authorizations.self_managed_http_challenge&#x60;. 
+// FilterCertificateAuthority Limit the returned subscriptions to a specific certification authority. Values may include &#x60;certainly&#x60;, &#x60;lets-encrypt&#x60;, or &#x60;globalsign&#x60;. 
+func (r *APIListTLSSubsRequest) FilterCertificateAuthority(filterCertificateAuthority string) *APIListTLSSubsRequest {
+	r.filterCertificateAuthority = &filterCertificateAuthority
+	return r
+}
+// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, &#x60;tls_authorizations.self_managed_http_challenge&#x60;, and &#x60;tls_certificates&#x60;. 
 func (r *APIListTLSSubsRequest) Include(include string) *APIListTLSSubsRequest {
 	r.include = &include
 	return r
@@ -929,6 +935,9 @@ func (a *TLSSubscriptionsAPIService) ListTLSSubsExecute(r APIListTLSSubsRequest)
 	}
 	if r.filterHasActiveOrder != nil {
 		localVarQueryParams.Add("filter[has_active_order]", parameterToString(*r.filterHasActiveOrder, ""))
+	}
+	if r.filterCertificateAuthority != nil {
+		localVarQueryParams.Add("filter[certificate_authority]", parameterToString(*r.filterCertificateAuthority, ""))
 	}
 	if r.include != nil {
 		localVarQueryParams.Add("include", parameterToString(*r.include, ""))

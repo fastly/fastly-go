@@ -1,6 +1,7 @@
 # DomainOwnershipsAPI
 
-All URIs are relative to *https://api.fastly.com*
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -57,7 +58,7 @@ Other parameters are passed through a pointer to a apiListDomainOwnershipsReques
 
 ### Authorization
 
-[API Token](https://developer.fastly.com/reference/api/#authentication)
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
 
 ### HTTP request headers
 

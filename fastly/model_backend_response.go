@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -80,7 +80,7 @@ type BackendResponse struct {
 	// Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
 	SslSniHostname NullableString `json:"ssl_sni_hostname,omitempty"`
 	// Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified.
-	TcpKeepaliveEnable *bool `json:"tcp_keepalive_enable,omitempty"`
+	TcpKeepaliveEnable NullableBool `json:"tcp_keepalive_enable,omitempty"`
 	// Interval in seconds between subsequent keepalive probes.
 	TcpKeepaliveInterval NullableInt32 `json:"tcp_keepalive_interval,omitempty"`
 	// Number of unacknowledged probes to send before considering the connection dead.
@@ -1258,36 +1258,46 @@ func (o *BackendResponse) UnsetSslSniHostname() {
 	o.SslSniHostname.Unset()
 }
 
-// GetTcpKeepaliveEnable returns the TcpKeepaliveEnable field value if set, zero value otherwise.
+// GetTcpKeepaliveEnable returns the TcpKeepaliveEnable field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackendResponse) GetTcpKeepaliveEnable() bool {
-	if o == nil || o.TcpKeepaliveEnable == nil {
+	if o == nil || o.TcpKeepaliveEnable.Get() == nil {
 		var ret bool
 		return ret
 	}
-	return *o.TcpKeepaliveEnable
+	return *o.TcpKeepaliveEnable.Get()
 }
 
 // GetTcpKeepaliveEnableOk returns a tuple with the TcpKeepaliveEnable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetTcpKeepaliveEnableOk() (*bool, bool) {
-	if o == nil || o.TcpKeepaliveEnable == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.TcpKeepaliveEnable, true
+	return o.TcpKeepaliveEnable.Get(), o.TcpKeepaliveEnable.IsSet()
 }
 
 // HasTcpKeepaliveEnable returns a boolean if a field has been set.
 func (o *BackendResponse) HasTcpKeepaliveEnable() bool {
-	if o != nil && o.TcpKeepaliveEnable != nil {
+	if o != nil && o.TcpKeepaliveEnable.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTcpKeepaliveEnable gets a reference to the given bool and assigns it to the TcpKeepaliveEnable field.
+// SetTcpKeepaliveEnable gets a reference to the given NullableBool and assigns it to the TcpKeepaliveEnable field.
 func (o *BackendResponse) SetTcpKeepaliveEnable(v bool) {
-	o.TcpKeepaliveEnable = &v
+	o.TcpKeepaliveEnable.Set(&v)
+}
+// SetTcpKeepaliveEnableNil sets the value for TcpKeepaliveEnable to be an explicit nil
+func (o *BackendResponse) SetTcpKeepaliveEnableNil() {
+	o.TcpKeepaliveEnable.Set(nil)
+}
+
+// UnsetTcpKeepaliveEnable ensures that no value is present for TcpKeepaliveEnable, not even an explicit nil
+func (o *BackendResponse) UnsetTcpKeepaliveEnable() {
+	o.TcpKeepaliveEnable.Unset()
 }
 
 // GetTcpKeepaliveInterval returns the TcpKeepaliveInterval field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1793,8 +1803,8 @@ func (o BackendResponse) MarshalJSON() ([]byte, error) {
 	if o.SslSniHostname.IsSet() {
 		toSerialize["ssl_sni_hostname"] = o.SslSniHostname.Get()
 	}
-	if o.TcpKeepaliveEnable != nil {
-		toSerialize["tcp_keepalive_enable"] = o.TcpKeepaliveEnable
+	if o.TcpKeepaliveEnable.IsSet() {
+		toSerialize["tcp_keepalive_enable"] = o.TcpKeepaliveEnable.Get()
 	}
 	if o.TcpKeepaliveInterval.IsSet() {
 		toSerialize["tcp_keepalive_interval"] = o.TcpKeepaliveInterval.Get()

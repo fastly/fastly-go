@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -50,8 +50,6 @@ type _ResourceResponse ResourceResponse
 // will change when the set of required properties is changed
 func NewResourceResponse() *ResourceResponse {
 	this := ResourceResponse{}
-	var resourceType TypeResource = TYPERESOURCE_OBJECT_STORE
-	this.ResourceType = &resourceType
 	return &this
 }
 
@@ -60,8 +58,6 @@ func NewResourceResponse() *ResourceResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewResourceResponseWithDefaults() *ResourceResponse {
 	this := ResourceResponse{}
-	var resourceType TypeResource = TYPERESOURCE_OBJECT_STORE
-	this.ResourceType = &resourceType
 	return &this
 }
 
