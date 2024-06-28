@@ -41,6 +41,8 @@ type LoggingS3Additional struct {
 	ServerSideEncryptionKmsKeyID NullableString `json:"server_side_encryption_kms_key_id,omitempty"`
 	// Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
 	ServerSideEncryption NullableString `json:"server_side_encryption,omitempty"`
+	// The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+	FileMaxBytes *int32 `json:"file_max_bytes,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -515,6 +517,38 @@ func (o *LoggingS3Additional) UnsetServerSideEncryption() {
 	o.ServerSideEncryption.Unset()
 }
 
+// GetFileMaxBytes returns the FileMaxBytes field value if set, zero value otherwise.
+func (o *LoggingS3Additional) GetFileMaxBytes() int32 {
+	if o == nil || o.FileMaxBytes == nil {
+		var ret int32
+		return ret
+	}
+	return *o.FileMaxBytes
+}
+
+// GetFileMaxBytesOk returns a tuple with the FileMaxBytes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingS3Additional) GetFileMaxBytesOk() (*int32, bool) {
+	if o == nil || o.FileMaxBytes == nil {
+		return nil, false
+	}
+	return o.FileMaxBytes, true
+}
+
+// HasFileMaxBytes returns a boolean if a field has been set.
+func (o *LoggingS3Additional) HasFileMaxBytes() bool {
+	if o != nil && o.FileMaxBytes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFileMaxBytes gets a reference to the given int32 and assigns it to the FileMaxBytes field.
+func (o *LoggingS3Additional) SetFileMaxBytes(v int32) {
+	o.FileMaxBytes = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o LoggingS3Additional) MarshalJSON() ([]byte, error) {
@@ -552,6 +586,9 @@ func (o LoggingS3Additional) MarshalJSON() ([]byte, error) {
 	if o.ServerSideEncryption.IsSet() {
 		toSerialize["server_side_encryption"] = o.ServerSideEncryption.Get()
 	}
+	if o.FileMaxBytes != nil {
+		toSerialize["file_max_bytes"] = o.FileMaxBytes
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -583,6 +620,7 @@ func (o *LoggingS3Additional) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "secret_key")
 		delete(additionalProperties, "server_side_encryption_kms_key_id")
 		delete(additionalProperties, "server_side_encryption")
+		delete(additionalProperties, "file_max_bytes")
 		o.AdditionalProperties = additionalProperties
 	}
 

@@ -145,6 +145,7 @@ type APICreateLogAwsS3Request struct {
 	secretKey *string
 	serverSideEncryptionKmsKeyID *string
 	serverSideEncryption *string
+	fileMaxBytes *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -250,6 +251,11 @@ func (r *APICreateLogAwsS3Request) ServerSideEncryptionKmsKeyID(serverSideEncryp
 // ServerSideEncryption Set this to &#x60;AES256&#x60; or &#x60;aws:kms&#x60; to enable S3 Server Side Encryption.
 func (r *APICreateLogAwsS3Request) ServerSideEncryption(serverSideEncryption string) *APICreateLogAwsS3Request {
 	r.serverSideEncryption = &serverSideEncryption
+	return r
+}
+// FileMaxBytes The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+func (r *APICreateLogAwsS3Request) FileMaxBytes(fileMaxBytes int32) *APICreateLogAwsS3Request {
+	r.fileMaxBytes = &fileMaxBytes
 	return r
 }
 
@@ -379,6 +385,9 @@ func (a *LoggingS3APIService) CreateLogAwsS3Execute(r APICreateLogAwsS3Request) 
 	}
 	if r.serverSideEncryption != nil {
 		localVarFormParams.Add("server_side_encryption", parameterToString(*r.serverSideEncryption, ""))
+	}
+	if r.fileMaxBytes != nil {
+		localVarFormParams.Add("file_max_bytes", parameterToString(*r.fileMaxBytes, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -895,6 +904,7 @@ type APIUpdateLogAwsS3Request struct {
 	secretKey *string
 	serverSideEncryptionKmsKeyID *string
 	serverSideEncryption *string
+	fileMaxBytes *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -1000,6 +1010,11 @@ func (r *APIUpdateLogAwsS3Request) ServerSideEncryptionKmsKeyID(serverSideEncryp
 // ServerSideEncryption Set this to &#x60;AES256&#x60; or &#x60;aws:kms&#x60; to enable S3 Server Side Encryption.
 func (r *APIUpdateLogAwsS3Request) ServerSideEncryption(serverSideEncryption string) *APIUpdateLogAwsS3Request {
 	r.serverSideEncryption = &serverSideEncryption
+	return r
+}
+// FileMaxBytes The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+func (r *APIUpdateLogAwsS3Request) FileMaxBytes(fileMaxBytes int32) *APIUpdateLogAwsS3Request {
+	r.fileMaxBytes = &fileMaxBytes
 	return r
 }
 
@@ -1132,6 +1147,9 @@ func (a *LoggingS3APIService) UpdateLogAwsS3Execute(r APIUpdateLogAwsS3Request) 
 	}
 	if r.serverSideEncryption != nil {
 		localVarFormParams.Add("server_side_encryption", parameterToString(*r.serverSideEncryption, ""))
+	}
+	if r.fileMaxBytes != nil {
+		localVarFormParams.Add("file_max_bytes", parameterToString(*r.fileMaxBytes, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

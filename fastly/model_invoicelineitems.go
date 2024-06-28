@@ -33,6 +33,8 @@ type Invoicelineitems struct {
 	ProductName *string `json:"ProductName,omitempty"`
 	// The broader classification of the product (e.g., `Compute` or `Full-Site Delivery`).
 	ProductGroup *string `json:"ProductGroup,omitempty"`
+	// The broader classification of the product (e.g., `Network Services` or `Security`).
+	ProductLine *string `json:"ProductLine,omitempty"`
 	// The geographical area applicable for regionally based products.
 	Region *string `json:"Region,omitempty"`
 	// The unit of measure (e.g., `requests` or `bandwidth`).
@@ -283,6 +285,38 @@ func (o *Invoicelineitems) SetProductGroup(v string) {
 	o.ProductGroup = &v
 }
 
+// GetProductLine returns the ProductLine field value if set, zero value otherwise.
+func (o *Invoicelineitems) GetProductLine() string {
+	if o == nil || o.ProductLine == nil {
+		var ret string
+		return ret
+	}
+	return *o.ProductLine
+}
+
+// GetProductLineOk returns a tuple with the ProductLine field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Invoicelineitems) GetProductLineOk() (*string, bool) {
+	if o == nil || o.ProductLine == nil {
+		return nil, false
+	}
+	return o.ProductLine, true
+}
+
+// HasProductLine returns a boolean if a field has been set.
+func (o *Invoicelineitems) HasProductLine() bool {
+	if o != nil && o.ProductLine != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProductLine gets a reference to the given string and assigns it to the ProductLine field.
+func (o *Invoicelineitems) SetProductLine(v string) {
+	o.ProductLine = &v
+}
+
 // GetRegion returns the Region field value if set, zero value otherwise.
 func (o *Invoicelineitems) GetRegion() string {
 	if o == nil || o.Region == nil {
@@ -372,6 +406,9 @@ func (o Invoicelineitems) MarshalJSON() ([]byte, error) {
 	if o.ProductGroup != nil {
 		toSerialize["ProductGroup"] = o.ProductGroup
 	}
+	if o.ProductLine != nil {
+		toSerialize["ProductLine"] = o.ProductLine
+	}
 	if o.Region != nil {
 		toSerialize["Region"] = o.Region
 	}
@@ -405,6 +442,7 @@ func (o *Invoicelineitems) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "units")
 		delete(additionalProperties, "ProductName")
 		delete(additionalProperties, "ProductGroup")
+		delete(additionalProperties, "ProductLine")
 		delete(additionalProperties, "Region")
 		delete(additionalProperties, "UsageType")
 		o.AdditionalProperties = additionalProperties

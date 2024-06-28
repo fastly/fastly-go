@@ -96,8 +96,8 @@ import (
 )
 
 func main() {
-    billingStartDate := "2023-01-01T00:00:00Z" // string |  (optional)
-    billingEndDate := "2023-01-31T00:00:00Z" // string |  (optional)
+    billingStartDate := "2023-01-01" // string |  (optional)
+    billingEndDate := "2023-01-31" // string |  (optional)
     limit := "limit_example" // string | Number of results per page. The maximum is 200. (optional) (default to "100")
     cursor := "cursor_example" // string | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. (optional)
 

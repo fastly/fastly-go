@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Units** | Pointer to **float32** | Total number of units of usage. | [optional] 
 **ProductName** | Pointer to **string** | The name of the product. | [optional] 
 **ProductGroup** | Pointer to **string** | The broader classification of the product (e.g., `Compute` or `Full-Site Delivery`). | [optional] 
+**ProductLine** | Pointer to **string** | The broader classification of the product (e.g., `Network Services` or `Security`). | [optional] 
 **Region** | Pointer to **string** | The geographical area applicable for regionally based products. | [optional] 
 **UsageType** | Pointer to **string** | The unit of measure (e.g., `requests` or `bandwidth`). | [optional] 
 
@@ -207,6 +208,31 @@ SetProductGroup sets ProductGroup field to given value.
 `func (o *Invoicelineitems) HasProductGroup() bool`
 
 HasProductGroup returns a boolean if a field has been set.
+
+### GetProductLine
+
+`func (o *Invoicelineitems) GetProductLine() string`
+
+GetProductLine returns the ProductLine field if non-nil, zero value otherwise.
+
+### GetProductLineOk
+
+`func (o *Invoicelineitems) GetProductLineOk() (*string, bool)`
+
+GetProductLineOk returns a tuple with the ProductLine field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProductLine
+
+`func (o *Invoicelineitems) SetProductLine(v string)`
+
+SetProductLine sets ProductLine field to given value.
+
+### HasProductLine
+
+`func (o *Invoicelineitems) HasProductLine() bool`
+
+HasProductLine returns a boolean if a field has been set.
 
 ### GetRegion
 

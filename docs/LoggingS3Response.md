@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **SecretKey** | Pointer to **NullableString** | The secret key for your S3 account. Not required if `iam_role` is provided. | [optional] 
 **ServerSideEncryptionKmsKeyID** | Pointer to **NullableString** | Optional server-side KMS Key ID. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. | [optional] [default to "null"]
 **ServerSideEncryption** | Pointer to **NullableString** | Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption. | [optional] [default to "null"]
+**FileMaxBytes** | Pointer to **int32** | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.) | [optional] 
 
 ## Methods
 
@@ -840,5 +841,30 @@ HasServerSideEncryption returns a boolean if a field has been set.
 `func (o *LoggingS3Response) UnsetServerSideEncryption()`
 
 UnsetServerSideEncryption ensures that no value is present for ServerSideEncryption, not even an explicit nil
+### GetFileMaxBytes
+
+`func (o *LoggingS3Response) GetFileMaxBytes() int32`
+
+GetFileMaxBytes returns the FileMaxBytes field if non-nil, zero value otherwise.
+
+### GetFileMaxBytesOk
+
+`func (o *LoggingS3Response) GetFileMaxBytesOk() (*int32, bool)`
+
+GetFileMaxBytesOk returns a tuple with the FileMaxBytes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFileMaxBytes
+
+`func (o *LoggingS3Response) SetFileMaxBytes(v int32)`
+
+SetFileMaxBytes sets FileMaxBytes field to given value.
+
+### HasFileMaxBytes
+
+`func (o *LoggingS3Response) HasFileMaxBytes() bool`
+
+HasFileMaxBytes returns a boolean if a field has been set.
+
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
