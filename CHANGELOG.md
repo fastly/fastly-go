@@ -1,6 +1,6 @@
 # Changelog
 
-## [v1.0.0-beta.31](https://github.com/fastly/fastly-go/releases/tag/release/v1.0.0-beta.31) (2024-07-01)
+## [v1.0.0-beta.31](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.31) (2024-07-01)
 
 **Bug fixes:**
 
@@ -12,7 +12,7 @@
   an object is too large.
 - feat(logging-datalog): Added additional regions
 
-## [vv1.0.0-beta.30](https://github.com/fastly/fastly-go/releases/tag/release/vv1.0.0-beta.30) (2024-06-27)
+## [v1.0.0-beta.30](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.30) (2024-06-27)
 
 **Bug fixes:**
 
@@ -36,7 +36,7 @@
 - doc(alerts-definitions): Updated documentation of several fields
 - doc(notification-service): Updated documentation examples for several fields
 
-## [vv1.0.0-beta.29](https://github.com/fastly/fastly-go/releases/tag/release/vv1.0.0-beta.29) (2024-05-24)
+## [v1.0.0-beta.29](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.29) (2024-05-24)
 
 **Bug fixes:**
 
@@ -56,7 +56,7 @@
 - doc(logging-kinesis): Update description of `format` field.
 - doc(tls-subscriptions): Update descriptions of `certificate_authority` and `tls_subscription_include` fields.
 
-## [vv1.0.0-beta.28](https://github.com/fastly/fastly-go/releases/tag/release/vv1.0.0-beta.28) (2024-04-25)
+## [v1.0.0-beta.28](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.28) (2024-04-25)
 
 **Bug fixes:**
 
