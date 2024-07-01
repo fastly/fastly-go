@@ -64,7 +64,7 @@ type LoggingKafkaResponse struct {
 	User *string `json:"user,omitempty"`
 	// SASL password.
 	Password *string `json:"password,omitempty"`
-	UseTLS *LoggingUseTLS `json:"use_tls,omitempty"`
+	UseTLS *LoggingUseTLSString `json:"use_tls,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -92,7 +92,7 @@ func NewLoggingKafkaResponse() *LoggingKafkaResponse {
 	this.RequiredAcks = &requiredAcks
 	var requestMaxBytes int32 = 0
 	this.RequestMaxBytes = &requestMaxBytes
-	var useTLS LoggingUseTLS = LOGGINGUSETLS_no_tls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
 	this.UseTLS = &useTLS
 	return &this
 }
@@ -118,7 +118,7 @@ func NewLoggingKafkaResponseWithDefaults() *LoggingKafkaResponse {
 	this.RequiredAcks = &requiredAcks
 	var requestMaxBytes int32 = 0
 	this.RequestMaxBytes = &requestMaxBytes
-	var useTLS LoggingUseTLS = LOGGINGUSETLS_no_tls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
 	this.UseTLS = &useTLS
 	return &this
 }
@@ -960,9 +960,9 @@ func (o *LoggingKafkaResponse) SetPassword(v string) {
 }
 
 // GetUseTLS returns the UseTLS field value if set, zero value otherwise.
-func (o *LoggingKafkaResponse) GetUseTLS() LoggingUseTLS {
+func (o *LoggingKafkaResponse) GetUseTLS() LoggingUseTLSString {
 	if o == nil || o.UseTLS == nil {
-		var ret LoggingUseTLS
+		var ret LoggingUseTLSString
 		return ret
 	}
 	return *o.UseTLS
@@ -970,7 +970,7 @@ func (o *LoggingKafkaResponse) GetUseTLS() LoggingUseTLS {
 
 // GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingKafkaResponse) GetUseTLSOk() (*LoggingUseTLS, bool) {
+func (o *LoggingKafkaResponse) GetUseTLSOk() (*LoggingUseTLSString, bool) {
 	if o == nil || o.UseTLS == nil {
 		return nil, false
 	}
@@ -986,8 +986,8 @@ func (o *LoggingKafkaResponse) HasUseTLS() bool {
 	return false
 }
 
-// SetUseTLS gets a reference to the given LoggingUseTLS and assigns it to the UseTLS field.
-func (o *LoggingKafkaResponse) SetUseTLS(v LoggingUseTLS) {
+// SetUseTLS gets a reference to the given LoggingUseTLSString and assigns it to the UseTLS field.
+func (o *LoggingKafkaResponse) SetUseTLS(v LoggingUseTLSString) {
 	o.UseTLS = &v
 }
 

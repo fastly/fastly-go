@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **AuthMethod** | Pointer to **string** | SASL authentication method. | [optional] 
 **User** | Pointer to **string** | SASL user. | [optional] 
 **Password** | Pointer to **string** | SASL password. | [optional] 
-**UseTLS** | Pointer to [**LoggingUseTLS**](LoggingUseTLS.md) |  | [optional] [default to LOGGINGUSETLS_no_tls]
+**UseTLS** | Pointer to [**LoggingUseTLSString**](LoggingUseTLSString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
 
 ## Methods
 
@@ -725,20 +725,20 @@ HasPassword returns a boolean if a field has been set.
 
 ### GetUseTLS
 
-`func (o *LoggingKafkaResponse) GetUseTLS() LoggingUseTLS`
+`func (o *LoggingKafkaResponse) GetUseTLS() LoggingUseTLSString`
 
 GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
 
 ### GetUseTLSOk
 
-`func (o *LoggingKafkaResponse) GetUseTLSOk() (*LoggingUseTLS, bool)`
+`func (o *LoggingKafkaResponse) GetUseTLSOk() (*LoggingUseTLSString, bool)`
 
 GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUseTLS
 
-`func (o *LoggingKafkaResponse) SetUseTLS(v LoggingUseTLS)`
+`func (o *LoggingKafkaResponse) SetUseTLS(v LoggingUseTLSString)`
 
 SetUseTLS sets UseTLS field to given value.
 

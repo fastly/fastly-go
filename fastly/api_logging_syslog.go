@@ -139,7 +139,7 @@ type APICreateLogSyslogRequest struct {
 	hostname *string
 	ipv4 *string
 	token *string
-	useTLS *LoggingUseTLS
+	useTLS *LoggingUseTLSString
 }
 
 // Name The name for the real-time logging configuration.
@@ -218,7 +218,7 @@ func (r *APICreateLogSyslogRequest) Token(token string) *APICreateLogSyslogReque
 	return r
 }
 // UseTLS returns a pointer to a request.
-func (r *APICreateLogSyslogRequest) UseTLS(useTLS LoggingUseTLS) *APICreateLogSyslogRequest {
+func (r *APICreateLogSyslogRequest) UseTLS(useTLS LoggingUseTLSString) *APICreateLogSyslogRequest {
 	r.useTLS = &useTLS
 	return r
 }
@@ -844,7 +844,7 @@ type APIUpdateLogSyslogRequest struct {
 	hostname *string
 	ipv4 *string
 	token *string
-	useTLS *LoggingUseTLS
+	useTLS *LoggingUseTLSString
 }
 
 // Name The name for the real-time logging configuration.
@@ -923,7 +923,7 @@ func (r *APIUpdateLogSyslogRequest) Token(token string) *APIUpdateLogSyslogReque
 	return r
 }
 // UseTLS returns a pointer to a request.
-func (r *APIUpdateLogSyslogRequest) UseTLS(useTLS LoggingUseTLS) *APIUpdateLogSyslogRequest {
+func (r *APIUpdateLogSyslogRequest) UseTLS(useTLS LoggingUseTLSString) *APIUpdateLogSyslogRequest {
 	r.useTLS = &useTLS
 	return r
 }

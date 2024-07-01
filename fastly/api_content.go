@@ -33,7 +33,7 @@ type ContentAPI interface {
 	/*
 	ContentCheck Check status of content in each POP's cache
 
-	Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour.
+	Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour. If the content takes too long to download, the hash will be set to `error-timeout-$pop`. If the response is too large, it will be set to `warning-too-large-$pop`.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @return APIContentCheckRequest
@@ -69,7 +69,7 @@ func (r APIContentCheckRequest) Execute() ([]Content, *http.Response, error) {
 /*
 ContentCheck Check status of content in each POP's cache
 
-Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour.
+Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour. If the content takes too long to download, the hash will be set to `error-timeout-$pop`. If the response is too large, it will be set to `warning-too-large-$pop`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return APIContentCheckRequest

@@ -46,7 +46,7 @@ type LoggingSplunkResponse struct {
 	URL *string `json:"url,omitempty"`
 	// A Splunk token for use in posting logs over HTTP to your collector.
 	Token *string `json:"token,omitempty"`
-	UseTLS *LoggingUseTLS `json:"use_tls,omitempty"`
+	UseTLS *LoggingUseTLSString `json:"use_tls,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -82,7 +82,7 @@ func NewLoggingSplunkResponse() *LoggingSplunkResponse {
 	this.RequestMaxEntries = &requestMaxEntries
 	var requestMaxBytes int32 = 0
 	this.RequestMaxBytes = &requestMaxBytes
-	var useTLS LoggingUseTLS = LOGGINGUSETLS_no_tls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
 	this.UseTLS = &useTLS
 	return &this
 }
@@ -108,7 +108,7 @@ func NewLoggingSplunkResponseWithDefaults() *LoggingSplunkResponse {
 	this.RequestMaxEntries = &requestMaxEntries
 	var requestMaxBytes int32 = 0
 	this.RequestMaxBytes = &requestMaxBytes
-	var useTLS LoggingUseTLS = LOGGINGUSETLS_no_tls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
 	this.UseTLS = &useTLS
 	return &this
 }
@@ -590,9 +590,9 @@ func (o *LoggingSplunkResponse) SetToken(v string) {
 }
 
 // GetUseTLS returns the UseTLS field value if set, zero value otherwise.
-func (o *LoggingSplunkResponse) GetUseTLS() LoggingUseTLS {
+func (o *LoggingSplunkResponse) GetUseTLS() LoggingUseTLSString {
 	if o == nil || o.UseTLS == nil {
-		var ret LoggingUseTLS
+		var ret LoggingUseTLSString
 		return ret
 	}
 	return *o.UseTLS
@@ -600,7 +600,7 @@ func (o *LoggingSplunkResponse) GetUseTLS() LoggingUseTLS {
 
 // GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSplunkResponse) GetUseTLSOk() (*LoggingUseTLS, bool) {
+func (o *LoggingSplunkResponse) GetUseTLSOk() (*LoggingUseTLSString, bool) {
 	if o == nil || o.UseTLS == nil {
 		return nil, false
 	}
@@ -616,8 +616,8 @@ func (o *LoggingSplunkResponse) HasUseTLS() bool {
 	return false
 }
 
-// SetUseTLS gets a reference to the given LoggingUseTLS and assigns it to the UseTLS field.
-func (o *LoggingSplunkResponse) SetUseTLS(v LoggingUseTLS) {
+// SetUseTLS gets a reference to the given LoggingUseTLSString and assigns it to the UseTLS field.
+func (o *LoggingSplunkResponse) SetUseTLS(v LoggingUseTLSString) {
 	o.UseTLS = &v
 }
 

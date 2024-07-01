@@ -34,7 +34,7 @@ type LoggingLogentriesResponse struct {
 	Port *int32 `json:"port,omitempty"`
 	// Use token based authentication.
 	Token *string `json:"token,omitempty"`
-	UseTLS *LoggingUseTLS `json:"use_tls,omitempty"`
+	UseTLS *LoggingUseTLSString `json:"use_tls,omitempty"`
 	// The region to which to stream logs.
 	Region *string `json:"region,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -62,7 +62,7 @@ func NewLoggingLogentriesResponse() *LoggingLogentriesResponse {
 	this.FormatVersion = &formatVersion
 	var port int32 = 20000
 	this.Port = &port
-	var useTLS LoggingUseTLS = LOGGINGUSETLS_no_tls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
 	this.UseTLS = &useTLS
 	return &this
 }
@@ -78,7 +78,7 @@ func NewLoggingLogentriesResponseWithDefaults() *LoggingLogentriesResponse {
 	this.FormatVersion = &formatVersion
 	var port int32 = 20000
 	this.Port = &port
-	var useTLS LoggingUseTLS = LOGGINGUSETLS_no_tls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
 	this.UseTLS = &useTLS
 	return &this
 }
@@ -328,9 +328,9 @@ func (o *LoggingLogentriesResponse) SetToken(v string) {
 }
 
 // GetUseTLS returns the UseTLS field value if set, zero value otherwise.
-func (o *LoggingLogentriesResponse) GetUseTLS() LoggingUseTLS {
+func (o *LoggingLogentriesResponse) GetUseTLS() LoggingUseTLSString {
 	if o == nil || o.UseTLS == nil {
-		var ret LoggingUseTLS
+		var ret LoggingUseTLSString
 		return ret
 	}
 	return *o.UseTLS
@@ -338,7 +338,7 @@ func (o *LoggingLogentriesResponse) GetUseTLS() LoggingUseTLS {
 
 // GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingLogentriesResponse) GetUseTLSOk() (*LoggingUseTLS, bool) {
+func (o *LoggingLogentriesResponse) GetUseTLSOk() (*LoggingUseTLSString, bool) {
 	if o == nil || o.UseTLS == nil {
 		return nil, false
 	}
@@ -354,8 +354,8 @@ func (o *LoggingLogentriesResponse) HasUseTLS() bool {
 	return false
 }
 
-// SetUseTLS gets a reference to the given LoggingUseTLS and assigns it to the UseTLS field.
-func (o *LoggingLogentriesResponse) SetUseTLS(v LoggingUseTLS) {
+// SetUseTLS gets a reference to the given LoggingUseTLSString and assigns it to the UseTLS field.
+func (o *LoggingLogentriesResponse) SetUseTLS(v LoggingUseTLSString) {
 	o.UseTLS = &v
 }
 

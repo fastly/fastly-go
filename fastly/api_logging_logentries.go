@@ -146,7 +146,7 @@ type APICreateLogLogentriesRequest struct {
 	formatVersion *int32
 	port *int32
 	token *string
-	useTLS *LoggingUseTLS
+	useTLS *LoggingUseTLSString
 	region *string
 }
 
@@ -186,7 +186,7 @@ func (r *APICreateLogLogentriesRequest) Token(token string) *APICreateLogLogentr
 	return r
 }
 // UseTLS returns a pointer to a request.
-func (r *APICreateLogLogentriesRequest) UseTLS(useTLS LoggingUseTLS) *APICreateLogLogentriesRequest {
+func (r *APICreateLogLogentriesRequest) UseTLS(useTLS LoggingUseTLSString) *APICreateLogLogentriesRequest {
 	r.useTLS = &useTLS
 	return r
 }
@@ -800,7 +800,7 @@ type APIUpdateLogLogentriesRequest struct {
 	formatVersion *int32
 	port *int32
 	token *string
-	useTLS *LoggingUseTLS
+	useTLS *LoggingUseTLSString
 	region *string
 }
 
@@ -840,7 +840,7 @@ func (r *APIUpdateLogLogentriesRequest) Token(token string) *APIUpdateLogLogentr
 	return r
 }
 // UseTLS returns a pointer to a request.
-func (r *APIUpdateLogLogentriesRequest) UseTLS(useTLS LoggingUseTLS) *APIUpdateLogLogentriesRequest {
+func (r *APIUpdateLogLogentriesRequest) UseTLS(useTLS LoggingUseTLSString) *APIUpdateLogLogentriesRequest {
 	r.useTLS = &useTLS
 	return r
 }

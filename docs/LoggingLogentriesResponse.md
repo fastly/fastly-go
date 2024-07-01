@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
 **Port** | Pointer to **int32** | The port number. | [optional] [default to 20000]
 **Token** | Pointer to **string** | Use token based authentication. | [optional] 
-**UseTLS** | Pointer to [**LoggingUseTLS**](LoggingUseTLS.md) |  | [optional] [default to LOGGINGUSETLS_no_tls]
+**UseTLS** | Pointer to [**LoggingUseTLSString**](LoggingUseTLSString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
 **Region** | Pointer to **string** | The region to which to stream logs. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -235,20 +235,20 @@ HasToken returns a boolean if a field has been set.
 
 ### GetUseTLS
 
-`func (o *LoggingLogentriesResponse) GetUseTLS() LoggingUseTLS`
+`func (o *LoggingLogentriesResponse) GetUseTLS() LoggingUseTLSString`
 
 GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
 
 ### GetUseTLSOk
 
-`func (o *LoggingLogentriesResponse) GetUseTLSOk() (*LoggingUseTLS, bool)`
+`func (o *LoggingLogentriesResponse) GetUseTLSOk() (*LoggingUseTLSString, bool)`
 
 GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUseTLS
 
-`func (o *LoggingLogentriesResponse) SetUseTLS(v LoggingUseTLS)`
+`func (o *LoggingLogentriesResponse) SetUseTLS(v LoggingUseTLSString)`
 
 SetUseTLS sets UseTLS field to given value.
 

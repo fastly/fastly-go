@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Port** | Pointer to **int32** | The port number. | [optional] [default to 20000]
 **Token** | Pointer to **string** | Use token based authentication. | [optional] 
-**UseTLS** | Pointer to [**LoggingUseTLS**](LoggingUseTLS.md) |  | [optional] [default to LOGGINGUSETLS_no_tls]
+**UseTLS** | Pointer to [**LoggingUseTLSString**](LoggingUseTLSString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
 **Region** | Pointer to **string** | The region to which to stream logs. | [optional] 
 
 ## Methods
@@ -80,20 +80,20 @@ HasToken returns a boolean if a field has been set.
 
 ### GetUseTLS
 
-`func (o *LoggingLogentriesAdditional) GetUseTLS() LoggingUseTLS`
+`func (o *LoggingLogentriesAdditional) GetUseTLS() LoggingUseTLSString`
 
 GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
 
 ### GetUseTLSOk
 
-`func (o *LoggingLogentriesAdditional) GetUseTLSOk() (*LoggingUseTLS, bool)`
+`func (o *LoggingLogentriesAdditional) GetUseTLSOk() (*LoggingUseTLSString, bool)`
 
 GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUseTLS
 
-`func (o *LoggingLogentriesAdditional) SetUseTLS(v LoggingUseTLS)`
+`func (o *LoggingLogentriesAdditional) SetUseTLS(v LoggingUseTLSString)`
 
 SetUseTLS sets UseTLS field to given value.
 

@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **RequestMaxBytes** | Pointer to **int32** | The maximum number of bytes sent in one request. Defaults `0` for unbounded. | [optional] [default to 0]
 **URL** | Pointer to **string** | The URL to post logs to. | [optional] 
 **Token** | Pointer to **string** | A Splunk token for use in posting logs over HTTP to your collector. | [optional] 
-**UseTLS** | Pointer to [**LoggingUseTLS**](LoggingUseTLS.md) |  | [optional] [default to LOGGINGUSETLS_no_tls]
+**UseTLS** | Pointer to [**LoggingUseTLSString**](LoggingUseTLSString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -430,20 +430,20 @@ HasToken returns a boolean if a field has been set.
 
 ### GetUseTLS
 
-`func (o *LoggingSplunkResponse) GetUseTLS() LoggingUseTLS`
+`func (o *LoggingSplunkResponse) GetUseTLS() LoggingUseTLSString`
 
 GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
 
 ### GetUseTLSOk
 
-`func (o *LoggingSplunkResponse) GetUseTLSOk() (*LoggingUseTLS, bool)`
+`func (o *LoggingSplunkResponse) GetUseTLSOk() (*LoggingUseTLSString, bool)`
 
 GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUseTLS
 
-`func (o *LoggingSplunkResponse) SetUseTLS(v LoggingUseTLS)`
+`func (o *LoggingSplunkResponse) SetUseTLS(v LoggingUseTLSString)`
 
 SetUseTLS sets UseTLS field to given value.
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **URL** | Pointer to **string** | The URL to post logs to. | [optional] 
 **Token** | Pointer to **string** | A Splunk token for use in posting logs over HTTP to your collector. | [optional] 
-**UseTLS** | Pointer to [**LoggingUseTLS**](LoggingUseTLS.md) |  | [optional] [default to LOGGINGUSETLS_no_tls]
+**UseTLS** | Pointer to [**LoggingUseTLSString**](LoggingUseTLSString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasToken returns a boolean if a field has been set.
 
 ### GetUseTLS
 
-`func (o *LoggingSplunkAdditional) GetUseTLS() LoggingUseTLS`
+`func (o *LoggingSplunkAdditional) GetUseTLS() LoggingUseTLSString`
 
 GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
 
 ### GetUseTLSOk
 
-`func (o *LoggingSplunkAdditional) GetUseTLSOk() (*LoggingUseTLS, bool)`
+`func (o *LoggingSplunkAdditional) GetUseTLSOk() (*LoggingUseTLSString, bool)`
 
 GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUseTLS
 
-`func (o *LoggingSplunkAdditional) SetUseTLS(v LoggingUseTLS)`
+`func (o *LoggingSplunkAdditional) SetUseTLS(v LoggingUseTLSString)`
 
 SetUseTLS sets UseTLS field to given value.
 

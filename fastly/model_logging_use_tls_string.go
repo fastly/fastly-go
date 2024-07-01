@@ -18,53 +18,53 @@ import (
 	"fmt"
 )
 
-// LoggingUseTLS Whether to use TLS.
-type LoggingUseTLS int32
+// LoggingUseTLSString Whether to use TLS.
+type LoggingUseTLSString string
 
-// List of logging_use_tls
+// List of logging_use_tls_string
 const (
-	LOGGINGUSETLS_no_tls LoggingUseTLS = 0
-	LOGGINGUSETLS_use_tls LoggingUseTLS = 1
+	LOGGINGUSETLSSTRING_no_tls LoggingUseTLSString = "0"
+	LOGGINGUSETLSSTRING_use_tls LoggingUseTLSString = "1"
 )
 
-// AllowedLoggingUseTLSEnumValues All allowed values of LoggingUseTLS enum
-var AllowedLoggingUseTLSEnumValues = []LoggingUseTLS{
-	0,
-	1,
+// AllowedLoggingUseTLSStringEnumValues All allowed values of LoggingUseTLSString enum
+var AllowedLoggingUseTLSStringEnumValues = []LoggingUseTLSString{
+	"0",
+	"1",
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *LoggingUseTLS) UnmarshalJSON(src []byte) error {
-	var value int32
+func (v *LoggingUseTLSString) UnmarshalJSON(src []byte) error {
+	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := LoggingUseTLS(value)
-	for _, existing := range AllowedLoggingUseTLSEnumValues {
+	enumTypeValue := LoggingUseTLSString(value)
+	for _, existing := range AllowedLoggingUseTLSStringEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid LoggingUseTLS", value)
+	return fmt.Errorf("%+v is not a valid LoggingUseTLSString", value)
 }
 
-// NewLoggingUseTLSFromValue returns a pointer to a valid LoggingUseTLS
+// NewLoggingUseTLSStringFromValue returns a pointer to a valid LoggingUseTLSString
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewLoggingUseTLSFromValue(v int32) (*LoggingUseTLS, error) {
-	ev := LoggingUseTLS(v)
+func NewLoggingUseTLSStringFromValue(v string) (*LoggingUseTLSString, error) {
+	ev := LoggingUseTLSString(v)
 	if ev.IsValid() {
 		return &ev, nil
 	}
-  return nil, fmt.Errorf("invalid value '%v' for LoggingUseTLS: valid values are %v", v, AllowedLoggingUseTLSEnumValues)
+  return nil, fmt.Errorf("invalid value '%v' for LoggingUseTLSString: valid values are %v", v, AllowedLoggingUseTLSStringEnumValues)
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v LoggingUseTLS) IsValid() bool {
-	for _, existing := range AllowedLoggingUseTLSEnumValues {
+func (v LoggingUseTLSString) IsValid() bool {
+	for _, existing := range AllowedLoggingUseTLSStringEnumValues {
 		if existing == v {
 			return true
 		}
@@ -72,53 +72,53 @@ func (v LoggingUseTLS) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to logging_use_tls value
-func (v LoggingUseTLS) Ptr() *LoggingUseTLS {
+// Ptr returns reference to logging_use_tls_string value
+func (v LoggingUseTLSString) Ptr() *LoggingUseTLSString {
 	return &v
 }
 
-// NullableLoggingUseTLS is a helper abstraction for handling nullable loggingusetls types. 
-type NullableLoggingUseTLS struct {
-	value *LoggingUseTLS
+// NullableLoggingUseTLSString is a helper abstraction for handling nullable loggingusetlsstring types. 
+type NullableLoggingUseTLSString struct {
+	value *LoggingUseTLSString
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableLoggingUseTLS) Get() *LoggingUseTLS {
+func (v NullableLoggingUseTLSString) Get() *LoggingUseTLSString {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableLoggingUseTLS) Set(val *LoggingUseTLS) {
+func (v *NullableLoggingUseTLSString) Set(val *LoggingUseTLSString) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableLoggingUseTLS) IsSet() bool {
+func (v NullableLoggingUseTLSString) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableLoggingUseTLS) Unset() {
+func (v *NullableLoggingUseTLSString) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableLoggingUseTLS returns a pointer to a new instance of NullableLoggingUseTLS.
-func NewNullableLoggingUseTLS(val *LoggingUseTLS) *NullableLoggingUseTLS {
-	return &NullableLoggingUseTLS{value: val, isSet: true}
+// NewNullableLoggingUseTLSString returns a pointer to a new instance of NullableLoggingUseTLSString.
+func NewNullableLoggingUseTLSString(val *LoggingUseTLSString) *NullableLoggingUseTLSString {
+	return &NullableLoggingUseTLSString{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableLoggingUseTLS) MarshalJSON() ([]byte, error) {
+func (v NullableLoggingUseTLSString) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableLoggingUseTLS) UnmarshalJSON(src []byte) error {
+func (v *NullableLoggingUseTLSString) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

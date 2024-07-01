@@ -137,7 +137,7 @@ type APICreateLogSplunkRequest struct {
 	requestMaxBytes *int32
 	url *string
 	token *string
-	useTLS *LoggingUseTLS
+	useTLS *LoggingUseTLSString
 }
 
 // Name The name for the real-time logging configuration.
@@ -206,7 +206,7 @@ func (r *APICreateLogSplunkRequest) Token(token string) *APICreateLogSplunkReque
 	return r
 }
 // UseTLS returns a pointer to a request.
-func (r *APICreateLogSplunkRequest) UseTLS(useTLS LoggingUseTLS) *APICreateLogSplunkRequest {
+func (r *APICreateLogSplunkRequest) UseTLS(useTLS LoggingUseTLSString) *APICreateLogSplunkRequest {
 	r.useTLS = &useTLS
 	return r
 }
@@ -824,7 +824,7 @@ type APIUpdateLogSplunkRequest struct {
 	requestMaxBytes *int32
 	url *string
 	token *string
-	useTLS *LoggingUseTLS
+	useTLS *LoggingUseTLSString
 }
 
 // Name The name for the real-time logging configuration.
@@ -893,7 +893,7 @@ func (r *APIUpdateLogSplunkRequest) Token(token string) *APIUpdateLogSplunkReque
 	return r
 }
 // UseTLS returns a pointer to a request.
-func (r *APIUpdateLogSplunkRequest) UseTLS(useTLS LoggingUseTLS) *APIUpdateLogSplunkRequest {
+func (r *APIUpdateLogSplunkRequest) UseTLS(useTLS LoggingUseTLSString) *APIUpdateLogSplunkRequest {
 	r.useTLS = &useTLS
 	return r
 }

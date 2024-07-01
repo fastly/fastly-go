@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Hostname** | Pointer to **string** | The hostname used for the syslog endpoint. | [optional] 
 **Ipv4** | Pointer to **NullableString** | The IPv4 address used for the syslog endpoint. | [optional] 
 **Token** | Pointer to **NullableString** | Whether to prepend each message with a specific token. | [optional] [default to "null"]
-**UseTLS** | Pointer to [**LoggingUseTLS**](LoggingUseTLS.md) |  | [optional] [default to LOGGINGUSETLS_no_tls]
+**UseTLS** | Pointer to [**LoggingUseTLSString**](LoggingUseTLSString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
 
 ## Methods
 
@@ -151,20 +151,20 @@ HasToken returns a boolean if a field has been set.
 UnsetToken ensures that no value is present for Token, not even an explicit nil
 ### GetUseTLS
 
-`func (o *LoggingSyslogAdditional) GetUseTLS() LoggingUseTLS`
+`func (o *LoggingSyslogAdditional) GetUseTLS() LoggingUseTLSString`
 
 GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
 
 ### GetUseTLSOk
 
-`func (o *LoggingSyslogAdditional) GetUseTLSOk() (*LoggingUseTLS, bool)`
+`func (o *LoggingSyslogAdditional) GetUseTLSOk() (*LoggingUseTLSString, bool)`
 
 GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUseTLS
 
-`func (o *LoggingSyslogAdditional) SetUseTLS(v LoggingUseTLS)`
+`func (o *LoggingSyslogAdditional) SetUseTLS(v LoggingUseTLSString)`
 
 SetUseTLS sets UseTLS field to given value.
 

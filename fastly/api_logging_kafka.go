@@ -142,7 +142,7 @@ type APICreateLogKafkaRequest struct {
 	authMethod *string
 	user *string
 	password *string
-	useTLS *LoggingUseTLS
+	useTLS *LoggingUseTLSString
 }
 
 // Name The name for the real-time logging configuration.
@@ -236,7 +236,7 @@ func (r *APICreateLogKafkaRequest) Password(password string) *APICreateLogKafkaR
 	return r
 }
 // UseTLS returns a pointer to a request.
-func (r *APICreateLogKafkaRequest) UseTLS(useTLS LoggingUseTLS) *APICreateLogKafkaRequest {
+func (r *APICreateLogKafkaRequest) UseTLS(useTLS LoggingUseTLSString) *APICreateLogKafkaRequest {
 	r.useTLS = &useTLS
 	return r
 }

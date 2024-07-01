@@ -26,7 +26,7 @@ type LoggingSyslogAdditional struct {
 	Ipv4 NullableString `json:"ipv4,omitempty"`
 	// Whether to prepend each message with a specific token.
 	Token NullableString `json:"token,omitempty"`
-	UseTLS *LoggingUseTLS `json:"use_tls,omitempty"`
+	UseTLS *LoggingUseTLSString `json:"use_tls,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -42,7 +42,7 @@ func NewLoggingSyslogAdditional() *LoggingSyslogAdditional {
 	this.MessageType = &messageType
 	var token string = "null"
 	this.Token = *NewNullableString(&token)
-	var useTLS LoggingUseTLS = LOGGINGUSETLS_no_tls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
 	this.UseTLS = &useTLS
 	return &this
 }
@@ -56,7 +56,7 @@ func NewLoggingSyslogAdditionalWithDefaults() *LoggingSyslogAdditional {
 	this.MessageType = &messageType
 	var token string = "null"
 	this.Token = *NewNullableString(&token)
-	var useTLS LoggingUseTLS = LOGGINGUSETLS_no_tls
+	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
 	this.UseTLS = &useTLS
 	return &this
 }
@@ -210,9 +210,9 @@ func (o *LoggingSyslogAdditional) UnsetToken() {
 }
 
 // GetUseTLS returns the UseTLS field value if set, zero value otherwise.
-func (o *LoggingSyslogAdditional) GetUseTLS() LoggingUseTLS {
+func (o *LoggingSyslogAdditional) GetUseTLS() LoggingUseTLSString {
 	if o == nil || o.UseTLS == nil {
-		var ret LoggingUseTLS
+		var ret LoggingUseTLSString
 		return ret
 	}
 	return *o.UseTLS
@@ -220,7 +220,7 @@ func (o *LoggingSyslogAdditional) GetUseTLS() LoggingUseTLS {
 
 // GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSyslogAdditional) GetUseTLSOk() (*LoggingUseTLS, bool) {
+func (o *LoggingSyslogAdditional) GetUseTLSOk() (*LoggingUseTLSString, bool) {
 	if o == nil || o.UseTLS == nil {
 		return nil, false
 	}
@@ -236,8 +236,8 @@ func (o *LoggingSyslogAdditional) HasUseTLS() bool {
 	return false
 }
 
-// SetUseTLS gets a reference to the given LoggingUseTLS and assigns it to the UseTLS field.
-func (o *LoggingSyslogAdditional) SetUseTLS(v LoggingUseTLS) {
+// SetUseTLS gets a reference to the given LoggingUseTLSString and assigns it to the UseTLS field.
+func (o *LoggingSyslogAdditional) SetUseTLS(v LoggingUseTLSString) {
 	o.UseTLS = &v
 }
 
