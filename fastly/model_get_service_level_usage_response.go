@@ -17,44 +17,43 @@ import (
 	"encoding/json"
 )
 
-// ListInvoicesResponse struct for ListInvoicesResponse
-type ListInvoicesResponse struct {
-	Data []Invoice `json:"data,omitempty"`
-	Meta *Metadata `json:"meta,omitempty"`
+// GetServiceLevelUsageResponse struct for GetServiceLevelUsageResponse
+type GetServiceLevelUsageResponse struct {
+	Data *ServiceusagemetricsData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _ListInvoicesResponse ListInvoicesResponse
+type _GetServiceLevelUsageResponse GetServiceLevelUsageResponse
 
-// NewListInvoicesResponse instantiates a new ListInvoicesResponse object
+// NewGetServiceLevelUsageResponse instantiates a new GetServiceLevelUsageResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewListInvoicesResponse() *ListInvoicesResponse {
-	this := ListInvoicesResponse{}
+func NewGetServiceLevelUsageResponse() *GetServiceLevelUsageResponse {
+	this := GetServiceLevelUsageResponse{}
 	return &this
 }
 
-// NewListInvoicesResponseWithDefaults instantiates a new ListInvoicesResponse object
+// NewGetServiceLevelUsageResponseWithDefaults instantiates a new GetServiceLevelUsageResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewListInvoicesResponseWithDefaults() *ListInvoicesResponse {
-	this := ListInvoicesResponse{}
+func NewGetServiceLevelUsageResponseWithDefaults() *GetServiceLevelUsageResponse {
+	this := GetServiceLevelUsageResponse{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ListInvoicesResponse) GetData() []Invoice {
+func (o *GetServiceLevelUsageResponse) GetData() ServiceusagemetricsData {
 	if o == nil || o.Data == nil {
-		var ret []Invoice
+		var ret ServiceusagemetricsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ListInvoicesResponse) GetDataOk() ([]Invoice, bool) {
+func (o *GetServiceLevelUsageResponse) GetDataOk() (*ServiceusagemetricsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -62,7 +61,7 @@ func (o *ListInvoicesResponse) GetDataOk() ([]Invoice, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *ListInvoicesResponse) HasData() bool {
+func (o *GetServiceLevelUsageResponse) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -70,52 +69,17 @@ func (o *ListInvoicesResponse) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []Invoice and assigns it to the Data field.
-func (o *ListInvoicesResponse) SetData(v []Invoice) {
-	o.Data = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ListInvoicesResponse) GetMeta() Metadata {
-	if o == nil || o.Meta == nil {
-		var ret Metadata
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ListInvoicesResponse) GetMetaOk() (*Metadata, bool) {
-	if o == nil || o.Meta == nil {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *ListInvoicesResponse) HasMeta() bool {
-	if o != nil && o.Meta != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given Metadata and assigns it to the Meta field.
-func (o *ListInvoicesResponse) SetMeta(v Metadata) {
-	o.Meta = &v
+// SetData gets a reference to the given ServiceusagemetricsData and assigns it to the Data field.
+func (o *GetServiceLevelUsageResponse) SetData(v ServiceusagemetricsData) {
+	o.Data = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ListInvoicesResponse) MarshalJSON() ([]byte, error) {
+func (o GetServiceLevelUsageResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
-	}
-	if o.Meta != nil {
-		toSerialize["meta"] = o.Meta
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -127,66 +91,65 @@ func (o ListInvoicesResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *ListInvoicesResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varListInvoicesResponse := _ListInvoicesResponse{}
+func (o *GetServiceLevelUsageResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varGetServiceLevelUsageResponse := _GetServiceLevelUsageResponse{}
 
-	if err = json.Unmarshal(bytes, &varListInvoicesResponse); err == nil {
-		*o = ListInvoicesResponse(varListInvoicesResponse)
+	if err = json.Unmarshal(bytes, &varGetServiceLevelUsageResponse); err == nil {
+		*o = GetServiceLevelUsageResponse(varGetServiceLevelUsageResponse)
 	}
 
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "data")
-		delete(additionalProperties, "meta")
 		o.AdditionalProperties = additionalProperties
 	}
 
 	return err
 }
 
-// NullableListInvoicesResponse is a helper abstraction for handling nullable listinvoicesresponse types. 
-type NullableListInvoicesResponse struct {
-	value *ListInvoicesResponse
+// NullableGetServiceLevelUsageResponse is a helper abstraction for handling nullable getservicelevelusageresponse types. 
+type NullableGetServiceLevelUsageResponse struct {
+	value *GetServiceLevelUsageResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableListInvoicesResponse) Get() *ListInvoicesResponse {
+func (v NullableGetServiceLevelUsageResponse) Get() *GetServiceLevelUsageResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableListInvoicesResponse) Set(val *ListInvoicesResponse) {
+func (v *NullableGetServiceLevelUsageResponse) Set(val *GetServiceLevelUsageResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableListInvoicesResponse) IsSet() bool {
+func (v NullableGetServiceLevelUsageResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableListInvoicesResponse) Unset() {
+func (v *NullableGetServiceLevelUsageResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableListInvoicesResponse returns a pointer to a new instance of NullableListInvoicesResponse.
-func NewNullableListInvoicesResponse(val *ListInvoicesResponse) *NullableListInvoicesResponse {
-	return &NullableListInvoicesResponse{value: val, isSet: true}
+// NewNullableGetServiceLevelUsageResponse returns a pointer to a new instance of NullableGetServiceLevelUsageResponse.
+func NewNullableGetServiceLevelUsageResponse(val *GetServiceLevelUsageResponse) *NullableGetServiceLevelUsageResponse {
+	return &NullableGetServiceLevelUsageResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableListInvoicesResponse) MarshalJSON() ([]byte, error) {
+func (v NullableGetServiceLevelUsageResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableListInvoicesResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableGetServiceLevelUsageResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

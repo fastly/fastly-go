@@ -1,4 +1,4 @@
-# RelationshipMemberTLSDNSRecord
+# RelationshipTLSDNSRecordsResponseDNSRecordsData
 
 ## Properties
 
@@ -9,70 +9,70 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewRelationshipMemberTLSDNSRecord
+### NewRelationshipTLSDNSRecordsResponseDNSRecordsData
 
-`func NewRelationshipMemberTLSDNSRecord() *RelationshipMemberTLSDNSRecord`
+`func NewRelationshipTLSDNSRecordsResponseDNSRecordsData() *RelationshipTLSDNSRecordsResponseDNSRecordsData`
 
-NewRelationshipMemberTLSDNSRecord instantiates a new RelationshipMemberTLSDNSRecord object
+NewRelationshipTLSDNSRecordsResponseDNSRecordsData instantiates a new RelationshipTLSDNSRecordsResponseDNSRecordsData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipMemberTLSDNSRecordWithDefaults
+### NewRelationshipTLSDNSRecordsResponseDNSRecordsDataWithDefaults
 
-`func NewRelationshipMemberTLSDNSRecordWithDefaults() *RelationshipMemberTLSDNSRecord`
+`func NewRelationshipTLSDNSRecordsResponseDNSRecordsDataWithDefaults() *RelationshipTLSDNSRecordsResponseDNSRecordsData`
 
-NewRelationshipMemberTLSDNSRecordWithDefaults instantiates a new RelationshipMemberTLSDNSRecord object
+NewRelationshipTLSDNSRecordsResponseDNSRecordsDataWithDefaults instantiates a new RelationshipTLSDNSRecordsResponseDNSRecordsData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *RelationshipMemberTLSDNSRecord) GetType() TypeTLSDNSRecord`
+`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) GetType() TypeTLSDNSRecord`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *RelationshipMemberTLSDNSRecord) GetTypeOk() (*TypeTLSDNSRecord, bool)`
+`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) GetTypeOk() (*TypeTLSDNSRecord, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *RelationshipMemberTLSDNSRecord) SetType(v TypeTLSDNSRecord)`
+`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) SetType(v TypeTLSDNSRecord)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *RelationshipMemberTLSDNSRecord) HasType() bool`
+`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
 ### GetID
 
-`func (o *RelationshipMemberTLSDNSRecord) GetID() string`
+`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) GetID() string`
 
 GetID returns the ID field if non-nil, zero value otherwise.
 
 ### GetIDOk
 
-`func (o *RelationshipMemberTLSDNSRecord) GetIDOk() (*string, bool)`
+`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) GetIDOk() (*string, bool)`
 
 GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetID
 
-`func (o *RelationshipMemberTLSDNSRecord) SetID(v string)`
+`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) SetID(v string)`
 
 SetID sets ID field to given value.
 
 ### HasID
 
-`func (o *RelationshipMemberTLSDNSRecord) HasID() bool`
+`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) HasID() bool`
 
 HasID returns a boolean if a field has been set.
 

@@ -30,15 +30,15 @@ type Invoicelineitems struct {
 	// Total number of units of usage.
 	Units *float32 `json:"units,omitempty"`
 	// The name of the product.
-	ProductName *string `json:"ProductName,omitempty"`
+	ProductName *string `json:"product_name,omitempty"`
 	// The broader classification of the product (e.g., `Compute` or `Full-Site Delivery`).
-	ProductGroup *string `json:"ProductGroup,omitempty"`
+	ProductGroup *string `json:"product_group,omitempty"`
 	// The broader classification of the product (e.g., `Network Services` or `Security`).
-	ProductLine *string `json:"ProductLine,omitempty"`
+	ProductLine *string `json:"product_line,omitempty"`
 	// The geographical area applicable for regionally based products.
-	Region *string `json:"Region,omitempty"`
+	Region *string `json:"region,omitempty"`
 	// The unit of measure (e.g., `requests` or `bandwidth`).
-	UsageType *string `json:"UsageType,omitempty"`
+	UsageType *string `json:"usage_type,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -401,19 +401,19 @@ func (o Invoicelineitems) MarshalJSON() ([]byte, error) {
 		toSerialize["units"] = o.Units
 	}
 	if o.ProductName != nil {
-		toSerialize["ProductName"] = o.ProductName
+		toSerialize["product_name"] = o.ProductName
 	}
 	if o.ProductGroup != nil {
-		toSerialize["ProductGroup"] = o.ProductGroup
+		toSerialize["product_group"] = o.ProductGroup
 	}
 	if o.ProductLine != nil {
-		toSerialize["ProductLine"] = o.ProductLine
+		toSerialize["product_line"] = o.ProductLine
 	}
 	if o.Region != nil {
-		toSerialize["Region"] = o.Region
+		toSerialize["region"] = o.Region
 	}
 	if o.UsageType != nil {
-		toSerialize["UsageType"] = o.UsageType
+		toSerialize["usage_type"] = o.UsageType
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -440,11 +440,11 @@ func (o *Invoicelineitems) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "credit_coupon_code")
 		delete(additionalProperties, "rate")
 		delete(additionalProperties, "units")
-		delete(additionalProperties, "ProductName")
-		delete(additionalProperties, "ProductGroup")
-		delete(additionalProperties, "ProductLine")
-		delete(additionalProperties, "Region")
-		delete(additionalProperties, "UsageType")
+		delete(additionalProperties, "product_name")
+		delete(additionalProperties, "product_group")
+		delete(additionalProperties, "product_line")
+		delete(additionalProperties, "region")
+		delete(additionalProperties, "usage_type")
 		o.AdditionalProperties = additionalProperties
 	}
 

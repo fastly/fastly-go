@@ -95,7 +95,7 @@ type DomainInspectorMeasurements struct {
 	Bandwidth *int32 `json:"bandwidth,omitempty"`
 	// Ratio of cache hits to cache misses at the edge, between 0 and 1 (`edge_hit_requests` / (`edge_hit_requests` + `edge_miss_requests`)).
 	EdgeHitRatio *float32 `json:"edge_hit_ratio,omitempty"`
-	// Ratio of response bytes delivered from the edge compared to what is delivered from origin, between 0 and 1. (`edge_resp_body_bytes` + `edge_resp_header_bytes`) / (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes` + `edge_resp_body_bytes` + `edge_resp_header_bytes`).
+	// Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`). Previously, Origin Offload used a different formula. [Learn more](https://www.fastly.com/documentation/reference/changes/2024/06/add-origin_offload-metric).
 	OriginOffload *float32 `json:"origin_offload,omitempty"`
 	// Number of responses received from origin with status code 200 (Success).
 	OriginStatus200 *int32 `json:"origin_status_200,omitempty"`

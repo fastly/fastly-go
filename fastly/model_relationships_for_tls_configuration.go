@@ -21,7 +21,7 @@ import (
 // RelationshipsForTLSConfiguration struct for RelationshipsForTLSConfiguration
 type RelationshipsForTLSConfiguration struct {
 	RelationshipService *RelationshipService
-	RelationshipTLSDNSRecords *RelationshipTLSDNSRecords
+	RelationshipTLSDNSRecordsResponse *RelationshipTLSDNSRecordsResponse
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
@@ -40,16 +40,16 @@ func (o *RelationshipsForTLSConfiguration) UnmarshalJSON(data []byte) error {
 		o.RelationshipService = nil
 	}
 
-	// try to unmarshal JSON data into RelationshipTLSDNSRecords
-	err = json.Unmarshal(data, &o.RelationshipTLSDNSRecords);
+	// try to unmarshal JSON data into RelationshipTLSDNSRecordsResponse
+	err = json.Unmarshal(data, &o.RelationshipTLSDNSRecordsResponse);
 	if err == nil {
-		jsonRelationshipTLSDNSRecords, _ := json.Marshal(o.RelationshipTLSDNSRecords)
-		if string(jsonRelationshipTLSDNSRecords) != "{}" { // empty struct
-			return nil // data stored in o.RelationshipTLSDNSRecords, return on the first match
+		jsonRelationshipTLSDNSRecordsResponse, _ := json.Marshal(o.RelationshipTLSDNSRecordsResponse)
+		if string(jsonRelationshipTLSDNSRecordsResponse) != "{}" { // empty struct
+			return nil // data stored in o.RelationshipTLSDNSRecordsResponse, return on the first match
 		}
-    o.RelationshipTLSDNSRecords = nil
+    o.RelationshipTLSDNSRecordsResponse = nil
 	} else {
-		o.RelationshipTLSDNSRecords = nil
+		o.RelationshipTLSDNSRecordsResponse = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(RelationshipsForTLSConfiguration)")
@@ -62,8 +62,8 @@ func (o *RelationshipsForTLSConfiguration) MarshalJSON() ([]byte, error) {
 		return json.Marshal(&o.RelationshipService)
 	}
 
-	if o.RelationshipTLSDNSRecords != nil {
-		return json.Marshal(&o.RelationshipTLSDNSRecords)
+	if o.RelationshipTLSDNSRecordsResponse != nil {
+		return json.Marshal(&o.RelationshipTLSDNSRecordsResponse)
 	}
 
 	return nil, nil // no data in anyOf schemas

@@ -18,8 +18,8 @@ import (
 	"time"
 )
 
-// InvoiceResponse struct for InvoiceResponse
-type InvoiceResponse struct {
+// EomInvoiceResponse struct for EomInvoiceResponse
+type EomInvoiceResponse struct {
 	// Customer ID associated with the invoice.
 	CustomerID *string `json:"customer_id,omitempty"`
 	// Alphanumeric string identifying the invoice.
@@ -40,27 +40,27 @@ type InvoiceResponse struct {
 	AdditionalProperties map[string]any
 }
 
-type _InvoiceResponse InvoiceResponse
+type _EomInvoiceResponse EomInvoiceResponse
 
-// NewInvoiceResponse instantiates a new InvoiceResponse object
+// NewEomInvoiceResponse instantiates a new EomInvoiceResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvoiceResponse() *InvoiceResponse {
-	this := InvoiceResponse{}
+func NewEomInvoiceResponse() *EomInvoiceResponse {
+	this := EomInvoiceResponse{}
 	return &this
 }
 
-// NewInvoiceResponseWithDefaults instantiates a new InvoiceResponse object
+// NewEomInvoiceResponseWithDefaults instantiates a new EomInvoiceResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewInvoiceResponseWithDefaults() *InvoiceResponse {
-	this := InvoiceResponse{}
+func NewEomInvoiceResponseWithDefaults() *EomInvoiceResponse {
+	this := EomInvoiceResponse{}
 	return &this
 }
 
 // GetCustomerID returns the CustomerID field value if set, zero value otherwise.
-func (o *InvoiceResponse) GetCustomerID() string {
+func (o *EomInvoiceResponse) GetCustomerID() string {
 	if o == nil || o.CustomerID == nil {
 		var ret string
 		return ret
@@ -70,7 +70,7 @@ func (o *InvoiceResponse) GetCustomerID() string {
 
 // GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceResponse) GetCustomerIDOk() (*string, bool) {
+func (o *EomInvoiceResponse) GetCustomerIDOk() (*string, bool) {
 	if o == nil || o.CustomerID == nil {
 		return nil, false
 	}
@@ -78,7 +78,7 @@ func (o *InvoiceResponse) GetCustomerIDOk() (*string, bool) {
 }
 
 // HasCustomerID returns a boolean if a field has been set.
-func (o *InvoiceResponse) HasCustomerID() bool {
+func (o *EomInvoiceResponse) HasCustomerID() bool {
 	if o != nil && o.CustomerID != nil {
 		return true
 	}
@@ -87,12 +87,12 @@ func (o *InvoiceResponse) HasCustomerID() bool {
 }
 
 // SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
-func (o *InvoiceResponse) SetCustomerID(v string) {
+func (o *EomInvoiceResponse) SetCustomerID(v string) {
 	o.CustomerID = &v
 }
 
 // GetInvoiceID returns the InvoiceID field value if set, zero value otherwise.
-func (o *InvoiceResponse) GetInvoiceID() string {
+func (o *EomInvoiceResponse) GetInvoiceID() string {
 	if o == nil || o.InvoiceID == nil {
 		var ret string
 		return ret
@@ -102,7 +102,7 @@ func (o *InvoiceResponse) GetInvoiceID() string {
 
 // GetInvoiceIDOk returns a tuple with the InvoiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceResponse) GetInvoiceIDOk() (*string, bool) {
+func (o *EomInvoiceResponse) GetInvoiceIDOk() (*string, bool) {
 	if o == nil || o.InvoiceID == nil {
 		return nil, false
 	}
@@ -110,7 +110,7 @@ func (o *InvoiceResponse) GetInvoiceIDOk() (*string, bool) {
 }
 
 // HasInvoiceID returns a boolean if a field has been set.
-func (o *InvoiceResponse) HasInvoiceID() bool {
+func (o *EomInvoiceResponse) HasInvoiceID() bool {
 	if o != nil && o.InvoiceID != nil {
 		return true
 	}
@@ -119,12 +119,12 @@ func (o *InvoiceResponse) HasInvoiceID() bool {
 }
 
 // SetInvoiceID gets a reference to the given string and assigns it to the InvoiceID field.
-func (o *InvoiceResponse) SetInvoiceID(v string) {
+func (o *EomInvoiceResponse) SetInvoiceID(v string) {
 	o.InvoiceID = &v
 }
 
 // GetInvoicePostedOn returns the InvoicePostedOn field value if set, zero value otherwise.
-func (o *InvoiceResponse) GetInvoicePostedOn() time.Time {
+func (o *EomInvoiceResponse) GetInvoicePostedOn() time.Time {
 	if o == nil || o.InvoicePostedOn == nil {
 		var ret time.Time
 		return ret
@@ -134,7 +134,7 @@ func (o *InvoiceResponse) GetInvoicePostedOn() time.Time {
 
 // GetInvoicePostedOnOk returns a tuple with the InvoicePostedOn field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceResponse) GetInvoicePostedOnOk() (*time.Time, bool) {
+func (o *EomInvoiceResponse) GetInvoicePostedOnOk() (*time.Time, bool) {
 	if o == nil || o.InvoicePostedOn == nil {
 		return nil, false
 	}
@@ -142,7 +142,7 @@ func (o *InvoiceResponse) GetInvoicePostedOnOk() (*time.Time, bool) {
 }
 
 // HasInvoicePostedOn returns a boolean if a field has been set.
-func (o *InvoiceResponse) HasInvoicePostedOn() bool {
+func (o *EomInvoiceResponse) HasInvoicePostedOn() bool {
 	if o != nil && o.InvoicePostedOn != nil {
 		return true
 	}
@@ -151,12 +151,12 @@ func (o *InvoiceResponse) HasInvoicePostedOn() bool {
 }
 
 // SetInvoicePostedOn gets a reference to the given time.Time and assigns it to the InvoicePostedOn field.
-func (o *InvoiceResponse) SetInvoicePostedOn(v time.Time) {
+func (o *EomInvoiceResponse) SetInvoicePostedOn(v time.Time) {
 	o.InvoicePostedOn = &v
 }
 
 // GetBillingStartDate returns the BillingStartDate field value if set, zero value otherwise.
-func (o *InvoiceResponse) GetBillingStartDate() time.Time {
+func (o *EomInvoiceResponse) GetBillingStartDate() time.Time {
 	if o == nil || o.BillingStartDate == nil {
 		var ret time.Time
 		return ret
@@ -166,7 +166,7 @@ func (o *InvoiceResponse) GetBillingStartDate() time.Time {
 
 // GetBillingStartDateOk returns a tuple with the BillingStartDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceResponse) GetBillingStartDateOk() (*time.Time, bool) {
+func (o *EomInvoiceResponse) GetBillingStartDateOk() (*time.Time, bool) {
 	if o == nil || o.BillingStartDate == nil {
 		return nil, false
 	}
@@ -174,7 +174,7 @@ func (o *InvoiceResponse) GetBillingStartDateOk() (*time.Time, bool) {
 }
 
 // HasBillingStartDate returns a boolean if a field has been set.
-func (o *InvoiceResponse) HasBillingStartDate() bool {
+func (o *EomInvoiceResponse) HasBillingStartDate() bool {
 	if o != nil && o.BillingStartDate != nil {
 		return true
 	}
@@ -183,12 +183,12 @@ func (o *InvoiceResponse) HasBillingStartDate() bool {
 }
 
 // SetBillingStartDate gets a reference to the given time.Time and assigns it to the BillingStartDate field.
-func (o *InvoiceResponse) SetBillingStartDate(v time.Time) {
+func (o *EomInvoiceResponse) SetBillingStartDate(v time.Time) {
 	o.BillingStartDate = &v
 }
 
 // GetBillingEndDate returns the BillingEndDate field value if set, zero value otherwise.
-func (o *InvoiceResponse) GetBillingEndDate() time.Time {
+func (o *EomInvoiceResponse) GetBillingEndDate() time.Time {
 	if o == nil || o.BillingEndDate == nil {
 		var ret time.Time
 		return ret
@@ -198,7 +198,7 @@ func (o *InvoiceResponse) GetBillingEndDate() time.Time {
 
 // GetBillingEndDateOk returns a tuple with the BillingEndDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceResponse) GetBillingEndDateOk() (*time.Time, bool) {
+func (o *EomInvoiceResponse) GetBillingEndDateOk() (*time.Time, bool) {
 	if o == nil || o.BillingEndDate == nil {
 		return nil, false
 	}
@@ -206,7 +206,7 @@ func (o *InvoiceResponse) GetBillingEndDateOk() (*time.Time, bool) {
 }
 
 // HasBillingEndDate returns a boolean if a field has been set.
-func (o *InvoiceResponse) HasBillingEndDate() bool {
+func (o *EomInvoiceResponse) HasBillingEndDate() bool {
 	if o != nil && o.BillingEndDate != nil {
 		return true
 	}
@@ -215,12 +215,12 @@ func (o *InvoiceResponse) HasBillingEndDate() bool {
 }
 
 // SetBillingEndDate gets a reference to the given time.Time and assigns it to the BillingEndDate field.
-func (o *InvoiceResponse) SetBillingEndDate(v time.Time) {
+func (o *EomInvoiceResponse) SetBillingEndDate(v time.Time) {
 	o.BillingEndDate = &v
 }
 
 // GetStatementNumber returns the StatementNumber field value if set, zero value otherwise.
-func (o *InvoiceResponse) GetStatementNumber() string {
+func (o *EomInvoiceResponse) GetStatementNumber() string {
 	if o == nil || o.StatementNumber == nil {
 		var ret string
 		return ret
@@ -230,7 +230,7 @@ func (o *InvoiceResponse) GetStatementNumber() string {
 
 // GetStatementNumberOk returns a tuple with the StatementNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceResponse) GetStatementNumberOk() (*string, bool) {
+func (o *EomInvoiceResponse) GetStatementNumberOk() (*string, bool) {
 	if o == nil || o.StatementNumber == nil {
 		return nil, false
 	}
@@ -238,7 +238,7 @@ func (o *InvoiceResponse) GetStatementNumberOk() (*string, bool) {
 }
 
 // HasStatementNumber returns a boolean if a field has been set.
-func (o *InvoiceResponse) HasStatementNumber() bool {
+func (o *EomInvoiceResponse) HasStatementNumber() bool {
 	if o != nil && o.StatementNumber != nil {
 		return true
 	}
@@ -247,12 +247,12 @@ func (o *InvoiceResponse) HasStatementNumber() bool {
 }
 
 // SetStatementNumber gets a reference to the given string and assigns it to the StatementNumber field.
-func (o *InvoiceResponse) SetStatementNumber(v string) {
+func (o *EomInvoiceResponse) SetStatementNumber(v string) {
 	o.StatementNumber = &v
 }
 
 // GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise.
-func (o *InvoiceResponse) GetCurrencyCode() string {
+func (o *EomInvoiceResponse) GetCurrencyCode() string {
 	if o == nil || o.CurrencyCode == nil {
 		var ret string
 		return ret
@@ -262,7 +262,7 @@ func (o *InvoiceResponse) GetCurrencyCode() string {
 
 // GetCurrencyCodeOk returns a tuple with the CurrencyCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceResponse) GetCurrencyCodeOk() (*string, bool) {
+func (o *EomInvoiceResponse) GetCurrencyCodeOk() (*string, bool) {
 	if o == nil || o.CurrencyCode == nil {
 		return nil, false
 	}
@@ -270,7 +270,7 @@ func (o *InvoiceResponse) GetCurrencyCodeOk() (*string, bool) {
 }
 
 // HasCurrencyCode returns a boolean if a field has been set.
-func (o *InvoiceResponse) HasCurrencyCode() bool {
+func (o *EomInvoiceResponse) HasCurrencyCode() bool {
 	if o != nil && o.CurrencyCode != nil {
 		return true
 	}
@@ -279,12 +279,12 @@ func (o *InvoiceResponse) HasCurrencyCode() bool {
 }
 
 // SetCurrencyCode gets a reference to the given string and assigns it to the CurrencyCode field.
-func (o *InvoiceResponse) SetCurrencyCode(v string) {
+func (o *EomInvoiceResponse) SetCurrencyCode(v string) {
 	o.CurrencyCode = &v
 }
 
 // GetMonthlyTransactionAmount returns the MonthlyTransactionAmount field value if set, zero value otherwise.
-func (o *InvoiceResponse) GetMonthlyTransactionAmount() float32 {
+func (o *EomInvoiceResponse) GetMonthlyTransactionAmount() float32 {
 	if o == nil || o.MonthlyTransactionAmount == nil {
 		var ret float32
 		return ret
@@ -294,7 +294,7 @@ func (o *InvoiceResponse) GetMonthlyTransactionAmount() float32 {
 
 // GetMonthlyTransactionAmountOk returns a tuple with the MonthlyTransactionAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceResponse) GetMonthlyTransactionAmountOk() (*float32, bool) {
+func (o *EomInvoiceResponse) GetMonthlyTransactionAmountOk() (*float32, bool) {
 	if o == nil || o.MonthlyTransactionAmount == nil {
 		return nil, false
 	}
@@ -302,7 +302,7 @@ func (o *InvoiceResponse) GetMonthlyTransactionAmountOk() (*float32, bool) {
 }
 
 // HasMonthlyTransactionAmount returns a boolean if a field has been set.
-func (o *InvoiceResponse) HasMonthlyTransactionAmount() bool {
+func (o *EomInvoiceResponse) HasMonthlyTransactionAmount() bool {
 	if o != nil && o.MonthlyTransactionAmount != nil {
 		return true
 	}
@@ -311,12 +311,12 @@ func (o *InvoiceResponse) HasMonthlyTransactionAmount() bool {
 }
 
 // SetMonthlyTransactionAmount gets a reference to the given float32 and assigns it to the MonthlyTransactionAmount field.
-func (o *InvoiceResponse) SetMonthlyTransactionAmount(v float32) {
+func (o *EomInvoiceResponse) SetMonthlyTransactionAmount(v float32) {
 	o.MonthlyTransactionAmount = &v
 }
 
 // GetTransactionLineItems returns the TransactionLineItems field value if set, zero value otherwise.
-func (o *InvoiceResponse) GetTransactionLineItems() []Invoicelineitems {
+func (o *EomInvoiceResponse) GetTransactionLineItems() []Invoicelineitems {
 	if o == nil || o.TransactionLineItems == nil {
 		var ret []Invoicelineitems
 		return ret
@@ -326,7 +326,7 @@ func (o *InvoiceResponse) GetTransactionLineItems() []Invoicelineitems {
 
 // GetTransactionLineItemsOk returns a tuple with the TransactionLineItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvoiceResponse) GetTransactionLineItemsOk() ([]Invoicelineitems, bool) {
+func (o *EomInvoiceResponse) GetTransactionLineItemsOk() ([]Invoicelineitems, bool) {
 	if o == nil || o.TransactionLineItems == nil {
 		return nil, false
 	}
@@ -334,7 +334,7 @@ func (o *InvoiceResponse) GetTransactionLineItemsOk() ([]Invoicelineitems, bool)
 }
 
 // HasTransactionLineItems returns a boolean if a field has been set.
-func (o *InvoiceResponse) HasTransactionLineItems() bool {
+func (o *EomInvoiceResponse) HasTransactionLineItems() bool {
 	if o != nil && o.TransactionLineItems != nil {
 		return true
 	}
@@ -343,13 +343,13 @@ func (o *InvoiceResponse) HasTransactionLineItems() bool {
 }
 
 // SetTransactionLineItems gets a reference to the given []Invoicelineitems and assigns it to the TransactionLineItems field.
-func (o *InvoiceResponse) SetTransactionLineItems(v []Invoicelineitems) {
+func (o *EomInvoiceResponse) SetTransactionLineItems(v []Invoicelineitems) {
 	o.TransactionLineItems = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o InvoiceResponse) MarshalJSON() ([]byte, error) {
+func (o EomInvoiceResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.CustomerID != nil {
 		toSerialize["customer_id"] = o.CustomerID
@@ -388,11 +388,11 @@ func (o InvoiceResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (o *InvoiceResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varInvoiceResponse := _InvoiceResponse{}
+func (o *EomInvoiceResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varEomInvoiceResponse := _EomInvoiceResponse{}
 
-	if err = json.Unmarshal(bytes, &varInvoiceResponse); err == nil {
-		*o = InvoiceResponse(varInvoiceResponse)
+	if err = json.Unmarshal(bytes, &varEomInvoiceResponse); err == nil {
+		*o = EomInvoiceResponse(varEomInvoiceResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -413,48 +413,48 @@ func (o *InvoiceResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableInvoiceResponse is a helper abstraction for handling nullable invoiceresponse types. 
-type NullableInvoiceResponse struct {
-	value *InvoiceResponse
+// NullableEomInvoiceResponse is a helper abstraction for handling nullable eominvoiceresponse types. 
+type NullableEomInvoiceResponse struct {
+	value *EomInvoiceResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableInvoiceResponse) Get() *InvoiceResponse {
+func (v NullableEomInvoiceResponse) Get() *EomInvoiceResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableInvoiceResponse) Set(val *InvoiceResponse) {
+func (v *NullableEomInvoiceResponse) Set(val *EomInvoiceResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableInvoiceResponse) IsSet() bool {
+func (v NullableEomInvoiceResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableInvoiceResponse) Unset() {
+func (v *NullableEomInvoiceResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableInvoiceResponse returns a pointer to a new instance of NullableInvoiceResponse.
-func NewNullableInvoiceResponse(val *InvoiceResponse) *NullableInvoiceResponse {
-	return &NullableInvoiceResponse{value: val, isSet: true}
+// NewNullableEomInvoiceResponse returns a pointer to a new instance of NullableEomInvoiceResponse.
+func NewNullableEomInvoiceResponse(val *EomInvoiceResponse) *NullableEomInvoiceResponse {
+	return &NullableEomInvoiceResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableInvoiceResponse) MarshalJSON() ([]byte, error) {
+func (v NullableEomInvoiceResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
-func (v *NullableInvoiceResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableEomInvoiceResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -43,8 +43,22 @@ type BillingInvoicesAPI interface {
 	GetInvoiceByInvoiceID(ctx context.Context, invoiceID string) APIGetInvoiceByInvoiceIDRequest
 
 	// GetInvoiceByInvoiceIDExecute executes the request
-	//  @return InvoiceResponse
-	GetInvoiceByInvoiceIDExecute(r APIGetInvoiceByInvoiceIDRequest) (*InvoiceResponse, *http.Response, error)
+	//  @return EomInvoiceResponse
+	GetInvoiceByInvoiceIDExecute(r APIGetInvoiceByInvoiceIDRequest) (*EomInvoiceResponse, *http.Response, error)
+
+	/*
+	GetMonthToDateInvoice Get month-to-date invoice.
+
+	Returns month-to-date invoice for the current month.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @return APIGetMonthToDateInvoiceRequest
+	*/
+	GetMonthToDateInvoice(ctx context.Context) APIGetMonthToDateInvoiceRequest
+
+	// GetMonthToDateInvoiceExecute executes the request
+	//  @return MtdInvoiceResponse
+	GetMonthToDateInvoiceExecute(r APIGetMonthToDateInvoiceRequest) (*MtdInvoiceResponse, *http.Response, error)
 
 	/*
 	ListInvoices List of invoices.
@@ -57,8 +71,8 @@ type BillingInvoicesAPI interface {
 	ListInvoices(ctx context.Context) APIListInvoicesRequest
 
 	// ListInvoicesExecute executes the request
-	//  @return ListInvoicesResponse
-	ListInvoicesExecute(r APIListInvoicesRequest) (*ListInvoicesResponse, *http.Response, error)
+	//  @return ListEomInvoicesResponse
+	ListInvoicesExecute(r APIListInvoicesRequest) (*ListEomInvoicesResponse, *http.Response, error)
 }
 
 // BillingInvoicesAPIService BillingInvoicesAPI service
@@ -73,7 +87,7 @@ type APIGetInvoiceByInvoiceIDRequest struct {
 
 
 // Execute calls the API using the request data configured.
-func (r APIGetInvoiceByInvoiceIDRequest) Execute() (*InvoiceResponse, *http.Response, error) {
+func (r APIGetInvoiceByInvoiceIDRequest) Execute() (*EomInvoiceResponse, *http.Response, error) {
 	return r.APIService.GetInvoiceByInvoiceIDExecute(r)
 }
 
@@ -95,13 +109,13 @@ func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceID(ctx context.Context, i
 }
 
 // GetInvoiceByInvoiceIDExecute executes the request
-//  @return InvoiceResponse
-func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceIDExecute(r APIGetInvoiceByInvoiceIDRequest) (*InvoiceResponse, *http.Response, error) {
+//  @return EomInvoiceResponse
+func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceIDExecute(r APIGetInvoiceByInvoiceIDRequest) (*EomInvoiceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *InvoiceResponse
+		localVarReturnValue  *EomInvoiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInvoicesAPIService.GetInvoiceByInvoiceID")
@@ -227,6 +241,175 @@ func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceIDExecute(r APIGetInvoice
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+// APIGetMonthToDateInvoiceRequest represents a request for the resource.
+type APIGetMonthToDateInvoiceRequest struct {
+	ctx context.Context
+	APIService BillingInvoicesAPI
+}
+
+
+// Execute calls the API using the request data configured.
+func (r APIGetMonthToDateInvoiceRequest) Execute() (*MtdInvoiceResponse, *http.Response, error) {
+	return r.APIService.GetMonthToDateInvoiceExecute(r)
+}
+
+/*
+GetMonthToDateInvoice Get month-to-date invoice.
+
+Returns month-to-date invoice for the current month.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return APIGetMonthToDateInvoiceRequest
+*/
+func (a *BillingInvoicesAPIService) GetMonthToDateInvoice(ctx context.Context) APIGetMonthToDateInvoiceRequest {
+	return APIGetMonthToDateInvoiceRequest{
+		APIService: a,
+		ctx: ctx,
+	}
+}
+
+// GetMonthToDateInvoiceExecute executes the request
+//  @return MtdInvoiceResponse
+func (a *BillingInvoicesAPIService) GetMonthToDateInvoiceExecute(r APIGetMonthToDateInvoiceRequest) (*MtdInvoiceResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *MtdInvoiceResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInvoicesAPIService.GetMonthToDateInvoice")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/billing/v3/invoices/month-to-date"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 401 {
+			var v ModelError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v ModelError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 422 {
+			var v ModelError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 500 {
+			var v ModelError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 // APIListInvoicesRequest represents a request for the resource.
 type APIListInvoicesRequest struct {
 	ctx context.Context
@@ -259,7 +442,7 @@ func (r *APIListInvoicesRequest) Cursor(cursor string) *APIListInvoicesRequest {
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListInvoicesRequest) Execute() (*ListInvoicesResponse, *http.Response, error) {
+func (r APIListInvoicesRequest) Execute() (*ListEomInvoicesResponse, *http.Response, error) {
 	return r.APIService.ListInvoicesExecute(r)
 }
 
@@ -279,13 +462,13 @@ func (a *BillingInvoicesAPIService) ListInvoices(ctx context.Context) APIListInv
 }
 
 // ListInvoicesExecute executes the request
-//  @return ListInvoicesResponse
-func (a *BillingInvoicesAPIService) ListInvoicesExecute(r APIListInvoicesRequest) (*ListInvoicesResponse, *http.Response, error) {
+//  @return ListEomInvoicesResponse
+func (a *BillingInvoicesAPIService) ListInvoicesExecute(r APIListInvoicesRequest) (*ListEomInvoicesResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *ListInvoicesResponse
+		localVarReturnValue  *ListEomInvoicesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInvoicesAPIService.ListInvoices")

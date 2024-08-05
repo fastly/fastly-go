@@ -1,4 +1,4 @@
-# InvoiceResponse
+# EomInvoiceResponse
 
 ## Properties
 
@@ -16,245 +16,245 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewInvoiceResponse
+### NewEomInvoiceResponse
 
-`func NewInvoiceResponse() *InvoiceResponse`
+`func NewEomInvoiceResponse() *EomInvoiceResponse`
 
-NewInvoiceResponse instantiates a new InvoiceResponse object
+NewEomInvoiceResponse instantiates a new EomInvoiceResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewInvoiceResponseWithDefaults
+### NewEomInvoiceResponseWithDefaults
 
-`func NewInvoiceResponseWithDefaults() *InvoiceResponse`
+`func NewEomInvoiceResponseWithDefaults() *EomInvoiceResponse`
 
-NewInvoiceResponseWithDefaults instantiates a new InvoiceResponse object
+NewEomInvoiceResponseWithDefaults instantiates a new EomInvoiceResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCustomerID
 
-`func (o *InvoiceResponse) GetCustomerID() string`
+`func (o *EomInvoiceResponse) GetCustomerID() string`
 
 GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
 
 ### GetCustomerIDOk
 
-`func (o *InvoiceResponse) GetCustomerIDOk() (*string, bool)`
+`func (o *EomInvoiceResponse) GetCustomerIDOk() (*string, bool)`
 
 GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerID
 
-`func (o *InvoiceResponse) SetCustomerID(v string)`
+`func (o *EomInvoiceResponse) SetCustomerID(v string)`
 
 SetCustomerID sets CustomerID field to given value.
 
 ### HasCustomerID
 
-`func (o *InvoiceResponse) HasCustomerID() bool`
+`func (o *EomInvoiceResponse) HasCustomerID() bool`
 
 HasCustomerID returns a boolean if a field has been set.
 
 ### GetInvoiceID
 
-`func (o *InvoiceResponse) GetInvoiceID() string`
+`func (o *EomInvoiceResponse) GetInvoiceID() string`
 
 GetInvoiceID returns the InvoiceID field if non-nil, zero value otherwise.
 
 ### GetInvoiceIDOk
 
-`func (o *InvoiceResponse) GetInvoiceIDOk() (*string, bool)`
+`func (o *EomInvoiceResponse) GetInvoiceIDOk() (*string, bool)`
 
 GetInvoiceIDOk returns a tuple with the InvoiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInvoiceID
 
-`func (o *InvoiceResponse) SetInvoiceID(v string)`
+`func (o *EomInvoiceResponse) SetInvoiceID(v string)`
 
 SetInvoiceID sets InvoiceID field to given value.
 
 ### HasInvoiceID
 
-`func (o *InvoiceResponse) HasInvoiceID() bool`
+`func (o *EomInvoiceResponse) HasInvoiceID() bool`
 
 HasInvoiceID returns a boolean if a field has been set.
 
 ### GetInvoicePostedOn
 
-`func (o *InvoiceResponse) GetInvoicePostedOn() time.Time`
+`func (o *EomInvoiceResponse) GetInvoicePostedOn() time.Time`
 
 GetInvoicePostedOn returns the InvoicePostedOn field if non-nil, zero value otherwise.
 
 ### GetInvoicePostedOnOk
 
-`func (o *InvoiceResponse) GetInvoicePostedOnOk() (*time.Time, bool)`
+`func (o *EomInvoiceResponse) GetInvoicePostedOnOk() (*time.Time, bool)`
 
 GetInvoicePostedOnOk returns a tuple with the InvoicePostedOn field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInvoicePostedOn
 
-`func (o *InvoiceResponse) SetInvoicePostedOn(v time.Time)`
+`func (o *EomInvoiceResponse) SetInvoicePostedOn(v time.Time)`
 
 SetInvoicePostedOn sets InvoicePostedOn field to given value.
 
 ### HasInvoicePostedOn
 
-`func (o *InvoiceResponse) HasInvoicePostedOn() bool`
+`func (o *EomInvoiceResponse) HasInvoicePostedOn() bool`
 
 HasInvoicePostedOn returns a boolean if a field has been set.
 
 ### GetBillingStartDate
 
-`func (o *InvoiceResponse) GetBillingStartDate() time.Time`
+`func (o *EomInvoiceResponse) GetBillingStartDate() time.Time`
 
 GetBillingStartDate returns the BillingStartDate field if non-nil, zero value otherwise.
 
 ### GetBillingStartDateOk
 
-`func (o *InvoiceResponse) GetBillingStartDateOk() (*time.Time, bool)`
+`func (o *EomInvoiceResponse) GetBillingStartDateOk() (*time.Time, bool)`
 
 GetBillingStartDateOk returns a tuple with the BillingStartDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBillingStartDate
 
-`func (o *InvoiceResponse) SetBillingStartDate(v time.Time)`
+`func (o *EomInvoiceResponse) SetBillingStartDate(v time.Time)`
 
 SetBillingStartDate sets BillingStartDate field to given value.
 
 ### HasBillingStartDate
 
-`func (o *InvoiceResponse) HasBillingStartDate() bool`
+`func (o *EomInvoiceResponse) HasBillingStartDate() bool`
 
 HasBillingStartDate returns a boolean if a field has been set.
 
 ### GetBillingEndDate
 
-`func (o *InvoiceResponse) GetBillingEndDate() time.Time`
+`func (o *EomInvoiceResponse) GetBillingEndDate() time.Time`
 
 GetBillingEndDate returns the BillingEndDate field if non-nil, zero value otherwise.
 
 ### GetBillingEndDateOk
 
-`func (o *InvoiceResponse) GetBillingEndDateOk() (*time.Time, bool)`
+`func (o *EomInvoiceResponse) GetBillingEndDateOk() (*time.Time, bool)`
 
 GetBillingEndDateOk returns a tuple with the BillingEndDate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBillingEndDate
 
-`func (o *InvoiceResponse) SetBillingEndDate(v time.Time)`
+`func (o *EomInvoiceResponse) SetBillingEndDate(v time.Time)`
 
 SetBillingEndDate sets BillingEndDate field to given value.
 
 ### HasBillingEndDate
 
-`func (o *InvoiceResponse) HasBillingEndDate() bool`
+`func (o *EomInvoiceResponse) HasBillingEndDate() bool`
 
 HasBillingEndDate returns a boolean if a field has been set.
 
 ### GetStatementNumber
 
-`func (o *InvoiceResponse) GetStatementNumber() string`
+`func (o *EomInvoiceResponse) GetStatementNumber() string`
 
 GetStatementNumber returns the StatementNumber field if non-nil, zero value otherwise.
 
 ### GetStatementNumberOk
 
-`func (o *InvoiceResponse) GetStatementNumberOk() (*string, bool)`
+`func (o *EomInvoiceResponse) GetStatementNumberOk() (*string, bool)`
 
 GetStatementNumberOk returns a tuple with the StatementNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatementNumber
 
-`func (o *InvoiceResponse) SetStatementNumber(v string)`
+`func (o *EomInvoiceResponse) SetStatementNumber(v string)`
 
 SetStatementNumber sets StatementNumber field to given value.
 
 ### HasStatementNumber
 
-`func (o *InvoiceResponse) HasStatementNumber() bool`
+`func (o *EomInvoiceResponse) HasStatementNumber() bool`
 
 HasStatementNumber returns a boolean if a field has been set.
 
 ### GetCurrencyCode
 
-`func (o *InvoiceResponse) GetCurrencyCode() string`
+`func (o *EomInvoiceResponse) GetCurrencyCode() string`
 
 GetCurrencyCode returns the CurrencyCode field if non-nil, zero value otherwise.
 
 ### GetCurrencyCodeOk
 
-`func (o *InvoiceResponse) GetCurrencyCodeOk() (*string, bool)`
+`func (o *EomInvoiceResponse) GetCurrencyCodeOk() (*string, bool)`
 
 GetCurrencyCodeOk returns a tuple with the CurrencyCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCurrencyCode
 
-`func (o *InvoiceResponse) SetCurrencyCode(v string)`
+`func (o *EomInvoiceResponse) SetCurrencyCode(v string)`
 
 SetCurrencyCode sets CurrencyCode field to given value.
 
 ### HasCurrencyCode
 
-`func (o *InvoiceResponse) HasCurrencyCode() bool`
+`func (o *EomInvoiceResponse) HasCurrencyCode() bool`
 
 HasCurrencyCode returns a boolean if a field has been set.
 
 ### GetMonthlyTransactionAmount
 
-`func (o *InvoiceResponse) GetMonthlyTransactionAmount() float32`
+`func (o *EomInvoiceResponse) GetMonthlyTransactionAmount() float32`
 
 GetMonthlyTransactionAmount returns the MonthlyTransactionAmount field if non-nil, zero value otherwise.
 
 ### GetMonthlyTransactionAmountOk
 
-`func (o *InvoiceResponse) GetMonthlyTransactionAmountOk() (*float32, bool)`
+`func (o *EomInvoiceResponse) GetMonthlyTransactionAmountOk() (*float32, bool)`
 
 GetMonthlyTransactionAmountOk returns a tuple with the MonthlyTransactionAmount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMonthlyTransactionAmount
 
-`func (o *InvoiceResponse) SetMonthlyTransactionAmount(v float32)`
+`func (o *EomInvoiceResponse) SetMonthlyTransactionAmount(v float32)`
 
 SetMonthlyTransactionAmount sets MonthlyTransactionAmount field to given value.
 
 ### HasMonthlyTransactionAmount
 
-`func (o *InvoiceResponse) HasMonthlyTransactionAmount() bool`
+`func (o *EomInvoiceResponse) HasMonthlyTransactionAmount() bool`
 
 HasMonthlyTransactionAmount returns a boolean if a field has been set.
 
 ### GetTransactionLineItems
 
-`func (o *InvoiceResponse) GetTransactionLineItems() []Invoicelineitems`
+`func (o *EomInvoiceResponse) GetTransactionLineItems() []Invoicelineitems`
 
 GetTransactionLineItems returns the TransactionLineItems field if non-nil, zero value otherwise.
 
 ### GetTransactionLineItemsOk
 
-`func (o *InvoiceResponse) GetTransactionLineItemsOk() (*[]Invoicelineitems, bool)`
+`func (o *EomInvoiceResponse) GetTransactionLineItemsOk() (*[]Invoicelineitems, bool)`
 
 GetTransactionLineItemsOk returns a tuple with the TransactionLineItems field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTransactionLineItems
 
-`func (o *InvoiceResponse) SetTransactionLineItems(v []Invoicelineitems)`
+`func (o *EomInvoiceResponse) SetTransactionLineItems(v []Invoicelineitems)`
 
 SetTransactionLineItems sets TransactionLineItems field to given value.
 
 ### HasTransactionLineItems
 
-`func (o *InvoiceResponse) HasTransactionLineItems() bool`
+`func (o *EomInvoiceResponse) HasTransactionLineItems() bool`
 
 HasTransactionLineItems returns a boolean if a field has been set.
 

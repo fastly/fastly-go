@@ -19,9 +19,7 @@ import (
 
 // TLSDNSRecord struct for TLSDNSRecord
 type TLSDNSRecord struct {
-	// The IP address or hostname of the DNS record.
-	ID *string `json:"id,omitempty"`
-	// Specifies the regions that will be used to route traffic. Select DNS Records with a `global` region to route traffic to the most performant point of presence (POP) worldwide (global pricing will apply). Select DNS records with a `us-eu` region to exclusively land traffic on North American and European POPs.
+	// Specifies the regions that will be used to route traffic. Select DNS records with a `global` region to route traffic to the most performant point of presence (POP) worldwide (global pricing will apply). Select DNS records with a `na/eu` region to exclusively land traffic on North American and European POPs.
 	Region *string `json:"region,omitempty"`
 	// The type of the DNS record. `A` specifies an IPv4 address to be used for an A record to be used for apex domains (e.g., `example.com`). `AAAA` specifies an IPv6 address for use in an A record for apex domains. `CNAME` specifies the hostname to be used for a CNAME record for subdomains or wildcard domains (e.g., `www.example.com` or `*.example.com`).
 	RecordType *string `json:"record_type,omitempty"`
@@ -45,38 +43,6 @@ func NewTLSDNSRecord() *TLSDNSRecord {
 func NewTLSDNSRecordWithDefaults() *TLSDNSRecord {
 	this := TLSDNSRecord{}
 	return &this
-}
-
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *TLSDNSRecord) GetID() string {
-	if o == nil || o.ID == nil {
-		var ret string
-		return ret
-	}
-	return *o.ID
-}
-
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TLSDNSRecord) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
-		return nil, false
-	}
-	return o.ID, true
-}
-
-// HasID returns a boolean if a field has been set.
-func (o *TLSDNSRecord) HasID() bool {
-	if o != nil && o.ID != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *TLSDNSRecord) SetID(v string) {
-	o.ID = &v
 }
 
 // GetRegion returns the Region field value if set, zero value otherwise.
@@ -147,9 +113,6 @@ func (o *TLSDNSRecord) SetRecordType(v string) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o TLSDNSRecord) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
-	}
 	if o.Region != nil {
 		toSerialize["region"] = o.Region
 	}
@@ -176,7 +139,6 @@ func (o *TLSDNSRecord) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "id")
 		delete(additionalProperties, "region")
 		delete(additionalProperties, "record_type")
 		o.AdditionalProperties = additionalProperties

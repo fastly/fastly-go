@@ -1,5 +1,15 @@
 # Changelog
 
+## [v1.0.0-beta.32](https://github.com/fastly/fastly-go/releases/tag/release/v1.0.0-beta.32) (2024-08-04)
+
+**Enhancements:**
+
+- feat(observability): Adds new Observability Custom Dashboards API
+- feat(billing-invoices): Adds month-to-date invoice information
+- feat(billing-usage-metrics): Adds information on service-level usage.
+- feat(tls): Adds an endpoint to get a TLS certificate blob (Limited Availability)
+- feat(stats): Add `origin_offload` metric
+
 ## [v1.0.0-beta.31](https://github.com/fastly/fastly-go/releases/tag/v1.0.0-beta.31) (2024-07-01)
 
 **Bug fixes:**

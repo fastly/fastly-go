@@ -105,7 +105,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "fastly-go/1.0.0-beta.31",
+		UserAgent:        "fastly-go/1.0.0-beta.32",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -322,7 +322,25 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"BillingInvoicesAPIService.GetMonthToDateInvoice": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"BillingInvoicesAPIService.ListInvoices": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"BillingUsageMetricsAPIService.GetServiceLevelUsage": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"BillingUsageMetricsAPIService.GetServiceLevelUsageTypes": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",
@@ -2194,6 +2212,36 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"ObservabilityCustomDashboardsAPIService.CreateDashboard": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ObservabilityCustomDashboardsAPIService.DeleteDashboard": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ObservabilityCustomDashboardsAPIService.GetDashboard": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ObservabilityCustomDashboardsAPIService.ListDashboards": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ObservabilityCustomDashboardsAPIService.UpdateDashboard": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"OriginInspectorHistoricalAPIService.GetOriginInspectorHistorical": {
 				{
 					URL: "https://api.fastly.com",
@@ -2795,6 +2843,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"TLSCertificatesAPIService.GetTLSCert": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"TLSCertificatesAPIService.GetTLSCertBlob": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",

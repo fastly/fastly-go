@@ -252,6 +252,7 @@ Name | Type | Description | Notes
 **AllStatus3xx** | Pointer to **int32** | Number of \&quot;Redirection\&quot; codes delivered for all sources. | [optional] 
 **AllStatus4xx** | Pointer to **int32** | Number of \&quot;Client Error\&quot; codes delivered for all sources. | [optional] 
 **AllStatus5xx** | Pointer to **int32** | Number of \&quot;Server Error\&quot; codes delivered for all sources. | [optional] 
+**OriginOffload** | Pointer to **float32** | Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`). | [optional] 
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **StartTime** | Pointer to **int32** | Timestamp for the start of the time period being reported | [optional] 
 
@@ -6483,6 +6484,31 @@ SetAllStatus5xx sets AllStatus5xx field to given value.
 `func (o *Results) HasAllStatus5xx() bool`
 
 HasAllStatus5xx returns a boolean if a field has been set.
+
+### GetOriginOffload
+
+`func (o *Results) GetOriginOffload() float32`
+
+GetOriginOffload returns the OriginOffload field if non-nil, zero value otherwise.
+
+### GetOriginOffloadOk
+
+`func (o *Results) GetOriginOffloadOk() (*float32, bool)`
+
+GetOriginOffloadOk returns a tuple with the OriginOffload field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginOffload
+
+`func (o *Results) SetOriginOffload(v float32)`
+
+SetOriginOffload sets OriginOffload field to given value.
+
+### HasOriginOffload
+
+`func (o *Results) HasOriginOffload() bool`
+
+HasOriginOffload returns a boolean if a field has been set.
 
 ### GetServiceID
 

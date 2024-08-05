@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**CreateTLSCert**](TlsCertificatesAPI.md#CreateTLSCert) | **POST** `/tls/certificates` | Create a TLS certificate
 [**DeleteTLSCert**](TlsCertificatesAPI.md#DeleteTLSCert) | **DELETE** `/tls/certificates/{tls_certificate_id}` | Delete a TLS certificate
 [**GetTLSCert**](TlsCertificatesAPI.md#GetTLSCert) | **GET** `/tls/certificates/{tls_certificate_id}` | Get a TLS certificate
+[**GetTLSCertBlob**](TlsCertificatesAPI.md#GetTLSCertBlob) | **GET** `/tls/certificates/{tls_certificate_id}/blob` | Get a TLS certificate blob (Limited Availability)
 [**ListTLSCerts**](TlsCertificatesAPI.md#ListTLSCerts) | **GET** `/tls/certificates` | List TLS certificates
 [**UpdateTLSCert**](TlsCertificatesAPI.md#UpdateTLSCert) | **PATCH** `/tls/certificates/{tls_certificate_id}` | Update a TLS certificate
 
@@ -204,6 +205,73 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/vnd.api+json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## GetTLSCertBlob
+
+Get a TLS certificate blob (Limited Availability)
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    tlsCertificateID := "tlsCertificateId_example" // string | Alphanumeric string identifying a TLS certificate.
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.TLSCertificatesAPI.GetTLSCertBlob(ctx, tlsCertificateID).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `TLSCertificatesAPI.GetTLSCertBlob`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetTLSCertBlob`: TLSCertificateBlobResponse
+    fmt.Fprintf(os.Stdout, "Response from `TLSCertificatesAPI.GetTLSCertBlob`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**tlsCertificateID** | **string** | Alphanumeric string identifying a TLS certificate. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTLSCertBlobRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**TLSCertificateBlobResponse**](TlsCertificateBlobResponse.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 

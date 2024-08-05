@@ -80,6 +80,8 @@ type APIClient struct {
 
 	BillingInvoicesAPI BillingInvoicesAPI
 
+	BillingUsageMetricsAPI BillingUsageMetricsAPI
+
 	CacheSettingsAPI CacheSettingsAPI
 
 	ConditionAPI ConditionAPI
@@ -216,6 +218,8 @@ type APIClient struct {
 
 	MutualAuthenticationAPI MutualAuthenticationAPI
 
+	ObservabilityCustomDashboardsAPI ObservabilityCustomDashboardsAPI
+
 	OriginInspectorHistoricalAPI OriginInspectorHistoricalAPI
 
 	OriginInspectorRealtimeAPI OriginInspectorRealtimeAPI
@@ -330,6 +334,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.BillingAPI = (*BillingAPIService)(&c.common)
 	c.BillingAddressAPI = (*BillingAddressAPIService)(&c.common)
 	c.BillingInvoicesAPI = (*BillingInvoicesAPIService)(&c.common)
+	c.BillingUsageMetricsAPI = (*BillingUsageMetricsAPIService)(&c.common)
 	c.CacheSettingsAPI = (*CacheSettingsAPIService)(&c.common)
 	c.ConditionAPI = (*ConditionAPIService)(&c.common)
 	c.ConfigStoreAPI = (*ConfigStoreAPIService)(&c.common)
@@ -398,6 +403,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingSumologicAPI = (*LoggingSumologicAPIService)(&c.common)
 	c.LoggingSyslogAPI = (*LoggingSyslogAPIService)(&c.common)
 	c.MutualAuthenticationAPI = (*MutualAuthenticationAPIService)(&c.common)
+	c.ObservabilityCustomDashboardsAPI = (*ObservabilityCustomDashboardsAPIService)(&c.common)
 	c.OriginInspectorHistoricalAPI = (*OriginInspectorHistoricalAPIService)(&c.common)
 	c.OriginInspectorRealtimeAPI = (*OriginInspectorRealtimeAPIService)(&c.common)
 	c.PackageAPI = (*PackageAPIService)(&c.common)

@@ -6,6 +6,7 @@
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetInvoiceByInvoiceID**](BillingInvoicesAPI.md#GetInvoiceByInvoiceID) | **GET** `/billing/v3/invoices/{invoice_id}` | Get invoice by ID.
+[**GetMonthToDateInvoice**](BillingInvoicesAPI.md#GetMonthToDateInvoice) | **GET** `/billing/v3/invoices/month-to-date` | Get month-to-date invoice.
 [**ListInvoices**](BillingInvoicesAPI.md#ListInvoices) | **GET** `/billing/v3/invoices` | List of invoices.
 
 
@@ -39,7 +40,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInvoicesAPI.GetInvoiceByInvoiceID`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetInvoiceByInvoiceID`: InvoiceResponse
+    // response from `GetInvoiceByInvoiceID`: EomInvoiceResponse
     fmt.Fprintf(os.Stdout, "Response from `BillingInvoicesAPI.GetInvoiceByInvoiceID`: %v\n", resp)
 }
 ```
@@ -63,7 +64,66 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InvoiceResponse**](InvoiceResponse.md)
+[**EomInvoiceResponse**](EomInvoiceResponse.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## GetMonthToDateInvoice
+
+Get month-to-date invoice.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.BillingInvoicesAPI.GetMonthToDateInvoice(ctx).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingInvoicesAPI.GetMonthToDateInvoice`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetMonthToDateInvoice`: MtdInvoiceResponse
+    fmt.Fprintf(os.Stdout, "Response from `BillingInvoicesAPI.GetMonthToDateInvoice`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetMonthToDateInvoiceRequest struct via the builder pattern
+
+
+
+### Return type
+
+[**MtdInvoiceResponse**](MtdInvoiceResponse.md)
 
 ### Authorization
 
@@ -109,7 +169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInvoicesAPI.ListInvoices`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListInvoices`: ListInvoicesResponse
+    // response from `ListInvoices`: ListEomInvoicesResponse
     fmt.Fprintf(os.Stdout, "Response from `BillingInvoicesAPI.ListInvoices`: %v\n", resp)
 }
 ```
@@ -129,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListInvoicesResponse**](ListInvoicesResponse.md)
+[**ListEomInvoicesResponse**](ListEomInvoicesResponse.md)
 
 ### Authorization
 

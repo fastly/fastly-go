@@ -18,7 +18,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go 1.0.0-beta.31
+	github.com/fastly/fastly-go 1.0.0-beta.32
 )
 ```
 
@@ -103,7 +103,10 @@ Class | Method | Description
 *BillingAddressAPI* | [**GetBillingAddr**](docs/BillingAddressAPI.md#getbillingaddr) | Get a billing address
 *BillingAddressAPI* | [**UpdateBillingAddr**](docs/BillingAddressAPI.md#updatebillingaddr) | Update a billing address
 *BillingInvoicesAPI* | [**GetInvoiceByInvoiceID**](docs/BillingInvoicesAPI.md#getinvoicebyinvoiceid) | Get invoice by ID.
+*BillingInvoicesAPI* | [**GetMonthToDateInvoice**](docs/BillingInvoicesAPI.md#getmonthtodateinvoice) | Get month-to-date invoice.
 *BillingInvoicesAPI* | [**ListInvoices**](docs/BillingInvoicesAPI.md#listinvoices) | List of invoices.
+*BillingUsageMetricsAPI* | [**GetServiceLevelUsage**](docs/BillingUsageMetricsAPI.md#getservicelevelusage) | Retrieve service-level usage metrics for a product.
+*BillingUsageMetricsAPI* | [**GetServiceLevelUsageTypes**](docs/BillingUsageMetricsAPI.md#getservicelevelusagetypes) | Retrieve product usage types for a customer.
 *CacheSettingsAPI* | [**CreateCacheSettings**](docs/CacheSettingsAPI.md#createcachesettings) | Create a cache settings object
 *CacheSettingsAPI* | [**DeleteCacheSettings**](docs/CacheSettingsAPI.md#deletecachesettings) | Delete a cache settings object
 *CacheSettingsAPI* | [**GetCacheSettings**](docs/CacheSettingsAPI.md#getcachesettings) | Get a cache settings object
@@ -415,6 +418,11 @@ Class | Method | Description
 *MutualAuthenticationAPI* | [**GetMutualAuthentication**](docs/MutualAuthenticationAPI.md#getmutualauthentication) | Get a Mutual Authentication
 *MutualAuthenticationAPI* | [**ListMutualAuthentications**](docs/MutualAuthenticationAPI.md#listmutualauthentications) | List Mutual Authentications
 *MutualAuthenticationAPI* | [**PatchMutualAuthentication**](docs/MutualAuthenticationAPI.md#patchmutualauthentication) | Update a Mutual Authentication
+*ObservabilityCustomDashboardsAPI* | [**CreateDashboard**](docs/ObservabilityCustomDashboardsAPI.md#createdashboard) | Create a new dashboard
+*ObservabilityCustomDashboardsAPI* | [**DeleteDashboard**](docs/ObservabilityCustomDashboardsAPI.md#deletedashboard) | Delete an existing dashboard
+*ObservabilityCustomDashboardsAPI* | [**GetDashboard**](docs/ObservabilityCustomDashboardsAPI.md#getdashboard) | Retrieve a dashboard by ID
+*ObservabilityCustomDashboardsAPI* | [**ListDashboards**](docs/ObservabilityCustomDashboardsAPI.md#listdashboards) | List all custom dashboards
+*ObservabilityCustomDashboardsAPI* | [**UpdateDashboard**](docs/ObservabilityCustomDashboardsAPI.md#updatedashboard) | Update an existing dashboard
 *OriginInspectorHistoricalAPI* | [**GetOriginInspectorHistorical**](docs/OriginInspectorHistoricalAPI.md#getorigininspectorhistorical) | Get historical origin data for a service
 *OriginInspectorRealtimeAPI* | [**GetOriginInspectorLast120Seconds**](docs/OriginInspectorRealtimeAPI.md#getorigininspectorlast120seconds) | Get real-time origin data for the last 120 seconds
 *OriginInspectorRealtimeAPI* | [**GetOriginInspectorLastMaxEntries**](docs/OriginInspectorRealtimeAPI.md#getorigininspectorlastmaxentries) | Get a limited number of real-time origin data entries
@@ -516,6 +524,7 @@ Class | Method | Description
 *TLSCertificatesAPI* | [**CreateTLSCert**](docs/TlsCertificatesAPI.md#createtlscert) | Create a TLS certificate
 *TLSCertificatesAPI* | [**DeleteTLSCert**](docs/TlsCertificatesAPI.md#deletetlscert) | Delete a TLS certificate
 *TLSCertificatesAPI* | [**GetTLSCert**](docs/TlsCertificatesAPI.md#gettlscert) | Get a TLS certificate
+*TLSCertificatesAPI* | [**GetTLSCertBlob**](docs/TlsCertificatesAPI.md#gettlscertblob) | Get a TLS certificate blob (Limited Availability)
 *TLSCertificatesAPI* | [**ListTLSCerts**](docs/TlsCertificatesAPI.md#listtlscerts) | List TLS certificates
 *TLSCertificatesAPI* | [**UpdateTLSCert**](docs/TlsCertificatesAPI.md#updatetlscert) | Update a TLS certificate
 *TLSConfigurationsAPI* | [**GetTLSConfig**](docs/TlsConfigurationsAPI.md#gettlsconfig) | Get a TLS configuration
@@ -629,6 +638,8 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/alerts/definitions/{definition_id}`](https://www.fastly.com/documentation/reference/api/observability/alerts/definitions) (DELETE, GET, PUT)
 - [`/alerts/definitions`](https://www.fastly.com/documentation/reference/api/observability/alerts/definitions) (GET, POST)
 - [`/alerts/history`](https://www.fastly.com/documentation/reference/api/observability/alerts/history) (GET)
+- [`/dns/configurations/{dns_configuration_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
+- [`/dns/configurations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
 - [`/notifications/integration-types`](https://developer.fastly.com/reference/api/observability/notification) (GET)
 - [`/notifications/integrations/{integration_id}/rotateSigningKey`](https://developer.fastly.com/reference/api/observability/notification) (POST)
 - [`/notifications/integrations/{integration_id}/signingKey`](https://developer.fastly.com/reference/api/observability/notification) (GET)
@@ -638,7 +649,9 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/resources/stores/kv/{store_id}/batch`](https://www.fastly.com/documentation/reference/api/services/resources/kv-store-item) (PUT)
 - [`/tls/activations/{tls_activation_id}`](https://www.fastly.com/documentation/reference/api/tls/mutual-tls/activations) (GET, PATCH)
 - [`/tls/activations`](https://www.fastly.com/documentation/reference/api/tls/mutual-tls/activations) (GET)
-- [`/tls/preview/domains/{tls_preview_domain_id}`](https://www.fastly.com/documentation/reference/api/) (GET, PATCH)
+- [`/tls/configurations/{tls_configuration_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
+- [`/tls/configurations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/tls/preview/domains/{domain_id}`](https://www.fastly.com/documentation/reference/api/) (GET, PATCH)
 - [`/tls/preview/domains`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
 - [`/v1/channel/{service_id}/ts/h/limit/{max_entries}`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
 - [`/v1/channel/{service_id}/ts/h`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)

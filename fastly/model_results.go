@@ -517,6 +517,8 @@ type Results struct {
 	AllStatus4xx *int32 `json:"all_status_4xx,omitempty"`
 	// Number of \"Server Error\" codes delivered for all sources.
 	AllStatus5xx *int32 `json:"all_status_5xx,omitempty"`
+	// Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`).
+	OriginOffload *float32 `json:"origin_offload,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
 	// Timestamp for the start of the time period being reported
 	StartTime *int32 `json:"start_time,omitempty"`
@@ -8494,6 +8496,38 @@ func (o *Results) SetAllStatus5xx(v int32) {
 	o.AllStatus5xx = &v
 }
 
+// GetOriginOffload returns the OriginOffload field value if set, zero value otherwise.
+func (o *Results) GetOriginOffload() float32 {
+	if o == nil || o.OriginOffload == nil {
+		var ret float32
+		return ret
+	}
+	return *o.OriginOffload
+}
+
+// GetOriginOffloadOk returns a tuple with the OriginOffload field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetOriginOffloadOk() (*float32, bool) {
+	if o == nil || o.OriginOffload == nil {
+		return nil, false
+	}
+	return o.OriginOffload, true
+}
+
+// HasOriginOffload returns a boolean if a field has been set.
+func (o *Results) HasOriginOffload() bool {
+	if o != nil && o.OriginOffload != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOriginOffload gets a reference to the given float32 and assigns it to the OriginOffload field.
+func (o *Results) SetOriginOffload(v float32) {
+	o.OriginOffload = &v
+}
+
 // GetServiceID returns the ServiceID field value if set, zero value otherwise.
 func (o *Results) GetServiceID() string {
 	if o == nil || o.ServiceID == nil {
@@ -9306,6 +9340,9 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.AllStatus5xx != nil {
 		toSerialize["all_status_5xx"] = o.AllStatus5xx
 	}
+	if o.OriginOffload != nil {
+		toSerialize["origin_offload"] = o.OriginOffload
+	}
 	if o.ServiceID != nil {
 		toSerialize["service_id"] = o.ServiceID
 	}
@@ -9580,6 +9617,7 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "all_status_3xx")
 		delete(additionalProperties, "all_status_4xx")
 		delete(additionalProperties, "all_status_5xx")
+		delete(additionalProperties, "origin_offload")
 		delete(additionalProperties, "service_id")
 		delete(additionalProperties, "start_time")
 		o.AdditionalProperties = additionalProperties

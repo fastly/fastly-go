@@ -1,80 +1,90 @@
-# ListInvoicesResponse
+# ListDashboardsResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**[]Invoice**](Invoice.md) |  | [optional] 
-**Meta** | Pointer to [**Metadata**](Metadata.md) |  | [optional] 
+**Data** | Pointer to [**[]Dashboard**](Dashboard.md) |  | [optional] 
+**Meta** | Pointer to **any** | Meta for the pagination. | [optional] 
 
 ## Methods
 
-### NewListInvoicesResponse
+### NewListDashboardsResponse
 
-`func NewListInvoicesResponse() *ListInvoicesResponse`
+`func NewListDashboardsResponse() *ListDashboardsResponse`
 
-NewListInvoicesResponse instantiates a new ListInvoicesResponse object
+NewListDashboardsResponse instantiates a new ListDashboardsResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewListInvoicesResponseWithDefaults
+### NewListDashboardsResponseWithDefaults
 
-`func NewListInvoicesResponseWithDefaults() *ListInvoicesResponse`
+`func NewListDashboardsResponseWithDefaults() *ListDashboardsResponse`
 
-NewListInvoicesResponseWithDefaults instantiates a new ListInvoicesResponse object
+NewListDashboardsResponseWithDefaults instantiates a new ListDashboardsResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ListInvoicesResponse) GetData() []Invoice`
+`func (o *ListDashboardsResponse) GetData() []Dashboard`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ListInvoicesResponse) GetDataOk() (*[]Invoice, bool)`
+`func (o *ListDashboardsResponse) GetDataOk() (*[]Dashboard, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ListInvoicesResponse) SetData(v []Invoice)`
+`func (o *ListDashboardsResponse) SetData(v []Dashboard)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *ListInvoicesResponse) HasData() bool`
+`func (o *ListDashboardsResponse) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListInvoicesResponse) GetMeta() Metadata`
+`func (o *ListDashboardsResponse) GetMeta() any`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListInvoicesResponse) GetMetaOk() (*Metadata, bool)`
+`func (o *ListDashboardsResponse) GetMetaOk() (*any, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListInvoicesResponse) SetMeta(v Metadata)`
+`func (o *ListDashboardsResponse) SetMeta(v any)`
 
 SetMeta sets Meta field to given value.
 
 ### HasMeta
 
-`func (o *ListInvoicesResponse) HasMeta() bool`
+`func (o *ListDashboardsResponse) HasMeta() bool`
 
 HasMeta returns a boolean if a field has been set.
 
+### SetMetaNil
+
+`func (o *ListDashboardsResponse) SetMetaNil(b bool)`
+
+ SetMetaNil sets the value for Meta to be an explicit nil
+
+### UnsetMeta
+`func (o *ListDashboardsResponse) UnsetMeta()`
+
+UnsetMeta ensures that no value is present for Meta, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
