@@ -20,7 +20,8 @@ import (
 // LineItemData struct for LineItemData
 type LineItemData struct {
 	Amount *float32 `json:"amount,omitempty"`
-	AriaInvoiceID *LineItemDataReadOnlyInvoiceID `json:"aria_invoice_id,omitempty"`
+	// An alphanumeric string identifying the invoice.
+	AriaInvoiceID *string `json:"aria_invoice_id,omitempty"`
 	ClientServiceID *string `json:"client_service_id,omitempty"`
 	CreditCouponCode NullableString `json:"credit_coupon_code,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -91,9 +92,9 @@ func (o *LineItemData) SetAmount(v float32) {
 }
 
 // GetAriaInvoiceID returns the AriaInvoiceID field value if set, zero value otherwise.
-func (o *LineItemData) GetAriaInvoiceID() LineItemDataReadOnlyInvoiceID {
+func (o *LineItemData) GetAriaInvoiceID() string {
 	if o == nil || o.AriaInvoiceID == nil {
-		var ret LineItemDataReadOnlyInvoiceID
+		var ret string
 		return ret
 	}
 	return *o.AriaInvoiceID
@@ -101,7 +102,7 @@ func (o *LineItemData) GetAriaInvoiceID() LineItemDataReadOnlyInvoiceID {
 
 // GetAriaInvoiceIDOk returns a tuple with the AriaInvoiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LineItemData) GetAriaInvoiceIDOk() (*LineItemDataReadOnlyInvoiceID, bool) {
+func (o *LineItemData) GetAriaInvoiceIDOk() (*string, bool) {
 	if o == nil || o.AriaInvoiceID == nil {
 		return nil, false
 	}
@@ -117,8 +118,8 @@ func (o *LineItemData) HasAriaInvoiceID() bool {
 	return false
 }
 
-// SetAriaInvoiceID gets a reference to the given LineItemDataReadOnlyInvoiceID and assigns it to the AriaInvoiceID field.
-func (o *LineItemData) SetAriaInvoiceID(v LineItemDataReadOnlyInvoiceID) {
+// SetAriaInvoiceID gets a reference to the given string and assigns it to the AriaInvoiceID field.
+func (o *LineItemData) SetAriaInvoiceID(v string) {
 	o.AriaInvoiceID = &v
 }
 

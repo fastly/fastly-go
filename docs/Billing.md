@@ -6,12 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **EndTime** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **StartTime** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**InvoiceID** | Pointer to **string** |  | [optional] [readonly] 
 **CustomerID** | Pointer to **string** |  | [optional] [readonly] 
 **VendorState** | Pointer to **string** | The current state of our third-party billing vendor. One of `up` or `down`. | [optional] [readonly] 
 **Status** | Pointer to [**BillingStatus**](BillingStatus.md) |  | [optional] 
 **Total** | Pointer to [**BillingTotal**](BillingTotal.md) |  | [optional] 
-**Regions** | Pointer to **map[string]map[string]map[string]any** | Breakdown of regional data for products that are region based. | [optional] 
+**Regions** | Pointer to [**map[string]BillingRegions**](BillingRegions.md) | Breakdown of regional data for products that are region based. | [optional] 
 
 ## Methods
 
@@ -102,31 +101,6 @@ HasStartTime returns a boolean if a field has been set.
 `func (o *Billing) UnsetStartTime()`
 
 UnsetStartTime ensures that no value is present for StartTime, not even an explicit nil
-### GetInvoiceID
-
-`func (o *Billing) GetInvoiceID() string`
-
-GetInvoiceID returns the InvoiceID field if non-nil, zero value otherwise.
-
-### GetInvoiceIDOk
-
-`func (o *Billing) GetInvoiceIDOk() (*string, bool)`
-
-GetInvoiceIDOk returns a tuple with the InvoiceID field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInvoiceID
-
-`func (o *Billing) SetInvoiceID(v string)`
-
-SetInvoiceID sets InvoiceID field to given value.
-
-### HasInvoiceID
-
-`func (o *Billing) HasInvoiceID() bool`
-
-HasInvoiceID returns a boolean if a field has been set.
-
 ### GetCustomerID
 
 `func (o *Billing) GetCustomerID() string`
@@ -229,20 +203,20 @@ HasTotal returns a boolean if a field has been set.
 
 ### GetRegions
 
-`func (o *Billing) GetRegions() map[string]map[string]map[string]any`
+`func (o *Billing) GetRegions() map[string]BillingRegions`
 
 GetRegions returns the Regions field if non-nil, zero value otherwise.
 
 ### GetRegionsOk
 
-`func (o *Billing) GetRegionsOk() (*map[string]map[string]map[string]any, bool)`
+`func (o *Billing) GetRegionsOk() (*map[string]BillingRegions, bool)`
 
 GetRegionsOk returns a tuple with the Regions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRegions
 
-`func (o *Billing) SetRegions(v map[string]map[string]map[string]any)`
+`func (o *Billing) SetRegions(v map[string]BillingRegions)`
 
 SetRegions sets Regions field to given value.
 

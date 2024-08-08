@@ -54,10 +54,10 @@ type BillingAPI interface {
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param customerID Alphanumeric string identifying the customer.
-	 @param invoiceID Alphanumeric string identifying the invoice.
+	 @param invoiceID
 	 @return APIGetInvoiceByIDRequest
 	*/
-	GetInvoiceByID(ctx context.Context, customerID string, invoiceID string) APIGetInvoiceByIDRequest
+	GetInvoiceByID(ctx context.Context, customerID string, invoiceID int32) APIGetInvoiceByIDRequest
 
 	// GetInvoiceByIDExecute executes the request
 	//  @return BillingResponse
@@ -225,7 +225,7 @@ type APIGetInvoiceByIDRequest struct {
 	ctx context.Context
 	APIService BillingAPI
 	customerID string
-	invoiceID string
+	invoiceID int32
 }
 
 
@@ -241,10 +241,10 @@ Get the invoice for the given invoice_id.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerID Alphanumeric string identifying the customer.
- @param invoiceID Alphanumeric string identifying the invoice.
+ @param invoiceID
  @return APIGetInvoiceByIDRequest
 */
-func (a *BillingAPIService) GetInvoiceByID(ctx context.Context, customerID string, invoiceID string) APIGetInvoiceByIDRequest {
+func (a *BillingAPIService) GetInvoiceByID(ctx context.Context, customerID string, invoiceID int32) APIGetInvoiceByIDRequest {
 	return APIGetInvoiceByIDRequest{
 		APIService: a,
 		ctx: ctx,

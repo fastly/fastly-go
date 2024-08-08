@@ -24,14 +24,14 @@ type BillingResponse struct {
 	EndTime NullableTime `json:"end_time,omitempty"`
 	// Date and time in ISO 8601 format.
 	StartTime NullableTime `json:"start_time,omitempty"`
-	InvoiceID *string `json:"invoice_id,omitempty"`
 	CustomerID *string `json:"customer_id,omitempty"`
 	// The current state of our third-party billing vendor. One of `up` or `down`.
 	VendorState *string `json:"vendor_state,omitempty"`
 	Status *BillingStatus `json:"status,omitempty"`
 	Total *BillingTotal `json:"total,omitempty"`
 	// Breakdown of regional data for products that are region based.
-	Regions *map[string]map[string]map[string]any `json:"regions,omitempty"`
+	Regions *map[string]BillingRegions `json:"regions,omitempty"`
+	InvoiceID *int32 `json:"invoice_id,omitempty"`
 	LineItems []BillingResponseLineItem `json:"line_items,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -137,38 +137,6 @@ func (o *BillingResponse) SetStartTimeNil() {
 // UnsetStartTime ensures that no value is present for StartTime, not even an explicit nil
 func (o *BillingResponse) UnsetStartTime() {
 	o.StartTime.Unset()
-}
-
-// GetInvoiceID returns the InvoiceID field value if set, zero value otherwise.
-func (o *BillingResponse) GetInvoiceID() string {
-	if o == nil || o.InvoiceID == nil {
-		var ret string
-		return ret
-	}
-	return *o.InvoiceID
-}
-
-// GetInvoiceIDOk returns a tuple with the InvoiceID field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BillingResponse) GetInvoiceIDOk() (*string, bool) {
-	if o == nil || o.InvoiceID == nil {
-		return nil, false
-	}
-	return o.InvoiceID, true
-}
-
-// HasInvoiceID returns a boolean if a field has been set.
-func (o *BillingResponse) HasInvoiceID() bool {
-	if o != nil && o.InvoiceID != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetInvoiceID gets a reference to the given string and assigns it to the InvoiceID field.
-func (o *BillingResponse) SetInvoiceID(v string) {
-	o.InvoiceID = &v
 }
 
 // GetCustomerID returns the CustomerID field value if set, zero value otherwise.
@@ -300,9 +268,9 @@ func (o *BillingResponse) SetTotal(v BillingTotal) {
 }
 
 // GetRegions returns the Regions field value if set, zero value otherwise.
-func (o *BillingResponse) GetRegions() map[string]map[string]map[string]any {
+func (o *BillingResponse) GetRegions() map[string]BillingRegions {
 	if o == nil || o.Regions == nil {
-		var ret map[string]map[string]map[string]any
+		var ret map[string]BillingRegions
 		return ret
 	}
 	return *o.Regions
@@ -310,7 +278,7 @@ func (o *BillingResponse) GetRegions() map[string]map[string]map[string]any {
 
 // GetRegionsOk returns a tuple with the Regions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingResponse) GetRegionsOk() (*map[string]map[string]map[string]any, bool) {
+func (o *BillingResponse) GetRegionsOk() (*map[string]BillingRegions, bool) {
 	if o == nil || o.Regions == nil {
 		return nil, false
 	}
@@ -326,9 +294,41 @@ func (o *BillingResponse) HasRegions() bool {
 	return false
 }
 
-// SetRegions gets a reference to the given map[string]map[string]map[string]any and assigns it to the Regions field.
-func (o *BillingResponse) SetRegions(v map[string]map[string]map[string]any) {
+// SetRegions gets a reference to the given map[string]BillingRegions and assigns it to the Regions field.
+func (o *BillingResponse) SetRegions(v map[string]BillingRegions) {
 	o.Regions = &v
+}
+
+// GetInvoiceID returns the InvoiceID field value if set, zero value otherwise.
+func (o *BillingResponse) GetInvoiceID() int32 {
+	if o == nil || o.InvoiceID == nil {
+		var ret int32
+		return ret
+	}
+	return *o.InvoiceID
+}
+
+// GetInvoiceIDOk returns a tuple with the InvoiceID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BillingResponse) GetInvoiceIDOk() (*int32, bool) {
+	if o == nil || o.InvoiceID == nil {
+		return nil, false
+	}
+	return o.InvoiceID, true
+}
+
+// HasInvoiceID returns a boolean if a field has been set.
+func (o *BillingResponse) HasInvoiceID() bool {
+	if o != nil && o.InvoiceID != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInvoiceID gets a reference to the given int32 and assigns it to the InvoiceID field.
+func (o *BillingResponse) SetInvoiceID(v int32) {
+	o.InvoiceID = &v
 }
 
 // GetLineItems returns the LineItems field value if set, zero value otherwise.
@@ -373,9 +373,6 @@ func (o BillingResponse) MarshalJSON() ([]byte, error) {
 	if o.StartTime.IsSet() {
 		toSerialize["start_time"] = o.StartTime.Get()
 	}
-	if o.InvoiceID != nil {
-		toSerialize["invoice_id"] = o.InvoiceID
-	}
 	if o.CustomerID != nil {
 		toSerialize["customer_id"] = o.CustomerID
 	}
@@ -390,6 +387,9 @@ func (o BillingResponse) MarshalJSON() ([]byte, error) {
 	}
 	if o.Regions != nil {
 		toSerialize["regions"] = o.Regions
+	}
+	if o.InvoiceID != nil {
+		toSerialize["invoice_id"] = o.InvoiceID
 	}
 	if o.LineItems != nil {
 		toSerialize["line_items"] = o.LineItems
@@ -416,12 +416,12 @@ func (o *BillingResponse) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "end_time")
 		delete(additionalProperties, "start_time")
-		delete(additionalProperties, "invoice_id")
 		delete(additionalProperties, "customer_id")
 		delete(additionalProperties, "vendor_state")
 		delete(additionalProperties, "status")
 		delete(additionalProperties, "total")
 		delete(additionalProperties, "regions")
+		delete(additionalProperties, "invoice_id")
 		delete(additionalProperties, "line_items")
 		o.AdditionalProperties = additionalProperties
 	}

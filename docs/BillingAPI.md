@@ -100,7 +100,7 @@ import (
 
 func main() {
     customerID := "customerId_example" // string | Alphanumeric string identifying the customer.
-    invoiceID := "invoiceId_example" // string | Alphanumeric string identifying the invoice.
+    invoiceID := int32(4183280) // int32 | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **customerID** | **string** | Alphanumeric string identifying the customer. | 
-**invoiceID** | **string** | Alphanumeric string identifying the invoice. | 
+**invoiceID** | **int32** |  | 
 
 ### Other Parameters
 

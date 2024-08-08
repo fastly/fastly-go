@@ -27,7 +27,8 @@ type BillingResponseLineItem struct {
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
 	Amount *float32 `json:"amount,omitempty"`
-	AriaInvoiceID *LineItemDataReadOnlyInvoiceID `json:"aria_invoice_id,omitempty"`
+	// An alphanumeric string identifying the invoice.
+	AriaInvoiceID *string `json:"aria_invoice_id,omitempty"`
 	ClientServiceID *string `json:"client_service_id,omitempty"`
 	CreditCouponCode NullableString `json:"credit_coupon_code,omitempty"`
 	Description *string `json:"description,omitempty"`
@@ -224,9 +225,9 @@ func (o *BillingResponseLineItem) SetAmount(v float32) {
 }
 
 // GetAriaInvoiceID returns the AriaInvoiceID field value if set, zero value otherwise.
-func (o *BillingResponseLineItem) GetAriaInvoiceID() LineItemDataReadOnlyInvoiceID {
+func (o *BillingResponseLineItem) GetAriaInvoiceID() string {
 	if o == nil || o.AriaInvoiceID == nil {
-		var ret LineItemDataReadOnlyInvoiceID
+		var ret string
 		return ret
 	}
 	return *o.AriaInvoiceID
@@ -234,7 +235,7 @@ func (o *BillingResponseLineItem) GetAriaInvoiceID() LineItemDataReadOnlyInvoice
 
 // GetAriaInvoiceIDOk returns a tuple with the AriaInvoiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingResponseLineItem) GetAriaInvoiceIDOk() (*LineItemDataReadOnlyInvoiceID, bool) {
+func (o *BillingResponseLineItem) GetAriaInvoiceIDOk() (*string, bool) {
 	if o == nil || o.AriaInvoiceID == nil {
 		return nil, false
 	}
@@ -250,8 +251,8 @@ func (o *BillingResponseLineItem) HasAriaInvoiceID() bool {
 	return false
 }
 
-// SetAriaInvoiceID gets a reference to the given LineItemDataReadOnlyInvoiceID and assigns it to the AriaInvoiceID field.
-func (o *BillingResponseLineItem) SetAriaInvoiceID(v LineItemDataReadOnlyInvoiceID) {
+// SetAriaInvoiceID gets a reference to the given string and assigns it to the AriaInvoiceID field.
+func (o *BillingResponseLineItem) SetAriaInvoiceID(v string) {
 	o.AriaInvoiceID = &v
 }
 

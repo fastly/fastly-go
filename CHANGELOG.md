@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.0.0-beta.33](https://github.com/fastly/fastly-go/releases/tag/release/v1.0.0-beta.33) (2024-08-08)
+
+**Bug fixes:**
+
+- fix(billing): Adjust type of regional data to help the generator
+- fix(billing): Correct type of invoice_id field
+
 ## [v1.0.0-beta.32](https://github.com/fastly/fastly-go/releases/tag/release/v1.0.0-beta.32) (2024-08-04)
 
 **Enhancements:**

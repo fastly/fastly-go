@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **Amount** | Pointer to **float32** |  | [optional] 
-**AriaInvoiceID** | Pointer to [**LineItemDataReadOnlyInvoiceID**](LineItemDataReadOnlyInvoiceID.md) |  | [optional] 
+**AriaInvoiceID** | Pointer to **string** | An alphanumeric string identifying the invoice. | [optional] [readonly] 
 **ClientServiceID** | Pointer to **string** |  | [optional] 
 **CreditCouponCode** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -176,20 +176,20 @@ HasAmount returns a boolean if a field has been set.
 
 ### GetAriaInvoiceID
 
-`func (o *BillingResponseLineItem) GetAriaInvoiceID() LineItemDataReadOnlyInvoiceID`
+`func (o *BillingResponseLineItem) GetAriaInvoiceID() string`
 
 GetAriaInvoiceID returns the AriaInvoiceID field if non-nil, zero value otherwise.
 
 ### GetAriaInvoiceIDOk
 
-`func (o *BillingResponseLineItem) GetAriaInvoiceIDOk() (*LineItemDataReadOnlyInvoiceID, bool)`
+`func (o *BillingResponseLineItem) GetAriaInvoiceIDOk() (*string, bool)`
 
 GetAriaInvoiceIDOk returns a tuple with the AriaInvoiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAriaInvoiceID
 
-`func (o *BillingResponseLineItem) SetAriaInvoiceID(v LineItemDataReadOnlyInvoiceID)`
+`func (o *BillingResponseLineItem) SetAriaInvoiceID(v string)`
 
 SetAriaInvoiceID sets AriaInvoiceID field to given value.
 

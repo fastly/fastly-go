@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CustomerID** | Pointer to **string** | Customer ID associated with the invoice. | [optional] 
-**InvoiceID** | Pointer to **string** | Alphanumeric string identifying the invoice. | [optional] 
+**InvoiceID** | Pointer to **string** | Numeric string identifying the invoice. | [optional] 
 **InvoicePostedOn** | Pointer to **time.Time** | Date and time invoice was posted on, in ISO 8601 format. | [optional] 
 **BillingStartDate** | Pointer to **time.Time** | Date and time (in ISO 8601 format) for initiation point of a billing cycle, signifying the start of charges for a service or subscription. | [optional] 
 **BillingEndDate** | Pointer to **time.Time** | Date and time (in ISO 8601 format) for termination point of a billing cycle, signifying the end of charges for a service or subscription. | [optional] 

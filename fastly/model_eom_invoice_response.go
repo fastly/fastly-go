@@ -22,7 +22,7 @@ import (
 type EomInvoiceResponse struct {
 	// Customer ID associated with the invoice.
 	CustomerID *string `json:"customer_id,omitempty"`
-	// Alphanumeric string identifying the invoice.
+	// Numeric string identifying the invoice.
 	InvoiceID *string `json:"invoice_id,omitempty"`
 	// Date and time invoice was posted on, in ISO 8601 format.
 	InvoicePostedOn *time.Time `json:"invoice_posted_on,omitempty"`

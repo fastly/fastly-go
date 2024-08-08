@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Amount** | Pointer to **float32** |  | [optional] 
-**AriaInvoiceID** | Pointer to [**LineItemDataReadOnlyInvoiceID**](LineItemDataReadOnlyInvoiceID.md) |  | [optional] 
+**AriaInvoiceID** | Pointer to **string** | An alphanumeric string identifying the invoice. | [optional] [readonly] 
 **ClientServiceID** | Pointer to **string** |  | [optional] 
 **CreditCouponCode** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -68,20 +68,20 @@ HasAmount returns a boolean if a field has been set.
 
 ### GetAriaInvoiceID
 
-`func (o *LineItemData) GetAriaInvoiceID() LineItemDataReadOnlyInvoiceID`
+`func (o *LineItemData) GetAriaInvoiceID() string`
 
 GetAriaInvoiceID returns the AriaInvoiceID field if non-nil, zero value otherwise.
 
 ### GetAriaInvoiceIDOk
 
-`func (o *LineItemData) GetAriaInvoiceIDOk() (*LineItemDataReadOnlyInvoiceID, bool)`
+`func (o *LineItemData) GetAriaInvoiceIDOk() (*string, bool)`
 
 GetAriaInvoiceIDOk returns a tuple with the AriaInvoiceID field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAriaInvoiceID
 
-`func (o *LineItemData) SetAriaInvoiceID(v LineItemDataReadOnlyInvoiceID)`
+`func (o *LineItemData) SetAriaInvoiceID(v string)`
 
 SetAriaInvoiceID sets AriaInvoiceID field to given value.
 
