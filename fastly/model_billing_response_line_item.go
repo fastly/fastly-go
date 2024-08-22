@@ -36,7 +36,7 @@ type BillingResponseLineItem struct {
 	LineNumber *int32 `json:"line_number,omitempty"`
 	PlanName *string `json:"plan_name,omitempty"`
 	PlanNo *float32 `json:"plan_no,omitempty"`
-	RatePerUnit *float32 `json:"rate_per_unit,omitempty"`
+	RatePerUnit NullableFloat32 `json:"rate_per_unit,omitempty"`
 	RateScheduleNo NullableFloat32 `json:"rate_schedule_no,omitempty"`
 	RateScheduleTierNo NullableFloat32 `json:"rate_schedule_tier_no,omitempty"`
 	ServiceName *string `json:"service_name,omitempty"`
@@ -490,36 +490,46 @@ func (o *BillingResponseLineItem) SetPlanNo(v float32) {
 	o.PlanNo = &v
 }
 
-// GetRatePerUnit returns the RatePerUnit field value if set, zero value otherwise.
+// GetRatePerUnit returns the RatePerUnit field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BillingResponseLineItem) GetRatePerUnit() float32 {
-	if o == nil || o.RatePerUnit == nil {
+	if o == nil || o.RatePerUnit.Get() == nil {
 		var ret float32
 		return ret
 	}
-	return *o.RatePerUnit
+	return *o.RatePerUnit.Get()
 }
 
 // GetRatePerUnitOk returns a tuple with the RatePerUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetRatePerUnitOk() (*float32, bool) {
-	if o == nil || o.RatePerUnit == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.RatePerUnit, true
+	return o.RatePerUnit.Get(), o.RatePerUnit.IsSet()
 }
 
 // HasRatePerUnit returns a boolean if a field has been set.
 func (o *BillingResponseLineItem) HasRatePerUnit() bool {
-	if o != nil && o.RatePerUnit != nil {
+	if o != nil && o.RatePerUnit.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetRatePerUnit gets a reference to the given float32 and assigns it to the RatePerUnit field.
+// SetRatePerUnit gets a reference to the given NullableFloat32 and assigns it to the RatePerUnit field.
 func (o *BillingResponseLineItem) SetRatePerUnit(v float32) {
-	o.RatePerUnit = &v
+	o.RatePerUnit.Set(&v)
+}
+// SetRatePerUnitNil sets the value for RatePerUnit to be an explicit nil
+func (o *BillingResponseLineItem) SetRatePerUnitNil() {
+	o.RatePerUnit.Set(nil)
+}
+
+// UnsetRatePerUnit ensures that no value is present for RatePerUnit, not even an explicit nil
+func (o *BillingResponseLineItem) UnsetRatePerUnit() {
+	o.RatePerUnit.Unset()
 }
 
 // GetRateScheduleNo returns the RateScheduleNo field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -826,8 +836,8 @@ func (o BillingResponseLineItem) MarshalJSON() ([]byte, error) {
 	if o.PlanNo != nil {
 		toSerialize["plan_no"] = o.PlanNo
 	}
-	if o.RatePerUnit != nil {
-		toSerialize["rate_per_unit"] = o.RatePerUnit
+	if o.RatePerUnit.IsSet() {
+		toSerialize["rate_per_unit"] = o.RatePerUnit.Get()
 	}
 	if o.RateScheduleNo.IsSet() {
 		toSerialize["rate_schedule_no"] = o.RateScheduleNo.Get()

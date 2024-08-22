@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **LineNumber** | Pointer to **int32** |  | [optional] 
 **PlanName** | Pointer to **string** |  | [optional] 
 **PlanNo** | Pointer to **float32** |  | [optional] 
-**RatePerUnit** | Pointer to **float32** |  | [optional] 
+**RatePerUnit** | Pointer to **NullableFloat32** |  | [optional] 
 **RateScheduleNo** | Pointer to **NullableFloat32** |  | [optional] 
 **RateScheduleTierNo** | Pointer to **NullableFloat32** |  | [optional] 
 **ServiceName** | Pointer to **string** |  | [optional] 
@@ -301,6 +301,16 @@ SetRatePerUnit sets RatePerUnit field to given value.
 
 HasRatePerUnit returns a boolean if a field has been set.
 
+### SetRatePerUnitNil
+
+`func (o *LineItemData) SetRatePerUnitNil(b bool)`
+
+ SetRatePerUnitNil sets the value for RatePerUnit to be an explicit nil
+
+### UnsetRatePerUnit
+`func (o *LineItemData) UnsetRatePerUnit()`
+
+UnsetRatePerUnit ensures that no value is present for RatePerUnit, not even an explicit nil
 ### GetRateScheduleNo
 
 `func (o *LineItemData) GetRateScheduleNo() float32`

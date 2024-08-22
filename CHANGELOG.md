@@ -1,5 +1,12 @@
 # Changelog
 
+## [v1.0.0-beta.34](https://github.com/fastly/fastly-go/releases/tag/release/v1.0.0-beta.34) (2024-08-21)
+
+**Bug fixes:**
+
+- bugfix(py): Add dependencies to pyproject.toml.
+- fix(billing): make rate-per-unit nullable
+
 ## [v1.0.0-beta.33](https://github.com/fastly/fastly-go/releases/tag/release/v1.0.0-beta.33) (2024-08-08)
 
 **Bug fixes:**
