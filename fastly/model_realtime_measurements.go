@@ -519,6 +519,8 @@ type RealtimeMeasurements struct {
 	AllStatus5xx *int32 `json:"all_status_5xx,omitempty"`
 	// Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`).
 	OriginOffload *float32 `json:"origin_offload,omitempty"`
+	// Number of requests where Fastly responded with 400 due to the request being a GET or HEAD request containing a body.
+	RequestDeniedGetHeadBody *int32 `json:"request_denied_get_head_body,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -8515,6 +8517,38 @@ func (o *RealtimeMeasurements) SetOriginOffload(v float32) {
 	o.OriginOffload = &v
 }
 
+// GetRequestDeniedGetHeadBody returns the RequestDeniedGetHeadBody field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetRequestDeniedGetHeadBody() int32 {
+	if o == nil || o.RequestDeniedGetHeadBody == nil {
+		var ret int32
+		return ret
+	}
+	return *o.RequestDeniedGetHeadBody
+}
+
+// GetRequestDeniedGetHeadBodyOk returns a tuple with the RequestDeniedGetHeadBody field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetRequestDeniedGetHeadBodyOk() (*int32, bool) {
+	if o == nil || o.RequestDeniedGetHeadBody == nil {
+		return nil, false
+	}
+	return o.RequestDeniedGetHeadBody, true
+}
+
+// HasRequestDeniedGetHeadBody returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasRequestDeniedGetHeadBody() bool {
+	if o != nil && o.RequestDeniedGetHeadBody != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestDeniedGetHeadBody gets a reference to the given int32 and assigns it to the RequestDeniedGetHeadBody field.
+func (o *RealtimeMeasurements) SetRequestDeniedGetHeadBody(v int32) {
+	o.RequestDeniedGetHeadBody = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o RealtimeMeasurements) MarshalJSON() ([]byte, error) {
@@ -9266,6 +9300,9 @@ func (o RealtimeMeasurements) MarshalJSON() ([]byte, error) {
 	if o.OriginOffload != nil {
 		toSerialize["origin_offload"] = o.OriginOffload
 	}
+	if o.RequestDeniedGetHeadBody != nil {
+		toSerialize["request_denied_get_head_body"] = o.RequestDeniedGetHeadBody
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -9535,6 +9572,7 @@ func (o *RealtimeMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "all_status_4xx")
 		delete(additionalProperties, "all_status_5xx")
 		delete(additionalProperties, "origin_offload")
+		delete(additionalProperties, "request_denied_get_head_body")
 		o.AdditionalProperties = additionalProperties
 	}
 

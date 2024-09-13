@@ -839,10 +839,10 @@ type APIListTLSSubsRequest struct {
 	filterTLSDomainsID *string
 	filterHasActiveOrder *bool
 	filterCertificateAuthority *string
+	sort *string
 	include *string
 	pageNumber *int32
 	pageSize *int32
-	sort *string
 }
 
 // FilterState Limit the returned subscriptions by state. Valid values are &#x60;pending&#x60;, &#x60;processing&#x60;, &#x60;issued&#x60;, &#x60;renewing&#x60;, and &#x60;failed&#x60;. Accepts parameters: &#x60;not&#x60; (e.g., &#x60;filter[state][not]&#x3D;renewing&#x60;). 
@@ -865,6 +865,11 @@ func (r *APIListTLSSubsRequest) FilterCertificateAuthority(filterCertificateAuth
 	r.filterCertificateAuthority = &filterCertificateAuthority
 	return r
 }
+// Sort The order in which to list the results.
+func (r *APIListTLSSubsRequest) Sort(sort string) *APIListTLSSubsRequest {
+	r.sort = &sort
+	return r
+}
 // Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, &#x60;tls_authorizations.self_managed_http_challenge&#x60;, and &#x60;tls_certificates&#x60;. 
 func (r *APIListTLSSubsRequest) Include(include string) *APIListTLSSubsRequest {
 	r.include = &include
@@ -878,11 +883,6 @@ func (r *APIListTLSSubsRequest) PageNumber(pageNumber int32) *APIListTLSSubsRequ
 // PageSize Number of records per page.
 func (r *APIListTLSSubsRequest) PageSize(pageSize int32) *APIListTLSSubsRequest {
 	r.pageSize = &pageSize
-	return r
-}
-// Sort The order in which to list the results by creation date.
-func (r *APIListTLSSubsRequest) Sort(sort string) *APIListTLSSubsRequest {
-	r.sort = &sort
 	return r
 }
 
@@ -939,6 +939,9 @@ func (a *TLSSubscriptionsAPIService) ListTLSSubsExecute(r APIListTLSSubsRequest)
 	if r.filterCertificateAuthority != nil {
 		localVarQueryParams.Add("filter[certificate_authority]", parameterToString(*r.filterCertificateAuthority, ""))
 	}
+	if r.sort != nil {
+		localVarQueryParams.Add("sort", parameterToString(*r.sort, ""))
+	}
 	if r.include != nil {
 		localVarQueryParams.Add("include", parameterToString(*r.include, ""))
 	}
@@ -947,9 +950,6 @@ func (a *TLSSubscriptionsAPIService) ListTLSSubsExecute(r APIListTLSSubsRequest)
 	}
 	if r.pageSize != nil {
 		localVarQueryParams.Add("page[size]", parameterToString(*r.pageSize, ""))
-	}
-	if r.sort != nil {
-		localVarQueryParams.Add("sort", parameterToString(*r.sort, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

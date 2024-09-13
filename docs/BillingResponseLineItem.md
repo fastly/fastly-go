@@ -7,21 +7,21 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**Amount** | Pointer to **float32** |  | [optional] 
-**AriaInvoiceID** | Pointer to **string** | An alphanumeric string identifying the invoice. | [optional] [readonly] 
-**ClientServiceID** | Pointer to **string** |  | [optional] 
+**Amount** | Pointer to **NullableFloat32** |  | [optional] 
+**AriaInvoiceID** | Pointer to **NullableString** | An alphanumeric string identifying the invoice. | [optional] [readonly] 
+**ClientServiceID** | Pointer to **NullableString** |  | [optional] 
 **CreditCouponCode** | Pointer to **NullableString** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **NullableString** |  | [optional] 
 **ID** | Pointer to **string** |  | [optional] 
-**LineNumber** | Pointer to **int32** |  | [optional] 
-**PlanName** | Pointer to **string** |  | [optional] 
-**PlanNo** | Pointer to **float32** |  | [optional] 
+**LineNumber** | Pointer to **NullableInt32** |  | [optional] 
+**PlanName** | Pointer to **NullableString** |  | [optional] 
+**PlanNo** | Pointer to **NullableFloat32** |  | [optional] 
 **RatePerUnit** | Pointer to **NullableFloat32** |  | [optional] 
 **RateScheduleNo** | Pointer to **NullableFloat32** |  | [optional] 
 **RateScheduleTierNo** | Pointer to **NullableFloat32** |  | [optional] 
-**ServiceName** | Pointer to **string** |  | [optional] 
-**ServiceNo** | Pointer to **float32** |  | [optional] 
-**Units** | Pointer to **float32** |  | [optional] 
+**ServiceName** | Pointer to **NullableString** |  | [optional] 
+**ServiceNo** | Pointer to **NullableFloat32** |  | [optional] 
+**Units** | Pointer to **NullableFloat32** |  | [optional] 
 **UsageTypeCd** | Pointer to **NullableString** |  | [optional] 
 **UsageTypeNo** | Pointer to **NullableFloat32** |  | [optional] 
 
@@ -174,6 +174,16 @@ SetAmount sets Amount field to given value.
 
 HasAmount returns a boolean if a field has been set.
 
+### SetAmountNil
+
+`func (o *BillingResponseLineItem) SetAmountNil(b bool)`
+
+ SetAmountNil sets the value for Amount to be an explicit nil
+
+### UnsetAmount
+`func (o *BillingResponseLineItem) UnsetAmount()`
+
+UnsetAmount ensures that no value is present for Amount, not even an explicit nil
 ### GetAriaInvoiceID
 
 `func (o *BillingResponseLineItem) GetAriaInvoiceID() string`
@@ -199,6 +209,16 @@ SetAriaInvoiceID sets AriaInvoiceID field to given value.
 
 HasAriaInvoiceID returns a boolean if a field has been set.
 
+### SetAriaInvoiceIDNil
+
+`func (o *BillingResponseLineItem) SetAriaInvoiceIDNil(b bool)`
+
+ SetAriaInvoiceIDNil sets the value for AriaInvoiceID to be an explicit nil
+
+### UnsetAriaInvoiceID
+`func (o *BillingResponseLineItem) UnsetAriaInvoiceID()`
+
+UnsetAriaInvoiceID ensures that no value is present for AriaInvoiceID, not even an explicit nil
 ### GetClientServiceID
 
 `func (o *BillingResponseLineItem) GetClientServiceID() string`
@@ -224,6 +244,16 @@ SetClientServiceID sets ClientServiceID field to given value.
 
 HasClientServiceID returns a boolean if a field has been set.
 
+### SetClientServiceIDNil
+
+`func (o *BillingResponseLineItem) SetClientServiceIDNil(b bool)`
+
+ SetClientServiceIDNil sets the value for ClientServiceID to be an explicit nil
+
+### UnsetClientServiceID
+`func (o *BillingResponseLineItem) UnsetClientServiceID()`
+
+UnsetClientServiceID ensures that no value is present for ClientServiceID, not even an explicit nil
 ### GetCreditCouponCode
 
 `func (o *BillingResponseLineItem) GetCreditCouponCode() string`
@@ -284,6 +314,16 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### SetDescriptionNil
+
+`func (o *BillingResponseLineItem) SetDescriptionNil(b bool)`
+
+ SetDescriptionNil sets the value for Description to be an explicit nil
+
+### UnsetDescription
+`func (o *BillingResponseLineItem) UnsetDescription()`
+
+UnsetDescription ensures that no value is present for Description, not even an explicit nil
 ### GetID
 
 `func (o *BillingResponseLineItem) GetID() string`
@@ -334,6 +374,16 @@ SetLineNumber sets LineNumber field to given value.
 
 HasLineNumber returns a boolean if a field has been set.
 
+### SetLineNumberNil
+
+`func (o *BillingResponseLineItem) SetLineNumberNil(b bool)`
+
+ SetLineNumberNil sets the value for LineNumber to be an explicit nil
+
+### UnsetLineNumber
+`func (o *BillingResponseLineItem) UnsetLineNumber()`
+
+UnsetLineNumber ensures that no value is present for LineNumber, not even an explicit nil
 ### GetPlanName
 
 `func (o *BillingResponseLineItem) GetPlanName() string`
@@ -359,6 +409,16 @@ SetPlanName sets PlanName field to given value.
 
 HasPlanName returns a boolean if a field has been set.
 
+### SetPlanNameNil
+
+`func (o *BillingResponseLineItem) SetPlanNameNil(b bool)`
+
+ SetPlanNameNil sets the value for PlanName to be an explicit nil
+
+### UnsetPlanName
+`func (o *BillingResponseLineItem) UnsetPlanName()`
+
+UnsetPlanName ensures that no value is present for PlanName, not even an explicit nil
 ### GetPlanNo
 
 `func (o *BillingResponseLineItem) GetPlanNo() float32`
@@ -384,6 +444,16 @@ SetPlanNo sets PlanNo field to given value.
 
 HasPlanNo returns a boolean if a field has been set.
 
+### SetPlanNoNil
+
+`func (o *BillingResponseLineItem) SetPlanNoNil(b bool)`
+
+ SetPlanNoNil sets the value for PlanNo to be an explicit nil
+
+### UnsetPlanNo
+`func (o *BillingResponseLineItem) UnsetPlanNo()`
+
+UnsetPlanNo ensures that no value is present for PlanNo, not even an explicit nil
 ### GetRatePerUnit
 
 `func (o *BillingResponseLineItem) GetRatePerUnit() float32`
@@ -514,6 +584,16 @@ SetServiceName sets ServiceName field to given value.
 
 HasServiceName returns a boolean if a field has been set.
 
+### SetServiceNameNil
+
+`func (o *BillingResponseLineItem) SetServiceNameNil(b bool)`
+
+ SetServiceNameNil sets the value for ServiceName to be an explicit nil
+
+### UnsetServiceName
+`func (o *BillingResponseLineItem) UnsetServiceName()`
+
+UnsetServiceName ensures that no value is present for ServiceName, not even an explicit nil
 ### GetServiceNo
 
 `func (o *BillingResponseLineItem) GetServiceNo() float32`
@@ -539,6 +619,16 @@ SetServiceNo sets ServiceNo field to given value.
 
 HasServiceNo returns a boolean if a field has been set.
 
+### SetServiceNoNil
+
+`func (o *BillingResponseLineItem) SetServiceNoNil(b bool)`
+
+ SetServiceNoNil sets the value for ServiceNo to be an explicit nil
+
+### UnsetServiceNo
+`func (o *BillingResponseLineItem) UnsetServiceNo()`
+
+UnsetServiceNo ensures that no value is present for ServiceNo, not even an explicit nil
 ### GetUnits
 
 `func (o *BillingResponseLineItem) GetUnits() float32`
@@ -564,6 +654,16 @@ SetUnits sets Units field to given value.
 
 HasUnits returns a boolean if a field has been set.
 
+### SetUnitsNil
+
+`func (o *BillingResponseLineItem) SetUnitsNil(b bool)`
+
+ SetUnitsNil sets the value for Units to be an explicit nil
+
+### UnsetUnits
+`func (o *BillingResponseLineItem) UnsetUnits()`
+
+UnsetUnits ensures that no value is present for Units, not even an explicit nil
 ### GetUsageTypeCd
 
 `func (o *BillingResponseLineItem) GetUsageTypeCd() string`

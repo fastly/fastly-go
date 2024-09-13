@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Recorded** | Pointer to [**OriginInspectorRealtimeEntryRecorded**](OriginInspectorRealtimeEntryRecorded.md) |  | [optional] 
+**Recorded** | Pointer to **int32** | The Unix timestamp at which this record&#39;s data was generated. | [optional] 
 **Aggregated** | Pointer to [**map[string]OriginInspectorMeasurements**](OriginInspectorMeasurements.md) | Groups [measurements](#measurements-data-model) by backend name. | [optional] 
 **Datacenter** | Pointer to [**map[string]map[string]OriginInspectorMeasurements**](map.md) | Groups [measurements](#measurements-data-model) by POP, then backend name. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details about POP identifiers. | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetRecorded
 
-`func (o *OriginInspectorRealtimeEntry) GetRecorded() OriginInspectorRealtimeEntryRecorded`
+`func (o *OriginInspectorRealtimeEntry) GetRecorded() int32`
 
 GetRecorded returns the Recorded field if non-nil, zero value otherwise.
 
 ### GetRecordedOk
 
-`func (o *OriginInspectorRealtimeEntry) GetRecordedOk() (*OriginInspectorRealtimeEntryRecorded, bool)`
+`func (o *OriginInspectorRealtimeEntry) GetRecordedOk() (*int32, bool)`
 
 GetRecordedOk returns a tuple with the Recorded field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRecorded
 
-`func (o *OriginInspectorRealtimeEntry) SetRecorded(v OriginInspectorRealtimeEntryRecorded)`
+`func (o *OriginInspectorRealtimeEntry) SetRecorded(v int32)`
 
 SetRecorded sets Recorded field to given value.
 

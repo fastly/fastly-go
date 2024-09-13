@@ -19,7 +19,8 @@ import (
 
 // DomainInspectorRealtimeEntry Each reporting period is represented by an entry in the `Data` property of the top level response and provides access to [measurement data](#measurements-data-model) for that time period, grouped in various ways: by domain name, domain IP address, and optionally by POP. The `datacenter` property organizes the measurements by Fastly POP, while the `aggregated` property combines the measurements of all POPs (but still splits by backend name and IP). 
 type DomainInspectorRealtimeEntry struct {
-	Recorded *RecordedTimestamp `json:"recorded,omitempty"`
+	// The Unix timestamp at which this record's data was generated.
+	Recorded *int32 `json:"recorded,omitempty"`
 	// Groups [measurements](#measurements-data-model) by backend name and then by IP address.
 	Aggregated map[string]DomainInspectorMeasurements `json:"aggregated,omitempty"`
 	// Groups [measurements](#measurements-data-model) by POP, then backend name, and then IP address. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details about POP identifiers.
@@ -47,9 +48,9 @@ func NewDomainInspectorRealtimeEntryWithDefaults() *DomainInspectorRealtimeEntry
 }
 
 // GetRecorded returns the Recorded field value if set, zero value otherwise.
-func (o *DomainInspectorRealtimeEntry) GetRecorded() RecordedTimestamp {
+func (o *DomainInspectorRealtimeEntry) GetRecorded() int32 {
 	if o == nil || o.Recorded == nil {
-		var ret RecordedTimestamp
+		var ret int32
 		return ret
 	}
 	return *o.Recorded
@@ -57,7 +58,7 @@ func (o *DomainInspectorRealtimeEntry) GetRecorded() RecordedTimestamp {
 
 // GetRecordedOk returns a tuple with the Recorded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorRealtimeEntry) GetRecordedOk() (*RecordedTimestamp, bool) {
+func (o *DomainInspectorRealtimeEntry) GetRecordedOk() (*int32, bool) {
 	if o == nil || o.Recorded == nil {
 		return nil, false
 	}
@@ -73,8 +74,8 @@ func (o *DomainInspectorRealtimeEntry) HasRecorded() bool {
 	return false
 }
 
-// SetRecorded gets a reference to the given RecordedTimestamp and assigns it to the Recorded field.
-func (o *DomainInspectorRealtimeEntry) SetRecorded(v RecordedTimestamp) {
+// SetRecorded gets a reference to the given int32 and assigns it to the Recorded field.
+func (o *DomainInspectorRealtimeEntry) SetRecorded(v int32) {
 	o.Recorded = &v
 }
 

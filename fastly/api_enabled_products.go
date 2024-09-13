@@ -34,7 +34,7 @@ type EnabledProductsAPI interface {
 	/*
 	DisableProduct Disable a product
 
-	Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
+	Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param productID
@@ -49,7 +49,7 @@ type EnabledProductsAPI interface {
 	/*
 	EnableProduct Enable a product
 
-	Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
+	Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param productID
@@ -65,7 +65,7 @@ type EnabledProductsAPI interface {
 	/*
 	GetEnabledProduct Get enabled product
 
-	Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
+	Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
 
 	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	 @param productID
@@ -77,6 +77,38 @@ type EnabledProductsAPI interface {
 	// GetEnabledProductExecute executes the request
 	//  @return EnabledProductResponse
 	GetEnabledProductExecute(r APIGetEnabledProductRequest) (*EnabledProductResponse, *http.Response, error)
+
+	/*
+	GetProductConfiguration Get configuration for a product
+
+	Get configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param productID
+	 @param serviceID Alphanumeric string identifying the service.
+	 @return APIGetProductConfigurationRequest
+	*/
+	GetProductConfiguration(ctx context.Context, productID string, serviceID string) APIGetProductConfigurationRequest
+
+	// GetProductConfigurationExecute executes the request
+	//  @return ConfiguredProductResponse
+	GetProductConfigurationExecute(r APIGetProductConfigurationRequest) (*ConfiguredProductResponse, *http.Response, error)
+
+	/*
+	SetProductConfiguration Update configuration for a product
+
+	Update configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param productID
+	 @param serviceID Alphanumeric string identifying the service.
+	 @return APISetProductConfigurationRequest
+	*/
+	SetProductConfiguration(ctx context.Context, productID string, serviceID string) APISetProductConfigurationRequest
+
+	// SetProductConfigurationExecute executes the request
+	//  @return ConfiguredProductResponse
+	SetProductConfigurationExecute(r APISetProductConfigurationRequest) (*ConfiguredProductResponse, *http.Response, error)
 }
 
 // EnabledProductsAPIService EnabledProductsAPI service
@@ -99,7 +131,7 @@ func (r APIDisableProductRequest) Execute() (*http.Response, error) {
 /*
 DisableProduct Disable a product
 
-Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
+Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param productID
@@ -128,7 +160,7 @@ func (a *EnabledProductsAPIService) DisableProductExecute(r APIDisableProductReq
 		return nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/enabled-products/{product_id}/services/{service_id}"
+	localVarPath := localBasePath + "/enabled-products/v1/{product_id}/services/{service_id}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"product_id"+"}", gourl.PathEscape(parameterToString(r.productID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
@@ -215,8 +247,14 @@ type APIEnableProductRequest struct {
 	APIService EnabledProductsAPI
 	productID string
 	serviceID string
+	setWorkspaceID *SetWorkspaceID
 }
 
+// SetWorkspaceID returns a pointer to a request.
+func (r *APIEnableProductRequest) SetWorkspaceID(setWorkspaceID SetWorkspaceID) *APIEnableProductRequest {
+	r.setWorkspaceID = &setWorkspaceID
+	return r
+}
 
 // Execute calls the API using the request data configured.
 func (r APIEnableProductRequest) Execute() (*EnabledProductResponse, *http.Response, error) {
@@ -226,7 +264,7 @@ func (r APIEnableProductRequest) Execute() (*EnabledProductResponse, *http.Respo
 /*
 EnableProduct Enable a product
 
-Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
+Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param productID
@@ -257,7 +295,147 @@ func (a *EnabledProductsAPIService) EnableProductExecute(r APIEnableProductReque
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/enabled-products/{product_id}/services/{service_id}"
+	localVarPath := localBasePath + "/enabled-products/v1/{product_id}/services/{service_id}"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"product_id"+"}", gourl.PathEscape(parameterToString(r.productID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.setWorkspaceID
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIGetEnabledProductRequest represents a request for the resource.
+type APIGetEnabledProductRequest struct {
+	ctx context.Context
+	APIService EnabledProductsAPI
+	productID string
+	serviceID string
+}
+
+
+// Execute calls the API using the request data configured.
+func (r APIGetEnabledProductRequest) Execute() (*EnabledProductResponse, *http.Response, error) {
+	return r.APIService.GetEnabledProductExecute(r)
+}
+
+/*
+GetEnabledProduct Get enabled product
+
+Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param productID
+ @param serviceID Alphanumeric string identifying the service.
+ @return APIGetEnabledProductRequest
+*/
+func (a *EnabledProductsAPIService) GetEnabledProduct(ctx context.Context, productID string, serviceID string) APIGetEnabledProductRequest {
+	return APIGetEnabledProductRequest{
+		APIService: a,
+		ctx: ctx,
+		productID: productID,
+		serviceID: serviceID,
+	}
+}
+
+// GetEnabledProductExecute executes the request
+//  @return EnabledProductResponse
+func (a *EnabledProductsAPIService) GetEnabledProductExecute(r APIGetEnabledProductRequest) (*EnabledProductResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *EnabledProductResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnabledProductsAPIService.GetEnabledProduct")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/enabled-products/v1/{product_id}/services/{service_id}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"product_id"+"}", gourl.PathEscape(parameterToString(r.productID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
@@ -347,8 +525,8 @@ func (a *EnabledProductsAPIService) EnableProductExecute(r APIEnableProductReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIGetEnabledProductRequest represents a request for the resource.
-type APIGetEnabledProductRequest struct {
+// APIGetProductConfigurationRequest represents a request for the resource.
+type APIGetProductConfigurationRequest struct {
 	ctx context.Context
 	APIService EnabledProductsAPI
 	productID string
@@ -357,22 +535,22 @@ type APIGetEnabledProductRequest struct {
 
 
 // Execute calls the API using the request data configured.
-func (r APIGetEnabledProductRequest) Execute() (*EnabledProductResponse, *http.Response, error) {
-	return r.APIService.GetEnabledProductExecute(r)
+func (r APIGetProductConfigurationRequest) Execute() (*ConfiguredProductResponse, *http.Response, error) {
+	return r.APIService.GetProductConfigurationExecute(r)
 }
 
 /*
-GetEnabledProduct Get enabled product
+GetProductConfiguration Get configuration for a product
 
-Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
+Get configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param productID
  @param serviceID Alphanumeric string identifying the service.
- @return APIGetEnabledProductRequest
+ @return APIGetProductConfigurationRequest
 */
-func (a *EnabledProductsAPIService) GetEnabledProduct(ctx context.Context, productID string, serviceID string) APIGetEnabledProductRequest {
-	return APIGetEnabledProductRequest{
+func (a *EnabledProductsAPIService) GetProductConfiguration(ctx context.Context, productID string, serviceID string) APIGetProductConfigurationRequest {
+	return APIGetProductConfigurationRequest{
 		APIService: a,
 		ctx: ctx,
 		productID: productID,
@@ -380,22 +558,22 @@ func (a *EnabledProductsAPIService) GetEnabledProduct(ctx context.Context, produ
 	}
 }
 
-// GetEnabledProductExecute executes the request
-//  @return EnabledProductResponse
-func (a *EnabledProductsAPIService) GetEnabledProductExecute(r APIGetEnabledProductRequest) (*EnabledProductResponse, *http.Response, error) {
+// GetProductConfigurationExecute executes the request
+//  @return ConfiguredProductResponse
+func (a *EnabledProductsAPIService) GetProductConfigurationExecute(r APIGetProductConfigurationRequest) (*ConfiguredProductResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     any
 		formFiles            []formFile
-		localVarReturnValue  *EnabledProductResponse
+		localVarReturnValue  *ConfiguredProductResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnabledProductsAPIService.GetEnabledProduct")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnabledProductsAPIService.GetProductConfiguration")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/enabled-products/{product_id}/services/{service_id}"
+	localVarPath := localBasePath + "/enabled-products/v1/{product_id}/services/{service_id}/configuration"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"product_id"+"}", gourl.PathEscape(parameterToString(r.productID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 
@@ -420,6 +598,152 @@ func (a *EnabledProductsAPIService) GetEnabledProductExecute(r APIGetEnabledProd
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APISetProductConfigurationRequest represents a request for the resource.
+type APISetProductConfigurationRequest struct {
+	ctx context.Context
+	APIService EnabledProductsAPI
+	productID string
+	serviceID string
+	setConfiguration *SetConfiguration
+}
+
+// SetConfiguration returns a pointer to a request.
+func (r *APISetProductConfigurationRequest) SetConfiguration(setConfiguration SetConfiguration) *APISetProductConfigurationRequest {
+	r.setConfiguration = &setConfiguration
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APISetProductConfigurationRequest) Execute() (*ConfiguredProductResponse, *http.Response, error) {
+	return r.APIService.SetProductConfigurationExecute(r)
+}
+
+/*
+SetProductConfiguration Update configuration for a product
+
+Update configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param productID
+ @param serviceID Alphanumeric string identifying the service.
+ @return APISetProductConfigurationRequest
+*/
+func (a *EnabledProductsAPIService) SetProductConfiguration(ctx context.Context, productID string, serviceID string) APISetProductConfigurationRequest {
+	return APISetProductConfigurationRequest{
+		APIService: a,
+		ctx: ctx,
+		productID: productID,
+		serviceID: serviceID,
+	}
+}
+
+// SetProductConfigurationExecute executes the request
+//  @return ConfiguredProductResponse
+func (a *EnabledProductsAPIService) SetProductConfigurationExecute(r APISetProductConfigurationRequest) (*ConfiguredProductResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *ConfiguredProductResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnabledProductsAPIService.SetProductConfiguration")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/enabled-products/v1/{product_id}/services/{service_id}/configuration"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"product_id"+"}", gourl.PathEscape(parameterToString(r.productID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.setConfiguration
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

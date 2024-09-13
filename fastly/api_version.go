@@ -48,6 +48,23 @@ type VersionAPI interface {
 	ActivateServiceVersionExecute(r APIActivateServiceVersionRequest) (*VersionResponse, *http.Response, error)
 
 	/*
+	ActivateServiceVersionEnvironment Activate a service version on the specified environment
+
+	Activate a version on a given environment, i.e. "staging"
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param serviceID Alphanumeric string identifying the service.
+	 @param versionID Integer identifying a service version.
+	 @param environmentName
+	 @return APIActivateServiceVersionEnvironmentRequest
+	*/
+	ActivateServiceVersionEnvironment(ctx context.Context, serviceID string, versionID int32, environmentName EnvironmentName) APIActivateServiceVersionEnvironmentRequest
+
+	// ActivateServiceVersionEnvironmentExecute executes the request
+	//  @return VersionResponse
+	ActivateServiceVersionEnvironmentExecute(r APIActivateServiceVersionEnvironmentRequest) (*VersionResponse, *http.Response, error)
+
+	/*
 	CloneServiceVersion Clone a service version
 
 	Clone the current configuration into a new version.
@@ -93,6 +110,23 @@ type VersionAPI interface {
 	// DeactivateServiceVersionExecute executes the request
 	//  @return VersionResponse
 	DeactivateServiceVersionExecute(r APIDeactivateServiceVersionRequest) (*VersionResponse, *http.Response, error)
+
+	/*
+	DeactivateServiceVersionEnvironment Deactivate a service version on an environment
+
+	Deactivate the current version on a given environment, i.e. "staging"
+
+	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	 @param serviceID Alphanumeric string identifying the service.
+	 @param versionID Integer identifying a service version.
+	 @param environmentName
+	 @return APIDeactivateServiceVersionEnvironmentRequest
+	*/
+	DeactivateServiceVersionEnvironment(ctx context.Context, serviceID string, versionID int32, environmentName EnvironmentName) APIDeactivateServiceVersionEnvironmentRequest
+
+	// DeactivateServiceVersionEnvironmentExecute executes the request
+	//  @return VersionResponse
+	DeactivateServiceVersionEnvironmentExecute(r APIDeactivateServiceVersionEnvironmentRequest) (*VersionResponse, *http.Response, error)
 
 	/*
 	GetServiceVersion Get a version of a service
@@ -228,6 +262,148 @@ func (a *VersionAPIService) ActivateServiceVersionExecute(r APIActivateServiceVe
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/activate"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIActivateServiceVersionEnvironmentRequest represents a request for the resource.
+type APIActivateServiceVersionEnvironmentRequest struct {
+	ctx context.Context
+	APIService VersionAPI
+	serviceID string
+	versionID int32
+	environmentName EnvironmentName
+}
+
+
+// Execute calls the API using the request data configured.
+func (r APIActivateServiceVersionEnvironmentRequest) Execute() (*VersionResponse, *http.Response, error) {
+	return r.APIService.ActivateServiceVersionEnvironmentExecute(r)
+}
+
+/*
+ActivateServiceVersionEnvironment Activate a service version on the specified environment
+
+Activate a version on a given environment, i.e. "staging"
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
+ @param environmentName
+ @return APIActivateServiceVersionEnvironmentRequest
+*/
+func (a *VersionAPIService) ActivateServiceVersionEnvironment(ctx context.Context, serviceID string, versionID int32, environmentName EnvironmentName) APIActivateServiceVersionEnvironmentRequest {
+	return APIActivateServiceVersionEnvironmentRequest{
+		APIService: a,
+		ctx: ctx,
+		serviceID: serviceID,
+		versionID: versionID,
+		environmentName: environmentName,
+	}
+}
+
+// ActivateServiceVersionEnvironmentExecute executes the request
+//  @return VersionResponse
+func (a *VersionAPIService) ActivateServiceVersionEnvironmentExecute(r APIActivateServiceVersionEnvironmentRequest) (*VersionResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *VersionResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.ActivateServiceVersionEnvironment")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/activate/{environment_name}"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"environment_name"+"}", gourl.PathEscape(parameterToString(r.environmentName, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -638,6 +814,148 @@ func (a *VersionAPIService) DeactivateServiceVersionExecute(r APIDeactivateServi
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/deactivate"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIDeactivateServiceVersionEnvironmentRequest represents a request for the resource.
+type APIDeactivateServiceVersionEnvironmentRequest struct {
+	ctx context.Context
+	APIService VersionAPI
+	serviceID string
+	versionID int32
+	environmentName EnvironmentName
+}
+
+
+// Execute calls the API using the request data configured.
+func (r APIDeactivateServiceVersionEnvironmentRequest) Execute() (*VersionResponse, *http.Response, error) {
+	return r.APIService.DeactivateServiceVersionEnvironmentExecute(r)
+}
+
+/*
+DeactivateServiceVersionEnvironment Deactivate a service version on an environment
+
+Deactivate the current version on a given environment, i.e. "staging"
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serviceID Alphanumeric string identifying the service.
+ @param versionID Integer identifying a service version.
+ @param environmentName
+ @return APIDeactivateServiceVersionEnvironmentRequest
+*/
+func (a *VersionAPIService) DeactivateServiceVersionEnvironment(ctx context.Context, serviceID string, versionID int32, environmentName EnvironmentName) APIDeactivateServiceVersionEnvironmentRequest {
+	return APIDeactivateServiceVersionEnvironmentRequest{
+		APIService: a,
+		ctx: ctx,
+		serviceID: serviceID,
+		versionID: versionID,
+		environmentName: environmentName,
+	}
+}
+
+// DeactivateServiceVersionEnvironmentExecute executes the request
+//  @return VersionResponse
+func (a *VersionAPIService) DeactivateServiceVersionEnvironmentExecute(r APIDeactivateServiceVersionEnvironmentRequest) (*VersionResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     any
+		formFiles            []formFile
+		localVarReturnValue  *VersionResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.DeactivateServiceVersionEnvironment")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/deactivate/{environment_name}"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"environment_name"+"}", gourl.PathEscape(parameterToString(r.environmentName, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

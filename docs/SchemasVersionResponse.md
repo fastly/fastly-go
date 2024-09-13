@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**Environments** | Pointer to [**[]Environment**](Environment.md) | A list of environments where the service has been deployed. | [optional] 
 
 ## Methods
 
@@ -349,6 +350,31 @@ SetServiceID sets ServiceID field to given value.
 `func (o *SchemasVersionResponse) HasServiceID() bool`
 
 HasServiceID returns a boolean if a field has been set.
+
+### GetEnvironments
+
+`func (o *SchemasVersionResponse) GetEnvironments() []Environment`
+
+GetEnvironments returns the Environments field if non-nil, zero value otherwise.
+
+### GetEnvironmentsOk
+
+`func (o *SchemasVersionResponse) GetEnvironmentsOk() (*[]Environment, bool)`
+
+GetEnvironmentsOk returns a tuple with the Environments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnvironments
+
+`func (o *SchemasVersionResponse) SetEnvironments(v []Environment)`
+
+SetEnvironments sets Environments field to given value.
+
+### HasEnvironments
+
+`func (o *SchemasVersionResponse) HasEnvironments() bool`
+
+HasEnvironments returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

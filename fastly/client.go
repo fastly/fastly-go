@@ -68,6 +68,8 @@ type APIClient struct {
 
 	ACLEntryAPI ACLEntryAPI
 
+	ACLsInComputeAPI ACLsInComputeAPI
+
 	ApexRedirectAPI ApexRedirectAPI
 
 	AutomationTokensAPI AutomationTokensAPI
@@ -95,6 +97,8 @@ type APIClient struct {
 	ContentAPI ContentAPI
 
 	CustomerAPI CustomerAPI
+
+	CustomerAddressesAPI CustomerAddressesAPI
 
 	DictionaryAPI DictionaryAPI
 
@@ -328,6 +332,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	// API Services
 	c.ACLAPI = (*ACLAPIService)(&c.common)
 	c.ACLEntryAPI = (*ACLEntryAPIService)(&c.common)
+	c.ACLsInComputeAPI = (*ACLsInComputeAPIService)(&c.common)
 	c.ApexRedirectAPI = (*ApexRedirectAPIService)(&c.common)
 	c.AutomationTokensAPI = (*AutomationTokensAPIService)(&c.common)
 	c.BackendAPI = (*BackendAPIService)(&c.common)
@@ -342,6 +347,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ContactAPI = (*ContactAPIService)(&c.common)
 	c.ContentAPI = (*ContentAPIService)(&c.common)
 	c.CustomerAPI = (*CustomerAPIService)(&c.common)
+	c.CustomerAddressesAPI = (*CustomerAddressesAPIService)(&c.common)
 	c.DictionaryAPI = (*DictionaryAPIService)(&c.common)
 	c.DictionaryInfoAPI = (*DictionaryInfoAPIService)(&c.common)
 	c.DictionaryItemAPI = (*DictionaryItemAPIService)(&c.common)

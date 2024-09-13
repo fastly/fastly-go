@@ -19,7 +19,8 @@ import (
 
 // OriginInspectorRealtimeEntry Each reporting period is represented by an entry in the `Data` property of the top level response and provides access to [measurement data](#measurements-data-model) for that time period, grouped by origin name and optionally by POP. The `datacenter` property organizes the measurements by Fastly POP, while the `aggregated` property combines the measurements of all POPs. 
 type OriginInspectorRealtimeEntry struct {
-	Recorded *OriginInspectorRealtimeEntryRecorded `json:"recorded,omitempty"`
+	// The Unix timestamp at which this record's data was generated.
+	Recorded *int32 `json:"recorded,omitempty"`
 	// Groups [measurements](#measurements-data-model) by backend name.
 	Aggregated *map[string]OriginInspectorMeasurements `json:"aggregated,omitempty"`
 	// Groups [measurements](#measurements-data-model) by POP, then backend name. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details about POP identifiers.
@@ -47,9 +48,9 @@ func NewOriginInspectorRealtimeEntryWithDefaults() *OriginInspectorRealtimeEntry
 }
 
 // GetRecorded returns the Recorded field value if set, zero value otherwise.
-func (o *OriginInspectorRealtimeEntry) GetRecorded() OriginInspectorRealtimeEntryRecorded {
+func (o *OriginInspectorRealtimeEntry) GetRecorded() int32 {
 	if o == nil || o.Recorded == nil {
-		var ret OriginInspectorRealtimeEntryRecorded
+		var ret int32
 		return ret
 	}
 	return *o.Recorded
@@ -57,7 +58,7 @@ func (o *OriginInspectorRealtimeEntry) GetRecorded() OriginInspectorRealtimeEntr
 
 // GetRecordedOk returns a tuple with the Recorded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorRealtimeEntry) GetRecordedOk() (*OriginInspectorRealtimeEntryRecorded, bool) {
+func (o *OriginInspectorRealtimeEntry) GetRecordedOk() (*int32, bool) {
 	if o == nil || o.Recorded == nil {
 		return nil, false
 	}
@@ -73,8 +74,8 @@ func (o *OriginInspectorRealtimeEntry) HasRecorded() bool {
 	return false
 }
 
-// SetRecorded gets a reference to the given OriginInspectorRealtimeEntryRecorded and assigns it to the Recorded field.
-func (o *OriginInspectorRealtimeEntry) SetRecorded(v OriginInspectorRealtimeEntryRecorded) {
+// SetRecorded gets a reference to the given int32 and assigns it to the Recorded field.
+func (o *OriginInspectorRealtimeEntry) SetRecorded(v int32) {
 	o.Recorded = &v
 }
 

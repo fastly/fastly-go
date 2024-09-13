@@ -19,7 +19,8 @@ import (
 
 // OriginInspector struct for OriginInspector
 type OriginInspector struct {
-	Timestamp *OriginInspectorSubsequentRequestTimestamp `json:"Timestamp,omitempty"`
+	// Value to use for subsequent requests.
+	Timestamp *int32 `json:"Timestamp,omitempty"`
 	// Offset of entry timestamps from the current time due to processing time.
 	AggregateDelay *int32 `json:"AggregateDelay,omitempty"`
 	// A list of report [entries](#entry-data-model), each representing one second of time.
@@ -47,9 +48,9 @@ func NewOriginInspectorWithDefaults() *OriginInspector {
 }
 
 // GetTimestamp returns the Timestamp field value if set, zero value otherwise.
-func (o *OriginInspector) GetTimestamp() OriginInspectorSubsequentRequestTimestamp {
+func (o *OriginInspector) GetTimestamp() int32 {
 	if o == nil || o.Timestamp == nil {
-		var ret OriginInspectorSubsequentRequestTimestamp
+		var ret int32
 		return ret
 	}
 	return *o.Timestamp
@@ -57,7 +58,7 @@ func (o *OriginInspector) GetTimestamp() OriginInspectorSubsequentRequestTimesta
 
 // GetTimestampOk returns a tuple with the Timestamp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspector) GetTimestampOk() (*OriginInspectorSubsequentRequestTimestamp, bool) {
+func (o *OriginInspector) GetTimestampOk() (*int32, bool) {
 	if o == nil || o.Timestamp == nil {
 		return nil, false
 	}
@@ -73,8 +74,8 @@ func (o *OriginInspector) HasTimestamp() bool {
 	return false
 }
 
-// SetTimestamp gets a reference to the given OriginInspectorSubsequentRequestTimestamp and assigns it to the Timestamp field.
-func (o *OriginInspector) SetTimestamp(v OriginInspectorSubsequentRequestTimestamp) {
+// SetTimestamp gets a reference to the given int32 and assigns it to the Timestamp field.
+func (o *OriginInspector) SetTimestamp(v int32) {
 	o.Timestamp = &v
 }
 

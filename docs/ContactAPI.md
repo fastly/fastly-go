@@ -6,7 +6,7 @@
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateContacts**](ContactAPI.md#CreateContacts) | **POST** `/customer/{customer_id}/contacts` | Add a new customer contact
-[**DeleteContact**](ContactAPI.md#DeleteContact) | **DELETE** `/customer/{customer_id}/contact/{contact_id}` | Delete a contact
+[**DeleteContact**](ContactAPI.md#DeleteContact) | **DELETE** `/customer/{customer_id}/contacts/{contact_id}` | Delete a contact
 [**ListContacts**](ContactAPI.md#ListContacts) | **GET** `/customer/{customer_id}/contacts` | List contacts
 
 

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **ID** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **int32** | Current [version](https://www.fastly.com/documentation/reference/api/services/version/) of the service. | [optional] 
 **Versions** | Pointer to [**[]SchemasVersionResponse**](SchemasVersionResponse.md) | A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service. | [optional] 
+**Environments** | Pointer to [**[]Environment**](Environment.md) | A list of environments where the service has been deployed. | [optional] 
 
 ## Methods
 
@@ -323,6 +324,31 @@ SetVersions sets Versions field to given value.
 `func (o *ServiceListResponse) HasVersions() bool`
 
 HasVersions returns a boolean if a field has been set.
+
+### GetEnvironments
+
+`func (o *ServiceListResponse) GetEnvironments() []Environment`
+
+GetEnvironments returns the Environments field if non-nil, zero value otherwise.
+
+### GetEnvironmentsOk
+
+`func (o *ServiceListResponse) GetEnvironmentsOk() (*[]Environment, bool)`
+
+GetEnvironmentsOk returns a tuple with the Environments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnvironments
+
+`func (o *ServiceListResponse) SetEnvironments(v []Environment)`
+
+SetEnvironments sets Environments field to given value.
+
+### HasEnvironments
+
+`func (o *ServiceListResponse) HasEnvironments() bool`
+
+HasEnvironments returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

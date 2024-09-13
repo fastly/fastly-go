@@ -41,6 +41,8 @@ type ServiceVersionDetail struct {
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
+	// A list of environments where the service has been deployed.
+	Environments []Environment `json:"environments,omitempty"`
 	// List of backends associated to this service.
 	Backends []BackendResponse `json:"backends,omitempty"`
 	// List of cache settings associated to this service.
@@ -496,6 +498,38 @@ func (o *ServiceVersionDetail) HasServiceID() bool {
 // SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
 func (o *ServiceVersionDetail) SetServiceID(v string) {
 	o.ServiceID = &v
+}
+
+// GetEnvironments returns the Environments field value if set, zero value otherwise.
+func (o *ServiceVersionDetail) GetEnvironments() []Environment {
+	if o == nil || o.Environments == nil {
+		var ret []Environment
+		return ret
+	}
+	return o.Environments
+}
+
+// GetEnvironmentsOk returns a tuple with the Environments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceVersionDetail) GetEnvironmentsOk() ([]Environment, bool) {
+	if o == nil || o.Environments == nil {
+		return nil, false
+	}
+	return o.Environments, true
+}
+
+// HasEnvironments returns a boolean if a field has been set.
+func (o *ServiceVersionDetail) HasEnvironments() bool {
+	if o != nil && o.Environments != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnvironments gets a reference to the given []Environment and assigns it to the Environments field.
+func (o *ServiceVersionDetail) SetEnvironments(v []Environment) {
+	o.Environments = v
 }
 
 // GetBackends returns the Backends field value if set, zero value otherwise.
@@ -983,6 +1017,9 @@ func (o ServiceVersionDetail) MarshalJSON() ([]byte, error) {
 	if o.ServiceID != nil {
 		toSerialize["service_id"] = o.ServiceID
 	}
+	if o.Environments != nil {
+		toSerialize["environments"] = o.Environments
+	}
 	if o.Backends != nil {
 		toSerialize["backends"] = o.Backends
 	}
@@ -1056,6 +1093,7 @@ func (o *ServiceVersionDetail) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "deleted_at")
 		delete(additionalProperties, "updated_at")
 		delete(additionalProperties, "service_id")
+		delete(additionalProperties, "environments")
 		delete(additionalProperties, "backends")
 		delete(additionalProperties, "cache_settings")
 		delete(additionalProperties, "conditions")

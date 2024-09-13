@@ -39,6 +39,8 @@ type ServiceListResponse struct {
 	Version *int32 `json:"version,omitempty"`
 	// A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service.
 	Versions []SchemasVersionResponse `json:"versions,omitempty"`
+	// A list of environments where the service has been deployed.
+	Environments []Environment `json:"environments,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -421,6 +423,38 @@ func (o *ServiceListResponse) SetVersions(v []SchemasVersionResponse) {
 	o.Versions = v
 }
 
+// GetEnvironments returns the Environments field value if set, zero value otherwise.
+func (o *ServiceListResponse) GetEnvironments() []Environment {
+	if o == nil || o.Environments == nil {
+		var ret []Environment
+		return ret
+	}
+	return o.Environments
+}
+
+// GetEnvironmentsOk returns a tuple with the Environments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceListResponse) GetEnvironmentsOk() ([]Environment, bool) {
+	if o == nil || o.Environments == nil {
+		return nil, false
+	}
+	return o.Environments, true
+}
+
+// HasEnvironments returns a boolean if a field has been set.
+func (o *ServiceListResponse) HasEnvironments() bool {
+	if o != nil && o.Environments != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnvironments gets a reference to the given []Environment and assigns it to the Environments field.
+func (o *ServiceListResponse) SetEnvironments(v []Environment) {
+	o.Environments = v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o ServiceListResponse) MarshalJSON() ([]byte, error) {
@@ -455,6 +489,9 @@ func (o ServiceListResponse) MarshalJSON() ([]byte, error) {
 	if o.Versions != nil {
 		toSerialize["versions"] = o.Versions
 	}
+	if o.Environments != nil {
+		toSerialize["environments"] = o.Environments
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -485,6 +522,7 @@ func (o *ServiceListResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "version")
 		delete(additionalProperties, "versions")
+		delete(additionalProperties, "environments")
 		o.AdditionalProperties = additionalProperties
 	}
 

@@ -105,7 +105,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "fastly-go/1.0.0-beta.34",
+		UserAgent:        "fastly-go/1.0.0-beta.35",
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{
@@ -179,6 +179,48 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"ACLEntryAPIService.UpdateACLEntry": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ACLsInComputeAPIService.ComputeACLCreateAcls": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ACLsInComputeAPIService.ComputeACLDeleteSAclID": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ACLsInComputeAPIService.ComputeACLListAclEntries": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ACLsInComputeAPIService.ComputeACLListAcls": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ACLsInComputeAPIService.ComputeACLListAclsSAclID": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ACLsInComputeAPIService.ComputeACLLookupAcls": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ACLsInComputeAPIService.ComputeACLUpdateAcls": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",
@@ -544,6 +586,24 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"CustomerAddressesAPIService.CreateCustomerAddress": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"CustomerAddressesAPIService.ListCustomerAddresses": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"CustomerAddressesAPIService.UpdateCustomerAddress": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"DictionaryAPIService.CreateDictionary": {
 				{
 					URL: "https://api.fastly.com",
@@ -761,6 +821,18 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"EnabledProductsAPIService.GetEnabledProduct": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"EnabledProductsAPIService.GetProductConfiguration": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"EnabledProductsAPIService.SetProductConfiguration": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",
@@ -3142,6 +3214,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"VersionAPIService.ActivateServiceVersionEnvironment": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"VersionAPIService.CloneServiceVersion": {
 				{
 					URL: "https://api.fastly.com",
@@ -3155,6 +3233,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"VersionAPIService.DeactivateServiceVersion": {
+				{
+					URL: "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"VersionAPIService.DeactivateServiceVersionEnvironment": {
 				{
 					URL: "https://api.fastly.com",
 					Description: "No description provided",

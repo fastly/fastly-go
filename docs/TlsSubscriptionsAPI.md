@@ -374,15 +374,15 @@ func main() {
     filterTLSDomainsID := "filterTLSDomainsId_example" // string | Limit the returned subscriptions to those that include the specific domain. (optional)
     filterHasActiveOrder := true // bool | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  (optional)
     filterCertificateAuthority := "filterCertificateAuthority_example" // string | Limit the returned subscriptions to a specific certification authority. Values may include `certainly`, `lets-encrypt`, or `globalsign`.  (optional)
+    sort := "sort_example" // string | The order in which to list the results. (optional) (default to "-created_at")
     include := "tls_authorizations" // string | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, `tls_authorizations.self_managed_http_challenge`, and `tls_certificates`.  (optional)
     pageNumber := int32(1) // int32 | Current page. (optional)
     pageSize := int32(20) // int32 | Number of records per page. (optional) (default to 20)
-    sort := "created_at" // string | The order in which to list the results by creation date. (optional) (default to "created_at")
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSSubscriptionsAPI.ListTLSSubs(ctx).FilterState(filterState).FilterTLSDomainsID(filterTLSDomainsID).FilterHasActiveOrder(filterHasActiveOrder).FilterCertificateAuthority(filterCertificateAuthority).Include(include).PageNumber(pageNumber).PageSize(pageSize).Sort(sort).Execute()
+    resp, r, err := apiClient.TLSSubscriptionsAPI.ListTLSSubs(ctx).FilterState(filterState).FilterTLSDomainsID(filterTLSDomainsID).FilterHasActiveOrder(filterHasActiveOrder).FilterCertificateAuthority(filterCertificateAuthority).Sort(sort).Include(include).PageNumber(pageNumber).PageSize(pageSize).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TLSSubscriptionsAPI.ListTLSSubs`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -403,7 +403,7 @@ Other parameters are passed through a pointer to a apiListTLSSubsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filterState** | **string** | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]&#x3D;renewing`).  |  **filterTLSDomainsID** | **string** | Limit the returned subscriptions to those that include the specific domain. |  **filterHasActiveOrder** | **bool** | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  |  **filterCertificateAuthority** | **string** | Limit the returned subscriptions to a specific certification authority. Values may include `certainly`, `lets-encrypt`, or `globalsign`.  |  **include** | **string** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, `tls_authorizations.self_managed_http_challenge`, and `tls_certificates`.  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | The order in which to list the results by creation date. | [default to &quot;created_at&quot;]
+ **filterState** | **string** | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]&#x3D;renewing`).  |  **filterTLSDomainsID** | **string** | Limit the returned subscriptions to those that include the specific domain. |  **filterHasActiveOrder** | **bool** | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  |  **filterCertificateAuthority** | **string** | Limit the returned subscriptions to a specific certification authority. Values may include `certainly`, `lets-encrypt`, or `globalsign`.  |  **sort** | **string** | The order in which to list the results. | [default to &quot;-created_at&quot;] **include** | **string** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, `tls_authorizations.self_managed_http_challenge`, and `tls_certificates`.  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20]
 
 ### Return type
 

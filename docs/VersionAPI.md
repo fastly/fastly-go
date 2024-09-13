@@ -6,9 +6,11 @@
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ActivateServiceVersion**](VersionAPI.md#ActivateServiceVersion) | **PUT** `/service/{service_id}/version/{version_id}/activate` | Activate a service version
+[**ActivateServiceVersionEnvironment**](VersionAPI.md#ActivateServiceVersionEnvironment) | **PUT** `/service/{service_id}/version/{version_id}/activate/{environment_name}` | Activate a service version on the specified environment
 [**CloneServiceVersion**](VersionAPI.md#CloneServiceVersion) | **PUT** `/service/{service_id}/version/{version_id}/clone` | Clone a service version
 [**CreateServiceVersion**](VersionAPI.md#CreateServiceVersion) | **POST** `/service/{service_id}/version` | Create a service version
 [**DeactivateServiceVersion**](VersionAPI.md#DeactivateServiceVersion) | **PUT** `/service/{service_id}/version/{version_id}/deactivate` | Deactivate a service version
+[**DeactivateServiceVersionEnvironment**](VersionAPI.md#DeactivateServiceVersionEnvironment) | **PUT** `/service/{service_id}/version/{version_id}/deactivate/{environment_name}` | Deactivate a service version on an environment
 [**GetServiceVersion**](VersionAPI.md#GetServiceVersion) | **GET** `/service/{service_id}/version/{version_id}` | Get a version of a service
 [**ListServiceVersions**](VersionAPI.md#ListServiceVersions) | **GET** `/service/{service_id}/version` | List versions of a service
 [**LockServiceVersion**](VersionAPI.md#LockServiceVersion) | **PUT** `/service/{service_id}/version/{version_id}/lock` | Lock a service version
@@ -64,6 +66,77 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiActivateServiceVersionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**VersionResponse**](VersionResponse.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## ActivateServiceVersionEnvironment
+
+Activate a service version on the specified environment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionID := int32(56) // int32 | Integer identifying a service version.
+    environmentName := openapiclient.environment_name("staging") // EnvironmentName | 
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.VersionAPI.ActivateServiceVersionEnvironment(ctx, serviceID, versionID, environmentName).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VersionAPI.ActivateServiceVersionEnvironment`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `ActivateServiceVersionEnvironment`: VersionResponse
+    fmt.Fprintf(os.Stdout, "Response from `VersionAPI.ActivateServiceVersionEnvironment`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**versionID** | **int32** | Integer identifying a service version. | 
+**environmentName** | [**EnvironmentName**](.md) |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiActivateServiceVersionEnvironmentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -269,6 +342,77 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiDeactivateServiceVersionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**VersionResponse**](VersionResponse.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## DeactivateServiceVersionEnvironment
+
+Deactivate a service version on an environment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionID := int32(56) // int32 | Integer identifying a service version.
+    environmentName := openapiclient.environment_name("staging") // EnvironmentName | 
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.VersionAPI.DeactivateServiceVersionEnvironment(ctx, serviceID, versionID, environmentName).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `VersionAPI.DeactivateServiceVersionEnvironment`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DeactivateServiceVersionEnvironment`: VersionResponse
+    fmt.Fprintf(os.Stdout, "Response from `VersionAPI.DeactivateServiceVersionEnvironment`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**versionID** | **int32** | Integer identifying a service version. | 
+**environmentName** | [**EnvironmentName**](.md) |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeactivateServiceVersionEnvironmentRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -41,6 +41,8 @@ type ServiceDetail struct {
 	Paused *bool `json:"paused,omitempty"`
 	// A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service.
 	Versions []SchemasVersionResponse `json:"versions,omitempty"`
+	// A list of environments where the service has been deployed.
+	Environments []Environment `json:"environments,omitempty"`
 	ActiveVersion NullableServiceVersionDetailOrNull `json:"active_version,omitempty"`
 	Version *ServiceVersionDetail `json:"version,omitempty"`
 	AdditionalProperties map[string]any
@@ -457,6 +459,38 @@ func (o *ServiceDetail) SetVersions(v []SchemasVersionResponse) {
 	o.Versions = v
 }
 
+// GetEnvironments returns the Environments field value if set, zero value otherwise.
+func (o *ServiceDetail) GetEnvironments() []Environment {
+	if o == nil || o.Environments == nil {
+		var ret []Environment
+		return ret
+	}
+	return o.Environments
+}
+
+// GetEnvironmentsOk returns a tuple with the Environments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ServiceDetail) GetEnvironmentsOk() ([]Environment, bool) {
+	if o == nil || o.Environments == nil {
+		return nil, false
+	}
+	return o.Environments, true
+}
+
+// HasEnvironments returns a boolean if a field has been set.
+func (o *ServiceDetail) HasEnvironments() bool {
+	if o != nil && o.Environments != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnvironments gets a reference to the given []Environment and assigns it to the Environments field.
+func (o *ServiceDetail) SetEnvironments(v []Environment) {
+	o.Environments = v
+}
+
 // GetActiveVersion returns the ActiveVersion field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ServiceDetail) GetActiveVersion() ServiceVersionDetailOrNull {
 	if o == nil || o.ActiveVersion.Get() == nil {
@@ -568,6 +602,9 @@ func (o ServiceDetail) MarshalJSON() ([]byte, error) {
 	if o.Versions != nil {
 		toSerialize["versions"] = o.Versions
 	}
+	if o.Environments != nil {
+		toSerialize["environments"] = o.Environments
+	}
 	if o.ActiveVersion.IsSet() {
 		toSerialize["active_version"] = o.ActiveVersion.Get()
 	}
@@ -605,6 +642,7 @@ func (o *ServiceDetail) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "publish_key")
 		delete(additionalProperties, "paused")
 		delete(additionalProperties, "versions")
+		delete(additionalProperties, "environments")
 		delete(additionalProperties, "active_version")
 		delete(additionalProperties, "version")
 		o.AdditionalProperties = additionalProperties

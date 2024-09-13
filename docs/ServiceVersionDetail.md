@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**Environments** | Pointer to [**[]Environment**](Environment.md) | A list of environments where the service has been deployed. | [optional] 
 **Backends** | Pointer to [**[]BackendResponse**](BackendResponse.md) | List of backends associated to this service. | [optional] 
 **CacheSettings** | Pointer to [**[]CacheSettingResponse**](CacheSettingResponse.md) | List of cache settings associated to this service. | [optional] 
 **Conditions** | Pointer to [**[]ConditionResponse**](ConditionResponse.md) | List of conditions associated to this service. | [optional] 
@@ -363,6 +364,31 @@ SetServiceID sets ServiceID field to given value.
 `func (o *ServiceVersionDetail) HasServiceID() bool`
 
 HasServiceID returns a boolean if a field has been set.
+
+### GetEnvironments
+
+`func (o *ServiceVersionDetail) GetEnvironments() []Environment`
+
+GetEnvironments returns the Environments field if non-nil, zero value otherwise.
+
+### GetEnvironmentsOk
+
+`func (o *ServiceVersionDetail) GetEnvironmentsOk() (*[]Environment, bool)`
+
+GetEnvironmentsOk returns a tuple with the Environments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnvironments
+
+`func (o *ServiceVersionDetail) SetEnvironments(v []Environment)`
+
+SetEnvironments sets Environments field to given value.
+
+### HasEnvironments
+
+`func (o *ServiceVersionDetail) HasEnvironments() bool`
+
+HasEnvironments returns a boolean if a field has been set.
 
 ### GetBackends
 

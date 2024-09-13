@@ -253,6 +253,7 @@ Name | Type | Description | Notes
 **AllStatus4xx** | Pointer to **int32** | Number of \&quot;Client Error\&quot; codes delivered for all sources. | [optional] 
 **AllStatus5xx** | Pointer to **int32** | Number of \&quot;Server Error\&quot; codes delivered for all sources. | [optional] 
 **OriginOffload** | Pointer to **float32** | Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`). | [optional] 
+**RequestDeniedGetHeadBody** | Pointer to **int32** | Number of requests where Fastly responded with 400 due to the request being a GET or HEAD request containing a body. | [optional] 
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **StartTime** | Pointer to **int32** | Timestamp for the start of the time period being reported | [optional] 
 
@@ -6509,6 +6510,31 @@ SetOriginOffload sets OriginOffload field to given value.
 `func (o *Results) HasOriginOffload() bool`
 
 HasOriginOffload returns a boolean if a field has been set.
+
+### GetRequestDeniedGetHeadBody
+
+`func (o *Results) GetRequestDeniedGetHeadBody() int32`
+
+GetRequestDeniedGetHeadBody returns the RequestDeniedGetHeadBody field if non-nil, zero value otherwise.
+
+### GetRequestDeniedGetHeadBodyOk
+
+`func (o *Results) GetRequestDeniedGetHeadBodyOk() (*int32, bool)`
+
+GetRequestDeniedGetHeadBodyOk returns a tuple with the RequestDeniedGetHeadBody field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestDeniedGetHeadBody
+
+`func (o *Results) SetRequestDeniedGetHeadBody(v int32)`
+
+SetRequestDeniedGetHeadBody sets RequestDeniedGetHeadBody field to given value.
+
+### HasRequestDeniedGetHeadBody
+
+`func (o *Results) HasRequestDeniedGetHeadBody() bool`
+
+HasRequestDeniedGetHeadBody returns a boolean if a field has been set.
 
 ### GetServiceID
 

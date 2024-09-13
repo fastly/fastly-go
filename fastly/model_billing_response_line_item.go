@@ -26,22 +26,22 @@ type BillingResponseLineItem struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	Amount *float32 `json:"amount,omitempty"`
+	Amount NullableFloat32 `json:"amount,omitempty"`
 	// An alphanumeric string identifying the invoice.
-	AriaInvoiceID *string `json:"aria_invoice_id,omitempty"`
-	ClientServiceID *string `json:"client_service_id,omitempty"`
+	AriaInvoiceID NullableString `json:"aria_invoice_id,omitempty"`
+	ClientServiceID NullableString `json:"client_service_id,omitempty"`
 	CreditCouponCode NullableString `json:"credit_coupon_code,omitempty"`
-	Description *string `json:"description,omitempty"`
+	Description NullableString `json:"description,omitempty"`
 	ID *string `json:"id,omitempty"`
-	LineNumber *int32 `json:"line_number,omitempty"`
-	PlanName *string `json:"plan_name,omitempty"`
-	PlanNo *float32 `json:"plan_no,omitempty"`
+	LineNumber NullableInt32 `json:"line_number,omitempty"`
+	PlanName NullableString `json:"plan_name,omitempty"`
+	PlanNo NullableFloat32 `json:"plan_no,omitempty"`
 	RatePerUnit NullableFloat32 `json:"rate_per_unit,omitempty"`
 	RateScheduleNo NullableFloat32 `json:"rate_schedule_no,omitempty"`
 	RateScheduleTierNo NullableFloat32 `json:"rate_schedule_tier_no,omitempty"`
-	ServiceName *string `json:"service_name,omitempty"`
-	ServiceNo *float32 `json:"service_no,omitempty"`
-	Units *float32 `json:"units,omitempty"`
+	ServiceName NullableString `json:"service_name,omitempty"`
+	ServiceNo NullableFloat32 `json:"service_no,omitempty"`
+	Units NullableFloat32 `json:"units,omitempty"`
 	UsageTypeCd NullableString `json:"usage_type_cd,omitempty"`
 	UsageTypeNo NullableFloat32 `json:"usage_type_no,omitempty"`
 	AdditionalProperties map[string]any
@@ -192,100 +192,130 @@ func (o *BillingResponseLineItem) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetAmount returns the Amount field value if set, zero value otherwise.
+// GetAmount returns the Amount field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BillingResponseLineItem) GetAmount() float32 {
-	if o == nil || o.Amount == nil {
+	if o == nil || o.Amount.Get() == nil {
 		var ret float32
 		return ret
 	}
-	return *o.Amount
+	return *o.Amount.Get()
 }
 
 // GetAmountOk returns a tuple with the Amount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetAmountOk() (*float32, bool) {
-	if o == nil || o.Amount == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Amount, true
+	return o.Amount.Get(), o.Amount.IsSet()
 }
 
 // HasAmount returns a boolean if a field has been set.
 func (o *BillingResponseLineItem) HasAmount() bool {
-	if o != nil && o.Amount != nil {
+	if o != nil && o.Amount.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAmount gets a reference to the given float32 and assigns it to the Amount field.
+// SetAmount gets a reference to the given NullableFloat32 and assigns it to the Amount field.
 func (o *BillingResponseLineItem) SetAmount(v float32) {
-	o.Amount = &v
+	o.Amount.Set(&v)
+}
+// SetAmountNil sets the value for Amount to be an explicit nil
+func (o *BillingResponseLineItem) SetAmountNil() {
+	o.Amount.Set(nil)
 }
 
-// GetAriaInvoiceID returns the AriaInvoiceID field value if set, zero value otherwise.
+// UnsetAmount ensures that no value is present for Amount, not even an explicit nil
+func (o *BillingResponseLineItem) UnsetAmount() {
+	o.Amount.Unset()
+}
+
+// GetAriaInvoiceID returns the AriaInvoiceID field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BillingResponseLineItem) GetAriaInvoiceID() string {
-	if o == nil || o.AriaInvoiceID == nil {
+	if o == nil || o.AriaInvoiceID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.AriaInvoiceID
+	return *o.AriaInvoiceID.Get()
 }
 
 // GetAriaInvoiceIDOk returns a tuple with the AriaInvoiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetAriaInvoiceIDOk() (*string, bool) {
-	if o == nil || o.AriaInvoiceID == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.AriaInvoiceID, true
+	return o.AriaInvoiceID.Get(), o.AriaInvoiceID.IsSet()
 }
 
 // HasAriaInvoiceID returns a boolean if a field has been set.
 func (o *BillingResponseLineItem) HasAriaInvoiceID() bool {
-	if o != nil && o.AriaInvoiceID != nil {
+	if o != nil && o.AriaInvoiceID.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetAriaInvoiceID gets a reference to the given string and assigns it to the AriaInvoiceID field.
+// SetAriaInvoiceID gets a reference to the given NullableString and assigns it to the AriaInvoiceID field.
 func (o *BillingResponseLineItem) SetAriaInvoiceID(v string) {
-	o.AriaInvoiceID = &v
+	o.AriaInvoiceID.Set(&v)
+}
+// SetAriaInvoiceIDNil sets the value for AriaInvoiceID to be an explicit nil
+func (o *BillingResponseLineItem) SetAriaInvoiceIDNil() {
+	o.AriaInvoiceID.Set(nil)
 }
 
-// GetClientServiceID returns the ClientServiceID field value if set, zero value otherwise.
+// UnsetAriaInvoiceID ensures that no value is present for AriaInvoiceID, not even an explicit nil
+func (o *BillingResponseLineItem) UnsetAriaInvoiceID() {
+	o.AriaInvoiceID.Unset()
+}
+
+// GetClientServiceID returns the ClientServiceID field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BillingResponseLineItem) GetClientServiceID() string {
-	if o == nil || o.ClientServiceID == nil {
+	if o == nil || o.ClientServiceID.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ClientServiceID
+	return *o.ClientServiceID.Get()
 }
 
 // GetClientServiceIDOk returns a tuple with the ClientServiceID field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetClientServiceIDOk() (*string, bool) {
-	if o == nil || o.ClientServiceID == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.ClientServiceID, true
+	return o.ClientServiceID.Get(), o.ClientServiceID.IsSet()
 }
 
 // HasClientServiceID returns a boolean if a field has been set.
 func (o *BillingResponseLineItem) HasClientServiceID() bool {
-	if o != nil && o.ClientServiceID != nil {
+	if o != nil && o.ClientServiceID.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetClientServiceID gets a reference to the given string and assigns it to the ClientServiceID field.
+// SetClientServiceID gets a reference to the given NullableString and assigns it to the ClientServiceID field.
 func (o *BillingResponseLineItem) SetClientServiceID(v string) {
-	o.ClientServiceID = &v
+	o.ClientServiceID.Set(&v)
+}
+// SetClientServiceIDNil sets the value for ClientServiceID to be an explicit nil
+func (o *BillingResponseLineItem) SetClientServiceIDNil() {
+	o.ClientServiceID.Set(nil)
+}
+
+// UnsetClientServiceID ensures that no value is present for ClientServiceID, not even an explicit nil
+func (o *BillingResponseLineItem) UnsetClientServiceID() {
+	o.ClientServiceID.Unset()
 }
 
 // GetCreditCouponCode returns the CreditCouponCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -330,36 +360,46 @@ func (o *BillingResponseLineItem) UnsetCreditCouponCode() {
 	o.CreditCouponCode.Unset()
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BillingResponseLineItem) GetDescription() string {
-	if o == nil || o.Description == nil {
+	if o == nil || o.Description.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.Description
+	return *o.Description.Get()
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetDescriptionOk() (*string, bool) {
-	if o == nil || o.Description == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Description, true
+	return o.Description.Get(), o.Description.IsSet()
 }
 
 // HasDescription returns a boolean if a field has been set.
 func (o *BillingResponseLineItem) HasDescription() bool {
-	if o != nil && o.Description != nil {
+	if o != nil && o.Description.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
+// SetDescription gets a reference to the given NullableString and assigns it to the Description field.
 func (o *BillingResponseLineItem) SetDescription(v string) {
-	o.Description = &v
+	o.Description.Set(&v)
+}
+// SetDescriptionNil sets the value for Description to be an explicit nil
+func (o *BillingResponseLineItem) SetDescriptionNil() {
+	o.Description.Set(nil)
+}
+
+// UnsetDescription ensures that no value is present for Description, not even an explicit nil
+func (o *BillingResponseLineItem) UnsetDescription() {
+	o.Description.Unset()
 }
 
 // GetID returns the ID field value if set, zero value otherwise.
@@ -394,100 +434,130 @@ func (o *BillingResponseLineItem) SetID(v string) {
 	o.ID = &v
 }
 
-// GetLineNumber returns the LineNumber field value if set, zero value otherwise.
+// GetLineNumber returns the LineNumber field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BillingResponseLineItem) GetLineNumber() int32 {
-	if o == nil || o.LineNumber == nil {
+	if o == nil || o.LineNumber.Get() == nil {
 		var ret int32
 		return ret
 	}
-	return *o.LineNumber
+	return *o.LineNumber.Get()
 }
 
 // GetLineNumberOk returns a tuple with the LineNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetLineNumberOk() (*int32, bool) {
-	if o == nil || o.LineNumber == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.LineNumber, true
+	return o.LineNumber.Get(), o.LineNumber.IsSet()
 }
 
 // HasLineNumber returns a boolean if a field has been set.
 func (o *BillingResponseLineItem) HasLineNumber() bool {
-	if o != nil && o.LineNumber != nil {
+	if o != nil && o.LineNumber.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLineNumber gets a reference to the given int32 and assigns it to the LineNumber field.
+// SetLineNumber gets a reference to the given NullableInt32 and assigns it to the LineNumber field.
 func (o *BillingResponseLineItem) SetLineNumber(v int32) {
-	o.LineNumber = &v
+	o.LineNumber.Set(&v)
+}
+// SetLineNumberNil sets the value for LineNumber to be an explicit nil
+func (o *BillingResponseLineItem) SetLineNumberNil() {
+	o.LineNumber.Set(nil)
 }
 
-// GetPlanName returns the PlanName field value if set, zero value otherwise.
+// UnsetLineNumber ensures that no value is present for LineNumber, not even an explicit nil
+func (o *BillingResponseLineItem) UnsetLineNumber() {
+	o.LineNumber.Unset()
+}
+
+// GetPlanName returns the PlanName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BillingResponseLineItem) GetPlanName() string {
-	if o == nil || o.PlanName == nil {
+	if o == nil || o.PlanName.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.PlanName
+	return *o.PlanName.Get()
 }
 
 // GetPlanNameOk returns a tuple with the PlanName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetPlanNameOk() (*string, bool) {
-	if o == nil || o.PlanName == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.PlanName, true
+	return o.PlanName.Get(), o.PlanName.IsSet()
 }
 
 // HasPlanName returns a boolean if a field has been set.
 func (o *BillingResponseLineItem) HasPlanName() bool {
-	if o != nil && o.PlanName != nil {
+	if o != nil && o.PlanName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPlanName gets a reference to the given string and assigns it to the PlanName field.
+// SetPlanName gets a reference to the given NullableString and assigns it to the PlanName field.
 func (o *BillingResponseLineItem) SetPlanName(v string) {
-	o.PlanName = &v
+	o.PlanName.Set(&v)
+}
+// SetPlanNameNil sets the value for PlanName to be an explicit nil
+func (o *BillingResponseLineItem) SetPlanNameNil() {
+	o.PlanName.Set(nil)
 }
 
-// GetPlanNo returns the PlanNo field value if set, zero value otherwise.
+// UnsetPlanName ensures that no value is present for PlanName, not even an explicit nil
+func (o *BillingResponseLineItem) UnsetPlanName() {
+	o.PlanName.Unset()
+}
+
+// GetPlanNo returns the PlanNo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BillingResponseLineItem) GetPlanNo() float32 {
-	if o == nil || o.PlanNo == nil {
+	if o == nil || o.PlanNo.Get() == nil {
 		var ret float32
 		return ret
 	}
-	return *o.PlanNo
+	return *o.PlanNo.Get()
 }
 
 // GetPlanNoOk returns a tuple with the PlanNo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetPlanNoOk() (*float32, bool) {
-	if o == nil || o.PlanNo == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.PlanNo, true
+	return o.PlanNo.Get(), o.PlanNo.IsSet()
 }
 
 // HasPlanNo returns a boolean if a field has been set.
 func (o *BillingResponseLineItem) HasPlanNo() bool {
-	if o != nil && o.PlanNo != nil {
+	if o != nil && o.PlanNo.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetPlanNo gets a reference to the given float32 and assigns it to the PlanNo field.
+// SetPlanNo gets a reference to the given NullableFloat32 and assigns it to the PlanNo field.
 func (o *BillingResponseLineItem) SetPlanNo(v float32) {
-	o.PlanNo = &v
+	o.PlanNo.Set(&v)
+}
+// SetPlanNoNil sets the value for PlanNo to be an explicit nil
+func (o *BillingResponseLineItem) SetPlanNoNil() {
+	o.PlanNo.Set(nil)
+}
+
+// UnsetPlanNo ensures that no value is present for PlanNo, not even an explicit nil
+func (o *BillingResponseLineItem) UnsetPlanNo() {
+	o.PlanNo.Unset()
 }
 
 // GetRatePerUnit returns the RatePerUnit field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -616,100 +686,130 @@ func (o *BillingResponseLineItem) UnsetRateScheduleTierNo() {
 	o.RateScheduleTierNo.Unset()
 }
 
-// GetServiceName returns the ServiceName field value if set, zero value otherwise.
+// GetServiceName returns the ServiceName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BillingResponseLineItem) GetServiceName() string {
-	if o == nil || o.ServiceName == nil {
+	if o == nil || o.ServiceName.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceName
+	return *o.ServiceName.Get()
 }
 
 // GetServiceNameOk returns a tuple with the ServiceName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetServiceNameOk() (*string, bool) {
-	if o == nil || o.ServiceName == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.ServiceName, true
+	return o.ServiceName.Get(), o.ServiceName.IsSet()
 }
 
 // HasServiceName returns a boolean if a field has been set.
 func (o *BillingResponseLineItem) HasServiceName() bool {
-	if o != nil && o.ServiceName != nil {
+	if o != nil && o.ServiceName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceName gets a reference to the given string and assigns it to the ServiceName field.
+// SetServiceName gets a reference to the given NullableString and assigns it to the ServiceName field.
 func (o *BillingResponseLineItem) SetServiceName(v string) {
-	o.ServiceName = &v
+	o.ServiceName.Set(&v)
+}
+// SetServiceNameNil sets the value for ServiceName to be an explicit nil
+func (o *BillingResponseLineItem) SetServiceNameNil() {
+	o.ServiceName.Set(nil)
 }
 
-// GetServiceNo returns the ServiceNo field value if set, zero value otherwise.
+// UnsetServiceName ensures that no value is present for ServiceName, not even an explicit nil
+func (o *BillingResponseLineItem) UnsetServiceName() {
+	o.ServiceName.Unset()
+}
+
+// GetServiceNo returns the ServiceNo field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BillingResponseLineItem) GetServiceNo() float32 {
-	if o == nil || o.ServiceNo == nil {
+	if o == nil || o.ServiceNo.Get() == nil {
 		var ret float32
 		return ret
 	}
-	return *o.ServiceNo
+	return *o.ServiceNo.Get()
 }
 
 // GetServiceNoOk returns a tuple with the ServiceNo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetServiceNoOk() (*float32, bool) {
-	if o == nil || o.ServiceNo == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.ServiceNo, true
+	return o.ServiceNo.Get(), o.ServiceNo.IsSet()
 }
 
 // HasServiceNo returns a boolean if a field has been set.
 func (o *BillingResponseLineItem) HasServiceNo() bool {
-	if o != nil && o.ServiceNo != nil {
+	if o != nil && o.ServiceNo.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceNo gets a reference to the given float32 and assigns it to the ServiceNo field.
+// SetServiceNo gets a reference to the given NullableFloat32 and assigns it to the ServiceNo field.
 func (o *BillingResponseLineItem) SetServiceNo(v float32) {
-	o.ServiceNo = &v
+	o.ServiceNo.Set(&v)
+}
+// SetServiceNoNil sets the value for ServiceNo to be an explicit nil
+func (o *BillingResponseLineItem) SetServiceNoNil() {
+	o.ServiceNo.Set(nil)
 }
 
-// GetUnits returns the Units field value if set, zero value otherwise.
+// UnsetServiceNo ensures that no value is present for ServiceNo, not even an explicit nil
+func (o *BillingResponseLineItem) UnsetServiceNo() {
+	o.ServiceNo.Unset()
+}
+
+// GetUnits returns the Units field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BillingResponseLineItem) GetUnits() float32 {
-	if o == nil || o.Units == nil {
+	if o == nil || o.Units.Get() == nil {
 		var ret float32
 		return ret
 	}
-	return *o.Units
+	return *o.Units.Get()
 }
 
 // GetUnitsOk returns a tuple with the Units field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetUnitsOk() (*float32, bool) {
-	if o == nil || o.Units == nil {
+	if o == nil  {
 		return nil, false
 	}
-	return o.Units, true
+	return o.Units.Get(), o.Units.IsSet()
 }
 
 // HasUnits returns a boolean if a field has been set.
 func (o *BillingResponseLineItem) HasUnits() bool {
-	if o != nil && o.Units != nil {
+	if o != nil && o.Units.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUnits gets a reference to the given float32 and assigns it to the Units field.
+// SetUnits gets a reference to the given NullableFloat32 and assigns it to the Units field.
 func (o *BillingResponseLineItem) SetUnits(v float32) {
-	o.Units = &v
+	o.Units.Set(&v)
+}
+// SetUnitsNil sets the value for Units to be an explicit nil
+func (o *BillingResponseLineItem) SetUnitsNil() {
+	o.Units.Set(nil)
+}
+
+// UnsetUnits ensures that no value is present for Units, not even an explicit nil
+func (o *BillingResponseLineItem) UnsetUnits() {
+	o.Units.Unset()
 }
 
 // GetUsageTypeCd returns the UsageTypeCd field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -809,32 +909,32 @@ func (o BillingResponseLineItem) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.Amount != nil {
-		toSerialize["amount"] = o.Amount
+	if o.Amount.IsSet() {
+		toSerialize["amount"] = o.Amount.Get()
 	}
-	if o.AriaInvoiceID != nil {
-		toSerialize["aria_invoice_id"] = o.AriaInvoiceID
+	if o.AriaInvoiceID.IsSet() {
+		toSerialize["aria_invoice_id"] = o.AriaInvoiceID.Get()
 	}
-	if o.ClientServiceID != nil {
-		toSerialize["client_service_id"] = o.ClientServiceID
+	if o.ClientServiceID.IsSet() {
+		toSerialize["client_service_id"] = o.ClientServiceID.Get()
 	}
 	if o.CreditCouponCode.IsSet() {
 		toSerialize["credit_coupon_code"] = o.CreditCouponCode.Get()
 	}
-	if o.Description != nil {
-		toSerialize["description"] = o.Description
+	if o.Description.IsSet() {
+		toSerialize["description"] = o.Description.Get()
 	}
 	if o.ID != nil {
 		toSerialize["id"] = o.ID
 	}
-	if o.LineNumber != nil {
-		toSerialize["line_number"] = o.LineNumber
+	if o.LineNumber.IsSet() {
+		toSerialize["line_number"] = o.LineNumber.Get()
 	}
-	if o.PlanName != nil {
-		toSerialize["plan_name"] = o.PlanName
+	if o.PlanName.IsSet() {
+		toSerialize["plan_name"] = o.PlanName.Get()
 	}
-	if o.PlanNo != nil {
-		toSerialize["plan_no"] = o.PlanNo
+	if o.PlanNo.IsSet() {
+		toSerialize["plan_no"] = o.PlanNo.Get()
 	}
 	if o.RatePerUnit.IsSet() {
 		toSerialize["rate_per_unit"] = o.RatePerUnit.Get()
@@ -845,14 +945,14 @@ func (o BillingResponseLineItem) MarshalJSON() ([]byte, error) {
 	if o.RateScheduleTierNo.IsSet() {
 		toSerialize["rate_schedule_tier_no"] = o.RateScheduleTierNo.Get()
 	}
-	if o.ServiceName != nil {
-		toSerialize["service_name"] = o.ServiceName
+	if o.ServiceName.IsSet() {
+		toSerialize["service_name"] = o.ServiceName.Get()
 	}
-	if o.ServiceNo != nil {
-		toSerialize["service_no"] = o.ServiceNo
+	if o.ServiceNo.IsSet() {
+		toSerialize["service_no"] = o.ServiceNo.Get()
 	}
-	if o.Units != nil {
-		toSerialize["units"] = o.Units
+	if o.Units.IsSet() {
+		toSerialize["units"] = o.Units.Get()
 	}
 	if o.UsageTypeCd.IsSet() {
 		toSerialize["usage_type_cd"] = o.UsageTypeCd.Get()

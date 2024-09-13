@@ -41,6 +41,8 @@ type SchemasVersionResponse struct {
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
+	// A list of environments where the service has been deployed.
+	Environments []Environment `json:"environments,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -471,6 +473,38 @@ func (o *SchemasVersionResponse) SetServiceID(v string) {
 	o.ServiceID = &v
 }
 
+// GetEnvironments returns the Environments field value if set, zero value otherwise.
+func (o *SchemasVersionResponse) GetEnvironments() []Environment {
+	if o == nil || o.Environments == nil {
+		var ret []Environment
+		return ret
+	}
+	return o.Environments
+}
+
+// GetEnvironmentsOk returns a tuple with the Environments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SchemasVersionResponse) GetEnvironmentsOk() ([]Environment, bool) {
+	if o == nil || o.Environments == nil {
+		return nil, false
+	}
+	return o.Environments, true
+}
+
+// HasEnvironments returns a boolean if a field has been set.
+func (o *SchemasVersionResponse) HasEnvironments() bool {
+	if o != nil && o.Environments != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnvironments gets a reference to the given []Environment and assigns it to the Environments field.
+func (o *SchemasVersionResponse) SetEnvironments(v []Environment) {
+	o.Environments = v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o SchemasVersionResponse) MarshalJSON() ([]byte, error) {
@@ -508,6 +542,9 @@ func (o SchemasVersionResponse) MarshalJSON() ([]byte, error) {
 	if o.ServiceID != nil {
 		toSerialize["service_id"] = o.ServiceID
 	}
+	if o.Environments != nil {
+		toSerialize["environments"] = o.Environments
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -539,6 +576,7 @@ func (o *SchemasVersionResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "deleted_at")
 		delete(additionalProperties, "updated_at")
 		delete(additionalProperties, "service_id")
+		delete(additionalProperties, "environments")
 		o.AdditionalProperties = additionalProperties
 	}
 

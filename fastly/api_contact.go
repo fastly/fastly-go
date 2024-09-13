@@ -317,7 +317,7 @@ func (a *ContactAPIService) DeleteContactExecute(r APIDeleteContactRequest) (*In
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/customer/{customer_id}/contact/{contact_id}"
+	localVarPath := localBasePath + "/customer/{customer_id}/contacts/{contact_id}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"contact_id"+"}", gourl.PathEscape(parameterToString(r.contactID, "")))
 

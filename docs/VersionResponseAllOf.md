@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**Environments** | Pointer to [**[]Environment**](Environment.md) | A list of environments where the service has been deployed. | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetServiceID sets ServiceID field to given value.
 `func (o *VersionResponseAllOf) HasServiceID() bool`
 
 HasServiceID returns a boolean if a field has been set.
+
+### GetEnvironments
+
+`func (o *VersionResponseAllOf) GetEnvironments() []Environment`
+
+GetEnvironments returns the Environments field if non-nil, zero value otherwise.
+
+### GetEnvironmentsOk
+
+`func (o *VersionResponseAllOf) GetEnvironmentsOk() (*[]Environment, bool)`
+
+GetEnvironmentsOk returns a tuple with the Environments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnvironments
+
+`func (o *VersionResponseAllOf) SetEnvironments(v []Environment)`
+
+SetEnvironments sets Environments field to given value.
+
+### HasEnvironments
+
+`func (o *VersionResponseAllOf) HasEnvironments() bool`
+
+HasEnvironments returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

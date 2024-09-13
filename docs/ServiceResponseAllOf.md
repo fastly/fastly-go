@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **PublishKey** | Pointer to **string** | Unused at this time. | [optional] 
 **Paused** | Pointer to **bool** | Whether the service is paused. Services are paused due to a lack of traffic for an extended period of time. Services are resumed either when a draft version is activated or a locked version is cloned and reactivated. | [optional] 
 **Versions** | Pointer to [**[]SchemasVersionResponse**](SchemasVersionResponse.md) | A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service. | [optional] 
+**Environments** | Pointer to [**[]Environment**](Environment.md) | A list of environments where the service has been deployed. | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetVersions sets Versions field to given value.
 `func (o *ServiceResponseAllOf) HasVersions() bool`
 
 HasVersions returns a boolean if a field has been set.
+
+### GetEnvironments
+
+`func (o *ServiceResponseAllOf) GetEnvironments() []Environment`
+
+GetEnvironments returns the Environments field if non-nil, zero value otherwise.
+
+### GetEnvironmentsOk
+
+`func (o *ServiceResponseAllOf) GetEnvironmentsOk() (*[]Environment, bool)`
+
+GetEnvironmentsOk returns a tuple with the Environments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnvironments
+
+`func (o *ServiceResponseAllOf) SetEnvironments(v []Environment)`
+
+SetEnvironments sets Environments field to given value.
+
+### HasEnvironments
+
+`func (o *ServiceResponseAllOf) HasEnvironments() bool`
+
+HasEnvironments returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

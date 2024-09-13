@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Timestamp** | Pointer to [**SubsequentRequestTimestamp**](SubsequentRequestTimestamp.md) |  | [optional] 
+**Timestamp** | Pointer to **int32** | Value to use for subsequent requests. | [optional] 
 **AggregateDelay** | Pointer to **int32** | Offset of entry timestamps from the current time due to processing time. | [optional] 
 **Data** | Pointer to [**[]DomainInspectorRealtimeEntry**](DomainInspectorRealtimeEntry.md) | A list of report [entries](#entry-data-model), each representing one second of time. | [optional] 
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTimestamp
 
-`func (o *DomainInspector) GetTimestamp() SubsequentRequestTimestamp`
+`func (o *DomainInspector) GetTimestamp() int32`
 
 GetTimestamp returns the Timestamp field if non-nil, zero value otherwise.
 
 ### GetTimestampOk
 
-`func (o *DomainInspector) GetTimestampOk() (*SubsequentRequestTimestamp, bool)`
+`func (o *DomainInspector) GetTimestampOk() (*int32, bool)`
 
 GetTimestampOk returns a tuple with the Timestamp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimestamp
 
-`func (o *DomainInspector) SetTimestamp(v SubsequentRequestTimestamp)`
+`func (o *DomainInspector) SetTimestamp(v int32)`
 
 SetTimestamp sets Timestamp field to given value.
 

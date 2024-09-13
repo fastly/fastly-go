@@ -56,9 +56,9 @@ type APIListTLSDomainsRequest struct {
 	filterTLSCertificatesID *string
 	filterTLSSubscriptionsID *string
 	include *string
+	sort *string
 	pageNumber *int32
 	pageSize *int32
-	sort *string
 }
 
 // FilterInUse Optional. Limit the returned domains to those currently using Fastly to terminate TLS with SNI (that is, domains considered \&quot;in use\&quot;) Permitted values: true, false.
@@ -81,6 +81,11 @@ func (r *APIListTLSDomainsRequest) Include(include string) *APIListTLSDomainsReq
 	r.include = &include
 	return r
 }
+// Sort The order in which to list the results.
+func (r *APIListTLSDomainsRequest) Sort(sort string) *APIListTLSDomainsRequest {
+	r.sort = &sort
+	return r
+}
 // PageNumber Current page.
 func (r *APIListTLSDomainsRequest) PageNumber(pageNumber int32) *APIListTLSDomainsRequest {
 	r.pageNumber = &pageNumber
@@ -89,11 +94,6 @@ func (r *APIListTLSDomainsRequest) PageNumber(pageNumber int32) *APIListTLSDomai
 // PageSize Number of records per page.
 func (r *APIListTLSDomainsRequest) PageSize(pageSize int32) *APIListTLSDomainsRequest {
 	r.pageSize = &pageSize
-	return r
-}
-// Sort The order in which to list the results by creation date.
-func (r *APIListTLSDomainsRequest) Sort(sort string) *APIListTLSDomainsRequest {
-	r.sort = &sort
 	return r
 }
 
@@ -150,14 +150,14 @@ func (a *TLSDomainsAPIService) ListTLSDomainsExecute(r APIListTLSDomainsRequest)
 	if r.include != nil {
 		localVarQueryParams.Add("include", parameterToString(*r.include, ""))
 	}
+	if r.sort != nil {
+		localVarQueryParams.Add("sort", parameterToString(*r.sort, ""))
+	}
 	if r.pageNumber != nil {
 		localVarQueryParams.Add("page[number]", parameterToString(*r.pageNumber, ""))
 	}
 	if r.pageSize != nil {
 		localVarQueryParams.Add("page[size]", parameterToString(*r.pageSize, ""))
-	}
-	if r.sort != nil {
-		localVarQueryParams.Add("sort", parameterToString(*r.sort, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
