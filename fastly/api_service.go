@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type ServiceAPI interface {
 
 	/*
-	CreateService Create a service
+		CreateService Create a service
 
-	Create a service.
+		Create a service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateServiceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateServiceRequest
 	*/
 	CreateService(ctx context.Context) APICreateServiceRequest
 
@@ -46,13 +45,13 @@ type ServiceAPI interface {
 	CreateServiceExecute(r APICreateServiceRequest) (*ServiceResponse, *http.Response, error)
 
 	/*
-	DeleteService Delete a service
+		DeleteService Delete a service
 
-	Delete a service.
+		Delete a service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIDeleteServiceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIDeleteServiceRequest
 	*/
 	DeleteService(ctx context.Context, serviceID string) APIDeleteServiceRequest
 
@@ -61,13 +60,13 @@ type ServiceAPI interface {
 	DeleteServiceExecute(r APIDeleteServiceRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetService Get a service
+		GetService Get a service
 
-	Get a specific service by id.
+		Get a specific service by id.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIGetServiceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIGetServiceRequest
 	*/
 	GetService(ctx context.Context, serviceID string) APIGetServiceRequest
 
@@ -76,13 +75,13 @@ type ServiceAPI interface {
 	GetServiceExecute(r APIGetServiceRequest) (*ServiceResponse, *http.Response, error)
 
 	/*
-	GetServiceDetail Get service details
+		GetServiceDetail Get service details
 
-	List detailed information on a specified service.
+		List detailed information on a specified service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIGetServiceDetailRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIGetServiceDetailRequest
 	*/
 	GetServiceDetail(ctx context.Context, serviceID string) APIGetServiceDetailRequest
 
@@ -91,13 +90,13 @@ type ServiceAPI interface {
 	GetServiceDetailExecute(r APIGetServiceDetailRequest) (*ServiceDetail, *http.Response, error)
 
 	/*
-	ListServiceDomains List the domains within a service
+		ListServiceDomains List the domains within a service
 
-	List the domains within a service.
+		List the domains within a service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIListServiceDomainsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIListServiceDomainsRequest
 	*/
 	ListServiceDomains(ctx context.Context, serviceID string) APIListServiceDomainsRequest
 
@@ -106,12 +105,12 @@ type ServiceAPI interface {
 	ListServiceDomainsExecute(r APIListServiceDomainsRequest) ([]DomainResponse, *http.Response, error)
 
 	/*
-	ListServices List services
+		ListServices List services
 
-	List services.
+		List services.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListServicesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListServicesRequest
 	*/
 	ListServices(ctx context.Context) APIListServicesRequest
 
@@ -120,12 +119,12 @@ type ServiceAPI interface {
 	ListServicesExecute(r APIListServicesRequest) ([]ServiceListResponse, *http.Response, error)
 
 	/*
-	SearchService Search for a service by name
+		SearchService Search for a service by name
 
-	Get a specific service by name.
+		Get a specific service by name.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APISearchServiceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APISearchServiceRequest
 	*/
 	SearchService(ctx context.Context) APISearchServiceRequest
 
@@ -134,13 +133,13 @@ type ServiceAPI interface {
 	SearchServiceExecute(r APISearchServiceRequest) (*ServiceResponse, *http.Response, error)
 
 	/*
-	UpdateService Update a service
+		UpdateService Update a service
 
-	Update a service.
+		Update a service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIUpdateServiceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIUpdateServiceRequest
 	*/
 	UpdateService(ctx context.Context, serviceID string) APIUpdateServiceRequest
 
@@ -154,11 +153,11 @@ type ServiceAPIService service
 
 // APICreateServiceRequest represents a request for the resource.
 type APICreateServiceRequest struct {
-	ctx context.Context
-	APIService ServiceAPI
-	comment *string
-	name *string
-	customerID *string
+	ctx          context.Context
+	APIService   ServiceAPI
+	comment      *string
+	name         *string
+	customerID   *string
 	resourceType *string
 }
 
@@ -167,16 +166,19 @@ func (r *APICreateServiceRequest) Comment(comment string) *APICreateServiceReque
 	r.comment = &comment
 	return r
 }
+
 // Name The name of the service.
 func (r *APICreateServiceRequest) Name(name string) *APICreateServiceRequest {
 	r.name = &name
 	return r
 }
+
 // CustomerID Alphanumeric string identifying the customer.
 func (r *APICreateServiceRequest) CustomerID(customerID string) *APICreateServiceRequest {
 	r.customerID = &customerID
 	return r
 }
+
 // ResourceType The type of this service.
 func (r *APICreateServiceRequest) ResourceType(resourceType string) *APICreateServiceRequest {
 	r.resourceType = &resourceType
@@ -199,7 +201,7 @@ Create a service.
 func (a *ServiceAPIService) CreateService(ctx context.Context) APICreateServiceRequest {
 	return APICreateServiceRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -207,10 +209,10 @@ func (a *ServiceAPIService) CreateService(ctx context.Context) APICreateServiceR
 //  @return ServiceResponse
 func (a *ServiceAPIService) CreateServiceExecute(r APICreateServiceRequest) (*ServiceResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ServiceResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ServiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAPIService.CreateService")
@@ -301,7 +303,6 @@ func (a *ServiceAPIService) CreateServiceExecute(r APICreateServiceRequest) (*Se
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -320,11 +321,10 @@ func (a *ServiceAPIService) CreateServiceExecute(r APICreateServiceRequest) (*Se
 
 // APIDeleteServiceRequest represents a request for the resource.
 type APIDeleteServiceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ServiceAPI
-	serviceID string
+	serviceID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteServiceRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -343,8 +343,8 @@ Delete a service.
 func (a *ServiceAPIService) DeleteService(ctx context.Context, serviceID string) APIDeleteServiceRequest {
 	return APIDeleteServiceRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 	}
 }
 
@@ -352,10 +352,10 @@ func (a *ServiceAPIService) DeleteService(ctx context.Context, serviceID string)
 //  @return InlineResponse200
 func (a *ServiceAPIService) DeleteServiceExecute(r APIDeleteServiceRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAPIService.DeleteService")
@@ -435,7 +435,6 @@ func (a *ServiceAPIService) DeleteServiceExecute(r APIDeleteServiceRequest) (*In
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -454,11 +453,10 @@ func (a *ServiceAPIService) DeleteServiceExecute(r APIDeleteServiceRequest) (*In
 
 // APIGetServiceRequest represents a request for the resource.
 type APIGetServiceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ServiceAPI
-	serviceID string
+	serviceID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetServiceRequest) Execute() (*ServiceResponse, *http.Response, error) {
@@ -477,8 +475,8 @@ Get a specific service by id.
 func (a *ServiceAPIService) GetService(ctx context.Context, serviceID string) APIGetServiceRequest {
 	return APIGetServiceRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 	}
 }
 
@@ -486,10 +484,10 @@ func (a *ServiceAPIService) GetService(ctx context.Context, serviceID string) AP
 //  @return ServiceResponse
 func (a *ServiceAPIService) GetServiceExecute(r APIGetServiceRequest) (*ServiceResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ServiceResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ServiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAPIService.GetService")
@@ -569,7 +567,6 @@ func (a *ServiceAPIService) GetServiceExecute(r APIGetServiceRequest) (*ServiceR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -588,10 +585,10 @@ func (a *ServiceAPIService) GetServiceExecute(r APIGetServiceRequest) (*ServiceR
 
 // APIGetServiceDetailRequest represents a request for the resource.
 type APIGetServiceDetailRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ServiceAPI
-	serviceID string
-	version *int32
+	serviceID  string
+	version    *int32
 }
 
 // Version Number identifying a version of the service.
@@ -617,8 +614,8 @@ List detailed information on a specified service.
 func (a *ServiceAPIService) GetServiceDetail(ctx context.Context, serviceID string) APIGetServiceDetailRequest {
 	return APIGetServiceDetailRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 	}
 }
 
@@ -626,10 +623,10 @@ func (a *ServiceAPIService) GetServiceDetail(ctx context.Context, serviceID stri
 //  @return ServiceDetail
 func (a *ServiceAPIService) GetServiceDetailExecute(r APIGetServiceDetailRequest) (*ServiceDetail, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ServiceDetail
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ServiceDetail
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAPIService.GetServiceDetail")
@@ -712,7 +709,6 @@ func (a *ServiceAPIService) GetServiceDetailExecute(r APIGetServiceDetailRequest
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -731,11 +727,10 @@ func (a *ServiceAPIService) GetServiceDetailExecute(r APIGetServiceDetailRequest
 
 // APIListServiceDomainsRequest represents a request for the resource.
 type APIListServiceDomainsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ServiceAPI
-	serviceID string
+	serviceID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListServiceDomainsRequest) Execute() ([]DomainResponse, *http.Response, error) {
@@ -754,8 +749,8 @@ List the domains within a service.
 func (a *ServiceAPIService) ListServiceDomains(ctx context.Context, serviceID string) APIListServiceDomainsRequest {
 	return APIListServiceDomainsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 	}
 }
 
@@ -763,10 +758,10 @@ func (a *ServiceAPIService) ListServiceDomains(ctx context.Context, serviceID st
 //  @return []DomainResponse
 func (a *ServiceAPIService) ListServiceDomainsExecute(r APIListServiceDomainsRequest) ([]DomainResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []DomainResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []DomainResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAPIService.ListServiceDomains")
@@ -846,7 +841,6 @@ func (a *ServiceAPIService) ListServiceDomainsExecute(r APIListServiceDomainsReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -865,12 +859,12 @@ func (a *ServiceAPIService) ListServiceDomainsExecute(r APIListServiceDomainsReq
 
 // APIListServicesRequest represents a request for the resource.
 type APIListServicesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ServiceAPI
-	page *int32
-	perPage *int32
-	sort *string
-	direction *string
+	page       *int32
+	perPage    *int32
+	sort       *string
+	direction  *string
 }
 
 // Page Current page.
@@ -878,16 +872,19 @@ func (r *APIListServicesRequest) Page(page int32) *APIListServicesRequest {
 	r.page = &page
 	return r
 }
+
 // PerPage Number of records per page.
 func (r *APIListServicesRequest) PerPage(perPage int32) *APIListServicesRequest {
 	r.perPage = &perPage
 	return r
 }
+
 // Sort Field on which to sort.
 func (r *APIListServicesRequest) Sort(sort string) *APIListServicesRequest {
 	r.sort = &sort
 	return r
 }
+
 // Direction Direction in which to sort results.
 func (r *APIListServicesRequest) Direction(direction string) *APIListServicesRequest {
 	r.direction = &direction
@@ -910,7 +907,7 @@ List services.
 func (a *ServiceAPIService) ListServices(ctx context.Context) APIListServicesRequest {
 	return APIListServicesRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -918,10 +915,10 @@ func (a *ServiceAPIService) ListServices(ctx context.Context) APIListServicesReq
 //  @return []ServiceListResponse
 func (a *ServiceAPIService) ListServicesExecute(r APIListServicesRequest) ([]ServiceListResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []ServiceListResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []ServiceListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAPIService.ListServices")
@@ -1012,7 +1009,6 @@ func (a *ServiceAPIService) ListServicesExecute(r APIListServicesRequest) ([]Ser
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1031,9 +1027,9 @@ func (a *ServiceAPIService) ListServicesExecute(r APIListServicesRequest) ([]Ser
 
 // APISearchServiceRequest represents a request for the resource.
 type APISearchServiceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ServiceAPI
-	name *string
+	name       *string
 }
 
 // Name The name of the service.
@@ -1058,7 +1054,7 @@ Get a specific service by name.
 func (a *ServiceAPIService) SearchService(ctx context.Context) APISearchServiceRequest {
 	return APISearchServiceRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1066,10 +1062,10 @@ func (a *ServiceAPIService) SearchService(ctx context.Context) APISearchServiceR
 //  @return ServiceResponse
 func (a *ServiceAPIService) SearchServiceExecute(r APISearchServiceRequest) (*ServiceResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ServiceResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ServiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAPIService.SearchService")
@@ -1152,7 +1148,6 @@ func (a *ServiceAPIService) SearchServiceExecute(r APISearchServiceRequest) (*Se
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1171,11 +1166,11 @@ func (a *ServiceAPIService) SearchServiceExecute(r APISearchServiceRequest) (*Se
 
 // APIUpdateServiceRequest represents a request for the resource.
 type APIUpdateServiceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ServiceAPI
-	serviceID string
-	comment *string
-	name *string
+	serviceID  string
+	comment    *string
+	name       *string
 	customerID *string
 }
 
@@ -1184,11 +1179,13 @@ func (r *APIUpdateServiceRequest) Comment(comment string) *APIUpdateServiceReque
 	r.comment = &comment
 	return r
 }
+
 // Name The name of the service.
 func (r *APIUpdateServiceRequest) Name(name string) *APIUpdateServiceRequest {
 	r.name = &name
 	return r
 }
+
 // CustomerID Alphanumeric string identifying the customer.
 func (r *APIUpdateServiceRequest) CustomerID(customerID string) *APIUpdateServiceRequest {
 	r.customerID = &customerID
@@ -1212,8 +1209,8 @@ Update a service.
 func (a *ServiceAPIService) UpdateService(ctx context.Context, serviceID string) APIUpdateServiceRequest {
 	return APIUpdateServiceRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 	}
 }
 
@@ -1221,10 +1218,10 @@ func (a *ServiceAPIService) UpdateService(ctx context.Context, serviceID string)
 //  @return ServiceResponse
 func (a *ServiceAPIService) UpdateServiceExecute(r APIUpdateServiceRequest) (*ServiceResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ServiceResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ServiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAPIService.UpdateService")
@@ -1312,7 +1309,6 @@ func (a *ServiceAPIService) UpdateServiceExecute(r APIUpdateServiceRequest) (*Se
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

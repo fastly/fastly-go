@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,14 +12,13 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
 // CacheSetting struct for CacheSetting
 type CacheSetting struct {
-	// If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
+	// If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.
 	Action NullableString `json:"action,omitempty"`
 	// Name of the cache condition controlling when this configuration applies.
 	CacheCondition NullableString `json:"cache_condition,omitempty"`
@@ -28,7 +27,7 @@ type CacheSetting struct {
 	// Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
 	StaleTTL *string `json:"stale_ttl,omitempty"`
 	// Maximum time to consider the object fresh in the cache (the cache 'time to live').
-	TTL *string `json:"ttl,omitempty"`
+	TTL                  *string `json:"ttl,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -64,7 +63,7 @@ func (o *CacheSetting) GetAction() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CacheSetting) GetActionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Action.Get(), o.Action.IsSet()
@@ -83,6 +82,7 @@ func (o *CacheSetting) HasAction() bool {
 func (o *CacheSetting) SetAction(v string) {
 	o.Action.Set(&v)
 }
+
 // SetActionNil sets the value for Action to be an explicit nil
 func (o *CacheSetting) SetActionNil() {
 	o.Action.Set(nil)
@@ -106,7 +106,7 @@ func (o *CacheSetting) GetCacheCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CacheSetting) GetCacheConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CacheCondition.Get(), o.CacheCondition.IsSet()
@@ -125,6 +125,7 @@ func (o *CacheSetting) HasCacheCondition() bool {
 func (o *CacheSetting) SetCacheCondition(v string) {
 	o.CacheCondition.Set(&v)
 }
+
 // SetCacheConditionNil sets the value for CacheCondition to be an explicit nil
 func (o *CacheSetting) SetCacheConditionNil() {
 	o.CacheCondition.Set(nil)
@@ -259,7 +260,7 @@ func (o CacheSetting) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *CacheSetting) UnmarshalJSON(bytes []byte) (err error) {
 	varCacheSetting := _CacheSetting{}
 
@@ -281,7 +282,7 @@ func (o *CacheSetting) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableCacheSetting is a helper abstraction for handling nullable cachesetting types. 
+// NullableCacheSetting is a helper abstraction for handling nullable cachesetting types.
 type NullableCacheSetting struct {
 	value *CacheSetting
 	isSet bool
@@ -321,7 +322,7 @@ func (v NullableCacheSetting) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableCacheSetting) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

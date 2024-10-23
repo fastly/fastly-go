@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,16 +31,16 @@ var (
 type WafExclusionsAPI interface {
 
 	/*
-	CreateWafRuleExclusion Create a WAF rule exclusion
+		CreateWafRuleExclusion Create a WAF rule exclusion
 
-	Create a WAF exclusion for a particular firewall version.
+		Create a WAF exclusion for a particular firewall version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param firewallID Alphanumeric string identifying a WAF Firewall.
-	 @param firewallVersionNumber Integer identifying a WAF firewall version.
-	 @return APICreateWafRuleExclusionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param firewallID Alphanumeric string identifying a WAF Firewall.
+		 @param firewallVersionNumber Integer identifying a WAF firewall version.
+		 @return APICreateWafRuleExclusionRequest
 
-	Deprecated
+		Deprecated
 	*/
 	CreateWafRuleExclusion(ctx context.Context, firewallID string, firewallVersionNumber int32) APICreateWafRuleExclusionRequest
 
@@ -51,17 +50,17 @@ type WafExclusionsAPI interface {
 	CreateWafRuleExclusionExecute(r APICreateWafRuleExclusionRequest) (*WafExclusionResponse, *http.Response, error)
 
 	/*
-	DeleteWafRuleExclusion Delete a WAF rule exclusion
+		DeleteWafRuleExclusion Delete a WAF rule exclusion
 
-	Delete a WAF exclusion for a particular firewall version.
+		Delete a WAF exclusion for a particular firewall version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param firewallID Alphanumeric string identifying a WAF Firewall.
-	 @param firewallVersionNumber Integer identifying a WAF firewall version.
-	 @param exclusionNumber A numeric ID identifying a WAF exclusion.
-	 @return APIDeleteWafRuleExclusionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param firewallID Alphanumeric string identifying a WAF Firewall.
+		 @param firewallVersionNumber Integer identifying a WAF firewall version.
+		 @param exclusionNumber A numeric ID identifying a WAF exclusion.
+		 @return APIDeleteWafRuleExclusionRequest
 
-	Deprecated
+		Deprecated
 	*/
 	DeleteWafRuleExclusion(ctx context.Context, firewallID string, firewallVersionNumber int32, exclusionNumber int32) APIDeleteWafRuleExclusionRequest
 
@@ -70,17 +69,17 @@ type WafExclusionsAPI interface {
 	DeleteWafRuleExclusionExecute(r APIDeleteWafRuleExclusionRequest) (*http.Response, error)
 
 	/*
-	GetWafRuleExclusion Get a WAF rule exclusion
+		GetWafRuleExclusion Get a WAF rule exclusion
 
-	Get a specific WAF exclusion object.
+		Get a specific WAF exclusion object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param firewallID Alphanumeric string identifying a WAF Firewall.
-	 @param firewallVersionNumber Integer identifying a WAF firewall version.
-	 @param exclusionNumber A numeric ID identifying a WAF exclusion.
-	 @return APIGetWafRuleExclusionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param firewallID Alphanumeric string identifying a WAF Firewall.
+		 @param firewallVersionNumber Integer identifying a WAF firewall version.
+		 @param exclusionNumber A numeric ID identifying a WAF exclusion.
+		 @return APIGetWafRuleExclusionRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetWafRuleExclusion(ctx context.Context, firewallID string, firewallVersionNumber int32, exclusionNumber int32) APIGetWafRuleExclusionRequest
 
@@ -90,16 +89,16 @@ type WafExclusionsAPI interface {
 	GetWafRuleExclusionExecute(r APIGetWafRuleExclusionRequest) (*WafExclusionResponse, *http.Response, error)
 
 	/*
-	ListWafRuleExclusions List WAF rule exclusions
+		ListWafRuleExclusions List WAF rule exclusions
 
-	List all exclusions for a particular firewall version.
+		List all exclusions for a particular firewall version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param firewallID Alphanumeric string identifying a WAF Firewall.
-	 @param firewallVersionNumber Integer identifying a WAF firewall version.
-	 @return APIListWafRuleExclusionsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param firewallID Alphanumeric string identifying a WAF Firewall.
+		 @param firewallVersionNumber Integer identifying a WAF firewall version.
+		 @return APIListWafRuleExclusionsRequest
 
-	Deprecated
+		Deprecated
 	*/
 	ListWafRuleExclusions(ctx context.Context, firewallID string, firewallVersionNumber int32) APIListWafRuleExclusionsRequest
 
@@ -109,17 +108,17 @@ type WafExclusionsAPI interface {
 	ListWafRuleExclusionsExecute(r APIListWafRuleExclusionsRequest) (*WafExclusionsResponse, *http.Response, error)
 
 	/*
-	UpdateWafRuleExclusion Update a WAF rule exclusion
+		UpdateWafRuleExclusion Update a WAF rule exclusion
 
-	Update a WAF exclusion for a particular firewall version.
+		Update a WAF exclusion for a particular firewall version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param firewallID Alphanumeric string identifying a WAF Firewall.
-	 @param firewallVersionNumber Integer identifying a WAF firewall version.
-	 @param exclusionNumber A numeric ID identifying a WAF exclusion.
-	 @return APIUpdateWafRuleExclusionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param firewallID Alphanumeric string identifying a WAF Firewall.
+		 @param firewallVersionNumber Integer identifying a WAF firewall version.
+		 @param exclusionNumber A numeric ID identifying a WAF exclusion.
+		 @return APIUpdateWafRuleExclusionRequest
 
-	Deprecated
+		Deprecated
 	*/
 	UpdateWafRuleExclusion(ctx context.Context, firewallID string, firewallVersionNumber int32, exclusionNumber int32) APIUpdateWafRuleExclusionRequest
 
@@ -134,11 +133,11 @@ type WafExclusionsAPIService service
 
 // APICreateWafRuleExclusionRequest represents a request for the resource.
 type APICreateWafRuleExclusionRequest struct {
-	ctx context.Context
-	APIService WafExclusionsAPI
-	firewallID string
+	ctx                   context.Context
+	APIService            WafExclusionsAPI
+	firewallID            string
 	firewallVersionNumber int32
-	wafExclusion *WafExclusion
+	wafExclusion          *WafExclusion
 }
 
 // WafExclusion returns a pointer to a request.
@@ -166,9 +165,9 @@ Deprecated
 */
 func (a *WafExclusionsAPIService) CreateWafRuleExclusion(ctx context.Context, firewallID string, firewallVersionNumber int32) APICreateWafRuleExclusionRequest {
 	return APICreateWafRuleExclusionRequest{
-		APIService: a,
-		ctx: ctx,
-		firewallID: firewallID,
+		APIService:            a,
+		ctx:                   ctx,
+		firewallID:            firewallID,
 		firewallVersionNumber: firewallVersionNumber,
 	}
 }
@@ -178,10 +177,10 @@ func (a *WafExclusionsAPIService) CreateWafRuleExclusion(ctx context.Context, fi
 // Deprecated
 func (a *WafExclusionsAPIService) CreateWafRuleExclusionExecute(r APICreateWafRuleExclusionRequest) (*WafExclusionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *WafExclusionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *WafExclusionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WafExclusionsAPIService.CreateWafRuleExclusion")
@@ -264,7 +263,6 @@ func (a *WafExclusionsAPIService) CreateWafRuleExclusionExecute(r APICreateWafRu
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -283,13 +281,12 @@ func (a *WafExclusionsAPIService) CreateWafRuleExclusionExecute(r APICreateWafRu
 
 // APIDeleteWafRuleExclusionRequest represents a request for the resource.
 type APIDeleteWafRuleExclusionRequest struct {
-	ctx context.Context
-	APIService WafExclusionsAPI
-	firewallID string
+	ctx                   context.Context
+	APIService            WafExclusionsAPI
+	firewallID            string
 	firewallVersionNumber int32
-	exclusionNumber int32
+	exclusionNumber       int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteWafRuleExclusionRequest) Execute() (*http.Response, error) {
@@ -311,11 +308,11 @@ Deprecated
 */
 func (a *WafExclusionsAPIService) DeleteWafRuleExclusion(ctx context.Context, firewallID string, firewallVersionNumber int32, exclusionNumber int32) APIDeleteWafRuleExclusionRequest {
 	return APIDeleteWafRuleExclusionRequest{
-		APIService: a,
-		ctx: ctx,
-		firewallID: firewallID,
+		APIService:            a,
+		ctx:                   ctx,
+		firewallID:            firewallID,
 		firewallVersionNumber: firewallVersionNumber,
-		exclusionNumber: exclusionNumber,
+		exclusionNumber:       exclusionNumber,
 	}
 }
 
@@ -323,9 +320,9 @@ func (a *WafExclusionsAPIService) DeleteWafRuleExclusion(ctx context.Context, fi
 // Deprecated
 func (a *WafExclusionsAPIService) DeleteWafRuleExclusionExecute(r APIDeleteWafRuleExclusionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WafExclusionsAPIService.DeleteWafRuleExclusion")
@@ -398,7 +395,6 @@ func (a *WafExclusionsAPIService) DeleteWafRuleExclusionExecute(r APIDeleteWafRu
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -417,13 +413,12 @@ func (a *WafExclusionsAPIService) DeleteWafRuleExclusionExecute(r APIDeleteWafRu
 
 // APIGetWafRuleExclusionRequest represents a request for the resource.
 type APIGetWafRuleExclusionRequest struct {
-	ctx context.Context
-	APIService WafExclusionsAPI
-	firewallID string
+	ctx                   context.Context
+	APIService            WafExclusionsAPI
+	firewallID            string
 	firewallVersionNumber int32
-	exclusionNumber int32
+	exclusionNumber       int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetWafRuleExclusionRequest) Execute() (*WafExclusionResponse, *http.Response, error) {
@@ -445,11 +440,11 @@ Deprecated
 */
 func (a *WafExclusionsAPIService) GetWafRuleExclusion(ctx context.Context, firewallID string, firewallVersionNumber int32, exclusionNumber int32) APIGetWafRuleExclusionRequest {
 	return APIGetWafRuleExclusionRequest{
-		APIService: a,
-		ctx: ctx,
-		firewallID: firewallID,
+		APIService:            a,
+		ctx:                   ctx,
+		firewallID:            firewallID,
 		firewallVersionNumber: firewallVersionNumber,
-		exclusionNumber: exclusionNumber,
+		exclusionNumber:       exclusionNumber,
 	}
 }
 
@@ -458,10 +453,10 @@ func (a *WafExclusionsAPIService) GetWafRuleExclusion(ctx context.Context, firew
 // Deprecated
 func (a *WafExclusionsAPIService) GetWafRuleExclusionExecute(r APIGetWafRuleExclusionRequest) (*WafExclusionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *WafExclusionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *WafExclusionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WafExclusionsAPIService.GetWafRuleExclusion")
@@ -543,7 +538,6 @@ func (a *WafExclusionsAPIService) GetWafRuleExclusionExecute(r APIGetWafRuleExcl
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -562,16 +556,16 @@ func (a *WafExclusionsAPIService) GetWafRuleExclusionExecute(r APIGetWafRuleExcl
 
 // APIListWafRuleExclusionsRequest represents a request for the resource.
 type APIListWafRuleExclusionsRequest struct {
-	ctx context.Context
-	APIService WafExclusionsAPI
-	firewallID string
-	firewallVersionNumber int32
-	filterExclusionType *string
-	filterName *string
+	ctx                        context.Context
+	APIService                 WafExclusionsAPI
+	firewallID                 string
+	firewallVersionNumber      int32
+	filterExclusionType        *string
+	filterName                 *string
 	filterWafRulesModsecRuleID *int32
-	pageNumber *int32
-	pageSize *int32
-	include *string
+	pageNumber                 *int32
+	pageSize                   *int32
+	include                    *string
 }
 
 // FilterExclusionType Filters the results based on this exclusion type.
@@ -579,27 +573,32 @@ func (r *APIListWafRuleExclusionsRequest) FilterExclusionType(filterExclusionTyp
 	r.filterExclusionType = &filterExclusionType
 	return r
 }
+
 // FilterName Filters the results based on name.
 func (r *APIListWafRuleExclusionsRequest) FilterName(filterName string) *APIListWafRuleExclusionsRequest {
 	r.filterName = &filterName
 	return r
 }
+
 // FilterWafRulesModsecRuleID Filters the results based on this ModSecurity rule ID.
 func (r *APIListWafRuleExclusionsRequest) FilterWafRulesModsecRuleID(filterWafRulesModsecRuleID int32) *APIListWafRuleExclusionsRequest {
 	r.filterWafRulesModsecRuleID = &filterWafRulesModsecRuleID
 	return r
 }
+
 // PageNumber Current page.
 func (r *APIListWafRuleExclusionsRequest) PageNumber(pageNumber int32) *APIListWafRuleExclusionsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListWafRuleExclusionsRequest) PageSize(pageSize int32) *APIListWafRuleExclusionsRequest {
 	r.pageSize = &pageSize
 	return r
 }
-// Include Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_rules&#x60; and &#x60;waf_rule_revisions&#x60;. 
+
+// Include Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_rules&#x60; and &#x60;waf_rule_revisions&#x60;.
 func (r *APIListWafRuleExclusionsRequest) Include(include string) *APIListWafRuleExclusionsRequest {
 	r.include = &include
 	return r
@@ -624,9 +623,9 @@ Deprecated
 */
 func (a *WafExclusionsAPIService) ListWafRuleExclusions(ctx context.Context, firewallID string, firewallVersionNumber int32) APIListWafRuleExclusionsRequest {
 	return APIListWafRuleExclusionsRequest{
-		APIService: a,
-		ctx: ctx,
-		firewallID: firewallID,
+		APIService:            a,
+		ctx:                   ctx,
+		firewallID:            firewallID,
 		firewallVersionNumber: firewallVersionNumber,
 	}
 }
@@ -636,10 +635,10 @@ func (a *WafExclusionsAPIService) ListWafRuleExclusions(ctx context.Context, fir
 // Deprecated
 func (a *WafExclusionsAPIService) ListWafRuleExclusionsExecute(r APIListWafRuleExclusionsRequest) (*WafExclusionsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *WafExclusionsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *WafExclusionsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WafExclusionsAPIService.ListWafRuleExclusions")
@@ -738,7 +737,6 @@ func (a *WafExclusionsAPIService) ListWafRuleExclusionsExecute(r APIListWafRuleE
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -757,12 +755,12 @@ func (a *WafExclusionsAPIService) ListWafRuleExclusionsExecute(r APIListWafRuleE
 
 // APIUpdateWafRuleExclusionRequest represents a request for the resource.
 type APIUpdateWafRuleExclusionRequest struct {
-	ctx context.Context
-	APIService WafExclusionsAPI
-	firewallID string
+	ctx                   context.Context
+	APIService            WafExclusionsAPI
+	firewallID            string
 	firewallVersionNumber int32
-	exclusionNumber int32
-	wafExclusion *WafExclusion
+	exclusionNumber       int32
+	wafExclusion          *WafExclusion
 }
 
 // WafExclusion returns a pointer to a request.
@@ -791,11 +789,11 @@ Deprecated
 */
 func (a *WafExclusionsAPIService) UpdateWafRuleExclusion(ctx context.Context, firewallID string, firewallVersionNumber int32, exclusionNumber int32) APIUpdateWafRuleExclusionRequest {
 	return APIUpdateWafRuleExclusionRequest{
-		APIService: a,
-		ctx: ctx,
-		firewallID: firewallID,
+		APIService:            a,
+		ctx:                   ctx,
+		firewallID:            firewallID,
 		firewallVersionNumber: firewallVersionNumber,
-		exclusionNumber: exclusionNumber,
+		exclusionNumber:       exclusionNumber,
 	}
 }
 
@@ -804,10 +802,10 @@ func (a *WafExclusionsAPIService) UpdateWafRuleExclusion(ctx context.Context, fi
 // Deprecated
 func (a *WafExclusionsAPIService) UpdateWafRuleExclusionExecute(r APIUpdateWafRuleExclusionRequest) (*WafExclusionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *WafExclusionResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *WafExclusionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WafExclusionsAPIService.UpdateWafRuleExclusion")
@@ -890,7 +888,6 @@ func (a *WafExclusionsAPIService) UpdateWafRuleExclusionExecute(r APIUpdateWafRu
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingHerokuAPI interface {
 
 	/*
-	CreateLogHeroku Create a Heroku log endpoint
+		CreateLogHeroku Create a Heroku log endpoint
 
-	Create a Heroku for a particular service and version.
+		Create a Heroku for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogHerokuRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogHerokuRequest
 	*/
 	CreateLogHeroku(ctx context.Context, serviceID string, versionID int32) APICreateLogHerokuRequest
 
@@ -48,15 +47,15 @@ type LoggingHerokuAPI interface {
 	CreateLogHerokuExecute(r APICreateLogHerokuRequest) (*LoggingHerokuResponse, *http.Response, error)
 
 	/*
-	DeleteLogHeroku Delete the Heroku log endpoint
+		DeleteLogHeroku Delete the Heroku log endpoint
 
-	Delete the Heroku for a particular service and version.
+		Delete the Heroku for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingHerokuName The name for the real-time logging configuration.
-	 @return APIDeleteLogHerokuRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingHerokuName The name for the real-time logging configuration.
+		 @return APIDeleteLogHerokuRequest
 	*/
 	DeleteLogHeroku(ctx context.Context, serviceID string, versionID int32, loggingHerokuName string) APIDeleteLogHerokuRequest
 
@@ -65,15 +64,15 @@ type LoggingHerokuAPI interface {
 	DeleteLogHerokuExecute(r APIDeleteLogHerokuRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogHeroku Get a Heroku log endpoint
+		GetLogHeroku Get a Heroku log endpoint
 
-	Get the Heroku for a particular service and version.
+		Get the Heroku for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingHerokuName The name for the real-time logging configuration.
-	 @return APIGetLogHerokuRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingHerokuName The name for the real-time logging configuration.
+		 @return APIGetLogHerokuRequest
 	*/
 	GetLogHeroku(ctx context.Context, serviceID string, versionID int32, loggingHerokuName string) APIGetLogHerokuRequest
 
@@ -82,14 +81,14 @@ type LoggingHerokuAPI interface {
 	GetLogHerokuExecute(r APIGetLogHerokuRequest) (*LoggingHerokuResponse, *http.Response, error)
 
 	/*
-	ListLogHeroku List Heroku log endpoints
+		ListLogHeroku List Heroku log endpoints
 
-	List all of the Herokus for a particular service and version.
+		List all of the Herokus for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogHerokuRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogHerokuRequest
 	*/
 	ListLogHeroku(ctx context.Context, serviceID string, versionID int32) APIListLogHerokuRequest
 
@@ -98,15 +97,15 @@ type LoggingHerokuAPI interface {
 	ListLogHerokuExecute(r APIListLogHerokuRequest) ([]LoggingHerokuResponse, *http.Response, error)
 
 	/*
-	UpdateLogHeroku Update the Heroku log endpoint
+		UpdateLogHeroku Update the Heroku log endpoint
 
-	Update the Heroku for a particular service and version.
+		Update the Heroku for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingHerokuName The name for the real-time logging configuration.
-	 @return APIUpdateLogHerokuRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingHerokuName The name for the real-time logging configuration.
+		 @return APIUpdateLogHerokuRequest
 	*/
 	UpdateLogHeroku(ctx context.Context, serviceID string, versionID int32, loggingHerokuName string) APIUpdateLogHerokuRequest
 
@@ -120,17 +119,17 @@ type LoggingHerokuAPIService service
 
 // APICreateLogHerokuRequest represents a request for the resource.
 type APICreateLogHerokuRequest struct {
-	ctx context.Context
-	APIService LoggingHerokuAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingHerokuAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	token *string
-	url *string
+	format            *string
+	formatVersion     *int32
+	token             *string
+	url               *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -138,31 +137,37 @@ func (r *APICreateLogHerokuRequest) Name(name string) *APICreateLogHerokuRequest
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogHerokuRequest) Placement(placement string) *APICreateLogHerokuRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogHerokuRequest) ResponseCondition(responseCondition string) *APICreateLogHerokuRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogHerokuRequest) Format(format string) *APICreateLogHerokuRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogHerokuRequest) FormatVersion(formatVersion int32) *APICreateLogHerokuRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Token The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
 func (r *APICreateLogHerokuRequest) Token(token string) *APICreateLogHerokuRequest {
 	r.token = &token
 	return r
 }
+
 // URL The URL to stream logs to.
 func (r *APICreateLogHerokuRequest) URL(url string) *APICreateLogHerokuRequest {
 	r.url = &url
@@ -187,9 +192,9 @@ Create a Heroku for a particular service and version.
 func (a *LoggingHerokuAPIService) CreateLogHeroku(ctx context.Context, serviceID string, versionID int32) APICreateLogHerokuRequest {
 	return APICreateLogHerokuRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -197,10 +202,10 @@ func (a *LoggingHerokuAPIService) CreateLogHeroku(ctx context.Context, serviceID
 //  @return LoggingHerokuResponse
 func (a *LoggingHerokuAPIService) CreateLogHerokuExecute(r APICreateLogHerokuRequest) (*LoggingHerokuResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingHerokuResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingHerokuResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHerokuAPIService.CreateLogHeroku")
@@ -302,7 +307,6 @@ func (a *LoggingHerokuAPIService) CreateLogHerokuExecute(r APICreateLogHerokuReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -321,13 +325,12 @@ func (a *LoggingHerokuAPIService) CreateLogHerokuExecute(r APICreateLogHerokuReq
 
 // APIDeleteLogHerokuRequest represents a request for the resource.
 type APIDeleteLogHerokuRequest struct {
-	ctx context.Context
-	APIService LoggingHerokuAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        LoggingHerokuAPI
+	serviceID         string
+	versionID         int32
 	loggingHerokuName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogHerokuRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -347,10 +350,10 @@ Delete the Heroku for a particular service and version.
 */
 func (a *LoggingHerokuAPIService) DeleteLogHeroku(ctx context.Context, serviceID string, versionID int32, loggingHerokuName string) APIDeleteLogHerokuRequest {
 	return APIDeleteLogHerokuRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		loggingHerokuName: loggingHerokuName,
 	}
 }
@@ -359,10 +362,10 @@ func (a *LoggingHerokuAPIService) DeleteLogHeroku(ctx context.Context, serviceID
 //  @return InlineResponse200
 func (a *LoggingHerokuAPIService) DeleteLogHerokuExecute(r APIDeleteLogHerokuRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHerokuAPIService.DeleteLogHeroku")
@@ -444,7 +447,6 @@ func (a *LoggingHerokuAPIService) DeleteLogHerokuExecute(r APIDeleteLogHerokuReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -463,13 +465,12 @@ func (a *LoggingHerokuAPIService) DeleteLogHerokuExecute(r APIDeleteLogHerokuReq
 
 // APIGetLogHerokuRequest represents a request for the resource.
 type APIGetLogHerokuRequest struct {
-	ctx context.Context
-	APIService LoggingHerokuAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        LoggingHerokuAPI
+	serviceID         string
+	versionID         int32
 	loggingHerokuName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogHerokuRequest) Execute() (*LoggingHerokuResponse, *http.Response, error) {
@@ -489,10 +490,10 @@ Get the Heroku for a particular service and version.
 */
 func (a *LoggingHerokuAPIService) GetLogHeroku(ctx context.Context, serviceID string, versionID int32, loggingHerokuName string) APIGetLogHerokuRequest {
 	return APIGetLogHerokuRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		loggingHerokuName: loggingHerokuName,
 	}
 }
@@ -501,10 +502,10 @@ func (a *LoggingHerokuAPIService) GetLogHeroku(ctx context.Context, serviceID st
 //  @return LoggingHerokuResponse
 func (a *LoggingHerokuAPIService) GetLogHerokuExecute(r APIGetLogHerokuRequest) (*LoggingHerokuResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingHerokuResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingHerokuResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHerokuAPIService.GetLogHeroku")
@@ -586,7 +587,6 @@ func (a *LoggingHerokuAPIService) GetLogHerokuExecute(r APIGetLogHerokuRequest) 
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -605,12 +605,11 @@ func (a *LoggingHerokuAPIService) GetLogHerokuExecute(r APIGetLogHerokuRequest) 
 
 // APIListLogHerokuRequest represents a request for the resource.
 type APIListLogHerokuRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingHerokuAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogHerokuRequest) Execute() ([]LoggingHerokuResponse, *http.Response, error) {
@@ -630,9 +629,9 @@ List all of the Herokus for a particular service and version.
 func (a *LoggingHerokuAPIService) ListLogHeroku(ctx context.Context, serviceID string, versionID int32) APIListLogHerokuRequest {
 	return APIListLogHerokuRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -640,10 +639,10 @@ func (a *LoggingHerokuAPIService) ListLogHeroku(ctx context.Context, serviceID s
 //  @return []LoggingHerokuResponse
 func (a *LoggingHerokuAPIService) ListLogHerokuExecute(r APIListLogHerokuRequest) ([]LoggingHerokuResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingHerokuResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingHerokuResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHerokuAPIService.ListLogHeroku")
@@ -724,7 +723,6 @@ func (a *LoggingHerokuAPIService) ListLogHerokuExecute(r APIListLogHerokuRequest
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -743,18 +741,18 @@ func (a *LoggingHerokuAPIService) ListLogHerokuExecute(r APIListLogHerokuRequest
 
 // APIUpdateLogHerokuRequest represents a request for the resource.
 type APIUpdateLogHerokuRequest struct {
-	ctx context.Context
-	APIService LoggingHerokuAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        LoggingHerokuAPI
+	serviceID         string
+	versionID         int32
 	loggingHerokuName string
-	name *string
-	placement *string
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	token *string
-	url *string
+	format            *string
+	formatVersion     *int32
+	token             *string
+	url               *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -762,31 +760,37 @@ func (r *APIUpdateLogHerokuRequest) Name(name string) *APIUpdateLogHerokuRequest
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogHerokuRequest) Placement(placement string) *APIUpdateLogHerokuRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogHerokuRequest) ResponseCondition(responseCondition string) *APIUpdateLogHerokuRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogHerokuRequest) Format(format string) *APIUpdateLogHerokuRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogHerokuRequest) FormatVersion(formatVersion int32) *APIUpdateLogHerokuRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Token The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
 func (r *APIUpdateLogHerokuRequest) Token(token string) *APIUpdateLogHerokuRequest {
 	r.token = &token
 	return r
 }
+
 // URL The URL to stream logs to.
 func (r *APIUpdateLogHerokuRequest) URL(url string) *APIUpdateLogHerokuRequest {
 	r.url = &url
@@ -811,10 +815,10 @@ Update the Heroku for a particular service and version.
 */
 func (a *LoggingHerokuAPIService) UpdateLogHeroku(ctx context.Context, serviceID string, versionID int32, loggingHerokuName string) APIUpdateLogHerokuRequest {
 	return APIUpdateLogHerokuRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		loggingHerokuName: loggingHerokuName,
 	}
 }
@@ -823,10 +827,10 @@ func (a *LoggingHerokuAPIService) UpdateLogHeroku(ctx context.Context, serviceID
 //  @return LoggingHerokuResponse
 func (a *LoggingHerokuAPIService) UpdateLogHerokuExecute(r APIUpdateLogHerokuRequest) (*LoggingHerokuResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingHerokuResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingHerokuResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHerokuAPIService.UpdateLogHeroku")
@@ -928,7 +932,6 @@ func (a *LoggingHerokuAPIService) UpdateLogHerokuExecute(r APIUpdateLogHerokuReq
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

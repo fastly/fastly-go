@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -25,7 +24,7 @@ type Serviceusagemetric struct {
 	// Name of the service associated with the usage.
 	ServiceName *string `json:"service_name,omitempty"`
 	// The quantity of the usage for the billing period. Amount will be in the units provided in the parent object (e.g., a quantity of `1.3` with a unit of `gb` would have a usage amount of 1.3 gigabytes).
-	UsageUnits *float32 `json:"usage_units,omitempty"`
+	UsageUnits           *float32 `json:"usage_units,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -201,7 +200,7 @@ func (o Serviceusagemetric) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *Serviceusagemetric) UnmarshalJSON(bytes []byte) (err error) {
 	varServiceusagemetric := _Serviceusagemetric{}
 
@@ -222,7 +221,7 @@ func (o *Serviceusagemetric) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableServiceusagemetric is a helper abstraction for handling nullable serviceusagemetric types. 
+// NullableServiceusagemetric is a helper abstraction for handling nullable serviceusagemetric types.
 type NullableServiceusagemetric struct {
 	value *Serviceusagemetric
 	isSet bool
@@ -262,7 +261,7 @@ func (v NullableServiceusagemetric) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableServiceusagemetric) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

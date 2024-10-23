@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -30,9 +29,9 @@ type BackendResponse struct {
 	ClientCert NullableString `json:"client_cert,omitempty"`
 	// A freeform descriptive note.
 	Comment NullableString `json:"comment,omitempty"`
-	// Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
+	// Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
 	ConnectTimeout *int32 `json:"connect_timeout,omitempty"`
-	// Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
+	// Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
 	FirstByteTimeout *int32 `json:"first_byte_timeout,omitempty"`
 	// The name of the healthcheck to use with this backend.
 	Healthcheck NullableString `json:"healthcheck,omitempty"`
@@ -97,10 +96,10 @@ type BackendResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	ServiceID *string      `json:"service_id,omitempty"`
+	Version   *int32       `json:"version,omitempty"`
 	// Indicates whether the version of the service this backend is attached to accepts edits.
-	Locked *bool `json:"locked,omitempty"`
+	Locked               *bool `json:"locked,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -236,7 +235,7 @@ func (o *BackendResponse) GetClientCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetClientCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ClientCert.Get(), o.ClientCert.IsSet()
@@ -255,6 +254,7 @@ func (o *BackendResponse) HasClientCert() bool {
 func (o *BackendResponse) SetClientCert(v string) {
 	o.ClientCert.Set(&v)
 }
+
 // SetClientCertNil sets the value for ClientCert to be an explicit nil
 func (o *BackendResponse) SetClientCertNil() {
 	o.ClientCert.Set(nil)
@@ -278,7 +278,7 @@ func (o *BackendResponse) GetComment() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetCommentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
@@ -297,6 +297,7 @@ func (o *BackendResponse) HasComment() bool {
 func (o *BackendResponse) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *BackendResponse) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -384,7 +385,7 @@ func (o *BackendResponse) GetHealthcheck() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetHealthcheckOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Healthcheck.Get(), o.Healthcheck.IsSet()
@@ -403,6 +404,7 @@ func (o *BackendResponse) HasHealthcheck() bool {
 func (o *BackendResponse) SetHealthcheck(v string) {
 	o.Healthcheck.Set(&v)
 }
+
 // SetHealthcheckNil sets the value for Healthcheck to be an explicit nil
 func (o *BackendResponse) SetHealthcheckNil() {
 	o.Healthcheck.Set(nil)
@@ -426,7 +428,7 @@ func (o *BackendResponse) GetHostname() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetHostnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Hostname.Get(), o.Hostname.IsSet()
@@ -445,6 +447,7 @@ func (o *BackendResponse) HasHostname() bool {
 func (o *BackendResponse) SetHostname(v string) {
 	o.Hostname.Set(&v)
 }
+
 // SetHostnameNil sets the value for Hostname to be an explicit nil
 func (o *BackendResponse) SetHostnameNil() {
 	o.Hostname.Set(nil)
@@ -468,7 +471,7 @@ func (o *BackendResponse) GetIpv4() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetIpv4Ok() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Ipv4.Get(), o.Ipv4.IsSet()
@@ -487,6 +490,7 @@ func (o *BackendResponse) HasIpv4() bool {
 func (o *BackendResponse) SetIpv4(v string) {
 	o.Ipv4.Set(&v)
 }
+
 // SetIpv4Nil sets the value for Ipv4 to be an explicit nil
 func (o *BackendResponse) SetIpv4Nil() {
 	o.Ipv4.Set(nil)
@@ -510,7 +514,7 @@ func (o *BackendResponse) GetIpv6() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetIpv6Ok() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Ipv6.Get(), o.Ipv6.IsSet()
@@ -529,6 +533,7 @@ func (o *BackendResponse) HasIpv6() bool {
 func (o *BackendResponse) SetIpv6(v string) {
 	o.Ipv6.Set(&v)
 }
+
 // SetIpv6Nil sets the value for Ipv6 to be an explicit nil
 func (o *BackendResponse) SetIpv6Nil() {
 	o.Ipv6.Set(nil)
@@ -552,7 +557,7 @@ func (o *BackendResponse) GetKeepaliveTime() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetKeepaliveTimeOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.KeepaliveTime.Get(), o.KeepaliveTime.IsSet()
@@ -571,6 +576,7 @@ func (o *BackendResponse) HasKeepaliveTime() bool {
 func (o *BackendResponse) SetKeepaliveTime(v int32) {
 	o.KeepaliveTime.Set(&v)
 }
+
 // SetKeepaliveTimeNil sets the value for KeepaliveTime to be an explicit nil
 func (o *BackendResponse) SetKeepaliveTimeNil() {
 	o.KeepaliveTime.Set(nil)
@@ -626,7 +632,7 @@ func (o *BackendResponse) GetMaxTLSVersion() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetMaxTLSVersionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MaxTLSVersion.Get(), o.MaxTLSVersion.IsSet()
@@ -645,6 +651,7 @@ func (o *BackendResponse) HasMaxTLSVersion() bool {
 func (o *BackendResponse) SetMaxTLSVersion(v string) {
 	o.MaxTLSVersion.Set(&v)
 }
+
 // SetMaxTLSVersionNil sets the value for MaxTLSVersion to be an explicit nil
 func (o *BackendResponse) SetMaxTLSVersionNil() {
 	o.MaxTLSVersion.Set(nil)
@@ -668,7 +675,7 @@ func (o *BackendResponse) GetMinTLSVersion() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetMinTLSVersionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MinTLSVersion.Get(), o.MinTLSVersion.IsSet()
@@ -687,6 +694,7 @@ func (o *BackendResponse) HasMinTLSVersion() bool {
 func (o *BackendResponse) SetMinTLSVersion(v string) {
 	o.MinTLSVersion.Set(&v)
 }
+
 // SetMinTLSVersionNil sets the value for MinTLSVersion to be an explicit nil
 func (o *BackendResponse) SetMinTLSVersionNil() {
 	o.MinTLSVersion.Set(nil)
@@ -742,7 +750,7 @@ func (o *BackendResponse) GetOverrideHost() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetOverrideHostOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OverrideHost.Get(), o.OverrideHost.IsSet()
@@ -761,6 +769,7 @@ func (o *BackendResponse) HasOverrideHost() bool {
 func (o *BackendResponse) SetOverrideHost(v string) {
 	o.OverrideHost.Set(&v)
 }
+
 // SetOverrideHostNil sets the value for OverrideHost to be an explicit nil
 func (o *BackendResponse) SetOverrideHostNil() {
 	o.OverrideHost.Set(nil)
@@ -848,7 +857,7 @@ func (o *BackendResponse) GetShareKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetShareKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ShareKey.Get(), o.ShareKey.IsSet()
@@ -867,6 +876,7 @@ func (o *BackendResponse) HasShareKey() bool {
 func (o *BackendResponse) SetShareKey(v string) {
 	o.ShareKey.Set(&v)
 }
+
 // SetShareKeyNil sets the value for ShareKey to be an explicit nil
 func (o *BackendResponse) SetShareKeyNil() {
 	o.ShareKey.Set(nil)
@@ -890,7 +900,7 @@ func (o *BackendResponse) GetShield() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetShieldOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Shield.Get(), o.Shield.IsSet()
@@ -909,6 +919,7 @@ func (o *BackendResponse) HasShield() bool {
 func (o *BackendResponse) SetShield(v string) {
 	o.Shield.Set(&v)
 }
+
 // SetShieldNil sets the value for Shield to be an explicit nil
 func (o *BackendResponse) SetShieldNil() {
 	o.Shield.Set(nil)
@@ -932,7 +943,7 @@ func (o *BackendResponse) GetSslCaCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetSslCaCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SslCaCert.Get(), o.SslCaCert.IsSet()
@@ -951,6 +962,7 @@ func (o *BackendResponse) HasSslCaCert() bool {
 func (o *BackendResponse) SetSslCaCert(v string) {
 	o.SslCaCert.Set(&v)
 }
+
 // SetSslCaCertNil sets the value for SslCaCert to be an explicit nil
 func (o *BackendResponse) SetSslCaCertNil() {
 	o.SslCaCert.Set(nil)
@@ -974,7 +986,7 @@ func (o *BackendResponse) GetSslCertHostname() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetSslCertHostnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SslCertHostname.Get(), o.SslCertHostname.IsSet()
@@ -993,6 +1005,7 @@ func (o *BackendResponse) HasSslCertHostname() bool {
 func (o *BackendResponse) SetSslCertHostname(v string) {
 	o.SslCertHostname.Set(&v)
 }
+
 // SetSslCertHostnameNil sets the value for SslCertHostname to be an explicit nil
 func (o *BackendResponse) SetSslCertHostnameNil() {
 	o.SslCertHostname.Set(nil)
@@ -1016,7 +1029,7 @@ func (o *BackendResponse) GetSslCheckCert() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetSslCheckCertOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SslCheckCert.Get(), o.SslCheckCert.IsSet()
@@ -1035,6 +1048,7 @@ func (o *BackendResponse) HasSslCheckCert() bool {
 func (o *BackendResponse) SetSslCheckCert(v bool) {
 	o.SslCheckCert.Set(&v)
 }
+
 // SetSslCheckCertNil sets the value for SslCheckCert to be an explicit nil
 func (o *BackendResponse) SetSslCheckCertNil() {
 	o.SslCheckCert.Set(nil)
@@ -1058,7 +1072,7 @@ func (o *BackendResponse) GetSslCiphers() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetSslCiphersOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SslCiphers.Get(), o.SslCiphers.IsSet()
@@ -1077,6 +1091,7 @@ func (o *BackendResponse) HasSslCiphers() bool {
 func (o *BackendResponse) SetSslCiphers(v string) {
 	o.SslCiphers.Set(&v)
 }
+
 // SetSslCiphersNil sets the value for SslCiphers to be an explicit nil
 func (o *BackendResponse) SetSslCiphersNil() {
 	o.SslCiphers.Set(nil)
@@ -1100,7 +1115,7 @@ func (o *BackendResponse) GetSslClientCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetSslClientCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SslClientCert.Get(), o.SslClientCert.IsSet()
@@ -1119,6 +1134,7 @@ func (o *BackendResponse) HasSslClientCert() bool {
 func (o *BackendResponse) SetSslClientCert(v string) {
 	o.SslClientCert.Set(&v)
 }
+
 // SetSslClientCertNil sets the value for SslClientCert to be an explicit nil
 func (o *BackendResponse) SetSslClientCertNil() {
 	o.SslClientCert.Set(nil)
@@ -1142,7 +1158,7 @@ func (o *BackendResponse) GetSslClientKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetSslClientKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SslClientKey.Get(), o.SslClientKey.IsSet()
@@ -1161,6 +1177,7 @@ func (o *BackendResponse) HasSslClientKey() bool {
 func (o *BackendResponse) SetSslClientKey(v string) {
 	o.SslClientKey.Set(&v)
 }
+
 // SetSslClientKeyNil sets the value for SslClientKey to be an explicit nil
 func (o *BackendResponse) SetSslClientKeyNil() {
 	o.SslClientKey.Set(nil)
@@ -1186,7 +1203,7 @@ func (o *BackendResponse) GetSslHostname() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 // Deprecated
 func (o *BackendResponse) GetSslHostnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SslHostname.Get(), o.SslHostname.IsSet()
@@ -1206,6 +1223,7 @@ func (o *BackendResponse) HasSslHostname() bool {
 func (o *BackendResponse) SetSslHostname(v string) {
 	o.SslHostname.Set(&v)
 }
+
 // SetSslHostnameNil sets the value for SslHostname to be an explicit nil
 func (o *BackendResponse) SetSslHostnameNil() {
 	o.SslHostname.Set(nil)
@@ -1229,7 +1247,7 @@ func (o *BackendResponse) GetSslSniHostname() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetSslSniHostnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SslSniHostname.Get(), o.SslSniHostname.IsSet()
@@ -1248,6 +1266,7 @@ func (o *BackendResponse) HasSslSniHostname() bool {
 func (o *BackendResponse) SetSslSniHostname(v string) {
 	o.SslSniHostname.Set(&v)
 }
+
 // SetSslSniHostnameNil sets the value for SslSniHostname to be an explicit nil
 func (o *BackendResponse) SetSslSniHostnameNil() {
 	o.SslSniHostname.Set(nil)
@@ -1271,7 +1290,7 @@ func (o *BackendResponse) GetTcpKeepaliveEnable() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetTcpKeepaliveEnableOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TcpKeepaliveEnable.Get(), o.TcpKeepaliveEnable.IsSet()
@@ -1290,6 +1309,7 @@ func (o *BackendResponse) HasTcpKeepaliveEnable() bool {
 func (o *BackendResponse) SetTcpKeepaliveEnable(v bool) {
 	o.TcpKeepaliveEnable.Set(&v)
 }
+
 // SetTcpKeepaliveEnableNil sets the value for TcpKeepaliveEnable to be an explicit nil
 func (o *BackendResponse) SetTcpKeepaliveEnableNil() {
 	o.TcpKeepaliveEnable.Set(nil)
@@ -1313,7 +1333,7 @@ func (o *BackendResponse) GetTcpKeepaliveInterval() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetTcpKeepaliveIntervalOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TcpKeepaliveInterval.Get(), o.TcpKeepaliveInterval.IsSet()
@@ -1332,6 +1352,7 @@ func (o *BackendResponse) HasTcpKeepaliveInterval() bool {
 func (o *BackendResponse) SetTcpKeepaliveInterval(v int32) {
 	o.TcpKeepaliveInterval.Set(&v)
 }
+
 // SetTcpKeepaliveIntervalNil sets the value for TcpKeepaliveInterval to be an explicit nil
 func (o *BackendResponse) SetTcpKeepaliveIntervalNil() {
 	o.TcpKeepaliveInterval.Set(nil)
@@ -1355,7 +1376,7 @@ func (o *BackendResponse) GetTcpKeepaliveProbes() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetTcpKeepaliveProbesOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TcpKeepaliveProbes.Get(), o.TcpKeepaliveProbes.IsSet()
@@ -1374,6 +1395,7 @@ func (o *BackendResponse) HasTcpKeepaliveProbes() bool {
 func (o *BackendResponse) SetTcpKeepaliveProbes(v int32) {
 	o.TcpKeepaliveProbes.Set(&v)
 }
+
 // SetTcpKeepaliveProbesNil sets the value for TcpKeepaliveProbes to be an explicit nil
 func (o *BackendResponse) SetTcpKeepaliveProbesNil() {
 	o.TcpKeepaliveProbes.Set(nil)
@@ -1397,7 +1419,7 @@ func (o *BackendResponse) GetTcpKeepaliveTime() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetTcpKeepaliveTimeOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TcpKeepaliveTime.Get(), o.TcpKeepaliveTime.IsSet()
@@ -1416,6 +1438,7 @@ func (o *BackendResponse) HasTcpKeepaliveTime() bool {
 func (o *BackendResponse) SetTcpKeepaliveTime(v int32) {
 	o.TcpKeepaliveTime.Set(&v)
 }
+
 // SetTcpKeepaliveTimeNil sets the value for TcpKeepaliveTime to be an explicit nil
 func (o *BackendResponse) SetTcpKeepaliveTimeNil() {
 	o.TcpKeepaliveTime.Set(nil)
@@ -1503,7 +1526,7 @@ func (o *BackendResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -1522,6 +1545,7 @@ func (o *BackendResponse) HasCreatedAt() bool {
 func (o *BackendResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *BackendResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -1545,7 +1569,7 @@ func (o *BackendResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -1564,6 +1588,7 @@ func (o *BackendResponse) HasDeletedAt() bool {
 func (o *BackendResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *BackendResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -1587,7 +1612,7 @@ func (o *BackendResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -1606,6 +1631,7 @@ func (o *BackendResponse) HasUpdatedAt() bool {
 func (o *BackendResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *BackendResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -1848,7 +1874,7 @@ func (o BackendResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *BackendResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varBackendResponse := _BackendResponse{}
 
@@ -1906,7 +1932,7 @@ func (o *BackendResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableBackendResponse is a helper abstraction for handling nullable backendresponse types. 
+// NullableBackendResponse is a helper abstraction for handling nullable backendresponse types.
 type NullableBackendResponse struct {
 	value *BackendResponse
 	isSet bool
@@ -1946,7 +1972,7 @@ func (v NullableBackendResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableBackendResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

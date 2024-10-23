@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,9 +19,9 @@ import (
 
 // PackageResponse struct for PackageResponse
 type PackageResponse struct {
-	Metadata *PackageMetadata `json:"metadata,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Metadata  *PackageMetadata `json:"metadata,omitempty"`
+	ServiceID *string          `json:"service_id,omitempty"`
+	Version   *int32           `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -30,7 +29,7 @@ type PackageResponse struct {
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
 	// Alphanumeric string identifying the package.
-	ID *string `json:"id,omitempty"`
+	ID                   *string `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -162,7 +161,7 @@ func (o *PackageResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PackageResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -181,6 +180,7 @@ func (o *PackageResponse) HasCreatedAt() bool {
 func (o *PackageResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *PackageResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -204,7 +204,7 @@ func (o *PackageResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PackageResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -223,6 +223,7 @@ func (o *PackageResponse) HasDeletedAt() bool {
 func (o *PackageResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *PackageResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -246,7 +247,7 @@ func (o *PackageResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PackageResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -265,6 +266,7 @@ func (o *PackageResponse) HasUpdatedAt() bool {
 func (o *PackageResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *PackageResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -341,7 +343,7 @@ func (o PackageResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *PackageResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varPackageResponse := _PackageResponse{}
 
@@ -365,7 +367,7 @@ func (o *PackageResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullablePackageResponse is a helper abstraction for handling nullable packageresponse types. 
+// NullablePackageResponse is a helper abstraction for handling nullable packageresponse types.
 type NullablePackageResponse struct {
 	value *PackageResponse
 	isSet bool
@@ -405,7 +407,7 @@ func (v NullablePackageResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullablePackageResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

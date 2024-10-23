@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,7 +19,7 @@ import (
 // InlineResponse200 struct for InlineResponse200
 type InlineResponse200 struct {
 	// ok
-	Status *string `json:"status,omitempty"`
+	Status               *string `json:"status,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -91,7 +90,7 @@ func (o InlineResponse200) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *InlineResponse200) UnmarshalJSON(bytes []byte) (err error) {
 	varInlineResponse200 := _InlineResponse200{}
 
@@ -109,7 +108,7 @@ func (o *InlineResponse200) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableInlineResponse200 is a helper abstraction for handling nullable inlineresponse200 types. 
+// NullableInlineResponse200 is a helper abstraction for handling nullable inlineresponse200 types.
 type NullableInlineResponse200 struct {
 	value *InlineResponse200
 	isSet bool
@@ -149,7 +148,7 @@ func (v NullableInlineResponse200) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableInlineResponse200) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

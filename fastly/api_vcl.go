@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type VclAPI interface {
 
 	/*
-	CreateCustomVcl Create a custom VCL file
+		CreateCustomVcl Create a custom VCL file
 
-	Upload a VCL for a particular service and version.
+		Upload a VCL for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateCustomVclRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateCustomVclRequest
 	*/
 	CreateCustomVcl(ctx context.Context, serviceID string, versionID int32) APICreateCustomVclRequest
 
@@ -48,15 +47,15 @@ type VclAPI interface {
 	CreateCustomVclExecute(r APICreateCustomVclRequest) (*VclResponse, *http.Response, error)
 
 	/*
-	DeleteCustomVcl Delete a custom VCL file
+		DeleteCustomVcl Delete a custom VCL file
 
-	Delete the uploaded VCL for a particular service and version.
+		Delete the uploaded VCL for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param vclName The name of this VCL.
-	 @return APIDeleteCustomVclRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param vclName The name of this VCL.
+		 @return APIDeleteCustomVclRequest
 	*/
 	DeleteCustomVcl(ctx context.Context, serviceID string, versionID int32, vclName string) APIDeleteCustomVclRequest
 
@@ -65,15 +64,15 @@ type VclAPI interface {
 	DeleteCustomVclExecute(r APIDeleteCustomVclRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetCustomVcl Get a custom VCL file
+		GetCustomVcl Get a custom VCL file
 
-	Get the uploaded VCL for a particular service and version.
+		Get the uploaded VCL for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param vclName The name of this VCL.
-	 @return APIGetCustomVclRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param vclName The name of this VCL.
+		 @return APIGetCustomVclRequest
 	*/
 	GetCustomVcl(ctx context.Context, serviceID string, versionID int32, vclName string) APIGetCustomVclRequest
 
@@ -82,14 +81,14 @@ type VclAPI interface {
 	GetCustomVclExecute(r APIGetCustomVclRequest) (*VclResponse, *http.Response, error)
 
 	/*
-	GetCustomVclBoilerplate Get boilerplate VCL
+		GetCustomVclBoilerplate Get boilerplate VCL
 
-	Return boilerplate VCL with the service's TTL from the [settings](https://www.fastly.com/documentation/reference/api/vcl-services/settings/).
+		Return boilerplate VCL with the service's TTL from the [settings](https://www.fastly.com/documentation/reference/api/vcl-services/settings/).
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIGetCustomVclBoilerplateRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIGetCustomVclBoilerplateRequest
 	*/
 	GetCustomVclBoilerplate(ctx context.Context, serviceID string, versionID int32) APIGetCustomVclBoilerplateRequest
 
@@ -98,14 +97,14 @@ type VclAPI interface {
 	GetCustomVclBoilerplateExecute(r APIGetCustomVclBoilerplateRequest) (string, *http.Response, error)
 
 	/*
-	GetCustomVclGenerated Get the generated VCL for a service
+		GetCustomVclGenerated Get the generated VCL for a service
 
-	Display the generated VCL for a particular service and version.
+		Display the generated VCL for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIGetCustomVclGeneratedRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIGetCustomVclGeneratedRequest
 	*/
 	GetCustomVclGenerated(ctx context.Context, serviceID string, versionID int32) APIGetCustomVclGeneratedRequest
 
@@ -114,14 +113,14 @@ type VclAPI interface {
 	GetCustomVclGeneratedExecute(r APIGetCustomVclGeneratedRequest) (*VclResponse, *http.Response, error)
 
 	/*
-	GetCustomVclGeneratedHighlighted Get the generated VCL with syntax highlighting
+		GetCustomVclGeneratedHighlighted Get the generated VCL with syntax highlighting
 
-	Display the content of generated VCL with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
+		Display the content of generated VCL with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIGetCustomVclGeneratedHighlightedRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIGetCustomVclGeneratedHighlightedRequest
 	*/
 	GetCustomVclGeneratedHighlighted(ctx context.Context, serviceID string, versionID int32) APIGetCustomVclGeneratedHighlightedRequest
 
@@ -130,15 +129,15 @@ type VclAPI interface {
 	GetCustomVclGeneratedHighlightedExecute(r APIGetCustomVclGeneratedHighlightedRequest) (*VclSyntaxHighlightingResponse, *http.Response, error)
 
 	/*
-	GetCustomVclHighlighted Get a custom VCL file with syntax highlighting
+		GetCustomVclHighlighted Get a custom VCL file with syntax highlighting
 
-	Get the uploaded VCL for a particular service and version with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
+		Get the uploaded VCL for a particular service and version with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param vclName The name of this VCL.
-	 @return APIGetCustomVclHighlightedRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param vclName The name of this VCL.
+		 @return APIGetCustomVclHighlightedRequest
 	*/
 	GetCustomVclHighlighted(ctx context.Context, serviceID string, versionID int32, vclName string) APIGetCustomVclHighlightedRequest
 
@@ -147,15 +146,15 @@ type VclAPI interface {
 	GetCustomVclHighlightedExecute(r APIGetCustomVclHighlightedRequest) (*VclSyntaxHighlightingResponse, *http.Response, error)
 
 	/*
-	GetCustomVclRaw Download a custom VCL file
+		GetCustomVclRaw Download a custom VCL file
 
-	Download the specified VCL.
+		Download the specified VCL.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param vclName The name of this VCL.
-	 @return APIGetCustomVclRawRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param vclName The name of this VCL.
+		 @return APIGetCustomVclRawRequest
 	*/
 	GetCustomVclRaw(ctx context.Context, serviceID string, versionID int32, vclName string) APIGetCustomVclRawRequest
 
@@ -164,12 +163,12 @@ type VclAPI interface {
 	GetCustomVclRawExecute(r APIGetCustomVclRawRequest) (string, *http.Response, error)
 
 	/*
-	LintVclDefault Lint (validate) VCL using a default set of flags.
+		LintVclDefault Lint (validate) VCL using a default set of flags.
 
-	This endpoint validates the submitted VCL against a default set of enabled flags. Consider using the `/service/{service_id}/lint` operation to validate VCL in the context of a specific service.
+		This endpoint validates the submitted VCL against a default set of enabled flags. Consider using the `/service/{service_id}/lint` operation to validate VCL in the context of a specific service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APILintVclDefaultRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APILintVclDefaultRequest
 	*/
 	LintVclDefault(ctx context.Context) APILintVclDefaultRequest
 
@@ -178,13 +177,13 @@ type VclAPI interface {
 	LintVclDefaultExecute(r APILintVclDefaultRequest) (*ValidatorResult, *http.Response, error)
 
 	/*
-	LintVclForService Lint (validate) VCL using flags set for the service.
+		LintVclForService Lint (validate) VCL using flags set for the service.
 
-	Services may have flags set by a Fastly employee or by the purchase of products as addons to the service, which modify the way VCL is interpreted by that service.  This endpoint validates the submitted VCL in the context of the specified service.
+		Services may have flags set by a Fastly employee or by the purchase of products as addons to the service, which modify the way VCL is interpreted by that service.  This endpoint validates the submitted VCL in the context of the specified service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APILintVclForServiceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APILintVclForServiceRequest
 	*/
 	LintVclForService(ctx context.Context, serviceID string) APILintVclForServiceRequest
 
@@ -193,14 +192,14 @@ type VclAPI interface {
 	LintVclForServiceExecute(r APILintVclForServiceRequest) (*ValidatorResult, *http.Response, error)
 
 	/*
-	ListCustomVcl List custom VCL files
+		ListCustomVcl List custom VCL files
 
-	List the uploaded VCLs for a particular service and version.
+		List the uploaded VCLs for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListCustomVclRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListCustomVclRequest
 	*/
 	ListCustomVcl(ctx context.Context, serviceID string, versionID int32) APIListCustomVclRequest
 
@@ -209,15 +208,15 @@ type VclAPI interface {
 	ListCustomVclExecute(r APIListCustomVclRequest) ([]VclResponse, *http.Response, error)
 
 	/*
-	SetCustomVclMain Set a custom VCL file as main
+		SetCustomVclMain Set a custom VCL file as main
 
-	Set the specified VCL as the main.
+		Set the specified VCL as the main.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param vclName The name of this VCL.
-	 @return APISetCustomVclMainRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param vclName The name of this VCL.
+		 @return APISetCustomVclMainRequest
 	*/
 	SetCustomVclMain(ctx context.Context, serviceID string, versionID int32, vclName string) APISetCustomVclMainRequest
 
@@ -226,15 +225,15 @@ type VclAPI interface {
 	SetCustomVclMainExecute(r APISetCustomVclMainRequest) (*VclResponse, *http.Response, error)
 
 	/*
-	UpdateCustomVcl Update a custom VCL file
+		UpdateCustomVcl Update a custom VCL file
 
-	Update the uploaded VCL for a particular service and version.
+		Update the uploaded VCL for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param vclName The name of this VCL.
-	 @return APIUpdateCustomVclRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param vclName The name of this VCL.
+		 @return APIUpdateCustomVclRequest
 	*/
 	UpdateCustomVcl(ctx context.Context, serviceID string, versionID int32, vclName string) APIUpdateCustomVclRequest
 
@@ -248,13 +247,13 @@ type VclAPIService service
 
 // APICreateCustomVclRequest represents a request for the resource.
 type APICreateCustomVclRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VclAPI
-	serviceID string
-	versionID int32
-	content *string
-	main *bool
-	name *string
+	serviceID  string
+	versionID  int32
+	content    *string
+	main       *bool
+	name       *string
 }
 
 // Content The VCL code to be included.
@@ -262,11 +261,13 @@ func (r *APICreateCustomVclRequest) Content(content string) *APICreateCustomVclR
 	r.content = &content
 	return r
 }
+
 // Main Set to &#x60;true&#x60; when this is the main VCL, otherwise &#x60;false&#x60;.
 func (r *APICreateCustomVclRequest) Main(main bool) *APICreateCustomVclRequest {
 	r.main = &main
 	return r
 }
+
 // Name The name of this VCL.
 func (r *APICreateCustomVclRequest) Name(name string) *APICreateCustomVclRequest {
 	r.name = &name
@@ -291,9 +292,9 @@ Upload a VCL for a particular service and version.
 func (a *VclAPIService) CreateCustomVcl(ctx context.Context, serviceID string, versionID int32) APICreateCustomVclRequest {
 	return APICreateCustomVclRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -301,10 +302,10 @@ func (a *VclAPIService) CreateCustomVcl(ctx context.Context, serviceID string, v
 //  @return VclResponse
 func (a *VclAPIService) CreateCustomVclExecute(r APICreateCustomVclRequest) (*VclResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VclResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VclResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VclAPIService.CreateCustomVcl")
@@ -394,7 +395,6 @@ func (a *VclAPIService) CreateCustomVclExecute(r APICreateCustomVclRequest) (*Vc
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -413,13 +413,12 @@ func (a *VclAPIService) CreateCustomVclExecute(r APICreateCustomVclRequest) (*Vc
 
 // APIDeleteCustomVclRequest represents a request for the resource.
 type APIDeleteCustomVclRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VclAPI
-	serviceID string
-	versionID int32
-	vclName string
+	serviceID  string
+	versionID  int32
+	vclName    string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteCustomVclRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -440,10 +439,10 @@ Delete the uploaded VCL for a particular service and version.
 func (a *VclAPIService) DeleteCustomVcl(ctx context.Context, serviceID string, versionID int32, vclName string) APIDeleteCustomVclRequest {
 	return APIDeleteCustomVclRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
-		vclName: vclName,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		vclName:    vclName,
 	}
 }
 
@@ -451,10 +450,10 @@ func (a *VclAPIService) DeleteCustomVcl(ctx context.Context, serviceID string, v
 //  @return InlineResponse200
 func (a *VclAPIService) DeleteCustomVclExecute(r APIDeleteCustomVclRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VclAPIService.DeleteCustomVcl")
@@ -536,7 +535,6 @@ func (a *VclAPIService) DeleteCustomVclExecute(r APIDeleteCustomVclRequest) (*In
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -555,12 +553,12 @@ func (a *VclAPIService) DeleteCustomVclExecute(r APIDeleteCustomVclRequest) (*In
 
 // APIGetCustomVclRequest represents a request for the resource.
 type APIGetCustomVclRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VclAPI
-	serviceID string
-	versionID int32
-	vclName string
-	noContent *string
+	serviceID  string
+	versionID  int32
+	vclName    string
+	noContent  *string
 }
 
 // NoContent Omit VCL content.
@@ -588,10 +586,10 @@ Get the uploaded VCL for a particular service and version.
 func (a *VclAPIService) GetCustomVcl(ctx context.Context, serviceID string, versionID int32, vclName string) APIGetCustomVclRequest {
 	return APIGetCustomVclRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
-		vclName: vclName,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		vclName:    vclName,
 	}
 }
 
@@ -599,10 +597,10 @@ func (a *VclAPIService) GetCustomVcl(ctx context.Context, serviceID string, vers
 //  @return VclResponse
 func (a *VclAPIService) GetCustomVclExecute(r APIGetCustomVclRequest) (*VclResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VclResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VclResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VclAPIService.GetCustomVcl")
@@ -687,7 +685,6 @@ func (a *VclAPIService) GetCustomVclExecute(r APIGetCustomVclRequest) (*VclRespo
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -706,12 +703,11 @@ func (a *VclAPIService) GetCustomVclExecute(r APIGetCustomVclRequest) (*VclRespo
 
 // APIGetCustomVclBoilerplateRequest represents a request for the resource.
 type APIGetCustomVclBoilerplateRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VclAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetCustomVclBoilerplateRequest) Execute() (string, *http.Response, error) {
@@ -731,9 +727,9 @@ Return boilerplate VCL with the service's TTL from the [settings](https://www.fa
 func (a *VclAPIService) GetCustomVclBoilerplate(ctx context.Context, serviceID string, versionID int32) APIGetCustomVclBoilerplateRequest {
 	return APIGetCustomVclBoilerplateRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -741,10 +737,10 @@ func (a *VclAPIService) GetCustomVclBoilerplate(ctx context.Context, serviceID s
 //  @return string
 func (a *VclAPIService) GetCustomVclBoilerplateExecute(r APIGetCustomVclBoilerplateRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VclAPIService.GetCustomVclBoilerplate")
@@ -825,7 +821,6 @@ func (a *VclAPIService) GetCustomVclBoilerplateExecute(r APIGetCustomVclBoilerpl
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -844,12 +839,11 @@ func (a *VclAPIService) GetCustomVclBoilerplateExecute(r APIGetCustomVclBoilerpl
 
 // APIGetCustomVclGeneratedRequest represents a request for the resource.
 type APIGetCustomVclGeneratedRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VclAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetCustomVclGeneratedRequest) Execute() (*VclResponse, *http.Response, error) {
@@ -869,9 +863,9 @@ Display the generated VCL for a particular service and version.
 func (a *VclAPIService) GetCustomVclGenerated(ctx context.Context, serviceID string, versionID int32) APIGetCustomVclGeneratedRequest {
 	return APIGetCustomVclGeneratedRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -879,10 +873,10 @@ func (a *VclAPIService) GetCustomVclGenerated(ctx context.Context, serviceID str
 //  @return VclResponse
 func (a *VclAPIService) GetCustomVclGeneratedExecute(r APIGetCustomVclGeneratedRequest) (*VclResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VclResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VclResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VclAPIService.GetCustomVclGenerated")
@@ -963,7 +957,6 @@ func (a *VclAPIService) GetCustomVclGeneratedExecute(r APIGetCustomVclGeneratedR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -982,12 +975,11 @@ func (a *VclAPIService) GetCustomVclGeneratedExecute(r APIGetCustomVclGeneratedR
 
 // APIGetCustomVclGeneratedHighlightedRequest represents a request for the resource.
 type APIGetCustomVclGeneratedHighlightedRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VclAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetCustomVclGeneratedHighlightedRequest) Execute() (*VclSyntaxHighlightingResponse, *http.Response, error) {
@@ -1007,9 +999,9 @@ Display the content of generated VCL with HTML syntax highlighting. Include line
 func (a *VclAPIService) GetCustomVclGeneratedHighlighted(ctx context.Context, serviceID string, versionID int32) APIGetCustomVclGeneratedHighlightedRequest {
 	return APIGetCustomVclGeneratedHighlightedRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -1017,10 +1009,10 @@ func (a *VclAPIService) GetCustomVclGeneratedHighlighted(ctx context.Context, se
 //  @return VclSyntaxHighlightingResponse
 func (a *VclAPIService) GetCustomVclGeneratedHighlightedExecute(r APIGetCustomVclGeneratedHighlightedRequest) (*VclSyntaxHighlightingResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VclSyntaxHighlightingResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VclSyntaxHighlightingResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VclAPIService.GetCustomVclGeneratedHighlighted")
@@ -1101,7 +1093,6 @@ func (a *VclAPIService) GetCustomVclGeneratedHighlightedExecute(r APIGetCustomVc
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1120,13 +1111,12 @@ func (a *VclAPIService) GetCustomVclGeneratedHighlightedExecute(r APIGetCustomVc
 
 // APIGetCustomVclHighlightedRequest represents a request for the resource.
 type APIGetCustomVclHighlightedRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VclAPI
-	serviceID string
-	versionID int32
-	vclName string
+	serviceID  string
+	versionID  int32
+	vclName    string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetCustomVclHighlightedRequest) Execute() (*VclSyntaxHighlightingResponse, *http.Response, error) {
@@ -1147,10 +1137,10 @@ Get the uploaded VCL for a particular service and version with HTML syntax highl
 func (a *VclAPIService) GetCustomVclHighlighted(ctx context.Context, serviceID string, versionID int32, vclName string) APIGetCustomVclHighlightedRequest {
 	return APIGetCustomVclHighlightedRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
-		vclName: vclName,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		vclName:    vclName,
 	}
 }
 
@@ -1158,10 +1148,10 @@ func (a *VclAPIService) GetCustomVclHighlighted(ctx context.Context, serviceID s
 //  @return VclSyntaxHighlightingResponse
 func (a *VclAPIService) GetCustomVclHighlightedExecute(r APIGetCustomVclHighlightedRequest) (*VclSyntaxHighlightingResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VclSyntaxHighlightingResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VclSyntaxHighlightingResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VclAPIService.GetCustomVclHighlighted")
@@ -1243,7 +1233,6 @@ func (a *VclAPIService) GetCustomVclHighlightedExecute(r APIGetCustomVclHighligh
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1262,13 +1251,12 @@ func (a *VclAPIService) GetCustomVclHighlightedExecute(r APIGetCustomVclHighligh
 
 // APIGetCustomVclRawRequest represents a request for the resource.
 type APIGetCustomVclRawRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VclAPI
-	serviceID string
-	versionID int32
-	vclName string
+	serviceID  string
+	versionID  int32
+	vclName    string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetCustomVclRawRequest) Execute() (string, *http.Response, error) {
@@ -1289,10 +1277,10 @@ Download the specified VCL.
 func (a *VclAPIService) GetCustomVclRaw(ctx context.Context, serviceID string, versionID int32, vclName string) APIGetCustomVclRawRequest {
 	return APIGetCustomVclRawRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
-		vclName: vclName,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		vclName:    vclName,
 	}
 }
 
@@ -1300,10 +1288,10 @@ func (a *VclAPIService) GetCustomVclRaw(ctx context.Context, serviceID string, v
 //  @return string
 func (a *VclAPIService) GetCustomVclRawExecute(r APIGetCustomVclRawRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VclAPIService.GetCustomVclRaw")
@@ -1385,7 +1373,6 @@ func (a *VclAPIService) GetCustomVclRawExecute(r APIGetCustomVclRawRequest) (str
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1404,8 +1391,8 @@ func (a *VclAPIService) GetCustomVclRawExecute(r APIGetCustomVclRawRequest) (str
 
 // APILintVclDefaultRequest represents a request for the resource.
 type APILintVclDefaultRequest struct {
-	ctx context.Context
-	APIService VclAPI
+	ctx           context.Context
+	APIService    VclAPI
 	inlineObject1 *InlineObject1
 }
 
@@ -1431,7 +1418,7 @@ This endpoint validates the submitted VCL against a default set of enabled flags
 func (a *VclAPIService) LintVclDefault(ctx context.Context) APILintVclDefaultRequest {
 	return APILintVclDefaultRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1439,10 +1426,10 @@ func (a *VclAPIService) LintVclDefault(ctx context.Context) APILintVclDefaultReq
 //  @return ValidatorResult
 func (a *VclAPIService) LintVclDefaultExecute(r APILintVclDefaultRequest) (*ValidatorResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ValidatorResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ValidatorResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VclAPIService.LintVclDefault")
@@ -1526,7 +1513,6 @@ func (a *VclAPIService) LintVclDefaultExecute(r APILintVclDefaultRequest) (*Vali
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1545,9 +1531,9 @@ func (a *VclAPIService) LintVclDefaultExecute(r APILintVclDefaultRequest) (*Vali
 
 // APILintVclForServiceRequest represents a request for the resource.
 type APILintVclForServiceRequest struct {
-	ctx context.Context
-	APIService VclAPI
-	serviceID string
+	ctx          context.Context
+	APIService   VclAPI
+	serviceID    string
 	inlineObject *InlineObject
 }
 
@@ -1574,8 +1560,8 @@ Services may have flags set by a Fastly employee or by the purchase of products 
 func (a *VclAPIService) LintVclForService(ctx context.Context, serviceID string) APILintVclForServiceRequest {
 	return APILintVclForServiceRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 	}
 }
 
@@ -1583,10 +1569,10 @@ func (a *VclAPIService) LintVclForService(ctx context.Context, serviceID string)
 //  @return ValidatorResult
 func (a *VclAPIService) LintVclForServiceExecute(r APILintVclForServiceRequest) (*ValidatorResult, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ValidatorResult
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ValidatorResult
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VclAPIService.LintVclForService")
@@ -1671,7 +1657,6 @@ func (a *VclAPIService) LintVclForServiceExecute(r APILintVclForServiceRequest) 
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1690,12 +1675,11 @@ func (a *VclAPIService) LintVclForServiceExecute(r APILintVclForServiceRequest) 
 
 // APIListCustomVclRequest represents a request for the resource.
 type APIListCustomVclRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VclAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListCustomVclRequest) Execute() ([]VclResponse, *http.Response, error) {
@@ -1715,9 +1699,9 @@ List the uploaded VCLs for a particular service and version.
 func (a *VclAPIService) ListCustomVcl(ctx context.Context, serviceID string, versionID int32) APIListCustomVclRequest {
 	return APIListCustomVclRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -1725,10 +1709,10 @@ func (a *VclAPIService) ListCustomVcl(ctx context.Context, serviceID string, ver
 //  @return []VclResponse
 func (a *VclAPIService) ListCustomVclExecute(r APIListCustomVclRequest) ([]VclResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []VclResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []VclResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VclAPIService.ListCustomVcl")
@@ -1809,7 +1793,6 @@ func (a *VclAPIService) ListCustomVclExecute(r APIListCustomVclRequest) ([]VclRe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1828,13 +1811,12 @@ func (a *VclAPIService) ListCustomVclExecute(r APIListCustomVclRequest) ([]VclRe
 
 // APISetCustomVclMainRequest represents a request for the resource.
 type APISetCustomVclMainRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VclAPI
-	serviceID string
-	versionID int32
-	vclName string
+	serviceID  string
+	versionID  int32
+	vclName    string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APISetCustomVclMainRequest) Execute() (*VclResponse, *http.Response, error) {
@@ -1855,10 +1837,10 @@ Set the specified VCL as the main.
 func (a *VclAPIService) SetCustomVclMain(ctx context.Context, serviceID string, versionID int32, vclName string) APISetCustomVclMainRequest {
 	return APISetCustomVclMainRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
-		vclName: vclName,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		vclName:    vclName,
 	}
 }
 
@@ -1866,10 +1848,10 @@ func (a *VclAPIService) SetCustomVclMain(ctx context.Context, serviceID string, 
 //  @return VclResponse
 func (a *VclAPIService) SetCustomVclMainExecute(r APISetCustomVclMainRequest) (*VclResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VclResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VclResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VclAPIService.SetCustomVclMain")
@@ -1951,7 +1933,6 @@ func (a *VclAPIService) SetCustomVclMainExecute(r APISetCustomVclMainRequest) (*
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1970,14 +1951,14 @@ func (a *VclAPIService) SetCustomVclMainExecute(r APISetCustomVclMainRequest) (*
 
 // APIUpdateCustomVclRequest represents a request for the resource.
 type APIUpdateCustomVclRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VclAPI
-	serviceID string
-	versionID int32
-	vclName string
-	content *string
-	main *bool
-	name *string
+	serviceID  string
+	versionID  int32
+	vclName    string
+	content    *string
+	main       *bool
+	name       *string
 }
 
 // Content The VCL code to be included.
@@ -1985,11 +1966,13 @@ func (r *APIUpdateCustomVclRequest) Content(content string) *APIUpdateCustomVclR
 	r.content = &content
 	return r
 }
+
 // Main Set to &#x60;true&#x60; when this is the main VCL, otherwise &#x60;false&#x60;.
 func (r *APIUpdateCustomVclRequest) Main(main bool) *APIUpdateCustomVclRequest {
 	r.main = &main
 	return r
 }
+
 // Name The name of this VCL.
 func (r *APIUpdateCustomVclRequest) Name(name string) *APIUpdateCustomVclRequest {
 	r.name = &name
@@ -2015,10 +1998,10 @@ Update the uploaded VCL for a particular service and version.
 func (a *VclAPIService) UpdateCustomVcl(ctx context.Context, serviceID string, versionID int32, vclName string) APIUpdateCustomVclRequest {
 	return APIUpdateCustomVclRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
-		vclName: vclName,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		vclName:    vclName,
 	}
 }
 
@@ -2026,10 +2009,10 @@ func (a *VclAPIService) UpdateCustomVcl(ctx context.Context, serviceID string, v
 //  @return VclResponse
 func (a *VclAPIService) UpdateCustomVclExecute(r APIUpdateCustomVclRequest) (*VclResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VclResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VclResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VclAPIService.UpdateCustomVcl")
@@ -2119,7 +2102,6 @@ func (a *VclAPIService) UpdateCustomVclExecute(r APIUpdateCustomVclRequest) (*Vc
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

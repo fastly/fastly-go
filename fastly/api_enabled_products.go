@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type EnabledProductsAPI interface {
 
 	/*
-	DisableProduct Disable a product
+		DisableProduct Disable a product
 
-	Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+		Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param productID
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIDisableProductRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param productID
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIDisableProductRequest
 	*/
 	DisableProduct(ctx context.Context, productID string, serviceID string) APIDisableProductRequest
 
@@ -47,14 +46,14 @@ type EnabledProductsAPI interface {
 	DisableProductExecute(r APIDisableProductRequest) (*http.Response, error)
 
 	/*
-	EnableProduct Enable a product
+		EnableProduct Enable a product
 
-	Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+		Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param productID
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIEnableProductRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param productID
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIEnableProductRequest
 	*/
 	EnableProduct(ctx context.Context, productID string, serviceID string) APIEnableProductRequest
 
@@ -63,14 +62,14 @@ type EnabledProductsAPI interface {
 	EnableProductExecute(r APIEnableProductRequest) (*EnabledProductResponse, *http.Response, error)
 
 	/*
-	GetEnabledProduct Get enabled product
+		GetEnabledProduct Get enabled product
 
-	Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+		Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param productID
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIGetEnabledProductRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param productID
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIGetEnabledProductRequest
 	*/
 	GetEnabledProduct(ctx context.Context, productID string, serviceID string) APIGetEnabledProductRequest
 
@@ -79,14 +78,14 @@ type EnabledProductsAPI interface {
 	GetEnabledProductExecute(r APIGetEnabledProductRequest) (*EnabledProductResponse, *http.Response, error)
 
 	/*
-	GetProductConfiguration Get configuration for a product
+		GetProductConfiguration Get configuration for a product
 
-	Get configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+		Get configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param productID
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIGetProductConfigurationRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param productID
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIGetProductConfigurationRequest
 	*/
 	GetProductConfiguration(ctx context.Context, productID string, serviceID string) APIGetProductConfigurationRequest
 
@@ -95,14 +94,14 @@ type EnabledProductsAPI interface {
 	GetProductConfigurationExecute(r APIGetProductConfigurationRequest) (*ConfiguredProductResponse, *http.Response, error)
 
 	/*
-	SetProductConfiguration Update configuration for a product
+		SetProductConfiguration Update configuration for a product
 
-	Update configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+		Update configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param productID
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APISetProductConfigurationRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param productID
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APISetProductConfigurationRequest
 	*/
 	SetProductConfiguration(ctx context.Context, productID string, serviceID string) APISetProductConfigurationRequest
 
@@ -116,12 +115,11 @@ type EnabledProductsAPIService service
 
 // APIDisableProductRequest represents a request for the resource.
 type APIDisableProductRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService EnabledProductsAPI
-	productID string
-	serviceID string
+	productID  string
+	serviceID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDisableProductRequest) Execute() (*http.Response, error) {
@@ -141,18 +139,18 @@ Disable a product on a service. Supported product IDs: `brotli_compression`,`dom
 func (a *EnabledProductsAPIService) DisableProduct(ctx context.Context, productID string, serviceID string) APIDisableProductRequest {
 	return APIDisableProductRequest{
 		APIService: a,
-		ctx: ctx,
-		productID: productID,
-		serviceID: serviceID,
+		ctx:        ctx,
+		productID:  productID,
+		serviceID:  serviceID,
 	}
 }
 
 // DisableProductExecute executes the request
 func (a *EnabledProductsAPIService) DisableProductExecute(r APIDisableProductRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnabledProductsAPIService.DisableProduct")
@@ -224,7 +222,6 @@ func (a *EnabledProductsAPIService) DisableProductExecute(r APIDisableProductReq
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -243,10 +240,10 @@ func (a *EnabledProductsAPIService) DisableProductExecute(r APIDisableProductReq
 
 // APIEnableProductRequest represents a request for the resource.
 type APIEnableProductRequest struct {
-	ctx context.Context
-	APIService EnabledProductsAPI
-	productID string
-	serviceID string
+	ctx            context.Context
+	APIService     EnabledProductsAPI
+	productID      string
+	serviceID      string
 	setWorkspaceID *SetWorkspaceID
 }
 
@@ -274,9 +271,9 @@ Enable a product on a service. Supported product IDs: `brotli_compression`,`doma
 func (a *EnabledProductsAPIService) EnableProduct(ctx context.Context, productID string, serviceID string) APIEnableProductRequest {
 	return APIEnableProductRequest{
 		APIService: a,
-		ctx: ctx,
-		productID: productID,
-		serviceID: serviceID,
+		ctx:        ctx,
+		productID:  productID,
+		serviceID:  serviceID,
 	}
 }
 
@@ -284,10 +281,10 @@ func (a *EnabledProductsAPIService) EnableProduct(ctx context.Context, productID
 //  @return EnabledProductResponse
 func (a *EnabledProductsAPIService) EnableProductExecute(r APIEnableProductRequest) (*EnabledProductResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *EnabledProductResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *EnabledProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnabledProductsAPIService.EnableProduct")
@@ -370,7 +367,6 @@ func (a *EnabledProductsAPIService) EnableProductExecute(r APIEnableProductReque
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -389,12 +385,11 @@ func (a *EnabledProductsAPIService) EnableProductExecute(r APIEnableProductReque
 
 // APIGetEnabledProductRequest represents a request for the resource.
 type APIGetEnabledProductRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService EnabledProductsAPI
-	productID string
-	serviceID string
+	productID  string
+	serviceID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetEnabledProductRequest) Execute() (*EnabledProductResponse, *http.Response, error) {
@@ -414,9 +409,9 @@ Get enabled product on a service. Supported product IDs: `brotli_compression`,`d
 func (a *EnabledProductsAPIService) GetEnabledProduct(ctx context.Context, productID string, serviceID string) APIGetEnabledProductRequest {
 	return APIGetEnabledProductRequest{
 		APIService: a,
-		ctx: ctx,
-		productID: productID,
-		serviceID: serviceID,
+		ctx:        ctx,
+		productID:  productID,
+		serviceID:  serviceID,
 	}
 }
 
@@ -424,10 +419,10 @@ func (a *EnabledProductsAPIService) GetEnabledProduct(ctx context.Context, produ
 //  @return EnabledProductResponse
 func (a *EnabledProductsAPIService) GetEnabledProductExecute(r APIGetEnabledProductRequest) (*EnabledProductResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *EnabledProductResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *EnabledProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnabledProductsAPIService.GetEnabledProduct")
@@ -508,7 +503,6 @@ func (a *EnabledProductsAPIService) GetEnabledProductExecute(r APIGetEnabledProd
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -527,12 +521,11 @@ func (a *EnabledProductsAPIService) GetEnabledProductExecute(r APIGetEnabledProd
 
 // APIGetProductConfigurationRequest represents a request for the resource.
 type APIGetProductConfigurationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService EnabledProductsAPI
-	productID string
-	serviceID string
+	productID  string
+	serviceID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetProductConfigurationRequest) Execute() (*ConfiguredProductResponse, *http.Response, error) {
@@ -552,9 +545,9 @@ Get configuration for an enabled product on a service. Supported product IDs: `n
 func (a *EnabledProductsAPIService) GetProductConfiguration(ctx context.Context, productID string, serviceID string) APIGetProductConfigurationRequest {
 	return APIGetProductConfigurationRequest{
 		APIService: a,
-		ctx: ctx,
-		productID: productID,
-		serviceID: serviceID,
+		ctx:        ctx,
+		productID:  productID,
+		serviceID:  serviceID,
 	}
 }
 
@@ -562,10 +555,10 @@ func (a *EnabledProductsAPIService) GetProductConfiguration(ctx context.Context,
 //  @return ConfiguredProductResponse
 func (a *EnabledProductsAPIService) GetProductConfigurationExecute(r APIGetProductConfigurationRequest) (*ConfiguredProductResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ConfiguredProductResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ConfiguredProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnabledProductsAPIService.GetProductConfiguration")
@@ -646,7 +639,6 @@ func (a *EnabledProductsAPIService) GetProductConfigurationExecute(r APIGetProdu
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -665,10 +657,10 @@ func (a *EnabledProductsAPIService) GetProductConfigurationExecute(r APIGetProdu
 
 // APISetProductConfigurationRequest represents a request for the resource.
 type APISetProductConfigurationRequest struct {
-	ctx context.Context
-	APIService EnabledProductsAPI
-	productID string
-	serviceID string
+	ctx              context.Context
+	APIService       EnabledProductsAPI
+	productID        string
+	serviceID        string
 	setConfiguration *SetConfiguration
 }
 
@@ -696,9 +688,9 @@ Update configuration for an enabled product on a service. Supported product IDs:
 func (a *EnabledProductsAPIService) SetProductConfiguration(ctx context.Context, productID string, serviceID string) APISetProductConfigurationRequest {
 	return APISetProductConfigurationRequest{
 		APIService: a,
-		ctx: ctx,
-		productID: productID,
-		serviceID: serviceID,
+		ctx:        ctx,
+		productID:  productID,
+		serviceID:  serviceID,
 	}
 }
 
@@ -706,10 +698,10 @@ func (a *EnabledProductsAPIService) SetProductConfiguration(ctx context.Context,
 //  @return ConfiguredProductResponse
 func (a *EnabledProductsAPIService) SetProductConfigurationExecute(r APISetProductConfigurationRequest) (*ConfiguredProductResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ConfiguredProductResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ConfiguredProductResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EnabledProductsAPIService.SetProductConfiguration")
@@ -791,7 +783,6 @@ func (a *EnabledProductsAPIService) SetProductConfigurationExecute(r APISetProdu
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,16 +12,15 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
 // WafExclusionData struct for WafExclusionData
 type WafExclusionData struct {
-	Type *TypeWafExclusion `json:"type,omitempty"`
-	Attributes *WafExclusionDataAttributes `json:"attributes,omitempty"`
-	Relationships *RelationshipsForWafExclusion `json:"relationships,omitempty"`
+	Type                 *TypeWafExclusion             `json:"type,omitempty"`
+	Attributes           *WafExclusionDataAttributes   `json:"attributes,omitempty"`
+	Relationships        *RelationshipsForWafExclusion `json:"relationships,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -166,7 +165,7 @@ func (o WafExclusionData) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *WafExclusionData) UnmarshalJSON(bytes []byte) (err error) {
 	varWafExclusionData := _WafExclusionData{}
 
@@ -186,7 +185,7 @@ func (o *WafExclusionData) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableWafExclusionData is a helper abstraction for handling nullable wafexclusiondata types. 
+// NullableWafExclusionData is a helper abstraction for handling nullable wafexclusiondata types.
 type NullableWafExclusionData struct {
 	value *WafExclusionData
 	isSet bool
@@ -226,7 +225,7 @@ func (v NullableWafExclusionData) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableWafExclusionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -24,7 +23,7 @@ type OriginInspector struct {
 	// Offset of entry timestamps from the current time due to processing time.
 	AggregateDelay *int32 `json:"AggregateDelay,omitempty"`
 	// A list of report [entries](#entry-data-model), each representing one second of time.
-	Data []OriginInspectorRealtimeEntry `json:"Data,omitempty"`
+	Data                 []OriginInspectorRealtimeEntry `json:"Data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -165,7 +164,7 @@ func (o OriginInspector) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *OriginInspector) UnmarshalJSON(bytes []byte) (err error) {
 	varOriginInspector := _OriginInspector{}
 
@@ -185,7 +184,7 @@ func (o *OriginInspector) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableOriginInspector is a helper abstraction for handling nullable origininspector types. 
+// NullableOriginInspector is a helper abstraction for handling nullable origininspector types.
 type NullableOriginInspector struct {
 	value *OriginInspector
 	isSet bool
@@ -225,7 +224,7 @@ func (v NullableOriginInspector) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableOriginInspector) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

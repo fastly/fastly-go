@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -29,9 +28,9 @@ type Mtdinvoice struct {
 	// The date and time (in ISO 8601 format) for the termination point of a billing cycle, signifying the end of charges for a service or subscription.
 	BillingEndDate *time.Time `json:"billing_end_date,omitempty"`
 	// The total billable amount for invoiced services charged within a single month.
-	MonthlyTransactionAmount *string `json:"monthly_transaction_amount,omitempty"`
-	TransactionLineItems []Mtdlineitems `json:"transaction_line_items,omitempty"`
-	AdditionalProperties map[string]any
+	MonthlyTransactionAmount *string        `json:"monthly_transaction_amount,omitempty"`
+	TransactionLineItems     []Mtdlineitems `json:"transaction_line_items,omitempty"`
+	AdditionalProperties     map[string]any
 }
 
 type _Mtdinvoice Mtdinvoice
@@ -276,7 +275,7 @@ func (o Mtdinvoice) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *Mtdinvoice) UnmarshalJSON(bytes []byte) (err error) {
 	varMtdinvoice := _Mtdinvoice{}
 
@@ -299,7 +298,7 @@ func (o *Mtdinvoice) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableMtdinvoice is a helper abstraction for handling nullable mtdinvoice types. 
+// NullableMtdinvoice is a helper abstraction for handling nullable mtdinvoice types.
 type NullableMtdinvoice struct {
 	value *Mtdinvoice
 	isSet bool
@@ -339,7 +338,7 @@ func (v NullableMtdinvoice) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableMtdinvoice) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

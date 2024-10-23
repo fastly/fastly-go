@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,15 +12,14 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
 // LoggingFormatVersionInteger struct for LoggingFormatVersionInteger
 type LoggingFormatVersionInteger struct {
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
-	FormatVersion *int32 `json:"format_version,omitempty"`
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
+	FormatVersion        *int32 `json:"format_version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -95,7 +94,7 @@ func (o LoggingFormatVersionInteger) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingFormatVersionInteger) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingFormatVersionInteger := _LoggingFormatVersionInteger{}
 
@@ -113,7 +112,7 @@ func (o *LoggingFormatVersionInteger) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingFormatVersionInteger is a helper abstraction for handling nullable loggingformatversioninteger types. 
+// NullableLoggingFormatVersionInteger is a helper abstraction for handling nullable loggingformatversioninteger types.
 type NullableLoggingFormatVersionInteger struct {
 	value *LoggingFormatVersionInteger
 	isSet bool
@@ -153,7 +152,7 @@ func (v NullableLoggingFormatVersionInteger) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingFormatVersionInteger) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

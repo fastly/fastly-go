@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -76,7 +75,7 @@ type LegacyWafOwasp struct {
 	// Score value to add for warning anomalies.
 	WarningAnomalyScore *int32 `json:"warning_anomaly_score,omitempty"`
 	// XSS attack threshold.
-	XSSScoreThreshold *int32 `json:"xss_score_threshold,omitempty"`
+	XSSScoreThreshold    *int32 `json:"xss_score_threshold,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -1187,7 +1186,7 @@ func (o LegacyWafOwasp) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LegacyWafOwasp) UnmarshalJSON(bytes []byte) (err error) {
 	varLegacyWafOwasp := _LegacyWafOwasp{}
 
@@ -1233,7 +1232,7 @@ func (o *LegacyWafOwasp) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLegacyWafOwasp is a helper abstraction for handling nullable legacywafowasp types. 
+// NullableLegacyWafOwasp is a helper abstraction for handling nullable legacywafowasp types.
 type NullableLegacyWafOwasp struct {
 	value *LegacyWafOwasp
 	isSet bool
@@ -1273,7 +1272,7 @@ func (v NullableLegacyWafOwasp) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLegacyWafOwasp) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

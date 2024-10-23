@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,7 +21,7 @@ type LegacyWafConfigurationSet struct {
 	// The active configuration set is the default configuration set when creating a new WAF. When Fastly adds configuration sets, the new versions become the default (active).
 	Active *bool `json:"active,omitempty"`
 	// The name of the configuration set.
-	Name *string `json:"name,omitempty"`
+	Name                 *string `json:"name,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -128,7 +127,7 @@ func (o LegacyWafConfigurationSet) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LegacyWafConfigurationSet) UnmarshalJSON(bytes []byte) (err error) {
 	varLegacyWafConfigurationSet := _LegacyWafConfigurationSet{}
 
@@ -147,7 +146,7 @@ func (o *LegacyWafConfigurationSet) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLegacyWafConfigurationSet is a helper abstraction for handling nullable legacywafconfigurationset types. 
+// NullableLegacyWafConfigurationSet is a helper abstraction for handling nullable legacywafconfigurationset types.
 type NullableLegacyWafConfigurationSet struct {
 	value *LegacyWafConfigurationSet
 	isSet bool
@@ -187,7 +186,7 @@ func (v NullableLegacyWafConfigurationSet) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLegacyWafConfigurationSet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

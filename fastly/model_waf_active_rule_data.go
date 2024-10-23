@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,16 +12,15 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
 // WafActiveRuleData struct for WafActiveRuleData
 type WafActiveRuleData struct {
-	Type *TypeWafActiveRule `json:"type,omitempty"`
-	Attributes *WafActiveRuleDataAttributes `json:"attributes,omitempty"`
-	Relationships *RelationshipsForWafActiveRule `json:"relationships,omitempty"`
+	Type                 *TypeWafActiveRule             `json:"type,omitempty"`
+	Attributes           *WafActiveRuleDataAttributes   `json:"attributes,omitempty"`
+	Relationships        *RelationshipsForWafActiveRule `json:"relationships,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -166,7 +165,7 @@ func (o WafActiveRuleData) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *WafActiveRuleData) UnmarshalJSON(bytes []byte) (err error) {
 	varWafActiveRuleData := _WafActiveRuleData{}
 
@@ -186,7 +185,7 @@ func (o *WafActiveRuleData) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableWafActiveRuleData is a helper abstraction for handling nullable wafactiveruledata types. 
+// NullableWafActiveRuleData is a helper abstraction for handling nullable wafactiveruledata types.
 type NullableWafActiveRuleData struct {
 	value *WafActiveRuleData
 	isSet bool
@@ -226,7 +225,7 @@ func (v NullableWafActiveRuleData) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableWafActiveRuleData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

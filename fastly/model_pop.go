@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,16 +21,16 @@ type Pop struct {
 	// the three-letter code for the [POP](https://www.fastly.com/documentation/learning/concepts/pop/)
 	Code string `json:"code"`
 	// the name of the POP
-	Name string `json:"name"`
-	Group string `json:"group"`
+	Name   string `json:"name"`
+	Group  string `json:"group"`
 	Region string `json:"region"`
 	// the region used for stats reporting
 	StatsRegion string `json:"stats_region"`
 	// the region used for billing
-	BillingRegion string `json:"billing_region"`
-	Coordinates *PopCoordinates `json:"coordinates,omitempty"`
+	BillingRegion string          `json:"billing_region"`
+	Coordinates   *PopCoordinates `json:"coordinates,omitempty"`
 	// the name of the [shield code](https://www.fastly.com/documentation/learning/concepts/shielding/#choosing-a-shield-location) if this POP is suitable for shielding
-	Shield *string `json:"shield,omitempty"`
+	Shield               *string `json:"shield,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -73,7 +72,7 @@ func (o *Pop) GetCode() string {
 // GetCodeOk returns a tuple with the Code field value
 // and a boolean to check if the value has been set.
 func (o *Pop) GetCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Code, true
@@ -97,7 +96,7 @@ func (o *Pop) GetName() string {
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
 func (o *Pop) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -121,7 +120,7 @@ func (o *Pop) GetGroup() string {
 // GetGroupOk returns a tuple with the Group field value
 // and a boolean to check if the value has been set.
 func (o *Pop) GetGroupOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Group, true
@@ -145,7 +144,7 @@ func (o *Pop) GetRegion() string {
 // GetRegionOk returns a tuple with the Region field value
 // and a boolean to check if the value has been set.
 func (o *Pop) GetRegionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Region, true
@@ -169,7 +168,7 @@ func (o *Pop) GetStatsRegion() string {
 // GetStatsRegionOk returns a tuple with the StatsRegion field value
 // and a boolean to check if the value has been set.
 func (o *Pop) GetStatsRegionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.StatsRegion, true
@@ -193,7 +192,7 @@ func (o *Pop) GetBillingRegion() string {
 // GetBillingRegionOk returns a tuple with the BillingRegion field value
 // and a boolean to check if the value has been set.
 func (o *Pop) GetBillingRegionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.BillingRegion, true
@@ -305,7 +304,7 @@ func (o Pop) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *Pop) UnmarshalJSON(bytes []byte) (err error) {
 	varPop := _Pop{}
 
@@ -330,7 +329,7 @@ func (o *Pop) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullablePop is a helper abstraction for handling nullable pop types. 
+// NullablePop is a helper abstraction for handling nullable pop types.
 type NullablePop struct {
 	value *Pop
 	isSet bool
@@ -370,7 +369,7 @@ func (v NullablePop) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullablePop) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

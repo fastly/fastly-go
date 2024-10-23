@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,15 +21,15 @@ import (
 type LoggingSumologicResponse struct {
 	// The name for the real-time logging configuration.
 	Name *string `json:"name,omitempty"`
-	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
-	FormatVersion *string `json:"format_version,omitempty"`
-	MessageType *LoggingMessageType `json:"message_type,omitempty"`
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
+	FormatVersion *string             `json:"format_version,omitempty"`
+	MessageType   *LoggingMessageType `json:"message_type,omitempty"`
 	// The URL to post logs to.
 	URL *string `json:"url,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -38,9 +37,9 @@ type LoggingSumologicResponse struct {
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
+	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -120,7 +119,7 @@ func (o *LoggingSumologicResponse) GetPlacement() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSumologicResponse) GetPlacementOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -139,6 +138,7 @@ func (o *LoggingSumologicResponse) HasPlacement() bool {
 func (o *LoggingSumologicResponse) SetPlacement(v string) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *LoggingSumologicResponse) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -162,7 +162,7 @@ func (o *LoggingSumologicResponse) GetResponseCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSumologicResponse) GetResponseConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseCondition.Get(), o.ResponseCondition.IsSet()
@@ -181,6 +181,7 @@ func (o *LoggingSumologicResponse) HasResponseCondition() bool {
 func (o *LoggingSumologicResponse) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
+
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 func (o *LoggingSumologicResponse) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
@@ -332,7 +333,7 @@ func (o *LoggingSumologicResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSumologicResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -351,6 +352,7 @@ func (o *LoggingSumologicResponse) HasCreatedAt() bool {
 func (o *LoggingSumologicResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *LoggingSumologicResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -374,7 +376,7 @@ func (o *LoggingSumologicResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSumologicResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -393,6 +395,7 @@ func (o *LoggingSumologicResponse) HasDeletedAt() bool {
 func (o *LoggingSumologicResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *LoggingSumologicResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -416,7 +419,7 @@ func (o *LoggingSumologicResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSumologicResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -435,6 +438,7 @@ func (o *LoggingSumologicResponse) HasUpdatedAt() bool {
 func (o *LoggingSumologicResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *LoggingSumologicResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -558,7 +562,7 @@ func (o LoggingSumologicResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingSumologicResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingSumologicResponse := _LoggingSumologicResponse{}
 
@@ -587,7 +591,7 @@ func (o *LoggingSumologicResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingSumologicResponse is a helper abstraction for handling nullable loggingsumologicresponse types. 
+// NullableLoggingSumologicResponse is a helper abstraction for handling nullable loggingsumologicresponse types.
 type NullableLoggingSumologicResponse struct {
 	value *LoggingSumologicResponse
 	isSet bool
@@ -627,7 +631,7 @@ func (v NullableLoggingSumologicResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingSumologicResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

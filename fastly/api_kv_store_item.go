@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type KvStoreItemAPI interface {
 
 	/*
-	DeleteKeyFromStore Delete kv store item.
+		DeleteKeyFromStore Delete kv store item.
 
-	Delete an item from an kv store
+		Delete an item from an kv store
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @param keyName
-	 @return APIDeleteKeyFromStoreRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @param keyName
+		 @return APIDeleteKeyFromStoreRequest
 	*/
 	DeleteKeyFromStore(ctx context.Context, storeID string, keyName string) APIDeleteKeyFromStoreRequest
 
@@ -47,13 +46,13 @@ type KvStoreItemAPI interface {
 	DeleteKeyFromStoreExecute(r APIDeleteKeyFromStoreRequest) (*http.Response, error)
 
 	/*
-	GetKeys List kv store keys.
+		GetKeys List kv store keys.
 
-	List the keys of all items within an kv store.
+		List the keys of all items within an kv store.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @return APIGetKeysRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @return APIGetKeysRequest
 	*/
 	GetKeys(ctx context.Context, storeID string) APIGetKeysRequest
 
@@ -62,14 +61,14 @@ type KvStoreItemAPI interface {
 	GetKeysExecute(r APIGetKeysRequest) (*InlineResponse2004, *http.Response, error)
 
 	/*
-	GetValueForKey Get the value of an kv store item
+		GetValueForKey Get the value of an kv store item
 
-	Get the value associated with a key.
+		Get the value associated with a key.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @param keyName
-	 @return APIGetValueForKeyRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @param keyName
+		 @return APIGetValueForKeyRequest
 	*/
 	GetValueForKey(ctx context.Context, storeID string, keyName string) APIGetValueForKeyRequest
 
@@ -78,14 +77,14 @@ type KvStoreItemAPI interface {
 	GetValueForKeyExecute(r APIGetValueForKeyRequest) (string, *http.Response, error)
 
 	/*
-	SetValueForKey Insert an item into an kv store
+		SetValueForKey Insert an item into an kv store
 
-	Set a new value for a new or existing key in an kv store.
+		Set a new value for a new or existing key in an kv store.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @param keyName
-	 @return APISetValueForKeyRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @param keyName
+		 @return APISetValueForKeyRequest
 	*/
 	SetValueForKey(ctx context.Context, storeID string, keyName string) APISetValueForKeyRequest
 
@@ -99,12 +98,11 @@ type KvStoreItemAPIService service
 
 // APIDeleteKeyFromStoreRequest represents a request for the resource.
 type APIDeleteKeyFromStoreRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService KvStoreItemAPI
-	storeID string
-	keyName string
+	storeID    string
+	keyName    string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteKeyFromStoreRequest) Execute() (*http.Response, error) {
@@ -124,18 +122,18 @@ Delete an item from an kv store
 func (a *KvStoreItemAPIService) DeleteKeyFromStore(ctx context.Context, storeID string, keyName string) APIDeleteKeyFromStoreRequest {
 	return APIDeleteKeyFromStoreRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
-		keyName: keyName,
+		ctx:        ctx,
+		storeID:    storeID,
+		keyName:    keyName,
 	}
 }
 
 // DeleteKeyFromStoreExecute executes the request
 func (a *KvStoreItemAPIService) DeleteKeyFromStoreExecute(r APIDeleteKeyFromStoreRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreItemAPIService.DeleteKeyFromStore")
@@ -207,7 +205,6 @@ func (a *KvStoreItemAPIService) DeleteKeyFromStoreExecute(r APIDeleteKeyFromStor
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -226,12 +223,12 @@ func (a *KvStoreItemAPIService) DeleteKeyFromStoreExecute(r APIDeleteKeyFromStor
 
 // APIGetKeysRequest represents a request for the resource.
 type APIGetKeysRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService KvStoreItemAPI
-	storeID string
-	cursor *string
-	limit *int32
-	prefix *string
+	storeID    string
+	cursor     *string
+	limit      *int32
+	prefix     *string
 }
 
 // Cursor returns a pointer to a request.
@@ -239,11 +236,13 @@ func (r *APIGetKeysRequest) Cursor(cursor string) *APIGetKeysRequest {
 	r.cursor = &cursor
 	return r
 }
+
 // Limit returns a pointer to a request.
 func (r *APIGetKeysRequest) Limit(limit int32) *APIGetKeysRequest {
 	r.limit = &limit
 	return r
 }
+
 // Prefix returns a pointer to a request.
 func (r *APIGetKeysRequest) Prefix(prefix string) *APIGetKeysRequest {
 	r.prefix = &prefix
@@ -267,8 +266,8 @@ List the keys of all items within an kv store.
 func (a *KvStoreItemAPIService) GetKeys(ctx context.Context, storeID string) APIGetKeysRequest {
 	return APIGetKeysRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
+		ctx:        ctx,
+		storeID:    storeID,
 	}
 }
 
@@ -276,10 +275,10 @@ func (a *KvStoreItemAPIService) GetKeys(ctx context.Context, storeID string) API
 //  @return InlineResponse2004
 func (a *KvStoreItemAPIService) GetKeysExecute(r APIGetKeysRequest) (*InlineResponse2004, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse2004
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse2004
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreItemAPIService.GetKeys")
@@ -368,7 +367,6 @@ func (a *KvStoreItemAPIService) GetKeysExecute(r APIGetKeysRequest) (*InlineResp
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -387,12 +385,11 @@ func (a *KvStoreItemAPIService) GetKeysExecute(r APIGetKeysRequest) (*InlineResp
 
 // APIGetValueForKeyRequest represents a request for the resource.
 type APIGetValueForKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService KvStoreItemAPI
-	storeID string
-	keyName string
+	storeID    string
+	keyName    string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetValueForKeyRequest) Execute() (string, *http.Response, error) {
@@ -412,9 +409,9 @@ Get the value associated with a key.
 func (a *KvStoreItemAPIService) GetValueForKey(ctx context.Context, storeID string, keyName string) APIGetValueForKeyRequest {
 	return APIGetValueForKeyRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
-		keyName: keyName,
+		ctx:        ctx,
+		storeID:    storeID,
+		keyName:    keyName,
 	}
 }
 
@@ -422,10 +419,10 @@ func (a *KvStoreItemAPIService) GetValueForKey(ctx context.Context, storeID stri
 //  @return string
 func (a *KvStoreItemAPIService) GetValueForKeyExecute(r APIGetValueForKeyRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreItemAPIService.GetValueForKey")
@@ -506,7 +503,6 @@ func (a *KvStoreItemAPIService) GetValueForKeyExecute(r APIGetValueForKeyRequest
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -525,18 +521,18 @@ func (a *KvStoreItemAPIService) GetValueForKeyExecute(r APIGetValueForKeyRequest
 
 // APISetValueForKeyRequest represents a request for the resource.
 type APISetValueForKeyRequest struct {
-	ctx context.Context
-	APIService KvStoreItemAPI
-	storeID string
-	keyName string
+	ctx               context.Context
+	APIService        KvStoreItemAPI
+	storeID           string
+	keyName           string
 	ifGenerationMatch *int32
-	timeToLiveSec *int32
-	metadata *string
-	add *bool
-	append *bool
-	prepend *bool
-	backgroundFetch *bool
-	body *string
+	timeToLiveSec     *int32
+	metadata          *string
+	add               *bool
+	append            *bool
+	prepend           *bool
+	backgroundFetch   *bool
+	body              *string
 }
 
 // IfGenerationMatch returns a pointer to a request.
@@ -544,36 +540,43 @@ func (r *APISetValueForKeyRequest) IfGenerationMatch(ifGenerationMatch int32) *A
 	r.ifGenerationMatch = &ifGenerationMatch
 	return r
 }
+
 // TimeToLiveSec returns a pointer to a request.
 func (r *APISetValueForKeyRequest) TimeToLiveSec(timeToLiveSec int32) *APISetValueForKeyRequest {
 	r.timeToLiveSec = &timeToLiveSec
 	return r
 }
+
 // Metadata returns a pointer to a request.
 func (r *APISetValueForKeyRequest) Metadata(metadata string) *APISetValueForKeyRequest {
 	r.metadata = &metadata
 	return r
 }
+
 // Add returns a pointer to a request.
 func (r *APISetValueForKeyRequest) Add(add bool) *APISetValueForKeyRequest {
 	r.add = &add
 	return r
 }
+
 // Append returns a pointer to a request.
 func (r *APISetValueForKeyRequest) Append(append bool) *APISetValueForKeyRequest {
 	r.append = &append
 	return r
 }
+
 // Prepend returns a pointer to a request.
 func (r *APISetValueForKeyRequest) Prepend(prepend bool) *APISetValueForKeyRequest {
 	r.prepend = &prepend
 	return r
 }
+
 // BackgroundFetch returns a pointer to a request.
 func (r *APISetValueForKeyRequest) BackgroundFetch(backgroundFetch bool) *APISetValueForKeyRequest {
 	r.backgroundFetch = &backgroundFetch
 	return r
 }
+
 // Body returns a pointer to a request.
 func (r *APISetValueForKeyRequest) Body(body string) *APISetValueForKeyRequest {
 	r.body = &body
@@ -598,9 +601,9 @@ Set a new value for a new or existing key in an kv store.
 func (a *KvStoreItemAPIService) SetValueForKey(ctx context.Context, storeID string, keyName string) APISetValueForKeyRequest {
 	return APISetValueForKeyRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
-		keyName: keyName,
+		ctx:        ctx,
+		storeID:    storeID,
+		keyName:    keyName,
 	}
 }
 
@@ -608,10 +611,10 @@ func (a *KvStoreItemAPIService) SetValueForKey(ctx context.Context, storeID stri
 //  @return string
 func (a *KvStoreItemAPIService) SetValueForKeyExecute(r APISetValueForKeyRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  string
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreItemAPIService.SetValueForKey")
@@ -714,7 +717,6 @@ func (a *KvStoreItemAPIService) SetValueForKeyExecute(r APISetValueForKeyRequest
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -24,8 +23,8 @@ type PublishItem struct {
 	// The ID of the message.
 	ID *string `json:"id,omitempty"`
 	// The ID of the previous message published on the same channel.
-	PrevID *string `json:"prev-id,omitempty"`
-	Formats PublishItemFormats `json:"formats"`
+	PrevID               *string            `json:"prev-id,omitempty"`
+	Formats              PublishItemFormats `json:"formats"`
 	AdditionalProperties map[string]any
 }
 
@@ -63,7 +62,7 @@ func (o *PublishItem) GetChannel() string {
 // GetChannelOk returns a tuple with the Channel field value
 // and a boolean to check if the value has been set.
 func (o *PublishItem) GetChannelOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Channel, true
@@ -151,7 +150,7 @@ func (o *PublishItem) GetFormats() PublishItemFormats {
 // GetFormatsOk returns a tuple with the Formats field value
 // and a boolean to check if the value has been set.
 func (o *PublishItem) GetFormatsOk() (*PublishItemFormats, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Formats, true
@@ -187,7 +186,7 @@ func (o PublishItem) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *PublishItem) UnmarshalJSON(bytes []byte) (err error) {
 	varPublishItem := _PublishItem{}
 
@@ -208,7 +207,7 @@ func (o *PublishItem) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullablePublishItem is a helper abstraction for handling nullable publishitem types. 
+// NullablePublishItem is a helper abstraction for handling nullable publishitem types.
 type NullablePublishItem struct {
 	value *PublishItem
 	isSet bool
@@ -248,7 +247,7 @@ func (v NullablePublishItem) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullablePublishItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

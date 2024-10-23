@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingLogglyAPI interface {
 
 	/*
-	CreateLogLoggly Create a Loggly log endpoint
+		CreateLogLoggly Create a Loggly log endpoint
 
-	Create a Loggly logging object for a particular service and version.
+		Create a Loggly logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogLogglyRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogLogglyRequest
 	*/
 	CreateLogLoggly(ctx context.Context, serviceID string, versionID int32) APICreateLogLogglyRequest
 
@@ -48,15 +47,15 @@ type LoggingLogglyAPI interface {
 	CreateLogLogglyExecute(r APICreateLogLogglyRequest) (*LoggingLogglyResponse, *http.Response, error)
 
 	/*
-	DeleteLogLoggly Delete a Loggly log endpoint
+		DeleteLogLoggly Delete a Loggly log endpoint
 
-	Delete the Loggly logging object for a particular service and version.
+		Delete the Loggly logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingLogglyName The name for the real-time logging configuration.
-	 @return APIDeleteLogLogglyRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingLogglyName The name for the real-time logging configuration.
+		 @return APIDeleteLogLogglyRequest
 	*/
 	DeleteLogLoggly(ctx context.Context, serviceID string, versionID int32, loggingLogglyName string) APIDeleteLogLogglyRequest
 
@@ -65,15 +64,15 @@ type LoggingLogglyAPI interface {
 	DeleteLogLogglyExecute(r APIDeleteLogLogglyRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogLoggly Get a Loggly log endpoint
+		GetLogLoggly Get a Loggly log endpoint
 
-	Get the Loggly logging object for a particular service and version.
+		Get the Loggly logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingLogglyName The name for the real-time logging configuration.
-	 @return APIGetLogLogglyRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingLogglyName The name for the real-time logging configuration.
+		 @return APIGetLogLogglyRequest
 	*/
 	GetLogLoggly(ctx context.Context, serviceID string, versionID int32, loggingLogglyName string) APIGetLogLogglyRequest
 
@@ -82,14 +81,14 @@ type LoggingLogglyAPI interface {
 	GetLogLogglyExecute(r APIGetLogLogglyRequest) (*LoggingLogglyResponse, *http.Response, error)
 
 	/*
-	ListLogLoggly List Loggly log endpoints
+		ListLogLoggly List Loggly log endpoints
 
-	List all Loggly logging objects for a particular service and version.
+		List all Loggly logging objects for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogLogglyRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogLogglyRequest
 	*/
 	ListLogLoggly(ctx context.Context, serviceID string, versionID int32) APIListLogLogglyRequest
 
@@ -98,15 +97,15 @@ type LoggingLogglyAPI interface {
 	ListLogLogglyExecute(r APIListLogLogglyRequest) ([]LoggingLogglyResponse, *http.Response, error)
 
 	/*
-	UpdateLogLoggly Update a Loggly log endpoint
+		UpdateLogLoggly Update a Loggly log endpoint
 
-	Update the Loggly logging object for a particular service and version.
+		Update the Loggly logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingLogglyName The name for the real-time logging configuration.
-	 @return APIUpdateLogLogglyRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingLogglyName The name for the real-time logging configuration.
+		 @return APIUpdateLogLogglyRequest
 	*/
 	UpdateLogLoggly(ctx context.Context, serviceID string, versionID int32, loggingLogglyName string) APIUpdateLogLogglyRequest
 
@@ -120,16 +119,16 @@ type LoggingLogglyAPIService service
 
 // APICreateLogLogglyRequest represents a request for the resource.
 type APICreateLogLogglyRequest struct {
-	ctx context.Context
-	APIService LoggingLogglyAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingLogglyAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	token *string
+	format            *string
+	formatVersion     *int32
+	token             *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -137,26 +136,31 @@ func (r *APICreateLogLogglyRequest) Name(name string) *APICreateLogLogglyRequest
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogLogglyRequest) Placement(placement string) *APICreateLogLogglyRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogLogglyRequest) ResponseCondition(responseCondition string) *APICreateLogLogglyRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogLogglyRequest) Format(format string) *APICreateLogLogglyRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogLogglyRequest) FormatVersion(formatVersion int32) *APICreateLogLogglyRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Token The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
 func (r *APICreateLogLogglyRequest) Token(token string) *APICreateLogLogglyRequest {
 	r.token = &token
@@ -181,9 +185,9 @@ Create a Loggly logging object for a particular service and version.
 func (a *LoggingLogglyAPIService) CreateLogLoggly(ctx context.Context, serviceID string, versionID int32) APICreateLogLogglyRequest {
 	return APICreateLogLogglyRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -191,10 +195,10 @@ func (a *LoggingLogglyAPIService) CreateLogLoggly(ctx context.Context, serviceID
 //  @return LoggingLogglyResponse
 func (a *LoggingLogglyAPIService) CreateLogLogglyExecute(r APICreateLogLogglyRequest) (*LoggingLogglyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingLogglyResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingLogglyResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogglyAPIService.CreateLogLoggly")
@@ -293,7 +297,6 @@ func (a *LoggingLogglyAPIService) CreateLogLogglyExecute(r APICreateLogLogglyReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -312,13 +315,12 @@ func (a *LoggingLogglyAPIService) CreateLogLogglyExecute(r APICreateLogLogglyReq
 
 // APIDeleteLogLogglyRequest represents a request for the resource.
 type APIDeleteLogLogglyRequest struct {
-	ctx context.Context
-	APIService LoggingLogglyAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        LoggingLogglyAPI
+	serviceID         string
+	versionID         int32
 	loggingLogglyName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogLogglyRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -338,10 +340,10 @@ Delete the Loggly logging object for a particular service and version.
 */
 func (a *LoggingLogglyAPIService) DeleteLogLoggly(ctx context.Context, serviceID string, versionID int32, loggingLogglyName string) APIDeleteLogLogglyRequest {
 	return APIDeleteLogLogglyRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		loggingLogglyName: loggingLogglyName,
 	}
 }
@@ -350,10 +352,10 @@ func (a *LoggingLogglyAPIService) DeleteLogLoggly(ctx context.Context, serviceID
 //  @return InlineResponse200
 func (a *LoggingLogglyAPIService) DeleteLogLogglyExecute(r APIDeleteLogLogglyRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogglyAPIService.DeleteLogLoggly")
@@ -435,7 +437,6 @@ func (a *LoggingLogglyAPIService) DeleteLogLogglyExecute(r APIDeleteLogLogglyReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -454,13 +455,12 @@ func (a *LoggingLogglyAPIService) DeleteLogLogglyExecute(r APIDeleteLogLogglyReq
 
 // APIGetLogLogglyRequest represents a request for the resource.
 type APIGetLogLogglyRequest struct {
-	ctx context.Context
-	APIService LoggingLogglyAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        LoggingLogglyAPI
+	serviceID         string
+	versionID         int32
 	loggingLogglyName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogLogglyRequest) Execute() (*LoggingLogglyResponse, *http.Response, error) {
@@ -480,10 +480,10 @@ Get the Loggly logging object for a particular service and version.
 */
 func (a *LoggingLogglyAPIService) GetLogLoggly(ctx context.Context, serviceID string, versionID int32, loggingLogglyName string) APIGetLogLogglyRequest {
 	return APIGetLogLogglyRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		loggingLogglyName: loggingLogglyName,
 	}
 }
@@ -492,10 +492,10 @@ func (a *LoggingLogglyAPIService) GetLogLoggly(ctx context.Context, serviceID st
 //  @return LoggingLogglyResponse
 func (a *LoggingLogglyAPIService) GetLogLogglyExecute(r APIGetLogLogglyRequest) (*LoggingLogglyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingLogglyResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingLogglyResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogglyAPIService.GetLogLoggly")
@@ -577,7 +577,6 @@ func (a *LoggingLogglyAPIService) GetLogLogglyExecute(r APIGetLogLogglyRequest) 
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -596,12 +595,11 @@ func (a *LoggingLogglyAPIService) GetLogLogglyExecute(r APIGetLogLogglyRequest) 
 
 // APIListLogLogglyRequest represents a request for the resource.
 type APIListLogLogglyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingLogglyAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogLogglyRequest) Execute() ([]LoggingLogglyResponse, *http.Response, error) {
@@ -621,9 +619,9 @@ List all Loggly logging objects for a particular service and version.
 func (a *LoggingLogglyAPIService) ListLogLoggly(ctx context.Context, serviceID string, versionID int32) APIListLogLogglyRequest {
 	return APIListLogLogglyRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -631,10 +629,10 @@ func (a *LoggingLogglyAPIService) ListLogLoggly(ctx context.Context, serviceID s
 //  @return []LoggingLogglyResponse
 func (a *LoggingLogglyAPIService) ListLogLogglyExecute(r APIListLogLogglyRequest) ([]LoggingLogglyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingLogglyResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingLogglyResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogglyAPIService.ListLogLoggly")
@@ -715,7 +713,6 @@ func (a *LoggingLogglyAPIService) ListLogLogglyExecute(r APIListLogLogglyRequest
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -734,17 +731,17 @@ func (a *LoggingLogglyAPIService) ListLogLogglyExecute(r APIListLogLogglyRequest
 
 // APIUpdateLogLogglyRequest represents a request for the resource.
 type APIUpdateLogLogglyRequest struct {
-	ctx context.Context
-	APIService LoggingLogglyAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        LoggingLogglyAPI
+	serviceID         string
+	versionID         int32
 	loggingLogglyName string
-	name *string
-	placement *string
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	token *string
+	format            *string
+	formatVersion     *int32
+	token             *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -752,26 +749,31 @@ func (r *APIUpdateLogLogglyRequest) Name(name string) *APIUpdateLogLogglyRequest
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogLogglyRequest) Placement(placement string) *APIUpdateLogLogglyRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogLogglyRequest) ResponseCondition(responseCondition string) *APIUpdateLogLogglyRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogLogglyRequest) Format(format string) *APIUpdateLogLogglyRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogLogglyRequest) FormatVersion(formatVersion int32) *APIUpdateLogLogglyRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Token The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
 func (r *APIUpdateLogLogglyRequest) Token(token string) *APIUpdateLogLogglyRequest {
 	r.token = &token
@@ -796,10 +798,10 @@ Update the Loggly logging object for a particular service and version.
 */
 func (a *LoggingLogglyAPIService) UpdateLogLoggly(ctx context.Context, serviceID string, versionID int32, loggingLogglyName string) APIUpdateLogLogglyRequest {
 	return APIUpdateLogLogglyRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		loggingLogglyName: loggingLogglyName,
 	}
 }
@@ -808,10 +810,10 @@ func (a *LoggingLogglyAPIService) UpdateLogLoggly(ctx context.Context, serviceID
 //  @return LoggingLogglyResponse
 func (a *LoggingLogglyAPIService) UpdateLogLogglyExecute(r APIUpdateLogLogglyRequest) (*LoggingLogglyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingLogglyResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingLogglyResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogglyAPIService.UpdateLogLoggly")
@@ -910,7 +912,6 @@ func (a *LoggingLogglyAPIService) UpdateLogLogglyExecute(r APIUpdateLogLogglyReq
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

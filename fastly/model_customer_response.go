@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -73,8 +72,8 @@ type CustomerResponse struct {
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ID *string `json:"id,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
+	ID                   *string      `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -110,7 +109,7 @@ func (o *CustomerResponse) GetBillingContactID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerResponse) GetBillingContactIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BillingContactID.Get(), o.BillingContactID.IsSet()
@@ -129,6 +128,7 @@ func (o *CustomerResponse) HasBillingContactID() bool {
 func (o *CustomerResponse) SetBillingContactID(v string) {
 	o.BillingContactID.Set(&v)
 }
+
 // SetBillingContactIDNil sets the value for BillingContactID to be an explicit nil
 func (o *CustomerResponse) SetBillingContactIDNil() {
 	o.BillingContactID.Set(nil)
@@ -184,7 +184,7 @@ func (o *CustomerResponse) GetBillingRef() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerResponse) GetBillingRefOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BillingRef.Get(), o.BillingRef.IsSet()
@@ -203,6 +203,7 @@ func (o *CustomerResponse) HasBillingRef() bool {
 func (o *CustomerResponse) SetBillingRef(v string) {
 	o.BillingRef.Set(&v)
 }
+
 // SetBillingRefNil sets the value for BillingRef to be an explicit nil
 func (o *CustomerResponse) SetBillingRefNil() {
 	o.BillingRef.Set(nil)
@@ -226,7 +227,7 @@ func (o *CustomerResponse) GetCanConfigureWordpress() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerResponse) GetCanConfigureWordpressOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CanConfigureWordpress.Get(), o.CanConfigureWordpress.IsSet()
@@ -245,6 +246,7 @@ func (o *CustomerResponse) HasCanConfigureWordpress() bool {
 func (o *CustomerResponse) SetCanConfigureWordpress(v bool) {
 	o.CanConfigureWordpress.Set(&v)
 }
+
 // SetCanConfigureWordpressNil sets the value for CanConfigureWordpress to be an explicit nil
 func (o *CustomerResponse) SetCanConfigureWordpressNil() {
 	o.CanConfigureWordpress.Set(nil)
@@ -620,7 +622,7 @@ func (o *CustomerResponse) GetLegalContactID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerResponse) GetLegalContactIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LegalContactID.Get(), o.LegalContactID.IsSet()
@@ -639,6 +641,7 @@ func (o *CustomerResponse) HasLegalContactID() bool {
 func (o *CustomerResponse) SetLegalContactID(v string) {
 	o.LegalContactID.Set(&v)
 }
+
 // SetLegalContactIDNil sets the value for LegalContactID to be an explicit nil
 func (o *CustomerResponse) SetLegalContactIDNil() {
 	o.LegalContactID.Set(nil)
@@ -758,7 +761,7 @@ func (o *CustomerResponse) GetPostalAddress() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerResponse) GetPostalAddressOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PostalAddress.Get(), o.PostalAddress.IsSet()
@@ -777,6 +780,7 @@ func (o *CustomerResponse) HasPostalAddress() bool {
 func (o *CustomerResponse) SetPostalAddress(v string) {
 	o.PostalAddress.Set(&v)
 }
+
 // SetPostalAddressNil sets the value for PostalAddress to be an explicit nil
 func (o *CustomerResponse) SetPostalAddressNil() {
 	o.PostalAddress.Set(nil)
@@ -864,7 +868,7 @@ func (o *CustomerResponse) GetSecurityContactID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerResponse) GetSecurityContactIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SecurityContactID.Get(), o.SecurityContactID.IsSet()
@@ -883,6 +887,7 @@ func (o *CustomerResponse) HasSecurityContactID() bool {
 func (o *CustomerResponse) SetSecurityContactID(v string) {
 	o.SecurityContactID.Set(&v)
 }
+
 // SetSecurityContactIDNil sets the value for SecurityContactID to be an explicit nil
 func (o *CustomerResponse) SetSecurityContactIDNil() {
 	o.SecurityContactID.Set(nil)
@@ -906,7 +911,7 @@ func (o *CustomerResponse) GetTechnicalContactID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerResponse) GetTechnicalContactIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TechnicalContactID.Get(), o.TechnicalContactID.IsSet()
@@ -925,6 +930,7 @@ func (o *CustomerResponse) HasTechnicalContactID() bool {
 func (o *CustomerResponse) SetTechnicalContactID(v string) {
 	o.TechnicalContactID.Set(&v)
 }
+
 // SetTechnicalContactIDNil sets the value for TechnicalContactID to be an explicit nil
 func (o *CustomerResponse) SetTechnicalContactIDNil() {
 	o.TechnicalContactID.Set(nil)
@@ -948,7 +954,7 @@ func (o *CustomerResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -967,6 +973,7 @@ func (o *CustomerResponse) HasCreatedAt() bool {
 func (o *CustomerResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *CustomerResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -990,7 +997,7 @@ func (o *CustomerResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -1009,6 +1016,7 @@ func (o *CustomerResponse) HasDeletedAt() bool {
 func (o *CustomerResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *CustomerResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -1032,7 +1040,7 @@ func (o *CustomerResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -1051,6 +1059,7 @@ func (o *CustomerResponse) HasUpdatedAt() bool {
 func (o *CustomerResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *CustomerResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -1190,7 +1199,7 @@ func (o CustomerResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *CustomerResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varCustomerResponse := _CustomerResponse{}
 
@@ -1235,7 +1244,7 @@ func (o *CustomerResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableCustomerResponse is a helper abstraction for handling nullable customerresponse types. 
+// NullableCustomerResponse is a helper abstraction for handling nullable customerresponse types.
 type NullableCustomerResponse struct {
 	value *CustomerResponse
 	isSet bool
@@ -1275,7 +1284,7 @@ func (v NullableCustomerResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableCustomerResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

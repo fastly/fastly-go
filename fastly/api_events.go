@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,13 +31,13 @@ var (
 type EventsAPI interface {
 
 	/*
-	GetEvent Get an event
+		GetEvent Get an event
 
-	Get a specific event.
+		Get a specific event.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param eventID Alphanumeric string identifying an event.
-	 @return APIGetEventRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param eventID Alphanumeric string identifying an event.
+		 @return APIGetEventRequest
 	*/
 	GetEvent(ctx context.Context, eventID string) APIGetEventRequest
 
@@ -47,12 +46,12 @@ type EventsAPI interface {
 	GetEventExecute(r APIGetEventRequest) (*EventResponse, *http.Response, error)
 
 	/*
-	ListEvents List events
+		ListEvents List events
 
-	List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.
+		List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListEventsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListEventsRequest
 	*/
 	ListEvents(ctx context.Context) APIListEventsRequest
 
@@ -66,11 +65,10 @@ type EventsAPIService service
 
 // APIGetEventRequest represents a request for the resource.
 type APIGetEventRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService EventsAPI
-	eventID string
+	eventID    string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetEventRequest) Execute() (*EventResponse, *http.Response, error) {
@@ -89,8 +87,8 @@ Get a specific event.
 func (a *EventsAPIService) GetEvent(ctx context.Context, eventID string) APIGetEventRequest {
 	return APIGetEventRequest{
 		APIService: a,
-		ctx: ctx,
-		eventID: eventID,
+		ctx:        ctx,
+		eventID:    eventID,
 	}
 }
 
@@ -98,10 +96,10 @@ func (a *EventsAPIService) GetEvent(ctx context.Context, eventID string) APIGetE
 //  @return EventResponse
 func (a *EventsAPIService) GetEventExecute(r APIGetEventRequest) (*EventResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *EventResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *EventResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsAPIService.GetEvent")
@@ -181,7 +179,6 @@ func (a *EventsAPIService) GetEventExecute(r APIGetEventRequest) (*EventResponse
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -200,21 +197,21 @@ func (a *EventsAPIService) GetEventExecute(r APIGetEventRequest) (*EventResponse
 
 // APIListEventsRequest represents a request for the resource.
 type APIListEventsRequest struct {
-	ctx context.Context
-	APIService EventsAPI
-	filterCustomerID *string
-	filterEventType *string
-	filterServiceID *string
-	filterUserID *string
-	filterTokenID *string
-	filterCreatedAt *string
+	ctx                context.Context
+	APIService         EventsAPI
+	filterCustomerID   *string
+	filterEventType    *string
+	filterServiceID    *string
+	filterUserID       *string
+	filterTokenID      *string
+	filterCreatedAt    *string
 	filterCreatedAtLte *string
-	filterCreatedAtLt *string
+	filterCreatedAtLt  *string
 	filterCreatedAtGte *string
-	filterCreatedAtGt *string
-	pageNumber *int32
-	pageSize *int32
-	sort *string
+	filterCreatedAtGt  *string
+	pageNumber         *int32
+	pageSize           *int32
+	sort               *string
 }
 
 // FilterCustomerID Limit the results returned to a specific customer.
@@ -222,61 +219,73 @@ func (r *APIListEventsRequest) FilterCustomerID(filterCustomerID string) *APILis
 	r.filterCustomerID = &filterCustomerID
 	return r
 }
+
 // FilterEventType Limit the returned events to a specific &#x60;event_type&#x60;.
 func (r *APIListEventsRequest) FilterEventType(filterEventType string) *APIListEventsRequest {
 	r.filterEventType = &filterEventType
 	return r
 }
+
 // FilterServiceID Limit the results returned to a specific service.
 func (r *APIListEventsRequest) FilterServiceID(filterServiceID string) *APIListEventsRequest {
 	r.filterServiceID = &filterServiceID
 	return r
 }
+
 // FilterUserID Limit the results returned to a specific user.
 func (r *APIListEventsRequest) FilterUserID(filterUserID string) *APIListEventsRequest {
 	r.filterUserID = &filterUserID
 	return r
 }
+
 // FilterTokenID Limit the returned events to a specific token.
 func (r *APIListEventsRequest) FilterTokenID(filterTokenID string) *APIListEventsRequest {
 	r.filterTokenID = &filterTokenID
 	return r
 }
-// FilterCreatedAt Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]&#x3D;2022-01-12). 
+
+// FilterCreatedAt Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]&#x3D;2022-01-12).
 func (r *APIListEventsRequest) FilterCreatedAt(filterCreatedAt string) *APIListEventsRequest {
 	r.filterCreatedAt = &filterCreatedAt
 	return r
 }
-// FilterCreatedAtLte Return events on and before a date and time in ISO 8601 format. 
+
+// FilterCreatedAtLte Return events on and before a date and time in ISO 8601 format.
 func (r *APIListEventsRequest) FilterCreatedAtLte(filterCreatedAtLte string) *APIListEventsRequest {
 	r.filterCreatedAtLte = &filterCreatedAtLte
 	return r
 }
-// FilterCreatedAtLt Return events before a date and time in ISO 8601 format. 
+
+// FilterCreatedAtLt Return events before a date and time in ISO 8601 format.
 func (r *APIListEventsRequest) FilterCreatedAtLt(filterCreatedAtLt string) *APIListEventsRequest {
 	r.filterCreatedAtLt = &filterCreatedAtLt
 	return r
 }
-// FilterCreatedAtGte Return events on and after a date and time in ISO 8601 format. 
+
+// FilterCreatedAtGte Return events on and after a date and time in ISO 8601 format.
 func (r *APIListEventsRequest) FilterCreatedAtGte(filterCreatedAtGte string) *APIListEventsRequest {
 	r.filterCreatedAtGte = &filterCreatedAtGte
 	return r
 }
-// FilterCreatedAtGt Return events after a date and time in ISO 8601 format. 
+
+// FilterCreatedAtGt Return events after a date and time in ISO 8601 format.
 func (r *APIListEventsRequest) FilterCreatedAtGt(filterCreatedAtGt string) *APIListEventsRequest {
 	r.filterCreatedAtGt = &filterCreatedAtGt
 	return r
 }
+
 // PageNumber Current page.
 func (r *APIListEventsRequest) PageNumber(pageNumber int32) *APIListEventsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListEventsRequest) PageSize(pageSize int32) *APIListEventsRequest {
 	r.pageSize = &pageSize
 	return r
 }
+
 // Sort The order in which to list the results by creation date.
 func (r *APIListEventsRequest) Sort(sort string) *APIListEventsRequest {
 	r.sort = &sort
@@ -299,7 +308,7 @@ List all events for a particular customer. Events can be filtered by user, custo
 func (a *EventsAPIService) ListEvents(ctx context.Context) APIListEventsRequest {
 	return APIListEventsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -307,10 +316,10 @@ func (a *EventsAPIService) ListEvents(ctx context.Context) APIListEventsRequest 
 //  @return EventsResponse
 func (a *EventsAPIService) ListEventsExecute(r APIListEventsRequest) (*EventsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *EventsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *EventsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsAPIService.ListEvents")
@@ -427,7 +436,6 @@ func (a *EventsAPIService) ListEventsExecute(r APIListEventsRequest) (*EventsRes
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

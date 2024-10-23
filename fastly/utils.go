@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,45 +19,45 @@ import (
 
 // PtrBool is a helper routine that returns a pointer to given boolean value.
 func PtrBool(v bool) *bool {
-  return &v
+	return &v
 }
 
 // PtrInt is a helper routine that returns a pointer to given integer value.
 func PtrInt(v int) *int {
-  return &v
+	return &v
 }
 
 // PtrInt32 is a helper routine that returns a pointer to given integer value.
 func PtrInt32(v int32) *int32 {
-  return &v
+	return &v
 }
 
 // PtrInt64 is a helper routine that returns a pointer to given integer value.
 func PtrInt64(v int64) *int64 {
-  return &v
+	return &v
 }
 
 // PtrFloat32 is a helper routine that returns a pointer to given float value.
 func PtrFloat32(v float32) *float32 {
-  return &v
+	return &v
 }
 
 // PtrFloat64 is a helper routine that returns a pointer to given float value.
 func PtrFloat64(v float64) *float64 {
-  return &v
+	return &v
 }
 
 // PtrString is a helper routine that returns a pointer to given string value.
 func PtrString(v string) *string {
-  return &v
+	return &v
 }
 
 // PtrTime is helper routine that returns a pointer to given Time value.
 func PtrTime(v time.Time) *time.Time {
-  return &v
+	return &v
 }
 
-// NullableBool is a helper abstraction for handling nullable boolean types. 
+// NullableBool is a helper abstraction for handling nullable boolean types.
 type NullableBool struct {
 	value *bool
 	isSet bool
@@ -98,13 +97,13 @@ func (v NullableBool) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableBool) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-// NullableInt is a helper abstraction for handling nullable integer types. 
+// NullableInt is a helper abstraction for handling nullable integer types.
 type NullableInt struct {
 	value *int
 	isSet bool
@@ -144,13 +143,13 @@ func (v NullableInt) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableInt) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-// NullableInt32 is a helper abstraction for handling nullable int32 types. 
+// NullableInt32 is a helper abstraction for handling nullable int32 types.
 type NullableInt32 struct {
 	value *int32
 	isSet bool
@@ -190,13 +189,13 @@ func (v NullableInt32) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableInt32) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-// NullableInt64 is a helper abstraction for handling nullable int64 types. 
+// NullableInt64 is a helper abstraction for handling nullable int64 types.
 type NullableInt64 struct {
 	value *int64
 	isSet bool
@@ -236,13 +235,13 @@ func (v NullableInt64) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableInt64) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-// NullableFloat32 is a helper abstraction for handling nullable float32 types. 
+// NullableFloat32 is a helper abstraction for handling nullable float32 types.
 type NullableFloat32 struct {
 	value *float32
 	isSet bool
@@ -282,13 +281,13 @@ func (v NullableFloat32) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableFloat32) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-// NullableFloat64 is a helper abstraction for handling nullable float64 types. 
+// NullableFloat64 is a helper abstraction for handling nullable float64 types.
 type NullableFloat64 struct {
 	value *float64
 	isSet bool
@@ -328,13 +327,13 @@ func (v NullableFloat64) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableFloat64) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-// NullableString is a helper abstraction for handling nullable string types. 
+// NullableString is a helper abstraction for handling nullable string types.
 type NullableString struct {
 	value *string
 	isSet bool
@@ -374,13 +373,13 @@ func (v NullableString) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableString) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-// NullableTime is a helper abstraction for handling nullable time types. 
+// NullableTime is a helper abstraction for handling nullable time types.
 type NullableTime struct {
 	value *time.Time
 	isSet bool
@@ -420,7 +419,7 @@ func (v NullableTime) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableTime) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

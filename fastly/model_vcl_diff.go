@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -26,7 +25,7 @@ type VclDiff struct {
 	// The format in which compared VCL changes are being returned in.
 	Format *string `json:"format,omitempty"`
 	// The differences between two specified versions.
-	Diff *string `json:"diff,omitempty"`
+	Diff                 *string `json:"diff,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -202,7 +201,7 @@ func (o VclDiff) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *VclDiff) UnmarshalJSON(bytes []byte) (err error) {
 	varVclDiff := _VclDiff{}
 
@@ -223,7 +222,7 @@ func (o *VclDiff) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableVclDiff is a helper abstraction for handling nullable vcldiff types. 
+// NullableVclDiff is a helper abstraction for handling nullable vcldiff types.
 type NullableVclDiff struct {
 	value *VclDiff
 	isSet bool
@@ -263,7 +262,7 @@ func (v NullableVclDiff) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableVclDiff) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

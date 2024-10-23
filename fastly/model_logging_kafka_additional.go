@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -36,8 +35,8 @@ type LoggingKafkaAdditional struct {
 	// SASL user.
 	User *string `json:"user,omitempty"`
 	// SASL password.
-	Password *string `json:"password,omitempty"`
-	UseTLS *LoggingUseTLSString `json:"use_tls,omitempty"`
+	Password             *string              `json:"password,omitempty"`
+	UseTLS               *LoggingUseTLSString `json:"use_tls,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -149,7 +148,7 @@ func (o *LoggingKafkaAdditional) GetCompressionCodec() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKafkaAdditional) GetCompressionCodecOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CompressionCodec.Get(), o.CompressionCodec.IsSet()
@@ -168,6 +167,7 @@ func (o *LoggingKafkaAdditional) HasCompressionCodec() bool {
 func (o *LoggingKafkaAdditional) SetCompressionCodec(v string) {
 	o.CompressionCodec.Set(&v)
 }
+
 // SetCompressionCodecNil sets the value for CompressionCodec to be an explicit nil
 func (o *LoggingKafkaAdditional) SetCompressionCodecNil() {
 	o.CompressionCodec.Set(nil)
@@ -445,7 +445,7 @@ func (o LoggingKafkaAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingKafkaAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingKafkaAdditional := _LoggingKafkaAdditional{}
 
@@ -472,7 +472,7 @@ func (o *LoggingKafkaAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingKafkaAdditional is a helper abstraction for handling nullable loggingkafkaadditional types. 
+// NullableLoggingKafkaAdditional is a helper abstraction for handling nullable loggingkafkaadditional types.
 type NullableLoggingKafkaAdditional struct {
 	value *LoggingKafkaAdditional
 	isSet bool
@@ -512,7 +512,7 @@ func (v NullableLoggingKafkaAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingKafkaAdditional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,13 +21,13 @@ import (
 type LoggingBigqueryResponse struct {
 	// The name of the BigQuery logging object. Used as a primary key for API access.
 	Name *string `json:"name,omitempty"`
-	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
 	Format *string `json:"format,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
 	User *string `json:"user,omitempty"`
@@ -49,9 +48,9 @@ type LoggingBigqueryResponse struct {
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
+	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -123,7 +122,7 @@ func (o *LoggingBigqueryResponse) GetPlacement() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingBigqueryResponse) GetPlacementOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -142,6 +141,7 @@ func (o *LoggingBigqueryResponse) HasPlacement() bool {
 func (o *LoggingBigqueryResponse) SetPlacement(v string) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *LoggingBigqueryResponse) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -165,7 +165,7 @@ func (o *LoggingBigqueryResponse) GetResponseCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingBigqueryResponse) GetResponseConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseCondition.Get(), o.ResponseCondition.IsSet()
@@ -184,6 +184,7 @@ func (o *LoggingBigqueryResponse) HasResponseCondition() bool {
 func (o *LoggingBigqueryResponse) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
+
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 func (o *LoggingBigqueryResponse) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
@@ -431,7 +432,7 @@ func (o *LoggingBigqueryResponse) GetTemplateSuffix() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingBigqueryResponse) GetTemplateSuffixOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TemplateSuffix.Get(), o.TemplateSuffix.IsSet()
@@ -450,6 +451,7 @@ func (o *LoggingBigqueryResponse) HasTemplateSuffix() bool {
 func (o *LoggingBigqueryResponse) SetTemplateSuffix(v string) {
 	o.TemplateSuffix.Set(&v)
 }
+
 // SetTemplateSuffixNil sets the value for TemplateSuffix to be an explicit nil
 func (o *LoggingBigqueryResponse) SetTemplateSuffixNil() {
 	o.TemplateSuffix.Set(nil)
@@ -505,7 +507,7 @@ func (o *LoggingBigqueryResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingBigqueryResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -524,6 +526,7 @@ func (o *LoggingBigqueryResponse) HasCreatedAt() bool {
 func (o *LoggingBigqueryResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *LoggingBigqueryResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -547,7 +550,7 @@ func (o *LoggingBigqueryResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingBigqueryResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -566,6 +569,7 @@ func (o *LoggingBigqueryResponse) HasDeletedAt() bool {
 func (o *LoggingBigqueryResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *LoggingBigqueryResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -589,7 +593,7 @@ func (o *LoggingBigqueryResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingBigqueryResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -608,6 +612,7 @@ func (o *LoggingBigqueryResponse) HasUpdatedAt() bool {
 func (o *LoggingBigqueryResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *LoggingBigqueryResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -746,7 +751,7 @@ func (o LoggingBigqueryResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingBigqueryResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingBigqueryResponse := _LoggingBigqueryResponse{}
 
@@ -780,7 +785,7 @@ func (o *LoggingBigqueryResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingBigqueryResponse is a helper abstraction for handling nullable loggingbigqueryresponse types. 
+// NullableLoggingBigqueryResponse is a helper abstraction for handling nullable loggingbigqueryresponse types.
 type NullableLoggingBigqueryResponse struct {
 	value *LoggingBigqueryResponse
 	isSet bool
@@ -820,7 +825,7 @@ func (v NullableLoggingBigqueryResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingBigqueryResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

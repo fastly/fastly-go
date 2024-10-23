@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -26,7 +25,7 @@ type WafFirewallResponseDataAttributes struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
+	ServiceID *string      `json:"service_id,omitempty"`
 	// The number of active Fastly rules set to block on the active or latest firewall version.
 	ActiveRulesFastlyBlockCount *int32 `json:"active_rules_fastly_block_count,omitempty"`
 	// The number of active Fastly rules set to log on the active or latest firewall version.
@@ -43,7 +42,7 @@ type WafFirewallResponseDataAttributes struct {
 	ActiveRulesTrustwaveBlockCount *int32 `json:"active_rules_trustwave_block_count,omitempty"`
 	// The number of active Trustwave rules set to log on the active or latest firewall version.
 	ActiveRulesTrustwaveLogCount *int32 `json:"active_rules_trustwave_log_count,omitempty"`
-	AdditionalProperties map[string]any
+	AdditionalProperties         map[string]any
 }
 
 type _WafFirewallResponseDataAttributes WafFirewallResponseDataAttributes
@@ -78,7 +77,7 @@ func (o *WafFirewallResponseDataAttributes) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafFirewallResponseDataAttributes) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -97,6 +96,7 @@ func (o *WafFirewallResponseDataAttributes) HasCreatedAt() bool {
 func (o *WafFirewallResponseDataAttributes) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *WafFirewallResponseDataAttributes) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -120,7 +120,7 @@ func (o *WafFirewallResponseDataAttributes) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafFirewallResponseDataAttributes) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -139,6 +139,7 @@ func (o *WafFirewallResponseDataAttributes) HasDeletedAt() bool {
 func (o *WafFirewallResponseDataAttributes) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *WafFirewallResponseDataAttributes) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -162,7 +163,7 @@ func (o *WafFirewallResponseDataAttributes) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafFirewallResponseDataAttributes) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -181,6 +182,7 @@ func (o *WafFirewallResponseDataAttributes) HasUpdatedAt() bool {
 func (o *WafFirewallResponseDataAttributes) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *WafFirewallResponseDataAttributes) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -528,7 +530,7 @@ func (o WafFirewallResponseDataAttributes) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *WafFirewallResponseDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	varWafFirewallResponseDataAttributes := _WafFirewallResponseDataAttributes{}
 
@@ -557,7 +559,7 @@ func (o *WafFirewallResponseDataAttributes) UnmarshalJSON(bytes []byte) (err err
 	return err
 }
 
-// NullableWafFirewallResponseDataAttributes is a helper abstraction for handling nullable waffirewallresponsedataattributes types. 
+// NullableWafFirewallResponseDataAttributes is a helper abstraction for handling nullable waffirewallresponsedataattributes types.
 type NullableWafFirewallResponseDataAttributes struct {
 	value *WafFirewallResponseDataAttributes
 	isSet bool
@@ -597,7 +599,7 @@ func (v NullableWafFirewallResponseDataAttributes) MarshalJSON() ([]byte, error)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableWafFirewallResponseDataAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

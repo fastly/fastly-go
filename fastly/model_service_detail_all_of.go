@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,15 +12,14 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
 // ServiceDetailAllOf struct for ServiceDetailAllOf
 type ServiceDetailAllOf struct {
-	ActiveVersion NullableServiceVersionDetailOrNull `json:"active_version,omitempty"`
-	Version *ServiceVersionDetail `json:"version,omitempty"`
+	ActiveVersion        NullableServiceVersionDetailOrNull `json:"active_version,omitempty"`
+	Version              *ServiceVersionDetail              `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -56,7 +55,7 @@ func (o *ServiceDetailAllOf) GetActiveVersion() ServiceVersionDetailOrNull {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServiceDetailAllOf) GetActiveVersionOk() (*ServiceVersionDetailOrNull, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ActiveVersion.Get(), o.ActiveVersion.IsSet()
@@ -75,6 +74,7 @@ func (o *ServiceDetailAllOf) HasActiveVersion() bool {
 func (o *ServiceDetailAllOf) SetActiveVersion(v ServiceVersionDetailOrNull) {
 	o.ActiveVersion.Set(&v)
 }
+
 // SetActiveVersionNil sets the value for ActiveVersion to be an explicit nil
 func (o *ServiceDetailAllOf) SetActiveVersionNil() {
 	o.ActiveVersion.Set(nil)
@@ -136,7 +136,7 @@ func (o ServiceDetailAllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *ServiceDetailAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	varServiceDetailAllOf := _ServiceDetailAllOf{}
 
@@ -155,7 +155,7 @@ func (o *ServiceDetailAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableServiceDetailAllOf is a helper abstraction for handling nullable servicedetailallof types. 
+// NullableServiceDetailAllOf is a helper abstraction for handling nullable servicedetailallof types.
 type NullableServiceDetailAllOf struct {
 	value *ServiceDetailAllOf
 	isSet bool
@@ -195,7 +195,7 @@ func (v NullableServiceDetailAllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableServiceDetailAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

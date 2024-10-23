@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,11 +19,11 @@ import (
 // HistoricalStatsAggregatedResponse struct for HistoricalStatsAggregatedResponse
 type HistoricalStatsAggregatedResponse struct {
 	// Whether or not we were able to successfully execute the query.
-	Status *string `json:"status,omitempty"`
-	Meta *HistoricalMeta `json:"meta,omitempty"`
+	Status *string         `json:"status,omitempty"`
+	Meta   *HistoricalMeta `json:"meta,omitempty"`
 	// If the query was not successful, this will provide a string that explains why.
-	Msg NullableString `json:"msg,omitempty"`
-	Data []Results `json:"data,omitempty"`
+	Msg                  NullableString `json:"msg,omitempty"`
+	Data                 []Results      `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -124,7 +123,7 @@ func (o *HistoricalStatsAggregatedResponse) GetMsg() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HistoricalStatsAggregatedResponse) GetMsgOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Msg.Get(), o.Msg.IsSet()
@@ -143,6 +142,7 @@ func (o *HistoricalStatsAggregatedResponse) HasMsg() bool {
 func (o *HistoricalStatsAggregatedResponse) SetMsg(v string) {
 	o.Msg.Set(&v)
 }
+
 // SetMsgNil sets the value for Msg to be an explicit nil
 func (o *HistoricalStatsAggregatedResponse) SetMsgNil() {
 	o.Msg.Set(nil)
@@ -210,7 +210,7 @@ func (o HistoricalStatsAggregatedResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *HistoricalStatsAggregatedResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varHistoricalStatsAggregatedResponse := _HistoricalStatsAggregatedResponse{}
 
@@ -231,7 +231,7 @@ func (o *HistoricalStatsAggregatedResponse) UnmarshalJSON(bytes []byte) (err err
 	return err
 }
 
-// NullableHistoricalStatsAggregatedResponse is a helper abstraction for handling nullable historicalstatsaggregatedresponse types. 
+// NullableHistoricalStatsAggregatedResponse is a helper abstraction for handling nullable historicalstatsaggregatedresponse types.
 type NullableHistoricalStatsAggregatedResponse struct {
 	value *HistoricalStatsAggregatedResponse
 	isSet bool
@@ -271,7 +271,7 @@ func (v NullableHistoricalStatsAggregatedResponse) MarshalJSON() ([]byte, error)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableHistoricalStatsAggregatedResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

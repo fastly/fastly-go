@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,13 +31,13 @@ var (
 type ContactAPI interface {
 
 	/*
-	CreateContacts Add a new customer contact
+		CreateContacts Add a new customer contact
 
-	Create a contact.
+		Create a contact.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param customerID Alphanumeric string identifying the customer.
-	 @return APICreateContactsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param customerID Alphanumeric string identifying the customer.
+		 @return APICreateContactsRequest
 	*/
 	CreateContacts(ctx context.Context, customerID string) APICreateContactsRequest
 
@@ -47,14 +46,14 @@ type ContactAPI interface {
 	CreateContactsExecute(r APICreateContactsRequest) (*ContactResponse, *http.Response, error)
 
 	/*
-	DeleteContact Delete a contact
+		DeleteContact Delete a contact
 
-	Delete a contact.
+		Delete a contact.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param customerID Alphanumeric string identifying the customer.
-	 @param contactID An alphanumeric string identifying the customer contact.
-	 @return APIDeleteContactRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param customerID Alphanumeric string identifying the customer.
+		 @param contactID An alphanumeric string identifying the customer contact.
+		 @return APIDeleteContactRequest
 	*/
 	DeleteContact(ctx context.Context, customerID string, contactID string) APIDeleteContactRequest
 
@@ -63,13 +62,13 @@ type ContactAPI interface {
 	DeleteContactExecute(r APIDeleteContactRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	ListContacts List contacts
+		ListContacts List contacts
 
-	List all contacts from a specified customer ID.
+		List all contacts from a specified customer ID.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param customerID Alphanumeric string identifying the customer.
-	 @return APIListContactsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param customerID Alphanumeric string identifying the customer.
+		 @return APIListContactsRequest
 	*/
 	ListContacts(ctx context.Context, customerID string) APIListContactsRequest
 
@@ -83,14 +82,14 @@ type ContactAPIService service
 
 // APICreateContactsRequest represents a request for the resource.
 type APICreateContactsRequest struct {
-	ctx context.Context
-	APIService ContactAPI
-	customerID string
-	userID *string
+	ctx         context.Context
+	APIService  ContactAPI
+	customerID  string
+	userID      *string
 	contactType *string
-	name *string
-	email *string
-	phone *string
+	name        *string
+	email       *string
+	phone       *string
 	customerID2 *string
 }
 
@@ -99,26 +98,31 @@ func (r *APICreateContactsRequest) UserID(userID string) *APICreateContactsReque
 	r.userID = &userID
 	return r
 }
+
 // ContactType The type of contact.
 func (r *APICreateContactsRequest) ContactType(contactType string) *APICreateContactsRequest {
 	r.contactType = &contactType
 	return r
 }
+
 // Name The name of this contact, when user_id is not provided.
 func (r *APICreateContactsRequest) Name(name string) *APICreateContactsRequest {
 	r.name = &name
 	return r
 }
+
 // Email The email of this contact, when a user_id is not provided.
 func (r *APICreateContactsRequest) Email(email string) *APICreateContactsRequest {
 	r.email = &email
 	return r
 }
+
 // Phone The phone number for this contact. Required for primary, technical, and security contact types.
 func (r *APICreateContactsRequest) Phone(phone string) *APICreateContactsRequest {
 	r.phone = &phone
 	return r
 }
+
 // CustomerID2 The alphanumeric string representing the customer for this customer contact.
 func (r *APICreateContactsRequest) CustomerID2(customerID2 string) *APICreateContactsRequest {
 	r.customerID2 = &customerID2
@@ -142,7 +146,7 @@ Create a contact.
 func (a *ContactAPIService) CreateContacts(ctx context.Context, customerID string) APICreateContactsRequest {
 	return APICreateContactsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerID: customerID,
 	}
 }
@@ -151,10 +155,10 @@ func (a *ContactAPIService) CreateContacts(ctx context.Context, customerID strin
 //  @return ContactResponse
 func (a *ContactAPIService) CreateContactsExecute(r APICreateContactsRequest) (*ContactResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ContactResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ContactResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContactAPIService.CreateContacts")
@@ -252,7 +256,6 @@ func (a *ContactAPIService) CreateContactsExecute(r APICreateContactsRequest) (*
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -271,12 +274,11 @@ func (a *ContactAPIService) CreateContactsExecute(r APICreateContactsRequest) (*
 
 // APIDeleteContactRequest represents a request for the resource.
 type APIDeleteContactRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ContactAPI
 	customerID string
-	contactID string
+	contactID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteContactRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -296,9 +298,9 @@ Delete a contact.
 func (a *ContactAPIService) DeleteContact(ctx context.Context, customerID string, contactID string) APIDeleteContactRequest {
 	return APIDeleteContactRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerID: customerID,
-		contactID: contactID,
+		contactID:  contactID,
 	}
 }
 
@@ -306,10 +308,10 @@ func (a *ContactAPIService) DeleteContact(ctx context.Context, customerID string
 //  @return InlineResponse200
 func (a *ContactAPIService) DeleteContactExecute(r APIDeleteContactRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContactAPIService.DeleteContact")
@@ -390,7 +392,6 @@ func (a *ContactAPIService) DeleteContactExecute(r APIDeleteContactRequest) (*In
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -409,11 +410,10 @@ func (a *ContactAPIService) DeleteContactExecute(r APIDeleteContactRequest) (*In
 
 // APIListContactsRequest represents a request for the resource.
 type APIListContactsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ContactAPI
 	customerID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListContactsRequest) Execute() ([]SchemasContactResponse, *http.Response, error) {
@@ -432,7 +432,7 @@ List all contacts from a specified customer ID.
 func (a *ContactAPIService) ListContacts(ctx context.Context, customerID string) APIListContactsRequest {
 	return APIListContactsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerID: customerID,
 	}
 }
@@ -441,10 +441,10 @@ func (a *ContactAPIService) ListContacts(ctx context.Context, customerID string)
 //  @return []SchemasContactResponse
 func (a *ContactAPIService) ListContactsExecute(r APIListContactsRequest) ([]SchemasContactResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []SchemasContactResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []SchemasContactResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContactAPIService.ListContacts")
@@ -523,7 +523,6 @@ func (a *ContactAPIService) ListContactsExecute(r APIListContactsRequest) ([]Sch
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

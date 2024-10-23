@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type ServerAPI interface {
 
 	/*
-	CreatePoolServer Add a server to a pool
+		CreatePoolServer Add a server to a pool
 
-	Creates a single server for a particular service and pool.
+		Creates a single server for a particular service and pool.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param poolID Alphanumeric string identifying a Pool.
-	 @return APICreatePoolServerRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param poolID Alphanumeric string identifying a Pool.
+		 @return APICreatePoolServerRequest
 	*/
 	CreatePoolServer(ctx context.Context, serviceID string, poolID string) APICreatePoolServerRequest
 
@@ -48,15 +47,15 @@ type ServerAPI interface {
 	CreatePoolServerExecute(r APICreatePoolServerRequest) (*ServerResponse, *http.Response, error)
 
 	/*
-	DeletePoolServer Delete a server from a pool
+		DeletePoolServer Delete a server from a pool
 
-	Deletes a single server for a particular service and pool.
+		Deletes a single server for a particular service and pool.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param poolID Alphanumeric string identifying a Pool.
-	 @param serverID Alphanumeric string identifying a Server.
-	 @return APIDeletePoolServerRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param poolID Alphanumeric string identifying a Pool.
+		 @param serverID Alphanumeric string identifying a Server.
+		 @return APIDeletePoolServerRequest
 	*/
 	DeletePoolServer(ctx context.Context, serviceID string, poolID string, serverID string) APIDeletePoolServerRequest
 
@@ -65,15 +64,15 @@ type ServerAPI interface {
 	DeletePoolServerExecute(r APIDeletePoolServerRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetPoolServer Get a pool server
+		GetPoolServer Get a pool server
 
-	Gets a single server for a particular service and pool.
+		Gets a single server for a particular service and pool.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param poolID Alphanumeric string identifying a Pool.
-	 @param serverID Alphanumeric string identifying a Server.
-	 @return APIGetPoolServerRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param poolID Alphanumeric string identifying a Pool.
+		 @param serverID Alphanumeric string identifying a Server.
+		 @return APIGetPoolServerRequest
 	*/
 	GetPoolServer(ctx context.Context, serviceID string, poolID string, serverID string) APIGetPoolServerRequest
 
@@ -82,14 +81,14 @@ type ServerAPI interface {
 	GetPoolServerExecute(r APIGetPoolServerRequest) (*ServerResponse, *http.Response, error)
 
 	/*
-	ListPoolServers List servers in a pool
+		ListPoolServers List servers in a pool
 
-	Lists all servers for a particular service and pool.
+		Lists all servers for a particular service and pool.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param poolID Alphanumeric string identifying a Pool.
-	 @return APIListPoolServersRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param poolID Alphanumeric string identifying a Pool.
+		 @return APIListPoolServersRequest
 	*/
 	ListPoolServers(ctx context.Context, serviceID string, poolID string) APIListPoolServersRequest
 
@@ -98,15 +97,15 @@ type ServerAPI interface {
 	ListPoolServersExecute(r APIListPoolServersRequest) ([]ServerResponse, *http.Response, error)
 
 	/*
-	UpdatePoolServer Update a server
+		UpdatePoolServer Update a server
 
-	Updates a single server for a particular service and pool.
+		Updates a single server for a particular service and pool.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param poolID Alphanumeric string identifying a Pool.
-	 @param serverID Alphanumeric string identifying a Server.
-	 @return APIUpdatePoolServerRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param poolID Alphanumeric string identifying a Pool.
+		 @param serverID Alphanumeric string identifying a Server.
+		 @return APIUpdatePoolServerRequest
 	*/
 	UpdatePoolServer(ctx context.Context, serviceID string, poolID string, serverID string) APIUpdatePoolServerRequest
 
@@ -120,16 +119,16 @@ type ServerAPIService service
 
 // APICreatePoolServerRequest represents a request for the resource.
 type APICreatePoolServerRequest struct {
-	ctx context.Context
-	APIService ServerAPI
-	serviceID string
-	poolID string
-	weight *int32
-	maxConn *int32
-	port *int32
-	address *string
-	comment *string
-	disabled *bool
+	ctx          context.Context
+	APIService   ServerAPI
+	serviceID    string
+	poolID       string
+	weight       *int32
+	maxConn      *int32
+	port         *int32
+	address      *string
+	comment      *string
+	disabled     *bool
 	overrideHost *string
 }
 
@@ -138,31 +137,37 @@ func (r *APICreatePoolServerRequest) Weight(weight int32) *APICreatePoolServerRe
 	r.weight = &weight
 	return r
 }
+
 // MaxConn Maximum number of connections. If the value is &#x60;0&#x60;, it inherits the value from pool&#39;s &#x60;max_conn_default&#x60;.
 func (r *APICreatePoolServerRequest) MaxConn(maxConn int32) *APICreatePoolServerRequest {
 	r.maxConn = &maxConn
 	return r
 }
+
 // Port Port number. Setting port &#x60;443&#x60; does not force TLS. Set &#x60;use_tls&#x60; in pool to force TLS.
 func (r *APICreatePoolServerRequest) Port(port int32) *APICreatePoolServerRequest {
 	r.port = &port
 	return r
 }
+
 // Address A hostname, IPv4, or IPv6 address for the server. Required.
 func (r *APICreatePoolServerRequest) Address(address string) *APICreatePoolServerRequest {
 	r.address = &address
 	return r
 }
+
 // Comment A freeform descriptive note.
 func (r *APICreatePoolServerRequest) Comment(comment string) *APICreatePoolServerRequest {
 	r.comment = &comment
 	return r
 }
+
 // Disabled Allows servers to be enabled and disabled in a pool.
 func (r *APICreatePoolServerRequest) Disabled(disabled bool) *APICreatePoolServerRequest {
 	r.disabled = &disabled
 	return r
 }
+
 // OverrideHost The hostname to override the Host header. Defaults to &#x60;null&#x60; meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
 func (r *APICreatePoolServerRequest) OverrideHost(overrideHost string) *APICreatePoolServerRequest {
 	r.overrideHost = &overrideHost
@@ -187,9 +192,9 @@ Creates a single server for a particular service and pool.
 func (a *ServerAPIService) CreatePoolServer(ctx context.Context, serviceID string, poolID string) APICreatePoolServerRequest {
 	return APICreatePoolServerRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		poolID: poolID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		poolID:     poolID,
 	}
 }
 
@@ -197,10 +202,10 @@ func (a *ServerAPIService) CreatePoolServer(ctx context.Context, serviceID strin
 //  @return ServerResponse
 func (a *ServerAPIService) CreatePoolServerExecute(r APICreatePoolServerRequest) (*ServerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ServerResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ServerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerAPIService.CreatePoolServer")
@@ -302,7 +307,6 @@ func (a *ServerAPIService) CreatePoolServerExecute(r APICreatePoolServerRequest)
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -321,13 +325,12 @@ func (a *ServerAPIService) CreatePoolServerExecute(r APICreatePoolServerRequest)
 
 // APIDeletePoolServerRequest represents a request for the resource.
 type APIDeletePoolServerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ServerAPI
-	serviceID string
-	poolID string
-	serverID string
+	serviceID  string
+	poolID     string
+	serverID   string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeletePoolServerRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -348,10 +351,10 @@ Deletes a single server for a particular service and pool.
 func (a *ServerAPIService) DeletePoolServer(ctx context.Context, serviceID string, poolID string, serverID string) APIDeletePoolServerRequest {
 	return APIDeletePoolServerRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		poolID: poolID,
-		serverID: serverID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		poolID:     poolID,
+		serverID:   serverID,
 	}
 }
 
@@ -359,10 +362,10 @@ func (a *ServerAPIService) DeletePoolServer(ctx context.Context, serviceID strin
 //  @return InlineResponse200
 func (a *ServerAPIService) DeletePoolServerExecute(r APIDeletePoolServerRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerAPIService.DeletePoolServer")
@@ -444,7 +447,6 @@ func (a *ServerAPIService) DeletePoolServerExecute(r APIDeletePoolServerRequest)
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -463,13 +465,12 @@ func (a *ServerAPIService) DeletePoolServerExecute(r APIDeletePoolServerRequest)
 
 // APIGetPoolServerRequest represents a request for the resource.
 type APIGetPoolServerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ServerAPI
-	serviceID string
-	poolID string
-	serverID string
+	serviceID  string
+	poolID     string
+	serverID   string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetPoolServerRequest) Execute() (*ServerResponse, *http.Response, error) {
@@ -490,10 +491,10 @@ Gets a single server for a particular service and pool.
 func (a *ServerAPIService) GetPoolServer(ctx context.Context, serviceID string, poolID string, serverID string) APIGetPoolServerRequest {
 	return APIGetPoolServerRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		poolID: poolID,
-		serverID: serverID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		poolID:     poolID,
+		serverID:   serverID,
 	}
 }
 
@@ -501,10 +502,10 @@ func (a *ServerAPIService) GetPoolServer(ctx context.Context, serviceID string, 
 //  @return ServerResponse
 func (a *ServerAPIService) GetPoolServerExecute(r APIGetPoolServerRequest) (*ServerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ServerResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ServerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerAPIService.GetPoolServer")
@@ -586,7 +587,6 @@ func (a *ServerAPIService) GetPoolServerExecute(r APIGetPoolServerRequest) (*Ser
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -605,12 +605,11 @@ func (a *ServerAPIService) GetPoolServerExecute(r APIGetPoolServerRequest) (*Ser
 
 // APIListPoolServersRequest represents a request for the resource.
 type APIListPoolServersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ServerAPI
-	serviceID string
-	poolID string
+	serviceID  string
+	poolID     string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListPoolServersRequest) Execute() ([]ServerResponse, *http.Response, error) {
@@ -630,9 +629,9 @@ Lists all servers for a particular service and pool.
 func (a *ServerAPIService) ListPoolServers(ctx context.Context, serviceID string, poolID string) APIListPoolServersRequest {
 	return APIListPoolServersRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		poolID: poolID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		poolID:     poolID,
 	}
 }
 
@@ -640,10 +639,10 @@ func (a *ServerAPIService) ListPoolServers(ctx context.Context, serviceID string
 //  @return []ServerResponse
 func (a *ServerAPIService) ListPoolServersExecute(r APIListPoolServersRequest) ([]ServerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []ServerResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []ServerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerAPIService.ListPoolServers")
@@ -724,7 +723,6 @@ func (a *ServerAPIService) ListPoolServersExecute(r APIListPoolServersRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -743,17 +741,17 @@ func (a *ServerAPIService) ListPoolServersExecute(r APIListPoolServersRequest) (
 
 // APIUpdatePoolServerRequest represents a request for the resource.
 type APIUpdatePoolServerRequest struct {
-	ctx context.Context
-	APIService ServerAPI
-	serviceID string
-	poolID string
-	serverID string
-	weight *int32
-	maxConn *int32
-	port *int32
-	address *string
-	comment *string
-	disabled *bool
+	ctx          context.Context
+	APIService   ServerAPI
+	serviceID    string
+	poolID       string
+	serverID     string
+	weight       *int32
+	maxConn      *int32
+	port         *int32
+	address      *string
+	comment      *string
+	disabled     *bool
 	overrideHost *string
 }
 
@@ -762,31 +760,37 @@ func (r *APIUpdatePoolServerRequest) Weight(weight int32) *APIUpdatePoolServerRe
 	r.weight = &weight
 	return r
 }
+
 // MaxConn Maximum number of connections. If the value is &#x60;0&#x60;, it inherits the value from pool&#39;s &#x60;max_conn_default&#x60;.
 func (r *APIUpdatePoolServerRequest) MaxConn(maxConn int32) *APIUpdatePoolServerRequest {
 	r.maxConn = &maxConn
 	return r
 }
+
 // Port Port number. Setting port &#x60;443&#x60; does not force TLS. Set &#x60;use_tls&#x60; in pool to force TLS.
 func (r *APIUpdatePoolServerRequest) Port(port int32) *APIUpdatePoolServerRequest {
 	r.port = &port
 	return r
 }
+
 // Address A hostname, IPv4, or IPv6 address for the server. Required.
 func (r *APIUpdatePoolServerRequest) Address(address string) *APIUpdatePoolServerRequest {
 	r.address = &address
 	return r
 }
+
 // Comment A freeform descriptive note.
 func (r *APIUpdatePoolServerRequest) Comment(comment string) *APIUpdatePoolServerRequest {
 	r.comment = &comment
 	return r
 }
+
 // Disabled Allows servers to be enabled and disabled in a pool.
 func (r *APIUpdatePoolServerRequest) Disabled(disabled bool) *APIUpdatePoolServerRequest {
 	r.disabled = &disabled
 	return r
 }
+
 // OverrideHost The hostname to override the Host header. Defaults to &#x60;null&#x60; meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
 func (r *APIUpdatePoolServerRequest) OverrideHost(overrideHost string) *APIUpdatePoolServerRequest {
 	r.overrideHost = &overrideHost
@@ -812,10 +816,10 @@ Updates a single server for a particular service and pool.
 func (a *ServerAPIService) UpdatePoolServer(ctx context.Context, serviceID string, poolID string, serverID string) APIUpdatePoolServerRequest {
 	return APIUpdatePoolServerRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		poolID: poolID,
-		serverID: serverID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		poolID:     poolID,
+		serverID:   serverID,
 	}
 }
 
@@ -823,10 +827,10 @@ func (a *ServerAPIService) UpdatePoolServer(ctx context.Context, serviceID strin
 //  @return ServerResponse
 func (a *ServerAPIService) UpdatePoolServerExecute(r APIUpdatePoolServerRequest) (*ServerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ServerResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ServerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServerAPIService.UpdatePoolServer")
@@ -928,7 +932,6 @@ func (a *ServerAPIService) UpdatePoolServerExecute(r APIUpdatePoolServerRequest)
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

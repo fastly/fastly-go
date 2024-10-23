@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type BillingAPI interface {
 
 	/*
-	GetInvoice Get an invoice
+		GetInvoice Get an invoice
 
-	Get the invoice for a given year and month. Can be any month from when the Customer was created to the current month.
+		Get the invoice for a given year and month. Can be any month from when the Customer was created to the current month.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param month 2-digit month.
-	 @param year 4-digit year.
-	 @return APIGetInvoiceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param month 2-digit month.
+		 @param year 4-digit year.
+		 @return APIGetInvoiceRequest
 	*/
 	GetInvoice(ctx context.Context, month string, year string) APIGetInvoiceRequest
 
@@ -48,14 +47,14 @@ type BillingAPI interface {
 	GetInvoiceExecute(r APIGetInvoiceRequest) (*BillingResponse, *http.Response, error)
 
 	/*
-	GetInvoiceByID Get an invoice
+		GetInvoiceByID Get an invoice
 
-	Get the invoice for the given invoice_id.
+		Get the invoice for the given invoice_id.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param customerID Alphanumeric string identifying the customer.
-	 @param invoiceID
-	 @return APIGetInvoiceByIDRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param customerID Alphanumeric string identifying the customer.
+		 @param invoiceID
+		 @return APIGetInvoiceByIDRequest
 	*/
 	GetInvoiceByID(ctx context.Context, customerID string, invoiceID int32) APIGetInvoiceByIDRequest
 
@@ -64,13 +63,13 @@ type BillingAPI interface {
 	GetInvoiceByIDExecute(r APIGetInvoiceByIDRequest) (*BillingResponse, *http.Response, error)
 
 	/*
-	GetInvoiceMtd Get month-to-date billing estimate
+		GetInvoiceMtd Get month-to-date billing estimate
 
-	Get the current month-to-date estimate. This endpoint has two different responses. Under normal circumstances, it generally takes less than 5 seconds to generate but in certain cases can take up to 60 seconds. Once generated the month-to-date estimate is cached for 4 hours, and is available the next request will return the JSON representation of the month-to-date estimate. While a report is being generated in the background, this endpoint will return a `202 Accepted` response. The full format of which can be found in detail in our [billing calculation guide](https://docs.fastly.com/en/guides/how-we-calculate-your-bill). There are certain accounts for which we are unable to generate a month-to-date estimate. For example, accounts who have parent-pay are unable to generate an MTD estimate. The parent accounts are able to generate a month-to-date estimate but that estimate will not include the child accounts amounts at this time.
+		Get the current month-to-date estimate. This endpoint has two different responses. Under normal circumstances, it generally takes less than 5 seconds to generate but in certain cases can take up to 60 seconds. Once generated the month-to-date estimate is cached for 4 hours, and is available the next request will return the JSON representation of the month-to-date estimate. While a report is being generated in the background, this endpoint will return a `202 Accepted` response. The full format of which can be found in detail in our [billing calculation guide](https://docs.fastly.com/en/guides/how-we-calculate-your-bill). There are certain accounts for which we are unable to generate a month-to-date estimate. For example, accounts who have parent-pay are unable to generate an MTD estimate. The parent accounts are able to generate a month-to-date estimate but that estimate will not include the child accounts amounts at this time.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param customerID Alphanumeric string identifying the customer.
-	 @return APIGetInvoiceMtdRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param customerID Alphanumeric string identifying the customer.
+		 @return APIGetInvoiceMtdRequest
 	*/
 	GetInvoiceMtd(ctx context.Context, customerID string) APIGetInvoiceMtdRequest
 
@@ -84,12 +83,11 @@ type BillingAPIService service
 
 // APIGetInvoiceRequest represents a request for the resource.
 type APIGetInvoiceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService BillingAPI
-	month string
-	year string
+	month      string
+	year       string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetInvoiceRequest) Execute() (*BillingResponse, *http.Response, error) {
@@ -109,9 +107,9 @@ Get the invoice for a given year and month. Can be any month from when the Custo
 func (a *BillingAPIService) GetInvoice(ctx context.Context, month string, year string) APIGetInvoiceRequest {
 	return APIGetInvoiceRequest{
 		APIService: a,
-		ctx: ctx,
-		month: month,
-		year: year,
+		ctx:        ctx,
+		month:      month,
+		year:       year,
 	}
 }
 
@@ -119,10 +117,10 @@ func (a *BillingAPIService) GetInvoice(ctx context.Context, month string, year s
 //  @return BillingResponse
 func (a *BillingAPIService) GetInvoiceExecute(r APIGetInvoiceRequest) (*BillingResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *BillingResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *BillingResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.GetInvoice")
@@ -203,7 +201,6 @@ func (a *BillingAPIService) GetInvoiceExecute(r APIGetInvoiceRequest) (*BillingR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -222,12 +219,11 @@ func (a *BillingAPIService) GetInvoiceExecute(r APIGetInvoiceRequest) (*BillingR
 
 // APIGetInvoiceByIDRequest represents a request for the resource.
 type APIGetInvoiceByIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService BillingAPI
 	customerID string
-	invoiceID int32
+	invoiceID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetInvoiceByIDRequest) Execute() (*BillingResponse, *http.Response, error) {
@@ -247,9 +243,9 @@ Get the invoice for the given invoice_id.
 func (a *BillingAPIService) GetInvoiceByID(ctx context.Context, customerID string, invoiceID int32) APIGetInvoiceByIDRequest {
 	return APIGetInvoiceByIDRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerID: customerID,
-		invoiceID: invoiceID,
+		invoiceID:  invoiceID,
 	}
 }
 
@@ -257,10 +253,10 @@ func (a *BillingAPIService) GetInvoiceByID(ctx context.Context, customerID strin
 //  @return BillingResponse
 func (a *BillingAPIService) GetInvoiceByIDExecute(r APIGetInvoiceByIDRequest) (*BillingResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *BillingResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *BillingResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.GetInvoiceByID")
@@ -341,7 +337,6 @@ func (a *BillingAPIService) GetInvoiceByIDExecute(r APIGetInvoiceByIDRequest) (*
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -360,11 +355,11 @@ func (a *BillingAPIService) GetInvoiceByIDExecute(r APIGetInvoiceByIDRequest) (*
 
 // APIGetInvoiceMtdRequest represents a request for the resource.
 type APIGetInvoiceMtdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService BillingAPI
 	customerID string
-	month *string
-	year *string
+	month      *string
+	year       *string
 }
 
 // Month 2-digit month.
@@ -372,6 +367,7 @@ func (r *APIGetInvoiceMtdRequest) Month(month string) *APIGetInvoiceMtdRequest {
 	r.month = &month
 	return r
 }
+
 // Year 4-digit year.
 func (r *APIGetInvoiceMtdRequest) Year(year string) *APIGetInvoiceMtdRequest {
 	r.year = &year
@@ -395,7 +391,7 @@ Get the current month-to-date estimate. This endpoint has two different response
 func (a *BillingAPIService) GetInvoiceMtd(ctx context.Context, customerID string) APIGetInvoiceMtdRequest {
 	return APIGetInvoiceMtdRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerID: customerID,
 	}
 }
@@ -404,10 +400,10 @@ func (a *BillingAPIService) GetInvoiceMtd(ctx context.Context, customerID string
 //  @return BillingEstimateResponse
 func (a *BillingAPIService) GetInvoiceMtdExecute(r APIGetInvoiceMtdRequest) (*BillingEstimateResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *BillingEstimateResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *BillingEstimateResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingAPIService.GetInvoiceMtd")
@@ -492,7 +488,6 @@ func (a *BillingAPIService) GetInvoiceMtdExecute(r APIGetInvoiceMtdRequest) (*Bi
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

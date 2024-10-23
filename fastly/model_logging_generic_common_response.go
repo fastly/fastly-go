@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -28,7 +27,7 @@ type LoggingGenericCommonResponse struct {
 	// How frequently log files are finalized so they can be available for reading (in seconds).
 	Period *string `json:"period,omitempty"`
 	// The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-	GzipLevel *string `json:"gzip_level,omitempty"`
+	GzipLevel            *string `json:"gzip_level,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -108,7 +107,7 @@ func (o *LoggingGenericCommonResponse) GetTimestampFormat() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingGenericCommonResponse) GetTimestampFormatOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TimestampFormat.Get(), o.TimestampFormat.IsSet()
@@ -127,6 +126,7 @@ func (o *LoggingGenericCommonResponse) HasTimestampFormat() bool {
 func (o *LoggingGenericCommonResponse) SetTimestampFormat(v string) {
 	o.TimestampFormat.Set(&v)
 }
+
 // SetTimestampFormatNil sets the value for TimestampFormat to be an explicit nil
 func (o *LoggingGenericCommonResponse) SetTimestampFormatNil() {
 	o.TimestampFormat.Set(nil)
@@ -261,7 +261,7 @@ func (o LoggingGenericCommonResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingGenericCommonResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingGenericCommonResponse := _LoggingGenericCommonResponse{}
 
@@ -283,7 +283,7 @@ func (o *LoggingGenericCommonResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingGenericCommonResponse is a helper abstraction for handling nullable logginggenericcommonresponse types. 
+// NullableLoggingGenericCommonResponse is a helper abstraction for handling nullable logginggenericcommonresponse types.
 type NullableLoggingGenericCommonResponse struct {
 	value *LoggingGenericCommonResponse
 	isSet bool
@@ -323,7 +323,7 @@ func (v NullableLoggingGenericCommonResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingGenericCommonResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

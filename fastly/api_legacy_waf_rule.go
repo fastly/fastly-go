@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,16 +31,16 @@ var (
 type LegacyWafRuleAPI interface {
 
 	/*
-	GetLegacyWafFirewallRuleVcl Get VCL for a rule associated with a firewall
+		GetLegacyWafFirewallRuleVcl Get VCL for a rule associated with a firewall
 
-	Get associated VCL for a specific rule associated with a specific firewall.
+		Get associated VCL for a specific rule associated with a specific firewall.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @param wafRuleID Alphanumeric string identifying a WAF rule.
-	 @return APIGetLegacyWafFirewallRuleVclRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @param wafRuleID Alphanumeric string identifying a WAF rule.
+		 @return APIGetLegacyWafFirewallRuleVclRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetLegacyWafFirewallRuleVcl(ctx context.Context, firewallID string, wafRuleID string) APIGetLegacyWafFirewallRuleVclRequest
 
@@ -51,15 +50,15 @@ type LegacyWafRuleAPI interface {
 	GetLegacyWafFirewallRuleVclExecute(r APIGetLegacyWafFirewallRuleVclRequest) (map[string]any, *http.Response, error)
 
 	/*
-	GetLegacyWafRule Get a rule
+		GetLegacyWafRule Get a rule
 
-	Get a specific rule.
+		Get a specific rule.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param wafRuleID Alphanumeric string identifying a WAF rule.
-	 @return APIGetLegacyWafRuleRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param wafRuleID Alphanumeric string identifying a WAF rule.
+		 @return APIGetLegacyWafRuleRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetLegacyWafRule(ctx context.Context, wafRuleID string) APIGetLegacyWafRuleRequest
 
@@ -69,15 +68,15 @@ type LegacyWafRuleAPI interface {
 	GetLegacyWafRuleExecute(r APIGetLegacyWafRuleRequest) (map[string]any, *http.Response, error)
 
 	/*
-	GetLegacyWafRuleVcl Get VCL for a rule
+		GetLegacyWafRuleVcl Get VCL for a rule
 
-	Get associated VCL for a specific rule.
+		Get associated VCL for a specific rule.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param wafRuleID Alphanumeric string identifying a WAF rule.
-	 @return APIGetLegacyWafRuleVclRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param wafRuleID Alphanumeric string identifying a WAF rule.
+		 @return APIGetLegacyWafRuleVclRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetLegacyWafRuleVcl(ctx context.Context, wafRuleID string) APIGetLegacyWafRuleVclRequest
 
@@ -87,14 +86,14 @@ type LegacyWafRuleAPI interface {
 	GetLegacyWafRuleVclExecute(r APIGetLegacyWafRuleVclRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListLegacyWafRules List rules in the latest configuration set
+		ListLegacyWafRules List rules in the latest configuration set
 
-	List all rules in the latest configuration set.
+		List all rules in the latest configuration set.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListLegacyWafRulesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListLegacyWafRulesRequest
 
-	Deprecated
+		Deprecated
 	*/
 	ListLegacyWafRules(ctx context.Context) APIListLegacyWafRulesRequest
 
@@ -109,12 +108,11 @@ type LegacyWafRuleAPIService service
 
 // APIGetLegacyWafFirewallRuleVclRequest represents a request for the resource.
 type APIGetLegacyWafFirewallRuleVclRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LegacyWafRuleAPI
 	firewallID string
-	wafRuleID string
+	wafRuleID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLegacyWafFirewallRuleVclRequest) Execute() (map[string]any, *http.Response, error) {
@@ -136,9 +134,9 @@ Deprecated
 func (a *LegacyWafRuleAPIService) GetLegacyWafFirewallRuleVcl(ctx context.Context, firewallID string, wafRuleID string) APIGetLegacyWafFirewallRuleVclRequest {
 	return APIGetLegacyWafFirewallRuleVclRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		firewallID: firewallID,
-		wafRuleID: wafRuleID,
+		wafRuleID:  wafRuleID,
 	}
 }
 
@@ -147,10 +145,10 @@ func (a *LegacyWafRuleAPIService) GetLegacyWafFirewallRuleVcl(ctx context.Contex
 // Deprecated
 func (a *LegacyWafRuleAPIService) GetLegacyWafFirewallRuleVclExecute(r APIGetLegacyWafFirewallRuleVclRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafRuleAPIService.GetLegacyWafFirewallRuleVcl")
@@ -231,7 +229,6 @@ func (a *LegacyWafRuleAPIService) GetLegacyWafFirewallRuleVclExecute(r APIGetLeg
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -250,11 +247,11 @@ func (a *LegacyWafRuleAPIService) GetLegacyWafFirewallRuleVclExecute(r APIGetLeg
 
 // APIGetLegacyWafRuleRequest represents a request for the resource.
 type APIGetLegacyWafRuleRequest struct {
-	ctx context.Context
-	APIService LegacyWafRuleAPI
-	wafRuleID string
+	ctx                      context.Context
+	APIService               LegacyWafRuleAPI
+	wafRuleID                string
 	filterConfigurationSetID *string
-	include *string
+	include                  *string
 }
 
 // FilterConfigurationSetID Optional. Limit rule to a specific configuration set or pass \&quot;all\&quot; to search all configuration sets, including stale ones.
@@ -262,7 +259,8 @@ func (r *APIGetLegacyWafRuleRequest) FilterConfigurationSetID(filterConfiguratio
 	r.filterConfigurationSetID = &filterConfigurationSetID
 	return r
 }
-// Include Include relationships. Optional. Comma separated values. Permitted values: &#x60;tags&#x60;, &#x60;rule_statuses&#x60;, &#x60;source&#x60;, and &#x60;vcl&#x60;. 
+
+// Include Include relationships. Optional. Comma separated values. Permitted values: &#x60;tags&#x60;, &#x60;rule_statuses&#x60;, &#x60;source&#x60;, and &#x60;vcl&#x60;.
 func (r *APIGetLegacyWafRuleRequest) Include(include string) *APIGetLegacyWafRuleRequest {
 	r.include = &include
 	return r
@@ -287,8 +285,8 @@ Deprecated
 func (a *LegacyWafRuleAPIService) GetLegacyWafRule(ctx context.Context, wafRuleID string) APIGetLegacyWafRuleRequest {
 	return APIGetLegacyWafRuleRequest{
 		APIService: a,
-		ctx: ctx,
-		wafRuleID: wafRuleID,
+		ctx:        ctx,
+		wafRuleID:  wafRuleID,
 	}
 }
 
@@ -297,10 +295,10 @@ func (a *LegacyWafRuleAPIService) GetLegacyWafRule(ctx context.Context, wafRuleI
 // Deprecated
 func (a *LegacyWafRuleAPIService) GetLegacyWafRuleExecute(r APIGetLegacyWafRuleRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafRuleAPIService.GetLegacyWafRule")
@@ -386,7 +384,6 @@ func (a *LegacyWafRuleAPIService) GetLegacyWafRuleExecute(r APIGetLegacyWafRuleR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -405,11 +402,10 @@ func (a *LegacyWafRuleAPIService) GetLegacyWafRuleExecute(r APIGetLegacyWafRuleR
 
 // APIGetLegacyWafRuleVclRequest represents a request for the resource.
 type APIGetLegacyWafRuleVclRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LegacyWafRuleAPI
-	wafRuleID string
+	wafRuleID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLegacyWafRuleVclRequest) Execute() (map[string]any, *http.Response, error) {
@@ -430,8 +426,8 @@ Deprecated
 func (a *LegacyWafRuleAPIService) GetLegacyWafRuleVcl(ctx context.Context, wafRuleID string) APIGetLegacyWafRuleVclRequest {
 	return APIGetLegacyWafRuleVclRequest{
 		APIService: a,
-		ctx: ctx,
-		wafRuleID: wafRuleID,
+		ctx:        ctx,
+		wafRuleID:  wafRuleID,
 	}
 }
 
@@ -440,10 +436,10 @@ func (a *LegacyWafRuleAPIService) GetLegacyWafRuleVcl(ctx context.Context, wafRu
 // Deprecated
 func (a *LegacyWafRuleAPIService) GetLegacyWafRuleVclExecute(r APIGetLegacyWafRuleVclRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafRuleAPIService.GetLegacyWafRuleVcl")
@@ -523,7 +519,6 @@ func (a *LegacyWafRuleAPIService) GetLegacyWafRuleVclExecute(r APIGetLegacyWafRu
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -542,15 +537,15 @@ func (a *LegacyWafRuleAPIService) GetLegacyWafRuleVclExecute(r APIGetLegacyWafRu
 
 // APIListLegacyWafRulesRequest represents a request for the resource.
 type APIListLegacyWafRulesRequest struct {
-	ctx context.Context
-	APIService LegacyWafRuleAPI
-	filterRuleID *string
-	filterSeverity *string
-	filterTagsName *string
+	ctx                      context.Context
+	APIService               LegacyWafRuleAPI
+	filterRuleID             *string
+	filterSeverity           *string
+	filterTagsName           *string
 	filterConfigurationSetID *string
-	pageNumber *int32
-	pageSize *int32
-	include *string
+	pageNumber               *int32
+	pageSize                 *int32
+	include                  *string
 }
 
 // FilterRuleID Limit the returned rules to a specific rule ID.
@@ -558,32 +553,38 @@ func (r *APIListLegacyWafRulesRequest) FilterRuleID(filterRuleID string) *APILis
 	r.filterRuleID = &filterRuleID
 	return r
 }
+
 // FilterSeverity Limit the returned rules to a specific severity.
 func (r *APIListLegacyWafRulesRequest) FilterSeverity(filterSeverity string) *APIListLegacyWafRulesRequest {
 	r.filterSeverity = &filterSeverity
 	return r
 }
+
 // FilterTagsName Limit the returned rules to a set linked to a tag by name.
 func (r *APIListLegacyWafRulesRequest) FilterTagsName(filterTagsName string) *APIListLegacyWafRulesRequest {
 	r.filterTagsName = &filterTagsName
 	return r
 }
+
 // FilterConfigurationSetID Optional. Limit rules to specific configuration set or pass \&quot;all\&quot; to search all configuration sets, including stale ones.
 func (r *APIListLegacyWafRulesRequest) FilterConfigurationSetID(filterConfigurationSetID string) *APIListLegacyWafRulesRequest {
 	r.filterConfigurationSetID = &filterConfigurationSetID
 	return r
 }
+
 // PageNumber Current page.
 func (r *APIListLegacyWafRulesRequest) PageNumber(pageNumber int32) *APIListLegacyWafRulesRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListLegacyWafRulesRequest) PageSize(pageSize int32) *APIListLegacyWafRulesRequest {
 	r.pageSize = &pageSize
 	return r
 }
-// Include Include relationships. Optional. Comma separated values. Permitted values: &#x60;tags&#x60;, &#x60;rule_statuses&#x60;, and &#x60;source&#x60;. 
+
+// Include Include relationships. Optional. Comma separated values. Permitted values: &#x60;tags&#x60;, &#x60;rule_statuses&#x60;, and &#x60;source&#x60;.
 func (r *APIListLegacyWafRulesRequest) Include(include string) *APIListLegacyWafRulesRequest {
 	r.include = &include
 	return r
@@ -607,7 +608,7 @@ Deprecated
 func (a *LegacyWafRuleAPIService) ListLegacyWafRules(ctx context.Context) APIListLegacyWafRulesRequest {
 	return APIListLegacyWafRulesRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -616,10 +617,10 @@ func (a *LegacyWafRuleAPIService) ListLegacyWafRules(ctx context.Context) APILis
 // Deprecated
 func (a *LegacyWafRuleAPIService) ListLegacyWafRulesExecute(r APIListLegacyWafRulesRequest) ([]map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafRuleAPIService.ListLegacyWafRules")
@@ -718,7 +719,6 @@ func (a *LegacyWafRuleAPIService) ListLegacyWafRulesExecute(r APIListLegacyWafRu
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

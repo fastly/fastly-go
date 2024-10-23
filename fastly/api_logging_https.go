@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingHTTPSAPI interface {
 
 	/*
-	CreateLogHTTPS Create an HTTPS log endpoint
+		CreateLogHTTPS Create an HTTPS log endpoint
 
-	Create an HTTPS object for a particular service and version.
+		Create an HTTPS object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogHTTPSRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogHTTPSRequest
 	*/
 	CreateLogHTTPS(ctx context.Context, serviceID string, versionID int32) APICreateLogHTTPSRequest
 
@@ -48,15 +47,15 @@ type LoggingHTTPSAPI interface {
 	CreateLogHTTPSExecute(r APICreateLogHTTPSRequest) (*LoggingHTTPSResponse, *http.Response, error)
 
 	/*
-	DeleteLogHTTPS Delete an HTTPS log endpoint
+		DeleteLogHTTPS Delete an HTTPS log endpoint
 
-	Delete the HTTPS object for a particular service and version.
+		Delete the HTTPS object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingHTTPSName The name for the real-time logging configuration.
-	 @return APIDeleteLogHTTPSRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingHTTPSName The name for the real-time logging configuration.
+		 @return APIDeleteLogHTTPSRequest
 	*/
 	DeleteLogHTTPS(ctx context.Context, serviceID string, versionID int32, loggingHTTPSName string) APIDeleteLogHTTPSRequest
 
@@ -65,15 +64,15 @@ type LoggingHTTPSAPI interface {
 	DeleteLogHTTPSExecute(r APIDeleteLogHTTPSRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogHTTPS Get an HTTPS log endpoint
+		GetLogHTTPS Get an HTTPS log endpoint
 
-	Get the HTTPS object for a particular service and version.
+		Get the HTTPS object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingHTTPSName The name for the real-time logging configuration.
-	 @return APIGetLogHTTPSRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingHTTPSName The name for the real-time logging configuration.
+		 @return APIGetLogHTTPSRequest
 	*/
 	GetLogHTTPS(ctx context.Context, serviceID string, versionID int32, loggingHTTPSName string) APIGetLogHTTPSRequest
 
@@ -82,14 +81,14 @@ type LoggingHTTPSAPI interface {
 	GetLogHTTPSExecute(r APIGetLogHTTPSRequest) (*LoggingHTTPSResponse, *http.Response, error)
 
 	/*
-	ListLogHTTPS List HTTPS log endpoints
+		ListLogHTTPS List HTTPS log endpoints
 
-	List all of the HTTPS objects for a particular service and version.
+		List all of the HTTPS objects for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogHTTPSRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogHTTPSRequest
 	*/
 	ListLogHTTPS(ctx context.Context, serviceID string, versionID int32) APIListLogHTTPSRequest
 
@@ -98,15 +97,15 @@ type LoggingHTTPSAPI interface {
 	ListLogHTTPSExecute(r APIListLogHTTPSRequest) ([]LoggingHTTPSResponse, *http.Response, error)
 
 	/*
-	UpdateLogHTTPS Update an HTTPS log endpoint
+		UpdateLogHTTPS Update an HTTPS log endpoint
 
-	Update the HTTPS object for a particular service and version.
+		Update the HTTPS object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingHTTPSName The name for the real-time logging configuration.
-	 @return APIUpdateLogHTTPSRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingHTTPSName The name for the real-time logging configuration.
+		 @return APIUpdateLogHTTPSRequest
 	*/
 	UpdateLogHTTPS(ctx context.Context, serviceID string, versionID int32, loggingHTTPSName string) APIUpdateLogHTTPSRequest
 
@@ -120,28 +119,28 @@ type LoggingHTTPSAPIService service
 
 // APICreateLogHTTPSRequest represents a request for the resource.
 type APICreateLogHTTPSRequest struct {
-	ctx context.Context
-	APIService LoggingHTTPSAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingHTTPSAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	tlsCaCert *string
-	tlsClientCert *string
-	tlsClientKey *string
-	tlsHostname *string
+	format            *string
+	formatVersion     *int32
+	tlsCaCert         *string
+	tlsClientCert     *string
+	tlsClientKey      *string
+	tlsHostname       *string
 	requestMaxEntries *int32
-	requestMaxBytes *int32
-	url *string
-	contentType *string
-	headerName *string
-	messageType *LoggingMessageType
-	headerValue *string
-	method *string
-	jsonFormat *string
+	requestMaxBytes   *int32
+	url               *string
+	contentType       *string
+	headerName        *string
+	messageType       *LoggingMessageType
+	headerValue       *string
+	method            *string
+	jsonFormat        *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -149,86 +148,103 @@ func (r *APICreateLogHTTPSRequest) Name(name string) *APICreateLogHTTPSRequest {
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogHTTPSRequest) Placement(placement string) *APICreateLogHTTPSRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogHTTPSRequest) ResponseCondition(responseCondition string) *APICreateLogHTTPSRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogHTTPSRequest) Format(format string) *APICreateLogHTTPSRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogHTTPSRequest) FormatVersion(formatVersion int32) *APICreateLogHTTPSRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
 func (r *APICreateLogHTTPSRequest) TLSCaCert(tlsCaCert string) *APICreateLogHTTPSRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
+
 // TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
 func (r *APICreateLogHTTPSRequest) TLSClientCert(tlsClientCert string) *APICreateLogHTTPSRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
+
 // TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
 func (r *APICreateLogHTTPSRequest) TLSClientKey(tlsClientKey string) *APICreateLogHTTPSRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
+
 // TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
 func (r *APICreateLogHTTPSRequest) TLSHostname(tlsHostname string) *APICreateLogHTTPSRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
+
 // RequestMaxEntries The maximum number of logs sent in one request. Defaults &#x60;0&#x60; (10k).
 func (r *APICreateLogHTTPSRequest) RequestMaxEntries(requestMaxEntries int32) *APICreateLogHTTPSRequest {
 	r.requestMaxEntries = &requestMaxEntries
 	return r
 }
+
 // RequestMaxBytes The maximum number of bytes sent in one request. Defaults &#x60;0&#x60; (100MB).
 func (r *APICreateLogHTTPSRequest) RequestMaxBytes(requestMaxBytes int32) *APICreateLogHTTPSRequest {
 	r.requestMaxBytes = &requestMaxBytes
 	return r
 }
+
 // URL The URL to send logs to. Must use HTTPS. Required.
 func (r *APICreateLogHTTPSRequest) URL(url string) *APICreateLogHTTPSRequest {
 	r.url = &url
 	return r
 }
+
 // ContentType Content type of the header sent with the request.
 func (r *APICreateLogHTTPSRequest) ContentType(contentType string) *APICreateLogHTTPSRequest {
 	r.contentType = &contentType
 	return r
 }
+
 // HeaderName Name of the custom header sent with the request.
 func (r *APICreateLogHTTPSRequest) HeaderName(headerName string) *APICreateLogHTTPSRequest {
 	r.headerName = &headerName
 	return r
 }
+
 // MessageType returns a pointer to a request.
 func (r *APICreateLogHTTPSRequest) MessageType(messageType LoggingMessageType) *APICreateLogHTTPSRequest {
 	r.messageType = &messageType
 	return r
 }
+
 // HeaderValue Value of the custom header sent with the request.
 func (r *APICreateLogHTTPSRequest) HeaderValue(headerValue string) *APICreateLogHTTPSRequest {
 	r.headerValue = &headerValue
 	return r
 }
+
 // Method HTTP method used for request.
 func (r *APICreateLogHTTPSRequest) Method(method string) *APICreateLogHTTPSRequest {
 	r.method = &method
 	return r
 }
+
 // JSONFormat Enforces valid JSON formatting for log entries.
 func (r *APICreateLogHTTPSRequest) JSONFormat(jsonFormat string) *APICreateLogHTTPSRequest {
 	r.jsonFormat = &jsonFormat
@@ -253,9 +269,9 @@ Create an HTTPS object for a particular service and version.
 func (a *LoggingHTTPSAPIService) CreateLogHTTPS(ctx context.Context, serviceID string, versionID int32) APICreateLogHTTPSRequest {
 	return APICreateLogHTTPSRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -263,10 +279,10 @@ func (a *LoggingHTTPSAPIService) CreateLogHTTPS(ctx context.Context, serviceID s
 //  @return LoggingHTTPSResponse
 func (a *LoggingHTTPSAPIService) CreateLogHTTPSExecute(r APICreateLogHTTPSRequest) (*LoggingHTTPSResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingHTTPSResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingHTTPSResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHTTPSAPIService.CreateLogHTTPS")
@@ -401,7 +417,6 @@ func (a *LoggingHTTPSAPIService) CreateLogHTTPSExecute(r APICreateLogHTTPSReques
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -420,13 +435,12 @@ func (a *LoggingHTTPSAPIService) CreateLogHTTPSExecute(r APICreateLogHTTPSReques
 
 // APIDeleteLogHTTPSRequest represents a request for the resource.
 type APIDeleteLogHTTPSRequest struct {
-	ctx context.Context
-	APIService LoggingHTTPSAPI
-	serviceID string
-	versionID int32
+	ctx              context.Context
+	APIService       LoggingHTTPSAPI
+	serviceID        string
+	versionID        int32
 	loggingHTTPSName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogHTTPSRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -446,10 +460,10 @@ Delete the HTTPS object for a particular service and version.
 */
 func (a *LoggingHTTPSAPIService) DeleteLogHTTPS(ctx context.Context, serviceID string, versionID int32, loggingHTTPSName string) APIDeleteLogHTTPSRequest {
 	return APIDeleteLogHTTPSRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:       a,
+		ctx:              ctx,
+		serviceID:        serviceID,
+		versionID:        versionID,
 		loggingHTTPSName: loggingHTTPSName,
 	}
 }
@@ -458,10 +472,10 @@ func (a *LoggingHTTPSAPIService) DeleteLogHTTPS(ctx context.Context, serviceID s
 //  @return InlineResponse200
 func (a *LoggingHTTPSAPIService) DeleteLogHTTPSExecute(r APIDeleteLogHTTPSRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHTTPSAPIService.DeleteLogHTTPS")
@@ -543,7 +557,6 @@ func (a *LoggingHTTPSAPIService) DeleteLogHTTPSExecute(r APIDeleteLogHTTPSReques
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -562,13 +575,12 @@ func (a *LoggingHTTPSAPIService) DeleteLogHTTPSExecute(r APIDeleteLogHTTPSReques
 
 // APIGetLogHTTPSRequest represents a request for the resource.
 type APIGetLogHTTPSRequest struct {
-	ctx context.Context
-	APIService LoggingHTTPSAPI
-	serviceID string
-	versionID int32
+	ctx              context.Context
+	APIService       LoggingHTTPSAPI
+	serviceID        string
+	versionID        int32
 	loggingHTTPSName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogHTTPSRequest) Execute() (*LoggingHTTPSResponse, *http.Response, error) {
@@ -588,10 +600,10 @@ Get the HTTPS object for a particular service and version.
 */
 func (a *LoggingHTTPSAPIService) GetLogHTTPS(ctx context.Context, serviceID string, versionID int32, loggingHTTPSName string) APIGetLogHTTPSRequest {
 	return APIGetLogHTTPSRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:       a,
+		ctx:              ctx,
+		serviceID:        serviceID,
+		versionID:        versionID,
 		loggingHTTPSName: loggingHTTPSName,
 	}
 }
@@ -600,10 +612,10 @@ func (a *LoggingHTTPSAPIService) GetLogHTTPS(ctx context.Context, serviceID stri
 //  @return LoggingHTTPSResponse
 func (a *LoggingHTTPSAPIService) GetLogHTTPSExecute(r APIGetLogHTTPSRequest) (*LoggingHTTPSResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingHTTPSResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingHTTPSResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHTTPSAPIService.GetLogHTTPS")
@@ -685,7 +697,6 @@ func (a *LoggingHTTPSAPIService) GetLogHTTPSExecute(r APIGetLogHTTPSRequest) (*L
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -704,12 +715,11 @@ func (a *LoggingHTTPSAPIService) GetLogHTTPSExecute(r APIGetLogHTTPSRequest) (*L
 
 // APIListLogHTTPSRequest represents a request for the resource.
 type APIListLogHTTPSRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingHTTPSAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogHTTPSRequest) Execute() ([]LoggingHTTPSResponse, *http.Response, error) {
@@ -729,9 +739,9 @@ List all of the HTTPS objects for a particular service and version.
 func (a *LoggingHTTPSAPIService) ListLogHTTPS(ctx context.Context, serviceID string, versionID int32) APIListLogHTTPSRequest {
 	return APIListLogHTTPSRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -739,10 +749,10 @@ func (a *LoggingHTTPSAPIService) ListLogHTTPS(ctx context.Context, serviceID str
 //  @return []LoggingHTTPSResponse
 func (a *LoggingHTTPSAPIService) ListLogHTTPSExecute(r APIListLogHTTPSRequest) ([]LoggingHTTPSResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingHTTPSResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingHTTPSResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHTTPSAPIService.ListLogHTTPS")
@@ -823,7 +833,6 @@ func (a *LoggingHTTPSAPIService) ListLogHTTPSExecute(r APIListLogHTTPSRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -842,29 +851,29 @@ func (a *LoggingHTTPSAPIService) ListLogHTTPSExecute(r APIListLogHTTPSRequest) (
 
 // APIUpdateLogHTTPSRequest represents a request for the resource.
 type APIUpdateLogHTTPSRequest struct {
-	ctx context.Context
-	APIService LoggingHTTPSAPI
-	serviceID string
-	versionID int32
-	loggingHTTPSName string
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingHTTPSAPI
+	serviceID         string
+	versionID         int32
+	loggingHTTPSName  string
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	tlsCaCert *string
-	tlsClientCert *string
-	tlsClientKey *string
-	tlsHostname *string
+	format            *string
+	formatVersion     *int32
+	tlsCaCert         *string
+	tlsClientCert     *string
+	tlsClientKey      *string
+	tlsHostname       *string
 	requestMaxEntries *int32
-	requestMaxBytes *int32
-	url *string
-	contentType *string
-	headerName *string
-	messageType *LoggingMessageType
-	headerValue *string
-	method *string
-	jsonFormat *string
+	requestMaxBytes   *int32
+	url               *string
+	contentType       *string
+	headerName        *string
+	messageType       *LoggingMessageType
+	headerValue       *string
+	method            *string
+	jsonFormat        *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -872,86 +881,103 @@ func (r *APIUpdateLogHTTPSRequest) Name(name string) *APIUpdateLogHTTPSRequest {
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogHTTPSRequest) Placement(placement string) *APIUpdateLogHTTPSRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogHTTPSRequest) ResponseCondition(responseCondition string) *APIUpdateLogHTTPSRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogHTTPSRequest) Format(format string) *APIUpdateLogHTTPSRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogHTTPSRequest) FormatVersion(formatVersion int32) *APIUpdateLogHTTPSRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
 func (r *APIUpdateLogHTTPSRequest) TLSCaCert(tlsCaCert string) *APIUpdateLogHTTPSRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
+
 // TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
 func (r *APIUpdateLogHTTPSRequest) TLSClientCert(tlsClientCert string) *APIUpdateLogHTTPSRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
+
 // TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
 func (r *APIUpdateLogHTTPSRequest) TLSClientKey(tlsClientKey string) *APIUpdateLogHTTPSRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
+
 // TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
 func (r *APIUpdateLogHTTPSRequest) TLSHostname(tlsHostname string) *APIUpdateLogHTTPSRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
+
 // RequestMaxEntries The maximum number of logs sent in one request. Defaults &#x60;0&#x60; (10k).
 func (r *APIUpdateLogHTTPSRequest) RequestMaxEntries(requestMaxEntries int32) *APIUpdateLogHTTPSRequest {
 	r.requestMaxEntries = &requestMaxEntries
 	return r
 }
+
 // RequestMaxBytes The maximum number of bytes sent in one request. Defaults &#x60;0&#x60; (100MB).
 func (r *APIUpdateLogHTTPSRequest) RequestMaxBytes(requestMaxBytes int32) *APIUpdateLogHTTPSRequest {
 	r.requestMaxBytes = &requestMaxBytes
 	return r
 }
+
 // URL The URL to send logs to. Must use HTTPS. Required.
 func (r *APIUpdateLogHTTPSRequest) URL(url string) *APIUpdateLogHTTPSRequest {
 	r.url = &url
 	return r
 }
+
 // ContentType Content type of the header sent with the request.
 func (r *APIUpdateLogHTTPSRequest) ContentType(contentType string) *APIUpdateLogHTTPSRequest {
 	r.contentType = &contentType
 	return r
 }
+
 // HeaderName Name of the custom header sent with the request.
 func (r *APIUpdateLogHTTPSRequest) HeaderName(headerName string) *APIUpdateLogHTTPSRequest {
 	r.headerName = &headerName
 	return r
 }
+
 // MessageType returns a pointer to a request.
 func (r *APIUpdateLogHTTPSRequest) MessageType(messageType LoggingMessageType) *APIUpdateLogHTTPSRequest {
 	r.messageType = &messageType
 	return r
 }
+
 // HeaderValue Value of the custom header sent with the request.
 func (r *APIUpdateLogHTTPSRequest) HeaderValue(headerValue string) *APIUpdateLogHTTPSRequest {
 	r.headerValue = &headerValue
 	return r
 }
+
 // Method HTTP method used for request.
 func (r *APIUpdateLogHTTPSRequest) Method(method string) *APIUpdateLogHTTPSRequest {
 	r.method = &method
 	return r
 }
+
 // JSONFormat Enforces valid JSON formatting for log entries.
 func (r *APIUpdateLogHTTPSRequest) JSONFormat(jsonFormat string) *APIUpdateLogHTTPSRequest {
 	r.jsonFormat = &jsonFormat
@@ -976,10 +1002,10 @@ Update the HTTPS object for a particular service and version.
 */
 func (a *LoggingHTTPSAPIService) UpdateLogHTTPS(ctx context.Context, serviceID string, versionID int32, loggingHTTPSName string) APIUpdateLogHTTPSRequest {
 	return APIUpdateLogHTTPSRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:       a,
+		ctx:              ctx,
+		serviceID:        serviceID,
+		versionID:        versionID,
 		loggingHTTPSName: loggingHTTPSName,
 	}
 }
@@ -988,10 +1014,10 @@ func (a *LoggingHTTPSAPIService) UpdateLogHTTPS(ctx context.Context, serviceID s
 //  @return LoggingHTTPSResponse
 func (a *LoggingHTTPSAPIService) UpdateLogHTTPSExecute(r APIUpdateLogHTTPSRequest) (*LoggingHTTPSResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingHTTPSResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingHTTPSResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingHTTPSAPIService.UpdateLogHTTPS")
@@ -1126,7 +1152,6 @@ func (a *LoggingHTTPSAPIService) UpdateLogHTTPSExecute(r APIUpdateLogHTTPSReques
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

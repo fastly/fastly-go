@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -24,11 +23,11 @@ type DashboardItem struct {
 	// A human-readable title for the dashboard item
 	Title string `json:"title"`
 	// A human-readable subtitle for the dashboard item. Often a description of the visualization.
-	Subtitle string `json:"subtitle"`
-	DataSource DashboardItemPropertyDataSource `json:"data_source"`
+	Subtitle      string                             `json:"subtitle"`
+	DataSource    DashboardItemPropertyDataSource    `json:"data_source"`
 	Visualization DashboardItemPropertyVisualization `json:"visualization"`
 	// The number of columns for the dashboard item to span. Dashboards are rendered on a 12-column grid on \"desktop\" screen sizes.
-	Span *int32 `json:"span,omitempty"`
+	Span                 *int32 `json:"span,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -104,7 +103,7 @@ func (o *DashboardItem) GetTitle() string {
 // GetTitleOk returns a tuple with the Title field value
 // and a boolean to check if the value has been set.
 func (o *DashboardItem) GetTitleOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Title, true
@@ -128,7 +127,7 @@ func (o *DashboardItem) GetSubtitle() string {
 // GetSubtitleOk returns a tuple with the Subtitle field value
 // and a boolean to check if the value has been set.
 func (o *DashboardItem) GetSubtitleOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Subtitle, true
@@ -152,7 +151,7 @@ func (o *DashboardItem) GetDataSource() DashboardItemPropertyDataSource {
 // GetDataSourceOk returns a tuple with the DataSource field value
 // and a boolean to check if the value has been set.
 func (o *DashboardItem) GetDataSourceOk() (*DashboardItemPropertyDataSource, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.DataSource, true
@@ -176,7 +175,7 @@ func (o *DashboardItem) GetVisualization() DashboardItemPropertyVisualization {
 // GetVisualizationOk returns a tuple with the Visualization field value
 // and a boolean to check if the value has been set.
 func (o *DashboardItem) GetVisualizationOk() (*DashboardItemPropertyVisualization, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Visualization, true
@@ -250,7 +249,7 @@ func (o DashboardItem) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *DashboardItem) UnmarshalJSON(bytes []byte) (err error) {
 	varDashboardItem := _DashboardItem{}
 
@@ -273,7 +272,7 @@ func (o *DashboardItem) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableDashboardItem is a helper abstraction for handling nullable dashboarditem types. 
+// NullableDashboardItem is a helper abstraction for handling nullable dashboarditem types.
 type NullableDashboardItem struct {
 	value *DashboardItem
 	isSet bool
@@ -313,7 +312,7 @@ func (v NullableDashboardItem) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDashboardItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -30,7 +29,7 @@ type RequestSettingsAdditional struct {
 	// Condition which, if met, will select this configuration during a request. Optional.
 	RequestCondition NullableString `json:"request_condition,omitempty"`
 	// Short for X-Forwarded-For.
-	Xff NullableString `json:"xff,omitempty"`
+	Xff                  NullableString `json:"xff,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -66,7 +65,7 @@ func (o *RequestSettingsAdditional) GetAction() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsAdditional) GetActionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Action.Get(), o.Action.IsSet()
@@ -85,6 +84,7 @@ func (o *RequestSettingsAdditional) HasAction() bool {
 func (o *RequestSettingsAdditional) SetAction(v string) {
 	o.Action.Set(&v)
 }
+
 // SetActionNil sets the value for Action to be an explicit nil
 func (o *RequestSettingsAdditional) SetActionNil() {
 	o.Action.Set(nil)
@@ -108,7 +108,7 @@ func (o *RequestSettingsAdditional) GetDefaultHost() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsAdditional) GetDefaultHostOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DefaultHost.Get(), o.DefaultHost.IsSet()
@@ -127,6 +127,7 @@ func (o *RequestSettingsAdditional) HasDefaultHost() bool {
 func (o *RequestSettingsAdditional) SetDefaultHost(v string) {
 	o.DefaultHost.Set(&v)
 }
+
 // SetDefaultHostNil sets the value for DefaultHost to be an explicit nil
 func (o *RequestSettingsAdditional) SetDefaultHostNil() {
 	o.DefaultHost.Set(nil)
@@ -150,7 +151,7 @@ func (o *RequestSettingsAdditional) GetHashKeys() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsAdditional) GetHashKeysOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HashKeys.Get(), o.HashKeys.IsSet()
@@ -169,6 +170,7 @@ func (o *RequestSettingsAdditional) HasHashKeys() bool {
 func (o *RequestSettingsAdditional) SetHashKeys(v string) {
 	o.HashKeys.Set(&v)
 }
+
 // SetHashKeysNil sets the value for HashKeys to be an explicit nil
 func (o *RequestSettingsAdditional) SetHashKeysNil() {
 	o.HashKeys.Set(nil)
@@ -224,7 +226,7 @@ func (o *RequestSettingsAdditional) GetRequestCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsAdditional) GetRequestConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RequestCondition.Get(), o.RequestCondition.IsSet()
@@ -243,6 +245,7 @@ func (o *RequestSettingsAdditional) HasRequestCondition() bool {
 func (o *RequestSettingsAdditional) SetRequestCondition(v string) {
 	o.RequestCondition.Set(&v)
 }
+
 // SetRequestConditionNil sets the value for RequestCondition to be an explicit nil
 func (o *RequestSettingsAdditional) SetRequestConditionNil() {
 	o.RequestCondition.Set(nil)
@@ -266,7 +269,7 @@ func (o *RequestSettingsAdditional) GetXff() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsAdditional) GetXffOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Xff.Get(), o.Xff.IsSet()
@@ -285,6 +288,7 @@ func (o *RequestSettingsAdditional) HasXff() bool {
 func (o *RequestSettingsAdditional) SetXff(v string) {
 	o.Xff.Set(&v)
 }
+
 // SetXffNil sets the value for Xff to be an explicit nil
 func (o *RequestSettingsAdditional) SetXffNil() {
 	o.Xff.Set(nil)
@@ -326,7 +330,7 @@ func (o RequestSettingsAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *RequestSettingsAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	varRequestSettingsAdditional := _RequestSettingsAdditional{}
 
@@ -349,7 +353,7 @@ func (o *RequestSettingsAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableRequestSettingsAdditional is a helper abstraction for handling nullable requestsettingsadditional types. 
+// NullableRequestSettingsAdditional is a helper abstraction for handling nullable requestsettingsadditional types.
 type NullableRequestSettingsAdditional struct {
 	value *RequestSettingsAdditional
 	isSet bool
@@ -389,7 +393,7 @@ func (v NullableRequestSettingsAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableRequestSettingsAdditional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

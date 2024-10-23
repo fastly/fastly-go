@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -21,18 +20,18 @@ import (
 type DefaultSettingsResponse struct {
 	// The type of filter to use while resizing an image.
 	ResizeFilter string `json:"resize_filter"`
-	// Controls whether or not to default to WebP output when the client supports it. This is equivalent to adding \"auto=webp\" to all image optimizer requests. 
+	// Controls whether or not to default to WebP output when the client supports it. This is equivalent to adding \"auto=webp\" to all image optimizer requests.
 	Webp bool `json:"webp"`
-	// The default quality to use with WebP output. This can be overridden with the second option in the \"quality\" URL parameter on specific image optimizer requests. 
+	// The default quality to use with WebP output. This can be overridden with the second option in the \"quality\" URL parameter on specific image optimizer requests.
 	WebpQuality int32 `json:"webp_quality"`
-	// The default type of JPEG output to use. This can be overridden with \"format=bjpeg\" and \"format=pjpeg\" on specific image optimizer requests. 
+	// The default type of JPEG output to use. This can be overridden with \"format=bjpeg\" and \"format=pjpeg\" on specific image optimizer requests.
 	JpegType string `json:"jpeg_type"`
-	// The default quality to use with JPEG output. This can be overridden with the \"quality\" parameter on specific image optimizer requests. 
+	// The default quality to use with JPEG output. This can be overridden with the \"quality\" parameter on specific image optimizer requests.
 	JpegQuality int32 `json:"jpeg_quality"`
-	// Whether or not we should allow output images to render at sizes larger than input. 
+	// Whether or not we should allow output images to render at sizes larger than input.
 	Upscale bool `json:"upscale"`
 	// Enables GIF to MP4 transformations on this service.
-	AllowVideo bool `json:"allow_video"`
+	AllowVideo           bool `json:"allow_video"`
 	AdditionalProperties map[string]any
 }
 
@@ -89,7 +88,7 @@ func (o *DefaultSettingsResponse) GetResizeFilter() string {
 // GetResizeFilterOk returns a tuple with the ResizeFilter field value
 // and a boolean to check if the value has been set.
 func (o *DefaultSettingsResponse) GetResizeFilterOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.ResizeFilter, true
@@ -113,7 +112,7 @@ func (o *DefaultSettingsResponse) GetWebp() bool {
 // GetWebpOk returns a tuple with the Webp field value
 // and a boolean to check if the value has been set.
 func (o *DefaultSettingsResponse) GetWebpOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Webp, true
@@ -137,7 +136,7 @@ func (o *DefaultSettingsResponse) GetWebpQuality() int32 {
 // GetWebpQualityOk returns a tuple with the WebpQuality field value
 // and a boolean to check if the value has been set.
 func (o *DefaultSettingsResponse) GetWebpQualityOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.WebpQuality, true
@@ -161,7 +160,7 @@ func (o *DefaultSettingsResponse) GetJpegType() string {
 // GetJpegTypeOk returns a tuple with the JpegType field value
 // and a boolean to check if the value has been set.
 func (o *DefaultSettingsResponse) GetJpegTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.JpegType, true
@@ -185,7 +184,7 @@ func (o *DefaultSettingsResponse) GetJpegQuality() int32 {
 // GetJpegQualityOk returns a tuple with the JpegQuality field value
 // and a boolean to check if the value has been set.
 func (o *DefaultSettingsResponse) GetJpegQualityOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.JpegQuality, true
@@ -209,7 +208,7 @@ func (o *DefaultSettingsResponse) GetUpscale() bool {
 // GetUpscaleOk returns a tuple with the Upscale field value
 // and a boolean to check if the value has been set.
 func (o *DefaultSettingsResponse) GetUpscaleOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Upscale, true
@@ -233,7 +232,7 @@ func (o *DefaultSettingsResponse) GetAllowVideo() bool {
 // GetAllowVideoOk returns a tuple with the AllowVideo field value
 // and a boolean to check if the value has been set.
 func (o *DefaultSettingsResponse) GetAllowVideoOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.AllowVideo, true
@@ -278,7 +277,7 @@ func (o DefaultSettingsResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *DefaultSettingsResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varDefaultSettingsResponse := _DefaultSettingsResponse{}
 
@@ -302,7 +301,7 @@ func (o *DefaultSettingsResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableDefaultSettingsResponse is a helper abstraction for handling nullable defaultsettingsresponse types. 
+// NullableDefaultSettingsResponse is a helper abstraction for handling nullable defaultsettingsresponse types.
 type NullableDefaultSettingsResponse struct {
 	value *DefaultSettingsResponse
 	isSet bool
@@ -342,7 +341,7 @@ func (v NullableDefaultSettingsResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDefaultSettingsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

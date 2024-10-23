@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type KvStoreAPI interface {
 
 	/*
-	CreateStore Create a KV store.
+		CreateStore Create a KV store.
 
-	Create a new KV store.
+		Create a new KV store.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateStoreRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateStoreRequest
 	*/
 	CreateStore(ctx context.Context) APICreateStoreRequest
 
@@ -46,13 +45,13 @@ type KvStoreAPI interface {
 	CreateStoreExecute(r APICreateStoreRequest) (*StoreResponse, *http.Response, error)
 
 	/*
-	DeleteStore Delete a KV store.
+		DeleteStore Delete a KV store.
 
-	A KV store must be empty before it can be deleted.  Deleting a KV store that still contains keys will result in a `409` (Conflict).
+		A KV store must be empty before it can be deleted.  Deleting a KV store that still contains keys will result in a `409` (Conflict).
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @return APIDeleteStoreRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @return APIDeleteStoreRequest
 	*/
 	DeleteStore(ctx context.Context, storeID string) APIDeleteStoreRequest
 
@@ -60,13 +59,13 @@ type KvStoreAPI interface {
 	DeleteStoreExecute(r APIDeleteStoreRequest) (*http.Response, error)
 
 	/*
-	GetStore Describe a KV store.
+		GetStore Describe a KV store.
 
-	Get a KV store by ID.
+		Get a KV store by ID.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @return APIGetStoreRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @return APIGetStoreRequest
 	*/
 	GetStore(ctx context.Context, storeID string) APIGetStoreRequest
 
@@ -75,12 +74,12 @@ type KvStoreAPI interface {
 	GetStoreExecute(r APIGetStoreRequest) (*StoreResponse, *http.Response, error)
 
 	/*
-	GetStores List KV stores.
+		GetStores List KV stores.
 
-	Get all stores for a given customer.
+		Get all stores for a given customer.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIGetStoresRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIGetStoresRequest
 	*/
 	GetStores(ctx context.Context) APIGetStoresRequest
 
@@ -94,10 +93,10 @@ type KvStoreAPIService service
 
 // APICreateStoreRequest represents a request for the resource.
 type APICreateStoreRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService KvStoreAPI
-	location *string
-	store *Store
+	location   *string
+	store      *Store
 }
 
 // Location returns a pointer to a request.
@@ -105,6 +104,7 @@ func (r *APICreateStoreRequest) Location(location string) *APICreateStoreRequest
 	r.location = &location
 	return r
 }
+
 // Store returns a pointer to a request.
 func (r *APICreateStoreRequest) Store(store Store) *APICreateStoreRequest {
 	r.store = &store
@@ -127,7 +127,7 @@ Create a new KV store.
 func (a *KvStoreAPIService) CreateStore(ctx context.Context) APICreateStoreRequest {
 	return APICreateStoreRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -135,10 +135,10 @@ func (a *KvStoreAPIService) CreateStore(ctx context.Context) APICreateStoreReque
 //  @return StoreResponse
 func (a *KvStoreAPIService) CreateStoreExecute(r APICreateStoreRequest) (*StoreResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *StoreResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *StoreResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.CreateStore")
@@ -222,7 +222,6 @@ func (a *KvStoreAPIService) CreateStoreExecute(r APICreateStoreRequest) (*StoreR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -241,11 +240,10 @@ func (a *KvStoreAPIService) CreateStoreExecute(r APICreateStoreRequest) (*StoreR
 
 // APIDeleteStoreRequest represents a request for the resource.
 type APIDeleteStoreRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService KvStoreAPI
-	storeID string
+	storeID    string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteStoreRequest) Execute() (*http.Response, error) {
@@ -264,17 +262,17 @@ A KV store must be empty before it can be deleted.  Deleting a KV store that sti
 func (a *KvStoreAPIService) DeleteStore(ctx context.Context, storeID string) APIDeleteStoreRequest {
 	return APIDeleteStoreRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
+		ctx:        ctx,
+		storeID:    storeID,
 	}
 }
 
 // DeleteStoreExecute executes the request
 func (a *KvStoreAPIService) DeleteStoreExecute(r APIDeleteStoreRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.DeleteStore")
@@ -345,7 +343,6 @@ func (a *KvStoreAPIService) DeleteStoreExecute(r APIDeleteStoreRequest) (*http.R
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -364,11 +361,10 @@ func (a *KvStoreAPIService) DeleteStoreExecute(r APIDeleteStoreRequest) (*http.R
 
 // APIGetStoreRequest represents a request for the resource.
 type APIGetStoreRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService KvStoreAPI
-	storeID string
+	storeID    string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetStoreRequest) Execute() (*StoreResponse, *http.Response, error) {
@@ -387,8 +383,8 @@ Get a KV store by ID.
 func (a *KvStoreAPIService) GetStore(ctx context.Context, storeID string) APIGetStoreRequest {
 	return APIGetStoreRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
+		ctx:        ctx,
+		storeID:    storeID,
 	}
 }
 
@@ -396,10 +392,10 @@ func (a *KvStoreAPIService) GetStore(ctx context.Context, storeID string) APIGet
 //  @return StoreResponse
 func (a *KvStoreAPIService) GetStoreExecute(r APIGetStoreRequest) (*StoreResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *StoreResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *StoreResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.GetStore")
@@ -479,7 +475,6 @@ func (a *KvStoreAPIService) GetStoreExecute(r APIGetStoreRequest) (*StoreRespons
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -498,10 +493,10 @@ func (a *KvStoreAPIService) GetStoreExecute(r APIGetStoreRequest) (*StoreRespons
 
 // APIGetStoresRequest represents a request for the resource.
 type APIGetStoresRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService KvStoreAPI
-	cursor *string
-	limit *int32
+	cursor     *string
+	limit      *int32
 }
 
 // Cursor returns a pointer to a request.
@@ -509,6 +504,7 @@ func (r *APIGetStoresRequest) Cursor(cursor string) *APIGetStoresRequest {
 	r.cursor = &cursor
 	return r
 }
+
 // Limit returns a pointer to a request.
 func (r *APIGetStoresRequest) Limit(limit int32) *APIGetStoresRequest {
 	r.limit = &limit
@@ -531,7 +527,7 @@ Get all stores for a given customer.
 func (a *KvStoreAPIService) GetStores(ctx context.Context) APIGetStoresRequest {
 	return APIGetStoresRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -539,10 +535,10 @@ func (a *KvStoreAPIService) GetStores(ctx context.Context) APIGetStoresRequest {
 //  @return InlineResponse2003
 func (a *KvStoreAPIService) GetStoresExecute(r APIGetStoresRequest) (*InlineResponse2003, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse2003
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse2003
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.GetStores")
@@ -626,7 +622,6 @@ func (a *KvStoreAPIService) GetStoresExecute(r APIGetStoresRequest) (*InlineResp
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

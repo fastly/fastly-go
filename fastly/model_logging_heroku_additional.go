@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,7 +21,7 @@ type LoggingHerokuAdditional struct {
 	// The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
 	Token *string `json:"token,omitempty"`
 	// The URL to stream logs to.
-	URL *string `json:"url,omitempty"`
+	URL                  *string `json:"url,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -128,7 +127,7 @@ func (o LoggingHerokuAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingHerokuAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingHerokuAdditional := _LoggingHerokuAdditional{}
 
@@ -147,7 +146,7 @@ func (o *LoggingHerokuAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingHerokuAdditional is a helper abstraction for handling nullable loggingherokuadditional types. 
+// NullableLoggingHerokuAdditional is a helper abstraction for handling nullable loggingherokuadditional types.
 type NullableLoggingHerokuAdditional struct {
 	value *LoggingHerokuAdditional
 	isSet bool
@@ -187,7 +186,7 @@ func (v NullableLoggingHerokuAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingHerokuAdditional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

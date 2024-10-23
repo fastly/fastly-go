@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingScalyrAPI interface {
 
 	/*
-	CreateLogScalyr Create a Scalyr log endpoint
+		CreateLogScalyr Create a Scalyr log endpoint
 
-	Create a Scalyr for a particular service and version.
+		Create a Scalyr for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogScalyrRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogScalyrRequest
 	*/
 	CreateLogScalyr(ctx context.Context, serviceID string, versionID int32) APICreateLogScalyrRequest
 
@@ -48,15 +47,15 @@ type LoggingScalyrAPI interface {
 	CreateLogScalyrExecute(r APICreateLogScalyrRequest) (*LoggingScalyrResponse, *http.Response, error)
 
 	/*
-	DeleteLogScalyr Delete the Scalyr log endpoint
+		DeleteLogScalyr Delete the Scalyr log endpoint
 
-	Delete the Scalyr for a particular service and version.
+		Delete the Scalyr for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingScalyrName The name for the real-time logging configuration.
-	 @return APIDeleteLogScalyrRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingScalyrName The name for the real-time logging configuration.
+		 @return APIDeleteLogScalyrRequest
 	*/
 	DeleteLogScalyr(ctx context.Context, serviceID string, versionID int32, loggingScalyrName string) APIDeleteLogScalyrRequest
 
@@ -65,15 +64,15 @@ type LoggingScalyrAPI interface {
 	DeleteLogScalyrExecute(r APIDeleteLogScalyrRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogScalyr Get a Scalyr log endpoint
+		GetLogScalyr Get a Scalyr log endpoint
 
-	Get the Scalyr for a particular service and version.
+		Get the Scalyr for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingScalyrName The name for the real-time logging configuration.
-	 @return APIGetLogScalyrRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingScalyrName The name for the real-time logging configuration.
+		 @return APIGetLogScalyrRequest
 	*/
 	GetLogScalyr(ctx context.Context, serviceID string, versionID int32, loggingScalyrName string) APIGetLogScalyrRequest
 
@@ -82,14 +81,14 @@ type LoggingScalyrAPI interface {
 	GetLogScalyrExecute(r APIGetLogScalyrRequest) (*LoggingScalyrResponse, *http.Response, error)
 
 	/*
-	ListLogScalyr List Scalyr log endpoints
+		ListLogScalyr List Scalyr log endpoints
 
-	List all of the Scalyrs for a particular service and version.
+		List all of the Scalyrs for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogScalyrRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogScalyrRequest
 	*/
 	ListLogScalyr(ctx context.Context, serviceID string, versionID int32) APIListLogScalyrRequest
 
@@ -98,15 +97,15 @@ type LoggingScalyrAPI interface {
 	ListLogScalyrExecute(r APIListLogScalyrRequest) ([]LoggingScalyrResponse, *http.Response, error)
 
 	/*
-	UpdateLogScalyr Update the Scalyr log endpoint
+		UpdateLogScalyr Update the Scalyr log endpoint
 
-	Update the Scalyr for a particular service and version.
+		Update the Scalyr for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingScalyrName The name for the real-time logging configuration.
-	 @return APIUpdateLogScalyrRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingScalyrName The name for the real-time logging configuration.
+		 @return APIUpdateLogScalyrRequest
 	*/
 	UpdateLogScalyr(ctx context.Context, serviceID string, versionID int32, loggingScalyrName string) APIUpdateLogScalyrRequest
 
@@ -120,18 +119,18 @@ type LoggingScalyrAPIService service
 
 // APICreateLogScalyrRequest represents a request for the resource.
 type APICreateLogScalyrRequest struct {
-	ctx context.Context
-	APIService LoggingScalyrAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingScalyrAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	region *string
-	token *string
-	projectID *string
+	format            *string
+	formatVersion     *int32
+	region            *string
+	token             *string
+	projectID         *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -139,36 +138,43 @@ func (r *APICreateLogScalyrRequest) Name(name string) *APICreateLogScalyrRequest
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogScalyrRequest) Placement(placement string) *APICreateLogScalyrRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogScalyrRequest) ResponseCondition(responseCondition string) *APICreateLogScalyrRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogScalyrRequest) Format(format string) *APICreateLogScalyrRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogScalyrRequest) FormatVersion(formatVersion int32) *APICreateLogScalyrRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Region The region that log data will be sent to.
 func (r *APICreateLogScalyrRequest) Region(region string) *APICreateLogScalyrRequest {
 	r.region = &region
 	return r
 }
+
 // Token The token to use for authentication.
 func (r *APICreateLogScalyrRequest) Token(token string) *APICreateLogScalyrRequest {
 	r.token = &token
 	return r
 }
+
 // ProjectID The name of the logfile within Scalyr.
 func (r *APICreateLogScalyrRequest) ProjectID(projectID string) *APICreateLogScalyrRequest {
 	r.projectID = &projectID
@@ -193,9 +199,9 @@ Create a Scalyr for a particular service and version.
 func (a *LoggingScalyrAPIService) CreateLogScalyr(ctx context.Context, serviceID string, versionID int32) APICreateLogScalyrRequest {
 	return APICreateLogScalyrRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -203,10 +209,10 @@ func (a *LoggingScalyrAPIService) CreateLogScalyr(ctx context.Context, serviceID
 //  @return LoggingScalyrResponse
 func (a *LoggingScalyrAPIService) CreateLogScalyrExecute(r APICreateLogScalyrRequest) (*LoggingScalyrResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingScalyrResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingScalyrResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingScalyrAPIService.CreateLogScalyr")
@@ -311,7 +317,6 @@ func (a *LoggingScalyrAPIService) CreateLogScalyrExecute(r APICreateLogScalyrReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -330,13 +335,12 @@ func (a *LoggingScalyrAPIService) CreateLogScalyrExecute(r APICreateLogScalyrReq
 
 // APIDeleteLogScalyrRequest represents a request for the resource.
 type APIDeleteLogScalyrRequest struct {
-	ctx context.Context
-	APIService LoggingScalyrAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        LoggingScalyrAPI
+	serviceID         string
+	versionID         int32
 	loggingScalyrName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogScalyrRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -356,10 +360,10 @@ Delete the Scalyr for a particular service and version.
 */
 func (a *LoggingScalyrAPIService) DeleteLogScalyr(ctx context.Context, serviceID string, versionID int32, loggingScalyrName string) APIDeleteLogScalyrRequest {
 	return APIDeleteLogScalyrRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		loggingScalyrName: loggingScalyrName,
 	}
 }
@@ -368,10 +372,10 @@ func (a *LoggingScalyrAPIService) DeleteLogScalyr(ctx context.Context, serviceID
 //  @return InlineResponse200
 func (a *LoggingScalyrAPIService) DeleteLogScalyrExecute(r APIDeleteLogScalyrRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingScalyrAPIService.DeleteLogScalyr")
@@ -453,7 +457,6 @@ func (a *LoggingScalyrAPIService) DeleteLogScalyrExecute(r APIDeleteLogScalyrReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -472,13 +475,12 @@ func (a *LoggingScalyrAPIService) DeleteLogScalyrExecute(r APIDeleteLogScalyrReq
 
 // APIGetLogScalyrRequest represents a request for the resource.
 type APIGetLogScalyrRequest struct {
-	ctx context.Context
-	APIService LoggingScalyrAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        LoggingScalyrAPI
+	serviceID         string
+	versionID         int32
 	loggingScalyrName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogScalyrRequest) Execute() (*LoggingScalyrResponse, *http.Response, error) {
@@ -498,10 +500,10 @@ Get the Scalyr for a particular service and version.
 */
 func (a *LoggingScalyrAPIService) GetLogScalyr(ctx context.Context, serviceID string, versionID int32, loggingScalyrName string) APIGetLogScalyrRequest {
 	return APIGetLogScalyrRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		loggingScalyrName: loggingScalyrName,
 	}
 }
@@ -510,10 +512,10 @@ func (a *LoggingScalyrAPIService) GetLogScalyr(ctx context.Context, serviceID st
 //  @return LoggingScalyrResponse
 func (a *LoggingScalyrAPIService) GetLogScalyrExecute(r APIGetLogScalyrRequest) (*LoggingScalyrResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingScalyrResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingScalyrResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingScalyrAPIService.GetLogScalyr")
@@ -595,7 +597,6 @@ func (a *LoggingScalyrAPIService) GetLogScalyrExecute(r APIGetLogScalyrRequest) 
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -614,12 +615,11 @@ func (a *LoggingScalyrAPIService) GetLogScalyrExecute(r APIGetLogScalyrRequest) 
 
 // APIListLogScalyrRequest represents a request for the resource.
 type APIListLogScalyrRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingScalyrAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogScalyrRequest) Execute() ([]LoggingScalyrResponse, *http.Response, error) {
@@ -639,9 +639,9 @@ List all of the Scalyrs for a particular service and version.
 func (a *LoggingScalyrAPIService) ListLogScalyr(ctx context.Context, serviceID string, versionID int32) APIListLogScalyrRequest {
 	return APIListLogScalyrRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -649,10 +649,10 @@ func (a *LoggingScalyrAPIService) ListLogScalyr(ctx context.Context, serviceID s
 //  @return []LoggingScalyrResponse
 func (a *LoggingScalyrAPIService) ListLogScalyrExecute(r APIListLogScalyrRequest) ([]LoggingScalyrResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingScalyrResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingScalyrResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingScalyrAPIService.ListLogScalyr")
@@ -733,7 +733,6 @@ func (a *LoggingScalyrAPIService) ListLogScalyrExecute(r APIListLogScalyrRequest
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -752,19 +751,19 @@ func (a *LoggingScalyrAPIService) ListLogScalyrExecute(r APIListLogScalyrRequest
 
 // APIUpdateLogScalyrRequest represents a request for the resource.
 type APIUpdateLogScalyrRequest struct {
-	ctx context.Context
-	APIService LoggingScalyrAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        LoggingScalyrAPI
+	serviceID         string
+	versionID         int32
 	loggingScalyrName string
-	name *string
-	placement *string
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	region *string
-	token *string
-	projectID *string
+	format            *string
+	formatVersion     *int32
+	region            *string
+	token             *string
+	projectID         *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -772,36 +771,43 @@ func (r *APIUpdateLogScalyrRequest) Name(name string) *APIUpdateLogScalyrRequest
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogScalyrRequest) Placement(placement string) *APIUpdateLogScalyrRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogScalyrRequest) ResponseCondition(responseCondition string) *APIUpdateLogScalyrRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogScalyrRequest) Format(format string) *APIUpdateLogScalyrRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogScalyrRequest) FormatVersion(formatVersion int32) *APIUpdateLogScalyrRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Region The region that log data will be sent to.
 func (r *APIUpdateLogScalyrRequest) Region(region string) *APIUpdateLogScalyrRequest {
 	r.region = &region
 	return r
 }
+
 // Token The token to use for authentication.
 func (r *APIUpdateLogScalyrRequest) Token(token string) *APIUpdateLogScalyrRequest {
 	r.token = &token
 	return r
 }
+
 // ProjectID The name of the logfile within Scalyr.
 func (r *APIUpdateLogScalyrRequest) ProjectID(projectID string) *APIUpdateLogScalyrRequest {
 	r.projectID = &projectID
@@ -826,10 +832,10 @@ Update the Scalyr for a particular service and version.
 */
 func (a *LoggingScalyrAPIService) UpdateLogScalyr(ctx context.Context, serviceID string, versionID int32, loggingScalyrName string) APIUpdateLogScalyrRequest {
 	return APIUpdateLogScalyrRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		loggingScalyrName: loggingScalyrName,
 	}
 }
@@ -838,10 +844,10 @@ func (a *LoggingScalyrAPIService) UpdateLogScalyr(ctx context.Context, serviceID
 //  @return LoggingScalyrResponse
 func (a *LoggingScalyrAPIService) UpdateLogScalyrExecute(r APIUpdateLogScalyrRequest) (*LoggingScalyrResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingScalyrResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingScalyrResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingScalyrAPIService.UpdateLogScalyr")
@@ -946,7 +952,6 @@ func (a *LoggingScalyrAPIService) UpdateLogScalyrExecute(r APIUpdateLogScalyrReq
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

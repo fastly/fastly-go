@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -25,11 +24,11 @@ type AutomationTokenCreateRequestAttributes struct {
 	Role *string `json:"role,omitempty"`
 	// List of service ids to limit the token
 	Services []string `json:"services,omitempty"`
-	Scope *string `json:"scope,omitempty"`
+	Scope    *string  `json:"scope,omitempty"`
 	// A UTC time-stamp of when the token will expire.
 	ExpiresAt NullableTime `json:"expires_at,omitempty"`
 	// Indicates whether TLS access is enabled for the token.
-	TLSAccess *bool `json:"tls_access,omitempty"`
+	TLSAccess            *bool `json:"tls_access,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -197,7 +196,7 @@ func (o *AutomationTokenCreateRequestAttributes) GetExpiresAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AutomationTokenCreateRequestAttributes) GetExpiresAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ExpiresAt.Get(), o.ExpiresAt.IsSet()
@@ -216,6 +215,7 @@ func (o *AutomationTokenCreateRequestAttributes) HasExpiresAt() bool {
 func (o *AutomationTokenCreateRequestAttributes) SetExpiresAt(v time.Time) {
 	o.ExpiresAt.Set(&v)
 }
+
 // SetExpiresAtNil sets the value for ExpiresAt to be an explicit nil
 func (o *AutomationTokenCreateRequestAttributes) SetExpiresAtNil() {
 	o.ExpiresAt.Set(nil)
@@ -289,7 +289,7 @@ func (o AutomationTokenCreateRequestAttributes) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *AutomationTokenCreateRequestAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	varAutomationTokenCreateRequestAttributes := _AutomationTokenCreateRequestAttributes{}
 
@@ -312,7 +312,7 @@ func (o *AutomationTokenCreateRequestAttributes) UnmarshalJSON(bytes []byte) (er
 	return err
 }
 
-// NullableAutomationTokenCreateRequestAttributes is a helper abstraction for handling nullable automationtokencreaterequestattributes types. 
+// NullableAutomationTokenCreateRequestAttributes is a helper abstraction for handling nullable automationtokencreaterequestattributes types.
 type NullableAutomationTokenCreateRequestAttributes struct {
 	value *AutomationTokenCreateRequestAttributes
 	isSet bool
@@ -352,7 +352,7 @@ func (v NullableAutomationTokenCreateRequestAttributes) MarshalJSON() ([]byte, e
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableAutomationTokenCreateRequestAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

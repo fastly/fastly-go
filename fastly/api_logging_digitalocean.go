@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingDigitaloceanAPI interface {
 
 	/*
-	CreateLogDigocean Create a DigitalOcean Spaces log endpoint
+		CreateLogDigocean Create a DigitalOcean Spaces log endpoint
 
-	Create a DigitalOcean Space for a particular service and version.
+		Create a DigitalOcean Space for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogDigoceanRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogDigoceanRequest
 	*/
 	CreateLogDigocean(ctx context.Context, serviceID string, versionID int32) APICreateLogDigoceanRequest
 
@@ -48,15 +47,15 @@ type LoggingDigitaloceanAPI interface {
 	CreateLogDigoceanExecute(r APICreateLogDigoceanRequest) (*LoggingDigitaloceanResponse, *http.Response, error)
 
 	/*
-	DeleteLogDigocean Delete a DigitalOcean Spaces log endpoint
+		DeleteLogDigocean Delete a DigitalOcean Spaces log endpoint
 
-	Delete the DigitalOcean Space for a particular service and version.
+		Delete the DigitalOcean Space for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingDigitaloceanName The name for the real-time logging configuration.
-	 @return APIDeleteLogDigoceanRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingDigitaloceanName The name for the real-time logging configuration.
+		 @return APIDeleteLogDigoceanRequest
 	*/
 	DeleteLogDigocean(ctx context.Context, serviceID string, versionID int32, loggingDigitaloceanName string) APIDeleteLogDigoceanRequest
 
@@ -65,15 +64,15 @@ type LoggingDigitaloceanAPI interface {
 	DeleteLogDigoceanExecute(r APIDeleteLogDigoceanRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogDigocean Get a DigitalOcean Spaces log endpoint
+		GetLogDigocean Get a DigitalOcean Spaces log endpoint
 
-	Get the DigitalOcean Space for a particular service and version.
+		Get the DigitalOcean Space for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingDigitaloceanName The name for the real-time logging configuration.
-	 @return APIGetLogDigoceanRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingDigitaloceanName The name for the real-time logging configuration.
+		 @return APIGetLogDigoceanRequest
 	*/
 	GetLogDigocean(ctx context.Context, serviceID string, versionID int32, loggingDigitaloceanName string) APIGetLogDigoceanRequest
 
@@ -82,14 +81,14 @@ type LoggingDigitaloceanAPI interface {
 	GetLogDigoceanExecute(r APIGetLogDigoceanRequest) (*LoggingDigitaloceanResponse, *http.Response, error)
 
 	/*
-	ListLogDigocean List DigitalOcean Spaces log endpoints
+		ListLogDigocean List DigitalOcean Spaces log endpoints
 
-	List all of the DigitalOcean Spaces for a particular service and version.
+		List all of the DigitalOcean Spaces for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogDigoceanRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogDigoceanRequest
 	*/
 	ListLogDigocean(ctx context.Context, serviceID string, versionID int32) APIListLogDigoceanRequest
 
@@ -98,15 +97,15 @@ type LoggingDigitaloceanAPI interface {
 	ListLogDigoceanExecute(r APIListLogDigoceanRequest) ([]LoggingDigitaloceanResponse, *http.Response, error)
 
 	/*
-	UpdateLogDigocean Update a DigitalOcean Spaces log endpoint
+		UpdateLogDigocean Update a DigitalOcean Spaces log endpoint
 
-	Update the DigitalOcean Space for a particular service and version.
+		Update the DigitalOcean Space for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingDigitaloceanName The name for the real-time logging configuration.
-	 @return APIUpdateLogDigoceanRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingDigitaloceanName The name for the real-time logging configuration.
+		 @return APIUpdateLogDigoceanRequest
 	*/
 	UpdateLogDigocean(ctx context.Context, serviceID string, versionID int32, loggingDigitaloceanName string) APIUpdateLogDigoceanRequest
 
@@ -120,26 +119,26 @@ type LoggingDigitaloceanAPIService service
 
 // APICreateLogDigoceanRequest represents a request for the resource.
 type APICreateLogDigoceanRequest struct {
-	ctx context.Context
-	APIService LoggingDigitaloceanAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingDigitaloceanAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	messageType *string
-	timestampFormat *string
-	compressionCodec *string
-	period *int32
-	gzipLevel *int32
-	bucketName *string
-	accessKey *string
-	secretKey *string
-	domain *string
-	path *string
-	publicKey *string
+	format            *string
+	formatVersion     *int32
+	messageType       *string
+	timestampFormat   *string
+	compressionCodec  *string
+	period            *int32
+	gzipLevel         *int32
+	bucketName        *string
+	accessKey         *string
+	secretKey         *string
+	domain            *string
+	path              *string
+	publicKey         *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -147,76 +146,91 @@ func (r *APICreateLogDigoceanRequest) Name(name string) *APICreateLogDigoceanReq
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogDigoceanRequest) Placement(placement string) *APICreateLogDigoceanRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogDigoceanRequest) ResponseCondition(responseCondition string) *APICreateLogDigoceanRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogDigoceanRequest) Format(format string) *APICreateLogDigoceanRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogDigoceanRequest) FormatVersion(formatVersion int32) *APICreateLogDigoceanRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // MessageType How the message should be formatted.
 func (r *APICreateLogDigoceanRequest) MessageType(messageType string) *APICreateLogDigoceanRequest {
 	r.messageType = &messageType
 	return r
 }
+
 // TimestampFormat A timestamp format
 func (r *APICreateLogDigoceanRequest) TimestampFormat(timestampFormat string) *APICreateLogDigoceanRequest {
 	r.timestampFormat = &timestampFormat
 	return r
 }
+
 // CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APICreateLogDigoceanRequest) CompressionCodec(compressionCodec string) *APICreateLogDigoceanRequest {
 	r.compressionCodec = &compressionCodec
 	return r
 }
+
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APICreateLogDigoceanRequest) Period(period int32) *APICreateLogDigoceanRequest {
 	r.period = &period
 	return r
 }
+
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APICreateLogDigoceanRequest) GzipLevel(gzipLevel int32) *APICreateLogDigoceanRequest {
 	r.gzipLevel = &gzipLevel
 	return r
 }
+
 // BucketName The name of the DigitalOcean Space.
 func (r *APICreateLogDigoceanRequest) BucketName(bucketName string) *APICreateLogDigoceanRequest {
 	r.bucketName = &bucketName
 	return r
 }
+
 // AccessKey Your DigitalOcean Spaces account access key.
 func (r *APICreateLogDigoceanRequest) AccessKey(accessKey string) *APICreateLogDigoceanRequest {
 	r.accessKey = &accessKey
 	return r
 }
+
 // SecretKey Your DigitalOcean Spaces account secret key.
 func (r *APICreateLogDigoceanRequest) SecretKey(secretKey string) *APICreateLogDigoceanRequest {
 	r.secretKey = &secretKey
 	return r
 }
+
 // Domain The domain of the DigitalOcean Spaces endpoint.
 func (r *APICreateLogDigoceanRequest) Domain(domain string) *APICreateLogDigoceanRequest {
 	r.domain = &domain
 	return r
 }
+
 // Path The path to upload logs to.
 func (r *APICreateLogDigoceanRequest) Path(path string) *APICreateLogDigoceanRequest {
 	r.path = &path
 	return r
 }
+
 // PublicKey A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 func (r *APICreateLogDigoceanRequest) PublicKey(publicKey string) *APICreateLogDigoceanRequest {
 	r.publicKey = &publicKey
@@ -241,9 +255,9 @@ Create a DigitalOcean Space for a particular service and version.
 func (a *LoggingDigitaloceanAPIService) CreateLogDigocean(ctx context.Context, serviceID string, versionID int32) APICreateLogDigoceanRequest {
 	return APICreateLogDigoceanRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -251,10 +265,10 @@ func (a *LoggingDigitaloceanAPIService) CreateLogDigocean(ctx context.Context, s
 //  @return LoggingDigitaloceanResponse
 func (a *LoggingDigitaloceanAPIService) CreateLogDigoceanExecute(r APICreateLogDigoceanRequest) (*LoggingDigitaloceanResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingDigitaloceanResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingDigitaloceanResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingDigitaloceanAPIService.CreateLogDigocean")
@@ -383,7 +397,6 @@ func (a *LoggingDigitaloceanAPIService) CreateLogDigoceanExecute(r APICreateLogD
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -402,13 +415,12 @@ func (a *LoggingDigitaloceanAPIService) CreateLogDigoceanExecute(r APICreateLogD
 
 // APIDeleteLogDigoceanRequest represents a request for the resource.
 type APIDeleteLogDigoceanRequest struct {
-	ctx context.Context
-	APIService LoggingDigitaloceanAPI
-	serviceID string
-	versionID int32
+	ctx                     context.Context
+	APIService              LoggingDigitaloceanAPI
+	serviceID               string
+	versionID               int32
 	loggingDigitaloceanName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogDigoceanRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -428,10 +440,10 @@ Delete the DigitalOcean Space for a particular service and version.
 */
 func (a *LoggingDigitaloceanAPIService) DeleteLogDigocean(ctx context.Context, serviceID string, versionID int32, loggingDigitaloceanName string) APIDeleteLogDigoceanRequest {
 	return APIDeleteLogDigoceanRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:              a,
+		ctx:                     ctx,
+		serviceID:               serviceID,
+		versionID:               versionID,
 		loggingDigitaloceanName: loggingDigitaloceanName,
 	}
 }
@@ -440,10 +452,10 @@ func (a *LoggingDigitaloceanAPIService) DeleteLogDigocean(ctx context.Context, s
 //  @return InlineResponse200
 func (a *LoggingDigitaloceanAPIService) DeleteLogDigoceanExecute(r APIDeleteLogDigoceanRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingDigitaloceanAPIService.DeleteLogDigocean")
@@ -525,7 +537,6 @@ func (a *LoggingDigitaloceanAPIService) DeleteLogDigoceanExecute(r APIDeleteLogD
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -544,13 +555,12 @@ func (a *LoggingDigitaloceanAPIService) DeleteLogDigoceanExecute(r APIDeleteLogD
 
 // APIGetLogDigoceanRequest represents a request for the resource.
 type APIGetLogDigoceanRequest struct {
-	ctx context.Context
-	APIService LoggingDigitaloceanAPI
-	serviceID string
-	versionID int32
+	ctx                     context.Context
+	APIService              LoggingDigitaloceanAPI
+	serviceID               string
+	versionID               int32
 	loggingDigitaloceanName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogDigoceanRequest) Execute() (*LoggingDigitaloceanResponse, *http.Response, error) {
@@ -570,10 +580,10 @@ Get the DigitalOcean Space for a particular service and version.
 */
 func (a *LoggingDigitaloceanAPIService) GetLogDigocean(ctx context.Context, serviceID string, versionID int32, loggingDigitaloceanName string) APIGetLogDigoceanRequest {
 	return APIGetLogDigoceanRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:              a,
+		ctx:                     ctx,
+		serviceID:               serviceID,
+		versionID:               versionID,
 		loggingDigitaloceanName: loggingDigitaloceanName,
 	}
 }
@@ -582,10 +592,10 @@ func (a *LoggingDigitaloceanAPIService) GetLogDigocean(ctx context.Context, serv
 //  @return LoggingDigitaloceanResponse
 func (a *LoggingDigitaloceanAPIService) GetLogDigoceanExecute(r APIGetLogDigoceanRequest) (*LoggingDigitaloceanResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingDigitaloceanResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingDigitaloceanResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingDigitaloceanAPIService.GetLogDigocean")
@@ -667,7 +677,6 @@ func (a *LoggingDigitaloceanAPIService) GetLogDigoceanExecute(r APIGetLogDigocea
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -686,12 +695,11 @@ func (a *LoggingDigitaloceanAPIService) GetLogDigoceanExecute(r APIGetLogDigocea
 
 // APIListLogDigoceanRequest represents a request for the resource.
 type APIListLogDigoceanRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingDigitaloceanAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogDigoceanRequest) Execute() ([]LoggingDigitaloceanResponse, *http.Response, error) {
@@ -711,9 +719,9 @@ List all of the DigitalOcean Spaces for a particular service and version.
 func (a *LoggingDigitaloceanAPIService) ListLogDigocean(ctx context.Context, serviceID string, versionID int32) APIListLogDigoceanRequest {
 	return APIListLogDigoceanRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -721,10 +729,10 @@ func (a *LoggingDigitaloceanAPIService) ListLogDigocean(ctx context.Context, ser
 //  @return []LoggingDigitaloceanResponse
 func (a *LoggingDigitaloceanAPIService) ListLogDigoceanExecute(r APIListLogDigoceanRequest) ([]LoggingDigitaloceanResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingDigitaloceanResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingDigitaloceanResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingDigitaloceanAPIService.ListLogDigocean")
@@ -805,7 +813,6 @@ func (a *LoggingDigitaloceanAPIService) ListLogDigoceanExecute(r APIListLogDigoc
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -824,27 +831,27 @@ func (a *LoggingDigitaloceanAPIService) ListLogDigoceanExecute(r APIListLogDigoc
 
 // APIUpdateLogDigoceanRequest represents a request for the resource.
 type APIUpdateLogDigoceanRequest struct {
-	ctx context.Context
-	APIService LoggingDigitaloceanAPI
-	serviceID string
-	versionID int32
+	ctx                     context.Context
+	APIService              LoggingDigitaloceanAPI
+	serviceID               string
+	versionID               int32
 	loggingDigitaloceanName string
-	name *string
-	placement *string
-	responseCondition *string
-	format *string
-	formatVersion *int32
-	messageType *string
-	timestampFormat *string
-	compressionCodec *string
-	period *int32
-	gzipLevel *int32
-	bucketName *string
-	accessKey *string
-	secretKey *string
-	domain *string
-	path *string
-	publicKey *string
+	name                    *string
+	placement               *string
+	responseCondition       *string
+	format                  *string
+	formatVersion           *int32
+	messageType             *string
+	timestampFormat         *string
+	compressionCodec        *string
+	period                  *int32
+	gzipLevel               *int32
+	bucketName              *string
+	accessKey               *string
+	secretKey               *string
+	domain                  *string
+	path                    *string
+	publicKey               *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -852,76 +859,91 @@ func (r *APIUpdateLogDigoceanRequest) Name(name string) *APIUpdateLogDigoceanReq
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogDigoceanRequest) Placement(placement string) *APIUpdateLogDigoceanRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogDigoceanRequest) ResponseCondition(responseCondition string) *APIUpdateLogDigoceanRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogDigoceanRequest) Format(format string) *APIUpdateLogDigoceanRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogDigoceanRequest) FormatVersion(formatVersion int32) *APIUpdateLogDigoceanRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // MessageType How the message should be formatted.
 func (r *APIUpdateLogDigoceanRequest) MessageType(messageType string) *APIUpdateLogDigoceanRequest {
 	r.messageType = &messageType
 	return r
 }
+
 // TimestampFormat A timestamp format
 func (r *APIUpdateLogDigoceanRequest) TimestampFormat(timestampFormat string) *APIUpdateLogDigoceanRequest {
 	r.timestampFormat = &timestampFormat
 	return r
 }
+
 // CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APIUpdateLogDigoceanRequest) CompressionCodec(compressionCodec string) *APIUpdateLogDigoceanRequest {
 	r.compressionCodec = &compressionCodec
 	return r
 }
+
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APIUpdateLogDigoceanRequest) Period(period int32) *APIUpdateLogDigoceanRequest {
 	r.period = &period
 	return r
 }
+
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APIUpdateLogDigoceanRequest) GzipLevel(gzipLevel int32) *APIUpdateLogDigoceanRequest {
 	r.gzipLevel = &gzipLevel
 	return r
 }
+
 // BucketName The name of the DigitalOcean Space.
 func (r *APIUpdateLogDigoceanRequest) BucketName(bucketName string) *APIUpdateLogDigoceanRequest {
 	r.bucketName = &bucketName
 	return r
 }
+
 // AccessKey Your DigitalOcean Spaces account access key.
 func (r *APIUpdateLogDigoceanRequest) AccessKey(accessKey string) *APIUpdateLogDigoceanRequest {
 	r.accessKey = &accessKey
 	return r
 }
+
 // SecretKey Your DigitalOcean Spaces account secret key.
 func (r *APIUpdateLogDigoceanRequest) SecretKey(secretKey string) *APIUpdateLogDigoceanRequest {
 	r.secretKey = &secretKey
 	return r
 }
+
 // Domain The domain of the DigitalOcean Spaces endpoint.
 func (r *APIUpdateLogDigoceanRequest) Domain(domain string) *APIUpdateLogDigoceanRequest {
 	r.domain = &domain
 	return r
 }
+
 // Path The path to upload logs to.
 func (r *APIUpdateLogDigoceanRequest) Path(path string) *APIUpdateLogDigoceanRequest {
 	r.path = &path
 	return r
 }
+
 // PublicKey A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 func (r *APIUpdateLogDigoceanRequest) PublicKey(publicKey string) *APIUpdateLogDigoceanRequest {
 	r.publicKey = &publicKey
@@ -946,10 +968,10 @@ Update the DigitalOcean Space for a particular service and version.
 */
 func (a *LoggingDigitaloceanAPIService) UpdateLogDigocean(ctx context.Context, serviceID string, versionID int32, loggingDigitaloceanName string) APIUpdateLogDigoceanRequest {
 	return APIUpdateLogDigoceanRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:              a,
+		ctx:                     ctx,
+		serviceID:               serviceID,
+		versionID:               versionID,
 		loggingDigitaloceanName: loggingDigitaloceanName,
 	}
 }
@@ -958,10 +980,10 @@ func (a *LoggingDigitaloceanAPIService) UpdateLogDigocean(ctx context.Context, s
 //  @return LoggingDigitaloceanResponse
 func (a *LoggingDigitaloceanAPIService) UpdateLogDigoceanExecute(r APIUpdateLogDigoceanRequest) (*LoggingDigitaloceanResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingDigitaloceanResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingDigitaloceanResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingDigitaloceanAPIService.UpdateLogDigocean")
@@ -1090,7 +1112,6 @@ func (a *LoggingDigitaloceanAPIService) UpdateLogDigoceanExecute(r APIUpdateLogD
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

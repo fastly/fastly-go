@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,9 +19,9 @@ import (
 // TLSDomainData struct for TLSDomainData
 type TLSDomainData struct {
 	// The domain name.
-	ID *string `json:"id,omitempty"`
-	Type *TypeTLSDomain `json:"type,omitempty"`
-	Relationships *RelationshipsForTLSDomain `json:"relationships,omitempty"`
+	ID                   *string                    `json:"id,omitempty"`
+	Type                 *TypeTLSDomain             `json:"type,omitempty"`
+	Relationships        *RelationshipsForTLSDomain `json:"relationships,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -167,7 +166,7 @@ func (o TLSDomainData) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *TLSDomainData) UnmarshalJSON(bytes []byte) (err error) {
 	varTLSDomainData := _TLSDomainData{}
 
@@ -187,7 +186,7 @@ func (o *TLSDomainData) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTLSDomainData is a helper abstraction for handling nullable tlsdomaindata types. 
+// NullableTLSDomainData is a helper abstraction for handling nullable tlsdomaindata types.
 type NullableTLSDomainData struct {
 	value *TLSDomainData
 	isSet bool
@@ -227,7 +226,7 @@ func (v NullableTLSDomainData) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableTLSDomainData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

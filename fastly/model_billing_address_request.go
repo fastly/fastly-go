@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,8 +19,8 @@ import (
 // BillingAddressRequest struct for BillingAddressRequest
 type BillingAddressRequest struct {
 	// When set to true, the address will be saved without verification
-	SkipVerification *bool `json:"skip_verification,omitempty"`
-	Data *BillingAddressRequestData `json:"data,omitempty"`
+	SkipVerification     *bool                      `json:"skip_verification,omitempty"`
+	Data                 *BillingAddressRequestData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -127,7 +126,7 @@ func (o BillingAddressRequest) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *BillingAddressRequest) UnmarshalJSON(bytes []byte) (err error) {
 	varBillingAddressRequest := _BillingAddressRequest{}
 
@@ -146,7 +145,7 @@ func (o *BillingAddressRequest) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableBillingAddressRequest is a helper abstraction for handling nullable billingaddressrequest types. 
+// NullableBillingAddressRequest is a helper abstraction for handling nullable billingaddressrequest types.
 type NullableBillingAddressRequest struct {
 	value *BillingAddressRequest
 	isSet bool
@@ -186,7 +185,7 @@ func (v NullableBillingAddressRequest) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableBillingAddressRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

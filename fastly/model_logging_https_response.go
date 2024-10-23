@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,13 +21,13 @@ import (
 type LoggingHTTPSResponse struct {
 	// The name for the real-time logging configuration.
 	Name *string `json:"name,omitempty"`
-	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// A secure certificate to authenticate a server with. Must be in PEM format.
 	TLSCaCert NullableString `json:"tls_ca_cert,omitempty"`
@@ -47,7 +46,7 @@ type LoggingHTTPSResponse struct {
 	// Content type of the header sent with the request.
 	ContentType NullableString `json:"content_type,omitempty"`
 	// Name of the custom header sent with the request.
-	HeaderName NullableString `json:"header_name,omitempty"`
+	HeaderName  NullableString      `json:"header_name,omitempty"`
 	MessageType *LoggingMessageType `json:"message_type,omitempty"`
 	// Value of the custom header sent with the request.
 	HeaderValue NullableString `json:"header_value,omitempty"`
@@ -60,9 +59,9 @@ type LoggingHTTPSResponse struct {
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
+	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -182,7 +181,7 @@ func (o *LoggingHTTPSResponse) GetPlacement() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSResponse) GetPlacementOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -201,6 +200,7 @@ func (o *LoggingHTTPSResponse) HasPlacement() bool {
 func (o *LoggingHTTPSResponse) SetPlacement(v string) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *LoggingHTTPSResponse) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -224,7 +224,7 @@ func (o *LoggingHTTPSResponse) GetResponseCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSResponse) GetResponseConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseCondition.Get(), o.ResponseCondition.IsSet()
@@ -243,6 +243,7 @@ func (o *LoggingHTTPSResponse) HasResponseCondition() bool {
 func (o *LoggingHTTPSResponse) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
+
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 func (o *LoggingHTTPSResponse) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
@@ -330,7 +331,7 @@ func (o *LoggingHTTPSResponse) GetTLSCaCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSResponse) GetTLSCaCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCaCert.Get(), o.TLSCaCert.IsSet()
@@ -349,6 +350,7 @@ func (o *LoggingHTTPSResponse) HasTLSCaCert() bool {
 func (o *LoggingHTTPSResponse) SetTLSCaCert(v string) {
 	o.TLSCaCert.Set(&v)
 }
+
 // SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
 func (o *LoggingHTTPSResponse) SetTLSCaCertNil() {
 	o.TLSCaCert.Set(nil)
@@ -372,7 +374,7 @@ func (o *LoggingHTTPSResponse) GetTLSClientCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSResponse) GetTLSClientCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientCert.Get(), o.TLSClientCert.IsSet()
@@ -391,6 +393,7 @@ func (o *LoggingHTTPSResponse) HasTLSClientCert() bool {
 func (o *LoggingHTTPSResponse) SetTLSClientCert(v string) {
 	o.TLSClientCert.Set(&v)
 }
+
 // SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
 func (o *LoggingHTTPSResponse) SetTLSClientCertNil() {
 	o.TLSClientCert.Set(nil)
@@ -414,7 +417,7 @@ func (o *LoggingHTTPSResponse) GetTLSClientKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSResponse) GetTLSClientKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientKey.Get(), o.TLSClientKey.IsSet()
@@ -433,6 +436,7 @@ func (o *LoggingHTTPSResponse) HasTLSClientKey() bool {
 func (o *LoggingHTTPSResponse) SetTLSClientKey(v string) {
 	o.TLSClientKey.Set(&v)
 }
+
 // SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
 func (o *LoggingHTTPSResponse) SetTLSClientKeyNil() {
 	o.TLSClientKey.Set(nil)
@@ -456,7 +460,7 @@ func (o *LoggingHTTPSResponse) GetTLSHostname() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSResponse) GetTLSHostnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSHostname.Get(), o.TLSHostname.IsSet()
@@ -475,6 +479,7 @@ func (o *LoggingHTTPSResponse) HasTLSHostname() bool {
 func (o *LoggingHTTPSResponse) SetTLSHostname(v string) {
 	o.TLSHostname.Set(&v)
 }
+
 // SetTLSHostnameNil sets the value for TLSHostname to be an explicit nil
 func (o *LoggingHTTPSResponse) SetTLSHostnameNil() {
 	o.TLSHostname.Set(nil)
@@ -594,7 +599,7 @@ func (o *LoggingHTTPSResponse) GetContentType() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSResponse) GetContentTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ContentType.Get(), o.ContentType.IsSet()
@@ -613,6 +618,7 @@ func (o *LoggingHTTPSResponse) HasContentType() bool {
 func (o *LoggingHTTPSResponse) SetContentType(v string) {
 	o.ContentType.Set(&v)
 }
+
 // SetContentTypeNil sets the value for ContentType to be an explicit nil
 func (o *LoggingHTTPSResponse) SetContentTypeNil() {
 	o.ContentType.Set(nil)
@@ -636,7 +642,7 @@ func (o *LoggingHTTPSResponse) GetHeaderName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSResponse) GetHeaderNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HeaderName.Get(), o.HeaderName.IsSet()
@@ -655,6 +661,7 @@ func (o *LoggingHTTPSResponse) HasHeaderName() bool {
 func (o *LoggingHTTPSResponse) SetHeaderName(v string) {
 	o.HeaderName.Set(&v)
 }
+
 // SetHeaderNameNil sets the value for HeaderName to be an explicit nil
 func (o *LoggingHTTPSResponse) SetHeaderNameNil() {
 	o.HeaderName.Set(nil)
@@ -710,7 +717,7 @@ func (o *LoggingHTTPSResponse) GetHeaderValue() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSResponse) GetHeaderValueOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HeaderValue.Get(), o.HeaderValue.IsSet()
@@ -729,6 +736,7 @@ func (o *LoggingHTTPSResponse) HasHeaderValue() bool {
 func (o *LoggingHTTPSResponse) SetHeaderValue(v string) {
 	o.HeaderValue.Set(&v)
 }
+
 // SetHeaderValueNil sets the value for HeaderValue to be an explicit nil
 func (o *LoggingHTTPSResponse) SetHeaderValueNil() {
 	o.HeaderValue.Set(nil)
@@ -816,7 +824,7 @@ func (o *LoggingHTTPSResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -835,6 +843,7 @@ func (o *LoggingHTTPSResponse) HasCreatedAt() bool {
 func (o *LoggingHTTPSResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *LoggingHTTPSResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -858,7 +867,7 @@ func (o *LoggingHTTPSResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -877,6 +886,7 @@ func (o *LoggingHTTPSResponse) HasDeletedAt() bool {
 func (o *LoggingHTTPSResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *LoggingHTTPSResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -900,7 +910,7 @@ func (o *LoggingHTTPSResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -919,6 +929,7 @@ func (o *LoggingHTTPSResponse) HasUpdatedAt() bool {
 func (o *LoggingHTTPSResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *LoggingHTTPSResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -1075,7 +1086,7 @@ func (o LoggingHTTPSResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingHTTPSResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingHTTPSResponse := _LoggingHTTPSResponse{}
 
@@ -1115,7 +1126,7 @@ func (o *LoggingHTTPSResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingHTTPSResponse is a helper abstraction for handling nullable logginghttpsresponse types. 
+// NullableLoggingHTTPSResponse is a helper abstraction for handling nullable logginghttpsresponse types.
 type NullableLoggingHTTPSResponse struct {
 	value *LoggingHTTPSResponse
 	isSet bool
@@ -1155,7 +1166,7 @@ func (v NullableLoggingHTTPSResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingHTTPSResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

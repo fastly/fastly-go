@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type ACLsInComputeAPI interface {
 
 	/*
-	ComputeACLCreateAcls Create a new ACL
+		ComputeACLCreateAcls Create a new ACL
 
-	Create a new ACL.
+		Create a new ACL.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIComputeACLCreateAclsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIComputeACLCreateAclsRequest
 	*/
 	ComputeACLCreateAcls(ctx context.Context) APIComputeACLCreateAclsRequest
 
@@ -46,13 +45,13 @@ type ACLsInComputeAPI interface {
 	ComputeACLCreateAclsExecute(r APIComputeACLCreateAclsRequest) (*ComputeACLCreateAclsResponse, *http.Response, error)
 
 	/*
-	ComputeACLDeleteSAclID Delete an ACL
+		ComputeACLDeleteSAclID Delete an ACL
 
-	Delete an ACL.
+		Delete an ACL.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param aclID
-	 @return APIComputeACLDeleteSAclIDRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param aclID
+		 @return APIComputeACLDeleteSAclIDRequest
 	*/
 	ComputeACLDeleteSAclID(ctx context.Context, aclID string) APIComputeACLDeleteSAclIDRequest
 
@@ -60,13 +59,13 @@ type ACLsInComputeAPI interface {
 	ComputeACLDeleteSAclIDExecute(r APIComputeACLDeleteSAclIDRequest) (*http.Response, error)
 
 	/*
-	ComputeACLListAclEntries List an ACL
+		ComputeACLListAclEntries List an ACL
 
-	List an ACL.
+		List an ACL.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param aclID
-	 @return APIComputeACLListAclEntriesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param aclID
+		 @return APIComputeACLListAclEntriesRequest
 	*/
 	ComputeACLListAclEntries(ctx context.Context, aclID string) APIComputeACLListAclEntriesRequest
 
@@ -75,12 +74,12 @@ type ACLsInComputeAPI interface {
 	ComputeACLListAclEntriesExecute(r APIComputeACLListAclEntriesRequest) (*ComputeACLListEntries, *http.Response, error)
 
 	/*
-	ComputeACLListAcls List ACLs
+		ComputeACLListAcls List ACLs
 
-	List all ACLs.
+		List all ACLs.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIComputeACLListAclsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIComputeACLListAclsRequest
 	*/
 	ComputeACLListAcls(ctx context.Context) APIComputeACLListAclsRequest
 
@@ -89,13 +88,13 @@ type ACLsInComputeAPI interface {
 	ComputeACLListAclsExecute(r APIComputeACLListAclsRequest) ([]ComputeACLCreateAclsResponse, *http.Response, error)
 
 	/*
-	ComputeACLListAclsSAclID Describe an ACL
+		ComputeACLListAclsSAclID Describe an ACL
 
-	Describe an ACL.
+		Describe an ACL.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param aclID
-	 @return APIComputeACLListAclsSAclIDRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param aclID
+		 @return APIComputeACLListAclsSAclIDRequest
 	*/
 	ComputeACLListAclsSAclID(ctx context.Context, aclID string) APIComputeACLListAclsSAclIDRequest
 
@@ -104,14 +103,14 @@ type ACLsInComputeAPI interface {
 	ComputeACLListAclsSAclIDExecute(r APIComputeACLListAclsSAclIDRequest) (*ComputeACLCreateAclsResponse, *http.Response, error)
 
 	/*
-	ComputeACLLookupAcls Lookup an ACL
+		ComputeACLLookupAcls Lookup an ACL
 
-	Find a matching ACL entry for an IP address.
+		Find a matching ACL entry for an IP address.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param aclID
-	 @param aclIP
-	 @return APIComputeACLLookupAclsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param aclID
+		 @param aclIP
+		 @return APIComputeACLLookupAclsRequest
 	*/
 	ComputeACLLookupAcls(ctx context.Context, aclID string, aclIP string) APIComputeACLLookupAclsRequest
 
@@ -120,13 +119,13 @@ type ACLsInComputeAPI interface {
 	ComputeACLLookupAclsExecute(r APIComputeACLLookupAclsRequest) (*ComputeACLLookup, *http.Response, error)
 
 	/*
-	ComputeACLUpdateAcls Update an ACL
+		ComputeACLUpdateAcls Update an ACL
 
-	Update an ACL.
+		Update an ACL.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param aclID
-	 @return APIComputeACLUpdateAclsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param aclID
+		 @return APIComputeACLUpdateAclsRequest
 	*/
 	ComputeACLUpdateAcls(ctx context.Context, aclID string) APIComputeACLUpdateAclsRequest
 
@@ -139,8 +138,8 @@ type ACLsInComputeAPIService service
 
 // APIComputeACLCreateAclsRequest represents a request for the resource.
 type APIComputeACLCreateAclsRequest struct {
-	ctx context.Context
-	APIService ACLsInComputeAPI
+	ctx                         context.Context
+	APIService                  ACLsInComputeAPI
 	computeACLCreateAclsRequest *ComputeACLCreateAclsRequest
 }
 
@@ -166,7 +165,7 @@ Create a new ACL.
 func (a *ACLsInComputeAPIService) ComputeACLCreateAcls(ctx context.Context) APIComputeACLCreateAclsRequest {
 	return APIComputeACLCreateAclsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -174,10 +173,10 @@ func (a *ACLsInComputeAPIService) ComputeACLCreateAcls(ctx context.Context) APIC
 //  @return ComputeACLCreateAclsResponse
 func (a *ACLsInComputeAPIService) ComputeACLCreateAclsExecute(r APIComputeACLCreateAclsRequest) (*ComputeACLCreateAclsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ComputeACLCreateAclsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ComputeACLCreateAclsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLCreateAcls")
@@ -258,7 +257,6 @@ func (a *ACLsInComputeAPIService) ComputeACLCreateAclsExecute(r APIComputeACLCre
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -277,11 +275,10 @@ func (a *ACLsInComputeAPIService) ComputeACLCreateAclsExecute(r APIComputeACLCre
 
 // APIComputeACLDeleteSAclIDRequest represents a request for the resource.
 type APIComputeACLDeleteSAclIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ACLsInComputeAPI
-	aclID string
+	aclID      string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIComputeACLDeleteSAclIDRequest) Execute() (*http.Response, error) {
@@ -300,17 +297,17 @@ Delete an ACL.
 func (a *ACLsInComputeAPIService) ComputeACLDeleteSAclID(ctx context.Context, aclID string) APIComputeACLDeleteSAclIDRequest {
 	return APIComputeACLDeleteSAclIDRequest{
 		APIService: a,
-		ctx: ctx,
-		aclID: aclID,
+		ctx:        ctx,
+		aclID:      aclID,
 	}
 }
 
 // ComputeACLDeleteSAclIDExecute executes the request
 func (a *ACLsInComputeAPIService) ComputeACLDeleteSAclIDExecute(r APIComputeACLDeleteSAclIDRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLDeleteSAclID")
@@ -381,7 +378,6 @@ func (a *ACLsInComputeAPIService) ComputeACLDeleteSAclIDExecute(r APIComputeACLD
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -400,11 +396,11 @@ func (a *ACLsInComputeAPIService) ComputeACLDeleteSAclIDExecute(r APIComputeACLD
 
 // APIComputeACLListAclEntriesRequest represents a request for the resource.
 type APIComputeACLListAclEntriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ACLsInComputeAPI
-	aclID string
-	cursor *string
-	limit *int32
+	aclID      string
+	cursor     *string
+	limit      *int32
 }
 
 // Cursor returns a pointer to a request.
@@ -412,6 +408,7 @@ func (r *APIComputeACLListAclEntriesRequest) Cursor(cursor string) *APIComputeAC
 	r.cursor = &cursor
 	return r
 }
+
 // Limit returns a pointer to a request.
 func (r *APIComputeACLListAclEntriesRequest) Limit(limit int32) *APIComputeACLListAclEntriesRequest {
 	r.limit = &limit
@@ -435,8 +432,8 @@ List an ACL.
 func (a *ACLsInComputeAPIService) ComputeACLListAclEntries(ctx context.Context, aclID string) APIComputeACLListAclEntriesRequest {
 	return APIComputeACLListAclEntriesRequest{
 		APIService: a,
-		ctx: ctx,
-		aclID: aclID,
+		ctx:        ctx,
+		aclID:      aclID,
 	}
 }
 
@@ -444,10 +441,10 @@ func (a *ACLsInComputeAPIService) ComputeACLListAclEntries(ctx context.Context, 
 //  @return ComputeACLListEntries
 func (a *ACLsInComputeAPIService) ComputeACLListAclEntriesExecute(r APIComputeACLListAclEntriesRequest) (*ComputeACLListEntries, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ComputeACLListEntries
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ComputeACLListEntries
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLListAclEntries")
@@ -533,7 +530,6 @@ func (a *ACLsInComputeAPIService) ComputeACLListAclEntriesExecute(r APIComputeAC
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -552,10 +548,9 @@ func (a *ACLsInComputeAPIService) ComputeACLListAclEntriesExecute(r APIComputeAC
 
 // APIComputeACLListAclsRequest represents a request for the resource.
 type APIComputeACLListAclsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ACLsInComputeAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIComputeACLListAclsRequest) Execute() ([]ComputeACLCreateAclsResponse, *http.Response, error) {
@@ -573,7 +568,7 @@ List all ACLs.
 func (a *ACLsInComputeAPIService) ComputeACLListAcls(ctx context.Context) APIComputeACLListAclsRequest {
 	return APIComputeACLListAclsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -581,10 +576,10 @@ func (a *ACLsInComputeAPIService) ComputeACLListAcls(ctx context.Context) APICom
 //  @return []ComputeACLCreateAclsResponse
 func (a *ACLsInComputeAPIService) ComputeACLListAclsExecute(r APIComputeACLListAclsRequest) ([]ComputeACLCreateAclsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []ComputeACLCreateAclsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []ComputeACLCreateAclsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLListAcls")
@@ -663,7 +658,6 @@ func (a *ACLsInComputeAPIService) ComputeACLListAclsExecute(r APIComputeACLListA
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -682,11 +676,10 @@ func (a *ACLsInComputeAPIService) ComputeACLListAclsExecute(r APIComputeACLListA
 
 // APIComputeACLListAclsSAclIDRequest represents a request for the resource.
 type APIComputeACLListAclsSAclIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ACLsInComputeAPI
-	aclID string
+	aclID      string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIComputeACLListAclsSAclIDRequest) Execute() (*ComputeACLCreateAclsResponse, *http.Response, error) {
@@ -705,8 +698,8 @@ Describe an ACL.
 func (a *ACLsInComputeAPIService) ComputeACLListAclsSAclID(ctx context.Context, aclID string) APIComputeACLListAclsSAclIDRequest {
 	return APIComputeACLListAclsSAclIDRequest{
 		APIService: a,
-		ctx: ctx,
-		aclID: aclID,
+		ctx:        ctx,
+		aclID:      aclID,
 	}
 }
 
@@ -714,10 +707,10 @@ func (a *ACLsInComputeAPIService) ComputeACLListAclsSAclID(ctx context.Context, 
 //  @return ComputeACLCreateAclsResponse
 func (a *ACLsInComputeAPIService) ComputeACLListAclsSAclIDExecute(r APIComputeACLListAclsSAclIDRequest) (*ComputeACLCreateAclsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ComputeACLCreateAclsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ComputeACLCreateAclsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLListAclsSAclID")
@@ -797,7 +790,6 @@ func (a *ACLsInComputeAPIService) ComputeACLListAclsSAclIDExecute(r APIComputeAC
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -816,12 +808,11 @@ func (a *ACLsInComputeAPIService) ComputeACLListAclsSAclIDExecute(r APIComputeAC
 
 // APIComputeACLLookupAclsRequest represents a request for the resource.
 type APIComputeACLLookupAclsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ACLsInComputeAPI
-	aclID string
-	aclIP string
+	aclID      string
+	aclIP      string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIComputeACLLookupAclsRequest) Execute() (*ComputeACLLookup, *http.Response, error) {
@@ -841,9 +832,9 @@ Find a matching ACL entry for an IP address.
 func (a *ACLsInComputeAPIService) ComputeACLLookupAcls(ctx context.Context, aclID string, aclIP string) APIComputeACLLookupAclsRequest {
 	return APIComputeACLLookupAclsRequest{
 		APIService: a,
-		ctx: ctx,
-		aclID: aclID,
-		aclIP: aclIP,
+		ctx:        ctx,
+		aclID:      aclID,
+		aclIP:      aclIP,
 	}
 }
 
@@ -851,10 +842,10 @@ func (a *ACLsInComputeAPIService) ComputeACLLookupAcls(ctx context.Context, aclI
 //  @return ComputeACLLookup
 func (a *ACLsInComputeAPIService) ComputeACLLookupAclsExecute(r APIComputeACLLookupAclsRequest) (*ComputeACLLookup, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ComputeACLLookup
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ComputeACLLookup
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLLookupAcls")
@@ -935,7 +926,6 @@ func (a *ACLsInComputeAPIService) ComputeACLLookupAclsExecute(r APIComputeACLLoo
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -954,9 +944,9 @@ func (a *ACLsInComputeAPIService) ComputeACLLookupAclsExecute(r APIComputeACLLoo
 
 // APIComputeACLUpdateAclsRequest represents a request for the resource.
 type APIComputeACLUpdateAclsRequest struct {
-	ctx context.Context
-	APIService ACLsInComputeAPI
-	aclID string
+	ctx                   context.Context
+	APIService            ACLsInComputeAPI
+	aclID                 string
 	computeACLUpdateEntry *[]ComputeACLUpdateEntry
 }
 
@@ -983,17 +973,17 @@ Update an ACL.
 func (a *ACLsInComputeAPIService) ComputeACLUpdateAcls(ctx context.Context, aclID string) APIComputeACLUpdateAclsRequest {
 	return APIComputeACLUpdateAclsRequest{
 		APIService: a,
-		ctx: ctx,
-		aclID: aclID,
+		ctx:        ctx,
+		aclID:      aclID,
 	}
 }
 
 // ComputeACLUpdateAclsExecute executes the request
 func (a *ACLsInComputeAPIService) ComputeACLUpdateAclsExecute(r APIComputeACLUpdateAclsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPatch
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLUpdateAcls")
@@ -1065,7 +1055,6 @@ func (a *ACLsInComputeAPIService) ComputeACLUpdateAclsExecute(r APIComputeACLUpd
 		}
 		return localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

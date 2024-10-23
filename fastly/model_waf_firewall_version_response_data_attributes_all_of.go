@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -42,7 +41,7 @@ type WafFirewallVersionResponseDataAttributesAllOf struct {
 	// Time-stamp (GMT) indicating when the firewall version was last deployed.
 	DeployedAt *string `json:"deployed_at,omitempty"`
 	// Contains error message if the firewall version fails to deploy.
-	Error *string `json:"error,omitempty"`
+	Error                *string `json:"error,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -366,7 +365,7 @@ func (o *WafFirewallVersionResponseDataAttributesAllOf) GetLastDeploymentStatus(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafFirewallVersionResponseDataAttributesAllOf) GetLastDeploymentStatusOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LastDeploymentStatus.Get(), o.LastDeploymentStatus.IsSet()
@@ -385,6 +384,7 @@ func (o *WafFirewallVersionResponseDataAttributesAllOf) HasLastDeploymentStatus(
 func (o *WafFirewallVersionResponseDataAttributesAllOf) SetLastDeploymentStatus(v string) {
 	o.LastDeploymentStatus.Set(&v)
 }
+
 // SetLastDeploymentStatusNil sets the value for LastDeploymentStatus to be an explicit nil
 func (o *WafFirewallVersionResponseDataAttributesAllOf) SetLastDeploymentStatusNil() {
 	o.LastDeploymentStatus.Set(nil)
@@ -508,7 +508,7 @@ func (o WafFirewallVersionResponseDataAttributesAllOf) MarshalJSON() ([]byte, er
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *WafFirewallVersionResponseDataAttributesAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	varWafFirewallVersionResponseDataAttributesAllOf := _WafFirewallVersionResponseDataAttributesAllOf{}
 
@@ -537,7 +537,7 @@ func (o *WafFirewallVersionResponseDataAttributesAllOf) UnmarshalJSON(bytes []by
 	return err
 }
 
-// NullableWafFirewallVersionResponseDataAttributesAllOf is a helper abstraction for handling nullable waffirewallversionresponsedataattributesallof types. 
+// NullableWafFirewallVersionResponseDataAttributesAllOf is a helper abstraction for handling nullable waffirewallversionresponsedataattributesallof types.
 type NullableWafFirewallVersionResponseDataAttributesAllOf struct {
 	value *WafFirewallVersionResponseDataAttributesAllOf
 	isSet bool
@@ -577,7 +577,7 @@ func (v NullableWafFirewallVersionResponseDataAttributesAllOf) MarshalJSON() ([]
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableWafFirewallVersionResponseDataAttributesAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,16 +31,16 @@ var (
 type DirectorBackendAPI interface {
 
 	/*
-	CreateDirectorBackend Create a director-backend relationship
+		CreateDirectorBackend Create a director-backend relationship
 
-	Establishes a relationship between a Backend and a Director. The Backend is then considered a member of the Director and can be used to balance traffic onto.
+		Establishes a relationship between a Backend and a Director. The Backend is then considered a member of the Director and can be used to balance traffic onto.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param directorName Name for the Director.
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param backendName The name of the backend.
-	 @return APICreateDirectorBackendRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param directorName Name for the Director.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param backendName The name of the backend.
+		 @return APICreateDirectorBackendRequest
 	*/
 	CreateDirectorBackend(ctx context.Context, directorName string, serviceID string, versionID int32, backendName string) APICreateDirectorBackendRequest
 
@@ -50,16 +49,16 @@ type DirectorBackendAPI interface {
 	CreateDirectorBackendExecute(r APICreateDirectorBackendRequest) (*DirectorBackend, *http.Response, error)
 
 	/*
-	DeleteDirectorBackend Delete a director-backend relationship
+		DeleteDirectorBackend Delete a director-backend relationship
 
-	Deletes the relationship between a Backend and a Director. The Backend is no longer considered a member of the Director and thus will not have traffic balanced onto it from this Director.
+		Deletes the relationship between a Backend and a Director. The Backend is no longer considered a member of the Director and thus will not have traffic balanced onto it from this Director.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param directorName Name for the Director.
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param backendName The name of the backend.
-	 @return APIDeleteDirectorBackendRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param directorName Name for the Director.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param backendName The name of the backend.
+		 @return APIDeleteDirectorBackendRequest
 	*/
 	DeleteDirectorBackend(ctx context.Context, directorName string, serviceID string, versionID int32, backendName string) APIDeleteDirectorBackendRequest
 
@@ -68,16 +67,16 @@ type DirectorBackendAPI interface {
 	DeleteDirectorBackendExecute(r APIDeleteDirectorBackendRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetDirectorBackend Get a director-backend relationship
+		GetDirectorBackend Get a director-backend relationship
 
-	Returns the relationship between a Backend and a Director. If the Backend has been associated with the Director, it returns a simple record indicating this. Otherwise, returns a 404.
+		Returns the relationship between a Backend and a Director. If the Backend has been associated with the Director, it returns a simple record indicating this. Otherwise, returns a 404.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param directorName Name for the Director.
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param backendName The name of the backend.
-	 @return APIGetDirectorBackendRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param directorName Name for the Director.
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param backendName The name of the backend.
+		 @return APIGetDirectorBackendRequest
 	*/
 	GetDirectorBackend(ctx context.Context, directorName string, serviceID string, versionID int32, backendName string) APIGetDirectorBackendRequest
 
@@ -91,14 +90,13 @@ type DirectorBackendAPIService service
 
 // APICreateDirectorBackendRequest represents a request for the resource.
 type APICreateDirectorBackendRequest struct {
-	ctx context.Context
-	APIService DirectorBackendAPI
+	ctx          context.Context
+	APIService   DirectorBackendAPI
 	directorName string
-	serviceID string
-	versionID int32
-	backendName string
+	serviceID    string
+	versionID    int32
+	backendName  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APICreateDirectorBackendRequest) Execute() (*DirectorBackend, *http.Response, error) {
@@ -119,12 +117,12 @@ Establishes a relationship between a Backend and a Director. The Backend is then
 */
 func (a *DirectorBackendAPIService) CreateDirectorBackend(ctx context.Context, directorName string, serviceID string, versionID int32, backendName string) APICreateDirectorBackendRequest {
 	return APICreateDirectorBackendRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:   a,
+		ctx:          ctx,
 		directorName: directorName,
-		serviceID: serviceID,
-		versionID: versionID,
-		backendName: backendName,
+		serviceID:    serviceID,
+		versionID:    versionID,
+		backendName:  backendName,
 	}
 }
 
@@ -132,10 +130,10 @@ func (a *DirectorBackendAPIService) CreateDirectorBackend(ctx context.Context, d
 //  @return DirectorBackend
 func (a *DirectorBackendAPIService) CreateDirectorBackendExecute(r APICreateDirectorBackendRequest) (*DirectorBackend, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DirectorBackend
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DirectorBackend
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectorBackendAPIService.CreateDirectorBackend")
@@ -218,7 +216,6 @@ func (a *DirectorBackendAPIService) CreateDirectorBackendExecute(r APICreateDire
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -237,14 +234,13 @@ func (a *DirectorBackendAPIService) CreateDirectorBackendExecute(r APICreateDire
 
 // APIDeleteDirectorBackendRequest represents a request for the resource.
 type APIDeleteDirectorBackendRequest struct {
-	ctx context.Context
-	APIService DirectorBackendAPI
+	ctx          context.Context
+	APIService   DirectorBackendAPI
 	directorName string
-	serviceID string
-	versionID int32
-	backendName string
+	serviceID    string
+	versionID    int32
+	backendName  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteDirectorBackendRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -265,12 +261,12 @@ Deletes the relationship between a Backend and a Director. The Backend is no lon
 */
 func (a *DirectorBackendAPIService) DeleteDirectorBackend(ctx context.Context, directorName string, serviceID string, versionID int32, backendName string) APIDeleteDirectorBackendRequest {
 	return APIDeleteDirectorBackendRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:   a,
+		ctx:          ctx,
 		directorName: directorName,
-		serviceID: serviceID,
-		versionID: versionID,
-		backendName: backendName,
+		serviceID:    serviceID,
+		versionID:    versionID,
+		backendName:  backendName,
 	}
 }
 
@@ -278,10 +274,10 @@ func (a *DirectorBackendAPIService) DeleteDirectorBackend(ctx context.Context, d
 //  @return InlineResponse200
 func (a *DirectorBackendAPIService) DeleteDirectorBackendExecute(r APIDeleteDirectorBackendRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectorBackendAPIService.DeleteDirectorBackend")
@@ -364,7 +360,6 @@ func (a *DirectorBackendAPIService) DeleteDirectorBackendExecute(r APIDeleteDire
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -383,14 +378,13 @@ func (a *DirectorBackendAPIService) DeleteDirectorBackendExecute(r APIDeleteDire
 
 // APIGetDirectorBackendRequest represents a request for the resource.
 type APIGetDirectorBackendRequest struct {
-	ctx context.Context
-	APIService DirectorBackendAPI
+	ctx          context.Context
+	APIService   DirectorBackendAPI
 	directorName string
-	serviceID string
-	versionID int32
-	backendName string
+	serviceID    string
+	versionID    int32
+	backendName  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetDirectorBackendRequest) Execute() (*DirectorBackend, *http.Response, error) {
@@ -411,12 +405,12 @@ Returns the relationship between a Backend and a Director. If the Backend has be
 */
 func (a *DirectorBackendAPIService) GetDirectorBackend(ctx context.Context, directorName string, serviceID string, versionID int32, backendName string) APIGetDirectorBackendRequest {
 	return APIGetDirectorBackendRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:   a,
+		ctx:          ctx,
 		directorName: directorName,
-		serviceID: serviceID,
-		versionID: versionID,
-		backendName: backendName,
+		serviceID:    serviceID,
+		versionID:    versionID,
+		backendName:  backendName,
 	}
 }
 
@@ -424,10 +418,10 @@ func (a *DirectorBackendAPIService) GetDirectorBackend(ctx context.Context, dire
 //  @return DirectorBackend
 func (a *DirectorBackendAPIService) GetDirectorBackendExecute(r APIGetDirectorBackendRequest) (*DirectorBackend, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DirectorBackend
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DirectorBackend
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DirectorBackendAPIService.GetDirectorBackend")
@@ -509,7 +503,6 @@ func (a *DirectorBackendAPIService) GetDirectorBackendExecute(r APIGetDirectorBa
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

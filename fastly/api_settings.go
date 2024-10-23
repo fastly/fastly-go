@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type SettingsAPI interface {
 
 	/*
-	GetServiceSettings Get service settings
+		GetServiceSettings Get service settings
 
-	Get the settings for a particular service and version.
+		Get the settings for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIGetServiceSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIGetServiceSettingsRequest
 	*/
 	GetServiceSettings(ctx context.Context, serviceID string, versionID int32) APIGetServiceSettingsRequest
 
@@ -48,15 +47,15 @@ type SettingsAPI interface {
 	GetServiceSettingsExecute(r APIGetServiceSettingsRequest) (*SettingsResponse, *http.Response, error)
 
 	/*
-	UpdateServiceSettings Update service settings
+		UpdateServiceSettings Update service settings
 
-	Update the settings for a particular service and version. NOTE: If you override TTLs with custom VCL, any general.default_ttl value will not be honored and the expected behavior may change.
+		Update the settings for a particular service and version. NOTE: If you override TTLs with custom VCL, any general.default_ttl value will not be honored and the expected behavior may change.
 
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIUpdateServiceSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIUpdateServiceSettingsRequest
 	*/
 	UpdateServiceSettings(ctx context.Context, serviceID string, versionID int32) APIUpdateServiceSettingsRequest
 
@@ -70,12 +69,11 @@ type SettingsAPIService service
 
 // APIGetServiceSettingsRequest represents a request for the resource.
 type APIGetServiceSettingsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SettingsAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetServiceSettingsRequest) Execute() (*SettingsResponse, *http.Response, error) {
@@ -95,9 +93,9 @@ Get the settings for a particular service and version.
 func (a *SettingsAPIService) GetServiceSettings(ctx context.Context, serviceID string, versionID int32) APIGetServiceSettingsRequest {
 	return APIGetServiceSettingsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -105,10 +103,10 @@ func (a *SettingsAPIService) GetServiceSettings(ctx context.Context, serviceID s
 //  @return SettingsResponse
 func (a *SettingsAPIService) GetServiceSettingsExecute(r APIGetServiceSettingsRequest) (*SettingsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SettingsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SettingsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.GetServiceSettings")
@@ -189,7 +187,6 @@ func (a *SettingsAPIService) GetServiceSettingsExecute(r APIGetServiceSettingsRe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -208,13 +205,13 @@ func (a *SettingsAPIService) GetServiceSettingsExecute(r APIGetServiceSettingsRe
 
 // APIUpdateServiceSettingsRequest represents a request for the resource.
 type APIUpdateServiceSettingsRequest struct {
-	ctx context.Context
-	APIService SettingsAPI
-	serviceID string
-	versionID int32
-	generalDefaultHost *string
-	generalDefaultTTL *int32
-	generalStaleIfError *bool
+	ctx                    context.Context
+	APIService             SettingsAPI
+	serviceID              string
+	versionID              int32
+	generalDefaultHost     *string
+	generalDefaultTTL      *int32
+	generalStaleIfError    *bool
 	generalStaleIfErrorTTL *int32
 }
 
@@ -223,16 +220,19 @@ func (r *APIUpdateServiceSettingsRequest) GeneralDefaultHost(generalDefaultHost 
 	r.generalDefaultHost = &generalDefaultHost
 	return r
 }
+
 // GeneralDefaultTTL The default time-to-live (TTL) for the version.
 func (r *APIUpdateServiceSettingsRequest) GeneralDefaultTTL(generalDefaultTTL int32) *APIUpdateServiceSettingsRequest {
 	r.generalDefaultTTL = &generalDefaultTTL
 	return r
 }
+
 // GeneralStaleIfError Enables serving a stale object if there is an error.
 func (r *APIUpdateServiceSettingsRequest) GeneralStaleIfError(generalStaleIfError bool) *APIUpdateServiceSettingsRequest {
 	r.generalStaleIfError = &generalStaleIfError
 	return r
 }
+
 // GeneralStaleIfErrorTTL The default time-to-live (TTL) for serving the stale object for the version.
 func (r *APIUpdateServiceSettingsRequest) GeneralStaleIfErrorTTL(generalStaleIfErrorTTL int32) *APIUpdateServiceSettingsRequest {
 	r.generalStaleIfErrorTTL = &generalStaleIfErrorTTL
@@ -258,9 +258,9 @@ Update the settings for a particular service and version. NOTE: If you override 
 func (a *SettingsAPIService) UpdateServiceSettings(ctx context.Context, serviceID string, versionID int32) APIUpdateServiceSettingsRequest {
 	return APIUpdateServiceSettingsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -268,10 +268,10 @@ func (a *SettingsAPIService) UpdateServiceSettings(ctx context.Context, serviceI
 //  @return SettingsResponse
 func (a *SettingsAPIService) UpdateServiceSettingsExecute(r APIUpdateServiceSettingsRequest) (*SettingsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SettingsResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SettingsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SettingsAPIService.UpdateServiceSettings")
@@ -363,7 +363,6 @@ func (a *SettingsAPIService) UpdateServiceSettingsExecute(r APIUpdateServiceSett
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

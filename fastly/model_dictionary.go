@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,7 +21,7 @@ type Dictionary struct {
 	// Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
 	Name *string `json:"name,omitempty"`
 	// Determines if items in the dictionary are readable or not.
-	WriteOnly *bool `json:"write_only,omitempty"`
+	WriteOnly            *bool `json:"write_only,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -132,7 +131,7 @@ func (o Dictionary) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *Dictionary) UnmarshalJSON(bytes []byte) (err error) {
 	varDictionary := _Dictionary{}
 
@@ -151,7 +150,7 @@ func (o *Dictionary) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableDictionary is a helper abstraction for handling nullable dictionary types. 
+// NullableDictionary is a helper abstraction for handling nullable dictionary types.
 type NullableDictionary struct {
 	value *Dictionary
 	isSet bool
@@ -191,7 +190,7 @@ func (v NullableDictionary) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDictionary) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

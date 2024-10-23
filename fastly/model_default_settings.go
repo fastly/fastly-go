@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -21,18 +20,18 @@ import (
 type DefaultSettings struct {
 	// The type of filter to use while resizing an image.
 	ResizeFilter *string `json:"resize_filter,omitempty"`
-	// Controls whether or not to default to WebP output when the client supports it. This is equivalent to adding \"auto=webp\" to all image optimizer requests. 
+	// Controls whether or not to default to WebP output when the client supports it. This is equivalent to adding \"auto=webp\" to all image optimizer requests.
 	Webp *bool `json:"webp,omitempty"`
-	// The default quality to use with WebP output. This can be overridden with the second option in the \"quality\" URL parameter on specific image optimizer requests. 
+	// The default quality to use with WebP output. This can be overridden with the second option in the \"quality\" URL parameter on specific image optimizer requests.
 	WebpQuality *int32 `json:"webp_quality,omitempty"`
-	// The default type of JPEG output to use. This can be overridden with \"format=bjpeg\" and \"format=pjpeg\" on specific image optimizer requests. 
+	// The default type of JPEG output to use. This can be overridden with \"format=bjpeg\" and \"format=pjpeg\" on specific image optimizer requests.
 	JpegType *string `json:"jpeg_type,omitempty"`
-	// The default quality to use with JPEG output. This can be overridden with the \"quality\" parameter on specific image optimizer requests. 
+	// The default quality to use with JPEG output. This can be overridden with the \"quality\" parameter on specific image optimizer requests.
 	JpegQuality *int32 `json:"jpeg_quality,omitempty"`
-	// Whether or not we should allow output images to render at sizes larger than input. 
+	// Whether or not we should allow output images to render at sizes larger than input.
 	Upscale *bool `json:"upscale,omitempty"`
 	// Enables GIF to MP4 transformations on this service.
-	AllowVideo *bool `json:"allow_video,omitempty"`
+	AllowVideo           *bool `json:"allow_video,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -341,7 +340,7 @@ func (o DefaultSettings) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *DefaultSettings) UnmarshalJSON(bytes []byte) (err error) {
 	varDefaultSettings := _DefaultSettings{}
 
@@ -365,7 +364,7 @@ func (o *DefaultSettings) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableDefaultSettings is a helper abstraction for handling nullable defaultsettings types. 
+// NullableDefaultSettings is a helper abstraction for handling nullable defaultsettings types.
 type NullableDefaultSettings struct {
 	value *DefaultSettings
 	isSet bool
@@ -405,7 +404,7 @@ func (v NullableDefaultSettings) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDefaultSettings) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

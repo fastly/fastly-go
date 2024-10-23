@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,13 +21,13 @@ import (
 type LoggingHerokuResponse struct {
 	// The name for the real-time logging configuration.
 	Name *string `json:"name,omitempty"`
-	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
 	Token *string `json:"token,omitempty"`
@@ -39,9 +38,9 @@ type LoggingHerokuResponse struct {
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
+	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -117,7 +116,7 @@ func (o *LoggingHerokuResponse) GetPlacement() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHerokuResponse) GetPlacementOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -136,6 +135,7 @@ func (o *LoggingHerokuResponse) HasPlacement() bool {
 func (o *LoggingHerokuResponse) SetPlacement(v string) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *LoggingHerokuResponse) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -159,7 +159,7 @@ func (o *LoggingHerokuResponse) GetResponseCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHerokuResponse) GetResponseConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseCondition.Get(), o.ResponseCondition.IsSet()
@@ -178,6 +178,7 @@ func (o *LoggingHerokuResponse) HasResponseCondition() bool {
 func (o *LoggingHerokuResponse) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
+
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 func (o *LoggingHerokuResponse) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
@@ -329,7 +330,7 @@ func (o *LoggingHerokuResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHerokuResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -348,6 +349,7 @@ func (o *LoggingHerokuResponse) HasCreatedAt() bool {
 func (o *LoggingHerokuResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *LoggingHerokuResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -371,7 +373,7 @@ func (o *LoggingHerokuResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHerokuResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -390,6 +392,7 @@ func (o *LoggingHerokuResponse) HasDeletedAt() bool {
 func (o *LoggingHerokuResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *LoggingHerokuResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -413,7 +416,7 @@ func (o *LoggingHerokuResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHerokuResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -432,6 +435,7 @@ func (o *LoggingHerokuResponse) HasUpdatedAt() bool {
 func (o *LoggingHerokuResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *LoggingHerokuResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -555,7 +559,7 @@ func (o LoggingHerokuResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingHerokuResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingHerokuResponse := _LoggingHerokuResponse{}
 
@@ -584,7 +588,7 @@ func (o *LoggingHerokuResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingHerokuResponse is a helper abstraction for handling nullable loggingherokuresponse types. 
+// NullableLoggingHerokuResponse is a helper abstraction for handling nullable loggingherokuresponse types.
 type NullableLoggingHerokuResponse struct {
 	value *LoggingHerokuResponse
 	isSet bool
@@ -624,7 +628,7 @@ func (v NullableLoggingHerokuResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingHerokuResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

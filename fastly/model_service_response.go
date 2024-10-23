@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -34,7 +33,7 @@ type ServiceResponse struct {
 	CustomerID *string `json:"customer_id,omitempty"`
 	// The type of this service.
 	Type *string `json:"type,omitempty"`
-	ID *string `json:"id,omitempty"`
+	ID   *string `json:"id,omitempty"`
 	// Unused at this time.
 	PublishKey *string `json:"publish_key,omitempty"`
 	// Whether the service is paused. Services are paused due to a lack of traffic for an extended period of time. Services are resumed either when a draft version is activated or a locked version is cloned and reactivated.
@@ -42,7 +41,7 @@ type ServiceResponse struct {
 	// A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service.
 	Versions []SchemasVersionResponse `json:"versions,omitempty"`
 	// A list of environments where the service has been deployed.
-	Environments []Environment `json:"environments,omitempty"`
+	Environments         []Environment `json:"environments,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -78,7 +77,7 @@ func (o *ServiceResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServiceResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -97,6 +96,7 @@ func (o *ServiceResponse) HasCreatedAt() bool {
 func (o *ServiceResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *ServiceResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -120,7 +120,7 @@ func (o *ServiceResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServiceResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -139,6 +139,7 @@ func (o *ServiceResponse) HasDeletedAt() bool {
 func (o *ServiceResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *ServiceResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -162,7 +163,7 @@ func (o *ServiceResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServiceResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -181,6 +182,7 @@ func (o *ServiceResponse) HasUpdatedAt() bool {
 func (o *ServiceResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *ServiceResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -204,7 +206,7 @@ func (o *ServiceResponse) GetComment() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServiceResponse) GetCommentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
@@ -223,6 +225,7 @@ func (o *ServiceResponse) HasComment() bool {
 func (o *ServiceResponse) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *ServiceResponse) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -538,7 +541,7 @@ func (o ServiceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *ServiceResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varServiceResponse := _ServiceResponse{}
 
@@ -567,7 +570,7 @@ func (o *ServiceResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableServiceResponse is a helper abstraction for handling nullable serviceresponse types. 
+// NullableServiceResponse is a helper abstraction for handling nullable serviceresponse types.
 type NullableServiceResponse struct {
 	value *ServiceResponse
 	isSet bool
@@ -607,7 +610,7 @@ func (v NullableServiceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableServiceResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

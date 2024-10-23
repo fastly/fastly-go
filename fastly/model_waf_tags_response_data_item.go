@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -21,9 +20,9 @@ import (
 type WafTagsResponseDataItem struct {
 	Type *TypeWafTag `json:"type,omitempty"`
 	// Alphanumeric string identifying a WAF tag.
-	ID *string `json:"id,omitempty"`
-	Attributes *WafTagAttributes `json:"attributes,omitempty"`
-	Relationships *RelationshipWafRule `json:"relationships,omitempty"`
+	ID                   *string              `json:"id,omitempty"`
+	Attributes           *WafTagAttributes    `json:"attributes,omitempty"`
+	Relationships        *RelationshipWafRule `json:"relationships,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -203,7 +202,7 @@ func (o WafTagsResponseDataItem) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *WafTagsResponseDataItem) UnmarshalJSON(bytes []byte) (err error) {
 	varWafTagsResponseDataItem := _WafTagsResponseDataItem{}
 
@@ -224,7 +223,7 @@ func (o *WafTagsResponseDataItem) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableWafTagsResponseDataItem is a helper abstraction for handling nullable waftagsresponsedataitem types. 
+// NullableWafTagsResponseDataItem is a helper abstraction for handling nullable waftagsresponsedataitem types.
 type NullableWafTagsResponseDataItem struct {
 	value *WafTagsResponseDataItem
 	isSet bool
@@ -264,7 +263,7 @@ func (v NullableWafTagsResponseDataItem) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableWafTagsResponseDataItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -36,8 +35,8 @@ type PoolResponsePost struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	ServiceID *string      `json:"service_id,omitempty"`
+	Version   *string      `json:"version,omitempty"`
 	// Name for the Pool.
 	Name *string `json:"name,omitempty"`
 	// Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
@@ -70,9 +69,9 @@ type PoolResponsePost struct {
 	MaxConnDefault *string `json:"max_conn_default,omitempty"`
 	// Be strict on checking TLS certs.
 	TLSCheckCert NullableString `json:"tls_check_cert,omitempty"`
-	ID *string `json:"id,omitempty"`
+	ID           *string        `json:"id,omitempty"`
 	// Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
-	Quorum *int32 `json:"quorum,omitempty"`
+	Quorum               *int32 `json:"quorum,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -144,7 +143,7 @@ func (o *PoolResponsePost) GetTLSCaCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetTLSCaCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCaCert.Get(), o.TLSCaCert.IsSet()
@@ -163,6 +162,7 @@ func (o *PoolResponsePost) HasTLSCaCert() bool {
 func (o *PoolResponsePost) SetTLSCaCert(v string) {
 	o.TLSCaCert.Set(&v)
 }
+
 // SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
 func (o *PoolResponsePost) SetTLSCaCertNil() {
 	o.TLSCaCert.Set(nil)
@@ -186,7 +186,7 @@ func (o *PoolResponsePost) GetTLSClientCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetTLSClientCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientCert.Get(), o.TLSClientCert.IsSet()
@@ -205,6 +205,7 @@ func (o *PoolResponsePost) HasTLSClientCert() bool {
 func (o *PoolResponsePost) SetTLSClientCert(v string) {
 	o.TLSClientCert.Set(&v)
 }
+
 // SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
 func (o *PoolResponsePost) SetTLSClientCertNil() {
 	o.TLSClientCert.Set(nil)
@@ -228,7 +229,7 @@ func (o *PoolResponsePost) GetTLSClientKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetTLSClientKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientKey.Get(), o.TLSClientKey.IsSet()
@@ -247,6 +248,7 @@ func (o *PoolResponsePost) HasTLSClientKey() bool {
 func (o *PoolResponsePost) SetTLSClientKey(v string) {
 	o.TLSClientKey.Set(&v)
 }
+
 // SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
 func (o *PoolResponsePost) SetTLSClientKeyNil() {
 	o.TLSClientKey.Set(nil)
@@ -270,7 +272,7 @@ func (o *PoolResponsePost) GetTLSCertHostname() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetTLSCertHostnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCertHostname.Get(), o.TLSCertHostname.IsSet()
@@ -289,6 +291,7 @@ func (o *PoolResponsePost) HasTLSCertHostname() bool {
 func (o *PoolResponsePost) SetTLSCertHostname(v string) {
 	o.TLSCertHostname.Set(&v)
 }
+
 // SetTLSCertHostnameNil sets the value for TLSCertHostname to be an explicit nil
 func (o *PoolResponsePost) SetTLSCertHostnameNil() {
 	o.TLSCertHostname.Set(nil)
@@ -344,7 +347,7 @@ func (o *PoolResponsePost) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -363,6 +366,7 @@ func (o *PoolResponsePost) HasCreatedAt() bool {
 func (o *PoolResponsePost) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *PoolResponsePost) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -386,7 +390,7 @@ func (o *PoolResponsePost) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -405,6 +409,7 @@ func (o *PoolResponsePost) HasDeletedAt() bool {
 func (o *PoolResponsePost) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *PoolResponsePost) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -428,7 +433,7 @@ func (o *PoolResponsePost) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -447,6 +452,7 @@ func (o *PoolResponsePost) HasUpdatedAt() bool {
 func (o *PoolResponsePost) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *PoolResponsePost) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -566,7 +572,7 @@ func (o *PoolResponsePost) GetShield() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetShieldOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Shield.Get(), o.Shield.IsSet()
@@ -585,6 +591,7 @@ func (o *PoolResponsePost) HasShield() bool {
 func (o *PoolResponsePost) SetShield(v string) {
 	o.Shield.Set(&v)
 }
+
 // SetShieldNil sets the value for Shield to be an explicit nil
 func (o *PoolResponsePost) SetShieldNil() {
 	o.Shield.Set(nil)
@@ -608,7 +615,7 @@ func (o *PoolResponsePost) GetRequestCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetRequestConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RequestCondition.Get(), o.RequestCondition.IsSet()
@@ -627,6 +634,7 @@ func (o *PoolResponsePost) HasRequestCondition() bool {
 func (o *PoolResponsePost) SetRequestCondition(v string) {
 	o.RequestCondition.Set(&v)
 }
+
 // SetRequestConditionNil sets the value for RequestCondition to be an explicit nil
 func (o *PoolResponsePost) SetRequestConditionNil() {
 	o.RequestCondition.Set(nil)
@@ -650,7 +658,7 @@ func (o *PoolResponsePost) GetTLSCiphers() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetTLSCiphersOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCiphers.Get(), o.TLSCiphers.IsSet()
@@ -669,6 +677,7 @@ func (o *PoolResponsePost) HasTLSCiphers() bool {
 func (o *PoolResponsePost) SetTLSCiphers(v string) {
 	o.TLSCiphers.Set(&v)
 }
+
 // SetTLSCiphersNil sets the value for TLSCiphers to be an explicit nil
 func (o *PoolResponsePost) SetTLSCiphersNil() {
 	o.TLSCiphers.Set(nil)
@@ -692,7 +701,7 @@ func (o *PoolResponsePost) GetTLSSniHostname() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetTLSSniHostnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSSniHostname.Get(), o.TLSSniHostname.IsSet()
@@ -711,6 +720,7 @@ func (o *PoolResponsePost) HasTLSSniHostname() bool {
 func (o *PoolResponsePost) SetTLSSniHostname(v string) {
 	o.TLSSniHostname.Set(&v)
 }
+
 // SetTLSSniHostnameNil sets the value for TLSSniHostname to be an explicit nil
 func (o *PoolResponsePost) SetTLSSniHostnameNil() {
 	o.TLSSniHostname.Set(nil)
@@ -734,7 +744,7 @@ func (o *PoolResponsePost) GetMinTLSVersion() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetMinTLSVersionOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MinTLSVersion.Get(), o.MinTLSVersion.IsSet()
@@ -753,6 +763,7 @@ func (o *PoolResponsePost) HasMinTLSVersion() bool {
 func (o *PoolResponsePost) SetMinTLSVersion(v int32) {
 	o.MinTLSVersion.Set(&v)
 }
+
 // SetMinTLSVersionNil sets the value for MinTLSVersion to be an explicit nil
 func (o *PoolResponsePost) SetMinTLSVersionNil() {
 	o.MinTLSVersion.Set(nil)
@@ -776,7 +787,7 @@ func (o *PoolResponsePost) GetMaxTLSVersion() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetMaxTLSVersionOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MaxTLSVersion.Get(), o.MaxTLSVersion.IsSet()
@@ -795,6 +806,7 @@ func (o *PoolResponsePost) HasMaxTLSVersion() bool {
 func (o *PoolResponsePost) SetMaxTLSVersion(v int32) {
 	o.MaxTLSVersion.Set(&v)
 }
+
 // SetMaxTLSVersionNil sets the value for MaxTLSVersion to be an explicit nil
 func (o *PoolResponsePost) SetMaxTLSVersionNil() {
 	o.MaxTLSVersion.Set(nil)
@@ -818,7 +830,7 @@ func (o *PoolResponsePost) GetHealthcheck() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetHealthcheckOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Healthcheck.Get(), o.Healthcheck.IsSet()
@@ -837,6 +849,7 @@ func (o *PoolResponsePost) HasHealthcheck() bool {
 func (o *PoolResponsePost) SetHealthcheck(v string) {
 	o.Healthcheck.Set(&v)
 }
+
 // SetHealthcheckNil sets the value for Healthcheck to be an explicit nil
 func (o *PoolResponsePost) SetHealthcheckNil() {
 	o.Healthcheck.Set(nil)
@@ -860,7 +873,7 @@ func (o *PoolResponsePost) GetComment() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetCommentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
@@ -879,6 +892,7 @@ func (o *PoolResponsePost) HasComment() bool {
 func (o *PoolResponsePost) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *PoolResponsePost) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -934,7 +948,7 @@ func (o *PoolResponsePost) GetOverrideHost() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetOverrideHostOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OverrideHost.Get(), o.OverrideHost.IsSet()
@@ -953,6 +967,7 @@ func (o *PoolResponsePost) HasOverrideHost() bool {
 func (o *PoolResponsePost) SetOverrideHost(v string) {
 	o.OverrideHost.Set(&v)
 }
+
 // SetOverrideHostNil sets the value for OverrideHost to be an explicit nil
 func (o *PoolResponsePost) SetOverrideHostNil() {
 	o.OverrideHost.Set(nil)
@@ -1104,7 +1119,7 @@ func (o *PoolResponsePost) GetTLSCheckCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponsePost) GetTLSCheckCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCheckCert.Get(), o.TLSCheckCert.IsSet()
@@ -1123,6 +1138,7 @@ func (o *PoolResponsePost) HasTLSCheckCert() bool {
 func (o *PoolResponsePost) SetTLSCheckCert(v string) {
 	o.TLSCheckCert.Set(&v)
 }
+
 // SetTLSCheckCertNil sets the value for TLSCheckCert to be an explicit nil
 func (o *PoolResponsePost) SetTLSCheckCertNil() {
 	o.TLSCheckCert.Set(nil)
@@ -1294,7 +1310,7 @@ func (o PoolResponsePost) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *PoolResponsePost) UnmarshalJSON(bytes []byte) (err error) {
 	varPoolResponsePost := _PoolResponsePost{}
 
@@ -1339,7 +1355,7 @@ func (o *PoolResponsePost) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullablePoolResponsePost is a helper abstraction for handling nullable poolresponsepost types. 
+// NullablePoolResponsePost is a helper abstraction for handling nullable poolresponsepost types.
 type NullablePoolResponsePost struct {
 	value *PoolResponsePost
 	isSet bool
@@ -1379,7 +1395,7 @@ func (v NullablePoolResponsePost) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullablePoolResponsePost) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

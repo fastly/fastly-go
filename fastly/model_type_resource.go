@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -23,9 +22,9 @@ type TypeResource string
 
 // List of resourceTyperesource
 const (
-	TYPERESOURCE_KV_STORE TypeResource = "kv-store"
+	TYPERESOURCE_KV_STORE     TypeResource = "kv-store"
 	TYPERESOURCE_SECRET_STORE TypeResource = "secret-store"
-	TYPERESOURCE_CONFIG TypeResource = "config"
+	TYPERESOURCE_CONFIG       TypeResource = "config"
 )
 
 // AllowedTypeResourceEnumValues All allowed values of TypeResource enum
@@ -36,7 +35,7 @@ var AllowedTypeResourceEnumValues = []TypeResource{
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *TypeResource) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
@@ -61,7 +60,7 @@ func NewTypeResourceFromValue(v string) (*TypeResource, error) {
 	if ev.IsValid() {
 		return &ev, nil
 	}
-  return nil, fmt.Errorf("invalid value '%v' for TypeResource: valid values are %v", v, AllowedTypeResourceEnumValues)
+	return nil, fmt.Errorf("invalid value '%v' for TypeResource: valid values are %v", v, AllowedTypeResourceEnumValues)
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
@@ -79,7 +78,7 @@ func (v TypeResource) Ptr() *TypeResource {
 	return &v
 }
 
-// NullableTypeResource is a helper abstraction for handling nullable typeresource types. 
+// NullableTypeResource is a helper abstraction for handling nullable typeresource types.
 type NullableTypeResource struct {
 	value *TypeResource
 	isSet bool
@@ -119,7 +118,7 @@ func (v NullableTypeResource) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableTypeResource) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

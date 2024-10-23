@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -21,12 +20,12 @@ import (
 // LoggingKinesisResponse struct for LoggingKinesisResponse
 type LoggingKinesisResponse struct {
 	// The name for the real-time logging configuration.
-	Name *string `json:"name,omitempty"`
+	Name      *string                  `json:"name,omitempty"`
 	Placement NullableLoggingPlacement `json:"placement,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
 	// The Amazon Kinesis stream to send logs to. Required.
-	Topic *string `json:"topic,omitempty"`
+	Topic  *string    `json:"topic,omitempty"`
 	Region *AwsRegion `json:"region,omitempty"`
 	// The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
 	SecretKey NullableString `json:"secret_key,omitempty"`
@@ -34,16 +33,16 @@ type LoggingKinesisResponse struct {
 	AccessKey NullableString `json:"access_key,omitempty"`
 	// The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
 	IamRole NullableString `json:"iam_role,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
+	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -119,7 +118,7 @@ func (o *LoggingKinesisResponse) GetPlacement() LoggingPlacement {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKinesisResponse) GetPlacementOk() (*LoggingPlacement, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -138,6 +137,7 @@ func (o *LoggingKinesisResponse) HasPlacement() bool {
 func (o *LoggingKinesisResponse) SetPlacement(v LoggingPlacement) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *LoggingKinesisResponse) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -257,7 +257,7 @@ func (o *LoggingKinesisResponse) GetSecretKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKinesisResponse) GetSecretKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SecretKey.Get(), o.SecretKey.IsSet()
@@ -276,6 +276,7 @@ func (o *LoggingKinesisResponse) HasSecretKey() bool {
 func (o *LoggingKinesisResponse) SetSecretKey(v string) {
 	o.SecretKey.Set(&v)
 }
+
 // SetSecretKeyNil sets the value for SecretKey to be an explicit nil
 func (o *LoggingKinesisResponse) SetSecretKeyNil() {
 	o.SecretKey.Set(nil)
@@ -299,7 +300,7 @@ func (o *LoggingKinesisResponse) GetAccessKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKinesisResponse) GetAccessKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AccessKey.Get(), o.AccessKey.IsSet()
@@ -318,6 +319,7 @@ func (o *LoggingKinesisResponse) HasAccessKey() bool {
 func (o *LoggingKinesisResponse) SetAccessKey(v string) {
 	o.AccessKey.Set(&v)
 }
+
 // SetAccessKeyNil sets the value for AccessKey to be an explicit nil
 func (o *LoggingKinesisResponse) SetAccessKeyNil() {
 	o.AccessKey.Set(nil)
@@ -341,7 +343,7 @@ func (o *LoggingKinesisResponse) GetIamRole() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKinesisResponse) GetIamRoleOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IamRole.Get(), o.IamRole.IsSet()
@@ -360,6 +362,7 @@ func (o *LoggingKinesisResponse) HasIamRole() bool {
 func (o *LoggingKinesisResponse) SetIamRole(v string) {
 	o.IamRole.Set(&v)
 }
+
 // SetIamRoleNil sets the value for IamRole to be an explicit nil
 func (o *LoggingKinesisResponse) SetIamRoleNil() {
 	o.IamRole.Set(nil)
@@ -415,7 +418,7 @@ func (o *LoggingKinesisResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKinesisResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -434,6 +437,7 @@ func (o *LoggingKinesisResponse) HasCreatedAt() bool {
 func (o *LoggingKinesisResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *LoggingKinesisResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -457,7 +461,7 @@ func (o *LoggingKinesisResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKinesisResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -476,6 +480,7 @@ func (o *LoggingKinesisResponse) HasDeletedAt() bool {
 func (o *LoggingKinesisResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *LoggingKinesisResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -499,7 +504,7 @@ func (o *LoggingKinesisResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKinesisResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -518,6 +523,7 @@ func (o *LoggingKinesisResponse) HasUpdatedAt() bool {
 func (o *LoggingKinesisResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *LoggingKinesisResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -647,7 +653,7 @@ func (o LoggingKinesisResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingKinesisResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingKinesisResponse := _LoggingKinesisResponse{}
 
@@ -678,7 +684,7 @@ func (o *LoggingKinesisResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingKinesisResponse is a helper abstraction for handling nullable loggingkinesisresponse types. 
+// NullableLoggingKinesisResponse is a helper abstraction for handling nullable loggingkinesisresponse types.
 type NullableLoggingKinesisResponse struct {
 	value *LoggingKinesisResponse
 	isSet bool
@@ -718,7 +724,7 @@ func (v NullableLoggingKinesisResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingKinesisResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

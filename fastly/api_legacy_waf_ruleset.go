@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,16 +31,16 @@ var (
 type LegacyWafRulesetAPI interface {
 
 	/*
-	GetWafRuleset Get a WAF ruleset
+		GetWafRuleset Get a WAF ruleset
 
-	Get a WAF ruleset for a particular service and firewall object.
+		Get a WAF ruleset for a particular service and firewall object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APIGetWafRulesetRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APIGetWafRulesetRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetWafRuleset(ctx context.Context, serviceID string, firewallID string) APIGetWafRulesetRequest
 
@@ -51,16 +50,16 @@ type LegacyWafRulesetAPI interface {
 	GetWafRulesetExecute(r APIGetWafRulesetRequest) (map[string]any, *http.Response, error)
 
 	/*
-	GetWafRulesetVcl Generate WAF ruleset VCL
+		GetWafRulesetVcl Generate WAF ruleset VCL
 
-	Get a preview of the WAF ruleset VCL for a particular service and firewall object based on changes to WAF configuration before deploying the ruleset. The response will include a link to status of the background VCL generation job. Once the background job is completed, the preview WAF ruleset VCL can be retrieved from the status response.
+		Get a preview of the WAF ruleset VCL for a particular service and firewall object based on changes to WAF configuration before deploying the ruleset. The response will include a link to status of the background VCL generation job. Once the background job is completed, the preview WAF ruleset VCL can be retrieved from the status response.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APIGetWafRulesetVclRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APIGetWafRulesetVclRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetWafRulesetVcl(ctx context.Context, serviceID string, firewallID string) APIGetWafRulesetVclRequest
 
@@ -70,16 +69,16 @@ type LegacyWafRulesetAPI interface {
 	GetWafRulesetVclExecute(r APIGetWafRulesetVclRequest) (map[string]any, *http.Response, error)
 
 	/*
-	UpdateWafRuleset Update a WAF ruleset
+		UpdateWafRuleset Update a WAF ruleset
 
-	Update the WAF ruleset for a particular service and firewall object. Use the URL in the response to view the WAF ruleset deploy status.
+		Update the WAF ruleset for a particular service and firewall object. Use the URL in the response to view the WAF ruleset deploy status.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APIUpdateWafRulesetRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APIUpdateWafRulesetRequest
 
-	Deprecated
+		Deprecated
 	*/
 	UpdateWafRuleset(ctx context.Context, serviceID string, firewallID string) APIUpdateWafRulesetRequest
 
@@ -94,12 +93,11 @@ type LegacyWafRulesetAPIService service
 
 // APIGetWafRulesetRequest represents a request for the resource.
 type APIGetWafRulesetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LegacyWafRulesetAPI
-	serviceID string
+	serviceID  string
 	firewallID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetWafRulesetRequest) Execute() (map[string]any, *http.Response, error) {
@@ -121,8 +119,8 @@ Deprecated
 func (a *LegacyWafRulesetAPIService) GetWafRuleset(ctx context.Context, serviceID string, firewallID string) APIGetWafRulesetRequest {
 	return APIGetWafRulesetRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 		firewallID: firewallID,
 	}
 }
@@ -132,10 +130,10 @@ func (a *LegacyWafRulesetAPIService) GetWafRuleset(ctx context.Context, serviceI
 // Deprecated
 func (a *LegacyWafRulesetAPIService) GetWafRulesetExecute(r APIGetWafRulesetRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafRulesetAPIService.GetWafRuleset")
@@ -216,7 +214,6 @@ func (a *LegacyWafRulesetAPIService) GetWafRulesetExecute(r APIGetWafRulesetRequ
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -235,12 +232,11 @@ func (a *LegacyWafRulesetAPIService) GetWafRulesetExecute(r APIGetWafRulesetRequ
 
 // APIGetWafRulesetVclRequest represents a request for the resource.
 type APIGetWafRulesetVclRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LegacyWafRulesetAPI
-	serviceID string
+	serviceID  string
 	firewallID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetWafRulesetVclRequest) Execute() (map[string]any, *http.Response, error) {
@@ -262,8 +258,8 @@ Deprecated
 func (a *LegacyWafRulesetAPIService) GetWafRulesetVcl(ctx context.Context, serviceID string, firewallID string) APIGetWafRulesetVclRequest {
 	return APIGetWafRulesetVclRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 		firewallID: firewallID,
 	}
 }
@@ -273,10 +269,10 @@ func (a *LegacyWafRulesetAPIService) GetWafRulesetVcl(ctx context.Context, servi
 // Deprecated
 func (a *LegacyWafRulesetAPIService) GetWafRulesetVclExecute(r APIGetWafRulesetVclRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafRulesetAPIService.GetWafRulesetVcl")
@@ -357,7 +353,6 @@ func (a *LegacyWafRulesetAPIService) GetWafRulesetVclExecute(r APIGetWafRulesetV
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -376,10 +371,10 @@ func (a *LegacyWafRulesetAPIService) GetWafRulesetVclExecute(r APIGetWafRulesetV
 
 // APIUpdateWafRulesetRequest represents a request for the resource.
 type APIUpdateWafRulesetRequest struct {
-	ctx context.Context
-	APIService LegacyWafRulesetAPI
-	serviceID string
-	firewallID string
+	ctx         context.Context
+	APIService  LegacyWafRulesetAPI
+	serviceID   string
+	firewallID  string
 	requestBody *map[string]map[string]any
 }
 
@@ -409,8 +404,8 @@ Deprecated
 func (a *LegacyWafRulesetAPIService) UpdateWafRuleset(ctx context.Context, serviceID string, firewallID string) APIUpdateWafRulesetRequest {
 	return APIUpdateWafRulesetRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 		firewallID: firewallID,
 	}
 }
@@ -420,10 +415,10 @@ func (a *LegacyWafRulesetAPIService) UpdateWafRuleset(ctx context.Context, servi
 // Deprecated
 func (a *LegacyWafRulesetAPIService) UpdateWafRulesetExecute(r APIUpdateWafRulesetRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafRulesetAPIService.UpdateWafRuleset")
@@ -505,7 +500,6 @@ func (a *LegacyWafRulesetAPIService) UpdateWafRulesetExecute(r APIUpdateWafRules
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

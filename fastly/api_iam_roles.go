@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,13 +31,13 @@ var (
 type IamRolesAPI interface {
 
 	/*
-	AddRolePermissions Add permissions to a role
+		AddRolePermissions Add permissions to a role
 
-	Add permissions to a role.
+		Add permissions to a role.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param roleID Alphanumeric string identifying the role.
-	 @return APIAddRolePermissionsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param roleID Alphanumeric string identifying the role.
+		 @return APIAddRolePermissionsRequest
 	*/
 	AddRolePermissions(ctx context.Context, roleID string) APIAddRolePermissionsRequest
 
@@ -47,12 +46,12 @@ type IamRolesAPI interface {
 	AddRolePermissionsExecute(r APIAddRolePermissionsRequest) (map[string]any, *http.Response, error)
 
 	/*
-	CreateARole Create a role
+		CreateARole Create a role
 
-	Create a role.
+		Create a role.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateARoleRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateARoleRequest
 	*/
 	CreateARole(ctx context.Context) APICreateARoleRequest
 
@@ -61,13 +60,13 @@ type IamRolesAPI interface {
 	CreateARoleExecute(r APICreateARoleRequest) (map[string]any, *http.Response, error)
 
 	/*
-	DeleteARole Delete a role
+		DeleteARole Delete a role
 
-	Delete a role.
+		Delete a role.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param roleID Alphanumeric string identifying the role.
-	 @return APIDeleteARoleRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param roleID Alphanumeric string identifying the role.
+		 @return APIDeleteARoleRequest
 	*/
 	DeleteARole(ctx context.Context, roleID string) APIDeleteARoleRequest
 
@@ -75,13 +74,13 @@ type IamRolesAPI interface {
 	DeleteARoleExecute(r APIDeleteARoleRequest) (*http.Response, error)
 
 	/*
-	GetARole Get a role
+		GetARole Get a role
 
-	Get a role.
+		Get a role.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param roleID Alphanumeric string identifying the role.
-	 @return APIGetARoleRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param roleID Alphanumeric string identifying the role.
+		 @return APIGetARoleRequest
 	*/
 	GetARole(ctx context.Context, roleID string) APIGetARoleRequest
 
@@ -90,13 +89,13 @@ type IamRolesAPI interface {
 	GetARoleExecute(r APIGetARoleRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListRolePermissions List permissions in a role
+		ListRolePermissions List permissions in a role
 
-	List all permissions in a role.
+		List all permissions in a role.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param roleID Alphanumeric string identifying the role.
-	 @return APIListRolePermissionsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param roleID Alphanumeric string identifying the role.
+		 @return APIListRolePermissionsRequest
 	*/
 	ListRolePermissions(ctx context.Context, roleID string) APIListRolePermissionsRequest
 
@@ -105,12 +104,12 @@ type IamRolesAPI interface {
 	ListRolePermissionsExecute(r APIListRolePermissionsRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListRoles List roles
+		ListRoles List roles
 
-	List all roles.
+		List all roles.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListRolesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListRolesRequest
 	*/
 	ListRoles(ctx context.Context) APIListRolesRequest
 
@@ -119,13 +118,13 @@ type IamRolesAPI interface {
 	ListRolesExecute(r APIListRolesRequest) (map[string]any, *http.Response, error)
 
 	/*
-	RemoveRolePermissions Remove permissions from a role
+		RemoveRolePermissions Remove permissions from a role
 
-	Remove permissions from a role.
+		Remove permissions from a role.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param roleID Alphanumeric string identifying the role.
-	 @return APIRemoveRolePermissionsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param roleID Alphanumeric string identifying the role.
+		 @return APIRemoveRolePermissionsRequest
 	*/
 	RemoveRolePermissions(ctx context.Context, roleID string) APIRemoveRolePermissionsRequest
 
@@ -133,13 +132,13 @@ type IamRolesAPI interface {
 	RemoveRolePermissionsExecute(r APIRemoveRolePermissionsRequest) (*http.Response, error)
 
 	/*
-	UpdateARole Update a role
+		UpdateARole Update a role
 
-	Update a role.
+		Update a role.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param roleID Alphanumeric string identifying the role.
-	 @return APIUpdateARoleRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param roleID Alphanumeric string identifying the role.
+		 @return APIUpdateARoleRequest
 	*/
 	UpdateARole(ctx context.Context, roleID string) APIUpdateARoleRequest
 
@@ -153,9 +152,9 @@ type IamRolesAPIService service
 
 // APIAddRolePermissionsRequest represents a request for the resource.
 type APIAddRolePermissionsRequest struct {
-	ctx context.Context
-	APIService IamRolesAPI
-	roleID string
+	ctx         context.Context
+	APIService  IamRolesAPI
+	roleID      string
 	requestBody *map[string]map[string]any
 }
 
@@ -182,8 +181,8 @@ Add permissions to a role.
 func (a *IamRolesAPIService) AddRolePermissions(ctx context.Context, roleID string) APIAddRolePermissionsRequest {
 	return APIAddRolePermissionsRequest{
 		APIService: a,
-		ctx: ctx,
-		roleID: roleID,
+		ctx:        ctx,
+		roleID:     roleID,
 	}
 }
 
@@ -191,10 +190,10 @@ func (a *IamRolesAPIService) AddRolePermissions(ctx context.Context, roleID stri
 //  @return map[string]any
 func (a *IamRolesAPIService) AddRolePermissionsExecute(r APIAddRolePermissionsRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamRolesAPIService.AddRolePermissions")
@@ -276,7 +275,6 @@ func (a *IamRolesAPIService) AddRolePermissionsExecute(r APIAddRolePermissionsRe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -295,8 +293,8 @@ func (a *IamRolesAPIService) AddRolePermissionsExecute(r APIAddRolePermissionsRe
 
 // APICreateARoleRequest represents a request for the resource.
 type APICreateARoleRequest struct {
-	ctx context.Context
-	APIService IamRolesAPI
+	ctx         context.Context
+	APIService  IamRolesAPI
 	requestBody *map[string]map[string]any
 }
 
@@ -322,7 +320,7 @@ Create a role.
 func (a *IamRolesAPIService) CreateARole(ctx context.Context) APICreateARoleRequest {
 	return APICreateARoleRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -330,10 +328,10 @@ func (a *IamRolesAPIService) CreateARole(ctx context.Context) APICreateARoleRequ
 //  @return map[string]any
 func (a *IamRolesAPIService) CreateARoleExecute(r APICreateARoleRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamRolesAPIService.CreateARole")
@@ -414,7 +412,6 @@ func (a *IamRolesAPIService) CreateARoleExecute(r APICreateARoleRequest) (map[st
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -433,11 +430,10 @@ func (a *IamRolesAPIService) CreateARoleExecute(r APICreateARoleRequest) (map[st
 
 // APIDeleteARoleRequest represents a request for the resource.
 type APIDeleteARoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService IamRolesAPI
-	roleID string
+	roleID     string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteARoleRequest) Execute() (*http.Response, error) {
@@ -456,17 +452,17 @@ Delete a role.
 func (a *IamRolesAPIService) DeleteARole(ctx context.Context, roleID string) APIDeleteARoleRequest {
 	return APIDeleteARoleRequest{
 		APIService: a,
-		ctx: ctx,
-		roleID: roleID,
+		ctx:        ctx,
+		roleID:     roleID,
 	}
 }
 
 // DeleteARoleExecute executes the request
 func (a *IamRolesAPIService) DeleteARoleExecute(r APIDeleteARoleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamRolesAPIService.DeleteARole")
@@ -537,7 +533,6 @@ func (a *IamRolesAPIService) DeleteARoleExecute(r APIDeleteARoleRequest) (*http.
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -556,11 +551,10 @@ func (a *IamRolesAPIService) DeleteARoleExecute(r APIDeleteARoleRequest) (*http.
 
 // APIGetARoleRequest represents a request for the resource.
 type APIGetARoleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService IamRolesAPI
-	roleID string
+	roleID     string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetARoleRequest) Execute() (map[string]any, *http.Response, error) {
@@ -579,8 +573,8 @@ Get a role.
 func (a *IamRolesAPIService) GetARole(ctx context.Context, roleID string) APIGetARoleRequest {
 	return APIGetARoleRequest{
 		APIService: a,
-		ctx: ctx,
-		roleID: roleID,
+		ctx:        ctx,
+		roleID:     roleID,
 	}
 }
 
@@ -588,10 +582,10 @@ func (a *IamRolesAPIService) GetARole(ctx context.Context, roleID string) APIGet
 //  @return map[string]any
 func (a *IamRolesAPIService) GetARoleExecute(r APIGetARoleRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamRolesAPIService.GetARole")
@@ -671,7 +665,6 @@ func (a *IamRolesAPIService) GetARoleExecute(r APIGetARoleRequest) (map[string]a
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -690,11 +683,10 @@ func (a *IamRolesAPIService) GetARoleExecute(r APIGetARoleRequest) (map[string]a
 
 // APIListRolePermissionsRequest represents a request for the resource.
 type APIListRolePermissionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService IamRolesAPI
-	roleID string
+	roleID     string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListRolePermissionsRequest) Execute() (map[string]any, *http.Response, error) {
@@ -713,8 +705,8 @@ List all permissions in a role.
 func (a *IamRolesAPIService) ListRolePermissions(ctx context.Context, roleID string) APIListRolePermissionsRequest {
 	return APIListRolePermissionsRequest{
 		APIService: a,
-		ctx: ctx,
-		roleID: roleID,
+		ctx:        ctx,
+		roleID:     roleID,
 	}
 }
 
@@ -722,10 +714,10 @@ func (a *IamRolesAPIService) ListRolePermissions(ctx context.Context, roleID str
 //  @return map[string]any
 func (a *IamRolesAPIService) ListRolePermissionsExecute(r APIListRolePermissionsRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamRolesAPIService.ListRolePermissions")
@@ -805,7 +797,6 @@ func (a *IamRolesAPIService) ListRolePermissionsExecute(r APIListRolePermissions
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -824,10 +815,10 @@ func (a *IamRolesAPIService) ListRolePermissionsExecute(r APIListRolePermissions
 
 // APIListRolesRequest represents a request for the resource.
 type APIListRolesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService IamRolesAPI
-	perPage *int32
-	page *int32
+	perPage    *int32
+	page       *int32
 }
 
 // PerPage Number of records per page.
@@ -835,6 +826,7 @@ func (r *APIListRolesRequest) PerPage(perPage int32) *APIListRolesRequest {
 	r.perPage = &perPage
 	return r
 }
+
 // Page Current page.
 func (r *APIListRolesRequest) Page(page int32) *APIListRolesRequest {
 	r.page = &page
@@ -857,7 +849,7 @@ List all roles.
 func (a *IamRolesAPIService) ListRoles(ctx context.Context) APIListRolesRequest {
 	return APIListRolesRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -865,10 +857,10 @@ func (a *IamRolesAPIService) ListRoles(ctx context.Context) APIListRolesRequest 
 //  @return map[string]any
 func (a *IamRolesAPIService) ListRolesExecute(r APIListRolesRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamRolesAPIService.ListRoles")
@@ -953,7 +945,6 @@ func (a *IamRolesAPIService) ListRolesExecute(r APIListRolesRequest) (map[string
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -972,9 +963,9 @@ func (a *IamRolesAPIService) ListRolesExecute(r APIListRolesRequest) (map[string
 
 // APIRemoveRolePermissionsRequest represents a request for the resource.
 type APIRemoveRolePermissionsRequest struct {
-	ctx context.Context
-	APIService IamRolesAPI
-	roleID string
+	ctx         context.Context
+	APIService  IamRolesAPI
+	roleID      string
 	requestBody *map[string]map[string]any
 }
 
@@ -1001,17 +992,17 @@ Remove permissions from a role.
 func (a *IamRolesAPIService) RemoveRolePermissions(ctx context.Context, roleID string) APIRemoveRolePermissionsRequest {
 	return APIRemoveRolePermissionsRequest{
 		APIService: a,
-		ctx: ctx,
-		roleID: roleID,
+		ctx:        ctx,
+		roleID:     roleID,
 	}
 }
 
 // RemoveRolePermissionsExecute executes the request
 func (a *IamRolesAPIService) RemoveRolePermissionsExecute(r APIRemoveRolePermissionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamRolesAPIService.RemoveRolePermissions")
@@ -1084,7 +1075,6 @@ func (a *IamRolesAPIService) RemoveRolePermissionsExecute(r APIRemoveRolePermiss
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1103,9 +1093,9 @@ func (a *IamRolesAPIService) RemoveRolePermissionsExecute(r APIRemoveRolePermiss
 
 // APIUpdateARoleRequest represents a request for the resource.
 type APIUpdateARoleRequest struct {
-	ctx context.Context
-	APIService IamRolesAPI
-	roleID string
+	ctx         context.Context
+	APIService  IamRolesAPI
+	roleID      string
 	requestBody *map[string]map[string]any
 }
 
@@ -1132,8 +1122,8 @@ Update a role.
 func (a *IamRolesAPIService) UpdateARole(ctx context.Context, roleID string) APIUpdateARoleRequest {
 	return APIUpdateARoleRequest{
 		APIService: a,
-		ctx: ctx,
-		roleID: roleID,
+		ctx:        ctx,
+		roleID:     roleID,
 	}
 }
 
@@ -1141,10 +1131,10 @@ func (a *IamRolesAPIService) UpdateARole(ctx context.Context, roleID string) API
 //  @return map[string]any
 func (a *IamRolesAPIService) UpdateARoleExecute(r APIUpdateARoleRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamRolesAPIService.UpdateARole")
@@ -1225,7 +1215,6 @@ func (a *IamRolesAPIService) UpdateARoleExecute(r APIUpdateARoleRequest) (map[st
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

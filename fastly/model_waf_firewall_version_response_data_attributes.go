@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -49,7 +48,7 @@ type WafFirewallVersionResponseDataAttributes struct {
 	// Time-stamp (GMT) indicating when the firewall version was last deployed.
 	DeployedAt *string `json:"deployed_at,omitempty"`
 	// Contains error message if the firewall version fails to deploy.
-	Error *string `json:"error,omitempty"`
+	Error                *string `json:"error,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -85,7 +84,7 @@ func (o *WafFirewallVersionResponseDataAttributes) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafFirewallVersionResponseDataAttributes) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -104,6 +103,7 @@ func (o *WafFirewallVersionResponseDataAttributes) HasCreatedAt() bool {
 func (o *WafFirewallVersionResponseDataAttributes) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *WafFirewallVersionResponseDataAttributes) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -127,7 +127,7 @@ func (o *WafFirewallVersionResponseDataAttributes) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafFirewallVersionResponseDataAttributes) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -146,6 +146,7 @@ func (o *WafFirewallVersionResponseDataAttributes) HasDeletedAt() bool {
 func (o *WafFirewallVersionResponseDataAttributes) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *WafFirewallVersionResponseDataAttributes) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -169,7 +170,7 @@ func (o *WafFirewallVersionResponseDataAttributes) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafFirewallVersionResponseDataAttributes) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -188,6 +189,7 @@ func (o *WafFirewallVersionResponseDataAttributes) HasUpdatedAt() bool {
 func (o *WafFirewallVersionResponseDataAttributes) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *WafFirewallVersionResponseDataAttributes) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -499,7 +501,7 @@ func (o *WafFirewallVersionResponseDataAttributes) GetLastDeploymentStatus() str
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafFirewallVersionResponseDataAttributes) GetLastDeploymentStatusOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LastDeploymentStatus.Get(), o.LastDeploymentStatus.IsSet()
@@ -518,6 +520,7 @@ func (o *WafFirewallVersionResponseDataAttributes) HasLastDeploymentStatus() boo
 func (o *WafFirewallVersionResponseDataAttributes) SetLastDeploymentStatus(v string) {
 	o.LastDeploymentStatus.Set(&v)
 }
+
 // SetLastDeploymentStatusNil sets the value for LastDeploymentStatus to be an explicit nil
 func (o *WafFirewallVersionResponseDataAttributes) SetLastDeploymentStatusNil() {
 	o.LastDeploymentStatus.Set(nil)
@@ -650,7 +653,7 @@ func (o WafFirewallVersionResponseDataAttributes) MarshalJSON() ([]byte, error) 
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *WafFirewallVersionResponseDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	varWafFirewallVersionResponseDataAttributes := _WafFirewallVersionResponseDataAttributes{}
 
@@ -682,7 +685,7 @@ func (o *WafFirewallVersionResponseDataAttributes) UnmarshalJSON(bytes []byte) (
 	return err
 }
 
-// NullableWafFirewallVersionResponseDataAttributes is a helper abstraction for handling nullable waffirewallversionresponsedataattributes types. 
+// NullableWafFirewallVersionResponseDataAttributes is a helper abstraction for handling nullable waffirewallversionresponsedataattributes types.
 type NullableWafFirewallVersionResponseDataAttributes struct {
 	value *WafFirewallVersionResponseDataAttributes
 	isSet bool
@@ -722,7 +725,7 @@ func (v NullableWafFirewallVersionResponseDataAttributes) MarshalJSON() ([]byte,
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableWafFirewallVersionResponseDataAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

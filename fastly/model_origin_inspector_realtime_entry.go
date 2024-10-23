@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,19 +12,18 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
-// OriginInspectorRealtimeEntry Each reporting period is represented by an entry in the `Data` property of the top level response and provides access to [measurement data](#measurements-data-model) for that time period, grouped by origin name and optionally by POP. The `datacenter` property organizes the measurements by Fastly POP, while the `aggregated` property combines the measurements of all POPs. 
+// OriginInspectorRealtimeEntry Each reporting period is represented by an entry in the `Data` property of the top level response and provides access to [measurement data](#measurements-data-model) for that time period, grouped by origin name and optionally by POP. The `datacenter` property organizes the measurements by Fastly POP, while the `aggregated` property combines the measurements of all POPs.
 type OriginInspectorRealtimeEntry struct {
 	// The Unix timestamp at which this record's data was generated.
 	Recorded *int32 `json:"recorded,omitempty"`
 	// Groups [measurements](#measurements-data-model) by backend name.
 	Aggregated *map[string]OriginInspectorMeasurements `json:"aggregated,omitempty"`
 	// Groups [measurements](#measurements-data-model) by POP, then backend name. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details about POP identifiers.
-	Datacenter *map[string]map[string]OriginInspectorMeasurements `json:"datacenter,omitempty"`
+	Datacenter           *map[string]map[string]OriginInspectorMeasurements `json:"datacenter,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -165,7 +164,7 @@ func (o OriginInspectorRealtimeEntry) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *OriginInspectorRealtimeEntry) UnmarshalJSON(bytes []byte) (err error) {
 	varOriginInspectorRealtimeEntry := _OriginInspectorRealtimeEntry{}
 
@@ -185,7 +184,7 @@ func (o *OriginInspectorRealtimeEntry) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableOriginInspectorRealtimeEntry is a helper abstraction for handling nullable origininspectorrealtimeentry types. 
+// NullableOriginInspectorRealtimeEntry is a helper abstraction for handling nullable origininspectorrealtimeentry types.
 type NullableOriginInspectorRealtimeEntry struct {
 	value *OriginInspectorRealtimeEntry
 	isSet bool
@@ -225,7 +224,7 @@ func (v NullableOriginInspectorRealtimeEntry) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableOriginInspectorRealtimeEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

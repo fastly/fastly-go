@@ -1,5 +1,15 @@
 # Changelog
 
+## [v1.0.0-beta.36](https://github.com/fastly/fastly-go/releases/tag/release/v1.0.0-beta.36) (2024-10-23)
+
+**Enhancements:**
+
+- feat(go): Run 'gofmt' on generated Go code.
+
+**Documentation:**
+
+- doc(backend): Correct spelling in `connect_timeout` and `first_byte_timeout` field descriptions.
+
 ## [v1.0.0-beta.35](https://github.com/fastly/fastly-go/releases/tag/release/v1.0.0-beta.35) (2024-09-13)
 
 **Bug fixes:**

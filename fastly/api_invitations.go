@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type InvitationsAPI interface {
 
 	/*
-	CreateInvitation Create an invitation
+		CreateInvitation Create an invitation
 
-	Create an invitation.
+		Create an invitation.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateInvitationRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateInvitationRequest
 	*/
 	CreateInvitation(ctx context.Context) APICreateInvitationRequest
 
@@ -46,13 +45,13 @@ type InvitationsAPI interface {
 	CreateInvitationExecute(r APICreateInvitationRequest) (*InvitationResponse, *http.Response, error)
 
 	/*
-	DeleteInvitation Delete an invitation
+		DeleteInvitation Delete an invitation
 
-	Delete an invitation.
+		Delete an invitation.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param invitationID Alphanumeric string identifying an invitation.
-	 @return APIDeleteInvitationRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param invitationID Alphanumeric string identifying an invitation.
+		 @return APIDeleteInvitationRequest
 	*/
 	DeleteInvitation(ctx context.Context, invitationID string) APIDeleteInvitationRequest
 
@@ -60,12 +59,12 @@ type InvitationsAPI interface {
 	DeleteInvitationExecute(r APIDeleteInvitationRequest) (*http.Response, error)
 
 	/*
-	ListInvitations List invitations
+		ListInvitations List invitations
 
-	List all invitations.
+		List all invitations.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListInvitationsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListInvitationsRequest
 	*/
 	ListInvitations(ctx context.Context) APIListInvitationsRequest
 
@@ -79,7 +78,7 @@ type InvitationsAPIService service
 
 // APICreateInvitationRequest represents a request for the resource.
 type APICreateInvitationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService InvitationsAPI
 	invitation *Invitation
 }
@@ -106,7 +105,7 @@ Create an invitation.
 func (a *InvitationsAPIService) CreateInvitation(ctx context.Context) APICreateInvitationRequest {
 	return APICreateInvitationRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -114,10 +113,10 @@ func (a *InvitationsAPIService) CreateInvitation(ctx context.Context) APICreateI
 //  @return InvitationResponse
 func (a *InvitationsAPIService) CreateInvitationExecute(r APICreateInvitationRequest) (*InvitationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InvitationResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InvitationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InvitationsAPIService.CreateInvitation")
@@ -198,7 +197,6 @@ func (a *InvitationsAPIService) CreateInvitationExecute(r APICreateInvitationReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -217,11 +215,10 @@ func (a *InvitationsAPIService) CreateInvitationExecute(r APICreateInvitationReq
 
 // APIDeleteInvitationRequest represents a request for the resource.
 type APIDeleteInvitationRequest struct {
-	ctx context.Context
-	APIService InvitationsAPI
+	ctx          context.Context
+	APIService   InvitationsAPI
 	invitationID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteInvitationRequest) Execute() (*http.Response, error) {
@@ -239,8 +236,8 @@ Delete an invitation.
 */
 func (a *InvitationsAPIService) DeleteInvitation(ctx context.Context, invitationID string) APIDeleteInvitationRequest {
 	return APIDeleteInvitationRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:   a,
+		ctx:          ctx,
 		invitationID: invitationID,
 	}
 }
@@ -248,9 +245,9 @@ func (a *InvitationsAPIService) DeleteInvitation(ctx context.Context, invitation
 // DeleteInvitationExecute executes the request
 func (a *InvitationsAPIService) DeleteInvitationExecute(r APIDeleteInvitationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InvitationsAPIService.DeleteInvitation")
@@ -321,7 +318,6 @@ func (a *InvitationsAPIService) DeleteInvitationExecute(r APIDeleteInvitationReq
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -340,10 +336,10 @@ func (a *InvitationsAPIService) DeleteInvitationExecute(r APIDeleteInvitationReq
 
 // APIListInvitationsRequest represents a request for the resource.
 type APIListInvitationsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService InvitationsAPI
 	pageNumber *int32
-	pageSize *int32
+	pageSize   *int32
 }
 
 // PageNumber Current page.
@@ -351,6 +347,7 @@ func (r *APIListInvitationsRequest) PageNumber(pageNumber int32) *APIListInvitat
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListInvitationsRequest) PageSize(pageSize int32) *APIListInvitationsRequest {
 	r.pageSize = &pageSize
@@ -373,7 +370,7 @@ List all invitations.
 func (a *InvitationsAPIService) ListInvitations(ctx context.Context) APIListInvitationsRequest {
 	return APIListInvitationsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -381,10 +378,10 @@ func (a *InvitationsAPIService) ListInvitations(ctx context.Context) APIListInvi
 //  @return InvitationsResponse
 func (a *InvitationsAPIService) ListInvitationsExecute(r APIListInvitationsRequest) (*InvitationsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InvitationsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InvitationsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InvitationsAPIService.ListInvitations")
@@ -468,7 +465,6 @@ func (a *InvitationsAPIService) ListInvitationsExecute(r APIListInvitationsReque
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -31,12 +30,12 @@ var (
 type PopAPI interface {
 
 	/*
-	ListPops List Fastly POPs
+		ListPops List Fastly POPs
 
-	Get a list of all Fastly POPs.
+		Get a list of all Fastly POPs.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListPopsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListPopsRequest
 	*/
 	ListPops(ctx context.Context) APIListPopsRequest
 
@@ -50,10 +49,9 @@ type PopAPIService service
 
 // APIListPopsRequest represents a request for the resource.
 type APIListPopsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService PopAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListPopsRequest) Execute() ([]Pop, *http.Response, error) {
@@ -71,7 +69,7 @@ Get a list of all Fastly POPs.
 func (a *PopAPIService) ListPops(ctx context.Context) APIListPopsRequest {
 	return APIListPopsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -79,10 +77,10 @@ func (a *PopAPIService) ListPops(ctx context.Context) APIListPopsRequest {
 //  @return []Pop
 func (a *PopAPIService) ListPopsExecute(r APIListPopsRequest) ([]Pop, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []Pop
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []Pop
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PopAPIService.ListPops")
@@ -160,7 +158,6 @@ func (a *PopAPIService) ListPopsExecute(r APIListPopsRequest) ([]Pop, *http.Resp
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

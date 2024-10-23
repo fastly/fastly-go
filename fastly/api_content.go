@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -31,12 +30,12 @@ var (
 type ContentAPI interface {
 
 	/*
-	ContentCheck Check status of content in each POP's cache
+		ContentCheck Check status of content in each POP's cache
 
-	Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour. If the content takes too long to download, the hash will be set to `error-timeout-$pop`. If the response is too large, it will be set to `warning-too-large-$pop`.
+		Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour. If the content takes too long to download, the hash will be set to `error-timeout-$pop`. If the response is too large, it will be set to `warning-too-large-$pop`.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIContentCheckRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIContentCheckRequest
 	*/
 	ContentCheck(ctx context.Context) APIContentCheckRequest
 
@@ -50,9 +49,9 @@ type ContentAPIService service
 
 // APIContentCheckRequest represents a request for the resource.
 type APIContentCheckRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ContentAPI
-	url *string
+	url        *string
 }
 
 // URL Full URL (host and path) to check on all nodes. if protocol is omitted, http will be assumed.
@@ -77,7 +76,7 @@ Retrieve headers and MD5 hash of the content for a particular URL from each Fast
 func (a *ContentAPIService) ContentCheck(ctx context.Context) APIContentCheckRequest {
 	return APIContentCheckRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -85,10 +84,10 @@ func (a *ContentAPIService) ContentCheck(ctx context.Context) APIContentCheckReq
 //  @return []Content
 func (a *ContentAPIService) ContentCheckExecute(r APIContentCheckRequest) ([]Content, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []Content
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []Content
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ContentAPIService.ContentCheck")
@@ -169,7 +168,6 @@ func (a *ContentAPIService) ContentCheckExecute(r APIContentCheckRequest) ([]Con
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

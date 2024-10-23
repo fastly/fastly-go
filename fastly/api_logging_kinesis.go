@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingKinesisAPI interface {
 
 	/*
-	CreateLogKinesis Create  an Amazon Kinesis log endpoint
+		CreateLogKinesis Create  an Amazon Kinesis log endpoint
 
-	Create an Amazon Kinesis Data Streams logging object for a particular service and version.
+		Create an Amazon Kinesis Data Streams logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogKinesisRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogKinesisRequest
 	*/
 	CreateLogKinesis(ctx context.Context, serviceID string, versionID int32) APICreateLogKinesisRequest
 
@@ -48,15 +47,15 @@ type LoggingKinesisAPI interface {
 	CreateLogKinesisExecute(r APICreateLogKinesisRequest) (*LoggingKinesisResponse, *http.Response, error)
 
 	/*
-	DeleteLogKinesis Delete the Amazon Kinesis log endpoint
+		DeleteLogKinesis Delete the Amazon Kinesis log endpoint
 
-	Delete an Amazon Kinesis Data Streams logging object for a particular service and version.
+		Delete an Amazon Kinesis Data Streams logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingKinesisName The name for the real-time logging configuration.
-	 @return APIDeleteLogKinesisRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingKinesisName The name for the real-time logging configuration.
+		 @return APIDeleteLogKinesisRequest
 	*/
 	DeleteLogKinesis(ctx context.Context, serviceID string, versionID int32, loggingKinesisName string) APIDeleteLogKinesisRequest
 
@@ -65,15 +64,15 @@ type LoggingKinesisAPI interface {
 	DeleteLogKinesisExecute(r APIDeleteLogKinesisRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogKinesis Get an Amazon Kinesis log endpoint
+		GetLogKinesis Get an Amazon Kinesis log endpoint
 
-	Get the details for an Amazon Kinesis Data Streams logging object for a particular service and version.
+		Get the details for an Amazon Kinesis Data Streams logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingKinesisName The name for the real-time logging configuration.
-	 @return APIGetLogKinesisRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingKinesisName The name for the real-time logging configuration.
+		 @return APIGetLogKinesisRequest
 	*/
 	GetLogKinesis(ctx context.Context, serviceID string, versionID int32, loggingKinesisName string) APIGetLogKinesisRequest
 
@@ -82,14 +81,14 @@ type LoggingKinesisAPI interface {
 	GetLogKinesisExecute(r APIGetLogKinesisRequest) (*LoggingKinesisResponse, *http.Response, error)
 
 	/*
-	ListLogKinesis List Amazon Kinesis log endpoints
+		ListLogKinesis List Amazon Kinesis log endpoints
 
-	List all of the Amazon Kinesis Data Streams logging objects for a particular service and version.
+		List all of the Amazon Kinesis Data Streams logging objects for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogKinesisRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogKinesisRequest
 	*/
 	ListLogKinesis(ctx context.Context, serviceID string, versionID int32) APIListLogKinesisRequest
 
@@ -98,15 +97,15 @@ type LoggingKinesisAPI interface {
 	ListLogKinesisExecute(r APIListLogKinesisRequest) ([]LoggingKinesisResponse, *http.Response, error)
 
 	/*
-	UpdateLogKinesis Update the Amazon Kinesis log endpoint
+		UpdateLogKinesis Update the Amazon Kinesis log endpoint
 
-	Update an Amazon Kinesis Data Streams logging object for a particular service and version.
+		Update an Amazon Kinesis Data Streams logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingKinesisName The name for the real-time logging configuration.
-	 @return APIUpdateLogKinesisRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingKinesisName The name for the real-time logging configuration.
+		 @return APIUpdateLogKinesisRequest
 	*/
 	UpdateLogKinesis(ctx context.Context, serviceID string, versionID int32, loggingKinesisName string) APIUpdateLogKinesisRequest
 
@@ -120,18 +119,18 @@ type LoggingKinesisAPIService service
 
 // APICreateLogKinesisRequest represents a request for the resource.
 type APICreateLogKinesisRequest struct {
-	ctx context.Context
-	APIService LoggingKinesisAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *LoggingPlacement
-	format *string
-	topic *string
-	region *AwsRegion
-	secretKey *string
-	accessKey *string
-	iamRole *string
+	ctx           context.Context
+	APIService    LoggingKinesisAPI
+	serviceID     string
+	versionID     int32
+	name          *string
+	placement     *LoggingPlacement
+	format        *string
+	topic         *string
+	region        *AwsRegion
+	secretKey     *string
+	accessKey     *string
+	iamRole       *string
 	formatVersion *int32
 }
 
@@ -140,42 +139,50 @@ func (r *APICreateLogKinesisRequest) Name(name string) *APICreateLogKinesisReque
 	r.name = &name
 	return r
 }
+
 // Placement returns a pointer to a request.
 func (r *APICreateLogKinesisRequest) Placement(placement LoggingPlacement) *APICreateLogKinesisRequest {
 	r.placement = &placement
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogKinesisRequest) Format(format string) *APICreateLogKinesisRequest {
 	r.format = &format
 	return r
 }
+
 // Topic The Amazon Kinesis stream to send logs to. Required.
 func (r *APICreateLogKinesisRequest) Topic(topic string) *APICreateLogKinesisRequest {
 	r.topic = &topic
 	return r
 }
+
 // Region returns a pointer to a request.
 func (r *APICreateLogKinesisRequest) Region(region AwsRegion) *APICreateLogKinesisRequest {
 	r.region = &region
 	return r
 }
+
 // SecretKey The secret key associated with the target Amazon Kinesis stream. Not required if &#x60;iam_role&#x60; is specified.
 func (r *APICreateLogKinesisRequest) SecretKey(secretKey string) *APICreateLogKinesisRequest {
 	r.secretKey = &secretKey
 	return r
 }
+
 // AccessKey The access key associated with the target Amazon Kinesis stream. Not required if &#x60;iam_role&#x60; is specified.
 func (r *APICreateLogKinesisRequest) AccessKey(accessKey string) *APICreateLogKinesisRequest {
 	r.accessKey = &accessKey
 	return r
 }
+
 // IamRole The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if &#x60;access_key&#x60; and &#x60;secret_key&#x60; are provided.
 func (r *APICreateLogKinesisRequest) IamRole(iamRole string) *APICreateLogKinesisRequest {
 	r.iamRole = &iamRole
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogKinesisRequest) FormatVersion(formatVersion int32) *APICreateLogKinesisRequest {
 	r.formatVersion = &formatVersion
 	return r
@@ -199,9 +206,9 @@ Create an Amazon Kinesis Data Streams logging object for a particular service an
 func (a *LoggingKinesisAPIService) CreateLogKinesis(ctx context.Context, serviceID string, versionID int32) APICreateLogKinesisRequest {
 	return APICreateLogKinesisRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -209,10 +216,10 @@ func (a *LoggingKinesisAPIService) CreateLogKinesis(ctx context.Context, service
 //  @return LoggingKinesisResponse
 func (a *LoggingKinesisAPIService) CreateLogKinesisExecute(r APICreateLogKinesisRequest) (*LoggingKinesisResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingKinesisResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingKinesisResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingKinesisAPIService.CreateLogKinesis")
@@ -320,7 +327,6 @@ func (a *LoggingKinesisAPIService) CreateLogKinesisExecute(r APICreateLogKinesis
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -339,13 +345,12 @@ func (a *LoggingKinesisAPIService) CreateLogKinesisExecute(r APICreateLogKinesis
 
 // APIDeleteLogKinesisRequest represents a request for the resource.
 type APIDeleteLogKinesisRequest struct {
-	ctx context.Context
-	APIService LoggingKinesisAPI
-	serviceID string
-	versionID int32
+	ctx                context.Context
+	APIService         LoggingKinesisAPI
+	serviceID          string
+	versionID          int32
 	loggingKinesisName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogKinesisRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -365,10 +370,10 @@ Delete an Amazon Kinesis Data Streams logging object for a particular service an
 */
 func (a *LoggingKinesisAPIService) DeleteLogKinesis(ctx context.Context, serviceID string, versionID int32, loggingKinesisName string) APIDeleteLogKinesisRequest {
 	return APIDeleteLogKinesisRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:         a,
+		ctx:                ctx,
+		serviceID:          serviceID,
+		versionID:          versionID,
 		loggingKinesisName: loggingKinesisName,
 	}
 }
@@ -377,10 +382,10 @@ func (a *LoggingKinesisAPIService) DeleteLogKinesis(ctx context.Context, service
 //  @return InlineResponse200
 func (a *LoggingKinesisAPIService) DeleteLogKinesisExecute(r APIDeleteLogKinesisRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingKinesisAPIService.DeleteLogKinesis")
@@ -462,7 +467,6 @@ func (a *LoggingKinesisAPIService) DeleteLogKinesisExecute(r APIDeleteLogKinesis
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -481,13 +485,12 @@ func (a *LoggingKinesisAPIService) DeleteLogKinesisExecute(r APIDeleteLogKinesis
 
 // APIGetLogKinesisRequest represents a request for the resource.
 type APIGetLogKinesisRequest struct {
-	ctx context.Context
-	APIService LoggingKinesisAPI
-	serviceID string
-	versionID int32
+	ctx                context.Context
+	APIService         LoggingKinesisAPI
+	serviceID          string
+	versionID          int32
 	loggingKinesisName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogKinesisRequest) Execute() (*LoggingKinesisResponse, *http.Response, error) {
@@ -507,10 +510,10 @@ Get the details for an Amazon Kinesis Data Streams logging object for a particul
 */
 func (a *LoggingKinesisAPIService) GetLogKinesis(ctx context.Context, serviceID string, versionID int32, loggingKinesisName string) APIGetLogKinesisRequest {
 	return APIGetLogKinesisRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:         a,
+		ctx:                ctx,
+		serviceID:          serviceID,
+		versionID:          versionID,
 		loggingKinesisName: loggingKinesisName,
 	}
 }
@@ -519,10 +522,10 @@ func (a *LoggingKinesisAPIService) GetLogKinesis(ctx context.Context, serviceID 
 //  @return LoggingKinesisResponse
 func (a *LoggingKinesisAPIService) GetLogKinesisExecute(r APIGetLogKinesisRequest) (*LoggingKinesisResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingKinesisResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingKinesisResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingKinesisAPIService.GetLogKinesis")
@@ -604,7 +607,6 @@ func (a *LoggingKinesisAPIService) GetLogKinesisExecute(r APIGetLogKinesisReques
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -623,12 +625,11 @@ func (a *LoggingKinesisAPIService) GetLogKinesisExecute(r APIGetLogKinesisReques
 
 // APIListLogKinesisRequest represents a request for the resource.
 type APIListLogKinesisRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingKinesisAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogKinesisRequest) Execute() ([]LoggingKinesisResponse, *http.Response, error) {
@@ -648,9 +649,9 @@ List all of the Amazon Kinesis Data Streams logging objects for a particular ser
 func (a *LoggingKinesisAPIService) ListLogKinesis(ctx context.Context, serviceID string, versionID int32) APIListLogKinesisRequest {
 	return APIListLogKinesisRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -658,10 +659,10 @@ func (a *LoggingKinesisAPIService) ListLogKinesis(ctx context.Context, serviceID
 //  @return []LoggingKinesisResponse
 func (a *LoggingKinesisAPIService) ListLogKinesisExecute(r APIListLogKinesisRequest) ([]LoggingKinesisResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingKinesisResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingKinesisResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingKinesisAPIService.ListLogKinesis")
@@ -742,7 +743,6 @@ func (a *LoggingKinesisAPIService) ListLogKinesisExecute(r APIListLogKinesisRequ
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -761,13 +761,12 @@ func (a *LoggingKinesisAPIService) ListLogKinesisExecute(r APIListLogKinesisRequ
 
 // APIUpdateLogKinesisRequest represents a request for the resource.
 type APIUpdateLogKinesisRequest struct {
-	ctx context.Context
-	APIService LoggingKinesisAPI
-	serviceID string
-	versionID int32
+	ctx                context.Context
+	APIService         LoggingKinesisAPI
+	serviceID          string
+	versionID          int32
 	loggingKinesisName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIUpdateLogKinesisRequest) Execute() (*LoggingKinesisResponse, *http.Response, error) {
@@ -787,10 +786,10 @@ Update an Amazon Kinesis Data Streams logging object for a particular service an
 */
 func (a *LoggingKinesisAPIService) UpdateLogKinesis(ctx context.Context, serviceID string, versionID int32, loggingKinesisName string) APIUpdateLogKinesisRequest {
 	return APIUpdateLogKinesisRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:         a,
+		ctx:                ctx,
+		serviceID:          serviceID,
+		versionID:          versionID,
 		loggingKinesisName: loggingKinesisName,
 	}
 }
@@ -799,10 +798,10 @@ func (a *LoggingKinesisAPIService) UpdateLogKinesis(ctx context.Context, service
 //  @return LoggingKinesisResponse
 func (a *LoggingKinesisAPIService) UpdateLogKinesisExecute(r APIUpdateLogKinesisRequest) (*LoggingKinesisResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingKinesisResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingKinesisResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingKinesisAPIService.UpdateLogKinesis")
@@ -883,7 +882,6 @@ func (a *LoggingKinesisAPIService) UpdateLogKinesisExecute(r APIUpdateLogKinesis
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

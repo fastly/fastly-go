@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -31,12 +30,12 @@ var (
 type TLSDomainsAPI interface {
 
 	/*
-	ListTLSDomains List TLS domains
+		ListTLSDomains List TLS domains
 
-	List all TLS domains.
+		List all TLS domains.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListTLSDomainsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListTLSDomainsRequest
 	*/
 	ListTLSDomains(ctx context.Context) APIListTLSDomainsRequest
 
@@ -50,15 +49,15 @@ type TLSDomainsAPIService service
 
 // APIListTLSDomainsRequest represents a request for the resource.
 type APIListTLSDomainsRequest struct {
-	ctx context.Context
-	APIService TLSDomainsAPI
-	filterInUse *string
-	filterTLSCertificatesID *string
+	ctx                      context.Context
+	APIService               TLSDomainsAPI
+	filterInUse              *string
+	filterTLSCertificatesID  *string
 	filterTLSSubscriptionsID *string
-	include *string
-	sort *string
-	pageNumber *int32
-	pageSize *int32
+	include                  *string
+	sort                     *string
+	pageNumber               *int32
+	pageSize                 *int32
 }
 
 // FilterInUse Optional. Limit the returned domains to those currently using Fastly to terminate TLS with SNI (that is, domains considered \&quot;in use\&quot;) Permitted values: true, false.
@@ -66,31 +65,37 @@ func (r *APIListTLSDomainsRequest) FilterInUse(filterInUse string) *APIListTLSDo
 	r.filterInUse = &filterInUse
 	return r
 }
+
 // FilterTLSCertificatesID Optional. Limit the returned domains to those listed in the given TLS certificate&#39;s SAN list.
 func (r *APIListTLSDomainsRequest) FilterTLSCertificatesID(filterTLSCertificatesID string) *APIListTLSDomainsRequest {
 	r.filterTLSCertificatesID = &filterTLSCertificatesID
 	return r
 }
+
 // FilterTLSSubscriptionsID Optional. Limit the returned domains to those for a given TLS subscription.
 func (r *APIListTLSDomainsRequest) FilterTLSSubscriptionsID(filterTLSSubscriptionsID string) *APIListTLSDomainsRequest {
 	r.filterTLSSubscriptionsID = &filterTLSSubscriptionsID
 	return r
 }
-// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_activations&#x60;, &#x60;tls_certificates&#x60;, &#x60;tls_subscriptions&#x60;, &#x60;tls_subscriptions.tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, and &#x60;tls_authorizations.self_managed_http_challenge&#x60;. 
+
+// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_activations&#x60;, &#x60;tls_certificates&#x60;, &#x60;tls_subscriptions&#x60;, &#x60;tls_subscriptions.tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, and &#x60;tls_authorizations.self_managed_http_challenge&#x60;.
 func (r *APIListTLSDomainsRequest) Include(include string) *APIListTLSDomainsRequest {
 	r.include = &include
 	return r
 }
+
 // Sort The order in which to list the results.
 func (r *APIListTLSDomainsRequest) Sort(sort string) *APIListTLSDomainsRequest {
 	r.sort = &sort
 	return r
 }
+
 // PageNumber Current page.
 func (r *APIListTLSDomainsRequest) PageNumber(pageNumber int32) *APIListTLSDomainsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListTLSDomainsRequest) PageSize(pageSize int32) *APIListTLSDomainsRequest {
 	r.pageSize = &pageSize
@@ -113,7 +118,7 @@ List all TLS domains.
 func (a *TLSDomainsAPIService) ListTLSDomains(ctx context.Context) APIListTLSDomainsRequest {
 	return APIListTLSDomainsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -121,10 +126,10 @@ func (a *TLSDomainsAPIService) ListTLSDomains(ctx context.Context) APIListTLSDom
 //  @return TLSDomainsResponse
 func (a *TLSDomainsAPIService) ListTLSDomainsExecute(r APIListTLSDomainsRequest) (*TLSDomainsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSDomainsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSDomainsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSDomainsAPIService.ListTLSDomains")
@@ -223,7 +228,6 @@ func (a *TLSDomainsAPIService) ListTLSDomainsExecute(r APIListTLSDomainsRequest)
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

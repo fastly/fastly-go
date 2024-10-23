@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -35,7 +34,7 @@ type IamRole struct {
 	// This attribute is set to `true` if the role is managed by the customer. It is set to `false` if the role was created by Fastly.
 	Custom *bool `json:"custom,omitempty"`
 	// Number of permissions assigned to the role.
-	PermissionsCount *int32 `json:"permissions_count,omitempty"`
+	PermissionsCount     *int32 `json:"permissions_count,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -71,7 +70,7 @@ func (o *IamRole) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamRole) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -90,6 +89,7 @@ func (o *IamRole) HasCreatedAt() bool {
 func (o *IamRole) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *IamRole) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -113,7 +113,7 @@ func (o *IamRole) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamRole) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -132,6 +132,7 @@ func (o *IamRole) HasUpdatedAt() bool {
 func (o *IamRole) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *IamRole) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -371,7 +372,7 @@ func (o IamRole) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *IamRole) UnmarshalJSON(bytes []byte) (err error) {
 	varIamRole := _IamRole{}
 
@@ -396,7 +397,7 @@ func (o *IamRole) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableIamRole is a helper abstraction for handling nullable iamrole types. 
+// NullableIamRole is a helper abstraction for handling nullable iamrole types.
 type NullableIamRole struct {
 	value *IamRole
 	isSet bool
@@ -436,7 +437,7 @@ func (v NullableIamRole) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableIamRole) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

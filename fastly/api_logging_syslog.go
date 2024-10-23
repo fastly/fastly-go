@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingSyslogAPI interface {
 
 	/*
-	CreateLogSyslog Create a syslog log endpoint
+		CreateLogSyslog Create a syslog log endpoint
 
-	Create a Syslog for a particular service and version.
+		Create a Syslog for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogSyslogRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogSyslogRequest
 	*/
 	CreateLogSyslog(ctx context.Context, serviceID string, versionID int32) APICreateLogSyslogRequest
 
@@ -48,15 +47,15 @@ type LoggingSyslogAPI interface {
 	CreateLogSyslogExecute(r APICreateLogSyslogRequest) (*LoggingSyslogResponse, *http.Response, error)
 
 	/*
-	DeleteLogSyslog Delete a syslog log endpoint
+		DeleteLogSyslog Delete a syslog log endpoint
 
-	Delete the Syslog for a particular service and version.
+		Delete the Syslog for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingSyslogName The name for the real-time logging configuration.
-	 @return APIDeleteLogSyslogRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingSyslogName The name for the real-time logging configuration.
+		 @return APIDeleteLogSyslogRequest
 	*/
 	DeleteLogSyslog(ctx context.Context, serviceID string, versionID int32, loggingSyslogName string) APIDeleteLogSyslogRequest
 
@@ -65,15 +64,15 @@ type LoggingSyslogAPI interface {
 	DeleteLogSyslogExecute(r APIDeleteLogSyslogRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogSyslog Get a syslog log endpoint
+		GetLogSyslog Get a syslog log endpoint
 
-	Get the Syslog for a particular service and version.
+		Get the Syslog for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingSyslogName The name for the real-time logging configuration.
-	 @return APIGetLogSyslogRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingSyslogName The name for the real-time logging configuration.
+		 @return APIGetLogSyslogRequest
 	*/
 	GetLogSyslog(ctx context.Context, serviceID string, versionID int32, loggingSyslogName string) APIGetLogSyslogRequest
 
@@ -82,14 +81,14 @@ type LoggingSyslogAPI interface {
 	GetLogSyslogExecute(r APIGetLogSyslogRequest) (*LoggingSyslogResponse, *http.Response, error)
 
 	/*
-	ListLogSyslog List Syslog log endpoints
+		ListLogSyslog List Syslog log endpoints
 
-	List all of the Syslogs for a particular service and version.
+		List all of the Syslogs for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogSyslogRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogSyslogRequest
 	*/
 	ListLogSyslog(ctx context.Context, serviceID string, versionID int32) APIListLogSyslogRequest
 
@@ -98,15 +97,15 @@ type LoggingSyslogAPI interface {
 	ListLogSyslogExecute(r APIListLogSyslogRequest) ([]LoggingSyslogResponse, *http.Response, error)
 
 	/*
-	UpdateLogSyslog Update a syslog log endpoint
+		UpdateLogSyslog Update a syslog log endpoint
 
-	Update the Syslog for a particular service and version.
+		Update the Syslog for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingSyslogName The name for the real-time logging configuration.
-	 @return APIUpdateLogSyslogRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingSyslogName The name for the real-time logging configuration.
+		 @return APIUpdateLogSyslogRequest
 	*/
 	UpdateLogSyslog(ctx context.Context, serviceID string, versionID int32, loggingSyslogName string) APIUpdateLogSyslogRequest
 
@@ -120,26 +119,26 @@ type LoggingSyslogAPIService service
 
 // APICreateLogSyslogRequest represents a request for the resource.
 type APICreateLogSyslogRequest struct {
-	ctx context.Context
-	APIService LoggingSyslogAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingSyslogAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	tlsCaCert *string
-	tlsClientCert *string
-	tlsClientKey *string
-	tlsHostname *string
-	address *string
-	port *int32
-	messageType *LoggingMessageType
-	hostname *string
-	ipv4 *string
-	token *string
-	useTLS *LoggingUseTLSString
+	format            *string
+	formatVersion     *int32
+	tlsCaCert         *string
+	tlsClientCert     *string
+	tlsClientKey      *string
+	tlsHostname       *string
+	address           *string
+	port              *int32
+	messageType       *LoggingMessageType
+	hostname          *string
+	ipv4              *string
+	token             *string
+	useTLS            *LoggingUseTLSString
 }
 
 // Name The name for the real-time logging configuration.
@@ -147,76 +146,91 @@ func (r *APICreateLogSyslogRequest) Name(name string) *APICreateLogSyslogRequest
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogSyslogRequest) Placement(placement string) *APICreateLogSyslogRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogSyslogRequest) ResponseCondition(responseCondition string) *APICreateLogSyslogRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogSyslogRequest) Format(format string) *APICreateLogSyslogRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogSyslogRequest) FormatVersion(formatVersion int32) *APICreateLogSyslogRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
 func (r *APICreateLogSyslogRequest) TLSCaCert(tlsCaCert string) *APICreateLogSyslogRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
+
 // TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
 func (r *APICreateLogSyslogRequest) TLSClientCert(tlsClientCert string) *APICreateLogSyslogRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
+
 // TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
 func (r *APICreateLogSyslogRequest) TLSClientKey(tlsClientKey string) *APICreateLogSyslogRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
+
 // TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
 func (r *APICreateLogSyslogRequest) TLSHostname(tlsHostname string) *APICreateLogSyslogRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
+
 // Address A hostname or IPv4 address.
 func (r *APICreateLogSyslogRequest) Address(address string) *APICreateLogSyslogRequest {
 	r.address = &address
 	return r
 }
+
 // Port The port number.
 func (r *APICreateLogSyslogRequest) Port(port int32) *APICreateLogSyslogRequest {
 	r.port = &port
 	return r
 }
+
 // MessageType returns a pointer to a request.
 func (r *APICreateLogSyslogRequest) MessageType(messageType LoggingMessageType) *APICreateLogSyslogRequest {
 	r.messageType = &messageType
 	return r
 }
+
 // Hostname The hostname used for the syslog endpoint.
 func (r *APICreateLogSyslogRequest) Hostname(hostname string) *APICreateLogSyslogRequest {
 	r.hostname = &hostname
 	return r
 }
+
 // Ipv4 The IPv4 address used for the syslog endpoint.
 func (r *APICreateLogSyslogRequest) Ipv4(ipv4 string) *APICreateLogSyslogRequest {
 	r.ipv4 = &ipv4
 	return r
 }
+
 // Token Whether to prepend each message with a specific token.
 func (r *APICreateLogSyslogRequest) Token(token string) *APICreateLogSyslogRequest {
 	r.token = &token
 	return r
 }
+
 // UseTLS returns a pointer to a request.
 func (r *APICreateLogSyslogRequest) UseTLS(useTLS LoggingUseTLSString) *APICreateLogSyslogRequest {
 	r.useTLS = &useTLS
@@ -241,9 +255,9 @@ Create a Syslog for a particular service and version.
 func (a *LoggingSyslogAPIService) CreateLogSyslog(ctx context.Context, serviceID string, versionID int32) APICreateLogSyslogRequest {
 	return APICreateLogSyslogRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -251,10 +265,10 @@ func (a *LoggingSyslogAPIService) CreateLogSyslog(ctx context.Context, serviceID
 //  @return LoggingSyslogResponse
 func (a *LoggingSyslogAPIService) CreateLogSyslogExecute(r APICreateLogSyslogRequest) (*LoggingSyslogResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingSyslogResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingSyslogResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingSyslogAPIService.CreateLogSyslog")
@@ -383,7 +397,6 @@ func (a *LoggingSyslogAPIService) CreateLogSyslogExecute(r APICreateLogSyslogReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -402,13 +415,12 @@ func (a *LoggingSyslogAPIService) CreateLogSyslogExecute(r APICreateLogSyslogReq
 
 // APIDeleteLogSyslogRequest represents a request for the resource.
 type APIDeleteLogSyslogRequest struct {
-	ctx context.Context
-	APIService LoggingSyslogAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        LoggingSyslogAPI
+	serviceID         string
+	versionID         int32
 	loggingSyslogName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogSyslogRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -428,10 +440,10 @@ Delete the Syslog for a particular service and version.
 */
 func (a *LoggingSyslogAPIService) DeleteLogSyslog(ctx context.Context, serviceID string, versionID int32, loggingSyslogName string) APIDeleteLogSyslogRequest {
 	return APIDeleteLogSyslogRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		loggingSyslogName: loggingSyslogName,
 	}
 }
@@ -440,10 +452,10 @@ func (a *LoggingSyslogAPIService) DeleteLogSyslog(ctx context.Context, serviceID
 //  @return InlineResponse200
 func (a *LoggingSyslogAPIService) DeleteLogSyslogExecute(r APIDeleteLogSyslogRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingSyslogAPIService.DeleteLogSyslog")
@@ -525,7 +537,6 @@ func (a *LoggingSyslogAPIService) DeleteLogSyslogExecute(r APIDeleteLogSyslogReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -544,13 +555,12 @@ func (a *LoggingSyslogAPIService) DeleteLogSyslogExecute(r APIDeleteLogSyslogReq
 
 // APIGetLogSyslogRequest represents a request for the resource.
 type APIGetLogSyslogRequest struct {
-	ctx context.Context
-	APIService LoggingSyslogAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        LoggingSyslogAPI
+	serviceID         string
+	versionID         int32
 	loggingSyslogName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogSyslogRequest) Execute() (*LoggingSyslogResponse, *http.Response, error) {
@@ -570,10 +580,10 @@ Get the Syslog for a particular service and version.
 */
 func (a *LoggingSyslogAPIService) GetLogSyslog(ctx context.Context, serviceID string, versionID int32, loggingSyslogName string) APIGetLogSyslogRequest {
 	return APIGetLogSyslogRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		loggingSyslogName: loggingSyslogName,
 	}
 }
@@ -582,10 +592,10 @@ func (a *LoggingSyslogAPIService) GetLogSyslog(ctx context.Context, serviceID st
 //  @return LoggingSyslogResponse
 func (a *LoggingSyslogAPIService) GetLogSyslogExecute(r APIGetLogSyslogRequest) (*LoggingSyslogResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingSyslogResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingSyslogResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingSyslogAPIService.GetLogSyslog")
@@ -667,7 +677,6 @@ func (a *LoggingSyslogAPIService) GetLogSyslogExecute(r APIGetLogSyslogRequest) 
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -686,12 +695,11 @@ func (a *LoggingSyslogAPIService) GetLogSyslogExecute(r APIGetLogSyslogRequest) 
 
 // APIListLogSyslogRequest represents a request for the resource.
 type APIListLogSyslogRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingSyslogAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogSyslogRequest) Execute() ([]LoggingSyslogResponse, *http.Response, error) {
@@ -711,9 +719,9 @@ List all of the Syslogs for a particular service and version.
 func (a *LoggingSyslogAPIService) ListLogSyslog(ctx context.Context, serviceID string, versionID int32) APIListLogSyslogRequest {
 	return APIListLogSyslogRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -721,10 +729,10 @@ func (a *LoggingSyslogAPIService) ListLogSyslog(ctx context.Context, serviceID s
 //  @return []LoggingSyslogResponse
 func (a *LoggingSyslogAPIService) ListLogSyslogExecute(r APIListLogSyslogRequest) ([]LoggingSyslogResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingSyslogResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingSyslogResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingSyslogAPIService.ListLogSyslog")
@@ -805,7 +813,6 @@ func (a *LoggingSyslogAPIService) ListLogSyslogExecute(r APIListLogSyslogRequest
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -824,27 +831,27 @@ func (a *LoggingSyslogAPIService) ListLogSyslogExecute(r APIListLogSyslogRequest
 
 // APIUpdateLogSyslogRequest represents a request for the resource.
 type APIUpdateLogSyslogRequest struct {
-	ctx context.Context
-	APIService LoggingSyslogAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        LoggingSyslogAPI
+	serviceID         string
+	versionID         int32
 	loggingSyslogName string
-	name *string
-	placement *string
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	tlsCaCert *string
-	tlsClientCert *string
-	tlsClientKey *string
-	tlsHostname *string
-	address *string
-	port *int32
-	messageType *LoggingMessageType
-	hostname *string
-	ipv4 *string
-	token *string
-	useTLS *LoggingUseTLSString
+	format            *string
+	formatVersion     *int32
+	tlsCaCert         *string
+	tlsClientCert     *string
+	tlsClientKey      *string
+	tlsHostname       *string
+	address           *string
+	port              *int32
+	messageType       *LoggingMessageType
+	hostname          *string
+	ipv4              *string
+	token             *string
+	useTLS            *LoggingUseTLSString
 }
 
 // Name The name for the real-time logging configuration.
@@ -852,76 +859,91 @@ func (r *APIUpdateLogSyslogRequest) Name(name string) *APIUpdateLogSyslogRequest
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogSyslogRequest) Placement(placement string) *APIUpdateLogSyslogRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogSyslogRequest) ResponseCondition(responseCondition string) *APIUpdateLogSyslogRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogSyslogRequest) Format(format string) *APIUpdateLogSyslogRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogSyslogRequest) FormatVersion(formatVersion int32) *APIUpdateLogSyslogRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
 func (r *APIUpdateLogSyslogRequest) TLSCaCert(tlsCaCert string) *APIUpdateLogSyslogRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
+
 // TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
 func (r *APIUpdateLogSyslogRequest) TLSClientCert(tlsClientCert string) *APIUpdateLogSyslogRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
+
 // TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
 func (r *APIUpdateLogSyslogRequest) TLSClientKey(tlsClientKey string) *APIUpdateLogSyslogRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
+
 // TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
 func (r *APIUpdateLogSyslogRequest) TLSHostname(tlsHostname string) *APIUpdateLogSyslogRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
+
 // Address A hostname or IPv4 address.
 func (r *APIUpdateLogSyslogRequest) Address(address string) *APIUpdateLogSyslogRequest {
 	r.address = &address
 	return r
 }
+
 // Port The port number.
 func (r *APIUpdateLogSyslogRequest) Port(port int32) *APIUpdateLogSyslogRequest {
 	r.port = &port
 	return r
 }
+
 // MessageType returns a pointer to a request.
 func (r *APIUpdateLogSyslogRequest) MessageType(messageType LoggingMessageType) *APIUpdateLogSyslogRequest {
 	r.messageType = &messageType
 	return r
 }
+
 // Hostname The hostname used for the syslog endpoint.
 func (r *APIUpdateLogSyslogRequest) Hostname(hostname string) *APIUpdateLogSyslogRequest {
 	r.hostname = &hostname
 	return r
 }
+
 // Ipv4 The IPv4 address used for the syslog endpoint.
 func (r *APIUpdateLogSyslogRequest) Ipv4(ipv4 string) *APIUpdateLogSyslogRequest {
 	r.ipv4 = &ipv4
 	return r
 }
+
 // Token Whether to prepend each message with a specific token.
 func (r *APIUpdateLogSyslogRequest) Token(token string) *APIUpdateLogSyslogRequest {
 	r.token = &token
 	return r
 }
+
 // UseTLS returns a pointer to a request.
 func (r *APIUpdateLogSyslogRequest) UseTLS(useTLS LoggingUseTLSString) *APIUpdateLogSyslogRequest {
 	r.useTLS = &useTLS
@@ -946,10 +968,10 @@ Update the Syslog for a particular service and version.
 */
 func (a *LoggingSyslogAPIService) UpdateLogSyslog(ctx context.Context, serviceID string, versionID int32, loggingSyslogName string) APIUpdateLogSyslogRequest {
 	return APIUpdateLogSyslogRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		loggingSyslogName: loggingSyslogName,
 	}
 }
@@ -958,10 +980,10 @@ func (a *LoggingSyslogAPIService) UpdateLogSyslog(ctx context.Context, serviceID
 //  @return LoggingSyslogResponse
 func (a *LoggingSyslogAPIService) UpdateLogSyslogExecute(r APIUpdateLogSyslogRequest) (*LoggingSyslogResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingSyslogResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingSyslogResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingSyslogAPIService.UpdateLogSyslog")
@@ -1090,7 +1112,6 @@ func (a *LoggingSyslogAPIService) UpdateLogSyslogExecute(r APIUpdateLogSyslogReq
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

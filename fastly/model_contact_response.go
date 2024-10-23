@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -37,8 +36,8 @@ type ContactResponse struct {
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ID *string `json:"id,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
+	ID                   *string      `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -74,7 +73,7 @@ func (o *ContactResponse) GetUserID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContactResponse) GetUserIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UserID.Get(), o.UserID.IsSet()
@@ -93,6 +92,7 @@ func (o *ContactResponse) HasUserID() bool {
 func (o *ContactResponse) SetUserID(v string) {
 	o.UserID.Set(&v)
 }
+
 // SetUserIDNil sets the value for UserID to be an explicit nil
 func (o *ContactResponse) SetUserIDNil() {
 	o.UserID.Set(nil)
@@ -148,7 +148,7 @@ func (o *ContactResponse) GetName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContactResponse) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
@@ -167,6 +167,7 @@ func (o *ContactResponse) HasName() bool {
 func (o *ContactResponse) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *ContactResponse) SetNameNil() {
 	o.Name.Set(nil)
@@ -190,7 +191,7 @@ func (o *ContactResponse) GetEmail() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContactResponse) GetEmailOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Email.Get(), o.Email.IsSet()
@@ -209,6 +210,7 @@ func (o *ContactResponse) HasEmail() bool {
 func (o *ContactResponse) SetEmail(v string) {
 	o.Email.Set(&v)
 }
+
 // SetEmailNil sets the value for Email to be an explicit nil
 func (o *ContactResponse) SetEmailNil() {
 	o.Email.Set(nil)
@@ -232,7 +234,7 @@ func (o *ContactResponse) GetPhone() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContactResponse) GetPhoneOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Phone.Get(), o.Phone.IsSet()
@@ -251,6 +253,7 @@ func (o *ContactResponse) HasPhone() bool {
 func (o *ContactResponse) SetPhone(v string) {
 	o.Phone.Set(&v)
 }
+
 // SetPhoneNil sets the value for Phone to be an explicit nil
 func (o *ContactResponse) SetPhoneNil() {
 	o.Phone.Set(nil)
@@ -274,7 +277,7 @@ func (o *ContactResponse) GetCustomerID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContactResponse) GetCustomerIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CustomerID.Get(), o.CustomerID.IsSet()
@@ -293,6 +296,7 @@ func (o *ContactResponse) HasCustomerID() bool {
 func (o *ContactResponse) SetCustomerID(v string) {
 	o.CustomerID.Set(&v)
 }
+
 // SetCustomerIDNil sets the value for CustomerID to be an explicit nil
 func (o *ContactResponse) SetCustomerIDNil() {
 	o.CustomerID.Set(nil)
@@ -316,7 +320,7 @@ func (o *ContactResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContactResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -335,6 +339,7 @@ func (o *ContactResponse) HasCreatedAt() bool {
 func (o *ContactResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *ContactResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -358,7 +363,7 @@ func (o *ContactResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContactResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -377,6 +382,7 @@ func (o *ContactResponse) HasDeletedAt() bool {
 func (o *ContactResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *ContactResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -400,7 +406,7 @@ func (o *ContactResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ContactResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -419,6 +425,7 @@ func (o *ContactResponse) HasUpdatedAt() bool {
 func (o *ContactResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *ContactResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -504,7 +511,7 @@ func (o ContactResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *ContactResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varContactResponse := _ContactResponse{}
 
@@ -531,7 +538,7 @@ func (o *ContactResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableContactResponse is a helper abstraction for handling nullable contactresponse types. 
+// NullableContactResponse is a helper abstraction for handling nullable contactresponse types.
 type NullableContactResponse struct {
 	value *ContactResponse
 	isSet bool
@@ -571,7 +578,7 @@ func (v NullableContactResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableContactResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

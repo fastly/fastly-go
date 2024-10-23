@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,13 +31,13 @@ var (
 type BillingUsageMetricsAPI interface {
 
 	/*
-	GetServiceLevelUsage Retrieve service-level usage metrics for a product.
+		GetServiceLevelUsage Retrieve service-level usage metrics for a product.
 
-	Returns product usage, broken down by service.
+		Returns product usage, broken down by service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param customerID Alphanumeric string identifying the customer.
-	 @return APIGetServiceLevelUsageRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param customerID Alphanumeric string identifying the customer.
+		 @return APIGetServiceLevelUsageRequest
 	*/
 	GetServiceLevelUsage(ctx context.Context, customerID string) APIGetServiceLevelUsageRequest
 
@@ -47,13 +46,13 @@ type BillingUsageMetricsAPI interface {
 	GetServiceLevelUsageExecute(r APIGetServiceLevelUsageRequest) (*Serviceusagemetrics, *http.Response, error)
 
 	/*
-	GetServiceLevelUsageTypes Retrieve product usage types for a customer.
+		GetServiceLevelUsageTypes Retrieve product usage types for a customer.
 
-	Returns product usage types reported by the customer's services.
+		Returns product usage types reported by the customer's services.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param customerID Alphanumeric string identifying the customer.
-	 @return APIGetServiceLevelUsageTypesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param customerID Alphanumeric string identifying the customer.
+		 @return APIGetServiceLevelUsageTypesRequest
 	*/
 	GetServiceLevelUsageTypes(ctx context.Context, customerID string) APIGetServiceLevelUsageTypesRequest
 
@@ -67,18 +66,18 @@ type BillingUsageMetricsAPIService service
 
 // APIGetServiceLevelUsageRequest represents a request for the resource.
 type APIGetServiceLevelUsageRequest struct {
-	ctx context.Context
-	APIService BillingUsageMetricsAPI
-	customerID string
-	productID *string
-	usageTypeName *string
+	ctx             context.Context
+	APIService      BillingUsageMetricsAPI
+	customerID      string
+	productID       *string
+	usageTypeName   *string
 	timeGranularity *string
-	startDate *string
-	endDate *string
-	startMonth *string
-	endMonth *string
-	limit *string
-	cursor *string
+	startDate       *string
+	endDate         *string
+	startMonth      *string
+	endMonth        *string
+	limit           *string
+	cursor          *string
 }
 
 // ProductID The product identifier for the metrics returned (e.g., &#x60;cdn_usage&#x60;). This field is not required for CSV requests.
@@ -86,41 +85,49 @@ func (r *APIGetServiceLevelUsageRequest) ProductID(productID string) *APIGetServ
 	r.productID = &productID
 	return r
 }
+
 // UsageTypeName The usage type name for the metrics returned (e.g., &#x60;North America Requests&#x60;). This field is not required for CSV requests.
 func (r *APIGetServiceLevelUsageRequest) UsageTypeName(usageTypeName string) *APIGetServiceLevelUsageRequest {
 	r.usageTypeName = &usageTypeName
 	return r
 }
+
 // TimeGranularity returns a pointer to a request.
 func (r *APIGetServiceLevelUsageRequest) TimeGranularity(timeGranularity string) *APIGetServiceLevelUsageRequest {
 	r.timeGranularity = &timeGranularity
 	return r
 }
+
 // StartDate returns a pointer to a request.
 func (r *APIGetServiceLevelUsageRequest) StartDate(startDate string) *APIGetServiceLevelUsageRequest {
 	r.startDate = &startDate
 	return r
 }
+
 // EndDate returns a pointer to a request.
 func (r *APIGetServiceLevelUsageRequest) EndDate(endDate string) *APIGetServiceLevelUsageRequest {
 	r.endDate = &endDate
 	return r
 }
+
 // StartMonth returns a pointer to a request.
 func (r *APIGetServiceLevelUsageRequest) StartMonth(startMonth string) *APIGetServiceLevelUsageRequest {
 	r.startMonth = &startMonth
 	return r
 }
+
 // EndMonth returns a pointer to a request.
 func (r *APIGetServiceLevelUsageRequest) EndMonth(endMonth string) *APIGetServiceLevelUsageRequest {
 	r.endMonth = &endMonth
 	return r
 }
+
 // Limit Number of results per page. The maximum is 100.
 func (r *APIGetServiceLevelUsageRequest) Limit(limit string) *APIGetServiceLevelUsageRequest {
 	r.limit = &limit
 	return r
 }
+
 // Cursor Cursor value from the &#x60;next_cursor&#x60; field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
 func (r *APIGetServiceLevelUsageRequest) Cursor(cursor string) *APIGetServiceLevelUsageRequest {
 	r.cursor = &cursor
@@ -144,7 +151,7 @@ Returns product usage, broken down by service.
 func (a *BillingUsageMetricsAPIService) GetServiceLevelUsage(ctx context.Context, customerID string) APIGetServiceLevelUsageRequest {
 	return APIGetServiceLevelUsageRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerID: customerID,
 	}
 }
@@ -153,10 +160,10 @@ func (a *BillingUsageMetricsAPIService) GetServiceLevelUsage(ctx context.Context
 //  @return Serviceusagemetrics
 func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageExecute(r APIGetServiceLevelUsageRequest) (*Serviceusagemetrics, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *Serviceusagemetrics
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *Serviceusagemetrics
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingUsageMetricsAPIService.GetServiceLevelUsage")
@@ -295,7 +302,6 @@ func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageExecute(r APIGetServ
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -314,11 +320,10 @@ func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageExecute(r APIGetServ
 
 // APIGetServiceLevelUsageTypesRequest represents a request for the resource.
 type APIGetServiceLevelUsageTypesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService BillingUsageMetricsAPI
 	customerID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetServiceLevelUsageTypesRequest) Execute() (*Serviceusagetypes, *http.Response, error) {
@@ -337,7 +342,7 @@ Returns product usage types reported by the customer's services.
 func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageTypes(ctx context.Context, customerID string) APIGetServiceLevelUsageTypesRequest {
 	return APIGetServiceLevelUsageTypesRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerID: customerID,
 	}
 }
@@ -346,10 +351,10 @@ func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageTypes(ctx context.Co
 //  @return Serviceusagetypes
 func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageTypesExecute(r APIGetServiceLevelUsageTypesRequest) (*Serviceusagetypes, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *Serviceusagetypes
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *Serviceusagetypes
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingUsageMetricsAPIService.GetServiceLevelUsageTypes")
@@ -457,7 +462,6 @@ func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageTypesExecute(r APIGe
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

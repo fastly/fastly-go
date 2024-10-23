@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -21,33 +20,33 @@ import (
 // IncludedWithWafRuleItem struct for IncludedWithWafRuleItem
 type IncludedWithWafRuleItem struct {
 	WafRuleRevision *WafRuleRevision
-	WafTag *WafTag
+	WafTag          *WafTag
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *IncludedWithWafRuleItem) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into WafRuleRevision
-	err = json.Unmarshal(data, &o.WafRuleRevision);
+	err = json.Unmarshal(data, &o.WafRuleRevision)
 	if err == nil {
 		jsonWafRuleRevision, _ := json.Marshal(o.WafRuleRevision)
 		if string(jsonWafRuleRevision) != "{}" { // empty struct
 			return nil // data stored in o.WafRuleRevision, return on the first match
 		}
-    o.WafRuleRevision = nil
+		o.WafRuleRevision = nil
 	} else {
 		o.WafRuleRevision = nil
 	}
 
 	// try to unmarshal JSON data into WafTag
-	err = json.Unmarshal(data, &o.WafTag);
+	err = json.Unmarshal(data, &o.WafTag)
 	if err == nil {
 		jsonWafTag, _ := json.Marshal(o.WafTag)
 		if string(jsonWafTag) != "{}" { // empty struct
 			return nil // data stored in o.WafTag, return on the first match
 		}
-    o.WafTag = nil
+		o.WafTag = nil
 	} else {
 		o.WafTag = nil
 	}
@@ -69,7 +68,7 @@ func (o *IncludedWithWafRuleItem) MarshalJSON() ([]byte, error) {
 	return nil, nil // no data in anyOf schemas
 }
 
-// NullableIncludedWithWafRuleItem is a helper abstraction for handling nullable includedwithwafruleitem types. 
+// NullableIncludedWithWafRuleItem is a helper abstraction for handling nullable includedwithwafruleitem types.
 type NullableIncludedWithWafRuleItem struct {
 	value *IncludedWithWafRuleItem
 	isSet bool
@@ -109,7 +108,7 @@ func (v NullableIncludedWithWafRuleItem) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableIncludedWithWafRuleItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

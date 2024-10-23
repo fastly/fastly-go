@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,11 +19,11 @@ import (
 // BillingAddressVerificationErrorResponseErrors struct for BillingAddressVerificationErrorResponseErrors
 type BillingAddressVerificationErrorResponseErrors struct {
 	// The error type.
-	Type string `json:"type"`
-	Title string `json:"title"`
-	Detail string `json:"detail"`
-	Status float32 `json:"status"`
-	Candidates []BillingAddressAttributes `json:"candidates,omitempty"`
+	Type                 string                     `json:"type"`
+	Title                string                     `json:"title"`
+	Detail               string                     `json:"detail"`
+	Status               float32                    `json:"status"`
+	Candidates           []BillingAddressAttributes `json:"candidates,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -64,7 +63,7 @@ func (o *BillingAddressVerificationErrorResponseErrors) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *BillingAddressVerificationErrorResponseErrors) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -88,7 +87,7 @@ func (o *BillingAddressVerificationErrorResponseErrors) GetTitle() string {
 // GetTitleOk returns a tuple with the Title field value
 // and a boolean to check if the value has been set.
 func (o *BillingAddressVerificationErrorResponseErrors) GetTitleOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Title, true
@@ -112,7 +111,7 @@ func (o *BillingAddressVerificationErrorResponseErrors) GetDetail() string {
 // GetDetailOk returns a tuple with the Detail field value
 // and a boolean to check if the value has been set.
 func (o *BillingAddressVerificationErrorResponseErrors) GetDetailOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Detail, true
@@ -136,7 +135,7 @@ func (o *BillingAddressVerificationErrorResponseErrors) GetStatus() float32 {
 // GetStatusOk returns a tuple with the Status field value
 // and a boolean to check if the value has been set.
 func (o *BillingAddressVerificationErrorResponseErrors) GetStatusOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Status, true
@@ -207,7 +206,7 @@ func (o BillingAddressVerificationErrorResponseErrors) MarshalJSON() ([]byte, er
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *BillingAddressVerificationErrorResponseErrors) UnmarshalJSON(bytes []byte) (err error) {
 	varBillingAddressVerificationErrorResponseErrors := _BillingAddressVerificationErrorResponseErrors{}
 
@@ -229,7 +228,7 @@ func (o *BillingAddressVerificationErrorResponseErrors) UnmarshalJSON(bytes []by
 	return err
 }
 
-// NullableBillingAddressVerificationErrorResponseErrors is a helper abstraction for handling nullable billingaddressverificationerrorresponseerrors types. 
+// NullableBillingAddressVerificationErrorResponseErrors is a helper abstraction for handling nullable billingaddressverificationerrorresponseerrors types.
 type NullableBillingAddressVerificationErrorResponseErrors struct {
 	value *BillingAddressVerificationErrorResponseErrors
 	isSet bool
@@ -269,7 +268,7 @@ func (v NullableBillingAddressVerificationErrorResponseErrors) MarshalJSON() ([]
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableBillingAddressVerificationErrorResponseErrors) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -26,7 +25,7 @@ type DiffResponse struct {
 	// The format the diff is being returned in (`text`, `html` or `html_simple`).
 	Format *string `json:"format,omitempty"`
 	// The differences between two specified service versions. Returns the full config if the version configurations are identical.
-	Diff *string `json:"diff,omitempty"`
+	Diff                 *string `json:"diff,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -202,7 +201,7 @@ func (o DiffResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *DiffResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varDiffResponse := _DiffResponse{}
 
@@ -223,7 +222,7 @@ func (o *DiffResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableDiffResponse is a helper abstraction for handling nullable diffresponse types. 
+// NullableDiffResponse is a helper abstraction for handling nullable diffresponse types.
 type NullableDiffResponse struct {
 	value *DiffResponse
 	isSet bool
@@ -263,7 +262,7 @@ func (v NullableDiffResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDiffResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

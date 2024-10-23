@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -33,14 +32,14 @@ var (
 type HTTP3API interface {
 
 	/*
-	CreateHTTP3 Enable support for HTTP/3
+		CreateHTTP3 Enable support for HTTP/3
 
-	Enable HTTP/3 (QUIC) support for a particular service and version.
+		Enable HTTP/3 (QUIC) support for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateHTTP3Request
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateHTTP3Request
 	*/
 	CreateHTTP3(ctx context.Context, serviceID string, versionID int32) APICreateHTTP3Request
 
@@ -49,14 +48,14 @@ type HTTP3API interface {
 	CreateHTTP3Execute(r APICreateHTTP3Request) (*HTTP3, *http.Response, error)
 
 	/*
-	DeleteHTTP3 Disable support for HTTP/3
+		DeleteHTTP3 Disable support for HTTP/3
 
-	Disable HTTP/3 (QUIC) support for a particular service and version.
+		Disable HTTP/3 (QUIC) support for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIDeleteHTTP3Request
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIDeleteHTTP3Request
 	*/
 	DeleteHTTP3(ctx context.Context, serviceID string, versionID int32) APIDeleteHTTP3Request
 
@@ -65,14 +64,14 @@ type HTTP3API interface {
 	DeleteHTTP3Execute(r APIDeleteHTTP3Request) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetHTTP3 Get HTTP/3 status
+		GetHTTP3 Get HTTP/3 status
 
-	Get the status of HTTP/3 (QUIC) support for a particular service and version.
+		Get the status of HTTP/3 (QUIC) support for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIGetHTTP3Request
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIGetHTTP3Request
 	*/
 	GetHTTP3(ctx context.Context, serviceID string, versionID int32) APIGetHTTP3Request
 
@@ -86,15 +85,15 @@ type HTTP3APIService service
 
 // APICreateHTTP3Request represents a request for the resource.
 type APICreateHTTP3Request struct {
-	ctx context.Context
-	APIService HTTP3API
-	serviceID string
-	versionID int32
-	serviceID2 *string
-	version *int32
-	createdAt *time.Time
-	deletedAt *time.Time
-	updatedAt *time.Time
+	ctx             context.Context
+	APIService      HTTP3API
+	serviceID       string
+	versionID       int32
+	serviceID2      *string
+	version         *int32
+	createdAt       *time.Time
+	deletedAt       *time.Time
+	updatedAt       *time.Time
 	featureRevision *int32
 }
 
@@ -103,26 +102,31 @@ func (r *APICreateHTTP3Request) ServiceID2(serviceID2 string) *APICreateHTTP3Req
 	r.serviceID2 = &serviceID2
 	return r
 }
+
 // Version returns a pointer to a request.
 func (r *APICreateHTTP3Request) Version(version int32) *APICreateHTTP3Request {
 	r.version = &version
 	return r
 }
+
 // CreatedAt Date and time in ISO 8601 format.
 func (r *APICreateHTTP3Request) CreatedAt(createdAt time.Time) *APICreateHTTP3Request {
 	r.createdAt = &createdAt
 	return r
 }
+
 // DeletedAt Date and time in ISO 8601 format.
 func (r *APICreateHTTP3Request) DeletedAt(deletedAt time.Time) *APICreateHTTP3Request {
 	r.deletedAt = &deletedAt
 	return r
 }
+
 // UpdatedAt Date and time in ISO 8601 format.
 func (r *APICreateHTTP3Request) UpdatedAt(updatedAt time.Time) *APICreateHTTP3Request {
 	r.updatedAt = &updatedAt
 	return r
 }
+
 // FeatureRevision Revision number of the HTTP/3 feature implementation. Defaults to the most recent revision.
 func (r *APICreateHTTP3Request) FeatureRevision(featureRevision int32) *APICreateHTTP3Request {
 	r.featureRevision = &featureRevision
@@ -147,9 +151,9 @@ Enable HTTP/3 (QUIC) support for a particular service and version.
 func (a *HTTP3APIService) CreateHTTP3(ctx context.Context, serviceID string, versionID int32) APICreateHTTP3Request {
 	return APICreateHTTP3Request{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -157,10 +161,10 @@ func (a *HTTP3APIService) CreateHTTP3(ctx context.Context, serviceID string, ver
 //  @return HTTP3
 func (a *HTTP3APIService) CreateHTTP3Execute(r APICreateHTTP3Request) (*HTTP3, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *HTTP3
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *HTTP3
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HTTP3APIService.CreateHTTP3")
@@ -267,7 +271,6 @@ func (a *HTTP3APIService) CreateHTTP3Execute(r APICreateHTTP3Request) (*HTTP3, *
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -286,12 +289,11 @@ func (a *HTTP3APIService) CreateHTTP3Execute(r APICreateHTTP3Request) (*HTTP3, *
 
 // APIDeleteHTTP3Request represents a request for the resource.
 type APIDeleteHTTP3Request struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService HTTP3API
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteHTTP3Request) Execute() (*InlineResponse200, *http.Response, error) {
@@ -311,9 +313,9 @@ Disable HTTP/3 (QUIC) support for a particular service and version.
 func (a *HTTP3APIService) DeleteHTTP3(ctx context.Context, serviceID string, versionID int32) APIDeleteHTTP3Request {
 	return APIDeleteHTTP3Request{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -321,10 +323,10 @@ func (a *HTTP3APIService) DeleteHTTP3(ctx context.Context, serviceID string, ver
 //  @return InlineResponse200
 func (a *HTTP3APIService) DeleteHTTP3Execute(r APIDeleteHTTP3Request) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HTTP3APIService.DeleteHTTP3")
@@ -405,7 +407,6 @@ func (a *HTTP3APIService) DeleteHTTP3Execute(r APIDeleteHTTP3Request) (*InlineRe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -424,12 +425,11 @@ func (a *HTTP3APIService) DeleteHTTP3Execute(r APIDeleteHTTP3Request) (*InlineRe
 
 // APIGetHTTP3Request represents a request for the resource.
 type APIGetHTTP3Request struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService HTTP3API
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetHTTP3Request) Execute() (*HTTP3, *http.Response, error) {
@@ -449,9 +449,9 @@ Get the status of HTTP/3 (QUIC) support for a particular service and version.
 func (a *HTTP3APIService) GetHTTP3(ctx context.Context, serviceID string, versionID int32) APIGetHTTP3Request {
 	return APIGetHTTP3Request{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -459,10 +459,10 @@ func (a *HTTP3APIService) GetHTTP3(ctx context.Context, serviceID string, versio
 //  @return HTTP3
 func (a *HTTP3APIService) GetHTTP3Execute(r APIGetHTTP3Request) (*HTTP3, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *HTTP3
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *HTTP3
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HTTP3APIService.GetHTTP3")
@@ -542,7 +542,6 @@ func (a *HTTP3APIService) GetHTTP3Execute(r APIGetHTTP3Request) (*HTTP3, *http.R
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

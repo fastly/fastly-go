@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,17 +19,17 @@ import (
 
 // AutomationTokenCreateResponseAllOf struct for AutomationTokenCreateResponseAllOf
 type AutomationTokenCreateResponseAllOf struct {
-	ID *ReadOnlyID `json:"id,omitempty"`
-	UserID *ReadOnlyUserID `json:"user_id,omitempty"`
-	CustomerID *ReadOnlyCustomerID `json:"customer_id,omitempty"`
-	SudoExpiresAt *time.Time `json:"sudo_expires_at,omitempty"`
-	// A UTC time-stamp of when the token was created. 
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	AccessToken *string `json:"access_token,omitempty"`
+	ID            *ReadOnlyID         `json:"id,omitempty"`
+	UserID        *ReadOnlyUserID     `json:"user_id,omitempty"`
+	CustomerID    *ReadOnlyCustomerID `json:"customer_id,omitempty"`
+	SudoExpiresAt *time.Time          `json:"sudo_expires_at,omitempty"`
+	// A UTC time-stamp of when the token was created.
+	CreatedAt   *time.Time `json:"created_at,omitempty"`
+	AccessToken *string    `json:"access_token,omitempty"`
 	// A UTC time-stamp of when the token was last used.
 	LastUsedAt *time.Time `json:"last_used_at,omitempty"`
 	// The User-Agent header of the client that last used the token.
-	UserAgent *string `json:"user_agent,omitempty"`
+	UserAgent            *string `json:"user_agent,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -346,7 +345,7 @@ func (o AutomationTokenCreateResponseAllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *AutomationTokenCreateResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	varAutomationTokenCreateResponseAllOf := _AutomationTokenCreateResponseAllOf{}
 
@@ -371,7 +370,7 @@ func (o *AutomationTokenCreateResponseAllOf) UnmarshalJSON(bytes []byte) (err er
 	return err
 }
 
-// NullableAutomationTokenCreateResponseAllOf is a helper abstraction for handling nullable automationtokencreateresponseallof types. 
+// NullableAutomationTokenCreateResponseAllOf is a helper abstraction for handling nullable automationtokencreateresponseallof types.
 type NullableAutomationTokenCreateResponseAllOf struct {
 	value *AutomationTokenCreateResponseAllOf
 	isSet bool
@@ -411,7 +410,7 @@ func (v NullableAutomationTokenCreateResponseAllOf) MarshalJSON() ([]byte, error
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableAutomationTokenCreateResponseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

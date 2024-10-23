@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -32,7 +31,7 @@ type CustomerAddress struct {
 	// ISO 3166-1 alpha-2 country code (e.g., \"US\", \"CA\", \"NZ\")
 	Country *string `json:"country,omitempty"`
 	// Postal or Zip code of the address.
-	PostalCode *string `json:"postal_code,omitempty"`
+	PostalCode           *string `json:"postal_code,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -313,7 +312,7 @@ func (o CustomerAddress) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *CustomerAddress) UnmarshalJSON(bytes []byte) (err error) {
 	varCustomerAddress := _CustomerAddress{}
 
@@ -337,7 +336,7 @@ func (o *CustomerAddress) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableCustomerAddress is a helper abstraction for handling nullable customeraddress types. 
+// NullableCustomerAddress is a helper abstraction for handling nullable customeraddress types.
 type NullableCustomerAddress struct {
 	value *CustomerAddress
 	isSet bool
@@ -377,7 +376,7 @@ func (v NullableCustomerAddress) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableCustomerAddress) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

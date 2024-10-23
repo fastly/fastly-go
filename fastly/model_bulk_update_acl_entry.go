@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -26,9 +25,9 @@ type BulkUpdateACLEntry struct {
 	// An IP address.
 	IP *string `json:"ip,omitempty"`
 	// Number of bits for the subnet mask applied to the IP address. For IPv4 addresses, a value of 32 represents the smallest subnet mask (1 address), 24 represents a class C subnet mask (256 addresses), 16 represents a class B subnet mask (65k addresses), and 8 is class A subnet mask (16m addresses). If not provided, no mask is applied.
-	Subnet NullableInt32 `json:"subnet,omitempty"`
-	Op *string `json:"op,omitempty"`
-	ID *string `json:"id,omitempty"`
+	Subnet               NullableInt32 `json:"subnet,omitempty"`
+	Op                   *string       `json:"op,omitempty"`
+	ID                   *string       `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -100,7 +99,7 @@ func (o *BulkUpdateACLEntry) GetComment() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BulkUpdateACLEntry) GetCommentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
@@ -119,6 +118,7 @@ func (o *BulkUpdateACLEntry) HasComment() bool {
 func (o *BulkUpdateACLEntry) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *BulkUpdateACLEntry) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -174,7 +174,7 @@ func (o *BulkUpdateACLEntry) GetSubnet() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BulkUpdateACLEntry) GetSubnetOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Subnet.Get(), o.Subnet.IsSet()
@@ -193,6 +193,7 @@ func (o *BulkUpdateACLEntry) HasSubnet() bool {
 func (o *BulkUpdateACLEntry) SetSubnet(v int32) {
 	o.Subnet.Set(&v)
 }
+
 // SetSubnetNil sets the value for Subnet to be an explicit nil
 func (o *BulkUpdateACLEntry) SetSubnetNil() {
 	o.Subnet.Set(nil)
@@ -298,7 +299,7 @@ func (o BulkUpdateACLEntry) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *BulkUpdateACLEntry) UnmarshalJSON(bytes []byte) (err error) {
 	varBulkUpdateACLEntry := _BulkUpdateACLEntry{}
 
@@ -321,7 +322,7 @@ func (o *BulkUpdateACLEntry) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableBulkUpdateACLEntry is a helper abstraction for handling nullable bulkupdateaclentry types. 
+// NullableBulkUpdateACLEntry is a helper abstraction for handling nullable bulkupdateaclentry types.
 type NullableBulkUpdateACLEntry struct {
 	value *BulkUpdateACLEntry
 	isSet bool
@@ -361,7 +362,7 @@ func (v NullableBulkUpdateACLEntry) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableBulkUpdateACLEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

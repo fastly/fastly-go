@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type CacheSettingsAPI interface {
 
 	/*
-	CreateCacheSettings Create a cache settings object
+		CreateCacheSettings Create a cache settings object
 
-	Create a cache settings object.
+		Create a cache settings object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateCacheSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateCacheSettingsRequest
 	*/
 	CreateCacheSettings(ctx context.Context, serviceID string, versionID int32) APICreateCacheSettingsRequest
 
@@ -48,15 +47,15 @@ type CacheSettingsAPI interface {
 	CreateCacheSettingsExecute(r APICreateCacheSettingsRequest) (*CacheSettingResponse, *http.Response, error)
 
 	/*
-	DeleteCacheSettings Delete a cache settings object
+		DeleteCacheSettings Delete a cache settings object
 
-	Delete a specific cache settings object.
+		Delete a specific cache settings object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param cacheSettingsName Name for the cache settings object.
-	 @return APIDeleteCacheSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param cacheSettingsName Name for the cache settings object.
+		 @return APIDeleteCacheSettingsRequest
 	*/
 	DeleteCacheSettings(ctx context.Context, serviceID string, versionID int32, cacheSettingsName string) APIDeleteCacheSettingsRequest
 
@@ -65,15 +64,15 @@ type CacheSettingsAPI interface {
 	DeleteCacheSettingsExecute(r APIDeleteCacheSettingsRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetCacheSettings Get a cache settings object
+		GetCacheSettings Get a cache settings object
 
-	Get a specific cache settings object.
+		Get a specific cache settings object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param cacheSettingsName Name for the cache settings object.
-	 @return APIGetCacheSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param cacheSettingsName Name for the cache settings object.
+		 @return APIGetCacheSettingsRequest
 	*/
 	GetCacheSettings(ctx context.Context, serviceID string, versionID int32, cacheSettingsName string) APIGetCacheSettingsRequest
 
@@ -82,14 +81,14 @@ type CacheSettingsAPI interface {
 	GetCacheSettingsExecute(r APIGetCacheSettingsRequest) (*CacheSettingResponse, *http.Response, error)
 
 	/*
-	ListCacheSettings List cache settings objects
+		ListCacheSettings List cache settings objects
 
-	Get a list of all cache settings for a particular service and version.
+		Get a list of all cache settings for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListCacheSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListCacheSettingsRequest
 	*/
 	ListCacheSettings(ctx context.Context, serviceID string, versionID int32) APIListCacheSettingsRequest
 
@@ -98,15 +97,15 @@ type CacheSettingsAPI interface {
 	ListCacheSettingsExecute(r APIListCacheSettingsRequest) ([]CacheSettingResponse, *http.Response, error)
 
 	/*
-	UpdateCacheSettings Update a cache settings object
+		UpdateCacheSettings Update a cache settings object
 
-	Update a specific cache settings object.
+		Update a specific cache settings object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param cacheSettingsName Name for the cache settings object.
-	 @return APIUpdateCacheSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param cacheSettingsName Name for the cache settings object.
+		 @return APIUpdateCacheSettingsRequest
 	*/
 	UpdateCacheSettings(ctx context.Context, serviceID string, versionID int32, cacheSettingsName string) APIUpdateCacheSettingsRequest
 
@@ -120,37 +119,41 @@ type CacheSettingsAPIService service
 
 // APICreateCacheSettingsRequest represents a request for the resource.
 type APICreateCacheSettingsRequest struct {
-	ctx context.Context
-	APIService CacheSettingsAPI
-	serviceID string
-	versionID int32
-	action *string
+	ctx            context.Context
+	APIService     CacheSettingsAPI
+	serviceID      string
+	versionID      int32
+	action         *string
 	cacheCondition *string
-	name *string
-	staleTTL *string
-	ttl *string
+	name           *string
+	staleTTL       *string
+	ttl            *string
 }
 
-// Action If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
+// Action If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.
 func (r *APICreateCacheSettingsRequest) Action(action string) *APICreateCacheSettingsRequest {
 	r.action = &action
 	return r
 }
+
 // CacheCondition Name of the cache condition controlling when this configuration applies.
 func (r *APICreateCacheSettingsRequest) CacheCondition(cacheCondition string) *APICreateCacheSettingsRequest {
 	r.cacheCondition = &cacheCondition
 	return r
 }
+
 // Name Name for the cache settings object.
 func (r *APICreateCacheSettingsRequest) Name(name string) *APICreateCacheSettingsRequest {
 	r.name = &name
 	return r
 }
+
 // StaleTTL Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;).
 func (r *APICreateCacheSettingsRequest) StaleTTL(staleTTL string) *APICreateCacheSettingsRequest {
 	r.staleTTL = &staleTTL
 	return r
 }
+
 // TTL Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;).
 func (r *APICreateCacheSettingsRequest) TTL(ttl string) *APICreateCacheSettingsRequest {
 	r.ttl = &ttl
@@ -175,9 +178,9 @@ Create a cache settings object.
 func (a *CacheSettingsAPIService) CreateCacheSettings(ctx context.Context, serviceID string, versionID int32) APICreateCacheSettingsRequest {
 	return APICreateCacheSettingsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -185,10 +188,10 @@ func (a *CacheSettingsAPIService) CreateCacheSettings(ctx context.Context, servi
 //  @return CacheSettingResponse
 func (a *CacheSettingsAPIService) CreateCacheSettingsExecute(r APICreateCacheSettingsRequest) (*CacheSettingResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *CacheSettingResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *CacheSettingResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CacheSettingsAPIService.CreateCacheSettings")
@@ -284,7 +287,6 @@ func (a *CacheSettingsAPIService) CreateCacheSettingsExecute(r APICreateCacheSet
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -303,13 +305,12 @@ func (a *CacheSettingsAPIService) CreateCacheSettingsExecute(r APICreateCacheSet
 
 // APIDeleteCacheSettingsRequest represents a request for the resource.
 type APIDeleteCacheSettingsRequest struct {
-	ctx context.Context
-	APIService CacheSettingsAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        CacheSettingsAPI
+	serviceID         string
+	versionID         int32
 	cacheSettingsName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteCacheSettingsRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -329,10 +330,10 @@ Delete a specific cache settings object.
 */
 func (a *CacheSettingsAPIService) DeleteCacheSettings(ctx context.Context, serviceID string, versionID int32, cacheSettingsName string) APIDeleteCacheSettingsRequest {
 	return APIDeleteCacheSettingsRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		cacheSettingsName: cacheSettingsName,
 	}
 }
@@ -341,10 +342,10 @@ func (a *CacheSettingsAPIService) DeleteCacheSettings(ctx context.Context, servi
 //  @return InlineResponse200
 func (a *CacheSettingsAPIService) DeleteCacheSettingsExecute(r APIDeleteCacheSettingsRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CacheSettingsAPIService.DeleteCacheSettings")
@@ -426,7 +427,6 @@ func (a *CacheSettingsAPIService) DeleteCacheSettingsExecute(r APIDeleteCacheSet
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -445,13 +445,12 @@ func (a *CacheSettingsAPIService) DeleteCacheSettingsExecute(r APIDeleteCacheSet
 
 // APIGetCacheSettingsRequest represents a request for the resource.
 type APIGetCacheSettingsRequest struct {
-	ctx context.Context
-	APIService CacheSettingsAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        CacheSettingsAPI
+	serviceID         string
+	versionID         int32
 	cacheSettingsName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetCacheSettingsRequest) Execute() (*CacheSettingResponse, *http.Response, error) {
@@ -471,10 +470,10 @@ Get a specific cache settings object.
 */
 func (a *CacheSettingsAPIService) GetCacheSettings(ctx context.Context, serviceID string, versionID int32, cacheSettingsName string) APIGetCacheSettingsRequest {
 	return APIGetCacheSettingsRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		cacheSettingsName: cacheSettingsName,
 	}
 }
@@ -483,10 +482,10 @@ func (a *CacheSettingsAPIService) GetCacheSettings(ctx context.Context, serviceI
 //  @return CacheSettingResponse
 func (a *CacheSettingsAPIService) GetCacheSettingsExecute(r APIGetCacheSettingsRequest) (*CacheSettingResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *CacheSettingResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *CacheSettingResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CacheSettingsAPIService.GetCacheSettings")
@@ -568,7 +567,6 @@ func (a *CacheSettingsAPIService) GetCacheSettingsExecute(r APIGetCacheSettingsR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -587,12 +585,11 @@ func (a *CacheSettingsAPIService) GetCacheSettingsExecute(r APIGetCacheSettingsR
 
 // APIListCacheSettingsRequest represents a request for the resource.
 type APIListCacheSettingsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService CacheSettingsAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListCacheSettingsRequest) Execute() ([]CacheSettingResponse, *http.Response, error) {
@@ -612,9 +609,9 @@ Get a list of all cache settings for a particular service and version.
 func (a *CacheSettingsAPIService) ListCacheSettings(ctx context.Context, serviceID string, versionID int32) APIListCacheSettingsRequest {
 	return APIListCacheSettingsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -622,10 +619,10 @@ func (a *CacheSettingsAPIService) ListCacheSettings(ctx context.Context, service
 //  @return []CacheSettingResponse
 func (a *CacheSettingsAPIService) ListCacheSettingsExecute(r APIListCacheSettingsRequest) ([]CacheSettingResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []CacheSettingResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []CacheSettingResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CacheSettingsAPIService.ListCacheSettings")
@@ -706,7 +703,6 @@ func (a *CacheSettingsAPIService) ListCacheSettingsExecute(r APIListCacheSetting
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -725,38 +721,42 @@ func (a *CacheSettingsAPIService) ListCacheSettingsExecute(r APIListCacheSetting
 
 // APIUpdateCacheSettingsRequest represents a request for the resource.
 type APIUpdateCacheSettingsRequest struct {
-	ctx context.Context
-	APIService CacheSettingsAPI
-	serviceID string
-	versionID int32
+	ctx               context.Context
+	APIService        CacheSettingsAPI
+	serviceID         string
+	versionID         int32
 	cacheSettingsName string
-	action *string
-	cacheCondition *string
-	name *string
-	staleTTL *string
-	ttl *string
+	action            *string
+	cacheCondition    *string
+	name              *string
+	staleTTL          *string
+	ttl               *string
 }
 
-// Action If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
+// Action If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.
 func (r *APIUpdateCacheSettingsRequest) Action(action string) *APIUpdateCacheSettingsRequest {
 	r.action = &action
 	return r
 }
+
 // CacheCondition Name of the cache condition controlling when this configuration applies.
 func (r *APIUpdateCacheSettingsRequest) CacheCondition(cacheCondition string) *APIUpdateCacheSettingsRequest {
 	r.cacheCondition = &cacheCondition
 	return r
 }
+
 // Name Name for the cache settings object.
 func (r *APIUpdateCacheSettingsRequest) Name(name string) *APIUpdateCacheSettingsRequest {
 	r.name = &name
 	return r
 }
+
 // StaleTTL Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;).
 func (r *APIUpdateCacheSettingsRequest) StaleTTL(staleTTL string) *APIUpdateCacheSettingsRequest {
 	r.staleTTL = &staleTTL
 	return r
 }
+
 // TTL Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;).
 func (r *APIUpdateCacheSettingsRequest) TTL(ttl string) *APIUpdateCacheSettingsRequest {
 	r.ttl = &ttl
@@ -781,10 +781,10 @@ Update a specific cache settings object.
 */
 func (a *CacheSettingsAPIService) UpdateCacheSettings(ctx context.Context, serviceID string, versionID int32, cacheSettingsName string) APIUpdateCacheSettingsRequest {
 	return APIUpdateCacheSettingsRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		versionID:         versionID,
 		cacheSettingsName: cacheSettingsName,
 	}
 }
@@ -793,10 +793,10 @@ func (a *CacheSettingsAPIService) UpdateCacheSettings(ctx context.Context, servi
 //  @return CacheSettingResponse
 func (a *CacheSettingsAPIService) UpdateCacheSettingsExecute(r APIUpdateCacheSettingsRequest) (*CacheSettingResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *CacheSettingResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *CacheSettingResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CacheSettingsAPIService.UpdateCacheSettings")
@@ -892,7 +892,6 @@ func (a *CacheSettingsAPIService) UpdateCacheSettingsExecute(r APIUpdateCacheSet
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

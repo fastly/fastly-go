@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -31,14 +30,14 @@ var (
 type LegacyWafTagAPI interface {
 
 	/*
-	ListLegacyWafTags List WAF tags
+		ListLegacyWafTags List WAF tags
 
-	List all tags.
+		List all tags.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListLegacyWafTagsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListLegacyWafTagsRequest
 
-	Deprecated
+		Deprecated
 	*/
 	ListLegacyWafTags(ctx context.Context) APIListLegacyWafTagsRequest
 
@@ -53,12 +52,12 @@ type LegacyWafTagAPIService service
 
 // APIListLegacyWafTagsRequest represents a request for the resource.
 type APIListLegacyWafTagsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LegacyWafTagAPI
 	filterName *string
 	pageNumber *int32
-	pageSize *int32
-	include *string
+	pageSize   *int32
+	include    *string
 }
 
 // FilterName Limit the returned tags to a specific name.
@@ -66,17 +65,20 @@ func (r *APIListLegacyWafTagsRequest) FilterName(filterName string) *APIListLega
 	r.filterName = &filterName
 	return r
 }
+
 // PageNumber Current page.
 func (r *APIListLegacyWafTagsRequest) PageNumber(pageNumber int32) *APIListLegacyWafTagsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListLegacyWafTagsRequest) PageSize(pageSize int32) *APIListLegacyWafTagsRequest {
 	r.pageSize = &pageSize
 	return r
 }
-// Include Include relationships. Optional, comma separated values. Permitted values: &#x60;rules&#x60;. 
+
+// Include Include relationships. Optional, comma separated values. Permitted values: &#x60;rules&#x60;.
 func (r *APIListLegacyWafTagsRequest) Include(include string) *APIListLegacyWafTagsRequest {
 	r.include = &include
 	return r
@@ -100,7 +102,7 @@ Deprecated
 func (a *LegacyWafTagAPIService) ListLegacyWafTags(ctx context.Context) APIListLegacyWafTagsRequest {
 	return APIListLegacyWafTagsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -109,10 +111,10 @@ func (a *LegacyWafTagAPIService) ListLegacyWafTags(ctx context.Context) APIListL
 // Deprecated
 func (a *LegacyWafTagAPIService) ListLegacyWafTagsExecute(r APIListLegacyWafTagsRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafTagAPIService.ListLegacyWafTags")
@@ -202,7 +204,6 @@ func (a *LegacyWafTagAPIService) ListLegacyWafTagsExecute(r APIListLegacyWafTags
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

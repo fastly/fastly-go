@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -26,7 +25,7 @@ type LoggingSftpResponseAllOf struct {
 	// How frequently log files are finalized so they can be available for reading (in seconds).
 	Period *string `json:"period,omitempty"`
 	// The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-	GzipLevel *int32 `json:"gzip_level,omitempty"`
+	GzipLevel            *int32 `json:"gzip_level,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -214,7 +213,7 @@ func (o LoggingSftpResponseAllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingSftpResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingSftpResponseAllOf := _LoggingSftpResponseAllOf{}
 
@@ -235,7 +234,7 @@ func (o *LoggingSftpResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingSftpResponseAllOf is a helper abstraction for handling nullable loggingsftpresponseallof types. 
+// NullableLoggingSftpResponseAllOf is a helper abstraction for handling nullable loggingsftpresponseallof types.
 type NullableLoggingSftpResponseAllOf struct {
 	value *LoggingSftpResponseAllOf
 	isSet bool
@@ -275,7 +274,7 @@ func (v NullableLoggingSftpResponseAllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingSftpResponseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

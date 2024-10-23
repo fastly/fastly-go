@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingS3API interface {
 
 	/*
-	CreateLogAwsS3 Create an AWS S3 log endpoint
+		CreateLogAwsS3 Create an AWS S3 log endpoint
 
-	Create a S3 for a particular service and version.
+		Create a S3 for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogAwsS3Request
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogAwsS3Request
 	*/
 	CreateLogAwsS3(ctx context.Context, serviceID string, versionID int32) APICreateLogAwsS3Request
 
@@ -48,15 +47,15 @@ type LoggingS3API interface {
 	CreateLogAwsS3Execute(r APICreateLogAwsS3Request) (*LoggingS3Response, *http.Response, error)
 
 	/*
-	DeleteLogAwsS3 Delete an AWS S3 log endpoint
+		DeleteLogAwsS3 Delete an AWS S3 log endpoint
 
-	Delete the S3 for a particular service and version.
+		Delete the S3 for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingS3Name The name for the real-time logging configuration.
-	 @return APIDeleteLogAwsS3Request
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingS3Name The name for the real-time logging configuration.
+		 @return APIDeleteLogAwsS3Request
 	*/
 	DeleteLogAwsS3(ctx context.Context, serviceID string, versionID int32, loggingS3Name string) APIDeleteLogAwsS3Request
 
@@ -65,15 +64,15 @@ type LoggingS3API interface {
 	DeleteLogAwsS3Execute(r APIDeleteLogAwsS3Request) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogAwsS3 Get an AWS S3 log endpoint
+		GetLogAwsS3 Get an AWS S3 log endpoint
 
-	Get the S3 for a particular service and version.
+		Get the S3 for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingS3Name The name for the real-time logging configuration.
-	 @return APIGetLogAwsS3Request
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingS3Name The name for the real-time logging configuration.
+		 @return APIGetLogAwsS3Request
 	*/
 	GetLogAwsS3(ctx context.Context, serviceID string, versionID int32, loggingS3Name string) APIGetLogAwsS3Request
 
@@ -82,14 +81,14 @@ type LoggingS3API interface {
 	GetLogAwsS3Execute(r APIGetLogAwsS3Request) (*LoggingS3Response, *http.Response, error)
 
 	/*
-	ListLogAwsS3 List AWS S3 log endpoints
+		ListLogAwsS3 List AWS S3 log endpoints
 
-	List all of the S3s for a particular service and version.
+		List all of the S3s for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogAwsS3Request
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogAwsS3Request
 	*/
 	ListLogAwsS3(ctx context.Context, serviceID string, versionID int32) APIListLogAwsS3Request
 
@@ -98,15 +97,15 @@ type LoggingS3API interface {
 	ListLogAwsS3Execute(r APIListLogAwsS3Request) ([]LoggingS3Response, *http.Response, error)
 
 	/*
-	UpdateLogAwsS3 Update an AWS S3 log endpoint
+		UpdateLogAwsS3 Update an AWS S3 log endpoint
 
-	Update the S3 for a particular service and version.
+		Update the S3 for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingS3Name The name for the real-time logging configuration.
-	 @return APIUpdateLogAwsS3Request
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingS3Name The name for the real-time logging configuration.
+		 @return APIUpdateLogAwsS3Request
 	*/
 	UpdateLogAwsS3(ctx context.Context, serviceID string, versionID int32, loggingS3Name string) APIUpdateLogAwsS3Request
 
@@ -120,32 +119,32 @@ type LoggingS3APIService service
 
 // APICreateLogAwsS3Request represents a request for the resource.
 type APICreateLogAwsS3Request struct {
-	ctx context.Context
-	APIService LoggingS3API
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
-	responseCondition *string
-	format *string
-	formatVersion *int32
-	messageType *string
-	timestampFormat *string
-	compressionCodec *string
-	period *int32
-	gzipLevel *int32
-	accessKey *string
-	acl *string
-	bucketName *string
-	domain *string
-	iamRole *string
-	path *string
-	publicKey *string
-	redundancy *string
-	secretKey *string
+	ctx                          context.Context
+	APIService                   LoggingS3API
+	serviceID                    string
+	versionID                    int32
+	name                         *string
+	placement                    *string
+	responseCondition            *string
+	format                       *string
+	formatVersion                *int32
+	messageType                  *string
+	timestampFormat              *string
+	compressionCodec             *string
+	period                       *int32
+	gzipLevel                    *int32
+	accessKey                    *string
+	acl                          *string
+	bucketName                   *string
+	domain                       *string
+	iamRole                      *string
+	path                         *string
+	publicKey                    *string
+	redundancy                   *string
+	secretKey                    *string
 	serverSideEncryptionKmsKeyID *string
-	serverSideEncryption *string
-	fileMaxBytes *int32
+	serverSideEncryption         *string
+	fileMaxBytes                 *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -153,106 +152,127 @@ func (r *APICreateLogAwsS3Request) Name(name string) *APICreateLogAwsS3Request {
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogAwsS3Request) Placement(placement string) *APICreateLogAwsS3Request {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogAwsS3Request) ResponseCondition(responseCondition string) *APICreateLogAwsS3Request {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogAwsS3Request) Format(format string) *APICreateLogAwsS3Request {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogAwsS3Request) FormatVersion(formatVersion int32) *APICreateLogAwsS3Request {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // MessageType How the message should be formatted.
 func (r *APICreateLogAwsS3Request) MessageType(messageType string) *APICreateLogAwsS3Request {
 	r.messageType = &messageType
 	return r
 }
+
 // TimestampFormat A timestamp format
 func (r *APICreateLogAwsS3Request) TimestampFormat(timestampFormat string) *APICreateLogAwsS3Request {
 	r.timestampFormat = &timestampFormat
 	return r
 }
+
 // CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APICreateLogAwsS3Request) CompressionCodec(compressionCodec string) *APICreateLogAwsS3Request {
 	r.compressionCodec = &compressionCodec
 	return r
 }
+
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APICreateLogAwsS3Request) Period(period int32) *APICreateLogAwsS3Request {
 	r.period = &period
 	return r
 }
+
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APICreateLogAwsS3Request) GzipLevel(gzipLevel int32) *APICreateLogAwsS3Request {
 	r.gzipLevel = &gzipLevel
 	return r
 }
+
 // AccessKey The access key for your S3 account. Not required if &#x60;iam_role&#x60; is provided.
 func (r *APICreateLogAwsS3Request) AccessKey(accessKey string) *APICreateLogAwsS3Request {
 	r.accessKey = &accessKey
 	return r
 }
+
 // ACL The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
 func (r *APICreateLogAwsS3Request) ACL(acl string) *APICreateLogAwsS3Request {
 	r.acl = &acl
 	return r
 }
+
 // BucketName The bucket name for S3 account.
 func (r *APICreateLogAwsS3Request) BucketName(bucketName string) *APICreateLogAwsS3Request {
 	r.bucketName = &bucketName
 	return r
 }
+
 // Domain The domain of the Amazon S3 endpoint.
 func (r *APICreateLogAwsS3Request) Domain(domain string) *APICreateLogAwsS3Request {
 	r.domain = &domain
 	return r
 }
+
 // IamRole The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if &#x60;access_key&#x60; and &#x60;secret_key&#x60; are provided.
 func (r *APICreateLogAwsS3Request) IamRole(iamRole string) *APICreateLogAwsS3Request {
 	r.iamRole = &iamRole
 	return r
 }
+
 // Path The path to upload logs to.
 func (r *APICreateLogAwsS3Request) Path(path string) *APICreateLogAwsS3Request {
 	r.path = &path
 	return r
 }
+
 // PublicKey A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 func (r *APICreateLogAwsS3Request) PublicKey(publicKey string) *APICreateLogAwsS3Request {
 	r.publicKey = &publicKey
 	return r
 }
+
 // Redundancy The S3 redundancy level.
 func (r *APICreateLogAwsS3Request) Redundancy(redundancy string) *APICreateLogAwsS3Request {
 	r.redundancy = &redundancy
 	return r
 }
+
 // SecretKey The secret key for your S3 account. Not required if &#x60;iam_role&#x60; is provided.
 func (r *APICreateLogAwsS3Request) SecretKey(secretKey string) *APICreateLogAwsS3Request {
 	r.secretKey = &secretKey
 	return r
 }
+
 // ServerSideEncryptionKmsKeyID Optional server-side KMS Key ID. Must be set if &#x60;server_side_encryption&#x60; is set to &#x60;aws:kms&#x60; or &#x60;AES256&#x60;.
 func (r *APICreateLogAwsS3Request) ServerSideEncryptionKmsKeyID(serverSideEncryptionKmsKeyID string) *APICreateLogAwsS3Request {
 	r.serverSideEncryptionKmsKeyID = &serverSideEncryptionKmsKeyID
 	return r
 }
+
 // ServerSideEncryption Set this to &#x60;AES256&#x60; or &#x60;aws:kms&#x60; to enable S3 Server Side Encryption.
 func (r *APICreateLogAwsS3Request) ServerSideEncryption(serverSideEncryption string) *APICreateLogAwsS3Request {
 	r.serverSideEncryption = &serverSideEncryption
 	return r
 }
+
 // FileMaxBytes The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
 func (r *APICreateLogAwsS3Request) FileMaxBytes(fileMaxBytes int32) *APICreateLogAwsS3Request {
 	r.fileMaxBytes = &fileMaxBytes
@@ -277,9 +297,9 @@ Create a S3 for a particular service and version.
 func (a *LoggingS3APIService) CreateLogAwsS3(ctx context.Context, serviceID string, versionID int32) APICreateLogAwsS3Request {
 	return APICreateLogAwsS3Request{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -287,10 +307,10 @@ func (a *LoggingS3APIService) CreateLogAwsS3(ctx context.Context, serviceID stri
 //  @return LoggingS3Response
 func (a *LoggingS3APIService) CreateLogAwsS3Execute(r APICreateLogAwsS3Request) (*LoggingS3Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingS3Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingS3Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingS3APIService.CreateLogAwsS3")
@@ -437,7 +457,6 @@ func (a *LoggingS3APIService) CreateLogAwsS3Execute(r APICreateLogAwsS3Request) 
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -456,13 +475,12 @@ func (a *LoggingS3APIService) CreateLogAwsS3Execute(r APICreateLogAwsS3Request) 
 
 // APIDeleteLogAwsS3Request represents a request for the resource.
 type APIDeleteLogAwsS3Request struct {
-	ctx context.Context
-	APIService LoggingS3API
-	serviceID string
-	versionID int32
+	ctx           context.Context
+	APIService    LoggingS3API
+	serviceID     string
+	versionID     int32
 	loggingS3Name string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogAwsS3Request) Execute() (*InlineResponse200, *http.Response, error) {
@@ -482,10 +500,10 @@ Delete the S3 for a particular service and version.
 */
 func (a *LoggingS3APIService) DeleteLogAwsS3(ctx context.Context, serviceID string, versionID int32, loggingS3Name string) APIDeleteLogAwsS3Request {
 	return APIDeleteLogAwsS3Request{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:    a,
+		ctx:           ctx,
+		serviceID:     serviceID,
+		versionID:     versionID,
 		loggingS3Name: loggingS3Name,
 	}
 }
@@ -494,10 +512,10 @@ func (a *LoggingS3APIService) DeleteLogAwsS3(ctx context.Context, serviceID stri
 //  @return InlineResponse200
 func (a *LoggingS3APIService) DeleteLogAwsS3Execute(r APIDeleteLogAwsS3Request) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingS3APIService.DeleteLogAwsS3")
@@ -579,7 +597,6 @@ func (a *LoggingS3APIService) DeleteLogAwsS3Execute(r APIDeleteLogAwsS3Request) 
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -598,13 +615,12 @@ func (a *LoggingS3APIService) DeleteLogAwsS3Execute(r APIDeleteLogAwsS3Request) 
 
 // APIGetLogAwsS3Request represents a request for the resource.
 type APIGetLogAwsS3Request struct {
-	ctx context.Context
-	APIService LoggingS3API
-	serviceID string
-	versionID int32
+	ctx           context.Context
+	APIService    LoggingS3API
+	serviceID     string
+	versionID     int32
 	loggingS3Name string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogAwsS3Request) Execute() (*LoggingS3Response, *http.Response, error) {
@@ -624,10 +640,10 @@ Get the S3 for a particular service and version.
 */
 func (a *LoggingS3APIService) GetLogAwsS3(ctx context.Context, serviceID string, versionID int32, loggingS3Name string) APIGetLogAwsS3Request {
 	return APIGetLogAwsS3Request{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:    a,
+		ctx:           ctx,
+		serviceID:     serviceID,
+		versionID:     versionID,
 		loggingS3Name: loggingS3Name,
 	}
 }
@@ -636,10 +652,10 @@ func (a *LoggingS3APIService) GetLogAwsS3(ctx context.Context, serviceID string,
 //  @return LoggingS3Response
 func (a *LoggingS3APIService) GetLogAwsS3Execute(r APIGetLogAwsS3Request) (*LoggingS3Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingS3Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingS3Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingS3APIService.GetLogAwsS3")
@@ -721,7 +737,6 @@ func (a *LoggingS3APIService) GetLogAwsS3Execute(r APIGetLogAwsS3Request) (*Logg
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -740,12 +755,11 @@ func (a *LoggingS3APIService) GetLogAwsS3Execute(r APIGetLogAwsS3Request) (*Logg
 
 // APIListLogAwsS3Request represents a request for the resource.
 type APIListLogAwsS3Request struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingS3API
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogAwsS3Request) Execute() ([]LoggingS3Response, *http.Response, error) {
@@ -765,9 +779,9 @@ List all of the S3s for a particular service and version.
 func (a *LoggingS3APIService) ListLogAwsS3(ctx context.Context, serviceID string, versionID int32) APIListLogAwsS3Request {
 	return APIListLogAwsS3Request{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -775,10 +789,10 @@ func (a *LoggingS3APIService) ListLogAwsS3(ctx context.Context, serviceID string
 //  @return []LoggingS3Response
 func (a *LoggingS3APIService) ListLogAwsS3Execute(r APIListLogAwsS3Request) ([]LoggingS3Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingS3Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingS3Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingS3APIService.ListLogAwsS3")
@@ -859,7 +873,6 @@ func (a *LoggingS3APIService) ListLogAwsS3Execute(r APIListLogAwsS3Request) ([]L
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -878,33 +891,33 @@ func (a *LoggingS3APIService) ListLogAwsS3Execute(r APIListLogAwsS3Request) ([]L
 
 // APIUpdateLogAwsS3Request represents a request for the resource.
 type APIUpdateLogAwsS3Request struct {
-	ctx context.Context
-	APIService LoggingS3API
-	serviceID string
-	versionID int32
-	loggingS3Name string
-	name *string
-	placement *string
-	responseCondition *string
-	format *string
-	formatVersion *int32
-	messageType *string
-	timestampFormat *string
-	compressionCodec *string
-	period *int32
-	gzipLevel *int32
-	accessKey *string
-	acl *string
-	bucketName *string
-	domain *string
-	iamRole *string
-	path *string
-	publicKey *string
-	redundancy *string
-	secretKey *string
+	ctx                          context.Context
+	APIService                   LoggingS3API
+	serviceID                    string
+	versionID                    int32
+	loggingS3Name                string
+	name                         *string
+	placement                    *string
+	responseCondition            *string
+	format                       *string
+	formatVersion                *int32
+	messageType                  *string
+	timestampFormat              *string
+	compressionCodec             *string
+	period                       *int32
+	gzipLevel                    *int32
+	accessKey                    *string
+	acl                          *string
+	bucketName                   *string
+	domain                       *string
+	iamRole                      *string
+	path                         *string
+	publicKey                    *string
+	redundancy                   *string
+	secretKey                    *string
 	serverSideEncryptionKmsKeyID *string
-	serverSideEncryption *string
-	fileMaxBytes *int32
+	serverSideEncryption         *string
+	fileMaxBytes                 *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -912,106 +925,127 @@ func (r *APIUpdateLogAwsS3Request) Name(name string) *APIUpdateLogAwsS3Request {
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogAwsS3Request) Placement(placement string) *APIUpdateLogAwsS3Request {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogAwsS3Request) ResponseCondition(responseCondition string) *APIUpdateLogAwsS3Request {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogAwsS3Request) Format(format string) *APIUpdateLogAwsS3Request {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogAwsS3Request) FormatVersion(formatVersion int32) *APIUpdateLogAwsS3Request {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // MessageType How the message should be formatted.
 func (r *APIUpdateLogAwsS3Request) MessageType(messageType string) *APIUpdateLogAwsS3Request {
 	r.messageType = &messageType
 	return r
 }
+
 // TimestampFormat A timestamp format
 func (r *APIUpdateLogAwsS3Request) TimestampFormat(timestampFormat string) *APIUpdateLogAwsS3Request {
 	r.timestampFormat = &timestampFormat
 	return r
 }
+
 // CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APIUpdateLogAwsS3Request) CompressionCodec(compressionCodec string) *APIUpdateLogAwsS3Request {
 	r.compressionCodec = &compressionCodec
 	return r
 }
+
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APIUpdateLogAwsS3Request) Period(period int32) *APIUpdateLogAwsS3Request {
 	r.period = &period
 	return r
 }
+
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APIUpdateLogAwsS3Request) GzipLevel(gzipLevel int32) *APIUpdateLogAwsS3Request {
 	r.gzipLevel = &gzipLevel
 	return r
 }
+
 // AccessKey The access key for your S3 account. Not required if &#x60;iam_role&#x60; is provided.
 func (r *APIUpdateLogAwsS3Request) AccessKey(accessKey string) *APIUpdateLogAwsS3Request {
 	r.accessKey = &accessKey
 	return r
 }
+
 // ACL The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
 func (r *APIUpdateLogAwsS3Request) ACL(acl string) *APIUpdateLogAwsS3Request {
 	r.acl = &acl
 	return r
 }
+
 // BucketName The bucket name for S3 account.
 func (r *APIUpdateLogAwsS3Request) BucketName(bucketName string) *APIUpdateLogAwsS3Request {
 	r.bucketName = &bucketName
 	return r
 }
+
 // Domain The domain of the Amazon S3 endpoint.
 func (r *APIUpdateLogAwsS3Request) Domain(domain string) *APIUpdateLogAwsS3Request {
 	r.domain = &domain
 	return r
 }
+
 // IamRole The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if &#x60;access_key&#x60; and &#x60;secret_key&#x60; are provided.
 func (r *APIUpdateLogAwsS3Request) IamRole(iamRole string) *APIUpdateLogAwsS3Request {
 	r.iamRole = &iamRole
 	return r
 }
+
 // Path The path to upload logs to.
 func (r *APIUpdateLogAwsS3Request) Path(path string) *APIUpdateLogAwsS3Request {
 	r.path = &path
 	return r
 }
+
 // PublicKey A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 func (r *APIUpdateLogAwsS3Request) PublicKey(publicKey string) *APIUpdateLogAwsS3Request {
 	r.publicKey = &publicKey
 	return r
 }
+
 // Redundancy The S3 redundancy level.
 func (r *APIUpdateLogAwsS3Request) Redundancy(redundancy string) *APIUpdateLogAwsS3Request {
 	r.redundancy = &redundancy
 	return r
 }
+
 // SecretKey The secret key for your S3 account. Not required if &#x60;iam_role&#x60; is provided.
 func (r *APIUpdateLogAwsS3Request) SecretKey(secretKey string) *APIUpdateLogAwsS3Request {
 	r.secretKey = &secretKey
 	return r
 }
+
 // ServerSideEncryptionKmsKeyID Optional server-side KMS Key ID. Must be set if &#x60;server_side_encryption&#x60; is set to &#x60;aws:kms&#x60; or &#x60;AES256&#x60;.
 func (r *APIUpdateLogAwsS3Request) ServerSideEncryptionKmsKeyID(serverSideEncryptionKmsKeyID string) *APIUpdateLogAwsS3Request {
 	r.serverSideEncryptionKmsKeyID = &serverSideEncryptionKmsKeyID
 	return r
 }
+
 // ServerSideEncryption Set this to &#x60;AES256&#x60; or &#x60;aws:kms&#x60; to enable S3 Server Side Encryption.
 func (r *APIUpdateLogAwsS3Request) ServerSideEncryption(serverSideEncryption string) *APIUpdateLogAwsS3Request {
 	r.serverSideEncryption = &serverSideEncryption
 	return r
 }
+
 // FileMaxBytes The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
 func (r *APIUpdateLogAwsS3Request) FileMaxBytes(fileMaxBytes int32) *APIUpdateLogAwsS3Request {
 	r.fileMaxBytes = &fileMaxBytes
@@ -1036,10 +1070,10 @@ Update the S3 for a particular service and version.
 */
 func (a *LoggingS3APIService) UpdateLogAwsS3(ctx context.Context, serviceID string, versionID int32, loggingS3Name string) APIUpdateLogAwsS3Request {
 	return APIUpdateLogAwsS3Request{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:    a,
+		ctx:           ctx,
+		serviceID:     serviceID,
+		versionID:     versionID,
 		loggingS3Name: loggingS3Name,
 	}
 }
@@ -1048,10 +1082,10 @@ func (a *LoggingS3APIService) UpdateLogAwsS3(ctx context.Context, serviceID stri
 //  @return LoggingS3Response
 func (a *LoggingS3APIService) UpdateLogAwsS3Execute(r APIUpdateLogAwsS3Request) (*LoggingS3Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingS3Response
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingS3Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingS3APIService.UpdateLogAwsS3")
@@ -1198,7 +1232,6 @@ func (a *LoggingS3APIService) UpdateLogAwsS3Execute(r APIUpdateLogAwsS3Request) 
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

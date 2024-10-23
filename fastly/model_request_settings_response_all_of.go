@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -30,7 +29,7 @@ type RequestSettingsResponseAllOf struct {
 	// How old an object is allowed to be to serve stale-if-error or stale-while-revalidate.
 	MaxStaleAge NullableString `json:"max_stale_age,omitempty"`
 	// Injects the X-Timer info into the request for viewing origin fetch durations.
-	TimerSupport NullableString `json:"timer_support,omitempty"`
+	TimerSupport         NullableString `json:"timer_support,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -66,7 +65,7 @@ func (o *RequestSettingsResponseAllOf) GetBypassBusyWait() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsResponseAllOf) GetBypassBusyWaitOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BypassBusyWait.Get(), o.BypassBusyWait.IsSet()
@@ -85,6 +84,7 @@ func (o *RequestSettingsResponseAllOf) HasBypassBusyWait() bool {
 func (o *RequestSettingsResponseAllOf) SetBypassBusyWait(v string) {
 	o.BypassBusyWait.Set(&v)
 }
+
 // SetBypassBusyWaitNil sets the value for BypassBusyWait to be an explicit nil
 func (o *RequestSettingsResponseAllOf) SetBypassBusyWaitNil() {
 	o.BypassBusyWait.Set(nil)
@@ -108,7 +108,7 @@ func (o *RequestSettingsResponseAllOf) GetForceMiss() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsResponseAllOf) GetForceMissOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ForceMiss.Get(), o.ForceMiss.IsSet()
@@ -127,6 +127,7 @@ func (o *RequestSettingsResponseAllOf) HasForceMiss() bool {
 func (o *RequestSettingsResponseAllOf) SetForceMiss(v string) {
 	o.ForceMiss.Set(&v)
 }
+
 // SetForceMissNil sets the value for ForceMiss to be an explicit nil
 func (o *RequestSettingsResponseAllOf) SetForceMissNil() {
 	o.ForceMiss.Set(nil)
@@ -182,7 +183,7 @@ func (o *RequestSettingsResponseAllOf) GetGeoHeaders() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsResponseAllOf) GetGeoHeadersOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.GeoHeaders.Get(), o.GeoHeaders.IsSet()
@@ -201,6 +202,7 @@ func (o *RequestSettingsResponseAllOf) HasGeoHeaders() bool {
 func (o *RequestSettingsResponseAllOf) SetGeoHeaders(v string) {
 	o.GeoHeaders.Set(&v)
 }
+
 // SetGeoHeadersNil sets the value for GeoHeaders to be an explicit nil
 func (o *RequestSettingsResponseAllOf) SetGeoHeadersNil() {
 	o.GeoHeaders.Set(nil)
@@ -224,7 +226,7 @@ func (o *RequestSettingsResponseAllOf) GetMaxStaleAge() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsResponseAllOf) GetMaxStaleAgeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MaxStaleAge.Get(), o.MaxStaleAge.IsSet()
@@ -243,6 +245,7 @@ func (o *RequestSettingsResponseAllOf) HasMaxStaleAge() bool {
 func (o *RequestSettingsResponseAllOf) SetMaxStaleAge(v string) {
 	o.MaxStaleAge.Set(&v)
 }
+
 // SetMaxStaleAgeNil sets the value for MaxStaleAge to be an explicit nil
 func (o *RequestSettingsResponseAllOf) SetMaxStaleAgeNil() {
 	o.MaxStaleAge.Set(nil)
@@ -266,7 +269,7 @@ func (o *RequestSettingsResponseAllOf) GetTimerSupport() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RequestSettingsResponseAllOf) GetTimerSupportOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TimerSupport.Get(), o.TimerSupport.IsSet()
@@ -285,6 +288,7 @@ func (o *RequestSettingsResponseAllOf) HasTimerSupport() bool {
 func (o *RequestSettingsResponseAllOf) SetTimerSupport(v string) {
 	o.TimerSupport.Set(&v)
 }
+
 // SetTimerSupportNil sets the value for TimerSupport to be an explicit nil
 func (o *RequestSettingsResponseAllOf) SetTimerSupportNil() {
 	o.TimerSupport.Set(nil)
@@ -326,7 +330,7 @@ func (o RequestSettingsResponseAllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *RequestSettingsResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	varRequestSettingsResponseAllOf := _RequestSettingsResponseAllOf{}
 
@@ -349,7 +353,7 @@ func (o *RequestSettingsResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableRequestSettingsResponseAllOf is a helper abstraction for handling nullable requestsettingsresponseallof types. 
+// NullableRequestSettingsResponseAllOf is a helper abstraction for handling nullable requestsettingsresponseallof types.
 type NullableRequestSettingsResponseAllOf struct {
 	value *RequestSettingsResponseAllOf
 	isSet bool
@@ -389,7 +393,7 @@ func (v NullableRequestSettingsResponseAllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableRequestSettingsResponseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

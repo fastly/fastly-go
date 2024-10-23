@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -28,8 +27,8 @@ type PoolResponseCommon struct {
 	// Maximum number of connections.
 	MaxConnDefault *string `json:"max_conn_default,omitempty"`
 	// Be strict on checking TLS certs.
-	TLSCheckCert NullableString `json:"tls_check_cert,omitempty"`
-	ID *string `json:"id,omitempty"`
+	TLSCheckCert         NullableString `json:"tls_check_cert,omitempty"`
+	ID                   *string        `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -197,7 +196,7 @@ func (o *PoolResponseCommon) GetTLSCheckCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolResponseCommon) GetTLSCheckCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCheckCert.Get(), o.TLSCheckCert.IsSet()
@@ -216,6 +215,7 @@ func (o *PoolResponseCommon) HasTLSCheckCert() bool {
 func (o *PoolResponseCommon) SetTLSCheckCert(v string) {
 	o.TLSCheckCert.Set(&v)
 }
+
 // SetTLSCheckCertNil sets the value for TLSCheckCert to be an explicit nil
 func (o *PoolResponseCommon) SetTLSCheckCertNil() {
 	o.TLSCheckCert.Set(nil)
@@ -289,7 +289,7 @@ func (o PoolResponseCommon) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *PoolResponseCommon) UnmarshalJSON(bytes []byte) (err error) {
 	varPoolResponseCommon := _PoolResponseCommon{}
 
@@ -312,7 +312,7 @@ func (o *PoolResponseCommon) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullablePoolResponseCommon is a helper abstraction for handling nullable poolresponsecommon types. 
+// NullablePoolResponseCommon is a helper abstraction for handling nullable poolresponsecommon types.
 type NullablePoolResponseCommon struct {
 	value *PoolResponseCommon
 	isSet bool
@@ -352,7 +352,7 @@ func (v NullablePoolResponseCommon) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullablePoolResponseCommon) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

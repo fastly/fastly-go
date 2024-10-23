@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -29,7 +28,7 @@ type WafActiveRuleResponseDataAttributes struct {
 	// The latest rule revision number that is available for the associated rule revision.
 	LatestRevision *int32 `json:"latest_revision,omitempty"`
 	// Indicates if the associated rule revision is up to date or not.
-	Outdated *bool `json:"outdated,omitempty"`
+	Outdated             *bool `json:"outdated,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -65,7 +64,7 @@ func (o *WafActiveRuleResponseDataAttributes) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafActiveRuleResponseDataAttributes) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -84,6 +83,7 @@ func (o *WafActiveRuleResponseDataAttributes) HasCreatedAt() bool {
 func (o *WafActiveRuleResponseDataAttributes) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *WafActiveRuleResponseDataAttributes) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -107,7 +107,7 @@ func (o *WafActiveRuleResponseDataAttributes) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafActiveRuleResponseDataAttributes) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -126,6 +126,7 @@ func (o *WafActiveRuleResponseDataAttributes) HasDeletedAt() bool {
 func (o *WafActiveRuleResponseDataAttributes) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *WafActiveRuleResponseDataAttributes) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -149,7 +150,7 @@ func (o *WafActiveRuleResponseDataAttributes) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafActiveRuleResponseDataAttributes) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -168,6 +169,7 @@ func (o *WafActiveRuleResponseDataAttributes) HasUpdatedAt() bool {
 func (o *WafActiveRuleResponseDataAttributes) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *WafActiveRuleResponseDataAttributes) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -270,7 +272,7 @@ func (o WafActiveRuleResponseDataAttributes) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *WafActiveRuleResponseDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	varWafActiveRuleResponseDataAttributes := _WafActiveRuleResponseDataAttributes{}
 
@@ -292,7 +294,7 @@ func (o *WafActiveRuleResponseDataAttributes) UnmarshalJSON(bytes []byte) (err e
 	return err
 }
 
-// NullableWafActiveRuleResponseDataAttributes is a helper abstraction for handling nullable wafactiveruleresponsedataattributes types. 
+// NullableWafActiveRuleResponseDataAttributes is a helper abstraction for handling nullable wafactiveruleresponsedataattributes types.
 type NullableWafActiveRuleResponseDataAttributes struct {
 	value *WafActiveRuleResponseDataAttributes
 	isSet bool
@@ -332,7 +334,7 @@ func (v NullableWafActiveRuleResponseDataAttributes) MarshalJSON() ([]byte, erro
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableWafActiveRuleResponseDataAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

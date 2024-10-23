@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,7 +19,7 @@ import (
 // HTTP3AllOf struct for HTTP3AllOf
 type HTTP3AllOf struct {
 	// Revision number of the HTTP/3 feature implementation. Defaults to the most recent revision.
-	FeatureRevision *int32 `json:"feature_revision,omitempty"`
+	FeatureRevision      *int32 `json:"feature_revision,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -91,7 +90,7 @@ func (o HTTP3AllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *HTTP3AllOf) UnmarshalJSON(bytes []byte) (err error) {
 	varHTTP3AllOf := _HTTP3AllOf{}
 
@@ -109,7 +108,7 @@ func (o *HTTP3AllOf) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableHTTP3AllOf is a helper abstraction for handling nullable http3allof types. 
+// NullableHTTP3AllOf is a helper abstraction for handling nullable http3allof types.
 type NullableHTTP3AllOf struct {
 	value *HTTP3AllOf
 	isSet bool
@@ -149,7 +148,7 @@ func (v NullableHTTP3AllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableHTTP3AllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

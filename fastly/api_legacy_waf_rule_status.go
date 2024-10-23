@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,17 +31,17 @@ var (
 type LegacyWafRuleStatusAPI interface {
 
 	/*
-	GetWafFirewallRuleStatus Get the status of a rule on a firewall
+		GetWafFirewallRuleStatus Get the status of a rule on a firewall
 
-	Get a specific rule status object for a particular service, firewall, and rule.
+		Get a specific rule status object for a particular service, firewall, and rule.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @param wafRuleID Alphanumeric string identifying a WAF rule.
-	 @return APIGetWafFirewallRuleStatusRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @param wafRuleID Alphanumeric string identifying a WAF rule.
+		 @return APIGetWafFirewallRuleStatusRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetWafFirewallRuleStatus(ctx context.Context, serviceID string, firewallID string, wafRuleID string) APIGetWafFirewallRuleStatusRequest
 
@@ -52,16 +51,16 @@ type LegacyWafRuleStatusAPI interface {
 	GetWafFirewallRuleStatusExecute(r APIGetWafFirewallRuleStatusRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListWafFirewallRuleStatuses List rule statuses
+		ListWafFirewallRuleStatuses List rule statuses
 
-	List all rule statuses for a particular service and firewall.
+		List all rule statuses for a particular service and firewall.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APIListWafFirewallRuleStatusesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APIListWafFirewallRuleStatusesRequest
 
-	Deprecated
+		Deprecated
 	*/
 	ListWafFirewallRuleStatuses(ctx context.Context, serviceID string, firewallID string) APIListWafFirewallRuleStatusesRequest
 
@@ -71,17 +70,17 @@ type LegacyWafRuleStatusAPI interface {
 	ListWafFirewallRuleStatusesExecute(r APIListWafFirewallRuleStatusesRequest) (map[string]any, *http.Response, error)
 
 	/*
-	UpdateWafFirewallRuleStatus Update the status of a rule
+		UpdateWafFirewallRuleStatus Update the status of a rule
 
-	Update a rule status for a particular service, firewall, and rule.
+		Update a rule status for a particular service, firewall, and rule.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @param wafRuleID Alphanumeric string identifying a WAF rule.
-	 @return APIUpdateWafFirewallRuleStatusRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @param wafRuleID Alphanumeric string identifying a WAF rule.
+		 @return APIUpdateWafFirewallRuleStatusRequest
 
-	Deprecated
+		Deprecated
 	*/
 	UpdateWafFirewallRuleStatus(ctx context.Context, serviceID string, firewallID string, wafRuleID string) APIUpdateWafFirewallRuleStatusRequest
 
@@ -91,16 +90,16 @@ type LegacyWafRuleStatusAPI interface {
 	UpdateWafFirewallRuleStatusExecute(r APIUpdateWafFirewallRuleStatusRequest) (map[string]any, *http.Response, error)
 
 	/*
-	UpdateWafFirewallRuleStatusesTag Create or update status of a tagged group of rules
+		UpdateWafFirewallRuleStatusesTag Create or update status of a tagged group of rules
 
-	Create or update all rule statuses for a particular service and firewall, based on tag name. By default, only rule status for enabled rules (with status log or block) will be updated. To update rule statuses for disabled rules under the specified tag, use the force attribute.
+		Create or update all rule statuses for a particular service and firewall, based on tag name. By default, only rule status for enabled rules (with status log or block) will be updated. To update rule statuses for disabled rules under the specified tag, use the force attribute.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APIUpdateWafFirewallRuleStatusesTagRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APIUpdateWafFirewallRuleStatusesTagRequest
 
-	Deprecated
+		Deprecated
 	*/
 	UpdateWafFirewallRuleStatusesTag(ctx context.Context, serviceID string, firewallID string) APIUpdateWafFirewallRuleStatusesTagRequest
 
@@ -115,13 +114,12 @@ type LegacyWafRuleStatusAPIService service
 
 // APIGetWafFirewallRuleStatusRequest represents a request for the resource.
 type APIGetWafFirewallRuleStatusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LegacyWafRuleStatusAPI
-	serviceID string
+	serviceID  string
 	firewallID string
-	wafRuleID string
+	wafRuleID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetWafFirewallRuleStatusRequest) Execute() (map[string]any, *http.Response, error) {
@@ -144,10 +142,10 @@ Deprecated
 func (a *LegacyWafRuleStatusAPIService) GetWafFirewallRuleStatus(ctx context.Context, serviceID string, firewallID string, wafRuleID string) APIGetWafFirewallRuleStatusRequest {
 	return APIGetWafFirewallRuleStatusRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 		firewallID: firewallID,
-		wafRuleID: wafRuleID,
+		wafRuleID:  wafRuleID,
 	}
 }
 
@@ -156,10 +154,10 @@ func (a *LegacyWafRuleStatusAPIService) GetWafFirewallRuleStatus(ctx context.Con
 // Deprecated
 func (a *LegacyWafRuleStatusAPIService) GetWafFirewallRuleStatusExecute(r APIGetWafFirewallRuleStatusRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafRuleStatusAPIService.GetWafFirewallRuleStatus")
@@ -241,7 +239,6 @@ func (a *LegacyWafRuleStatusAPIService) GetWafFirewallRuleStatusExecute(r APIGet
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -260,18 +257,18 @@ func (a *LegacyWafRuleStatusAPIService) GetWafFirewallRuleStatusExecute(r APIGet
 
 // APIListWafFirewallRuleStatusesRequest represents a request for the resource.
 type APIListWafFirewallRuleStatusesRequest struct {
-	ctx context.Context
-	APIService LegacyWafRuleStatusAPI
-	serviceID string
-	firewallID string
-	filterStatus *string
-	filterRuleMessage *string
-	filterRuleRuleID *string
-	filterRuleTags *string
+	ctx                context.Context
+	APIService         LegacyWafRuleStatusAPI
+	serviceID          string
+	firewallID         string
+	filterStatus       *string
+	filterRuleMessage  *string
+	filterRuleRuleID   *string
+	filterRuleTags     *string
 	filterRuleTagsName *string
-	include *string
-	pageNumber *int32
-	pageSize *int32
+	include            *string
+	pageNumber         *int32
+	pageSize           *int32
 }
 
 // FilterStatus Limit results to rule statuses with the specified status.
@@ -279,36 +276,43 @@ func (r *APIListWafFirewallRuleStatusesRequest) FilterStatus(filterStatus string
 	r.filterStatus = &filterStatus
 	return r
 }
+
 // FilterRuleMessage Limit results to rule statuses whose rules have the specified message.
 func (r *APIListWafFirewallRuleStatusesRequest) FilterRuleMessage(filterRuleMessage string) *APIListWafFirewallRuleStatusesRequest {
 	r.filterRuleMessage = &filterRuleMessage
 	return r
 }
+
 // FilterRuleRuleID Limit results to rule statuses whose rules represent the specified ModSecurity rule_id.
 func (r *APIListWafFirewallRuleStatusesRequest) FilterRuleRuleID(filterRuleRuleID string) *APIListWafFirewallRuleStatusesRequest {
 	r.filterRuleRuleID = &filterRuleRuleID
 	return r
 }
+
 // FilterRuleTags Limit results to rule statuses whose rules relate to the specified tag IDs.
 func (r *APIListWafFirewallRuleStatusesRequest) FilterRuleTags(filterRuleTags string) *APIListWafFirewallRuleStatusesRequest {
 	r.filterRuleTags = &filterRuleTags
 	return r
 }
+
 // FilterRuleTagsName Limit results to rule statuses whose rules related to the named tags.
 func (r *APIListWafFirewallRuleStatusesRequest) FilterRuleTagsName(filterRuleTagsName string) *APIListWafFirewallRuleStatusesRequest {
 	r.filterRuleTagsName = &filterRuleTagsName
 	return r
 }
-// Include Include relationships. Optional, comma separated values. Permitted values: &#x60;tags&#x60;. 
+
+// Include Include relationships. Optional, comma separated values. Permitted values: &#x60;tags&#x60;.
 func (r *APIListWafFirewallRuleStatusesRequest) Include(include string) *APIListWafFirewallRuleStatusesRequest {
 	r.include = &include
 	return r
 }
+
 // PageNumber Current page.
 func (r *APIListWafFirewallRuleStatusesRequest) PageNumber(pageNumber int32) *APIListWafFirewallRuleStatusesRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListWafFirewallRuleStatusesRequest) PageSize(pageSize int32) *APIListWafFirewallRuleStatusesRequest {
 	r.pageSize = &pageSize
@@ -335,8 +339,8 @@ Deprecated
 func (a *LegacyWafRuleStatusAPIService) ListWafFirewallRuleStatuses(ctx context.Context, serviceID string, firewallID string) APIListWafFirewallRuleStatusesRequest {
 	return APIListWafFirewallRuleStatusesRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 		firewallID: firewallID,
 	}
 }
@@ -346,10 +350,10 @@ func (a *LegacyWafRuleStatusAPIService) ListWafFirewallRuleStatuses(ctx context.
 // Deprecated
 func (a *LegacyWafRuleStatusAPIService) ListWafFirewallRuleStatusesExecute(r APIListWafFirewallRuleStatusesRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafRuleStatusAPIService.ListWafFirewallRuleStatuses")
@@ -454,7 +458,6 @@ func (a *LegacyWafRuleStatusAPIService) ListWafFirewallRuleStatusesExecute(r API
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -473,11 +476,11 @@ func (a *LegacyWafRuleStatusAPIService) ListWafFirewallRuleStatusesExecute(r API
 
 // APIUpdateWafFirewallRuleStatusRequest represents a request for the resource.
 type APIUpdateWafFirewallRuleStatusRequest struct {
-	ctx context.Context
-	APIService LegacyWafRuleStatusAPI
-	serviceID string
-	firewallID string
-	wafRuleID string
+	ctx         context.Context
+	APIService  LegacyWafRuleStatusAPI
+	serviceID   string
+	firewallID  string
+	wafRuleID   string
 	requestBody *map[string]map[string]any
 }
 
@@ -508,10 +511,10 @@ Deprecated
 func (a *LegacyWafRuleStatusAPIService) UpdateWafFirewallRuleStatus(ctx context.Context, serviceID string, firewallID string, wafRuleID string) APIUpdateWafFirewallRuleStatusRequest {
 	return APIUpdateWafFirewallRuleStatusRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 		firewallID: firewallID,
-		wafRuleID: wafRuleID,
+		wafRuleID:  wafRuleID,
 	}
 }
 
@@ -520,10 +523,10 @@ func (a *LegacyWafRuleStatusAPIService) UpdateWafFirewallRuleStatus(ctx context.
 // Deprecated
 func (a *LegacyWafRuleStatusAPIService) UpdateWafFirewallRuleStatusExecute(r APIUpdateWafFirewallRuleStatusRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafRuleStatusAPIService.UpdateWafFirewallRuleStatus")
@@ -607,7 +610,6 @@ func (a *LegacyWafRuleStatusAPIService) UpdateWafFirewallRuleStatusExecute(r API
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -626,12 +628,12 @@ func (a *LegacyWafRuleStatusAPIService) UpdateWafFirewallRuleStatusExecute(r API
 
 // APIUpdateWafFirewallRuleStatusesTagRequest represents a request for the resource.
 type APIUpdateWafFirewallRuleStatusesTagRequest struct {
-	ctx context.Context
-	APIService LegacyWafRuleStatusAPI
-	serviceID string
-	firewallID string
-	name *string
-	force *string
+	ctx         context.Context
+	APIService  LegacyWafRuleStatusAPI
+	serviceID   string
+	firewallID  string
+	name        *string
+	force       *string
 	requestBody *map[string]map[string]any
 }
 
@@ -640,11 +642,13 @@ func (r *APIUpdateWafFirewallRuleStatusesTagRequest) Name(name string) *APIUpdat
 	r.name = &name
 	return r
 }
+
 // Force Whether or not to update rule statuses for disabled rules. Optional.
 func (r *APIUpdateWafFirewallRuleStatusesTagRequest) Force(force string) *APIUpdateWafFirewallRuleStatusesTagRequest {
 	r.force = &force
 	return r
 }
+
 // RequestBody returns a pointer to a request.
 func (r *APIUpdateWafFirewallRuleStatusesTagRequest) RequestBody(requestBody map[string]map[string]any) *APIUpdateWafFirewallRuleStatusesTagRequest {
 	r.requestBody = &requestBody
@@ -671,8 +675,8 @@ Deprecated
 func (a *LegacyWafRuleStatusAPIService) UpdateWafFirewallRuleStatusesTag(ctx context.Context, serviceID string, firewallID string) APIUpdateWafFirewallRuleStatusesTagRequest {
 	return APIUpdateWafFirewallRuleStatusesTagRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 		firewallID: firewallID,
 	}
 }
@@ -682,10 +686,10 @@ func (a *LegacyWafRuleStatusAPIService) UpdateWafFirewallRuleStatusesTag(ctx con
 // Deprecated
 func (a *LegacyWafRuleStatusAPIService) UpdateWafFirewallRuleStatusesTagExecute(r APIUpdateWafFirewallRuleStatusesTagRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafRuleStatusAPIService.UpdateWafFirewallRuleStatusesTag")
@@ -773,7 +777,6 @@ func (a *LegacyWafRuleStatusAPIService) UpdateWafFirewallRuleStatusesTagExecute(
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,7 +19,7 @@ import (
 // ComputeACLCreateAclsRequest struct for ComputeACLCreateAclsRequest
 type ComputeACLCreateAclsRequest struct {
 	// Human readable name of store
-	Name *string `json:"name,omitempty"`
+	Name                 *string `json:"name,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -91,7 +90,7 @@ func (o ComputeACLCreateAclsRequest) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *ComputeACLCreateAclsRequest) UnmarshalJSON(bytes []byte) (err error) {
 	varComputeACLCreateAclsRequest := _ComputeACLCreateAclsRequest{}
 
@@ -109,7 +108,7 @@ func (o *ComputeACLCreateAclsRequest) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableComputeACLCreateAclsRequest is a helper abstraction for handling nullable computeaclcreateaclsrequest types. 
+// NullableComputeACLCreateAclsRequest is a helper abstraction for handling nullable computeaclcreateaclsrequest types.
 type NullableComputeACLCreateAclsRequest struct {
 	value *ComputeACLCreateAclsRequest
 	isSet bool
@@ -149,7 +148,7 @@ func (v NullableComputeACLCreateAclsRequest) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableComputeACLCreateAclsRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

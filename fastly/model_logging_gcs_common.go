@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -24,7 +23,7 @@ type LoggingGcsCommon struct {
 	// Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
 	SecretKey *string `json:"secret_key,omitempty"`
 	// The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
-	AccountName *string `json:"account_name,omitempty"`
+	AccountName          *string `json:"account_name,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -165,7 +164,7 @@ func (o LoggingGcsCommon) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingGcsCommon) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingGcsCommon := _LoggingGcsCommon{}
 
@@ -185,7 +184,7 @@ func (o *LoggingGcsCommon) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingGcsCommon is a helper abstraction for handling nullable logginggcscommon types. 
+// NullableLoggingGcsCommon is a helper abstraction for handling nullable logginggcscommon types.
 type NullableLoggingGcsCommon struct {
 	value *LoggingGcsCommon
 	isSet bool
@@ -225,7 +224,7 @@ func (v NullableLoggingGcsCommon) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingGcsCommon) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

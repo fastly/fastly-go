@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingLogshuttleAPI interface {
 
 	/*
-	CreateLogLogshuttle Create a Log Shuttle log endpoint
+		CreateLogLogshuttle Create a Log Shuttle log endpoint
 
-	Create a Log Shuttle logging endpoint for a particular service and version.
+		Create a Log Shuttle logging endpoint for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogLogshuttleRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogLogshuttleRequest
 	*/
 	CreateLogLogshuttle(ctx context.Context, serviceID string, versionID int32) APICreateLogLogshuttleRequest
 
@@ -48,15 +47,15 @@ type LoggingLogshuttleAPI interface {
 	CreateLogLogshuttleExecute(r APICreateLogLogshuttleRequest) (*LoggingLogshuttleResponse, *http.Response, error)
 
 	/*
-	DeleteLogLogshuttle Delete a Log Shuttle log endpoint
+		DeleteLogLogshuttle Delete a Log Shuttle log endpoint
 
-	Delete the Log Shuttle logging endpoint for a particular service and version.
+		Delete the Log Shuttle logging endpoint for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingLogshuttleName The name for the real-time logging configuration.
-	 @return APIDeleteLogLogshuttleRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingLogshuttleName The name for the real-time logging configuration.
+		 @return APIDeleteLogLogshuttleRequest
 	*/
 	DeleteLogLogshuttle(ctx context.Context, serviceID string, versionID int32, loggingLogshuttleName string) APIDeleteLogLogshuttleRequest
 
@@ -65,15 +64,15 @@ type LoggingLogshuttleAPI interface {
 	DeleteLogLogshuttleExecute(r APIDeleteLogLogshuttleRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogLogshuttle Get a Log Shuttle log endpoint
+		GetLogLogshuttle Get a Log Shuttle log endpoint
 
-	Get the Log Shuttle logging endpoint for a particular service and version.
+		Get the Log Shuttle logging endpoint for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingLogshuttleName The name for the real-time logging configuration.
-	 @return APIGetLogLogshuttleRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingLogshuttleName The name for the real-time logging configuration.
+		 @return APIGetLogLogshuttleRequest
 	*/
 	GetLogLogshuttle(ctx context.Context, serviceID string, versionID int32, loggingLogshuttleName string) APIGetLogLogshuttleRequest
 
@@ -82,14 +81,14 @@ type LoggingLogshuttleAPI interface {
 	GetLogLogshuttleExecute(r APIGetLogLogshuttleRequest) (*LoggingLogshuttleResponse, *http.Response, error)
 
 	/*
-	ListLogLogshuttle List Log Shuttle log endpoints
+		ListLogLogshuttle List Log Shuttle log endpoints
 
-	List all of the Log Shuttle logging endpoints for a particular service and version.
+		List all of the Log Shuttle logging endpoints for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogLogshuttleRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogLogshuttleRequest
 	*/
 	ListLogLogshuttle(ctx context.Context, serviceID string, versionID int32) APIListLogLogshuttleRequest
 
@@ -98,15 +97,15 @@ type LoggingLogshuttleAPI interface {
 	ListLogLogshuttleExecute(r APIListLogLogshuttleRequest) ([]LoggingLogshuttleResponse, *http.Response, error)
 
 	/*
-	UpdateLogLogshuttle Update a Log Shuttle log endpoint
+		UpdateLogLogshuttle Update a Log Shuttle log endpoint
 
-	Update the Log Shuttle logging endpoint for a particular service and version.
+		Update the Log Shuttle logging endpoint for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingLogshuttleName The name for the real-time logging configuration.
-	 @return APIUpdateLogLogshuttleRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingLogshuttleName The name for the real-time logging configuration.
+		 @return APIUpdateLogLogshuttleRequest
 	*/
 	UpdateLogLogshuttle(ctx context.Context, serviceID string, versionID int32, loggingLogshuttleName string) APIUpdateLogLogshuttleRequest
 
@@ -120,17 +119,17 @@ type LoggingLogshuttleAPIService service
 
 // APICreateLogLogshuttleRequest represents a request for the resource.
 type APICreateLogLogshuttleRequest struct {
-	ctx context.Context
-	APIService LoggingLogshuttleAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingLogshuttleAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	token *string
-	url *string
+	format            *string
+	formatVersion     *int32
+	token             *string
+	url               *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -138,31 +137,37 @@ func (r *APICreateLogLogshuttleRequest) Name(name string) *APICreateLogLogshuttl
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogLogshuttleRequest) Placement(placement string) *APICreateLogLogshuttleRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogLogshuttleRequest) ResponseCondition(responseCondition string) *APICreateLogLogshuttleRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogLogshuttleRequest) Format(format string) *APICreateLogLogshuttleRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogLogshuttleRequest) FormatVersion(formatVersion int32) *APICreateLogLogshuttleRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Token The data authentication token associated with this endpoint.
 func (r *APICreateLogLogshuttleRequest) Token(token string) *APICreateLogLogshuttleRequest {
 	r.token = &token
 	return r
 }
+
 // URL The URL to stream logs to.
 func (r *APICreateLogLogshuttleRequest) URL(url string) *APICreateLogLogshuttleRequest {
 	r.url = &url
@@ -187,9 +192,9 @@ Create a Log Shuttle logging endpoint for a particular service and version.
 func (a *LoggingLogshuttleAPIService) CreateLogLogshuttle(ctx context.Context, serviceID string, versionID int32) APICreateLogLogshuttleRequest {
 	return APICreateLogLogshuttleRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -197,10 +202,10 @@ func (a *LoggingLogshuttleAPIService) CreateLogLogshuttle(ctx context.Context, s
 //  @return LoggingLogshuttleResponse
 func (a *LoggingLogshuttleAPIService) CreateLogLogshuttleExecute(r APICreateLogLogshuttleRequest) (*LoggingLogshuttleResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingLogshuttleResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingLogshuttleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogshuttleAPIService.CreateLogLogshuttle")
@@ -302,7 +307,6 @@ func (a *LoggingLogshuttleAPIService) CreateLogLogshuttleExecute(r APICreateLogL
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -321,13 +325,12 @@ func (a *LoggingLogshuttleAPIService) CreateLogLogshuttleExecute(r APICreateLogL
 
 // APIDeleteLogLogshuttleRequest represents a request for the resource.
 type APIDeleteLogLogshuttleRequest struct {
-	ctx context.Context
-	APIService LoggingLogshuttleAPI
-	serviceID string
-	versionID int32
+	ctx                   context.Context
+	APIService            LoggingLogshuttleAPI
+	serviceID             string
+	versionID             int32
 	loggingLogshuttleName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogLogshuttleRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -347,10 +350,10 @@ Delete the Log Shuttle logging endpoint for a particular service and version.
 */
 func (a *LoggingLogshuttleAPIService) DeleteLogLogshuttle(ctx context.Context, serviceID string, versionID int32, loggingLogshuttleName string) APIDeleteLogLogshuttleRequest {
 	return APIDeleteLogLogshuttleRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:            a,
+		ctx:                   ctx,
+		serviceID:             serviceID,
+		versionID:             versionID,
 		loggingLogshuttleName: loggingLogshuttleName,
 	}
 }
@@ -359,10 +362,10 @@ func (a *LoggingLogshuttleAPIService) DeleteLogLogshuttle(ctx context.Context, s
 //  @return InlineResponse200
 func (a *LoggingLogshuttleAPIService) DeleteLogLogshuttleExecute(r APIDeleteLogLogshuttleRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogshuttleAPIService.DeleteLogLogshuttle")
@@ -444,7 +447,6 @@ func (a *LoggingLogshuttleAPIService) DeleteLogLogshuttleExecute(r APIDeleteLogL
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -463,13 +465,12 @@ func (a *LoggingLogshuttleAPIService) DeleteLogLogshuttleExecute(r APIDeleteLogL
 
 // APIGetLogLogshuttleRequest represents a request for the resource.
 type APIGetLogLogshuttleRequest struct {
-	ctx context.Context
-	APIService LoggingLogshuttleAPI
-	serviceID string
-	versionID int32
+	ctx                   context.Context
+	APIService            LoggingLogshuttleAPI
+	serviceID             string
+	versionID             int32
 	loggingLogshuttleName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogLogshuttleRequest) Execute() (*LoggingLogshuttleResponse, *http.Response, error) {
@@ -489,10 +490,10 @@ Get the Log Shuttle logging endpoint for a particular service and version.
 */
 func (a *LoggingLogshuttleAPIService) GetLogLogshuttle(ctx context.Context, serviceID string, versionID int32, loggingLogshuttleName string) APIGetLogLogshuttleRequest {
 	return APIGetLogLogshuttleRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:            a,
+		ctx:                   ctx,
+		serviceID:             serviceID,
+		versionID:             versionID,
 		loggingLogshuttleName: loggingLogshuttleName,
 	}
 }
@@ -501,10 +502,10 @@ func (a *LoggingLogshuttleAPIService) GetLogLogshuttle(ctx context.Context, serv
 //  @return LoggingLogshuttleResponse
 func (a *LoggingLogshuttleAPIService) GetLogLogshuttleExecute(r APIGetLogLogshuttleRequest) (*LoggingLogshuttleResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingLogshuttleResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingLogshuttleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogshuttleAPIService.GetLogLogshuttle")
@@ -586,7 +587,6 @@ func (a *LoggingLogshuttleAPIService) GetLogLogshuttleExecute(r APIGetLogLogshut
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -605,12 +605,11 @@ func (a *LoggingLogshuttleAPIService) GetLogLogshuttleExecute(r APIGetLogLogshut
 
 // APIListLogLogshuttleRequest represents a request for the resource.
 type APIListLogLogshuttleRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingLogshuttleAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogLogshuttleRequest) Execute() ([]LoggingLogshuttleResponse, *http.Response, error) {
@@ -630,9 +629,9 @@ List all of the Log Shuttle logging endpoints for a particular service and versi
 func (a *LoggingLogshuttleAPIService) ListLogLogshuttle(ctx context.Context, serviceID string, versionID int32) APIListLogLogshuttleRequest {
 	return APIListLogLogshuttleRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -640,10 +639,10 @@ func (a *LoggingLogshuttleAPIService) ListLogLogshuttle(ctx context.Context, ser
 //  @return []LoggingLogshuttleResponse
 func (a *LoggingLogshuttleAPIService) ListLogLogshuttleExecute(r APIListLogLogshuttleRequest) ([]LoggingLogshuttleResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingLogshuttleResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingLogshuttleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogshuttleAPIService.ListLogLogshuttle")
@@ -724,7 +723,6 @@ func (a *LoggingLogshuttleAPIService) ListLogLogshuttleExecute(r APIListLogLogsh
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -743,18 +741,18 @@ func (a *LoggingLogshuttleAPIService) ListLogLogshuttleExecute(r APIListLogLogsh
 
 // APIUpdateLogLogshuttleRequest represents a request for the resource.
 type APIUpdateLogLogshuttleRequest struct {
-	ctx context.Context
-	APIService LoggingLogshuttleAPI
-	serviceID string
-	versionID int32
+	ctx                   context.Context
+	APIService            LoggingLogshuttleAPI
+	serviceID             string
+	versionID             int32
 	loggingLogshuttleName string
-	name *string
-	placement *string
-	responseCondition *string
-	format *string
-	formatVersion *int32
-	token *string
-	url *string
+	name                  *string
+	placement             *string
+	responseCondition     *string
+	format                *string
+	formatVersion         *int32
+	token                 *string
+	url                   *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -762,31 +760,37 @@ func (r *APIUpdateLogLogshuttleRequest) Name(name string) *APIUpdateLogLogshuttl
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogLogshuttleRequest) Placement(placement string) *APIUpdateLogLogshuttleRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogLogshuttleRequest) ResponseCondition(responseCondition string) *APIUpdateLogLogshuttleRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogLogshuttleRequest) Format(format string) *APIUpdateLogLogshuttleRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogLogshuttleRequest) FormatVersion(formatVersion int32) *APIUpdateLogLogshuttleRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Token The data authentication token associated with this endpoint.
 func (r *APIUpdateLogLogshuttleRequest) Token(token string) *APIUpdateLogLogshuttleRequest {
 	r.token = &token
 	return r
 }
+
 // URL The URL to stream logs to.
 func (r *APIUpdateLogLogshuttleRequest) URL(url string) *APIUpdateLogLogshuttleRequest {
 	r.url = &url
@@ -811,10 +815,10 @@ Update the Log Shuttle logging endpoint for a particular service and version.
 */
 func (a *LoggingLogshuttleAPIService) UpdateLogLogshuttle(ctx context.Context, serviceID string, versionID int32, loggingLogshuttleName string) APIUpdateLogLogshuttleRequest {
 	return APIUpdateLogLogshuttleRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:            a,
+		ctx:                   ctx,
+		serviceID:             serviceID,
+		versionID:             versionID,
 		loggingLogshuttleName: loggingLogshuttleName,
 	}
 }
@@ -823,10 +827,10 @@ func (a *LoggingLogshuttleAPIService) UpdateLogLogshuttle(ctx context.Context, s
 //  @return LoggingLogshuttleResponse
 func (a *LoggingLogshuttleAPIService) UpdateLogLogshuttleExecute(r APIUpdateLogLogshuttleRequest) (*LoggingLogshuttleResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingLogshuttleResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingLogshuttleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogshuttleAPIService.UpdateLogLogshuttle")
@@ -928,7 +932,6 @@ func (a *LoggingLogshuttleAPIService) UpdateLogLogshuttleExecute(r APIUpdateLogL
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

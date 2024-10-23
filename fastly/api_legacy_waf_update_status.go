@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,17 +31,17 @@ var (
 type LegacyWafUpdateStatusAPI interface {
 
 	/*
-	GetWafUpdateStatus Get the status of a WAF update
+		GetWafUpdateStatus Get the status of a WAF update
 
-	Get a specific update status object for a particular service and firewall object.
+		Get a specific update status object for a particular service and firewall object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @param updateStatusID Alphanumeric string identifying a WAF update status.
-	 @return APIGetWafUpdateStatusRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @param updateStatusID Alphanumeric string identifying a WAF update status.
+		 @return APIGetWafUpdateStatusRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetWafUpdateStatus(ctx context.Context, serviceID string, firewallID string, updateStatusID string) APIGetWafUpdateStatusRequest
 
@@ -52,16 +51,16 @@ type LegacyWafUpdateStatusAPI interface {
 	GetWafUpdateStatusExecute(r APIGetWafUpdateStatusRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListWafUpdateStatuses List update statuses
+		ListWafUpdateStatuses List update statuses
 
-	List all update statuses for a particular service and firewall object.
+		List all update statuses for a particular service and firewall object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APIListWafUpdateStatusesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APIListWafUpdateStatusesRequest
 
-	Deprecated
+		Deprecated
 	*/
 	ListWafUpdateStatuses(ctx context.Context, serviceID string, firewallID string) APIListWafUpdateStatusesRequest
 
@@ -76,13 +75,12 @@ type LegacyWafUpdateStatusAPIService service
 
 // APIGetWafUpdateStatusRequest represents a request for the resource.
 type APIGetWafUpdateStatusRequest struct {
-	ctx context.Context
-	APIService LegacyWafUpdateStatusAPI
-	serviceID string
-	firewallID string
+	ctx            context.Context
+	APIService     LegacyWafUpdateStatusAPI
+	serviceID      string
+	firewallID     string
 	updateStatusID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetWafUpdateStatusRequest) Execute() (map[string]any, *http.Response, error) {
@@ -104,10 +102,10 @@ Deprecated
 */
 func (a *LegacyWafUpdateStatusAPIService) GetWafUpdateStatus(ctx context.Context, serviceID string, firewallID string, updateStatusID string) APIGetWafUpdateStatusRequest {
 	return APIGetWafUpdateStatusRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		firewallID: firewallID,
+		APIService:     a,
+		ctx:            ctx,
+		serviceID:      serviceID,
+		firewallID:     firewallID,
 		updateStatusID: updateStatusID,
 	}
 }
@@ -117,10 +115,10 @@ func (a *LegacyWafUpdateStatusAPIService) GetWafUpdateStatus(ctx context.Context
 // Deprecated
 func (a *LegacyWafUpdateStatusAPIService) GetWafUpdateStatusExecute(r APIGetWafUpdateStatusRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafUpdateStatusAPIService.GetWafUpdateStatus")
@@ -202,7 +200,6 @@ func (a *LegacyWafUpdateStatusAPIService) GetWafUpdateStatusExecute(r APIGetWafU
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -221,13 +218,13 @@ func (a *LegacyWafUpdateStatusAPIService) GetWafUpdateStatusExecute(r APIGetWafU
 
 // APIListWafUpdateStatusesRequest represents a request for the resource.
 type APIListWafUpdateStatusesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LegacyWafUpdateStatusAPI
-	serviceID string
+	serviceID  string
 	firewallID string
 	pageNumber *int32
-	pageSize *int32
-	include *string
+	pageSize   *int32
+	include    *string
 }
 
 // PageNumber Current page.
@@ -235,12 +232,14 @@ func (r *APIListWafUpdateStatusesRequest) PageNumber(pageNumber int32) *APIListW
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListWafUpdateStatusesRequest) PageSize(pageSize int32) *APIListWafUpdateStatusesRequest {
 	r.pageSize = &pageSize
 	return r
 }
-// Include Include relationships. Optional, comma separated values. Permitted values: &#x60;waf&#x60;. 
+
+// Include Include relationships. Optional, comma separated values. Permitted values: &#x60;waf&#x60;.
 func (r *APIListWafUpdateStatusesRequest) Include(include string) *APIListWafUpdateStatusesRequest {
 	r.include = &include
 	return r
@@ -266,8 +265,8 @@ Deprecated
 func (a *LegacyWafUpdateStatusAPIService) ListWafUpdateStatuses(ctx context.Context, serviceID string, firewallID string) APIListWafUpdateStatusesRequest {
 	return APIListWafUpdateStatusesRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 		firewallID: firewallID,
 	}
 }
@@ -277,10 +276,10 @@ func (a *LegacyWafUpdateStatusAPIService) ListWafUpdateStatuses(ctx context.Cont
 // Deprecated
 func (a *LegacyWafUpdateStatusAPIService) ListWafUpdateStatusesExecute(r APIListWafUpdateStatusesRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafUpdateStatusAPIService.ListWafUpdateStatuses")
@@ -369,7 +368,6 @@ func (a *LegacyWafUpdateStatusAPIService) ListWafUpdateStatusesExecute(r APIList
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

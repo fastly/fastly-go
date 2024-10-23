@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,7 +19,7 @@ import (
 
 // TokenResponse struct for TokenResponse
 type TokenResponse struct {
-	// List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account. 
+	// List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account.
 	Services []string `json:"services,omitempty"`
 	// Name of the token.
 	Name *string `json:"name,omitempty"`
@@ -32,8 +31,8 @@ type TokenResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ID *string `json:"id,omitempty"`
-	UserID *string `json:"user_id,omitempty"`
+	ID        *string      `json:"id,omitempty"`
+	UserID    *string      `json:"user_id,omitempty"`
 	// Time-stamp (UTC) of when the token was last used.
 	LastUsedAt *string `json:"last_used_at,omitempty"`
 	// Time-stamp (UTC) of when the token will expire (optional).
@@ -41,7 +40,7 @@ type TokenResponse struct {
 	// IP Address of the client that last used the token.
 	IP *string `json:"ip,omitempty"`
 	// User-Agent header of the client that last used the token.
-	UserAgent *string `json:"user_agent,omitempty"`
+	UserAgent            *string `json:"user_agent,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -209,7 +208,7 @@ func (o *TokenResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TokenResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -228,6 +227,7 @@ func (o *TokenResponse) HasDeletedAt() bool {
 func (o *TokenResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *TokenResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -251,7 +251,7 @@ func (o *TokenResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TokenResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -270,6 +270,7 @@ func (o *TokenResponse) HasUpdatedAt() bool {
 func (o *TokenResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *TokenResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -521,7 +522,7 @@ func (o TokenResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *TokenResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varTokenResponse := _TokenResponse{}
 
@@ -550,7 +551,7 @@ func (o *TokenResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTokenResponse is a helper abstraction for handling nullable tokenresponse types. 
+// NullableTokenResponse is a helper abstraction for handling nullable tokenresponse types.
 type NullableTokenResponse struct {
 	value *TokenResponse
 	isSet bool
@@ -590,7 +591,7 @@ func (v NullableTokenResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableTokenResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

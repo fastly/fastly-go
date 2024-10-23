@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,7 +19,7 @@ import (
 
 // WafActiveRuleCreationResponse - struct for WafActiveRuleCreationResponse
 type WafActiveRuleCreationResponse struct {
-	WafActiveRuleResponse *WafActiveRuleResponse
+	WafActiveRuleResponse  *WafActiveRuleResponse
 	WafActiveRulesResponse *WafActiveRulesResponse
 }
 
@@ -38,9 +37,8 @@ func WafActiveRulesResponseAsWafActiveRuleCreationResponse(v *WafActiveRulesResp
 	}
 }
 
-
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *WafActiveRuleCreationResponse) UnmarshalJSON(data []byte) error {
 	var err error
 	match := 0
@@ -98,7 +96,7 @@ func (o WafActiveRuleCreationResponse) MarshalJSON() ([]byte, error) {
 }
 
 // GetActualInstance returns a specific instance of the type.
-func (o *WafActiveRuleCreationResponse) GetActualInstance() (any) {
+func (o *WafActiveRuleCreationResponse) GetActualInstance() any {
 	if o == nil {
 		return nil
 	}
@@ -114,7 +112,7 @@ func (o *WafActiveRuleCreationResponse) GetActualInstance() (any) {
 	return nil
 }
 
-// NullableWafActiveRuleCreationResponse is a helper abstraction for handling nullable wafactiverulecreationresponse types. 
+// NullableWafActiveRuleCreationResponse is a helper abstraction for handling nullable wafactiverulecreationresponse types.
 type NullableWafActiveRuleCreationResponse struct {
 	value *WafActiveRuleCreationResponse
 	isSet bool
@@ -154,7 +152,7 @@ func (v NullableWafActiveRuleCreationResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableWafActiveRuleCreationResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

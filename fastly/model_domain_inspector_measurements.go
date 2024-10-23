@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,12 +12,11 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
-// DomainInspectorMeasurements A measurements object provides a count of the total number of `requests` received by Fastly for your domain in the reported time period and for the relevant POP, as specified in the [entry](#entry-data-model). It also includes the number of responses for specific HTTP response status codes and for status code ranges. This dataset is sparse: only the keys with non-zero values will be included in the record. Where a specific status code does not have a field in this model (e.g., `429 Too Many Requests`), any responses with that code will be counted as part of the range count (`4xx` in this case) but will not be separately identified in the data. 
+// DomainInspectorMeasurements A measurements object provides a count of the total number of `requests` received by Fastly for your domain in the reported time period and for the relevant POP, as specified in the [entry](#entry-data-model). It also includes the number of responses for specific HTTP response status codes and for status code ranges. This dataset is sparse: only the keys with non-zero values will be included in the record. Where a specific status code does not have a field in this model (e.g., `429 Too Many Requests`), any responses with that code will be counted as part of the range count (`4xx` in this case) but will not be separately identified in the data.
 type DomainInspectorMeasurements struct {
 	// Number of requests sent by end users to Fastly.
 	EdgeRequests *int32 `json:"edge_requests,omitempty"`
@@ -142,7 +141,7 @@ type DomainInspectorMeasurements struct {
 	// Number of \"Client Error\" codes received from origin.
 	OriginStatus4xx *int32 `json:"origin_status_4xx,omitempty"`
 	// Number of \"Server Error\" codes received from origin.
-	OriginStatus5xx *int32 `json:"origin_status_5xx,omitempty"`
+	OriginStatus5xx      *int32 `json:"origin_status_5xx,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -2348,7 +2347,7 @@ func (o DomainInspectorMeasurements) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *DomainInspectorMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 	varDomainInspectorMeasurements := _DomainInspectorMeasurements{}
 
@@ -2427,7 +2426,7 @@ func (o *DomainInspectorMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableDomainInspectorMeasurements is a helper abstraction for handling nullable domaininspectormeasurements types. 
+// NullableDomainInspectorMeasurements is a helper abstraction for handling nullable domaininspectormeasurements types.
 type NullableDomainInspectorMeasurements struct {
 	value *DomainInspectorMeasurements
 	isSet bool
@@ -2467,7 +2466,7 @@ func (v NullableDomainInspectorMeasurements) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDomainInspectorMeasurements) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

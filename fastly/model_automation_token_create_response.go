@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -24,27 +23,27 @@ type AutomationTokenCreateResponse struct {
 	Name *string `json:"name,omitempty"`
 	// The role on the token.
 	Role *string `json:"role,omitempty"`
-	// (Optional) The service IDs of the services the token will have access to. Separate service IDs with a space. If no services are specified, the token will have access to all services on the account. 
+	// (Optional) The service IDs of the services the token will have access to. Separate service IDs with a space. If no services are specified, the token will have access to all services on the account.
 	Services []string `json:"services,omitempty"`
 	// A space-delimited list of authorization scope.
 	Scope *string `json:"scope,omitempty"`
 	// A UTC time-stamp of when the token expires.
 	ExpiresAt *string `json:"expires_at,omitempty"`
-	// A UTC time-stamp of when the token was created. 
+	// A UTC time-stamp of when the token was created.
 	CreatedAt *time.Time `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ID *ReadOnlyID `json:"id,omitempty"`
-	UserID *ReadOnlyUserID `json:"user_id,omitempty"`
-	CustomerID *ReadOnlyCustomerID `json:"customer_id,omitempty"`
-	SudoExpiresAt *time.Time `json:"sudo_expires_at,omitempty"`
-	AccessToken *string `json:"access_token,omitempty"`
+	UpdatedAt     NullableTime        `json:"updated_at,omitempty"`
+	ID            *ReadOnlyID         `json:"id,omitempty"`
+	UserID        *ReadOnlyUserID     `json:"user_id,omitempty"`
+	CustomerID    *ReadOnlyCustomerID `json:"customer_id,omitempty"`
+	SudoExpiresAt *time.Time          `json:"sudo_expires_at,omitempty"`
+	AccessToken   *string             `json:"access_token,omitempty"`
 	// A UTC time-stamp of when the token was last used.
 	LastUsedAt *time.Time `json:"last_used_at,omitempty"`
 	// The User-Agent header of the client that last used the token.
-	UserAgent *string `json:"user_agent,omitempty"`
+	UserAgent            *string `json:"user_agent,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -276,7 +275,7 @@ func (o *AutomationTokenCreateResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AutomationTokenCreateResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -295,6 +294,7 @@ func (o *AutomationTokenCreateResponse) HasDeletedAt() bool {
 func (o *AutomationTokenCreateResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *AutomationTokenCreateResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -318,7 +318,7 @@ func (o *AutomationTokenCreateResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AutomationTokenCreateResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -337,6 +337,7 @@ func (o *AutomationTokenCreateResponse) HasUpdatedAt() bool {
 func (o *AutomationTokenCreateResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *AutomationTokenCreateResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -629,7 +630,7 @@ func (o AutomationTokenCreateResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *AutomationTokenCreateResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varAutomationTokenCreateResponse := _AutomationTokenCreateResponse{}
 
@@ -661,7 +662,7 @@ func (o *AutomationTokenCreateResponse) UnmarshalJSON(bytes []byte) (err error) 
 	return err
 }
 
-// NullableAutomationTokenCreateResponse is a helper abstraction for handling nullable automationtokencreateresponse types. 
+// NullableAutomationTokenCreateResponse is a helper abstraction for handling nullable automationtokencreateresponse types.
 type NullableAutomationTokenCreateResponse struct {
 	value *AutomationTokenCreateResponse
 	isSet bool
@@ -701,7 +702,7 @@ func (v NullableAutomationTokenCreateResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableAutomationTokenCreateResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

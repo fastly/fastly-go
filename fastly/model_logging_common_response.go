@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -21,14 +20,14 @@ import (
 type LoggingCommonResponse struct {
 	// The name for the real-time logging configuration.
 	Name *string `json:"name,omitempty"`
-	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
-	FormatVersion *string `json:"format_version,omitempty"`
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
+	FormatVersion        *string `json:"format_version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -104,7 +103,7 @@ func (o *LoggingCommonResponse) GetPlacement() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCommonResponse) GetPlacementOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -123,6 +122,7 @@ func (o *LoggingCommonResponse) HasPlacement() bool {
 func (o *LoggingCommonResponse) SetPlacement(v string) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *LoggingCommonResponse) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -146,7 +146,7 @@ func (o *LoggingCommonResponse) GetResponseCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCommonResponse) GetResponseConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseCondition.Get(), o.ResponseCondition.IsSet()
@@ -165,6 +165,7 @@ func (o *LoggingCommonResponse) HasResponseCondition() bool {
 func (o *LoggingCommonResponse) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
+
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 func (o *LoggingCommonResponse) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
@@ -267,7 +268,7 @@ func (o LoggingCommonResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingCommonResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingCommonResponse := _LoggingCommonResponse{}
 
@@ -289,7 +290,7 @@ func (o *LoggingCommonResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingCommonResponse is a helper abstraction for handling nullable loggingcommonresponse types. 
+// NullableLoggingCommonResponse is a helper abstraction for handling nullable loggingcommonresponse types.
 type NullableLoggingCommonResponse struct {
 	value *LoggingCommonResponse
 	isSet bool
@@ -329,7 +330,7 @@ func (v NullableLoggingCommonResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingCommonResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

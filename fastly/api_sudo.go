@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -31,12 +30,12 @@ var (
 type SudoAPI interface {
 
 	/*
-	RequestSudoAccess Request Sudo access
+		RequestSudoAccess Request Sudo access
 
-	Re-authenticate to allow the provided user to obtain sudo access.
+		Re-authenticate to allow the provided user to obtain sudo access.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIRequestSudoAccessRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIRequestSudoAccessRequest
 	*/
 	RequestSudoAccess(ctx context.Context) APIRequestSudoAccessRequest
 
@@ -50,8 +49,8 @@ type SudoAPIService service
 
 // APIRequestSudoAccessRequest represents a request for the resource.
 type APIRequestSudoAccessRequest struct {
-	ctx context.Context
-	APIService SudoAPI
+	ctx         context.Context
+	APIService  SudoAPI
 	sudoRequest *SudoRequest
 }
 
@@ -77,7 +76,7 @@ Re-authenticate to allow the provided user to obtain sudo access.
 func (a *SudoAPIService) RequestSudoAccess(ctx context.Context) APIRequestSudoAccessRequest {
 	return APIRequestSudoAccessRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -85,10 +84,10 @@ func (a *SudoAPIService) RequestSudoAccess(ctx context.Context) APIRequestSudoAc
 //  @return SudoResponse
 func (a *SudoAPIService) RequestSudoAccessExecute(r APIRequestSudoAccessRequest) (*SudoResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SudoResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SudoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SudoAPIService.RequestSudoAccess")
@@ -177,7 +176,6 @@ func (a *SudoAPIService) RequestSudoAccessExecute(r APIRequestSudoAccessRequest)
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

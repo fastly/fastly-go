@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -29,7 +28,7 @@ type UserResponse struct {
 	Locked NullableBool `json:"locked,omitempty"`
 	// Indicates if a new password is required at next login.
 	RequireNewPassword NullableBool `json:"require_new_password,omitempty"`
-	Role *RoleUser `json:"role,omitempty"`
+	Role               *RoleUser    `json:"role,omitempty"`
 	// Indicates if 2FA is enabled on the user.
 	TwoFactorAuthEnabled NullableBool `json:"two_factor_auth_enabled,omitempty"`
 	// Indicates if 2FA is required by the user's customer account.
@@ -40,10 +39,10 @@ type UserResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ID *string `json:"id,omitempty"`
+	ID        *string      `json:"id,omitempty"`
 	// The alphanumeric string identifying a email login.
-	EmailHash *string `json:"email_hash,omitempty"`
-	CustomerID *string `json:"customer_id,omitempty"`
+	EmailHash            *string `json:"email_hash,omitempty"`
+	CustomerID           *string `json:"customer_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -175,7 +174,7 @@ func (o *UserResponse) GetLocked() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UserResponse) GetLockedOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Locked.Get(), o.Locked.IsSet()
@@ -194,6 +193,7 @@ func (o *UserResponse) HasLocked() bool {
 func (o *UserResponse) SetLocked(v bool) {
 	o.Locked.Set(&v)
 }
+
 // SetLockedNil sets the value for Locked to be an explicit nil
 func (o *UserResponse) SetLockedNil() {
 	o.Locked.Set(nil)
@@ -217,7 +217,7 @@ func (o *UserResponse) GetRequireNewPassword() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UserResponse) GetRequireNewPasswordOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RequireNewPassword.Get(), o.RequireNewPassword.IsSet()
@@ -236,6 +236,7 @@ func (o *UserResponse) HasRequireNewPassword() bool {
 func (o *UserResponse) SetRequireNewPassword(v bool) {
 	o.RequireNewPassword.Set(&v)
 }
+
 // SetRequireNewPasswordNil sets the value for RequireNewPassword to be an explicit nil
 func (o *UserResponse) SetRequireNewPasswordNil() {
 	o.RequireNewPassword.Set(nil)
@@ -291,7 +292,7 @@ func (o *UserResponse) GetTwoFactorAuthEnabled() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UserResponse) GetTwoFactorAuthEnabledOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TwoFactorAuthEnabled.Get(), o.TwoFactorAuthEnabled.IsSet()
@@ -310,6 +311,7 @@ func (o *UserResponse) HasTwoFactorAuthEnabled() bool {
 func (o *UserResponse) SetTwoFactorAuthEnabled(v bool) {
 	o.TwoFactorAuthEnabled.Set(&v)
 }
+
 // SetTwoFactorAuthEnabledNil sets the value for TwoFactorAuthEnabled to be an explicit nil
 func (o *UserResponse) SetTwoFactorAuthEnabledNil() {
 	o.TwoFactorAuthEnabled.Set(nil)
@@ -365,7 +367,7 @@ func (o *UserResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UserResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -384,6 +386,7 @@ func (o *UserResponse) HasCreatedAt() bool {
 func (o *UserResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *UserResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -407,7 +410,7 @@ func (o *UserResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UserResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -426,6 +429,7 @@ func (o *UserResponse) HasDeletedAt() bool {
 func (o *UserResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *UserResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -449,7 +453,7 @@ func (o *UserResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UserResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -468,6 +472,7 @@ func (o *UserResponse) HasUpdatedAt() bool {
 func (o *UserResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *UserResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -629,7 +634,7 @@ func (o UserResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *UserResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varUserResponse := _UserResponse{}
 
@@ -660,7 +665,7 @@ func (o *UserResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableUserResponse is a helper abstraction for handling nullable userresponse types. 
+// NullableUserResponse is a helper abstraction for handling nullable userresponse types.
 type NullableUserResponse struct {
 	value *UserResponse
 	isSet bool
@@ -700,7 +705,7 @@ func (v NullableUserResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableUserResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

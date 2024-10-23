@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type SnippetAPI interface {
 
 	/*
-	CreateSnippet Create a snippet
+		CreateSnippet Create a snippet
 
-	Create a snippet for a particular service and version.
+		Create a snippet for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateSnippetRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateSnippetRequest
 	*/
 	CreateSnippet(ctx context.Context, serviceID string, versionID int32) APICreateSnippetRequest
 
@@ -48,15 +47,15 @@ type SnippetAPI interface {
 	CreateSnippetExecute(r APICreateSnippetRequest) (*SnippetResponsePost, *http.Response, error)
 
 	/*
-	DeleteSnippet Delete a snippet
+		DeleteSnippet Delete a snippet
 
-	Delete a specific snippet for a particular service and version.
+		Delete a specific snippet for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param snippetName The name for the snippet.
-	 @return APIDeleteSnippetRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param snippetName The name for the snippet.
+		 @return APIDeleteSnippetRequest
 	*/
 	DeleteSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIDeleteSnippetRequest
 
@@ -65,15 +64,15 @@ type SnippetAPI interface {
 	DeleteSnippetExecute(r APIDeleteSnippetRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetSnippet Get a versioned snippet
+		GetSnippet Get a versioned snippet
 
-	Get a single snippet for a particular service and version.
+		Get a single snippet for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param snippetName The name for the snippet.
-	 @return APIGetSnippetRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param snippetName The name for the snippet.
+		 @return APIGetSnippetRequest
 	*/
 	GetSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIGetSnippetRequest
 
@@ -82,14 +81,14 @@ type SnippetAPI interface {
 	GetSnippetExecute(r APIGetSnippetRequest) (*SnippetResponse, *http.Response, error)
 
 	/*
-	GetSnippetDynamic Get a dynamic snippet
+		GetSnippetDynamic Get a dynamic snippet
 
-	Get a single dynamic snippet for a particular service.
+		Get a single dynamic snippet for a particular service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param snippetID Alphanumeric string identifying a VCL Snippet.
-	 @return APIGetSnippetDynamicRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param snippetID Alphanumeric string identifying a VCL Snippet.
+		 @return APIGetSnippetDynamicRequest
 	*/
 	GetSnippetDynamic(ctx context.Context, serviceID string, snippetID string) APIGetSnippetDynamicRequest
 
@@ -98,14 +97,14 @@ type SnippetAPI interface {
 	GetSnippetDynamicExecute(r APIGetSnippetDynamicRequest) (*SnippetResponse, *http.Response, error)
 
 	/*
-	ListSnippets List snippets
+		ListSnippets List snippets
 
-	List all snippets for a particular service and version.
+		List all snippets for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListSnippetsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListSnippetsRequest
 	*/
 	ListSnippets(ctx context.Context, serviceID string, versionID int32) APIListSnippetsRequest
 
@@ -114,15 +113,15 @@ type SnippetAPI interface {
 	ListSnippetsExecute(r APIListSnippetsRequest) ([]SnippetResponse, *http.Response, error)
 
 	/*
-	UpdateSnippet Update a versioned snippet
+		UpdateSnippet Update a versioned snippet
 
-	Update a specific snippet for a particular service and version.
+		Update a specific snippet for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param snippetName The name for the snippet.
-	 @return APIUpdateSnippetRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param snippetName The name for the snippet.
+		 @return APIUpdateSnippetRequest
 	*/
 	UpdateSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIUpdateSnippetRequest
 
@@ -131,14 +130,14 @@ type SnippetAPI interface {
 	UpdateSnippetExecute(r APIUpdateSnippetRequest) (*SnippetResponse, *http.Response, error)
 
 	/*
-	UpdateSnippetDynamic Update a dynamic snippet
+		UpdateSnippetDynamic Update a dynamic snippet
 
-	Update a dynamic snippet for a particular service.
+		Update a dynamic snippet for a particular service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param snippetID Alphanumeric string identifying a VCL Snippet.
-	 @return APIUpdateSnippetDynamicRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param snippetID Alphanumeric string identifying a VCL Snippet.
+		 @return APIUpdateSnippetDynamicRequest
 	*/
 	UpdateSnippetDynamic(ctx context.Context, serviceID string, snippetID string) APIUpdateSnippetDynamicRequest
 
@@ -152,15 +151,15 @@ type SnippetAPIService service
 
 // APICreateSnippetRequest represents a request for the resource.
 type APICreateSnippetRequest struct {
-	ctx context.Context
-	APIService SnippetAPI
-	serviceID string
-	versionID int32
-	name *string
+	ctx          context.Context
+	APIService   SnippetAPI
+	serviceID    string
+	versionID    int32
+	name         *string
 	resourceType *string
-	content *string
-	priority *string
-	dynamic *string
+	content      *string
+	priority     *string
+	dynamic      *string
 }
 
 // Name The name for the snippet.
@@ -168,21 +167,25 @@ func (r *APICreateSnippetRequest) Name(name string) *APICreateSnippetRequest {
 	r.name = &name
 	return r
 }
+
 // ResourceType The location in generated VCL where the snippet should be placed.
 func (r *APICreateSnippetRequest) ResourceType(resourceType string) *APICreateSnippetRequest {
 	r.resourceType = &resourceType
 	return r
 }
+
 // Content The VCL code that specifies exactly what the snippet does.
 func (r *APICreateSnippetRequest) Content(content string) *APICreateSnippetRequest {
 	r.content = &content
 	return r
 }
+
 // Priority Priority determines execution order. Lower numbers execute first.
 func (r *APICreateSnippetRequest) Priority(priority string) *APICreateSnippetRequest {
 	r.priority = &priority
 	return r
 }
+
 // Dynamic Sets the snippet version.
 func (r *APICreateSnippetRequest) Dynamic(dynamic string) *APICreateSnippetRequest {
 	r.dynamic = &dynamic
@@ -207,9 +210,9 @@ Create a snippet for a particular service and version.
 func (a *SnippetAPIService) CreateSnippet(ctx context.Context, serviceID string, versionID int32) APICreateSnippetRequest {
 	return APICreateSnippetRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -217,10 +220,10 @@ func (a *SnippetAPIService) CreateSnippet(ctx context.Context, serviceID string,
 //  @return SnippetResponsePost
 func (a *SnippetAPIService) CreateSnippetExecute(r APICreateSnippetRequest) (*SnippetResponsePost, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SnippetResponsePost
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SnippetResponsePost
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnippetAPIService.CreateSnippet")
@@ -316,7 +319,6 @@ func (a *SnippetAPIService) CreateSnippetExecute(r APICreateSnippetRequest) (*Sn
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -335,13 +337,12 @@ func (a *SnippetAPIService) CreateSnippetExecute(r APICreateSnippetRequest) (*Sn
 
 // APIDeleteSnippetRequest represents a request for the resource.
 type APIDeleteSnippetRequest struct {
-	ctx context.Context
-	APIService SnippetAPI
-	serviceID string
-	versionID int32
+	ctx         context.Context
+	APIService  SnippetAPI
+	serviceID   string
+	versionID   int32
 	snippetName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteSnippetRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -361,10 +362,10 @@ Delete a specific snippet for a particular service and version.
 */
 func (a *SnippetAPIService) DeleteSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIDeleteSnippetRequest {
 	return APIDeleteSnippetRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:  a,
+		ctx:         ctx,
+		serviceID:   serviceID,
+		versionID:   versionID,
 		snippetName: snippetName,
 	}
 }
@@ -373,10 +374,10 @@ func (a *SnippetAPIService) DeleteSnippet(ctx context.Context, serviceID string,
 //  @return InlineResponse200
 func (a *SnippetAPIService) DeleteSnippetExecute(r APIDeleteSnippetRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnippetAPIService.DeleteSnippet")
@@ -458,7 +459,6 @@ func (a *SnippetAPIService) DeleteSnippetExecute(r APIDeleteSnippetRequest) (*In
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -477,13 +477,12 @@ func (a *SnippetAPIService) DeleteSnippetExecute(r APIDeleteSnippetRequest) (*In
 
 // APIGetSnippetRequest represents a request for the resource.
 type APIGetSnippetRequest struct {
-	ctx context.Context
-	APIService SnippetAPI
-	serviceID string
-	versionID int32
+	ctx         context.Context
+	APIService  SnippetAPI
+	serviceID   string
+	versionID   int32
 	snippetName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetSnippetRequest) Execute() (*SnippetResponse, *http.Response, error) {
@@ -503,10 +502,10 @@ Get a single snippet for a particular service and version.
 */
 func (a *SnippetAPIService) GetSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIGetSnippetRequest {
 	return APIGetSnippetRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:  a,
+		ctx:         ctx,
+		serviceID:   serviceID,
+		versionID:   versionID,
 		snippetName: snippetName,
 	}
 }
@@ -515,10 +514,10 @@ func (a *SnippetAPIService) GetSnippet(ctx context.Context, serviceID string, ve
 //  @return SnippetResponse
 func (a *SnippetAPIService) GetSnippetExecute(r APIGetSnippetRequest) (*SnippetResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SnippetResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SnippetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnippetAPIService.GetSnippet")
@@ -600,7 +599,6 @@ func (a *SnippetAPIService) GetSnippetExecute(r APIGetSnippetRequest) (*SnippetR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -619,12 +617,11 @@ func (a *SnippetAPIService) GetSnippetExecute(r APIGetSnippetRequest) (*SnippetR
 
 // APIGetSnippetDynamicRequest represents a request for the resource.
 type APIGetSnippetDynamicRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SnippetAPI
-	serviceID string
-	snippetID string
+	serviceID  string
+	snippetID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetSnippetDynamicRequest) Execute() (*SnippetResponse, *http.Response, error) {
@@ -644,9 +641,9 @@ Get a single dynamic snippet for a particular service.
 func (a *SnippetAPIService) GetSnippetDynamic(ctx context.Context, serviceID string, snippetID string) APIGetSnippetDynamicRequest {
 	return APIGetSnippetDynamicRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		snippetID: snippetID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		snippetID:  snippetID,
 	}
 }
 
@@ -654,10 +651,10 @@ func (a *SnippetAPIService) GetSnippetDynamic(ctx context.Context, serviceID str
 //  @return SnippetResponse
 func (a *SnippetAPIService) GetSnippetDynamicExecute(r APIGetSnippetDynamicRequest) (*SnippetResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SnippetResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SnippetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnippetAPIService.GetSnippetDynamic")
@@ -738,7 +735,6 @@ func (a *SnippetAPIService) GetSnippetDynamicExecute(r APIGetSnippetDynamicReque
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -757,12 +753,11 @@ func (a *SnippetAPIService) GetSnippetDynamicExecute(r APIGetSnippetDynamicReque
 
 // APIListSnippetsRequest represents a request for the resource.
 type APIListSnippetsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SnippetAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListSnippetsRequest) Execute() ([]SnippetResponse, *http.Response, error) {
@@ -782,9 +777,9 @@ List all snippets for a particular service and version.
 func (a *SnippetAPIService) ListSnippets(ctx context.Context, serviceID string, versionID int32) APIListSnippetsRequest {
 	return APIListSnippetsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -792,10 +787,10 @@ func (a *SnippetAPIService) ListSnippets(ctx context.Context, serviceID string, 
 //  @return []SnippetResponse
 func (a *SnippetAPIService) ListSnippetsExecute(r APIListSnippetsRequest) ([]SnippetResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []SnippetResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []SnippetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnippetAPIService.ListSnippets")
@@ -876,7 +871,6 @@ func (a *SnippetAPIService) ListSnippetsExecute(r APIListSnippetsRequest) ([]Sni
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -895,13 +889,12 @@ func (a *SnippetAPIService) ListSnippetsExecute(r APIListSnippetsRequest) ([]Sni
 
 // APIUpdateSnippetRequest represents a request for the resource.
 type APIUpdateSnippetRequest struct {
-	ctx context.Context
-	APIService SnippetAPI
-	serviceID string
-	versionID int32
+	ctx         context.Context
+	APIService  SnippetAPI
+	serviceID   string
+	versionID   int32
 	snippetName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIUpdateSnippetRequest) Execute() (*SnippetResponse, *http.Response, error) {
@@ -921,10 +914,10 @@ Update a specific snippet for a particular service and version.
 */
 func (a *SnippetAPIService) UpdateSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIUpdateSnippetRequest {
 	return APIUpdateSnippetRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:  a,
+		ctx:         ctx,
+		serviceID:   serviceID,
+		versionID:   versionID,
 		snippetName: snippetName,
 	}
 }
@@ -933,10 +926,10 @@ func (a *SnippetAPIService) UpdateSnippet(ctx context.Context, serviceID string,
 //  @return SnippetResponse
 func (a *SnippetAPIService) UpdateSnippetExecute(r APIUpdateSnippetRequest) (*SnippetResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SnippetResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SnippetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnippetAPIService.UpdateSnippet")
@@ -1018,7 +1011,6 @@ func (a *SnippetAPIService) UpdateSnippetExecute(r APIUpdateSnippetRequest) (*Sn
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1037,15 +1029,15 @@ func (a *SnippetAPIService) UpdateSnippetExecute(r APIUpdateSnippetRequest) (*Sn
 
 // APIUpdateSnippetDynamicRequest represents a request for the resource.
 type APIUpdateSnippetDynamicRequest struct {
-	ctx context.Context
-	APIService SnippetAPI
-	serviceID string
-	snippetID string
-	name *string
+	ctx          context.Context
+	APIService   SnippetAPI
+	serviceID    string
+	snippetID    string
+	name         *string
 	resourceType *string
-	content *string
-	priority *string
-	dynamic *string
+	content      *string
+	priority     *string
+	dynamic      *string
 }
 
 // Name The name for the snippet.
@@ -1053,21 +1045,25 @@ func (r *APIUpdateSnippetDynamicRequest) Name(name string) *APIUpdateSnippetDyna
 	r.name = &name
 	return r
 }
+
 // ResourceType The location in generated VCL where the snippet should be placed.
 func (r *APIUpdateSnippetDynamicRequest) ResourceType(resourceType string) *APIUpdateSnippetDynamicRequest {
 	r.resourceType = &resourceType
 	return r
 }
+
 // Content The VCL code that specifies exactly what the snippet does.
 func (r *APIUpdateSnippetDynamicRequest) Content(content string) *APIUpdateSnippetDynamicRequest {
 	r.content = &content
 	return r
 }
+
 // Priority Priority determines execution order. Lower numbers execute first.
 func (r *APIUpdateSnippetDynamicRequest) Priority(priority string) *APIUpdateSnippetDynamicRequest {
 	r.priority = &priority
 	return r
 }
+
 // Dynamic Sets the snippet version.
 func (r *APIUpdateSnippetDynamicRequest) Dynamic(dynamic string) *APIUpdateSnippetDynamicRequest {
 	r.dynamic = &dynamic
@@ -1092,9 +1088,9 @@ Update a dynamic snippet for a particular service.
 func (a *SnippetAPIService) UpdateSnippetDynamic(ctx context.Context, serviceID string, snippetID string) APIUpdateSnippetDynamicRequest {
 	return APIUpdateSnippetDynamicRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		snippetID: snippetID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		snippetID:  snippetID,
 	}
 }
 
@@ -1102,10 +1098,10 @@ func (a *SnippetAPIService) UpdateSnippetDynamic(ctx context.Context, serviceID 
 //  @return SnippetResponse
 func (a *SnippetAPIService) UpdateSnippetDynamicExecute(r APIUpdateSnippetDynamicRequest) (*SnippetResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SnippetResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SnippetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnippetAPIService.UpdateSnippetDynamic")
@@ -1200,7 +1196,6 @@ func (a *SnippetAPIService) UpdateSnippetDynamicExecute(r APIUpdateSnippetDynami
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

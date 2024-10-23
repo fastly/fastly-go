@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type ResourceAPI interface {
 
 	/*
-	CreateResource Create a resource link
+		CreateResource Create a resource link
 
-	Create a link between a resource and a service version.
+		Create a link between a resource and a service version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateResourceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateResourceRequest
 	*/
 	CreateResource(ctx context.Context, serviceID string, versionID int32) APICreateResourceRequest
 
@@ -48,15 +47,15 @@ type ResourceAPI interface {
 	CreateResourceExecute(r APICreateResourceRequest) (*ResourceResponse, *http.Response, error)
 
 	/*
-	DeleteResource Delete a resource link
+		DeleteResource Delete a resource link
 
-	Delete a link between a resource and a service version.
+		Delete a link between a resource and a service version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param id An alphanumeric string identifying the resource link.
-	 @return APIDeleteResourceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param id An alphanumeric string identifying the resource link.
+		 @return APIDeleteResourceRequest
 	*/
 	DeleteResource(ctx context.Context, serviceID string, versionID int32, id string) APIDeleteResourceRequest
 
@@ -65,15 +64,15 @@ type ResourceAPI interface {
 	DeleteResourceExecute(r APIDeleteResourceRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetResource Display a resource link
+		GetResource Display a resource link
 
-	Display a resource link by its identifier.
+		Display a resource link by its identifier.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param id An alphanumeric string identifying the resource link.
-	 @return APIGetResourceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param id An alphanumeric string identifying the resource link.
+		 @return APIGetResourceRequest
 	*/
 	GetResource(ctx context.Context, serviceID string, versionID int32, id string) APIGetResourceRequest
 
@@ -82,14 +81,14 @@ type ResourceAPI interface {
 	GetResourceExecute(r APIGetResourceRequest) (*ResourceResponse, *http.Response, error)
 
 	/*
-	ListResources List resource links
+		ListResources List resource links
 
-	List links between resources and services
+		List links between resources and services
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListResourcesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListResourcesRequest
 	*/
 	ListResources(ctx context.Context, serviceID string, versionID int32) APIListResourcesRequest
 
@@ -98,15 +97,15 @@ type ResourceAPI interface {
 	ListResourcesExecute(r APIListResourcesRequest) ([]ResourceResponse, *http.Response, error)
 
 	/*
-	UpdateResource Update a resource link
+		UpdateResource Update a resource link
 
-	Update a link between a resource and a service version.
+		Update a link between a resource and a service version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param id An alphanumeric string identifying the resource link.
-	 @return APIUpdateResourceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param id An alphanumeric string identifying the resource link.
+		 @return APIUpdateResourceRequest
 	*/
 	UpdateResource(ctx context.Context, serviceID string, versionID int32, id string) APIUpdateResourceRequest
 
@@ -120,12 +119,12 @@ type ResourceAPIService service
 
 // APICreateResourceRequest represents a request for the resource.
 type APICreateResourceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ResourceAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 	resourceID *string
-	name *string
+	name       *string
 }
 
 // ResourceID The ID of the underlying linked resource.
@@ -133,6 +132,7 @@ func (r *APICreateResourceRequest) ResourceID(resourceID string) *APICreateResou
 	r.resourceID = &resourceID
 	return r
 }
+
 // Name The name of the resource link.
 func (r *APICreateResourceRequest) Name(name string) *APICreateResourceRequest {
 	r.name = &name
@@ -157,9 +157,9 @@ Create a link between a resource and a service version.
 func (a *ResourceAPIService) CreateResource(ctx context.Context, serviceID string, versionID int32) APICreateResourceRequest {
 	return APICreateResourceRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -167,10 +167,10 @@ func (a *ResourceAPIService) CreateResource(ctx context.Context, serviceID strin
 //  @return ResourceResponse
 func (a *ResourceAPIService) CreateResourceExecute(r APICreateResourceRequest) (*ResourceResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ResourceResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ResourceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResourceAPIService.CreateResource")
@@ -257,7 +257,6 @@ func (a *ResourceAPIService) CreateResourceExecute(r APICreateResourceRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -276,13 +275,12 @@ func (a *ResourceAPIService) CreateResourceExecute(r APICreateResourceRequest) (
 
 // APIDeleteResourceRequest represents a request for the resource.
 type APIDeleteResourceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ResourceAPI
-	serviceID string
-	versionID int32
-	id string
+	serviceID  string
+	versionID  int32
+	id         string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteResourceRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -303,10 +301,10 @@ Delete a link between a resource and a service version.
 func (a *ResourceAPIService) DeleteResource(ctx context.Context, serviceID string, versionID int32, id string) APIDeleteResourceRequest {
 	return APIDeleteResourceRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
-		id: id,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		id:         id,
 	}
 }
 
@@ -314,10 +312,10 @@ func (a *ResourceAPIService) DeleteResource(ctx context.Context, serviceID strin
 //  @return InlineResponse200
 func (a *ResourceAPIService) DeleteResourceExecute(r APIDeleteResourceRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResourceAPIService.DeleteResource")
@@ -399,7 +397,6 @@ func (a *ResourceAPIService) DeleteResourceExecute(r APIDeleteResourceRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -418,13 +415,12 @@ func (a *ResourceAPIService) DeleteResourceExecute(r APIDeleteResourceRequest) (
 
 // APIGetResourceRequest represents a request for the resource.
 type APIGetResourceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ResourceAPI
-	serviceID string
-	versionID int32
-	id string
+	serviceID  string
+	versionID  int32
+	id         string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetResourceRequest) Execute() (*ResourceResponse, *http.Response, error) {
@@ -445,10 +441,10 @@ Display a resource link by its identifier.
 func (a *ResourceAPIService) GetResource(ctx context.Context, serviceID string, versionID int32, id string) APIGetResourceRequest {
 	return APIGetResourceRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
-		id: id,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		id:         id,
 	}
 }
 
@@ -456,10 +452,10 @@ func (a *ResourceAPIService) GetResource(ctx context.Context, serviceID string, 
 //  @return ResourceResponse
 func (a *ResourceAPIService) GetResourceExecute(r APIGetResourceRequest) (*ResourceResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ResourceResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ResourceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResourceAPIService.GetResource")
@@ -541,7 +537,6 @@ func (a *ResourceAPIService) GetResourceExecute(r APIGetResourceRequest) (*Resou
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -560,12 +555,11 @@ func (a *ResourceAPIService) GetResourceExecute(r APIGetResourceRequest) (*Resou
 
 // APIListResourcesRequest represents a request for the resource.
 type APIListResourcesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ResourceAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListResourcesRequest) Execute() ([]ResourceResponse, *http.Response, error) {
@@ -585,9 +579,9 @@ List links between resources and services
 func (a *ResourceAPIService) ListResources(ctx context.Context, serviceID string, versionID int32) APIListResourcesRequest {
 	return APIListResourcesRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -595,10 +589,10 @@ func (a *ResourceAPIService) ListResources(ctx context.Context, serviceID string
 //  @return []ResourceResponse
 func (a *ResourceAPIService) ListResourcesExecute(r APIListResourcesRequest) ([]ResourceResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []ResourceResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []ResourceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResourceAPIService.ListResources")
@@ -679,7 +673,6 @@ func (a *ResourceAPIService) ListResourcesExecute(r APIListResourcesRequest) ([]
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -698,13 +691,13 @@ func (a *ResourceAPIService) ListResourcesExecute(r APIListResourcesRequest) ([]
 
 // APIUpdateResourceRequest represents a request for the resource.
 type APIUpdateResourceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ResourceAPI
-	serviceID string
-	versionID int32
-	id string
+	serviceID  string
+	versionID  int32
+	id         string
 	resourceID *string
-	name *string
+	name       *string
 }
 
 // ResourceID The ID of the underlying linked resource.
@@ -712,6 +705,7 @@ func (r *APIUpdateResourceRequest) ResourceID(resourceID string) *APIUpdateResou
 	r.resourceID = &resourceID
 	return r
 }
+
 // Name The name of the resource link.
 func (r *APIUpdateResourceRequest) Name(name string) *APIUpdateResourceRequest {
 	r.name = &name
@@ -737,10 +731,10 @@ Update a link between a resource and a service version.
 func (a *ResourceAPIService) UpdateResource(ctx context.Context, serviceID string, versionID int32, id string) APIUpdateResourceRequest {
 	return APIUpdateResourceRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
-		id: id,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		id:         id,
 	}
 }
 
@@ -748,10 +742,10 @@ func (a *ResourceAPIService) UpdateResource(ctx context.Context, serviceID strin
 //  @return ResourceResponse
 func (a *ResourceAPIService) UpdateResourceExecute(r APIUpdateResourceRequest) (*ResourceResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ResourceResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ResourceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResourceAPIService.UpdateResource")
@@ -838,7 +832,6 @@ func (a *ResourceAPIService) UpdateResourceExecute(r APIUpdateResourceRequest) (
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

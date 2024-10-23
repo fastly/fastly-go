@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type ConfigStoreAPI interface {
 
 	/*
-	CreateConfigStore Create a config store
+		CreateConfigStore Create a config store
 
-	Create a config store.
+		Create a config store.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateConfigStoreRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateConfigStoreRequest
 	*/
 	CreateConfigStore(ctx context.Context) APICreateConfigStoreRequest
 
@@ -46,13 +45,13 @@ type ConfigStoreAPI interface {
 	CreateConfigStoreExecute(r APICreateConfigStoreRequest) (*ConfigStoreResponse, *http.Response, error)
 
 	/*
-	DeleteConfigStore Delete a config store
+		DeleteConfigStore Delete a config store
 
-	Delete a config store.
+		Delete a config store.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param configStoreID An alphanumeric string identifying the config store.
-	 @return APIDeleteConfigStoreRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param configStoreID An alphanumeric string identifying the config store.
+		 @return APIDeleteConfigStoreRequest
 	*/
 	DeleteConfigStore(ctx context.Context, configStoreID string) APIDeleteConfigStoreRequest
 
@@ -61,13 +60,13 @@ type ConfigStoreAPI interface {
 	DeleteConfigStoreExecute(r APIDeleteConfigStoreRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetConfigStore Describe a config store
+		GetConfigStore Describe a config store
 
-	Describe a config store by its identifier.
+		Describe a config store by its identifier.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param configStoreID An alphanumeric string identifying the config store.
-	 @return APIGetConfigStoreRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param configStoreID An alphanumeric string identifying the config store.
+		 @return APIGetConfigStoreRequest
 	*/
 	GetConfigStore(ctx context.Context, configStoreID string) APIGetConfigStoreRequest
 
@@ -76,13 +75,13 @@ type ConfigStoreAPI interface {
 	GetConfigStoreExecute(r APIGetConfigStoreRequest) (*ConfigStoreResponse, *http.Response, error)
 
 	/*
-	GetConfigStoreInfo Get config store metadata
+		GetConfigStoreInfo Get config store metadata
 
-	Retrieve metadata for a single config store.
+		Retrieve metadata for a single config store.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param configStoreID An alphanumeric string identifying the config store.
-	 @return APIGetConfigStoreInfoRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param configStoreID An alphanumeric string identifying the config store.
+		 @return APIGetConfigStoreInfoRequest
 	*/
 	GetConfigStoreInfo(ctx context.Context, configStoreID string) APIGetConfigStoreInfoRequest
 
@@ -91,13 +90,13 @@ type ConfigStoreAPI interface {
 	GetConfigStoreInfoExecute(r APIGetConfigStoreInfoRequest) (*ConfigStoreInfoResponse, *http.Response, error)
 
 	/*
-	ListConfigStoreServices List linked services
+		ListConfigStoreServices List linked services
 
-	List services linked to a config store
+		List services linked to a config store
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param configStoreID An alphanumeric string identifying the config store.
-	 @return APIListConfigStoreServicesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param configStoreID An alphanumeric string identifying the config store.
+		 @return APIListConfigStoreServicesRequest
 	*/
 	ListConfigStoreServices(ctx context.Context, configStoreID string) APIListConfigStoreServicesRequest
 
@@ -106,12 +105,12 @@ type ConfigStoreAPI interface {
 	ListConfigStoreServicesExecute(r APIListConfigStoreServicesRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListConfigStores List config stores
+		ListConfigStores List config stores
 
-	List config stores.
+		List config stores.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListConfigStoresRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListConfigStoresRequest
 	*/
 	ListConfigStores(ctx context.Context) APIListConfigStoresRequest
 
@@ -120,13 +119,13 @@ type ConfigStoreAPI interface {
 	ListConfigStoresExecute(r APIListConfigStoresRequest) ([]ConfigStoreResponse, *http.Response, error)
 
 	/*
-	UpdateConfigStore Update a config store
+		UpdateConfigStore Update a config store
 
-	Update a config store.
+		Update a config store.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param configStoreID An alphanumeric string identifying the config store.
-	 @return APIUpdateConfigStoreRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param configStoreID An alphanumeric string identifying the config store.
+		 @return APIUpdateConfigStoreRequest
 	*/
 	UpdateConfigStore(ctx context.Context, configStoreID string) APIUpdateConfigStoreRequest
 
@@ -140,9 +139,9 @@ type ConfigStoreAPIService service
 
 // APICreateConfigStoreRequest represents a request for the resource.
 type APICreateConfigStoreRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ConfigStoreAPI
-	name *string
+	name       *string
 }
 
 // Name The name of the config store.
@@ -167,7 +166,7 @@ Create a config store.
 func (a *ConfigStoreAPIService) CreateConfigStore(ctx context.Context) APICreateConfigStoreRequest {
 	return APICreateConfigStoreRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -175,10 +174,10 @@ func (a *ConfigStoreAPIService) CreateConfigStore(ctx context.Context) APICreate
 //  @return ConfigStoreResponse
 func (a *ConfigStoreAPIService) CreateConfigStoreExecute(r APICreateConfigStoreRequest) (*ConfigStoreResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ConfigStoreResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ConfigStoreResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.CreateConfigStore")
@@ -260,7 +259,6 @@ func (a *ConfigStoreAPIService) CreateConfigStoreExecute(r APICreateConfigStoreR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -279,11 +277,10 @@ func (a *ConfigStoreAPIService) CreateConfigStoreExecute(r APICreateConfigStoreR
 
 // APIDeleteConfigStoreRequest represents a request for the resource.
 type APIDeleteConfigStoreRequest struct {
-	ctx context.Context
-	APIService ConfigStoreAPI
+	ctx           context.Context
+	APIService    ConfigStoreAPI
 	configStoreID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteConfigStoreRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -301,8 +298,8 @@ Delete a config store.
 */
 func (a *ConfigStoreAPIService) DeleteConfigStore(ctx context.Context, configStoreID string) APIDeleteConfigStoreRequest {
 	return APIDeleteConfigStoreRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:    a,
+		ctx:           ctx,
 		configStoreID: configStoreID,
 	}
 }
@@ -311,10 +308,10 @@ func (a *ConfigStoreAPIService) DeleteConfigStore(ctx context.Context, configSto
 //  @return InlineResponse200
 func (a *ConfigStoreAPIService) DeleteConfigStoreExecute(r APIDeleteConfigStoreRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.DeleteConfigStore")
@@ -394,7 +391,6 @@ func (a *ConfigStoreAPIService) DeleteConfigStoreExecute(r APIDeleteConfigStoreR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -413,11 +409,10 @@ func (a *ConfigStoreAPIService) DeleteConfigStoreExecute(r APIDeleteConfigStoreR
 
 // APIGetConfigStoreRequest represents a request for the resource.
 type APIGetConfigStoreRequest struct {
-	ctx context.Context
-	APIService ConfigStoreAPI
+	ctx           context.Context
+	APIService    ConfigStoreAPI
 	configStoreID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetConfigStoreRequest) Execute() (*ConfigStoreResponse, *http.Response, error) {
@@ -435,8 +430,8 @@ Describe a config store by its identifier.
 */
 func (a *ConfigStoreAPIService) GetConfigStore(ctx context.Context, configStoreID string) APIGetConfigStoreRequest {
 	return APIGetConfigStoreRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:    a,
+		ctx:           ctx,
 		configStoreID: configStoreID,
 	}
 }
@@ -445,10 +440,10 @@ func (a *ConfigStoreAPIService) GetConfigStore(ctx context.Context, configStoreI
 //  @return ConfigStoreResponse
 func (a *ConfigStoreAPIService) GetConfigStoreExecute(r APIGetConfigStoreRequest) (*ConfigStoreResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ConfigStoreResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ConfigStoreResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.GetConfigStore")
@@ -528,7 +523,6 @@ func (a *ConfigStoreAPIService) GetConfigStoreExecute(r APIGetConfigStoreRequest
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -547,11 +541,10 @@ func (a *ConfigStoreAPIService) GetConfigStoreExecute(r APIGetConfigStoreRequest
 
 // APIGetConfigStoreInfoRequest represents a request for the resource.
 type APIGetConfigStoreInfoRequest struct {
-	ctx context.Context
-	APIService ConfigStoreAPI
+	ctx           context.Context
+	APIService    ConfigStoreAPI
 	configStoreID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetConfigStoreInfoRequest) Execute() (*ConfigStoreInfoResponse, *http.Response, error) {
@@ -569,8 +562,8 @@ Retrieve metadata for a single config store.
 */
 func (a *ConfigStoreAPIService) GetConfigStoreInfo(ctx context.Context, configStoreID string) APIGetConfigStoreInfoRequest {
 	return APIGetConfigStoreInfoRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:    a,
+		ctx:           ctx,
 		configStoreID: configStoreID,
 	}
 }
@@ -579,10 +572,10 @@ func (a *ConfigStoreAPIService) GetConfigStoreInfo(ctx context.Context, configSt
 //  @return ConfigStoreInfoResponse
 func (a *ConfigStoreAPIService) GetConfigStoreInfoExecute(r APIGetConfigStoreInfoRequest) (*ConfigStoreInfoResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ConfigStoreInfoResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ConfigStoreInfoResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.GetConfigStoreInfo")
@@ -662,7 +655,6 @@ func (a *ConfigStoreAPIService) GetConfigStoreInfoExecute(r APIGetConfigStoreInf
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -681,11 +673,10 @@ func (a *ConfigStoreAPIService) GetConfigStoreInfoExecute(r APIGetConfigStoreInf
 
 // APIListConfigStoreServicesRequest represents a request for the resource.
 type APIListConfigStoreServicesRequest struct {
-	ctx context.Context
-	APIService ConfigStoreAPI
+	ctx           context.Context
+	APIService    ConfigStoreAPI
 	configStoreID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListConfigStoreServicesRequest) Execute() (map[string]any, *http.Response, error) {
@@ -703,8 +694,8 @@ List services linked to a config store
 */
 func (a *ConfigStoreAPIService) ListConfigStoreServices(ctx context.Context, configStoreID string) APIListConfigStoreServicesRequest {
 	return APIListConfigStoreServicesRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:    a,
+		ctx:           ctx,
 		configStoreID: configStoreID,
 	}
 }
@@ -713,10 +704,10 @@ func (a *ConfigStoreAPIService) ListConfigStoreServices(ctx context.Context, con
 //  @return map[string]any
 func (a *ConfigStoreAPIService) ListConfigStoreServicesExecute(r APIListConfigStoreServicesRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.ListConfigStoreServices")
@@ -796,7 +787,6 @@ func (a *ConfigStoreAPIService) ListConfigStoreServicesExecute(r APIListConfigSt
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -815,9 +805,9 @@ func (a *ConfigStoreAPIService) ListConfigStoreServicesExecute(r APIListConfigSt
 
 // APIListConfigStoresRequest represents a request for the resource.
 type APIListConfigStoresRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ConfigStoreAPI
-	name *string
+	name       *string
 }
 
 // Name Returns a one-element array containing the details for the named config store.
@@ -842,7 +832,7 @@ List config stores.
 func (a *ConfigStoreAPIService) ListConfigStores(ctx context.Context) APIListConfigStoresRequest {
 	return APIListConfigStoresRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -850,10 +840,10 @@ func (a *ConfigStoreAPIService) ListConfigStores(ctx context.Context) APIListCon
 //  @return []ConfigStoreResponse
 func (a *ConfigStoreAPIService) ListConfigStoresExecute(r APIListConfigStoresRequest) ([]ConfigStoreResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []ConfigStoreResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []ConfigStoreResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.ListConfigStores")
@@ -935,7 +925,6 @@ func (a *ConfigStoreAPIService) ListConfigStoresExecute(r APIListConfigStoresReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -954,10 +943,10 @@ func (a *ConfigStoreAPIService) ListConfigStoresExecute(r APIListConfigStoresReq
 
 // APIUpdateConfigStoreRequest represents a request for the resource.
 type APIUpdateConfigStoreRequest struct {
-	ctx context.Context
-	APIService ConfigStoreAPI
+	ctx           context.Context
+	APIService    ConfigStoreAPI
 	configStoreID string
-	name *string
+	name          *string
 }
 
 // Name The name of the config store.
@@ -982,8 +971,8 @@ Update a config store.
 */
 func (a *ConfigStoreAPIService) UpdateConfigStore(ctx context.Context, configStoreID string) APIUpdateConfigStoreRequest {
 	return APIUpdateConfigStoreRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:    a,
+		ctx:           ctx,
 		configStoreID: configStoreID,
 	}
 }
@@ -992,10 +981,10 @@ func (a *ConfigStoreAPIService) UpdateConfigStore(ctx context.Context, configSto
 //  @return ConfigStoreResponse
 func (a *ConfigStoreAPIService) UpdateConfigStoreExecute(r APIUpdateConfigStoreRequest) (*ConfigStoreResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ConfigStoreResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ConfigStoreResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConfigStoreAPIService.UpdateConfigStore")
@@ -1077,7 +1066,6 @@ func (a *ConfigStoreAPIService) UpdateConfigStoreExecute(r APIUpdateConfigStoreR
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

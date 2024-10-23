@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,13 +31,13 @@ var (
 type IamServiceGroupsAPI interface {
 
 	/*
-	AddServiceGroupServices Add services in a service group
+		AddServiceGroupServices Add services in a service group
 
-	Add services in a service group.
+		Add services in a service group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceGroupID Alphanumeric string identifying the service group.
-	 @return APIAddServiceGroupServicesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceGroupID Alphanumeric string identifying the service group.
+		 @return APIAddServiceGroupServicesRequest
 	*/
 	AddServiceGroupServices(ctx context.Context, serviceGroupID string) APIAddServiceGroupServicesRequest
 
@@ -47,12 +46,12 @@ type IamServiceGroupsAPI interface {
 	AddServiceGroupServicesExecute(r APIAddServiceGroupServicesRequest) (map[string]any, *http.Response, error)
 
 	/*
-	CreateAServiceGroup Create a service group
+		CreateAServiceGroup Create a service group
 
-	Create a service group.
+		Create a service group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateAServiceGroupRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateAServiceGroupRequest
 	*/
 	CreateAServiceGroup(ctx context.Context) APICreateAServiceGroupRequest
 
@@ -61,13 +60,13 @@ type IamServiceGroupsAPI interface {
 	CreateAServiceGroupExecute(r APICreateAServiceGroupRequest) (map[string]any, *http.Response, error)
 
 	/*
-	DeleteAServiceGroup Delete a service group
+		DeleteAServiceGroup Delete a service group
 
-	Delete a service group.
+		Delete a service group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceGroupID Alphanumeric string identifying the service group.
-	 @return APIDeleteAServiceGroupRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceGroupID Alphanumeric string identifying the service group.
+		 @return APIDeleteAServiceGroupRequest
 	*/
 	DeleteAServiceGroup(ctx context.Context, serviceGroupID string) APIDeleteAServiceGroupRequest
 
@@ -75,13 +74,13 @@ type IamServiceGroupsAPI interface {
 	DeleteAServiceGroupExecute(r APIDeleteAServiceGroupRequest) (*http.Response, error)
 
 	/*
-	GetAServiceGroup Get a service group
+		GetAServiceGroup Get a service group
 
-	Get a service group.
+		Get a service group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceGroupID Alphanumeric string identifying the service group.
-	 @return APIGetAServiceGroupRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceGroupID Alphanumeric string identifying the service group.
+		 @return APIGetAServiceGroupRequest
 	*/
 	GetAServiceGroup(ctx context.Context, serviceGroupID string) APIGetAServiceGroupRequest
 
@@ -90,13 +89,13 @@ type IamServiceGroupsAPI interface {
 	GetAServiceGroupExecute(r APIGetAServiceGroupRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListServiceGroupServices List services to a service group
+		ListServiceGroupServices List services to a service group
 
-	List services to a service group.
+		List services to a service group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceGroupID Alphanumeric string identifying the service group.
-	 @return APIListServiceGroupServicesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceGroupID Alphanumeric string identifying the service group.
+		 @return APIListServiceGroupServicesRequest
 	*/
 	ListServiceGroupServices(ctx context.Context, serviceGroupID string) APIListServiceGroupServicesRequest
 
@@ -105,12 +104,12 @@ type IamServiceGroupsAPI interface {
 	ListServiceGroupServicesExecute(r APIListServiceGroupServicesRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListServiceGroups List service groups
+		ListServiceGroups List service groups
 
-	List all service groups.
+		List all service groups.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListServiceGroupsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListServiceGroupsRequest
 	*/
 	ListServiceGroups(ctx context.Context) APIListServiceGroupsRequest
 
@@ -119,13 +118,13 @@ type IamServiceGroupsAPI interface {
 	ListServiceGroupsExecute(r APIListServiceGroupsRequest) (map[string]any, *http.Response, error)
 
 	/*
-	RemoveServiceGroupServices Remove services from a service group
+		RemoveServiceGroupServices Remove services from a service group
 
-	Remove services from a service group.
+		Remove services from a service group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceGroupID Alphanumeric string identifying the service group.
-	 @return APIRemoveServiceGroupServicesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceGroupID Alphanumeric string identifying the service group.
+		 @return APIRemoveServiceGroupServicesRequest
 	*/
 	RemoveServiceGroupServices(ctx context.Context, serviceGroupID string) APIRemoveServiceGroupServicesRequest
 
@@ -133,13 +132,13 @@ type IamServiceGroupsAPI interface {
 	RemoveServiceGroupServicesExecute(r APIRemoveServiceGroupServicesRequest) (*http.Response, error)
 
 	/*
-	UpdateAServiceGroup Update a service group
+		UpdateAServiceGroup Update a service group
 
-	Update a service group.
+		Update a service group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceGroupID Alphanumeric string identifying the service group.
-	 @return APIUpdateAServiceGroupRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceGroupID Alphanumeric string identifying the service group.
+		 @return APIUpdateAServiceGroupRequest
 	*/
 	UpdateAServiceGroup(ctx context.Context, serviceGroupID string) APIUpdateAServiceGroupRequest
 
@@ -153,10 +152,10 @@ type IamServiceGroupsAPIService service
 
 // APIAddServiceGroupServicesRequest represents a request for the resource.
 type APIAddServiceGroupServicesRequest struct {
-	ctx context.Context
-	APIService IamServiceGroupsAPI
+	ctx            context.Context
+	APIService     IamServiceGroupsAPI
 	serviceGroupID string
-	requestBody *map[string]map[string]any
+	requestBody    *map[string]map[string]any
 }
 
 // RequestBody returns a pointer to a request.
@@ -181,8 +180,8 @@ Add services in a service group.
 */
 func (a *IamServiceGroupsAPIService) AddServiceGroupServices(ctx context.Context, serviceGroupID string) APIAddServiceGroupServicesRequest {
 	return APIAddServiceGroupServicesRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:     a,
+		ctx:            ctx,
 		serviceGroupID: serviceGroupID,
 	}
 }
@@ -191,10 +190,10 @@ func (a *IamServiceGroupsAPIService) AddServiceGroupServices(ctx context.Context
 //  @return map[string]any
 func (a *IamServiceGroupsAPIService) AddServiceGroupServicesExecute(r APIAddServiceGroupServicesRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.AddServiceGroupServices")
@@ -276,7 +275,6 @@ func (a *IamServiceGroupsAPIService) AddServiceGroupServicesExecute(r APIAddServ
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -295,8 +293,8 @@ func (a *IamServiceGroupsAPIService) AddServiceGroupServicesExecute(r APIAddServ
 
 // APICreateAServiceGroupRequest represents a request for the resource.
 type APICreateAServiceGroupRequest struct {
-	ctx context.Context
-	APIService IamServiceGroupsAPI
+	ctx         context.Context
+	APIService  IamServiceGroupsAPI
 	requestBody *map[string]map[string]any
 }
 
@@ -322,7 +320,7 @@ Create a service group.
 func (a *IamServiceGroupsAPIService) CreateAServiceGroup(ctx context.Context) APICreateAServiceGroupRequest {
 	return APICreateAServiceGroupRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -330,10 +328,10 @@ func (a *IamServiceGroupsAPIService) CreateAServiceGroup(ctx context.Context) AP
 //  @return map[string]any
 func (a *IamServiceGroupsAPIService) CreateAServiceGroupExecute(r APICreateAServiceGroupRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.CreateAServiceGroup")
@@ -414,7 +412,6 @@ func (a *IamServiceGroupsAPIService) CreateAServiceGroupExecute(r APICreateAServ
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -433,11 +430,10 @@ func (a *IamServiceGroupsAPIService) CreateAServiceGroupExecute(r APICreateAServ
 
 // APIDeleteAServiceGroupRequest represents a request for the resource.
 type APIDeleteAServiceGroupRequest struct {
-	ctx context.Context
-	APIService IamServiceGroupsAPI
+	ctx            context.Context
+	APIService     IamServiceGroupsAPI
 	serviceGroupID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteAServiceGroupRequest) Execute() (*http.Response, error) {
@@ -455,8 +451,8 @@ Delete a service group.
 */
 func (a *IamServiceGroupsAPIService) DeleteAServiceGroup(ctx context.Context, serviceGroupID string) APIDeleteAServiceGroupRequest {
 	return APIDeleteAServiceGroupRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:     a,
+		ctx:            ctx,
 		serviceGroupID: serviceGroupID,
 	}
 }
@@ -464,9 +460,9 @@ func (a *IamServiceGroupsAPIService) DeleteAServiceGroup(ctx context.Context, se
 // DeleteAServiceGroupExecute executes the request
 func (a *IamServiceGroupsAPIService) DeleteAServiceGroupExecute(r APIDeleteAServiceGroupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.DeleteAServiceGroup")
@@ -537,7 +533,6 @@ func (a *IamServiceGroupsAPIService) DeleteAServiceGroupExecute(r APIDeleteAServ
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -556,11 +551,10 @@ func (a *IamServiceGroupsAPIService) DeleteAServiceGroupExecute(r APIDeleteAServ
 
 // APIGetAServiceGroupRequest represents a request for the resource.
 type APIGetAServiceGroupRequest struct {
-	ctx context.Context
-	APIService IamServiceGroupsAPI
+	ctx            context.Context
+	APIService     IamServiceGroupsAPI
 	serviceGroupID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetAServiceGroupRequest) Execute() (map[string]any, *http.Response, error) {
@@ -578,8 +572,8 @@ Get a service group.
 */
 func (a *IamServiceGroupsAPIService) GetAServiceGroup(ctx context.Context, serviceGroupID string) APIGetAServiceGroupRequest {
 	return APIGetAServiceGroupRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:     a,
+		ctx:            ctx,
 		serviceGroupID: serviceGroupID,
 	}
 }
@@ -588,10 +582,10 @@ func (a *IamServiceGroupsAPIService) GetAServiceGroup(ctx context.Context, servi
 //  @return map[string]any
 func (a *IamServiceGroupsAPIService) GetAServiceGroupExecute(r APIGetAServiceGroupRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.GetAServiceGroup")
@@ -671,7 +665,6 @@ func (a *IamServiceGroupsAPIService) GetAServiceGroupExecute(r APIGetAServiceGro
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -690,11 +683,11 @@ func (a *IamServiceGroupsAPIService) GetAServiceGroupExecute(r APIGetAServiceGro
 
 // APIListServiceGroupServicesRequest represents a request for the resource.
 type APIListServiceGroupServicesRequest struct {
-	ctx context.Context
-	APIService IamServiceGroupsAPI
+	ctx            context.Context
+	APIService     IamServiceGroupsAPI
 	serviceGroupID string
-	perPage *int32
-	page *int32
+	perPage        *int32
+	page           *int32
 }
 
 // PerPage Number of records per page.
@@ -702,6 +695,7 @@ func (r *APIListServiceGroupServicesRequest) PerPage(perPage int32) *APIListServ
 	r.perPage = &perPage
 	return r
 }
+
 // Page Current page.
 func (r *APIListServiceGroupServicesRequest) Page(page int32) *APIListServiceGroupServicesRequest {
 	r.page = &page
@@ -724,8 +718,8 @@ List services to a service group.
 */
 func (a *IamServiceGroupsAPIService) ListServiceGroupServices(ctx context.Context, serviceGroupID string) APIListServiceGroupServicesRequest {
 	return APIListServiceGroupServicesRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:     a,
+		ctx:            ctx,
 		serviceGroupID: serviceGroupID,
 	}
 }
@@ -734,10 +728,10 @@ func (a *IamServiceGroupsAPIService) ListServiceGroupServices(ctx context.Contex
 //  @return map[string]any
 func (a *IamServiceGroupsAPIService) ListServiceGroupServicesExecute(r APIListServiceGroupServicesRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.ListServiceGroupServices")
@@ -823,7 +817,6 @@ func (a *IamServiceGroupsAPIService) ListServiceGroupServicesExecute(r APIListSe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -842,10 +835,10 @@ func (a *IamServiceGroupsAPIService) ListServiceGroupServicesExecute(r APIListSe
 
 // APIListServiceGroupsRequest represents a request for the resource.
 type APIListServiceGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService IamServiceGroupsAPI
-	perPage *int32
-	page *int32
+	perPage    *int32
+	page       *int32
 }
 
 // PerPage Number of records per page.
@@ -853,6 +846,7 @@ func (r *APIListServiceGroupsRequest) PerPage(perPage int32) *APIListServiceGrou
 	r.perPage = &perPage
 	return r
 }
+
 // Page Current page.
 func (r *APIListServiceGroupsRequest) Page(page int32) *APIListServiceGroupsRequest {
 	r.page = &page
@@ -875,7 +869,7 @@ List all service groups.
 func (a *IamServiceGroupsAPIService) ListServiceGroups(ctx context.Context) APIListServiceGroupsRequest {
 	return APIListServiceGroupsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -883,10 +877,10 @@ func (a *IamServiceGroupsAPIService) ListServiceGroups(ctx context.Context) APIL
 //  @return map[string]any
 func (a *IamServiceGroupsAPIService) ListServiceGroupsExecute(r APIListServiceGroupsRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.ListServiceGroups")
@@ -971,7 +965,6 @@ func (a *IamServiceGroupsAPIService) ListServiceGroupsExecute(r APIListServiceGr
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -990,10 +983,10 @@ func (a *IamServiceGroupsAPIService) ListServiceGroupsExecute(r APIListServiceGr
 
 // APIRemoveServiceGroupServicesRequest represents a request for the resource.
 type APIRemoveServiceGroupServicesRequest struct {
-	ctx context.Context
-	APIService IamServiceGroupsAPI
+	ctx            context.Context
+	APIService     IamServiceGroupsAPI
 	serviceGroupID string
-	requestBody *map[string]map[string]any
+	requestBody    *map[string]map[string]any
 }
 
 // RequestBody returns a pointer to a request.
@@ -1018,8 +1011,8 @@ Remove services from a service group.
 */
 func (a *IamServiceGroupsAPIService) RemoveServiceGroupServices(ctx context.Context, serviceGroupID string) APIRemoveServiceGroupServicesRequest {
 	return APIRemoveServiceGroupServicesRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:     a,
+		ctx:            ctx,
 		serviceGroupID: serviceGroupID,
 	}
 }
@@ -1027,9 +1020,9 @@ func (a *IamServiceGroupsAPIService) RemoveServiceGroupServices(ctx context.Cont
 // RemoveServiceGroupServicesExecute executes the request
 func (a *IamServiceGroupsAPIService) RemoveServiceGroupServicesExecute(r APIRemoveServiceGroupServicesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.RemoveServiceGroupServices")
@@ -1102,7 +1095,6 @@ func (a *IamServiceGroupsAPIService) RemoveServiceGroupServicesExecute(r APIRemo
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1121,10 +1113,10 @@ func (a *IamServiceGroupsAPIService) RemoveServiceGroupServicesExecute(r APIRemo
 
 // APIUpdateAServiceGroupRequest represents a request for the resource.
 type APIUpdateAServiceGroupRequest struct {
-	ctx context.Context
-	APIService IamServiceGroupsAPI
+	ctx            context.Context
+	APIService     IamServiceGroupsAPI
 	serviceGroupID string
-	requestBody *map[string]map[string]any
+	requestBody    *map[string]map[string]any
 }
 
 // RequestBody returns a pointer to a request.
@@ -1149,8 +1141,8 @@ Update a service group.
 */
 func (a *IamServiceGroupsAPIService) UpdateAServiceGroup(ctx context.Context, serviceGroupID string) APIUpdateAServiceGroupRequest {
 	return APIUpdateAServiceGroupRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:     a,
+		ctx:            ctx,
 		serviceGroupID: serviceGroupID,
 	}
 }
@@ -1159,10 +1151,10 @@ func (a *IamServiceGroupsAPIService) UpdateAServiceGroup(ctx context.Context, se
 //  @return map[string]any
 func (a *IamServiceGroupsAPIService) UpdateAServiceGroupExecute(r APIUpdateAServiceGroupRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.UpdateAServiceGroup")
@@ -1243,7 +1235,6 @@ func (a *IamServiceGroupsAPIService) UpdateAServiceGroupExecute(r APIUpdateAServ
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

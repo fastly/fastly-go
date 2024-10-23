@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -31,12 +30,12 @@ var (
 type TLSCsrsAPI interface {
 
 	/*
-	CreateCsr Create CSR
+		CreateCsr Create CSR
 
-	Creates a certificate signing request (CSR).
+		Creates a certificate signing request (CSR).
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateCsrRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateCsrRequest
 	*/
 	CreateCsr(ctx context.Context) APICreateCsrRequest
 
@@ -50,9 +49,9 @@ type TLSCsrsAPIService service
 
 // APICreateCsrRequest represents a request for the resource.
 type APICreateCsrRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService TLSCsrsAPI
-	tlsCsr *TLSCsr
+	tlsCsr     *TLSCsr
 }
 
 // TLSCsr returns a pointer to a request.
@@ -77,7 +76,7 @@ Creates a certificate signing request (CSR).
 func (a *TLSCsrsAPIService) CreateCsr(ctx context.Context) APICreateCsrRequest {
 	return APICreateCsrRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -85,10 +84,10 @@ func (a *TLSCsrsAPIService) CreateCsr(ctx context.Context) APICreateCsrRequest {
 //  @return TLSCsrResponse
 func (a *TLSCsrsAPIService) CreateCsrExecute(r APICreateCsrRequest) (*TLSCsrResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSCsrResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSCsrResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSCsrsAPIService.CreateCsr")
@@ -168,7 +167,6 @@ func (a *TLSCsrsAPIService) CreateCsrExecute(r APICreateCsrRequest) (*TLSCsrResp
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

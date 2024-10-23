@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,7 +21,7 @@ type WsMessageFormat struct {
 	// The content of a WebSocket `TEXT` message.
 	Content *string `json:"content,omitempty"`
 	// The base64-encoded content of a WebSocket `BINARY` message.
-	ContentBin *string `json:"content-bin,omitempty"`
+	ContentBin           *string `json:"content-bin,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -128,7 +127,7 @@ func (o WsMessageFormat) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *WsMessageFormat) UnmarshalJSON(bytes []byte) (err error) {
 	varWsMessageFormat := _WsMessageFormat{}
 
@@ -147,7 +146,7 @@ func (o *WsMessageFormat) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableWsMessageFormat is a helper abstraction for handling nullable wsmessageformat types. 
+// NullableWsMessageFormat is a helper abstraction for handling nullable wsmessageformat types.
 type NullableWsMessageFormat struct {
 	value *WsMessageFormat
 	isSet bool
@@ -187,7 +186,7 @@ func (v NullableWsMessageFormat) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableWsMessageFormat) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

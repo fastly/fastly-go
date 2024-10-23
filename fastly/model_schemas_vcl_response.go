@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -25,15 +24,15 @@ type SchemasVclResponse struct {
 	// Set to `true` when this is the main VCL, otherwise `false`.
 	Main *bool `json:"main,omitempty"`
 	// The name of this VCL.
-	Name *string `json:"name,omitempty"`
+	Name      *string `json:"name,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Version   *int32  `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -229,7 +228,7 @@ func (o *SchemasVclResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasVclResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -248,6 +247,7 @@ func (o *SchemasVclResponse) HasCreatedAt() bool {
 func (o *SchemasVclResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *SchemasVclResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -271,7 +271,7 @@ func (o *SchemasVclResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasVclResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -290,6 +290,7 @@ func (o *SchemasVclResponse) HasDeletedAt() bool {
 func (o *SchemasVclResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *SchemasVclResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -313,7 +314,7 @@ func (o *SchemasVclResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasVclResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -332,6 +333,7 @@ func (o *SchemasVclResponse) HasUpdatedAt() bool {
 func (o *SchemasVclResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *SchemasVclResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -379,7 +381,7 @@ func (o SchemasVclResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *SchemasVclResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varSchemasVclResponse := _SchemasVclResponse{}
 
@@ -404,7 +406,7 @@ func (o *SchemasVclResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableSchemasVclResponse is a helper abstraction for handling nullable schemasvclresponse types. 
+// NullableSchemasVclResponse is a helper abstraction for handling nullable schemasvclresponse types.
 type NullableSchemasVclResponse struct {
 	value *SchemasVclResponse
 	isSet bool
@@ -444,7 +446,7 @@ func (v NullableSchemasVclResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableSchemasVclResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

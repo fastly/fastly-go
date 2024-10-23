@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -23,15 +22,15 @@ type DomainResponse struct {
 	// A freeform descriptive note.
 	Comment NullableString `json:"comment,omitempty"`
 	// The name of the domain or domains associated with this service.
-	Name *string `json:"name,omitempty"`
+	Name      *string `json:"name,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Version   *int32  `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -67,7 +66,7 @@ func (o *DomainResponse) GetComment() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DomainResponse) GetCommentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
@@ -86,6 +85,7 @@ func (o *DomainResponse) HasComment() bool {
 func (o *DomainResponse) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *DomainResponse) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -205,7 +205,7 @@ func (o *DomainResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DomainResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -224,6 +224,7 @@ func (o *DomainResponse) HasCreatedAt() bool {
 func (o *DomainResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *DomainResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -247,7 +248,7 @@ func (o *DomainResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DomainResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -266,6 +267,7 @@ func (o *DomainResponse) HasDeletedAt() bool {
 func (o *DomainResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *DomainResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -289,7 +291,7 @@ func (o *DomainResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DomainResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -308,6 +310,7 @@ func (o *DomainResponse) HasUpdatedAt() bool {
 func (o *DomainResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *DomainResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -352,7 +355,7 @@ func (o DomainResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *DomainResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varDomainResponse := _DomainResponse{}
 
@@ -376,7 +379,7 @@ func (o *DomainResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableDomainResponse is a helper abstraction for handling nullable domainresponse types. 
+// NullableDomainResponse is a helper abstraction for handling nullable domainresponse types.
 type NullableDomainResponse struct {
 	value *DomainResponse
 	isSet bool
@@ -416,7 +419,7 @@ func (v NullableDomainResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDomainResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

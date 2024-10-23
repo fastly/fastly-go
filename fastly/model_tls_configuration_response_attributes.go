@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -33,7 +32,7 @@ type TLSConfigurationResponseAttributes struct {
 	// TLS protocols available on your configuration.
 	TLSProtocols []string `json:"tls_protocols,omitempty"`
 	// Signifies whether the configuration is used for Platform TLS or not.
-	Bulk *bool `json:"bulk,omitempty"`
+	Bulk                 *bool `json:"bulk,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -69,7 +68,7 @@ func (o *TLSConfigurationResponseAttributes) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TLSConfigurationResponseAttributes) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -88,6 +87,7 @@ func (o *TLSConfigurationResponseAttributes) HasCreatedAt() bool {
 func (o *TLSConfigurationResponseAttributes) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *TLSConfigurationResponseAttributes) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -111,7 +111,7 @@ func (o *TLSConfigurationResponseAttributes) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TLSConfigurationResponseAttributes) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -130,6 +130,7 @@ func (o *TLSConfigurationResponseAttributes) HasDeletedAt() bool {
 func (o *TLSConfigurationResponseAttributes) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *TLSConfigurationResponseAttributes) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -153,7 +154,7 @@ func (o *TLSConfigurationResponseAttributes) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TLSConfigurationResponseAttributes) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -172,6 +173,7 @@ func (o *TLSConfigurationResponseAttributes) HasUpdatedAt() bool {
 func (o *TLSConfigurationResponseAttributes) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *TLSConfigurationResponseAttributes) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -344,7 +346,7 @@ func (o TLSConfigurationResponseAttributes) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *TLSConfigurationResponseAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	varTLSConfigurationResponseAttributes := _TLSConfigurationResponseAttributes{}
 
@@ -368,7 +370,7 @@ func (o *TLSConfigurationResponseAttributes) UnmarshalJSON(bytes []byte) (err er
 	return err
 }
 
-// NullableTLSConfigurationResponseAttributes is a helper abstraction for handling nullable tlsconfigurationresponseattributes types. 
+// NullableTLSConfigurationResponseAttributes is a helper abstraction for handling nullable tlsconfigurationresponseattributes types.
 type NullableTLSConfigurationResponseAttributes struct {
 	value *TLSConfigurationResponseAttributes
 	isSet bool
@@ -408,7 +410,7 @@ func (v NullableTLSConfigurationResponseAttributes) MarshalJSON() ([]byte, error
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableTLSConfigurationResponseAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

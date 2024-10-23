@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingPapertrailAPI interface {
 
 	/*
-	CreateLogPapertrail Create a Papertrail log endpoint
+		CreateLogPapertrail Create a Papertrail log endpoint
 
-	Create a Papertrail for a particular service and version.
+		Create a Papertrail for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogPapertrailRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogPapertrailRequest
 	*/
 	CreateLogPapertrail(ctx context.Context, serviceID string, versionID int32) APICreateLogPapertrailRequest
 
@@ -48,15 +47,15 @@ type LoggingPapertrailAPI interface {
 	CreateLogPapertrailExecute(r APICreateLogPapertrailRequest) (*LoggingPapertrailResponse, *http.Response, error)
 
 	/*
-	DeleteLogPapertrail Delete a Papertrail log endpoint
+		DeleteLogPapertrail Delete a Papertrail log endpoint
 
-	Delete the Papertrail for a particular service and version.
+		Delete the Papertrail for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingPapertrailName The name for the real-time logging configuration.
-	 @return APIDeleteLogPapertrailRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingPapertrailName The name for the real-time logging configuration.
+		 @return APIDeleteLogPapertrailRequest
 	*/
 	DeleteLogPapertrail(ctx context.Context, serviceID string, versionID int32, loggingPapertrailName string) APIDeleteLogPapertrailRequest
 
@@ -65,15 +64,15 @@ type LoggingPapertrailAPI interface {
 	DeleteLogPapertrailExecute(r APIDeleteLogPapertrailRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogPapertrail Get a Papertrail log endpoint
+		GetLogPapertrail Get a Papertrail log endpoint
 
-	Get the Papertrail for a particular service and version.
+		Get the Papertrail for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingPapertrailName The name for the real-time logging configuration.
-	 @return APIGetLogPapertrailRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingPapertrailName The name for the real-time logging configuration.
+		 @return APIGetLogPapertrailRequest
 	*/
 	GetLogPapertrail(ctx context.Context, serviceID string, versionID int32, loggingPapertrailName string) APIGetLogPapertrailRequest
 
@@ -82,14 +81,14 @@ type LoggingPapertrailAPI interface {
 	GetLogPapertrailExecute(r APIGetLogPapertrailRequest) (*LoggingPapertrailResponse, *http.Response, error)
 
 	/*
-	ListLogPapertrail List Papertrail log endpoints
+		ListLogPapertrail List Papertrail log endpoints
 
-	List all of the Papertrails for a particular service and version.
+		List all of the Papertrails for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogPapertrailRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogPapertrailRequest
 	*/
 	ListLogPapertrail(ctx context.Context, serviceID string, versionID int32) APIListLogPapertrailRequest
 
@@ -98,15 +97,15 @@ type LoggingPapertrailAPI interface {
 	ListLogPapertrailExecute(r APIListLogPapertrailRequest) ([]LoggingPapertrailResponse, *http.Response, error)
 
 	/*
-	UpdateLogPapertrail Update a Papertrail log endpoint
+		UpdateLogPapertrail Update a Papertrail log endpoint
 
-	Update the Papertrail for a particular service and version.
+		Update the Papertrail for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingPapertrailName The name for the real-time logging configuration.
-	 @return APIUpdateLogPapertrailRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingPapertrailName The name for the real-time logging configuration.
+		 @return APIUpdateLogPapertrailRequest
 	*/
 	UpdateLogPapertrail(ctx context.Context, serviceID string, versionID int32, loggingPapertrailName string) APIUpdateLogPapertrailRequest
 
@@ -120,17 +119,17 @@ type LoggingPapertrailAPIService service
 
 // APICreateLogPapertrailRequest represents a request for the resource.
 type APICreateLogPapertrailRequest struct {
-	ctx context.Context
-	APIService LoggingPapertrailAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingPapertrailAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	address *string
-	port *int32
+	format            *string
+	formatVersion     *int32
+	address           *string
+	port              *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -138,31 +137,37 @@ func (r *APICreateLogPapertrailRequest) Name(name string) *APICreateLogPapertrai
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogPapertrailRequest) Placement(placement string) *APICreateLogPapertrailRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogPapertrailRequest) ResponseCondition(responseCondition string) *APICreateLogPapertrailRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogPapertrailRequest) Format(format string) *APICreateLogPapertrailRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogPapertrailRequest) FormatVersion(formatVersion int32) *APICreateLogPapertrailRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Address A hostname or IPv4 address.
 func (r *APICreateLogPapertrailRequest) Address(address string) *APICreateLogPapertrailRequest {
 	r.address = &address
 	return r
 }
+
 // Port The port number.
 func (r *APICreateLogPapertrailRequest) Port(port int32) *APICreateLogPapertrailRequest {
 	r.port = &port
@@ -187,9 +192,9 @@ Create a Papertrail for a particular service and version.
 func (a *LoggingPapertrailAPIService) CreateLogPapertrail(ctx context.Context, serviceID string, versionID int32) APICreateLogPapertrailRequest {
 	return APICreateLogPapertrailRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -197,10 +202,10 @@ func (a *LoggingPapertrailAPIService) CreateLogPapertrail(ctx context.Context, s
 //  @return LoggingPapertrailResponse
 func (a *LoggingPapertrailAPIService) CreateLogPapertrailExecute(r APICreateLogPapertrailRequest) (*LoggingPapertrailResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingPapertrailResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingPapertrailResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingPapertrailAPIService.CreateLogPapertrail")
@@ -302,7 +307,6 @@ func (a *LoggingPapertrailAPIService) CreateLogPapertrailExecute(r APICreateLogP
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -321,13 +325,12 @@ func (a *LoggingPapertrailAPIService) CreateLogPapertrailExecute(r APICreateLogP
 
 // APIDeleteLogPapertrailRequest represents a request for the resource.
 type APIDeleteLogPapertrailRequest struct {
-	ctx context.Context
-	APIService LoggingPapertrailAPI
-	serviceID string
-	versionID int32
+	ctx                   context.Context
+	APIService            LoggingPapertrailAPI
+	serviceID             string
+	versionID             int32
 	loggingPapertrailName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogPapertrailRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -347,10 +350,10 @@ Delete the Papertrail for a particular service and version.
 */
 func (a *LoggingPapertrailAPIService) DeleteLogPapertrail(ctx context.Context, serviceID string, versionID int32, loggingPapertrailName string) APIDeleteLogPapertrailRequest {
 	return APIDeleteLogPapertrailRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:            a,
+		ctx:                   ctx,
+		serviceID:             serviceID,
+		versionID:             versionID,
 		loggingPapertrailName: loggingPapertrailName,
 	}
 }
@@ -359,10 +362,10 @@ func (a *LoggingPapertrailAPIService) DeleteLogPapertrail(ctx context.Context, s
 //  @return InlineResponse200
 func (a *LoggingPapertrailAPIService) DeleteLogPapertrailExecute(r APIDeleteLogPapertrailRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingPapertrailAPIService.DeleteLogPapertrail")
@@ -444,7 +447,6 @@ func (a *LoggingPapertrailAPIService) DeleteLogPapertrailExecute(r APIDeleteLogP
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -463,13 +465,12 @@ func (a *LoggingPapertrailAPIService) DeleteLogPapertrailExecute(r APIDeleteLogP
 
 // APIGetLogPapertrailRequest represents a request for the resource.
 type APIGetLogPapertrailRequest struct {
-	ctx context.Context
-	APIService LoggingPapertrailAPI
-	serviceID string
-	versionID int32
+	ctx                   context.Context
+	APIService            LoggingPapertrailAPI
+	serviceID             string
+	versionID             int32
 	loggingPapertrailName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogPapertrailRequest) Execute() (*LoggingPapertrailResponse, *http.Response, error) {
@@ -489,10 +490,10 @@ Get the Papertrail for a particular service and version.
 */
 func (a *LoggingPapertrailAPIService) GetLogPapertrail(ctx context.Context, serviceID string, versionID int32, loggingPapertrailName string) APIGetLogPapertrailRequest {
 	return APIGetLogPapertrailRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:            a,
+		ctx:                   ctx,
+		serviceID:             serviceID,
+		versionID:             versionID,
 		loggingPapertrailName: loggingPapertrailName,
 	}
 }
@@ -501,10 +502,10 @@ func (a *LoggingPapertrailAPIService) GetLogPapertrail(ctx context.Context, serv
 //  @return LoggingPapertrailResponse
 func (a *LoggingPapertrailAPIService) GetLogPapertrailExecute(r APIGetLogPapertrailRequest) (*LoggingPapertrailResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingPapertrailResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingPapertrailResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingPapertrailAPIService.GetLogPapertrail")
@@ -586,7 +587,6 @@ func (a *LoggingPapertrailAPIService) GetLogPapertrailExecute(r APIGetLogPapertr
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -605,12 +605,11 @@ func (a *LoggingPapertrailAPIService) GetLogPapertrailExecute(r APIGetLogPapertr
 
 // APIListLogPapertrailRequest represents a request for the resource.
 type APIListLogPapertrailRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingPapertrailAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogPapertrailRequest) Execute() ([]LoggingPapertrailResponse, *http.Response, error) {
@@ -630,9 +629,9 @@ List all of the Papertrails for a particular service and version.
 func (a *LoggingPapertrailAPIService) ListLogPapertrail(ctx context.Context, serviceID string, versionID int32) APIListLogPapertrailRequest {
 	return APIListLogPapertrailRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -640,10 +639,10 @@ func (a *LoggingPapertrailAPIService) ListLogPapertrail(ctx context.Context, ser
 //  @return []LoggingPapertrailResponse
 func (a *LoggingPapertrailAPIService) ListLogPapertrailExecute(r APIListLogPapertrailRequest) ([]LoggingPapertrailResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingPapertrailResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingPapertrailResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingPapertrailAPIService.ListLogPapertrail")
@@ -724,7 +723,6 @@ func (a *LoggingPapertrailAPIService) ListLogPapertrailExecute(r APIListLogPaper
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -743,18 +741,18 @@ func (a *LoggingPapertrailAPIService) ListLogPapertrailExecute(r APIListLogPaper
 
 // APIUpdateLogPapertrailRequest represents a request for the resource.
 type APIUpdateLogPapertrailRequest struct {
-	ctx context.Context
-	APIService LoggingPapertrailAPI
-	serviceID string
-	versionID int32
+	ctx                   context.Context
+	APIService            LoggingPapertrailAPI
+	serviceID             string
+	versionID             int32
 	loggingPapertrailName string
-	name *string
-	placement *string
-	responseCondition *string
-	format *string
-	formatVersion *int32
-	address *string
-	port *int32
+	name                  *string
+	placement             *string
+	responseCondition     *string
+	format                *string
+	formatVersion         *int32
+	address               *string
+	port                  *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -762,31 +760,37 @@ func (r *APIUpdateLogPapertrailRequest) Name(name string) *APIUpdateLogPapertrai
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogPapertrailRequest) Placement(placement string) *APIUpdateLogPapertrailRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogPapertrailRequest) ResponseCondition(responseCondition string) *APIUpdateLogPapertrailRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogPapertrailRequest) Format(format string) *APIUpdateLogPapertrailRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogPapertrailRequest) FormatVersion(formatVersion int32) *APIUpdateLogPapertrailRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Address A hostname or IPv4 address.
 func (r *APIUpdateLogPapertrailRequest) Address(address string) *APIUpdateLogPapertrailRequest {
 	r.address = &address
 	return r
 }
+
 // Port The port number.
 func (r *APIUpdateLogPapertrailRequest) Port(port int32) *APIUpdateLogPapertrailRequest {
 	r.port = &port
@@ -811,10 +815,10 @@ Update the Papertrail for a particular service and version.
 */
 func (a *LoggingPapertrailAPIService) UpdateLogPapertrail(ctx context.Context, serviceID string, versionID int32, loggingPapertrailName string) APIUpdateLogPapertrailRequest {
 	return APIUpdateLogPapertrailRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:            a,
+		ctx:                   ctx,
+		serviceID:             serviceID,
+		versionID:             versionID,
 		loggingPapertrailName: loggingPapertrailName,
 	}
 }
@@ -823,10 +827,10 @@ func (a *LoggingPapertrailAPIService) UpdateLogPapertrail(ctx context.Context, s
 //  @return LoggingPapertrailResponse
 func (a *LoggingPapertrailAPIService) UpdateLogPapertrailExecute(r APIUpdateLogPapertrailRequest) (*LoggingPapertrailResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingPapertrailResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingPapertrailResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingPapertrailAPIService.UpdateLogPapertrail")
@@ -928,7 +932,6 @@ func (a *LoggingPapertrailAPIService) UpdateLogPapertrailExecute(r APIUpdateLogP
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

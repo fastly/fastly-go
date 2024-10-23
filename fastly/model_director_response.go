@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -35,15 +34,15 @@ type DirectorResponse struct {
 	// What type of load balance group to use.
 	Type *int32 `json:"type,omitempty"`
 	// How many backends to search if it fails.
-	Retries *int32 `json:"retries,omitempty"`
+	Retries   *int32  `json:"retries,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	Version   *int32  `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -159,7 +158,7 @@ func (o *DirectorResponse) GetComment() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DirectorResponse) GetCommentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
@@ -178,6 +177,7 @@ func (o *DirectorResponse) HasComment() bool {
 func (o *DirectorResponse) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *DirectorResponse) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -265,7 +265,7 @@ func (o *DirectorResponse) GetShield() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DirectorResponse) GetShieldOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Shield.Get(), o.Shield.IsSet()
@@ -284,6 +284,7 @@ func (o *DirectorResponse) HasShield() bool {
 func (o *DirectorResponse) SetShield(v string) {
 	o.Shield.Set(&v)
 }
+
 // SetShieldNil sets the value for Shield to be an explicit nil
 func (o *DirectorResponse) SetShieldNil() {
 	o.Shield.Set(nil)
@@ -435,7 +436,7 @@ func (o *DirectorResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DirectorResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -454,6 +455,7 @@ func (o *DirectorResponse) HasCreatedAt() bool {
 func (o *DirectorResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *DirectorResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -477,7 +479,7 @@ func (o *DirectorResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DirectorResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -496,6 +498,7 @@ func (o *DirectorResponse) HasDeletedAt() bool {
 func (o *DirectorResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *DirectorResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -519,7 +522,7 @@ func (o *DirectorResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DirectorResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -538,6 +541,7 @@ func (o *DirectorResponse) HasUpdatedAt() bool {
 func (o *DirectorResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *DirectorResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -600,7 +604,7 @@ func (o DirectorResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *DirectorResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varDirectorResponse := _DirectorResponse{}
 
@@ -630,7 +634,7 @@ func (o *DirectorResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableDirectorResponse is a helper abstraction for handling nullable directorresponse types. 
+// NullableDirectorResponse is a helper abstraction for handling nullable directorresponse types.
 type NullableDirectorResponse struct {
 	value *DirectorResponse
 	isSet bool
@@ -670,7 +674,7 @@ func (v NullableDirectorResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDirectorResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

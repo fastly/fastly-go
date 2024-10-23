@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type PurgeAPI interface {
 
 	/*
-	BulkPurgeTag Purge multiple surrogate key tags
+		BulkPurgeTag Purge multiple surrogate key tags
 
-	Instant Purge a particular service of items tagged with surrogate keys. Up to 256 surrogate keys can be purged in one batch request. As an alternative to sending the keys in a JSON object in the body of the request, this endpoint also supports listing keys in a <code>Surrogate-Key</code> request header, e.g. <code>Surrogate-Key: key_1 key_2 key_3</code>.
+		Instant Purge a particular service of items tagged with surrogate keys. Up to 256 surrogate keys can be purged in one batch request. As an alternative to sending the keys in a JSON object in the body of the request, this endpoint also supports listing keys in a <code>Surrogate-Key</code> request header, e.g. <code>Surrogate-Key: key_1 key_2 key_3</code>.
 
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIBulkPurgeTagRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIBulkPurgeTagRequest
 	*/
 	BulkPurgeTag(ctx context.Context, serviceID string) APIBulkPurgeTagRequest
 
@@ -48,16 +47,16 @@ type PurgeAPI interface {
 	BulkPurgeTagExecute(r APIBulkPurgeTagRequest) (map[string]string, *http.Response, error)
 
 	/*
-	PurgeAll Purge everything from a service
+		PurgeAll Purge everything from a service
 
-	Instant Purge everything from a service.
+		Instant Purge everything from a service.
 
-Purge-all requests cannot be done in soft mode and will always immediately invalidate all cached content associated with the service. To do a soft-purge-all, consider applying a constant [surrogate key](https://docs.fastly.com/en/guides/getting-started-with-surrogate-keys) tag (e.g., `"all"`) to all objects.
+	Purge-all requests cannot be done in soft mode and will always immediately invalidate all cached content associated with the service. To do a soft-purge-all, consider applying a constant [surrogate key](https://docs.fastly.com/en/guides/getting-started-with-surrogate-keys) tag (e.g., `"all"`) to all objects.
 
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIPurgeAllRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIPurgeAllRequest
 	*/
 	PurgeAll(ctx context.Context, serviceID string) APIPurgeAllRequest
 
@@ -66,13 +65,13 @@ Purge-all requests cannot be done in soft mode and will always immediately inval
 	PurgeAllExecute(r APIPurgeAllRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	PurgeSingleURL Purge a URL
+		PurgeSingleURL Purge a URL
 
-	Instant Purge an individual URL.
+		Instant Purge an individual URL.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param cachedURL URL of object in cache to be purged.
-	 @return APIPurgeSingleURLRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param cachedURL URL of object in cache to be purged.
+		 @return APIPurgeSingleURLRequest
 	*/
 	PurgeSingleURL(ctx context.Context, cachedURL string) APIPurgeSingleURLRequest
 
@@ -81,14 +80,14 @@ Purge-all requests cannot be done in soft mode and will always immediately inval
 	PurgeSingleURLExecute(r APIPurgeSingleURLRequest) (*PurgeResponse, *http.Response, error)
 
 	/*
-	PurgeTag Purge by surrogate key tag
+		PurgeTag Purge by surrogate key tag
 
-	Instant Purge a particular service of items tagged with a Surrogate Key. Only one surrogate key can be purged at a time. Multiple keys can be purged using a batch surrogate key purge request.
+		Instant Purge a particular service of items tagged with a Surrogate Key. Only one surrogate key can be purged at a time. Multiple keys can be purged using a batch surrogate key purge request.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param surrogateKey Surrogate keys are used to efficiently purge content from cache. Instead of purging your entire site or individual URLs, you can tag related assets (like all images and descriptions associated with a single product) with surrogate keys, and these grouped URLs can be purged in a single request.
-	 @return APIPurgeTagRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param surrogateKey Surrogate keys are used to efficiently purge content from cache. Instead of purging your entire site or individual URLs, you can tag related assets (like all images and descriptions associated with a single product) with surrogate keys, and these grouped URLs can be purged in a single request.
+		 @return APIPurgeTagRequest
 	*/
 	PurgeTag(ctx context.Context, serviceID string, surrogateKey string) APIPurgeTagRequest
 
@@ -102,12 +101,12 @@ type PurgeAPIService service
 
 // APIBulkPurgeTagRequest represents a request for the resource.
 type APIBulkPurgeTagRequest struct {
-	ctx context.Context
-	APIService PurgeAPI
-	serviceID string
+	ctx             context.Context
+	APIService      PurgeAPI
+	serviceID       string
 	fastlySoftPurge *int32
-	surrogateKey *string
-	purgeResponse *PurgeResponse
+	surrogateKey    *string
+	purgeResponse   *PurgeResponse
 }
 
 // FastlySoftPurge If present, this header triggers the purge to be &#39;soft&#39;, which marks the affected object as stale rather than making it inaccessible.  Typically set to \&quot;1\&quot; when used, but the value is not important.
@@ -115,11 +114,13 @@ func (r *APIBulkPurgeTagRequest) FastlySoftPurge(fastlySoftPurge int32) *APIBulk
 	r.fastlySoftPurge = &fastlySoftPurge
 	return r
 }
+
 // SurrogateKey Purge multiple surrogate key tags using a request header. Not required if a JSON POST body is specified.
 func (r *APIBulkPurgeTagRequest) SurrogateKey(surrogateKey string) *APIBulkPurgeTagRequest {
 	r.surrogateKey = &surrogateKey
 	return r
 }
+
 // PurgeResponse returns a pointer to a request.
 func (r *APIBulkPurgeTagRequest) PurgeResponse(purgeResponse PurgeResponse) *APIBulkPurgeTagRequest {
 	r.purgeResponse = &purgeResponse
@@ -144,8 +145,8 @@ Instant Purge a particular service of items tagged with surrogate keys. Up to 25
 func (a *PurgeAPIService) BulkPurgeTag(ctx context.Context, serviceID string) APIBulkPurgeTagRequest {
 	return APIBulkPurgeTagRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 	}
 }
 
@@ -153,10 +154,10 @@ func (a *PurgeAPIService) BulkPurgeTag(ctx context.Context, serviceID string) AP
 //  @return map[string]string
 func (a *PurgeAPIService) BulkPurgeTagExecute(r APIBulkPurgeTagRequest) (map[string]string, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]string
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]string
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PurgeAPIService.BulkPurgeTag")
@@ -244,7 +245,6 @@ func (a *PurgeAPIService) BulkPurgeTagExecute(r APIBulkPurgeTagRequest) (map[str
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -263,11 +263,10 @@ func (a *PurgeAPIService) BulkPurgeTagExecute(r APIBulkPurgeTagRequest) (map[str
 
 // APIPurgeAllRequest represents a request for the resource.
 type APIPurgeAllRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService PurgeAPI
-	serviceID string
+	serviceID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIPurgeAllRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -289,8 +288,8 @@ Purge-all requests cannot be done in soft mode and will always immediately inval
 func (a *PurgeAPIService) PurgeAll(ctx context.Context, serviceID string) APIPurgeAllRequest {
 	return APIPurgeAllRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 	}
 }
 
@@ -298,10 +297,10 @@ func (a *PurgeAPIService) PurgeAll(ctx context.Context, serviceID string) APIPur
 //  @return InlineResponse200
 func (a *PurgeAPIService) PurgeAllExecute(r APIPurgeAllRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PurgeAPIService.PurgeAll")
@@ -381,7 +380,6 @@ func (a *PurgeAPIService) PurgeAllExecute(r APIPurgeAllRequest) (*InlineResponse
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -400,9 +398,9 @@ func (a *PurgeAPIService) PurgeAllExecute(r APIPurgeAllRequest) (*InlineResponse
 
 // APIPurgeSingleURLRequest represents a request for the resource.
 type APIPurgeSingleURLRequest struct {
-	ctx context.Context
-	APIService PurgeAPI
-	cachedURL string
+	ctx             context.Context
+	APIService      PurgeAPI
+	cachedURL       string
 	fastlySoftPurge *int32
 }
 
@@ -429,8 +427,8 @@ Instant Purge an individual URL.
 func (a *PurgeAPIService) PurgeSingleURL(ctx context.Context, cachedURL string) APIPurgeSingleURLRequest {
 	return APIPurgeSingleURLRequest{
 		APIService: a,
-		ctx: ctx,
-		cachedURL: cachedURL,
+		ctx:        ctx,
+		cachedURL:  cachedURL,
 	}
 }
 
@@ -438,10 +436,10 @@ func (a *PurgeAPIService) PurgeSingleURL(ctx context.Context, cachedURL string) 
 //  @return PurgeResponse
 func (a *PurgeAPIService) PurgeSingleURLExecute(r APIPurgeSingleURLRequest) (*PurgeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *PurgeResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *PurgeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PurgeAPIService.PurgeSingleURL")
@@ -524,7 +522,6 @@ func (a *PurgeAPIService) PurgeSingleURLExecute(r APIPurgeSingleURLRequest) (*Pu
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -543,10 +540,10 @@ func (a *PurgeAPIService) PurgeSingleURLExecute(r APIPurgeSingleURLRequest) (*Pu
 
 // APIPurgeTagRequest represents a request for the resource.
 type APIPurgeTagRequest struct {
-	ctx context.Context
-	APIService PurgeAPI
-	serviceID string
-	surrogateKey string
+	ctx             context.Context
+	APIService      PurgeAPI
+	serviceID       string
+	surrogateKey    string
 	fastlySoftPurge *int32
 }
 
@@ -573,9 +570,9 @@ Instant Purge a particular service of items tagged with a Surrogate Key. Only on
 */
 func (a *PurgeAPIService) PurgeTag(ctx context.Context, serviceID string, surrogateKey string) APIPurgeTagRequest {
 	return APIPurgeTagRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		APIService:   a,
+		ctx:          ctx,
+		serviceID:    serviceID,
 		surrogateKey: surrogateKey,
 	}
 }
@@ -584,10 +581,10 @@ func (a *PurgeAPIService) PurgeTag(ctx context.Context, serviceID string, surrog
 //  @return PurgeResponse
 func (a *PurgeAPIService) PurgeTagExecute(r APIPurgeTagRequest) (*PurgeResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *PurgeResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *PurgeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PurgeAPIService.PurgeTag")
@@ -670,7 +667,6 @@ func (a *PurgeAPIService) PurgeTagExecute(r APIPurgeTagRequest) (*PurgeResponse,
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

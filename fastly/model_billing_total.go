@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -50,7 +49,7 @@ type BillingTotal struct {
 	// The cost of the requests used this month.
 	RequestsCost *float32 `json:"requests_cost,omitempty"`
 	// Payment terms. Almost always Net15.
-	Terms *string `json:"terms,omitempty"`
+	Terms                *string `json:"terms,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -150,7 +149,7 @@ func (o *BillingTotal) GetBandwidthUnits() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingTotal) GetBandwidthUnitsOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.BandwidthUnits.Get(), o.BandwidthUnits.IsSet()
@@ -169,6 +168,7 @@ func (o *BillingTotal) HasBandwidthUnits() bool {
 func (o *BillingTotal) SetBandwidthUnits(v string) {
 	o.BandwidthUnits.Set(&v)
 }
+
 // SetBandwidthUnitsNil sets the value for BandwidthUnits to be an explicit nil
 func (o *BillingTotal) SetBandwidthUnitsNil() {
 	o.BandwidthUnits.Set(nil)
@@ -656,7 +656,7 @@ func (o BillingTotal) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *BillingTotal) UnmarshalJSON(bytes []byte) (err error) {
 	varBillingTotal := _BillingTotal{}
 
@@ -689,7 +689,7 @@ func (o *BillingTotal) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableBillingTotal is a helper abstraction for handling nullable billingtotal types. 
+// NullableBillingTotal is a helper abstraction for handling nullable billingtotal types.
 type NullableBillingTotal struct {
 	value *BillingTotal
 	isSet bool
@@ -729,7 +729,7 @@ func (v NullableBillingTotal) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableBillingTotal) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

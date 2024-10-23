@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -37,8 +36,8 @@ type SchemasContactResponse struct {
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ID *string `json:"id,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
+	ID                   *string      `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -74,7 +73,7 @@ func (o *SchemasContactResponse) GetUserID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasContactResponse) GetUserIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UserID.Get(), o.UserID.IsSet()
@@ -93,6 +92,7 @@ func (o *SchemasContactResponse) HasUserID() bool {
 func (o *SchemasContactResponse) SetUserID(v string) {
 	o.UserID.Set(&v)
 }
+
 // SetUserIDNil sets the value for UserID to be an explicit nil
 func (o *SchemasContactResponse) SetUserIDNil() {
 	o.UserID.Set(nil)
@@ -148,7 +148,7 @@ func (o *SchemasContactResponse) GetName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasContactResponse) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
@@ -167,6 +167,7 @@ func (o *SchemasContactResponse) HasName() bool {
 func (o *SchemasContactResponse) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *SchemasContactResponse) SetNameNil() {
 	o.Name.Set(nil)
@@ -190,7 +191,7 @@ func (o *SchemasContactResponse) GetEmail() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasContactResponse) GetEmailOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Email.Get(), o.Email.IsSet()
@@ -209,6 +210,7 @@ func (o *SchemasContactResponse) HasEmail() bool {
 func (o *SchemasContactResponse) SetEmail(v string) {
 	o.Email.Set(&v)
 }
+
 // SetEmailNil sets the value for Email to be an explicit nil
 func (o *SchemasContactResponse) SetEmailNil() {
 	o.Email.Set(nil)
@@ -232,7 +234,7 @@ func (o *SchemasContactResponse) GetPhone() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasContactResponse) GetPhoneOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Phone.Get(), o.Phone.IsSet()
@@ -251,6 +253,7 @@ func (o *SchemasContactResponse) HasPhone() bool {
 func (o *SchemasContactResponse) SetPhone(v string) {
 	o.Phone.Set(&v)
 }
+
 // SetPhoneNil sets the value for Phone to be an explicit nil
 func (o *SchemasContactResponse) SetPhoneNil() {
 	o.Phone.Set(nil)
@@ -274,7 +277,7 @@ func (o *SchemasContactResponse) GetCustomerID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasContactResponse) GetCustomerIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CustomerID.Get(), o.CustomerID.IsSet()
@@ -293,6 +296,7 @@ func (o *SchemasContactResponse) HasCustomerID() bool {
 func (o *SchemasContactResponse) SetCustomerID(v string) {
 	o.CustomerID.Set(&v)
 }
+
 // SetCustomerIDNil sets the value for CustomerID to be an explicit nil
 func (o *SchemasContactResponse) SetCustomerIDNil() {
 	o.CustomerID.Set(nil)
@@ -316,7 +320,7 @@ func (o *SchemasContactResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasContactResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -335,6 +339,7 @@ func (o *SchemasContactResponse) HasCreatedAt() bool {
 func (o *SchemasContactResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *SchemasContactResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -358,7 +363,7 @@ func (o *SchemasContactResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasContactResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -377,6 +382,7 @@ func (o *SchemasContactResponse) HasDeletedAt() bool {
 func (o *SchemasContactResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *SchemasContactResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -400,7 +406,7 @@ func (o *SchemasContactResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SchemasContactResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -419,6 +425,7 @@ func (o *SchemasContactResponse) HasUpdatedAt() bool {
 func (o *SchemasContactResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *SchemasContactResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -504,7 +511,7 @@ func (o SchemasContactResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *SchemasContactResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varSchemasContactResponse := _SchemasContactResponse{}
 
@@ -531,7 +538,7 @@ func (o *SchemasContactResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableSchemasContactResponse is a helper abstraction for handling nullable schemascontactresponse types. 
+// NullableSchemasContactResponse is a helper abstraction for handling nullable schemascontactresponse types.
 type NullableSchemasContactResponse struct {
 	value *SchemasContactResponse
 	isSet bool
@@ -571,7 +578,7 @@ func (v NullableSchemasContactResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableSchemasContactResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

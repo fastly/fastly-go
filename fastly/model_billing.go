@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -23,14 +22,14 @@ type Billing struct {
 	// Date and time in ISO 8601 format.
 	EndTime NullableTime `json:"end_time,omitempty"`
 	// Date and time in ISO 8601 format.
-	StartTime NullableTime `json:"start_time,omitempty"`
-	CustomerID *string `json:"customer_id,omitempty"`
+	StartTime  NullableTime `json:"start_time,omitempty"`
+	CustomerID *string      `json:"customer_id,omitempty"`
 	// The current state of our third-party billing vendor. One of `up` or `down`.
-	VendorState *string `json:"vendor_state,omitempty"`
-	Status *BillingStatus `json:"status,omitempty"`
-	Total *BillingTotal `json:"total,omitempty"`
+	VendorState *string        `json:"vendor_state,omitempty"`
+	Status      *BillingStatus `json:"status,omitempty"`
+	Total       *BillingTotal  `json:"total,omitempty"`
 	// Breakdown of regional data for products that are region based.
-	Regions *map[string]BillingRegions `json:"regions,omitempty"`
+	Regions              *map[string]BillingRegions `json:"regions,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -66,7 +65,7 @@ func (o *Billing) GetEndTime() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Billing) GetEndTimeOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.EndTime.Get(), o.EndTime.IsSet()
@@ -85,6 +84,7 @@ func (o *Billing) HasEndTime() bool {
 func (o *Billing) SetEndTime(v time.Time) {
 	o.EndTime.Set(&v)
 }
+
 // SetEndTimeNil sets the value for EndTime to be an explicit nil
 func (o *Billing) SetEndTimeNil() {
 	o.EndTime.Set(nil)
@@ -108,7 +108,7 @@ func (o *Billing) GetStartTime() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Billing) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.StartTime.Get(), o.StartTime.IsSet()
@@ -127,6 +127,7 @@ func (o *Billing) HasStartTime() bool {
 func (o *Billing) SetStartTime(v time.Time) {
 	o.StartTime.Set(&v)
 }
+
 // SetStartTimeNil sets the value for StartTime to be an explicit nil
 func (o *Billing) SetStartTimeNil() {
 	o.StartTime.Set(nil)
@@ -331,7 +332,7 @@ func (o Billing) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *Billing) UnmarshalJSON(bytes []byte) (err error) {
 	varBilling := _Billing{}
 
@@ -355,7 +356,7 @@ func (o *Billing) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableBilling is a helper abstraction for handling nullable billing types. 
+// NullableBilling is a helper abstraction for handling nullable billing types.
 type NullableBilling struct {
 	value *Billing
 	isSet bool
@@ -395,7 +396,7 @@ func (v NullableBilling) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableBilling) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

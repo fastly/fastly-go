@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingSumologicAPI interface {
 
 	/*
-	CreateLogSumologic Create a Sumologic log endpoint
+		CreateLogSumologic Create a Sumologic log endpoint
 
-	Create a Sumologic for a particular service and version.
+		Create a Sumologic for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogSumologicRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogSumologicRequest
 	*/
 	CreateLogSumologic(ctx context.Context, serviceID string, versionID int32) APICreateLogSumologicRequest
 
@@ -48,15 +47,15 @@ type LoggingSumologicAPI interface {
 	CreateLogSumologicExecute(r APICreateLogSumologicRequest) (*LoggingSumologicResponse, *http.Response, error)
 
 	/*
-	DeleteLogSumologic Delete a Sumologic log endpoint
+		DeleteLogSumologic Delete a Sumologic log endpoint
 
-	Delete the Sumologic for a particular service and version.
+		Delete the Sumologic for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingSumologicName The name for the real-time logging configuration.
-	 @return APIDeleteLogSumologicRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingSumologicName The name for the real-time logging configuration.
+		 @return APIDeleteLogSumologicRequest
 	*/
 	DeleteLogSumologic(ctx context.Context, serviceID string, versionID int32, loggingSumologicName string) APIDeleteLogSumologicRequest
 
@@ -65,15 +64,15 @@ type LoggingSumologicAPI interface {
 	DeleteLogSumologicExecute(r APIDeleteLogSumologicRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogSumologic Get a Sumologic log endpoint
+		GetLogSumologic Get a Sumologic log endpoint
 
-	Get the Sumologic for a particular service and version.
+		Get the Sumologic for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingSumologicName The name for the real-time logging configuration.
-	 @return APIGetLogSumologicRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingSumologicName The name for the real-time logging configuration.
+		 @return APIGetLogSumologicRequest
 	*/
 	GetLogSumologic(ctx context.Context, serviceID string, versionID int32, loggingSumologicName string) APIGetLogSumologicRequest
 
@@ -82,14 +81,14 @@ type LoggingSumologicAPI interface {
 	GetLogSumologicExecute(r APIGetLogSumologicRequest) (*LoggingSumologicResponse, *http.Response, error)
 
 	/*
-	ListLogSumologic List Sumologic log endpoints
+		ListLogSumologic List Sumologic log endpoints
 
-	List all of the Sumologics for a particular service and version.
+		List all of the Sumologics for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogSumologicRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogSumologicRequest
 	*/
 	ListLogSumologic(ctx context.Context, serviceID string, versionID int32) APIListLogSumologicRequest
 
@@ -98,15 +97,15 @@ type LoggingSumologicAPI interface {
 	ListLogSumologicExecute(r APIListLogSumologicRequest) ([]LoggingSumologicResponse, *http.Response, error)
 
 	/*
-	UpdateLogSumologic Update a Sumologic log endpoint
+		UpdateLogSumologic Update a Sumologic log endpoint
 
-	Update the Sumologic for a particular service and version.
+		Update the Sumologic for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingSumologicName The name for the real-time logging configuration.
-	 @return APIUpdateLogSumologicRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingSumologicName The name for the real-time logging configuration.
+		 @return APIUpdateLogSumologicRequest
 	*/
 	UpdateLogSumologic(ctx context.Context, serviceID string, versionID int32, loggingSumologicName string) APIUpdateLogSumologicRequest
 
@@ -120,17 +119,17 @@ type LoggingSumologicAPIService service
 
 // APICreateLogSumologicRequest represents a request for the resource.
 type APICreateLogSumologicRequest struct {
-	ctx context.Context
-	APIService LoggingSumologicAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingSumologicAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	messageType *LoggingMessageType
-	url *string
+	format            *string
+	formatVersion     *int32
+	messageType       *LoggingMessageType
+	url               *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -138,31 +137,37 @@ func (r *APICreateLogSumologicRequest) Name(name string) *APICreateLogSumologicR
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogSumologicRequest) Placement(placement string) *APICreateLogSumologicRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogSumologicRequest) ResponseCondition(responseCondition string) *APICreateLogSumologicRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogSumologicRequest) Format(format string) *APICreateLogSumologicRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogSumologicRequest) FormatVersion(formatVersion int32) *APICreateLogSumologicRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // MessageType returns a pointer to a request.
 func (r *APICreateLogSumologicRequest) MessageType(messageType LoggingMessageType) *APICreateLogSumologicRequest {
 	r.messageType = &messageType
 	return r
 }
+
 // URL The URL to post logs to.
 func (r *APICreateLogSumologicRequest) URL(url string) *APICreateLogSumologicRequest {
 	r.url = &url
@@ -187,9 +192,9 @@ Create a Sumologic for a particular service and version.
 func (a *LoggingSumologicAPIService) CreateLogSumologic(ctx context.Context, serviceID string, versionID int32) APICreateLogSumologicRequest {
 	return APICreateLogSumologicRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -197,10 +202,10 @@ func (a *LoggingSumologicAPIService) CreateLogSumologic(ctx context.Context, ser
 //  @return LoggingSumologicResponse
 func (a *LoggingSumologicAPIService) CreateLogSumologicExecute(r APICreateLogSumologicRequest) (*LoggingSumologicResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingSumologicResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingSumologicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingSumologicAPIService.CreateLogSumologic")
@@ -302,7 +307,6 @@ func (a *LoggingSumologicAPIService) CreateLogSumologicExecute(r APICreateLogSum
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -321,13 +325,12 @@ func (a *LoggingSumologicAPIService) CreateLogSumologicExecute(r APICreateLogSum
 
 // APIDeleteLogSumologicRequest represents a request for the resource.
 type APIDeleteLogSumologicRequest struct {
-	ctx context.Context
-	APIService LoggingSumologicAPI
-	serviceID string
-	versionID int32
+	ctx                  context.Context
+	APIService           LoggingSumologicAPI
+	serviceID            string
+	versionID            int32
 	loggingSumologicName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogSumologicRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -347,10 +350,10 @@ Delete the Sumologic for a particular service and version.
 */
 func (a *LoggingSumologicAPIService) DeleteLogSumologic(ctx context.Context, serviceID string, versionID int32, loggingSumologicName string) APIDeleteLogSumologicRequest {
 	return APIDeleteLogSumologicRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:           a,
+		ctx:                  ctx,
+		serviceID:            serviceID,
+		versionID:            versionID,
 		loggingSumologicName: loggingSumologicName,
 	}
 }
@@ -359,10 +362,10 @@ func (a *LoggingSumologicAPIService) DeleteLogSumologic(ctx context.Context, ser
 //  @return InlineResponse200
 func (a *LoggingSumologicAPIService) DeleteLogSumologicExecute(r APIDeleteLogSumologicRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingSumologicAPIService.DeleteLogSumologic")
@@ -444,7 +447,6 @@ func (a *LoggingSumologicAPIService) DeleteLogSumologicExecute(r APIDeleteLogSum
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -463,13 +465,12 @@ func (a *LoggingSumologicAPIService) DeleteLogSumologicExecute(r APIDeleteLogSum
 
 // APIGetLogSumologicRequest represents a request for the resource.
 type APIGetLogSumologicRequest struct {
-	ctx context.Context
-	APIService LoggingSumologicAPI
-	serviceID string
-	versionID int32
+	ctx                  context.Context
+	APIService           LoggingSumologicAPI
+	serviceID            string
+	versionID            int32
 	loggingSumologicName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogSumologicRequest) Execute() (*LoggingSumologicResponse, *http.Response, error) {
@@ -489,10 +490,10 @@ Get the Sumologic for a particular service and version.
 */
 func (a *LoggingSumologicAPIService) GetLogSumologic(ctx context.Context, serviceID string, versionID int32, loggingSumologicName string) APIGetLogSumologicRequest {
 	return APIGetLogSumologicRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:           a,
+		ctx:                  ctx,
+		serviceID:            serviceID,
+		versionID:            versionID,
 		loggingSumologicName: loggingSumologicName,
 	}
 }
@@ -501,10 +502,10 @@ func (a *LoggingSumologicAPIService) GetLogSumologic(ctx context.Context, servic
 //  @return LoggingSumologicResponse
 func (a *LoggingSumologicAPIService) GetLogSumologicExecute(r APIGetLogSumologicRequest) (*LoggingSumologicResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingSumologicResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingSumologicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingSumologicAPIService.GetLogSumologic")
@@ -586,7 +587,6 @@ func (a *LoggingSumologicAPIService) GetLogSumologicExecute(r APIGetLogSumologic
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -605,12 +605,11 @@ func (a *LoggingSumologicAPIService) GetLogSumologicExecute(r APIGetLogSumologic
 
 // APIListLogSumologicRequest represents a request for the resource.
 type APIListLogSumologicRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingSumologicAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogSumologicRequest) Execute() ([]LoggingSumologicResponse, *http.Response, error) {
@@ -630,9 +629,9 @@ List all of the Sumologics for a particular service and version.
 func (a *LoggingSumologicAPIService) ListLogSumologic(ctx context.Context, serviceID string, versionID int32) APIListLogSumologicRequest {
 	return APIListLogSumologicRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -640,10 +639,10 @@ func (a *LoggingSumologicAPIService) ListLogSumologic(ctx context.Context, servi
 //  @return []LoggingSumologicResponse
 func (a *LoggingSumologicAPIService) ListLogSumologicExecute(r APIListLogSumologicRequest) ([]LoggingSumologicResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingSumologicResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingSumologicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingSumologicAPIService.ListLogSumologic")
@@ -724,7 +723,6 @@ func (a *LoggingSumologicAPIService) ListLogSumologicExecute(r APIListLogSumolog
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -743,18 +741,18 @@ func (a *LoggingSumologicAPIService) ListLogSumologicExecute(r APIListLogSumolog
 
 // APIUpdateLogSumologicRequest represents a request for the resource.
 type APIUpdateLogSumologicRequest struct {
-	ctx context.Context
-	APIService LoggingSumologicAPI
-	serviceID string
-	versionID int32
+	ctx                  context.Context
+	APIService           LoggingSumologicAPI
+	serviceID            string
+	versionID            int32
 	loggingSumologicName string
-	name *string
-	placement *string
-	responseCondition *string
-	format *string
-	formatVersion *int32
-	messageType *LoggingMessageType
-	url *string
+	name                 *string
+	placement            *string
+	responseCondition    *string
+	format               *string
+	formatVersion        *int32
+	messageType          *LoggingMessageType
+	url                  *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -762,31 +760,37 @@ func (r *APIUpdateLogSumologicRequest) Name(name string) *APIUpdateLogSumologicR
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogSumologicRequest) Placement(placement string) *APIUpdateLogSumologicRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogSumologicRequest) ResponseCondition(responseCondition string) *APIUpdateLogSumologicRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogSumologicRequest) Format(format string) *APIUpdateLogSumologicRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogSumologicRequest) FormatVersion(formatVersion int32) *APIUpdateLogSumologicRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // MessageType returns a pointer to a request.
 func (r *APIUpdateLogSumologicRequest) MessageType(messageType LoggingMessageType) *APIUpdateLogSumologicRequest {
 	r.messageType = &messageType
 	return r
 }
+
 // URL The URL to post logs to.
 func (r *APIUpdateLogSumologicRequest) URL(url string) *APIUpdateLogSumologicRequest {
 	r.url = &url
@@ -811,10 +815,10 @@ Update the Sumologic for a particular service and version.
 */
 func (a *LoggingSumologicAPIService) UpdateLogSumologic(ctx context.Context, serviceID string, versionID int32, loggingSumologicName string) APIUpdateLogSumologicRequest {
 	return APIUpdateLogSumologicRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:           a,
+		ctx:                  ctx,
+		serviceID:            serviceID,
+		versionID:            versionID,
 		loggingSumologicName: loggingSumologicName,
 	}
 }
@@ -823,10 +827,10 @@ func (a *LoggingSumologicAPIService) UpdateLogSumologic(ctx context.Context, ser
 //  @return LoggingSumologicResponse
 func (a *LoggingSumologicAPIService) UpdateLogSumologicExecute(r APIUpdateLogSumologicRequest) (*LoggingSumologicResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingSumologicResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingSumologicResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingSumologicAPIService.UpdateLogSumologic")
@@ -928,7 +932,6 @@ func (a *LoggingSumologicAPIService) UpdateLogSumologicExecute(r APIUpdateLogSum
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

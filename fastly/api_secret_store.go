@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type SecretStoreAPI interface {
 
 	/*
-	ClientKey Create new client key
+		ClientKey Create new client key
 
-	Create a new client key for encrypting secrets locally before uploading.
+		Create a new client key for encrypting secrets locally before uploading.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIClientKeyRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIClientKeyRequest
 	*/
 	ClientKey(ctx context.Context) APIClientKeyRequest
 
@@ -46,12 +45,12 @@ type SecretStoreAPI interface {
 	ClientKeyExecute(r APIClientKeyRequest) (*ClientKey, *http.Response, error)
 
 	/*
-	CreateSecretStore Create new secret store
+		CreateSecretStore Create new secret store
 
-	Create a new secret store.
+		Create a new secret store.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateSecretStoreRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateSecretStoreRequest
 	*/
 	CreateSecretStore(ctx context.Context) APICreateSecretStoreRequest
 
@@ -60,13 +59,13 @@ type SecretStoreAPI interface {
 	CreateSecretStoreExecute(r APICreateSecretStoreRequest) (*SecretStoreResponse, *http.Response, error)
 
 	/*
-	DeleteSecretStore Delete secret store
+		DeleteSecretStore Delete secret store
 
-	Delete a secret store and all of its contents.
+		Delete a secret store and all of its contents.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @return APIDeleteSecretStoreRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @return APIDeleteSecretStoreRequest
 	*/
 	DeleteSecretStore(ctx context.Context, storeID string) APIDeleteSecretStoreRequest
 
@@ -74,13 +73,13 @@ type SecretStoreAPI interface {
 	DeleteSecretStoreExecute(r APIDeleteSecretStoreRequest) (*http.Response, error)
 
 	/*
-	GetSecretStore Get secret store by ID
+		GetSecretStore Get secret store by ID
 
-	Get a secret store by ID.
+		Get a secret store by ID.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @return APIGetSecretStoreRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @return APIGetSecretStoreRequest
 	*/
 	GetSecretStore(ctx context.Context, storeID string) APIGetSecretStoreRequest
 
@@ -89,12 +88,12 @@ type SecretStoreAPI interface {
 	GetSecretStoreExecute(r APIGetSecretStoreRequest) (*SecretStoreResponse, *http.Response, error)
 
 	/*
-	GetSecretStores Get all secret stores
+		GetSecretStores Get all secret stores
 
-	Get all secret stores.
+		Get all secret stores.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIGetSecretStoresRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIGetSecretStoresRequest
 	*/
 	GetSecretStores(ctx context.Context) APIGetSecretStoresRequest
 
@@ -103,12 +102,12 @@ type SecretStoreAPI interface {
 	GetSecretStoresExecute(r APIGetSecretStoresRequest) (*InlineResponse2005, *http.Response, error)
 
 	/*
-	SigningKey Get public key
+		SigningKey Get public key
 
-	Get the public key used for signing client keys.
+		Get the public key used for signing client keys.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APISigningKeyRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APISigningKeyRequest
 	*/
 	SigningKey(ctx context.Context) APISigningKeyRequest
 
@@ -122,10 +121,9 @@ type SecretStoreAPIService service
 
 // APIClientKeyRequest represents a request for the resource.
 type APIClientKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SecretStoreAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIClientKeyRequest) Execute() (*ClientKey, *http.Response, error) {
@@ -143,7 +141,7 @@ Create a new client key for encrypting secrets locally before uploading.
 func (a *SecretStoreAPIService) ClientKey(ctx context.Context) APIClientKeyRequest {
 	return APIClientKeyRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -151,10 +149,10 @@ func (a *SecretStoreAPIService) ClientKey(ctx context.Context) APIClientKeyReque
 //  @return ClientKey
 func (a *SecretStoreAPIService) ClientKeyExecute(r APIClientKeyRequest) (*ClientKey, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ClientKey
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ClientKey
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreAPIService.ClientKey")
@@ -233,7 +231,6 @@ func (a *SecretStoreAPIService) ClientKeyExecute(r APIClientKeyRequest) (*Client
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -252,8 +249,8 @@ func (a *SecretStoreAPIService) ClientKeyExecute(r APIClientKeyRequest) (*Client
 
 // APICreateSecretStoreRequest represents a request for the resource.
 type APICreateSecretStoreRequest struct {
-	ctx context.Context
-	APIService SecretStoreAPI
+	ctx         context.Context
+	APIService  SecretStoreAPI
 	secretStore *SecretStore
 }
 
@@ -279,7 +276,7 @@ Create a new secret store.
 func (a *SecretStoreAPIService) CreateSecretStore(ctx context.Context) APICreateSecretStoreRequest {
 	return APICreateSecretStoreRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -287,10 +284,10 @@ func (a *SecretStoreAPIService) CreateSecretStore(ctx context.Context) APICreate
 //  @return SecretStoreResponse
 func (a *SecretStoreAPIService) CreateSecretStoreExecute(r APICreateSecretStoreRequest) (*SecretStoreResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SecretStoreResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SecretStoreResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreAPIService.CreateSecretStore")
@@ -371,7 +368,6 @@ func (a *SecretStoreAPIService) CreateSecretStoreExecute(r APICreateSecretStoreR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -390,11 +386,10 @@ func (a *SecretStoreAPIService) CreateSecretStoreExecute(r APICreateSecretStoreR
 
 // APIDeleteSecretStoreRequest represents a request for the resource.
 type APIDeleteSecretStoreRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SecretStoreAPI
-	storeID string
+	storeID    string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteSecretStoreRequest) Execute() (*http.Response, error) {
@@ -413,17 +408,17 @@ Delete a secret store and all of its contents.
 func (a *SecretStoreAPIService) DeleteSecretStore(ctx context.Context, storeID string) APIDeleteSecretStoreRequest {
 	return APIDeleteSecretStoreRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
+		ctx:        ctx,
+		storeID:    storeID,
 	}
 }
 
 // DeleteSecretStoreExecute executes the request
 func (a *SecretStoreAPIService) DeleteSecretStoreExecute(r APIDeleteSecretStoreRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreAPIService.DeleteSecretStore")
@@ -494,7 +489,6 @@ func (a *SecretStoreAPIService) DeleteSecretStoreExecute(r APIDeleteSecretStoreR
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -513,11 +507,10 @@ func (a *SecretStoreAPIService) DeleteSecretStoreExecute(r APIDeleteSecretStoreR
 
 // APIGetSecretStoreRequest represents a request for the resource.
 type APIGetSecretStoreRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SecretStoreAPI
-	storeID string
+	storeID    string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetSecretStoreRequest) Execute() (*SecretStoreResponse, *http.Response, error) {
@@ -536,8 +529,8 @@ Get a secret store by ID.
 func (a *SecretStoreAPIService) GetSecretStore(ctx context.Context, storeID string) APIGetSecretStoreRequest {
 	return APIGetSecretStoreRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
+		ctx:        ctx,
+		storeID:    storeID,
 	}
 }
 
@@ -545,10 +538,10 @@ func (a *SecretStoreAPIService) GetSecretStore(ctx context.Context, storeID stri
 //  @return SecretStoreResponse
 func (a *SecretStoreAPIService) GetSecretStoreExecute(r APIGetSecretStoreRequest) (*SecretStoreResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SecretStoreResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SecretStoreResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreAPIService.GetSecretStore")
@@ -628,7 +621,6 @@ func (a *SecretStoreAPIService) GetSecretStoreExecute(r APIGetSecretStoreRequest
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -647,11 +639,11 @@ func (a *SecretStoreAPIService) GetSecretStoreExecute(r APIGetSecretStoreRequest
 
 // APIGetSecretStoresRequest represents a request for the resource.
 type APIGetSecretStoresRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SecretStoreAPI
-	cursor *string
-	limit *string
-	name *string
+	cursor     *string
+	limit      *string
+	name       *string
 }
 
 // Cursor Cursor value from the &#x60;next_cursor&#x60; field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
@@ -659,11 +651,13 @@ func (r *APIGetSecretStoresRequest) Cursor(cursor string) *APIGetSecretStoresReq
 	r.cursor = &cursor
 	return r
 }
+
 // Limit Number of results per page. The maximum is 200.
 func (r *APIGetSecretStoresRequest) Limit(limit string) *APIGetSecretStoresRequest {
 	r.limit = &limit
 	return r
 }
+
 // Name Returns a one-element array containing the details for the named secret store.
 func (r *APIGetSecretStoresRequest) Name(name string) *APIGetSecretStoresRequest {
 	r.name = &name
@@ -686,7 +680,7 @@ Get all secret stores.
 func (a *SecretStoreAPIService) GetSecretStores(ctx context.Context) APIGetSecretStoresRequest {
 	return APIGetSecretStoresRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -694,10 +688,10 @@ func (a *SecretStoreAPIService) GetSecretStores(ctx context.Context) APIGetSecre
 //  @return InlineResponse2005
 func (a *SecretStoreAPIService) GetSecretStoresExecute(r APIGetSecretStoresRequest) (*InlineResponse2005, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse2005
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse2005
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreAPIService.GetSecretStores")
@@ -785,7 +779,6 @@ func (a *SecretStoreAPIService) GetSecretStoresExecute(r APIGetSecretStoresReque
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -804,10 +797,9 @@ func (a *SecretStoreAPIService) GetSecretStoresExecute(r APIGetSecretStoresReque
 
 // APISigningKeyRequest represents a request for the resource.
 type APISigningKeyRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SecretStoreAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APISigningKeyRequest) Execute() (*SigningKey, *http.Response, error) {
@@ -825,7 +817,7 @@ Get the public key used for signing client keys.
 func (a *SecretStoreAPIService) SigningKey(ctx context.Context) APISigningKeyRequest {
 	return APISigningKeyRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -833,10 +825,10 @@ func (a *SecretStoreAPIService) SigningKey(ctx context.Context) APISigningKeyReq
 //  @return SigningKey
 func (a *SecretStoreAPIService) SigningKeyExecute(r APISigningKeyRequest) (*SigningKey, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SigningKey
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SigningKey
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreAPIService.SigningKey")
@@ -914,7 +906,6 @@ func (a *SecretStoreAPIService) SigningKeyExecute(r APISigningKeyRequest) (*Sign
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

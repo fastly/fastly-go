@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type AutomationTokensAPI interface {
 
 	/*
-	CreateAutomationToken Create Automation Token
+		CreateAutomationToken Create Automation Token
 
-	Creates a new automation token.
+		Creates a new automation token.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateAutomationTokenRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateAutomationTokenRequest
 	*/
 	CreateAutomationToken(ctx context.Context) APICreateAutomationTokenRequest
 
@@ -46,13 +45,13 @@ type AutomationTokensAPI interface {
 	CreateAutomationTokenExecute(r APICreateAutomationTokenRequest) (*AutomationTokenCreateResponse, *http.Response, error)
 
 	/*
-	GetAutomationTokenID Retrieve an Automation Token by ID
+		GetAutomationTokenID Retrieve an Automation Token by ID
 
-	Retrieves an automation token by ID.
+		Retrieves an automation token by ID.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param id
-	 @return APIGetAutomationTokenIDRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param id
+		 @return APIGetAutomationTokenIDRequest
 	*/
 	GetAutomationTokenID(ctx context.Context, id string) APIGetAutomationTokenIDRequest
 
@@ -61,13 +60,13 @@ type AutomationTokensAPI interface {
 	GetAutomationTokenIDExecute(r APIGetAutomationTokenIDRequest) (*AutomationTokenResponse, *http.Response, error)
 
 	/*
-	GetAutomationTokensIDServices List Automation Token Services
+		GetAutomationTokensIDServices List Automation Token Services
 
-	List of services associated with the automation token.
+		List of services associated with the automation token.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param id
-	 @return APIGetAutomationTokensIDServicesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param id
+		 @return APIGetAutomationTokensIDServicesRequest
 	*/
 	GetAutomationTokensIDServices(ctx context.Context, id string) APIGetAutomationTokensIDServicesRequest
 
@@ -76,12 +75,12 @@ type AutomationTokensAPI interface {
 	GetAutomationTokensIDServicesExecute(r APIGetAutomationTokensIDServicesRequest) (*InlineResponse2001, *http.Response, error)
 
 	/*
-	ListAutomationTokens List Customer Automation Tokens
+		ListAutomationTokens List Customer Automation Tokens
 
-	Lists all automation tokens for a customer.
+		Lists all automation tokens for a customer.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListAutomationTokensRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListAutomationTokensRequest
 	*/
 	ListAutomationTokens(ctx context.Context) APIListAutomationTokensRequest
 
@@ -90,13 +89,13 @@ type AutomationTokensAPI interface {
 	ListAutomationTokensExecute(r APIListAutomationTokensRequest) ([]AutomationTokenResponse, *http.Response, error)
 
 	/*
-	RevokeAutomationTokenID Revoke an Automation Token by ID
+		RevokeAutomationTokenID Revoke an Automation Token by ID
 
-	Revoke an automation token by ID.
+		Revoke an automation token by ID.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param id
-	 @return APIRevokeAutomationTokenIDRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param id
+		 @return APIRevokeAutomationTokenIDRequest
 	*/
 	RevokeAutomationTokenID(ctx context.Context, id string) APIRevokeAutomationTokenIDRequest
 
@@ -110,8 +109,8 @@ type AutomationTokensAPIService service
 
 // APICreateAutomationTokenRequest represents a request for the resource.
 type APICreateAutomationTokenRequest struct {
-	ctx context.Context
-	APIService AutomationTokensAPI
+	ctx                          context.Context
+	APIService                   AutomationTokensAPI
 	automationTokenCreateRequest *AutomationTokenCreateRequest
 }
 
@@ -137,7 +136,7 @@ Creates a new automation token.
 func (a *AutomationTokensAPIService) CreateAutomationToken(ctx context.Context) APICreateAutomationTokenRequest {
 	return APICreateAutomationTokenRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -145,10 +144,10 @@ func (a *AutomationTokensAPIService) CreateAutomationToken(ctx context.Context) 
 //  @return AutomationTokenCreateResponse
 func (a *AutomationTokensAPIService) CreateAutomationTokenExecute(r APICreateAutomationTokenRequest) (*AutomationTokenCreateResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *AutomationTokenCreateResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *AutomationTokenCreateResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.CreateAutomationToken")
@@ -229,7 +228,6 @@ func (a *AutomationTokensAPIService) CreateAutomationTokenExecute(r APICreateAut
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -248,11 +246,10 @@ func (a *AutomationTokensAPIService) CreateAutomationTokenExecute(r APICreateAut
 
 // APIGetAutomationTokenIDRequest represents a request for the resource.
 type APIGetAutomationTokenIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService AutomationTokensAPI
-	id string
+	id         string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetAutomationTokenIDRequest) Execute() (*AutomationTokenResponse, *http.Response, error) {
@@ -271,8 +268,8 @@ Retrieves an automation token by ID.
 func (a *AutomationTokensAPIService) GetAutomationTokenID(ctx context.Context, id string) APIGetAutomationTokenIDRequest {
 	return APIGetAutomationTokenIDRequest{
 		APIService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
@@ -280,10 +277,10 @@ func (a *AutomationTokensAPIService) GetAutomationTokenID(ctx context.Context, i
 //  @return AutomationTokenResponse
 func (a *AutomationTokensAPIService) GetAutomationTokenIDExecute(r APIGetAutomationTokenIDRequest) (*AutomationTokenResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *AutomationTokenResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *AutomationTokenResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.GetAutomationTokenID")
@@ -382,7 +379,6 @@ func (a *AutomationTokensAPIService) GetAutomationTokenIDExecute(r APIGetAutomat
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -401,11 +397,11 @@ func (a *AutomationTokensAPIService) GetAutomationTokenIDExecute(r APIGetAutomat
 
 // APIGetAutomationTokensIDServicesRequest represents a request for the resource.
 type APIGetAutomationTokensIDServicesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService AutomationTokensAPI
-	id string
-	perPage *int32
-	page *int32
+	id         string
+	perPage    *int32
+	page       *int32
 }
 
 // PerPage returns a pointer to a request.
@@ -413,6 +409,7 @@ func (r *APIGetAutomationTokensIDServicesRequest) PerPage(perPage int32) *APIGet
 	r.perPage = &perPage
 	return r
 }
+
 // Page returns a pointer to a request.
 func (r *APIGetAutomationTokensIDServicesRequest) Page(page int32) *APIGetAutomationTokensIDServicesRequest {
 	r.page = &page
@@ -436,8 +433,8 @@ List of services associated with the automation token.
 func (a *AutomationTokensAPIService) GetAutomationTokensIDServices(ctx context.Context, id string) APIGetAutomationTokensIDServicesRequest {
 	return APIGetAutomationTokensIDServicesRequest{
 		APIService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
@@ -445,10 +442,10 @@ func (a *AutomationTokensAPIService) GetAutomationTokensIDServices(ctx context.C
 //  @return InlineResponse2001
 func (a *AutomationTokensAPIService) GetAutomationTokensIDServicesExecute(r APIGetAutomationTokensIDServicesRequest) (*InlineResponse2001, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse2001
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse2001
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.GetAutomationTokensIDServices")
@@ -553,7 +550,6 @@ func (a *AutomationTokensAPIService) GetAutomationTokensIDServicesExecute(r APIG
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -572,10 +568,10 @@ func (a *AutomationTokensAPIService) GetAutomationTokensIDServicesExecute(r APIG
 
 // APIListAutomationTokensRequest represents a request for the resource.
 type APIListAutomationTokensRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService AutomationTokensAPI
-	perPage *int32
-	page *int32
+	perPage    *int32
+	page       *int32
 }
 
 // PerPage returns a pointer to a request.
@@ -583,6 +579,7 @@ func (r *APIListAutomationTokensRequest) PerPage(perPage int32) *APIListAutomati
 	r.perPage = &perPage
 	return r
 }
+
 // Page returns a pointer to a request.
 func (r *APIListAutomationTokensRequest) Page(page int32) *APIListAutomationTokensRequest {
 	r.page = &page
@@ -605,7 +602,7 @@ Lists all automation tokens for a customer.
 func (a *AutomationTokensAPIService) ListAutomationTokens(ctx context.Context) APIListAutomationTokensRequest {
 	return APIListAutomationTokensRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -613,10 +610,10 @@ func (a *AutomationTokensAPIService) ListAutomationTokens(ctx context.Context) A
 //  @return []AutomationTokenResponse
 func (a *AutomationTokensAPIService) ListAutomationTokensExecute(r APIListAutomationTokensRequest) ([]AutomationTokenResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []AutomationTokenResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []AutomationTokenResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.ListAutomationTokens")
@@ -720,7 +717,6 @@ func (a *AutomationTokensAPIService) ListAutomationTokensExecute(r APIListAutoma
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -739,11 +735,10 @@ func (a *AutomationTokensAPIService) ListAutomationTokensExecute(r APIListAutoma
 
 // APIRevokeAutomationTokenIDRequest represents a request for the resource.
 type APIRevokeAutomationTokenIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService AutomationTokensAPI
-	id string
+	id         string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIRevokeAutomationTokenIDRequest) Execute() (*AutomationTokenErrorResponse, *http.Response, error) {
@@ -762,8 +757,8 @@ Revoke an automation token by ID.
 func (a *AutomationTokensAPIService) RevokeAutomationTokenID(ctx context.Context, id string) APIRevokeAutomationTokenIDRequest {
 	return APIRevokeAutomationTokenIDRequest{
 		APIService: a,
-		ctx: ctx,
-		id: id,
+		ctx:        ctx,
+		id:         id,
 	}
 }
 
@@ -771,10 +766,10 @@ func (a *AutomationTokensAPIService) RevokeAutomationTokenID(ctx context.Context
 //  @return AutomationTokenErrorResponse
 func (a *AutomationTokensAPIService) RevokeAutomationTokenIDExecute(r APIRevokeAutomationTokenIDRequest) (*AutomationTokenErrorResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *AutomationTokenErrorResponse
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *AutomationTokenErrorResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.RevokeAutomationTokenID")
@@ -892,7 +887,6 @@ func (a *AutomationTokensAPIService) RevokeAutomationTokenIDExecute(r APIRevokeA
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

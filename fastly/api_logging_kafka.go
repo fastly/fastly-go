@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingKafkaAPI interface {
 
 	/*
-	CreateLogKafka Create a Kafka log endpoint
+		CreateLogKafka Create a Kafka log endpoint
 
-	Create a Kafka logging endpoint for a particular service and version.
+		Create a Kafka logging endpoint for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogKafkaRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogKafkaRequest
 	*/
 	CreateLogKafka(ctx context.Context, serviceID string, versionID int32) APICreateLogKafkaRequest
 
@@ -48,15 +47,15 @@ type LoggingKafkaAPI interface {
 	CreateLogKafkaExecute(r APICreateLogKafkaRequest) (*LoggingKafkaResponsePost, *http.Response, error)
 
 	/*
-	DeleteLogKafka Delete the Kafka log endpoint
+		DeleteLogKafka Delete the Kafka log endpoint
 
-	Delete the Kafka logging endpoint for a particular service and version.
+		Delete the Kafka logging endpoint for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingKafkaName The name for the real-time logging configuration.
-	 @return APIDeleteLogKafkaRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingKafkaName The name for the real-time logging configuration.
+		 @return APIDeleteLogKafkaRequest
 	*/
 	DeleteLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIDeleteLogKafkaRequest
 
@@ -65,15 +64,15 @@ type LoggingKafkaAPI interface {
 	DeleteLogKafkaExecute(r APIDeleteLogKafkaRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogKafka Get a Kafka log endpoint
+		GetLogKafka Get a Kafka log endpoint
 
-	Get the Kafka logging endpoint for a particular service and version.
+		Get the Kafka logging endpoint for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingKafkaName The name for the real-time logging configuration.
-	 @return APIGetLogKafkaRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingKafkaName The name for the real-time logging configuration.
+		 @return APIGetLogKafkaRequest
 	*/
 	GetLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIGetLogKafkaRequest
 
@@ -82,14 +81,14 @@ type LoggingKafkaAPI interface {
 	GetLogKafkaExecute(r APIGetLogKafkaRequest) (*LoggingKafkaResponse, *http.Response, error)
 
 	/*
-	ListLogKafka List Kafka log endpoints
+		ListLogKafka List Kafka log endpoints
 
-	List all of the Kafka logging endpoints for a particular service and version.
+		List all of the Kafka logging endpoints for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogKafkaRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogKafkaRequest
 	*/
 	ListLogKafka(ctx context.Context, serviceID string, versionID int32) APIListLogKafkaRequest
 
@@ -98,15 +97,15 @@ type LoggingKafkaAPI interface {
 	ListLogKafkaExecute(r APIListLogKafkaRequest) ([]LoggingKafkaResponse, *http.Response, error)
 
 	/*
-	UpdateLogKafka Update the Kafka log endpoint
+		UpdateLogKafka Update the Kafka log endpoint
 
-	Update the Kafka logging endpoint for a particular service and version.
+		Update the Kafka logging endpoint for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingKafkaName The name for the real-time logging configuration.
-	 @return APIUpdateLogKafkaRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingKafkaName The name for the real-time logging configuration.
+		 @return APIUpdateLogKafkaRequest
 	*/
 	UpdateLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIUpdateLogKafkaRequest
 
@@ -120,29 +119,29 @@ type LoggingKafkaAPIService service
 
 // APICreateLogKafkaRequest represents a request for the resource.
 type APICreateLogKafkaRequest struct {
-	ctx context.Context
-	APIService LoggingKafkaAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingKafkaAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	tlsCaCert *string
-	tlsClientCert *string
-	tlsClientKey *string
-	tlsHostname *string
-	topic *string
-	brokers *string
-	compressionCodec *string
-	requiredAcks *int32
-	requestMaxBytes *int32
-	parseLogKeyvals *bool
-	authMethod *string
-	user *string
-	password *string
-	useTLS *LoggingUseTLSString
+	format            *string
+	formatVersion     *int32
+	tlsCaCert         *string
+	tlsClientCert     *string
+	tlsClientKey      *string
+	tlsHostname       *string
+	topic             *string
+	brokers           *string
+	compressionCodec  *string
+	requiredAcks      *int32
+	requestMaxBytes   *int32
+	parseLogKeyvals   *bool
+	authMethod        *string
+	user              *string
+	password          *string
+	useTLS            *LoggingUseTLSString
 }
 
 // Name The name for the real-time logging configuration.
@@ -150,91 +149,109 @@ func (r *APICreateLogKafkaRequest) Name(name string) *APICreateLogKafkaRequest {
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogKafkaRequest) Placement(placement string) *APICreateLogKafkaRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogKafkaRequest) ResponseCondition(responseCondition string) *APICreateLogKafkaRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogKafkaRequest) Format(format string) *APICreateLogKafkaRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogKafkaRequest) FormatVersion(formatVersion int32) *APICreateLogKafkaRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
 func (r *APICreateLogKafkaRequest) TLSCaCert(tlsCaCert string) *APICreateLogKafkaRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
+
 // TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
 func (r *APICreateLogKafkaRequest) TLSClientCert(tlsClientCert string) *APICreateLogKafkaRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
+
 // TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
 func (r *APICreateLogKafkaRequest) TLSClientKey(tlsClientKey string) *APICreateLogKafkaRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
+
 // TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
 func (r *APICreateLogKafkaRequest) TLSHostname(tlsHostname string) *APICreateLogKafkaRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
+
 // Topic The Kafka topic to send logs to. Required.
 func (r *APICreateLogKafkaRequest) Topic(topic string) *APICreateLogKafkaRequest {
 	r.topic = &topic
 	return r
 }
+
 // Brokers A comma-separated list of IP addresses or hostnames of Kafka brokers. Required.
 func (r *APICreateLogKafkaRequest) Brokers(brokers string) *APICreateLogKafkaRequest {
 	r.brokers = &brokers
 	return r
 }
+
 // CompressionCodec The codec used for compression of your logs.
 func (r *APICreateLogKafkaRequest) CompressionCodec(compressionCodec string) *APICreateLogKafkaRequest {
 	r.compressionCodec = &compressionCodec
 	return r
 }
+
 // RequiredAcks The number of acknowledgements a leader must receive before a write is considered successful.
 func (r *APICreateLogKafkaRequest) RequiredAcks(requiredAcks int32) *APICreateLogKafkaRequest {
 	r.requiredAcks = &requiredAcks
 	return r
 }
+
 // RequestMaxBytes The maximum number of bytes sent in one request. Defaults &#x60;0&#x60; (no limit).
 func (r *APICreateLogKafkaRequest) RequestMaxBytes(requestMaxBytes int32) *APICreateLogKafkaRequest {
 	r.requestMaxBytes = &requestMaxBytes
 	return r
 }
+
 // ParseLogKeyvals Enables parsing of key&#x3D;value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
 func (r *APICreateLogKafkaRequest) ParseLogKeyvals(parseLogKeyvals bool) *APICreateLogKafkaRequest {
 	r.parseLogKeyvals = &parseLogKeyvals
 	return r
 }
+
 // AuthMethod SASL authentication method.
 func (r *APICreateLogKafkaRequest) AuthMethod(authMethod string) *APICreateLogKafkaRequest {
 	r.authMethod = &authMethod
 	return r
 }
+
 // User SASL user.
 func (r *APICreateLogKafkaRequest) User(user string) *APICreateLogKafkaRequest {
 	r.user = &user
 	return r
 }
+
 // Password SASL password.
 func (r *APICreateLogKafkaRequest) Password(password string) *APICreateLogKafkaRequest {
 	r.password = &password
 	return r
 }
+
 // UseTLS returns a pointer to a request.
 func (r *APICreateLogKafkaRequest) UseTLS(useTLS LoggingUseTLSString) *APICreateLogKafkaRequest {
 	r.useTLS = &useTLS
@@ -259,9 +276,9 @@ Create a Kafka logging endpoint for a particular service and version.
 func (a *LoggingKafkaAPIService) CreateLogKafka(ctx context.Context, serviceID string, versionID int32) APICreateLogKafkaRequest {
 	return APICreateLogKafkaRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -269,10 +286,10 @@ func (a *LoggingKafkaAPIService) CreateLogKafka(ctx context.Context, serviceID s
 //  @return LoggingKafkaResponsePost
 func (a *LoggingKafkaAPIService) CreateLogKafkaExecute(r APICreateLogKafkaRequest) (*LoggingKafkaResponsePost, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingKafkaResponsePost
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingKafkaResponsePost
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingKafkaAPIService.CreateLogKafka")
@@ -410,7 +427,6 @@ func (a *LoggingKafkaAPIService) CreateLogKafkaExecute(r APICreateLogKafkaReques
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -429,13 +445,12 @@ func (a *LoggingKafkaAPIService) CreateLogKafkaExecute(r APICreateLogKafkaReques
 
 // APIDeleteLogKafkaRequest represents a request for the resource.
 type APIDeleteLogKafkaRequest struct {
-	ctx context.Context
-	APIService LoggingKafkaAPI
-	serviceID string
-	versionID int32
+	ctx              context.Context
+	APIService       LoggingKafkaAPI
+	serviceID        string
+	versionID        int32
 	loggingKafkaName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogKafkaRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -455,10 +470,10 @@ Delete the Kafka logging endpoint for a particular service and version.
 */
 func (a *LoggingKafkaAPIService) DeleteLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIDeleteLogKafkaRequest {
 	return APIDeleteLogKafkaRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:       a,
+		ctx:              ctx,
+		serviceID:        serviceID,
+		versionID:        versionID,
 		loggingKafkaName: loggingKafkaName,
 	}
 }
@@ -467,10 +482,10 @@ func (a *LoggingKafkaAPIService) DeleteLogKafka(ctx context.Context, serviceID s
 //  @return InlineResponse200
 func (a *LoggingKafkaAPIService) DeleteLogKafkaExecute(r APIDeleteLogKafkaRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingKafkaAPIService.DeleteLogKafka")
@@ -552,7 +567,6 @@ func (a *LoggingKafkaAPIService) DeleteLogKafkaExecute(r APIDeleteLogKafkaReques
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -571,13 +585,12 @@ func (a *LoggingKafkaAPIService) DeleteLogKafkaExecute(r APIDeleteLogKafkaReques
 
 // APIGetLogKafkaRequest represents a request for the resource.
 type APIGetLogKafkaRequest struct {
-	ctx context.Context
-	APIService LoggingKafkaAPI
-	serviceID string
-	versionID int32
+	ctx              context.Context
+	APIService       LoggingKafkaAPI
+	serviceID        string
+	versionID        int32
 	loggingKafkaName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogKafkaRequest) Execute() (*LoggingKafkaResponse, *http.Response, error) {
@@ -597,10 +610,10 @@ Get the Kafka logging endpoint for a particular service and version.
 */
 func (a *LoggingKafkaAPIService) GetLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIGetLogKafkaRequest {
 	return APIGetLogKafkaRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:       a,
+		ctx:              ctx,
+		serviceID:        serviceID,
+		versionID:        versionID,
 		loggingKafkaName: loggingKafkaName,
 	}
 }
@@ -609,10 +622,10 @@ func (a *LoggingKafkaAPIService) GetLogKafka(ctx context.Context, serviceID stri
 //  @return LoggingKafkaResponse
 func (a *LoggingKafkaAPIService) GetLogKafkaExecute(r APIGetLogKafkaRequest) (*LoggingKafkaResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingKafkaResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingKafkaResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingKafkaAPIService.GetLogKafka")
@@ -694,7 +707,6 @@ func (a *LoggingKafkaAPIService) GetLogKafkaExecute(r APIGetLogKafkaRequest) (*L
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -713,12 +725,11 @@ func (a *LoggingKafkaAPIService) GetLogKafkaExecute(r APIGetLogKafkaRequest) (*L
 
 // APIListLogKafkaRequest represents a request for the resource.
 type APIListLogKafkaRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingKafkaAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogKafkaRequest) Execute() ([]LoggingKafkaResponse, *http.Response, error) {
@@ -738,9 +749,9 @@ List all of the Kafka logging endpoints for a particular service and version.
 func (a *LoggingKafkaAPIService) ListLogKafka(ctx context.Context, serviceID string, versionID int32) APIListLogKafkaRequest {
 	return APIListLogKafkaRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -748,10 +759,10 @@ func (a *LoggingKafkaAPIService) ListLogKafka(ctx context.Context, serviceID str
 //  @return []LoggingKafkaResponse
 func (a *LoggingKafkaAPIService) ListLogKafkaExecute(r APIListLogKafkaRequest) ([]LoggingKafkaResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingKafkaResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingKafkaResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingKafkaAPIService.ListLogKafka")
@@ -832,7 +843,6 @@ func (a *LoggingKafkaAPIService) ListLogKafkaExecute(r APIListLogKafkaRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -851,13 +861,12 @@ func (a *LoggingKafkaAPIService) ListLogKafkaExecute(r APIListLogKafkaRequest) (
 
 // APIUpdateLogKafkaRequest represents a request for the resource.
 type APIUpdateLogKafkaRequest struct {
-	ctx context.Context
-	APIService LoggingKafkaAPI
-	serviceID string
-	versionID int32
+	ctx              context.Context
+	APIService       LoggingKafkaAPI
+	serviceID        string
+	versionID        int32
 	loggingKafkaName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIUpdateLogKafkaRequest) Execute() (*LoggingKafkaResponse, *http.Response, error) {
@@ -877,10 +886,10 @@ Update the Kafka logging endpoint for a particular service and version.
 */
 func (a *LoggingKafkaAPIService) UpdateLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIUpdateLogKafkaRequest {
 	return APIUpdateLogKafkaRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:       a,
+		ctx:              ctx,
+		serviceID:        serviceID,
+		versionID:        versionID,
 		loggingKafkaName: loggingKafkaName,
 	}
 }
@@ -889,10 +898,10 @@ func (a *LoggingKafkaAPIService) UpdateLogKafka(ctx context.Context, serviceID s
 //  @return LoggingKafkaResponse
 func (a *LoggingKafkaAPIService) UpdateLogKafkaExecute(r APIUpdateLogKafkaRequest) (*LoggingKafkaResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingKafkaResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingKafkaResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingKafkaAPIService.UpdateLogKafka")
@@ -973,7 +982,6 @@ func (a *LoggingKafkaAPIService) UpdateLogKafkaExecute(r APIUpdateLogKafkaReques
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

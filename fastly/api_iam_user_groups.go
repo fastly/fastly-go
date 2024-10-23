@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,13 +31,13 @@ var (
 type IamUserGroupsAPI interface {
 
 	/*
-	AddUserGroupMembers Add members to a user group
+		AddUserGroupMembers Add members to a user group
 
-	Add members to a user group.
+		Add members to a user group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userGroupID Alphanumeric string identifying the user group.
-	 @return APIAddUserGroupMembersRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userGroupID Alphanumeric string identifying the user group.
+		 @return APIAddUserGroupMembersRequest
 	*/
 	AddUserGroupMembers(ctx context.Context, userGroupID string) APIAddUserGroupMembersRequest
 
@@ -47,13 +46,13 @@ type IamUserGroupsAPI interface {
 	AddUserGroupMembersExecute(r APIAddUserGroupMembersRequest) (map[string]any, *http.Response, error)
 
 	/*
-	AddUserGroupRoles Add roles to a user group
+		AddUserGroupRoles Add roles to a user group
 
-	Add roles to a user group.
+		Add roles to a user group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userGroupID Alphanumeric string identifying the user group.
-	 @return APIAddUserGroupRolesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userGroupID Alphanumeric string identifying the user group.
+		 @return APIAddUserGroupRolesRequest
 	*/
 	AddUserGroupRoles(ctx context.Context, userGroupID string) APIAddUserGroupRolesRequest
 
@@ -62,13 +61,13 @@ type IamUserGroupsAPI interface {
 	AddUserGroupRolesExecute(r APIAddUserGroupRolesRequest) (map[string]any, *http.Response, error)
 
 	/*
-	AddUserGroupServiceGroups Add service groups to a user group
+		AddUserGroupServiceGroups Add service groups to a user group
 
-	Add service groups to a user group.
+		Add service groups to a user group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userGroupID Alphanumeric string identifying the user group.
-	 @return APIAddUserGroupServiceGroupsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userGroupID Alphanumeric string identifying the user group.
+		 @return APIAddUserGroupServiceGroupsRequest
 	*/
 	AddUserGroupServiceGroups(ctx context.Context, userGroupID string) APIAddUserGroupServiceGroupsRequest
 
@@ -77,12 +76,12 @@ type IamUserGroupsAPI interface {
 	AddUserGroupServiceGroupsExecute(r APIAddUserGroupServiceGroupsRequest) (map[string]any, *http.Response, error)
 
 	/*
-	CreateAUserGroup Create a user group
+		CreateAUserGroup Create a user group
 
-	Create a user group.
+		Create a user group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateAUserGroupRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateAUserGroupRequest
 	*/
 	CreateAUserGroup(ctx context.Context) APICreateAUserGroupRequest
 
@@ -91,13 +90,13 @@ type IamUserGroupsAPI interface {
 	CreateAUserGroupExecute(r APICreateAUserGroupRequest) (map[string]any, *http.Response, error)
 
 	/*
-	DeleteAUserGroup Delete a user group
+		DeleteAUserGroup Delete a user group
 
-	Delete a user group.
+		Delete a user group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userGroupID Alphanumeric string identifying the user group.
-	 @return APIDeleteAUserGroupRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userGroupID Alphanumeric string identifying the user group.
+		 @return APIDeleteAUserGroupRequest
 	*/
 	DeleteAUserGroup(ctx context.Context, userGroupID string) APIDeleteAUserGroupRequest
 
@@ -105,13 +104,13 @@ type IamUserGroupsAPI interface {
 	DeleteAUserGroupExecute(r APIDeleteAUserGroupRequest) (*http.Response, error)
 
 	/*
-	GetAUserGroup Get a user group
+		GetAUserGroup Get a user group
 
-	Get a user group.
+		Get a user group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userGroupID Alphanumeric string identifying the user group.
-	 @return APIGetAUserGroupRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userGroupID Alphanumeric string identifying the user group.
+		 @return APIGetAUserGroupRequest
 	*/
 	GetAUserGroup(ctx context.Context, userGroupID string) APIGetAUserGroupRequest
 
@@ -120,13 +119,13 @@ type IamUserGroupsAPI interface {
 	GetAUserGroupExecute(r APIGetAUserGroupRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListUserGroupMembers List members of a user group
+		ListUserGroupMembers List members of a user group
 
-	List members of a user group.
+		List members of a user group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userGroupID Alphanumeric string identifying the user group.
-	 @return APIListUserGroupMembersRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userGroupID Alphanumeric string identifying the user group.
+		 @return APIListUserGroupMembersRequest
 	*/
 	ListUserGroupMembers(ctx context.Context, userGroupID string) APIListUserGroupMembersRequest
 
@@ -135,13 +134,13 @@ type IamUserGroupsAPI interface {
 	ListUserGroupMembersExecute(r APIListUserGroupMembersRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListUserGroupRoles List roles in a user group
+		ListUserGroupRoles List roles in a user group
 
-	List roles in a user group.
+		List roles in a user group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userGroupID Alphanumeric string identifying the user group.
-	 @return APIListUserGroupRolesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userGroupID Alphanumeric string identifying the user group.
+		 @return APIListUserGroupRolesRequest
 	*/
 	ListUserGroupRoles(ctx context.Context, userGroupID string) APIListUserGroupRolesRequest
 
@@ -150,13 +149,13 @@ type IamUserGroupsAPI interface {
 	ListUserGroupRolesExecute(r APIListUserGroupRolesRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListUserGroupServiceGroups List service groups in a user group
+		ListUserGroupServiceGroups List service groups in a user group
 
-	List service groups in a user group.
+		List service groups in a user group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userGroupID Alphanumeric string identifying the user group.
-	 @return APIListUserGroupServiceGroupsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userGroupID Alphanumeric string identifying the user group.
+		 @return APIListUserGroupServiceGroupsRequest
 	*/
 	ListUserGroupServiceGroups(ctx context.Context, userGroupID string) APIListUserGroupServiceGroupsRequest
 
@@ -165,12 +164,12 @@ type IamUserGroupsAPI interface {
 	ListUserGroupServiceGroupsExecute(r APIListUserGroupServiceGroupsRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListUserGroups List user groups
+		ListUserGroups List user groups
 
-	List all user groups.
+		List all user groups.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListUserGroupsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListUserGroupsRequest
 	*/
 	ListUserGroups(ctx context.Context) APIListUserGroupsRequest
 
@@ -179,13 +178,13 @@ type IamUserGroupsAPI interface {
 	ListUserGroupsExecute(r APIListUserGroupsRequest) (map[string]any, *http.Response, error)
 
 	/*
-	RemoveUserGroupMembers Remove members of a user group
+		RemoveUserGroupMembers Remove members of a user group
 
-	Remove members of a user group
+		Remove members of a user group
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userGroupID Alphanumeric string identifying the user group.
-	 @return APIRemoveUserGroupMembersRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userGroupID Alphanumeric string identifying the user group.
+		 @return APIRemoveUserGroupMembersRequest
 	*/
 	RemoveUserGroupMembers(ctx context.Context, userGroupID string) APIRemoveUserGroupMembersRequest
 
@@ -193,13 +192,13 @@ type IamUserGroupsAPI interface {
 	RemoveUserGroupMembersExecute(r APIRemoveUserGroupMembersRequest) (*http.Response, error)
 
 	/*
-	RemoveUserGroupRoles Remove roles from a user group
+		RemoveUserGroupRoles Remove roles from a user group
 
-	Remove roles from a user group.
+		Remove roles from a user group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userGroupID Alphanumeric string identifying the user group.
-	 @return APIRemoveUserGroupRolesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userGroupID Alphanumeric string identifying the user group.
+		 @return APIRemoveUserGroupRolesRequest
 	*/
 	RemoveUserGroupRoles(ctx context.Context, userGroupID string) APIRemoveUserGroupRolesRequest
 
@@ -207,13 +206,13 @@ type IamUserGroupsAPI interface {
 	RemoveUserGroupRolesExecute(r APIRemoveUserGroupRolesRequest) (*http.Response, error)
 
 	/*
-	RemoveUserGroupServiceGroups Remove service groups from a user group
+		RemoveUserGroupServiceGroups Remove service groups from a user group
 
-	Remove service groups from a user group.
+		Remove service groups from a user group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userGroupID Alphanumeric string identifying the user group.
-	 @return APIRemoveUserGroupServiceGroupsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userGroupID Alphanumeric string identifying the user group.
+		 @return APIRemoveUserGroupServiceGroupsRequest
 	*/
 	RemoveUserGroupServiceGroups(ctx context.Context, userGroupID string) APIRemoveUserGroupServiceGroupsRequest
 
@@ -221,13 +220,13 @@ type IamUserGroupsAPI interface {
 	RemoveUserGroupServiceGroupsExecute(r APIRemoveUserGroupServiceGroupsRequest) (*http.Response, error)
 
 	/*
-	UpdateAUserGroup Update a user group
+		UpdateAUserGroup Update a user group
 
-	Update a user group.
+		Update a user group.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userGroupID Alphanumeric string identifying the user group.
-	 @return APIUpdateAUserGroupRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userGroupID Alphanumeric string identifying the user group.
+		 @return APIUpdateAUserGroupRequest
 	*/
 	UpdateAUserGroup(ctx context.Context, userGroupID string) APIUpdateAUserGroupRequest
 
@@ -241,8 +240,8 @@ type IamUserGroupsAPIService service
 
 // APIAddUserGroupMembersRequest represents a request for the resource.
 type APIAddUserGroupMembersRequest struct {
-	ctx context.Context
-	APIService IamUserGroupsAPI
+	ctx         context.Context
+	APIService  IamUserGroupsAPI
 	userGroupID string
 	requestBody *map[string]map[string]any
 }
@@ -269,8 +268,8 @@ Add members to a user group.
 */
 func (a *IamUserGroupsAPIService) AddUserGroupMembers(ctx context.Context, userGroupID string) APIAddUserGroupMembersRequest {
 	return APIAddUserGroupMembersRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		userGroupID: userGroupID,
 	}
 }
@@ -279,10 +278,10 @@ func (a *IamUserGroupsAPIService) AddUserGroupMembers(ctx context.Context, userG
 //  @return map[string]any
 func (a *IamUserGroupsAPIService) AddUserGroupMembersExecute(r APIAddUserGroupMembersRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.AddUserGroupMembers")
@@ -364,7 +363,6 @@ func (a *IamUserGroupsAPIService) AddUserGroupMembersExecute(r APIAddUserGroupMe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -383,8 +381,8 @@ func (a *IamUserGroupsAPIService) AddUserGroupMembersExecute(r APIAddUserGroupMe
 
 // APIAddUserGroupRolesRequest represents a request for the resource.
 type APIAddUserGroupRolesRequest struct {
-	ctx context.Context
-	APIService IamUserGroupsAPI
+	ctx         context.Context
+	APIService  IamUserGroupsAPI
 	userGroupID string
 	requestBody *map[string]map[string]any
 }
@@ -411,8 +409,8 @@ Add roles to a user group.
 */
 func (a *IamUserGroupsAPIService) AddUserGroupRoles(ctx context.Context, userGroupID string) APIAddUserGroupRolesRequest {
 	return APIAddUserGroupRolesRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		userGroupID: userGroupID,
 	}
 }
@@ -421,10 +419,10 @@ func (a *IamUserGroupsAPIService) AddUserGroupRoles(ctx context.Context, userGro
 //  @return map[string]any
 func (a *IamUserGroupsAPIService) AddUserGroupRolesExecute(r APIAddUserGroupRolesRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.AddUserGroupRoles")
@@ -506,7 +504,6 @@ func (a *IamUserGroupsAPIService) AddUserGroupRolesExecute(r APIAddUserGroupRole
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -525,8 +522,8 @@ func (a *IamUserGroupsAPIService) AddUserGroupRolesExecute(r APIAddUserGroupRole
 
 // APIAddUserGroupServiceGroupsRequest represents a request for the resource.
 type APIAddUserGroupServiceGroupsRequest struct {
-	ctx context.Context
-	APIService IamUserGroupsAPI
+	ctx         context.Context
+	APIService  IamUserGroupsAPI
 	userGroupID string
 	requestBody *map[string]map[string]any
 }
@@ -553,8 +550,8 @@ Add service groups to a user group.
 */
 func (a *IamUserGroupsAPIService) AddUserGroupServiceGroups(ctx context.Context, userGroupID string) APIAddUserGroupServiceGroupsRequest {
 	return APIAddUserGroupServiceGroupsRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		userGroupID: userGroupID,
 	}
 }
@@ -563,10 +560,10 @@ func (a *IamUserGroupsAPIService) AddUserGroupServiceGroups(ctx context.Context,
 //  @return map[string]any
 func (a *IamUserGroupsAPIService) AddUserGroupServiceGroupsExecute(r APIAddUserGroupServiceGroupsRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.AddUserGroupServiceGroups")
@@ -648,7 +645,6 @@ func (a *IamUserGroupsAPIService) AddUserGroupServiceGroupsExecute(r APIAddUserG
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -667,8 +663,8 @@ func (a *IamUserGroupsAPIService) AddUserGroupServiceGroupsExecute(r APIAddUserG
 
 // APICreateAUserGroupRequest represents a request for the resource.
 type APICreateAUserGroupRequest struct {
-	ctx context.Context
-	APIService IamUserGroupsAPI
+	ctx         context.Context
+	APIService  IamUserGroupsAPI
 	requestBody *map[string]map[string]any
 }
 
@@ -694,7 +690,7 @@ Create a user group.
 func (a *IamUserGroupsAPIService) CreateAUserGroup(ctx context.Context) APICreateAUserGroupRequest {
 	return APICreateAUserGroupRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -702,10 +698,10 @@ func (a *IamUserGroupsAPIService) CreateAUserGroup(ctx context.Context) APICreat
 //  @return map[string]any
 func (a *IamUserGroupsAPIService) CreateAUserGroupExecute(r APICreateAUserGroupRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.CreateAUserGroup")
@@ -786,7 +782,6 @@ func (a *IamUserGroupsAPIService) CreateAUserGroupExecute(r APICreateAUserGroupR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -805,11 +800,10 @@ func (a *IamUserGroupsAPIService) CreateAUserGroupExecute(r APICreateAUserGroupR
 
 // APIDeleteAUserGroupRequest represents a request for the resource.
 type APIDeleteAUserGroupRequest struct {
-	ctx context.Context
-	APIService IamUserGroupsAPI
+	ctx         context.Context
+	APIService  IamUserGroupsAPI
 	userGroupID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteAUserGroupRequest) Execute() (*http.Response, error) {
@@ -827,8 +821,8 @@ Delete a user group.
 */
 func (a *IamUserGroupsAPIService) DeleteAUserGroup(ctx context.Context, userGroupID string) APIDeleteAUserGroupRequest {
 	return APIDeleteAUserGroupRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		userGroupID: userGroupID,
 	}
 }
@@ -836,9 +830,9 @@ func (a *IamUserGroupsAPIService) DeleteAUserGroup(ctx context.Context, userGrou
 // DeleteAUserGroupExecute executes the request
 func (a *IamUserGroupsAPIService) DeleteAUserGroupExecute(r APIDeleteAUserGroupRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.DeleteAUserGroup")
@@ -909,7 +903,6 @@ func (a *IamUserGroupsAPIService) DeleteAUserGroupExecute(r APIDeleteAUserGroupR
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -928,11 +921,10 @@ func (a *IamUserGroupsAPIService) DeleteAUserGroupExecute(r APIDeleteAUserGroupR
 
 // APIGetAUserGroupRequest represents a request for the resource.
 type APIGetAUserGroupRequest struct {
-	ctx context.Context
-	APIService IamUserGroupsAPI
+	ctx         context.Context
+	APIService  IamUserGroupsAPI
 	userGroupID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetAUserGroupRequest) Execute() (map[string]any, *http.Response, error) {
@@ -950,8 +942,8 @@ Get a user group.
 */
 func (a *IamUserGroupsAPIService) GetAUserGroup(ctx context.Context, userGroupID string) APIGetAUserGroupRequest {
 	return APIGetAUserGroupRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		userGroupID: userGroupID,
 	}
 }
@@ -960,10 +952,10 @@ func (a *IamUserGroupsAPIService) GetAUserGroup(ctx context.Context, userGroupID
 //  @return map[string]any
 func (a *IamUserGroupsAPIService) GetAUserGroupExecute(r APIGetAUserGroupRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.GetAUserGroup")
@@ -1043,7 +1035,6 @@ func (a *IamUserGroupsAPIService) GetAUserGroupExecute(r APIGetAUserGroupRequest
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1062,11 +1053,11 @@ func (a *IamUserGroupsAPIService) GetAUserGroupExecute(r APIGetAUserGroupRequest
 
 // APIListUserGroupMembersRequest represents a request for the resource.
 type APIListUserGroupMembersRequest struct {
-	ctx context.Context
-	APIService IamUserGroupsAPI
+	ctx         context.Context
+	APIService  IamUserGroupsAPI
 	userGroupID string
-	perPage *int32
-	page *int32
+	perPage     *int32
+	page        *int32
 }
 
 // PerPage Number of records per page.
@@ -1074,6 +1065,7 @@ func (r *APIListUserGroupMembersRequest) PerPage(perPage int32) *APIListUserGrou
 	r.perPage = &perPage
 	return r
 }
+
 // Page Current page.
 func (r *APIListUserGroupMembersRequest) Page(page int32) *APIListUserGroupMembersRequest {
 	r.page = &page
@@ -1096,8 +1088,8 @@ List members of a user group.
 */
 func (a *IamUserGroupsAPIService) ListUserGroupMembers(ctx context.Context, userGroupID string) APIListUserGroupMembersRequest {
 	return APIListUserGroupMembersRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		userGroupID: userGroupID,
 	}
 }
@@ -1106,10 +1098,10 @@ func (a *IamUserGroupsAPIService) ListUserGroupMembers(ctx context.Context, user
 //  @return map[string]any
 func (a *IamUserGroupsAPIService) ListUserGroupMembersExecute(r APIListUserGroupMembersRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.ListUserGroupMembers")
@@ -1195,7 +1187,6 @@ func (a *IamUserGroupsAPIService) ListUserGroupMembersExecute(r APIListUserGroup
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1214,11 +1205,11 @@ func (a *IamUserGroupsAPIService) ListUserGroupMembersExecute(r APIListUserGroup
 
 // APIListUserGroupRolesRequest represents a request for the resource.
 type APIListUserGroupRolesRequest struct {
-	ctx context.Context
-	APIService IamUserGroupsAPI
+	ctx         context.Context
+	APIService  IamUserGroupsAPI
 	userGroupID string
-	perPage *int32
-	page *int32
+	perPage     *int32
+	page        *int32
 }
 
 // PerPage Number of records per page.
@@ -1226,6 +1217,7 @@ func (r *APIListUserGroupRolesRequest) PerPage(perPage int32) *APIListUserGroupR
 	r.perPage = &perPage
 	return r
 }
+
 // Page Current page.
 func (r *APIListUserGroupRolesRequest) Page(page int32) *APIListUserGroupRolesRequest {
 	r.page = &page
@@ -1248,8 +1240,8 @@ List roles in a user group.
 */
 func (a *IamUserGroupsAPIService) ListUserGroupRoles(ctx context.Context, userGroupID string) APIListUserGroupRolesRequest {
 	return APIListUserGroupRolesRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		userGroupID: userGroupID,
 	}
 }
@@ -1258,10 +1250,10 @@ func (a *IamUserGroupsAPIService) ListUserGroupRoles(ctx context.Context, userGr
 //  @return map[string]any
 func (a *IamUserGroupsAPIService) ListUserGroupRolesExecute(r APIListUserGroupRolesRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.ListUserGroupRoles")
@@ -1347,7 +1339,6 @@ func (a *IamUserGroupsAPIService) ListUserGroupRolesExecute(r APIListUserGroupRo
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1366,11 +1357,11 @@ func (a *IamUserGroupsAPIService) ListUserGroupRolesExecute(r APIListUserGroupRo
 
 // APIListUserGroupServiceGroupsRequest represents a request for the resource.
 type APIListUserGroupServiceGroupsRequest struct {
-	ctx context.Context
-	APIService IamUserGroupsAPI
+	ctx         context.Context
+	APIService  IamUserGroupsAPI
 	userGroupID string
-	perPage *int32
-	page *int32
+	perPage     *int32
+	page        *int32
 }
 
 // PerPage Number of records per page.
@@ -1378,6 +1369,7 @@ func (r *APIListUserGroupServiceGroupsRequest) PerPage(perPage int32) *APIListUs
 	r.perPage = &perPage
 	return r
 }
+
 // Page Current page.
 func (r *APIListUserGroupServiceGroupsRequest) Page(page int32) *APIListUserGroupServiceGroupsRequest {
 	r.page = &page
@@ -1400,8 +1392,8 @@ List service groups in a user group.
 */
 func (a *IamUserGroupsAPIService) ListUserGroupServiceGroups(ctx context.Context, userGroupID string) APIListUserGroupServiceGroupsRequest {
 	return APIListUserGroupServiceGroupsRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		userGroupID: userGroupID,
 	}
 }
@@ -1410,10 +1402,10 @@ func (a *IamUserGroupsAPIService) ListUserGroupServiceGroups(ctx context.Context
 //  @return map[string]any
 func (a *IamUserGroupsAPIService) ListUserGroupServiceGroupsExecute(r APIListUserGroupServiceGroupsRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.ListUserGroupServiceGroups")
@@ -1499,7 +1491,6 @@ func (a *IamUserGroupsAPIService) ListUserGroupServiceGroupsExecute(r APIListUse
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1518,10 +1509,10 @@ func (a *IamUserGroupsAPIService) ListUserGroupServiceGroupsExecute(r APIListUse
 
 // APIListUserGroupsRequest represents a request for the resource.
 type APIListUserGroupsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService IamUserGroupsAPI
-	perPage *int32
-	page *int32
+	perPage    *int32
+	page       *int32
 }
 
 // PerPage Number of records per page.
@@ -1529,6 +1520,7 @@ func (r *APIListUserGroupsRequest) PerPage(perPage int32) *APIListUserGroupsRequ
 	r.perPage = &perPage
 	return r
 }
+
 // Page Current page.
 func (r *APIListUserGroupsRequest) Page(page int32) *APIListUserGroupsRequest {
 	r.page = &page
@@ -1551,7 +1543,7 @@ List all user groups.
 func (a *IamUserGroupsAPIService) ListUserGroups(ctx context.Context) APIListUserGroupsRequest {
 	return APIListUserGroupsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1559,10 +1551,10 @@ func (a *IamUserGroupsAPIService) ListUserGroups(ctx context.Context) APIListUse
 //  @return map[string]any
 func (a *IamUserGroupsAPIService) ListUserGroupsExecute(r APIListUserGroupsRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.ListUserGroups")
@@ -1647,7 +1639,6 @@ func (a *IamUserGroupsAPIService) ListUserGroupsExecute(r APIListUserGroupsReque
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1666,8 +1657,8 @@ func (a *IamUserGroupsAPIService) ListUserGroupsExecute(r APIListUserGroupsReque
 
 // APIRemoveUserGroupMembersRequest represents a request for the resource.
 type APIRemoveUserGroupMembersRequest struct {
-	ctx context.Context
-	APIService IamUserGroupsAPI
+	ctx         context.Context
+	APIService  IamUserGroupsAPI
 	userGroupID string
 	requestBody *map[string]map[string]any
 }
@@ -1694,8 +1685,8 @@ Remove members of a user group
 */
 func (a *IamUserGroupsAPIService) RemoveUserGroupMembers(ctx context.Context, userGroupID string) APIRemoveUserGroupMembersRequest {
 	return APIRemoveUserGroupMembersRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		userGroupID: userGroupID,
 	}
 }
@@ -1703,9 +1694,9 @@ func (a *IamUserGroupsAPIService) RemoveUserGroupMembers(ctx context.Context, us
 // RemoveUserGroupMembersExecute executes the request
 func (a *IamUserGroupsAPIService) RemoveUserGroupMembersExecute(r APIRemoveUserGroupMembersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.RemoveUserGroupMembers")
@@ -1778,7 +1769,6 @@ func (a *IamUserGroupsAPIService) RemoveUserGroupMembersExecute(r APIRemoveUserG
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1797,8 +1787,8 @@ func (a *IamUserGroupsAPIService) RemoveUserGroupMembersExecute(r APIRemoveUserG
 
 // APIRemoveUserGroupRolesRequest represents a request for the resource.
 type APIRemoveUserGroupRolesRequest struct {
-	ctx context.Context
-	APIService IamUserGroupsAPI
+	ctx         context.Context
+	APIService  IamUserGroupsAPI
 	userGroupID string
 	requestBody *map[string]map[string]any
 }
@@ -1825,8 +1815,8 @@ Remove roles from a user group.
 */
 func (a *IamUserGroupsAPIService) RemoveUserGroupRoles(ctx context.Context, userGroupID string) APIRemoveUserGroupRolesRequest {
 	return APIRemoveUserGroupRolesRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		userGroupID: userGroupID,
 	}
 }
@@ -1834,9 +1824,9 @@ func (a *IamUserGroupsAPIService) RemoveUserGroupRoles(ctx context.Context, user
 // RemoveUserGroupRolesExecute executes the request
 func (a *IamUserGroupsAPIService) RemoveUserGroupRolesExecute(r APIRemoveUserGroupRolesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.RemoveUserGroupRoles")
@@ -1909,7 +1899,6 @@ func (a *IamUserGroupsAPIService) RemoveUserGroupRolesExecute(r APIRemoveUserGro
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1928,8 +1917,8 @@ func (a *IamUserGroupsAPIService) RemoveUserGroupRolesExecute(r APIRemoveUserGro
 
 // APIRemoveUserGroupServiceGroupsRequest represents a request for the resource.
 type APIRemoveUserGroupServiceGroupsRequest struct {
-	ctx context.Context
-	APIService IamUserGroupsAPI
+	ctx         context.Context
+	APIService  IamUserGroupsAPI
 	userGroupID string
 	requestBody *map[string]map[string]any
 }
@@ -1956,8 +1945,8 @@ Remove service groups from a user group.
 */
 func (a *IamUserGroupsAPIService) RemoveUserGroupServiceGroups(ctx context.Context, userGroupID string) APIRemoveUserGroupServiceGroupsRequest {
 	return APIRemoveUserGroupServiceGroupsRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		userGroupID: userGroupID,
 	}
 }
@@ -1965,9 +1954,9 @@ func (a *IamUserGroupsAPIService) RemoveUserGroupServiceGroups(ctx context.Conte
 // RemoveUserGroupServiceGroupsExecute executes the request
 func (a *IamUserGroupsAPIService) RemoveUserGroupServiceGroupsExecute(r APIRemoveUserGroupServiceGroupsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.RemoveUserGroupServiceGroups")
@@ -2040,7 +2029,6 @@ func (a *IamUserGroupsAPIService) RemoveUserGroupServiceGroupsExecute(r APIRemov
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -2059,8 +2047,8 @@ func (a *IamUserGroupsAPIService) RemoveUserGroupServiceGroupsExecute(r APIRemov
 
 // APIUpdateAUserGroupRequest represents a request for the resource.
 type APIUpdateAUserGroupRequest struct {
-	ctx context.Context
-	APIService IamUserGroupsAPI
+	ctx         context.Context
+	APIService  IamUserGroupsAPI
 	userGroupID string
 	requestBody *map[string]map[string]any
 }
@@ -2087,8 +2075,8 @@ Update a user group.
 */
 func (a *IamUserGroupsAPIService) UpdateAUserGroup(ctx context.Context, userGroupID string) APIUpdateAUserGroupRequest {
 	return APIUpdateAUserGroupRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		userGroupID: userGroupID,
 	}
 }
@@ -2097,10 +2085,10 @@ func (a *IamUserGroupsAPIService) UpdateAUserGroup(ctx context.Context, userGrou
 //  @return map[string]any
 func (a *IamUserGroupsAPIService) UpdateAUserGroupExecute(r APIUpdateAUserGroupRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamUserGroupsAPIService.UpdateAUserGroup")
@@ -2181,7 +2169,6 @@ func (a *IamUserGroupsAPIService) UpdateAUserGroupExecute(r APIUpdateAUserGroupR
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

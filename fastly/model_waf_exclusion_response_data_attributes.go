@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -37,7 +36,7 @@ type WafExclusionResponseDataAttributes struct {
 	// A numeric ID identifying a WAF exclusion.
 	Number *int32 `json:"number,omitempty"`
 	// The variable to exclude. An optional selector can be specified after the variable separated by a colon (`:`) to restrict the variable to a particular parameter. Required for `exclusion_type=variable`.
-	Variable NullableString `json:"variable,omitempty"`
+	Variable             NullableString `json:"variable,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -77,7 +76,7 @@ func (o *WafExclusionResponseDataAttributes) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafExclusionResponseDataAttributes) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -96,6 +95,7 @@ func (o *WafExclusionResponseDataAttributes) HasCreatedAt() bool {
 func (o *WafExclusionResponseDataAttributes) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *WafExclusionResponseDataAttributes) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -119,7 +119,7 @@ func (o *WafExclusionResponseDataAttributes) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafExclusionResponseDataAttributes) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -138,6 +138,7 @@ func (o *WafExclusionResponseDataAttributes) HasDeletedAt() bool {
 func (o *WafExclusionResponseDataAttributes) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *WafExclusionResponseDataAttributes) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -161,7 +162,7 @@ func (o *WafExclusionResponseDataAttributes) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafExclusionResponseDataAttributes) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -180,6 +181,7 @@ func (o *WafExclusionResponseDataAttributes) HasUpdatedAt() bool {
 func (o *WafExclusionResponseDataAttributes) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *WafExclusionResponseDataAttributes) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -363,7 +365,7 @@ func (o *WafExclusionResponseDataAttributes) GetVariable() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafExclusionResponseDataAttributes) GetVariableOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Variable.Get(), o.Variable.IsSet()
@@ -382,6 +384,7 @@ func (o *WafExclusionResponseDataAttributes) HasVariable() bool {
 func (o *WafExclusionResponseDataAttributes) SetVariable(v string) {
 	o.Variable.Set(&v)
 }
+
 // SetVariableNil sets the value for Variable to be an explicit nil
 func (o *WafExclusionResponseDataAttributes) SetVariableNil() {
 	o.Variable.Set(nil)
@@ -432,7 +435,7 @@ func (o WafExclusionResponseDataAttributes) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *WafExclusionResponseDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	varWafExclusionResponseDataAttributes := _WafExclusionResponseDataAttributes{}
 
@@ -458,7 +461,7 @@ func (o *WafExclusionResponseDataAttributes) UnmarshalJSON(bytes []byte) (err er
 	return err
 }
 
-// NullableWafExclusionResponseDataAttributes is a helper abstraction for handling nullable wafexclusionresponsedataattributes types. 
+// NullableWafExclusionResponseDataAttributes is a helper abstraction for handling nullable wafexclusionresponsedataattributes types.
 type NullableWafExclusionResponseDataAttributes struct {
 	value *WafExclusionResponseDataAttributes
 	isSet bool
@@ -498,7 +501,7 @@ func (v NullableWafExclusionResponseDataAttributes) MarshalJSON() ([]byte, error
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableWafExclusionResponseDataAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

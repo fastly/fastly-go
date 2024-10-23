@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -30,7 +29,7 @@ type LoggingElasticsearchAdditional struct {
 	// Basic Auth password.
 	Password NullableString `json:"password,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
-	Format *string `json:"format,omitempty"`
+	Format               *string `json:"format,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -130,7 +129,7 @@ func (o *LoggingElasticsearchAdditional) GetPipeline() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchAdditional) GetPipelineOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Pipeline.Get(), o.Pipeline.IsSet()
@@ -149,6 +148,7 @@ func (o *LoggingElasticsearchAdditional) HasPipeline() bool {
 func (o *LoggingElasticsearchAdditional) SetPipeline(v string) {
 	o.Pipeline.Set(&v)
 }
+
 // SetPipelineNil sets the value for Pipeline to be an explicit nil
 func (o *LoggingElasticsearchAdditional) SetPipelineNil() {
 	o.Pipeline.Set(nil)
@@ -172,7 +172,7 @@ func (o *LoggingElasticsearchAdditional) GetUser() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchAdditional) GetUserOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.User.Get(), o.User.IsSet()
@@ -191,6 +191,7 @@ func (o *LoggingElasticsearchAdditional) HasUser() bool {
 func (o *LoggingElasticsearchAdditional) SetUser(v string) {
 	o.User.Set(&v)
 }
+
 // SetUserNil sets the value for User to be an explicit nil
 func (o *LoggingElasticsearchAdditional) SetUserNil() {
 	o.User.Set(nil)
@@ -214,7 +215,7 @@ func (o *LoggingElasticsearchAdditional) GetPassword() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchAdditional) GetPasswordOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Password.Get(), o.Password.IsSet()
@@ -233,6 +234,7 @@ func (o *LoggingElasticsearchAdditional) HasPassword() bool {
 func (o *LoggingElasticsearchAdditional) SetPassword(v string) {
 	o.Password.Set(&v)
 }
+
 // SetPasswordNil sets the value for Password to be an explicit nil
 func (o *LoggingElasticsearchAdditional) SetPasswordNil() {
 	o.Password.Set(nil)
@@ -306,7 +308,7 @@ func (o LoggingElasticsearchAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingElasticsearchAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingElasticsearchAdditional := _LoggingElasticsearchAdditional{}
 
@@ -329,7 +331,7 @@ func (o *LoggingElasticsearchAdditional) UnmarshalJSON(bytes []byte) (err error)
 	return err
 }
 
-// NullableLoggingElasticsearchAdditional is a helper abstraction for handling nullable loggingelasticsearchadditional types. 
+// NullableLoggingElasticsearchAdditional is a helper abstraction for handling nullable loggingelasticsearchadditional types.
 type NullableLoggingElasticsearchAdditional struct {
 	value *LoggingElasticsearchAdditional
 	isSet bool
@@ -369,7 +371,7 @@ func (v NullableLoggingElasticsearchAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingElasticsearchAdditional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

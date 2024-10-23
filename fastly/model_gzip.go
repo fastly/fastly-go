@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -26,7 +25,7 @@ type Gzip struct {
 	// Space-separated list of file extensions to compress. If you omit this field a default list will be used.
 	Extensions NullableString `json:"extensions,omitempty"`
 	// Name of the gzip configuration.
-	Name *string `json:"name,omitempty"`
+	Name                 *string `json:"name,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -62,7 +61,7 @@ func (o *Gzip) GetCacheCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Gzip) GetCacheConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CacheCondition.Get(), o.CacheCondition.IsSet()
@@ -81,6 +80,7 @@ func (o *Gzip) HasCacheCondition() bool {
 func (o *Gzip) SetCacheCondition(v string) {
 	o.CacheCondition.Set(&v)
 }
+
 // SetCacheConditionNil sets the value for CacheCondition to be an explicit nil
 func (o *Gzip) SetCacheConditionNil() {
 	o.CacheCondition.Set(nil)
@@ -104,7 +104,7 @@ func (o *Gzip) GetContentTypes() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Gzip) GetContentTypesOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ContentTypes.Get(), o.ContentTypes.IsSet()
@@ -123,6 +123,7 @@ func (o *Gzip) HasContentTypes() bool {
 func (o *Gzip) SetContentTypes(v string) {
 	o.ContentTypes.Set(&v)
 }
+
 // SetContentTypesNil sets the value for ContentTypes to be an explicit nil
 func (o *Gzip) SetContentTypesNil() {
 	o.ContentTypes.Set(nil)
@@ -146,7 +147,7 @@ func (o *Gzip) GetExtensions() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Gzip) GetExtensionsOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Extensions.Get(), o.Extensions.IsSet()
@@ -165,6 +166,7 @@ func (o *Gzip) HasExtensions() bool {
 func (o *Gzip) SetExtensions(v string) {
 	o.Extensions.Set(&v)
 }
+
 // SetExtensionsNil sets the value for Extensions to be an explicit nil
 func (o *Gzip) SetExtensionsNil() {
 	o.Extensions.Set(nil)
@@ -232,7 +234,7 @@ func (o Gzip) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *Gzip) UnmarshalJSON(bytes []byte) (err error) {
 	varGzip := _Gzip{}
 
@@ -253,7 +255,7 @@ func (o *Gzip) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableGzip is a helper abstraction for handling nullable gzip types. 
+// NullableGzip is a helper abstraction for handling nullable gzip types.
 type NullableGzip struct {
 	value *Gzip
 	isSet bool
@@ -293,7 +295,7 @@ func (v NullableGzip) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableGzip) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

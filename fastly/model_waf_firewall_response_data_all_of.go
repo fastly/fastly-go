@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,16 +12,15 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
 // WafFirewallResponseDataAllOf struct for WafFirewallResponseDataAllOf
 type WafFirewallResponseDataAllOf struct {
-	ID *string `json:"id,omitempty"`
-	Attributes *WafFirewallResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *RelationshipWafFirewallVersions `json:"relationships,omitempty"`
+	ID                   *string                            `json:"id,omitempty"`
+	Attributes           *WafFirewallResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships        *RelationshipWafFirewallVersions   `json:"relationships,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -162,7 +161,7 @@ func (o WafFirewallResponseDataAllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *WafFirewallResponseDataAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	varWafFirewallResponseDataAllOf := _WafFirewallResponseDataAllOf{}
 
@@ -182,7 +181,7 @@ func (o *WafFirewallResponseDataAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableWafFirewallResponseDataAllOf is a helper abstraction for handling nullable waffirewallresponsedataallof types. 
+// NullableWafFirewallResponseDataAllOf is a helper abstraction for handling nullable waffirewallresponsedataallof types.
 type NullableWafFirewallResponseDataAllOf struct {
 	value *WafFirewallResponseDataAllOf
 	isSet bool
@@ -222,7 +221,7 @@ func (v NullableWafFirewallResponseDataAllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableWafFirewallResponseDataAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

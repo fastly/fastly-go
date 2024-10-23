@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,12 +19,12 @@ import (
 // PlatformDdosResponse struct for PlatformDdosResponse
 type PlatformDdosResponse struct {
 	// Whether or not we were able to successfully execute the query.
-	Status *string `json:"status,omitempty"`
-	Meta *HistoricalDdosMeta `json:"meta,omitempty"`
+	Status *string             `json:"status,omitempty"`
+	Meta   *HistoricalDdosMeta `json:"meta,omitempty"`
 	// If the query was not successful, this will provide a string that explains why.
 	Msg NullableString `json:"msg,omitempty"`
 	// A list of timeseries.
-	Data []PlatformDdosEntry `json:"data,omitempty"`
+	Data                 []PlatformDdosEntry `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -125,7 +124,7 @@ func (o *PlatformDdosResponse) GetMsg() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PlatformDdosResponse) GetMsgOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Msg.Get(), o.Msg.IsSet()
@@ -144,6 +143,7 @@ func (o *PlatformDdosResponse) HasMsg() bool {
 func (o *PlatformDdosResponse) SetMsg(v string) {
 	o.Msg.Set(&v)
 }
+
 // SetMsgNil sets the value for Msg to be an explicit nil
 func (o *PlatformDdosResponse) SetMsgNil() {
 	o.Msg.Set(nil)
@@ -211,7 +211,7 @@ func (o PlatformDdosResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *PlatformDdosResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varPlatformDdosResponse := _PlatformDdosResponse{}
 
@@ -232,7 +232,7 @@ func (o *PlatformDdosResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullablePlatformDdosResponse is a helper abstraction for handling nullable platformddosresponse types. 
+// NullablePlatformDdosResponse is a helper abstraction for handling nullable platformddosresponse types.
 type NullablePlatformDdosResponse struct {
 	value *PlatformDdosResponse
 	isSet bool
@@ -272,7 +272,7 @@ func (v NullablePlatformDdosResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullablePlatformDdosResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

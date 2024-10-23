@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,13 +21,13 @@ import (
 type LoggingOpenstackResponse struct {
 	// The name for the real-time logging configuration.
 	Name *string `json:"name,omitempty"`
-	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// How the message should be formatted.
 	MessageType *string `json:"message_type,omitempty"`
@@ -46,8 +45,8 @@ type LoggingOpenstackResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	ServiceID *string      `json:"service_id,omitempty"`
+	Version   *string      `json:"version,omitempty"`
 	// Your OpenStack account access key.
 	AccessKey *string `json:"access_key,omitempty"`
 	// The name of your OpenStack container.
@@ -59,7 +58,7 @@ type LoggingOpenstackResponse struct {
 	// Your OpenStack auth url.
 	URL *string `json:"url,omitempty"`
 	// The username for your OpenStack account.
-	User *string `json:"user,omitempty"`
+	User                 *string `json:"user,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -155,7 +154,7 @@ func (o *LoggingOpenstackResponse) GetPlacement() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingOpenstackResponse) GetPlacementOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -174,6 +173,7 @@ func (o *LoggingOpenstackResponse) HasPlacement() bool {
 func (o *LoggingOpenstackResponse) SetPlacement(v string) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *LoggingOpenstackResponse) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -197,7 +197,7 @@ func (o *LoggingOpenstackResponse) GetResponseCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingOpenstackResponse) GetResponseConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseCondition.Get(), o.ResponseCondition.IsSet()
@@ -216,6 +216,7 @@ func (o *LoggingOpenstackResponse) HasResponseCondition() bool {
 func (o *LoggingOpenstackResponse) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
+
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 func (o *LoggingOpenstackResponse) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
@@ -335,7 +336,7 @@ func (o *LoggingOpenstackResponse) GetTimestampFormat() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingOpenstackResponse) GetTimestampFormatOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TimestampFormat.Get(), o.TimestampFormat.IsSet()
@@ -354,6 +355,7 @@ func (o *LoggingOpenstackResponse) HasTimestampFormat() bool {
 func (o *LoggingOpenstackResponse) SetTimestampFormat(v string) {
 	o.TimestampFormat.Set(&v)
 }
+
 // SetTimestampFormatNil sets the value for TimestampFormat to be an explicit nil
 func (o *LoggingOpenstackResponse) SetTimestampFormatNil() {
 	o.TimestampFormat.Set(nil)
@@ -473,7 +475,7 @@ func (o *LoggingOpenstackResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingOpenstackResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -492,6 +494,7 @@ func (o *LoggingOpenstackResponse) HasCreatedAt() bool {
 func (o *LoggingOpenstackResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *LoggingOpenstackResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -515,7 +518,7 @@ func (o *LoggingOpenstackResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingOpenstackResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -534,6 +537,7 @@ func (o *LoggingOpenstackResponse) HasDeletedAt() bool {
 func (o *LoggingOpenstackResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *LoggingOpenstackResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -557,7 +561,7 @@ func (o *LoggingOpenstackResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingOpenstackResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -576,6 +580,7 @@ func (o *LoggingOpenstackResponse) HasUpdatedAt() bool {
 func (o *LoggingOpenstackResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *LoggingOpenstackResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -727,7 +732,7 @@ func (o *LoggingOpenstackResponse) GetPath() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingOpenstackResponse) GetPathOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
@@ -746,6 +751,7 @@ func (o *LoggingOpenstackResponse) HasPath() bool {
 func (o *LoggingOpenstackResponse) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *LoggingOpenstackResponse) SetPathNil() {
 	o.Path.Set(nil)
@@ -769,7 +775,7 @@ func (o *LoggingOpenstackResponse) GetPublicKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingOpenstackResponse) GetPublicKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PublicKey.Get(), o.PublicKey.IsSet()
@@ -788,6 +794,7 @@ func (o *LoggingOpenstackResponse) HasPublicKey() bool {
 func (o *LoggingOpenstackResponse) SetPublicKey(v string) {
 	o.PublicKey.Set(&v)
 }
+
 // SetPublicKeyNil sets the value for PublicKey to be an explicit nil
 func (o *LoggingOpenstackResponse) SetPublicKeyNil() {
 	o.PublicKey.Set(nil)
@@ -938,7 +945,7 @@ func (o LoggingOpenstackResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingOpenstackResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingOpenstackResponse := _LoggingOpenstackResponse{}
 
@@ -976,7 +983,7 @@ func (o *LoggingOpenstackResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingOpenstackResponse is a helper abstraction for handling nullable loggingopenstackresponse types. 
+// NullableLoggingOpenstackResponse is a helper abstraction for handling nullable loggingopenstackresponse types.
 type NullableLoggingOpenstackResponse struct {
 	value *LoggingOpenstackResponse
 	isSet bool
@@ -1016,7 +1023,7 @@ func (v NullableLoggingOpenstackResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingOpenstackResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

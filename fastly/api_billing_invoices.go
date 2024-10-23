@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,13 +31,13 @@ var (
 type BillingInvoicesAPI interface {
 
 	/*
-	GetInvoiceByInvoiceID Get invoice by ID.
+		GetInvoiceByInvoiceID Get invoice by ID.
 
-	Returns invoice associated with the invoice id.
+		Returns invoice associated with the invoice id.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param invoiceID
-	 @return APIGetInvoiceByInvoiceIDRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param invoiceID
+		 @return APIGetInvoiceByInvoiceIDRequest
 	*/
 	GetInvoiceByInvoiceID(ctx context.Context, invoiceID int32) APIGetInvoiceByInvoiceIDRequest
 
@@ -47,12 +46,12 @@ type BillingInvoicesAPI interface {
 	GetInvoiceByInvoiceIDExecute(r APIGetInvoiceByInvoiceIDRequest) (*EomInvoiceResponse, *http.Response, error)
 
 	/*
-	GetMonthToDateInvoice Get month-to-date invoice.
+		GetMonthToDateInvoice Get month-to-date invoice.
 
-	Returns month-to-date invoice for the current month.
+		Returns month-to-date invoice for the current month.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIGetMonthToDateInvoiceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIGetMonthToDateInvoiceRequest
 	*/
 	GetMonthToDateInvoice(ctx context.Context) APIGetMonthToDateInvoiceRequest
 
@@ -61,12 +60,12 @@ type BillingInvoicesAPI interface {
 	GetMonthToDateInvoiceExecute(r APIGetMonthToDateInvoiceRequest) (*MtdInvoiceResponse, *http.Response, error)
 
 	/*
-	ListInvoices List of invoices.
+		ListInvoices List of invoices.
 
-	Returns the list of invoices, sorted by billing start date (newest to oldest).
+		Returns the list of invoices, sorted by billing start date (newest to oldest).
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListInvoicesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListInvoicesRequest
 	*/
 	ListInvoices(ctx context.Context) APIListInvoicesRequest
 
@@ -80,11 +79,10 @@ type BillingInvoicesAPIService service
 
 // APIGetInvoiceByInvoiceIDRequest represents a request for the resource.
 type APIGetInvoiceByInvoiceIDRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService BillingInvoicesAPI
-	invoiceID int32
+	invoiceID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetInvoiceByInvoiceIDRequest) Execute() (*EomInvoiceResponse, *http.Response, error) {
@@ -103,8 +101,8 @@ Returns invoice associated with the invoice id.
 func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceID(ctx context.Context, invoiceID int32) APIGetInvoiceByInvoiceIDRequest {
 	return APIGetInvoiceByInvoiceIDRequest{
 		APIService: a,
-		ctx: ctx,
-		invoiceID: invoiceID,
+		ctx:        ctx,
+		invoiceID:  invoiceID,
 	}
 }
 
@@ -112,10 +110,10 @@ func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceID(ctx context.Context, i
 //  @return EomInvoiceResponse
 func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceIDExecute(r APIGetInvoiceByInvoiceIDRequest) (*EomInvoiceResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *EomInvoiceResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *EomInvoiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInvoicesAPIService.GetInvoiceByInvoiceID")
@@ -224,7 +222,6 @@ func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceIDExecute(r APIGetInvoice
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -243,10 +240,9 @@ func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceIDExecute(r APIGetInvoice
 
 // APIGetMonthToDateInvoiceRequest represents a request for the resource.
 type APIGetMonthToDateInvoiceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService BillingInvoicesAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetMonthToDateInvoiceRequest) Execute() (*MtdInvoiceResponse, *http.Response, error) {
@@ -264,7 +260,7 @@ Returns month-to-date invoice for the current month.
 func (a *BillingInvoicesAPIService) GetMonthToDateInvoice(ctx context.Context) APIGetMonthToDateInvoiceRequest {
 	return APIGetMonthToDateInvoiceRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -272,10 +268,10 @@ func (a *BillingInvoicesAPIService) GetMonthToDateInvoice(ctx context.Context) A
 //  @return MtdInvoiceResponse
 func (a *BillingInvoicesAPIService) GetMonthToDateInvoiceExecute(r APIGetMonthToDateInvoiceRequest) (*MtdInvoiceResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *MtdInvoiceResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *MtdInvoiceResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInvoicesAPIService.GetMonthToDateInvoice")
@@ -393,7 +389,6 @@ func (a *BillingInvoicesAPIService) GetMonthToDateInvoiceExecute(r APIGetMonthTo
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -412,12 +407,12 @@ func (a *BillingInvoicesAPIService) GetMonthToDateInvoiceExecute(r APIGetMonthTo
 
 // APIListInvoicesRequest represents a request for the resource.
 type APIListInvoicesRequest struct {
-	ctx context.Context
-	APIService BillingInvoicesAPI
+	ctx              context.Context
+	APIService       BillingInvoicesAPI
 	billingStartDate *string
-	billingEndDate *string
-	limit *string
-	cursor *string
+	billingEndDate   *string
+	limit            *string
+	cursor           *string
 }
 
 // BillingStartDate returns a pointer to a request.
@@ -425,16 +420,19 @@ func (r *APIListInvoicesRequest) BillingStartDate(billingStartDate string) *APIL
 	r.billingStartDate = &billingStartDate
 	return r
 }
+
 // BillingEndDate returns a pointer to a request.
 func (r *APIListInvoicesRequest) BillingEndDate(billingEndDate string) *APIListInvoicesRequest {
 	r.billingEndDate = &billingEndDate
 	return r
 }
+
 // Limit Number of results per page. The maximum is 200.
 func (r *APIListInvoicesRequest) Limit(limit string) *APIListInvoicesRequest {
 	r.limit = &limit
 	return r
 }
+
 // Cursor Cursor value from the &#x60;next_cursor&#x60; field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
 func (r *APIListInvoicesRequest) Cursor(cursor string) *APIListInvoicesRequest {
 	r.cursor = &cursor
@@ -457,7 +455,7 @@ Returns the list of invoices, sorted by billing start date (newest to oldest).
 func (a *BillingInvoicesAPIService) ListInvoices(ctx context.Context) APIListInvoicesRequest {
 	return APIListInvoicesRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -465,10 +463,10 @@ func (a *BillingInvoicesAPIService) ListInvoices(ctx context.Context) APIListInv
 //  @return ListEomInvoicesResponse
 func (a *BillingInvoicesAPIService) ListInvoicesExecute(r APIListInvoicesRequest) (*ListEomInvoicesResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ListEomInvoicesResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ListEomInvoicesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInvoicesAPIService.ListInvoices")
@@ -587,7 +585,6 @@ func (a *BillingInvoicesAPIService) ListInvoicesExecute(r APIListInvoicesRequest
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

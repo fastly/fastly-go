@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,13 +21,13 @@ import (
 type LoggingAzureblobResponse struct {
 	// The name for the real-time logging configuration.
 	Name *string `json:"name,omitempty"`
-	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// How the message should be formatted.
 	MessageType *string `json:"message_type,omitempty"`
@@ -46,8 +45,8 @@ type LoggingAzureblobResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	ServiceID *string      `json:"service_id,omitempty"`
+	Version   *string      `json:"version,omitempty"`
 	// The path to upload logs to.
 	Path NullableString `json:"path,omitempty"`
 	// The unique Azure Blob Storage namespace in which your data objects are stored. Required.
@@ -59,7 +58,7 @@ type LoggingAzureblobResponse struct {
 	// A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 	PublicKey NullableString `json:"public_key,omitempty"`
 	// The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
-	FileMaxBytes *int32 `json:"file_max_bytes,omitempty"`
+	FileMaxBytes         *int32 `json:"file_max_bytes,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -155,7 +154,7 @@ func (o *LoggingAzureblobResponse) GetPlacement() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingAzureblobResponse) GetPlacementOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -174,6 +173,7 @@ func (o *LoggingAzureblobResponse) HasPlacement() bool {
 func (o *LoggingAzureblobResponse) SetPlacement(v string) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *LoggingAzureblobResponse) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -197,7 +197,7 @@ func (o *LoggingAzureblobResponse) GetResponseCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingAzureblobResponse) GetResponseConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseCondition.Get(), o.ResponseCondition.IsSet()
@@ -216,6 +216,7 @@ func (o *LoggingAzureblobResponse) HasResponseCondition() bool {
 func (o *LoggingAzureblobResponse) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
+
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 func (o *LoggingAzureblobResponse) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
@@ -335,7 +336,7 @@ func (o *LoggingAzureblobResponse) GetTimestampFormat() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingAzureblobResponse) GetTimestampFormatOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TimestampFormat.Get(), o.TimestampFormat.IsSet()
@@ -354,6 +355,7 @@ func (o *LoggingAzureblobResponse) HasTimestampFormat() bool {
 func (o *LoggingAzureblobResponse) SetTimestampFormat(v string) {
 	o.TimestampFormat.Set(&v)
 }
+
 // SetTimestampFormatNil sets the value for TimestampFormat to be an explicit nil
 func (o *LoggingAzureblobResponse) SetTimestampFormatNil() {
 	o.TimestampFormat.Set(nil)
@@ -473,7 +475,7 @@ func (o *LoggingAzureblobResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingAzureblobResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -492,6 +494,7 @@ func (o *LoggingAzureblobResponse) HasCreatedAt() bool {
 func (o *LoggingAzureblobResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *LoggingAzureblobResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -515,7 +518,7 @@ func (o *LoggingAzureblobResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingAzureblobResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -534,6 +537,7 @@ func (o *LoggingAzureblobResponse) HasDeletedAt() bool {
 func (o *LoggingAzureblobResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *LoggingAzureblobResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -557,7 +561,7 @@ func (o *LoggingAzureblobResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingAzureblobResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -576,6 +580,7 @@ func (o *LoggingAzureblobResponse) HasUpdatedAt() bool {
 func (o *LoggingAzureblobResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *LoggingAzureblobResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -663,7 +668,7 @@ func (o *LoggingAzureblobResponse) GetPath() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingAzureblobResponse) GetPathOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
@@ -682,6 +687,7 @@ func (o *LoggingAzureblobResponse) HasPath() bool {
 func (o *LoggingAzureblobResponse) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *LoggingAzureblobResponse) SetPathNil() {
 	o.Path.Set(nil)
@@ -801,7 +807,7 @@ func (o *LoggingAzureblobResponse) GetPublicKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingAzureblobResponse) GetPublicKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PublicKey.Get(), o.PublicKey.IsSet()
@@ -820,6 +826,7 @@ func (o *LoggingAzureblobResponse) HasPublicKey() bool {
 func (o *LoggingAzureblobResponse) SetPublicKey(v string) {
 	o.PublicKey.Set(&v)
 }
+
 // SetPublicKeyNil sets the value for PublicKey to be an explicit nil
 func (o *LoggingAzureblobResponse) SetPublicKeyNil() {
 	o.PublicKey.Set(nil)
@@ -938,7 +945,7 @@ func (o LoggingAzureblobResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingAzureblobResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingAzureblobResponse := _LoggingAzureblobResponse{}
 
@@ -976,7 +983,7 @@ func (o *LoggingAzureblobResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingAzureblobResponse is a helper abstraction for handling nullable loggingazureblobresponse types. 
+// NullableLoggingAzureblobResponse is a helper abstraction for handling nullable loggingazureblobresponse types.
 type NullableLoggingAzureblobResponse struct {
 	value *LoggingAzureblobResponse
 	isSet bool
@@ -1016,7 +1023,7 @@ func (v NullableLoggingAzureblobResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingAzureblobResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

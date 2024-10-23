@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,14 +12,13 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
 // RelationshipTLSBulkCertificate struct for RelationshipTLSBulkCertificate
 type RelationshipTLSBulkCertificate struct {
-	TLSBulkCertificate *RelationshipTLSBulkCertificateTLSBulkCertificate `json:"tls_bulk_certificate,omitempty"`
+	TLSBulkCertificate   *RelationshipTLSBulkCertificateTLSBulkCertificate `json:"tls_bulk_certificate,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -90,7 +89,7 @@ func (o RelationshipTLSBulkCertificate) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *RelationshipTLSBulkCertificate) UnmarshalJSON(bytes []byte) (err error) {
 	varRelationshipTLSBulkCertificate := _RelationshipTLSBulkCertificate{}
 
@@ -108,7 +107,7 @@ func (o *RelationshipTLSBulkCertificate) UnmarshalJSON(bytes []byte) (err error)
 	return err
 }
 
-// NullableRelationshipTLSBulkCertificate is a helper abstraction for handling nullable relationshiptlsbulkcertificate types. 
+// NullableRelationshipTLSBulkCertificate is a helper abstraction for handling nullable relationshiptlsbulkcertificate types.
 type NullableRelationshipTLSBulkCertificate struct {
 	value *RelationshipTLSBulkCertificate
 	isSet bool
@@ -148,7 +147,7 @@ func (v NullableRelationshipTLSBulkCertificate) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableRelationshipTLSBulkCertificate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -33,10 +32,10 @@ type ACLEntryResponse struct {
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ACLID *string `json:"acl_id,omitempty"`
-	ID *string `json:"id,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
+	ACLID                *string      `json:"acl_id,omitempty"`
+	ID                   *string      `json:"id,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -108,7 +107,7 @@ func (o *ACLEntryResponse) GetComment() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ACLEntryResponse) GetCommentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
@@ -127,6 +126,7 @@ func (o *ACLEntryResponse) HasComment() bool {
 func (o *ACLEntryResponse) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *ACLEntryResponse) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -182,7 +182,7 @@ func (o *ACLEntryResponse) GetSubnet() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ACLEntryResponse) GetSubnetOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Subnet.Get(), o.Subnet.IsSet()
@@ -201,6 +201,7 @@ func (o *ACLEntryResponse) HasSubnet() bool {
 func (o *ACLEntryResponse) SetSubnet(v int32) {
 	o.Subnet.Set(&v)
 }
+
 // SetSubnetNil sets the value for Subnet to be an explicit nil
 func (o *ACLEntryResponse) SetSubnetNil() {
 	o.Subnet.Set(nil)
@@ -224,7 +225,7 @@ func (o *ACLEntryResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ACLEntryResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -243,6 +244,7 @@ func (o *ACLEntryResponse) HasCreatedAt() bool {
 func (o *ACLEntryResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *ACLEntryResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -266,7 +268,7 @@ func (o *ACLEntryResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ACLEntryResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -285,6 +287,7 @@ func (o *ACLEntryResponse) HasDeletedAt() bool {
 func (o *ACLEntryResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *ACLEntryResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -308,7 +311,7 @@ func (o *ACLEntryResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ACLEntryResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -327,6 +330,7 @@ func (o *ACLEntryResponse) HasUpdatedAt() bool {
 func (o *ACLEntryResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *ACLEntryResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -476,7 +480,7 @@ func (o ACLEntryResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *ACLEntryResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varACLEntryResponse := _ACLEntryResponse{}
 
@@ -503,7 +507,7 @@ func (o *ACLEntryResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableACLEntryResponse is a helper abstraction for handling nullable aclentryresponse types. 
+// NullableACLEntryResponse is a helper abstraction for handling nullable aclentryresponse types.
 type NullableACLEntryResponse struct {
 	value *ACLEntryResponse
 	isSet bool
@@ -543,7 +547,7 @@ func (v NullableACLEntryResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableACLEntryResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,15 +31,15 @@ var (
 type ImageOptimizerDefaultSettingsAPI interface {
 
 	/*
-	GetDefaultSettings Get current Image Optimizer Default Settings
+		GetDefaultSettings Get current Image Optimizer Default Settings
 
-	Retrieve the current Image Optimizer default settings. All properties in the response will be populated.
+		Retrieve the current Image Optimizer default settings. All properties in the response will be populated.
 
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIGetDefaultSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIGetDefaultSettingsRequest
 	*/
 	GetDefaultSettings(ctx context.Context, serviceID string, versionID int32) APIGetDefaultSettingsRequest
 
@@ -49,16 +48,16 @@ type ImageOptimizerDefaultSettingsAPI interface {
 	GetDefaultSettingsExecute(r APIGetDefaultSettingsRequest) (*DefaultSettingsResponse, *http.Response, error)
 
 	/*
-	UpdateDefaultSettings Update Image Optimizer Default Settings
+		UpdateDefaultSettings Update Image Optimizer Default Settings
 
-	Update one or more default settings. A minimum of one property is required. The endpoint will respond with the new Image Optimizer default settings,
-with all properties populated.
+		Update one or more default settings. A minimum of one property is required. The endpoint will respond with the new Image Optimizer default settings,
+	with all properties populated.
 
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIUpdateDefaultSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIUpdateDefaultSettingsRequest
 	*/
 	UpdateDefaultSettings(ctx context.Context, serviceID string, versionID int32) APIUpdateDefaultSettingsRequest
 
@@ -72,12 +71,11 @@ type ImageOptimizerDefaultSettingsAPIService service
 
 // APIGetDefaultSettingsRequest represents a request for the resource.
 type APIGetDefaultSettingsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ImageOptimizerDefaultSettingsAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetDefaultSettingsRequest) Execute() (*DefaultSettingsResponse, *http.Response, error) {
@@ -98,9 +96,9 @@ Retrieve the current Image Optimizer default settings. All properties in the res
 func (a *ImageOptimizerDefaultSettingsAPIService) GetDefaultSettings(ctx context.Context, serviceID string, versionID int32) APIGetDefaultSettingsRequest {
 	return APIGetDefaultSettingsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -108,10 +106,10 @@ func (a *ImageOptimizerDefaultSettingsAPIService) GetDefaultSettings(ctx context
 //  @return DefaultSettingsResponse
 func (a *ImageOptimizerDefaultSettingsAPIService) GetDefaultSettingsExecute(r APIGetDefaultSettingsRequest) (*DefaultSettingsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DefaultSettingsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DefaultSettingsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageOptimizerDefaultSettingsAPIService.GetDefaultSettings")
@@ -201,7 +199,6 @@ func (a *ImageOptimizerDefaultSettingsAPIService) GetDefaultSettingsExecute(r AP
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -220,10 +217,10 @@ func (a *ImageOptimizerDefaultSettingsAPIService) GetDefaultSettingsExecute(r AP
 
 // APIUpdateDefaultSettingsRequest represents a request for the resource.
 type APIUpdateDefaultSettingsRequest struct {
-	ctx context.Context
-	APIService ImageOptimizerDefaultSettingsAPI
-	serviceID string
-	versionID int32
+	ctx             context.Context
+	APIService      ImageOptimizerDefaultSettingsAPI
+	serviceID       string
+	versionID       int32
 	defaultSettings *DefaultSettings
 }
 
@@ -253,9 +250,9 @@ with all properties populated.
 func (a *ImageOptimizerDefaultSettingsAPIService) UpdateDefaultSettings(ctx context.Context, serviceID string, versionID int32) APIUpdateDefaultSettingsRequest {
 	return APIUpdateDefaultSettingsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -263,10 +260,10 @@ func (a *ImageOptimizerDefaultSettingsAPIService) UpdateDefaultSettings(ctx cont
 //  @return DefaultSettingsResponse
 func (a *ImageOptimizerDefaultSettingsAPIService) UpdateDefaultSettingsExecute(r APIUpdateDefaultSettingsRequest) (*DefaultSettingsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DefaultSettingsResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DefaultSettingsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImageOptimizerDefaultSettingsAPIService.UpdateDefaultSettings")
@@ -367,7 +364,6 @@ func (a *ImageOptimizerDefaultSettingsAPIService) UpdateDefaultSettingsExecute(r
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

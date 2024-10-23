@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,16 +31,16 @@ var (
 type WafRuleRevisionsAPI interface {
 
 	/*
-	GetWafRuleRevision Get a revision of a rule
+		GetWafRuleRevision Get a revision of a rule
 
-	Get a specific rule revision.
+		Get a specific rule revision.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param wafRuleID Alphanumeric string identifying a WAF rule.
-	 @param wafRuleRevisionNumber Revision number.
-	 @return APIGetWafRuleRevisionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param wafRuleID Alphanumeric string identifying a WAF rule.
+		 @param wafRuleRevisionNumber Revision number.
+		 @return APIGetWafRuleRevisionRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetWafRuleRevision(ctx context.Context, wafRuleID string, wafRuleRevisionNumber int32) APIGetWafRuleRevisionRequest
 
@@ -51,15 +50,15 @@ type WafRuleRevisionsAPI interface {
 	GetWafRuleRevisionExecute(r APIGetWafRuleRevisionRequest) (*WafRuleRevisionResponse, *http.Response, error)
 
 	/*
-	ListWafRuleRevisions List revisions for a rule
+		ListWafRuleRevisions List revisions for a rule
 
-	List all revisions for a specific rule. The `rule_id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.
+		List all revisions for a specific rule. The `rule_id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param wafRuleID Alphanumeric string identifying a WAF rule.
-	 @return APIListWafRuleRevisionsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param wafRuleID Alphanumeric string identifying a WAF rule.
+		 @return APIListWafRuleRevisionsRequest
 
-	Deprecated
+		Deprecated
 	*/
 	ListWafRuleRevisions(ctx context.Context, wafRuleID string) APIListWafRuleRevisionsRequest
 
@@ -74,14 +73,14 @@ type WafRuleRevisionsAPIService service
 
 // APIGetWafRuleRevisionRequest represents a request for the resource.
 type APIGetWafRuleRevisionRequest struct {
-	ctx context.Context
-	APIService WafRuleRevisionsAPI
-	wafRuleID string
+	ctx                   context.Context
+	APIService            WafRuleRevisionsAPI
+	wafRuleID             string
 	wafRuleRevisionNumber int32
-	include *string
+	include               *string
 }
 
-// Include Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_rule&#x60;, &#x60;vcl&#x60;, and &#x60;source&#x60;. The &#x60;vcl&#x60; and &#x60;source&#x60; relationships show the WAF VCL and corresponding ModSecurity source. These fields are blank unless the relationship is included. 
+// Include Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_rule&#x60;, &#x60;vcl&#x60;, and &#x60;source&#x60;. The &#x60;vcl&#x60; and &#x60;source&#x60; relationships show the WAF VCL and corresponding ModSecurity source. These fields are blank unless the relationship is included.
 func (r *APIGetWafRuleRevisionRequest) Include(include string) *APIGetWafRuleRevisionRequest {
 	r.include = &include
 	return r
@@ -106,9 +105,9 @@ Deprecated
 */
 func (a *WafRuleRevisionsAPIService) GetWafRuleRevision(ctx context.Context, wafRuleID string, wafRuleRevisionNumber int32) APIGetWafRuleRevisionRequest {
 	return APIGetWafRuleRevisionRequest{
-		APIService: a,
-		ctx: ctx,
-		wafRuleID: wafRuleID,
+		APIService:            a,
+		ctx:                   ctx,
+		wafRuleID:             wafRuleID,
 		wafRuleRevisionNumber: wafRuleRevisionNumber,
 	}
 }
@@ -118,10 +117,10 @@ func (a *WafRuleRevisionsAPIService) GetWafRuleRevision(ctx context.Context, waf
 // Deprecated
 func (a *WafRuleRevisionsAPIService) GetWafRuleRevisionExecute(r APIGetWafRuleRevisionRequest) (*WafRuleRevisionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *WafRuleRevisionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *WafRuleRevisionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WafRuleRevisionsAPIService.GetWafRuleRevision")
@@ -205,7 +204,6 @@ func (a *WafRuleRevisionsAPIService) GetWafRuleRevisionExecute(r APIGetWafRuleRe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -224,12 +222,12 @@ func (a *WafRuleRevisionsAPIService) GetWafRuleRevisionExecute(r APIGetWafRuleRe
 
 // APIListWafRuleRevisionsRequest represents a request for the resource.
 type APIListWafRuleRevisionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService WafRuleRevisionsAPI
-	wafRuleID string
+	wafRuleID  string
 	pageNumber *int32
-	pageSize *int32
-	include *string
+	pageSize   *int32
+	include    *string
 }
 
 // PageNumber Current page.
@@ -237,11 +235,13 @@ func (r *APIListWafRuleRevisionsRequest) PageNumber(pageNumber int32) *APIListWa
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListWafRuleRevisionsRequest) PageSize(pageSize int32) *APIListWafRuleRevisionsRequest {
 	r.pageSize = &pageSize
 	return r
 }
+
 // Include Include relationships. Optional.
 func (r *APIListWafRuleRevisionsRequest) Include(include string) *APIListWafRuleRevisionsRequest {
 	r.include = &include
@@ -267,8 +267,8 @@ Deprecated
 func (a *WafRuleRevisionsAPIService) ListWafRuleRevisions(ctx context.Context, wafRuleID string) APIListWafRuleRevisionsRequest {
 	return APIListWafRuleRevisionsRequest{
 		APIService: a,
-		ctx: ctx,
-		wafRuleID: wafRuleID,
+		ctx:        ctx,
+		wafRuleID:  wafRuleID,
 	}
 }
 
@@ -277,10 +277,10 @@ func (a *WafRuleRevisionsAPIService) ListWafRuleRevisions(ctx context.Context, w
 // Deprecated
 func (a *WafRuleRevisionsAPIService) ListWafRuleRevisionsExecute(r APIListWafRuleRevisionsRequest) (*WafRuleRevisionsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *WafRuleRevisionsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *WafRuleRevisionsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WafRuleRevisionsAPIService.ListWafRuleRevisions")
@@ -368,7 +368,6 @@ func (a *WafRuleRevisionsAPIService) ListWafRuleRevisionsExecute(r APIListWafRul
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

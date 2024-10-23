@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -23,12 +22,12 @@ type AutomationToken struct {
 	Name *string `json:"name,omitempty"`
 	// The role on the token.
 	Role *string `json:"role,omitempty"`
-	// (Optional) The service IDs of the services the token will have access to. Separate service IDs with a space. If no services are specified, the token will have access to all services on the account. 
+	// (Optional) The service IDs of the services the token will have access to. Separate service IDs with a space. If no services are specified, the token will have access to all services on the account.
 	Services []string `json:"services,omitempty"`
 	// A space-delimited list of authorization scope.
 	Scope *string `json:"scope,omitempty"`
 	// A UTC time-stamp of when the token expires.
-	ExpiresAt *string `json:"expires_at,omitempty"`
+	ExpiresAt            *string `json:"expires_at,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -243,7 +242,7 @@ func (o AutomationToken) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *AutomationToken) UnmarshalJSON(bytes []byte) (err error) {
 	varAutomationToken := _AutomationToken{}
 
@@ -265,7 +264,7 @@ func (o *AutomationToken) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableAutomationToken is a helper abstraction for handling nullable automationtoken types. 
+// NullableAutomationToken is a helper abstraction for handling nullable automationtoken types.
 type NullableAutomationToken struct {
 	value *AutomationToken
 	isSet bool
@@ -305,7 +304,7 @@ func (v NullableAutomationToken) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableAutomationToken) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

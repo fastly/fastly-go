@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -24,7 +23,7 @@ type LoggingGenericCommon struct {
 	// A timestamp format
 	TimestampFormat NullableString `json:"timestamp_format,omitempty"`
 	// The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-	CompressionCodec *string `json:"compression_codec,omitempty"`
+	CompressionCodec     *string `json:"compression_codec,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -96,7 +95,7 @@ func (o *LoggingGenericCommon) GetTimestampFormat() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingGenericCommon) GetTimestampFormatOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TimestampFormat.Get(), o.TimestampFormat.IsSet()
@@ -115,6 +114,7 @@ func (o *LoggingGenericCommon) HasTimestampFormat() bool {
 func (o *LoggingGenericCommon) SetTimestampFormat(v string) {
 	o.TimestampFormat.Set(&v)
 }
+
 // SetTimestampFormatNil sets the value for TimestampFormat to be an explicit nil
 func (o *LoggingGenericCommon) SetTimestampFormatNil() {
 	o.TimestampFormat.Set(nil)
@@ -179,7 +179,7 @@ func (o LoggingGenericCommon) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingGenericCommon) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingGenericCommon := _LoggingGenericCommon{}
 
@@ -199,7 +199,7 @@ func (o *LoggingGenericCommon) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingGenericCommon is a helper abstraction for handling nullable logginggenericcommon types. 
+// NullableLoggingGenericCommon is a helper abstraction for handling nullable logginggenericcommon types.
 type NullableLoggingGenericCommon struct {
 	value *LoggingGenericCommon
 	isSet bool
@@ -239,7 +239,7 @@ func (v NullableLoggingGenericCommon) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingGenericCommon) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

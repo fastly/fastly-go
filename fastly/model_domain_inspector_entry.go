@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,8 +19,8 @@ import (
 // DomainInspectorEntry struct for DomainInspectorEntry
 type DomainInspectorEntry struct {
 	Dimensions *DomainInspectorEntryDimensions `json:"dimensions,omitempty"`
-	// An array of values representing the metric values at each point in time. Note that this dataset is sparse: only the keys with non-zero values will be included in the record. 
-	Values []Values `json:"values,omitempty"`
+	// An array of values representing the metric values at each point in time. Note that this dataset is sparse: only the keys with non-zero values will be included in the record.
+	Values               []Values `json:"values,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -127,7 +126,7 @@ func (o DomainInspectorEntry) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *DomainInspectorEntry) UnmarshalJSON(bytes []byte) (err error) {
 	varDomainInspectorEntry := _DomainInspectorEntry{}
 
@@ -146,7 +145,7 @@ func (o *DomainInspectorEntry) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableDomainInspectorEntry is a helper abstraction for handling nullable domaininspectorentry types. 
+// NullableDomainInspectorEntry is a helper abstraction for handling nullable domaininspectorentry types.
 type NullableDomainInspectorEntry struct {
 	value *DomainInspectorEntry
 	isSet bool
@@ -186,7 +185,7 @@ func (v NullableDomainInspectorEntry) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDomainInspectorEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

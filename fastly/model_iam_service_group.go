@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -33,7 +32,7 @@ type IamServiceGroup struct {
 	// Description of the service group.
 	Description *string `json:"description,omitempty"`
 	// Number of services in the service group.
-	ServicesCount *int32 `json:"services_count,omitempty"`
+	ServicesCount        *int32 `json:"services_count,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -69,7 +68,7 @@ func (o *IamServiceGroup) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamServiceGroup) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -88,6 +87,7 @@ func (o *IamServiceGroup) HasCreatedAt() bool {
 func (o *IamServiceGroup) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *IamServiceGroup) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -111,7 +111,7 @@ func (o *IamServiceGroup) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IamServiceGroup) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -130,6 +130,7 @@ func (o *IamServiceGroup) HasUpdatedAt() bool {
 func (o *IamServiceGroup) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *IamServiceGroup) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -334,7 +335,7 @@ func (o IamServiceGroup) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *IamServiceGroup) UnmarshalJSON(bytes []byte) (err error) {
 	varIamServiceGroup := _IamServiceGroup{}
 
@@ -358,7 +359,7 @@ func (o *IamServiceGroup) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableIamServiceGroup is a helper abstraction for handling nullable iamservicegroup types. 
+// NullableIamServiceGroup is a helper abstraction for handling nullable iamservicegroup types.
 type NullableIamServiceGroup struct {
 	value *IamServiceGroup
 	isSet bool
@@ -398,7 +399,7 @@ func (v NullableIamServiceGroup) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableIamServiceGroup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

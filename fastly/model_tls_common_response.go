@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -28,7 +27,7 @@ type TLSCommonResponse struct {
 	// The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
 	TLSCertHostname NullableString `json:"tls_cert_hostname,omitempty"`
 	// Whether to use TLS.
-	UseTLS *string `json:"use_tls,omitempty"`
+	UseTLS               *string `json:"use_tls,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -84,7 +83,7 @@ func (o *TLSCommonResponse) GetTLSCaCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TLSCommonResponse) GetTLSCaCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCaCert.Get(), o.TLSCaCert.IsSet()
@@ -103,6 +102,7 @@ func (o *TLSCommonResponse) HasTLSCaCert() bool {
 func (o *TLSCommonResponse) SetTLSCaCert(v string) {
 	o.TLSCaCert.Set(&v)
 }
+
 // SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
 func (o *TLSCommonResponse) SetTLSCaCertNil() {
 	o.TLSCaCert.Set(nil)
@@ -126,7 +126,7 @@ func (o *TLSCommonResponse) GetTLSClientCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TLSCommonResponse) GetTLSClientCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientCert.Get(), o.TLSClientCert.IsSet()
@@ -145,6 +145,7 @@ func (o *TLSCommonResponse) HasTLSClientCert() bool {
 func (o *TLSCommonResponse) SetTLSClientCert(v string) {
 	o.TLSClientCert.Set(&v)
 }
+
 // SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
 func (o *TLSCommonResponse) SetTLSClientCertNil() {
 	o.TLSClientCert.Set(nil)
@@ -168,7 +169,7 @@ func (o *TLSCommonResponse) GetTLSClientKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TLSCommonResponse) GetTLSClientKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientKey.Get(), o.TLSClientKey.IsSet()
@@ -187,6 +188,7 @@ func (o *TLSCommonResponse) HasTLSClientKey() bool {
 func (o *TLSCommonResponse) SetTLSClientKey(v string) {
 	o.TLSClientKey.Set(&v)
 }
+
 // SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
 func (o *TLSCommonResponse) SetTLSClientKeyNil() {
 	o.TLSClientKey.Set(nil)
@@ -210,7 +212,7 @@ func (o *TLSCommonResponse) GetTLSCertHostname() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TLSCommonResponse) GetTLSCertHostnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCertHostname.Get(), o.TLSCertHostname.IsSet()
@@ -229,6 +231,7 @@ func (o *TLSCommonResponse) HasTLSCertHostname() bool {
 func (o *TLSCommonResponse) SetTLSCertHostname(v string) {
 	o.TLSCertHostname.Set(&v)
 }
+
 // SetTLSCertHostnameNil sets the value for TLSCertHostname to be an explicit nil
 func (o *TLSCommonResponse) SetTLSCertHostnameNil() {
 	o.TLSCertHostname.Set(nil)
@@ -299,7 +302,7 @@ func (o TLSCommonResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *TLSCommonResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varTLSCommonResponse := _TLSCommonResponse{}
 
@@ -321,7 +324,7 @@ func (o *TLSCommonResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTLSCommonResponse is a helper abstraction for handling nullable tlscommonresponse types. 
+// NullableTLSCommonResponse is a helper abstraction for handling nullable tlscommonresponse types.
 type NullableTLSCommonResponse struct {
 	value *TLSCommonResponse
 	isSet bool
@@ -361,7 +364,7 @@ func (v NullableTLSCommonResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableTLSCommonResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -520,10 +519,10 @@ type Results struct {
 	// Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`).
 	OriginOffload *float32 `json:"origin_offload,omitempty"`
 	// Number of requests where Fastly responded with 400 due to the request being a GET or HEAD request containing a body.
-	RequestDeniedGetHeadBody *int32 `json:"request_denied_get_head_body,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
+	RequestDeniedGetHeadBody *int32  `json:"request_denied_get_head_body,omitempty"`
+	ServiceID                *string `json:"service_id,omitempty"`
 	// Timestamp for the start of the time period being reported
-	StartTime *int32 `json:"start_time,omitempty"`
+	StartTime            *int32 `json:"start_time,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -847,7 +846,7 @@ func (o *Results) GetHitRatio() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Results) GetHitRatioOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HitRatio.Get(), o.HitRatio.IsSet()
@@ -866,6 +865,7 @@ func (o *Results) HasHitRatio() bool {
 func (o *Results) SetHitRatio(v float32) {
 	o.HitRatio.Set(&v)
 }
+
 // SetHitRatioNil sets the value for HitRatio to be an explicit nil
 func (o *Results) SetHitRatioNil() {
 	o.HitRatio.Set(nil)
@@ -9395,7 +9395,7 @@ func (o Results) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 	varResults := _Results{}
 
@@ -9664,7 +9664,7 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableResults is a helper abstraction for handling nullable results types. 
+// NullableResults is a helper abstraction for handling nullable results types.
 type NullableResults struct {
 	value *Results
 	isSet bool
@@ -9704,7 +9704,7 @@ func (v NullableResults) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableResults) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

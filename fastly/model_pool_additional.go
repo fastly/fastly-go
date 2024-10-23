@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -40,7 +39,7 @@ type PoolAdditional struct {
 	// What type of load balance group to use.
 	Type *string `json:"type,omitempty"`
 	// The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
-	OverrideHost NullableString `json:"override_host,omitempty"`
+	OverrideHost         NullableString `json:"override_host,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -116,7 +115,7 @@ func (o *PoolAdditional) GetShield() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolAdditional) GetShieldOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Shield.Get(), o.Shield.IsSet()
@@ -135,6 +134,7 @@ func (o *PoolAdditional) HasShield() bool {
 func (o *PoolAdditional) SetShield(v string) {
 	o.Shield.Set(&v)
 }
+
 // SetShieldNil sets the value for Shield to be an explicit nil
 func (o *PoolAdditional) SetShieldNil() {
 	o.Shield.Set(nil)
@@ -158,7 +158,7 @@ func (o *PoolAdditional) GetRequestCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolAdditional) GetRequestConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RequestCondition.Get(), o.RequestCondition.IsSet()
@@ -177,6 +177,7 @@ func (o *PoolAdditional) HasRequestCondition() bool {
 func (o *PoolAdditional) SetRequestCondition(v string) {
 	o.RequestCondition.Set(&v)
 }
+
 // SetRequestConditionNil sets the value for RequestCondition to be an explicit nil
 func (o *PoolAdditional) SetRequestConditionNil() {
 	o.RequestCondition.Set(nil)
@@ -200,7 +201,7 @@ func (o *PoolAdditional) GetTLSCiphers() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolAdditional) GetTLSCiphersOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCiphers.Get(), o.TLSCiphers.IsSet()
@@ -219,6 +220,7 @@ func (o *PoolAdditional) HasTLSCiphers() bool {
 func (o *PoolAdditional) SetTLSCiphers(v string) {
 	o.TLSCiphers.Set(&v)
 }
+
 // SetTLSCiphersNil sets the value for TLSCiphers to be an explicit nil
 func (o *PoolAdditional) SetTLSCiphersNil() {
 	o.TLSCiphers.Set(nil)
@@ -242,7 +244,7 @@ func (o *PoolAdditional) GetTLSSniHostname() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolAdditional) GetTLSSniHostnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSSniHostname.Get(), o.TLSSniHostname.IsSet()
@@ -261,6 +263,7 @@ func (o *PoolAdditional) HasTLSSniHostname() bool {
 func (o *PoolAdditional) SetTLSSniHostname(v string) {
 	o.TLSSniHostname.Set(&v)
 }
+
 // SetTLSSniHostnameNil sets the value for TLSSniHostname to be an explicit nil
 func (o *PoolAdditional) SetTLSSniHostnameNil() {
 	o.TLSSniHostname.Set(nil)
@@ -284,7 +287,7 @@ func (o *PoolAdditional) GetMinTLSVersion() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolAdditional) GetMinTLSVersionOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MinTLSVersion.Get(), o.MinTLSVersion.IsSet()
@@ -303,6 +306,7 @@ func (o *PoolAdditional) HasMinTLSVersion() bool {
 func (o *PoolAdditional) SetMinTLSVersion(v int32) {
 	o.MinTLSVersion.Set(&v)
 }
+
 // SetMinTLSVersionNil sets the value for MinTLSVersion to be an explicit nil
 func (o *PoolAdditional) SetMinTLSVersionNil() {
 	o.MinTLSVersion.Set(nil)
@@ -326,7 +330,7 @@ func (o *PoolAdditional) GetMaxTLSVersion() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolAdditional) GetMaxTLSVersionOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.MaxTLSVersion.Get(), o.MaxTLSVersion.IsSet()
@@ -345,6 +349,7 @@ func (o *PoolAdditional) HasMaxTLSVersion() bool {
 func (o *PoolAdditional) SetMaxTLSVersion(v int32) {
 	o.MaxTLSVersion.Set(&v)
 }
+
 // SetMaxTLSVersionNil sets the value for MaxTLSVersion to be an explicit nil
 func (o *PoolAdditional) SetMaxTLSVersionNil() {
 	o.MaxTLSVersion.Set(nil)
@@ -368,7 +373,7 @@ func (o *PoolAdditional) GetHealthcheck() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolAdditional) GetHealthcheckOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Healthcheck.Get(), o.Healthcheck.IsSet()
@@ -387,6 +392,7 @@ func (o *PoolAdditional) HasHealthcheck() bool {
 func (o *PoolAdditional) SetHealthcheck(v string) {
 	o.Healthcheck.Set(&v)
 }
+
 // SetHealthcheckNil sets the value for Healthcheck to be an explicit nil
 func (o *PoolAdditional) SetHealthcheckNil() {
 	o.Healthcheck.Set(nil)
@@ -410,7 +416,7 @@ func (o *PoolAdditional) GetComment() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolAdditional) GetCommentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
@@ -429,6 +435,7 @@ func (o *PoolAdditional) HasComment() bool {
 func (o *PoolAdditional) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *PoolAdditional) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -484,7 +491,7 @@ func (o *PoolAdditional) GetOverrideHost() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PoolAdditional) GetOverrideHostOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OverrideHost.Get(), o.OverrideHost.IsSet()
@@ -503,6 +510,7 @@ func (o *PoolAdditional) HasOverrideHost() bool {
 func (o *PoolAdditional) SetOverrideHost(v string) {
 	o.OverrideHost.Set(&v)
 }
+
 // SetOverrideHostNil sets the value for OverrideHost to be an explicit nil
 func (o *PoolAdditional) SetOverrideHostNil() {
 	o.OverrideHost.Set(nil)
@@ -559,7 +567,7 @@ func (o PoolAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *PoolAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	varPoolAdditional := _PoolAdditional{}
 
@@ -587,7 +595,7 @@ func (o *PoolAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullablePoolAdditional is a helper abstraction for handling nullable pooladditional types. 
+// NullablePoolAdditional is a helper abstraction for handling nullable pooladditional types.
 type NullablePoolAdditional struct {
 	value *PoolAdditional
 	isSet bool
@@ -627,7 +635,7 @@ func (v NullablePoolAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullablePoolAdditional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

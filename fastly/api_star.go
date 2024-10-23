@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type StarAPI interface {
 
 	/*
-	CreateServiceStar Create a star
+		CreateServiceStar Create a star
 
-	Create star.
+		Create star.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateServiceStarRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateServiceStarRequest
 	*/
 	CreateServiceStar(ctx context.Context) APICreateServiceStarRequest
 
@@ -46,13 +45,13 @@ type StarAPI interface {
 	CreateServiceStarExecute(r APICreateServiceStarRequest) (*StarResponse, *http.Response, error)
 
 	/*
-	DeleteServiceStar Delete a star
+		DeleteServiceStar Delete a star
 
-	Delete star.
+		Delete star.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param starID Alphanumeric string identifying a star.
-	 @return APIDeleteServiceStarRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param starID Alphanumeric string identifying a star.
+		 @return APIDeleteServiceStarRequest
 	*/
 	DeleteServiceStar(ctx context.Context, starID string) APIDeleteServiceStarRequest
 
@@ -60,13 +59,13 @@ type StarAPI interface {
 	DeleteServiceStarExecute(r APIDeleteServiceStarRequest) (*http.Response, error)
 
 	/*
-	GetServiceStar Get a star
+		GetServiceStar Get a star
 
-	Show star.
+		Show star.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param starID Alphanumeric string identifying a star.
-	 @return APIGetServiceStarRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param starID Alphanumeric string identifying a star.
+		 @return APIGetServiceStarRequest
 	*/
 	GetServiceStar(ctx context.Context, starID string) APIGetServiceStarRequest
 
@@ -75,12 +74,12 @@ type StarAPI interface {
 	GetServiceStarExecute(r APIGetServiceStarRequest) (*StarResponse, *http.Response, error)
 
 	/*
-	ListServiceStars List stars
+		ListServiceStars List stars
 
-	List stars.
+		List stars.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListServiceStarsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListServiceStarsRequest
 	*/
 	ListServiceStars(ctx context.Context) APIListServiceStarsRequest
 
@@ -94,9 +93,9 @@ type StarAPIService service
 
 // APICreateServiceStarRequest represents a request for the resource.
 type APICreateServiceStarRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService StarAPI
-	star *Star
+	star       *Star
 }
 
 // Star returns a pointer to a request.
@@ -121,7 +120,7 @@ Create star.
 func (a *StarAPIService) CreateServiceStar(ctx context.Context) APICreateServiceStarRequest {
 	return APICreateServiceStarRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -129,10 +128,10 @@ func (a *StarAPIService) CreateServiceStar(ctx context.Context) APICreateService
 //  @return StarResponse
 func (a *StarAPIService) CreateServiceStarExecute(r APICreateServiceStarRequest) (*StarResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *StarResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *StarResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StarAPIService.CreateServiceStar")
@@ -213,7 +212,6 @@ func (a *StarAPIService) CreateServiceStarExecute(r APICreateServiceStarRequest)
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -232,11 +230,10 @@ func (a *StarAPIService) CreateServiceStarExecute(r APICreateServiceStarRequest)
 
 // APIDeleteServiceStarRequest represents a request for the resource.
 type APIDeleteServiceStarRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService StarAPI
-	starID string
+	starID     string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteServiceStarRequest) Execute() (*http.Response, error) {
@@ -255,17 +252,17 @@ Delete star.
 func (a *StarAPIService) DeleteServiceStar(ctx context.Context, starID string) APIDeleteServiceStarRequest {
 	return APIDeleteServiceStarRequest{
 		APIService: a,
-		ctx: ctx,
-		starID: starID,
+		ctx:        ctx,
+		starID:     starID,
 	}
 }
 
 // DeleteServiceStarExecute executes the request
 func (a *StarAPIService) DeleteServiceStarExecute(r APIDeleteServiceStarRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StarAPIService.DeleteServiceStar")
@@ -336,7 +333,6 @@ func (a *StarAPIService) DeleteServiceStarExecute(r APIDeleteServiceStarRequest)
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -355,11 +351,10 @@ func (a *StarAPIService) DeleteServiceStarExecute(r APIDeleteServiceStarRequest)
 
 // APIGetServiceStarRequest represents a request for the resource.
 type APIGetServiceStarRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService StarAPI
-	starID string
+	starID     string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetServiceStarRequest) Execute() (*StarResponse, *http.Response, error) {
@@ -378,8 +373,8 @@ Show star.
 func (a *StarAPIService) GetServiceStar(ctx context.Context, starID string) APIGetServiceStarRequest {
 	return APIGetServiceStarRequest{
 		APIService: a,
-		ctx: ctx,
-		starID: starID,
+		ctx:        ctx,
+		starID:     starID,
 	}
 }
 
@@ -387,10 +382,10 @@ func (a *StarAPIService) GetServiceStar(ctx context.Context, starID string) APIG
 //  @return StarResponse
 func (a *StarAPIService) GetServiceStarExecute(r APIGetServiceStarRequest) (*StarResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *StarResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *StarResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StarAPIService.GetServiceStar")
@@ -470,7 +465,6 @@ func (a *StarAPIService) GetServiceStarExecute(r APIGetServiceStarRequest) (*Sta
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -489,10 +483,9 @@ func (a *StarAPIService) GetServiceStarExecute(r APIGetServiceStarRequest) (*Sta
 
 // APIListServiceStarsRequest represents a request for the resource.
 type APIListServiceStarsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService StarAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListServiceStarsRequest) Execute() (*Pagination, *http.Response, error) {
@@ -510,7 +503,7 @@ List stars.
 func (a *StarAPIService) ListServiceStars(ctx context.Context) APIListServiceStarsRequest {
 	return APIListServiceStarsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -518,10 +511,10 @@ func (a *StarAPIService) ListServiceStars(ctx context.Context) APIListServiceSta
 //  @return Pagination
 func (a *StarAPIService) ListServiceStarsExecute(r APIListServiceStarsRequest) (*Pagination, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *Pagination
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *Pagination
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StarAPIService.ListServiceStars")
@@ -599,7 +592,6 @@ func (a *StarAPIService) ListServiceStarsExecute(r APIListServiceStarsRequest) (
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

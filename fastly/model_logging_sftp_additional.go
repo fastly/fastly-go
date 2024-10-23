@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -30,7 +29,7 @@ type LoggingSftpAdditional struct {
 	// A list of host keys for all hosts we can connect to over SFTP.
 	SSHKnownHosts *string `json:"ssh_known_hosts,omitempty"`
 	// The username for the server.
-	User *string `json:"user,omitempty"`
+	User                 *string `json:"user,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -110,7 +109,7 @@ func (o *LoggingSftpAdditional) GetPath() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSftpAdditional) GetPathOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
@@ -129,6 +128,7 @@ func (o *LoggingSftpAdditional) HasPath() bool {
 func (o *LoggingSftpAdditional) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *LoggingSftpAdditional) SetPathNil() {
 	o.Path.Set(nil)
@@ -152,7 +152,7 @@ func (o *LoggingSftpAdditional) GetPublicKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSftpAdditional) GetPublicKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PublicKey.Get(), o.PublicKey.IsSet()
@@ -171,6 +171,7 @@ func (o *LoggingSftpAdditional) HasPublicKey() bool {
 func (o *LoggingSftpAdditional) SetPublicKey(v string) {
 	o.PublicKey.Set(&v)
 }
+
 // SetPublicKeyNil sets the value for PublicKey to be an explicit nil
 func (o *LoggingSftpAdditional) SetPublicKeyNil() {
 	o.PublicKey.Set(nil)
@@ -194,7 +195,7 @@ func (o *LoggingSftpAdditional) GetSecretKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSftpAdditional) GetSecretKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SecretKey.Get(), o.SecretKey.IsSet()
@@ -213,6 +214,7 @@ func (o *LoggingSftpAdditional) HasSecretKey() bool {
 func (o *LoggingSftpAdditional) SetSecretKey(v string) {
 	o.SecretKey.Set(&v)
 }
+
 // SetSecretKeyNil sets the value for SecretKey to be an explicit nil
 func (o *LoggingSftpAdditional) SetSecretKeyNil() {
 	o.SecretKey.Set(nil)
@@ -318,7 +320,7 @@ func (o LoggingSftpAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingSftpAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingSftpAdditional := _LoggingSftpAdditional{}
 
@@ -341,7 +343,7 @@ func (o *LoggingSftpAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingSftpAdditional is a helper abstraction for handling nullable loggingsftpadditional types. 
+// NullableLoggingSftpAdditional is a helper abstraction for handling nullable loggingsftpadditional types.
 type NullableLoggingSftpAdditional struct {
 	value *LoggingSftpAdditional
 	isSet bool
@@ -381,7 +383,7 @@ func (v NullableLoggingSftpAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingSftpAdditional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

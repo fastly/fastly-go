@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -23,7 +22,7 @@ type TimestampsNoDelete struct {
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -59,7 +58,7 @@ func (o *TimestampsNoDelete) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TimestampsNoDelete) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -78,6 +77,7 @@ func (o *TimestampsNoDelete) HasCreatedAt() bool {
 func (o *TimestampsNoDelete) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *TimestampsNoDelete) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -101,7 +101,7 @@ func (o *TimestampsNoDelete) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TimestampsNoDelete) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -120,6 +120,7 @@ func (o *TimestampsNoDelete) HasUpdatedAt() bool {
 func (o *TimestampsNoDelete) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *TimestampsNoDelete) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -149,7 +150,7 @@ func (o TimestampsNoDelete) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *TimestampsNoDelete) UnmarshalJSON(bytes []byte) (err error) {
 	varTimestampsNoDelete := _TimestampsNoDelete{}
 
@@ -168,7 +169,7 @@ func (o *TimestampsNoDelete) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTimestampsNoDelete is a helper abstraction for handling nullable timestampsnodelete types. 
+// NullableTimestampsNoDelete is a helper abstraction for handling nullable timestampsnodelete types.
 type NullableTimestampsNoDelete struct {
 	value *TimestampsNoDelete
 	isSet bool
@@ -208,7 +209,7 @@ func (v NullableTimestampsNoDelete) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableTimestampsNoDelete) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

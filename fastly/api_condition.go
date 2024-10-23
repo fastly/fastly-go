@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type ConditionAPI interface {
 
 	/*
-	CreateCondition Create a condition
+		CreateCondition Create a condition
 
-	Creates a new condition.
+		Creates a new condition.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateConditionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateConditionRequest
 	*/
 	CreateCondition(ctx context.Context, serviceID string, versionID int32) APICreateConditionRequest
 
@@ -48,15 +47,15 @@ type ConditionAPI interface {
 	CreateConditionExecute(r APICreateConditionRequest) (*ConditionResponse, *http.Response, error)
 
 	/*
-	DeleteCondition Delete a condition
+		DeleteCondition Delete a condition
 
-	Deletes the specified condition.
+		Deletes the specified condition.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param conditionName Name of the condition. Required.
-	 @return APIDeleteConditionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param conditionName Name of the condition. Required.
+		 @return APIDeleteConditionRequest
 	*/
 	DeleteCondition(ctx context.Context, serviceID string, versionID int32, conditionName string) APIDeleteConditionRequest
 
@@ -65,15 +64,15 @@ type ConditionAPI interface {
 	DeleteConditionExecute(r APIDeleteConditionRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetCondition Describe a condition
+		GetCondition Describe a condition
 
-	Gets the specified condition.
+		Gets the specified condition.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param conditionName Name of the condition. Required.
-	 @return APIGetConditionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param conditionName Name of the condition. Required.
+		 @return APIGetConditionRequest
 	*/
 	GetCondition(ctx context.Context, serviceID string, versionID int32, conditionName string) APIGetConditionRequest
 
@@ -82,14 +81,14 @@ type ConditionAPI interface {
 	GetConditionExecute(r APIGetConditionRequest) (*ConditionResponse, *http.Response, error)
 
 	/*
-	ListConditions List conditions
+		ListConditions List conditions
 
-	Gets all conditions for a particular service and version.
+		Gets all conditions for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListConditionsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListConditionsRequest
 	*/
 	ListConditions(ctx context.Context, serviceID string, versionID int32) APIListConditionsRequest
 
@@ -98,15 +97,15 @@ type ConditionAPI interface {
 	ListConditionsExecute(r APIListConditionsRequest) ([]ConditionResponse, *http.Response, error)
 
 	/*
-	UpdateCondition Update a condition
+		UpdateCondition Update a condition
 
-	Updates the specified condition.
+		Updates the specified condition.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param conditionName Name of the condition. Required.
-	 @return APIUpdateConditionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param conditionName Name of the condition. Required.
+		 @return APIUpdateConditionRequest
 	*/
 	UpdateCondition(ctx context.Context, serviceID string, versionID int32, conditionName string) APIUpdateConditionRequest
 
@@ -120,16 +119,16 @@ type ConditionAPIService service
 
 // APICreateConditionRequest represents a request for the resource.
 type APICreateConditionRequest struct {
-	ctx context.Context
-	APIService ConditionAPI
-	serviceID string
-	versionID int32
-	comment *string
-	name *string
-	priority *string
-	statement *string
-	serviceID2 *string
-	version *string
+	ctx          context.Context
+	APIService   ConditionAPI
+	serviceID    string
+	versionID    int32
+	comment      *string
+	name         *string
+	priority     *string
+	statement    *string
+	serviceID2   *string
+	version      *string
 	resourceType *string
 }
 
@@ -138,31 +137,37 @@ func (r *APICreateConditionRequest) Comment(comment string) *APICreateConditionR
 	r.comment = &comment
 	return r
 }
+
 // Name Name of the condition. Required.
 func (r *APICreateConditionRequest) Name(name string) *APICreateConditionRequest {
 	r.name = &name
 	return r
 }
+
 // Priority A numeric string. Priority determines execution order. Lower numbers execute first.
 func (r *APICreateConditionRequest) Priority(priority string) *APICreateConditionRequest {
 	r.priority = &priority
 	return r
 }
+
 // Statement A conditional expression in VCL used to determine if the condition is met.
 func (r *APICreateConditionRequest) Statement(statement string) *APICreateConditionRequest {
 	r.statement = &statement
 	return r
 }
+
 // ServiceID2 returns a pointer to a request.
 func (r *APICreateConditionRequest) ServiceID2(serviceID2 string) *APICreateConditionRequest {
 	r.serviceID2 = &serviceID2
 	return r
 }
+
 // Version A numeric string that represents the service version.
 func (r *APICreateConditionRequest) Version(version string) *APICreateConditionRequest {
 	r.version = &version
 	return r
 }
+
 // ResourceType Type of the condition. Required.
 func (r *APICreateConditionRequest) ResourceType(resourceType string) *APICreateConditionRequest {
 	r.resourceType = &resourceType
@@ -187,9 +192,9 @@ Creates a new condition.
 func (a *ConditionAPIService) CreateCondition(ctx context.Context, serviceID string, versionID int32) APICreateConditionRequest {
 	return APICreateConditionRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -197,10 +202,10 @@ func (a *ConditionAPIService) CreateCondition(ctx context.Context, serviceID str
 //  @return ConditionResponse
 func (a *ConditionAPIService) CreateConditionExecute(r APICreateConditionRequest) (*ConditionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ConditionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ConditionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConditionAPIService.CreateCondition")
@@ -306,7 +311,6 @@ func (a *ConditionAPIService) CreateConditionExecute(r APICreateConditionRequest
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -325,13 +329,12 @@ func (a *ConditionAPIService) CreateConditionExecute(r APICreateConditionRequest
 
 // APIDeleteConditionRequest represents a request for the resource.
 type APIDeleteConditionRequest struct {
-	ctx context.Context
-	APIService ConditionAPI
-	serviceID string
-	versionID int32
+	ctx           context.Context
+	APIService    ConditionAPI
+	serviceID     string
+	versionID     int32
 	conditionName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteConditionRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -351,10 +354,10 @@ Deletes the specified condition.
 */
 func (a *ConditionAPIService) DeleteCondition(ctx context.Context, serviceID string, versionID int32, conditionName string) APIDeleteConditionRequest {
 	return APIDeleteConditionRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:    a,
+		ctx:           ctx,
+		serviceID:     serviceID,
+		versionID:     versionID,
 		conditionName: conditionName,
 	}
 }
@@ -363,10 +366,10 @@ func (a *ConditionAPIService) DeleteCondition(ctx context.Context, serviceID str
 //  @return InlineResponse200
 func (a *ConditionAPIService) DeleteConditionExecute(r APIDeleteConditionRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConditionAPIService.DeleteCondition")
@@ -448,7 +451,6 @@ func (a *ConditionAPIService) DeleteConditionExecute(r APIDeleteConditionRequest
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -467,13 +469,12 @@ func (a *ConditionAPIService) DeleteConditionExecute(r APIDeleteConditionRequest
 
 // APIGetConditionRequest represents a request for the resource.
 type APIGetConditionRequest struct {
-	ctx context.Context
-	APIService ConditionAPI
-	serviceID string
-	versionID int32
+	ctx           context.Context
+	APIService    ConditionAPI
+	serviceID     string
+	versionID     int32
 	conditionName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetConditionRequest) Execute() (*ConditionResponse, *http.Response, error) {
@@ -493,10 +494,10 @@ Gets the specified condition.
 */
 func (a *ConditionAPIService) GetCondition(ctx context.Context, serviceID string, versionID int32, conditionName string) APIGetConditionRequest {
 	return APIGetConditionRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:    a,
+		ctx:           ctx,
+		serviceID:     serviceID,
+		versionID:     versionID,
 		conditionName: conditionName,
 	}
 }
@@ -505,10 +506,10 @@ func (a *ConditionAPIService) GetCondition(ctx context.Context, serviceID string
 //  @return ConditionResponse
 func (a *ConditionAPIService) GetConditionExecute(r APIGetConditionRequest) (*ConditionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ConditionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ConditionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConditionAPIService.GetCondition")
@@ -590,7 +591,6 @@ func (a *ConditionAPIService) GetConditionExecute(r APIGetConditionRequest) (*Co
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -609,12 +609,11 @@ func (a *ConditionAPIService) GetConditionExecute(r APIGetConditionRequest) (*Co
 
 // APIListConditionsRequest represents a request for the resource.
 type APIListConditionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ConditionAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListConditionsRequest) Execute() ([]ConditionResponse, *http.Response, error) {
@@ -634,9 +633,9 @@ Gets all conditions for a particular service and version.
 func (a *ConditionAPIService) ListConditions(ctx context.Context, serviceID string, versionID int32) APIListConditionsRequest {
 	return APIListConditionsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -644,10 +643,10 @@ func (a *ConditionAPIService) ListConditions(ctx context.Context, serviceID stri
 //  @return []ConditionResponse
 func (a *ConditionAPIService) ListConditionsExecute(r APIListConditionsRequest) ([]ConditionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []ConditionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []ConditionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConditionAPIService.ListConditions")
@@ -728,7 +727,6 @@ func (a *ConditionAPIService) ListConditionsExecute(r APIListConditionsRequest) 
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -747,18 +745,18 @@ func (a *ConditionAPIService) ListConditionsExecute(r APIListConditionsRequest) 
 
 // APIUpdateConditionRequest represents a request for the resource.
 type APIUpdateConditionRequest struct {
-	ctx context.Context
-	APIService ConditionAPI
-	serviceID string
-	versionID int32
+	ctx           context.Context
+	APIService    ConditionAPI
+	serviceID     string
+	versionID     int32
 	conditionName string
-	comment *string
-	name *string
-	priority *string
-	statement *string
-	serviceID2 *string
-	version *string
-	resourceType *string
+	comment       *string
+	name          *string
+	priority      *string
+	statement     *string
+	serviceID2    *string
+	version       *string
+	resourceType  *string
 }
 
 // Comment A freeform descriptive note.
@@ -766,31 +764,37 @@ func (r *APIUpdateConditionRequest) Comment(comment string) *APIUpdateConditionR
 	r.comment = &comment
 	return r
 }
+
 // Name Name of the condition. Required.
 func (r *APIUpdateConditionRequest) Name(name string) *APIUpdateConditionRequest {
 	r.name = &name
 	return r
 }
+
 // Priority A numeric string. Priority determines execution order. Lower numbers execute first.
 func (r *APIUpdateConditionRequest) Priority(priority string) *APIUpdateConditionRequest {
 	r.priority = &priority
 	return r
 }
+
 // Statement A conditional expression in VCL used to determine if the condition is met.
 func (r *APIUpdateConditionRequest) Statement(statement string) *APIUpdateConditionRequest {
 	r.statement = &statement
 	return r
 }
+
 // ServiceID2 returns a pointer to a request.
 func (r *APIUpdateConditionRequest) ServiceID2(serviceID2 string) *APIUpdateConditionRequest {
 	r.serviceID2 = &serviceID2
 	return r
 }
+
 // Version A numeric string that represents the service version.
 func (r *APIUpdateConditionRequest) Version(version string) *APIUpdateConditionRequest {
 	r.version = &version
 	return r
 }
+
 // ResourceType Type of the condition. Required.
 func (r *APIUpdateConditionRequest) ResourceType(resourceType string) *APIUpdateConditionRequest {
 	r.resourceType = &resourceType
@@ -815,10 +819,10 @@ Updates the specified condition.
 */
 func (a *ConditionAPIService) UpdateCondition(ctx context.Context, serviceID string, versionID int32, conditionName string) APIUpdateConditionRequest {
 	return APIUpdateConditionRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:    a,
+		ctx:           ctx,
+		serviceID:     serviceID,
+		versionID:     versionID,
 		conditionName: conditionName,
 	}
 }
@@ -827,10 +831,10 @@ func (a *ConditionAPIService) UpdateCondition(ctx context.Context, serviceID str
 //  @return ConditionResponse
 func (a *ConditionAPIService) UpdateConditionExecute(r APIUpdateConditionRequest) (*ConditionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ConditionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ConditionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ConditionAPIService.UpdateCondition")
@@ -936,7 +940,6 @@ func (a *ConditionAPIService) UpdateConditionExecute(r APIUpdateConditionRequest
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

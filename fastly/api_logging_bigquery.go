@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingBigqueryAPI interface {
 
 	/*
-	CreateLogBigquery Create a BigQuery log endpoint
+		CreateLogBigquery Create a BigQuery log endpoint
 
-	Create a BigQuery logging object for a particular service and version.
+		Create a BigQuery logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogBigqueryRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogBigqueryRequest
 	*/
 	CreateLogBigquery(ctx context.Context, serviceID string, versionID int32) APICreateLogBigqueryRequest
 
@@ -48,15 +47,15 @@ type LoggingBigqueryAPI interface {
 	CreateLogBigqueryExecute(r APICreateLogBigqueryRequest) (*LoggingBigqueryResponse, *http.Response, error)
 
 	/*
-	DeleteLogBigquery Delete a BigQuery log endpoint
+		DeleteLogBigquery Delete a BigQuery log endpoint
 
-	Delete a BigQuery logging object for a particular service and version.
+		Delete a BigQuery logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingBigqueryName The name for the real-time logging configuration.
-	 @return APIDeleteLogBigqueryRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingBigqueryName The name for the real-time logging configuration.
+		 @return APIDeleteLogBigqueryRequest
 	*/
 	DeleteLogBigquery(ctx context.Context, serviceID string, versionID int32, loggingBigqueryName string) APIDeleteLogBigqueryRequest
 
@@ -65,15 +64,15 @@ type LoggingBigqueryAPI interface {
 	DeleteLogBigqueryExecute(r APIDeleteLogBigqueryRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogBigquery Get a BigQuery log endpoint
+		GetLogBigquery Get a BigQuery log endpoint
 
-	Get the details for a BigQuery logging object for a particular service and version.
+		Get the details for a BigQuery logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingBigqueryName The name for the real-time logging configuration.
-	 @return APIGetLogBigqueryRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingBigqueryName The name for the real-time logging configuration.
+		 @return APIGetLogBigqueryRequest
 	*/
 	GetLogBigquery(ctx context.Context, serviceID string, versionID int32, loggingBigqueryName string) APIGetLogBigqueryRequest
 
@@ -82,14 +81,14 @@ type LoggingBigqueryAPI interface {
 	GetLogBigqueryExecute(r APIGetLogBigqueryRequest) (*LoggingBigqueryResponse, *http.Response, error)
 
 	/*
-	ListLogBigquery List BigQuery log endpoints
+		ListLogBigquery List BigQuery log endpoints
 
-	List all of the BigQuery logging objects for a particular service and version.
+		List all of the BigQuery logging objects for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogBigqueryRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogBigqueryRequest
 	*/
 	ListLogBigquery(ctx context.Context, serviceID string, versionID int32) APIListLogBigqueryRequest
 
@@ -98,15 +97,15 @@ type LoggingBigqueryAPI interface {
 	ListLogBigqueryExecute(r APIListLogBigqueryRequest) ([]LoggingBigqueryResponse, *http.Response, error)
 
 	/*
-	UpdateLogBigquery Update a BigQuery log endpoint
+		UpdateLogBigquery Update a BigQuery log endpoint
 
-	Update a BigQuery logging object for a particular service and version.
+		Update a BigQuery logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingBigqueryName The name for the real-time logging configuration.
-	 @return APIUpdateLogBigqueryRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingBigqueryName The name for the real-time logging configuration.
+		 @return APIUpdateLogBigqueryRequest
 	*/
 	UpdateLogBigquery(ctx context.Context, serviceID string, versionID int32, loggingBigqueryName string) APIUpdateLogBigqueryRequest
 
@@ -120,22 +119,22 @@ type LoggingBigqueryAPIService service
 
 // APICreateLogBigqueryRequest represents a request for the resource.
 type APICreateLogBigqueryRequest struct {
-	ctx context.Context
-	APIService LoggingBigqueryAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingBigqueryAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	user *string
-	secretKey *string
-	accountName *string
-	dataset *string
-	table *string
-	templateSuffix *string
-	projectID *string
+	format            *string
+	formatVersion     *int32
+	user              *string
+	secretKey         *string
+	accountName       *string
+	dataset           *string
+	table             *string
+	templateSuffix    *string
+	projectID         *string
 }
 
 // Name The name of the BigQuery logging object. Used as a primary key for API access.
@@ -143,56 +142,67 @@ func (r *APICreateLogBigqueryRequest) Name(name string) *APICreateLogBigqueryReq
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogBigqueryRequest) Placement(placement string) *APICreateLogBigqueryRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogBigqueryRequest) ResponseCondition(responseCondition string) *APICreateLogBigqueryRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
 func (r *APICreateLogBigqueryRequest) Format(format string) *APICreateLogBigqueryRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogBigqueryRequest) FormatVersion(formatVersion int32) *APICreateLogBigqueryRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // User Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Not required if &#x60;account_name&#x60; is specified.
 func (r *APICreateLogBigqueryRequest) User(user string) *APICreateLogBigqueryRequest {
 	r.user = &user
 	return r
 }
+
 // SecretKey Your Google Cloud Platform account secret key. The &#x60;private_key&#x60; field in your service account authentication JSON. Not required if &#x60;account_name&#x60; is specified.
 func (r *APICreateLogBigqueryRequest) SecretKey(secretKey string) *APICreateLogBigqueryRequest {
 	r.secretKey = &secretKey
 	return r
 }
+
 // AccountName The name of the Google Cloud Platform service account associated with the target log collection service. Not required if &#x60;user&#x60; and &#x60;secret_key&#x60; are provided.
 func (r *APICreateLogBigqueryRequest) AccountName(accountName string) *APICreateLogBigqueryRequest {
 	r.accountName = &accountName
 	return r
 }
+
 // Dataset Your BigQuery dataset.
 func (r *APICreateLogBigqueryRequest) Dataset(dataset string) *APICreateLogBigqueryRequest {
 	r.dataset = &dataset
 	return r
 }
+
 // Table Your BigQuery table.
 func (r *APICreateLogBigqueryRequest) Table(table string) *APICreateLogBigqueryRequest {
 	r.table = &table
 	return r
 }
+
 // TemplateSuffix BigQuery table name suffix template. Optional.
 func (r *APICreateLogBigqueryRequest) TemplateSuffix(templateSuffix string) *APICreateLogBigqueryRequest {
 	r.templateSuffix = &templateSuffix
 	return r
 }
+
 // ProjectID Your Google Cloud Platform project ID. Required
 func (r *APICreateLogBigqueryRequest) ProjectID(projectID string) *APICreateLogBigqueryRequest {
 	r.projectID = &projectID
@@ -217,9 +227,9 @@ Create a BigQuery logging object for a particular service and version.
 func (a *LoggingBigqueryAPIService) CreateLogBigquery(ctx context.Context, serviceID string, versionID int32) APICreateLogBigqueryRequest {
 	return APICreateLogBigqueryRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -227,10 +237,10 @@ func (a *LoggingBigqueryAPIService) CreateLogBigquery(ctx context.Context, servi
 //  @return LoggingBigqueryResponse
 func (a *LoggingBigqueryAPIService) CreateLogBigqueryExecute(r APICreateLogBigqueryRequest) (*LoggingBigqueryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingBigqueryResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingBigqueryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingBigqueryAPIService.CreateLogBigquery")
@@ -347,7 +357,6 @@ func (a *LoggingBigqueryAPIService) CreateLogBigqueryExecute(r APICreateLogBigqu
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -366,13 +375,12 @@ func (a *LoggingBigqueryAPIService) CreateLogBigqueryExecute(r APICreateLogBigqu
 
 // APIDeleteLogBigqueryRequest represents a request for the resource.
 type APIDeleteLogBigqueryRequest struct {
-	ctx context.Context
-	APIService LoggingBigqueryAPI
-	serviceID string
-	versionID int32
+	ctx                 context.Context
+	APIService          LoggingBigqueryAPI
+	serviceID           string
+	versionID           int32
 	loggingBigqueryName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogBigqueryRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -392,10 +400,10 @@ Delete a BigQuery logging object for a particular service and version.
 */
 func (a *LoggingBigqueryAPIService) DeleteLogBigquery(ctx context.Context, serviceID string, versionID int32, loggingBigqueryName string) APIDeleteLogBigqueryRequest {
 	return APIDeleteLogBigqueryRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:          a,
+		ctx:                 ctx,
+		serviceID:           serviceID,
+		versionID:           versionID,
 		loggingBigqueryName: loggingBigqueryName,
 	}
 }
@@ -404,10 +412,10 @@ func (a *LoggingBigqueryAPIService) DeleteLogBigquery(ctx context.Context, servi
 //  @return InlineResponse200
 func (a *LoggingBigqueryAPIService) DeleteLogBigqueryExecute(r APIDeleteLogBigqueryRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingBigqueryAPIService.DeleteLogBigquery")
@@ -489,7 +497,6 @@ func (a *LoggingBigqueryAPIService) DeleteLogBigqueryExecute(r APIDeleteLogBigqu
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -508,13 +515,12 @@ func (a *LoggingBigqueryAPIService) DeleteLogBigqueryExecute(r APIDeleteLogBigqu
 
 // APIGetLogBigqueryRequest represents a request for the resource.
 type APIGetLogBigqueryRequest struct {
-	ctx context.Context
-	APIService LoggingBigqueryAPI
-	serviceID string
-	versionID int32
+	ctx                 context.Context
+	APIService          LoggingBigqueryAPI
+	serviceID           string
+	versionID           int32
 	loggingBigqueryName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogBigqueryRequest) Execute() (*LoggingBigqueryResponse, *http.Response, error) {
@@ -534,10 +540,10 @@ Get the details for a BigQuery logging object for a particular service and versi
 */
 func (a *LoggingBigqueryAPIService) GetLogBigquery(ctx context.Context, serviceID string, versionID int32, loggingBigqueryName string) APIGetLogBigqueryRequest {
 	return APIGetLogBigqueryRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:          a,
+		ctx:                 ctx,
+		serviceID:           serviceID,
+		versionID:           versionID,
 		loggingBigqueryName: loggingBigqueryName,
 	}
 }
@@ -546,10 +552,10 @@ func (a *LoggingBigqueryAPIService) GetLogBigquery(ctx context.Context, serviceI
 //  @return LoggingBigqueryResponse
 func (a *LoggingBigqueryAPIService) GetLogBigqueryExecute(r APIGetLogBigqueryRequest) (*LoggingBigqueryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingBigqueryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingBigqueryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingBigqueryAPIService.GetLogBigquery")
@@ -631,7 +637,6 @@ func (a *LoggingBigqueryAPIService) GetLogBigqueryExecute(r APIGetLogBigqueryReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -650,12 +655,11 @@ func (a *LoggingBigqueryAPIService) GetLogBigqueryExecute(r APIGetLogBigqueryReq
 
 // APIListLogBigqueryRequest represents a request for the resource.
 type APIListLogBigqueryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingBigqueryAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogBigqueryRequest) Execute() ([]LoggingBigqueryResponse, *http.Response, error) {
@@ -675,9 +679,9 @@ List all of the BigQuery logging objects for a particular service and version.
 func (a *LoggingBigqueryAPIService) ListLogBigquery(ctx context.Context, serviceID string, versionID int32) APIListLogBigqueryRequest {
 	return APIListLogBigqueryRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -685,10 +689,10 @@ func (a *LoggingBigqueryAPIService) ListLogBigquery(ctx context.Context, service
 //  @return []LoggingBigqueryResponse
 func (a *LoggingBigqueryAPIService) ListLogBigqueryExecute(r APIListLogBigqueryRequest) ([]LoggingBigqueryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingBigqueryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingBigqueryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingBigqueryAPIService.ListLogBigquery")
@@ -769,7 +773,6 @@ func (a *LoggingBigqueryAPIService) ListLogBigqueryExecute(r APIListLogBigqueryR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -788,23 +791,23 @@ func (a *LoggingBigqueryAPIService) ListLogBigqueryExecute(r APIListLogBigqueryR
 
 // APIUpdateLogBigqueryRequest represents a request for the resource.
 type APIUpdateLogBigqueryRequest struct {
-	ctx context.Context
-	APIService LoggingBigqueryAPI
-	serviceID string
-	versionID int32
+	ctx                 context.Context
+	APIService          LoggingBigqueryAPI
+	serviceID           string
+	versionID           int32
 	loggingBigqueryName string
-	name *string
-	placement *string
-	responseCondition *string
-	format *string
-	formatVersion *int32
-	user *string
-	secretKey *string
-	accountName *string
-	dataset *string
-	table *string
-	templateSuffix *string
-	projectID *string
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	formatVersion       *int32
+	user                *string
+	secretKey           *string
+	accountName         *string
+	dataset             *string
+	table               *string
+	templateSuffix      *string
+	projectID           *string
 }
 
 // Name The name of the BigQuery logging object. Used as a primary key for API access.
@@ -812,56 +815,67 @@ func (r *APIUpdateLogBigqueryRequest) Name(name string) *APIUpdateLogBigqueryReq
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogBigqueryRequest) Placement(placement string) *APIUpdateLogBigqueryRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogBigqueryRequest) ResponseCondition(responseCondition string) *APIUpdateLogBigqueryRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
 func (r *APIUpdateLogBigqueryRequest) Format(format string) *APIUpdateLogBigqueryRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogBigqueryRequest) FormatVersion(formatVersion int32) *APIUpdateLogBigqueryRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // User Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Not required if &#x60;account_name&#x60; is specified.
 func (r *APIUpdateLogBigqueryRequest) User(user string) *APIUpdateLogBigqueryRequest {
 	r.user = &user
 	return r
 }
+
 // SecretKey Your Google Cloud Platform account secret key. The &#x60;private_key&#x60; field in your service account authentication JSON. Not required if &#x60;account_name&#x60; is specified.
 func (r *APIUpdateLogBigqueryRequest) SecretKey(secretKey string) *APIUpdateLogBigqueryRequest {
 	r.secretKey = &secretKey
 	return r
 }
+
 // AccountName The name of the Google Cloud Platform service account associated with the target log collection service. Not required if &#x60;user&#x60; and &#x60;secret_key&#x60; are provided.
 func (r *APIUpdateLogBigqueryRequest) AccountName(accountName string) *APIUpdateLogBigqueryRequest {
 	r.accountName = &accountName
 	return r
 }
+
 // Dataset Your BigQuery dataset.
 func (r *APIUpdateLogBigqueryRequest) Dataset(dataset string) *APIUpdateLogBigqueryRequest {
 	r.dataset = &dataset
 	return r
 }
+
 // Table Your BigQuery table.
 func (r *APIUpdateLogBigqueryRequest) Table(table string) *APIUpdateLogBigqueryRequest {
 	r.table = &table
 	return r
 }
+
 // TemplateSuffix BigQuery table name suffix template. Optional.
 func (r *APIUpdateLogBigqueryRequest) TemplateSuffix(templateSuffix string) *APIUpdateLogBigqueryRequest {
 	r.templateSuffix = &templateSuffix
 	return r
 }
+
 // ProjectID Your Google Cloud Platform project ID. Required
 func (r *APIUpdateLogBigqueryRequest) ProjectID(projectID string) *APIUpdateLogBigqueryRequest {
 	r.projectID = &projectID
@@ -886,10 +900,10 @@ Update a BigQuery logging object for a particular service and version.
 */
 func (a *LoggingBigqueryAPIService) UpdateLogBigquery(ctx context.Context, serviceID string, versionID int32, loggingBigqueryName string) APIUpdateLogBigqueryRequest {
 	return APIUpdateLogBigqueryRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:          a,
+		ctx:                 ctx,
+		serviceID:           serviceID,
+		versionID:           versionID,
 		loggingBigqueryName: loggingBigqueryName,
 	}
 }
@@ -898,10 +912,10 @@ func (a *LoggingBigqueryAPIService) UpdateLogBigquery(ctx context.Context, servi
 //  @return LoggingBigqueryResponse
 func (a *LoggingBigqueryAPIService) UpdateLogBigqueryExecute(r APIUpdateLogBigqueryRequest) (*LoggingBigqueryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingBigqueryResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingBigqueryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingBigqueryAPIService.UpdateLogBigquery")
@@ -1018,7 +1032,6 @@ func (a *LoggingBigqueryAPIService) UpdateLogBigqueryExecute(r APIUpdateLogBigqu
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

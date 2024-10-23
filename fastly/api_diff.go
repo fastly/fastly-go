@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,15 +31,15 @@ var (
 type DiffAPI interface {
 
 	/*
-	DiffServiceVersions Diff two service versions
+		DiffServiceVersions Diff two service versions
 
-	Get diff between two versions.
+		Get diff between two versions.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param fromVersionID The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
-	 @param toVersionID The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
-	 @return APIDiffServiceVersionsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param fromVersionID The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
+		 @param toVersionID The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
+		 @return APIDiffServiceVersionsRequest
 	*/
 	DiffServiceVersions(ctx context.Context, serviceID string, fromVersionID int32, toVersionID int32) APIDiffServiceVersionsRequest
 
@@ -54,12 +53,12 @@ type DiffAPIService service
 
 // APIDiffServiceVersionsRequest represents a request for the resource.
 type APIDiffServiceVersionsRequest struct {
-	ctx context.Context
-	APIService DiffAPI
-	serviceID string
+	ctx           context.Context
+	APIService    DiffAPI
+	serviceID     string
 	fromVersionID int32
-	toVersionID int32
-	format *string
+	toVersionID   int32
+	format        *string
 }
 
 // Format Optional method to format the diff field.
@@ -86,11 +85,11 @@ Get diff between two versions.
 */
 func (a *DiffAPIService) DiffServiceVersions(ctx context.Context, serviceID string, fromVersionID int32, toVersionID int32) APIDiffServiceVersionsRequest {
 	return APIDiffServiceVersionsRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		APIService:    a,
+		ctx:           ctx,
+		serviceID:     serviceID,
 		fromVersionID: fromVersionID,
-		toVersionID: toVersionID,
+		toVersionID:   toVersionID,
 	}
 }
 
@@ -98,10 +97,10 @@ func (a *DiffAPIService) DiffServiceVersions(ctx context.Context, serviceID stri
 //  @return DiffResponse
 func (a *DiffAPIService) DiffServiceVersionsExecute(r APIDiffServiceVersionsRequest) (*DiffResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DiffResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DiffResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DiffAPIService.DiffServiceVersions")
@@ -185,7 +184,6 @@ func (a *DiffAPIService) DiffServiceVersionsExecute(r APIDiffServiceVersionsRequ
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

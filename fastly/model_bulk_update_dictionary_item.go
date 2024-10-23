@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,8 +21,8 @@ type BulkUpdateDictionaryItem struct {
 	// Item key, maximum 256 characters.
 	ItemKey *string `json:"item_key,omitempty"`
 	// Item value, maximum 8000 characters.
-	ItemValue *string `json:"item_value,omitempty"`
-	Op *string `json:"op,omitempty"`
+	ItemValue            *string `json:"item_value,omitempty"`
+	Op                   *string `json:"op,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -164,7 +163,7 @@ func (o BulkUpdateDictionaryItem) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *BulkUpdateDictionaryItem) UnmarshalJSON(bytes []byte) (err error) {
 	varBulkUpdateDictionaryItem := _BulkUpdateDictionaryItem{}
 
@@ -184,7 +183,7 @@ func (o *BulkUpdateDictionaryItem) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableBulkUpdateDictionaryItem is a helper abstraction for handling nullable bulkupdatedictionaryitem types. 
+// NullableBulkUpdateDictionaryItem is a helper abstraction for handling nullable bulkupdatedictionaryitem types.
 type NullableBulkUpdateDictionaryItem struct {
 	value *BulkUpdateDictionaryItem
 	isSet bool
@@ -224,7 +223,7 @@ func (v NullableBulkUpdateDictionaryItem) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableBulkUpdateDictionaryItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

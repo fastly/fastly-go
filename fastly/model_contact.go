@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -30,7 +29,7 @@ type Contact struct {
 	// The phone number for this contact. Required for primary, technical, and security contact types.
 	Phone NullableString `json:"phone,omitempty"`
 	// The alphanumeric string representing the customer for this customer contact.
-	CustomerID NullableString `json:"customer_id,omitempty"`
+	CustomerID           NullableString `json:"customer_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -66,7 +65,7 @@ func (o *Contact) GetUserID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Contact) GetUserIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UserID.Get(), o.UserID.IsSet()
@@ -85,6 +84,7 @@ func (o *Contact) HasUserID() bool {
 func (o *Contact) SetUserID(v string) {
 	o.UserID.Set(&v)
 }
+
 // SetUserIDNil sets the value for UserID to be an explicit nil
 func (o *Contact) SetUserIDNil() {
 	o.UserID.Set(nil)
@@ -140,7 +140,7 @@ func (o *Contact) GetName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Contact) GetNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
@@ -159,6 +159,7 @@ func (o *Contact) HasName() bool {
 func (o *Contact) SetName(v string) {
 	o.Name.Set(&v)
 }
+
 // SetNameNil sets the value for Name to be an explicit nil
 func (o *Contact) SetNameNil() {
 	o.Name.Set(nil)
@@ -182,7 +183,7 @@ func (o *Contact) GetEmail() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Contact) GetEmailOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Email.Get(), o.Email.IsSet()
@@ -201,6 +202,7 @@ func (o *Contact) HasEmail() bool {
 func (o *Contact) SetEmail(v string) {
 	o.Email.Set(&v)
 }
+
 // SetEmailNil sets the value for Email to be an explicit nil
 func (o *Contact) SetEmailNil() {
 	o.Email.Set(nil)
@@ -224,7 +226,7 @@ func (o *Contact) GetPhone() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Contact) GetPhoneOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Phone.Get(), o.Phone.IsSet()
@@ -243,6 +245,7 @@ func (o *Contact) HasPhone() bool {
 func (o *Contact) SetPhone(v string) {
 	o.Phone.Set(&v)
 }
+
 // SetPhoneNil sets the value for Phone to be an explicit nil
 func (o *Contact) SetPhoneNil() {
 	o.Phone.Set(nil)
@@ -266,7 +269,7 @@ func (o *Contact) GetCustomerID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Contact) GetCustomerIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CustomerID.Get(), o.CustomerID.IsSet()
@@ -285,6 +288,7 @@ func (o *Contact) HasCustomerID() bool {
 func (o *Contact) SetCustomerID(v string) {
 	o.CustomerID.Set(&v)
 }
+
 // SetCustomerIDNil sets the value for CustomerID to be an explicit nil
 func (o *Contact) SetCustomerIDNil() {
 	o.CustomerID.Set(nil)
@@ -326,7 +330,7 @@ func (o Contact) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *Contact) UnmarshalJSON(bytes []byte) (err error) {
 	varContact := _Contact{}
 
@@ -349,7 +353,7 @@ func (o *Contact) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableContact is a helper abstraction for handling nullable contact types. 
+// NullableContact is a helper abstraction for handling nullable contact types.
 type NullableContact struct {
 	value *Contact
 	isSet bool
@@ -389,7 +393,7 @@ func (v NullableContact) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableContact) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

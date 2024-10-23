@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -27,7 +26,7 @@ type SecretResponse struct {
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// True if the secret replaced a secret with the same name.
-	Recreated NullableBool `json:"recreated,omitempty"`
+	Recreated            NullableBool `json:"recreated,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -127,7 +126,7 @@ func (o *SecretResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SecretResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -146,6 +145,7 @@ func (o *SecretResponse) HasCreatedAt() bool {
 func (o *SecretResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *SecretResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -169,7 +169,7 @@ func (o *SecretResponse) GetRecreated() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SecretResponse) GetRecreatedOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Recreated.Get(), o.Recreated.IsSet()
@@ -188,6 +188,7 @@ func (o *SecretResponse) HasRecreated() bool {
 func (o *SecretResponse) SetRecreated(v bool) {
 	o.Recreated.Set(&v)
 }
+
 // SetRecreatedNil sets the value for Recreated to be an explicit nil
 func (o *SecretResponse) SetRecreatedNil() {
 	o.Recreated.Set(nil)
@@ -223,7 +224,7 @@ func (o SecretResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *SecretResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varSecretResponse := _SecretResponse{}
 
@@ -244,7 +245,7 @@ func (o *SecretResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableSecretResponse is a helper abstraction for handling nullable secretresponse types. 
+// NullableSecretResponse is a helper abstraction for handling nullable secretresponse types.
 type NullableSecretResponse struct {
 	value *SecretResponse
 	isSet bool
@@ -284,7 +285,7 @@ func (v NullableSecretResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableSecretResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

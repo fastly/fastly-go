@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -24,7 +23,7 @@ type MutualAuthenticationDataAttributes struct {
 	// Determines whether Mutual TLS will fail closed (enforced) or fail open. A true value will require a successful Mutual TLS handshake for the connection to continue and will fail closed if unsuccessful. A false value will fail open and allow the connection to proceed. Optional. Defaults to true.
 	Enforced *bool `json:"enforced,omitempty"`
 	// A custom name for your mutual authentication. Optional. If name is not supplied we will auto-generate one.
-	Name *string `json:"name,omitempty"`
+	Name                 *string `json:"name,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -165,7 +164,7 @@ func (o MutualAuthenticationDataAttributes) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *MutualAuthenticationDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	varMutualAuthenticationDataAttributes := _MutualAuthenticationDataAttributes{}
 
@@ -185,7 +184,7 @@ func (o *MutualAuthenticationDataAttributes) UnmarshalJSON(bytes []byte) (err er
 	return err
 }
 
-// NullableMutualAuthenticationDataAttributes is a helper abstraction for handling nullable mutualauthenticationdataattributes types. 
+// NullableMutualAuthenticationDataAttributes is a helper abstraction for handling nullable mutualauthenticationdataattributes types.
 type NullableMutualAuthenticationDataAttributes struct {
 	value *MutualAuthenticationDataAttributes
 	isSet bool
@@ -225,7 +224,7 @@ func (v NullableMutualAuthenticationDataAttributes) MarshalJSON() ([]byte, error
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableMutualAuthenticationDataAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

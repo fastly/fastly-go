@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -20,12 +19,12 @@ import (
 // HistoricalUsageServiceResponse struct for HistoricalUsageServiceResponse
 type HistoricalUsageServiceResponse struct {
 	// Whether or not we were able to successfully execute the query.
-	Status *string `json:"status,omitempty"`
-	Meta *HistoricalMeta `json:"meta,omitempty"`
+	Status *string         `json:"status,omitempty"`
+	Meta   *HistoricalMeta `json:"meta,omitempty"`
 	// If the query was not successful, this will provide a string that explains why.
 	Msg NullableString `json:"msg,omitempty"`
 	// Organized by *region*.
-	Data *map[string]map[string]HistoricalUsageData `json:"data,omitempty"`
+	Data                 *map[string]map[string]HistoricalUsageData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -125,7 +124,7 @@ func (o *HistoricalUsageServiceResponse) GetMsg() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HistoricalUsageServiceResponse) GetMsgOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Msg.Get(), o.Msg.IsSet()
@@ -144,6 +143,7 @@ func (o *HistoricalUsageServiceResponse) HasMsg() bool {
 func (o *HistoricalUsageServiceResponse) SetMsg(v string) {
 	o.Msg.Set(&v)
 }
+
 // SetMsgNil sets the value for Msg to be an explicit nil
 func (o *HistoricalUsageServiceResponse) SetMsgNil() {
 	o.Msg.Set(nil)
@@ -211,7 +211,7 @@ func (o HistoricalUsageServiceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *HistoricalUsageServiceResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varHistoricalUsageServiceResponse := _HistoricalUsageServiceResponse{}
 
@@ -232,7 +232,7 @@ func (o *HistoricalUsageServiceResponse) UnmarshalJSON(bytes []byte) (err error)
 	return err
 }
 
-// NullableHistoricalUsageServiceResponse is a helper abstraction for handling nullable historicalusageserviceresponse types. 
+// NullableHistoricalUsageServiceResponse is a helper abstraction for handling nullable historicalusageserviceresponse types.
 type NullableHistoricalUsageServiceResponse struct {
 	value *HistoricalUsageServiceResponse
 	isSet bool
@@ -272,7 +272,7 @@ func (v NullableHistoricalUsageServiceResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableHistoricalUsageServiceResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

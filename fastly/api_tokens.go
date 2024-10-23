@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type TokensAPI interface {
 
 	/*
-	BulkRevokeTokens Revoke multiple tokens
+		BulkRevokeTokens Revoke multiple tokens
 
-	Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
+		Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIBulkRevokeTokensRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIBulkRevokeTokensRequest
 	*/
 	BulkRevokeTokens(ctx context.Context) APIBulkRevokeTokensRequest
 
@@ -45,13 +44,13 @@ type TokensAPI interface {
 	BulkRevokeTokensExecute(r APIBulkRevokeTokensRequest) (*http.Response, error)
 
 	/*
-	CreateToken Create a token
+		CreateToken Create a token
 
-	Create an API token. If two-factor authentication is enabled for your account, review [the instructions](https://www.fastly.com/documentation/reference/api/auth-tokens/user/) for including a one-time password in the request.
+		Create an API token. If two-factor authentication is enabled for your account, review [the instructions](https://www.fastly.com/documentation/reference/api/auth-tokens/user/) for including a one-time password in the request.
 
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateTokenRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateTokenRequest
 	*/
 	CreateToken(ctx context.Context) APICreateTokenRequest
 
@@ -60,13 +59,13 @@ type TokensAPI interface {
 	CreateTokenExecute(r APICreateTokenRequest) (*TokenCreatedResponse, *http.Response, error)
 
 	/*
-	GetToken Get a token
+		GetToken Get a token
 
-	Get a single token by its id.
+		Get a single token by its id.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tokenID Alphanumeric string identifying a token.
-	 @return APIGetTokenRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tokenID Alphanumeric string identifying a token.
+		 @return APIGetTokenRequest
 	*/
 	GetToken(ctx context.Context, tokenID string) APIGetTokenRequest
 
@@ -75,12 +74,12 @@ type TokensAPI interface {
 	GetTokenExecute(r APIGetTokenRequest) (*TokenResponse, *http.Response, error)
 
 	/*
-	GetTokenCurrent Get the current token
+		GetTokenCurrent Get the current token
 
-	Get a single token based on the access_token used in the request.
+		Get a single token based on the access_token used in the request.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIGetTokenCurrentRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIGetTokenCurrentRequest
 	*/
 	GetTokenCurrent(ctx context.Context) APIGetTokenCurrentRequest
 
@@ -89,13 +88,13 @@ type TokensAPI interface {
 	GetTokenCurrentExecute(r APIGetTokenCurrentRequest) (*TokenResponse, *http.Response, error)
 
 	/*
-	ListTokensCustomer List tokens for a customer
+		ListTokensCustomer List tokens for a customer
 
-	List all tokens belonging to a specific customer.
+		List all tokens belonging to a specific customer.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param customerID Alphanumeric string identifying the customer.
-	 @return APIListTokensCustomerRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param customerID Alphanumeric string identifying the customer.
+		 @return APIListTokensCustomerRequest
 	*/
 	ListTokensCustomer(ctx context.Context, customerID string) APIListTokensCustomerRequest
 
@@ -104,12 +103,12 @@ type TokensAPI interface {
 	ListTokensCustomerExecute(r APIListTokensCustomerRequest) ([]TokenResponse, *http.Response, error)
 
 	/*
-	ListTokensUser List tokens for the authenticated user
+		ListTokensUser List tokens for the authenticated user
 
-	List all tokens belonging to the authenticated user.
+		List all tokens belonging to the authenticated user.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListTokensUserRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListTokensUserRequest
 	*/
 	ListTokensUser(ctx context.Context) APIListTokensUserRequest
 
@@ -118,13 +117,13 @@ type TokensAPI interface {
 	ListTokensUserExecute(r APIListTokensUserRequest) ([]TokenResponse, *http.Response, error)
 
 	/*
-	RevokeToken Revoke a token
+		RevokeToken Revoke a token
 
-	Revoke a specific token by its id.
+		Revoke a specific token by its id.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tokenID Alphanumeric string identifying a token.
-	 @return APIRevokeTokenRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tokenID Alphanumeric string identifying a token.
+		 @return APIRevokeTokenRequest
 	*/
 	RevokeToken(ctx context.Context, tokenID string) APIRevokeTokenRequest
 
@@ -132,12 +131,12 @@ type TokensAPI interface {
 	RevokeTokenExecute(r APIRevokeTokenRequest) (*http.Response, error)
 
 	/*
-	RevokeTokenCurrent Revoke the current token
+		RevokeTokenCurrent Revoke the current token
 
-	Revoke a token that is used to authenticate the request.
+		Revoke a token that is used to authenticate the request.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIRevokeTokenCurrentRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIRevokeTokenCurrentRequest
 	*/
 	RevokeTokenCurrent(ctx context.Context) APIRevokeTokenCurrentRequest
 
@@ -150,8 +149,8 @@ type TokensAPIService service
 
 // APIBulkRevokeTokensRequest represents a request for the resource.
 type APIBulkRevokeTokensRequest struct {
-	ctx context.Context
-	APIService TokensAPI
+	ctx         context.Context
+	APIService  TokensAPI
 	requestBody *map[string]map[string]any
 }
 
@@ -177,16 +176,16 @@ Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers
 func (a *TokensAPIService) BulkRevokeTokens(ctx context.Context) APIBulkRevokeTokensRequest {
 	return APIBulkRevokeTokensRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // BulkRevokeTokensExecute executes the request
 func (a *TokensAPIService) BulkRevokeTokensExecute(r APIBulkRevokeTokensRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokensAPIService.BulkRevokeTokens")
@@ -258,7 +257,6 @@ func (a *TokensAPIService) BulkRevokeTokensExecute(r APIBulkRevokeTokensRequest)
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -277,10 +275,9 @@ func (a *TokensAPIService) BulkRevokeTokensExecute(r APIBulkRevokeTokensRequest)
 
 // APICreateTokenRequest represents a request for the resource.
 type APICreateTokenRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService TokensAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APICreateTokenRequest) Execute() (*TokenCreatedResponse, *http.Response, error) {
@@ -299,7 +296,7 @@ Create an API token. If two-factor authentication is enabled for your account, r
 func (a *TokensAPIService) CreateToken(ctx context.Context) APICreateTokenRequest {
 	return APICreateTokenRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -307,10 +304,10 @@ func (a *TokensAPIService) CreateToken(ctx context.Context) APICreateTokenReques
 //  @return TokenCreatedResponse
 func (a *TokensAPIService) CreateTokenExecute(r APICreateTokenRequest) (*TokenCreatedResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TokenCreatedResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TokenCreatedResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokensAPIService.CreateToken")
@@ -399,7 +396,6 @@ func (a *TokensAPIService) CreateTokenExecute(r APICreateTokenRequest) (*TokenCr
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -418,11 +414,10 @@ func (a *TokensAPIService) CreateTokenExecute(r APICreateTokenRequest) (*TokenCr
 
 // APIGetTokenRequest represents a request for the resource.
 type APIGetTokenRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService TokensAPI
-	tokenID string
+	tokenID    string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetTokenRequest) Execute() (*TokenResponse, *http.Response, error) {
@@ -441,8 +436,8 @@ Get a single token by its id.
 func (a *TokensAPIService) GetToken(ctx context.Context, tokenID string) APIGetTokenRequest {
 	return APIGetTokenRequest{
 		APIService: a,
-		ctx: ctx,
-		tokenID: tokenID,
+		ctx:        ctx,
+		tokenID:    tokenID,
 	}
 }
 
@@ -450,10 +445,10 @@ func (a *TokensAPIService) GetToken(ctx context.Context, tokenID string) APIGetT
 //  @return TokenResponse
 func (a *TokensAPIService) GetTokenExecute(r APIGetTokenRequest) (*TokenResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TokenResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TokenResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokensAPIService.GetToken")
@@ -562,7 +557,6 @@ func (a *TokensAPIService) GetTokenExecute(r APIGetTokenRequest) (*TokenResponse
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -581,10 +575,9 @@ func (a *TokensAPIService) GetTokenExecute(r APIGetTokenRequest) (*TokenResponse
 
 // APIGetTokenCurrentRequest represents a request for the resource.
 type APIGetTokenCurrentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService TokensAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetTokenCurrentRequest) Execute() (*TokenResponse, *http.Response, error) {
@@ -602,7 +595,7 @@ Get a single token based on the access_token used in the request.
 func (a *TokensAPIService) GetTokenCurrent(ctx context.Context) APIGetTokenCurrentRequest {
 	return APIGetTokenCurrentRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -610,10 +603,10 @@ func (a *TokensAPIService) GetTokenCurrent(ctx context.Context) APIGetTokenCurre
 //  @return TokenResponse
 func (a *TokensAPIService) GetTokenCurrentExecute(r APIGetTokenCurrentRequest) (*TokenResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TokenResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TokenResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokensAPIService.GetTokenCurrent")
@@ -711,7 +704,6 @@ func (a *TokensAPIService) GetTokenCurrentExecute(r APIGetTokenCurrentRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -730,11 +722,10 @@ func (a *TokensAPIService) GetTokenCurrentExecute(r APIGetTokenCurrentRequest) (
 
 // APIListTokensCustomerRequest represents a request for the resource.
 type APIListTokensCustomerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService TokensAPI
 	customerID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListTokensCustomerRequest) Execute() ([]TokenResponse, *http.Response, error) {
@@ -753,7 +744,7 @@ List all tokens belonging to a specific customer.
 func (a *TokensAPIService) ListTokensCustomer(ctx context.Context, customerID string) APIListTokensCustomerRequest {
 	return APIListTokensCustomerRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerID: customerID,
 	}
 }
@@ -762,10 +753,10 @@ func (a *TokensAPIService) ListTokensCustomer(ctx context.Context, customerID st
 //  @return []TokenResponse
 func (a *TokensAPIService) ListTokensCustomerExecute(r APIListTokensCustomerRequest) ([]TokenResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []TokenResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []TokenResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokensAPIService.ListTokensCustomer")
@@ -845,7 +836,6 @@ func (a *TokensAPIService) ListTokensCustomerExecute(r APIListTokensCustomerRequ
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -864,10 +854,9 @@ func (a *TokensAPIService) ListTokensCustomerExecute(r APIListTokensCustomerRequ
 
 // APIListTokensUserRequest represents a request for the resource.
 type APIListTokensUserRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService TokensAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListTokensUserRequest) Execute() ([]TokenResponse, *http.Response, error) {
@@ -885,7 +874,7 @@ List all tokens belonging to the authenticated user.
 func (a *TokensAPIService) ListTokensUser(ctx context.Context) APIListTokensUserRequest {
 	return APIListTokensUserRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -893,10 +882,10 @@ func (a *TokensAPIService) ListTokensUser(ctx context.Context) APIListTokensUser
 //  @return []TokenResponse
 func (a *TokensAPIService) ListTokensUserExecute(r APIListTokensUserRequest) ([]TokenResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []TokenResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []TokenResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokensAPIService.ListTokensUser")
@@ -994,7 +983,6 @@ func (a *TokensAPIService) ListTokensUserExecute(r APIListTokensUserRequest) ([]
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1013,11 +1001,10 @@ func (a *TokensAPIService) ListTokensUserExecute(r APIListTokensUserRequest) ([]
 
 // APIRevokeTokenRequest represents a request for the resource.
 type APIRevokeTokenRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService TokensAPI
-	tokenID string
+	tokenID    string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIRevokeTokenRequest) Execute() (*http.Response, error) {
@@ -1036,17 +1023,17 @@ Revoke a specific token by its id.
 func (a *TokensAPIService) RevokeToken(ctx context.Context, tokenID string) APIRevokeTokenRequest {
 	return APIRevokeTokenRequest{
 		APIService: a,
-		ctx: ctx,
-		tokenID: tokenID,
+		ctx:        ctx,
+		tokenID:    tokenID,
 	}
 }
 
 // RevokeTokenExecute executes the request
 func (a *TokensAPIService) RevokeTokenExecute(r APIRevokeTokenRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokensAPIService.RevokeToken")
@@ -1156,7 +1143,6 @@ func (a *TokensAPIService) RevokeTokenExecute(r APIRevokeTokenRequest) (*http.Re
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1175,10 +1161,9 @@ func (a *TokensAPIService) RevokeTokenExecute(r APIRevokeTokenRequest) (*http.Re
 
 // APIRevokeTokenCurrentRequest represents a request for the resource.
 type APIRevokeTokenCurrentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService TokensAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIRevokeTokenCurrentRequest) Execute() (*http.Response, error) {
@@ -1196,16 +1181,16 @@ Revoke a token that is used to authenticate the request.
 func (a *TokensAPIService) RevokeTokenCurrent(ctx context.Context) APIRevokeTokenCurrentRequest {
 	return APIRevokeTokenCurrentRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
 // RevokeTokenCurrentExecute executes the request
 func (a *TokensAPIService) RevokeTokenCurrentExecute(r APIRevokeTokenCurrentRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TokensAPIService.RevokeTokenCurrent")
@@ -1303,7 +1288,6 @@ func (a *TokensAPIService) RevokeTokenCurrentExecute(r APIRevokeTokenCurrentRequ
 		}
 		return localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

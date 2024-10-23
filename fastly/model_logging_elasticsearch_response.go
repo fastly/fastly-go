@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,13 +21,13 @@ import (
 type LoggingElasticsearchResponse struct {
 	// The name for the real-time logging configuration.
 	Name *string `json:"name,omitempty"`
-	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
 	Format *string `json:"format,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// A secure certificate to authenticate a server with. Must be in PEM format.
 	TLSCaCert NullableString `json:"tls_ca_cert,omitempty"`
@@ -57,9 +56,9 @@ type LoggingElasticsearchResponse struct {
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
+	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -155,7 +154,7 @@ func (o *LoggingElasticsearchResponse) GetPlacement() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchResponse) GetPlacementOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -174,6 +173,7 @@ func (o *LoggingElasticsearchResponse) HasPlacement() bool {
 func (o *LoggingElasticsearchResponse) SetPlacement(v string) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *LoggingElasticsearchResponse) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -197,7 +197,7 @@ func (o *LoggingElasticsearchResponse) GetResponseCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchResponse) GetResponseConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseCondition.Get(), o.ResponseCondition.IsSet()
@@ -216,6 +216,7 @@ func (o *LoggingElasticsearchResponse) HasResponseCondition() bool {
 func (o *LoggingElasticsearchResponse) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
+
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 func (o *LoggingElasticsearchResponse) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
@@ -303,7 +304,7 @@ func (o *LoggingElasticsearchResponse) GetTLSCaCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchResponse) GetTLSCaCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCaCert.Get(), o.TLSCaCert.IsSet()
@@ -322,6 +323,7 @@ func (o *LoggingElasticsearchResponse) HasTLSCaCert() bool {
 func (o *LoggingElasticsearchResponse) SetTLSCaCert(v string) {
 	o.TLSCaCert.Set(&v)
 }
+
 // SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
 func (o *LoggingElasticsearchResponse) SetTLSCaCertNil() {
 	o.TLSCaCert.Set(nil)
@@ -345,7 +347,7 @@ func (o *LoggingElasticsearchResponse) GetTLSClientCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchResponse) GetTLSClientCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientCert.Get(), o.TLSClientCert.IsSet()
@@ -364,6 +366,7 @@ func (o *LoggingElasticsearchResponse) HasTLSClientCert() bool {
 func (o *LoggingElasticsearchResponse) SetTLSClientCert(v string) {
 	o.TLSClientCert.Set(&v)
 }
+
 // SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
 func (o *LoggingElasticsearchResponse) SetTLSClientCertNil() {
 	o.TLSClientCert.Set(nil)
@@ -387,7 +390,7 @@ func (o *LoggingElasticsearchResponse) GetTLSClientKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchResponse) GetTLSClientKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientKey.Get(), o.TLSClientKey.IsSet()
@@ -406,6 +409,7 @@ func (o *LoggingElasticsearchResponse) HasTLSClientKey() bool {
 func (o *LoggingElasticsearchResponse) SetTLSClientKey(v string) {
 	o.TLSClientKey.Set(&v)
 }
+
 // SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
 func (o *LoggingElasticsearchResponse) SetTLSClientKeyNil() {
 	o.TLSClientKey.Set(nil)
@@ -429,7 +433,7 @@ func (o *LoggingElasticsearchResponse) GetTLSHostname() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchResponse) GetTLSHostnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSHostname.Get(), o.TLSHostname.IsSet()
@@ -448,6 +452,7 @@ func (o *LoggingElasticsearchResponse) HasTLSHostname() bool {
 func (o *LoggingElasticsearchResponse) SetTLSHostname(v string) {
 	o.TLSHostname.Set(&v)
 }
+
 // SetTLSHostnameNil sets the value for TLSHostname to be an explicit nil
 func (o *LoggingElasticsearchResponse) SetTLSHostnameNil() {
 	o.TLSHostname.Set(nil)
@@ -599,7 +604,7 @@ func (o *LoggingElasticsearchResponse) GetPipeline() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchResponse) GetPipelineOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Pipeline.Get(), o.Pipeline.IsSet()
@@ -618,6 +623,7 @@ func (o *LoggingElasticsearchResponse) HasPipeline() bool {
 func (o *LoggingElasticsearchResponse) SetPipeline(v string) {
 	o.Pipeline.Set(&v)
 }
+
 // SetPipelineNil sets the value for Pipeline to be an explicit nil
 func (o *LoggingElasticsearchResponse) SetPipelineNil() {
 	o.Pipeline.Set(nil)
@@ -641,7 +647,7 @@ func (o *LoggingElasticsearchResponse) GetUser() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchResponse) GetUserOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.User.Get(), o.User.IsSet()
@@ -660,6 +666,7 @@ func (o *LoggingElasticsearchResponse) HasUser() bool {
 func (o *LoggingElasticsearchResponse) SetUser(v string) {
 	o.User.Set(&v)
 }
+
 // SetUserNil sets the value for User to be an explicit nil
 func (o *LoggingElasticsearchResponse) SetUserNil() {
 	o.User.Set(nil)
@@ -683,7 +690,7 @@ func (o *LoggingElasticsearchResponse) GetPassword() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchResponse) GetPasswordOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Password.Get(), o.Password.IsSet()
@@ -702,6 +709,7 @@ func (o *LoggingElasticsearchResponse) HasPassword() bool {
 func (o *LoggingElasticsearchResponse) SetPassword(v string) {
 	o.Password.Set(&v)
 }
+
 // SetPasswordNil sets the value for Password to be an explicit nil
 func (o *LoggingElasticsearchResponse) SetPasswordNil() {
 	o.Password.Set(nil)
@@ -725,7 +733,7 @@ func (o *LoggingElasticsearchResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -744,6 +752,7 @@ func (o *LoggingElasticsearchResponse) HasCreatedAt() bool {
 func (o *LoggingElasticsearchResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *LoggingElasticsearchResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -767,7 +776,7 @@ func (o *LoggingElasticsearchResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -786,6 +795,7 @@ func (o *LoggingElasticsearchResponse) HasDeletedAt() bool {
 func (o *LoggingElasticsearchResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *LoggingElasticsearchResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -809,7 +819,7 @@ func (o *LoggingElasticsearchResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingElasticsearchResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -828,6 +838,7 @@ func (o *LoggingElasticsearchResponse) HasUpdatedAt() bool {
 func (o *LoggingElasticsearchResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *LoggingElasticsearchResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -978,7 +989,7 @@ func (o LoggingElasticsearchResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingElasticsearchResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingElasticsearchResponse := _LoggingElasticsearchResponse{}
 
@@ -1016,7 +1027,7 @@ func (o *LoggingElasticsearchResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingElasticsearchResponse is a helper abstraction for handling nullable loggingelasticsearchresponse types. 
+// NullableLoggingElasticsearchResponse is a helper abstraction for handling nullable loggingelasticsearchresponse types.
 type NullableLoggingElasticsearchResponse struct {
 	value *LoggingElasticsearchResponse
 	isSet bool
@@ -1056,7 +1067,7 @@ func (v NullableLoggingElasticsearchResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingElasticsearchResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

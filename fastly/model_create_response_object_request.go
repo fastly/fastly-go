@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -32,7 +31,7 @@ type CreateResponseObjectRequest struct {
 	// Condition which, if met, will select this configuration during a request. Optional.
 	RequestCondition NullableString `json:"request_condition,omitempty"`
 	// Name of the cache condition controlling when this configuration applies.
-	CacheCondition NullableString `json:"cache_condition,omitempty"`
+	CacheCondition       NullableString `json:"cache_condition,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -196,7 +195,7 @@ func (o *CreateResponseObjectRequest) GetContentType() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateResponseObjectRequest) GetContentTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ContentType.Get(), o.ContentType.IsSet()
@@ -215,6 +214,7 @@ func (o *CreateResponseObjectRequest) HasContentType() bool {
 func (o *CreateResponseObjectRequest) SetContentType(v string) {
 	o.ContentType.Set(&v)
 }
+
 // SetContentTypeNil sets the value for ContentType to be an explicit nil
 func (o *CreateResponseObjectRequest) SetContentTypeNil() {
 	o.ContentType.Set(nil)
@@ -238,7 +238,7 @@ func (o *CreateResponseObjectRequest) GetRequestCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateResponseObjectRequest) GetRequestConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RequestCondition.Get(), o.RequestCondition.IsSet()
@@ -257,6 +257,7 @@ func (o *CreateResponseObjectRequest) HasRequestCondition() bool {
 func (o *CreateResponseObjectRequest) SetRequestCondition(v string) {
 	o.RequestCondition.Set(&v)
 }
+
 // SetRequestConditionNil sets the value for RequestCondition to be an explicit nil
 func (o *CreateResponseObjectRequest) SetRequestConditionNil() {
 	o.RequestCondition.Set(nil)
@@ -280,7 +281,7 @@ func (o *CreateResponseObjectRequest) GetCacheCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreateResponseObjectRequest) GetCacheConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CacheCondition.Get(), o.CacheCondition.IsSet()
@@ -299,6 +300,7 @@ func (o *CreateResponseObjectRequest) HasCacheCondition() bool {
 func (o *CreateResponseObjectRequest) SetCacheCondition(v string) {
 	o.CacheCondition.Set(&v)
 }
+
 // SetCacheConditionNil sets the value for CacheCondition to be an explicit nil
 func (o *CreateResponseObjectRequest) SetCacheConditionNil() {
 	o.CacheCondition.Set(nil)
@@ -343,7 +345,7 @@ func (o CreateResponseObjectRequest) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *CreateResponseObjectRequest) UnmarshalJSON(bytes []byte) (err error) {
 	varCreateResponseObjectRequest := _CreateResponseObjectRequest{}
 
@@ -367,7 +369,7 @@ func (o *CreateResponseObjectRequest) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableCreateResponseObjectRequest is a helper abstraction for handling nullable createresponseobjectrequest types. 
+// NullableCreateResponseObjectRequest is a helper abstraction for handling nullable createresponseobjectrequest types.
 type NullableCreateResponseObjectRequest struct {
 	value *CreateResponseObjectRequest
 	isSet bool
@@ -407,7 +409,7 @@ func (v NullableCreateResponseObjectRequest) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableCreateResponseObjectRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

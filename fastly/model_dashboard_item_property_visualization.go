@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,16 +12,15 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
-// DashboardItemPropertyVisualization [An object](#visualization) which describes the data visualization to display. 
+// DashboardItemPropertyVisualization [An object](#visualization) which describes the data visualization to display.
 type DashboardItemPropertyVisualization struct {
-	// The type of visualization to display. 
-	Type string `json:"type"`
-	Config DashboardItemPropertyVisualizationPropertyConfig `json:"config"`
+	// The type of visualization to display.
+	Type                 string                                           `json:"type"`
+	Config               DashboardItemPropertyVisualizationPropertyConfig `json:"config"`
 	AdditionalProperties map[string]any
 }
 
@@ -59,7 +58,7 @@ func (o *DashboardItemPropertyVisualization) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *DashboardItemPropertyVisualization) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -83,7 +82,7 @@ func (o *DashboardItemPropertyVisualization) GetConfig() DashboardItemPropertyVi
 // GetConfigOk returns a tuple with the Config field value
 // and a boolean to check if the value has been set.
 func (o *DashboardItemPropertyVisualization) GetConfigOk() (*DashboardItemPropertyVisualizationPropertyConfig, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Config, true
@@ -113,7 +112,7 @@ func (o DashboardItemPropertyVisualization) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *DashboardItemPropertyVisualization) UnmarshalJSON(bytes []byte) (err error) {
 	varDashboardItemPropertyVisualization := _DashboardItemPropertyVisualization{}
 
@@ -132,7 +131,7 @@ func (o *DashboardItemPropertyVisualization) UnmarshalJSON(bytes []byte) (err er
 	return err
 }
 
-// NullableDashboardItemPropertyVisualization is a helper abstraction for handling nullable dashboarditempropertyvisualization types. 
+// NullableDashboardItemPropertyVisualization is a helper abstraction for handling nullable dashboarditempropertyvisualization types.
 type NullableDashboardItemPropertyVisualization struct {
 	value *DashboardItemPropertyVisualization
 	isSet bool
@@ -172,7 +171,7 @@ func (v NullableDashboardItemPropertyVisualization) MarshalJSON() ([]byte, error
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDashboardItemPropertyVisualization) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

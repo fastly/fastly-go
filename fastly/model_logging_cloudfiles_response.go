@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,13 +21,13 @@ import (
 type LoggingCloudfilesResponse struct {
 	// The name for the real-time logging configuration.
 	Name *string `json:"name,omitempty"`
-	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// How the message should be formatted.
 	MessageType *string `json:"message_type,omitempty"`
@@ -46,8 +45,8 @@ type LoggingCloudfilesResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	ServiceID *string      `json:"service_id,omitempty"`
+	Version   *string      `json:"version,omitempty"`
 	// Your Cloud Files account access key.
 	AccessKey *string `json:"access_key,omitempty"`
 	// The name of your Cloud Files container.
@@ -59,7 +58,7 @@ type LoggingCloudfilesResponse struct {
 	// A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 	PublicKey NullableString `json:"public_key,omitempty"`
 	// The username for your Cloud Files account.
-	User *string `json:"user,omitempty"`
+	User                 *string `json:"user,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -155,7 +154,7 @@ func (o *LoggingCloudfilesResponse) GetPlacement() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCloudfilesResponse) GetPlacementOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -174,6 +173,7 @@ func (o *LoggingCloudfilesResponse) HasPlacement() bool {
 func (o *LoggingCloudfilesResponse) SetPlacement(v string) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *LoggingCloudfilesResponse) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -197,7 +197,7 @@ func (o *LoggingCloudfilesResponse) GetResponseCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCloudfilesResponse) GetResponseConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseCondition.Get(), o.ResponseCondition.IsSet()
@@ -216,6 +216,7 @@ func (o *LoggingCloudfilesResponse) HasResponseCondition() bool {
 func (o *LoggingCloudfilesResponse) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
+
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 func (o *LoggingCloudfilesResponse) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
@@ -335,7 +336,7 @@ func (o *LoggingCloudfilesResponse) GetTimestampFormat() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCloudfilesResponse) GetTimestampFormatOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TimestampFormat.Get(), o.TimestampFormat.IsSet()
@@ -354,6 +355,7 @@ func (o *LoggingCloudfilesResponse) HasTimestampFormat() bool {
 func (o *LoggingCloudfilesResponse) SetTimestampFormat(v string) {
 	o.TimestampFormat.Set(&v)
 }
+
 // SetTimestampFormatNil sets the value for TimestampFormat to be an explicit nil
 func (o *LoggingCloudfilesResponse) SetTimestampFormatNil() {
 	o.TimestampFormat.Set(nil)
@@ -473,7 +475,7 @@ func (o *LoggingCloudfilesResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCloudfilesResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -492,6 +494,7 @@ func (o *LoggingCloudfilesResponse) HasCreatedAt() bool {
 func (o *LoggingCloudfilesResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *LoggingCloudfilesResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -515,7 +518,7 @@ func (o *LoggingCloudfilesResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCloudfilesResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -534,6 +537,7 @@ func (o *LoggingCloudfilesResponse) HasDeletedAt() bool {
 func (o *LoggingCloudfilesResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *LoggingCloudfilesResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -557,7 +561,7 @@ func (o *LoggingCloudfilesResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCloudfilesResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -576,6 +580,7 @@ func (o *LoggingCloudfilesResponse) HasUpdatedAt() bool {
 func (o *LoggingCloudfilesResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *LoggingCloudfilesResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -727,7 +732,7 @@ func (o *LoggingCloudfilesResponse) GetPath() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCloudfilesResponse) GetPathOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
@@ -746,6 +751,7 @@ func (o *LoggingCloudfilesResponse) HasPath() bool {
 func (o *LoggingCloudfilesResponse) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *LoggingCloudfilesResponse) SetPathNil() {
 	o.Path.Set(nil)
@@ -769,7 +775,7 @@ func (o *LoggingCloudfilesResponse) GetRegion() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCloudfilesResponse) GetRegionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Region.Get(), o.Region.IsSet()
@@ -788,6 +794,7 @@ func (o *LoggingCloudfilesResponse) HasRegion() bool {
 func (o *LoggingCloudfilesResponse) SetRegion(v string) {
 	o.Region.Set(&v)
 }
+
 // SetRegionNil sets the value for Region to be an explicit nil
 func (o *LoggingCloudfilesResponse) SetRegionNil() {
 	o.Region.Set(nil)
@@ -811,7 +818,7 @@ func (o *LoggingCloudfilesResponse) GetPublicKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCloudfilesResponse) GetPublicKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PublicKey.Get(), o.PublicKey.IsSet()
@@ -830,6 +837,7 @@ func (o *LoggingCloudfilesResponse) HasPublicKey() bool {
 func (o *LoggingCloudfilesResponse) SetPublicKey(v string) {
 	o.PublicKey.Set(&v)
 }
+
 // SetPublicKeyNil sets the value for PublicKey to be an explicit nil
 func (o *LoggingCloudfilesResponse) SetPublicKeyNil() {
 	o.PublicKey.Set(nil)
@@ -948,7 +956,7 @@ func (o LoggingCloudfilesResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingCloudfilesResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingCloudfilesResponse := _LoggingCloudfilesResponse{}
 
@@ -986,7 +994,7 @@ func (o *LoggingCloudfilesResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingCloudfilesResponse is a helper abstraction for handling nullable loggingcloudfilesresponse types. 
+// NullableLoggingCloudfilesResponse is a helper abstraction for handling nullable loggingcloudfilesresponse types.
 type NullableLoggingCloudfilesResponse struct {
 	value *LoggingCloudfilesResponse
 	isSet bool
@@ -1026,7 +1034,7 @@ func (v NullableLoggingCloudfilesResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingCloudfilesResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

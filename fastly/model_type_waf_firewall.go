@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -32,7 +31,7 @@ var AllowedTypeWafFirewallEnumValues = []TypeWafFirewall{
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *TypeWafFirewall) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
@@ -57,7 +56,7 @@ func NewTypeWafFirewallFromValue(v string) (*TypeWafFirewall, error) {
 	if ev.IsValid() {
 		return &ev, nil
 	}
-  return nil, fmt.Errorf("invalid value '%v' for TypeWafFirewall: valid values are %v", v, AllowedTypeWafFirewallEnumValues)
+	return nil, fmt.Errorf("invalid value '%v' for TypeWafFirewall: valid values are %v", v, AllowedTypeWafFirewallEnumValues)
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
@@ -75,7 +74,7 @@ func (v TypeWafFirewall) Ptr() *TypeWafFirewall {
 	return &v
 }
 
-// NullableTypeWafFirewall is a helper abstraction for handling nullable typewaffirewall types. 
+// NullableTypeWafFirewall is a helper abstraction for handling nullable typewaffirewall types.
 type NullableTypeWafFirewall struct {
 	value *TypeWafFirewall
 	isSet bool
@@ -115,7 +114,7 @@ func (v NullableTypeWafFirewall) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableTypeWafFirewall) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -33,14 +32,14 @@ var (
 type ApexRedirectAPI interface {
 
 	/*
-	CreateApexRedirect Create an apex redirect
+		CreateApexRedirect Create an apex redirect
 
-	Create an apex redirect for a particular service and version.
+		Create an apex redirect for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateApexRedirectRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateApexRedirectRequest
 	*/
 	CreateApexRedirect(ctx context.Context, serviceID string, versionID int32) APICreateApexRedirectRequest
 
@@ -49,13 +48,13 @@ type ApexRedirectAPI interface {
 	CreateApexRedirectExecute(r APICreateApexRedirectRequest) (*ApexRedirect, *http.Response, error)
 
 	/*
-	DeleteApexRedirect Delete an apex redirect
+		DeleteApexRedirect Delete an apex redirect
 
-	Delete an apex redirect by its ID.
+		Delete an apex redirect by its ID.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param apexRedirectID
-	 @return APIDeleteApexRedirectRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param apexRedirectID
+		 @return APIDeleteApexRedirectRequest
 	*/
 	DeleteApexRedirect(ctx context.Context, apexRedirectID string) APIDeleteApexRedirectRequest
 
@@ -64,13 +63,13 @@ type ApexRedirectAPI interface {
 	DeleteApexRedirectExecute(r APIDeleteApexRedirectRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetApexRedirect Get an apex redirect
+		GetApexRedirect Get an apex redirect
 
-	Get an apex redirect by its ID.
+		Get an apex redirect by its ID.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param apexRedirectID
-	 @return APIGetApexRedirectRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param apexRedirectID
+		 @return APIGetApexRedirectRequest
 	*/
 	GetApexRedirect(ctx context.Context, apexRedirectID string) APIGetApexRedirectRequest
 
@@ -79,14 +78,14 @@ type ApexRedirectAPI interface {
 	GetApexRedirectExecute(r APIGetApexRedirectRequest) (*ApexRedirect, *http.Response, error)
 
 	/*
-	ListApexRedirects List apex redirects
+		ListApexRedirects List apex redirects
 
-	List all apex redirects for a particular service and version.
+		List all apex redirects for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListApexRedirectsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListApexRedirectsRequest
 	*/
 	ListApexRedirects(ctx context.Context, serviceID string, versionID int32) APIListApexRedirectsRequest
 
@@ -95,13 +94,13 @@ type ApexRedirectAPI interface {
 	ListApexRedirectsExecute(r APIListApexRedirectsRequest) ([]ApexRedirect, *http.Response, error)
 
 	/*
-	UpdateApexRedirect Update an apex redirect
+		UpdateApexRedirect Update an apex redirect
 
-	Update an apex redirect by its ID.
+		Update an apex redirect by its ID.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param apexRedirectID
-	 @return APIUpdateApexRedirectRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param apexRedirectID
+		 @return APIUpdateApexRedirectRequest
 	*/
 	UpdateApexRedirect(ctx context.Context, apexRedirectID string) APIUpdateApexRedirectRequest
 
@@ -115,17 +114,17 @@ type ApexRedirectAPIService service
 
 // APICreateApexRedirectRequest represents a request for the resource.
 type APICreateApexRedirectRequest struct {
-	ctx context.Context
-	APIService ApexRedirectAPI
-	serviceID string
-	versionID int32
-	serviceID2 *string
-	version *int32
-	createdAt *time.Time
-	deletedAt *time.Time
-	updatedAt *time.Time
-	statusCode *int32
-	domains *[]string
+	ctx             context.Context
+	APIService      ApexRedirectAPI
+	serviceID       string
+	versionID       int32
+	serviceID2      *string
+	version         *int32
+	createdAt       *time.Time
+	deletedAt       *time.Time
+	updatedAt       *time.Time
+	statusCode      *int32
+	domains         *[]string
 	featureRevision *int32
 }
 
@@ -134,36 +133,43 @@ func (r *APICreateApexRedirectRequest) ServiceID2(serviceID2 string) *APICreateA
 	r.serviceID2 = &serviceID2
 	return r
 }
+
 // Version returns a pointer to a request.
 func (r *APICreateApexRedirectRequest) Version(version int32) *APICreateApexRedirectRequest {
 	r.version = &version
 	return r
 }
+
 // CreatedAt Date and time in ISO 8601 format.
 func (r *APICreateApexRedirectRequest) CreatedAt(createdAt time.Time) *APICreateApexRedirectRequest {
 	r.createdAt = &createdAt
 	return r
 }
+
 // DeletedAt Date and time in ISO 8601 format.
 func (r *APICreateApexRedirectRequest) DeletedAt(deletedAt time.Time) *APICreateApexRedirectRequest {
 	r.deletedAt = &deletedAt
 	return r
 }
+
 // UpdatedAt Date and time in ISO 8601 format.
 func (r *APICreateApexRedirectRequest) UpdatedAt(updatedAt time.Time) *APICreateApexRedirectRequest {
 	r.updatedAt = &updatedAt
 	return r
 }
+
 // StatusCode HTTP status code used to redirect the client.
 func (r *APICreateApexRedirectRequest) StatusCode(statusCode int32) *APICreateApexRedirectRequest {
 	r.statusCode = &statusCode
 	return r
 }
+
 // Domains Array of apex domains that should redirect to their WWW subdomain.
 func (r *APICreateApexRedirectRequest) Domains(domains []string) *APICreateApexRedirectRequest {
 	r.domains = &domains
 	return r
 }
+
 // FeatureRevision Revision number of the apex redirect feature implementation. Defaults to the most recent revision.
 func (r *APICreateApexRedirectRequest) FeatureRevision(featureRevision int32) *APICreateApexRedirectRequest {
 	r.featureRevision = &featureRevision
@@ -188,9 +194,9 @@ Create an apex redirect for a particular service and version.
 func (a *ApexRedirectAPIService) CreateApexRedirect(ctx context.Context, serviceID string, versionID int32) APICreateApexRedirectRequest {
 	return APICreateApexRedirectRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -198,10 +204,10 @@ func (a *ApexRedirectAPIService) CreateApexRedirect(ctx context.Context, service
 //  @return ApexRedirect
 func (a *ApexRedirectAPIService) CreateApexRedirectExecute(r APICreateApexRedirectRequest) (*ApexRedirect, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ApexRedirect
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ApexRedirect
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApexRedirectAPIService.CreateApexRedirect")
@@ -314,7 +320,6 @@ func (a *ApexRedirectAPIService) CreateApexRedirectExecute(r APICreateApexRedire
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -333,11 +338,10 @@ func (a *ApexRedirectAPIService) CreateApexRedirectExecute(r APICreateApexRedire
 
 // APIDeleteApexRedirectRequest represents a request for the resource.
 type APIDeleteApexRedirectRequest struct {
-	ctx context.Context
-	APIService ApexRedirectAPI
+	ctx            context.Context
+	APIService     ApexRedirectAPI
 	apexRedirectID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteApexRedirectRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -355,8 +359,8 @@ Delete an apex redirect by its ID.
 */
 func (a *ApexRedirectAPIService) DeleteApexRedirect(ctx context.Context, apexRedirectID string) APIDeleteApexRedirectRequest {
 	return APIDeleteApexRedirectRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:     a,
+		ctx:            ctx,
 		apexRedirectID: apexRedirectID,
 	}
 }
@@ -365,10 +369,10 @@ func (a *ApexRedirectAPIService) DeleteApexRedirect(ctx context.Context, apexRed
 //  @return InlineResponse200
 func (a *ApexRedirectAPIService) DeleteApexRedirectExecute(r APIDeleteApexRedirectRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApexRedirectAPIService.DeleteApexRedirect")
@@ -448,7 +452,6 @@ func (a *ApexRedirectAPIService) DeleteApexRedirectExecute(r APIDeleteApexRedire
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -467,11 +470,10 @@ func (a *ApexRedirectAPIService) DeleteApexRedirectExecute(r APIDeleteApexRedire
 
 // APIGetApexRedirectRequest represents a request for the resource.
 type APIGetApexRedirectRequest struct {
-	ctx context.Context
-	APIService ApexRedirectAPI
+	ctx            context.Context
+	APIService     ApexRedirectAPI
 	apexRedirectID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetApexRedirectRequest) Execute() (*ApexRedirect, *http.Response, error) {
@@ -489,8 +491,8 @@ Get an apex redirect by its ID.
 */
 func (a *ApexRedirectAPIService) GetApexRedirect(ctx context.Context, apexRedirectID string) APIGetApexRedirectRequest {
 	return APIGetApexRedirectRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:     a,
+		ctx:            ctx,
 		apexRedirectID: apexRedirectID,
 	}
 }
@@ -499,10 +501,10 @@ func (a *ApexRedirectAPIService) GetApexRedirect(ctx context.Context, apexRedire
 //  @return ApexRedirect
 func (a *ApexRedirectAPIService) GetApexRedirectExecute(r APIGetApexRedirectRequest) (*ApexRedirect, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ApexRedirect
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ApexRedirect
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApexRedirectAPIService.GetApexRedirect")
@@ -582,7 +584,6 @@ func (a *ApexRedirectAPIService) GetApexRedirectExecute(r APIGetApexRedirectRequ
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -601,12 +602,11 @@ func (a *ApexRedirectAPIService) GetApexRedirectExecute(r APIGetApexRedirectRequ
 
 // APIListApexRedirectsRequest represents a request for the resource.
 type APIListApexRedirectsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ApexRedirectAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListApexRedirectsRequest) Execute() ([]ApexRedirect, *http.Response, error) {
@@ -626,9 +626,9 @@ List all apex redirects for a particular service and version.
 func (a *ApexRedirectAPIService) ListApexRedirects(ctx context.Context, serviceID string, versionID int32) APIListApexRedirectsRequest {
 	return APIListApexRedirectsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -636,10 +636,10 @@ func (a *ApexRedirectAPIService) ListApexRedirects(ctx context.Context, serviceI
 //  @return []ApexRedirect
 func (a *ApexRedirectAPIService) ListApexRedirectsExecute(r APIListApexRedirectsRequest) ([]ApexRedirect, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []ApexRedirect
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []ApexRedirect
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApexRedirectAPIService.ListApexRedirects")
@@ -720,7 +720,6 @@ func (a *ApexRedirectAPIService) ListApexRedirectsExecute(r APIListApexRedirects
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -739,16 +738,16 @@ func (a *ApexRedirectAPIService) ListApexRedirectsExecute(r APIListApexRedirects
 
 // APIUpdateApexRedirectRequest represents a request for the resource.
 type APIUpdateApexRedirectRequest struct {
-	ctx context.Context
-	APIService ApexRedirectAPI
-	apexRedirectID string
-	serviceID *string
-	version *int32
-	createdAt *time.Time
-	deletedAt *time.Time
-	updatedAt *time.Time
-	statusCode *int32
-	domains *[]string
+	ctx             context.Context
+	APIService      ApexRedirectAPI
+	apexRedirectID  string
+	serviceID       *string
+	version         *int32
+	createdAt       *time.Time
+	deletedAt       *time.Time
+	updatedAt       *time.Time
+	statusCode      *int32
+	domains         *[]string
 	featureRevision *int32
 }
 
@@ -757,36 +756,43 @@ func (r *APIUpdateApexRedirectRequest) ServiceID(serviceID string) *APIUpdateApe
 	r.serviceID = &serviceID
 	return r
 }
+
 // Version returns a pointer to a request.
 func (r *APIUpdateApexRedirectRequest) Version(version int32) *APIUpdateApexRedirectRequest {
 	r.version = &version
 	return r
 }
+
 // CreatedAt Date and time in ISO 8601 format.
 func (r *APIUpdateApexRedirectRequest) CreatedAt(createdAt time.Time) *APIUpdateApexRedirectRequest {
 	r.createdAt = &createdAt
 	return r
 }
+
 // DeletedAt Date and time in ISO 8601 format.
 func (r *APIUpdateApexRedirectRequest) DeletedAt(deletedAt time.Time) *APIUpdateApexRedirectRequest {
 	r.deletedAt = &deletedAt
 	return r
 }
+
 // UpdatedAt Date and time in ISO 8601 format.
 func (r *APIUpdateApexRedirectRequest) UpdatedAt(updatedAt time.Time) *APIUpdateApexRedirectRequest {
 	r.updatedAt = &updatedAt
 	return r
 }
+
 // StatusCode HTTP status code used to redirect the client.
 func (r *APIUpdateApexRedirectRequest) StatusCode(statusCode int32) *APIUpdateApexRedirectRequest {
 	r.statusCode = &statusCode
 	return r
 }
+
 // Domains Array of apex domains that should redirect to their WWW subdomain.
 func (r *APIUpdateApexRedirectRequest) Domains(domains []string) *APIUpdateApexRedirectRequest {
 	r.domains = &domains
 	return r
 }
+
 // FeatureRevision Revision number of the apex redirect feature implementation. Defaults to the most recent revision.
 func (r *APIUpdateApexRedirectRequest) FeatureRevision(featureRevision int32) *APIUpdateApexRedirectRequest {
 	r.featureRevision = &featureRevision
@@ -809,8 +815,8 @@ Update an apex redirect by its ID.
 */
 func (a *ApexRedirectAPIService) UpdateApexRedirect(ctx context.Context, apexRedirectID string) APIUpdateApexRedirectRequest {
 	return APIUpdateApexRedirectRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:     a,
+		ctx:            ctx,
 		apexRedirectID: apexRedirectID,
 	}
 }
@@ -819,10 +825,10 @@ func (a *ApexRedirectAPIService) UpdateApexRedirect(ctx context.Context, apexRed
 //  @return ApexRedirect
 func (a *ApexRedirectAPIService) UpdateApexRedirectExecute(r APIUpdateApexRedirectRequest) (*ApexRedirect, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ApexRedirect
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ApexRedirect
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApexRedirectAPIService.UpdateApexRedirect")
@@ -933,7 +939,6 @@ func (a *ApexRedirectAPIService) UpdateApexRedirectExecute(r APIUpdateApexRedire
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -42,7 +41,7 @@ type LoggingS3Additional struct {
 	// Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
 	ServerSideEncryption NullableString `json:"server_side_encryption,omitempty"`
 	// The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
-	FileMaxBytes *int32 `json:"file_max_bytes,omitempty"`
+	FileMaxBytes         *int32 `json:"file_max_bytes,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -98,7 +97,7 @@ func (o *LoggingS3Additional) GetAccessKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingS3Additional) GetAccessKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AccessKey.Get(), o.AccessKey.IsSet()
@@ -117,6 +116,7 @@ func (o *LoggingS3Additional) HasAccessKey() bool {
 func (o *LoggingS3Additional) SetAccessKey(v string) {
 	o.AccessKey.Set(&v)
 }
+
 // SetAccessKeyNil sets the value for AccessKey to be an explicit nil
 func (o *LoggingS3Additional) SetAccessKeyNil() {
 	o.AccessKey.Set(nil)
@@ -236,7 +236,7 @@ func (o *LoggingS3Additional) GetIamRole() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingS3Additional) GetIamRoleOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.IamRole.Get(), o.IamRole.IsSet()
@@ -255,6 +255,7 @@ func (o *LoggingS3Additional) HasIamRole() bool {
 func (o *LoggingS3Additional) SetIamRole(v string) {
 	o.IamRole.Set(&v)
 }
+
 // SetIamRoleNil sets the value for IamRole to be an explicit nil
 func (o *LoggingS3Additional) SetIamRoleNil() {
 	o.IamRole.Set(nil)
@@ -278,7 +279,7 @@ func (o *LoggingS3Additional) GetPath() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingS3Additional) GetPathOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
@@ -297,6 +298,7 @@ func (o *LoggingS3Additional) HasPath() bool {
 func (o *LoggingS3Additional) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *LoggingS3Additional) SetPathNil() {
 	o.Path.Set(nil)
@@ -320,7 +322,7 @@ func (o *LoggingS3Additional) GetPublicKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingS3Additional) GetPublicKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PublicKey.Get(), o.PublicKey.IsSet()
@@ -339,6 +341,7 @@ func (o *LoggingS3Additional) HasPublicKey() bool {
 func (o *LoggingS3Additional) SetPublicKey(v string) {
 	o.PublicKey.Set(&v)
 }
+
 // SetPublicKeyNil sets the value for PublicKey to be an explicit nil
 func (o *LoggingS3Additional) SetPublicKeyNil() {
 	o.PublicKey.Set(nil)
@@ -362,7 +365,7 @@ func (o *LoggingS3Additional) GetRedundancy() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingS3Additional) GetRedundancyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Redundancy.Get(), o.Redundancy.IsSet()
@@ -381,6 +384,7 @@ func (o *LoggingS3Additional) HasRedundancy() bool {
 func (o *LoggingS3Additional) SetRedundancy(v string) {
 	o.Redundancy.Set(&v)
 }
+
 // SetRedundancyNil sets the value for Redundancy to be an explicit nil
 func (o *LoggingS3Additional) SetRedundancyNil() {
 	o.Redundancy.Set(nil)
@@ -404,7 +408,7 @@ func (o *LoggingS3Additional) GetSecretKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingS3Additional) GetSecretKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.SecretKey.Get(), o.SecretKey.IsSet()
@@ -423,6 +427,7 @@ func (o *LoggingS3Additional) HasSecretKey() bool {
 func (o *LoggingS3Additional) SetSecretKey(v string) {
 	o.SecretKey.Set(&v)
 }
+
 // SetSecretKeyNil sets the value for SecretKey to be an explicit nil
 func (o *LoggingS3Additional) SetSecretKeyNil() {
 	o.SecretKey.Set(nil)
@@ -446,7 +451,7 @@ func (o *LoggingS3Additional) GetServerSideEncryptionKmsKeyID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingS3Additional) GetServerSideEncryptionKmsKeyIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ServerSideEncryptionKmsKeyID.Get(), o.ServerSideEncryptionKmsKeyID.IsSet()
@@ -465,6 +470,7 @@ func (o *LoggingS3Additional) HasServerSideEncryptionKmsKeyID() bool {
 func (o *LoggingS3Additional) SetServerSideEncryptionKmsKeyID(v string) {
 	o.ServerSideEncryptionKmsKeyID.Set(&v)
 }
+
 // SetServerSideEncryptionKmsKeyIDNil sets the value for ServerSideEncryptionKmsKeyID to be an explicit nil
 func (o *LoggingS3Additional) SetServerSideEncryptionKmsKeyIDNil() {
 	o.ServerSideEncryptionKmsKeyID.Set(nil)
@@ -488,7 +494,7 @@ func (o *LoggingS3Additional) GetServerSideEncryption() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingS3Additional) GetServerSideEncryptionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ServerSideEncryption.Get(), o.ServerSideEncryption.IsSet()
@@ -507,6 +513,7 @@ func (o *LoggingS3Additional) HasServerSideEncryption() bool {
 func (o *LoggingS3Additional) SetServerSideEncryption(v string) {
 	o.ServerSideEncryption.Set(&v)
 }
+
 // SetServerSideEncryptionNil sets the value for ServerSideEncryption to be an explicit nil
 func (o *LoggingS3Additional) SetServerSideEncryptionNil() {
 	o.ServerSideEncryption.Set(nil)
@@ -598,7 +605,7 @@ func (o LoggingS3Additional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingS3Additional) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingS3Additional := _LoggingS3Additional{}
 
@@ -627,7 +634,7 @@ func (o *LoggingS3Additional) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingS3Additional is a helper abstraction for handling nullable loggings3additional types. 
+// NullableLoggingS3Additional is a helper abstraction for handling nullable loggings3additional types.
 type NullableLoggingS3Additional struct {
 	value *LoggingS3Additional
 	isSet bool
@@ -667,7 +674,7 @@ func (v NullableLoggingS3Additional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingS3Additional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

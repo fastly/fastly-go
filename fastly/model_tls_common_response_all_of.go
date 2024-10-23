@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -26,7 +25,7 @@ type TLSCommonResponseAllOf struct {
 	// The client private key used to make authenticated requests. Must be in PEM format.
 	TLSClientKey NullableString `json:"tls_client_key,omitempty"`
 	// The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
-	TLSCertHostname NullableString `json:"tls_cert_hostname,omitempty"`
+	TLSCertHostname      NullableString `json:"tls_cert_hostname,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -78,7 +77,7 @@ func (o *TLSCommonResponseAllOf) GetTLSCaCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TLSCommonResponseAllOf) GetTLSCaCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCaCert.Get(), o.TLSCaCert.IsSet()
@@ -97,6 +96,7 @@ func (o *TLSCommonResponseAllOf) HasTLSCaCert() bool {
 func (o *TLSCommonResponseAllOf) SetTLSCaCert(v string) {
 	o.TLSCaCert.Set(&v)
 }
+
 // SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
 func (o *TLSCommonResponseAllOf) SetTLSCaCertNil() {
 	o.TLSCaCert.Set(nil)
@@ -120,7 +120,7 @@ func (o *TLSCommonResponseAllOf) GetTLSClientCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TLSCommonResponseAllOf) GetTLSClientCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientCert.Get(), o.TLSClientCert.IsSet()
@@ -139,6 +139,7 @@ func (o *TLSCommonResponseAllOf) HasTLSClientCert() bool {
 func (o *TLSCommonResponseAllOf) SetTLSClientCert(v string) {
 	o.TLSClientCert.Set(&v)
 }
+
 // SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
 func (o *TLSCommonResponseAllOf) SetTLSClientCertNil() {
 	o.TLSClientCert.Set(nil)
@@ -162,7 +163,7 @@ func (o *TLSCommonResponseAllOf) GetTLSClientKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TLSCommonResponseAllOf) GetTLSClientKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientKey.Get(), o.TLSClientKey.IsSet()
@@ -181,6 +182,7 @@ func (o *TLSCommonResponseAllOf) HasTLSClientKey() bool {
 func (o *TLSCommonResponseAllOf) SetTLSClientKey(v string) {
 	o.TLSClientKey.Set(&v)
 }
+
 // SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
 func (o *TLSCommonResponseAllOf) SetTLSClientKeyNil() {
 	o.TLSClientKey.Set(nil)
@@ -204,7 +206,7 @@ func (o *TLSCommonResponseAllOf) GetTLSCertHostname() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TLSCommonResponseAllOf) GetTLSCertHostnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCertHostname.Get(), o.TLSCertHostname.IsSet()
@@ -223,6 +225,7 @@ func (o *TLSCommonResponseAllOf) HasTLSCertHostname() bool {
 func (o *TLSCommonResponseAllOf) SetTLSCertHostname(v string) {
 	o.TLSCertHostname.Set(&v)
 }
+
 // SetTLSCertHostnameNil sets the value for TLSCertHostname to be an explicit nil
 func (o *TLSCommonResponseAllOf) SetTLSCertHostnameNil() {
 	o.TLSCertHostname.Set(nil)
@@ -258,7 +261,7 @@ func (o TLSCommonResponseAllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *TLSCommonResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	varTLSCommonResponseAllOf := _TLSCommonResponseAllOf{}
 
@@ -279,7 +282,7 @@ func (o *TLSCommonResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTLSCommonResponseAllOf is a helper abstraction for handling nullable tlscommonresponseallof types. 
+// NullableTLSCommonResponseAllOf is a helper abstraction for handling nullable tlscommonresponseallof types.
 type NullableTLSCommonResponseAllOf struct {
 	value *TLSCommonResponseAllOf
 	isSet bool
@@ -319,7 +322,7 @@ func (v NullableTLSCommonResponseAllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableTLSCommonResponseAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

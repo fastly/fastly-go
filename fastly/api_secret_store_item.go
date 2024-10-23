@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,19 +31,19 @@ var (
 type SecretStoreItemAPI interface {
 
 	/*
-	CreateSecret Create a new secret in a store.
+		CreateSecret Create a new secret in a store.
 
-	Create a new secret in a store.
-Returns an error if a secret already exists with the same name.
-See `PUT` and `PATCH` methods for ways to recreate an existing secret.
+		Create a new secret in a store.
+	Returns an error if a secret already exists with the same name.
+	See `PUT` and `PATCH` methods for ways to recreate an existing secret.
 
-The `secret` field must be Base64-encoded because a secret can contain binary data.
-In the example below, the unencoded secret is "Hello, world!"
+	The `secret` field must be Base64-encoded because a secret can contain binary data.
+	In the example below, the unencoded secret is "Hello, world!"
 
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @return APICreateSecretRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @return APICreateSecretRequest
 	*/
 	CreateSecret(ctx context.Context, storeID string) APICreateSecretRequest
 
@@ -53,14 +52,14 @@ In the example below, the unencoded secret is "Hello, world!"
 	CreateSecretExecute(r APICreateSecretRequest) (*SecretResponse, *http.Response, error)
 
 	/*
-	DeleteSecret Delete a secret from a store.
+		DeleteSecret Delete a secret from a store.
 
-	Delete a secret from a store by name.
+		Delete a secret from a store by name.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @param secretName
-	 @return APIDeleteSecretRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @param secretName
+		 @return APIDeleteSecretRequest
 	*/
 	DeleteSecret(ctx context.Context, storeID string, secretName string) APIDeleteSecretRequest
 
@@ -68,14 +67,14 @@ In the example below, the unencoded secret is "Hello, world!"
 	DeleteSecretExecute(r APIDeleteSecretRequest) (*http.Response, error)
 
 	/*
-	GetSecret Get secret metadata.
+		GetSecret Get secret metadata.
 
-	Get metadata about a secret by name.
+		Get metadata about a secret by name.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @param secretName
-	 @return APIGetSecretRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @param secretName
+		 @return APIGetSecretRequest
 	*/
 	GetSecret(ctx context.Context, storeID string, secretName string) APIGetSecretRequest
 
@@ -84,13 +83,13 @@ In the example below, the unencoded secret is "Hello, world!"
 	GetSecretExecute(r APIGetSecretRequest) (*SecretResponse, *http.Response, error)
 
 	/*
-	GetSecrets List secrets within a store.
+		GetSecrets List secrets within a store.
 
-	List all secrets within a store.
+		List all secrets within a store.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @return APIGetSecretsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @return APIGetSecretsRequest
 	*/
 	GetSecrets(ctx context.Context, storeID string) APIGetSecretsRequest
 
@@ -99,18 +98,18 @@ In the example below, the unencoded secret is "Hello, world!"
 	GetSecretsExecute(r APIGetSecretsRequest) (*InlineResponse2006, *http.Response, error)
 
 	/*
-	MustRecreateSecret Recreate a secret in a store.
+		MustRecreateSecret Recreate a secret in a store.
 
-	Recreate a secret based on the secret's name.
-Returns an error if there is no existing secret with the same name.
+		Recreate a secret based on the secret's name.
+	Returns an error if there is no existing secret with the same name.
 
-The `secret` field must be Base64-encoded because a secret can contain binary data.
-In the example below, the unencoded secret is "Hello, world!"
+	The `secret` field must be Base64-encoded because a secret can contain binary data.
+	In the example below, the unencoded secret is "Hello, world!"
 
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @return APIMustRecreateSecretRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @return APIMustRecreateSecretRequest
 	*/
 	MustRecreateSecret(ctx context.Context, storeID string) APIMustRecreateSecretRequest
 
@@ -119,18 +118,18 @@ In the example below, the unencoded secret is "Hello, world!"
 	MustRecreateSecretExecute(r APIMustRecreateSecretRequest) (*SecretResponse, *http.Response, error)
 
 	/*
-	RecreateSecret Create or recreate a secret in a store.
+		RecreateSecret Create or recreate a secret in a store.
 
-	Create or recreate a secret based on the secret's name.
-The response object's `recreated` field will be true if the secret was recreated.
+		Create or recreate a secret based on the secret's name.
+	The response object's `recreated` field will be true if the secret was recreated.
 
-The `secret` field must be Base64-encoded because a secret can contain binary data.
-In the example below, the unencoded secret is "Hello, world!"
+	The `secret` field must be Base64-encoded because a secret can contain binary data.
+	In the example below, the unencoded secret is "Hello, world!"
 
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param storeID
-	 @return APIRecreateSecretRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeID
+		 @return APIRecreateSecretRequest
 	*/
 	RecreateSecret(ctx context.Context, storeID string) APIRecreateSecretRequest
 
@@ -144,10 +143,10 @@ type SecretStoreItemAPIService service
 
 // APICreateSecretRequest represents a request for the resource.
 type APICreateSecretRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SecretStoreItemAPI
-	storeID string
-	secret *Secret
+	storeID    string
+	secret     *Secret
 }
 
 // Secret returns a pointer to a request.
@@ -179,8 +178,8 @@ In the example below, the unencoded secret is "Hello, world!"
 func (a *SecretStoreItemAPIService) CreateSecret(ctx context.Context, storeID string) APICreateSecretRequest {
 	return APICreateSecretRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
+		ctx:        ctx,
+		storeID:    storeID,
 	}
 }
 
@@ -188,10 +187,10 @@ func (a *SecretStoreItemAPIService) CreateSecret(ctx context.Context, storeID st
 //  @return SecretResponse
 func (a *SecretStoreItemAPIService) CreateSecretExecute(r APICreateSecretRequest) (*SecretResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SecretResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SecretResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreItemAPIService.CreateSecret")
@@ -273,7 +272,6 @@ func (a *SecretStoreItemAPIService) CreateSecretExecute(r APICreateSecretRequest
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -292,12 +290,11 @@ func (a *SecretStoreItemAPIService) CreateSecretExecute(r APICreateSecretRequest
 
 // APIDeleteSecretRequest represents a request for the resource.
 type APIDeleteSecretRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SecretStoreItemAPI
-	storeID string
+	storeID    string
 	secretName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteSecretRequest) Execute() (*http.Response, error) {
@@ -317,8 +314,8 @@ Delete a secret from a store by name.
 func (a *SecretStoreItemAPIService) DeleteSecret(ctx context.Context, storeID string, secretName string) APIDeleteSecretRequest {
 	return APIDeleteSecretRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
+		ctx:        ctx,
+		storeID:    storeID,
 		secretName: secretName,
 	}
 }
@@ -326,9 +323,9 @@ func (a *SecretStoreItemAPIService) DeleteSecret(ctx context.Context, storeID st
 // DeleteSecretExecute executes the request
 func (a *SecretStoreItemAPIService) DeleteSecretExecute(r APIDeleteSecretRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreItemAPIService.DeleteSecret")
@@ -400,7 +397,6 @@ func (a *SecretStoreItemAPIService) DeleteSecretExecute(r APIDeleteSecretRequest
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -419,12 +415,11 @@ func (a *SecretStoreItemAPIService) DeleteSecretExecute(r APIDeleteSecretRequest
 
 // APIGetSecretRequest represents a request for the resource.
 type APIGetSecretRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SecretStoreItemAPI
-	storeID string
+	storeID    string
 	secretName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetSecretRequest) Execute() (*SecretResponse, *http.Response, error) {
@@ -444,8 +439,8 @@ Get metadata about a secret by name.
 func (a *SecretStoreItemAPIService) GetSecret(ctx context.Context, storeID string, secretName string) APIGetSecretRequest {
 	return APIGetSecretRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
+		ctx:        ctx,
+		storeID:    storeID,
 		secretName: secretName,
 	}
 }
@@ -454,10 +449,10 @@ func (a *SecretStoreItemAPIService) GetSecret(ctx context.Context, storeID strin
 //  @return SecretResponse
 func (a *SecretStoreItemAPIService) GetSecretExecute(r APIGetSecretRequest) (*SecretResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SecretResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SecretResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreItemAPIService.GetSecret")
@@ -538,7 +533,6 @@ func (a *SecretStoreItemAPIService) GetSecretExecute(r APIGetSecretRequest) (*Se
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -557,11 +551,11 @@ func (a *SecretStoreItemAPIService) GetSecretExecute(r APIGetSecretRequest) (*Se
 
 // APIGetSecretsRequest represents a request for the resource.
 type APIGetSecretsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SecretStoreItemAPI
-	storeID string
-	cursor *string
-	limit *string
+	storeID    string
+	cursor     *string
+	limit      *string
 }
 
 // Cursor Cursor value from the &#x60;next_cursor&#x60; field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
@@ -569,6 +563,7 @@ func (r *APIGetSecretsRequest) Cursor(cursor string) *APIGetSecretsRequest {
 	r.cursor = &cursor
 	return r
 }
+
 // Limit Number of results per page. The maximum is 200.
 func (r *APIGetSecretsRequest) Limit(limit string) *APIGetSecretsRequest {
 	r.limit = &limit
@@ -592,8 +587,8 @@ List all secrets within a store.
 func (a *SecretStoreItemAPIService) GetSecrets(ctx context.Context, storeID string) APIGetSecretsRequest {
 	return APIGetSecretsRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
+		ctx:        ctx,
+		storeID:    storeID,
 	}
 }
 
@@ -601,10 +596,10 @@ func (a *SecretStoreItemAPIService) GetSecrets(ctx context.Context, storeID stri
 //  @return InlineResponse2006
 func (a *SecretStoreItemAPIService) GetSecretsExecute(r APIGetSecretsRequest) (*InlineResponse2006, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse2006
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse2006
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreItemAPIService.GetSecrets")
@@ -690,7 +685,6 @@ func (a *SecretStoreItemAPIService) GetSecretsExecute(r APIGetSecretsRequest) (*
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -709,10 +703,10 @@ func (a *SecretStoreItemAPIService) GetSecretsExecute(r APIGetSecretsRequest) (*
 
 // APIMustRecreateSecretRequest represents a request for the resource.
 type APIMustRecreateSecretRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SecretStoreItemAPI
-	storeID string
-	secret *Secret
+	storeID    string
+	secret     *Secret
 }
 
 // Secret returns a pointer to a request.
@@ -743,8 +737,8 @@ In the example below, the unencoded secret is "Hello, world!"
 func (a *SecretStoreItemAPIService) MustRecreateSecret(ctx context.Context, storeID string) APIMustRecreateSecretRequest {
 	return APIMustRecreateSecretRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
+		ctx:        ctx,
+		storeID:    storeID,
 	}
 }
 
@@ -752,10 +746,10 @@ func (a *SecretStoreItemAPIService) MustRecreateSecret(ctx context.Context, stor
 //  @return SecretResponse
 func (a *SecretStoreItemAPIService) MustRecreateSecretExecute(r APIMustRecreateSecretRequest) (*SecretResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SecretResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SecretResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreItemAPIService.MustRecreateSecret")
@@ -837,7 +831,6 @@ func (a *SecretStoreItemAPIService) MustRecreateSecretExecute(r APIMustRecreateS
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -856,10 +849,10 @@ func (a *SecretStoreItemAPIService) MustRecreateSecretExecute(r APIMustRecreateS
 
 // APIRecreateSecretRequest represents a request for the resource.
 type APIRecreateSecretRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService SecretStoreItemAPI
-	storeID string
-	secret *Secret
+	storeID    string
+	secret     *Secret
 }
 
 // Secret returns a pointer to a request.
@@ -890,8 +883,8 @@ In the example below, the unencoded secret is "Hello, world!"
 func (a *SecretStoreItemAPIService) RecreateSecret(ctx context.Context, storeID string) APIRecreateSecretRequest {
 	return APIRecreateSecretRequest{
 		APIService: a,
-		ctx: ctx,
-		storeID: storeID,
+		ctx:        ctx,
+		storeID:    storeID,
 	}
 }
 
@@ -899,10 +892,10 @@ func (a *SecretStoreItemAPIService) RecreateSecret(ctx context.Context, storeID 
 //  @return SecretResponse
 func (a *SecretStoreItemAPIService) RecreateSecretExecute(r APIRecreateSecretRequest) (*SecretResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *SecretResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *SecretResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreItemAPIService.RecreateSecret")
@@ -983,7 +976,6 @@ func (a *SecretStoreItemAPIService) RecreateSecretExecute(r APIRecreateSecretReq
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

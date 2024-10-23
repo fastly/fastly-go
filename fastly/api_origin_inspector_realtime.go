@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,13 +31,13 @@ var (
 type OriginInspectorRealtimeAPI interface {
 
 	/*
-	GetOriginInspectorLast120Seconds Get real-time origin data for the last 120 seconds
+		GetOriginInspectorLast120Seconds Get real-time origin data for the last 120 seconds
 
-	Get data for the 120 seconds preceding the latest timestamp available for a service.
+		Get data for the 120 seconds preceding the latest timestamp available for a service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIGetOriginInspectorLast120SecondsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIGetOriginInspectorLast120SecondsRequest
 	*/
 	GetOriginInspectorLast120Seconds(ctx context.Context, serviceID string) APIGetOriginInspectorLast120SecondsRequest
 
@@ -47,14 +46,14 @@ type OriginInspectorRealtimeAPI interface {
 	GetOriginInspectorLast120SecondsExecute(r APIGetOriginInspectorLast120SecondsRequest) (*OriginInspector, *http.Response, error)
 
 	/*
-	GetOriginInspectorLastMaxEntries Get a limited number of real-time origin data entries
+		GetOriginInspectorLastMaxEntries Get a limited number of real-time origin data entries
 
-	Get data for the `max_entries` seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.
+		Get data for the `max_entries` seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param maxEntries Maximum number of results to display.
-	 @return APIGetOriginInspectorLastMaxEntriesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param maxEntries Maximum number of results to display.
+		 @return APIGetOriginInspectorLastMaxEntriesRequest
 	*/
 	GetOriginInspectorLastMaxEntries(ctx context.Context, serviceID string, maxEntries int32) APIGetOriginInspectorLastMaxEntriesRequest
 
@@ -63,16 +62,16 @@ type OriginInspectorRealtimeAPI interface {
 	GetOriginInspectorLastMaxEntriesExecute(r APIGetOriginInspectorLastMaxEntriesRequest) (*OriginInspector, *http.Response, error)
 
 	/*
-	GetOriginInspectorLastSecond Get real-time origin data from specific time.
+		GetOriginInspectorLastSecond Get real-time origin data from specific time.
 
-	Get real-time origin data for the specified reporting period. Specify `0` to get a single entry for the last complete second. The `Timestamp` field included in the response provides the time index of the latest entry in the dataset and can be provided as the `start_timestamp` of the next request for a seamless continuation of the dataset from one request to the next.
-Due to processing latency, the earliest entry in the response dataset may be earlier than `start_timestamp` by the value of `AggregateDelay`.
+		Get real-time origin data for the specified reporting period. Specify `0` to get a single entry for the last complete second. The `Timestamp` field included in the response provides the time index of the latest entry in the dataset and can be provided as the `start_timestamp` of the next request for a seamless continuation of the dataset from one request to the next.
+	Due to processing latency, the earliest entry in the response dataset may be earlier than `start_timestamp` by the value of `AggregateDelay`.
 
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param startTimestamp Timestamp in seconds (Unix epoch time).
-	 @return APIGetOriginInspectorLastSecondRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param startTimestamp Timestamp in seconds (Unix epoch time).
+		 @return APIGetOriginInspectorLastSecondRequest
 	*/
 	GetOriginInspectorLastSecond(ctx context.Context, serviceID string, startTimestamp int32) APIGetOriginInspectorLastSecondRequest
 
@@ -86,11 +85,10 @@ type OriginInspectorRealtimeAPIService service
 
 // APIGetOriginInspectorLast120SecondsRequest represents a request for the resource.
 type APIGetOriginInspectorLast120SecondsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService OriginInspectorRealtimeAPI
-	serviceID string
+	serviceID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetOriginInspectorLast120SecondsRequest) Execute() (*OriginInspector, *http.Response, error) {
@@ -109,8 +107,8 @@ Get data for the 120 seconds preceding the latest timestamp available for a serv
 func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLast120Seconds(ctx context.Context, serviceID string) APIGetOriginInspectorLast120SecondsRequest {
 	return APIGetOriginInspectorLast120SecondsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 	}
 }
 
@@ -118,10 +116,10 @@ func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLast120Seconds(ctx
 //  @return OriginInspector
 func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLast120SecondsExecute(r APIGetOriginInspectorLast120SecondsRequest) (*OriginInspector, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *OriginInspector
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *OriginInspector
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OriginInspectorRealtimeAPIService.GetOriginInspectorLast120Seconds")
@@ -201,7 +199,6 @@ func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLast120SecondsExec
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -220,12 +217,11 @@ func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLast120SecondsExec
 
 // APIGetOriginInspectorLastMaxEntriesRequest represents a request for the resource.
 type APIGetOriginInspectorLastMaxEntriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService OriginInspectorRealtimeAPI
-	serviceID string
+	serviceID  string
 	maxEntries int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetOriginInspectorLastMaxEntriesRequest) Execute() (*OriginInspector, *http.Response, error) {
@@ -245,8 +241,8 @@ Get data for the `max_entries` seconds preceding the latest timestamp available 
 func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastMaxEntries(ctx context.Context, serviceID string, maxEntries int32) APIGetOriginInspectorLastMaxEntriesRequest {
 	return APIGetOriginInspectorLastMaxEntriesRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 		maxEntries: maxEntries,
 	}
 }
@@ -255,10 +251,10 @@ func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastMaxEntries(ctx
 //  @return OriginInspector
 func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastMaxEntriesExecute(r APIGetOriginInspectorLastMaxEntriesRequest) (*OriginInspector, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *OriginInspector
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *OriginInspector
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OriginInspectorRealtimeAPIService.GetOriginInspectorLastMaxEntries")
@@ -339,7 +335,6 @@ func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastMaxEntriesExec
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -358,12 +353,11 @@ func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastMaxEntriesExec
 
 // APIGetOriginInspectorLastSecondRequest represents a request for the resource.
 type APIGetOriginInspectorLastSecondRequest struct {
-	ctx context.Context
-	APIService OriginInspectorRealtimeAPI
-	serviceID string
+	ctx            context.Context
+	APIService     OriginInspectorRealtimeAPI
+	serviceID      string
 	startTimestamp int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetOriginInspectorLastSecondRequest) Execute() (*OriginInspector, *http.Response, error) {
@@ -384,9 +378,9 @@ Due to processing latency, the earliest entry in the response dataset may be ear
 */
 func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastSecond(ctx context.Context, serviceID string, startTimestamp int32) APIGetOriginInspectorLastSecondRequest {
 	return APIGetOriginInspectorLastSecondRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		APIService:     a,
+		ctx:            ctx,
+		serviceID:      serviceID,
 		startTimestamp: startTimestamp,
 	}
 }
@@ -395,10 +389,10 @@ func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastSecond(ctx con
 //  @return OriginInspector
 func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastSecondExecute(r APIGetOriginInspectorLastSecondRequest) (*OriginInspector, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *OriginInspector
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *OriginInspector
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OriginInspectorRealtimeAPIService.GetOriginInspectorLastSecond")
@@ -478,7 +472,6 @@ func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastSecondExecute(
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

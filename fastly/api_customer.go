@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,13 +31,13 @@ var (
 type CustomerAPI interface {
 
 	/*
-	DeleteCustomer Delete a customer
+		DeleteCustomer Delete a customer
 
-	Delete a customer.
+		Delete a customer.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param customerID Alphanumeric string identifying the customer.
-	 @return APIDeleteCustomerRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param customerID Alphanumeric string identifying the customer.
+		 @return APIDeleteCustomerRequest
 	*/
 	DeleteCustomer(ctx context.Context, customerID string) APIDeleteCustomerRequest
 
@@ -47,13 +46,13 @@ type CustomerAPI interface {
 	DeleteCustomerExecute(r APIDeleteCustomerRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetCustomer Get a customer
+		GetCustomer Get a customer
 
-	Get a specific customer.
+		Get a specific customer.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param customerID Alphanumeric string identifying the customer.
-	 @return APIGetCustomerRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param customerID Alphanumeric string identifying the customer.
+		 @return APIGetCustomerRequest
 	*/
 	GetCustomer(ctx context.Context, customerID string) APIGetCustomerRequest
 
@@ -62,12 +61,12 @@ type CustomerAPI interface {
 	GetCustomerExecute(r APIGetCustomerRequest) (*CustomerResponse, *http.Response, error)
 
 	/*
-	GetLoggedInCustomer Get the logged in customer
+		GetLoggedInCustomer Get the logged in customer
 
-	Get the logged in customer.
+		Get the logged in customer.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIGetLoggedInCustomerRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIGetLoggedInCustomerRequest
 	*/
 	GetLoggedInCustomer(ctx context.Context) APIGetLoggedInCustomerRequest
 
@@ -76,13 +75,13 @@ type CustomerAPI interface {
 	GetLoggedInCustomerExecute(r APIGetLoggedInCustomerRequest) (*CustomerResponse, *http.Response, error)
 
 	/*
-	ListUsers List users
+		ListUsers List users
 
-	List all users from a specified customer id.
+		List all users from a specified customer id.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param customerID Alphanumeric string identifying the customer.
-	 @return APIListUsersRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param customerID Alphanumeric string identifying the customer.
+		 @return APIListUsersRequest
 	*/
 	ListUsers(ctx context.Context, customerID string) APIListUsersRequest
 
@@ -91,13 +90,13 @@ type CustomerAPI interface {
 	ListUsersExecute(r APIListUsersRequest) ([]SchemasUserResponse, *http.Response, error)
 
 	/*
-	UpdateCustomer Update a customer
+		UpdateCustomer Update a customer
 
-	Update a customer.
+		Update a customer.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param customerID Alphanumeric string identifying the customer.
-	 @return APIUpdateCustomerRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param customerID Alphanumeric string identifying the customer.
+		 @return APIUpdateCustomerRequest
 	*/
 	UpdateCustomer(ctx context.Context, customerID string) APIUpdateCustomerRequest
 
@@ -111,11 +110,10 @@ type CustomerAPIService service
 
 // APIDeleteCustomerRequest represents a request for the resource.
 type APIDeleteCustomerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService CustomerAPI
 	customerID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteCustomerRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -134,7 +132,7 @@ Delete a customer.
 func (a *CustomerAPIService) DeleteCustomer(ctx context.Context, customerID string) APIDeleteCustomerRequest {
 	return APIDeleteCustomerRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerID: customerID,
 	}
 }
@@ -143,10 +141,10 @@ func (a *CustomerAPIService) DeleteCustomer(ctx context.Context, customerID stri
 //  @return InlineResponse200
 func (a *CustomerAPIService) DeleteCustomerExecute(r APIDeleteCustomerRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAPIService.DeleteCustomer")
@@ -226,7 +224,6 @@ func (a *CustomerAPIService) DeleteCustomerExecute(r APIDeleteCustomerRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -245,11 +242,10 @@ func (a *CustomerAPIService) DeleteCustomerExecute(r APIDeleteCustomerRequest) (
 
 // APIGetCustomerRequest represents a request for the resource.
 type APIGetCustomerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService CustomerAPI
 	customerID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetCustomerRequest) Execute() (*CustomerResponse, *http.Response, error) {
@@ -268,7 +264,7 @@ Get a specific customer.
 func (a *CustomerAPIService) GetCustomer(ctx context.Context, customerID string) APIGetCustomerRequest {
 	return APIGetCustomerRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerID: customerID,
 	}
 }
@@ -277,10 +273,10 @@ func (a *CustomerAPIService) GetCustomer(ctx context.Context, customerID string)
 //  @return CustomerResponse
 func (a *CustomerAPIService) GetCustomerExecute(r APIGetCustomerRequest) (*CustomerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *CustomerResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *CustomerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAPIService.GetCustomer")
@@ -360,7 +356,6 @@ func (a *CustomerAPIService) GetCustomerExecute(r APIGetCustomerRequest) (*Custo
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -379,10 +374,9 @@ func (a *CustomerAPIService) GetCustomerExecute(r APIGetCustomerRequest) (*Custo
 
 // APIGetLoggedInCustomerRequest represents a request for the resource.
 type APIGetLoggedInCustomerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService CustomerAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLoggedInCustomerRequest) Execute() (*CustomerResponse, *http.Response, error) {
@@ -400,7 +394,7 @@ Get the logged in customer.
 func (a *CustomerAPIService) GetLoggedInCustomer(ctx context.Context) APIGetLoggedInCustomerRequest {
 	return APIGetLoggedInCustomerRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -408,10 +402,10 @@ func (a *CustomerAPIService) GetLoggedInCustomer(ctx context.Context) APIGetLogg
 //  @return CustomerResponse
 func (a *CustomerAPIService) GetLoggedInCustomerExecute(r APIGetLoggedInCustomerRequest) (*CustomerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *CustomerResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *CustomerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAPIService.GetLoggedInCustomer")
@@ -490,7 +484,6 @@ func (a *CustomerAPIService) GetLoggedInCustomerExecute(r APIGetLoggedInCustomer
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -509,11 +502,10 @@ func (a *CustomerAPIService) GetLoggedInCustomerExecute(r APIGetLoggedInCustomer
 
 // APIListUsersRequest represents a request for the resource.
 type APIListUsersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService CustomerAPI
 	customerID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListUsersRequest) Execute() ([]SchemasUserResponse, *http.Response, error) {
@@ -532,7 +524,7 @@ List all users from a specified customer id.
 func (a *CustomerAPIService) ListUsers(ctx context.Context, customerID string) APIListUsersRequest {
 	return APIListUsersRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerID: customerID,
 	}
 }
@@ -541,10 +533,10 @@ func (a *CustomerAPIService) ListUsers(ctx context.Context, customerID string) A
 //  @return []SchemasUserResponse
 func (a *CustomerAPIService) ListUsersExecute(r APIListUsersRequest) ([]SchemasUserResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []SchemasUserResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []SchemasUserResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAPIService.ListUsers")
@@ -624,7 +616,6 @@ func (a *CustomerAPIService) ListUsersExecute(r APIListUsersRequest) ([]SchemasU
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -643,33 +634,33 @@ func (a *CustomerAPIService) ListUsersExecute(r APIListUsersRequest) ([]SchemasU
 
 // APIUpdateCustomerRequest represents a request for the resource.
 type APIUpdateCustomerRequest struct {
-	ctx context.Context
-	APIService CustomerAPI
-	customerID string
-	billingContactID *string
-	billingNetworkType *string
-	billingRef *string
+	ctx                   context.Context
+	APIService            CustomerAPI
+	customerID            string
+	billingContactID      *string
+	billingNetworkType    *string
+	billingRef            *string
 	canConfigureWordpress *bool
-	canResetPasswords *bool
-	canUploadVcl *bool
-	force2fa *bool
-	forceSso *bool
-	hasAccountPanel *bool
-	hasImprovedEvents *bool
-	hasImprovedSslConfig *bool
-	hasOpenstackLogging *bool
-	hasPci *bool
-	hasPciPasswords *bool
-	ipWhitelist *string
-	legalContactID *string
-	name *string
-	ownerID *string
-	phoneNumber *string
-	postalAddress *string
-	pricingPlan *string
-	pricingPlanID *string
-	securityContactID *string
-	technicalContactID *string
+	canResetPasswords     *bool
+	canUploadVcl          *bool
+	force2fa              *bool
+	forceSso              *bool
+	hasAccountPanel       *bool
+	hasImprovedEvents     *bool
+	hasImprovedSslConfig  *bool
+	hasOpenstackLogging   *bool
+	hasPci                *bool
+	hasPciPasswords       *bool
+	ipWhitelist           *string
+	legalContactID        *string
+	name                  *string
+	ownerID               *string
+	phoneNumber           *string
+	postalAddress         *string
+	pricingPlan           *string
+	pricingPlanID         *string
+	securityContactID     *string
+	technicalContactID    *string
 }
 
 // BillingContactID The alphanumeric string representing the primary billing contact.
@@ -677,116 +668,139 @@ func (r *APIUpdateCustomerRequest) BillingContactID(billingContactID string) *AP
 	r.billingContactID = &billingContactID
 	return r
 }
+
 // BillingNetworkType Customer&#39;s current network revenue type.
 func (r *APIUpdateCustomerRequest) BillingNetworkType(billingNetworkType string) *APIUpdateCustomerRequest {
 	r.billingNetworkType = &billingNetworkType
 	return r
 }
+
 // BillingRef Used for adding purchased orders to customer&#39;s account.
 func (r *APIUpdateCustomerRequest) BillingRef(billingRef string) *APIUpdateCustomerRequest {
 	r.billingRef = &billingRef
 	return r
 }
+
 // CanConfigureWordpress Whether this customer can view or edit wordpress.
 func (r *APIUpdateCustomerRequest) CanConfigureWordpress(canConfigureWordpress bool) *APIUpdateCustomerRequest {
 	r.canConfigureWordpress = &canConfigureWordpress
 	return r
 }
+
 // CanResetPasswords Whether this customer can reset passwords.
 func (r *APIUpdateCustomerRequest) CanResetPasswords(canResetPasswords bool) *APIUpdateCustomerRequest {
 	r.canResetPasswords = &canResetPasswords
 	return r
 }
+
 // CanUploadVcl Whether this customer can upload VCL.
 func (r *APIUpdateCustomerRequest) CanUploadVcl(canUploadVcl bool) *APIUpdateCustomerRequest {
 	r.canUploadVcl = &canUploadVcl
 	return r
 }
+
 // Force2fa Specifies whether 2FA is forced or not forced on the customer account. Logs out non-2FA users once 2FA is force enabled.
 func (r *APIUpdateCustomerRequest) Force2fa(force2fa bool) *APIUpdateCustomerRequest {
 	r.force2fa = &force2fa
 	return r
 }
+
 // ForceSso Specifies whether SSO is forced or not forced on the customer account.
 func (r *APIUpdateCustomerRequest) ForceSso(forceSso bool) *APIUpdateCustomerRequest {
 	r.forceSso = &forceSso
 	return r
 }
+
 // HasAccountPanel Specifies whether the account has access or does not have access to the account panel.
 func (r *APIUpdateCustomerRequest) HasAccountPanel(hasAccountPanel bool) *APIUpdateCustomerRequest {
 	r.hasAccountPanel = &hasAccountPanel
 	return r
 }
+
 // HasImprovedEvents Specifies whether the account has access or does not have access to the improved events.
 func (r *APIUpdateCustomerRequest) HasImprovedEvents(hasImprovedEvents bool) *APIUpdateCustomerRequest {
 	r.hasImprovedEvents = &hasImprovedEvents
 	return r
 }
+
 // HasImprovedSslConfig Whether this customer can view or edit the SSL config.
 func (r *APIUpdateCustomerRequest) HasImprovedSslConfig(hasImprovedSslConfig bool) *APIUpdateCustomerRequest {
 	r.hasImprovedSslConfig = &hasImprovedSslConfig
 	return r
 }
+
 // HasOpenstackLogging Specifies whether the account has enabled or not enabled openstack logging.
 func (r *APIUpdateCustomerRequest) HasOpenstackLogging(hasOpenstackLogging bool) *APIUpdateCustomerRequest {
 	r.hasOpenstackLogging = &hasOpenstackLogging
 	return r
 }
+
 // HasPci Specifies whether the account can edit PCI for a service.
 func (r *APIUpdateCustomerRequest) HasPci(hasPci bool) *APIUpdateCustomerRequest {
 	r.hasPci = &hasPci
 	return r
 }
+
 // HasPciPasswords Specifies whether PCI passwords are required for the account.
 func (r *APIUpdateCustomerRequest) HasPciPasswords(hasPciPasswords bool) *APIUpdateCustomerRequest {
 	r.hasPciPasswords = &hasPciPasswords
 	return r
 }
+
 // IPWhitelist The range of IP addresses authorized to access the customer account.
 func (r *APIUpdateCustomerRequest) IPWhitelist(ipWhitelist string) *APIUpdateCustomerRequest {
 	r.ipWhitelist = &ipWhitelist
 	return r
 }
+
 // LegalContactID The alphanumeric string identifying the account&#39;s legal contact.
 func (r *APIUpdateCustomerRequest) LegalContactID(legalContactID string) *APIUpdateCustomerRequest {
 	r.legalContactID = &legalContactID
 	return r
 }
+
 // Name The name of the customer, generally the company name.
 func (r *APIUpdateCustomerRequest) Name(name string) *APIUpdateCustomerRequest {
 	r.name = &name
 	return r
 }
+
 // OwnerID The alphanumeric string identifying the account owner.
 func (r *APIUpdateCustomerRequest) OwnerID(ownerID string) *APIUpdateCustomerRequest {
 	r.ownerID = &ownerID
 	return r
 }
+
 // PhoneNumber The phone number associated with the account.
 func (r *APIUpdateCustomerRequest) PhoneNumber(phoneNumber string) *APIUpdateCustomerRequest {
 	r.phoneNumber = &phoneNumber
 	return r
 }
+
 // PostalAddress The postal address associated with the account.
 func (r *APIUpdateCustomerRequest) PostalAddress(postalAddress string) *APIUpdateCustomerRequest {
 	r.postalAddress = &postalAddress
 	return r
 }
+
 // PricingPlan The pricing plan this customer is under.
 func (r *APIUpdateCustomerRequest) PricingPlan(pricingPlan string) *APIUpdateCustomerRequest {
 	r.pricingPlan = &pricingPlan
 	return r
 }
+
 // PricingPlanID The alphanumeric string identifying the pricing plan.
 func (r *APIUpdateCustomerRequest) PricingPlanID(pricingPlanID string) *APIUpdateCustomerRequest {
 	r.pricingPlanID = &pricingPlanID
 	return r
 }
+
 // SecurityContactID The alphanumeric string identifying the account&#39;s security contact.
 func (r *APIUpdateCustomerRequest) SecurityContactID(securityContactID string) *APIUpdateCustomerRequest {
 	r.securityContactID = &securityContactID
 	return r
 }
+
 // TechnicalContactID The alphanumeric string identifying the account&#39;s technical contact.
 func (r *APIUpdateCustomerRequest) TechnicalContactID(technicalContactID string) *APIUpdateCustomerRequest {
 	r.technicalContactID = &technicalContactID
@@ -810,7 +824,7 @@ Update a customer.
 func (a *CustomerAPIService) UpdateCustomer(ctx context.Context, customerID string) APIUpdateCustomerRequest {
 	return APIUpdateCustomerRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerID: customerID,
 	}
 }
@@ -819,10 +833,10 @@ func (a *CustomerAPIService) UpdateCustomer(ctx context.Context, customerID stri
 //  @return CustomerResponse
 func (a *CustomerAPIService) UpdateCustomerExecute(r APIUpdateCustomerRequest) (*CustomerResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *CustomerResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *CustomerResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAPIService.UpdateCustomer")
@@ -973,7 +987,6 @@ func (a *CustomerAPIService) UpdateCustomerExecute(r APIUpdateCustomerRequest) (
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

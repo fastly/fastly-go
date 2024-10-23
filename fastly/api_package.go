@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,16 +12,15 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"bytes"
 	"context"
 	"io/ioutil"
 	"net/http"
 	gourl "net/url"
+	"os"
 	"strconv"
 	"strings"
-	"os"
 )
 
 // Linger please
@@ -33,14 +32,14 @@ var (
 type PackageAPI interface {
 
 	/*
-	GetPackage Get details of the service's Compute package.
+		GetPackage Get details of the service's Compute package.
 
-	List detailed information about the Compute package for the specified service.
+		List detailed information about the Compute package for the specified service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIGetPackageRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIGetPackageRequest
 	*/
 	GetPackage(ctx context.Context, serviceID string, versionID int32) APIGetPackageRequest
 
@@ -49,14 +48,14 @@ type PackageAPI interface {
 	GetPackageExecute(r APIGetPackageRequest) (*PackageResponse, *http.Response, error)
 
 	/*
-	PutPackage Upload a Compute package.
+		PutPackage Upload a Compute package.
 
-	Upload a Compute package associated with the specified service version.
+		Upload a Compute package associated with the specified service version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIPutPackageRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIPutPackageRequest
 	*/
 	PutPackage(ctx context.Context, serviceID string, versionID int32) APIPutPackageRequest
 
@@ -70,12 +69,11 @@ type PackageAPIService service
 
 // APIGetPackageRequest represents a request for the resource.
 type APIGetPackageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService PackageAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetPackageRequest) Execute() (*PackageResponse, *http.Response, error) {
@@ -95,9 +93,9 @@ List detailed information about the Compute package for the specified service.
 func (a *PackageAPIService) GetPackage(ctx context.Context, serviceID string, versionID int32) APIGetPackageRequest {
 	return APIGetPackageRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -105,10 +103,10 @@ func (a *PackageAPIService) GetPackage(ctx context.Context, serviceID string, ve
 //  @return PackageResponse
 func (a *PackageAPIService) GetPackageExecute(r APIGetPackageRequest) (*PackageResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *PackageResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *PackageResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackageAPIService.GetPackage")
@@ -189,7 +187,6 @@ func (a *PackageAPIService) GetPackageExecute(r APIGetPackageRequest) (*PackageR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -208,11 +205,11 @@ func (a *PackageAPIService) GetPackageExecute(r APIGetPackageRequest) (*PackageR
 
 // APIPutPackageRequest represents a request for the resource.
 type APIPutPackageRequest struct {
-	ctx context.Context
-	APIService PackageAPI
-	serviceID string
-	versionID int32
-	expect *string
+	ctx            context.Context
+	APIService     PackageAPI
+	serviceID      string
+	versionID      int32
+	expect         *string
 	computePackage **os.File
 }
 
@@ -221,6 +218,7 @@ func (r *APIPutPackageRequest) Expect(expect string) *APIPutPackageRequest {
 	r.expect = &expect
 	return r
 }
+
 // ComputePackage The content of the Wasm binary package.
 func (r *APIPutPackageRequest) ComputePackage(computePackage *os.File) *APIPutPackageRequest {
 	r.computePackage = &computePackage
@@ -245,9 +243,9 @@ Upload a Compute package associated with the specified service version.
 func (a *PackageAPIService) PutPackage(ctx context.Context, serviceID string, versionID int32) APIPutPackageRequest {
 	return APIPutPackageRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -255,10 +253,10 @@ func (a *PackageAPIService) PutPackage(ctx context.Context, serviceID string, ve
 //  @return PackageResponse
 func (a *PackageAPIService) PutPackageExecute(r APIPutPackageRequest) (*PackageResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *PackageResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *PackageResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackageAPIService.PutPackage")
@@ -295,8 +293,8 @@ func (a *PackageAPIService) PutPackageExecute(r APIPutPackageRequest) (*PackageR
 		localVarHeaderParams["expect"] = parameterToString(*r.expect, "")
 	}
 	var computePackageLocalVarFormFileName string
-	var computePackageLocalVarFileName     string
-	var computePackageLocalVarFileBytes    []byte
+	var computePackageLocalVarFileName string
+	var computePackageLocalVarFileBytes []byte
 
 	computePackageLocalVarFormFileName = "package"
 
@@ -358,7 +356,6 @@ func (a *PackageAPIService) PutPackageExecute(r APIPutPackageRequest) (*PackageR
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

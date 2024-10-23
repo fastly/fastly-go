@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -31,12 +30,12 @@ var (
 type PublicIPListAPI interface {
 
 	/*
-	ListFastlyIps List Fastly's public IPs
+		ListFastlyIps List Fastly's public IPs
 
-	List the public IP addresses for the Fastly network.
+		List the public IP addresses for the Fastly network.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListFastlyIpsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListFastlyIpsRequest
 	*/
 	ListFastlyIps(ctx context.Context) APIListFastlyIpsRequest
 
@@ -50,10 +49,9 @@ type PublicIPListAPIService service
 
 // APIListFastlyIpsRequest represents a request for the resource.
 type APIListFastlyIpsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService PublicIPListAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListFastlyIpsRequest) Execute() (*PublicIPList, *http.Response, error) {
@@ -71,7 +69,7 @@ List the public IP addresses for the Fastly network.
 func (a *PublicIPListAPIService) ListFastlyIps(ctx context.Context) APIListFastlyIpsRequest {
 	return APIListFastlyIpsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -79,10 +77,10 @@ func (a *PublicIPListAPIService) ListFastlyIps(ctx context.Context) APIListFastl
 //  @return PublicIPList
 func (a *PublicIPListAPIService) ListFastlyIpsExecute(r APIListFastlyIpsRequest) (*PublicIPList, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *PublicIPList
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *PublicIPList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PublicIPListAPIService.ListFastlyIps")
@@ -160,7 +158,6 @@ func (a *PublicIPListAPIService) ListFastlyIpsExecute(r APIListFastlyIpsRequest)
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

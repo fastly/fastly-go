@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,16 +31,16 @@ var (
 type LegacyWafOwaspAPI interface {
 
 	/*
-	CreateOwaspSettings Create an OWASP settings object
+		CreateOwaspSettings Create an OWASP settings object
 
-	Create an OWASP settings object for a particular service and firewall.
+		Create an OWASP settings object for a particular service and firewall.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APICreateOwaspSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APICreateOwaspSettingsRequest
 
-	Deprecated
+		Deprecated
 	*/
 	CreateOwaspSettings(ctx context.Context, serviceID string, firewallID string) APICreateOwaspSettingsRequest
 
@@ -51,16 +50,16 @@ type LegacyWafOwaspAPI interface {
 	CreateOwaspSettingsExecute(r APICreateOwaspSettingsRequest) (map[string]any, *http.Response, error)
 
 	/*
-	GetOwaspSettings Get the OWASP settings object
+		GetOwaspSettings Get the OWASP settings object
 
-	Get the OWASP settings object for a particular service and firewall.
+		Get the OWASP settings object for a particular service and firewall.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APIGetOwaspSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APIGetOwaspSettingsRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetOwaspSettings(ctx context.Context, serviceID string, firewallID string) APIGetOwaspSettingsRequest
 
@@ -70,16 +69,16 @@ type LegacyWafOwaspAPI interface {
 	GetOwaspSettingsExecute(r APIGetOwaspSettingsRequest) (map[string]any, *http.Response, error)
 
 	/*
-	UpdateOwaspSettings Update the OWASP settings object
+		UpdateOwaspSettings Update the OWASP settings object
 
-	Update the OWASP settings object for a particular service and firewall.
+		Update the OWASP settings object for a particular service and firewall.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APIUpdateOwaspSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APIUpdateOwaspSettingsRequest
 
-	Deprecated
+		Deprecated
 	*/
 	UpdateOwaspSettings(ctx context.Context, serviceID string, firewallID string) APIUpdateOwaspSettingsRequest
 
@@ -94,10 +93,10 @@ type LegacyWafOwaspAPIService service
 
 // APICreateOwaspSettingsRequest represents a request for the resource.
 type APICreateOwaspSettingsRequest struct {
-	ctx context.Context
-	APIService LegacyWafOwaspAPI
-	serviceID string
-	firewallID string
+	ctx         context.Context
+	APIService  LegacyWafOwaspAPI
+	serviceID   string
+	firewallID  string
 	requestBody *map[string]map[string]any
 }
 
@@ -127,8 +126,8 @@ Deprecated
 func (a *LegacyWafOwaspAPIService) CreateOwaspSettings(ctx context.Context, serviceID string, firewallID string) APICreateOwaspSettingsRequest {
 	return APICreateOwaspSettingsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 		firewallID: firewallID,
 	}
 }
@@ -138,10 +137,10 @@ func (a *LegacyWafOwaspAPIService) CreateOwaspSettings(ctx context.Context, serv
 // Deprecated
 func (a *LegacyWafOwaspAPIService) CreateOwaspSettingsExecute(r APICreateOwaspSettingsRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafOwaspAPIService.CreateOwaspSettings")
@@ -224,7 +223,6 @@ func (a *LegacyWafOwaspAPIService) CreateOwaspSettingsExecute(r APICreateOwaspSe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -243,12 +241,11 @@ func (a *LegacyWafOwaspAPIService) CreateOwaspSettingsExecute(r APICreateOwaspSe
 
 // APIGetOwaspSettingsRequest represents a request for the resource.
 type APIGetOwaspSettingsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LegacyWafOwaspAPI
-	serviceID string
+	serviceID  string
 	firewallID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetOwaspSettingsRequest) Execute() (map[string]any, *http.Response, error) {
@@ -270,8 +267,8 @@ Deprecated
 func (a *LegacyWafOwaspAPIService) GetOwaspSettings(ctx context.Context, serviceID string, firewallID string) APIGetOwaspSettingsRequest {
 	return APIGetOwaspSettingsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 		firewallID: firewallID,
 	}
 }
@@ -281,10 +278,10 @@ func (a *LegacyWafOwaspAPIService) GetOwaspSettings(ctx context.Context, service
 // Deprecated
 func (a *LegacyWafOwaspAPIService) GetOwaspSettingsExecute(r APIGetOwaspSettingsRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafOwaspAPIService.GetOwaspSettings")
@@ -365,7 +362,6 @@ func (a *LegacyWafOwaspAPIService) GetOwaspSettingsExecute(r APIGetOwaspSettings
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -384,10 +380,10 @@ func (a *LegacyWafOwaspAPIService) GetOwaspSettingsExecute(r APIGetOwaspSettings
 
 // APIUpdateOwaspSettingsRequest represents a request for the resource.
 type APIUpdateOwaspSettingsRequest struct {
-	ctx context.Context
-	APIService LegacyWafOwaspAPI
-	serviceID string
-	firewallID string
+	ctx         context.Context
+	APIService  LegacyWafOwaspAPI
+	serviceID   string
+	firewallID  string
 	requestBody *map[string]map[string]any
 }
 
@@ -417,8 +413,8 @@ Deprecated
 func (a *LegacyWafOwaspAPIService) UpdateOwaspSettings(ctx context.Context, serviceID string, firewallID string) APIUpdateOwaspSettingsRequest {
 	return APIUpdateOwaspSettingsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 		firewallID: firewallID,
 	}
 }
@@ -428,10 +424,10 @@ func (a *LegacyWafOwaspAPIService) UpdateOwaspSettings(ctx context.Context, serv
 // Deprecated
 func (a *LegacyWafOwaspAPIService) UpdateOwaspSettingsExecute(r APIUpdateOwaspSettingsRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafOwaspAPIService.UpdateOwaspSettings")
@@ -513,7 +509,6 @@ func (a *LegacyWafOwaspAPIService) UpdateOwaspSettingsExecute(r APIUpdateOwaspSe
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

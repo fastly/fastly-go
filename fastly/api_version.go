@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type VersionAPI interface {
 
 	/*
-	ActivateServiceVersion Activate a service version
+		ActivateServiceVersion Activate a service version
 
-	Activate the current version.
+		Activate the current version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIActivateServiceVersionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIActivateServiceVersionRequest
 	*/
 	ActivateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIActivateServiceVersionRequest
 
@@ -48,15 +47,15 @@ type VersionAPI interface {
 	ActivateServiceVersionExecute(r APIActivateServiceVersionRequest) (*VersionResponse, *http.Response, error)
 
 	/*
-	ActivateServiceVersionEnvironment Activate a service version on the specified environment
+		ActivateServiceVersionEnvironment Activate a service version on the specified environment
 
-	Activate a version on a given environment, i.e. "staging"
+		Activate a version on a given environment, i.e. "staging"
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param environmentName
-	 @return APIActivateServiceVersionEnvironmentRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param environmentName
+		 @return APIActivateServiceVersionEnvironmentRequest
 	*/
 	ActivateServiceVersionEnvironment(ctx context.Context, serviceID string, versionID int32, environmentName EnvironmentName) APIActivateServiceVersionEnvironmentRequest
 
@@ -65,14 +64,14 @@ type VersionAPI interface {
 	ActivateServiceVersionEnvironmentExecute(r APIActivateServiceVersionEnvironmentRequest) (*VersionResponse, *http.Response, error)
 
 	/*
-	CloneServiceVersion Clone a service version
+		CloneServiceVersion Clone a service version
 
-	Clone the current configuration into a new version.
+		Clone the current configuration into a new version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICloneServiceVersionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICloneServiceVersionRequest
 	*/
 	CloneServiceVersion(ctx context.Context, serviceID string, versionID int32) APICloneServiceVersionRequest
 
@@ -81,13 +80,13 @@ type VersionAPI interface {
 	CloneServiceVersionExecute(r APICloneServiceVersionRequest) (*Version, *http.Response, error)
 
 	/*
-	CreateServiceVersion Create a service version
+		CreateServiceVersion Create a service version
 
-	Create a version for a particular service.
+		Create a version for a particular service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APICreateServiceVersionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APICreateServiceVersionRequest
 	*/
 	CreateServiceVersion(ctx context.Context, serviceID string) APICreateServiceVersionRequest
 
@@ -96,14 +95,14 @@ type VersionAPI interface {
 	CreateServiceVersionExecute(r APICreateServiceVersionRequest) (*VersionCreateResponse, *http.Response, error)
 
 	/*
-	DeactivateServiceVersion Deactivate a service version
+		DeactivateServiceVersion Deactivate a service version
 
-	Deactivate the current version.
+		Deactivate the current version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIDeactivateServiceVersionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIDeactivateServiceVersionRequest
 	*/
 	DeactivateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIDeactivateServiceVersionRequest
 
@@ -112,15 +111,15 @@ type VersionAPI interface {
 	DeactivateServiceVersionExecute(r APIDeactivateServiceVersionRequest) (*VersionResponse, *http.Response, error)
 
 	/*
-	DeactivateServiceVersionEnvironment Deactivate a service version on an environment
+		DeactivateServiceVersionEnvironment Deactivate a service version on an environment
 
-	Deactivate the current version on a given environment, i.e. "staging"
+		Deactivate the current version on a given environment, i.e. "staging"
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param environmentName
-	 @return APIDeactivateServiceVersionEnvironmentRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param environmentName
+		 @return APIDeactivateServiceVersionEnvironmentRequest
 	*/
 	DeactivateServiceVersionEnvironment(ctx context.Context, serviceID string, versionID int32, environmentName EnvironmentName) APIDeactivateServiceVersionEnvironmentRequest
 
@@ -129,14 +128,14 @@ type VersionAPI interface {
 	DeactivateServiceVersionEnvironmentExecute(r APIDeactivateServiceVersionEnvironmentRequest) (*VersionResponse, *http.Response, error)
 
 	/*
-	GetServiceVersion Get a version of a service
+		GetServiceVersion Get a version of a service
 
-	Get the version for a particular service.
+		Get the version for a particular service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIGetServiceVersionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIGetServiceVersionRequest
 	*/
 	GetServiceVersion(ctx context.Context, serviceID string, versionID int32) APIGetServiceVersionRequest
 
@@ -145,13 +144,13 @@ type VersionAPI interface {
 	GetServiceVersionExecute(r APIGetServiceVersionRequest) (*VersionResponse, *http.Response, error)
 
 	/*
-	ListServiceVersions List versions of a service
+		ListServiceVersions List versions of a service
 
-	List the versions for a particular service.
+		List the versions for a particular service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIListServiceVersionsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIListServiceVersionsRequest
 	*/
 	ListServiceVersions(ctx context.Context, serviceID string) APIListServiceVersionsRequest
 
@@ -160,14 +159,14 @@ type VersionAPI interface {
 	ListServiceVersionsExecute(r APIListServiceVersionsRequest) ([]VersionResponse, *http.Response, error)
 
 	/*
-	LockServiceVersion Lock a service version
+		LockServiceVersion Lock a service version
 
-	Locks the specified version.
+		Locks the specified version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APILockServiceVersionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APILockServiceVersionRequest
 	*/
 	LockServiceVersion(ctx context.Context, serviceID string, versionID int32) APILockServiceVersionRequest
 
@@ -176,14 +175,14 @@ type VersionAPI interface {
 	LockServiceVersionExecute(r APILockServiceVersionRequest) (*Version, *http.Response, error)
 
 	/*
-	UpdateServiceVersion Update a service version
+		UpdateServiceVersion Update a service version
 
-	Update a particular version for a particular service.
+		Update a particular version for a particular service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIUpdateServiceVersionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIUpdateServiceVersionRequest
 	*/
 	UpdateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIUpdateServiceVersionRequest
 
@@ -192,14 +191,14 @@ type VersionAPI interface {
 	UpdateServiceVersionExecute(r APIUpdateServiceVersionRequest) (*VersionResponse, *http.Response, error)
 
 	/*
-	ValidateServiceVersion Validate a service version
+		ValidateServiceVersion Validate a service version
 
-	Validate the version for a particular service and version.
+		Validate the version for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIValidateServiceVersionRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIValidateServiceVersionRequest
 	*/
 	ValidateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIValidateServiceVersionRequest
 
@@ -213,12 +212,11 @@ type VersionAPIService service
 
 // APIActivateServiceVersionRequest represents a request for the resource.
 type APIActivateServiceVersionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VersionAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIActivateServiceVersionRequest) Execute() (*VersionResponse, *http.Response, error) {
@@ -238,9 +236,9 @@ Activate the current version.
 func (a *VersionAPIService) ActivateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIActivateServiceVersionRequest {
 	return APIActivateServiceVersionRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -248,10 +246,10 @@ func (a *VersionAPIService) ActivateServiceVersion(ctx context.Context, serviceI
 //  @return VersionResponse
 func (a *VersionAPIService) ActivateServiceVersionExecute(r APIActivateServiceVersionRequest) (*VersionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VersionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VersionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.ActivateServiceVersion")
@@ -332,7 +330,6 @@ func (a *VersionAPIService) ActivateServiceVersionExecute(r APIActivateServiceVe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -351,13 +348,12 @@ func (a *VersionAPIService) ActivateServiceVersionExecute(r APIActivateServiceVe
 
 // APIActivateServiceVersionEnvironmentRequest represents a request for the resource.
 type APIActivateServiceVersionEnvironmentRequest struct {
-	ctx context.Context
-	APIService VersionAPI
-	serviceID string
-	versionID int32
+	ctx             context.Context
+	APIService      VersionAPI
+	serviceID       string
+	versionID       int32
 	environmentName EnvironmentName
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIActivateServiceVersionEnvironmentRequest) Execute() (*VersionResponse, *http.Response, error) {
@@ -377,10 +373,10 @@ Activate a version on a given environment, i.e. "staging"
 */
 func (a *VersionAPIService) ActivateServiceVersionEnvironment(ctx context.Context, serviceID string, versionID int32, environmentName EnvironmentName) APIActivateServiceVersionEnvironmentRequest {
 	return APIActivateServiceVersionEnvironmentRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:      a,
+		ctx:             ctx,
+		serviceID:       serviceID,
+		versionID:       versionID,
 		environmentName: environmentName,
 	}
 }
@@ -389,10 +385,10 @@ func (a *VersionAPIService) ActivateServiceVersionEnvironment(ctx context.Contex
 //  @return VersionResponse
 func (a *VersionAPIService) ActivateServiceVersionEnvironmentExecute(r APIActivateServiceVersionEnvironmentRequest) (*VersionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VersionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VersionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.ActivateServiceVersionEnvironment")
@@ -474,7 +470,6 @@ func (a *VersionAPIService) ActivateServiceVersionEnvironmentExecute(r APIActiva
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -493,12 +488,11 @@ func (a *VersionAPIService) ActivateServiceVersionEnvironmentExecute(r APIActiva
 
 // APICloneServiceVersionRequest represents a request for the resource.
 type APICloneServiceVersionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VersionAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APICloneServiceVersionRequest) Execute() (*Version, *http.Response, error) {
@@ -518,9 +512,9 @@ Clone the current configuration into a new version.
 func (a *VersionAPIService) CloneServiceVersion(ctx context.Context, serviceID string, versionID int32) APICloneServiceVersionRequest {
 	return APICloneServiceVersionRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -528,10 +522,10 @@ func (a *VersionAPIService) CloneServiceVersion(ctx context.Context, serviceID s
 //  @return Version
 func (a *VersionAPIService) CloneServiceVersionExecute(r APICloneServiceVersionRequest) (*Version, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *Version
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *Version
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.CloneServiceVersion")
@@ -612,7 +606,6 @@ func (a *VersionAPIService) CloneServiceVersionExecute(r APICloneServiceVersionR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -631,11 +624,10 @@ func (a *VersionAPIService) CloneServiceVersionExecute(r APICloneServiceVersionR
 
 // APICreateServiceVersionRequest represents a request for the resource.
 type APICreateServiceVersionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VersionAPI
-	serviceID string
+	serviceID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APICreateServiceVersionRequest) Execute() (*VersionCreateResponse, *http.Response, error) {
@@ -654,8 +646,8 @@ Create a version for a particular service.
 func (a *VersionAPIService) CreateServiceVersion(ctx context.Context, serviceID string) APICreateServiceVersionRequest {
 	return APICreateServiceVersionRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 	}
 }
 
@@ -663,10 +655,10 @@ func (a *VersionAPIService) CreateServiceVersion(ctx context.Context, serviceID 
 //  @return VersionCreateResponse
 func (a *VersionAPIService) CreateServiceVersionExecute(r APICreateServiceVersionRequest) (*VersionCreateResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VersionCreateResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VersionCreateResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.CreateServiceVersion")
@@ -746,7 +738,6 @@ func (a *VersionAPIService) CreateServiceVersionExecute(r APICreateServiceVersio
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -765,12 +756,11 @@ func (a *VersionAPIService) CreateServiceVersionExecute(r APICreateServiceVersio
 
 // APIDeactivateServiceVersionRequest represents a request for the resource.
 type APIDeactivateServiceVersionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VersionAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeactivateServiceVersionRequest) Execute() (*VersionResponse, *http.Response, error) {
@@ -790,9 +780,9 @@ Deactivate the current version.
 func (a *VersionAPIService) DeactivateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIDeactivateServiceVersionRequest {
 	return APIDeactivateServiceVersionRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -800,10 +790,10 @@ func (a *VersionAPIService) DeactivateServiceVersion(ctx context.Context, servic
 //  @return VersionResponse
 func (a *VersionAPIService) DeactivateServiceVersionExecute(r APIDeactivateServiceVersionRequest) (*VersionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VersionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VersionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.DeactivateServiceVersion")
@@ -884,7 +874,6 @@ func (a *VersionAPIService) DeactivateServiceVersionExecute(r APIDeactivateServi
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -903,13 +892,12 @@ func (a *VersionAPIService) DeactivateServiceVersionExecute(r APIDeactivateServi
 
 // APIDeactivateServiceVersionEnvironmentRequest represents a request for the resource.
 type APIDeactivateServiceVersionEnvironmentRequest struct {
-	ctx context.Context
-	APIService VersionAPI
-	serviceID string
-	versionID int32
+	ctx             context.Context
+	APIService      VersionAPI
+	serviceID       string
+	versionID       int32
 	environmentName EnvironmentName
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeactivateServiceVersionEnvironmentRequest) Execute() (*VersionResponse, *http.Response, error) {
@@ -929,10 +917,10 @@ Deactivate the current version on a given environment, i.e. "staging"
 */
 func (a *VersionAPIService) DeactivateServiceVersionEnvironment(ctx context.Context, serviceID string, versionID int32, environmentName EnvironmentName) APIDeactivateServiceVersionEnvironmentRequest {
 	return APIDeactivateServiceVersionEnvironmentRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:      a,
+		ctx:             ctx,
+		serviceID:       serviceID,
+		versionID:       versionID,
 		environmentName: environmentName,
 	}
 }
@@ -941,10 +929,10 @@ func (a *VersionAPIService) DeactivateServiceVersionEnvironment(ctx context.Cont
 //  @return VersionResponse
 func (a *VersionAPIService) DeactivateServiceVersionEnvironmentExecute(r APIDeactivateServiceVersionEnvironmentRequest) (*VersionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VersionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VersionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.DeactivateServiceVersionEnvironment")
@@ -1026,7 +1014,6 @@ func (a *VersionAPIService) DeactivateServiceVersionEnvironmentExecute(r APIDeac
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1045,12 +1032,11 @@ func (a *VersionAPIService) DeactivateServiceVersionEnvironmentExecute(r APIDeac
 
 // APIGetServiceVersionRequest represents a request for the resource.
 type APIGetServiceVersionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VersionAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetServiceVersionRequest) Execute() (*VersionResponse, *http.Response, error) {
@@ -1070,9 +1056,9 @@ Get the version for a particular service.
 func (a *VersionAPIService) GetServiceVersion(ctx context.Context, serviceID string, versionID int32) APIGetServiceVersionRequest {
 	return APIGetServiceVersionRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -1080,10 +1066,10 @@ func (a *VersionAPIService) GetServiceVersion(ctx context.Context, serviceID str
 //  @return VersionResponse
 func (a *VersionAPIService) GetServiceVersionExecute(r APIGetServiceVersionRequest) (*VersionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VersionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VersionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.GetServiceVersion")
@@ -1164,7 +1150,6 @@ func (a *VersionAPIService) GetServiceVersionExecute(r APIGetServiceVersionReque
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1183,11 +1168,10 @@ func (a *VersionAPIService) GetServiceVersionExecute(r APIGetServiceVersionReque
 
 // APIListServiceVersionsRequest represents a request for the resource.
 type APIListServiceVersionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VersionAPI
-	serviceID string
+	serviceID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListServiceVersionsRequest) Execute() ([]VersionResponse, *http.Response, error) {
@@ -1206,8 +1190,8 @@ List the versions for a particular service.
 func (a *VersionAPIService) ListServiceVersions(ctx context.Context, serviceID string) APIListServiceVersionsRequest {
 	return APIListServiceVersionsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 	}
 }
 
@@ -1215,10 +1199,10 @@ func (a *VersionAPIService) ListServiceVersions(ctx context.Context, serviceID s
 //  @return []VersionResponse
 func (a *VersionAPIService) ListServiceVersionsExecute(r APIListServiceVersionsRequest) ([]VersionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []VersionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []VersionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.ListServiceVersions")
@@ -1298,7 +1282,6 @@ func (a *VersionAPIService) ListServiceVersionsExecute(r APIListServiceVersionsR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1317,12 +1300,11 @@ func (a *VersionAPIService) ListServiceVersionsExecute(r APIListServiceVersionsR
 
 // APILockServiceVersionRequest represents a request for the resource.
 type APILockServiceVersionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VersionAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APILockServiceVersionRequest) Execute() (*Version, *http.Response, error) {
@@ -1342,9 +1324,9 @@ Locks the specified version.
 func (a *VersionAPIService) LockServiceVersion(ctx context.Context, serviceID string, versionID int32) APILockServiceVersionRequest {
 	return APILockServiceVersionRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -1352,10 +1334,10 @@ func (a *VersionAPIService) LockServiceVersion(ctx context.Context, serviceID st
 //  @return Version
 func (a *VersionAPIService) LockServiceVersionExecute(r APILockServiceVersionRequest) (*Version, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *Version
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *Version
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.LockServiceVersion")
@@ -1436,7 +1418,6 @@ func (a *VersionAPIService) LockServiceVersionExecute(r APILockServiceVersionReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1455,17 +1436,17 @@ func (a *VersionAPIService) LockServiceVersionExecute(r APILockServiceVersionReq
 
 // APIUpdateServiceVersionRequest represents a request for the resource.
 type APIUpdateServiceVersionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VersionAPI
-	serviceID string
-	versionID int32
-	active *bool
-	comment *string
-	deployed *bool
-	locked *bool
-	number *int32
-	staging *bool
-	testing *bool
+	serviceID  string
+	versionID  int32
+	active     *bool
+	comment    *string
+	deployed   *bool
+	locked     *bool
+	number     *int32
+	staging    *bool
+	testing    *bool
 }
 
 // Active Whether this is the active version or not.
@@ -1473,31 +1454,37 @@ func (r *APIUpdateServiceVersionRequest) Active(active bool) *APIUpdateServiceVe
 	r.active = &active
 	return r
 }
+
 // Comment A freeform descriptive note.
 func (r *APIUpdateServiceVersionRequest) Comment(comment string) *APIUpdateServiceVersionRequest {
 	r.comment = &comment
 	return r
 }
+
 // Deployed Unused at this time.
 func (r *APIUpdateServiceVersionRequest) Deployed(deployed bool) *APIUpdateServiceVersionRequest {
 	r.deployed = &deployed
 	return r
 }
+
 // Locked Whether this version is locked or not. Objects can not be added or edited on locked versions.
 func (r *APIUpdateServiceVersionRequest) Locked(locked bool) *APIUpdateServiceVersionRequest {
 	r.locked = &locked
 	return r
 }
+
 // Number The number of this version.
 func (r *APIUpdateServiceVersionRequest) Number(number int32) *APIUpdateServiceVersionRequest {
 	r.number = &number
 	return r
 }
+
 // Staging Unused at this time.
 func (r *APIUpdateServiceVersionRequest) Staging(staging bool) *APIUpdateServiceVersionRequest {
 	r.staging = &staging
 	return r
 }
+
 // Testing Unused at this time.
 func (r *APIUpdateServiceVersionRequest) Testing(testing bool) *APIUpdateServiceVersionRequest {
 	r.testing = &testing
@@ -1522,9 +1509,9 @@ Update a particular version for a particular service.
 func (a *VersionAPIService) UpdateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIUpdateServiceVersionRequest {
 	return APIUpdateServiceVersionRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -1532,10 +1519,10 @@ func (a *VersionAPIService) UpdateServiceVersion(ctx context.Context, serviceID 
 //  @return VersionResponse
 func (a *VersionAPIService) UpdateServiceVersionExecute(r APIUpdateServiceVersionRequest) (*VersionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *VersionResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *VersionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.UpdateServiceVersion")
@@ -1637,7 +1624,6 @@ func (a *VersionAPIService) UpdateServiceVersionExecute(r APIUpdateServiceVersio
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1656,12 +1642,11 @@ func (a *VersionAPIService) UpdateServiceVersionExecute(r APIUpdateServiceVersio
 
 // APIValidateServiceVersionRequest represents a request for the resource.
 type APIValidateServiceVersionRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService VersionAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIValidateServiceVersionRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -1681,9 +1666,9 @@ Validate the version for a particular service and version.
 func (a *VersionAPIService) ValidateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIValidateServiceVersionRequest {
 	return APIValidateServiceVersionRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -1691,10 +1676,10 @@ func (a *VersionAPIService) ValidateServiceVersion(ctx context.Context, serviceI
 //  @return InlineResponse200
 func (a *VersionAPIService) ValidateServiceVersionExecute(r APIValidateServiceVersionRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VersionAPIService.ValidateServiceVersion")
@@ -1774,7 +1759,6 @@ func (a *VersionAPIService) ValidateServiceVersionExecute(r APIValidateServiceVe
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

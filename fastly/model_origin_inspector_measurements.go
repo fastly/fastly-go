@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,12 +12,11 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
-// OriginInspectorMeasurements A measurements object provides a count of the total number of `responses` received by Fastly from your origin servers in the reported time period, for the relevant POP and backend name as specified in the [entry](#entry-data-model). It also includes the number of responses for specific HTTP response status codes and for status code ranges. This dataset is sparse: only the keys with non-zero values will be included in the record. Where a specific status code does not have a field in this model (e.g., `429 Too Many Requests`), any responses with that code will be counted as part of the range count (`4xx` in this case) but will not be separately identified in the data. 
+// OriginInspectorMeasurements A measurements object provides a count of the total number of `responses` received by Fastly from your origin servers in the reported time period, for the relevant POP and backend name as specified in the [entry](#entry-data-model). It also includes the number of responses for specific HTTP response status codes and for status code ranges. This dataset is sparse: only the keys with non-zero values will be included in the record. Where a specific status code does not have a field in this model (e.g., `429 Too Many Requests`), any responses with that code will be counted as part of the range count (`4xx` in this case) but will not be separately identified in the data.
 type OriginInspectorMeasurements struct {
 	// Number of responses from origin.
 	Responses *int32 `json:"responses,omitempty"`
@@ -322,7 +321,7 @@ type OriginInspectorMeasurements struct {
 	// Number of responses with latency between 10,000 and 60,000 milliseconds received for origin requests made by all sources.
 	AllLatency10000To60000ms *int32 `json:"all_latency_10000_to_60000ms,omitempty"`
 	// Number of responses with latency of 60,000 milliseconds and above received for origin requests made by all sources.
-	AllLatency60000ms *int32 `json:"all_latency_60000ms,omitempty"`
+	AllLatency60000ms    *int32 `json:"all_latency_60000ms,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -5678,7 +5677,7 @@ func (o OriginInspectorMeasurements) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *OriginInspectorMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 	varOriginInspectorMeasurements := _OriginInspectorMeasurements{}
 
@@ -5847,7 +5846,7 @@ func (o *OriginInspectorMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableOriginInspectorMeasurements is a helper abstraction for handling nullable origininspectormeasurements types. 
+// NullableOriginInspectorMeasurements is a helper abstraction for handling nullable origininspectormeasurements types.
 type NullableOriginInspectorMeasurements struct {
 	value *OriginInspectorMeasurements
 	isSet bool
@@ -5887,7 +5886,7 @@ func (v NullableOriginInspectorMeasurements) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableOriginInspectorMeasurements) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

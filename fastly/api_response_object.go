@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type ResponseObjectAPI interface {
 
 	/*
-	CreateResponseObject Create a Response object
+		CreateResponseObject Create a Response object
 
-	Creates a new Response Object.
+		Creates a new Response Object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateResponseObjectRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateResponseObjectRequest
 	*/
 	CreateResponseObject(ctx context.Context, serviceID string, versionID int32) APICreateResponseObjectRequest
 
@@ -48,15 +47,15 @@ type ResponseObjectAPI interface {
 	CreateResponseObjectExecute(r APICreateResponseObjectRequest) (*ResponseObjectResponse, *http.Response, error)
 
 	/*
-	DeleteResponseObject Delete a Response Object
+		DeleteResponseObject Delete a Response Object
 
-	Deletes the specified Response Object.
+		Deletes the specified Response Object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param responseObjectName Name for the request settings.
-	 @return APIDeleteResponseObjectRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param responseObjectName Name for the request settings.
+		 @return APIDeleteResponseObjectRequest
 	*/
 	DeleteResponseObject(ctx context.Context, serviceID string, versionID int32, responseObjectName string) APIDeleteResponseObjectRequest
 
@@ -65,15 +64,15 @@ type ResponseObjectAPI interface {
 	DeleteResponseObjectExecute(r APIDeleteResponseObjectRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetResponseObject Get a Response object
+		GetResponseObject Get a Response object
 
-	Gets the specified Response Object.
+		Gets the specified Response Object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param responseObjectName Name for the request settings.
-	 @return APIGetResponseObjectRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param responseObjectName Name for the request settings.
+		 @return APIGetResponseObjectRequest
 	*/
 	GetResponseObject(ctx context.Context, serviceID string, versionID int32, responseObjectName string) APIGetResponseObjectRequest
 
@@ -82,14 +81,14 @@ type ResponseObjectAPI interface {
 	GetResponseObjectExecute(r APIGetResponseObjectRequest) (*ResponseObjectResponse, *http.Response, error)
 
 	/*
-	ListResponseObjects List Response objects
+		ListResponseObjects List Response objects
 
-	Returns all Response Objects for the specified service and version.
+		Returns all Response Objects for the specified service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListResponseObjectsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListResponseObjectsRequest
 	*/
 	ListResponseObjects(ctx context.Context, serviceID string, versionID int32) APIListResponseObjectsRequest
 
@@ -98,15 +97,15 @@ type ResponseObjectAPI interface {
 	ListResponseObjectsExecute(r APIListResponseObjectsRequest) ([]ResponseObjectResponse, *http.Response, error)
 
 	/*
-	UpdateResponseObject Update a Response object
+		UpdateResponseObject Update a Response object
 
-	Updates the specified Response Object.
+		Updates the specified Response Object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param responseObjectName Name for the request settings.
-	 @return APIUpdateResponseObjectRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param responseObjectName Name for the request settings.
+		 @return APIUpdateResponseObjectRequest
 	*/
 	UpdateResponseObject(ctx context.Context, serviceID string, versionID int32, responseObjectName string) APIUpdateResponseObjectRequest
 
@@ -120,10 +119,10 @@ type ResponseObjectAPIService service
 
 // APICreateResponseObjectRequest represents a request for the resource.
 type APICreateResponseObjectRequest struct {
-	ctx context.Context
-	APIService ResponseObjectAPI
-	serviceID string
-	versionID int32
+	ctx                         context.Context
+	APIService                  ResponseObjectAPI
+	serviceID                   string
+	versionID                   int32
 	createResponseObjectRequest *CreateResponseObjectRequest
 }
 
@@ -151,9 +150,9 @@ Creates a new Response Object.
 func (a *ResponseObjectAPIService) CreateResponseObject(ctx context.Context, serviceID string, versionID int32) APICreateResponseObjectRequest {
 	return APICreateResponseObjectRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -161,10 +160,10 @@ func (a *ResponseObjectAPIService) CreateResponseObject(ctx context.Context, ser
 //  @return ResponseObjectResponse
 func (a *ResponseObjectAPIService) CreateResponseObjectExecute(r APICreateResponseObjectRequest) (*ResponseObjectResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ResponseObjectResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ResponseObjectResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResponseObjectAPIService.CreateResponseObject")
@@ -247,7 +246,6 @@ func (a *ResponseObjectAPIService) CreateResponseObjectExecute(r APICreateRespon
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -266,13 +264,12 @@ func (a *ResponseObjectAPIService) CreateResponseObjectExecute(r APICreateRespon
 
 // APIDeleteResponseObjectRequest represents a request for the resource.
 type APIDeleteResponseObjectRequest struct {
-	ctx context.Context
-	APIService ResponseObjectAPI
-	serviceID string
-	versionID int32
+	ctx                context.Context
+	APIService         ResponseObjectAPI
+	serviceID          string
+	versionID          int32
 	responseObjectName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteResponseObjectRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -292,10 +289,10 @@ Deletes the specified Response Object.
 */
 func (a *ResponseObjectAPIService) DeleteResponseObject(ctx context.Context, serviceID string, versionID int32, responseObjectName string) APIDeleteResponseObjectRequest {
 	return APIDeleteResponseObjectRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:         a,
+		ctx:                ctx,
+		serviceID:          serviceID,
+		versionID:          versionID,
 		responseObjectName: responseObjectName,
 	}
 }
@@ -304,10 +301,10 @@ func (a *ResponseObjectAPIService) DeleteResponseObject(ctx context.Context, ser
 //  @return InlineResponse200
 func (a *ResponseObjectAPIService) DeleteResponseObjectExecute(r APIDeleteResponseObjectRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResponseObjectAPIService.DeleteResponseObject")
@@ -389,7 +386,6 @@ func (a *ResponseObjectAPIService) DeleteResponseObjectExecute(r APIDeleteRespon
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -408,13 +404,12 @@ func (a *ResponseObjectAPIService) DeleteResponseObjectExecute(r APIDeleteRespon
 
 // APIGetResponseObjectRequest represents a request for the resource.
 type APIGetResponseObjectRequest struct {
-	ctx context.Context
-	APIService ResponseObjectAPI
-	serviceID string
-	versionID int32
+	ctx                context.Context
+	APIService         ResponseObjectAPI
+	serviceID          string
+	versionID          int32
 	responseObjectName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetResponseObjectRequest) Execute() (*ResponseObjectResponse, *http.Response, error) {
@@ -434,10 +429,10 @@ Gets the specified Response Object.
 */
 func (a *ResponseObjectAPIService) GetResponseObject(ctx context.Context, serviceID string, versionID int32, responseObjectName string) APIGetResponseObjectRequest {
 	return APIGetResponseObjectRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:         a,
+		ctx:                ctx,
+		serviceID:          serviceID,
+		versionID:          versionID,
 		responseObjectName: responseObjectName,
 	}
 }
@@ -446,10 +441,10 @@ func (a *ResponseObjectAPIService) GetResponseObject(ctx context.Context, servic
 //  @return ResponseObjectResponse
 func (a *ResponseObjectAPIService) GetResponseObjectExecute(r APIGetResponseObjectRequest) (*ResponseObjectResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ResponseObjectResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ResponseObjectResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResponseObjectAPIService.GetResponseObject")
@@ -531,7 +526,6 @@ func (a *ResponseObjectAPIService) GetResponseObjectExecute(r APIGetResponseObje
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -550,12 +544,11 @@ func (a *ResponseObjectAPIService) GetResponseObjectExecute(r APIGetResponseObje
 
 // APIListResponseObjectsRequest represents a request for the resource.
 type APIListResponseObjectsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ResponseObjectAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListResponseObjectsRequest) Execute() ([]ResponseObjectResponse, *http.Response, error) {
@@ -575,9 +568,9 @@ Returns all Response Objects for the specified service and version.
 func (a *ResponseObjectAPIService) ListResponseObjects(ctx context.Context, serviceID string, versionID int32) APIListResponseObjectsRequest {
 	return APIListResponseObjectsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -585,10 +578,10 @@ func (a *ResponseObjectAPIService) ListResponseObjects(ctx context.Context, serv
 //  @return []ResponseObjectResponse
 func (a *ResponseObjectAPIService) ListResponseObjectsExecute(r APIListResponseObjectsRequest) ([]ResponseObjectResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []ResponseObjectResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []ResponseObjectResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResponseObjectAPIService.ListResponseObjects")
@@ -669,7 +662,6 @@ func (a *ResponseObjectAPIService) ListResponseObjectsExecute(r APIListResponseO
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -688,11 +680,11 @@ func (a *ResponseObjectAPIService) ListResponseObjectsExecute(r APIListResponseO
 
 // APIUpdateResponseObjectRequest represents a request for the resource.
 type APIUpdateResponseObjectRequest struct {
-	ctx context.Context
-	APIService ResponseObjectAPI
-	serviceID string
-	versionID int32
-	responseObjectName string
+	ctx                         context.Context
+	APIService                  ResponseObjectAPI
+	serviceID                   string
+	versionID                   int32
+	responseObjectName          string
 	createResponseObjectRequest *CreateResponseObjectRequest
 }
 
@@ -720,10 +712,10 @@ Updates the specified Response Object.
 */
 func (a *ResponseObjectAPIService) UpdateResponseObject(ctx context.Context, serviceID string, versionID int32, responseObjectName string) APIUpdateResponseObjectRequest {
 	return APIUpdateResponseObjectRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:         a,
+		ctx:                ctx,
+		serviceID:          serviceID,
+		versionID:          versionID,
 		responseObjectName: responseObjectName,
 	}
 }
@@ -732,10 +724,10 @@ func (a *ResponseObjectAPIService) UpdateResponseObject(ctx context.Context, ser
 //  @return ResponseObjectResponse
 func (a *ResponseObjectAPIService) UpdateResponseObjectExecute(r APIUpdateResponseObjectRequest) (*ResponseObjectResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ResponseObjectResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ResponseObjectResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ResponseObjectAPIService.UpdateResponseObject")
@@ -818,7 +810,6 @@ func (a *ResponseObjectAPIService) UpdateResponseObjectExecute(r APIUpdateRespon
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

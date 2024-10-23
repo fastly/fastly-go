@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,15 +31,15 @@ var (
 type DomainAPI interface {
 
 	/*
-	CheckDomain Validate DNS configuration for a single domain on a service
+		CheckDomain Validate DNS configuration for a single domain on a service
 
-	Checks the status of a specific domain's DNS record for a Service Version. Returns an array in the same format as domain/check_all.
+		Checks the status of a specific domain's DNS record for a Service Version. Returns an array in the same format as domain/check_all.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param domainName The name of the domain or domains associated with this service.
-	 @return APICheckDomainRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param domainName The name of the domain or domains associated with this service.
+		 @return APICheckDomainRequest
 	*/
 	CheckDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APICheckDomainRequest
 
@@ -49,14 +48,14 @@ type DomainAPI interface {
 	CheckDomainExecute(r APICheckDomainRequest) ([]any, *http.Response, error)
 
 	/*
-	CheckDomains Validate DNS configuration for all domains on a service
+		CheckDomains Validate DNS configuration for all domains on a service
 
-	Checks the status of all domains' DNS records for a Service Version. Returns an array of 3 items for each domain; the first is the details for the domain, the second is the current CNAME of the domain, and the third is a boolean indicating whether or not it has been properly setup to use Fastly.
+		Checks the status of all domains' DNS records for a Service Version. Returns an array of 3 items for each domain; the first is the details for the domain, the second is the current CNAME of the domain, and the third is a boolean indicating whether or not it has been properly setup to use Fastly.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICheckDomainsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICheckDomainsRequest
 	*/
 	CheckDomains(ctx context.Context, serviceID string, versionID int32) APICheckDomainsRequest
 
@@ -65,14 +64,14 @@ type DomainAPI interface {
 	CheckDomainsExecute(r APICheckDomainsRequest) ([][]any, *http.Response, error)
 
 	/*
-	CreateDomain Add a domain name to a service
+		CreateDomain Add a domain name to a service
 
-	Create a domain for a particular service and version.
+		Create a domain for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateDomainRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateDomainRequest
 	*/
 	CreateDomain(ctx context.Context, serviceID string, versionID int32) APICreateDomainRequest
 
@@ -81,15 +80,15 @@ type DomainAPI interface {
 	CreateDomainExecute(r APICreateDomainRequest) (*DomainResponse, *http.Response, error)
 
 	/*
-	DeleteDomain Remove a domain from a service
+		DeleteDomain Remove a domain from a service
 
-	Delete the domain for a particular service and versions.
+		Delete the domain for a particular service and versions.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param domainName The name of the domain or domains associated with this service.
-	 @return APIDeleteDomainRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param domainName The name of the domain or domains associated with this service.
+		 @return APIDeleteDomainRequest
 	*/
 	DeleteDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APIDeleteDomainRequest
 
@@ -98,15 +97,15 @@ type DomainAPI interface {
 	DeleteDomainExecute(r APIDeleteDomainRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetDomain Describe a domain
+		GetDomain Describe a domain
 
-	Get the domain for a particular service and version.
+		Get the domain for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param domainName The name of the domain or domains associated with this service.
-	 @return APIGetDomainRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param domainName The name of the domain or domains associated with this service.
+		 @return APIGetDomainRequest
 	*/
 	GetDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APIGetDomainRequest
 
@@ -115,14 +114,14 @@ type DomainAPI interface {
 	GetDomainExecute(r APIGetDomainRequest) (*DomainResponse, *http.Response, error)
 
 	/*
-	ListDomains List domains
+		ListDomains List domains
 
-	List all the domains for a particular service and version.
+		List all the domains for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListDomainsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListDomainsRequest
 	*/
 	ListDomains(ctx context.Context, serviceID string, versionID int32) APIListDomainsRequest
 
@@ -131,15 +130,15 @@ type DomainAPI interface {
 	ListDomainsExecute(r APIListDomainsRequest) ([]DomainResponse, *http.Response, error)
 
 	/*
-	UpdateDomain Update a domain
+		UpdateDomain Update a domain
 
-	Update the domain for a particular service and version.
+		Update the domain for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param domainName The name of the domain or domains associated with this service.
-	 @return APIUpdateDomainRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param domainName The name of the domain or domains associated with this service.
+		 @return APIUpdateDomainRequest
 	*/
 	UpdateDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APIUpdateDomainRequest
 
@@ -153,13 +152,12 @@ type DomainAPIService service
 
 // APICheckDomainRequest represents a request for the resource.
 type APICheckDomainRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService DomainAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 	domainName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APICheckDomainRequest) Execute() ([]any, *http.Response, error) {
@@ -180,9 +178,9 @@ Checks the status of a specific domain's DNS record for a Service Version. Retur
 func (a *DomainAPIService) CheckDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APICheckDomainRequest {
 	return APICheckDomainRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 		domainName: domainName,
 	}
 }
@@ -191,10 +189,10 @@ func (a *DomainAPIService) CheckDomain(ctx context.Context, serviceID string, ve
 //  @return []any
 func (a *DomainAPIService) CheckDomainExecute(r APICheckDomainRequest) ([]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainAPIService.CheckDomain")
@@ -276,7 +274,6 @@ func (a *DomainAPIService) CheckDomainExecute(r APICheckDomainRequest) ([]any, *
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -295,12 +292,11 @@ func (a *DomainAPIService) CheckDomainExecute(r APICheckDomainRequest) ([]any, *
 
 // APICheckDomainsRequest represents a request for the resource.
 type APICheckDomainsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService DomainAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APICheckDomainsRequest) Execute() ([][]any, *http.Response, error) {
@@ -320,9 +316,9 @@ Checks the status of all domains' DNS records for a Service Version. Returns an 
 func (a *DomainAPIService) CheckDomains(ctx context.Context, serviceID string, versionID int32) APICheckDomainsRequest {
 	return APICheckDomainsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -330,10 +326,10 @@ func (a *DomainAPIService) CheckDomains(ctx context.Context, serviceID string, v
 //  @return [][]any
 func (a *DomainAPIService) CheckDomainsExecute(r APICheckDomainsRequest) ([][]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  [][]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue [][]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainAPIService.CheckDomains")
@@ -414,7 +410,6 @@ func (a *DomainAPIService) CheckDomainsExecute(r APICheckDomainsRequest) ([][]an
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -433,12 +428,12 @@ func (a *DomainAPIService) CheckDomainsExecute(r APICheckDomainsRequest) ([][]an
 
 // APICreateDomainRequest represents a request for the resource.
 type APICreateDomainRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService DomainAPI
-	serviceID string
-	versionID int32
-	comment *string
-	name *string
+	serviceID  string
+	versionID  int32
+	comment    *string
+	name       *string
 }
 
 // Comment A freeform descriptive note.
@@ -446,6 +441,7 @@ func (r *APICreateDomainRequest) Comment(comment string) *APICreateDomainRequest
 	r.comment = &comment
 	return r
 }
+
 // Name The name of the domain or domains associated with this service.
 func (r *APICreateDomainRequest) Name(name string) *APICreateDomainRequest {
 	r.name = &name
@@ -470,9 +466,9 @@ Create a domain for a particular service and version.
 func (a *DomainAPIService) CreateDomain(ctx context.Context, serviceID string, versionID int32) APICreateDomainRequest {
 	return APICreateDomainRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -480,10 +476,10 @@ func (a *DomainAPIService) CreateDomain(ctx context.Context, serviceID string, v
 //  @return DomainResponse
 func (a *DomainAPIService) CreateDomainExecute(r APICreateDomainRequest) (*DomainResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DomainResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DomainResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainAPIService.CreateDomain")
@@ -570,7 +566,6 @@ func (a *DomainAPIService) CreateDomainExecute(r APICreateDomainRequest) (*Domai
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -589,13 +584,12 @@ func (a *DomainAPIService) CreateDomainExecute(r APICreateDomainRequest) (*Domai
 
 // APIDeleteDomainRequest represents a request for the resource.
 type APIDeleteDomainRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService DomainAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 	domainName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteDomainRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -616,9 +610,9 @@ Delete the domain for a particular service and versions.
 func (a *DomainAPIService) DeleteDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APIDeleteDomainRequest {
 	return APIDeleteDomainRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 		domainName: domainName,
 	}
 }
@@ -627,10 +621,10 @@ func (a *DomainAPIService) DeleteDomain(ctx context.Context, serviceID string, v
 //  @return InlineResponse200
 func (a *DomainAPIService) DeleteDomainExecute(r APIDeleteDomainRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainAPIService.DeleteDomain")
@@ -712,7 +706,6 @@ func (a *DomainAPIService) DeleteDomainExecute(r APIDeleteDomainRequest) (*Inlin
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -731,13 +724,12 @@ func (a *DomainAPIService) DeleteDomainExecute(r APIDeleteDomainRequest) (*Inlin
 
 // APIGetDomainRequest represents a request for the resource.
 type APIGetDomainRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService DomainAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 	domainName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetDomainRequest) Execute() (*DomainResponse, *http.Response, error) {
@@ -758,9 +750,9 @@ Get the domain for a particular service and version.
 func (a *DomainAPIService) GetDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APIGetDomainRequest {
 	return APIGetDomainRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 		domainName: domainName,
 	}
 }
@@ -769,10 +761,10 @@ func (a *DomainAPIService) GetDomain(ctx context.Context, serviceID string, vers
 //  @return DomainResponse
 func (a *DomainAPIService) GetDomainExecute(r APIGetDomainRequest) (*DomainResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DomainResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DomainResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainAPIService.GetDomain")
@@ -854,7 +846,6 @@ func (a *DomainAPIService) GetDomainExecute(r APIGetDomainRequest) (*DomainRespo
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -873,12 +864,11 @@ func (a *DomainAPIService) GetDomainExecute(r APIGetDomainRequest) (*DomainRespo
 
 // APIListDomainsRequest represents a request for the resource.
 type APIListDomainsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService DomainAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListDomainsRequest) Execute() ([]DomainResponse, *http.Response, error) {
@@ -898,9 +888,9 @@ List all the domains for a particular service and version.
 func (a *DomainAPIService) ListDomains(ctx context.Context, serviceID string, versionID int32) APIListDomainsRequest {
 	return APIListDomainsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -908,10 +898,10 @@ func (a *DomainAPIService) ListDomains(ctx context.Context, serviceID string, ve
 //  @return []DomainResponse
 func (a *DomainAPIService) ListDomainsExecute(r APIListDomainsRequest) ([]DomainResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []DomainResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []DomainResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainAPIService.ListDomains")
@@ -992,7 +982,6 @@ func (a *DomainAPIService) ListDomainsExecute(r APIListDomainsRequest) ([]Domain
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1011,13 +1000,13 @@ func (a *DomainAPIService) ListDomainsExecute(r APIListDomainsRequest) ([]Domain
 
 // APIUpdateDomainRequest represents a request for the resource.
 type APIUpdateDomainRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService DomainAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 	domainName string
-	comment *string
-	name *string
+	comment    *string
+	name       *string
 }
 
 // Comment A freeform descriptive note.
@@ -1025,6 +1014,7 @@ func (r *APIUpdateDomainRequest) Comment(comment string) *APIUpdateDomainRequest
 	r.comment = &comment
 	return r
 }
+
 // Name The name of the domain or domains associated with this service.
 func (r *APIUpdateDomainRequest) Name(name string) *APIUpdateDomainRequest {
 	r.name = &name
@@ -1050,9 +1040,9 @@ Update the domain for a particular service and version.
 func (a *DomainAPIService) UpdateDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APIUpdateDomainRequest {
 	return APIUpdateDomainRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 		domainName: domainName,
 	}
 }
@@ -1061,10 +1051,10 @@ func (a *DomainAPIService) UpdateDomain(ctx context.Context, serviceID string, v
 //  @return DomainResponse
 func (a *DomainAPIService) UpdateDomainExecute(r APIUpdateDomainRequest) (*DomainResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DomainResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DomainResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainAPIService.UpdateDomain")
@@ -1151,7 +1141,6 @@ func (a *DomainAPIService) UpdateDomainExecute(r APIUpdateDomainRequest) (*Domai
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

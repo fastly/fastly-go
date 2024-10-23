@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,13 +31,13 @@ var (
 type TLSConfigurationsAPI interface {
 
 	/*
-	GetTLSConfig Get a TLS configuration
+		GetTLSConfig Get a TLS configuration
 
-	Show a TLS configuration.
+		Show a TLS configuration.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tlsConfigurationID Alphanumeric string identifying a TLS configuration.
-	 @return APIGetTLSConfigRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tlsConfigurationID Alphanumeric string identifying a TLS configuration.
+		 @return APIGetTLSConfigRequest
 	*/
 	GetTLSConfig(ctx context.Context, tlsConfigurationID string) APIGetTLSConfigRequest
 
@@ -47,12 +46,12 @@ type TLSConfigurationsAPI interface {
 	GetTLSConfigExecute(r APIGetTLSConfigRequest) (*TLSConfigurationResponse, *http.Response, error)
 
 	/*
-	ListTLSConfigs List TLS configurations
+		ListTLSConfigs List TLS configurations
 
-	List all TLS configurations.
+		List all TLS configurations.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListTLSConfigsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListTLSConfigsRequest
 	*/
 	ListTLSConfigs(ctx context.Context) APIListTLSConfigsRequest
 
@@ -61,13 +60,13 @@ type TLSConfigurationsAPI interface {
 	ListTLSConfigsExecute(r APIListTLSConfigsRequest) (*TLSConfigurationsResponse, *http.Response, error)
 
 	/*
-	UpdateTLSConfig Update a TLS configuration
+		UpdateTLSConfig Update a TLS configuration
 
-	Update a TLS configuration.
+		Update a TLS configuration.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tlsConfigurationID Alphanumeric string identifying a TLS configuration.
-	 @return APIUpdateTLSConfigRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tlsConfigurationID Alphanumeric string identifying a TLS configuration.
+		 @return APIUpdateTLSConfigRequest
 	*/
 	UpdateTLSConfig(ctx context.Context, tlsConfigurationID string) APIUpdateTLSConfigRequest
 
@@ -81,13 +80,13 @@ type TLSConfigurationsAPIService service
 
 // APIGetTLSConfigRequest represents a request for the resource.
 type APIGetTLSConfigRequest struct {
-	ctx context.Context
-	APIService TLSConfigurationsAPI
+	ctx                context.Context
+	APIService         TLSConfigurationsAPI
 	tlsConfigurationID string
-	include *string
+	include            *string
 }
 
-// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;dns_records&#x60;. 
+// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;dns_records&#x60;.
 func (r *APIGetTLSConfigRequest) Include(include string) *APIGetTLSConfigRequest {
 	r.include = &include
 	return r
@@ -109,8 +108,8 @@ Show a TLS configuration.
 */
 func (a *TLSConfigurationsAPIService) GetTLSConfig(ctx context.Context, tlsConfigurationID string) APIGetTLSConfigRequest {
 	return APIGetTLSConfigRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:         a,
+		ctx:                ctx,
 		tlsConfigurationID: tlsConfigurationID,
 	}
 }
@@ -119,10 +118,10 @@ func (a *TLSConfigurationsAPIService) GetTLSConfig(ctx context.Context, tlsConfi
 //  @return TLSConfigurationResponse
 func (a *TLSConfigurationsAPIService) GetTLSConfigExecute(r APIGetTLSConfigRequest) (*TLSConfigurationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSConfigurationResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSConfigurationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSConfigurationsAPIService.GetTLSConfig")
@@ -205,7 +204,6 @@ func (a *TLSConfigurationsAPIService) GetTLSConfigExecute(r APIGetTLSConfigReque
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -224,12 +222,12 @@ func (a *TLSConfigurationsAPIService) GetTLSConfigExecute(r APIGetTLSConfigReque
 
 // APIListTLSConfigsRequest represents a request for the resource.
 type APIListTLSConfigsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService TLSConfigurationsAPI
 	filterBulk *string
-	include *string
+	include    *string
 	pageNumber *int32
-	pageSize *int32
+	pageSize   *int32
 }
 
 // FilterBulk Optionally filters by the bulk attribute.
@@ -237,16 +235,19 @@ func (r *APIListTLSConfigsRequest) FilterBulk(filterBulk string) *APIListTLSConf
 	r.filterBulk = &filterBulk
 	return r
 }
-// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;dns_records&#x60;. 
+
+// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;dns_records&#x60;.
 func (r *APIListTLSConfigsRequest) Include(include string) *APIListTLSConfigsRequest {
 	r.include = &include
 	return r
 }
+
 // PageNumber Current page.
 func (r *APIListTLSConfigsRequest) PageNumber(pageNumber int32) *APIListTLSConfigsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListTLSConfigsRequest) PageSize(pageSize int32) *APIListTLSConfigsRequest {
 	r.pageSize = &pageSize
@@ -269,7 +270,7 @@ List all TLS configurations.
 func (a *TLSConfigurationsAPIService) ListTLSConfigs(ctx context.Context) APIListTLSConfigsRequest {
 	return APIListTLSConfigsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -277,10 +278,10 @@ func (a *TLSConfigurationsAPIService) ListTLSConfigs(ctx context.Context) APILis
 //  @return TLSConfigurationsResponse
 func (a *TLSConfigurationsAPIService) ListTLSConfigsExecute(r APIListTLSConfigsRequest) (*TLSConfigurationsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSConfigurationsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSConfigurationsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSConfigurationsAPIService.ListTLSConfigs")
@@ -371,7 +372,6 @@ func (a *TLSConfigurationsAPIService) ListTLSConfigsExecute(r APIListTLSConfigsR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -390,10 +390,10 @@ func (a *TLSConfigurationsAPIService) ListTLSConfigsExecute(r APIListTLSConfigsR
 
 // APIUpdateTLSConfigRequest represents a request for the resource.
 type APIUpdateTLSConfigRequest struct {
-	ctx context.Context
-	APIService TLSConfigurationsAPI
+	ctx                context.Context
+	APIService         TLSConfigurationsAPI
 	tlsConfigurationID string
-	tlsConfiguration *TLSConfiguration
+	tlsConfiguration   *TLSConfiguration
 }
 
 // TLSConfiguration returns a pointer to a request.
@@ -418,8 +418,8 @@ Update a TLS configuration.
 */
 func (a *TLSConfigurationsAPIService) UpdateTLSConfig(ctx context.Context, tlsConfigurationID string) APIUpdateTLSConfigRequest {
 	return APIUpdateTLSConfigRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:         a,
+		ctx:                ctx,
 		tlsConfigurationID: tlsConfigurationID,
 	}
 }
@@ -428,10 +428,10 @@ func (a *TLSConfigurationsAPIService) UpdateTLSConfig(ctx context.Context, tlsCo
 //  @return TLSConfigurationResponse
 func (a *TLSConfigurationsAPIService) UpdateTLSConfigExecute(r APIUpdateTLSConfigRequest) (*TLSConfigurationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSConfigurationResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSConfigurationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSConfigurationsAPIService.UpdateTLSConfig")
@@ -512,7 +512,6 @@ func (a *TLSConfigurationsAPIService) UpdateTLSConfigExecute(r APIUpdateTLSConfi
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

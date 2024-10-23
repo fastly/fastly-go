@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -26,7 +25,7 @@ type ServiceCreate struct {
 	// Alphanumeric string identifying the customer.
 	CustomerID *string `json:"customer_id,omitempty"`
 	// The type of this service.
-	Type *string `json:"type,omitempty"`
+	Type                 *string `json:"type,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -62,7 +61,7 @@ func (o *ServiceCreate) GetComment() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServiceCreate) GetCommentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
@@ -81,6 +80,7 @@ func (o *ServiceCreate) HasComment() bool {
 func (o *ServiceCreate) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *ServiceCreate) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -212,7 +212,7 @@ func (o ServiceCreate) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *ServiceCreate) UnmarshalJSON(bytes []byte) (err error) {
 	varServiceCreate := _ServiceCreate{}
 
@@ -233,7 +233,7 @@ func (o *ServiceCreate) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableServiceCreate is a helper abstraction for handling nullable servicecreate types. 
+// NullableServiceCreate is a helper abstraction for handling nullable servicecreate types.
 type NullableServiceCreate struct {
 	value *ServiceCreate
 	isSet bool
@@ -273,7 +273,7 @@ func (v NullableServiceCreate) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableServiceCreate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -30,7 +29,7 @@ type LoggingDigitaloceanAdditional struct {
 	// The path to upload logs to.
 	Path NullableString `json:"path,omitempty"`
 	// A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-	PublicKey NullableString `json:"public_key,omitempty"`
+	PublicKey            NullableString `json:"public_key,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -206,7 +205,7 @@ func (o *LoggingDigitaloceanAdditional) GetPath() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingDigitaloceanAdditional) GetPathOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
@@ -225,6 +224,7 @@ func (o *LoggingDigitaloceanAdditional) HasPath() bool {
 func (o *LoggingDigitaloceanAdditional) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *LoggingDigitaloceanAdditional) SetPathNil() {
 	o.Path.Set(nil)
@@ -248,7 +248,7 @@ func (o *LoggingDigitaloceanAdditional) GetPublicKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingDigitaloceanAdditional) GetPublicKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PublicKey.Get(), o.PublicKey.IsSet()
@@ -267,6 +267,7 @@ func (o *LoggingDigitaloceanAdditional) HasPublicKey() bool {
 func (o *LoggingDigitaloceanAdditional) SetPublicKey(v string) {
 	o.PublicKey.Set(&v)
 }
+
 // SetPublicKeyNil sets the value for PublicKey to be an explicit nil
 func (o *LoggingDigitaloceanAdditional) SetPublicKeyNil() {
 	o.PublicKey.Set(nil)
@@ -308,7 +309,7 @@ func (o LoggingDigitaloceanAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingDigitaloceanAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingDigitaloceanAdditional := _LoggingDigitaloceanAdditional{}
 
@@ -331,7 +332,7 @@ func (o *LoggingDigitaloceanAdditional) UnmarshalJSON(bytes []byte) (err error) 
 	return err
 }
 
-// NullableLoggingDigitaloceanAdditional is a helper abstraction for handling nullable loggingdigitaloceanadditional types. 
+// NullableLoggingDigitaloceanAdditional is a helper abstraction for handling nullable loggingdigitaloceanadditional types.
 type NullableLoggingDigitaloceanAdditional struct {
 	value *LoggingDigitaloceanAdditional
 	isSet bool
@@ -371,7 +372,7 @@ func (v NullableLoggingDigitaloceanAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingDigitaloceanAdditional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

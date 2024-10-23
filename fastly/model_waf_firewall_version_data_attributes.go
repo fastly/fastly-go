@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -57,7 +56,7 @@ type WafFirewallVersionDataAttributes struct {
 	MaxNumArgs *int32 `json:"max_num_args,omitempty"`
 	// Score value to add for notice anomalies.
 	NoticeAnomalyScore *int32 `json:"notice_anomaly_score,omitempty"`
-	Number *int32 `json:"number,omitempty"`
+	Number             *int32 `json:"number,omitempty"`
 	// The configured paranoia level.
 	ParanoiaLevel *int32 `json:"paranoia_level,omitempty"`
 	// PHP injection threshold.
@@ -79,7 +78,7 @@ type WafFirewallVersionDataAttributes struct {
 	// Score value to add for warning anomalies.
 	WarningAnomalyScore *int32 `json:"warning_anomaly_score,omitempty"`
 	// XSS attack threshold.
-	XSSScoreThreshold *int32 `json:"xss_score_threshold,omitempty"`
+	XSSScoreThreshold    *int32 `json:"xss_score_threshold,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -407,7 +406,7 @@ func (o *WafFirewallVersionDataAttributes) GetComment() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WafFirewallVersionDataAttributes) GetCommentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
@@ -426,6 +425,7 @@ func (o *WafFirewallVersionDataAttributes) HasComment() bool {
 func (o *WafFirewallVersionDataAttributes) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *WafFirewallVersionDataAttributes) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -1278,7 +1278,7 @@ func (o WafFirewallVersionDataAttributes) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *WafFirewallVersionDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	varWafFirewallVersionDataAttributes := _WafFirewallVersionDataAttributes{}
 
@@ -1326,7 +1326,7 @@ func (o *WafFirewallVersionDataAttributes) UnmarshalJSON(bytes []byte) (err erro
 	return err
 }
 
-// NullableWafFirewallVersionDataAttributes is a helper abstraction for handling nullable waffirewallversiondataattributes types. 
+// NullableWafFirewallVersionDataAttributes is a helper abstraction for handling nullable waffirewallversiondataattributes types.
 type NullableWafFirewallVersionDataAttributes struct {
 	value *WafFirewallVersionDataAttributes
 	isSet bool
@@ -1366,7 +1366,7 @@ func (v NullableWafFirewallVersionDataAttributes) MarshalJSON() ([]byte, error) 
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableWafFirewallVersionDataAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

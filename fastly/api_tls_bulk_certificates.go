@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,13 +31,13 @@ var (
 type TLSBulkCertificatesAPI interface {
 
 	/*
-	DeleteBulkTLSCert Delete a certificate
+		DeleteBulkTLSCert Delete a certificate
 
-	Destroy a certificate. This disables TLS for all domains listed as SAN entries.
+		Destroy a certificate. This disables TLS for all domains listed as SAN entries.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param certificateID Alphanumeric string identifying a TLS bulk certificate.
-	 @return APIDeleteBulkTLSCertRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param certificateID Alphanumeric string identifying a TLS bulk certificate.
+		 @return APIDeleteBulkTLSCertRequest
 	*/
 	DeleteBulkTLSCert(ctx context.Context, certificateID string) APIDeleteBulkTLSCertRequest
 
@@ -46,13 +45,13 @@ type TLSBulkCertificatesAPI interface {
 	DeleteBulkTLSCertExecute(r APIDeleteBulkTLSCertRequest) (*http.Response, error)
 
 	/*
-	GetTLSBulkCert Get a certificate
+		GetTLSBulkCert Get a certificate
 
-	Retrieve a single certificate.
+		Retrieve a single certificate.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param certificateID Alphanumeric string identifying a TLS bulk certificate.
-	 @return APIGetTLSBulkCertRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param certificateID Alphanumeric string identifying a TLS bulk certificate.
+		 @return APIGetTLSBulkCertRequest
 	*/
 	GetTLSBulkCert(ctx context.Context, certificateID string) APIGetTLSBulkCertRequest
 
@@ -61,12 +60,12 @@ type TLSBulkCertificatesAPI interface {
 	GetTLSBulkCertExecute(r APIGetTLSBulkCertRequest) (*TLSBulkCertificateResponse, *http.Response, error)
 
 	/*
-	ListTLSBulkCerts List certificates
+		ListTLSBulkCerts List certificates
 
-	List all certificates.
+		List all certificates.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListTLSBulkCertsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListTLSBulkCertsRequest
 	*/
 	ListTLSBulkCerts(ctx context.Context) APIListTLSBulkCertsRequest
 
@@ -75,13 +74,13 @@ type TLSBulkCertificatesAPI interface {
 	ListTLSBulkCertsExecute(r APIListTLSBulkCertsRequest) (*TLSBulkCertificatesResponse, *http.Response, error)
 
 	/*
-	UpdateBulkTLSCert Update a certificate
+		UpdateBulkTLSCert Update a certificate
 
-	Replace a certificate with a newly reissued certificate. By using this endpoint, the original certificate will cease to be used for future TLS handshakes. Thus, only SAN entries that appear in the replacement certificate will become TLS enabled. Any SAN entries that are missing in the replacement certificate will become disabled.
+		Replace a certificate with a newly reissued certificate. By using this endpoint, the original certificate will cease to be used for future TLS handshakes. Thus, only SAN entries that appear in the replacement certificate will become TLS enabled. Any SAN entries that are missing in the replacement certificate will become disabled.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param certificateID Alphanumeric string identifying a TLS bulk certificate.
-	 @return APIUpdateBulkTLSCertRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param certificateID Alphanumeric string identifying a TLS bulk certificate.
+		 @return APIUpdateBulkTLSCertRequest
 	*/
 	UpdateBulkTLSCert(ctx context.Context, certificateID string) APIUpdateBulkTLSCertRequest
 
@@ -90,12 +89,12 @@ type TLSBulkCertificatesAPI interface {
 	UpdateBulkTLSCertExecute(r APIUpdateBulkTLSCertRequest) (*TLSBulkCertificateResponse, *http.Response, error)
 
 	/*
-	UploadTLSBulkCert Upload a certificate
+		UploadTLSBulkCert Upload a certificate
 
-	Upload a new certificate. TLS domains are automatically enabled upon certificate creation. If a domain is already enabled on a previously uploaded certificate, that domain will be updated to use the new certificate for all future TLS handshake requests.
+		Upload a new certificate. TLS domains are automatically enabled upon certificate creation. If a domain is already enabled on a previously uploaded certificate, that domain will be updated to use the new certificate for all future TLS handshake requests.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIUploadTLSBulkCertRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIUploadTLSBulkCertRequest
 	*/
 	UploadTLSBulkCert(ctx context.Context) APIUploadTLSBulkCertRequest
 
@@ -109,11 +108,10 @@ type TLSBulkCertificatesAPIService service
 
 // APIDeleteBulkTLSCertRequest represents a request for the resource.
 type APIDeleteBulkTLSCertRequest struct {
-	ctx context.Context
-	APIService TLSBulkCertificatesAPI
+	ctx           context.Context
+	APIService    TLSBulkCertificatesAPI
 	certificateID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteBulkTLSCertRequest) Execute() (*http.Response, error) {
@@ -131,8 +129,8 @@ Destroy a certificate. This disables TLS for all domains listed as SAN entries.
 */
 func (a *TLSBulkCertificatesAPIService) DeleteBulkTLSCert(ctx context.Context, certificateID string) APIDeleteBulkTLSCertRequest {
 	return APIDeleteBulkTLSCertRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:    a,
+		ctx:           ctx,
 		certificateID: certificateID,
 	}
 }
@@ -140,9 +138,9 @@ func (a *TLSBulkCertificatesAPIService) DeleteBulkTLSCert(ctx context.Context, c
 // DeleteBulkTLSCertExecute executes the request
 func (a *TLSBulkCertificatesAPIService) DeleteBulkTLSCertExecute(r APIDeleteBulkTLSCertRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSBulkCertificatesAPIService.DeleteBulkTLSCert")
@@ -213,7 +211,6 @@ func (a *TLSBulkCertificatesAPIService) DeleteBulkTLSCertExecute(r APIDeleteBulk
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -232,11 +229,10 @@ func (a *TLSBulkCertificatesAPIService) DeleteBulkTLSCertExecute(r APIDeleteBulk
 
 // APIGetTLSBulkCertRequest represents a request for the resource.
 type APIGetTLSBulkCertRequest struct {
-	ctx context.Context
-	APIService TLSBulkCertificatesAPI
+	ctx           context.Context
+	APIService    TLSBulkCertificatesAPI
 	certificateID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetTLSBulkCertRequest) Execute() (*TLSBulkCertificateResponse, *http.Response, error) {
@@ -254,8 +250,8 @@ Retrieve a single certificate.
 */
 func (a *TLSBulkCertificatesAPIService) GetTLSBulkCert(ctx context.Context, certificateID string) APIGetTLSBulkCertRequest {
 	return APIGetTLSBulkCertRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:    a,
+		ctx:           ctx,
 		certificateID: certificateID,
 	}
 }
@@ -264,10 +260,10 @@ func (a *TLSBulkCertificatesAPIService) GetTLSBulkCert(ctx context.Context, cert
 //  @return TLSBulkCertificateResponse
 func (a *TLSBulkCertificatesAPIService) GetTLSBulkCertExecute(r APIGetTLSBulkCertRequest) (*TLSBulkCertificateResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSBulkCertificateResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSBulkCertificateResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSBulkCertificatesAPIService.GetTLSBulkCert")
@@ -347,7 +343,6 @@ func (a *TLSBulkCertificatesAPIService) GetTLSBulkCertExecute(r APIGetTLSBulkCer
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -366,12 +361,12 @@ func (a *TLSBulkCertificatesAPIService) GetTLSBulkCertExecute(r APIGetTLSBulkCer
 
 // APIListTLSBulkCertsRequest represents a request for the resource.
 type APIListTLSBulkCertsRequest struct {
-	ctx context.Context
-	APIService TLSBulkCertificatesAPI
+	ctx               context.Context
+	APIService        TLSBulkCertificatesAPI
 	filterTLSDomainID *string
-	pageNumber *int32
-	pageSize *int32
-	sort *string
+	pageNumber        *int32
+	pageSize          *int32
+	sort              *string
 }
 
 // FilterTLSDomainID Filter certificates by their matching, fully-qualified domain name.
@@ -379,16 +374,19 @@ func (r *APIListTLSBulkCertsRequest) FilterTLSDomainID(filterTLSDomainID string)
 	r.filterTLSDomainID = &filterTLSDomainID
 	return r
 }
+
 // PageNumber Current page.
 func (r *APIListTLSBulkCertsRequest) PageNumber(pageNumber int32) *APIListTLSBulkCertsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListTLSBulkCertsRequest) PageSize(pageSize int32) *APIListTLSBulkCertsRequest {
 	r.pageSize = &pageSize
 	return r
 }
+
 // Sort The order in which to list the results by creation date.
 func (r *APIListTLSBulkCertsRequest) Sort(sort string) *APIListTLSBulkCertsRequest {
 	r.sort = &sort
@@ -411,7 +409,7 @@ List all certificates.
 func (a *TLSBulkCertificatesAPIService) ListTLSBulkCerts(ctx context.Context) APIListTLSBulkCertsRequest {
 	return APIListTLSBulkCertsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -419,10 +417,10 @@ func (a *TLSBulkCertificatesAPIService) ListTLSBulkCerts(ctx context.Context) AP
 //  @return TLSBulkCertificatesResponse
 func (a *TLSBulkCertificatesAPIService) ListTLSBulkCertsExecute(r APIListTLSBulkCertsRequest) (*TLSBulkCertificatesResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSBulkCertificatesResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSBulkCertificatesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSBulkCertificatesAPIService.ListTLSBulkCerts")
@@ -513,7 +511,6 @@ func (a *TLSBulkCertificatesAPIService) ListTLSBulkCertsExecute(r APIListTLSBulk
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -532,9 +529,9 @@ func (a *TLSBulkCertificatesAPIService) ListTLSBulkCertsExecute(r APIListTLSBulk
 
 // APIUpdateBulkTLSCertRequest represents a request for the resource.
 type APIUpdateBulkTLSCertRequest struct {
-	ctx context.Context
-	APIService TLSBulkCertificatesAPI
-	certificateID string
+	ctx                context.Context
+	APIService         TLSBulkCertificatesAPI
+	certificateID      string
 	tlsBulkCertificate *TLSBulkCertificate
 }
 
@@ -560,8 +557,8 @@ Replace a certificate with a newly reissued certificate. By using this endpoint,
 */
 func (a *TLSBulkCertificatesAPIService) UpdateBulkTLSCert(ctx context.Context, certificateID string) APIUpdateBulkTLSCertRequest {
 	return APIUpdateBulkTLSCertRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:    a,
+		ctx:           ctx,
 		certificateID: certificateID,
 	}
 }
@@ -570,10 +567,10 @@ func (a *TLSBulkCertificatesAPIService) UpdateBulkTLSCert(ctx context.Context, c
 //  @return TLSBulkCertificateResponse
 func (a *TLSBulkCertificatesAPIService) UpdateBulkTLSCertExecute(r APIUpdateBulkTLSCertRequest) (*TLSBulkCertificateResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSBulkCertificateResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSBulkCertificateResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSBulkCertificatesAPIService.UpdateBulkTLSCert")
@@ -655,7 +652,6 @@ func (a *TLSBulkCertificatesAPIService) UpdateBulkTLSCertExecute(r APIUpdateBulk
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -674,8 +670,8 @@ func (a *TLSBulkCertificatesAPIService) UpdateBulkTLSCertExecute(r APIUpdateBulk
 
 // APIUploadTLSBulkCertRequest represents a request for the resource.
 type APIUploadTLSBulkCertRequest struct {
-	ctx context.Context
-	APIService TLSBulkCertificatesAPI
+	ctx                context.Context
+	APIService         TLSBulkCertificatesAPI
 	tlsBulkCertificate *TLSBulkCertificate
 }
 
@@ -701,7 +697,7 @@ Upload a new certificate. TLS domains are automatically enabled upon certificate
 func (a *TLSBulkCertificatesAPIService) UploadTLSBulkCert(ctx context.Context) APIUploadTLSBulkCertRequest {
 	return APIUploadTLSBulkCertRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -709,10 +705,10 @@ func (a *TLSBulkCertificatesAPIService) UploadTLSBulkCert(ctx context.Context) A
 //  @return TLSBulkCertificateResponse
 func (a *TLSBulkCertificatesAPIService) UploadTLSBulkCertExecute(r APIUploadTLSBulkCertRequest) (*TLSBulkCertificateResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSBulkCertificateResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSBulkCertificateResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSBulkCertificatesAPIService.UploadTLSBulkCert")
@@ -792,7 +788,6 @@ func (a *TLSBulkCertificatesAPIService) UploadTLSBulkCertExecute(r APIUploadTLSB
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

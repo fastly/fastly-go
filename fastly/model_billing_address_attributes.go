@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -32,8 +31,8 @@ type BillingAddressAttributes struct {
 	// Postal code (ZIP code for US addresses).
 	PostalCode *string `json:"postal_code,omitempty"`
 	// The state or province name.
-	State NullableString `json:"state,omitempty"`
-	CustomerID *string `json:"customer_id,omitempty"`
+	State                NullableString `json:"state,omitempty"`
+	CustomerID           *string        `json:"customer_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -101,7 +100,7 @@ func (o *BillingAddressAttributes) GetAddress2() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingAddressAttributes) GetAddress2Ok() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Address2.Get(), o.Address2.IsSet()
@@ -120,6 +119,7 @@ func (o *BillingAddressAttributes) HasAddress2() bool {
 func (o *BillingAddressAttributes) SetAddress2(v string) {
 	o.Address2.Set(&v)
 }
+
 // SetAddress2Nil sets the value for Address2 to be an explicit nil
 func (o *BillingAddressAttributes) SetAddress2Nil() {
 	o.Address2.Set(nil)
@@ -143,7 +143,7 @@ func (o *BillingAddressAttributes) GetCity() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingAddressAttributes) GetCityOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.City.Get(), o.City.IsSet()
@@ -162,6 +162,7 @@ func (o *BillingAddressAttributes) HasCity() bool {
 func (o *BillingAddressAttributes) SetCity(v string) {
 	o.City.Set(&v)
 }
+
 // SetCityNil sets the value for City to be an explicit nil
 func (o *BillingAddressAttributes) SetCityNil() {
 	o.City.Set(nil)
@@ -217,7 +218,7 @@ func (o *BillingAddressAttributes) GetLocality() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingAddressAttributes) GetLocalityOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Locality.Get(), o.Locality.IsSet()
@@ -236,6 +237,7 @@ func (o *BillingAddressAttributes) HasLocality() bool {
 func (o *BillingAddressAttributes) SetLocality(v string) {
 	o.Locality.Set(&v)
 }
+
 // SetLocalityNil sets the value for Locality to be an explicit nil
 func (o *BillingAddressAttributes) SetLocalityNil() {
 	o.Locality.Set(nil)
@@ -291,7 +293,7 @@ func (o *BillingAddressAttributes) GetState() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingAddressAttributes) GetStateOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.State.Get(), o.State.IsSet()
@@ -310,6 +312,7 @@ func (o *BillingAddressAttributes) HasState() bool {
 func (o *BillingAddressAttributes) SetState(v string) {
 	o.State.Set(&v)
 }
+
 // SetStateNil sets the value for State to be an explicit nil
 func (o *BillingAddressAttributes) SetStateNil() {
 	o.State.Set(nil)
@@ -389,7 +392,7 @@ func (o BillingAddressAttributes) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *BillingAddressAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	varBillingAddressAttributes := _BillingAddressAttributes{}
 
@@ -414,7 +417,7 @@ func (o *BillingAddressAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableBillingAddressAttributes is a helper abstraction for handling nullable billingaddressattributes types. 
+// NullableBillingAddressAttributes is a helper abstraction for handling nullable billingaddressattributes types.
 type NullableBillingAddressAttributes struct {
 	value *BillingAddressAttributes
 	isSet bool
@@ -454,7 +457,7 @@ func (v NullableBillingAddressAttributes) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableBillingAddressAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

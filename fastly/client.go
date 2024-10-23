@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -53,12 +52,12 @@ type APIClient struct {
 	cfg    *Configuration
 	common service // Reuse a single struct instead of allocating one for each service on the heap.
 
-	// RateLimitRemaining is the last observed value of http header 
+	// RateLimitRemaining is the last observed value of http header
 	// Fastly-RateLimit-Remaining
 	// https://www.fastly.com/documentation/reference/api/#rate-limiting
 	RateLimitRemaining int
-	
-	// RateLimitReset is the last observed value of http header 
+
+	// RateLimitReset is the last observed value of http header
 	// Fastly-RateLimit-Reset
 	RateLimitReset int
 
@@ -568,19 +567,19 @@ func (c *APIClient) callAPI(request *http.Request) (*http.Response, error) {
 	return resp, err
 }
 
-// GetConfig allows modification of underlying config for alternate 
-// implementations and testing. 
+// GetConfig allows modification of underlying config for alternate
+// implementations and testing.
 //
-// Caution: modifying the configuration while live can cause data races and 
+// Caution: modifying the configuration while live can cause data races and
 // potentially unwanted behavior
 func (c *APIClient) GetConfig() *Configuration {
 	return c.cfg
 }
 
 type formFile struct {
-		fileBytes []byte
-		fileName string
-		formFileName string
+	fileBytes    []byte
+	fileName     string
+	formFileName string
 }
 
 // prepareRequest build the request
@@ -633,11 +632,11 @@ func (c *APIClient) prepareRequest(
 				w.Boundary()
 				part, err := w.CreateFormFile(formFile.formFileName, filepath.Base(formFile.fileName))
 				if err != nil {
-						return nil, err
+					return nil, err
 				}
 				_, err = part.Write(formFile.fileBytes)
 				if err != nil {
-						return nil, err
+					return nil, err
 				}
 			}
 		}
@@ -768,14 +767,14 @@ func (c *APIClient) decode(v any, b []byte, contentType string) (err error) {
 	}
 	if jsonCheck.MatchString(contentType) {
 		if actualObj, ok := v.(interface{ GetActualInstance() any }); ok { // oneOf, anyOf schemas
-      // make sure UnmarshalJSON is defined on the type
-      unmarshalObj, ok := actualObj.(interface{ UnmarshalJSON([]byte) error })
+			// make sure UnmarshalJSON is defined on the type
+			unmarshalObj, ok := actualObj.(interface{ UnmarshalJSON([]byte) error })
 			if !ok {
 				return errors.New("unknown type with GetActualInstance but no unmarshalObj.UnmarshalJSON defined")
-      }
-      if err = unmarshalObj.UnmarshalJSON(b); err != nil {
-        return err
-      }
+			}
+			if err = unmarshalObj.UnmarshalJSON(b); err != nil {
+				return err
+			}
 		} else if err = json.Unmarshal(b, v); err != nil { // simple model
 			return err
 		}

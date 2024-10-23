@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -26,7 +25,7 @@ type HistoricalDdosMeta struct {
 	// Downsample that was used to perform the query. One of `hour` or `day`.
 	Downsample *string `json:"downsample,omitempty"`
 	// A comma-separated list of the metrics that were requested.
-	Metric *string `json:"metric,omitempty"`
+	Metric               *string `json:"metric,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -202,7 +201,7 @@ func (o HistoricalDdosMeta) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *HistoricalDdosMeta) UnmarshalJSON(bytes []byte) (err error) {
 	varHistoricalDdosMeta := _HistoricalDdosMeta{}
 
@@ -223,7 +222,7 @@ func (o *HistoricalDdosMeta) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableHistoricalDdosMeta is a helper abstraction for handling nullable historicalddosmeta types. 
+// NullableHistoricalDdosMeta is a helper abstraction for handling nullable historicalddosmeta types.
 type NullableHistoricalDdosMeta struct {
 	value *HistoricalDdosMeta
 	isSet bool
@@ -263,7 +262,7 @@ func (v NullableHistoricalDdosMeta) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableHistoricalDdosMeta) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

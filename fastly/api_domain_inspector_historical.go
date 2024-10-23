@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type DomainInspectorHistoricalAPI interface {
 
 	/*
-	GetDomainInspectorHistorical Get historical domain data for a service
+		GetDomainInspectorHistorical Get historical domain data for a service
 
-	Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.
+		Fetches historical domain metrics for a given Fastly service, optionally filtering and grouping the results by domain, region, or POP.
 
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIGetDomainInspectorHistoricalRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIGetDomainInspectorHistoricalRequest
 	*/
 	GetDomainInspectorHistorical(ctx context.Context, serviceID string) APIGetDomainInspectorHistoricalRequest
 
@@ -53,19 +52,19 @@ type DomainInspectorHistoricalAPIService service
 
 // APIGetDomainInspectorHistoricalRequest represents a request for the resource.
 type APIGetDomainInspectorHistoricalRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService DomainInspectorHistoricalAPI
-	serviceID string
-	start *string
-	end *string
+	serviceID  string
+	start      *string
+	end        *string
 	downsample *string
-	metric *string
-	groupBy *string
-	limit *string
-	cursor *string
-	region *string
+	metric     *string
+	groupBy    *string
+	limit      *string
+	cursor     *string
+	region     *string
 	datacenter *string
-	domain *string
+	domain     *string
 }
 
 // Start A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided &#x60;downsample&#x60; value.
@@ -73,46 +72,55 @@ func (r *APIGetDomainInspectorHistoricalRequest) Start(start string) *APIGetDoma
 	r.start = &start
 	return r
 }
+
 // End A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided &#x60;downsample&#x60; value.
 func (r *APIGetDomainInspectorHistoricalRequest) End(end string) *APIGetDomainInspectorHistoricalRequest {
 	r.end = &end
 	return r
 }
+
 // Downsample Duration of sample windows.
 func (r *APIGetDomainInspectorHistoricalRequest) Downsample(downsample string) *APIGetDomainInspectorHistoricalRequest {
 	r.downsample = &downsample
 	return r
 }
+
 // Metric The metrics to retrieve. Multiple values should be comma-separated.
 func (r *APIGetDomainInspectorHistoricalRequest) Metric(metric string) *APIGetDomainInspectorHistoricalRequest {
 	r.metric = &metric
 	return r
 }
-// GroupBy Dimensions to return in the query. Multiple dimensions may be separated by commas. For example, &#x60;group_by&#x3D;domain&#x60; will return one timeseries for every domain, as a total across all datacenters (POPs). 
+
+// GroupBy Dimensions to return in the query. Multiple dimensions may be separated by commas. For example, &#x60;group_by&#x3D;domain&#x60; will return one timeseries for every domain, as a total across all datacenters (POPs).
 func (r *APIGetDomainInspectorHistoricalRequest) GroupBy(groupBy string) *APIGetDomainInspectorHistoricalRequest {
 	r.groupBy = &groupBy
 	return r
 }
+
 // Limit Number of results per page. The maximum is 200.
 func (r *APIGetDomainInspectorHistoricalRequest) Limit(limit string) *APIGetDomainInspectorHistoricalRequest {
 	r.limit = &limit
 	return r
 }
+
 // Cursor Cursor value from the &#x60;next_cursor&#x60; field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
 func (r *APIGetDomainInspectorHistoricalRequest) Cursor(cursor string) *APIGetDomainInspectorHistoricalRequest {
 	r.cursor = &cursor
 	return r
 }
-// Region Limit query to one or more specific geographic regions. Values should be comma-separated. 
+
+// Region Limit query to one or more specific geographic regions. Values should be comma-separated.
 func (r *APIGetDomainInspectorHistoricalRequest) Region(region string) *APIGetDomainInspectorHistoricalRequest {
 	r.region = &region
 	return r
 }
+
 // Datacenter Limit query to one or more specific POPs. Values should be comma-separated.
 func (r *APIGetDomainInspectorHistoricalRequest) Datacenter(datacenter string) *APIGetDomainInspectorHistoricalRequest {
 	r.datacenter = &datacenter
 	return r
 }
+
 // Domain Limit query to one or more specific domains. Values should be comma-separated.
 func (r *APIGetDomainInspectorHistoricalRequest) Domain(domain string) *APIGetDomainInspectorHistoricalRequest {
 	r.domain = &domain
@@ -137,8 +145,8 @@ Fetches historical domain metrics for a given Fastly service, optionally filteri
 func (a *DomainInspectorHistoricalAPIService) GetDomainInspectorHistorical(ctx context.Context, serviceID string) APIGetDomainInspectorHistoricalRequest {
 	return APIGetDomainInspectorHistoricalRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 	}
 }
 
@@ -146,10 +154,10 @@ func (a *DomainInspectorHistoricalAPIService) GetDomainInspectorHistorical(ctx c
 //  @return HistoricalDomainsResponse
 func (a *DomainInspectorHistoricalAPIService) GetDomainInspectorHistoricalExecute(r APIGetDomainInspectorHistoricalRequest) (*HistoricalDomainsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *HistoricalDomainsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *HistoricalDomainsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainInspectorHistoricalAPIService.GetDomainInspectorHistorical")
@@ -258,7 +266,6 @@ func (a *DomainInspectorHistoricalAPIService) GetDomainInspectorHistoricalExecut
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

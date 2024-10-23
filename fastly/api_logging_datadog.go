@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingDatadogAPI interface {
 
 	/*
-	CreateLogDatadog Create a Datadog log endpoint
+		CreateLogDatadog Create a Datadog log endpoint
 
-	Create a Datadog logging object for a particular service and version.
+		Create a Datadog logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogDatadogRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogDatadogRequest
 	*/
 	CreateLogDatadog(ctx context.Context, serviceID string, versionID int32) APICreateLogDatadogRequest
 
@@ -48,15 +47,15 @@ type LoggingDatadogAPI interface {
 	CreateLogDatadogExecute(r APICreateLogDatadogRequest) (*LoggingDatadogResponse, *http.Response, error)
 
 	/*
-	DeleteLogDatadog Delete a Datadog log endpoint
+		DeleteLogDatadog Delete a Datadog log endpoint
 
-	Delete the Datadog logging object for a particular service and version.
+		Delete the Datadog logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingDatadogName The name for the real-time logging configuration.
-	 @return APIDeleteLogDatadogRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingDatadogName The name for the real-time logging configuration.
+		 @return APIDeleteLogDatadogRequest
 	*/
 	DeleteLogDatadog(ctx context.Context, serviceID string, versionID int32, loggingDatadogName string) APIDeleteLogDatadogRequest
 
@@ -65,15 +64,15 @@ type LoggingDatadogAPI interface {
 	DeleteLogDatadogExecute(r APIDeleteLogDatadogRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogDatadog Get a Datadog log endpoint
+		GetLogDatadog Get a Datadog log endpoint
 
-	Get the details for a Datadog logging object for a particular service and version.
+		Get the details for a Datadog logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingDatadogName The name for the real-time logging configuration.
-	 @return APIGetLogDatadogRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingDatadogName The name for the real-time logging configuration.
+		 @return APIGetLogDatadogRequest
 	*/
 	GetLogDatadog(ctx context.Context, serviceID string, versionID int32, loggingDatadogName string) APIGetLogDatadogRequest
 
@@ -82,14 +81,14 @@ type LoggingDatadogAPI interface {
 	GetLogDatadogExecute(r APIGetLogDatadogRequest) (*LoggingDatadogResponse, *http.Response, error)
 
 	/*
-	ListLogDatadog List Datadog log endpoints
+		ListLogDatadog List Datadog log endpoints
 
-	List all of the Datadog logging objects for a particular service and version.
+		List all of the Datadog logging objects for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogDatadogRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogDatadogRequest
 	*/
 	ListLogDatadog(ctx context.Context, serviceID string, versionID int32) APIListLogDatadogRequest
 
@@ -98,15 +97,15 @@ type LoggingDatadogAPI interface {
 	ListLogDatadogExecute(r APIListLogDatadogRequest) ([]LoggingDatadogResponse, *http.Response, error)
 
 	/*
-	UpdateLogDatadog Update a Datadog log endpoint
+		UpdateLogDatadog Update a Datadog log endpoint
 
-	Update the Datadog logging object for a particular service and version.
+		Update the Datadog logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingDatadogName The name for the real-time logging configuration.
-	 @return APIUpdateLogDatadogRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingDatadogName The name for the real-time logging configuration.
+		 @return APIUpdateLogDatadogRequest
 	*/
 	UpdateLogDatadog(ctx context.Context, serviceID string, versionID int32, loggingDatadogName string) APIUpdateLogDatadogRequest
 
@@ -120,17 +119,17 @@ type LoggingDatadogAPIService service
 
 // APICreateLogDatadogRequest represents a request for the resource.
 type APICreateLogDatadogRequest struct {
-	ctx context.Context
-	APIService LoggingDatadogAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingDatadogAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	region *string
-	token *string
+	format            *string
+	formatVersion     *int32
+	region            *string
+	token             *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -138,31 +137,37 @@ func (r *APICreateLogDatadogRequest) Name(name string) *APICreateLogDatadogReque
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogDatadogRequest) Placement(placement string) *APICreateLogDatadogRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogDatadogRequest) ResponseCondition(responseCondition string) *APICreateLogDatadogRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
+
+// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest.
 func (r *APICreateLogDatadogRequest) Format(format string) *APICreateLogDatadogRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogDatadogRequest) FormatVersion(formatVersion int32) *APICreateLogDatadogRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Region The region that log data will be sent to.
 func (r *APICreateLogDatadogRequest) Region(region string) *APICreateLogDatadogRequest {
 	r.region = &region
 	return r
 }
+
 // Token The API key from your Datadog account. Required.
 func (r *APICreateLogDatadogRequest) Token(token string) *APICreateLogDatadogRequest {
 	r.token = &token
@@ -187,9 +192,9 @@ Create a Datadog logging object for a particular service and version.
 func (a *LoggingDatadogAPIService) CreateLogDatadog(ctx context.Context, serviceID string, versionID int32) APICreateLogDatadogRequest {
 	return APICreateLogDatadogRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -197,10 +202,10 @@ func (a *LoggingDatadogAPIService) CreateLogDatadog(ctx context.Context, service
 //  @return LoggingDatadogResponse
 func (a *LoggingDatadogAPIService) CreateLogDatadogExecute(r APICreateLogDatadogRequest) (*LoggingDatadogResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingDatadogResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingDatadogResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingDatadogAPIService.CreateLogDatadog")
@@ -302,7 +307,6 @@ func (a *LoggingDatadogAPIService) CreateLogDatadogExecute(r APICreateLogDatadog
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -321,13 +325,12 @@ func (a *LoggingDatadogAPIService) CreateLogDatadogExecute(r APICreateLogDatadog
 
 // APIDeleteLogDatadogRequest represents a request for the resource.
 type APIDeleteLogDatadogRequest struct {
-	ctx context.Context
-	APIService LoggingDatadogAPI
-	serviceID string
-	versionID int32
+	ctx                context.Context
+	APIService         LoggingDatadogAPI
+	serviceID          string
+	versionID          int32
 	loggingDatadogName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogDatadogRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -347,10 +350,10 @@ Delete the Datadog logging object for a particular service and version.
 */
 func (a *LoggingDatadogAPIService) DeleteLogDatadog(ctx context.Context, serviceID string, versionID int32, loggingDatadogName string) APIDeleteLogDatadogRequest {
 	return APIDeleteLogDatadogRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:         a,
+		ctx:                ctx,
+		serviceID:          serviceID,
+		versionID:          versionID,
 		loggingDatadogName: loggingDatadogName,
 	}
 }
@@ -359,10 +362,10 @@ func (a *LoggingDatadogAPIService) DeleteLogDatadog(ctx context.Context, service
 //  @return InlineResponse200
 func (a *LoggingDatadogAPIService) DeleteLogDatadogExecute(r APIDeleteLogDatadogRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingDatadogAPIService.DeleteLogDatadog")
@@ -444,7 +447,6 @@ func (a *LoggingDatadogAPIService) DeleteLogDatadogExecute(r APIDeleteLogDatadog
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -463,13 +465,12 @@ func (a *LoggingDatadogAPIService) DeleteLogDatadogExecute(r APIDeleteLogDatadog
 
 // APIGetLogDatadogRequest represents a request for the resource.
 type APIGetLogDatadogRequest struct {
-	ctx context.Context
-	APIService LoggingDatadogAPI
-	serviceID string
-	versionID int32
+	ctx                context.Context
+	APIService         LoggingDatadogAPI
+	serviceID          string
+	versionID          int32
 	loggingDatadogName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogDatadogRequest) Execute() (*LoggingDatadogResponse, *http.Response, error) {
@@ -489,10 +490,10 @@ Get the details for a Datadog logging object for a particular service and versio
 */
 func (a *LoggingDatadogAPIService) GetLogDatadog(ctx context.Context, serviceID string, versionID int32, loggingDatadogName string) APIGetLogDatadogRequest {
 	return APIGetLogDatadogRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:         a,
+		ctx:                ctx,
+		serviceID:          serviceID,
+		versionID:          versionID,
 		loggingDatadogName: loggingDatadogName,
 	}
 }
@@ -501,10 +502,10 @@ func (a *LoggingDatadogAPIService) GetLogDatadog(ctx context.Context, serviceID 
 //  @return LoggingDatadogResponse
 func (a *LoggingDatadogAPIService) GetLogDatadogExecute(r APIGetLogDatadogRequest) (*LoggingDatadogResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingDatadogResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingDatadogResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingDatadogAPIService.GetLogDatadog")
@@ -586,7 +587,6 @@ func (a *LoggingDatadogAPIService) GetLogDatadogExecute(r APIGetLogDatadogReques
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -605,12 +605,11 @@ func (a *LoggingDatadogAPIService) GetLogDatadogExecute(r APIGetLogDatadogReques
 
 // APIListLogDatadogRequest represents a request for the resource.
 type APIListLogDatadogRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingDatadogAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogDatadogRequest) Execute() ([]LoggingDatadogResponse, *http.Response, error) {
@@ -630,9 +629,9 @@ List all of the Datadog logging objects for a particular service and version.
 func (a *LoggingDatadogAPIService) ListLogDatadog(ctx context.Context, serviceID string, versionID int32) APIListLogDatadogRequest {
 	return APIListLogDatadogRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -640,10 +639,10 @@ func (a *LoggingDatadogAPIService) ListLogDatadog(ctx context.Context, serviceID
 //  @return []LoggingDatadogResponse
 func (a *LoggingDatadogAPIService) ListLogDatadogExecute(r APIListLogDatadogRequest) ([]LoggingDatadogResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingDatadogResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingDatadogResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingDatadogAPIService.ListLogDatadog")
@@ -724,7 +723,6 @@ func (a *LoggingDatadogAPIService) ListLogDatadogExecute(r APIListLogDatadogRequ
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -743,18 +741,18 @@ func (a *LoggingDatadogAPIService) ListLogDatadogExecute(r APIListLogDatadogRequ
 
 // APIUpdateLogDatadogRequest represents a request for the resource.
 type APIUpdateLogDatadogRequest struct {
-	ctx context.Context
-	APIService LoggingDatadogAPI
-	serviceID string
-	versionID int32
+	ctx                context.Context
+	APIService         LoggingDatadogAPI
+	serviceID          string
+	versionID          int32
 	loggingDatadogName string
-	name *string
-	placement *string
-	responseCondition *string
-	format *string
-	formatVersion *int32
-	region *string
-	token *string
+	name               *string
+	placement          *string
+	responseCondition  *string
+	format             *string
+	formatVersion      *int32
+	region             *string
+	token              *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -762,31 +760,37 @@ func (r *APIUpdateLogDatadogRequest) Name(name string) *APIUpdateLogDatadogReque
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogDatadogRequest) Placement(placement string) *APIUpdateLogDatadogRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogDatadogRequest) ResponseCondition(responseCondition string) *APIUpdateLogDatadogRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
+
+// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest.
 func (r *APIUpdateLogDatadogRequest) Format(format string) *APIUpdateLogDatadogRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogDatadogRequest) FormatVersion(formatVersion int32) *APIUpdateLogDatadogRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Region The region that log data will be sent to.
 func (r *APIUpdateLogDatadogRequest) Region(region string) *APIUpdateLogDatadogRequest {
 	r.region = &region
 	return r
 }
+
 // Token The API key from your Datadog account. Required.
 func (r *APIUpdateLogDatadogRequest) Token(token string) *APIUpdateLogDatadogRequest {
 	r.token = &token
@@ -811,10 +815,10 @@ Update the Datadog logging object for a particular service and version.
 */
 func (a *LoggingDatadogAPIService) UpdateLogDatadog(ctx context.Context, serviceID string, versionID int32, loggingDatadogName string) APIUpdateLogDatadogRequest {
 	return APIUpdateLogDatadogRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:         a,
+		ctx:                ctx,
+		serviceID:          serviceID,
+		versionID:          versionID,
 		loggingDatadogName: loggingDatadogName,
 	}
 }
@@ -823,10 +827,10 @@ func (a *LoggingDatadogAPIService) UpdateLogDatadog(ctx context.Context, service
 //  @return LoggingDatadogResponse
 func (a *LoggingDatadogAPIService) UpdateLogDatadogExecute(r APIUpdateLogDatadogRequest) (*LoggingDatadogResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingDatadogResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingDatadogResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingDatadogAPIService.UpdateLogDatadog")
@@ -928,7 +932,6 @@ func (a *LoggingDatadogAPIService) UpdateLogDatadogExecute(r APIUpdateLogDatadog
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

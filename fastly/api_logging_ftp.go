@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingFtpAPI interface {
 
 	/*
-	CreateLogFtp Create an FTP log endpoint
+		CreateLogFtp Create an FTP log endpoint
 
-	Create a FTP for a particular service and version.
+		Create a FTP for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogFtpRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogFtpRequest
 	*/
 	CreateLogFtp(ctx context.Context, serviceID string, versionID int32) APICreateLogFtpRequest
 
@@ -48,15 +47,15 @@ type LoggingFtpAPI interface {
 	CreateLogFtpExecute(r APICreateLogFtpRequest) (*LoggingFtpResponse, *http.Response, error)
 
 	/*
-	DeleteLogFtp Delete an FTP log endpoint
+		DeleteLogFtp Delete an FTP log endpoint
 
-	Delete the FTP for a particular service and version.
+		Delete the FTP for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingFtpName The name for the real-time logging configuration.
-	 @return APIDeleteLogFtpRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingFtpName The name for the real-time logging configuration.
+		 @return APIDeleteLogFtpRequest
 	*/
 	DeleteLogFtp(ctx context.Context, serviceID string, versionID int32, loggingFtpName string) APIDeleteLogFtpRequest
 
@@ -65,15 +64,15 @@ type LoggingFtpAPI interface {
 	DeleteLogFtpExecute(r APIDeleteLogFtpRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogFtp Get an FTP log endpoint
+		GetLogFtp Get an FTP log endpoint
 
-	Get the FTP for a particular service and version.
+		Get the FTP for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingFtpName The name for the real-time logging configuration.
-	 @return APIGetLogFtpRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingFtpName The name for the real-time logging configuration.
+		 @return APIGetLogFtpRequest
 	*/
 	GetLogFtp(ctx context.Context, serviceID string, versionID int32, loggingFtpName string) APIGetLogFtpRequest
 
@@ -82,14 +81,14 @@ type LoggingFtpAPI interface {
 	GetLogFtpExecute(r APIGetLogFtpRequest) (*LoggingFtpResponse, *http.Response, error)
 
 	/*
-	ListLogFtp List FTP log endpoints
+		ListLogFtp List FTP log endpoints
 
-	List all of the FTPs for a particular service and version.
+		List all of the FTPs for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogFtpRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogFtpRequest
 	*/
 	ListLogFtp(ctx context.Context, serviceID string, versionID int32) APIListLogFtpRequest
 
@@ -98,15 +97,15 @@ type LoggingFtpAPI interface {
 	ListLogFtpExecute(r APIListLogFtpRequest) ([]LoggingFtpResponse, *http.Response, error)
 
 	/*
-	UpdateLogFtp Update an FTP log endpoint
+		UpdateLogFtp Update an FTP log endpoint
 
-	Update the FTP for a particular service and version.
+		Update the FTP for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingFtpName The name for the real-time logging configuration.
-	 @return APIUpdateLogFtpRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingFtpName The name for the real-time logging configuration.
+		 @return APIUpdateLogFtpRequest
 	*/
 	UpdateLogFtp(ctx context.Context, serviceID string, versionID int32, loggingFtpName string) APIUpdateLogFtpRequest
 
@@ -120,28 +119,28 @@ type LoggingFtpAPIService service
 
 // APICreateLogFtpRequest represents a request for the resource.
 type APICreateLogFtpRequest struct {
-	ctx context.Context
-	APIService LoggingFtpAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingFtpAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	messageType *string
-	timestampFormat *string
-	compressionCodec *string
-	period *int32
-	gzipLevel *int32
-	address *string
-	hostname *string
-	ipv4 *string
-	password *string
-	path *string
-	publicKey *string
-	user *string
-	port *int32
+	format            *string
+	formatVersion     *int32
+	messageType       *string
+	timestampFormat   *string
+	compressionCodec  *string
+	period            *int32
+	gzipLevel         *int32
+	address           *string
+	hostname          *string
+	ipv4              *string
+	password          *string
+	path              *string
+	publicKey         *string
+	user              *string
+	port              *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -149,86 +148,103 @@ func (r *APICreateLogFtpRequest) Name(name string) *APICreateLogFtpRequest {
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogFtpRequest) Placement(placement string) *APICreateLogFtpRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogFtpRequest) ResponseCondition(responseCondition string) *APICreateLogFtpRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogFtpRequest) Format(format string) *APICreateLogFtpRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogFtpRequest) FormatVersion(formatVersion int32) *APICreateLogFtpRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // MessageType How the message should be formatted.
 func (r *APICreateLogFtpRequest) MessageType(messageType string) *APICreateLogFtpRequest {
 	r.messageType = &messageType
 	return r
 }
+
 // TimestampFormat A timestamp format
 func (r *APICreateLogFtpRequest) TimestampFormat(timestampFormat string) *APICreateLogFtpRequest {
 	r.timestampFormat = &timestampFormat
 	return r
 }
+
 // CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APICreateLogFtpRequest) CompressionCodec(compressionCodec string) *APICreateLogFtpRequest {
 	r.compressionCodec = &compressionCodec
 	return r
 }
+
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APICreateLogFtpRequest) Period(period int32) *APICreateLogFtpRequest {
 	r.period = &period
 	return r
 }
+
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APICreateLogFtpRequest) GzipLevel(gzipLevel int32) *APICreateLogFtpRequest {
 	r.gzipLevel = &gzipLevel
 	return r
 }
+
 // Address An hostname or IPv4 address.
 func (r *APICreateLogFtpRequest) Address(address string) *APICreateLogFtpRequest {
 	r.address = &address
 	return r
 }
+
 // Hostname Hostname used.
 func (r *APICreateLogFtpRequest) Hostname(hostname string) *APICreateLogFtpRequest {
 	r.hostname = &hostname
 	return r
 }
+
 // Ipv4 IPv4 address of the host.
 func (r *APICreateLogFtpRequest) Ipv4(ipv4 string) *APICreateLogFtpRequest {
 	r.ipv4 = &ipv4
 	return r
 }
+
 // Password The password for the server. For anonymous use an email address.
 func (r *APICreateLogFtpRequest) Password(password string) *APICreateLogFtpRequest {
 	r.password = &password
 	return r
 }
+
 // Path The path to upload log files to. If the path ends in &#x60;/&#x60; then it is treated as a directory.
 func (r *APICreateLogFtpRequest) Path(path string) *APICreateLogFtpRequest {
 	r.path = &path
 	return r
 }
+
 // PublicKey A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 func (r *APICreateLogFtpRequest) PublicKey(publicKey string) *APICreateLogFtpRequest {
 	r.publicKey = &publicKey
 	return r
 }
+
 // User The username for the server. Can be anonymous.
 func (r *APICreateLogFtpRequest) User(user string) *APICreateLogFtpRequest {
 	r.user = &user
 	return r
 }
+
 // Port The port number.
 func (r *APICreateLogFtpRequest) Port(port int32) *APICreateLogFtpRequest {
 	r.port = &port
@@ -253,9 +269,9 @@ Create a FTP for a particular service and version.
 func (a *LoggingFtpAPIService) CreateLogFtp(ctx context.Context, serviceID string, versionID int32) APICreateLogFtpRequest {
 	return APICreateLogFtpRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -263,10 +279,10 @@ func (a *LoggingFtpAPIService) CreateLogFtp(ctx context.Context, serviceID strin
 //  @return LoggingFtpResponse
 func (a *LoggingFtpAPIService) CreateLogFtpExecute(r APICreateLogFtpRequest) (*LoggingFtpResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingFtpResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingFtpResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingFtpAPIService.CreateLogFtp")
@@ -401,7 +417,6 @@ func (a *LoggingFtpAPIService) CreateLogFtpExecute(r APICreateLogFtpRequest) (*L
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -420,13 +435,12 @@ func (a *LoggingFtpAPIService) CreateLogFtpExecute(r APICreateLogFtpRequest) (*L
 
 // APIDeleteLogFtpRequest represents a request for the resource.
 type APIDeleteLogFtpRequest struct {
-	ctx context.Context
-	APIService LoggingFtpAPI
-	serviceID string
-	versionID int32
+	ctx            context.Context
+	APIService     LoggingFtpAPI
+	serviceID      string
+	versionID      int32
 	loggingFtpName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogFtpRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -446,10 +460,10 @@ Delete the FTP for a particular service and version.
 */
 func (a *LoggingFtpAPIService) DeleteLogFtp(ctx context.Context, serviceID string, versionID int32, loggingFtpName string) APIDeleteLogFtpRequest {
 	return APIDeleteLogFtpRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:     a,
+		ctx:            ctx,
+		serviceID:      serviceID,
+		versionID:      versionID,
 		loggingFtpName: loggingFtpName,
 	}
 }
@@ -458,10 +472,10 @@ func (a *LoggingFtpAPIService) DeleteLogFtp(ctx context.Context, serviceID strin
 //  @return InlineResponse200
 func (a *LoggingFtpAPIService) DeleteLogFtpExecute(r APIDeleteLogFtpRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingFtpAPIService.DeleteLogFtp")
@@ -543,7 +557,6 @@ func (a *LoggingFtpAPIService) DeleteLogFtpExecute(r APIDeleteLogFtpRequest) (*I
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -562,13 +575,12 @@ func (a *LoggingFtpAPIService) DeleteLogFtpExecute(r APIDeleteLogFtpRequest) (*I
 
 // APIGetLogFtpRequest represents a request for the resource.
 type APIGetLogFtpRequest struct {
-	ctx context.Context
-	APIService LoggingFtpAPI
-	serviceID string
-	versionID int32
+	ctx            context.Context
+	APIService     LoggingFtpAPI
+	serviceID      string
+	versionID      int32
 	loggingFtpName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogFtpRequest) Execute() (*LoggingFtpResponse, *http.Response, error) {
@@ -588,10 +600,10 @@ Get the FTP for a particular service and version.
 */
 func (a *LoggingFtpAPIService) GetLogFtp(ctx context.Context, serviceID string, versionID int32, loggingFtpName string) APIGetLogFtpRequest {
 	return APIGetLogFtpRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:     a,
+		ctx:            ctx,
+		serviceID:      serviceID,
+		versionID:      versionID,
 		loggingFtpName: loggingFtpName,
 	}
 }
@@ -600,10 +612,10 @@ func (a *LoggingFtpAPIService) GetLogFtp(ctx context.Context, serviceID string, 
 //  @return LoggingFtpResponse
 func (a *LoggingFtpAPIService) GetLogFtpExecute(r APIGetLogFtpRequest) (*LoggingFtpResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingFtpResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingFtpResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingFtpAPIService.GetLogFtp")
@@ -685,7 +697,6 @@ func (a *LoggingFtpAPIService) GetLogFtpExecute(r APIGetLogFtpRequest) (*Logging
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -704,12 +715,11 @@ func (a *LoggingFtpAPIService) GetLogFtpExecute(r APIGetLogFtpRequest) (*Logging
 
 // APIListLogFtpRequest represents a request for the resource.
 type APIListLogFtpRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingFtpAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogFtpRequest) Execute() ([]LoggingFtpResponse, *http.Response, error) {
@@ -729,9 +739,9 @@ List all of the FTPs for a particular service and version.
 func (a *LoggingFtpAPIService) ListLogFtp(ctx context.Context, serviceID string, versionID int32) APIListLogFtpRequest {
 	return APIListLogFtpRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -739,10 +749,10 @@ func (a *LoggingFtpAPIService) ListLogFtp(ctx context.Context, serviceID string,
 //  @return []LoggingFtpResponse
 func (a *LoggingFtpAPIService) ListLogFtpExecute(r APIListLogFtpRequest) ([]LoggingFtpResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingFtpResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingFtpResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingFtpAPIService.ListLogFtp")
@@ -823,7 +833,6 @@ func (a *LoggingFtpAPIService) ListLogFtpExecute(r APIListLogFtpRequest) ([]Logg
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -842,29 +851,29 @@ func (a *LoggingFtpAPIService) ListLogFtpExecute(r APIListLogFtpRequest) ([]Logg
 
 // APIUpdateLogFtpRequest represents a request for the resource.
 type APIUpdateLogFtpRequest struct {
-	ctx context.Context
-	APIService LoggingFtpAPI
-	serviceID string
-	versionID int32
-	loggingFtpName string
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingFtpAPI
+	serviceID         string
+	versionID         int32
+	loggingFtpName    string
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	messageType *string
-	timestampFormat *string
-	compressionCodec *string
-	period *int32
-	gzipLevel *int32
-	address *string
-	hostname *string
-	ipv4 *string
-	password *string
-	path *string
-	publicKey *string
-	user *string
-	port *int32
+	format            *string
+	formatVersion     *int32
+	messageType       *string
+	timestampFormat   *string
+	compressionCodec  *string
+	period            *int32
+	gzipLevel         *int32
+	address           *string
+	hostname          *string
+	ipv4              *string
+	password          *string
+	path              *string
+	publicKey         *string
+	user              *string
+	port              *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -872,86 +881,103 @@ func (r *APIUpdateLogFtpRequest) Name(name string) *APIUpdateLogFtpRequest {
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogFtpRequest) Placement(placement string) *APIUpdateLogFtpRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogFtpRequest) ResponseCondition(responseCondition string) *APIUpdateLogFtpRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogFtpRequest) Format(format string) *APIUpdateLogFtpRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogFtpRequest) FormatVersion(formatVersion int32) *APIUpdateLogFtpRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // MessageType How the message should be formatted.
 func (r *APIUpdateLogFtpRequest) MessageType(messageType string) *APIUpdateLogFtpRequest {
 	r.messageType = &messageType
 	return r
 }
+
 // TimestampFormat A timestamp format
 func (r *APIUpdateLogFtpRequest) TimestampFormat(timestampFormat string) *APIUpdateLogFtpRequest {
 	r.timestampFormat = &timestampFormat
 	return r
 }
+
 // CompressionCodec The codec used for compressing your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APIUpdateLogFtpRequest) CompressionCodec(compressionCodec string) *APIUpdateLogFtpRequest {
 	r.compressionCodec = &compressionCodec
 	return r
 }
+
 // Period How frequently log files are finalized so they can be available for reading (in seconds).
 func (r *APIUpdateLogFtpRequest) Period(period int32) *APIUpdateLogFtpRequest {
 	r.period = &period
 	return r
 }
+
 // GzipLevel The level of gzip encoding when sending logs (default &#x60;0&#x60;, no compression). Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error.
 func (r *APIUpdateLogFtpRequest) GzipLevel(gzipLevel int32) *APIUpdateLogFtpRequest {
 	r.gzipLevel = &gzipLevel
 	return r
 }
+
 // Address An hostname or IPv4 address.
 func (r *APIUpdateLogFtpRequest) Address(address string) *APIUpdateLogFtpRequest {
 	r.address = &address
 	return r
 }
+
 // Hostname Hostname used.
 func (r *APIUpdateLogFtpRequest) Hostname(hostname string) *APIUpdateLogFtpRequest {
 	r.hostname = &hostname
 	return r
 }
+
 // Ipv4 IPv4 address of the host.
 func (r *APIUpdateLogFtpRequest) Ipv4(ipv4 string) *APIUpdateLogFtpRequest {
 	r.ipv4 = &ipv4
 	return r
 }
+
 // Password The password for the server. For anonymous use an email address.
 func (r *APIUpdateLogFtpRequest) Password(password string) *APIUpdateLogFtpRequest {
 	r.password = &password
 	return r
 }
+
 // Path The path to upload log files to. If the path ends in &#x60;/&#x60; then it is treated as a directory.
 func (r *APIUpdateLogFtpRequest) Path(path string) *APIUpdateLogFtpRequest {
 	r.path = &path
 	return r
 }
+
 // PublicKey A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 func (r *APIUpdateLogFtpRequest) PublicKey(publicKey string) *APIUpdateLogFtpRequest {
 	r.publicKey = &publicKey
 	return r
 }
+
 // User The username for the server. Can be anonymous.
 func (r *APIUpdateLogFtpRequest) User(user string) *APIUpdateLogFtpRequest {
 	r.user = &user
 	return r
 }
+
 // Port The port number.
 func (r *APIUpdateLogFtpRequest) Port(port int32) *APIUpdateLogFtpRequest {
 	r.port = &port
@@ -976,10 +1002,10 @@ Update the FTP for a particular service and version.
 */
 func (a *LoggingFtpAPIService) UpdateLogFtp(ctx context.Context, serviceID string, versionID int32, loggingFtpName string) APIUpdateLogFtpRequest {
 	return APIUpdateLogFtpRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:     a,
+		ctx:            ctx,
+		serviceID:      serviceID,
+		versionID:      versionID,
 		loggingFtpName: loggingFtpName,
 	}
 }
@@ -988,10 +1014,10 @@ func (a *LoggingFtpAPIService) UpdateLogFtp(ctx context.Context, serviceID strin
 //  @return LoggingFtpResponse
 func (a *LoggingFtpAPIService) UpdateLogFtpExecute(r APIUpdateLogFtpRequest) (*LoggingFtpResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingFtpResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingFtpResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingFtpAPIService.UpdateLogFtp")
@@ -1126,7 +1152,6 @@ func (a *LoggingFtpAPIService) UpdateLogFtpExecute(r APIUpdateLogFtpRequest) (*L
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

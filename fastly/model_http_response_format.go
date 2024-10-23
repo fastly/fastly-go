@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -28,7 +27,7 @@ type HTTPResponseFormat struct {
 	// The response body as a string.
 	Body *string `json:"body,omitempty"`
 	// The response body as a base64-encoded binary blob.
-	BodyBin *string `json:"body-bin,omitempty"`
+	BodyBin              *string `json:"body-bin,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -243,7 +242,7 @@ func (o HTTPResponseFormat) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *HTTPResponseFormat) UnmarshalJSON(bytes []byte) (err error) {
 	varHTTPResponseFormat := _HTTPResponseFormat{}
 
@@ -265,7 +264,7 @@ func (o *HTTPResponseFormat) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableHTTPResponseFormat is a helper abstraction for handling nullable httpresponseformat types. 
+// NullableHTTPResponseFormat is a helper abstraction for handling nullable httpresponseformat types.
 type NullableHTTPResponseFormat struct {
 	value *HTTPResponseFormat
 	isSet bool
@@ -305,7 +304,7 @@ func (v NullableHTTPResponseFormat) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableHTTPResponseFormat) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

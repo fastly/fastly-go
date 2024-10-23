@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type DictionaryItemAPI interface {
 
 	/*
-	BulkUpdateDictionaryItem Update multiple entries in an edge dictionary
+		BulkUpdateDictionaryItem Update multiple entries in an edge dictionary
 
-	Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. [Contact support](https://support.fastly.com/) to discuss raising this limit.
+		Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. [Contact support](https://support.fastly.com/) to discuss raising this limit.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param dictionaryID Alphanumeric string identifying a Dictionary.
-	 @return APIBulkUpdateDictionaryItemRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @return APIBulkUpdateDictionaryItemRequest
 	*/
 	BulkUpdateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string) APIBulkUpdateDictionaryItemRequest
 
@@ -48,14 +47,14 @@ type DictionaryItemAPI interface {
 	BulkUpdateDictionaryItemExecute(r APIBulkUpdateDictionaryItemRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	CreateDictionaryItem Create an entry in an edge dictionary
+		CreateDictionaryItem Create an entry in an edge dictionary
 
-	Create DictionaryItem given service, dictionary ID, item key, and item value.
+		Create DictionaryItem given service, dictionary ID, item key, and item value.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param dictionaryID Alphanumeric string identifying a Dictionary.
-	 @return APICreateDictionaryItemRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @return APICreateDictionaryItemRequest
 	*/
 	CreateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string) APICreateDictionaryItemRequest
 
@@ -64,15 +63,15 @@ type DictionaryItemAPI interface {
 	CreateDictionaryItemExecute(r APICreateDictionaryItemRequest) (*DictionaryItemResponse, *http.Response, error)
 
 	/*
-	DeleteDictionaryItem Delete an item from an edge dictionary
+		DeleteDictionaryItem Delete an item from an edge dictionary
 
-	Delete DictionaryItem given service, dictionary ID, and item key.
+		Delete DictionaryItem given service, dictionary ID, and item key.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param dictionaryID Alphanumeric string identifying a Dictionary.
-	 @param dictionaryItemKey Item key, maximum 256 characters.
-	 @return APIDeleteDictionaryItemRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @param dictionaryItemKey Item key, maximum 256 characters.
+		 @return APIDeleteDictionaryItemRequest
 	*/
 	DeleteDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIDeleteDictionaryItemRequest
 
@@ -81,15 +80,15 @@ type DictionaryItemAPI interface {
 	DeleteDictionaryItemExecute(r APIDeleteDictionaryItemRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetDictionaryItem Get an item from an edge dictionary
+		GetDictionaryItem Get an item from an edge dictionary
 
-	Retrieve a single DictionaryItem given service, dictionary ID and item key.
+		Retrieve a single DictionaryItem given service, dictionary ID and item key.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param dictionaryID Alphanumeric string identifying a Dictionary.
-	 @param dictionaryItemKey Item key, maximum 256 characters.
-	 @return APIGetDictionaryItemRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @param dictionaryItemKey Item key, maximum 256 characters.
+		 @return APIGetDictionaryItemRequest
 	*/
 	GetDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIGetDictionaryItemRequest
 
@@ -98,14 +97,14 @@ type DictionaryItemAPI interface {
 	GetDictionaryItemExecute(r APIGetDictionaryItemRequest) (*DictionaryItemResponse, *http.Response, error)
 
 	/*
-	ListDictionaryItems List items in an edge dictionary
+		ListDictionaryItems List items in an edge dictionary
 
-	List of DictionaryItems given service and dictionary ID.
+		List of DictionaryItems given service and dictionary ID.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param dictionaryID Alphanumeric string identifying a Dictionary.
-	 @return APIListDictionaryItemsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @return APIListDictionaryItemsRequest
 	*/
 	ListDictionaryItems(ctx context.Context, serviceID string, dictionaryID string) APIListDictionaryItemsRequest
 
@@ -114,15 +113,15 @@ type DictionaryItemAPI interface {
 	ListDictionaryItemsExecute(r APIListDictionaryItemsRequest) ([]DictionaryItemResponse, *http.Response, error)
 
 	/*
-	UpdateDictionaryItem Update an entry in an edge dictionary
+		UpdateDictionaryItem Update an entry in an edge dictionary
 
-	Update DictionaryItem given service, dictionary ID, item key, and item value.
+		Update DictionaryItem given service, dictionary ID, item key, and item value.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param dictionaryID Alphanumeric string identifying a Dictionary.
-	 @param dictionaryItemKey Item key, maximum 256 characters.
-	 @return APIUpdateDictionaryItemRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @param dictionaryItemKey Item key, maximum 256 characters.
+		 @return APIUpdateDictionaryItemRequest
 	*/
 	UpdateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIUpdateDictionaryItemRequest
 
@@ -131,15 +130,15 @@ type DictionaryItemAPI interface {
 	UpdateDictionaryItemExecute(r APIUpdateDictionaryItemRequest) (*DictionaryItemResponse, *http.Response, error)
 
 	/*
-	UpsertDictionaryItem Insert or update an entry in an edge dictionary
+		UpsertDictionaryItem Insert or update an entry in an edge dictionary
 
-	Upsert DictionaryItem given service, dictionary ID, item key, and item value.
+		Upsert DictionaryItem given service, dictionary ID, item key, and item value.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param dictionaryID Alphanumeric string identifying a Dictionary.
-	 @param dictionaryItemKey Item key, maximum 256 characters.
-	 @return APIUpsertDictionaryItemRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @param dictionaryItemKey Item key, maximum 256 characters.
+		 @return APIUpsertDictionaryItemRequest
 	*/
 	UpsertDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIUpsertDictionaryItemRequest
 
@@ -153,10 +152,10 @@ type DictionaryItemAPIService service
 
 // APIBulkUpdateDictionaryItemRequest represents a request for the resource.
 type APIBulkUpdateDictionaryItemRequest struct {
-	ctx context.Context
-	APIService DictionaryItemAPI
-	serviceID string
-	dictionaryID string
+	ctx                             context.Context
+	APIService                      DictionaryItemAPI
+	serviceID                       string
+	dictionaryID                    string
 	bulkUpdateDictionaryListRequest *BulkUpdateDictionaryListRequest
 }
 
@@ -183,9 +182,9 @@ Update multiple items in the same dictionary. For faster updates to your service
 */
 func (a *DictionaryItemAPIService) BulkUpdateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string) APIBulkUpdateDictionaryItemRequest {
 	return APIBulkUpdateDictionaryItemRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		APIService:   a,
+		ctx:          ctx,
+		serviceID:    serviceID,
 		dictionaryID: dictionaryID,
 	}
 }
@@ -194,10 +193,10 @@ func (a *DictionaryItemAPIService) BulkUpdateDictionaryItem(ctx context.Context,
 //  @return InlineResponse200
 func (a *DictionaryItemAPIService) BulkUpdateDictionaryItemExecute(r APIBulkUpdateDictionaryItemRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryItemAPIService.BulkUpdateDictionaryItem")
@@ -280,7 +279,6 @@ func (a *DictionaryItemAPIService) BulkUpdateDictionaryItemExecute(r APIBulkUpda
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -299,12 +297,12 @@ func (a *DictionaryItemAPIService) BulkUpdateDictionaryItemExecute(r APIBulkUpda
 
 // APICreateDictionaryItemRequest represents a request for the resource.
 type APICreateDictionaryItemRequest struct {
-	ctx context.Context
-	APIService DictionaryItemAPI
-	serviceID string
+	ctx          context.Context
+	APIService   DictionaryItemAPI
+	serviceID    string
 	dictionaryID string
-	itemKey *string
-	itemValue *string
+	itemKey      *string
+	itemValue    *string
 }
 
 // ItemKey Item key, maximum 256 characters.
@@ -312,6 +310,7 @@ func (r *APICreateDictionaryItemRequest) ItemKey(itemKey string) *APICreateDicti
 	r.itemKey = &itemKey
 	return r
 }
+
 // ItemValue Item value, maximum 8000 characters.
 func (r *APICreateDictionaryItemRequest) ItemValue(itemValue string) *APICreateDictionaryItemRequest {
 	r.itemValue = &itemValue
@@ -335,9 +334,9 @@ Create DictionaryItem given service, dictionary ID, item key, and item value.
 */
 func (a *DictionaryItemAPIService) CreateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string) APICreateDictionaryItemRequest {
 	return APICreateDictionaryItemRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		APIService:   a,
+		ctx:          ctx,
+		serviceID:    serviceID,
 		dictionaryID: dictionaryID,
 	}
 }
@@ -346,10 +345,10 @@ func (a *DictionaryItemAPIService) CreateDictionaryItem(ctx context.Context, ser
 //  @return DictionaryItemResponse
 func (a *DictionaryItemAPIService) CreateDictionaryItemExecute(r APICreateDictionaryItemRequest) (*DictionaryItemResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DictionaryItemResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DictionaryItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryItemAPIService.CreateDictionaryItem")
@@ -436,7 +435,6 @@ func (a *DictionaryItemAPIService) CreateDictionaryItemExecute(r APICreateDictio
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -455,13 +453,12 @@ func (a *DictionaryItemAPIService) CreateDictionaryItemExecute(r APICreateDictio
 
 // APIDeleteDictionaryItemRequest represents a request for the resource.
 type APIDeleteDictionaryItemRequest struct {
-	ctx context.Context
-	APIService DictionaryItemAPI
-	serviceID string
-	dictionaryID string
+	ctx               context.Context
+	APIService        DictionaryItemAPI
+	serviceID         string
+	dictionaryID      string
 	dictionaryItemKey string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteDictionaryItemRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -481,10 +478,10 @@ Delete DictionaryItem given service, dictionary ID, and item key.
 */
 func (a *DictionaryItemAPIService) DeleteDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIDeleteDictionaryItemRequest {
 	return APIDeleteDictionaryItemRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		dictionaryID: dictionaryID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		dictionaryID:      dictionaryID,
 		dictionaryItemKey: dictionaryItemKey,
 	}
 }
@@ -493,10 +490,10 @@ func (a *DictionaryItemAPIService) DeleteDictionaryItem(ctx context.Context, ser
 //  @return InlineResponse200
 func (a *DictionaryItemAPIService) DeleteDictionaryItemExecute(r APIDeleteDictionaryItemRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryItemAPIService.DeleteDictionaryItem")
@@ -578,7 +575,6 @@ func (a *DictionaryItemAPIService) DeleteDictionaryItemExecute(r APIDeleteDictio
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -597,13 +593,12 @@ func (a *DictionaryItemAPIService) DeleteDictionaryItemExecute(r APIDeleteDictio
 
 // APIGetDictionaryItemRequest represents a request for the resource.
 type APIGetDictionaryItemRequest struct {
-	ctx context.Context
-	APIService DictionaryItemAPI
-	serviceID string
-	dictionaryID string
+	ctx               context.Context
+	APIService        DictionaryItemAPI
+	serviceID         string
+	dictionaryID      string
 	dictionaryItemKey string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetDictionaryItemRequest) Execute() (*DictionaryItemResponse, *http.Response, error) {
@@ -623,10 +618,10 @@ Retrieve a single DictionaryItem given service, dictionary ID and item key.
 */
 func (a *DictionaryItemAPIService) GetDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIGetDictionaryItemRequest {
 	return APIGetDictionaryItemRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		dictionaryID: dictionaryID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		dictionaryID:      dictionaryID,
 		dictionaryItemKey: dictionaryItemKey,
 	}
 }
@@ -635,10 +630,10 @@ func (a *DictionaryItemAPIService) GetDictionaryItem(ctx context.Context, servic
 //  @return DictionaryItemResponse
 func (a *DictionaryItemAPIService) GetDictionaryItemExecute(r APIGetDictionaryItemRequest) (*DictionaryItemResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DictionaryItemResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DictionaryItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryItemAPIService.GetDictionaryItem")
@@ -720,7 +715,6 @@ func (a *DictionaryItemAPIService) GetDictionaryItemExecute(r APIGetDictionaryIt
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -739,14 +733,14 @@ func (a *DictionaryItemAPIService) GetDictionaryItemExecute(r APIGetDictionaryIt
 
 // APIListDictionaryItemsRequest represents a request for the resource.
 type APIListDictionaryItemsRequest struct {
-	ctx context.Context
-	APIService DictionaryItemAPI
-	serviceID string
+	ctx          context.Context
+	APIService   DictionaryItemAPI
+	serviceID    string
 	dictionaryID string
-	page *int32
-	perPage *int32
-	sort *string
-	direction *string
+	page         *int32
+	perPage      *int32
+	sort         *string
+	direction    *string
 }
 
 // Page Current page.
@@ -754,16 +748,19 @@ func (r *APIListDictionaryItemsRequest) Page(page int32) *APIListDictionaryItems
 	r.page = &page
 	return r
 }
+
 // PerPage Number of records per page.
 func (r *APIListDictionaryItemsRequest) PerPage(perPage int32) *APIListDictionaryItemsRequest {
 	r.perPage = &perPage
 	return r
 }
+
 // Sort Field on which to sort.
 func (r *APIListDictionaryItemsRequest) Sort(sort string) *APIListDictionaryItemsRequest {
 	r.sort = &sort
 	return r
 }
+
 // Direction Direction in which to sort results.
 func (r *APIListDictionaryItemsRequest) Direction(direction string) *APIListDictionaryItemsRequest {
 	r.direction = &direction
@@ -787,9 +784,9 @@ List of DictionaryItems given service and dictionary ID.
 */
 func (a *DictionaryItemAPIService) ListDictionaryItems(ctx context.Context, serviceID string, dictionaryID string) APIListDictionaryItemsRequest {
 	return APIListDictionaryItemsRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		APIService:   a,
+		ctx:          ctx,
+		serviceID:    serviceID,
 		dictionaryID: dictionaryID,
 	}
 }
@@ -798,10 +795,10 @@ func (a *DictionaryItemAPIService) ListDictionaryItems(ctx context.Context, serv
 //  @return []DictionaryItemResponse
 func (a *DictionaryItemAPIService) ListDictionaryItemsExecute(r APIListDictionaryItemsRequest) ([]DictionaryItemResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []DictionaryItemResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []DictionaryItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryItemAPIService.ListDictionaryItems")
@@ -894,7 +891,6 @@ func (a *DictionaryItemAPIService) ListDictionaryItemsExecute(r APIListDictionar
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -913,13 +909,13 @@ func (a *DictionaryItemAPIService) ListDictionaryItemsExecute(r APIListDictionar
 
 // APIUpdateDictionaryItemRequest represents a request for the resource.
 type APIUpdateDictionaryItemRequest struct {
-	ctx context.Context
-	APIService DictionaryItemAPI
-	serviceID string
-	dictionaryID string
+	ctx               context.Context
+	APIService        DictionaryItemAPI
+	serviceID         string
+	dictionaryID      string
 	dictionaryItemKey string
-	itemKey *string
-	itemValue *string
+	itemKey           *string
+	itemValue         *string
 }
 
 // ItemKey Item key, maximum 256 characters.
@@ -927,6 +923,7 @@ func (r *APIUpdateDictionaryItemRequest) ItemKey(itemKey string) *APIUpdateDicti
 	r.itemKey = &itemKey
 	return r
 }
+
 // ItemValue Item value, maximum 8000 characters.
 func (r *APIUpdateDictionaryItemRequest) ItemValue(itemValue string) *APIUpdateDictionaryItemRequest {
 	r.itemValue = &itemValue
@@ -951,10 +948,10 @@ Update DictionaryItem given service, dictionary ID, item key, and item value.
 */
 func (a *DictionaryItemAPIService) UpdateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIUpdateDictionaryItemRequest {
 	return APIUpdateDictionaryItemRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		dictionaryID: dictionaryID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		dictionaryID:      dictionaryID,
 		dictionaryItemKey: dictionaryItemKey,
 	}
 }
@@ -963,10 +960,10 @@ func (a *DictionaryItemAPIService) UpdateDictionaryItem(ctx context.Context, ser
 //  @return DictionaryItemResponse
 func (a *DictionaryItemAPIService) UpdateDictionaryItemExecute(r APIUpdateDictionaryItemRequest) (*DictionaryItemResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DictionaryItemResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DictionaryItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryItemAPIService.UpdateDictionaryItem")
@@ -1054,7 +1051,6 @@ func (a *DictionaryItemAPIService) UpdateDictionaryItemExecute(r APIUpdateDictio
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1073,13 +1069,13 @@ func (a *DictionaryItemAPIService) UpdateDictionaryItemExecute(r APIUpdateDictio
 
 // APIUpsertDictionaryItemRequest represents a request for the resource.
 type APIUpsertDictionaryItemRequest struct {
-	ctx context.Context
-	APIService DictionaryItemAPI
-	serviceID string
-	dictionaryID string
+	ctx               context.Context
+	APIService        DictionaryItemAPI
+	serviceID         string
+	dictionaryID      string
 	dictionaryItemKey string
-	itemKey *string
-	itemValue *string
+	itemKey           *string
+	itemValue         *string
 }
 
 // ItemKey Item key, maximum 256 characters.
@@ -1087,6 +1083,7 @@ func (r *APIUpsertDictionaryItemRequest) ItemKey(itemKey string) *APIUpsertDicti
 	r.itemKey = &itemKey
 	return r
 }
+
 // ItemValue Item value, maximum 8000 characters.
 func (r *APIUpsertDictionaryItemRequest) ItemValue(itemValue string) *APIUpsertDictionaryItemRequest {
 	r.itemValue = &itemValue
@@ -1111,10 +1108,10 @@ Upsert DictionaryItem given service, dictionary ID, item key, and item value.
 */
 func (a *DictionaryItemAPIService) UpsertDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIUpsertDictionaryItemRequest {
 	return APIUpsertDictionaryItemRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		dictionaryID: dictionaryID,
+		APIService:        a,
+		ctx:               ctx,
+		serviceID:         serviceID,
+		dictionaryID:      dictionaryID,
 		dictionaryItemKey: dictionaryItemKey,
 	}
 }
@@ -1123,10 +1120,10 @@ func (a *DictionaryItemAPIService) UpsertDictionaryItem(ctx context.Context, ser
 //  @return DictionaryItemResponse
 func (a *DictionaryItemAPIService) UpsertDictionaryItemExecute(r APIUpsertDictionaryItemRequest) (*DictionaryItemResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DictionaryItemResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DictionaryItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryItemAPIService.UpsertDictionaryItem")
@@ -1213,7 +1210,6 @@ func (a *DictionaryItemAPIService) UpsertDictionaryItemExecute(r APIUpsertDictio
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

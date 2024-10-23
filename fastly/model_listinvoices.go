@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,15 +12,14 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
 // Listinvoices struct for Listinvoices
 type Listinvoices struct {
-	Data []Invoice `json:"data,omitempty"`
-	Meta *Metadata `json:"meta,omitempty"`
+	Data                 []Invoice `json:"data,omitempty"`
+	Meta                 *Metadata `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -126,7 +125,7 @@ func (o Listinvoices) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *Listinvoices) UnmarshalJSON(bytes []byte) (err error) {
 	varListinvoices := _Listinvoices{}
 
@@ -145,7 +144,7 @@ func (o *Listinvoices) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableListinvoices is a helper abstraction for handling nullable listinvoices types. 
+// NullableListinvoices is a helper abstraction for handling nullable listinvoices types.
 type NullableListinvoices struct {
 	value *Listinvoices
 	isSet bool
@@ -185,7 +184,7 @@ func (v NullableListinvoices) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableListinvoices) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

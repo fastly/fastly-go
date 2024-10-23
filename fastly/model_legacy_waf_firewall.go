@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -24,8 +23,8 @@ type LegacyWafFirewall struct {
 	// Name of the corresponding condition object.
 	PrefetchCondition *string `json:"prefetch_condition,omitempty"`
 	// Name of the corresponding response object.
-	Response *string `json:"response,omitempty"`
-	Version *ReadOnlyVersion `json:"version,omitempty"`
+	Response  *string            `json:"response,omitempty"`
+	Version   *ReadOnlyVersion   `json:"version,omitempty"`
 	ServiceID *ReadOnlyServiceID `json:"service_id,omitempty"`
 	// The status of the firewall.
 	Disabled *bool `json:"disabled,omitempty"`
@@ -35,7 +34,7 @@ type LegacyWafFirewall struct {
 	RuleStatusesBlockCount *int32 `json:"rule_statuses_block_count,omitempty"`
 	// The number of rule statuses set to disabled.
 	RuleStatusesDisabledCount *int32 `json:"rule_statuses_disabled_count,omitempty"`
-	AdditionalProperties map[string]any
+	AdditionalProperties      map[string]any
 }
 
 type _LegacyWafFirewall LegacyWafFirewall
@@ -389,7 +388,7 @@ func (o LegacyWafFirewall) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LegacyWafFirewall) UnmarshalJSON(bytes []byte) (err error) {
 	varLegacyWafFirewall := _LegacyWafFirewall{}
 
@@ -415,7 +414,7 @@ func (o *LegacyWafFirewall) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLegacyWafFirewall is a helper abstraction for handling nullable legacywaffirewall types. 
+// NullableLegacyWafFirewall is a helper abstraction for handling nullable legacywaffirewall types.
 type NullableLegacyWafFirewall struct {
 	value *LegacyWafFirewall
 	isSet bool
@@ -455,7 +454,7 @@ func (v NullableLegacyWafFirewall) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLegacyWafFirewall) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

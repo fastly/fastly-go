@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -38,7 +37,7 @@ type Header struct {
 	// Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
 	Substitution NullableString `json:"substitution,omitempty"`
 	// Accepts a string value.
-	Type *string `json:"type,omitempty"`
+	Type                 *string `json:"type,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -106,7 +105,7 @@ func (o *Header) GetCacheCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Header) GetCacheConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CacheCondition.Get(), o.CacheCondition.IsSet()
@@ -125,6 +124,7 @@ func (o *Header) HasCacheCondition() bool {
 func (o *Header) SetCacheCondition(v string) {
 	o.CacheCondition.Set(&v)
 }
+
 // SetCacheConditionNil sets the value for CacheCondition to be an explicit nil
 func (o *Header) SetCacheConditionNil() {
 	o.CacheCondition.Set(nil)
@@ -212,7 +212,7 @@ func (o *Header) GetRegex() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Header) GetRegexOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Regex.Get(), o.Regex.IsSet()
@@ -231,6 +231,7 @@ func (o *Header) HasRegex() bool {
 func (o *Header) SetRegex(v string) {
 	o.Regex.Set(&v)
 }
+
 // SetRegexNil sets the value for Regex to be an explicit nil
 func (o *Header) SetRegexNil() {
 	o.Regex.Set(nil)
@@ -254,7 +255,7 @@ func (o *Header) GetRequestCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Header) GetRequestConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RequestCondition.Get(), o.RequestCondition.IsSet()
@@ -273,6 +274,7 @@ func (o *Header) HasRequestCondition() bool {
 func (o *Header) SetRequestCondition(v string) {
 	o.RequestCondition.Set(&v)
 }
+
 // SetRequestConditionNil sets the value for RequestCondition to be an explicit nil
 func (o *Header) SetRequestConditionNil() {
 	o.RequestCondition.Set(nil)
@@ -296,7 +298,7 @@ func (o *Header) GetResponseCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Header) GetResponseConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseCondition.Get(), o.ResponseCondition.IsSet()
@@ -315,6 +317,7 @@ func (o *Header) HasResponseCondition() bool {
 func (o *Header) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
+
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 func (o *Header) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
@@ -338,7 +341,7 @@ func (o *Header) GetSrc() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Header) GetSrcOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Src.Get(), o.Src.IsSet()
@@ -357,6 +360,7 @@ func (o *Header) HasSrc() bool {
 func (o *Header) SetSrc(v string) {
 	o.Src.Set(&v)
 }
+
 // SetSrcNil sets the value for Src to be an explicit nil
 func (o *Header) SetSrcNil() {
 	o.Src.Set(nil)
@@ -380,7 +384,7 @@ func (o *Header) GetSubstitution() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Header) GetSubstitutionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Substitution.Get(), o.Substitution.IsSet()
@@ -399,6 +403,7 @@ func (o *Header) HasSubstitution() bool {
 func (o *Header) SetSubstitution(v string) {
 	o.Substitution.Set(&v)
 }
+
 // SetSubstitutionNil sets the value for Substitution to be an explicit nil
 func (o *Header) SetSubstitutionNil() {
 	o.Substitution.Set(nil)
@@ -484,7 +489,7 @@ func (o Header) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *Header) UnmarshalJSON(bytes []byte) (err error) {
 	varHeader := _Header{}
 
@@ -511,7 +516,7 @@ func (o *Header) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableHeader is a helper abstraction for handling nullable header types. 
+// NullableHeader is a helper abstraction for handling nullable header types.
 type NullableHeader struct {
 	value *Header
 	isSet bool
@@ -551,7 +556,7 @@ func (v NullableHeader) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableHeader) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

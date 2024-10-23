@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -34,7 +33,7 @@ type Director struct {
 	// What type of load balance group to use.
 	Type *int32 `json:"type,omitempty"`
 	// How many backends to search if it fails.
-	Retries *int32 `json:"retries,omitempty"`
+	Retries              *int32 `json:"retries,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -150,7 +149,7 @@ func (o *Director) GetComment() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Director) GetCommentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
@@ -169,6 +168,7 @@ func (o *Director) HasComment() bool {
 func (o *Director) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *Director) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -256,7 +256,7 @@ func (o *Director) GetShield() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Director) GetShieldOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Shield.Get(), o.Shield.IsSet()
@@ -275,6 +275,7 @@ func (o *Director) HasShield() bool {
 func (o *Director) SetShield(v string) {
 	o.Shield.Set(&v)
 }
+
 // SetShieldNil sets the value for Shield to be an explicit nil
 func (o *Director) SetShieldNil() {
 	o.Shield.Set(nil)
@@ -386,7 +387,7 @@ func (o Director) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *Director) UnmarshalJSON(bytes []byte) (err error) {
 	varDirector := _Director{}
 
@@ -411,7 +412,7 @@ func (o *Director) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableDirector is a helper abstraction for handling nullable director types. 
+// NullableDirector is a helper abstraction for handling nullable director types.
 type NullableDirector struct {
 	value *Director
 	isSet bool
@@ -451,7 +452,7 @@ func (v NullableDirector) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDirector) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

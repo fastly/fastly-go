@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -21,7 +20,7 @@ import (
 type ListDashboardsResponse struct {
 	Data []Dashboard `json:"data,omitempty"`
 	// Meta for the pagination.
-	Meta any `json:"meta,omitempty"`
+	Meta                 any `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -78,7 +77,7 @@ func (o *ListDashboardsResponse) SetData(v []Dashboard) {
 
 // GetMeta returns the Meta field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ListDashboardsResponse) GetMeta() any {
-	if o == nil  {
+	if o == nil {
 		var ret any
 		return ret
 	}
@@ -128,7 +127,7 @@ func (o ListDashboardsResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *ListDashboardsResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varListDashboardsResponse := _ListDashboardsResponse{}
 
@@ -147,7 +146,7 @@ func (o *ListDashboardsResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableListDashboardsResponse is a helper abstraction for handling nullable listdashboardsresponse types. 
+// NullableListDashboardsResponse is a helper abstraction for handling nullable listdashboardsresponse types.
 type NullableListDashboardsResponse struct {
 	value *ListDashboardsResponse
 	isSet bool
@@ -187,7 +186,7 @@ func (v NullableListDashboardsResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableListDashboardsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -29,8 +28,8 @@ type ConfigStoreItemResponse struct {
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	StoreID *string `json:"store_id,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
+	StoreID              *string      `json:"store_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -130,7 +129,7 @@ func (o *ConfigStoreItemResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ConfigStoreItemResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -149,6 +148,7 @@ func (o *ConfigStoreItemResponse) HasCreatedAt() bool {
 func (o *ConfigStoreItemResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *ConfigStoreItemResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -172,7 +172,7 @@ func (o *ConfigStoreItemResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ConfigStoreItemResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -191,6 +191,7 @@ func (o *ConfigStoreItemResponse) HasDeletedAt() bool {
 func (o *ConfigStoreItemResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *ConfigStoreItemResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -214,7 +215,7 @@ func (o *ConfigStoreItemResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ConfigStoreItemResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -233,6 +234,7 @@ func (o *ConfigStoreItemResponse) HasUpdatedAt() bool {
 func (o *ConfigStoreItemResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *ConfigStoreItemResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -306,7 +308,7 @@ func (o ConfigStoreItemResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *ConfigStoreItemResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varConfigStoreItemResponse := _ConfigStoreItemResponse{}
 
@@ -329,7 +331,7 @@ func (o *ConfigStoreItemResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableConfigStoreItemResponse is a helper abstraction for handling nullable configstoreitemresponse types. 
+// NullableConfigStoreItemResponse is a helper abstraction for handling nullable configstoreitemresponse types.
 type NullableConfigStoreItemResponse struct {
 	value *ConfigStoreItemResponse
 	isSet bool
@@ -369,7 +371,7 @@ func (v NullableConfigStoreItemResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableConfigStoreItemResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

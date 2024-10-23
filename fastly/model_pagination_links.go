@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -26,7 +25,7 @@ type PaginationLinks struct {
 	// The previous page of data.
 	Prev NullableString `json:"prev,omitempty"`
 	// The next page of data.
-	Next NullableString `json:"next,omitempty"`
+	Next                 NullableString `json:"next,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -62,7 +61,7 @@ func (o *PaginationLinks) GetFirst() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaginationLinks) GetFirstOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.First.Get(), o.First.IsSet()
@@ -81,6 +80,7 @@ func (o *PaginationLinks) HasFirst() bool {
 func (o *PaginationLinks) SetFirst(v string) {
 	o.First.Set(&v)
 }
+
 // SetFirstNil sets the value for First to be an explicit nil
 func (o *PaginationLinks) SetFirstNil() {
 	o.First.Set(nil)
@@ -104,7 +104,7 @@ func (o *PaginationLinks) GetLast() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaginationLinks) GetLastOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Last.Get(), o.Last.IsSet()
@@ -123,6 +123,7 @@ func (o *PaginationLinks) HasLast() bool {
 func (o *PaginationLinks) SetLast(v string) {
 	o.Last.Set(&v)
 }
+
 // SetLastNil sets the value for Last to be an explicit nil
 func (o *PaginationLinks) SetLastNil() {
 	o.Last.Set(nil)
@@ -146,7 +147,7 @@ func (o *PaginationLinks) GetPrev() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaginationLinks) GetPrevOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Prev.Get(), o.Prev.IsSet()
@@ -165,6 +166,7 @@ func (o *PaginationLinks) HasPrev() bool {
 func (o *PaginationLinks) SetPrev(v string) {
 	o.Prev.Set(&v)
 }
+
 // SetPrevNil sets the value for Prev to be an explicit nil
 func (o *PaginationLinks) SetPrevNil() {
 	o.Prev.Set(nil)
@@ -188,7 +190,7 @@ func (o *PaginationLinks) GetNext() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaginationLinks) GetNextOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Next.Get(), o.Next.IsSet()
@@ -207,6 +209,7 @@ func (o *PaginationLinks) HasNext() bool {
 func (o *PaginationLinks) SetNext(v string) {
 	o.Next.Set(&v)
 }
+
 // SetNextNil sets the value for Next to be an explicit nil
 func (o *PaginationLinks) SetNextNil() {
 	o.Next.Set(nil)
@@ -242,7 +245,7 @@ func (o PaginationLinks) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *PaginationLinks) UnmarshalJSON(bytes []byte) (err error) {
 	varPaginationLinks := _PaginationLinks{}
 
@@ -263,7 +266,7 @@ func (o *PaginationLinks) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullablePaginationLinks is a helper abstraction for handling nullable paginationlinks types. 
+// NullablePaginationLinks is a helper abstraction for handling nullable paginationlinks types.
 type NullablePaginationLinks struct {
 	value *PaginationLinks
 	isSet bool
@@ -303,7 +306,7 @@ func (v NullablePaginationLinks) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullablePaginationLinks) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

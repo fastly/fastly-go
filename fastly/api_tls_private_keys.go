@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type TLSPrivateKeysAPI interface {
 
 	/*
-	CreateTLSKey Create a TLS private key
+		CreateTLSKey Create a TLS private key
 
-	Create a TLS private key.
+		Create a TLS private key.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateTLSKeyRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateTLSKeyRequest
 	*/
 	CreateTLSKey(ctx context.Context) APICreateTLSKeyRequest
 
@@ -46,13 +45,13 @@ type TLSPrivateKeysAPI interface {
 	CreateTLSKeyExecute(r APICreateTLSKeyRequest) (*TLSPrivateKeyResponse, *http.Response, error)
 
 	/*
-	DeleteTLSKey Delete a TLS private key
+		DeleteTLSKey Delete a TLS private key
 
-	Destroy a TLS private key. Only private keys not already matched to any certificates can be deleted.
+		Destroy a TLS private key. Only private keys not already matched to any certificates can be deleted.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tlsPrivateKeyID Alphanumeric string identifying a private Key.
-	 @return APIDeleteTLSKeyRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tlsPrivateKeyID Alphanumeric string identifying a private Key.
+		 @return APIDeleteTLSKeyRequest
 	*/
 	DeleteTLSKey(ctx context.Context, tlsPrivateKeyID string) APIDeleteTLSKeyRequest
 
@@ -60,13 +59,13 @@ type TLSPrivateKeysAPI interface {
 	DeleteTLSKeyExecute(r APIDeleteTLSKeyRequest) (*http.Response, error)
 
 	/*
-	GetTLSKey Get a TLS private key
+		GetTLSKey Get a TLS private key
 
-	Show a TLS private key.
+		Show a TLS private key.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tlsPrivateKeyID Alphanumeric string identifying a private Key.
-	 @return APIGetTLSKeyRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tlsPrivateKeyID Alphanumeric string identifying a private Key.
+		 @return APIGetTLSKeyRequest
 	*/
 	GetTLSKey(ctx context.Context, tlsPrivateKeyID string) APIGetTLSKeyRequest
 
@@ -75,12 +74,12 @@ type TLSPrivateKeysAPI interface {
 	GetTLSKeyExecute(r APIGetTLSKeyRequest) (*TLSPrivateKeyResponse, *http.Response, error)
 
 	/*
-	ListTLSKeys List TLS private keys
+		ListTLSKeys List TLS private keys
 
-	List all TLS private keys.
+		List all TLS private keys.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListTLSKeysRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListTLSKeysRequest
 	*/
 	ListTLSKeys(ctx context.Context) APIListTLSKeysRequest
 
@@ -94,8 +93,8 @@ type TLSPrivateKeysAPIService service
 
 // APICreateTLSKeyRequest represents a request for the resource.
 type APICreateTLSKeyRequest struct {
-	ctx context.Context
-	APIService TLSPrivateKeysAPI
+	ctx           context.Context
+	APIService    TLSPrivateKeysAPI
 	tlsPrivateKey *TLSPrivateKey
 }
 
@@ -121,7 +120,7 @@ Create a TLS private key.
 func (a *TLSPrivateKeysAPIService) CreateTLSKey(ctx context.Context) APICreateTLSKeyRequest {
 	return APICreateTLSKeyRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -129,10 +128,10 @@ func (a *TLSPrivateKeysAPIService) CreateTLSKey(ctx context.Context) APICreateTL
 //  @return TLSPrivateKeyResponse
 func (a *TLSPrivateKeysAPIService) CreateTLSKeyExecute(r APICreateTLSKeyRequest) (*TLSPrivateKeyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSPrivateKeyResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSPrivateKeyResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSPrivateKeysAPIService.CreateTLSKey")
@@ -213,7 +212,6 @@ func (a *TLSPrivateKeysAPIService) CreateTLSKeyExecute(r APICreateTLSKeyRequest)
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -232,11 +230,10 @@ func (a *TLSPrivateKeysAPIService) CreateTLSKeyExecute(r APICreateTLSKeyRequest)
 
 // APIDeleteTLSKeyRequest represents a request for the resource.
 type APIDeleteTLSKeyRequest struct {
-	ctx context.Context
-	APIService TLSPrivateKeysAPI
+	ctx             context.Context
+	APIService      TLSPrivateKeysAPI
 	tlsPrivateKeyID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteTLSKeyRequest) Execute() (*http.Response, error) {
@@ -254,8 +251,8 @@ Destroy a TLS private key. Only private keys not already matched to any certific
 */
 func (a *TLSPrivateKeysAPIService) DeleteTLSKey(ctx context.Context, tlsPrivateKeyID string) APIDeleteTLSKeyRequest {
 	return APIDeleteTLSKeyRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:      a,
+		ctx:             ctx,
 		tlsPrivateKeyID: tlsPrivateKeyID,
 	}
 }
@@ -263,9 +260,9 @@ func (a *TLSPrivateKeysAPIService) DeleteTLSKey(ctx context.Context, tlsPrivateK
 // DeleteTLSKeyExecute executes the request
 func (a *TLSPrivateKeysAPIService) DeleteTLSKeyExecute(r APIDeleteTLSKeyRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSPrivateKeysAPIService.DeleteTLSKey")
@@ -336,7 +333,6 @@ func (a *TLSPrivateKeysAPIService) DeleteTLSKeyExecute(r APIDeleteTLSKeyRequest)
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -355,11 +351,10 @@ func (a *TLSPrivateKeysAPIService) DeleteTLSKeyExecute(r APIDeleteTLSKeyRequest)
 
 // APIGetTLSKeyRequest represents a request for the resource.
 type APIGetTLSKeyRequest struct {
-	ctx context.Context
-	APIService TLSPrivateKeysAPI
+	ctx             context.Context
+	APIService      TLSPrivateKeysAPI
 	tlsPrivateKeyID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetTLSKeyRequest) Execute() (*TLSPrivateKeyResponse, *http.Response, error) {
@@ -377,8 +372,8 @@ Show a TLS private key.
 */
 func (a *TLSPrivateKeysAPIService) GetTLSKey(ctx context.Context, tlsPrivateKeyID string) APIGetTLSKeyRequest {
 	return APIGetTLSKeyRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:      a,
+		ctx:             ctx,
 		tlsPrivateKeyID: tlsPrivateKeyID,
 	}
 }
@@ -387,10 +382,10 @@ func (a *TLSPrivateKeysAPIService) GetTLSKey(ctx context.Context, tlsPrivateKeyI
 //  @return TLSPrivateKeyResponse
 func (a *TLSPrivateKeysAPIService) GetTLSKeyExecute(r APIGetTLSKeyRequest) (*TLSPrivateKeyResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSPrivateKeyResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSPrivateKeyResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSPrivateKeysAPIService.GetTLSKey")
@@ -470,7 +465,6 @@ func (a *TLSPrivateKeysAPIService) GetTLSKeyExecute(r APIGetTLSKeyRequest) (*TLS
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -489,11 +483,11 @@ func (a *TLSPrivateKeysAPIService) GetTLSKeyExecute(r APIGetTLSKeyRequest) (*TLS
 
 // APIListTLSKeysRequest represents a request for the resource.
 type APIListTLSKeysRequest struct {
-	ctx context.Context
-	APIService TLSPrivateKeysAPI
+	ctx         context.Context
+	APIService  TLSPrivateKeysAPI
 	filterInUse *string
-	pageNumber *int32
-	pageSize *int32
+	pageNumber  *int32
+	pageSize    *int32
 }
 
 // FilterInUse Limit the returned keys to those without any matching TLS certificates. The only valid value is false.
@@ -501,11 +495,13 @@ func (r *APIListTLSKeysRequest) FilterInUse(filterInUse string) *APIListTLSKeysR
 	r.filterInUse = &filterInUse
 	return r
 }
+
 // PageNumber Current page.
 func (r *APIListTLSKeysRequest) PageNumber(pageNumber int32) *APIListTLSKeysRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListTLSKeysRequest) PageSize(pageSize int32) *APIListTLSKeysRequest {
 	r.pageSize = &pageSize
@@ -528,7 +524,7 @@ List all TLS private keys.
 func (a *TLSPrivateKeysAPIService) ListTLSKeys(ctx context.Context) APIListTLSKeysRequest {
 	return APIListTLSKeysRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -536,10 +532,10 @@ func (a *TLSPrivateKeysAPIService) ListTLSKeys(ctx context.Context) APIListTLSKe
 //  @return TLSPrivateKeysResponse
 func (a *TLSPrivateKeysAPIService) ListTLSKeysExecute(r APIListTLSKeysRequest) (*TLSPrivateKeysResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSPrivateKeysResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSPrivateKeysResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSPrivateKeysAPIService.ListTLSKeys")
@@ -626,7 +622,6 @@ func (a *TLSPrivateKeysAPIService) ListTLSKeysExecute(r APIListTLSKeysRequest) (
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

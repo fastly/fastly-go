@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -32,7 +31,7 @@ type Server struct {
 	// Allows servers to be enabled and disabled in a pool.
 	Disabled *bool `json:"disabled,omitempty"`
 	// The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-	OverrideHost NullableString `json:"override_host,omitempty"`
+	OverrideHost         NullableString `json:"override_host,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -216,7 +215,7 @@ func (o *Server) GetComment() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Server) GetCommentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
@@ -235,6 +234,7 @@ func (o *Server) HasComment() bool {
 func (o *Server) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *Server) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -290,7 +290,7 @@ func (o *Server) GetOverrideHost() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Server) GetOverrideHostOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.OverrideHost.Get(), o.OverrideHost.IsSet()
@@ -309,6 +309,7 @@ func (o *Server) HasOverrideHost() bool {
 func (o *Server) SetOverrideHost(v string) {
 	o.OverrideHost.Set(&v)
 }
+
 // SetOverrideHostNil sets the value for OverrideHost to be an explicit nil
 func (o *Server) SetOverrideHostNil() {
 	o.OverrideHost.Set(nil)
@@ -353,7 +354,7 @@ func (o Server) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *Server) UnmarshalJSON(bytes []byte) (err error) {
 	varServer := _Server{}
 
@@ -377,7 +378,7 @@ func (o *Server) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableServer is a helper abstraction for handling nullable server types. 
+// NullableServer is a helper abstraction for handling nullable server types.
 type NullableServer struct {
 	value *Server
 	isSet bool
@@ -417,7 +418,7 @@ func (v NullableServer) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableServer) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

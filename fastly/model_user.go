@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -28,12 +27,12 @@ type User struct {
 	Locked NullableBool `json:"locked,omitempty"`
 	// Indicates if a new password is required at next login.
 	RequireNewPassword NullableBool `json:"require_new_password,omitempty"`
-	Role *RoleUser `json:"role,omitempty"`
+	Role               *RoleUser    `json:"role,omitempty"`
 	// Indicates if 2FA is enabled on the user.
 	TwoFactorAuthEnabled NullableBool `json:"two_factor_auth_enabled,omitempty"`
 	// Indicates if 2FA is required by the user's customer account.
 	TwoFactorSetupRequired *bool `json:"two_factor_setup_required,omitempty"`
-	AdditionalProperties map[string]any
+	AdditionalProperties   map[string]any
 }
 
 type _User User
@@ -164,7 +163,7 @@ func (o *User) GetLocked() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetLockedOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Locked.Get(), o.Locked.IsSet()
@@ -183,6 +182,7 @@ func (o *User) HasLocked() bool {
 func (o *User) SetLocked(v bool) {
 	o.Locked.Set(&v)
 }
+
 // SetLockedNil sets the value for Locked to be an explicit nil
 func (o *User) SetLockedNil() {
 	o.Locked.Set(nil)
@@ -206,7 +206,7 @@ func (o *User) GetRequireNewPassword() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetRequireNewPasswordOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RequireNewPassword.Get(), o.RequireNewPassword.IsSet()
@@ -225,6 +225,7 @@ func (o *User) HasRequireNewPassword() bool {
 func (o *User) SetRequireNewPassword(v bool) {
 	o.RequireNewPassword.Set(&v)
 }
+
 // SetRequireNewPasswordNil sets the value for RequireNewPassword to be an explicit nil
 func (o *User) SetRequireNewPasswordNil() {
 	o.RequireNewPassword.Set(nil)
@@ -280,7 +281,7 @@ func (o *User) GetTwoFactorAuthEnabled() bool {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *User) GetTwoFactorAuthEnabledOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TwoFactorAuthEnabled.Get(), o.TwoFactorAuthEnabled.IsSet()
@@ -299,6 +300,7 @@ func (o *User) HasTwoFactorAuthEnabled() bool {
 func (o *User) SetTwoFactorAuthEnabled(v bool) {
 	o.TwoFactorAuthEnabled.Set(&v)
 }
+
 // SetTwoFactorAuthEnabledNil sets the value for TwoFactorAuthEnabled to be an explicit nil
 func (o *User) SetTwoFactorAuthEnabledNil() {
 	o.TwoFactorAuthEnabled.Set(nil)
@@ -378,7 +380,7 @@ func (o User) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *User) UnmarshalJSON(bytes []byte) (err error) {
 	varUser := _User{}
 
@@ -403,7 +405,7 @@ func (o *User) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableUser is a helper abstraction for handling nullable user types. 
+// NullableUser is a helper abstraction for handling nullable user types.
 type NullableUser struct {
 	value *User
 	isSet bool
@@ -443,7 +445,7 @@ func (v NullableUser) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableUser) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

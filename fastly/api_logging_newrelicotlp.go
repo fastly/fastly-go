@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingNewrelicotlpAPI interface {
 
 	/*
-	CreateLogNewrelicotlp Create a New Relic OTLP endpoint
+		CreateLogNewrelicotlp Create a New Relic OTLP endpoint
 
-	Create a New Relic OTLP logging object for a particular service and version.
+		Create a New Relic OTLP logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogNewrelicotlpRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogNewrelicotlpRequest
 	*/
 	CreateLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32) APICreateLogNewrelicotlpRequest
 
@@ -48,15 +47,15 @@ type LoggingNewrelicotlpAPI interface {
 	CreateLogNewrelicotlpExecute(r APICreateLogNewrelicotlpRequest) (*LoggingNewrelicotlpResponse, *http.Response, error)
 
 	/*
-	DeleteLogNewrelicotlp Delete a New Relic OTLP endpoint
+		DeleteLogNewrelicotlp Delete a New Relic OTLP endpoint
 
-	Delete the New Relic OTLP logging object for a particular service and version.
+		Delete the New Relic OTLP logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingNewrelicotlpName The name for the real-time logging configuration.
-	 @return APIDeleteLogNewrelicotlpRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingNewrelicotlpName The name for the real-time logging configuration.
+		 @return APIDeleteLogNewrelicotlpRequest
 	*/
 	DeleteLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32, loggingNewrelicotlpName string) APIDeleteLogNewrelicotlpRequest
 
@@ -65,15 +64,15 @@ type LoggingNewrelicotlpAPI interface {
 	DeleteLogNewrelicotlpExecute(r APIDeleteLogNewrelicotlpRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogNewrelicotlp Get a New Relic OTLP endpoint
+		GetLogNewrelicotlp Get a New Relic OTLP endpoint
 
-	Get the details of a New Relic OTLP logging object for a particular service and version.
+		Get the details of a New Relic OTLP logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingNewrelicotlpName The name for the real-time logging configuration.
-	 @return APIGetLogNewrelicotlpRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingNewrelicotlpName The name for the real-time logging configuration.
+		 @return APIGetLogNewrelicotlpRequest
 	*/
 	GetLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32, loggingNewrelicotlpName string) APIGetLogNewrelicotlpRequest
 
@@ -82,14 +81,14 @@ type LoggingNewrelicotlpAPI interface {
 	GetLogNewrelicotlpExecute(r APIGetLogNewrelicotlpRequest) (*LoggingNewrelicotlpResponse, *http.Response, error)
 
 	/*
-	ListLogNewrelicotlp List New Relic OTLP endpoints
+		ListLogNewrelicotlp List New Relic OTLP endpoints
 
-	List all of the New Relic OTLP logging objects for a particular service and version.
+		List all of the New Relic OTLP logging objects for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogNewrelicotlpRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogNewrelicotlpRequest
 	*/
 	ListLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32) APIListLogNewrelicotlpRequest
 
@@ -98,15 +97,15 @@ type LoggingNewrelicotlpAPI interface {
 	ListLogNewrelicotlpExecute(r APIListLogNewrelicotlpRequest) ([]LoggingNewrelicotlpResponse, *http.Response, error)
 
 	/*
-	UpdateLogNewrelicotlp Update a New Relic log endpoint
+		UpdateLogNewrelicotlp Update a New Relic log endpoint
 
-	Update a New Relic OTLP logging object for a particular service and version.
+		Update a New Relic OTLP logging object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingNewrelicotlpName The name for the real-time logging configuration.
-	 @return APIUpdateLogNewrelicotlpRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingNewrelicotlpName The name for the real-time logging configuration.
+		 @return APIUpdateLogNewrelicotlpRequest
 	*/
 	UpdateLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32, loggingNewrelicotlpName string) APIUpdateLogNewrelicotlpRequest
 
@@ -120,18 +119,18 @@ type LoggingNewrelicotlpAPIService service
 
 // APICreateLogNewrelicotlpRequest represents a request for the resource.
 type APICreateLogNewrelicotlpRequest struct {
-	ctx context.Context
-	APIService LoggingNewrelicotlpAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingNewrelicotlpAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	token *string
-	region *string
-	url *string
+	format            *string
+	formatVersion     *int32
+	token             *string
+	region            *string
+	url               *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -139,36 +138,43 @@ func (r *APICreateLogNewrelicotlpRequest) Name(name string) *APICreateLogNewreli
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogNewrelicotlpRequest) Placement(placement string) *APICreateLogNewrelicotlpRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogNewrelicotlpRequest) ResponseCondition(responseCondition string) *APICreateLogNewrelicotlpRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogNewrelicotlpRequest) Format(format string) *APICreateLogNewrelicotlpRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogNewrelicotlpRequest) FormatVersion(formatVersion int32) *APICreateLogNewrelicotlpRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Token The Insert API key from the Account page of your New Relic account. Required.
 func (r *APICreateLogNewrelicotlpRequest) Token(token string) *APICreateLogNewrelicotlpRequest {
 	r.token = &token
 	return r
 }
+
 // Region The region to which to stream logs.
 func (r *APICreateLogNewrelicotlpRequest) Region(region string) *APICreateLogNewrelicotlpRequest {
 	r.region = &region
 	return r
 }
+
 // URL (Optional) URL of the New Relic Trace Observer, if you are using New Relic Infinite Tracing.
 func (r *APICreateLogNewrelicotlpRequest) URL(url string) *APICreateLogNewrelicotlpRequest {
 	r.url = &url
@@ -193,9 +199,9 @@ Create a New Relic OTLP logging object for a particular service and version.
 func (a *LoggingNewrelicotlpAPIService) CreateLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32) APICreateLogNewrelicotlpRequest {
 	return APICreateLogNewrelicotlpRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -203,10 +209,10 @@ func (a *LoggingNewrelicotlpAPIService) CreateLogNewrelicotlp(ctx context.Contex
 //  @return LoggingNewrelicotlpResponse
 func (a *LoggingNewrelicotlpAPIService) CreateLogNewrelicotlpExecute(r APICreateLogNewrelicotlpRequest) (*LoggingNewrelicotlpResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingNewrelicotlpResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingNewrelicotlpResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingNewrelicotlpAPIService.CreateLogNewrelicotlp")
@@ -311,7 +317,6 @@ func (a *LoggingNewrelicotlpAPIService) CreateLogNewrelicotlpExecute(r APICreate
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -330,13 +335,12 @@ func (a *LoggingNewrelicotlpAPIService) CreateLogNewrelicotlpExecute(r APICreate
 
 // APIDeleteLogNewrelicotlpRequest represents a request for the resource.
 type APIDeleteLogNewrelicotlpRequest struct {
-	ctx context.Context
-	APIService LoggingNewrelicotlpAPI
-	serviceID string
-	versionID int32
+	ctx                     context.Context
+	APIService              LoggingNewrelicotlpAPI
+	serviceID               string
+	versionID               int32
 	loggingNewrelicotlpName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogNewrelicotlpRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -356,10 +360,10 @@ Delete the New Relic OTLP logging object for a particular service and version.
 */
 func (a *LoggingNewrelicotlpAPIService) DeleteLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32, loggingNewrelicotlpName string) APIDeleteLogNewrelicotlpRequest {
 	return APIDeleteLogNewrelicotlpRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:              a,
+		ctx:                     ctx,
+		serviceID:               serviceID,
+		versionID:               versionID,
 		loggingNewrelicotlpName: loggingNewrelicotlpName,
 	}
 }
@@ -368,10 +372,10 @@ func (a *LoggingNewrelicotlpAPIService) DeleteLogNewrelicotlp(ctx context.Contex
 //  @return InlineResponse200
 func (a *LoggingNewrelicotlpAPIService) DeleteLogNewrelicotlpExecute(r APIDeleteLogNewrelicotlpRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingNewrelicotlpAPIService.DeleteLogNewrelicotlp")
@@ -453,7 +457,6 @@ func (a *LoggingNewrelicotlpAPIService) DeleteLogNewrelicotlpExecute(r APIDelete
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -472,13 +475,12 @@ func (a *LoggingNewrelicotlpAPIService) DeleteLogNewrelicotlpExecute(r APIDelete
 
 // APIGetLogNewrelicotlpRequest represents a request for the resource.
 type APIGetLogNewrelicotlpRequest struct {
-	ctx context.Context
-	APIService LoggingNewrelicotlpAPI
-	serviceID string
-	versionID int32
+	ctx                     context.Context
+	APIService              LoggingNewrelicotlpAPI
+	serviceID               string
+	versionID               int32
 	loggingNewrelicotlpName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogNewrelicotlpRequest) Execute() (*LoggingNewrelicotlpResponse, *http.Response, error) {
@@ -498,10 +500,10 @@ Get the details of a New Relic OTLP logging object for a particular service and 
 */
 func (a *LoggingNewrelicotlpAPIService) GetLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32, loggingNewrelicotlpName string) APIGetLogNewrelicotlpRequest {
 	return APIGetLogNewrelicotlpRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:              a,
+		ctx:                     ctx,
+		serviceID:               serviceID,
+		versionID:               versionID,
 		loggingNewrelicotlpName: loggingNewrelicotlpName,
 	}
 }
@@ -510,10 +512,10 @@ func (a *LoggingNewrelicotlpAPIService) GetLogNewrelicotlp(ctx context.Context, 
 //  @return LoggingNewrelicotlpResponse
 func (a *LoggingNewrelicotlpAPIService) GetLogNewrelicotlpExecute(r APIGetLogNewrelicotlpRequest) (*LoggingNewrelicotlpResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingNewrelicotlpResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingNewrelicotlpResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingNewrelicotlpAPIService.GetLogNewrelicotlp")
@@ -595,7 +597,6 @@ func (a *LoggingNewrelicotlpAPIService) GetLogNewrelicotlpExecute(r APIGetLogNew
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -614,12 +615,11 @@ func (a *LoggingNewrelicotlpAPIService) GetLogNewrelicotlpExecute(r APIGetLogNew
 
 // APIListLogNewrelicotlpRequest represents a request for the resource.
 type APIListLogNewrelicotlpRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingNewrelicotlpAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogNewrelicotlpRequest) Execute() ([]LoggingNewrelicotlpResponse, *http.Response, error) {
@@ -639,9 +639,9 @@ List all of the New Relic OTLP logging objects for a particular service and vers
 func (a *LoggingNewrelicotlpAPIService) ListLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32) APIListLogNewrelicotlpRequest {
 	return APIListLogNewrelicotlpRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -649,10 +649,10 @@ func (a *LoggingNewrelicotlpAPIService) ListLogNewrelicotlp(ctx context.Context,
 //  @return []LoggingNewrelicotlpResponse
 func (a *LoggingNewrelicotlpAPIService) ListLogNewrelicotlpExecute(r APIListLogNewrelicotlpRequest) ([]LoggingNewrelicotlpResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingNewrelicotlpResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingNewrelicotlpResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingNewrelicotlpAPIService.ListLogNewrelicotlp")
@@ -733,7 +733,6 @@ func (a *LoggingNewrelicotlpAPIService) ListLogNewrelicotlpExecute(r APIListLogN
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -752,19 +751,19 @@ func (a *LoggingNewrelicotlpAPIService) ListLogNewrelicotlpExecute(r APIListLogN
 
 // APIUpdateLogNewrelicotlpRequest represents a request for the resource.
 type APIUpdateLogNewrelicotlpRequest struct {
-	ctx context.Context
-	APIService LoggingNewrelicotlpAPI
-	serviceID string
-	versionID int32
+	ctx                     context.Context
+	APIService              LoggingNewrelicotlpAPI
+	serviceID               string
+	versionID               int32
 	loggingNewrelicotlpName string
-	name *string
-	placement *string
-	responseCondition *string
-	format *string
-	formatVersion *int32
-	token *string
-	region *string
-	url *string
+	name                    *string
+	placement               *string
+	responseCondition       *string
+	format                  *string
+	formatVersion           *int32
+	token                   *string
+	region                  *string
+	url                     *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -772,36 +771,43 @@ func (r *APIUpdateLogNewrelicotlpRequest) Name(name string) *APIUpdateLogNewreli
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogNewrelicotlpRequest) Placement(placement string) *APIUpdateLogNewrelicotlpRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogNewrelicotlpRequest) ResponseCondition(responseCondition string) *APIUpdateLogNewrelicotlpRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogNewrelicotlpRequest) Format(format string) *APIUpdateLogNewrelicotlpRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogNewrelicotlpRequest) FormatVersion(formatVersion int32) *APIUpdateLogNewrelicotlpRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Token The Insert API key from the Account page of your New Relic account. Required.
 func (r *APIUpdateLogNewrelicotlpRequest) Token(token string) *APIUpdateLogNewrelicotlpRequest {
 	r.token = &token
 	return r
 }
+
 // Region The region to which to stream logs.
 func (r *APIUpdateLogNewrelicotlpRequest) Region(region string) *APIUpdateLogNewrelicotlpRequest {
 	r.region = &region
 	return r
 }
+
 // URL (Optional) URL of the New Relic Trace Observer, if you are using New Relic Infinite Tracing.
 func (r *APIUpdateLogNewrelicotlpRequest) URL(url string) *APIUpdateLogNewrelicotlpRequest {
 	r.url = &url
@@ -826,10 +832,10 @@ Update a New Relic OTLP logging object for a particular service and version.
 */
 func (a *LoggingNewrelicotlpAPIService) UpdateLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32, loggingNewrelicotlpName string) APIUpdateLogNewrelicotlpRequest {
 	return APIUpdateLogNewrelicotlpRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:              a,
+		ctx:                     ctx,
+		serviceID:               serviceID,
+		versionID:               versionID,
 		loggingNewrelicotlpName: loggingNewrelicotlpName,
 	}
 }
@@ -838,10 +844,10 @@ func (a *LoggingNewrelicotlpAPIService) UpdateLogNewrelicotlp(ctx context.Contex
 //  @return LoggingNewrelicotlpResponse
 func (a *LoggingNewrelicotlpAPIService) UpdateLogNewrelicotlpExecute(r APIUpdateLogNewrelicotlpRequest) (*LoggingNewrelicotlpResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingNewrelicotlpResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingNewrelicotlpResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingNewrelicotlpAPIService.UpdateLogNewrelicotlp")
@@ -946,7 +952,6 @@ func (a *LoggingNewrelicotlpAPIService) UpdateLogNewrelicotlpExecute(r APIUpdate
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,15 +12,14 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
 // LoggingCommonResponseAllOf1 struct for LoggingCommonResponseAllOf1
 type LoggingCommonResponseAllOf1 struct {
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
-	FormatVersion *string `json:"format_version,omitempty"`
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
+	FormatVersion        *string `json:"format_version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -95,7 +94,7 @@ func (o LoggingCommonResponseAllOf1) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingCommonResponseAllOf1) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingCommonResponseAllOf1 := _LoggingCommonResponseAllOf1{}
 
@@ -113,7 +112,7 @@ func (o *LoggingCommonResponseAllOf1) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingCommonResponseAllOf1 is a helper abstraction for handling nullable loggingcommonresponseallof1 types. 
+// NullableLoggingCommonResponseAllOf1 is a helper abstraction for handling nullable loggingcommonresponseallof1 types.
 type NullableLoggingCommonResponseAllOf1 struct {
 	value *LoggingCommonResponseAllOf1
 	isSet bool
@@ -153,7 +152,7 @@ func (v NullableLoggingCommonResponseAllOf1) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingCommonResponseAllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

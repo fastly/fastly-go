@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -29,9 +28,9 @@ type DictionaryItemResponse struct {
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	DictionaryID *string `json:"dictionary_id,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
+	DictionaryID         *string      `json:"dictionary_id,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -131,7 +130,7 @@ func (o *DictionaryItemResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DictionaryItemResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -150,6 +149,7 @@ func (o *DictionaryItemResponse) HasCreatedAt() bool {
 func (o *DictionaryItemResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *DictionaryItemResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -173,7 +173,7 @@ func (o *DictionaryItemResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DictionaryItemResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -192,6 +192,7 @@ func (o *DictionaryItemResponse) HasDeletedAt() bool {
 func (o *DictionaryItemResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *DictionaryItemResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -215,7 +216,7 @@ func (o *DictionaryItemResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DictionaryItemResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -234,6 +235,7 @@ func (o *DictionaryItemResponse) HasUpdatedAt() bool {
 func (o *DictionaryItemResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *DictionaryItemResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -342,7 +344,7 @@ func (o DictionaryItemResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *DictionaryItemResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varDictionaryItemResponse := _DictionaryItemResponse{}
 
@@ -366,7 +368,7 @@ func (o *DictionaryItemResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableDictionaryItemResponse is a helper abstraction for handling nullable dictionaryitemresponse types. 
+// NullableDictionaryItemResponse is a helper abstraction for handling nullable dictionaryitemresponse types.
 type NullableDictionaryItemResponse struct {
 	value *DictionaryItemResponse
 	isSet bool
@@ -406,7 +408,7 @@ func (v NullableDictionaryItemResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDictionaryItemResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

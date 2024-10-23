@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,13 +31,13 @@ var (
 type RealtimeAPI interface {
 
 	/*
-	GetStatsLast120Seconds Get real-time data for the last 120 seconds
+		GetStatsLast120Seconds Get real-time data for the last 120 seconds
 
-	Get data for the 120 seconds preceding the latest timestamp available for a service.
+		Get data for the 120 seconds preceding the latest timestamp available for a service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @return APIGetStatsLast120SecondsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @return APIGetStatsLast120SecondsRequest
 	*/
 	GetStatsLast120Seconds(ctx context.Context, serviceID string) APIGetStatsLast120SecondsRequest
 
@@ -47,14 +46,14 @@ type RealtimeAPI interface {
 	GetStatsLast120SecondsExecute(r APIGetStatsLast120SecondsRequest) (*Realtime, *http.Response, error)
 
 	/*
-	GetStatsLast120SecondsLimitEntries Get a limited number of real-time data entries
+		GetStatsLast120SecondsLimitEntries Get a limited number of real-time data entries
 
-	Get data for the 120 seconds preceding the latest timestamp available for a service, up to a maximum of `max_entries` entries.
+		Get data for the 120 seconds preceding the latest timestamp available for a service, up to a maximum of `max_entries` entries.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param maxEntries Maximum number of results to show.
-	 @return APIGetStatsLast120SecondsLimitEntriesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param maxEntries Maximum number of results to show.
+		 @return APIGetStatsLast120SecondsLimitEntriesRequest
 	*/
 	GetStatsLast120SecondsLimitEntries(ctx context.Context, serviceID string, maxEntries int32) APIGetStatsLast120SecondsLimitEntriesRequest
 
@@ -63,14 +62,14 @@ type RealtimeAPI interface {
 	GetStatsLast120SecondsLimitEntriesExecute(r APIGetStatsLast120SecondsLimitEntriesRequest) (*Realtime, *http.Response, error)
 
 	/*
-	GetStatsLastSecond Get real-time data from specified time
+		GetStatsLastSecond Get real-time data from specified time
 
-	Get real-time data for the specified reporting period. Specify `0` to get a single entry for the last complete second. The `Timestamp` field included in the response provides the time index of the latest entry in the dataset and can be provided as the `start_timestamp` of the next request for a seamless continuation of the dataset from one request to the next.
+		Get real-time data for the specified reporting period. Specify `0` to get a single entry for the last complete second. The `Timestamp` field included in the response provides the time index of the latest entry in the dataset and can be provided as the `start_timestamp` of the next request for a seamless continuation of the dataset from one request to the next.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param timestampInSeconds Timestamp in seconds (Unix epoch time).
-	 @return APIGetStatsLastSecondRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param timestampInSeconds Timestamp in seconds (Unix epoch time).
+		 @return APIGetStatsLastSecondRequest
 	*/
 	GetStatsLastSecond(ctx context.Context, serviceID string, timestampInSeconds int32) APIGetStatsLastSecondRequest
 
@@ -84,11 +83,10 @@ type RealtimeAPIService service
 
 // APIGetStatsLast120SecondsRequest represents a request for the resource.
 type APIGetStatsLast120SecondsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService RealtimeAPI
-	serviceID string
+	serviceID  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetStatsLast120SecondsRequest) Execute() (*Realtime, *http.Response, error) {
@@ -107,8 +105,8 @@ Get data for the 120 seconds preceding the latest timestamp available for a serv
 func (a *RealtimeAPIService) GetStatsLast120Seconds(ctx context.Context, serviceID string) APIGetStatsLast120SecondsRequest {
 	return APIGetStatsLast120SecondsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 	}
 }
 
@@ -116,10 +114,10 @@ func (a *RealtimeAPIService) GetStatsLast120Seconds(ctx context.Context, service
 //  @return Realtime
 func (a *RealtimeAPIService) GetStatsLast120SecondsExecute(r APIGetStatsLast120SecondsRequest) (*Realtime, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *Realtime
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *Realtime
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RealtimeAPIService.GetStatsLast120Seconds")
@@ -199,7 +197,6 @@ func (a *RealtimeAPIService) GetStatsLast120SecondsExecute(r APIGetStatsLast120S
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -218,12 +215,11 @@ func (a *RealtimeAPIService) GetStatsLast120SecondsExecute(r APIGetStatsLast120S
 
 // APIGetStatsLast120SecondsLimitEntriesRequest represents a request for the resource.
 type APIGetStatsLast120SecondsLimitEntriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService RealtimeAPI
-	serviceID string
+	serviceID  string
 	maxEntries int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetStatsLast120SecondsLimitEntriesRequest) Execute() (*Realtime, *http.Response, error) {
@@ -243,8 +239,8 @@ Get data for the 120 seconds preceding the latest timestamp available for a serv
 func (a *RealtimeAPIService) GetStatsLast120SecondsLimitEntries(ctx context.Context, serviceID string, maxEntries int32) APIGetStatsLast120SecondsLimitEntriesRequest {
 	return APIGetStatsLast120SecondsLimitEntriesRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		ctx:        ctx,
+		serviceID:  serviceID,
 		maxEntries: maxEntries,
 	}
 }
@@ -253,10 +249,10 @@ func (a *RealtimeAPIService) GetStatsLast120SecondsLimitEntries(ctx context.Cont
 //  @return Realtime
 func (a *RealtimeAPIService) GetStatsLast120SecondsLimitEntriesExecute(r APIGetStatsLast120SecondsLimitEntriesRequest) (*Realtime, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *Realtime
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *Realtime
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RealtimeAPIService.GetStatsLast120SecondsLimitEntries")
@@ -337,7 +333,6 @@ func (a *RealtimeAPIService) GetStatsLast120SecondsLimitEntriesExecute(r APIGetS
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -356,12 +351,11 @@ func (a *RealtimeAPIService) GetStatsLast120SecondsLimitEntriesExecute(r APIGetS
 
 // APIGetStatsLastSecondRequest represents a request for the resource.
 type APIGetStatsLastSecondRequest struct {
-	ctx context.Context
-	APIService RealtimeAPI
-	serviceID string
+	ctx                context.Context
+	APIService         RealtimeAPI
+	serviceID          string
 	timestampInSeconds int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetStatsLastSecondRequest) Execute() (*Realtime, *http.Response, error) {
@@ -380,9 +374,9 @@ Get real-time data for the specified reporting period. Specify `0` to get a sing
 */
 func (a *RealtimeAPIService) GetStatsLastSecond(ctx context.Context, serviceID string, timestampInSeconds int32) APIGetStatsLastSecondRequest {
 	return APIGetStatsLastSecondRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
+		APIService:         a,
+		ctx:                ctx,
+		serviceID:          serviceID,
 		timestampInSeconds: timestampInSeconds,
 	}
 }
@@ -391,10 +385,10 @@ func (a *RealtimeAPIService) GetStatsLastSecond(ctx context.Context, serviceID s
 //  @return Realtime
 func (a *RealtimeAPIService) GetStatsLastSecondExecute(r APIGetStatsLastSecondRequest) (*Realtime, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *Realtime
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *Realtime
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RealtimeAPIService.GetStatsLastSecond")
@@ -474,7 +468,6 @@ func (a *RealtimeAPIService) GetStatsLastSecondExecute(r APIGetStatsLastSecondRe
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

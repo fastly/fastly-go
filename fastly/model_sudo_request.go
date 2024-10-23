@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,16 +12,15 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
 // SudoRequest struct for SudoRequest
 type SudoRequest struct {
-	Username string `json:"username"`
-	Password string `json:"password"`
-	ExpiryTime *string `json:"expiry_time,omitempty"`
+	Username             string  `json:"username"`
+	Password             string  `json:"password"`
+	ExpiryTime           *string `json:"expiry_time,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -59,7 +58,7 @@ func (o *SudoRequest) GetUsername() string {
 // GetUsernameOk returns a tuple with the Username field value
 // and a boolean to check if the value has been set.
 func (o *SudoRequest) GetUsernameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Username, true
@@ -83,7 +82,7 @@ func (o *SudoRequest) GetPassword() string {
 // GetPasswordOk returns a tuple with the Password field value
 // and a boolean to check if the value has been set.
 func (o *SudoRequest) GetPasswordOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Password, true
@@ -148,7 +147,7 @@ func (o SudoRequest) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *SudoRequest) UnmarshalJSON(bytes []byte) (err error) {
 	varSudoRequest := _SudoRequest{}
 
@@ -168,7 +167,7 @@ func (o *SudoRequest) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableSudoRequest is a helper abstraction for handling nullable sudorequest types. 
+// NullableSudoRequest is a helper abstraction for handling nullable sudorequest types.
 type NullableSudoRequest struct {
 	value *SudoRequest
 	isSet bool
@@ -208,7 +207,7 @@ func (v NullableSudoRequest) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableSudoRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

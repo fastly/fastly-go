@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,13 +21,13 @@ import (
 type LoggingSyslogResponse struct {
 	// The name for the real-time logging configuration.
 	Name *string `json:"name,omitempty"`
-	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// A secure certificate to authenticate a server with. Must be in PEM format.
 	TLSCaCert NullableString `json:"tls_ca_cert,omitempty"`
@@ -41,23 +40,23 @@ type LoggingSyslogResponse struct {
 	// A hostname or IPv4 address.
 	Address *string `json:"address,omitempty"`
 	// The port number.
-	Port *int32 `json:"port,omitempty"`
+	Port        *int32              `json:"port,omitempty"`
 	MessageType *LoggingMessageType `json:"message_type,omitempty"`
 	// The hostname used for the syslog endpoint.
 	Hostname *string `json:"hostname,omitempty"`
 	// The IPv4 address used for the syslog endpoint.
 	Ipv4 NullableString `json:"ipv4,omitempty"`
 	// Whether to prepend each message with a specific token.
-	Token NullableString `json:"token,omitempty"`
+	Token  NullableString       `json:"token,omitempty"`
 	UseTLS *LoggingUseTLSString `json:"use_tls,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
+	ServiceID            *string      `json:"service_id,omitempty"`
+	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -165,7 +164,7 @@ func (o *LoggingSyslogResponse) GetPlacement() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSyslogResponse) GetPlacementOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -184,6 +183,7 @@ func (o *LoggingSyslogResponse) HasPlacement() bool {
 func (o *LoggingSyslogResponse) SetPlacement(v string) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *LoggingSyslogResponse) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -207,7 +207,7 @@ func (o *LoggingSyslogResponse) GetResponseCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSyslogResponse) GetResponseConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseCondition.Get(), o.ResponseCondition.IsSet()
@@ -226,6 +226,7 @@ func (o *LoggingSyslogResponse) HasResponseCondition() bool {
 func (o *LoggingSyslogResponse) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
+
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 func (o *LoggingSyslogResponse) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
@@ -313,7 +314,7 @@ func (o *LoggingSyslogResponse) GetTLSCaCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSyslogResponse) GetTLSCaCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCaCert.Get(), o.TLSCaCert.IsSet()
@@ -332,6 +333,7 @@ func (o *LoggingSyslogResponse) HasTLSCaCert() bool {
 func (o *LoggingSyslogResponse) SetTLSCaCert(v string) {
 	o.TLSCaCert.Set(&v)
 }
+
 // SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
 func (o *LoggingSyslogResponse) SetTLSCaCertNil() {
 	o.TLSCaCert.Set(nil)
@@ -355,7 +357,7 @@ func (o *LoggingSyslogResponse) GetTLSClientCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSyslogResponse) GetTLSClientCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientCert.Get(), o.TLSClientCert.IsSet()
@@ -374,6 +376,7 @@ func (o *LoggingSyslogResponse) HasTLSClientCert() bool {
 func (o *LoggingSyslogResponse) SetTLSClientCert(v string) {
 	o.TLSClientCert.Set(&v)
 }
+
 // SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
 func (o *LoggingSyslogResponse) SetTLSClientCertNil() {
 	o.TLSClientCert.Set(nil)
@@ -397,7 +400,7 @@ func (o *LoggingSyslogResponse) GetTLSClientKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSyslogResponse) GetTLSClientKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientKey.Get(), o.TLSClientKey.IsSet()
@@ -416,6 +419,7 @@ func (o *LoggingSyslogResponse) HasTLSClientKey() bool {
 func (o *LoggingSyslogResponse) SetTLSClientKey(v string) {
 	o.TLSClientKey.Set(&v)
 }
+
 // SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
 func (o *LoggingSyslogResponse) SetTLSClientKeyNil() {
 	o.TLSClientKey.Set(nil)
@@ -439,7 +443,7 @@ func (o *LoggingSyslogResponse) GetTLSHostname() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSyslogResponse) GetTLSHostnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSHostname.Get(), o.TLSHostname.IsSet()
@@ -458,6 +462,7 @@ func (o *LoggingSyslogResponse) HasTLSHostname() bool {
 func (o *LoggingSyslogResponse) SetTLSHostname(v string) {
 	o.TLSHostname.Set(&v)
 }
+
 // SetTLSHostnameNil sets the value for TLSHostname to be an explicit nil
 func (o *LoggingSyslogResponse) SetTLSHostnameNil() {
 	o.TLSHostname.Set(nil)
@@ -609,7 +614,7 @@ func (o *LoggingSyslogResponse) GetIpv4() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSyslogResponse) GetIpv4Ok() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Ipv4.Get(), o.Ipv4.IsSet()
@@ -628,6 +633,7 @@ func (o *LoggingSyslogResponse) HasIpv4() bool {
 func (o *LoggingSyslogResponse) SetIpv4(v string) {
 	o.Ipv4.Set(&v)
 }
+
 // SetIpv4Nil sets the value for Ipv4 to be an explicit nil
 func (o *LoggingSyslogResponse) SetIpv4Nil() {
 	o.Ipv4.Set(nil)
@@ -651,7 +657,7 @@ func (o *LoggingSyslogResponse) GetToken() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSyslogResponse) GetTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Token.Get(), o.Token.IsSet()
@@ -670,6 +676,7 @@ func (o *LoggingSyslogResponse) HasToken() bool {
 func (o *LoggingSyslogResponse) SetToken(v string) {
 	o.Token.Set(&v)
 }
+
 // SetTokenNil sets the value for Token to be an explicit nil
 func (o *LoggingSyslogResponse) SetTokenNil() {
 	o.Token.Set(nil)
@@ -725,7 +732,7 @@ func (o *LoggingSyslogResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSyslogResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -744,6 +751,7 @@ func (o *LoggingSyslogResponse) HasCreatedAt() bool {
 func (o *LoggingSyslogResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *LoggingSyslogResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -767,7 +775,7 @@ func (o *LoggingSyslogResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSyslogResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -786,6 +794,7 @@ func (o *LoggingSyslogResponse) HasDeletedAt() bool {
 func (o *LoggingSyslogResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *LoggingSyslogResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -809,7 +818,7 @@ func (o *LoggingSyslogResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSyslogResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -828,6 +837,7 @@ func (o *LoggingSyslogResponse) HasUpdatedAt() bool {
 func (o *LoggingSyslogResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *LoggingSyslogResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -978,7 +988,7 @@ func (o LoggingSyslogResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingSyslogResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingSyslogResponse := _LoggingSyslogResponse{}
 
@@ -1016,7 +1026,7 @@ func (o *LoggingSyslogResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingSyslogResponse is a helper abstraction for handling nullable loggingsyslogresponse types. 
+// NullableLoggingSyslogResponse is a helper abstraction for handling nullable loggingsyslogresponse types.
 type NullableLoggingSyslogResponse struct {
 	value *LoggingSyslogResponse
 	isSet bool
@@ -1056,7 +1066,7 @@ func (v NullableLoggingSyslogResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingSyslogResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

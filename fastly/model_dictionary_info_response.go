@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -24,7 +23,7 @@ type DictionaryInfoResponse struct {
 	// The number of items currently in the dictionary.
 	ItemCount *int32 `json:"item_count,omitempty"`
 	// A hash of all the dictionary content.
-	Digest *string `json:"digest,omitempty"`
+	Digest               *string `json:"digest,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -165,7 +164,7 @@ func (o DictionaryInfoResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *DictionaryInfoResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varDictionaryInfoResponse := _DictionaryInfoResponse{}
 
@@ -185,7 +184,7 @@ func (o *DictionaryInfoResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableDictionaryInfoResponse is a helper abstraction for handling nullable dictionaryinforesponse types. 
+// NullableDictionaryInfoResponse is a helper abstraction for handling nullable dictionaryinforesponse types.
 type NullableDictionaryInfoResponse struct {
 	value *DictionaryInfoResponse
 	isSet bool
@@ -225,7 +224,7 @@ func (v NullableDictionaryInfoResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDictionaryInfoResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

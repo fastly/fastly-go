@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -43,15 +42,15 @@ type HeaderResponse struct {
 	// Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\"0\" = false, \"1\" = true)
 	IgnoreIfSet *string `json:"ignore_if_set,omitempty"`
 	// Priority determines execution order. Lower numbers execute first.
-	Priority *string `json:"priority,omitempty"`
+	Priority  *string `json:"priority,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	Version   *string `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -123,7 +122,7 @@ func (o *HeaderResponse) GetCacheCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HeaderResponse) GetCacheConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CacheCondition.Get(), o.CacheCondition.IsSet()
@@ -142,6 +141,7 @@ func (o *HeaderResponse) HasCacheCondition() bool {
 func (o *HeaderResponse) SetCacheCondition(v string) {
 	o.CacheCondition.Set(&v)
 }
+
 // SetCacheConditionNil sets the value for CacheCondition to be an explicit nil
 func (o *HeaderResponse) SetCacheConditionNil() {
 	o.CacheCondition.Set(nil)
@@ -229,7 +229,7 @@ func (o *HeaderResponse) GetRegex() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HeaderResponse) GetRegexOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Regex.Get(), o.Regex.IsSet()
@@ -248,6 +248,7 @@ func (o *HeaderResponse) HasRegex() bool {
 func (o *HeaderResponse) SetRegex(v string) {
 	o.Regex.Set(&v)
 }
+
 // SetRegexNil sets the value for Regex to be an explicit nil
 func (o *HeaderResponse) SetRegexNil() {
 	o.Regex.Set(nil)
@@ -271,7 +272,7 @@ func (o *HeaderResponse) GetRequestCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HeaderResponse) GetRequestConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RequestCondition.Get(), o.RequestCondition.IsSet()
@@ -290,6 +291,7 @@ func (o *HeaderResponse) HasRequestCondition() bool {
 func (o *HeaderResponse) SetRequestCondition(v string) {
 	o.RequestCondition.Set(&v)
 }
+
 // SetRequestConditionNil sets the value for RequestCondition to be an explicit nil
 func (o *HeaderResponse) SetRequestConditionNil() {
 	o.RequestCondition.Set(nil)
@@ -313,7 +315,7 @@ func (o *HeaderResponse) GetResponseCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HeaderResponse) GetResponseConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseCondition.Get(), o.ResponseCondition.IsSet()
@@ -332,6 +334,7 @@ func (o *HeaderResponse) HasResponseCondition() bool {
 func (o *HeaderResponse) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
+
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 func (o *HeaderResponse) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
@@ -355,7 +358,7 @@ func (o *HeaderResponse) GetSrc() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HeaderResponse) GetSrcOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Src.Get(), o.Src.IsSet()
@@ -374,6 +377,7 @@ func (o *HeaderResponse) HasSrc() bool {
 func (o *HeaderResponse) SetSrc(v string) {
 	o.Src.Set(&v)
 }
+
 // SetSrcNil sets the value for Src to be an explicit nil
 func (o *HeaderResponse) SetSrcNil() {
 	o.Src.Set(nil)
@@ -397,7 +401,7 @@ func (o *HeaderResponse) GetSubstitution() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HeaderResponse) GetSubstitutionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Substitution.Get(), o.Substitution.IsSet()
@@ -416,6 +420,7 @@ func (o *HeaderResponse) HasSubstitution() bool {
 func (o *HeaderResponse) SetSubstitution(v string) {
 	o.Substitution.Set(&v)
 }
+
 // SetSubstitutionNil sets the value for Substitution to be an explicit nil
 func (o *HeaderResponse) SetSubstitutionNil() {
 	o.Substitution.Set(nil)
@@ -599,7 +604,7 @@ func (o *HeaderResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HeaderResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -618,6 +623,7 @@ func (o *HeaderResponse) HasCreatedAt() bool {
 func (o *HeaderResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *HeaderResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -641,7 +647,7 @@ func (o *HeaderResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HeaderResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -660,6 +666,7 @@ func (o *HeaderResponse) HasDeletedAt() bool {
 func (o *HeaderResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *HeaderResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -683,7 +690,7 @@ func (o *HeaderResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HeaderResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -702,6 +709,7 @@ func (o *HeaderResponse) HasUpdatedAt() bool {
 func (o *HeaderResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *HeaderResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -776,7 +784,7 @@ func (o HeaderResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *HeaderResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varHeaderResponse := _HeaderResponse{}
 
@@ -810,7 +818,7 @@ func (o *HeaderResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableHeaderResponse is a helper abstraction for handling nullable headerresponse types. 
+// NullableHeaderResponse is a helper abstraction for handling nullable headerresponse types.
 type NullableHeaderResponse struct {
 	value *HeaderResponse
 	isSet bool
@@ -850,7 +858,7 @@ func (v NullableHeaderResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableHeaderResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

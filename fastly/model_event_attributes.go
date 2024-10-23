@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -23,8 +22,8 @@ type EventAttributes struct {
 	// Indicates if event was performed by Fastly.
 	Admin *bool `json:"admin,omitempty"`
 	// Date and time in ISO 8601 format.
-	CreatedAt NullableTime `json:"created_at,omitempty"`
-	CustomerID *string `json:"customer_id,omitempty"`
+	CreatedAt  NullableTime `json:"created_at,omitempty"`
+	CustomerID *string      `json:"customer_id,omitempty"`
 	// Description of the event.
 	Description *string `json:"description,omitempty"`
 	// Type of event. Can be used with `filter[event_type]`
@@ -32,10 +31,10 @@ type EventAttributes struct {
 	// IP addresses that the event was requested from.
 	IP *string `json:"ip,omitempty"`
 	// Hash of key value pairs of additional information.
-	Metadata map[string]map[string]any `json:"metadata,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	UserID *string `json:"user_id,omitempty"`
-	TokenID *string `json:"token_id,omitempty"`
+	Metadata             map[string]map[string]any `json:"metadata,omitempty"`
+	ServiceID            *string                   `json:"service_id,omitempty"`
+	UserID               *string                   `json:"user_id,omitempty"`
+	TokenID              *string                   `json:"token_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -103,7 +102,7 @@ func (o *EventAttributes) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *EventAttributes) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -122,6 +121,7 @@ func (o *EventAttributes) HasCreatedAt() bool {
 func (o *EventAttributes) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *EventAttributes) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -431,7 +431,7 @@ func (o EventAttributes) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *EventAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	varEventAttributes := _EventAttributes{}
 
@@ -458,7 +458,7 @@ func (o *EventAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableEventAttributes is a helper abstraction for handling nullable eventattributes types. 
+// NullableEventAttributes is a helper abstraction for handling nullable eventattributes types.
 type NullableEventAttributes struct {
 	value *EventAttributes
 	isSet bool
@@ -498,7 +498,7 @@ func (v NullableEventAttributes) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableEventAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

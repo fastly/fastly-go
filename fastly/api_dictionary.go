@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type DictionaryAPI interface {
 
 	/*
-	CreateDictionary Create an edge dictionary
+		CreateDictionary Create an edge dictionary
 
-	Create named dictionary for a particular service and version.
+		Create named dictionary for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateDictionaryRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateDictionaryRequest
 	*/
 	CreateDictionary(ctx context.Context, serviceID string, versionID int32) APICreateDictionaryRequest
 
@@ -48,15 +47,15 @@ type DictionaryAPI interface {
 	CreateDictionaryExecute(r APICreateDictionaryRequest) (*DictionaryResponse, *http.Response, error)
 
 	/*
-	DeleteDictionary Delete an edge dictionary
+		DeleteDictionary Delete an edge dictionary
 
-	Delete named dictionary for a particular service and version.
+		Delete named dictionary for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param dictionaryName Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
-	 @return APIDeleteDictionaryRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param dictionaryName Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
+		 @return APIDeleteDictionaryRequest
 	*/
 	DeleteDictionary(ctx context.Context, serviceID string, versionID int32, dictionaryName string) APIDeleteDictionaryRequest
 
@@ -65,15 +64,15 @@ type DictionaryAPI interface {
 	DeleteDictionaryExecute(r APIDeleteDictionaryRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetDictionary Get an edge dictionary
+		GetDictionary Get an edge dictionary
 
-	Retrieve a single dictionary by name for the version and service.
+		Retrieve a single dictionary by name for the version and service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param dictionaryName Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
-	 @return APIGetDictionaryRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param dictionaryName Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
+		 @return APIGetDictionaryRequest
 	*/
 	GetDictionary(ctx context.Context, serviceID string, versionID int32, dictionaryName string) APIGetDictionaryRequest
 
@@ -82,14 +81,14 @@ type DictionaryAPI interface {
 	GetDictionaryExecute(r APIGetDictionaryRequest) (*DictionaryResponse, *http.Response, error)
 
 	/*
-	ListDictionaries List edge dictionaries
+		ListDictionaries List edge dictionaries
 
-	List all dictionaries for the version of the service.
+		List all dictionaries for the version of the service.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListDictionariesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListDictionariesRequest
 	*/
 	ListDictionaries(ctx context.Context, serviceID string, versionID int32) APIListDictionariesRequest
 
@@ -98,15 +97,15 @@ type DictionaryAPI interface {
 	ListDictionariesExecute(r APIListDictionariesRequest) ([]DictionaryResponse, *http.Response, error)
 
 	/*
-	UpdateDictionary Update an edge dictionary
+		UpdateDictionary Update an edge dictionary
 
-	Update named dictionary for a particular service and version.
+		Update named dictionary for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param dictionaryName Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
-	 @return APIUpdateDictionaryRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param dictionaryName Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
+		 @return APIUpdateDictionaryRequest
 	*/
 	UpdateDictionary(ctx context.Context, serviceID string, versionID int32, dictionaryName string) APIUpdateDictionaryRequest
 
@@ -120,12 +119,12 @@ type DictionaryAPIService service
 
 // APICreateDictionaryRequest represents a request for the resource.
 type APICreateDictionaryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService DictionaryAPI
-	serviceID string
-	versionID int32
-	name *string
-	writeOnly *bool
+	serviceID  string
+	versionID  int32
+	name       *string
+	writeOnly  *bool
 }
 
 // Name Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
@@ -133,6 +132,7 @@ func (r *APICreateDictionaryRequest) Name(name string) *APICreateDictionaryReque
 	r.name = &name
 	return r
 }
+
 // WriteOnly Determines if items in the dictionary are readable or not.
 func (r *APICreateDictionaryRequest) WriteOnly(writeOnly bool) *APICreateDictionaryRequest {
 	r.writeOnly = &writeOnly
@@ -157,9 +157,9 @@ Create named dictionary for a particular service and version.
 func (a *DictionaryAPIService) CreateDictionary(ctx context.Context, serviceID string, versionID int32) APICreateDictionaryRequest {
 	return APICreateDictionaryRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -167,10 +167,10 @@ func (a *DictionaryAPIService) CreateDictionary(ctx context.Context, serviceID s
 //  @return DictionaryResponse
 func (a *DictionaryAPIService) CreateDictionaryExecute(r APICreateDictionaryRequest) (*DictionaryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DictionaryResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DictionaryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryAPIService.CreateDictionary")
@@ -257,7 +257,6 @@ func (a *DictionaryAPIService) CreateDictionaryExecute(r APICreateDictionaryRequ
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -276,13 +275,12 @@ func (a *DictionaryAPIService) CreateDictionaryExecute(r APICreateDictionaryRequ
 
 // APIDeleteDictionaryRequest represents a request for the resource.
 type APIDeleteDictionaryRequest struct {
-	ctx context.Context
-	APIService DictionaryAPI
-	serviceID string
-	versionID int32
+	ctx            context.Context
+	APIService     DictionaryAPI
+	serviceID      string
+	versionID      int32
 	dictionaryName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteDictionaryRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -302,10 +300,10 @@ Delete named dictionary for a particular service and version.
 */
 func (a *DictionaryAPIService) DeleteDictionary(ctx context.Context, serviceID string, versionID int32, dictionaryName string) APIDeleteDictionaryRequest {
 	return APIDeleteDictionaryRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:     a,
+		ctx:            ctx,
+		serviceID:      serviceID,
+		versionID:      versionID,
 		dictionaryName: dictionaryName,
 	}
 }
@@ -314,10 +312,10 @@ func (a *DictionaryAPIService) DeleteDictionary(ctx context.Context, serviceID s
 //  @return InlineResponse200
 func (a *DictionaryAPIService) DeleteDictionaryExecute(r APIDeleteDictionaryRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryAPIService.DeleteDictionary")
@@ -399,7 +397,6 @@ func (a *DictionaryAPIService) DeleteDictionaryExecute(r APIDeleteDictionaryRequ
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -418,13 +415,12 @@ func (a *DictionaryAPIService) DeleteDictionaryExecute(r APIDeleteDictionaryRequ
 
 // APIGetDictionaryRequest represents a request for the resource.
 type APIGetDictionaryRequest struct {
-	ctx context.Context
-	APIService DictionaryAPI
-	serviceID string
-	versionID int32
+	ctx            context.Context
+	APIService     DictionaryAPI
+	serviceID      string
+	versionID      int32
 	dictionaryName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetDictionaryRequest) Execute() (*DictionaryResponse, *http.Response, error) {
@@ -444,10 +440,10 @@ Retrieve a single dictionary by name for the version and service.
 */
 func (a *DictionaryAPIService) GetDictionary(ctx context.Context, serviceID string, versionID int32, dictionaryName string) APIGetDictionaryRequest {
 	return APIGetDictionaryRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:     a,
+		ctx:            ctx,
+		serviceID:      serviceID,
+		versionID:      versionID,
 		dictionaryName: dictionaryName,
 	}
 }
@@ -456,10 +452,10 @@ func (a *DictionaryAPIService) GetDictionary(ctx context.Context, serviceID stri
 //  @return DictionaryResponse
 func (a *DictionaryAPIService) GetDictionaryExecute(r APIGetDictionaryRequest) (*DictionaryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DictionaryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DictionaryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryAPIService.GetDictionary")
@@ -541,7 +537,6 @@ func (a *DictionaryAPIService) GetDictionaryExecute(r APIGetDictionaryRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -560,12 +555,11 @@ func (a *DictionaryAPIService) GetDictionaryExecute(r APIGetDictionaryRequest) (
 
 // APIListDictionariesRequest represents a request for the resource.
 type APIListDictionariesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService DictionaryAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListDictionariesRequest) Execute() ([]DictionaryResponse, *http.Response, error) {
@@ -585,9 +579,9 @@ List all dictionaries for the version of the service.
 func (a *DictionaryAPIService) ListDictionaries(ctx context.Context, serviceID string, versionID int32) APIListDictionariesRequest {
 	return APIListDictionariesRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -595,10 +589,10 @@ func (a *DictionaryAPIService) ListDictionaries(ctx context.Context, serviceID s
 //  @return []DictionaryResponse
 func (a *DictionaryAPIService) ListDictionariesExecute(r APIListDictionariesRequest) ([]DictionaryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []DictionaryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []DictionaryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryAPIService.ListDictionaries")
@@ -679,7 +673,6 @@ func (a *DictionaryAPIService) ListDictionariesExecute(r APIListDictionariesRequ
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -698,13 +691,13 @@ func (a *DictionaryAPIService) ListDictionariesExecute(r APIListDictionariesRequ
 
 // APIUpdateDictionaryRequest represents a request for the resource.
 type APIUpdateDictionaryRequest struct {
-	ctx context.Context
-	APIService DictionaryAPI
-	serviceID string
-	versionID int32
+	ctx            context.Context
+	APIService     DictionaryAPI
+	serviceID      string
+	versionID      int32
 	dictionaryName string
-	name *string
-	writeOnly *bool
+	name           *string
+	writeOnly      *bool
 }
 
 // Name Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
@@ -712,6 +705,7 @@ func (r *APIUpdateDictionaryRequest) Name(name string) *APIUpdateDictionaryReque
 	r.name = &name
 	return r
 }
+
 // WriteOnly Determines if items in the dictionary are readable or not.
 func (r *APIUpdateDictionaryRequest) WriteOnly(writeOnly bool) *APIUpdateDictionaryRequest {
 	r.writeOnly = &writeOnly
@@ -736,10 +730,10 @@ Update named dictionary for a particular service and version.
 */
 func (a *DictionaryAPIService) UpdateDictionary(ctx context.Context, serviceID string, versionID int32, dictionaryName string) APIUpdateDictionaryRequest {
 	return APIUpdateDictionaryRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:     a,
+		ctx:            ctx,
+		serviceID:      serviceID,
+		versionID:      versionID,
 		dictionaryName: dictionaryName,
 	}
 }
@@ -748,10 +742,10 @@ func (a *DictionaryAPIService) UpdateDictionary(ctx context.Context, serviceID s
 //  @return DictionaryResponse
 func (a *DictionaryAPIService) UpdateDictionaryExecute(r APIUpdateDictionaryRequest) (*DictionaryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *DictionaryResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DictionaryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DictionaryAPIService.UpdateDictionary")
@@ -838,7 +832,6 @@ func (a *DictionaryAPIService) UpdateDictionaryExecute(r APIUpdateDictionaryRequ
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

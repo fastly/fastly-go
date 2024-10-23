@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,17 +12,16 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
 // ValidatorResultDataAttributesMessages struct for ValidatorResultDataAttributesMessages
 type ValidatorResultDataAttributesMessages struct {
-	Type string `json:"type"`
-	Warning bool `json:"warning"`
-	Message string `json:"message"`
-	Tokens []map[string]TokensAdditionalProps `json:"tokens"`
+	Type                 string                             `json:"type"`
+	Warning              bool                               `json:"warning"`
+	Message              string                             `json:"message"`
+	Tokens               []map[string]TokensAdditionalProps `json:"tokens"`
 	AdditionalProperties map[string]any
 }
 
@@ -62,7 +61,7 @@ func (o *ValidatorResultDataAttributesMessages) GetType() string {
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
 func (o *ValidatorResultDataAttributesMessages) GetTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -86,7 +85,7 @@ func (o *ValidatorResultDataAttributesMessages) GetWarning() bool {
 // GetWarningOk returns a tuple with the Warning field value
 // and a boolean to check if the value has been set.
 func (o *ValidatorResultDataAttributesMessages) GetWarningOk() (*bool, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Warning, true
@@ -110,7 +109,7 @@ func (o *ValidatorResultDataAttributesMessages) GetMessage() string {
 // GetMessageOk returns a tuple with the Message field value
 // and a boolean to check if the value has been set.
 func (o *ValidatorResultDataAttributesMessages) GetMessageOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.Message, true
@@ -134,7 +133,7 @@ func (o *ValidatorResultDataAttributesMessages) GetTokens() []map[string]TokensA
 // GetTokensOk returns a tuple with the Tokens field value
 // and a boolean to check if the value has been set.
 func (o *ValidatorResultDataAttributesMessages) GetTokensOk() ([]map[string]TokensAdditionalProps, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Tokens, true
@@ -170,7 +169,7 @@ func (o ValidatorResultDataAttributesMessages) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *ValidatorResultDataAttributesMessages) UnmarshalJSON(bytes []byte) (err error) {
 	varValidatorResultDataAttributesMessages := _ValidatorResultDataAttributesMessages{}
 
@@ -191,7 +190,7 @@ func (o *ValidatorResultDataAttributesMessages) UnmarshalJSON(bytes []byte) (err
 	return err
 }
 
-// NullableValidatorResultDataAttributesMessages is a helper abstraction for handling nullable validatorresultdataattributesmessages types. 
+// NullableValidatorResultDataAttributesMessages is a helper abstraction for handling nullable validatorresultdataattributesmessages types.
 type NullableValidatorResultDataAttributesMessages struct {
 	value *ValidatorResultDataAttributesMessages
 	isSet bool
@@ -231,7 +230,7 @@ func (v NullableValidatorResultDataAttributesMessages) MarshalJSON() ([]byte, er
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableValidatorResultDataAttributesMessages) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

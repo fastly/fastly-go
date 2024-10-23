@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -43,9 +42,9 @@ type RateLimiterResponse struct {
 	// Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
 	LoggerType *string `json:"logger_type,omitempty"`
 	// Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
-	FeatureRevision *int32 `json:"feature_revision,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *int32 `json:"version,omitempty"`
+	FeatureRevision *int32  `json:"feature_revision,omitempty"`
+	ServiceID       *string `json:"service_id,omitempty"`
+	Version         *int32  `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -53,7 +52,7 @@ type RateLimiterResponse struct {
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
 	// Alphanumeric string identifying the rate limiter.
-	ID *string `json:"id,omitempty"`
+	ID                   *string `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -121,7 +120,7 @@ func (o *RateLimiterResponse) GetURIDictionaryName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RateLimiterResponse) GetURIDictionaryNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.URIDictionaryName.Get(), o.URIDictionaryName.IsSet()
@@ -140,6 +139,7 @@ func (o *RateLimiterResponse) HasURIDictionaryName() bool {
 func (o *RateLimiterResponse) SetURIDictionaryName(v string) {
 	o.URIDictionaryName.Set(&v)
 }
+
 // SetURIDictionaryNameNil sets the value for URIDictionaryName to be an explicit nil
 func (o *RateLimiterResponse) SetURIDictionaryNameNil() {
 	o.URIDictionaryName.Set(nil)
@@ -344,7 +344,7 @@ func (o *RateLimiterResponse) SetAction(v string) {
 
 // GetResponse returns the Response field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RateLimiterResponse) GetResponse() map[string]string {
-	if o == nil  {
+	if o == nil {
 		var ret map[string]string
 		return ret
 	}
@@ -388,7 +388,7 @@ func (o *RateLimiterResponse) GetResponseObjectName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RateLimiterResponse) GetResponseObjectNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseObjectName.Get(), o.ResponseObjectName.IsSet()
@@ -407,6 +407,7 @@ func (o *RateLimiterResponse) HasResponseObjectName() bool {
 func (o *RateLimiterResponse) SetResponseObjectName(v string) {
 	o.ResponseObjectName.Set(&v)
 }
+
 // SetResponseObjectNameNil sets the value for ResponseObjectName to be an explicit nil
 func (o *RateLimiterResponse) SetResponseObjectNameNil() {
 	o.ResponseObjectName.Set(nil)
@@ -558,7 +559,7 @@ func (o *RateLimiterResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RateLimiterResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -577,6 +578,7 @@ func (o *RateLimiterResponse) HasCreatedAt() bool {
 func (o *RateLimiterResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *RateLimiterResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -600,7 +602,7 @@ func (o *RateLimiterResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RateLimiterResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -619,6 +621,7 @@ func (o *RateLimiterResponse) HasDeletedAt() bool {
 func (o *RateLimiterResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *RateLimiterResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -642,7 +645,7 @@ func (o *RateLimiterResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RateLimiterResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -661,6 +664,7 @@ func (o *RateLimiterResponse) HasUpdatedAt() bool {
 func (o *RateLimiterResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *RateLimiterResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -770,7 +774,7 @@ func (o RateLimiterResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *RateLimiterResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varRateLimiterResponse := _RateLimiterResponse{}
 
@@ -805,7 +809,7 @@ func (o *RateLimiterResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableRateLimiterResponse is a helper abstraction for handling nullable ratelimiterresponse types. 
+// NullableRateLimiterResponse is a helper abstraction for handling nullable ratelimiterresponse types.
 type NullableRateLimiterResponse struct {
 	value *RateLimiterResponse
 	isSet bool
@@ -845,7 +849,7 @@ func (v NullableRateLimiterResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableRateLimiterResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

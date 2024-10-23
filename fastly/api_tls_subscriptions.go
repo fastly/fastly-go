@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,15 +31,15 @@ var (
 type TLSSubscriptionsAPI interface {
 
 	/*
-	CreateGlobalsignEmailChallenge Creates a GlobalSign email challenge.
+		CreateGlobalsignEmailChallenge Creates a GlobalSign email challenge.
 
-	Creates an email challenge for a domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.
+		Creates an email challenge for a domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.
 
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
-	 @param tlsAuthorizationID Alphanumeric string identifying a TLS subscription.
-	 @return APICreateGlobalsignEmailChallengeRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+		 @param tlsAuthorizationID Alphanumeric string identifying a TLS subscription.
+		 @return APICreateGlobalsignEmailChallengeRequest
 	*/
 	CreateGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionID string, tlsAuthorizationID string) APICreateGlobalsignEmailChallengeRequest
 
@@ -49,12 +48,12 @@ type TLSSubscriptionsAPI interface {
 	CreateGlobalsignEmailChallengeExecute(r APICreateGlobalsignEmailChallengeRequest) (map[string]any, *http.Response, error)
 
 	/*
-	CreateTLSSub Create a TLS subscription
+		CreateTLSSub Create a TLS subscription
 
-	Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
+		Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateTLSSubRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateTLSSubRequest
 	*/
 	CreateTLSSub(ctx context.Context) APICreateTLSSubRequest
 
@@ -63,15 +62,15 @@ type TLSSubscriptionsAPI interface {
 	CreateTLSSubExecute(r APICreateTLSSubRequest) (*TLSSubscriptionResponse, *http.Response, error)
 
 	/*
-	DeleteGlobalsignEmailChallenge Delete a GlobalSign email challenge
+		DeleteGlobalsignEmailChallenge Delete a GlobalSign email challenge
 
-	Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
+		Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
-	 @param tlsAuthorizationID Alphanumeric string identifying a TLS subscription.
-	 @param globalsignEmailChallengeID Alphanumeric string identifying a GlobalSign email challenge.
-	 @return APIDeleteGlobalsignEmailChallengeRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+		 @param tlsAuthorizationID Alphanumeric string identifying a TLS subscription.
+		 @param globalsignEmailChallengeID Alphanumeric string identifying a GlobalSign email challenge.
+		 @return APIDeleteGlobalsignEmailChallengeRequest
 	*/
 	DeleteGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionID string, tlsAuthorizationID string, globalsignEmailChallengeID string) APIDeleteGlobalsignEmailChallengeRequest
 
@@ -79,13 +78,13 @@ type TLSSubscriptionsAPI interface {
 	DeleteGlobalsignEmailChallengeExecute(r APIDeleteGlobalsignEmailChallengeRequest) (*http.Response, error)
 
 	/*
-	DeleteTLSSub Delete a TLS subscription
+		DeleteTLSSub Delete a TLS subscription
 
-	Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.
+		Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
-	 @return APIDeleteTLSSubRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+		 @return APIDeleteTLSSubRequest
 	*/
 	DeleteTLSSub(ctx context.Context, tlsSubscriptionID string) APIDeleteTLSSubRequest
 
@@ -93,13 +92,13 @@ type TLSSubscriptionsAPI interface {
 	DeleteTLSSubExecute(r APIDeleteTLSSubRequest) (*http.Response, error)
 
 	/*
-	GetTLSSub Get a TLS subscription
+		GetTLSSub Get a TLS subscription
 
-	Show a TLS subscription.
+		Show a TLS subscription.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
-	 @return APIGetTLSSubRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+		 @return APIGetTLSSubRequest
 	*/
 	GetTLSSub(ctx context.Context, tlsSubscriptionID string) APIGetTLSSubRequest
 
@@ -108,12 +107,12 @@ type TLSSubscriptionsAPI interface {
 	GetTLSSubExecute(r APIGetTLSSubRequest) (*TLSSubscriptionResponse, *http.Response, error)
 
 	/*
-	ListTLSSubs List TLS subscriptions
+		ListTLSSubs List TLS subscriptions
 
-	List all TLS subscriptions.
+		List all TLS subscriptions.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListTLSSubsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListTLSSubsRequest
 	*/
 	ListTLSSubs(ctx context.Context) APIListTLSSubsRequest
 
@@ -122,13 +121,13 @@ type TLSSubscriptionsAPI interface {
 	ListTLSSubsExecute(r APIListTLSSubsRequest) (*TLSSubscriptionsResponse, *http.Response, error)
 
 	/*
-	PatchTLSSub Update a TLS subscription
+		PatchTLSSub Update a TLS subscription
 
-	Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state `failed` by setting the state to `retry`.
+		Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state `failed` by setting the state to `retry`.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
-	 @return APIPatchTLSSubRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tlsSubscriptionID Alphanumeric string identifying a TLS subscription.
+		 @return APIPatchTLSSubRequest
 	*/
 	PatchTLSSub(ctx context.Context, tlsSubscriptionID string) APIPatchTLSSubRequest
 
@@ -142,11 +141,11 @@ type TLSSubscriptionsAPIService service
 
 // APICreateGlobalsignEmailChallengeRequest represents a request for the resource.
 type APICreateGlobalsignEmailChallengeRequest struct {
-	ctx context.Context
-	APIService TLSSubscriptionsAPI
-	tlsSubscriptionID string
+	ctx                context.Context
+	APIService         TLSSubscriptionsAPI
+	tlsSubscriptionID  string
 	tlsAuthorizationID string
-	requestBody *map[string]map[string]any
+	requestBody        *map[string]map[string]any
 }
 
 // RequestBody returns a pointer to a request.
@@ -173,9 +172,9 @@ Creates an email challenge for a domain on a GlobalSign subscription. An email c
 */
 func (a *TLSSubscriptionsAPIService) CreateGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionID string, tlsAuthorizationID string) APICreateGlobalsignEmailChallengeRequest {
 	return APICreateGlobalsignEmailChallengeRequest{
-		APIService: a,
-		ctx: ctx,
-		tlsSubscriptionID: tlsSubscriptionID,
+		APIService:         a,
+		ctx:                ctx,
+		tlsSubscriptionID:  tlsSubscriptionID,
 		tlsAuthorizationID: tlsAuthorizationID,
 	}
 }
@@ -184,10 +183,10 @@ func (a *TLSSubscriptionsAPIService) CreateGlobalsignEmailChallenge(ctx context.
 //  @return map[string]any
 func (a *TLSSubscriptionsAPIService) CreateGlobalsignEmailChallengeExecute(r APICreateGlobalsignEmailChallengeRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.CreateGlobalsignEmailChallenge")
@@ -270,7 +269,6 @@ func (a *TLSSubscriptionsAPIService) CreateGlobalsignEmailChallengeExecute(r API
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -289,17 +287,18 @@ func (a *TLSSubscriptionsAPIService) CreateGlobalsignEmailChallengeExecute(r API
 
 // APICreateTLSSubRequest represents a request for the resource.
 type APICreateTLSSubRequest struct {
-	ctx context.Context
-	APIService TLSSubscriptionsAPI
-	force *bool
+	ctx             context.Context
+	APIService      TLSSubscriptionsAPI
+	force           *bool
 	tlsSubscription *TLSSubscription
 }
 
-// Force A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
+// Force A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.
 func (r *APICreateTLSSubRequest) Force(force bool) *APICreateTLSSubRequest {
 	r.force = &force
 	return r
 }
+
 // TLSSubscription returns a pointer to a request.
 func (r *APICreateTLSSubRequest) TLSSubscription(tlsSubscription TLSSubscription) *APICreateTLSSubRequest {
 	r.tlsSubscription = &tlsSubscription
@@ -322,7 +321,7 @@ Create a new TLS subscription. This response includes a list of possible challen
 func (a *TLSSubscriptionsAPIService) CreateTLSSub(ctx context.Context) APICreateTLSSubRequest {
 	return APICreateTLSSubRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -330,10 +329,10 @@ func (a *TLSSubscriptionsAPIService) CreateTLSSub(ctx context.Context) APICreate
 //  @return TLSSubscriptionResponse
 func (a *TLSSubscriptionsAPIService) CreateTLSSubExecute(r APICreateTLSSubRequest) (*TLSSubscriptionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSSubscriptionResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.CreateTLSSub")
@@ -417,7 +416,6 @@ func (a *TLSSubscriptionsAPIService) CreateTLSSubExecute(r APICreateTLSSubReques
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -436,13 +434,12 @@ func (a *TLSSubscriptionsAPIService) CreateTLSSubExecute(r APICreateTLSSubReques
 
 // APIDeleteGlobalsignEmailChallengeRequest represents a request for the resource.
 type APIDeleteGlobalsignEmailChallengeRequest struct {
-	ctx context.Context
-	APIService TLSSubscriptionsAPI
-	tlsSubscriptionID string
-	tlsAuthorizationID string
+	ctx                        context.Context
+	APIService                 TLSSubscriptionsAPI
+	tlsSubscriptionID          string
+	tlsAuthorizationID         string
 	globalsignEmailChallengeID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteGlobalsignEmailChallengeRequest) Execute() (*http.Response, error) {
@@ -462,10 +459,10 @@ Deletes a GlobalSign email challenge. After a GlobalSign email challenge is dele
 */
 func (a *TLSSubscriptionsAPIService) DeleteGlobalsignEmailChallenge(ctx context.Context, tlsSubscriptionID string, tlsAuthorizationID string, globalsignEmailChallengeID string) APIDeleteGlobalsignEmailChallengeRequest {
 	return APIDeleteGlobalsignEmailChallengeRequest{
-		APIService: a,
-		ctx: ctx,
-		tlsSubscriptionID: tlsSubscriptionID,
-		tlsAuthorizationID: tlsAuthorizationID,
+		APIService:                 a,
+		ctx:                        ctx,
+		tlsSubscriptionID:          tlsSubscriptionID,
+		tlsAuthorizationID:         tlsAuthorizationID,
 		globalsignEmailChallengeID: globalsignEmailChallengeID,
 	}
 }
@@ -473,9 +470,9 @@ func (a *TLSSubscriptionsAPIService) DeleteGlobalsignEmailChallenge(ctx context.
 // DeleteGlobalsignEmailChallengeExecute executes the request
 func (a *TLSSubscriptionsAPIService) DeleteGlobalsignEmailChallengeExecute(r APIDeleteGlobalsignEmailChallengeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.DeleteGlobalsignEmailChallenge")
@@ -548,7 +545,6 @@ func (a *TLSSubscriptionsAPIService) DeleteGlobalsignEmailChallengeExecute(r API
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -567,11 +563,10 @@ func (a *TLSSubscriptionsAPIService) DeleteGlobalsignEmailChallengeExecute(r API
 
 // APIDeleteTLSSubRequest represents a request for the resource.
 type APIDeleteTLSSubRequest struct {
-	ctx context.Context
-	APIService TLSSubscriptionsAPI
+	ctx               context.Context
+	APIService        TLSSubscriptionsAPI
 	tlsSubscriptionID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteTLSSubRequest) Execute() (*http.Response, error) {
@@ -589,8 +584,8 @@ Destroy a TLS subscription. A subscription cannot be destroyed if there are doma
 */
 func (a *TLSSubscriptionsAPIService) DeleteTLSSub(ctx context.Context, tlsSubscriptionID string) APIDeleteTLSSubRequest {
 	return APIDeleteTLSSubRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:        a,
+		ctx:               ctx,
 		tlsSubscriptionID: tlsSubscriptionID,
 	}
 }
@@ -598,9 +593,9 @@ func (a *TLSSubscriptionsAPIService) DeleteTLSSub(ctx context.Context, tlsSubscr
 // DeleteTLSSubExecute executes the request
 func (a *TLSSubscriptionsAPIService) DeleteTLSSubExecute(r APIDeleteTLSSubRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.DeleteTLSSub")
@@ -671,7 +666,6 @@ func (a *TLSSubscriptionsAPIService) DeleteTLSSubExecute(r APIDeleteTLSSubReques
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -690,13 +684,13 @@ func (a *TLSSubscriptionsAPIService) DeleteTLSSubExecute(r APIDeleteTLSSubReques
 
 // APIGetTLSSubRequest represents a request for the resource.
 type APIGetTLSSubRequest struct {
-	ctx context.Context
-	APIService TLSSubscriptionsAPI
+	ctx               context.Context
+	APIService        TLSSubscriptionsAPI
 	tlsSubscriptionID string
-	include *string
+	include           *string
 }
 
-// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, &#x60;tls_authorizations.self_managed_http_challenge&#x60;, and &#x60;tls_certificates&#x60;. 
+// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, &#x60;tls_authorizations.self_managed_http_challenge&#x60;, and &#x60;tls_certificates&#x60;.
 func (r *APIGetTLSSubRequest) Include(include string) *APIGetTLSSubRequest {
 	r.include = &include
 	return r
@@ -718,8 +712,8 @@ Show a TLS subscription.
 */
 func (a *TLSSubscriptionsAPIService) GetTLSSub(ctx context.Context, tlsSubscriptionID string) APIGetTLSSubRequest {
 	return APIGetTLSSubRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:        a,
+		ctx:               ctx,
 		tlsSubscriptionID: tlsSubscriptionID,
 	}
 }
@@ -728,10 +722,10 @@ func (a *TLSSubscriptionsAPIService) GetTLSSub(ctx context.Context, tlsSubscript
 //  @return TLSSubscriptionResponse
 func (a *TLSSubscriptionsAPIService) GetTLSSubExecute(r APIGetTLSSubRequest) (*TLSSubscriptionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSSubscriptionResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.GetTLSSub")
@@ -814,7 +808,6 @@ func (a *TLSSubscriptionsAPIService) GetTLSSubExecute(r APIGetTLSSubRequest) (*T
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -833,53 +826,60 @@ func (a *TLSSubscriptionsAPIService) GetTLSSubExecute(r APIGetTLSSubRequest) (*T
 
 // APIListTLSSubsRequest represents a request for the resource.
 type APIListTLSSubsRequest struct {
-	ctx context.Context
-	APIService TLSSubscriptionsAPI
-	filterState *string
-	filterTLSDomainsID *string
-	filterHasActiveOrder *bool
+	ctx                        context.Context
+	APIService                 TLSSubscriptionsAPI
+	filterState                *string
+	filterTLSDomainsID         *string
+	filterHasActiveOrder       *bool
 	filterCertificateAuthority *string
-	sort *string
-	include *string
-	pageNumber *int32
-	pageSize *int32
+	sort                       *string
+	include                    *string
+	pageNumber                 *int32
+	pageSize                   *int32
 }
 
-// FilterState Limit the returned subscriptions by state. Valid values are &#x60;pending&#x60;, &#x60;processing&#x60;, &#x60;issued&#x60;, &#x60;renewing&#x60;, and &#x60;failed&#x60;. Accepts parameters: &#x60;not&#x60; (e.g., &#x60;filter[state][not]&#x3D;renewing&#x60;). 
+// FilterState Limit the returned subscriptions by state. Valid values are &#x60;pending&#x60;, &#x60;processing&#x60;, &#x60;issued&#x60;, &#x60;renewing&#x60;, and &#x60;failed&#x60;. Accepts parameters: &#x60;not&#x60; (e.g., &#x60;filter[state][not]&#x3D;renewing&#x60;).
 func (r *APIListTLSSubsRequest) FilterState(filterState string) *APIListTLSSubsRequest {
 	r.filterState = &filterState
 	return r
 }
+
 // FilterTLSDomainsID Limit the returned subscriptions to those that include the specific domain.
 func (r *APIListTLSSubsRequest) FilterTLSDomainsID(filterTLSDomainsID string) *APIListTLSSubsRequest {
 	r.filterTLSDomainsID = &filterTLSDomainsID
 	return r
 }
-// FilterHasActiveOrder Limit the returned subscriptions to those that have currently active orders. Permitted values: &#x60;true&#x60;. 
+
+// FilterHasActiveOrder Limit the returned subscriptions to those that have currently active orders. Permitted values: &#x60;true&#x60;.
 func (r *APIListTLSSubsRequest) FilterHasActiveOrder(filterHasActiveOrder bool) *APIListTLSSubsRequest {
 	r.filterHasActiveOrder = &filterHasActiveOrder
 	return r
 }
-// FilterCertificateAuthority Limit the returned subscriptions to a specific certification authority. Values may include &#x60;certainly&#x60;, &#x60;lets-encrypt&#x60;, or &#x60;globalsign&#x60;. 
+
+// FilterCertificateAuthority Limit the returned subscriptions to a specific certification authority. Values may include &#x60;certainly&#x60;, &#x60;lets-encrypt&#x60;, or &#x60;globalsign&#x60;.
 func (r *APIListTLSSubsRequest) FilterCertificateAuthority(filterCertificateAuthority string) *APIListTLSSubsRequest {
 	r.filterCertificateAuthority = &filterCertificateAuthority
 	return r
 }
+
 // Sort The order in which to list the results.
 func (r *APIListTLSSubsRequest) Sort(sort string) *APIListTLSSubsRequest {
 	r.sort = &sort
 	return r
 }
-// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, &#x60;tls_authorizations.self_managed_http_challenge&#x60;, and &#x60;tls_certificates&#x60;. 
+
+// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, &#x60;tls_authorizations.self_managed_http_challenge&#x60;, and &#x60;tls_certificates&#x60;.
 func (r *APIListTLSSubsRequest) Include(include string) *APIListTLSSubsRequest {
 	r.include = &include
 	return r
 }
+
 // PageNumber Current page.
 func (r *APIListTLSSubsRequest) PageNumber(pageNumber int32) *APIListTLSSubsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListTLSSubsRequest) PageSize(pageSize int32) *APIListTLSSubsRequest {
 	r.pageSize = &pageSize
@@ -902,7 +902,7 @@ List all TLS subscriptions.
 func (a *TLSSubscriptionsAPIService) ListTLSSubs(ctx context.Context) APIListTLSSubsRequest {
 	return APIListTLSSubsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -910,10 +910,10 @@ func (a *TLSSubscriptionsAPIService) ListTLSSubs(ctx context.Context) APIListTLS
 //  @return TLSSubscriptionsResponse
 func (a *TLSSubscriptionsAPIService) ListTLSSubsExecute(r APIListTLSSubsRequest) (*TLSSubscriptionsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSSubscriptionsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSSubscriptionsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.ListTLSSubs")
@@ -1016,7 +1016,6 @@ func (a *TLSSubscriptionsAPIService) ListTLSSubsExecute(r APIListTLSSubsRequest)
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1035,18 +1034,19 @@ func (a *TLSSubscriptionsAPIService) ListTLSSubsExecute(r APIListTLSSubsRequest)
 
 // APIPatchTLSSubRequest represents a request for the resource.
 type APIPatchTLSSubRequest struct {
-	ctx context.Context
-	APIService TLSSubscriptionsAPI
+	ctx               context.Context
+	APIService        TLSSubscriptionsAPI
 	tlsSubscriptionID string
-	force *bool
-	tlsSubscription *TLSSubscription
+	force             *bool
+	tlsSubscription   *TLSSubscription
 }
 
-// Force A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
+// Force A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.
 func (r *APIPatchTLSSubRequest) Force(force bool) *APIPatchTLSSubRequest {
 	r.force = &force
 	return r
 }
+
 // TLSSubscription returns a pointer to a request.
 func (r *APIPatchTLSSubRequest) TLSSubscription(tlsSubscription TLSSubscription) *APIPatchTLSSubRequest {
 	r.tlsSubscription = &tlsSubscription
@@ -1069,8 +1069,8 @@ Change the TLS domains or common name associated with this subscription, update 
 */
 func (a *TLSSubscriptionsAPIService) PatchTLSSub(ctx context.Context, tlsSubscriptionID string) APIPatchTLSSubRequest {
 	return APIPatchTLSSubRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:        a,
+		ctx:               ctx,
 		tlsSubscriptionID: tlsSubscriptionID,
 	}
 }
@@ -1079,10 +1079,10 @@ func (a *TLSSubscriptionsAPIService) PatchTLSSub(ctx context.Context, tlsSubscri
 //  @return TLSSubscriptionResponse
 func (a *TLSSubscriptionsAPIService) PatchTLSSubExecute(r APIPatchTLSSubRequest) (*TLSSubscriptionResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSSubscriptionResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSSubscriptionsAPIService.PatchTLSSub")
@@ -1166,7 +1166,6 @@ func (a *TLSSubscriptionsAPIService) PatchTLSSubExecute(r APIPatchTLSSubRequest)
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -30,7 +29,7 @@ type LoggingCloudfilesAdditional struct {
 	// A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 	PublicKey NullableString `json:"public_key,omitempty"`
 	// The username for your Cloud Files account.
-	User *string `json:"user,omitempty"`
+	User                 *string `json:"user,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -138,7 +137,7 @@ func (o *LoggingCloudfilesAdditional) GetPath() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCloudfilesAdditional) GetPathOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
@@ -157,6 +156,7 @@ func (o *LoggingCloudfilesAdditional) HasPath() bool {
 func (o *LoggingCloudfilesAdditional) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *LoggingCloudfilesAdditional) SetPathNil() {
 	o.Path.Set(nil)
@@ -180,7 +180,7 @@ func (o *LoggingCloudfilesAdditional) GetRegion() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCloudfilesAdditional) GetRegionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Region.Get(), o.Region.IsSet()
@@ -199,6 +199,7 @@ func (o *LoggingCloudfilesAdditional) HasRegion() bool {
 func (o *LoggingCloudfilesAdditional) SetRegion(v string) {
 	o.Region.Set(&v)
 }
+
 // SetRegionNil sets the value for Region to be an explicit nil
 func (o *LoggingCloudfilesAdditional) SetRegionNil() {
 	o.Region.Set(nil)
@@ -222,7 +223,7 @@ func (o *LoggingCloudfilesAdditional) GetPublicKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingCloudfilesAdditional) GetPublicKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PublicKey.Get(), o.PublicKey.IsSet()
@@ -241,6 +242,7 @@ func (o *LoggingCloudfilesAdditional) HasPublicKey() bool {
 func (o *LoggingCloudfilesAdditional) SetPublicKey(v string) {
 	o.PublicKey.Set(&v)
 }
+
 // SetPublicKeyNil sets the value for PublicKey to be an explicit nil
 func (o *LoggingCloudfilesAdditional) SetPublicKeyNil() {
 	o.PublicKey.Set(nil)
@@ -314,7 +316,7 @@ func (o LoggingCloudfilesAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingCloudfilesAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingCloudfilesAdditional := _LoggingCloudfilesAdditional{}
 
@@ -337,7 +339,7 @@ func (o *LoggingCloudfilesAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingCloudfilesAdditional is a helper abstraction for handling nullable loggingcloudfilesadditional types. 
+// NullableLoggingCloudfilesAdditional is a helper abstraction for handling nullable loggingcloudfilesadditional types.
 type NullableLoggingCloudfilesAdditional struct {
 	value *LoggingCloudfilesAdditional
 	isSet bool
@@ -377,7 +379,7 @@ func (v NullableLoggingCloudfilesAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingCloudfilesAdditional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type CustomerAddressesAPI interface {
 
 	/*
-	CreateCustomerAddress Creates an address associated with a customer account.
+		CreateCustomerAddress Creates an address associated with a customer account.
 
-	Creates an address associated with a customer account.
+		Creates an address associated with a customer account.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateCustomerAddressRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateCustomerAddressRequest
 	*/
 	CreateCustomerAddress(ctx context.Context) APICreateCustomerAddressRequest
 
@@ -46,12 +45,12 @@ type CustomerAddressesAPI interface {
 	CreateCustomerAddressExecute(r APICreateCustomerAddressRequest) (*InlineResponse201, *http.Response, error)
 
 	/*
-	ListCustomerAddresses Return the list of addresses associated with a customer account.
+		ListCustomerAddresses Return the list of addresses associated with a customer account.
 
-	Return the list of addresses associated with a customer account.
+		Return the list of addresses associated with a customer account.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListCustomerAddressesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListCustomerAddressesRequest
 	*/
 	ListCustomerAddresses(ctx context.Context) APIListCustomerAddressesRequest
 
@@ -60,13 +59,13 @@ type CustomerAddressesAPI interface {
 	ListCustomerAddressesExecute(r APIListCustomerAddressesRequest) (*ListCustomerAddressesResponse, *http.Response, error)
 
 	/*
-	UpdateCustomerAddress Updates an address associated with a customer account.
+		UpdateCustomerAddress Updates an address associated with a customer account.
 
-	Updates an address associated with a customer account.
+		Updates an address associated with a customer account.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param resourceType Alphanumeric type of the address being modified.
-	 @return APIUpdateCustomerAddressRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param resourceType Alphanumeric type of the address being modified.
+		 @return APIUpdateCustomerAddressRequest
 	*/
 	UpdateCustomerAddress(ctx context.Context, resourceType string) APIUpdateCustomerAddressRequest
 
@@ -79,8 +78,8 @@ type CustomerAddressesAPIService service
 
 // APICreateCustomerAddressRequest represents a request for the resource.
 type APICreateCustomerAddressRequest struct {
-	ctx context.Context
-	APIService CustomerAddressesAPI
+	ctx             context.Context
+	APIService      CustomerAddressesAPI
 	customerAddress *CustomerAddress
 }
 
@@ -106,7 +105,7 @@ Creates an address associated with a customer account.
 func (a *CustomerAddressesAPIService) CreateCustomerAddress(ctx context.Context) APICreateCustomerAddressRequest {
 	return APICreateCustomerAddressRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -114,10 +113,10 @@ func (a *CustomerAddressesAPIService) CreateCustomerAddress(ctx context.Context)
 //  @return InlineResponse201
 func (a *CustomerAddressesAPIService) CreateCustomerAddressExecute(r APICreateCustomerAddressRequest) (*InlineResponse201, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse201
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse201
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAddressesAPIService.CreateCustomerAddress")
@@ -240,7 +239,6 @@ func (a *CustomerAddressesAPIService) CreateCustomerAddressExecute(r APICreateCu
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -259,10 +257,9 @@ func (a *CustomerAddressesAPIService) CreateCustomerAddressExecute(r APICreateCu
 
 // APIListCustomerAddressesRequest represents a request for the resource.
 type APIListCustomerAddressesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService CustomerAddressesAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListCustomerAddressesRequest) Execute() (*ListCustomerAddressesResponse, *http.Response, error) {
@@ -280,7 +277,7 @@ Return the list of addresses associated with a customer account.
 func (a *CustomerAddressesAPIService) ListCustomerAddresses(ctx context.Context) APIListCustomerAddressesRequest {
 	return APIListCustomerAddressesRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -288,10 +285,10 @@ func (a *CustomerAddressesAPIService) ListCustomerAddresses(ctx context.Context)
 //  @return ListCustomerAddressesResponse
 func (a *CustomerAddressesAPIService) ListCustomerAddressesExecute(r APIListCustomerAddressesRequest) (*ListCustomerAddressesResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ListCustomerAddressesResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ListCustomerAddressesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAddressesAPIService.ListCustomerAddresses")
@@ -409,7 +406,6 @@ func (a *CustomerAddressesAPIService) ListCustomerAddressesExecute(r APIListCust
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -428,9 +424,9 @@ func (a *CustomerAddressesAPIService) ListCustomerAddressesExecute(r APIListCust
 
 // APIUpdateCustomerAddressRequest represents a request for the resource.
 type APIUpdateCustomerAddressRequest struct {
-	ctx context.Context
-	APIService CustomerAddressesAPI
-	resourceType string
+	ctx             context.Context
+	APIService      CustomerAddressesAPI
+	resourceType    string
 	customerAddress *CustomerAddress
 }
 
@@ -456,8 +452,8 @@ Updates an address associated with a customer account.
 */
 func (a *CustomerAddressesAPIService) UpdateCustomerAddress(ctx context.Context, resourceType string) APIUpdateCustomerAddressRequest {
 	return APIUpdateCustomerAddressRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:   a,
+		ctx:          ctx,
 		resourceType: resourceType,
 	}
 }
@@ -465,9 +461,9 @@ func (a *CustomerAddressesAPIService) UpdateCustomerAddress(ctx context.Context,
 // UpdateCustomerAddressExecute executes the request
 func (a *CustomerAddressesAPIService) UpdateCustomerAddressExecute(r APIUpdateCustomerAddressRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAddressesAPIService.UpdateCustomerAddress")
@@ -581,7 +577,6 @@ func (a *CustomerAddressesAPIService) UpdateCustomerAddressExecute(r APIUpdateCu
 		}
 		return localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

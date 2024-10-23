@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -28,7 +27,7 @@ type LoggingHTTPSAdditional struct {
 	// Content type of the header sent with the request.
 	ContentType NullableString `json:"content_type,omitempty"`
 	// Name of the custom header sent with the request.
-	HeaderName NullableString `json:"header_name,omitempty"`
+	HeaderName  NullableString      `json:"header_name,omitempty"`
 	MessageType *LoggingMessageType `json:"message_type,omitempty"`
 	// Value of the custom header sent with the request.
 	HeaderValue NullableString `json:"header_value,omitempty"`
@@ -37,7 +36,7 @@ type LoggingHTTPSAdditional struct {
 	// Enforces valid JSON formatting for log entries.
 	JSONFormat *string `json:"json_format,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-	Format *string `json:"format,omitempty"`
+	Format               *string `json:"format,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -201,7 +200,7 @@ func (o *LoggingHTTPSAdditional) GetContentType() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSAdditional) GetContentTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ContentType.Get(), o.ContentType.IsSet()
@@ -220,6 +219,7 @@ func (o *LoggingHTTPSAdditional) HasContentType() bool {
 func (o *LoggingHTTPSAdditional) SetContentType(v string) {
 	o.ContentType.Set(&v)
 }
+
 // SetContentTypeNil sets the value for ContentType to be an explicit nil
 func (o *LoggingHTTPSAdditional) SetContentTypeNil() {
 	o.ContentType.Set(nil)
@@ -243,7 +243,7 @@ func (o *LoggingHTTPSAdditional) GetHeaderName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSAdditional) GetHeaderNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HeaderName.Get(), o.HeaderName.IsSet()
@@ -262,6 +262,7 @@ func (o *LoggingHTTPSAdditional) HasHeaderName() bool {
 func (o *LoggingHTTPSAdditional) SetHeaderName(v string) {
 	o.HeaderName.Set(&v)
 }
+
 // SetHeaderNameNil sets the value for HeaderName to be an explicit nil
 func (o *LoggingHTTPSAdditional) SetHeaderNameNil() {
 	o.HeaderName.Set(nil)
@@ -317,7 +318,7 @@ func (o *LoggingHTTPSAdditional) GetHeaderValue() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingHTTPSAdditional) GetHeaderValueOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.HeaderValue.Get(), o.HeaderValue.IsSet()
@@ -336,6 +337,7 @@ func (o *LoggingHTTPSAdditional) HasHeaderValue() bool {
 func (o *LoggingHTTPSAdditional) SetHeaderValue(v string) {
 	o.HeaderValue.Set(&v)
 }
+
 // SetHeaderValueNil sets the value for HeaderValue to be an explicit nil
 func (o *LoggingHTTPSAdditional) SetHeaderValueNil() {
 	o.HeaderValue.Set(nil)
@@ -485,7 +487,7 @@ func (o LoggingHTTPSAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingHTTPSAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingHTTPSAdditional := _LoggingHTTPSAdditional{}
 
@@ -512,7 +514,7 @@ func (o *LoggingHTTPSAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingHTTPSAdditional is a helper abstraction for handling nullable logginghttpsadditional types. 
+// NullableLoggingHTTPSAdditional is a helper abstraction for handling nullable logginghttpsadditional types.
 type NullableLoggingHTTPSAdditional struct {
 	value *LoggingHTTPSAdditional
 	isSet bool
@@ -552,7 +554,7 @@ func (v NullableLoggingHTTPSAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingHTTPSAdditional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type RequestSettingsAPI interface {
 
 	/*
-	CreateRequestSettings Create a Request Settings object
+		CreateRequestSettings Create a Request Settings object
 
-	Creates a new Request Settings object.
+		Creates a new Request Settings object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateRequestSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateRequestSettingsRequest
 	*/
 	CreateRequestSettings(ctx context.Context, serviceID string, versionID int32) APICreateRequestSettingsRequest
 
@@ -48,15 +47,15 @@ type RequestSettingsAPI interface {
 	CreateRequestSettingsExecute(r APICreateRequestSettingsRequest) (*RequestSettingsResponse, *http.Response, error)
 
 	/*
-	DeleteRequestSettings Delete a Request Settings object
+		DeleteRequestSettings Delete a Request Settings object
 
-	Removes the specified Request Settings object.
+		Removes the specified Request Settings object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param requestSettingsName Name for the request settings.
-	 @return APIDeleteRequestSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param requestSettingsName Name for the request settings.
+		 @return APIDeleteRequestSettingsRequest
 	*/
 	DeleteRequestSettings(ctx context.Context, serviceID string, versionID int32, requestSettingsName string) APIDeleteRequestSettingsRequest
 
@@ -65,15 +64,15 @@ type RequestSettingsAPI interface {
 	DeleteRequestSettingsExecute(r APIDeleteRequestSettingsRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetRequestSettings Get a Request Settings object
+		GetRequestSettings Get a Request Settings object
 
-	Gets the specified Request Settings object.
+		Gets the specified Request Settings object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param requestSettingsName Name for the request settings.
-	 @return APIGetRequestSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param requestSettingsName Name for the request settings.
+		 @return APIGetRequestSettingsRequest
 	*/
 	GetRequestSettings(ctx context.Context, serviceID string, versionID int32, requestSettingsName string) APIGetRequestSettingsRequest
 
@@ -82,14 +81,14 @@ type RequestSettingsAPI interface {
 	GetRequestSettingsExecute(r APIGetRequestSettingsRequest) (*RequestSettingsResponse, *http.Response, error)
 
 	/*
-	ListRequestSettings List Request Settings objects
+		ListRequestSettings List Request Settings objects
 
-	Returns a list of all Request Settings objects for the given service and version.
+		Returns a list of all Request Settings objects for the given service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListRequestSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListRequestSettingsRequest
 	*/
 	ListRequestSettings(ctx context.Context, serviceID string, versionID int32) APIListRequestSettingsRequest
 
@@ -98,15 +97,15 @@ type RequestSettingsAPI interface {
 	ListRequestSettingsExecute(r APIListRequestSettingsRequest) ([]RequestSettingsResponse, *http.Response, error)
 
 	/*
-	UpdateRequestSettings Update a Request Settings object
+		UpdateRequestSettings Update a Request Settings object
 
-	Updates the specified Request Settings object.
+		Updates the specified Request Settings object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param requestSettingsName Name for the request settings.
-	 @return APIUpdateRequestSettingsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param requestSettingsName Name for the request settings.
+		 @return APIUpdateRequestSettingsRequest
 	*/
 	UpdateRequestSettings(ctx context.Context, serviceID string, versionID int32, requestSettingsName string) APIUpdateRequestSettingsRequest
 
@@ -120,12 +119,11 @@ type RequestSettingsAPIService service
 
 // APICreateRequestSettingsRequest represents a request for the resource.
 type APICreateRequestSettingsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService RequestSettingsAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APICreateRequestSettingsRequest) Execute() (*RequestSettingsResponse, *http.Response, error) {
@@ -145,9 +143,9 @@ Creates a new Request Settings object.
 func (a *RequestSettingsAPIService) CreateRequestSettings(ctx context.Context, serviceID string, versionID int32) APICreateRequestSettingsRequest {
 	return APICreateRequestSettingsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -155,10 +153,10 @@ func (a *RequestSettingsAPIService) CreateRequestSettings(ctx context.Context, s
 //  @return RequestSettingsResponse
 func (a *RequestSettingsAPIService) CreateRequestSettingsExecute(r APICreateRequestSettingsRequest) (*RequestSettingsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *RequestSettingsResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *RequestSettingsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestSettingsAPIService.CreateRequestSettings")
@@ -239,7 +237,6 @@ func (a *RequestSettingsAPIService) CreateRequestSettingsExecute(r APICreateRequ
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -258,13 +255,12 @@ func (a *RequestSettingsAPIService) CreateRequestSettingsExecute(r APICreateRequ
 
 // APIDeleteRequestSettingsRequest represents a request for the resource.
 type APIDeleteRequestSettingsRequest struct {
-	ctx context.Context
-	APIService RequestSettingsAPI
-	serviceID string
-	versionID int32
+	ctx                 context.Context
+	APIService          RequestSettingsAPI
+	serviceID           string
+	versionID           int32
 	requestSettingsName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteRequestSettingsRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -284,10 +280,10 @@ Removes the specified Request Settings object.
 */
 func (a *RequestSettingsAPIService) DeleteRequestSettings(ctx context.Context, serviceID string, versionID int32, requestSettingsName string) APIDeleteRequestSettingsRequest {
 	return APIDeleteRequestSettingsRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:          a,
+		ctx:                 ctx,
+		serviceID:           serviceID,
+		versionID:           versionID,
 		requestSettingsName: requestSettingsName,
 	}
 }
@@ -296,10 +292,10 @@ func (a *RequestSettingsAPIService) DeleteRequestSettings(ctx context.Context, s
 //  @return InlineResponse200
 func (a *RequestSettingsAPIService) DeleteRequestSettingsExecute(r APIDeleteRequestSettingsRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestSettingsAPIService.DeleteRequestSettings")
@@ -381,7 +377,6 @@ func (a *RequestSettingsAPIService) DeleteRequestSettingsExecute(r APIDeleteRequ
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -400,13 +395,12 @@ func (a *RequestSettingsAPIService) DeleteRequestSettingsExecute(r APIDeleteRequ
 
 // APIGetRequestSettingsRequest represents a request for the resource.
 type APIGetRequestSettingsRequest struct {
-	ctx context.Context
-	APIService RequestSettingsAPI
-	serviceID string
-	versionID int32
+	ctx                 context.Context
+	APIService          RequestSettingsAPI
+	serviceID           string
+	versionID           int32
 	requestSettingsName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetRequestSettingsRequest) Execute() (*RequestSettingsResponse, *http.Response, error) {
@@ -426,10 +420,10 @@ Gets the specified Request Settings object.
 */
 func (a *RequestSettingsAPIService) GetRequestSettings(ctx context.Context, serviceID string, versionID int32, requestSettingsName string) APIGetRequestSettingsRequest {
 	return APIGetRequestSettingsRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:          a,
+		ctx:                 ctx,
+		serviceID:           serviceID,
+		versionID:           versionID,
 		requestSettingsName: requestSettingsName,
 	}
 }
@@ -438,10 +432,10 @@ func (a *RequestSettingsAPIService) GetRequestSettings(ctx context.Context, serv
 //  @return RequestSettingsResponse
 func (a *RequestSettingsAPIService) GetRequestSettingsExecute(r APIGetRequestSettingsRequest) (*RequestSettingsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *RequestSettingsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *RequestSettingsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestSettingsAPIService.GetRequestSettings")
@@ -523,7 +517,6 @@ func (a *RequestSettingsAPIService) GetRequestSettingsExecute(r APIGetRequestSet
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -542,12 +535,11 @@ func (a *RequestSettingsAPIService) GetRequestSettingsExecute(r APIGetRequestSet
 
 // APIListRequestSettingsRequest represents a request for the resource.
 type APIListRequestSettingsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService RequestSettingsAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListRequestSettingsRequest) Execute() ([]RequestSettingsResponse, *http.Response, error) {
@@ -567,9 +559,9 @@ Returns a list of all Request Settings objects for the given service and version
 func (a *RequestSettingsAPIService) ListRequestSettings(ctx context.Context, serviceID string, versionID int32) APIListRequestSettingsRequest {
 	return APIListRequestSettingsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -577,10 +569,10 @@ func (a *RequestSettingsAPIService) ListRequestSettings(ctx context.Context, ser
 //  @return []RequestSettingsResponse
 func (a *RequestSettingsAPIService) ListRequestSettingsExecute(r APIListRequestSettingsRequest) ([]RequestSettingsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []RequestSettingsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []RequestSettingsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestSettingsAPIService.ListRequestSettings")
@@ -661,7 +653,6 @@ func (a *RequestSettingsAPIService) ListRequestSettingsExecute(r APIListRequestS
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -680,23 +671,23 @@ func (a *RequestSettingsAPIService) ListRequestSettingsExecute(r APIListRequestS
 
 // APIUpdateRequestSettingsRequest represents a request for the resource.
 type APIUpdateRequestSettingsRequest struct {
-	ctx context.Context
-	APIService RequestSettingsAPI
-	serviceID string
-	versionID int32
+	ctx                 context.Context
+	APIService          RequestSettingsAPI
+	serviceID           string
+	versionID           int32
 	requestSettingsName string
-	action *string
-	defaultHost *string
-	hashKeys *string
-	name *string
-	requestCondition *string
-	xff *string
-	bypassBusyWait *int32
-	forceMiss *int32
-	forceSsl *int32
-	geoHeaders *int32
-	maxStaleAge *int32
-	timerSupport *int32
+	action              *string
+	defaultHost         *string
+	hashKeys            *string
+	name                *string
+	requestCondition    *string
+	xff                 *string
+	bypassBusyWait      *int32
+	forceMiss           *int32
+	forceSsl            *int32
+	geoHeaders          *int32
+	maxStaleAge         *int32
+	timerSupport        *int32
 }
 
 // Action Allows you to terminate request handling and immediately perform an action.
@@ -704,56 +695,67 @@ func (r *APIUpdateRequestSettingsRequest) Action(action string) *APIUpdateReques
 	r.action = &action
 	return r
 }
+
 // DefaultHost Sets the host header.
 func (r *APIUpdateRequestSettingsRequest) DefaultHost(defaultHost string) *APIUpdateRequestSettingsRequest {
 	r.defaultHost = &defaultHost
 	return r
 }
+
 // HashKeys Comma separated list of varnish request object fields that should be in the hash key.
 func (r *APIUpdateRequestSettingsRequest) HashKeys(hashKeys string) *APIUpdateRequestSettingsRequest {
 	r.hashKeys = &hashKeys
 	return r
 }
+
 // Name Name for the request settings.
 func (r *APIUpdateRequestSettingsRequest) Name(name string) *APIUpdateRequestSettingsRequest {
 	r.name = &name
 	return r
 }
+
 // RequestCondition Condition which, if met, will select this configuration during a request. Optional.
 func (r *APIUpdateRequestSettingsRequest) RequestCondition(requestCondition string) *APIUpdateRequestSettingsRequest {
 	r.requestCondition = &requestCondition
 	return r
 }
+
 // Xff Short for X-Forwarded-For.
 func (r *APIUpdateRequestSettingsRequest) Xff(xff string) *APIUpdateRequestSettingsRequest {
 	r.xff = &xff
 	return r
 }
+
 // BypassBusyWait Disable collapsed forwarding, so you don&#39;t wait for other objects to origin.
 func (r *APIUpdateRequestSettingsRequest) BypassBusyWait(bypassBusyWait int32) *APIUpdateRequestSettingsRequest {
 	r.bypassBusyWait = &bypassBusyWait
 	return r
 }
+
 // ForceMiss Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable.
 func (r *APIUpdateRequestSettingsRequest) ForceMiss(forceMiss int32) *APIUpdateRequestSettingsRequest {
 	r.forceMiss = &forceMiss
 	return r
 }
+
 // ForceSsl Forces the request use SSL (redirects a non-SSL to SSL).
 func (r *APIUpdateRequestSettingsRequest) ForceSsl(forceSsl int32) *APIUpdateRequestSettingsRequest {
 	r.forceSsl = &forceSsl
 	return r
 }
+
 // GeoHeaders Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers.
 func (r *APIUpdateRequestSettingsRequest) GeoHeaders(geoHeaders int32) *APIUpdateRequestSettingsRequest {
 	r.geoHeaders = &geoHeaders
 	return r
 }
+
 // MaxStaleAge How old an object is allowed to be to serve stale-if-error or stale-while-revalidate.
 func (r *APIUpdateRequestSettingsRequest) MaxStaleAge(maxStaleAge int32) *APIUpdateRequestSettingsRequest {
 	r.maxStaleAge = &maxStaleAge
 	return r
 }
+
 // TimerSupport Injects the X-Timer info into the request for viewing origin fetch durations.
 func (r *APIUpdateRequestSettingsRequest) TimerSupport(timerSupport int32) *APIUpdateRequestSettingsRequest {
 	r.timerSupport = &timerSupport
@@ -778,10 +780,10 @@ Updates the specified Request Settings object.
 */
 func (a *RequestSettingsAPIService) UpdateRequestSettings(ctx context.Context, serviceID string, versionID int32, requestSettingsName string) APIUpdateRequestSettingsRequest {
 	return APIUpdateRequestSettingsRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:          a,
+		ctx:                 ctx,
+		serviceID:           serviceID,
+		versionID:           versionID,
 		requestSettingsName: requestSettingsName,
 	}
 }
@@ -790,10 +792,10 @@ func (a *RequestSettingsAPIService) UpdateRequestSettings(ctx context.Context, s
 //  @return RequestSettingsResponse
 func (a *RequestSettingsAPIService) UpdateRequestSettingsExecute(r APIUpdateRequestSettingsRequest) (*RequestSettingsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *RequestSettingsResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *RequestSettingsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RequestSettingsAPIService.UpdateRequestSettings")
@@ -910,7 +912,6 @@ func (a *RequestSettingsAPIService) UpdateRequestSettingsExecute(r APIUpdateRequ
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

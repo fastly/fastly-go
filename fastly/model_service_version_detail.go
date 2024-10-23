@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -40,7 +39,7 @@ type ServiceVersionDetail struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
+	ServiceID *string      `json:"service_id,omitempty"`
 	// A list of environments where the service has been deployed.
 	Environments []Environment `json:"environments,omitempty"`
 	// List of backends associated to this service.
@@ -63,13 +62,13 @@ type ServiceVersionDetail struct {
 	RequestSettings []RequestSettingsResponse `json:"request_settings,omitempty"`
 	// List of response objects for this service.
 	ResponseObjects []ResponseObjectResponse `json:"response_objects,omitempty"`
-	Settings *VersionDetailSettings `json:"settings,omitempty"`
+	Settings        *VersionDetailSettings   `json:"settings,omitempty"`
 	// List of VCL snippets for this service.
 	Snippets []SchemasSnippetResponse `json:"snippets,omitempty"`
 	// List of VCL files for this service.
 	Vcls []SchemasVclResponse `json:"vcls,omitempty"`
 	// A list of Wordpress rules with this service.
-	Wordpress []*map[string]any `json:"wordpress,omitempty"`
+	Wordpress            []*map[string]any `json:"wordpress,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -153,7 +152,7 @@ func (o *ServiceVersionDetail) GetComment() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServiceVersionDetail) GetCommentOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Comment.Get(), o.Comment.IsSet()
@@ -172,6 +171,7 @@ func (o *ServiceVersionDetail) HasComment() bool {
 func (o *ServiceVersionDetail) SetComment(v string) {
 	o.Comment.Set(&v)
 }
+
 // SetCommentNil sets the value for Comment to be an explicit nil
 func (o *ServiceVersionDetail) SetCommentNil() {
 	o.Comment.Set(nil)
@@ -355,7 +355,7 @@ func (o *ServiceVersionDetail) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServiceVersionDetail) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -374,6 +374,7 @@ func (o *ServiceVersionDetail) HasCreatedAt() bool {
 func (o *ServiceVersionDetail) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *ServiceVersionDetail) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -397,7 +398,7 @@ func (o *ServiceVersionDetail) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServiceVersionDetail) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -416,6 +417,7 @@ func (o *ServiceVersionDetail) HasDeletedAt() bool {
 func (o *ServiceVersionDetail) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *ServiceVersionDetail) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -439,7 +441,7 @@ func (o *ServiceVersionDetail) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ServiceVersionDetail) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -458,6 +460,7 @@ func (o *ServiceVersionDetail) HasUpdatedAt() bool {
 func (o *ServiceVersionDetail) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *ServiceVersionDetail) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -1071,7 +1074,7 @@ func (o ServiceVersionDetail) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *ServiceVersionDetail) UnmarshalJSON(bytes []byte) (err error) {
 	varServiceVersionDetail := _ServiceVersionDetail{}
 
@@ -1114,7 +1117,7 @@ func (o *ServiceVersionDetail) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableServiceVersionDetail is a helper abstraction for handling nullable serviceversiondetail types. 
+// NullableServiceVersionDetail is a helper abstraction for handling nullable serviceversiondetail types.
 type NullableServiceVersionDetail struct {
 	value *ServiceVersionDetail
 	isSet bool
@@ -1154,7 +1157,7 @@ func (v NullableServiceVersionDetail) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableServiceVersionDetail) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

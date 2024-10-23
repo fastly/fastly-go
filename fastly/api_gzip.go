@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type GzipAPI interface {
 
 	/*
-	CreateGzipConfig Create a gzip configuration
+		CreateGzipConfig Create a gzip configuration
 
-	Create a named gzip configuration on a particular service and version.
+		Create a named gzip configuration on a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateGzipConfigRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateGzipConfigRequest
 	*/
 	CreateGzipConfig(ctx context.Context, serviceID string, versionID int32) APICreateGzipConfigRequest
 
@@ -48,15 +47,15 @@ type GzipAPI interface {
 	CreateGzipConfigExecute(r APICreateGzipConfigRequest) (*GzipResponse, *http.Response, error)
 
 	/*
-	DeleteGzipConfig Delete a gzip configuration
+		DeleteGzipConfig Delete a gzip configuration
 
-	Delete a named gzip configuration on a particular service and version.
+		Delete a named gzip configuration on a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param gzipName Name of the gzip configuration.
-	 @return APIDeleteGzipConfigRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param gzipName Name of the gzip configuration.
+		 @return APIDeleteGzipConfigRequest
 	*/
 	DeleteGzipConfig(ctx context.Context, serviceID string, versionID int32, gzipName string) APIDeleteGzipConfigRequest
 
@@ -65,15 +64,15 @@ type GzipAPI interface {
 	DeleteGzipConfigExecute(r APIDeleteGzipConfigRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetGzipConfigs Get a gzip configuration
+		GetGzipConfigs Get a gzip configuration
 
-	Get the gzip configuration for a particular service, version, and name.
+		Get the gzip configuration for a particular service, version, and name.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param gzipName Name of the gzip configuration.
-	 @return APIGetGzipConfigsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param gzipName Name of the gzip configuration.
+		 @return APIGetGzipConfigsRequest
 	*/
 	GetGzipConfigs(ctx context.Context, serviceID string, versionID int32, gzipName string) APIGetGzipConfigsRequest
 
@@ -82,14 +81,14 @@ type GzipAPI interface {
 	GetGzipConfigsExecute(r APIGetGzipConfigsRequest) (*GzipResponse, *http.Response, error)
 
 	/*
-	ListGzipConfigs List gzip configurations
+		ListGzipConfigs List gzip configurations
 
-	List all gzip configurations for a particular service and version.
+		List all gzip configurations for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListGzipConfigsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListGzipConfigsRequest
 	*/
 	ListGzipConfigs(ctx context.Context, serviceID string, versionID int32) APIListGzipConfigsRequest
 
@@ -98,15 +97,15 @@ type GzipAPI interface {
 	ListGzipConfigsExecute(r APIListGzipConfigsRequest) ([]GzipResponse, *http.Response, error)
 
 	/*
-	UpdateGzipConfig Update a gzip configuration
+		UpdateGzipConfig Update a gzip configuration
 
-	Update a named gzip configuration on a particular service and version.
+		Update a named gzip configuration on a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param gzipName Name of the gzip configuration.
-	 @return APIUpdateGzipConfigRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param gzipName Name of the gzip configuration.
+		 @return APIUpdateGzipConfigRequest
 	*/
 	UpdateGzipConfig(ctx context.Context, serviceID string, versionID int32, gzipName string) APIUpdateGzipConfigRequest
 
@@ -120,14 +119,14 @@ type GzipAPIService service
 
 // APICreateGzipConfigRequest represents a request for the resource.
 type APICreateGzipConfigRequest struct {
-	ctx context.Context
-	APIService GzipAPI
-	serviceID string
-	versionID int32
+	ctx            context.Context
+	APIService     GzipAPI
+	serviceID      string
+	versionID      int32
 	cacheCondition *string
-	contentTypes *string
-	extensions *string
-	name *string
+	contentTypes   *string
+	extensions     *string
+	name           *string
 }
 
 // CacheCondition Name of the cache condition controlling when this configuration applies.
@@ -135,16 +134,19 @@ func (r *APICreateGzipConfigRequest) CacheCondition(cacheCondition string) *APIC
 	r.cacheCondition = &cacheCondition
 	return r
 }
+
 // ContentTypes Space-separated list of content types to compress. If you omit this field a default list will be used.
 func (r *APICreateGzipConfigRequest) ContentTypes(contentTypes string) *APICreateGzipConfigRequest {
 	r.contentTypes = &contentTypes
 	return r
 }
+
 // Extensions Space-separated list of file extensions to compress. If you omit this field a default list will be used.
 func (r *APICreateGzipConfigRequest) Extensions(extensions string) *APICreateGzipConfigRequest {
 	r.extensions = &extensions
 	return r
 }
+
 // Name Name of the gzip configuration.
 func (r *APICreateGzipConfigRequest) Name(name string) *APICreateGzipConfigRequest {
 	r.name = &name
@@ -169,9 +171,9 @@ Create a named gzip configuration on a particular service and version.
 func (a *GzipAPIService) CreateGzipConfig(ctx context.Context, serviceID string, versionID int32) APICreateGzipConfigRequest {
 	return APICreateGzipConfigRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -179,10 +181,10 @@ func (a *GzipAPIService) CreateGzipConfig(ctx context.Context, serviceID string,
 //  @return GzipResponse
 func (a *GzipAPIService) CreateGzipConfigExecute(r APICreateGzipConfigRequest) (*GzipResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *GzipResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *GzipResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GzipAPIService.CreateGzipConfig")
@@ -275,7 +277,6 @@ func (a *GzipAPIService) CreateGzipConfigExecute(r APICreateGzipConfigRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -294,13 +295,12 @@ func (a *GzipAPIService) CreateGzipConfigExecute(r APICreateGzipConfigRequest) (
 
 // APIDeleteGzipConfigRequest represents a request for the resource.
 type APIDeleteGzipConfigRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService GzipAPI
-	serviceID string
-	versionID int32
-	gzipName string
+	serviceID  string
+	versionID  int32
+	gzipName   string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteGzipConfigRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -321,10 +321,10 @@ Delete a named gzip configuration on a particular service and version.
 func (a *GzipAPIService) DeleteGzipConfig(ctx context.Context, serviceID string, versionID int32, gzipName string) APIDeleteGzipConfigRequest {
 	return APIDeleteGzipConfigRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
-		gzipName: gzipName,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		gzipName:   gzipName,
 	}
 }
 
@@ -332,10 +332,10 @@ func (a *GzipAPIService) DeleteGzipConfig(ctx context.Context, serviceID string,
 //  @return InlineResponse200
 func (a *GzipAPIService) DeleteGzipConfigExecute(r APIDeleteGzipConfigRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GzipAPIService.DeleteGzipConfig")
@@ -417,7 +417,6 @@ func (a *GzipAPIService) DeleteGzipConfigExecute(r APIDeleteGzipConfigRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -436,13 +435,12 @@ func (a *GzipAPIService) DeleteGzipConfigExecute(r APIDeleteGzipConfigRequest) (
 
 // APIGetGzipConfigsRequest represents a request for the resource.
 type APIGetGzipConfigsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService GzipAPI
-	serviceID string
-	versionID int32
-	gzipName string
+	serviceID  string
+	versionID  int32
+	gzipName   string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetGzipConfigsRequest) Execute() (*GzipResponse, *http.Response, error) {
@@ -463,10 +461,10 @@ Get the gzip configuration for a particular service, version, and name.
 func (a *GzipAPIService) GetGzipConfigs(ctx context.Context, serviceID string, versionID int32, gzipName string) APIGetGzipConfigsRequest {
 	return APIGetGzipConfigsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
-		gzipName: gzipName,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		gzipName:   gzipName,
 	}
 }
 
@@ -474,10 +472,10 @@ func (a *GzipAPIService) GetGzipConfigs(ctx context.Context, serviceID string, v
 //  @return GzipResponse
 func (a *GzipAPIService) GetGzipConfigsExecute(r APIGetGzipConfigsRequest) (*GzipResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *GzipResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *GzipResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GzipAPIService.GetGzipConfigs")
@@ -559,7 +557,6 @@ func (a *GzipAPIService) GetGzipConfigsExecute(r APIGetGzipConfigsRequest) (*Gzi
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -578,12 +575,11 @@ func (a *GzipAPIService) GetGzipConfigsExecute(r APIGetGzipConfigsRequest) (*Gzi
 
 // APIListGzipConfigsRequest represents a request for the resource.
 type APIListGzipConfigsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService GzipAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListGzipConfigsRequest) Execute() ([]GzipResponse, *http.Response, error) {
@@ -603,9 +599,9 @@ List all gzip configurations for a particular service and version.
 func (a *GzipAPIService) ListGzipConfigs(ctx context.Context, serviceID string, versionID int32) APIListGzipConfigsRequest {
 	return APIListGzipConfigsRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -613,10 +609,10 @@ func (a *GzipAPIService) ListGzipConfigs(ctx context.Context, serviceID string, 
 //  @return []GzipResponse
 func (a *GzipAPIService) ListGzipConfigsExecute(r APIListGzipConfigsRequest) ([]GzipResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []GzipResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []GzipResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GzipAPIService.ListGzipConfigs")
@@ -697,7 +693,6 @@ func (a *GzipAPIService) ListGzipConfigsExecute(r APIListGzipConfigsRequest) ([]
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -716,15 +711,15 @@ func (a *GzipAPIService) ListGzipConfigsExecute(r APIListGzipConfigsRequest) ([]
 
 // APIUpdateGzipConfigRequest represents a request for the resource.
 type APIUpdateGzipConfigRequest struct {
-	ctx context.Context
-	APIService GzipAPI
-	serviceID string
-	versionID int32
-	gzipName string
+	ctx            context.Context
+	APIService     GzipAPI
+	serviceID      string
+	versionID      int32
+	gzipName       string
 	cacheCondition *string
-	contentTypes *string
-	extensions *string
-	name *string
+	contentTypes   *string
+	extensions     *string
+	name           *string
 }
 
 // CacheCondition Name of the cache condition controlling when this configuration applies.
@@ -732,16 +727,19 @@ func (r *APIUpdateGzipConfigRequest) CacheCondition(cacheCondition string) *APIU
 	r.cacheCondition = &cacheCondition
 	return r
 }
+
 // ContentTypes Space-separated list of content types to compress. If you omit this field a default list will be used.
 func (r *APIUpdateGzipConfigRequest) ContentTypes(contentTypes string) *APIUpdateGzipConfigRequest {
 	r.contentTypes = &contentTypes
 	return r
 }
+
 // Extensions Space-separated list of file extensions to compress. If you omit this field a default list will be used.
 func (r *APIUpdateGzipConfigRequest) Extensions(extensions string) *APIUpdateGzipConfigRequest {
 	r.extensions = &extensions
 	return r
 }
+
 // Name Name of the gzip configuration.
 func (r *APIUpdateGzipConfigRequest) Name(name string) *APIUpdateGzipConfigRequest {
 	r.name = &name
@@ -767,10 +765,10 @@ Update a named gzip configuration on a particular service and version.
 func (a *GzipAPIService) UpdateGzipConfig(ctx context.Context, serviceID string, versionID int32, gzipName string) APIUpdateGzipConfigRequest {
 	return APIUpdateGzipConfigRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
-		gzipName: gzipName,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		gzipName:   gzipName,
 	}
 }
 
@@ -778,10 +776,10 @@ func (a *GzipAPIService) UpdateGzipConfig(ctx context.Context, serviceID string,
 //  @return GzipResponse
 func (a *GzipAPIService) UpdateGzipConfigExecute(r APIUpdateGzipConfigRequest) (*GzipResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *GzipResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *GzipResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GzipAPIService.UpdateGzipConfig")
@@ -874,7 +872,6 @@ func (a *GzipAPIService) UpdateGzipConfigExecute(r APIUpdateGzipConfigRequest) (
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

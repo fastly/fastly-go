@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -25,8 +24,8 @@ type LoggingSyslogAdditional struct {
 	// The IPv4 address used for the syslog endpoint.
 	Ipv4 NullableString `json:"ipv4,omitempty"`
 	// Whether to prepend each message with a specific token.
-	Token NullableString `json:"token,omitempty"`
-	UseTLS *LoggingUseTLSString `json:"use_tls,omitempty"`
+	Token                NullableString       `json:"token,omitempty"`
+	UseTLS               *LoggingUseTLSString `json:"use_tls,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -138,7 +137,7 @@ func (o *LoggingSyslogAdditional) GetIpv4() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSyslogAdditional) GetIpv4Ok() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Ipv4.Get(), o.Ipv4.IsSet()
@@ -157,6 +156,7 @@ func (o *LoggingSyslogAdditional) HasIpv4() bool {
 func (o *LoggingSyslogAdditional) SetIpv4(v string) {
 	o.Ipv4.Set(&v)
 }
+
 // SetIpv4Nil sets the value for Ipv4 to be an explicit nil
 func (o *LoggingSyslogAdditional) SetIpv4Nil() {
 	o.Ipv4.Set(nil)
@@ -180,7 +180,7 @@ func (o *LoggingSyslogAdditional) GetToken() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingSyslogAdditional) GetTokenOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Token.Get(), o.Token.IsSet()
@@ -199,6 +199,7 @@ func (o *LoggingSyslogAdditional) HasToken() bool {
 func (o *LoggingSyslogAdditional) SetToken(v string) {
 	o.Token.Set(&v)
 }
+
 // SetTokenNil sets the value for Token to be an explicit nil
 func (o *LoggingSyslogAdditional) SetTokenNil() {
 	o.Token.Set(nil)
@@ -269,7 +270,7 @@ func (o LoggingSyslogAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingSyslogAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingSyslogAdditional := _LoggingSyslogAdditional{}
 
@@ -291,7 +292,7 @@ func (o *LoggingSyslogAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingSyslogAdditional is a helper abstraction for handling nullable loggingsyslogadditional types. 
+// NullableLoggingSyslogAdditional is a helper abstraction for handling nullable loggingsyslogadditional types.
 type NullableLoggingSyslogAdditional struct {
 	value *LoggingSyslogAdditional
 	isSet bool
@@ -331,7 +332,7 @@ func (v NullableLoggingSyslogAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingSyslogAdditional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

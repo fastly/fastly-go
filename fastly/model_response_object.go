@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -32,7 +31,7 @@ type ResponseObject struct {
 	// The HTTP response.
 	Response *string `json:"response,omitempty"`
 	// Condition which, if met, will select this configuration during a request. Optional.
-	RequestCondition NullableString `json:"request_condition,omitempty"`
+	RequestCondition     NullableString `json:"request_condition,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -76,7 +75,7 @@ func (o *ResponseObject) GetCacheCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ResponseObject) GetCacheConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CacheCondition.Get(), o.CacheCondition.IsSet()
@@ -95,6 +94,7 @@ func (o *ResponseObject) HasCacheCondition() bool {
 func (o *ResponseObject) SetCacheCondition(v string) {
 	o.CacheCondition.Set(&v)
 }
+
 // SetCacheConditionNil sets the value for CacheCondition to be an explicit nil
 func (o *ResponseObject) SetCacheConditionNil() {
 	o.CacheCondition.Set(nil)
@@ -150,7 +150,7 @@ func (o *ResponseObject) GetContentType() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ResponseObject) GetContentTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ContentType.Get(), o.ContentType.IsSet()
@@ -169,6 +169,7 @@ func (o *ResponseObject) HasContentType() bool {
 func (o *ResponseObject) SetContentType(v string) {
 	o.ContentType.Set(&v)
 }
+
 // SetContentTypeNil sets the value for ContentType to be an explicit nil
 func (o *ResponseObject) SetContentTypeNil() {
 	o.ContentType.Set(nil)
@@ -288,7 +289,7 @@ func (o *ResponseObject) GetRequestCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ResponseObject) GetRequestConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RequestCondition.Get(), o.RequestCondition.IsSet()
@@ -307,6 +308,7 @@ func (o *ResponseObject) HasRequestCondition() bool {
 func (o *ResponseObject) SetRequestCondition(v string) {
 	o.RequestCondition.Set(&v)
 }
+
 // SetRequestConditionNil sets the value for RequestCondition to be an explicit nil
 func (o *ResponseObject) SetRequestConditionNil() {
 	o.RequestCondition.Set(nil)
@@ -351,7 +353,7 @@ func (o ResponseObject) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *ResponseObject) UnmarshalJSON(bytes []byte) (err error) {
 	varResponseObject := _ResponseObject{}
 
@@ -375,7 +377,7 @@ func (o *ResponseObject) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableResponseObject is a helper abstraction for handling nullable responseobject types. 
+// NullableResponseObject is a helper abstraction for handling nullable responseobject types.
 type NullableResponseObject struct {
 	value *ResponseObject
 	isSet bool
@@ -415,7 +417,7 @@ func (v NullableResponseObject) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableResponseObject) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

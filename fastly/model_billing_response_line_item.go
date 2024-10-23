@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -25,25 +24,25 @@ type BillingResponseLineItem struct {
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	Amount NullableFloat32 `json:"amount,omitempty"`
+	UpdatedAt NullableTime    `json:"updated_at,omitempty"`
+	Amount    NullableFloat32 `json:"amount,omitempty"`
 	// An alphanumeric string identifying the invoice.
-	AriaInvoiceID NullableString `json:"aria_invoice_id,omitempty"`
-	ClientServiceID NullableString `json:"client_service_id,omitempty"`
-	CreditCouponCode NullableString `json:"credit_coupon_code,omitempty"`
-	Description NullableString `json:"description,omitempty"`
-	ID *string `json:"id,omitempty"`
-	LineNumber NullableInt32 `json:"line_number,omitempty"`
-	PlanName NullableString `json:"plan_name,omitempty"`
-	PlanNo NullableFloat32 `json:"plan_no,omitempty"`
-	RatePerUnit NullableFloat32 `json:"rate_per_unit,omitempty"`
-	RateScheduleNo NullableFloat32 `json:"rate_schedule_no,omitempty"`
-	RateScheduleTierNo NullableFloat32 `json:"rate_schedule_tier_no,omitempty"`
-	ServiceName NullableString `json:"service_name,omitempty"`
-	ServiceNo NullableFloat32 `json:"service_no,omitempty"`
-	Units NullableFloat32 `json:"units,omitempty"`
-	UsageTypeCd NullableString `json:"usage_type_cd,omitempty"`
-	UsageTypeNo NullableFloat32 `json:"usage_type_no,omitempty"`
+	AriaInvoiceID        NullableString  `json:"aria_invoice_id,omitempty"`
+	ClientServiceID      NullableString  `json:"client_service_id,omitempty"`
+	CreditCouponCode     NullableString  `json:"credit_coupon_code,omitempty"`
+	Description          NullableString  `json:"description,omitempty"`
+	ID                   *string         `json:"id,omitempty"`
+	LineNumber           NullableInt32   `json:"line_number,omitempty"`
+	PlanName             NullableString  `json:"plan_name,omitempty"`
+	PlanNo               NullableFloat32 `json:"plan_no,omitempty"`
+	RatePerUnit          NullableFloat32 `json:"rate_per_unit,omitempty"`
+	RateScheduleNo       NullableFloat32 `json:"rate_schedule_no,omitempty"`
+	RateScheduleTierNo   NullableFloat32 `json:"rate_schedule_tier_no,omitempty"`
+	ServiceName          NullableString  `json:"service_name,omitempty"`
+	ServiceNo            NullableFloat32 `json:"service_no,omitempty"`
+	Units                NullableFloat32 `json:"units,omitempty"`
+	UsageTypeCd          NullableString  `json:"usage_type_cd,omitempty"`
+	UsageTypeNo          NullableFloat32 `json:"usage_type_no,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -79,7 +78,7 @@ func (o *BillingResponseLineItem) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -98,6 +97,7 @@ func (o *BillingResponseLineItem) HasCreatedAt() bool {
 func (o *BillingResponseLineItem) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *BillingResponseLineItem) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -121,7 +121,7 @@ func (o *BillingResponseLineItem) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -140,6 +140,7 @@ func (o *BillingResponseLineItem) HasDeletedAt() bool {
 func (o *BillingResponseLineItem) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *BillingResponseLineItem) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -163,7 +164,7 @@ func (o *BillingResponseLineItem) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -182,6 +183,7 @@ func (o *BillingResponseLineItem) HasUpdatedAt() bool {
 func (o *BillingResponseLineItem) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *BillingResponseLineItem) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -205,7 +207,7 @@ func (o *BillingResponseLineItem) GetAmount() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetAmountOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Amount.Get(), o.Amount.IsSet()
@@ -224,6 +226,7 @@ func (o *BillingResponseLineItem) HasAmount() bool {
 func (o *BillingResponseLineItem) SetAmount(v float32) {
 	o.Amount.Set(&v)
 }
+
 // SetAmountNil sets the value for Amount to be an explicit nil
 func (o *BillingResponseLineItem) SetAmountNil() {
 	o.Amount.Set(nil)
@@ -247,7 +250,7 @@ func (o *BillingResponseLineItem) GetAriaInvoiceID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetAriaInvoiceIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.AriaInvoiceID.Get(), o.AriaInvoiceID.IsSet()
@@ -266,6 +269,7 @@ func (o *BillingResponseLineItem) HasAriaInvoiceID() bool {
 func (o *BillingResponseLineItem) SetAriaInvoiceID(v string) {
 	o.AriaInvoiceID.Set(&v)
 }
+
 // SetAriaInvoiceIDNil sets the value for AriaInvoiceID to be an explicit nil
 func (o *BillingResponseLineItem) SetAriaInvoiceIDNil() {
 	o.AriaInvoiceID.Set(nil)
@@ -289,7 +293,7 @@ func (o *BillingResponseLineItem) GetClientServiceID() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetClientServiceIDOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ClientServiceID.Get(), o.ClientServiceID.IsSet()
@@ -308,6 +312,7 @@ func (o *BillingResponseLineItem) HasClientServiceID() bool {
 func (o *BillingResponseLineItem) SetClientServiceID(v string) {
 	o.ClientServiceID.Set(&v)
 }
+
 // SetClientServiceIDNil sets the value for ClientServiceID to be an explicit nil
 func (o *BillingResponseLineItem) SetClientServiceIDNil() {
 	o.ClientServiceID.Set(nil)
@@ -331,7 +336,7 @@ func (o *BillingResponseLineItem) GetCreditCouponCode() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetCreditCouponCodeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreditCouponCode.Get(), o.CreditCouponCode.IsSet()
@@ -350,6 +355,7 @@ func (o *BillingResponseLineItem) HasCreditCouponCode() bool {
 func (o *BillingResponseLineItem) SetCreditCouponCode(v string) {
 	o.CreditCouponCode.Set(&v)
 }
+
 // SetCreditCouponCodeNil sets the value for CreditCouponCode to be an explicit nil
 func (o *BillingResponseLineItem) SetCreditCouponCodeNil() {
 	o.CreditCouponCode.Set(nil)
@@ -373,7 +379,7 @@ func (o *BillingResponseLineItem) GetDescription() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetDescriptionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Description.Get(), o.Description.IsSet()
@@ -392,6 +398,7 @@ func (o *BillingResponseLineItem) HasDescription() bool {
 func (o *BillingResponseLineItem) SetDescription(v string) {
 	o.Description.Set(&v)
 }
+
 // SetDescriptionNil sets the value for Description to be an explicit nil
 func (o *BillingResponseLineItem) SetDescriptionNil() {
 	o.Description.Set(nil)
@@ -447,7 +454,7 @@ func (o *BillingResponseLineItem) GetLineNumber() int32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetLineNumberOk() (*int32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.LineNumber.Get(), o.LineNumber.IsSet()
@@ -466,6 +473,7 @@ func (o *BillingResponseLineItem) HasLineNumber() bool {
 func (o *BillingResponseLineItem) SetLineNumber(v int32) {
 	o.LineNumber.Set(&v)
 }
+
 // SetLineNumberNil sets the value for LineNumber to be an explicit nil
 func (o *BillingResponseLineItem) SetLineNumberNil() {
 	o.LineNumber.Set(nil)
@@ -489,7 +497,7 @@ func (o *BillingResponseLineItem) GetPlanName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetPlanNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PlanName.Get(), o.PlanName.IsSet()
@@ -508,6 +516,7 @@ func (o *BillingResponseLineItem) HasPlanName() bool {
 func (o *BillingResponseLineItem) SetPlanName(v string) {
 	o.PlanName.Set(&v)
 }
+
 // SetPlanNameNil sets the value for PlanName to be an explicit nil
 func (o *BillingResponseLineItem) SetPlanNameNil() {
 	o.PlanName.Set(nil)
@@ -531,7 +540,7 @@ func (o *BillingResponseLineItem) GetPlanNo() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetPlanNoOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PlanNo.Get(), o.PlanNo.IsSet()
@@ -550,6 +559,7 @@ func (o *BillingResponseLineItem) HasPlanNo() bool {
 func (o *BillingResponseLineItem) SetPlanNo(v float32) {
 	o.PlanNo.Set(&v)
 }
+
 // SetPlanNoNil sets the value for PlanNo to be an explicit nil
 func (o *BillingResponseLineItem) SetPlanNoNil() {
 	o.PlanNo.Set(nil)
@@ -573,7 +583,7 @@ func (o *BillingResponseLineItem) GetRatePerUnit() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetRatePerUnitOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RatePerUnit.Get(), o.RatePerUnit.IsSet()
@@ -592,6 +602,7 @@ func (o *BillingResponseLineItem) HasRatePerUnit() bool {
 func (o *BillingResponseLineItem) SetRatePerUnit(v float32) {
 	o.RatePerUnit.Set(&v)
 }
+
 // SetRatePerUnitNil sets the value for RatePerUnit to be an explicit nil
 func (o *BillingResponseLineItem) SetRatePerUnitNil() {
 	o.RatePerUnit.Set(nil)
@@ -615,7 +626,7 @@ func (o *BillingResponseLineItem) GetRateScheduleNo() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetRateScheduleNoOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RateScheduleNo.Get(), o.RateScheduleNo.IsSet()
@@ -634,6 +645,7 @@ func (o *BillingResponseLineItem) HasRateScheduleNo() bool {
 func (o *BillingResponseLineItem) SetRateScheduleNo(v float32) {
 	o.RateScheduleNo.Set(&v)
 }
+
 // SetRateScheduleNoNil sets the value for RateScheduleNo to be an explicit nil
 func (o *BillingResponseLineItem) SetRateScheduleNoNil() {
 	o.RateScheduleNo.Set(nil)
@@ -657,7 +669,7 @@ func (o *BillingResponseLineItem) GetRateScheduleTierNo() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetRateScheduleTierNoOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.RateScheduleTierNo.Get(), o.RateScheduleTierNo.IsSet()
@@ -676,6 +688,7 @@ func (o *BillingResponseLineItem) HasRateScheduleTierNo() bool {
 func (o *BillingResponseLineItem) SetRateScheduleTierNo(v float32) {
 	o.RateScheduleTierNo.Set(&v)
 }
+
 // SetRateScheduleTierNoNil sets the value for RateScheduleTierNo to be an explicit nil
 func (o *BillingResponseLineItem) SetRateScheduleTierNoNil() {
 	o.RateScheduleTierNo.Set(nil)
@@ -699,7 +712,7 @@ func (o *BillingResponseLineItem) GetServiceName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetServiceNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ServiceName.Get(), o.ServiceName.IsSet()
@@ -718,6 +731,7 @@ func (o *BillingResponseLineItem) HasServiceName() bool {
 func (o *BillingResponseLineItem) SetServiceName(v string) {
 	o.ServiceName.Set(&v)
 }
+
 // SetServiceNameNil sets the value for ServiceName to be an explicit nil
 func (o *BillingResponseLineItem) SetServiceNameNil() {
 	o.ServiceName.Set(nil)
@@ -741,7 +755,7 @@ func (o *BillingResponseLineItem) GetServiceNo() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetServiceNoOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ServiceNo.Get(), o.ServiceNo.IsSet()
@@ -760,6 +774,7 @@ func (o *BillingResponseLineItem) HasServiceNo() bool {
 func (o *BillingResponseLineItem) SetServiceNo(v float32) {
 	o.ServiceNo.Set(&v)
 }
+
 // SetServiceNoNil sets the value for ServiceNo to be an explicit nil
 func (o *BillingResponseLineItem) SetServiceNoNil() {
 	o.ServiceNo.Set(nil)
@@ -783,7 +798,7 @@ func (o *BillingResponseLineItem) GetUnits() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetUnitsOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Units.Get(), o.Units.IsSet()
@@ -802,6 +817,7 @@ func (o *BillingResponseLineItem) HasUnits() bool {
 func (o *BillingResponseLineItem) SetUnits(v float32) {
 	o.Units.Set(&v)
 }
+
 // SetUnitsNil sets the value for Units to be an explicit nil
 func (o *BillingResponseLineItem) SetUnitsNil() {
 	o.Units.Set(nil)
@@ -825,7 +841,7 @@ func (o *BillingResponseLineItem) GetUsageTypeCd() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetUsageTypeCdOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UsageTypeCd.Get(), o.UsageTypeCd.IsSet()
@@ -844,6 +860,7 @@ func (o *BillingResponseLineItem) HasUsageTypeCd() bool {
 func (o *BillingResponseLineItem) SetUsageTypeCd(v string) {
 	o.UsageTypeCd.Set(&v)
 }
+
 // SetUsageTypeCdNil sets the value for UsageTypeCd to be an explicit nil
 func (o *BillingResponseLineItem) SetUsageTypeCdNil() {
 	o.UsageTypeCd.Set(nil)
@@ -867,7 +884,7 @@ func (o *BillingResponseLineItem) GetUsageTypeNo() float32 {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingResponseLineItem) GetUsageTypeNoOk() (*float32, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UsageTypeNo.Get(), o.UsageTypeNo.IsSet()
@@ -886,6 +903,7 @@ func (o *BillingResponseLineItem) HasUsageTypeNo() bool {
 func (o *BillingResponseLineItem) SetUsageTypeNo(v float32) {
 	o.UsageTypeNo.Set(&v)
 }
+
 // SetUsageTypeNoNil sets the value for UsageTypeNo to be an explicit nil
 func (o *BillingResponseLineItem) SetUsageTypeNoNil() {
 	o.UsageTypeNo.Set(nil)
@@ -969,7 +987,7 @@ func (o BillingResponseLineItem) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *BillingResponseLineItem) UnmarshalJSON(bytes []byte) (err error) {
 	varBillingResponseLineItem := _BillingResponseLineItem{}
 
@@ -1006,7 +1024,7 @@ func (o *BillingResponseLineItem) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableBillingResponseLineItem is a helper abstraction for handling nullable billingresponselineitem types. 
+// NullableBillingResponseLineItem is a helper abstraction for handling nullable billingresponselineitem types.
 type NullableBillingResponseLineItem struct {
 	value *BillingResponseLineItem
 	isSet bool
@@ -1046,7 +1064,7 @@ func (v NullableBillingResponseLineItem) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableBillingResponseLineItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

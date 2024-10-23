@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -21,7 +20,7 @@ import (
 type RelationshipMemberServiceInvitation struct {
 	Type *TypeServiceInvitation `json:"type,omitempty"`
 	// Alphanumeric string identifying a service invitation.
-	ID *string `json:"id,omitempty"`
+	ID                   *string `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -131,7 +130,7 @@ func (o RelationshipMemberServiceInvitation) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *RelationshipMemberServiceInvitation) UnmarshalJSON(bytes []byte) (err error) {
 	varRelationshipMemberServiceInvitation := _RelationshipMemberServiceInvitation{}
 
@@ -150,7 +149,7 @@ func (o *RelationshipMemberServiceInvitation) UnmarshalJSON(bytes []byte) (err e
 	return err
 }
 
-// NullableRelationshipMemberServiceInvitation is a helper abstraction for handling nullable relationshipmemberserviceinvitation types. 
+// NullableRelationshipMemberServiceInvitation is a helper abstraction for handling nullable relationshipmemberserviceinvitation types.
 type NullableRelationshipMemberServiceInvitation struct {
 	value *RelationshipMemberServiceInvitation
 	isSet bool
@@ -190,7 +189,7 @@ func (v NullableRelationshipMemberServiceInvitation) MarshalJSON() ([]byte, erro
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableRelationshipMemberServiceInvitation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

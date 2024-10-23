@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -36,7 +35,7 @@ type WafFirewallResponseDataAttributesAllOf struct {
 	ActiveRulesTrustwaveBlockCount *int32 `json:"active_rules_trustwave_block_count,omitempty"`
 	// The number of active Trustwave rules set to log on the active or latest firewall version.
 	ActiveRulesTrustwaveLogCount *int32 `json:"active_rules_trustwave_log_count,omitempty"`
-	AdditionalProperties map[string]any
+	AdditionalProperties         map[string]any
 }
 
 type _WafFirewallResponseDataAttributesAllOf WafFirewallResponseDataAttributesAllOf
@@ -386,7 +385,7 @@ func (o WafFirewallResponseDataAttributesAllOf) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *WafFirewallResponseDataAttributesAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	varWafFirewallResponseDataAttributesAllOf := _WafFirewallResponseDataAttributesAllOf{}
 
@@ -412,7 +411,7 @@ func (o *WafFirewallResponseDataAttributesAllOf) UnmarshalJSON(bytes []byte) (er
 	return err
 }
 
-// NullableWafFirewallResponseDataAttributesAllOf is a helper abstraction for handling nullable waffirewallresponsedataattributesallof types. 
+// NullableWafFirewallResponseDataAttributesAllOf is a helper abstraction for handling nullable waffirewallresponsedataattributesallof types.
 type NullableWafFirewallResponseDataAttributesAllOf struct {
 	value *WafFirewallResponseDataAttributesAllOf
 	isSet bool
@@ -452,7 +451,7 @@ func (v NullableWafFirewallResponseDataAttributesAllOf) MarshalJSON() ([]byte, e
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableWafFirewallResponseDataAttributesAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

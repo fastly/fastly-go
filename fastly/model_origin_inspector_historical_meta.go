@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -34,8 +33,8 @@ type OriginInspectorHistoricalMeta struct {
 	// A comma-separated list of keys the results are sorted by.
 	Sort *string `json:"sort,omitempty"`
 	// A comma-separated list of dimensions being summed over in the query.
-	GroupBy *string `json:"group_by,omitempty"`
-	Filters *OriginInspectorHistoricalMetaFilters `json:"filters,omitempty"`
+	GroupBy              *string                               `json:"group_by,omitempty"`
+	Filters              *OriginInspectorHistoricalMetaFilters `json:"filters,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -386,7 +385,7 @@ func (o OriginInspectorHistoricalMeta) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *OriginInspectorHistoricalMeta) UnmarshalJSON(bytes []byte) (err error) {
 	varOriginInspectorHistoricalMeta := _OriginInspectorHistoricalMeta{}
 
@@ -412,7 +411,7 @@ func (o *OriginInspectorHistoricalMeta) UnmarshalJSON(bytes []byte) (err error) 
 	return err
 }
 
-// NullableOriginInspectorHistoricalMeta is a helper abstraction for handling nullable origininspectorhistoricalmeta types. 
+// NullableOriginInspectorHistoricalMeta is a helper abstraction for handling nullable origininspectorhistoricalmeta types.
 type NullableOriginInspectorHistoricalMeta struct {
 	value *OriginInspectorHistoricalMeta
 	isSet bool
@@ -452,7 +451,7 @@ func (v NullableOriginInspectorHistoricalMeta) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableOriginInspectorHistoricalMeta) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

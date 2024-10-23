@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,16 +31,16 @@ var (
 type LoggingLogentriesAPI interface {
 
 	/*
-	CreateLogLogentries Create a Logentries log endpoint
+		CreateLogLogentries Create a Logentries log endpoint
 
-	Create a Logentry for a particular service and version.
+		Create a Logentry for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogLogentriesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogLogentriesRequest
 
-	Deprecated
+		Deprecated
 	*/
 	CreateLogLogentries(ctx context.Context, serviceID string, versionID int32) APICreateLogLogentriesRequest
 
@@ -51,17 +50,17 @@ type LoggingLogentriesAPI interface {
 	CreateLogLogentriesExecute(r APICreateLogLogentriesRequest) (*LoggingLogentriesResponse, *http.Response, error)
 
 	/*
-	DeleteLogLogentries Delete a Logentries log endpoint
+		DeleteLogLogentries Delete a Logentries log endpoint
 
-	Delete the Logentry for a particular service and version.
+		Delete the Logentry for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingLogentriesName The name for the real-time logging configuration.
-	 @return APIDeleteLogLogentriesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingLogentriesName The name for the real-time logging configuration.
+		 @return APIDeleteLogLogentriesRequest
 
-	Deprecated
+		Deprecated
 	*/
 	DeleteLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIDeleteLogLogentriesRequest
 
@@ -71,17 +70,17 @@ type LoggingLogentriesAPI interface {
 	DeleteLogLogentriesExecute(r APIDeleteLogLogentriesRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogLogentries Get a Logentries log endpoint
+		GetLogLogentries Get a Logentries log endpoint
 
-	Get the Logentry for a particular service and version.
+		Get the Logentry for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingLogentriesName The name for the real-time logging configuration.
-	 @return APIGetLogLogentriesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingLogentriesName The name for the real-time logging configuration.
+		 @return APIGetLogLogentriesRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIGetLogLogentriesRequest
 
@@ -91,16 +90,16 @@ type LoggingLogentriesAPI interface {
 	GetLogLogentriesExecute(r APIGetLogLogentriesRequest) (*LoggingLogentriesResponse, *http.Response, error)
 
 	/*
-	ListLogLogentries List Logentries log endpoints
+		ListLogLogentries List Logentries log endpoints
 
-	List all of the Logentries for a particular service and version.
+		List all of the Logentries for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogLogentriesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogLogentriesRequest
 
-	Deprecated
+		Deprecated
 	*/
 	ListLogLogentries(ctx context.Context, serviceID string, versionID int32) APIListLogLogentriesRequest
 
@@ -110,17 +109,17 @@ type LoggingLogentriesAPI interface {
 	ListLogLogentriesExecute(r APIListLogLogentriesRequest) ([]LoggingLogentriesResponse, *http.Response, error)
 
 	/*
-	UpdateLogLogentries Update a Logentries log endpoint
+		UpdateLogLogentries Update a Logentries log endpoint
 
-	Update the Logentry for a particular service and version.
+		Update the Logentry for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingLogentriesName The name for the real-time logging configuration.
-	 @return APIUpdateLogLogentriesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingLogentriesName The name for the real-time logging configuration.
+		 @return APIUpdateLogLogentriesRequest
 
-	Deprecated
+		Deprecated
 	*/
 	UpdateLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIUpdateLogLogentriesRequest
 
@@ -135,19 +134,19 @@ type LoggingLogentriesAPIService service
 
 // APICreateLogLogentriesRequest represents a request for the resource.
 type APICreateLogLogentriesRequest struct {
-	ctx context.Context
-	APIService LoggingLogentriesAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingLogentriesAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	port *int32
-	token *string
-	useTLS *LoggingUseTLSString
-	region *string
+	format            *string
+	formatVersion     *int32
+	port              *int32
+	token             *string
+	useTLS            *LoggingUseTLSString
+	region            *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -155,41 +154,49 @@ func (r *APICreateLogLogentriesRequest) Name(name string) *APICreateLogLogentrie
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogLogentriesRequest) Placement(placement string) *APICreateLogLogentriesRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogLogentriesRequest) ResponseCondition(responseCondition string) *APICreateLogLogentriesRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APICreateLogLogentriesRequest) Format(format string) *APICreateLogLogentriesRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogLogentriesRequest) FormatVersion(formatVersion int32) *APICreateLogLogentriesRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Port The port number.
 func (r *APICreateLogLogentriesRequest) Port(port int32) *APICreateLogLogentriesRequest {
 	r.port = &port
 	return r
 }
+
 // Token Use token based authentication.
 func (r *APICreateLogLogentriesRequest) Token(token string) *APICreateLogLogentriesRequest {
 	r.token = &token
 	return r
 }
+
 // UseTLS returns a pointer to a request.
 func (r *APICreateLogLogentriesRequest) UseTLS(useTLS LoggingUseTLSString) *APICreateLogLogentriesRequest {
 	r.useTLS = &useTLS
 	return r
 }
+
 // Region The region to which to stream logs.
 func (r *APICreateLogLogentriesRequest) Region(region string) *APICreateLogLogentriesRequest {
 	r.region = &region
@@ -216,9 +223,9 @@ Deprecated
 func (a *LoggingLogentriesAPIService) CreateLogLogentries(ctx context.Context, serviceID string, versionID int32) APICreateLogLogentriesRequest {
 	return APICreateLogLogentriesRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -227,10 +234,10 @@ func (a *LoggingLogentriesAPIService) CreateLogLogentries(ctx context.Context, s
 // Deprecated
 func (a *LoggingLogentriesAPIService) CreateLogLogentriesExecute(r APICreateLogLogentriesRequest) (*LoggingLogentriesResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingLogentriesResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingLogentriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogentriesAPIService.CreateLogLogentries")
@@ -338,7 +345,6 @@ func (a *LoggingLogentriesAPIService) CreateLogLogentriesExecute(r APICreateLogL
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -357,13 +363,12 @@ func (a *LoggingLogentriesAPIService) CreateLogLogentriesExecute(r APICreateLogL
 
 // APIDeleteLogLogentriesRequest represents a request for the resource.
 type APIDeleteLogLogentriesRequest struct {
-	ctx context.Context
-	APIService LoggingLogentriesAPI
-	serviceID string
-	versionID int32
+	ctx                   context.Context
+	APIService            LoggingLogentriesAPI
+	serviceID             string
+	versionID             int32
 	loggingLogentriesName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogLogentriesRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -385,10 +390,10 @@ Deprecated
 */
 func (a *LoggingLogentriesAPIService) DeleteLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIDeleteLogLogentriesRequest {
 	return APIDeleteLogLogentriesRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:            a,
+		ctx:                   ctx,
+		serviceID:             serviceID,
+		versionID:             versionID,
 		loggingLogentriesName: loggingLogentriesName,
 	}
 }
@@ -398,10 +403,10 @@ func (a *LoggingLogentriesAPIService) DeleteLogLogentries(ctx context.Context, s
 // Deprecated
 func (a *LoggingLogentriesAPIService) DeleteLogLogentriesExecute(r APIDeleteLogLogentriesRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogentriesAPIService.DeleteLogLogentries")
@@ -483,7 +488,6 @@ func (a *LoggingLogentriesAPIService) DeleteLogLogentriesExecute(r APIDeleteLogL
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -502,13 +506,12 @@ func (a *LoggingLogentriesAPIService) DeleteLogLogentriesExecute(r APIDeleteLogL
 
 // APIGetLogLogentriesRequest represents a request for the resource.
 type APIGetLogLogentriesRequest struct {
-	ctx context.Context
-	APIService LoggingLogentriesAPI
-	serviceID string
-	versionID int32
+	ctx                   context.Context
+	APIService            LoggingLogentriesAPI
+	serviceID             string
+	versionID             int32
 	loggingLogentriesName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogLogentriesRequest) Execute() (*LoggingLogentriesResponse, *http.Response, error) {
@@ -530,10 +533,10 @@ Deprecated
 */
 func (a *LoggingLogentriesAPIService) GetLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIGetLogLogentriesRequest {
 	return APIGetLogLogentriesRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:            a,
+		ctx:                   ctx,
+		serviceID:             serviceID,
+		versionID:             versionID,
 		loggingLogentriesName: loggingLogentriesName,
 	}
 }
@@ -543,10 +546,10 @@ func (a *LoggingLogentriesAPIService) GetLogLogentries(ctx context.Context, serv
 // Deprecated
 func (a *LoggingLogentriesAPIService) GetLogLogentriesExecute(r APIGetLogLogentriesRequest) (*LoggingLogentriesResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingLogentriesResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingLogentriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogentriesAPIService.GetLogLogentries")
@@ -628,7 +631,6 @@ func (a *LoggingLogentriesAPIService) GetLogLogentriesExecute(r APIGetLogLogentr
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -647,12 +649,11 @@ func (a *LoggingLogentriesAPIService) GetLogLogentriesExecute(r APIGetLogLogentr
 
 // APIListLogLogentriesRequest represents a request for the resource.
 type APIListLogLogentriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingLogentriesAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogLogentriesRequest) Execute() ([]LoggingLogentriesResponse, *http.Response, error) {
@@ -674,9 +675,9 @@ Deprecated
 func (a *LoggingLogentriesAPIService) ListLogLogentries(ctx context.Context, serviceID string, versionID int32) APIListLogLogentriesRequest {
 	return APIListLogLogentriesRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -685,10 +686,10 @@ func (a *LoggingLogentriesAPIService) ListLogLogentries(ctx context.Context, ser
 // Deprecated
 func (a *LoggingLogentriesAPIService) ListLogLogentriesExecute(r APIListLogLogentriesRequest) ([]LoggingLogentriesResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingLogentriesResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingLogentriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogentriesAPIService.ListLogLogentries")
@@ -769,7 +770,6 @@ func (a *LoggingLogentriesAPIService) ListLogLogentriesExecute(r APIListLogLogen
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -788,20 +788,20 @@ func (a *LoggingLogentriesAPIService) ListLogLogentriesExecute(r APIListLogLogen
 
 // APIUpdateLogLogentriesRequest represents a request for the resource.
 type APIUpdateLogLogentriesRequest struct {
-	ctx context.Context
-	APIService LoggingLogentriesAPI
-	serviceID string
-	versionID int32
+	ctx                   context.Context
+	APIService            LoggingLogentriesAPI
+	serviceID             string
+	versionID             int32
 	loggingLogentriesName string
-	name *string
-	placement *string
-	responseCondition *string
-	format *string
-	formatVersion *int32
-	port *int32
-	token *string
-	useTLS *LoggingUseTLSString
-	region *string
+	name                  *string
+	placement             *string
+	responseCondition     *string
+	format                *string
+	formatVersion         *int32
+	port                  *int32
+	token                 *string
+	useTLS                *LoggingUseTLSString
+	region                *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -809,41 +809,49 @@ func (r *APIUpdateLogLogentriesRequest) Name(name string) *APIUpdateLogLogentrie
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogLogentriesRequest) Placement(placement string) *APIUpdateLogLogentriesRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogLogentriesRequest) ResponseCondition(responseCondition string) *APIUpdateLogLogentriesRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 func (r *APIUpdateLogLogentriesRequest) Format(format string) *APIUpdateLogLogentriesRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogLogentriesRequest) FormatVersion(formatVersion int32) *APIUpdateLogLogentriesRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // Port The port number.
 func (r *APIUpdateLogLogentriesRequest) Port(port int32) *APIUpdateLogLogentriesRequest {
 	r.port = &port
 	return r
 }
+
 // Token Use token based authentication.
 func (r *APIUpdateLogLogentriesRequest) Token(token string) *APIUpdateLogLogentriesRequest {
 	r.token = &token
 	return r
 }
+
 // UseTLS returns a pointer to a request.
 func (r *APIUpdateLogLogentriesRequest) UseTLS(useTLS LoggingUseTLSString) *APIUpdateLogLogentriesRequest {
 	r.useTLS = &useTLS
 	return r
 }
+
 // Region The region to which to stream logs.
 func (r *APIUpdateLogLogentriesRequest) Region(region string) *APIUpdateLogLogentriesRequest {
 	r.region = &region
@@ -870,10 +878,10 @@ Deprecated
 */
 func (a *LoggingLogentriesAPIService) UpdateLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIUpdateLogLogentriesRequest {
 	return APIUpdateLogLogentriesRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:            a,
+		ctx:                   ctx,
+		serviceID:             serviceID,
+		versionID:             versionID,
 		loggingLogentriesName: loggingLogentriesName,
 	}
 }
@@ -883,10 +891,10 @@ func (a *LoggingLogentriesAPIService) UpdateLogLogentries(ctx context.Context, s
 // Deprecated
 func (a *LoggingLogentriesAPIService) UpdateLogLogentriesExecute(r APIUpdateLogLogentriesRequest) (*LoggingLogentriesResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingLogentriesResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingLogentriesResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingLogentriesAPIService.UpdateLogLogentries")
@@ -994,7 +1002,6 @@ func (a *LoggingLogentriesAPIService) UpdateLogLogentriesExecute(r APIUpdateLogL
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

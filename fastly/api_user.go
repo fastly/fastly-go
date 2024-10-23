@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type UserAPI interface {
 
 	/*
-	CreateUser Create a user
+		CreateUser Create a user
 
-	Create a user.
+		Create a user.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateUserRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateUserRequest
 	*/
 	CreateUser(ctx context.Context) APICreateUserRequest
 
@@ -46,13 +45,13 @@ type UserAPI interface {
 	CreateUserExecute(r APICreateUserRequest) (*UserResponse, *http.Response, error)
 
 	/*
-	DeleteUser Delete a user
+		DeleteUser Delete a user
 
-	Delete a user.
+		Delete a user.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userID Alphanumeric string identifying the user.
-	 @return APIDeleteUserRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userID Alphanumeric string identifying the user.
+		 @return APIDeleteUserRequest
 	*/
 	DeleteUser(ctx context.Context, userID string) APIDeleteUserRequest
 
@@ -61,12 +60,12 @@ type UserAPI interface {
 	DeleteUserExecute(r APIDeleteUserRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetCurrentUser Get the current user
+		GetCurrentUser Get the current user
 
-	Get the logged in user.
+		Get the logged in user.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIGetCurrentUserRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIGetCurrentUserRequest
 	*/
 	GetCurrentUser(ctx context.Context) APIGetCurrentUserRequest
 
@@ -75,13 +74,13 @@ type UserAPI interface {
 	GetCurrentUserExecute(r APIGetCurrentUserRequest) (*UserResponse, *http.Response, error)
 
 	/*
-	GetUser Get a user
+		GetUser Get a user
 
-	Get a specific user.
+		Get a specific user.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userID Alphanumeric string identifying the user.
-	 @return APIGetUserRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userID Alphanumeric string identifying the user.
+		 @return APIGetUserRequest
 	*/
 	GetUser(ctx context.Context, userID string) APIGetUserRequest
 
@@ -90,13 +89,13 @@ type UserAPI interface {
 	GetUserExecute(r APIGetUserRequest) (*UserResponse, *http.Response, error)
 
 	/*
-	RequestPasswordReset Request a password reset
+		RequestPasswordReset Request a password reset
 
-	Requests a password reset for the specified user.
+		Requests a password reset for the specified user.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userLogin The login associated with the user (typically, an email address).
-	 @return APIRequestPasswordResetRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userLogin The login associated with the user (typically, an email address).
+		 @return APIRequestPasswordResetRequest
 	*/
 	RequestPasswordReset(ctx context.Context, userLogin string) APIRequestPasswordResetRequest
 
@@ -105,13 +104,13 @@ type UserAPI interface {
 	RequestPasswordResetExecute(r APIRequestPasswordResetRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	UpdateUser Update a user
+		UpdateUser Update a user
 
-	Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Two-factor attributes are not editable via this endpoint.
+		Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Two-factor attributes are not editable via this endpoint.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param userID Alphanumeric string identifying the user.
-	 @return APIUpdateUserRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param userID Alphanumeric string identifying the user.
+		 @return APIUpdateUserRequest
 	*/
 	UpdateUser(ctx context.Context, userID string) APIUpdateUserRequest
 
@@ -120,12 +119,12 @@ type UserAPI interface {
 	UpdateUserExecute(r APIUpdateUserRequest) (*UserResponse, *http.Response, error)
 
 	/*
-	UpdateUserPassword Update the user's password
+		UpdateUserPassword Update the user's password
 
-	Update the user's password to a new one.
+		Update the user's password to a new one.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIUpdateUserPasswordRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIUpdateUserPasswordRequest
 	*/
 	UpdateUserPassword(ctx context.Context) APIUpdateUserPasswordRequest
 
@@ -139,15 +138,15 @@ type UserAPIService service
 
 // APICreateUserRequest represents a request for the resource.
 type APICreateUserRequest struct {
-	ctx context.Context
-	APIService UserAPI
-	login *string
-	name *string
-	limitServices *bool
-	locked *bool
-	requireNewPassword *bool
-	role *RoleUser
-	twoFactorAuthEnabled *bool
+	ctx                    context.Context
+	APIService             UserAPI
+	login                  *string
+	name                   *string
+	limitServices          *bool
+	locked                 *bool
+	requireNewPassword     *bool
+	role                   *RoleUser
+	twoFactorAuthEnabled   *bool
 	twoFactorSetupRequired *bool
 }
 
@@ -156,36 +155,43 @@ func (r *APICreateUserRequest) Login(login string) *APICreateUserRequest {
 	r.login = &login
 	return r
 }
+
 // Name The real life name of the user.
 func (r *APICreateUserRequest) Name(name string) *APICreateUserRequest {
 	r.name = &name
 	return r
 }
+
 // LimitServices Indicates that the user has limited access to the customer&#39;s services.
 func (r *APICreateUserRequest) LimitServices(limitServices bool) *APICreateUserRequest {
 	r.limitServices = &limitServices
 	return r
 }
+
 // Locked Indicates whether the is account is locked for editing or not.
 func (r *APICreateUserRequest) Locked(locked bool) *APICreateUserRequest {
 	r.locked = &locked
 	return r
 }
+
 // RequireNewPassword Indicates if a new password is required at next login.
 func (r *APICreateUserRequest) RequireNewPassword(requireNewPassword bool) *APICreateUserRequest {
 	r.requireNewPassword = &requireNewPassword
 	return r
 }
+
 // Role returns a pointer to a request.
 func (r *APICreateUserRequest) Role(role RoleUser) *APICreateUserRequest {
 	r.role = &role
 	return r
 }
+
 // TwoFactorAuthEnabled Indicates if 2FA is enabled on the user.
 func (r *APICreateUserRequest) TwoFactorAuthEnabled(twoFactorAuthEnabled bool) *APICreateUserRequest {
 	r.twoFactorAuthEnabled = &twoFactorAuthEnabled
 	return r
 }
+
 // TwoFactorSetupRequired Indicates if 2FA is required by the user&#39;s customer account.
 func (r *APICreateUserRequest) TwoFactorSetupRequired(twoFactorSetupRequired bool) *APICreateUserRequest {
 	r.twoFactorSetupRequired = &twoFactorSetupRequired
@@ -208,7 +214,7 @@ Create a user.
 func (a *UserAPIService) CreateUser(ctx context.Context) APICreateUserRequest {
 	return APICreateUserRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -216,10 +222,10 @@ func (a *UserAPIService) CreateUser(ctx context.Context) APICreateUserRequest {
 //  @return UserResponse
 func (a *UserAPIService) CreateUserExecute(r APICreateUserRequest) (*UserResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *UserResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *UserResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.CreateUser")
@@ -326,7 +332,6 @@ func (a *UserAPIService) CreateUserExecute(r APICreateUserRequest) (*UserRespons
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -345,11 +350,10 @@ func (a *UserAPIService) CreateUserExecute(r APICreateUserRequest) (*UserRespons
 
 // APIDeleteUserRequest represents a request for the resource.
 type APIDeleteUserRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService UserAPI
-	userID string
+	userID     string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteUserRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -368,8 +372,8 @@ Delete a user.
 func (a *UserAPIService) DeleteUser(ctx context.Context, userID string) APIDeleteUserRequest {
 	return APIDeleteUserRequest{
 		APIService: a,
-		ctx: ctx,
-		userID: userID,
+		ctx:        ctx,
+		userID:     userID,
 	}
 }
 
@@ -377,10 +381,10 @@ func (a *UserAPIService) DeleteUser(ctx context.Context, userID string) APIDelet
 //  @return InlineResponse200
 func (a *UserAPIService) DeleteUserExecute(r APIDeleteUserRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.DeleteUser")
@@ -460,7 +464,6 @@ func (a *UserAPIService) DeleteUserExecute(r APIDeleteUserRequest) (*InlineRespo
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -479,10 +482,9 @@ func (a *UserAPIService) DeleteUserExecute(r APIDeleteUserRequest) (*InlineRespo
 
 // APIGetCurrentUserRequest represents a request for the resource.
 type APIGetCurrentUserRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService UserAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetCurrentUserRequest) Execute() (*UserResponse, *http.Response, error) {
@@ -500,7 +502,7 @@ Get the logged in user.
 func (a *UserAPIService) GetCurrentUser(ctx context.Context) APIGetCurrentUserRequest {
 	return APIGetCurrentUserRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -508,10 +510,10 @@ func (a *UserAPIService) GetCurrentUser(ctx context.Context) APIGetCurrentUserRe
 //  @return UserResponse
 func (a *UserAPIService) GetCurrentUserExecute(r APIGetCurrentUserRequest) (*UserResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *UserResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *UserResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.GetCurrentUser")
@@ -590,7 +592,6 @@ func (a *UserAPIService) GetCurrentUserExecute(r APIGetCurrentUserRequest) (*Use
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -609,11 +610,10 @@ func (a *UserAPIService) GetCurrentUserExecute(r APIGetCurrentUserRequest) (*Use
 
 // APIGetUserRequest represents a request for the resource.
 type APIGetUserRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService UserAPI
-	userID string
+	userID     string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetUserRequest) Execute() (*UserResponse, *http.Response, error) {
@@ -632,8 +632,8 @@ Get a specific user.
 func (a *UserAPIService) GetUser(ctx context.Context, userID string) APIGetUserRequest {
 	return APIGetUserRequest{
 		APIService: a,
-		ctx: ctx,
-		userID: userID,
+		ctx:        ctx,
+		userID:     userID,
 	}
 }
 
@@ -641,10 +641,10 @@ func (a *UserAPIService) GetUser(ctx context.Context, userID string) APIGetUserR
 //  @return UserResponse
 func (a *UserAPIService) GetUserExecute(r APIGetUserRequest) (*UserResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *UserResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *UserResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.GetUser")
@@ -724,7 +724,6 @@ func (a *UserAPIService) GetUserExecute(r APIGetUserRequest) (*UserResponse, *ht
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -743,11 +742,10 @@ func (a *UserAPIService) GetUserExecute(r APIGetUserRequest) (*UserResponse, *ht
 
 // APIRequestPasswordResetRequest represents a request for the resource.
 type APIRequestPasswordResetRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService UserAPI
-	userLogin string
+	userLogin  string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIRequestPasswordResetRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -766,8 +764,8 @@ Requests a password reset for the specified user.
 func (a *UserAPIService) RequestPasswordReset(ctx context.Context, userLogin string) APIRequestPasswordResetRequest {
 	return APIRequestPasswordResetRequest{
 		APIService: a,
-		ctx: ctx,
-		userLogin: userLogin,
+		ctx:        ctx,
+		userLogin:  userLogin,
 	}
 }
 
@@ -775,10 +773,10 @@ func (a *UserAPIService) RequestPasswordReset(ctx context.Context, userLogin str
 //  @return InlineResponse200
 func (a *UserAPIService) RequestPasswordResetExecute(r APIRequestPasswordResetRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.RequestPasswordReset")
@@ -858,7 +856,6 @@ func (a *UserAPIService) RequestPasswordResetExecute(r APIRequestPasswordResetRe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -877,16 +874,16 @@ func (a *UserAPIService) RequestPasswordResetExecute(r APIRequestPasswordResetRe
 
 // APIUpdateUserRequest represents a request for the resource.
 type APIUpdateUserRequest struct {
-	ctx context.Context
-	APIService UserAPI
-	userID string
-	login *string
-	name *string
-	limitServices *bool
-	locked *bool
-	requireNewPassword *bool
-	role *RoleUser
-	twoFactorAuthEnabled *bool
+	ctx                    context.Context
+	APIService             UserAPI
+	userID                 string
+	login                  *string
+	name                   *string
+	limitServices          *bool
+	locked                 *bool
+	requireNewPassword     *bool
+	role                   *RoleUser
+	twoFactorAuthEnabled   *bool
 	twoFactorSetupRequired *bool
 }
 
@@ -895,36 +892,43 @@ func (r *APIUpdateUserRequest) Login(login string) *APIUpdateUserRequest {
 	r.login = &login
 	return r
 }
+
 // Name The real life name of the user.
 func (r *APIUpdateUserRequest) Name(name string) *APIUpdateUserRequest {
 	r.name = &name
 	return r
 }
+
 // LimitServices Indicates that the user has limited access to the customer&#39;s services.
 func (r *APIUpdateUserRequest) LimitServices(limitServices bool) *APIUpdateUserRequest {
 	r.limitServices = &limitServices
 	return r
 }
+
 // Locked Indicates whether the is account is locked for editing or not.
 func (r *APIUpdateUserRequest) Locked(locked bool) *APIUpdateUserRequest {
 	r.locked = &locked
 	return r
 }
+
 // RequireNewPassword Indicates if a new password is required at next login.
 func (r *APIUpdateUserRequest) RequireNewPassword(requireNewPassword bool) *APIUpdateUserRequest {
 	r.requireNewPassword = &requireNewPassword
 	return r
 }
+
 // Role returns a pointer to a request.
 func (r *APIUpdateUserRequest) Role(role RoleUser) *APIUpdateUserRequest {
 	r.role = &role
 	return r
 }
+
 // TwoFactorAuthEnabled Indicates if 2FA is enabled on the user.
 func (r *APIUpdateUserRequest) TwoFactorAuthEnabled(twoFactorAuthEnabled bool) *APIUpdateUserRequest {
 	r.twoFactorAuthEnabled = &twoFactorAuthEnabled
 	return r
 }
+
 // TwoFactorSetupRequired Indicates if 2FA is required by the user&#39;s customer account.
 func (r *APIUpdateUserRequest) TwoFactorSetupRequired(twoFactorSetupRequired bool) *APIUpdateUserRequest {
 	r.twoFactorSetupRequired = &twoFactorSetupRequired
@@ -948,8 +952,8 @@ Update a user. Only users with the role of `superuser` can make changes to other
 func (a *UserAPIService) UpdateUser(ctx context.Context, userID string) APIUpdateUserRequest {
 	return APIUpdateUserRequest{
 		APIService: a,
-		ctx: ctx,
-		userID: userID,
+		ctx:        ctx,
+		userID:     userID,
 	}
 }
 
@@ -957,10 +961,10 @@ func (a *UserAPIService) UpdateUser(ctx context.Context, userID string) APIUpdat
 //  @return UserResponse
 func (a *UserAPIService) UpdateUserExecute(r APIUpdateUserRequest) (*UserResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *UserResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *UserResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.UpdateUser")
@@ -1068,7 +1072,6 @@ func (a *UserAPIService) UpdateUserExecute(r APIUpdateUserRequest) (*UserRespons
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1087,8 +1090,8 @@ func (a *UserAPIService) UpdateUserExecute(r APIUpdateUserRequest) (*UserRespons
 
 // APIUpdateUserPasswordRequest represents a request for the resource.
 type APIUpdateUserPasswordRequest struct {
-	ctx context.Context
-	APIService UserAPI
+	ctx         context.Context
+	APIService  UserAPI
 	oldPassword *string
 	newPassword *string
 }
@@ -1098,6 +1101,7 @@ func (r *APIUpdateUserPasswordRequest) OldPassword(oldPassword string) *APIUpdat
 	r.oldPassword = &oldPassword
 	return r
 }
+
 // NewPassword The user&#39;s new password.
 func (r *APIUpdateUserPasswordRequest) NewPassword(newPassword string) *APIUpdateUserPasswordRequest {
 	r.newPassword = &newPassword
@@ -1120,7 +1124,7 @@ Update the user's password to a new one.
 func (a *UserAPIService) UpdateUserPassword(ctx context.Context) APIUpdateUserPasswordRequest {
 	return APIUpdateUserPasswordRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1128,10 +1132,10 @@ func (a *UserAPIService) UpdateUserPassword(ctx context.Context) APIUpdateUserPa
 //  @return UserResponse
 func (a *UserAPIService) UpdateUserPasswordExecute(r APIUpdateUserPasswordRequest) (*UserResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *UserResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *UserResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UserAPIService.UpdateUserPassword")
@@ -1201,7 +1205,6 @@ func (a *UserAPIService) UpdateUserPasswordExecute(r APIUpdateUserPasswordReques
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

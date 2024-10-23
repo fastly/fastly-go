@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type RateLimiterAPI interface {
 
 	/*
-	CreateRateLimiter Create a rate limiter
+		CreateRateLimiter Create a rate limiter
 
-	Create a rate limiter for a particular service and version.
+		Create a rate limiter for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateRateLimiterRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateRateLimiterRequest
 	*/
 	CreateRateLimiter(ctx context.Context, serviceID string, versionID int32) APICreateRateLimiterRequest
 
@@ -48,13 +47,13 @@ type RateLimiterAPI interface {
 	CreateRateLimiterExecute(r APICreateRateLimiterRequest) (*RateLimiterResponse, *http.Response, error)
 
 	/*
-	DeleteRateLimiter Delete a rate limiter
+		DeleteRateLimiter Delete a rate limiter
 
-	Delete a rate limiter by its ID.
+		Delete a rate limiter by its ID.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param rateLimiterID Alphanumeric string identifying the rate limiter.
-	 @return APIDeleteRateLimiterRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param rateLimiterID Alphanumeric string identifying the rate limiter.
+		 @return APIDeleteRateLimiterRequest
 	*/
 	DeleteRateLimiter(ctx context.Context, rateLimiterID string) APIDeleteRateLimiterRequest
 
@@ -63,13 +62,13 @@ type RateLimiterAPI interface {
 	DeleteRateLimiterExecute(r APIDeleteRateLimiterRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetRateLimiter Get a rate limiter
+		GetRateLimiter Get a rate limiter
 
-	Get a rate limiter by its ID.
+		Get a rate limiter by its ID.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param rateLimiterID Alphanumeric string identifying the rate limiter.
-	 @return APIGetRateLimiterRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param rateLimiterID Alphanumeric string identifying the rate limiter.
+		 @return APIGetRateLimiterRequest
 	*/
 	GetRateLimiter(ctx context.Context, rateLimiterID string) APIGetRateLimiterRequest
 
@@ -78,14 +77,14 @@ type RateLimiterAPI interface {
 	GetRateLimiterExecute(r APIGetRateLimiterRequest) (*RateLimiterResponse, *http.Response, error)
 
 	/*
-	ListRateLimiters List rate limiters
+		ListRateLimiters List rate limiters
 
-	List all rate limiters for a particular service and version.
+		List all rate limiters for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListRateLimitersRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListRateLimitersRequest
 	*/
 	ListRateLimiters(ctx context.Context, serviceID string, versionID int32) APIListRateLimitersRequest
 
@@ -94,13 +93,13 @@ type RateLimiterAPI interface {
 	ListRateLimitersExecute(r APIListRateLimitersRequest) ([]RateLimiterResponse, *http.Response, error)
 
 	/*
-	UpdateRateLimiter Update a rate limiter
+		UpdateRateLimiter Update a rate limiter
 
-	Update a rate limiter by its ID.
+		Update a rate limiter by its ID.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param rateLimiterID Alphanumeric string identifying the rate limiter.
-	 @return APIUpdateRateLimiterRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param rateLimiterID Alphanumeric string identifying the rate limiter.
+		 @return APIUpdateRateLimiterRequest
 	*/
 	UpdateRateLimiter(ctx context.Context, rateLimiterID string) APIUpdateRateLimiterRequest
 
@@ -114,21 +113,21 @@ type RateLimiterAPIService service
 
 // APICreateRateLimiterRequest represents a request for the resource.
 type APICreateRateLimiterRequest struct {
-	ctx context.Context
-	APIService RateLimiterAPI
-	serviceID string
-	versionID int32
-	name *string
-	uriDictionaryName *string
-	httpMethods *[]string
-	rpsLimit *int32
-	windowSize *int32
-	clientKey *[]string
+	ctx                context.Context
+	APIService         RateLimiterAPI
+	serviceID          string
+	versionID          int32
+	name               *string
+	uriDictionaryName  *string
+	httpMethods        *[]string
+	rpsLimit           *int32
+	windowSize         *int32
+	clientKey          *[]string
 	penaltyBoxDuration *int32
-	action *string
+	action             *string
 	responseObjectName *string
-	loggerType *string
-	featureRevision *int32
+	loggerType         *string
+	featureRevision    *int32
 }
 
 // Name A human readable name for the rate limiting rule.
@@ -136,51 +135,61 @@ func (r *APICreateRateLimiterRequest) Name(name string) *APICreateRateLimiterReq
 	r.name = &name
 	return r
 }
+
 // URIDictionaryName The name of an Edge Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited.
 func (r *APICreateRateLimiterRequest) URIDictionaryName(uriDictionaryName string) *APICreateRateLimiterRequest {
 	r.uriDictionaryName = &uriDictionaryName
 	return r
 }
+
 // HTTPMethods Array of HTTP methods to apply rate limiting to.
 func (r *APICreateRateLimiterRequest) HTTPMethods(httpMethods []string) *APICreateRateLimiterRequest {
 	r.httpMethods = &httpMethods
 	return r
 }
+
 // RpsLimit Upper limit of requests per second allowed by the rate limiter.
 func (r *APICreateRateLimiterRequest) RpsLimit(rpsLimit int32) *APICreateRateLimiterRequest {
 	r.rpsLimit = &rpsLimit
 	return r
 }
+
 // WindowSize Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
 func (r *APICreateRateLimiterRequest) WindowSize(windowSize int32) *APICreateRateLimiterRequest {
 	r.windowSize = &windowSize
 	return r
 }
+
 // ClientKey Array of VCL variables used to generate a counter key to identify a client. Example variables include &#x60;req.http.Fastly-Client-IP&#x60;, &#x60;req.http.User-Agent&#x60;, or a custom header like &#x60;req.http.API-Key&#x60;.
 func (r *APICreateRateLimiterRequest) ClientKey(clientKey []string) *APICreateRateLimiterRequest {
 	r.clientKey = &clientKey
 	return r
 }
+
 // PenaltyBoxDuration Length of time in minutes that the rate limiter is in effect after the initial violation is detected.
 func (r *APICreateRateLimiterRequest) PenaltyBoxDuration(penaltyBoxDuration int32) *APICreateRateLimiterRequest {
 	r.penaltyBoxDuration = &penaltyBoxDuration
 	return r
 }
+
 // Action The action to take when a rate limiter violation is detected.
 func (r *APICreateRateLimiterRequest) Action(action string) *APICreateRateLimiterRequest {
 	r.action = &action
 	return r
 }
+
 // ResponseObjectName Name of existing response object. Required if &#x60;action&#x60; is &#x60;response_object&#x60;. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
 func (r *APICreateRateLimiterRequest) ResponseObjectName(responseObjectName string) *APICreateRateLimiterRequest {
 	r.responseObjectName = &responseObjectName
 	return r
 }
+
 // LoggerType Name of the type of logging endpoint to be used when action is &#x60;log_only&#x60;. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
 func (r *APICreateRateLimiterRequest) LoggerType(loggerType string) *APICreateRateLimiterRequest {
 	r.loggerType = &loggerType
 	return r
 }
+
 // FeatureRevision Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
 func (r *APICreateRateLimiterRequest) FeatureRevision(featureRevision int32) *APICreateRateLimiterRequest {
 	r.featureRevision = &featureRevision
@@ -205,9 +214,9 @@ Create a rate limiter for a particular service and version.
 func (a *RateLimiterAPIService) CreateRateLimiter(ctx context.Context, serviceID string, versionID int32) APICreateRateLimiterRequest {
 	return APICreateRateLimiterRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -215,10 +224,10 @@ func (a *RateLimiterAPIService) CreateRateLimiter(ctx context.Context, serviceID
 //  @return RateLimiterResponse
 func (a *RateLimiterAPIService) CreateRateLimiterExecute(r APICreateRateLimiterRequest) (*RateLimiterResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *RateLimiterResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *RateLimiterResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimiterAPIService.CreateRateLimiter")
@@ -332,7 +341,6 @@ func (a *RateLimiterAPIService) CreateRateLimiterExecute(r APICreateRateLimiterR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -351,11 +359,10 @@ func (a *RateLimiterAPIService) CreateRateLimiterExecute(r APICreateRateLimiterR
 
 // APIDeleteRateLimiterRequest represents a request for the resource.
 type APIDeleteRateLimiterRequest struct {
-	ctx context.Context
-	APIService RateLimiterAPI
+	ctx           context.Context
+	APIService    RateLimiterAPI
 	rateLimiterID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteRateLimiterRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -373,8 +380,8 @@ Delete a rate limiter by its ID.
 */
 func (a *RateLimiterAPIService) DeleteRateLimiter(ctx context.Context, rateLimiterID string) APIDeleteRateLimiterRequest {
 	return APIDeleteRateLimiterRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:    a,
+		ctx:           ctx,
 		rateLimiterID: rateLimiterID,
 	}
 }
@@ -383,10 +390,10 @@ func (a *RateLimiterAPIService) DeleteRateLimiter(ctx context.Context, rateLimit
 //  @return InlineResponse200
 func (a *RateLimiterAPIService) DeleteRateLimiterExecute(r APIDeleteRateLimiterRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimiterAPIService.DeleteRateLimiter")
@@ -466,7 +473,6 @@ func (a *RateLimiterAPIService) DeleteRateLimiterExecute(r APIDeleteRateLimiterR
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -485,11 +491,10 @@ func (a *RateLimiterAPIService) DeleteRateLimiterExecute(r APIDeleteRateLimiterR
 
 // APIGetRateLimiterRequest represents a request for the resource.
 type APIGetRateLimiterRequest struct {
-	ctx context.Context
-	APIService RateLimiterAPI
+	ctx           context.Context
+	APIService    RateLimiterAPI
 	rateLimiterID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetRateLimiterRequest) Execute() (*RateLimiterResponse, *http.Response, error) {
@@ -507,8 +512,8 @@ Get a rate limiter by its ID.
 */
 func (a *RateLimiterAPIService) GetRateLimiter(ctx context.Context, rateLimiterID string) APIGetRateLimiterRequest {
 	return APIGetRateLimiterRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:    a,
+		ctx:           ctx,
 		rateLimiterID: rateLimiterID,
 	}
 }
@@ -517,10 +522,10 @@ func (a *RateLimiterAPIService) GetRateLimiter(ctx context.Context, rateLimiterI
 //  @return RateLimiterResponse
 func (a *RateLimiterAPIService) GetRateLimiterExecute(r APIGetRateLimiterRequest) (*RateLimiterResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *RateLimiterResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *RateLimiterResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimiterAPIService.GetRateLimiter")
@@ -600,7 +605,6 @@ func (a *RateLimiterAPIService) GetRateLimiterExecute(r APIGetRateLimiterRequest
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -619,12 +623,11 @@ func (a *RateLimiterAPIService) GetRateLimiterExecute(r APIGetRateLimiterRequest
 
 // APIListRateLimitersRequest represents a request for the resource.
 type APIListRateLimitersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService RateLimiterAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListRateLimitersRequest) Execute() ([]RateLimiterResponse, *http.Response, error) {
@@ -644,9 +647,9 @@ List all rate limiters for a particular service and version.
 func (a *RateLimiterAPIService) ListRateLimiters(ctx context.Context, serviceID string, versionID int32) APIListRateLimitersRequest {
 	return APIListRateLimitersRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -654,10 +657,10 @@ func (a *RateLimiterAPIService) ListRateLimiters(ctx context.Context, serviceID 
 //  @return []RateLimiterResponse
 func (a *RateLimiterAPIService) ListRateLimitersExecute(r APIListRateLimitersRequest) ([]RateLimiterResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []RateLimiterResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []RateLimiterResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimiterAPIService.ListRateLimiters")
@@ -738,7 +741,6 @@ func (a *RateLimiterAPIService) ListRateLimitersExecute(r APIListRateLimitersReq
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -757,20 +759,20 @@ func (a *RateLimiterAPIService) ListRateLimitersExecute(r APIListRateLimitersReq
 
 // APIUpdateRateLimiterRequest represents a request for the resource.
 type APIUpdateRateLimiterRequest struct {
-	ctx context.Context
-	APIService RateLimiterAPI
-	rateLimiterID string
-	name *string
-	uriDictionaryName *string
-	httpMethods *[]string
-	rpsLimit *int32
-	windowSize *int32
-	clientKey *[]string
+	ctx                context.Context
+	APIService         RateLimiterAPI
+	rateLimiterID      string
+	name               *string
+	uriDictionaryName  *string
+	httpMethods        *[]string
+	rpsLimit           *int32
+	windowSize         *int32
+	clientKey          *[]string
 	penaltyBoxDuration *int32
-	action *string
+	action             *string
 	responseObjectName *string
-	loggerType *string
-	featureRevision *int32
+	loggerType         *string
+	featureRevision    *int32
 }
 
 // Name A human readable name for the rate limiting rule.
@@ -778,51 +780,61 @@ func (r *APIUpdateRateLimiterRequest) Name(name string) *APIUpdateRateLimiterReq
 	r.name = &name
 	return r
 }
+
 // URIDictionaryName The name of an Edge Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited.
 func (r *APIUpdateRateLimiterRequest) URIDictionaryName(uriDictionaryName string) *APIUpdateRateLimiterRequest {
 	r.uriDictionaryName = &uriDictionaryName
 	return r
 }
+
 // HTTPMethods Array of HTTP methods to apply rate limiting to.
 func (r *APIUpdateRateLimiterRequest) HTTPMethods(httpMethods []string) *APIUpdateRateLimiterRequest {
 	r.httpMethods = &httpMethods
 	return r
 }
+
 // RpsLimit Upper limit of requests per second allowed by the rate limiter.
 func (r *APIUpdateRateLimiterRequest) RpsLimit(rpsLimit int32) *APIUpdateRateLimiterRequest {
 	r.rpsLimit = &rpsLimit
 	return r
 }
+
 // WindowSize Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
 func (r *APIUpdateRateLimiterRequest) WindowSize(windowSize int32) *APIUpdateRateLimiterRequest {
 	r.windowSize = &windowSize
 	return r
 }
+
 // ClientKey Array of VCL variables used to generate a counter key to identify a client. Example variables include &#x60;req.http.Fastly-Client-IP&#x60;, &#x60;req.http.User-Agent&#x60;, or a custom header like &#x60;req.http.API-Key&#x60;.
 func (r *APIUpdateRateLimiterRequest) ClientKey(clientKey []string) *APIUpdateRateLimiterRequest {
 	r.clientKey = &clientKey
 	return r
 }
+
 // PenaltyBoxDuration Length of time in minutes that the rate limiter is in effect after the initial violation is detected.
 func (r *APIUpdateRateLimiterRequest) PenaltyBoxDuration(penaltyBoxDuration int32) *APIUpdateRateLimiterRequest {
 	r.penaltyBoxDuration = &penaltyBoxDuration
 	return r
 }
+
 // Action The action to take when a rate limiter violation is detected.
 func (r *APIUpdateRateLimiterRequest) Action(action string) *APIUpdateRateLimiterRequest {
 	r.action = &action
 	return r
 }
+
 // ResponseObjectName Name of existing response object. Required if &#x60;action&#x60; is &#x60;response_object&#x60;. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
 func (r *APIUpdateRateLimiterRequest) ResponseObjectName(responseObjectName string) *APIUpdateRateLimiterRequest {
 	r.responseObjectName = &responseObjectName
 	return r
 }
+
 // LoggerType Name of the type of logging endpoint to be used when action is &#x60;log_only&#x60;. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
 func (r *APIUpdateRateLimiterRequest) LoggerType(loggerType string) *APIUpdateRateLimiterRequest {
 	r.loggerType = &loggerType
 	return r
 }
+
 // FeatureRevision Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
 func (r *APIUpdateRateLimiterRequest) FeatureRevision(featureRevision int32) *APIUpdateRateLimiterRequest {
 	r.featureRevision = &featureRevision
@@ -845,8 +857,8 @@ Update a rate limiter by its ID.
 */
 func (a *RateLimiterAPIService) UpdateRateLimiter(ctx context.Context, rateLimiterID string) APIUpdateRateLimiterRequest {
 	return APIUpdateRateLimiterRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:    a,
+		ctx:           ctx,
 		rateLimiterID: rateLimiterID,
 	}
 }
@@ -855,10 +867,10 @@ func (a *RateLimiterAPIService) UpdateRateLimiter(ctx context.Context, rateLimit
 //  @return RateLimiterResponse
 func (a *RateLimiterAPIService) UpdateRateLimiterExecute(r APIUpdateRateLimiterRequest) (*RateLimiterResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *RateLimiterResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *RateLimiterResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RateLimiterAPIService.UpdateRateLimiter")
@@ -970,7 +982,6 @@ func (a *RateLimiterAPIService) UpdateRateLimiterExecute(r APIUpdateRateLimiterR
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

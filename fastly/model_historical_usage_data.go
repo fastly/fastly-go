@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,16 +12,15 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
 // HistoricalUsageData The results of usage related queries, grouped by service and/or region depending on endpoint, and aggregated over the appropriate time span.
 type HistoricalUsageData struct {
-	Bandwidth *float32 `json:"bandwidth,omitempty"`
-	Requests *float32 `json:"requests,omitempty"`
-	ComputeRequests *float32 `json:"compute_requests,omitempty"`
+	Bandwidth            *float32 `json:"bandwidth,omitempty"`
+	Requests             *float32 `json:"requests,omitempty"`
+	ComputeRequests      *float32 `json:"compute_requests,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -162,7 +161,7 @@ func (o HistoricalUsageData) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *HistoricalUsageData) UnmarshalJSON(bytes []byte) (err error) {
 	varHistoricalUsageData := _HistoricalUsageData{}
 
@@ -182,7 +181,7 @@ func (o *HistoricalUsageData) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableHistoricalUsageData is a helper abstraction for handling nullable historicalusagedata types. 
+// NullableHistoricalUsageData is a helper abstraction for handling nullable historicalusagedata types.
 type NullableHistoricalUsageData struct {
 	value *HistoricalUsageData
 	isSet bool
@@ -222,7 +221,7 @@ func (v NullableHistoricalUsageData) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableHistoricalUsageData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

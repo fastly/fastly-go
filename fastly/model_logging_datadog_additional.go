@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -21,10 +20,10 @@ import (
 type LoggingDatadogAdditional struct {
 	// The region that log data will be sent to.
 	Region *string `json:"region,omitempty"`
-	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
+	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest.
 	Format *string `json:"format,omitempty"`
 	// The API key from your Datadog account. Required.
-	Token *string `json:"token,omitempty"`
+	Token                *string `json:"token,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -173,7 +172,7 @@ func (o LoggingDatadogAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingDatadogAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingDatadogAdditional := _LoggingDatadogAdditional{}
 
@@ -193,7 +192,7 @@ func (o *LoggingDatadogAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingDatadogAdditional is a helper abstraction for handling nullable loggingdatadogadditional types. 
+// NullableLoggingDatadogAdditional is a helper abstraction for handling nullable loggingdatadogadditional types.
 type NullableLoggingDatadogAdditional struct {
 	value *LoggingDatadogAdditional
 	isSet bool
@@ -233,7 +232,7 @@ func (v NullableLoggingDatadogAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingDatadogAdditional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

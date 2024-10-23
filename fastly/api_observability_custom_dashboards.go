@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type ObservabilityCustomDashboardsAPI interface {
 
 	/*
-	CreateDashboard Create a new dashboard
+		CreateDashboard Create a new dashboard
 
-	Create a new dashboard
+		Create a new dashboard
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateDashboardRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateDashboardRequest
 	*/
 	CreateDashboard(ctx context.Context) APICreateDashboardRequest
 
@@ -46,13 +45,13 @@ type ObservabilityCustomDashboardsAPI interface {
 	CreateDashboardExecute(r APICreateDashboardRequest) (*Dashboard, *http.Response, error)
 
 	/*
-	DeleteDashboard Delete an existing dashboard
+		DeleteDashboard Delete an existing dashboard
 
-	Delete an existing dashboard
+		Delete an existing dashboard
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param dashboardID
-	 @return APIDeleteDashboardRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param dashboardID
+		 @return APIDeleteDashboardRequest
 	*/
 	DeleteDashboard(ctx context.Context, dashboardID string) APIDeleteDashboardRequest
 
@@ -60,13 +59,13 @@ type ObservabilityCustomDashboardsAPI interface {
 	DeleteDashboardExecute(r APIDeleteDashboardRequest) (*http.Response, error)
 
 	/*
-	GetDashboard Retrieve a dashboard by ID
+		GetDashboard Retrieve a dashboard by ID
 
-	Retrieve a dashboard by ID
+		Retrieve a dashboard by ID
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param dashboardID
-	 @return APIGetDashboardRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param dashboardID
+		 @return APIGetDashboardRequest
 	*/
 	GetDashboard(ctx context.Context, dashboardID string) APIGetDashboardRequest
 
@@ -75,12 +74,12 @@ type ObservabilityCustomDashboardsAPI interface {
 	GetDashboardExecute(r APIGetDashboardRequest) (*Dashboard, *http.Response, error)
 
 	/*
-	ListDashboards List all custom dashboards
+		ListDashboards List all custom dashboards
 
-	List all custom dashboards
+		List all custom dashboards
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListDashboardsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListDashboardsRequest
 	*/
 	ListDashboards(ctx context.Context) APIListDashboardsRequest
 
@@ -89,13 +88,13 @@ type ObservabilityCustomDashboardsAPI interface {
 	ListDashboardsExecute(r APIListDashboardsRequest) (*ListDashboardsResponse, *http.Response, error)
 
 	/*
-	UpdateDashboard Update an existing dashboard
+		UpdateDashboard Update an existing dashboard
 
-	Update an existing dashboard
+		Update an existing dashboard
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param dashboardID
-	 @return APIUpdateDashboardRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param dashboardID
+		 @return APIUpdateDashboardRequest
 	*/
 	UpdateDashboard(ctx context.Context, dashboardID string) APIUpdateDashboardRequest
 
@@ -109,8 +108,8 @@ type ObservabilityCustomDashboardsAPIService service
 
 // APICreateDashboardRequest represents a request for the resource.
 type APICreateDashboardRequest struct {
-	ctx context.Context
-	APIService ObservabilityCustomDashboardsAPI
+	ctx                    context.Context
+	APIService             ObservabilityCustomDashboardsAPI
 	createDashboardRequest *CreateDashboardRequest
 }
 
@@ -136,7 +135,7 @@ Create a new dashboard
 func (a *ObservabilityCustomDashboardsAPIService) CreateDashboard(ctx context.Context) APICreateDashboardRequest {
 	return APICreateDashboardRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *ObservabilityCustomDashboardsAPIService) CreateDashboard(ctx context.Co
 //  @return Dashboard
 func (a *ObservabilityCustomDashboardsAPIService) CreateDashboardExecute(r APICreateDashboardRequest) (*Dashboard, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *Dashboard
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *Dashboard
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObservabilityCustomDashboardsAPIService.CreateDashboard")
@@ -228,7 +227,6 @@ func (a *ObservabilityCustomDashboardsAPIService) CreateDashboardExecute(r APICr
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -247,11 +245,10 @@ func (a *ObservabilityCustomDashboardsAPIService) CreateDashboardExecute(r APICr
 
 // APIDeleteDashboardRequest represents a request for the resource.
 type APIDeleteDashboardRequest struct {
-	ctx context.Context
-	APIService ObservabilityCustomDashboardsAPI
+	ctx         context.Context
+	APIService  ObservabilityCustomDashboardsAPI
 	dashboardID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteDashboardRequest) Execute() (*http.Response, error) {
@@ -269,8 +266,8 @@ Delete an existing dashboard
 */
 func (a *ObservabilityCustomDashboardsAPIService) DeleteDashboard(ctx context.Context, dashboardID string) APIDeleteDashboardRequest {
 	return APIDeleteDashboardRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		dashboardID: dashboardID,
 	}
 }
@@ -278,9 +275,9 @@ func (a *ObservabilityCustomDashboardsAPIService) DeleteDashboard(ctx context.Co
 // DeleteDashboardExecute executes the request
 func (a *ObservabilityCustomDashboardsAPIService) DeleteDashboardExecute(r APIDeleteDashboardRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObservabilityCustomDashboardsAPIService.DeleteDashboard")
@@ -351,7 +348,6 @@ func (a *ObservabilityCustomDashboardsAPIService) DeleteDashboardExecute(r APIDe
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -370,11 +366,10 @@ func (a *ObservabilityCustomDashboardsAPIService) DeleteDashboardExecute(r APIDe
 
 // APIGetDashboardRequest represents a request for the resource.
 type APIGetDashboardRequest struct {
-	ctx context.Context
-	APIService ObservabilityCustomDashboardsAPI
+	ctx         context.Context
+	APIService  ObservabilityCustomDashboardsAPI
 	dashboardID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetDashboardRequest) Execute() (*Dashboard, *http.Response, error) {
@@ -392,8 +387,8 @@ Retrieve a dashboard by ID
 */
 func (a *ObservabilityCustomDashboardsAPIService) GetDashboard(ctx context.Context, dashboardID string) APIGetDashboardRequest {
 	return APIGetDashboardRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		dashboardID: dashboardID,
 	}
 }
@@ -402,10 +397,10 @@ func (a *ObservabilityCustomDashboardsAPIService) GetDashboard(ctx context.Conte
 //  @return Dashboard
 func (a *ObservabilityCustomDashboardsAPIService) GetDashboardExecute(r APIGetDashboardRequest) (*Dashboard, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *Dashboard
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *Dashboard
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObservabilityCustomDashboardsAPIService.GetDashboard")
@@ -485,7 +480,6 @@ func (a *ObservabilityCustomDashboardsAPIService) GetDashboardExecute(r APIGetDa
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -504,10 +498,9 @@ func (a *ObservabilityCustomDashboardsAPIService) GetDashboardExecute(r APIGetDa
 
 // APIListDashboardsRequest represents a request for the resource.
 type APIListDashboardsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ObservabilityCustomDashboardsAPI
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListDashboardsRequest) Execute() (*ListDashboardsResponse, *http.Response, error) {
@@ -525,7 +518,7 @@ List all custom dashboards
 func (a *ObservabilityCustomDashboardsAPIService) ListDashboards(ctx context.Context) APIListDashboardsRequest {
 	return APIListDashboardsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -533,10 +526,10 @@ func (a *ObservabilityCustomDashboardsAPIService) ListDashboards(ctx context.Con
 //  @return ListDashboardsResponse
 func (a *ObservabilityCustomDashboardsAPIService) ListDashboardsExecute(r APIListDashboardsRequest) (*ListDashboardsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ListDashboardsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ListDashboardsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObservabilityCustomDashboardsAPIService.ListDashboards")
@@ -615,7 +608,6 @@ func (a *ObservabilityCustomDashboardsAPIService) ListDashboardsExecute(r APILis
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -634,9 +626,9 @@ func (a *ObservabilityCustomDashboardsAPIService) ListDashboardsExecute(r APILis
 
 // APIUpdateDashboardRequest represents a request for the resource.
 type APIUpdateDashboardRequest struct {
-	ctx context.Context
-	APIService ObservabilityCustomDashboardsAPI
-	dashboardID string
+	ctx                    context.Context
+	APIService             ObservabilityCustomDashboardsAPI
+	dashboardID            string
 	updateDashboardRequest *UpdateDashboardRequest
 }
 
@@ -662,8 +654,8 @@ Update an existing dashboard
 */
 func (a *ObservabilityCustomDashboardsAPIService) UpdateDashboard(ctx context.Context, dashboardID string) APIUpdateDashboardRequest {
 	return APIUpdateDashboardRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:  a,
+		ctx:         ctx,
 		dashboardID: dashboardID,
 	}
 }
@@ -672,10 +664,10 @@ func (a *ObservabilityCustomDashboardsAPIService) UpdateDashboard(ctx context.Co
 //  @return Dashboard
 func (a *ObservabilityCustomDashboardsAPIService) UpdateDashboardExecute(r APIUpdateDashboardRequest) (*Dashboard, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *Dashboard
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *Dashboard
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ObservabilityCustomDashboardsAPIService.UpdateDashboard")
@@ -756,7 +748,6 @@ func (a *ObservabilityCustomDashboardsAPIService) UpdateDashboardExecute(r APIUp
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

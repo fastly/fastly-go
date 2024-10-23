@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,16 +31,16 @@ var (
 type LegacyWafFirewallAPI interface {
 
 	/*
-	CreateLegacyWafFirewallService Create a firewall
+		CreateLegacyWafFirewallService Create a firewall
 
-	Create a firewall object for a particular service and version.
+		Create a firewall object for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLegacyWafFirewallServiceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLegacyWafFirewallServiceRequest
 
-	Deprecated
+		Deprecated
 	*/
 	CreateLegacyWafFirewallService(ctx context.Context, serviceID string, versionID int32) APICreateLegacyWafFirewallServiceRequest
 
@@ -51,15 +50,15 @@ type LegacyWafFirewallAPI interface {
 	CreateLegacyWafFirewallServiceExecute(r APICreateLegacyWafFirewallServiceRequest) (map[string]any, *http.Response, error)
 
 	/*
-	DisableLegacyWafFirewall Disable a firewall
+		DisableLegacyWafFirewall Disable a firewall
 
-	Disable a firewall for a particular service and version. This endpoint is intended to be used in an emergency. Disabling a firewall object for a specific service and version replaces your existing WAF ruleset with an empty ruleset. While disabled, your WAF ruleset will not be applied to your origin traffic. This endpoint is only available to users assigned the role of superuser or above. This is an asynchronous action. To check on the completion of this action, use the related link returned in the response to check on the Update Status of the action.
+		Disable a firewall for a particular service and version. This endpoint is intended to be used in an emergency. Disabling a firewall object for a specific service and version replaces your existing WAF ruleset with an empty ruleset. While disabled, your WAF ruleset will not be applied to your origin traffic. This endpoint is only available to users assigned the role of superuser or above. This is an asynchronous action. To check on the completion of this action, use the related link returned in the response to check on the Update Status of the action.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APIDisableLegacyWafFirewallRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APIDisableLegacyWafFirewallRequest
 
-	Deprecated
+		Deprecated
 	*/
 	DisableLegacyWafFirewall(ctx context.Context, firewallID string) APIDisableLegacyWafFirewallRequest
 
@@ -69,15 +68,15 @@ type LegacyWafFirewallAPI interface {
 	DisableLegacyWafFirewallExecute(r APIDisableLegacyWafFirewallRequest) (map[string]any, *http.Response, error)
 
 	/*
-	EnableLegacyWafFirewall Enable a firewall
+		EnableLegacyWafFirewall Enable a firewall
 
-	Re-enable a firewall object for a particular service and version after it has been disabled. This endpoint is intended to be used in an emergency. When a firewall object is re-enabled, a newly generated WAF ruleset VCL based on the current WAF configuration is used to replace the empty ruleset. This endpoint is only available to users assigned the role of superuser or above. This is an asynchronous action. To check on the completion of this action, use the related link returned in the response to check on the Update Status of the action.
+		Re-enable a firewall object for a particular service and version after it has been disabled. This endpoint is intended to be used in an emergency. When a firewall object is re-enabled, a newly generated WAF ruleset VCL based on the current WAF configuration is used to replace the empty ruleset. This endpoint is only available to users assigned the role of superuser or above. This is an asynchronous action. To check on the completion of this action, use the related link returned in the response to check on the Update Status of the action.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APIEnableLegacyWafFirewallRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APIEnableLegacyWafFirewallRequest
 
-	Deprecated
+		Deprecated
 	*/
 	EnableLegacyWafFirewall(ctx context.Context, firewallID string) APIEnableLegacyWafFirewallRequest
 
@@ -87,15 +86,15 @@ type LegacyWafFirewallAPI interface {
 	EnableLegacyWafFirewallExecute(r APIEnableLegacyWafFirewallRequest) (map[string]any, *http.Response, error)
 
 	/*
-	GetLegacyWafFirewall Get a firewall object
+		GetLegacyWafFirewall Get a firewall object
 
-	Get a specific firewall object.
+		Get a specific firewall object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APIGetLegacyWafFirewallRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APIGetLegacyWafFirewallRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetLegacyWafFirewall(ctx context.Context, firewallID string) APIGetLegacyWafFirewallRequest
 
@@ -105,17 +104,17 @@ type LegacyWafFirewallAPI interface {
 	GetLegacyWafFirewallExecute(r APIGetLegacyWafFirewallRequest) (map[string]any, *http.Response, error)
 
 	/*
-	GetLegacyWafFirewallService Get a firewall
+		GetLegacyWafFirewallService Get a firewall
 
-	Get a specific firewall object.
+		Get a specific firewall object.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APIGetLegacyWafFirewallServiceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APIGetLegacyWafFirewallServiceRequest
 
-	Deprecated
+		Deprecated
 	*/
 	GetLegacyWafFirewallService(ctx context.Context, serviceID string, versionID int32, firewallID string) APIGetLegacyWafFirewallServiceRequest
 
@@ -125,14 +124,14 @@ type LegacyWafFirewallAPI interface {
 	GetLegacyWafFirewallServiceExecute(r APIGetLegacyWafFirewallServiceRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListLegacyWafFirewalls List active firewalls
+		ListLegacyWafFirewalls List active firewalls
 
-	List all active firewall objects.
+		List all active firewall objects.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListLegacyWafFirewallsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListLegacyWafFirewallsRequest
 
-	Deprecated
+		Deprecated
 	*/
 	ListLegacyWafFirewalls(ctx context.Context) APIListLegacyWafFirewallsRequest
 
@@ -142,16 +141,16 @@ type LegacyWafFirewallAPI interface {
 	ListLegacyWafFirewallsExecute(r APIListLegacyWafFirewallsRequest) (map[string]any, *http.Response, error)
 
 	/*
-	ListLegacyWafFirewallsService List firewalls
+		ListLegacyWafFirewallsService List firewalls
 
-	List all firewall objects for a particular service and version.
+		List all firewall objects for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLegacyWafFirewallsServiceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLegacyWafFirewallsServiceRequest
 
-	Deprecated
+		Deprecated
 	*/
 	ListLegacyWafFirewallsService(ctx context.Context, serviceID string, versionID int32) APIListLegacyWafFirewallsServiceRequest
 
@@ -161,18 +160,18 @@ type LegacyWafFirewallAPI interface {
 	ListLegacyWafFirewallsServiceExecute(r APIListLegacyWafFirewallsServiceRequest) (map[string]any, *http.Response, error)
 
 	/*
-	UpdateLegacyWafFirewallService Update a firewall
+		UpdateLegacyWafFirewallService Update a firewall
 
-	Update a firewall object for a particular service and version.
+		Update a firewall object for a particular service and version.
 
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param firewallID Alphanumeric string identifying a Firewall.
-	 @return APIUpdateLegacyWafFirewallServiceRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param firewallID Alphanumeric string identifying a Firewall.
+		 @return APIUpdateLegacyWafFirewallServiceRequest
 
-	Deprecated
+		Deprecated
 	*/
 	UpdateLegacyWafFirewallService(ctx context.Context, serviceID string, versionID int32, firewallID string) APIUpdateLegacyWafFirewallServiceRequest
 
@@ -187,10 +186,10 @@ type LegacyWafFirewallAPIService service
 
 // APICreateLegacyWafFirewallServiceRequest represents a request for the resource.
 type APICreateLegacyWafFirewallServiceRequest struct {
-	ctx context.Context
-	APIService LegacyWafFirewallAPI
-	serviceID string
-	versionID int32
+	ctx         context.Context
+	APIService  LegacyWafFirewallAPI
+	serviceID   string
+	versionID   int32
 	requestBody *map[string]map[string]any
 }
 
@@ -220,9 +219,9 @@ Deprecated
 func (a *LegacyWafFirewallAPIService) CreateLegacyWafFirewallService(ctx context.Context, serviceID string, versionID int32) APICreateLegacyWafFirewallServiceRequest {
 	return APICreateLegacyWafFirewallServiceRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -231,10 +230,10 @@ func (a *LegacyWafFirewallAPIService) CreateLegacyWafFirewallService(ctx context
 // Deprecated
 func (a *LegacyWafFirewallAPIService) CreateLegacyWafFirewallServiceExecute(r APICreateLegacyWafFirewallServiceRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafFirewallAPIService.CreateLegacyWafFirewallService")
@@ -317,7 +316,6 @@ func (a *LegacyWafFirewallAPIService) CreateLegacyWafFirewallServiceExecute(r AP
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -336,9 +334,9 @@ func (a *LegacyWafFirewallAPIService) CreateLegacyWafFirewallServiceExecute(r AP
 
 // APIDisableLegacyWafFirewallRequest represents a request for the resource.
 type APIDisableLegacyWafFirewallRequest struct {
-	ctx context.Context
-	APIService LegacyWafFirewallAPI
-	firewallID string
+	ctx         context.Context
+	APIService  LegacyWafFirewallAPI
+	firewallID  string
 	requestBody *map[string]map[string]any
 }
 
@@ -367,7 +365,7 @@ Deprecated
 func (a *LegacyWafFirewallAPIService) DisableLegacyWafFirewall(ctx context.Context, firewallID string) APIDisableLegacyWafFirewallRequest {
 	return APIDisableLegacyWafFirewallRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		firewallID: firewallID,
 	}
 }
@@ -377,10 +375,10 @@ func (a *LegacyWafFirewallAPIService) DisableLegacyWafFirewall(ctx context.Conte
 // Deprecated
 func (a *LegacyWafFirewallAPIService) DisableLegacyWafFirewallExecute(r APIDisableLegacyWafFirewallRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafFirewallAPIService.DisableLegacyWafFirewall")
@@ -462,7 +460,6 @@ func (a *LegacyWafFirewallAPIService) DisableLegacyWafFirewallExecute(r APIDisab
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -481,9 +478,9 @@ func (a *LegacyWafFirewallAPIService) DisableLegacyWafFirewallExecute(r APIDisab
 
 // APIEnableLegacyWafFirewallRequest represents a request for the resource.
 type APIEnableLegacyWafFirewallRequest struct {
-	ctx context.Context
-	APIService LegacyWafFirewallAPI
-	firewallID string
+	ctx         context.Context
+	APIService  LegacyWafFirewallAPI
+	firewallID  string
 	requestBody *map[string]map[string]any
 }
 
@@ -512,7 +509,7 @@ Deprecated
 func (a *LegacyWafFirewallAPIService) EnableLegacyWafFirewall(ctx context.Context, firewallID string) APIEnableLegacyWafFirewallRequest {
 	return APIEnableLegacyWafFirewallRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		firewallID: firewallID,
 	}
 }
@@ -522,10 +519,10 @@ func (a *LegacyWafFirewallAPIService) EnableLegacyWafFirewall(ctx context.Contex
 // Deprecated
 func (a *LegacyWafFirewallAPIService) EnableLegacyWafFirewallExecute(r APIEnableLegacyWafFirewallRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafFirewallAPIService.EnableLegacyWafFirewall")
@@ -607,7 +604,6 @@ func (a *LegacyWafFirewallAPIService) EnableLegacyWafFirewallExecute(r APIEnable
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -626,13 +622,13 @@ func (a *LegacyWafFirewallAPIService) EnableLegacyWafFirewallExecute(r APIEnable
 
 // APIGetLegacyWafFirewallRequest represents a request for the resource.
 type APIGetLegacyWafFirewallRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LegacyWafFirewallAPI
 	firewallID string
-	include *string
+	include    *string
 }
 
-// Include Include relationships. Optional, comma separated values. Permitted values: &#x60;configuration_set&#x60;, &#x60;owasp&#x60;, &#x60;rules&#x60;, &#x60;rule_statuses&#x60;. 
+// Include Include relationships. Optional, comma separated values. Permitted values: &#x60;configuration_set&#x60;, &#x60;owasp&#x60;, &#x60;rules&#x60;, &#x60;rule_statuses&#x60;.
 func (r *APIGetLegacyWafFirewallRequest) Include(include string) *APIGetLegacyWafFirewallRequest {
 	r.include = &include
 	return r
@@ -657,7 +653,7 @@ Deprecated
 func (a *LegacyWafFirewallAPIService) GetLegacyWafFirewall(ctx context.Context, firewallID string) APIGetLegacyWafFirewallRequest {
 	return APIGetLegacyWafFirewallRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		firewallID: firewallID,
 	}
 }
@@ -667,10 +663,10 @@ func (a *LegacyWafFirewallAPIService) GetLegacyWafFirewall(ctx context.Context, 
 // Deprecated
 func (a *LegacyWafFirewallAPIService) GetLegacyWafFirewallExecute(r APIGetLegacyWafFirewallRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafFirewallAPIService.GetLegacyWafFirewall")
@@ -753,7 +749,6 @@ func (a *LegacyWafFirewallAPIService) GetLegacyWafFirewallExecute(r APIGetLegacy
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -772,13 +767,12 @@ func (a *LegacyWafFirewallAPIService) GetLegacyWafFirewallExecute(r APIGetLegacy
 
 // APIGetLegacyWafFirewallServiceRequest represents a request for the resource.
 type APIGetLegacyWafFirewallServiceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LegacyWafFirewallAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 	firewallID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLegacyWafFirewallServiceRequest) Execute() (map[string]any, *http.Response, error) {
@@ -801,9 +795,9 @@ Deprecated
 func (a *LegacyWafFirewallAPIService) GetLegacyWafFirewallService(ctx context.Context, serviceID string, versionID int32, firewallID string) APIGetLegacyWafFirewallServiceRequest {
 	return APIGetLegacyWafFirewallServiceRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 		firewallID: firewallID,
 	}
 }
@@ -813,10 +807,10 @@ func (a *LegacyWafFirewallAPIService) GetLegacyWafFirewallService(ctx context.Co
 // Deprecated
 func (a *LegacyWafFirewallAPIService) GetLegacyWafFirewallServiceExecute(r APIGetLegacyWafFirewallServiceRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafFirewallAPIService.GetLegacyWafFirewallService")
@@ -898,7 +892,6 @@ func (a *LegacyWafFirewallAPIService) GetLegacyWafFirewallServiceExecute(r APIGe
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -917,12 +910,12 @@ func (a *LegacyWafFirewallAPIService) GetLegacyWafFirewallServiceExecute(r APIGe
 
 // APIListLegacyWafFirewallsRequest represents a request for the resource.
 type APIListLegacyWafFirewallsRequest struct {
-	ctx context.Context
-	APIService LegacyWafFirewallAPI
+	ctx               context.Context
+	APIService        LegacyWafFirewallAPI
 	filterRulesRuleID *string
-	pageNumber *int32
-	pageSize *int32
-	include *string
+	pageNumber        *int32
+	pageSize          *int32
+	include           *string
 }
 
 // FilterRulesRuleID Limit the returned firewalls to a specific rule ID.
@@ -930,17 +923,20 @@ func (r *APIListLegacyWafFirewallsRequest) FilterRulesRuleID(filterRulesRuleID s
 	r.filterRulesRuleID = &filterRulesRuleID
 	return r
 }
+
 // PageNumber Current page.
 func (r *APIListLegacyWafFirewallsRequest) PageNumber(pageNumber int32) *APIListLegacyWafFirewallsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListLegacyWafFirewallsRequest) PageSize(pageSize int32) *APIListLegacyWafFirewallsRequest {
 	r.pageSize = &pageSize
 	return r
 }
-// Include Include relationships. Optional, comma separated values. Permitted values: &#x60;configuration_set&#x60;, &#x60;owasp&#x60;. 
+
+// Include Include relationships. Optional, comma separated values. Permitted values: &#x60;configuration_set&#x60;, &#x60;owasp&#x60;.
 func (r *APIListLegacyWafFirewallsRequest) Include(include string) *APIListLegacyWafFirewallsRequest {
 	r.include = &include
 	return r
@@ -964,7 +960,7 @@ Deprecated
 func (a *LegacyWafFirewallAPIService) ListLegacyWafFirewalls(ctx context.Context) APIListLegacyWafFirewallsRequest {
 	return APIListLegacyWafFirewallsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -973,10 +969,10 @@ func (a *LegacyWafFirewallAPIService) ListLegacyWafFirewalls(ctx context.Context
 // Deprecated
 func (a *LegacyWafFirewallAPIService) ListLegacyWafFirewallsExecute(r APIListLegacyWafFirewallsRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafFirewallAPIService.ListLegacyWafFirewalls")
@@ -1067,7 +1063,6 @@ func (a *LegacyWafFirewallAPIService) ListLegacyWafFirewallsExecute(r APIListLeg
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1086,13 +1081,13 @@ func (a *LegacyWafFirewallAPIService) ListLegacyWafFirewallsExecute(r APIListLeg
 
 // APIListLegacyWafFirewallsServiceRequest represents a request for the resource.
 type APIListLegacyWafFirewallsServiceRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LegacyWafFirewallAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 	pageNumber *int32
-	pageSize *int32
-	include *string
+	pageSize   *int32
+	include    *string
 }
 
 // PageNumber Current page.
@@ -1100,12 +1095,14 @@ func (r *APIListLegacyWafFirewallsServiceRequest) PageNumber(pageNumber int32) *
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListLegacyWafFirewallsServiceRequest) PageSize(pageSize int32) *APIListLegacyWafFirewallsServiceRequest {
 	r.pageSize = &pageSize
 	return r
 }
-// Include Include relationships. Optional, comma separated values. Permitted values: &#x60;configuration_set&#x60;, &#x60;owasp&#x60;. 
+
+// Include Include relationships. Optional, comma separated values. Permitted values: &#x60;configuration_set&#x60;, &#x60;owasp&#x60;.
 func (r *APIListLegacyWafFirewallsServiceRequest) Include(include string) *APIListLegacyWafFirewallsServiceRequest {
 	r.include = &include
 	return r
@@ -1131,9 +1128,9 @@ Deprecated
 func (a *LegacyWafFirewallAPIService) ListLegacyWafFirewallsService(ctx context.Context, serviceID string, versionID int32) APIListLegacyWafFirewallsServiceRequest {
 	return APIListLegacyWafFirewallsServiceRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -1142,10 +1139,10 @@ func (a *LegacyWafFirewallAPIService) ListLegacyWafFirewallsService(ctx context.
 // Deprecated
 func (a *LegacyWafFirewallAPIService) ListLegacyWafFirewallsServiceExecute(r APIListLegacyWafFirewallsServiceRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafFirewallAPIService.ListLegacyWafFirewallsService")
@@ -1235,7 +1232,6 @@ func (a *LegacyWafFirewallAPIService) ListLegacyWafFirewallsServiceExecute(r API
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -1254,11 +1250,11 @@ func (a *LegacyWafFirewallAPIService) ListLegacyWafFirewallsServiceExecute(r API
 
 // APIUpdateLegacyWafFirewallServiceRequest represents a request for the resource.
 type APIUpdateLegacyWafFirewallServiceRequest struct {
-	ctx context.Context
-	APIService LegacyWafFirewallAPI
-	serviceID string
-	versionID int32
-	firewallID string
+	ctx         context.Context
+	APIService  LegacyWafFirewallAPI
+	serviceID   string
+	versionID   int32
+	firewallID  string
 	requestBody *map[string]map[string]any
 }
 
@@ -1290,9 +1286,9 @@ Deprecated
 func (a *LegacyWafFirewallAPIService) UpdateLegacyWafFirewallService(ctx context.Context, serviceID string, versionID int32, firewallID string) APIUpdateLegacyWafFirewallServiceRequest {
 	return APIUpdateLegacyWafFirewallServiceRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 		firewallID: firewallID,
 	}
 }
@@ -1302,10 +1298,10 @@ func (a *LegacyWafFirewallAPIService) UpdateLegacyWafFirewallService(ctx context
 // Deprecated
 func (a *LegacyWafFirewallAPIService) UpdateLegacyWafFirewallServiceExecute(r APIUpdateLegacyWafFirewallServiceRequest) (map[string]any, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  map[string]any
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue map[string]any
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LegacyWafFirewallAPIService.UpdateLegacyWafFirewallService")
@@ -1388,7 +1384,6 @@ func (a *LegacyWafFirewallAPIService) UpdateLegacyWafFirewallServiceExecute(r AP
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

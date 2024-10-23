@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type ACLEntryAPI interface {
 
 	/*
-	BulkUpdateACLEntries Update multiple ACL entries
+		BulkUpdateACLEntries Update multiple ACL entries
 
-	Update multiple ACL entries on the same ACL. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 entries. [Contact support](https://support.fastly.com/) to discuss raising this limit.
+		Update multiple ACL entries on the same ACL. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 entries. [Contact support](https://support.fastly.com/) to discuss raising this limit.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param aclID Alphanumeric string identifying a ACL.
-	 @return APIBulkUpdateACLEntriesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param aclID Alphanumeric string identifying a ACL.
+		 @return APIBulkUpdateACLEntriesRequest
 	*/
 	BulkUpdateACLEntries(ctx context.Context, serviceID string, aclID string) APIBulkUpdateACLEntriesRequest
 
@@ -48,14 +47,14 @@ type ACLEntryAPI interface {
 	BulkUpdateACLEntriesExecute(r APIBulkUpdateACLEntriesRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	CreateACLEntry Create an ACL entry
+		CreateACLEntry Create an ACL entry
 
-	Add an ACL entry to an ACL.
+		Add an ACL entry to an ACL.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param aclID Alphanumeric string identifying a ACL.
-	 @return APICreateACLEntryRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param aclID Alphanumeric string identifying a ACL.
+		 @return APICreateACLEntryRequest
 	*/
 	CreateACLEntry(ctx context.Context, serviceID string, aclID string) APICreateACLEntryRequest
 
@@ -64,15 +63,15 @@ type ACLEntryAPI interface {
 	CreateACLEntryExecute(r APICreateACLEntryRequest) (*ACLEntryResponse, *http.Response, error)
 
 	/*
-	DeleteACLEntry Delete an ACL entry
+		DeleteACLEntry Delete an ACL entry
 
-	Delete an ACL entry from a specified ACL.
+		Delete an ACL entry from a specified ACL.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param aclID Alphanumeric string identifying a ACL.
-	 @param aclEntryID Alphanumeric string identifying an ACL Entry.
-	 @return APIDeleteACLEntryRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param aclID Alphanumeric string identifying a ACL.
+		 @param aclEntryID Alphanumeric string identifying an ACL Entry.
+		 @return APIDeleteACLEntryRequest
 	*/
 	DeleteACLEntry(ctx context.Context, serviceID string, aclID string, aclEntryID string) APIDeleteACLEntryRequest
 
@@ -81,15 +80,15 @@ type ACLEntryAPI interface {
 	DeleteACLEntryExecute(r APIDeleteACLEntryRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetACLEntry Describe an ACL entry
+		GetACLEntry Describe an ACL entry
 
-	Retrieve a single ACL entry.
+		Retrieve a single ACL entry.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param aclID Alphanumeric string identifying a ACL.
-	 @param aclEntryID Alphanumeric string identifying an ACL Entry.
-	 @return APIGetACLEntryRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param aclID Alphanumeric string identifying a ACL.
+		 @param aclEntryID Alphanumeric string identifying an ACL Entry.
+		 @return APIGetACLEntryRequest
 	*/
 	GetACLEntry(ctx context.Context, serviceID string, aclID string, aclEntryID string) APIGetACLEntryRequest
 
@@ -98,14 +97,14 @@ type ACLEntryAPI interface {
 	GetACLEntryExecute(r APIGetACLEntryRequest) (*ACLEntryResponse, *http.Response, error)
 
 	/*
-	ListACLEntries List ACL entries
+		ListACLEntries List ACL entries
 
-	List ACL entries for a specified ACL.
+		List ACL entries for a specified ACL.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param aclID Alphanumeric string identifying a ACL.
-	 @return APIListACLEntriesRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param aclID Alphanumeric string identifying a ACL.
+		 @return APIListACLEntriesRequest
 	*/
 	ListACLEntries(ctx context.Context, serviceID string, aclID string) APIListACLEntriesRequest
 
@@ -114,15 +113,15 @@ type ACLEntryAPI interface {
 	ListACLEntriesExecute(r APIListACLEntriesRequest) ([]ACLEntryResponse, *http.Response, error)
 
 	/*
-	UpdateACLEntry Update an ACL entry
+		UpdateACLEntry Update an ACL entry
 
-	Update an ACL entry for a specified ACL.
+		Update an ACL entry for a specified ACL.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param aclID Alphanumeric string identifying a ACL.
-	 @param aclEntryID Alphanumeric string identifying an ACL Entry.
-	 @return APIUpdateACLEntryRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param aclID Alphanumeric string identifying a ACL.
+		 @param aclEntryID Alphanumeric string identifying an ACL Entry.
+		 @return APIUpdateACLEntryRequest
 	*/
 	UpdateACLEntry(ctx context.Context, serviceID string, aclID string, aclEntryID string) APIUpdateACLEntryRequest
 
@@ -136,10 +135,10 @@ type ACLEntryAPIService service
 
 // APIBulkUpdateACLEntriesRequest represents a request for the resource.
 type APIBulkUpdateACLEntriesRequest struct {
-	ctx context.Context
-	APIService ACLEntryAPI
-	serviceID string
-	aclID string
+	ctx                         context.Context
+	APIService                  ACLEntryAPI
+	serviceID                   string
+	aclID                       string
 	bulkUpdateACLEntriesRequest *BulkUpdateACLEntriesRequest
 }
 
@@ -167,9 +166,9 @@ Update multiple ACL entries on the same ACL. For faster updates to your service,
 func (a *ACLEntryAPIService) BulkUpdateACLEntries(ctx context.Context, serviceID string, aclID string) APIBulkUpdateACLEntriesRequest {
 	return APIBulkUpdateACLEntriesRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		aclID: aclID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		aclID:      aclID,
 	}
 }
 
@@ -177,10 +176,10 @@ func (a *ACLEntryAPIService) BulkUpdateACLEntries(ctx context.Context, serviceID
 //  @return InlineResponse200
 func (a *ACLEntryAPIService) BulkUpdateACLEntriesExecute(r APIBulkUpdateACLEntriesRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLEntryAPIService.BulkUpdateACLEntries")
@@ -263,7 +262,6 @@ func (a *ACLEntryAPIService) BulkUpdateACLEntriesExecute(r APIBulkUpdateACLEntri
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -282,11 +280,11 @@ func (a *ACLEntryAPIService) BulkUpdateACLEntriesExecute(r APIBulkUpdateACLEntri
 
 // APICreateACLEntryRequest represents a request for the resource.
 type APICreateACLEntryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ACLEntryAPI
-	serviceID string
-	aclID string
-	aclEntry *ACLEntry
+	serviceID  string
+	aclID      string
+	aclEntry   *ACLEntry
 }
 
 // ACLEntry returns a pointer to a request.
@@ -313,9 +311,9 @@ Add an ACL entry to an ACL.
 func (a *ACLEntryAPIService) CreateACLEntry(ctx context.Context, serviceID string, aclID string) APICreateACLEntryRequest {
 	return APICreateACLEntryRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		aclID: aclID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		aclID:      aclID,
 	}
 }
 
@@ -323,10 +321,10 @@ func (a *ACLEntryAPIService) CreateACLEntry(ctx context.Context, serviceID strin
 //  @return ACLEntryResponse
 func (a *ACLEntryAPIService) CreateACLEntryExecute(r APICreateACLEntryRequest) (*ACLEntryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ACLEntryResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ACLEntryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLEntryAPIService.CreateACLEntry")
@@ -409,7 +407,6 @@ func (a *ACLEntryAPIService) CreateACLEntryExecute(r APICreateACLEntryRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -428,13 +425,12 @@ func (a *ACLEntryAPIService) CreateACLEntryExecute(r APICreateACLEntryRequest) (
 
 // APIDeleteACLEntryRequest represents a request for the resource.
 type APIDeleteACLEntryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ACLEntryAPI
-	serviceID string
-	aclID string
+	serviceID  string
+	aclID      string
 	aclEntryID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteACLEntryRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -455,9 +451,9 @@ Delete an ACL entry from a specified ACL.
 func (a *ACLEntryAPIService) DeleteACLEntry(ctx context.Context, serviceID string, aclID string, aclEntryID string) APIDeleteACLEntryRequest {
 	return APIDeleteACLEntryRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		aclID: aclID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		aclID:      aclID,
 		aclEntryID: aclEntryID,
 	}
 }
@@ -466,10 +462,10 @@ func (a *ACLEntryAPIService) DeleteACLEntry(ctx context.Context, serviceID strin
 //  @return InlineResponse200
 func (a *ACLEntryAPIService) DeleteACLEntryExecute(r APIDeleteACLEntryRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLEntryAPIService.DeleteACLEntry")
@@ -551,7 +547,6 @@ func (a *ACLEntryAPIService) DeleteACLEntryExecute(r APIDeleteACLEntryRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -570,13 +565,12 @@ func (a *ACLEntryAPIService) DeleteACLEntryExecute(r APIDeleteACLEntryRequest) (
 
 // APIGetACLEntryRequest represents a request for the resource.
 type APIGetACLEntryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ACLEntryAPI
-	serviceID string
-	aclID string
+	serviceID  string
+	aclID      string
 	aclEntryID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetACLEntryRequest) Execute() (*ACLEntryResponse, *http.Response, error) {
@@ -597,9 +591,9 @@ Retrieve a single ACL entry.
 func (a *ACLEntryAPIService) GetACLEntry(ctx context.Context, serviceID string, aclID string, aclEntryID string) APIGetACLEntryRequest {
 	return APIGetACLEntryRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		aclID: aclID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		aclID:      aclID,
 		aclEntryID: aclEntryID,
 	}
 }
@@ -608,10 +602,10 @@ func (a *ACLEntryAPIService) GetACLEntry(ctx context.Context, serviceID string, 
 //  @return ACLEntryResponse
 func (a *ACLEntryAPIService) GetACLEntryExecute(r APIGetACLEntryRequest) (*ACLEntryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ACLEntryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ACLEntryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLEntryAPIService.GetACLEntry")
@@ -693,7 +687,6 @@ func (a *ACLEntryAPIService) GetACLEntryExecute(r APIGetACLEntryRequest) (*ACLEn
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -712,14 +705,14 @@ func (a *ACLEntryAPIService) GetACLEntryExecute(r APIGetACLEntryRequest) (*ACLEn
 
 // APIListACLEntriesRequest represents a request for the resource.
 type APIListACLEntriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ACLEntryAPI
-	serviceID string
-	aclID string
-	page *int32
-	perPage *int32
-	sort *string
-	direction *string
+	serviceID  string
+	aclID      string
+	page       *int32
+	perPage    *int32
+	sort       *string
+	direction  *string
 }
 
 // Page Current page.
@@ -727,16 +720,19 @@ func (r *APIListACLEntriesRequest) Page(page int32) *APIListACLEntriesRequest {
 	r.page = &page
 	return r
 }
+
 // PerPage Number of records per page.
 func (r *APIListACLEntriesRequest) PerPage(perPage int32) *APIListACLEntriesRequest {
 	r.perPage = &perPage
 	return r
 }
+
 // Sort Field on which to sort.
 func (r *APIListACLEntriesRequest) Sort(sort string) *APIListACLEntriesRequest {
 	r.sort = &sort
 	return r
 }
+
 // Direction Direction in which to sort results.
 func (r *APIListACLEntriesRequest) Direction(direction string) *APIListACLEntriesRequest {
 	r.direction = &direction
@@ -761,9 +757,9 @@ List ACL entries for a specified ACL.
 func (a *ACLEntryAPIService) ListACLEntries(ctx context.Context, serviceID string, aclID string) APIListACLEntriesRequest {
 	return APIListACLEntriesRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		aclID: aclID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		aclID:      aclID,
 	}
 }
 
@@ -771,10 +767,10 @@ func (a *ACLEntryAPIService) ListACLEntries(ctx context.Context, serviceID strin
 //  @return []ACLEntryResponse
 func (a *ACLEntryAPIService) ListACLEntriesExecute(r APIListACLEntriesRequest) ([]ACLEntryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []ACLEntryResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []ACLEntryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLEntryAPIService.ListACLEntries")
@@ -867,7 +863,6 @@ func (a *ACLEntryAPIService) ListACLEntriesExecute(r APIListACLEntriesRequest) (
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -886,12 +881,12 @@ func (a *ACLEntryAPIService) ListACLEntriesExecute(r APIListACLEntriesRequest) (
 
 // APIUpdateACLEntryRequest represents a request for the resource.
 type APIUpdateACLEntryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ACLEntryAPI
-	serviceID string
-	aclID string
+	serviceID  string
+	aclID      string
 	aclEntryID string
-	aclEntry *ACLEntry
+	aclEntry   *ACLEntry
 }
 
 // ACLEntry returns a pointer to a request.
@@ -919,9 +914,9 @@ Update an ACL entry for a specified ACL.
 func (a *ACLEntryAPIService) UpdateACLEntry(ctx context.Context, serviceID string, aclID string, aclEntryID string) APIUpdateACLEntryRequest {
 	return APIUpdateACLEntryRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		aclID: aclID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		aclID:      aclID,
 		aclEntryID: aclEntryID,
 	}
 }
@@ -930,10 +925,10 @@ func (a *ACLEntryAPIService) UpdateACLEntry(ctx context.Context, serviceID strin
 //  @return ACLEntryResponse
 func (a *ACLEntryAPIService) UpdateACLEntryExecute(r APIUpdateACLEntryRequest) (*ACLEntryResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ACLEntryResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ACLEntryResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLEntryAPIService.UpdateACLEntry")
@@ -1016,7 +1011,6 @@ func (a *ACLEntryAPIService) UpdateACLEntryExecute(r APIUpdateACLEntryRequest) (
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

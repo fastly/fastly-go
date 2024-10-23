@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type ServiceAuthorizationsAPI interface {
 
 	/*
-	CreateServiceAuthorization Create service authorization
+		CreateServiceAuthorization Create service authorization
 
-	Create service authorization.
+		Create service authorization.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateServiceAuthorizationRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateServiceAuthorizationRequest
 	*/
 	CreateServiceAuthorization(ctx context.Context) APICreateServiceAuthorizationRequest
 
@@ -46,13 +45,13 @@ type ServiceAuthorizationsAPI interface {
 	CreateServiceAuthorizationExecute(r APICreateServiceAuthorizationRequest) (*ServiceAuthorizationResponse, *http.Response, error)
 
 	/*
-	DeleteServiceAuthorization Delete service authorization
+		DeleteServiceAuthorization Delete service authorization
 
-	Delete service authorization.
+		Delete service authorization.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceAuthorizationID Alphanumeric string identifying a service authorization.
-	 @return APIDeleteServiceAuthorizationRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceAuthorizationID Alphanumeric string identifying a service authorization.
+		 @return APIDeleteServiceAuthorizationRequest
 	*/
 	DeleteServiceAuthorization(ctx context.Context, serviceAuthorizationID string) APIDeleteServiceAuthorizationRequest
 
@@ -60,12 +59,12 @@ type ServiceAuthorizationsAPI interface {
 	DeleteServiceAuthorizationExecute(r APIDeleteServiceAuthorizationRequest) (*http.Response, error)
 
 	/*
-	DeleteServiceAuthorization2 Delete service authorizations
+		DeleteServiceAuthorization2 Delete service authorizations
 
-	Delete service authorizations.
+		Delete service authorizations.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIDeleteServiceAuthorization2Request
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIDeleteServiceAuthorization2Request
 	*/
 	DeleteServiceAuthorization2(ctx context.Context) APIDeleteServiceAuthorization2Request
 
@@ -74,12 +73,12 @@ type ServiceAuthorizationsAPI interface {
 	DeleteServiceAuthorization2Execute(r APIDeleteServiceAuthorization2Request) (*InlineResponse2007, *http.Response, error)
 
 	/*
-	ListServiceAuthorization List service authorizations
+		ListServiceAuthorization List service authorizations
 
-	List service authorizations.
+		List service authorizations.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListServiceAuthorizationRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListServiceAuthorizationRequest
 	*/
 	ListServiceAuthorization(ctx context.Context) APIListServiceAuthorizationRequest
 
@@ -88,13 +87,13 @@ type ServiceAuthorizationsAPI interface {
 	ListServiceAuthorizationExecute(r APIListServiceAuthorizationRequest) (*ServiceAuthorizationsResponse, *http.Response, error)
 
 	/*
-	ShowServiceAuthorization Show service authorization
+		ShowServiceAuthorization Show service authorization
 
-	Show service authorization.
+		Show service authorization.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceAuthorizationID Alphanumeric string identifying a service authorization.
-	 @return APIShowServiceAuthorizationRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceAuthorizationID Alphanumeric string identifying a service authorization.
+		 @return APIShowServiceAuthorizationRequest
 	*/
 	ShowServiceAuthorization(ctx context.Context, serviceAuthorizationID string) APIShowServiceAuthorizationRequest
 
@@ -103,13 +102,13 @@ type ServiceAuthorizationsAPI interface {
 	ShowServiceAuthorizationExecute(r APIShowServiceAuthorizationRequest) (*ServiceAuthorizationResponse, *http.Response, error)
 
 	/*
-	UpdateServiceAuthorization Update service authorization
+		UpdateServiceAuthorization Update service authorization
 
-	Update service authorization.
+		Update service authorization.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceAuthorizationID Alphanumeric string identifying a service authorization.
-	 @return APIUpdateServiceAuthorizationRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceAuthorizationID Alphanumeric string identifying a service authorization.
+		 @return APIUpdateServiceAuthorizationRequest
 	*/
 	UpdateServiceAuthorization(ctx context.Context, serviceAuthorizationID string) APIUpdateServiceAuthorizationRequest
 
@@ -118,12 +117,12 @@ type ServiceAuthorizationsAPI interface {
 	UpdateServiceAuthorizationExecute(r APIUpdateServiceAuthorizationRequest) (*ServiceAuthorizationResponse, *http.Response, error)
 
 	/*
-	UpdateServiceAuthorization2 Update service authorizations
+		UpdateServiceAuthorization2 Update service authorizations
 
-	Update service authorizations.
+		Update service authorizations.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIUpdateServiceAuthorization2Request
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIUpdateServiceAuthorization2Request
 	*/
 	UpdateServiceAuthorization2(ctx context.Context) APIUpdateServiceAuthorization2Request
 
@@ -137,8 +136,8 @@ type ServiceAuthorizationsAPIService service
 
 // APICreateServiceAuthorizationRequest represents a request for the resource.
 type APICreateServiceAuthorizationRequest struct {
-	ctx context.Context
-	APIService ServiceAuthorizationsAPI
+	ctx                  context.Context
+	APIService           ServiceAuthorizationsAPI
 	serviceAuthorization *ServiceAuthorization
 }
 
@@ -164,7 +163,7 @@ Create service authorization.
 func (a *ServiceAuthorizationsAPIService) CreateServiceAuthorization(ctx context.Context) APICreateServiceAuthorizationRequest {
 	return APICreateServiceAuthorizationRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -172,10 +171,10 @@ func (a *ServiceAuthorizationsAPIService) CreateServiceAuthorization(ctx context
 //  @return ServiceAuthorizationResponse
 func (a *ServiceAuthorizationsAPIService) CreateServiceAuthorizationExecute(r APICreateServiceAuthorizationRequest) (*ServiceAuthorizationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ServiceAuthorizationResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ServiceAuthorizationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthorizationsAPIService.CreateServiceAuthorization")
@@ -256,7 +255,6 @@ func (a *ServiceAuthorizationsAPIService) CreateServiceAuthorizationExecute(r AP
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -275,11 +273,10 @@ func (a *ServiceAuthorizationsAPIService) CreateServiceAuthorizationExecute(r AP
 
 // APIDeleteServiceAuthorizationRequest represents a request for the resource.
 type APIDeleteServiceAuthorizationRequest struct {
-	ctx context.Context
-	APIService ServiceAuthorizationsAPI
+	ctx                    context.Context
+	APIService             ServiceAuthorizationsAPI
 	serviceAuthorizationID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteServiceAuthorizationRequest) Execute() (*http.Response, error) {
@@ -297,8 +294,8 @@ Delete service authorization.
 */
 func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization(ctx context.Context, serviceAuthorizationID string) APIDeleteServiceAuthorizationRequest {
 	return APIDeleteServiceAuthorizationRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:             a,
+		ctx:                    ctx,
 		serviceAuthorizationID: serviceAuthorizationID,
 	}
 }
@@ -306,9 +303,9 @@ func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization(ctx context
 // DeleteServiceAuthorizationExecute executes the request
 func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorizationExecute(r APIDeleteServiceAuthorizationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthorizationsAPIService.DeleteServiceAuthorization")
@@ -379,7 +376,6 @@ func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorizationExecute(r AP
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -398,8 +394,8 @@ func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorizationExecute(r AP
 
 // APIDeleteServiceAuthorization2Request represents a request for the resource.
 type APIDeleteServiceAuthorization2Request struct {
-	ctx context.Context
-	APIService ServiceAuthorizationsAPI
+	ctx         context.Context
+	APIService  ServiceAuthorizationsAPI
 	requestBody *map[string]map[string]any
 }
 
@@ -425,7 +421,7 @@ Delete service authorizations.
 func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization2(ctx context.Context) APIDeleteServiceAuthorization2Request {
 	return APIDeleteServiceAuthorization2Request{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -433,10 +429,10 @@ func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization2(ctx contex
 //  @return InlineResponse2007
 func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization2Execute(r APIDeleteServiceAuthorization2Request) (*InlineResponse2007, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse2007
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse2007
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthorizationsAPIService.DeleteServiceAuthorization2")
@@ -517,7 +513,6 @@ func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization2Execute(r A
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -536,10 +531,10 @@ func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization2Execute(r A
 
 // APIListServiceAuthorizationRequest represents a request for the resource.
 type APIListServiceAuthorizationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService ServiceAuthorizationsAPI
 	pageNumber *int32
-	pageSize *int32
+	pageSize   *int32
 }
 
 // PageNumber Current page.
@@ -547,6 +542,7 @@ func (r *APIListServiceAuthorizationRequest) PageNumber(pageNumber int32) *APILi
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListServiceAuthorizationRequest) PageSize(pageSize int32) *APIListServiceAuthorizationRequest {
 	r.pageSize = &pageSize
@@ -569,7 +565,7 @@ List service authorizations.
 func (a *ServiceAuthorizationsAPIService) ListServiceAuthorization(ctx context.Context) APIListServiceAuthorizationRequest {
 	return APIListServiceAuthorizationRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -577,10 +573,10 @@ func (a *ServiceAuthorizationsAPIService) ListServiceAuthorization(ctx context.C
 //  @return ServiceAuthorizationsResponse
 func (a *ServiceAuthorizationsAPIService) ListServiceAuthorizationExecute(r APIListServiceAuthorizationRequest) (*ServiceAuthorizationsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ServiceAuthorizationsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ServiceAuthorizationsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthorizationsAPIService.ListServiceAuthorization")
@@ -665,7 +661,6 @@ func (a *ServiceAuthorizationsAPIService) ListServiceAuthorizationExecute(r APIL
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -684,11 +679,10 @@ func (a *ServiceAuthorizationsAPIService) ListServiceAuthorizationExecute(r APIL
 
 // APIShowServiceAuthorizationRequest represents a request for the resource.
 type APIShowServiceAuthorizationRequest struct {
-	ctx context.Context
-	APIService ServiceAuthorizationsAPI
+	ctx                    context.Context
+	APIService             ServiceAuthorizationsAPI
 	serviceAuthorizationID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIShowServiceAuthorizationRequest) Execute() (*ServiceAuthorizationResponse, *http.Response, error) {
@@ -706,8 +700,8 @@ Show service authorization.
 */
 func (a *ServiceAuthorizationsAPIService) ShowServiceAuthorization(ctx context.Context, serviceAuthorizationID string) APIShowServiceAuthorizationRequest {
 	return APIShowServiceAuthorizationRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:             a,
+		ctx:                    ctx,
 		serviceAuthorizationID: serviceAuthorizationID,
 	}
 }
@@ -716,10 +710,10 @@ func (a *ServiceAuthorizationsAPIService) ShowServiceAuthorization(ctx context.C
 //  @return ServiceAuthorizationResponse
 func (a *ServiceAuthorizationsAPIService) ShowServiceAuthorizationExecute(r APIShowServiceAuthorizationRequest) (*ServiceAuthorizationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ServiceAuthorizationResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ServiceAuthorizationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthorizationsAPIService.ShowServiceAuthorization")
@@ -799,7 +793,6 @@ func (a *ServiceAuthorizationsAPIService) ShowServiceAuthorizationExecute(r APIS
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -818,10 +811,10 @@ func (a *ServiceAuthorizationsAPIService) ShowServiceAuthorizationExecute(r APIS
 
 // APIUpdateServiceAuthorizationRequest represents a request for the resource.
 type APIUpdateServiceAuthorizationRequest struct {
-	ctx context.Context
-	APIService ServiceAuthorizationsAPI
+	ctx                    context.Context
+	APIService             ServiceAuthorizationsAPI
 	serviceAuthorizationID string
-	serviceAuthorization *ServiceAuthorization
+	serviceAuthorization   *ServiceAuthorization
 }
 
 // ServiceAuthorization returns a pointer to a request.
@@ -846,8 +839,8 @@ Update service authorization.
 */
 func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorization(ctx context.Context, serviceAuthorizationID string) APIUpdateServiceAuthorizationRequest {
 	return APIUpdateServiceAuthorizationRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:             a,
+		ctx:                    ctx,
 		serviceAuthorizationID: serviceAuthorizationID,
 	}
 }
@@ -856,10 +849,10 @@ func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorization(ctx context
 //  @return ServiceAuthorizationResponse
 func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorizationExecute(r APIUpdateServiceAuthorizationRequest) (*ServiceAuthorizationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ServiceAuthorizationResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ServiceAuthorizationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthorizationsAPIService.UpdateServiceAuthorization")
@@ -941,7 +934,6 @@ func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorizationExecute(r AP
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -960,8 +952,8 @@ func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorizationExecute(r AP
 
 // APIUpdateServiceAuthorization2Request represents a request for the resource.
 type APIUpdateServiceAuthorization2Request struct {
-	ctx context.Context
-	APIService ServiceAuthorizationsAPI
+	ctx         context.Context
+	APIService  ServiceAuthorizationsAPI
 	requestBody *map[string]map[string]any
 }
 
@@ -987,7 +979,7 @@ Update service authorizations.
 func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorization2(ctx context.Context) APIUpdateServiceAuthorization2Request {
 	return APIUpdateServiceAuthorization2Request{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -995,10 +987,10 @@ func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorization2(ctx contex
 //  @return ServiceAuthorizationsResponse
 func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorization2Execute(r APIUpdateServiceAuthorization2Request) (*ServiceAuthorizationsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *ServiceAuthorizationsResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *ServiceAuthorizationsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthorizationsAPIService.UpdateServiceAuthorization2")
@@ -1078,7 +1070,6 @@ func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorization2Execute(r A
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

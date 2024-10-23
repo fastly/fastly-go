@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -30,7 +29,7 @@ type LoggingAzureblobAdditional struct {
 	// A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 	PublicKey NullableString `json:"public_key,omitempty"`
 	// The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
-	FileMaxBytes *int32 `json:"file_max_bytes,omitempty"`
+	FileMaxBytes         *int32 `json:"file_max_bytes,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -74,7 +73,7 @@ func (o *LoggingAzureblobAdditional) GetPath() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingAzureblobAdditional) GetPathOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
@@ -93,6 +92,7 @@ func (o *LoggingAzureblobAdditional) HasPath() bool {
 func (o *LoggingAzureblobAdditional) SetPath(v string) {
 	o.Path.Set(&v)
 }
+
 // SetPathNil sets the value for Path to be an explicit nil
 func (o *LoggingAzureblobAdditional) SetPathNil() {
 	o.Path.Set(nil)
@@ -212,7 +212,7 @@ func (o *LoggingAzureblobAdditional) GetPublicKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingAzureblobAdditional) GetPublicKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.PublicKey.Get(), o.PublicKey.IsSet()
@@ -231,6 +231,7 @@ func (o *LoggingAzureblobAdditional) HasPublicKey() bool {
 func (o *LoggingAzureblobAdditional) SetPublicKey(v string) {
 	o.PublicKey.Set(&v)
 }
+
 // SetPublicKeyNil sets the value for PublicKey to be an explicit nil
 func (o *LoggingAzureblobAdditional) SetPublicKeyNil() {
 	o.PublicKey.Set(nil)
@@ -304,7 +305,7 @@ func (o LoggingAzureblobAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingAzureblobAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingAzureblobAdditional := _LoggingAzureblobAdditional{}
 
@@ -327,7 +328,7 @@ func (o *LoggingAzureblobAdditional) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingAzureblobAdditional is a helper abstraction for handling nullable loggingazureblobadditional types. 
+// NullableLoggingAzureblobAdditional is a helper abstraction for handling nullable loggingazureblobadditional types.
 type NullableLoggingAzureblobAdditional struct {
 	value *LoggingAzureblobAdditional
 	isSet bool
@@ -367,7 +368,7 @@ func (v NullableLoggingAzureblobAdditional) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingAzureblobAdditional) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

@@ -4,7 +4,7 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
@@ -12,19 +12,18 @@ Contact: oss@fastly.com
 
 // This code is auto-generated; DO NOT EDIT.
 
-
 import (
 	"encoding/json"
 )
 
 // DashboardItemPropertyVisualizationPropertyConfig [Configuration options](#visualization-config) for the given visualization.
 type DashboardItemPropertyVisualizationPropertyConfig struct {
-	// The type of chart to display. 
+	// The type of chart to display.
 	PlotType string `json:"plot_type"`
-	// (Optional) The units to use to format the data. 
+	// (Optional) The units to use to format the data.
 	Format *string `json:"format,omitempty"`
-	// (Optional) The aggregation function to apply to the dataset. 
-	CalculationMethod *string `json:"calculation_method,omitempty"`
+	// (Optional) The aggregation function to apply to the dataset.
+	CalculationMethod    *string `json:"calculation_method,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -65,7 +64,7 @@ func (o *DashboardItemPropertyVisualizationPropertyConfig) GetPlotType() string 
 // GetPlotTypeOk returns a tuple with the PlotType field value
 // and a boolean to check if the value has been set.
 func (o *DashboardItemPropertyVisualizationPropertyConfig) GetPlotTypeOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return &o.PlotType, true
@@ -162,7 +161,7 @@ func (o DashboardItemPropertyVisualizationPropertyConfig) MarshalJSON() ([]byte,
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *DashboardItemPropertyVisualizationPropertyConfig) UnmarshalJSON(bytes []byte) (err error) {
 	varDashboardItemPropertyVisualizationPropertyConfig := _DashboardItemPropertyVisualizationPropertyConfig{}
 
@@ -182,7 +181,7 @@ func (o *DashboardItemPropertyVisualizationPropertyConfig) UnmarshalJSON(bytes [
 	return err
 }
 
-// NullableDashboardItemPropertyVisualizationPropertyConfig is a helper abstraction for handling nullable dashboarditempropertyvisualizationpropertyconfig types. 
+// NullableDashboardItemPropertyVisualizationPropertyConfig is a helper abstraction for handling nullable dashboarditempropertyvisualizationpropertyconfig types.
 type NullableDashboardItemPropertyVisualizationPropertyConfig struct {
 	value *DashboardItemPropertyVisualizationPropertyConfig
 	isSet bool
@@ -222,7 +221,7 @@ func (v NullableDashboardItemPropertyVisualizationPropertyConfig) MarshalJSON() 
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableDashboardItemPropertyVisualizationPropertyConfig) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

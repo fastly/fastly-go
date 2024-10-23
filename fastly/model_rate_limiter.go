@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -42,7 +41,7 @@ type RateLimiter struct {
 	// Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
 	LoggerType *string `json:"logger_type,omitempty"`
 	// Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
-	FeatureRevision *int32 `json:"feature_revision,omitempty"`
+	FeatureRevision      *int32 `json:"feature_revision,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -110,7 +109,7 @@ func (o *RateLimiter) GetURIDictionaryName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RateLimiter) GetURIDictionaryNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.URIDictionaryName.Get(), o.URIDictionaryName.IsSet()
@@ -129,6 +128,7 @@ func (o *RateLimiter) HasURIDictionaryName() bool {
 func (o *RateLimiter) SetURIDictionaryName(v string) {
 	o.URIDictionaryName.Set(&v)
 }
+
 // SetURIDictionaryNameNil sets the value for URIDictionaryName to be an explicit nil
 func (o *RateLimiter) SetURIDictionaryNameNil() {
 	o.URIDictionaryName.Set(nil)
@@ -333,7 +333,7 @@ func (o *RateLimiter) SetAction(v string) {
 
 // GetResponse returns the Response field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RateLimiter) GetResponse() map[string]string {
-	if o == nil  {
+	if o == nil {
 		var ret map[string]string
 		return ret
 	}
@@ -377,7 +377,7 @@ func (o *RateLimiter) GetResponseObjectName() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RateLimiter) GetResponseObjectNameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseObjectName.Get(), o.ResponseObjectName.IsSet()
@@ -396,6 +396,7 @@ func (o *RateLimiter) HasResponseObjectName() bool {
 func (o *RateLimiter) SetResponseObjectName(v string) {
 	o.ResponseObjectName.Set(&v)
 }
+
 // SetResponseObjectNameNil sets the value for ResponseObjectName to be an explicit nil
 func (o *RateLimiter) SetResponseObjectNameNil() {
 	o.ResponseObjectName.Set(nil)
@@ -519,7 +520,7 @@ func (o RateLimiter) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *RateLimiter) UnmarshalJSON(bytes []byte) (err error) {
 	varRateLimiter := _RateLimiter{}
 
@@ -548,7 +549,7 @@ func (o *RateLimiter) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableRateLimiter is a helper abstraction for handling nullable ratelimiter types. 
+// NullableRateLimiter is a helper abstraction for handling nullable ratelimiter types.
 type NullableRateLimiter struct {
 	value *RateLimiter
 	isSet bool
@@ -588,7 +589,7 @@ func (v NullableRateLimiter) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableRateLimiter) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

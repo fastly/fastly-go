@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -27,15 +26,15 @@ type GzipResponse struct {
 	// Space-separated list of file extensions to compress. If you omit this field a default list will be used.
 	Extensions NullableString `json:"extensions,omitempty"`
 	// Name of the gzip configuration.
-	Name *string `json:"name,omitempty"`
+	Name      *string `json:"name,omitempty"`
 	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	Version   *string `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
-	UpdatedAt NullableTime `json:"updated_at,omitempty"`
+	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -71,7 +70,7 @@ func (o *GzipResponse) GetCacheCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GzipResponse) GetCacheConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CacheCondition.Get(), o.CacheCondition.IsSet()
@@ -90,6 +89,7 @@ func (o *GzipResponse) HasCacheCondition() bool {
 func (o *GzipResponse) SetCacheCondition(v string) {
 	o.CacheCondition.Set(&v)
 }
+
 // SetCacheConditionNil sets the value for CacheCondition to be an explicit nil
 func (o *GzipResponse) SetCacheConditionNil() {
 	o.CacheCondition.Set(nil)
@@ -113,7 +113,7 @@ func (o *GzipResponse) GetContentTypes() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GzipResponse) GetContentTypesOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ContentTypes.Get(), o.ContentTypes.IsSet()
@@ -132,6 +132,7 @@ func (o *GzipResponse) HasContentTypes() bool {
 func (o *GzipResponse) SetContentTypes(v string) {
 	o.ContentTypes.Set(&v)
 }
+
 // SetContentTypesNil sets the value for ContentTypes to be an explicit nil
 func (o *GzipResponse) SetContentTypesNil() {
 	o.ContentTypes.Set(nil)
@@ -155,7 +156,7 @@ func (o *GzipResponse) GetExtensions() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GzipResponse) GetExtensionsOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Extensions.Get(), o.Extensions.IsSet()
@@ -174,6 +175,7 @@ func (o *GzipResponse) HasExtensions() bool {
 func (o *GzipResponse) SetExtensions(v string) {
 	o.Extensions.Set(&v)
 }
+
 // SetExtensionsNil sets the value for Extensions to be an explicit nil
 func (o *GzipResponse) SetExtensionsNil() {
 	o.Extensions.Set(nil)
@@ -293,7 +295,7 @@ func (o *GzipResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GzipResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -312,6 +314,7 @@ func (o *GzipResponse) HasCreatedAt() bool {
 func (o *GzipResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *GzipResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -335,7 +338,7 @@ func (o *GzipResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GzipResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -354,6 +357,7 @@ func (o *GzipResponse) HasDeletedAt() bool {
 func (o *GzipResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *GzipResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -377,7 +381,7 @@ func (o *GzipResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GzipResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -396,6 +400,7 @@ func (o *GzipResponse) HasUpdatedAt() bool {
 func (o *GzipResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *GzipResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -446,7 +451,7 @@ func (o GzipResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *GzipResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varGzipResponse := _GzipResponse{}
 
@@ -472,7 +477,7 @@ func (o *GzipResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableGzipResponse is a helper abstraction for handling nullable gzipresponse types. 
+// NullableGzipResponse is a helper abstraction for handling nullable gzipresponse types.
 type NullableGzipResponse struct {
 	value *GzipResponse
 	isSet bool
@@ -512,7 +517,7 @@ func (v NullableGzipResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableGzipResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

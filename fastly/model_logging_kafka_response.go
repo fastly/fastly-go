@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"encoding/json"
@@ -22,13 +21,13 @@ import (
 type LoggingKafkaResponse struct {
 	// The name for the real-time logging configuration.
 	Name *string `json:"name,omitempty"`
-	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+	// Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
 	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
 	Format *string `json:"format,omitempty"`
-	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// A secure certificate to authenticate a server with. Must be in PEM format.
 	TLSCaCert NullableString `json:"tls_ca_cert,omitempty"`
@@ -44,8 +43,8 @@ type LoggingKafkaResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
-	Version *string `json:"version,omitempty"`
+	ServiceID *string      `json:"service_id,omitempty"`
+	Version   *string      `json:"version,omitempty"`
 	// The Kafka topic to send logs to. Required.
 	Topic *string `json:"topic,omitempty"`
 	// A comma-separated list of IP addresses or hostnames of Kafka brokers. Required.
@@ -63,8 +62,8 @@ type LoggingKafkaResponse struct {
 	// SASL user.
 	User *string `json:"user,omitempty"`
 	// SASL password.
-	Password *string `json:"password,omitempty"`
-	UseTLS *LoggingUseTLSString `json:"use_tls,omitempty"`
+	Password             *string              `json:"password,omitempty"`
+	UseTLS               *LoggingUseTLSString `json:"use_tls,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -168,7 +167,7 @@ func (o *LoggingKafkaResponse) GetPlacement() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKafkaResponse) GetPlacementOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.Placement.Get(), o.Placement.IsSet()
@@ -187,6 +186,7 @@ func (o *LoggingKafkaResponse) HasPlacement() bool {
 func (o *LoggingKafkaResponse) SetPlacement(v string) {
 	o.Placement.Set(&v)
 }
+
 // SetPlacementNil sets the value for Placement to be an explicit nil
 func (o *LoggingKafkaResponse) SetPlacementNil() {
 	o.Placement.Set(nil)
@@ -210,7 +210,7 @@ func (o *LoggingKafkaResponse) GetResponseCondition() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKafkaResponse) GetResponseConditionOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.ResponseCondition.Get(), o.ResponseCondition.IsSet()
@@ -229,6 +229,7 @@ func (o *LoggingKafkaResponse) HasResponseCondition() bool {
 func (o *LoggingKafkaResponse) SetResponseCondition(v string) {
 	o.ResponseCondition.Set(&v)
 }
+
 // SetResponseConditionNil sets the value for ResponseCondition to be an explicit nil
 func (o *LoggingKafkaResponse) SetResponseConditionNil() {
 	o.ResponseCondition.Set(nil)
@@ -316,7 +317,7 @@ func (o *LoggingKafkaResponse) GetTLSCaCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKafkaResponse) GetTLSCaCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSCaCert.Get(), o.TLSCaCert.IsSet()
@@ -335,6 +336,7 @@ func (o *LoggingKafkaResponse) HasTLSCaCert() bool {
 func (o *LoggingKafkaResponse) SetTLSCaCert(v string) {
 	o.TLSCaCert.Set(&v)
 }
+
 // SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
 func (o *LoggingKafkaResponse) SetTLSCaCertNil() {
 	o.TLSCaCert.Set(nil)
@@ -358,7 +360,7 @@ func (o *LoggingKafkaResponse) GetTLSClientCert() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKafkaResponse) GetTLSClientCertOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientCert.Get(), o.TLSClientCert.IsSet()
@@ -377,6 +379,7 @@ func (o *LoggingKafkaResponse) HasTLSClientCert() bool {
 func (o *LoggingKafkaResponse) SetTLSClientCert(v string) {
 	o.TLSClientCert.Set(&v)
 }
+
 // SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
 func (o *LoggingKafkaResponse) SetTLSClientCertNil() {
 	o.TLSClientCert.Set(nil)
@@ -400,7 +403,7 @@ func (o *LoggingKafkaResponse) GetTLSClientKey() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKafkaResponse) GetTLSClientKeyOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSClientKey.Get(), o.TLSClientKey.IsSet()
@@ -419,6 +422,7 @@ func (o *LoggingKafkaResponse) HasTLSClientKey() bool {
 func (o *LoggingKafkaResponse) SetTLSClientKey(v string) {
 	o.TLSClientKey.Set(&v)
 }
+
 // SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
 func (o *LoggingKafkaResponse) SetTLSClientKeyNil() {
 	o.TLSClientKey.Set(nil)
@@ -442,7 +446,7 @@ func (o *LoggingKafkaResponse) GetTLSHostname() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKafkaResponse) GetTLSHostnameOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.TLSHostname.Get(), o.TLSHostname.IsSet()
@@ -461,6 +465,7 @@ func (o *LoggingKafkaResponse) HasTLSHostname() bool {
 func (o *LoggingKafkaResponse) SetTLSHostname(v string) {
 	o.TLSHostname.Set(&v)
 }
+
 // SetTLSHostnameNil sets the value for TLSHostname to be an explicit nil
 func (o *LoggingKafkaResponse) SetTLSHostnameNil() {
 	o.TLSHostname.Set(nil)
@@ -484,7 +489,7 @@ func (o *LoggingKafkaResponse) GetCreatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKafkaResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CreatedAt.Get(), o.CreatedAt.IsSet()
@@ -503,6 +508,7 @@ func (o *LoggingKafkaResponse) HasCreatedAt() bool {
 func (o *LoggingKafkaResponse) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
+
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 func (o *LoggingKafkaResponse) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
@@ -526,7 +532,7 @@ func (o *LoggingKafkaResponse) GetDeletedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKafkaResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
@@ -545,6 +551,7 @@ func (o *LoggingKafkaResponse) HasDeletedAt() bool {
 func (o *LoggingKafkaResponse) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
+
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 func (o *LoggingKafkaResponse) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
@@ -568,7 +575,7 @@ func (o *LoggingKafkaResponse) GetUpdatedAt() time.Time {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKafkaResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
@@ -587,6 +594,7 @@ func (o *LoggingKafkaResponse) HasUpdatedAt() bool {
 func (o *LoggingKafkaResponse) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
+
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 func (o *LoggingKafkaResponse) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
@@ -738,7 +746,7 @@ func (o *LoggingKafkaResponse) GetCompressionCodec() string {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LoggingKafkaResponse) GetCompressionCodecOk() (*string, bool) {
-	if o == nil  {
+	if o == nil {
 		return nil, false
 	}
 	return o.CompressionCodec.Get(), o.CompressionCodec.IsSet()
@@ -757,6 +765,7 @@ func (o *LoggingKafkaResponse) HasCompressionCodec() bool {
 func (o *LoggingKafkaResponse) SetCompressionCodec(v string) {
 	o.CompressionCodec.Set(&v)
 }
+
 // SetCompressionCodecNil sets the value for CompressionCodec to be an explicit nil
 func (o *LoggingKafkaResponse) SetCompressionCodecNil() {
 	o.CompressionCodec.Set(nil)
@@ -1076,7 +1085,7 @@ func (o LoggingKafkaResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *LoggingKafkaResponse) UnmarshalJSON(bytes []byte) (err error) {
 	varLoggingKafkaResponse := _LoggingKafkaResponse{}
 
@@ -1117,7 +1126,7 @@ func (o *LoggingKafkaResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableLoggingKafkaResponse is a helper abstraction for handling nullable loggingkafkaresponse types. 
+// NullableLoggingKafkaResponse is a helper abstraction for handling nullable loggingkafkaresponse types.
 type NullableLoggingKafkaResponse struct {
 	value *LoggingKafkaResponse
 	isSet bool
@@ -1157,7 +1166,7 @@ func (v NullableLoggingKafkaResponse) MarshalJSON() ([]byte, error) {
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves. 
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (v *NullableLoggingKafkaResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)

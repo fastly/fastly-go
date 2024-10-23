@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,14 +31,14 @@ var (
 type LoggingElasticsearchAPI interface {
 
 	/*
-	CreateLogElasticsearch Create an Elasticsearch log endpoint
+		CreateLogElasticsearch Create an Elasticsearch log endpoint
 
-	Create a Elasticsearch logging endpoint for a particular service and version.
+		Create a Elasticsearch logging endpoint for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APICreateLogElasticsearchRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APICreateLogElasticsearchRequest
 	*/
 	CreateLogElasticsearch(ctx context.Context, serviceID string, versionID int32) APICreateLogElasticsearchRequest
 
@@ -48,15 +47,15 @@ type LoggingElasticsearchAPI interface {
 	CreateLogElasticsearchExecute(r APICreateLogElasticsearchRequest) (*LoggingElasticsearchResponse, *http.Response, error)
 
 	/*
-	DeleteLogElasticsearch Delete an Elasticsearch log endpoint
+		DeleteLogElasticsearch Delete an Elasticsearch log endpoint
 
-	Delete the Elasticsearch logging endpoint for a particular service and version.
+		Delete the Elasticsearch logging endpoint for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingElasticsearchName The name for the real-time logging configuration.
-	 @return APIDeleteLogElasticsearchRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingElasticsearchName The name for the real-time logging configuration.
+		 @return APIDeleteLogElasticsearchRequest
 	*/
 	DeleteLogElasticsearch(ctx context.Context, serviceID string, versionID int32, loggingElasticsearchName string) APIDeleteLogElasticsearchRequest
 
@@ -65,15 +64,15 @@ type LoggingElasticsearchAPI interface {
 	DeleteLogElasticsearchExecute(r APIDeleteLogElasticsearchRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-	GetLogElasticsearch Get an Elasticsearch log endpoint
+		GetLogElasticsearch Get an Elasticsearch log endpoint
 
-	Get the Elasticsearch logging endpoint for a particular service and version.
+		Get the Elasticsearch logging endpoint for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingElasticsearchName The name for the real-time logging configuration.
-	 @return APIGetLogElasticsearchRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingElasticsearchName The name for the real-time logging configuration.
+		 @return APIGetLogElasticsearchRequest
 	*/
 	GetLogElasticsearch(ctx context.Context, serviceID string, versionID int32, loggingElasticsearchName string) APIGetLogElasticsearchRequest
 
@@ -82,14 +81,14 @@ type LoggingElasticsearchAPI interface {
 	GetLogElasticsearchExecute(r APIGetLogElasticsearchRequest) (*LoggingElasticsearchResponse, *http.Response, error)
 
 	/*
-	ListLogElasticsearch List Elasticsearch log endpoints
+		ListLogElasticsearch List Elasticsearch log endpoints
 
-	List all of the Elasticsearch logging endpoints for a particular service and version.
+		List all of the Elasticsearch logging endpoints for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @return APIListLogElasticsearchRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @return APIListLogElasticsearchRequest
 	*/
 	ListLogElasticsearch(ctx context.Context, serviceID string, versionID int32) APIListLogElasticsearchRequest
 
@@ -98,15 +97,15 @@ type LoggingElasticsearchAPI interface {
 	ListLogElasticsearchExecute(r APIListLogElasticsearchRequest) ([]LoggingElasticsearchResponse, *http.Response, error)
 
 	/*
-	UpdateLogElasticsearch Update an Elasticsearch log endpoint
+		UpdateLogElasticsearch Update an Elasticsearch log endpoint
 
-	Update the Elasticsearch logging endpoint for a particular service and version.
+		Update the Elasticsearch logging endpoint for a particular service and version.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param serviceID Alphanumeric string identifying the service.
-	 @param versionID Integer identifying a service version.
-	 @param loggingElasticsearchName The name for the real-time logging configuration.
-	 @return APIUpdateLogElasticsearchRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceID Alphanumeric string identifying the service.
+		 @param versionID Integer identifying a service version.
+		 @param loggingElasticsearchName The name for the real-time logging configuration.
+		 @return APIUpdateLogElasticsearchRequest
 	*/
 	UpdateLogElasticsearch(ctx context.Context, serviceID string, versionID int32, loggingElasticsearchName string) APIUpdateLogElasticsearchRequest
 
@@ -120,26 +119,26 @@ type LoggingElasticsearchAPIService service
 
 // APICreateLogElasticsearchRequest represents a request for the resource.
 type APICreateLogElasticsearchRequest struct {
-	ctx context.Context
-	APIService LoggingElasticsearchAPI
-	serviceID string
-	versionID int32
-	name *string
-	placement *string
+	ctx               context.Context
+	APIService        LoggingElasticsearchAPI
+	serviceID         string
+	versionID         int32
+	name              *string
+	placement         *string
 	responseCondition *string
-	format *string
-	formatVersion *int32
-	tlsCaCert *string
-	tlsClientCert *string
-	tlsClientKey *string
-	tlsHostname *string
+	format            *string
+	formatVersion     *int32
+	tlsCaCert         *string
+	tlsClientCert     *string
+	tlsClientKey      *string
+	tlsHostname       *string
 	requestMaxEntries *int32
-	requestMaxBytes *int32
-	index *string
-	url *string
-	pipeline *string
-	user *string
-	password *string
+	requestMaxBytes   *int32
+	index             *string
+	url               *string
+	pipeline          *string
+	user              *string
+	password          *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -147,76 +146,91 @@ func (r *APICreateLogElasticsearchRequest) Name(name string) *APICreateLogElasti
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APICreateLogElasticsearchRequest) Placement(placement string) *APICreateLogElasticsearchRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APICreateLogElasticsearchRequest) ResponseCondition(responseCondition string) *APICreateLogElasticsearchRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
 func (r *APICreateLogElasticsearchRequest) Format(format string) *APICreateLogElasticsearchRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APICreateLogElasticsearchRequest) FormatVersion(formatVersion int32) *APICreateLogElasticsearchRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
 func (r *APICreateLogElasticsearchRequest) TLSCaCert(tlsCaCert string) *APICreateLogElasticsearchRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
+
 // TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
 func (r *APICreateLogElasticsearchRequest) TLSClientCert(tlsClientCert string) *APICreateLogElasticsearchRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
+
 // TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
 func (r *APICreateLogElasticsearchRequest) TLSClientKey(tlsClientKey string) *APICreateLogElasticsearchRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
+
 // TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
 func (r *APICreateLogElasticsearchRequest) TLSHostname(tlsHostname string) *APICreateLogElasticsearchRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
+
 // RequestMaxEntries The maximum number of logs sent in one request. Defaults &#x60;0&#x60; for unbounded.
 func (r *APICreateLogElasticsearchRequest) RequestMaxEntries(requestMaxEntries int32) *APICreateLogElasticsearchRequest {
 	r.requestMaxEntries = &requestMaxEntries
 	return r
 }
+
 // RequestMaxBytes The maximum number of bytes sent in one request. Defaults &#x60;0&#x60; for unbounded.
 func (r *APICreateLogElasticsearchRequest) RequestMaxBytes(requestMaxBytes int32) *APICreateLogElasticsearchRequest {
 	r.requestMaxBytes = &requestMaxBytes
 	return r
 }
+
 // Index The name of the Elasticsearch index to send documents (logs) to. The index must follow the Elasticsearch [index format rules](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html). We support [strftime](https://www.man7.org/linux/man-pages/man3/strftime.3.html) interpolated variables inside braces prefixed with a pound symbol. For example, &#x60;#{%F}&#x60; will interpolate as &#x60;YYYY-MM-DD&#x60; with today&#39;s date.
 func (r *APICreateLogElasticsearchRequest) Index(index string) *APICreateLogElasticsearchRequest {
 	r.index = &index
 	return r
 }
+
 // URL The URL to stream logs to. Must use HTTPS.
 func (r *APICreateLogElasticsearchRequest) URL(url string) *APICreateLogElasticsearchRequest {
 	r.url = &url
 	return r
 }
+
 // Pipeline The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
 func (r *APICreateLogElasticsearchRequest) Pipeline(pipeline string) *APICreateLogElasticsearchRequest {
 	r.pipeline = &pipeline
 	return r
 }
+
 // User Basic Auth username.
 func (r *APICreateLogElasticsearchRequest) User(user string) *APICreateLogElasticsearchRequest {
 	r.user = &user
 	return r
 }
+
 // Password Basic Auth password.
 func (r *APICreateLogElasticsearchRequest) Password(password string) *APICreateLogElasticsearchRequest {
 	r.password = &password
@@ -241,9 +255,9 @@ Create a Elasticsearch logging endpoint for a particular service and version.
 func (a *LoggingElasticsearchAPIService) CreateLogElasticsearch(ctx context.Context, serviceID string, versionID int32) APICreateLogElasticsearchRequest {
 	return APICreateLogElasticsearchRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -251,10 +265,10 @@ func (a *LoggingElasticsearchAPIService) CreateLogElasticsearch(ctx context.Cont
 //  @return LoggingElasticsearchResponse
 func (a *LoggingElasticsearchAPIService) CreateLogElasticsearchExecute(r APICreateLogElasticsearchRequest) (*LoggingElasticsearchResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingElasticsearchResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingElasticsearchResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingElasticsearchAPIService.CreateLogElasticsearch")
@@ -383,7 +397,6 @@ func (a *LoggingElasticsearchAPIService) CreateLogElasticsearchExecute(r APICrea
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -402,13 +415,12 @@ func (a *LoggingElasticsearchAPIService) CreateLogElasticsearchExecute(r APICrea
 
 // APIDeleteLogElasticsearchRequest represents a request for the resource.
 type APIDeleteLogElasticsearchRequest struct {
-	ctx context.Context
-	APIService LoggingElasticsearchAPI
-	serviceID string
-	versionID int32
+	ctx                      context.Context
+	APIService               LoggingElasticsearchAPI
+	serviceID                string
+	versionID                int32
 	loggingElasticsearchName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteLogElasticsearchRequest) Execute() (*InlineResponse200, *http.Response, error) {
@@ -428,10 +440,10 @@ Delete the Elasticsearch logging endpoint for a particular service and version.
 */
 func (a *LoggingElasticsearchAPIService) DeleteLogElasticsearch(ctx context.Context, serviceID string, versionID int32, loggingElasticsearchName string) APIDeleteLogElasticsearchRequest {
 	return APIDeleteLogElasticsearchRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:               a,
+		ctx:                      ctx,
+		serviceID:                serviceID,
+		versionID:                versionID,
 		loggingElasticsearchName: loggingElasticsearchName,
 	}
 }
@@ -440,10 +452,10 @@ func (a *LoggingElasticsearchAPIService) DeleteLogElasticsearch(ctx context.Cont
 //  @return InlineResponse200
 func (a *LoggingElasticsearchAPIService) DeleteLogElasticsearchExecute(r APIDeleteLogElasticsearchRequest) (*InlineResponse200, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *InlineResponse200
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse200
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingElasticsearchAPIService.DeleteLogElasticsearch")
@@ -525,7 +537,6 @@ func (a *LoggingElasticsearchAPIService) DeleteLogElasticsearchExecute(r APIDele
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -544,13 +555,12 @@ func (a *LoggingElasticsearchAPIService) DeleteLogElasticsearchExecute(r APIDele
 
 // APIGetLogElasticsearchRequest represents a request for the resource.
 type APIGetLogElasticsearchRequest struct {
-	ctx context.Context
-	APIService LoggingElasticsearchAPI
-	serviceID string
-	versionID int32
+	ctx                      context.Context
+	APIService               LoggingElasticsearchAPI
+	serviceID                string
+	versionID                int32
 	loggingElasticsearchName string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIGetLogElasticsearchRequest) Execute() (*LoggingElasticsearchResponse, *http.Response, error) {
@@ -570,10 +580,10 @@ Get the Elasticsearch logging endpoint for a particular service and version.
 */
 func (a *LoggingElasticsearchAPIService) GetLogElasticsearch(ctx context.Context, serviceID string, versionID int32, loggingElasticsearchName string) APIGetLogElasticsearchRequest {
 	return APIGetLogElasticsearchRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:               a,
+		ctx:                      ctx,
+		serviceID:                serviceID,
+		versionID:                versionID,
 		loggingElasticsearchName: loggingElasticsearchName,
 	}
 }
@@ -582,10 +592,10 @@ func (a *LoggingElasticsearchAPIService) GetLogElasticsearch(ctx context.Context
 //  @return LoggingElasticsearchResponse
 func (a *LoggingElasticsearchAPIService) GetLogElasticsearchExecute(r APIGetLogElasticsearchRequest) (*LoggingElasticsearchResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingElasticsearchResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingElasticsearchResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingElasticsearchAPIService.GetLogElasticsearch")
@@ -667,7 +677,6 @@ func (a *LoggingElasticsearchAPIService) GetLogElasticsearchExecute(r APIGetLogE
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -686,12 +695,11 @@ func (a *LoggingElasticsearchAPIService) GetLogElasticsearchExecute(r APIGetLogE
 
 // APIListLogElasticsearchRequest represents a request for the resource.
 type APIListLogElasticsearchRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	APIService LoggingElasticsearchAPI
-	serviceID string
-	versionID int32
+	serviceID  string
+	versionID  int32
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIListLogElasticsearchRequest) Execute() ([]LoggingElasticsearchResponse, *http.Response, error) {
@@ -711,9 +719,9 @@ List all of the Elasticsearch logging endpoints for a particular service and ver
 func (a *LoggingElasticsearchAPIService) ListLogElasticsearch(ctx context.Context, serviceID string, versionID int32) APIListLogElasticsearchRequest {
 	return APIListLogElasticsearchRequest{
 		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
 	}
 }
 
@@ -721,10 +729,10 @@ func (a *LoggingElasticsearchAPIService) ListLogElasticsearch(ctx context.Contex
 //  @return []LoggingElasticsearchResponse
 func (a *LoggingElasticsearchAPIService) ListLogElasticsearchExecute(r APIListLogElasticsearchRequest) ([]LoggingElasticsearchResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  []LoggingElasticsearchResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue []LoggingElasticsearchResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingElasticsearchAPIService.ListLogElasticsearch")
@@ -805,7 +813,6 @@ func (a *LoggingElasticsearchAPIService) ListLogElasticsearchExecute(r APIListLo
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -824,27 +831,27 @@ func (a *LoggingElasticsearchAPIService) ListLogElasticsearchExecute(r APIListLo
 
 // APIUpdateLogElasticsearchRequest represents a request for the resource.
 type APIUpdateLogElasticsearchRequest struct {
-	ctx context.Context
-	APIService LoggingElasticsearchAPI
-	serviceID string
-	versionID int32
+	ctx                      context.Context
+	APIService               LoggingElasticsearchAPI
+	serviceID                string
+	versionID                int32
 	loggingElasticsearchName string
-	name *string
-	placement *string
-	responseCondition *string
-	format *string
-	formatVersion *int32
-	tlsCaCert *string
-	tlsClientCert *string
-	tlsClientKey *string
-	tlsHostname *string
-	requestMaxEntries *int32
-	requestMaxBytes *int32
-	index *string
-	url *string
-	pipeline *string
-	user *string
-	password *string
+	name                     *string
+	placement                *string
+	responseCondition        *string
+	format                   *string
+	formatVersion            *int32
+	tlsCaCert                *string
+	tlsClientCert            *string
+	tlsClientKey             *string
+	tlsHostname              *string
+	requestMaxEntries        *int32
+	requestMaxBytes          *int32
+	index                    *string
+	url                      *string
+	pipeline                 *string
+	user                     *string
+	password                 *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -852,76 +859,91 @@ func (r *APIUpdateLogElasticsearchRequest) Name(name string) *APIUpdateLogElasti
 	r.name = &name
 	return r
 }
-// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;. 
+
+// Placement Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.
 func (r *APIUpdateLogElasticsearchRequest) Placement(placement string) *APIUpdateLogElasticsearchRequest {
 	r.placement = &placement
 	return r
 }
+
 // ResponseCondition The name of an existing condition in the configured endpoint, or leave blank to always execute.
 func (r *APIUpdateLogElasticsearchRequest) ResponseCondition(responseCondition string) *APIUpdateLogElasticsearchRequest {
 	r.responseCondition = &responseCondition
 	return r
 }
+
 // Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
 func (r *APIUpdateLogElasticsearchRequest) Format(format string) *APIUpdateLogElasticsearchRequest {
 	r.format = &format
 	return r
 }
-// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;. 
+
+// FormatVersion The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.
 func (r *APIUpdateLogElasticsearchRequest) FormatVersion(formatVersion int32) *APIUpdateLogElasticsearchRequest {
 	r.formatVersion = &formatVersion
 	return r
 }
+
 // TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
 func (r *APIUpdateLogElasticsearchRequest) TLSCaCert(tlsCaCert string) *APIUpdateLogElasticsearchRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
+
 // TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
 func (r *APIUpdateLogElasticsearchRequest) TLSClientCert(tlsClientCert string) *APIUpdateLogElasticsearchRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
+
 // TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
 func (r *APIUpdateLogElasticsearchRequest) TLSClientKey(tlsClientKey string) *APIUpdateLogElasticsearchRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
+
 // TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
 func (r *APIUpdateLogElasticsearchRequest) TLSHostname(tlsHostname string) *APIUpdateLogElasticsearchRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
+
 // RequestMaxEntries The maximum number of logs sent in one request. Defaults &#x60;0&#x60; for unbounded.
 func (r *APIUpdateLogElasticsearchRequest) RequestMaxEntries(requestMaxEntries int32) *APIUpdateLogElasticsearchRequest {
 	r.requestMaxEntries = &requestMaxEntries
 	return r
 }
+
 // RequestMaxBytes The maximum number of bytes sent in one request. Defaults &#x60;0&#x60; for unbounded.
 func (r *APIUpdateLogElasticsearchRequest) RequestMaxBytes(requestMaxBytes int32) *APIUpdateLogElasticsearchRequest {
 	r.requestMaxBytes = &requestMaxBytes
 	return r
 }
+
 // Index The name of the Elasticsearch index to send documents (logs) to. The index must follow the Elasticsearch [index format rules](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html). We support [strftime](https://www.man7.org/linux/man-pages/man3/strftime.3.html) interpolated variables inside braces prefixed with a pound symbol. For example, &#x60;#{%F}&#x60; will interpolate as &#x60;YYYY-MM-DD&#x60; with today&#39;s date.
 func (r *APIUpdateLogElasticsearchRequest) Index(index string) *APIUpdateLogElasticsearchRequest {
 	r.index = &index
 	return r
 }
+
 // URL The URL to stream logs to. Must use HTTPS.
 func (r *APIUpdateLogElasticsearchRequest) URL(url string) *APIUpdateLogElasticsearchRequest {
 	r.url = &url
 	return r
 }
+
 // Pipeline The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
 func (r *APIUpdateLogElasticsearchRequest) Pipeline(pipeline string) *APIUpdateLogElasticsearchRequest {
 	r.pipeline = &pipeline
 	return r
 }
+
 // User Basic Auth username.
 func (r *APIUpdateLogElasticsearchRequest) User(user string) *APIUpdateLogElasticsearchRequest {
 	r.user = &user
 	return r
 }
+
 // Password Basic Auth password.
 func (r *APIUpdateLogElasticsearchRequest) Password(password string) *APIUpdateLogElasticsearchRequest {
 	r.password = &password
@@ -946,10 +968,10 @@ Update the Elasticsearch logging endpoint for a particular service and version.
 */
 func (a *LoggingElasticsearchAPIService) UpdateLogElasticsearch(ctx context.Context, serviceID string, versionID int32, loggingElasticsearchName string) APIUpdateLogElasticsearchRequest {
 	return APIUpdateLogElasticsearchRequest{
-		APIService: a,
-		ctx: ctx,
-		serviceID: serviceID,
-		versionID: versionID,
+		APIService:               a,
+		ctx:                      ctx,
+		serviceID:                serviceID,
+		versionID:                versionID,
 		loggingElasticsearchName: loggingElasticsearchName,
 	}
 }
@@ -958,10 +980,10 @@ func (a *LoggingElasticsearchAPIService) UpdateLogElasticsearch(ctx context.Cont
 //  @return LoggingElasticsearchResponse
 func (a *LoggingElasticsearchAPIService) UpdateLogElasticsearchExecute(r APIUpdateLogElasticsearchRequest) (*LoggingElasticsearchResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *LoggingElasticsearchResponse
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *LoggingElasticsearchResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingElasticsearchAPIService.UpdateLogElasticsearch")
@@ -1090,7 +1112,6 @@ func (a *LoggingElasticsearchAPIService) UpdateLogElasticsearchExecute(r APIUpda
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {

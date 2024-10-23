@@ -4,14 +4,13 @@ package fastly
 /*
 Fastly API
 
-Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
 
 API version: 1.0.0
 Contact: oss@fastly.com
 */
 
 // This code is auto-generated; DO NOT EDIT.
-
 
 import (
 	"bytes"
@@ -32,12 +31,12 @@ var (
 type TLSActivationsAPI interface {
 
 	/*
-	CreateTLSActivation Enable TLS for a domain using a custom certificate
+		CreateTLSActivation Enable TLS for a domain using a custom certificate
 
-	Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.
+		Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APICreateTLSActivationRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APICreateTLSActivationRequest
 	*/
 	CreateTLSActivation(ctx context.Context) APICreateTLSActivationRequest
 
@@ -46,13 +45,13 @@ type TLSActivationsAPI interface {
 	CreateTLSActivationExecute(r APICreateTLSActivationRequest) (*TLSActivationResponse, *http.Response, error)
 
 	/*
-	DeleteTLSActivation Disable TLS on a domain
+		DeleteTLSActivation Disable TLS on a domain
 
-	Disable TLS on the domain associated with this TLS activation.
+		Disable TLS on the domain associated with this TLS activation.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tlsActivationID Alphanumeric string identifying a TLS activation.
-	 @return APIDeleteTLSActivationRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tlsActivationID Alphanumeric string identifying a TLS activation.
+		 @return APIDeleteTLSActivationRequest
 	*/
 	DeleteTLSActivation(ctx context.Context, tlsActivationID string) APIDeleteTLSActivationRequest
 
@@ -60,13 +59,13 @@ type TLSActivationsAPI interface {
 	DeleteTLSActivationExecute(r APIDeleteTLSActivationRequest) (*http.Response, error)
 
 	/*
-	GetTLSActivation Get a TLS activation
+		GetTLSActivation Get a TLS activation
 
-	Show a TLS activation.
+		Show a TLS activation.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tlsActivationID Alphanumeric string identifying a TLS activation.
-	 @return APIGetTLSActivationRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tlsActivationID Alphanumeric string identifying a TLS activation.
+		 @return APIGetTLSActivationRequest
 	*/
 	GetTLSActivation(ctx context.Context, tlsActivationID string) APIGetTLSActivationRequest
 
@@ -75,12 +74,12 @@ type TLSActivationsAPI interface {
 	GetTLSActivationExecute(r APIGetTLSActivationRequest) (*TLSActivationResponse, *http.Response, error)
 
 	/*
-	ListTLSActivations List TLS activations
+		ListTLSActivations List TLS activations
 
-	List all TLS activations.
+		List all TLS activations.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @return APIListTLSActivationsRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIListTLSActivationsRequest
 	*/
 	ListTLSActivations(ctx context.Context) APIListTLSActivationsRequest
 
@@ -89,13 +88,13 @@ type TLSActivationsAPI interface {
 	ListTLSActivationsExecute(r APIListTLSActivationsRequest) (*TLSActivationsResponse, *http.Response, error)
 
 	/*
-	UpdateTLSActivation Update a certificate
+		UpdateTLSActivation Update a certificate
 
-	Update the certificate used to terminate TLS traffic for the domain associated with this TLS activation.
+		Update the certificate used to terminate TLS traffic for the domain associated with this TLS activation.
 
-	 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	 @param tlsActivationID Alphanumeric string identifying a TLS activation.
-	 @return APIUpdateTLSActivationRequest
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param tlsActivationID Alphanumeric string identifying a TLS activation.
+		 @return APIUpdateTLSActivationRequest
 	*/
 	UpdateTLSActivation(ctx context.Context, tlsActivationID string) APIUpdateTLSActivationRequest
 
@@ -109,8 +108,8 @@ type TLSActivationsAPIService service
 
 // APICreateTLSActivationRequest represents a request for the resource.
 type APICreateTLSActivationRequest struct {
-	ctx context.Context
-	APIService TLSActivationsAPI
+	ctx           context.Context
+	APIService    TLSActivationsAPI
 	tlsActivation *TLSActivation
 }
 
@@ -136,7 +135,7 @@ Enable TLS for a particular TLS domain and certificate combination. These relati
 func (a *TLSActivationsAPIService) CreateTLSActivation(ctx context.Context) APICreateTLSActivationRequest {
 	return APICreateTLSActivationRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *TLSActivationsAPIService) CreateTLSActivation(ctx context.Context) APIC
 //  @return TLSActivationResponse
 func (a *TLSActivationsAPIService) CreateTLSActivationExecute(r APICreateTLSActivationRequest) (*TLSActivationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSActivationResponse
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSActivationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSActivationsAPIService.CreateTLSActivation")
@@ -228,7 +227,6 @@ func (a *TLSActivationsAPIService) CreateTLSActivationExecute(r APICreateTLSActi
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -247,11 +245,10 @@ func (a *TLSActivationsAPIService) CreateTLSActivationExecute(r APICreateTLSActi
 
 // APIDeleteTLSActivationRequest represents a request for the resource.
 type APIDeleteTLSActivationRequest struct {
-	ctx context.Context
-	APIService TLSActivationsAPI
+	ctx             context.Context
+	APIService      TLSActivationsAPI
 	tlsActivationID string
 }
-
 
 // Execute calls the API using the request data configured.
 func (r APIDeleteTLSActivationRequest) Execute() (*http.Response, error) {
@@ -269,8 +266,8 @@ Disable TLS on the domain associated with this TLS activation.
 */
 func (a *TLSActivationsAPIService) DeleteTLSActivation(ctx context.Context, tlsActivationID string) APIDeleteTLSActivationRequest {
 	return APIDeleteTLSActivationRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:      a,
+		ctx:             ctx,
 		tlsActivationID: tlsActivationID,
 	}
 }
@@ -278,9 +275,9 @@ func (a *TLSActivationsAPIService) DeleteTLSActivation(ctx context.Context, tlsA
 // DeleteTLSActivationExecute executes the request
 func (a *TLSActivationsAPIService) DeleteTLSActivationExecute(r APIDeleteTLSActivationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     any
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   any
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSActivationsAPIService.DeleteTLSActivation")
@@ -351,7 +348,6 @@ func (a *TLSActivationsAPIService) DeleteTLSActivationExecute(r APIDeleteTLSActi
 		return localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -370,13 +366,13 @@ func (a *TLSActivationsAPIService) DeleteTLSActivationExecute(r APIDeleteTLSActi
 
 // APIGetTLSActivationRequest represents a request for the resource.
 type APIGetTLSActivationRequest struct {
-	ctx context.Context
-	APIService TLSActivationsAPI
+	ctx             context.Context
+	APIService      TLSActivationsAPI
 	tlsActivationID string
-	include *string
+	include         *string
 }
 
-// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;. 
+// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;.
 func (r *APIGetTLSActivationRequest) Include(include string) *APIGetTLSActivationRequest {
 	r.include = &include
 	return r
@@ -398,8 +394,8 @@ Show a TLS activation.
 */
 func (a *TLSActivationsAPIService) GetTLSActivation(ctx context.Context, tlsActivationID string) APIGetTLSActivationRequest {
 	return APIGetTLSActivationRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:      a,
+		ctx:             ctx,
 		tlsActivationID: tlsActivationID,
 	}
 }
@@ -408,10 +404,10 @@ func (a *TLSActivationsAPIService) GetTLSActivation(ctx context.Context, tlsActi
 //  @return TLSActivationResponse
 func (a *TLSActivationsAPIService) GetTLSActivationExecute(r APIGetTLSActivationRequest) (*TLSActivationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSActivationResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSActivationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSActivationsAPIService.GetTLSActivation")
@@ -494,7 +490,6 @@ func (a *TLSActivationsAPIService) GetTLSActivationExecute(r APIGetTLSActivation
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -513,14 +508,14 @@ func (a *TLSActivationsAPIService) GetTLSActivationExecute(r APIGetTLSActivation
 
 // APIListTLSActivationsRequest represents a request for the resource.
 type APIListTLSActivationsRequest struct {
-	ctx context.Context
-	APIService TLSActivationsAPI
-	filterTLSCertificateID *string
+	ctx                      context.Context
+	APIService               TLSActivationsAPI
+	filterTLSCertificateID   *string
 	filterTLSConfigurationID *string
-	filterTLSDomainID *string
-	include *string
-	pageNumber *int32
-	pageSize *int32
+	filterTLSDomainID        *string
+	include                  *string
+	pageNumber               *int32
+	pageSize                 *int32
 }
 
 // FilterTLSCertificateID Limit the returned activations to a specific certificate.
@@ -528,26 +523,31 @@ func (r *APIListTLSActivationsRequest) FilterTLSCertificateID(filterTLSCertifica
 	r.filterTLSCertificateID = &filterTLSCertificateID
 	return r
 }
+
 // FilterTLSConfigurationID Limit the returned activations to a specific TLS configuration.
 func (r *APIListTLSActivationsRequest) FilterTLSConfigurationID(filterTLSConfigurationID string) *APIListTLSActivationsRequest {
 	r.filterTLSConfigurationID = &filterTLSConfigurationID
 	return r
 }
+
 // FilterTLSDomainID Limit the returned rules to a specific domain name.
 func (r *APIListTLSActivationsRequest) FilterTLSDomainID(filterTLSDomainID string) *APIListTLSActivationsRequest {
 	r.filterTLSDomainID = &filterTLSDomainID
 	return r
 }
-// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;. 
+
+// Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;.
 func (r *APIListTLSActivationsRequest) Include(include string) *APIListTLSActivationsRequest {
 	r.include = &include
 	return r
 }
+
 // PageNumber Current page.
 func (r *APIListTLSActivationsRequest) PageNumber(pageNumber int32) *APIListTLSActivationsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
+
 // PageSize Number of records per page.
 func (r *APIListTLSActivationsRequest) PageSize(pageSize int32) *APIListTLSActivationsRequest {
 	r.pageSize = &pageSize
@@ -570,7 +570,7 @@ List all TLS activations.
 func (a *TLSActivationsAPIService) ListTLSActivations(ctx context.Context) APIListTLSActivationsRequest {
 	return APIListTLSActivationsRequest{
 		APIService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -578,10 +578,10 @@ func (a *TLSActivationsAPIService) ListTLSActivations(ctx context.Context) APILi
 //  @return TLSActivationsResponse
 func (a *TLSActivationsAPIService) ListTLSActivationsExecute(r APIListTLSActivationsRequest) (*TLSActivationsResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSActivationsResponse
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSActivationsResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSActivationsAPIService.ListTLSActivations")
@@ -678,7 +678,6 @@ func (a *TLSActivationsAPIService) ListTLSActivationsExecute(r APIListTLSActivat
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
 			if i, err := strconv.Atoi(remaining); err == nil {
@@ -697,10 +696,10 @@ func (a *TLSActivationsAPIService) ListTLSActivationsExecute(r APIListTLSActivat
 
 // APIUpdateTLSActivationRequest represents a request for the resource.
 type APIUpdateTLSActivationRequest struct {
-	ctx context.Context
-	APIService TLSActivationsAPI
+	ctx             context.Context
+	APIService      TLSActivationsAPI
 	tlsActivationID string
-	tlsActivation *TLSActivation
+	tlsActivation   *TLSActivation
 }
 
 // TLSActivation returns a pointer to a request.
@@ -725,8 +724,8 @@ Update the certificate used to terminate TLS traffic for the domain associated w
 */
 func (a *TLSActivationsAPIService) UpdateTLSActivation(ctx context.Context, tlsActivationID string) APIUpdateTLSActivationRequest {
 	return APIUpdateTLSActivationRequest{
-		APIService: a,
-		ctx: ctx,
+		APIService:      a,
+		ctx:             ctx,
 		tlsActivationID: tlsActivationID,
 	}
 }
@@ -735,10 +734,10 @@ func (a *TLSActivationsAPIService) UpdateTLSActivation(ctx context.Context, tlsA
 //  @return TLSActivationResponse
 func (a *TLSActivationsAPIService) UpdateTLSActivationExecute(r APIUpdateTLSActivationRequest) (*TLSActivationResponse, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     any
-		formFiles            []formFile
-		localVarReturnValue  *TLSActivationResponse
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *TLSActivationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSActivationsAPIService.UpdateTLSActivation")
@@ -819,7 +818,6 @@ func (a *TLSActivationsAPIService) UpdateTLSActivationExecute(r APIUpdateTLSActi
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
-
 
 	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
 		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
