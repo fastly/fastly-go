@@ -233,13 +233,6 @@ Name | Type | Description | Notes
 **BotChallengeCompleteTokensIssued** | Pointer to **int32** | The number of challenge-complete tokens issued. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success. | [optional] 
 **DdosActionDowngrade** | Pointer to **int32** | The number of times the downgrade action was taken. The downgrade action restricts the client to http1. | [optional] 
 **DdosActionDowngradedConnections** | Pointer to **int32** | The number of connections the downgrade action was applied to. The downgrade action restricts the connection to http1. | [optional] 
-**VclOnComputeHitRequests** | Pointer to **int32** | Number of cache hits for a VCL service running on Compute. | [optional] 
-**VclOnComputeMissRequests** | Pointer to **int32** | Number of cache misses for a VCL service running on Compute. | [optional] 
-**VclOnComputePassRequests** | Pointer to **int32** | Number of requests that passed through the CDN without being cached for a VCL service running on Compute. | [optional] 
-**VclOnComputeErrorRequests** | Pointer to **int32** | Number of cache errors for a VCL service running on Compute. | [optional] 
-**VclOnComputeSynthRequests** | Pointer to **int32** | Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service running on Compute. | [optional] 
-**VclOnComputeEdgeHitRequests** | Pointer to **int32** | Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service running on Compute. | [optional] 
-**VclOnComputeEdgeMissRequests** | Pointer to **int32** | Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service running on Compute. | [optional] 
 **AllHitRequests** | Pointer to **int32** | Number of cache hits for a VCL service. | [optional] 
 **AllMissRequests** | Pointer to **int32** | Number of cache misses for a VCL service. | [optional] 
 **AllPassRequests** | Pointer to **int32** | Number of requests that passed through the CDN without being cached for a VCL service. | [optional] 
@@ -254,6 +247,9 @@ Name | Type | Description | Notes
 **AllStatus5xx** | Pointer to **int32** | Number of \&quot;Server Error\&quot; codes delivered for all sources. | [optional] 
 **OriginOffload** | Pointer to **float32** | Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`). | [optional] 
 **RequestDeniedGetHeadBody** | Pointer to **int32** | Number of requests where Fastly responded with 400 due to the request being a GET or HEAD request containing a body. | [optional] 
+**ServiceDdosRequestsDetected** | Pointer to **int32** | Number of requests classified as a DDoS attack against a customer origin or service. | [optional] 
+**ServiceDdosRequestsMitigated** | Pointer to **int32** | Number of requests classified as a DDoS attack against a customer origin or service that were mitigated by the Fastly platform. | [optional] 
+**ServiceDdosRequestsAllowed** | Pointer to **int32** | Number of requests analyzed for DDoS attacks against a customer origin or service, but with no DDoS detected. | [optional] 
 
 ## Methods
 
@@ -5999,181 +5995,6 @@ SetDdosActionDowngradedConnections sets DdosActionDowngradedConnections field to
 
 HasDdosActionDowngradedConnections returns a boolean if a field has been set.
 
-### GetVclOnComputeHitRequests
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputeHitRequests() int32`
-
-GetVclOnComputeHitRequests returns the VclOnComputeHitRequests field if non-nil, zero value otherwise.
-
-### GetVclOnComputeHitRequestsOk
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputeHitRequestsOk() (*int32, bool)`
-
-GetVclOnComputeHitRequestsOk returns a tuple with the VclOnComputeHitRequests field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVclOnComputeHitRequests
-
-`func (o *RealtimeEntryAggregated) SetVclOnComputeHitRequests(v int32)`
-
-SetVclOnComputeHitRequests sets VclOnComputeHitRequests field to given value.
-
-### HasVclOnComputeHitRequests
-
-`func (o *RealtimeEntryAggregated) HasVclOnComputeHitRequests() bool`
-
-HasVclOnComputeHitRequests returns a boolean if a field has been set.
-
-### GetVclOnComputeMissRequests
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputeMissRequests() int32`
-
-GetVclOnComputeMissRequests returns the VclOnComputeMissRequests field if non-nil, zero value otherwise.
-
-### GetVclOnComputeMissRequestsOk
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputeMissRequestsOk() (*int32, bool)`
-
-GetVclOnComputeMissRequestsOk returns a tuple with the VclOnComputeMissRequests field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVclOnComputeMissRequests
-
-`func (o *RealtimeEntryAggregated) SetVclOnComputeMissRequests(v int32)`
-
-SetVclOnComputeMissRequests sets VclOnComputeMissRequests field to given value.
-
-### HasVclOnComputeMissRequests
-
-`func (o *RealtimeEntryAggregated) HasVclOnComputeMissRequests() bool`
-
-HasVclOnComputeMissRequests returns a boolean if a field has been set.
-
-### GetVclOnComputePassRequests
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputePassRequests() int32`
-
-GetVclOnComputePassRequests returns the VclOnComputePassRequests field if non-nil, zero value otherwise.
-
-### GetVclOnComputePassRequestsOk
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputePassRequestsOk() (*int32, bool)`
-
-GetVclOnComputePassRequestsOk returns a tuple with the VclOnComputePassRequests field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVclOnComputePassRequests
-
-`func (o *RealtimeEntryAggregated) SetVclOnComputePassRequests(v int32)`
-
-SetVclOnComputePassRequests sets VclOnComputePassRequests field to given value.
-
-### HasVclOnComputePassRequests
-
-`func (o *RealtimeEntryAggregated) HasVclOnComputePassRequests() bool`
-
-HasVclOnComputePassRequests returns a boolean if a field has been set.
-
-### GetVclOnComputeErrorRequests
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputeErrorRequests() int32`
-
-GetVclOnComputeErrorRequests returns the VclOnComputeErrorRequests field if non-nil, zero value otherwise.
-
-### GetVclOnComputeErrorRequestsOk
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputeErrorRequestsOk() (*int32, bool)`
-
-GetVclOnComputeErrorRequestsOk returns a tuple with the VclOnComputeErrorRequests field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVclOnComputeErrorRequests
-
-`func (o *RealtimeEntryAggregated) SetVclOnComputeErrorRequests(v int32)`
-
-SetVclOnComputeErrorRequests sets VclOnComputeErrorRequests field to given value.
-
-### HasVclOnComputeErrorRequests
-
-`func (o *RealtimeEntryAggregated) HasVclOnComputeErrorRequests() bool`
-
-HasVclOnComputeErrorRequests returns a boolean if a field has been set.
-
-### GetVclOnComputeSynthRequests
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputeSynthRequests() int32`
-
-GetVclOnComputeSynthRequests returns the VclOnComputeSynthRequests field if non-nil, zero value otherwise.
-
-### GetVclOnComputeSynthRequestsOk
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputeSynthRequestsOk() (*int32, bool)`
-
-GetVclOnComputeSynthRequestsOk returns a tuple with the VclOnComputeSynthRequests field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVclOnComputeSynthRequests
-
-`func (o *RealtimeEntryAggregated) SetVclOnComputeSynthRequests(v int32)`
-
-SetVclOnComputeSynthRequests sets VclOnComputeSynthRequests field to given value.
-
-### HasVclOnComputeSynthRequests
-
-`func (o *RealtimeEntryAggregated) HasVclOnComputeSynthRequests() bool`
-
-HasVclOnComputeSynthRequests returns a boolean if a field has been set.
-
-### GetVclOnComputeEdgeHitRequests
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputeEdgeHitRequests() int32`
-
-GetVclOnComputeEdgeHitRequests returns the VclOnComputeEdgeHitRequests field if non-nil, zero value otherwise.
-
-### GetVclOnComputeEdgeHitRequestsOk
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputeEdgeHitRequestsOk() (*int32, bool)`
-
-GetVclOnComputeEdgeHitRequestsOk returns a tuple with the VclOnComputeEdgeHitRequests field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVclOnComputeEdgeHitRequests
-
-`func (o *RealtimeEntryAggregated) SetVclOnComputeEdgeHitRequests(v int32)`
-
-SetVclOnComputeEdgeHitRequests sets VclOnComputeEdgeHitRequests field to given value.
-
-### HasVclOnComputeEdgeHitRequests
-
-`func (o *RealtimeEntryAggregated) HasVclOnComputeEdgeHitRequests() bool`
-
-HasVclOnComputeEdgeHitRequests returns a boolean if a field has been set.
-
-### GetVclOnComputeEdgeMissRequests
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputeEdgeMissRequests() int32`
-
-GetVclOnComputeEdgeMissRequests returns the VclOnComputeEdgeMissRequests field if non-nil, zero value otherwise.
-
-### GetVclOnComputeEdgeMissRequestsOk
-
-`func (o *RealtimeEntryAggregated) GetVclOnComputeEdgeMissRequestsOk() (*int32, bool)`
-
-GetVclOnComputeEdgeMissRequestsOk returns a tuple with the VclOnComputeEdgeMissRequests field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVclOnComputeEdgeMissRequests
-
-`func (o *RealtimeEntryAggregated) SetVclOnComputeEdgeMissRequests(v int32)`
-
-SetVclOnComputeEdgeMissRequests sets VclOnComputeEdgeMissRequests field to given value.
-
-### HasVclOnComputeEdgeMissRequests
-
-`func (o *RealtimeEntryAggregated) HasVclOnComputeEdgeMissRequests() bool`
-
-HasVclOnComputeEdgeMissRequests returns a boolean if a field has been set.
-
 ### GetAllHitRequests
 
 `func (o *RealtimeEntryAggregated) GetAllHitRequests() int32`
@@ -6523,6 +6344,81 @@ SetRequestDeniedGetHeadBody sets RequestDeniedGetHeadBody field to given value.
 `func (o *RealtimeEntryAggregated) HasRequestDeniedGetHeadBody() bool`
 
 HasRequestDeniedGetHeadBody returns a boolean if a field has been set.
+
+### GetServiceDdosRequestsDetected
+
+`func (o *RealtimeEntryAggregated) GetServiceDdosRequestsDetected() int32`
+
+GetServiceDdosRequestsDetected returns the ServiceDdosRequestsDetected field if non-nil, zero value otherwise.
+
+### GetServiceDdosRequestsDetectedOk
+
+`func (o *RealtimeEntryAggregated) GetServiceDdosRequestsDetectedOk() (*int32, bool)`
+
+GetServiceDdosRequestsDetectedOk returns a tuple with the ServiceDdosRequestsDetected field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceDdosRequestsDetected
+
+`func (o *RealtimeEntryAggregated) SetServiceDdosRequestsDetected(v int32)`
+
+SetServiceDdosRequestsDetected sets ServiceDdosRequestsDetected field to given value.
+
+### HasServiceDdosRequestsDetected
+
+`func (o *RealtimeEntryAggregated) HasServiceDdosRequestsDetected() bool`
+
+HasServiceDdosRequestsDetected returns a boolean if a field has been set.
+
+### GetServiceDdosRequestsMitigated
+
+`func (o *RealtimeEntryAggregated) GetServiceDdosRequestsMitigated() int32`
+
+GetServiceDdosRequestsMitigated returns the ServiceDdosRequestsMitigated field if non-nil, zero value otherwise.
+
+### GetServiceDdosRequestsMitigatedOk
+
+`func (o *RealtimeEntryAggregated) GetServiceDdosRequestsMitigatedOk() (*int32, bool)`
+
+GetServiceDdosRequestsMitigatedOk returns a tuple with the ServiceDdosRequestsMitigated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceDdosRequestsMitigated
+
+`func (o *RealtimeEntryAggregated) SetServiceDdosRequestsMitigated(v int32)`
+
+SetServiceDdosRequestsMitigated sets ServiceDdosRequestsMitigated field to given value.
+
+### HasServiceDdosRequestsMitigated
+
+`func (o *RealtimeEntryAggregated) HasServiceDdosRequestsMitigated() bool`
+
+HasServiceDdosRequestsMitigated returns a boolean if a field has been set.
+
+### GetServiceDdosRequestsAllowed
+
+`func (o *RealtimeEntryAggregated) GetServiceDdosRequestsAllowed() int32`
+
+GetServiceDdosRequestsAllowed returns the ServiceDdosRequestsAllowed field if non-nil, zero value otherwise.
+
+### GetServiceDdosRequestsAllowedOk
+
+`func (o *RealtimeEntryAggregated) GetServiceDdosRequestsAllowedOk() (*int32, bool)`
+
+GetServiceDdosRequestsAllowedOk returns a tuple with the ServiceDdosRequestsAllowed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceDdosRequestsAllowed
+
+`func (o *RealtimeEntryAggregated) SetServiceDdosRequestsAllowed(v int32)`
+
+SetServiceDdosRequestsAllowed sets ServiceDdosRequestsAllowed field to given value.
+
+### HasServiceDdosRequestsAllowed
+
+`func (o *RealtimeEntryAggregated) HasServiceDdosRequestsAllowed() bool`
+
+HasServiceDdosRequestsAllowed returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

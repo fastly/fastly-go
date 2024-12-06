@@ -104,7 +104,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "fastly-go/1.0.0-beta.36",
+		UserAgent:     "fastly-go/1.0.0-beta.37",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
@@ -381,7 +381,7 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"BillingUsageMetricsAPIService.GetServiceLevelUsageTypes": {
+			"BillingUsageMetricsAPIService.GetUsageMetrics": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -1209,6 +1209,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"InsightsAPIService.GetLogInsights": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"InvitationsAPIService.CreateInvitation": {
 				{
 					URL:         "https://api.fastly.com",
@@ -1678,6 +1684,36 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"LoggingGcsAPIService.UpdateLogGcs": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LoggingGrafanacloudlogsAPIService.CreateLogGrafanacloudlogs": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LoggingGrafanacloudlogsAPIService.DeleteLogGrafanacloudlogs": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LoggingGrafanacloudlogsAPIService.GetLogGrafanacloudlogs": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LoggingGrafanacloudlogsAPIService.ListLogGrafanacloudlogs": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LoggingGrafanacloudlogsAPIService.UpdateLogGrafanacloudlogs": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2278,6 +2314,30 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"MutualAuthenticationAPIService.PatchMutualAuthentication": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ObjectStorageAccessKeysAPIService.CreateAccessKey": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ObjectStorageAccessKeysAPIService.DeleteAccessKey": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ObjectStorageAccessKeysAPIService.GetAccessKey": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ObjectStorageAccessKeysAPIService.ListAccessKeys": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",

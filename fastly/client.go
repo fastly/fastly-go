@@ -143,6 +143,8 @@ type APIClient struct {
 
 	ImageOptimizerDefaultSettingsAPI ImageOptimizerDefaultSettingsAPI
 
+	InsightsAPI InsightsAPI
+
 	InvitationsAPI InvitationsAPI
 
 	KvStoreAPI KvStoreAPI
@@ -180,6 +182,8 @@ type APIClient struct {
 	LoggingFtpAPI LoggingFtpAPI
 
 	LoggingGcsAPI LoggingGcsAPI
+
+	LoggingGrafanacloudlogsAPI LoggingGrafanacloudlogsAPI
 
 	LoggingHerokuAPI LoggingHerokuAPI
 
@@ -220,6 +224,8 @@ type APIClient struct {
 	LoggingSyslogAPI LoggingSyslogAPI
 
 	MutualAuthenticationAPI MutualAuthenticationAPI
+
+	ObjectStorageAccessKeysAPI ObjectStorageAccessKeysAPI
 
 	ObservabilityCustomDashboardsAPI ObservabilityCustomDashboardsAPI
 
@@ -369,6 +375,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.IamServiceGroupsAPI = (*IamServiceGroupsAPIService)(&c.common)
 	c.IamUserGroupsAPI = (*IamUserGroupsAPIService)(&c.common)
 	c.ImageOptimizerDefaultSettingsAPI = (*ImageOptimizerDefaultSettingsAPIService)(&c.common)
+	c.InsightsAPI = (*InsightsAPIService)(&c.common)
 	c.InvitationsAPI = (*InvitationsAPIService)(&c.common)
 	c.KvStoreAPI = (*KvStoreAPIService)(&c.common)
 	c.KvStoreItemAPI = (*KvStoreItemAPIService)(&c.common)
@@ -388,6 +395,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingElasticsearchAPI = (*LoggingElasticsearchAPIService)(&c.common)
 	c.LoggingFtpAPI = (*LoggingFtpAPIService)(&c.common)
 	c.LoggingGcsAPI = (*LoggingGcsAPIService)(&c.common)
+	c.LoggingGrafanacloudlogsAPI = (*LoggingGrafanacloudlogsAPIService)(&c.common)
 	c.LoggingHerokuAPI = (*LoggingHerokuAPIService)(&c.common)
 	c.LoggingHoneycombAPI = (*LoggingHoneycombAPIService)(&c.common)
 	c.LoggingHTTPSAPI = (*LoggingHTTPSAPIService)(&c.common)
@@ -408,6 +416,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingSumologicAPI = (*LoggingSumologicAPIService)(&c.common)
 	c.LoggingSyslogAPI = (*LoggingSyslogAPIService)(&c.common)
 	c.MutualAuthenticationAPI = (*MutualAuthenticationAPIService)(&c.common)
+	c.ObjectStorageAccessKeysAPI = (*ObjectStorageAccessKeysAPIService)(&c.common)
 	c.ObservabilityCustomDashboardsAPI = (*ObservabilityCustomDashboardsAPIService)(&c.common)
 	c.OriginInspectorHistoricalAPI = (*OriginInspectorHistoricalAPIService)(&c.common)
 	c.OriginInspectorRealtimeAPI = (*OriginInspectorRealtimeAPIService)(&c.common)

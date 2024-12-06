@@ -18,7 +18,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go 1.0.0-beta.36
+	github.com/fastly/fastly-go 1.0.0-beta.37
 )
 ```
 
@@ -113,7 +113,7 @@ Class | Method | Description
 *BillingInvoicesAPI* | [**GetMonthToDateInvoice**](docs/BillingInvoicesAPI.md#getmonthtodateinvoice) | Get month-to-date invoice.
 *BillingInvoicesAPI* | [**ListInvoices**](docs/BillingInvoicesAPI.md#listinvoices) | List of invoices.
 *BillingUsageMetricsAPI* | [**GetServiceLevelUsage**](docs/BillingUsageMetricsAPI.md#getservicelevelusage) | Retrieve service-level usage metrics for a product.
-*BillingUsageMetricsAPI* | [**GetServiceLevelUsageTypes**](docs/BillingUsageMetricsAPI.md#getservicelevelusagetypes) | Retrieve product usage types for a customer.
+*BillingUsageMetricsAPI* | [**GetUsageMetrics**](docs/BillingUsageMetricsAPI.md#getusagemetrics) | Get monthly usage metrics
 *CacheSettingsAPI* | [**CreateCacheSettings**](docs/CacheSettingsAPI.md#createcachesettings) | Create a cache settings object
 *CacheSettingsAPI* | [**DeleteCacheSettings**](docs/CacheSettingsAPI.md#deletecachesettings) | Delete a cache settings object
 *CacheSettingsAPI* | [**GetCacheSettings**](docs/CacheSettingsAPI.md#getcachesettings) | Get a cache settings object
@@ -251,6 +251,7 @@ Class | Method | Description
 *IamUserGroupsAPI* | [**UpdateAUserGroup**](docs/IamUserGroupsAPI.md#updateausergroup) | Update a user group
 *ImageOptimizerDefaultSettingsAPI* | [**GetDefaultSettings**](docs/ImageOptimizerDefaultSettingsAPI.md#getdefaultsettings) | Get current Image Optimizer Default Settings
 *ImageOptimizerDefaultSettingsAPI* | [**UpdateDefaultSettings**](docs/ImageOptimizerDefaultSettingsAPI.md#updatedefaultsettings) | Update Image Optimizer Default Settings
+*InsightsAPI* | [**GetLogInsights**](docs/InsightsAPI.md#getloginsights) | Retrieve log insights
 *InvitationsAPI* | [**CreateInvitation**](docs/InvitationsAPI.md#createinvitation) | Create an invitation
 *InvitationsAPI* | [**DeleteInvitation**](docs/InvitationsAPI.md#deleteinvitation) | Delete an invitation
 *InvitationsAPI* | [**ListInvitations**](docs/InvitationsAPI.md#listinvitations) | List invitations
@@ -330,6 +331,11 @@ Class | Method | Description
 *LoggingGcsAPI* | [**GetLogGcs**](docs/LoggingGcsAPI.md#getloggcs) | Get a GCS log endpoint
 *LoggingGcsAPI* | [**ListLogGcs**](docs/LoggingGcsAPI.md#listloggcs) | List GCS log endpoints
 *LoggingGcsAPI* | [**UpdateLogGcs**](docs/LoggingGcsAPI.md#updateloggcs) | Update a GCS log endpoint
+*LoggingGrafanacloudlogsAPI* | [**CreateLogGrafanacloudlogs**](docs/LoggingGrafanacloudlogsAPI.md#createloggrafanacloudlogs) | Create a Grafana Cloud Logs log endpoint
+*LoggingGrafanacloudlogsAPI* | [**DeleteLogGrafanacloudlogs**](docs/LoggingGrafanacloudlogsAPI.md#deleteloggrafanacloudlogs) | Delete the Grafana Cloud Logs log endpoint
+*LoggingGrafanacloudlogsAPI* | [**GetLogGrafanacloudlogs**](docs/LoggingGrafanacloudlogsAPI.md#getloggrafanacloudlogs) | Get a Grafana Cloud Logs log endpoint
+*LoggingGrafanacloudlogsAPI* | [**ListLogGrafanacloudlogs**](docs/LoggingGrafanacloudlogsAPI.md#listloggrafanacloudlogs) | List Grafana Cloud Logs log endpoints
+*LoggingGrafanacloudlogsAPI* | [**UpdateLogGrafanacloudlogs**](docs/LoggingGrafanacloudlogsAPI.md#updateloggrafanacloudlogs) | Update a Grafana Cloud Logs log endpoint
 *LoggingHerokuAPI* | [**CreateLogHeroku**](docs/LoggingHerokuAPI.md#createlogheroku) | Create a Heroku log endpoint
 *LoggingHerokuAPI* | [**DeleteLogHeroku**](docs/LoggingHerokuAPI.md#deletelogheroku) | Delete the Heroku log endpoint
 *LoggingHerokuAPI* | [**GetLogHeroku**](docs/LoggingHerokuAPI.md#getlogheroku) | Get a Heroku log endpoint
@@ -430,6 +436,10 @@ Class | Method | Description
 *MutualAuthenticationAPI* | [**GetMutualAuthentication**](docs/MutualAuthenticationAPI.md#getmutualauthentication) | Get a Mutual Authentication
 *MutualAuthenticationAPI* | [**ListMutualAuthentications**](docs/MutualAuthenticationAPI.md#listmutualauthentications) | List Mutual Authentications
 *MutualAuthenticationAPI* | [**PatchMutualAuthentication**](docs/MutualAuthenticationAPI.md#patchmutualauthentication) | Update a Mutual Authentication
+*ObjectStorageAccessKeysAPI* | [**CreateAccessKey**](docs/ObjectStorageAccessKeysAPI.md#createaccesskey) | Create an access key
+*ObjectStorageAccessKeysAPI* | [**DeleteAccessKey**](docs/ObjectStorageAccessKeysAPI.md#deleteaccesskey) | Delete an access key
+*ObjectStorageAccessKeysAPI* | [**GetAccessKey**](docs/ObjectStorageAccessKeysAPI.md#getaccesskey) | Get an access key
+*ObjectStorageAccessKeysAPI* | [**ListAccessKeys**](docs/ObjectStorageAccessKeysAPI.md#listaccesskeys) | List access keys
 *ObservabilityCustomDashboardsAPI* | [**CreateDashboard**](docs/ObservabilityCustomDashboardsAPI.md#createdashboard) | Create a new dashboard
 *ObservabilityCustomDashboardsAPI* | [**DeleteDashboard**](docs/ObservabilityCustomDashboardsAPI.md#deletedashboard) | Delete an existing dashboard
 *ObservabilityCustomDashboardsAPI* | [**GetDashboard**](docs/ObservabilityCustomDashboardsAPI.md#getdashboard) | Retrieve a dashboard by ID
@@ -654,14 +664,15 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/alerts/history`](https://www.fastly.com/documentation/reference/api/observability/alerts/history) (GET)
 - [`/dns/configurations/{dns_configuration_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/dns/configurations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
-- [`/domains/{domain_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
-- [`/domains`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/domains/v1/{domain_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
+- [`/domains/v1`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
 - [`/notifications/integration-types`](https://developer.fastly.com/reference/api/observability/notification) (GET)
 - [`/notifications/integrations/{integration_id}/rotateSigningKey`](https://developer.fastly.com/reference/api/observability/notification) (POST)
 - [`/notifications/integrations/{integration_id}/signingKey`](https://developer.fastly.com/reference/api/observability/notification) (GET)
 - [`/notifications/integrations/{integration_id}`](https://developer.fastly.com/reference/api/observability/notification) (DELETE, GET, PATCH)
 - [`/notifications/integrations`](https://developer.fastly.com/reference/api/observability/notification) (GET, POST)
 - [`/notifications/mailinglist-confirmations`](https://developer.fastly.com/reference/api/observability/notification) (POST)
+- [`/observability/log-explorer`](https://www.fastly.com/documentation/reference/api/observability/log-explorer/) (GET)
 - [`/resources/stores/kv/{store_id}/batch`](https://www.fastly.com/documentation/reference/api/services/resources/kv-store-item) (PUT)
 - [`/security/workspaces/{workspace_id}/events/{event_id}`](https://docs.fastly.com/en/ngwaf/) (GET, PATCH)
 - [`/security/workspaces/{workspace_id}/events`](https://docs.fastly.com/en/ngwaf/) (GET)

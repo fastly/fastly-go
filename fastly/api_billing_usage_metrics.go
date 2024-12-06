@@ -19,7 +19,6 @@ import (
 	"net/http"
 	gourl "net/url"
 	"strconv"
-	"strings"
 )
 
 // Linger please
@@ -36,29 +35,27 @@ type BillingUsageMetricsAPI interface {
 		Returns product usage, broken down by service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
 		 @return APIGetServiceLevelUsageRequest
 	*/
-	GetServiceLevelUsage(ctx context.Context, customerID string) APIGetServiceLevelUsageRequest
+	GetServiceLevelUsage(ctx context.Context) APIGetServiceLevelUsageRequest
 
 	// GetServiceLevelUsageExecute executes the request
 	//  @return Serviceusagemetrics
 	GetServiceLevelUsageExecute(r APIGetServiceLevelUsageRequest) (*Serviceusagemetrics, *http.Response, error)
 
 	/*
-		GetServiceLevelUsageTypes Retrieve product usage types for a customer.
+		GetUsageMetrics Get monthly usage metrics
 
-		Returns product usage types reported by the customer's services.
+		Returns monthly usage metrics for customer by product.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
-		 @return APIGetServiceLevelUsageTypesRequest
+		 @return APIGetUsageMetricsRequest
 	*/
-	GetServiceLevelUsageTypes(ctx context.Context, customerID string) APIGetServiceLevelUsageTypesRequest
+	GetUsageMetrics(ctx context.Context) APIGetUsageMetricsRequest
 
-	// GetServiceLevelUsageTypesExecute executes the request
-	//  @return Serviceusagetypes
-	GetServiceLevelUsageTypesExecute(r APIGetServiceLevelUsageTypesRequest) (*Serviceusagetypes, *http.Response, error)
+	// GetUsageMetricsExecute executes the request
+	//  @return Usagemetric
+	GetUsageMetricsExecute(r APIGetUsageMetricsRequest) (*Usagemetric, *http.Response, error)
 }
 
 // BillingUsageMetricsAPIService BillingUsageMetricsAPI service
@@ -66,18 +63,14 @@ type BillingUsageMetricsAPIService service
 
 // APIGetServiceLevelUsageRequest represents a request for the resource.
 type APIGetServiceLevelUsageRequest struct {
-	ctx             context.Context
-	APIService      BillingUsageMetricsAPI
-	customerID      string
-	productID       *string
-	usageTypeName   *string
-	timeGranularity *string
-	startDate       *string
-	endDate         *string
-	startMonth      *string
-	endMonth        *string
-	limit           *string
-	cursor          *string
+	ctx           context.Context
+	APIService    BillingUsageMetricsAPI
+	productID     *string
+	usageTypeName *string
+	startMonth    *string
+	endMonth      *string
+	limit         *string
+	cursor        *string
 }
 
 // ProductID The product identifier for the metrics returned (e.g., &#x60;cdn_usage&#x60;). This field is not required for CSV requests.
@@ -89,24 +82,6 @@ func (r *APIGetServiceLevelUsageRequest) ProductID(productID string) *APIGetServ
 // UsageTypeName The usage type name for the metrics returned (e.g., &#x60;North America Requests&#x60;). This field is not required for CSV requests.
 func (r *APIGetServiceLevelUsageRequest) UsageTypeName(usageTypeName string) *APIGetServiceLevelUsageRequest {
 	r.usageTypeName = &usageTypeName
-	return r
-}
-
-// TimeGranularity returns a pointer to a request.
-func (r *APIGetServiceLevelUsageRequest) TimeGranularity(timeGranularity string) *APIGetServiceLevelUsageRequest {
-	r.timeGranularity = &timeGranularity
-	return r
-}
-
-// StartDate returns a pointer to a request.
-func (r *APIGetServiceLevelUsageRequest) StartDate(startDate string) *APIGetServiceLevelUsageRequest {
-	r.startDate = &startDate
-	return r
-}
-
-// EndDate returns a pointer to a request.
-func (r *APIGetServiceLevelUsageRequest) EndDate(endDate string) *APIGetServiceLevelUsageRequest {
-	r.endDate = &endDate
 	return r
 }
 
@@ -145,14 +120,12 @@ GetServiceLevelUsage Retrieve service-level usage metrics for a product.
 Returns product usage, broken down by service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
  @return APIGetServiceLevelUsageRequest
 */
-func (a *BillingUsageMetricsAPIService) GetServiceLevelUsage(ctx context.Context, customerID string) APIGetServiceLevelUsageRequest {
+func (a *BillingUsageMetricsAPIService) GetServiceLevelUsage(ctx context.Context) APIGetServiceLevelUsageRequest {
 	return APIGetServiceLevelUsageRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
 	}
 }
 
@@ -171,8 +144,7 @@ func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageExecute(r APIGetServ
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/billing/v2/account_customers/{customer_id}/service-usage-metrics"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
+	localVarPath := localBasePath + "/billing/v3/service-usage-metrics"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -183,19 +155,9 @@ func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageExecute(r APIGetServ
 	if r.usageTypeName == nil {
 		return localVarReturnValue, nil, reportError("usageTypeName is required and must be specified")
 	}
-	if r.timeGranularity == nil {
-		return localVarReturnValue, nil, reportError("timeGranularity is required and must be specified")
-	}
 
 	localVarQueryParams.Add("product_id", parameterToString(*r.productID, ""))
 	localVarQueryParams.Add("usage_type_name", parameterToString(*r.usageTypeName, ""))
-	localVarQueryParams.Add("time_granularity", parameterToString(*r.timeGranularity, ""))
-	if r.startDate != nil {
-		localVarQueryParams.Add("start_date", parameterToString(*r.startDate, ""))
-	}
-	if r.endDate != nil {
-		localVarQueryParams.Add("end_date", parameterToString(*r.endDate, ""))
-	}
 	if r.startMonth != nil {
 		localVarQueryParams.Add("start_month", parameterToString(*r.startMonth, ""))
 	}
@@ -318,57 +280,73 @@ func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageExecute(r APIGetServ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIGetServiceLevelUsageTypesRequest represents a request for the resource.
-type APIGetServiceLevelUsageTypesRequest struct {
+// APIGetUsageMetricsRequest represents a request for the resource.
+type APIGetUsageMetricsRequest struct {
 	ctx        context.Context
 	APIService BillingUsageMetricsAPI
-	customerID string
+	startMonth *string
+	endMonth   *string
+}
+
+// StartMonth returns a pointer to a request.
+func (r *APIGetUsageMetricsRequest) StartMonth(startMonth string) *APIGetUsageMetricsRequest {
+	r.startMonth = &startMonth
+	return r
+}
+
+// EndMonth returns a pointer to a request.
+func (r *APIGetUsageMetricsRequest) EndMonth(endMonth string) *APIGetUsageMetricsRequest {
+	r.endMonth = &endMonth
+	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetServiceLevelUsageTypesRequest) Execute() (*Serviceusagetypes, *http.Response, error) {
-	return r.APIService.GetServiceLevelUsageTypesExecute(r)
+func (r APIGetUsageMetricsRequest) Execute() (*Usagemetric, *http.Response, error) {
+	return r.APIService.GetUsageMetricsExecute(r)
 }
 
 /*
-GetServiceLevelUsageTypes Retrieve product usage types for a customer.
+GetUsageMetrics Get monthly usage metrics
 
-Returns product usage types reported by the customer's services.
+Returns monthly usage metrics for customer by product.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
- @return APIGetServiceLevelUsageTypesRequest
+ @return APIGetUsageMetricsRequest
 */
-func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageTypes(ctx context.Context, customerID string) APIGetServiceLevelUsageTypesRequest {
-	return APIGetServiceLevelUsageTypesRequest{
+func (a *BillingUsageMetricsAPIService) GetUsageMetrics(ctx context.Context) APIGetUsageMetricsRequest {
+	return APIGetUsageMetricsRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
 	}
 }
 
-// GetServiceLevelUsageTypesExecute executes the request
-//  @return Serviceusagetypes
-func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageTypesExecute(r APIGetServiceLevelUsageTypesRequest) (*Serviceusagetypes, *http.Response, error) {
+// GetUsageMetricsExecute executes the request
+//  @return Usagemetric
+func (a *BillingUsageMetricsAPIService) GetUsageMetricsExecute(r APIGetUsageMetricsRequest) (*Usagemetric, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *Serviceusagetypes
+		localVarReturnValue *Usagemetric
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingUsageMetricsAPIService.GetServiceLevelUsageTypes")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingUsageMetricsAPIService.GetUsageMetrics")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/billing/v2/account_customers/{customer_id}/service-usage-types"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
+	localVarPath := localBasePath + "/billing/v3/usage-metrics"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
+	if r.startMonth != nil {
+		localVarQueryParams.Add("start_month", parameterToString(*r.startMonth, ""))
+	}
+	if r.endMonth != nil {
+		localVarQueryParams.Add("end_month", parameterToString(*r.endMonth, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

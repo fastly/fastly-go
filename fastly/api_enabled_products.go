@@ -33,7 +33,7 @@ type EnabledProductsAPI interface {
 	/*
 		DisableProduct Disable a product
 
-		Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+		Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param productID
@@ -48,7 +48,7 @@ type EnabledProductsAPI interface {
 	/*
 		EnableProduct Enable a product
 
-		Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+		Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param productID
@@ -64,7 +64,7 @@ type EnabledProductsAPI interface {
 	/*
 		GetEnabledProduct Get enabled product
 
-		Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+		Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param productID
@@ -80,7 +80,7 @@ type EnabledProductsAPI interface {
 	/*
 		GetProductConfiguration Get configuration for a product
 
-		Get configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+		Get configuration for an enabled product on a service. Supported product IDs: `ngwaf` and `ddos_protection`.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param productID
@@ -96,7 +96,7 @@ type EnabledProductsAPI interface {
 	/*
 		SetProductConfiguration Update configuration for a product
 
-		Update configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+		Update configuration for an enabled product on a service. Supported product IDs: `ngwaf` and `ddos_protection`.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param productID
@@ -129,7 +129,7 @@ func (r APIDisableProductRequest) Execute() (*http.Response, error) {
 /*
 DisableProduct Disable a product
 
-Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param productID
@@ -261,7 +261,7 @@ func (r APIEnableProductRequest) Execute() (*EnabledProductResponse, *http.Respo
 /*
 EnableProduct Enable a product
 
-Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param productID
@@ -399,7 +399,7 @@ func (r APIGetEnabledProductRequest) Execute() (*EnabledProductResponse, *http.R
 /*
 GetEnabledProduct Get enabled product
 
-Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param productID
@@ -535,7 +535,7 @@ func (r APIGetProductConfigurationRequest) Execute() (*ConfiguredProductResponse
 /*
 GetProductConfiguration Get configuration for a product
 
-Get configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+Get configuration for an enabled product on a service. Supported product IDs: `ngwaf` and `ddos_protection`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param productID
@@ -678,7 +678,7 @@ func (r APISetProductConfigurationRequest) Execute() (*ConfiguredProductResponse
 /*
 SetProductConfiguration Update configuration for a product
 
-Update configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+Update configuration for an enabled product on a service. Supported product IDs: `ngwaf` and `ddos_protection`.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param productID

@@ -16,7 +16,7 @@ import (
 	"encoding/json"
 )
 
-// ComputeACLLookup An example of an ACL Lookup response.
+// ComputeACLLookup Defines the structure of an ACL Lookup response.
 type ComputeACLLookup struct {
 	// A valid IPv4 or IPv6 address.
 	Prefix *string `json:"prefix,omitempty"`

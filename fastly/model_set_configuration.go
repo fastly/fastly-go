@@ -21,7 +21,9 @@ type SetConfiguration struct {
 	// The new workspace_id. Required in the `PUT` request body when `product_id` is `ngwaf`. Optional in the `PATCH` request body for `ngwaf`.
 	WorkspaceID *string `json:"workspace_id,omitempty"`
 	// The new traffic ramp. Optional in the `PATCH` request body for `ngwaf`.
-	TrafficRamp          *string `json:"traffic_ramp,omitempty"`
+	TrafficRamp *string `json:"traffic_ramp,omitempty"`
+	// The new mode to run the product in. One of `block`, `log`, or `off`. Optional in the `PATCH` request body for `ddos_protection`.
+	Mode                 *string `json:"mode,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -108,6 +110,38 @@ func (o *SetConfiguration) SetTrafficRamp(v string) {
 	o.TrafficRamp = &v
 }
 
+// GetMode returns the Mode field value if set, zero value otherwise.
+func (o *SetConfiguration) GetMode() string {
+	if o == nil || o.Mode == nil {
+		var ret string
+		return ret
+	}
+	return *o.Mode
+}
+
+// GetModeOk returns a tuple with the Mode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SetConfiguration) GetModeOk() (*string, bool) {
+	if o == nil || o.Mode == nil {
+		return nil, false
+	}
+	return o.Mode, true
+}
+
+// HasMode returns a boolean if a field has been set.
+func (o *SetConfiguration) HasMode() bool {
+	if o != nil && o.Mode != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMode gets a reference to the given string and assigns it to the Mode field.
+func (o *SetConfiguration) SetMode(v string) {
+	o.Mode = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o SetConfiguration) MarshalJSON() ([]byte, error) {
@@ -117,6 +151,9 @@ func (o SetConfiguration) MarshalJSON() ([]byte, error) {
 	}
 	if o.TrafficRamp != nil {
 		toSerialize["traffic_ramp"] = o.TrafficRamp
+	}
+	if o.Mode != nil {
+		toSerialize["mode"] = o.Mode
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -140,6 +177,7 @@ func (o *SetConfiguration) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "workspace_id")
 		delete(additionalProperties, "traffic_ramp")
+		delete(additionalProperties, "mode")
 		o.AdditionalProperties = additionalProperties
 	}
 

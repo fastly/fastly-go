@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **WorkspaceID** | Pointer to **string** | The new workspace_id. Required in the `PUT` request body when `product_id` is `ngwaf`. Optional in the `PATCH` request body for `ngwaf`. | [optional] 
 **TrafficRamp** | Pointer to **string** | The new traffic ramp. Optional in the `PATCH` request body for `ngwaf`. | [optional] 
+**Mode** | Pointer to **string** | The new mode to run the product in. One of `block`, `log`, or `off`. Optional in the `PATCH` request body for `ddos_protection`. | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetTrafficRamp sets TrafficRamp field to given value.
 `func (o *SetConfiguration) HasTrafficRamp() bool`
 
 HasTrafficRamp returns a boolean if a field has been set.
+
+### GetMode
+
+`func (o *SetConfiguration) GetMode() string`
+
+GetMode returns the Mode field if non-nil, zero value otherwise.
+
+### GetModeOk
+
+`func (o *SetConfiguration) GetModeOk() (*string, bool)`
+
+GetModeOk returns a tuple with the Mode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMode
+
+`func (o *SetConfiguration) SetMode(v string)`
+
+SetMode sets Mode field to given value.
+
+### HasMode
+
+`func (o *SetConfiguration) HasMode() bool`
+
+HasMode returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

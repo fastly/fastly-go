@@ -427,12 +427,12 @@ import (
 
 func main() {
     aclID := "aclId_example" // string | 
-    computeACLUpdateEntry := []openapiclient.ComputeACLUpdateEntry{*openapiclient.NewComputeACLUpdateEntry()} // []ComputeACLUpdateEntry |  (optional)
+    computeACLUpdate := *openapiclient.NewComputeACLUpdate() // ComputeACLUpdate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLsInComputeAPI.ComputeACLUpdateAcls(ctx, aclID).ComputeACLUpdateEntry(computeACLUpdateEntry).Execute()
+    resp, r, err := apiClient.ACLsInComputeAPI.ComputeACLUpdateAcls(ctx, aclID).ComputeACLUpdate(computeACLUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ACLsInComputeAPI.ComputeACLUpdateAcls`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -455,7 +455,7 @@ Other parameters are passed through a pointer to a apiComputeACLUpdateAclsReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **computeACLUpdateEntry** | [**[]ComputeACLUpdateEntry**](ComputeACLUpdateEntry.md) |  | 
+ **computeACLUpdate** | [**ComputeACLUpdate**](ComputeACLUpdate.md) |  | 
 
 ### Return type
 

@@ -944,15 +944,15 @@ func (a *ACLsInComputeAPIService) ComputeACLLookupAclsExecute(r APIComputeACLLoo
 
 // APIComputeACLUpdateAclsRequest represents a request for the resource.
 type APIComputeACLUpdateAclsRequest struct {
-	ctx                   context.Context
-	APIService            ACLsInComputeAPI
-	aclID                 string
-	computeACLUpdateEntry *[]ComputeACLUpdateEntry
+	ctx              context.Context
+	APIService       ACLsInComputeAPI
+	aclID            string
+	computeACLUpdate *ComputeACLUpdate
 }
 
-// ComputeACLUpdateEntry returns a pointer to a request.
-func (r *APIComputeACLUpdateAclsRequest) ComputeACLUpdateEntry(computeACLUpdateEntry []ComputeACLUpdateEntry) *APIComputeACLUpdateAclsRequest {
-	r.computeACLUpdateEntry = &computeACLUpdateEntry
+// ComputeACLUpdate returns a pointer to a request.
+func (r *APIComputeACLUpdateAclsRequest) ComputeACLUpdate(computeACLUpdate ComputeACLUpdate) *APIComputeACLUpdateAclsRequest {
+	r.computeACLUpdate = &computeACLUpdate
 	return r
 }
 
@@ -1016,7 +1016,7 @@ func (a *ACLsInComputeAPIService) ComputeACLUpdateAclsExecute(r APIComputeACLUpd
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.computeACLUpdateEntry
+	localVarPostBody = r.computeACLUpdate
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

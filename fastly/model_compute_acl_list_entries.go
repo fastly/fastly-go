@@ -16,7 +16,7 @@ import (
 	"encoding/json"
 )
 
-// ComputeACLListEntries An example of an ACL List Response.
+// ComputeACLListEntries Defines the structure of what the ACL List endpoint returns.
 type ComputeACLListEntries struct {
 	Meta                 *ComputeACLListEntriesMeta  `json:"meta,omitempty"`
 	Entries              []ComputeACLListEntriesItem `json:"entries,omitempty"`

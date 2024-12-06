@@ -223,12 +223,13 @@ func (a *KvStoreItemAPIService) DeleteKeyFromStoreExecute(r APIDeleteKeyFromStor
 
 // APIGetKeysRequest represents a request for the resource.
 type APIGetKeysRequest struct {
-	ctx        context.Context
-	APIService KvStoreItemAPI
-	storeID    string
-	cursor     *string
-	limit      *int32
-	prefix     *string
+	ctx         context.Context
+	APIService  KvStoreItemAPI
+	storeID     string
+	cursor      *string
+	limit       *int32
+	prefix      *string
+	consistency *string
 }
 
 // Cursor returns a pointer to a request.
@@ -246,6 +247,12 @@ func (r *APIGetKeysRequest) Limit(limit int32) *APIGetKeysRequest {
 // Prefix returns a pointer to a request.
 func (r *APIGetKeysRequest) Prefix(prefix string) *APIGetKeysRequest {
 	r.prefix = &prefix
+	return r
+}
+
+// Consistency returns a pointer to a request.
+func (r *APIGetKeysRequest) Consistency(consistency string) *APIGetKeysRequest {
+	r.consistency = &consistency
 	return r
 }
 
@@ -301,6 +308,9 @@ func (a *KvStoreItemAPIService) GetKeysExecute(r APIGetKeysRequest) (*InlineResp
 	}
 	if r.prefix != nil {
 		localVarQueryParams.Add("prefix", parameterToString(*r.prefix, ""))
+	}
+	if r.consistency != nil {
+		localVarQueryParams.Add("consistency", parameterToString(*r.consistency, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

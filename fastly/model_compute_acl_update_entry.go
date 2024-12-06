@@ -16,7 +16,7 @@ import (
 	"encoding/json"
 )
 
-// ComputeACLUpdateEntry An example of an ACL update request entry.
+// ComputeACLUpdateEntry Defines the structure of an ACL update request entry.
 type ComputeACLUpdateEntry struct {
 	// One of \"create\" or \"update\", indicating that the rest of this entry is to be added to/updated in the ACL.
 	Op *string `json:"op,omitempty"`
