@@ -21,7 +21,7 @@ type Realtime struct {
 	// Value to use for subsequent requests.
 	Timestamp *int32 `json:"Timestamp,omitempty"`
 	// How long the system will wait before aggregating messages for each second. The most recent data returned will have happened at the moment of the request, minus the aggregation delay.
-	AggregateDelay *int32 `json:"AggregateDelay,omitempty"`
+	AggregateDelay *int64 `json:"AggregateDelay,omitempty"`
 	// A list of [records](#record-data-model), each representing one second of time.
 	Data                 []RealtimeEntry `json:"Data,omitempty"`
 	AdditionalProperties map[string]any
@@ -79,9 +79,9 @@ func (o *Realtime) SetTimestamp(v int32) {
 }
 
 // GetAggregateDelay returns the AggregateDelay field value if set, zero value otherwise.
-func (o *Realtime) GetAggregateDelay() int32 {
+func (o *Realtime) GetAggregateDelay() int64 {
 	if o == nil || o.AggregateDelay == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AggregateDelay
@@ -89,7 +89,7 @@ func (o *Realtime) GetAggregateDelay() int32 {
 
 // GetAggregateDelayOk returns a tuple with the AggregateDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Realtime) GetAggregateDelayOk() (*int32, bool) {
+func (o *Realtime) GetAggregateDelayOk() (*int64, bool) {
 	if o == nil || o.AggregateDelay == nil {
 		return nil, false
 	}
@@ -105,8 +105,8 @@ func (o *Realtime) HasAggregateDelay() bool {
 	return false
 }
 
-// SetAggregateDelay gets a reference to the given int32 and assigns it to the AggregateDelay field.
-func (o *Realtime) SetAggregateDelay(v int32) {
+// SetAggregateDelay gets a reference to the given int64 and assigns it to the AggregateDelay field.
+func (o *Realtime) SetAggregateDelay(v int64) {
 	o.AggregateDelay = &v
 }
 

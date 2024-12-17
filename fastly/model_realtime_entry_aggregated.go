@@ -19,29 +19,29 @@ import (
 // RealtimeEntryAggregated Aggregates [measurements](#measurements-data-model) across all Fastly POPs.
 type RealtimeEntryAggregated struct {
 	// Number of requests processed.
-	Requests *int32 `json:"requests,omitempty"`
+	Requests *int64 `json:"requests,omitempty"`
 	// Number of log lines sent (alias for `log`).
-	Logging *int32 `json:"logging,omitempty"`
+	Logging *int64 `json:"logging,omitempty"`
 	// Number of log lines sent.
-	Log *int32 `json:"log,omitempty"`
+	Log *int64 `json:"log,omitempty"`
 	// Total header bytes delivered (edge_resp_header_bytes + shield_resp_header_bytes).
-	RespHeaderBytes *int32 `json:"resp_header_bytes,omitempty"`
+	RespHeaderBytes *int64 `json:"resp_header_bytes,omitempty"`
 	// Total header bytes delivered (alias for resp_header_bytes).
-	HeaderSize *int32 `json:"header_size,omitempty"`
+	HeaderSize *int64 `json:"header_size,omitempty"`
 	// Total body bytes delivered (edge_resp_body_bytes + shield_resp_body_bytes).
-	RespBodyBytes *int32 `json:"resp_body_bytes,omitempty"`
+	RespBodyBytes *int64 `json:"resp_body_bytes,omitempty"`
 	// Total body bytes delivered (alias for resp_body_bytes).
-	BodySize *int32 `json:"body_size,omitempty"`
+	BodySize *int64 `json:"body_size,omitempty"`
 	// Number of cache hits.
-	Hits *int32 `json:"hits,omitempty"`
+	Hits *int64 `json:"hits,omitempty"`
 	// Number of cache misses.
-	Miss *int32 `json:"miss,omitempty"`
+	Miss *int64 `json:"miss,omitempty"`
 	// Number of requests that passed through the CDN without being cached.
-	Pass *int32 `json:"pass,omitempty"`
+	Pass *int64 `json:"pass,omitempty"`
 	// Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement).
-	Synth *int32 `json:"synth,omitempty"`
+	Synth *int64 `json:"synth,omitempty"`
 	// Number of cache errors.
-	Errors *int32 `json:"errors,omitempty"`
+	Errors *int64 `json:"errors,omitempty"`
 	// Total amount of time spent processing cache hits (in seconds).
 	HitsTime *float32 `json:"hits_time,omitempty"`
 	// Total amount of time spent processing cache misses (in seconds).
@@ -49,469 +49,469 @@ type RealtimeEntryAggregated struct {
 	// A histogram. The value in each bucket is the number of requests to the origin whose responses arrived during the time period represented by the bucket. The key of each bucket represents the upper bound (in response time) of that bucket. The buckets vary in width and cover the time periods 0-10ms (in 1ms increments), 10-250ms (in 10ms increments), 250-1,000ms (in 50ms increments), 1,000-3,000ms (in 100ms increments), 3,000-10,000ms (in 500 ms increments), 10,000-20,000ms (in 1,000ms increments), 20,000-60,000ms (in 5,000ms increments), and 60,000ms through infinity (in a single bucket).
 	MissHistogram map[string]map[string]any `json:"miss_histogram,omitempty"`
 	// The total number of requests that were received for your service by Fastly.
-	ComputeRequests *int32 `json:"compute_requests,omitempty"`
+	ComputeRequests *int64 `json:"compute_requests,omitempty"`
 	// The amount of active CPU time used to process your requests (in milliseconds).
 	ComputeExecutionTimeMs *float32 `json:"compute_execution_time_ms,omitempty"`
 	// The amount of RAM used for your service by Fastly (in bytes).
-	ComputeRAMUsed *int32 `json:"compute_ram_used,omitempty"`
+	ComputeRAMUsed *int64 `json:"compute_ram_used,omitempty"`
 	// The total, actual amount of time used to process your requests, including active CPU time (in milliseconds).
 	ComputeRequestTimeMs *float32 `json:"compute_request_time_ms,omitempty"`
 	// The total amount of request processing time you will be billed for, measured in 50 millisecond increments.
 	ComputeRequestTimeBilledMs *float32 `json:"compute_request_time_billed_ms,omitempty"`
 	// Number of requests from edge to the shield POP.
-	Shield *int32 `json:"shield,omitempty"`
+	Shield *int64 `json:"shield,omitempty"`
 	// Number of requests that were received over IPv6.
-	Ipv6 *int32 `json:"ipv6,omitempty"`
+	Ipv6 *int64 `json:"ipv6,omitempty"`
 	// Number of responses that came from the Fastly Image Optimizer service. If the service receives 10 requests for an image, this stat will be 10 regardless of how many times the image was transformed.
-	Imgopto *int32 `json:"imgopto,omitempty"`
+	Imgopto *int64 `json:"imgopto,omitempty"`
 	// Number of responses that came from the Fastly Image Optimizer service via a shield.
-	ImgoptoShield *int32 `json:"imgopto_shield,omitempty"`
+	ImgoptoShield *int64 `json:"imgopto_shield,omitempty"`
 	// Number of transforms performed by the Fastly Image Optimizer service.
-	ImgoptoTransforms *int32 `json:"imgopto_transforms,omitempty"`
+	ImgoptoTransforms *int64 `json:"imgopto_transforms,omitempty"`
 	// Number of responses that came from the Fastly On-the-Fly Packaging service for video-on-demand.
-	Otfp *int32 `json:"otfp,omitempty"`
+	Otfp *int64 `json:"otfp,omitempty"`
 	// Number of responses that came from the Fastly On-the-Fly Packaging service for video-on-demand via a shield.
-	OtfpShield *int32 `json:"otfp_shield,omitempty"`
+	OtfpShield *int64 `json:"otfp_shield,omitempty"`
 	// Number of responses that were manifest files from the Fastly On-the-Fly Packaging service for video-on-demand.
-	OtfpManifests *int32 `json:"otfp_manifests,omitempty"`
+	OtfpManifests *int64 `json:"otfp_manifests,omitempty"`
 	// Number of responses with the video segment or video manifest MIME type (i.e., application/x-mpegurl, application/vnd.apple.mpegurl, application/f4m, application/dash+xml, application/vnd.ms-sstr+xml, ideo/mp2t, audio/aac, video/f4f, video/x-flv, video/mp4, audio/mp4).
-	Video *int32 `json:"video,omitempty"`
+	Video *int64 `json:"video,omitempty"`
 	// Number of responses with the PCI flag turned on.
-	Pci *int32 `json:"pci,omitempty"`
+	Pci *int64 `json:"pci,omitempty"`
 	// Number of requests received over HTTP/2.
-	HTTP2 *int32 `json:"http2,omitempty"`
+	HTTP2 *int64 `json:"http2,omitempty"`
 	// Number of requests received over HTTP/3.
-	HTTP3 *int32 `json:"http3,omitempty"`
+	HTTP3 *int64 `json:"http3,omitempty"`
 	// Number of restarts performed.
-	Restarts *int32 `json:"restarts,omitempty"`
+	Restarts *int64 `json:"restarts,omitempty"`
 	// Total header bytes received.
-	ReqHeaderBytes *int32 `json:"req_header_bytes,omitempty"`
+	ReqHeaderBytes *int64 `json:"req_header_bytes,omitempty"`
 	// Total body bytes received.
-	ReqBodyBytes *int32 `json:"req_body_bytes,omitempty"`
+	ReqBodyBytes *int64 `json:"req_body_bytes,omitempty"`
 	// Total header bytes sent to origin.
-	BereqHeaderBytes *int32 `json:"bereq_header_bytes,omitempty"`
+	BereqHeaderBytes *int64 `json:"bereq_header_bytes,omitempty"`
 	// Total body bytes sent to origin.
-	BereqBodyBytes *int32 `json:"bereq_body_bytes,omitempty"`
+	BereqBodyBytes *int64 `json:"bereq_body_bytes,omitempty"`
 	// Number of requests that triggered a WAF rule and were blocked.
-	WafBlocked *int32 `json:"waf_blocked,omitempty"`
+	WafBlocked *int64 `json:"waf_blocked,omitempty"`
 	// Number of requests that triggered a WAF rule and were logged.
-	WafLogged *int32 `json:"waf_logged,omitempty"`
+	WafLogged *int64 `json:"waf_logged,omitempty"`
 	// Number of requests that triggered a WAF rule and were passed.
-	WafPassed *int32 `json:"waf_passed,omitempty"`
+	WafPassed *int64 `json:"waf_passed,omitempty"`
 	// Total header bytes received from requests that triggered a WAF rule.
-	AttackReqHeaderBytes *int32 `json:"attack_req_header_bytes,omitempty"`
+	AttackReqHeaderBytes *int64 `json:"attack_req_header_bytes,omitempty"`
 	// Total body bytes received from requests that triggered a WAF rule.
-	AttackReqBodyBytes *int32 `json:"attack_req_body_bytes,omitempty"`
+	AttackReqBodyBytes *int64 `json:"attack_req_body_bytes,omitempty"`
 	// Total bytes delivered for requests that triggered a WAF rule and returned a synthetic response.
-	AttackRespSynthBytes *int32 `json:"attack_resp_synth_bytes,omitempty"`
+	AttackRespSynthBytes *int64 `json:"attack_resp_synth_bytes,omitempty"`
 	// Total header bytes received from requests that triggered a WAF rule that was logged.
-	AttackLoggedReqHeaderBytes *int32 `json:"attack_logged_req_header_bytes,omitempty"`
+	AttackLoggedReqHeaderBytes *int64 `json:"attack_logged_req_header_bytes,omitempty"`
 	// Total body bytes received from requests that triggered a WAF rule that was logged.
-	AttackLoggedReqBodyBytes *int32 `json:"attack_logged_req_body_bytes,omitempty"`
+	AttackLoggedReqBodyBytes *int64 `json:"attack_logged_req_body_bytes,omitempty"`
 	// Total header bytes received from requests that triggered a WAF rule that was blocked.
-	AttackBlockedReqHeaderBytes *int32 `json:"attack_blocked_req_header_bytes,omitempty"`
+	AttackBlockedReqHeaderBytes *int64 `json:"attack_blocked_req_header_bytes,omitempty"`
 	// Total body bytes received from requests that triggered a WAF rule that was blocked.
-	AttackBlockedReqBodyBytes *int32 `json:"attack_blocked_req_body_bytes,omitempty"`
+	AttackBlockedReqBodyBytes *int64 `json:"attack_blocked_req_body_bytes,omitempty"`
 	// Total header bytes received from requests that triggered a WAF rule that was passed.
-	AttackPassedReqHeaderBytes *int32 `json:"attack_passed_req_header_bytes,omitempty"`
+	AttackPassedReqHeaderBytes *int64 `json:"attack_passed_req_header_bytes,omitempty"`
 	// Total body bytes received from requests that triggered a WAF rule that was passed.
-	AttackPassedReqBodyBytes *int32 `json:"attack_passed_req_body_bytes,omitempty"`
+	AttackPassedReqBodyBytes *int64 `json:"attack_passed_req_body_bytes,omitempty"`
 	// Total header bytes delivered via a shield.
-	ShieldRespHeaderBytes *int32 `json:"shield_resp_header_bytes,omitempty"`
+	ShieldRespHeaderBytes *int64 `json:"shield_resp_header_bytes,omitempty"`
 	// Total body bytes delivered via a shield.
-	ShieldRespBodyBytes *int32 `json:"shield_resp_body_bytes,omitempty"`
+	ShieldRespBodyBytes *int64 `json:"shield_resp_body_bytes,omitempty"`
 	// Total header bytes delivered from the Fastly On-the-Fly Packaging service for video-on-demand.
-	OtfpRespHeaderBytes *int32 `json:"otfp_resp_header_bytes,omitempty"`
+	OtfpRespHeaderBytes *int64 `json:"otfp_resp_header_bytes,omitempty"`
 	// Total body bytes delivered from the Fastly On-the-Fly Packaging service for video-on-demand.
-	OtfpRespBodyBytes *int32 `json:"otfp_resp_body_bytes,omitempty"`
+	OtfpRespBodyBytes *int64 `json:"otfp_resp_body_bytes,omitempty"`
 	// Total header bytes delivered via a shield for the Fastly On-the-Fly Packaging service for video-on-demand.
-	OtfpShieldRespHeaderBytes *int32 `json:"otfp_shield_resp_header_bytes,omitempty"`
+	OtfpShieldRespHeaderBytes *int64 `json:"otfp_shield_resp_header_bytes,omitempty"`
 	// Total body bytes delivered via a shield for the Fastly On-the-Fly Packaging service for video-on-demand.
-	OtfpShieldRespBodyBytes *int32 `json:"otfp_shield_resp_body_bytes,omitempty"`
+	OtfpShieldRespBodyBytes *int64 `json:"otfp_shield_resp_body_bytes,omitempty"`
 	// Total amount of time spent delivering a response via a shield from the Fastly On-the-Fly Packaging service for video-on-demand (in seconds).
 	OtfpShieldTime *float32 `json:"otfp_shield_time,omitempty"`
 	// Total amount of time spent delivering a response from the Fastly On-the-Fly Packaging service for video-on-demand (in seconds).
 	OtfpDeliverTime *float32 `json:"otfp_deliver_time,omitempty"`
 	// Total header bytes delivered from the Fastly Image Optimizer service, including shield traffic.
-	ImgoptoRespHeaderBytes *int32 `json:"imgopto_resp_header_bytes,omitempty"`
+	ImgoptoRespHeaderBytes *int64 `json:"imgopto_resp_header_bytes,omitempty"`
 	// Total body bytes delivered from the Fastly Image Optimizer service, including shield traffic.
-	ImgoptoRespBodyBytes *int32 `json:"imgopto_resp_body_bytes,omitempty"`
+	ImgoptoRespBodyBytes *int64 `json:"imgopto_resp_body_bytes,omitempty"`
 	// Total header bytes delivered via a shield from the Fastly Image Optimizer service.
-	ImgoptoShieldRespHeaderBytes *int32 `json:"imgopto_shield_resp_header_bytes,omitempty"`
+	ImgoptoShieldRespHeaderBytes *int64 `json:"imgopto_shield_resp_header_bytes,omitempty"`
 	// Total body bytes delivered via a shield from the Fastly Image Optimizer service.
-	ImgoptoShieldRespBodyBytes *int32 `json:"imgopto_shield_resp_body_bytes,omitempty"`
+	ImgoptoShieldRespBodyBytes *int64 `json:"imgopto_shield_resp_body_bytes,omitempty"`
 	// Number of \"Informational\" category status codes delivered.
-	Status1xx *int32 `json:"status_1xx,omitempty"`
+	Status1xx *int64 `json:"status_1xx,omitempty"`
 	// Number of \"Success\" status codes delivered.
-	Status2xx *int32 `json:"status_2xx,omitempty"`
+	Status2xx *int64 `json:"status_2xx,omitempty"`
 	// Number of \"Redirection\" codes delivered.
-	Status3xx *int32 `json:"status_3xx,omitempty"`
+	Status3xx *int64 `json:"status_3xx,omitempty"`
 	// Number of \"Client Error\" codes delivered.
-	Status4xx *int32 `json:"status_4xx,omitempty"`
+	Status4xx *int64 `json:"status_4xx,omitempty"`
 	// Number of \"Server Error\" codes delivered.
-	Status5xx *int32 `json:"status_5xx,omitempty"`
+	Status5xx *int64 `json:"status_5xx,omitempty"`
 	// Number of responses sent with status code 200 (Success).
-	Status200 *int32 `json:"status_200,omitempty"`
+	Status200 *int64 `json:"status_200,omitempty"`
 	// Number of responses sent with status code 204 (No Content).
-	Status204 *int32 `json:"status_204,omitempty"`
+	Status204 *int64 `json:"status_204,omitempty"`
 	// Number of responses sent with status code 206 (Partial Content).
-	Status206 *int32 `json:"status_206,omitempty"`
+	Status206 *int64 `json:"status_206,omitempty"`
 	// Number of responses sent with status code 301 (Moved Permanently).
-	Status301 *int32 `json:"status_301,omitempty"`
+	Status301 *int64 `json:"status_301,omitempty"`
 	// Number of responses sent with status code 302 (Found).
-	Status302 *int32 `json:"status_302,omitempty"`
+	Status302 *int64 `json:"status_302,omitempty"`
 	// Number of responses sent with status code 304 (Not Modified).
-	Status304 *int32 `json:"status_304,omitempty"`
+	Status304 *int64 `json:"status_304,omitempty"`
 	// Number of responses sent with status code 400 (Bad Request).
-	Status400 *int32 `json:"status_400,omitempty"`
+	Status400 *int64 `json:"status_400,omitempty"`
 	// Number of responses sent with status code 401 (Unauthorized).
-	Status401 *int32 `json:"status_401,omitempty"`
+	Status401 *int64 `json:"status_401,omitempty"`
 	// Number of responses sent with status code 403 (Forbidden).
-	Status403 *int32 `json:"status_403,omitempty"`
+	Status403 *int64 `json:"status_403,omitempty"`
 	// Number of responses sent with status code 404 (Not Found).
-	Status404 *int32 `json:"status_404,omitempty"`
+	Status404 *int64 `json:"status_404,omitempty"`
 	// Number of responses sent with status code 406 (Not Acceptable).
-	Status406 *int32 `json:"status_406,omitempty"`
+	Status406 *int64 `json:"status_406,omitempty"`
 	// Number of responses sent with status code 416 (Range Not Satisfiable).
-	Status416 *int32 `json:"status_416,omitempty"`
+	Status416 *int64 `json:"status_416,omitempty"`
 	// Number of responses sent with status code 429 (Too Many Requests).
-	Status429 *int32 `json:"status_429,omitempty"`
+	Status429 *int64 `json:"status_429,omitempty"`
 	// Number of responses sent with status code 500 (Internal Server Error).
-	Status500 *int32 `json:"status_500,omitempty"`
+	Status500 *int64 `json:"status_500,omitempty"`
 	// Number of responses sent with status code 501 (Not Implemented).
-	Status501 *int32 `json:"status_501,omitempty"`
+	Status501 *int64 `json:"status_501,omitempty"`
 	// Number of responses sent with status code 502 (Bad Gateway).
-	Status502 *int32 `json:"status_502,omitempty"`
+	Status502 *int64 `json:"status_502,omitempty"`
 	// Number of responses sent with status code 503 (Service Unavailable).
-	Status503 *int32 `json:"status_503,omitempty"`
+	Status503 *int64 `json:"status_503,omitempty"`
 	// Number of responses sent with status code 504 (Gateway Timeout).
-	Status504 *int32 `json:"status_504,omitempty"`
+	Status504 *int64 `json:"status_504,omitempty"`
 	// Number of responses sent with status code 505 (HTTP Version Not Supported).
-	Status505 *int32 `json:"status_505,omitempty"`
+	Status505 *int64 `json:"status_505,omitempty"`
 	// Number of requests that were designated uncachable.
-	Uncacheable *int32 `json:"uncacheable,omitempty"`
+	Uncacheable *int64 `json:"uncacheable,omitempty"`
 	// Total amount of time spent processing cache passes (in seconds).
 	PassTime *float32 `json:"pass_time,omitempty"`
 	// Number of requests that were received over TLS.
-	TLS *int32 `json:"tls,omitempty"`
+	TLS *int64 `json:"tls,omitempty"`
 	// Number of requests received over TLS 1.0.
-	TLSV10 *int32 `json:"tls_v10,omitempty"`
+	TLSV10 *int64 `json:"tls_v10,omitempty"`
 	// Number of requests received over TLS 1.1.
-	TLSV11 *int32 `json:"tls_v11,omitempty"`
+	TLSV11 *int64 `json:"tls_v11,omitempty"`
 	// Number of requests received over TLS 1.2.
-	TLSV12 *int32 `json:"tls_v12,omitempty"`
+	TLSV12 *int64 `json:"tls_v12,omitempty"`
 	// Number of requests received over TLS 1.3.
-	TLSV13 *int32 `json:"tls_v13,omitempty"`
+	TLSV13 *int64 `json:"tls_v13,omitempty"`
 	// Number of objects served that were under 1KB in size.
-	ObjectSize1k *int32 `json:"object_size_1k,omitempty"`
+	ObjectSize1k *int64 `json:"object_size_1k,omitempty"`
 	// Number of objects served that were between 1KB and 10KB in size.
-	ObjectSize10k *int32 `json:"object_size_10k,omitempty"`
+	ObjectSize10k *int64 `json:"object_size_10k,omitempty"`
 	// Number of objects served that were between 10KB and 100KB in size.
-	ObjectSize100k *int32 `json:"object_size_100k,omitempty"`
+	ObjectSize100k *int64 `json:"object_size_100k,omitempty"`
 	// Number of objects served that were between 100KB and 1MB in size.
-	ObjectSize1m *int32 `json:"object_size_1m,omitempty"`
+	ObjectSize1m *int64 `json:"object_size_1m,omitempty"`
 	// Number of objects served that were between 1MB and 10MB in size.
-	ObjectSize10m *int32 `json:"object_size_10m,omitempty"`
+	ObjectSize10m *int64 `json:"object_size_10m,omitempty"`
 	// Number of objects served that were between 10MB and 100MB in size.
-	ObjectSize100m *int32 `json:"object_size_100m,omitempty"`
+	ObjectSize100m *int64 `json:"object_size_100m,omitempty"`
 	// Number of objects served that were between 100MB and 1GB in size.
-	ObjectSize1g *int32 `json:"object_size_1g,omitempty"`
+	ObjectSize1g *int64 `json:"object_size_1g,omitempty"`
 	// Number of objects served that were larger than 1GB in size.
-	ObjectSizeOther *int32 `json:"object_size_other,omitempty"`
+	ObjectSizeOther *int64 `json:"object_size_other,omitempty"`
 	// Time spent inside the `vcl_recv` Varnish subroutine (in nanoseconds).
 	RecvSubTime *float32 `json:"recv_sub_time,omitempty"`
 	// Number of executions of the `vcl_recv` Varnish subroutine.
-	RecvSubCount *int32 `json:"recv_sub_count,omitempty"`
+	RecvSubCount *int64 `json:"recv_sub_count,omitempty"`
 	// Time spent inside the `vcl_hash` Varnish subroutine (in nanoseconds).
 	HashSubTime *float32 `json:"hash_sub_time,omitempty"`
 	// Number of executions of the `vcl_hash` Varnish subroutine.
-	HashSubCount *int32 `json:"hash_sub_count,omitempty"`
+	HashSubCount *int64 `json:"hash_sub_count,omitempty"`
 	// Time spent inside the `vcl_miss` Varnish subroutine (in nanoseconds).
 	MissSubTime *float32 `json:"miss_sub_time,omitempty"`
 	// Number of executions of the `vcl_miss` Varnish subroutine.
-	MissSubCount *int32 `json:"miss_sub_count,omitempty"`
+	MissSubCount *int64 `json:"miss_sub_count,omitempty"`
 	// Time spent inside the `vcl_fetch` Varnish subroutine (in nanoseconds).
 	FetchSubTime *float32 `json:"fetch_sub_time,omitempty"`
 	// Number of executions of the `vcl_fetch` Varnish subroutine.
-	FetchSubCount *int32 `json:"fetch_sub_count,omitempty"`
+	FetchSubCount *int64 `json:"fetch_sub_count,omitempty"`
 	// Time spent inside the `vcl_pass` Varnish subroutine (in nanoseconds).
 	PassSubTime *float32 `json:"pass_sub_time,omitempty"`
 	// Number of executions of the `vcl_pass` Varnish subroutine.
-	PassSubCount *int32 `json:"pass_sub_count,omitempty"`
+	PassSubCount *int64 `json:"pass_sub_count,omitempty"`
 	// Time spent inside the `vcl_pipe` Varnish subroutine (in nanoseconds).
 	PipeSubTime *float32 `json:"pipe_sub_time,omitempty"`
 	// Number of executions of the `vcl_pipe` Varnish subroutine.
-	PipeSubCount *int32 `json:"pipe_sub_count,omitempty"`
+	PipeSubCount *int64 `json:"pipe_sub_count,omitempty"`
 	// Time spent inside the `vcl_deliver` Varnish subroutine (in nanoseconds).
 	DeliverSubTime *float32 `json:"deliver_sub_time,omitempty"`
 	// Number of executions of the `vcl_deliver` Varnish subroutine.
-	DeliverSubCount *int32 `json:"deliver_sub_count,omitempty"`
+	DeliverSubCount *int64 `json:"deliver_sub_count,omitempty"`
 	// Time spent inside the `vcl_error` Varnish subroutine (in nanoseconds).
 	ErrorSubTime *float32 `json:"error_sub_time,omitempty"`
 	// Number of executions of the `vcl_error` Varnish subroutine.
-	ErrorSubCount *int32 `json:"error_sub_count,omitempty"`
+	ErrorSubCount *int64 `json:"error_sub_count,omitempty"`
 	// Time spent inside the `vcl_hit` Varnish subroutine (in nanoseconds).
 	HitSubTime *float32 `json:"hit_sub_time,omitempty"`
 	// Number of executions of the `vcl_hit` Varnish subroutine.
-	HitSubCount *int32 `json:"hit_sub_count,omitempty"`
+	HitSubCount *int64 `json:"hit_sub_count,omitempty"`
 	// Time spent inside the `vcl_prehash` Varnish subroutine (in nanoseconds).
 	PrehashSubTime *float32 `json:"prehash_sub_time,omitempty"`
 	// Number of executions of the `vcl_prehash` Varnish subroutine.
-	PrehashSubCount *int32 `json:"prehash_sub_count,omitempty"`
+	PrehashSubCount *int64 `json:"prehash_sub_count,omitempty"`
 	// Time spent inside the `vcl_predeliver` Varnish subroutine (in nanoseconds).
 	PredeliverSubTime *float32 `json:"predeliver_sub_time,omitempty"`
 	// Number of executions of the `vcl_predeliver` Varnish subroutine.
-	PredeliverSubCount *int32 `json:"predeliver_sub_count,omitempty"`
+	PredeliverSubCount *int64 `json:"predeliver_sub_count,omitempty"`
 	// Total body bytes delivered for cache hits.
-	HitRespBodyBytes *int32 `json:"hit_resp_body_bytes,omitempty"`
+	HitRespBodyBytes *int64 `json:"hit_resp_body_bytes,omitempty"`
 	// Total body bytes delivered for cache misses.
-	MissRespBodyBytes *int32 `json:"miss_resp_body_bytes,omitempty"`
+	MissRespBodyBytes *int64 `json:"miss_resp_body_bytes,omitempty"`
 	// Total body bytes delivered for cache passes.
-	PassRespBodyBytes *int32 `json:"pass_resp_body_bytes,omitempty"`
+	PassRespBodyBytes *int64 `json:"pass_resp_body_bytes,omitempty"`
 	// Total header bytes received by the Compute platform.
-	ComputeReqHeaderBytes *int32 `json:"compute_req_header_bytes,omitempty"`
+	ComputeReqHeaderBytes *int64 `json:"compute_req_header_bytes,omitempty"`
 	// Total body bytes received by the Compute platform.
-	ComputeReqBodyBytes *int32 `json:"compute_req_body_bytes,omitempty"`
+	ComputeReqBodyBytes *int64 `json:"compute_req_body_bytes,omitempty"`
 	// Total header bytes sent from Compute to end user.
-	ComputeRespHeaderBytes *int32 `json:"compute_resp_header_bytes,omitempty"`
+	ComputeRespHeaderBytes *int64 `json:"compute_resp_header_bytes,omitempty"`
 	// Total body bytes sent from Compute to end user.
-	ComputeRespBodyBytes *int32 `json:"compute_resp_body_bytes,omitempty"`
+	ComputeRespBodyBytes *int64 `json:"compute_resp_body_bytes,omitempty"`
 	// Number of video responses that came from the Fastly Image Optimizer service.
-	Imgvideo *int32 `json:"imgvideo,omitempty"`
+	Imgvideo *int64 `json:"imgvideo,omitempty"`
 	// Number of video frames that came from the Fastly Image Optimizer service. A video frame is an individual image within a sequence of video.
-	ImgvideoFrames *int32 `json:"imgvideo_frames,omitempty"`
+	ImgvideoFrames *int64 `json:"imgvideo_frames,omitempty"`
 	// Total header bytes of video delivered from the Fastly Image Optimizer service.
-	ImgvideoRespHeaderBytes *int32 `json:"imgvideo_resp_header_bytes,omitempty"`
+	ImgvideoRespHeaderBytes *int64 `json:"imgvideo_resp_header_bytes,omitempty"`
 	// Total body bytes of video delivered from the Fastly Image Optimizer service.
-	ImgvideoRespBodyBytes *int32 `json:"imgvideo_resp_body_bytes,omitempty"`
+	ImgvideoRespBodyBytes *int64 `json:"imgvideo_resp_body_bytes,omitempty"`
 	// Number of video responses delivered via a shield that came from the Fastly Image Optimizer service.
-	ImgvideoShield *int32 `json:"imgvideo_shield,omitempty"`
+	ImgvideoShield *int64 `json:"imgvideo_shield,omitempty"`
 	// Number of video frames delivered via a shield that came from the Fastly Image Optimizer service. A video frame is an individual image within a sequence of video.
-	ImgvideoShieldFrames *int32 `json:"imgvideo_shield_frames,omitempty"`
+	ImgvideoShieldFrames *int64 `json:"imgvideo_shield_frames,omitempty"`
 	// Total header bytes of video delivered via a shield from the Fastly Image Optimizer service.
-	ImgvideoShieldRespHeaderBytes *int32 `json:"imgvideo_shield_resp_header_bytes,omitempty"`
+	ImgvideoShieldRespHeaderBytes *int64 `json:"imgvideo_shield_resp_header_bytes,omitempty"`
 	// Total body bytes of video delivered via a shield from the Fastly Image Optimizer service.
-	ImgvideoShieldRespBodyBytes *int32 `json:"imgvideo_shield_resp_body_bytes,omitempty"`
+	ImgvideoShieldRespBodyBytes *int64 `json:"imgvideo_shield_resp_body_bytes,omitempty"`
 	// Total log bytes sent.
-	LogBytes *int32 `json:"log_bytes,omitempty"`
+	LogBytes *int64 `json:"log_bytes,omitempty"`
 	// Number of requests sent by end users to Fastly.
-	EdgeRequests *int32 `json:"edge_requests,omitempty"`
+	EdgeRequests *int64 `json:"edge_requests,omitempty"`
 	// Total header bytes delivered from Fastly to the end user.
-	EdgeRespHeaderBytes *int32 `json:"edge_resp_header_bytes,omitempty"`
+	EdgeRespHeaderBytes *int64 `json:"edge_resp_header_bytes,omitempty"`
 	// Total body bytes delivered from Fastly to the end user.
-	EdgeRespBodyBytes *int32 `json:"edge_resp_body_bytes,omitempty"`
+	EdgeRespBodyBytes *int64 `json:"edge_resp_body_bytes,omitempty"`
 	// Number of responses received from origin with a `304` status code in response to an `If-Modified-Since` or `If-None-Match` request. Under regular scenarios, a revalidation will imply a cache hit. However, if using Fastly Image Optimizer or segmented caching this may result in a cache miss.
-	OriginRevalidations *int32 `json:"origin_revalidations,omitempty"`
+	OriginRevalidations *int64 `json:"origin_revalidations,omitempty"`
 	// Number of requests sent to origin.
-	OriginFetches *int32 `json:"origin_fetches,omitempty"`
+	OriginFetches *int64 `json:"origin_fetches,omitempty"`
 	// Total request header bytes sent to origin.
-	OriginFetchHeaderBytes *int32 `json:"origin_fetch_header_bytes,omitempty"`
+	OriginFetchHeaderBytes *int64 `json:"origin_fetch_header_bytes,omitempty"`
 	// Total request body bytes sent to origin.
-	OriginFetchBodyBytes *int32 `json:"origin_fetch_body_bytes,omitempty"`
+	OriginFetchBodyBytes *int64 `json:"origin_fetch_body_bytes,omitempty"`
 	// Total header bytes received from origin.
-	OriginFetchRespHeaderBytes *int32 `json:"origin_fetch_resp_header_bytes,omitempty"`
+	OriginFetchRespHeaderBytes *int64 `json:"origin_fetch_resp_header_bytes,omitempty"`
 	// Total body bytes received from origin.
-	OriginFetchRespBodyBytes *int32 `json:"origin_fetch_resp_body_bytes,omitempty"`
+	OriginFetchRespBodyBytes *int64 `json:"origin_fetch_resp_body_bytes,omitempty"`
 	// Number of responses received from origin with a `304` status code, in response to an `If-Modified-Since` or `If-None-Match` request to a shield. Under regular scenarios, a revalidation will imply a cache hit. However, if using segmented caching this may result in a cache miss.
-	ShieldRevalidations *int32 `json:"shield_revalidations,omitempty"`
+	ShieldRevalidations *int64 `json:"shield_revalidations,omitempty"`
 	// Number of requests made from one Fastly POP to another, as part of shielding.
-	ShieldFetches *int32 `json:"shield_fetches,omitempty"`
+	ShieldFetches *int64 `json:"shield_fetches,omitempty"`
 	// Total request header bytes sent to a shield.
-	ShieldFetchHeaderBytes *int32 `json:"shield_fetch_header_bytes,omitempty"`
+	ShieldFetchHeaderBytes *int64 `json:"shield_fetch_header_bytes,omitempty"`
 	// Total request body bytes sent to a shield.
-	ShieldFetchBodyBytes *int32 `json:"shield_fetch_body_bytes,omitempty"`
+	ShieldFetchBodyBytes *int64 `json:"shield_fetch_body_bytes,omitempty"`
 	// Total response header bytes sent from a shield to the edge.
-	ShieldFetchRespHeaderBytes *int32 `json:"shield_fetch_resp_header_bytes,omitempty"`
+	ShieldFetchRespHeaderBytes *int64 `json:"shield_fetch_resp_header_bytes,omitempty"`
 	// Total response body bytes sent from a shield to the edge.
-	ShieldFetchRespBodyBytes *int32 `json:"shield_fetch_resp_body_bytes,omitempty"`
+	ShieldFetchRespBodyBytes *int64 `json:"shield_fetch_resp_body_bytes,omitempty"`
 	// Number of `Range` requests to origin for segments of resources when using segmented caching.
-	SegblockOriginFetches *int32 `json:"segblock_origin_fetches,omitempty"`
+	SegblockOriginFetches *int64 `json:"segblock_origin_fetches,omitempty"`
 	// Number of `Range` requests to a shield for segments of resources when using segmented caching.
-	SegblockShieldFetches *int32 `json:"segblock_shield_fetches,omitempty"`
+	SegblockShieldFetches *int64 `json:"segblock_shield_fetches,omitempty"`
 	// Number of \"Informational\" category status codes delivered by the Compute platform.
-	ComputeRespStatus1xx *int32 `json:"compute_resp_status_1xx,omitempty"`
+	ComputeRespStatus1xx *int64 `json:"compute_resp_status_1xx,omitempty"`
 	// Number of \"Success\" category status codes delivered by the Compute platform.
-	ComputeRespStatus2xx *int32 `json:"compute_resp_status_2xx,omitempty"`
+	ComputeRespStatus2xx *int64 `json:"compute_resp_status_2xx,omitempty"`
 	// Number of \"Redirection\" category status codes delivered by the Compute platform.
-	ComputeRespStatus3xx *int32 `json:"compute_resp_status_3xx,omitempty"`
+	ComputeRespStatus3xx *int64 `json:"compute_resp_status_3xx,omitempty"`
 	// Number of \"Client Error\" category status codes delivered by the Compute platform.
-	ComputeRespStatus4xx *int32 `json:"compute_resp_status_4xx,omitempty"`
+	ComputeRespStatus4xx *int64 `json:"compute_resp_status_4xx,omitempty"`
 	// Number of \"Server Error\" category status codes delivered by the Compute platform.
-	ComputeRespStatus5xx *int32 `json:"compute_resp_status_5xx,omitempty"`
+	ComputeRespStatus5xx *int64 `json:"compute_resp_status_5xx,omitempty"`
 	// Number of requests sent by end users to Fastly that resulted in a hit at the edge.
-	EdgeHitRequests *int32 `json:"edge_hit_requests,omitempty"`
+	EdgeHitRequests *int64 `json:"edge_hit_requests,omitempty"`
 	// Number of requests sent by end users to Fastly that resulted in a miss at the edge.
-	EdgeMissRequests *int32 `json:"edge_miss_requests,omitempty"`
+	EdgeMissRequests *int64 `json:"edge_miss_requests,omitempty"`
 	// Total header bytes sent to backends (origins) by the Compute platform.
-	ComputeBereqHeaderBytes *int32 `json:"compute_bereq_header_bytes,omitempty"`
+	ComputeBereqHeaderBytes *int64 `json:"compute_bereq_header_bytes,omitempty"`
 	// Total body bytes sent to backends (origins) by the Compute platform.
-	ComputeBereqBodyBytes *int32 `json:"compute_bereq_body_bytes,omitempty"`
+	ComputeBereqBodyBytes *int64 `json:"compute_bereq_body_bytes,omitempty"`
 	// Total header bytes received from backends (origins) by the Compute platform.
-	ComputeBerespHeaderBytes *int32 `json:"compute_beresp_header_bytes,omitempty"`
+	ComputeBerespHeaderBytes *int64 `json:"compute_beresp_header_bytes,omitempty"`
 	// Total body bytes received from backends (origins) by the Compute platform.
-	ComputeBerespBodyBytes *int32 `json:"compute_beresp_body_bytes,omitempty"`
+	ComputeBerespBodyBytes *int64 `json:"compute_beresp_body_bytes,omitempty"`
 	// The total number of completed requests made to backends (origins) that returned cacheable content.
-	OriginCacheFetches *int32 `json:"origin_cache_fetches,omitempty"`
+	OriginCacheFetches *int64 `json:"origin_cache_fetches,omitempty"`
 	// The total number of completed requests made to shields that returned cacheable content.
-	ShieldCacheFetches *int32 `json:"shield_cache_fetches,omitempty"`
+	ShieldCacheFetches *int64 `json:"shield_cache_fetches,omitempty"`
 	// Number of backend requests started.
-	ComputeBereqs *int32 `json:"compute_bereqs,omitempty"`
+	ComputeBereqs *int64 `json:"compute_bereqs,omitempty"`
 	// Number of backend request errors, including timeouts.
-	ComputeBereqErrors *int32 `json:"compute_bereq_errors,omitempty"`
+	ComputeBereqErrors *int64 `json:"compute_bereq_errors,omitempty"`
 	// Number of times a guest exceeded its resource limit, includes heap, stack, globals, and code execution timeout.
-	ComputeResourceLimitExceeded *int32 `json:"compute_resource_limit_exceeded,omitempty"`
+	ComputeResourceLimitExceeded *int64 `json:"compute_resource_limit_exceeded,omitempty"`
 	// Number of times a guest exceeded its heap limit.
-	ComputeHeapLimitExceeded *int32 `json:"compute_heap_limit_exceeded,omitempty"`
+	ComputeHeapLimitExceeded *int64 `json:"compute_heap_limit_exceeded,omitempty"`
 	// Number of times a guest exceeded its stack limit.
-	ComputeStackLimitExceeded *int32 `json:"compute_stack_limit_exceeded,omitempty"`
+	ComputeStackLimitExceeded *int64 `json:"compute_stack_limit_exceeded,omitempty"`
 	// Number of times a guest exceeded its globals limit.
-	ComputeGlobalsLimitExceeded *int32 `json:"compute_globals_limit_exceeded,omitempty"`
+	ComputeGlobalsLimitExceeded *int64 `json:"compute_globals_limit_exceeded,omitempty"`
 	// Number of times a service experienced a guest code error.
-	ComputeGuestErrors *int32 `json:"compute_guest_errors,omitempty"`
+	ComputeGuestErrors *int64 `json:"compute_guest_errors,omitempty"`
 	// Number of times a service experienced a guest runtime error.
-	ComputeRuntimeErrors *int32 `json:"compute_runtime_errors,omitempty"`
+	ComputeRuntimeErrors *int64 `json:"compute_runtime_errors,omitempty"`
 	// Body bytes delivered for edge hits.
-	EdgeHitRespBodyBytes *int32 `json:"edge_hit_resp_body_bytes,omitempty"`
+	EdgeHitRespBodyBytes *int64 `json:"edge_hit_resp_body_bytes,omitempty"`
 	// Header bytes delivered for edge hits.
-	EdgeHitRespHeaderBytes *int32 `json:"edge_hit_resp_header_bytes,omitempty"`
+	EdgeHitRespHeaderBytes *int64 `json:"edge_hit_resp_header_bytes,omitempty"`
 	// Body bytes delivered for edge misses.
-	EdgeMissRespBodyBytes *int32 `json:"edge_miss_resp_body_bytes,omitempty"`
+	EdgeMissRespBodyBytes *int64 `json:"edge_miss_resp_body_bytes,omitempty"`
 	// Header bytes delivered for edge misses.
-	EdgeMissRespHeaderBytes *int32 `json:"edge_miss_resp_header_bytes,omitempty"`
+	EdgeMissRespHeaderBytes *int64 `json:"edge_miss_resp_header_bytes,omitempty"`
 	// Body bytes received from origin for cacheable content.
-	OriginCacheFetchRespBodyBytes *int32 `json:"origin_cache_fetch_resp_body_bytes,omitempty"`
+	OriginCacheFetchRespBodyBytes *int64 `json:"origin_cache_fetch_resp_body_bytes,omitempty"`
 	// Header bytes received from an origin for cacheable content.
-	OriginCacheFetchRespHeaderBytes *int32 `json:"origin_cache_fetch_resp_header_bytes,omitempty"`
+	OriginCacheFetchRespHeaderBytes *int64 `json:"origin_cache_fetch_resp_header_bytes,omitempty"`
 	// Number of requests that resulted in a hit at a shield.
-	ShieldHitRequests *int32 `json:"shield_hit_requests,omitempty"`
+	ShieldHitRequests *int64 `json:"shield_hit_requests,omitempty"`
 	// Number of requests that resulted in a miss at a shield.
-	ShieldMissRequests *int32 `json:"shield_miss_requests,omitempty"`
+	ShieldMissRequests *int64 `json:"shield_miss_requests,omitempty"`
 	// Header bytes delivered for shield hits.
-	ShieldHitRespHeaderBytes *int32 `json:"shield_hit_resp_header_bytes,omitempty"`
+	ShieldHitRespHeaderBytes *int64 `json:"shield_hit_resp_header_bytes,omitempty"`
 	// Body bytes delivered for shield hits.
-	ShieldHitRespBodyBytes *int32 `json:"shield_hit_resp_body_bytes,omitempty"`
+	ShieldHitRespBodyBytes *int64 `json:"shield_hit_resp_body_bytes,omitempty"`
 	// Header bytes delivered for shield misses.
-	ShieldMissRespHeaderBytes *int32 `json:"shield_miss_resp_header_bytes,omitempty"`
+	ShieldMissRespHeaderBytes *int64 `json:"shield_miss_resp_header_bytes,omitempty"`
 	// Body bytes delivered for shield misses.
-	ShieldMissRespBodyBytes *int32 `json:"shield_miss_resp_body_bytes,omitempty"`
+	ShieldMissRespBodyBytes *int64 `json:"shield_miss_resp_body_bytes,omitempty"`
 	// Total header bytes received from end users over passthrough WebSocket connections.
-	WebsocketReqHeaderBytes *int32 `json:"websocket_req_header_bytes,omitempty"`
+	WebsocketReqHeaderBytes *int64 `json:"websocket_req_header_bytes,omitempty"`
 	// Total message content bytes received from end users over passthrough WebSocket connections.
-	WebsocketReqBodyBytes *int32 `json:"websocket_req_body_bytes,omitempty"`
+	WebsocketReqBodyBytes *int64 `json:"websocket_req_body_bytes,omitempty"`
 	// Total header bytes sent to end users over passthrough WebSocket connections.
-	WebsocketRespHeaderBytes *int32 `json:"websocket_resp_header_bytes,omitempty"`
+	WebsocketRespHeaderBytes *int64 `json:"websocket_resp_header_bytes,omitempty"`
 	// Total header bytes sent to backends over passthrough WebSocket connections.
-	WebsocketBereqHeaderBytes *int32 `json:"websocket_bereq_header_bytes,omitempty"`
+	WebsocketBereqHeaderBytes *int64 `json:"websocket_bereq_header_bytes,omitempty"`
 	// Total message content bytes sent to backends over passthrough WebSocket connections.
-	WebsocketBereqBodyBytes *int32 `json:"websocket_bereq_body_bytes,omitempty"`
+	WebsocketBereqBodyBytes *int64 `json:"websocket_bereq_body_bytes,omitempty"`
 	// Total header bytes received from backends over passthrough WebSocket connections.
-	WebsocketBerespHeaderBytes *int32 `json:"websocket_beresp_header_bytes,omitempty"`
+	WebsocketBerespHeaderBytes *int64 `json:"websocket_beresp_header_bytes,omitempty"`
 	// Total message content bytes received from backends over passthrough WebSocket connections.
-	WebsocketBerespBodyBytes *int32 `json:"websocket_beresp_body_bytes,omitempty"`
+	WebsocketBerespBodyBytes *int64 `json:"websocket_beresp_body_bytes,omitempty"`
 	// Total duration of passthrough WebSocket connections with end users.
-	WebsocketConnTimeMs *int32 `json:"websocket_conn_time_ms,omitempty"`
+	WebsocketConnTimeMs *int64 `json:"websocket_conn_time_ms,omitempty"`
 	// Total message content bytes sent to end users over passthrough WebSocket connections.
-	WebsocketRespBodyBytes *int32 `json:"websocket_resp_body_bytes,omitempty"`
+	WebsocketRespBodyBytes *int64 `json:"websocket_resp_body_bytes,omitempty"`
 	// Total published messages received from the publish API endpoint.
-	FanoutRecvPublishes *int32 `json:"fanout_recv_publishes,omitempty"`
+	FanoutRecvPublishes *int64 `json:"fanout_recv_publishes,omitempty"`
 	// Total published messages sent to end users.
-	FanoutSendPublishes *int32 `json:"fanout_send_publishes,omitempty"`
+	FanoutSendPublishes *int64 `json:"fanout_send_publishes,omitempty"`
 	// The total number of class a operations for the KV store.
-	KvStoreClassAOperations *int32 `json:"kv_store_class_a_operations,omitempty"`
+	KvStoreClassAOperations *int64 `json:"kv_store_class_a_operations,omitempty"`
 	// The total number of class b operations for the KV store.
-	KvStoreClassBOperations *int32 `json:"kv_store_class_b_operations,omitempty"`
+	KvStoreClassBOperations *int64 `json:"kv_store_class_b_operations,omitempty"`
 	// Use kv_store_class_a_operations.
 	// Deprecated
-	ObjectStoreClassAOperations *int32 `json:"object_store_class_a_operations,omitempty"`
+	ObjectStoreClassAOperations *int64 `json:"object_store_class_a_operations,omitempty"`
 	// Use kv_store_class_b_operations.
 	// Deprecated
-	ObjectStoreClassBOperations *int32 `json:"object_store_class_b_operations,omitempty"`
+	ObjectStoreClassBOperations *int64 `json:"object_store_class_b_operations,omitempty"`
 	// Total header bytes received from end users over Fanout connections.
-	FanoutReqHeaderBytes *int32 `json:"fanout_req_header_bytes,omitempty"`
+	FanoutReqHeaderBytes *int64 `json:"fanout_req_header_bytes,omitempty"`
 	// Total body or message content bytes received from end users over Fanout connections.
-	FanoutReqBodyBytes *int32 `json:"fanout_req_body_bytes,omitempty"`
+	FanoutReqBodyBytes *int64 `json:"fanout_req_body_bytes,omitempty"`
 	// Total header bytes sent to end users over Fanout connections.
-	FanoutRespHeaderBytes *int32 `json:"fanout_resp_header_bytes,omitempty"`
+	FanoutRespHeaderBytes *int64 `json:"fanout_resp_header_bytes,omitempty"`
 	// Total body or message content bytes sent to end users over Fanout connections, excluding published message content.
-	FanoutRespBodyBytes *int32 `json:"fanout_resp_body_bytes,omitempty"`
+	FanoutRespBodyBytes *int64 `json:"fanout_resp_body_bytes,omitempty"`
 	// Total header bytes sent to backends over Fanout connections.
-	FanoutBereqHeaderBytes *int32 `json:"fanout_bereq_header_bytes,omitempty"`
+	FanoutBereqHeaderBytes *int64 `json:"fanout_bereq_header_bytes,omitempty"`
 	// Total body or message content bytes sent to backends over Fanout connections.
-	FanoutBereqBodyBytes *int32 `json:"fanout_bereq_body_bytes,omitempty"`
+	FanoutBereqBodyBytes *int64 `json:"fanout_bereq_body_bytes,omitempty"`
 	// Total header bytes received from backends over Fanout connections.
-	FanoutBerespHeaderBytes *int32 `json:"fanout_beresp_header_bytes,omitempty"`
+	FanoutBerespHeaderBytes *int64 `json:"fanout_beresp_header_bytes,omitempty"`
 	// Total body or message content bytes received from backends over Fanout connections.
-	FanoutBerespBodyBytes *int32 `json:"fanout_beresp_body_bytes,omitempty"`
+	FanoutBerespBodyBytes *int64 `json:"fanout_beresp_body_bytes,omitempty"`
 	// Total duration of Fanout connections with end users.
-	FanoutConnTimeMs *int32 `json:"fanout_conn_time_ms,omitempty"`
+	FanoutConnTimeMs *int64 `json:"fanout_conn_time_ms,omitempty"`
 	// For HTTP/2, the number of connections the limit-streams action was applied to. The limit-streams action caps the allowed number of concurrent streams in a connection.
-	DdosActionLimitStreamsConnections *int32 `json:"ddos_action_limit_streams_connections,omitempty"`
+	DdosActionLimitStreamsConnections *int64 `json:"ddos_action_limit_streams_connections,omitempty"`
 	// For HTTP/2, the number of requests made on a connection for which the limit-streams action was taken. The limit-streams action caps the allowed number of concurrent streams in a connection.
-	DdosActionLimitStreamsRequests *int32 `json:"ddos_action_limit_streams_requests,omitempty"`
+	DdosActionLimitStreamsRequests *int64 `json:"ddos_action_limit_streams_requests,omitempty"`
 	// The number of times the tarpit-accept action was taken. The tarpit-accept action adds a delay when accepting future connections.
-	DdosActionTarpitAccept *int32 `json:"ddos_action_tarpit_accept,omitempty"`
+	DdosActionTarpitAccept *int64 `json:"ddos_action_tarpit_accept,omitempty"`
 	// The number of times the tarpit action was taken. The tarpit action delays writing the response to the client.
-	DdosActionTarpit *int32 `json:"ddos_action_tarpit,omitempty"`
+	DdosActionTarpit *int64 `json:"ddos_action_tarpit,omitempty"`
 	// The number of times the close action was taken. The close action aborts the connection as soon as possible. The close action takes effect either right after accept, right after the client hello, or right after the response was sent.
-	DdosActionClose *int32 `json:"ddos_action_close,omitempty"`
+	DdosActionClose *int64 `json:"ddos_action_close,omitempty"`
 	// The number of times the blackhole action was taken. The blackhole action quietly closes a TCP connection without sending a reset. The blackhole action quietly closes a TCP connection without notifying its peer (all TCP state is dropped).
-	DdosActionBlackhole *int32 `json:"ddos_action_blackhole,omitempty"`
+	DdosActionBlackhole *int64 `json:"ddos_action_blackhole,omitempty"`
 	// The number of challenge-start tokens created.
-	BotChallengeStarts *int32 `json:"bot_challenge_starts,omitempty"`
+	BotChallengeStarts *int64 `json:"bot_challenge_starts,omitempty"`
 	// The number of challenge-complete tokens that passed validation.
-	BotChallengeCompleteTokensPassed *int32 `json:"bot_challenge_complete_tokens_passed,omitempty"`
+	BotChallengeCompleteTokensPassed *int64 `json:"bot_challenge_complete_tokens_passed,omitempty"`
 	// The number of challenge-complete tokens that failed validation.
-	BotChallengeCompleteTokensFailed *int32 `json:"bot_challenge_complete_tokens_failed,omitempty"`
+	BotChallengeCompleteTokensFailed *int64 `json:"bot_challenge_complete_tokens_failed,omitempty"`
 	// The number of challenge-complete tokens checked.
-	BotChallengeCompleteTokensChecked *int32 `json:"bot_challenge_complete_tokens_checked,omitempty"`
+	BotChallengeCompleteTokensChecked *int64 `json:"bot_challenge_complete_tokens_checked,omitempty"`
 	// The number of challenge-complete tokens not checked because the feature was disabled.
-	BotChallengeCompleteTokensDisabled *int32 `json:"bot_challenge_complete_tokens_disabled,omitempty"`
+	BotChallengeCompleteTokensDisabled *int64 `json:"bot_challenge_complete_tokens_disabled,omitempty"`
 	// The number of challenges issued. For example, the issuance of a CAPTCHA challenge.
-	BotChallengesIssued *int32 `json:"bot_challenges_issued,omitempty"`
+	BotChallengesIssued *int64 `json:"bot_challenges_issued,omitempty"`
 	// The number of successful challenge solutions processed. For example, a correct CAPTCHA solution.
-	BotChallengesSucceeded *int32 `json:"bot_challenges_succeeded,omitempty"`
+	BotChallengesSucceeded *int64 `json:"bot_challenges_succeeded,omitempty"`
 	// The number of failed challenge solutions processed. For example, an incorrect CAPTCHA solution.
-	BotChallengesFailed *int32 `json:"bot_challenges_failed,omitempty"`
+	BotChallengesFailed *int64 `json:"bot_challenges_failed,omitempty"`
 	// The number of challenge-complete tokens issued. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success.
-	BotChallengeCompleteTokensIssued *int32 `json:"bot_challenge_complete_tokens_issued,omitempty"`
+	BotChallengeCompleteTokensIssued *int64 `json:"bot_challenge_complete_tokens_issued,omitempty"`
 	// The number of times the downgrade action was taken. The downgrade action restricts the client to http1.
-	DdosActionDowngrade *int32 `json:"ddos_action_downgrade,omitempty"`
+	DdosActionDowngrade *int64 `json:"ddos_action_downgrade,omitempty"`
 	// The number of connections the downgrade action was applied to. The downgrade action restricts the connection to http1.
-	DdosActionDowngradedConnections *int32 `json:"ddos_action_downgraded_connections,omitempty"`
+	DdosActionDowngradedConnections *int64 `json:"ddos_action_downgraded_connections,omitempty"`
 	// Number of cache hits for a VCL service.
-	AllHitRequests *int32 `json:"all_hit_requests,omitempty"`
+	AllHitRequests *int64 `json:"all_hit_requests,omitempty"`
 	// Number of cache misses for a VCL service.
-	AllMissRequests *int32 `json:"all_miss_requests,omitempty"`
+	AllMissRequests *int64 `json:"all_miss_requests,omitempty"`
 	// Number of requests that passed through the CDN without being cached for a VCL service.
-	AllPassRequests *int32 `json:"all_pass_requests,omitempty"`
+	AllPassRequests *int64 `json:"all_pass_requests,omitempty"`
 	// Number of cache errors for a VCL service.
-	AllErrorRequests *int32 `json:"all_error_requests,omitempty"`
+	AllErrorRequests *int64 `json:"all_error_requests,omitempty"`
 	// Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service.
-	AllSynthRequests *int32 `json:"all_synth_requests,omitempty"`
+	AllSynthRequests *int64 `json:"all_synth_requests,omitempty"`
 	// Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service.
-	AllEdgeHitRequests *int32 `json:"all_edge_hit_requests,omitempty"`
+	AllEdgeHitRequests *int64 `json:"all_edge_hit_requests,omitempty"`
 	// Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service.
-	AllEdgeMissRequests *int32 `json:"all_edge_miss_requests,omitempty"`
+	AllEdgeMissRequests *int64 `json:"all_edge_miss_requests,omitempty"`
 	// Number of \"Informational\" category status codes delivered for all sources.
-	AllStatus1xx *int32 `json:"all_status_1xx,omitempty"`
+	AllStatus1xx *int64 `json:"all_status_1xx,omitempty"`
 	// Number of \"Success\" status codes delivered for all sources.
-	AllStatus2xx *int32 `json:"all_status_2xx,omitempty"`
+	AllStatus2xx *int64 `json:"all_status_2xx,omitempty"`
 	// Number of \"Redirection\" codes delivered for all sources.
-	AllStatus3xx *int32 `json:"all_status_3xx,omitempty"`
+	AllStatus3xx *int64 `json:"all_status_3xx,omitempty"`
 	// Number of \"Client Error\" codes delivered for all sources.
-	AllStatus4xx *int32 `json:"all_status_4xx,omitempty"`
+	AllStatus4xx *int64 `json:"all_status_4xx,omitempty"`
 	// Number of \"Server Error\" codes delivered for all sources.
-	AllStatus5xx *int32 `json:"all_status_5xx,omitempty"`
+	AllStatus5xx *int64 `json:"all_status_5xx,omitempty"`
 	// Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`).
 	OriginOffload *float32 `json:"origin_offload,omitempty"`
 	// Number of requests where Fastly responded with 400 due to the request being a GET or HEAD request containing a body.
-	RequestDeniedGetHeadBody *int32 `json:"request_denied_get_head_body,omitempty"`
+	RequestDeniedGetHeadBody *int64 `json:"request_denied_get_head_body,omitempty"`
 	// Number of requests classified as a DDoS attack against a customer origin or service.
-	ServiceDdosRequestsDetected *int32 `json:"service_ddos_requests_detected,omitempty"`
+	ServiceDdosRequestsDetected *int64 `json:"service_ddos_requests_detected,omitempty"`
 	// Number of requests classified as a DDoS attack against a customer origin or service that were mitigated by the Fastly platform.
-	ServiceDdosRequestsMitigated *int32 `json:"service_ddos_requests_mitigated,omitempty"`
+	ServiceDdosRequestsMitigated *int64 `json:"service_ddos_requests_mitigated,omitempty"`
 	// Number of requests analyzed for DDoS attacks against a customer origin or service, but with no DDoS detected.
-	ServiceDdosRequestsAllowed *int32 `json:"service_ddos_requests_allowed,omitempty"`
+	ServiceDdosRequestsAllowed *int64 `json:"service_ddos_requests_allowed,omitempty"`
 	AdditionalProperties       map[string]any
 }
 
@@ -535,9 +535,9 @@ func NewRealtimeEntryAggregatedWithDefaults() *RealtimeEntryAggregated {
 }
 
 // GetRequests returns the Requests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetRequests() int32 {
+func (o *RealtimeEntryAggregated) GetRequests() int64 {
 	if o == nil || o.Requests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Requests
@@ -545,7 +545,7 @@ func (o *RealtimeEntryAggregated) GetRequests() int32 {
 
 // GetRequestsOk returns a tuple with the Requests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetRequestsOk() (*int64, bool) {
 	if o == nil || o.Requests == nil {
 		return nil, false
 	}
@@ -561,15 +561,15 @@ func (o *RealtimeEntryAggregated) HasRequests() bool {
 	return false
 }
 
-// SetRequests gets a reference to the given int32 and assigns it to the Requests field.
-func (o *RealtimeEntryAggregated) SetRequests(v int32) {
+// SetRequests gets a reference to the given int64 and assigns it to the Requests field.
+func (o *RealtimeEntryAggregated) SetRequests(v int64) {
 	o.Requests = &v
 }
 
 // GetLogging returns the Logging field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetLogging() int32 {
+func (o *RealtimeEntryAggregated) GetLogging() int64 {
 	if o == nil || o.Logging == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Logging
@@ -577,7 +577,7 @@ func (o *RealtimeEntryAggregated) GetLogging() int32 {
 
 // GetLoggingOk returns a tuple with the Logging field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetLoggingOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetLoggingOk() (*int64, bool) {
 	if o == nil || o.Logging == nil {
 		return nil, false
 	}
@@ -593,15 +593,15 @@ func (o *RealtimeEntryAggregated) HasLogging() bool {
 	return false
 }
 
-// SetLogging gets a reference to the given int32 and assigns it to the Logging field.
-func (o *RealtimeEntryAggregated) SetLogging(v int32) {
+// SetLogging gets a reference to the given int64 and assigns it to the Logging field.
+func (o *RealtimeEntryAggregated) SetLogging(v int64) {
 	o.Logging = &v
 }
 
 // GetLog returns the Log field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetLog() int32 {
+func (o *RealtimeEntryAggregated) GetLog() int64 {
 	if o == nil || o.Log == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Log
@@ -609,7 +609,7 @@ func (o *RealtimeEntryAggregated) GetLog() int32 {
 
 // GetLogOk returns a tuple with the Log field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetLogOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetLogOk() (*int64, bool) {
 	if o == nil || o.Log == nil {
 		return nil, false
 	}
@@ -625,15 +625,15 @@ func (o *RealtimeEntryAggregated) HasLog() bool {
 	return false
 }
 
-// SetLog gets a reference to the given int32 and assigns it to the Log field.
-func (o *RealtimeEntryAggregated) SetLog(v int32) {
+// SetLog gets a reference to the given int64 and assigns it to the Log field.
+func (o *RealtimeEntryAggregated) SetLog(v int64) {
 	o.Log = &v
 }
 
 // GetRespHeaderBytes returns the RespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetRespHeaderBytes() int64 {
 	if o == nil || o.RespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RespHeaderBytes
@@ -641,7 +641,7 @@ func (o *RealtimeEntryAggregated) GetRespHeaderBytes() int32 {
 
 // GetRespHeaderBytesOk returns a tuple with the RespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.RespHeaderBytes == nil {
 		return nil, false
 	}
@@ -657,15 +657,15 @@ func (o *RealtimeEntryAggregated) HasRespHeaderBytes() bool {
 	return false
 }
 
-// SetRespHeaderBytes gets a reference to the given int32 and assigns it to the RespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetRespHeaderBytes(v int32) {
+// SetRespHeaderBytes gets a reference to the given int64 and assigns it to the RespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetRespHeaderBytes(v int64) {
 	o.RespHeaderBytes = &v
 }
 
 // GetHeaderSize returns the HeaderSize field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetHeaderSize() int32 {
+func (o *RealtimeEntryAggregated) GetHeaderSize() int64 {
 	if o == nil || o.HeaderSize == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HeaderSize
@@ -673,7 +673,7 @@ func (o *RealtimeEntryAggregated) GetHeaderSize() int32 {
 
 // GetHeaderSizeOk returns a tuple with the HeaderSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetHeaderSizeOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetHeaderSizeOk() (*int64, bool) {
 	if o == nil || o.HeaderSize == nil {
 		return nil, false
 	}
@@ -689,15 +689,15 @@ func (o *RealtimeEntryAggregated) HasHeaderSize() bool {
 	return false
 }
 
-// SetHeaderSize gets a reference to the given int32 and assigns it to the HeaderSize field.
-func (o *RealtimeEntryAggregated) SetHeaderSize(v int32) {
+// SetHeaderSize gets a reference to the given int64 and assigns it to the HeaderSize field.
+func (o *RealtimeEntryAggregated) SetHeaderSize(v int64) {
 	o.HeaderSize = &v
 }
 
 // GetRespBodyBytes returns the RespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetRespBodyBytes() int64 {
 	if o == nil || o.RespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RespBodyBytes
@@ -705,7 +705,7 @@ func (o *RealtimeEntryAggregated) GetRespBodyBytes() int32 {
 
 // GetRespBodyBytesOk returns a tuple with the RespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.RespBodyBytes == nil {
 		return nil, false
 	}
@@ -721,15 +721,15 @@ func (o *RealtimeEntryAggregated) HasRespBodyBytes() bool {
 	return false
 }
 
-// SetRespBodyBytes gets a reference to the given int32 and assigns it to the RespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetRespBodyBytes(v int32) {
+// SetRespBodyBytes gets a reference to the given int64 and assigns it to the RespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetRespBodyBytes(v int64) {
 	o.RespBodyBytes = &v
 }
 
 // GetBodySize returns the BodySize field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetBodySize() int32 {
+func (o *RealtimeEntryAggregated) GetBodySize() int64 {
 	if o == nil || o.BodySize == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BodySize
@@ -737,7 +737,7 @@ func (o *RealtimeEntryAggregated) GetBodySize() int32 {
 
 // GetBodySizeOk returns a tuple with the BodySize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetBodySizeOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetBodySizeOk() (*int64, bool) {
 	if o == nil || o.BodySize == nil {
 		return nil, false
 	}
@@ -753,15 +753,15 @@ func (o *RealtimeEntryAggregated) HasBodySize() bool {
 	return false
 }
 
-// SetBodySize gets a reference to the given int32 and assigns it to the BodySize field.
-func (o *RealtimeEntryAggregated) SetBodySize(v int32) {
+// SetBodySize gets a reference to the given int64 and assigns it to the BodySize field.
+func (o *RealtimeEntryAggregated) SetBodySize(v int64) {
 	o.BodySize = &v
 }
 
 // GetHits returns the Hits field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetHits() int32 {
+func (o *RealtimeEntryAggregated) GetHits() int64 {
 	if o == nil || o.Hits == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Hits
@@ -769,7 +769,7 @@ func (o *RealtimeEntryAggregated) GetHits() int32 {
 
 // GetHitsOk returns a tuple with the Hits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetHitsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetHitsOk() (*int64, bool) {
 	if o == nil || o.Hits == nil {
 		return nil, false
 	}
@@ -785,15 +785,15 @@ func (o *RealtimeEntryAggregated) HasHits() bool {
 	return false
 }
 
-// SetHits gets a reference to the given int32 and assigns it to the Hits field.
-func (o *RealtimeEntryAggregated) SetHits(v int32) {
+// SetHits gets a reference to the given int64 and assigns it to the Hits field.
+func (o *RealtimeEntryAggregated) SetHits(v int64) {
 	o.Hits = &v
 }
 
 // GetMiss returns the Miss field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetMiss() int32 {
+func (o *RealtimeEntryAggregated) GetMiss() int64 {
 	if o == nil || o.Miss == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Miss
@@ -801,7 +801,7 @@ func (o *RealtimeEntryAggregated) GetMiss() int32 {
 
 // GetMissOk returns a tuple with the Miss field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetMissOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetMissOk() (*int64, bool) {
 	if o == nil || o.Miss == nil {
 		return nil, false
 	}
@@ -817,15 +817,15 @@ func (o *RealtimeEntryAggregated) HasMiss() bool {
 	return false
 }
 
-// SetMiss gets a reference to the given int32 and assigns it to the Miss field.
-func (o *RealtimeEntryAggregated) SetMiss(v int32) {
+// SetMiss gets a reference to the given int64 and assigns it to the Miss field.
+func (o *RealtimeEntryAggregated) SetMiss(v int64) {
 	o.Miss = &v
 }
 
 // GetPass returns the Pass field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetPass() int32 {
+func (o *RealtimeEntryAggregated) GetPass() int64 {
 	if o == nil || o.Pass == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Pass
@@ -833,7 +833,7 @@ func (o *RealtimeEntryAggregated) GetPass() int32 {
 
 // GetPassOk returns a tuple with the Pass field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetPassOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetPassOk() (*int64, bool) {
 	if o == nil || o.Pass == nil {
 		return nil, false
 	}
@@ -849,15 +849,15 @@ func (o *RealtimeEntryAggregated) HasPass() bool {
 	return false
 }
 
-// SetPass gets a reference to the given int32 and assigns it to the Pass field.
-func (o *RealtimeEntryAggregated) SetPass(v int32) {
+// SetPass gets a reference to the given int64 and assigns it to the Pass field.
+func (o *RealtimeEntryAggregated) SetPass(v int64) {
 	o.Pass = &v
 }
 
 // GetSynth returns the Synth field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetSynth() int32 {
+func (o *RealtimeEntryAggregated) GetSynth() int64 {
 	if o == nil || o.Synth == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Synth
@@ -865,7 +865,7 @@ func (o *RealtimeEntryAggregated) GetSynth() int32 {
 
 // GetSynthOk returns a tuple with the Synth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetSynthOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetSynthOk() (*int64, bool) {
 	if o == nil || o.Synth == nil {
 		return nil, false
 	}
@@ -881,15 +881,15 @@ func (o *RealtimeEntryAggregated) HasSynth() bool {
 	return false
 }
 
-// SetSynth gets a reference to the given int32 and assigns it to the Synth field.
-func (o *RealtimeEntryAggregated) SetSynth(v int32) {
+// SetSynth gets a reference to the given int64 and assigns it to the Synth field.
+func (o *RealtimeEntryAggregated) SetSynth(v int64) {
 	o.Synth = &v
 }
 
 // GetErrors returns the Errors field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetErrors() int32 {
+func (o *RealtimeEntryAggregated) GetErrors() int64 {
 	if o == nil || o.Errors == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Errors
@@ -897,7 +897,7 @@ func (o *RealtimeEntryAggregated) GetErrors() int32 {
 
 // GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetErrorsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetErrorsOk() (*int64, bool) {
 	if o == nil || o.Errors == nil {
 		return nil, false
 	}
@@ -913,8 +913,8 @@ func (o *RealtimeEntryAggregated) HasErrors() bool {
 	return false
 }
 
-// SetErrors gets a reference to the given int32 and assigns it to the Errors field.
-func (o *RealtimeEntryAggregated) SetErrors(v int32) {
+// SetErrors gets a reference to the given int64 and assigns it to the Errors field.
+func (o *RealtimeEntryAggregated) SetErrors(v int64) {
 	o.Errors = &v
 }
 
@@ -1015,9 +1015,9 @@ func (o *RealtimeEntryAggregated) SetMissHistogram(v map[string]map[string]any) 
 }
 
 // GetComputeRequests returns the ComputeRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeRequests() int32 {
+func (o *RealtimeEntryAggregated) GetComputeRequests() int64 {
 	if o == nil || o.ComputeRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeRequests
@@ -1025,7 +1025,7 @@ func (o *RealtimeEntryAggregated) GetComputeRequests() int32 {
 
 // GetComputeRequestsOk returns a tuple with the ComputeRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeRequestsOk() (*int64, bool) {
 	if o == nil || o.ComputeRequests == nil {
 		return nil, false
 	}
@@ -1041,8 +1041,8 @@ func (o *RealtimeEntryAggregated) HasComputeRequests() bool {
 	return false
 }
 
-// SetComputeRequests gets a reference to the given int32 and assigns it to the ComputeRequests field.
-func (o *RealtimeEntryAggregated) SetComputeRequests(v int32) {
+// SetComputeRequests gets a reference to the given int64 and assigns it to the ComputeRequests field.
+func (o *RealtimeEntryAggregated) SetComputeRequests(v int64) {
 	o.ComputeRequests = &v
 }
 
@@ -1079,9 +1079,9 @@ func (o *RealtimeEntryAggregated) SetComputeExecutionTimeMs(v float32) {
 }
 
 // GetComputeRAMUsed returns the ComputeRAMUsed field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeRAMUsed() int32 {
+func (o *RealtimeEntryAggregated) GetComputeRAMUsed() int64 {
 	if o == nil || o.ComputeRAMUsed == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeRAMUsed
@@ -1089,7 +1089,7 @@ func (o *RealtimeEntryAggregated) GetComputeRAMUsed() int32 {
 
 // GetComputeRAMUsedOk returns a tuple with the ComputeRAMUsed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeRAMUsedOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeRAMUsedOk() (*int64, bool) {
 	if o == nil || o.ComputeRAMUsed == nil {
 		return nil, false
 	}
@@ -1105,8 +1105,8 @@ func (o *RealtimeEntryAggregated) HasComputeRAMUsed() bool {
 	return false
 }
 
-// SetComputeRAMUsed gets a reference to the given int32 and assigns it to the ComputeRAMUsed field.
-func (o *RealtimeEntryAggregated) SetComputeRAMUsed(v int32) {
+// SetComputeRAMUsed gets a reference to the given int64 and assigns it to the ComputeRAMUsed field.
+func (o *RealtimeEntryAggregated) SetComputeRAMUsed(v int64) {
 	o.ComputeRAMUsed = &v
 }
 
@@ -1175,9 +1175,9 @@ func (o *RealtimeEntryAggregated) SetComputeRequestTimeBilledMs(v float32) {
 }
 
 // GetShield returns the Shield field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShield() int32 {
+func (o *RealtimeEntryAggregated) GetShield() int64 {
 	if o == nil || o.Shield == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Shield
@@ -1185,7 +1185,7 @@ func (o *RealtimeEntryAggregated) GetShield() int32 {
 
 // GetShieldOk returns a tuple with the Shield field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldOk() (*int64, bool) {
 	if o == nil || o.Shield == nil {
 		return nil, false
 	}
@@ -1201,15 +1201,15 @@ func (o *RealtimeEntryAggregated) HasShield() bool {
 	return false
 }
 
-// SetShield gets a reference to the given int32 and assigns it to the Shield field.
-func (o *RealtimeEntryAggregated) SetShield(v int32) {
+// SetShield gets a reference to the given int64 and assigns it to the Shield field.
+func (o *RealtimeEntryAggregated) SetShield(v int64) {
 	o.Shield = &v
 }
 
 // GetIpv6 returns the Ipv6 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetIpv6() int32 {
+func (o *RealtimeEntryAggregated) GetIpv6() int64 {
 	if o == nil || o.Ipv6 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Ipv6
@@ -1217,7 +1217,7 @@ func (o *RealtimeEntryAggregated) GetIpv6() int32 {
 
 // GetIpv6Ok returns a tuple with the Ipv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetIpv6Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetIpv6Ok() (*int64, bool) {
 	if o == nil || o.Ipv6 == nil {
 		return nil, false
 	}
@@ -1233,15 +1233,15 @@ func (o *RealtimeEntryAggregated) HasIpv6() bool {
 	return false
 }
 
-// SetIpv6 gets a reference to the given int32 and assigns it to the Ipv6 field.
-func (o *RealtimeEntryAggregated) SetIpv6(v int32) {
+// SetIpv6 gets a reference to the given int64 and assigns it to the Ipv6 field.
+func (o *RealtimeEntryAggregated) SetIpv6(v int64) {
 	o.Ipv6 = &v
 }
 
 // GetImgopto returns the Imgopto field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgopto() int32 {
+func (o *RealtimeEntryAggregated) GetImgopto() int64 {
 	if o == nil || o.Imgopto == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Imgopto
@@ -1249,7 +1249,7 @@ func (o *RealtimeEntryAggregated) GetImgopto() int32 {
 
 // GetImgoptoOk returns a tuple with the Imgopto field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgoptoOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgoptoOk() (*int64, bool) {
 	if o == nil || o.Imgopto == nil {
 		return nil, false
 	}
@@ -1265,15 +1265,15 @@ func (o *RealtimeEntryAggregated) HasImgopto() bool {
 	return false
 }
 
-// SetImgopto gets a reference to the given int32 and assigns it to the Imgopto field.
-func (o *RealtimeEntryAggregated) SetImgopto(v int32) {
+// SetImgopto gets a reference to the given int64 and assigns it to the Imgopto field.
+func (o *RealtimeEntryAggregated) SetImgopto(v int64) {
 	o.Imgopto = &v
 }
 
 // GetImgoptoShield returns the ImgoptoShield field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgoptoShield() int32 {
+func (o *RealtimeEntryAggregated) GetImgoptoShield() int64 {
 	if o == nil || o.ImgoptoShield == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImgoptoShield
@@ -1281,7 +1281,7 @@ func (o *RealtimeEntryAggregated) GetImgoptoShield() int32 {
 
 // GetImgoptoShieldOk returns a tuple with the ImgoptoShield field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgoptoShieldOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgoptoShieldOk() (*int64, bool) {
 	if o == nil || o.ImgoptoShield == nil {
 		return nil, false
 	}
@@ -1297,15 +1297,15 @@ func (o *RealtimeEntryAggregated) HasImgoptoShield() bool {
 	return false
 }
 
-// SetImgoptoShield gets a reference to the given int32 and assigns it to the ImgoptoShield field.
-func (o *RealtimeEntryAggregated) SetImgoptoShield(v int32) {
+// SetImgoptoShield gets a reference to the given int64 and assigns it to the ImgoptoShield field.
+func (o *RealtimeEntryAggregated) SetImgoptoShield(v int64) {
 	o.ImgoptoShield = &v
 }
 
 // GetImgoptoTransforms returns the ImgoptoTransforms field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgoptoTransforms() int32 {
+func (o *RealtimeEntryAggregated) GetImgoptoTransforms() int64 {
 	if o == nil || o.ImgoptoTransforms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImgoptoTransforms
@@ -1313,7 +1313,7 @@ func (o *RealtimeEntryAggregated) GetImgoptoTransforms() int32 {
 
 // GetImgoptoTransformsOk returns a tuple with the ImgoptoTransforms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgoptoTransformsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgoptoTransformsOk() (*int64, bool) {
 	if o == nil || o.ImgoptoTransforms == nil {
 		return nil, false
 	}
@@ -1329,15 +1329,15 @@ func (o *RealtimeEntryAggregated) HasImgoptoTransforms() bool {
 	return false
 }
 
-// SetImgoptoTransforms gets a reference to the given int32 and assigns it to the ImgoptoTransforms field.
-func (o *RealtimeEntryAggregated) SetImgoptoTransforms(v int32) {
+// SetImgoptoTransforms gets a reference to the given int64 and assigns it to the ImgoptoTransforms field.
+func (o *RealtimeEntryAggregated) SetImgoptoTransforms(v int64) {
 	o.ImgoptoTransforms = &v
 }
 
 // GetOtfp returns the Otfp field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOtfp() int32 {
+func (o *RealtimeEntryAggregated) GetOtfp() int64 {
 	if o == nil || o.Otfp == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Otfp
@@ -1345,7 +1345,7 @@ func (o *RealtimeEntryAggregated) GetOtfp() int32 {
 
 // GetOtfpOk returns a tuple with the Otfp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOtfpOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOtfpOk() (*int64, bool) {
 	if o == nil || o.Otfp == nil {
 		return nil, false
 	}
@@ -1361,15 +1361,15 @@ func (o *RealtimeEntryAggregated) HasOtfp() bool {
 	return false
 }
 
-// SetOtfp gets a reference to the given int32 and assigns it to the Otfp field.
-func (o *RealtimeEntryAggregated) SetOtfp(v int32) {
+// SetOtfp gets a reference to the given int64 and assigns it to the Otfp field.
+func (o *RealtimeEntryAggregated) SetOtfp(v int64) {
 	o.Otfp = &v
 }
 
 // GetOtfpShield returns the OtfpShield field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOtfpShield() int32 {
+func (o *RealtimeEntryAggregated) GetOtfpShield() int64 {
 	if o == nil || o.OtfpShield == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OtfpShield
@@ -1377,7 +1377,7 @@ func (o *RealtimeEntryAggregated) GetOtfpShield() int32 {
 
 // GetOtfpShieldOk returns a tuple with the OtfpShield field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOtfpShieldOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOtfpShieldOk() (*int64, bool) {
 	if o == nil || o.OtfpShield == nil {
 		return nil, false
 	}
@@ -1393,15 +1393,15 @@ func (o *RealtimeEntryAggregated) HasOtfpShield() bool {
 	return false
 }
 
-// SetOtfpShield gets a reference to the given int32 and assigns it to the OtfpShield field.
-func (o *RealtimeEntryAggregated) SetOtfpShield(v int32) {
+// SetOtfpShield gets a reference to the given int64 and assigns it to the OtfpShield field.
+func (o *RealtimeEntryAggregated) SetOtfpShield(v int64) {
 	o.OtfpShield = &v
 }
 
 // GetOtfpManifests returns the OtfpManifests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOtfpManifests() int32 {
+func (o *RealtimeEntryAggregated) GetOtfpManifests() int64 {
 	if o == nil || o.OtfpManifests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OtfpManifests
@@ -1409,7 +1409,7 @@ func (o *RealtimeEntryAggregated) GetOtfpManifests() int32 {
 
 // GetOtfpManifestsOk returns a tuple with the OtfpManifests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOtfpManifestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOtfpManifestsOk() (*int64, bool) {
 	if o == nil || o.OtfpManifests == nil {
 		return nil, false
 	}
@@ -1425,15 +1425,15 @@ func (o *RealtimeEntryAggregated) HasOtfpManifests() bool {
 	return false
 }
 
-// SetOtfpManifests gets a reference to the given int32 and assigns it to the OtfpManifests field.
-func (o *RealtimeEntryAggregated) SetOtfpManifests(v int32) {
+// SetOtfpManifests gets a reference to the given int64 and assigns it to the OtfpManifests field.
+func (o *RealtimeEntryAggregated) SetOtfpManifests(v int64) {
 	o.OtfpManifests = &v
 }
 
 // GetVideo returns the Video field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetVideo() int32 {
+func (o *RealtimeEntryAggregated) GetVideo() int64 {
 	if o == nil || o.Video == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Video
@@ -1441,7 +1441,7 @@ func (o *RealtimeEntryAggregated) GetVideo() int32 {
 
 // GetVideoOk returns a tuple with the Video field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetVideoOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetVideoOk() (*int64, bool) {
 	if o == nil || o.Video == nil {
 		return nil, false
 	}
@@ -1457,15 +1457,15 @@ func (o *RealtimeEntryAggregated) HasVideo() bool {
 	return false
 }
 
-// SetVideo gets a reference to the given int32 and assigns it to the Video field.
-func (o *RealtimeEntryAggregated) SetVideo(v int32) {
+// SetVideo gets a reference to the given int64 and assigns it to the Video field.
+func (o *RealtimeEntryAggregated) SetVideo(v int64) {
 	o.Video = &v
 }
 
 // GetPci returns the Pci field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetPci() int32 {
+func (o *RealtimeEntryAggregated) GetPci() int64 {
 	if o == nil || o.Pci == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Pci
@@ -1473,7 +1473,7 @@ func (o *RealtimeEntryAggregated) GetPci() int32 {
 
 // GetPciOk returns a tuple with the Pci field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetPciOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetPciOk() (*int64, bool) {
 	if o == nil || o.Pci == nil {
 		return nil, false
 	}
@@ -1489,15 +1489,15 @@ func (o *RealtimeEntryAggregated) HasPci() bool {
 	return false
 }
 
-// SetPci gets a reference to the given int32 and assigns it to the Pci field.
-func (o *RealtimeEntryAggregated) SetPci(v int32) {
+// SetPci gets a reference to the given int64 and assigns it to the Pci field.
+func (o *RealtimeEntryAggregated) SetPci(v int64) {
 	o.Pci = &v
 }
 
 // GetHTTP2 returns the HTTP2 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetHTTP2() int32 {
+func (o *RealtimeEntryAggregated) GetHTTP2() int64 {
 	if o == nil || o.HTTP2 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HTTP2
@@ -1505,7 +1505,7 @@ func (o *RealtimeEntryAggregated) GetHTTP2() int32 {
 
 // GetHTTP2Ok returns a tuple with the HTTP2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetHTTP2Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetHTTP2Ok() (*int64, bool) {
 	if o == nil || o.HTTP2 == nil {
 		return nil, false
 	}
@@ -1521,15 +1521,15 @@ func (o *RealtimeEntryAggregated) HasHTTP2() bool {
 	return false
 }
 
-// SetHTTP2 gets a reference to the given int32 and assigns it to the HTTP2 field.
-func (o *RealtimeEntryAggregated) SetHTTP2(v int32) {
+// SetHTTP2 gets a reference to the given int64 and assigns it to the HTTP2 field.
+func (o *RealtimeEntryAggregated) SetHTTP2(v int64) {
 	o.HTTP2 = &v
 }
 
 // GetHTTP3 returns the HTTP3 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetHTTP3() int32 {
+func (o *RealtimeEntryAggregated) GetHTTP3() int64 {
 	if o == nil || o.HTTP3 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HTTP3
@@ -1537,7 +1537,7 @@ func (o *RealtimeEntryAggregated) GetHTTP3() int32 {
 
 // GetHTTP3Ok returns a tuple with the HTTP3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetHTTP3Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetHTTP3Ok() (*int64, bool) {
 	if o == nil || o.HTTP3 == nil {
 		return nil, false
 	}
@@ -1553,15 +1553,15 @@ func (o *RealtimeEntryAggregated) HasHTTP3() bool {
 	return false
 }
 
-// SetHTTP3 gets a reference to the given int32 and assigns it to the HTTP3 field.
-func (o *RealtimeEntryAggregated) SetHTTP3(v int32) {
+// SetHTTP3 gets a reference to the given int64 and assigns it to the HTTP3 field.
+func (o *RealtimeEntryAggregated) SetHTTP3(v int64) {
 	o.HTTP3 = &v
 }
 
 // GetRestarts returns the Restarts field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetRestarts() int32 {
+func (o *RealtimeEntryAggregated) GetRestarts() int64 {
 	if o == nil || o.Restarts == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Restarts
@@ -1569,7 +1569,7 @@ func (o *RealtimeEntryAggregated) GetRestarts() int32 {
 
 // GetRestartsOk returns a tuple with the Restarts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetRestartsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetRestartsOk() (*int64, bool) {
 	if o == nil || o.Restarts == nil {
 		return nil, false
 	}
@@ -1585,15 +1585,15 @@ func (o *RealtimeEntryAggregated) HasRestarts() bool {
 	return false
 }
 
-// SetRestarts gets a reference to the given int32 and assigns it to the Restarts field.
-func (o *RealtimeEntryAggregated) SetRestarts(v int32) {
+// SetRestarts gets a reference to the given int64 and assigns it to the Restarts field.
+func (o *RealtimeEntryAggregated) SetRestarts(v int64) {
 	o.Restarts = &v
 }
 
 // GetReqHeaderBytes returns the ReqHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetReqHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetReqHeaderBytes() int64 {
 	if o == nil || o.ReqHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ReqHeaderBytes
@@ -1601,7 +1601,7 @@ func (o *RealtimeEntryAggregated) GetReqHeaderBytes() int32 {
 
 // GetReqHeaderBytesOk returns a tuple with the ReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetReqHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetReqHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -1617,15 +1617,15 @@ func (o *RealtimeEntryAggregated) HasReqHeaderBytes() bool {
 	return false
 }
 
-// SetReqHeaderBytes gets a reference to the given int32 and assigns it to the ReqHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetReqHeaderBytes(v int32) {
+// SetReqHeaderBytes gets a reference to the given int64 and assigns it to the ReqHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetReqHeaderBytes(v int64) {
 	o.ReqHeaderBytes = &v
 }
 
 // GetReqBodyBytes returns the ReqBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetReqBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetReqBodyBytes() int64 {
 	if o == nil || o.ReqBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ReqBodyBytes
@@ -1633,7 +1633,7 @@ func (o *RealtimeEntryAggregated) GetReqBodyBytes() int32 {
 
 // GetReqBodyBytesOk returns a tuple with the ReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetReqBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetReqBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ReqBodyBytes == nil {
 		return nil, false
 	}
@@ -1649,15 +1649,15 @@ func (o *RealtimeEntryAggregated) HasReqBodyBytes() bool {
 	return false
 }
 
-// SetReqBodyBytes gets a reference to the given int32 and assigns it to the ReqBodyBytes field.
-func (o *RealtimeEntryAggregated) SetReqBodyBytes(v int32) {
+// SetReqBodyBytes gets a reference to the given int64 and assigns it to the ReqBodyBytes field.
+func (o *RealtimeEntryAggregated) SetReqBodyBytes(v int64) {
 	o.ReqBodyBytes = &v
 }
 
 // GetBereqHeaderBytes returns the BereqHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetBereqHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetBereqHeaderBytes() int64 {
 	if o == nil || o.BereqHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BereqHeaderBytes
@@ -1665,7 +1665,7 @@ func (o *RealtimeEntryAggregated) GetBereqHeaderBytes() int32 {
 
 // GetBereqHeaderBytesOk returns a tuple with the BereqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetBereqHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetBereqHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.BereqHeaderBytes == nil {
 		return nil, false
 	}
@@ -1681,15 +1681,15 @@ func (o *RealtimeEntryAggregated) HasBereqHeaderBytes() bool {
 	return false
 }
 
-// SetBereqHeaderBytes gets a reference to the given int32 and assigns it to the BereqHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetBereqHeaderBytes(v int32) {
+// SetBereqHeaderBytes gets a reference to the given int64 and assigns it to the BereqHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetBereqHeaderBytes(v int64) {
 	o.BereqHeaderBytes = &v
 }
 
 // GetBereqBodyBytes returns the BereqBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetBereqBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetBereqBodyBytes() int64 {
 	if o == nil || o.BereqBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BereqBodyBytes
@@ -1697,7 +1697,7 @@ func (o *RealtimeEntryAggregated) GetBereqBodyBytes() int32 {
 
 // GetBereqBodyBytesOk returns a tuple with the BereqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetBereqBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetBereqBodyBytesOk() (*int64, bool) {
 	if o == nil || o.BereqBodyBytes == nil {
 		return nil, false
 	}
@@ -1713,15 +1713,15 @@ func (o *RealtimeEntryAggregated) HasBereqBodyBytes() bool {
 	return false
 }
 
-// SetBereqBodyBytes gets a reference to the given int32 and assigns it to the BereqBodyBytes field.
-func (o *RealtimeEntryAggregated) SetBereqBodyBytes(v int32) {
+// SetBereqBodyBytes gets a reference to the given int64 and assigns it to the BereqBodyBytes field.
+func (o *RealtimeEntryAggregated) SetBereqBodyBytes(v int64) {
 	o.BereqBodyBytes = &v
 }
 
 // GetWafBlocked returns the WafBlocked field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetWafBlocked() int32 {
+func (o *RealtimeEntryAggregated) GetWafBlocked() int64 {
 	if o == nil || o.WafBlocked == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafBlocked
@@ -1729,7 +1729,7 @@ func (o *RealtimeEntryAggregated) GetWafBlocked() int32 {
 
 // GetWafBlockedOk returns a tuple with the WafBlocked field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetWafBlockedOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetWafBlockedOk() (*int64, bool) {
 	if o == nil || o.WafBlocked == nil {
 		return nil, false
 	}
@@ -1745,15 +1745,15 @@ func (o *RealtimeEntryAggregated) HasWafBlocked() bool {
 	return false
 }
 
-// SetWafBlocked gets a reference to the given int32 and assigns it to the WafBlocked field.
-func (o *RealtimeEntryAggregated) SetWafBlocked(v int32) {
+// SetWafBlocked gets a reference to the given int64 and assigns it to the WafBlocked field.
+func (o *RealtimeEntryAggregated) SetWafBlocked(v int64) {
 	o.WafBlocked = &v
 }
 
 // GetWafLogged returns the WafLogged field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetWafLogged() int32 {
+func (o *RealtimeEntryAggregated) GetWafLogged() int64 {
 	if o == nil || o.WafLogged == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafLogged
@@ -1761,7 +1761,7 @@ func (o *RealtimeEntryAggregated) GetWafLogged() int32 {
 
 // GetWafLoggedOk returns a tuple with the WafLogged field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetWafLoggedOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetWafLoggedOk() (*int64, bool) {
 	if o == nil || o.WafLogged == nil {
 		return nil, false
 	}
@@ -1777,15 +1777,15 @@ func (o *RealtimeEntryAggregated) HasWafLogged() bool {
 	return false
 }
 
-// SetWafLogged gets a reference to the given int32 and assigns it to the WafLogged field.
-func (o *RealtimeEntryAggregated) SetWafLogged(v int32) {
+// SetWafLogged gets a reference to the given int64 and assigns it to the WafLogged field.
+func (o *RealtimeEntryAggregated) SetWafLogged(v int64) {
 	o.WafLogged = &v
 }
 
 // GetWafPassed returns the WafPassed field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetWafPassed() int32 {
+func (o *RealtimeEntryAggregated) GetWafPassed() int64 {
 	if o == nil || o.WafPassed == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafPassed
@@ -1793,7 +1793,7 @@ func (o *RealtimeEntryAggregated) GetWafPassed() int32 {
 
 // GetWafPassedOk returns a tuple with the WafPassed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetWafPassedOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetWafPassedOk() (*int64, bool) {
 	if o == nil || o.WafPassed == nil {
 		return nil, false
 	}
@@ -1809,15 +1809,15 @@ func (o *RealtimeEntryAggregated) HasWafPassed() bool {
 	return false
 }
 
-// SetWafPassed gets a reference to the given int32 and assigns it to the WafPassed field.
-func (o *RealtimeEntryAggregated) SetWafPassed(v int32) {
+// SetWafPassed gets a reference to the given int64 and assigns it to the WafPassed field.
+func (o *RealtimeEntryAggregated) SetWafPassed(v int64) {
 	o.WafPassed = &v
 }
 
 // GetAttackReqHeaderBytes returns the AttackReqHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAttackReqHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetAttackReqHeaderBytes() int64 {
 	if o == nil || o.AttackReqHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AttackReqHeaderBytes
@@ -1825,7 +1825,7 @@ func (o *RealtimeEntryAggregated) GetAttackReqHeaderBytes() int32 {
 
 // GetAttackReqHeaderBytesOk returns a tuple with the AttackReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAttackReqHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAttackReqHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.AttackReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -1841,15 +1841,15 @@ func (o *RealtimeEntryAggregated) HasAttackReqHeaderBytes() bool {
 	return false
 }
 
-// SetAttackReqHeaderBytes gets a reference to the given int32 and assigns it to the AttackReqHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetAttackReqHeaderBytes(v int32) {
+// SetAttackReqHeaderBytes gets a reference to the given int64 and assigns it to the AttackReqHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetAttackReqHeaderBytes(v int64) {
 	o.AttackReqHeaderBytes = &v
 }
 
 // GetAttackReqBodyBytes returns the AttackReqBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAttackReqBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetAttackReqBodyBytes() int64 {
 	if o == nil || o.AttackReqBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AttackReqBodyBytes
@@ -1857,7 +1857,7 @@ func (o *RealtimeEntryAggregated) GetAttackReqBodyBytes() int32 {
 
 // GetAttackReqBodyBytesOk returns a tuple with the AttackReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAttackReqBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAttackReqBodyBytesOk() (*int64, bool) {
 	if o == nil || o.AttackReqBodyBytes == nil {
 		return nil, false
 	}
@@ -1873,15 +1873,15 @@ func (o *RealtimeEntryAggregated) HasAttackReqBodyBytes() bool {
 	return false
 }
 
-// SetAttackReqBodyBytes gets a reference to the given int32 and assigns it to the AttackReqBodyBytes field.
-func (o *RealtimeEntryAggregated) SetAttackReqBodyBytes(v int32) {
+// SetAttackReqBodyBytes gets a reference to the given int64 and assigns it to the AttackReqBodyBytes field.
+func (o *RealtimeEntryAggregated) SetAttackReqBodyBytes(v int64) {
 	o.AttackReqBodyBytes = &v
 }
 
 // GetAttackRespSynthBytes returns the AttackRespSynthBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAttackRespSynthBytes() int32 {
+func (o *RealtimeEntryAggregated) GetAttackRespSynthBytes() int64 {
 	if o == nil || o.AttackRespSynthBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AttackRespSynthBytes
@@ -1889,7 +1889,7 @@ func (o *RealtimeEntryAggregated) GetAttackRespSynthBytes() int32 {
 
 // GetAttackRespSynthBytesOk returns a tuple with the AttackRespSynthBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAttackRespSynthBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAttackRespSynthBytesOk() (*int64, bool) {
 	if o == nil || o.AttackRespSynthBytes == nil {
 		return nil, false
 	}
@@ -1905,15 +1905,15 @@ func (o *RealtimeEntryAggregated) HasAttackRespSynthBytes() bool {
 	return false
 }
 
-// SetAttackRespSynthBytes gets a reference to the given int32 and assigns it to the AttackRespSynthBytes field.
-func (o *RealtimeEntryAggregated) SetAttackRespSynthBytes(v int32) {
+// SetAttackRespSynthBytes gets a reference to the given int64 and assigns it to the AttackRespSynthBytes field.
+func (o *RealtimeEntryAggregated) SetAttackRespSynthBytes(v int64) {
 	o.AttackRespSynthBytes = &v
 }
 
 // GetAttackLoggedReqHeaderBytes returns the AttackLoggedReqHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAttackLoggedReqHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetAttackLoggedReqHeaderBytes() int64 {
 	if o == nil || o.AttackLoggedReqHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AttackLoggedReqHeaderBytes
@@ -1921,7 +1921,7 @@ func (o *RealtimeEntryAggregated) GetAttackLoggedReqHeaderBytes() int32 {
 
 // GetAttackLoggedReqHeaderBytesOk returns a tuple with the AttackLoggedReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAttackLoggedReqHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAttackLoggedReqHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.AttackLoggedReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -1937,15 +1937,15 @@ func (o *RealtimeEntryAggregated) HasAttackLoggedReqHeaderBytes() bool {
 	return false
 }
 
-// SetAttackLoggedReqHeaderBytes gets a reference to the given int32 and assigns it to the AttackLoggedReqHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetAttackLoggedReqHeaderBytes(v int32) {
+// SetAttackLoggedReqHeaderBytes gets a reference to the given int64 and assigns it to the AttackLoggedReqHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetAttackLoggedReqHeaderBytes(v int64) {
 	o.AttackLoggedReqHeaderBytes = &v
 }
 
 // GetAttackLoggedReqBodyBytes returns the AttackLoggedReqBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAttackLoggedReqBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetAttackLoggedReqBodyBytes() int64 {
 	if o == nil || o.AttackLoggedReqBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AttackLoggedReqBodyBytes
@@ -1953,7 +1953,7 @@ func (o *RealtimeEntryAggregated) GetAttackLoggedReqBodyBytes() int32 {
 
 // GetAttackLoggedReqBodyBytesOk returns a tuple with the AttackLoggedReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAttackLoggedReqBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAttackLoggedReqBodyBytesOk() (*int64, bool) {
 	if o == nil || o.AttackLoggedReqBodyBytes == nil {
 		return nil, false
 	}
@@ -1969,15 +1969,15 @@ func (o *RealtimeEntryAggregated) HasAttackLoggedReqBodyBytes() bool {
 	return false
 }
 
-// SetAttackLoggedReqBodyBytes gets a reference to the given int32 and assigns it to the AttackLoggedReqBodyBytes field.
-func (o *RealtimeEntryAggregated) SetAttackLoggedReqBodyBytes(v int32) {
+// SetAttackLoggedReqBodyBytes gets a reference to the given int64 and assigns it to the AttackLoggedReqBodyBytes field.
+func (o *RealtimeEntryAggregated) SetAttackLoggedReqBodyBytes(v int64) {
 	o.AttackLoggedReqBodyBytes = &v
 }
 
 // GetAttackBlockedReqHeaderBytes returns the AttackBlockedReqHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAttackBlockedReqHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetAttackBlockedReqHeaderBytes() int64 {
 	if o == nil || o.AttackBlockedReqHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AttackBlockedReqHeaderBytes
@@ -1985,7 +1985,7 @@ func (o *RealtimeEntryAggregated) GetAttackBlockedReqHeaderBytes() int32 {
 
 // GetAttackBlockedReqHeaderBytesOk returns a tuple with the AttackBlockedReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAttackBlockedReqHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAttackBlockedReqHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.AttackBlockedReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -2001,15 +2001,15 @@ func (o *RealtimeEntryAggregated) HasAttackBlockedReqHeaderBytes() bool {
 	return false
 }
 
-// SetAttackBlockedReqHeaderBytes gets a reference to the given int32 and assigns it to the AttackBlockedReqHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetAttackBlockedReqHeaderBytes(v int32) {
+// SetAttackBlockedReqHeaderBytes gets a reference to the given int64 and assigns it to the AttackBlockedReqHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetAttackBlockedReqHeaderBytes(v int64) {
 	o.AttackBlockedReqHeaderBytes = &v
 }
 
 // GetAttackBlockedReqBodyBytes returns the AttackBlockedReqBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAttackBlockedReqBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetAttackBlockedReqBodyBytes() int64 {
 	if o == nil || o.AttackBlockedReqBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AttackBlockedReqBodyBytes
@@ -2017,7 +2017,7 @@ func (o *RealtimeEntryAggregated) GetAttackBlockedReqBodyBytes() int32 {
 
 // GetAttackBlockedReqBodyBytesOk returns a tuple with the AttackBlockedReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAttackBlockedReqBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAttackBlockedReqBodyBytesOk() (*int64, bool) {
 	if o == nil || o.AttackBlockedReqBodyBytes == nil {
 		return nil, false
 	}
@@ -2033,15 +2033,15 @@ func (o *RealtimeEntryAggregated) HasAttackBlockedReqBodyBytes() bool {
 	return false
 }
 
-// SetAttackBlockedReqBodyBytes gets a reference to the given int32 and assigns it to the AttackBlockedReqBodyBytes field.
-func (o *RealtimeEntryAggregated) SetAttackBlockedReqBodyBytes(v int32) {
+// SetAttackBlockedReqBodyBytes gets a reference to the given int64 and assigns it to the AttackBlockedReqBodyBytes field.
+func (o *RealtimeEntryAggregated) SetAttackBlockedReqBodyBytes(v int64) {
 	o.AttackBlockedReqBodyBytes = &v
 }
 
 // GetAttackPassedReqHeaderBytes returns the AttackPassedReqHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAttackPassedReqHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetAttackPassedReqHeaderBytes() int64 {
 	if o == nil || o.AttackPassedReqHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AttackPassedReqHeaderBytes
@@ -2049,7 +2049,7 @@ func (o *RealtimeEntryAggregated) GetAttackPassedReqHeaderBytes() int32 {
 
 // GetAttackPassedReqHeaderBytesOk returns a tuple with the AttackPassedReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAttackPassedReqHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAttackPassedReqHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.AttackPassedReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -2065,15 +2065,15 @@ func (o *RealtimeEntryAggregated) HasAttackPassedReqHeaderBytes() bool {
 	return false
 }
 
-// SetAttackPassedReqHeaderBytes gets a reference to the given int32 and assigns it to the AttackPassedReqHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetAttackPassedReqHeaderBytes(v int32) {
+// SetAttackPassedReqHeaderBytes gets a reference to the given int64 and assigns it to the AttackPassedReqHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetAttackPassedReqHeaderBytes(v int64) {
 	o.AttackPassedReqHeaderBytes = &v
 }
 
 // GetAttackPassedReqBodyBytes returns the AttackPassedReqBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAttackPassedReqBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetAttackPassedReqBodyBytes() int64 {
 	if o == nil || o.AttackPassedReqBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AttackPassedReqBodyBytes
@@ -2081,7 +2081,7 @@ func (o *RealtimeEntryAggregated) GetAttackPassedReqBodyBytes() int32 {
 
 // GetAttackPassedReqBodyBytesOk returns a tuple with the AttackPassedReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAttackPassedReqBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAttackPassedReqBodyBytesOk() (*int64, bool) {
 	if o == nil || o.AttackPassedReqBodyBytes == nil {
 		return nil, false
 	}
@@ -2097,15 +2097,15 @@ func (o *RealtimeEntryAggregated) HasAttackPassedReqBodyBytes() bool {
 	return false
 }
 
-// SetAttackPassedReqBodyBytes gets a reference to the given int32 and assigns it to the AttackPassedReqBodyBytes field.
-func (o *RealtimeEntryAggregated) SetAttackPassedReqBodyBytes(v int32) {
+// SetAttackPassedReqBodyBytes gets a reference to the given int64 and assigns it to the AttackPassedReqBodyBytes field.
+func (o *RealtimeEntryAggregated) SetAttackPassedReqBodyBytes(v int64) {
 	o.AttackPassedReqBodyBytes = &v
 }
 
 // GetShieldRespHeaderBytes returns the ShieldRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetShieldRespHeaderBytes() int64 {
 	if o == nil || o.ShieldRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldRespHeaderBytes
@@ -2113,7 +2113,7 @@ func (o *RealtimeEntryAggregated) GetShieldRespHeaderBytes() int32 {
 
 // GetShieldRespHeaderBytesOk returns a tuple with the ShieldRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ShieldRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -2129,15 +2129,15 @@ func (o *RealtimeEntryAggregated) HasShieldRespHeaderBytes() bool {
 	return false
 }
 
-// SetShieldRespHeaderBytes gets a reference to the given int32 and assigns it to the ShieldRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetShieldRespHeaderBytes(v int32) {
+// SetShieldRespHeaderBytes gets a reference to the given int64 and assigns it to the ShieldRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetShieldRespHeaderBytes(v int64) {
 	o.ShieldRespHeaderBytes = &v
 }
 
 // GetShieldRespBodyBytes returns the ShieldRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetShieldRespBodyBytes() int64 {
 	if o == nil || o.ShieldRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldRespBodyBytes
@@ -2145,7 +2145,7 @@ func (o *RealtimeEntryAggregated) GetShieldRespBodyBytes() int32 {
 
 // GetShieldRespBodyBytesOk returns a tuple with the ShieldRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ShieldRespBodyBytes == nil {
 		return nil, false
 	}
@@ -2161,15 +2161,15 @@ func (o *RealtimeEntryAggregated) HasShieldRespBodyBytes() bool {
 	return false
 }
 
-// SetShieldRespBodyBytes gets a reference to the given int32 and assigns it to the ShieldRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetShieldRespBodyBytes(v int32) {
+// SetShieldRespBodyBytes gets a reference to the given int64 and assigns it to the ShieldRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetShieldRespBodyBytes(v int64) {
 	o.ShieldRespBodyBytes = &v
 }
 
 // GetOtfpRespHeaderBytes returns the OtfpRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOtfpRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetOtfpRespHeaderBytes() int64 {
 	if o == nil || o.OtfpRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OtfpRespHeaderBytes
@@ -2177,7 +2177,7 @@ func (o *RealtimeEntryAggregated) GetOtfpRespHeaderBytes() int32 {
 
 // GetOtfpRespHeaderBytesOk returns a tuple with the OtfpRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOtfpRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOtfpRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.OtfpRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -2193,15 +2193,15 @@ func (o *RealtimeEntryAggregated) HasOtfpRespHeaderBytes() bool {
 	return false
 }
 
-// SetOtfpRespHeaderBytes gets a reference to the given int32 and assigns it to the OtfpRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetOtfpRespHeaderBytes(v int32) {
+// SetOtfpRespHeaderBytes gets a reference to the given int64 and assigns it to the OtfpRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetOtfpRespHeaderBytes(v int64) {
 	o.OtfpRespHeaderBytes = &v
 }
 
 // GetOtfpRespBodyBytes returns the OtfpRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOtfpRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetOtfpRespBodyBytes() int64 {
 	if o == nil || o.OtfpRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OtfpRespBodyBytes
@@ -2209,7 +2209,7 @@ func (o *RealtimeEntryAggregated) GetOtfpRespBodyBytes() int32 {
 
 // GetOtfpRespBodyBytesOk returns a tuple with the OtfpRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOtfpRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOtfpRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.OtfpRespBodyBytes == nil {
 		return nil, false
 	}
@@ -2225,15 +2225,15 @@ func (o *RealtimeEntryAggregated) HasOtfpRespBodyBytes() bool {
 	return false
 }
 
-// SetOtfpRespBodyBytes gets a reference to the given int32 and assigns it to the OtfpRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetOtfpRespBodyBytes(v int32) {
+// SetOtfpRespBodyBytes gets a reference to the given int64 and assigns it to the OtfpRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetOtfpRespBodyBytes(v int64) {
 	o.OtfpRespBodyBytes = &v
 }
 
 // GetOtfpShieldRespHeaderBytes returns the OtfpShieldRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOtfpShieldRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetOtfpShieldRespHeaderBytes() int64 {
 	if o == nil || o.OtfpShieldRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OtfpShieldRespHeaderBytes
@@ -2241,7 +2241,7 @@ func (o *RealtimeEntryAggregated) GetOtfpShieldRespHeaderBytes() int32 {
 
 // GetOtfpShieldRespHeaderBytesOk returns a tuple with the OtfpShieldRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOtfpShieldRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOtfpShieldRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.OtfpShieldRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -2257,15 +2257,15 @@ func (o *RealtimeEntryAggregated) HasOtfpShieldRespHeaderBytes() bool {
 	return false
 }
 
-// SetOtfpShieldRespHeaderBytes gets a reference to the given int32 and assigns it to the OtfpShieldRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetOtfpShieldRespHeaderBytes(v int32) {
+// SetOtfpShieldRespHeaderBytes gets a reference to the given int64 and assigns it to the OtfpShieldRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetOtfpShieldRespHeaderBytes(v int64) {
 	o.OtfpShieldRespHeaderBytes = &v
 }
 
 // GetOtfpShieldRespBodyBytes returns the OtfpShieldRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOtfpShieldRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetOtfpShieldRespBodyBytes() int64 {
 	if o == nil || o.OtfpShieldRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OtfpShieldRespBodyBytes
@@ -2273,7 +2273,7 @@ func (o *RealtimeEntryAggregated) GetOtfpShieldRespBodyBytes() int32 {
 
 // GetOtfpShieldRespBodyBytesOk returns a tuple with the OtfpShieldRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOtfpShieldRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOtfpShieldRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.OtfpShieldRespBodyBytes == nil {
 		return nil, false
 	}
@@ -2289,8 +2289,8 @@ func (o *RealtimeEntryAggregated) HasOtfpShieldRespBodyBytes() bool {
 	return false
 }
 
-// SetOtfpShieldRespBodyBytes gets a reference to the given int32 and assigns it to the OtfpShieldRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetOtfpShieldRespBodyBytes(v int32) {
+// SetOtfpShieldRespBodyBytes gets a reference to the given int64 and assigns it to the OtfpShieldRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetOtfpShieldRespBodyBytes(v int64) {
 	o.OtfpShieldRespBodyBytes = &v
 }
 
@@ -2359,9 +2359,9 @@ func (o *RealtimeEntryAggregated) SetOtfpDeliverTime(v float32) {
 }
 
 // GetImgoptoRespHeaderBytes returns the ImgoptoRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgoptoRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetImgoptoRespHeaderBytes() int64 {
 	if o == nil || o.ImgoptoRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImgoptoRespHeaderBytes
@@ -2369,7 +2369,7 @@ func (o *RealtimeEntryAggregated) GetImgoptoRespHeaderBytes() int32 {
 
 // GetImgoptoRespHeaderBytesOk returns a tuple with the ImgoptoRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgoptoRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgoptoRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ImgoptoRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -2385,15 +2385,15 @@ func (o *RealtimeEntryAggregated) HasImgoptoRespHeaderBytes() bool {
 	return false
 }
 
-// SetImgoptoRespHeaderBytes gets a reference to the given int32 and assigns it to the ImgoptoRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetImgoptoRespHeaderBytes(v int32) {
+// SetImgoptoRespHeaderBytes gets a reference to the given int64 and assigns it to the ImgoptoRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetImgoptoRespHeaderBytes(v int64) {
 	o.ImgoptoRespHeaderBytes = &v
 }
 
 // GetImgoptoRespBodyBytes returns the ImgoptoRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgoptoRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetImgoptoRespBodyBytes() int64 {
 	if o == nil || o.ImgoptoRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImgoptoRespBodyBytes
@@ -2401,7 +2401,7 @@ func (o *RealtimeEntryAggregated) GetImgoptoRespBodyBytes() int32 {
 
 // GetImgoptoRespBodyBytesOk returns a tuple with the ImgoptoRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgoptoRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgoptoRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ImgoptoRespBodyBytes == nil {
 		return nil, false
 	}
@@ -2417,15 +2417,15 @@ func (o *RealtimeEntryAggregated) HasImgoptoRespBodyBytes() bool {
 	return false
 }
 
-// SetImgoptoRespBodyBytes gets a reference to the given int32 and assigns it to the ImgoptoRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetImgoptoRespBodyBytes(v int32) {
+// SetImgoptoRespBodyBytes gets a reference to the given int64 and assigns it to the ImgoptoRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetImgoptoRespBodyBytes(v int64) {
 	o.ImgoptoRespBodyBytes = &v
 }
 
 // GetImgoptoShieldRespHeaderBytes returns the ImgoptoShieldRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgoptoShieldRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetImgoptoShieldRespHeaderBytes() int64 {
 	if o == nil || o.ImgoptoShieldRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImgoptoShieldRespHeaderBytes
@@ -2433,7 +2433,7 @@ func (o *RealtimeEntryAggregated) GetImgoptoShieldRespHeaderBytes() int32 {
 
 // GetImgoptoShieldRespHeaderBytesOk returns a tuple with the ImgoptoShieldRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgoptoShieldRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgoptoShieldRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ImgoptoShieldRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -2449,15 +2449,15 @@ func (o *RealtimeEntryAggregated) HasImgoptoShieldRespHeaderBytes() bool {
 	return false
 }
 
-// SetImgoptoShieldRespHeaderBytes gets a reference to the given int32 and assigns it to the ImgoptoShieldRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetImgoptoShieldRespHeaderBytes(v int32) {
+// SetImgoptoShieldRespHeaderBytes gets a reference to the given int64 and assigns it to the ImgoptoShieldRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetImgoptoShieldRespHeaderBytes(v int64) {
 	o.ImgoptoShieldRespHeaderBytes = &v
 }
 
 // GetImgoptoShieldRespBodyBytes returns the ImgoptoShieldRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgoptoShieldRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetImgoptoShieldRespBodyBytes() int64 {
 	if o == nil || o.ImgoptoShieldRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImgoptoShieldRespBodyBytes
@@ -2465,7 +2465,7 @@ func (o *RealtimeEntryAggregated) GetImgoptoShieldRespBodyBytes() int32 {
 
 // GetImgoptoShieldRespBodyBytesOk returns a tuple with the ImgoptoShieldRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgoptoShieldRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgoptoShieldRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ImgoptoShieldRespBodyBytes == nil {
 		return nil, false
 	}
@@ -2481,15 +2481,15 @@ func (o *RealtimeEntryAggregated) HasImgoptoShieldRespBodyBytes() bool {
 	return false
 }
 
-// SetImgoptoShieldRespBodyBytes gets a reference to the given int32 and assigns it to the ImgoptoShieldRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetImgoptoShieldRespBodyBytes(v int32) {
+// SetImgoptoShieldRespBodyBytes gets a reference to the given int64 and assigns it to the ImgoptoShieldRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetImgoptoShieldRespBodyBytes(v int64) {
 	o.ImgoptoShieldRespBodyBytes = &v
 }
 
 // GetStatus1xx returns the Status1xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus1xx() int32 {
+func (o *RealtimeEntryAggregated) GetStatus1xx() int64 {
 	if o == nil || o.Status1xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status1xx
@@ -2497,7 +2497,7 @@ func (o *RealtimeEntryAggregated) GetStatus1xx() int32 {
 
 // GetStatus1xxOk returns a tuple with the Status1xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus1xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus1xxOk() (*int64, bool) {
 	if o == nil || o.Status1xx == nil {
 		return nil, false
 	}
@@ -2513,15 +2513,15 @@ func (o *RealtimeEntryAggregated) HasStatus1xx() bool {
 	return false
 }
 
-// SetStatus1xx gets a reference to the given int32 and assigns it to the Status1xx field.
-func (o *RealtimeEntryAggregated) SetStatus1xx(v int32) {
+// SetStatus1xx gets a reference to the given int64 and assigns it to the Status1xx field.
+func (o *RealtimeEntryAggregated) SetStatus1xx(v int64) {
 	o.Status1xx = &v
 }
 
 // GetStatus2xx returns the Status2xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus2xx() int32 {
+func (o *RealtimeEntryAggregated) GetStatus2xx() int64 {
 	if o == nil || o.Status2xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status2xx
@@ -2529,7 +2529,7 @@ func (o *RealtimeEntryAggregated) GetStatus2xx() int32 {
 
 // GetStatus2xxOk returns a tuple with the Status2xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus2xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus2xxOk() (*int64, bool) {
 	if o == nil || o.Status2xx == nil {
 		return nil, false
 	}
@@ -2545,15 +2545,15 @@ func (o *RealtimeEntryAggregated) HasStatus2xx() bool {
 	return false
 }
 
-// SetStatus2xx gets a reference to the given int32 and assigns it to the Status2xx field.
-func (o *RealtimeEntryAggregated) SetStatus2xx(v int32) {
+// SetStatus2xx gets a reference to the given int64 and assigns it to the Status2xx field.
+func (o *RealtimeEntryAggregated) SetStatus2xx(v int64) {
 	o.Status2xx = &v
 }
 
 // GetStatus3xx returns the Status3xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus3xx() int32 {
+func (o *RealtimeEntryAggregated) GetStatus3xx() int64 {
 	if o == nil || o.Status3xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status3xx
@@ -2561,7 +2561,7 @@ func (o *RealtimeEntryAggregated) GetStatus3xx() int32 {
 
 // GetStatus3xxOk returns a tuple with the Status3xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus3xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus3xxOk() (*int64, bool) {
 	if o == nil || o.Status3xx == nil {
 		return nil, false
 	}
@@ -2577,15 +2577,15 @@ func (o *RealtimeEntryAggregated) HasStatus3xx() bool {
 	return false
 }
 
-// SetStatus3xx gets a reference to the given int32 and assigns it to the Status3xx field.
-func (o *RealtimeEntryAggregated) SetStatus3xx(v int32) {
+// SetStatus3xx gets a reference to the given int64 and assigns it to the Status3xx field.
+func (o *RealtimeEntryAggregated) SetStatus3xx(v int64) {
 	o.Status3xx = &v
 }
 
 // GetStatus4xx returns the Status4xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus4xx() int32 {
+func (o *RealtimeEntryAggregated) GetStatus4xx() int64 {
 	if o == nil || o.Status4xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status4xx
@@ -2593,7 +2593,7 @@ func (o *RealtimeEntryAggregated) GetStatus4xx() int32 {
 
 // GetStatus4xxOk returns a tuple with the Status4xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus4xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus4xxOk() (*int64, bool) {
 	if o == nil || o.Status4xx == nil {
 		return nil, false
 	}
@@ -2609,15 +2609,15 @@ func (o *RealtimeEntryAggregated) HasStatus4xx() bool {
 	return false
 }
 
-// SetStatus4xx gets a reference to the given int32 and assigns it to the Status4xx field.
-func (o *RealtimeEntryAggregated) SetStatus4xx(v int32) {
+// SetStatus4xx gets a reference to the given int64 and assigns it to the Status4xx field.
+func (o *RealtimeEntryAggregated) SetStatus4xx(v int64) {
 	o.Status4xx = &v
 }
 
 // GetStatus5xx returns the Status5xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus5xx() int32 {
+func (o *RealtimeEntryAggregated) GetStatus5xx() int64 {
 	if o == nil || o.Status5xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status5xx
@@ -2625,7 +2625,7 @@ func (o *RealtimeEntryAggregated) GetStatus5xx() int32 {
 
 // GetStatus5xxOk returns a tuple with the Status5xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus5xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus5xxOk() (*int64, bool) {
 	if o == nil || o.Status5xx == nil {
 		return nil, false
 	}
@@ -2641,15 +2641,15 @@ func (o *RealtimeEntryAggregated) HasStatus5xx() bool {
 	return false
 }
 
-// SetStatus5xx gets a reference to the given int32 and assigns it to the Status5xx field.
-func (o *RealtimeEntryAggregated) SetStatus5xx(v int32) {
+// SetStatus5xx gets a reference to the given int64 and assigns it to the Status5xx field.
+func (o *RealtimeEntryAggregated) SetStatus5xx(v int64) {
 	o.Status5xx = &v
 }
 
 // GetStatus200 returns the Status200 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus200() int32 {
+func (o *RealtimeEntryAggregated) GetStatus200() int64 {
 	if o == nil || o.Status200 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status200
@@ -2657,7 +2657,7 @@ func (o *RealtimeEntryAggregated) GetStatus200() int32 {
 
 // GetStatus200Ok returns a tuple with the Status200 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus200Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus200Ok() (*int64, bool) {
 	if o == nil || o.Status200 == nil {
 		return nil, false
 	}
@@ -2673,15 +2673,15 @@ func (o *RealtimeEntryAggregated) HasStatus200() bool {
 	return false
 }
 
-// SetStatus200 gets a reference to the given int32 and assigns it to the Status200 field.
-func (o *RealtimeEntryAggregated) SetStatus200(v int32) {
+// SetStatus200 gets a reference to the given int64 and assigns it to the Status200 field.
+func (o *RealtimeEntryAggregated) SetStatus200(v int64) {
 	o.Status200 = &v
 }
 
 // GetStatus204 returns the Status204 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus204() int32 {
+func (o *RealtimeEntryAggregated) GetStatus204() int64 {
 	if o == nil || o.Status204 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status204
@@ -2689,7 +2689,7 @@ func (o *RealtimeEntryAggregated) GetStatus204() int32 {
 
 // GetStatus204Ok returns a tuple with the Status204 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus204Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus204Ok() (*int64, bool) {
 	if o == nil || o.Status204 == nil {
 		return nil, false
 	}
@@ -2705,15 +2705,15 @@ func (o *RealtimeEntryAggregated) HasStatus204() bool {
 	return false
 }
 
-// SetStatus204 gets a reference to the given int32 and assigns it to the Status204 field.
-func (o *RealtimeEntryAggregated) SetStatus204(v int32) {
+// SetStatus204 gets a reference to the given int64 and assigns it to the Status204 field.
+func (o *RealtimeEntryAggregated) SetStatus204(v int64) {
 	o.Status204 = &v
 }
 
 // GetStatus206 returns the Status206 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus206() int32 {
+func (o *RealtimeEntryAggregated) GetStatus206() int64 {
 	if o == nil || o.Status206 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status206
@@ -2721,7 +2721,7 @@ func (o *RealtimeEntryAggregated) GetStatus206() int32 {
 
 // GetStatus206Ok returns a tuple with the Status206 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus206Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus206Ok() (*int64, bool) {
 	if o == nil || o.Status206 == nil {
 		return nil, false
 	}
@@ -2737,15 +2737,15 @@ func (o *RealtimeEntryAggregated) HasStatus206() bool {
 	return false
 }
 
-// SetStatus206 gets a reference to the given int32 and assigns it to the Status206 field.
-func (o *RealtimeEntryAggregated) SetStatus206(v int32) {
+// SetStatus206 gets a reference to the given int64 and assigns it to the Status206 field.
+func (o *RealtimeEntryAggregated) SetStatus206(v int64) {
 	o.Status206 = &v
 }
 
 // GetStatus301 returns the Status301 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus301() int32 {
+func (o *RealtimeEntryAggregated) GetStatus301() int64 {
 	if o == nil || o.Status301 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status301
@@ -2753,7 +2753,7 @@ func (o *RealtimeEntryAggregated) GetStatus301() int32 {
 
 // GetStatus301Ok returns a tuple with the Status301 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus301Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus301Ok() (*int64, bool) {
 	if o == nil || o.Status301 == nil {
 		return nil, false
 	}
@@ -2769,15 +2769,15 @@ func (o *RealtimeEntryAggregated) HasStatus301() bool {
 	return false
 }
 
-// SetStatus301 gets a reference to the given int32 and assigns it to the Status301 field.
-func (o *RealtimeEntryAggregated) SetStatus301(v int32) {
+// SetStatus301 gets a reference to the given int64 and assigns it to the Status301 field.
+func (o *RealtimeEntryAggregated) SetStatus301(v int64) {
 	o.Status301 = &v
 }
 
 // GetStatus302 returns the Status302 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus302() int32 {
+func (o *RealtimeEntryAggregated) GetStatus302() int64 {
 	if o == nil || o.Status302 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status302
@@ -2785,7 +2785,7 @@ func (o *RealtimeEntryAggregated) GetStatus302() int32 {
 
 // GetStatus302Ok returns a tuple with the Status302 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus302Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus302Ok() (*int64, bool) {
 	if o == nil || o.Status302 == nil {
 		return nil, false
 	}
@@ -2801,15 +2801,15 @@ func (o *RealtimeEntryAggregated) HasStatus302() bool {
 	return false
 }
 
-// SetStatus302 gets a reference to the given int32 and assigns it to the Status302 field.
-func (o *RealtimeEntryAggregated) SetStatus302(v int32) {
+// SetStatus302 gets a reference to the given int64 and assigns it to the Status302 field.
+func (o *RealtimeEntryAggregated) SetStatus302(v int64) {
 	o.Status302 = &v
 }
 
 // GetStatus304 returns the Status304 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus304() int32 {
+func (o *RealtimeEntryAggregated) GetStatus304() int64 {
 	if o == nil || o.Status304 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status304
@@ -2817,7 +2817,7 @@ func (o *RealtimeEntryAggregated) GetStatus304() int32 {
 
 // GetStatus304Ok returns a tuple with the Status304 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus304Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus304Ok() (*int64, bool) {
 	if o == nil || o.Status304 == nil {
 		return nil, false
 	}
@@ -2833,15 +2833,15 @@ func (o *RealtimeEntryAggregated) HasStatus304() bool {
 	return false
 }
 
-// SetStatus304 gets a reference to the given int32 and assigns it to the Status304 field.
-func (o *RealtimeEntryAggregated) SetStatus304(v int32) {
+// SetStatus304 gets a reference to the given int64 and assigns it to the Status304 field.
+func (o *RealtimeEntryAggregated) SetStatus304(v int64) {
 	o.Status304 = &v
 }
 
 // GetStatus400 returns the Status400 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus400() int32 {
+func (o *RealtimeEntryAggregated) GetStatus400() int64 {
 	if o == nil || o.Status400 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status400
@@ -2849,7 +2849,7 @@ func (o *RealtimeEntryAggregated) GetStatus400() int32 {
 
 // GetStatus400Ok returns a tuple with the Status400 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus400Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus400Ok() (*int64, bool) {
 	if o == nil || o.Status400 == nil {
 		return nil, false
 	}
@@ -2865,15 +2865,15 @@ func (o *RealtimeEntryAggregated) HasStatus400() bool {
 	return false
 }
 
-// SetStatus400 gets a reference to the given int32 and assigns it to the Status400 field.
-func (o *RealtimeEntryAggregated) SetStatus400(v int32) {
+// SetStatus400 gets a reference to the given int64 and assigns it to the Status400 field.
+func (o *RealtimeEntryAggregated) SetStatus400(v int64) {
 	o.Status400 = &v
 }
 
 // GetStatus401 returns the Status401 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus401() int32 {
+func (o *RealtimeEntryAggregated) GetStatus401() int64 {
 	if o == nil || o.Status401 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status401
@@ -2881,7 +2881,7 @@ func (o *RealtimeEntryAggregated) GetStatus401() int32 {
 
 // GetStatus401Ok returns a tuple with the Status401 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus401Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus401Ok() (*int64, bool) {
 	if o == nil || o.Status401 == nil {
 		return nil, false
 	}
@@ -2897,15 +2897,15 @@ func (o *RealtimeEntryAggregated) HasStatus401() bool {
 	return false
 }
 
-// SetStatus401 gets a reference to the given int32 and assigns it to the Status401 field.
-func (o *RealtimeEntryAggregated) SetStatus401(v int32) {
+// SetStatus401 gets a reference to the given int64 and assigns it to the Status401 field.
+func (o *RealtimeEntryAggregated) SetStatus401(v int64) {
 	o.Status401 = &v
 }
 
 // GetStatus403 returns the Status403 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus403() int32 {
+func (o *RealtimeEntryAggregated) GetStatus403() int64 {
 	if o == nil || o.Status403 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status403
@@ -2913,7 +2913,7 @@ func (o *RealtimeEntryAggregated) GetStatus403() int32 {
 
 // GetStatus403Ok returns a tuple with the Status403 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus403Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus403Ok() (*int64, bool) {
 	if o == nil || o.Status403 == nil {
 		return nil, false
 	}
@@ -2929,15 +2929,15 @@ func (o *RealtimeEntryAggregated) HasStatus403() bool {
 	return false
 }
 
-// SetStatus403 gets a reference to the given int32 and assigns it to the Status403 field.
-func (o *RealtimeEntryAggregated) SetStatus403(v int32) {
+// SetStatus403 gets a reference to the given int64 and assigns it to the Status403 field.
+func (o *RealtimeEntryAggregated) SetStatus403(v int64) {
 	o.Status403 = &v
 }
 
 // GetStatus404 returns the Status404 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus404() int32 {
+func (o *RealtimeEntryAggregated) GetStatus404() int64 {
 	if o == nil || o.Status404 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status404
@@ -2945,7 +2945,7 @@ func (o *RealtimeEntryAggregated) GetStatus404() int32 {
 
 // GetStatus404Ok returns a tuple with the Status404 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus404Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus404Ok() (*int64, bool) {
 	if o == nil || o.Status404 == nil {
 		return nil, false
 	}
@@ -2961,15 +2961,15 @@ func (o *RealtimeEntryAggregated) HasStatus404() bool {
 	return false
 }
 
-// SetStatus404 gets a reference to the given int32 and assigns it to the Status404 field.
-func (o *RealtimeEntryAggregated) SetStatus404(v int32) {
+// SetStatus404 gets a reference to the given int64 and assigns it to the Status404 field.
+func (o *RealtimeEntryAggregated) SetStatus404(v int64) {
 	o.Status404 = &v
 }
 
 // GetStatus406 returns the Status406 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus406() int32 {
+func (o *RealtimeEntryAggregated) GetStatus406() int64 {
 	if o == nil || o.Status406 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status406
@@ -2977,7 +2977,7 @@ func (o *RealtimeEntryAggregated) GetStatus406() int32 {
 
 // GetStatus406Ok returns a tuple with the Status406 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus406Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus406Ok() (*int64, bool) {
 	if o == nil || o.Status406 == nil {
 		return nil, false
 	}
@@ -2993,15 +2993,15 @@ func (o *RealtimeEntryAggregated) HasStatus406() bool {
 	return false
 }
 
-// SetStatus406 gets a reference to the given int32 and assigns it to the Status406 field.
-func (o *RealtimeEntryAggregated) SetStatus406(v int32) {
+// SetStatus406 gets a reference to the given int64 and assigns it to the Status406 field.
+func (o *RealtimeEntryAggregated) SetStatus406(v int64) {
 	o.Status406 = &v
 }
 
 // GetStatus416 returns the Status416 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus416() int32 {
+func (o *RealtimeEntryAggregated) GetStatus416() int64 {
 	if o == nil || o.Status416 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status416
@@ -3009,7 +3009,7 @@ func (o *RealtimeEntryAggregated) GetStatus416() int32 {
 
 // GetStatus416Ok returns a tuple with the Status416 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus416Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus416Ok() (*int64, bool) {
 	if o == nil || o.Status416 == nil {
 		return nil, false
 	}
@@ -3025,15 +3025,15 @@ func (o *RealtimeEntryAggregated) HasStatus416() bool {
 	return false
 }
 
-// SetStatus416 gets a reference to the given int32 and assigns it to the Status416 field.
-func (o *RealtimeEntryAggregated) SetStatus416(v int32) {
+// SetStatus416 gets a reference to the given int64 and assigns it to the Status416 field.
+func (o *RealtimeEntryAggregated) SetStatus416(v int64) {
 	o.Status416 = &v
 }
 
 // GetStatus429 returns the Status429 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus429() int32 {
+func (o *RealtimeEntryAggregated) GetStatus429() int64 {
 	if o == nil || o.Status429 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status429
@@ -3041,7 +3041,7 @@ func (o *RealtimeEntryAggregated) GetStatus429() int32 {
 
 // GetStatus429Ok returns a tuple with the Status429 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus429Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus429Ok() (*int64, bool) {
 	if o == nil || o.Status429 == nil {
 		return nil, false
 	}
@@ -3057,15 +3057,15 @@ func (o *RealtimeEntryAggregated) HasStatus429() bool {
 	return false
 }
 
-// SetStatus429 gets a reference to the given int32 and assigns it to the Status429 field.
-func (o *RealtimeEntryAggregated) SetStatus429(v int32) {
+// SetStatus429 gets a reference to the given int64 and assigns it to the Status429 field.
+func (o *RealtimeEntryAggregated) SetStatus429(v int64) {
 	o.Status429 = &v
 }
 
 // GetStatus500 returns the Status500 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus500() int32 {
+func (o *RealtimeEntryAggregated) GetStatus500() int64 {
 	if o == nil || o.Status500 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status500
@@ -3073,7 +3073,7 @@ func (o *RealtimeEntryAggregated) GetStatus500() int32 {
 
 // GetStatus500Ok returns a tuple with the Status500 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus500Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus500Ok() (*int64, bool) {
 	if o == nil || o.Status500 == nil {
 		return nil, false
 	}
@@ -3089,15 +3089,15 @@ func (o *RealtimeEntryAggregated) HasStatus500() bool {
 	return false
 }
 
-// SetStatus500 gets a reference to the given int32 and assigns it to the Status500 field.
-func (o *RealtimeEntryAggregated) SetStatus500(v int32) {
+// SetStatus500 gets a reference to the given int64 and assigns it to the Status500 field.
+func (o *RealtimeEntryAggregated) SetStatus500(v int64) {
 	o.Status500 = &v
 }
 
 // GetStatus501 returns the Status501 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus501() int32 {
+func (o *RealtimeEntryAggregated) GetStatus501() int64 {
 	if o == nil || o.Status501 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status501
@@ -3105,7 +3105,7 @@ func (o *RealtimeEntryAggregated) GetStatus501() int32 {
 
 // GetStatus501Ok returns a tuple with the Status501 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus501Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus501Ok() (*int64, bool) {
 	if o == nil || o.Status501 == nil {
 		return nil, false
 	}
@@ -3121,15 +3121,15 @@ func (o *RealtimeEntryAggregated) HasStatus501() bool {
 	return false
 }
 
-// SetStatus501 gets a reference to the given int32 and assigns it to the Status501 field.
-func (o *RealtimeEntryAggregated) SetStatus501(v int32) {
+// SetStatus501 gets a reference to the given int64 and assigns it to the Status501 field.
+func (o *RealtimeEntryAggregated) SetStatus501(v int64) {
 	o.Status501 = &v
 }
 
 // GetStatus502 returns the Status502 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus502() int32 {
+func (o *RealtimeEntryAggregated) GetStatus502() int64 {
 	if o == nil || o.Status502 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status502
@@ -3137,7 +3137,7 @@ func (o *RealtimeEntryAggregated) GetStatus502() int32 {
 
 // GetStatus502Ok returns a tuple with the Status502 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus502Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus502Ok() (*int64, bool) {
 	if o == nil || o.Status502 == nil {
 		return nil, false
 	}
@@ -3153,15 +3153,15 @@ func (o *RealtimeEntryAggregated) HasStatus502() bool {
 	return false
 }
 
-// SetStatus502 gets a reference to the given int32 and assigns it to the Status502 field.
-func (o *RealtimeEntryAggregated) SetStatus502(v int32) {
+// SetStatus502 gets a reference to the given int64 and assigns it to the Status502 field.
+func (o *RealtimeEntryAggregated) SetStatus502(v int64) {
 	o.Status502 = &v
 }
 
 // GetStatus503 returns the Status503 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus503() int32 {
+func (o *RealtimeEntryAggregated) GetStatus503() int64 {
 	if o == nil || o.Status503 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status503
@@ -3169,7 +3169,7 @@ func (o *RealtimeEntryAggregated) GetStatus503() int32 {
 
 // GetStatus503Ok returns a tuple with the Status503 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus503Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus503Ok() (*int64, bool) {
 	if o == nil || o.Status503 == nil {
 		return nil, false
 	}
@@ -3185,15 +3185,15 @@ func (o *RealtimeEntryAggregated) HasStatus503() bool {
 	return false
 }
 
-// SetStatus503 gets a reference to the given int32 and assigns it to the Status503 field.
-func (o *RealtimeEntryAggregated) SetStatus503(v int32) {
+// SetStatus503 gets a reference to the given int64 and assigns it to the Status503 field.
+func (o *RealtimeEntryAggregated) SetStatus503(v int64) {
 	o.Status503 = &v
 }
 
 // GetStatus504 returns the Status504 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus504() int32 {
+func (o *RealtimeEntryAggregated) GetStatus504() int64 {
 	if o == nil || o.Status504 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status504
@@ -3201,7 +3201,7 @@ func (o *RealtimeEntryAggregated) GetStatus504() int32 {
 
 // GetStatus504Ok returns a tuple with the Status504 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus504Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus504Ok() (*int64, bool) {
 	if o == nil || o.Status504 == nil {
 		return nil, false
 	}
@@ -3217,15 +3217,15 @@ func (o *RealtimeEntryAggregated) HasStatus504() bool {
 	return false
 }
 
-// SetStatus504 gets a reference to the given int32 and assigns it to the Status504 field.
-func (o *RealtimeEntryAggregated) SetStatus504(v int32) {
+// SetStatus504 gets a reference to the given int64 and assigns it to the Status504 field.
+func (o *RealtimeEntryAggregated) SetStatus504(v int64) {
 	o.Status504 = &v
 }
 
 // GetStatus505 returns the Status505 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetStatus505() int32 {
+func (o *RealtimeEntryAggregated) GetStatus505() int64 {
 	if o == nil || o.Status505 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status505
@@ -3233,7 +3233,7 @@ func (o *RealtimeEntryAggregated) GetStatus505() int32 {
 
 // GetStatus505Ok returns a tuple with the Status505 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetStatus505Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetStatus505Ok() (*int64, bool) {
 	if o == nil || o.Status505 == nil {
 		return nil, false
 	}
@@ -3249,15 +3249,15 @@ func (o *RealtimeEntryAggregated) HasStatus505() bool {
 	return false
 }
 
-// SetStatus505 gets a reference to the given int32 and assigns it to the Status505 field.
-func (o *RealtimeEntryAggregated) SetStatus505(v int32) {
+// SetStatus505 gets a reference to the given int64 and assigns it to the Status505 field.
+func (o *RealtimeEntryAggregated) SetStatus505(v int64) {
 	o.Status505 = &v
 }
 
 // GetUncacheable returns the Uncacheable field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetUncacheable() int32 {
+func (o *RealtimeEntryAggregated) GetUncacheable() int64 {
 	if o == nil || o.Uncacheable == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Uncacheable
@@ -3265,7 +3265,7 @@ func (o *RealtimeEntryAggregated) GetUncacheable() int32 {
 
 // GetUncacheableOk returns a tuple with the Uncacheable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetUncacheableOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetUncacheableOk() (*int64, bool) {
 	if o == nil || o.Uncacheable == nil {
 		return nil, false
 	}
@@ -3281,8 +3281,8 @@ func (o *RealtimeEntryAggregated) HasUncacheable() bool {
 	return false
 }
 
-// SetUncacheable gets a reference to the given int32 and assigns it to the Uncacheable field.
-func (o *RealtimeEntryAggregated) SetUncacheable(v int32) {
+// SetUncacheable gets a reference to the given int64 and assigns it to the Uncacheable field.
+func (o *RealtimeEntryAggregated) SetUncacheable(v int64) {
 	o.Uncacheable = &v
 }
 
@@ -3319,9 +3319,9 @@ func (o *RealtimeEntryAggregated) SetPassTime(v float32) {
 }
 
 // GetTLS returns the TLS field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetTLS() int32 {
+func (o *RealtimeEntryAggregated) GetTLS() int64 {
 	if o == nil || o.TLS == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TLS
@@ -3329,7 +3329,7 @@ func (o *RealtimeEntryAggregated) GetTLS() int32 {
 
 // GetTLSOk returns a tuple with the TLS field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetTLSOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetTLSOk() (*int64, bool) {
 	if o == nil || o.TLS == nil {
 		return nil, false
 	}
@@ -3345,15 +3345,15 @@ func (o *RealtimeEntryAggregated) HasTLS() bool {
 	return false
 }
 
-// SetTLS gets a reference to the given int32 and assigns it to the TLS field.
-func (o *RealtimeEntryAggregated) SetTLS(v int32) {
+// SetTLS gets a reference to the given int64 and assigns it to the TLS field.
+func (o *RealtimeEntryAggregated) SetTLS(v int64) {
 	o.TLS = &v
 }
 
 // GetTLSV10 returns the TLSV10 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetTLSV10() int32 {
+func (o *RealtimeEntryAggregated) GetTLSV10() int64 {
 	if o == nil || o.TLSV10 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TLSV10
@@ -3361,7 +3361,7 @@ func (o *RealtimeEntryAggregated) GetTLSV10() int32 {
 
 // GetTLSV10Ok returns a tuple with the TLSV10 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetTLSV10Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetTLSV10Ok() (*int64, bool) {
 	if o == nil || o.TLSV10 == nil {
 		return nil, false
 	}
@@ -3377,15 +3377,15 @@ func (o *RealtimeEntryAggregated) HasTLSV10() bool {
 	return false
 }
 
-// SetTLSV10 gets a reference to the given int32 and assigns it to the TLSV10 field.
-func (o *RealtimeEntryAggregated) SetTLSV10(v int32) {
+// SetTLSV10 gets a reference to the given int64 and assigns it to the TLSV10 field.
+func (o *RealtimeEntryAggregated) SetTLSV10(v int64) {
 	o.TLSV10 = &v
 }
 
 // GetTLSV11 returns the TLSV11 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetTLSV11() int32 {
+func (o *RealtimeEntryAggregated) GetTLSV11() int64 {
 	if o == nil || o.TLSV11 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TLSV11
@@ -3393,7 +3393,7 @@ func (o *RealtimeEntryAggregated) GetTLSV11() int32 {
 
 // GetTLSV11Ok returns a tuple with the TLSV11 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetTLSV11Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetTLSV11Ok() (*int64, bool) {
 	if o == nil || o.TLSV11 == nil {
 		return nil, false
 	}
@@ -3409,15 +3409,15 @@ func (o *RealtimeEntryAggregated) HasTLSV11() bool {
 	return false
 }
 
-// SetTLSV11 gets a reference to the given int32 and assigns it to the TLSV11 field.
-func (o *RealtimeEntryAggregated) SetTLSV11(v int32) {
+// SetTLSV11 gets a reference to the given int64 and assigns it to the TLSV11 field.
+func (o *RealtimeEntryAggregated) SetTLSV11(v int64) {
 	o.TLSV11 = &v
 }
 
 // GetTLSV12 returns the TLSV12 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetTLSV12() int32 {
+func (o *RealtimeEntryAggregated) GetTLSV12() int64 {
 	if o == nil || o.TLSV12 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TLSV12
@@ -3425,7 +3425,7 @@ func (o *RealtimeEntryAggregated) GetTLSV12() int32 {
 
 // GetTLSV12Ok returns a tuple with the TLSV12 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetTLSV12Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetTLSV12Ok() (*int64, bool) {
 	if o == nil || o.TLSV12 == nil {
 		return nil, false
 	}
@@ -3441,15 +3441,15 @@ func (o *RealtimeEntryAggregated) HasTLSV12() bool {
 	return false
 }
 
-// SetTLSV12 gets a reference to the given int32 and assigns it to the TLSV12 field.
-func (o *RealtimeEntryAggregated) SetTLSV12(v int32) {
+// SetTLSV12 gets a reference to the given int64 and assigns it to the TLSV12 field.
+func (o *RealtimeEntryAggregated) SetTLSV12(v int64) {
 	o.TLSV12 = &v
 }
 
 // GetTLSV13 returns the TLSV13 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetTLSV13() int32 {
+func (o *RealtimeEntryAggregated) GetTLSV13() int64 {
 	if o == nil || o.TLSV13 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.TLSV13
@@ -3457,7 +3457,7 @@ func (o *RealtimeEntryAggregated) GetTLSV13() int32 {
 
 // GetTLSV13Ok returns a tuple with the TLSV13 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetTLSV13Ok() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetTLSV13Ok() (*int64, bool) {
 	if o == nil || o.TLSV13 == nil {
 		return nil, false
 	}
@@ -3473,15 +3473,15 @@ func (o *RealtimeEntryAggregated) HasTLSV13() bool {
 	return false
 }
 
-// SetTLSV13 gets a reference to the given int32 and assigns it to the TLSV13 field.
-func (o *RealtimeEntryAggregated) SetTLSV13(v int32) {
+// SetTLSV13 gets a reference to the given int64 and assigns it to the TLSV13 field.
+func (o *RealtimeEntryAggregated) SetTLSV13(v int64) {
 	o.TLSV13 = &v
 }
 
 // GetObjectSize1k returns the ObjectSize1k field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetObjectSize1k() int32 {
+func (o *RealtimeEntryAggregated) GetObjectSize1k() int64 {
 	if o == nil || o.ObjectSize1k == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ObjectSize1k
@@ -3489,7 +3489,7 @@ func (o *RealtimeEntryAggregated) GetObjectSize1k() int32 {
 
 // GetObjectSize1kOk returns a tuple with the ObjectSize1k field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetObjectSize1kOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetObjectSize1kOk() (*int64, bool) {
 	if o == nil || o.ObjectSize1k == nil {
 		return nil, false
 	}
@@ -3505,15 +3505,15 @@ func (o *RealtimeEntryAggregated) HasObjectSize1k() bool {
 	return false
 }
 
-// SetObjectSize1k gets a reference to the given int32 and assigns it to the ObjectSize1k field.
-func (o *RealtimeEntryAggregated) SetObjectSize1k(v int32) {
+// SetObjectSize1k gets a reference to the given int64 and assigns it to the ObjectSize1k field.
+func (o *RealtimeEntryAggregated) SetObjectSize1k(v int64) {
 	o.ObjectSize1k = &v
 }
 
 // GetObjectSize10k returns the ObjectSize10k field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetObjectSize10k() int32 {
+func (o *RealtimeEntryAggregated) GetObjectSize10k() int64 {
 	if o == nil || o.ObjectSize10k == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ObjectSize10k
@@ -3521,7 +3521,7 @@ func (o *RealtimeEntryAggregated) GetObjectSize10k() int32 {
 
 // GetObjectSize10kOk returns a tuple with the ObjectSize10k field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetObjectSize10kOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetObjectSize10kOk() (*int64, bool) {
 	if o == nil || o.ObjectSize10k == nil {
 		return nil, false
 	}
@@ -3537,15 +3537,15 @@ func (o *RealtimeEntryAggregated) HasObjectSize10k() bool {
 	return false
 }
 
-// SetObjectSize10k gets a reference to the given int32 and assigns it to the ObjectSize10k field.
-func (o *RealtimeEntryAggregated) SetObjectSize10k(v int32) {
+// SetObjectSize10k gets a reference to the given int64 and assigns it to the ObjectSize10k field.
+func (o *RealtimeEntryAggregated) SetObjectSize10k(v int64) {
 	o.ObjectSize10k = &v
 }
 
 // GetObjectSize100k returns the ObjectSize100k field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetObjectSize100k() int32 {
+func (o *RealtimeEntryAggregated) GetObjectSize100k() int64 {
 	if o == nil || o.ObjectSize100k == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ObjectSize100k
@@ -3553,7 +3553,7 @@ func (o *RealtimeEntryAggregated) GetObjectSize100k() int32 {
 
 // GetObjectSize100kOk returns a tuple with the ObjectSize100k field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetObjectSize100kOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetObjectSize100kOk() (*int64, bool) {
 	if o == nil || o.ObjectSize100k == nil {
 		return nil, false
 	}
@@ -3569,15 +3569,15 @@ func (o *RealtimeEntryAggregated) HasObjectSize100k() bool {
 	return false
 }
 
-// SetObjectSize100k gets a reference to the given int32 and assigns it to the ObjectSize100k field.
-func (o *RealtimeEntryAggregated) SetObjectSize100k(v int32) {
+// SetObjectSize100k gets a reference to the given int64 and assigns it to the ObjectSize100k field.
+func (o *RealtimeEntryAggregated) SetObjectSize100k(v int64) {
 	o.ObjectSize100k = &v
 }
 
 // GetObjectSize1m returns the ObjectSize1m field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetObjectSize1m() int32 {
+func (o *RealtimeEntryAggregated) GetObjectSize1m() int64 {
 	if o == nil || o.ObjectSize1m == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ObjectSize1m
@@ -3585,7 +3585,7 @@ func (o *RealtimeEntryAggregated) GetObjectSize1m() int32 {
 
 // GetObjectSize1mOk returns a tuple with the ObjectSize1m field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetObjectSize1mOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetObjectSize1mOk() (*int64, bool) {
 	if o == nil || o.ObjectSize1m == nil {
 		return nil, false
 	}
@@ -3601,15 +3601,15 @@ func (o *RealtimeEntryAggregated) HasObjectSize1m() bool {
 	return false
 }
 
-// SetObjectSize1m gets a reference to the given int32 and assigns it to the ObjectSize1m field.
-func (o *RealtimeEntryAggregated) SetObjectSize1m(v int32) {
+// SetObjectSize1m gets a reference to the given int64 and assigns it to the ObjectSize1m field.
+func (o *RealtimeEntryAggregated) SetObjectSize1m(v int64) {
 	o.ObjectSize1m = &v
 }
 
 // GetObjectSize10m returns the ObjectSize10m field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetObjectSize10m() int32 {
+func (o *RealtimeEntryAggregated) GetObjectSize10m() int64 {
 	if o == nil || o.ObjectSize10m == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ObjectSize10m
@@ -3617,7 +3617,7 @@ func (o *RealtimeEntryAggregated) GetObjectSize10m() int32 {
 
 // GetObjectSize10mOk returns a tuple with the ObjectSize10m field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetObjectSize10mOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetObjectSize10mOk() (*int64, bool) {
 	if o == nil || o.ObjectSize10m == nil {
 		return nil, false
 	}
@@ -3633,15 +3633,15 @@ func (o *RealtimeEntryAggregated) HasObjectSize10m() bool {
 	return false
 }
 
-// SetObjectSize10m gets a reference to the given int32 and assigns it to the ObjectSize10m field.
-func (o *RealtimeEntryAggregated) SetObjectSize10m(v int32) {
+// SetObjectSize10m gets a reference to the given int64 and assigns it to the ObjectSize10m field.
+func (o *RealtimeEntryAggregated) SetObjectSize10m(v int64) {
 	o.ObjectSize10m = &v
 }
 
 // GetObjectSize100m returns the ObjectSize100m field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetObjectSize100m() int32 {
+func (o *RealtimeEntryAggregated) GetObjectSize100m() int64 {
 	if o == nil || o.ObjectSize100m == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ObjectSize100m
@@ -3649,7 +3649,7 @@ func (o *RealtimeEntryAggregated) GetObjectSize100m() int32 {
 
 // GetObjectSize100mOk returns a tuple with the ObjectSize100m field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetObjectSize100mOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetObjectSize100mOk() (*int64, bool) {
 	if o == nil || o.ObjectSize100m == nil {
 		return nil, false
 	}
@@ -3665,15 +3665,15 @@ func (o *RealtimeEntryAggregated) HasObjectSize100m() bool {
 	return false
 }
 
-// SetObjectSize100m gets a reference to the given int32 and assigns it to the ObjectSize100m field.
-func (o *RealtimeEntryAggregated) SetObjectSize100m(v int32) {
+// SetObjectSize100m gets a reference to the given int64 and assigns it to the ObjectSize100m field.
+func (o *RealtimeEntryAggregated) SetObjectSize100m(v int64) {
 	o.ObjectSize100m = &v
 }
 
 // GetObjectSize1g returns the ObjectSize1g field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetObjectSize1g() int32 {
+func (o *RealtimeEntryAggregated) GetObjectSize1g() int64 {
 	if o == nil || o.ObjectSize1g == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ObjectSize1g
@@ -3681,7 +3681,7 @@ func (o *RealtimeEntryAggregated) GetObjectSize1g() int32 {
 
 // GetObjectSize1gOk returns a tuple with the ObjectSize1g field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetObjectSize1gOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetObjectSize1gOk() (*int64, bool) {
 	if o == nil || o.ObjectSize1g == nil {
 		return nil, false
 	}
@@ -3697,15 +3697,15 @@ func (o *RealtimeEntryAggregated) HasObjectSize1g() bool {
 	return false
 }
 
-// SetObjectSize1g gets a reference to the given int32 and assigns it to the ObjectSize1g field.
-func (o *RealtimeEntryAggregated) SetObjectSize1g(v int32) {
+// SetObjectSize1g gets a reference to the given int64 and assigns it to the ObjectSize1g field.
+func (o *RealtimeEntryAggregated) SetObjectSize1g(v int64) {
 	o.ObjectSize1g = &v
 }
 
 // GetObjectSizeOther returns the ObjectSizeOther field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetObjectSizeOther() int32 {
+func (o *RealtimeEntryAggregated) GetObjectSizeOther() int64 {
 	if o == nil || o.ObjectSizeOther == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ObjectSizeOther
@@ -3713,7 +3713,7 @@ func (o *RealtimeEntryAggregated) GetObjectSizeOther() int32 {
 
 // GetObjectSizeOtherOk returns a tuple with the ObjectSizeOther field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetObjectSizeOtherOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetObjectSizeOtherOk() (*int64, bool) {
 	if o == nil || o.ObjectSizeOther == nil {
 		return nil, false
 	}
@@ -3729,8 +3729,8 @@ func (o *RealtimeEntryAggregated) HasObjectSizeOther() bool {
 	return false
 }
 
-// SetObjectSizeOther gets a reference to the given int32 and assigns it to the ObjectSizeOther field.
-func (o *RealtimeEntryAggregated) SetObjectSizeOther(v int32) {
+// SetObjectSizeOther gets a reference to the given int64 and assigns it to the ObjectSizeOther field.
+func (o *RealtimeEntryAggregated) SetObjectSizeOther(v int64) {
 	o.ObjectSizeOther = &v
 }
 
@@ -3767,9 +3767,9 @@ func (o *RealtimeEntryAggregated) SetRecvSubTime(v float32) {
 }
 
 // GetRecvSubCount returns the RecvSubCount field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetRecvSubCount() int32 {
+func (o *RealtimeEntryAggregated) GetRecvSubCount() int64 {
 	if o == nil || o.RecvSubCount == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RecvSubCount
@@ -3777,7 +3777,7 @@ func (o *RealtimeEntryAggregated) GetRecvSubCount() int32 {
 
 // GetRecvSubCountOk returns a tuple with the RecvSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetRecvSubCountOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetRecvSubCountOk() (*int64, bool) {
 	if o == nil || o.RecvSubCount == nil {
 		return nil, false
 	}
@@ -3793,8 +3793,8 @@ func (o *RealtimeEntryAggregated) HasRecvSubCount() bool {
 	return false
 }
 
-// SetRecvSubCount gets a reference to the given int32 and assigns it to the RecvSubCount field.
-func (o *RealtimeEntryAggregated) SetRecvSubCount(v int32) {
+// SetRecvSubCount gets a reference to the given int64 and assigns it to the RecvSubCount field.
+func (o *RealtimeEntryAggregated) SetRecvSubCount(v int64) {
 	o.RecvSubCount = &v
 }
 
@@ -3831,9 +3831,9 @@ func (o *RealtimeEntryAggregated) SetHashSubTime(v float32) {
 }
 
 // GetHashSubCount returns the HashSubCount field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetHashSubCount() int32 {
+func (o *RealtimeEntryAggregated) GetHashSubCount() int64 {
 	if o == nil || o.HashSubCount == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HashSubCount
@@ -3841,7 +3841,7 @@ func (o *RealtimeEntryAggregated) GetHashSubCount() int32 {
 
 // GetHashSubCountOk returns a tuple with the HashSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetHashSubCountOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetHashSubCountOk() (*int64, bool) {
 	if o == nil || o.HashSubCount == nil {
 		return nil, false
 	}
@@ -3857,8 +3857,8 @@ func (o *RealtimeEntryAggregated) HasHashSubCount() bool {
 	return false
 }
 
-// SetHashSubCount gets a reference to the given int32 and assigns it to the HashSubCount field.
-func (o *RealtimeEntryAggregated) SetHashSubCount(v int32) {
+// SetHashSubCount gets a reference to the given int64 and assigns it to the HashSubCount field.
+func (o *RealtimeEntryAggregated) SetHashSubCount(v int64) {
 	o.HashSubCount = &v
 }
 
@@ -3895,9 +3895,9 @@ func (o *RealtimeEntryAggregated) SetMissSubTime(v float32) {
 }
 
 // GetMissSubCount returns the MissSubCount field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetMissSubCount() int32 {
+func (o *RealtimeEntryAggregated) GetMissSubCount() int64 {
 	if o == nil || o.MissSubCount == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MissSubCount
@@ -3905,7 +3905,7 @@ func (o *RealtimeEntryAggregated) GetMissSubCount() int32 {
 
 // GetMissSubCountOk returns a tuple with the MissSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetMissSubCountOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetMissSubCountOk() (*int64, bool) {
 	if o == nil || o.MissSubCount == nil {
 		return nil, false
 	}
@@ -3921,8 +3921,8 @@ func (o *RealtimeEntryAggregated) HasMissSubCount() bool {
 	return false
 }
 
-// SetMissSubCount gets a reference to the given int32 and assigns it to the MissSubCount field.
-func (o *RealtimeEntryAggregated) SetMissSubCount(v int32) {
+// SetMissSubCount gets a reference to the given int64 and assigns it to the MissSubCount field.
+func (o *RealtimeEntryAggregated) SetMissSubCount(v int64) {
 	o.MissSubCount = &v
 }
 
@@ -3959,9 +3959,9 @@ func (o *RealtimeEntryAggregated) SetFetchSubTime(v float32) {
 }
 
 // GetFetchSubCount returns the FetchSubCount field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetFetchSubCount() int32 {
+func (o *RealtimeEntryAggregated) GetFetchSubCount() int64 {
 	if o == nil || o.FetchSubCount == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FetchSubCount
@@ -3969,7 +3969,7 @@ func (o *RealtimeEntryAggregated) GetFetchSubCount() int32 {
 
 // GetFetchSubCountOk returns a tuple with the FetchSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetFetchSubCountOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetFetchSubCountOk() (*int64, bool) {
 	if o == nil || o.FetchSubCount == nil {
 		return nil, false
 	}
@@ -3985,8 +3985,8 @@ func (o *RealtimeEntryAggregated) HasFetchSubCount() bool {
 	return false
 }
 
-// SetFetchSubCount gets a reference to the given int32 and assigns it to the FetchSubCount field.
-func (o *RealtimeEntryAggregated) SetFetchSubCount(v int32) {
+// SetFetchSubCount gets a reference to the given int64 and assigns it to the FetchSubCount field.
+func (o *RealtimeEntryAggregated) SetFetchSubCount(v int64) {
 	o.FetchSubCount = &v
 }
 
@@ -4023,9 +4023,9 @@ func (o *RealtimeEntryAggregated) SetPassSubTime(v float32) {
 }
 
 // GetPassSubCount returns the PassSubCount field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetPassSubCount() int32 {
+func (o *RealtimeEntryAggregated) GetPassSubCount() int64 {
 	if o == nil || o.PassSubCount == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PassSubCount
@@ -4033,7 +4033,7 @@ func (o *RealtimeEntryAggregated) GetPassSubCount() int32 {
 
 // GetPassSubCountOk returns a tuple with the PassSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetPassSubCountOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetPassSubCountOk() (*int64, bool) {
 	if o == nil || o.PassSubCount == nil {
 		return nil, false
 	}
@@ -4049,8 +4049,8 @@ func (o *RealtimeEntryAggregated) HasPassSubCount() bool {
 	return false
 }
 
-// SetPassSubCount gets a reference to the given int32 and assigns it to the PassSubCount field.
-func (o *RealtimeEntryAggregated) SetPassSubCount(v int32) {
+// SetPassSubCount gets a reference to the given int64 and assigns it to the PassSubCount field.
+func (o *RealtimeEntryAggregated) SetPassSubCount(v int64) {
 	o.PassSubCount = &v
 }
 
@@ -4087,9 +4087,9 @@ func (o *RealtimeEntryAggregated) SetPipeSubTime(v float32) {
 }
 
 // GetPipeSubCount returns the PipeSubCount field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetPipeSubCount() int32 {
+func (o *RealtimeEntryAggregated) GetPipeSubCount() int64 {
 	if o == nil || o.PipeSubCount == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PipeSubCount
@@ -4097,7 +4097,7 @@ func (o *RealtimeEntryAggregated) GetPipeSubCount() int32 {
 
 // GetPipeSubCountOk returns a tuple with the PipeSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetPipeSubCountOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetPipeSubCountOk() (*int64, bool) {
 	if o == nil || o.PipeSubCount == nil {
 		return nil, false
 	}
@@ -4113,8 +4113,8 @@ func (o *RealtimeEntryAggregated) HasPipeSubCount() bool {
 	return false
 }
 
-// SetPipeSubCount gets a reference to the given int32 and assigns it to the PipeSubCount field.
-func (o *RealtimeEntryAggregated) SetPipeSubCount(v int32) {
+// SetPipeSubCount gets a reference to the given int64 and assigns it to the PipeSubCount field.
+func (o *RealtimeEntryAggregated) SetPipeSubCount(v int64) {
 	o.PipeSubCount = &v
 }
 
@@ -4151,9 +4151,9 @@ func (o *RealtimeEntryAggregated) SetDeliverSubTime(v float32) {
 }
 
 // GetDeliverSubCount returns the DeliverSubCount field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetDeliverSubCount() int32 {
+func (o *RealtimeEntryAggregated) GetDeliverSubCount() int64 {
 	if o == nil || o.DeliverSubCount == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DeliverSubCount
@@ -4161,7 +4161,7 @@ func (o *RealtimeEntryAggregated) GetDeliverSubCount() int32 {
 
 // GetDeliverSubCountOk returns a tuple with the DeliverSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetDeliverSubCountOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetDeliverSubCountOk() (*int64, bool) {
 	if o == nil || o.DeliverSubCount == nil {
 		return nil, false
 	}
@@ -4177,8 +4177,8 @@ func (o *RealtimeEntryAggregated) HasDeliverSubCount() bool {
 	return false
 }
 
-// SetDeliverSubCount gets a reference to the given int32 and assigns it to the DeliverSubCount field.
-func (o *RealtimeEntryAggregated) SetDeliverSubCount(v int32) {
+// SetDeliverSubCount gets a reference to the given int64 and assigns it to the DeliverSubCount field.
+func (o *RealtimeEntryAggregated) SetDeliverSubCount(v int64) {
 	o.DeliverSubCount = &v
 }
 
@@ -4215,9 +4215,9 @@ func (o *RealtimeEntryAggregated) SetErrorSubTime(v float32) {
 }
 
 // GetErrorSubCount returns the ErrorSubCount field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetErrorSubCount() int32 {
+func (o *RealtimeEntryAggregated) GetErrorSubCount() int64 {
 	if o == nil || o.ErrorSubCount == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ErrorSubCount
@@ -4225,7 +4225,7 @@ func (o *RealtimeEntryAggregated) GetErrorSubCount() int32 {
 
 // GetErrorSubCountOk returns a tuple with the ErrorSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetErrorSubCountOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetErrorSubCountOk() (*int64, bool) {
 	if o == nil || o.ErrorSubCount == nil {
 		return nil, false
 	}
@@ -4241,8 +4241,8 @@ func (o *RealtimeEntryAggregated) HasErrorSubCount() bool {
 	return false
 }
 
-// SetErrorSubCount gets a reference to the given int32 and assigns it to the ErrorSubCount field.
-func (o *RealtimeEntryAggregated) SetErrorSubCount(v int32) {
+// SetErrorSubCount gets a reference to the given int64 and assigns it to the ErrorSubCount field.
+func (o *RealtimeEntryAggregated) SetErrorSubCount(v int64) {
 	o.ErrorSubCount = &v
 }
 
@@ -4279,9 +4279,9 @@ func (o *RealtimeEntryAggregated) SetHitSubTime(v float32) {
 }
 
 // GetHitSubCount returns the HitSubCount field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetHitSubCount() int32 {
+func (o *RealtimeEntryAggregated) GetHitSubCount() int64 {
 	if o == nil || o.HitSubCount == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HitSubCount
@@ -4289,7 +4289,7 @@ func (o *RealtimeEntryAggregated) GetHitSubCount() int32 {
 
 // GetHitSubCountOk returns a tuple with the HitSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetHitSubCountOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetHitSubCountOk() (*int64, bool) {
 	if o == nil || o.HitSubCount == nil {
 		return nil, false
 	}
@@ -4305,8 +4305,8 @@ func (o *RealtimeEntryAggregated) HasHitSubCount() bool {
 	return false
 }
 
-// SetHitSubCount gets a reference to the given int32 and assigns it to the HitSubCount field.
-func (o *RealtimeEntryAggregated) SetHitSubCount(v int32) {
+// SetHitSubCount gets a reference to the given int64 and assigns it to the HitSubCount field.
+func (o *RealtimeEntryAggregated) SetHitSubCount(v int64) {
 	o.HitSubCount = &v
 }
 
@@ -4343,9 +4343,9 @@ func (o *RealtimeEntryAggregated) SetPrehashSubTime(v float32) {
 }
 
 // GetPrehashSubCount returns the PrehashSubCount field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetPrehashSubCount() int32 {
+func (o *RealtimeEntryAggregated) GetPrehashSubCount() int64 {
 	if o == nil || o.PrehashSubCount == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PrehashSubCount
@@ -4353,7 +4353,7 @@ func (o *RealtimeEntryAggregated) GetPrehashSubCount() int32 {
 
 // GetPrehashSubCountOk returns a tuple with the PrehashSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetPrehashSubCountOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetPrehashSubCountOk() (*int64, bool) {
 	if o == nil || o.PrehashSubCount == nil {
 		return nil, false
 	}
@@ -4369,8 +4369,8 @@ func (o *RealtimeEntryAggregated) HasPrehashSubCount() bool {
 	return false
 }
 
-// SetPrehashSubCount gets a reference to the given int32 and assigns it to the PrehashSubCount field.
-func (o *RealtimeEntryAggregated) SetPrehashSubCount(v int32) {
+// SetPrehashSubCount gets a reference to the given int64 and assigns it to the PrehashSubCount field.
+func (o *RealtimeEntryAggregated) SetPrehashSubCount(v int64) {
 	o.PrehashSubCount = &v
 }
 
@@ -4407,9 +4407,9 @@ func (o *RealtimeEntryAggregated) SetPredeliverSubTime(v float32) {
 }
 
 // GetPredeliverSubCount returns the PredeliverSubCount field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetPredeliverSubCount() int32 {
+func (o *RealtimeEntryAggregated) GetPredeliverSubCount() int64 {
 	if o == nil || o.PredeliverSubCount == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PredeliverSubCount
@@ -4417,7 +4417,7 @@ func (o *RealtimeEntryAggregated) GetPredeliverSubCount() int32 {
 
 // GetPredeliverSubCountOk returns a tuple with the PredeliverSubCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetPredeliverSubCountOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetPredeliverSubCountOk() (*int64, bool) {
 	if o == nil || o.PredeliverSubCount == nil {
 		return nil, false
 	}
@@ -4433,15 +4433,15 @@ func (o *RealtimeEntryAggregated) HasPredeliverSubCount() bool {
 	return false
 }
 
-// SetPredeliverSubCount gets a reference to the given int32 and assigns it to the PredeliverSubCount field.
-func (o *RealtimeEntryAggregated) SetPredeliverSubCount(v int32) {
+// SetPredeliverSubCount gets a reference to the given int64 and assigns it to the PredeliverSubCount field.
+func (o *RealtimeEntryAggregated) SetPredeliverSubCount(v int64) {
 	o.PredeliverSubCount = &v
 }
 
 // GetHitRespBodyBytes returns the HitRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetHitRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetHitRespBodyBytes() int64 {
 	if o == nil || o.HitRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.HitRespBodyBytes
@@ -4449,7 +4449,7 @@ func (o *RealtimeEntryAggregated) GetHitRespBodyBytes() int32 {
 
 // GetHitRespBodyBytesOk returns a tuple with the HitRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetHitRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetHitRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.HitRespBodyBytes == nil {
 		return nil, false
 	}
@@ -4465,15 +4465,15 @@ func (o *RealtimeEntryAggregated) HasHitRespBodyBytes() bool {
 	return false
 }
 
-// SetHitRespBodyBytes gets a reference to the given int32 and assigns it to the HitRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetHitRespBodyBytes(v int32) {
+// SetHitRespBodyBytes gets a reference to the given int64 and assigns it to the HitRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetHitRespBodyBytes(v int64) {
 	o.HitRespBodyBytes = &v
 }
 
 // GetMissRespBodyBytes returns the MissRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetMissRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetMissRespBodyBytes() int64 {
 	if o == nil || o.MissRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.MissRespBodyBytes
@@ -4481,7 +4481,7 @@ func (o *RealtimeEntryAggregated) GetMissRespBodyBytes() int32 {
 
 // GetMissRespBodyBytesOk returns a tuple with the MissRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetMissRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetMissRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.MissRespBodyBytes == nil {
 		return nil, false
 	}
@@ -4497,15 +4497,15 @@ func (o *RealtimeEntryAggregated) HasMissRespBodyBytes() bool {
 	return false
 }
 
-// SetMissRespBodyBytes gets a reference to the given int32 and assigns it to the MissRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetMissRespBodyBytes(v int32) {
+// SetMissRespBodyBytes gets a reference to the given int64 and assigns it to the MissRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetMissRespBodyBytes(v int64) {
 	o.MissRespBodyBytes = &v
 }
 
 // GetPassRespBodyBytes returns the PassRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetPassRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetPassRespBodyBytes() int64 {
 	if o == nil || o.PassRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.PassRespBodyBytes
@@ -4513,7 +4513,7 @@ func (o *RealtimeEntryAggregated) GetPassRespBodyBytes() int32 {
 
 // GetPassRespBodyBytesOk returns a tuple with the PassRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetPassRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetPassRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.PassRespBodyBytes == nil {
 		return nil, false
 	}
@@ -4529,15 +4529,15 @@ func (o *RealtimeEntryAggregated) HasPassRespBodyBytes() bool {
 	return false
 }
 
-// SetPassRespBodyBytes gets a reference to the given int32 and assigns it to the PassRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetPassRespBodyBytes(v int32) {
+// SetPassRespBodyBytes gets a reference to the given int64 and assigns it to the PassRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetPassRespBodyBytes(v int64) {
 	o.PassRespBodyBytes = &v
 }
 
 // GetComputeReqHeaderBytes returns the ComputeReqHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeReqHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetComputeReqHeaderBytes() int64 {
 	if o == nil || o.ComputeReqHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeReqHeaderBytes
@@ -4545,7 +4545,7 @@ func (o *RealtimeEntryAggregated) GetComputeReqHeaderBytes() int32 {
 
 // GetComputeReqHeaderBytesOk returns a tuple with the ComputeReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeReqHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeReqHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ComputeReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -4561,15 +4561,15 @@ func (o *RealtimeEntryAggregated) HasComputeReqHeaderBytes() bool {
 	return false
 }
 
-// SetComputeReqHeaderBytes gets a reference to the given int32 and assigns it to the ComputeReqHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetComputeReqHeaderBytes(v int32) {
+// SetComputeReqHeaderBytes gets a reference to the given int64 and assigns it to the ComputeReqHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetComputeReqHeaderBytes(v int64) {
 	o.ComputeReqHeaderBytes = &v
 }
 
 // GetComputeReqBodyBytes returns the ComputeReqBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeReqBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetComputeReqBodyBytes() int64 {
 	if o == nil || o.ComputeReqBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeReqBodyBytes
@@ -4577,7 +4577,7 @@ func (o *RealtimeEntryAggregated) GetComputeReqBodyBytes() int32 {
 
 // GetComputeReqBodyBytesOk returns a tuple with the ComputeReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeReqBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeReqBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ComputeReqBodyBytes == nil {
 		return nil, false
 	}
@@ -4593,15 +4593,15 @@ func (o *RealtimeEntryAggregated) HasComputeReqBodyBytes() bool {
 	return false
 }
 
-// SetComputeReqBodyBytes gets a reference to the given int32 and assigns it to the ComputeReqBodyBytes field.
-func (o *RealtimeEntryAggregated) SetComputeReqBodyBytes(v int32) {
+// SetComputeReqBodyBytes gets a reference to the given int64 and assigns it to the ComputeReqBodyBytes field.
+func (o *RealtimeEntryAggregated) SetComputeReqBodyBytes(v int64) {
 	o.ComputeReqBodyBytes = &v
 }
 
 // GetComputeRespHeaderBytes returns the ComputeRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetComputeRespHeaderBytes() int64 {
 	if o == nil || o.ComputeRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeRespHeaderBytes
@@ -4609,7 +4609,7 @@ func (o *RealtimeEntryAggregated) GetComputeRespHeaderBytes() int32 {
 
 // GetComputeRespHeaderBytesOk returns a tuple with the ComputeRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ComputeRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -4625,15 +4625,15 @@ func (o *RealtimeEntryAggregated) HasComputeRespHeaderBytes() bool {
 	return false
 }
 
-// SetComputeRespHeaderBytes gets a reference to the given int32 and assigns it to the ComputeRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetComputeRespHeaderBytes(v int32) {
+// SetComputeRespHeaderBytes gets a reference to the given int64 and assigns it to the ComputeRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetComputeRespHeaderBytes(v int64) {
 	o.ComputeRespHeaderBytes = &v
 }
 
 // GetComputeRespBodyBytes returns the ComputeRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetComputeRespBodyBytes() int64 {
 	if o == nil || o.ComputeRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeRespBodyBytes
@@ -4641,7 +4641,7 @@ func (o *RealtimeEntryAggregated) GetComputeRespBodyBytes() int32 {
 
 // GetComputeRespBodyBytesOk returns a tuple with the ComputeRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ComputeRespBodyBytes == nil {
 		return nil, false
 	}
@@ -4657,15 +4657,15 @@ func (o *RealtimeEntryAggregated) HasComputeRespBodyBytes() bool {
 	return false
 }
 
-// SetComputeRespBodyBytes gets a reference to the given int32 and assigns it to the ComputeRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetComputeRespBodyBytes(v int32) {
+// SetComputeRespBodyBytes gets a reference to the given int64 and assigns it to the ComputeRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetComputeRespBodyBytes(v int64) {
 	o.ComputeRespBodyBytes = &v
 }
 
 // GetImgvideo returns the Imgvideo field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgvideo() int32 {
+func (o *RealtimeEntryAggregated) GetImgvideo() int64 {
 	if o == nil || o.Imgvideo == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Imgvideo
@@ -4673,7 +4673,7 @@ func (o *RealtimeEntryAggregated) GetImgvideo() int32 {
 
 // GetImgvideoOk returns a tuple with the Imgvideo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgvideoOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgvideoOk() (*int64, bool) {
 	if o == nil || o.Imgvideo == nil {
 		return nil, false
 	}
@@ -4689,15 +4689,15 @@ func (o *RealtimeEntryAggregated) HasImgvideo() bool {
 	return false
 }
 
-// SetImgvideo gets a reference to the given int32 and assigns it to the Imgvideo field.
-func (o *RealtimeEntryAggregated) SetImgvideo(v int32) {
+// SetImgvideo gets a reference to the given int64 and assigns it to the Imgvideo field.
+func (o *RealtimeEntryAggregated) SetImgvideo(v int64) {
 	o.Imgvideo = &v
 }
 
 // GetImgvideoFrames returns the ImgvideoFrames field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgvideoFrames() int32 {
+func (o *RealtimeEntryAggregated) GetImgvideoFrames() int64 {
 	if o == nil || o.ImgvideoFrames == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImgvideoFrames
@@ -4705,7 +4705,7 @@ func (o *RealtimeEntryAggregated) GetImgvideoFrames() int32 {
 
 // GetImgvideoFramesOk returns a tuple with the ImgvideoFrames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgvideoFramesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgvideoFramesOk() (*int64, bool) {
 	if o == nil || o.ImgvideoFrames == nil {
 		return nil, false
 	}
@@ -4721,15 +4721,15 @@ func (o *RealtimeEntryAggregated) HasImgvideoFrames() bool {
 	return false
 }
 
-// SetImgvideoFrames gets a reference to the given int32 and assigns it to the ImgvideoFrames field.
-func (o *RealtimeEntryAggregated) SetImgvideoFrames(v int32) {
+// SetImgvideoFrames gets a reference to the given int64 and assigns it to the ImgvideoFrames field.
+func (o *RealtimeEntryAggregated) SetImgvideoFrames(v int64) {
 	o.ImgvideoFrames = &v
 }
 
 // GetImgvideoRespHeaderBytes returns the ImgvideoRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgvideoRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetImgvideoRespHeaderBytes() int64 {
 	if o == nil || o.ImgvideoRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImgvideoRespHeaderBytes
@@ -4737,7 +4737,7 @@ func (o *RealtimeEntryAggregated) GetImgvideoRespHeaderBytes() int32 {
 
 // GetImgvideoRespHeaderBytesOk returns a tuple with the ImgvideoRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgvideoRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgvideoRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ImgvideoRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -4753,15 +4753,15 @@ func (o *RealtimeEntryAggregated) HasImgvideoRespHeaderBytes() bool {
 	return false
 }
 
-// SetImgvideoRespHeaderBytes gets a reference to the given int32 and assigns it to the ImgvideoRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetImgvideoRespHeaderBytes(v int32) {
+// SetImgvideoRespHeaderBytes gets a reference to the given int64 and assigns it to the ImgvideoRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetImgvideoRespHeaderBytes(v int64) {
 	o.ImgvideoRespHeaderBytes = &v
 }
 
 // GetImgvideoRespBodyBytes returns the ImgvideoRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgvideoRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetImgvideoRespBodyBytes() int64 {
 	if o == nil || o.ImgvideoRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImgvideoRespBodyBytes
@@ -4769,7 +4769,7 @@ func (o *RealtimeEntryAggregated) GetImgvideoRespBodyBytes() int32 {
 
 // GetImgvideoRespBodyBytesOk returns a tuple with the ImgvideoRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgvideoRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgvideoRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ImgvideoRespBodyBytes == nil {
 		return nil, false
 	}
@@ -4785,15 +4785,15 @@ func (o *RealtimeEntryAggregated) HasImgvideoRespBodyBytes() bool {
 	return false
 }
 
-// SetImgvideoRespBodyBytes gets a reference to the given int32 and assigns it to the ImgvideoRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetImgvideoRespBodyBytes(v int32) {
+// SetImgvideoRespBodyBytes gets a reference to the given int64 and assigns it to the ImgvideoRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetImgvideoRespBodyBytes(v int64) {
 	o.ImgvideoRespBodyBytes = &v
 }
 
 // GetImgvideoShield returns the ImgvideoShield field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgvideoShield() int32 {
+func (o *RealtimeEntryAggregated) GetImgvideoShield() int64 {
 	if o == nil || o.ImgvideoShield == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImgvideoShield
@@ -4801,7 +4801,7 @@ func (o *RealtimeEntryAggregated) GetImgvideoShield() int32 {
 
 // GetImgvideoShieldOk returns a tuple with the ImgvideoShield field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgvideoShieldOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgvideoShieldOk() (*int64, bool) {
 	if o == nil || o.ImgvideoShield == nil {
 		return nil, false
 	}
@@ -4817,15 +4817,15 @@ func (o *RealtimeEntryAggregated) HasImgvideoShield() bool {
 	return false
 }
 
-// SetImgvideoShield gets a reference to the given int32 and assigns it to the ImgvideoShield field.
-func (o *RealtimeEntryAggregated) SetImgvideoShield(v int32) {
+// SetImgvideoShield gets a reference to the given int64 and assigns it to the ImgvideoShield field.
+func (o *RealtimeEntryAggregated) SetImgvideoShield(v int64) {
 	o.ImgvideoShield = &v
 }
 
 // GetImgvideoShieldFrames returns the ImgvideoShieldFrames field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgvideoShieldFrames() int32 {
+func (o *RealtimeEntryAggregated) GetImgvideoShieldFrames() int64 {
 	if o == nil || o.ImgvideoShieldFrames == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImgvideoShieldFrames
@@ -4833,7 +4833,7 @@ func (o *RealtimeEntryAggregated) GetImgvideoShieldFrames() int32 {
 
 // GetImgvideoShieldFramesOk returns a tuple with the ImgvideoShieldFrames field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgvideoShieldFramesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgvideoShieldFramesOk() (*int64, bool) {
 	if o == nil || o.ImgvideoShieldFrames == nil {
 		return nil, false
 	}
@@ -4849,15 +4849,15 @@ func (o *RealtimeEntryAggregated) HasImgvideoShieldFrames() bool {
 	return false
 }
 
-// SetImgvideoShieldFrames gets a reference to the given int32 and assigns it to the ImgvideoShieldFrames field.
-func (o *RealtimeEntryAggregated) SetImgvideoShieldFrames(v int32) {
+// SetImgvideoShieldFrames gets a reference to the given int64 and assigns it to the ImgvideoShieldFrames field.
+func (o *RealtimeEntryAggregated) SetImgvideoShieldFrames(v int64) {
 	o.ImgvideoShieldFrames = &v
 }
 
 // GetImgvideoShieldRespHeaderBytes returns the ImgvideoShieldRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgvideoShieldRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetImgvideoShieldRespHeaderBytes() int64 {
 	if o == nil || o.ImgvideoShieldRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImgvideoShieldRespHeaderBytes
@@ -4865,7 +4865,7 @@ func (o *RealtimeEntryAggregated) GetImgvideoShieldRespHeaderBytes() int32 {
 
 // GetImgvideoShieldRespHeaderBytesOk returns a tuple with the ImgvideoShieldRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgvideoShieldRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgvideoShieldRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ImgvideoShieldRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -4881,15 +4881,15 @@ func (o *RealtimeEntryAggregated) HasImgvideoShieldRespHeaderBytes() bool {
 	return false
 }
 
-// SetImgvideoShieldRespHeaderBytes gets a reference to the given int32 and assigns it to the ImgvideoShieldRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetImgvideoShieldRespHeaderBytes(v int32) {
+// SetImgvideoShieldRespHeaderBytes gets a reference to the given int64 and assigns it to the ImgvideoShieldRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetImgvideoShieldRespHeaderBytes(v int64) {
 	o.ImgvideoShieldRespHeaderBytes = &v
 }
 
 // GetImgvideoShieldRespBodyBytes returns the ImgvideoShieldRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetImgvideoShieldRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetImgvideoShieldRespBodyBytes() int64 {
 	if o == nil || o.ImgvideoShieldRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ImgvideoShieldRespBodyBytes
@@ -4897,7 +4897,7 @@ func (o *RealtimeEntryAggregated) GetImgvideoShieldRespBodyBytes() int32 {
 
 // GetImgvideoShieldRespBodyBytesOk returns a tuple with the ImgvideoShieldRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetImgvideoShieldRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetImgvideoShieldRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ImgvideoShieldRespBodyBytes == nil {
 		return nil, false
 	}
@@ -4913,15 +4913,15 @@ func (o *RealtimeEntryAggregated) HasImgvideoShieldRespBodyBytes() bool {
 	return false
 }
 
-// SetImgvideoShieldRespBodyBytes gets a reference to the given int32 and assigns it to the ImgvideoShieldRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetImgvideoShieldRespBodyBytes(v int32) {
+// SetImgvideoShieldRespBodyBytes gets a reference to the given int64 and assigns it to the ImgvideoShieldRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetImgvideoShieldRespBodyBytes(v int64) {
 	o.ImgvideoShieldRespBodyBytes = &v
 }
 
 // GetLogBytes returns the LogBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetLogBytes() int32 {
+func (o *RealtimeEntryAggregated) GetLogBytes() int64 {
 	if o == nil || o.LogBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.LogBytes
@@ -4929,7 +4929,7 @@ func (o *RealtimeEntryAggregated) GetLogBytes() int32 {
 
 // GetLogBytesOk returns a tuple with the LogBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetLogBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetLogBytesOk() (*int64, bool) {
 	if o == nil || o.LogBytes == nil {
 		return nil, false
 	}
@@ -4945,15 +4945,15 @@ func (o *RealtimeEntryAggregated) HasLogBytes() bool {
 	return false
 }
 
-// SetLogBytes gets a reference to the given int32 and assigns it to the LogBytes field.
-func (o *RealtimeEntryAggregated) SetLogBytes(v int32) {
+// SetLogBytes gets a reference to the given int64 and assigns it to the LogBytes field.
+func (o *RealtimeEntryAggregated) SetLogBytes(v int64) {
 	o.LogBytes = &v
 }
 
 // GetEdgeRequests returns the EdgeRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetEdgeRequests() int32 {
+func (o *RealtimeEntryAggregated) GetEdgeRequests() int64 {
 	if o == nil || o.EdgeRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeRequests
@@ -4961,7 +4961,7 @@ func (o *RealtimeEntryAggregated) GetEdgeRequests() int32 {
 
 // GetEdgeRequestsOk returns a tuple with the EdgeRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetEdgeRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetEdgeRequestsOk() (*int64, bool) {
 	if o == nil || o.EdgeRequests == nil {
 		return nil, false
 	}
@@ -4977,15 +4977,15 @@ func (o *RealtimeEntryAggregated) HasEdgeRequests() bool {
 	return false
 }
 
-// SetEdgeRequests gets a reference to the given int32 and assigns it to the EdgeRequests field.
-func (o *RealtimeEntryAggregated) SetEdgeRequests(v int32) {
+// SetEdgeRequests gets a reference to the given int64 and assigns it to the EdgeRequests field.
+func (o *RealtimeEntryAggregated) SetEdgeRequests(v int64) {
 	o.EdgeRequests = &v
 }
 
 // GetEdgeRespHeaderBytes returns the EdgeRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetEdgeRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetEdgeRespHeaderBytes() int64 {
 	if o == nil || o.EdgeRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeRespHeaderBytes
@@ -4993,7 +4993,7 @@ func (o *RealtimeEntryAggregated) GetEdgeRespHeaderBytes() int32 {
 
 // GetEdgeRespHeaderBytesOk returns a tuple with the EdgeRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetEdgeRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetEdgeRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.EdgeRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -5009,15 +5009,15 @@ func (o *RealtimeEntryAggregated) HasEdgeRespHeaderBytes() bool {
 	return false
 }
 
-// SetEdgeRespHeaderBytes gets a reference to the given int32 and assigns it to the EdgeRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetEdgeRespHeaderBytes(v int32) {
+// SetEdgeRespHeaderBytes gets a reference to the given int64 and assigns it to the EdgeRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetEdgeRespHeaderBytes(v int64) {
 	o.EdgeRespHeaderBytes = &v
 }
 
 // GetEdgeRespBodyBytes returns the EdgeRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetEdgeRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetEdgeRespBodyBytes() int64 {
 	if o == nil || o.EdgeRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeRespBodyBytes
@@ -5025,7 +5025,7 @@ func (o *RealtimeEntryAggregated) GetEdgeRespBodyBytes() int32 {
 
 // GetEdgeRespBodyBytesOk returns a tuple with the EdgeRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetEdgeRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetEdgeRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.EdgeRespBodyBytes == nil {
 		return nil, false
 	}
@@ -5041,15 +5041,15 @@ func (o *RealtimeEntryAggregated) HasEdgeRespBodyBytes() bool {
 	return false
 }
 
-// SetEdgeRespBodyBytes gets a reference to the given int32 and assigns it to the EdgeRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetEdgeRespBodyBytes(v int32) {
+// SetEdgeRespBodyBytes gets a reference to the given int64 and assigns it to the EdgeRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetEdgeRespBodyBytes(v int64) {
 	o.EdgeRespBodyBytes = &v
 }
 
 // GetOriginRevalidations returns the OriginRevalidations field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOriginRevalidations() int32 {
+func (o *RealtimeEntryAggregated) GetOriginRevalidations() int64 {
 	if o == nil || o.OriginRevalidations == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginRevalidations
@@ -5057,7 +5057,7 @@ func (o *RealtimeEntryAggregated) GetOriginRevalidations() int32 {
 
 // GetOriginRevalidationsOk returns a tuple with the OriginRevalidations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOriginRevalidationsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOriginRevalidationsOk() (*int64, bool) {
 	if o == nil || o.OriginRevalidations == nil {
 		return nil, false
 	}
@@ -5073,15 +5073,15 @@ func (o *RealtimeEntryAggregated) HasOriginRevalidations() bool {
 	return false
 }
 
-// SetOriginRevalidations gets a reference to the given int32 and assigns it to the OriginRevalidations field.
-func (o *RealtimeEntryAggregated) SetOriginRevalidations(v int32) {
+// SetOriginRevalidations gets a reference to the given int64 and assigns it to the OriginRevalidations field.
+func (o *RealtimeEntryAggregated) SetOriginRevalidations(v int64) {
 	o.OriginRevalidations = &v
 }
 
 // GetOriginFetches returns the OriginFetches field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOriginFetches() int32 {
+func (o *RealtimeEntryAggregated) GetOriginFetches() int64 {
 	if o == nil || o.OriginFetches == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginFetches
@@ -5089,7 +5089,7 @@ func (o *RealtimeEntryAggregated) GetOriginFetches() int32 {
 
 // GetOriginFetchesOk returns a tuple with the OriginFetches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOriginFetchesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOriginFetchesOk() (*int64, bool) {
 	if o == nil || o.OriginFetches == nil {
 		return nil, false
 	}
@@ -5105,15 +5105,15 @@ func (o *RealtimeEntryAggregated) HasOriginFetches() bool {
 	return false
 }
 
-// SetOriginFetches gets a reference to the given int32 and assigns it to the OriginFetches field.
-func (o *RealtimeEntryAggregated) SetOriginFetches(v int32) {
+// SetOriginFetches gets a reference to the given int64 and assigns it to the OriginFetches field.
+func (o *RealtimeEntryAggregated) SetOriginFetches(v int64) {
 	o.OriginFetches = &v
 }
 
 // GetOriginFetchHeaderBytes returns the OriginFetchHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOriginFetchHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetOriginFetchHeaderBytes() int64 {
 	if o == nil || o.OriginFetchHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginFetchHeaderBytes
@@ -5121,7 +5121,7 @@ func (o *RealtimeEntryAggregated) GetOriginFetchHeaderBytes() int32 {
 
 // GetOriginFetchHeaderBytesOk returns a tuple with the OriginFetchHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOriginFetchHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOriginFetchHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.OriginFetchHeaderBytes == nil {
 		return nil, false
 	}
@@ -5137,15 +5137,15 @@ func (o *RealtimeEntryAggregated) HasOriginFetchHeaderBytes() bool {
 	return false
 }
 
-// SetOriginFetchHeaderBytes gets a reference to the given int32 and assigns it to the OriginFetchHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetOriginFetchHeaderBytes(v int32) {
+// SetOriginFetchHeaderBytes gets a reference to the given int64 and assigns it to the OriginFetchHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetOriginFetchHeaderBytes(v int64) {
 	o.OriginFetchHeaderBytes = &v
 }
 
 // GetOriginFetchBodyBytes returns the OriginFetchBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOriginFetchBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetOriginFetchBodyBytes() int64 {
 	if o == nil || o.OriginFetchBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginFetchBodyBytes
@@ -5153,7 +5153,7 @@ func (o *RealtimeEntryAggregated) GetOriginFetchBodyBytes() int32 {
 
 // GetOriginFetchBodyBytesOk returns a tuple with the OriginFetchBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOriginFetchBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOriginFetchBodyBytesOk() (*int64, bool) {
 	if o == nil || o.OriginFetchBodyBytes == nil {
 		return nil, false
 	}
@@ -5169,15 +5169,15 @@ func (o *RealtimeEntryAggregated) HasOriginFetchBodyBytes() bool {
 	return false
 }
 
-// SetOriginFetchBodyBytes gets a reference to the given int32 and assigns it to the OriginFetchBodyBytes field.
-func (o *RealtimeEntryAggregated) SetOriginFetchBodyBytes(v int32) {
+// SetOriginFetchBodyBytes gets a reference to the given int64 and assigns it to the OriginFetchBodyBytes field.
+func (o *RealtimeEntryAggregated) SetOriginFetchBodyBytes(v int64) {
 	o.OriginFetchBodyBytes = &v
 }
 
 // GetOriginFetchRespHeaderBytes returns the OriginFetchRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOriginFetchRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetOriginFetchRespHeaderBytes() int64 {
 	if o == nil || o.OriginFetchRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginFetchRespHeaderBytes
@@ -5185,7 +5185,7 @@ func (o *RealtimeEntryAggregated) GetOriginFetchRespHeaderBytes() int32 {
 
 // GetOriginFetchRespHeaderBytesOk returns a tuple with the OriginFetchRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOriginFetchRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOriginFetchRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.OriginFetchRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -5201,15 +5201,15 @@ func (o *RealtimeEntryAggregated) HasOriginFetchRespHeaderBytes() bool {
 	return false
 }
 
-// SetOriginFetchRespHeaderBytes gets a reference to the given int32 and assigns it to the OriginFetchRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetOriginFetchRespHeaderBytes(v int32) {
+// SetOriginFetchRespHeaderBytes gets a reference to the given int64 and assigns it to the OriginFetchRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetOriginFetchRespHeaderBytes(v int64) {
 	o.OriginFetchRespHeaderBytes = &v
 }
 
 // GetOriginFetchRespBodyBytes returns the OriginFetchRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOriginFetchRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetOriginFetchRespBodyBytes() int64 {
 	if o == nil || o.OriginFetchRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginFetchRespBodyBytes
@@ -5217,7 +5217,7 @@ func (o *RealtimeEntryAggregated) GetOriginFetchRespBodyBytes() int32 {
 
 // GetOriginFetchRespBodyBytesOk returns a tuple with the OriginFetchRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOriginFetchRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOriginFetchRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.OriginFetchRespBodyBytes == nil {
 		return nil, false
 	}
@@ -5233,15 +5233,15 @@ func (o *RealtimeEntryAggregated) HasOriginFetchRespBodyBytes() bool {
 	return false
 }
 
-// SetOriginFetchRespBodyBytes gets a reference to the given int32 and assigns it to the OriginFetchRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetOriginFetchRespBodyBytes(v int32) {
+// SetOriginFetchRespBodyBytes gets a reference to the given int64 and assigns it to the OriginFetchRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetOriginFetchRespBodyBytes(v int64) {
 	o.OriginFetchRespBodyBytes = &v
 }
 
 // GetShieldRevalidations returns the ShieldRevalidations field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldRevalidations() int32 {
+func (o *RealtimeEntryAggregated) GetShieldRevalidations() int64 {
 	if o == nil || o.ShieldRevalidations == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldRevalidations
@@ -5249,7 +5249,7 @@ func (o *RealtimeEntryAggregated) GetShieldRevalidations() int32 {
 
 // GetShieldRevalidationsOk returns a tuple with the ShieldRevalidations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldRevalidationsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldRevalidationsOk() (*int64, bool) {
 	if o == nil || o.ShieldRevalidations == nil {
 		return nil, false
 	}
@@ -5265,15 +5265,15 @@ func (o *RealtimeEntryAggregated) HasShieldRevalidations() bool {
 	return false
 }
 
-// SetShieldRevalidations gets a reference to the given int32 and assigns it to the ShieldRevalidations field.
-func (o *RealtimeEntryAggregated) SetShieldRevalidations(v int32) {
+// SetShieldRevalidations gets a reference to the given int64 and assigns it to the ShieldRevalidations field.
+func (o *RealtimeEntryAggregated) SetShieldRevalidations(v int64) {
 	o.ShieldRevalidations = &v
 }
 
 // GetShieldFetches returns the ShieldFetches field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldFetches() int32 {
+func (o *RealtimeEntryAggregated) GetShieldFetches() int64 {
 	if o == nil || o.ShieldFetches == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldFetches
@@ -5281,7 +5281,7 @@ func (o *RealtimeEntryAggregated) GetShieldFetches() int32 {
 
 // GetShieldFetchesOk returns a tuple with the ShieldFetches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldFetchesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldFetchesOk() (*int64, bool) {
 	if o == nil || o.ShieldFetches == nil {
 		return nil, false
 	}
@@ -5297,15 +5297,15 @@ func (o *RealtimeEntryAggregated) HasShieldFetches() bool {
 	return false
 }
 
-// SetShieldFetches gets a reference to the given int32 and assigns it to the ShieldFetches field.
-func (o *RealtimeEntryAggregated) SetShieldFetches(v int32) {
+// SetShieldFetches gets a reference to the given int64 and assigns it to the ShieldFetches field.
+func (o *RealtimeEntryAggregated) SetShieldFetches(v int64) {
 	o.ShieldFetches = &v
 }
 
 // GetShieldFetchHeaderBytes returns the ShieldFetchHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldFetchHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetShieldFetchHeaderBytes() int64 {
 	if o == nil || o.ShieldFetchHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldFetchHeaderBytes
@@ -5313,7 +5313,7 @@ func (o *RealtimeEntryAggregated) GetShieldFetchHeaderBytes() int32 {
 
 // GetShieldFetchHeaderBytesOk returns a tuple with the ShieldFetchHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldFetchHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldFetchHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ShieldFetchHeaderBytes == nil {
 		return nil, false
 	}
@@ -5329,15 +5329,15 @@ func (o *RealtimeEntryAggregated) HasShieldFetchHeaderBytes() bool {
 	return false
 }
 
-// SetShieldFetchHeaderBytes gets a reference to the given int32 and assigns it to the ShieldFetchHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetShieldFetchHeaderBytes(v int32) {
+// SetShieldFetchHeaderBytes gets a reference to the given int64 and assigns it to the ShieldFetchHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetShieldFetchHeaderBytes(v int64) {
 	o.ShieldFetchHeaderBytes = &v
 }
 
 // GetShieldFetchBodyBytes returns the ShieldFetchBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldFetchBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetShieldFetchBodyBytes() int64 {
 	if o == nil || o.ShieldFetchBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldFetchBodyBytes
@@ -5345,7 +5345,7 @@ func (o *RealtimeEntryAggregated) GetShieldFetchBodyBytes() int32 {
 
 // GetShieldFetchBodyBytesOk returns a tuple with the ShieldFetchBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldFetchBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldFetchBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ShieldFetchBodyBytes == nil {
 		return nil, false
 	}
@@ -5361,15 +5361,15 @@ func (o *RealtimeEntryAggregated) HasShieldFetchBodyBytes() bool {
 	return false
 }
 
-// SetShieldFetchBodyBytes gets a reference to the given int32 and assigns it to the ShieldFetchBodyBytes field.
-func (o *RealtimeEntryAggregated) SetShieldFetchBodyBytes(v int32) {
+// SetShieldFetchBodyBytes gets a reference to the given int64 and assigns it to the ShieldFetchBodyBytes field.
+func (o *RealtimeEntryAggregated) SetShieldFetchBodyBytes(v int64) {
 	o.ShieldFetchBodyBytes = &v
 }
 
 // GetShieldFetchRespHeaderBytes returns the ShieldFetchRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldFetchRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetShieldFetchRespHeaderBytes() int64 {
 	if o == nil || o.ShieldFetchRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldFetchRespHeaderBytes
@@ -5377,7 +5377,7 @@ func (o *RealtimeEntryAggregated) GetShieldFetchRespHeaderBytes() int32 {
 
 // GetShieldFetchRespHeaderBytesOk returns a tuple with the ShieldFetchRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldFetchRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldFetchRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ShieldFetchRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -5393,15 +5393,15 @@ func (o *RealtimeEntryAggregated) HasShieldFetchRespHeaderBytes() bool {
 	return false
 }
 
-// SetShieldFetchRespHeaderBytes gets a reference to the given int32 and assigns it to the ShieldFetchRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetShieldFetchRespHeaderBytes(v int32) {
+// SetShieldFetchRespHeaderBytes gets a reference to the given int64 and assigns it to the ShieldFetchRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetShieldFetchRespHeaderBytes(v int64) {
 	o.ShieldFetchRespHeaderBytes = &v
 }
 
 // GetShieldFetchRespBodyBytes returns the ShieldFetchRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldFetchRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetShieldFetchRespBodyBytes() int64 {
 	if o == nil || o.ShieldFetchRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldFetchRespBodyBytes
@@ -5409,7 +5409,7 @@ func (o *RealtimeEntryAggregated) GetShieldFetchRespBodyBytes() int32 {
 
 // GetShieldFetchRespBodyBytesOk returns a tuple with the ShieldFetchRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldFetchRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldFetchRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ShieldFetchRespBodyBytes == nil {
 		return nil, false
 	}
@@ -5425,15 +5425,15 @@ func (o *RealtimeEntryAggregated) HasShieldFetchRespBodyBytes() bool {
 	return false
 }
 
-// SetShieldFetchRespBodyBytes gets a reference to the given int32 and assigns it to the ShieldFetchRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetShieldFetchRespBodyBytes(v int32) {
+// SetShieldFetchRespBodyBytes gets a reference to the given int64 and assigns it to the ShieldFetchRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetShieldFetchRespBodyBytes(v int64) {
 	o.ShieldFetchRespBodyBytes = &v
 }
 
 // GetSegblockOriginFetches returns the SegblockOriginFetches field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetSegblockOriginFetches() int32 {
+func (o *RealtimeEntryAggregated) GetSegblockOriginFetches() int64 {
 	if o == nil || o.SegblockOriginFetches == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SegblockOriginFetches
@@ -5441,7 +5441,7 @@ func (o *RealtimeEntryAggregated) GetSegblockOriginFetches() int32 {
 
 // GetSegblockOriginFetchesOk returns a tuple with the SegblockOriginFetches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetSegblockOriginFetchesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetSegblockOriginFetchesOk() (*int64, bool) {
 	if o == nil || o.SegblockOriginFetches == nil {
 		return nil, false
 	}
@@ -5457,15 +5457,15 @@ func (o *RealtimeEntryAggregated) HasSegblockOriginFetches() bool {
 	return false
 }
 
-// SetSegblockOriginFetches gets a reference to the given int32 and assigns it to the SegblockOriginFetches field.
-func (o *RealtimeEntryAggregated) SetSegblockOriginFetches(v int32) {
+// SetSegblockOriginFetches gets a reference to the given int64 and assigns it to the SegblockOriginFetches field.
+func (o *RealtimeEntryAggregated) SetSegblockOriginFetches(v int64) {
 	o.SegblockOriginFetches = &v
 }
 
 // GetSegblockShieldFetches returns the SegblockShieldFetches field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetSegblockShieldFetches() int32 {
+func (o *RealtimeEntryAggregated) GetSegblockShieldFetches() int64 {
 	if o == nil || o.SegblockShieldFetches == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.SegblockShieldFetches
@@ -5473,7 +5473,7 @@ func (o *RealtimeEntryAggregated) GetSegblockShieldFetches() int32 {
 
 // GetSegblockShieldFetchesOk returns a tuple with the SegblockShieldFetches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetSegblockShieldFetchesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetSegblockShieldFetchesOk() (*int64, bool) {
 	if o == nil || o.SegblockShieldFetches == nil {
 		return nil, false
 	}
@@ -5489,15 +5489,15 @@ func (o *RealtimeEntryAggregated) HasSegblockShieldFetches() bool {
 	return false
 }
 
-// SetSegblockShieldFetches gets a reference to the given int32 and assigns it to the SegblockShieldFetches field.
-func (o *RealtimeEntryAggregated) SetSegblockShieldFetches(v int32) {
+// SetSegblockShieldFetches gets a reference to the given int64 and assigns it to the SegblockShieldFetches field.
+func (o *RealtimeEntryAggregated) SetSegblockShieldFetches(v int64) {
 	o.SegblockShieldFetches = &v
 }
 
 // GetComputeRespStatus1xx returns the ComputeRespStatus1xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeRespStatus1xx() int32 {
+func (o *RealtimeEntryAggregated) GetComputeRespStatus1xx() int64 {
 	if o == nil || o.ComputeRespStatus1xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeRespStatus1xx
@@ -5505,7 +5505,7 @@ func (o *RealtimeEntryAggregated) GetComputeRespStatus1xx() int32 {
 
 // GetComputeRespStatus1xxOk returns a tuple with the ComputeRespStatus1xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeRespStatus1xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeRespStatus1xxOk() (*int64, bool) {
 	if o == nil || o.ComputeRespStatus1xx == nil {
 		return nil, false
 	}
@@ -5521,15 +5521,15 @@ func (o *RealtimeEntryAggregated) HasComputeRespStatus1xx() bool {
 	return false
 }
 
-// SetComputeRespStatus1xx gets a reference to the given int32 and assigns it to the ComputeRespStatus1xx field.
-func (o *RealtimeEntryAggregated) SetComputeRespStatus1xx(v int32) {
+// SetComputeRespStatus1xx gets a reference to the given int64 and assigns it to the ComputeRespStatus1xx field.
+func (o *RealtimeEntryAggregated) SetComputeRespStatus1xx(v int64) {
 	o.ComputeRespStatus1xx = &v
 }
 
 // GetComputeRespStatus2xx returns the ComputeRespStatus2xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeRespStatus2xx() int32 {
+func (o *RealtimeEntryAggregated) GetComputeRespStatus2xx() int64 {
 	if o == nil || o.ComputeRespStatus2xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeRespStatus2xx
@@ -5537,7 +5537,7 @@ func (o *RealtimeEntryAggregated) GetComputeRespStatus2xx() int32 {
 
 // GetComputeRespStatus2xxOk returns a tuple with the ComputeRespStatus2xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeRespStatus2xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeRespStatus2xxOk() (*int64, bool) {
 	if o == nil || o.ComputeRespStatus2xx == nil {
 		return nil, false
 	}
@@ -5553,15 +5553,15 @@ func (o *RealtimeEntryAggregated) HasComputeRespStatus2xx() bool {
 	return false
 }
 
-// SetComputeRespStatus2xx gets a reference to the given int32 and assigns it to the ComputeRespStatus2xx field.
-func (o *RealtimeEntryAggregated) SetComputeRespStatus2xx(v int32) {
+// SetComputeRespStatus2xx gets a reference to the given int64 and assigns it to the ComputeRespStatus2xx field.
+func (o *RealtimeEntryAggregated) SetComputeRespStatus2xx(v int64) {
 	o.ComputeRespStatus2xx = &v
 }
 
 // GetComputeRespStatus3xx returns the ComputeRespStatus3xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeRespStatus3xx() int32 {
+func (o *RealtimeEntryAggregated) GetComputeRespStatus3xx() int64 {
 	if o == nil || o.ComputeRespStatus3xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeRespStatus3xx
@@ -5569,7 +5569,7 @@ func (o *RealtimeEntryAggregated) GetComputeRespStatus3xx() int32 {
 
 // GetComputeRespStatus3xxOk returns a tuple with the ComputeRespStatus3xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeRespStatus3xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeRespStatus3xxOk() (*int64, bool) {
 	if o == nil || o.ComputeRespStatus3xx == nil {
 		return nil, false
 	}
@@ -5585,15 +5585,15 @@ func (o *RealtimeEntryAggregated) HasComputeRespStatus3xx() bool {
 	return false
 }
 
-// SetComputeRespStatus3xx gets a reference to the given int32 and assigns it to the ComputeRespStatus3xx field.
-func (o *RealtimeEntryAggregated) SetComputeRespStatus3xx(v int32) {
+// SetComputeRespStatus3xx gets a reference to the given int64 and assigns it to the ComputeRespStatus3xx field.
+func (o *RealtimeEntryAggregated) SetComputeRespStatus3xx(v int64) {
 	o.ComputeRespStatus3xx = &v
 }
 
 // GetComputeRespStatus4xx returns the ComputeRespStatus4xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeRespStatus4xx() int32 {
+func (o *RealtimeEntryAggregated) GetComputeRespStatus4xx() int64 {
 	if o == nil || o.ComputeRespStatus4xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeRespStatus4xx
@@ -5601,7 +5601,7 @@ func (o *RealtimeEntryAggregated) GetComputeRespStatus4xx() int32 {
 
 // GetComputeRespStatus4xxOk returns a tuple with the ComputeRespStatus4xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeRespStatus4xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeRespStatus4xxOk() (*int64, bool) {
 	if o == nil || o.ComputeRespStatus4xx == nil {
 		return nil, false
 	}
@@ -5617,15 +5617,15 @@ func (o *RealtimeEntryAggregated) HasComputeRespStatus4xx() bool {
 	return false
 }
 
-// SetComputeRespStatus4xx gets a reference to the given int32 and assigns it to the ComputeRespStatus4xx field.
-func (o *RealtimeEntryAggregated) SetComputeRespStatus4xx(v int32) {
+// SetComputeRespStatus4xx gets a reference to the given int64 and assigns it to the ComputeRespStatus4xx field.
+func (o *RealtimeEntryAggregated) SetComputeRespStatus4xx(v int64) {
 	o.ComputeRespStatus4xx = &v
 }
 
 // GetComputeRespStatus5xx returns the ComputeRespStatus5xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeRespStatus5xx() int32 {
+func (o *RealtimeEntryAggregated) GetComputeRespStatus5xx() int64 {
 	if o == nil || o.ComputeRespStatus5xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeRespStatus5xx
@@ -5633,7 +5633,7 @@ func (o *RealtimeEntryAggregated) GetComputeRespStatus5xx() int32 {
 
 // GetComputeRespStatus5xxOk returns a tuple with the ComputeRespStatus5xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeRespStatus5xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeRespStatus5xxOk() (*int64, bool) {
 	if o == nil || o.ComputeRespStatus5xx == nil {
 		return nil, false
 	}
@@ -5649,15 +5649,15 @@ func (o *RealtimeEntryAggregated) HasComputeRespStatus5xx() bool {
 	return false
 }
 
-// SetComputeRespStatus5xx gets a reference to the given int32 and assigns it to the ComputeRespStatus5xx field.
-func (o *RealtimeEntryAggregated) SetComputeRespStatus5xx(v int32) {
+// SetComputeRespStatus5xx gets a reference to the given int64 and assigns it to the ComputeRespStatus5xx field.
+func (o *RealtimeEntryAggregated) SetComputeRespStatus5xx(v int64) {
 	o.ComputeRespStatus5xx = &v
 }
 
 // GetEdgeHitRequests returns the EdgeHitRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetEdgeHitRequests() int32 {
+func (o *RealtimeEntryAggregated) GetEdgeHitRequests() int64 {
 	if o == nil || o.EdgeHitRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeHitRequests
@@ -5665,7 +5665,7 @@ func (o *RealtimeEntryAggregated) GetEdgeHitRequests() int32 {
 
 // GetEdgeHitRequestsOk returns a tuple with the EdgeHitRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetEdgeHitRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetEdgeHitRequestsOk() (*int64, bool) {
 	if o == nil || o.EdgeHitRequests == nil {
 		return nil, false
 	}
@@ -5681,15 +5681,15 @@ func (o *RealtimeEntryAggregated) HasEdgeHitRequests() bool {
 	return false
 }
 
-// SetEdgeHitRequests gets a reference to the given int32 and assigns it to the EdgeHitRequests field.
-func (o *RealtimeEntryAggregated) SetEdgeHitRequests(v int32) {
+// SetEdgeHitRequests gets a reference to the given int64 and assigns it to the EdgeHitRequests field.
+func (o *RealtimeEntryAggregated) SetEdgeHitRequests(v int64) {
 	o.EdgeHitRequests = &v
 }
 
 // GetEdgeMissRequests returns the EdgeMissRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetEdgeMissRequests() int32 {
+func (o *RealtimeEntryAggregated) GetEdgeMissRequests() int64 {
 	if o == nil || o.EdgeMissRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeMissRequests
@@ -5697,7 +5697,7 @@ func (o *RealtimeEntryAggregated) GetEdgeMissRequests() int32 {
 
 // GetEdgeMissRequestsOk returns a tuple with the EdgeMissRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetEdgeMissRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetEdgeMissRequestsOk() (*int64, bool) {
 	if o == nil || o.EdgeMissRequests == nil {
 		return nil, false
 	}
@@ -5713,15 +5713,15 @@ func (o *RealtimeEntryAggregated) HasEdgeMissRequests() bool {
 	return false
 }
 
-// SetEdgeMissRequests gets a reference to the given int32 and assigns it to the EdgeMissRequests field.
-func (o *RealtimeEntryAggregated) SetEdgeMissRequests(v int32) {
+// SetEdgeMissRequests gets a reference to the given int64 and assigns it to the EdgeMissRequests field.
+func (o *RealtimeEntryAggregated) SetEdgeMissRequests(v int64) {
 	o.EdgeMissRequests = &v
 }
 
 // GetComputeBereqHeaderBytes returns the ComputeBereqHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeBereqHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetComputeBereqHeaderBytes() int64 {
 	if o == nil || o.ComputeBereqHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeBereqHeaderBytes
@@ -5729,7 +5729,7 @@ func (o *RealtimeEntryAggregated) GetComputeBereqHeaderBytes() int32 {
 
 // GetComputeBereqHeaderBytesOk returns a tuple with the ComputeBereqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeBereqHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeBereqHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ComputeBereqHeaderBytes == nil {
 		return nil, false
 	}
@@ -5745,15 +5745,15 @@ func (o *RealtimeEntryAggregated) HasComputeBereqHeaderBytes() bool {
 	return false
 }
 
-// SetComputeBereqHeaderBytes gets a reference to the given int32 and assigns it to the ComputeBereqHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetComputeBereqHeaderBytes(v int32) {
+// SetComputeBereqHeaderBytes gets a reference to the given int64 and assigns it to the ComputeBereqHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetComputeBereqHeaderBytes(v int64) {
 	o.ComputeBereqHeaderBytes = &v
 }
 
 // GetComputeBereqBodyBytes returns the ComputeBereqBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeBereqBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetComputeBereqBodyBytes() int64 {
 	if o == nil || o.ComputeBereqBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeBereqBodyBytes
@@ -5761,7 +5761,7 @@ func (o *RealtimeEntryAggregated) GetComputeBereqBodyBytes() int32 {
 
 // GetComputeBereqBodyBytesOk returns a tuple with the ComputeBereqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeBereqBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeBereqBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ComputeBereqBodyBytes == nil {
 		return nil, false
 	}
@@ -5777,15 +5777,15 @@ func (o *RealtimeEntryAggregated) HasComputeBereqBodyBytes() bool {
 	return false
 }
 
-// SetComputeBereqBodyBytes gets a reference to the given int32 and assigns it to the ComputeBereqBodyBytes field.
-func (o *RealtimeEntryAggregated) SetComputeBereqBodyBytes(v int32) {
+// SetComputeBereqBodyBytes gets a reference to the given int64 and assigns it to the ComputeBereqBodyBytes field.
+func (o *RealtimeEntryAggregated) SetComputeBereqBodyBytes(v int64) {
 	o.ComputeBereqBodyBytes = &v
 }
 
 // GetComputeBerespHeaderBytes returns the ComputeBerespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeBerespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetComputeBerespHeaderBytes() int64 {
 	if o == nil || o.ComputeBerespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeBerespHeaderBytes
@@ -5793,7 +5793,7 @@ func (o *RealtimeEntryAggregated) GetComputeBerespHeaderBytes() int32 {
 
 // GetComputeBerespHeaderBytesOk returns a tuple with the ComputeBerespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeBerespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeBerespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ComputeBerespHeaderBytes == nil {
 		return nil, false
 	}
@@ -5809,15 +5809,15 @@ func (o *RealtimeEntryAggregated) HasComputeBerespHeaderBytes() bool {
 	return false
 }
 
-// SetComputeBerespHeaderBytes gets a reference to the given int32 and assigns it to the ComputeBerespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetComputeBerespHeaderBytes(v int32) {
+// SetComputeBerespHeaderBytes gets a reference to the given int64 and assigns it to the ComputeBerespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetComputeBerespHeaderBytes(v int64) {
 	o.ComputeBerespHeaderBytes = &v
 }
 
 // GetComputeBerespBodyBytes returns the ComputeBerespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeBerespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetComputeBerespBodyBytes() int64 {
 	if o == nil || o.ComputeBerespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeBerespBodyBytes
@@ -5825,7 +5825,7 @@ func (o *RealtimeEntryAggregated) GetComputeBerespBodyBytes() int32 {
 
 // GetComputeBerespBodyBytesOk returns a tuple with the ComputeBerespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeBerespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeBerespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ComputeBerespBodyBytes == nil {
 		return nil, false
 	}
@@ -5841,15 +5841,15 @@ func (o *RealtimeEntryAggregated) HasComputeBerespBodyBytes() bool {
 	return false
 }
 
-// SetComputeBerespBodyBytes gets a reference to the given int32 and assigns it to the ComputeBerespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetComputeBerespBodyBytes(v int32) {
+// SetComputeBerespBodyBytes gets a reference to the given int64 and assigns it to the ComputeBerespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetComputeBerespBodyBytes(v int64) {
 	o.ComputeBerespBodyBytes = &v
 }
 
 // GetOriginCacheFetches returns the OriginCacheFetches field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOriginCacheFetches() int32 {
+func (o *RealtimeEntryAggregated) GetOriginCacheFetches() int64 {
 	if o == nil || o.OriginCacheFetches == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginCacheFetches
@@ -5857,7 +5857,7 @@ func (o *RealtimeEntryAggregated) GetOriginCacheFetches() int32 {
 
 // GetOriginCacheFetchesOk returns a tuple with the OriginCacheFetches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOriginCacheFetchesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOriginCacheFetchesOk() (*int64, bool) {
 	if o == nil || o.OriginCacheFetches == nil {
 		return nil, false
 	}
@@ -5873,15 +5873,15 @@ func (o *RealtimeEntryAggregated) HasOriginCacheFetches() bool {
 	return false
 }
 
-// SetOriginCacheFetches gets a reference to the given int32 and assigns it to the OriginCacheFetches field.
-func (o *RealtimeEntryAggregated) SetOriginCacheFetches(v int32) {
+// SetOriginCacheFetches gets a reference to the given int64 and assigns it to the OriginCacheFetches field.
+func (o *RealtimeEntryAggregated) SetOriginCacheFetches(v int64) {
 	o.OriginCacheFetches = &v
 }
 
 // GetShieldCacheFetches returns the ShieldCacheFetches field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldCacheFetches() int32 {
+func (o *RealtimeEntryAggregated) GetShieldCacheFetches() int64 {
 	if o == nil || o.ShieldCacheFetches == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldCacheFetches
@@ -5889,7 +5889,7 @@ func (o *RealtimeEntryAggregated) GetShieldCacheFetches() int32 {
 
 // GetShieldCacheFetchesOk returns a tuple with the ShieldCacheFetches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldCacheFetchesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldCacheFetchesOk() (*int64, bool) {
 	if o == nil || o.ShieldCacheFetches == nil {
 		return nil, false
 	}
@@ -5905,15 +5905,15 @@ func (o *RealtimeEntryAggregated) HasShieldCacheFetches() bool {
 	return false
 }
 
-// SetShieldCacheFetches gets a reference to the given int32 and assigns it to the ShieldCacheFetches field.
-func (o *RealtimeEntryAggregated) SetShieldCacheFetches(v int32) {
+// SetShieldCacheFetches gets a reference to the given int64 and assigns it to the ShieldCacheFetches field.
+func (o *RealtimeEntryAggregated) SetShieldCacheFetches(v int64) {
 	o.ShieldCacheFetches = &v
 }
 
 // GetComputeBereqs returns the ComputeBereqs field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeBereqs() int32 {
+func (o *RealtimeEntryAggregated) GetComputeBereqs() int64 {
 	if o == nil || o.ComputeBereqs == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeBereqs
@@ -5921,7 +5921,7 @@ func (o *RealtimeEntryAggregated) GetComputeBereqs() int32 {
 
 // GetComputeBereqsOk returns a tuple with the ComputeBereqs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeBereqsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeBereqsOk() (*int64, bool) {
 	if o == nil || o.ComputeBereqs == nil {
 		return nil, false
 	}
@@ -5937,15 +5937,15 @@ func (o *RealtimeEntryAggregated) HasComputeBereqs() bool {
 	return false
 }
 
-// SetComputeBereqs gets a reference to the given int32 and assigns it to the ComputeBereqs field.
-func (o *RealtimeEntryAggregated) SetComputeBereqs(v int32) {
+// SetComputeBereqs gets a reference to the given int64 and assigns it to the ComputeBereqs field.
+func (o *RealtimeEntryAggregated) SetComputeBereqs(v int64) {
 	o.ComputeBereqs = &v
 }
 
 // GetComputeBereqErrors returns the ComputeBereqErrors field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeBereqErrors() int32 {
+func (o *RealtimeEntryAggregated) GetComputeBereqErrors() int64 {
 	if o == nil || o.ComputeBereqErrors == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeBereqErrors
@@ -5953,7 +5953,7 @@ func (o *RealtimeEntryAggregated) GetComputeBereqErrors() int32 {
 
 // GetComputeBereqErrorsOk returns a tuple with the ComputeBereqErrors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeBereqErrorsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeBereqErrorsOk() (*int64, bool) {
 	if o == nil || o.ComputeBereqErrors == nil {
 		return nil, false
 	}
@@ -5969,15 +5969,15 @@ func (o *RealtimeEntryAggregated) HasComputeBereqErrors() bool {
 	return false
 }
 
-// SetComputeBereqErrors gets a reference to the given int32 and assigns it to the ComputeBereqErrors field.
-func (o *RealtimeEntryAggregated) SetComputeBereqErrors(v int32) {
+// SetComputeBereqErrors gets a reference to the given int64 and assigns it to the ComputeBereqErrors field.
+func (o *RealtimeEntryAggregated) SetComputeBereqErrors(v int64) {
 	o.ComputeBereqErrors = &v
 }
 
 // GetComputeResourceLimitExceeded returns the ComputeResourceLimitExceeded field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeResourceLimitExceeded() int32 {
+func (o *RealtimeEntryAggregated) GetComputeResourceLimitExceeded() int64 {
 	if o == nil || o.ComputeResourceLimitExceeded == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeResourceLimitExceeded
@@ -5985,7 +5985,7 @@ func (o *RealtimeEntryAggregated) GetComputeResourceLimitExceeded() int32 {
 
 // GetComputeResourceLimitExceededOk returns a tuple with the ComputeResourceLimitExceeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeResourceLimitExceededOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeResourceLimitExceededOk() (*int64, bool) {
 	if o == nil || o.ComputeResourceLimitExceeded == nil {
 		return nil, false
 	}
@@ -6001,15 +6001,15 @@ func (o *RealtimeEntryAggregated) HasComputeResourceLimitExceeded() bool {
 	return false
 }
 
-// SetComputeResourceLimitExceeded gets a reference to the given int32 and assigns it to the ComputeResourceLimitExceeded field.
-func (o *RealtimeEntryAggregated) SetComputeResourceLimitExceeded(v int32) {
+// SetComputeResourceLimitExceeded gets a reference to the given int64 and assigns it to the ComputeResourceLimitExceeded field.
+func (o *RealtimeEntryAggregated) SetComputeResourceLimitExceeded(v int64) {
 	o.ComputeResourceLimitExceeded = &v
 }
 
 // GetComputeHeapLimitExceeded returns the ComputeHeapLimitExceeded field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeHeapLimitExceeded() int32 {
+func (o *RealtimeEntryAggregated) GetComputeHeapLimitExceeded() int64 {
 	if o == nil || o.ComputeHeapLimitExceeded == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeHeapLimitExceeded
@@ -6017,7 +6017,7 @@ func (o *RealtimeEntryAggregated) GetComputeHeapLimitExceeded() int32 {
 
 // GetComputeHeapLimitExceededOk returns a tuple with the ComputeHeapLimitExceeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeHeapLimitExceededOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeHeapLimitExceededOk() (*int64, bool) {
 	if o == nil || o.ComputeHeapLimitExceeded == nil {
 		return nil, false
 	}
@@ -6033,15 +6033,15 @@ func (o *RealtimeEntryAggregated) HasComputeHeapLimitExceeded() bool {
 	return false
 }
 
-// SetComputeHeapLimitExceeded gets a reference to the given int32 and assigns it to the ComputeHeapLimitExceeded field.
-func (o *RealtimeEntryAggregated) SetComputeHeapLimitExceeded(v int32) {
+// SetComputeHeapLimitExceeded gets a reference to the given int64 and assigns it to the ComputeHeapLimitExceeded field.
+func (o *RealtimeEntryAggregated) SetComputeHeapLimitExceeded(v int64) {
 	o.ComputeHeapLimitExceeded = &v
 }
 
 // GetComputeStackLimitExceeded returns the ComputeStackLimitExceeded field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeStackLimitExceeded() int32 {
+func (o *RealtimeEntryAggregated) GetComputeStackLimitExceeded() int64 {
 	if o == nil || o.ComputeStackLimitExceeded == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStackLimitExceeded
@@ -6049,7 +6049,7 @@ func (o *RealtimeEntryAggregated) GetComputeStackLimitExceeded() int32 {
 
 // GetComputeStackLimitExceededOk returns a tuple with the ComputeStackLimitExceeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeStackLimitExceededOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeStackLimitExceededOk() (*int64, bool) {
 	if o == nil || o.ComputeStackLimitExceeded == nil {
 		return nil, false
 	}
@@ -6065,15 +6065,15 @@ func (o *RealtimeEntryAggregated) HasComputeStackLimitExceeded() bool {
 	return false
 }
 
-// SetComputeStackLimitExceeded gets a reference to the given int32 and assigns it to the ComputeStackLimitExceeded field.
-func (o *RealtimeEntryAggregated) SetComputeStackLimitExceeded(v int32) {
+// SetComputeStackLimitExceeded gets a reference to the given int64 and assigns it to the ComputeStackLimitExceeded field.
+func (o *RealtimeEntryAggregated) SetComputeStackLimitExceeded(v int64) {
 	o.ComputeStackLimitExceeded = &v
 }
 
 // GetComputeGlobalsLimitExceeded returns the ComputeGlobalsLimitExceeded field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeGlobalsLimitExceeded() int32 {
+func (o *RealtimeEntryAggregated) GetComputeGlobalsLimitExceeded() int64 {
 	if o == nil || o.ComputeGlobalsLimitExceeded == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeGlobalsLimitExceeded
@@ -6081,7 +6081,7 @@ func (o *RealtimeEntryAggregated) GetComputeGlobalsLimitExceeded() int32 {
 
 // GetComputeGlobalsLimitExceededOk returns a tuple with the ComputeGlobalsLimitExceeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeGlobalsLimitExceededOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeGlobalsLimitExceededOk() (*int64, bool) {
 	if o == nil || o.ComputeGlobalsLimitExceeded == nil {
 		return nil, false
 	}
@@ -6097,15 +6097,15 @@ func (o *RealtimeEntryAggregated) HasComputeGlobalsLimitExceeded() bool {
 	return false
 }
 
-// SetComputeGlobalsLimitExceeded gets a reference to the given int32 and assigns it to the ComputeGlobalsLimitExceeded field.
-func (o *RealtimeEntryAggregated) SetComputeGlobalsLimitExceeded(v int32) {
+// SetComputeGlobalsLimitExceeded gets a reference to the given int64 and assigns it to the ComputeGlobalsLimitExceeded field.
+func (o *RealtimeEntryAggregated) SetComputeGlobalsLimitExceeded(v int64) {
 	o.ComputeGlobalsLimitExceeded = &v
 }
 
 // GetComputeGuestErrors returns the ComputeGuestErrors field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeGuestErrors() int32 {
+func (o *RealtimeEntryAggregated) GetComputeGuestErrors() int64 {
 	if o == nil || o.ComputeGuestErrors == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeGuestErrors
@@ -6113,7 +6113,7 @@ func (o *RealtimeEntryAggregated) GetComputeGuestErrors() int32 {
 
 // GetComputeGuestErrorsOk returns a tuple with the ComputeGuestErrors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeGuestErrorsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeGuestErrorsOk() (*int64, bool) {
 	if o == nil || o.ComputeGuestErrors == nil {
 		return nil, false
 	}
@@ -6129,15 +6129,15 @@ func (o *RealtimeEntryAggregated) HasComputeGuestErrors() bool {
 	return false
 }
 
-// SetComputeGuestErrors gets a reference to the given int32 and assigns it to the ComputeGuestErrors field.
-func (o *RealtimeEntryAggregated) SetComputeGuestErrors(v int32) {
+// SetComputeGuestErrors gets a reference to the given int64 and assigns it to the ComputeGuestErrors field.
+func (o *RealtimeEntryAggregated) SetComputeGuestErrors(v int64) {
 	o.ComputeGuestErrors = &v
 }
 
 // GetComputeRuntimeErrors returns the ComputeRuntimeErrors field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeRuntimeErrors() int32 {
+func (o *RealtimeEntryAggregated) GetComputeRuntimeErrors() int64 {
 	if o == nil || o.ComputeRuntimeErrors == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeRuntimeErrors
@@ -6145,7 +6145,7 @@ func (o *RealtimeEntryAggregated) GetComputeRuntimeErrors() int32 {
 
 // GetComputeRuntimeErrorsOk returns a tuple with the ComputeRuntimeErrors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeRuntimeErrorsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetComputeRuntimeErrorsOk() (*int64, bool) {
 	if o == nil || o.ComputeRuntimeErrors == nil {
 		return nil, false
 	}
@@ -6161,15 +6161,15 @@ func (o *RealtimeEntryAggregated) HasComputeRuntimeErrors() bool {
 	return false
 }
 
-// SetComputeRuntimeErrors gets a reference to the given int32 and assigns it to the ComputeRuntimeErrors field.
-func (o *RealtimeEntryAggregated) SetComputeRuntimeErrors(v int32) {
+// SetComputeRuntimeErrors gets a reference to the given int64 and assigns it to the ComputeRuntimeErrors field.
+func (o *RealtimeEntryAggregated) SetComputeRuntimeErrors(v int64) {
 	o.ComputeRuntimeErrors = &v
 }
 
 // GetEdgeHitRespBodyBytes returns the EdgeHitRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetEdgeHitRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetEdgeHitRespBodyBytes() int64 {
 	if o == nil || o.EdgeHitRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeHitRespBodyBytes
@@ -6177,7 +6177,7 @@ func (o *RealtimeEntryAggregated) GetEdgeHitRespBodyBytes() int32 {
 
 // GetEdgeHitRespBodyBytesOk returns a tuple with the EdgeHitRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetEdgeHitRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetEdgeHitRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.EdgeHitRespBodyBytes == nil {
 		return nil, false
 	}
@@ -6193,15 +6193,15 @@ func (o *RealtimeEntryAggregated) HasEdgeHitRespBodyBytes() bool {
 	return false
 }
 
-// SetEdgeHitRespBodyBytes gets a reference to the given int32 and assigns it to the EdgeHitRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetEdgeHitRespBodyBytes(v int32) {
+// SetEdgeHitRespBodyBytes gets a reference to the given int64 and assigns it to the EdgeHitRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetEdgeHitRespBodyBytes(v int64) {
 	o.EdgeHitRespBodyBytes = &v
 }
 
 // GetEdgeHitRespHeaderBytes returns the EdgeHitRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetEdgeHitRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetEdgeHitRespHeaderBytes() int64 {
 	if o == nil || o.EdgeHitRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeHitRespHeaderBytes
@@ -6209,7 +6209,7 @@ func (o *RealtimeEntryAggregated) GetEdgeHitRespHeaderBytes() int32 {
 
 // GetEdgeHitRespHeaderBytesOk returns a tuple with the EdgeHitRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetEdgeHitRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetEdgeHitRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.EdgeHitRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6225,15 +6225,15 @@ func (o *RealtimeEntryAggregated) HasEdgeHitRespHeaderBytes() bool {
 	return false
 }
 
-// SetEdgeHitRespHeaderBytes gets a reference to the given int32 and assigns it to the EdgeHitRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetEdgeHitRespHeaderBytes(v int32) {
+// SetEdgeHitRespHeaderBytes gets a reference to the given int64 and assigns it to the EdgeHitRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetEdgeHitRespHeaderBytes(v int64) {
 	o.EdgeHitRespHeaderBytes = &v
 }
 
 // GetEdgeMissRespBodyBytes returns the EdgeMissRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetEdgeMissRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetEdgeMissRespBodyBytes() int64 {
 	if o == nil || o.EdgeMissRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeMissRespBodyBytes
@@ -6241,7 +6241,7 @@ func (o *RealtimeEntryAggregated) GetEdgeMissRespBodyBytes() int32 {
 
 // GetEdgeMissRespBodyBytesOk returns a tuple with the EdgeMissRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetEdgeMissRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetEdgeMissRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.EdgeMissRespBodyBytes == nil {
 		return nil, false
 	}
@@ -6257,15 +6257,15 @@ func (o *RealtimeEntryAggregated) HasEdgeMissRespBodyBytes() bool {
 	return false
 }
 
-// SetEdgeMissRespBodyBytes gets a reference to the given int32 and assigns it to the EdgeMissRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetEdgeMissRespBodyBytes(v int32) {
+// SetEdgeMissRespBodyBytes gets a reference to the given int64 and assigns it to the EdgeMissRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetEdgeMissRespBodyBytes(v int64) {
 	o.EdgeMissRespBodyBytes = &v
 }
 
 // GetEdgeMissRespHeaderBytes returns the EdgeMissRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetEdgeMissRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetEdgeMissRespHeaderBytes() int64 {
 	if o == nil || o.EdgeMissRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeMissRespHeaderBytes
@@ -6273,7 +6273,7 @@ func (o *RealtimeEntryAggregated) GetEdgeMissRespHeaderBytes() int32 {
 
 // GetEdgeMissRespHeaderBytesOk returns a tuple with the EdgeMissRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetEdgeMissRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetEdgeMissRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.EdgeMissRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6289,15 +6289,15 @@ func (o *RealtimeEntryAggregated) HasEdgeMissRespHeaderBytes() bool {
 	return false
 }
 
-// SetEdgeMissRespHeaderBytes gets a reference to the given int32 and assigns it to the EdgeMissRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetEdgeMissRespHeaderBytes(v int32) {
+// SetEdgeMissRespHeaderBytes gets a reference to the given int64 and assigns it to the EdgeMissRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetEdgeMissRespHeaderBytes(v int64) {
 	o.EdgeMissRespHeaderBytes = &v
 }
 
 // GetOriginCacheFetchRespBodyBytes returns the OriginCacheFetchRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOriginCacheFetchRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetOriginCacheFetchRespBodyBytes() int64 {
 	if o == nil || o.OriginCacheFetchRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginCacheFetchRespBodyBytes
@@ -6305,7 +6305,7 @@ func (o *RealtimeEntryAggregated) GetOriginCacheFetchRespBodyBytes() int32 {
 
 // GetOriginCacheFetchRespBodyBytesOk returns a tuple with the OriginCacheFetchRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOriginCacheFetchRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOriginCacheFetchRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.OriginCacheFetchRespBodyBytes == nil {
 		return nil, false
 	}
@@ -6321,15 +6321,15 @@ func (o *RealtimeEntryAggregated) HasOriginCacheFetchRespBodyBytes() bool {
 	return false
 }
 
-// SetOriginCacheFetchRespBodyBytes gets a reference to the given int32 and assigns it to the OriginCacheFetchRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetOriginCacheFetchRespBodyBytes(v int32) {
+// SetOriginCacheFetchRespBodyBytes gets a reference to the given int64 and assigns it to the OriginCacheFetchRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetOriginCacheFetchRespBodyBytes(v int64) {
 	o.OriginCacheFetchRespBodyBytes = &v
 }
 
 // GetOriginCacheFetchRespHeaderBytes returns the OriginCacheFetchRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetOriginCacheFetchRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetOriginCacheFetchRespHeaderBytes() int64 {
 	if o == nil || o.OriginCacheFetchRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginCacheFetchRespHeaderBytes
@@ -6337,7 +6337,7 @@ func (o *RealtimeEntryAggregated) GetOriginCacheFetchRespHeaderBytes() int32 {
 
 // GetOriginCacheFetchRespHeaderBytesOk returns a tuple with the OriginCacheFetchRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetOriginCacheFetchRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetOriginCacheFetchRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.OriginCacheFetchRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6353,15 +6353,15 @@ func (o *RealtimeEntryAggregated) HasOriginCacheFetchRespHeaderBytes() bool {
 	return false
 }
 
-// SetOriginCacheFetchRespHeaderBytes gets a reference to the given int32 and assigns it to the OriginCacheFetchRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetOriginCacheFetchRespHeaderBytes(v int32) {
+// SetOriginCacheFetchRespHeaderBytes gets a reference to the given int64 and assigns it to the OriginCacheFetchRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetOriginCacheFetchRespHeaderBytes(v int64) {
 	o.OriginCacheFetchRespHeaderBytes = &v
 }
 
 // GetShieldHitRequests returns the ShieldHitRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldHitRequests() int32 {
+func (o *RealtimeEntryAggregated) GetShieldHitRequests() int64 {
 	if o == nil || o.ShieldHitRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldHitRequests
@@ -6369,7 +6369,7 @@ func (o *RealtimeEntryAggregated) GetShieldHitRequests() int32 {
 
 // GetShieldHitRequestsOk returns a tuple with the ShieldHitRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldHitRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldHitRequestsOk() (*int64, bool) {
 	if o == nil || o.ShieldHitRequests == nil {
 		return nil, false
 	}
@@ -6385,15 +6385,15 @@ func (o *RealtimeEntryAggregated) HasShieldHitRequests() bool {
 	return false
 }
 
-// SetShieldHitRequests gets a reference to the given int32 and assigns it to the ShieldHitRequests field.
-func (o *RealtimeEntryAggregated) SetShieldHitRequests(v int32) {
+// SetShieldHitRequests gets a reference to the given int64 and assigns it to the ShieldHitRequests field.
+func (o *RealtimeEntryAggregated) SetShieldHitRequests(v int64) {
 	o.ShieldHitRequests = &v
 }
 
 // GetShieldMissRequests returns the ShieldMissRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldMissRequests() int32 {
+func (o *RealtimeEntryAggregated) GetShieldMissRequests() int64 {
 	if o == nil || o.ShieldMissRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldMissRequests
@@ -6401,7 +6401,7 @@ func (o *RealtimeEntryAggregated) GetShieldMissRequests() int32 {
 
 // GetShieldMissRequestsOk returns a tuple with the ShieldMissRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldMissRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldMissRequestsOk() (*int64, bool) {
 	if o == nil || o.ShieldMissRequests == nil {
 		return nil, false
 	}
@@ -6417,15 +6417,15 @@ func (o *RealtimeEntryAggregated) HasShieldMissRequests() bool {
 	return false
 }
 
-// SetShieldMissRequests gets a reference to the given int32 and assigns it to the ShieldMissRequests field.
-func (o *RealtimeEntryAggregated) SetShieldMissRequests(v int32) {
+// SetShieldMissRequests gets a reference to the given int64 and assigns it to the ShieldMissRequests field.
+func (o *RealtimeEntryAggregated) SetShieldMissRequests(v int64) {
 	o.ShieldMissRequests = &v
 }
 
 // GetShieldHitRespHeaderBytes returns the ShieldHitRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldHitRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetShieldHitRespHeaderBytes() int64 {
 	if o == nil || o.ShieldHitRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldHitRespHeaderBytes
@@ -6433,7 +6433,7 @@ func (o *RealtimeEntryAggregated) GetShieldHitRespHeaderBytes() int32 {
 
 // GetShieldHitRespHeaderBytesOk returns a tuple with the ShieldHitRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldHitRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldHitRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ShieldHitRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6449,15 +6449,15 @@ func (o *RealtimeEntryAggregated) HasShieldHitRespHeaderBytes() bool {
 	return false
 }
 
-// SetShieldHitRespHeaderBytes gets a reference to the given int32 and assigns it to the ShieldHitRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetShieldHitRespHeaderBytes(v int32) {
+// SetShieldHitRespHeaderBytes gets a reference to the given int64 and assigns it to the ShieldHitRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetShieldHitRespHeaderBytes(v int64) {
 	o.ShieldHitRespHeaderBytes = &v
 }
 
 // GetShieldHitRespBodyBytes returns the ShieldHitRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldHitRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetShieldHitRespBodyBytes() int64 {
 	if o == nil || o.ShieldHitRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldHitRespBodyBytes
@@ -6465,7 +6465,7 @@ func (o *RealtimeEntryAggregated) GetShieldHitRespBodyBytes() int32 {
 
 // GetShieldHitRespBodyBytesOk returns a tuple with the ShieldHitRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldHitRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldHitRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ShieldHitRespBodyBytes == nil {
 		return nil, false
 	}
@@ -6481,15 +6481,15 @@ func (o *RealtimeEntryAggregated) HasShieldHitRespBodyBytes() bool {
 	return false
 }
 
-// SetShieldHitRespBodyBytes gets a reference to the given int32 and assigns it to the ShieldHitRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetShieldHitRespBodyBytes(v int32) {
+// SetShieldHitRespBodyBytes gets a reference to the given int64 and assigns it to the ShieldHitRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetShieldHitRespBodyBytes(v int64) {
 	o.ShieldHitRespBodyBytes = &v
 }
 
 // GetShieldMissRespHeaderBytes returns the ShieldMissRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldMissRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetShieldMissRespHeaderBytes() int64 {
 	if o == nil || o.ShieldMissRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldMissRespHeaderBytes
@@ -6497,7 +6497,7 @@ func (o *RealtimeEntryAggregated) GetShieldMissRespHeaderBytes() int32 {
 
 // GetShieldMissRespHeaderBytesOk returns a tuple with the ShieldMissRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldMissRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldMissRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ShieldMissRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6513,15 +6513,15 @@ func (o *RealtimeEntryAggregated) HasShieldMissRespHeaderBytes() bool {
 	return false
 }
 
-// SetShieldMissRespHeaderBytes gets a reference to the given int32 and assigns it to the ShieldMissRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetShieldMissRespHeaderBytes(v int32) {
+// SetShieldMissRespHeaderBytes gets a reference to the given int64 and assigns it to the ShieldMissRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetShieldMissRespHeaderBytes(v int64) {
 	o.ShieldMissRespHeaderBytes = &v
 }
 
 // GetShieldMissRespBodyBytes returns the ShieldMissRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetShieldMissRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetShieldMissRespBodyBytes() int64 {
 	if o == nil || o.ShieldMissRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ShieldMissRespBodyBytes
@@ -6529,7 +6529,7 @@ func (o *RealtimeEntryAggregated) GetShieldMissRespBodyBytes() int32 {
 
 // GetShieldMissRespBodyBytesOk returns a tuple with the ShieldMissRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetShieldMissRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetShieldMissRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ShieldMissRespBodyBytes == nil {
 		return nil, false
 	}
@@ -6545,15 +6545,15 @@ func (o *RealtimeEntryAggregated) HasShieldMissRespBodyBytes() bool {
 	return false
 }
 
-// SetShieldMissRespBodyBytes gets a reference to the given int32 and assigns it to the ShieldMissRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetShieldMissRespBodyBytes(v int32) {
+// SetShieldMissRespBodyBytes gets a reference to the given int64 and assigns it to the ShieldMissRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetShieldMissRespBodyBytes(v int64) {
 	o.ShieldMissRespBodyBytes = &v
 }
 
 // GetWebsocketReqHeaderBytes returns the WebsocketReqHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetWebsocketReqHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetWebsocketReqHeaderBytes() int64 {
 	if o == nil || o.WebsocketReqHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WebsocketReqHeaderBytes
@@ -6561,7 +6561,7 @@ func (o *RealtimeEntryAggregated) GetWebsocketReqHeaderBytes() int32 {
 
 // GetWebsocketReqHeaderBytesOk returns a tuple with the WebsocketReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetWebsocketReqHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetWebsocketReqHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.WebsocketReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -6577,15 +6577,15 @@ func (o *RealtimeEntryAggregated) HasWebsocketReqHeaderBytes() bool {
 	return false
 }
 
-// SetWebsocketReqHeaderBytes gets a reference to the given int32 and assigns it to the WebsocketReqHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetWebsocketReqHeaderBytes(v int32) {
+// SetWebsocketReqHeaderBytes gets a reference to the given int64 and assigns it to the WebsocketReqHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetWebsocketReqHeaderBytes(v int64) {
 	o.WebsocketReqHeaderBytes = &v
 }
 
 // GetWebsocketReqBodyBytes returns the WebsocketReqBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetWebsocketReqBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetWebsocketReqBodyBytes() int64 {
 	if o == nil || o.WebsocketReqBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WebsocketReqBodyBytes
@@ -6593,7 +6593,7 @@ func (o *RealtimeEntryAggregated) GetWebsocketReqBodyBytes() int32 {
 
 // GetWebsocketReqBodyBytesOk returns a tuple with the WebsocketReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetWebsocketReqBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetWebsocketReqBodyBytesOk() (*int64, bool) {
 	if o == nil || o.WebsocketReqBodyBytes == nil {
 		return nil, false
 	}
@@ -6609,15 +6609,15 @@ func (o *RealtimeEntryAggregated) HasWebsocketReqBodyBytes() bool {
 	return false
 }
 
-// SetWebsocketReqBodyBytes gets a reference to the given int32 and assigns it to the WebsocketReqBodyBytes field.
-func (o *RealtimeEntryAggregated) SetWebsocketReqBodyBytes(v int32) {
+// SetWebsocketReqBodyBytes gets a reference to the given int64 and assigns it to the WebsocketReqBodyBytes field.
+func (o *RealtimeEntryAggregated) SetWebsocketReqBodyBytes(v int64) {
 	o.WebsocketReqBodyBytes = &v
 }
 
 // GetWebsocketRespHeaderBytes returns the WebsocketRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetWebsocketRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetWebsocketRespHeaderBytes() int64 {
 	if o == nil || o.WebsocketRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WebsocketRespHeaderBytes
@@ -6625,7 +6625,7 @@ func (o *RealtimeEntryAggregated) GetWebsocketRespHeaderBytes() int32 {
 
 // GetWebsocketRespHeaderBytesOk returns a tuple with the WebsocketRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetWebsocketRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetWebsocketRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.WebsocketRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6641,15 +6641,15 @@ func (o *RealtimeEntryAggregated) HasWebsocketRespHeaderBytes() bool {
 	return false
 }
 
-// SetWebsocketRespHeaderBytes gets a reference to the given int32 and assigns it to the WebsocketRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetWebsocketRespHeaderBytes(v int32) {
+// SetWebsocketRespHeaderBytes gets a reference to the given int64 and assigns it to the WebsocketRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetWebsocketRespHeaderBytes(v int64) {
 	o.WebsocketRespHeaderBytes = &v
 }
 
 // GetWebsocketBereqHeaderBytes returns the WebsocketBereqHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetWebsocketBereqHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetWebsocketBereqHeaderBytes() int64 {
 	if o == nil || o.WebsocketBereqHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WebsocketBereqHeaderBytes
@@ -6657,7 +6657,7 @@ func (o *RealtimeEntryAggregated) GetWebsocketBereqHeaderBytes() int32 {
 
 // GetWebsocketBereqHeaderBytesOk returns a tuple with the WebsocketBereqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetWebsocketBereqHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetWebsocketBereqHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.WebsocketBereqHeaderBytes == nil {
 		return nil, false
 	}
@@ -6673,15 +6673,15 @@ func (o *RealtimeEntryAggregated) HasWebsocketBereqHeaderBytes() bool {
 	return false
 }
 
-// SetWebsocketBereqHeaderBytes gets a reference to the given int32 and assigns it to the WebsocketBereqHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetWebsocketBereqHeaderBytes(v int32) {
+// SetWebsocketBereqHeaderBytes gets a reference to the given int64 and assigns it to the WebsocketBereqHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetWebsocketBereqHeaderBytes(v int64) {
 	o.WebsocketBereqHeaderBytes = &v
 }
 
 // GetWebsocketBereqBodyBytes returns the WebsocketBereqBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetWebsocketBereqBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetWebsocketBereqBodyBytes() int64 {
 	if o == nil || o.WebsocketBereqBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WebsocketBereqBodyBytes
@@ -6689,7 +6689,7 @@ func (o *RealtimeEntryAggregated) GetWebsocketBereqBodyBytes() int32 {
 
 // GetWebsocketBereqBodyBytesOk returns a tuple with the WebsocketBereqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetWebsocketBereqBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetWebsocketBereqBodyBytesOk() (*int64, bool) {
 	if o == nil || o.WebsocketBereqBodyBytes == nil {
 		return nil, false
 	}
@@ -6705,15 +6705,15 @@ func (o *RealtimeEntryAggregated) HasWebsocketBereqBodyBytes() bool {
 	return false
 }
 
-// SetWebsocketBereqBodyBytes gets a reference to the given int32 and assigns it to the WebsocketBereqBodyBytes field.
-func (o *RealtimeEntryAggregated) SetWebsocketBereqBodyBytes(v int32) {
+// SetWebsocketBereqBodyBytes gets a reference to the given int64 and assigns it to the WebsocketBereqBodyBytes field.
+func (o *RealtimeEntryAggregated) SetWebsocketBereqBodyBytes(v int64) {
 	o.WebsocketBereqBodyBytes = &v
 }
 
 // GetWebsocketBerespHeaderBytes returns the WebsocketBerespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetWebsocketBerespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetWebsocketBerespHeaderBytes() int64 {
 	if o == nil || o.WebsocketBerespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WebsocketBerespHeaderBytes
@@ -6721,7 +6721,7 @@ func (o *RealtimeEntryAggregated) GetWebsocketBerespHeaderBytes() int32 {
 
 // GetWebsocketBerespHeaderBytesOk returns a tuple with the WebsocketBerespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetWebsocketBerespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetWebsocketBerespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.WebsocketBerespHeaderBytes == nil {
 		return nil, false
 	}
@@ -6737,15 +6737,15 @@ func (o *RealtimeEntryAggregated) HasWebsocketBerespHeaderBytes() bool {
 	return false
 }
 
-// SetWebsocketBerespHeaderBytes gets a reference to the given int32 and assigns it to the WebsocketBerespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetWebsocketBerespHeaderBytes(v int32) {
+// SetWebsocketBerespHeaderBytes gets a reference to the given int64 and assigns it to the WebsocketBerespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetWebsocketBerespHeaderBytes(v int64) {
 	o.WebsocketBerespHeaderBytes = &v
 }
 
 // GetWebsocketBerespBodyBytes returns the WebsocketBerespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetWebsocketBerespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetWebsocketBerespBodyBytes() int64 {
 	if o == nil || o.WebsocketBerespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WebsocketBerespBodyBytes
@@ -6753,7 +6753,7 @@ func (o *RealtimeEntryAggregated) GetWebsocketBerespBodyBytes() int32 {
 
 // GetWebsocketBerespBodyBytesOk returns a tuple with the WebsocketBerespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetWebsocketBerespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetWebsocketBerespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.WebsocketBerespBodyBytes == nil {
 		return nil, false
 	}
@@ -6769,15 +6769,15 @@ func (o *RealtimeEntryAggregated) HasWebsocketBerespBodyBytes() bool {
 	return false
 }
 
-// SetWebsocketBerespBodyBytes gets a reference to the given int32 and assigns it to the WebsocketBerespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetWebsocketBerespBodyBytes(v int32) {
+// SetWebsocketBerespBodyBytes gets a reference to the given int64 and assigns it to the WebsocketBerespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetWebsocketBerespBodyBytes(v int64) {
 	o.WebsocketBerespBodyBytes = &v
 }
 
 // GetWebsocketConnTimeMs returns the WebsocketConnTimeMs field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetWebsocketConnTimeMs() int32 {
+func (o *RealtimeEntryAggregated) GetWebsocketConnTimeMs() int64 {
 	if o == nil || o.WebsocketConnTimeMs == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WebsocketConnTimeMs
@@ -6785,7 +6785,7 @@ func (o *RealtimeEntryAggregated) GetWebsocketConnTimeMs() int32 {
 
 // GetWebsocketConnTimeMsOk returns a tuple with the WebsocketConnTimeMs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetWebsocketConnTimeMsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetWebsocketConnTimeMsOk() (*int64, bool) {
 	if o == nil || o.WebsocketConnTimeMs == nil {
 		return nil, false
 	}
@@ -6801,15 +6801,15 @@ func (o *RealtimeEntryAggregated) HasWebsocketConnTimeMs() bool {
 	return false
 }
 
-// SetWebsocketConnTimeMs gets a reference to the given int32 and assigns it to the WebsocketConnTimeMs field.
-func (o *RealtimeEntryAggregated) SetWebsocketConnTimeMs(v int32) {
+// SetWebsocketConnTimeMs gets a reference to the given int64 and assigns it to the WebsocketConnTimeMs field.
+func (o *RealtimeEntryAggregated) SetWebsocketConnTimeMs(v int64) {
 	o.WebsocketConnTimeMs = &v
 }
 
 // GetWebsocketRespBodyBytes returns the WebsocketRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetWebsocketRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetWebsocketRespBodyBytes() int64 {
 	if o == nil || o.WebsocketRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WebsocketRespBodyBytes
@@ -6817,7 +6817,7 @@ func (o *RealtimeEntryAggregated) GetWebsocketRespBodyBytes() int32 {
 
 // GetWebsocketRespBodyBytesOk returns a tuple with the WebsocketRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetWebsocketRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetWebsocketRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.WebsocketRespBodyBytes == nil {
 		return nil, false
 	}
@@ -6833,15 +6833,15 @@ func (o *RealtimeEntryAggregated) HasWebsocketRespBodyBytes() bool {
 	return false
 }
 
-// SetWebsocketRespBodyBytes gets a reference to the given int32 and assigns it to the WebsocketRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetWebsocketRespBodyBytes(v int32) {
+// SetWebsocketRespBodyBytes gets a reference to the given int64 and assigns it to the WebsocketRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetWebsocketRespBodyBytes(v int64) {
 	o.WebsocketRespBodyBytes = &v
 }
 
 // GetFanoutRecvPublishes returns the FanoutRecvPublishes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetFanoutRecvPublishes() int32 {
+func (o *RealtimeEntryAggregated) GetFanoutRecvPublishes() int64 {
 	if o == nil || o.FanoutRecvPublishes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FanoutRecvPublishes
@@ -6849,7 +6849,7 @@ func (o *RealtimeEntryAggregated) GetFanoutRecvPublishes() int32 {
 
 // GetFanoutRecvPublishesOk returns a tuple with the FanoutRecvPublishes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetFanoutRecvPublishesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetFanoutRecvPublishesOk() (*int64, bool) {
 	if o == nil || o.FanoutRecvPublishes == nil {
 		return nil, false
 	}
@@ -6865,15 +6865,15 @@ func (o *RealtimeEntryAggregated) HasFanoutRecvPublishes() bool {
 	return false
 }
 
-// SetFanoutRecvPublishes gets a reference to the given int32 and assigns it to the FanoutRecvPublishes field.
-func (o *RealtimeEntryAggregated) SetFanoutRecvPublishes(v int32) {
+// SetFanoutRecvPublishes gets a reference to the given int64 and assigns it to the FanoutRecvPublishes field.
+func (o *RealtimeEntryAggregated) SetFanoutRecvPublishes(v int64) {
 	o.FanoutRecvPublishes = &v
 }
 
 // GetFanoutSendPublishes returns the FanoutSendPublishes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetFanoutSendPublishes() int32 {
+func (o *RealtimeEntryAggregated) GetFanoutSendPublishes() int64 {
 	if o == nil || o.FanoutSendPublishes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FanoutSendPublishes
@@ -6881,7 +6881,7 @@ func (o *RealtimeEntryAggregated) GetFanoutSendPublishes() int32 {
 
 // GetFanoutSendPublishesOk returns a tuple with the FanoutSendPublishes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetFanoutSendPublishesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetFanoutSendPublishesOk() (*int64, bool) {
 	if o == nil || o.FanoutSendPublishes == nil {
 		return nil, false
 	}
@@ -6897,15 +6897,15 @@ func (o *RealtimeEntryAggregated) HasFanoutSendPublishes() bool {
 	return false
 }
 
-// SetFanoutSendPublishes gets a reference to the given int32 and assigns it to the FanoutSendPublishes field.
-func (o *RealtimeEntryAggregated) SetFanoutSendPublishes(v int32) {
+// SetFanoutSendPublishes gets a reference to the given int64 and assigns it to the FanoutSendPublishes field.
+func (o *RealtimeEntryAggregated) SetFanoutSendPublishes(v int64) {
 	o.FanoutSendPublishes = &v
 }
 
 // GetKvStoreClassAOperations returns the KvStoreClassAOperations field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetKvStoreClassAOperations() int32 {
+func (o *RealtimeEntryAggregated) GetKvStoreClassAOperations() int64 {
 	if o == nil || o.KvStoreClassAOperations == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KvStoreClassAOperations
@@ -6913,7 +6913,7 @@ func (o *RealtimeEntryAggregated) GetKvStoreClassAOperations() int32 {
 
 // GetKvStoreClassAOperationsOk returns a tuple with the KvStoreClassAOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetKvStoreClassAOperationsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetKvStoreClassAOperationsOk() (*int64, bool) {
 	if o == nil || o.KvStoreClassAOperations == nil {
 		return nil, false
 	}
@@ -6929,15 +6929,15 @@ func (o *RealtimeEntryAggregated) HasKvStoreClassAOperations() bool {
 	return false
 }
 
-// SetKvStoreClassAOperations gets a reference to the given int32 and assigns it to the KvStoreClassAOperations field.
-func (o *RealtimeEntryAggregated) SetKvStoreClassAOperations(v int32) {
+// SetKvStoreClassAOperations gets a reference to the given int64 and assigns it to the KvStoreClassAOperations field.
+func (o *RealtimeEntryAggregated) SetKvStoreClassAOperations(v int64) {
 	o.KvStoreClassAOperations = &v
 }
 
 // GetKvStoreClassBOperations returns the KvStoreClassBOperations field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetKvStoreClassBOperations() int32 {
+func (o *RealtimeEntryAggregated) GetKvStoreClassBOperations() int64 {
 	if o == nil || o.KvStoreClassBOperations == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.KvStoreClassBOperations
@@ -6945,7 +6945,7 @@ func (o *RealtimeEntryAggregated) GetKvStoreClassBOperations() int32 {
 
 // GetKvStoreClassBOperationsOk returns a tuple with the KvStoreClassBOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetKvStoreClassBOperationsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetKvStoreClassBOperationsOk() (*int64, bool) {
 	if o == nil || o.KvStoreClassBOperations == nil {
 		return nil, false
 	}
@@ -6961,16 +6961,16 @@ func (o *RealtimeEntryAggregated) HasKvStoreClassBOperations() bool {
 	return false
 }
 
-// SetKvStoreClassBOperations gets a reference to the given int32 and assigns it to the KvStoreClassBOperations field.
-func (o *RealtimeEntryAggregated) SetKvStoreClassBOperations(v int32) {
+// SetKvStoreClassBOperations gets a reference to the given int64 and assigns it to the KvStoreClassBOperations field.
+func (o *RealtimeEntryAggregated) SetKvStoreClassBOperations(v int64) {
 	o.KvStoreClassBOperations = &v
 }
 
 // GetObjectStoreClassAOperations returns the ObjectStoreClassAOperations field value if set, zero value otherwise.
 // Deprecated
-func (o *RealtimeEntryAggregated) GetObjectStoreClassAOperations() int32 {
+func (o *RealtimeEntryAggregated) GetObjectStoreClassAOperations() int64 {
 	if o == nil || o.ObjectStoreClassAOperations == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ObjectStoreClassAOperations
@@ -6979,7 +6979,7 @@ func (o *RealtimeEntryAggregated) GetObjectStoreClassAOperations() int32 {
 // GetObjectStoreClassAOperationsOk returns a tuple with the ObjectStoreClassAOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // Deprecated
-func (o *RealtimeEntryAggregated) GetObjectStoreClassAOperationsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetObjectStoreClassAOperationsOk() (*int64, bool) {
 	if o == nil || o.ObjectStoreClassAOperations == nil {
 		return nil, false
 	}
@@ -6995,17 +6995,17 @@ func (o *RealtimeEntryAggregated) HasObjectStoreClassAOperations() bool {
 	return false
 }
 
-// SetObjectStoreClassAOperations gets a reference to the given int32 and assigns it to the ObjectStoreClassAOperations field.
+// SetObjectStoreClassAOperations gets a reference to the given int64 and assigns it to the ObjectStoreClassAOperations field.
 // Deprecated
-func (o *RealtimeEntryAggregated) SetObjectStoreClassAOperations(v int32) {
+func (o *RealtimeEntryAggregated) SetObjectStoreClassAOperations(v int64) {
 	o.ObjectStoreClassAOperations = &v
 }
 
 // GetObjectStoreClassBOperations returns the ObjectStoreClassBOperations field value if set, zero value otherwise.
 // Deprecated
-func (o *RealtimeEntryAggregated) GetObjectStoreClassBOperations() int32 {
+func (o *RealtimeEntryAggregated) GetObjectStoreClassBOperations() int64 {
 	if o == nil || o.ObjectStoreClassBOperations == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ObjectStoreClassBOperations
@@ -7014,7 +7014,7 @@ func (o *RealtimeEntryAggregated) GetObjectStoreClassBOperations() int32 {
 // GetObjectStoreClassBOperationsOk returns a tuple with the ObjectStoreClassBOperations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // Deprecated
-func (o *RealtimeEntryAggregated) GetObjectStoreClassBOperationsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetObjectStoreClassBOperationsOk() (*int64, bool) {
 	if o == nil || o.ObjectStoreClassBOperations == nil {
 		return nil, false
 	}
@@ -7030,16 +7030,16 @@ func (o *RealtimeEntryAggregated) HasObjectStoreClassBOperations() bool {
 	return false
 }
 
-// SetObjectStoreClassBOperations gets a reference to the given int32 and assigns it to the ObjectStoreClassBOperations field.
+// SetObjectStoreClassBOperations gets a reference to the given int64 and assigns it to the ObjectStoreClassBOperations field.
 // Deprecated
-func (o *RealtimeEntryAggregated) SetObjectStoreClassBOperations(v int32) {
+func (o *RealtimeEntryAggregated) SetObjectStoreClassBOperations(v int64) {
 	o.ObjectStoreClassBOperations = &v
 }
 
 // GetFanoutReqHeaderBytes returns the FanoutReqHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetFanoutReqHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetFanoutReqHeaderBytes() int64 {
 	if o == nil || o.FanoutReqHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FanoutReqHeaderBytes
@@ -7047,7 +7047,7 @@ func (o *RealtimeEntryAggregated) GetFanoutReqHeaderBytes() int32 {
 
 // GetFanoutReqHeaderBytesOk returns a tuple with the FanoutReqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetFanoutReqHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetFanoutReqHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.FanoutReqHeaderBytes == nil {
 		return nil, false
 	}
@@ -7063,15 +7063,15 @@ func (o *RealtimeEntryAggregated) HasFanoutReqHeaderBytes() bool {
 	return false
 }
 
-// SetFanoutReqHeaderBytes gets a reference to the given int32 and assigns it to the FanoutReqHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetFanoutReqHeaderBytes(v int32) {
+// SetFanoutReqHeaderBytes gets a reference to the given int64 and assigns it to the FanoutReqHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetFanoutReqHeaderBytes(v int64) {
 	o.FanoutReqHeaderBytes = &v
 }
 
 // GetFanoutReqBodyBytes returns the FanoutReqBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetFanoutReqBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetFanoutReqBodyBytes() int64 {
 	if o == nil || o.FanoutReqBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FanoutReqBodyBytes
@@ -7079,7 +7079,7 @@ func (o *RealtimeEntryAggregated) GetFanoutReqBodyBytes() int32 {
 
 // GetFanoutReqBodyBytesOk returns a tuple with the FanoutReqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetFanoutReqBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetFanoutReqBodyBytesOk() (*int64, bool) {
 	if o == nil || o.FanoutReqBodyBytes == nil {
 		return nil, false
 	}
@@ -7095,15 +7095,15 @@ func (o *RealtimeEntryAggregated) HasFanoutReqBodyBytes() bool {
 	return false
 }
 
-// SetFanoutReqBodyBytes gets a reference to the given int32 and assigns it to the FanoutReqBodyBytes field.
-func (o *RealtimeEntryAggregated) SetFanoutReqBodyBytes(v int32) {
+// SetFanoutReqBodyBytes gets a reference to the given int64 and assigns it to the FanoutReqBodyBytes field.
+func (o *RealtimeEntryAggregated) SetFanoutReqBodyBytes(v int64) {
 	o.FanoutReqBodyBytes = &v
 }
 
 // GetFanoutRespHeaderBytes returns the FanoutRespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetFanoutRespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetFanoutRespHeaderBytes() int64 {
 	if o == nil || o.FanoutRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FanoutRespHeaderBytes
@@ -7111,7 +7111,7 @@ func (o *RealtimeEntryAggregated) GetFanoutRespHeaderBytes() int32 {
 
 // GetFanoutRespHeaderBytesOk returns a tuple with the FanoutRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetFanoutRespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetFanoutRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.FanoutRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -7127,15 +7127,15 @@ func (o *RealtimeEntryAggregated) HasFanoutRespHeaderBytes() bool {
 	return false
 }
 
-// SetFanoutRespHeaderBytes gets a reference to the given int32 and assigns it to the FanoutRespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetFanoutRespHeaderBytes(v int32) {
+// SetFanoutRespHeaderBytes gets a reference to the given int64 and assigns it to the FanoutRespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetFanoutRespHeaderBytes(v int64) {
 	o.FanoutRespHeaderBytes = &v
 }
 
 // GetFanoutRespBodyBytes returns the FanoutRespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetFanoutRespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetFanoutRespBodyBytes() int64 {
 	if o == nil || o.FanoutRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FanoutRespBodyBytes
@@ -7143,7 +7143,7 @@ func (o *RealtimeEntryAggregated) GetFanoutRespBodyBytes() int32 {
 
 // GetFanoutRespBodyBytesOk returns a tuple with the FanoutRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetFanoutRespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetFanoutRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.FanoutRespBodyBytes == nil {
 		return nil, false
 	}
@@ -7159,15 +7159,15 @@ func (o *RealtimeEntryAggregated) HasFanoutRespBodyBytes() bool {
 	return false
 }
 
-// SetFanoutRespBodyBytes gets a reference to the given int32 and assigns it to the FanoutRespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetFanoutRespBodyBytes(v int32) {
+// SetFanoutRespBodyBytes gets a reference to the given int64 and assigns it to the FanoutRespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetFanoutRespBodyBytes(v int64) {
 	o.FanoutRespBodyBytes = &v
 }
 
 // GetFanoutBereqHeaderBytes returns the FanoutBereqHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetFanoutBereqHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetFanoutBereqHeaderBytes() int64 {
 	if o == nil || o.FanoutBereqHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FanoutBereqHeaderBytes
@@ -7175,7 +7175,7 @@ func (o *RealtimeEntryAggregated) GetFanoutBereqHeaderBytes() int32 {
 
 // GetFanoutBereqHeaderBytesOk returns a tuple with the FanoutBereqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetFanoutBereqHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetFanoutBereqHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.FanoutBereqHeaderBytes == nil {
 		return nil, false
 	}
@@ -7191,15 +7191,15 @@ func (o *RealtimeEntryAggregated) HasFanoutBereqHeaderBytes() bool {
 	return false
 }
 
-// SetFanoutBereqHeaderBytes gets a reference to the given int32 and assigns it to the FanoutBereqHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetFanoutBereqHeaderBytes(v int32) {
+// SetFanoutBereqHeaderBytes gets a reference to the given int64 and assigns it to the FanoutBereqHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetFanoutBereqHeaderBytes(v int64) {
 	o.FanoutBereqHeaderBytes = &v
 }
 
 // GetFanoutBereqBodyBytes returns the FanoutBereqBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetFanoutBereqBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetFanoutBereqBodyBytes() int64 {
 	if o == nil || o.FanoutBereqBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FanoutBereqBodyBytes
@@ -7207,7 +7207,7 @@ func (o *RealtimeEntryAggregated) GetFanoutBereqBodyBytes() int32 {
 
 // GetFanoutBereqBodyBytesOk returns a tuple with the FanoutBereqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetFanoutBereqBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetFanoutBereqBodyBytesOk() (*int64, bool) {
 	if o == nil || o.FanoutBereqBodyBytes == nil {
 		return nil, false
 	}
@@ -7223,15 +7223,15 @@ func (o *RealtimeEntryAggregated) HasFanoutBereqBodyBytes() bool {
 	return false
 }
 
-// SetFanoutBereqBodyBytes gets a reference to the given int32 and assigns it to the FanoutBereqBodyBytes field.
-func (o *RealtimeEntryAggregated) SetFanoutBereqBodyBytes(v int32) {
+// SetFanoutBereqBodyBytes gets a reference to the given int64 and assigns it to the FanoutBereqBodyBytes field.
+func (o *RealtimeEntryAggregated) SetFanoutBereqBodyBytes(v int64) {
 	o.FanoutBereqBodyBytes = &v
 }
 
 // GetFanoutBerespHeaderBytes returns the FanoutBerespHeaderBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetFanoutBerespHeaderBytes() int32 {
+func (o *RealtimeEntryAggregated) GetFanoutBerespHeaderBytes() int64 {
 	if o == nil || o.FanoutBerespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FanoutBerespHeaderBytes
@@ -7239,7 +7239,7 @@ func (o *RealtimeEntryAggregated) GetFanoutBerespHeaderBytes() int32 {
 
 // GetFanoutBerespHeaderBytesOk returns a tuple with the FanoutBerespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetFanoutBerespHeaderBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetFanoutBerespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.FanoutBerespHeaderBytes == nil {
 		return nil, false
 	}
@@ -7255,15 +7255,15 @@ func (o *RealtimeEntryAggregated) HasFanoutBerespHeaderBytes() bool {
 	return false
 }
 
-// SetFanoutBerespHeaderBytes gets a reference to the given int32 and assigns it to the FanoutBerespHeaderBytes field.
-func (o *RealtimeEntryAggregated) SetFanoutBerespHeaderBytes(v int32) {
+// SetFanoutBerespHeaderBytes gets a reference to the given int64 and assigns it to the FanoutBerespHeaderBytes field.
+func (o *RealtimeEntryAggregated) SetFanoutBerespHeaderBytes(v int64) {
 	o.FanoutBerespHeaderBytes = &v
 }
 
 // GetFanoutBerespBodyBytes returns the FanoutBerespBodyBytes field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetFanoutBerespBodyBytes() int32 {
+func (o *RealtimeEntryAggregated) GetFanoutBerespBodyBytes() int64 {
 	if o == nil || o.FanoutBerespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FanoutBerespBodyBytes
@@ -7271,7 +7271,7 @@ func (o *RealtimeEntryAggregated) GetFanoutBerespBodyBytes() int32 {
 
 // GetFanoutBerespBodyBytesOk returns a tuple with the FanoutBerespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetFanoutBerespBodyBytesOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetFanoutBerespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.FanoutBerespBodyBytes == nil {
 		return nil, false
 	}
@@ -7287,15 +7287,15 @@ func (o *RealtimeEntryAggregated) HasFanoutBerespBodyBytes() bool {
 	return false
 }
 
-// SetFanoutBerespBodyBytes gets a reference to the given int32 and assigns it to the FanoutBerespBodyBytes field.
-func (o *RealtimeEntryAggregated) SetFanoutBerespBodyBytes(v int32) {
+// SetFanoutBerespBodyBytes gets a reference to the given int64 and assigns it to the FanoutBerespBodyBytes field.
+func (o *RealtimeEntryAggregated) SetFanoutBerespBodyBytes(v int64) {
 	o.FanoutBerespBodyBytes = &v
 }
 
 // GetFanoutConnTimeMs returns the FanoutConnTimeMs field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetFanoutConnTimeMs() int32 {
+func (o *RealtimeEntryAggregated) GetFanoutConnTimeMs() int64 {
 	if o == nil || o.FanoutConnTimeMs == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.FanoutConnTimeMs
@@ -7303,7 +7303,7 @@ func (o *RealtimeEntryAggregated) GetFanoutConnTimeMs() int32 {
 
 // GetFanoutConnTimeMsOk returns a tuple with the FanoutConnTimeMs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetFanoutConnTimeMsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetFanoutConnTimeMsOk() (*int64, bool) {
 	if o == nil || o.FanoutConnTimeMs == nil {
 		return nil, false
 	}
@@ -7319,15 +7319,15 @@ func (o *RealtimeEntryAggregated) HasFanoutConnTimeMs() bool {
 	return false
 }
 
-// SetFanoutConnTimeMs gets a reference to the given int32 and assigns it to the FanoutConnTimeMs field.
-func (o *RealtimeEntryAggregated) SetFanoutConnTimeMs(v int32) {
+// SetFanoutConnTimeMs gets a reference to the given int64 and assigns it to the FanoutConnTimeMs field.
+func (o *RealtimeEntryAggregated) SetFanoutConnTimeMs(v int64) {
 	o.FanoutConnTimeMs = &v
 }
 
 // GetDdosActionLimitStreamsConnections returns the DdosActionLimitStreamsConnections field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetDdosActionLimitStreamsConnections() int32 {
+func (o *RealtimeEntryAggregated) GetDdosActionLimitStreamsConnections() int64 {
 	if o == nil || o.DdosActionLimitStreamsConnections == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DdosActionLimitStreamsConnections
@@ -7335,7 +7335,7 @@ func (o *RealtimeEntryAggregated) GetDdosActionLimitStreamsConnections() int32 {
 
 // GetDdosActionLimitStreamsConnectionsOk returns a tuple with the DdosActionLimitStreamsConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetDdosActionLimitStreamsConnectionsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetDdosActionLimitStreamsConnectionsOk() (*int64, bool) {
 	if o == nil || o.DdosActionLimitStreamsConnections == nil {
 		return nil, false
 	}
@@ -7351,15 +7351,15 @@ func (o *RealtimeEntryAggregated) HasDdosActionLimitStreamsConnections() bool {
 	return false
 }
 
-// SetDdosActionLimitStreamsConnections gets a reference to the given int32 and assigns it to the DdosActionLimitStreamsConnections field.
-func (o *RealtimeEntryAggregated) SetDdosActionLimitStreamsConnections(v int32) {
+// SetDdosActionLimitStreamsConnections gets a reference to the given int64 and assigns it to the DdosActionLimitStreamsConnections field.
+func (o *RealtimeEntryAggregated) SetDdosActionLimitStreamsConnections(v int64) {
 	o.DdosActionLimitStreamsConnections = &v
 }
 
 // GetDdosActionLimitStreamsRequests returns the DdosActionLimitStreamsRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetDdosActionLimitStreamsRequests() int32 {
+func (o *RealtimeEntryAggregated) GetDdosActionLimitStreamsRequests() int64 {
 	if o == nil || o.DdosActionLimitStreamsRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DdosActionLimitStreamsRequests
@@ -7367,7 +7367,7 @@ func (o *RealtimeEntryAggregated) GetDdosActionLimitStreamsRequests() int32 {
 
 // GetDdosActionLimitStreamsRequestsOk returns a tuple with the DdosActionLimitStreamsRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetDdosActionLimitStreamsRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetDdosActionLimitStreamsRequestsOk() (*int64, bool) {
 	if o == nil || o.DdosActionLimitStreamsRequests == nil {
 		return nil, false
 	}
@@ -7383,15 +7383,15 @@ func (o *RealtimeEntryAggregated) HasDdosActionLimitStreamsRequests() bool {
 	return false
 }
 
-// SetDdosActionLimitStreamsRequests gets a reference to the given int32 and assigns it to the DdosActionLimitStreamsRequests field.
-func (o *RealtimeEntryAggregated) SetDdosActionLimitStreamsRequests(v int32) {
+// SetDdosActionLimitStreamsRequests gets a reference to the given int64 and assigns it to the DdosActionLimitStreamsRequests field.
+func (o *RealtimeEntryAggregated) SetDdosActionLimitStreamsRequests(v int64) {
 	o.DdosActionLimitStreamsRequests = &v
 }
 
 // GetDdosActionTarpitAccept returns the DdosActionTarpitAccept field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetDdosActionTarpitAccept() int32 {
+func (o *RealtimeEntryAggregated) GetDdosActionTarpitAccept() int64 {
 	if o == nil || o.DdosActionTarpitAccept == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DdosActionTarpitAccept
@@ -7399,7 +7399,7 @@ func (o *RealtimeEntryAggregated) GetDdosActionTarpitAccept() int32 {
 
 // GetDdosActionTarpitAcceptOk returns a tuple with the DdosActionTarpitAccept field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetDdosActionTarpitAcceptOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetDdosActionTarpitAcceptOk() (*int64, bool) {
 	if o == nil || o.DdosActionTarpitAccept == nil {
 		return nil, false
 	}
@@ -7415,15 +7415,15 @@ func (o *RealtimeEntryAggregated) HasDdosActionTarpitAccept() bool {
 	return false
 }
 
-// SetDdosActionTarpitAccept gets a reference to the given int32 and assigns it to the DdosActionTarpitAccept field.
-func (o *RealtimeEntryAggregated) SetDdosActionTarpitAccept(v int32) {
+// SetDdosActionTarpitAccept gets a reference to the given int64 and assigns it to the DdosActionTarpitAccept field.
+func (o *RealtimeEntryAggregated) SetDdosActionTarpitAccept(v int64) {
 	o.DdosActionTarpitAccept = &v
 }
 
 // GetDdosActionTarpit returns the DdosActionTarpit field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetDdosActionTarpit() int32 {
+func (o *RealtimeEntryAggregated) GetDdosActionTarpit() int64 {
 	if o == nil || o.DdosActionTarpit == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DdosActionTarpit
@@ -7431,7 +7431,7 @@ func (o *RealtimeEntryAggregated) GetDdosActionTarpit() int32 {
 
 // GetDdosActionTarpitOk returns a tuple with the DdosActionTarpit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetDdosActionTarpitOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetDdosActionTarpitOk() (*int64, bool) {
 	if o == nil || o.DdosActionTarpit == nil {
 		return nil, false
 	}
@@ -7447,15 +7447,15 @@ func (o *RealtimeEntryAggregated) HasDdosActionTarpit() bool {
 	return false
 }
 
-// SetDdosActionTarpit gets a reference to the given int32 and assigns it to the DdosActionTarpit field.
-func (o *RealtimeEntryAggregated) SetDdosActionTarpit(v int32) {
+// SetDdosActionTarpit gets a reference to the given int64 and assigns it to the DdosActionTarpit field.
+func (o *RealtimeEntryAggregated) SetDdosActionTarpit(v int64) {
 	o.DdosActionTarpit = &v
 }
 
 // GetDdosActionClose returns the DdosActionClose field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetDdosActionClose() int32 {
+func (o *RealtimeEntryAggregated) GetDdosActionClose() int64 {
 	if o == nil || o.DdosActionClose == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DdosActionClose
@@ -7463,7 +7463,7 @@ func (o *RealtimeEntryAggregated) GetDdosActionClose() int32 {
 
 // GetDdosActionCloseOk returns a tuple with the DdosActionClose field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetDdosActionCloseOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetDdosActionCloseOk() (*int64, bool) {
 	if o == nil || o.DdosActionClose == nil {
 		return nil, false
 	}
@@ -7479,15 +7479,15 @@ func (o *RealtimeEntryAggregated) HasDdosActionClose() bool {
 	return false
 }
 
-// SetDdosActionClose gets a reference to the given int32 and assigns it to the DdosActionClose field.
-func (o *RealtimeEntryAggregated) SetDdosActionClose(v int32) {
+// SetDdosActionClose gets a reference to the given int64 and assigns it to the DdosActionClose field.
+func (o *RealtimeEntryAggregated) SetDdosActionClose(v int64) {
 	o.DdosActionClose = &v
 }
 
 // GetDdosActionBlackhole returns the DdosActionBlackhole field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetDdosActionBlackhole() int32 {
+func (o *RealtimeEntryAggregated) GetDdosActionBlackhole() int64 {
 	if o == nil || o.DdosActionBlackhole == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DdosActionBlackhole
@@ -7495,7 +7495,7 @@ func (o *RealtimeEntryAggregated) GetDdosActionBlackhole() int32 {
 
 // GetDdosActionBlackholeOk returns a tuple with the DdosActionBlackhole field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetDdosActionBlackholeOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetDdosActionBlackholeOk() (*int64, bool) {
 	if o == nil || o.DdosActionBlackhole == nil {
 		return nil, false
 	}
@@ -7511,15 +7511,15 @@ func (o *RealtimeEntryAggregated) HasDdosActionBlackhole() bool {
 	return false
 }
 
-// SetDdosActionBlackhole gets a reference to the given int32 and assigns it to the DdosActionBlackhole field.
-func (o *RealtimeEntryAggregated) SetDdosActionBlackhole(v int32) {
+// SetDdosActionBlackhole gets a reference to the given int64 and assigns it to the DdosActionBlackhole field.
+func (o *RealtimeEntryAggregated) SetDdosActionBlackhole(v int64) {
 	o.DdosActionBlackhole = &v
 }
 
 // GetBotChallengeStarts returns the BotChallengeStarts field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetBotChallengeStarts() int32 {
+func (o *RealtimeEntryAggregated) GetBotChallengeStarts() int64 {
 	if o == nil || o.BotChallengeStarts == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BotChallengeStarts
@@ -7527,7 +7527,7 @@ func (o *RealtimeEntryAggregated) GetBotChallengeStarts() int32 {
 
 // GetBotChallengeStartsOk returns a tuple with the BotChallengeStarts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetBotChallengeStartsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetBotChallengeStartsOk() (*int64, bool) {
 	if o == nil || o.BotChallengeStarts == nil {
 		return nil, false
 	}
@@ -7543,15 +7543,15 @@ func (o *RealtimeEntryAggregated) HasBotChallengeStarts() bool {
 	return false
 }
 
-// SetBotChallengeStarts gets a reference to the given int32 and assigns it to the BotChallengeStarts field.
-func (o *RealtimeEntryAggregated) SetBotChallengeStarts(v int32) {
+// SetBotChallengeStarts gets a reference to the given int64 and assigns it to the BotChallengeStarts field.
+func (o *RealtimeEntryAggregated) SetBotChallengeStarts(v int64) {
 	o.BotChallengeStarts = &v
 }
 
 // GetBotChallengeCompleteTokensPassed returns the BotChallengeCompleteTokensPassed field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensPassed() int32 {
+func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensPassed() int64 {
 	if o == nil || o.BotChallengeCompleteTokensPassed == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BotChallengeCompleteTokensPassed
@@ -7559,7 +7559,7 @@ func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensPassed() int32 {
 
 // GetBotChallengeCompleteTokensPassedOk returns a tuple with the BotChallengeCompleteTokensPassed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensPassedOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensPassedOk() (*int64, bool) {
 	if o == nil || o.BotChallengeCompleteTokensPassed == nil {
 		return nil, false
 	}
@@ -7575,15 +7575,15 @@ func (o *RealtimeEntryAggregated) HasBotChallengeCompleteTokensPassed() bool {
 	return false
 }
 
-// SetBotChallengeCompleteTokensPassed gets a reference to the given int32 and assigns it to the BotChallengeCompleteTokensPassed field.
-func (o *RealtimeEntryAggregated) SetBotChallengeCompleteTokensPassed(v int32) {
+// SetBotChallengeCompleteTokensPassed gets a reference to the given int64 and assigns it to the BotChallengeCompleteTokensPassed field.
+func (o *RealtimeEntryAggregated) SetBotChallengeCompleteTokensPassed(v int64) {
 	o.BotChallengeCompleteTokensPassed = &v
 }
 
 // GetBotChallengeCompleteTokensFailed returns the BotChallengeCompleteTokensFailed field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensFailed() int32 {
+func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensFailed() int64 {
 	if o == nil || o.BotChallengeCompleteTokensFailed == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BotChallengeCompleteTokensFailed
@@ -7591,7 +7591,7 @@ func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensFailed() int32 {
 
 // GetBotChallengeCompleteTokensFailedOk returns a tuple with the BotChallengeCompleteTokensFailed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensFailedOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensFailedOk() (*int64, bool) {
 	if o == nil || o.BotChallengeCompleteTokensFailed == nil {
 		return nil, false
 	}
@@ -7607,15 +7607,15 @@ func (o *RealtimeEntryAggregated) HasBotChallengeCompleteTokensFailed() bool {
 	return false
 }
 
-// SetBotChallengeCompleteTokensFailed gets a reference to the given int32 and assigns it to the BotChallengeCompleteTokensFailed field.
-func (o *RealtimeEntryAggregated) SetBotChallengeCompleteTokensFailed(v int32) {
+// SetBotChallengeCompleteTokensFailed gets a reference to the given int64 and assigns it to the BotChallengeCompleteTokensFailed field.
+func (o *RealtimeEntryAggregated) SetBotChallengeCompleteTokensFailed(v int64) {
 	o.BotChallengeCompleteTokensFailed = &v
 }
 
 // GetBotChallengeCompleteTokensChecked returns the BotChallengeCompleteTokensChecked field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensChecked() int32 {
+func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensChecked() int64 {
 	if o == nil || o.BotChallengeCompleteTokensChecked == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BotChallengeCompleteTokensChecked
@@ -7623,7 +7623,7 @@ func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensChecked() int32 {
 
 // GetBotChallengeCompleteTokensCheckedOk returns a tuple with the BotChallengeCompleteTokensChecked field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensCheckedOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensCheckedOk() (*int64, bool) {
 	if o == nil || o.BotChallengeCompleteTokensChecked == nil {
 		return nil, false
 	}
@@ -7639,15 +7639,15 @@ func (o *RealtimeEntryAggregated) HasBotChallengeCompleteTokensChecked() bool {
 	return false
 }
 
-// SetBotChallengeCompleteTokensChecked gets a reference to the given int32 and assigns it to the BotChallengeCompleteTokensChecked field.
-func (o *RealtimeEntryAggregated) SetBotChallengeCompleteTokensChecked(v int32) {
+// SetBotChallengeCompleteTokensChecked gets a reference to the given int64 and assigns it to the BotChallengeCompleteTokensChecked field.
+func (o *RealtimeEntryAggregated) SetBotChallengeCompleteTokensChecked(v int64) {
 	o.BotChallengeCompleteTokensChecked = &v
 }
 
 // GetBotChallengeCompleteTokensDisabled returns the BotChallengeCompleteTokensDisabled field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensDisabled() int32 {
+func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensDisabled() int64 {
 	if o == nil || o.BotChallengeCompleteTokensDisabled == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BotChallengeCompleteTokensDisabled
@@ -7655,7 +7655,7 @@ func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensDisabled() int32 
 
 // GetBotChallengeCompleteTokensDisabledOk returns a tuple with the BotChallengeCompleteTokensDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensDisabledOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensDisabledOk() (*int64, bool) {
 	if o == nil || o.BotChallengeCompleteTokensDisabled == nil {
 		return nil, false
 	}
@@ -7671,15 +7671,15 @@ func (o *RealtimeEntryAggregated) HasBotChallengeCompleteTokensDisabled() bool {
 	return false
 }
 
-// SetBotChallengeCompleteTokensDisabled gets a reference to the given int32 and assigns it to the BotChallengeCompleteTokensDisabled field.
-func (o *RealtimeEntryAggregated) SetBotChallengeCompleteTokensDisabled(v int32) {
+// SetBotChallengeCompleteTokensDisabled gets a reference to the given int64 and assigns it to the BotChallengeCompleteTokensDisabled field.
+func (o *RealtimeEntryAggregated) SetBotChallengeCompleteTokensDisabled(v int64) {
 	o.BotChallengeCompleteTokensDisabled = &v
 }
 
 // GetBotChallengesIssued returns the BotChallengesIssued field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetBotChallengesIssued() int32 {
+func (o *RealtimeEntryAggregated) GetBotChallengesIssued() int64 {
 	if o == nil || o.BotChallengesIssued == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BotChallengesIssued
@@ -7687,7 +7687,7 @@ func (o *RealtimeEntryAggregated) GetBotChallengesIssued() int32 {
 
 // GetBotChallengesIssuedOk returns a tuple with the BotChallengesIssued field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetBotChallengesIssuedOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetBotChallengesIssuedOk() (*int64, bool) {
 	if o == nil || o.BotChallengesIssued == nil {
 		return nil, false
 	}
@@ -7703,15 +7703,15 @@ func (o *RealtimeEntryAggregated) HasBotChallengesIssued() bool {
 	return false
 }
 
-// SetBotChallengesIssued gets a reference to the given int32 and assigns it to the BotChallengesIssued field.
-func (o *RealtimeEntryAggregated) SetBotChallengesIssued(v int32) {
+// SetBotChallengesIssued gets a reference to the given int64 and assigns it to the BotChallengesIssued field.
+func (o *RealtimeEntryAggregated) SetBotChallengesIssued(v int64) {
 	o.BotChallengesIssued = &v
 }
 
 // GetBotChallengesSucceeded returns the BotChallengesSucceeded field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetBotChallengesSucceeded() int32 {
+func (o *RealtimeEntryAggregated) GetBotChallengesSucceeded() int64 {
 	if o == nil || o.BotChallengesSucceeded == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BotChallengesSucceeded
@@ -7719,7 +7719,7 @@ func (o *RealtimeEntryAggregated) GetBotChallengesSucceeded() int32 {
 
 // GetBotChallengesSucceededOk returns a tuple with the BotChallengesSucceeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetBotChallengesSucceededOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetBotChallengesSucceededOk() (*int64, bool) {
 	if o == nil || o.BotChallengesSucceeded == nil {
 		return nil, false
 	}
@@ -7735,15 +7735,15 @@ func (o *RealtimeEntryAggregated) HasBotChallengesSucceeded() bool {
 	return false
 }
 
-// SetBotChallengesSucceeded gets a reference to the given int32 and assigns it to the BotChallengesSucceeded field.
-func (o *RealtimeEntryAggregated) SetBotChallengesSucceeded(v int32) {
+// SetBotChallengesSucceeded gets a reference to the given int64 and assigns it to the BotChallengesSucceeded field.
+func (o *RealtimeEntryAggregated) SetBotChallengesSucceeded(v int64) {
 	o.BotChallengesSucceeded = &v
 }
 
 // GetBotChallengesFailed returns the BotChallengesFailed field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetBotChallengesFailed() int32 {
+func (o *RealtimeEntryAggregated) GetBotChallengesFailed() int64 {
 	if o == nil || o.BotChallengesFailed == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BotChallengesFailed
@@ -7751,7 +7751,7 @@ func (o *RealtimeEntryAggregated) GetBotChallengesFailed() int32 {
 
 // GetBotChallengesFailedOk returns a tuple with the BotChallengesFailed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetBotChallengesFailedOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetBotChallengesFailedOk() (*int64, bool) {
 	if o == nil || o.BotChallengesFailed == nil {
 		return nil, false
 	}
@@ -7767,15 +7767,15 @@ func (o *RealtimeEntryAggregated) HasBotChallengesFailed() bool {
 	return false
 }
 
-// SetBotChallengesFailed gets a reference to the given int32 and assigns it to the BotChallengesFailed field.
-func (o *RealtimeEntryAggregated) SetBotChallengesFailed(v int32) {
+// SetBotChallengesFailed gets a reference to the given int64 and assigns it to the BotChallengesFailed field.
+func (o *RealtimeEntryAggregated) SetBotChallengesFailed(v int64) {
 	o.BotChallengesFailed = &v
 }
 
 // GetBotChallengeCompleteTokensIssued returns the BotChallengeCompleteTokensIssued field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensIssued() int32 {
+func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensIssued() int64 {
 	if o == nil || o.BotChallengeCompleteTokensIssued == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BotChallengeCompleteTokensIssued
@@ -7783,7 +7783,7 @@ func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensIssued() int32 {
 
 // GetBotChallengeCompleteTokensIssuedOk returns a tuple with the BotChallengeCompleteTokensIssued field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensIssuedOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetBotChallengeCompleteTokensIssuedOk() (*int64, bool) {
 	if o == nil || o.BotChallengeCompleteTokensIssued == nil {
 		return nil, false
 	}
@@ -7799,15 +7799,15 @@ func (o *RealtimeEntryAggregated) HasBotChallengeCompleteTokensIssued() bool {
 	return false
 }
 
-// SetBotChallengeCompleteTokensIssued gets a reference to the given int32 and assigns it to the BotChallengeCompleteTokensIssued field.
-func (o *RealtimeEntryAggregated) SetBotChallengeCompleteTokensIssued(v int32) {
+// SetBotChallengeCompleteTokensIssued gets a reference to the given int64 and assigns it to the BotChallengeCompleteTokensIssued field.
+func (o *RealtimeEntryAggregated) SetBotChallengeCompleteTokensIssued(v int64) {
 	o.BotChallengeCompleteTokensIssued = &v
 }
 
 // GetDdosActionDowngrade returns the DdosActionDowngrade field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetDdosActionDowngrade() int32 {
+func (o *RealtimeEntryAggregated) GetDdosActionDowngrade() int64 {
 	if o == nil || o.DdosActionDowngrade == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DdosActionDowngrade
@@ -7815,7 +7815,7 @@ func (o *RealtimeEntryAggregated) GetDdosActionDowngrade() int32 {
 
 // GetDdosActionDowngradeOk returns a tuple with the DdosActionDowngrade field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetDdosActionDowngradeOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetDdosActionDowngradeOk() (*int64, bool) {
 	if o == nil || o.DdosActionDowngrade == nil {
 		return nil, false
 	}
@@ -7831,15 +7831,15 @@ func (o *RealtimeEntryAggregated) HasDdosActionDowngrade() bool {
 	return false
 }
 
-// SetDdosActionDowngrade gets a reference to the given int32 and assigns it to the DdosActionDowngrade field.
-func (o *RealtimeEntryAggregated) SetDdosActionDowngrade(v int32) {
+// SetDdosActionDowngrade gets a reference to the given int64 and assigns it to the DdosActionDowngrade field.
+func (o *RealtimeEntryAggregated) SetDdosActionDowngrade(v int64) {
 	o.DdosActionDowngrade = &v
 }
 
 // GetDdosActionDowngradedConnections returns the DdosActionDowngradedConnections field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetDdosActionDowngradedConnections() int32 {
+func (o *RealtimeEntryAggregated) GetDdosActionDowngradedConnections() int64 {
 	if o == nil || o.DdosActionDowngradedConnections == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.DdosActionDowngradedConnections
@@ -7847,7 +7847,7 @@ func (o *RealtimeEntryAggregated) GetDdosActionDowngradedConnections() int32 {
 
 // GetDdosActionDowngradedConnectionsOk returns a tuple with the DdosActionDowngradedConnections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetDdosActionDowngradedConnectionsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetDdosActionDowngradedConnectionsOk() (*int64, bool) {
 	if o == nil || o.DdosActionDowngradedConnections == nil {
 		return nil, false
 	}
@@ -7863,15 +7863,15 @@ func (o *RealtimeEntryAggregated) HasDdosActionDowngradedConnections() bool {
 	return false
 }
 
-// SetDdosActionDowngradedConnections gets a reference to the given int32 and assigns it to the DdosActionDowngradedConnections field.
-func (o *RealtimeEntryAggregated) SetDdosActionDowngradedConnections(v int32) {
+// SetDdosActionDowngradedConnections gets a reference to the given int64 and assigns it to the DdosActionDowngradedConnections field.
+func (o *RealtimeEntryAggregated) SetDdosActionDowngradedConnections(v int64) {
 	o.DdosActionDowngradedConnections = &v
 }
 
 // GetAllHitRequests returns the AllHitRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAllHitRequests() int32 {
+func (o *RealtimeEntryAggregated) GetAllHitRequests() int64 {
 	if o == nil || o.AllHitRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllHitRequests
@@ -7879,7 +7879,7 @@ func (o *RealtimeEntryAggregated) GetAllHitRequests() int32 {
 
 // GetAllHitRequestsOk returns a tuple with the AllHitRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAllHitRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAllHitRequestsOk() (*int64, bool) {
 	if o == nil || o.AllHitRequests == nil {
 		return nil, false
 	}
@@ -7895,15 +7895,15 @@ func (o *RealtimeEntryAggregated) HasAllHitRequests() bool {
 	return false
 }
 
-// SetAllHitRequests gets a reference to the given int32 and assigns it to the AllHitRequests field.
-func (o *RealtimeEntryAggregated) SetAllHitRequests(v int32) {
+// SetAllHitRequests gets a reference to the given int64 and assigns it to the AllHitRequests field.
+func (o *RealtimeEntryAggregated) SetAllHitRequests(v int64) {
 	o.AllHitRequests = &v
 }
 
 // GetAllMissRequests returns the AllMissRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAllMissRequests() int32 {
+func (o *RealtimeEntryAggregated) GetAllMissRequests() int64 {
 	if o == nil || o.AllMissRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllMissRequests
@@ -7911,7 +7911,7 @@ func (o *RealtimeEntryAggregated) GetAllMissRequests() int32 {
 
 // GetAllMissRequestsOk returns a tuple with the AllMissRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAllMissRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAllMissRequestsOk() (*int64, bool) {
 	if o == nil || o.AllMissRequests == nil {
 		return nil, false
 	}
@@ -7927,15 +7927,15 @@ func (o *RealtimeEntryAggregated) HasAllMissRequests() bool {
 	return false
 }
 
-// SetAllMissRequests gets a reference to the given int32 and assigns it to the AllMissRequests field.
-func (o *RealtimeEntryAggregated) SetAllMissRequests(v int32) {
+// SetAllMissRequests gets a reference to the given int64 and assigns it to the AllMissRequests field.
+func (o *RealtimeEntryAggregated) SetAllMissRequests(v int64) {
 	o.AllMissRequests = &v
 }
 
 // GetAllPassRequests returns the AllPassRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAllPassRequests() int32 {
+func (o *RealtimeEntryAggregated) GetAllPassRequests() int64 {
 	if o == nil || o.AllPassRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllPassRequests
@@ -7943,7 +7943,7 @@ func (o *RealtimeEntryAggregated) GetAllPassRequests() int32 {
 
 // GetAllPassRequestsOk returns a tuple with the AllPassRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAllPassRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAllPassRequestsOk() (*int64, bool) {
 	if o == nil || o.AllPassRequests == nil {
 		return nil, false
 	}
@@ -7959,15 +7959,15 @@ func (o *RealtimeEntryAggregated) HasAllPassRequests() bool {
 	return false
 }
 
-// SetAllPassRequests gets a reference to the given int32 and assigns it to the AllPassRequests field.
-func (o *RealtimeEntryAggregated) SetAllPassRequests(v int32) {
+// SetAllPassRequests gets a reference to the given int64 and assigns it to the AllPassRequests field.
+func (o *RealtimeEntryAggregated) SetAllPassRequests(v int64) {
 	o.AllPassRequests = &v
 }
 
 // GetAllErrorRequests returns the AllErrorRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAllErrorRequests() int32 {
+func (o *RealtimeEntryAggregated) GetAllErrorRequests() int64 {
 	if o == nil || o.AllErrorRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllErrorRequests
@@ -7975,7 +7975,7 @@ func (o *RealtimeEntryAggregated) GetAllErrorRequests() int32 {
 
 // GetAllErrorRequestsOk returns a tuple with the AllErrorRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAllErrorRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAllErrorRequestsOk() (*int64, bool) {
 	if o == nil || o.AllErrorRequests == nil {
 		return nil, false
 	}
@@ -7991,15 +7991,15 @@ func (o *RealtimeEntryAggregated) HasAllErrorRequests() bool {
 	return false
 }
 
-// SetAllErrorRequests gets a reference to the given int32 and assigns it to the AllErrorRequests field.
-func (o *RealtimeEntryAggregated) SetAllErrorRequests(v int32) {
+// SetAllErrorRequests gets a reference to the given int64 and assigns it to the AllErrorRequests field.
+func (o *RealtimeEntryAggregated) SetAllErrorRequests(v int64) {
 	o.AllErrorRequests = &v
 }
 
 // GetAllSynthRequests returns the AllSynthRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAllSynthRequests() int32 {
+func (o *RealtimeEntryAggregated) GetAllSynthRequests() int64 {
 	if o == nil || o.AllSynthRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllSynthRequests
@@ -8007,7 +8007,7 @@ func (o *RealtimeEntryAggregated) GetAllSynthRequests() int32 {
 
 // GetAllSynthRequestsOk returns a tuple with the AllSynthRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAllSynthRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAllSynthRequestsOk() (*int64, bool) {
 	if o == nil || o.AllSynthRequests == nil {
 		return nil, false
 	}
@@ -8023,15 +8023,15 @@ func (o *RealtimeEntryAggregated) HasAllSynthRequests() bool {
 	return false
 }
 
-// SetAllSynthRequests gets a reference to the given int32 and assigns it to the AllSynthRequests field.
-func (o *RealtimeEntryAggregated) SetAllSynthRequests(v int32) {
+// SetAllSynthRequests gets a reference to the given int64 and assigns it to the AllSynthRequests field.
+func (o *RealtimeEntryAggregated) SetAllSynthRequests(v int64) {
 	o.AllSynthRequests = &v
 }
 
 // GetAllEdgeHitRequests returns the AllEdgeHitRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAllEdgeHitRequests() int32 {
+func (o *RealtimeEntryAggregated) GetAllEdgeHitRequests() int64 {
 	if o == nil || o.AllEdgeHitRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllEdgeHitRequests
@@ -8039,7 +8039,7 @@ func (o *RealtimeEntryAggregated) GetAllEdgeHitRequests() int32 {
 
 // GetAllEdgeHitRequestsOk returns a tuple with the AllEdgeHitRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAllEdgeHitRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAllEdgeHitRequestsOk() (*int64, bool) {
 	if o == nil || o.AllEdgeHitRequests == nil {
 		return nil, false
 	}
@@ -8055,15 +8055,15 @@ func (o *RealtimeEntryAggregated) HasAllEdgeHitRequests() bool {
 	return false
 }
 
-// SetAllEdgeHitRequests gets a reference to the given int32 and assigns it to the AllEdgeHitRequests field.
-func (o *RealtimeEntryAggregated) SetAllEdgeHitRequests(v int32) {
+// SetAllEdgeHitRequests gets a reference to the given int64 and assigns it to the AllEdgeHitRequests field.
+func (o *RealtimeEntryAggregated) SetAllEdgeHitRequests(v int64) {
 	o.AllEdgeHitRequests = &v
 }
 
 // GetAllEdgeMissRequests returns the AllEdgeMissRequests field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAllEdgeMissRequests() int32 {
+func (o *RealtimeEntryAggregated) GetAllEdgeMissRequests() int64 {
 	if o == nil || o.AllEdgeMissRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllEdgeMissRequests
@@ -8071,7 +8071,7 @@ func (o *RealtimeEntryAggregated) GetAllEdgeMissRequests() int32 {
 
 // GetAllEdgeMissRequestsOk returns a tuple with the AllEdgeMissRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAllEdgeMissRequestsOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAllEdgeMissRequestsOk() (*int64, bool) {
 	if o == nil || o.AllEdgeMissRequests == nil {
 		return nil, false
 	}
@@ -8087,15 +8087,15 @@ func (o *RealtimeEntryAggregated) HasAllEdgeMissRequests() bool {
 	return false
 }
 
-// SetAllEdgeMissRequests gets a reference to the given int32 and assigns it to the AllEdgeMissRequests field.
-func (o *RealtimeEntryAggregated) SetAllEdgeMissRequests(v int32) {
+// SetAllEdgeMissRequests gets a reference to the given int64 and assigns it to the AllEdgeMissRequests field.
+func (o *RealtimeEntryAggregated) SetAllEdgeMissRequests(v int64) {
 	o.AllEdgeMissRequests = &v
 }
 
 // GetAllStatus1xx returns the AllStatus1xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAllStatus1xx() int32 {
+func (o *RealtimeEntryAggregated) GetAllStatus1xx() int64 {
 	if o == nil || o.AllStatus1xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus1xx
@@ -8103,7 +8103,7 @@ func (o *RealtimeEntryAggregated) GetAllStatus1xx() int32 {
 
 // GetAllStatus1xxOk returns a tuple with the AllStatus1xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAllStatus1xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAllStatus1xxOk() (*int64, bool) {
 	if o == nil || o.AllStatus1xx == nil {
 		return nil, false
 	}
@@ -8119,15 +8119,15 @@ func (o *RealtimeEntryAggregated) HasAllStatus1xx() bool {
 	return false
 }
 
-// SetAllStatus1xx gets a reference to the given int32 and assigns it to the AllStatus1xx field.
-func (o *RealtimeEntryAggregated) SetAllStatus1xx(v int32) {
+// SetAllStatus1xx gets a reference to the given int64 and assigns it to the AllStatus1xx field.
+func (o *RealtimeEntryAggregated) SetAllStatus1xx(v int64) {
 	o.AllStatus1xx = &v
 }
 
 // GetAllStatus2xx returns the AllStatus2xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAllStatus2xx() int32 {
+func (o *RealtimeEntryAggregated) GetAllStatus2xx() int64 {
 	if o == nil || o.AllStatus2xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus2xx
@@ -8135,7 +8135,7 @@ func (o *RealtimeEntryAggregated) GetAllStatus2xx() int32 {
 
 // GetAllStatus2xxOk returns a tuple with the AllStatus2xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAllStatus2xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAllStatus2xxOk() (*int64, bool) {
 	if o == nil || o.AllStatus2xx == nil {
 		return nil, false
 	}
@@ -8151,15 +8151,15 @@ func (o *RealtimeEntryAggregated) HasAllStatus2xx() bool {
 	return false
 }
 
-// SetAllStatus2xx gets a reference to the given int32 and assigns it to the AllStatus2xx field.
-func (o *RealtimeEntryAggregated) SetAllStatus2xx(v int32) {
+// SetAllStatus2xx gets a reference to the given int64 and assigns it to the AllStatus2xx field.
+func (o *RealtimeEntryAggregated) SetAllStatus2xx(v int64) {
 	o.AllStatus2xx = &v
 }
 
 // GetAllStatus3xx returns the AllStatus3xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAllStatus3xx() int32 {
+func (o *RealtimeEntryAggregated) GetAllStatus3xx() int64 {
 	if o == nil || o.AllStatus3xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus3xx
@@ -8167,7 +8167,7 @@ func (o *RealtimeEntryAggregated) GetAllStatus3xx() int32 {
 
 // GetAllStatus3xxOk returns a tuple with the AllStatus3xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAllStatus3xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAllStatus3xxOk() (*int64, bool) {
 	if o == nil || o.AllStatus3xx == nil {
 		return nil, false
 	}
@@ -8183,15 +8183,15 @@ func (o *RealtimeEntryAggregated) HasAllStatus3xx() bool {
 	return false
 }
 
-// SetAllStatus3xx gets a reference to the given int32 and assigns it to the AllStatus3xx field.
-func (o *RealtimeEntryAggregated) SetAllStatus3xx(v int32) {
+// SetAllStatus3xx gets a reference to the given int64 and assigns it to the AllStatus3xx field.
+func (o *RealtimeEntryAggregated) SetAllStatus3xx(v int64) {
 	o.AllStatus3xx = &v
 }
 
 // GetAllStatus4xx returns the AllStatus4xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAllStatus4xx() int32 {
+func (o *RealtimeEntryAggregated) GetAllStatus4xx() int64 {
 	if o == nil || o.AllStatus4xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus4xx
@@ -8199,7 +8199,7 @@ func (o *RealtimeEntryAggregated) GetAllStatus4xx() int32 {
 
 // GetAllStatus4xxOk returns a tuple with the AllStatus4xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAllStatus4xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAllStatus4xxOk() (*int64, bool) {
 	if o == nil || o.AllStatus4xx == nil {
 		return nil, false
 	}
@@ -8215,15 +8215,15 @@ func (o *RealtimeEntryAggregated) HasAllStatus4xx() bool {
 	return false
 }
 
-// SetAllStatus4xx gets a reference to the given int32 and assigns it to the AllStatus4xx field.
-func (o *RealtimeEntryAggregated) SetAllStatus4xx(v int32) {
+// SetAllStatus4xx gets a reference to the given int64 and assigns it to the AllStatus4xx field.
+func (o *RealtimeEntryAggregated) SetAllStatus4xx(v int64) {
 	o.AllStatus4xx = &v
 }
 
 // GetAllStatus5xx returns the AllStatus5xx field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetAllStatus5xx() int32 {
+func (o *RealtimeEntryAggregated) GetAllStatus5xx() int64 {
 	if o == nil || o.AllStatus5xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus5xx
@@ -8231,7 +8231,7 @@ func (o *RealtimeEntryAggregated) GetAllStatus5xx() int32 {
 
 // GetAllStatus5xxOk returns a tuple with the AllStatus5xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetAllStatus5xxOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetAllStatus5xxOk() (*int64, bool) {
 	if o == nil || o.AllStatus5xx == nil {
 		return nil, false
 	}
@@ -8247,8 +8247,8 @@ func (o *RealtimeEntryAggregated) HasAllStatus5xx() bool {
 	return false
 }
 
-// SetAllStatus5xx gets a reference to the given int32 and assigns it to the AllStatus5xx field.
-func (o *RealtimeEntryAggregated) SetAllStatus5xx(v int32) {
+// SetAllStatus5xx gets a reference to the given int64 and assigns it to the AllStatus5xx field.
+func (o *RealtimeEntryAggregated) SetAllStatus5xx(v int64) {
 	o.AllStatus5xx = &v
 }
 
@@ -8285,9 +8285,9 @@ func (o *RealtimeEntryAggregated) SetOriginOffload(v float32) {
 }
 
 // GetRequestDeniedGetHeadBody returns the RequestDeniedGetHeadBody field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetRequestDeniedGetHeadBody() int32 {
+func (o *RealtimeEntryAggregated) GetRequestDeniedGetHeadBody() int64 {
 	if o == nil || o.RequestDeniedGetHeadBody == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RequestDeniedGetHeadBody
@@ -8295,7 +8295,7 @@ func (o *RealtimeEntryAggregated) GetRequestDeniedGetHeadBody() int32 {
 
 // GetRequestDeniedGetHeadBodyOk returns a tuple with the RequestDeniedGetHeadBody field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetRequestDeniedGetHeadBodyOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetRequestDeniedGetHeadBodyOk() (*int64, bool) {
 	if o == nil || o.RequestDeniedGetHeadBody == nil {
 		return nil, false
 	}
@@ -8311,15 +8311,15 @@ func (o *RealtimeEntryAggregated) HasRequestDeniedGetHeadBody() bool {
 	return false
 }
 
-// SetRequestDeniedGetHeadBody gets a reference to the given int32 and assigns it to the RequestDeniedGetHeadBody field.
-func (o *RealtimeEntryAggregated) SetRequestDeniedGetHeadBody(v int32) {
+// SetRequestDeniedGetHeadBody gets a reference to the given int64 and assigns it to the RequestDeniedGetHeadBody field.
+func (o *RealtimeEntryAggregated) SetRequestDeniedGetHeadBody(v int64) {
 	o.RequestDeniedGetHeadBody = &v
 }
 
 // GetServiceDdosRequestsDetected returns the ServiceDdosRequestsDetected field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetServiceDdosRequestsDetected() int32 {
+func (o *RealtimeEntryAggregated) GetServiceDdosRequestsDetected() int64 {
 	if o == nil || o.ServiceDdosRequestsDetected == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServiceDdosRequestsDetected
@@ -8327,7 +8327,7 @@ func (o *RealtimeEntryAggregated) GetServiceDdosRequestsDetected() int32 {
 
 // GetServiceDdosRequestsDetectedOk returns a tuple with the ServiceDdosRequestsDetected field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetServiceDdosRequestsDetectedOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetServiceDdosRequestsDetectedOk() (*int64, bool) {
 	if o == nil || o.ServiceDdosRequestsDetected == nil {
 		return nil, false
 	}
@@ -8343,15 +8343,15 @@ func (o *RealtimeEntryAggregated) HasServiceDdosRequestsDetected() bool {
 	return false
 }
 
-// SetServiceDdosRequestsDetected gets a reference to the given int32 and assigns it to the ServiceDdosRequestsDetected field.
-func (o *RealtimeEntryAggregated) SetServiceDdosRequestsDetected(v int32) {
+// SetServiceDdosRequestsDetected gets a reference to the given int64 and assigns it to the ServiceDdosRequestsDetected field.
+func (o *RealtimeEntryAggregated) SetServiceDdosRequestsDetected(v int64) {
 	o.ServiceDdosRequestsDetected = &v
 }
 
 // GetServiceDdosRequestsMitigated returns the ServiceDdosRequestsMitigated field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetServiceDdosRequestsMitigated() int32 {
+func (o *RealtimeEntryAggregated) GetServiceDdosRequestsMitigated() int64 {
 	if o == nil || o.ServiceDdosRequestsMitigated == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServiceDdosRequestsMitigated
@@ -8359,7 +8359,7 @@ func (o *RealtimeEntryAggregated) GetServiceDdosRequestsMitigated() int32 {
 
 // GetServiceDdosRequestsMitigatedOk returns a tuple with the ServiceDdosRequestsMitigated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetServiceDdosRequestsMitigatedOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetServiceDdosRequestsMitigatedOk() (*int64, bool) {
 	if o == nil || o.ServiceDdosRequestsMitigated == nil {
 		return nil, false
 	}
@@ -8375,15 +8375,15 @@ func (o *RealtimeEntryAggregated) HasServiceDdosRequestsMitigated() bool {
 	return false
 }
 
-// SetServiceDdosRequestsMitigated gets a reference to the given int32 and assigns it to the ServiceDdosRequestsMitigated field.
-func (o *RealtimeEntryAggregated) SetServiceDdosRequestsMitigated(v int32) {
+// SetServiceDdosRequestsMitigated gets a reference to the given int64 and assigns it to the ServiceDdosRequestsMitigated field.
+func (o *RealtimeEntryAggregated) SetServiceDdosRequestsMitigated(v int64) {
 	o.ServiceDdosRequestsMitigated = &v
 }
 
 // GetServiceDdosRequestsAllowed returns the ServiceDdosRequestsAllowed field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetServiceDdosRequestsAllowed() int32 {
+func (o *RealtimeEntryAggregated) GetServiceDdosRequestsAllowed() int64 {
 	if o == nil || o.ServiceDdosRequestsAllowed == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ServiceDdosRequestsAllowed
@@ -8391,7 +8391,7 @@ func (o *RealtimeEntryAggregated) GetServiceDdosRequestsAllowed() int32 {
 
 // GetServiceDdosRequestsAllowedOk returns a tuple with the ServiceDdosRequestsAllowed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetServiceDdosRequestsAllowedOk() (*int32, bool) {
+func (o *RealtimeEntryAggregated) GetServiceDdosRequestsAllowedOk() (*int64, bool) {
 	if o == nil || o.ServiceDdosRequestsAllowed == nil {
 		return nil, false
 	}
@@ -8407,8 +8407,8 @@ func (o *RealtimeEntryAggregated) HasServiceDdosRequestsAllowed() bool {
 	return false
 }
 
-// SetServiceDdosRequestsAllowed gets a reference to the given int32 and assigns it to the ServiceDdosRequestsAllowed field.
-func (o *RealtimeEntryAggregated) SetServiceDdosRequestsAllowed(v int32) {
+// SetServiceDdosRequestsAllowed gets a reference to the given int64 and assigns it to the ServiceDdosRequestsAllowed field.
+func (o *RealtimeEntryAggregated) SetServiceDdosRequestsAllowed(v int64) {
 	o.ServiceDdosRequestsAllowed = &v
 }
 

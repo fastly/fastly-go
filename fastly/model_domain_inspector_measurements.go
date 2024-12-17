@@ -19,129 +19,129 @@ import (
 // DomainInspectorMeasurements A measurements object provides a count of the total number of `requests` received by Fastly for your domain in the reported time period and for the relevant POP, as specified in the [entry](#entry-data-model). It also includes the number of responses for specific HTTP response status codes and for status code ranges. This dataset is sparse: only the keys with non-zero values will be included in the record. Where a specific status code does not have a field in this model (e.g., `429 Too Many Requests`), any responses with that code will be counted as part of the range count (`4xx` in this case) but will not be separately identified in the data.
 type DomainInspectorMeasurements struct {
 	// Number of requests sent by end users to Fastly.
-	EdgeRequests *int32 `json:"edge_requests,omitempty"`
+	EdgeRequests *int64 `json:"edge_requests,omitempty"`
 	// Total header bytes delivered from Fastly to the end user.
-	EdgeRespHeaderBytes *int32 `json:"edge_resp_header_bytes,omitempty"`
+	EdgeRespHeaderBytes *int64 `json:"edge_resp_header_bytes,omitempty"`
 	// Total body bytes delivered from Fastly to the end user.
-	EdgeRespBodyBytes *int32 `json:"edge_resp_body_bytes,omitempty"`
+	EdgeRespBodyBytes *int64 `json:"edge_resp_body_bytes,omitempty"`
 	// Number of 1xx \"Informational\" category status codes delivered.
-	Status1xx *int32 `json:"status_1xx,omitempty"`
+	Status1xx *int64 `json:"status_1xx,omitempty"`
 	// Number of 2xx \"Success\" status codes delivered.
-	Status2xx *int32 `json:"status_2xx,omitempty"`
+	Status2xx *int64 `json:"status_2xx,omitempty"`
 	// Number of 3xx \"Redirection\" codes delivered.
-	Status3xx *int32 `json:"status_3xx,omitempty"`
+	Status3xx *int64 `json:"status_3xx,omitempty"`
 	// Number of 4xx \"Client Error\" codes delivered.
-	Status4xx *int32 `json:"status_4xx,omitempty"`
+	Status4xx *int64 `json:"status_4xx,omitempty"`
 	// Number of 5xx \"Server Error\" codes delivered.
-	Status5xx *int32 `json:"status_5xx,omitempty"`
+	Status5xx *int64 `json:"status_5xx,omitempty"`
 	// Number of responses delivered with status code 200 (Success).
-	Status200 *int32 `json:"status_200,omitempty"`
+	Status200 *int64 `json:"status_200,omitempty"`
 	// Number of responses delivered with status code 204 (No Content).
-	Status204 *int32 `json:"status_204,omitempty"`
+	Status204 *int64 `json:"status_204,omitempty"`
 	// Number of responses delivered with status code 206 (Partial Content).
-	Status206 *int32 `json:"status_206,omitempty"`
+	Status206 *int64 `json:"status_206,omitempty"`
 	// Number of responses delivered with status code 301 (Moved Permanently).
-	Status301 *int32 `json:"status_301,omitempty"`
+	Status301 *int64 `json:"status_301,omitempty"`
 	// Number of responses delivered with status code 302 (Found).
-	Status302 *int32 `json:"status_302,omitempty"`
+	Status302 *int64 `json:"status_302,omitempty"`
 	// Number of responses delivered with status code 304 (Not Modified).
-	Status304 *int32 `json:"status_304,omitempty"`
+	Status304 *int64 `json:"status_304,omitempty"`
 	// Number of responses delivered with status code 400 (Bad Request).
-	Status400 *int32 `json:"status_400,omitempty"`
+	Status400 *int64 `json:"status_400,omitempty"`
 	// Number of responses delivered with status code 401 (Unauthorized).
-	Status401 *int32 `json:"status_401,omitempty"`
+	Status401 *int64 `json:"status_401,omitempty"`
 	// Number of responses delivered with status code 403 (Forbidden).
-	Status403 *int32 `json:"status_403,omitempty"`
+	Status403 *int64 `json:"status_403,omitempty"`
 	// Number of responses delivered with status code 404 (Not Found).
-	Status404 *int32 `json:"status_404,omitempty"`
+	Status404 *int64 `json:"status_404,omitempty"`
 	// Number of responses delivered with status code 416 (Range Not Satisfiable).
-	Status416 *int32 `json:"status_416,omitempty"`
+	Status416 *int64 `json:"status_416,omitempty"`
 	// Number of responses delivered with status code 429 (Too Many Requests).
-	Status429 *int32 `json:"status_429,omitempty"`
+	Status429 *int64 `json:"status_429,omitempty"`
 	// Number of responses delivered with status code 500 (Internal Server Error).
-	Status500 *int32 `json:"status_500,omitempty"`
+	Status500 *int64 `json:"status_500,omitempty"`
 	// Number of responses delivered with status code 501 (Not Implemented).
-	Status501 *int32 `json:"status_501,omitempty"`
+	Status501 *int64 `json:"status_501,omitempty"`
 	// Number of responses delivered with status code 502 (Bad Gateway).
-	Status502 *int32 `json:"status_502,omitempty"`
+	Status502 *int64 `json:"status_502,omitempty"`
 	// Number of responses delivered with status code 503 (Service Unavailable).
-	Status503 *int32 `json:"status_503,omitempty"`
+	Status503 *int64 `json:"status_503,omitempty"`
 	// Number of responses delivered with status code 504 (Gateway Timeout).
-	Status504 *int32 `json:"status_504,omitempty"`
+	Status504 *int64 `json:"status_504,omitempty"`
 	// Number of responses delivered with status code 505 (HTTP Version Not Supported).
-	Status505 *int32 `json:"status_505,omitempty"`
+	Status505 *int64 `json:"status_505,omitempty"`
 	// Number of requests processed.
-	Requests *int32 `json:"requests,omitempty"`
+	Requests *int64 `json:"requests,omitempty"`
 	// Total header bytes delivered.
-	RespHeaderBytes *int32 `json:"resp_header_bytes,omitempty"`
+	RespHeaderBytes *int64 `json:"resp_header_bytes,omitempty"`
 	// Total body bytes delivered.
-	RespBodyBytes *int32 `json:"resp_body_bytes,omitempty"`
+	RespBodyBytes *int64 `json:"resp_body_bytes,omitempty"`
 	// Total header bytes sent to origin.
-	BereqHeaderBytes *int32 `json:"bereq_header_bytes,omitempty"`
+	BereqHeaderBytes *int64 `json:"bereq_header_bytes,omitempty"`
 	// Total body bytes sent to origin.
-	BereqBodyBytes *int32 `json:"bereq_body_bytes,omitempty"`
+	BereqBodyBytes *int64 `json:"bereq_body_bytes,omitempty"`
 	// Number of requests sent by end users to Fastly that resulted in a hit at the edge.
-	EdgeHitRequests *int32 `json:"edge_hit_requests,omitempty"`
+	EdgeHitRequests *int64 `json:"edge_hit_requests,omitempty"`
 	// Number of requests sent by end users to Fastly that resulted in a miss at the edge.
-	EdgeMissRequests *int32 `json:"edge_miss_requests,omitempty"`
+	EdgeMissRequests *int64 `json:"edge_miss_requests,omitempty"`
 	// Number of requests sent to origin.
-	OriginFetches *int32 `json:"origin_fetches,omitempty"`
+	OriginFetches *int64 `json:"origin_fetches,omitempty"`
 	// Total header bytes received from origin.
-	OriginFetchRespHeaderBytes *int32 `json:"origin_fetch_resp_header_bytes,omitempty"`
+	OriginFetchRespHeaderBytes *int64 `json:"origin_fetch_resp_header_bytes,omitempty"`
 	// Total body bytes received from origin.
-	OriginFetchRespBodyBytes *int32 `json:"origin_fetch_resp_body_bytes,omitempty"`
+	OriginFetchRespBodyBytes *int64 `json:"origin_fetch_resp_body_bytes,omitempty"`
 	// Total bytes delivered (`resp_header_bytes` + `resp_body_bytes` + `bereq_header_bytes` + `bereq_body_bytes`).
-	Bandwidth *int32 `json:"bandwidth,omitempty"`
+	Bandwidth *int64 `json:"bandwidth,omitempty"`
 	// Ratio of cache hits to cache misses at the edge, between 0 and 1 (`edge_hit_requests` / (`edge_hit_requests` + `edge_miss_requests`)).
 	EdgeHitRatio *float32 `json:"edge_hit_ratio,omitempty"`
 	// Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`). Previously, Origin Offload used a different formula. [Learn more](https://www.fastly.com/documentation/reference/changes/2024/06/add-origin_offload-metric).
 	OriginOffload *float32 `json:"origin_offload,omitempty"`
 	// Number of responses received from origin with status code 200 (Success).
-	OriginStatus200 *int32 `json:"origin_status_200,omitempty"`
+	OriginStatus200 *int64 `json:"origin_status_200,omitempty"`
 	// Number of responses received from origin with status code 204 (No Content).
-	OriginStatus204 *int32 `json:"origin_status_204,omitempty"`
+	OriginStatus204 *int64 `json:"origin_status_204,omitempty"`
 	// Number of responses received from origin with status code 206 (Partial Content).
-	OriginStatus206 *int32 `json:"origin_status_206,omitempty"`
+	OriginStatus206 *int64 `json:"origin_status_206,omitempty"`
 	// Number of responses received from origin with status code 301 (Moved Permanently).
-	OriginStatus301 *int32 `json:"origin_status_301,omitempty"`
+	OriginStatus301 *int64 `json:"origin_status_301,omitempty"`
 	// Number of responses received from origin with status code 302 (Found).
-	OriginStatus302 *int32 `json:"origin_status_302,omitempty"`
+	OriginStatus302 *int64 `json:"origin_status_302,omitempty"`
 	// Number of responses received from origin with status code 304 (Not Modified).
-	OriginStatus304 *int32 `json:"origin_status_304,omitempty"`
+	OriginStatus304 *int64 `json:"origin_status_304,omitempty"`
 	// Number of responses received from origin with status code 400 (Bad Request).
-	OriginStatus400 *int32 `json:"origin_status_400,omitempty"`
+	OriginStatus400 *int64 `json:"origin_status_400,omitempty"`
 	// Number of responses received from origin with status code 401 (Unauthorized).
-	OriginStatus401 *int32 `json:"origin_status_401,omitempty"`
+	OriginStatus401 *int64 `json:"origin_status_401,omitempty"`
 	// Number of responses received from origin with status code 403 (Forbidden).
-	OriginStatus403 *int32 `json:"origin_status_403,omitempty"`
+	OriginStatus403 *int64 `json:"origin_status_403,omitempty"`
 	// Number of responses received from origin with status code 404 (Not Found).
-	OriginStatus404 *int32 `json:"origin_status_404,omitempty"`
+	OriginStatus404 *int64 `json:"origin_status_404,omitempty"`
 	// Number of responses received from origin with status code 416 (Range Not Satisfiable).
-	OriginStatus416 *int32 `json:"origin_status_416,omitempty"`
+	OriginStatus416 *int64 `json:"origin_status_416,omitempty"`
 	// Number of responses received from origin with status code 429 (Too Many Requests).
-	OriginStatus429 *int32 `json:"origin_status_429,omitempty"`
+	OriginStatus429 *int64 `json:"origin_status_429,omitempty"`
 	// Number of responses received from origin with status code 500 (Internal Server Error).
-	OriginStatus500 *int32 `json:"origin_status_500,omitempty"`
+	OriginStatus500 *int64 `json:"origin_status_500,omitempty"`
 	// Number of responses received from origin with status code 501 (Not Implemented).
-	OriginStatus501 *int32 `json:"origin_status_501,omitempty"`
+	OriginStatus501 *int64 `json:"origin_status_501,omitempty"`
 	// Number of responses received from origin with status code 502 (Bad Gateway).
-	OriginStatus502 *int32 `json:"origin_status_502,omitempty"`
+	OriginStatus502 *int64 `json:"origin_status_502,omitempty"`
 	// Number of responses received from origin with status code 503 (Service Unavailable).
-	OriginStatus503 *int32 `json:"origin_status_503,omitempty"`
+	OriginStatus503 *int64 `json:"origin_status_503,omitempty"`
 	// Number of responses received from origin with status code 504 (Gateway Timeout).
-	OriginStatus504 *int32 `json:"origin_status_504,omitempty"`
+	OriginStatus504 *int64 `json:"origin_status_504,omitempty"`
 	// Number of responses received from origin with status code 505 (HTTP Version Not Supported).
-	OriginStatus505 *int32 `json:"origin_status_505,omitempty"`
+	OriginStatus505 *int64 `json:"origin_status_505,omitempty"`
 	// Number of \"Informational\" category status codes received from origin.
-	OriginStatus1xx *int32 `json:"origin_status_1xx,omitempty"`
+	OriginStatus1xx *int64 `json:"origin_status_1xx,omitempty"`
 	// Number of \"Success\" status codes received from origin.
-	OriginStatus2xx *int32 `json:"origin_status_2xx,omitempty"`
+	OriginStatus2xx *int64 `json:"origin_status_2xx,omitempty"`
 	// Number of \"Redirection\" codes received from origin.
-	OriginStatus3xx *int32 `json:"origin_status_3xx,omitempty"`
+	OriginStatus3xx *int64 `json:"origin_status_3xx,omitempty"`
 	// Number of \"Client Error\" codes received from origin.
-	OriginStatus4xx *int32 `json:"origin_status_4xx,omitempty"`
+	OriginStatus4xx *int64 `json:"origin_status_4xx,omitempty"`
 	// Number of \"Server Error\" codes received from origin.
-	OriginStatus5xx      *int32 `json:"origin_status_5xx,omitempty"`
+	OriginStatus5xx      *int64 `json:"origin_status_5xx,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -165,9 +165,9 @@ func NewDomainInspectorMeasurementsWithDefaults() *DomainInspectorMeasurements {
 }
 
 // GetEdgeRequests returns the EdgeRequests field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetEdgeRequests() int32 {
+func (o *DomainInspectorMeasurements) GetEdgeRequests() int64 {
 	if o == nil || o.EdgeRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeRequests
@@ -175,7 +175,7 @@ func (o *DomainInspectorMeasurements) GetEdgeRequests() int32 {
 
 // GetEdgeRequestsOk returns a tuple with the EdgeRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetEdgeRequestsOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetEdgeRequestsOk() (*int64, bool) {
 	if o == nil || o.EdgeRequests == nil {
 		return nil, false
 	}
@@ -191,15 +191,15 @@ func (o *DomainInspectorMeasurements) HasEdgeRequests() bool {
 	return false
 }
 
-// SetEdgeRequests gets a reference to the given int32 and assigns it to the EdgeRequests field.
-func (o *DomainInspectorMeasurements) SetEdgeRequests(v int32) {
+// SetEdgeRequests gets a reference to the given int64 and assigns it to the EdgeRequests field.
+func (o *DomainInspectorMeasurements) SetEdgeRequests(v int64) {
 	o.EdgeRequests = &v
 }
 
 // GetEdgeRespHeaderBytes returns the EdgeRespHeaderBytes field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetEdgeRespHeaderBytes() int32 {
+func (o *DomainInspectorMeasurements) GetEdgeRespHeaderBytes() int64 {
 	if o == nil || o.EdgeRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeRespHeaderBytes
@@ -207,7 +207,7 @@ func (o *DomainInspectorMeasurements) GetEdgeRespHeaderBytes() int32 {
 
 // GetEdgeRespHeaderBytesOk returns a tuple with the EdgeRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetEdgeRespHeaderBytesOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetEdgeRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.EdgeRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -223,15 +223,15 @@ func (o *DomainInspectorMeasurements) HasEdgeRespHeaderBytes() bool {
 	return false
 }
 
-// SetEdgeRespHeaderBytes gets a reference to the given int32 and assigns it to the EdgeRespHeaderBytes field.
-func (o *DomainInspectorMeasurements) SetEdgeRespHeaderBytes(v int32) {
+// SetEdgeRespHeaderBytes gets a reference to the given int64 and assigns it to the EdgeRespHeaderBytes field.
+func (o *DomainInspectorMeasurements) SetEdgeRespHeaderBytes(v int64) {
 	o.EdgeRespHeaderBytes = &v
 }
 
 // GetEdgeRespBodyBytes returns the EdgeRespBodyBytes field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetEdgeRespBodyBytes() int32 {
+func (o *DomainInspectorMeasurements) GetEdgeRespBodyBytes() int64 {
 	if o == nil || o.EdgeRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeRespBodyBytes
@@ -239,7 +239,7 @@ func (o *DomainInspectorMeasurements) GetEdgeRespBodyBytes() int32 {
 
 // GetEdgeRespBodyBytesOk returns a tuple with the EdgeRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetEdgeRespBodyBytesOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetEdgeRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.EdgeRespBodyBytes == nil {
 		return nil, false
 	}
@@ -255,15 +255,15 @@ func (o *DomainInspectorMeasurements) HasEdgeRespBodyBytes() bool {
 	return false
 }
 
-// SetEdgeRespBodyBytes gets a reference to the given int32 and assigns it to the EdgeRespBodyBytes field.
-func (o *DomainInspectorMeasurements) SetEdgeRespBodyBytes(v int32) {
+// SetEdgeRespBodyBytes gets a reference to the given int64 and assigns it to the EdgeRespBodyBytes field.
+func (o *DomainInspectorMeasurements) SetEdgeRespBodyBytes(v int64) {
 	o.EdgeRespBodyBytes = &v
 }
 
 // GetStatus1xx returns the Status1xx field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus1xx() int32 {
+func (o *DomainInspectorMeasurements) GetStatus1xx() int64 {
 	if o == nil || o.Status1xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status1xx
@@ -271,7 +271,7 @@ func (o *DomainInspectorMeasurements) GetStatus1xx() int32 {
 
 // GetStatus1xxOk returns a tuple with the Status1xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus1xxOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus1xxOk() (*int64, bool) {
 	if o == nil || o.Status1xx == nil {
 		return nil, false
 	}
@@ -287,15 +287,15 @@ func (o *DomainInspectorMeasurements) HasStatus1xx() bool {
 	return false
 }
 
-// SetStatus1xx gets a reference to the given int32 and assigns it to the Status1xx field.
-func (o *DomainInspectorMeasurements) SetStatus1xx(v int32) {
+// SetStatus1xx gets a reference to the given int64 and assigns it to the Status1xx field.
+func (o *DomainInspectorMeasurements) SetStatus1xx(v int64) {
 	o.Status1xx = &v
 }
 
 // GetStatus2xx returns the Status2xx field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus2xx() int32 {
+func (o *DomainInspectorMeasurements) GetStatus2xx() int64 {
 	if o == nil || o.Status2xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status2xx
@@ -303,7 +303,7 @@ func (o *DomainInspectorMeasurements) GetStatus2xx() int32 {
 
 // GetStatus2xxOk returns a tuple with the Status2xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus2xxOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus2xxOk() (*int64, bool) {
 	if o == nil || o.Status2xx == nil {
 		return nil, false
 	}
@@ -319,15 +319,15 @@ func (o *DomainInspectorMeasurements) HasStatus2xx() bool {
 	return false
 }
 
-// SetStatus2xx gets a reference to the given int32 and assigns it to the Status2xx field.
-func (o *DomainInspectorMeasurements) SetStatus2xx(v int32) {
+// SetStatus2xx gets a reference to the given int64 and assigns it to the Status2xx field.
+func (o *DomainInspectorMeasurements) SetStatus2xx(v int64) {
 	o.Status2xx = &v
 }
 
 // GetStatus3xx returns the Status3xx field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus3xx() int32 {
+func (o *DomainInspectorMeasurements) GetStatus3xx() int64 {
 	if o == nil || o.Status3xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status3xx
@@ -335,7 +335,7 @@ func (o *DomainInspectorMeasurements) GetStatus3xx() int32 {
 
 // GetStatus3xxOk returns a tuple with the Status3xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus3xxOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus3xxOk() (*int64, bool) {
 	if o == nil || o.Status3xx == nil {
 		return nil, false
 	}
@@ -351,15 +351,15 @@ func (o *DomainInspectorMeasurements) HasStatus3xx() bool {
 	return false
 }
 
-// SetStatus3xx gets a reference to the given int32 and assigns it to the Status3xx field.
-func (o *DomainInspectorMeasurements) SetStatus3xx(v int32) {
+// SetStatus3xx gets a reference to the given int64 and assigns it to the Status3xx field.
+func (o *DomainInspectorMeasurements) SetStatus3xx(v int64) {
 	o.Status3xx = &v
 }
 
 // GetStatus4xx returns the Status4xx field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus4xx() int32 {
+func (o *DomainInspectorMeasurements) GetStatus4xx() int64 {
 	if o == nil || o.Status4xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status4xx
@@ -367,7 +367,7 @@ func (o *DomainInspectorMeasurements) GetStatus4xx() int32 {
 
 // GetStatus4xxOk returns a tuple with the Status4xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus4xxOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus4xxOk() (*int64, bool) {
 	if o == nil || o.Status4xx == nil {
 		return nil, false
 	}
@@ -383,15 +383,15 @@ func (o *DomainInspectorMeasurements) HasStatus4xx() bool {
 	return false
 }
 
-// SetStatus4xx gets a reference to the given int32 and assigns it to the Status4xx field.
-func (o *DomainInspectorMeasurements) SetStatus4xx(v int32) {
+// SetStatus4xx gets a reference to the given int64 and assigns it to the Status4xx field.
+func (o *DomainInspectorMeasurements) SetStatus4xx(v int64) {
 	o.Status4xx = &v
 }
 
 // GetStatus5xx returns the Status5xx field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus5xx() int32 {
+func (o *DomainInspectorMeasurements) GetStatus5xx() int64 {
 	if o == nil || o.Status5xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status5xx
@@ -399,7 +399,7 @@ func (o *DomainInspectorMeasurements) GetStatus5xx() int32 {
 
 // GetStatus5xxOk returns a tuple with the Status5xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus5xxOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus5xxOk() (*int64, bool) {
 	if o == nil || o.Status5xx == nil {
 		return nil, false
 	}
@@ -415,15 +415,15 @@ func (o *DomainInspectorMeasurements) HasStatus5xx() bool {
 	return false
 }
 
-// SetStatus5xx gets a reference to the given int32 and assigns it to the Status5xx field.
-func (o *DomainInspectorMeasurements) SetStatus5xx(v int32) {
+// SetStatus5xx gets a reference to the given int64 and assigns it to the Status5xx field.
+func (o *DomainInspectorMeasurements) SetStatus5xx(v int64) {
 	o.Status5xx = &v
 }
 
 // GetStatus200 returns the Status200 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus200() int32 {
+func (o *DomainInspectorMeasurements) GetStatus200() int64 {
 	if o == nil || o.Status200 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status200
@@ -431,7 +431,7 @@ func (o *DomainInspectorMeasurements) GetStatus200() int32 {
 
 // GetStatus200Ok returns a tuple with the Status200 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus200Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus200Ok() (*int64, bool) {
 	if o == nil || o.Status200 == nil {
 		return nil, false
 	}
@@ -447,15 +447,15 @@ func (o *DomainInspectorMeasurements) HasStatus200() bool {
 	return false
 }
 
-// SetStatus200 gets a reference to the given int32 and assigns it to the Status200 field.
-func (o *DomainInspectorMeasurements) SetStatus200(v int32) {
+// SetStatus200 gets a reference to the given int64 and assigns it to the Status200 field.
+func (o *DomainInspectorMeasurements) SetStatus200(v int64) {
 	o.Status200 = &v
 }
 
 // GetStatus204 returns the Status204 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus204() int32 {
+func (o *DomainInspectorMeasurements) GetStatus204() int64 {
 	if o == nil || o.Status204 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status204
@@ -463,7 +463,7 @@ func (o *DomainInspectorMeasurements) GetStatus204() int32 {
 
 // GetStatus204Ok returns a tuple with the Status204 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus204Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus204Ok() (*int64, bool) {
 	if o == nil || o.Status204 == nil {
 		return nil, false
 	}
@@ -479,15 +479,15 @@ func (o *DomainInspectorMeasurements) HasStatus204() bool {
 	return false
 }
 
-// SetStatus204 gets a reference to the given int32 and assigns it to the Status204 field.
-func (o *DomainInspectorMeasurements) SetStatus204(v int32) {
+// SetStatus204 gets a reference to the given int64 and assigns it to the Status204 field.
+func (o *DomainInspectorMeasurements) SetStatus204(v int64) {
 	o.Status204 = &v
 }
 
 // GetStatus206 returns the Status206 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus206() int32 {
+func (o *DomainInspectorMeasurements) GetStatus206() int64 {
 	if o == nil || o.Status206 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status206
@@ -495,7 +495,7 @@ func (o *DomainInspectorMeasurements) GetStatus206() int32 {
 
 // GetStatus206Ok returns a tuple with the Status206 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus206Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus206Ok() (*int64, bool) {
 	if o == nil || o.Status206 == nil {
 		return nil, false
 	}
@@ -511,15 +511,15 @@ func (o *DomainInspectorMeasurements) HasStatus206() bool {
 	return false
 }
 
-// SetStatus206 gets a reference to the given int32 and assigns it to the Status206 field.
-func (o *DomainInspectorMeasurements) SetStatus206(v int32) {
+// SetStatus206 gets a reference to the given int64 and assigns it to the Status206 field.
+func (o *DomainInspectorMeasurements) SetStatus206(v int64) {
 	o.Status206 = &v
 }
 
 // GetStatus301 returns the Status301 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus301() int32 {
+func (o *DomainInspectorMeasurements) GetStatus301() int64 {
 	if o == nil || o.Status301 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status301
@@ -527,7 +527,7 @@ func (o *DomainInspectorMeasurements) GetStatus301() int32 {
 
 // GetStatus301Ok returns a tuple with the Status301 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus301Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus301Ok() (*int64, bool) {
 	if o == nil || o.Status301 == nil {
 		return nil, false
 	}
@@ -543,15 +543,15 @@ func (o *DomainInspectorMeasurements) HasStatus301() bool {
 	return false
 }
 
-// SetStatus301 gets a reference to the given int32 and assigns it to the Status301 field.
-func (o *DomainInspectorMeasurements) SetStatus301(v int32) {
+// SetStatus301 gets a reference to the given int64 and assigns it to the Status301 field.
+func (o *DomainInspectorMeasurements) SetStatus301(v int64) {
 	o.Status301 = &v
 }
 
 // GetStatus302 returns the Status302 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus302() int32 {
+func (o *DomainInspectorMeasurements) GetStatus302() int64 {
 	if o == nil || o.Status302 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status302
@@ -559,7 +559,7 @@ func (o *DomainInspectorMeasurements) GetStatus302() int32 {
 
 // GetStatus302Ok returns a tuple with the Status302 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus302Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus302Ok() (*int64, bool) {
 	if o == nil || o.Status302 == nil {
 		return nil, false
 	}
@@ -575,15 +575,15 @@ func (o *DomainInspectorMeasurements) HasStatus302() bool {
 	return false
 }
 
-// SetStatus302 gets a reference to the given int32 and assigns it to the Status302 field.
-func (o *DomainInspectorMeasurements) SetStatus302(v int32) {
+// SetStatus302 gets a reference to the given int64 and assigns it to the Status302 field.
+func (o *DomainInspectorMeasurements) SetStatus302(v int64) {
 	o.Status302 = &v
 }
 
 // GetStatus304 returns the Status304 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus304() int32 {
+func (o *DomainInspectorMeasurements) GetStatus304() int64 {
 	if o == nil || o.Status304 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status304
@@ -591,7 +591,7 @@ func (o *DomainInspectorMeasurements) GetStatus304() int32 {
 
 // GetStatus304Ok returns a tuple with the Status304 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus304Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus304Ok() (*int64, bool) {
 	if o == nil || o.Status304 == nil {
 		return nil, false
 	}
@@ -607,15 +607,15 @@ func (o *DomainInspectorMeasurements) HasStatus304() bool {
 	return false
 }
 
-// SetStatus304 gets a reference to the given int32 and assigns it to the Status304 field.
-func (o *DomainInspectorMeasurements) SetStatus304(v int32) {
+// SetStatus304 gets a reference to the given int64 and assigns it to the Status304 field.
+func (o *DomainInspectorMeasurements) SetStatus304(v int64) {
 	o.Status304 = &v
 }
 
 // GetStatus400 returns the Status400 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus400() int32 {
+func (o *DomainInspectorMeasurements) GetStatus400() int64 {
 	if o == nil || o.Status400 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status400
@@ -623,7 +623,7 @@ func (o *DomainInspectorMeasurements) GetStatus400() int32 {
 
 // GetStatus400Ok returns a tuple with the Status400 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus400Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus400Ok() (*int64, bool) {
 	if o == nil || o.Status400 == nil {
 		return nil, false
 	}
@@ -639,15 +639,15 @@ func (o *DomainInspectorMeasurements) HasStatus400() bool {
 	return false
 }
 
-// SetStatus400 gets a reference to the given int32 and assigns it to the Status400 field.
-func (o *DomainInspectorMeasurements) SetStatus400(v int32) {
+// SetStatus400 gets a reference to the given int64 and assigns it to the Status400 field.
+func (o *DomainInspectorMeasurements) SetStatus400(v int64) {
 	o.Status400 = &v
 }
 
 // GetStatus401 returns the Status401 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus401() int32 {
+func (o *DomainInspectorMeasurements) GetStatus401() int64 {
 	if o == nil || o.Status401 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status401
@@ -655,7 +655,7 @@ func (o *DomainInspectorMeasurements) GetStatus401() int32 {
 
 // GetStatus401Ok returns a tuple with the Status401 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus401Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus401Ok() (*int64, bool) {
 	if o == nil || o.Status401 == nil {
 		return nil, false
 	}
@@ -671,15 +671,15 @@ func (o *DomainInspectorMeasurements) HasStatus401() bool {
 	return false
 }
 
-// SetStatus401 gets a reference to the given int32 and assigns it to the Status401 field.
-func (o *DomainInspectorMeasurements) SetStatus401(v int32) {
+// SetStatus401 gets a reference to the given int64 and assigns it to the Status401 field.
+func (o *DomainInspectorMeasurements) SetStatus401(v int64) {
 	o.Status401 = &v
 }
 
 // GetStatus403 returns the Status403 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus403() int32 {
+func (o *DomainInspectorMeasurements) GetStatus403() int64 {
 	if o == nil || o.Status403 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status403
@@ -687,7 +687,7 @@ func (o *DomainInspectorMeasurements) GetStatus403() int32 {
 
 // GetStatus403Ok returns a tuple with the Status403 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus403Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus403Ok() (*int64, bool) {
 	if o == nil || o.Status403 == nil {
 		return nil, false
 	}
@@ -703,15 +703,15 @@ func (o *DomainInspectorMeasurements) HasStatus403() bool {
 	return false
 }
 
-// SetStatus403 gets a reference to the given int32 and assigns it to the Status403 field.
-func (o *DomainInspectorMeasurements) SetStatus403(v int32) {
+// SetStatus403 gets a reference to the given int64 and assigns it to the Status403 field.
+func (o *DomainInspectorMeasurements) SetStatus403(v int64) {
 	o.Status403 = &v
 }
 
 // GetStatus404 returns the Status404 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus404() int32 {
+func (o *DomainInspectorMeasurements) GetStatus404() int64 {
 	if o == nil || o.Status404 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status404
@@ -719,7 +719,7 @@ func (o *DomainInspectorMeasurements) GetStatus404() int32 {
 
 // GetStatus404Ok returns a tuple with the Status404 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus404Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus404Ok() (*int64, bool) {
 	if o == nil || o.Status404 == nil {
 		return nil, false
 	}
@@ -735,15 +735,15 @@ func (o *DomainInspectorMeasurements) HasStatus404() bool {
 	return false
 }
 
-// SetStatus404 gets a reference to the given int32 and assigns it to the Status404 field.
-func (o *DomainInspectorMeasurements) SetStatus404(v int32) {
+// SetStatus404 gets a reference to the given int64 and assigns it to the Status404 field.
+func (o *DomainInspectorMeasurements) SetStatus404(v int64) {
 	o.Status404 = &v
 }
 
 // GetStatus416 returns the Status416 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus416() int32 {
+func (o *DomainInspectorMeasurements) GetStatus416() int64 {
 	if o == nil || o.Status416 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status416
@@ -751,7 +751,7 @@ func (o *DomainInspectorMeasurements) GetStatus416() int32 {
 
 // GetStatus416Ok returns a tuple with the Status416 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus416Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus416Ok() (*int64, bool) {
 	if o == nil || o.Status416 == nil {
 		return nil, false
 	}
@@ -767,15 +767,15 @@ func (o *DomainInspectorMeasurements) HasStatus416() bool {
 	return false
 }
 
-// SetStatus416 gets a reference to the given int32 and assigns it to the Status416 field.
-func (o *DomainInspectorMeasurements) SetStatus416(v int32) {
+// SetStatus416 gets a reference to the given int64 and assigns it to the Status416 field.
+func (o *DomainInspectorMeasurements) SetStatus416(v int64) {
 	o.Status416 = &v
 }
 
 // GetStatus429 returns the Status429 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus429() int32 {
+func (o *DomainInspectorMeasurements) GetStatus429() int64 {
 	if o == nil || o.Status429 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status429
@@ -783,7 +783,7 @@ func (o *DomainInspectorMeasurements) GetStatus429() int32 {
 
 // GetStatus429Ok returns a tuple with the Status429 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus429Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus429Ok() (*int64, bool) {
 	if o == nil || o.Status429 == nil {
 		return nil, false
 	}
@@ -799,15 +799,15 @@ func (o *DomainInspectorMeasurements) HasStatus429() bool {
 	return false
 }
 
-// SetStatus429 gets a reference to the given int32 and assigns it to the Status429 field.
-func (o *DomainInspectorMeasurements) SetStatus429(v int32) {
+// SetStatus429 gets a reference to the given int64 and assigns it to the Status429 field.
+func (o *DomainInspectorMeasurements) SetStatus429(v int64) {
 	o.Status429 = &v
 }
 
 // GetStatus500 returns the Status500 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus500() int32 {
+func (o *DomainInspectorMeasurements) GetStatus500() int64 {
 	if o == nil || o.Status500 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status500
@@ -815,7 +815,7 @@ func (o *DomainInspectorMeasurements) GetStatus500() int32 {
 
 // GetStatus500Ok returns a tuple with the Status500 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus500Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus500Ok() (*int64, bool) {
 	if o == nil || o.Status500 == nil {
 		return nil, false
 	}
@@ -831,15 +831,15 @@ func (o *DomainInspectorMeasurements) HasStatus500() bool {
 	return false
 }
 
-// SetStatus500 gets a reference to the given int32 and assigns it to the Status500 field.
-func (o *DomainInspectorMeasurements) SetStatus500(v int32) {
+// SetStatus500 gets a reference to the given int64 and assigns it to the Status500 field.
+func (o *DomainInspectorMeasurements) SetStatus500(v int64) {
 	o.Status500 = &v
 }
 
 // GetStatus501 returns the Status501 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus501() int32 {
+func (o *DomainInspectorMeasurements) GetStatus501() int64 {
 	if o == nil || o.Status501 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status501
@@ -847,7 +847,7 @@ func (o *DomainInspectorMeasurements) GetStatus501() int32 {
 
 // GetStatus501Ok returns a tuple with the Status501 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus501Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus501Ok() (*int64, bool) {
 	if o == nil || o.Status501 == nil {
 		return nil, false
 	}
@@ -863,15 +863,15 @@ func (o *DomainInspectorMeasurements) HasStatus501() bool {
 	return false
 }
 
-// SetStatus501 gets a reference to the given int32 and assigns it to the Status501 field.
-func (o *DomainInspectorMeasurements) SetStatus501(v int32) {
+// SetStatus501 gets a reference to the given int64 and assigns it to the Status501 field.
+func (o *DomainInspectorMeasurements) SetStatus501(v int64) {
 	o.Status501 = &v
 }
 
 // GetStatus502 returns the Status502 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus502() int32 {
+func (o *DomainInspectorMeasurements) GetStatus502() int64 {
 	if o == nil || o.Status502 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status502
@@ -879,7 +879,7 @@ func (o *DomainInspectorMeasurements) GetStatus502() int32 {
 
 // GetStatus502Ok returns a tuple with the Status502 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus502Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus502Ok() (*int64, bool) {
 	if o == nil || o.Status502 == nil {
 		return nil, false
 	}
@@ -895,15 +895,15 @@ func (o *DomainInspectorMeasurements) HasStatus502() bool {
 	return false
 }
 
-// SetStatus502 gets a reference to the given int32 and assigns it to the Status502 field.
-func (o *DomainInspectorMeasurements) SetStatus502(v int32) {
+// SetStatus502 gets a reference to the given int64 and assigns it to the Status502 field.
+func (o *DomainInspectorMeasurements) SetStatus502(v int64) {
 	o.Status502 = &v
 }
 
 // GetStatus503 returns the Status503 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus503() int32 {
+func (o *DomainInspectorMeasurements) GetStatus503() int64 {
 	if o == nil || o.Status503 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status503
@@ -911,7 +911,7 @@ func (o *DomainInspectorMeasurements) GetStatus503() int32 {
 
 // GetStatus503Ok returns a tuple with the Status503 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus503Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus503Ok() (*int64, bool) {
 	if o == nil || o.Status503 == nil {
 		return nil, false
 	}
@@ -927,15 +927,15 @@ func (o *DomainInspectorMeasurements) HasStatus503() bool {
 	return false
 }
 
-// SetStatus503 gets a reference to the given int32 and assigns it to the Status503 field.
-func (o *DomainInspectorMeasurements) SetStatus503(v int32) {
+// SetStatus503 gets a reference to the given int64 and assigns it to the Status503 field.
+func (o *DomainInspectorMeasurements) SetStatus503(v int64) {
 	o.Status503 = &v
 }
 
 // GetStatus504 returns the Status504 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus504() int32 {
+func (o *DomainInspectorMeasurements) GetStatus504() int64 {
 	if o == nil || o.Status504 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status504
@@ -943,7 +943,7 @@ func (o *DomainInspectorMeasurements) GetStatus504() int32 {
 
 // GetStatus504Ok returns a tuple with the Status504 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus504Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus504Ok() (*int64, bool) {
 	if o == nil || o.Status504 == nil {
 		return nil, false
 	}
@@ -959,15 +959,15 @@ func (o *DomainInspectorMeasurements) HasStatus504() bool {
 	return false
 }
 
-// SetStatus504 gets a reference to the given int32 and assigns it to the Status504 field.
-func (o *DomainInspectorMeasurements) SetStatus504(v int32) {
+// SetStatus504 gets a reference to the given int64 and assigns it to the Status504 field.
+func (o *DomainInspectorMeasurements) SetStatus504(v int64) {
 	o.Status504 = &v
 }
 
 // GetStatus505 returns the Status505 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetStatus505() int32 {
+func (o *DomainInspectorMeasurements) GetStatus505() int64 {
 	if o == nil || o.Status505 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status505
@@ -975,7 +975,7 @@ func (o *DomainInspectorMeasurements) GetStatus505() int32 {
 
 // GetStatus505Ok returns a tuple with the Status505 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetStatus505Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetStatus505Ok() (*int64, bool) {
 	if o == nil || o.Status505 == nil {
 		return nil, false
 	}
@@ -991,15 +991,15 @@ func (o *DomainInspectorMeasurements) HasStatus505() bool {
 	return false
 }
 
-// SetStatus505 gets a reference to the given int32 and assigns it to the Status505 field.
-func (o *DomainInspectorMeasurements) SetStatus505(v int32) {
+// SetStatus505 gets a reference to the given int64 and assigns it to the Status505 field.
+func (o *DomainInspectorMeasurements) SetStatus505(v int64) {
 	o.Status505 = &v
 }
 
 // GetRequests returns the Requests field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetRequests() int32 {
+func (o *DomainInspectorMeasurements) GetRequests() int64 {
 	if o == nil || o.Requests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Requests
@@ -1007,7 +1007,7 @@ func (o *DomainInspectorMeasurements) GetRequests() int32 {
 
 // GetRequestsOk returns a tuple with the Requests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetRequestsOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetRequestsOk() (*int64, bool) {
 	if o == nil || o.Requests == nil {
 		return nil, false
 	}
@@ -1023,15 +1023,15 @@ func (o *DomainInspectorMeasurements) HasRequests() bool {
 	return false
 }
 
-// SetRequests gets a reference to the given int32 and assigns it to the Requests field.
-func (o *DomainInspectorMeasurements) SetRequests(v int32) {
+// SetRequests gets a reference to the given int64 and assigns it to the Requests field.
+func (o *DomainInspectorMeasurements) SetRequests(v int64) {
 	o.Requests = &v
 }
 
 // GetRespHeaderBytes returns the RespHeaderBytes field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetRespHeaderBytes() int32 {
+func (o *DomainInspectorMeasurements) GetRespHeaderBytes() int64 {
 	if o == nil || o.RespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RespHeaderBytes
@@ -1039,7 +1039,7 @@ func (o *DomainInspectorMeasurements) GetRespHeaderBytes() int32 {
 
 // GetRespHeaderBytesOk returns a tuple with the RespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetRespHeaderBytesOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.RespHeaderBytes == nil {
 		return nil, false
 	}
@@ -1055,15 +1055,15 @@ func (o *DomainInspectorMeasurements) HasRespHeaderBytes() bool {
 	return false
 }
 
-// SetRespHeaderBytes gets a reference to the given int32 and assigns it to the RespHeaderBytes field.
-func (o *DomainInspectorMeasurements) SetRespHeaderBytes(v int32) {
+// SetRespHeaderBytes gets a reference to the given int64 and assigns it to the RespHeaderBytes field.
+func (o *DomainInspectorMeasurements) SetRespHeaderBytes(v int64) {
 	o.RespHeaderBytes = &v
 }
 
 // GetRespBodyBytes returns the RespBodyBytes field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetRespBodyBytes() int32 {
+func (o *DomainInspectorMeasurements) GetRespBodyBytes() int64 {
 	if o == nil || o.RespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RespBodyBytes
@@ -1071,7 +1071,7 @@ func (o *DomainInspectorMeasurements) GetRespBodyBytes() int32 {
 
 // GetRespBodyBytesOk returns a tuple with the RespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetRespBodyBytesOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.RespBodyBytes == nil {
 		return nil, false
 	}
@@ -1087,15 +1087,15 @@ func (o *DomainInspectorMeasurements) HasRespBodyBytes() bool {
 	return false
 }
 
-// SetRespBodyBytes gets a reference to the given int32 and assigns it to the RespBodyBytes field.
-func (o *DomainInspectorMeasurements) SetRespBodyBytes(v int32) {
+// SetRespBodyBytes gets a reference to the given int64 and assigns it to the RespBodyBytes field.
+func (o *DomainInspectorMeasurements) SetRespBodyBytes(v int64) {
 	o.RespBodyBytes = &v
 }
 
 // GetBereqHeaderBytes returns the BereqHeaderBytes field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetBereqHeaderBytes() int32 {
+func (o *DomainInspectorMeasurements) GetBereqHeaderBytes() int64 {
 	if o == nil || o.BereqHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BereqHeaderBytes
@@ -1103,7 +1103,7 @@ func (o *DomainInspectorMeasurements) GetBereqHeaderBytes() int32 {
 
 // GetBereqHeaderBytesOk returns a tuple with the BereqHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetBereqHeaderBytesOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetBereqHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.BereqHeaderBytes == nil {
 		return nil, false
 	}
@@ -1119,15 +1119,15 @@ func (o *DomainInspectorMeasurements) HasBereqHeaderBytes() bool {
 	return false
 }
 
-// SetBereqHeaderBytes gets a reference to the given int32 and assigns it to the BereqHeaderBytes field.
-func (o *DomainInspectorMeasurements) SetBereqHeaderBytes(v int32) {
+// SetBereqHeaderBytes gets a reference to the given int64 and assigns it to the BereqHeaderBytes field.
+func (o *DomainInspectorMeasurements) SetBereqHeaderBytes(v int64) {
 	o.BereqHeaderBytes = &v
 }
 
 // GetBereqBodyBytes returns the BereqBodyBytes field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetBereqBodyBytes() int32 {
+func (o *DomainInspectorMeasurements) GetBereqBodyBytes() int64 {
 	if o == nil || o.BereqBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.BereqBodyBytes
@@ -1135,7 +1135,7 @@ func (o *DomainInspectorMeasurements) GetBereqBodyBytes() int32 {
 
 // GetBereqBodyBytesOk returns a tuple with the BereqBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetBereqBodyBytesOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetBereqBodyBytesOk() (*int64, bool) {
 	if o == nil || o.BereqBodyBytes == nil {
 		return nil, false
 	}
@@ -1151,15 +1151,15 @@ func (o *DomainInspectorMeasurements) HasBereqBodyBytes() bool {
 	return false
 }
 
-// SetBereqBodyBytes gets a reference to the given int32 and assigns it to the BereqBodyBytes field.
-func (o *DomainInspectorMeasurements) SetBereqBodyBytes(v int32) {
+// SetBereqBodyBytes gets a reference to the given int64 and assigns it to the BereqBodyBytes field.
+func (o *DomainInspectorMeasurements) SetBereqBodyBytes(v int64) {
 	o.BereqBodyBytes = &v
 }
 
 // GetEdgeHitRequests returns the EdgeHitRequests field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetEdgeHitRequests() int32 {
+func (o *DomainInspectorMeasurements) GetEdgeHitRequests() int64 {
 	if o == nil || o.EdgeHitRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeHitRequests
@@ -1167,7 +1167,7 @@ func (o *DomainInspectorMeasurements) GetEdgeHitRequests() int32 {
 
 // GetEdgeHitRequestsOk returns a tuple with the EdgeHitRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetEdgeHitRequestsOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetEdgeHitRequestsOk() (*int64, bool) {
 	if o == nil || o.EdgeHitRequests == nil {
 		return nil, false
 	}
@@ -1183,15 +1183,15 @@ func (o *DomainInspectorMeasurements) HasEdgeHitRequests() bool {
 	return false
 }
 
-// SetEdgeHitRequests gets a reference to the given int32 and assigns it to the EdgeHitRequests field.
-func (o *DomainInspectorMeasurements) SetEdgeHitRequests(v int32) {
+// SetEdgeHitRequests gets a reference to the given int64 and assigns it to the EdgeHitRequests field.
+func (o *DomainInspectorMeasurements) SetEdgeHitRequests(v int64) {
 	o.EdgeHitRequests = &v
 }
 
 // GetEdgeMissRequests returns the EdgeMissRequests field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetEdgeMissRequests() int32 {
+func (o *DomainInspectorMeasurements) GetEdgeMissRequests() int64 {
 	if o == nil || o.EdgeMissRequests == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.EdgeMissRequests
@@ -1199,7 +1199,7 @@ func (o *DomainInspectorMeasurements) GetEdgeMissRequests() int32 {
 
 // GetEdgeMissRequestsOk returns a tuple with the EdgeMissRequests field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetEdgeMissRequestsOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetEdgeMissRequestsOk() (*int64, bool) {
 	if o == nil || o.EdgeMissRequests == nil {
 		return nil, false
 	}
@@ -1215,15 +1215,15 @@ func (o *DomainInspectorMeasurements) HasEdgeMissRequests() bool {
 	return false
 }
 
-// SetEdgeMissRequests gets a reference to the given int32 and assigns it to the EdgeMissRequests field.
-func (o *DomainInspectorMeasurements) SetEdgeMissRequests(v int32) {
+// SetEdgeMissRequests gets a reference to the given int64 and assigns it to the EdgeMissRequests field.
+func (o *DomainInspectorMeasurements) SetEdgeMissRequests(v int64) {
 	o.EdgeMissRequests = &v
 }
 
 // GetOriginFetches returns the OriginFetches field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginFetches() int32 {
+func (o *DomainInspectorMeasurements) GetOriginFetches() int64 {
 	if o == nil || o.OriginFetches == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginFetches
@@ -1231,7 +1231,7 @@ func (o *DomainInspectorMeasurements) GetOriginFetches() int32 {
 
 // GetOriginFetchesOk returns a tuple with the OriginFetches field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginFetchesOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginFetchesOk() (*int64, bool) {
 	if o == nil || o.OriginFetches == nil {
 		return nil, false
 	}
@@ -1247,15 +1247,15 @@ func (o *DomainInspectorMeasurements) HasOriginFetches() bool {
 	return false
 }
 
-// SetOriginFetches gets a reference to the given int32 and assigns it to the OriginFetches field.
-func (o *DomainInspectorMeasurements) SetOriginFetches(v int32) {
+// SetOriginFetches gets a reference to the given int64 and assigns it to the OriginFetches field.
+func (o *DomainInspectorMeasurements) SetOriginFetches(v int64) {
 	o.OriginFetches = &v
 }
 
 // GetOriginFetchRespHeaderBytes returns the OriginFetchRespHeaderBytes field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginFetchRespHeaderBytes() int32 {
+func (o *DomainInspectorMeasurements) GetOriginFetchRespHeaderBytes() int64 {
 	if o == nil || o.OriginFetchRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginFetchRespHeaderBytes
@@ -1263,7 +1263,7 @@ func (o *DomainInspectorMeasurements) GetOriginFetchRespHeaderBytes() int32 {
 
 // GetOriginFetchRespHeaderBytesOk returns a tuple with the OriginFetchRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginFetchRespHeaderBytesOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginFetchRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.OriginFetchRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -1279,15 +1279,15 @@ func (o *DomainInspectorMeasurements) HasOriginFetchRespHeaderBytes() bool {
 	return false
 }
 
-// SetOriginFetchRespHeaderBytes gets a reference to the given int32 and assigns it to the OriginFetchRespHeaderBytes field.
-func (o *DomainInspectorMeasurements) SetOriginFetchRespHeaderBytes(v int32) {
+// SetOriginFetchRespHeaderBytes gets a reference to the given int64 and assigns it to the OriginFetchRespHeaderBytes field.
+func (o *DomainInspectorMeasurements) SetOriginFetchRespHeaderBytes(v int64) {
 	o.OriginFetchRespHeaderBytes = &v
 }
 
 // GetOriginFetchRespBodyBytes returns the OriginFetchRespBodyBytes field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginFetchRespBodyBytes() int32 {
+func (o *DomainInspectorMeasurements) GetOriginFetchRespBodyBytes() int64 {
 	if o == nil || o.OriginFetchRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginFetchRespBodyBytes
@@ -1295,7 +1295,7 @@ func (o *DomainInspectorMeasurements) GetOriginFetchRespBodyBytes() int32 {
 
 // GetOriginFetchRespBodyBytesOk returns a tuple with the OriginFetchRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginFetchRespBodyBytesOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginFetchRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.OriginFetchRespBodyBytes == nil {
 		return nil, false
 	}
@@ -1311,15 +1311,15 @@ func (o *DomainInspectorMeasurements) HasOriginFetchRespBodyBytes() bool {
 	return false
 }
 
-// SetOriginFetchRespBodyBytes gets a reference to the given int32 and assigns it to the OriginFetchRespBodyBytes field.
-func (o *DomainInspectorMeasurements) SetOriginFetchRespBodyBytes(v int32) {
+// SetOriginFetchRespBodyBytes gets a reference to the given int64 and assigns it to the OriginFetchRespBodyBytes field.
+func (o *DomainInspectorMeasurements) SetOriginFetchRespBodyBytes(v int64) {
 	o.OriginFetchRespBodyBytes = &v
 }
 
 // GetBandwidth returns the Bandwidth field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetBandwidth() int32 {
+func (o *DomainInspectorMeasurements) GetBandwidth() int64 {
 	if o == nil || o.Bandwidth == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Bandwidth
@@ -1327,7 +1327,7 @@ func (o *DomainInspectorMeasurements) GetBandwidth() int32 {
 
 // GetBandwidthOk returns a tuple with the Bandwidth field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetBandwidthOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetBandwidthOk() (*int64, bool) {
 	if o == nil || o.Bandwidth == nil {
 		return nil, false
 	}
@@ -1343,8 +1343,8 @@ func (o *DomainInspectorMeasurements) HasBandwidth() bool {
 	return false
 }
 
-// SetBandwidth gets a reference to the given int32 and assigns it to the Bandwidth field.
-func (o *DomainInspectorMeasurements) SetBandwidth(v int32) {
+// SetBandwidth gets a reference to the given int64 and assigns it to the Bandwidth field.
+func (o *DomainInspectorMeasurements) SetBandwidth(v int64) {
 	o.Bandwidth = &v
 }
 
@@ -1413,9 +1413,9 @@ func (o *DomainInspectorMeasurements) SetOriginOffload(v float32) {
 }
 
 // GetOriginStatus200 returns the OriginStatus200 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus200() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus200() int64 {
 	if o == nil || o.OriginStatus200 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus200
@@ -1423,7 +1423,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus200() int32 {
 
 // GetOriginStatus200Ok returns a tuple with the OriginStatus200 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus200Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus200Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus200 == nil {
 		return nil, false
 	}
@@ -1439,15 +1439,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus200() bool {
 	return false
 }
 
-// SetOriginStatus200 gets a reference to the given int32 and assigns it to the OriginStatus200 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus200(v int32) {
+// SetOriginStatus200 gets a reference to the given int64 and assigns it to the OriginStatus200 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus200(v int64) {
 	o.OriginStatus200 = &v
 }
 
 // GetOriginStatus204 returns the OriginStatus204 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus204() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus204() int64 {
 	if o == nil || o.OriginStatus204 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus204
@@ -1455,7 +1455,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus204() int32 {
 
 // GetOriginStatus204Ok returns a tuple with the OriginStatus204 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus204Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus204Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus204 == nil {
 		return nil, false
 	}
@@ -1471,15 +1471,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus204() bool {
 	return false
 }
 
-// SetOriginStatus204 gets a reference to the given int32 and assigns it to the OriginStatus204 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus204(v int32) {
+// SetOriginStatus204 gets a reference to the given int64 and assigns it to the OriginStatus204 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus204(v int64) {
 	o.OriginStatus204 = &v
 }
 
 // GetOriginStatus206 returns the OriginStatus206 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus206() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus206() int64 {
 	if o == nil || o.OriginStatus206 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus206
@@ -1487,7 +1487,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus206() int32 {
 
 // GetOriginStatus206Ok returns a tuple with the OriginStatus206 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus206Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus206Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus206 == nil {
 		return nil, false
 	}
@@ -1503,15 +1503,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus206() bool {
 	return false
 }
 
-// SetOriginStatus206 gets a reference to the given int32 and assigns it to the OriginStatus206 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus206(v int32) {
+// SetOriginStatus206 gets a reference to the given int64 and assigns it to the OriginStatus206 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus206(v int64) {
 	o.OriginStatus206 = &v
 }
 
 // GetOriginStatus301 returns the OriginStatus301 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus301() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus301() int64 {
 	if o == nil || o.OriginStatus301 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus301
@@ -1519,7 +1519,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus301() int32 {
 
 // GetOriginStatus301Ok returns a tuple with the OriginStatus301 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus301Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus301Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus301 == nil {
 		return nil, false
 	}
@@ -1535,15 +1535,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus301() bool {
 	return false
 }
 
-// SetOriginStatus301 gets a reference to the given int32 and assigns it to the OriginStatus301 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus301(v int32) {
+// SetOriginStatus301 gets a reference to the given int64 and assigns it to the OriginStatus301 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus301(v int64) {
 	o.OriginStatus301 = &v
 }
 
 // GetOriginStatus302 returns the OriginStatus302 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus302() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus302() int64 {
 	if o == nil || o.OriginStatus302 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus302
@@ -1551,7 +1551,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus302() int32 {
 
 // GetOriginStatus302Ok returns a tuple with the OriginStatus302 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus302Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus302Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus302 == nil {
 		return nil, false
 	}
@@ -1567,15 +1567,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus302() bool {
 	return false
 }
 
-// SetOriginStatus302 gets a reference to the given int32 and assigns it to the OriginStatus302 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus302(v int32) {
+// SetOriginStatus302 gets a reference to the given int64 and assigns it to the OriginStatus302 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus302(v int64) {
 	o.OriginStatus302 = &v
 }
 
 // GetOriginStatus304 returns the OriginStatus304 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus304() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus304() int64 {
 	if o == nil || o.OriginStatus304 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus304
@@ -1583,7 +1583,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus304() int32 {
 
 // GetOriginStatus304Ok returns a tuple with the OriginStatus304 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus304Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus304Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus304 == nil {
 		return nil, false
 	}
@@ -1599,15 +1599,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus304() bool {
 	return false
 }
 
-// SetOriginStatus304 gets a reference to the given int32 and assigns it to the OriginStatus304 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus304(v int32) {
+// SetOriginStatus304 gets a reference to the given int64 and assigns it to the OriginStatus304 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus304(v int64) {
 	o.OriginStatus304 = &v
 }
 
 // GetOriginStatus400 returns the OriginStatus400 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus400() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus400() int64 {
 	if o == nil || o.OriginStatus400 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus400
@@ -1615,7 +1615,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus400() int32 {
 
 // GetOriginStatus400Ok returns a tuple with the OriginStatus400 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus400Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus400Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus400 == nil {
 		return nil, false
 	}
@@ -1631,15 +1631,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus400() bool {
 	return false
 }
 
-// SetOriginStatus400 gets a reference to the given int32 and assigns it to the OriginStatus400 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus400(v int32) {
+// SetOriginStatus400 gets a reference to the given int64 and assigns it to the OriginStatus400 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus400(v int64) {
 	o.OriginStatus400 = &v
 }
 
 // GetOriginStatus401 returns the OriginStatus401 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus401() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus401() int64 {
 	if o == nil || o.OriginStatus401 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus401
@@ -1647,7 +1647,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus401() int32 {
 
 // GetOriginStatus401Ok returns a tuple with the OriginStatus401 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus401Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus401Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus401 == nil {
 		return nil, false
 	}
@@ -1663,15 +1663,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus401() bool {
 	return false
 }
 
-// SetOriginStatus401 gets a reference to the given int32 and assigns it to the OriginStatus401 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus401(v int32) {
+// SetOriginStatus401 gets a reference to the given int64 and assigns it to the OriginStatus401 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus401(v int64) {
 	o.OriginStatus401 = &v
 }
 
 // GetOriginStatus403 returns the OriginStatus403 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus403() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus403() int64 {
 	if o == nil || o.OriginStatus403 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus403
@@ -1679,7 +1679,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus403() int32 {
 
 // GetOriginStatus403Ok returns a tuple with the OriginStatus403 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus403Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus403Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus403 == nil {
 		return nil, false
 	}
@@ -1695,15 +1695,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus403() bool {
 	return false
 }
 
-// SetOriginStatus403 gets a reference to the given int32 and assigns it to the OriginStatus403 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus403(v int32) {
+// SetOriginStatus403 gets a reference to the given int64 and assigns it to the OriginStatus403 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus403(v int64) {
 	o.OriginStatus403 = &v
 }
 
 // GetOriginStatus404 returns the OriginStatus404 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus404() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus404() int64 {
 	if o == nil || o.OriginStatus404 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus404
@@ -1711,7 +1711,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus404() int32 {
 
 // GetOriginStatus404Ok returns a tuple with the OriginStatus404 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus404Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus404Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus404 == nil {
 		return nil, false
 	}
@@ -1727,15 +1727,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus404() bool {
 	return false
 }
 
-// SetOriginStatus404 gets a reference to the given int32 and assigns it to the OriginStatus404 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus404(v int32) {
+// SetOriginStatus404 gets a reference to the given int64 and assigns it to the OriginStatus404 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus404(v int64) {
 	o.OriginStatus404 = &v
 }
 
 // GetOriginStatus416 returns the OriginStatus416 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus416() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus416() int64 {
 	if o == nil || o.OriginStatus416 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus416
@@ -1743,7 +1743,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus416() int32 {
 
 // GetOriginStatus416Ok returns a tuple with the OriginStatus416 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus416Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus416Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus416 == nil {
 		return nil, false
 	}
@@ -1759,15 +1759,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus416() bool {
 	return false
 }
 
-// SetOriginStatus416 gets a reference to the given int32 and assigns it to the OriginStatus416 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus416(v int32) {
+// SetOriginStatus416 gets a reference to the given int64 and assigns it to the OriginStatus416 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus416(v int64) {
 	o.OriginStatus416 = &v
 }
 
 // GetOriginStatus429 returns the OriginStatus429 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus429() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus429() int64 {
 	if o == nil || o.OriginStatus429 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus429
@@ -1775,7 +1775,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus429() int32 {
 
 // GetOriginStatus429Ok returns a tuple with the OriginStatus429 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus429Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus429Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus429 == nil {
 		return nil, false
 	}
@@ -1791,15 +1791,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus429() bool {
 	return false
 }
 
-// SetOriginStatus429 gets a reference to the given int32 and assigns it to the OriginStatus429 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus429(v int32) {
+// SetOriginStatus429 gets a reference to the given int64 and assigns it to the OriginStatus429 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus429(v int64) {
 	o.OriginStatus429 = &v
 }
 
 // GetOriginStatus500 returns the OriginStatus500 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus500() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus500() int64 {
 	if o == nil || o.OriginStatus500 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus500
@@ -1807,7 +1807,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus500() int32 {
 
 // GetOriginStatus500Ok returns a tuple with the OriginStatus500 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus500Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus500Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus500 == nil {
 		return nil, false
 	}
@@ -1823,15 +1823,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus500() bool {
 	return false
 }
 
-// SetOriginStatus500 gets a reference to the given int32 and assigns it to the OriginStatus500 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus500(v int32) {
+// SetOriginStatus500 gets a reference to the given int64 and assigns it to the OriginStatus500 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus500(v int64) {
 	o.OriginStatus500 = &v
 }
 
 // GetOriginStatus501 returns the OriginStatus501 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus501() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus501() int64 {
 	if o == nil || o.OriginStatus501 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus501
@@ -1839,7 +1839,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus501() int32 {
 
 // GetOriginStatus501Ok returns a tuple with the OriginStatus501 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus501Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus501Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus501 == nil {
 		return nil, false
 	}
@@ -1855,15 +1855,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus501() bool {
 	return false
 }
 
-// SetOriginStatus501 gets a reference to the given int32 and assigns it to the OriginStatus501 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus501(v int32) {
+// SetOriginStatus501 gets a reference to the given int64 and assigns it to the OriginStatus501 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus501(v int64) {
 	o.OriginStatus501 = &v
 }
 
 // GetOriginStatus502 returns the OriginStatus502 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus502() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus502() int64 {
 	if o == nil || o.OriginStatus502 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus502
@@ -1871,7 +1871,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus502() int32 {
 
 // GetOriginStatus502Ok returns a tuple with the OriginStatus502 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus502Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus502Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus502 == nil {
 		return nil, false
 	}
@@ -1887,15 +1887,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus502() bool {
 	return false
 }
 
-// SetOriginStatus502 gets a reference to the given int32 and assigns it to the OriginStatus502 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus502(v int32) {
+// SetOriginStatus502 gets a reference to the given int64 and assigns it to the OriginStatus502 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus502(v int64) {
 	o.OriginStatus502 = &v
 }
 
 // GetOriginStatus503 returns the OriginStatus503 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus503() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus503() int64 {
 	if o == nil || o.OriginStatus503 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus503
@@ -1903,7 +1903,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus503() int32 {
 
 // GetOriginStatus503Ok returns a tuple with the OriginStatus503 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus503Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus503Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus503 == nil {
 		return nil, false
 	}
@@ -1919,15 +1919,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus503() bool {
 	return false
 }
 
-// SetOriginStatus503 gets a reference to the given int32 and assigns it to the OriginStatus503 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus503(v int32) {
+// SetOriginStatus503 gets a reference to the given int64 and assigns it to the OriginStatus503 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus503(v int64) {
 	o.OriginStatus503 = &v
 }
 
 // GetOriginStatus504 returns the OriginStatus504 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus504() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus504() int64 {
 	if o == nil || o.OriginStatus504 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus504
@@ -1935,7 +1935,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus504() int32 {
 
 // GetOriginStatus504Ok returns a tuple with the OriginStatus504 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus504Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus504Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus504 == nil {
 		return nil, false
 	}
@@ -1951,15 +1951,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus504() bool {
 	return false
 }
 
-// SetOriginStatus504 gets a reference to the given int32 and assigns it to the OriginStatus504 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus504(v int32) {
+// SetOriginStatus504 gets a reference to the given int64 and assigns it to the OriginStatus504 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus504(v int64) {
 	o.OriginStatus504 = &v
 }
 
 // GetOriginStatus505 returns the OriginStatus505 field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus505() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus505() int64 {
 	if o == nil || o.OriginStatus505 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus505
@@ -1967,7 +1967,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus505() int32 {
 
 // GetOriginStatus505Ok returns a tuple with the OriginStatus505 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus505Ok() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus505Ok() (*int64, bool) {
 	if o == nil || o.OriginStatus505 == nil {
 		return nil, false
 	}
@@ -1983,15 +1983,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus505() bool {
 	return false
 }
 
-// SetOriginStatus505 gets a reference to the given int32 and assigns it to the OriginStatus505 field.
-func (o *DomainInspectorMeasurements) SetOriginStatus505(v int32) {
+// SetOriginStatus505 gets a reference to the given int64 and assigns it to the OriginStatus505 field.
+func (o *DomainInspectorMeasurements) SetOriginStatus505(v int64) {
 	o.OriginStatus505 = &v
 }
 
 // GetOriginStatus1xx returns the OriginStatus1xx field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus1xx() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus1xx() int64 {
 	if o == nil || o.OriginStatus1xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus1xx
@@ -1999,7 +1999,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus1xx() int32 {
 
 // GetOriginStatus1xxOk returns a tuple with the OriginStatus1xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus1xxOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus1xxOk() (*int64, bool) {
 	if o == nil || o.OriginStatus1xx == nil {
 		return nil, false
 	}
@@ -2015,15 +2015,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus1xx() bool {
 	return false
 }
 
-// SetOriginStatus1xx gets a reference to the given int32 and assigns it to the OriginStatus1xx field.
-func (o *DomainInspectorMeasurements) SetOriginStatus1xx(v int32) {
+// SetOriginStatus1xx gets a reference to the given int64 and assigns it to the OriginStatus1xx field.
+func (o *DomainInspectorMeasurements) SetOriginStatus1xx(v int64) {
 	o.OriginStatus1xx = &v
 }
 
 // GetOriginStatus2xx returns the OriginStatus2xx field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus2xx() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus2xx() int64 {
 	if o == nil || o.OriginStatus2xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus2xx
@@ -2031,7 +2031,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus2xx() int32 {
 
 // GetOriginStatus2xxOk returns a tuple with the OriginStatus2xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus2xxOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus2xxOk() (*int64, bool) {
 	if o == nil || o.OriginStatus2xx == nil {
 		return nil, false
 	}
@@ -2047,15 +2047,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus2xx() bool {
 	return false
 }
 
-// SetOriginStatus2xx gets a reference to the given int32 and assigns it to the OriginStatus2xx field.
-func (o *DomainInspectorMeasurements) SetOriginStatus2xx(v int32) {
+// SetOriginStatus2xx gets a reference to the given int64 and assigns it to the OriginStatus2xx field.
+func (o *DomainInspectorMeasurements) SetOriginStatus2xx(v int64) {
 	o.OriginStatus2xx = &v
 }
 
 // GetOriginStatus3xx returns the OriginStatus3xx field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus3xx() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus3xx() int64 {
 	if o == nil || o.OriginStatus3xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus3xx
@@ -2063,7 +2063,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus3xx() int32 {
 
 // GetOriginStatus3xxOk returns a tuple with the OriginStatus3xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus3xxOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus3xxOk() (*int64, bool) {
 	if o == nil || o.OriginStatus3xx == nil {
 		return nil, false
 	}
@@ -2079,15 +2079,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus3xx() bool {
 	return false
 }
 
-// SetOriginStatus3xx gets a reference to the given int32 and assigns it to the OriginStatus3xx field.
-func (o *DomainInspectorMeasurements) SetOriginStatus3xx(v int32) {
+// SetOriginStatus3xx gets a reference to the given int64 and assigns it to the OriginStatus3xx field.
+func (o *DomainInspectorMeasurements) SetOriginStatus3xx(v int64) {
 	o.OriginStatus3xx = &v
 }
 
 // GetOriginStatus4xx returns the OriginStatus4xx field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus4xx() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus4xx() int64 {
 	if o == nil || o.OriginStatus4xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus4xx
@@ -2095,7 +2095,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus4xx() int32 {
 
 // GetOriginStatus4xxOk returns a tuple with the OriginStatus4xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus4xxOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus4xxOk() (*int64, bool) {
 	if o == nil || o.OriginStatus4xx == nil {
 		return nil, false
 	}
@@ -2111,15 +2111,15 @@ func (o *DomainInspectorMeasurements) HasOriginStatus4xx() bool {
 	return false
 }
 
-// SetOriginStatus4xx gets a reference to the given int32 and assigns it to the OriginStatus4xx field.
-func (o *DomainInspectorMeasurements) SetOriginStatus4xx(v int32) {
+// SetOriginStatus4xx gets a reference to the given int64 and assigns it to the OriginStatus4xx field.
+func (o *DomainInspectorMeasurements) SetOriginStatus4xx(v int64) {
 	o.OriginStatus4xx = &v
 }
 
 // GetOriginStatus5xx returns the OriginStatus5xx field value if set, zero value otherwise.
-func (o *DomainInspectorMeasurements) GetOriginStatus5xx() int32 {
+func (o *DomainInspectorMeasurements) GetOriginStatus5xx() int64 {
 	if o == nil || o.OriginStatus5xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.OriginStatus5xx
@@ -2127,7 +2127,7 @@ func (o *DomainInspectorMeasurements) GetOriginStatus5xx() int32 {
 
 // GetOriginStatus5xxOk returns a tuple with the OriginStatus5xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorMeasurements) GetOriginStatus5xxOk() (*int32, bool) {
+func (o *DomainInspectorMeasurements) GetOriginStatus5xxOk() (*int64, bool) {
 	if o == nil || o.OriginStatus5xx == nil {
 		return nil, false
 	}
@@ -2143,8 +2143,8 @@ func (o *DomainInspectorMeasurements) HasOriginStatus5xx() bool {
 	return false
 }
 
-// SetOriginStatus5xx gets a reference to the given int32 and assigns it to the OriginStatus5xx field.
-func (o *DomainInspectorMeasurements) SetOriginStatus5xx(v int32) {
+// SetOriginStatus5xx gets a reference to the given int64 and assigns it to the OriginStatus5xx field.
+func (o *DomainInspectorMeasurements) SetOriginStatus5xx(v int64) {
 	o.OriginStatus5xx = &v
 }
 

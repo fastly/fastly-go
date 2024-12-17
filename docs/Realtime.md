@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Timestamp** | Pointer to **int32** | Value to use for subsequent requests. | [optional] 
-**AggregateDelay** | Pointer to **int32** | How long the system will wait before aggregating messages for each second. The most recent data returned will have happened at the moment of the request, minus the aggregation delay. | [optional] 
+**AggregateDelay** | Pointer to **int64** | How long the system will wait before aggregating messages for each second. The most recent data returned will have happened at the moment of the request, minus the aggregation delay. | [optional] 
 **Data** | Pointer to [**[]RealtimeEntry**](RealtimeEntry.md) | A list of [records](#record-data-model), each representing one second of time. | [optional] 
 
 ## Methods
@@ -54,20 +54,20 @@ HasTimestamp returns a boolean if a field has been set.
 
 ### GetAggregateDelay
 
-`func (o *Realtime) GetAggregateDelay() int32`
+`func (o *Realtime) GetAggregateDelay() int64`
 
 GetAggregateDelay returns the AggregateDelay field if non-nil, zero value otherwise.
 
 ### GetAggregateDelayOk
 
-`func (o *Realtime) GetAggregateDelayOk() (*int32, bool)`
+`func (o *Realtime) GetAggregateDelayOk() (*int64, bool)`
 
 GetAggregateDelayOk returns a tuple with the AggregateDelay field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAggregateDelay
 
-`func (o *Realtime) SetAggregateDelay(v int32)`
+`func (o *Realtime) SetAggregateDelay(v int64)`
 
 SetAggregateDelay sets AggregateDelay field to given value.
 

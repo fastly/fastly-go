@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.0.0-beta.38](https://github.com/fastly/fastly-go/releases/tag/release/v1.0.0-beta.38) (2024-12-17)
+
+**Breaking Changes:**
+
+- fix(domain-inspector-realtime, origin-inspector-realtime, historical, realtime): Stats fields widened to 64 bits.
+
 ## [v1.0.0-beta.37](https://github.com/fastly/fastly-go/releases/tag/release/v1.0.0-beta.37) (2024-12-05)
 
 **Breaking Changes:**

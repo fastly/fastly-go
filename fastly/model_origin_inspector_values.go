@@ -19,309 +19,309 @@ import (
 // OriginInspectorValues The results of the query, optionally filtered and grouped over the requested timespan.
 type OriginInspectorValues struct {
 	// Number of responses from origin.
-	Responses *int32 `json:"responses,omitempty"`
+	Responses *int64 `json:"responses,omitempty"`
 	// Number of header bytes from origin.
-	RespHeaderBytes *int32 `json:"resp_header_bytes,omitempty"`
+	RespHeaderBytes *int64 `json:"resp_header_bytes,omitempty"`
 	// Number of body bytes from origin.
-	RespBodyBytes *int32 `json:"resp_body_bytes,omitempty"`
+	RespBodyBytes *int64 `json:"resp_body_bytes,omitempty"`
 	// Number of 1xx \"Informational\" status codes delivered from origin.
-	Status1xx *int32 `json:"status_1xx,omitempty"`
+	Status1xx *int64 `json:"status_1xx,omitempty"`
 	// Number of 2xx \"Success\" status codes delivered from origin.
-	Status2xx *int32 `json:"status_2xx,omitempty"`
+	Status2xx *int64 `json:"status_2xx,omitempty"`
 	// Number of 3xx \"Redirection\" codes delivered from origin.
-	Status3xx *int32 `json:"status_3xx,omitempty"`
+	Status3xx *int64 `json:"status_3xx,omitempty"`
 	// Number of 4xx \"Client Error\" codes delivered from origin.
-	Status4xx *int32 `json:"status_4xx,omitempty"`
+	Status4xx *int64 `json:"status_4xx,omitempty"`
 	// Number of 5xx \"Server Error\" codes delivered from origin.
-	Status5xx *int32 `json:"status_5xx,omitempty"`
+	Status5xx *int64 `json:"status_5xx,omitempty"`
 	// Number of responses received with status code 200 (Success) from origin.
-	Status200 *int32 `json:"status_200,omitempty"`
+	Status200 *int64 `json:"status_200,omitempty"`
 	// Number of responses received with status code 204 (No Content) from origin.
-	Status204 *int32 `json:"status_204,omitempty"`
+	Status204 *int64 `json:"status_204,omitempty"`
 	// Number of responses received with status code 206 (Partial Content) from origin.
-	Status206 *int32 `json:"status_206,omitempty"`
+	Status206 *int64 `json:"status_206,omitempty"`
 	// Number of responses received with status code 301 (Moved Permanently) from origin.
-	Status301 *int32 `json:"status_301,omitempty"`
+	Status301 *int64 `json:"status_301,omitempty"`
 	// Number of responses received with status code 302 (Found) from origin.
-	Status302 *int32 `json:"status_302,omitempty"`
+	Status302 *int64 `json:"status_302,omitempty"`
 	// Number of responses received with status code 304 (Not Modified) from origin.
-	Status304 *int32 `json:"status_304,omitempty"`
+	Status304 *int64 `json:"status_304,omitempty"`
 	// Number of responses received with status code 400 (Bad Request) from origin.
-	Status400 *int32 `json:"status_400,omitempty"`
+	Status400 *int64 `json:"status_400,omitempty"`
 	// Number of responses received with status code 401 (Unauthorized) from origin.
-	Status401 *int32 `json:"status_401,omitempty"`
+	Status401 *int64 `json:"status_401,omitempty"`
 	// Number of responses received with status code 403 (Forbidden) from origin.
-	Status403 *int32 `json:"status_403,omitempty"`
+	Status403 *int64 `json:"status_403,omitempty"`
 	// Number of responses received with status code 404 (Not Found) from origin.
-	Status404 *int32 `json:"status_404,omitempty"`
+	Status404 *int64 `json:"status_404,omitempty"`
 	// Number of responses received with status code 416 (Range Not Satisfiable) from origin.
-	Status416 *int32 `json:"status_416,omitempty"`
+	Status416 *int64 `json:"status_416,omitempty"`
 	// Number of responses received with status code 429 (Too Many Requests) from origin.
-	Status429 *int32 `json:"status_429,omitempty"`
+	Status429 *int64 `json:"status_429,omitempty"`
 	// Number of responses received with status code 500 (Internal Server Error) from origin.
-	Status500 *int32 `json:"status_500,omitempty"`
+	Status500 *int64 `json:"status_500,omitempty"`
 	// Number of responses received with status code 501 (Not Implemented) from origin.
-	Status501 *int32 `json:"status_501,omitempty"`
+	Status501 *int64 `json:"status_501,omitempty"`
 	// Number of responses received with status code 502 (Bad Gateway) from origin.
-	Status502 *int32 `json:"status_502,omitempty"`
+	Status502 *int64 `json:"status_502,omitempty"`
 	// Number of responses received with status code 503 (Service Unavailable) from origin.
-	Status503 *int32 `json:"status_503,omitempty"`
+	Status503 *int64 `json:"status_503,omitempty"`
 	// Number of responses received with status code 504 (Gateway Timeout) from origin.
-	Status504 *int32 `json:"status_504,omitempty"`
+	Status504 *int64 `json:"status_504,omitempty"`
 	// Number of responses received with status code 505 (HTTP Version Not Supported) from origin.
-	Status505 *int32 `json:"status_505,omitempty"`
+	Status505 *int64 `json:"status_505,omitempty"`
 	// Number of responses from origin with latency between 0 and 1 millisecond.
-	Latency0To1ms *int32 `json:"latency_0_to_1ms,omitempty"`
+	Latency0To1ms *int64 `json:"latency_0_to_1ms,omitempty"`
 	// Number of responses from origin with latency between 1 and 5 milliseconds.
-	Latency1To5ms *int32 `json:"latency_1_to_5ms,omitempty"`
+	Latency1To5ms *int64 `json:"latency_1_to_5ms,omitempty"`
 	// Number of responses from origin with latency between 5 and 10 milliseconds.
-	Latency5To10ms *int32 `json:"latency_5_to_10ms,omitempty"`
+	Latency5To10ms *int64 `json:"latency_5_to_10ms,omitempty"`
 	// Number of responses from origin with latency between 10 and 50 milliseconds.
-	Latency10To50ms *int32 `json:"latency_10_to_50ms,omitempty"`
+	Latency10To50ms *int64 `json:"latency_10_to_50ms,omitempty"`
 	// Number of responses from origin with latency between 50 and 100 milliseconds.
-	Latency50To100ms *int32 `json:"latency_50_to_100ms,omitempty"`
+	Latency50To100ms *int64 `json:"latency_50_to_100ms,omitempty"`
 	// Number of responses from origin with latency between 100 and 250 milliseconds.
-	Latency100To250ms *int32 `json:"latency_100_to_250ms,omitempty"`
+	Latency100To250ms *int64 `json:"latency_100_to_250ms,omitempty"`
 	// Number of responses from origin with latency between 250 and 500 milliseconds.
-	Latency250To500ms *int32 `json:"latency_250_to_500ms,omitempty"`
+	Latency250To500ms *int64 `json:"latency_250_to_500ms,omitempty"`
 	// Number of responses from origin with latency between 500 and 1,000 milliseconds.
-	Latency500To1000ms *int32 `json:"latency_500_to_1000ms,omitempty"`
+	Latency500To1000ms *int64 `json:"latency_500_to_1000ms,omitempty"`
 	// Number of responses from origin with latency between 1,000 and 5,000 milliseconds.
-	Latency1000To5000ms *int32 `json:"latency_1000_to_5000ms,omitempty"`
+	Latency1000To5000ms *int64 `json:"latency_1000_to_5000ms,omitempty"`
 	// Number of responses from origin with latency between 5,000 and 10,000 milliseconds.
-	Latency5000To10000ms *int32 `json:"latency_5000_to_10000ms,omitempty"`
+	Latency5000To10000ms *int64 `json:"latency_5000_to_10000ms,omitempty"`
 	// Number of responses from origin with latency between 10,000 and 60,000 milliseconds.
-	Latency10000To60000ms *int32 `json:"latency_10000_to_60000ms,omitempty"`
+	Latency10000To60000ms *int64 `json:"latency_10000_to_60000ms,omitempty"`
 	// Number of responses from origin with latency of 60,000 milliseconds and above.
-	Latency60000ms *int32 `json:"latency_60000ms,omitempty"`
+	Latency60000ms *int64 `json:"latency_60000ms,omitempty"`
 	// Number of responses received for origin requests made by the Fastly WAF.
-	WafResponses *int32 `json:"waf_responses,omitempty"`
+	WafResponses *int64 `json:"waf_responses,omitempty"`
 	// Number of header bytes received for origin requests made by the Fastly WAF.
-	WafRespHeaderBytes *int32 `json:"waf_resp_header_bytes,omitempty"`
+	WafRespHeaderBytes *int64 `json:"waf_resp_header_bytes,omitempty"`
 	// Number of body bytes received for origin requests made by the Fastly WAF.
-	WafRespBodyBytes *int32 `json:"waf_resp_body_bytes,omitempty"`
+	WafRespBodyBytes *int64 `json:"waf_resp_body_bytes,omitempty"`
 	// Number of 1xx \"Informational\" status codes received for origin requests made by the Fastly WAF.
-	WafStatus1xx *int32 `json:"waf_status_1xx,omitempty"`
+	WafStatus1xx *int64 `json:"waf_status_1xx,omitempty"`
 	// Number of 2xx \"Success\" status codes received for origin requests made by the Fastly WAF.
-	WafStatus2xx *int32 `json:"waf_status_2xx,omitempty"`
+	WafStatus2xx *int64 `json:"waf_status_2xx,omitempty"`
 	// Number of 3xx \"Redirection\" codes received for origin requests made by the Fastly WAF.
-	WafStatus3xx *int32 `json:"waf_status_3xx,omitempty"`
+	WafStatus3xx *int64 `json:"waf_status_3xx,omitempty"`
 	// Number of 4xx \"Client Error\" codes received for origin requests made by the Fastly WAF.
-	WafStatus4xx *int32 `json:"waf_status_4xx,omitempty"`
+	WafStatus4xx *int64 `json:"waf_status_4xx,omitempty"`
 	// Number of 5xx \"Server Error\" codes received for origin requests made by the Fastly WAF.
-	WafStatus5xx *int32 `json:"waf_status_5xx,omitempty"`
+	WafStatus5xx *int64 `json:"waf_status_5xx,omitempty"`
 	// Number of responses received with status code 200 (Success) received for origin requests made by the Fastly WAF.
-	WafStatus200 *int32 `json:"waf_status_200,omitempty"`
+	WafStatus200 *int64 `json:"waf_status_200,omitempty"`
 	// Number of responses received with status code 204 (No Content) received for origin requests made by the Fastly WAF.
-	WafStatus204 *int32 `json:"waf_status_204,omitempty"`
+	WafStatus204 *int64 `json:"waf_status_204,omitempty"`
 	// Number of responses received with status code 206 (Partial Content) received for origin requests made by the Fastly WAF.
-	WafStatus206 *int32 `json:"waf_status_206,omitempty"`
+	WafStatus206 *int64 `json:"waf_status_206,omitempty"`
 	// Number of responses received with status code 301 (Moved Permanently) received for origin requests made by the Fastly WAF.
-	WafStatus301 *int32 `json:"waf_status_301,omitempty"`
+	WafStatus301 *int64 `json:"waf_status_301,omitempty"`
 	// Number of responses received with status code 302 (Found) received for origin requests made by the Fastly WAF.
-	WafStatus302 *int32 `json:"waf_status_302,omitempty"`
+	WafStatus302 *int64 `json:"waf_status_302,omitempty"`
 	// Number of responses received with status code 304 (Not Modified) received for origin requests made by the Fastly WAF.
-	WafStatus304 *int32 `json:"waf_status_304,omitempty"`
+	WafStatus304 *int64 `json:"waf_status_304,omitempty"`
 	// Number of responses received with status code 400 (Bad Request) received for origin requests made by the Fastly WAF.
-	WafStatus400 *int32 `json:"waf_status_400,omitempty"`
+	WafStatus400 *int64 `json:"waf_status_400,omitempty"`
 	// Number of responses received with status code 401 (Unauthorized) received for origin requests made by the Fastly WAF.
-	WafStatus401 *int32 `json:"waf_status_401,omitempty"`
+	WafStatus401 *int64 `json:"waf_status_401,omitempty"`
 	// Number of responses received with status code 403 (Forbidden) received for origin requests made by the Fastly WAF.
-	WafStatus403 *int32 `json:"waf_status_403,omitempty"`
+	WafStatus403 *int64 `json:"waf_status_403,omitempty"`
 	// Number of responses received with status code 404 (Not Found) received for origin requests made by the Fastly WAF.
-	WafStatus404 *int32 `json:"waf_status_404,omitempty"`
+	WafStatus404 *int64 `json:"waf_status_404,omitempty"`
 	// Number of responses received with status code 416 (Range Not Satisfiable) received for origin requests made by the Fastly WAF.
-	WafStatus416 *int32 `json:"waf_status_416,omitempty"`
+	WafStatus416 *int64 `json:"waf_status_416,omitempty"`
 	// Number of responses received with status code 429 (Too Many Requests) received for origin requests made by the Fastly WAF.
-	WafStatus429 *int32 `json:"waf_status_429,omitempty"`
+	WafStatus429 *int64 `json:"waf_status_429,omitempty"`
 	// Number of responses received with status code 500 (Internal Server Error) received for origin requests made by the Fastly WAF.
-	WafStatus500 *int32 `json:"waf_status_500,omitempty"`
+	WafStatus500 *int64 `json:"waf_status_500,omitempty"`
 	// Number of responses received with status code 501 (Not Implemented) received for origin requests made by the Fastly WAF.
-	WafStatus501 *int32 `json:"waf_status_501,omitempty"`
+	WafStatus501 *int64 `json:"waf_status_501,omitempty"`
 	// Number of responses received with status code 502 (Bad Gateway) received for origin requests made by the Fastly WAF.
-	WafStatus502 *int32 `json:"waf_status_502,omitempty"`
+	WafStatus502 *int64 `json:"waf_status_502,omitempty"`
 	// Number of responses received with status code 503 (Service Unavailable) received for origin requests made by the Fastly WAF.
-	WafStatus503 *int32 `json:"waf_status_503,omitempty"`
+	WafStatus503 *int64 `json:"waf_status_503,omitempty"`
 	// Number of responses received with status code 504 (Gateway Timeout) received for origin requests made by the Fastly WAF.
-	WafStatus504 *int32 `json:"waf_status_504,omitempty"`
+	WafStatus504 *int64 `json:"waf_status_504,omitempty"`
 	// Number of responses received with status code 505 (HTTP Version Not Supported) received for origin requests made by the Fastly WAF.
-	WafStatus505 *int32 `json:"waf_status_505,omitempty"`
+	WafStatus505 *int64 `json:"waf_status_505,omitempty"`
 	// Number of responses with latency between 0 and 1 millisecond received for origin requests made by the Fastly WAF.
-	WafLatency0To1ms *int32 `json:"waf_latency_0_to_1ms,omitempty"`
+	WafLatency0To1ms *int64 `json:"waf_latency_0_to_1ms,omitempty"`
 	// Number of responses with latency between 1 and 5 milliseconds received for origin requests made by the Fastly WAF.
-	WafLatency1To5ms *int32 `json:"waf_latency_1_to_5ms,omitempty"`
+	WafLatency1To5ms *int64 `json:"waf_latency_1_to_5ms,omitempty"`
 	// Number of responses with latency between 5 and 10 milliseconds received for origin requests made by the Fastly WAF.
-	WafLatency5To10ms *int32 `json:"waf_latency_5_to_10ms,omitempty"`
+	WafLatency5To10ms *int64 `json:"waf_latency_5_to_10ms,omitempty"`
 	// Number of responses with latency between 10 and 50 milliseconds received for origin requests made by the Fastly WAF.
-	WafLatency10To50ms *int32 `json:"waf_latency_10_to_50ms,omitempty"`
+	WafLatency10To50ms *int64 `json:"waf_latency_10_to_50ms,omitempty"`
 	// Number of responses with latency between 50 and 100 milliseconds received for origin requests made by the Fastly WAF.
-	WafLatency50To100ms *int32 `json:"waf_latency_50_to_100ms,omitempty"`
+	WafLatency50To100ms *int64 `json:"waf_latency_50_to_100ms,omitempty"`
 	// Number of responses with latency between 100 and 250 milliseconds received for origin requests made by the Fastly WAF.
-	WafLatency100To250ms *int32 `json:"waf_latency_100_to_250ms,omitempty"`
+	WafLatency100To250ms *int64 `json:"waf_latency_100_to_250ms,omitempty"`
 	// Number of responses with latency between 250 and 500 milliseconds received for origin requests made by the Fastly WAF.
-	WafLatency250To500ms *int32 `json:"waf_latency_250_to_500ms,omitempty"`
+	WafLatency250To500ms *int64 `json:"waf_latency_250_to_500ms,omitempty"`
 	// Number of responses with latency between 500 and 1,000 milliseconds received for origin requests made by the Fastly WAF.
-	WafLatency500To1000ms *int32 `json:"waf_latency_500_to_1000ms,omitempty"`
+	WafLatency500To1000ms *int64 `json:"waf_latency_500_to_1000ms,omitempty"`
 	// Number of responses with latency between 1,000 and 5,000 milliseconds received for origin requests made by the Fastly WAF.
-	WafLatency1000To5000ms *int32 `json:"waf_latency_1000_to_5000ms,omitempty"`
+	WafLatency1000To5000ms *int64 `json:"waf_latency_1000_to_5000ms,omitempty"`
 	// Number of responses with latency between 5,000 and 10,000 milliseconds received for origin requests made by the Fastly WAF.
-	WafLatency5000To10000ms *int32 `json:"waf_latency_5000_to_10000ms,omitempty"`
+	WafLatency5000To10000ms *int64 `json:"waf_latency_5000_to_10000ms,omitempty"`
 	// Number of responses with latency between 10,000 and 60,000 milliseconds received for origin requests made by the Fastly WAF.
-	WafLatency10000To60000ms *int32 `json:"waf_latency_10000_to_60000ms,omitempty"`
+	WafLatency10000To60000ms *int64 `json:"waf_latency_10000_to_60000ms,omitempty"`
 	// Number of responses with latency of 60,000 milliseconds and above received for origin requests made by the Fastly WAF.
-	WafLatency60000ms *int32 `json:"waf_latency_60000ms,omitempty"`
+	WafLatency60000ms *int64 `json:"waf_latency_60000ms,omitempty"`
 	// Number of responses for origin received by the Compute platform.
-	ComputeResponses *int32 `json:"compute_responses,omitempty"`
+	ComputeResponses *int64 `json:"compute_responses,omitempty"`
 	// Number of header bytes for origin received by the Compute platform.
-	ComputeRespHeaderBytes *int32 `json:"compute_resp_header_bytes,omitempty"`
+	ComputeRespHeaderBytes *int64 `json:"compute_resp_header_bytes,omitempty"`
 	// Number of body bytes for origin received by the Compute platform.
-	ComputeRespBodyBytes *int32 `json:"compute_resp_body_bytes,omitempty"`
+	ComputeRespBodyBytes *int64 `json:"compute_resp_body_bytes,omitempty"`
 	// Number of 1xx \"Informational\" status codes for origin received by the Compute platform.
-	ComputeStatus1xx *int32 `json:"compute_status_1xx,omitempty"`
+	ComputeStatus1xx *int64 `json:"compute_status_1xx,omitempty"`
 	// Number of 2xx \"Success\" status codes for origin received by the Compute platform.
-	ComputeStatus2xx *int32 `json:"compute_status_2xx,omitempty"`
+	ComputeStatus2xx *int64 `json:"compute_status_2xx,omitempty"`
 	// Number of 3xx \"Redirection\" codes for origin received by the Compute platform.
-	ComputeStatus3xx *int32 `json:"compute_status_3xx,omitempty"`
+	ComputeStatus3xx *int64 `json:"compute_status_3xx,omitempty"`
 	// Number of 4xx \"Client Error\" codes for origin received by the Compute platform.
-	ComputeStatus4xx *int32 `json:"compute_status_4xx,omitempty"`
+	ComputeStatus4xx *int64 `json:"compute_status_4xx,omitempty"`
 	// Number of 5xx \"Server Error\" codes for origin received by the Compute platform.
-	ComputeStatus5xx *int32 `json:"compute_status_5xx,omitempty"`
+	ComputeStatus5xx *int64 `json:"compute_status_5xx,omitempty"`
 	// Number of responses received with status code 200 (Success) for origin received by the Compute platform.
-	ComputeStatus200 *int32 `json:"compute_status_200,omitempty"`
+	ComputeStatus200 *int64 `json:"compute_status_200,omitempty"`
 	// Number of responses received with status code 204 (No Content) for origin received by the Compute platform.
-	ComputeStatus204 *int32 `json:"compute_status_204,omitempty"`
+	ComputeStatus204 *int64 `json:"compute_status_204,omitempty"`
 	// Number of responses received with status code 206 (Partial Content) for origin received by the Compute platform.
-	ComputeStatus206 *int32 `json:"compute_status_206,omitempty"`
+	ComputeStatus206 *int64 `json:"compute_status_206,omitempty"`
 	// Number of responses received with status code 301 (Moved Permanently) for origin received by the Compute platform.
-	ComputeStatus301 *int32 `json:"compute_status_301,omitempty"`
+	ComputeStatus301 *int64 `json:"compute_status_301,omitempty"`
 	// Number of responses received with status code 302 (Found) for origin received by the Compute platform.
-	ComputeStatus302 *int32 `json:"compute_status_302,omitempty"`
+	ComputeStatus302 *int64 `json:"compute_status_302,omitempty"`
 	// Number of responses received with status code 304 (Not Modified) for origin received by the Compute platform.
-	ComputeStatus304 *int32 `json:"compute_status_304,omitempty"`
+	ComputeStatus304 *int64 `json:"compute_status_304,omitempty"`
 	// Number of responses received with status code 400 (Bad Request) for origin received by the Compute platform.
-	ComputeStatus400 *int32 `json:"compute_status_400,omitempty"`
+	ComputeStatus400 *int64 `json:"compute_status_400,omitempty"`
 	// Number of responses received with status code 401 (Unauthorized) for origin received by the Compute platform.
-	ComputeStatus401 *int32 `json:"compute_status_401,omitempty"`
+	ComputeStatus401 *int64 `json:"compute_status_401,omitempty"`
 	// Number of responses received with status code 403 (Forbidden) for origin received by the Compute platform.
-	ComputeStatus403 *int32 `json:"compute_status_403,omitempty"`
+	ComputeStatus403 *int64 `json:"compute_status_403,omitempty"`
 	// Number of responses received with status code 404 (Not Found) for origin received by the Compute platform.
-	ComputeStatus404 *int32 `json:"compute_status_404,omitempty"`
+	ComputeStatus404 *int64 `json:"compute_status_404,omitempty"`
 	// Number of responses received with status code 416 (Range Not Satisfiable) for origin received by the Compute platform.
-	ComputeStatus416 *int32 `json:"compute_status_416,omitempty"`
+	ComputeStatus416 *int64 `json:"compute_status_416,omitempty"`
 	// Number of responses received with status code 429 (Too Many Requests) for origin received by the Compute platform.
-	ComputeStatus429 *int32 `json:"compute_status_429,omitempty"`
+	ComputeStatus429 *int64 `json:"compute_status_429,omitempty"`
 	// Number of responses received with status code 500 (Internal Server Error) for origin received by the Compute platform.
-	ComputeStatus500 *int32 `json:"compute_status_500,omitempty"`
+	ComputeStatus500 *int64 `json:"compute_status_500,omitempty"`
 	// Number of responses received with status code 501 (Not Implemented) for origin received by the Compute platform.
-	ComputeStatus501 *int32 `json:"compute_status_501,omitempty"`
+	ComputeStatus501 *int64 `json:"compute_status_501,omitempty"`
 	// Number of responses received with status code 502 (Bad Gateway) for origin received by the Compute platform.
-	ComputeStatus502 *int32 `json:"compute_status_502,omitempty"`
+	ComputeStatus502 *int64 `json:"compute_status_502,omitempty"`
 	// Number of responses received with status code 503 (Service Unavailable) for origin received by the Compute platform.
-	ComputeStatus503 *int32 `json:"compute_status_503,omitempty"`
+	ComputeStatus503 *int64 `json:"compute_status_503,omitempty"`
 	// Number of responses received with status code 504 (Gateway Timeout) for origin received by the Compute platform.
-	ComputeStatus504 *int32 `json:"compute_status_504,omitempty"`
+	ComputeStatus504 *int64 `json:"compute_status_504,omitempty"`
 	// Number of responses received with status code 505 (HTTP Version Not Supported) for origin received by the Compute platform.
-	ComputeStatus505 *int32 `json:"compute_status_505,omitempty"`
+	ComputeStatus505 *int64 `json:"compute_status_505,omitempty"`
 	// Number of responses with latency between 0 and 1 millisecond for origin received by the Compute platform.
-	ComputeLatency0To1ms *int32 `json:"compute_latency_0_to_1ms,omitempty"`
+	ComputeLatency0To1ms *int64 `json:"compute_latency_0_to_1ms,omitempty"`
 	// Number of responses with latency between 1 and 5 milliseconds for origin received by the Compute platform.
-	ComputeLatency1To5ms *int32 `json:"compute_latency_1_to_5ms,omitempty"`
+	ComputeLatency1To5ms *int64 `json:"compute_latency_1_to_5ms,omitempty"`
 	// Number of responses with latency between 5 and 10 milliseconds for origin received by the Compute platform.
-	ComputeLatency5To10ms *int32 `json:"compute_latency_5_to_10ms,omitempty"`
+	ComputeLatency5To10ms *int64 `json:"compute_latency_5_to_10ms,omitempty"`
 	// Number of responses with latency between 10 and 50 milliseconds for origin received by the Compute platform.
-	ComputeLatency10To50ms *int32 `json:"compute_latency_10_to_50ms,omitempty"`
+	ComputeLatency10To50ms *int64 `json:"compute_latency_10_to_50ms,omitempty"`
 	// Number of responses with latency between 50 and 100 milliseconds for origin received by the Compute platform.
-	ComputeLatency50To100ms *int32 `json:"compute_latency_50_to_100ms,omitempty"`
+	ComputeLatency50To100ms *int64 `json:"compute_latency_50_to_100ms,omitempty"`
 	// Number of responses with latency between 100 and 250 milliseconds for origin received by the Compute platform.
-	ComputeLatency100To250ms *int32 `json:"compute_latency_100_to_250ms,omitempty"`
+	ComputeLatency100To250ms *int64 `json:"compute_latency_100_to_250ms,omitempty"`
 	// Number of responses with latency between 250 and 500 milliseconds for origin received by the Compute platform.
-	ComputeLatency250To500ms *int32 `json:"compute_latency_250_to_500ms,omitempty"`
+	ComputeLatency250To500ms *int64 `json:"compute_latency_250_to_500ms,omitempty"`
 	// Number of responses with latency between 500 and 1,000 milliseconds for origin received by the Compute platform.
-	ComputeLatency500To1000ms *int32 `json:"compute_latency_500_to_1000ms,omitempty"`
+	ComputeLatency500To1000ms *int64 `json:"compute_latency_500_to_1000ms,omitempty"`
 	// Number of responses with latency between 1,000 and 5,000 milliseconds for origin received by the Compute platform.
-	ComputeLatency1000To5000ms *int32 `json:"compute_latency_1000_to_5000ms,omitempty"`
+	ComputeLatency1000To5000ms *int64 `json:"compute_latency_1000_to_5000ms,omitempty"`
 	// Number of responses with latency between 5,000 and 10,000 milliseconds for origin received by the Compute platform.
-	ComputeLatency5000To10000ms *int32 `json:"compute_latency_5000_to_10000ms,omitempty"`
+	ComputeLatency5000To10000ms *int64 `json:"compute_latency_5000_to_10000ms,omitempty"`
 	// Number of responses with latency between 10,000 and 60,000 milliseconds for origin received by the Compute platform.
-	ComputeLatency10000To60000ms *int32 `json:"compute_latency_10000_to_60000ms,omitempty"`
+	ComputeLatency10000To60000ms *int64 `json:"compute_latency_10000_to_60000ms,omitempty"`
 	// Number of responses with latency of 60,000 milliseconds and above for origin received by the Compute platform.
-	ComputeLatency60000ms *int32 `json:"compute_latency_60000ms,omitempty"`
+	ComputeLatency60000ms *int64 `json:"compute_latency_60000ms,omitempty"`
 	// Number of responses received for origin requests made by all sources.
-	AllResponses *int32 `json:"all_responses,omitempty"`
+	AllResponses *int64 `json:"all_responses,omitempty"`
 	// Number of header bytes received for origin requests made by all sources.
-	AllRespHeaderBytes *int32 `json:"all_resp_header_bytes,omitempty"`
+	AllRespHeaderBytes *int64 `json:"all_resp_header_bytes,omitempty"`
 	// Number of body bytes received for origin requests made by all sources.
-	AllRespBodyBytes *int32 `json:"all_resp_body_bytes,omitempty"`
+	AllRespBodyBytes *int64 `json:"all_resp_body_bytes,omitempty"`
 	// Number of 1xx \"Informational\" category status codes delivered received for origin requests made by all sources.
-	AllStatus1xx *int32 `json:"all_status_1xx,omitempty"`
+	AllStatus1xx *int64 `json:"all_status_1xx,omitempty"`
 	// Number of 2xx \"Success\" status codes received for origin requests made by all sources.
-	AllStatus2xx *int32 `json:"all_status_2xx,omitempty"`
+	AllStatus2xx *int64 `json:"all_status_2xx,omitempty"`
 	// Number of 3xx \"Redirection\" codes received for origin requests made by all sources.
-	AllStatus3xx *int32 `json:"all_status_3xx,omitempty"`
+	AllStatus3xx *int64 `json:"all_status_3xx,omitempty"`
 	// Number of 4xx \"Client Error\" codes received for origin requests made by all sources.
-	AllStatus4xx *int32 `json:"all_status_4xx,omitempty"`
+	AllStatus4xx *int64 `json:"all_status_4xx,omitempty"`
 	// Number of 5xx \"Server Error\" codes received for origin requests made by all sources.
-	AllStatus5xx *int32 `json:"all_status_5xx,omitempty"`
+	AllStatus5xx *int64 `json:"all_status_5xx,omitempty"`
 	// Number of responses received with status code 200 (Success) received for origin requests made by all sources.
-	AllStatus200 *int32 `json:"all_status_200,omitempty"`
+	AllStatus200 *int64 `json:"all_status_200,omitempty"`
 	// Number of responses received with status code 204 (No Content) received for origin requests made by all sources.
-	AllStatus204 *int32 `json:"all_status_204,omitempty"`
+	AllStatus204 *int64 `json:"all_status_204,omitempty"`
 	// Number of responses received with status code 206 (Partial Content) received for origin requests made by all sources.
-	AllStatus206 *int32 `json:"all_status_206,omitempty"`
+	AllStatus206 *int64 `json:"all_status_206,omitempty"`
 	// Number of responses received with status code 301 (Moved Permanently) received for origin requests made by all sources.
-	AllStatus301 *int32 `json:"all_status_301,omitempty"`
+	AllStatus301 *int64 `json:"all_status_301,omitempty"`
 	// Number of responses received with status code 302 (Found) received for origin requests made by all sources.
-	AllStatus302 *int32 `json:"all_status_302,omitempty"`
+	AllStatus302 *int64 `json:"all_status_302,omitempty"`
 	// Number of responses received with status code 304 (Not Modified) received for origin requests made by all sources.
-	AllStatus304 *int32 `json:"all_status_304,omitempty"`
+	AllStatus304 *int64 `json:"all_status_304,omitempty"`
 	// Number of responses received with status code 400 (Bad Request) received for origin requests made by all sources.
-	AllStatus400 *int32 `json:"all_status_400,omitempty"`
+	AllStatus400 *int64 `json:"all_status_400,omitempty"`
 	// Number of responses received with status code 401 (Unauthorized) received for origin requests made by all sources.
-	AllStatus401 *int32 `json:"all_status_401,omitempty"`
+	AllStatus401 *int64 `json:"all_status_401,omitempty"`
 	// Number of responses received with status code 403 (Forbidden) received for origin requests made by all sources.
-	AllStatus403 *int32 `json:"all_status_403,omitempty"`
+	AllStatus403 *int64 `json:"all_status_403,omitempty"`
 	// Number of responses received with status code 404 (Not Found) received for origin requests made by all sources.
-	AllStatus404 *int32 `json:"all_status_404,omitempty"`
+	AllStatus404 *int64 `json:"all_status_404,omitempty"`
 	// Number of responses received with status code 416 (Range Not Satisfiable) received for origin requests made by all sources.
-	AllStatus416 *int32 `json:"all_status_416,omitempty"`
+	AllStatus416 *int64 `json:"all_status_416,omitempty"`
 	// Number of responses received with status code 429 (Too Many Requests) received for origin requests made by all sources.
-	AllStatus429 *int32 `json:"all_status_429,omitempty"`
+	AllStatus429 *int64 `json:"all_status_429,omitempty"`
 	// Number of responses received with status code 500 (Internal Server Error) received for origin requests made by all sources.
-	AllStatus500 *int32 `json:"all_status_500,omitempty"`
+	AllStatus500 *int64 `json:"all_status_500,omitempty"`
 	// Number of responses received with status code 501 (Not Implemented) received for origin requests made by all sources.
-	AllStatus501 *int32 `json:"all_status_501,omitempty"`
+	AllStatus501 *int64 `json:"all_status_501,omitempty"`
 	// Number of responses received with status code 502 (Bad Gateway) received for origin requests made by all sources.
-	AllStatus502 *int32 `json:"all_status_502,omitempty"`
+	AllStatus502 *int64 `json:"all_status_502,omitempty"`
 	// Number of responses received with status code 503 (Service Unavailable) received for origin requests made by all sources.
-	AllStatus503 *int32 `json:"all_status_503,omitempty"`
+	AllStatus503 *int64 `json:"all_status_503,omitempty"`
 	// Number of responses received with status code 504 (Gateway Timeout) received for origin requests made by all sources.
-	AllStatus504 *int32 `json:"all_status_504,omitempty"`
+	AllStatus504 *int64 `json:"all_status_504,omitempty"`
 	// Number of responses received with status code 505 (HTTP Version Not Supported) received for origin requests made by all sources.
-	AllStatus505 *int32 `json:"all_status_505,omitempty"`
+	AllStatus505 *int64 `json:"all_status_505,omitempty"`
 	// Number of responses with latency between 0 and 1 millisecond received for origin requests made by all sources.
-	AllLatency0To1ms *int32 `json:"all_latency_0_to_1ms,omitempty"`
+	AllLatency0To1ms *int64 `json:"all_latency_0_to_1ms,omitempty"`
 	// Number of responses with latency between 1 and 5 milliseconds received for origin requests made by all sources.
-	AllLatency1To5ms *int32 `json:"all_latency_1_to_5ms,omitempty"`
+	AllLatency1To5ms *int64 `json:"all_latency_1_to_5ms,omitempty"`
 	// Number of responses with latency between 5 and 10 milliseconds received for origin requests made by all sources.
-	AllLatency5To10ms *int32 `json:"all_latency_5_to_10ms,omitempty"`
+	AllLatency5To10ms *int64 `json:"all_latency_5_to_10ms,omitempty"`
 	// Number of responses with latency between 10 and 50 milliseconds received for origin requests made by all sources.
-	AllLatency10To50ms *int32 `json:"all_latency_10_to_50ms,omitempty"`
+	AllLatency10To50ms *int64 `json:"all_latency_10_to_50ms,omitempty"`
 	// Number of responses with latency between 50 and 100 milliseconds received for origin requests made by all sources.
-	AllLatency50To100ms *int32 `json:"all_latency_50_to_100ms,omitempty"`
+	AllLatency50To100ms *int64 `json:"all_latency_50_to_100ms,omitempty"`
 	// Number of responses with latency between 100 and 250 milliseconds received for origin requests made by all sources.
-	AllLatency100To250ms *int32 `json:"all_latency_100_to_250ms,omitempty"`
+	AllLatency100To250ms *int64 `json:"all_latency_100_to_250ms,omitempty"`
 	// Number of responses with latency between 250 and 500 milliseconds received for origin requests made by all sources.
-	AllLatency250To500ms *int32 `json:"all_latency_250_to_500ms,omitempty"`
+	AllLatency250To500ms *int64 `json:"all_latency_250_to_500ms,omitempty"`
 	// Number of responses with latency between 500 and 1,000 milliseconds received for origin requests made by all sources.
-	AllLatency500To1000ms *int32 `json:"all_latency_500_to_1000ms,omitempty"`
+	AllLatency500To1000ms *int64 `json:"all_latency_500_to_1000ms,omitempty"`
 	// Number of responses with latency between 1,000 and 5,000 milliseconds received for origin requests made by all sources.
-	AllLatency1000To5000ms *int32 `json:"all_latency_1000_to_5000ms,omitempty"`
+	AllLatency1000To5000ms *int64 `json:"all_latency_1000_to_5000ms,omitempty"`
 	// Number of responses with latency between 5,000 and 10,000 milliseconds received for origin requests made by all sources.
-	AllLatency5000To10000ms *int32 `json:"all_latency_5000_to_10000ms,omitempty"`
+	AllLatency5000To10000ms *int64 `json:"all_latency_5000_to_10000ms,omitempty"`
 	// Number of responses with latency between 10,000 and 60,000 milliseconds received for origin requests made by all sources.
-	AllLatency10000To60000ms *int32 `json:"all_latency_10000_to_60000ms,omitempty"`
+	AllLatency10000To60000ms *int64 `json:"all_latency_10000_to_60000ms,omitempty"`
 	// Number of responses with latency of 60,000 milliseconds and above received for origin requests made by all sources.
-	AllLatency60000ms    *int32 `json:"all_latency_60000ms,omitempty"`
+	AllLatency60000ms    *int64 `json:"all_latency_60000ms,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -345,9 +345,9 @@ func NewOriginInspectorValuesWithDefaults() *OriginInspectorValues {
 }
 
 // GetResponses returns the Responses field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetResponses() int32 {
+func (o *OriginInspectorValues) GetResponses() int64 {
 	if o == nil || o.Responses == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Responses
@@ -355,7 +355,7 @@ func (o *OriginInspectorValues) GetResponses() int32 {
 
 // GetResponsesOk returns a tuple with the Responses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetResponsesOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetResponsesOk() (*int64, bool) {
 	if o == nil || o.Responses == nil {
 		return nil, false
 	}
@@ -371,15 +371,15 @@ func (o *OriginInspectorValues) HasResponses() bool {
 	return false
 }
 
-// SetResponses gets a reference to the given int32 and assigns it to the Responses field.
-func (o *OriginInspectorValues) SetResponses(v int32) {
+// SetResponses gets a reference to the given int64 and assigns it to the Responses field.
+func (o *OriginInspectorValues) SetResponses(v int64) {
 	o.Responses = &v
 }
 
 // GetRespHeaderBytes returns the RespHeaderBytes field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetRespHeaderBytes() int32 {
+func (o *OriginInspectorValues) GetRespHeaderBytes() int64 {
 	if o == nil || o.RespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RespHeaderBytes
@@ -387,7 +387,7 @@ func (o *OriginInspectorValues) GetRespHeaderBytes() int32 {
 
 // GetRespHeaderBytesOk returns a tuple with the RespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetRespHeaderBytesOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.RespHeaderBytes == nil {
 		return nil, false
 	}
@@ -403,15 +403,15 @@ func (o *OriginInspectorValues) HasRespHeaderBytes() bool {
 	return false
 }
 
-// SetRespHeaderBytes gets a reference to the given int32 and assigns it to the RespHeaderBytes field.
-func (o *OriginInspectorValues) SetRespHeaderBytes(v int32) {
+// SetRespHeaderBytes gets a reference to the given int64 and assigns it to the RespHeaderBytes field.
+func (o *OriginInspectorValues) SetRespHeaderBytes(v int64) {
 	o.RespHeaderBytes = &v
 }
 
 // GetRespBodyBytes returns the RespBodyBytes field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetRespBodyBytes() int32 {
+func (o *OriginInspectorValues) GetRespBodyBytes() int64 {
 	if o == nil || o.RespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.RespBodyBytes
@@ -419,7 +419,7 @@ func (o *OriginInspectorValues) GetRespBodyBytes() int32 {
 
 // GetRespBodyBytesOk returns a tuple with the RespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetRespBodyBytesOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.RespBodyBytes == nil {
 		return nil, false
 	}
@@ -435,15 +435,15 @@ func (o *OriginInspectorValues) HasRespBodyBytes() bool {
 	return false
 }
 
-// SetRespBodyBytes gets a reference to the given int32 and assigns it to the RespBodyBytes field.
-func (o *OriginInspectorValues) SetRespBodyBytes(v int32) {
+// SetRespBodyBytes gets a reference to the given int64 and assigns it to the RespBodyBytes field.
+func (o *OriginInspectorValues) SetRespBodyBytes(v int64) {
 	o.RespBodyBytes = &v
 }
 
 // GetStatus1xx returns the Status1xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus1xx() int32 {
+func (o *OriginInspectorValues) GetStatus1xx() int64 {
 	if o == nil || o.Status1xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status1xx
@@ -451,7 +451,7 @@ func (o *OriginInspectorValues) GetStatus1xx() int32 {
 
 // GetStatus1xxOk returns a tuple with the Status1xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus1xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus1xxOk() (*int64, bool) {
 	if o == nil || o.Status1xx == nil {
 		return nil, false
 	}
@@ -467,15 +467,15 @@ func (o *OriginInspectorValues) HasStatus1xx() bool {
 	return false
 }
 
-// SetStatus1xx gets a reference to the given int32 and assigns it to the Status1xx field.
-func (o *OriginInspectorValues) SetStatus1xx(v int32) {
+// SetStatus1xx gets a reference to the given int64 and assigns it to the Status1xx field.
+func (o *OriginInspectorValues) SetStatus1xx(v int64) {
 	o.Status1xx = &v
 }
 
 // GetStatus2xx returns the Status2xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus2xx() int32 {
+func (o *OriginInspectorValues) GetStatus2xx() int64 {
 	if o == nil || o.Status2xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status2xx
@@ -483,7 +483,7 @@ func (o *OriginInspectorValues) GetStatus2xx() int32 {
 
 // GetStatus2xxOk returns a tuple with the Status2xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus2xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus2xxOk() (*int64, bool) {
 	if o == nil || o.Status2xx == nil {
 		return nil, false
 	}
@@ -499,15 +499,15 @@ func (o *OriginInspectorValues) HasStatus2xx() bool {
 	return false
 }
 
-// SetStatus2xx gets a reference to the given int32 and assigns it to the Status2xx field.
-func (o *OriginInspectorValues) SetStatus2xx(v int32) {
+// SetStatus2xx gets a reference to the given int64 and assigns it to the Status2xx field.
+func (o *OriginInspectorValues) SetStatus2xx(v int64) {
 	o.Status2xx = &v
 }
 
 // GetStatus3xx returns the Status3xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus3xx() int32 {
+func (o *OriginInspectorValues) GetStatus3xx() int64 {
 	if o == nil || o.Status3xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status3xx
@@ -515,7 +515,7 @@ func (o *OriginInspectorValues) GetStatus3xx() int32 {
 
 // GetStatus3xxOk returns a tuple with the Status3xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus3xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus3xxOk() (*int64, bool) {
 	if o == nil || o.Status3xx == nil {
 		return nil, false
 	}
@@ -531,15 +531,15 @@ func (o *OriginInspectorValues) HasStatus3xx() bool {
 	return false
 }
 
-// SetStatus3xx gets a reference to the given int32 and assigns it to the Status3xx field.
-func (o *OriginInspectorValues) SetStatus3xx(v int32) {
+// SetStatus3xx gets a reference to the given int64 and assigns it to the Status3xx field.
+func (o *OriginInspectorValues) SetStatus3xx(v int64) {
 	o.Status3xx = &v
 }
 
 // GetStatus4xx returns the Status4xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus4xx() int32 {
+func (o *OriginInspectorValues) GetStatus4xx() int64 {
 	if o == nil || o.Status4xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status4xx
@@ -547,7 +547,7 @@ func (o *OriginInspectorValues) GetStatus4xx() int32 {
 
 // GetStatus4xxOk returns a tuple with the Status4xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus4xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus4xxOk() (*int64, bool) {
 	if o == nil || o.Status4xx == nil {
 		return nil, false
 	}
@@ -563,15 +563,15 @@ func (o *OriginInspectorValues) HasStatus4xx() bool {
 	return false
 }
 
-// SetStatus4xx gets a reference to the given int32 and assigns it to the Status4xx field.
-func (o *OriginInspectorValues) SetStatus4xx(v int32) {
+// SetStatus4xx gets a reference to the given int64 and assigns it to the Status4xx field.
+func (o *OriginInspectorValues) SetStatus4xx(v int64) {
 	o.Status4xx = &v
 }
 
 // GetStatus5xx returns the Status5xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus5xx() int32 {
+func (o *OriginInspectorValues) GetStatus5xx() int64 {
 	if o == nil || o.Status5xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status5xx
@@ -579,7 +579,7 @@ func (o *OriginInspectorValues) GetStatus5xx() int32 {
 
 // GetStatus5xxOk returns a tuple with the Status5xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus5xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus5xxOk() (*int64, bool) {
 	if o == nil || o.Status5xx == nil {
 		return nil, false
 	}
@@ -595,15 +595,15 @@ func (o *OriginInspectorValues) HasStatus5xx() bool {
 	return false
 }
 
-// SetStatus5xx gets a reference to the given int32 and assigns it to the Status5xx field.
-func (o *OriginInspectorValues) SetStatus5xx(v int32) {
+// SetStatus5xx gets a reference to the given int64 and assigns it to the Status5xx field.
+func (o *OriginInspectorValues) SetStatus5xx(v int64) {
 	o.Status5xx = &v
 }
 
 // GetStatus200 returns the Status200 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus200() int32 {
+func (o *OriginInspectorValues) GetStatus200() int64 {
 	if o == nil || o.Status200 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status200
@@ -611,7 +611,7 @@ func (o *OriginInspectorValues) GetStatus200() int32 {
 
 // GetStatus200Ok returns a tuple with the Status200 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus200Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus200Ok() (*int64, bool) {
 	if o == nil || o.Status200 == nil {
 		return nil, false
 	}
@@ -627,15 +627,15 @@ func (o *OriginInspectorValues) HasStatus200() bool {
 	return false
 }
 
-// SetStatus200 gets a reference to the given int32 and assigns it to the Status200 field.
-func (o *OriginInspectorValues) SetStatus200(v int32) {
+// SetStatus200 gets a reference to the given int64 and assigns it to the Status200 field.
+func (o *OriginInspectorValues) SetStatus200(v int64) {
 	o.Status200 = &v
 }
 
 // GetStatus204 returns the Status204 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus204() int32 {
+func (o *OriginInspectorValues) GetStatus204() int64 {
 	if o == nil || o.Status204 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status204
@@ -643,7 +643,7 @@ func (o *OriginInspectorValues) GetStatus204() int32 {
 
 // GetStatus204Ok returns a tuple with the Status204 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus204Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus204Ok() (*int64, bool) {
 	if o == nil || o.Status204 == nil {
 		return nil, false
 	}
@@ -659,15 +659,15 @@ func (o *OriginInspectorValues) HasStatus204() bool {
 	return false
 }
 
-// SetStatus204 gets a reference to the given int32 and assigns it to the Status204 field.
-func (o *OriginInspectorValues) SetStatus204(v int32) {
+// SetStatus204 gets a reference to the given int64 and assigns it to the Status204 field.
+func (o *OriginInspectorValues) SetStatus204(v int64) {
 	o.Status204 = &v
 }
 
 // GetStatus206 returns the Status206 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus206() int32 {
+func (o *OriginInspectorValues) GetStatus206() int64 {
 	if o == nil || o.Status206 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status206
@@ -675,7 +675,7 @@ func (o *OriginInspectorValues) GetStatus206() int32 {
 
 // GetStatus206Ok returns a tuple with the Status206 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus206Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus206Ok() (*int64, bool) {
 	if o == nil || o.Status206 == nil {
 		return nil, false
 	}
@@ -691,15 +691,15 @@ func (o *OriginInspectorValues) HasStatus206() bool {
 	return false
 }
 
-// SetStatus206 gets a reference to the given int32 and assigns it to the Status206 field.
-func (o *OriginInspectorValues) SetStatus206(v int32) {
+// SetStatus206 gets a reference to the given int64 and assigns it to the Status206 field.
+func (o *OriginInspectorValues) SetStatus206(v int64) {
 	o.Status206 = &v
 }
 
 // GetStatus301 returns the Status301 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus301() int32 {
+func (o *OriginInspectorValues) GetStatus301() int64 {
 	if o == nil || o.Status301 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status301
@@ -707,7 +707,7 @@ func (o *OriginInspectorValues) GetStatus301() int32 {
 
 // GetStatus301Ok returns a tuple with the Status301 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus301Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus301Ok() (*int64, bool) {
 	if o == nil || o.Status301 == nil {
 		return nil, false
 	}
@@ -723,15 +723,15 @@ func (o *OriginInspectorValues) HasStatus301() bool {
 	return false
 }
 
-// SetStatus301 gets a reference to the given int32 and assigns it to the Status301 field.
-func (o *OriginInspectorValues) SetStatus301(v int32) {
+// SetStatus301 gets a reference to the given int64 and assigns it to the Status301 field.
+func (o *OriginInspectorValues) SetStatus301(v int64) {
 	o.Status301 = &v
 }
 
 // GetStatus302 returns the Status302 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus302() int32 {
+func (o *OriginInspectorValues) GetStatus302() int64 {
 	if o == nil || o.Status302 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status302
@@ -739,7 +739,7 @@ func (o *OriginInspectorValues) GetStatus302() int32 {
 
 // GetStatus302Ok returns a tuple with the Status302 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus302Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus302Ok() (*int64, bool) {
 	if o == nil || o.Status302 == nil {
 		return nil, false
 	}
@@ -755,15 +755,15 @@ func (o *OriginInspectorValues) HasStatus302() bool {
 	return false
 }
 
-// SetStatus302 gets a reference to the given int32 and assigns it to the Status302 field.
-func (o *OriginInspectorValues) SetStatus302(v int32) {
+// SetStatus302 gets a reference to the given int64 and assigns it to the Status302 field.
+func (o *OriginInspectorValues) SetStatus302(v int64) {
 	o.Status302 = &v
 }
 
 // GetStatus304 returns the Status304 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus304() int32 {
+func (o *OriginInspectorValues) GetStatus304() int64 {
 	if o == nil || o.Status304 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status304
@@ -771,7 +771,7 @@ func (o *OriginInspectorValues) GetStatus304() int32 {
 
 // GetStatus304Ok returns a tuple with the Status304 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus304Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus304Ok() (*int64, bool) {
 	if o == nil || o.Status304 == nil {
 		return nil, false
 	}
@@ -787,15 +787,15 @@ func (o *OriginInspectorValues) HasStatus304() bool {
 	return false
 }
 
-// SetStatus304 gets a reference to the given int32 and assigns it to the Status304 field.
-func (o *OriginInspectorValues) SetStatus304(v int32) {
+// SetStatus304 gets a reference to the given int64 and assigns it to the Status304 field.
+func (o *OriginInspectorValues) SetStatus304(v int64) {
 	o.Status304 = &v
 }
 
 // GetStatus400 returns the Status400 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus400() int32 {
+func (o *OriginInspectorValues) GetStatus400() int64 {
 	if o == nil || o.Status400 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status400
@@ -803,7 +803,7 @@ func (o *OriginInspectorValues) GetStatus400() int32 {
 
 // GetStatus400Ok returns a tuple with the Status400 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus400Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus400Ok() (*int64, bool) {
 	if o == nil || o.Status400 == nil {
 		return nil, false
 	}
@@ -819,15 +819,15 @@ func (o *OriginInspectorValues) HasStatus400() bool {
 	return false
 }
 
-// SetStatus400 gets a reference to the given int32 and assigns it to the Status400 field.
-func (o *OriginInspectorValues) SetStatus400(v int32) {
+// SetStatus400 gets a reference to the given int64 and assigns it to the Status400 field.
+func (o *OriginInspectorValues) SetStatus400(v int64) {
 	o.Status400 = &v
 }
 
 // GetStatus401 returns the Status401 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus401() int32 {
+func (o *OriginInspectorValues) GetStatus401() int64 {
 	if o == nil || o.Status401 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status401
@@ -835,7 +835,7 @@ func (o *OriginInspectorValues) GetStatus401() int32 {
 
 // GetStatus401Ok returns a tuple with the Status401 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus401Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus401Ok() (*int64, bool) {
 	if o == nil || o.Status401 == nil {
 		return nil, false
 	}
@@ -851,15 +851,15 @@ func (o *OriginInspectorValues) HasStatus401() bool {
 	return false
 }
 
-// SetStatus401 gets a reference to the given int32 and assigns it to the Status401 field.
-func (o *OriginInspectorValues) SetStatus401(v int32) {
+// SetStatus401 gets a reference to the given int64 and assigns it to the Status401 field.
+func (o *OriginInspectorValues) SetStatus401(v int64) {
 	o.Status401 = &v
 }
 
 // GetStatus403 returns the Status403 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus403() int32 {
+func (o *OriginInspectorValues) GetStatus403() int64 {
 	if o == nil || o.Status403 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status403
@@ -867,7 +867,7 @@ func (o *OriginInspectorValues) GetStatus403() int32 {
 
 // GetStatus403Ok returns a tuple with the Status403 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus403Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus403Ok() (*int64, bool) {
 	if o == nil || o.Status403 == nil {
 		return nil, false
 	}
@@ -883,15 +883,15 @@ func (o *OriginInspectorValues) HasStatus403() bool {
 	return false
 }
 
-// SetStatus403 gets a reference to the given int32 and assigns it to the Status403 field.
-func (o *OriginInspectorValues) SetStatus403(v int32) {
+// SetStatus403 gets a reference to the given int64 and assigns it to the Status403 field.
+func (o *OriginInspectorValues) SetStatus403(v int64) {
 	o.Status403 = &v
 }
 
 // GetStatus404 returns the Status404 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus404() int32 {
+func (o *OriginInspectorValues) GetStatus404() int64 {
 	if o == nil || o.Status404 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status404
@@ -899,7 +899,7 @@ func (o *OriginInspectorValues) GetStatus404() int32 {
 
 // GetStatus404Ok returns a tuple with the Status404 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus404Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus404Ok() (*int64, bool) {
 	if o == nil || o.Status404 == nil {
 		return nil, false
 	}
@@ -915,15 +915,15 @@ func (o *OriginInspectorValues) HasStatus404() bool {
 	return false
 }
 
-// SetStatus404 gets a reference to the given int32 and assigns it to the Status404 field.
-func (o *OriginInspectorValues) SetStatus404(v int32) {
+// SetStatus404 gets a reference to the given int64 and assigns it to the Status404 field.
+func (o *OriginInspectorValues) SetStatus404(v int64) {
 	o.Status404 = &v
 }
 
 // GetStatus416 returns the Status416 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus416() int32 {
+func (o *OriginInspectorValues) GetStatus416() int64 {
 	if o == nil || o.Status416 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status416
@@ -931,7 +931,7 @@ func (o *OriginInspectorValues) GetStatus416() int32 {
 
 // GetStatus416Ok returns a tuple with the Status416 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus416Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus416Ok() (*int64, bool) {
 	if o == nil || o.Status416 == nil {
 		return nil, false
 	}
@@ -947,15 +947,15 @@ func (o *OriginInspectorValues) HasStatus416() bool {
 	return false
 }
 
-// SetStatus416 gets a reference to the given int32 and assigns it to the Status416 field.
-func (o *OriginInspectorValues) SetStatus416(v int32) {
+// SetStatus416 gets a reference to the given int64 and assigns it to the Status416 field.
+func (o *OriginInspectorValues) SetStatus416(v int64) {
 	o.Status416 = &v
 }
 
 // GetStatus429 returns the Status429 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus429() int32 {
+func (o *OriginInspectorValues) GetStatus429() int64 {
 	if o == nil || o.Status429 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status429
@@ -963,7 +963,7 @@ func (o *OriginInspectorValues) GetStatus429() int32 {
 
 // GetStatus429Ok returns a tuple with the Status429 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus429Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus429Ok() (*int64, bool) {
 	if o == nil || o.Status429 == nil {
 		return nil, false
 	}
@@ -979,15 +979,15 @@ func (o *OriginInspectorValues) HasStatus429() bool {
 	return false
 }
 
-// SetStatus429 gets a reference to the given int32 and assigns it to the Status429 field.
-func (o *OriginInspectorValues) SetStatus429(v int32) {
+// SetStatus429 gets a reference to the given int64 and assigns it to the Status429 field.
+func (o *OriginInspectorValues) SetStatus429(v int64) {
 	o.Status429 = &v
 }
 
 // GetStatus500 returns the Status500 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus500() int32 {
+func (o *OriginInspectorValues) GetStatus500() int64 {
 	if o == nil || o.Status500 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status500
@@ -995,7 +995,7 @@ func (o *OriginInspectorValues) GetStatus500() int32 {
 
 // GetStatus500Ok returns a tuple with the Status500 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus500Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus500Ok() (*int64, bool) {
 	if o == nil || o.Status500 == nil {
 		return nil, false
 	}
@@ -1011,15 +1011,15 @@ func (o *OriginInspectorValues) HasStatus500() bool {
 	return false
 }
 
-// SetStatus500 gets a reference to the given int32 and assigns it to the Status500 field.
-func (o *OriginInspectorValues) SetStatus500(v int32) {
+// SetStatus500 gets a reference to the given int64 and assigns it to the Status500 field.
+func (o *OriginInspectorValues) SetStatus500(v int64) {
 	o.Status500 = &v
 }
 
 // GetStatus501 returns the Status501 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus501() int32 {
+func (o *OriginInspectorValues) GetStatus501() int64 {
 	if o == nil || o.Status501 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status501
@@ -1027,7 +1027,7 @@ func (o *OriginInspectorValues) GetStatus501() int32 {
 
 // GetStatus501Ok returns a tuple with the Status501 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus501Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus501Ok() (*int64, bool) {
 	if o == nil || o.Status501 == nil {
 		return nil, false
 	}
@@ -1043,15 +1043,15 @@ func (o *OriginInspectorValues) HasStatus501() bool {
 	return false
 }
 
-// SetStatus501 gets a reference to the given int32 and assigns it to the Status501 field.
-func (o *OriginInspectorValues) SetStatus501(v int32) {
+// SetStatus501 gets a reference to the given int64 and assigns it to the Status501 field.
+func (o *OriginInspectorValues) SetStatus501(v int64) {
 	o.Status501 = &v
 }
 
 // GetStatus502 returns the Status502 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus502() int32 {
+func (o *OriginInspectorValues) GetStatus502() int64 {
 	if o == nil || o.Status502 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status502
@@ -1059,7 +1059,7 @@ func (o *OriginInspectorValues) GetStatus502() int32 {
 
 // GetStatus502Ok returns a tuple with the Status502 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus502Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus502Ok() (*int64, bool) {
 	if o == nil || o.Status502 == nil {
 		return nil, false
 	}
@@ -1075,15 +1075,15 @@ func (o *OriginInspectorValues) HasStatus502() bool {
 	return false
 }
 
-// SetStatus502 gets a reference to the given int32 and assigns it to the Status502 field.
-func (o *OriginInspectorValues) SetStatus502(v int32) {
+// SetStatus502 gets a reference to the given int64 and assigns it to the Status502 field.
+func (o *OriginInspectorValues) SetStatus502(v int64) {
 	o.Status502 = &v
 }
 
 // GetStatus503 returns the Status503 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus503() int32 {
+func (o *OriginInspectorValues) GetStatus503() int64 {
 	if o == nil || o.Status503 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status503
@@ -1091,7 +1091,7 @@ func (o *OriginInspectorValues) GetStatus503() int32 {
 
 // GetStatus503Ok returns a tuple with the Status503 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus503Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus503Ok() (*int64, bool) {
 	if o == nil || o.Status503 == nil {
 		return nil, false
 	}
@@ -1107,15 +1107,15 @@ func (o *OriginInspectorValues) HasStatus503() bool {
 	return false
 }
 
-// SetStatus503 gets a reference to the given int32 and assigns it to the Status503 field.
-func (o *OriginInspectorValues) SetStatus503(v int32) {
+// SetStatus503 gets a reference to the given int64 and assigns it to the Status503 field.
+func (o *OriginInspectorValues) SetStatus503(v int64) {
 	o.Status503 = &v
 }
 
 // GetStatus504 returns the Status504 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus504() int32 {
+func (o *OriginInspectorValues) GetStatus504() int64 {
 	if o == nil || o.Status504 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status504
@@ -1123,7 +1123,7 @@ func (o *OriginInspectorValues) GetStatus504() int32 {
 
 // GetStatus504Ok returns a tuple with the Status504 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus504Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus504Ok() (*int64, bool) {
 	if o == nil || o.Status504 == nil {
 		return nil, false
 	}
@@ -1139,15 +1139,15 @@ func (o *OriginInspectorValues) HasStatus504() bool {
 	return false
 }
 
-// SetStatus504 gets a reference to the given int32 and assigns it to the Status504 field.
-func (o *OriginInspectorValues) SetStatus504(v int32) {
+// SetStatus504 gets a reference to the given int64 and assigns it to the Status504 field.
+func (o *OriginInspectorValues) SetStatus504(v int64) {
 	o.Status504 = &v
 }
 
 // GetStatus505 returns the Status505 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetStatus505() int32 {
+func (o *OriginInspectorValues) GetStatus505() int64 {
 	if o == nil || o.Status505 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Status505
@@ -1155,7 +1155,7 @@ func (o *OriginInspectorValues) GetStatus505() int32 {
 
 // GetStatus505Ok returns a tuple with the Status505 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetStatus505Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetStatus505Ok() (*int64, bool) {
 	if o == nil || o.Status505 == nil {
 		return nil, false
 	}
@@ -1171,15 +1171,15 @@ func (o *OriginInspectorValues) HasStatus505() bool {
 	return false
 }
 
-// SetStatus505 gets a reference to the given int32 and assigns it to the Status505 field.
-func (o *OriginInspectorValues) SetStatus505(v int32) {
+// SetStatus505 gets a reference to the given int64 and assigns it to the Status505 field.
+func (o *OriginInspectorValues) SetStatus505(v int64) {
 	o.Status505 = &v
 }
 
 // GetLatency0To1ms returns the Latency0To1ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetLatency0To1ms() int32 {
+func (o *OriginInspectorValues) GetLatency0To1ms() int64 {
 	if o == nil || o.Latency0To1ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Latency0To1ms
@@ -1187,7 +1187,7 @@ func (o *OriginInspectorValues) GetLatency0To1ms() int32 {
 
 // GetLatency0To1msOk returns a tuple with the Latency0To1ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetLatency0To1msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetLatency0To1msOk() (*int64, bool) {
 	if o == nil || o.Latency0To1ms == nil {
 		return nil, false
 	}
@@ -1203,15 +1203,15 @@ func (o *OriginInspectorValues) HasLatency0To1ms() bool {
 	return false
 }
 
-// SetLatency0To1ms gets a reference to the given int32 and assigns it to the Latency0To1ms field.
-func (o *OriginInspectorValues) SetLatency0To1ms(v int32) {
+// SetLatency0To1ms gets a reference to the given int64 and assigns it to the Latency0To1ms field.
+func (o *OriginInspectorValues) SetLatency0To1ms(v int64) {
 	o.Latency0To1ms = &v
 }
 
 // GetLatency1To5ms returns the Latency1To5ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetLatency1To5ms() int32 {
+func (o *OriginInspectorValues) GetLatency1To5ms() int64 {
 	if o == nil || o.Latency1To5ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Latency1To5ms
@@ -1219,7 +1219,7 @@ func (o *OriginInspectorValues) GetLatency1To5ms() int32 {
 
 // GetLatency1To5msOk returns a tuple with the Latency1To5ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetLatency1To5msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetLatency1To5msOk() (*int64, bool) {
 	if o == nil || o.Latency1To5ms == nil {
 		return nil, false
 	}
@@ -1235,15 +1235,15 @@ func (o *OriginInspectorValues) HasLatency1To5ms() bool {
 	return false
 }
 
-// SetLatency1To5ms gets a reference to the given int32 and assigns it to the Latency1To5ms field.
-func (o *OriginInspectorValues) SetLatency1To5ms(v int32) {
+// SetLatency1To5ms gets a reference to the given int64 and assigns it to the Latency1To5ms field.
+func (o *OriginInspectorValues) SetLatency1To5ms(v int64) {
 	o.Latency1To5ms = &v
 }
 
 // GetLatency5To10ms returns the Latency5To10ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetLatency5To10ms() int32 {
+func (o *OriginInspectorValues) GetLatency5To10ms() int64 {
 	if o == nil || o.Latency5To10ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Latency5To10ms
@@ -1251,7 +1251,7 @@ func (o *OriginInspectorValues) GetLatency5To10ms() int32 {
 
 // GetLatency5To10msOk returns a tuple with the Latency5To10ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetLatency5To10msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetLatency5To10msOk() (*int64, bool) {
 	if o == nil || o.Latency5To10ms == nil {
 		return nil, false
 	}
@@ -1267,15 +1267,15 @@ func (o *OriginInspectorValues) HasLatency5To10ms() bool {
 	return false
 }
 
-// SetLatency5To10ms gets a reference to the given int32 and assigns it to the Latency5To10ms field.
-func (o *OriginInspectorValues) SetLatency5To10ms(v int32) {
+// SetLatency5To10ms gets a reference to the given int64 and assigns it to the Latency5To10ms field.
+func (o *OriginInspectorValues) SetLatency5To10ms(v int64) {
 	o.Latency5To10ms = &v
 }
 
 // GetLatency10To50ms returns the Latency10To50ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetLatency10To50ms() int32 {
+func (o *OriginInspectorValues) GetLatency10To50ms() int64 {
 	if o == nil || o.Latency10To50ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Latency10To50ms
@@ -1283,7 +1283,7 @@ func (o *OriginInspectorValues) GetLatency10To50ms() int32 {
 
 // GetLatency10To50msOk returns a tuple with the Latency10To50ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetLatency10To50msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetLatency10To50msOk() (*int64, bool) {
 	if o == nil || o.Latency10To50ms == nil {
 		return nil, false
 	}
@@ -1299,15 +1299,15 @@ func (o *OriginInspectorValues) HasLatency10To50ms() bool {
 	return false
 }
 
-// SetLatency10To50ms gets a reference to the given int32 and assigns it to the Latency10To50ms field.
-func (o *OriginInspectorValues) SetLatency10To50ms(v int32) {
+// SetLatency10To50ms gets a reference to the given int64 and assigns it to the Latency10To50ms field.
+func (o *OriginInspectorValues) SetLatency10To50ms(v int64) {
 	o.Latency10To50ms = &v
 }
 
 // GetLatency50To100ms returns the Latency50To100ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetLatency50To100ms() int32 {
+func (o *OriginInspectorValues) GetLatency50To100ms() int64 {
 	if o == nil || o.Latency50To100ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Latency50To100ms
@@ -1315,7 +1315,7 @@ func (o *OriginInspectorValues) GetLatency50To100ms() int32 {
 
 // GetLatency50To100msOk returns a tuple with the Latency50To100ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetLatency50To100msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetLatency50To100msOk() (*int64, bool) {
 	if o == nil || o.Latency50To100ms == nil {
 		return nil, false
 	}
@@ -1331,15 +1331,15 @@ func (o *OriginInspectorValues) HasLatency50To100ms() bool {
 	return false
 }
 
-// SetLatency50To100ms gets a reference to the given int32 and assigns it to the Latency50To100ms field.
-func (o *OriginInspectorValues) SetLatency50To100ms(v int32) {
+// SetLatency50To100ms gets a reference to the given int64 and assigns it to the Latency50To100ms field.
+func (o *OriginInspectorValues) SetLatency50To100ms(v int64) {
 	o.Latency50To100ms = &v
 }
 
 // GetLatency100To250ms returns the Latency100To250ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetLatency100To250ms() int32 {
+func (o *OriginInspectorValues) GetLatency100To250ms() int64 {
 	if o == nil || o.Latency100To250ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Latency100To250ms
@@ -1347,7 +1347,7 @@ func (o *OriginInspectorValues) GetLatency100To250ms() int32 {
 
 // GetLatency100To250msOk returns a tuple with the Latency100To250ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetLatency100To250msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetLatency100To250msOk() (*int64, bool) {
 	if o == nil || o.Latency100To250ms == nil {
 		return nil, false
 	}
@@ -1363,15 +1363,15 @@ func (o *OriginInspectorValues) HasLatency100To250ms() bool {
 	return false
 }
 
-// SetLatency100To250ms gets a reference to the given int32 and assigns it to the Latency100To250ms field.
-func (o *OriginInspectorValues) SetLatency100To250ms(v int32) {
+// SetLatency100To250ms gets a reference to the given int64 and assigns it to the Latency100To250ms field.
+func (o *OriginInspectorValues) SetLatency100To250ms(v int64) {
 	o.Latency100To250ms = &v
 }
 
 // GetLatency250To500ms returns the Latency250To500ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetLatency250To500ms() int32 {
+func (o *OriginInspectorValues) GetLatency250To500ms() int64 {
 	if o == nil || o.Latency250To500ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Latency250To500ms
@@ -1379,7 +1379,7 @@ func (o *OriginInspectorValues) GetLatency250To500ms() int32 {
 
 // GetLatency250To500msOk returns a tuple with the Latency250To500ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetLatency250To500msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetLatency250To500msOk() (*int64, bool) {
 	if o == nil || o.Latency250To500ms == nil {
 		return nil, false
 	}
@@ -1395,15 +1395,15 @@ func (o *OriginInspectorValues) HasLatency250To500ms() bool {
 	return false
 }
 
-// SetLatency250To500ms gets a reference to the given int32 and assigns it to the Latency250To500ms field.
-func (o *OriginInspectorValues) SetLatency250To500ms(v int32) {
+// SetLatency250To500ms gets a reference to the given int64 and assigns it to the Latency250To500ms field.
+func (o *OriginInspectorValues) SetLatency250To500ms(v int64) {
 	o.Latency250To500ms = &v
 }
 
 // GetLatency500To1000ms returns the Latency500To1000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetLatency500To1000ms() int32 {
+func (o *OriginInspectorValues) GetLatency500To1000ms() int64 {
 	if o == nil || o.Latency500To1000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Latency500To1000ms
@@ -1411,7 +1411,7 @@ func (o *OriginInspectorValues) GetLatency500To1000ms() int32 {
 
 // GetLatency500To1000msOk returns a tuple with the Latency500To1000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetLatency500To1000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetLatency500To1000msOk() (*int64, bool) {
 	if o == nil || o.Latency500To1000ms == nil {
 		return nil, false
 	}
@@ -1427,15 +1427,15 @@ func (o *OriginInspectorValues) HasLatency500To1000ms() bool {
 	return false
 }
 
-// SetLatency500To1000ms gets a reference to the given int32 and assigns it to the Latency500To1000ms field.
-func (o *OriginInspectorValues) SetLatency500To1000ms(v int32) {
+// SetLatency500To1000ms gets a reference to the given int64 and assigns it to the Latency500To1000ms field.
+func (o *OriginInspectorValues) SetLatency500To1000ms(v int64) {
 	o.Latency500To1000ms = &v
 }
 
 // GetLatency1000To5000ms returns the Latency1000To5000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetLatency1000To5000ms() int32 {
+func (o *OriginInspectorValues) GetLatency1000To5000ms() int64 {
 	if o == nil || o.Latency1000To5000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Latency1000To5000ms
@@ -1443,7 +1443,7 @@ func (o *OriginInspectorValues) GetLatency1000To5000ms() int32 {
 
 // GetLatency1000To5000msOk returns a tuple with the Latency1000To5000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetLatency1000To5000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetLatency1000To5000msOk() (*int64, bool) {
 	if o == nil || o.Latency1000To5000ms == nil {
 		return nil, false
 	}
@@ -1459,15 +1459,15 @@ func (o *OriginInspectorValues) HasLatency1000To5000ms() bool {
 	return false
 }
 
-// SetLatency1000To5000ms gets a reference to the given int32 and assigns it to the Latency1000To5000ms field.
-func (o *OriginInspectorValues) SetLatency1000To5000ms(v int32) {
+// SetLatency1000To5000ms gets a reference to the given int64 and assigns it to the Latency1000To5000ms field.
+func (o *OriginInspectorValues) SetLatency1000To5000ms(v int64) {
 	o.Latency1000To5000ms = &v
 }
 
 // GetLatency5000To10000ms returns the Latency5000To10000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetLatency5000To10000ms() int32 {
+func (o *OriginInspectorValues) GetLatency5000To10000ms() int64 {
 	if o == nil || o.Latency5000To10000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Latency5000To10000ms
@@ -1475,7 +1475,7 @@ func (o *OriginInspectorValues) GetLatency5000To10000ms() int32 {
 
 // GetLatency5000To10000msOk returns a tuple with the Latency5000To10000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetLatency5000To10000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetLatency5000To10000msOk() (*int64, bool) {
 	if o == nil || o.Latency5000To10000ms == nil {
 		return nil, false
 	}
@@ -1491,15 +1491,15 @@ func (o *OriginInspectorValues) HasLatency5000To10000ms() bool {
 	return false
 }
 
-// SetLatency5000To10000ms gets a reference to the given int32 and assigns it to the Latency5000To10000ms field.
-func (o *OriginInspectorValues) SetLatency5000To10000ms(v int32) {
+// SetLatency5000To10000ms gets a reference to the given int64 and assigns it to the Latency5000To10000ms field.
+func (o *OriginInspectorValues) SetLatency5000To10000ms(v int64) {
 	o.Latency5000To10000ms = &v
 }
 
 // GetLatency10000To60000ms returns the Latency10000To60000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetLatency10000To60000ms() int32 {
+func (o *OriginInspectorValues) GetLatency10000To60000ms() int64 {
 	if o == nil || o.Latency10000To60000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Latency10000To60000ms
@@ -1507,7 +1507,7 @@ func (o *OriginInspectorValues) GetLatency10000To60000ms() int32 {
 
 // GetLatency10000To60000msOk returns a tuple with the Latency10000To60000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetLatency10000To60000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetLatency10000To60000msOk() (*int64, bool) {
 	if o == nil || o.Latency10000To60000ms == nil {
 		return nil, false
 	}
@@ -1523,15 +1523,15 @@ func (o *OriginInspectorValues) HasLatency10000To60000ms() bool {
 	return false
 }
 
-// SetLatency10000To60000ms gets a reference to the given int32 and assigns it to the Latency10000To60000ms field.
-func (o *OriginInspectorValues) SetLatency10000To60000ms(v int32) {
+// SetLatency10000To60000ms gets a reference to the given int64 and assigns it to the Latency10000To60000ms field.
+func (o *OriginInspectorValues) SetLatency10000To60000ms(v int64) {
 	o.Latency10000To60000ms = &v
 }
 
 // GetLatency60000ms returns the Latency60000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetLatency60000ms() int32 {
+func (o *OriginInspectorValues) GetLatency60000ms() int64 {
 	if o == nil || o.Latency60000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.Latency60000ms
@@ -1539,7 +1539,7 @@ func (o *OriginInspectorValues) GetLatency60000ms() int32 {
 
 // GetLatency60000msOk returns a tuple with the Latency60000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetLatency60000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetLatency60000msOk() (*int64, bool) {
 	if o == nil || o.Latency60000ms == nil {
 		return nil, false
 	}
@@ -1555,15 +1555,15 @@ func (o *OriginInspectorValues) HasLatency60000ms() bool {
 	return false
 }
 
-// SetLatency60000ms gets a reference to the given int32 and assigns it to the Latency60000ms field.
-func (o *OriginInspectorValues) SetLatency60000ms(v int32) {
+// SetLatency60000ms gets a reference to the given int64 and assigns it to the Latency60000ms field.
+func (o *OriginInspectorValues) SetLatency60000ms(v int64) {
 	o.Latency60000ms = &v
 }
 
 // GetWafResponses returns the WafResponses field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafResponses() int32 {
+func (o *OriginInspectorValues) GetWafResponses() int64 {
 	if o == nil || o.WafResponses == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafResponses
@@ -1571,7 +1571,7 @@ func (o *OriginInspectorValues) GetWafResponses() int32 {
 
 // GetWafResponsesOk returns a tuple with the WafResponses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafResponsesOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafResponsesOk() (*int64, bool) {
 	if o == nil || o.WafResponses == nil {
 		return nil, false
 	}
@@ -1587,15 +1587,15 @@ func (o *OriginInspectorValues) HasWafResponses() bool {
 	return false
 }
 
-// SetWafResponses gets a reference to the given int32 and assigns it to the WafResponses field.
-func (o *OriginInspectorValues) SetWafResponses(v int32) {
+// SetWafResponses gets a reference to the given int64 and assigns it to the WafResponses field.
+func (o *OriginInspectorValues) SetWafResponses(v int64) {
 	o.WafResponses = &v
 }
 
 // GetWafRespHeaderBytes returns the WafRespHeaderBytes field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafRespHeaderBytes() int32 {
+func (o *OriginInspectorValues) GetWafRespHeaderBytes() int64 {
 	if o == nil || o.WafRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafRespHeaderBytes
@@ -1603,7 +1603,7 @@ func (o *OriginInspectorValues) GetWafRespHeaderBytes() int32 {
 
 // GetWafRespHeaderBytesOk returns a tuple with the WafRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafRespHeaderBytesOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.WafRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -1619,15 +1619,15 @@ func (o *OriginInspectorValues) HasWafRespHeaderBytes() bool {
 	return false
 }
 
-// SetWafRespHeaderBytes gets a reference to the given int32 and assigns it to the WafRespHeaderBytes field.
-func (o *OriginInspectorValues) SetWafRespHeaderBytes(v int32) {
+// SetWafRespHeaderBytes gets a reference to the given int64 and assigns it to the WafRespHeaderBytes field.
+func (o *OriginInspectorValues) SetWafRespHeaderBytes(v int64) {
 	o.WafRespHeaderBytes = &v
 }
 
 // GetWafRespBodyBytes returns the WafRespBodyBytes field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafRespBodyBytes() int32 {
+func (o *OriginInspectorValues) GetWafRespBodyBytes() int64 {
 	if o == nil || o.WafRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafRespBodyBytes
@@ -1635,7 +1635,7 @@ func (o *OriginInspectorValues) GetWafRespBodyBytes() int32 {
 
 // GetWafRespBodyBytesOk returns a tuple with the WafRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafRespBodyBytesOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.WafRespBodyBytes == nil {
 		return nil, false
 	}
@@ -1651,15 +1651,15 @@ func (o *OriginInspectorValues) HasWafRespBodyBytes() bool {
 	return false
 }
 
-// SetWafRespBodyBytes gets a reference to the given int32 and assigns it to the WafRespBodyBytes field.
-func (o *OriginInspectorValues) SetWafRespBodyBytes(v int32) {
+// SetWafRespBodyBytes gets a reference to the given int64 and assigns it to the WafRespBodyBytes field.
+func (o *OriginInspectorValues) SetWafRespBodyBytes(v int64) {
 	o.WafRespBodyBytes = &v
 }
 
 // GetWafStatus1xx returns the WafStatus1xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus1xx() int32 {
+func (o *OriginInspectorValues) GetWafStatus1xx() int64 {
 	if o == nil || o.WafStatus1xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus1xx
@@ -1667,7 +1667,7 @@ func (o *OriginInspectorValues) GetWafStatus1xx() int32 {
 
 // GetWafStatus1xxOk returns a tuple with the WafStatus1xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus1xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus1xxOk() (*int64, bool) {
 	if o == nil || o.WafStatus1xx == nil {
 		return nil, false
 	}
@@ -1683,15 +1683,15 @@ func (o *OriginInspectorValues) HasWafStatus1xx() bool {
 	return false
 }
 
-// SetWafStatus1xx gets a reference to the given int32 and assigns it to the WafStatus1xx field.
-func (o *OriginInspectorValues) SetWafStatus1xx(v int32) {
+// SetWafStatus1xx gets a reference to the given int64 and assigns it to the WafStatus1xx field.
+func (o *OriginInspectorValues) SetWafStatus1xx(v int64) {
 	o.WafStatus1xx = &v
 }
 
 // GetWafStatus2xx returns the WafStatus2xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus2xx() int32 {
+func (o *OriginInspectorValues) GetWafStatus2xx() int64 {
 	if o == nil || o.WafStatus2xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus2xx
@@ -1699,7 +1699,7 @@ func (o *OriginInspectorValues) GetWafStatus2xx() int32 {
 
 // GetWafStatus2xxOk returns a tuple with the WafStatus2xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus2xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus2xxOk() (*int64, bool) {
 	if o == nil || o.WafStatus2xx == nil {
 		return nil, false
 	}
@@ -1715,15 +1715,15 @@ func (o *OriginInspectorValues) HasWafStatus2xx() bool {
 	return false
 }
 
-// SetWafStatus2xx gets a reference to the given int32 and assigns it to the WafStatus2xx field.
-func (o *OriginInspectorValues) SetWafStatus2xx(v int32) {
+// SetWafStatus2xx gets a reference to the given int64 and assigns it to the WafStatus2xx field.
+func (o *OriginInspectorValues) SetWafStatus2xx(v int64) {
 	o.WafStatus2xx = &v
 }
 
 // GetWafStatus3xx returns the WafStatus3xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus3xx() int32 {
+func (o *OriginInspectorValues) GetWafStatus3xx() int64 {
 	if o == nil || o.WafStatus3xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus3xx
@@ -1731,7 +1731,7 @@ func (o *OriginInspectorValues) GetWafStatus3xx() int32 {
 
 // GetWafStatus3xxOk returns a tuple with the WafStatus3xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus3xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus3xxOk() (*int64, bool) {
 	if o == nil || o.WafStatus3xx == nil {
 		return nil, false
 	}
@@ -1747,15 +1747,15 @@ func (o *OriginInspectorValues) HasWafStatus3xx() bool {
 	return false
 }
 
-// SetWafStatus3xx gets a reference to the given int32 and assigns it to the WafStatus3xx field.
-func (o *OriginInspectorValues) SetWafStatus3xx(v int32) {
+// SetWafStatus3xx gets a reference to the given int64 and assigns it to the WafStatus3xx field.
+func (o *OriginInspectorValues) SetWafStatus3xx(v int64) {
 	o.WafStatus3xx = &v
 }
 
 // GetWafStatus4xx returns the WafStatus4xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus4xx() int32 {
+func (o *OriginInspectorValues) GetWafStatus4xx() int64 {
 	if o == nil || o.WafStatus4xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus4xx
@@ -1763,7 +1763,7 @@ func (o *OriginInspectorValues) GetWafStatus4xx() int32 {
 
 // GetWafStatus4xxOk returns a tuple with the WafStatus4xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus4xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus4xxOk() (*int64, bool) {
 	if o == nil || o.WafStatus4xx == nil {
 		return nil, false
 	}
@@ -1779,15 +1779,15 @@ func (o *OriginInspectorValues) HasWafStatus4xx() bool {
 	return false
 }
 
-// SetWafStatus4xx gets a reference to the given int32 and assigns it to the WafStatus4xx field.
-func (o *OriginInspectorValues) SetWafStatus4xx(v int32) {
+// SetWafStatus4xx gets a reference to the given int64 and assigns it to the WafStatus4xx field.
+func (o *OriginInspectorValues) SetWafStatus4xx(v int64) {
 	o.WafStatus4xx = &v
 }
 
 // GetWafStatus5xx returns the WafStatus5xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus5xx() int32 {
+func (o *OriginInspectorValues) GetWafStatus5xx() int64 {
 	if o == nil || o.WafStatus5xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus5xx
@@ -1795,7 +1795,7 @@ func (o *OriginInspectorValues) GetWafStatus5xx() int32 {
 
 // GetWafStatus5xxOk returns a tuple with the WafStatus5xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus5xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus5xxOk() (*int64, bool) {
 	if o == nil || o.WafStatus5xx == nil {
 		return nil, false
 	}
@@ -1811,15 +1811,15 @@ func (o *OriginInspectorValues) HasWafStatus5xx() bool {
 	return false
 }
 
-// SetWafStatus5xx gets a reference to the given int32 and assigns it to the WafStatus5xx field.
-func (o *OriginInspectorValues) SetWafStatus5xx(v int32) {
+// SetWafStatus5xx gets a reference to the given int64 and assigns it to the WafStatus5xx field.
+func (o *OriginInspectorValues) SetWafStatus5xx(v int64) {
 	o.WafStatus5xx = &v
 }
 
 // GetWafStatus200 returns the WafStatus200 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus200() int32 {
+func (o *OriginInspectorValues) GetWafStatus200() int64 {
 	if o == nil || o.WafStatus200 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus200
@@ -1827,7 +1827,7 @@ func (o *OriginInspectorValues) GetWafStatus200() int32 {
 
 // GetWafStatus200Ok returns a tuple with the WafStatus200 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus200Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus200Ok() (*int64, bool) {
 	if o == nil || o.WafStatus200 == nil {
 		return nil, false
 	}
@@ -1843,15 +1843,15 @@ func (o *OriginInspectorValues) HasWafStatus200() bool {
 	return false
 }
 
-// SetWafStatus200 gets a reference to the given int32 and assigns it to the WafStatus200 field.
-func (o *OriginInspectorValues) SetWafStatus200(v int32) {
+// SetWafStatus200 gets a reference to the given int64 and assigns it to the WafStatus200 field.
+func (o *OriginInspectorValues) SetWafStatus200(v int64) {
 	o.WafStatus200 = &v
 }
 
 // GetWafStatus204 returns the WafStatus204 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus204() int32 {
+func (o *OriginInspectorValues) GetWafStatus204() int64 {
 	if o == nil || o.WafStatus204 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus204
@@ -1859,7 +1859,7 @@ func (o *OriginInspectorValues) GetWafStatus204() int32 {
 
 // GetWafStatus204Ok returns a tuple with the WafStatus204 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus204Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus204Ok() (*int64, bool) {
 	if o == nil || o.WafStatus204 == nil {
 		return nil, false
 	}
@@ -1875,15 +1875,15 @@ func (o *OriginInspectorValues) HasWafStatus204() bool {
 	return false
 }
 
-// SetWafStatus204 gets a reference to the given int32 and assigns it to the WafStatus204 field.
-func (o *OriginInspectorValues) SetWafStatus204(v int32) {
+// SetWafStatus204 gets a reference to the given int64 and assigns it to the WafStatus204 field.
+func (o *OriginInspectorValues) SetWafStatus204(v int64) {
 	o.WafStatus204 = &v
 }
 
 // GetWafStatus206 returns the WafStatus206 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus206() int32 {
+func (o *OriginInspectorValues) GetWafStatus206() int64 {
 	if o == nil || o.WafStatus206 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus206
@@ -1891,7 +1891,7 @@ func (o *OriginInspectorValues) GetWafStatus206() int32 {
 
 // GetWafStatus206Ok returns a tuple with the WafStatus206 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus206Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus206Ok() (*int64, bool) {
 	if o == nil || o.WafStatus206 == nil {
 		return nil, false
 	}
@@ -1907,15 +1907,15 @@ func (o *OriginInspectorValues) HasWafStatus206() bool {
 	return false
 }
 
-// SetWafStatus206 gets a reference to the given int32 and assigns it to the WafStatus206 field.
-func (o *OriginInspectorValues) SetWafStatus206(v int32) {
+// SetWafStatus206 gets a reference to the given int64 and assigns it to the WafStatus206 field.
+func (o *OriginInspectorValues) SetWafStatus206(v int64) {
 	o.WafStatus206 = &v
 }
 
 // GetWafStatus301 returns the WafStatus301 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus301() int32 {
+func (o *OriginInspectorValues) GetWafStatus301() int64 {
 	if o == nil || o.WafStatus301 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus301
@@ -1923,7 +1923,7 @@ func (o *OriginInspectorValues) GetWafStatus301() int32 {
 
 // GetWafStatus301Ok returns a tuple with the WafStatus301 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus301Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus301Ok() (*int64, bool) {
 	if o == nil || o.WafStatus301 == nil {
 		return nil, false
 	}
@@ -1939,15 +1939,15 @@ func (o *OriginInspectorValues) HasWafStatus301() bool {
 	return false
 }
 
-// SetWafStatus301 gets a reference to the given int32 and assigns it to the WafStatus301 field.
-func (o *OriginInspectorValues) SetWafStatus301(v int32) {
+// SetWafStatus301 gets a reference to the given int64 and assigns it to the WafStatus301 field.
+func (o *OriginInspectorValues) SetWafStatus301(v int64) {
 	o.WafStatus301 = &v
 }
 
 // GetWafStatus302 returns the WafStatus302 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus302() int32 {
+func (o *OriginInspectorValues) GetWafStatus302() int64 {
 	if o == nil || o.WafStatus302 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus302
@@ -1955,7 +1955,7 @@ func (o *OriginInspectorValues) GetWafStatus302() int32 {
 
 // GetWafStatus302Ok returns a tuple with the WafStatus302 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus302Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus302Ok() (*int64, bool) {
 	if o == nil || o.WafStatus302 == nil {
 		return nil, false
 	}
@@ -1971,15 +1971,15 @@ func (o *OriginInspectorValues) HasWafStatus302() bool {
 	return false
 }
 
-// SetWafStatus302 gets a reference to the given int32 and assigns it to the WafStatus302 field.
-func (o *OriginInspectorValues) SetWafStatus302(v int32) {
+// SetWafStatus302 gets a reference to the given int64 and assigns it to the WafStatus302 field.
+func (o *OriginInspectorValues) SetWafStatus302(v int64) {
 	o.WafStatus302 = &v
 }
 
 // GetWafStatus304 returns the WafStatus304 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus304() int32 {
+func (o *OriginInspectorValues) GetWafStatus304() int64 {
 	if o == nil || o.WafStatus304 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus304
@@ -1987,7 +1987,7 @@ func (o *OriginInspectorValues) GetWafStatus304() int32 {
 
 // GetWafStatus304Ok returns a tuple with the WafStatus304 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus304Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus304Ok() (*int64, bool) {
 	if o == nil || o.WafStatus304 == nil {
 		return nil, false
 	}
@@ -2003,15 +2003,15 @@ func (o *OriginInspectorValues) HasWafStatus304() bool {
 	return false
 }
 
-// SetWafStatus304 gets a reference to the given int32 and assigns it to the WafStatus304 field.
-func (o *OriginInspectorValues) SetWafStatus304(v int32) {
+// SetWafStatus304 gets a reference to the given int64 and assigns it to the WafStatus304 field.
+func (o *OriginInspectorValues) SetWafStatus304(v int64) {
 	o.WafStatus304 = &v
 }
 
 // GetWafStatus400 returns the WafStatus400 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus400() int32 {
+func (o *OriginInspectorValues) GetWafStatus400() int64 {
 	if o == nil || o.WafStatus400 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus400
@@ -2019,7 +2019,7 @@ func (o *OriginInspectorValues) GetWafStatus400() int32 {
 
 // GetWafStatus400Ok returns a tuple with the WafStatus400 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus400Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus400Ok() (*int64, bool) {
 	if o == nil || o.WafStatus400 == nil {
 		return nil, false
 	}
@@ -2035,15 +2035,15 @@ func (o *OriginInspectorValues) HasWafStatus400() bool {
 	return false
 }
 
-// SetWafStatus400 gets a reference to the given int32 and assigns it to the WafStatus400 field.
-func (o *OriginInspectorValues) SetWafStatus400(v int32) {
+// SetWafStatus400 gets a reference to the given int64 and assigns it to the WafStatus400 field.
+func (o *OriginInspectorValues) SetWafStatus400(v int64) {
 	o.WafStatus400 = &v
 }
 
 // GetWafStatus401 returns the WafStatus401 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus401() int32 {
+func (o *OriginInspectorValues) GetWafStatus401() int64 {
 	if o == nil || o.WafStatus401 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus401
@@ -2051,7 +2051,7 @@ func (o *OriginInspectorValues) GetWafStatus401() int32 {
 
 // GetWafStatus401Ok returns a tuple with the WafStatus401 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus401Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus401Ok() (*int64, bool) {
 	if o == nil || o.WafStatus401 == nil {
 		return nil, false
 	}
@@ -2067,15 +2067,15 @@ func (o *OriginInspectorValues) HasWafStatus401() bool {
 	return false
 }
 
-// SetWafStatus401 gets a reference to the given int32 and assigns it to the WafStatus401 field.
-func (o *OriginInspectorValues) SetWafStatus401(v int32) {
+// SetWafStatus401 gets a reference to the given int64 and assigns it to the WafStatus401 field.
+func (o *OriginInspectorValues) SetWafStatus401(v int64) {
 	o.WafStatus401 = &v
 }
 
 // GetWafStatus403 returns the WafStatus403 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus403() int32 {
+func (o *OriginInspectorValues) GetWafStatus403() int64 {
 	if o == nil || o.WafStatus403 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus403
@@ -2083,7 +2083,7 @@ func (o *OriginInspectorValues) GetWafStatus403() int32 {
 
 // GetWafStatus403Ok returns a tuple with the WafStatus403 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus403Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus403Ok() (*int64, bool) {
 	if o == nil || o.WafStatus403 == nil {
 		return nil, false
 	}
@@ -2099,15 +2099,15 @@ func (o *OriginInspectorValues) HasWafStatus403() bool {
 	return false
 }
 
-// SetWafStatus403 gets a reference to the given int32 and assigns it to the WafStatus403 field.
-func (o *OriginInspectorValues) SetWafStatus403(v int32) {
+// SetWafStatus403 gets a reference to the given int64 and assigns it to the WafStatus403 field.
+func (o *OriginInspectorValues) SetWafStatus403(v int64) {
 	o.WafStatus403 = &v
 }
 
 // GetWafStatus404 returns the WafStatus404 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus404() int32 {
+func (o *OriginInspectorValues) GetWafStatus404() int64 {
 	if o == nil || o.WafStatus404 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus404
@@ -2115,7 +2115,7 @@ func (o *OriginInspectorValues) GetWafStatus404() int32 {
 
 // GetWafStatus404Ok returns a tuple with the WafStatus404 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus404Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus404Ok() (*int64, bool) {
 	if o == nil || o.WafStatus404 == nil {
 		return nil, false
 	}
@@ -2131,15 +2131,15 @@ func (o *OriginInspectorValues) HasWafStatus404() bool {
 	return false
 }
 
-// SetWafStatus404 gets a reference to the given int32 and assigns it to the WafStatus404 field.
-func (o *OriginInspectorValues) SetWafStatus404(v int32) {
+// SetWafStatus404 gets a reference to the given int64 and assigns it to the WafStatus404 field.
+func (o *OriginInspectorValues) SetWafStatus404(v int64) {
 	o.WafStatus404 = &v
 }
 
 // GetWafStatus416 returns the WafStatus416 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus416() int32 {
+func (o *OriginInspectorValues) GetWafStatus416() int64 {
 	if o == nil || o.WafStatus416 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus416
@@ -2147,7 +2147,7 @@ func (o *OriginInspectorValues) GetWafStatus416() int32 {
 
 // GetWafStatus416Ok returns a tuple with the WafStatus416 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus416Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus416Ok() (*int64, bool) {
 	if o == nil || o.WafStatus416 == nil {
 		return nil, false
 	}
@@ -2163,15 +2163,15 @@ func (o *OriginInspectorValues) HasWafStatus416() bool {
 	return false
 }
 
-// SetWafStatus416 gets a reference to the given int32 and assigns it to the WafStatus416 field.
-func (o *OriginInspectorValues) SetWafStatus416(v int32) {
+// SetWafStatus416 gets a reference to the given int64 and assigns it to the WafStatus416 field.
+func (o *OriginInspectorValues) SetWafStatus416(v int64) {
 	o.WafStatus416 = &v
 }
 
 // GetWafStatus429 returns the WafStatus429 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus429() int32 {
+func (o *OriginInspectorValues) GetWafStatus429() int64 {
 	if o == nil || o.WafStatus429 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus429
@@ -2179,7 +2179,7 @@ func (o *OriginInspectorValues) GetWafStatus429() int32 {
 
 // GetWafStatus429Ok returns a tuple with the WafStatus429 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus429Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus429Ok() (*int64, bool) {
 	if o == nil || o.WafStatus429 == nil {
 		return nil, false
 	}
@@ -2195,15 +2195,15 @@ func (o *OriginInspectorValues) HasWafStatus429() bool {
 	return false
 }
 
-// SetWafStatus429 gets a reference to the given int32 and assigns it to the WafStatus429 field.
-func (o *OriginInspectorValues) SetWafStatus429(v int32) {
+// SetWafStatus429 gets a reference to the given int64 and assigns it to the WafStatus429 field.
+func (o *OriginInspectorValues) SetWafStatus429(v int64) {
 	o.WafStatus429 = &v
 }
 
 // GetWafStatus500 returns the WafStatus500 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus500() int32 {
+func (o *OriginInspectorValues) GetWafStatus500() int64 {
 	if o == nil || o.WafStatus500 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus500
@@ -2211,7 +2211,7 @@ func (o *OriginInspectorValues) GetWafStatus500() int32 {
 
 // GetWafStatus500Ok returns a tuple with the WafStatus500 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus500Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus500Ok() (*int64, bool) {
 	if o == nil || o.WafStatus500 == nil {
 		return nil, false
 	}
@@ -2227,15 +2227,15 @@ func (o *OriginInspectorValues) HasWafStatus500() bool {
 	return false
 }
 
-// SetWafStatus500 gets a reference to the given int32 and assigns it to the WafStatus500 field.
-func (o *OriginInspectorValues) SetWafStatus500(v int32) {
+// SetWafStatus500 gets a reference to the given int64 and assigns it to the WafStatus500 field.
+func (o *OriginInspectorValues) SetWafStatus500(v int64) {
 	o.WafStatus500 = &v
 }
 
 // GetWafStatus501 returns the WafStatus501 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus501() int32 {
+func (o *OriginInspectorValues) GetWafStatus501() int64 {
 	if o == nil || o.WafStatus501 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus501
@@ -2243,7 +2243,7 @@ func (o *OriginInspectorValues) GetWafStatus501() int32 {
 
 // GetWafStatus501Ok returns a tuple with the WafStatus501 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus501Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus501Ok() (*int64, bool) {
 	if o == nil || o.WafStatus501 == nil {
 		return nil, false
 	}
@@ -2259,15 +2259,15 @@ func (o *OriginInspectorValues) HasWafStatus501() bool {
 	return false
 }
 
-// SetWafStatus501 gets a reference to the given int32 and assigns it to the WafStatus501 field.
-func (o *OriginInspectorValues) SetWafStatus501(v int32) {
+// SetWafStatus501 gets a reference to the given int64 and assigns it to the WafStatus501 field.
+func (o *OriginInspectorValues) SetWafStatus501(v int64) {
 	o.WafStatus501 = &v
 }
 
 // GetWafStatus502 returns the WafStatus502 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus502() int32 {
+func (o *OriginInspectorValues) GetWafStatus502() int64 {
 	if o == nil || o.WafStatus502 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus502
@@ -2275,7 +2275,7 @@ func (o *OriginInspectorValues) GetWafStatus502() int32 {
 
 // GetWafStatus502Ok returns a tuple with the WafStatus502 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus502Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus502Ok() (*int64, bool) {
 	if o == nil || o.WafStatus502 == nil {
 		return nil, false
 	}
@@ -2291,15 +2291,15 @@ func (o *OriginInspectorValues) HasWafStatus502() bool {
 	return false
 }
 
-// SetWafStatus502 gets a reference to the given int32 and assigns it to the WafStatus502 field.
-func (o *OriginInspectorValues) SetWafStatus502(v int32) {
+// SetWafStatus502 gets a reference to the given int64 and assigns it to the WafStatus502 field.
+func (o *OriginInspectorValues) SetWafStatus502(v int64) {
 	o.WafStatus502 = &v
 }
 
 // GetWafStatus503 returns the WafStatus503 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus503() int32 {
+func (o *OriginInspectorValues) GetWafStatus503() int64 {
 	if o == nil || o.WafStatus503 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus503
@@ -2307,7 +2307,7 @@ func (o *OriginInspectorValues) GetWafStatus503() int32 {
 
 // GetWafStatus503Ok returns a tuple with the WafStatus503 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus503Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus503Ok() (*int64, bool) {
 	if o == nil || o.WafStatus503 == nil {
 		return nil, false
 	}
@@ -2323,15 +2323,15 @@ func (o *OriginInspectorValues) HasWafStatus503() bool {
 	return false
 }
 
-// SetWafStatus503 gets a reference to the given int32 and assigns it to the WafStatus503 field.
-func (o *OriginInspectorValues) SetWafStatus503(v int32) {
+// SetWafStatus503 gets a reference to the given int64 and assigns it to the WafStatus503 field.
+func (o *OriginInspectorValues) SetWafStatus503(v int64) {
 	o.WafStatus503 = &v
 }
 
 // GetWafStatus504 returns the WafStatus504 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus504() int32 {
+func (o *OriginInspectorValues) GetWafStatus504() int64 {
 	if o == nil || o.WafStatus504 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus504
@@ -2339,7 +2339,7 @@ func (o *OriginInspectorValues) GetWafStatus504() int32 {
 
 // GetWafStatus504Ok returns a tuple with the WafStatus504 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus504Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus504Ok() (*int64, bool) {
 	if o == nil || o.WafStatus504 == nil {
 		return nil, false
 	}
@@ -2355,15 +2355,15 @@ func (o *OriginInspectorValues) HasWafStatus504() bool {
 	return false
 }
 
-// SetWafStatus504 gets a reference to the given int32 and assigns it to the WafStatus504 field.
-func (o *OriginInspectorValues) SetWafStatus504(v int32) {
+// SetWafStatus504 gets a reference to the given int64 and assigns it to the WafStatus504 field.
+func (o *OriginInspectorValues) SetWafStatus504(v int64) {
 	o.WafStatus504 = &v
 }
 
 // GetWafStatus505 returns the WafStatus505 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafStatus505() int32 {
+func (o *OriginInspectorValues) GetWafStatus505() int64 {
 	if o == nil || o.WafStatus505 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafStatus505
@@ -2371,7 +2371,7 @@ func (o *OriginInspectorValues) GetWafStatus505() int32 {
 
 // GetWafStatus505Ok returns a tuple with the WafStatus505 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafStatus505Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafStatus505Ok() (*int64, bool) {
 	if o == nil || o.WafStatus505 == nil {
 		return nil, false
 	}
@@ -2387,15 +2387,15 @@ func (o *OriginInspectorValues) HasWafStatus505() bool {
 	return false
 }
 
-// SetWafStatus505 gets a reference to the given int32 and assigns it to the WafStatus505 field.
-func (o *OriginInspectorValues) SetWafStatus505(v int32) {
+// SetWafStatus505 gets a reference to the given int64 and assigns it to the WafStatus505 field.
+func (o *OriginInspectorValues) SetWafStatus505(v int64) {
 	o.WafStatus505 = &v
 }
 
 // GetWafLatency0To1ms returns the WafLatency0To1ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafLatency0To1ms() int32 {
+func (o *OriginInspectorValues) GetWafLatency0To1ms() int64 {
 	if o == nil || o.WafLatency0To1ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafLatency0To1ms
@@ -2403,7 +2403,7 @@ func (o *OriginInspectorValues) GetWafLatency0To1ms() int32 {
 
 // GetWafLatency0To1msOk returns a tuple with the WafLatency0To1ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafLatency0To1msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafLatency0To1msOk() (*int64, bool) {
 	if o == nil || o.WafLatency0To1ms == nil {
 		return nil, false
 	}
@@ -2419,15 +2419,15 @@ func (o *OriginInspectorValues) HasWafLatency0To1ms() bool {
 	return false
 }
 
-// SetWafLatency0To1ms gets a reference to the given int32 and assigns it to the WafLatency0To1ms field.
-func (o *OriginInspectorValues) SetWafLatency0To1ms(v int32) {
+// SetWafLatency0To1ms gets a reference to the given int64 and assigns it to the WafLatency0To1ms field.
+func (o *OriginInspectorValues) SetWafLatency0To1ms(v int64) {
 	o.WafLatency0To1ms = &v
 }
 
 // GetWafLatency1To5ms returns the WafLatency1To5ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafLatency1To5ms() int32 {
+func (o *OriginInspectorValues) GetWafLatency1To5ms() int64 {
 	if o == nil || o.WafLatency1To5ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafLatency1To5ms
@@ -2435,7 +2435,7 @@ func (o *OriginInspectorValues) GetWafLatency1To5ms() int32 {
 
 // GetWafLatency1To5msOk returns a tuple with the WafLatency1To5ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafLatency1To5msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafLatency1To5msOk() (*int64, bool) {
 	if o == nil || o.WafLatency1To5ms == nil {
 		return nil, false
 	}
@@ -2451,15 +2451,15 @@ func (o *OriginInspectorValues) HasWafLatency1To5ms() bool {
 	return false
 }
 
-// SetWafLatency1To5ms gets a reference to the given int32 and assigns it to the WafLatency1To5ms field.
-func (o *OriginInspectorValues) SetWafLatency1To5ms(v int32) {
+// SetWafLatency1To5ms gets a reference to the given int64 and assigns it to the WafLatency1To5ms field.
+func (o *OriginInspectorValues) SetWafLatency1To5ms(v int64) {
 	o.WafLatency1To5ms = &v
 }
 
 // GetWafLatency5To10ms returns the WafLatency5To10ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafLatency5To10ms() int32 {
+func (o *OriginInspectorValues) GetWafLatency5To10ms() int64 {
 	if o == nil || o.WafLatency5To10ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafLatency5To10ms
@@ -2467,7 +2467,7 @@ func (o *OriginInspectorValues) GetWafLatency5To10ms() int32 {
 
 // GetWafLatency5To10msOk returns a tuple with the WafLatency5To10ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafLatency5To10msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafLatency5To10msOk() (*int64, bool) {
 	if o == nil || o.WafLatency5To10ms == nil {
 		return nil, false
 	}
@@ -2483,15 +2483,15 @@ func (o *OriginInspectorValues) HasWafLatency5To10ms() bool {
 	return false
 }
 
-// SetWafLatency5To10ms gets a reference to the given int32 and assigns it to the WafLatency5To10ms field.
-func (o *OriginInspectorValues) SetWafLatency5To10ms(v int32) {
+// SetWafLatency5To10ms gets a reference to the given int64 and assigns it to the WafLatency5To10ms field.
+func (o *OriginInspectorValues) SetWafLatency5To10ms(v int64) {
 	o.WafLatency5To10ms = &v
 }
 
 // GetWafLatency10To50ms returns the WafLatency10To50ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafLatency10To50ms() int32 {
+func (o *OriginInspectorValues) GetWafLatency10To50ms() int64 {
 	if o == nil || o.WafLatency10To50ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafLatency10To50ms
@@ -2499,7 +2499,7 @@ func (o *OriginInspectorValues) GetWafLatency10To50ms() int32 {
 
 // GetWafLatency10To50msOk returns a tuple with the WafLatency10To50ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafLatency10To50msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafLatency10To50msOk() (*int64, bool) {
 	if o == nil || o.WafLatency10To50ms == nil {
 		return nil, false
 	}
@@ -2515,15 +2515,15 @@ func (o *OriginInspectorValues) HasWafLatency10To50ms() bool {
 	return false
 }
 
-// SetWafLatency10To50ms gets a reference to the given int32 and assigns it to the WafLatency10To50ms field.
-func (o *OriginInspectorValues) SetWafLatency10To50ms(v int32) {
+// SetWafLatency10To50ms gets a reference to the given int64 and assigns it to the WafLatency10To50ms field.
+func (o *OriginInspectorValues) SetWafLatency10To50ms(v int64) {
 	o.WafLatency10To50ms = &v
 }
 
 // GetWafLatency50To100ms returns the WafLatency50To100ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafLatency50To100ms() int32 {
+func (o *OriginInspectorValues) GetWafLatency50To100ms() int64 {
 	if o == nil || o.WafLatency50To100ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafLatency50To100ms
@@ -2531,7 +2531,7 @@ func (o *OriginInspectorValues) GetWafLatency50To100ms() int32 {
 
 // GetWafLatency50To100msOk returns a tuple with the WafLatency50To100ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafLatency50To100msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafLatency50To100msOk() (*int64, bool) {
 	if o == nil || o.WafLatency50To100ms == nil {
 		return nil, false
 	}
@@ -2547,15 +2547,15 @@ func (o *OriginInspectorValues) HasWafLatency50To100ms() bool {
 	return false
 }
 
-// SetWafLatency50To100ms gets a reference to the given int32 and assigns it to the WafLatency50To100ms field.
-func (o *OriginInspectorValues) SetWafLatency50To100ms(v int32) {
+// SetWafLatency50To100ms gets a reference to the given int64 and assigns it to the WafLatency50To100ms field.
+func (o *OriginInspectorValues) SetWafLatency50To100ms(v int64) {
 	o.WafLatency50To100ms = &v
 }
 
 // GetWafLatency100To250ms returns the WafLatency100To250ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafLatency100To250ms() int32 {
+func (o *OriginInspectorValues) GetWafLatency100To250ms() int64 {
 	if o == nil || o.WafLatency100To250ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafLatency100To250ms
@@ -2563,7 +2563,7 @@ func (o *OriginInspectorValues) GetWafLatency100To250ms() int32 {
 
 // GetWafLatency100To250msOk returns a tuple with the WafLatency100To250ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafLatency100To250msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafLatency100To250msOk() (*int64, bool) {
 	if o == nil || o.WafLatency100To250ms == nil {
 		return nil, false
 	}
@@ -2579,15 +2579,15 @@ func (o *OriginInspectorValues) HasWafLatency100To250ms() bool {
 	return false
 }
 
-// SetWafLatency100To250ms gets a reference to the given int32 and assigns it to the WafLatency100To250ms field.
-func (o *OriginInspectorValues) SetWafLatency100To250ms(v int32) {
+// SetWafLatency100To250ms gets a reference to the given int64 and assigns it to the WafLatency100To250ms field.
+func (o *OriginInspectorValues) SetWafLatency100To250ms(v int64) {
 	o.WafLatency100To250ms = &v
 }
 
 // GetWafLatency250To500ms returns the WafLatency250To500ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafLatency250To500ms() int32 {
+func (o *OriginInspectorValues) GetWafLatency250To500ms() int64 {
 	if o == nil || o.WafLatency250To500ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafLatency250To500ms
@@ -2595,7 +2595,7 @@ func (o *OriginInspectorValues) GetWafLatency250To500ms() int32 {
 
 // GetWafLatency250To500msOk returns a tuple with the WafLatency250To500ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafLatency250To500msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafLatency250To500msOk() (*int64, bool) {
 	if o == nil || o.WafLatency250To500ms == nil {
 		return nil, false
 	}
@@ -2611,15 +2611,15 @@ func (o *OriginInspectorValues) HasWafLatency250To500ms() bool {
 	return false
 }
 
-// SetWafLatency250To500ms gets a reference to the given int32 and assigns it to the WafLatency250To500ms field.
-func (o *OriginInspectorValues) SetWafLatency250To500ms(v int32) {
+// SetWafLatency250To500ms gets a reference to the given int64 and assigns it to the WafLatency250To500ms field.
+func (o *OriginInspectorValues) SetWafLatency250To500ms(v int64) {
 	o.WafLatency250To500ms = &v
 }
 
 // GetWafLatency500To1000ms returns the WafLatency500To1000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafLatency500To1000ms() int32 {
+func (o *OriginInspectorValues) GetWafLatency500To1000ms() int64 {
 	if o == nil || o.WafLatency500To1000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafLatency500To1000ms
@@ -2627,7 +2627,7 @@ func (o *OriginInspectorValues) GetWafLatency500To1000ms() int32 {
 
 // GetWafLatency500To1000msOk returns a tuple with the WafLatency500To1000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafLatency500To1000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafLatency500To1000msOk() (*int64, bool) {
 	if o == nil || o.WafLatency500To1000ms == nil {
 		return nil, false
 	}
@@ -2643,15 +2643,15 @@ func (o *OriginInspectorValues) HasWafLatency500To1000ms() bool {
 	return false
 }
 
-// SetWafLatency500To1000ms gets a reference to the given int32 and assigns it to the WafLatency500To1000ms field.
-func (o *OriginInspectorValues) SetWafLatency500To1000ms(v int32) {
+// SetWafLatency500To1000ms gets a reference to the given int64 and assigns it to the WafLatency500To1000ms field.
+func (o *OriginInspectorValues) SetWafLatency500To1000ms(v int64) {
 	o.WafLatency500To1000ms = &v
 }
 
 // GetWafLatency1000To5000ms returns the WafLatency1000To5000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafLatency1000To5000ms() int32 {
+func (o *OriginInspectorValues) GetWafLatency1000To5000ms() int64 {
 	if o == nil || o.WafLatency1000To5000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafLatency1000To5000ms
@@ -2659,7 +2659,7 @@ func (o *OriginInspectorValues) GetWafLatency1000To5000ms() int32 {
 
 // GetWafLatency1000To5000msOk returns a tuple with the WafLatency1000To5000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafLatency1000To5000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafLatency1000To5000msOk() (*int64, bool) {
 	if o == nil || o.WafLatency1000To5000ms == nil {
 		return nil, false
 	}
@@ -2675,15 +2675,15 @@ func (o *OriginInspectorValues) HasWafLatency1000To5000ms() bool {
 	return false
 }
 
-// SetWafLatency1000To5000ms gets a reference to the given int32 and assigns it to the WafLatency1000To5000ms field.
-func (o *OriginInspectorValues) SetWafLatency1000To5000ms(v int32) {
+// SetWafLatency1000To5000ms gets a reference to the given int64 and assigns it to the WafLatency1000To5000ms field.
+func (o *OriginInspectorValues) SetWafLatency1000To5000ms(v int64) {
 	o.WafLatency1000To5000ms = &v
 }
 
 // GetWafLatency5000To10000ms returns the WafLatency5000To10000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafLatency5000To10000ms() int32 {
+func (o *OriginInspectorValues) GetWafLatency5000To10000ms() int64 {
 	if o == nil || o.WafLatency5000To10000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafLatency5000To10000ms
@@ -2691,7 +2691,7 @@ func (o *OriginInspectorValues) GetWafLatency5000To10000ms() int32 {
 
 // GetWafLatency5000To10000msOk returns a tuple with the WafLatency5000To10000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafLatency5000To10000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafLatency5000To10000msOk() (*int64, bool) {
 	if o == nil || o.WafLatency5000To10000ms == nil {
 		return nil, false
 	}
@@ -2707,15 +2707,15 @@ func (o *OriginInspectorValues) HasWafLatency5000To10000ms() bool {
 	return false
 }
 
-// SetWafLatency5000To10000ms gets a reference to the given int32 and assigns it to the WafLatency5000To10000ms field.
-func (o *OriginInspectorValues) SetWafLatency5000To10000ms(v int32) {
+// SetWafLatency5000To10000ms gets a reference to the given int64 and assigns it to the WafLatency5000To10000ms field.
+func (o *OriginInspectorValues) SetWafLatency5000To10000ms(v int64) {
 	o.WafLatency5000To10000ms = &v
 }
 
 // GetWafLatency10000To60000ms returns the WafLatency10000To60000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafLatency10000To60000ms() int32 {
+func (o *OriginInspectorValues) GetWafLatency10000To60000ms() int64 {
 	if o == nil || o.WafLatency10000To60000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafLatency10000To60000ms
@@ -2723,7 +2723,7 @@ func (o *OriginInspectorValues) GetWafLatency10000To60000ms() int32 {
 
 // GetWafLatency10000To60000msOk returns a tuple with the WafLatency10000To60000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafLatency10000To60000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafLatency10000To60000msOk() (*int64, bool) {
 	if o == nil || o.WafLatency10000To60000ms == nil {
 		return nil, false
 	}
@@ -2739,15 +2739,15 @@ func (o *OriginInspectorValues) HasWafLatency10000To60000ms() bool {
 	return false
 }
 
-// SetWafLatency10000To60000ms gets a reference to the given int32 and assigns it to the WafLatency10000To60000ms field.
-func (o *OriginInspectorValues) SetWafLatency10000To60000ms(v int32) {
+// SetWafLatency10000To60000ms gets a reference to the given int64 and assigns it to the WafLatency10000To60000ms field.
+func (o *OriginInspectorValues) SetWafLatency10000To60000ms(v int64) {
 	o.WafLatency10000To60000ms = &v
 }
 
 // GetWafLatency60000ms returns the WafLatency60000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetWafLatency60000ms() int32 {
+func (o *OriginInspectorValues) GetWafLatency60000ms() int64 {
 	if o == nil || o.WafLatency60000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.WafLatency60000ms
@@ -2755,7 +2755,7 @@ func (o *OriginInspectorValues) GetWafLatency60000ms() int32 {
 
 // GetWafLatency60000msOk returns a tuple with the WafLatency60000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetWafLatency60000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetWafLatency60000msOk() (*int64, bool) {
 	if o == nil || o.WafLatency60000ms == nil {
 		return nil, false
 	}
@@ -2771,15 +2771,15 @@ func (o *OriginInspectorValues) HasWafLatency60000ms() bool {
 	return false
 }
 
-// SetWafLatency60000ms gets a reference to the given int32 and assigns it to the WafLatency60000ms field.
-func (o *OriginInspectorValues) SetWafLatency60000ms(v int32) {
+// SetWafLatency60000ms gets a reference to the given int64 and assigns it to the WafLatency60000ms field.
+func (o *OriginInspectorValues) SetWafLatency60000ms(v int64) {
 	o.WafLatency60000ms = &v
 }
 
 // GetComputeResponses returns the ComputeResponses field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeResponses() int32 {
+func (o *OriginInspectorValues) GetComputeResponses() int64 {
 	if o == nil || o.ComputeResponses == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeResponses
@@ -2787,7 +2787,7 @@ func (o *OriginInspectorValues) GetComputeResponses() int32 {
 
 // GetComputeResponsesOk returns a tuple with the ComputeResponses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeResponsesOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeResponsesOk() (*int64, bool) {
 	if o == nil || o.ComputeResponses == nil {
 		return nil, false
 	}
@@ -2803,15 +2803,15 @@ func (o *OriginInspectorValues) HasComputeResponses() bool {
 	return false
 }
 
-// SetComputeResponses gets a reference to the given int32 and assigns it to the ComputeResponses field.
-func (o *OriginInspectorValues) SetComputeResponses(v int32) {
+// SetComputeResponses gets a reference to the given int64 and assigns it to the ComputeResponses field.
+func (o *OriginInspectorValues) SetComputeResponses(v int64) {
 	o.ComputeResponses = &v
 }
 
 // GetComputeRespHeaderBytes returns the ComputeRespHeaderBytes field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeRespHeaderBytes() int32 {
+func (o *OriginInspectorValues) GetComputeRespHeaderBytes() int64 {
 	if o == nil || o.ComputeRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeRespHeaderBytes
@@ -2819,7 +2819,7 @@ func (o *OriginInspectorValues) GetComputeRespHeaderBytes() int32 {
 
 // GetComputeRespHeaderBytesOk returns a tuple with the ComputeRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeRespHeaderBytesOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.ComputeRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -2835,15 +2835,15 @@ func (o *OriginInspectorValues) HasComputeRespHeaderBytes() bool {
 	return false
 }
 
-// SetComputeRespHeaderBytes gets a reference to the given int32 and assigns it to the ComputeRespHeaderBytes field.
-func (o *OriginInspectorValues) SetComputeRespHeaderBytes(v int32) {
+// SetComputeRespHeaderBytes gets a reference to the given int64 and assigns it to the ComputeRespHeaderBytes field.
+func (o *OriginInspectorValues) SetComputeRespHeaderBytes(v int64) {
 	o.ComputeRespHeaderBytes = &v
 }
 
 // GetComputeRespBodyBytes returns the ComputeRespBodyBytes field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeRespBodyBytes() int32 {
+func (o *OriginInspectorValues) GetComputeRespBodyBytes() int64 {
 	if o == nil || o.ComputeRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeRespBodyBytes
@@ -2851,7 +2851,7 @@ func (o *OriginInspectorValues) GetComputeRespBodyBytes() int32 {
 
 // GetComputeRespBodyBytesOk returns a tuple with the ComputeRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeRespBodyBytesOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.ComputeRespBodyBytes == nil {
 		return nil, false
 	}
@@ -2867,15 +2867,15 @@ func (o *OriginInspectorValues) HasComputeRespBodyBytes() bool {
 	return false
 }
 
-// SetComputeRespBodyBytes gets a reference to the given int32 and assigns it to the ComputeRespBodyBytes field.
-func (o *OriginInspectorValues) SetComputeRespBodyBytes(v int32) {
+// SetComputeRespBodyBytes gets a reference to the given int64 and assigns it to the ComputeRespBodyBytes field.
+func (o *OriginInspectorValues) SetComputeRespBodyBytes(v int64) {
 	o.ComputeRespBodyBytes = &v
 }
 
 // GetComputeStatus1xx returns the ComputeStatus1xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus1xx() int32 {
+func (o *OriginInspectorValues) GetComputeStatus1xx() int64 {
 	if o == nil || o.ComputeStatus1xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus1xx
@@ -2883,7 +2883,7 @@ func (o *OriginInspectorValues) GetComputeStatus1xx() int32 {
 
 // GetComputeStatus1xxOk returns a tuple with the ComputeStatus1xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus1xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus1xxOk() (*int64, bool) {
 	if o == nil || o.ComputeStatus1xx == nil {
 		return nil, false
 	}
@@ -2899,15 +2899,15 @@ func (o *OriginInspectorValues) HasComputeStatus1xx() bool {
 	return false
 }
 
-// SetComputeStatus1xx gets a reference to the given int32 and assigns it to the ComputeStatus1xx field.
-func (o *OriginInspectorValues) SetComputeStatus1xx(v int32) {
+// SetComputeStatus1xx gets a reference to the given int64 and assigns it to the ComputeStatus1xx field.
+func (o *OriginInspectorValues) SetComputeStatus1xx(v int64) {
 	o.ComputeStatus1xx = &v
 }
 
 // GetComputeStatus2xx returns the ComputeStatus2xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus2xx() int32 {
+func (o *OriginInspectorValues) GetComputeStatus2xx() int64 {
 	if o == nil || o.ComputeStatus2xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus2xx
@@ -2915,7 +2915,7 @@ func (o *OriginInspectorValues) GetComputeStatus2xx() int32 {
 
 // GetComputeStatus2xxOk returns a tuple with the ComputeStatus2xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus2xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus2xxOk() (*int64, bool) {
 	if o == nil || o.ComputeStatus2xx == nil {
 		return nil, false
 	}
@@ -2931,15 +2931,15 @@ func (o *OriginInspectorValues) HasComputeStatus2xx() bool {
 	return false
 }
 
-// SetComputeStatus2xx gets a reference to the given int32 and assigns it to the ComputeStatus2xx field.
-func (o *OriginInspectorValues) SetComputeStatus2xx(v int32) {
+// SetComputeStatus2xx gets a reference to the given int64 and assigns it to the ComputeStatus2xx field.
+func (o *OriginInspectorValues) SetComputeStatus2xx(v int64) {
 	o.ComputeStatus2xx = &v
 }
 
 // GetComputeStatus3xx returns the ComputeStatus3xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus3xx() int32 {
+func (o *OriginInspectorValues) GetComputeStatus3xx() int64 {
 	if o == nil || o.ComputeStatus3xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus3xx
@@ -2947,7 +2947,7 @@ func (o *OriginInspectorValues) GetComputeStatus3xx() int32 {
 
 // GetComputeStatus3xxOk returns a tuple with the ComputeStatus3xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus3xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus3xxOk() (*int64, bool) {
 	if o == nil || o.ComputeStatus3xx == nil {
 		return nil, false
 	}
@@ -2963,15 +2963,15 @@ func (o *OriginInspectorValues) HasComputeStatus3xx() bool {
 	return false
 }
 
-// SetComputeStatus3xx gets a reference to the given int32 and assigns it to the ComputeStatus3xx field.
-func (o *OriginInspectorValues) SetComputeStatus3xx(v int32) {
+// SetComputeStatus3xx gets a reference to the given int64 and assigns it to the ComputeStatus3xx field.
+func (o *OriginInspectorValues) SetComputeStatus3xx(v int64) {
 	o.ComputeStatus3xx = &v
 }
 
 // GetComputeStatus4xx returns the ComputeStatus4xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus4xx() int32 {
+func (o *OriginInspectorValues) GetComputeStatus4xx() int64 {
 	if o == nil || o.ComputeStatus4xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus4xx
@@ -2979,7 +2979,7 @@ func (o *OriginInspectorValues) GetComputeStatus4xx() int32 {
 
 // GetComputeStatus4xxOk returns a tuple with the ComputeStatus4xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus4xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus4xxOk() (*int64, bool) {
 	if o == nil || o.ComputeStatus4xx == nil {
 		return nil, false
 	}
@@ -2995,15 +2995,15 @@ func (o *OriginInspectorValues) HasComputeStatus4xx() bool {
 	return false
 }
 
-// SetComputeStatus4xx gets a reference to the given int32 and assigns it to the ComputeStatus4xx field.
-func (o *OriginInspectorValues) SetComputeStatus4xx(v int32) {
+// SetComputeStatus4xx gets a reference to the given int64 and assigns it to the ComputeStatus4xx field.
+func (o *OriginInspectorValues) SetComputeStatus4xx(v int64) {
 	o.ComputeStatus4xx = &v
 }
 
 // GetComputeStatus5xx returns the ComputeStatus5xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus5xx() int32 {
+func (o *OriginInspectorValues) GetComputeStatus5xx() int64 {
 	if o == nil || o.ComputeStatus5xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus5xx
@@ -3011,7 +3011,7 @@ func (o *OriginInspectorValues) GetComputeStatus5xx() int32 {
 
 // GetComputeStatus5xxOk returns a tuple with the ComputeStatus5xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus5xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus5xxOk() (*int64, bool) {
 	if o == nil || o.ComputeStatus5xx == nil {
 		return nil, false
 	}
@@ -3027,15 +3027,15 @@ func (o *OriginInspectorValues) HasComputeStatus5xx() bool {
 	return false
 }
 
-// SetComputeStatus5xx gets a reference to the given int32 and assigns it to the ComputeStatus5xx field.
-func (o *OriginInspectorValues) SetComputeStatus5xx(v int32) {
+// SetComputeStatus5xx gets a reference to the given int64 and assigns it to the ComputeStatus5xx field.
+func (o *OriginInspectorValues) SetComputeStatus5xx(v int64) {
 	o.ComputeStatus5xx = &v
 }
 
 // GetComputeStatus200 returns the ComputeStatus200 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus200() int32 {
+func (o *OriginInspectorValues) GetComputeStatus200() int64 {
 	if o == nil || o.ComputeStatus200 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus200
@@ -3043,7 +3043,7 @@ func (o *OriginInspectorValues) GetComputeStatus200() int32 {
 
 // GetComputeStatus200Ok returns a tuple with the ComputeStatus200 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus200Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus200Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus200 == nil {
 		return nil, false
 	}
@@ -3059,15 +3059,15 @@ func (o *OriginInspectorValues) HasComputeStatus200() bool {
 	return false
 }
 
-// SetComputeStatus200 gets a reference to the given int32 and assigns it to the ComputeStatus200 field.
-func (o *OriginInspectorValues) SetComputeStatus200(v int32) {
+// SetComputeStatus200 gets a reference to the given int64 and assigns it to the ComputeStatus200 field.
+func (o *OriginInspectorValues) SetComputeStatus200(v int64) {
 	o.ComputeStatus200 = &v
 }
 
 // GetComputeStatus204 returns the ComputeStatus204 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus204() int32 {
+func (o *OriginInspectorValues) GetComputeStatus204() int64 {
 	if o == nil || o.ComputeStatus204 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus204
@@ -3075,7 +3075,7 @@ func (o *OriginInspectorValues) GetComputeStatus204() int32 {
 
 // GetComputeStatus204Ok returns a tuple with the ComputeStatus204 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus204Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus204Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus204 == nil {
 		return nil, false
 	}
@@ -3091,15 +3091,15 @@ func (o *OriginInspectorValues) HasComputeStatus204() bool {
 	return false
 }
 
-// SetComputeStatus204 gets a reference to the given int32 and assigns it to the ComputeStatus204 field.
-func (o *OriginInspectorValues) SetComputeStatus204(v int32) {
+// SetComputeStatus204 gets a reference to the given int64 and assigns it to the ComputeStatus204 field.
+func (o *OriginInspectorValues) SetComputeStatus204(v int64) {
 	o.ComputeStatus204 = &v
 }
 
 // GetComputeStatus206 returns the ComputeStatus206 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus206() int32 {
+func (o *OriginInspectorValues) GetComputeStatus206() int64 {
 	if o == nil || o.ComputeStatus206 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus206
@@ -3107,7 +3107,7 @@ func (o *OriginInspectorValues) GetComputeStatus206() int32 {
 
 // GetComputeStatus206Ok returns a tuple with the ComputeStatus206 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus206Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus206Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus206 == nil {
 		return nil, false
 	}
@@ -3123,15 +3123,15 @@ func (o *OriginInspectorValues) HasComputeStatus206() bool {
 	return false
 }
 
-// SetComputeStatus206 gets a reference to the given int32 and assigns it to the ComputeStatus206 field.
-func (o *OriginInspectorValues) SetComputeStatus206(v int32) {
+// SetComputeStatus206 gets a reference to the given int64 and assigns it to the ComputeStatus206 field.
+func (o *OriginInspectorValues) SetComputeStatus206(v int64) {
 	o.ComputeStatus206 = &v
 }
 
 // GetComputeStatus301 returns the ComputeStatus301 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus301() int32 {
+func (o *OriginInspectorValues) GetComputeStatus301() int64 {
 	if o == nil || o.ComputeStatus301 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus301
@@ -3139,7 +3139,7 @@ func (o *OriginInspectorValues) GetComputeStatus301() int32 {
 
 // GetComputeStatus301Ok returns a tuple with the ComputeStatus301 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus301Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus301Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus301 == nil {
 		return nil, false
 	}
@@ -3155,15 +3155,15 @@ func (o *OriginInspectorValues) HasComputeStatus301() bool {
 	return false
 }
 
-// SetComputeStatus301 gets a reference to the given int32 and assigns it to the ComputeStatus301 field.
-func (o *OriginInspectorValues) SetComputeStatus301(v int32) {
+// SetComputeStatus301 gets a reference to the given int64 and assigns it to the ComputeStatus301 field.
+func (o *OriginInspectorValues) SetComputeStatus301(v int64) {
 	o.ComputeStatus301 = &v
 }
 
 // GetComputeStatus302 returns the ComputeStatus302 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus302() int32 {
+func (o *OriginInspectorValues) GetComputeStatus302() int64 {
 	if o == nil || o.ComputeStatus302 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus302
@@ -3171,7 +3171,7 @@ func (o *OriginInspectorValues) GetComputeStatus302() int32 {
 
 // GetComputeStatus302Ok returns a tuple with the ComputeStatus302 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus302Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus302Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus302 == nil {
 		return nil, false
 	}
@@ -3187,15 +3187,15 @@ func (o *OriginInspectorValues) HasComputeStatus302() bool {
 	return false
 }
 
-// SetComputeStatus302 gets a reference to the given int32 and assigns it to the ComputeStatus302 field.
-func (o *OriginInspectorValues) SetComputeStatus302(v int32) {
+// SetComputeStatus302 gets a reference to the given int64 and assigns it to the ComputeStatus302 field.
+func (o *OriginInspectorValues) SetComputeStatus302(v int64) {
 	o.ComputeStatus302 = &v
 }
 
 // GetComputeStatus304 returns the ComputeStatus304 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus304() int32 {
+func (o *OriginInspectorValues) GetComputeStatus304() int64 {
 	if o == nil || o.ComputeStatus304 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus304
@@ -3203,7 +3203,7 @@ func (o *OriginInspectorValues) GetComputeStatus304() int32 {
 
 // GetComputeStatus304Ok returns a tuple with the ComputeStatus304 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus304Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus304Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus304 == nil {
 		return nil, false
 	}
@@ -3219,15 +3219,15 @@ func (o *OriginInspectorValues) HasComputeStatus304() bool {
 	return false
 }
 
-// SetComputeStatus304 gets a reference to the given int32 and assigns it to the ComputeStatus304 field.
-func (o *OriginInspectorValues) SetComputeStatus304(v int32) {
+// SetComputeStatus304 gets a reference to the given int64 and assigns it to the ComputeStatus304 field.
+func (o *OriginInspectorValues) SetComputeStatus304(v int64) {
 	o.ComputeStatus304 = &v
 }
 
 // GetComputeStatus400 returns the ComputeStatus400 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus400() int32 {
+func (o *OriginInspectorValues) GetComputeStatus400() int64 {
 	if o == nil || o.ComputeStatus400 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus400
@@ -3235,7 +3235,7 @@ func (o *OriginInspectorValues) GetComputeStatus400() int32 {
 
 // GetComputeStatus400Ok returns a tuple with the ComputeStatus400 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus400Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus400Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus400 == nil {
 		return nil, false
 	}
@@ -3251,15 +3251,15 @@ func (o *OriginInspectorValues) HasComputeStatus400() bool {
 	return false
 }
 
-// SetComputeStatus400 gets a reference to the given int32 and assigns it to the ComputeStatus400 field.
-func (o *OriginInspectorValues) SetComputeStatus400(v int32) {
+// SetComputeStatus400 gets a reference to the given int64 and assigns it to the ComputeStatus400 field.
+func (o *OriginInspectorValues) SetComputeStatus400(v int64) {
 	o.ComputeStatus400 = &v
 }
 
 // GetComputeStatus401 returns the ComputeStatus401 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus401() int32 {
+func (o *OriginInspectorValues) GetComputeStatus401() int64 {
 	if o == nil || o.ComputeStatus401 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus401
@@ -3267,7 +3267,7 @@ func (o *OriginInspectorValues) GetComputeStatus401() int32 {
 
 // GetComputeStatus401Ok returns a tuple with the ComputeStatus401 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus401Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus401Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus401 == nil {
 		return nil, false
 	}
@@ -3283,15 +3283,15 @@ func (o *OriginInspectorValues) HasComputeStatus401() bool {
 	return false
 }
 
-// SetComputeStatus401 gets a reference to the given int32 and assigns it to the ComputeStatus401 field.
-func (o *OriginInspectorValues) SetComputeStatus401(v int32) {
+// SetComputeStatus401 gets a reference to the given int64 and assigns it to the ComputeStatus401 field.
+func (o *OriginInspectorValues) SetComputeStatus401(v int64) {
 	o.ComputeStatus401 = &v
 }
 
 // GetComputeStatus403 returns the ComputeStatus403 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus403() int32 {
+func (o *OriginInspectorValues) GetComputeStatus403() int64 {
 	if o == nil || o.ComputeStatus403 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus403
@@ -3299,7 +3299,7 @@ func (o *OriginInspectorValues) GetComputeStatus403() int32 {
 
 // GetComputeStatus403Ok returns a tuple with the ComputeStatus403 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus403Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus403Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus403 == nil {
 		return nil, false
 	}
@@ -3315,15 +3315,15 @@ func (o *OriginInspectorValues) HasComputeStatus403() bool {
 	return false
 }
 
-// SetComputeStatus403 gets a reference to the given int32 and assigns it to the ComputeStatus403 field.
-func (o *OriginInspectorValues) SetComputeStatus403(v int32) {
+// SetComputeStatus403 gets a reference to the given int64 and assigns it to the ComputeStatus403 field.
+func (o *OriginInspectorValues) SetComputeStatus403(v int64) {
 	o.ComputeStatus403 = &v
 }
 
 // GetComputeStatus404 returns the ComputeStatus404 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus404() int32 {
+func (o *OriginInspectorValues) GetComputeStatus404() int64 {
 	if o == nil || o.ComputeStatus404 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus404
@@ -3331,7 +3331,7 @@ func (o *OriginInspectorValues) GetComputeStatus404() int32 {
 
 // GetComputeStatus404Ok returns a tuple with the ComputeStatus404 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus404Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus404Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus404 == nil {
 		return nil, false
 	}
@@ -3347,15 +3347,15 @@ func (o *OriginInspectorValues) HasComputeStatus404() bool {
 	return false
 }
 
-// SetComputeStatus404 gets a reference to the given int32 and assigns it to the ComputeStatus404 field.
-func (o *OriginInspectorValues) SetComputeStatus404(v int32) {
+// SetComputeStatus404 gets a reference to the given int64 and assigns it to the ComputeStatus404 field.
+func (o *OriginInspectorValues) SetComputeStatus404(v int64) {
 	o.ComputeStatus404 = &v
 }
 
 // GetComputeStatus416 returns the ComputeStatus416 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus416() int32 {
+func (o *OriginInspectorValues) GetComputeStatus416() int64 {
 	if o == nil || o.ComputeStatus416 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus416
@@ -3363,7 +3363,7 @@ func (o *OriginInspectorValues) GetComputeStatus416() int32 {
 
 // GetComputeStatus416Ok returns a tuple with the ComputeStatus416 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus416Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus416Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus416 == nil {
 		return nil, false
 	}
@@ -3379,15 +3379,15 @@ func (o *OriginInspectorValues) HasComputeStatus416() bool {
 	return false
 }
 
-// SetComputeStatus416 gets a reference to the given int32 and assigns it to the ComputeStatus416 field.
-func (o *OriginInspectorValues) SetComputeStatus416(v int32) {
+// SetComputeStatus416 gets a reference to the given int64 and assigns it to the ComputeStatus416 field.
+func (o *OriginInspectorValues) SetComputeStatus416(v int64) {
 	o.ComputeStatus416 = &v
 }
 
 // GetComputeStatus429 returns the ComputeStatus429 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus429() int32 {
+func (o *OriginInspectorValues) GetComputeStatus429() int64 {
 	if o == nil || o.ComputeStatus429 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus429
@@ -3395,7 +3395,7 @@ func (o *OriginInspectorValues) GetComputeStatus429() int32 {
 
 // GetComputeStatus429Ok returns a tuple with the ComputeStatus429 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus429Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus429Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus429 == nil {
 		return nil, false
 	}
@@ -3411,15 +3411,15 @@ func (o *OriginInspectorValues) HasComputeStatus429() bool {
 	return false
 }
 
-// SetComputeStatus429 gets a reference to the given int32 and assigns it to the ComputeStatus429 field.
-func (o *OriginInspectorValues) SetComputeStatus429(v int32) {
+// SetComputeStatus429 gets a reference to the given int64 and assigns it to the ComputeStatus429 field.
+func (o *OriginInspectorValues) SetComputeStatus429(v int64) {
 	o.ComputeStatus429 = &v
 }
 
 // GetComputeStatus500 returns the ComputeStatus500 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus500() int32 {
+func (o *OriginInspectorValues) GetComputeStatus500() int64 {
 	if o == nil || o.ComputeStatus500 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus500
@@ -3427,7 +3427,7 @@ func (o *OriginInspectorValues) GetComputeStatus500() int32 {
 
 // GetComputeStatus500Ok returns a tuple with the ComputeStatus500 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus500Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus500Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus500 == nil {
 		return nil, false
 	}
@@ -3443,15 +3443,15 @@ func (o *OriginInspectorValues) HasComputeStatus500() bool {
 	return false
 }
 
-// SetComputeStatus500 gets a reference to the given int32 and assigns it to the ComputeStatus500 field.
-func (o *OriginInspectorValues) SetComputeStatus500(v int32) {
+// SetComputeStatus500 gets a reference to the given int64 and assigns it to the ComputeStatus500 field.
+func (o *OriginInspectorValues) SetComputeStatus500(v int64) {
 	o.ComputeStatus500 = &v
 }
 
 // GetComputeStatus501 returns the ComputeStatus501 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus501() int32 {
+func (o *OriginInspectorValues) GetComputeStatus501() int64 {
 	if o == nil || o.ComputeStatus501 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus501
@@ -3459,7 +3459,7 @@ func (o *OriginInspectorValues) GetComputeStatus501() int32 {
 
 // GetComputeStatus501Ok returns a tuple with the ComputeStatus501 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus501Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus501Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus501 == nil {
 		return nil, false
 	}
@@ -3475,15 +3475,15 @@ func (o *OriginInspectorValues) HasComputeStatus501() bool {
 	return false
 }
 
-// SetComputeStatus501 gets a reference to the given int32 and assigns it to the ComputeStatus501 field.
-func (o *OriginInspectorValues) SetComputeStatus501(v int32) {
+// SetComputeStatus501 gets a reference to the given int64 and assigns it to the ComputeStatus501 field.
+func (o *OriginInspectorValues) SetComputeStatus501(v int64) {
 	o.ComputeStatus501 = &v
 }
 
 // GetComputeStatus502 returns the ComputeStatus502 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus502() int32 {
+func (o *OriginInspectorValues) GetComputeStatus502() int64 {
 	if o == nil || o.ComputeStatus502 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus502
@@ -3491,7 +3491,7 @@ func (o *OriginInspectorValues) GetComputeStatus502() int32 {
 
 // GetComputeStatus502Ok returns a tuple with the ComputeStatus502 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus502Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus502Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus502 == nil {
 		return nil, false
 	}
@@ -3507,15 +3507,15 @@ func (o *OriginInspectorValues) HasComputeStatus502() bool {
 	return false
 }
 
-// SetComputeStatus502 gets a reference to the given int32 and assigns it to the ComputeStatus502 field.
-func (o *OriginInspectorValues) SetComputeStatus502(v int32) {
+// SetComputeStatus502 gets a reference to the given int64 and assigns it to the ComputeStatus502 field.
+func (o *OriginInspectorValues) SetComputeStatus502(v int64) {
 	o.ComputeStatus502 = &v
 }
 
 // GetComputeStatus503 returns the ComputeStatus503 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus503() int32 {
+func (o *OriginInspectorValues) GetComputeStatus503() int64 {
 	if o == nil || o.ComputeStatus503 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus503
@@ -3523,7 +3523,7 @@ func (o *OriginInspectorValues) GetComputeStatus503() int32 {
 
 // GetComputeStatus503Ok returns a tuple with the ComputeStatus503 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus503Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus503Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus503 == nil {
 		return nil, false
 	}
@@ -3539,15 +3539,15 @@ func (o *OriginInspectorValues) HasComputeStatus503() bool {
 	return false
 }
 
-// SetComputeStatus503 gets a reference to the given int32 and assigns it to the ComputeStatus503 field.
-func (o *OriginInspectorValues) SetComputeStatus503(v int32) {
+// SetComputeStatus503 gets a reference to the given int64 and assigns it to the ComputeStatus503 field.
+func (o *OriginInspectorValues) SetComputeStatus503(v int64) {
 	o.ComputeStatus503 = &v
 }
 
 // GetComputeStatus504 returns the ComputeStatus504 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus504() int32 {
+func (o *OriginInspectorValues) GetComputeStatus504() int64 {
 	if o == nil || o.ComputeStatus504 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus504
@@ -3555,7 +3555,7 @@ func (o *OriginInspectorValues) GetComputeStatus504() int32 {
 
 // GetComputeStatus504Ok returns a tuple with the ComputeStatus504 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus504Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus504Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus504 == nil {
 		return nil, false
 	}
@@ -3571,15 +3571,15 @@ func (o *OriginInspectorValues) HasComputeStatus504() bool {
 	return false
 }
 
-// SetComputeStatus504 gets a reference to the given int32 and assigns it to the ComputeStatus504 field.
-func (o *OriginInspectorValues) SetComputeStatus504(v int32) {
+// SetComputeStatus504 gets a reference to the given int64 and assigns it to the ComputeStatus504 field.
+func (o *OriginInspectorValues) SetComputeStatus504(v int64) {
 	o.ComputeStatus504 = &v
 }
 
 // GetComputeStatus505 returns the ComputeStatus505 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeStatus505() int32 {
+func (o *OriginInspectorValues) GetComputeStatus505() int64 {
 	if o == nil || o.ComputeStatus505 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeStatus505
@@ -3587,7 +3587,7 @@ func (o *OriginInspectorValues) GetComputeStatus505() int32 {
 
 // GetComputeStatus505Ok returns a tuple with the ComputeStatus505 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeStatus505Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeStatus505Ok() (*int64, bool) {
 	if o == nil || o.ComputeStatus505 == nil {
 		return nil, false
 	}
@@ -3603,15 +3603,15 @@ func (o *OriginInspectorValues) HasComputeStatus505() bool {
 	return false
 }
 
-// SetComputeStatus505 gets a reference to the given int32 and assigns it to the ComputeStatus505 field.
-func (o *OriginInspectorValues) SetComputeStatus505(v int32) {
+// SetComputeStatus505 gets a reference to the given int64 and assigns it to the ComputeStatus505 field.
+func (o *OriginInspectorValues) SetComputeStatus505(v int64) {
 	o.ComputeStatus505 = &v
 }
 
 // GetComputeLatency0To1ms returns the ComputeLatency0To1ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeLatency0To1ms() int32 {
+func (o *OriginInspectorValues) GetComputeLatency0To1ms() int64 {
 	if o == nil || o.ComputeLatency0To1ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeLatency0To1ms
@@ -3619,7 +3619,7 @@ func (o *OriginInspectorValues) GetComputeLatency0To1ms() int32 {
 
 // GetComputeLatency0To1msOk returns a tuple with the ComputeLatency0To1ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeLatency0To1msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeLatency0To1msOk() (*int64, bool) {
 	if o == nil || o.ComputeLatency0To1ms == nil {
 		return nil, false
 	}
@@ -3635,15 +3635,15 @@ func (o *OriginInspectorValues) HasComputeLatency0To1ms() bool {
 	return false
 }
 
-// SetComputeLatency0To1ms gets a reference to the given int32 and assigns it to the ComputeLatency0To1ms field.
-func (o *OriginInspectorValues) SetComputeLatency0To1ms(v int32) {
+// SetComputeLatency0To1ms gets a reference to the given int64 and assigns it to the ComputeLatency0To1ms field.
+func (o *OriginInspectorValues) SetComputeLatency0To1ms(v int64) {
 	o.ComputeLatency0To1ms = &v
 }
 
 // GetComputeLatency1To5ms returns the ComputeLatency1To5ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeLatency1To5ms() int32 {
+func (o *OriginInspectorValues) GetComputeLatency1To5ms() int64 {
 	if o == nil || o.ComputeLatency1To5ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeLatency1To5ms
@@ -3651,7 +3651,7 @@ func (o *OriginInspectorValues) GetComputeLatency1To5ms() int32 {
 
 // GetComputeLatency1To5msOk returns a tuple with the ComputeLatency1To5ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeLatency1To5msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeLatency1To5msOk() (*int64, bool) {
 	if o == nil || o.ComputeLatency1To5ms == nil {
 		return nil, false
 	}
@@ -3667,15 +3667,15 @@ func (o *OriginInspectorValues) HasComputeLatency1To5ms() bool {
 	return false
 }
 
-// SetComputeLatency1To5ms gets a reference to the given int32 and assigns it to the ComputeLatency1To5ms field.
-func (o *OriginInspectorValues) SetComputeLatency1To5ms(v int32) {
+// SetComputeLatency1To5ms gets a reference to the given int64 and assigns it to the ComputeLatency1To5ms field.
+func (o *OriginInspectorValues) SetComputeLatency1To5ms(v int64) {
 	o.ComputeLatency1To5ms = &v
 }
 
 // GetComputeLatency5To10ms returns the ComputeLatency5To10ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeLatency5To10ms() int32 {
+func (o *OriginInspectorValues) GetComputeLatency5To10ms() int64 {
 	if o == nil || o.ComputeLatency5To10ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeLatency5To10ms
@@ -3683,7 +3683,7 @@ func (o *OriginInspectorValues) GetComputeLatency5To10ms() int32 {
 
 // GetComputeLatency5To10msOk returns a tuple with the ComputeLatency5To10ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeLatency5To10msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeLatency5To10msOk() (*int64, bool) {
 	if o == nil || o.ComputeLatency5To10ms == nil {
 		return nil, false
 	}
@@ -3699,15 +3699,15 @@ func (o *OriginInspectorValues) HasComputeLatency5To10ms() bool {
 	return false
 }
 
-// SetComputeLatency5To10ms gets a reference to the given int32 and assigns it to the ComputeLatency5To10ms field.
-func (o *OriginInspectorValues) SetComputeLatency5To10ms(v int32) {
+// SetComputeLatency5To10ms gets a reference to the given int64 and assigns it to the ComputeLatency5To10ms field.
+func (o *OriginInspectorValues) SetComputeLatency5To10ms(v int64) {
 	o.ComputeLatency5To10ms = &v
 }
 
 // GetComputeLatency10To50ms returns the ComputeLatency10To50ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeLatency10To50ms() int32 {
+func (o *OriginInspectorValues) GetComputeLatency10To50ms() int64 {
 	if o == nil || o.ComputeLatency10To50ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeLatency10To50ms
@@ -3715,7 +3715,7 @@ func (o *OriginInspectorValues) GetComputeLatency10To50ms() int32 {
 
 // GetComputeLatency10To50msOk returns a tuple with the ComputeLatency10To50ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeLatency10To50msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeLatency10To50msOk() (*int64, bool) {
 	if o == nil || o.ComputeLatency10To50ms == nil {
 		return nil, false
 	}
@@ -3731,15 +3731,15 @@ func (o *OriginInspectorValues) HasComputeLatency10To50ms() bool {
 	return false
 }
 
-// SetComputeLatency10To50ms gets a reference to the given int32 and assigns it to the ComputeLatency10To50ms field.
-func (o *OriginInspectorValues) SetComputeLatency10To50ms(v int32) {
+// SetComputeLatency10To50ms gets a reference to the given int64 and assigns it to the ComputeLatency10To50ms field.
+func (o *OriginInspectorValues) SetComputeLatency10To50ms(v int64) {
 	o.ComputeLatency10To50ms = &v
 }
 
 // GetComputeLatency50To100ms returns the ComputeLatency50To100ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeLatency50To100ms() int32 {
+func (o *OriginInspectorValues) GetComputeLatency50To100ms() int64 {
 	if o == nil || o.ComputeLatency50To100ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeLatency50To100ms
@@ -3747,7 +3747,7 @@ func (o *OriginInspectorValues) GetComputeLatency50To100ms() int32 {
 
 // GetComputeLatency50To100msOk returns a tuple with the ComputeLatency50To100ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeLatency50To100msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeLatency50To100msOk() (*int64, bool) {
 	if o == nil || o.ComputeLatency50To100ms == nil {
 		return nil, false
 	}
@@ -3763,15 +3763,15 @@ func (o *OriginInspectorValues) HasComputeLatency50To100ms() bool {
 	return false
 }
 
-// SetComputeLatency50To100ms gets a reference to the given int32 and assigns it to the ComputeLatency50To100ms field.
-func (o *OriginInspectorValues) SetComputeLatency50To100ms(v int32) {
+// SetComputeLatency50To100ms gets a reference to the given int64 and assigns it to the ComputeLatency50To100ms field.
+func (o *OriginInspectorValues) SetComputeLatency50To100ms(v int64) {
 	o.ComputeLatency50To100ms = &v
 }
 
 // GetComputeLatency100To250ms returns the ComputeLatency100To250ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeLatency100To250ms() int32 {
+func (o *OriginInspectorValues) GetComputeLatency100To250ms() int64 {
 	if o == nil || o.ComputeLatency100To250ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeLatency100To250ms
@@ -3779,7 +3779,7 @@ func (o *OriginInspectorValues) GetComputeLatency100To250ms() int32 {
 
 // GetComputeLatency100To250msOk returns a tuple with the ComputeLatency100To250ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeLatency100To250msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeLatency100To250msOk() (*int64, bool) {
 	if o == nil || o.ComputeLatency100To250ms == nil {
 		return nil, false
 	}
@@ -3795,15 +3795,15 @@ func (o *OriginInspectorValues) HasComputeLatency100To250ms() bool {
 	return false
 }
 
-// SetComputeLatency100To250ms gets a reference to the given int32 and assigns it to the ComputeLatency100To250ms field.
-func (o *OriginInspectorValues) SetComputeLatency100To250ms(v int32) {
+// SetComputeLatency100To250ms gets a reference to the given int64 and assigns it to the ComputeLatency100To250ms field.
+func (o *OriginInspectorValues) SetComputeLatency100To250ms(v int64) {
 	o.ComputeLatency100To250ms = &v
 }
 
 // GetComputeLatency250To500ms returns the ComputeLatency250To500ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeLatency250To500ms() int32 {
+func (o *OriginInspectorValues) GetComputeLatency250To500ms() int64 {
 	if o == nil || o.ComputeLatency250To500ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeLatency250To500ms
@@ -3811,7 +3811,7 @@ func (o *OriginInspectorValues) GetComputeLatency250To500ms() int32 {
 
 // GetComputeLatency250To500msOk returns a tuple with the ComputeLatency250To500ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeLatency250To500msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeLatency250To500msOk() (*int64, bool) {
 	if o == nil || o.ComputeLatency250To500ms == nil {
 		return nil, false
 	}
@@ -3827,15 +3827,15 @@ func (o *OriginInspectorValues) HasComputeLatency250To500ms() bool {
 	return false
 }
 
-// SetComputeLatency250To500ms gets a reference to the given int32 and assigns it to the ComputeLatency250To500ms field.
-func (o *OriginInspectorValues) SetComputeLatency250To500ms(v int32) {
+// SetComputeLatency250To500ms gets a reference to the given int64 and assigns it to the ComputeLatency250To500ms field.
+func (o *OriginInspectorValues) SetComputeLatency250To500ms(v int64) {
 	o.ComputeLatency250To500ms = &v
 }
 
 // GetComputeLatency500To1000ms returns the ComputeLatency500To1000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeLatency500To1000ms() int32 {
+func (o *OriginInspectorValues) GetComputeLatency500To1000ms() int64 {
 	if o == nil || o.ComputeLatency500To1000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeLatency500To1000ms
@@ -3843,7 +3843,7 @@ func (o *OriginInspectorValues) GetComputeLatency500To1000ms() int32 {
 
 // GetComputeLatency500To1000msOk returns a tuple with the ComputeLatency500To1000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeLatency500To1000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeLatency500To1000msOk() (*int64, bool) {
 	if o == nil || o.ComputeLatency500To1000ms == nil {
 		return nil, false
 	}
@@ -3859,15 +3859,15 @@ func (o *OriginInspectorValues) HasComputeLatency500To1000ms() bool {
 	return false
 }
 
-// SetComputeLatency500To1000ms gets a reference to the given int32 and assigns it to the ComputeLatency500To1000ms field.
-func (o *OriginInspectorValues) SetComputeLatency500To1000ms(v int32) {
+// SetComputeLatency500To1000ms gets a reference to the given int64 and assigns it to the ComputeLatency500To1000ms field.
+func (o *OriginInspectorValues) SetComputeLatency500To1000ms(v int64) {
 	o.ComputeLatency500To1000ms = &v
 }
 
 // GetComputeLatency1000To5000ms returns the ComputeLatency1000To5000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeLatency1000To5000ms() int32 {
+func (o *OriginInspectorValues) GetComputeLatency1000To5000ms() int64 {
 	if o == nil || o.ComputeLatency1000To5000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeLatency1000To5000ms
@@ -3875,7 +3875,7 @@ func (o *OriginInspectorValues) GetComputeLatency1000To5000ms() int32 {
 
 // GetComputeLatency1000To5000msOk returns a tuple with the ComputeLatency1000To5000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeLatency1000To5000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeLatency1000To5000msOk() (*int64, bool) {
 	if o == nil || o.ComputeLatency1000To5000ms == nil {
 		return nil, false
 	}
@@ -3891,15 +3891,15 @@ func (o *OriginInspectorValues) HasComputeLatency1000To5000ms() bool {
 	return false
 }
 
-// SetComputeLatency1000To5000ms gets a reference to the given int32 and assigns it to the ComputeLatency1000To5000ms field.
-func (o *OriginInspectorValues) SetComputeLatency1000To5000ms(v int32) {
+// SetComputeLatency1000To5000ms gets a reference to the given int64 and assigns it to the ComputeLatency1000To5000ms field.
+func (o *OriginInspectorValues) SetComputeLatency1000To5000ms(v int64) {
 	o.ComputeLatency1000To5000ms = &v
 }
 
 // GetComputeLatency5000To10000ms returns the ComputeLatency5000To10000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeLatency5000To10000ms() int32 {
+func (o *OriginInspectorValues) GetComputeLatency5000To10000ms() int64 {
 	if o == nil || o.ComputeLatency5000To10000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeLatency5000To10000ms
@@ -3907,7 +3907,7 @@ func (o *OriginInspectorValues) GetComputeLatency5000To10000ms() int32 {
 
 // GetComputeLatency5000To10000msOk returns a tuple with the ComputeLatency5000To10000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeLatency5000To10000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeLatency5000To10000msOk() (*int64, bool) {
 	if o == nil || o.ComputeLatency5000To10000ms == nil {
 		return nil, false
 	}
@@ -3923,15 +3923,15 @@ func (o *OriginInspectorValues) HasComputeLatency5000To10000ms() bool {
 	return false
 }
 
-// SetComputeLatency5000To10000ms gets a reference to the given int32 and assigns it to the ComputeLatency5000To10000ms field.
-func (o *OriginInspectorValues) SetComputeLatency5000To10000ms(v int32) {
+// SetComputeLatency5000To10000ms gets a reference to the given int64 and assigns it to the ComputeLatency5000To10000ms field.
+func (o *OriginInspectorValues) SetComputeLatency5000To10000ms(v int64) {
 	o.ComputeLatency5000To10000ms = &v
 }
 
 // GetComputeLatency10000To60000ms returns the ComputeLatency10000To60000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeLatency10000To60000ms() int32 {
+func (o *OriginInspectorValues) GetComputeLatency10000To60000ms() int64 {
 	if o == nil || o.ComputeLatency10000To60000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeLatency10000To60000ms
@@ -3939,7 +3939,7 @@ func (o *OriginInspectorValues) GetComputeLatency10000To60000ms() int32 {
 
 // GetComputeLatency10000To60000msOk returns a tuple with the ComputeLatency10000To60000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeLatency10000To60000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeLatency10000To60000msOk() (*int64, bool) {
 	if o == nil || o.ComputeLatency10000To60000ms == nil {
 		return nil, false
 	}
@@ -3955,15 +3955,15 @@ func (o *OriginInspectorValues) HasComputeLatency10000To60000ms() bool {
 	return false
 }
 
-// SetComputeLatency10000To60000ms gets a reference to the given int32 and assigns it to the ComputeLatency10000To60000ms field.
-func (o *OriginInspectorValues) SetComputeLatency10000To60000ms(v int32) {
+// SetComputeLatency10000To60000ms gets a reference to the given int64 and assigns it to the ComputeLatency10000To60000ms field.
+func (o *OriginInspectorValues) SetComputeLatency10000To60000ms(v int64) {
 	o.ComputeLatency10000To60000ms = &v
 }
 
 // GetComputeLatency60000ms returns the ComputeLatency60000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetComputeLatency60000ms() int32 {
+func (o *OriginInspectorValues) GetComputeLatency60000ms() int64 {
 	if o == nil || o.ComputeLatency60000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.ComputeLatency60000ms
@@ -3971,7 +3971,7 @@ func (o *OriginInspectorValues) GetComputeLatency60000ms() int32 {
 
 // GetComputeLatency60000msOk returns a tuple with the ComputeLatency60000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetComputeLatency60000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetComputeLatency60000msOk() (*int64, bool) {
 	if o == nil || o.ComputeLatency60000ms == nil {
 		return nil, false
 	}
@@ -3987,15 +3987,15 @@ func (o *OriginInspectorValues) HasComputeLatency60000ms() bool {
 	return false
 }
 
-// SetComputeLatency60000ms gets a reference to the given int32 and assigns it to the ComputeLatency60000ms field.
-func (o *OriginInspectorValues) SetComputeLatency60000ms(v int32) {
+// SetComputeLatency60000ms gets a reference to the given int64 and assigns it to the ComputeLatency60000ms field.
+func (o *OriginInspectorValues) SetComputeLatency60000ms(v int64) {
 	o.ComputeLatency60000ms = &v
 }
 
 // GetAllResponses returns the AllResponses field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllResponses() int32 {
+func (o *OriginInspectorValues) GetAllResponses() int64 {
 	if o == nil || o.AllResponses == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllResponses
@@ -4003,7 +4003,7 @@ func (o *OriginInspectorValues) GetAllResponses() int32 {
 
 // GetAllResponsesOk returns a tuple with the AllResponses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllResponsesOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllResponsesOk() (*int64, bool) {
 	if o == nil || o.AllResponses == nil {
 		return nil, false
 	}
@@ -4019,15 +4019,15 @@ func (o *OriginInspectorValues) HasAllResponses() bool {
 	return false
 }
 
-// SetAllResponses gets a reference to the given int32 and assigns it to the AllResponses field.
-func (o *OriginInspectorValues) SetAllResponses(v int32) {
+// SetAllResponses gets a reference to the given int64 and assigns it to the AllResponses field.
+func (o *OriginInspectorValues) SetAllResponses(v int64) {
 	o.AllResponses = &v
 }
 
 // GetAllRespHeaderBytes returns the AllRespHeaderBytes field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllRespHeaderBytes() int32 {
+func (o *OriginInspectorValues) GetAllRespHeaderBytes() int64 {
 	if o == nil || o.AllRespHeaderBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllRespHeaderBytes
@@ -4035,7 +4035,7 @@ func (o *OriginInspectorValues) GetAllRespHeaderBytes() int32 {
 
 // GetAllRespHeaderBytesOk returns a tuple with the AllRespHeaderBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllRespHeaderBytesOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllRespHeaderBytesOk() (*int64, bool) {
 	if o == nil || o.AllRespHeaderBytes == nil {
 		return nil, false
 	}
@@ -4051,15 +4051,15 @@ func (o *OriginInspectorValues) HasAllRespHeaderBytes() bool {
 	return false
 }
 
-// SetAllRespHeaderBytes gets a reference to the given int32 and assigns it to the AllRespHeaderBytes field.
-func (o *OriginInspectorValues) SetAllRespHeaderBytes(v int32) {
+// SetAllRespHeaderBytes gets a reference to the given int64 and assigns it to the AllRespHeaderBytes field.
+func (o *OriginInspectorValues) SetAllRespHeaderBytes(v int64) {
 	o.AllRespHeaderBytes = &v
 }
 
 // GetAllRespBodyBytes returns the AllRespBodyBytes field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllRespBodyBytes() int32 {
+func (o *OriginInspectorValues) GetAllRespBodyBytes() int64 {
 	if o == nil || o.AllRespBodyBytes == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllRespBodyBytes
@@ -4067,7 +4067,7 @@ func (o *OriginInspectorValues) GetAllRespBodyBytes() int32 {
 
 // GetAllRespBodyBytesOk returns a tuple with the AllRespBodyBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllRespBodyBytesOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllRespBodyBytesOk() (*int64, bool) {
 	if o == nil || o.AllRespBodyBytes == nil {
 		return nil, false
 	}
@@ -4083,15 +4083,15 @@ func (o *OriginInspectorValues) HasAllRespBodyBytes() bool {
 	return false
 }
 
-// SetAllRespBodyBytes gets a reference to the given int32 and assigns it to the AllRespBodyBytes field.
-func (o *OriginInspectorValues) SetAllRespBodyBytes(v int32) {
+// SetAllRespBodyBytes gets a reference to the given int64 and assigns it to the AllRespBodyBytes field.
+func (o *OriginInspectorValues) SetAllRespBodyBytes(v int64) {
 	o.AllRespBodyBytes = &v
 }
 
 // GetAllStatus1xx returns the AllStatus1xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus1xx() int32 {
+func (o *OriginInspectorValues) GetAllStatus1xx() int64 {
 	if o == nil || o.AllStatus1xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus1xx
@@ -4099,7 +4099,7 @@ func (o *OriginInspectorValues) GetAllStatus1xx() int32 {
 
 // GetAllStatus1xxOk returns a tuple with the AllStatus1xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus1xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus1xxOk() (*int64, bool) {
 	if o == nil || o.AllStatus1xx == nil {
 		return nil, false
 	}
@@ -4115,15 +4115,15 @@ func (o *OriginInspectorValues) HasAllStatus1xx() bool {
 	return false
 }
 
-// SetAllStatus1xx gets a reference to the given int32 and assigns it to the AllStatus1xx field.
-func (o *OriginInspectorValues) SetAllStatus1xx(v int32) {
+// SetAllStatus1xx gets a reference to the given int64 and assigns it to the AllStatus1xx field.
+func (o *OriginInspectorValues) SetAllStatus1xx(v int64) {
 	o.AllStatus1xx = &v
 }
 
 // GetAllStatus2xx returns the AllStatus2xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus2xx() int32 {
+func (o *OriginInspectorValues) GetAllStatus2xx() int64 {
 	if o == nil || o.AllStatus2xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus2xx
@@ -4131,7 +4131,7 @@ func (o *OriginInspectorValues) GetAllStatus2xx() int32 {
 
 // GetAllStatus2xxOk returns a tuple with the AllStatus2xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus2xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus2xxOk() (*int64, bool) {
 	if o == nil || o.AllStatus2xx == nil {
 		return nil, false
 	}
@@ -4147,15 +4147,15 @@ func (o *OriginInspectorValues) HasAllStatus2xx() bool {
 	return false
 }
 
-// SetAllStatus2xx gets a reference to the given int32 and assigns it to the AllStatus2xx field.
-func (o *OriginInspectorValues) SetAllStatus2xx(v int32) {
+// SetAllStatus2xx gets a reference to the given int64 and assigns it to the AllStatus2xx field.
+func (o *OriginInspectorValues) SetAllStatus2xx(v int64) {
 	o.AllStatus2xx = &v
 }
 
 // GetAllStatus3xx returns the AllStatus3xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus3xx() int32 {
+func (o *OriginInspectorValues) GetAllStatus3xx() int64 {
 	if o == nil || o.AllStatus3xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus3xx
@@ -4163,7 +4163,7 @@ func (o *OriginInspectorValues) GetAllStatus3xx() int32 {
 
 // GetAllStatus3xxOk returns a tuple with the AllStatus3xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus3xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus3xxOk() (*int64, bool) {
 	if o == nil || o.AllStatus3xx == nil {
 		return nil, false
 	}
@@ -4179,15 +4179,15 @@ func (o *OriginInspectorValues) HasAllStatus3xx() bool {
 	return false
 }
 
-// SetAllStatus3xx gets a reference to the given int32 and assigns it to the AllStatus3xx field.
-func (o *OriginInspectorValues) SetAllStatus3xx(v int32) {
+// SetAllStatus3xx gets a reference to the given int64 and assigns it to the AllStatus3xx field.
+func (o *OriginInspectorValues) SetAllStatus3xx(v int64) {
 	o.AllStatus3xx = &v
 }
 
 // GetAllStatus4xx returns the AllStatus4xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus4xx() int32 {
+func (o *OriginInspectorValues) GetAllStatus4xx() int64 {
 	if o == nil || o.AllStatus4xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus4xx
@@ -4195,7 +4195,7 @@ func (o *OriginInspectorValues) GetAllStatus4xx() int32 {
 
 // GetAllStatus4xxOk returns a tuple with the AllStatus4xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus4xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus4xxOk() (*int64, bool) {
 	if o == nil || o.AllStatus4xx == nil {
 		return nil, false
 	}
@@ -4211,15 +4211,15 @@ func (o *OriginInspectorValues) HasAllStatus4xx() bool {
 	return false
 }
 
-// SetAllStatus4xx gets a reference to the given int32 and assigns it to the AllStatus4xx field.
-func (o *OriginInspectorValues) SetAllStatus4xx(v int32) {
+// SetAllStatus4xx gets a reference to the given int64 and assigns it to the AllStatus4xx field.
+func (o *OriginInspectorValues) SetAllStatus4xx(v int64) {
 	o.AllStatus4xx = &v
 }
 
 // GetAllStatus5xx returns the AllStatus5xx field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus5xx() int32 {
+func (o *OriginInspectorValues) GetAllStatus5xx() int64 {
 	if o == nil || o.AllStatus5xx == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus5xx
@@ -4227,7 +4227,7 @@ func (o *OriginInspectorValues) GetAllStatus5xx() int32 {
 
 // GetAllStatus5xxOk returns a tuple with the AllStatus5xx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus5xxOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus5xxOk() (*int64, bool) {
 	if o == nil || o.AllStatus5xx == nil {
 		return nil, false
 	}
@@ -4243,15 +4243,15 @@ func (o *OriginInspectorValues) HasAllStatus5xx() bool {
 	return false
 }
 
-// SetAllStatus5xx gets a reference to the given int32 and assigns it to the AllStatus5xx field.
-func (o *OriginInspectorValues) SetAllStatus5xx(v int32) {
+// SetAllStatus5xx gets a reference to the given int64 and assigns it to the AllStatus5xx field.
+func (o *OriginInspectorValues) SetAllStatus5xx(v int64) {
 	o.AllStatus5xx = &v
 }
 
 // GetAllStatus200 returns the AllStatus200 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus200() int32 {
+func (o *OriginInspectorValues) GetAllStatus200() int64 {
 	if o == nil || o.AllStatus200 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus200
@@ -4259,7 +4259,7 @@ func (o *OriginInspectorValues) GetAllStatus200() int32 {
 
 // GetAllStatus200Ok returns a tuple with the AllStatus200 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus200Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus200Ok() (*int64, bool) {
 	if o == nil || o.AllStatus200 == nil {
 		return nil, false
 	}
@@ -4275,15 +4275,15 @@ func (o *OriginInspectorValues) HasAllStatus200() bool {
 	return false
 }
 
-// SetAllStatus200 gets a reference to the given int32 and assigns it to the AllStatus200 field.
-func (o *OriginInspectorValues) SetAllStatus200(v int32) {
+// SetAllStatus200 gets a reference to the given int64 and assigns it to the AllStatus200 field.
+func (o *OriginInspectorValues) SetAllStatus200(v int64) {
 	o.AllStatus200 = &v
 }
 
 // GetAllStatus204 returns the AllStatus204 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus204() int32 {
+func (o *OriginInspectorValues) GetAllStatus204() int64 {
 	if o == nil || o.AllStatus204 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus204
@@ -4291,7 +4291,7 @@ func (o *OriginInspectorValues) GetAllStatus204() int32 {
 
 // GetAllStatus204Ok returns a tuple with the AllStatus204 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus204Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus204Ok() (*int64, bool) {
 	if o == nil || o.AllStatus204 == nil {
 		return nil, false
 	}
@@ -4307,15 +4307,15 @@ func (o *OriginInspectorValues) HasAllStatus204() bool {
 	return false
 }
 
-// SetAllStatus204 gets a reference to the given int32 and assigns it to the AllStatus204 field.
-func (o *OriginInspectorValues) SetAllStatus204(v int32) {
+// SetAllStatus204 gets a reference to the given int64 and assigns it to the AllStatus204 field.
+func (o *OriginInspectorValues) SetAllStatus204(v int64) {
 	o.AllStatus204 = &v
 }
 
 // GetAllStatus206 returns the AllStatus206 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus206() int32 {
+func (o *OriginInspectorValues) GetAllStatus206() int64 {
 	if o == nil || o.AllStatus206 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus206
@@ -4323,7 +4323,7 @@ func (o *OriginInspectorValues) GetAllStatus206() int32 {
 
 // GetAllStatus206Ok returns a tuple with the AllStatus206 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus206Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus206Ok() (*int64, bool) {
 	if o == nil || o.AllStatus206 == nil {
 		return nil, false
 	}
@@ -4339,15 +4339,15 @@ func (o *OriginInspectorValues) HasAllStatus206() bool {
 	return false
 }
 
-// SetAllStatus206 gets a reference to the given int32 and assigns it to the AllStatus206 field.
-func (o *OriginInspectorValues) SetAllStatus206(v int32) {
+// SetAllStatus206 gets a reference to the given int64 and assigns it to the AllStatus206 field.
+func (o *OriginInspectorValues) SetAllStatus206(v int64) {
 	o.AllStatus206 = &v
 }
 
 // GetAllStatus301 returns the AllStatus301 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus301() int32 {
+func (o *OriginInspectorValues) GetAllStatus301() int64 {
 	if o == nil || o.AllStatus301 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus301
@@ -4355,7 +4355,7 @@ func (o *OriginInspectorValues) GetAllStatus301() int32 {
 
 // GetAllStatus301Ok returns a tuple with the AllStatus301 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus301Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus301Ok() (*int64, bool) {
 	if o == nil || o.AllStatus301 == nil {
 		return nil, false
 	}
@@ -4371,15 +4371,15 @@ func (o *OriginInspectorValues) HasAllStatus301() bool {
 	return false
 }
 
-// SetAllStatus301 gets a reference to the given int32 and assigns it to the AllStatus301 field.
-func (o *OriginInspectorValues) SetAllStatus301(v int32) {
+// SetAllStatus301 gets a reference to the given int64 and assigns it to the AllStatus301 field.
+func (o *OriginInspectorValues) SetAllStatus301(v int64) {
 	o.AllStatus301 = &v
 }
 
 // GetAllStatus302 returns the AllStatus302 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus302() int32 {
+func (o *OriginInspectorValues) GetAllStatus302() int64 {
 	if o == nil || o.AllStatus302 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus302
@@ -4387,7 +4387,7 @@ func (o *OriginInspectorValues) GetAllStatus302() int32 {
 
 // GetAllStatus302Ok returns a tuple with the AllStatus302 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus302Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus302Ok() (*int64, bool) {
 	if o == nil || o.AllStatus302 == nil {
 		return nil, false
 	}
@@ -4403,15 +4403,15 @@ func (o *OriginInspectorValues) HasAllStatus302() bool {
 	return false
 }
 
-// SetAllStatus302 gets a reference to the given int32 and assigns it to the AllStatus302 field.
-func (o *OriginInspectorValues) SetAllStatus302(v int32) {
+// SetAllStatus302 gets a reference to the given int64 and assigns it to the AllStatus302 field.
+func (o *OriginInspectorValues) SetAllStatus302(v int64) {
 	o.AllStatus302 = &v
 }
 
 // GetAllStatus304 returns the AllStatus304 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus304() int32 {
+func (o *OriginInspectorValues) GetAllStatus304() int64 {
 	if o == nil || o.AllStatus304 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus304
@@ -4419,7 +4419,7 @@ func (o *OriginInspectorValues) GetAllStatus304() int32 {
 
 // GetAllStatus304Ok returns a tuple with the AllStatus304 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus304Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus304Ok() (*int64, bool) {
 	if o == nil || o.AllStatus304 == nil {
 		return nil, false
 	}
@@ -4435,15 +4435,15 @@ func (o *OriginInspectorValues) HasAllStatus304() bool {
 	return false
 }
 
-// SetAllStatus304 gets a reference to the given int32 and assigns it to the AllStatus304 field.
-func (o *OriginInspectorValues) SetAllStatus304(v int32) {
+// SetAllStatus304 gets a reference to the given int64 and assigns it to the AllStatus304 field.
+func (o *OriginInspectorValues) SetAllStatus304(v int64) {
 	o.AllStatus304 = &v
 }
 
 // GetAllStatus400 returns the AllStatus400 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus400() int32 {
+func (o *OriginInspectorValues) GetAllStatus400() int64 {
 	if o == nil || o.AllStatus400 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus400
@@ -4451,7 +4451,7 @@ func (o *OriginInspectorValues) GetAllStatus400() int32 {
 
 // GetAllStatus400Ok returns a tuple with the AllStatus400 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus400Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus400Ok() (*int64, bool) {
 	if o == nil || o.AllStatus400 == nil {
 		return nil, false
 	}
@@ -4467,15 +4467,15 @@ func (o *OriginInspectorValues) HasAllStatus400() bool {
 	return false
 }
 
-// SetAllStatus400 gets a reference to the given int32 and assigns it to the AllStatus400 field.
-func (o *OriginInspectorValues) SetAllStatus400(v int32) {
+// SetAllStatus400 gets a reference to the given int64 and assigns it to the AllStatus400 field.
+func (o *OriginInspectorValues) SetAllStatus400(v int64) {
 	o.AllStatus400 = &v
 }
 
 // GetAllStatus401 returns the AllStatus401 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus401() int32 {
+func (o *OriginInspectorValues) GetAllStatus401() int64 {
 	if o == nil || o.AllStatus401 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus401
@@ -4483,7 +4483,7 @@ func (o *OriginInspectorValues) GetAllStatus401() int32 {
 
 // GetAllStatus401Ok returns a tuple with the AllStatus401 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus401Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus401Ok() (*int64, bool) {
 	if o == nil || o.AllStatus401 == nil {
 		return nil, false
 	}
@@ -4499,15 +4499,15 @@ func (o *OriginInspectorValues) HasAllStatus401() bool {
 	return false
 }
 
-// SetAllStatus401 gets a reference to the given int32 and assigns it to the AllStatus401 field.
-func (o *OriginInspectorValues) SetAllStatus401(v int32) {
+// SetAllStatus401 gets a reference to the given int64 and assigns it to the AllStatus401 field.
+func (o *OriginInspectorValues) SetAllStatus401(v int64) {
 	o.AllStatus401 = &v
 }
 
 // GetAllStatus403 returns the AllStatus403 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus403() int32 {
+func (o *OriginInspectorValues) GetAllStatus403() int64 {
 	if o == nil || o.AllStatus403 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus403
@@ -4515,7 +4515,7 @@ func (o *OriginInspectorValues) GetAllStatus403() int32 {
 
 // GetAllStatus403Ok returns a tuple with the AllStatus403 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus403Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus403Ok() (*int64, bool) {
 	if o == nil || o.AllStatus403 == nil {
 		return nil, false
 	}
@@ -4531,15 +4531,15 @@ func (o *OriginInspectorValues) HasAllStatus403() bool {
 	return false
 }
 
-// SetAllStatus403 gets a reference to the given int32 and assigns it to the AllStatus403 field.
-func (o *OriginInspectorValues) SetAllStatus403(v int32) {
+// SetAllStatus403 gets a reference to the given int64 and assigns it to the AllStatus403 field.
+func (o *OriginInspectorValues) SetAllStatus403(v int64) {
 	o.AllStatus403 = &v
 }
 
 // GetAllStatus404 returns the AllStatus404 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus404() int32 {
+func (o *OriginInspectorValues) GetAllStatus404() int64 {
 	if o == nil || o.AllStatus404 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus404
@@ -4547,7 +4547,7 @@ func (o *OriginInspectorValues) GetAllStatus404() int32 {
 
 // GetAllStatus404Ok returns a tuple with the AllStatus404 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus404Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus404Ok() (*int64, bool) {
 	if o == nil || o.AllStatus404 == nil {
 		return nil, false
 	}
@@ -4563,15 +4563,15 @@ func (o *OriginInspectorValues) HasAllStatus404() bool {
 	return false
 }
 
-// SetAllStatus404 gets a reference to the given int32 and assigns it to the AllStatus404 field.
-func (o *OriginInspectorValues) SetAllStatus404(v int32) {
+// SetAllStatus404 gets a reference to the given int64 and assigns it to the AllStatus404 field.
+func (o *OriginInspectorValues) SetAllStatus404(v int64) {
 	o.AllStatus404 = &v
 }
 
 // GetAllStatus416 returns the AllStatus416 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus416() int32 {
+func (o *OriginInspectorValues) GetAllStatus416() int64 {
 	if o == nil || o.AllStatus416 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus416
@@ -4579,7 +4579,7 @@ func (o *OriginInspectorValues) GetAllStatus416() int32 {
 
 // GetAllStatus416Ok returns a tuple with the AllStatus416 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus416Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus416Ok() (*int64, bool) {
 	if o == nil || o.AllStatus416 == nil {
 		return nil, false
 	}
@@ -4595,15 +4595,15 @@ func (o *OriginInspectorValues) HasAllStatus416() bool {
 	return false
 }
 
-// SetAllStatus416 gets a reference to the given int32 and assigns it to the AllStatus416 field.
-func (o *OriginInspectorValues) SetAllStatus416(v int32) {
+// SetAllStatus416 gets a reference to the given int64 and assigns it to the AllStatus416 field.
+func (o *OriginInspectorValues) SetAllStatus416(v int64) {
 	o.AllStatus416 = &v
 }
 
 // GetAllStatus429 returns the AllStatus429 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus429() int32 {
+func (o *OriginInspectorValues) GetAllStatus429() int64 {
 	if o == nil || o.AllStatus429 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus429
@@ -4611,7 +4611,7 @@ func (o *OriginInspectorValues) GetAllStatus429() int32 {
 
 // GetAllStatus429Ok returns a tuple with the AllStatus429 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus429Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus429Ok() (*int64, bool) {
 	if o == nil || o.AllStatus429 == nil {
 		return nil, false
 	}
@@ -4627,15 +4627,15 @@ func (o *OriginInspectorValues) HasAllStatus429() bool {
 	return false
 }
 
-// SetAllStatus429 gets a reference to the given int32 and assigns it to the AllStatus429 field.
-func (o *OriginInspectorValues) SetAllStatus429(v int32) {
+// SetAllStatus429 gets a reference to the given int64 and assigns it to the AllStatus429 field.
+func (o *OriginInspectorValues) SetAllStatus429(v int64) {
 	o.AllStatus429 = &v
 }
 
 // GetAllStatus500 returns the AllStatus500 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus500() int32 {
+func (o *OriginInspectorValues) GetAllStatus500() int64 {
 	if o == nil || o.AllStatus500 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus500
@@ -4643,7 +4643,7 @@ func (o *OriginInspectorValues) GetAllStatus500() int32 {
 
 // GetAllStatus500Ok returns a tuple with the AllStatus500 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus500Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus500Ok() (*int64, bool) {
 	if o == nil || o.AllStatus500 == nil {
 		return nil, false
 	}
@@ -4659,15 +4659,15 @@ func (o *OriginInspectorValues) HasAllStatus500() bool {
 	return false
 }
 
-// SetAllStatus500 gets a reference to the given int32 and assigns it to the AllStatus500 field.
-func (o *OriginInspectorValues) SetAllStatus500(v int32) {
+// SetAllStatus500 gets a reference to the given int64 and assigns it to the AllStatus500 field.
+func (o *OriginInspectorValues) SetAllStatus500(v int64) {
 	o.AllStatus500 = &v
 }
 
 // GetAllStatus501 returns the AllStatus501 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus501() int32 {
+func (o *OriginInspectorValues) GetAllStatus501() int64 {
 	if o == nil || o.AllStatus501 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus501
@@ -4675,7 +4675,7 @@ func (o *OriginInspectorValues) GetAllStatus501() int32 {
 
 // GetAllStatus501Ok returns a tuple with the AllStatus501 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus501Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus501Ok() (*int64, bool) {
 	if o == nil || o.AllStatus501 == nil {
 		return nil, false
 	}
@@ -4691,15 +4691,15 @@ func (o *OriginInspectorValues) HasAllStatus501() bool {
 	return false
 }
 
-// SetAllStatus501 gets a reference to the given int32 and assigns it to the AllStatus501 field.
-func (o *OriginInspectorValues) SetAllStatus501(v int32) {
+// SetAllStatus501 gets a reference to the given int64 and assigns it to the AllStatus501 field.
+func (o *OriginInspectorValues) SetAllStatus501(v int64) {
 	o.AllStatus501 = &v
 }
 
 // GetAllStatus502 returns the AllStatus502 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus502() int32 {
+func (o *OriginInspectorValues) GetAllStatus502() int64 {
 	if o == nil || o.AllStatus502 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus502
@@ -4707,7 +4707,7 @@ func (o *OriginInspectorValues) GetAllStatus502() int32 {
 
 // GetAllStatus502Ok returns a tuple with the AllStatus502 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus502Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus502Ok() (*int64, bool) {
 	if o == nil || o.AllStatus502 == nil {
 		return nil, false
 	}
@@ -4723,15 +4723,15 @@ func (o *OriginInspectorValues) HasAllStatus502() bool {
 	return false
 }
 
-// SetAllStatus502 gets a reference to the given int32 and assigns it to the AllStatus502 field.
-func (o *OriginInspectorValues) SetAllStatus502(v int32) {
+// SetAllStatus502 gets a reference to the given int64 and assigns it to the AllStatus502 field.
+func (o *OriginInspectorValues) SetAllStatus502(v int64) {
 	o.AllStatus502 = &v
 }
 
 // GetAllStatus503 returns the AllStatus503 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus503() int32 {
+func (o *OriginInspectorValues) GetAllStatus503() int64 {
 	if o == nil || o.AllStatus503 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus503
@@ -4739,7 +4739,7 @@ func (o *OriginInspectorValues) GetAllStatus503() int32 {
 
 // GetAllStatus503Ok returns a tuple with the AllStatus503 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus503Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus503Ok() (*int64, bool) {
 	if o == nil || o.AllStatus503 == nil {
 		return nil, false
 	}
@@ -4755,15 +4755,15 @@ func (o *OriginInspectorValues) HasAllStatus503() bool {
 	return false
 }
 
-// SetAllStatus503 gets a reference to the given int32 and assigns it to the AllStatus503 field.
-func (o *OriginInspectorValues) SetAllStatus503(v int32) {
+// SetAllStatus503 gets a reference to the given int64 and assigns it to the AllStatus503 field.
+func (o *OriginInspectorValues) SetAllStatus503(v int64) {
 	o.AllStatus503 = &v
 }
 
 // GetAllStatus504 returns the AllStatus504 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus504() int32 {
+func (o *OriginInspectorValues) GetAllStatus504() int64 {
 	if o == nil || o.AllStatus504 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus504
@@ -4771,7 +4771,7 @@ func (o *OriginInspectorValues) GetAllStatus504() int32 {
 
 // GetAllStatus504Ok returns a tuple with the AllStatus504 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus504Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus504Ok() (*int64, bool) {
 	if o == nil || o.AllStatus504 == nil {
 		return nil, false
 	}
@@ -4787,15 +4787,15 @@ func (o *OriginInspectorValues) HasAllStatus504() bool {
 	return false
 }
 
-// SetAllStatus504 gets a reference to the given int32 and assigns it to the AllStatus504 field.
-func (o *OriginInspectorValues) SetAllStatus504(v int32) {
+// SetAllStatus504 gets a reference to the given int64 and assigns it to the AllStatus504 field.
+func (o *OriginInspectorValues) SetAllStatus504(v int64) {
 	o.AllStatus504 = &v
 }
 
 // GetAllStatus505 returns the AllStatus505 field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllStatus505() int32 {
+func (o *OriginInspectorValues) GetAllStatus505() int64 {
 	if o == nil || o.AllStatus505 == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllStatus505
@@ -4803,7 +4803,7 @@ func (o *OriginInspectorValues) GetAllStatus505() int32 {
 
 // GetAllStatus505Ok returns a tuple with the AllStatus505 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllStatus505Ok() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllStatus505Ok() (*int64, bool) {
 	if o == nil || o.AllStatus505 == nil {
 		return nil, false
 	}
@@ -4819,15 +4819,15 @@ func (o *OriginInspectorValues) HasAllStatus505() bool {
 	return false
 }
 
-// SetAllStatus505 gets a reference to the given int32 and assigns it to the AllStatus505 field.
-func (o *OriginInspectorValues) SetAllStatus505(v int32) {
+// SetAllStatus505 gets a reference to the given int64 and assigns it to the AllStatus505 field.
+func (o *OriginInspectorValues) SetAllStatus505(v int64) {
 	o.AllStatus505 = &v
 }
 
 // GetAllLatency0To1ms returns the AllLatency0To1ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllLatency0To1ms() int32 {
+func (o *OriginInspectorValues) GetAllLatency0To1ms() int64 {
 	if o == nil || o.AllLatency0To1ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllLatency0To1ms
@@ -4835,7 +4835,7 @@ func (o *OriginInspectorValues) GetAllLatency0To1ms() int32 {
 
 // GetAllLatency0To1msOk returns a tuple with the AllLatency0To1ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllLatency0To1msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllLatency0To1msOk() (*int64, bool) {
 	if o == nil || o.AllLatency0To1ms == nil {
 		return nil, false
 	}
@@ -4851,15 +4851,15 @@ func (o *OriginInspectorValues) HasAllLatency0To1ms() bool {
 	return false
 }
 
-// SetAllLatency0To1ms gets a reference to the given int32 and assigns it to the AllLatency0To1ms field.
-func (o *OriginInspectorValues) SetAllLatency0To1ms(v int32) {
+// SetAllLatency0To1ms gets a reference to the given int64 and assigns it to the AllLatency0To1ms field.
+func (o *OriginInspectorValues) SetAllLatency0To1ms(v int64) {
 	o.AllLatency0To1ms = &v
 }
 
 // GetAllLatency1To5ms returns the AllLatency1To5ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllLatency1To5ms() int32 {
+func (o *OriginInspectorValues) GetAllLatency1To5ms() int64 {
 	if o == nil || o.AllLatency1To5ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllLatency1To5ms
@@ -4867,7 +4867,7 @@ func (o *OriginInspectorValues) GetAllLatency1To5ms() int32 {
 
 // GetAllLatency1To5msOk returns a tuple with the AllLatency1To5ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllLatency1To5msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllLatency1To5msOk() (*int64, bool) {
 	if o == nil || o.AllLatency1To5ms == nil {
 		return nil, false
 	}
@@ -4883,15 +4883,15 @@ func (o *OriginInspectorValues) HasAllLatency1To5ms() bool {
 	return false
 }
 
-// SetAllLatency1To5ms gets a reference to the given int32 and assigns it to the AllLatency1To5ms field.
-func (o *OriginInspectorValues) SetAllLatency1To5ms(v int32) {
+// SetAllLatency1To5ms gets a reference to the given int64 and assigns it to the AllLatency1To5ms field.
+func (o *OriginInspectorValues) SetAllLatency1To5ms(v int64) {
 	o.AllLatency1To5ms = &v
 }
 
 // GetAllLatency5To10ms returns the AllLatency5To10ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllLatency5To10ms() int32 {
+func (o *OriginInspectorValues) GetAllLatency5To10ms() int64 {
 	if o == nil || o.AllLatency5To10ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllLatency5To10ms
@@ -4899,7 +4899,7 @@ func (o *OriginInspectorValues) GetAllLatency5To10ms() int32 {
 
 // GetAllLatency5To10msOk returns a tuple with the AllLatency5To10ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllLatency5To10msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllLatency5To10msOk() (*int64, bool) {
 	if o == nil || o.AllLatency5To10ms == nil {
 		return nil, false
 	}
@@ -4915,15 +4915,15 @@ func (o *OriginInspectorValues) HasAllLatency5To10ms() bool {
 	return false
 }
 
-// SetAllLatency5To10ms gets a reference to the given int32 and assigns it to the AllLatency5To10ms field.
-func (o *OriginInspectorValues) SetAllLatency5To10ms(v int32) {
+// SetAllLatency5To10ms gets a reference to the given int64 and assigns it to the AllLatency5To10ms field.
+func (o *OriginInspectorValues) SetAllLatency5To10ms(v int64) {
 	o.AllLatency5To10ms = &v
 }
 
 // GetAllLatency10To50ms returns the AllLatency10To50ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllLatency10To50ms() int32 {
+func (o *OriginInspectorValues) GetAllLatency10To50ms() int64 {
 	if o == nil || o.AllLatency10To50ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllLatency10To50ms
@@ -4931,7 +4931,7 @@ func (o *OriginInspectorValues) GetAllLatency10To50ms() int32 {
 
 // GetAllLatency10To50msOk returns a tuple with the AllLatency10To50ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllLatency10To50msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllLatency10To50msOk() (*int64, bool) {
 	if o == nil || o.AllLatency10To50ms == nil {
 		return nil, false
 	}
@@ -4947,15 +4947,15 @@ func (o *OriginInspectorValues) HasAllLatency10To50ms() bool {
 	return false
 }
 
-// SetAllLatency10To50ms gets a reference to the given int32 and assigns it to the AllLatency10To50ms field.
-func (o *OriginInspectorValues) SetAllLatency10To50ms(v int32) {
+// SetAllLatency10To50ms gets a reference to the given int64 and assigns it to the AllLatency10To50ms field.
+func (o *OriginInspectorValues) SetAllLatency10To50ms(v int64) {
 	o.AllLatency10To50ms = &v
 }
 
 // GetAllLatency50To100ms returns the AllLatency50To100ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllLatency50To100ms() int32 {
+func (o *OriginInspectorValues) GetAllLatency50To100ms() int64 {
 	if o == nil || o.AllLatency50To100ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllLatency50To100ms
@@ -4963,7 +4963,7 @@ func (o *OriginInspectorValues) GetAllLatency50To100ms() int32 {
 
 // GetAllLatency50To100msOk returns a tuple with the AllLatency50To100ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllLatency50To100msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllLatency50To100msOk() (*int64, bool) {
 	if o == nil || o.AllLatency50To100ms == nil {
 		return nil, false
 	}
@@ -4979,15 +4979,15 @@ func (o *OriginInspectorValues) HasAllLatency50To100ms() bool {
 	return false
 }
 
-// SetAllLatency50To100ms gets a reference to the given int32 and assigns it to the AllLatency50To100ms field.
-func (o *OriginInspectorValues) SetAllLatency50To100ms(v int32) {
+// SetAllLatency50To100ms gets a reference to the given int64 and assigns it to the AllLatency50To100ms field.
+func (o *OriginInspectorValues) SetAllLatency50To100ms(v int64) {
 	o.AllLatency50To100ms = &v
 }
 
 // GetAllLatency100To250ms returns the AllLatency100To250ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllLatency100To250ms() int32 {
+func (o *OriginInspectorValues) GetAllLatency100To250ms() int64 {
 	if o == nil || o.AllLatency100To250ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllLatency100To250ms
@@ -4995,7 +4995,7 @@ func (o *OriginInspectorValues) GetAllLatency100To250ms() int32 {
 
 // GetAllLatency100To250msOk returns a tuple with the AllLatency100To250ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllLatency100To250msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllLatency100To250msOk() (*int64, bool) {
 	if o == nil || o.AllLatency100To250ms == nil {
 		return nil, false
 	}
@@ -5011,15 +5011,15 @@ func (o *OriginInspectorValues) HasAllLatency100To250ms() bool {
 	return false
 }
 
-// SetAllLatency100To250ms gets a reference to the given int32 and assigns it to the AllLatency100To250ms field.
-func (o *OriginInspectorValues) SetAllLatency100To250ms(v int32) {
+// SetAllLatency100To250ms gets a reference to the given int64 and assigns it to the AllLatency100To250ms field.
+func (o *OriginInspectorValues) SetAllLatency100To250ms(v int64) {
 	o.AllLatency100To250ms = &v
 }
 
 // GetAllLatency250To500ms returns the AllLatency250To500ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllLatency250To500ms() int32 {
+func (o *OriginInspectorValues) GetAllLatency250To500ms() int64 {
 	if o == nil || o.AllLatency250To500ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllLatency250To500ms
@@ -5027,7 +5027,7 @@ func (o *OriginInspectorValues) GetAllLatency250To500ms() int32 {
 
 // GetAllLatency250To500msOk returns a tuple with the AllLatency250To500ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllLatency250To500msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllLatency250To500msOk() (*int64, bool) {
 	if o == nil || o.AllLatency250To500ms == nil {
 		return nil, false
 	}
@@ -5043,15 +5043,15 @@ func (o *OriginInspectorValues) HasAllLatency250To500ms() bool {
 	return false
 }
 
-// SetAllLatency250To500ms gets a reference to the given int32 and assigns it to the AllLatency250To500ms field.
-func (o *OriginInspectorValues) SetAllLatency250To500ms(v int32) {
+// SetAllLatency250To500ms gets a reference to the given int64 and assigns it to the AllLatency250To500ms field.
+func (o *OriginInspectorValues) SetAllLatency250To500ms(v int64) {
 	o.AllLatency250To500ms = &v
 }
 
 // GetAllLatency500To1000ms returns the AllLatency500To1000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllLatency500To1000ms() int32 {
+func (o *OriginInspectorValues) GetAllLatency500To1000ms() int64 {
 	if o == nil || o.AllLatency500To1000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllLatency500To1000ms
@@ -5059,7 +5059,7 @@ func (o *OriginInspectorValues) GetAllLatency500To1000ms() int32 {
 
 // GetAllLatency500To1000msOk returns a tuple with the AllLatency500To1000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllLatency500To1000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllLatency500To1000msOk() (*int64, bool) {
 	if o == nil || o.AllLatency500To1000ms == nil {
 		return nil, false
 	}
@@ -5075,15 +5075,15 @@ func (o *OriginInspectorValues) HasAllLatency500To1000ms() bool {
 	return false
 }
 
-// SetAllLatency500To1000ms gets a reference to the given int32 and assigns it to the AllLatency500To1000ms field.
-func (o *OriginInspectorValues) SetAllLatency500To1000ms(v int32) {
+// SetAllLatency500To1000ms gets a reference to the given int64 and assigns it to the AllLatency500To1000ms field.
+func (o *OriginInspectorValues) SetAllLatency500To1000ms(v int64) {
 	o.AllLatency500To1000ms = &v
 }
 
 // GetAllLatency1000To5000ms returns the AllLatency1000To5000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllLatency1000To5000ms() int32 {
+func (o *OriginInspectorValues) GetAllLatency1000To5000ms() int64 {
 	if o == nil || o.AllLatency1000To5000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllLatency1000To5000ms
@@ -5091,7 +5091,7 @@ func (o *OriginInspectorValues) GetAllLatency1000To5000ms() int32 {
 
 // GetAllLatency1000To5000msOk returns a tuple with the AllLatency1000To5000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllLatency1000To5000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllLatency1000To5000msOk() (*int64, bool) {
 	if o == nil || o.AllLatency1000To5000ms == nil {
 		return nil, false
 	}
@@ -5107,15 +5107,15 @@ func (o *OriginInspectorValues) HasAllLatency1000To5000ms() bool {
 	return false
 }
 
-// SetAllLatency1000To5000ms gets a reference to the given int32 and assigns it to the AllLatency1000To5000ms field.
-func (o *OriginInspectorValues) SetAllLatency1000To5000ms(v int32) {
+// SetAllLatency1000To5000ms gets a reference to the given int64 and assigns it to the AllLatency1000To5000ms field.
+func (o *OriginInspectorValues) SetAllLatency1000To5000ms(v int64) {
 	o.AllLatency1000To5000ms = &v
 }
 
 // GetAllLatency5000To10000ms returns the AllLatency5000To10000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllLatency5000To10000ms() int32 {
+func (o *OriginInspectorValues) GetAllLatency5000To10000ms() int64 {
 	if o == nil || o.AllLatency5000To10000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllLatency5000To10000ms
@@ -5123,7 +5123,7 @@ func (o *OriginInspectorValues) GetAllLatency5000To10000ms() int32 {
 
 // GetAllLatency5000To10000msOk returns a tuple with the AllLatency5000To10000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllLatency5000To10000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllLatency5000To10000msOk() (*int64, bool) {
 	if o == nil || o.AllLatency5000To10000ms == nil {
 		return nil, false
 	}
@@ -5139,15 +5139,15 @@ func (o *OriginInspectorValues) HasAllLatency5000To10000ms() bool {
 	return false
 }
 
-// SetAllLatency5000To10000ms gets a reference to the given int32 and assigns it to the AllLatency5000To10000ms field.
-func (o *OriginInspectorValues) SetAllLatency5000To10000ms(v int32) {
+// SetAllLatency5000To10000ms gets a reference to the given int64 and assigns it to the AllLatency5000To10000ms field.
+func (o *OriginInspectorValues) SetAllLatency5000To10000ms(v int64) {
 	o.AllLatency5000To10000ms = &v
 }
 
 // GetAllLatency10000To60000ms returns the AllLatency10000To60000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllLatency10000To60000ms() int32 {
+func (o *OriginInspectorValues) GetAllLatency10000To60000ms() int64 {
 	if o == nil || o.AllLatency10000To60000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllLatency10000To60000ms
@@ -5155,7 +5155,7 @@ func (o *OriginInspectorValues) GetAllLatency10000To60000ms() int32 {
 
 // GetAllLatency10000To60000msOk returns a tuple with the AllLatency10000To60000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllLatency10000To60000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllLatency10000To60000msOk() (*int64, bool) {
 	if o == nil || o.AllLatency10000To60000ms == nil {
 		return nil, false
 	}
@@ -5171,15 +5171,15 @@ func (o *OriginInspectorValues) HasAllLatency10000To60000ms() bool {
 	return false
 }
 
-// SetAllLatency10000To60000ms gets a reference to the given int32 and assigns it to the AllLatency10000To60000ms field.
-func (o *OriginInspectorValues) SetAllLatency10000To60000ms(v int32) {
+// SetAllLatency10000To60000ms gets a reference to the given int64 and assigns it to the AllLatency10000To60000ms field.
+func (o *OriginInspectorValues) SetAllLatency10000To60000ms(v int64) {
 	o.AllLatency10000To60000ms = &v
 }
 
 // GetAllLatency60000ms returns the AllLatency60000ms field value if set, zero value otherwise.
-func (o *OriginInspectorValues) GetAllLatency60000ms() int32 {
+func (o *OriginInspectorValues) GetAllLatency60000ms() int64 {
 	if o == nil || o.AllLatency60000ms == nil {
-		var ret int32
+		var ret int64
 		return ret
 	}
 	return *o.AllLatency60000ms
@@ -5187,7 +5187,7 @@ func (o *OriginInspectorValues) GetAllLatency60000ms() int32 {
 
 // GetAllLatency60000msOk returns a tuple with the AllLatency60000ms field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OriginInspectorValues) GetAllLatency60000msOk() (*int32, bool) {
+func (o *OriginInspectorValues) GetAllLatency60000msOk() (*int64, bool) {
 	if o == nil || o.AllLatency60000ms == nil {
 		return nil, false
 	}
@@ -5203,8 +5203,8 @@ func (o *OriginInspectorValues) HasAllLatency60000ms() bool {
 	return false
 }
 
-// SetAllLatency60000ms gets a reference to the given int32 and assigns it to the AllLatency60000ms field.
-func (o *OriginInspectorValues) SetAllLatency60000ms(v int32) {
+// SetAllLatency60000ms gets a reference to the given int64 and assigns it to the AllLatency60000ms field.
+func (o *OriginInspectorValues) SetAllLatency60000ms(v int64) {
 	o.AllLatency60000ms = &v
 }
 
