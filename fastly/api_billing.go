@@ -39,11 +39,14 @@ type BillingAPI interface {
 		 @param month 2-digit month.
 		 @param year 4-digit year.
 		 @return APIGetInvoiceRequest
+
+		Deprecated
 	*/
 	GetInvoice(ctx context.Context, month string, year string) APIGetInvoiceRequest
 
 	// GetInvoiceExecute executes the request
 	//  @return BillingResponse
+	// Deprecated
 	GetInvoiceExecute(r APIGetInvoiceRequest) (*BillingResponse, *http.Response, error)
 
 	/*
@@ -55,11 +58,14 @@ type BillingAPI interface {
 		 @param customerID Alphanumeric string identifying the customer.
 		 @param invoiceID
 		 @return APIGetInvoiceByIDRequest
+
+		Deprecated
 	*/
 	GetInvoiceByID(ctx context.Context, customerID string, invoiceID int32) APIGetInvoiceByIDRequest
 
 	// GetInvoiceByIDExecute executes the request
 	//  @return BillingResponse
+	// Deprecated
 	GetInvoiceByIDExecute(r APIGetInvoiceByIDRequest) (*BillingResponse, *http.Response, error)
 
 	/*
@@ -70,11 +76,14 @@ type BillingAPI interface {
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param customerID Alphanumeric string identifying the customer.
 		 @return APIGetInvoiceMtdRequest
+
+		Deprecated
 	*/
 	GetInvoiceMtd(ctx context.Context, customerID string) APIGetInvoiceMtdRequest
 
 	// GetInvoiceMtdExecute executes the request
 	//  @return BillingEstimateResponse
+	// Deprecated
 	GetInvoiceMtdExecute(r APIGetInvoiceMtdRequest) (*BillingEstimateResponse, *http.Response, error)
 }
 
@@ -103,6 +112,8 @@ Get the invoice for a given year and month. Can be any month from when the Custo
  @param month 2-digit month.
  @param year 4-digit year.
  @return APIGetInvoiceRequest
+
+Deprecated
 */
 func (a *BillingAPIService) GetInvoice(ctx context.Context, month string, year string) APIGetInvoiceRequest {
 	return APIGetInvoiceRequest{
@@ -115,6 +126,7 @@ func (a *BillingAPIService) GetInvoice(ctx context.Context, month string, year s
 
 // GetInvoiceExecute executes the request
 //  @return BillingResponse
+// Deprecated
 func (a *BillingAPIService) GetInvoiceExecute(r APIGetInvoiceRequest) (*BillingResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -239,6 +251,8 @@ Get the invoice for the given invoice_id.
  @param customerID Alphanumeric string identifying the customer.
  @param invoiceID
  @return APIGetInvoiceByIDRequest
+
+Deprecated
 */
 func (a *BillingAPIService) GetInvoiceByID(ctx context.Context, customerID string, invoiceID int32) APIGetInvoiceByIDRequest {
 	return APIGetInvoiceByIDRequest{
@@ -251,6 +265,7 @@ func (a *BillingAPIService) GetInvoiceByID(ctx context.Context, customerID strin
 
 // GetInvoiceByIDExecute executes the request
 //  @return BillingResponse
+// Deprecated
 func (a *BillingAPIService) GetInvoiceByIDExecute(r APIGetInvoiceByIDRequest) (*BillingResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -387,6 +402,8 @@ Get the current month-to-date estimate. This endpoint has two different response
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerID Alphanumeric string identifying the customer.
  @return APIGetInvoiceMtdRequest
+
+Deprecated
 */
 func (a *BillingAPIService) GetInvoiceMtd(ctx context.Context, customerID string) APIGetInvoiceMtdRequest {
 	return APIGetInvoiceMtdRequest{
@@ -398,6 +415,7 @@ func (a *BillingAPIService) GetInvoiceMtd(ctx context.Context, customerID string
 
 // GetInvoiceMtdExecute executes the request
 //  @return BillingEstimateResponse
+// Deprecated
 func (a *BillingAPIService) GetInvoiceMtdExecute(r APIGetInvoiceMtdRequest) (*BillingEstimateResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

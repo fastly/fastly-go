@@ -73,13 +73,13 @@ type APIGetServiceLevelUsageRequest struct {
 	cursor        *string
 }
 
-// ProductID The product identifier for the metrics returned (e.g., &#x60;cdn_usage&#x60;). This field is not required for CSV requests.
+// ProductID The product identifier for the metrics returned (e.g., &#x60;cdn_usage&#x60;).
 func (r *APIGetServiceLevelUsageRequest) ProductID(productID string) *APIGetServiceLevelUsageRequest {
 	r.productID = &productID
 	return r
 }
 
-// UsageTypeName The usage type name for the metrics returned (e.g., &#x60;North America Requests&#x60;). This field is not required for CSV requests.
+// UsageTypeName The usage type name for the metrics returned (e.g., &#x60;North America Requests&#x60;).
 func (r *APIGetServiceLevelUsageRequest) UsageTypeName(usageTypeName string) *APIGetServiceLevelUsageRequest {
 	r.usageTypeName = &usageTypeName
 	return r
@@ -149,15 +149,13 @@ func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageExecute(r APIGetServ
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
-	if r.productID == nil {
-		return localVarReturnValue, nil, reportError("productID is required and must be specified")
-	}
-	if r.usageTypeName == nil {
-		return localVarReturnValue, nil, reportError("usageTypeName is required and must be specified")
-	}
 
-	localVarQueryParams.Add("product_id", parameterToString(*r.productID, ""))
-	localVarQueryParams.Add("usage_type_name", parameterToString(*r.usageTypeName, ""))
+	if r.productID != nil {
+		localVarQueryParams.Add("product_id", parameterToString(*r.productID, ""))
+	}
+	if r.usageTypeName != nil {
+		localVarQueryParams.Add("usage_type_name", parameterToString(*r.usageTypeName, ""))
+	}
 	if r.startMonth != nil {
 		localVarQueryParams.Add("start_month", parameterToString(*r.startMonth, ""))
 	}
@@ -340,13 +338,15 @@ func (a *BillingUsageMetricsAPIService) GetUsageMetricsExecute(r APIGetUsageMetr
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
+	if r.startMonth == nil {
+		return localVarReturnValue, nil, reportError("startMonth is required and must be specified")
+	}
+	if r.endMonth == nil {
+		return localVarReturnValue, nil, reportError("endMonth is required and must be specified")
+	}
 
-	if r.startMonth != nil {
-		localVarQueryParams.Add("start_month", parameterToString(*r.startMonth, ""))
-	}
-	if r.endMonth != nil {
-		localVarQueryParams.Add("end_month", parameterToString(*r.endMonth, ""))
-	}
+	localVarQueryParams.Add("start_month", parameterToString(*r.startMonth, ""))
+	localVarQueryParams.Add("end_month", parameterToString(*r.endMonth, ""))
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

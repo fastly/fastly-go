@@ -84,8 +84,8 @@ type ACLsInComputeAPI interface {
 	ComputeACLListAcls(ctx context.Context) APIComputeACLListAclsRequest
 
 	// ComputeACLListAclsExecute executes the request
-	//  @return []ComputeACLCreateAclsResponse
-	ComputeACLListAclsExecute(r APIComputeACLListAclsRequest) ([]ComputeACLCreateAclsResponse, *http.Response, error)
+	//  @return ComputeACLList
+	ComputeACLListAclsExecute(r APIComputeACLListAclsRequest) (*ComputeACLList, *http.Response, error)
 
 	/*
 		ComputeACLListAclsSAclID Describe an ACL
@@ -553,7 +553,7 @@ type APIComputeACLListAclsRequest struct {
 }
 
 // Execute calls the API using the request data configured.
-func (r APIComputeACLListAclsRequest) Execute() ([]ComputeACLCreateAclsResponse, *http.Response, error) {
+func (r APIComputeACLListAclsRequest) Execute() (*ComputeACLList, *http.Response, error) {
 	return r.APIService.ComputeACLListAclsExecute(r)
 }
 
@@ -573,13 +573,13 @@ func (a *ACLsInComputeAPIService) ComputeACLListAcls(ctx context.Context) APICom
 }
 
 // ComputeACLListAclsExecute executes the request
-//  @return []ComputeACLCreateAclsResponse
-func (a *ACLsInComputeAPIService) ComputeACLListAclsExecute(r APIComputeACLListAclsRequest) ([]ComputeACLCreateAclsResponse, *http.Response, error) {
+//  @return ComputeACLList
+func (a *ACLsInComputeAPIService) ComputeACLListAclsExecute(r APIComputeACLListAclsRequest) (*ComputeACLList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue []ComputeACLCreateAclsResponse
+		localVarReturnValue *ComputeACLList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLListAcls")

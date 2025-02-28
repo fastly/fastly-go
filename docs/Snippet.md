@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The name for the snippet. | [optional] 
 **Type** | Pointer to **string** | The location in generated VCL where the snippet should be placed. | [optional] 
-**Content** | Pointer to **string** | The VCL code that specifies exactly what the snippet does. | [optional] 
+**Content** | Pointer to **NullableString** | The VCL code that specifies exactly what the snippet does. | [optional] 
 **Priority** | Pointer to **string** | Priority determines execution order. Lower numbers execute first. | [optional] [default to "100"]
 **Dynamic** | Pointer to **string** | Sets the snippet version. | [optional] 
 
@@ -104,6 +104,16 @@ SetContent sets Content field to given value.
 
 HasContent returns a boolean if a field has been set.
 
+### SetContentNil
+
+`func (o *Snippet) SetContentNil(b bool)`
+
+ SetContentNil sets the value for Content to be an explicit nil
+
+### UnsetContent
+`func (o *Snippet) UnsetContent()`
+
+UnsetContent ensures that no value is present for Content, not even an explicit nil
 ### GetPriority
 
 `func (o *Snippet) GetPriority() string`

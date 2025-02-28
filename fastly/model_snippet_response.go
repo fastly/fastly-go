@@ -24,7 +24,7 @@ type SnippetResponse struct {
 	// The location in generated VCL where the snippet should be placed.
 	Type *string `json:"type,omitempty"`
 	// The VCL code that specifies exactly what the snippet does.
-	Content *string `json:"content,omitempty"`
+	Content NullableString `json:"content,omitempty"`
 	// Priority determines execution order. Lower numbers execute first.
 	Priority *string `json:"priority,omitempty"`
 	// Sets the snippet version.
@@ -129,36 +129,47 @@ func (o *SnippetResponse) SetType(v string) {
 	o.Type = &v
 }
 
-// GetContent returns the Content field value if set, zero value otherwise.
+// GetContent returns the Content field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SnippetResponse) GetContent() string {
-	if o == nil || o.Content == nil {
+	if o == nil || o.Content.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.Content
+	return *o.Content.Get()
 }
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SnippetResponse) GetContentOk() (*string, bool) {
-	if o == nil || o.Content == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Content, true
+	return o.Content.Get(), o.Content.IsSet()
 }
 
 // HasContent returns a boolean if a field has been set.
 func (o *SnippetResponse) HasContent() bool {
-	if o != nil && o.Content != nil {
+	if o != nil && o.Content.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetContent gets a reference to the given string and assigns it to the Content field.
+// SetContent gets a reference to the given NullableString and assigns it to the Content field.
 func (o *SnippetResponse) SetContent(v string) {
-	o.Content = &v
+	o.Content.Set(&v)
+}
+
+// SetContentNil sets the value for Content to be an explicit nil
+func (o *SnippetResponse) SetContentNil() {
+	o.Content.Set(nil)
+}
+
+// UnsetContent ensures that no value is present for Content, not even an explicit nil
+func (o *SnippetResponse) UnsetContent() {
+	o.Content.Unset()
 }
 
 // GetPriority returns the Priority field value if set, zero value otherwise.
@@ -460,8 +471,8 @@ func (o SnippetResponse) MarshalJSON() ([]byte, error) {
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Content != nil {
-		toSerialize["content"] = o.Content
+	if o.Content.IsSet() {
+		toSerialize["content"] = o.Content.Get()
 	}
 	if o.Priority != nil {
 		toSerialize["priority"] = o.Priority

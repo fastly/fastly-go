@@ -31,117 +31,117 @@ var (
 type KvStoreAPI interface {
 
 	/*
-		CreateStore Create a KV store.
+		KvStoreCreate Create a KV store.
 
-		Create a new KV store.
+		Create a KV store.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APICreateStoreRequest
+		 @return APIKvStoreCreateRequest
 	*/
-	CreateStore(ctx context.Context) APICreateStoreRequest
+	KvStoreCreate(ctx context.Context) APIKvStoreCreateRequest
 
-	// CreateStoreExecute executes the request
-	//  @return StoreResponse
-	CreateStoreExecute(r APICreateStoreRequest) (*StoreResponse, *http.Response, error)
+	// KvStoreCreateExecute executes the request
+	//  @return KvStoreDetails
+	KvStoreCreateExecute(r APIKvStoreCreateRequest) (*KvStoreDetails, *http.Response, error)
 
 	/*
-		DeleteStore Delete a KV store.
+		KvStoreDelete Delete a KV store.
 
-		A KV store must be empty before it can be deleted.  Deleting a KV store that still contains keys will result in a `409` (Conflict).
+		A KV store must be empty before it can be deleted. Attempting to delete a KV store that contains items will result in a response with a `409` status code.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param storeID
-		 @return APIDeleteStoreRequest
+		 @return APIKvStoreDeleteRequest
 	*/
-	DeleteStore(ctx context.Context, storeID string) APIDeleteStoreRequest
+	KvStoreDelete(ctx context.Context, storeID string) APIKvStoreDeleteRequest
 
-	// DeleteStoreExecute executes the request
-	DeleteStoreExecute(r APIDeleteStoreRequest) (*http.Response, error)
+	// KvStoreDeleteExecute executes the request
+	KvStoreDeleteExecute(r APIKvStoreDeleteRequest) (*http.Response, error)
 
 	/*
-		GetStore Describe a KV store.
+		KvStoreGet Describe a KV store.
 
-		Get a KV store by ID.
+		Get details of a KV store.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param storeID
-		 @return APIGetStoreRequest
+		 @return APIKvStoreGetRequest
 	*/
-	GetStore(ctx context.Context, storeID string) APIGetStoreRequest
+	KvStoreGet(ctx context.Context, storeID string) APIKvStoreGetRequest
 
-	// GetStoreExecute executes the request
-	//  @return StoreResponse
-	GetStoreExecute(r APIGetStoreRequest) (*StoreResponse, *http.Response, error)
+	// KvStoreGetExecute executes the request
+	//  @return KvStoreDetails
+	KvStoreGetExecute(r APIKvStoreGetRequest) (*KvStoreDetails, *http.Response, error)
 
 	/*
-		GetStores List KV stores.
+		KvStoreList List all KV stores.
 
-		Get all stores for a given customer.
+		List all KV stores.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APIGetStoresRequest
+		 @return APIKvStoreListRequest
 	*/
-	GetStores(ctx context.Context) APIGetStoresRequest
+	KvStoreList(ctx context.Context) APIKvStoreListRequest
 
-	// GetStoresExecute executes the request
+	// KvStoreListExecute executes the request
 	//  @return InlineResponse2003
-	GetStoresExecute(r APIGetStoresRequest) (*InlineResponse2003, *http.Response, error)
+	KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2003, *http.Response, error)
 }
 
 // KvStoreAPIService KvStoreAPI service
 type KvStoreAPIService service
 
-// APICreateStoreRequest represents a request for the resource.
-type APICreateStoreRequest struct {
-	ctx        context.Context
-	APIService KvStoreAPI
-	location   *string
-	store      *Store
+// APIKvStoreCreateRequest represents a request for the resource.
+type APIKvStoreCreateRequest struct {
+	ctx                  context.Context
+	APIService           KvStoreAPI
+	location             *string
+	kvStoreRequestCreate *KvStoreRequestCreate
 }
 
 // Location returns a pointer to a request.
-func (r *APICreateStoreRequest) Location(location string) *APICreateStoreRequest {
+func (r *APIKvStoreCreateRequest) Location(location string) *APIKvStoreCreateRequest {
 	r.location = &location
 	return r
 }
 
-// Store returns a pointer to a request.
-func (r *APICreateStoreRequest) Store(store Store) *APICreateStoreRequest {
-	r.store = &store
+// KvStoreRequestCreate returns a pointer to a request.
+func (r *APIKvStoreCreateRequest) KvStoreRequestCreate(kvStoreRequestCreate KvStoreRequestCreate) *APIKvStoreCreateRequest {
+	r.kvStoreRequestCreate = &kvStoreRequestCreate
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateStoreRequest) Execute() (*StoreResponse, *http.Response, error) {
-	return r.APIService.CreateStoreExecute(r)
+func (r APIKvStoreCreateRequest) Execute() (*KvStoreDetails, *http.Response, error) {
+	return r.APIService.KvStoreCreateExecute(r)
 }
 
 /*
-CreateStore Create a KV store.
+KvStoreCreate Create a KV store.
 
-Create a new KV store.
+Create a KV store.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APICreateStoreRequest
+ @return APIKvStoreCreateRequest
 */
-func (a *KvStoreAPIService) CreateStore(ctx context.Context) APICreateStoreRequest {
-	return APICreateStoreRequest{
+func (a *KvStoreAPIService) KvStoreCreate(ctx context.Context) APIKvStoreCreateRequest {
+	return APIKvStoreCreateRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// CreateStoreExecute executes the request
-//  @return StoreResponse
-func (a *KvStoreAPIService) CreateStoreExecute(r APICreateStoreRequest) (*StoreResponse, *http.Response, error) {
+// KvStoreCreateExecute executes the request
+//  @return KvStoreDetails
+func (a *KvStoreAPIService) KvStoreCreateExecute(r APIKvStoreCreateRequest) (*KvStoreDetails, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *StoreResponse
+		localVarReturnValue *KvStoreDetails
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.CreateStore")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.KvStoreCreate")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -173,7 +173,7 @@ func (a *KvStoreAPIService) CreateStoreExecute(r APICreateStoreRequest) (*StoreR
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.store
+	localVarPostBody = r.kvStoreRequestCreate
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -238,44 +238,44 @@ func (a *KvStoreAPIService) CreateStoreExecute(r APICreateStoreRequest) (*StoreR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIDeleteStoreRequest represents a request for the resource.
-type APIDeleteStoreRequest struct {
+// APIKvStoreDeleteRequest represents a request for the resource.
+type APIKvStoreDeleteRequest struct {
 	ctx        context.Context
 	APIService KvStoreAPI
 	storeID    string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDeleteStoreRequest) Execute() (*http.Response, error) {
-	return r.APIService.DeleteStoreExecute(r)
+func (r APIKvStoreDeleteRequest) Execute() (*http.Response, error) {
+	return r.APIService.KvStoreDeleteExecute(r)
 }
 
 /*
-DeleteStore Delete a KV store.
+KvStoreDelete Delete a KV store.
 
-A KV store must be empty before it can be deleted.  Deleting a KV store that still contains keys will result in a `409` (Conflict).
+A KV store must be empty before it can be deleted. Attempting to delete a KV store that contains items will result in a response with a `409` status code.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param storeID
- @return APIDeleteStoreRequest
+ @return APIKvStoreDeleteRequest
 */
-func (a *KvStoreAPIService) DeleteStore(ctx context.Context, storeID string) APIDeleteStoreRequest {
-	return APIDeleteStoreRequest{
+func (a *KvStoreAPIService) KvStoreDelete(ctx context.Context, storeID string) APIKvStoreDeleteRequest {
+	return APIKvStoreDeleteRequest{
 		APIService: a,
 		ctx:        ctx,
 		storeID:    storeID,
 	}
 }
 
-// DeleteStoreExecute executes the request
-func (a *KvStoreAPIService) DeleteStoreExecute(r APIDeleteStoreRequest) (*http.Response, error) {
+// KvStoreDeleteExecute executes the request
+func (a *KvStoreAPIService) KvStoreDeleteExecute(r APIKvStoreDeleteRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   any
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.DeleteStore")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.KvStoreDelete")
 	if err != nil {
 		return nil, &GenericAPIError{error: err.Error()}
 	}
@@ -359,46 +359,46 @@ func (a *KvStoreAPIService) DeleteStoreExecute(r APIDeleteStoreRequest) (*http.R
 	return localVarHTTPResponse, nil
 }
 
-// APIGetStoreRequest represents a request for the resource.
-type APIGetStoreRequest struct {
+// APIKvStoreGetRequest represents a request for the resource.
+type APIKvStoreGetRequest struct {
 	ctx        context.Context
 	APIService KvStoreAPI
 	storeID    string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetStoreRequest) Execute() (*StoreResponse, *http.Response, error) {
-	return r.APIService.GetStoreExecute(r)
+func (r APIKvStoreGetRequest) Execute() (*KvStoreDetails, *http.Response, error) {
+	return r.APIService.KvStoreGetExecute(r)
 }
 
 /*
-GetStore Describe a KV store.
+KvStoreGet Describe a KV store.
 
-Get a KV store by ID.
+Get details of a KV store.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param storeID
- @return APIGetStoreRequest
+ @return APIKvStoreGetRequest
 */
-func (a *KvStoreAPIService) GetStore(ctx context.Context, storeID string) APIGetStoreRequest {
-	return APIGetStoreRequest{
+func (a *KvStoreAPIService) KvStoreGet(ctx context.Context, storeID string) APIKvStoreGetRequest {
+	return APIKvStoreGetRequest{
 		APIService: a,
 		ctx:        ctx,
 		storeID:    storeID,
 	}
 }
 
-// GetStoreExecute executes the request
-//  @return StoreResponse
-func (a *KvStoreAPIService) GetStoreExecute(r APIGetStoreRequest) (*StoreResponse, *http.Response, error) {
+// KvStoreGetExecute executes the request
+//  @return KvStoreDetails
+func (a *KvStoreAPIService) KvStoreGetExecute(r APIKvStoreGetRequest) (*KvStoreDetails, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *StoreResponse
+		localVarReturnValue *KvStoreDetails
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.GetStore")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.KvStoreGet")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -491,8 +491,8 @@ func (a *KvStoreAPIService) GetStoreExecute(r APIGetStoreRequest) (*StoreRespons
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIGetStoresRequest represents a request for the resource.
-type APIGetStoresRequest struct {
+// APIKvStoreListRequest represents a request for the resource.
+type APIKvStoreListRequest struct {
 	ctx        context.Context
 	APIService KvStoreAPI
 	cursor     *string
@@ -500,40 +500,40 @@ type APIGetStoresRequest struct {
 }
 
 // Cursor returns a pointer to a request.
-func (r *APIGetStoresRequest) Cursor(cursor string) *APIGetStoresRequest {
+func (r *APIKvStoreListRequest) Cursor(cursor string) *APIKvStoreListRequest {
 	r.cursor = &cursor
 	return r
 }
 
 // Limit returns a pointer to a request.
-func (r *APIGetStoresRequest) Limit(limit int32) *APIGetStoresRequest {
+func (r *APIKvStoreListRequest) Limit(limit int32) *APIKvStoreListRequest {
 	r.limit = &limit
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetStoresRequest) Execute() (*InlineResponse2003, *http.Response, error) {
-	return r.APIService.GetStoresExecute(r)
+func (r APIKvStoreListRequest) Execute() (*InlineResponse2003, *http.Response, error) {
+	return r.APIService.KvStoreListExecute(r)
 }
 
 /*
-GetStores List KV stores.
+KvStoreList List all KV stores.
 
-Get all stores for a given customer.
+List all KV stores.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APIGetStoresRequest
+ @return APIKvStoreListRequest
 */
-func (a *KvStoreAPIService) GetStores(ctx context.Context) APIGetStoresRequest {
-	return APIGetStoresRequest{
+func (a *KvStoreAPIService) KvStoreList(ctx context.Context) APIKvStoreListRequest {
+	return APIKvStoreListRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// GetStoresExecute executes the request
+// KvStoreListExecute executes the request
 //  @return InlineResponse2003
-func (a *KvStoreAPIService) GetStoresExecute(r APIGetStoresRequest) (*InlineResponse2003, *http.Response, error) {
+func (a *KvStoreAPIService) KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2003, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
@@ -541,7 +541,7 @@ func (a *KvStoreAPIService) GetStoresExecute(r APIGetStoresRequest) (*InlineResp
 		localVarReturnValue *InlineResponse2003
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.GetStores")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.KvStoreList")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}

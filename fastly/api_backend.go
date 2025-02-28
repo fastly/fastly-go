@@ -226,7 +226,7 @@ func (r *APICreateBackendRequest) Ipv6(ipv6 string) *APICreateBackendRequest {
 	return r
 }
 
-// KeepaliveTime How long in seconds to keep a persistent connection to the backend between requests.
+// KeepaliveTime How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can.
 func (r *APICreateBackendRequest) KeepaliveTime(keepaliveTime int32) *APICreateBackendRequest {
 	r.keepaliveTime = &keepaliveTime
 	return r
@@ -1129,7 +1129,7 @@ func (r *APIUpdateBackendRequest) Ipv6(ipv6 string) *APIUpdateBackendRequest {
 	return r
 }
 
-// KeepaliveTime How long in seconds to keep a persistent connection to the backend between requests.
+// KeepaliveTime How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can.
 func (r *APIUpdateBackendRequest) KeepaliveTime(keepaliveTime int32) *APIUpdateBackendRequest {
 	r.keepaliveTime = &keepaliveTime
 	return r

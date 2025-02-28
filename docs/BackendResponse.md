@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Hostname** | Pointer to **NullableString** | The hostname of the backend. May be used as an alternative to `address` to set the backend location. | [optional] 
 **Ipv4** | Pointer to **NullableString** | IPv4 address of the backend. May be used as an alternative to `address` to set the backend location. | [optional] 
 **Ipv6** | Pointer to **NullableString** | IPv6 address of the backend. May be used as an alternative to `address` to set the backend location. | [optional] 
-**KeepaliveTime** | Pointer to **NullableInt32** | How long in seconds to keep a persistent connection to the backend between requests. | [optional] 
+**KeepaliveTime** | Pointer to **NullableInt32** | How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can. | [optional] 
 **MaxConn** | Pointer to **int32** | Maximum number of concurrent connections this backend will accept. | [optional] 
 **MaxTLSVersion** | Pointer to **NullableString** | Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
 **MinTLSVersion** | Pointer to **NullableString** | Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 

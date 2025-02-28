@@ -18,7 +18,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go 1.0.0-beta.38
+	github.com/fastly/fastly-go 1.0.0-beta.39
 )
 ```
 
@@ -184,11 +184,6 @@ Class | Method | Description
 *DomainInspectorRealtimeAPI* | [**GetDomainInspectorLastMaxEntries**](docs/DomainInspectorRealtimeAPI.md#getdomaininspectorlastmaxentries) | Get a limited number of real-time domain data entries
 *DomainInspectorRealtimeAPI* | [**GetDomainInspectorLastSecond**](docs/DomainInspectorRealtimeAPI.md#getdomaininspectorlastsecond) | Get real-time domain data from a specified time
 *DomainOwnershipsAPI* | [**ListDomainOwnerships**](docs/DomainOwnershipsAPI.md#listdomainownerships) | List domain-ownerships
-*EnabledProductsAPI* | [**DisableProduct**](docs/EnabledProductsAPI.md#disableproduct) | Disable a product
-*EnabledProductsAPI* | [**EnableProduct**](docs/EnabledProductsAPI.md#enableproduct) | Enable a product
-*EnabledProductsAPI* | [**GetEnabledProduct**](docs/EnabledProductsAPI.md#getenabledproduct) | Get enabled product
-*EnabledProductsAPI* | [**GetProductConfiguration**](docs/EnabledProductsAPI.md#getproductconfiguration) | Get configuration for a product
-*EnabledProductsAPI* | [**SetProductConfiguration**](docs/EnabledProductsAPI.md#setproductconfiguration) | Update configuration for a product
 *EventsAPI* | [**GetEvent**](docs/EventsAPI.md#getevent) | Get an event
 *EventsAPI* | [**ListEvents**](docs/EventsAPI.md#listevents) | List events
 *GzipAPI* | [**CreateGzipConfig**](docs/GzipAPI.md#creategzipconfig) | Create a gzip configuration
@@ -255,42 +250,14 @@ Class | Method | Description
 *InvitationsAPI* | [**CreateInvitation**](docs/InvitationsAPI.md#createinvitation) | Create an invitation
 *InvitationsAPI* | [**DeleteInvitation**](docs/InvitationsAPI.md#deleteinvitation) | Delete an invitation
 *InvitationsAPI* | [**ListInvitations**](docs/InvitationsAPI.md#listinvitations) | List invitations
-*KvStoreAPI* | [**CreateStore**](docs/KvStoreAPI.md#createstore) | Create a KV store.
-*KvStoreAPI* | [**DeleteStore**](docs/KvStoreAPI.md#deletestore) | Delete a KV store.
-*KvStoreAPI* | [**GetStore**](docs/KvStoreAPI.md#getstore) | Describe a KV store.
-*KvStoreAPI* | [**GetStores**](docs/KvStoreAPI.md#getstores) | List KV stores.
-*KvStoreItemAPI* | [**DeleteKeyFromStore**](docs/KvStoreItemAPI.md#deletekeyfromstore) | Delete kv store item.
-*KvStoreItemAPI* | [**GetKeys**](docs/KvStoreItemAPI.md#getkeys) | List kv store keys.
-*KvStoreItemAPI* | [**GetValueForKey**](docs/KvStoreItemAPI.md#getvalueforkey) | Get the value of an kv store item
-*KvStoreItemAPI* | [**SetValueForKey**](docs/KvStoreItemAPI.md#setvalueforkey) | Insert an item into an kv store
-*LegacyWafConfigurationSetsAPI* | [**ListWafConfigSets**](docs/LegacyWafConfigurationSetsAPI.md#listwafconfigsets) | List configuration sets
-*LegacyWafConfigurationSetsAPI* | [**ListWafsConfigSet**](docs/LegacyWafConfigurationSetsAPI.md#listwafsconfigset) | List WAFs currently using a configuration set
-*LegacyWafConfigurationSetsAPI* | [**UseWafConfigSet**](docs/LegacyWafConfigurationSetsAPI.md#usewafconfigset) | Apply a configuration set to a WAF
-*LegacyWafFirewallAPI* | [**CreateLegacyWafFirewallService**](docs/LegacyWafFirewallAPI.md#createlegacywaffirewallservice) | Create a firewall
-*LegacyWafFirewallAPI* | [**DisableLegacyWafFirewall**](docs/LegacyWafFirewallAPI.md#disablelegacywaffirewall) | Disable a firewall
-*LegacyWafFirewallAPI* | [**EnableLegacyWafFirewall**](docs/LegacyWafFirewallAPI.md#enablelegacywaffirewall) | Enable a firewall
-*LegacyWafFirewallAPI* | [**GetLegacyWafFirewall**](docs/LegacyWafFirewallAPI.md#getlegacywaffirewall) | Get a firewall object
-*LegacyWafFirewallAPI* | [**GetLegacyWafFirewallService**](docs/LegacyWafFirewallAPI.md#getlegacywaffirewallservice) | Get a firewall
-*LegacyWafFirewallAPI* | [**ListLegacyWafFirewalls**](docs/LegacyWafFirewallAPI.md#listlegacywaffirewalls) | List active firewalls
-*LegacyWafFirewallAPI* | [**ListLegacyWafFirewallsService**](docs/LegacyWafFirewallAPI.md#listlegacywaffirewallsservice) | List firewalls
-*LegacyWafFirewallAPI* | [**UpdateLegacyWafFirewallService**](docs/LegacyWafFirewallAPI.md#updatelegacywaffirewallservice) | Update a firewall
-*LegacyWafOwaspAPI* | [**CreateOwaspSettings**](docs/LegacyWafOwaspAPI.md#createowaspsettings) | Create an OWASP settings object
-*LegacyWafOwaspAPI* | [**GetOwaspSettings**](docs/LegacyWafOwaspAPI.md#getowaspsettings) | Get the OWASP settings object
-*LegacyWafOwaspAPI* | [**UpdateOwaspSettings**](docs/LegacyWafOwaspAPI.md#updateowaspsettings) | Update the OWASP settings object
-*LegacyWafRuleAPI* | [**GetLegacyWafFirewallRuleVcl**](docs/LegacyWafRuleAPI.md#getlegacywaffirewallrulevcl) | Get VCL for a rule associated with a firewall
-*LegacyWafRuleAPI* | [**GetLegacyWafRule**](docs/LegacyWafRuleAPI.md#getlegacywafrule) | Get a rule
-*LegacyWafRuleAPI* | [**GetLegacyWafRuleVcl**](docs/LegacyWafRuleAPI.md#getlegacywafrulevcl) | Get VCL for a rule
-*LegacyWafRuleAPI* | [**ListLegacyWafRules**](docs/LegacyWafRuleAPI.md#listlegacywafrules) | List rules in the latest configuration set
-*LegacyWafRuleStatusAPI* | [**GetWafFirewallRuleStatus**](docs/LegacyWafRuleStatusAPI.md#getwaffirewallrulestatus) | Get the status of a rule on a firewall
-*LegacyWafRuleStatusAPI* | [**ListWafFirewallRuleStatuses**](docs/LegacyWafRuleStatusAPI.md#listwaffirewallrulestatuses) | List rule statuses
-*LegacyWafRuleStatusAPI* | [**UpdateWafFirewallRuleStatus**](docs/LegacyWafRuleStatusAPI.md#updatewaffirewallrulestatus) | Update the status of a rule
-*LegacyWafRuleStatusAPI* | [**UpdateWafFirewallRuleStatusesTag**](docs/LegacyWafRuleStatusAPI.md#updatewaffirewallrulestatusestag) | Create or update status of a tagged group of rules
-*LegacyWafRulesetAPI* | [**GetWafRuleset**](docs/LegacyWafRulesetAPI.md#getwafruleset) | Get a WAF ruleset
-*LegacyWafRulesetAPI* | [**GetWafRulesetVcl**](docs/LegacyWafRulesetAPI.md#getwafrulesetvcl) | Generate WAF ruleset VCL
-*LegacyWafRulesetAPI* | [**UpdateWafRuleset**](docs/LegacyWafRulesetAPI.md#updatewafruleset) | Update a WAF ruleset
-*LegacyWafTagAPI* | [**ListLegacyWafTags**](docs/LegacyWafTagAPI.md#listlegacywaftags) | List WAF tags
-*LegacyWafUpdateStatusAPI* | [**GetWafUpdateStatus**](docs/LegacyWafUpdateStatusAPI.md#getwafupdatestatus) | Get the status of a WAF update
-*LegacyWafUpdateStatusAPI* | [**ListWafUpdateStatuses**](docs/LegacyWafUpdateStatusAPI.md#listwafupdatestatuses) | List update statuses
+*KvStoreAPI* | [**KvStoreCreate**](docs/KvStoreAPI.md#kvstorecreate) | Create a KV store.
+*KvStoreAPI* | [**KvStoreDelete**](docs/KvStoreAPI.md#kvstoredelete) | Delete a KV store.
+*KvStoreAPI* | [**KvStoreGet**](docs/KvStoreAPI.md#kvstoreget) | Describe a KV store.
+*KvStoreAPI* | [**KvStoreList**](docs/KvStoreAPI.md#kvstorelist) | List all KV stores.
+*KvStoreItemAPI* | [**KvStoreDeleteItem**](docs/KvStoreItemAPI.md#kvstoredeleteitem) | Delete an item.
+*KvStoreItemAPI* | [**KvStoreGetItem**](docs/KvStoreItemAPI.md#kvstoregetitem) | Get an item.
+*KvStoreItemAPI* | [**KvStoreListItemKeys**](docs/KvStoreItemAPI.md#kvstorelistitemkeys) | List item keys.
+*KvStoreItemAPI* | [**KvStoreUpsertItem**](docs/KvStoreItemAPI.md#kvstoreupsertitem) | Insert or update an item.
 *LoggingAzureblobAPI* | [**CreateLogAzure**](docs/LoggingAzureblobAPI.md#createlogazure) | Create an Azure Blob Storage log endpoint
 *LoggingAzureblobAPI* | [**DeleteLogAzure**](docs/LoggingAzureblobAPI.md#deletelogazure) | Delete the Azure Blob Storage log endpoint
 *LoggingAzureblobAPI* | [**GetLogAzure**](docs/LoggingAzureblobAPI.md#getlogazure) | Get an Azure Blob Storage log endpoint
@@ -457,6 +424,46 @@ Class | Method | Description
 *PoolAPI* | [**ListServerPools**](docs/PoolAPI.md#listserverpools) | List server pools
 *PoolAPI* | [**UpdateServerPool**](docs/PoolAPI.md#updateserverpool) | Update a server pool
 *PopAPI* | [**ListPops**](docs/PopAPI.md#listpops) | List Fastly POPs
+*ProductAiAcceleratorAPI* | [**DisableProductAiAccelerator**](docs/ProductAiAcceleratorAPI.md#disableproductaiaccelerator) | Disable product
+*ProductAiAcceleratorAPI* | [**EnableAiAccelerator**](docs/ProductAiAcceleratorAPI.md#enableaiaccelerator) | Enable product
+*ProductAiAcceleratorAPI* | [**GetAiAccelerator**](docs/ProductAiAcceleratorAPI.md#getaiaccelerator) | Get product enablement status
+*ProductBotManagementAPI* | [**DisableProductBotManagement**](docs/ProductBotManagementAPI.md#disableproductbotmanagement) | Disable product
+*ProductBotManagementAPI* | [**EnableProductBotManagement**](docs/ProductBotManagementAPI.md#enableproductbotmanagement) | Enable product
+*ProductBotManagementAPI* | [**GetProductBotManagement**](docs/ProductBotManagementAPI.md#getproductbotmanagement) | Get product enablement status
+*ProductBrotliCompressionAPI* | [**DisableProductBrotliCompression**](docs/ProductBrotliCompressionAPI.md#disableproductbrotlicompression) | Disable product
+*ProductBrotliCompressionAPI* | [**EnableProductBrotliCompression**](docs/ProductBrotliCompressionAPI.md#enableproductbrotlicompression) | Enable product
+*ProductBrotliCompressionAPI* | [**GetProductBrotliCompression**](docs/ProductBrotliCompressionAPI.md#getproductbrotlicompression) | Get product enablement status
+*ProductDdosProtectionAPI* | [**DisableProductDdosProtection**](docs/ProductDdosProtectionAPI.md#disableproductddosprotection) | Disable product
+*ProductDdosProtectionAPI* | [**EnableProductDdosProtection**](docs/ProductDdosProtectionAPI.md#enableproductddosprotection) | Enable product
+*ProductDdosProtectionAPI* | [**GetProductDdosProtection**](docs/ProductDdosProtectionAPI.md#getproductddosprotection) | Get product enablement status
+*ProductDdosProtectionAPI* | [**GetProductDdosProtectionConfiguration**](docs/ProductDdosProtectionAPI.md#getproductddosprotectionconfiguration) | Get configuration
+*ProductDdosProtectionAPI* | [**SetProductDdosProtectionConfiguration**](docs/ProductDdosProtectionAPI.md#setproductddosprotectionconfiguration) | Update configuration
+*ProductDomainInspectorAPI* | [**DisableProductDomainInspector**](docs/ProductDomainInspectorAPI.md#disableproductdomaininspector) | Disable product
+*ProductDomainInspectorAPI* | [**EnableProductDomainInspector**](docs/ProductDomainInspectorAPI.md#enableproductdomaininspector) | Enable product
+*ProductDomainInspectorAPI* | [**GetProductDomainInspector**](docs/ProductDomainInspectorAPI.md#getproductdomaininspector) | Get product enablement status
+*ProductFanoutAPI* | [**DisableProductFanout**](docs/ProductFanoutAPI.md#disableproductfanout) | Disable product
+*ProductFanoutAPI* | [**EnableProductFanout**](docs/ProductFanoutAPI.md#enableproductfanout) | Enable product
+*ProductFanoutAPI* | [**GetProductFanout**](docs/ProductFanoutAPI.md#getproductfanout) | Get product enablement status
+*ProductImageOptimizerAPI* | [**DisableProductImageOptimizer**](docs/ProductImageOptimizerAPI.md#disableproductimageoptimizer) | Disable product
+*ProductImageOptimizerAPI* | [**EnableProductImageOptimizer**](docs/ProductImageOptimizerAPI.md#enableproductimageoptimizer) | Enable product
+*ProductImageOptimizerAPI* | [**GetProductImageOptimizer**](docs/ProductImageOptimizerAPI.md#getproductimageoptimizer) | Get product enablement status
+*ProductLogExplorerInsightsAPI* | [**DisableProductLogExplorerInsights**](docs/ProductLogExplorerInsightsAPI.md#disableproductlogexplorerinsights) | Disable product
+*ProductLogExplorerInsightsAPI* | [**EnableProductLogExplorerInsights**](docs/ProductLogExplorerInsightsAPI.md#enableproductlogexplorerinsights) | Enable product
+*ProductLogExplorerInsightsAPI* | [**GetProductLogExplorerInsights**](docs/ProductLogExplorerInsightsAPI.md#getproductlogexplorerinsights) | Get product enablement status
+*ProductNgwafAPI* | [**DisableProductNgwaf**](docs/ProductNgwafAPI.md#disableproductngwaf) | Disable product
+*ProductNgwafAPI* | [**EnableProductNgwaf**](docs/ProductNgwafAPI.md#enableproductngwaf) | Enable product
+*ProductNgwafAPI* | [**GetProductNgwaf**](docs/ProductNgwafAPI.md#getproductngwaf) | Get product enablement status
+*ProductNgwafAPI* | [**GetProductNgwafConfiguration**](docs/ProductNgwafAPI.md#getproductngwafconfiguration) | Get configuration
+*ProductNgwafAPI* | [**SetProductNgwafConfiguration**](docs/ProductNgwafAPI.md#setproductngwafconfiguration) | Update configuration
+*ProductObjectStorageAPI* | [**DisableProductObjectStorage**](docs/ProductObjectStorageAPI.md#disableproductobjectstorage) | Disable product
+*ProductObjectStorageAPI* | [**EnableObjectStorage**](docs/ProductObjectStorageAPI.md#enableobjectstorage) | Enable product
+*ProductObjectStorageAPI* | [**GetObjectStorage**](docs/ProductObjectStorageAPI.md#getobjectstorage) | Get product enablement status
+*ProductOriginInspectorAPI* | [**DisableProductOriginInspector**](docs/ProductOriginInspectorAPI.md#disableproductorigininspector) | Disable product
+*ProductOriginInspectorAPI* | [**EnableProductOriginInspector**](docs/ProductOriginInspectorAPI.md#enableproductorigininspector) | Enable product
+*ProductOriginInspectorAPI* | [**GetProductOriginInspector**](docs/ProductOriginInspectorAPI.md#getproductorigininspector) | Get product enablement status
+*ProductWebsocketsAPI* | [**DisableProductWebsockets**](docs/ProductWebsocketsAPI.md#disableproductwebsockets) | Disable product
+*ProductWebsocketsAPI* | [**EnableProductWebsockets**](docs/ProductWebsocketsAPI.md#enableproductwebsockets) | Enable product
+*ProductWebsocketsAPI* | [**GetProductWebsockets**](docs/ProductWebsocketsAPI.md#getproductwebsockets) | Get product enablement status
 *PublicIPListAPI* | [**ListFastlyIps**](docs/PublicIPListAPI.md#listfastlyips) | List Fastly's public IPs
 *PublishAPI* | [**Publish**](docs/PublishAPI.md#publish) | Send messages to Fanout subscribers
 *PurgeAPI* | [**BulkPurgeTag**](docs/PurgeAPI.md#bulkpurgetag) | Purge multiple surrogate key tags

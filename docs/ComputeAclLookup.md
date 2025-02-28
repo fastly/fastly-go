@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Prefix** | Pointer to **string** | A valid IPv4 or IPv6 address. | [optional] 
-**Length** | Pointer to **int32** | The length of address in the IP addressing space. | [optional] 
+**Prefix** | Pointer to **string** | A valid IPv4 or IPv6 address and prefix in CIDR notation. | [optional] 
 **Action** | Pointer to **string** | One of \&quot;ALLOW\&quot; or \&quot;BLOCK\&quot;. | [optional] 
 
 ## Methods
@@ -51,31 +50,6 @@ SetPrefix sets Prefix field to given value.
 `func (o *ComputeACLLookup) HasPrefix() bool`
 
 HasPrefix returns a boolean if a field has been set.
-
-### GetLength
-
-`func (o *ComputeACLLookup) GetLength() int32`
-
-GetLength returns the Length field if non-nil, zero value otherwise.
-
-### GetLengthOk
-
-`func (o *ComputeACLLookup) GetLengthOk() (*int32, bool)`
-
-GetLengthOk returns a tuple with the Length field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLength
-
-`func (o *ComputeACLLookup) SetLength(v int32)`
-
-SetLength sets Length field to given value.
-
-### HasLength
-
-`func (o *ComputeACLLookup) HasLength() bool`
-
-HasLength returns a boolean if a field has been set.
 
 ### GetAction
 

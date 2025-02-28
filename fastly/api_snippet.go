@@ -54,10 +54,10 @@ type SnippetAPI interface {
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param serviceID Alphanumeric string identifying the service.
 		 @param versionID Integer identifying a service version.
-		 @param snippetName The name for the snippet.
+		 @param name The name for the snippet.
 		 @return APIDeleteSnippetRequest
 	*/
-	DeleteSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIDeleteSnippetRequest
+	DeleteSnippet(ctx context.Context, serviceID string, versionID int32, name string) APIDeleteSnippetRequest
 
 	// DeleteSnippetExecute executes the request
 	//  @return InlineResponse200
@@ -71,10 +71,10 @@ type SnippetAPI interface {
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param serviceID Alphanumeric string identifying the service.
 		 @param versionID Integer identifying a service version.
-		 @param snippetName The name for the snippet.
+		 @param name The name for the snippet.
 		 @return APIGetSnippetRequest
 	*/
-	GetSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIGetSnippetRequest
+	GetSnippet(ctx context.Context, serviceID string, versionID int32, name string) APIGetSnippetRequest
 
 	// GetSnippetExecute executes the request
 	//  @return SnippetResponse
@@ -87,10 +87,10 @@ type SnippetAPI interface {
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param serviceID Alphanumeric string identifying the service.
-		 @param snippetID Alphanumeric string identifying a VCL Snippet.
+		 @param id Alphanumeric string identifying a VCL Snippet.
 		 @return APIGetSnippetDynamicRequest
 	*/
-	GetSnippetDynamic(ctx context.Context, serviceID string, snippetID string) APIGetSnippetDynamicRequest
+	GetSnippetDynamic(ctx context.Context, serviceID string, id string) APIGetSnippetDynamicRequest
 
 	// GetSnippetDynamicExecute executes the request
 	//  @return SnippetResponse
@@ -120,10 +120,10 @@ type SnippetAPI interface {
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param serviceID Alphanumeric string identifying the service.
 		 @param versionID Integer identifying a service version.
-		 @param snippetName The name for the snippet.
+		 @param name The name for the snippet.
 		 @return APIUpdateSnippetRequest
 	*/
-	UpdateSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIUpdateSnippetRequest
+	UpdateSnippet(ctx context.Context, serviceID string, versionID int32, name string) APIUpdateSnippetRequest
 
 	// UpdateSnippetExecute executes the request
 	//  @return SnippetResponse
@@ -136,10 +136,10 @@ type SnippetAPI interface {
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param serviceID Alphanumeric string identifying the service.
-		 @param snippetID Alphanumeric string identifying a VCL Snippet.
+		 @param id Alphanumeric string identifying a VCL Snippet.
 		 @return APIUpdateSnippetDynamicRequest
 	*/
-	UpdateSnippetDynamic(ctx context.Context, serviceID string, snippetID string) APIUpdateSnippetDynamicRequest
+	UpdateSnippetDynamic(ctx context.Context, serviceID string, id string) APIUpdateSnippetDynamicRequest
 
 	// UpdateSnippetDynamicExecute executes the request
 	//  @return SnippetResponse
@@ -337,11 +337,11 @@ func (a *SnippetAPIService) CreateSnippetExecute(r APICreateSnippetRequest) (*Sn
 
 // APIDeleteSnippetRequest represents a request for the resource.
 type APIDeleteSnippetRequest struct {
-	ctx         context.Context
-	APIService  SnippetAPI
-	serviceID   string
-	versionID   int32
-	snippetName string
+	ctx        context.Context
+	APIService SnippetAPI
+	serviceID  string
+	versionID  int32
+	name       string
 }
 
 // Execute calls the API using the request data configured.
@@ -357,16 +357,16 @@ Delete a specific snippet for a particular service and version.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceID Alphanumeric string identifying the service.
  @param versionID Integer identifying a service version.
- @param snippetName The name for the snippet.
+ @param name The name for the snippet.
  @return APIDeleteSnippetRequest
 */
-func (a *SnippetAPIService) DeleteSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIDeleteSnippetRequest {
+func (a *SnippetAPIService) DeleteSnippet(ctx context.Context, serviceID string, versionID int32, name string) APIDeleteSnippetRequest {
 	return APIDeleteSnippetRequest{
-		APIService:  a,
-		ctx:         ctx,
-		serviceID:   serviceID,
-		versionID:   versionID,
-		snippetName: snippetName,
+		APIService: a,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		name:       name,
 	}
 }
 
@@ -385,10 +385,10 @@ func (a *SnippetAPIService) DeleteSnippetExecute(r APIDeleteSnippetRequest) (*In
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/snippet/{snippet_name}"
+	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/snippet/{name}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"snippet_name"+"}", gourl.PathEscape(parameterToString(r.snippetName, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"name"+"}", gourl.PathEscape(parameterToString(r.name, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -477,11 +477,11 @@ func (a *SnippetAPIService) DeleteSnippetExecute(r APIDeleteSnippetRequest) (*In
 
 // APIGetSnippetRequest represents a request for the resource.
 type APIGetSnippetRequest struct {
-	ctx         context.Context
-	APIService  SnippetAPI
-	serviceID   string
-	versionID   int32
-	snippetName string
+	ctx        context.Context
+	APIService SnippetAPI
+	serviceID  string
+	versionID  int32
+	name       string
 }
 
 // Execute calls the API using the request data configured.
@@ -497,16 +497,16 @@ Get a single snippet for a particular service and version.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceID Alphanumeric string identifying the service.
  @param versionID Integer identifying a service version.
- @param snippetName The name for the snippet.
+ @param name The name for the snippet.
  @return APIGetSnippetRequest
 */
-func (a *SnippetAPIService) GetSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIGetSnippetRequest {
+func (a *SnippetAPIService) GetSnippet(ctx context.Context, serviceID string, versionID int32, name string) APIGetSnippetRequest {
 	return APIGetSnippetRequest{
-		APIService:  a,
-		ctx:         ctx,
-		serviceID:   serviceID,
-		versionID:   versionID,
-		snippetName: snippetName,
+		APIService: a,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		name:       name,
 	}
 }
 
@@ -525,10 +525,10 @@ func (a *SnippetAPIService) GetSnippetExecute(r APIGetSnippetRequest) (*SnippetR
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/snippet/{snippet_name}"
+	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/snippet/{name}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"snippet_name"+"}", gourl.PathEscape(parameterToString(r.snippetName, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"name"+"}", gourl.PathEscape(parameterToString(r.name, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -620,7 +620,7 @@ type APIGetSnippetDynamicRequest struct {
 	ctx        context.Context
 	APIService SnippetAPI
 	serviceID  string
-	snippetID  string
+	id         string
 }
 
 // Execute calls the API using the request data configured.
@@ -635,15 +635,15 @@ Get a single dynamic snippet for a particular service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceID Alphanumeric string identifying the service.
- @param snippetID Alphanumeric string identifying a VCL Snippet.
+ @param id Alphanumeric string identifying a VCL Snippet.
  @return APIGetSnippetDynamicRequest
 */
-func (a *SnippetAPIService) GetSnippetDynamic(ctx context.Context, serviceID string, snippetID string) APIGetSnippetDynamicRequest {
+func (a *SnippetAPIService) GetSnippetDynamic(ctx context.Context, serviceID string, id string) APIGetSnippetDynamicRequest {
 	return APIGetSnippetDynamicRequest{
 		APIService: a,
 		ctx:        ctx,
 		serviceID:  serviceID,
-		snippetID:  snippetID,
+		id:         id,
 	}
 }
 
@@ -662,9 +662,9 @@ func (a *SnippetAPIService) GetSnippetDynamicExecute(r APIGetSnippetDynamicReque
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/service/{service_id}/snippet/{snippet_id}"
+	localVarPath := localBasePath + "/service/{service_id}/snippet/{id}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"snippet_id"+"}", gourl.PathEscape(parameterToString(r.snippetID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"id"+"}", gourl.PathEscape(parameterToString(r.id, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -889,11 +889,11 @@ func (a *SnippetAPIService) ListSnippetsExecute(r APIListSnippetsRequest) ([]Sni
 
 // APIUpdateSnippetRequest represents a request for the resource.
 type APIUpdateSnippetRequest struct {
-	ctx         context.Context
-	APIService  SnippetAPI
-	serviceID   string
-	versionID   int32
-	snippetName string
+	ctx        context.Context
+	APIService SnippetAPI
+	serviceID  string
+	versionID  int32
+	name       string
 }
 
 // Execute calls the API using the request data configured.
@@ -909,16 +909,16 @@ Update a specific snippet for a particular service and version.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceID Alphanumeric string identifying the service.
  @param versionID Integer identifying a service version.
- @param snippetName The name for the snippet.
+ @param name The name for the snippet.
  @return APIUpdateSnippetRequest
 */
-func (a *SnippetAPIService) UpdateSnippet(ctx context.Context, serviceID string, versionID int32, snippetName string) APIUpdateSnippetRequest {
+func (a *SnippetAPIService) UpdateSnippet(ctx context.Context, serviceID string, versionID int32, name string) APIUpdateSnippetRequest {
 	return APIUpdateSnippetRequest{
-		APIService:  a,
-		ctx:         ctx,
-		serviceID:   serviceID,
-		versionID:   versionID,
-		snippetName: snippetName,
+		APIService: a,
+		ctx:        ctx,
+		serviceID:  serviceID,
+		versionID:  versionID,
+		name:       name,
 	}
 }
 
@@ -937,10 +937,10 @@ func (a *SnippetAPIService) UpdateSnippetExecute(r APIUpdateSnippetRequest) (*Sn
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/snippet/{snippet_name}"
+	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/snippet/{name}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"snippet_name"+"}", gourl.PathEscape(parameterToString(r.snippetName, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"name"+"}", gourl.PathEscape(parameterToString(r.name, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1032,7 +1032,7 @@ type APIUpdateSnippetDynamicRequest struct {
 	ctx          context.Context
 	APIService   SnippetAPI
 	serviceID    string
-	snippetID    string
+	id           string
 	name         *string
 	resourceType *string
 	content      *string
@@ -1082,15 +1082,15 @@ Update a dynamic snippet for a particular service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceID Alphanumeric string identifying the service.
- @param snippetID Alphanumeric string identifying a VCL Snippet.
+ @param id Alphanumeric string identifying a VCL Snippet.
  @return APIUpdateSnippetDynamicRequest
 */
-func (a *SnippetAPIService) UpdateSnippetDynamic(ctx context.Context, serviceID string, snippetID string) APIUpdateSnippetDynamicRequest {
+func (a *SnippetAPIService) UpdateSnippetDynamic(ctx context.Context, serviceID string, id string) APIUpdateSnippetDynamicRequest {
 	return APIUpdateSnippetDynamicRequest{
 		APIService: a,
 		ctx:        ctx,
 		serviceID:  serviceID,
-		snippetID:  snippetID,
+		id:         id,
 	}
 }
 
@@ -1109,9 +1109,9 @@ func (a *SnippetAPIService) UpdateSnippetDynamicExecute(r APIUpdateSnippetDynami
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/service/{service_id}/snippet/{snippet_id}"
+	localVarPath := localBasePath + "/service/{service_id}/snippet/{id}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"snippet_id"+"}", gourl.PathEscape(parameterToString(r.snippetID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"id"+"}", gourl.PathEscape(parameterToString(r.id, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

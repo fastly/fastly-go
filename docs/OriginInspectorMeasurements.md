@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **Status503** | Pointer to **int64** | Number of responses received with status code 503 (Service Unavailable) from origin. | [optional] 
 **Status504** | Pointer to **int64** | Number of responses received with status code 504 (Gateway Timeout) from origin. | [optional] 
 **Status505** | Pointer to **int64** | Number of responses received with status code 505 (HTTP Version Not Supported) from origin. | [optional] 
+**Status530** | Pointer to **int64** | Number of responses received from origin with status code 530. | [optional] 
 **Latency0To1ms** | Pointer to **int64** | Number of responses from origin with latency between 0 and 1 millisecond. | [optional] 
 **Latency1To5ms** | Pointer to **int64** | Number of responses from origin with latency between 1 and 5 milliseconds. | [optional] 
 **Latency5To10ms** | Pointer to **int64** | Number of responses from origin with latency between 5 and 10 milliseconds. | [optional] 
@@ -68,6 +69,7 @@ Name | Type | Description | Notes
 **WafStatus503** | Pointer to **int64** | Number of responses received with status code 503 (Service Unavailable) received for origin requests made by the Fastly WAF. | [optional] 
 **WafStatus504** | Pointer to **int64** | Number of responses received with status code 504 (Gateway Timeout) received for origin requests made by the Fastly WAF. | [optional] 
 **WafStatus505** | Pointer to **int64** | Number of responses received with status code 505 (HTTP Version Not Supported) received for origin requests made by the Fastly WAF. | [optional] 
+**WafStatus530** | Pointer to **int64** | Number of responses received with status code 530 received for origin requests made by the Fastly WAF. | [optional] 
 **WafLatency0To1ms** | Pointer to **int64** | Number of responses with latency between 0 and 1 millisecond received for origin requests made by the Fastly WAF. | [optional] 
 **WafLatency1To5ms** | Pointer to **int64** | Number of responses with latency between 1 and 5 milliseconds received for origin requests made by the Fastly WAF. | [optional] 
 **WafLatency5To10ms** | Pointer to **int64** | Number of responses with latency between 5 and 10 milliseconds received for origin requests made by the Fastly WAF. | [optional] 
@@ -106,6 +108,7 @@ Name | Type | Description | Notes
 **ComputeStatus503** | Pointer to **int64** | Number of responses received with status code 503 (Service Unavailable) for origin received by the Compute platform. | [optional] 
 **ComputeStatus504** | Pointer to **int64** | Number of responses received with status code 504 (Gateway Timeout) for origin received by the Compute platform. | [optional] 
 **ComputeStatus505** | Pointer to **int64** | Number of responses received with status code 505 (HTTP Version Not Supported) for origin received by the Compute platform. | [optional] 
+**ComputeStatus530** | Pointer to **int64** | Number of responses received with status code 530 for origin received by the Compute platform. | [optional] 
 **ComputeLatency0To1ms** | Pointer to **int64** | Number of responses with latency between 0 and 1 millisecond for origin received by the Compute platform. | [optional] 
 **ComputeLatency1To5ms** | Pointer to **int64** | Number of responses with latency between 1 and 5 milliseconds for origin received by the Compute platform. | [optional] 
 **ComputeLatency5To10ms** | Pointer to **int64** | Number of responses with latency between 5 and 10 milliseconds for origin received by the Compute platform. | [optional] 
@@ -144,6 +147,7 @@ Name | Type | Description | Notes
 **AllStatus503** | Pointer to **int64** | Number of responses received with status code 503 (Service Unavailable) received for origin requests made by all sources. | [optional] 
 **AllStatus504** | Pointer to **int64** | Number of responses received with status code 504 (Gateway Timeout) received for origin requests made by all sources. | [optional] 
 **AllStatus505** | Pointer to **int64** | Number of responses received with status code 505 (HTTP Version Not Supported) received for origin requests made by all sources. | [optional] 
+**AllStatus530** | Pointer to **int64** | Number of responses received with status code 530 received for origin requests made by all sources. | [optional] 
 **AllLatency0To1ms** | Pointer to **int64** | Number of responses with latency between 0 and 1 millisecond received for origin requests made by all sources. | [optional] 
 **AllLatency1To5ms** | Pointer to **int64** | Number of responses with latency between 1 and 5 milliseconds received for origin requests made by all sources. | [optional] 
 **AllLatency5To10ms** | Pointer to **int64** | Number of responses with latency between 5 and 10 milliseconds received for origin requests made by all sources. | [optional] 
@@ -825,6 +829,31 @@ SetStatus505 sets Status505 field to given value.
 `func (o *OriginInspectorMeasurements) HasStatus505() bool`
 
 HasStatus505 returns a boolean if a field has been set.
+
+### GetStatus530
+
+`func (o *OriginInspectorMeasurements) GetStatus530() int64`
+
+GetStatus530 returns the Status530 field if non-nil, zero value otherwise.
+
+### GetStatus530Ok
+
+`func (o *OriginInspectorMeasurements) GetStatus530Ok() (*int64, bool)`
+
+GetStatus530Ok returns a tuple with the Status530 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus530
+
+`func (o *OriginInspectorMeasurements) SetStatus530(v int64)`
+
+SetStatus530 sets Status530 field to given value.
+
+### HasStatus530
+
+`func (o *OriginInspectorMeasurements) HasStatus530() bool`
+
+HasStatus530 returns a boolean if a field has been set.
 
 ### GetLatency0To1ms
 
@@ -1776,6 +1805,31 @@ SetWafStatus505 sets WafStatus505 field to given value.
 
 HasWafStatus505 returns a boolean if a field has been set.
 
+### GetWafStatus530
+
+`func (o *OriginInspectorMeasurements) GetWafStatus530() int64`
+
+GetWafStatus530 returns the WafStatus530 field if non-nil, zero value otherwise.
+
+### GetWafStatus530Ok
+
+`func (o *OriginInspectorMeasurements) GetWafStatus530Ok() (*int64, bool)`
+
+GetWafStatus530Ok returns a tuple with the WafStatus530 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWafStatus530
+
+`func (o *OriginInspectorMeasurements) SetWafStatus530(v int64)`
+
+SetWafStatus530 sets WafStatus530 field to given value.
+
+### HasWafStatus530
+
+`func (o *OriginInspectorMeasurements) HasWafStatus530() bool`
+
+HasWafStatus530 returns a boolean if a field has been set.
+
 ### GetWafLatency0To1ms
 
 `func (o *OriginInspectorMeasurements) GetWafLatency0To1ms() int64`
@@ -2726,6 +2780,31 @@ SetComputeStatus505 sets ComputeStatus505 field to given value.
 
 HasComputeStatus505 returns a boolean if a field has been set.
 
+### GetComputeStatus530
+
+`func (o *OriginInspectorMeasurements) GetComputeStatus530() int64`
+
+GetComputeStatus530 returns the ComputeStatus530 field if non-nil, zero value otherwise.
+
+### GetComputeStatus530Ok
+
+`func (o *OriginInspectorMeasurements) GetComputeStatus530Ok() (*int64, bool)`
+
+GetComputeStatus530Ok returns a tuple with the ComputeStatus530 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeStatus530
+
+`func (o *OriginInspectorMeasurements) SetComputeStatus530(v int64)`
+
+SetComputeStatus530 sets ComputeStatus530 field to given value.
+
+### HasComputeStatus530
+
+`func (o *OriginInspectorMeasurements) HasComputeStatus530() bool`
+
+HasComputeStatus530 returns a boolean if a field has been set.
+
 ### GetComputeLatency0To1ms
 
 `func (o *OriginInspectorMeasurements) GetComputeLatency0To1ms() int64`
@@ -3675,6 +3754,31 @@ SetAllStatus505 sets AllStatus505 field to given value.
 `func (o *OriginInspectorMeasurements) HasAllStatus505() bool`
 
 HasAllStatus505 returns a boolean if a field has been set.
+
+### GetAllStatus530
+
+`func (o *OriginInspectorMeasurements) GetAllStatus530() int64`
+
+GetAllStatus530 returns the AllStatus530 field if non-nil, zero value otherwise.
+
+### GetAllStatus530Ok
+
+`func (o *OriginInspectorMeasurements) GetAllStatus530Ok() (*int64, bool)`
+
+GetAllStatus530Ok returns a tuple with the AllStatus530 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllStatus530
+
+`func (o *OriginInspectorMeasurements) SetAllStatus530(v int64)`
+
+SetAllStatus530 sets AllStatus530 field to given value.
+
+### HasAllStatus530
+
+`func (o *OriginInspectorMeasurements) HasAllStatus530() bool`
+
+HasAllStatus530 returns a boolean if a field has been set.
 
 ### GetAllLatency0To1ms
 

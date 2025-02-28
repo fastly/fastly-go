@@ -5,16 +5,16 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteKeyFromStore**](KvStoreItemAPI.md#DeleteKeyFromStore) | **DELETE** `/resources/stores/kv/{store_id}/keys/{key_name}` | Delete kv store item.
-[**GetKeys**](KvStoreItemAPI.md#GetKeys) | **GET** `/resources/stores/kv/{store_id}/keys` | List kv store keys.
-[**GetValueForKey**](KvStoreItemAPI.md#GetValueForKey) | **GET** `/resources/stores/kv/{store_id}/keys/{key_name}` | Get the value of an kv store item
-[**SetValueForKey**](KvStoreItemAPI.md#SetValueForKey) | **PUT** `/resources/stores/kv/{store_id}/keys/{key_name}` | Insert an item into an kv store
+[**KvStoreDeleteItem**](KvStoreItemAPI.md#KvStoreDeleteItem) | **DELETE** `/resources/stores/kv/{store_id}/keys/{key}` | Delete an item.
+[**KvStoreGetItem**](KvStoreItemAPI.md#KvStoreGetItem) | **GET** `/resources/stores/kv/{store_id}/keys/{key}` | Get an item.
+[**KvStoreListItemKeys**](KvStoreItemAPI.md#KvStoreListItemKeys) | **GET** `/resources/stores/kv/{store_id}/keys` | List item keys.
+[**KvStoreUpsertItem**](KvStoreItemAPI.md#KvStoreUpsertItem) | **PUT** `/resources/stores/kv/{store_id}/keys/{key}` | Insert or update an item.
 
 
 
-## DeleteKeyFromStore
+## KvStoreDeleteItem
 
-Delete kv store item.
+Delete an item.
 
 
 
@@ -32,14 +32,16 @@ import (
 
 func main() {
     storeID := "storeId_example" // string | 
-    keyName := "keyName_example" // string | 
+    key := "key_example" // string | 
+    ifGenerationMatch := int32(56) // int32 |  (optional)
+    force := true // bool |  (optional) (default to false)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreItemAPI.DeleteKeyFromStore(ctx, storeID, keyName).Execute()
+    resp, r, err := apiClient.KvStoreItemAPI.KvStoreDeleteItem(ctx, storeID, key).IfGenerationMatch(ifGenerationMatch).Force(force).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.DeleteKeyFromStore`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.KvStoreDeleteItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -52,16 +54,16 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **storeID** | **string** |  | 
-**keyName** | **string** |  | 
+**key** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteKeyFromStoreRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiKvStoreDeleteItemRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
+ **ifGenerationMatch** | **int32** |  |  **force** | **bool** |  | [default to false]
 
 ### Return type
 
@@ -79,9 +81,78 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## GetKeys
+## KvStoreGetItem
 
-List kv store keys.
+Get an item.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    storeID := "storeId_example" // string | 
+    key := "key_example" // string | 
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.KvStoreItemAPI.KvStoreGetItem(ctx, storeID, key).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.KvStoreGetItem`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `KvStoreGetItem`: string
+    fmt.Fprintf(os.Stdout, "Response from `KvStoreItemAPI.KvStoreGetItem`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**storeID** | **string** |  | 
+**key** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiKvStoreGetItemRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**string**
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/octet-stream
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## KvStoreListItemKeys
+
+List item keys.
 
 
 
@@ -102,18 +173,18 @@ func main() {
     cursor := "cursor_example" // string |  (optional)
     limit := int32(56) // int32 |  (optional) (default to 100)
     prefix := "prefix_example" // string |  (optional)
-    consistency := "consistency_example" // string |  (optional)
+    consistency := "consistency_example" // string |  (optional) (default to "strong")
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreItemAPI.GetKeys(ctx, storeID).Cursor(cursor).Limit(limit).Prefix(prefix).Consistency(consistency).Execute()
+    resp, r, err := apiClient.KvStoreItemAPI.KvStoreListItemKeys(ctx, storeID).Cursor(cursor).Limit(limit).Prefix(prefix).Consistency(consistency).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.GetKeys`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.KvStoreListItemKeys`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetKeys`: InlineResponse2004
-    fmt.Fprintf(os.Stdout, "Response from `KvStoreItemAPI.GetKeys`: %v\n", resp)
+    // response from `KvStoreListItemKeys`: InlineResponse2004
+    fmt.Fprintf(os.Stdout, "Response from `KvStoreItemAPI.KvStoreListItemKeys`: %v\n", resp)
 }
 ```
 
@@ -127,12 +198,12 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetKeysRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiKvStoreListItemKeysRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **string** |  |  **limit** | **int32** |  | [default to 100] **prefix** | **string** |  |  **consistency** | **string** |  | 
+ **cursor** | **string** |  |  **limit** | **int32** |  | [default to 100] **prefix** | **string** |  |  **consistency** | **string** |  | [default to &quot;strong&quot;]
 
 ### Return type
 
@@ -150,78 +221,9 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## GetValueForKey
+## KvStoreUpsertItem
 
-Get the value of an kv store item
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    "github.com/fastly/fastly-go/fastly"
-)
-
-func main() {
-    storeID := "storeId_example" // string | 
-    keyName := "keyName_example" // string | 
-
-    cfg := fastly.NewConfiguration()
-    apiClient := fastly.NewAPIClient(cfg)
-    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreItemAPI.GetValueForKey(ctx, storeID, keyName).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.GetValueForKey`: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetValueForKey`: string
-    fmt.Fprintf(os.Stdout, "Response from `KvStoreItemAPI.GetValueForKey`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
-**keyName** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetValueForKeyRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-**string**
-
-### Authorization
-
-[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/octet-stream
-
-[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
-
-
-## SetValueForKey
-
-Insert an item into an kv store
+Insert or update an item.
 
 
 
@@ -239,26 +241,24 @@ import (
 
 func main() {
     storeID := "storeId_example" // string | 
-    keyName := "keyName_example" // string | 
+    key := "key_example" // string | 
     ifGenerationMatch := int32(56) // int32 |  (optional)
     timeToLiveSec := int32(56) // int32 |  (optional)
     metadata := "metadata_example" // string |  (optional)
-    add := true // bool |  (optional)
-    append := true // bool |  (optional)
-    prepend := true // bool |  (optional)
-    backgroundFetch := true // bool |  (optional)
+    add := true // bool |  (optional) (default to false)
+    append := true // bool |  (optional) (default to false)
+    prepend := true // bool |  (optional) (default to false)
+    backgroundFetch := true // bool |  (optional) (default to false)
     body := string(BYTE_ARRAY_DATA_HERE) // string |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreItemAPI.SetValueForKey(ctx, storeID, keyName).IfGenerationMatch(ifGenerationMatch).TimeToLiveSec(timeToLiveSec).Metadata(metadata).Add(add).Append(append).Prepend(prepend).BackgroundFetch(backgroundFetch).Body(body).Execute()
+    resp, r, err := apiClient.KvStoreItemAPI.KvStoreUpsertItem(ctx, storeID, key).IfGenerationMatch(ifGenerationMatch).TimeToLiveSec(timeToLiveSec).Metadata(metadata).Add(add).Append(append).Prepend(prepend).BackgroundFetch(backgroundFetch).Body(body).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.SetValueForKey`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.KvStoreUpsertItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SetValueForKey`: string
-    fmt.Fprintf(os.Stdout, "Response from `KvStoreItemAPI.SetValueForKey`: %v\n", resp)
 }
 ```
 
@@ -269,20 +269,20 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **storeID** | **string** |  | 
-**keyName** | **string** |  | 
+**key** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSetValueForKeyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiKvStoreUpsertItemRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ifGenerationMatch** | **int32** |  |  **timeToLiveSec** | **int32** |  |  **metadata** | **string** |  |  **add** | **bool** |  |  **append** | **bool** |  |  **prepend** | **bool** |  |  **backgroundFetch** | **bool** |  |  **body** | **string** |  | 
+ **ifGenerationMatch** | **int32** |  |  **timeToLiveSec** | **int32** |  |  **metadata** | **string** |  |  **add** | **bool** |  | [default to false] **append** | **bool** |  | [default to false] **prepend** | **bool** |  | [default to false] **backgroundFetch** | **bool** |  | [default to false] **body** | **string** |  | 
 
 ### Return type
 
-**string**
+ (empty response body)
 
 ### Authorization
 
@@ -291,6 +291,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/octet-stream
-- **Accept**: application/octet-stream
+- **Accept**: Not defined
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

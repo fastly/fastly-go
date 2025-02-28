@@ -104,7 +104,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "fastly-go/1.0.0-beta.38",
+		UserAgent:     "fastly-go/1.0.0-beta.39",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
@@ -807,36 +807,6 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"EnabledProductsAPIService.DisableProduct": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"EnabledProductsAPIService.EnableProduct": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"EnabledProductsAPIService.GetEnabledProduct": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"EnabledProductsAPIService.GetProductConfiguration": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"EnabledProductsAPIService.SetProductConfiguration": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
 			"EventsAPIService.GetEvent": {
 				{
 					URL:         "https://api.fastly.com",
@@ -1233,217 +1203,49 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"KvStoreAPIService.CreateStore": {
+			"KvStoreAPIService.KvStoreCreate": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"KvStoreAPIService.DeleteStore": {
+			"KvStoreAPIService.KvStoreDelete": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"KvStoreAPIService.GetStore": {
+			"KvStoreAPIService.KvStoreGet": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"KvStoreAPIService.GetStores": {
+			"KvStoreAPIService.KvStoreList": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"KvStoreItemAPIService.DeleteKeyFromStore": {
+			"KvStoreItemAPIService.KvStoreDeleteItem": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"KvStoreItemAPIService.GetKeys": {
+			"KvStoreItemAPIService.KvStoreGetItem": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"KvStoreItemAPIService.GetValueForKey": {
+			"KvStoreItemAPIService.KvStoreListItemKeys": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"KvStoreItemAPIService.SetValueForKey": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafConfigurationSetsAPIService.ListWafConfigSets": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafConfigurationSetsAPIService.ListWafsConfigSet": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafConfigurationSetsAPIService.UseWafConfigSet": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafFirewallAPIService.CreateLegacyWafFirewallService": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafFirewallAPIService.DisableLegacyWafFirewall": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafFirewallAPIService.EnableLegacyWafFirewall": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafFirewallAPIService.GetLegacyWafFirewall": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafFirewallAPIService.GetLegacyWafFirewallService": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafFirewallAPIService.ListLegacyWafFirewalls": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafFirewallAPIService.ListLegacyWafFirewallsService": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafFirewallAPIService.UpdateLegacyWafFirewallService": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafOwaspAPIService.CreateOwaspSettings": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafOwaspAPIService.GetOwaspSettings": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafOwaspAPIService.UpdateOwaspSettings": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafRuleAPIService.GetLegacyWafFirewallRuleVcl": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafRuleAPIService.GetLegacyWafRule": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafRuleAPIService.GetLegacyWafRuleVcl": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafRuleAPIService.ListLegacyWafRules": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafRuleStatusAPIService.GetWafFirewallRuleStatus": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafRuleStatusAPIService.ListWafFirewallRuleStatuses": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafRuleStatusAPIService.UpdateWafFirewallRuleStatus": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafRuleStatusAPIService.UpdateWafFirewallRuleStatusesTag": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafRulesetAPIService.GetWafRuleset": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafRulesetAPIService.GetWafRulesetVcl": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafRulesetAPIService.UpdateWafRuleset": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafTagAPIService.ListLegacyWafTags": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafUpdateStatusAPIService.GetWafUpdateStatus": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"LegacyWafUpdateStatusAPIService.ListWafUpdateStatuses": {
+			"KvStoreItemAPIService.KvStoreUpsertItem": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2440,6 +2242,246 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"PopAPIService.ListPops": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductAiAcceleratorAPIService.DisableProductAiAccelerator": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductAiAcceleratorAPIService.EnableAiAccelerator": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductAiAcceleratorAPIService.GetAiAccelerator": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductBotManagementAPIService.DisableProductBotManagement": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductBotManagementAPIService.EnableProductBotManagement": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductBotManagementAPIService.GetProductBotManagement": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductBrotliCompressionAPIService.DisableProductBrotliCompression": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductBrotliCompressionAPIService.EnableProductBrotliCompression": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductBrotliCompressionAPIService.GetProductBrotliCompression": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductDdosProtectionAPIService.DisableProductDdosProtection": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductDdosProtectionAPIService.EnableProductDdosProtection": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductDdosProtectionAPIService.GetProductDdosProtection": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductDdosProtectionAPIService.GetProductDdosProtectionConfiguration": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductDdosProtectionAPIService.SetProductDdosProtectionConfiguration": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductDomainInspectorAPIService.DisableProductDomainInspector": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductDomainInspectorAPIService.EnableProductDomainInspector": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductDomainInspectorAPIService.GetProductDomainInspector": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductFanoutAPIService.DisableProductFanout": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductFanoutAPIService.EnableProductFanout": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductFanoutAPIService.GetProductFanout": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductImageOptimizerAPIService.DisableProductImageOptimizer": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductImageOptimizerAPIService.EnableProductImageOptimizer": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductImageOptimizerAPIService.GetProductImageOptimizer": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductLogExplorerInsightsAPIService.DisableProductLogExplorerInsights": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductLogExplorerInsightsAPIService.EnableProductLogExplorerInsights": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductLogExplorerInsightsAPIService.GetProductLogExplorerInsights": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductNgwafAPIService.DisableProductNgwaf": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductNgwafAPIService.EnableProductNgwaf": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductNgwafAPIService.GetProductNgwaf": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductNgwafAPIService.GetProductNgwafConfiguration": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductNgwafAPIService.SetProductNgwafConfiguration": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductObjectStorageAPIService.DisableProductObjectStorage": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductObjectStorageAPIService.EnableObjectStorage": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductObjectStorageAPIService.GetObjectStorage": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductOriginInspectorAPIService.DisableProductOriginInspector": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductOriginInspectorAPIService.EnableProductOriginInspector": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductOriginInspectorAPIService.GetProductOriginInspector": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductWebsocketsAPIService.DisableProductWebsockets": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductWebsocketsAPIService.EnableProductWebsockets": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductWebsocketsAPIService.GetProductWebsockets": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",

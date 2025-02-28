@@ -18,8 +18,8 @@ import (
 
 // InlineResponse2004 struct for InlineResponse2004
 type InlineResponse2004 struct {
-	Data                 []string                `json:"data,omitempty"`
-	Meta                 *InlineResponse2004Meta `json:"meta,omitempty"`
+	Data                 []string              `json:"data,omitempty"`
+	Meta                 *PaginationCursorMeta `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -75,9 +75,9 @@ func (o *InlineResponse2004) SetData(v []string) {
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *InlineResponse2004) GetMeta() InlineResponse2004Meta {
+func (o *InlineResponse2004) GetMeta() PaginationCursorMeta {
 	if o == nil || o.Meta == nil {
-		var ret InlineResponse2004Meta
+		var ret PaginationCursorMeta
 		return ret
 	}
 	return *o.Meta
@@ -85,7 +85,7 @@ func (o *InlineResponse2004) GetMeta() InlineResponse2004Meta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2004) GetMetaOk() (*InlineResponse2004Meta, bool) {
+func (o *InlineResponse2004) GetMetaOk() (*PaginationCursorMeta, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *InlineResponse2004) HasMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given InlineResponse2004Meta and assigns it to the Meta field.
-func (o *InlineResponse2004) SetMeta(v InlineResponse2004Meta) {
+// SetMeta gets a reference to the given PaginationCursorMeta and assigns it to the Meta field.
+func (o *InlineResponse2004) SetMeta(v PaginationCursorMeta) {
 	o.Meta = &v
 }
 

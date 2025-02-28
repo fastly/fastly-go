@@ -18,10 +18,8 @@ import (
 
 // ComputeACLLookup Defines the structure of an ACL Lookup response.
 type ComputeACLLookup struct {
-	// A valid IPv4 or IPv6 address.
+	// A valid IPv4 or IPv6 address and prefix in CIDR notation.
 	Prefix *string `json:"prefix,omitempty"`
-	// The length of address in the IP addressing space.
-	Length *int32 `json:"length,omitempty"`
 	// One of \"ALLOW\" or \"BLOCK\".
 	Action               *string `json:"action,omitempty"`
 	AdditionalProperties map[string]any
@@ -78,38 +76,6 @@ func (o *ComputeACLLookup) SetPrefix(v string) {
 	o.Prefix = &v
 }
 
-// GetLength returns the Length field value if set, zero value otherwise.
-func (o *ComputeACLLookup) GetLength() int32 {
-	if o == nil || o.Length == nil {
-		var ret int32
-		return ret
-	}
-	return *o.Length
-}
-
-// GetLengthOk returns a tuple with the Length field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ComputeACLLookup) GetLengthOk() (*int32, bool) {
-	if o == nil || o.Length == nil {
-		return nil, false
-	}
-	return o.Length, true
-}
-
-// HasLength returns a boolean if a field has been set.
-func (o *ComputeACLLookup) HasLength() bool {
-	if o != nil && o.Length != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetLength gets a reference to the given int32 and assigns it to the Length field.
-func (o *ComputeACLLookup) SetLength(v int32) {
-	o.Length = &v
-}
-
 // GetAction returns the Action field value if set, zero value otherwise.
 func (o *ComputeACLLookup) GetAction() string {
 	if o == nil || o.Action == nil {
@@ -149,9 +115,6 @@ func (o ComputeACLLookup) MarshalJSON() ([]byte, error) {
 	if o.Prefix != nil {
 		toSerialize["prefix"] = o.Prefix
 	}
-	if o.Length != nil {
-		toSerialize["length"] = o.Length
-	}
 	if o.Action != nil {
 		toSerialize["action"] = o.Action
 	}
@@ -176,7 +139,6 @@ func (o *ComputeACLLookup) UnmarshalJSON(bytes []byte) (err error) {
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "prefix")
-		delete(additionalProperties, "length")
 		delete(additionalProperties, "action")
 		o.AdditionalProperties = additionalProperties
 	}

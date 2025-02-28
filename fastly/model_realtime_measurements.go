@@ -188,6 +188,8 @@ type RealtimeMeasurements struct {
 	Status504 *int64 `json:"status_504,omitempty"`
 	// Number of responses sent with status code 505 (HTTP Version Not Supported).
 	Status505 *int64 `json:"status_505,omitempty"`
+	// Number of responses sent with status code 530.
+	Status530 *int64 `json:"status_530,omitempty"`
 	// Number of requests that were designated uncachable.
 	Uncacheable *int64 `json:"uncacheable,omitempty"`
 	// Total amount of time spent processing cache passes (in seconds).
@@ -507,12 +509,40 @@ type RealtimeMeasurements struct {
 	// Number of requests where Fastly responded with 400 due to the request being a GET or HEAD request containing a body.
 	RequestDeniedGetHeadBody *int64 `json:"request_denied_get_head_body,omitempty"`
 	// Number of requests classified as a DDoS attack against a customer origin or service.
-	ServiceDdosRequestsDetected *int64 `json:"service_ddos_requests_detected,omitempty"`
+	DdosProtectionRequestsDetectCount *int64 `json:"ddos_protection_requests_detect_count,omitempty"`
 	// Number of requests classified as a DDoS attack against a customer origin or service that were mitigated by the Fastly platform.
-	ServiceDdosRequestsMitigated *int64 `json:"service_ddos_requests_mitigated,omitempty"`
+	DdosProtectionRequestsMitigateCount *int64 `json:"ddos_protection_requests_mitigate_count,omitempty"`
 	// Number of requests analyzed for DDoS attacks against a customer origin or service, but with no DDoS detected.
-	ServiceDdosRequestsAllowed *int64 `json:"service_ddos_requests_allowed,omitempty"`
-	AdditionalProperties       map[string]any
+	DdosProtectionRequestsAllowCount *int64 `json:"ddos_protection_requests_allow_count,omitempty"`
+	// A count of the number of Class A Object Storage operations.
+	ObjectStorageClassAOperationsCount *int64 `json:"object_storage_class_a_operations_count,omitempty"`
+	// A count of the number of Class B Object Storage operations.
+	ObjectStorageClassBOperationsCount *int64 `json:"object_storage_class_b_operations_count,omitempty"`
+	// Number of requests received by AI Accelerator.
+	AiaRequests *int64 `json:"aia_requests,omitempty"`
+	// Number of \"Informational\" category status codes received from AI provider.
+	AiaStatus1xx *int64 `json:"aia_status_1xx,omitempty"`
+	// Number of \"Success\" status codes received from AI provider.
+	AiaStatus2xx *int64 `json:"aia_status_2xx,omitempty"`
+	// Number of \"Redirection\" received from AI provider.
+	AiaStatus3xx *int64 `json:"aia_status_3xx,omitempty"`
+	// Number of \"Client Error\" received from AI provider.
+	AiaStatus4xx *int64 `json:"aia_status_4xx,omitempty"`
+	// Number of \"Server Error\" received from AI provider.
+	AiaStatus5xx *int64 `json:"aia_status_5xx,omitempty"`
+	// The usage tokens associated with the response returned from the AI Accelerator cache.
+	AiaResponseUsageTokens *int64 `json:"aia_response_usage_tokens,omitempty"`
+	// The number of usage tokens reported by the request to the origin from AI Accelerator.
+	AiaOriginUsageTokens *int64 `json:"aia_origin_usage_tokens,omitempty"`
+	// The estimated amount of time saved by responses served from the AI Accelerator semantic cache.
+	AiaEstimatedTimeSavedMs *int64 `json:"aia_estimated_time_saved_ms,omitempty"`
+	// Number of requests that were collapsed and satisfied by a usable cache object.
+	RequestCollapseUsableCount *int64 `json:"request_collapse_usable_count,omitempty"`
+	// Number of requests that were collapsed and unable to be satisfied by the resulting cache object.
+	RequestCollapseUnusableCount *int64 `json:"request_collapse_unusable_count,omitempty"`
+	// Number of cache operations executed by the Compute platform.
+	ComputeCacheOperationsCount *int64 `json:"compute_cache_operations_count,omitempty"`
+	AdditionalProperties        map[string]any
 }
 
 type _RealtimeMeasurements RealtimeMeasurements
@@ -3252,6 +3282,38 @@ func (o *RealtimeMeasurements) HasStatus505() bool {
 // SetStatus505 gets a reference to the given int64 and assigns it to the Status505 field.
 func (o *RealtimeMeasurements) SetStatus505(v int64) {
 	o.Status505 = &v
+}
+
+// GetStatus530 returns the Status530 field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetStatus530() int64 {
+	if o == nil || o.Status530 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.Status530
+}
+
+// GetStatus530Ok returns a tuple with the Status530 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetStatus530Ok() (*int64, bool) {
+	if o == nil || o.Status530 == nil {
+		return nil, false
+	}
+	return o.Status530, true
+}
+
+// HasStatus530 returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasStatus530() bool {
+	if o != nil && o.Status530 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus530 gets a reference to the given int64 and assigns it to the Status530 field.
+func (o *RealtimeMeasurements) SetStatus530(v int64) {
+	o.Status530 = &v
 }
 
 // GetUncacheable returns the Uncacheable field value if set, zero value otherwise.
@@ -8316,100 +8378,548 @@ func (o *RealtimeMeasurements) SetRequestDeniedGetHeadBody(v int64) {
 	o.RequestDeniedGetHeadBody = &v
 }
 
-// GetServiceDdosRequestsDetected returns the ServiceDdosRequestsDetected field value if set, zero value otherwise.
-func (o *RealtimeMeasurements) GetServiceDdosRequestsDetected() int64 {
-	if o == nil || o.ServiceDdosRequestsDetected == nil {
+// GetDdosProtectionRequestsDetectCount returns the DdosProtectionRequestsDetectCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetDdosProtectionRequestsDetectCount() int64 {
+	if o == nil || o.DdosProtectionRequestsDetectCount == nil {
 		var ret int64
 		return ret
 	}
-	return *o.ServiceDdosRequestsDetected
+	return *o.DdosProtectionRequestsDetectCount
 }
 
-// GetServiceDdosRequestsDetectedOk returns a tuple with the ServiceDdosRequestsDetected field value if set, nil otherwise
+// GetDdosProtectionRequestsDetectCountOk returns a tuple with the DdosProtectionRequestsDetectCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeMeasurements) GetServiceDdosRequestsDetectedOk() (*int64, bool) {
-	if o == nil || o.ServiceDdosRequestsDetected == nil {
+func (o *RealtimeMeasurements) GetDdosProtectionRequestsDetectCountOk() (*int64, bool) {
+	if o == nil || o.DdosProtectionRequestsDetectCount == nil {
 		return nil, false
 	}
-	return o.ServiceDdosRequestsDetected, true
+	return o.DdosProtectionRequestsDetectCount, true
 }
 
-// HasServiceDdosRequestsDetected returns a boolean if a field has been set.
-func (o *RealtimeMeasurements) HasServiceDdosRequestsDetected() bool {
-	if o != nil && o.ServiceDdosRequestsDetected != nil {
+// HasDdosProtectionRequestsDetectCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasDdosProtectionRequestsDetectCount() bool {
+	if o != nil && o.DdosProtectionRequestsDetectCount != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceDdosRequestsDetected gets a reference to the given int64 and assigns it to the ServiceDdosRequestsDetected field.
-func (o *RealtimeMeasurements) SetServiceDdosRequestsDetected(v int64) {
-	o.ServiceDdosRequestsDetected = &v
+// SetDdosProtectionRequestsDetectCount gets a reference to the given int64 and assigns it to the DdosProtectionRequestsDetectCount field.
+func (o *RealtimeMeasurements) SetDdosProtectionRequestsDetectCount(v int64) {
+	o.DdosProtectionRequestsDetectCount = &v
 }
 
-// GetServiceDdosRequestsMitigated returns the ServiceDdosRequestsMitigated field value if set, zero value otherwise.
-func (o *RealtimeMeasurements) GetServiceDdosRequestsMitigated() int64 {
-	if o == nil || o.ServiceDdosRequestsMitigated == nil {
+// GetDdosProtectionRequestsMitigateCount returns the DdosProtectionRequestsMitigateCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetDdosProtectionRequestsMitigateCount() int64 {
+	if o == nil || o.DdosProtectionRequestsMitigateCount == nil {
 		var ret int64
 		return ret
 	}
-	return *o.ServiceDdosRequestsMitigated
+	return *o.DdosProtectionRequestsMitigateCount
 }
 
-// GetServiceDdosRequestsMitigatedOk returns a tuple with the ServiceDdosRequestsMitigated field value if set, nil otherwise
+// GetDdosProtectionRequestsMitigateCountOk returns a tuple with the DdosProtectionRequestsMitigateCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeMeasurements) GetServiceDdosRequestsMitigatedOk() (*int64, bool) {
-	if o == nil || o.ServiceDdosRequestsMitigated == nil {
+func (o *RealtimeMeasurements) GetDdosProtectionRequestsMitigateCountOk() (*int64, bool) {
+	if o == nil || o.DdosProtectionRequestsMitigateCount == nil {
 		return nil, false
 	}
-	return o.ServiceDdosRequestsMitigated, true
+	return o.DdosProtectionRequestsMitigateCount, true
 }
 
-// HasServiceDdosRequestsMitigated returns a boolean if a field has been set.
-func (o *RealtimeMeasurements) HasServiceDdosRequestsMitigated() bool {
-	if o != nil && o.ServiceDdosRequestsMitigated != nil {
+// HasDdosProtectionRequestsMitigateCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasDdosProtectionRequestsMitigateCount() bool {
+	if o != nil && o.DdosProtectionRequestsMitigateCount != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceDdosRequestsMitigated gets a reference to the given int64 and assigns it to the ServiceDdosRequestsMitigated field.
-func (o *RealtimeMeasurements) SetServiceDdosRequestsMitigated(v int64) {
-	o.ServiceDdosRequestsMitigated = &v
+// SetDdosProtectionRequestsMitigateCount gets a reference to the given int64 and assigns it to the DdosProtectionRequestsMitigateCount field.
+func (o *RealtimeMeasurements) SetDdosProtectionRequestsMitigateCount(v int64) {
+	o.DdosProtectionRequestsMitigateCount = &v
 }
 
-// GetServiceDdosRequestsAllowed returns the ServiceDdosRequestsAllowed field value if set, zero value otherwise.
-func (o *RealtimeMeasurements) GetServiceDdosRequestsAllowed() int64 {
-	if o == nil || o.ServiceDdosRequestsAllowed == nil {
+// GetDdosProtectionRequestsAllowCount returns the DdosProtectionRequestsAllowCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetDdosProtectionRequestsAllowCount() int64 {
+	if o == nil || o.DdosProtectionRequestsAllowCount == nil {
 		var ret int64
 		return ret
 	}
-	return *o.ServiceDdosRequestsAllowed
+	return *o.DdosProtectionRequestsAllowCount
 }
 
-// GetServiceDdosRequestsAllowedOk returns a tuple with the ServiceDdosRequestsAllowed field value if set, nil otherwise
+// GetDdosProtectionRequestsAllowCountOk returns a tuple with the DdosProtectionRequestsAllowCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeMeasurements) GetServiceDdosRequestsAllowedOk() (*int64, bool) {
-	if o == nil || o.ServiceDdosRequestsAllowed == nil {
+func (o *RealtimeMeasurements) GetDdosProtectionRequestsAllowCountOk() (*int64, bool) {
+	if o == nil || o.DdosProtectionRequestsAllowCount == nil {
 		return nil, false
 	}
-	return o.ServiceDdosRequestsAllowed, true
+	return o.DdosProtectionRequestsAllowCount, true
 }
 
-// HasServiceDdosRequestsAllowed returns a boolean if a field has been set.
-func (o *RealtimeMeasurements) HasServiceDdosRequestsAllowed() bool {
-	if o != nil && o.ServiceDdosRequestsAllowed != nil {
+// HasDdosProtectionRequestsAllowCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasDdosProtectionRequestsAllowCount() bool {
+	if o != nil && o.DdosProtectionRequestsAllowCount != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceDdosRequestsAllowed gets a reference to the given int64 and assigns it to the ServiceDdosRequestsAllowed field.
-func (o *RealtimeMeasurements) SetServiceDdosRequestsAllowed(v int64) {
-	o.ServiceDdosRequestsAllowed = &v
+// SetDdosProtectionRequestsAllowCount gets a reference to the given int64 and assigns it to the DdosProtectionRequestsAllowCount field.
+func (o *RealtimeMeasurements) SetDdosProtectionRequestsAllowCount(v int64) {
+	o.DdosProtectionRequestsAllowCount = &v
+}
+
+// GetObjectStorageClassAOperationsCount returns the ObjectStorageClassAOperationsCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetObjectStorageClassAOperationsCount() int64 {
+	if o == nil || o.ObjectStorageClassAOperationsCount == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ObjectStorageClassAOperationsCount
+}
+
+// GetObjectStorageClassAOperationsCountOk returns a tuple with the ObjectStorageClassAOperationsCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetObjectStorageClassAOperationsCountOk() (*int64, bool) {
+	if o == nil || o.ObjectStorageClassAOperationsCount == nil {
+		return nil, false
+	}
+	return o.ObjectStorageClassAOperationsCount, true
+}
+
+// HasObjectStorageClassAOperationsCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasObjectStorageClassAOperationsCount() bool {
+	if o != nil && o.ObjectStorageClassAOperationsCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetObjectStorageClassAOperationsCount gets a reference to the given int64 and assigns it to the ObjectStorageClassAOperationsCount field.
+func (o *RealtimeMeasurements) SetObjectStorageClassAOperationsCount(v int64) {
+	o.ObjectStorageClassAOperationsCount = &v
+}
+
+// GetObjectStorageClassBOperationsCount returns the ObjectStorageClassBOperationsCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetObjectStorageClassBOperationsCount() int64 {
+	if o == nil || o.ObjectStorageClassBOperationsCount == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ObjectStorageClassBOperationsCount
+}
+
+// GetObjectStorageClassBOperationsCountOk returns a tuple with the ObjectStorageClassBOperationsCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetObjectStorageClassBOperationsCountOk() (*int64, bool) {
+	if o == nil || o.ObjectStorageClassBOperationsCount == nil {
+		return nil, false
+	}
+	return o.ObjectStorageClassBOperationsCount, true
+}
+
+// HasObjectStorageClassBOperationsCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasObjectStorageClassBOperationsCount() bool {
+	if o != nil && o.ObjectStorageClassBOperationsCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetObjectStorageClassBOperationsCount gets a reference to the given int64 and assigns it to the ObjectStorageClassBOperationsCount field.
+func (o *RealtimeMeasurements) SetObjectStorageClassBOperationsCount(v int64) {
+	o.ObjectStorageClassBOperationsCount = &v
+}
+
+// GetAiaRequests returns the AiaRequests field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetAiaRequests() int64 {
+	if o == nil || o.AiaRequests == nil {
+		var ret int64
+		return ret
+	}
+	return *o.AiaRequests
+}
+
+// GetAiaRequestsOk returns a tuple with the AiaRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetAiaRequestsOk() (*int64, bool) {
+	if o == nil || o.AiaRequests == nil {
+		return nil, false
+	}
+	return o.AiaRequests, true
+}
+
+// HasAiaRequests returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasAiaRequests() bool {
+	if o != nil && o.AiaRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAiaRequests gets a reference to the given int64 and assigns it to the AiaRequests field.
+func (o *RealtimeMeasurements) SetAiaRequests(v int64) {
+	o.AiaRequests = &v
+}
+
+// GetAiaStatus1xx returns the AiaStatus1xx field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetAiaStatus1xx() int64 {
+	if o == nil || o.AiaStatus1xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.AiaStatus1xx
+}
+
+// GetAiaStatus1xxOk returns a tuple with the AiaStatus1xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetAiaStatus1xxOk() (*int64, bool) {
+	if o == nil || o.AiaStatus1xx == nil {
+		return nil, false
+	}
+	return o.AiaStatus1xx, true
+}
+
+// HasAiaStatus1xx returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasAiaStatus1xx() bool {
+	if o != nil && o.AiaStatus1xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAiaStatus1xx gets a reference to the given int64 and assigns it to the AiaStatus1xx field.
+func (o *RealtimeMeasurements) SetAiaStatus1xx(v int64) {
+	o.AiaStatus1xx = &v
+}
+
+// GetAiaStatus2xx returns the AiaStatus2xx field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetAiaStatus2xx() int64 {
+	if o == nil || o.AiaStatus2xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.AiaStatus2xx
+}
+
+// GetAiaStatus2xxOk returns a tuple with the AiaStatus2xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetAiaStatus2xxOk() (*int64, bool) {
+	if o == nil || o.AiaStatus2xx == nil {
+		return nil, false
+	}
+	return o.AiaStatus2xx, true
+}
+
+// HasAiaStatus2xx returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasAiaStatus2xx() bool {
+	if o != nil && o.AiaStatus2xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAiaStatus2xx gets a reference to the given int64 and assigns it to the AiaStatus2xx field.
+func (o *RealtimeMeasurements) SetAiaStatus2xx(v int64) {
+	o.AiaStatus2xx = &v
+}
+
+// GetAiaStatus3xx returns the AiaStatus3xx field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetAiaStatus3xx() int64 {
+	if o == nil || o.AiaStatus3xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.AiaStatus3xx
+}
+
+// GetAiaStatus3xxOk returns a tuple with the AiaStatus3xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetAiaStatus3xxOk() (*int64, bool) {
+	if o == nil || o.AiaStatus3xx == nil {
+		return nil, false
+	}
+	return o.AiaStatus3xx, true
+}
+
+// HasAiaStatus3xx returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasAiaStatus3xx() bool {
+	if o != nil && o.AiaStatus3xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAiaStatus3xx gets a reference to the given int64 and assigns it to the AiaStatus3xx field.
+func (o *RealtimeMeasurements) SetAiaStatus3xx(v int64) {
+	o.AiaStatus3xx = &v
+}
+
+// GetAiaStatus4xx returns the AiaStatus4xx field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetAiaStatus4xx() int64 {
+	if o == nil || o.AiaStatus4xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.AiaStatus4xx
+}
+
+// GetAiaStatus4xxOk returns a tuple with the AiaStatus4xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetAiaStatus4xxOk() (*int64, bool) {
+	if o == nil || o.AiaStatus4xx == nil {
+		return nil, false
+	}
+	return o.AiaStatus4xx, true
+}
+
+// HasAiaStatus4xx returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasAiaStatus4xx() bool {
+	if o != nil && o.AiaStatus4xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAiaStatus4xx gets a reference to the given int64 and assigns it to the AiaStatus4xx field.
+func (o *RealtimeMeasurements) SetAiaStatus4xx(v int64) {
+	o.AiaStatus4xx = &v
+}
+
+// GetAiaStatus5xx returns the AiaStatus5xx field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetAiaStatus5xx() int64 {
+	if o == nil || o.AiaStatus5xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.AiaStatus5xx
+}
+
+// GetAiaStatus5xxOk returns a tuple with the AiaStatus5xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetAiaStatus5xxOk() (*int64, bool) {
+	if o == nil || o.AiaStatus5xx == nil {
+		return nil, false
+	}
+	return o.AiaStatus5xx, true
+}
+
+// HasAiaStatus5xx returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasAiaStatus5xx() bool {
+	if o != nil && o.AiaStatus5xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAiaStatus5xx gets a reference to the given int64 and assigns it to the AiaStatus5xx field.
+func (o *RealtimeMeasurements) SetAiaStatus5xx(v int64) {
+	o.AiaStatus5xx = &v
+}
+
+// GetAiaResponseUsageTokens returns the AiaResponseUsageTokens field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetAiaResponseUsageTokens() int64 {
+	if o == nil || o.AiaResponseUsageTokens == nil {
+		var ret int64
+		return ret
+	}
+	return *o.AiaResponseUsageTokens
+}
+
+// GetAiaResponseUsageTokensOk returns a tuple with the AiaResponseUsageTokens field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetAiaResponseUsageTokensOk() (*int64, bool) {
+	if o == nil || o.AiaResponseUsageTokens == nil {
+		return nil, false
+	}
+	return o.AiaResponseUsageTokens, true
+}
+
+// HasAiaResponseUsageTokens returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasAiaResponseUsageTokens() bool {
+	if o != nil && o.AiaResponseUsageTokens != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAiaResponseUsageTokens gets a reference to the given int64 and assigns it to the AiaResponseUsageTokens field.
+func (o *RealtimeMeasurements) SetAiaResponseUsageTokens(v int64) {
+	o.AiaResponseUsageTokens = &v
+}
+
+// GetAiaOriginUsageTokens returns the AiaOriginUsageTokens field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetAiaOriginUsageTokens() int64 {
+	if o == nil || o.AiaOriginUsageTokens == nil {
+		var ret int64
+		return ret
+	}
+	return *o.AiaOriginUsageTokens
+}
+
+// GetAiaOriginUsageTokensOk returns a tuple with the AiaOriginUsageTokens field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetAiaOriginUsageTokensOk() (*int64, bool) {
+	if o == nil || o.AiaOriginUsageTokens == nil {
+		return nil, false
+	}
+	return o.AiaOriginUsageTokens, true
+}
+
+// HasAiaOriginUsageTokens returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasAiaOriginUsageTokens() bool {
+	if o != nil && o.AiaOriginUsageTokens != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAiaOriginUsageTokens gets a reference to the given int64 and assigns it to the AiaOriginUsageTokens field.
+func (o *RealtimeMeasurements) SetAiaOriginUsageTokens(v int64) {
+	o.AiaOriginUsageTokens = &v
+}
+
+// GetAiaEstimatedTimeSavedMs returns the AiaEstimatedTimeSavedMs field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetAiaEstimatedTimeSavedMs() int64 {
+	if o == nil || o.AiaEstimatedTimeSavedMs == nil {
+		var ret int64
+		return ret
+	}
+	return *o.AiaEstimatedTimeSavedMs
+}
+
+// GetAiaEstimatedTimeSavedMsOk returns a tuple with the AiaEstimatedTimeSavedMs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetAiaEstimatedTimeSavedMsOk() (*int64, bool) {
+	if o == nil || o.AiaEstimatedTimeSavedMs == nil {
+		return nil, false
+	}
+	return o.AiaEstimatedTimeSavedMs, true
+}
+
+// HasAiaEstimatedTimeSavedMs returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasAiaEstimatedTimeSavedMs() bool {
+	if o != nil && o.AiaEstimatedTimeSavedMs != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAiaEstimatedTimeSavedMs gets a reference to the given int64 and assigns it to the AiaEstimatedTimeSavedMs field.
+func (o *RealtimeMeasurements) SetAiaEstimatedTimeSavedMs(v int64) {
+	o.AiaEstimatedTimeSavedMs = &v
+}
+
+// GetRequestCollapseUsableCount returns the RequestCollapseUsableCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetRequestCollapseUsableCount() int64 {
+	if o == nil || o.RequestCollapseUsableCount == nil {
+		var ret int64
+		return ret
+	}
+	return *o.RequestCollapseUsableCount
+}
+
+// GetRequestCollapseUsableCountOk returns a tuple with the RequestCollapseUsableCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetRequestCollapseUsableCountOk() (*int64, bool) {
+	if o == nil || o.RequestCollapseUsableCount == nil {
+		return nil, false
+	}
+	return o.RequestCollapseUsableCount, true
+}
+
+// HasRequestCollapseUsableCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasRequestCollapseUsableCount() bool {
+	if o != nil && o.RequestCollapseUsableCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestCollapseUsableCount gets a reference to the given int64 and assigns it to the RequestCollapseUsableCount field.
+func (o *RealtimeMeasurements) SetRequestCollapseUsableCount(v int64) {
+	o.RequestCollapseUsableCount = &v
+}
+
+// GetRequestCollapseUnusableCount returns the RequestCollapseUnusableCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetRequestCollapseUnusableCount() int64 {
+	if o == nil || o.RequestCollapseUnusableCount == nil {
+		var ret int64
+		return ret
+	}
+	return *o.RequestCollapseUnusableCount
+}
+
+// GetRequestCollapseUnusableCountOk returns a tuple with the RequestCollapseUnusableCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetRequestCollapseUnusableCountOk() (*int64, bool) {
+	if o == nil || o.RequestCollapseUnusableCount == nil {
+		return nil, false
+	}
+	return o.RequestCollapseUnusableCount, true
+}
+
+// HasRequestCollapseUnusableCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasRequestCollapseUnusableCount() bool {
+	if o != nil && o.RequestCollapseUnusableCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestCollapseUnusableCount gets a reference to the given int64 and assigns it to the RequestCollapseUnusableCount field.
+func (o *RealtimeMeasurements) SetRequestCollapseUnusableCount(v int64) {
+	o.RequestCollapseUnusableCount = &v
+}
+
+// GetComputeCacheOperationsCount returns the ComputeCacheOperationsCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeCacheOperationsCount() int64 {
+	if o == nil || o.ComputeCacheOperationsCount == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeCacheOperationsCount
+}
+
+// GetComputeCacheOperationsCountOk returns a tuple with the ComputeCacheOperationsCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeCacheOperationsCountOk() (*int64, bool) {
+	if o == nil || o.ComputeCacheOperationsCount == nil {
+		return nil, false
+	}
+	return o.ComputeCacheOperationsCount, true
+}
+
+// HasComputeCacheOperationsCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeCacheOperationsCount() bool {
+	if o != nil && o.ComputeCacheOperationsCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeCacheOperationsCount gets a reference to the given int64 and assigns it to the ComputeCacheOperationsCount field.
+func (o *RealtimeMeasurements) SetComputeCacheOperationsCount(v int64) {
+	o.ComputeCacheOperationsCount = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -8670,6 +9180,9 @@ func (o RealtimeMeasurements) MarshalJSON() ([]byte, error) {
 	}
 	if o.Status505 != nil {
 		toSerialize["status_505"] = o.Status505
+	}
+	if o.Status530 != nil {
+		toSerialize["status_530"] = o.Status530
 	}
 	if o.Uncacheable != nil {
 		toSerialize["uncacheable"] = o.Uncacheable
@@ -9145,14 +9658,56 @@ func (o RealtimeMeasurements) MarshalJSON() ([]byte, error) {
 	if o.RequestDeniedGetHeadBody != nil {
 		toSerialize["request_denied_get_head_body"] = o.RequestDeniedGetHeadBody
 	}
-	if o.ServiceDdosRequestsDetected != nil {
-		toSerialize["service_ddos_requests_detected"] = o.ServiceDdosRequestsDetected
+	if o.DdosProtectionRequestsDetectCount != nil {
+		toSerialize["ddos_protection_requests_detect_count"] = o.DdosProtectionRequestsDetectCount
 	}
-	if o.ServiceDdosRequestsMitigated != nil {
-		toSerialize["service_ddos_requests_mitigated"] = o.ServiceDdosRequestsMitigated
+	if o.DdosProtectionRequestsMitigateCount != nil {
+		toSerialize["ddos_protection_requests_mitigate_count"] = o.DdosProtectionRequestsMitigateCount
 	}
-	if o.ServiceDdosRequestsAllowed != nil {
-		toSerialize["service_ddos_requests_allowed"] = o.ServiceDdosRequestsAllowed
+	if o.DdosProtectionRequestsAllowCount != nil {
+		toSerialize["ddos_protection_requests_allow_count"] = o.DdosProtectionRequestsAllowCount
+	}
+	if o.ObjectStorageClassAOperationsCount != nil {
+		toSerialize["object_storage_class_a_operations_count"] = o.ObjectStorageClassAOperationsCount
+	}
+	if o.ObjectStorageClassBOperationsCount != nil {
+		toSerialize["object_storage_class_b_operations_count"] = o.ObjectStorageClassBOperationsCount
+	}
+	if o.AiaRequests != nil {
+		toSerialize["aia_requests"] = o.AiaRequests
+	}
+	if o.AiaStatus1xx != nil {
+		toSerialize["aia_status_1xx"] = o.AiaStatus1xx
+	}
+	if o.AiaStatus2xx != nil {
+		toSerialize["aia_status_2xx"] = o.AiaStatus2xx
+	}
+	if o.AiaStatus3xx != nil {
+		toSerialize["aia_status_3xx"] = o.AiaStatus3xx
+	}
+	if o.AiaStatus4xx != nil {
+		toSerialize["aia_status_4xx"] = o.AiaStatus4xx
+	}
+	if o.AiaStatus5xx != nil {
+		toSerialize["aia_status_5xx"] = o.AiaStatus5xx
+	}
+	if o.AiaResponseUsageTokens != nil {
+		toSerialize["aia_response_usage_tokens"] = o.AiaResponseUsageTokens
+	}
+	if o.AiaOriginUsageTokens != nil {
+		toSerialize["aia_origin_usage_tokens"] = o.AiaOriginUsageTokens
+	}
+	if o.AiaEstimatedTimeSavedMs != nil {
+		toSerialize["aia_estimated_time_saved_ms"] = o.AiaEstimatedTimeSavedMs
+	}
+	if o.RequestCollapseUsableCount != nil {
+		toSerialize["request_collapse_usable_count"] = o.RequestCollapseUsableCount
+	}
+	if o.RequestCollapseUnusableCount != nil {
+		toSerialize["request_collapse_unusable_count"] = o.RequestCollapseUnusableCount
+	}
+	if o.ComputeCacheOperationsCount != nil {
+		toSerialize["compute_cache_operations_count"] = o.ComputeCacheOperationsCount
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -9259,6 +9814,7 @@ func (o *RealtimeMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "status_503")
 		delete(additionalProperties, "status_504")
 		delete(additionalProperties, "status_505")
+		delete(additionalProperties, "status_530")
 		delete(additionalProperties, "uncacheable")
 		delete(additionalProperties, "pass_time")
 		delete(additionalProperties, "tls")
@@ -9417,9 +9973,23 @@ func (o *RealtimeMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "all_status_5xx")
 		delete(additionalProperties, "origin_offload")
 		delete(additionalProperties, "request_denied_get_head_body")
-		delete(additionalProperties, "service_ddos_requests_detected")
-		delete(additionalProperties, "service_ddos_requests_mitigated")
-		delete(additionalProperties, "service_ddos_requests_allowed")
+		delete(additionalProperties, "ddos_protection_requests_detect_count")
+		delete(additionalProperties, "ddos_protection_requests_mitigate_count")
+		delete(additionalProperties, "ddos_protection_requests_allow_count")
+		delete(additionalProperties, "object_storage_class_a_operations_count")
+		delete(additionalProperties, "object_storage_class_b_operations_count")
+		delete(additionalProperties, "aia_requests")
+		delete(additionalProperties, "aia_status_1xx")
+		delete(additionalProperties, "aia_status_2xx")
+		delete(additionalProperties, "aia_status_3xx")
+		delete(additionalProperties, "aia_status_4xx")
+		delete(additionalProperties, "aia_status_5xx")
+		delete(additionalProperties, "aia_response_usage_tokens")
+		delete(additionalProperties, "aia_origin_usage_tokens")
+		delete(additionalProperties, "aia_estimated_time_saved_ms")
+		delete(additionalProperties, "request_collapse_usable_count")
+		delete(additionalProperties, "request_collapse_unusable_count")
+		delete(additionalProperties, "compute_cache_operations_count")
 		o.AdditionalProperties = additionalProperties
 	}
 

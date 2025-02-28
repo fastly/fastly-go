@@ -70,6 +70,8 @@ type OriginInspectorMeasurements struct {
 	Status504 *int64 `json:"status_504,omitempty"`
 	// Number of responses received with status code 505 (HTTP Version Not Supported) from origin.
 	Status505 *int64 `json:"status_505,omitempty"`
+	// Number of responses received from origin with status code 530.
+	Status530 *int64 `json:"status_530,omitempty"`
 	// Number of responses from origin with latency between 0 and 1 millisecond.
 	Latency0To1ms *int64 `json:"latency_0_to_1ms,omitempty"`
 	// Number of responses from origin with latency between 1 and 5 milliseconds.
@@ -146,6 +148,8 @@ type OriginInspectorMeasurements struct {
 	WafStatus504 *int64 `json:"waf_status_504,omitempty"`
 	// Number of responses received with status code 505 (HTTP Version Not Supported) received for origin requests made by the Fastly WAF.
 	WafStatus505 *int64 `json:"waf_status_505,omitempty"`
+	// Number of responses received with status code 530 received for origin requests made by the Fastly WAF.
+	WafStatus530 *int64 `json:"waf_status_530,omitempty"`
 	// Number of responses with latency between 0 and 1 millisecond received for origin requests made by the Fastly WAF.
 	WafLatency0To1ms *int64 `json:"waf_latency_0_to_1ms,omitempty"`
 	// Number of responses with latency between 1 and 5 milliseconds received for origin requests made by the Fastly WAF.
@@ -222,6 +226,8 @@ type OriginInspectorMeasurements struct {
 	ComputeStatus504 *int64 `json:"compute_status_504,omitempty"`
 	// Number of responses received with status code 505 (HTTP Version Not Supported) for origin received by the Compute platform.
 	ComputeStatus505 *int64 `json:"compute_status_505,omitempty"`
+	// Number of responses received with status code 530 for origin received by the Compute platform.
+	ComputeStatus530 *int64 `json:"compute_status_530,omitempty"`
 	// Number of responses with latency between 0 and 1 millisecond for origin received by the Compute platform.
 	ComputeLatency0To1ms *int64 `json:"compute_latency_0_to_1ms,omitempty"`
 	// Number of responses with latency between 1 and 5 milliseconds for origin received by the Compute platform.
@@ -298,6 +304,8 @@ type OriginInspectorMeasurements struct {
 	AllStatus504 *int64 `json:"all_status_504,omitempty"`
 	// Number of responses received with status code 505 (HTTP Version Not Supported) received for origin requests made by all sources.
 	AllStatus505 *int64 `json:"all_status_505,omitempty"`
+	// Number of responses received with status code 530 received for origin requests made by all sources.
+	AllStatus530 *int64 `json:"all_status_530,omitempty"`
 	// Number of responses with latency between 0 and 1 millisecond received for origin requests made by all sources.
 	AllLatency0To1ms *int64 `json:"all_latency_0_to_1ms,omitempty"`
 	// Number of responses with latency between 1 and 5 milliseconds received for origin requests made by all sources.
@@ -1174,6 +1182,38 @@ func (o *OriginInspectorMeasurements) HasStatus505() bool {
 // SetStatus505 gets a reference to the given int64 and assigns it to the Status505 field.
 func (o *OriginInspectorMeasurements) SetStatus505(v int64) {
 	o.Status505 = &v
+}
+
+// GetStatus530 returns the Status530 field value if set, zero value otherwise.
+func (o *OriginInspectorMeasurements) GetStatus530() int64 {
+	if o == nil || o.Status530 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.Status530
+}
+
+// GetStatus530Ok returns a tuple with the Status530 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OriginInspectorMeasurements) GetStatus530Ok() (*int64, bool) {
+	if o == nil || o.Status530 == nil {
+		return nil, false
+	}
+	return o.Status530, true
+}
+
+// HasStatus530 returns a boolean if a field has been set.
+func (o *OriginInspectorMeasurements) HasStatus530() bool {
+	if o != nil && o.Status530 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus530 gets a reference to the given int64 and assigns it to the Status530 field.
+func (o *OriginInspectorMeasurements) SetStatus530(v int64) {
+	o.Status530 = &v
 }
 
 // GetLatency0To1ms returns the Latency0To1ms field value if set, zero value otherwise.
@@ -2392,6 +2432,38 @@ func (o *OriginInspectorMeasurements) SetWafStatus505(v int64) {
 	o.WafStatus505 = &v
 }
 
+// GetWafStatus530 returns the WafStatus530 field value if set, zero value otherwise.
+func (o *OriginInspectorMeasurements) GetWafStatus530() int64 {
+	if o == nil || o.WafStatus530 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.WafStatus530
+}
+
+// GetWafStatus530Ok returns a tuple with the WafStatus530 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OriginInspectorMeasurements) GetWafStatus530Ok() (*int64, bool) {
+	if o == nil || o.WafStatus530 == nil {
+		return nil, false
+	}
+	return o.WafStatus530, true
+}
+
+// HasWafStatus530 returns a boolean if a field has been set.
+func (o *OriginInspectorMeasurements) HasWafStatus530() bool {
+	if o != nil && o.WafStatus530 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetWafStatus530 gets a reference to the given int64 and assigns it to the WafStatus530 field.
+func (o *OriginInspectorMeasurements) SetWafStatus530(v int64) {
+	o.WafStatus530 = &v
+}
+
 // GetWafLatency0To1ms returns the WafLatency0To1ms field value if set, zero value otherwise.
 func (o *OriginInspectorMeasurements) GetWafLatency0To1ms() int64 {
 	if o == nil || o.WafLatency0To1ms == nil {
@@ -3606,6 +3678,38 @@ func (o *OriginInspectorMeasurements) HasComputeStatus505() bool {
 // SetComputeStatus505 gets a reference to the given int64 and assigns it to the ComputeStatus505 field.
 func (o *OriginInspectorMeasurements) SetComputeStatus505(v int64) {
 	o.ComputeStatus505 = &v
+}
+
+// GetComputeStatus530 returns the ComputeStatus530 field value if set, zero value otherwise.
+func (o *OriginInspectorMeasurements) GetComputeStatus530() int64 {
+	if o == nil || o.ComputeStatus530 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeStatus530
+}
+
+// GetComputeStatus530Ok returns a tuple with the ComputeStatus530 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OriginInspectorMeasurements) GetComputeStatus530Ok() (*int64, bool) {
+	if o == nil || o.ComputeStatus530 == nil {
+		return nil, false
+	}
+	return o.ComputeStatus530, true
+}
+
+// HasComputeStatus530 returns a boolean if a field has been set.
+func (o *OriginInspectorMeasurements) HasComputeStatus530() bool {
+	if o != nil && o.ComputeStatus530 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeStatus530 gets a reference to the given int64 and assigns it to the ComputeStatus530 field.
+func (o *OriginInspectorMeasurements) SetComputeStatus530(v int64) {
+	o.ComputeStatus530 = &v
 }
 
 // GetComputeLatency0To1ms returns the ComputeLatency0To1ms field value if set, zero value otherwise.
@@ -4824,6 +4928,38 @@ func (o *OriginInspectorMeasurements) SetAllStatus505(v int64) {
 	o.AllStatus505 = &v
 }
 
+// GetAllStatus530 returns the AllStatus530 field value if set, zero value otherwise.
+func (o *OriginInspectorMeasurements) GetAllStatus530() int64 {
+	if o == nil || o.AllStatus530 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.AllStatus530
+}
+
+// GetAllStatus530Ok returns a tuple with the AllStatus530 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OriginInspectorMeasurements) GetAllStatus530Ok() (*int64, bool) {
+	if o == nil || o.AllStatus530 == nil {
+		return nil, false
+	}
+	return o.AllStatus530, true
+}
+
+// HasAllStatus530 returns a boolean if a field has been set.
+func (o *OriginInspectorMeasurements) HasAllStatus530() bool {
+	if o != nil && o.AllStatus530 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllStatus530 gets a reference to the given int64 and assigns it to the AllStatus530 field.
+func (o *OriginInspectorMeasurements) SetAllStatus530(v int64) {
+	o.AllStatus530 = &v
+}
+
 // GetAllLatency0To1ms returns the AllLatency0To1ms field value if set, zero value otherwise.
 func (o *OriginInspectorMeasurements) GetAllLatency0To1ms() int64 {
 	if o == nil || o.AllLatency0To1ms == nil {
@@ -5290,6 +5426,9 @@ func (o OriginInspectorMeasurements) MarshalJSON() ([]byte, error) {
 	if o.Status505 != nil {
 		toSerialize["status_505"] = o.Status505
 	}
+	if o.Status530 != nil {
+		toSerialize["status_530"] = o.Status530
+	}
 	if o.Latency0To1ms != nil {
 		toSerialize["latency_0_to_1ms"] = o.Latency0To1ms
 	}
@@ -5403,6 +5542,9 @@ func (o OriginInspectorMeasurements) MarshalJSON() ([]byte, error) {
 	}
 	if o.WafStatus505 != nil {
 		toSerialize["waf_status_505"] = o.WafStatus505
+	}
+	if o.WafStatus530 != nil {
+		toSerialize["waf_status_530"] = o.WafStatus530
 	}
 	if o.WafLatency0To1ms != nil {
 		toSerialize["waf_latency_0_to_1ms"] = o.WafLatency0To1ms
@@ -5518,6 +5660,9 @@ func (o OriginInspectorMeasurements) MarshalJSON() ([]byte, error) {
 	if o.ComputeStatus505 != nil {
 		toSerialize["compute_status_505"] = o.ComputeStatus505
 	}
+	if o.ComputeStatus530 != nil {
+		toSerialize["compute_status_530"] = o.ComputeStatus530
+	}
 	if o.ComputeLatency0To1ms != nil {
 		toSerialize["compute_latency_0_to_1ms"] = o.ComputeLatency0To1ms
 	}
@@ -5632,6 +5777,9 @@ func (o OriginInspectorMeasurements) MarshalJSON() ([]byte, error) {
 	if o.AllStatus505 != nil {
 		toSerialize["all_status_505"] = o.AllStatus505
 	}
+	if o.AllStatus530 != nil {
+		toSerialize["all_status_530"] = o.AllStatus530
+	}
 	if o.AllLatency0To1ms != nil {
 		toSerialize["all_latency_0_to_1ms"] = o.AllLatency0To1ms
 	}
@@ -5714,6 +5862,7 @@ func (o *OriginInspectorMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "status_503")
 		delete(additionalProperties, "status_504")
 		delete(additionalProperties, "status_505")
+		delete(additionalProperties, "status_530")
 		delete(additionalProperties, "latency_0_to_1ms")
 		delete(additionalProperties, "latency_1_to_5ms")
 		delete(additionalProperties, "latency_5_to_10ms")
@@ -5752,6 +5901,7 @@ func (o *OriginInspectorMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "waf_status_503")
 		delete(additionalProperties, "waf_status_504")
 		delete(additionalProperties, "waf_status_505")
+		delete(additionalProperties, "waf_status_530")
 		delete(additionalProperties, "waf_latency_0_to_1ms")
 		delete(additionalProperties, "waf_latency_1_to_5ms")
 		delete(additionalProperties, "waf_latency_5_to_10ms")
@@ -5790,6 +5940,7 @@ func (o *OriginInspectorMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "compute_status_503")
 		delete(additionalProperties, "compute_status_504")
 		delete(additionalProperties, "compute_status_505")
+		delete(additionalProperties, "compute_status_530")
 		delete(additionalProperties, "compute_latency_0_to_1ms")
 		delete(additionalProperties, "compute_latency_1_to_5ms")
 		delete(additionalProperties, "compute_latency_5_to_10ms")
@@ -5828,6 +5979,7 @@ func (o *OriginInspectorMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "all_status_503")
 		delete(additionalProperties, "all_status_504")
 		delete(additionalProperties, "all_status_505")
+		delete(additionalProperties, "all_status_530")
 		delete(additionalProperties, "all_latency_0_to_1ms")
 		delete(additionalProperties, "all_latency_1_to_5ms")
 		delete(additionalProperties, "all_latency_5_to_10ms")

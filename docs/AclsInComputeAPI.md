@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ACLsInComputeAPI.ComputeACLListAcls`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ComputeACLListAcls`: []ComputeACLCreateAclsResponse
+    // response from `ComputeACLListAcls`: ComputeACLList
     fmt.Fprintf(os.Stdout, "Response from `ACLsInComputeAPI.ComputeACLListAcls`: %v\n", resp)
 }
 ```
@@ -257,7 +257,7 @@ Other parameters are passed through a pointer to a apiComputeACLListAclsRequest 
 
 ### Return type
 
-[**[]ComputeACLCreateAclsResponse**](ComputeACLCreateAclsResponse.md)
+[**ComputeACLList**](ComputeACLList.md)
 
 ### Authorization
 

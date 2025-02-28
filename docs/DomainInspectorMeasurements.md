@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **Status503** | Pointer to **int64** | Number of responses delivered with status code 503 (Service Unavailable). | [optional] 
 **Status504** | Pointer to **int64** | Number of responses delivered with status code 504 (Gateway Timeout). | [optional] 
 **Status505** | Pointer to **int64** | Number of responses delivered with status code 505 (HTTP Version Not Supported). | [optional] 
+**Status530** | Pointer to **int64** | Number of responses delivered with status code 530. | [optional] 
 **Requests** | Pointer to **int64** | Number of requests processed. | [optional] 
 **RespHeaderBytes** | Pointer to **int64** | Total header bytes delivered. | [optional] 
 **RespBodyBytes** | Pointer to **int64** | Total body bytes delivered. | [optional] 
@@ -61,6 +62,7 @@ Name | Type | Description | Notes
 **OriginStatus503** | Pointer to **int64** | Number of responses received from origin with status code 503 (Service Unavailable). | [optional] 
 **OriginStatus504** | Pointer to **int64** | Number of responses received from origin with status code 504 (Gateway Timeout). | [optional] 
 **OriginStatus505** | Pointer to **int64** | Number of responses received from origin with status code 505 (HTTP Version Not Supported). | [optional] 
+**OriginStatus530** | Pointer to **int64** | Number of responses received from origin with status code 530. | [optional] 
 **OriginStatus1xx** | Pointer to **int64** | Number of \&quot;Informational\&quot; category status codes received from origin. | [optional] 
 **OriginStatus2xx** | Pointer to **int64** | Number of \&quot;Success\&quot; status codes received from origin. | [optional] 
 **OriginStatus3xx** | Pointer to **int64** | Number of \&quot;Redirection\&quot; codes received from origin. | [optional] 
@@ -735,6 +737,31 @@ SetStatus505 sets Status505 field to given value.
 `func (o *DomainInspectorMeasurements) HasStatus505() bool`
 
 HasStatus505 returns a boolean if a field has been set.
+
+### GetStatus530
+
+`func (o *DomainInspectorMeasurements) GetStatus530() int64`
+
+GetStatus530 returns the Status530 field if non-nil, zero value otherwise.
+
+### GetStatus530Ok
+
+`func (o *DomainInspectorMeasurements) GetStatus530Ok() (*int64, bool)`
+
+GetStatus530Ok returns a tuple with the Status530 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus530
+
+`func (o *DomainInspectorMeasurements) SetStatus530(v int64)`
+
+SetStatus530 sets Status530 field to given value.
+
+### HasStatus530
+
+`func (o *DomainInspectorMeasurements) HasStatus530() bool`
+
+HasStatus530 returns a boolean if a field has been set.
 
 ### GetRequests
 
@@ -1510,6 +1537,31 @@ SetOriginStatus505 sets OriginStatus505 field to given value.
 `func (o *DomainInspectorMeasurements) HasOriginStatus505() bool`
 
 HasOriginStatus505 returns a boolean if a field has been set.
+
+### GetOriginStatus530
+
+`func (o *DomainInspectorMeasurements) GetOriginStatus530() int64`
+
+GetOriginStatus530 returns the OriginStatus530 field if non-nil, zero value otherwise.
+
+### GetOriginStatus530Ok
+
+`func (o *DomainInspectorMeasurements) GetOriginStatus530Ok() (*int64, bool)`
+
+GetOriginStatus530Ok returns a tuple with the OriginStatus530 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOriginStatus530
+
+`func (o *DomainInspectorMeasurements) SetOriginStatus530(v int64)`
+
+SetOriginStatus530 sets OriginStatus530 field to given value.
+
+### HasOriginStatus530
+
+`func (o *DomainInspectorMeasurements) HasOriginStatus530() bool`
+
+HasOriginStatus530 returns a boolean if a field has been set.
 
 ### GetOriginStatus1xx
 

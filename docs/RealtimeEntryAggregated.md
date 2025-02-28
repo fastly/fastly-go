@@ -89,6 +89,7 @@ Name | Type | Description | Notes
 **Status503** | Pointer to **int64** | Number of responses sent with status code 503 (Service Unavailable). | [optional] 
 **Status504** | Pointer to **int64** | Number of responses sent with status code 504 (Gateway Timeout). | [optional] 
 **Status505** | Pointer to **int64** | Number of responses sent with status code 505 (HTTP Version Not Supported). | [optional] 
+**Status530** | Pointer to **int64** | Number of responses sent with status code 530. | [optional] 
 **Uncacheable** | Pointer to **int64** | Number of requests that were designated uncachable. | [optional] 
 **PassTime** | Pointer to **float32** | Total amount of time spent processing cache passes (in seconds). | [optional] 
 **TLS** | Pointer to **int64** | Number of requests that were received over TLS. | [optional] 
@@ -247,9 +248,23 @@ Name | Type | Description | Notes
 **AllStatus5xx** | Pointer to **int64** | Number of \&quot;Server Error\&quot; codes delivered for all sources. | [optional] 
 **OriginOffload** | Pointer to **float32** | Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`). | [optional] 
 **RequestDeniedGetHeadBody** | Pointer to **int64** | Number of requests where Fastly responded with 400 due to the request being a GET or HEAD request containing a body. | [optional] 
-**ServiceDdosRequestsDetected** | Pointer to **int64** | Number of requests classified as a DDoS attack against a customer origin or service. | [optional] 
-**ServiceDdosRequestsMitigated** | Pointer to **int64** | Number of requests classified as a DDoS attack against a customer origin or service that were mitigated by the Fastly platform. | [optional] 
-**ServiceDdosRequestsAllowed** | Pointer to **int64** | Number of requests analyzed for DDoS attacks against a customer origin or service, but with no DDoS detected. | [optional] 
+**DdosProtectionRequestsDetectCount** | Pointer to **int64** | Number of requests classified as a DDoS attack against a customer origin or service. | [optional] 
+**DdosProtectionRequestsMitigateCount** | Pointer to **int64** | Number of requests classified as a DDoS attack against a customer origin or service that were mitigated by the Fastly platform. | [optional] 
+**DdosProtectionRequestsAllowCount** | Pointer to **int64** | Number of requests analyzed for DDoS attacks against a customer origin or service, but with no DDoS detected. | [optional] 
+**ObjectStorageClassAOperationsCount** | Pointer to **int64** | A count of the number of Class A Object Storage operations. | [optional] 
+**ObjectStorageClassBOperationsCount** | Pointer to **int64** | A count of the number of Class B Object Storage operations. | [optional] 
+**AiaRequests** | Pointer to **int64** | Number of requests received by AI Accelerator. | [optional] 
+**AiaStatus1xx** | Pointer to **int64** | Number of \&quot;Informational\&quot; category status codes received from AI provider. | [optional] 
+**AiaStatus2xx** | Pointer to **int64** | Number of \&quot;Success\&quot; status codes received from AI provider. | [optional] 
+**AiaStatus3xx** | Pointer to **int64** | Number of \&quot;Redirection\&quot; received from AI provider. | [optional] 
+**AiaStatus4xx** | Pointer to **int64** | Number of \&quot;Client Error\&quot; received from AI provider. | [optional] 
+**AiaStatus5xx** | Pointer to **int64** | Number of \&quot;Server Error\&quot; received from AI provider. | [optional] 
+**AiaResponseUsageTokens** | Pointer to **int64** | The usage tokens associated with the response returned from the AI Accelerator cache. | [optional] 
+**AiaOriginUsageTokens** | Pointer to **int64** | The number of usage tokens reported by the request to the origin from AI Accelerator. | [optional] 
+**AiaEstimatedTimeSavedMs** | Pointer to **int64** | The estimated amount of time saved by responses served from the AI Accelerator semantic cache. | [optional] 
+**RequestCollapseUsableCount** | Pointer to **int64** | Number of requests that were collapsed and satisfied by a usable cache object. | [optional] 
+**RequestCollapseUnusableCount** | Pointer to **int64** | Number of requests that were collapsed and unable to be satisfied by the resulting cache object. | [optional] 
+**ComputeCacheOperationsCount** | Pointer to **int64** | Number of cache operations executed by the Compute platform. | [optional] 
 
 ## Methods
 
@@ -2394,6 +2409,31 @@ SetStatus505 sets Status505 field to given value.
 `func (o *RealtimeEntryAggregated) HasStatus505() bool`
 
 HasStatus505 returns a boolean if a field has been set.
+
+### GetStatus530
+
+`func (o *RealtimeEntryAggregated) GetStatus530() int64`
+
+GetStatus530 returns the Status530 field if non-nil, zero value otherwise.
+
+### GetStatus530Ok
+
+`func (o *RealtimeEntryAggregated) GetStatus530Ok() (*int64, bool)`
+
+GetStatus530Ok returns a tuple with the Status530 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus530
+
+`func (o *RealtimeEntryAggregated) SetStatus530(v int64)`
+
+SetStatus530 sets Status530 field to given value.
+
+### HasStatus530
+
+`func (o *RealtimeEntryAggregated) HasStatus530() bool`
+
+HasStatus530 returns a boolean if a field has been set.
 
 ### GetUncacheable
 
@@ -6345,80 +6385,430 @@ SetRequestDeniedGetHeadBody sets RequestDeniedGetHeadBody field to given value.
 
 HasRequestDeniedGetHeadBody returns a boolean if a field has been set.
 
-### GetServiceDdosRequestsDetected
+### GetDdosProtectionRequestsDetectCount
 
-`func (o *RealtimeEntryAggregated) GetServiceDdosRequestsDetected() int64`
+`func (o *RealtimeEntryAggregated) GetDdosProtectionRequestsDetectCount() int64`
 
-GetServiceDdosRequestsDetected returns the ServiceDdosRequestsDetected field if non-nil, zero value otherwise.
+GetDdosProtectionRequestsDetectCount returns the DdosProtectionRequestsDetectCount field if non-nil, zero value otherwise.
 
-### GetServiceDdosRequestsDetectedOk
+### GetDdosProtectionRequestsDetectCountOk
 
-`func (o *RealtimeEntryAggregated) GetServiceDdosRequestsDetectedOk() (*int64, bool)`
+`func (o *RealtimeEntryAggregated) GetDdosProtectionRequestsDetectCountOk() (*int64, bool)`
 
-GetServiceDdosRequestsDetectedOk returns a tuple with the ServiceDdosRequestsDetected field if it's non-nil, zero value otherwise
+GetDdosProtectionRequestsDetectCountOk returns a tuple with the DdosProtectionRequestsDetectCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceDdosRequestsDetected
+### SetDdosProtectionRequestsDetectCount
 
-`func (o *RealtimeEntryAggregated) SetServiceDdosRequestsDetected(v int64)`
+`func (o *RealtimeEntryAggregated) SetDdosProtectionRequestsDetectCount(v int64)`
 
-SetServiceDdosRequestsDetected sets ServiceDdosRequestsDetected field to given value.
+SetDdosProtectionRequestsDetectCount sets DdosProtectionRequestsDetectCount field to given value.
 
-### HasServiceDdosRequestsDetected
+### HasDdosProtectionRequestsDetectCount
 
-`func (o *RealtimeEntryAggregated) HasServiceDdosRequestsDetected() bool`
+`func (o *RealtimeEntryAggregated) HasDdosProtectionRequestsDetectCount() bool`
 
-HasServiceDdosRequestsDetected returns a boolean if a field has been set.
+HasDdosProtectionRequestsDetectCount returns a boolean if a field has been set.
 
-### GetServiceDdosRequestsMitigated
+### GetDdosProtectionRequestsMitigateCount
 
-`func (o *RealtimeEntryAggregated) GetServiceDdosRequestsMitigated() int64`
+`func (o *RealtimeEntryAggregated) GetDdosProtectionRequestsMitigateCount() int64`
 
-GetServiceDdosRequestsMitigated returns the ServiceDdosRequestsMitigated field if non-nil, zero value otherwise.
+GetDdosProtectionRequestsMitigateCount returns the DdosProtectionRequestsMitigateCount field if non-nil, zero value otherwise.
 
-### GetServiceDdosRequestsMitigatedOk
+### GetDdosProtectionRequestsMitigateCountOk
 
-`func (o *RealtimeEntryAggregated) GetServiceDdosRequestsMitigatedOk() (*int64, bool)`
+`func (o *RealtimeEntryAggregated) GetDdosProtectionRequestsMitigateCountOk() (*int64, bool)`
 
-GetServiceDdosRequestsMitigatedOk returns a tuple with the ServiceDdosRequestsMitigated field if it's non-nil, zero value otherwise
+GetDdosProtectionRequestsMitigateCountOk returns a tuple with the DdosProtectionRequestsMitigateCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceDdosRequestsMitigated
+### SetDdosProtectionRequestsMitigateCount
 
-`func (o *RealtimeEntryAggregated) SetServiceDdosRequestsMitigated(v int64)`
+`func (o *RealtimeEntryAggregated) SetDdosProtectionRequestsMitigateCount(v int64)`
 
-SetServiceDdosRequestsMitigated sets ServiceDdosRequestsMitigated field to given value.
+SetDdosProtectionRequestsMitigateCount sets DdosProtectionRequestsMitigateCount field to given value.
 
-### HasServiceDdosRequestsMitigated
+### HasDdosProtectionRequestsMitigateCount
 
-`func (o *RealtimeEntryAggregated) HasServiceDdosRequestsMitigated() bool`
+`func (o *RealtimeEntryAggregated) HasDdosProtectionRequestsMitigateCount() bool`
 
-HasServiceDdosRequestsMitigated returns a boolean if a field has been set.
+HasDdosProtectionRequestsMitigateCount returns a boolean if a field has been set.
 
-### GetServiceDdosRequestsAllowed
+### GetDdosProtectionRequestsAllowCount
 
-`func (o *RealtimeEntryAggregated) GetServiceDdosRequestsAllowed() int64`
+`func (o *RealtimeEntryAggregated) GetDdosProtectionRequestsAllowCount() int64`
 
-GetServiceDdosRequestsAllowed returns the ServiceDdosRequestsAllowed field if non-nil, zero value otherwise.
+GetDdosProtectionRequestsAllowCount returns the DdosProtectionRequestsAllowCount field if non-nil, zero value otherwise.
 
-### GetServiceDdosRequestsAllowedOk
+### GetDdosProtectionRequestsAllowCountOk
 
-`func (o *RealtimeEntryAggregated) GetServiceDdosRequestsAllowedOk() (*int64, bool)`
+`func (o *RealtimeEntryAggregated) GetDdosProtectionRequestsAllowCountOk() (*int64, bool)`
 
-GetServiceDdosRequestsAllowedOk returns a tuple with the ServiceDdosRequestsAllowed field if it's non-nil, zero value otherwise
+GetDdosProtectionRequestsAllowCountOk returns a tuple with the DdosProtectionRequestsAllowCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceDdosRequestsAllowed
+### SetDdosProtectionRequestsAllowCount
 
-`func (o *RealtimeEntryAggregated) SetServiceDdosRequestsAllowed(v int64)`
+`func (o *RealtimeEntryAggregated) SetDdosProtectionRequestsAllowCount(v int64)`
 
-SetServiceDdosRequestsAllowed sets ServiceDdosRequestsAllowed field to given value.
+SetDdosProtectionRequestsAllowCount sets DdosProtectionRequestsAllowCount field to given value.
 
-### HasServiceDdosRequestsAllowed
+### HasDdosProtectionRequestsAllowCount
 
-`func (o *RealtimeEntryAggregated) HasServiceDdosRequestsAllowed() bool`
+`func (o *RealtimeEntryAggregated) HasDdosProtectionRequestsAllowCount() bool`
 
-HasServiceDdosRequestsAllowed returns a boolean if a field has been set.
+HasDdosProtectionRequestsAllowCount returns a boolean if a field has been set.
+
+### GetObjectStorageClassAOperationsCount
+
+`func (o *RealtimeEntryAggregated) GetObjectStorageClassAOperationsCount() int64`
+
+GetObjectStorageClassAOperationsCount returns the ObjectStorageClassAOperationsCount field if non-nil, zero value otherwise.
+
+### GetObjectStorageClassAOperationsCountOk
+
+`func (o *RealtimeEntryAggregated) GetObjectStorageClassAOperationsCountOk() (*int64, bool)`
+
+GetObjectStorageClassAOperationsCountOk returns a tuple with the ObjectStorageClassAOperationsCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObjectStorageClassAOperationsCount
+
+`func (o *RealtimeEntryAggregated) SetObjectStorageClassAOperationsCount(v int64)`
+
+SetObjectStorageClassAOperationsCount sets ObjectStorageClassAOperationsCount field to given value.
+
+### HasObjectStorageClassAOperationsCount
+
+`func (o *RealtimeEntryAggregated) HasObjectStorageClassAOperationsCount() bool`
+
+HasObjectStorageClassAOperationsCount returns a boolean if a field has been set.
+
+### GetObjectStorageClassBOperationsCount
+
+`func (o *RealtimeEntryAggregated) GetObjectStorageClassBOperationsCount() int64`
+
+GetObjectStorageClassBOperationsCount returns the ObjectStorageClassBOperationsCount field if non-nil, zero value otherwise.
+
+### GetObjectStorageClassBOperationsCountOk
+
+`func (o *RealtimeEntryAggregated) GetObjectStorageClassBOperationsCountOk() (*int64, bool)`
+
+GetObjectStorageClassBOperationsCountOk returns a tuple with the ObjectStorageClassBOperationsCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObjectStorageClassBOperationsCount
+
+`func (o *RealtimeEntryAggregated) SetObjectStorageClassBOperationsCount(v int64)`
+
+SetObjectStorageClassBOperationsCount sets ObjectStorageClassBOperationsCount field to given value.
+
+### HasObjectStorageClassBOperationsCount
+
+`func (o *RealtimeEntryAggregated) HasObjectStorageClassBOperationsCount() bool`
+
+HasObjectStorageClassBOperationsCount returns a boolean if a field has been set.
+
+### GetAiaRequests
+
+`func (o *RealtimeEntryAggregated) GetAiaRequests() int64`
+
+GetAiaRequests returns the AiaRequests field if non-nil, zero value otherwise.
+
+### GetAiaRequestsOk
+
+`func (o *RealtimeEntryAggregated) GetAiaRequestsOk() (*int64, bool)`
+
+GetAiaRequestsOk returns a tuple with the AiaRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiaRequests
+
+`func (o *RealtimeEntryAggregated) SetAiaRequests(v int64)`
+
+SetAiaRequests sets AiaRequests field to given value.
+
+### HasAiaRequests
+
+`func (o *RealtimeEntryAggregated) HasAiaRequests() bool`
+
+HasAiaRequests returns a boolean if a field has been set.
+
+### GetAiaStatus1xx
+
+`func (o *RealtimeEntryAggregated) GetAiaStatus1xx() int64`
+
+GetAiaStatus1xx returns the AiaStatus1xx field if non-nil, zero value otherwise.
+
+### GetAiaStatus1xxOk
+
+`func (o *RealtimeEntryAggregated) GetAiaStatus1xxOk() (*int64, bool)`
+
+GetAiaStatus1xxOk returns a tuple with the AiaStatus1xx field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiaStatus1xx
+
+`func (o *RealtimeEntryAggregated) SetAiaStatus1xx(v int64)`
+
+SetAiaStatus1xx sets AiaStatus1xx field to given value.
+
+### HasAiaStatus1xx
+
+`func (o *RealtimeEntryAggregated) HasAiaStatus1xx() bool`
+
+HasAiaStatus1xx returns a boolean if a field has been set.
+
+### GetAiaStatus2xx
+
+`func (o *RealtimeEntryAggregated) GetAiaStatus2xx() int64`
+
+GetAiaStatus2xx returns the AiaStatus2xx field if non-nil, zero value otherwise.
+
+### GetAiaStatus2xxOk
+
+`func (o *RealtimeEntryAggregated) GetAiaStatus2xxOk() (*int64, bool)`
+
+GetAiaStatus2xxOk returns a tuple with the AiaStatus2xx field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiaStatus2xx
+
+`func (o *RealtimeEntryAggregated) SetAiaStatus2xx(v int64)`
+
+SetAiaStatus2xx sets AiaStatus2xx field to given value.
+
+### HasAiaStatus2xx
+
+`func (o *RealtimeEntryAggregated) HasAiaStatus2xx() bool`
+
+HasAiaStatus2xx returns a boolean if a field has been set.
+
+### GetAiaStatus3xx
+
+`func (o *RealtimeEntryAggregated) GetAiaStatus3xx() int64`
+
+GetAiaStatus3xx returns the AiaStatus3xx field if non-nil, zero value otherwise.
+
+### GetAiaStatus3xxOk
+
+`func (o *RealtimeEntryAggregated) GetAiaStatus3xxOk() (*int64, bool)`
+
+GetAiaStatus3xxOk returns a tuple with the AiaStatus3xx field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiaStatus3xx
+
+`func (o *RealtimeEntryAggregated) SetAiaStatus3xx(v int64)`
+
+SetAiaStatus3xx sets AiaStatus3xx field to given value.
+
+### HasAiaStatus3xx
+
+`func (o *RealtimeEntryAggregated) HasAiaStatus3xx() bool`
+
+HasAiaStatus3xx returns a boolean if a field has been set.
+
+### GetAiaStatus4xx
+
+`func (o *RealtimeEntryAggregated) GetAiaStatus4xx() int64`
+
+GetAiaStatus4xx returns the AiaStatus4xx field if non-nil, zero value otherwise.
+
+### GetAiaStatus4xxOk
+
+`func (o *RealtimeEntryAggregated) GetAiaStatus4xxOk() (*int64, bool)`
+
+GetAiaStatus4xxOk returns a tuple with the AiaStatus4xx field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiaStatus4xx
+
+`func (o *RealtimeEntryAggregated) SetAiaStatus4xx(v int64)`
+
+SetAiaStatus4xx sets AiaStatus4xx field to given value.
+
+### HasAiaStatus4xx
+
+`func (o *RealtimeEntryAggregated) HasAiaStatus4xx() bool`
+
+HasAiaStatus4xx returns a boolean if a field has been set.
+
+### GetAiaStatus5xx
+
+`func (o *RealtimeEntryAggregated) GetAiaStatus5xx() int64`
+
+GetAiaStatus5xx returns the AiaStatus5xx field if non-nil, zero value otherwise.
+
+### GetAiaStatus5xxOk
+
+`func (o *RealtimeEntryAggregated) GetAiaStatus5xxOk() (*int64, bool)`
+
+GetAiaStatus5xxOk returns a tuple with the AiaStatus5xx field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiaStatus5xx
+
+`func (o *RealtimeEntryAggregated) SetAiaStatus5xx(v int64)`
+
+SetAiaStatus5xx sets AiaStatus5xx field to given value.
+
+### HasAiaStatus5xx
+
+`func (o *RealtimeEntryAggregated) HasAiaStatus5xx() bool`
+
+HasAiaStatus5xx returns a boolean if a field has been set.
+
+### GetAiaResponseUsageTokens
+
+`func (o *RealtimeEntryAggregated) GetAiaResponseUsageTokens() int64`
+
+GetAiaResponseUsageTokens returns the AiaResponseUsageTokens field if non-nil, zero value otherwise.
+
+### GetAiaResponseUsageTokensOk
+
+`func (o *RealtimeEntryAggregated) GetAiaResponseUsageTokensOk() (*int64, bool)`
+
+GetAiaResponseUsageTokensOk returns a tuple with the AiaResponseUsageTokens field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiaResponseUsageTokens
+
+`func (o *RealtimeEntryAggregated) SetAiaResponseUsageTokens(v int64)`
+
+SetAiaResponseUsageTokens sets AiaResponseUsageTokens field to given value.
+
+### HasAiaResponseUsageTokens
+
+`func (o *RealtimeEntryAggregated) HasAiaResponseUsageTokens() bool`
+
+HasAiaResponseUsageTokens returns a boolean if a field has been set.
+
+### GetAiaOriginUsageTokens
+
+`func (o *RealtimeEntryAggregated) GetAiaOriginUsageTokens() int64`
+
+GetAiaOriginUsageTokens returns the AiaOriginUsageTokens field if non-nil, zero value otherwise.
+
+### GetAiaOriginUsageTokensOk
+
+`func (o *RealtimeEntryAggregated) GetAiaOriginUsageTokensOk() (*int64, bool)`
+
+GetAiaOriginUsageTokensOk returns a tuple with the AiaOriginUsageTokens field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiaOriginUsageTokens
+
+`func (o *RealtimeEntryAggregated) SetAiaOriginUsageTokens(v int64)`
+
+SetAiaOriginUsageTokens sets AiaOriginUsageTokens field to given value.
+
+### HasAiaOriginUsageTokens
+
+`func (o *RealtimeEntryAggregated) HasAiaOriginUsageTokens() bool`
+
+HasAiaOriginUsageTokens returns a boolean if a field has been set.
+
+### GetAiaEstimatedTimeSavedMs
+
+`func (o *RealtimeEntryAggregated) GetAiaEstimatedTimeSavedMs() int64`
+
+GetAiaEstimatedTimeSavedMs returns the AiaEstimatedTimeSavedMs field if non-nil, zero value otherwise.
+
+### GetAiaEstimatedTimeSavedMsOk
+
+`func (o *RealtimeEntryAggregated) GetAiaEstimatedTimeSavedMsOk() (*int64, bool)`
+
+GetAiaEstimatedTimeSavedMsOk returns a tuple with the AiaEstimatedTimeSavedMs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAiaEstimatedTimeSavedMs
+
+`func (o *RealtimeEntryAggregated) SetAiaEstimatedTimeSavedMs(v int64)`
+
+SetAiaEstimatedTimeSavedMs sets AiaEstimatedTimeSavedMs field to given value.
+
+### HasAiaEstimatedTimeSavedMs
+
+`func (o *RealtimeEntryAggregated) HasAiaEstimatedTimeSavedMs() bool`
+
+HasAiaEstimatedTimeSavedMs returns a boolean if a field has been set.
+
+### GetRequestCollapseUsableCount
+
+`func (o *RealtimeEntryAggregated) GetRequestCollapseUsableCount() int64`
+
+GetRequestCollapseUsableCount returns the RequestCollapseUsableCount field if non-nil, zero value otherwise.
+
+### GetRequestCollapseUsableCountOk
+
+`func (o *RealtimeEntryAggregated) GetRequestCollapseUsableCountOk() (*int64, bool)`
+
+GetRequestCollapseUsableCountOk returns a tuple with the RequestCollapseUsableCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestCollapseUsableCount
+
+`func (o *RealtimeEntryAggregated) SetRequestCollapseUsableCount(v int64)`
+
+SetRequestCollapseUsableCount sets RequestCollapseUsableCount field to given value.
+
+### HasRequestCollapseUsableCount
+
+`func (o *RealtimeEntryAggregated) HasRequestCollapseUsableCount() bool`
+
+HasRequestCollapseUsableCount returns a boolean if a field has been set.
+
+### GetRequestCollapseUnusableCount
+
+`func (o *RealtimeEntryAggregated) GetRequestCollapseUnusableCount() int64`
+
+GetRequestCollapseUnusableCount returns the RequestCollapseUnusableCount field if non-nil, zero value otherwise.
+
+### GetRequestCollapseUnusableCountOk
+
+`func (o *RealtimeEntryAggregated) GetRequestCollapseUnusableCountOk() (*int64, bool)`
+
+GetRequestCollapseUnusableCountOk returns a tuple with the RequestCollapseUnusableCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestCollapseUnusableCount
+
+`func (o *RealtimeEntryAggregated) SetRequestCollapseUnusableCount(v int64)`
+
+SetRequestCollapseUnusableCount sets RequestCollapseUnusableCount field to given value.
+
+### HasRequestCollapseUnusableCount
+
+`func (o *RealtimeEntryAggregated) HasRequestCollapseUnusableCount() bool`
+
+HasRequestCollapseUnusableCount returns a boolean if a field has been set.
+
+### GetComputeCacheOperationsCount
+
+`func (o *RealtimeEntryAggregated) GetComputeCacheOperationsCount() int64`
+
+GetComputeCacheOperationsCount returns the ComputeCacheOperationsCount field if non-nil, zero value otherwise.
+
+### GetComputeCacheOperationsCountOk
+
+`func (o *RealtimeEntryAggregated) GetComputeCacheOperationsCountOk() (*int64, bool)`
+
+GetComputeCacheOperationsCountOk returns a tuple with the ComputeCacheOperationsCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeCacheOperationsCount
+
+`func (o *RealtimeEntryAggregated) SetComputeCacheOperationsCount(v int64)`
+
+SetComputeCacheOperationsCount sets ComputeCacheOperationsCount field to given value.
+
+### HasComputeCacheOperationsCount
+
+`func (o *RealtimeEntryAggregated) HasComputeCacheOperationsCount() bool`
+
+HasComputeCacheOperationsCount returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

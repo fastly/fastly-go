@@ -6,12 +6,12 @@
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateSnippet**](SnippetAPI.md#CreateSnippet) | **POST** `/service/{service_id}/version/{version_id}/snippet` | Create a snippet
-[**DeleteSnippet**](SnippetAPI.md#DeleteSnippet) | **DELETE** `/service/{service_id}/version/{version_id}/snippet/{snippet_name}` | Delete a snippet
-[**GetSnippet**](SnippetAPI.md#GetSnippet) | **GET** `/service/{service_id}/version/{version_id}/snippet/{snippet_name}` | Get a versioned snippet
-[**GetSnippetDynamic**](SnippetAPI.md#GetSnippetDynamic) | **GET** `/service/{service_id}/snippet/{snippet_id}` | Get a dynamic snippet
+[**DeleteSnippet**](SnippetAPI.md#DeleteSnippet) | **DELETE** `/service/{service_id}/version/{version_id}/snippet/{name}` | Delete a snippet
+[**GetSnippet**](SnippetAPI.md#GetSnippet) | **GET** `/service/{service_id}/version/{version_id}/snippet/{name}` | Get a versioned snippet
+[**GetSnippetDynamic**](SnippetAPI.md#GetSnippetDynamic) | **GET** `/service/{service_id}/snippet/{id}` | Get a dynamic snippet
 [**ListSnippets**](SnippetAPI.md#ListSnippets) | **GET** `/service/{service_id}/version/{version_id}/snippet` | List snippets
-[**UpdateSnippet**](SnippetAPI.md#UpdateSnippet) | **PUT** `/service/{service_id}/version/{version_id}/snippet/{snippet_name}` | Update a versioned snippet
-[**UpdateSnippetDynamic**](SnippetAPI.md#UpdateSnippetDynamic) | **PUT** `/service/{service_id}/snippet/{snippet_id}` | Update a dynamic snippet
+[**UpdateSnippet**](SnippetAPI.md#UpdateSnippet) | **PUT** `/service/{service_id}/version/{version_id}/snippet/{name}` | Update a versioned snippet
+[**UpdateSnippetDynamic**](SnippetAPI.md#UpdateSnippetDynamic) | **PUT** `/service/{service_id}/snippet/{id}` | Update a dynamic snippet
 
 
 
@@ -110,12 +110,12 @@ import (
 func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     versionID := int32(56) // int32 | Integer identifying a service version.
-    snippetName := "snippetName_example" // string | The name for the snippet.
+    name := "name_example" // string | The name for the snippet.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SnippetAPI.DeleteSnippet(ctx, serviceID, versionID, snippetName).Execute()
+    resp, r, err := apiClient.SnippetAPI.DeleteSnippet(ctx, serviceID, versionID, name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SnippetAPI.DeleteSnippet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **serviceID** | **string** | Alphanumeric string identifying the service. | 
 **versionID** | **int32** | Integer identifying a service version. | 
-**snippetName** | **string** | The name for the snippet. | 
+**name** | **string** | The name for the snippet. | 
 
 ### Other Parameters
 
@@ -181,12 +181,12 @@ import (
 func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     versionID := int32(56) // int32 | Integer identifying a service version.
-    snippetName := "snippetName_example" // string | The name for the snippet.
+    name := "name_example" // string | The name for the snippet.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SnippetAPI.GetSnippet(ctx, serviceID, versionID, snippetName).Execute()
+    resp, r, err := apiClient.SnippetAPI.GetSnippet(ctx, serviceID, versionID, name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SnippetAPI.GetSnippet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **serviceID** | **string** | Alphanumeric string identifying the service. | 
 **versionID** | **int32** | Integer identifying a service version. | 
-**snippetName** | **string** | The name for the snippet. | 
+**name** | **string** | The name for the snippet. | 
 
 ### Other Parameters
 
@@ -251,12 +251,12 @@ import (
 
 func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    snippetID := "snippetId_example" // string | Alphanumeric string identifying a VCL Snippet.
+    id := "id_example" // string | Alphanumeric string identifying a VCL Snippet.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SnippetAPI.GetSnippetDynamic(ctx, serviceID, snippetID).Execute()
+    resp, r, err := apiClient.SnippetAPI.GetSnippetDynamic(ctx, serviceID, id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SnippetAPI.GetSnippetDynamic`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **serviceID** | **string** | Alphanumeric string identifying the service. | 
-**snippetID** | **string** | Alphanumeric string identifying a VCL Snippet. | 
+**id** | **string** | Alphanumeric string identifying a VCL Snippet. | 
 
 ### Other Parameters
 
@@ -390,12 +390,12 @@ import (
 func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     versionID := int32(56) // int32 | Integer identifying a service version.
-    snippetName := "snippetName_example" // string | The name for the snippet.
+    name := "name_example" // string | The name for the snippet.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SnippetAPI.UpdateSnippet(ctx, serviceID, versionID, snippetName).Execute()
+    resp, r, err := apiClient.SnippetAPI.UpdateSnippet(ctx, serviceID, versionID, name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SnippetAPI.UpdateSnippet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **serviceID** | **string** | Alphanumeric string identifying the service. | 
 **versionID** | **int32** | Integer identifying a service version. | 
-**snippetName** | **string** | The name for the snippet. | 
+**name** | **string** | The name for the snippet. | 
 
 ### Other Parameters
 
@@ -460,7 +460,7 @@ import (
 
 func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    snippetID := "snippetId_example" // string | Alphanumeric string identifying a VCL Snippet.
+    id := "id_example" // string | Alphanumeric string identifying a VCL Snippet.
     name := "name_example" // string | The name for the snippet. (optional)
     resourceType := "resourceType_example" // string | The location in generated VCL where the snippet should be placed. (optional)
     content := "content_example" // string | The VCL code that specifies exactly what the snippet does. (optional)
@@ -470,7 +470,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SnippetAPI.UpdateSnippetDynamic(ctx, serviceID, snippetID).Name(name).ResourceType(resourceType).Content(content).Priority(priority).Dynamic(dynamic).Execute()
+    resp, r, err := apiClient.SnippetAPI.UpdateSnippetDynamic(ctx, serviceID, id).Name(name).ResourceType(resourceType).Content(content).Priority(priority).Dynamic(dynamic).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SnippetAPI.UpdateSnippetDynamic`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **serviceID** | **string** | Alphanumeric string identifying the service. | 
-**snippetID** | **string** | Alphanumeric string identifying a VCL Snippet. | 
+**id** | **string** | Alphanumeric string identifying a VCL Snippet. | 
 
 ### Other Parameters
 

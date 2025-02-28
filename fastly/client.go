@@ -119,8 +119,6 @@ type APIClient struct {
 
 	DomainOwnershipsAPI DomainOwnershipsAPI
 
-	EnabledProductsAPI EnabledProductsAPI
-
 	EventsAPI EventsAPI
 
 	GzipAPI GzipAPI
@@ -150,22 +148,6 @@ type APIClient struct {
 	KvStoreAPI KvStoreAPI
 
 	KvStoreItemAPI KvStoreItemAPI
-
-	LegacyWafConfigurationSetsAPI LegacyWafConfigurationSetsAPI
-
-	LegacyWafFirewallAPI LegacyWafFirewallAPI
-
-	LegacyWafOwaspAPI LegacyWafOwaspAPI
-
-	LegacyWafRuleAPI LegacyWafRuleAPI
-
-	LegacyWafRuleStatusAPI LegacyWafRuleStatusAPI
-
-	LegacyWafRulesetAPI LegacyWafRulesetAPI
-
-	LegacyWafTagAPI LegacyWafTagAPI
-
-	LegacyWafUpdateStatusAPI LegacyWafUpdateStatusAPI
 
 	LoggingAzureblobAPI LoggingAzureblobAPI
 
@@ -238,6 +220,30 @@ type APIClient struct {
 	PoolAPI PoolAPI
 
 	PopAPI PopAPI
+
+	ProductAiAcceleratorAPI ProductAiAcceleratorAPI
+
+	ProductBotManagementAPI ProductBotManagementAPI
+
+	ProductBrotliCompressionAPI ProductBrotliCompressionAPI
+
+	ProductDdosProtectionAPI ProductDdosProtectionAPI
+
+	ProductDomainInspectorAPI ProductDomainInspectorAPI
+
+	ProductFanoutAPI ProductFanoutAPI
+
+	ProductImageOptimizerAPI ProductImageOptimizerAPI
+
+	ProductLogExplorerInsightsAPI ProductLogExplorerInsightsAPI
+
+	ProductNgwafAPI ProductNgwafAPI
+
+	ProductObjectStorageAPI ProductObjectStorageAPI
+
+	ProductOriginInspectorAPI ProductOriginInspectorAPI
+
+	ProductWebsocketsAPI ProductWebsocketsAPI
 
 	PublicIPListAPI PublicIPListAPI
 
@@ -363,7 +369,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.DomainInspectorHistoricalAPI = (*DomainInspectorHistoricalAPIService)(&c.common)
 	c.DomainInspectorRealtimeAPI = (*DomainInspectorRealtimeAPIService)(&c.common)
 	c.DomainOwnershipsAPI = (*DomainOwnershipsAPIService)(&c.common)
-	c.EnabledProductsAPI = (*EnabledProductsAPIService)(&c.common)
 	c.EventsAPI = (*EventsAPIService)(&c.common)
 	c.GzipAPI = (*GzipAPIService)(&c.common)
 	c.HeaderAPI = (*HeaderAPIService)(&c.common)
@@ -379,14 +384,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.InvitationsAPI = (*InvitationsAPIService)(&c.common)
 	c.KvStoreAPI = (*KvStoreAPIService)(&c.common)
 	c.KvStoreItemAPI = (*KvStoreItemAPIService)(&c.common)
-	c.LegacyWafConfigurationSetsAPI = (*LegacyWafConfigurationSetsAPIService)(&c.common)
-	c.LegacyWafFirewallAPI = (*LegacyWafFirewallAPIService)(&c.common)
-	c.LegacyWafOwaspAPI = (*LegacyWafOwaspAPIService)(&c.common)
-	c.LegacyWafRuleAPI = (*LegacyWafRuleAPIService)(&c.common)
-	c.LegacyWafRuleStatusAPI = (*LegacyWafRuleStatusAPIService)(&c.common)
-	c.LegacyWafRulesetAPI = (*LegacyWafRulesetAPIService)(&c.common)
-	c.LegacyWafTagAPI = (*LegacyWafTagAPIService)(&c.common)
-	c.LegacyWafUpdateStatusAPI = (*LegacyWafUpdateStatusAPIService)(&c.common)
 	c.LoggingAzureblobAPI = (*LoggingAzureblobAPIService)(&c.common)
 	c.LoggingBigqueryAPI = (*LoggingBigqueryAPIService)(&c.common)
 	c.LoggingCloudfilesAPI = (*LoggingCloudfilesAPIService)(&c.common)
@@ -423,6 +420,18 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.PackageAPI = (*PackageAPIService)(&c.common)
 	c.PoolAPI = (*PoolAPIService)(&c.common)
 	c.PopAPI = (*PopAPIService)(&c.common)
+	c.ProductAiAcceleratorAPI = (*ProductAiAcceleratorAPIService)(&c.common)
+	c.ProductBotManagementAPI = (*ProductBotManagementAPIService)(&c.common)
+	c.ProductBrotliCompressionAPI = (*ProductBrotliCompressionAPIService)(&c.common)
+	c.ProductDdosProtectionAPI = (*ProductDdosProtectionAPIService)(&c.common)
+	c.ProductDomainInspectorAPI = (*ProductDomainInspectorAPIService)(&c.common)
+	c.ProductFanoutAPI = (*ProductFanoutAPIService)(&c.common)
+	c.ProductImageOptimizerAPI = (*ProductImageOptimizerAPIService)(&c.common)
+	c.ProductLogExplorerInsightsAPI = (*ProductLogExplorerInsightsAPIService)(&c.common)
+	c.ProductNgwafAPI = (*ProductNgwafAPIService)(&c.common)
+	c.ProductObjectStorageAPI = (*ProductObjectStorageAPIService)(&c.common)
+	c.ProductOriginInspectorAPI = (*ProductOriginInspectorAPIService)(&c.common)
+	c.ProductWebsocketsAPI = (*ProductWebsocketsAPIService)(&c.common)
 	c.PublicIPListAPI = (*PublicIPListAPIService)(&c.common)
 	c.PublishAPI = (*PublishAPIService)(&c.common)
 	c.PurgeAPI = (*PurgeAPIService)(&c.common)

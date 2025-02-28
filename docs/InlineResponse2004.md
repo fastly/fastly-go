@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | Pointer to **[]string** |  | [optional] 
-**Meta** | Pointer to [**InlineResponse2004Meta**](InlineResponse2004Meta.md) |  | [optional] 
+**Meta** | Pointer to [**PaginationCursorMeta**](PaginationCursorMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasData returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *InlineResponse2004) GetMeta() InlineResponse2004Meta`
+`func (o *InlineResponse2004) GetMeta() PaginationCursorMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *InlineResponse2004) GetMetaOk() (*InlineResponse2004Meta, bool)`
+`func (o *InlineResponse2004) GetMetaOk() (*PaginationCursorMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *InlineResponse2004) SetMeta(v InlineResponse2004Meta)`
+`func (o *InlineResponse2004) SetMeta(v PaginationCursorMeta)`
 
 SetMeta sets Meta field to given value.
 

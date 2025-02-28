@@ -70,6 +70,8 @@ type Values struct {
 	Status504 *int64 `json:"status_504,omitempty"`
 	// Number of responses delivered with status code 505 (HTTP Version Not Supported).
 	Status505 *int64 `json:"status_505,omitempty"`
+	// Number of responses delivered with status code 530.
+	Status530 *int64 `json:"status_530,omitempty"`
 	// Number of requests processed.
 	Requests *int64 `json:"requests,omitempty"`
 	// Total header bytes delivered.
@@ -132,6 +134,8 @@ type Values struct {
 	OriginStatus504 *int64 `json:"origin_status_504,omitempty"`
 	// Number of responses received from origin with status code 505 (HTTP Version Not Supported).
 	OriginStatus505 *int64 `json:"origin_status_505,omitempty"`
+	// Number of responses received from origin with status code 530.
+	OriginStatus530 *int64 `json:"origin_status_530,omitempty"`
 	// Number of \"Informational\" category status codes received from origin.
 	OriginStatus1xx *int64 `json:"origin_status_1xx,omitempty"`
 	// Number of \"Success\" status codes received from origin.
@@ -994,6 +998,38 @@ func (o *Values) HasStatus505() bool {
 // SetStatus505 gets a reference to the given int64 and assigns it to the Status505 field.
 func (o *Values) SetStatus505(v int64) {
 	o.Status505 = &v
+}
+
+// GetStatus530 returns the Status530 field value if set, zero value otherwise.
+func (o *Values) GetStatus530() int64 {
+	if o == nil || o.Status530 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.Status530
+}
+
+// GetStatus530Ok returns a tuple with the Status530 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Values) GetStatus530Ok() (*int64, bool) {
+	if o == nil || o.Status530 == nil {
+		return nil, false
+	}
+	return o.Status530, true
+}
+
+// HasStatus530 returns a boolean if a field has been set.
+func (o *Values) HasStatus530() bool {
+	if o != nil && o.Status530 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus530 gets a reference to the given int64 and assigns it to the Status530 field.
+func (o *Values) SetStatus530(v int64) {
+	o.Status530 = &v
 }
 
 // GetRequests returns the Requests field value if set, zero value otherwise.
@@ -1988,6 +2024,38 @@ func (o *Values) SetOriginStatus505(v int64) {
 	o.OriginStatus505 = &v
 }
 
+// GetOriginStatus530 returns the OriginStatus530 field value if set, zero value otherwise.
+func (o *Values) GetOriginStatus530() int64 {
+	if o == nil || o.OriginStatus530 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.OriginStatus530
+}
+
+// GetOriginStatus530Ok returns a tuple with the OriginStatus530 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Values) GetOriginStatus530Ok() (*int64, bool) {
+	if o == nil || o.OriginStatus530 == nil {
+		return nil, false
+	}
+	return o.OriginStatus530, true
+}
+
+// HasOriginStatus530 returns a boolean if a field has been set.
+func (o *Values) HasOriginStatus530() bool {
+	if o != nil && o.OriginStatus530 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOriginStatus530 gets a reference to the given int64 and assigns it to the OriginStatus530 field.
+func (o *Values) SetOriginStatus530(v int64) {
+	o.OriginStatus530 = &v
+}
+
 // GetOriginStatus1xx returns the OriginStatus1xx field value if set, zero value otherwise.
 func (o *Values) GetOriginStatus1xx() int64 {
 	if o == nil || o.OriginStatus1xx == nil {
@@ -2230,6 +2298,9 @@ func (o Values) MarshalJSON() ([]byte, error) {
 	if o.Status505 != nil {
 		toSerialize["status_505"] = o.Status505
 	}
+	if o.Status530 != nil {
+		toSerialize["status_530"] = o.Status530
+	}
 	if o.Requests != nil {
 		toSerialize["requests"] = o.Requests
 	}
@@ -2323,6 +2394,9 @@ func (o Values) MarshalJSON() ([]byte, error) {
 	if o.OriginStatus505 != nil {
 		toSerialize["origin_status_505"] = o.OriginStatus505
 	}
+	if o.OriginStatus530 != nil {
+		toSerialize["origin_status_530"] = o.OriginStatus530
+	}
 	if o.OriginStatus1xx != nil {
 		toSerialize["origin_status_1xx"] = o.OriginStatus1xx
 	}
@@ -2384,6 +2458,7 @@ func (o *Values) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "status_503")
 		delete(additionalProperties, "status_504")
 		delete(additionalProperties, "status_505")
+		delete(additionalProperties, "status_530")
 		delete(additionalProperties, "requests")
 		delete(additionalProperties, "resp_header_bytes")
 		delete(additionalProperties, "resp_body_bytes")
@@ -2415,6 +2490,7 @@ func (o *Values) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "origin_status_503")
 		delete(additionalProperties, "origin_status_504")
 		delete(additionalProperties, "origin_status_505")
+		delete(additionalProperties, "origin_status_530")
 		delete(additionalProperties, "origin_status_1xx")
 		delete(additionalProperties, "origin_status_2xx")
 		delete(additionalProperties, "origin_status_3xx")

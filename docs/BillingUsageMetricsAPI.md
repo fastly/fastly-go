@@ -29,8 +29,8 @@ import (
 )
 
 func main() {
-    productID := "productId_example" // string | The product identifier for the metrics returned (e.g., `cdn_usage`). This field is not required for CSV requests.
-    usageTypeName := "usageTypeName_example" // string | The usage type name for the metrics returned (e.g., `North America Requests`). This field is not required for CSV requests.
+    productID := "productId_example" // string | The product identifier for the metrics returned (e.g., `cdn_usage`). (optional)
+    usageTypeName := "usageTypeName_example" // string | The usage type name for the metrics returned (e.g., `North America Requests`). (optional)
     startMonth := "2023-01" // string |  (optional)
     endMonth := "2023-03" // string |  (optional)
     limit := "limit_example" // string | Number of results per page. The maximum is 100. (optional) (default to "5")
@@ -60,7 +60,7 @@ Other parameters are passed through a pointer to a apiGetServiceLevelUsageReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productID** | **string** | The product identifier for the metrics returned (e.g., `cdn_usage`). This field is not required for CSV requests. |  **usageTypeName** | **string** | The usage type name for the metrics returned (e.g., `North America Requests`). This field is not required for CSV requests. |  **startMonth** | **string** |  |  **endMonth** | **string** |  |  **limit** | **string** | Number of results per page. The maximum is 100. | [default to &quot;5&quot;] **cursor** | **string** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. | 
+ **productID** | **string** | The product identifier for the metrics returned (e.g., `cdn_usage`). |  **usageTypeName** | **string** | The usage type name for the metrics returned (e.g., `North America Requests`). |  **startMonth** | **string** |  |  **endMonth** | **string** |  |  **limit** | **string** | Number of results per page. The maximum is 100. | [default to &quot;5&quot;] **cursor** | **string** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. | 
 
 ### Return type
 
@@ -97,8 +97,8 @@ import (
 )
 
 func main() {
-    startMonth := "2023-01" // string |  (optional)
-    endMonth := "2023-03" // string |  (optional)
+    startMonth := "2024-05" // string | 
+    endMonth := "2024-06" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)

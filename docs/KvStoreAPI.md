@@ -5,14 +5,14 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateStore**](KvStoreAPI.md#CreateStore) | **POST** `/resources/stores/kv` | Create a KV store.
-[**DeleteStore**](KvStoreAPI.md#DeleteStore) | **DELETE** `/resources/stores/kv/{store_id}` | Delete a KV store.
-[**GetStore**](KvStoreAPI.md#GetStore) | **GET** `/resources/stores/kv/{store_id}` | Describe a KV store.
-[**GetStores**](KvStoreAPI.md#GetStores) | **GET** `/resources/stores/kv` | List KV stores.
+[**KvStoreCreate**](KvStoreAPI.md#KvStoreCreate) | **POST** `/resources/stores/kv` | Create a KV store.
+[**KvStoreDelete**](KvStoreAPI.md#KvStoreDelete) | **DELETE** `/resources/stores/kv/{store_id}` | Delete a KV store.
+[**KvStoreGet**](KvStoreAPI.md#KvStoreGet) | **GET** `/resources/stores/kv/{store_id}` | Describe a KV store.
+[**KvStoreList**](KvStoreAPI.md#KvStoreList) | **GET** `/resources/stores/kv` | List all KV stores.
 
 
 
-## CreateStore
+## KvStoreCreate
 
 Create a KV store.
 
@@ -32,18 +32,18 @@ import (
 
 func main() {
     location := "location_example" // string |  (optional)
-    store := *openapiclient.NewStore() // Store |  (optional)
+    kvStoreRequestCreate := *openapiclient.NewKvStoreRequestCreate("Name_example") // KvStoreRequestCreate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreAPI.CreateStore(ctx).Location(location).Store(store).Execute()
+    resp, r, err := apiClient.KvStoreAPI.KvStoreCreate(ctx).Location(location).KvStoreRequestCreate(kvStoreRequestCreate).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.CreateStore`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStoreCreate`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateStore`: StoreResponse
-    fmt.Fprintf(os.Stdout, "Response from `KvStoreAPI.CreateStore`: %v\n", resp)
+    // response from `KvStoreCreate`: KvStoreDetails
+    fmt.Fprintf(os.Stdout, "Response from `KvStoreAPI.KvStoreCreate`: %v\n", resp)
 }
 ```
 
@@ -53,16 +53,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateStoreRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiKvStoreCreateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **location** | **string** |  |  **store** | [**Store**](Store.md) |  | 
+ **location** | **string** |  |  **kvStoreRequestCreate** | [**KvStoreRequestCreate**](KvStoreRequestCreate.md) |  | 
 
 ### Return type
 
-[**StoreResponse**](StoreResponse.md)
+[**KvStoreDetails**](KvStoreDetails.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## DeleteStore
+## KvStoreDelete
 
 Delete a KV store.
 
@@ -100,9 +100,9 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreAPI.DeleteStore(ctx, storeID).Execute()
+    resp, r, err := apiClient.KvStoreAPI.KvStoreDelete(ctx, storeID).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.DeleteStore`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStoreDelete`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteStoreRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiKvStoreDeleteRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## GetStore
+## KvStoreGet
 
 Describe a KV store.
 
@@ -165,13 +165,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreAPI.GetStore(ctx, storeID).Execute()
+    resp, r, err := apiClient.KvStoreAPI.KvStoreGet(ctx, storeID).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.GetStore`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStoreGet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetStore`: StoreResponse
-    fmt.Fprintf(os.Stdout, "Response from `KvStoreAPI.GetStore`: %v\n", resp)
+    // response from `KvStoreGet`: KvStoreDetails
+    fmt.Fprintf(os.Stdout, "Response from `KvStoreAPI.KvStoreGet`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetStoreRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiKvStoreGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StoreResponse**](StoreResponse.md)
+[**KvStoreDetails**](KvStoreDetails.md)
 
 ### Authorization
 
@@ -208,9 +208,9 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## GetStores
+## KvStoreList
 
-List KV stores.
+List all KV stores.
 
 
 
@@ -233,13 +233,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreAPI.GetStores(ctx).Cursor(cursor).Limit(limit).Execute()
+    resp, r, err := apiClient.KvStoreAPI.KvStoreList(ctx).Cursor(cursor).Limit(limit).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.GetStores`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStoreList`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetStores`: InlineResponse2003
-    fmt.Fprintf(os.Stdout, "Response from `KvStoreAPI.GetStores`: %v\n", resp)
+    // response from `KvStoreList`: InlineResponse2003
+    fmt.Fprintf(os.Stdout, "Response from `KvStoreAPI.KvStoreList`: %v\n", resp)
 }
 ```
 
@@ -249,7 +249,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetStoresRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiKvStoreListRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

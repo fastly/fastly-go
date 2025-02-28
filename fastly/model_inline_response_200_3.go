@@ -18,8 +18,8 @@ import (
 
 // InlineResponse2003 struct for InlineResponse2003
 type InlineResponse2003 struct {
-	Data                 []StoreResponse         `json:"data,omitempty"`
-	Meta                 *InlineResponse2003Meta `json:"meta,omitempty"`
+	Data                 []KvStoreDetails      `json:"data,omitempty"`
+	Meta                 *PaginationCursorMeta `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -43,9 +43,9 @@ func NewInlineResponse2003WithDefaults() *InlineResponse2003 {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse2003) GetData() []StoreResponse {
+func (o *InlineResponse2003) GetData() []KvStoreDetails {
 	if o == nil || o.Data == nil {
-		var ret []StoreResponse
+		var ret []KvStoreDetails
 		return ret
 	}
 	return o.Data
@@ -53,7 +53,7 @@ func (o *InlineResponse2003) GetData() []StoreResponse {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2003) GetDataOk() ([]StoreResponse, bool) {
+func (o *InlineResponse2003) GetDataOk() ([]KvStoreDetails, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -69,15 +69,15 @@ func (o *InlineResponse2003) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []StoreResponse and assigns it to the Data field.
-func (o *InlineResponse2003) SetData(v []StoreResponse) {
+// SetData gets a reference to the given []KvStoreDetails and assigns it to the Data field.
+func (o *InlineResponse2003) SetData(v []KvStoreDetails) {
 	o.Data = v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *InlineResponse2003) GetMeta() InlineResponse2003Meta {
+func (o *InlineResponse2003) GetMeta() PaginationCursorMeta {
 	if o == nil || o.Meta == nil {
-		var ret InlineResponse2003Meta
+		var ret PaginationCursorMeta
 		return ret
 	}
 	return *o.Meta
@@ -85,7 +85,7 @@ func (o *InlineResponse2003) GetMeta() InlineResponse2003Meta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2003) GetMetaOk() (*InlineResponse2003Meta, bool) {
+func (o *InlineResponse2003) GetMetaOk() (*PaginationCursorMeta, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *InlineResponse2003) HasMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given InlineResponse2003Meta and assigns it to the Meta field.
-func (o *InlineResponse2003) SetMeta(v InlineResponse2003Meta) {
+// SetMeta gets a reference to the given PaginationCursorMeta and assigns it to the Meta field.
+func (o *InlineResponse2003) SetMeta(v PaginationCursorMeta) {
 	o.Meta = &v
 }
 
