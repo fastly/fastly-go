@@ -25,7 +25,7 @@ type AutomationTokenCreateRequestAttributes struct {
 	// List of service ids to limit the token
 	Services []string `json:"services,omitempty"`
 	Scope    *string  `json:"scope,omitempty"`
-	// A UTC time-stamp of when the token will expire.
+	// A UTC timestamp of when the token will expire.
 	ExpiresAt NullableTime `json:"expires_at,omitempty"`
 	// Indicates whether TLS access is enabled for the token.
 	TLSAccess            *bool `json:"tls_access,omitempty"`

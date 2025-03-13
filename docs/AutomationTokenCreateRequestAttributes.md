@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Role** | Pointer to **string** |  | [optional] 
 **Services** | Pointer to **[]string** | List of service ids to limit the token | [optional] 
 **Scope** | Pointer to **string** |  | [optional] [default to "global"]
-**ExpiresAt** | Pointer to **NullableTime** | A UTC time-stamp of when the token will expire. | [optional] 
+**ExpiresAt** | Pointer to **NullableTime** | A UTC timestamp of when the token will expire. | [optional] 
 **TLSAccess** | Pointer to **bool** | Indicates whether TLS access is enabled for the token. | [optional] 
 
 ## Methods

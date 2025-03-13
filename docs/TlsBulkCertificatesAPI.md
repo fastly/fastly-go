@@ -165,6 +165,8 @@ import (
 
 func main() {
     filterTLSDomainID := "filterTLSDomainId_example" // string | Filter certificates by their matching, fully-qualified domain name. (optional)
+    filterNotBefore := "filterNotBefore_example" // string | Filter the returned certificates by not_before date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_before][gte]=2020-05-05).  (optional)
+    filterNotAfter := "filterNotAfter_example" // string | Filter the returned certificates by expiry date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_after][lte]=2020-05-05).  (optional)
     pageNumber := int32(1) // int32 | Current page. (optional)
     pageSize := int32(20) // int32 | Number of records per page. (optional) (default to 20)
     sort := "created_at" // string | The order in which to list the results by creation date. (optional) (default to "created_at")
@@ -172,7 +174,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSBulkCertificatesAPI.ListTLSBulkCerts(ctx).FilterTLSDomainID(filterTLSDomainID).PageNumber(pageNumber).PageSize(pageSize).Sort(sort).Execute()
+    resp, r, err := apiClient.TLSBulkCertificatesAPI.ListTLSBulkCerts(ctx).FilterTLSDomainID(filterTLSDomainID).FilterNotBefore(filterNotBefore).FilterNotAfter(filterNotAfter).PageNumber(pageNumber).PageSize(pageSize).Sort(sort).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TLSBulkCertificatesAPI.ListTLSBulkCerts`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -193,7 +195,7 @@ Other parameters are passed through a pointer to a apiListTLSBulkCertsRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filterTLSDomainID** | **string** | Filter certificates by their matching, fully-qualified domain name. |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | The order in which to list the results by creation date. | [default to &quot;created_at&quot;]
+ **filterTLSDomainID** | **string** | Filter certificates by their matching, fully-qualified domain name. |  **filterNotBefore** | **string** | Filter the returned certificates by not_before date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_before][gte]&#x3D;2020-05-05).  |  **filterNotAfter** | **string** | Filter the returned certificates by expiry date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_after][lte]&#x3D;2020-05-05).  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | The order in which to list the results by creation date. | [default to &quot;created_at&quot;]
 
 ### Return type
 

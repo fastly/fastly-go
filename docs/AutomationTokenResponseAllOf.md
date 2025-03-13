@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **Role** | Pointer to **string** |  | [optional] 
 **IP** | Pointer to **string** | The IP address of the client that last used the token. | [optional] 
 **UserAgent** | Pointer to **string** | The User-Agent header of the client that last used the token. | [optional] 
-**SudoExpiresAt** | Pointer to **string** |  | [optional] [readonly] 
-**LastUsedAt** | Pointer to **time.Time** | A UTC time-stamp of when the token was last used. | [optional] [readonly] 
-**CreatedAt** | Pointer to **string** | A UTC time-stamp of when the token was created. | [optional] 
-**ExpiresAt** | Pointer to **string** | (optional) A UTC time-stamp of when the token will expire. | [optional] 
+**TLSAccess** | Pointer to **bool** | Indicates whether TLS access is enabled for the token. | [optional] 
+**LastUsedAt** | Pointer to **time.Time** | A UTC timestamp of when the token was last used. | [optional] [readonly] 
+**CreatedAt** | Pointer to **string** | A UTC timestamp of when the token was created. | [optional] 
+**ExpiresAt** | Pointer to **string** | (optional) A UTC timestamp of when the token will expire. | [optional] 
 
 ## Methods
 
@@ -158,30 +158,30 @@ SetUserAgent sets UserAgent field to given value.
 
 HasUserAgent returns a boolean if a field has been set.
 
-### GetSudoExpiresAt
+### GetTLSAccess
 
-`func (o *AutomationTokenResponseAllOf) GetSudoExpiresAt() string`
+`func (o *AutomationTokenResponseAllOf) GetTLSAccess() bool`
 
-GetSudoExpiresAt returns the SudoExpiresAt field if non-nil, zero value otherwise.
+GetTLSAccess returns the TLSAccess field if non-nil, zero value otherwise.
 
-### GetSudoExpiresAtOk
+### GetTLSAccessOk
 
-`func (o *AutomationTokenResponseAllOf) GetSudoExpiresAtOk() (*string, bool)`
+`func (o *AutomationTokenResponseAllOf) GetTLSAccessOk() (*bool, bool)`
 
-GetSudoExpiresAtOk returns a tuple with the SudoExpiresAt field if it's non-nil, zero value otherwise
+GetTLSAccessOk returns a tuple with the TLSAccess field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSudoExpiresAt
+### SetTLSAccess
 
-`func (o *AutomationTokenResponseAllOf) SetSudoExpiresAt(v string)`
+`func (o *AutomationTokenResponseAllOf) SetTLSAccess(v bool)`
 
-SetSudoExpiresAt sets SudoExpiresAt field to given value.
+SetTLSAccess sets TLSAccess field to given value.
 
-### HasSudoExpiresAt
+### HasTLSAccess
 
-`func (o *AutomationTokenResponseAllOf) HasSudoExpiresAt() bool`
+`func (o *AutomationTokenResponseAllOf) HasTLSAccess() bool`
 
-HasSudoExpiresAt returns a boolean if a field has been set.
+HasTLSAccess returns a boolean if a field has been set.
 
 ### GetLastUsedAt
 

@@ -44,8 +44,8 @@ func main() {
     src := "src_example" // string | Variable to be used as a source for the header content. Does not apply to `delete` action. (optional)
     substitution := "substitution_example" // string | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. (optional)
     resourceType := "resourceType_example" // string | Accepts a string value. (optional)
-    ignoreIfSet := int32(56) // int32 | Don't add the header if it is added already. Only applies to 'set' action. (optional)
-    priority := int32(56) // int32 | Priority determines execution order. Lower numbers execute first. (optional) (default to 100)
+    ignoreIfSet := "ignoreIfSet_example" // string | Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\\\"0\\\" = false, \\\"1\\\" = true) (optional)
+    priority := "priority_example" // string | Priority determines execution order. Lower numbers execute first. (optional) (default to "100")
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -76,7 +76,7 @@ Other parameters are passed through a pointer to a apiCreateHeaderObjectRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **string** | Accepts a string value. |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **dst** | **string** | Header to set. |  **name** | **string** | A handle to refer to this Header object. |  **regex** | **string** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. |  **requestCondition** | **string** | Condition which, if met, will select this configuration during a request. Optional. |  **responseCondition** | **string** | Optional name of a response condition to apply. |  **src** | **string** | Variable to be used as a source for the header content. Does not apply to `delete` action. |  **substitution** | **string** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. |  **resourceType** | **string** | Accepts a string value. |  **ignoreIfSet** | **int32** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. |  **priority** | **int32** | Priority determines execution order. Lower numbers execute first. | [default to 100]
+ **action** | **string** | Accepts a string value. |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **dst** | **string** | Header to set. |  **name** | **string** | A handle to refer to this Header object. |  **regex** | **string** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. |  **requestCondition** | **string** | Condition which, if met, will select this configuration during a request. Optional. |  **responseCondition** | **string** | Optional name of a response condition to apply. |  **src** | **string** | Variable to be used as a source for the header content. Does not apply to `delete` action. |  **substitution** | **string** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. |  **resourceType** | **string** | Accepts a string value. |  **ignoreIfSet** | **string** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. Numerical value (\\\&quot;0\\\&quot; &#x3D; false, \\\&quot;1\\\&quot; &#x3D; true) |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
 
 ### Return type
 
@@ -337,8 +337,8 @@ func main() {
     src := "src_example" // string | Variable to be used as a source for the header content. Does not apply to `delete` action. (optional)
     substitution := "substitution_example" // string | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. (optional)
     resourceType := "resourceType_example" // string | Accepts a string value. (optional)
-    ignoreIfSet := int32(56) // int32 | Don't add the header if it is added already. Only applies to 'set' action. (optional)
-    priority := int32(56) // int32 | Priority determines execution order. Lower numbers execute first. (optional) (default to 100)
+    ignoreIfSet := "ignoreIfSet_example" // string | Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\\\"0\\\" = false, \\\"1\\\" = true) (optional)
+    priority := "priority_example" // string | Priority determines execution order. Lower numbers execute first. (optional) (default to "100")
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -370,7 +370,7 @@ Other parameters are passed through a pointer to a apiUpdateHeaderObjectRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **string** | Accepts a string value. |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **dst** | **string** | Header to set. |  **name** | **string** | A handle to refer to this Header object. |  **regex** | **string** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. |  **requestCondition** | **string** | Condition which, if met, will select this configuration during a request. Optional. |  **responseCondition** | **string** | Optional name of a response condition to apply. |  **src** | **string** | Variable to be used as a source for the header content. Does not apply to `delete` action. |  **substitution** | **string** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. |  **resourceType** | **string** | Accepts a string value. |  **ignoreIfSet** | **int32** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. |  **priority** | **int32** | Priority determines execution order. Lower numbers execute first. | [default to 100]
+ **action** | **string** | Accepts a string value. |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **dst** | **string** | Header to set. |  **name** | **string** | A handle to refer to this Header object. |  **regex** | **string** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. |  **requestCondition** | **string** | Condition which, if met, will select this configuration during a request. Optional. |  **responseCondition** | **string** | Optional name of a response condition to apply. |  **src** | **string** | Variable to be used as a source for the header content. Does not apply to `delete` action. |  **substitution** | **string** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. |  **resourceType** | **string** | Accepts a string value. |  **ignoreIfSet** | **string** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. Numerical value (\\\&quot;0\\\&quot; &#x3D; false, \\\&quot;1\\\&quot; &#x3D; true) |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
 
 ### Return type
 

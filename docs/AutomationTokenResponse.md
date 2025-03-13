@@ -8,16 +8,14 @@ Name | Type | Description | Notes
 **Role** | Pointer to **string** |  | [optional] 
 **Services** | Pointer to **[]string** | (Optional) The service IDs of the services the token will have access to. Separate service IDs with a space. If no services are specified, the token will have access to all services on the account.  | [optional] 
 **Scope** | Pointer to **string** | A space-delimited list of authorization scope. | [optional] [default to "global"]
-**ExpiresAt** | Pointer to **string** | (optional) A UTC time-stamp of when the token will expire. | [optional] 
-**CreatedAt** | Pointer to **string** | A UTC time-stamp of when the token was created. | [optional] 
-**DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**ExpiresAt** | Pointer to **string** | (optional) A UTC timestamp of when the token will expire. | [optional] 
 **ID** | Pointer to [**ReadOnlyID**](ReadOnlyID.md) |  | [optional] 
 **CustomerID** | Pointer to [**ReadOnlyCustomerID**](ReadOnlyCustomerID.md) |  | [optional] 
 **IP** | Pointer to **string** | The IP address of the client that last used the token. | [optional] 
 **UserAgent** | Pointer to **string** | The User-Agent header of the client that last used the token. | [optional] 
-**SudoExpiresAt** | Pointer to **string** |  | [optional] [readonly] 
-**LastUsedAt** | Pointer to **time.Time** | A UTC time-stamp of when the token was last used. | [optional] [readonly] 
+**TLSAccess** | Pointer to **bool** | Indicates whether TLS access is enabled for the token. | [optional] 
+**LastUsedAt** | Pointer to **time.Time** | A UTC timestamp of when the token was last used. | [optional] [readonly] 
+**CreatedAt** | Pointer to **string** | A UTC timestamp of when the token was created. | [optional] 
 
 ## Methods
 
@@ -163,101 +161,6 @@ SetExpiresAt sets ExpiresAt field to given value.
 
 HasExpiresAt returns a boolean if a field has been set.
 
-### GetCreatedAt
-
-`func (o *AutomationTokenResponse) GetCreatedAt() string`
-
-GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
-
-### GetCreatedAtOk
-
-`func (o *AutomationTokenResponse) GetCreatedAtOk() (*string, bool)`
-
-GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreatedAt
-
-`func (o *AutomationTokenResponse) SetCreatedAt(v string)`
-
-SetCreatedAt sets CreatedAt field to given value.
-
-### HasCreatedAt
-
-`func (o *AutomationTokenResponse) HasCreatedAt() bool`
-
-HasCreatedAt returns a boolean if a field has been set.
-
-### GetDeletedAt
-
-`func (o *AutomationTokenResponse) GetDeletedAt() time.Time`
-
-GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
-
-### GetDeletedAtOk
-
-`func (o *AutomationTokenResponse) GetDeletedAtOk() (*time.Time, bool)`
-
-GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDeletedAt
-
-`func (o *AutomationTokenResponse) SetDeletedAt(v time.Time)`
-
-SetDeletedAt sets DeletedAt field to given value.
-
-### HasDeletedAt
-
-`func (o *AutomationTokenResponse) HasDeletedAt() bool`
-
-HasDeletedAt returns a boolean if a field has been set.
-
-### SetDeletedAtNil
-
-`func (o *AutomationTokenResponse) SetDeletedAtNil(b bool)`
-
- SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
-
-### UnsetDeletedAt
-`func (o *AutomationTokenResponse) UnsetDeletedAt()`
-
-UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-### GetUpdatedAt
-
-`func (o *AutomationTokenResponse) GetUpdatedAt() time.Time`
-
-GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
-
-### GetUpdatedAtOk
-
-`func (o *AutomationTokenResponse) GetUpdatedAtOk() (*time.Time, bool)`
-
-GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetUpdatedAt
-
-`func (o *AutomationTokenResponse) SetUpdatedAt(v time.Time)`
-
-SetUpdatedAt sets UpdatedAt field to given value.
-
-### HasUpdatedAt
-
-`func (o *AutomationTokenResponse) HasUpdatedAt() bool`
-
-HasUpdatedAt returns a boolean if a field has been set.
-
-### SetUpdatedAtNil
-
-`func (o *AutomationTokenResponse) SetUpdatedAtNil(b bool)`
-
- SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-
-### UnsetUpdatedAt
-`func (o *AutomationTokenResponse) UnsetUpdatedAt()`
-
-UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 ### GetID
 
 `func (o *AutomationTokenResponse) GetID() ReadOnlyID`
@@ -358,30 +261,30 @@ SetUserAgent sets UserAgent field to given value.
 
 HasUserAgent returns a boolean if a field has been set.
 
-### GetSudoExpiresAt
+### GetTLSAccess
 
-`func (o *AutomationTokenResponse) GetSudoExpiresAt() string`
+`func (o *AutomationTokenResponse) GetTLSAccess() bool`
 
-GetSudoExpiresAt returns the SudoExpiresAt field if non-nil, zero value otherwise.
+GetTLSAccess returns the TLSAccess field if non-nil, zero value otherwise.
 
-### GetSudoExpiresAtOk
+### GetTLSAccessOk
 
-`func (o *AutomationTokenResponse) GetSudoExpiresAtOk() (*string, bool)`
+`func (o *AutomationTokenResponse) GetTLSAccessOk() (*bool, bool)`
 
-GetSudoExpiresAtOk returns a tuple with the SudoExpiresAt field if it's non-nil, zero value otherwise
+GetTLSAccessOk returns a tuple with the TLSAccess field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSudoExpiresAt
+### SetTLSAccess
 
-`func (o *AutomationTokenResponse) SetSudoExpiresAt(v string)`
+`func (o *AutomationTokenResponse) SetTLSAccess(v bool)`
 
-SetSudoExpiresAt sets SudoExpiresAt field to given value.
+SetTLSAccess sets TLSAccess field to given value.
 
-### HasSudoExpiresAt
+### HasTLSAccess
 
-`func (o *AutomationTokenResponse) HasSudoExpiresAt() bool`
+`func (o *AutomationTokenResponse) HasTLSAccess() bool`
 
-HasSudoExpiresAt returns a boolean if a field has been set.
+HasTLSAccess returns a boolean if a field has been set.
 
 ### GetLastUsedAt
 
@@ -407,6 +310,31 @@ SetLastUsedAt sets LastUsedAt field to given value.
 `func (o *AutomationTokenResponse) HasLastUsedAt() bool`
 
 HasLastUsedAt returns a boolean if a field has been set.
+
+### GetCreatedAt
+
+`func (o *AutomationTokenResponse) GetCreatedAt() string`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *AutomationTokenResponse) GetCreatedAtOk() (*string, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *AutomationTokenResponse) SetCreatedAt(v string)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+### HasCreatedAt
+
+`func (o *AutomationTokenResponse) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

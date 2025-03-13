@@ -19,14 +19,15 @@ import (
 
 // AutomationTokenCreateResponseAllOf struct for AutomationTokenCreateResponseAllOf
 type AutomationTokenCreateResponseAllOf struct {
-	ID            *ReadOnlyID         `json:"id,omitempty"`
-	UserID        *ReadOnlyUserID     `json:"user_id,omitempty"`
-	CustomerID    *ReadOnlyCustomerID `json:"customer_id,omitempty"`
-	SudoExpiresAt *time.Time          `json:"sudo_expires_at,omitempty"`
-	// A UTC time-stamp of when the token was created.
+	ID         *ReadOnlyID         `json:"id,omitempty"`
+	UserID     *ReadOnlyUserID     `json:"user_id,omitempty"`
+	CustomerID *ReadOnlyCustomerID `json:"customer_id,omitempty"`
+	// A UTC timestamp of when the token was created.
 	CreatedAt   *time.Time `json:"created_at,omitempty"`
 	AccessToken *string    `json:"access_token,omitempty"`
-	// A UTC time-stamp of when the token was last used.
+	// Indicates whether TLS access is enabled for the token.
+	TLSAccess *bool `json:"tls_access,omitempty"`
+	// A UTC timestamp of when the token was last used.
 	LastUsedAt *time.Time `json:"last_used_at,omitempty"`
 	// The User-Agent header of the client that last used the token.
 	UserAgent            *string `json:"user_agent,omitempty"`
@@ -148,38 +149,6 @@ func (o *AutomationTokenCreateResponseAllOf) SetCustomerID(v ReadOnlyCustomerID)
 	o.CustomerID = &v
 }
 
-// GetSudoExpiresAt returns the SudoExpiresAt field value if set, zero value otherwise.
-func (o *AutomationTokenCreateResponseAllOf) GetSudoExpiresAt() time.Time {
-	if o == nil || o.SudoExpiresAt == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.SudoExpiresAt
-}
-
-// GetSudoExpiresAtOk returns a tuple with the SudoExpiresAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomationTokenCreateResponseAllOf) GetSudoExpiresAtOk() (*time.Time, bool) {
-	if o == nil || o.SudoExpiresAt == nil {
-		return nil, false
-	}
-	return o.SudoExpiresAt, true
-}
-
-// HasSudoExpiresAt returns a boolean if a field has been set.
-func (o *AutomationTokenCreateResponseAllOf) HasSudoExpiresAt() bool {
-	if o != nil && o.SudoExpiresAt != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSudoExpiresAt gets a reference to the given time.Time and assigns it to the SudoExpiresAt field.
-func (o *AutomationTokenCreateResponseAllOf) SetSudoExpiresAt(v time.Time) {
-	o.SudoExpiresAt = &v
-}
-
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
 func (o *AutomationTokenCreateResponseAllOf) GetCreatedAt() time.Time {
 	if o == nil || o.CreatedAt == nil {
@@ -242,6 +211,38 @@ func (o *AutomationTokenCreateResponseAllOf) HasAccessToken() bool {
 // SetAccessToken gets a reference to the given string and assigns it to the AccessToken field.
 func (o *AutomationTokenCreateResponseAllOf) SetAccessToken(v string) {
 	o.AccessToken = &v
+}
+
+// GetTLSAccess returns the TLSAccess field value if set, zero value otherwise.
+func (o *AutomationTokenCreateResponseAllOf) GetTLSAccess() bool {
+	if o == nil || o.TLSAccess == nil {
+		var ret bool
+		return ret
+	}
+	return *o.TLSAccess
+}
+
+// GetTLSAccessOk returns a tuple with the TLSAccess field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomationTokenCreateResponseAllOf) GetTLSAccessOk() (*bool, bool) {
+	if o == nil || o.TLSAccess == nil {
+		return nil, false
+	}
+	return o.TLSAccess, true
+}
+
+// HasTLSAccess returns a boolean if a field has been set.
+func (o *AutomationTokenCreateResponseAllOf) HasTLSAccess() bool {
+	if o != nil && o.TLSAccess != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTLSAccess gets a reference to the given bool and assigns it to the TLSAccess field.
+func (o *AutomationTokenCreateResponseAllOf) SetTLSAccess(v bool) {
+	o.TLSAccess = &v
 }
 
 // GetLastUsedAt returns the LastUsedAt field value if set, zero value otherwise.
@@ -321,14 +322,14 @@ func (o AutomationTokenCreateResponseAllOf) MarshalJSON() ([]byte, error) {
 	if o.CustomerID != nil {
 		toSerialize["customer_id"] = o.CustomerID
 	}
-	if o.SudoExpiresAt != nil {
-		toSerialize["sudo_expires_at"] = o.SudoExpiresAt
-	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt
 	}
 	if o.AccessToken != nil {
 		toSerialize["access_token"] = o.AccessToken
+	}
+	if o.TLSAccess != nil {
+		toSerialize["tls_access"] = o.TLSAccess
 	}
 	if o.LastUsedAt != nil {
 		toSerialize["last_used_at"] = o.LastUsedAt
@@ -359,9 +360,9 @@ func (o *AutomationTokenCreateResponseAllOf) UnmarshalJSON(bytes []byte) (err er
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "user_id")
 		delete(additionalProperties, "customer_id")
-		delete(additionalProperties, "sudo_expires_at")
 		delete(additionalProperties, "created_at")
 		delete(additionalProperties, "access_token")
+		delete(additionalProperties, "tls_access")
 		delete(additionalProperties, "last_used_at")
 		delete(additionalProperties, "user_agent")
 		o.AdditionalProperties = additionalProperties

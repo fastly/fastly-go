@@ -26,7 +26,7 @@ type AutomationToken struct {
 	Services []string `json:"services,omitempty"`
 	// A space-delimited list of authorization scope.
 	Scope *string `json:"scope,omitempty"`
-	// A UTC time-stamp of when the token expires.
+	// A UTC timestamp of when the token expires.
 	ExpiresAt            *string `json:"expires_at,omitempty"`
 	AdditionalProperties map[string]any
 }

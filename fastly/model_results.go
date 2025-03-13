@@ -541,8 +541,22 @@ type Results struct {
 	// Number of requests that were collapsed and unable to be satisfied by the resulting cache object.
 	RequestCollapseUnusableCount *int64 `json:"request_collapse_unusable_count,omitempty"`
 	// Number of cache operations executed by the Compute platform.
-	ComputeCacheOperationsCount *int64  `json:"compute_cache_operations_count,omitempty"`
-	ServiceID                   *string `json:"service_id,omitempty"`
+	ComputeCacheOperationsCount *int64 `json:"compute_cache_operations_count,omitempty"`
+	// Total number of Next-Gen WAF (Edge WAF & Core WAF) requests.
+	NgwafRequestsTotalCount *int32 `json:"ngwaf_requests_total_count,omitempty"`
+	// Count of Edge WAF requests with an unknown outcome.
+	NgwafRequestsUnknownCount *int32 `json:"ngwaf_requests_unknown_count,omitempty"`
+	// Count of Edge WAF requests allowed.
+	NgwafRequestsAllowedCount *int32 `json:"ngwaf_requests_allowed_count,omitempty"`
+	// Count of Edge WAF requests logged.
+	NgwafRequestsLoggedCount *int32 `json:"ngwaf_requests_logged_count,omitempty"`
+	// Count of Edge WAF requests blocked.
+	NgwafRequestsBlockedCount *int32 `json:"ngwaf_requests_blocked_count,omitempty"`
+	// Count of Edge WAF requests timed outcome.
+	NgwafRequestsTimeoutCount *int32 `json:"ngwaf_requests_timeout_count,omitempty"`
+	// Count of Edge WAF requests challenged.
+	NgwafRequestsChallengedCount *int32  `json:"ngwaf_requests_challenged_count,omitempty"`
+	ServiceID                    *string `json:"service_id,omitempty"`
 	// Timestamp for the start of the time period being reported
 	StartTime            *int64 `json:"start_time,omitempty"`
 	AdditionalProperties map[string]any
@@ -8936,6 +8950,230 @@ func (o *Results) SetComputeCacheOperationsCount(v int64) {
 	o.ComputeCacheOperationsCount = &v
 }
 
+// GetNgwafRequestsTotalCount returns the NgwafRequestsTotalCount field value if set, zero value otherwise.
+func (o *Results) GetNgwafRequestsTotalCount() int32 {
+	if o == nil || o.NgwafRequestsTotalCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.NgwafRequestsTotalCount
+}
+
+// GetNgwafRequestsTotalCountOk returns a tuple with the NgwafRequestsTotalCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetNgwafRequestsTotalCountOk() (*int32, bool) {
+	if o == nil || o.NgwafRequestsTotalCount == nil {
+		return nil, false
+	}
+	return o.NgwafRequestsTotalCount, true
+}
+
+// HasNgwafRequestsTotalCount returns a boolean if a field has been set.
+func (o *Results) HasNgwafRequestsTotalCount() bool {
+	if o != nil && o.NgwafRequestsTotalCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNgwafRequestsTotalCount gets a reference to the given int32 and assigns it to the NgwafRequestsTotalCount field.
+func (o *Results) SetNgwafRequestsTotalCount(v int32) {
+	o.NgwafRequestsTotalCount = &v
+}
+
+// GetNgwafRequestsUnknownCount returns the NgwafRequestsUnknownCount field value if set, zero value otherwise.
+func (o *Results) GetNgwafRequestsUnknownCount() int32 {
+	if o == nil || o.NgwafRequestsUnknownCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.NgwafRequestsUnknownCount
+}
+
+// GetNgwafRequestsUnknownCountOk returns a tuple with the NgwafRequestsUnknownCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetNgwafRequestsUnknownCountOk() (*int32, bool) {
+	if o == nil || o.NgwafRequestsUnknownCount == nil {
+		return nil, false
+	}
+	return o.NgwafRequestsUnknownCount, true
+}
+
+// HasNgwafRequestsUnknownCount returns a boolean if a field has been set.
+func (o *Results) HasNgwafRequestsUnknownCount() bool {
+	if o != nil && o.NgwafRequestsUnknownCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNgwafRequestsUnknownCount gets a reference to the given int32 and assigns it to the NgwafRequestsUnknownCount field.
+func (o *Results) SetNgwafRequestsUnknownCount(v int32) {
+	o.NgwafRequestsUnknownCount = &v
+}
+
+// GetNgwafRequestsAllowedCount returns the NgwafRequestsAllowedCount field value if set, zero value otherwise.
+func (o *Results) GetNgwafRequestsAllowedCount() int32 {
+	if o == nil || o.NgwafRequestsAllowedCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.NgwafRequestsAllowedCount
+}
+
+// GetNgwafRequestsAllowedCountOk returns a tuple with the NgwafRequestsAllowedCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetNgwafRequestsAllowedCountOk() (*int32, bool) {
+	if o == nil || o.NgwafRequestsAllowedCount == nil {
+		return nil, false
+	}
+	return o.NgwafRequestsAllowedCount, true
+}
+
+// HasNgwafRequestsAllowedCount returns a boolean if a field has been set.
+func (o *Results) HasNgwafRequestsAllowedCount() bool {
+	if o != nil && o.NgwafRequestsAllowedCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNgwafRequestsAllowedCount gets a reference to the given int32 and assigns it to the NgwafRequestsAllowedCount field.
+func (o *Results) SetNgwafRequestsAllowedCount(v int32) {
+	o.NgwafRequestsAllowedCount = &v
+}
+
+// GetNgwafRequestsLoggedCount returns the NgwafRequestsLoggedCount field value if set, zero value otherwise.
+func (o *Results) GetNgwafRequestsLoggedCount() int32 {
+	if o == nil || o.NgwafRequestsLoggedCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.NgwafRequestsLoggedCount
+}
+
+// GetNgwafRequestsLoggedCountOk returns a tuple with the NgwafRequestsLoggedCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetNgwafRequestsLoggedCountOk() (*int32, bool) {
+	if o == nil || o.NgwafRequestsLoggedCount == nil {
+		return nil, false
+	}
+	return o.NgwafRequestsLoggedCount, true
+}
+
+// HasNgwafRequestsLoggedCount returns a boolean if a field has been set.
+func (o *Results) HasNgwafRequestsLoggedCount() bool {
+	if o != nil && o.NgwafRequestsLoggedCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNgwafRequestsLoggedCount gets a reference to the given int32 and assigns it to the NgwafRequestsLoggedCount field.
+func (o *Results) SetNgwafRequestsLoggedCount(v int32) {
+	o.NgwafRequestsLoggedCount = &v
+}
+
+// GetNgwafRequestsBlockedCount returns the NgwafRequestsBlockedCount field value if set, zero value otherwise.
+func (o *Results) GetNgwafRequestsBlockedCount() int32 {
+	if o == nil || o.NgwafRequestsBlockedCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.NgwafRequestsBlockedCount
+}
+
+// GetNgwafRequestsBlockedCountOk returns a tuple with the NgwafRequestsBlockedCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetNgwafRequestsBlockedCountOk() (*int32, bool) {
+	if o == nil || o.NgwafRequestsBlockedCount == nil {
+		return nil, false
+	}
+	return o.NgwafRequestsBlockedCount, true
+}
+
+// HasNgwafRequestsBlockedCount returns a boolean if a field has been set.
+func (o *Results) HasNgwafRequestsBlockedCount() bool {
+	if o != nil && o.NgwafRequestsBlockedCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNgwafRequestsBlockedCount gets a reference to the given int32 and assigns it to the NgwafRequestsBlockedCount field.
+func (o *Results) SetNgwafRequestsBlockedCount(v int32) {
+	o.NgwafRequestsBlockedCount = &v
+}
+
+// GetNgwafRequestsTimeoutCount returns the NgwafRequestsTimeoutCount field value if set, zero value otherwise.
+func (o *Results) GetNgwafRequestsTimeoutCount() int32 {
+	if o == nil || o.NgwafRequestsTimeoutCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.NgwafRequestsTimeoutCount
+}
+
+// GetNgwafRequestsTimeoutCountOk returns a tuple with the NgwafRequestsTimeoutCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetNgwafRequestsTimeoutCountOk() (*int32, bool) {
+	if o == nil || o.NgwafRequestsTimeoutCount == nil {
+		return nil, false
+	}
+	return o.NgwafRequestsTimeoutCount, true
+}
+
+// HasNgwafRequestsTimeoutCount returns a boolean if a field has been set.
+func (o *Results) HasNgwafRequestsTimeoutCount() bool {
+	if o != nil && o.NgwafRequestsTimeoutCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNgwafRequestsTimeoutCount gets a reference to the given int32 and assigns it to the NgwafRequestsTimeoutCount field.
+func (o *Results) SetNgwafRequestsTimeoutCount(v int32) {
+	o.NgwafRequestsTimeoutCount = &v
+}
+
+// GetNgwafRequestsChallengedCount returns the NgwafRequestsChallengedCount field value if set, zero value otherwise.
+func (o *Results) GetNgwafRequestsChallengedCount() int32 {
+	if o == nil || o.NgwafRequestsChallengedCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.NgwafRequestsChallengedCount
+}
+
+// GetNgwafRequestsChallengedCountOk returns a tuple with the NgwafRequestsChallengedCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetNgwafRequestsChallengedCountOk() (*int32, bool) {
+	if o == nil || o.NgwafRequestsChallengedCount == nil {
+		return nil, false
+	}
+	return o.NgwafRequestsChallengedCount, true
+}
+
+// HasNgwafRequestsChallengedCount returns a boolean if a field has been set.
+func (o *Results) HasNgwafRequestsChallengedCount() bool {
+	if o != nil && o.NgwafRequestsChallengedCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNgwafRequestsChallengedCount gets a reference to the given int32 and assigns it to the NgwafRequestsChallengedCount field.
+func (o *Results) SetNgwafRequestsChallengedCount(v int32) {
+	o.NgwafRequestsChallengedCount = &v
+}
+
 // GetServiceID returns the ServiceID field value if set, zero value otherwise.
 func (o *Results) GetServiceID() string {
 	if o == nil || o.ServiceID == nil {
@@ -9787,6 +10025,27 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.ComputeCacheOperationsCount != nil {
 		toSerialize["compute_cache_operations_count"] = o.ComputeCacheOperationsCount
 	}
+	if o.NgwafRequestsTotalCount != nil {
+		toSerialize["ngwaf_requests_total_count"] = o.NgwafRequestsTotalCount
+	}
+	if o.NgwafRequestsUnknownCount != nil {
+		toSerialize["ngwaf_requests_unknown_count"] = o.NgwafRequestsUnknownCount
+	}
+	if o.NgwafRequestsAllowedCount != nil {
+		toSerialize["ngwaf_requests_allowed_count"] = o.NgwafRequestsAllowedCount
+	}
+	if o.NgwafRequestsLoggedCount != nil {
+		toSerialize["ngwaf_requests_logged_count"] = o.NgwafRequestsLoggedCount
+	}
+	if o.NgwafRequestsBlockedCount != nil {
+		toSerialize["ngwaf_requests_blocked_count"] = o.NgwafRequestsBlockedCount
+	}
+	if o.NgwafRequestsTimeoutCount != nil {
+		toSerialize["ngwaf_requests_timeout_count"] = o.NgwafRequestsTimeoutCount
+	}
+	if o.NgwafRequestsChallengedCount != nil {
+		toSerialize["ngwaf_requests_challenged_count"] = o.NgwafRequestsChallengedCount
+	}
 	if o.ServiceID != nil {
 		toSerialize["service_id"] = o.ServiceID
 	}
@@ -10074,6 +10333,13 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "request_collapse_usable_count")
 		delete(additionalProperties, "request_collapse_unusable_count")
 		delete(additionalProperties, "compute_cache_operations_count")
+		delete(additionalProperties, "ngwaf_requests_total_count")
+		delete(additionalProperties, "ngwaf_requests_unknown_count")
+		delete(additionalProperties, "ngwaf_requests_allowed_count")
+		delete(additionalProperties, "ngwaf_requests_logged_count")
+		delete(additionalProperties, "ngwaf_requests_blocked_count")
+		delete(additionalProperties, "ngwaf_requests_timeout_count")
+		delete(additionalProperties, "ngwaf_requests_challenged_count")
 		delete(additionalProperties, "service_id")
 		delete(additionalProperties, "start_time")
 		o.AdditionalProperties = additionalProperties

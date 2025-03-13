@@ -231,7 +231,7 @@ func (r *APICreateLogAzureRequest) PublicKey(publicKey string) *APICreateLogAzur
 	return r
 }
 
-// FileMaxBytes The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+// FileMaxBytes The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB). Note that Microsoft Azure Storage has [block size limits](https://learn.microsoft.com/en-us/rest/api/storageservices/put-block?tabs&#x3D;microsoft-entra-id#remarks).
 func (r *APICreateLogAzureRequest) FileMaxBytes(fileMaxBytes int32) *APICreateLogAzureRequest {
 	r.fileMaxBytes = &fileMaxBytes
 	return r
@@ -944,7 +944,7 @@ func (r *APIUpdateLogAzureRequest) PublicKey(publicKey string) *APIUpdateLogAzur
 	return r
 }
 
-// FileMaxBytes The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+// FileMaxBytes The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB). Note that Microsoft Azure Storage has [block size limits](https://learn.microsoft.com/en-us/rest/api/storageservices/put-block?tabs&#x3D;microsoft-entra-id#remarks).
 func (r *APIUpdateLogAzureRequest) FileMaxBytes(fileMaxBytes int32) *APIUpdateLogAzureRequest {
 	r.fileMaxBytes = &fileMaxBytes
 	return r

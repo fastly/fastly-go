@@ -364,6 +364,8 @@ type APIListTLSBulkCertsRequest struct {
 	ctx               context.Context
 	APIService        TLSBulkCertificatesAPI
 	filterTLSDomainID *string
+	filterNotBefore   *string
+	filterNotAfter    *string
 	pageNumber        *int32
 	pageSize          *int32
 	sort              *string
@@ -372,6 +374,18 @@ type APIListTLSBulkCertsRequest struct {
 // FilterTLSDomainID Filter certificates by their matching, fully-qualified domain name.
 func (r *APIListTLSBulkCertsRequest) FilterTLSDomainID(filterTLSDomainID string) *APIListTLSBulkCertsRequest {
 	r.filterTLSDomainID = &filterTLSDomainID
+	return r
+}
+
+// FilterNotBefore Filter the returned certificates by not_before date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_before][gte]&#x3D;2020-05-05).
+func (r *APIListTLSBulkCertsRequest) FilterNotBefore(filterNotBefore string) *APIListTLSBulkCertsRequest {
+	r.filterNotBefore = &filterNotBefore
+	return r
+}
+
+// FilterNotAfter Filter the returned certificates by expiry date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_after][lte]&#x3D;2020-05-05).
+func (r *APIListTLSBulkCertsRequest) FilterNotAfter(filterNotAfter string) *APIListTLSBulkCertsRequest {
+	r.filterNotAfter = &filterNotAfter
 	return r
 }
 
@@ -436,6 +450,12 @@ func (a *TLSBulkCertificatesAPIService) ListTLSBulkCertsExecute(r APIListTLSBulk
 
 	if r.filterTLSDomainID != nil {
 		localVarQueryParams.Add("filter[tls_domain.id]", parameterToString(*r.filterTLSDomainID, ""))
+	}
+	if r.filterNotBefore != nil {
+		localVarQueryParams.Add("filter[not_before]", parameterToString(*r.filterNotBefore, ""))
+	}
+	if r.filterNotAfter != nil {
+		localVarQueryParams.Add("filter[not_after]", parameterToString(*r.filterNotAfter, ""))
 	}
 	if r.pageNumber != nil {
 		localVarQueryParams.Add("page[number]", parameterToString(*r.pageNumber, ""))

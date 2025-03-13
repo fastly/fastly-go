@@ -37,7 +37,11 @@ type Header struct {
 	// Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
 	Substitution NullableString `json:"substitution,omitempty"`
 	// Accepts a string value.
-	Type                 *string `json:"type,omitempty"`
+	Type *string `json:"type,omitempty"`
+	// Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\"0\" = false, \"1\" = true)
+	IgnoreIfSet *string `json:"ignore_if_set,omitempty"`
+	// Priority determines execution order. Lower numbers execute first.
+	Priority             *string `json:"priority,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -49,6 +53,8 @@ type _Header Header
 // will change when the set of required properties is changed
 func NewHeader() *Header {
 	this := Header{}
+	var priority string = "100"
+	this.Priority = &priority
 	return &this
 }
 
@@ -57,6 +63,8 @@ func NewHeader() *Header {
 // but it doesn't guarantee that properties required by API are set
 func NewHeaderWithDefaults() *Header {
 	this := Header{}
+	var priority string = "100"
+	this.Priority = &priority
 	return &this
 }
 
@@ -446,6 +454,70 @@ func (o *Header) SetType(v string) {
 	o.Type = &v
 }
 
+// GetIgnoreIfSet returns the IgnoreIfSet field value if set, zero value otherwise.
+func (o *Header) GetIgnoreIfSet() string {
+	if o == nil || o.IgnoreIfSet == nil {
+		var ret string
+		return ret
+	}
+	return *o.IgnoreIfSet
+}
+
+// GetIgnoreIfSetOk returns a tuple with the IgnoreIfSet field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Header) GetIgnoreIfSetOk() (*string, bool) {
+	if o == nil || o.IgnoreIfSet == nil {
+		return nil, false
+	}
+	return o.IgnoreIfSet, true
+}
+
+// HasIgnoreIfSet returns a boolean if a field has been set.
+func (o *Header) HasIgnoreIfSet() bool {
+	if o != nil && o.IgnoreIfSet != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIgnoreIfSet gets a reference to the given string and assigns it to the IgnoreIfSet field.
+func (o *Header) SetIgnoreIfSet(v string) {
+	o.IgnoreIfSet = &v
+}
+
+// GetPriority returns the Priority field value if set, zero value otherwise.
+func (o *Header) GetPriority() string {
+	if o == nil || o.Priority == nil {
+		var ret string
+		return ret
+	}
+	return *o.Priority
+}
+
+// GetPriorityOk returns a tuple with the Priority field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Header) GetPriorityOk() (*string, bool) {
+	if o == nil || o.Priority == nil {
+		return nil, false
+	}
+	return o.Priority, true
+}
+
+// HasPriority returns a boolean if a field has been set.
+func (o *Header) HasPriority() bool {
+	if o != nil && o.Priority != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPriority gets a reference to the given string and assigns it to the Priority field.
+func (o *Header) SetPriority(v string) {
+	o.Priority = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o Header) MarshalJSON() ([]byte, error) {
@@ -480,6 +552,12 @@ func (o Header) MarshalJSON() ([]byte, error) {
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
+	if o.IgnoreIfSet != nil {
+		toSerialize["ignore_if_set"] = o.IgnoreIfSet
+	}
+	if o.Priority != nil {
+		toSerialize["priority"] = o.Priority
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -510,6 +588,8 @@ func (o *Header) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "src")
 		delete(additionalProperties, "substitution")
 		delete(additionalProperties, "type")
+		delete(additionalProperties, "ignore_if_set")
+		delete(additionalProperties, "priority")
 		o.AdditionalProperties = additionalProperties
 	}
 

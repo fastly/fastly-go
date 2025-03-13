@@ -50,7 +50,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SnippetAPI.CreateSnippet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateSnippet`: SnippetResponsePost
+    // response from `CreateSnippet`: SnippetResponse
     fmt.Fprintf(os.Stdout, "Response from `SnippetAPI.CreateSnippet`: %v\n", resp)
 }
 ```
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SnippetResponsePost**](SnippetResponsePost.md)
+[**SnippetResponse**](SnippetResponse.md)
 
 ### Authorization
 

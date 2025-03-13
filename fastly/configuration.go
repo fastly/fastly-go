@@ -104,7 +104,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "fastly-go/1.0.0-beta.39",
+		UserAgent:     "fastly-go/1.0.0-beta.40",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
@@ -310,24 +310,6 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"BackendAPIService.UpdateBackend": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"BillingAPIService.GetInvoice": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"BillingAPIService.GetInvoiceByID": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"BillingAPIService.GetInvoiceMtd": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",

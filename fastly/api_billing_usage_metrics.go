@@ -30,7 +30,7 @@ var (
 type BillingUsageMetricsAPI interface {
 
 	/*
-		GetServiceLevelUsage Retrieve service-level usage metrics for a product.
+		GetServiceLevelUsage Retrieve service-level usage metrics for services with non-zero usage units.
 
 		Returns product usage, broken down by service.
 
@@ -66,6 +66,7 @@ type APIGetServiceLevelUsageRequest struct {
 	ctx           context.Context
 	APIService    BillingUsageMetricsAPI
 	productID     *string
+	service       *string
 	usageTypeName *string
 	startMonth    *string
 	endMonth      *string
@@ -73,13 +74,19 @@ type APIGetServiceLevelUsageRequest struct {
 	cursor        *string
 }
 
-// ProductID The product identifier for the metrics returned (e.g., &#x60;cdn_usage&#x60;).
+// ProductID The product identifier for the metrics returned (e.g., &#x60;cdn_usage&#x60;). This should be used along with &#x60;usage_type_name&#x60;.
 func (r *APIGetServiceLevelUsageRequest) ProductID(productID string) *APIGetServiceLevelUsageRequest {
 	r.productID = &productID
 	return r
 }
 
-// UsageTypeName The usage type name for the metrics returned (e.g., &#x60;North America Requests&#x60;).
+// Service The service identifier for the metrics being requested.
+func (r *APIGetServiceLevelUsageRequest) Service(service string) *APIGetServiceLevelUsageRequest {
+	r.service = &service
+	return r
+}
+
+// UsageTypeName The usage type name for the metrics returned (e.g., &#x60;North America Requests&#x60;). This should be used along with &#x60;product_id&#x60;.
 func (r *APIGetServiceLevelUsageRequest) UsageTypeName(usageTypeName string) *APIGetServiceLevelUsageRequest {
 	r.usageTypeName = &usageTypeName
 	return r
@@ -97,7 +104,7 @@ func (r *APIGetServiceLevelUsageRequest) EndMonth(endMonth string) *APIGetServic
 	return r
 }
 
-// Limit Number of results per page. The maximum is 100.
+// Limit Number of results per page. The maximum is 10000.
 func (r *APIGetServiceLevelUsageRequest) Limit(limit string) *APIGetServiceLevelUsageRequest {
 	r.limit = &limit
 	return r
@@ -115,7 +122,7 @@ func (r APIGetServiceLevelUsageRequest) Execute() (*Serviceusagemetrics, *http.R
 }
 
 /*
-GetServiceLevelUsage Retrieve service-level usage metrics for a product.
+GetServiceLevelUsage Retrieve service-level usage metrics for services with non-zero usage units.
 
 Returns product usage, broken down by service.
 
@@ -152,6 +159,9 @@ func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageExecute(r APIGetServ
 
 	if r.productID != nil {
 		localVarQueryParams.Add("product_id", parameterToString(*r.productID, ""))
+	}
+	if r.service != nil {
+		localVarQueryParams.Add("service", parameterToString(*r.service, ""))
 	}
 	if r.usageTypeName != nil {
 		localVarQueryParams.Add("usage_type_name", parameterToString(*r.usageTypeName, ""))

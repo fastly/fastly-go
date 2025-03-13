@@ -18,7 +18,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go 1.0.0-beta.39
+	github.com/fastly/fastly-go 1.0.0-beta.40
 )
 ```
 
@@ -102,9 +102,6 @@ Class | Method | Description
 *BackendAPI* | [**GetBackend**](docs/BackendAPI.md#getbackend) | Describe a backend
 *BackendAPI* | [**ListBackends**](docs/BackendAPI.md#listbackends) | List backends
 *BackendAPI* | [**UpdateBackend**](docs/BackendAPI.md#updatebackend) | Update a backend
-*BillingAPI* | [**GetInvoice**](docs/BillingAPI.md#getinvoice) | Get an invoice
-*BillingAPI* | [**GetInvoiceByID**](docs/BillingAPI.md#getinvoicebyid) | Get an invoice
-*BillingAPI* | [**GetInvoiceMtd**](docs/BillingAPI.md#getinvoicemtd) | Get month-to-date billing estimate
 *BillingAddressAPI* | [**AddBillingAddr**](docs/BillingAddressAPI.md#addbillingaddr) | Add a billing address to a customer
 *BillingAddressAPI* | [**DeleteBillingAddr**](docs/BillingAddressAPI.md#deletebillingaddr) | Delete a billing address
 *BillingAddressAPI* | [**GetBillingAddr**](docs/BillingAddressAPI.md#getbillingaddr) | Get a billing address
@@ -112,7 +109,7 @@ Class | Method | Description
 *BillingInvoicesAPI* | [**GetInvoiceByInvoiceID**](docs/BillingInvoicesAPI.md#getinvoicebyinvoiceid) | Get invoice by ID.
 *BillingInvoicesAPI* | [**GetMonthToDateInvoice**](docs/BillingInvoicesAPI.md#getmonthtodateinvoice) | Get month-to-date invoice.
 *BillingInvoicesAPI* | [**ListInvoices**](docs/BillingInvoicesAPI.md#listinvoices) | List of invoices.
-*BillingUsageMetricsAPI* | [**GetServiceLevelUsage**](docs/BillingUsageMetricsAPI.md#getservicelevelusage) | Retrieve service-level usage metrics for a product.
+*BillingUsageMetricsAPI* | [**GetServiceLevelUsage**](docs/BillingUsageMetricsAPI.md#getservicelevelusage) | Retrieve service-level usage metrics for services with non-zero usage units.
 *BillingUsageMetricsAPI* | [**GetUsageMetrics**](docs/BillingUsageMetricsAPI.md#getusagemetrics) | Get monthly usage metrics
 *CacheSettingsAPI* | [**CreateCacheSettings**](docs/CacheSettingsAPI.md#createcachesettings) | Create a cache settings object
 *CacheSettingsAPI* | [**DeleteCacheSettings**](docs/CacheSettingsAPI.md#deletecachesettings) | Delete a cache settings object

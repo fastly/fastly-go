@@ -265,6 +265,13 @@ Name | Type | Description | Notes
 **RequestCollapseUsableCount** | Pointer to **int64** | Number of requests that were collapsed and satisfied by a usable cache object. | [optional] 
 **RequestCollapseUnusableCount** | Pointer to **int64** | Number of requests that were collapsed and unable to be satisfied by the resulting cache object. | [optional] 
 **ComputeCacheOperationsCount** | Pointer to **int64** | Number of cache operations executed by the Compute platform. | [optional] 
+**NgwafRequestsTotalCount** | Pointer to **int32** | Total number of Next-Gen WAF (Edge WAF &amp; Core WAF) requests. | [optional] 
+**NgwafRequestsUnknownCount** | Pointer to **int32** | Count of Edge WAF requests with an unknown outcome. | [optional] 
+**NgwafRequestsAllowedCount** | Pointer to **int32** | Count of Edge WAF requests allowed. | [optional] 
+**NgwafRequestsLoggedCount** | Pointer to **int32** | Count of Edge WAF requests logged. | [optional] 
+**NgwafRequestsBlockedCount** | Pointer to **int32** | Count of Edge WAF requests blocked. | [optional] 
+**NgwafRequestsTimeoutCount** | Pointer to **int32** | Count of Edge WAF requests timed outcome. | [optional] 
+**NgwafRequestsChallengedCount** | Pointer to **int32** | Count of Edge WAF requests challenged. | [optional] 
 **ServiceID** | Pointer to **string** |  | [optional] [readonly] 
 **StartTime** | Pointer to **int64** | Timestamp for the start of the time period being reported | [optional] 
 
@@ -6821,6 +6828,181 @@ SetComputeCacheOperationsCount sets ComputeCacheOperationsCount field to given v
 `func (o *Results) HasComputeCacheOperationsCount() bool`
 
 HasComputeCacheOperationsCount returns a boolean if a field has been set.
+
+### GetNgwafRequestsTotalCount
+
+`func (o *Results) GetNgwafRequestsTotalCount() int32`
+
+GetNgwafRequestsTotalCount returns the NgwafRequestsTotalCount field if non-nil, zero value otherwise.
+
+### GetNgwafRequestsTotalCountOk
+
+`func (o *Results) GetNgwafRequestsTotalCountOk() (*int32, bool)`
+
+GetNgwafRequestsTotalCountOk returns a tuple with the NgwafRequestsTotalCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNgwafRequestsTotalCount
+
+`func (o *Results) SetNgwafRequestsTotalCount(v int32)`
+
+SetNgwafRequestsTotalCount sets NgwafRequestsTotalCount field to given value.
+
+### HasNgwafRequestsTotalCount
+
+`func (o *Results) HasNgwafRequestsTotalCount() bool`
+
+HasNgwafRequestsTotalCount returns a boolean if a field has been set.
+
+### GetNgwafRequestsUnknownCount
+
+`func (o *Results) GetNgwafRequestsUnknownCount() int32`
+
+GetNgwafRequestsUnknownCount returns the NgwafRequestsUnknownCount field if non-nil, zero value otherwise.
+
+### GetNgwafRequestsUnknownCountOk
+
+`func (o *Results) GetNgwafRequestsUnknownCountOk() (*int32, bool)`
+
+GetNgwafRequestsUnknownCountOk returns a tuple with the NgwafRequestsUnknownCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNgwafRequestsUnknownCount
+
+`func (o *Results) SetNgwafRequestsUnknownCount(v int32)`
+
+SetNgwafRequestsUnknownCount sets NgwafRequestsUnknownCount field to given value.
+
+### HasNgwafRequestsUnknownCount
+
+`func (o *Results) HasNgwafRequestsUnknownCount() bool`
+
+HasNgwafRequestsUnknownCount returns a boolean if a field has been set.
+
+### GetNgwafRequestsAllowedCount
+
+`func (o *Results) GetNgwafRequestsAllowedCount() int32`
+
+GetNgwafRequestsAllowedCount returns the NgwafRequestsAllowedCount field if non-nil, zero value otherwise.
+
+### GetNgwafRequestsAllowedCountOk
+
+`func (o *Results) GetNgwafRequestsAllowedCountOk() (*int32, bool)`
+
+GetNgwafRequestsAllowedCountOk returns a tuple with the NgwafRequestsAllowedCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNgwafRequestsAllowedCount
+
+`func (o *Results) SetNgwafRequestsAllowedCount(v int32)`
+
+SetNgwafRequestsAllowedCount sets NgwafRequestsAllowedCount field to given value.
+
+### HasNgwafRequestsAllowedCount
+
+`func (o *Results) HasNgwafRequestsAllowedCount() bool`
+
+HasNgwafRequestsAllowedCount returns a boolean if a field has been set.
+
+### GetNgwafRequestsLoggedCount
+
+`func (o *Results) GetNgwafRequestsLoggedCount() int32`
+
+GetNgwafRequestsLoggedCount returns the NgwafRequestsLoggedCount field if non-nil, zero value otherwise.
+
+### GetNgwafRequestsLoggedCountOk
+
+`func (o *Results) GetNgwafRequestsLoggedCountOk() (*int32, bool)`
+
+GetNgwafRequestsLoggedCountOk returns a tuple with the NgwafRequestsLoggedCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNgwafRequestsLoggedCount
+
+`func (o *Results) SetNgwafRequestsLoggedCount(v int32)`
+
+SetNgwafRequestsLoggedCount sets NgwafRequestsLoggedCount field to given value.
+
+### HasNgwafRequestsLoggedCount
+
+`func (o *Results) HasNgwafRequestsLoggedCount() bool`
+
+HasNgwafRequestsLoggedCount returns a boolean if a field has been set.
+
+### GetNgwafRequestsBlockedCount
+
+`func (o *Results) GetNgwafRequestsBlockedCount() int32`
+
+GetNgwafRequestsBlockedCount returns the NgwafRequestsBlockedCount field if non-nil, zero value otherwise.
+
+### GetNgwafRequestsBlockedCountOk
+
+`func (o *Results) GetNgwafRequestsBlockedCountOk() (*int32, bool)`
+
+GetNgwafRequestsBlockedCountOk returns a tuple with the NgwafRequestsBlockedCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNgwafRequestsBlockedCount
+
+`func (o *Results) SetNgwafRequestsBlockedCount(v int32)`
+
+SetNgwafRequestsBlockedCount sets NgwafRequestsBlockedCount field to given value.
+
+### HasNgwafRequestsBlockedCount
+
+`func (o *Results) HasNgwafRequestsBlockedCount() bool`
+
+HasNgwafRequestsBlockedCount returns a boolean if a field has been set.
+
+### GetNgwafRequestsTimeoutCount
+
+`func (o *Results) GetNgwafRequestsTimeoutCount() int32`
+
+GetNgwafRequestsTimeoutCount returns the NgwafRequestsTimeoutCount field if non-nil, zero value otherwise.
+
+### GetNgwafRequestsTimeoutCountOk
+
+`func (o *Results) GetNgwafRequestsTimeoutCountOk() (*int32, bool)`
+
+GetNgwafRequestsTimeoutCountOk returns a tuple with the NgwafRequestsTimeoutCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNgwafRequestsTimeoutCount
+
+`func (o *Results) SetNgwafRequestsTimeoutCount(v int32)`
+
+SetNgwafRequestsTimeoutCount sets NgwafRequestsTimeoutCount field to given value.
+
+### HasNgwafRequestsTimeoutCount
+
+`func (o *Results) HasNgwafRequestsTimeoutCount() bool`
+
+HasNgwafRequestsTimeoutCount returns a boolean if a field has been set.
+
+### GetNgwafRequestsChallengedCount
+
+`func (o *Results) GetNgwafRequestsChallengedCount() int32`
+
+GetNgwafRequestsChallengedCount returns the NgwafRequestsChallengedCount field if non-nil, zero value otherwise.
+
+### GetNgwafRequestsChallengedCountOk
+
+`func (o *Results) GetNgwafRequestsChallengedCountOk() (*int32, bool)`
+
+GetNgwafRequestsChallengedCountOk returns a tuple with the NgwafRequestsChallengedCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNgwafRequestsChallengedCount
+
+`func (o *Results) SetNgwafRequestsChallengedCount(v int32)`
+
+SetNgwafRequestsChallengedCount sets NgwafRequestsChallengedCount field to given value.
+
+### HasNgwafRequestsChallengedCount
+
+`func (o *Results) HasNgwafRequestsChallengedCount() bool`
+
+HasNgwafRequestsChallengedCount returns a boolean if a field has been set.
 
 ### GetServiceID
 

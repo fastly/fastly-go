@@ -27,20 +27,17 @@ type AutomationTokenCreateResponse struct {
 	Services []string `json:"services,omitempty"`
 	// A space-delimited list of authorization scope.
 	Scope *string `json:"scope,omitempty"`
-	// A UTC time-stamp of when the token expires.
-	ExpiresAt *string `json:"expires_at,omitempty"`
-	// A UTC time-stamp of when the token was created.
-	CreatedAt *time.Time `json:"created_at,omitempty"`
-	// Date and time in ISO 8601 format.
-	DeletedAt NullableTime `json:"deleted_at,omitempty"`
-	// Date and time in ISO 8601 format.
-	UpdatedAt     NullableTime        `json:"updated_at,omitempty"`
-	ID            *ReadOnlyID         `json:"id,omitempty"`
-	UserID        *ReadOnlyUserID     `json:"user_id,omitempty"`
-	CustomerID    *ReadOnlyCustomerID `json:"customer_id,omitempty"`
-	SudoExpiresAt *time.Time          `json:"sudo_expires_at,omitempty"`
-	AccessToken   *string             `json:"access_token,omitempty"`
-	// A UTC time-stamp of when the token was last used.
+	// A UTC timestamp of when the token expires.
+	ExpiresAt  *string             `json:"expires_at,omitempty"`
+	ID         *ReadOnlyID         `json:"id,omitempty"`
+	UserID     *ReadOnlyUserID     `json:"user_id,omitempty"`
+	CustomerID *ReadOnlyCustomerID `json:"customer_id,omitempty"`
+	// A UTC timestamp of when the token was created.
+	CreatedAt   *time.Time `json:"created_at,omitempty"`
+	AccessToken *string    `json:"access_token,omitempty"`
+	// Indicates whether TLS access is enabled for the token.
+	TLSAccess *bool `json:"tls_access,omitempty"`
+	// A UTC timestamp of when the token was last used.
 	LastUsedAt *time.Time `json:"last_used_at,omitempty"`
 	// The User-Agent header of the client that last used the token.
 	UserAgent            *string `json:"user_agent,omitempty"`
@@ -230,124 +227,6 @@ func (o *AutomationTokenCreateResponse) SetExpiresAt(v string) {
 	o.ExpiresAt = &v
 }
 
-// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
-func (o *AutomationTokenCreateResponse) GetCreatedAt() time.Time {
-	if o == nil || o.CreatedAt == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.CreatedAt
-}
-
-// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AutomationTokenCreateResponse) GetCreatedAtOk() (*time.Time, bool) {
-	if o == nil || o.CreatedAt == nil {
-		return nil, false
-	}
-	return o.CreatedAt, true
-}
-
-// HasCreatedAt returns a boolean if a field has been set.
-func (o *AutomationTokenCreateResponse) HasCreatedAt() bool {
-	if o != nil && o.CreatedAt != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreatedAt gets a reference to the given time.Time and assigns it to the CreatedAt field.
-func (o *AutomationTokenCreateResponse) SetCreatedAt(v time.Time) {
-	o.CreatedAt = &v
-}
-
-// GetDeletedAt returns the DeletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AutomationTokenCreateResponse) GetDeletedAt() time.Time {
-	if o == nil || o.DeletedAt.Get() == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.DeletedAt.Get()
-}
-
-// GetDeletedAtOk returns a tuple with the DeletedAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AutomationTokenCreateResponse) GetDeletedAtOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.DeletedAt.Get(), o.DeletedAt.IsSet()
-}
-
-// HasDeletedAt returns a boolean if a field has been set.
-func (o *AutomationTokenCreateResponse) HasDeletedAt() bool {
-	if o != nil && o.DeletedAt.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetDeletedAt gets a reference to the given NullableTime and assigns it to the DeletedAt field.
-func (o *AutomationTokenCreateResponse) SetDeletedAt(v time.Time) {
-	o.DeletedAt.Set(&v)
-}
-
-// SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
-func (o *AutomationTokenCreateResponse) SetDeletedAtNil() {
-	o.DeletedAt.Set(nil)
-}
-
-// UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-func (o *AutomationTokenCreateResponse) UnsetDeletedAt() {
-	o.DeletedAt.Unset()
-}
-
-// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *AutomationTokenCreateResponse) GetUpdatedAt() time.Time {
-	if o == nil || o.UpdatedAt.Get() == nil {
-		var ret time.Time
-		return ret
-	}
-	return *o.UpdatedAt.Get()
-}
-
-// GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *AutomationTokenCreateResponse) GetUpdatedAtOk() (*time.Time, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return o.UpdatedAt.Get(), o.UpdatedAt.IsSet()
-}
-
-// HasUpdatedAt returns a boolean if a field has been set.
-func (o *AutomationTokenCreateResponse) HasUpdatedAt() bool {
-	if o != nil && o.UpdatedAt.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetUpdatedAt gets a reference to the given NullableTime and assigns it to the UpdatedAt field.
-func (o *AutomationTokenCreateResponse) SetUpdatedAt(v time.Time) {
-	o.UpdatedAt.Set(&v)
-}
-
-// SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-func (o *AutomationTokenCreateResponse) SetUpdatedAtNil() {
-	o.UpdatedAt.Set(nil)
-}
-
-// UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-func (o *AutomationTokenCreateResponse) UnsetUpdatedAt() {
-	o.UpdatedAt.Unset()
-}
-
 // GetID returns the ID field value if set, zero value otherwise.
 func (o *AutomationTokenCreateResponse) GetID() ReadOnlyID {
 	if o == nil || o.ID == nil {
@@ -444,36 +323,36 @@ func (o *AutomationTokenCreateResponse) SetCustomerID(v ReadOnlyCustomerID) {
 	o.CustomerID = &v
 }
 
-// GetSudoExpiresAt returns the SudoExpiresAt field value if set, zero value otherwise.
-func (o *AutomationTokenCreateResponse) GetSudoExpiresAt() time.Time {
-	if o == nil || o.SudoExpiresAt == nil {
+// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
+func (o *AutomationTokenCreateResponse) GetCreatedAt() time.Time {
+	if o == nil || o.CreatedAt == nil {
 		var ret time.Time
 		return ret
 	}
-	return *o.SudoExpiresAt
+	return *o.CreatedAt
 }
 
-// GetSudoExpiresAtOk returns a tuple with the SudoExpiresAt field value if set, nil otherwise
+// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AutomationTokenCreateResponse) GetSudoExpiresAtOk() (*time.Time, bool) {
-	if o == nil || o.SudoExpiresAt == nil {
+func (o *AutomationTokenCreateResponse) GetCreatedAtOk() (*time.Time, bool) {
+	if o == nil || o.CreatedAt == nil {
 		return nil, false
 	}
-	return o.SudoExpiresAt, true
+	return o.CreatedAt, true
 }
 
-// HasSudoExpiresAt returns a boolean if a field has been set.
-func (o *AutomationTokenCreateResponse) HasSudoExpiresAt() bool {
-	if o != nil && o.SudoExpiresAt != nil {
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *AutomationTokenCreateResponse) HasCreatedAt() bool {
+	if o != nil && o.CreatedAt != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSudoExpiresAt gets a reference to the given time.Time and assigns it to the SudoExpiresAt field.
-func (o *AutomationTokenCreateResponse) SetSudoExpiresAt(v time.Time) {
-	o.SudoExpiresAt = &v
+// SetCreatedAt gets a reference to the given time.Time and assigns it to the CreatedAt field.
+func (o *AutomationTokenCreateResponse) SetCreatedAt(v time.Time) {
+	o.CreatedAt = &v
 }
 
 // GetAccessToken returns the AccessToken field value if set, zero value otherwise.
@@ -506,6 +385,38 @@ func (o *AutomationTokenCreateResponse) HasAccessToken() bool {
 // SetAccessToken gets a reference to the given string and assigns it to the AccessToken field.
 func (o *AutomationTokenCreateResponse) SetAccessToken(v string) {
 	o.AccessToken = &v
+}
+
+// GetTLSAccess returns the TLSAccess field value if set, zero value otherwise.
+func (o *AutomationTokenCreateResponse) GetTLSAccess() bool {
+	if o == nil || o.TLSAccess == nil {
+		var ret bool
+		return ret
+	}
+	return *o.TLSAccess
+}
+
+// GetTLSAccessOk returns a tuple with the TLSAccess field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomationTokenCreateResponse) GetTLSAccessOk() (*bool, bool) {
+	if o == nil || o.TLSAccess == nil {
+		return nil, false
+	}
+	return o.TLSAccess, true
+}
+
+// HasTLSAccess returns a boolean if a field has been set.
+func (o *AutomationTokenCreateResponse) HasTLSAccess() bool {
+	if o != nil && o.TLSAccess != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTLSAccess gets a reference to the given bool and assigns it to the TLSAccess field.
+func (o *AutomationTokenCreateResponse) SetTLSAccess(v bool) {
+	o.TLSAccess = &v
 }
 
 // GetLastUsedAt returns the LastUsedAt field value if set, zero value otherwise.
@@ -591,15 +502,6 @@ func (o AutomationTokenCreateResponse) MarshalJSON() ([]byte, error) {
 	if o.ExpiresAt != nil {
 		toSerialize["expires_at"] = o.ExpiresAt
 	}
-	if o.CreatedAt != nil {
-		toSerialize["created_at"] = o.CreatedAt
-	}
-	if o.DeletedAt.IsSet() {
-		toSerialize["deleted_at"] = o.DeletedAt.Get()
-	}
-	if o.UpdatedAt.IsSet() {
-		toSerialize["updated_at"] = o.UpdatedAt.Get()
-	}
 	if o.ID != nil {
 		toSerialize["id"] = o.ID
 	}
@@ -609,11 +511,14 @@ func (o AutomationTokenCreateResponse) MarshalJSON() ([]byte, error) {
 	if o.CustomerID != nil {
 		toSerialize["customer_id"] = o.CustomerID
 	}
-	if o.SudoExpiresAt != nil {
-		toSerialize["sudo_expires_at"] = o.SudoExpiresAt
+	if o.CreatedAt != nil {
+		toSerialize["created_at"] = o.CreatedAt
 	}
 	if o.AccessToken != nil {
 		toSerialize["access_token"] = o.AccessToken
+	}
+	if o.TLSAccess != nil {
+		toSerialize["tls_access"] = o.TLSAccess
 	}
 	if o.LastUsedAt != nil {
 		toSerialize["last_used_at"] = o.LastUsedAt
@@ -646,14 +551,12 @@ func (o *AutomationTokenCreateResponse) UnmarshalJSON(bytes []byte) (err error) 
 		delete(additionalProperties, "services")
 		delete(additionalProperties, "scope")
 		delete(additionalProperties, "expires_at")
-		delete(additionalProperties, "created_at")
-		delete(additionalProperties, "deleted_at")
-		delete(additionalProperties, "updated_at")
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "user_id")
 		delete(additionalProperties, "customer_id")
-		delete(additionalProperties, "sudo_expires_at")
+		delete(additionalProperties, "created_at")
 		delete(additionalProperties, "access_token")
+		delete(additionalProperties, "tls_access")
 		delete(additionalProperties, "last_used_at")
 		delete(additionalProperties, "user_agent")
 		o.AdditionalProperties = additionalProperties

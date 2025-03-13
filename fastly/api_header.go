@@ -133,8 +133,8 @@ type APICreateHeaderObjectRequest struct {
 	src               *string
 	substitution      *string
 	resourceType      *string
-	ignoreIfSet       *int32
-	priority          *int32
+	ignoreIfSet       *string
+	priority          *string
 }
 
 // Action Accepts a string value.
@@ -197,14 +197,14 @@ func (r *APICreateHeaderObjectRequest) ResourceType(resourceType string) *APICre
 	return r
 }
 
-// IgnoreIfSet Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action.
-func (r *APICreateHeaderObjectRequest) IgnoreIfSet(ignoreIfSet int32) *APICreateHeaderObjectRequest {
+// IgnoreIfSet Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. Numerical value (\\\&quot;0\\\&quot; &#x3D; false, \\\&quot;1\\\&quot; &#x3D; true)
+func (r *APICreateHeaderObjectRequest) IgnoreIfSet(ignoreIfSet string) *APICreateHeaderObjectRequest {
 	r.ignoreIfSet = &ignoreIfSet
 	return r
 }
 
 // Priority Priority determines execution order. Lower numbers execute first.
-func (r *APICreateHeaderObjectRequest) Priority(priority int32) *APICreateHeaderObjectRequest {
+func (r *APICreateHeaderObjectRequest) Priority(priority string) *APICreateHeaderObjectRequest {
 	r.priority = &priority
 	return r
 }
@@ -810,8 +810,8 @@ type APIUpdateHeaderObjectRequest struct {
 	src               *string
 	substitution      *string
 	resourceType      *string
-	ignoreIfSet       *int32
-	priority          *int32
+	ignoreIfSet       *string
+	priority          *string
 }
 
 // Action Accepts a string value.
@@ -874,14 +874,14 @@ func (r *APIUpdateHeaderObjectRequest) ResourceType(resourceType string) *APIUpd
 	return r
 }
 
-// IgnoreIfSet Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action.
-func (r *APIUpdateHeaderObjectRequest) IgnoreIfSet(ignoreIfSet int32) *APIUpdateHeaderObjectRequest {
+// IgnoreIfSet Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. Numerical value (\\\&quot;0\\\&quot; &#x3D; false, \\\&quot;1\\\&quot; &#x3D; true)
+func (r *APIUpdateHeaderObjectRequest) IgnoreIfSet(ignoreIfSet string) *APIUpdateHeaderObjectRequest {
 	r.ignoreIfSet = &ignoreIfSet
 	return r
 }
 
 // Priority Priority determines execution order. Lower numbers execute first.
-func (r *APIUpdateHeaderObjectRequest) Priority(priority int32) *APIUpdateHeaderObjectRequest {
+func (r *APIUpdateHeaderObjectRequest) Priority(priority string) *APIUpdateHeaderObjectRequest {
 	r.priority = &priority
 	return r
 }

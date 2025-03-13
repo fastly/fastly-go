@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Limit** | Pointer to **string** | The maximum number of results shown in this response. | [optional] 
+**Limit** | Pointer to **int32** | The maximum number of results shown in this response. | [optional] 
 **NextCursor** | Pointer to **string** | Used for pagination, supply to the next request to get the next block of results. | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetLimit
 
-`func (o *ComputeACLListEntriesMeta) GetLimit() string`
+`func (o *ComputeACLListEntriesMeta) GetLimit() int32`
 
 GetLimit returns the Limit field if non-nil, zero value otherwise.
 
 ### GetLimitOk
 
-`func (o *ComputeACLListEntriesMeta) GetLimitOk() (*string, bool)`
+`func (o *ComputeACLListEntriesMeta) GetLimitOk() (*int32, bool)`
 
 GetLimitOk returns a tuple with the Limit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLimit
 
-`func (o *ComputeACLListEntriesMeta) SetLimit(v string)`
+`func (o *ComputeACLListEntriesMeta) SetLimit(v int32)`
 
 SetLimit sets Limit field to given value.
 

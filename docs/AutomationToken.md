@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Role** | Pointer to **string** | The role on the token. | [optional] 
 **Services** | Pointer to **[]string** | (Optional) The service IDs of the services the token will have access to. Separate service IDs with a space. If no services are specified, the token will have access to all services on the account.  | [optional] 
 **Scope** | Pointer to **string** | A space-delimited list of authorization scope. | [optional] [default to "global"]
-**ExpiresAt** | Pointer to **string** | A UTC time-stamp of when the token expires. | [optional] 
+**ExpiresAt** | Pointer to **string** | A UTC timestamp of when the token expires. | [optional] 
 
 ## Methods
 

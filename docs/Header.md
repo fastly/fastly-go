@@ -14,6 +14,8 @@ Name | Type | Description | Notes
 **Src** | Pointer to **NullableString** | Variable to be used as a source for the header content. Does not apply to `delete` action. | [optional] 
 **Substitution** | Pointer to **NullableString** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. | [optional] 
 **Type** | Pointer to **string** | Accepts a string value. | [optional] 
+**IgnoreIfSet** | Pointer to **string** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. Numerical value (\&quot;0\&quot; &#x3D; false, \&quot;1\&quot; &#x3D; true) | [optional] 
+**Priority** | Pointer to **string** | Priority determines execution order. Lower numbers execute first. | [optional] [default to "100"]
 
 ## Methods
 
@@ -343,6 +345,56 @@ SetType sets Type field to given value.
 `func (o *Header) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetIgnoreIfSet
+
+`func (o *Header) GetIgnoreIfSet() string`
+
+GetIgnoreIfSet returns the IgnoreIfSet field if non-nil, zero value otherwise.
+
+### GetIgnoreIfSetOk
+
+`func (o *Header) GetIgnoreIfSetOk() (*string, bool)`
+
+GetIgnoreIfSetOk returns a tuple with the IgnoreIfSet field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIgnoreIfSet
+
+`func (o *Header) SetIgnoreIfSet(v string)`
+
+SetIgnoreIfSet sets IgnoreIfSet field to given value.
+
+### HasIgnoreIfSet
+
+`func (o *Header) HasIgnoreIfSet() bool`
+
+HasIgnoreIfSet returns a boolean if a field has been set.
+
+### GetPriority
+
+`func (o *Header) GetPriority() string`
+
+GetPriority returns the Priority field if non-nil, zero value otherwise.
+
+### GetPriorityOk
+
+`func (o *Header) GetPriorityOk() (*string, bool)`
+
+GetPriorityOk returns a tuple with the Priority field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriority
+
+`func (o *Header) SetPriority(v string)`
+
+SetPriority sets Priority field to given value.
+
+### HasPriority
+
+`func (o *Header) HasPriority() bool`
+
+HasPriority returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

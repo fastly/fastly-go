@@ -43,8 +43,8 @@ type SnippetAPI interface {
 	CreateSnippet(ctx context.Context, serviceID string, versionID int32) APICreateSnippetRequest
 
 	// CreateSnippetExecute executes the request
-	//  @return SnippetResponsePost
-	CreateSnippetExecute(r APICreateSnippetRequest) (*SnippetResponsePost, *http.Response, error)
+	//  @return SnippetResponse
+	CreateSnippetExecute(r APICreateSnippetRequest) (*SnippetResponse, *http.Response, error)
 
 	/*
 		DeleteSnippet Delete a snippet
@@ -193,7 +193,7 @@ func (r *APICreateSnippetRequest) Dynamic(dynamic string) *APICreateSnippetReque
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateSnippetRequest) Execute() (*SnippetResponsePost, *http.Response, error) {
+func (r APICreateSnippetRequest) Execute() (*SnippetResponse, *http.Response, error) {
 	return r.APIService.CreateSnippetExecute(r)
 }
 
@@ -217,13 +217,13 @@ func (a *SnippetAPIService) CreateSnippet(ctx context.Context, serviceID string,
 }
 
 // CreateSnippetExecute executes the request
-//  @return SnippetResponsePost
-func (a *SnippetAPIService) CreateSnippetExecute(r APICreateSnippetRequest) (*SnippetResponsePost, *http.Response, error) {
+//  @return SnippetResponse
+func (a *SnippetAPIService) CreateSnippetExecute(r APICreateSnippetRequest) (*SnippetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *SnippetResponsePost
+		localVarReturnValue *SnippetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SnippetAPIService.CreateSnippet")

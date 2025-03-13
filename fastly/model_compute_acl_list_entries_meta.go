@@ -19,7 +19,7 @@ import (
 // ComputeACLListEntriesMeta struct for ComputeACLListEntriesMeta
 type ComputeACLListEntriesMeta struct {
 	// The maximum number of results shown in this response.
-	Limit *string `json:"limit,omitempty"`
+	Limit *int32 `json:"limit,omitempty"`
 	// Used for pagination, supply to the next request to get the next block of results.
 	NextCursor           *string `json:"next_cursor,omitempty"`
 	AdditionalProperties map[string]any
@@ -45,9 +45,9 @@ func NewComputeACLListEntriesMetaWithDefaults() *ComputeACLListEntriesMeta {
 }
 
 // GetLimit returns the Limit field value if set, zero value otherwise.
-func (o *ComputeACLListEntriesMeta) GetLimit() string {
+func (o *ComputeACLListEntriesMeta) GetLimit() int32 {
 	if o == nil || o.Limit == nil {
-		var ret string
+		var ret int32
 		return ret
 	}
 	return *o.Limit
@@ -55,7 +55,7 @@ func (o *ComputeACLListEntriesMeta) GetLimit() string {
 
 // GetLimitOk returns a tuple with the Limit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLListEntriesMeta) GetLimitOk() (*string, bool) {
+func (o *ComputeACLListEntriesMeta) GetLimitOk() (*int32, bool) {
 	if o == nil || o.Limit == nil {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *ComputeACLListEntriesMeta) HasLimit() bool {
 	return false
 }
 
-// SetLimit gets a reference to the given string and assigns it to the Limit field.
-func (o *ComputeACLListEntriesMeta) SetLimit(v string) {
+// SetLimit gets a reference to the given int32 and assigns it to the Limit field.
+func (o *ComputeACLListEntriesMeta) SetLimit(v int32) {
 	o.Limit = &v
 }
 
