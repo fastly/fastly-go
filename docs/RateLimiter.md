@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | A human readable name for the rate limiting rule. | [optional] 
-**URIDictionaryName** | Pointer to **NullableString** | The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited. | [optional] 
+**URIDictionaryName** | Pointer to **NullableString** | The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited. | [optional] 
 **HTTPMethods** | Pointer to **[]string** | Array of HTTP methods to apply rate limiting to. | [optional] 
 **RpsLimit** | Pointer to **int32** | Upper limit of requests per second allowed by the rate limiter. | [optional] 
 **WindowSize** | Pointer to **int32** | Number of seconds during which the RPS limit must be exceeded in order to trigger a violation. | [optional] 

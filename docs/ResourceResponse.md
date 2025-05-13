@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ResourceID** | Pointer to **string** | The ID of the underlying linked resource. | [optional] 
-**Name** | Pointer to **string** | The name of the resource link. | [optional] 
+**Name** | Pointer to **string** | The name of the resource link. Note this is separate from the resource store name and might not match the store name. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 

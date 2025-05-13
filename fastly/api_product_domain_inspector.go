@@ -73,6 +73,20 @@ type ProductDomainInspectorAPI interface {
 	// GetProductDomainInspectorExecute executes the request
 	//  @return DomainInspectorResponseBodyEnable
 	GetProductDomainInspectorExecute(r APIGetProductDomainInspectorRequest) (*DomainInspectorResponseBodyEnable, *http.Response, error)
+
+	/*
+		GetServicesProductDomainInspector Get services with product enabled
+
+		Get all the services which have the Domain Inspector product enabled.
+
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIGetServicesProductDomainInspectorRequest
+	*/
+	GetServicesProductDomainInspector(ctx context.Context) APIGetServicesProductDomainInspectorRequest
+
+	// GetServicesProductDomainInspectorExecute executes the request
+	//  @return DomainInspectorResponseBodyGetAllServices
+	GetServicesProductDomainInspectorExecute(r APIGetServicesProductDomainInspectorRequest) (*DomainInspectorResponseBodyGetAllServices, *http.Response, error)
 }
 
 // ProductDomainInspectorAPIService ProductDomainInspectorAPI service
@@ -377,6 +391,134 @@ func (a *ProductDomainInspectorAPIService) GetProductDomainInspectorExecute(r AP
 
 	localVarPath := localBasePath + "/enabled-products/v1/domain_inspector/services/{service_id}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIGetServicesProductDomainInspectorRequest represents a request for the resource.
+type APIGetServicesProductDomainInspectorRequest struct {
+	ctx        context.Context
+	APIService ProductDomainInspectorAPI
+}
+
+// Execute calls the API using the request data configured.
+func (r APIGetServicesProductDomainInspectorRequest) Execute() (*DomainInspectorResponseBodyGetAllServices, *http.Response, error) {
+	return r.APIService.GetServicesProductDomainInspectorExecute(r)
+}
+
+/*
+GetServicesProductDomainInspector Get services with product enabled
+
+Get all the services which have the Domain Inspector product enabled.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return APIGetServicesProductDomainInspectorRequest
+*/
+func (a *ProductDomainInspectorAPIService) GetServicesProductDomainInspector(ctx context.Context) APIGetServicesProductDomainInspectorRequest {
+	return APIGetServicesProductDomainInspectorRequest{
+		APIService: a,
+		ctx:        ctx,
+	}
+}
+
+// GetServicesProductDomainInspectorExecute executes the request
+//  @return DomainInspectorResponseBodyGetAllServices
+func (a *ProductDomainInspectorAPIService) GetServicesProductDomainInspectorExecute(r APIGetServicesProductDomainInspectorRequest) (*DomainInspectorResponseBodyGetAllServices, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DomainInspectorResponseBodyGetAllServices
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductDomainInspectorAPIService.GetServicesProductDomainInspector")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/enabled-products/v1/domain_inspector/services"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

@@ -37,11 +37,14 @@ type UserAPI interface {
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @return APICreateUserRequest
+
+		Deprecated
 	*/
 	CreateUser(ctx context.Context) APICreateUserRequest
 
 	// CreateUserExecute executes the request
 	//  @return UserResponse
+	// Deprecated
 	CreateUserExecute(r APICreateUserRequest) (*UserResponse, *http.Response, error)
 
 	/*
@@ -210,6 +213,8 @@ Create a user.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return APICreateUserRequest
+
+Deprecated
 */
 func (a *UserAPIService) CreateUser(ctx context.Context) APICreateUserRequest {
 	return APICreateUserRequest{
@@ -220,6 +225,7 @@ func (a *UserAPIService) CreateUser(ctx context.Context) APICreateUserRequest {
 
 // CreateUserExecute executes the request
 //  @return UserResponse
+// Deprecated
 func (a *UserAPIService) CreateUserExecute(r APICreateUserRequest) (*UserResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

@@ -31,7 +31,7 @@ var (
 type DictionaryItemAPI interface {
 
 	/*
-		BulkUpdateDictionaryItem Update multiple entries in an edge dictionary
+		BulkUpdateDictionaryItem Update multiple entries in a dictionary
 
 		Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. [Contact support](https://support.fastly.com/) to discuss raising this limit.
 
@@ -47,7 +47,7 @@ type DictionaryItemAPI interface {
 	BulkUpdateDictionaryItemExecute(r APIBulkUpdateDictionaryItemRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-		CreateDictionaryItem Create an entry in an edge dictionary
+		CreateDictionaryItem Create an entry in a dictionary
 
 		Create DictionaryItem given service, dictionary ID, item key, and item value.
 
@@ -63,7 +63,7 @@ type DictionaryItemAPI interface {
 	CreateDictionaryItemExecute(r APICreateDictionaryItemRequest) (*DictionaryItemResponse, *http.Response, error)
 
 	/*
-		DeleteDictionaryItem Delete an item from an edge dictionary
+		DeleteDictionaryItem Delete an item from a dictionary
 
 		Delete DictionaryItem given service, dictionary ID, and item key.
 
@@ -80,7 +80,7 @@ type DictionaryItemAPI interface {
 	DeleteDictionaryItemExecute(r APIDeleteDictionaryItemRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-		GetDictionaryItem Get an item from an edge dictionary
+		GetDictionaryItem Get an item from a dictionary
 
 		Retrieve a single DictionaryItem given service, dictionary ID and item key.
 
@@ -97,7 +97,7 @@ type DictionaryItemAPI interface {
 	GetDictionaryItemExecute(r APIGetDictionaryItemRequest) (*DictionaryItemResponse, *http.Response, error)
 
 	/*
-		ListDictionaryItems List items in an edge dictionary
+		ListDictionaryItems List items in a dictionary
 
 		List of DictionaryItems given service and dictionary ID.
 
@@ -113,7 +113,7 @@ type DictionaryItemAPI interface {
 	ListDictionaryItemsExecute(r APIListDictionaryItemsRequest) ([]DictionaryItemResponse, *http.Response, error)
 
 	/*
-		UpdateDictionaryItem Update an entry in an edge dictionary
+		UpdateDictionaryItem Update an entry in a dictionary
 
 		Update DictionaryItem given service, dictionary ID, item key, and item value.
 
@@ -130,7 +130,7 @@ type DictionaryItemAPI interface {
 	UpdateDictionaryItemExecute(r APIUpdateDictionaryItemRequest) (*DictionaryItemResponse, *http.Response, error)
 
 	/*
-		UpsertDictionaryItem Insert or update an entry in an edge dictionary
+		UpsertDictionaryItem Insert or update an entry in a dictionary
 
 		Upsert DictionaryItem given service, dictionary ID, item key, and item value.
 
@@ -171,7 +171,7 @@ func (r APIBulkUpdateDictionaryItemRequest) Execute() (*InlineResponse200, *http
 }
 
 /*
-BulkUpdateDictionaryItem Update multiple entries in an edge dictionary
+BulkUpdateDictionaryItem Update multiple entries in a dictionary
 
 Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. [Contact support](https://support.fastly.com/) to discuss raising this limit.
 
@@ -323,7 +323,7 @@ func (r APICreateDictionaryItemRequest) Execute() (*DictionaryItemResponse, *htt
 }
 
 /*
-CreateDictionaryItem Create an entry in an edge dictionary
+CreateDictionaryItem Create an entry in a dictionary
 
 Create DictionaryItem given service, dictionary ID, item key, and item value.
 
@@ -466,7 +466,7 @@ func (r APIDeleteDictionaryItemRequest) Execute() (*InlineResponse200, *http.Res
 }
 
 /*
-DeleteDictionaryItem Delete an item from an edge dictionary
+DeleteDictionaryItem Delete an item from a dictionary
 
 Delete DictionaryItem given service, dictionary ID, and item key.
 
@@ -606,7 +606,7 @@ func (r APIGetDictionaryItemRequest) Execute() (*DictionaryItemResponse, *http.R
 }
 
 /*
-GetDictionaryItem Get an item from an edge dictionary
+GetDictionaryItem Get an item from a dictionary
 
 Retrieve a single DictionaryItem given service, dictionary ID and item key.
 
@@ -773,7 +773,7 @@ func (r APIListDictionaryItemsRequest) Execute() ([]DictionaryItemResponse, *htt
 }
 
 /*
-ListDictionaryItems List items in an edge dictionary
+ListDictionaryItems List items in a dictionary
 
 List of DictionaryItems given service and dictionary ID.
 
@@ -936,7 +936,7 @@ func (r APIUpdateDictionaryItemRequest) Execute() (*DictionaryItemResponse, *htt
 }
 
 /*
-UpdateDictionaryItem Update an entry in an edge dictionary
+UpdateDictionaryItem Update an entry in a dictionary
 
 Update DictionaryItem given service, dictionary ID, item key, and item value.
 
@@ -1096,7 +1096,7 @@ func (r APIUpsertDictionaryItemRequest) Execute() (*DictionaryItemResponse, *htt
 }
 
 /*
-UpsertDictionaryItem Insert or update an entry in an edge dictionary
+UpsertDictionaryItem Insert or update an entry in a dictionary
 
 Upsert DictionaryItem given service, dictionary ID, item key, and item value.
 

@@ -98,8 +98,8 @@ type SecretStoreAPI interface {
 	GetSecretStores(ctx context.Context) APIGetSecretStoresRequest
 
 	// GetSecretStoresExecute executes the request
-	//  @return InlineResponse2005
-	GetSecretStoresExecute(r APIGetSecretStoresRequest) (*InlineResponse2005, *http.Response, error)
+	//  @return InlineResponse2007
+	GetSecretStoresExecute(r APIGetSecretStoresRequest) (*InlineResponse2007, *http.Response, error)
 
 	/*
 		SigningKey Get public key
@@ -665,7 +665,7 @@ func (r *APIGetSecretStoresRequest) Name(name string) *APIGetSecretStoresRequest
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetSecretStoresRequest) Execute() (*InlineResponse2005, *http.Response, error) {
+func (r APIGetSecretStoresRequest) Execute() (*InlineResponse2007, *http.Response, error) {
 	return r.APIService.GetSecretStoresExecute(r)
 }
 
@@ -685,13 +685,13 @@ func (a *SecretStoreAPIService) GetSecretStores(ctx context.Context) APIGetSecre
 }
 
 // GetSecretStoresExecute executes the request
-//  @return InlineResponse2005
-func (a *SecretStoreAPIService) GetSecretStoresExecute(r APIGetSecretStoresRequest) (*InlineResponse2005, *http.Response, error) {
+//  @return InlineResponse2007
+func (a *SecretStoreAPIService) GetSecretStoresExecute(r APIGetSecretStoresRequest) (*InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse2005
+		localVarReturnValue *InlineResponse2007
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreAPIService.GetSecretStores")

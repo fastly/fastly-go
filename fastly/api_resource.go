@@ -133,7 +133,7 @@ func (r *APICreateResourceRequest) ResourceID(resourceID string) *APICreateResou
 	return r
 }
 
-// Name The name of the resource link.
+// Name The name of the resource link. Note this is separate from the resource store name and might not match the store name.
 func (r *APICreateResourceRequest) Name(name string) *APICreateResourceRequest {
 	r.name = &name
 	return r
@@ -706,7 +706,7 @@ func (r *APIUpdateResourceRequest) ResourceID(resourceID string) *APIUpdateResou
 	return r
 }
 
-// Name The name of the resource link.
+// Name The name of the resource link. Note this is separate from the resource store name and might not match the store name.
 func (r *APIUpdateResourceRequest) Name(name string) *APIUpdateResourceRequest {
 	r.name = &name
 	return r

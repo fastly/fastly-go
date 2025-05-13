@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DisableProductLogExplorerInsights**](ProductLogExplorerInsightsAPI.md#DisableProductLogExplorerInsights) | **DELETE** `/enabled-products/v1/log_explorer_insights/services/{service_id}` | Disable product
 [**EnableProductLogExplorerInsights**](ProductLogExplorerInsightsAPI.md#EnableProductLogExplorerInsights) | **PUT** `/enabled-products/v1/log_explorer_insights/services/{service_id}` | Enable product
 [**GetProductLogExplorerInsights**](ProductLogExplorerInsightsAPI.md#GetProductLogExplorerInsights) | **GET** `/enabled-products/v1/log_explorer_insights/services/{service_id}` | Get product enablement status
+[**GetServicesProductLogExplorerInsights**](ProductLogExplorerInsightsAPI.md#GetServicesProductLogExplorerInsights) | **GET** `/enabled-products/v1/log_explorer_insights/services` | Get services with product enabled
 
 
 
@@ -197,6 +198,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**LogExplorerInsightsResponseBodyEnable**](LogExplorerInsightsResponseBodyEnable.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## GetServicesProductLogExplorerInsights
+
+Get services with product enabled
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.ProductLogExplorerInsightsAPI.GetServicesProductLogExplorerInsights(ctx).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductLogExplorerInsightsAPI.GetServicesProductLogExplorerInsights`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetServicesProductLogExplorerInsights`: LogExplorerInsightsResponseBodyGetAllServices
+    fmt.Fprintf(os.Stdout, "Response from `ProductLogExplorerInsightsAPI.GetServicesProductLogExplorerInsights`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetServicesProductLogExplorerInsightsRequest struct via the builder pattern
+
+
+
+### Return type
+
+[**LogExplorerInsightsResponseBodyGetAllServices**](LogExplorerInsightsResponseBodyGetAllServices.md)
 
 ### Authorization
 

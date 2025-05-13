@@ -21,7 +21,7 @@ import (
 type ResourceResponse struct {
 	// The ID of the underlying linked resource.
 	ResourceID *string `json:"resource_id,omitempty"`
-	// The name of the resource link.
+	// The name of the resource link. Note this is separate from the resource store name and might not match the store name.
 	Name *string `json:"name,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`

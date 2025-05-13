@@ -5,17 +5,17 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateDictionary**](DictionaryAPI.md#CreateDictionary) | **POST** `/service/{service_id}/version/{version_id}/dictionary` | Create an edge dictionary
-[**DeleteDictionary**](DictionaryAPI.md#DeleteDictionary) | **DELETE** `/service/{service_id}/version/{version_id}/dictionary/{dictionary_name}` | Delete an edge dictionary
-[**GetDictionary**](DictionaryAPI.md#GetDictionary) | **GET** `/service/{service_id}/version/{version_id}/dictionary/{dictionary_name}` | Get an edge dictionary
-[**ListDictionaries**](DictionaryAPI.md#ListDictionaries) | **GET** `/service/{service_id}/version/{version_id}/dictionary` | List edge dictionaries
-[**UpdateDictionary**](DictionaryAPI.md#UpdateDictionary) | **PUT** `/service/{service_id}/version/{version_id}/dictionary/{dictionary_name}` | Update an edge dictionary
+[**CreateDictionary**](DictionaryAPI.md#CreateDictionary) | **POST** `/service/{service_id}/version/{version_id}/dictionary` | Create a dictionary
+[**DeleteDictionary**](DictionaryAPI.md#DeleteDictionary) | **DELETE** `/service/{service_id}/version/{version_id}/dictionary/{dictionary_name}` | Delete a dictionary
+[**GetDictionary**](DictionaryAPI.md#GetDictionary) | **GET** `/service/{service_id}/version/{version_id}/dictionary/{dictionary_name}` | Get a dictionary
+[**ListDictionaries**](DictionaryAPI.md#ListDictionaries) | **GET** `/service/{service_id}/version/{version_id}/dictionary` | List dictionaries
+[**UpdateDictionary**](DictionaryAPI.md#UpdateDictionary) | **PUT** `/service/{service_id}/version/{version_id}/dictionary/{dictionary_name}` | Update a dictionary
 
 
 
 ## CreateDictionary
 
-Create an edge dictionary
+Create a dictionary
 
 
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ## DeleteDictionary
 
-Delete an edge dictionary
+Delete a dictionary
 
 
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ## GetDictionary
 
-Get an edge dictionary
+Get a dictionary
 
 
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ## ListDictionaries
 
-List edge dictionaries
+List dictionaries
 
 
 
@@ -297,7 +297,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDictionary
 
-Update an edge dictionary
+Update a dictionary
 
 
 

@@ -73,8 +73,8 @@ type KvStoreItemAPI interface {
 	KvStoreListItemKeys(ctx context.Context, storeID string) APIKvStoreListItemKeysRequest
 
 	// KvStoreListItemKeysExecute executes the request
-	//  @return InlineResponse2004
-	KvStoreListItemKeysExecute(r APIKvStoreListItemKeysRequest) (*InlineResponse2004, *http.Response, error)
+	//  @return InlineResponse2006
+	KvStoreListItemKeysExecute(r APIKvStoreListItemKeysRequest) (*InlineResponse2006, *http.Response, error)
 
 	/*
 		KvStoreUpsertItem Insert or update an item.
@@ -412,7 +412,7 @@ func (r *APIKvStoreListItemKeysRequest) Consistency(consistency string) *APIKvSt
 }
 
 // Execute calls the API using the request data configured.
-func (r APIKvStoreListItemKeysRequest) Execute() (*InlineResponse2004, *http.Response, error) {
+func (r APIKvStoreListItemKeysRequest) Execute() (*InlineResponse2006, *http.Response, error) {
 	return r.APIService.KvStoreListItemKeysExecute(r)
 }
 
@@ -434,13 +434,13 @@ func (a *KvStoreItemAPIService) KvStoreListItemKeys(ctx context.Context, storeID
 }
 
 // KvStoreListItemKeysExecute executes the request
-//  @return InlineResponse2004
-func (a *KvStoreItemAPIService) KvStoreListItemKeysExecute(r APIKvStoreListItemKeysRequest) (*InlineResponse2004, *http.Response, error) {
+//  @return InlineResponse2006
+func (a *KvStoreItemAPIService) KvStoreListItemKeysExecute(r APIKvStoreListItemKeysRequest) (*InlineResponse2006, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse2004
+		localVarReturnValue *InlineResponse2006
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreItemAPIService.KvStoreListItemKeys")

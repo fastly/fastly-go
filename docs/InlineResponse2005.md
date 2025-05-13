@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**[]SecretStoreResponse**](SecretStoreResponse.md) |  | [optional] 
+**Data** | Pointer to [**[]KvStoreDetails**](KvStoreDetails.md) |  | [optional] 
 **Meta** | Pointer to [**PaginationCursorMeta**](PaginationCursorMeta.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *InlineResponse2005) GetData() []SecretStoreResponse`
+`func (o *InlineResponse2005) GetData() []KvStoreDetails`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *InlineResponse2005) GetDataOk() (*[]SecretStoreResponse, bool)`
+`func (o *InlineResponse2005) GetDataOk() (*[]KvStoreDetails, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *InlineResponse2005) SetData(v []SecretStoreResponse)`
+`func (o *InlineResponse2005) SetData(v []KvStoreDetails)`
 
 SetData sets Data field to given value.
 

@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to **[]string** |  | [optional] 
-**Meta** | Pointer to [**PaginationCursorMeta**](PaginationCursorMeta.md) |  | [optional] 
+**ExpiresAt** | Pointer to **string** | Time-stamp (GMT) when the domain_ownership validation will expire. | [optional] [readonly] 
 
 ## Methods
 
@@ -26,55 +25,30 @@ NewInlineResponse2004WithDefaults instantiates a new InlineResponse2004 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetData
+### GetExpiresAt
 
-`func (o *InlineResponse2004) GetData() []string`
+`func (o *InlineResponse2004) GetExpiresAt() string`
 
-GetData returns the Data field if non-nil, zero value otherwise.
+GetExpiresAt returns the ExpiresAt field if non-nil, zero value otherwise.
 
-### GetDataOk
+### GetExpiresAtOk
 
-`func (o *InlineResponse2004) GetDataOk() (*[]string, bool)`
+`func (o *InlineResponse2004) GetExpiresAtOk() (*string, bool)`
 
-GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
+GetExpiresAtOk returns a tuple with the ExpiresAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetData
+### SetExpiresAt
 
-`func (o *InlineResponse2004) SetData(v []string)`
+`func (o *InlineResponse2004) SetExpiresAt(v string)`
 
-SetData sets Data field to given value.
+SetExpiresAt sets ExpiresAt field to given value.
 
-### HasData
+### HasExpiresAt
 
-`func (o *InlineResponse2004) HasData() bool`
+`func (o *InlineResponse2004) HasExpiresAt() bool`
 
-HasData returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *InlineResponse2004) GetMeta() PaginationCursorMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *InlineResponse2004) GetMetaOk() (*PaginationCursorMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *InlineResponse2004) SetMeta(v PaginationCursorMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *InlineResponse2004) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
+HasExpiresAt returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

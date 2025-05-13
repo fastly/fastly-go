@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DisableProductOriginInspector**](ProductOriginInspectorAPI.md#DisableProductOriginInspector) | **DELETE** `/enabled-products/v1/origin_inspector/services/{service_id}` | Disable product
 [**EnableProductOriginInspector**](ProductOriginInspectorAPI.md#EnableProductOriginInspector) | **PUT** `/enabled-products/v1/origin_inspector/services/{service_id}` | Enable product
 [**GetProductOriginInspector**](ProductOriginInspectorAPI.md#GetProductOriginInspector) | **GET** `/enabled-products/v1/origin_inspector/services/{service_id}` | Get product enablement status
+[**GetServicesProductOriginInspector**](ProductOriginInspectorAPI.md#GetServicesProductOriginInspector) | **GET** `/enabled-products/v1/origin_inspector/services` | Get services with product enabled
 
 
 
@@ -197,6 +198,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**OriginInspectorResponseBodyEnable**](OriginInspectorResponseBodyEnable.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## GetServicesProductOriginInspector
+
+Get services with product enabled
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.ProductOriginInspectorAPI.GetServicesProductOriginInspector(ctx).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductOriginInspectorAPI.GetServicesProductOriginInspector`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetServicesProductOriginInspector`: OriginInspectorResponseBodyGetAllServices
+    fmt.Fprintf(os.Stdout, "Response from `ProductOriginInspectorAPI.GetServicesProductOriginInspector`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetServicesProductOriginInspectorRequest struct via the builder pattern
+
+
+
+### Return type
+
+[**OriginInspectorResponseBodyGetAllServices**](OriginInspectorResponseBodyGetAllServices.md)
 
 ### Authorization
 

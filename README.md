@@ -18,7 +18,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go 1.0.0-beta.40
+	github.com/fastly/fastly-go 1.0.0-beta.41
 )
 ```
 
@@ -147,19 +147,24 @@ Class | Method | Description
 *CustomerAddressesAPI* | [**CreateCustomerAddress**](docs/CustomerAddressesAPI.md#createcustomeraddress) | Creates an address associated with a customer account.
 *CustomerAddressesAPI* | [**ListCustomerAddresses**](docs/CustomerAddressesAPI.md#listcustomeraddresses) | Return the list of addresses associated with a customer account.
 *CustomerAddressesAPI* | [**UpdateCustomerAddress**](docs/CustomerAddressesAPI.md#updatecustomeraddress) | Updates an address associated with a customer account.
-*DictionaryAPI* | [**CreateDictionary**](docs/DictionaryAPI.md#createdictionary) | Create an edge dictionary
-*DictionaryAPI* | [**DeleteDictionary**](docs/DictionaryAPI.md#deletedictionary) | Delete an edge dictionary
-*DictionaryAPI* | [**GetDictionary**](docs/DictionaryAPI.md#getdictionary) | Get an edge dictionary
-*DictionaryAPI* | [**ListDictionaries**](docs/DictionaryAPI.md#listdictionaries) | List edge dictionaries
-*DictionaryAPI* | [**UpdateDictionary**](docs/DictionaryAPI.md#updatedictionary) | Update an edge dictionary
-*DictionaryInfoAPI* | [**GetDictionaryInfo**](docs/DictionaryInfoAPI.md#getdictionaryinfo) | Get edge dictionary metadata
-*DictionaryItemAPI* | [**BulkUpdateDictionaryItem**](docs/DictionaryItemAPI.md#bulkupdatedictionaryitem) | Update multiple entries in an edge dictionary
-*DictionaryItemAPI* | [**CreateDictionaryItem**](docs/DictionaryItemAPI.md#createdictionaryitem) | Create an entry in an edge dictionary
-*DictionaryItemAPI* | [**DeleteDictionaryItem**](docs/DictionaryItemAPI.md#deletedictionaryitem) | Delete an item from an edge dictionary
-*DictionaryItemAPI* | [**GetDictionaryItem**](docs/DictionaryItemAPI.md#getdictionaryitem) | Get an item from an edge dictionary
-*DictionaryItemAPI* | [**ListDictionaryItems**](docs/DictionaryItemAPI.md#listdictionaryitems) | List items in an edge dictionary
-*DictionaryItemAPI* | [**UpdateDictionaryItem**](docs/DictionaryItemAPI.md#updatedictionaryitem) | Update an entry in an edge dictionary
-*DictionaryItemAPI* | [**UpsertDictionaryItem**](docs/DictionaryItemAPI.md#upsertdictionaryitem) | Insert or update an entry in an edge dictionary
+*DdosProtectionAPI* | [**DdosProtectionEventGet**](docs/DdosProtectionAPI.md#ddosprotectioneventget) | Get event by ID
+*DdosProtectionAPI* | [**DdosProtectionEventList**](docs/DdosProtectionAPI.md#ddosprotectioneventlist) | Get events
+*DdosProtectionAPI* | [**DdosProtectionEventRuleList**](docs/DdosProtectionAPI.md#ddosprotectioneventrulelist) | Get all rules for an event
+*DdosProtectionAPI* | [**DdosProtectionRuleGet**](docs/DdosProtectionAPI.md#ddosprotectionruleget) | Get a rule by ID
+*DdosProtectionAPI* | [**DdosProtectionTrafficStatsRuleGet**](docs/DdosProtectionAPI.md#ddosprotectiontrafficstatsruleget) | Get traffic stats for a rule
+*DictionaryAPI* | [**CreateDictionary**](docs/DictionaryAPI.md#createdictionary) | Create a dictionary
+*DictionaryAPI* | [**DeleteDictionary**](docs/DictionaryAPI.md#deletedictionary) | Delete a dictionary
+*DictionaryAPI* | [**GetDictionary**](docs/DictionaryAPI.md#getdictionary) | Get a dictionary
+*DictionaryAPI* | [**ListDictionaries**](docs/DictionaryAPI.md#listdictionaries) | List dictionaries
+*DictionaryAPI* | [**UpdateDictionary**](docs/DictionaryAPI.md#updatedictionary) | Update a dictionary
+*DictionaryInfoAPI* | [**GetDictionaryInfo**](docs/DictionaryInfoAPI.md#getdictionaryinfo) | Get dictionary metadata
+*DictionaryItemAPI* | [**BulkUpdateDictionaryItem**](docs/DictionaryItemAPI.md#bulkupdatedictionaryitem) | Update multiple entries in a dictionary
+*DictionaryItemAPI* | [**CreateDictionaryItem**](docs/DictionaryItemAPI.md#createdictionaryitem) | Create an entry in a dictionary
+*DictionaryItemAPI* | [**DeleteDictionaryItem**](docs/DictionaryItemAPI.md#deletedictionaryitem) | Delete an item from a dictionary
+*DictionaryItemAPI* | [**GetDictionaryItem**](docs/DictionaryItemAPI.md#getdictionaryitem) | Get an item from a dictionary
+*DictionaryItemAPI* | [**ListDictionaryItems**](docs/DictionaryItemAPI.md#listdictionaryitems) | List items in a dictionary
+*DictionaryItemAPI* | [**UpdateDictionaryItem**](docs/DictionaryItemAPI.md#updatedictionaryitem) | Update an entry in a dictionary
+*DictionaryItemAPI* | [**UpsertDictionaryItem**](docs/DictionaryItemAPI.md#upsertdictionaryitem) | Insert or update an entry in a dictionary
 *DiffAPI* | [**DiffServiceVersions**](docs/DiffAPI.md#diffserviceversions) | Diff two service versions
 *DirectorAPI* | [**CreateDirector**](docs/DirectorAPI.md#createdirector) | Create a director
 *DirectorAPI* | [**DeleteDirector**](docs/DirectorAPI.md#deletedirector) | Delete a director
@@ -427,30 +432,38 @@ Class | Method | Description
 *ProductBotManagementAPI* | [**DisableProductBotManagement**](docs/ProductBotManagementAPI.md#disableproductbotmanagement) | Disable product
 *ProductBotManagementAPI* | [**EnableProductBotManagement**](docs/ProductBotManagementAPI.md#enableproductbotmanagement) | Enable product
 *ProductBotManagementAPI* | [**GetProductBotManagement**](docs/ProductBotManagementAPI.md#getproductbotmanagement) | Get product enablement status
+*ProductBotManagementAPI* | [**GetServicesProductBotManagement**](docs/ProductBotManagementAPI.md#getservicesproductbotmanagement) | Get services with product enabled
 *ProductBrotliCompressionAPI* | [**DisableProductBrotliCompression**](docs/ProductBrotliCompressionAPI.md#disableproductbrotlicompression) | Disable product
 *ProductBrotliCompressionAPI* | [**EnableProductBrotliCompression**](docs/ProductBrotliCompressionAPI.md#enableproductbrotlicompression) | Enable product
 *ProductBrotliCompressionAPI* | [**GetProductBrotliCompression**](docs/ProductBrotliCompressionAPI.md#getproductbrotlicompression) | Get product enablement status
+*ProductBrotliCompressionAPI* | [**GetServicesProductBrotliCompression**](docs/ProductBrotliCompressionAPI.md#getservicesproductbrotlicompression) | Get services with product enabled
 *ProductDdosProtectionAPI* | [**DisableProductDdosProtection**](docs/ProductDdosProtectionAPI.md#disableproductddosprotection) | Disable product
 *ProductDdosProtectionAPI* | [**EnableProductDdosProtection**](docs/ProductDdosProtectionAPI.md#enableproductddosprotection) | Enable product
 *ProductDdosProtectionAPI* | [**GetProductDdosProtection**](docs/ProductDdosProtectionAPI.md#getproductddosprotection) | Get product enablement status
 *ProductDdosProtectionAPI* | [**GetProductDdosProtectionConfiguration**](docs/ProductDdosProtectionAPI.md#getproductddosprotectionconfiguration) | Get configuration
+*ProductDdosProtectionAPI* | [**GetServicesProductDdosProtection**](docs/ProductDdosProtectionAPI.md#getservicesproductddosprotection) | Get services with product enabled
 *ProductDdosProtectionAPI* | [**SetProductDdosProtectionConfiguration**](docs/ProductDdosProtectionAPI.md#setproductddosprotectionconfiguration) | Update configuration
 *ProductDomainInspectorAPI* | [**DisableProductDomainInspector**](docs/ProductDomainInspectorAPI.md#disableproductdomaininspector) | Disable product
 *ProductDomainInspectorAPI* | [**EnableProductDomainInspector**](docs/ProductDomainInspectorAPI.md#enableproductdomaininspector) | Enable product
 *ProductDomainInspectorAPI* | [**GetProductDomainInspector**](docs/ProductDomainInspectorAPI.md#getproductdomaininspector) | Get product enablement status
+*ProductDomainInspectorAPI* | [**GetServicesProductDomainInspector**](docs/ProductDomainInspectorAPI.md#getservicesproductdomaininspector) | Get services with product enabled
 *ProductFanoutAPI* | [**DisableProductFanout**](docs/ProductFanoutAPI.md#disableproductfanout) | Disable product
 *ProductFanoutAPI* | [**EnableProductFanout**](docs/ProductFanoutAPI.md#enableproductfanout) | Enable product
 *ProductFanoutAPI* | [**GetProductFanout**](docs/ProductFanoutAPI.md#getproductfanout) | Get product enablement status
+*ProductFanoutAPI* | [**GetServicesProductFanout**](docs/ProductFanoutAPI.md#getservicesproductfanout) | Get services with product enabled
 *ProductImageOptimizerAPI* | [**DisableProductImageOptimizer**](docs/ProductImageOptimizerAPI.md#disableproductimageoptimizer) | Disable product
 *ProductImageOptimizerAPI* | [**EnableProductImageOptimizer**](docs/ProductImageOptimizerAPI.md#enableproductimageoptimizer) | Enable product
 *ProductImageOptimizerAPI* | [**GetProductImageOptimizer**](docs/ProductImageOptimizerAPI.md#getproductimageoptimizer) | Get product enablement status
+*ProductImageOptimizerAPI* | [**GetServicesProductImageOptimizer**](docs/ProductImageOptimizerAPI.md#getservicesproductimageoptimizer) | Get services with product enabled
 *ProductLogExplorerInsightsAPI* | [**DisableProductLogExplorerInsights**](docs/ProductLogExplorerInsightsAPI.md#disableproductlogexplorerinsights) | Disable product
 *ProductLogExplorerInsightsAPI* | [**EnableProductLogExplorerInsights**](docs/ProductLogExplorerInsightsAPI.md#enableproductlogexplorerinsights) | Enable product
 *ProductLogExplorerInsightsAPI* | [**GetProductLogExplorerInsights**](docs/ProductLogExplorerInsightsAPI.md#getproductlogexplorerinsights) | Get product enablement status
+*ProductLogExplorerInsightsAPI* | [**GetServicesProductLogExplorerInsights**](docs/ProductLogExplorerInsightsAPI.md#getservicesproductlogexplorerinsights) | Get services with product enabled
 *ProductNgwafAPI* | [**DisableProductNgwaf**](docs/ProductNgwafAPI.md#disableproductngwaf) | Disable product
 *ProductNgwafAPI* | [**EnableProductNgwaf**](docs/ProductNgwafAPI.md#enableproductngwaf) | Enable product
 *ProductNgwafAPI* | [**GetProductNgwaf**](docs/ProductNgwafAPI.md#getproductngwaf) | Get product enablement status
 *ProductNgwafAPI* | [**GetProductNgwafConfiguration**](docs/ProductNgwafAPI.md#getproductngwafconfiguration) | Get configuration
+*ProductNgwafAPI* | [**GetServicesProductNgwaf**](docs/ProductNgwafAPI.md#getservicesproductngwaf) | Get services with product enabled
 *ProductNgwafAPI* | [**SetProductNgwafConfiguration**](docs/ProductNgwafAPI.md#setproductngwafconfiguration) | Update configuration
 *ProductObjectStorageAPI* | [**DisableProductObjectStorage**](docs/ProductObjectStorageAPI.md#disableproductobjectstorage) | Disable product
 *ProductObjectStorageAPI* | [**EnableObjectStorage**](docs/ProductObjectStorageAPI.md#enableobjectstorage) | Enable product
@@ -458,9 +471,11 @@ Class | Method | Description
 *ProductOriginInspectorAPI* | [**DisableProductOriginInspector**](docs/ProductOriginInspectorAPI.md#disableproductorigininspector) | Disable product
 *ProductOriginInspectorAPI* | [**EnableProductOriginInspector**](docs/ProductOriginInspectorAPI.md#enableproductorigininspector) | Enable product
 *ProductOriginInspectorAPI* | [**GetProductOriginInspector**](docs/ProductOriginInspectorAPI.md#getproductorigininspector) | Get product enablement status
+*ProductOriginInspectorAPI* | [**GetServicesProductOriginInspector**](docs/ProductOriginInspectorAPI.md#getservicesproductorigininspector) | Get services with product enabled
 *ProductWebsocketsAPI* | [**DisableProductWebsockets**](docs/ProductWebsocketsAPI.md#disableproductwebsockets) | Disable product
 *ProductWebsocketsAPI* | [**EnableProductWebsockets**](docs/ProductWebsocketsAPI.md#enableproductwebsockets) | Enable product
 *ProductWebsocketsAPI* | [**GetProductWebsockets**](docs/ProductWebsocketsAPI.md#getproductwebsockets) | Get product enablement status
+*ProductWebsocketsAPI* | [**GetServicesProductWebsockets**](docs/ProductWebsocketsAPI.md#getservicesproductwebsockets) | Get services with product enabled
 *PublicIPListAPI* | [**ListFastlyIps**](docs/PublicIPListAPI.md#listfastlyips) | List Fastly's public IPs
 *PublishAPI* | [**Publish**](docs/PublishAPI.md#publish) | Send messages to Fanout subscribers
 *PurgeAPI* | [**BulkPurgeTag**](docs/PurgeAPI.md#bulkpurgetag) | Purge multiple surrogate key tags
@@ -609,35 +624,6 @@ Class | Method | Description
 *VersionAPI* | [**LockServiceVersion**](docs/VersionAPI.md#lockserviceversion) | Lock a service version
 *VersionAPI* | [**UpdateServiceVersion**](docs/VersionAPI.md#updateserviceversion) | Update a service version
 *VersionAPI* | [**ValidateServiceVersion**](docs/VersionAPI.md#validateserviceversion) | Validate a service version
-*WafActiveRulesAPI* | [**BulkDeleteWafActiveRules**](docs/WafActiveRulesAPI.md#bulkdeletewafactiverules) | Delete multiple active rules from a WAF
-*WafActiveRulesAPI* | [**BulkUpdateWafActiveRules**](docs/WafActiveRulesAPI.md#bulkupdatewafactiverules) | Update multiple active rules
-*WafActiveRulesAPI* | [**CreateWafActiveRule**](docs/WafActiveRulesAPI.md#createwafactiverule) | Add a rule to a WAF as an active rule
-*WafActiveRulesAPI* | [**CreateWafActiveRulesTag**](docs/WafActiveRulesAPI.md#createwafactiverulestag) | Create active rules by tag
-*WafActiveRulesAPI* | [**DeleteWafActiveRule**](docs/WafActiveRulesAPI.md#deletewafactiverule) | Delete an active rule
-*WafActiveRulesAPI* | [**GetWafActiveRule**](docs/WafActiveRulesAPI.md#getwafactiverule) | Get an active WAF rule object
-*WafActiveRulesAPI* | [**ListWafActiveRules**](docs/WafActiveRulesAPI.md#listwafactiverules) | List active rules on a WAF
-*WafActiveRulesAPI* | [**UpdateWafActiveRule**](docs/WafActiveRulesAPI.md#updatewafactiverule) | Update an active rule
-*WafExclusionsAPI* | [**CreateWafRuleExclusion**](docs/WafExclusionsAPI.md#createwafruleexclusion) | Create a WAF rule exclusion
-*WafExclusionsAPI* | [**DeleteWafRuleExclusion**](docs/WafExclusionsAPI.md#deletewafruleexclusion) | Delete a WAF rule exclusion
-*WafExclusionsAPI* | [**GetWafRuleExclusion**](docs/WafExclusionsAPI.md#getwafruleexclusion) | Get a WAF rule exclusion
-*WafExclusionsAPI* | [**ListWafRuleExclusions**](docs/WafExclusionsAPI.md#listwafruleexclusions) | List WAF rule exclusions
-*WafExclusionsAPI* | [**UpdateWafRuleExclusion**](docs/WafExclusionsAPI.md#updatewafruleexclusion) | Update a WAF rule exclusion
-*WafFirewallVersionsAPI* | [**CloneWafFirewallVersion**](docs/WafFirewallVersionsAPI.md#clonewaffirewallversion) | Clone a firewall version
-*WafFirewallVersionsAPI* | [**CreateWafFirewallVersion**](docs/WafFirewallVersionsAPI.md#createwaffirewallversion) | Create a firewall version
-*WafFirewallVersionsAPI* | [**DeployActivateWafFirewallVersion**](docs/WafFirewallVersionsAPI.md#deployactivatewaffirewallversion) | Deploy or activate a firewall version
-*WafFirewallVersionsAPI* | [**GetWafFirewallVersion**](docs/WafFirewallVersionsAPI.md#getwaffirewallversion) | Get a firewall version
-*WafFirewallVersionsAPI* | [**ListWafFirewallVersions**](docs/WafFirewallVersionsAPI.md#listwaffirewallversions) | List firewall versions
-*WafFirewallVersionsAPI* | [**UpdateWafFirewallVersion**](docs/WafFirewallVersionsAPI.md#updatewaffirewallversion) | Update a firewall version
-*WafFirewallsAPI* | [**CreateWafFirewall**](docs/WafFirewallsAPI.md#createwaffirewall) | Create a firewall
-*WafFirewallsAPI* | [**DeleteWafFirewall**](docs/WafFirewallsAPI.md#deletewaffirewall) | Delete a firewall
-*WafFirewallsAPI* | [**GetWafFirewall**](docs/WafFirewallsAPI.md#getwaffirewall) | Get a firewall
-*WafFirewallsAPI* | [**ListWafFirewalls**](docs/WafFirewallsAPI.md#listwaffirewalls) | List firewalls
-*WafFirewallsAPI* | [**UpdateWafFirewall**](docs/WafFirewallsAPI.md#updatewaffirewall) | Update a firewall
-*WafRuleRevisionsAPI* | [**GetWafRuleRevision**](docs/WafRuleRevisionsAPI.md#getwafrulerevision) | Get a revision of a rule
-*WafRuleRevisionsAPI* | [**ListWafRuleRevisions**](docs/WafRuleRevisionsAPI.md#listwafrulerevisions) | List revisions for a rule
-*WafRulesAPI* | [**GetWafRule**](docs/WafRulesAPI.md#getwafrule) | Get a rule
-*WafRulesAPI* | [**ListWafRules**](docs/WafRulesAPI.md#listwafrules) | List available WAF rules
-*WafTagsAPI* | [**ListWafTags**](docs/WafTagsAPI.md#listwaftags) | List tags
 *WholePlatformDdosHistoricalAPI* | [**GetPlatformDdosHistorical**](docs/WholePlatformDdosHistoricalAPI.md#getplatformddoshistorical) | Get historical DDoS metrics for the entire Fastly platform
 
 
@@ -668,6 +654,8 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/alerts/history`](https://www.fastly.com/documentation/reference/api/observability/alerts/history) (GET)
 - [`/dns/configurations/{dns_configuration_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/dns/configurations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/domains/v1/tools/status`](https://www.fastly.com/documentation/reference/api/) (GET)
+- [`/domains/v1/tools/suggest`](https://www.fastly.com/documentation/reference/api/) (GET)
 - [`/domains/v1/{domain_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/domains/v1`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
 - [`/notifications/integration-types`](https://developer.fastly.com/reference/api/observability/notification) (GET)
@@ -676,7 +664,9 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/notifications/integrations/{integration_id}`](https://developer.fastly.com/reference/api/observability/notification) (DELETE, GET, PATCH)
 - [`/notifications/integrations`](https://developer.fastly.com/reference/api/observability/notification) (GET, POST)
 - [`/notifications/mailinglist-confirmations`](https://developer.fastly.com/reference/api/observability/notification) (POST)
+- [`/observability/aggregations`](https://www.fastly.com/documentation/reference/api/observability/aggregations/) (GET)
 - [`/observability/log-explorer`](https://www.fastly.com/documentation/reference/api/observability/log-explorer/) (GET)
+- [`/observability/timeseries`](https://www.fastly.com/documentation/reference/api/observability/timeseries/) (GET)
 - [`/resources/stores/kv/{store_id}/batch`](https://www.fastly.com/documentation/reference/api/services/resources/kv-store-item) (PUT)
 - [`/security/workspaces/{workspace_id}/events/{event_id}`](https://docs.fastly.com/en/ngwaf/) (GET, PATCH)
 - [`/security/workspaces/{workspace_id}/events`](https://docs.fastly.com/en/ngwaf/) (GET)

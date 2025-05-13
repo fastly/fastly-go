@@ -136,7 +136,7 @@ func (r *APICreateRateLimiterRequest) Name(name string) *APICreateRateLimiterReq
 	return r
 }
 
-// URIDictionaryName The name of an Edge Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited.
+// URIDictionaryName The name of a Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited.
 func (r *APICreateRateLimiterRequest) URIDictionaryName(uriDictionaryName string) *APICreateRateLimiterRequest {
 	r.uriDictionaryName = &uriDictionaryName
 	return r
@@ -781,7 +781,7 @@ func (r *APIUpdateRateLimiterRequest) Name(name string) *APIUpdateRateLimiterReq
 	return r
 }
 
-// URIDictionaryName The name of an Edge Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited.
+// URIDictionaryName The name of a Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited.
 func (r *APIUpdateRateLimiterRequest) URIDictionaryName(uriDictionaryName string) *APIUpdateRateLimiterRequest {
 	r.uriDictionaryName = &uriDictionaryName
 	return r

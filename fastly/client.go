@@ -97,6 +97,8 @@ type APIClient struct {
 
 	CustomerAddressesAPI CustomerAddressesAPI
 
+	DdosProtectionAPI DdosProtectionAPI
+
 	DictionaryAPI DictionaryAPI
 
 	DictionaryInfoAPI DictionaryInfoAPI
@@ -305,20 +307,6 @@ type APIClient struct {
 
 	VersionAPI VersionAPI
 
-	WafActiveRulesAPI WafActiveRulesAPI
-
-	WafExclusionsAPI WafExclusionsAPI
-
-	WafFirewallVersionsAPI WafFirewallVersionsAPI
-
-	WafFirewallsAPI WafFirewallsAPI
-
-	WafRuleRevisionsAPI WafRuleRevisionsAPI
-
-	WafRulesAPI WafRulesAPI
-
-	WafTagsAPI WafTagsAPI
-
 	WholePlatformDdosHistoricalAPI WholePlatformDdosHistoricalAPI
 }
 
@@ -356,6 +344,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ContentAPI = (*ContentAPIService)(&c.common)
 	c.CustomerAPI = (*CustomerAPIService)(&c.common)
 	c.CustomerAddressesAPI = (*CustomerAddressesAPIService)(&c.common)
+	c.DdosProtectionAPI = (*DdosProtectionAPIService)(&c.common)
 	c.DictionaryAPI = (*DictionaryAPIService)(&c.common)
 	c.DictionaryInfoAPI = (*DictionaryInfoAPIService)(&c.common)
 	c.DictionaryItemAPI = (*DictionaryItemAPIService)(&c.common)
@@ -460,13 +449,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.VclAPI = (*VclAPIService)(&c.common)
 	c.VclDiffAPI = (*VclDiffAPIService)(&c.common)
 	c.VersionAPI = (*VersionAPIService)(&c.common)
-	c.WafActiveRulesAPI = (*WafActiveRulesAPIService)(&c.common)
-	c.WafExclusionsAPI = (*WafExclusionsAPIService)(&c.common)
-	c.WafFirewallVersionsAPI = (*WafFirewallVersionsAPIService)(&c.common)
-	c.WafFirewallsAPI = (*WafFirewallsAPIService)(&c.common)
-	c.WafRuleRevisionsAPI = (*WafRuleRevisionsAPIService)(&c.common)
-	c.WafRulesAPI = (*WafRulesAPIService)(&c.common)
-	c.WafTagsAPI = (*WafTagsAPIService)(&c.common)
 	c.WholePlatformDdosHistoricalAPI = (*WholePlatformDdosHistoricalAPIService)(&c.common)
 
 	return c

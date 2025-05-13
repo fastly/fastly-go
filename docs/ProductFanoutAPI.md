@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DisableProductFanout**](ProductFanoutAPI.md#DisableProductFanout) | **DELETE** `/enabled-products/v1/fanout/services/{service_id}` | Disable product
 [**EnableProductFanout**](ProductFanoutAPI.md#EnableProductFanout) | **PUT** `/enabled-products/v1/fanout/services/{service_id}` | Enable product
 [**GetProductFanout**](ProductFanoutAPI.md#GetProductFanout) | **GET** `/enabled-products/v1/fanout/services/{service_id}` | Get product enablement status
+[**GetServicesProductFanout**](ProductFanoutAPI.md#GetServicesProductFanout) | **GET** `/enabled-products/v1/fanout/services` | Get services with product enabled
 
 
 
@@ -197,6 +198,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FanoutResponseBodyEnable**](FanoutResponseBodyEnable.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## GetServicesProductFanout
+
+Get services with product enabled
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.ProductFanoutAPI.GetServicesProductFanout(ctx).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductFanoutAPI.GetServicesProductFanout`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetServicesProductFanout`: FanoutResponseBodyGetAllServices
+    fmt.Fprintf(os.Stdout, "Response from `ProductFanoutAPI.GetServicesProductFanout`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetServicesProductFanoutRequest struct via the builder pattern
+
+
+
+### Return type
+
+[**FanoutResponseBodyGetAllServices**](FanoutResponseBodyGetAllServices.md)
 
 ### Authorization
 

@@ -31,7 +31,7 @@ var (
 type DictionaryAPI interface {
 
 	/*
-		CreateDictionary Create an edge dictionary
+		CreateDictionary Create a dictionary
 
 		Create named dictionary for a particular service and version.
 
@@ -47,7 +47,7 @@ type DictionaryAPI interface {
 	CreateDictionaryExecute(r APICreateDictionaryRequest) (*DictionaryResponse, *http.Response, error)
 
 	/*
-		DeleteDictionary Delete an edge dictionary
+		DeleteDictionary Delete a dictionary
 
 		Delete named dictionary for a particular service and version.
 
@@ -64,7 +64,7 @@ type DictionaryAPI interface {
 	DeleteDictionaryExecute(r APIDeleteDictionaryRequest) (*InlineResponse200, *http.Response, error)
 
 	/*
-		GetDictionary Get an edge dictionary
+		GetDictionary Get a dictionary
 
 		Retrieve a single dictionary by name for the version and service.
 
@@ -81,7 +81,7 @@ type DictionaryAPI interface {
 	GetDictionaryExecute(r APIGetDictionaryRequest) (*DictionaryResponse, *http.Response, error)
 
 	/*
-		ListDictionaries List edge dictionaries
+		ListDictionaries List dictionaries
 
 		List all dictionaries for the version of the service.
 
@@ -97,7 +97,7 @@ type DictionaryAPI interface {
 	ListDictionariesExecute(r APIListDictionariesRequest) ([]DictionaryResponse, *http.Response, error)
 
 	/*
-		UpdateDictionary Update an edge dictionary
+		UpdateDictionary Update a dictionary
 
 		Update named dictionary for a particular service and version.
 
@@ -145,7 +145,7 @@ func (r APICreateDictionaryRequest) Execute() (*DictionaryResponse, *http.Respon
 }
 
 /*
-CreateDictionary Create an edge dictionary
+CreateDictionary Create a dictionary
 
 Create named dictionary for a particular service and version.
 
@@ -288,7 +288,7 @@ func (r APIDeleteDictionaryRequest) Execute() (*InlineResponse200, *http.Respons
 }
 
 /*
-DeleteDictionary Delete an edge dictionary
+DeleteDictionary Delete a dictionary
 
 Delete named dictionary for a particular service and version.
 
@@ -428,7 +428,7 @@ func (r APIGetDictionaryRequest) Execute() (*DictionaryResponse, *http.Response,
 }
 
 /*
-GetDictionary Get an edge dictionary
+GetDictionary Get a dictionary
 
 Retrieve a single dictionary by name for the version and service.
 
@@ -567,7 +567,7 @@ func (r APIListDictionariesRequest) Execute() ([]DictionaryResponse, *http.Respo
 }
 
 /*
-ListDictionaries List edge dictionaries
+ListDictionaries List dictionaries
 
 List all dictionaries for the version of the service.
 
@@ -718,7 +718,7 @@ func (r APIUpdateDictionaryRequest) Execute() (*DictionaryResponse, *http.Respon
 }
 
 /*
-UpdateDictionary Update an edge dictionary
+UpdateDictionary Update a dictionary
 
 Update named dictionary for a particular service and version.
 

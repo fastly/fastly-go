@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**EnableProductNgwaf**](ProductNgwafAPI.md#EnableProductNgwaf) | **PUT** `/enabled-products/v1/ngwaf/services/{service_id}` | Enable product
 [**GetProductNgwaf**](ProductNgwafAPI.md#GetProductNgwaf) | **GET** `/enabled-products/v1/ngwaf/services/{service_id}` | Get product enablement status
 [**GetProductNgwafConfiguration**](ProductNgwafAPI.md#GetProductNgwafConfiguration) | **GET** `/enabled-products/v1/ngwaf/services/{service_id}/configuration` | Get configuration
+[**GetServicesProductNgwaf**](ProductNgwafAPI.md#GetServicesProductNgwaf) | **GET** `/enabled-products/v1/ngwaf/services` | Get services with product enabled
 [**SetProductNgwafConfiguration**](ProductNgwafAPI.md#SetProductNgwafConfiguration) | **PATCH** `/enabled-products/v1/ngwaf/services/{service_id}/configuration` | Update configuration
 
 
@@ -267,6 +268,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**NgwafResponseConfigure**](NgwafResponseConfigure.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## GetServicesProductNgwaf
+
+Get services with product enabled
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.ProductNgwafAPI.GetServicesProductNgwaf(ctx).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductNgwafAPI.GetServicesProductNgwaf`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetServicesProductNgwaf`: NgwafResponseBodyGetAllServices
+    fmt.Fprintf(os.Stdout, "Response from `ProductNgwafAPI.GetServicesProductNgwaf`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetServicesProductNgwafRequest struct via the builder pattern
+
+
+
+### Return type
+
+[**NgwafResponseBodyGetAllServices**](NgwafResponseBodyGetAllServices.md)
 
 ### Authorization
 

@@ -35,7 +35,7 @@ func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     versionID := int32(56) // int32 | Integer identifying a service version.
     resourceID := "resourceId_example" // string | The ID of the underlying linked resource. (optional)
-    name := "name_example" // string | The name of the resource link. (optional)
+    name := "name_example" // string | The name of the resource link. Note this is separate from the resource store name and might not match the store name. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -66,7 +66,7 @@ Other parameters are passed through a pointer to a apiCreateResourceRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resourceID** | **string** | The ID of the underlying linked resource. |  **name** | **string** | The name of the resource link. | 
+ **resourceID** | **string** | The ID of the underlying linked resource. |  **name** | **string** | The name of the resource link. Note this is separate from the resource store name and might not match the store name. | 
 
 ### Return type
 
@@ -318,7 +318,7 @@ func main() {
     versionID := int32(56) // int32 | Integer identifying a service version.
     id := "id_example" // string | An alphanumeric string identifying the resource link.
     resourceID := "resourceId_example" // string | The ID of the underlying linked resource. (optional)
-    name := "name_example" // string | The name of the resource link. (optional)
+    name := "name_example" // string | The name of the resource link. Note this is separate from the resource store name and might not match the store name. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -350,7 +350,7 @@ Other parameters are passed through a pointer to a apiUpdateResourceRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resourceID** | **string** | The ID of the underlying linked resource. |  **name** | **string** | The name of the resource link. | 
+ **resourceID** | **string** | The ID of the underlying linked resource. |  **name** | **string** | The name of the resource link. Note this is separate from the resource store name and might not match the store name. | 
 
 ### Return type
 

@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DisableProductImageOptimizer**](ProductImageOptimizerAPI.md#DisableProductImageOptimizer) | **DELETE** `/enabled-products/v1/image_optimizer/services/{service_id}` | Disable product
 [**EnableProductImageOptimizer**](ProductImageOptimizerAPI.md#EnableProductImageOptimizer) | **PUT** `/enabled-products/v1/image_optimizer/services/{service_id}` | Enable product
 [**GetProductImageOptimizer**](ProductImageOptimizerAPI.md#GetProductImageOptimizer) | **GET** `/enabled-products/v1/image_optimizer/services/{service_id}` | Get product enablement status
+[**GetServicesProductImageOptimizer**](ProductImageOptimizerAPI.md#GetServicesProductImageOptimizer) | **GET** `/enabled-products/v1/image_optimizer/services` | Get services with product enabled
 
 
 
@@ -197,6 +198,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ImageOptimizerResponseBodyEnable**](ImageOptimizerResponseBodyEnable.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## GetServicesProductImageOptimizer
+
+Get services with product enabled
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.ProductImageOptimizerAPI.GetServicesProductImageOptimizer(ctx).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductImageOptimizerAPI.GetServicesProductImageOptimizer`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetServicesProductImageOptimizer`: ImageOptimizerResponseBodyGetAllServices
+    fmt.Fprintf(os.Stdout, "Response from `ProductImageOptimizerAPI.GetServicesProductImageOptimizer`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetServicesProductImageOptimizerRequest struct via the builder pattern
+
+
+
+### Return type
+
+[**ImageOptimizerResponseBodyGetAllServices**](ImageOptimizerResponseBodyGetAllServices.md)
 
 ### Authorization
 

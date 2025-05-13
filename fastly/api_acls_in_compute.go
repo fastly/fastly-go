@@ -121,7 +121,7 @@ type ACLsInComputeAPI interface {
 	/*
 		ComputeACLUpdateAcls Update an ACL
 
-		Update an ACL.
+		Update an ACL entry with a new operation or action, this allows you to modify an existing entry or delete it.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param aclID
@@ -964,7 +964,7 @@ func (r APIComputeACLUpdateAclsRequest) Execute() (*http.Response, error) {
 /*
 ComputeACLUpdateAcls Update an ACL
 
-Update an ACL.
+Update an ACL entry with a new operation or action, this allows you to modify an existing entry or delete it.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param aclID

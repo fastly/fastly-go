@@ -141,6 +141,7 @@ type APICreateBackendRequest struct {
 	name                 *string
 	overrideHost         *string
 	port                 *int32
+	preferIpv6           *bool
 	requestCondition     *string
 	shareKey             *string
 	shield               *string
@@ -265,6 +266,12 @@ func (r *APICreateBackendRequest) OverrideHost(overrideHost string) *APICreateBa
 // Port Port on which the backend server is listening for connections from Fastly. Setting &#x60;port&#x60; to 80 or 443 will also set &#x60;use_ssl&#x60; automatically (to false and true respectively), unless explicitly overridden by setting &#x60;use_ssl&#x60; in the same request.
 func (r *APICreateBackendRequest) Port(port int32) *APICreateBackendRequest {
 	r.port = &port
+	return r
+}
+
+// PreferIpv6 Prefer IPv6 connections for DNS hostname lookups.
+func (r *APICreateBackendRequest) PreferIpv6(preferIpv6 bool) *APICreateBackendRequest {
+	r.preferIpv6 = &preferIpv6
 	return r
 }
 
@@ -487,6 +494,9 @@ func (a *BackendAPIService) CreateBackendExecute(r APICreateBackendRequest) (*Ba
 	}
 	if r.port != nil {
 		localVarFormParams.Add("port", parameterToString(*r.port, ""))
+	}
+	if r.preferIpv6 != nil {
+		localVarFormParams.Add("prefer_ipv6", parameterToString(*r.preferIpv6, ""))
 	}
 	if r.requestCondition != nil {
 		localVarFormParams.Add("request_condition", parameterToString(*r.requestCondition, ""))
@@ -1044,6 +1054,7 @@ type APIUpdateBackendRequest struct {
 	name                 *string
 	overrideHost         *string
 	port                 *int32
+	preferIpv6           *bool
 	requestCondition     *string
 	shareKey             *string
 	shield               *string
@@ -1168,6 +1179,12 @@ func (r *APIUpdateBackendRequest) OverrideHost(overrideHost string) *APIUpdateBa
 // Port Port on which the backend server is listening for connections from Fastly. Setting &#x60;port&#x60; to 80 or 443 will also set &#x60;use_ssl&#x60; automatically (to false and true respectively), unless explicitly overridden by setting &#x60;use_ssl&#x60; in the same request.
 func (r *APIUpdateBackendRequest) Port(port int32) *APIUpdateBackendRequest {
 	r.port = &port
+	return r
+}
+
+// PreferIpv6 Prefer IPv6 connections for DNS hostname lookups.
+func (r *APIUpdateBackendRequest) PreferIpv6(preferIpv6 bool) *APIUpdateBackendRequest {
+	r.preferIpv6 = &preferIpv6
 	return r
 }
 
@@ -1393,6 +1410,9 @@ func (a *BackendAPIService) UpdateBackendExecute(r APIUpdateBackendRequest) (*Ba
 	}
 	if r.port != nil {
 		localVarFormParams.Add("port", parameterToString(*r.port, ""))
+	}
+	if r.preferIpv6 != nil {
+		localVarFormParams.Add("prefer_ipv6", parameterToString(*r.preferIpv6, ""))
 	}
 	if r.requestCondition != nil {
 		localVarFormParams.Add("request_condition", parameterToString(*r.requestCondition, ""))

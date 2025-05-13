@@ -31,7 +31,7 @@ var (
 type DictionaryInfoAPI interface {
 
 	/*
-		GetDictionaryInfo Get edge dictionary metadata
+		GetDictionaryInfo Get dictionary metadata
 
 		Retrieve metadata for a single dictionary by ID for a version and service.
 
@@ -66,7 +66,7 @@ func (r APIGetDictionaryInfoRequest) Execute() (*DictionaryInfoResponse, *http.R
 }
 
 /*
-GetDictionaryInfo Get edge dictionary metadata
+GetDictionaryInfo Get dictionary metadata
 
 Retrieve metadata for a single dictionary by ID for a version and service.
 

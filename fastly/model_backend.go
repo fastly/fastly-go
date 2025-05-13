@@ -54,6 +54,8 @@ type Backend struct {
 	OverrideHost NullableString `json:"override_host,omitempty"`
 	// Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request.
 	Port *int32 `json:"port,omitempty"`
+	// Prefer IPv6 connections for DNS hostname lookups.
+	PreferIpv6 *bool `json:"prefer_ipv6,omitempty"`
 	// Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests.
 	RequestCondition *string `json:"request_condition,omitempty"`
 	// Value that when shared across backends will enable those backends to share the same health check.
@@ -799,6 +801,38 @@ func (o *Backend) HasPort() bool {
 // SetPort gets a reference to the given int32 and assigns it to the Port field.
 func (o *Backend) SetPort(v int32) {
 	o.Port = &v
+}
+
+// GetPreferIpv6 returns the PreferIpv6 field value if set, zero value otherwise.
+func (o *Backend) GetPreferIpv6() bool {
+	if o == nil || o.PreferIpv6 == nil {
+		var ret bool
+		return ret
+	}
+	return *o.PreferIpv6
+}
+
+// GetPreferIpv6Ok returns a tuple with the PreferIpv6 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Backend) GetPreferIpv6Ok() (*bool, bool) {
+	if o == nil || o.PreferIpv6 == nil {
+		return nil, false
+	}
+	return o.PreferIpv6, true
+}
+
+// HasPreferIpv6 returns a boolean if a field has been set.
+func (o *Backend) HasPreferIpv6() bool {
+	if o != nil && o.PreferIpv6 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPreferIpv6 gets a reference to the given bool and assigns it to the PreferIpv6 field.
+func (o *Backend) SetPreferIpv6(v bool) {
+	o.PreferIpv6 = &v
 }
 
 // GetRequestCondition returns the RequestCondition field value if set, zero value otherwise.
@@ -1560,6 +1594,9 @@ func (o Backend) MarshalJSON() ([]byte, error) {
 	if o.Port != nil {
 		toSerialize["port"] = o.Port
 	}
+	if o.PreferIpv6 != nil {
+		toSerialize["prefer_ipv6"] = o.PreferIpv6
+	}
 	if o.RequestCondition != nil {
 		toSerialize["request_condition"] = o.RequestCondition
 	}
@@ -1649,6 +1686,7 @@ func (o *Backend) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "override_host")
 		delete(additionalProperties, "port")
+		delete(additionalProperties, "prefer_ipv6")
 		delete(additionalProperties, "request_condition")
 		delete(additionalProperties, "share_key")
 		delete(additionalProperties, "shield")

@@ -18,7 +18,8 @@ import (
 
 // InlineResponse2007 struct for InlineResponse2007
 type InlineResponse2007 struct {
-	Data                 []ServiceAuthorizationResponseData `json:"data,omitempty"`
+	Data                 []SecretStoreResponse `json:"data,omitempty"`
+	Meta                 *PaginationCursorMeta `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -42,9 +43,9 @@ func NewInlineResponse2007WithDefaults() *InlineResponse2007 {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse2007) GetData() []ServiceAuthorizationResponseData {
+func (o *InlineResponse2007) GetData() []SecretStoreResponse {
 	if o == nil || o.Data == nil {
-		var ret []ServiceAuthorizationResponseData
+		var ret []SecretStoreResponse
 		return ret
 	}
 	return o.Data
@@ -52,7 +53,7 @@ func (o *InlineResponse2007) GetData() []ServiceAuthorizationResponseData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2007) GetDataOk() ([]ServiceAuthorizationResponseData, bool) {
+func (o *InlineResponse2007) GetDataOk() ([]SecretStoreResponse, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -68,9 +69,41 @@ func (o *InlineResponse2007) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []ServiceAuthorizationResponseData and assigns it to the Data field.
-func (o *InlineResponse2007) SetData(v []ServiceAuthorizationResponseData) {
+// SetData gets a reference to the given []SecretStoreResponse and assigns it to the Data field.
+func (o *InlineResponse2007) SetData(v []SecretStoreResponse) {
 	o.Data = v
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *InlineResponse2007) GetMeta() PaginationCursorMeta {
+	if o == nil || o.Meta == nil {
+		var ret PaginationCursorMeta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InlineResponse2007) GetMetaOk() (*PaginationCursorMeta, bool) {
+	if o == nil || o.Meta == nil {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *InlineResponse2007) HasMeta() bool {
+	if o != nil && o.Meta != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given PaginationCursorMeta and assigns it to the Meta field.
+func (o *InlineResponse2007) SetMeta(v PaginationCursorMeta) {
+	o.Meta = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -79,6 +112,9 @@ func (o InlineResponse2007) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
+	}
+	if o.Meta != nil {
+		toSerialize["meta"] = o.Meta
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -101,6 +137,7 @@ func (o *InlineResponse2007) UnmarshalJSON(bytes []byte) (err error) {
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "data")
+		delete(additionalProperties, "meta")
 		o.AdditionalProperties = additionalProperties
 	}
 

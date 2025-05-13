@@ -20,7 +20,7 @@ import (
 type RateLimiter struct {
 	// A human readable name for the rate limiting rule.
 	Name *string `json:"name,omitempty"`
-	// The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
+	// The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
 	URIDictionaryName NullableString `json:"uri_dictionary_name,omitempty"`
 	// Array of HTTP methods to apply rate limiting to.
 	HTTPMethods []string `json:"http_methods,omitempty"`

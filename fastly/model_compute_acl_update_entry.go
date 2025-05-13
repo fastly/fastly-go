@@ -18,11 +18,11 @@ import (
 
 // ComputeACLUpdateEntry Defines the structure of an ACL update request entry.
 type ComputeACLUpdateEntry struct {
-	// One of \"create\" or \"update\", indicating that the rest of this entry is to be added to/updated in the ACL.
+	// One of \"create\", \"update\", or \"delete\" indicating the operation to perform on the update.
 	Op *string `json:"op,omitempty"`
 	// An IP prefix defined in Classless Inter-Domain Routing (CIDR) format, i.e. a valid IP address (v4 or v6) followed by a forward slash (/) and a prefix length (0-32 or 0-128, depending on address family).
 	Prefix *string `json:"prefix,omitempty"`
-	// The action taken on the IP address, either \"block\" or \"allow\".
+	// The action taken on the IP address, one of \"BLOCK\" or \"ALLOW\". If using the \"delete\" operation, no action should be specified.
 	Action               *string `json:"action,omitempty"`
 	AdditionalProperties map[string]any
 }

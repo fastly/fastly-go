@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**EnableProductDdosProtection**](ProductDdosProtectionAPI.md#EnableProductDdosProtection) | **PUT** `/enabled-products/v1/ddos_protection/services/{service_id}` | Enable product
 [**GetProductDdosProtection**](ProductDdosProtectionAPI.md#GetProductDdosProtection) | **GET** `/enabled-products/v1/ddos_protection/services/{service_id}` | Get product enablement status
 [**GetProductDdosProtectionConfiguration**](ProductDdosProtectionAPI.md#GetProductDdosProtectionConfiguration) | **GET** `/enabled-products/v1/ddos_protection/services/{service_id}/configuration` | Get configuration
+[**GetServicesProductDdosProtection**](ProductDdosProtectionAPI.md#GetServicesProductDdosProtection) | **GET** `/enabled-products/v1/ddos_protection/services` | Get services with product enabled
 [**SetProductDdosProtectionConfiguration**](ProductDdosProtectionAPI.md#SetProductDdosProtectionConfiguration) | **PATCH** `/enabled-products/v1/ddos_protection/services/{service_id}/configuration` | Update configuration
 
 
@@ -266,6 +267,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**DdosProtectionResponseConfigure**](DdosProtectionResponseConfigure.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## GetServicesProductDdosProtection
+
+Get services with product enabled
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.ProductDdosProtectionAPI.GetServicesProductDdosProtection(ctx).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductDdosProtectionAPI.GetServicesProductDdosProtection`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetServicesProductDdosProtection`: DdosProtectionResponseBodyGetAllServices
+    fmt.Fprintf(os.Stdout, "Response from `ProductDdosProtectionAPI.GetServicesProductDdosProtection`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetServicesProductDdosProtectionRequest struct via the builder pattern
+
+
+
+### Return type
+
+[**DdosProtectionResponseBodyGetAllServices**](DdosProtectionResponseBodyGetAllServices.md)
 
 ### Authorization
 

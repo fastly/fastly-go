@@ -18,7 +18,7 @@ import (
 
 // InlineResponse2003 struct for InlineResponse2003
 type InlineResponse2003 struct {
-	Data                 []KvStoreDetails      `json:"data,omitempty"`
+	Data                 []DdosProtectionRule  `json:"data,omitempty"`
 	Meta                 *PaginationCursorMeta `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -43,9 +43,9 @@ func NewInlineResponse2003WithDefaults() *InlineResponse2003 {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse2003) GetData() []KvStoreDetails {
+func (o *InlineResponse2003) GetData() []DdosProtectionRule {
 	if o == nil || o.Data == nil {
-		var ret []KvStoreDetails
+		var ret []DdosProtectionRule
 		return ret
 	}
 	return o.Data
@@ -53,7 +53,7 @@ func (o *InlineResponse2003) GetData() []KvStoreDetails {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2003) GetDataOk() ([]KvStoreDetails, bool) {
+func (o *InlineResponse2003) GetDataOk() ([]DdosProtectionRule, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *InlineResponse2003) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []KvStoreDetails and assigns it to the Data field.
-func (o *InlineResponse2003) SetData(v []KvStoreDetails) {
+// SetData gets a reference to the given []DdosProtectionRule and assigns it to the Data field.
+func (o *InlineResponse2003) SetData(v []DdosProtectionRule) {
 	o.Data = v
 }
 

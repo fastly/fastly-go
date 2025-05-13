@@ -84,8 +84,8 @@ type KvStoreAPI interface {
 	KvStoreList(ctx context.Context) APIKvStoreListRequest
 
 	// KvStoreListExecute executes the request
-	//  @return InlineResponse2003
-	KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2003, *http.Response, error)
+	//  @return InlineResponse2005
+	KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2005, *http.Response, error)
 }
 
 // KvStoreAPIService KvStoreAPI service
@@ -512,7 +512,7 @@ func (r *APIKvStoreListRequest) Limit(limit int32) *APIKvStoreListRequest {
 }
 
 // Execute calls the API using the request data configured.
-func (r APIKvStoreListRequest) Execute() (*InlineResponse2003, *http.Response, error) {
+func (r APIKvStoreListRequest) Execute() (*InlineResponse2005, *http.Response, error) {
 	return r.APIService.KvStoreListExecute(r)
 }
 
@@ -532,13 +532,13 @@ func (a *KvStoreAPIService) KvStoreList(ctx context.Context) APIKvStoreListReque
 }
 
 // KvStoreListExecute executes the request
-//  @return InlineResponse2003
-func (a *KvStoreAPIService) KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2003, *http.Response, error) {
+//  @return InlineResponse2005
+func (a *KvStoreAPIService) KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2005, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse2003
+		localVarReturnValue *InlineResponse2005
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.KvStoreList")

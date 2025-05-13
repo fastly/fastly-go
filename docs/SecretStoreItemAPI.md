@@ -249,7 +249,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SecretStoreItemAPI.GetSecrets`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetSecrets`: InlineResponse2006
+    // response from `GetSecrets`: InlineResponse2008
     fmt.Fprintf(os.Stdout, "Response from `SecretStoreItemAPI.GetSecrets`: %v\n", resp)
 }
 ```
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 

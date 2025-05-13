@@ -5,13 +5,13 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetDictionaryInfo**](DictionaryInfoAPI.md#GetDictionaryInfo) | **GET** `/service/{service_id}/version/{version_id}/dictionary/{dictionary_id}/info` | Get edge dictionary metadata
+[**GetDictionaryInfo**](DictionaryInfoAPI.md#GetDictionaryInfo) | **GET** `/service/{service_id}/version/{version_id}/dictionary/{dictionary_id}/info` | Get dictionary metadata
 
 
 
 ## GetDictionaryInfo
 
-Get edge dictionary metadata
+Get dictionary metadata
 
 
 

@@ -73,6 +73,20 @@ type ProductFanoutAPI interface {
 	// GetProductFanoutExecute executes the request
 	//  @return FanoutResponseBodyEnable
 	GetProductFanoutExecute(r APIGetProductFanoutRequest) (*FanoutResponseBodyEnable, *http.Response, error)
+
+	/*
+		GetServicesProductFanout Get services with product enabled
+
+		Get all the services which have the Fanout product enabled.
+
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @return APIGetServicesProductFanoutRequest
+	*/
+	GetServicesProductFanout(ctx context.Context) APIGetServicesProductFanoutRequest
+
+	// GetServicesProductFanoutExecute executes the request
+	//  @return FanoutResponseBodyGetAllServices
+	GetServicesProductFanoutExecute(r APIGetServicesProductFanoutRequest) (*FanoutResponseBodyGetAllServices, *http.Response, error)
 }
 
 // ProductFanoutAPIService ProductFanoutAPI service
@@ -377,6 +391,134 @@ func (a *ProductFanoutAPIService) GetProductFanoutExecute(r APIGetProductFanoutR
 
 	localVarPath := localBasePath + "/enabled-products/v1/fanout/services/{service_id}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIGetServicesProductFanoutRequest represents a request for the resource.
+type APIGetServicesProductFanoutRequest struct {
+	ctx        context.Context
+	APIService ProductFanoutAPI
+}
+
+// Execute calls the API using the request data configured.
+func (r APIGetServicesProductFanoutRequest) Execute() (*FanoutResponseBodyGetAllServices, *http.Response, error) {
+	return r.APIService.GetServicesProductFanoutExecute(r)
+}
+
+/*
+GetServicesProductFanout Get services with product enabled
+
+Get all the services which have the Fanout product enabled.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return APIGetServicesProductFanoutRequest
+*/
+func (a *ProductFanoutAPIService) GetServicesProductFanout(ctx context.Context) APIGetServicesProductFanoutRequest {
+	return APIGetServicesProductFanoutRequest{
+		APIService: a,
+		ctx:        ctx,
+	}
+}
+
+// GetServicesProductFanoutExecute executes the request
+//  @return FanoutResponseBodyGetAllServices
+func (a *ProductFanoutAPIService) GetServicesProductFanoutExecute(r APIGetServicesProductFanoutRequest) (*FanoutResponseBodyGetAllServices, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *FanoutResponseBodyGetAllServices
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ProductFanoutAPIService.GetServicesProductFanout")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/enabled-products/v1/fanout/services"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

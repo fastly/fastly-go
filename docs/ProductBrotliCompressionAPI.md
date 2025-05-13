@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DisableProductBrotliCompression**](ProductBrotliCompressionAPI.md#DisableProductBrotliCompression) | **DELETE** `/enabled-products/v1/brotli_compression/services/{service_id}` | Disable product
 [**EnableProductBrotliCompression**](ProductBrotliCompressionAPI.md#EnableProductBrotliCompression) | **PUT** `/enabled-products/v1/brotli_compression/services/{service_id}` | Enable product
 [**GetProductBrotliCompression**](ProductBrotliCompressionAPI.md#GetProductBrotliCompression) | **GET** `/enabled-products/v1/brotli_compression/services/{service_id}` | Get product enablement status
+[**GetServicesProductBrotliCompression**](ProductBrotliCompressionAPI.md#GetServicesProductBrotliCompression) | **GET** `/enabled-products/v1/brotli_compression/services` | Get services with product enabled
 
 
 
@@ -197,6 +198,65 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BrotliCompressionResponseBodyEnable**](BrotliCompressionResponseBodyEnable.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## GetServicesProductBrotliCompression
+
+Get services with product enabled
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.ProductBrotliCompressionAPI.GetServicesProductBrotliCompression(ctx).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductBrotliCompressionAPI.GetServicesProductBrotliCompression`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetServicesProductBrotliCompression`: BrotliCompressionResponseBodyGetAllServices
+    fmt.Fprintf(os.Stdout, "Response from `ProductBrotliCompressionAPI.GetServicesProductBrotliCompression`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetServicesProductBrotliCompressionRequest struct via the builder pattern
+
+
+
+### Return type
+
+[**BrotliCompressionResponseBodyGetAllServices**](BrotliCompressionResponseBodyGetAllServices.md)
 
 ### Authorization
 

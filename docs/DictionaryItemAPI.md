@@ -5,19 +5,19 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BulkUpdateDictionaryItem**](DictionaryItemAPI.md#BulkUpdateDictionaryItem) | **PATCH** `/service/{service_id}/dictionary/{dictionary_id}/items` | Update multiple entries in an edge dictionary
-[**CreateDictionaryItem**](DictionaryItemAPI.md#CreateDictionaryItem) | **POST** `/service/{service_id}/dictionary/{dictionary_id}/item` | Create an entry in an edge dictionary
-[**DeleteDictionaryItem**](DictionaryItemAPI.md#DeleteDictionaryItem) | **DELETE** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Delete an item from an edge dictionary
-[**GetDictionaryItem**](DictionaryItemAPI.md#GetDictionaryItem) | **GET** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Get an item from an edge dictionary
-[**ListDictionaryItems**](DictionaryItemAPI.md#ListDictionaryItems) | **GET** `/service/{service_id}/dictionary/{dictionary_id}/items` | List items in an edge dictionary
-[**UpdateDictionaryItem**](DictionaryItemAPI.md#UpdateDictionaryItem) | **PATCH** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Update an entry in an edge dictionary
-[**UpsertDictionaryItem**](DictionaryItemAPI.md#UpsertDictionaryItem) | **PUT** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Insert or update an entry in an edge dictionary
+[**BulkUpdateDictionaryItem**](DictionaryItemAPI.md#BulkUpdateDictionaryItem) | **PATCH** `/service/{service_id}/dictionary/{dictionary_id}/items` | Update multiple entries in a dictionary
+[**CreateDictionaryItem**](DictionaryItemAPI.md#CreateDictionaryItem) | **POST** `/service/{service_id}/dictionary/{dictionary_id}/item` | Create an entry in a dictionary
+[**DeleteDictionaryItem**](DictionaryItemAPI.md#DeleteDictionaryItem) | **DELETE** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Delete an item from a dictionary
+[**GetDictionaryItem**](DictionaryItemAPI.md#GetDictionaryItem) | **GET** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Get an item from a dictionary
+[**ListDictionaryItems**](DictionaryItemAPI.md#ListDictionaryItems) | **GET** `/service/{service_id}/dictionary/{dictionary_id}/items` | List items in a dictionary
+[**UpdateDictionaryItem**](DictionaryItemAPI.md#UpdateDictionaryItem) | **PATCH** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Update an entry in a dictionary
+[**UpsertDictionaryItem**](DictionaryItemAPI.md#UpsertDictionaryItem) | **PUT** `/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}` | Insert or update an entry in a dictionary
 
 
 
 ## BulkUpdateDictionaryItem
 
-Update multiple entries in an edge dictionary
+Update multiple entries in a dictionary
 
 
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ## CreateDictionaryItem
 
-Create an entry in an edge dictionary
+Create an entry in a dictionary
 
 
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ## DeleteDictionaryItem
 
-Delete an item from an edge dictionary
+Delete an item from a dictionary
 
 
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ## GetDictionaryItem
 
-Get an item from an edge dictionary
+Get an item from a dictionary
 
 
 
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ## ListDictionaryItems
 
-List items in an edge dictionary
+List items in a dictionary
 
 
 
@@ -320,7 +320,7 @@ func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     dictionaryID := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
     page := int32(1) // int32 | Current page. (optional)
-    perPage := int32(20) // int32 | Number of records per page. (optional) (default to 20)
+    perPage := int32(20) // int32 | Number of records per page. (optional) (default to 100)
     sort := "created" // string | Field on which to sort. (optional) (default to "created")
     direction := "ascend" // string | Direction in which to sort results. (optional) (default to "ascend")
 
@@ -353,7 +353,7 @@ Other parameters are passed through a pointer to a apiListDictionaryItemsRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **int32** | Current page. |  **perPage** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | Field on which to sort. | [default to &quot;created&quot;] **direction** | **string** | Direction in which to sort results. | [default to &quot;ascend&quot;]
+ **page** | **int32** | Current page. |  **perPage** | **int32** | Number of records per page. | [default to 100] **sort** | **string** | Field on which to sort. | [default to &quot;created&quot;] **direction** | **string** | Direction in which to sort results. | [default to &quot;ascend&quot;]
 
 ### Return type
 
@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDictionaryItem
 
-Update an entry in an edge dictionary
+Update an entry in a dictionary
 
 
 
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 
 ## UpsertDictionaryItem
 
-Insert or update an entry in an edge dictionary
+Insert or update an entry in a dictionary
 
 
 
