@@ -585,15 +585,22 @@ func (a *ServiceAPIService) GetServiceExecute(r APIGetServiceRequest) (*ServiceR
 
 // APIGetServiceDetailRequest represents a request for the resource.
 type APIGetServiceDetailRequest struct {
-	ctx        context.Context
-	APIService ServiceAPI
-	serviceID  string
-	version    *int32
+	ctx                  context.Context
+	APIService           ServiceAPI
+	serviceID            string
+	version              *int32
+	filterVersionsActive *bool
 }
 
 // Version Number identifying a version of the service.
 func (r *APIGetServiceDetailRequest) Version(version int32) *APIGetServiceDetailRequest {
 	r.version = &version
+	return r
+}
+
+// FilterVersionsActive Limits the versions array to the active versions. Accepts &#x60;true&#x60; or &#x60;false&#x60; (defaults to false).
+func (r *APIGetServiceDetailRequest) FilterVersionsActive(filterVersionsActive bool) *APIGetServiceDetailRequest {
+	r.filterVersionsActive = &filterVersionsActive
 	return r
 }
 
@@ -643,6 +650,9 @@ func (a *ServiceAPIService) GetServiceDetailExecute(r APIGetServiceDetailRequest
 
 	if r.version != nil {
 		localVarQueryParams.Add("version", parameterToString(*r.version, ""))
+	}
+	if r.filterVersionsActive != nil {
+		localVarQueryParams.Add("filter[versions.active]", parameterToString(*r.filterVersionsActive, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

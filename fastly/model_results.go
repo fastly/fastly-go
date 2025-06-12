@@ -546,11 +546,11 @@ type Results struct {
 	NgwafRequestsTotalCount *int32 `json:"ngwaf_requests_total_count,omitempty"`
 	// Count of Edge WAF requests with an unknown outcome.
 	NgwafRequestsUnknownCount *int32 `json:"ngwaf_requests_unknown_count,omitempty"`
-	// Count of Edge WAF requests allowed.
+	// Count of Next-Gen WAF (Edge WAF & Core WAF) requests allowed.
 	NgwafRequestsAllowedCount *int32 `json:"ngwaf_requests_allowed_count,omitempty"`
 	// Count of Edge WAF requests logged.
 	NgwafRequestsLoggedCount *int32 `json:"ngwaf_requests_logged_count,omitempty"`
-	// Count of Edge WAF requests blocked.
+	// Count of Next-Gen WAF (Edge WAF & Core WAF) requests blocked.
 	NgwafRequestsBlockedCount *int32 `json:"ngwaf_requests_blocked_count,omitempty"`
 	// Count of Edge WAF requests timed outcome.
 	NgwafRequestsTimeoutCount *int32 `json:"ngwaf_requests_timeout_count,omitempty"`

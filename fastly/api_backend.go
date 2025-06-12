@@ -269,7 +269,7 @@ func (r *APICreateBackendRequest) Port(port int32) *APICreateBackendRequest {
 	return r
 }
 
-// PreferIpv6 Prefer IPv6 connections for DNS hostname lookups.
+// PreferIpv6 Prefer IPv6 connections to origins for hostname backends.
 func (r *APICreateBackendRequest) PreferIpv6(preferIpv6 bool) *APICreateBackendRequest {
 	r.preferIpv6 = &preferIpv6
 	return r
@@ -1182,7 +1182,7 @@ func (r *APIUpdateBackendRequest) Port(port int32) *APIUpdateBackendRequest {
 	return r
 }
 
-// PreferIpv6 Prefer IPv6 connections for DNS hostname lookups.
+// PreferIpv6 Prefer IPv6 connections to origins for hostname backends.
 func (r *APIUpdateBackendRequest) PreferIpv6(preferIpv6 bool) *APIUpdateBackendRequest {
 	r.preferIpv6 = &preferIpv6
 	return r

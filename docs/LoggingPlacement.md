@@ -5,8 +5,6 @@
 
 * `NONE` (value: `"none"`)
 
-* `WAF_DEBUG` (value: `"waf_debug"`)
-
 * `NULL` (value: `"null"`)
 
 

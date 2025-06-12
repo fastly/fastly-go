@@ -22,15 +22,13 @@ type LoggingPlacement string
 
 // List of logging_placement
 const (
-	LOGGINGPLACEMENT_NONE      LoggingPlacement = "none"
-	LOGGINGPLACEMENT_WAF_DEBUG LoggingPlacement = "waf_debug"
-	LOGGINGPLACEMENT_NULL      LoggingPlacement = "null"
+	LOGGINGPLACEMENT_NONE LoggingPlacement = "none"
+	LOGGINGPLACEMENT_NULL LoggingPlacement = "null"
 )
 
 // AllowedLoggingPlacementEnumValues All allowed values of LoggingPlacement enum
 var AllowedLoggingPlacementEnumValues = []LoggingPlacement{
 	"none",
-	"waf_debug",
 	"null",
 }
 

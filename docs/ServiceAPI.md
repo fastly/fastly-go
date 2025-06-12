@@ -237,11 +237,12 @@ import (
 func main() {
     serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
     version := int32(56) // int32 | Number identifying a version of the service. (optional)
+    filterVersionsActive := true // bool | Limits the versions array to the active versions. Accepts `true` or `false` (defaults to false). (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServiceAPI.GetServiceDetail(ctx, serviceID).Version(version).Execute()
+    resp, r, err := apiClient.ServiceAPI.GetServiceDetail(ctx, serviceID).Version(version).FilterVersionsActive(filterVersionsActive).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.GetServiceDetail`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -266,7 +267,7 @@ Other parameters are passed through a pointer to a apiGetServiceDetailRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **version** | **int32** | Number identifying a version of the service. | 
+ **version** | **int32** | Number identifying a version of the service. |  **filterVersionsActive** | **bool** | Limits the versions array to the active versions. Accepts `true` or `false` (defaults to false). | 
 
 ### Return type
 
