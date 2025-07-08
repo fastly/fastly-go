@@ -119,26 +119,27 @@ type LoggingElasticsearchAPIService service
 
 // APICreateLogElasticsearchRequest represents a request for the resource.
 type APICreateLogElasticsearchRequest struct {
-	ctx               context.Context
-	APIService        LoggingElasticsearchAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	tlsCaCert         *string
-	tlsClientCert     *string
-	tlsClientKey      *string
-	tlsHostname       *string
-	requestMaxEntries *int32
-	requestMaxBytes   *int32
-	index             *string
-	url               *string
-	pipeline          *string
-	user              *string
-	password          *string
+	ctx                 context.Context
+	APIService          LoggingElasticsearchAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	tlsCaCert           *string
+	tlsClientCert       *string
+	tlsClientKey        *string
+	tlsHostname         *string
+	requestMaxEntries   *int32
+	requestMaxBytes     *int32
+	index               *string
+	url                 *string
+	pipeline            *string
+	user                *string
+	password            *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -159,9 +160,15 @@ func (r *APICreateLogElasticsearchRequest) ResponseCondition(responseCondition s
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that Elasticsearch can ingest.
 func (r *APICreateLogElasticsearchRequest) Format(format string) *APICreateLogElasticsearchRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogElasticsearchRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogElasticsearchRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -312,6 +319,9 @@ func (a *LoggingElasticsearchAPIService) CreateLogElasticsearchExecute(r APICrea
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -840,6 +850,7 @@ type APIUpdateLogElasticsearchRequest struct {
 	placement                *string
 	responseCondition        *string
 	format                   *string
+	logProcessingRegion      *string
 	formatVersion            *int32
 	tlsCaCert                *string
 	tlsClientCert            *string
@@ -872,9 +883,15 @@ func (r *APIUpdateLogElasticsearchRequest) ResponseCondition(responseCondition s
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that Elasticsearch can ingest.
 func (r *APIUpdateLogElasticsearchRequest) Format(format string) *APIUpdateLogElasticsearchRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogElasticsearchRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogElasticsearchRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -1028,6 +1045,9 @@ func (a *LoggingElasticsearchAPIService) UpdateLogElasticsearchExecute(r APIUpda
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

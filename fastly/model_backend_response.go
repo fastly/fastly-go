@@ -55,13 +55,13 @@ type BackendResponse struct {
 	OverrideHost NullableString `json:"override_host,omitempty"`
 	// Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request.
 	Port *int32 `json:"port,omitempty"`
-	// Prefer IPv6 connections to origins for hostname backends.
-	PreferIpv6 NullableBool `json:"prefer_ipv6,omitempty"`
+	// Prefer IPv6 connections to origins for hostname backends. Default is 'false' for Delivery services and 'true' for Compute services.
+	PreferIpv6 *bool `json:"prefer_ipv6,omitempty"`
 	// Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests.
 	RequestCondition *string `json:"request_condition,omitempty"`
 	// Value that when shared across backends will enable those backends to share the same health check.
 	ShareKey NullableString `json:"share_key,omitempty"`
-	// Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
+	// Identifier of the POP to use as a [shield](https://www.fastly.com/documentation/guides/getting-started/hosts/shielding/).
 	Shield NullableString `json:"shield,omitempty"`
 	// CA certificate attached to origin.
 	SslCaCert NullableString `json:"ssl_ca_cert,omitempty"`
@@ -814,47 +814,36 @@ func (o *BackendResponse) SetPort(v int32) {
 	o.Port = &v
 }
 
-// GetPreferIpv6 returns the PreferIpv6 field value if set, zero value otherwise (both if not set or set to explicit null).
+// GetPreferIpv6 returns the PreferIpv6 field value if set, zero value otherwise.
 func (o *BackendResponse) GetPreferIpv6() bool {
-	if o == nil || o.PreferIpv6.Get() == nil {
+	if o == nil || o.PreferIpv6 == nil {
 		var ret bool
 		return ret
 	}
-	return *o.PreferIpv6.Get()
+	return *o.PreferIpv6
 }
 
 // GetPreferIpv6Ok returns a tuple with the PreferIpv6 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BackendResponse) GetPreferIpv6Ok() (*bool, bool) {
-	if o == nil {
+	if o == nil || o.PreferIpv6 == nil {
 		return nil, false
 	}
-	return o.PreferIpv6.Get(), o.PreferIpv6.IsSet()
+	return o.PreferIpv6, true
 }
 
 // HasPreferIpv6 returns a boolean if a field has been set.
 func (o *BackendResponse) HasPreferIpv6() bool {
-	if o != nil && o.PreferIpv6.IsSet() {
+	if o != nil && o.PreferIpv6 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPreferIpv6 gets a reference to the given NullableBool and assigns it to the PreferIpv6 field.
+// SetPreferIpv6 gets a reference to the given bool and assigns it to the PreferIpv6 field.
 func (o *BackendResponse) SetPreferIpv6(v bool) {
-	o.PreferIpv6.Set(&v)
-}
-
-// SetPreferIpv6Nil sets the value for PreferIpv6 to be an explicit nil
-func (o *BackendResponse) SetPreferIpv6Nil() {
-	o.PreferIpv6.Set(nil)
-}
-
-// UnsetPreferIpv6 ensures that no value is present for PreferIpv6, not even an explicit nil
-func (o *BackendResponse) UnsetPreferIpv6() {
-	o.PreferIpv6.Unset()
+	o.PreferIpv6 = &v
 }
 
 // GetRequestCondition returns the RequestCondition field value if set, zero value otherwise.
@@ -1841,8 +1830,8 @@ func (o BackendResponse) MarshalJSON() ([]byte, error) {
 	if o.Port != nil {
 		toSerialize["port"] = o.Port
 	}
-	if o.PreferIpv6.IsSet() {
-		toSerialize["prefer_ipv6"] = o.PreferIpv6.Get()
+	if o.PreferIpv6 != nil {
+		toSerialize["prefer_ipv6"] = o.PreferIpv6
 	}
 	if o.RequestCondition != nil {
 		toSerialize["request_condition"] = o.RequestCondition

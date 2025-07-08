@@ -18,9 +18,8 @@ import (
 
 // InvitationData struct for InvitationData
 type InvitationData struct {
-	Type                 *TypeInvitation                       `json:"type,omitempty"`
-	Attributes           *InvitationDataAttributes             `json:"attributes,omitempty"`
-	Relationships        *RelationshipServiceInvitationsCreate `json:"relationships,omitempty"`
+	Type                 *TypeInvitation           `json:"type,omitempty"`
+	Attributes           *InvitationDataAttributes `json:"attributes,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -111,38 +110,6 @@ func (o *InvitationData) SetAttributes(v InvitationDataAttributes) {
 	o.Attributes = &v
 }
 
-// GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *InvitationData) GetRelationships() RelationshipServiceInvitationsCreate {
-	if o == nil || o.Relationships == nil {
-		var ret RelationshipServiceInvitationsCreate
-		return ret
-	}
-	return *o.Relationships
-}
-
-// GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InvitationData) GetRelationshipsOk() (*RelationshipServiceInvitationsCreate, bool) {
-	if o == nil || o.Relationships == nil {
-		return nil, false
-	}
-	return o.Relationships, true
-}
-
-// HasRelationships returns a boolean if a field has been set.
-func (o *InvitationData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetRelationships gets a reference to the given RelationshipServiceInvitationsCreate and assigns it to the Relationships field.
-func (o *InvitationData) SetRelationships(v RelationshipServiceInvitationsCreate) {
-	o.Relationships = &v
-}
-
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o InvitationData) MarshalJSON() ([]byte, error) {
@@ -152,9 +119,6 @@ func (o InvitationData) MarshalJSON() ([]byte, error) {
 	}
 	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -178,7 +142,6 @@ func (o *InvitationData) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "type")
 		delete(additionalProperties, "attributes")
-		delete(additionalProperties, "relationships")
 		o.AdditionalProperties = additionalProperties
 	}
 

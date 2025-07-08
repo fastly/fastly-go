@@ -20,7 +20,7 @@ import (
 type LoggingDatadogAdditional struct {
 	// The region that log data will be sent to.
 	Region *string `json:"region,omitempty"`
-	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest.
+	// A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that Datadog can ingest.
 	Format *string `json:"format,omitempty"`
 	// The API key from your Datadog account. Required.
 	Token                *string `json:"token,omitempty"`

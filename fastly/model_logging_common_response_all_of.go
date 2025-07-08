@@ -24,8 +24,10 @@ type LoggingCommonResponseAllOf struct {
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
-	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-	Format               *string `json:"format,omitempty"`
+	// A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
+	Format *string `json:"format,omitempty"`
+	// The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global.
+	LogProcessingRegion  *string `json:"log_processing_region,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -39,6 +41,8 @@ func NewLoggingCommonResponseAllOf() *LoggingCommonResponseAllOf {
 	this := LoggingCommonResponseAllOf{}
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
+	var logProcessingRegion string = "none"
+	this.LogProcessingRegion = &logProcessingRegion
 	return &this
 }
 
@@ -49,6 +53,8 @@ func NewLoggingCommonResponseAllOfWithDefaults() *LoggingCommonResponseAllOf {
 	this := LoggingCommonResponseAllOf{}
 	var format string = "%h %l %u %t \"%r\" %&gt;s %b"
 	this.Format = &format
+	var logProcessingRegion string = "none"
+	this.LogProcessingRegion = &logProcessingRegion
 	return &this
 }
 
@@ -202,6 +208,38 @@ func (o *LoggingCommonResponseAllOf) SetFormat(v string) {
 	o.Format = &v
 }
 
+// GetLogProcessingRegion returns the LogProcessingRegion field value if set, zero value otherwise.
+func (o *LoggingCommonResponseAllOf) GetLogProcessingRegion() string {
+	if o == nil || o.LogProcessingRegion == nil {
+		var ret string
+		return ret
+	}
+	return *o.LogProcessingRegion
+}
+
+// GetLogProcessingRegionOk returns a tuple with the LogProcessingRegion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingCommonResponseAllOf) GetLogProcessingRegionOk() (*string, bool) {
+	if o == nil || o.LogProcessingRegion == nil {
+		return nil, false
+	}
+	return o.LogProcessingRegion, true
+}
+
+// HasLogProcessingRegion returns a boolean if a field has been set.
+func (o *LoggingCommonResponseAllOf) HasLogProcessingRegion() bool {
+	if o != nil && o.LogProcessingRegion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLogProcessingRegion gets a reference to the given string and assigns it to the LogProcessingRegion field.
+func (o *LoggingCommonResponseAllOf) SetLogProcessingRegion(v string) {
+	o.LogProcessingRegion = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o LoggingCommonResponseAllOf) MarshalJSON() ([]byte, error) {
@@ -217,6 +255,9 @@ func (o LoggingCommonResponseAllOf) MarshalJSON() ([]byte, error) {
 	}
 	if o.Format != nil {
 		toSerialize["format"] = o.Format
+	}
+	if o.LogProcessingRegion != nil {
+		toSerialize["log_processing_region"] = o.LogProcessingRegion
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -242,6 +283,7 @@ func (o *LoggingCommonResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "placement")
 		delete(additionalProperties, "response_condition")
 		delete(additionalProperties, "format")
+		delete(additionalProperties, "log_processing_region")
 		o.AdditionalProperties = additionalProperties
 	}
 

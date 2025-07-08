@@ -18,7 +18,7 @@ import (
 
 // RelationshipServiceInvitations struct for RelationshipServiceInvitations
 type RelationshipServiceInvitations struct {
-	ServiceInvitations   *RelationshipServiceInvitationsServiceInvitations `json:"service_invitations,omitempty"`
+	ServiceInvitations   NullableRelationshipServiceInvitationsServiceInvitations `json:"service_invitations,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -41,44 +41,55 @@ func NewRelationshipServiceInvitationsWithDefaults() *RelationshipServiceInvitat
 	return &this
 }
 
-// GetServiceInvitations returns the ServiceInvitations field value if set, zero value otherwise.
+// GetServiceInvitations returns the ServiceInvitations field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RelationshipServiceInvitations) GetServiceInvitations() RelationshipServiceInvitationsServiceInvitations {
-	if o == nil || o.ServiceInvitations == nil {
+	if o == nil || o.ServiceInvitations.Get() == nil {
 		var ret RelationshipServiceInvitationsServiceInvitations
 		return ret
 	}
-	return *o.ServiceInvitations
+	return *o.ServiceInvitations.Get()
 }
 
 // GetServiceInvitationsOk returns a tuple with the ServiceInvitations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RelationshipServiceInvitations) GetServiceInvitationsOk() (*RelationshipServiceInvitationsServiceInvitations, bool) {
-	if o == nil || o.ServiceInvitations == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.ServiceInvitations, true
+	return o.ServiceInvitations.Get(), o.ServiceInvitations.IsSet()
 }
 
 // HasServiceInvitations returns a boolean if a field has been set.
 func (o *RelationshipServiceInvitations) HasServiceInvitations() bool {
-	if o != nil && o.ServiceInvitations != nil {
+	if o != nil && o.ServiceInvitations.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceInvitations gets a reference to the given RelationshipServiceInvitationsServiceInvitations and assigns it to the ServiceInvitations field.
+// SetServiceInvitations gets a reference to the given NullableRelationshipServiceInvitationsServiceInvitations and assigns it to the ServiceInvitations field.
 func (o *RelationshipServiceInvitations) SetServiceInvitations(v RelationshipServiceInvitationsServiceInvitations) {
-	o.ServiceInvitations = &v
+	o.ServiceInvitations.Set(&v)
+}
+
+// SetServiceInvitationsNil sets the value for ServiceInvitations to be an explicit nil
+func (o *RelationshipServiceInvitations) SetServiceInvitationsNil() {
+	o.ServiceInvitations.Set(nil)
+}
+
+// UnsetServiceInvitations ensures that no value is present for ServiceInvitations, not even an explicit nil
+func (o *RelationshipServiceInvitations) UnsetServiceInvitations() {
+	o.ServiceInvitations.Unset()
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o RelationshipServiceInvitations) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ServiceInvitations != nil {
-		toSerialize["service_invitations"] = o.ServiceInvitations
+	if o.ServiceInvitations.IsSet() {
+		toSerialize["service_invitations"] = o.ServiceInvitations.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

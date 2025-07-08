@@ -39,8 +39,10 @@ type TLSCsrDataAttributes struct {
 	// Email Address (EMAIL) - The organizational contact for this.
 	Email *string `json:"email,omitempty"`
 	// CSR Key Type.
-	KeyType              *string `json:"key_type,omitempty"`
-	AdditionalProperties map[string]any
+	KeyType *string `json:"key_type,omitempty"`
+	// Optional. An alphanumeric string identifying the private key you've uploaded for use with your TLS certificate. If left blank, Fastly will create and manage a key for you.
+	RelationshipsTLSPrivateKeyID *string `json:"relationships.tls_private_key.id,omitempty"`
+	AdditionalProperties         map[string]any
 }
 
 type _TLSCsrDataAttributes TLSCsrDataAttributes
@@ -407,6 +409,38 @@ func (o *TLSCsrDataAttributes) SetKeyType(v string) {
 	o.KeyType = &v
 }
 
+// GetRelationshipsTLSPrivateKeyID returns the RelationshipsTLSPrivateKeyID field value if set, zero value otherwise.
+func (o *TLSCsrDataAttributes) GetRelationshipsTLSPrivateKeyID() string {
+	if o == nil || o.RelationshipsTLSPrivateKeyID == nil {
+		var ret string
+		return ret
+	}
+	return *o.RelationshipsTLSPrivateKeyID
+}
+
+// GetRelationshipsTLSPrivateKeyIDOk returns a tuple with the RelationshipsTLSPrivateKeyID field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TLSCsrDataAttributes) GetRelationshipsTLSPrivateKeyIDOk() (*string, bool) {
+	if o == nil || o.RelationshipsTLSPrivateKeyID == nil {
+		return nil, false
+	}
+	return o.RelationshipsTLSPrivateKeyID, true
+}
+
+// HasRelationshipsTLSPrivateKeyID returns a boolean if a field has been set.
+func (o *TLSCsrDataAttributes) HasRelationshipsTLSPrivateKeyID() bool {
+	if o != nil && o.RelationshipsTLSPrivateKeyID != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRelationshipsTLSPrivateKeyID gets a reference to the given string and assigns it to the RelationshipsTLSPrivateKeyID field.
+func (o *TLSCsrDataAttributes) SetRelationshipsTLSPrivateKeyID(v string) {
+	o.RelationshipsTLSPrivateKeyID = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o TLSCsrDataAttributes) MarshalJSON() ([]byte, error) {
@@ -444,6 +478,9 @@ func (o TLSCsrDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.KeyType != nil {
 		toSerialize["key_type"] = o.KeyType
 	}
+	if o.RelationshipsTLSPrivateKeyID != nil {
+		toSerialize["relationships.tls_private_key.id"] = o.RelationshipsTLSPrivateKeyID
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -475,6 +512,7 @@ func (o *TLSCsrDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "organizational_unit")
 		delete(additionalProperties, "email")
 		delete(additionalProperties, "key_type")
+		delete(additionalProperties, "relationships.tls_private_key.id")
 		o.AdditionalProperties = additionalProperties
 	}
 

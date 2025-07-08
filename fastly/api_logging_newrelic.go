@@ -119,17 +119,18 @@ type LoggingNewrelicAPIService service
 
 // APICreateLogNewrelicRequest represents a request for the resource.
 type APICreateLogNewrelicRequest struct {
-	ctx               context.Context
-	APIService        LoggingNewrelicAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	token             *string
-	region            *string
+	ctx                 context.Context
+	APIService          LoggingNewrelicAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	token               *string
+	region              *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -150,9 +151,15 @@ func (r *APICreateLogNewrelicRequest) ResponseCondition(responseCondition string
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that New Relic Logs can ingest.
 func (r *APICreateLogNewrelicRequest) Format(format string) *APICreateLogNewrelicRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogNewrelicRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogNewrelicRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -249,6 +256,9 @@ func (a *LoggingNewrelicAPIService) CreateLogNewrelicExecute(r APICreateLogNewre
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -750,6 +760,7 @@ type APIUpdateLogNewrelicRequest struct {
 	placement           *string
 	responseCondition   *string
 	format              *string
+	logProcessingRegion *string
 	formatVersion       *int32
 	token               *string
 	region              *string
@@ -773,9 +784,15 @@ func (r *APIUpdateLogNewrelicRequest) ResponseCondition(responseCondition string
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that New Relic Logs can ingest.
 func (r *APIUpdateLogNewrelicRequest) Format(format string) *APIUpdateLogNewrelicRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogNewrelicRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogNewrelicRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -875,6 +892,9 @@ func (a *LoggingNewrelicAPIService) UpdateLogNewrelicExecute(r APIUpdateLogNewre
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

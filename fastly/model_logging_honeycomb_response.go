@@ -25,8 +25,10 @@ type LoggingHoneycombResponse struct {
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
-	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
+	// A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that Honeycomb can ingest.
 	Format *string `json:"format,omitempty"`
+	// The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global.
+	LogProcessingRegion *string `json:"log_processing_region,omitempty"`
 	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// The Honeycomb Dataset you want to log to.
@@ -52,6 +54,8 @@ type _LoggingHoneycombResponse LoggingHoneycombResponse
 // will change when the set of required properties is changed
 func NewLoggingHoneycombResponse() *LoggingHoneycombResponse {
 	this := LoggingHoneycombResponse{}
+	var logProcessingRegion string = "none"
+	this.LogProcessingRegion = &logProcessingRegion
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
 	return &this
@@ -62,6 +66,8 @@ func NewLoggingHoneycombResponse() *LoggingHoneycombResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingHoneycombResponseWithDefaults() *LoggingHoneycombResponse {
 	this := LoggingHoneycombResponse{}
+	var logProcessingRegion string = "none"
+	this.LogProcessingRegion = &logProcessingRegion
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
 	return &this
@@ -215,6 +221,38 @@ func (o *LoggingHoneycombResponse) HasFormat() bool {
 // SetFormat gets a reference to the given string and assigns it to the Format field.
 func (o *LoggingHoneycombResponse) SetFormat(v string) {
 	o.Format = &v
+}
+
+// GetLogProcessingRegion returns the LogProcessingRegion field value if set, zero value otherwise.
+func (o *LoggingHoneycombResponse) GetLogProcessingRegion() string {
+	if o == nil || o.LogProcessingRegion == nil {
+		var ret string
+		return ret
+	}
+	return *o.LogProcessingRegion
+}
+
+// GetLogProcessingRegionOk returns a tuple with the LogProcessingRegion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingHoneycombResponse) GetLogProcessingRegionOk() (*string, bool) {
+	if o == nil || o.LogProcessingRegion == nil {
+		return nil, false
+	}
+	return o.LogProcessingRegion, true
+}
+
+// HasLogProcessingRegion returns a boolean if a field has been set.
+func (o *LoggingHoneycombResponse) HasLogProcessingRegion() bool {
+	if o != nil && o.LogProcessingRegion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLogProcessingRegion gets a reference to the given string and assigns it to the LogProcessingRegion field.
+func (o *LoggingHoneycombResponse) SetLogProcessingRegion(v string) {
+	o.LogProcessingRegion = &v
 }
 
 // GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
@@ -522,6 +560,9 @@ func (o LoggingHoneycombResponse) MarshalJSON() ([]byte, error) {
 	if o.Format != nil {
 		toSerialize["format"] = o.Format
 	}
+	if o.LogProcessingRegion != nil {
+		toSerialize["log_processing_region"] = o.LogProcessingRegion
+	}
 	if o.FormatVersion != nil {
 		toSerialize["format_version"] = o.FormatVersion
 	}
@@ -570,6 +611,7 @@ func (o *LoggingHoneycombResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "placement")
 		delete(additionalProperties, "response_condition")
 		delete(additionalProperties, "format")
+		delete(additionalProperties, "log_processing_region")
 		delete(additionalProperties, "format_version")
 		delete(additionalProperties, "dataset")
 		delete(additionalProperties, "token")

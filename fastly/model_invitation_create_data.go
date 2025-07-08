@@ -16,40 +16,39 @@ import (
 	"encoding/json"
 )
 
-// InvitationResponseData struct for InvitationResponseData
-type InvitationResponseData struct {
-	Type                 *TypeInvitation             `json:"type,omitempty"`
-	Attributes           *Timestamps                 `json:"attributes,omitempty"`
-	ID                   *string                     `json:"id,omitempty"`
-	Relationships        *RelationshipsForInvitation `json:"relationships,omitempty"`
+// InvitationCreateData struct for InvitationCreateData
+type InvitationCreateData struct {
+	Type                 *TypeInvitation                       `json:"type,omitempty"`
+	Attributes           *InvitationDataAttributes             `json:"attributes,omitempty"`
+	Relationships        *RelationshipServiceInvitationsCreate `json:"relationships,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _InvitationResponseData InvitationResponseData
+type _InvitationCreateData InvitationCreateData
 
-// NewInvitationResponseData instantiates a new InvitationResponseData object
+// NewInvitationCreateData instantiates a new InvitationCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvitationResponseData() *InvitationResponseData {
-	this := InvitationResponseData{}
+func NewInvitationCreateData() *InvitationCreateData {
+	this := InvitationCreateData{}
 	var resourceType TypeInvitation = TYPEINVITATION_INVITATION
 	this.Type = &resourceType
 	return &this
 }
 
-// NewInvitationResponseDataWithDefaults instantiates a new InvitationResponseData object
+// NewInvitationCreateDataWithDefaults instantiates a new InvitationCreateData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewInvitationResponseDataWithDefaults() *InvitationResponseData {
-	this := InvitationResponseData{}
+func NewInvitationCreateDataWithDefaults() *InvitationCreateData {
+	this := InvitationCreateData{}
 	var resourceType TypeInvitation = TYPEINVITATION_INVITATION
 	this.Type = &resourceType
 	return &this
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *InvitationResponseData) GetType() TypeInvitation {
+func (o *InvitationCreateData) GetType() TypeInvitation {
 	if o == nil || o.Type == nil {
 		var ret TypeInvitation
 		return ret
@@ -59,7 +58,7 @@ func (o *InvitationResponseData) GetType() TypeInvitation {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvitationResponseData) GetTypeOk() (*TypeInvitation, bool) {
+func (o *InvitationCreateData) GetTypeOk() (*TypeInvitation, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -67,7 +66,7 @@ func (o *InvitationResponseData) GetTypeOk() (*TypeInvitation, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *InvitationResponseData) HasType() bool {
+func (o *InvitationCreateData) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -76,14 +75,14 @@ func (o *InvitationResponseData) HasType() bool {
 }
 
 // SetType gets a reference to the given TypeInvitation and assigns it to the Type field.
-func (o *InvitationResponseData) SetType(v TypeInvitation) {
+func (o *InvitationCreateData) SetType(v TypeInvitation) {
 	o.Type = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *InvitationResponseData) GetAttributes() Timestamps {
+func (o *InvitationCreateData) GetAttributes() InvitationDataAttributes {
 	if o == nil || o.Attributes == nil {
-		var ret Timestamps
+		var ret InvitationDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -91,7 +90,7 @@ func (o *InvitationResponseData) GetAttributes() Timestamps {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvitationResponseData) GetAttributesOk() (*Timestamps, bool) {
+func (o *InvitationCreateData) GetAttributesOk() (*InvitationDataAttributes, bool) {
 	if o == nil || o.Attributes == nil {
 		return nil, false
 	}
@@ -99,7 +98,7 @@ func (o *InvitationResponseData) GetAttributesOk() (*Timestamps, bool) {
 }
 
 // HasAttributes returns a boolean if a field has been set.
-func (o *InvitationResponseData) HasAttributes() bool {
+func (o *InvitationCreateData) HasAttributes() bool {
 	if o != nil && o.Attributes != nil {
 		return true
 	}
@@ -107,47 +106,15 @@ func (o *InvitationResponseData) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given Timestamps and assigns it to the Attributes field.
-func (o *InvitationResponseData) SetAttributes(v Timestamps) {
+// SetAttributes gets a reference to the given InvitationDataAttributes and assigns it to the Attributes field.
+func (o *InvitationCreateData) SetAttributes(v InvitationDataAttributes) {
 	o.Attributes = &v
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *InvitationResponseData) GetID() string {
-	if o == nil || o.ID == nil {
-		var ret string
-		return ret
-	}
-	return *o.ID
-}
-
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InvitationResponseData) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
-		return nil, false
-	}
-	return o.ID, true
-}
-
-// HasID returns a boolean if a field has been set.
-func (o *InvitationResponseData) HasID() bool {
-	if o != nil && o.ID != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *InvitationResponseData) SetID(v string) {
-	o.ID = &v
-}
-
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *InvitationResponseData) GetRelationships() RelationshipsForInvitation {
+func (o *InvitationCreateData) GetRelationships() RelationshipServiceInvitationsCreate {
 	if o == nil || o.Relationships == nil {
-		var ret RelationshipsForInvitation
+		var ret RelationshipServiceInvitationsCreate
 		return ret
 	}
 	return *o.Relationships
@@ -155,7 +122,7 @@ func (o *InvitationResponseData) GetRelationships() RelationshipsForInvitation {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvitationResponseData) GetRelationshipsOk() (*RelationshipsForInvitation, bool) {
+func (o *InvitationCreateData) GetRelationshipsOk() (*RelationshipServiceInvitationsCreate, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -163,7 +130,7 @@ func (o *InvitationResponseData) GetRelationshipsOk() (*RelationshipsForInvitati
 }
 
 // HasRelationships returns a boolean if a field has been set.
-func (o *InvitationResponseData) HasRelationships() bool {
+func (o *InvitationCreateData) HasRelationships() bool {
 	if o != nil && o.Relationships != nil {
 		return true
 	}
@@ -171,23 +138,20 @@ func (o *InvitationResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given RelationshipsForInvitation and assigns it to the Relationships field.
-func (o *InvitationResponseData) SetRelationships(v RelationshipsForInvitation) {
+// SetRelationships gets a reference to the given RelationshipServiceInvitationsCreate and assigns it to the Relationships field.
+func (o *InvitationCreateData) SetRelationships(v RelationshipServiceInvitationsCreate) {
 	o.Relationships = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o InvitationResponseData) MarshalJSON() ([]byte, error) {
+func (o InvitationCreateData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
 	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes
-	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
 	}
 	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
@@ -202,11 +166,11 @@ func (o InvitationResponseData) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *InvitationResponseData) UnmarshalJSON(bytes []byte) (err error) {
-	varInvitationResponseData := _InvitationResponseData{}
+func (o *InvitationCreateData) UnmarshalJSON(bytes []byte) (err error) {
+	varInvitationCreateData := _InvitationCreateData{}
 
-	if err = json.Unmarshal(bytes, &varInvitationResponseData); err == nil {
-		*o = InvitationResponseData(varInvitationResponseData)
+	if err = json.Unmarshal(bytes, &varInvitationCreateData); err == nil {
+		*o = InvitationCreateData(varInvitationCreateData)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -214,7 +178,6 @@ func (o *InvitationResponseData) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "type")
 		delete(additionalProperties, "attributes")
-		delete(additionalProperties, "id")
 		delete(additionalProperties, "relationships")
 		o.AdditionalProperties = additionalProperties
 	}
@@ -222,48 +185,48 @@ func (o *InvitationResponseData) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableInvitationResponseData is a helper abstraction for handling nullable invitationresponsedata types.
-type NullableInvitationResponseData struct {
-	value *InvitationResponseData
+// NullableInvitationCreateData is a helper abstraction for handling nullable invitationcreatedata types.
+type NullableInvitationCreateData struct {
+	value *InvitationCreateData
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableInvitationResponseData) Get() *InvitationResponseData {
+func (v NullableInvitationCreateData) Get() *InvitationCreateData {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableInvitationResponseData) Set(val *InvitationResponseData) {
+func (v *NullableInvitationCreateData) Set(val *InvitationCreateData) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableInvitationResponseData) IsSet() bool {
+func (v NullableInvitationCreateData) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableInvitationResponseData) Unset() {
+func (v *NullableInvitationCreateData) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableInvitationResponseData returns a pointer to a new instance of NullableInvitationResponseData.
-func NewNullableInvitationResponseData(val *InvitationResponseData) *NullableInvitationResponseData {
-	return &NullableInvitationResponseData{value: val, isSet: true}
+// NewNullableInvitationCreateData returns a pointer to a new instance of NullableInvitationCreateData.
+func NewNullableInvitationCreateData(val *InvitationCreateData) *NullableInvitationCreateData {
+	return &NullableInvitationCreateData{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableInvitationResponseData) MarshalJSON() ([]byte, error) {
+func (v NullableInvitationCreateData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableInvitationResponseData) UnmarshalJSON(src []byte) error {
+func (v *NullableInvitationCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

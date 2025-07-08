@@ -119,24 +119,25 @@ type LoggingSplunkAPIService service
 
 // APICreateLogSplunkRequest represents a request for the resource.
 type APICreateLogSplunkRequest struct {
-	ctx               context.Context
-	APIService        LoggingSplunkAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	tlsCaCert         *string
-	tlsClientCert     *string
-	tlsClientKey      *string
-	tlsHostname       *string
-	requestMaxEntries *int32
-	requestMaxBytes   *int32
-	url               *string
-	token             *string
-	useTLS            *LoggingUseTLSString
+	ctx                 context.Context
+	APIService          LoggingSplunkAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	tlsCaCert           *string
+	tlsClientCert       *string
+	tlsClientKey        *string
+	tlsHostname         *string
+	requestMaxEntries   *int32
+	requestMaxBytes     *int32
+	url                 *string
+	token               *string
+	useTLS              *LoggingUseTLSString
 }
 
 // Name The name for the real-time logging configuration.
@@ -157,9 +158,15 @@ func (r *APICreateLogSplunkRequest) ResponseCondition(responseCondition string) 
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogSplunkRequest) Format(format string) *APICreateLogSplunkRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogSplunkRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogSplunkRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -298,6 +305,9 @@ func (a *LoggingSplunkAPIService) CreateLogSplunkExecute(r APICreateLogSplunkReq
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -811,25 +821,26 @@ func (a *LoggingSplunkAPIService) ListLogSplunkExecute(r APIListLogSplunkRequest
 
 // APIUpdateLogSplunkRequest represents a request for the resource.
 type APIUpdateLogSplunkRequest struct {
-	ctx               context.Context
-	APIService        LoggingSplunkAPI
-	serviceID         string
-	versionID         int32
-	loggingSplunkName string
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	tlsCaCert         *string
-	tlsClientCert     *string
-	tlsClientKey      *string
-	tlsHostname       *string
-	requestMaxEntries *int32
-	requestMaxBytes   *int32
-	url               *string
-	token             *string
-	useTLS            *LoggingUseTLSString
+	ctx                 context.Context
+	APIService          LoggingSplunkAPI
+	serviceID           string
+	versionID           int32
+	loggingSplunkName   string
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	tlsCaCert           *string
+	tlsClientCert       *string
+	tlsClientKey        *string
+	tlsHostname         *string
+	requestMaxEntries   *int32
+	requestMaxBytes     *int32
+	url                 *string
+	token               *string
+	useTLS              *LoggingUseTLSString
 }
 
 // Name The name for the real-time logging configuration.
@@ -850,9 +861,15 @@ func (r *APIUpdateLogSplunkRequest) ResponseCondition(responseCondition string) 
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APIUpdateLogSplunkRequest) Format(format string) *APIUpdateLogSplunkRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogSplunkRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogSplunkRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -994,6 +1011,9 @@ func (a *LoggingSplunkAPIService) UpdateLogSplunkExecute(r APIUpdateLogSplunkReq
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

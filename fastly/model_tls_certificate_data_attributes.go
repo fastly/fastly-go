@@ -21,7 +21,9 @@ type TLSCertificateDataAttributes struct {
 	// The PEM-formatted certificate blob. Required.
 	CertBlob *string `json:"cert_blob,omitempty"`
 	// A customizable name for your certificate. Defaults to the certificate's Common Name or first Subject Alternative Names (SAN) entry. Optional.
-	Name                 *string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty"`
+	// Indicates that the supplied certificate was not signed by a trusted CA.
+	AllowUntrustedRoot   *bool `json:"allow_untrusted_root,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -108,6 +110,38 @@ func (o *TLSCertificateDataAttributes) SetName(v string) {
 	o.Name = &v
 }
 
+// GetAllowUntrustedRoot returns the AllowUntrustedRoot field value if set, zero value otherwise.
+func (o *TLSCertificateDataAttributes) GetAllowUntrustedRoot() bool {
+	if o == nil || o.AllowUntrustedRoot == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AllowUntrustedRoot
+}
+
+// GetAllowUntrustedRootOk returns a tuple with the AllowUntrustedRoot field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TLSCertificateDataAttributes) GetAllowUntrustedRootOk() (*bool, bool) {
+	if o == nil || o.AllowUntrustedRoot == nil {
+		return nil, false
+	}
+	return o.AllowUntrustedRoot, true
+}
+
+// HasAllowUntrustedRoot returns a boolean if a field has been set.
+func (o *TLSCertificateDataAttributes) HasAllowUntrustedRoot() bool {
+	if o != nil && o.AllowUntrustedRoot != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowUntrustedRoot gets a reference to the given bool and assigns it to the AllowUntrustedRoot field.
+func (o *TLSCertificateDataAttributes) SetAllowUntrustedRoot(v bool) {
+	o.AllowUntrustedRoot = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o TLSCertificateDataAttributes) MarshalJSON() ([]byte, error) {
@@ -117,6 +151,9 @@ func (o TLSCertificateDataAttributes) MarshalJSON() ([]byte, error) {
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.AllowUntrustedRoot != nil {
+		toSerialize["allow_untrusted_root"] = o.AllowUntrustedRoot
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -140,6 +177,7 @@ func (o *TLSCertificateDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "cert_blob")
 		delete(additionalProperties, "name")
+		delete(additionalProperties, "allow_untrusted_root")
 		o.AdditionalProperties = additionalProperties
 	}
 

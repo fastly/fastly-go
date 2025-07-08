@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **OrganizationalUnit** | Pointer to **string** | Organizational Unit (OU) - The internal division of the organization managing the certificate. | [optional] 
 **Email** | Pointer to **string** | Email Address (EMAIL) - The organizational contact for this. | [optional] 
 **KeyType** | Pointer to **string** | CSR Key Type. | [optional] 
+**RelationshipsTLSPrivateKeyID** | Pointer to **string** | Optional. An alphanumeric string identifying the private key you&#39;ve uploaded for use with your TLS certificate. If left blank, Fastly will create and manage a key for you. | [optional] 
 
 ## Methods
 
@@ -304,6 +305,31 @@ SetKeyType sets KeyType field to given value.
 `func (o *TLSCsrDataAttributes) HasKeyType() bool`
 
 HasKeyType returns a boolean if a field has been set.
+
+### GetRelationshipsTLSPrivateKeyID
+
+`func (o *TLSCsrDataAttributes) GetRelationshipsTLSPrivateKeyID() string`
+
+GetRelationshipsTLSPrivateKeyID returns the RelationshipsTLSPrivateKeyID field if non-nil, zero value otherwise.
+
+### GetRelationshipsTLSPrivateKeyIDOk
+
+`func (o *TLSCsrDataAttributes) GetRelationshipsTLSPrivateKeyIDOk() (*string, bool)`
+
+GetRelationshipsTLSPrivateKeyIDOk returns a tuple with the RelationshipsTLSPrivateKeyID field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRelationshipsTLSPrivateKeyID
+
+`func (o *TLSCsrDataAttributes) SetRelationshipsTLSPrivateKeyID(v string)`
+
+SetRelationshipsTLSPrivateKeyID sets RelationshipsTLSPrivateKeyID field to given value.
+
+### HasRelationshipsTLSPrivateKeyID
+
+`func (o *TLSCsrDataAttributes) HasRelationshipsTLSPrivateKeyID() bool`
+
+HasRelationshipsTLSPrivateKeyID returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

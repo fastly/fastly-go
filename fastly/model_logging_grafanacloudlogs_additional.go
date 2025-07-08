@@ -18,7 +18,7 @@ import (
 
 // LoggingGrafanacloudlogsAdditional struct for LoggingGrafanacloudlogsAdditional
 type LoggingGrafanacloudlogsAdditional struct {
-	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+	// A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 	Format *string `json:"format,omitempty"`
 	// The Grafana Cloud Logs Dataset you want to log to.
 	User *string `json:"user,omitempty"`

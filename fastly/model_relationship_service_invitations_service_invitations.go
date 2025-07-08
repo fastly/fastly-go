@@ -41,9 +41,9 @@ func NewRelationshipServiceInvitationsServiceInvitationsWithDefaults() *Relation
 	return &this
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
+// GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RelationshipServiceInvitationsServiceInvitations) GetData() []RelationshipMemberServiceInvitation {
-	if o == nil || o.Data == nil {
+	if o == nil {
 		var ret []RelationshipMemberServiceInvitation
 		return ret
 	}
@@ -52,6 +52,7 @@ func (o *RelationshipServiceInvitationsServiceInvitations) GetData() []Relations
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RelationshipServiceInvitationsServiceInvitations) GetDataOk() ([]RelationshipMemberServiceInvitation, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false

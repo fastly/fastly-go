@@ -119,20 +119,21 @@ type LoggingPubsubAPIService service
 
 // APICreateLogGcpPubsubRequest represents a request for the resource.
 type APICreateLogGcpPubsubRequest struct {
-	ctx               context.Context
-	APIService        LoggingPubsubAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	user              *string
-	secretKey         *string
-	accountName       *string
-	topic             *string
-	projectID         *string
+	ctx                 context.Context
+	APIService          LoggingPubsubAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	user                *string
+	secretKey           *string
+	accountName         *string
+	topic               *string
+	projectID           *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -153,9 +154,15 @@ func (r *APICreateLogGcpPubsubRequest) ResponseCondition(responseCondition strin
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogGcpPubsubRequest) Format(format string) *APICreateLogGcpPubsubRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogGcpPubsubRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogGcpPubsubRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -270,6 +277,9 @@ func (a *LoggingPubsubAPIService) CreateLogGcpPubsubExecute(r APICreateLogGcpPub
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -780,6 +790,7 @@ type APIUpdateLogGcpPubsubRequest struct {
 	placement               *string
 	responseCondition       *string
 	format                  *string
+	logProcessingRegion     *string
 	formatVersion           *int32
 	user                    *string
 	secretKey               *string
@@ -806,9 +817,15 @@ func (r *APIUpdateLogGcpPubsubRequest) ResponseCondition(responseCondition strin
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APIUpdateLogGcpPubsubRequest) Format(format string) *APIUpdateLogGcpPubsubRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogGcpPubsubRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogGcpPubsubRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -926,6 +943,9 @@ func (a *LoggingPubsubAPIService) UpdateLogGcpPubsubExecute(r APIUpdateLogGcpPub
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

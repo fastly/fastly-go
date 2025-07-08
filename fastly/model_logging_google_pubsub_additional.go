@@ -20,7 +20,7 @@ import (
 type LoggingGooglePubsubAdditional struct {
 	// The Google Cloud Pub/Sub topic to which logs will be published. Required.
 	Topic *string `json:"topic,omitempty"`
-	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+	// A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 	Format *string `json:"format,omitempty"`
 	// Your Google Cloud Platform project ID. Required
 	ProjectID            *string `json:"project_id,omitempty"`

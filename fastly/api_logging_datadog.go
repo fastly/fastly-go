@@ -119,17 +119,18 @@ type LoggingDatadogAPIService service
 
 // APICreateLogDatadogRequest represents a request for the resource.
 type APICreateLogDatadogRequest struct {
-	ctx               context.Context
-	APIService        LoggingDatadogAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	region            *string
-	token             *string
+	ctx                 context.Context
+	APIService          LoggingDatadogAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	region              *string
+	token               *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -150,9 +151,15 @@ func (r *APICreateLogDatadogRequest) ResponseCondition(responseCondition string)
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest.
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that Datadog can ingest.
 func (r *APICreateLogDatadogRequest) Format(format string) *APICreateLogDatadogRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogDatadogRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogDatadogRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -249,6 +256,9 @@ func (a *LoggingDatadogAPIService) CreateLogDatadogExecute(r APICreateLogDatadog
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -741,18 +751,19 @@ func (a *LoggingDatadogAPIService) ListLogDatadogExecute(r APIListLogDatadogRequ
 
 // APIUpdateLogDatadogRequest represents a request for the resource.
 type APIUpdateLogDatadogRequest struct {
-	ctx                context.Context
-	APIService         LoggingDatadogAPI
-	serviceID          string
-	versionID          int32
-	loggingDatadogName string
-	name               *string
-	placement          *string
-	responseCondition  *string
-	format             *string
-	formatVersion      *int32
-	region             *string
-	token              *string
+	ctx                 context.Context
+	APIService          LoggingDatadogAPI
+	serviceID           string
+	versionID           int32
+	loggingDatadogName  string
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	region              *string
+	token               *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -773,9 +784,15 @@ func (r *APIUpdateLogDatadogRequest) ResponseCondition(responseCondition string)
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest.
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that Datadog can ingest.
 func (r *APIUpdateLogDatadogRequest) Format(format string) *APIUpdateLogDatadogRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogDatadogRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogDatadogRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -875,6 +892,9 @@ func (a *LoggingDatadogAPIService) UpdateLogDatadogExecute(r APIUpdateLogDatadog
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

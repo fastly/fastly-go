@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Customer** | Pointer to [**RelationshipCustomerCustomer**](RelationshipCustomerCustomer.md) |  | [optional] 
-**ServiceInvitations** | Pointer to [**RelationshipServiceInvitationsServiceInvitations**](RelationshipServiceInvitationsServiceInvitations.md) |  | [optional] 
+**ServiceInvitations** | Pointer to [**NullableRelationshipServiceInvitationsServiceInvitations**](RelationshipServiceInvitationsServiceInvitations.md) |  | [optional] 
 
 ## Methods
 
@@ -76,5 +76,15 @@ SetServiceInvitations sets ServiceInvitations field to given value.
 
 HasServiceInvitations returns a boolean if a field has been set.
 
+### SetServiceInvitationsNil
+
+`func (o *RelationshipsForInvitation) SetServiceInvitationsNil(b bool)`
+
+ SetServiceInvitationsNil sets the value for ServiceInvitations to be an explicit nil
+
+### UnsetServiceInvitations
+`func (o *RelationshipsForInvitation) UnsetServiceInvitations()`
+
+UnsetServiceInvitations ensures that no value is present for ServiceInvitations, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

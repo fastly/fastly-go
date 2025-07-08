@@ -119,17 +119,18 @@ type LoggingPapertrailAPIService service
 
 // APICreateLogPapertrailRequest represents a request for the resource.
 type APICreateLogPapertrailRequest struct {
-	ctx               context.Context
-	APIService        LoggingPapertrailAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	address           *string
-	port              *int32
+	ctx                 context.Context
+	APIService          LoggingPapertrailAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	address             *string
+	port                *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -150,9 +151,15 @@ func (r *APICreateLogPapertrailRequest) ResponseCondition(responseCondition stri
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogPapertrailRequest) Format(format string) *APICreateLogPapertrailRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogPapertrailRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogPapertrailRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -249,6 +256,9 @@ func (a *LoggingPapertrailAPIService) CreateLogPapertrailExecute(r APICreateLogP
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -750,6 +760,7 @@ type APIUpdateLogPapertrailRequest struct {
 	placement             *string
 	responseCondition     *string
 	format                *string
+	logProcessingRegion   *string
 	formatVersion         *int32
 	address               *string
 	port                  *int32
@@ -773,9 +784,15 @@ func (r *APIUpdateLogPapertrailRequest) ResponseCondition(responseCondition stri
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APIUpdateLogPapertrailRequest) Format(format string) *APIUpdateLogPapertrailRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogPapertrailRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogPapertrailRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -875,6 +892,9 @@ func (a *LoggingPapertrailAPIService) UpdateLogPapertrailExecute(r APIUpdateLogP
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

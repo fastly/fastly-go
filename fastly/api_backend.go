@@ -269,7 +269,7 @@ func (r *APICreateBackendRequest) Port(port int32) *APICreateBackendRequest {
 	return r
 }
 
-// PreferIpv6 Prefer IPv6 connections to origins for hostname backends.
+// PreferIpv6 Prefer IPv6 connections to origins for hostname backends. Default is &#39;false&#39; for Delivery services and &#39;true&#39; for Compute services.
 func (r *APICreateBackendRequest) PreferIpv6(preferIpv6 bool) *APICreateBackendRequest {
 	r.preferIpv6 = &preferIpv6
 	return r
@@ -287,7 +287,7 @@ func (r *APICreateBackendRequest) ShareKey(shareKey string) *APICreateBackendReq
 	return r
 }
 
-// Shield Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
+// Shield Identifier of the POP to use as a [shield](https://www.fastly.com/documentation/guides/getting-started/hosts/shielding/).
 func (r *APICreateBackendRequest) Shield(shield string) *APICreateBackendRequest {
 	r.shield = &shield
 	return r
@@ -1182,7 +1182,7 @@ func (r *APIUpdateBackendRequest) Port(port int32) *APIUpdateBackendRequest {
 	return r
 }
 
-// PreferIpv6 Prefer IPv6 connections to origins for hostname backends.
+// PreferIpv6 Prefer IPv6 connections to origins for hostname backends. Default is &#39;false&#39; for Delivery services and &#39;true&#39; for Compute services.
 func (r *APIUpdateBackendRequest) PreferIpv6(preferIpv6 bool) *APIUpdateBackendRequest {
 	r.preferIpv6 = &preferIpv6
 	return r
@@ -1200,7 +1200,7 @@ func (r *APIUpdateBackendRequest) ShareKey(shareKey string) *APIUpdateBackendReq
 	return r
 }
 
-// Shield Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
+// Shield Identifier of the POP to use as a [shield](https://www.fastly.com/documentation/guides/getting-started/hosts/shielding/).
 func (r *APIUpdateBackendRequest) Shield(shield string) *APIUpdateBackendRequest {
 	r.shield = &shield
 	return r

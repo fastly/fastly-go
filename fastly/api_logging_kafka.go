@@ -119,29 +119,30 @@ type LoggingKafkaAPIService service
 
 // APICreateLogKafkaRequest represents a request for the resource.
 type APICreateLogKafkaRequest struct {
-	ctx               context.Context
-	APIService        LoggingKafkaAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	tlsCaCert         *string
-	tlsClientCert     *string
-	tlsClientKey      *string
-	tlsHostname       *string
-	topic             *string
-	brokers           *string
-	compressionCodec  *string
-	requiredAcks      *int32
-	requestMaxBytes   *int32
-	parseLogKeyvals   *bool
-	authMethod        *string
-	user              *string
-	password          *string
-	useTLS            *LoggingUseTLSString
+	ctx                 context.Context
+	APIService          LoggingKafkaAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	tlsCaCert           *string
+	tlsClientCert       *string
+	tlsClientKey        *string
+	tlsHostname         *string
+	topic               *string
+	brokers             *string
+	compressionCodec    *string
+	requiredAcks        *int32
+	requestMaxBytes     *int32
+	parseLogKeyvals     *bool
+	authMethod          *string
+	user                *string
+	password            *string
+	useTLS              *LoggingUseTLSString
 }
 
 // Name The name for the real-time logging configuration.
@@ -162,9 +163,15 @@ func (r *APICreateLogKafkaRequest) ResponseCondition(responseCondition string) *
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogKafkaRequest) Format(format string) *APICreateLogKafkaRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogKafkaRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogKafkaRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -333,6 +340,9 @@ func (a *LoggingKafkaAPIService) CreateLogKafkaExecute(r APICreateLogKafkaReques
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

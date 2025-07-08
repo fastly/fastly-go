@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] 
+**Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [optional] 
 **User** | Pointer to **string** | The Grafana Cloud Logs Dataset you want to log to. | [optional] 
 **URL** | Pointer to **string** | The URL of the Loki instance in your Grafana stack. | [optional] 
 **Token** | Pointer to **string** | The Grafana Access Policy token with `logs:write` access scoped to your Loki instance. | [optional] 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The name of the BigQuery logging object. Used as a primary key for API access. | [optional] 
-**Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table. | [optional] 
+**Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce JSON that matches the schema of your BigQuery table. | [optional] 
 **Dataset** | Pointer to **string** | Your BigQuery dataset. | [optional] 
 **Table** | Pointer to **string** | Your BigQuery table. | [optional] 
 **TemplateSuffix** | Pointer to **NullableString** | BigQuery table name suffix template. Optional. | [optional] 

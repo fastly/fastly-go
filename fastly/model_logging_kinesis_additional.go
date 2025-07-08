@@ -21,7 +21,7 @@ type LoggingKinesisAdditional struct {
 	// The name for the real-time logging configuration.
 	Name      *string                  `json:"name,omitempty"`
 	Placement NullableLoggingPlacement `json:"placement,omitempty"`
-	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+	// A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 	Format *string `json:"format,omitempty"`
 	// The Amazon Kinesis stream to send logs to. Required.
 	Topic  *string    `json:"topic,omitempty"`

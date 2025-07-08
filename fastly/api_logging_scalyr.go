@@ -119,18 +119,19 @@ type LoggingScalyrAPIService service
 
 // APICreateLogScalyrRequest represents a request for the resource.
 type APICreateLogScalyrRequest struct {
-	ctx               context.Context
-	APIService        LoggingScalyrAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	region            *string
-	token             *string
-	projectID         *string
+	ctx                 context.Context
+	APIService          LoggingScalyrAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	region              *string
+	token               *string
+	projectID           *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -151,9 +152,15 @@ func (r *APICreateLogScalyrRequest) ResponseCondition(responseCondition string) 
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogScalyrRequest) Format(format string) *APICreateLogScalyrRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogScalyrRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogScalyrRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -256,6 +263,9 @@ func (a *LoggingScalyrAPIService) CreateLogScalyrExecute(r APICreateLogScalyrReq
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -751,19 +761,20 @@ func (a *LoggingScalyrAPIService) ListLogScalyrExecute(r APIListLogScalyrRequest
 
 // APIUpdateLogScalyrRequest represents a request for the resource.
 type APIUpdateLogScalyrRequest struct {
-	ctx               context.Context
-	APIService        LoggingScalyrAPI
-	serviceID         string
-	versionID         int32
-	loggingScalyrName string
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	region            *string
-	token             *string
-	projectID         *string
+	ctx                 context.Context
+	APIService          LoggingScalyrAPI
+	serviceID           string
+	versionID           int32
+	loggingScalyrName   string
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	region              *string
+	token               *string
+	projectID           *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -784,9 +795,15 @@ func (r *APIUpdateLogScalyrRequest) ResponseCondition(responseCondition string) 
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APIUpdateLogScalyrRequest) Format(format string) *APIUpdateLogScalyrRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogScalyrRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogScalyrRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -892,6 +909,9 @@ func (a *LoggingScalyrAPIService) UpdateLogScalyrExecute(r APIUpdateLogScalyrReq
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

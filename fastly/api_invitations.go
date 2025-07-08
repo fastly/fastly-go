@@ -41,8 +41,8 @@ type InvitationsAPI interface {
 	CreateInvitation(ctx context.Context) APICreateInvitationRequest
 
 	// CreateInvitationExecute executes the request
-	//  @return InvitationResponse
-	CreateInvitationExecute(r APICreateInvitationRequest) (*InvitationResponse, *http.Response, error)
+	//  @return InvitationCreateResponse
+	CreateInvitationExecute(r APICreateInvitationRequest) (*InvitationCreateResponse, *http.Response, error)
 
 	/*
 		DeleteInvitation Delete an invitation
@@ -90,7 +90,7 @@ func (r *APICreateInvitationRequest) Invitation(invitation Invitation) *APICreat
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateInvitationRequest) Execute() (*InvitationResponse, *http.Response, error) {
+func (r APICreateInvitationRequest) Execute() (*InvitationCreateResponse, *http.Response, error) {
 	return r.APIService.CreateInvitationExecute(r)
 }
 
@@ -110,13 +110,13 @@ func (a *InvitationsAPIService) CreateInvitation(ctx context.Context) APICreateI
 }
 
 // CreateInvitationExecute executes the request
-//  @return InvitationResponse
-func (a *InvitationsAPIService) CreateInvitationExecute(r APICreateInvitationRequest) (*InvitationResponse, *http.Response, error) {
+//  @return InvitationCreateResponse
+func (a *InvitationsAPIService) CreateInvitationExecute(r APICreateInvitationRequest) (*InvitationCreateResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InvitationResponse
+		localVarReturnValue *InvitationCreateResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InvitationsAPIService.CreateInvitation")

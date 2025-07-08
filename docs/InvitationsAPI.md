@@ -40,7 +40,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InvitationsAPI.CreateInvitation`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateInvitation`: InvitationResponse
+    // response from `CreateInvitation`: InvitationCreateResponse
     fmt.Fprintf(os.Stdout, "Response from `InvitationsAPI.CreateInvitation`: %v\n", resp)
 }
 ```
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InvitationResponse**](InvitationResponse.md)
+[**InvitationCreateResponse**](InvitationCreateResponse.md)
 
 ### Authorization
 

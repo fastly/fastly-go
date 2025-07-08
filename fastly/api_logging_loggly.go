@@ -119,16 +119,17 @@ type LoggingLogglyAPIService service
 
 // APICreateLogLogglyRequest represents a request for the resource.
 type APICreateLogLogglyRequest struct {
-	ctx               context.Context
-	APIService        LoggingLogglyAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	token             *string
+	ctx                 context.Context
+	APIService          LoggingLogglyAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	token               *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -149,9 +150,15 @@ func (r *APICreateLogLogglyRequest) ResponseCondition(responseCondition string) 
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogLogglyRequest) Format(format string) *APICreateLogLogglyRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogLogglyRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogLogglyRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -242,6 +249,9 @@ func (a *LoggingLogglyAPIService) CreateLogLogglyExecute(r APICreateLogLogglyReq
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -731,17 +741,18 @@ func (a *LoggingLogglyAPIService) ListLogLogglyExecute(r APIListLogLogglyRequest
 
 // APIUpdateLogLogglyRequest represents a request for the resource.
 type APIUpdateLogLogglyRequest struct {
-	ctx               context.Context
-	APIService        LoggingLogglyAPI
-	serviceID         string
-	versionID         int32
-	loggingLogglyName string
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	token             *string
+	ctx                 context.Context
+	APIService          LoggingLogglyAPI
+	serviceID           string
+	versionID           int32
+	loggingLogglyName   string
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	token               *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -762,9 +773,15 @@ func (r *APIUpdateLogLogglyRequest) ResponseCondition(responseCondition string) 
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APIUpdateLogLogglyRequest) Format(format string) *APIUpdateLogLogglyRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogLogglyRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogLogglyRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -858,6 +875,9 @@ func (a *LoggingLogglyAPIService) UpdateLogLogglyExecute(r APIUpdateLogLogglyReq
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

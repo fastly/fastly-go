@@ -28,7 +28,7 @@ type LoggingElasticsearchAdditional struct {
 	User NullableString `json:"user,omitempty"`
 	// Basic Auth password.
 	Password NullableString `json:"password,omitempty"`
-	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
+	// A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that Elasticsearch can ingest.
 	Format               *string `json:"format,omitempty"`
 	AdditionalProperties map[string]any
 }

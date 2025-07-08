@@ -146,7 +146,7 @@ func (r *APICreateLogKinesisRequest) Placement(placement LoggingPlacement) *APIC
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogKinesisRequest) Format(format string) *APICreateLogKinesisRequest {
 	r.format = &format
 	return r

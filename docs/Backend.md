@@ -22,10 +22,10 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | The name of the backend. | [optional] 
 **OverrideHost** | Pointer to **NullableString** | If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL. | [optional] 
 **Port** | Pointer to **int32** | Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request. | [optional] 
-**PreferIpv6** | Pointer to **NullableBool** | Prefer IPv6 connections to origins for hostname backends. | [optional] 
+**PreferIpv6** | Pointer to **bool** | Prefer IPv6 connections to origins for hostname backends. Default is &#39;false&#39; for Delivery services and &#39;true&#39; for Compute services. | [optional] 
 **RequestCondition** | Pointer to **string** | Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests. | [optional] 
 **ShareKey** | Pointer to **NullableString** | Value that when shared across backends will enable those backends to share the same health check. | [optional] 
-**Shield** | Pointer to **NullableString** | Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding). | [optional] 
+**Shield** | Pointer to **NullableString** | Identifier of the POP to use as a [shield](https://www.fastly.com/documentation/guides/getting-started/hosts/shielding/). | [optional] 
 **SslCaCert** | Pointer to **NullableString** | CA certificate attached to origin. | [optional] 
 **SslCertHostname** | Pointer to **NullableString** | Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all. | [optional] 
 **SslCheckCert** | Pointer to **NullableBool** | Be strict on checking SSL certs. | [optional] [default to true]
@@ -635,16 +635,6 @@ SetPreferIpv6 sets PreferIpv6 field to given value.
 
 HasPreferIpv6 returns a boolean if a field has been set.
 
-### SetPreferIpv6Nil
-
-`func (o *Backend) SetPreferIpv6Nil(b bool)`
-
- SetPreferIpv6Nil sets the value for PreferIpv6 to be an explicit nil
-
-### UnsetPreferIpv6
-`func (o *Backend) UnsetPreferIpv6()`
-
-UnsetPreferIpv6 ensures that no value is present for PreferIpv6, not even an explicit nil
 ### GetRequestCondition
 
 `func (o *Backend) GetRequestCondition() string`

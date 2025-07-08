@@ -127,6 +127,7 @@ type APICreateLogAwsS3Request struct {
 	placement                    *string
 	responseCondition            *string
 	format                       *string
+	logProcessingRegion          *string
 	formatVersion                *int32
 	messageType                  *string
 	timestampFormat              *string
@@ -165,9 +166,15 @@ func (r *APICreateLogAwsS3Request) ResponseCondition(responseCondition string) *
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogAwsS3Request) Format(format string) *APICreateLogAwsS3Request {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogAwsS3Request) LogProcessingRegion(logProcessingRegion string) *APICreateLogAwsS3Request {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -354,6 +361,9 @@ func (a *LoggingS3APIService) CreateLogAwsS3Execute(r APICreateLogAwsS3Request) 
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -900,6 +910,7 @@ type APIUpdateLogAwsS3Request struct {
 	placement                    *string
 	responseCondition            *string
 	format                       *string
+	logProcessingRegion          *string
 	formatVersion                *int32
 	messageType                  *string
 	timestampFormat              *string
@@ -938,9 +949,15 @@ func (r *APIUpdateLogAwsS3Request) ResponseCondition(responseCondition string) *
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APIUpdateLogAwsS3Request) Format(format string) *APIUpdateLogAwsS3Request {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogAwsS3Request) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogAwsS3Request {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -1130,6 +1147,9 @@ func (a *LoggingS3APIService) UpdateLogAwsS3Execute(r APIUpdateLogAwsS3Request) 
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

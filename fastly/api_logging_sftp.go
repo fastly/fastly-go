@@ -119,28 +119,29 @@ type LoggingSftpAPIService service
 
 // APICreateLogSftpRequest represents a request for the resource.
 type APICreateLogSftpRequest struct {
-	ctx               context.Context
-	APIService        LoggingSftpAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	messageType       *string
-	timestampFormat   *string
-	compressionCodec  *string
-	period            *int32
-	gzipLevel         *int32
-	address           *string
-	port              *int32
-	password          *string
-	path              *string
-	publicKey         *string
-	secretKey         *string
-	sshKnownHosts     *string
-	user              *string
+	ctx                 context.Context
+	APIService          LoggingSftpAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	messageType         *string
+	timestampFormat     *string
+	compressionCodec    *string
+	period              *int32
+	gzipLevel           *int32
+	address             *string
+	port                *int32
+	password            *string
+	path                *string
+	publicKey           *string
+	secretKey           *string
+	sshKnownHosts       *string
+	user                *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -161,9 +162,15 @@ func (r *APICreateLogSftpRequest) ResponseCondition(responseCondition string) *A
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogSftpRequest) Format(format string) *APICreateLogSftpRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogSftpRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogSftpRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -326,6 +333,9 @@ func (a *LoggingSftpAPIService) CreateLogSftpExecute(r APICreateLogSftpRequest) 
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -851,29 +861,30 @@ func (a *LoggingSftpAPIService) ListLogSftpExecute(r APIListLogSftpRequest) ([]L
 
 // APIUpdateLogSftpRequest represents a request for the resource.
 type APIUpdateLogSftpRequest struct {
-	ctx               context.Context
-	APIService        LoggingSftpAPI
-	serviceID         string
-	versionID         int32
-	loggingSftpName   string
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	messageType       *string
-	timestampFormat   *string
-	compressionCodec  *string
-	period            *int32
-	gzipLevel         *int32
-	address           *string
-	port              *int32
-	password          *string
-	path              *string
-	publicKey         *string
-	secretKey         *string
-	sshKnownHosts     *string
-	user              *string
+	ctx                 context.Context
+	APIService          LoggingSftpAPI
+	serviceID           string
+	versionID           int32
+	loggingSftpName     string
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	messageType         *string
+	timestampFormat     *string
+	compressionCodec    *string
+	period              *int32
+	gzipLevel           *int32
+	address             *string
+	port                *int32
+	password            *string
+	path                *string
+	publicKey           *string
+	secretKey           *string
+	sshKnownHosts       *string
+	user                *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -894,9 +905,15 @@ func (r *APIUpdateLogSftpRequest) ResponseCondition(responseCondition string) *A
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APIUpdateLogSftpRequest) Format(format string) *APIUpdateLogSftpRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogSftpRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogSftpRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -1062,6 +1079,9 @@ func (a *LoggingSftpAPIService) UpdateLogSftpExecute(r APIUpdateLogSftpRequest) 
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

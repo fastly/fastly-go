@@ -134,19 +134,20 @@ type LoggingLogentriesAPIService service
 
 // APICreateLogLogentriesRequest represents a request for the resource.
 type APICreateLogLogentriesRequest struct {
-	ctx               context.Context
-	APIService        LoggingLogentriesAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	port              *int32
-	token             *string
-	useTLS            *LoggingUseTLSString
-	region            *string
+	ctx                 context.Context
+	APIService          LoggingLogentriesAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	port                *int32
+	token               *string
+	useTLS              *LoggingUseTLSString
+	region              *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -167,9 +168,15 @@ func (r *APICreateLogLogentriesRequest) ResponseCondition(responseCondition stri
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogLogentriesRequest) Format(format string) *APICreateLogLogentriesRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogLogentriesRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogLogentriesRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -281,6 +288,9 @@ func (a *LoggingLogentriesAPIService) CreateLogLogentriesExecute(r APICreateLogL
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -797,6 +807,7 @@ type APIUpdateLogLogentriesRequest struct {
 	placement             *string
 	responseCondition     *string
 	format                *string
+	logProcessingRegion   *string
 	formatVersion         *int32
 	port                  *int32
 	token                 *string
@@ -822,9 +833,15 @@ func (r *APIUpdateLogLogentriesRequest) ResponseCondition(responseCondition stri
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APIUpdateLogLogentriesRequest) Format(format string) *APIUpdateLogLogentriesRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogLogentriesRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogLogentriesRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -939,6 +956,9 @@ func (a *LoggingLogentriesAPIService) UpdateLogLogentriesExecute(r APIUpdateLogL
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

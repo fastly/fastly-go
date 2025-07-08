@@ -273,7 +273,7 @@ func (r *APICreateServerPoolRequest) ResourceType(resourceType string) *APICreat
 	return r
 }
 
-// OverrideHost The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to &#x60;null&#x60; meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
+// OverrideHost The hostname to [override the Host header](https://www.fastly.com/documentation/guides/full-site-delivery/domains-and-origins/specifying-an-override-host/). Defaults to &#x60;null&#x60; meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
 func (r *APICreateServerPoolRequest) OverrideHost(overrideHost string) *APICreateServerPoolRequest {
 	r.overrideHost = &overrideHost
 	return r
@@ -1104,7 +1104,7 @@ func (r *APIUpdateServerPoolRequest) ResourceType(resourceType string) *APIUpdat
 	return r
 }
 
-// OverrideHost The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to &#x60;null&#x60; meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
+// OverrideHost The hostname to [override the Host header](https://www.fastly.com/documentation/guides/full-site-delivery/domains-and-origins/specifying-an-override-host/). Defaults to &#x60;null&#x60; meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
 func (r *APIUpdateServerPoolRequest) OverrideHost(overrideHost string) *APIUpdateServerPoolRequest {
 	r.overrideHost = &overrideHost
 	return r

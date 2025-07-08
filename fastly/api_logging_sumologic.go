@@ -119,17 +119,18 @@ type LoggingSumologicAPIService service
 
 // APICreateLogSumologicRequest represents a request for the resource.
 type APICreateLogSumologicRequest struct {
-	ctx               context.Context
-	APIService        LoggingSumologicAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	messageType       *LoggingMessageType
-	url               *string
+	ctx                 context.Context
+	APIService          LoggingSumologicAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	messageType         *LoggingMessageType
+	url                 *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -150,9 +151,15 @@ func (r *APICreateLogSumologicRequest) ResponseCondition(responseCondition strin
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogSumologicRequest) Format(format string) *APICreateLogSumologicRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogSumologicRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogSumologicRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -249,6 +256,9 @@ func (a *LoggingSumologicAPIService) CreateLogSumologicExecute(r APICreateLogSum
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -750,6 +760,7 @@ type APIUpdateLogSumologicRequest struct {
 	placement            *string
 	responseCondition    *string
 	format               *string
+	logProcessingRegion  *string
 	formatVersion        *int32
 	messageType          *LoggingMessageType
 	url                  *string
@@ -773,9 +784,15 @@ func (r *APIUpdateLogSumologicRequest) ResponseCondition(responseCondition strin
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APIUpdateLogSumologicRequest) Format(format string) *APIUpdateLogSumologicRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogSumologicRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogSumologicRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -875,6 +892,9 @@ func (a *LoggingSumologicAPIService) UpdateLogSumologicExecute(r APIUpdateLogSum
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

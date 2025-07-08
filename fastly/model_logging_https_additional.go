@@ -35,7 +35,7 @@ type LoggingHTTPSAdditional struct {
 	Method *string `json:"method,omitempty"`
 	// Enforces valid JSON formatting for log entries.
 	JSONFormat *string `json:"json_format,omitempty"`
-	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+	// A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 	Format               *string `json:"format,omitempty"`
 	AdditionalProperties map[string]any
 }

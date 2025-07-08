@@ -16,33 +16,33 @@ import (
 	"encoding/json"
 )
 
-// InvitationResponseAllOf struct for InvitationResponseAllOf
-type InvitationResponseAllOf struct {
+// InvitationCreateResponse struct for InvitationCreateResponse
+type InvitationCreateResponse struct {
 	Data                 *InvitationResponseData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _InvitationResponseAllOf InvitationResponseAllOf
+type _InvitationCreateResponse InvitationCreateResponse
 
-// NewInvitationResponseAllOf instantiates a new InvitationResponseAllOf object
+// NewInvitationCreateResponse instantiates a new InvitationCreateResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInvitationResponseAllOf() *InvitationResponseAllOf {
-	this := InvitationResponseAllOf{}
+func NewInvitationCreateResponse() *InvitationCreateResponse {
+	this := InvitationCreateResponse{}
 	return &this
 }
 
-// NewInvitationResponseAllOfWithDefaults instantiates a new InvitationResponseAllOf object
+// NewInvitationCreateResponseWithDefaults instantiates a new InvitationCreateResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewInvitationResponseAllOfWithDefaults() *InvitationResponseAllOf {
-	this := InvitationResponseAllOf{}
+func NewInvitationCreateResponseWithDefaults() *InvitationCreateResponse {
+	this := InvitationCreateResponse{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *InvitationResponseAllOf) GetData() InvitationResponseData {
+func (o *InvitationCreateResponse) GetData() InvitationResponseData {
 	if o == nil || o.Data == nil {
 		var ret InvitationResponseData
 		return ret
@@ -52,7 +52,7 @@ func (o *InvitationResponseAllOf) GetData() InvitationResponseData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvitationResponseAllOf) GetDataOk() (*InvitationResponseData, bool) {
+func (o *InvitationCreateResponse) GetDataOk() (*InvitationResponseData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *InvitationResponseAllOf) GetDataOk() (*InvitationResponseData, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *InvitationResponseAllOf) HasData() bool {
+func (o *InvitationCreateResponse) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -69,13 +69,13 @@ func (o *InvitationResponseAllOf) HasData() bool {
 }
 
 // SetData gets a reference to the given InvitationResponseData and assigns it to the Data field.
-func (o *InvitationResponseAllOf) SetData(v InvitationResponseData) {
+func (o *InvitationCreateResponse) SetData(v InvitationResponseData) {
 	o.Data = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o InvitationResponseAllOf) MarshalJSON() ([]byte, error) {
+func (o InvitationCreateResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -90,11 +90,11 @@ func (o InvitationResponseAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *InvitationResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varInvitationResponseAllOf := _InvitationResponseAllOf{}
+func (o *InvitationCreateResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varInvitationCreateResponse := _InvitationCreateResponse{}
 
-	if err = json.Unmarshal(bytes, &varInvitationResponseAllOf); err == nil {
-		*o = InvitationResponseAllOf(varInvitationResponseAllOf)
+	if err = json.Unmarshal(bytes, &varInvitationCreateResponse); err == nil {
+		*o = InvitationCreateResponse(varInvitationCreateResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *InvitationResponseAllOf) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableInvitationResponseAllOf is a helper abstraction for handling nullable invitationresponseallof types.
-type NullableInvitationResponseAllOf struct {
-	value *InvitationResponseAllOf
+// NullableInvitationCreateResponse is a helper abstraction for handling nullable invitationcreateresponse types.
+type NullableInvitationCreateResponse struct {
+	value *InvitationCreateResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableInvitationResponseAllOf) Get() *InvitationResponseAllOf {
+func (v NullableInvitationCreateResponse) Get() *InvitationCreateResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableInvitationResponseAllOf) Set(val *InvitationResponseAllOf) {
+func (v *NullableInvitationCreateResponse) Set(val *InvitationCreateResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableInvitationResponseAllOf) IsSet() bool {
+func (v NullableInvitationCreateResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableInvitationResponseAllOf) Unset() {
+func (v *NullableInvitationCreateResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableInvitationResponseAllOf returns a pointer to a new instance of NullableInvitationResponseAllOf.
-func NewNullableInvitationResponseAllOf(val *InvitationResponseAllOf) *NullableInvitationResponseAllOf {
-	return &NullableInvitationResponseAllOf{value: val, isSet: true}
+// NewNullableInvitationCreateResponse returns a pointer to a new instance of NullableInvitationCreateResponse.
+func NewNullableInvitationCreateResponse(val *InvitationCreateResponse) *NullableInvitationCreateResponse {
+	return &NullableInvitationCreateResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableInvitationResponseAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableInvitationCreateResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableInvitationResponseAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableInvitationCreateResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

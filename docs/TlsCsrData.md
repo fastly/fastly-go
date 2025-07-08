@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | Pointer to [**TypeTLSCsr**](TypeTLSCsr.md) |  | [optional] [default to TYPETLSCSR_CSR]
 **Attributes** | Pointer to [**TLSCsrDataAttributes**](TlsCsrDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**RelationshipTLSPrivateKey**](RelationshipTLSPrivateKey.md) |  | [optional] 
 
 ## Methods
 
@@ -76,31 +75,6 @@ SetAttributes sets Attributes field to given value.
 `func (o *TLSCsrData) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
-
-### GetRelationships
-
-`func (o *TLSCsrData) GetRelationships() RelationshipTLSPrivateKey`
-
-GetRelationships returns the Relationships field if non-nil, zero value otherwise.
-
-### GetRelationshipsOk
-
-`func (o *TLSCsrData) GetRelationshipsOk() (*RelationshipTLSPrivateKey, bool)`
-
-GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRelationships
-
-`func (o *TLSCsrData) SetRelationships(v RelationshipTLSPrivateKey)`
-
-SetRelationships sets Relationships field to given value.
-
-### HasRelationships
-
-`func (o *TLSCsrData) HasRelationships() bool`
-
-HasRelationships returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

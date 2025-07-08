@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | The name for the real-time logging configuration. | [optional] 
 **Placement** | Pointer to **NullableString** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] 
 **ResponseCondition** | Pointer to **NullableString** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
-**Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
+**Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
+**LogProcessingRegion** | Pointer to **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [optional] [default to "none"]
 **FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
 **Token** | Pointer to **string** | The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)). | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -154,6 +155,31 @@ SetFormat sets Format field to given value.
 `func (o *LoggingLogglyResponse) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+### GetLogProcessingRegion
+
+`func (o *LoggingLogglyResponse) GetLogProcessingRegion() string`
+
+GetLogProcessingRegion returns the LogProcessingRegion field if non-nil, zero value otherwise.
+
+### GetLogProcessingRegionOk
+
+`func (o *LoggingLogglyResponse) GetLogProcessingRegionOk() (*string, bool)`
+
+GetLogProcessingRegionOk returns a tuple with the LogProcessingRegion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogProcessingRegion
+
+`func (o *LoggingLogglyResponse) SetLogProcessingRegion(v string)`
+
+SetLogProcessingRegion sets LogProcessingRegion field to given value.
+
+### HasLogProcessingRegion
+
+`func (o *LoggingLogglyResponse) HasLogProcessingRegion() bool`
+
+HasLogProcessingRegion returns a boolean if a field has been set.
 
 ### GetFormatVersion
 

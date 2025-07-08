@@ -25,8 +25,10 @@ type LoggingNewrelicotlpResponse struct {
 	Placement NullableString `json:"placement,omitempty"`
 	// The name of an existing condition in the configured endpoint, or leave blank to always execute.
 	ResponseCondition NullableString `json:"response_condition,omitempty"`
-	// A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+	// A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 	Format *string `json:"format,omitempty"`
+	// The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global.
+	LogProcessingRegion *string `json:"log_processing_region,omitempty"`
 	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// The Insert API key from the Account page of your New Relic account. Required.
@@ -56,6 +58,8 @@ func NewLoggingNewrelicotlpResponse() *LoggingNewrelicotlpResponse {
 	this := LoggingNewrelicotlpResponse{}
 	var format string = "{\"timestamp\":\"%{begin:%Y-%m-%dT%H:%M:%S}t\",\"time_elapsed\":\"%{time.elapsed.usec}V\",\"is_tls\":\"%{if(req.is_ssl, \\\"true\\\", \\\"false\\\")}V\",\"client_ip\":\"%{req.http.Fastly-Client-IP}V\",\"geo_city\":\"%{client.geo.city}V\",\"geo_country_code\":\"%{client.geo.country_code}V\",\"request\":\"%{req.request}V\",\"host\":\"%{req.http.Fastly-Orig-Host}V\",\"url\":\"%{json.escape(req.url)}V\",\"request_referer\":\"%{json.escape(req.http.Referer)}V\",\"request_user_agent\":\"%{json.escape(req.http.User-Agent)}V\",\"request_accept_language\":\"%{json.escape(req.http.Accept-Language)}V\",\"request_accept_charset\":\"%{json.escape(req.http.Accept-Charset)}V\",\"cache_status\":\"%{regsub(fastly_info.state, \\\"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\\\", \\\"\\\\2\\\\3\\\") }V\"}"
 	this.Format = &format
+	var logProcessingRegion string = "none"
+	this.LogProcessingRegion = &logProcessingRegion
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
 	var region string = "US"
@@ -72,6 +76,8 @@ func NewLoggingNewrelicotlpResponseWithDefaults() *LoggingNewrelicotlpResponse {
 	this := LoggingNewrelicotlpResponse{}
 	var format string = "{\"timestamp\":\"%{begin:%Y-%m-%dT%H:%M:%S}t\",\"time_elapsed\":\"%{time.elapsed.usec}V\",\"is_tls\":\"%{if(req.is_ssl, \\\"true\\\", \\\"false\\\")}V\",\"client_ip\":\"%{req.http.Fastly-Client-IP}V\",\"geo_city\":\"%{client.geo.city}V\",\"geo_country_code\":\"%{client.geo.country_code}V\",\"request\":\"%{req.request}V\",\"host\":\"%{req.http.Fastly-Orig-Host}V\",\"url\":\"%{json.escape(req.url)}V\",\"request_referer\":\"%{json.escape(req.http.Referer)}V\",\"request_user_agent\":\"%{json.escape(req.http.User-Agent)}V\",\"request_accept_language\":\"%{json.escape(req.http.Accept-Language)}V\",\"request_accept_charset\":\"%{json.escape(req.http.Accept-Charset)}V\",\"cache_status\":\"%{regsub(fastly_info.state, \\\"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\\\", \\\"\\\\2\\\\3\\\") }V\"}"
 	this.Format = &format
+	var logProcessingRegion string = "none"
+	this.LogProcessingRegion = &logProcessingRegion
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
 	var region string = "US"
@@ -229,6 +235,38 @@ func (o *LoggingNewrelicotlpResponse) HasFormat() bool {
 // SetFormat gets a reference to the given string and assigns it to the Format field.
 func (o *LoggingNewrelicotlpResponse) SetFormat(v string) {
 	o.Format = &v
+}
+
+// GetLogProcessingRegion returns the LogProcessingRegion field value if set, zero value otherwise.
+func (o *LoggingNewrelicotlpResponse) GetLogProcessingRegion() string {
+	if o == nil || o.LogProcessingRegion == nil {
+		var ret string
+		return ret
+	}
+	return *o.LogProcessingRegion
+}
+
+// GetLogProcessingRegionOk returns a tuple with the LogProcessingRegion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LoggingNewrelicotlpResponse) GetLogProcessingRegionOk() (*string, bool) {
+	if o == nil || o.LogProcessingRegion == nil {
+		return nil, false
+	}
+	return o.LogProcessingRegion, true
+}
+
+// HasLogProcessingRegion returns a boolean if a field has been set.
+func (o *LoggingNewrelicotlpResponse) HasLogProcessingRegion() bool {
+	if o != nil && o.LogProcessingRegion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLogProcessingRegion gets a reference to the given string and assigns it to the LogProcessingRegion field.
+func (o *LoggingNewrelicotlpResponse) SetLogProcessingRegion(v string) {
+	o.LogProcessingRegion = &v
 }
 
 // GetFormatVersion returns the FormatVersion field value if set, zero value otherwise.
@@ -579,6 +617,9 @@ func (o LoggingNewrelicotlpResponse) MarshalJSON() ([]byte, error) {
 	if o.Format != nil {
 		toSerialize["format"] = o.Format
 	}
+	if o.LogProcessingRegion != nil {
+		toSerialize["log_processing_region"] = o.LogProcessingRegion
+	}
 	if o.FormatVersion != nil {
 		toSerialize["format_version"] = o.FormatVersion
 	}
@@ -630,6 +671,7 @@ func (o *LoggingNewrelicotlpResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "placement")
 		delete(additionalProperties, "response_condition")
 		delete(additionalProperties, "format")
+		delete(additionalProperties, "log_processing_region")
 		delete(additionalProperties, "format_version")
 		delete(additionalProperties, "token")
 		delete(additionalProperties, "region")

@@ -18,9 +18,8 @@ import (
 
 // TLSCsrData struct for TLSCsrData
 type TLSCsrData struct {
-	Type                 *TypeTLSCsr                `json:"type,omitempty"`
-	Attributes           *TLSCsrDataAttributes      `json:"attributes,omitempty"`
-	Relationships        *RelationshipTLSPrivateKey `json:"relationships,omitempty"`
+	Type                 *TypeTLSCsr           `json:"type,omitempty"`
+	Attributes           *TLSCsrDataAttributes `json:"attributes,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -111,38 +110,6 @@ func (o *TLSCsrData) SetAttributes(v TLSCsrDataAttributes) {
 	o.Attributes = &v
 }
 
-// GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TLSCsrData) GetRelationships() RelationshipTLSPrivateKey {
-	if o == nil || o.Relationships == nil {
-		var ret RelationshipTLSPrivateKey
-		return ret
-	}
-	return *o.Relationships
-}
-
-// GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *TLSCsrData) GetRelationshipsOk() (*RelationshipTLSPrivateKey, bool) {
-	if o == nil || o.Relationships == nil {
-		return nil, false
-	}
-	return o.Relationships, true
-}
-
-// HasRelationships returns a boolean if a field has been set.
-func (o *TLSCsrData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetRelationships gets a reference to the given RelationshipTLSPrivateKey and assigns it to the Relationships field.
-func (o *TLSCsrData) SetRelationships(v RelationshipTLSPrivateKey) {
-	o.Relationships = &v
-}
-
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o TLSCsrData) MarshalJSON() ([]byte, error) {
@@ -152,9 +119,6 @@ func (o TLSCsrData) MarshalJSON() ([]byte, error) {
 	}
 	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -178,7 +142,6 @@ func (o *TLSCsrData) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "type")
 		delete(additionalProperties, "attributes")
-		delete(additionalProperties, "relationships")
 		o.AdditionalProperties = additionalProperties
 	}
 

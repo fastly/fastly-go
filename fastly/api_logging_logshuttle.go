@@ -119,17 +119,18 @@ type LoggingLogshuttleAPIService service
 
 // APICreateLogLogshuttleRequest represents a request for the resource.
 type APICreateLogLogshuttleRequest struct {
-	ctx               context.Context
-	APIService        LoggingLogshuttleAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	token             *string
-	url               *string
+	ctx                 context.Context
+	APIService          LoggingLogshuttleAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	token               *string
+	url                 *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -150,9 +151,15 @@ func (r *APICreateLogLogshuttleRequest) ResponseCondition(responseCondition stri
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogLogshuttleRequest) Format(format string) *APICreateLogLogshuttleRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogLogshuttleRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogLogshuttleRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -249,6 +256,9 @@ func (a *LoggingLogshuttleAPIService) CreateLogLogshuttleExecute(r APICreateLogL
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -750,6 +760,7 @@ type APIUpdateLogLogshuttleRequest struct {
 	placement             *string
 	responseCondition     *string
 	format                *string
+	logProcessingRegion   *string
 	formatVersion         *int32
 	token                 *string
 	url                   *string
@@ -773,9 +784,15 @@ func (r *APIUpdateLogLogshuttleRequest) ResponseCondition(responseCondition stri
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APIUpdateLogLogshuttleRequest) Format(format string) *APIUpdateLogLogshuttleRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogLogshuttleRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogLogshuttleRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -875,6 +892,9 @@ func (a *LoggingLogshuttleAPIService) UpdateLogLogshuttleExecute(r APIUpdateLogL
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

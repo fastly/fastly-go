@@ -119,28 +119,29 @@ type LoggingFtpAPIService service
 
 // APICreateLogFtpRequest represents a request for the resource.
 type APICreateLogFtpRequest struct {
-	ctx               context.Context
-	APIService        LoggingFtpAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	messageType       *string
-	timestampFormat   *string
-	compressionCodec  *string
-	period            *int32
-	gzipLevel         *int32
-	address           *string
-	hostname          *string
-	ipv4              *string
-	password          *string
-	path              *string
-	publicKey         *string
-	user              *string
-	port              *int32
+	ctx                 context.Context
+	APIService          LoggingFtpAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	messageType         *string
+	timestampFormat     *string
+	compressionCodec    *string
+	period              *int32
+	gzipLevel           *int32
+	address             *string
+	hostname            *string
+	ipv4                *string
+	password            *string
+	path                *string
+	publicKey           *string
+	user                *string
+	port                *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -161,9 +162,15 @@ func (r *APICreateLogFtpRequest) ResponseCondition(responseCondition string) *AP
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogFtpRequest) Format(format string) *APICreateLogFtpRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogFtpRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogFtpRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -326,6 +333,9 @@ func (a *LoggingFtpAPIService) CreateLogFtpExecute(r APICreateLogFtpRequest) (*L
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -851,29 +861,30 @@ func (a *LoggingFtpAPIService) ListLogFtpExecute(r APIListLogFtpRequest) ([]Logg
 
 // APIUpdateLogFtpRequest represents a request for the resource.
 type APIUpdateLogFtpRequest struct {
-	ctx               context.Context
-	APIService        LoggingFtpAPI
-	serviceID         string
-	versionID         int32
-	loggingFtpName    string
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	messageType       *string
-	timestampFormat   *string
-	compressionCodec  *string
-	period            *int32
-	gzipLevel         *int32
-	address           *string
-	hostname          *string
-	ipv4              *string
-	password          *string
-	path              *string
-	publicKey         *string
-	user              *string
-	port              *int32
+	ctx                 context.Context
+	APIService          LoggingFtpAPI
+	serviceID           string
+	versionID           int32
+	loggingFtpName      string
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	messageType         *string
+	timestampFormat     *string
+	compressionCodec    *string
+	period              *int32
+	gzipLevel           *int32
+	address             *string
+	hostname            *string
+	ipv4                *string
+	password            *string
+	path                *string
+	publicKey           *string
+	user                *string
+	port                *int32
 }
 
 // Name The name for the real-time logging configuration.
@@ -894,9 +905,15 @@ func (r *APIUpdateLogFtpRequest) ResponseCondition(responseCondition string) *AP
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APIUpdateLogFtpRequest) Format(format string) *APIUpdateLogFtpRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogFtpRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogFtpRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -1062,6 +1079,9 @@ func (a *LoggingFtpAPIService) UpdateLogFtpExecute(r APIUpdateLogFtpRequest) (*L
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

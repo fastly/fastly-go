@@ -119,17 +119,18 @@ type LoggingHerokuAPIService service
 
 // APICreateLogHerokuRequest represents a request for the resource.
 type APICreateLogHerokuRequest struct {
-	ctx               context.Context
-	APIService        LoggingHerokuAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	token             *string
-	url               *string
+	ctx                 context.Context
+	APIService          LoggingHerokuAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	token               *string
+	url                 *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -150,9 +151,15 @@ func (r *APICreateLogHerokuRequest) ResponseCondition(responseCondition string) 
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APICreateLogHerokuRequest) Format(format string) *APICreateLogHerokuRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogHerokuRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogHerokuRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -249,6 +256,9 @@ func (a *LoggingHerokuAPIService) CreateLogHerokuExecute(r APICreateLogHerokuReq
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -741,18 +751,19 @@ func (a *LoggingHerokuAPIService) ListLogHerokuExecute(r APIListLogHerokuRequest
 
 // APIUpdateLogHerokuRequest represents a request for the resource.
 type APIUpdateLogHerokuRequest struct {
-	ctx               context.Context
-	APIService        LoggingHerokuAPI
-	serviceID         string
-	versionID         int32
-	loggingHerokuName string
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	token             *string
-	url               *string
+	ctx                 context.Context
+	APIService          LoggingHerokuAPI
+	serviceID           string
+	versionID           int32
+	loggingHerokuName   string
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	token               *string
+	url                 *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -773,9 +784,15 @@ func (r *APIUpdateLogHerokuRequest) ResponseCondition(responseCondition string) 
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/).
 func (r *APIUpdateLogHerokuRequest) Format(format string) *APIUpdateLogHerokuRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogHerokuRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogHerokuRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -875,6 +892,9 @@ func (a *LoggingHerokuAPIService) UpdateLogHerokuExecute(r APIUpdateLogHerokuReq
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

@@ -119,17 +119,18 @@ type LoggingHoneycombAPIService service
 
 // APICreateLogHoneycombRequest represents a request for the resource.
 type APICreateLogHoneycombRequest struct {
-	ctx               context.Context
-	APIService        LoggingHoneycombAPI
-	serviceID         string
-	versionID         int32
-	name              *string
-	placement         *string
-	responseCondition *string
-	format            *string
-	formatVersion     *int32
-	dataset           *string
-	token             *string
+	ctx                 context.Context
+	APIService          LoggingHoneycombAPI
+	serviceID           string
+	versionID           int32
+	name                *string
+	placement           *string
+	responseCondition   *string
+	format              *string
+	logProcessingRegion *string
+	formatVersion       *int32
+	dataset             *string
+	token               *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -150,9 +151,15 @@ func (r *APICreateLogHoneycombRequest) ResponseCondition(responseCondition strin
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that Honeycomb can ingest.
 func (r *APICreateLogHoneycombRequest) Format(format string) *APICreateLogHoneycombRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APICreateLogHoneycombRequest) LogProcessingRegion(logProcessingRegion string) *APICreateLogHoneycombRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -249,6 +256,9 @@ func (a *LoggingHoneycombAPIService) CreateLogHoneycombExecute(r APICreateLogHon
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))
@@ -750,6 +760,7 @@ type APIUpdateLogHoneycombRequest struct {
 	placement            *string
 	responseCondition    *string
 	format               *string
+	logProcessingRegion  *string
 	formatVersion        *int32
 	dataset              *string
 	token                *string
@@ -773,9 +784,15 @@ func (r *APIUpdateLogHoneycombRequest) ResponseCondition(responseCondition strin
 	return r
 }
 
-// Format A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
+// Format A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that Honeycomb can ingest.
 func (r *APIUpdateLogHoneycombRequest) Format(format string) *APIUpdateLogHoneycombRequest {
 	r.format = &format
+	return r
+}
+
+// LogProcessingRegion The geographic region where the logs will be processed before streaming. Valid values are &#x60;us&#x60;, &#x60;eu&#x60;, and &#x60;none&#x60; for global.
+func (r *APIUpdateLogHoneycombRequest) LogProcessingRegion(logProcessingRegion string) *APIUpdateLogHoneycombRequest {
+	r.logProcessingRegion = &logProcessingRegion
 	return r
 }
 
@@ -875,6 +892,9 @@ func (a *LoggingHoneycombAPIService) UpdateLogHoneycombExecute(r APIUpdateLogHon
 	}
 	if r.format != nil {
 		localVarFormParams.Add("format", parameterToString(*r.format, ""))
+	}
+	if r.logProcessingRegion != nil {
+		localVarFormParams.Add("log_processing_region", parameterToString(*r.logProcessingRegion, ""))
 	}
 	if r.formatVersion != nil {
 		localVarFormParams.Add("format_version", parameterToString(*r.formatVersion, ""))

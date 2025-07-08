@@ -57,7 +57,7 @@ type PoolResponsePost struct {
 	Comment NullableString `json:"comment,omitempty"`
 	// What type of load balance group to use.
 	Type *string `json:"type,omitempty"`
-	// The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
+	// The hostname to [override the Host header](https://www.fastly.com/documentation/guides/full-site-delivery/domains-and-origins/specifying-an-override-host/). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
 	OverrideHost NullableString `json:"override_host,omitempty"`
 	// Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
 	BetweenBytesTimeout *string `json:"between_bytes_timeout,omitempty"`

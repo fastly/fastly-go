@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **HeaderValue** | Pointer to **NullableString** | Value of the custom header sent with the request. | [optional] [default to "null"]
 **Method** | Pointer to **string** | HTTP method used for request. | [optional] [default to "POST"]
 **JSONFormat** | Pointer to **string** | Enforces valid JSON formatting for log entries. | [optional] 
-**Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
+**Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
 
 ## Methods
 

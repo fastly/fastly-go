@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest. | [optional] 
+**Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that Honeycomb can ingest. | [optional] 
 **Dataset** | Pointer to **string** | The Honeycomb Dataset you want to log to. | [optional] 
 **Token** | Pointer to **string** | The Write Key from the Account page of your Honeycomb account. | [optional] 
 

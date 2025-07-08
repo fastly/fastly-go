@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | The name of the BigQuery logging object. Used as a primary key for API access. | [optional] 
 **Placement** | Pointer to **NullableString** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] 
 **ResponseCondition** | Pointer to **NullableString** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
-**Format** | Pointer to **string** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table. | [optional] 
+**Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce JSON that matches the schema of your BigQuery table. | [optional] 
+**LogProcessingRegion** | Pointer to **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [optional] [default to "none"]
 **FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
 **User** | Pointer to **string** | Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified. | [optional] 
 **SecretKey** | Pointer to **string** | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified. | [optional] 
@@ -160,6 +161,31 @@ SetFormat sets Format field to given value.
 `func (o *LoggingBigqueryResponse) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
+
+### GetLogProcessingRegion
+
+`func (o *LoggingBigqueryResponse) GetLogProcessingRegion() string`
+
+GetLogProcessingRegion returns the LogProcessingRegion field if non-nil, zero value otherwise.
+
+### GetLogProcessingRegionOk
+
+`func (o *LoggingBigqueryResponse) GetLogProcessingRegionOk() (*string, bool)`
+
+GetLogProcessingRegionOk returns a tuple with the LogProcessingRegion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLogProcessingRegion
+
+`func (o *LoggingBigqueryResponse) SetLogProcessingRegion(v string)`
+
+SetLogProcessingRegion sets LogProcessingRegion field to given value.
+
+### HasLogProcessingRegion
+
+`func (o *LoggingBigqueryResponse) HasLogProcessingRegion() bool`
+
+HasLogProcessingRegion returns a boolean if a field has been set.
 
 ### GetFormatVersion
 

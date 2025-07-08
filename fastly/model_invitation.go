@@ -18,7 +18,7 @@ import (
 
 // Invitation struct for Invitation
 type Invitation struct {
-	Data                 *InvitationData `json:"data,omitempty"`
+	Data                 *InvitationCreateData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -42,9 +42,9 @@ func NewInvitationWithDefaults() *Invitation {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *Invitation) GetData() InvitationData {
+func (o *Invitation) GetData() InvitationCreateData {
 	if o == nil || o.Data == nil {
-		var ret InvitationData
+		var ret InvitationCreateData
 		return ret
 	}
 	return *o.Data
@@ -52,7 +52,7 @@ func (o *Invitation) GetData() InvitationData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Invitation) GetDataOk() (*InvitationData, bool) {
+func (o *Invitation) GetDataOk() (*InvitationCreateData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *Invitation) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given InvitationData and assigns it to the Data field.
-func (o *Invitation) SetData(v InvitationData) {
+// SetData gets a reference to the given InvitationCreateData and assigns it to the Data field.
+func (o *Invitation) SetData(v InvitationCreateData) {
 	o.Data = &v
 }
 
