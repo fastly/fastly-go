@@ -91,6 +91,21 @@ type DdosProtectionAPI interface {
 	DdosProtectionRuleGetExecute(r APIDdosProtectionRuleGetRequest) (*DdosProtectionRule, *http.Response, error)
 
 	/*
+		DdosProtectionRulePatch Update rule
+
+		Update rule.
+
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param ruleID Unique ID of the rule.
+		 @return APIDdosProtectionRulePatchRequest
+	*/
+	DdosProtectionRulePatch(ctx context.Context, ruleID string) APIDdosProtectionRulePatchRequest
+
+	// DdosProtectionRulePatchExecute executes the request
+	//  @return DdosProtectionRule
+	DdosProtectionRulePatchExecute(r APIDdosProtectionRulePatchRequest) (*DdosProtectionRule, *http.Response, error)
+
+	/*
 		DdosProtectionTrafficStatsRuleGet Get traffic stats for a rule
 
 		Get traffic stats for a rule.
@@ -744,6 +759,186 @@ func (a *DdosProtectionAPIService) DdosProtectionRuleGetExecute(r APIDdosProtect
 			error: localVarHTTPResponse.Status,
 		}
 		if localVarHTTPResponse.StatusCode == 401 {
+			var v DdosProtectionError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v DdosProtectionError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIDdosProtectionRulePatchRequest represents a request for the resource.
+type APIDdosProtectionRulePatchRequest struct {
+	ctx                     context.Context
+	APIService              DdosProtectionAPI
+	ruleID                  string
+	ddosProtectionRulePatch *DdosProtectionRulePatch
+}
+
+// DdosProtectionRulePatch returns a pointer to a request.
+func (r *APIDdosProtectionRulePatchRequest) DdosProtectionRulePatch(ddosProtectionRulePatch DdosProtectionRulePatch) *APIDdosProtectionRulePatchRequest {
+	r.ddosProtectionRulePatch = &ddosProtectionRulePatch
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIDdosProtectionRulePatchRequest) Execute() (*DdosProtectionRule, *http.Response, error) {
+	return r.APIService.DdosProtectionRulePatchExecute(r)
+}
+
+/*
+DdosProtectionRulePatch Update rule
+
+Update rule.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param ruleID Unique ID of the rule.
+ @return APIDdosProtectionRulePatchRequest
+*/
+func (a *DdosProtectionAPIService) DdosProtectionRulePatch(ctx context.Context, ruleID string) APIDdosProtectionRulePatchRequest {
+	return APIDdosProtectionRulePatchRequest{
+		APIService: a,
+		ctx:        ctx,
+		ruleID:     ruleID,
+	}
+}
+
+// DdosProtectionRulePatchExecute executes the request
+//  @return DdosProtectionRule
+func (a *DdosProtectionAPIService) DdosProtectionRulePatchExecute(r APIDdosProtectionRulePatchRequest) (*DdosProtectionRule, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *DdosProtectionRule
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DdosProtectionAPIService.DdosProtectionRulePatch")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/ddos-protection/v1/rules/{rule_id}"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_id"+"}", gourl.PathEscape(parameterToString(r.ruleID, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.ddosProtectionRulePatch
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v DdosProtectionError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 401 {
+			var v DdosProtectionError
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
 			var v DdosProtectionError
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {

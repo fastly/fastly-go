@@ -207,9 +207,13 @@ type APIClient struct {
 
 	MutualAuthenticationAPI MutualAuthenticationAPI
 
+	NgwafReportsAPI NgwafReportsAPI
+
 	ObjectStorageAccessKeysAPI ObjectStorageAccessKeysAPI
 
 	ObservabilityCustomDashboardsAPI ObservabilityCustomDashboardsAPI
+
+	ObservabilityTimeseriesAPI ObservabilityTimeseriesAPI
 
 	OriginInspectorHistoricalAPI OriginInspectorHistoricalAPI
 
@@ -399,8 +403,10 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingSumologicAPI = (*LoggingSumologicAPIService)(&c.common)
 	c.LoggingSyslogAPI = (*LoggingSyslogAPIService)(&c.common)
 	c.MutualAuthenticationAPI = (*MutualAuthenticationAPIService)(&c.common)
+	c.NgwafReportsAPI = (*NgwafReportsAPIService)(&c.common)
 	c.ObjectStorageAccessKeysAPI = (*ObjectStorageAccessKeysAPIService)(&c.common)
 	c.ObservabilityCustomDashboardsAPI = (*ObservabilityCustomDashboardsAPIService)(&c.common)
+	c.ObservabilityTimeseriesAPI = (*ObservabilityTimeseriesAPIService)(&c.common)
 	c.OriginInspectorHistoricalAPI = (*OriginInspectorHistoricalAPIService)(&c.common)
 	c.OriginInspectorRealtimeAPI = (*OriginInspectorRealtimeAPIService)(&c.common)
 	c.PackageAPI = (*PackageAPIService)(&c.common)

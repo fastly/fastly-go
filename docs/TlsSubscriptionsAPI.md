@@ -104,13 +104,12 @@ import (
 )
 
 func main() {
-    force := true // bool | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.  (optional)
     tlsSubscription := *openapiclient.NewTLSSubscription() // TLSSubscription |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSSubscriptionsAPI.CreateTLSSub(ctx).Force(force).TLSSubscription(tlsSubscription).Execute()
+    resp, r, err := apiClient.TLSSubscriptionsAPI.CreateTLSSub(ctx).TLSSubscription(tlsSubscription).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TLSSubscriptionsAPI.CreateTLSSub`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -131,7 +130,7 @@ Other parameters are passed through a pointer to a apiCreateTLSSubRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **force** | **bool** | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.  |  **tlsSubscription** | [**TLSSubscription**](TlsSubscription.md) |  | 
+ **tlsSubscription** | [**TLSSubscription**](TlsSubscription.md) |  | 
 
 ### Return type
 

@@ -18,7 +18,8 @@ import (
 
 // DdosProtectionAttributeStats struct for DdosProtectionAttributeStats
 type DdosProtectionAttributeStats struct {
-	Name *DdosProtectionTrafficAttribute `json:"name,omitempty"`
+	// Name of an attribute type used in traffic stats. Currently, supported values are source_ip, country_code, host, asn, source_ip_prefix, user_agent, method_path.
+	Name *string `json:"name,omitempty"`
 	// Values for traffic attribute.
 	Values               []DdosProtectionAttributeValue `json:"values,omitempty"`
 	AdditionalProperties map[string]any
@@ -44,9 +45,9 @@ func NewDdosProtectionAttributeStatsWithDefaults() *DdosProtectionAttributeStats
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *DdosProtectionAttributeStats) GetName() DdosProtectionTrafficAttribute {
+func (o *DdosProtectionAttributeStats) GetName() string {
 	if o == nil || o.Name == nil {
-		var ret DdosProtectionTrafficAttribute
+		var ret string
 		return ret
 	}
 	return *o.Name
@@ -54,7 +55,7 @@ func (o *DdosProtectionAttributeStats) GetName() DdosProtectionTrafficAttribute 
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DdosProtectionAttributeStats) GetNameOk() (*DdosProtectionTrafficAttribute, bool) {
+func (o *DdosProtectionAttributeStats) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -70,8 +71,8 @@ func (o *DdosProtectionAttributeStats) HasName() bool {
 	return false
 }
 
-// SetName gets a reference to the given DdosProtectionTrafficAttribute and assigns it to the Name field.
-func (o *DdosProtectionAttributeStats) SetName(v DdosProtectionTrafficAttribute) {
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *DdosProtectionAttributeStats) SetName(v string) {
 	o.Name = &v
 }
 

@@ -279,7 +279,7 @@ func (r *APICreateServerPoolRequest) OverrideHost(overrideHost string) *APICreat
 	return r
 }
 
-// BetweenBytesTimeout Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using &#x60;bereq.between_bytes_timeout&#x60;.
+// BetweenBytesTimeout Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, for Delivery services, the response received so far will be considered complete and the fetch will end. For Compute services, timeout expiration is treated as a failure of the backend connection, and an error is generated. May be set at runtime using &#x60;bereq.between_bytes_timeout&#x60;.
 func (r *APICreateServerPoolRequest) BetweenBytesTimeout(betweenBytesTimeout int32) *APICreateServerPoolRequest {
 	r.betweenBytesTimeout = &betweenBytesTimeout
 	return r
@@ -1110,7 +1110,7 @@ func (r *APIUpdateServerPoolRequest) OverrideHost(overrideHost string) *APIUpdat
 	return r
 }
 
-// BetweenBytesTimeout Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using &#x60;bereq.between_bytes_timeout&#x60;.
+// BetweenBytesTimeout Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, for Delivery services, the response received so far will be considered complete and the fetch will end. For Compute services, timeout expiration is treated as a failure of the backend connection, and an error is generated. May be set at runtime using &#x60;bereq.between_bytes_timeout&#x60;.
 func (r *APIUpdateServerPoolRequest) BetweenBytesTimeout(betweenBytesTimeout int32) *APIUpdateServerPoolRequest {
 	r.betweenBytesTimeout = &betweenBytesTimeout
 	return r

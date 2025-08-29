@@ -104,7 +104,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "fastly-go/1.0.0-beta.43",
+		UserAgent:     "fastly-go/1.0.0-beta.44",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
@@ -604,6 +604,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"DdosProtectionAPIService.DdosProtectionRuleGet": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DdosProtectionAPIService.DdosProtectionRulePatch": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2133,6 +2139,18 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"NgwafReportsAPIService.GetAttacksReport": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NgwafReportsAPIService.GetSignalsReport": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"ObjectStorageAccessKeysAPIService.CreateAccessKey": {
 				{
 					URL:         "https://api.fastly.com",
@@ -2182,6 +2200,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"ObservabilityCustomDashboardsAPIService.UpdateDashboard": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ObservabilityTimeseriesAPIService.TimeseriesGet": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",

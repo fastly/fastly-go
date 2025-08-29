@@ -229,11 +229,12 @@ import (
 func main() {
     cursor := "cursor_example" // string |  (optional)
     limit := int32(56) // int32 |  (optional) (default to 1000)
+    name := "name_example" // string | Returns a one-element array containing the details for the named KV store. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreAPI.KvStoreList(ctx).Cursor(cursor).Limit(limit).Execute()
+    resp, r, err := apiClient.KvStoreAPI.KvStoreList(ctx).Cursor(cursor).Limit(limit).Name(name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStoreList`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -254,7 +255,7 @@ Other parameters are passed through a pointer to a apiKvStoreListRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **string** |  |  **limit** | **int32** |  | [default to 1000]
+ **cursor** | **string** |  |  **limit** | **int32** |  | [default to 1000] **name** | **string** | Returns a one-element array containing the details for the named KV store. | 
 
 ### Return type
 

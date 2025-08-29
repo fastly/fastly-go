@@ -289,14 +289,7 @@ func (a *TLSSubscriptionsAPIService) CreateGlobalsignEmailChallengeExecute(r API
 type APICreateTLSSubRequest struct {
 	ctx             context.Context
 	APIService      TLSSubscriptionsAPI
-	force           *bool
 	tlsSubscription *TLSSubscription
-}
-
-// Force A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.
-func (r *APICreateTLSSubRequest) Force(force bool) *APICreateTLSSubRequest {
-	r.force = &force
-	return r
 }
 
 // TLSSubscription returns a pointer to a request.
@@ -346,9 +339,6 @@ func (a *TLSSubscriptionsAPIService) CreateTLSSubExecute(r APICreateTLSSubReques
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
-	if r.force != nil {
-		localVarQueryParams.Add("force", parameterToString(*r.force, ""))
-	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/vnd.api+json"}
 

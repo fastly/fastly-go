@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ID** | Pointer to **string** | Unique ID of the rule. | [optional] 
 **Name** | Pointer to **string** | A human-readable name for the rule. | [optional] 
-**Action** | Pointer to [**DdosProtectionAction**](DdosProtectionAction.md) |  | [optional] [default to DDOSPROTECTIONACTION_DEFAULT]
+**Action** | Pointer to **string** | Action types for a rule. Supported action values are default, block, log, off. The default action value follows the current protection mode of the associated service. | [optional] [default to "default"]
 **CustomerID** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
 **ServiceID** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
 **SourceIP** | Pointer to **NullableString** | Source IP address attribute. | [optional] 
@@ -87,20 +87,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetAction
 
-`func (o *DdosProtectionRuleAllOf) GetAction() DdosProtectionAction`
+`func (o *DdosProtectionRuleAllOf) GetAction() string`
 
 GetAction returns the Action field if non-nil, zero value otherwise.
 
 ### GetActionOk
 
-`func (o *DdosProtectionRuleAllOf) GetActionOk() (*DdosProtectionAction, bool)`
+`func (o *DdosProtectionRuleAllOf) GetActionOk() (*string, bool)`
 
 GetActionOk returns a tuple with the Action field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAction
 
-`func (o *DdosProtectionRuleAllOf) SetAction(v DdosProtectionAction)`
+`func (o *DdosProtectionRuleAllOf) SetAction(v string)`
 
 SetAction sets Action field to given value.
 

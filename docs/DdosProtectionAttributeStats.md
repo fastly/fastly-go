@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to [**DdosProtectionTrafficAttribute**](DdosProtectionTrafficAttribute.md) |  | [optional] 
+**Name** | Pointer to **string** | Name of an attribute type used in traffic stats. Currently, supported values are source_ip, country_code, host, asn, source_ip_prefix, user_agent, method_path. | [optional] 
 **Values** | Pointer to [**[]DdosProtectionAttributeValue**](DdosProtectionAttributeValue.md) | Values for traffic attribute. | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetName
 
-`func (o *DdosProtectionAttributeStats) GetName() DdosProtectionTrafficAttribute`
+`func (o *DdosProtectionAttributeStats) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *DdosProtectionAttributeStats) GetNameOk() (*DdosProtectionTrafficAttribute, bool)`
+`func (o *DdosProtectionAttributeStats) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *DdosProtectionAttributeStats) SetName(v DdosProtectionTrafficAttribute)`
+`func (o *DdosProtectionAttributeStats) SetName(v string)`
 
 SetName sets Name field to given value.
 

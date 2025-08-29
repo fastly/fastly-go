@@ -172,6 +172,7 @@ type APIGetHistStatsRequest struct {
 	to         *string
 	by         *string
 	region     *string
+	services   *string
 }
 
 // From Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as &#39;yesterday&#39;, or &#39;two weeks ago&#39;. Default varies based on the value of &#x60;by&#x60;.
@@ -195,6 +196,12 @@ func (r *APIGetHistStatsRequest) By(by string) *APIGetHistStatsRequest {
 // Region Limit query to a specific geographic region. One of:   * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea.   * &#x60;africa_std&#x60; - Africa.   * &#x60;mexico&#x60; - Mexico.   * &#x60;southamerica_std&#x60; - South America.
 func (r *APIGetHistStatsRequest) Region(region string) *APIGetHistStatsRequest {
 	r.region = &region
+	return r
+}
+
+// Services Limit the query to only the specified, comma-separated list of services.
+func (r *APIGetHistStatsRequest) Services(services string) *APIGetHistStatsRequest {
+	r.services = &services
 	return r
 }
 
@@ -250,6 +257,9 @@ func (a *HistoricalAPIService) GetHistStatsExecute(r APIGetHistStatsRequest) (*H
 	}
 	if r.region != nil {
 		localVarQueryParams.Add("region", parameterToString(*r.region, ""))
+	}
+	if r.services != nil {
+		localVarQueryParams.Add("services", parameterToString(*r.services, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

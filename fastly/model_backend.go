@@ -22,7 +22,7 @@ type Backend struct {
 	Address *string `json:"address,omitempty"`
 	// Whether or not this backend should be automatically load balanced. If true, all backends with this setting that don't have a `request_condition` will be selected based on their `weight`.
 	AutoLoadbalance *bool `json:"auto_loadbalance,omitempty"`
-	// Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+	// Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, for Delivery services, the response received so far will be considered complete and the fetch will end. For Compute services, timeout expiration is treated as a failure of the backend connection, and an error is generated. May be set at runtime using `bereq.between_bytes_timeout`.
 	BetweenBytesTimeout *int32 `json:"between_bytes_timeout,omitempty"`
 	// Unused.
 	ClientCert NullableString `json:"client_cert,omitempty"`
@@ -104,6 +104,12 @@ func NewBackend() *Backend {
 	this := Backend{}
 	var sslCheckCert bool = true
 	this.SslCheckCert = *NewNullableBool(&sslCheckCert)
+	var tcpKeepaliveInterval int32 = 10
+	this.TcpKeepaliveInterval = *NewNullableInt32(&tcpKeepaliveInterval)
+	var tcpKeepaliveProbes int32 = 3
+	this.TcpKeepaliveProbes = *NewNullableInt32(&tcpKeepaliveProbes)
+	var tcpKeepaliveTime int32 = 300
+	this.TcpKeepaliveTime = *NewNullableInt32(&tcpKeepaliveTime)
 	return &this
 }
 
@@ -114,6 +120,12 @@ func NewBackendWithDefaults() *Backend {
 	this := Backend{}
 	var sslCheckCert bool = true
 	this.SslCheckCert = *NewNullableBool(&sslCheckCert)
+	var tcpKeepaliveInterval int32 = 10
+	this.TcpKeepaliveInterval = *NewNullableInt32(&tcpKeepaliveInterval)
+	var tcpKeepaliveProbes int32 = 3
+	this.TcpKeepaliveProbes = *NewNullableInt32(&tcpKeepaliveProbes)
+	var tcpKeepaliveTime int32 = 300
+	this.TcpKeepaliveTime = *NewNullableInt32(&tcpKeepaliveTime)
 	return &this
 }
 

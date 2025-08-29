@@ -497,6 +497,7 @@ type APIKvStoreListRequest struct {
 	APIService KvStoreAPI
 	cursor     *string
 	limit      *int32
+	name       *string
 }
 
 // Cursor returns a pointer to a request.
@@ -508,6 +509,12 @@ func (r *APIKvStoreListRequest) Cursor(cursor string) *APIKvStoreListRequest {
 // Limit returns a pointer to a request.
 func (r *APIKvStoreListRequest) Limit(limit int32) *APIKvStoreListRequest {
 	r.limit = &limit
+	return r
+}
+
+// Name Returns a one-element array containing the details for the named KV store.
+func (r *APIKvStoreListRequest) Name(name string) *APIKvStoreListRequest {
+	r.name = &name
 	return r
 }
 
@@ -557,6 +564,9 @@ func (a *KvStoreAPIService) KvStoreListExecute(r APIKvStoreListRequest) (*Inline
 	}
 	if r.limit != nil {
 		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	}
+	if r.name != nil {
+		localVarQueryParams.Add("name", parameterToString(*r.name, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -18,7 +18,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go 1.0.0-beta.43
+	github.com/fastly/fastly-go 1.0.0-beta.44
 )
 ```
 
@@ -151,6 +151,7 @@ Class | Method | Description
 *DdosProtectionAPI* | [**DdosProtectionEventList**](docs/DdosProtectionAPI.md#ddosprotectioneventlist) | Get events
 *DdosProtectionAPI* | [**DdosProtectionEventRuleList**](docs/DdosProtectionAPI.md#ddosprotectioneventrulelist) | Get all rules for an event
 *DdosProtectionAPI* | [**DdosProtectionRuleGet**](docs/DdosProtectionAPI.md#ddosprotectionruleget) | Get a rule by ID
+*DdosProtectionAPI* | [**DdosProtectionRulePatch**](docs/DdosProtectionAPI.md#ddosprotectionrulepatch) | Update rule
 *DdosProtectionAPI* | [**DdosProtectionTrafficStatsRuleGet**](docs/DdosProtectionAPI.md#ddosprotectiontrafficstatsruleget) | Get traffic stats for a rule
 *DictionaryAPI* | [**CreateDictionary**](docs/DictionaryAPI.md#createdictionary) | Create a dictionary
 *DictionaryAPI* | [**DeleteDictionary**](docs/DictionaryAPI.md#deletedictionary) | Delete a dictionary
@@ -405,6 +406,8 @@ Class | Method | Description
 *MutualAuthenticationAPI* | [**GetMutualAuthentication**](docs/MutualAuthenticationAPI.md#getmutualauthentication) | Get a Mutual Authentication
 *MutualAuthenticationAPI* | [**ListMutualAuthentications**](docs/MutualAuthenticationAPI.md#listmutualauthentications) | List Mutual Authentications
 *MutualAuthenticationAPI* | [**PatchMutualAuthentication**](docs/MutualAuthenticationAPI.md#patchmutualauthentication) | Update a Mutual Authentication
+*NgwafReportsAPI* | [**GetAttacksReport**](docs/NgwafReportsAPI.md#getattacksreport) | Get attacks report
+*NgwafReportsAPI* | [**GetSignalsReport**](docs/NgwafReportsAPI.md#getsignalsreport) | Get signals report
 *ObjectStorageAccessKeysAPI* | [**CreateAccessKey**](docs/ObjectStorageAccessKeysAPI.md#createaccesskey) | Create an access key
 *ObjectStorageAccessKeysAPI* | [**DeleteAccessKey**](docs/ObjectStorageAccessKeysAPI.md#deleteaccesskey) | Delete an access key
 *ObjectStorageAccessKeysAPI* | [**GetAccessKey**](docs/ObjectStorageAccessKeysAPI.md#getaccesskey) | Get an access key
@@ -414,6 +417,7 @@ Class | Method | Description
 *ObservabilityCustomDashboardsAPI* | [**GetDashboard**](docs/ObservabilityCustomDashboardsAPI.md#getdashboard) | Retrieve a dashboard by ID
 *ObservabilityCustomDashboardsAPI* | [**ListDashboards**](docs/ObservabilityCustomDashboardsAPI.md#listdashboards) | List all custom dashboards
 *ObservabilityCustomDashboardsAPI* | [**UpdateDashboard**](docs/ObservabilityCustomDashboardsAPI.md#updatedashboard) | Update an existing dashboard
+*ObservabilityTimeseriesAPI* | [**TimeseriesGet**](docs/ObservabilityTimeseriesAPI.md#timeseriesget) | Retrieve observability data as a time series
 *OriginInspectorHistoricalAPI* | [**GetOriginInspectorHistorical**](docs/OriginInspectorHistoricalAPI.md#getorigininspectorhistorical) | Get historical origin data for a service
 *OriginInspectorRealtimeAPI* | [**GetOriginInspectorLast120Seconds**](docs/OriginInspectorRealtimeAPI.md#getorigininspectorlast120seconds) | Get real-time origin data for the last 120 seconds
 *OriginInspectorRealtimeAPI* | [**GetOriginInspectorLastMaxEntries**](docs/OriginInspectorRealtimeAPI.md#getorigininspectorlastmaxentries) | Get a limited number of real-time origin data entries
@@ -654,10 +658,17 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/alerts/history`](https://www.fastly.com/documentation/reference/api/observability/alerts/history) (GET)
 - [`/dns/configurations/{dns_configuration_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/dns/configurations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/domain-management/v1/domains/{domain_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
+- [`/domain-management/v1/domains`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
 - [`/domains/v1/tools/status`](https://www.fastly.com/documentation/reference/api/) (GET)
 - [`/domains/v1/tools/suggest`](https://www.fastly.com/documentation/reference/api/) (GET)
-- [`/domains/v1/{domain_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
-- [`/domains/v1`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/ngwaf/v1/lists/{listID}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/lists) (DELETE, GET, PATCH)
+- [`/ngwaf/v1/lists`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/lists) (GET, POST)
+- [`/ngwaf/v1/signals/{signal_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/signals) (DELETE, GET, PATCH)
+- [`/ngwaf/v1/signals`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/signals) (GET, POST)
+- [`/ngwaf/v1/timeseries`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/timeseries) (GET)
+- [`/ngwaf/v1/workspaces/{workspaceID}/lists/{listID}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/lists) (DELETE, GET, PATCH)
+- [`/ngwaf/v1/workspaces/{workspaceID}/lists`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/lists) (GET, POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/alerts/{alert_id}/signing-key`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/workspace_alerts) (GET, POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/alerts/{alert_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/workspace_alerts) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/alerts`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/workspace_alerts) (GET, POST)
@@ -682,7 +693,8 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/notifications/mailinglist-confirmations`](https://developer.fastly.com/reference/api/observability/notification) (POST)
 - [`/observability/aggregations`](https://www.fastly.com/documentation/reference/api/observability/aggregations/) (GET)
 - [`/observability/log-explorer`](https://www.fastly.com/documentation/reference/api/observability/log-explorer/) (GET)
-- [`/observability/timeseries`](https://www.fastly.com/documentation/reference/api/observability/timeseries/) (GET)
+- [`/observability/timeseries`](https://www.fastly.com/documentation/reference/api/observability/timeseries/logs/) (GET)
+- [`/observability/timeseries`](https://www.fastly.com/documentation/reference/api/observability/timeseries/sustainability/) (GET)
 - [`/resources/stores/kv/{store_id}/batch`](https://www.fastly.com/documentation/reference/api/services/resources/kv-store-item) (PUT)
 - [`/security/workspaces/{workspace_id}/events/{event_id}`](https://www.fastly.com/documentation/reference/api/security/events) (GET, PATCH)
 - [`/security/workspaces/{workspace_id}/events`](https://www.fastly.com/documentation/reference/api/security/events) (GET)

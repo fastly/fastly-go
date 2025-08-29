@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**DdosProtectionEventList**](DdosProtectionAPI.md#DdosProtectionEventList) | **GET** `/ddos-protection/v1/events` | Get events
 [**DdosProtectionEventRuleList**](DdosProtectionAPI.md#DdosProtectionEventRuleList) | **GET** `/ddos-protection/v1/events/{event_id}/rules` | Get all rules for an event
 [**DdosProtectionRuleGet**](DdosProtectionAPI.md#DdosProtectionRuleGet) | **GET** `/ddos-protection/v1/rules/{rule_id}` | Get a rule by ID
+[**DdosProtectionRulePatch**](DdosProtectionAPI.md#DdosProtectionRulePatch) | **PATCH** `/ddos-protection/v1/rules/{rule_id}` | Update rule
 [**DdosProtectionTrafficStatsRuleGet**](DdosProtectionAPI.md#DdosProtectionTrafficStatsRuleGet) | **GET** `/ddos-protection/v1/events/{event_id}/rules/{rule_id}/traffic-stats` | Get traffic stats for a rule
 
 
@@ -280,6 +281,74 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json, application/problem+json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## DdosProtectionRulePatch
+
+Update rule
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    ruleID := "ruleId_example" // string | Unique ID of the rule.
+    ddosProtectionRulePatch := *openapiclient.NewDdosProtectionRulePatch() // DdosProtectionRulePatch |  (optional)
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.DdosProtectionAPI.DdosProtectionRulePatch(ctx, ruleID).DdosProtectionRulePatch(ddosProtectionRulePatch).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DdosProtectionAPI.DdosProtectionRulePatch`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `DdosProtectionRulePatch`: DdosProtectionRule
+    fmt.Fprintf(os.Stdout, "Response from `DdosProtectionAPI.DdosProtectionRulePatch`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**ruleID** | **string** | Unique ID of the rule. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDdosProtectionRulePatchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ddosProtectionRulePatch** | [**DdosProtectionRulePatch**](DdosProtectionRulePatch.md) |  | 
+
+### Return type
+
+[**DdosProtectionRule**](DdosProtectionRule.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

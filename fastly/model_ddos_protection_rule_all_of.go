@@ -21,8 +21,9 @@ type DdosProtectionRuleAllOf struct {
 	// Unique ID of the rule.
 	ID *string `json:"id,omitempty"`
 	// A human-readable name for the rule.
-	Name   *string               `json:"name,omitempty"`
-	Action *DdosProtectionAction `json:"action,omitempty"`
+	Name *string `json:"name,omitempty"`
+	// Action types for a rule. Supported action values are default, block, log, off. The default action value follows the current protection mode of the associated service.
+	Action *string `json:"action,omitempty"`
 	// Alphanumeric string identifying the customer.
 	CustomerID *string `json:"customer_id,omitempty"`
 	// Alphanumeric string identifying the service.
@@ -50,7 +51,7 @@ type _DdosProtectionRuleAllOf DdosProtectionRuleAllOf
 // will change when the set of required properties is changed
 func NewDdosProtectionRuleAllOf() *DdosProtectionRuleAllOf {
 	this := DdosProtectionRuleAllOf{}
-	var action DdosProtectionAction = DDOSPROTECTIONACTION_DEFAULT
+	var action string = "default"
 	this.Action = &action
 	return &this
 }
@@ -60,7 +61,7 @@ func NewDdosProtectionRuleAllOf() *DdosProtectionRuleAllOf {
 // but it doesn't guarantee that properties required by API are set
 func NewDdosProtectionRuleAllOfWithDefaults() *DdosProtectionRuleAllOf {
 	this := DdosProtectionRuleAllOf{}
-	var action DdosProtectionAction = DDOSPROTECTIONACTION_DEFAULT
+	var action string = "default"
 	this.Action = &action
 	return &this
 }
@@ -130,9 +131,9 @@ func (o *DdosProtectionRuleAllOf) SetName(v string) {
 }
 
 // GetAction returns the Action field value if set, zero value otherwise.
-func (o *DdosProtectionRuleAllOf) GetAction() DdosProtectionAction {
+func (o *DdosProtectionRuleAllOf) GetAction() string {
 	if o == nil || o.Action == nil {
-		var ret DdosProtectionAction
+		var ret string
 		return ret
 	}
 	return *o.Action
@@ -140,7 +141,7 @@ func (o *DdosProtectionRuleAllOf) GetAction() DdosProtectionAction {
 
 // GetActionOk returns a tuple with the Action field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DdosProtectionRuleAllOf) GetActionOk() (*DdosProtectionAction, bool) {
+func (o *DdosProtectionRuleAllOf) GetActionOk() (*string, bool) {
 	if o == nil || o.Action == nil {
 		return nil, false
 	}
@@ -156,8 +157,8 @@ func (o *DdosProtectionRuleAllOf) HasAction() bool {
 	return false
 }
 
-// SetAction gets a reference to the given DdosProtectionAction and assigns it to the Action field.
-func (o *DdosProtectionRuleAllOf) SetAction(v DdosProtectionAction) {
+// SetAction gets a reference to the given string and assigns it to the Action field.
+func (o *DdosProtectionRuleAllOf) SetAction(v string) {
 	o.Action = &v
 }
 
