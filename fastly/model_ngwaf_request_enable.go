@@ -19,7 +19,7 @@ import (
 // NgwafRequestEnable struct for NgwafRequestEnable
 type NgwafRequestEnable struct {
 	// The workspace to link.
-	WorkspaceID          string `json:"workspace_id"`
+	WorkspaceId          string `json:"workspace_id"`
 	AdditionalProperties map[string]any
 }
 
@@ -29,9 +29,9 @@ type _NgwafRequestEnable NgwafRequestEnable
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNgwafRequestEnable(workspaceID string) *NgwafRequestEnable {
+func NewNgwafRequestEnable(workspaceId string) *NgwafRequestEnable {
 	this := NgwafRequestEnable{}
-	this.WorkspaceID = workspaceID
+	this.WorkspaceId = workspaceId
 	return &this
 }
 
@@ -43,28 +43,28 @@ func NewNgwafRequestEnableWithDefaults() *NgwafRequestEnable {
 	return &this
 }
 
-// GetWorkspaceID returns the WorkspaceID field value
-func (o *NgwafRequestEnable) GetWorkspaceID() string {
+// GetWorkspaceId returns the WorkspaceId field value
+func (o *NgwafRequestEnable) GetWorkspaceId() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.WorkspaceID
+	return o.WorkspaceId
 }
 
-// GetWorkspaceIDOk returns a tuple with the WorkspaceID field value
+// GetWorkspaceIdOk returns a tuple with the WorkspaceId field value
 // and a boolean to check if the value has been set.
-func (o *NgwafRequestEnable) GetWorkspaceIDOk() (*string, bool) {
+func (o *NgwafRequestEnable) GetWorkspaceIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.WorkspaceID, true
+	return &o.WorkspaceId, true
 }
 
-// SetWorkspaceID sets field value
-func (o *NgwafRequestEnable) SetWorkspaceID(v string) {
-	o.WorkspaceID = v
+// SetWorkspaceId sets field value
+func (o *NgwafRequestEnable) SetWorkspaceId(v string) {
+	o.WorkspaceId = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -72,7 +72,7 @@ func (o *NgwafRequestEnable) SetWorkspaceID(v string) {
 func (o NgwafRequestEnable) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["workspace_id"] = o.WorkspaceID
+		toSerialize["workspace_id"] = o.WorkspaceId
 	}
 
 	for key, value := range o.AdditionalProperties {

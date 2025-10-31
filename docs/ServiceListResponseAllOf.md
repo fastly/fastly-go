@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **int32** | Current [version](https://www.fastly.com/documentation/reference/api/services/version/) of the service. | [optional] 
 **Versions** | Pointer to [**[]SchemasVersionResponse**](SchemasVersionResponse.md) | A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service. | [optional] 
 **Environments** | Pointer to [**[]Environment**](Environment.md) | A list of environments where the service has been deployed. | [optional] 
@@ -28,30 +28,30 @@ NewServiceListResponseAllOfWithDefaults instantiates a new ServiceListResponseAl
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetID
+### GetId
 
-`func (o *ServiceListResponseAllOf) GetID() string`
+`func (o *ServiceListResponseAllOf) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *ServiceListResponseAllOf) GetIDOk() (*string, bool)`
+`func (o *ServiceListResponseAllOf) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *ServiceListResponseAllOf) SetID(v string)`
+`func (o *ServiceListResponseAllOf) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *ServiceListResponseAllOf) HasID() bool`
+`func (o *ServiceListResponseAllOf) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -130,3 +130,5 @@ HasEnvironments returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -19,7 +19,7 @@ import (
 // DdosProtectionResponseConfigure struct for DdosProtectionResponseConfigure
 type DdosProtectionResponseConfigure struct {
 	Product              *DdosProtectionResponseProductProduct             `json:"product,omitempty"`
-	Service              *BotManagementResponseServiceService              `json:"service,omitempty"`
+	Service              *ApiDiscoveryResponseServiceService               `json:"service,omitempty"`
 	Configuration        *DdosProtectionResponseConfigurationConfiguration `json:"configuration,omitempty"`
 	Links                *DdosProtectionResponseLinksLinks                 `json:"_links,omitempty"`
 	AdditionalProperties map[string]any
@@ -77,9 +77,9 @@ func (o *DdosProtectionResponseConfigure) SetProduct(v DdosProtectionResponsePro
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *DdosProtectionResponseConfigure) GetService() BotManagementResponseServiceService {
+func (o *DdosProtectionResponseConfigure) GetService() ApiDiscoveryResponseServiceService {
 	if o == nil || o.Service == nil {
-		var ret BotManagementResponseServiceService
+		var ret ApiDiscoveryResponseServiceService
 		return ret
 	}
 	return *o.Service
@@ -87,7 +87,7 @@ func (o *DdosProtectionResponseConfigure) GetService() BotManagementResponseServ
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DdosProtectionResponseConfigure) GetServiceOk() (*BotManagementResponseServiceService, bool) {
+func (o *DdosProtectionResponseConfigure) GetServiceOk() (*ApiDiscoveryResponseServiceService, bool) {
 	if o == nil || o.Service == nil {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *DdosProtectionResponseConfigure) HasService() bool {
 	return false
 }
 
-// SetService gets a reference to the given BotManagementResponseServiceService and assigns it to the Service field.
-func (o *DdosProtectionResponseConfigure) SetService(v BotManagementResponseServiceService) {
+// SetService gets a reference to the given ApiDiscoveryResponseServiceService and assigns it to the Service field.
+func (o *DdosProtectionResponseConfigure) SetService(v ApiDiscoveryResponseServiceService) {
 	o.Service = &v
 }
 

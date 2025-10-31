@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **ConnectTimeout** | Pointer to **string** | How long to wait for a timeout in milliseconds. | [optional] 
 **FirstByteTimeout** | Pointer to **string** | How long to wait for the first byte in milliseconds. | [optional] 
 **MaxConnDefault** | Pointer to **string** | Maximum number of connections. | [optional] [default to "200"]
-**TLSCheckCert** | Pointer to **NullableString** | Be strict on checking TLS certs. | [optional] 
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**TlsCheckCert** | Pointer to **NullableString** | Be strict on checking TLS certs. | [optional] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -130,65 +130,67 @@ SetMaxConnDefault sets MaxConnDefault field to given value.
 
 HasMaxConnDefault returns a boolean if a field has been set.
 
-### GetTLSCheckCert
+### GetTlsCheckCert
 
-`func (o *PoolResponseCommon) GetTLSCheckCert() string`
+`func (o *PoolResponseCommon) GetTlsCheckCert() string`
 
-GetTLSCheckCert returns the TLSCheckCert field if non-nil, zero value otherwise.
+GetTlsCheckCert returns the TlsCheckCert field if non-nil, zero value otherwise.
 
-### GetTLSCheckCertOk
+### GetTlsCheckCertOk
 
-`func (o *PoolResponseCommon) GetTLSCheckCertOk() (*string, bool)`
+`func (o *PoolResponseCommon) GetTlsCheckCertOk() (*string, bool)`
 
-GetTLSCheckCertOk returns a tuple with the TLSCheckCert field if it's non-nil, zero value otherwise
+GetTlsCheckCertOk returns a tuple with the TlsCheckCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSCheckCert
+### SetTlsCheckCert
 
-`func (o *PoolResponseCommon) SetTLSCheckCert(v string)`
+`func (o *PoolResponseCommon) SetTlsCheckCert(v string)`
 
-SetTLSCheckCert sets TLSCheckCert field to given value.
+SetTlsCheckCert sets TlsCheckCert field to given value.
 
-### HasTLSCheckCert
+### HasTlsCheckCert
 
-`func (o *PoolResponseCommon) HasTLSCheckCert() bool`
+`func (o *PoolResponseCommon) HasTlsCheckCert() bool`
 
-HasTLSCheckCert returns a boolean if a field has been set.
+HasTlsCheckCert returns a boolean if a field has been set.
 
-### SetTLSCheckCertNil
+### SetTlsCheckCertNil
 
-`func (o *PoolResponseCommon) SetTLSCheckCertNil(b bool)`
+`func (o *PoolResponseCommon) SetTlsCheckCertNil(b bool)`
 
- SetTLSCheckCertNil sets the value for TLSCheckCert to be an explicit nil
+ SetTlsCheckCertNil sets the value for TlsCheckCert to be an explicit nil
 
-### UnsetTLSCheckCert
-`func (o *PoolResponseCommon) UnsetTLSCheckCert()`
+### UnsetTlsCheckCert
+`func (o *PoolResponseCommon) UnsetTlsCheckCert()`
 
-UnsetTLSCheckCert ensures that no value is present for TLSCheckCert, not even an explicit nil
-### GetID
+UnsetTlsCheckCert ensures that no value is present for TlsCheckCert, not even an explicit nil
+### GetId
 
-`func (o *PoolResponseCommon) GetID() string`
+`func (o *PoolResponseCommon) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *PoolResponseCommon) GetIDOk() (*string, bool)`
+`func (o *PoolResponseCommon) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *PoolResponseCommon) SetID(v string)`
+`func (o *PoolResponseCommon) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *PoolResponseCommon) HasID() bool`
+`func (o *PoolResponseCommon) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

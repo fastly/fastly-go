@@ -16,41 +16,41 @@ import (
 	"encoding/json"
 )
 
-// TLSSubscriptionData struct for TLSSubscriptionData
-type TLSSubscriptionData struct {
-	Type                 *TypeTLSSubscription             `json:"type,omitempty"`
-	Attributes           *TLSSubscriptionDataAttributes   `json:"attributes,omitempty"`
-	Relationships        *RelationshipsForTLSSubscription `json:"relationships,omitempty"`
+// TlsSubscriptionData struct for TlsSubscriptionData
+type TlsSubscriptionData struct {
+	Type                 *TypeTlsSubscription             `json:"type,omitempty"`
+	Attributes           *TlsSubscriptionDataAttributes   `json:"attributes,omitempty"`
+	Relationships        *RelationshipsForTlsSubscription `json:"relationships,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TLSSubscriptionData TLSSubscriptionData
+type _TlsSubscriptionData TlsSubscriptionData
 
-// NewTLSSubscriptionData instantiates a new TLSSubscriptionData object
+// NewTlsSubscriptionData instantiates a new TlsSubscriptionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSSubscriptionData() *TLSSubscriptionData {
-	this := TLSSubscriptionData{}
-	var resourceType TypeTLSSubscription = TYPETLSSUBSCRIPTION_TLS_SUBSCRIPTION
-	this.Type = &resourceType
+func NewTlsSubscriptionData() *TlsSubscriptionData {
+	this := TlsSubscriptionData{}
+	var type_ TypeTlsSubscription = TYPETLSSUBSCRIPTION_TLS_SUBSCRIPTION
+	this.Type = &type_
 	return &this
 }
 
-// NewTLSSubscriptionDataWithDefaults instantiates a new TLSSubscriptionData object
+// NewTlsSubscriptionDataWithDefaults instantiates a new TlsSubscriptionData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSSubscriptionDataWithDefaults() *TLSSubscriptionData {
-	this := TLSSubscriptionData{}
-	var resourceType TypeTLSSubscription = TYPETLSSUBSCRIPTION_TLS_SUBSCRIPTION
-	this.Type = &resourceType
+func NewTlsSubscriptionDataWithDefaults() *TlsSubscriptionData {
+	this := TlsSubscriptionData{}
+	var type_ TypeTlsSubscription = TYPETLSSUBSCRIPTION_TLS_SUBSCRIPTION
+	this.Type = &type_
 	return &this
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *TLSSubscriptionData) GetType() TypeTLSSubscription {
+func (o *TlsSubscriptionData) GetType() TypeTlsSubscription {
 	if o == nil || o.Type == nil {
-		var ret TypeTLSSubscription
+		var ret TypeTlsSubscription
 		return ret
 	}
 	return *o.Type
@@ -58,7 +58,7 @@ func (o *TLSSubscriptionData) GetType() TypeTLSSubscription {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSSubscriptionData) GetTypeOk() (*TypeTLSSubscription, bool) {
+func (o *TlsSubscriptionData) GetTypeOk() (*TypeTlsSubscription, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *TLSSubscriptionData) GetTypeOk() (*TypeTLSSubscription, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *TLSSubscriptionData) HasType() bool {
+func (o *TlsSubscriptionData) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -74,15 +74,15 @@ func (o *TLSSubscriptionData) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given TypeTLSSubscription and assigns it to the Type field.
-func (o *TLSSubscriptionData) SetType(v TypeTLSSubscription) {
+// SetType gets a reference to the given TypeTlsSubscription and assigns it to the Type field.
+func (o *TlsSubscriptionData) SetType(v TypeTlsSubscription) {
 	o.Type = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *TLSSubscriptionData) GetAttributes() TLSSubscriptionDataAttributes {
+func (o *TlsSubscriptionData) GetAttributes() TlsSubscriptionDataAttributes {
 	if o == nil || o.Attributes == nil {
-		var ret TLSSubscriptionDataAttributes
+		var ret TlsSubscriptionDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -90,7 +90,7 @@ func (o *TLSSubscriptionData) GetAttributes() TLSSubscriptionDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSSubscriptionData) GetAttributesOk() (*TLSSubscriptionDataAttributes, bool) {
+func (o *TlsSubscriptionData) GetAttributesOk() (*TlsSubscriptionDataAttributes, bool) {
 	if o == nil || o.Attributes == nil {
 		return nil, false
 	}
@@ -98,7 +98,7 @@ func (o *TLSSubscriptionData) GetAttributesOk() (*TLSSubscriptionDataAttributes,
 }
 
 // HasAttributes returns a boolean if a field has been set.
-func (o *TLSSubscriptionData) HasAttributes() bool {
+func (o *TlsSubscriptionData) HasAttributes() bool {
 	if o != nil && o.Attributes != nil {
 		return true
 	}
@@ -106,15 +106,15 @@ func (o *TLSSubscriptionData) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given TLSSubscriptionDataAttributes and assigns it to the Attributes field.
-func (o *TLSSubscriptionData) SetAttributes(v TLSSubscriptionDataAttributes) {
+// SetAttributes gets a reference to the given TlsSubscriptionDataAttributes and assigns it to the Attributes field.
+func (o *TlsSubscriptionData) SetAttributes(v TlsSubscriptionDataAttributes) {
 	o.Attributes = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TLSSubscriptionData) GetRelationships() RelationshipsForTLSSubscription {
+func (o *TlsSubscriptionData) GetRelationships() RelationshipsForTlsSubscription {
 	if o == nil || o.Relationships == nil {
-		var ret RelationshipsForTLSSubscription
+		var ret RelationshipsForTlsSubscription
 		return ret
 	}
 	return *o.Relationships
@@ -122,7 +122,7 @@ func (o *TLSSubscriptionData) GetRelationships() RelationshipsForTLSSubscription
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSSubscriptionData) GetRelationshipsOk() (*RelationshipsForTLSSubscription, bool) {
+func (o *TlsSubscriptionData) GetRelationshipsOk() (*RelationshipsForTlsSubscription, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -130,7 +130,7 @@ func (o *TLSSubscriptionData) GetRelationshipsOk() (*RelationshipsForTLSSubscrip
 }
 
 // HasRelationships returns a boolean if a field has been set.
-func (o *TLSSubscriptionData) HasRelationships() bool {
+func (o *TlsSubscriptionData) HasRelationships() bool {
 	if o != nil && o.Relationships != nil {
 		return true
 	}
@@ -138,14 +138,14 @@ func (o *TLSSubscriptionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given RelationshipsForTLSSubscription and assigns it to the Relationships field.
-func (o *TLSSubscriptionData) SetRelationships(v RelationshipsForTLSSubscription) {
+// SetRelationships gets a reference to the given RelationshipsForTlsSubscription and assigns it to the Relationships field.
+func (o *TlsSubscriptionData) SetRelationships(v RelationshipsForTlsSubscription) {
 	o.Relationships = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSSubscriptionData) MarshalJSON() ([]byte, error) {
+func (o TlsSubscriptionData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -166,11 +166,11 @@ func (o TLSSubscriptionData) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSSubscriptionData) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSSubscriptionData := _TLSSubscriptionData{}
+func (o *TlsSubscriptionData) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsSubscriptionData := _TlsSubscriptionData{}
 
-	if err = json.Unmarshal(bytes, &varTLSSubscriptionData); err == nil {
-		*o = TLSSubscriptionData(varTLSSubscriptionData)
+	if err = json.Unmarshal(bytes, &varTlsSubscriptionData); err == nil {
+		*o = TlsSubscriptionData(varTlsSubscriptionData)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -185,48 +185,48 @@ func (o *TLSSubscriptionData) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTLSSubscriptionData is a helper abstraction for handling nullable tlssubscriptiondata types.
-type NullableTLSSubscriptionData struct {
-	value *TLSSubscriptionData
+// NullableTlsSubscriptionData is a helper abstraction for handling nullable tlssubscriptiondata types.
+type NullableTlsSubscriptionData struct {
+	value *TlsSubscriptionData
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSSubscriptionData) Get() *TLSSubscriptionData {
+func (v NullableTlsSubscriptionData) Get() *TlsSubscriptionData {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSSubscriptionData) Set(val *TLSSubscriptionData) {
+func (v *NullableTlsSubscriptionData) Set(val *TlsSubscriptionData) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSSubscriptionData) IsSet() bool {
+func (v NullableTlsSubscriptionData) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSSubscriptionData) Unset() {
+func (v *NullableTlsSubscriptionData) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSSubscriptionData returns a pointer to a new instance of NullableTLSSubscriptionData.
-func NewNullableTLSSubscriptionData(val *TLSSubscriptionData) *NullableTLSSubscriptionData {
-	return &NullableTLSSubscriptionData{value: val, isSet: true}
+// NewNullableTlsSubscriptionData returns a pointer to a new instance of NullableTlsSubscriptionData.
+func NewNullableTlsSubscriptionData(val *TlsSubscriptionData) *NullableTlsSubscriptionData {
+	return &NullableTlsSubscriptionData{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSSubscriptionData) MarshalJSON() ([]byte, error) {
+func (v NullableTlsSubscriptionData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSSubscriptionData) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsSubscriptionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

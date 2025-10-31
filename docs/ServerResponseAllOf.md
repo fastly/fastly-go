@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**ID** | Pointer to **string** |  | [optional] [readonly] 
-**PoolID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
+**PoolId** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -27,80 +27,82 @@ NewServerResponseAllOfWithDefaults instantiates a new ServerResponseAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetServiceID
+### GetServiceId
 
-`func (o *ServerResponseAllOf) GetServiceID() string`
+`func (o *ServerResponseAllOf) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *ServerResponseAllOf) GetServiceIDOk() (*string, bool)`
+`func (o *ServerResponseAllOf) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *ServerResponseAllOf) SetServiceID(v string)`
+`func (o *ServerResponseAllOf) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *ServerResponseAllOf) HasServiceID() bool`
+`func (o *ServerResponseAllOf) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
-### GetID
+### GetId
 
-`func (o *ServerResponseAllOf) GetID() string`
+`func (o *ServerResponseAllOf) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *ServerResponseAllOf) GetIDOk() (*string, bool)`
+`func (o *ServerResponseAllOf) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *ServerResponseAllOf) SetID(v string)`
+`func (o *ServerResponseAllOf) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *ServerResponseAllOf) HasID() bool`
+`func (o *ServerResponseAllOf) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
-### GetPoolID
+### GetPoolId
 
-`func (o *ServerResponseAllOf) GetPoolID() string`
+`func (o *ServerResponseAllOf) GetPoolId() string`
 
-GetPoolID returns the PoolID field if non-nil, zero value otherwise.
+GetPoolId returns the PoolId field if non-nil, zero value otherwise.
 
-### GetPoolIDOk
+### GetPoolIdOk
 
-`func (o *ServerResponseAllOf) GetPoolIDOk() (*string, bool)`
+`func (o *ServerResponseAllOf) GetPoolIdOk() (*string, bool)`
 
-GetPoolIDOk returns a tuple with the PoolID field if it's non-nil, zero value otherwise
+GetPoolIdOk returns a tuple with the PoolId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPoolID
+### SetPoolId
 
-`func (o *ServerResponseAllOf) SetPoolID(v string)`
+`func (o *ServerResponseAllOf) SetPoolId(v string)`
 
-SetPoolID sets PoolID field to given value.
+SetPoolId sets PoolId field to given value.
 
-### HasPoolID
+### HasPoolId
 
-`func (o *ServerResponseAllOf) HasPoolID() bool`
+`func (o *ServerResponseAllOf) HasPoolId() bool`
 
-HasPoolID returns a boolean if a field has been set.
+HasPoolId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

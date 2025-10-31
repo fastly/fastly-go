@@ -20,7 +20,7 @@ import (
 type InvitationResponseData struct {
 	Type                 *TypeInvitation             `json:"type,omitempty"`
 	Attributes           *Timestamps                 `json:"attributes,omitempty"`
-	ID                   *string                     `json:"id,omitempty"`
+	Id                   *string                     `json:"id,omitempty"`
 	Relationships        *RelationshipsForInvitation `json:"relationships,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -33,8 +33,8 @@ type _InvitationResponseData InvitationResponseData
 // will change when the set of required properties is changed
 func NewInvitationResponseData() *InvitationResponseData {
 	this := InvitationResponseData{}
-	var resourceType TypeInvitation = TYPEINVITATION_INVITATION
-	this.Type = &resourceType
+	var type_ TypeInvitation = TYPEINVITATION_INVITATION
+	this.Type = &type_
 	return &this
 }
 
@@ -43,8 +43,8 @@ func NewInvitationResponseData() *InvitationResponseData {
 // but it doesn't guarantee that properties required by API are set
 func NewInvitationResponseDataWithDefaults() *InvitationResponseData {
 	this := InvitationResponseData{}
-	var resourceType TypeInvitation = TYPEINVITATION_INVITATION
-	this.Type = &resourceType
+	var type_ TypeInvitation = TYPEINVITATION_INVITATION
+	this.Type = &type_
 	return &this
 }
 
@@ -112,36 +112,36 @@ func (o *InvitationResponseData) SetAttributes(v Timestamps) {
 	o.Attributes = &v
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *InvitationResponseData) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *InvitationResponseData) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InvitationResponseData) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *InvitationResponseData) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *InvitationResponseData) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *InvitationResponseData) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *InvitationResponseData) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *InvitationResponseData) SetId(v string) {
+	o.Id = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
@@ -186,8 +186,8 @@ func (o InvitationResponseData) MarshalJSON() ([]byte, error) {
 	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships

@@ -30,12 +30,12 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RealtimeAPI.GetStatsLast120Seconds(ctx, serviceID).Execute()
+    resp, r, err := apiClient.RealtimeAPI.GetStatsLast120Seconds(ctx, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RealtimeAPI.GetStatsLast120Seconds`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -97,13 +97,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     maxEntries := int32(1) // int32 | Maximum number of results to show.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RealtimeAPI.GetStatsLast120SecondsLimitEntries(ctx, serviceID, maxEntries).Execute()
+    resp, r, err := apiClient.RealtimeAPI.GetStatsLast120SecondsLimitEntries(ctx, serviceId, maxEntries).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RealtimeAPI.GetStatsLast120SecondsLimitEntries`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -119,7 +119,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 **maxEntries** | **int32** | Maximum number of results to show. | 
 
 ### Other Parameters
@@ -166,13 +166,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     timestampInSeconds := int32(56) // int32 | Timestamp in seconds (Unix epoch time).
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RealtimeAPI.GetStatsLastSecond(ctx, serviceID, timestampInSeconds).Execute()
+    resp, r, err := apiClient.RealtimeAPI.GetStatsLastSecond(ctx, serviceId, timestampInSeconds).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RealtimeAPI.GetStatsLastSecond`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -188,7 +188,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 **timestampInSeconds** | **int32** | Timestamp in seconds (Unix epoch time). | 
 
 ### Other Parameters
@@ -214,3 +214,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

@@ -64,10 +64,10 @@ type SecretStoreAPI interface {
 		Delete a secret store and all of its contents.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param storeID
+		 @param storeId
 		 @return APIDeleteSecretStoreRequest
 	*/
-	DeleteSecretStore(ctx context.Context, storeID string) APIDeleteSecretStoreRequest
+	DeleteSecretStore(ctx context.Context, storeId string) APIDeleteSecretStoreRequest
 
 	// DeleteSecretStoreExecute executes the request
 	DeleteSecretStoreExecute(r APIDeleteSecretStoreRequest) (*http.Response, error)
@@ -78,10 +78,10 @@ type SecretStoreAPI interface {
 		Get a secret store by ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param storeID
+		 @param storeId
 		 @return APIGetSecretStoreRequest
 	*/
-	GetSecretStore(ctx context.Context, storeID string) APIGetSecretStoreRequest
+	GetSecretStore(ctx context.Context, storeId string) APIGetSecretStoreRequest
 
 	// GetSecretStoreExecute executes the request
 	//  @return SecretStoreResponse
@@ -98,8 +98,8 @@ type SecretStoreAPI interface {
 	GetSecretStores(ctx context.Context) APIGetSecretStoresRequest
 
 	// GetSecretStoresExecute executes the request
-	//  @return InlineResponse2007
-	GetSecretStoresExecute(r APIGetSecretStoresRequest) (*InlineResponse2007, *http.Response, error)
+	//  @return InlineResponse2008
+	GetSecretStoresExecute(r APIGetSecretStoresRequest) (*InlineResponse2008, *http.Response, error)
 
 	/*
 		SigningKey Get public key
@@ -388,7 +388,7 @@ func (a *SecretStoreAPIService) CreateSecretStoreExecute(r APICreateSecretStoreR
 type APIDeleteSecretStoreRequest struct {
 	ctx        context.Context
 	APIService SecretStoreAPI
-	storeID    string
+	storeId    string
 }
 
 // Execute calls the API using the request data configured.
@@ -402,14 +402,14 @@ DeleteSecretStore Delete secret store
 Delete a secret store and all of its contents.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param storeID
+ @param storeId
  @return APIDeleteSecretStoreRequest
 */
-func (a *SecretStoreAPIService) DeleteSecretStore(ctx context.Context, storeID string) APIDeleteSecretStoreRequest {
+func (a *SecretStoreAPIService) DeleteSecretStore(ctx context.Context, storeId string) APIDeleteSecretStoreRequest {
 	return APIDeleteSecretStoreRequest{
 		APIService: a,
 		ctx:        ctx,
-		storeID:    storeID,
+		storeId:    storeId,
 	}
 }
 
@@ -427,7 +427,7 @@ func (a *SecretStoreAPIService) DeleteSecretStoreExecute(r APIDeleteSecretStoreR
 	}
 
 	localVarPath := localBasePath + "/resources/stores/secret/{store_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -509,7 +509,7 @@ func (a *SecretStoreAPIService) DeleteSecretStoreExecute(r APIDeleteSecretStoreR
 type APIGetSecretStoreRequest struct {
 	ctx        context.Context
 	APIService SecretStoreAPI
-	storeID    string
+	storeId    string
 }
 
 // Execute calls the API using the request data configured.
@@ -523,14 +523,14 @@ GetSecretStore Get secret store by ID
 Get a secret store by ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param storeID
+ @param storeId
  @return APIGetSecretStoreRequest
 */
-func (a *SecretStoreAPIService) GetSecretStore(ctx context.Context, storeID string) APIGetSecretStoreRequest {
+func (a *SecretStoreAPIService) GetSecretStore(ctx context.Context, storeId string) APIGetSecretStoreRequest {
 	return APIGetSecretStoreRequest{
 		APIService: a,
 		ctx:        ctx,
-		storeID:    storeID,
+		storeId:    storeId,
 	}
 }
 
@@ -550,7 +550,7 @@ func (a *SecretStoreAPIService) GetSecretStoreExecute(r APIGetSecretStoreRequest
 	}
 
 	localVarPath := localBasePath + "/resources/stores/secret/{store_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -665,7 +665,7 @@ func (r *APIGetSecretStoresRequest) Name(name string) *APIGetSecretStoresRequest
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetSecretStoresRequest) Execute() (*InlineResponse2007, *http.Response, error) {
+func (r APIGetSecretStoresRequest) Execute() (*InlineResponse2008, *http.Response, error) {
 	return r.APIService.GetSecretStoresExecute(r)
 }
 
@@ -685,13 +685,13 @@ func (a *SecretStoreAPIService) GetSecretStores(ctx context.Context) APIGetSecre
 }
 
 // GetSecretStoresExecute executes the request
-//  @return InlineResponse2007
-func (a *SecretStoreAPIService) GetSecretStoresExecute(r APIGetSecretStoresRequest) (*InlineResponse2007, *http.Response, error) {
+//  @return InlineResponse2008
+func (a *SecretStoreAPIService) GetSecretStoresExecute(r APIGetSecretStoresRequest) (*InlineResponse2008, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse2007
+		localVarReturnValue *InlineResponse2008
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreAPIService.GetSecretStores")

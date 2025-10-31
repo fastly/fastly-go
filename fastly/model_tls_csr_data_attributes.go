@@ -16,8 +16,8 @@ import (
 	"encoding/json"
 )
 
-// TLSCsrDataAttributes struct for TLSCsrDataAttributes
-type TLSCsrDataAttributes struct {
+// TlsCsrDataAttributes struct for TlsCsrDataAttributes
+type TlsCsrDataAttributes struct {
 	// Subject Alternate Names - An array of one or more fully qualified domain names or public IP addresses to be secured by this certificate. Required.
 	Sans []string `json:"sans"`
 	// Common Name (CN) - The fully qualified domain name (FQDN) to be secured by this certificate. The common name should be one of the entries in the SANs parameter.
@@ -41,32 +41,32 @@ type TLSCsrDataAttributes struct {
 	// CSR Key Type.
 	KeyType *string `json:"key_type,omitempty"`
 	// Optional. An alphanumeric string identifying the private key you've uploaded for use with your TLS certificate. If left blank, Fastly will create and manage a key for you.
-	RelationshipsTLSPrivateKeyID *string `json:"relationships.tls_private_key.id,omitempty"`
+	RelationshipsTlsPrivateKeyId *string `json:"relationships.tls_private_key.id,omitempty"`
 	AdditionalProperties         map[string]any
 }
 
-type _TLSCsrDataAttributes TLSCsrDataAttributes
+type _TlsCsrDataAttributes TlsCsrDataAttributes
 
-// NewTLSCsrDataAttributes instantiates a new TLSCsrDataAttributes object
+// NewTlsCsrDataAttributes instantiates a new TlsCsrDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSCsrDataAttributes(sans []string) *TLSCsrDataAttributes {
-	this := TLSCsrDataAttributes{}
+func NewTlsCsrDataAttributes(sans []string) *TlsCsrDataAttributes {
+	this := TlsCsrDataAttributes{}
 	this.Sans = sans
 	return &this
 }
 
-// NewTLSCsrDataAttributesWithDefaults instantiates a new TLSCsrDataAttributes object
+// NewTlsCsrDataAttributesWithDefaults instantiates a new TlsCsrDataAttributes object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSCsrDataAttributesWithDefaults() *TLSCsrDataAttributes {
-	this := TLSCsrDataAttributes{}
+func NewTlsCsrDataAttributesWithDefaults() *TlsCsrDataAttributes {
+	this := TlsCsrDataAttributes{}
 	return &this
 }
 
 // GetSans returns the Sans field value
-func (o *TLSCsrDataAttributes) GetSans() []string {
+func (o *TlsCsrDataAttributes) GetSans() []string {
 	if o == nil {
 		var ret []string
 		return ret
@@ -77,7 +77,7 @@ func (o *TLSCsrDataAttributes) GetSans() []string {
 
 // GetSansOk returns a tuple with the Sans field value
 // and a boolean to check if the value has been set.
-func (o *TLSCsrDataAttributes) GetSansOk() ([]string, bool) {
+func (o *TlsCsrDataAttributes) GetSansOk() ([]string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -85,12 +85,12 @@ func (o *TLSCsrDataAttributes) GetSansOk() ([]string, bool) {
 }
 
 // SetSans sets field value
-func (o *TLSCsrDataAttributes) SetSans(v []string) {
+func (o *TlsCsrDataAttributes) SetSans(v []string) {
 	o.Sans = v
 }
 
 // GetCommonName returns the CommonName field value if set, zero value otherwise.
-func (o *TLSCsrDataAttributes) GetCommonName() string {
+func (o *TlsCsrDataAttributes) GetCommonName() string {
 	if o == nil || o.CommonName == nil {
 		var ret string
 		return ret
@@ -100,7 +100,7 @@ func (o *TLSCsrDataAttributes) GetCommonName() string {
 
 // GetCommonNameOk returns a tuple with the CommonName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCsrDataAttributes) GetCommonNameOk() (*string, bool) {
+func (o *TlsCsrDataAttributes) GetCommonNameOk() (*string, bool) {
 	if o == nil || o.CommonName == nil {
 		return nil, false
 	}
@@ -108,7 +108,7 @@ func (o *TLSCsrDataAttributes) GetCommonNameOk() (*string, bool) {
 }
 
 // HasCommonName returns a boolean if a field has been set.
-func (o *TLSCsrDataAttributes) HasCommonName() bool {
+func (o *TlsCsrDataAttributes) HasCommonName() bool {
 	if o != nil && o.CommonName != nil {
 		return true
 	}
@@ -117,12 +117,12 @@ func (o *TLSCsrDataAttributes) HasCommonName() bool {
 }
 
 // SetCommonName gets a reference to the given string and assigns it to the CommonName field.
-func (o *TLSCsrDataAttributes) SetCommonName(v string) {
+func (o *TlsCsrDataAttributes) SetCommonName(v string) {
 	o.CommonName = &v
 }
 
 // GetCountry returns the Country field value if set, zero value otherwise.
-func (o *TLSCsrDataAttributes) GetCountry() string {
+func (o *TlsCsrDataAttributes) GetCountry() string {
 	if o == nil || o.Country == nil {
 		var ret string
 		return ret
@@ -132,7 +132,7 @@ func (o *TLSCsrDataAttributes) GetCountry() string {
 
 // GetCountryOk returns a tuple with the Country field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCsrDataAttributes) GetCountryOk() (*string, bool) {
+func (o *TlsCsrDataAttributes) GetCountryOk() (*string, bool) {
 	if o == nil || o.Country == nil {
 		return nil, false
 	}
@@ -140,7 +140,7 @@ func (o *TLSCsrDataAttributes) GetCountryOk() (*string, bool) {
 }
 
 // HasCountry returns a boolean if a field has been set.
-func (o *TLSCsrDataAttributes) HasCountry() bool {
+func (o *TlsCsrDataAttributes) HasCountry() bool {
 	if o != nil && o.Country != nil {
 		return true
 	}
@@ -149,12 +149,12 @@ func (o *TLSCsrDataAttributes) HasCountry() bool {
 }
 
 // SetCountry gets a reference to the given string and assigns it to the Country field.
-func (o *TLSCsrDataAttributes) SetCountry(v string) {
+func (o *TlsCsrDataAttributes) SetCountry(v string) {
 	o.Country = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *TLSCsrDataAttributes) GetState() string {
+func (o *TlsCsrDataAttributes) GetState() string {
 	if o == nil || o.State == nil {
 		var ret string
 		return ret
@@ -164,7 +164,7 @@ func (o *TLSCsrDataAttributes) GetState() string {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCsrDataAttributes) GetStateOk() (*string, bool) {
+func (o *TlsCsrDataAttributes) GetStateOk() (*string, bool) {
 	if o == nil || o.State == nil {
 		return nil, false
 	}
@@ -172,7 +172,7 @@ func (o *TLSCsrDataAttributes) GetStateOk() (*string, bool) {
 }
 
 // HasState returns a boolean if a field has been set.
-func (o *TLSCsrDataAttributes) HasState() bool {
+func (o *TlsCsrDataAttributes) HasState() bool {
 	if o != nil && o.State != nil {
 		return true
 	}
@@ -181,12 +181,12 @@ func (o *TLSCsrDataAttributes) HasState() bool {
 }
 
 // SetState gets a reference to the given string and assigns it to the State field.
-func (o *TLSCsrDataAttributes) SetState(v string) {
+func (o *TlsCsrDataAttributes) SetState(v string) {
 	o.State = &v
 }
 
 // GetCity returns the City field value if set, zero value otherwise.
-func (o *TLSCsrDataAttributes) GetCity() string {
+func (o *TlsCsrDataAttributes) GetCity() string {
 	if o == nil || o.City == nil {
 		var ret string
 		return ret
@@ -196,7 +196,7 @@ func (o *TLSCsrDataAttributes) GetCity() string {
 
 // GetCityOk returns a tuple with the City field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCsrDataAttributes) GetCityOk() (*string, bool) {
+func (o *TlsCsrDataAttributes) GetCityOk() (*string, bool) {
 	if o == nil || o.City == nil {
 		return nil, false
 	}
@@ -204,7 +204,7 @@ func (o *TLSCsrDataAttributes) GetCityOk() (*string, bool) {
 }
 
 // HasCity returns a boolean if a field has been set.
-func (o *TLSCsrDataAttributes) HasCity() bool {
+func (o *TlsCsrDataAttributes) HasCity() bool {
 	if o != nil && o.City != nil {
 		return true
 	}
@@ -213,12 +213,12 @@ func (o *TLSCsrDataAttributes) HasCity() bool {
 }
 
 // SetCity gets a reference to the given string and assigns it to the City field.
-func (o *TLSCsrDataAttributes) SetCity(v string) {
+func (o *TlsCsrDataAttributes) SetCity(v string) {
 	o.City = &v
 }
 
 // GetPostalCode returns the PostalCode field value if set, zero value otherwise.
-func (o *TLSCsrDataAttributes) GetPostalCode() string {
+func (o *TlsCsrDataAttributes) GetPostalCode() string {
 	if o == nil || o.PostalCode == nil {
 		var ret string
 		return ret
@@ -228,7 +228,7 @@ func (o *TLSCsrDataAttributes) GetPostalCode() string {
 
 // GetPostalCodeOk returns a tuple with the PostalCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCsrDataAttributes) GetPostalCodeOk() (*string, bool) {
+func (o *TlsCsrDataAttributes) GetPostalCodeOk() (*string, bool) {
 	if o == nil || o.PostalCode == nil {
 		return nil, false
 	}
@@ -236,7 +236,7 @@ func (o *TLSCsrDataAttributes) GetPostalCodeOk() (*string, bool) {
 }
 
 // HasPostalCode returns a boolean if a field has been set.
-func (o *TLSCsrDataAttributes) HasPostalCode() bool {
+func (o *TlsCsrDataAttributes) HasPostalCode() bool {
 	if o != nil && o.PostalCode != nil {
 		return true
 	}
@@ -245,12 +245,12 @@ func (o *TLSCsrDataAttributes) HasPostalCode() bool {
 }
 
 // SetPostalCode gets a reference to the given string and assigns it to the PostalCode field.
-func (o *TLSCsrDataAttributes) SetPostalCode(v string) {
+func (o *TlsCsrDataAttributes) SetPostalCode(v string) {
 	o.PostalCode = &v
 }
 
 // GetStreetAddress returns the StreetAddress field value if set, zero value otherwise.
-func (o *TLSCsrDataAttributes) GetStreetAddress() string {
+func (o *TlsCsrDataAttributes) GetStreetAddress() string {
 	if o == nil || o.StreetAddress == nil {
 		var ret string
 		return ret
@@ -260,7 +260,7 @@ func (o *TLSCsrDataAttributes) GetStreetAddress() string {
 
 // GetStreetAddressOk returns a tuple with the StreetAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCsrDataAttributes) GetStreetAddressOk() (*string, bool) {
+func (o *TlsCsrDataAttributes) GetStreetAddressOk() (*string, bool) {
 	if o == nil || o.StreetAddress == nil {
 		return nil, false
 	}
@@ -268,7 +268,7 @@ func (o *TLSCsrDataAttributes) GetStreetAddressOk() (*string, bool) {
 }
 
 // HasStreetAddress returns a boolean if a field has been set.
-func (o *TLSCsrDataAttributes) HasStreetAddress() bool {
+func (o *TlsCsrDataAttributes) HasStreetAddress() bool {
 	if o != nil && o.StreetAddress != nil {
 		return true
 	}
@@ -277,12 +277,12 @@ func (o *TLSCsrDataAttributes) HasStreetAddress() bool {
 }
 
 // SetStreetAddress gets a reference to the given string and assigns it to the StreetAddress field.
-func (o *TLSCsrDataAttributes) SetStreetAddress(v string) {
+func (o *TlsCsrDataAttributes) SetStreetAddress(v string) {
 	o.StreetAddress = &v
 }
 
 // GetOrganization returns the Organization field value if set, zero value otherwise.
-func (o *TLSCsrDataAttributes) GetOrganization() string {
+func (o *TlsCsrDataAttributes) GetOrganization() string {
 	if o == nil || o.Organization == nil {
 		var ret string
 		return ret
@@ -292,7 +292,7 @@ func (o *TLSCsrDataAttributes) GetOrganization() string {
 
 // GetOrganizationOk returns a tuple with the Organization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCsrDataAttributes) GetOrganizationOk() (*string, bool) {
+func (o *TlsCsrDataAttributes) GetOrganizationOk() (*string, bool) {
 	if o == nil || o.Organization == nil {
 		return nil, false
 	}
@@ -300,7 +300,7 @@ func (o *TLSCsrDataAttributes) GetOrganizationOk() (*string, bool) {
 }
 
 // HasOrganization returns a boolean if a field has been set.
-func (o *TLSCsrDataAttributes) HasOrganization() bool {
+func (o *TlsCsrDataAttributes) HasOrganization() bool {
 	if o != nil && o.Organization != nil {
 		return true
 	}
@@ -309,12 +309,12 @@ func (o *TLSCsrDataAttributes) HasOrganization() bool {
 }
 
 // SetOrganization gets a reference to the given string and assigns it to the Organization field.
-func (o *TLSCsrDataAttributes) SetOrganization(v string) {
+func (o *TlsCsrDataAttributes) SetOrganization(v string) {
 	o.Organization = &v
 }
 
 // GetOrganizationalUnit returns the OrganizationalUnit field value if set, zero value otherwise.
-func (o *TLSCsrDataAttributes) GetOrganizationalUnit() string {
+func (o *TlsCsrDataAttributes) GetOrganizationalUnit() string {
 	if o == nil || o.OrganizationalUnit == nil {
 		var ret string
 		return ret
@@ -324,7 +324,7 @@ func (o *TLSCsrDataAttributes) GetOrganizationalUnit() string {
 
 // GetOrganizationalUnitOk returns a tuple with the OrganizationalUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCsrDataAttributes) GetOrganizationalUnitOk() (*string, bool) {
+func (o *TlsCsrDataAttributes) GetOrganizationalUnitOk() (*string, bool) {
 	if o == nil || o.OrganizationalUnit == nil {
 		return nil, false
 	}
@@ -332,7 +332,7 @@ func (o *TLSCsrDataAttributes) GetOrganizationalUnitOk() (*string, bool) {
 }
 
 // HasOrganizationalUnit returns a boolean if a field has been set.
-func (o *TLSCsrDataAttributes) HasOrganizationalUnit() bool {
+func (o *TlsCsrDataAttributes) HasOrganizationalUnit() bool {
 	if o != nil && o.OrganizationalUnit != nil {
 		return true
 	}
@@ -341,12 +341,12 @@ func (o *TLSCsrDataAttributes) HasOrganizationalUnit() bool {
 }
 
 // SetOrganizationalUnit gets a reference to the given string and assigns it to the OrganizationalUnit field.
-func (o *TLSCsrDataAttributes) SetOrganizationalUnit(v string) {
+func (o *TlsCsrDataAttributes) SetOrganizationalUnit(v string) {
 	o.OrganizationalUnit = &v
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise.
-func (o *TLSCsrDataAttributes) GetEmail() string {
+func (o *TlsCsrDataAttributes) GetEmail() string {
 	if o == nil || o.Email == nil {
 		var ret string
 		return ret
@@ -356,7 +356,7 @@ func (o *TLSCsrDataAttributes) GetEmail() string {
 
 // GetEmailOk returns a tuple with the Email field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCsrDataAttributes) GetEmailOk() (*string, bool) {
+func (o *TlsCsrDataAttributes) GetEmailOk() (*string, bool) {
 	if o == nil || o.Email == nil {
 		return nil, false
 	}
@@ -364,7 +364,7 @@ func (o *TLSCsrDataAttributes) GetEmailOk() (*string, bool) {
 }
 
 // HasEmail returns a boolean if a field has been set.
-func (o *TLSCsrDataAttributes) HasEmail() bool {
+func (o *TlsCsrDataAttributes) HasEmail() bool {
 	if o != nil && o.Email != nil {
 		return true
 	}
@@ -373,12 +373,12 @@ func (o *TLSCsrDataAttributes) HasEmail() bool {
 }
 
 // SetEmail gets a reference to the given string and assigns it to the Email field.
-func (o *TLSCsrDataAttributes) SetEmail(v string) {
+func (o *TlsCsrDataAttributes) SetEmail(v string) {
 	o.Email = &v
 }
 
 // GetKeyType returns the KeyType field value if set, zero value otherwise.
-func (o *TLSCsrDataAttributes) GetKeyType() string {
+func (o *TlsCsrDataAttributes) GetKeyType() string {
 	if o == nil || o.KeyType == nil {
 		var ret string
 		return ret
@@ -388,7 +388,7 @@ func (o *TLSCsrDataAttributes) GetKeyType() string {
 
 // GetKeyTypeOk returns a tuple with the KeyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCsrDataAttributes) GetKeyTypeOk() (*string, bool) {
+func (o *TlsCsrDataAttributes) GetKeyTypeOk() (*string, bool) {
 	if o == nil || o.KeyType == nil {
 		return nil, false
 	}
@@ -396,7 +396,7 @@ func (o *TLSCsrDataAttributes) GetKeyTypeOk() (*string, bool) {
 }
 
 // HasKeyType returns a boolean if a field has been set.
-func (o *TLSCsrDataAttributes) HasKeyType() bool {
+func (o *TlsCsrDataAttributes) HasKeyType() bool {
 	if o != nil && o.KeyType != nil {
 		return true
 	}
@@ -405,45 +405,45 @@ func (o *TLSCsrDataAttributes) HasKeyType() bool {
 }
 
 // SetKeyType gets a reference to the given string and assigns it to the KeyType field.
-func (o *TLSCsrDataAttributes) SetKeyType(v string) {
+func (o *TlsCsrDataAttributes) SetKeyType(v string) {
 	o.KeyType = &v
 }
 
-// GetRelationshipsTLSPrivateKeyID returns the RelationshipsTLSPrivateKeyID field value if set, zero value otherwise.
-func (o *TLSCsrDataAttributes) GetRelationshipsTLSPrivateKeyID() string {
-	if o == nil || o.RelationshipsTLSPrivateKeyID == nil {
+// GetRelationshipsTlsPrivateKeyId returns the RelationshipsTlsPrivateKeyId field value if set, zero value otherwise.
+func (o *TlsCsrDataAttributes) GetRelationshipsTlsPrivateKeyId() string {
+	if o == nil || o.RelationshipsTlsPrivateKeyId == nil {
 		var ret string
 		return ret
 	}
-	return *o.RelationshipsTLSPrivateKeyID
+	return *o.RelationshipsTlsPrivateKeyId
 }
 
-// GetRelationshipsTLSPrivateKeyIDOk returns a tuple with the RelationshipsTLSPrivateKeyID field value if set, nil otherwise
+// GetRelationshipsTlsPrivateKeyIdOk returns a tuple with the RelationshipsTlsPrivateKeyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCsrDataAttributes) GetRelationshipsTLSPrivateKeyIDOk() (*string, bool) {
-	if o == nil || o.RelationshipsTLSPrivateKeyID == nil {
+func (o *TlsCsrDataAttributes) GetRelationshipsTlsPrivateKeyIdOk() (*string, bool) {
+	if o == nil || o.RelationshipsTlsPrivateKeyId == nil {
 		return nil, false
 	}
-	return o.RelationshipsTLSPrivateKeyID, true
+	return o.RelationshipsTlsPrivateKeyId, true
 }
 
-// HasRelationshipsTLSPrivateKeyID returns a boolean if a field has been set.
-func (o *TLSCsrDataAttributes) HasRelationshipsTLSPrivateKeyID() bool {
-	if o != nil && o.RelationshipsTLSPrivateKeyID != nil {
+// HasRelationshipsTlsPrivateKeyId returns a boolean if a field has been set.
+func (o *TlsCsrDataAttributes) HasRelationshipsTlsPrivateKeyId() bool {
+	if o != nil && o.RelationshipsTlsPrivateKeyId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationshipsTLSPrivateKeyID gets a reference to the given string and assigns it to the RelationshipsTLSPrivateKeyID field.
-func (o *TLSCsrDataAttributes) SetRelationshipsTLSPrivateKeyID(v string) {
-	o.RelationshipsTLSPrivateKeyID = &v
+// SetRelationshipsTlsPrivateKeyId gets a reference to the given string and assigns it to the RelationshipsTlsPrivateKeyId field.
+func (o *TlsCsrDataAttributes) SetRelationshipsTlsPrivateKeyId(v string) {
+	o.RelationshipsTlsPrivateKeyId = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSCsrDataAttributes) MarshalJSON() ([]byte, error) {
+func (o TlsCsrDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
 		toSerialize["sans"] = o.Sans
@@ -478,8 +478,8 @@ func (o TLSCsrDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.KeyType != nil {
 		toSerialize["key_type"] = o.KeyType
 	}
-	if o.RelationshipsTLSPrivateKeyID != nil {
-		toSerialize["relationships.tls_private_key.id"] = o.RelationshipsTLSPrivateKeyID
+	if o.RelationshipsTlsPrivateKeyId != nil {
+		toSerialize["relationships.tls_private_key.id"] = o.RelationshipsTlsPrivateKeyId
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -491,11 +491,11 @@ func (o TLSCsrDataAttributes) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSCsrDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSCsrDataAttributes := _TLSCsrDataAttributes{}
+func (o *TlsCsrDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsCsrDataAttributes := _TlsCsrDataAttributes{}
 
-	if err = json.Unmarshal(bytes, &varTLSCsrDataAttributes); err == nil {
-		*o = TLSCsrDataAttributes(varTLSCsrDataAttributes)
+	if err = json.Unmarshal(bytes, &varTlsCsrDataAttributes); err == nil {
+		*o = TlsCsrDataAttributes(varTlsCsrDataAttributes)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -519,48 +519,48 @@ func (o *TLSCsrDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTLSCsrDataAttributes is a helper abstraction for handling nullable tlscsrdataattributes types.
-type NullableTLSCsrDataAttributes struct {
-	value *TLSCsrDataAttributes
+// NullableTlsCsrDataAttributes is a helper abstraction for handling nullable tlscsrdataattributes types.
+type NullableTlsCsrDataAttributes struct {
+	value *TlsCsrDataAttributes
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSCsrDataAttributes) Get() *TLSCsrDataAttributes {
+func (v NullableTlsCsrDataAttributes) Get() *TlsCsrDataAttributes {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSCsrDataAttributes) Set(val *TLSCsrDataAttributes) {
+func (v *NullableTlsCsrDataAttributes) Set(val *TlsCsrDataAttributes) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSCsrDataAttributes) IsSet() bool {
+func (v NullableTlsCsrDataAttributes) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSCsrDataAttributes) Unset() {
+func (v *NullableTlsCsrDataAttributes) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSCsrDataAttributes returns a pointer to a new instance of NullableTLSCsrDataAttributes.
-func NewNullableTLSCsrDataAttributes(val *TLSCsrDataAttributes) *NullableTLSCsrDataAttributes {
-	return &NullableTLSCsrDataAttributes{value: val, isSet: true}
+// NewNullableTlsCsrDataAttributes returns a pointer to a new instance of NullableTlsCsrDataAttributes.
+func NewNullableTlsCsrDataAttributes(val *TlsCsrDataAttributes) *NullableTlsCsrDataAttributes {
+	return &NullableTlsCsrDataAttributes{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSCsrDataAttributes) MarshalJSON() ([]byte, error) {
+func (v NullableTlsCsrDataAttributes) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSCsrDataAttributes) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsCsrDataAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

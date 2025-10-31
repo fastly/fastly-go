@@ -53,10 +53,10 @@ type UserAPI interface {
 		Delete a user.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param userID Alphanumeric string identifying the user.
+		 @param userId Alphanumeric string identifying the user.
 		 @return APIDeleteUserRequest
 	*/
-	DeleteUser(ctx context.Context, userID string) APIDeleteUserRequest
+	DeleteUser(ctx context.Context, userId string) APIDeleteUserRequest
 
 	// DeleteUserExecute executes the request
 	//  @return InlineResponse200
@@ -82,10 +82,10 @@ type UserAPI interface {
 		Get a specific user.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param userID Alphanumeric string identifying the user.
+		 @param userId Alphanumeric string identifying the user.
 		 @return APIGetUserRequest
 	*/
-	GetUser(ctx context.Context, userID string) APIGetUserRequest
+	GetUser(ctx context.Context, userId string) APIGetUserRequest
 
 	// GetUserExecute executes the request
 	//  @return UserResponse
@@ -112,10 +112,10 @@ type UserAPI interface {
 		Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Two-factor attributes are not editable via this endpoint.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param userID Alphanumeric string identifying the user.
+		 @param userId Alphanumeric string identifying the user.
 		 @return APIUpdateUserRequest
 	*/
-	UpdateUser(ctx context.Context, userID string) APIUpdateUserRequest
+	UpdateUser(ctx context.Context, userId string) APIUpdateUserRequest
 
 	// UpdateUserExecute executes the request
 	//  @return UserResponse
@@ -149,6 +149,7 @@ type APICreateUserRequest struct {
 	locked                 *bool
 	requireNewPassword     *bool
 	role                   *RoleUser
+	roles                  *[]string
 	twoFactorAuthEnabled   *bool
 	twoFactorSetupRequired *bool
 }
@@ -186,6 +187,12 @@ func (r *APICreateUserRequest) RequireNewPassword(requireNewPassword bool) *APIC
 // Role returns a pointer to a request.
 func (r *APICreateUserRequest) Role(role RoleUser) *APICreateUserRequest {
 	r.role = &role
+	return r
+}
+
+// Roles A list of role IDs assigned to the user.
+func (r *APICreateUserRequest) Roles(roles []string) *APICreateUserRequest {
+	r.roles = &roles
 	return r
 }
 
@@ -263,11 +270,11 @@ func (a *UserAPIService) CreateUserExecute(r APICreateUserRequest) (*UserRespons
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.login != nil {
-		paramJSON, err := parameterToJSON(*r.login)
+		paramJson, err := parameterToJSON(*r.login)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("login", paramJSON)
+		localVarFormParams.Add("login", paramJson)
 	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
@@ -283,6 +290,9 @@ func (a *UserAPIService) CreateUserExecute(r APICreateUserRequest) (*UserRespons
 	}
 	if r.role != nil {
 		localVarFormParams.Add("role", parameterToString(*r.role, ""))
+	}
+	if r.roles != nil {
+		localVarFormParams.Add("roles", parameterToString(*r.roles, "csv"))
 	}
 	if r.twoFactorAuthEnabled != nil {
 		localVarFormParams.Add("two_factor_auth_enabled", parameterToString(*r.twoFactorAuthEnabled, ""))
@@ -358,7 +368,7 @@ func (a *UserAPIService) CreateUserExecute(r APICreateUserRequest) (*UserRespons
 type APIDeleteUserRequest struct {
 	ctx        context.Context
 	APIService UserAPI
-	userID     string
+	userId     string
 }
 
 // Execute calls the API using the request data configured.
@@ -372,14 +382,14 @@ DeleteUser Delete a user
 Delete a user.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userID Alphanumeric string identifying the user.
+ @param userId Alphanumeric string identifying the user.
  @return APIDeleteUserRequest
 */
-func (a *UserAPIService) DeleteUser(ctx context.Context, userID string) APIDeleteUserRequest {
+func (a *UserAPIService) DeleteUser(ctx context.Context, userId string) APIDeleteUserRequest {
 	return APIDeleteUserRequest{
 		APIService: a,
 		ctx:        ctx,
-		userID:     userID,
+		userId:     userId,
 	}
 }
 
@@ -399,7 +409,7 @@ func (a *UserAPIService) DeleteUserExecute(r APIDeleteUserRequest) (*InlineRespo
 	}
 
 	localVarPath := localBasePath + "/user/{user_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"user_id"+"}", gourl.PathEscape(parameterToString(r.userID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"user_id"+"}", gourl.PathEscape(parameterToString(r.userId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -618,7 +628,7 @@ func (a *UserAPIService) GetCurrentUserExecute(r APIGetCurrentUserRequest) (*Use
 type APIGetUserRequest struct {
 	ctx        context.Context
 	APIService UserAPI
-	userID     string
+	userId     string
 }
 
 // Execute calls the API using the request data configured.
@@ -632,14 +642,14 @@ GetUser Get a user
 Get a specific user.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userID Alphanumeric string identifying the user.
+ @param userId Alphanumeric string identifying the user.
  @return APIGetUserRequest
 */
-func (a *UserAPIService) GetUser(ctx context.Context, userID string) APIGetUserRequest {
+func (a *UserAPIService) GetUser(ctx context.Context, userId string) APIGetUserRequest {
 	return APIGetUserRequest{
 		APIService: a,
 		ctx:        ctx,
-		userID:     userID,
+		userId:     userId,
 	}
 }
 
@@ -659,7 +669,7 @@ func (a *UserAPIService) GetUserExecute(r APIGetUserRequest) (*UserResponse, *ht
 	}
 
 	localVarPath := localBasePath + "/user/{user_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"user_id"+"}", gourl.PathEscape(parameterToString(r.userID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"user_id"+"}", gourl.PathEscape(parameterToString(r.userId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -882,13 +892,14 @@ func (a *UserAPIService) RequestPasswordResetExecute(r APIRequestPasswordResetRe
 type APIUpdateUserRequest struct {
 	ctx                    context.Context
 	APIService             UserAPI
-	userID                 string
+	userId                 string
 	login                  *string
 	name                   *string
 	limitServices          *bool
 	locked                 *bool
 	requireNewPassword     *bool
 	role                   *RoleUser
+	roles                  *[]string
 	twoFactorAuthEnabled   *bool
 	twoFactorSetupRequired *bool
 }
@@ -929,6 +940,12 @@ func (r *APIUpdateUserRequest) Role(role RoleUser) *APIUpdateUserRequest {
 	return r
 }
 
+// Roles A list of role IDs assigned to the user.
+func (r *APIUpdateUserRequest) Roles(roles []string) *APIUpdateUserRequest {
+	r.roles = &roles
+	return r
+}
+
 // TwoFactorAuthEnabled Indicates if 2FA is enabled on the user.
 func (r *APIUpdateUserRequest) TwoFactorAuthEnabled(twoFactorAuthEnabled bool) *APIUpdateUserRequest {
 	r.twoFactorAuthEnabled = &twoFactorAuthEnabled
@@ -952,14 +969,14 @@ UpdateUser Update a user
 Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Two-factor attributes are not editable via this endpoint.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param userID Alphanumeric string identifying the user.
+ @param userId Alphanumeric string identifying the user.
  @return APIUpdateUserRequest
 */
-func (a *UserAPIService) UpdateUser(ctx context.Context, userID string) APIUpdateUserRequest {
+func (a *UserAPIService) UpdateUser(ctx context.Context, userId string) APIUpdateUserRequest {
 	return APIUpdateUserRequest{
 		APIService: a,
 		ctx:        ctx,
-		userID:     userID,
+		userId:     userId,
 	}
 }
 
@@ -979,7 +996,7 @@ func (a *UserAPIService) UpdateUserExecute(r APIUpdateUserRequest) (*UserRespons
 	}
 
 	localVarPath := localBasePath + "/user/{user_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"user_id"+"}", gourl.PathEscape(parameterToString(r.userID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"user_id"+"}", gourl.PathEscape(parameterToString(r.userId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1003,11 +1020,11 @@ func (a *UserAPIService) UpdateUserExecute(r APIUpdateUserRequest) (*UserRespons
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	if r.login != nil {
-		paramJSON, err := parameterToJSON(*r.login)
+		paramJson, err := parameterToJSON(*r.login)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("login", paramJSON)
+		localVarFormParams.Add("login", paramJson)
 	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
@@ -1023,6 +1040,9 @@ func (a *UserAPIService) UpdateUserExecute(r APIUpdateUserRequest) (*UserRespons
 	}
 	if r.role != nil {
 		localVarFormParams.Add("role", parameterToString(*r.role, ""))
+	}
+	if r.roles != nil {
+		localVarFormParams.Add("roles", parameterToString(*r.roles, "csv"))
 	}
 	if r.twoFactorAuthEnabled != nil {
 		localVarFormParams.Add("two_factor_auth_enabled", parameterToString(*r.twoFactorAuthEnabled, ""))

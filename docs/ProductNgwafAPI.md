@@ -33,12 +33,12 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductNgwafAPI.DisableProductNgwaf(ctx, serviceID).Execute()
+    resp, r, err := apiClient.ProductNgwafAPI.DisableProductNgwaf(ctx, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductNgwafAPI.DisableProductNgwaf`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -98,13 +98,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     ngwafRequestEnable := *openapiclient.NewNgwafRequestEnable("WorkspaceId_example") // NgwafRequestEnable |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductNgwafAPI.EnableProductNgwaf(ctx, serviceID).NgwafRequestEnable(ngwafRequestEnable).Execute()
+    resp, r, err := apiClient.ProductNgwafAPI.EnableProductNgwaf(ctx, serviceId).NgwafRequestEnable(ngwafRequestEnable).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductNgwafAPI.EnableProductNgwaf`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -166,12 +166,12 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductNgwafAPI.GetProductNgwaf(ctx, serviceID).Execute()
+    resp, r, err := apiClient.ProductNgwafAPI.GetProductNgwaf(ctx, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductNgwafAPI.GetProductNgwaf`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -187,7 +187,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -233,12 +233,12 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductNgwafAPI.GetProductNgwafConfiguration(ctx, serviceID).Execute()
+    resp, r, err := apiClient.ProductNgwafAPI.GetProductNgwafConfiguration(ctx, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductNgwafAPI.GetProductNgwafConfiguration`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -254,7 +254,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -359,13 +359,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     ngwafRequestUpdateConfiguration := *openapiclient.NewNgwafRequestUpdateConfiguration() // NgwafRequestUpdateConfiguration |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductNgwafAPI.SetProductNgwafConfiguration(ctx, serviceID).NgwafRequestUpdateConfiguration(ngwafRequestUpdateConfiguration).Execute()
+    resp, r, err := apiClient.ProductNgwafAPI.SetProductNgwafConfiguration(ctx, serviceId).NgwafRequestUpdateConfiguration(ngwafRequestUpdateConfiguration).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductNgwafAPI.SetProductNgwafConfiguration`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -381,7 +381,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -406,3 +406,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

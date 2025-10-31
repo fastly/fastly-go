@@ -36,11 +36,11 @@ type LoggingKinesisAPI interface {
 		Create an Amazon Kinesis Data Streams logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogKinesisRequest
 	*/
-	CreateLogKinesis(ctx context.Context, serviceID string, versionID int32) APICreateLogKinesisRequest
+	CreateLogKinesis(ctx context.Context, serviceId string, versionId int32) APICreateLogKinesisRequest
 
 	// CreateLogKinesisExecute executes the request
 	//  @return LoggingKinesisResponse
@@ -52,12 +52,12 @@ type LoggingKinesisAPI interface {
 		Delete an Amazon Kinesis Data Streams logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingKinesisName The name for the real-time logging configuration.
 		 @return APIDeleteLogKinesisRequest
 	*/
-	DeleteLogKinesis(ctx context.Context, serviceID string, versionID int32, loggingKinesisName string) APIDeleteLogKinesisRequest
+	DeleteLogKinesis(ctx context.Context, serviceId string, versionId int32, loggingKinesisName string) APIDeleteLogKinesisRequest
 
 	// DeleteLogKinesisExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingKinesisAPI interface {
 		Get the details for an Amazon Kinesis Data Streams logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingKinesisName The name for the real-time logging configuration.
 		 @return APIGetLogKinesisRequest
 	*/
-	GetLogKinesis(ctx context.Context, serviceID string, versionID int32, loggingKinesisName string) APIGetLogKinesisRequest
+	GetLogKinesis(ctx context.Context, serviceId string, versionId int32, loggingKinesisName string) APIGetLogKinesisRequest
 
 	// GetLogKinesisExecute executes the request
 	//  @return LoggingKinesisResponse
@@ -86,11 +86,11 @@ type LoggingKinesisAPI interface {
 		List all of the Amazon Kinesis Data Streams logging objects for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogKinesisRequest
 	*/
-	ListLogKinesis(ctx context.Context, serviceID string, versionID int32) APIListLogKinesisRequest
+	ListLogKinesis(ctx context.Context, serviceId string, versionId int32) APIListLogKinesisRequest
 
 	// ListLogKinesisExecute executes the request
 	//  @return []LoggingKinesisResponse
@@ -102,12 +102,12 @@ type LoggingKinesisAPI interface {
 		Update an Amazon Kinesis Data Streams logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingKinesisName The name for the real-time logging configuration.
 		 @return APIUpdateLogKinesisRequest
 	*/
-	UpdateLogKinesis(ctx context.Context, serviceID string, versionID int32, loggingKinesisName string) APIUpdateLogKinesisRequest
+	UpdateLogKinesis(ctx context.Context, serviceId string, versionId int32, loggingKinesisName string) APIUpdateLogKinesisRequest
 
 	// UpdateLogKinesisExecute executes the request
 	//  @return LoggingKinesisResponse
@@ -121,8 +121,8 @@ type LoggingKinesisAPIService service
 type APICreateLogKinesisRequest struct {
 	ctx           context.Context
 	APIService    LoggingKinesisAPI
-	serviceID     string
-	versionID     int32
+	serviceId     string
+	versionId     int32
 	name          *string
 	placement     *LoggingPlacement
 	format        *string
@@ -199,16 +199,16 @@ CreateLogKinesis Create  an Amazon Kinesis log endpoint
 Create an Amazon Kinesis Data Streams logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogKinesisRequest
 */
-func (a *LoggingKinesisAPIService) CreateLogKinesis(ctx context.Context, serviceID string, versionID int32) APICreateLogKinesisRequest {
+func (a *LoggingKinesisAPIService) CreateLogKinesis(ctx context.Context, serviceId string, versionId int32) APICreateLogKinesisRequest {
 	return APICreateLogKinesisRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -228,8 +228,8 @@ func (a *LoggingKinesisAPIService) CreateLogKinesisExecute(r APICreateLogKinesis
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/kinesis"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -347,8 +347,8 @@ func (a *LoggingKinesisAPIService) CreateLogKinesisExecute(r APICreateLogKinesis
 type APIDeleteLogKinesisRequest struct {
 	ctx                context.Context
 	APIService         LoggingKinesisAPI
-	serviceID          string
-	versionID          int32
+	serviceId          string
+	versionId          int32
 	loggingKinesisName string
 }
 
@@ -363,17 +363,17 @@ DeleteLogKinesis Delete the Amazon Kinesis log endpoint
 Delete an Amazon Kinesis Data Streams logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingKinesisName The name for the real-time logging configuration.
  @return APIDeleteLogKinesisRequest
 */
-func (a *LoggingKinesisAPIService) DeleteLogKinesis(ctx context.Context, serviceID string, versionID int32, loggingKinesisName string) APIDeleteLogKinesisRequest {
+func (a *LoggingKinesisAPIService) DeleteLogKinesis(ctx context.Context, serviceId string, versionId int32, loggingKinesisName string) APIDeleteLogKinesisRequest {
 	return APIDeleteLogKinesisRequest{
 		APIService:         a,
 		ctx:                ctx,
-		serviceID:          serviceID,
-		versionID:          versionID,
+		serviceId:          serviceId,
+		versionId:          versionId,
 		loggingKinesisName: loggingKinesisName,
 	}
 }
@@ -394,8 +394,8 @@ func (a *LoggingKinesisAPIService) DeleteLogKinesisExecute(r APIDeleteLogKinesis
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_kinesis_name"+"}", gourl.PathEscape(parameterToString(r.loggingKinesisName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -487,8 +487,8 @@ func (a *LoggingKinesisAPIService) DeleteLogKinesisExecute(r APIDeleteLogKinesis
 type APIGetLogKinesisRequest struct {
 	ctx                context.Context
 	APIService         LoggingKinesisAPI
-	serviceID          string
-	versionID          int32
+	serviceId          string
+	versionId          int32
 	loggingKinesisName string
 }
 
@@ -503,17 +503,17 @@ GetLogKinesis Get an Amazon Kinesis log endpoint
 Get the details for an Amazon Kinesis Data Streams logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingKinesisName The name for the real-time logging configuration.
  @return APIGetLogKinesisRequest
 */
-func (a *LoggingKinesisAPIService) GetLogKinesis(ctx context.Context, serviceID string, versionID int32, loggingKinesisName string) APIGetLogKinesisRequest {
+func (a *LoggingKinesisAPIService) GetLogKinesis(ctx context.Context, serviceId string, versionId int32, loggingKinesisName string) APIGetLogKinesisRequest {
 	return APIGetLogKinesisRequest{
 		APIService:         a,
 		ctx:                ctx,
-		serviceID:          serviceID,
-		versionID:          versionID,
+		serviceId:          serviceId,
+		versionId:          versionId,
 		loggingKinesisName: loggingKinesisName,
 	}
 }
@@ -534,8 +534,8 @@ func (a *LoggingKinesisAPIService) GetLogKinesisExecute(r APIGetLogKinesisReques
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_kinesis_name"+"}", gourl.PathEscape(parameterToString(r.loggingKinesisName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -627,8 +627,8 @@ func (a *LoggingKinesisAPIService) GetLogKinesisExecute(r APIGetLogKinesisReques
 type APIListLogKinesisRequest struct {
 	ctx        context.Context
 	APIService LoggingKinesisAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -642,16 +642,16 @@ ListLogKinesis List Amazon Kinesis log endpoints
 List all of the Amazon Kinesis Data Streams logging objects for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogKinesisRequest
 */
-func (a *LoggingKinesisAPIService) ListLogKinesis(ctx context.Context, serviceID string, versionID int32) APIListLogKinesisRequest {
+func (a *LoggingKinesisAPIService) ListLogKinesis(ctx context.Context, serviceId string, versionId int32) APIListLogKinesisRequest {
 	return APIListLogKinesisRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -671,8 +671,8 @@ func (a *LoggingKinesisAPIService) ListLogKinesisExecute(r APIListLogKinesisRequ
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/kinesis"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -763,8 +763,8 @@ func (a *LoggingKinesisAPIService) ListLogKinesisExecute(r APIListLogKinesisRequ
 type APIUpdateLogKinesisRequest struct {
 	ctx                context.Context
 	APIService         LoggingKinesisAPI
-	serviceID          string
-	versionID          int32
+	serviceId          string
+	versionId          int32
 	loggingKinesisName string
 }
 
@@ -779,17 +779,17 @@ UpdateLogKinesis Update the Amazon Kinesis log endpoint
 Update an Amazon Kinesis Data Streams logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingKinesisName The name for the real-time logging configuration.
  @return APIUpdateLogKinesisRequest
 */
-func (a *LoggingKinesisAPIService) UpdateLogKinesis(ctx context.Context, serviceID string, versionID int32, loggingKinesisName string) APIUpdateLogKinesisRequest {
+func (a *LoggingKinesisAPIService) UpdateLogKinesis(ctx context.Context, serviceId string, versionId int32, loggingKinesisName string) APIUpdateLogKinesisRequest {
 	return APIUpdateLogKinesisRequest{
 		APIService:         a,
 		ctx:                ctx,
-		serviceID:          serviceID,
-		versionID:          versionID,
+		serviceId:          serviceId,
+		versionId:          versionId,
 		loggingKinesisName: loggingKinesisName,
 	}
 }
@@ -810,8 +810,8 @@ func (a *LoggingKinesisAPIService) UpdateLogKinesisExecute(r APIUpdateLogKinesis
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_kinesis_name"+"}", gourl.PathEscape(parameterToString(r.loggingKinesisName, "")))
 
 	localVarHeaderParams := make(map[string]string)

@@ -19,7 +19,7 @@ import (
 // LogExplorerInsightsResponseBodyEnable struct for LogExplorerInsightsResponseBodyEnable
 type LogExplorerInsightsResponseBodyEnable struct {
 	Product              *LogExplorerInsightsResponseProductProduct `json:"product,omitempty"`
-	Service              *BotManagementResponseServiceService       `json:"service,omitempty"`
+	Service              *ApiDiscoveryResponseServiceService        `json:"service,omitempty"`
 	Links                *LogExplorerInsightsResponseLinksLinks     `json:"_links,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -76,9 +76,9 @@ func (o *LogExplorerInsightsResponseBodyEnable) SetProduct(v LogExplorerInsights
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *LogExplorerInsightsResponseBodyEnable) GetService() BotManagementResponseServiceService {
+func (o *LogExplorerInsightsResponseBodyEnable) GetService() ApiDiscoveryResponseServiceService {
 	if o == nil || o.Service == nil {
-		var ret BotManagementResponseServiceService
+		var ret ApiDiscoveryResponseServiceService
 		return ret
 	}
 	return *o.Service
@@ -86,7 +86,7 @@ func (o *LogExplorerInsightsResponseBodyEnable) GetService() BotManagementRespon
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogExplorerInsightsResponseBodyEnable) GetServiceOk() (*BotManagementResponseServiceService, bool) {
+func (o *LogExplorerInsightsResponseBodyEnable) GetServiceOk() (*ApiDiscoveryResponseServiceService, bool) {
 	if o == nil || o.Service == nil {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *LogExplorerInsightsResponseBodyEnable) HasService() bool {
 	return false
 }
 
-// SetService gets a reference to the given BotManagementResponseServiceService and assigns it to the Service field.
-func (o *LogExplorerInsightsResponseBodyEnable) SetService(v BotManagementResponseServiceService) {
+// SetService gets a reference to the given ApiDiscoveryResponseServiceService and assigns it to the Service field.
+func (o *LogExplorerInsightsResponseBodyEnable) SetService(v ApiDiscoveryResponseServiceService) {
 	o.Service = &v
 }
 

@@ -10,14 +10,15 @@ Name | Type | Description | Notes
 **Locked** | Pointer to **NullableBool** | Indicates whether the is account is locked for editing or not. | [optional] 
 **RequireNewPassword** | Pointer to **NullableBool** | Indicates if a new password is required at next login. | [optional] 
 **Role** | Pointer to [**RoleUser**](RoleUser.md) |  | [optional] 
+**Roles** | Pointer to **[]string** | A list of role IDs assigned to the user. | [optional] 
 **TwoFactorAuthEnabled** | Pointer to **NullableBool** | Indicates if 2FA is enabled on the user. | [optional] 
 **TwoFactorSetupRequired** | Pointer to **bool** | Indicates if 2FA is required by the user&#39;s customer account. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 **EmailHash** | Pointer to **string** | The alphanumeric string identifying a email login. | [optional] [readonly] 
-**CustomerID** | Pointer to **string** |  | [optional] [readonly] 
+**CustomerId** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -208,6 +209,31 @@ SetRole sets Role field to given value.
 
 HasRole returns a boolean if a field has been set.
 
+### GetRoles
+
+`func (o *UserResponse) GetRoles() []string`
+
+GetRoles returns the Roles field if non-nil, zero value otherwise.
+
+### GetRolesOk
+
+`func (o *UserResponse) GetRolesOk() (*[]string, bool)`
+
+GetRolesOk returns a tuple with the Roles field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoles
+
+`func (o *UserResponse) SetRoles(v []string)`
+
+SetRoles sets Roles field to given value.
+
+### HasRoles
+
+`func (o *UserResponse) HasRoles() bool`
+
+HasRoles returns a boolean if a field has been set.
+
 ### GetTwoFactorAuthEnabled
 
 `func (o *UserResponse) GetTwoFactorAuthEnabled() bool`
@@ -373,30 +399,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *UserResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetID
+### GetId
 
-`func (o *UserResponse) GetID() string`
+`func (o *UserResponse) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *UserResponse) GetIDOk() (*string, bool)`
+`func (o *UserResponse) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *UserResponse) SetID(v string)`
+`func (o *UserResponse) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *UserResponse) HasID() bool`
+`func (o *UserResponse) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetEmailHash
 
@@ -423,30 +449,32 @@ SetEmailHash sets EmailHash field to given value.
 
 HasEmailHash returns a boolean if a field has been set.
 
-### GetCustomerID
+### GetCustomerId
 
-`func (o *UserResponse) GetCustomerID() string`
+`func (o *UserResponse) GetCustomerId() string`
 
-GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetCustomerIDOk
+### GetCustomerIdOk
 
-`func (o *UserResponse) GetCustomerIDOk() (*string, bool)`
+`func (o *UserResponse) GetCustomerIdOk() (*string, bool)`
 
-GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerID
+### SetCustomerId
 
-`func (o *UserResponse) SetCustomerID(v string)`
+`func (o *UserResponse) SetCustomerId(v string)`
 
-SetCustomerID sets CustomerID field to given value.
+SetCustomerId sets CustomerId field to given value.
 
-### HasCustomerID
+### HasCustomerId
 
-`func (o *UserResponse) HasCustomerID() bool`
+`func (o *UserResponse) HasCustomerId() bool`
 
-HasCustomerID returns a boolean if a field has been set.
+HasCustomerId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

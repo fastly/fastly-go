@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Email** | Pointer to **string** | The email address of the invitee. | [optional] 
 **LimitServices** | Pointer to **bool** | Indicates the user has limited access to the customer&#39;s services. | [optional] 
 **Role** | Pointer to [**RoleUser**](RoleUser.md) |  | [optional] 
+**Roles** | Pointer to **[]string** |  | [optional] 
 **StatusCode** | Pointer to **int32** | Indicates whether or not the invitation is active. | [optional] 
 
 ## Methods
@@ -103,6 +104,31 @@ SetRole sets Role field to given value.
 
 HasRole returns a boolean if a field has been set.
 
+### GetRoles
+
+`func (o *InvitationDataAttributes) GetRoles() []string`
+
+GetRoles returns the Roles field if non-nil, zero value otherwise.
+
+### GetRolesOk
+
+`func (o *InvitationDataAttributes) GetRolesOk() (*[]string, bool)`
+
+GetRolesOk returns a tuple with the Roles field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoles
+
+`func (o *InvitationDataAttributes) SetRoles(v []string)`
+
+SetRoles sets Roles field to given value.
+
+### HasRoles
+
+`func (o *InvitationDataAttributes) HasRoles() bool`
+
+HasRoles returns a boolean if a field has been set.
+
 ### GetStatusCode
 
 `func (o *InvitationDataAttributes) GetStatusCode() int32`
@@ -130,3 +156,5 @@ HasStatusCode returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

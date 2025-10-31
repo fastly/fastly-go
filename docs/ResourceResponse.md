@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ResourceID** | Pointer to **string** | The ID of the underlying linked resource. | [optional] 
+**ResourceId** | Pointer to **string** | The ID of the underlying linked resource. | [optional] 
 **Name** | Pointer to **string** | The name of the resource link. Note this is separate from the resource store name and might not match the store name. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ID** | Pointer to **string** | An alphanumeric string identifying the resource link. | [optional] 
+**Id** | Pointer to **string** | An alphanumeric string identifying the resource link. | [optional] 
 **Href** | Pointer to **string** | The path to the resource. | [optional] 
-**ServiceID** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
+**ServiceId** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
 **Version** | Pointer to **int32** | Integer identifying a service version. | [optional] 
 **ResourceType** | Pointer to [**TypeResource**](TypeResource.md) |  | [optional] 
 
@@ -34,30 +34,30 @@ NewResourceResponseWithDefaults instantiates a new ResourceResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetResourceID
+### GetResourceId
 
-`func (o *ResourceResponse) GetResourceID() string`
+`func (o *ResourceResponse) GetResourceId() string`
 
-GetResourceID returns the ResourceID field if non-nil, zero value otherwise.
+GetResourceId returns the ResourceId field if non-nil, zero value otherwise.
 
-### GetResourceIDOk
+### GetResourceIdOk
 
-`func (o *ResourceResponse) GetResourceIDOk() (*string, bool)`
+`func (o *ResourceResponse) GetResourceIdOk() (*string, bool)`
 
-GetResourceIDOk returns a tuple with the ResourceID field if it's non-nil, zero value otherwise
+GetResourceIdOk returns a tuple with the ResourceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetResourceID
+### SetResourceId
 
-`func (o *ResourceResponse) SetResourceID(v string)`
+`func (o *ResourceResponse) SetResourceId(v string)`
 
-SetResourceID sets ResourceID field to given value.
+SetResourceId sets ResourceId field to given value.
 
-### HasResourceID
+### HasResourceId
 
-`func (o *ResourceResponse) HasResourceID() bool`
+`func (o *ResourceResponse) HasResourceId() bool`
 
-HasResourceID returns a boolean if a field has been set.
+HasResourceId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -189,30 +189,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *ResourceResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetID
+### GetId
 
-`func (o *ResourceResponse) GetID() string`
+`func (o *ResourceResponse) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *ResourceResponse) GetIDOk() (*string, bool)`
+`func (o *ResourceResponse) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *ResourceResponse) SetID(v string)`
+`func (o *ResourceResponse) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *ResourceResponse) HasID() bool`
+`func (o *ResourceResponse) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetHref
 
@@ -239,30 +239,30 @@ SetHref sets Href field to given value.
 
 HasHref returns a boolean if a field has been set.
 
-### GetServiceID
+### GetServiceId
 
-`func (o *ResourceResponse) GetServiceID() string`
+`func (o *ResourceResponse) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *ResourceResponse) GetServiceIDOk() (*string, bool)`
+`func (o *ResourceResponse) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *ResourceResponse) SetServiceID(v string)`
+`func (o *ResourceResponse) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *ResourceResponse) HasServiceID() bool`
+`func (o *ResourceResponse) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -316,3 +316,5 @@ HasResourceType returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -29,13 +29,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ImageOptimizerDefaultSettingsAPI.GetDefaultSettings(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.ImageOptimizerDefaultSettingsAPI.GetDefaultSettings(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImageOptimizerDefaultSettingsAPI.GetDefaultSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,8 +51,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -98,14 +98,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     defaultSettings := *openapiclient.NewDefaultSettings() // DefaultSettings |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ImageOptimizerDefaultSettingsAPI.UpdateDefaultSettings(ctx, serviceID, versionID).DefaultSettings(defaultSettings).Execute()
+    resp, r, err := apiClient.ImageOptimizerDefaultSettingsAPI.UpdateDefaultSettings(ctx, serviceId, versionId).DefaultSettings(defaultSettings).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImageOptimizerDefaultSettingsAPI.UpdateDefaultSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -121,8 +121,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -147,3 +147,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

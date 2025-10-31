@@ -31,8 +31,8 @@ type _StarData StarData
 // will change when the set of required properties is changed
 func NewStarData() *StarData {
 	this := StarData{}
-	var resourceType TypeStar = TYPESTAR_STAR
-	this.Type = &resourceType
+	var type_ TypeStar = TYPESTAR_STAR
+	this.Type = &type_
 	return &this
 }
 
@@ -41,8 +41,8 @@ func NewStarData() *StarData {
 // but it doesn't guarantee that properties required by API are set
 func NewStarDataWithDefaults() *StarData {
 	this := StarData{}
-	var resourceType TypeStar = TYPESTAR_STAR
-	this.Type = &resourceType
+	var type_ TypeStar = TYPESTAR_STAR
+	this.Type = &type_
 	return &this
 }
 

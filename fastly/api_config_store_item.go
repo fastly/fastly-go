@@ -36,10 +36,10 @@ type ConfigStoreItemAPI interface {
 		Add multiple key-value pairs to an individual config store, specified by ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configStoreID An alphanumeric string identifying the config store.
+		 @param configStoreId An alphanumeric string identifying the config store.
 		 @return APIBulkUpdateConfigStoreItemRequest
 	*/
-	BulkUpdateConfigStoreItem(ctx context.Context, configStoreID string) APIBulkUpdateConfigStoreItemRequest
+	BulkUpdateConfigStoreItem(ctx context.Context, configStoreId string) APIBulkUpdateConfigStoreItemRequest
 
 	// BulkUpdateConfigStoreItemExecute executes the request
 	//  @return InlineResponse200
@@ -51,10 +51,10 @@ type ConfigStoreItemAPI interface {
 		Add a single key-value pair to an individual config store, specified by ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configStoreID An alphanumeric string identifying the config store.
+		 @param configStoreId An alphanumeric string identifying the config store.
 		 @return APICreateConfigStoreItemRequest
 	*/
-	CreateConfigStoreItem(ctx context.Context, configStoreID string) APICreateConfigStoreItemRequest
+	CreateConfigStoreItem(ctx context.Context, configStoreId string) APICreateConfigStoreItemRequest
 
 	// CreateConfigStoreItemExecute executes the request
 	//  @return ConfigStoreItemResponse
@@ -66,11 +66,11 @@ type ConfigStoreItemAPI interface {
 		Delete an entry in a config store given a config store ID, and item key.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configStoreID An alphanumeric string identifying the config store.
+		 @param configStoreId An alphanumeric string identifying the config store.
 		 @param configStoreItemKey Item key, maximum 256 characters.
 		 @return APIDeleteConfigStoreItemRequest
 	*/
-	DeleteConfigStoreItem(ctx context.Context, configStoreID string, configStoreItemKey string) APIDeleteConfigStoreItemRequest
+	DeleteConfigStoreItem(ctx context.Context, configStoreId string, configStoreItemKey string) APIDeleteConfigStoreItemRequest
 
 	// DeleteConfigStoreItemExecute executes the request
 	//  @return InlineResponse200
@@ -82,11 +82,11 @@ type ConfigStoreItemAPI interface {
 		Retrieve a config store entry given a config store ID and item key.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configStoreID An alphanumeric string identifying the config store.
+		 @param configStoreId An alphanumeric string identifying the config store.
 		 @param configStoreItemKey Item key, maximum 256 characters.
 		 @return APIGetConfigStoreItemRequest
 	*/
-	GetConfigStoreItem(ctx context.Context, configStoreID string, configStoreItemKey string) APIGetConfigStoreItemRequest
+	GetConfigStoreItem(ctx context.Context, configStoreId string, configStoreItemKey string) APIGetConfigStoreItemRequest
 
 	// GetConfigStoreItemExecute executes the request
 	//  @return ConfigStoreItemResponse
@@ -98,10 +98,10 @@ type ConfigStoreItemAPI interface {
 		List the key-value pairs associated with a given config store ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configStoreID An alphanumeric string identifying the config store.
+		 @param configStoreId An alphanumeric string identifying the config store.
 		 @return APIListConfigStoreItemsRequest
 	*/
-	ListConfigStoreItems(ctx context.Context, configStoreID string) APIListConfigStoreItemsRequest
+	ListConfigStoreItems(ctx context.Context, configStoreId string) APIListConfigStoreItemsRequest
 
 	// ListConfigStoreItemsExecute executes the request
 	//  @return []ConfigStoreItemResponse
@@ -113,11 +113,11 @@ type ConfigStoreItemAPI interface {
 		Update an entry in a config store given a config store ID, item key, and item value.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configStoreID An alphanumeric string identifying the config store.
+		 @param configStoreId An alphanumeric string identifying the config store.
 		 @param configStoreItemKey Item key, maximum 256 characters.
 		 @return APIUpdateConfigStoreItemRequest
 	*/
-	UpdateConfigStoreItem(ctx context.Context, configStoreID string, configStoreItemKey string) APIUpdateConfigStoreItemRequest
+	UpdateConfigStoreItem(ctx context.Context, configStoreId string, configStoreItemKey string) APIUpdateConfigStoreItemRequest
 
 	// UpdateConfigStoreItemExecute executes the request
 	//  @return ConfigStoreItemResponse
@@ -129,11 +129,11 @@ type ConfigStoreItemAPI interface {
 		Insert or update an entry in a config store given a config store ID, item key, and item value.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param configStoreID An alphanumeric string identifying the config store.
+		 @param configStoreId An alphanumeric string identifying the config store.
 		 @param configStoreItemKey Item key, maximum 256 characters.
 		 @return APIUpsertConfigStoreItemRequest
 	*/
-	UpsertConfigStoreItem(ctx context.Context, configStoreID string, configStoreItemKey string) APIUpsertConfigStoreItemRequest
+	UpsertConfigStoreItem(ctx context.Context, configStoreId string, configStoreItemKey string) APIUpsertConfigStoreItemRequest
 
 	// UpsertConfigStoreItemExecute executes the request
 	//  @return ConfigStoreItemResponse
@@ -147,7 +147,7 @@ type ConfigStoreItemAPIService service
 type APIBulkUpdateConfigStoreItemRequest struct {
 	ctx                              context.Context
 	APIService                       ConfigStoreItemAPI
-	configStoreID                    string
+	configStoreId                    string
 	bulkUpdateConfigStoreListRequest *BulkUpdateConfigStoreListRequest
 }
 
@@ -168,14 +168,14 @@ BulkUpdateConfigStoreItem Update multiple entries in a config store
 Add multiple key-value pairs to an individual config store, specified by ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configStoreID An alphanumeric string identifying the config store.
+ @param configStoreId An alphanumeric string identifying the config store.
  @return APIBulkUpdateConfigStoreItemRequest
 */
-func (a *ConfigStoreItemAPIService) BulkUpdateConfigStoreItem(ctx context.Context, configStoreID string) APIBulkUpdateConfigStoreItemRequest {
+func (a *ConfigStoreItemAPIService) BulkUpdateConfigStoreItem(ctx context.Context, configStoreId string) APIBulkUpdateConfigStoreItemRequest {
 	return APIBulkUpdateConfigStoreItemRequest{
 		APIService:    a,
 		ctx:           ctx,
-		configStoreID: configStoreID,
+		configStoreId: configStoreId,
 	}
 }
 
@@ -195,7 +195,7 @@ func (a *ConfigStoreItemAPIService) BulkUpdateConfigStoreItemExecute(r APIBulkUp
 	}
 
 	localVarPath := localBasePath + "/resources/stores/config/{config_store_id}/items"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -288,7 +288,7 @@ func (a *ConfigStoreItemAPIService) BulkUpdateConfigStoreItemExecute(r APIBulkUp
 type APICreateConfigStoreItemRequest struct {
 	ctx           context.Context
 	APIService    ConfigStoreItemAPI
-	configStoreID string
+	configStoreId string
 	itemKey       *string
 	itemValue     *string
 }
@@ -316,14 +316,14 @@ CreateConfigStoreItem Create an entry in a config store
 Add a single key-value pair to an individual config store, specified by ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configStoreID An alphanumeric string identifying the config store.
+ @param configStoreId An alphanumeric string identifying the config store.
  @return APICreateConfigStoreItemRequest
 */
-func (a *ConfigStoreItemAPIService) CreateConfigStoreItem(ctx context.Context, configStoreID string) APICreateConfigStoreItemRequest {
+func (a *ConfigStoreItemAPIService) CreateConfigStoreItem(ctx context.Context, configStoreId string) APICreateConfigStoreItemRequest {
 	return APICreateConfigStoreItemRequest{
 		APIService:    a,
 		ctx:           ctx,
-		configStoreID: configStoreID,
+		configStoreId: configStoreId,
 	}
 }
 
@@ -343,7 +343,7 @@ func (a *ConfigStoreItemAPIService) CreateConfigStoreItemExecute(r APICreateConf
 	}
 
 	localVarPath := localBasePath + "/resources/stores/config/{config_store_id}/item"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -440,7 +440,7 @@ func (a *ConfigStoreItemAPIService) CreateConfigStoreItemExecute(r APICreateConf
 type APIDeleteConfigStoreItemRequest struct {
 	ctx                context.Context
 	APIService         ConfigStoreItemAPI
-	configStoreID      string
+	configStoreId      string
 	configStoreItemKey string
 }
 
@@ -455,15 +455,15 @@ DeleteConfigStoreItem Delete an item from a config store
 Delete an entry in a config store given a config store ID, and item key.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configStoreID An alphanumeric string identifying the config store.
+ @param configStoreId An alphanumeric string identifying the config store.
  @param configStoreItemKey Item key, maximum 256 characters.
  @return APIDeleteConfigStoreItemRequest
 */
-func (a *ConfigStoreItemAPIService) DeleteConfigStoreItem(ctx context.Context, configStoreID string, configStoreItemKey string) APIDeleteConfigStoreItemRequest {
+func (a *ConfigStoreItemAPIService) DeleteConfigStoreItem(ctx context.Context, configStoreId string, configStoreItemKey string) APIDeleteConfigStoreItemRequest {
 	return APIDeleteConfigStoreItemRequest{
 		APIService:         a,
 		ctx:                ctx,
-		configStoreID:      configStoreID,
+		configStoreId:      configStoreId,
 		configStoreItemKey: configStoreItemKey,
 	}
 }
@@ -484,7 +484,7 @@ func (a *ConfigStoreItemAPIService) DeleteConfigStoreItemExecute(r APIDeleteConf
 	}
 
 	localVarPath := localBasePath + "/resources/stores/config/{config_store_id}/item/{config_store_item_key}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_item_key"+"}", gourl.PathEscape(parameterToString(r.configStoreItemKey, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -576,7 +576,7 @@ func (a *ConfigStoreItemAPIService) DeleteConfigStoreItemExecute(r APIDeleteConf
 type APIGetConfigStoreItemRequest struct {
 	ctx                context.Context
 	APIService         ConfigStoreItemAPI
-	configStoreID      string
+	configStoreId      string
 	configStoreItemKey string
 }
 
@@ -591,15 +591,15 @@ GetConfigStoreItem Get an item from a config store
 Retrieve a config store entry given a config store ID and item key.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configStoreID An alphanumeric string identifying the config store.
+ @param configStoreId An alphanumeric string identifying the config store.
  @param configStoreItemKey Item key, maximum 256 characters.
  @return APIGetConfigStoreItemRequest
 */
-func (a *ConfigStoreItemAPIService) GetConfigStoreItem(ctx context.Context, configStoreID string, configStoreItemKey string) APIGetConfigStoreItemRequest {
+func (a *ConfigStoreItemAPIService) GetConfigStoreItem(ctx context.Context, configStoreId string, configStoreItemKey string) APIGetConfigStoreItemRequest {
 	return APIGetConfigStoreItemRequest{
 		APIService:         a,
 		ctx:                ctx,
-		configStoreID:      configStoreID,
+		configStoreId:      configStoreId,
 		configStoreItemKey: configStoreItemKey,
 	}
 }
@@ -620,7 +620,7 @@ func (a *ConfigStoreItemAPIService) GetConfigStoreItemExecute(r APIGetConfigStor
 	}
 
 	localVarPath := localBasePath + "/resources/stores/config/{config_store_id}/item/{config_store_item_key}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_item_key"+"}", gourl.PathEscape(parameterToString(r.configStoreItemKey, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -712,7 +712,7 @@ func (a *ConfigStoreItemAPIService) GetConfigStoreItemExecute(r APIGetConfigStor
 type APIListConfigStoreItemsRequest struct {
 	ctx           context.Context
 	APIService    ConfigStoreItemAPI
-	configStoreID string
+	configStoreId string
 }
 
 // Execute calls the API using the request data configured.
@@ -726,14 +726,14 @@ ListConfigStoreItems List items in a config store
 List the key-value pairs associated with a given config store ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configStoreID An alphanumeric string identifying the config store.
+ @param configStoreId An alphanumeric string identifying the config store.
  @return APIListConfigStoreItemsRequest
 */
-func (a *ConfigStoreItemAPIService) ListConfigStoreItems(ctx context.Context, configStoreID string) APIListConfigStoreItemsRequest {
+func (a *ConfigStoreItemAPIService) ListConfigStoreItems(ctx context.Context, configStoreId string) APIListConfigStoreItemsRequest {
 	return APIListConfigStoreItemsRequest{
 		APIService:    a,
 		ctx:           ctx,
-		configStoreID: configStoreID,
+		configStoreId: configStoreId,
 	}
 }
 
@@ -753,7 +753,7 @@ func (a *ConfigStoreItemAPIService) ListConfigStoreItemsExecute(r APIListConfigS
 	}
 
 	localVarPath := localBasePath + "/resources/stores/config/{config_store_id}/items"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -844,7 +844,7 @@ func (a *ConfigStoreItemAPIService) ListConfigStoreItemsExecute(r APIListConfigS
 type APIUpdateConfigStoreItemRequest struct {
 	ctx                context.Context
 	APIService         ConfigStoreItemAPI
-	configStoreID      string
+	configStoreId      string
 	configStoreItemKey string
 	itemKey            *string
 	itemValue          *string
@@ -873,15 +873,15 @@ UpdateConfigStoreItem Update an entry in a config store
 Update an entry in a config store given a config store ID, item key, and item value.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configStoreID An alphanumeric string identifying the config store.
+ @param configStoreId An alphanumeric string identifying the config store.
  @param configStoreItemKey Item key, maximum 256 characters.
  @return APIUpdateConfigStoreItemRequest
 */
-func (a *ConfigStoreItemAPIService) UpdateConfigStoreItem(ctx context.Context, configStoreID string, configStoreItemKey string) APIUpdateConfigStoreItemRequest {
+func (a *ConfigStoreItemAPIService) UpdateConfigStoreItem(ctx context.Context, configStoreId string, configStoreItemKey string) APIUpdateConfigStoreItemRequest {
 	return APIUpdateConfigStoreItemRequest{
 		APIService:         a,
 		ctx:                ctx,
-		configStoreID:      configStoreID,
+		configStoreId:      configStoreId,
 		configStoreItemKey: configStoreItemKey,
 	}
 }
@@ -902,7 +902,7 @@ func (a *ConfigStoreItemAPIService) UpdateConfigStoreItemExecute(r APIUpdateConf
 	}
 
 	localVarPath := localBasePath + "/resources/stores/config/{config_store_id}/item/{config_store_item_key}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_item_key"+"}", gourl.PathEscape(parameterToString(r.configStoreItemKey, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -1000,7 +1000,7 @@ func (a *ConfigStoreItemAPIService) UpdateConfigStoreItemExecute(r APIUpdateConf
 type APIUpsertConfigStoreItemRequest struct {
 	ctx                context.Context
 	APIService         ConfigStoreItemAPI
-	configStoreID      string
+	configStoreId      string
 	configStoreItemKey string
 	itemKey            *string
 	itemValue          *string
@@ -1029,15 +1029,15 @@ UpsertConfigStoreItem Insert or update an entry in a config store
 Insert or update an entry in a config store given a config store ID, item key, and item value.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param configStoreID An alphanumeric string identifying the config store.
+ @param configStoreId An alphanumeric string identifying the config store.
  @param configStoreItemKey Item key, maximum 256 characters.
  @return APIUpsertConfigStoreItemRequest
 */
-func (a *ConfigStoreItemAPIService) UpsertConfigStoreItem(ctx context.Context, configStoreID string, configStoreItemKey string) APIUpsertConfigStoreItemRequest {
+func (a *ConfigStoreItemAPIService) UpsertConfigStoreItem(ctx context.Context, configStoreId string, configStoreItemKey string) APIUpsertConfigStoreItemRequest {
 	return APIUpsertConfigStoreItemRequest{
 		APIService:         a,
 		ctx:                ctx,
-		configStoreID:      configStoreID,
+		configStoreId:      configStoreId,
 		configStoreItemKey: configStoreItemKey,
 	}
 }
@@ -1058,7 +1058,7 @@ func (a *ConfigStoreItemAPIService) UpsertConfigStoreItemExecute(r APIUpsertConf
 	}
 
 	localVarPath := localBasePath + "/resources/stores/config/{config_store_id}/item/{config_store_item_key}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_id"+"}", gourl.PathEscape(parameterToString(r.configStoreId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"config_store_item_key"+"}", gourl.PathEscape(parameterToString(r.configStoreItemKey, "")))
 
 	localVarHeaderParams := make(map[string]string)

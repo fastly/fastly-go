@@ -36,11 +36,11 @@ type DictionaryItemAPI interface {
 		Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. [Contact support](https://support.fastly.com/) to discuss raising this limit.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param dictionaryId Alphanumeric string identifying a Dictionary.
 		 @return APIBulkUpdateDictionaryItemRequest
 	*/
-	BulkUpdateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string) APIBulkUpdateDictionaryItemRequest
+	BulkUpdateDictionaryItem(ctx context.Context, serviceId string, dictionaryId string) APIBulkUpdateDictionaryItemRequest
 
 	// BulkUpdateDictionaryItemExecute executes the request
 	//  @return InlineResponse200
@@ -52,11 +52,11 @@ type DictionaryItemAPI interface {
 		Create DictionaryItem given service, dictionary ID, item key, and item value.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param dictionaryId Alphanumeric string identifying a Dictionary.
 		 @return APICreateDictionaryItemRequest
 	*/
-	CreateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string) APICreateDictionaryItemRequest
+	CreateDictionaryItem(ctx context.Context, serviceId string, dictionaryId string) APICreateDictionaryItemRequest
 
 	// CreateDictionaryItemExecute executes the request
 	//  @return DictionaryItemResponse
@@ -68,12 +68,12 @@ type DictionaryItemAPI interface {
 		Delete DictionaryItem given service, dictionary ID, and item key.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param dictionaryId Alphanumeric string identifying a Dictionary.
 		 @param dictionaryItemKey Item key, maximum 256 characters.
 		 @return APIDeleteDictionaryItemRequest
 	*/
-	DeleteDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIDeleteDictionaryItemRequest
+	DeleteDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIDeleteDictionaryItemRequest
 
 	// DeleteDictionaryItemExecute executes the request
 	//  @return InlineResponse200
@@ -85,12 +85,12 @@ type DictionaryItemAPI interface {
 		Retrieve a single DictionaryItem given service, dictionary ID and item key.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param dictionaryId Alphanumeric string identifying a Dictionary.
 		 @param dictionaryItemKey Item key, maximum 256 characters.
 		 @return APIGetDictionaryItemRequest
 	*/
-	GetDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIGetDictionaryItemRequest
+	GetDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIGetDictionaryItemRequest
 
 	// GetDictionaryItemExecute executes the request
 	//  @return DictionaryItemResponse
@@ -102,11 +102,11 @@ type DictionaryItemAPI interface {
 		List of DictionaryItems given service and dictionary ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param dictionaryId Alphanumeric string identifying a Dictionary.
 		 @return APIListDictionaryItemsRequest
 	*/
-	ListDictionaryItems(ctx context.Context, serviceID string, dictionaryID string) APIListDictionaryItemsRequest
+	ListDictionaryItems(ctx context.Context, serviceId string, dictionaryId string) APIListDictionaryItemsRequest
 
 	// ListDictionaryItemsExecute executes the request
 	//  @return []DictionaryItemResponse
@@ -118,12 +118,12 @@ type DictionaryItemAPI interface {
 		Update DictionaryItem given service, dictionary ID, item key, and item value.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param dictionaryId Alphanumeric string identifying a Dictionary.
 		 @param dictionaryItemKey Item key, maximum 256 characters.
 		 @return APIUpdateDictionaryItemRequest
 	*/
-	UpdateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIUpdateDictionaryItemRequest
+	UpdateDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIUpdateDictionaryItemRequest
 
 	// UpdateDictionaryItemExecute executes the request
 	//  @return DictionaryItemResponse
@@ -135,12 +135,12 @@ type DictionaryItemAPI interface {
 		Upsert DictionaryItem given service, dictionary ID, item key, and item value.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param dictionaryId Alphanumeric string identifying a Dictionary.
 		 @param dictionaryItemKey Item key, maximum 256 characters.
 		 @return APIUpsertDictionaryItemRequest
 	*/
-	UpsertDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIUpsertDictionaryItemRequest
+	UpsertDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIUpsertDictionaryItemRequest
 
 	// UpsertDictionaryItemExecute executes the request
 	//  @return DictionaryItemResponse
@@ -154,8 +154,8 @@ type DictionaryItemAPIService service
 type APIBulkUpdateDictionaryItemRequest struct {
 	ctx                             context.Context
 	APIService                      DictionaryItemAPI
-	serviceID                       string
-	dictionaryID                    string
+	serviceId                       string
+	dictionaryId                    string
 	bulkUpdateDictionaryListRequest *BulkUpdateDictionaryListRequest
 }
 
@@ -176,16 +176,16 @@ BulkUpdateDictionaryItem Update multiple entries in a dictionary
 Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. [Contact support](https://support.fastly.com/) to discuss raising this limit.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param dictionaryID Alphanumeric string identifying a Dictionary.
+ @param serviceId Alphanumeric string identifying the service.
+ @param dictionaryId Alphanumeric string identifying a Dictionary.
  @return APIBulkUpdateDictionaryItemRequest
 */
-func (a *DictionaryItemAPIService) BulkUpdateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string) APIBulkUpdateDictionaryItemRequest {
+func (a *DictionaryItemAPIService) BulkUpdateDictionaryItem(ctx context.Context, serviceId string, dictionaryId string) APIBulkUpdateDictionaryItemRequest {
 	return APIBulkUpdateDictionaryItemRequest{
 		APIService:   a,
 		ctx:          ctx,
-		serviceID:    serviceID,
-		dictionaryID: dictionaryID,
+		serviceId:    serviceId,
+		dictionaryId: dictionaryId,
 	}
 }
 
@@ -205,8 +205,8 @@ func (a *DictionaryItemAPIService) BulkUpdateDictionaryItemExecute(r APIBulkUpda
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/dictionary/{dictionary_id}/items"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -299,8 +299,8 @@ func (a *DictionaryItemAPIService) BulkUpdateDictionaryItemExecute(r APIBulkUpda
 type APICreateDictionaryItemRequest struct {
 	ctx          context.Context
 	APIService   DictionaryItemAPI
-	serviceID    string
-	dictionaryID string
+	serviceId    string
+	dictionaryId string
 	itemKey      *string
 	itemValue    *string
 }
@@ -328,16 +328,16 @@ CreateDictionaryItem Create an entry in a dictionary
 Create DictionaryItem given service, dictionary ID, item key, and item value.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param dictionaryID Alphanumeric string identifying a Dictionary.
+ @param serviceId Alphanumeric string identifying the service.
+ @param dictionaryId Alphanumeric string identifying a Dictionary.
  @return APICreateDictionaryItemRequest
 */
-func (a *DictionaryItemAPIService) CreateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string) APICreateDictionaryItemRequest {
+func (a *DictionaryItemAPIService) CreateDictionaryItem(ctx context.Context, serviceId string, dictionaryId string) APICreateDictionaryItemRequest {
 	return APICreateDictionaryItemRequest{
 		APIService:   a,
 		ctx:          ctx,
-		serviceID:    serviceID,
-		dictionaryID: dictionaryID,
+		serviceId:    serviceId,
+		dictionaryId: dictionaryId,
 	}
 }
 
@@ -357,8 +357,8 @@ func (a *DictionaryItemAPIService) CreateDictionaryItemExecute(r APICreateDictio
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/dictionary/{dictionary_id}/item"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -455,8 +455,8 @@ func (a *DictionaryItemAPIService) CreateDictionaryItemExecute(r APICreateDictio
 type APIDeleteDictionaryItemRequest struct {
 	ctx               context.Context
 	APIService        DictionaryItemAPI
-	serviceID         string
-	dictionaryID      string
+	serviceId         string
+	dictionaryId      string
 	dictionaryItemKey string
 }
 
@@ -471,17 +471,17 @@ DeleteDictionaryItem Delete an item from a dictionary
 Delete DictionaryItem given service, dictionary ID, and item key.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param dictionaryID Alphanumeric string identifying a Dictionary.
+ @param serviceId Alphanumeric string identifying the service.
+ @param dictionaryId Alphanumeric string identifying a Dictionary.
  @param dictionaryItemKey Item key, maximum 256 characters.
  @return APIDeleteDictionaryItemRequest
 */
-func (a *DictionaryItemAPIService) DeleteDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIDeleteDictionaryItemRequest {
+func (a *DictionaryItemAPIService) DeleteDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIDeleteDictionaryItemRequest {
 	return APIDeleteDictionaryItemRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		dictionaryID:      dictionaryID,
+		serviceId:         serviceId,
+		dictionaryId:      dictionaryId,
 		dictionaryItemKey: dictionaryItemKey,
 	}
 }
@@ -502,8 +502,8 @@ func (a *DictionaryItemAPIService) DeleteDictionaryItemExecute(r APIDeleteDictio
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_item_key"+"}", gourl.PathEscape(parameterToString(r.dictionaryItemKey, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -595,8 +595,8 @@ func (a *DictionaryItemAPIService) DeleteDictionaryItemExecute(r APIDeleteDictio
 type APIGetDictionaryItemRequest struct {
 	ctx               context.Context
 	APIService        DictionaryItemAPI
-	serviceID         string
-	dictionaryID      string
+	serviceId         string
+	dictionaryId      string
 	dictionaryItemKey string
 }
 
@@ -611,17 +611,17 @@ GetDictionaryItem Get an item from a dictionary
 Retrieve a single DictionaryItem given service, dictionary ID and item key.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param dictionaryID Alphanumeric string identifying a Dictionary.
+ @param serviceId Alphanumeric string identifying the service.
+ @param dictionaryId Alphanumeric string identifying a Dictionary.
  @param dictionaryItemKey Item key, maximum 256 characters.
  @return APIGetDictionaryItemRequest
 */
-func (a *DictionaryItemAPIService) GetDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIGetDictionaryItemRequest {
+func (a *DictionaryItemAPIService) GetDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIGetDictionaryItemRequest {
 	return APIGetDictionaryItemRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		dictionaryID:      dictionaryID,
+		serviceId:         serviceId,
+		dictionaryId:      dictionaryId,
 		dictionaryItemKey: dictionaryItemKey,
 	}
 }
@@ -642,8 +642,8 @@ func (a *DictionaryItemAPIService) GetDictionaryItemExecute(r APIGetDictionaryIt
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_item_key"+"}", gourl.PathEscape(parameterToString(r.dictionaryItemKey, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -735,8 +735,8 @@ func (a *DictionaryItemAPIService) GetDictionaryItemExecute(r APIGetDictionaryIt
 type APIListDictionaryItemsRequest struct {
 	ctx          context.Context
 	APIService   DictionaryItemAPI
-	serviceID    string
-	dictionaryID string
+	serviceId    string
+	dictionaryId string
 	page         *int32
 	perPage      *int32
 	sort         *string
@@ -778,16 +778,16 @@ ListDictionaryItems List items in a dictionary
 List of DictionaryItems given service and dictionary ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param dictionaryID Alphanumeric string identifying a Dictionary.
+ @param serviceId Alphanumeric string identifying the service.
+ @param dictionaryId Alphanumeric string identifying a Dictionary.
  @return APIListDictionaryItemsRequest
 */
-func (a *DictionaryItemAPIService) ListDictionaryItems(ctx context.Context, serviceID string, dictionaryID string) APIListDictionaryItemsRequest {
+func (a *DictionaryItemAPIService) ListDictionaryItems(ctx context.Context, serviceId string, dictionaryId string) APIListDictionaryItemsRequest {
 	return APIListDictionaryItemsRequest{
 		APIService:   a,
 		ctx:          ctx,
-		serviceID:    serviceID,
-		dictionaryID: dictionaryID,
+		serviceId:    serviceId,
+		dictionaryId: dictionaryId,
 	}
 }
 
@@ -807,8 +807,8 @@ func (a *DictionaryItemAPIService) ListDictionaryItemsExecute(r APIListDictionar
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/dictionary/{dictionary_id}/items"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -911,8 +911,8 @@ func (a *DictionaryItemAPIService) ListDictionaryItemsExecute(r APIListDictionar
 type APIUpdateDictionaryItemRequest struct {
 	ctx               context.Context
 	APIService        DictionaryItemAPI
-	serviceID         string
-	dictionaryID      string
+	serviceId         string
+	dictionaryId      string
 	dictionaryItemKey string
 	itemKey           *string
 	itemValue         *string
@@ -941,17 +941,17 @@ UpdateDictionaryItem Update an entry in a dictionary
 Update DictionaryItem given service, dictionary ID, item key, and item value.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param dictionaryID Alphanumeric string identifying a Dictionary.
+ @param serviceId Alphanumeric string identifying the service.
+ @param dictionaryId Alphanumeric string identifying a Dictionary.
  @param dictionaryItemKey Item key, maximum 256 characters.
  @return APIUpdateDictionaryItemRequest
 */
-func (a *DictionaryItemAPIService) UpdateDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIUpdateDictionaryItemRequest {
+func (a *DictionaryItemAPIService) UpdateDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIUpdateDictionaryItemRequest {
 	return APIUpdateDictionaryItemRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		dictionaryID:      dictionaryID,
+		serviceId:         serviceId,
+		dictionaryId:      dictionaryId,
 		dictionaryItemKey: dictionaryItemKey,
 	}
 }
@@ -972,8 +972,8 @@ func (a *DictionaryItemAPIService) UpdateDictionaryItemExecute(r APIUpdateDictio
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_item_key"+"}", gourl.PathEscape(parameterToString(r.dictionaryItemKey, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -1071,8 +1071,8 @@ func (a *DictionaryItemAPIService) UpdateDictionaryItemExecute(r APIUpdateDictio
 type APIUpsertDictionaryItemRequest struct {
 	ctx               context.Context
 	APIService        DictionaryItemAPI
-	serviceID         string
-	dictionaryID      string
+	serviceId         string
+	dictionaryId      string
 	dictionaryItemKey string
 	itemKey           *string
 	itemValue         *string
@@ -1101,17 +1101,17 @@ UpsertDictionaryItem Insert or update an entry in a dictionary
 Upsert DictionaryItem given service, dictionary ID, item key, and item value.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param dictionaryID Alphanumeric string identifying a Dictionary.
+ @param serviceId Alphanumeric string identifying the service.
+ @param dictionaryId Alphanumeric string identifying a Dictionary.
  @param dictionaryItemKey Item key, maximum 256 characters.
  @return APIUpsertDictionaryItemRequest
 */
-func (a *DictionaryItemAPIService) UpsertDictionaryItem(ctx context.Context, serviceID string, dictionaryID string, dictionaryItemKey string) APIUpsertDictionaryItemRequest {
+func (a *DictionaryItemAPIService) UpsertDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIUpsertDictionaryItemRequest {
 	return APIUpsertDictionaryItemRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		dictionaryID:      dictionaryID,
+		serviceId:         serviceId,
+		dictionaryId:      dictionaryId,
 		dictionaryItemKey: dictionaryItemKey,
 	}
 }
@@ -1132,8 +1132,8 @@ func (a *DictionaryItemAPIService) UpsertDictionaryItemExecute(r APIUpsertDictio
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_item_key"+"}", gourl.PathEscape(parameterToString(r.dictionaryItemKey, "")))
 
 	localVarHeaderParams := make(map[string]string)

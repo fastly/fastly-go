@@ -36,12 +36,12 @@ type VclDiffAPI interface {
 		Get a comparison of the VCL changes between two service versions.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param fromVersionID The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
-		 @param toVersionID The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param fromVersionId The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
+		 @param toVersionId The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
 		 @return APIVclDiffServiceVersionsRequest
 	*/
-	VclDiffServiceVersions(ctx context.Context, serviceID string, fromVersionID int32, toVersionID int32) APIVclDiffServiceVersionsRequest
+	VclDiffServiceVersions(ctx context.Context, serviceId string, fromVersionId int32, toVersionId int32) APIVclDiffServiceVersionsRequest
 
 	// VclDiffServiceVersionsExecute executes the request
 	//  @return VclDiff
@@ -55,9 +55,9 @@ type VclDiffAPIService service
 type APIVclDiffServiceVersionsRequest struct {
 	ctx           context.Context
 	APIService    VclDiffAPI
-	serviceID     string
-	fromVersionID int32
-	toVersionID   int32
+	serviceId     string
+	fromVersionId int32
+	toVersionId   int32
 	format        *string
 }
 
@@ -78,18 +78,18 @@ VclDiffServiceVersions Get a comparison of the VCL changes between two service v
 Get a comparison of the VCL changes between two service versions.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param fromVersionID The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
- @param toVersionID The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
+ @param serviceId Alphanumeric string identifying the service.
+ @param fromVersionId The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
+ @param toVersionId The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
  @return APIVclDiffServiceVersionsRequest
 */
-func (a *VclDiffAPIService) VclDiffServiceVersions(ctx context.Context, serviceID string, fromVersionID int32, toVersionID int32) APIVclDiffServiceVersionsRequest {
+func (a *VclDiffAPIService) VclDiffServiceVersions(ctx context.Context, serviceId string, fromVersionId int32, toVersionId int32) APIVclDiffServiceVersionsRequest {
 	return APIVclDiffServiceVersionsRequest{
 		APIService:    a,
 		ctx:           ctx,
-		serviceID:     serviceID,
-		fromVersionID: fromVersionID,
-		toVersionID:   toVersionID,
+		serviceId:     serviceId,
+		fromVersionId: fromVersionId,
+		toVersionId:   toVersionId,
 	}
 }
 
@@ -109,9 +109,9 @@ func (a *VclDiffAPIService) VclDiffServiceVersionsExecute(r APIVclDiffServiceVer
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/vcl/diff/from/{from_version_id}/to/{to_version_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"from_version_id"+"}", gourl.PathEscape(parameterToString(r.fromVersionID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"to_version_id"+"}", gourl.PathEscape(parameterToString(r.toVersionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"from_version_id"+"}", gourl.PathEscape(parameterToString(r.fromVersionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"to_version_id"+"}", gourl.PathEscape(parameterToString(r.toVersionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

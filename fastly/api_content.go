@@ -54,8 +54,8 @@ type APIContentCheckRequest struct {
 	url        *string
 }
 
-// URL Full URL (host and path) to check on all nodes. if protocol is omitted, http will be assumed.
-func (r *APIContentCheckRequest) URL(url string) *APIContentCheckRequest {
+// Url Full URL (host and path) to check on all nodes. if protocol is omitted, http will be assumed.
+func (r *APIContentCheckRequest) Url(url string) *APIContentCheckRequest {
 	r.url = &url
 	return r
 }

@@ -1,80 +1,82 @@
-# ComputeACLCreateAclsResponse
+# ComputeAclCreateAclsResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Human readable name of store | [optional] 
-**ID** | Pointer to **string** | An example identifier (UUID). | [optional] 
+**Id** | Pointer to **string** | An example identifier (UUID). | [optional] 
 
 ## Methods
 
-### NewComputeACLCreateAclsResponse
+### NewComputeAclCreateAclsResponse
 
-`func NewComputeACLCreateAclsResponse() *ComputeACLCreateAclsResponse`
+`func NewComputeAclCreateAclsResponse() *ComputeAclCreateAclsResponse`
 
-NewComputeACLCreateAclsResponse instantiates a new ComputeACLCreateAclsResponse object
+NewComputeAclCreateAclsResponse instantiates a new ComputeAclCreateAclsResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewComputeACLCreateAclsResponseWithDefaults
+### NewComputeAclCreateAclsResponseWithDefaults
 
-`func NewComputeACLCreateAclsResponseWithDefaults() *ComputeACLCreateAclsResponse`
+`func NewComputeAclCreateAclsResponseWithDefaults() *ComputeAclCreateAclsResponse`
 
-NewComputeACLCreateAclsResponseWithDefaults instantiates a new ComputeACLCreateAclsResponse object
+NewComputeAclCreateAclsResponseWithDefaults instantiates a new ComputeAclCreateAclsResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetName
 
-`func (o *ComputeACLCreateAclsResponse) GetName() string`
+`func (o *ComputeAclCreateAclsResponse) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *ComputeACLCreateAclsResponse) GetNameOk() (*string, bool)`
+`func (o *ComputeAclCreateAclsResponse) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *ComputeACLCreateAclsResponse) SetName(v string)`
+`func (o *ComputeAclCreateAclsResponse) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *ComputeACLCreateAclsResponse) HasName() bool`
+`func (o *ComputeAclCreateAclsResponse) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
-### GetID
+### GetId
 
-`func (o *ComputeACLCreateAclsResponse) GetID() string`
+`func (o *ComputeAclCreateAclsResponse) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *ComputeACLCreateAclsResponse) GetIDOk() (*string, bool)`
+`func (o *ComputeAclCreateAclsResponse) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *ComputeACLCreateAclsResponse) SetID(v string)`
+`func (o *ComputeAclCreateAclsResponse) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *ComputeACLCreateAclsResponse) HasID() bool`
+`func (o *ComputeAclCreateAclsResponse) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

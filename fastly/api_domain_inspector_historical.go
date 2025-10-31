@@ -37,10 +37,10 @@ type DomainInspectorHistoricalAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetDomainInspectorHistoricalRequest
 	*/
-	GetDomainInspectorHistorical(ctx context.Context, serviceID string) APIGetDomainInspectorHistoricalRequest
+	GetDomainInspectorHistorical(ctx context.Context, serviceId string) APIGetDomainInspectorHistoricalRequest
 
 	// GetDomainInspectorHistoricalExecute executes the request
 	//  @return HistoricalDomainsResponse
@@ -54,7 +54,7 @@ type DomainInspectorHistoricalAPIService service
 type APIGetDomainInspectorHistoricalRequest struct {
 	ctx        context.Context
 	APIService DomainInspectorHistoricalAPI
-	serviceID  string
+	serviceId  string
 	start      *string
 	end        *string
 	downsample *string
@@ -139,14 +139,14 @@ Fetches historical domain metrics for a given Fastly service, optionally filteri
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetDomainInspectorHistoricalRequest
 */
-func (a *DomainInspectorHistoricalAPIService) GetDomainInspectorHistorical(ctx context.Context, serviceID string) APIGetDomainInspectorHistoricalRequest {
+func (a *DomainInspectorHistoricalAPIService) GetDomainInspectorHistorical(ctx context.Context, serviceId string) APIGetDomainInspectorHistoricalRequest {
 	return APIGetDomainInspectorHistoricalRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -166,7 +166,7 @@ func (a *DomainInspectorHistoricalAPIService) GetDomainInspectorHistoricalExecut
 	}
 
 	localVarPath := localBasePath + "/metrics/domains/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

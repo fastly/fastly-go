@@ -24,17 +24,17 @@ type DdosProtectionRule struct {
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
 	// Unique ID of the rule.
-	ID *string `json:"id,omitempty"`
+	Id *string `json:"id,omitempty"`
 	// A human-readable name for the rule.
 	Name *string `json:"name,omitempty"`
 	// Action types for a rule. Supported action values are default, block, log, off. The default action value follows the current protection mode of the associated service.
 	Action *string `json:"action,omitempty"`
 	// Alphanumeric string identifying the customer.
-	CustomerID *string `json:"customer_id,omitempty"`
+	CustomerId *string `json:"customer_id,omitempty"`
 	// Alphanumeric string identifying the service.
-	ServiceID *string `json:"service_id,omitempty"`
+	ServiceId *string `json:"service_id,omitempty"`
 	// Source IP address attribute.
-	SourceIP NullableString `json:"source_ip,omitempty"`
+	SourceIp NullableString `json:"source_ip,omitempty"`
 	// Country code attribute.
 	CountryCode NullableString `json:"country_code,omitempty"`
 	// Host attribute.
@@ -42,7 +42,7 @@ type DdosProtectionRule struct {
 	// ASN attribute.
 	Asn NullableString `json:"asn,omitempty"`
 	// Source IP prefix attribute.
-	SourceIPPrefix NullableString `json:"source_ip_prefix,omitempty"`
+	SourceIpPrefix NullableString `json:"source_ip_prefix,omitempty"`
 	// Attribute category for additional, unlisted attributes used in a rule.
 	AdditionalAttributes []string `json:"additional_attributes,omitempty"`
 	AdditionalProperties map[string]any
@@ -157,36 +157,36 @@ func (o *DdosProtectionRule) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *DdosProtectionRule) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *DdosProtectionRule) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DdosProtectionRule) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *DdosProtectionRule) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *DdosProtectionRule) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *DdosProtectionRule) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *DdosProtectionRule) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *DdosProtectionRule) SetId(v string) {
+	o.Id = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -253,111 +253,111 @@ func (o *DdosProtectionRule) SetAction(v string) {
 	o.Action = &v
 }
 
-// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
-func (o *DdosProtectionRule) GetCustomerID() string {
-	if o == nil || o.CustomerID == nil {
+// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
+func (o *DdosProtectionRule) GetCustomerId() string {
+	if o == nil || o.CustomerId == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerID
+	return *o.CustomerId
 }
 
-// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
+// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DdosProtectionRule) GetCustomerIDOk() (*string, bool) {
-	if o == nil || o.CustomerID == nil {
+func (o *DdosProtectionRule) GetCustomerIdOk() (*string, bool) {
+	if o == nil || o.CustomerId == nil {
 		return nil, false
 	}
-	return o.CustomerID, true
+	return o.CustomerId, true
 }
 
-// HasCustomerID returns a boolean if a field has been set.
-func (o *DdosProtectionRule) HasCustomerID() bool {
-	if o != nil && o.CustomerID != nil {
+// HasCustomerId returns a boolean if a field has been set.
+func (o *DdosProtectionRule) HasCustomerId() bool {
+	if o != nil && o.CustomerId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
-func (o *DdosProtectionRule) SetCustomerID(v string) {
-	o.CustomerID = &v
+// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
+func (o *DdosProtectionRule) SetCustomerId(v string) {
+	o.CustomerId = &v
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *DdosProtectionRule) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *DdosProtectionRule) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DdosProtectionRule) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *DdosProtectionRule) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *DdosProtectionRule) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *DdosProtectionRule) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *DdosProtectionRule) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *DdosProtectionRule) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
-// GetSourceIP returns the SourceIP field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DdosProtectionRule) GetSourceIP() string {
-	if o == nil || o.SourceIP.Get() == nil {
+// GetSourceIp returns the SourceIp field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *DdosProtectionRule) GetSourceIp() string {
+	if o == nil || o.SourceIp.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.SourceIP.Get()
+	return *o.SourceIp.Get()
 }
 
-// GetSourceIPOk returns a tuple with the SourceIP field value if set, nil otherwise
+// GetSourceIpOk returns a tuple with the SourceIp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DdosProtectionRule) GetSourceIPOk() (*string, bool) {
+func (o *DdosProtectionRule) GetSourceIpOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.SourceIP.Get(), o.SourceIP.IsSet()
+	return o.SourceIp.Get(), o.SourceIp.IsSet()
 }
 
-// HasSourceIP returns a boolean if a field has been set.
-func (o *DdosProtectionRule) HasSourceIP() bool {
-	if o != nil && o.SourceIP.IsSet() {
+// HasSourceIp returns a boolean if a field has been set.
+func (o *DdosProtectionRule) HasSourceIp() bool {
+	if o != nil && o.SourceIp.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSourceIP gets a reference to the given NullableString and assigns it to the SourceIP field.
-func (o *DdosProtectionRule) SetSourceIP(v string) {
-	o.SourceIP.Set(&v)
+// SetSourceIp gets a reference to the given NullableString and assigns it to the SourceIp field.
+func (o *DdosProtectionRule) SetSourceIp(v string) {
+	o.SourceIp.Set(&v)
 }
 
-// SetSourceIPNil sets the value for SourceIP to be an explicit nil
-func (o *DdosProtectionRule) SetSourceIPNil() {
-	o.SourceIP.Set(nil)
+// SetSourceIpNil sets the value for SourceIp to be an explicit nil
+func (o *DdosProtectionRule) SetSourceIpNil() {
+	o.SourceIp.Set(nil)
 }
 
-// UnsetSourceIP ensures that no value is present for SourceIP, not even an explicit nil
-func (o *DdosProtectionRule) UnsetSourceIP() {
-	o.SourceIP.Unset()
+// UnsetSourceIp ensures that no value is present for SourceIp, not even an explicit nil
+func (o *DdosProtectionRule) UnsetSourceIp() {
+	o.SourceIp.Unset()
 }
 
 // GetCountryCode returns the CountryCode field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -489,47 +489,47 @@ func (o *DdosProtectionRule) UnsetAsn() {
 	o.Asn.Unset()
 }
 
-// GetSourceIPPrefix returns the SourceIPPrefix field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *DdosProtectionRule) GetSourceIPPrefix() string {
-	if o == nil || o.SourceIPPrefix.Get() == nil {
+// GetSourceIpPrefix returns the SourceIpPrefix field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *DdosProtectionRule) GetSourceIpPrefix() string {
+	if o == nil || o.SourceIpPrefix.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.SourceIPPrefix.Get()
+	return *o.SourceIpPrefix.Get()
 }
 
-// GetSourceIPPrefixOk returns a tuple with the SourceIPPrefix field value if set, nil otherwise
+// GetSourceIpPrefixOk returns a tuple with the SourceIpPrefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *DdosProtectionRule) GetSourceIPPrefixOk() (*string, bool) {
+func (o *DdosProtectionRule) GetSourceIpPrefixOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.SourceIPPrefix.Get(), o.SourceIPPrefix.IsSet()
+	return o.SourceIpPrefix.Get(), o.SourceIpPrefix.IsSet()
 }
 
-// HasSourceIPPrefix returns a boolean if a field has been set.
-func (o *DdosProtectionRule) HasSourceIPPrefix() bool {
-	if o != nil && o.SourceIPPrefix.IsSet() {
+// HasSourceIpPrefix returns a boolean if a field has been set.
+func (o *DdosProtectionRule) HasSourceIpPrefix() bool {
+	if o != nil && o.SourceIpPrefix.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSourceIPPrefix gets a reference to the given NullableString and assigns it to the SourceIPPrefix field.
-func (o *DdosProtectionRule) SetSourceIPPrefix(v string) {
-	o.SourceIPPrefix.Set(&v)
+// SetSourceIpPrefix gets a reference to the given NullableString and assigns it to the SourceIpPrefix field.
+func (o *DdosProtectionRule) SetSourceIpPrefix(v string) {
+	o.SourceIpPrefix.Set(&v)
 }
 
-// SetSourceIPPrefixNil sets the value for SourceIPPrefix to be an explicit nil
-func (o *DdosProtectionRule) SetSourceIPPrefixNil() {
-	o.SourceIPPrefix.Set(nil)
+// SetSourceIpPrefixNil sets the value for SourceIpPrefix to be an explicit nil
+func (o *DdosProtectionRule) SetSourceIpPrefixNil() {
+	o.SourceIpPrefix.Set(nil)
 }
 
-// UnsetSourceIPPrefix ensures that no value is present for SourceIPPrefix, not even an explicit nil
-func (o *DdosProtectionRule) UnsetSourceIPPrefix() {
-	o.SourceIPPrefix.Unset()
+// UnsetSourceIpPrefix ensures that no value is present for SourceIpPrefix, not even an explicit nil
+func (o *DdosProtectionRule) UnsetSourceIpPrefix() {
+	o.SourceIpPrefix.Unset()
 }
 
 // GetAdditionalAttributes returns the AdditionalAttributes field value if set, zero value otherwise.
@@ -574,8 +574,8 @@ func (o DdosProtectionRule) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -583,14 +583,14 @@ func (o DdosProtectionRule) MarshalJSON() ([]byte, error) {
 	if o.Action != nil {
 		toSerialize["action"] = o.Action
 	}
-	if o.CustomerID != nil {
-		toSerialize["customer_id"] = o.CustomerID
+	if o.CustomerId != nil {
+		toSerialize["customer_id"] = o.CustomerId
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
-	if o.SourceIP.IsSet() {
-		toSerialize["source_ip"] = o.SourceIP.Get()
+	if o.SourceIp.IsSet() {
+		toSerialize["source_ip"] = o.SourceIp.Get()
 	}
 	if o.CountryCode.IsSet() {
 		toSerialize["country_code"] = o.CountryCode.Get()
@@ -601,8 +601,8 @@ func (o DdosProtectionRule) MarshalJSON() ([]byte, error) {
 	if o.Asn.IsSet() {
 		toSerialize["asn"] = o.Asn.Get()
 	}
-	if o.SourceIPPrefix.IsSet() {
-		toSerialize["source_ip_prefix"] = o.SourceIPPrefix.Get()
+	if o.SourceIpPrefix.IsSet() {
+		toSerialize["source_ip_prefix"] = o.SourceIpPrefix.Get()
 	}
 	if o.AdditionalAttributes != nil {
 		toSerialize["additional_attributes"] = o.AdditionalAttributes

@@ -36,10 +36,10 @@ type ProductFanoutAPI interface {
 		Disable the Fanout product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIDisableProductFanoutRequest
 	*/
-	DisableProductFanout(ctx context.Context, serviceID string) APIDisableProductFanoutRequest
+	DisableProductFanout(ctx context.Context, serviceId string) APIDisableProductFanoutRequest
 
 	// DisableProductFanoutExecute executes the request
 	DisableProductFanoutExecute(r APIDisableProductFanoutRequest) (*http.Response, error)
@@ -50,10 +50,10 @@ type ProductFanoutAPI interface {
 		Enable the Fanout product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIEnableProductFanoutRequest
 	*/
-	EnableProductFanout(ctx context.Context, serviceID string) APIEnableProductFanoutRequest
+	EnableProductFanout(ctx context.Context, serviceId string) APIEnableProductFanoutRequest
 
 	// EnableProductFanoutExecute executes the request
 	//  @return FanoutResponseBodyEnable
@@ -65,10 +65,10 @@ type ProductFanoutAPI interface {
 		Get the enablement status of the Fanout product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetProductFanoutRequest
 	*/
-	GetProductFanout(ctx context.Context, serviceID string) APIGetProductFanoutRequest
+	GetProductFanout(ctx context.Context, serviceId string) APIGetProductFanoutRequest
 
 	// GetProductFanoutExecute executes the request
 	//  @return FanoutResponseBodyEnable
@@ -96,7 +96,7 @@ type ProductFanoutAPIService service
 type APIDisableProductFanoutRequest struct {
 	ctx        context.Context
 	APIService ProductFanoutAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -110,14 +110,14 @@ DisableProductFanout Disable product
 Disable the Fanout product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIDisableProductFanoutRequest
 */
-func (a *ProductFanoutAPIService) DisableProductFanout(ctx context.Context, serviceID string) APIDisableProductFanoutRequest {
+func (a *ProductFanoutAPIService) DisableProductFanout(ctx context.Context, serviceId string) APIDisableProductFanoutRequest {
 	return APIDisableProductFanoutRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -135,7 +135,7 @@ func (a *ProductFanoutAPIService) DisableProductFanoutExecute(r APIDisableProduc
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/fanout/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -217,7 +217,7 @@ func (a *ProductFanoutAPIService) DisableProductFanoutExecute(r APIDisableProduc
 type APIEnableProductFanoutRequest struct {
 	ctx        context.Context
 	APIService ProductFanoutAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -231,14 +231,14 @@ EnableProductFanout Enable product
 Enable the Fanout product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIEnableProductFanoutRequest
 */
-func (a *ProductFanoutAPIService) EnableProductFanout(ctx context.Context, serviceID string) APIEnableProductFanoutRequest {
+func (a *ProductFanoutAPIService) EnableProductFanout(ctx context.Context, serviceId string) APIEnableProductFanoutRequest {
 	return APIEnableProductFanoutRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -258,7 +258,7 @@ func (a *ProductFanoutAPIService) EnableProductFanoutExecute(r APIEnableProductF
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/fanout/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -349,7 +349,7 @@ func (a *ProductFanoutAPIService) EnableProductFanoutExecute(r APIEnableProductF
 type APIGetProductFanoutRequest struct {
 	ctx        context.Context
 	APIService ProductFanoutAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -363,14 +363,14 @@ GetProductFanout Get product enablement status
 Get the enablement status of the Fanout product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetProductFanoutRequest
 */
-func (a *ProductFanoutAPIService) GetProductFanout(ctx context.Context, serviceID string) APIGetProductFanoutRequest {
+func (a *ProductFanoutAPIService) GetProductFanout(ctx context.Context, serviceId string) APIGetProductFanoutRequest {
 	return APIGetProductFanoutRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -390,7 +390,7 @@ func (a *ProductFanoutAPIService) GetProductFanoutExecute(r APIGetProductFanoutR
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/fanout/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

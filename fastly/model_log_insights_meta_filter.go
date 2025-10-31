@@ -19,7 +19,7 @@ import (
 // LogInsightsMetaFilter The filters that were supplied in the request.
 type LogInsightsMetaFilter struct {
 	// Specifies the ID of the service for which data should be returned.
-	ServiceID *string `json:"service_id,omitempty"`
+	ServiceId *string `json:"service_id,omitempty"`
 	// Start time for the query as supplied in the request.
 	Start *string `json:"start,omitempty"`
 	// End time for the query as supplied in the request.
@@ -54,36 +54,36 @@ func NewLogInsightsMetaFilterWithDefaults() *LogInsightsMetaFilter {
 	return &this
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *LogInsightsMetaFilter) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *LogInsightsMetaFilter) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogInsightsMetaFilter) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *LogInsightsMetaFilter) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *LogInsightsMetaFilter) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *LogInsightsMetaFilter) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *LogInsightsMetaFilter) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *LogInsightsMetaFilter) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetStart returns the Start field value if set, zero value otherwise.
@@ -218,8 +218,8 @@ func (o *LogInsightsMetaFilter) SetLimit(v int32) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o LogInsightsMetaFilter) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.Start != nil {
 		toSerialize["start"] = o.Start

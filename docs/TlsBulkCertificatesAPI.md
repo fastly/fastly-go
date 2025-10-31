@@ -1,19 +1,19 @@
-# TLSBulkCertificatesAPI
+# TlsBulkCertificatesAPI
 
 > [!NOTE]
 > All URIs are relative to `https://api.fastly.com`
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteBulkTLSCert**](TlsBulkCertificatesAPI.md#DeleteBulkTLSCert) | **DELETE** `/tls/bulk/certificates/{certificate_id}` | Delete a certificate
-[**GetTLSBulkCert**](TlsBulkCertificatesAPI.md#GetTLSBulkCert) | **GET** `/tls/bulk/certificates/{certificate_id}` | Get a certificate
-[**ListTLSBulkCerts**](TlsBulkCertificatesAPI.md#ListTLSBulkCerts) | **GET** `/tls/bulk/certificates` | List certificates
-[**UpdateBulkTLSCert**](TlsBulkCertificatesAPI.md#UpdateBulkTLSCert) | **PATCH** `/tls/bulk/certificates/{certificate_id}` | Update a certificate
-[**UploadTLSBulkCert**](TlsBulkCertificatesAPI.md#UploadTLSBulkCert) | **POST** `/tls/bulk/certificates` | Upload a certificate
+[**DeleteBulkTlsCert**](TlsBulkCertificatesAPI.md#DeleteBulkTlsCert) | **DELETE** `/tls/bulk/certificates/{certificate_id}` | Delete a certificate
+[**GetTlsBulkCert**](TlsBulkCertificatesAPI.md#GetTlsBulkCert) | **GET** `/tls/bulk/certificates/{certificate_id}` | Get a certificate
+[**ListTlsBulkCerts**](TlsBulkCertificatesAPI.md#ListTlsBulkCerts) | **GET** `/tls/bulk/certificates` | List certificates
+[**UpdateBulkTlsCert**](TlsBulkCertificatesAPI.md#UpdateBulkTlsCert) | **PATCH** `/tls/bulk/certificates/{certificate_id}` | Update a certificate
+[**UploadTlsBulkCert**](TlsBulkCertificatesAPI.md#UploadTlsBulkCert) | **POST** `/tls/bulk/certificates` | Upload a certificate
 
 
 
-## DeleteBulkTLSCert
+## DeleteBulkTlsCert
 
 Delete a certificate
 
@@ -32,14 +32,14 @@ import (
 )
 
 func main() {
-    certificateID := "certificateId_example" // string | Alphanumeric string identifying a TLS bulk certificate.
+    certificateId := "certificateId_example" // string | Alphanumeric string identifying a TLS bulk certificate.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSBulkCertificatesAPI.DeleteBulkTLSCert(ctx, certificateID).Execute()
+    resp, r, err := apiClient.TlsBulkCertificatesAPI.DeleteBulkTlsCert(ctx, certificateId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSBulkCertificatesAPI.DeleteBulkTLSCert`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsBulkCertificatesAPI.DeleteBulkTlsCert`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -51,11 +51,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**certificateID** | **string** | Alphanumeric string identifying a TLS bulk certificate. | 
+**certificateId** | **string** | Alphanumeric string identifying a TLS bulk certificate. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteBulkTLSCertRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteBulkTlsCertRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## GetTLSBulkCert
+## GetTlsBulkCert
 
 Get a certificate
 
@@ -97,18 +97,18 @@ import (
 )
 
 func main() {
-    certificateID := "certificateId_example" // string | Alphanumeric string identifying a TLS bulk certificate.
+    certificateId := "certificateId_example" // string | Alphanumeric string identifying a TLS bulk certificate.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSBulkCertificatesAPI.GetTLSBulkCert(ctx, certificateID).Execute()
+    resp, r, err := apiClient.TlsBulkCertificatesAPI.GetTlsBulkCert(ctx, certificateId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSBulkCertificatesAPI.GetTLSBulkCert`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsBulkCertificatesAPI.GetTlsBulkCert`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetTLSBulkCert`: TLSBulkCertificateResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSBulkCertificatesAPI.GetTLSBulkCert`: %v\n", resp)
+    // response from `GetTlsBulkCert`: TlsBulkCertificateResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsBulkCertificatesAPI.GetTlsBulkCert`: %v\n", resp)
 }
 ```
 
@@ -118,11 +118,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**certificateID** | **string** | Alphanumeric string identifying a TLS bulk certificate. | 
+**certificateId** | **string** | Alphanumeric string identifying a TLS bulk certificate. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetTLSBulkCertRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTlsBulkCertRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TLSBulkCertificateResponse**](TlsBulkCertificateResponse.md)
+[**TlsBulkCertificateResponse**](TlsBulkCertificateResponse.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## ListTLSBulkCerts
+## ListTlsBulkCerts
 
 List certificates
 
@@ -164,7 +164,7 @@ import (
 )
 
 func main() {
-    filterTLSDomainID := "filterTLSDomainId_example" // string | Filter certificates by their matching, fully-qualified domain name. (optional)
+    filterTlsDomainId := "filterTlsDomainId_example" // string | Filter certificates by their matching, fully-qualified domain name. (optional)
     filterNotBefore := "filterNotBefore_example" // string | Filter the returned certificates by not_before date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_before][gte]=2020-05-05).  (optional)
     filterNotAfter := "filterNotAfter_example" // string | Filter the returned certificates by expiry date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_after][lte]=2020-05-05).  (optional)
     pageNumber := int32(1) // int32 | Current page. (optional)
@@ -174,13 +174,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSBulkCertificatesAPI.ListTLSBulkCerts(ctx).FilterTLSDomainID(filterTLSDomainID).FilterNotBefore(filterNotBefore).FilterNotAfter(filterNotAfter).PageNumber(pageNumber).PageSize(pageSize).Sort(sort).Execute()
+    resp, r, err := apiClient.TlsBulkCertificatesAPI.ListTlsBulkCerts(ctx).FilterTlsDomainId(filterTlsDomainId).FilterNotBefore(filterNotBefore).FilterNotAfter(filterNotAfter).PageNumber(pageNumber).PageSize(pageSize).Sort(sort).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSBulkCertificatesAPI.ListTLSBulkCerts`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsBulkCertificatesAPI.ListTlsBulkCerts`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListTLSBulkCerts`: TLSBulkCertificatesResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSBulkCertificatesAPI.ListTLSBulkCerts`: %v\n", resp)
+    // response from `ListTlsBulkCerts`: TlsBulkCertificatesResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsBulkCertificatesAPI.ListTlsBulkCerts`: %v\n", resp)
 }
 ```
 
@@ -190,16 +190,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListTLSBulkCertsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListTlsBulkCertsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filterTLSDomainID** | **string** | Filter certificates by their matching, fully-qualified domain name. |  **filterNotBefore** | **string** | Filter the returned certificates by not_before date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_before][gte]&#x3D;2020-05-05).  |  **filterNotAfter** | **string** | Filter the returned certificates by expiry date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_after][lte]&#x3D;2020-05-05).  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | The order in which to list the results by creation date. | [default to &quot;created_at&quot;]
+ **filterTlsDomainId** | **string** | Filter certificates by their matching, fully-qualified domain name. |  **filterNotBefore** | **string** | Filter the returned certificates by not_before date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_before][gte]&#x3D;2020-05-05).  |  **filterNotAfter** | **string** | Filter the returned certificates by expiry date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_after][lte]&#x3D;2020-05-05).  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | The order in which to list the results by creation date. | [default to &quot;created_at&quot;]
 
 ### Return type
 
-[**TLSBulkCertificatesResponse**](TlsBulkCertificatesResponse.md)
+[**TlsBulkCertificatesResponse**](TlsBulkCertificatesResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## UpdateBulkTLSCert
+## UpdateBulkTlsCert
 
 Update a certificate
 
@@ -232,19 +232,19 @@ import (
 )
 
 func main() {
-    certificateID := "certificateId_example" // string | Alphanumeric string identifying a TLS bulk certificate.
-    tlsBulkCertificate := *openapiclient.NewTLSBulkCertificate() // TLSBulkCertificate |  (optional)
+    certificateId := "certificateId_example" // string | Alphanumeric string identifying a TLS bulk certificate.
+    tlsBulkCertificate := *openapiclient.NewTlsBulkCertificate() // TlsBulkCertificate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSBulkCertificatesAPI.UpdateBulkTLSCert(ctx, certificateID).TLSBulkCertificate(tlsBulkCertificate).Execute()
+    resp, r, err := apiClient.TlsBulkCertificatesAPI.UpdateBulkTlsCert(ctx, certificateId).TlsBulkCertificate(tlsBulkCertificate).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSBulkCertificatesAPI.UpdateBulkTLSCert`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsBulkCertificatesAPI.UpdateBulkTlsCert`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateBulkTLSCert`: TLSBulkCertificateResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSBulkCertificatesAPI.UpdateBulkTLSCert`: %v\n", resp)
+    // response from `UpdateBulkTlsCert`: TlsBulkCertificateResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsBulkCertificatesAPI.UpdateBulkTlsCert`: %v\n", resp)
 }
 ```
 
@@ -254,20 +254,20 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**certificateID** | **string** | Alphanumeric string identifying a TLS bulk certificate. | 
+**certificateId** | **string** | Alphanumeric string identifying a TLS bulk certificate. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateBulkTLSCertRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateBulkTlsCertRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tlsBulkCertificate** | [**TLSBulkCertificate**](TlsBulkCertificate.md) |  | 
+ **tlsBulkCertificate** | [**TlsBulkCertificate**](TlsBulkCertificate.md) |  | 
 
 ### Return type
 
-[**TLSBulkCertificateResponse**](TlsBulkCertificateResponse.md)
+[**TlsBulkCertificateResponse**](TlsBulkCertificateResponse.md)
 
 ### Authorization
 
@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## UploadTLSBulkCert
+## UploadTlsBulkCert
 
 Upload a certificate
 
@@ -300,18 +300,18 @@ import (
 )
 
 func main() {
-    tlsBulkCertificate := *openapiclient.NewTLSBulkCertificate() // TLSBulkCertificate |  (optional)
+    tlsBulkCertificate := *openapiclient.NewTlsBulkCertificate() // TlsBulkCertificate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSBulkCertificatesAPI.UploadTLSBulkCert(ctx).TLSBulkCertificate(tlsBulkCertificate).Execute()
+    resp, r, err := apiClient.TlsBulkCertificatesAPI.UploadTlsBulkCert(ctx).TlsBulkCertificate(tlsBulkCertificate).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSBulkCertificatesAPI.UploadTLSBulkCert`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsBulkCertificatesAPI.UploadTlsBulkCert`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UploadTLSBulkCert`: TLSBulkCertificateResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSBulkCertificatesAPI.UploadTLSBulkCert`: %v\n", resp)
+    // response from `UploadTlsBulkCert`: TlsBulkCertificateResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsBulkCertificatesAPI.UploadTlsBulkCert`: %v\n", resp)
 }
 ```
 
@@ -321,16 +321,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUploadTLSBulkCertRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUploadTlsBulkCertRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tlsBulkCertificate** | [**TLSBulkCertificate**](TlsBulkCertificate.md) |  | 
+ **tlsBulkCertificate** | [**TlsBulkCertificate**](TlsBulkCertificate.md) |  | 
 
 ### Return type
 
-[**TLSBulkCertificateResponse**](TlsBulkCertificateResponse.md)
+[**TlsBulkCertificateResponse**](TlsBulkCertificateResponse.md)
 
 ### Authorization
 
@@ -342,3 +342,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/vnd.api+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

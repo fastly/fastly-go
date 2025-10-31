@@ -36,10 +36,10 @@ type ProductNgwafAPI interface {
 		Disable the Next-Gen WAF product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIDisableProductNgwafRequest
 	*/
-	DisableProductNgwaf(ctx context.Context, serviceID string) APIDisableProductNgwafRequest
+	DisableProductNgwaf(ctx context.Context, serviceId string) APIDisableProductNgwafRequest
 
 	// DisableProductNgwafExecute executes the request
 	DisableProductNgwafExecute(r APIDisableProductNgwafRequest) (*http.Response, error)
@@ -50,10 +50,10 @@ type ProductNgwafAPI interface {
 		Enable the Next-Gen WAF product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIEnableProductNgwafRequest
 	*/
-	EnableProductNgwaf(ctx context.Context, serviceID string) APIEnableProductNgwafRequest
+	EnableProductNgwaf(ctx context.Context, serviceId string) APIEnableProductNgwafRequest
 
 	// EnableProductNgwafExecute executes the request
 	//  @return NgwafResponseEnable
@@ -65,10 +65,10 @@ type ProductNgwafAPI interface {
 		Get the enablement status of the Next-Gen WAF product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetProductNgwafRequest
 	*/
-	GetProductNgwaf(ctx context.Context, serviceID string) APIGetProductNgwafRequest
+	GetProductNgwaf(ctx context.Context, serviceId string) APIGetProductNgwafRequest
 
 	// GetProductNgwafExecute executes the request
 	//  @return NgwafResponseEnable
@@ -80,10 +80,10 @@ type ProductNgwafAPI interface {
 		Get configuration of the Next-Gen WAF product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetProductNgwafConfigurationRequest
 	*/
-	GetProductNgwafConfiguration(ctx context.Context, serviceID string) APIGetProductNgwafConfigurationRequest
+	GetProductNgwafConfiguration(ctx context.Context, serviceId string) APIGetProductNgwafConfigurationRequest
 
 	// GetProductNgwafConfigurationExecute executes the request
 	//  @return NgwafResponseConfigure
@@ -109,10 +109,10 @@ type ProductNgwafAPI interface {
 		Update configuration of the Next-Gen WAF product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APISetProductNgwafConfigurationRequest
 	*/
-	SetProductNgwafConfiguration(ctx context.Context, serviceID string) APISetProductNgwafConfigurationRequest
+	SetProductNgwafConfiguration(ctx context.Context, serviceId string) APISetProductNgwafConfigurationRequest
 
 	// SetProductNgwafConfigurationExecute executes the request
 	//  @return NgwafResponseConfigure
@@ -126,7 +126,7 @@ type ProductNgwafAPIService service
 type APIDisableProductNgwafRequest struct {
 	ctx        context.Context
 	APIService ProductNgwafAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -140,14 +140,14 @@ DisableProductNgwaf Disable product
 Disable the Next-Gen WAF product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIDisableProductNgwafRequest
 */
-func (a *ProductNgwafAPIService) DisableProductNgwaf(ctx context.Context, serviceID string) APIDisableProductNgwafRequest {
+func (a *ProductNgwafAPIService) DisableProductNgwaf(ctx context.Context, serviceId string) APIDisableProductNgwafRequest {
 	return APIDisableProductNgwafRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -165,7 +165,7 @@ func (a *ProductNgwafAPIService) DisableProductNgwafExecute(r APIDisableProductN
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/ngwaf/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -247,7 +247,7 @@ func (a *ProductNgwafAPIService) DisableProductNgwafExecute(r APIDisableProductN
 type APIEnableProductNgwafRequest struct {
 	ctx                context.Context
 	APIService         ProductNgwafAPI
-	serviceID          string
+	serviceId          string
 	ngwafRequestEnable *NgwafRequestEnable
 }
 
@@ -268,14 +268,14 @@ EnableProductNgwaf Enable product
 Enable the Next-Gen WAF product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIEnableProductNgwafRequest
 */
-func (a *ProductNgwafAPIService) EnableProductNgwaf(ctx context.Context, serviceID string) APIEnableProductNgwafRequest {
+func (a *ProductNgwafAPIService) EnableProductNgwaf(ctx context.Context, serviceId string) APIEnableProductNgwafRequest {
 	return APIEnableProductNgwafRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -295,7 +295,7 @@ func (a *ProductNgwafAPIService) EnableProductNgwafExecute(r APIEnableProductNgw
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/ngwaf/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -388,7 +388,7 @@ func (a *ProductNgwafAPIService) EnableProductNgwafExecute(r APIEnableProductNgw
 type APIGetProductNgwafRequest struct {
 	ctx        context.Context
 	APIService ProductNgwafAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -402,14 +402,14 @@ GetProductNgwaf Get product enablement status
 Get the enablement status of the Next-Gen WAF product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetProductNgwafRequest
 */
-func (a *ProductNgwafAPIService) GetProductNgwaf(ctx context.Context, serviceID string) APIGetProductNgwafRequest {
+func (a *ProductNgwafAPIService) GetProductNgwaf(ctx context.Context, serviceId string) APIGetProductNgwafRequest {
 	return APIGetProductNgwafRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -429,7 +429,7 @@ func (a *ProductNgwafAPIService) GetProductNgwafExecute(r APIGetProductNgwafRequ
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/ngwaf/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -520,7 +520,7 @@ func (a *ProductNgwafAPIService) GetProductNgwafExecute(r APIGetProductNgwafRequ
 type APIGetProductNgwafConfigurationRequest struct {
 	ctx        context.Context
 	APIService ProductNgwafAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -534,14 +534,14 @@ GetProductNgwafConfiguration Get configuration
 Get configuration of the Next-Gen WAF product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetProductNgwafConfigurationRequest
 */
-func (a *ProductNgwafAPIService) GetProductNgwafConfiguration(ctx context.Context, serviceID string) APIGetProductNgwafConfigurationRequest {
+func (a *ProductNgwafAPIService) GetProductNgwafConfiguration(ctx context.Context, serviceId string) APIGetProductNgwafConfigurationRequest {
 	return APIGetProductNgwafConfigurationRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -561,7 +561,7 @@ func (a *ProductNgwafAPIService) GetProductNgwafConfigurationExecute(r APIGetPro
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/ngwaf/services/{service_id}/configuration"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -780,7 +780,7 @@ func (a *ProductNgwafAPIService) GetServicesProductNgwafExecute(r APIGetServices
 type APISetProductNgwafConfigurationRequest struct {
 	ctx                             context.Context
 	APIService                      ProductNgwafAPI
-	serviceID                       string
+	serviceId                       string
 	ngwafRequestUpdateConfiguration *NgwafRequestUpdateConfiguration
 }
 
@@ -801,14 +801,14 @@ SetProductNgwafConfiguration Update configuration
 Update configuration of the Next-Gen WAF product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APISetProductNgwafConfigurationRequest
 */
-func (a *ProductNgwafAPIService) SetProductNgwafConfiguration(ctx context.Context, serviceID string) APISetProductNgwafConfigurationRequest {
+func (a *ProductNgwafAPIService) SetProductNgwafConfiguration(ctx context.Context, serviceId string) APISetProductNgwafConfigurationRequest {
 	return APISetProductNgwafConfigurationRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -828,7 +828,7 @@ func (a *ProductNgwafAPIService) SetProductNgwafConfigurationExecute(r APISetPro
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/ngwaf/services/{service_id}/configuration"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

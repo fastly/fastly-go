@@ -36,11 +36,11 @@ type LoggingBigqueryAPI interface {
 		Create a BigQuery logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogBigqueryRequest
 	*/
-	CreateLogBigquery(ctx context.Context, serviceID string, versionID int32) APICreateLogBigqueryRequest
+	CreateLogBigquery(ctx context.Context, serviceId string, versionId int32) APICreateLogBigqueryRequest
 
 	// CreateLogBigqueryExecute executes the request
 	//  @return LoggingBigqueryResponse
@@ -52,12 +52,12 @@ type LoggingBigqueryAPI interface {
 		Delete a BigQuery logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingBigqueryName The name for the real-time logging configuration.
 		 @return APIDeleteLogBigqueryRequest
 	*/
-	DeleteLogBigquery(ctx context.Context, serviceID string, versionID int32, loggingBigqueryName string) APIDeleteLogBigqueryRequest
+	DeleteLogBigquery(ctx context.Context, serviceId string, versionId int32, loggingBigqueryName string) APIDeleteLogBigqueryRequest
 
 	// DeleteLogBigqueryExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingBigqueryAPI interface {
 		Get the details for a BigQuery logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingBigqueryName The name for the real-time logging configuration.
 		 @return APIGetLogBigqueryRequest
 	*/
-	GetLogBigquery(ctx context.Context, serviceID string, versionID int32, loggingBigqueryName string) APIGetLogBigqueryRequest
+	GetLogBigquery(ctx context.Context, serviceId string, versionId int32, loggingBigqueryName string) APIGetLogBigqueryRequest
 
 	// GetLogBigqueryExecute executes the request
 	//  @return LoggingBigqueryResponse
@@ -86,11 +86,11 @@ type LoggingBigqueryAPI interface {
 		List all of the BigQuery logging objects for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogBigqueryRequest
 	*/
-	ListLogBigquery(ctx context.Context, serviceID string, versionID int32) APIListLogBigqueryRequest
+	ListLogBigquery(ctx context.Context, serviceId string, versionId int32) APIListLogBigqueryRequest
 
 	// ListLogBigqueryExecute executes the request
 	//  @return []LoggingBigqueryResponse
@@ -102,12 +102,12 @@ type LoggingBigqueryAPI interface {
 		Update a BigQuery logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingBigqueryName The name for the real-time logging configuration.
 		 @return APIUpdateLogBigqueryRequest
 	*/
-	UpdateLogBigquery(ctx context.Context, serviceID string, versionID int32, loggingBigqueryName string) APIUpdateLogBigqueryRequest
+	UpdateLogBigquery(ctx context.Context, serviceId string, versionId int32, loggingBigqueryName string) APIUpdateLogBigqueryRequest
 
 	// UpdateLogBigqueryExecute executes the request
 	//  @return LoggingBigqueryResponse
@@ -121,8 +121,8 @@ type LoggingBigqueryAPIService service
 type APICreateLogBigqueryRequest struct {
 	ctx                 context.Context
 	APIService          LoggingBigqueryAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -135,7 +135,7 @@ type APICreateLogBigqueryRequest struct {
 	dataset             *string
 	table               *string
 	templateSuffix      *string
-	projectID           *string
+	projectId           *string
 }
 
 // Name The name of the BigQuery logging object. Used as a primary key for API access.
@@ -210,9 +210,9 @@ func (r *APICreateLogBigqueryRequest) TemplateSuffix(templateSuffix string) *API
 	return r
 }
 
-// ProjectID Your Google Cloud Platform project ID. Required
-func (r *APICreateLogBigqueryRequest) ProjectID(projectID string) *APICreateLogBigqueryRequest {
-	r.projectID = &projectID
+// ProjectId Your Google Cloud Platform project ID. Required
+func (r *APICreateLogBigqueryRequest) ProjectId(projectId string) *APICreateLogBigqueryRequest {
+	r.projectId = &projectId
 	return r
 }
 
@@ -227,16 +227,16 @@ CreateLogBigquery Create a BigQuery log endpoint
 Create a BigQuery logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogBigqueryRequest
 */
-func (a *LoggingBigqueryAPIService) CreateLogBigquery(ctx context.Context, serviceID string, versionID int32) APICreateLogBigqueryRequest {
+func (a *LoggingBigqueryAPIService) CreateLogBigquery(ctx context.Context, serviceId string, versionId int32) APICreateLogBigqueryRequest {
 	return APICreateLogBigqueryRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -256,8 +256,8 @@ func (a *LoggingBigqueryAPIService) CreateLogBigqueryExecute(r APICreateLogBigqu
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/bigquery"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -316,8 +316,8 @@ func (a *LoggingBigqueryAPIService) CreateLogBigqueryExecute(r APICreateLogBigqu
 	if r.templateSuffix != nil {
 		localVarFormParams.Add("template_suffix", parameterToString(*r.templateSuffix, ""))
 	}
-	if r.projectID != nil {
-		localVarFormParams.Add("project_id", parameterToString(*r.projectID, ""))
+	if r.projectId != nil {
+		localVarFormParams.Add("project_id", parameterToString(*r.projectId, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -387,8 +387,8 @@ func (a *LoggingBigqueryAPIService) CreateLogBigqueryExecute(r APICreateLogBigqu
 type APIDeleteLogBigqueryRequest struct {
 	ctx                 context.Context
 	APIService          LoggingBigqueryAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingBigqueryName string
 }
 
@@ -403,17 +403,17 @@ DeleteLogBigquery Delete a BigQuery log endpoint
 Delete a BigQuery logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingBigqueryName The name for the real-time logging configuration.
  @return APIDeleteLogBigqueryRequest
 */
-func (a *LoggingBigqueryAPIService) DeleteLogBigquery(ctx context.Context, serviceID string, versionID int32, loggingBigqueryName string) APIDeleteLogBigqueryRequest {
+func (a *LoggingBigqueryAPIService) DeleteLogBigquery(ctx context.Context, serviceId string, versionId int32, loggingBigqueryName string) APIDeleteLogBigqueryRequest {
 	return APIDeleteLogBigqueryRequest{
 		APIService:          a,
 		ctx:                 ctx,
-		serviceID:           serviceID,
-		versionID:           versionID,
+		serviceId:           serviceId,
+		versionId:           versionId,
 		loggingBigqueryName: loggingBigqueryName,
 	}
 }
@@ -434,8 +434,8 @@ func (a *LoggingBigqueryAPIService) DeleteLogBigqueryExecute(r APIDeleteLogBigqu
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/bigquery/{logging_bigquery_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_bigquery_name"+"}", gourl.PathEscape(parameterToString(r.loggingBigqueryName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -527,8 +527,8 @@ func (a *LoggingBigqueryAPIService) DeleteLogBigqueryExecute(r APIDeleteLogBigqu
 type APIGetLogBigqueryRequest struct {
 	ctx                 context.Context
 	APIService          LoggingBigqueryAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingBigqueryName string
 }
 
@@ -543,17 +543,17 @@ GetLogBigquery Get a BigQuery log endpoint
 Get the details for a BigQuery logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingBigqueryName The name for the real-time logging configuration.
  @return APIGetLogBigqueryRequest
 */
-func (a *LoggingBigqueryAPIService) GetLogBigquery(ctx context.Context, serviceID string, versionID int32, loggingBigqueryName string) APIGetLogBigqueryRequest {
+func (a *LoggingBigqueryAPIService) GetLogBigquery(ctx context.Context, serviceId string, versionId int32, loggingBigqueryName string) APIGetLogBigqueryRequest {
 	return APIGetLogBigqueryRequest{
 		APIService:          a,
 		ctx:                 ctx,
-		serviceID:           serviceID,
-		versionID:           versionID,
+		serviceId:           serviceId,
+		versionId:           versionId,
 		loggingBigqueryName: loggingBigqueryName,
 	}
 }
@@ -574,8 +574,8 @@ func (a *LoggingBigqueryAPIService) GetLogBigqueryExecute(r APIGetLogBigqueryReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/bigquery/{logging_bigquery_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_bigquery_name"+"}", gourl.PathEscape(parameterToString(r.loggingBigqueryName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -667,8 +667,8 @@ func (a *LoggingBigqueryAPIService) GetLogBigqueryExecute(r APIGetLogBigqueryReq
 type APIListLogBigqueryRequest struct {
 	ctx        context.Context
 	APIService LoggingBigqueryAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -682,16 +682,16 @@ ListLogBigquery List BigQuery log endpoints
 List all of the BigQuery logging objects for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogBigqueryRequest
 */
-func (a *LoggingBigqueryAPIService) ListLogBigquery(ctx context.Context, serviceID string, versionID int32) APIListLogBigqueryRequest {
+func (a *LoggingBigqueryAPIService) ListLogBigquery(ctx context.Context, serviceId string, versionId int32) APIListLogBigqueryRequest {
 	return APIListLogBigqueryRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -711,8 +711,8 @@ func (a *LoggingBigqueryAPIService) ListLogBigqueryExecute(r APIListLogBigqueryR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/bigquery"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -803,8 +803,8 @@ func (a *LoggingBigqueryAPIService) ListLogBigqueryExecute(r APIListLogBigqueryR
 type APIUpdateLogBigqueryRequest struct {
 	ctx                 context.Context
 	APIService          LoggingBigqueryAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingBigqueryName string
 	name                *string
 	placement           *string
@@ -818,7 +818,7 @@ type APIUpdateLogBigqueryRequest struct {
 	dataset             *string
 	table               *string
 	templateSuffix      *string
-	projectID           *string
+	projectId           *string
 }
 
 // Name The name of the BigQuery logging object. Used as a primary key for API access.
@@ -893,9 +893,9 @@ func (r *APIUpdateLogBigqueryRequest) TemplateSuffix(templateSuffix string) *API
 	return r
 }
 
-// ProjectID Your Google Cloud Platform project ID. Required
-func (r *APIUpdateLogBigqueryRequest) ProjectID(projectID string) *APIUpdateLogBigqueryRequest {
-	r.projectID = &projectID
+// ProjectId Your Google Cloud Platform project ID. Required
+func (r *APIUpdateLogBigqueryRequest) ProjectId(projectId string) *APIUpdateLogBigqueryRequest {
+	r.projectId = &projectId
 	return r
 }
 
@@ -910,17 +910,17 @@ UpdateLogBigquery Update a BigQuery log endpoint
 Update a BigQuery logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingBigqueryName The name for the real-time logging configuration.
  @return APIUpdateLogBigqueryRequest
 */
-func (a *LoggingBigqueryAPIService) UpdateLogBigquery(ctx context.Context, serviceID string, versionID int32, loggingBigqueryName string) APIUpdateLogBigqueryRequest {
+func (a *LoggingBigqueryAPIService) UpdateLogBigquery(ctx context.Context, serviceId string, versionId int32, loggingBigqueryName string) APIUpdateLogBigqueryRequest {
 	return APIUpdateLogBigqueryRequest{
 		APIService:          a,
 		ctx:                 ctx,
-		serviceID:           serviceID,
-		versionID:           versionID,
+		serviceId:           serviceId,
+		versionId:           versionId,
 		loggingBigqueryName: loggingBigqueryName,
 	}
 }
@@ -941,8 +941,8 @@ func (a *LoggingBigqueryAPIService) UpdateLogBigqueryExecute(r APIUpdateLogBigqu
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/bigquery/{logging_bigquery_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_bigquery_name"+"}", gourl.PathEscape(parameterToString(r.loggingBigqueryName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -1002,8 +1002,8 @@ func (a *LoggingBigqueryAPIService) UpdateLogBigqueryExecute(r APIUpdateLogBigqu
 	if r.templateSuffix != nil {
 		localVarFormParams.Add("template_suffix", parameterToString(*r.templateSuffix, ""))
 	}
-	if r.projectID != nil {
-		localVarFormParams.Add("project_id", parameterToString(*r.projectID, ""))
+	if r.projectId != nil {
+		localVarFormParams.Add("project_id", parameterToString(*r.projectId, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

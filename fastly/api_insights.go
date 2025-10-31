@@ -52,7 +52,7 @@ type APIGetLogInsightsRequest struct {
 	ctx              context.Context
 	APIService       InsightsAPI
 	visualization    *string
-	serviceID        *string
+	serviceId        *string
 	start            *string
 	end              *string
 	pops             *string
@@ -67,9 +67,9 @@ func (r *APIGetLogInsightsRequest) Visualization(visualization string) *APIGetLo
 	return r
 }
 
-// ServiceID returns a pointer to a request.
-func (r *APIGetLogInsightsRequest) ServiceID(serviceID string) *APIGetLogInsightsRequest {
-	r.serviceID = &serviceID
+// ServiceId returns a pointer to a request.
+func (r *APIGetLogInsightsRequest) ServiceId(serviceId string) *APIGetLogInsightsRequest {
+	r.serviceId = &serviceId
 	return r
 }
 
@@ -152,8 +152,8 @@ func (a *InsightsAPIService) GetLogInsightsExecute(r APIGetLogInsightsRequest) (
 	if r.visualization == nil {
 		return localVarReturnValue, nil, reportError("visualization is required and must be specified")
 	}
-	if r.serviceID == nil {
-		return localVarReturnValue, nil, reportError("serviceID is required and must be specified")
+	if r.serviceId == nil {
+		return localVarReturnValue, nil, reportError("serviceId is required and must be specified")
 	}
 	if r.start == nil {
 		return localVarReturnValue, nil, reportError("start is required and must be specified")
@@ -163,7 +163,7 @@ func (a *InsightsAPIService) GetLogInsightsExecute(r APIGetLogInsightsRequest) (
 	}
 
 	localVarQueryParams.Add("visualization", parameterToString(*r.visualization, ""))
-	localVarQueryParams.Add("service_id", parameterToString(*r.serviceID, ""))
+	localVarQueryParams.Add("service_id", parameterToString(*r.serviceId, ""))
 	localVarQueryParams.Add("start", parameterToString(*r.start, ""))
 	localVarQueryParams.Add("end", parameterToString(*r.end, ""))
 	if r.pops != nil {

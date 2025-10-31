@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BucketName** | Pointer to **string** | The name of the GCS bucket. | [optional] 
 **Path** | Pointer to **string** |  | [optional] [default to "/"]
 **PublicKey** | Pointer to **NullableString** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to "null"]
-**ProjectID** | Pointer to **string** | Your Google Cloud Platform project ID. Required | [optional] 
+**ProjectId** | Pointer to **string** | Your Google Cloud Platform project ID. Required | [optional] 
 
 ## Methods
 
@@ -113,30 +113,32 @@ HasPublicKey returns a boolean if a field has been set.
 `func (o *LoggingGcsAdditional) UnsetPublicKey()`
 
 UnsetPublicKey ensures that no value is present for PublicKey, not even an explicit nil
-### GetProjectID
+### GetProjectId
 
-`func (o *LoggingGcsAdditional) GetProjectID() string`
+`func (o *LoggingGcsAdditional) GetProjectId() string`
 
-GetProjectID returns the ProjectID field if non-nil, zero value otherwise.
+GetProjectId returns the ProjectId field if non-nil, zero value otherwise.
 
-### GetProjectIDOk
+### GetProjectIdOk
 
-`func (o *LoggingGcsAdditional) GetProjectIDOk() (*string, bool)`
+`func (o *LoggingGcsAdditional) GetProjectIdOk() (*string, bool)`
 
-GetProjectIDOk returns a tuple with the ProjectID field if it's non-nil, zero value otherwise
+GetProjectIdOk returns a tuple with the ProjectId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProjectID
+### SetProjectId
 
-`func (o *LoggingGcsAdditional) SetProjectID(v string)`
+`func (o *LoggingGcsAdditional) SetProjectId(v string)`
 
-SetProjectID sets ProjectID field to given value.
+SetProjectId sets ProjectId field to given value.
 
-### HasProjectID
+### HasProjectId
 
-`func (o *LoggingGcsAdditional) HasProjectID() bool`
+`func (o *LoggingGcsAdditional) HasProjectId() bool`
 
-HasProjectID returns a boolean if a field has been set.
+HasProjectId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

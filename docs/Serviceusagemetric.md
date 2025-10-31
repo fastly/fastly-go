@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CustomerID** | Pointer to **string** |  | [optional] [readonly] 
-**ServiceID** | Pointer to **string** | Service ID associated with the usage. | [optional] 
+**CustomerId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** | Service ID associated with the usage. | [optional] 
 **ServiceName** | Pointer to **string** | Name of the service associated with the usage. | [optional] 
 **UsageUnits** | Pointer to **float32** | The quantity of the usage for the billing period. Amount will be in the units provided in the parent object (e.g., a quantity of `1.3` with a unit of `gb` would have a usage amount of 1.3 gigabytes). | [optional] 
 
@@ -28,55 +28,55 @@ NewServiceusagemetricWithDefaults instantiates a new Serviceusagemetric object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCustomerID
+### GetCustomerId
 
-`func (o *Serviceusagemetric) GetCustomerID() string`
+`func (o *Serviceusagemetric) GetCustomerId() string`
 
-GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetCustomerIDOk
+### GetCustomerIdOk
 
-`func (o *Serviceusagemetric) GetCustomerIDOk() (*string, bool)`
+`func (o *Serviceusagemetric) GetCustomerIdOk() (*string, bool)`
 
-GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerID
+### SetCustomerId
 
-`func (o *Serviceusagemetric) SetCustomerID(v string)`
+`func (o *Serviceusagemetric) SetCustomerId(v string)`
 
-SetCustomerID sets CustomerID field to given value.
+SetCustomerId sets CustomerId field to given value.
 
-### HasCustomerID
+### HasCustomerId
 
-`func (o *Serviceusagemetric) HasCustomerID() bool`
+`func (o *Serviceusagemetric) HasCustomerId() bool`
 
-HasCustomerID returns a boolean if a field has been set.
+HasCustomerId returns a boolean if a field has been set.
 
-### GetServiceID
+### GetServiceId
 
-`func (o *Serviceusagemetric) GetServiceID() string`
+`func (o *Serviceusagemetric) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *Serviceusagemetric) GetServiceIDOk() (*string, bool)`
+`func (o *Serviceusagemetric) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *Serviceusagemetric) SetServiceID(v string)`
+`func (o *Serviceusagemetric) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *Serviceusagemetric) HasServiceID() bool`
+`func (o *Serviceusagemetric) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetServiceName
 
@@ -130,3 +130,5 @@ HasUsageUnits returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

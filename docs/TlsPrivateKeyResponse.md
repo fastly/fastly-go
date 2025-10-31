@@ -1,54 +1,56 @@
-# TLSPrivateKeyResponse
+# TlsPrivateKeyResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**TLSPrivateKeyResponseData**](TlsPrivateKeyResponseData.md) |  | [optional] 
+**Data** | Pointer to [**TlsPrivateKeyResponseData**](TlsPrivateKeyResponseData.md) |  | [optional] 
 
 ## Methods
 
-### NewTLSPrivateKeyResponse
+### NewTlsPrivateKeyResponse
 
-`func NewTLSPrivateKeyResponse() *TLSPrivateKeyResponse`
+`func NewTlsPrivateKeyResponse() *TlsPrivateKeyResponse`
 
-NewTLSPrivateKeyResponse instantiates a new TLSPrivateKeyResponse object
+NewTlsPrivateKeyResponse instantiates a new TlsPrivateKeyResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSPrivateKeyResponseWithDefaults
+### NewTlsPrivateKeyResponseWithDefaults
 
-`func NewTLSPrivateKeyResponseWithDefaults() *TLSPrivateKeyResponse`
+`func NewTlsPrivateKeyResponseWithDefaults() *TlsPrivateKeyResponse`
 
-NewTLSPrivateKeyResponseWithDefaults instantiates a new TLSPrivateKeyResponse object
+NewTlsPrivateKeyResponseWithDefaults instantiates a new TlsPrivateKeyResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *TLSPrivateKeyResponse) GetData() TLSPrivateKeyResponseData`
+`func (o *TlsPrivateKeyResponse) GetData() TlsPrivateKeyResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *TLSPrivateKeyResponse) GetDataOk() (*TLSPrivateKeyResponseData, bool)`
+`func (o *TlsPrivateKeyResponse) GetDataOk() (*TlsPrivateKeyResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *TLSPrivateKeyResponse) SetData(v TLSPrivateKeyResponseData)`
+`func (o *TlsPrivateKeyResponse) SetData(v TlsPrivateKeyResponseData)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *TLSPrivateKeyResponse) HasData() bool`
+`func (o *TlsPrivateKeyResponse) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

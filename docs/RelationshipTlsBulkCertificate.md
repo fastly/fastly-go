@@ -1,54 +1,56 @@
-# RelationshipTLSBulkCertificate
+# RelationshipTlsBulkCertificate
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TLSBulkCertificate** | Pointer to [**RelationshipTLSBulkCertificateTLSBulkCertificate**](RelationshipTLSBulkCertificateTLSBulkCertificate.md) |  | [optional] 
+**TlsBulkCertificate** | Pointer to [**RelationshipTlsBulkCertificateTlsBulkCertificate**](RelationshipTlsBulkCertificateTlsBulkCertificate.md) |  | [optional] 
 
 ## Methods
 
-### NewRelationshipTLSBulkCertificate
+### NewRelationshipTlsBulkCertificate
 
-`func NewRelationshipTLSBulkCertificate() *RelationshipTLSBulkCertificate`
+`func NewRelationshipTlsBulkCertificate() *RelationshipTlsBulkCertificate`
 
-NewRelationshipTLSBulkCertificate instantiates a new RelationshipTLSBulkCertificate object
+NewRelationshipTlsBulkCertificate instantiates a new RelationshipTlsBulkCertificate object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipTLSBulkCertificateWithDefaults
+### NewRelationshipTlsBulkCertificateWithDefaults
 
-`func NewRelationshipTLSBulkCertificateWithDefaults() *RelationshipTLSBulkCertificate`
+`func NewRelationshipTlsBulkCertificateWithDefaults() *RelationshipTlsBulkCertificate`
 
-NewRelationshipTLSBulkCertificateWithDefaults instantiates a new RelationshipTLSBulkCertificate object
+NewRelationshipTlsBulkCertificateWithDefaults instantiates a new RelationshipTlsBulkCertificate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTLSBulkCertificate
+### GetTlsBulkCertificate
 
-`func (o *RelationshipTLSBulkCertificate) GetTLSBulkCertificate() RelationshipTLSBulkCertificateTLSBulkCertificate`
+`func (o *RelationshipTlsBulkCertificate) GetTlsBulkCertificate() RelationshipTlsBulkCertificateTlsBulkCertificate`
 
-GetTLSBulkCertificate returns the TLSBulkCertificate field if non-nil, zero value otherwise.
+GetTlsBulkCertificate returns the TlsBulkCertificate field if non-nil, zero value otherwise.
 
-### GetTLSBulkCertificateOk
+### GetTlsBulkCertificateOk
 
-`func (o *RelationshipTLSBulkCertificate) GetTLSBulkCertificateOk() (*RelationshipTLSBulkCertificateTLSBulkCertificate, bool)`
+`func (o *RelationshipTlsBulkCertificate) GetTlsBulkCertificateOk() (*RelationshipTlsBulkCertificateTlsBulkCertificate, bool)`
 
-GetTLSBulkCertificateOk returns a tuple with the TLSBulkCertificate field if it's non-nil, zero value otherwise
+GetTlsBulkCertificateOk returns a tuple with the TlsBulkCertificate field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSBulkCertificate
+### SetTlsBulkCertificate
 
-`func (o *RelationshipTLSBulkCertificate) SetTLSBulkCertificate(v RelationshipTLSBulkCertificateTLSBulkCertificate)`
+`func (o *RelationshipTlsBulkCertificate) SetTlsBulkCertificate(v RelationshipTlsBulkCertificateTlsBulkCertificate)`
 
-SetTLSBulkCertificate sets TLSBulkCertificate field to given value.
+SetTlsBulkCertificate sets TlsBulkCertificate field to given value.
 
-### HasTLSBulkCertificate
+### HasTlsBulkCertificate
 
-`func (o *RelationshipTLSBulkCertificate) HasTLSBulkCertificate() bool`
+`func (o *RelationshipTlsBulkCertificate) HasTlsBulkCertificate() bool`
 
-HasTLSBulkCertificate returns a boolean if a field has been set.
+HasTlsBulkCertificate returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

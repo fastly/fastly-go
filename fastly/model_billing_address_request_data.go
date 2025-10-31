@@ -31,8 +31,8 @@ type _BillingAddressRequestData BillingAddressRequestData
 // will change when the set of required properties is changed
 func NewBillingAddressRequestData() *BillingAddressRequestData {
 	this := BillingAddressRequestData{}
-	var resourceType TypeBillingAddress = TYPEBILLINGADDRESS_BILLING_ADDRESS
-	this.Type = &resourceType
+	var type_ TypeBillingAddress = TYPEBILLINGADDRESS_BILLING_ADDRESS
+	this.Type = &type_
 	return &this
 }
 
@@ -41,8 +41,8 @@ func NewBillingAddressRequestData() *BillingAddressRequestData {
 // but it doesn't guarantee that properties required by API are set
 func NewBillingAddressRequestDataWithDefaults() *BillingAddressRequestData {
 	this := BillingAddressRequestData{}
-	var resourceType TypeBillingAddress = TYPEBILLINGADDRESS_BILLING_ADDRESS
-	this.Type = &resourceType
+	var type_ TypeBillingAddress = TYPEBILLINGADDRESS_BILLING_ADDRESS
+	this.Type = &type_
 	return &this
 }
 

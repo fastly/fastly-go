@@ -34,19 +34,19 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     domainName := "domainName_example" // string | The name of the domain or domains associated with this service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DomainAPI.CheckDomain(ctx, serviceID, versionID, domainName).Execute()
+    resp, r, err := apiClient.DomainAPI.CheckDomain(ctx, serviceId, versionId, domainName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DomainAPI.CheckDomain`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CheckDomain`: []any
+    // response from `CheckDomain`: []interface{}
     fmt.Fprintf(os.Stdout, "Response from `DomainAPI.CheckDomain`: %v\n", resp)
 }
 ```
@@ -57,8 +57,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **domainName** | **string** | The name of the domain or domains associated with this service. | 
 
 ### Other Parameters
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**[]any**
+**[]interface{}**
 
 ### Authorization
 
@@ -105,18 +105,18 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DomainAPI.CheckDomains(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.DomainAPI.CheckDomains(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DomainAPI.CheckDomains`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CheckDomains`: [][]any
+    // response from `CheckDomains`: [][]interface{}
     fmt.Fprintf(os.Stdout, "Response from `DomainAPI.CheckDomains`: %v\n", resp)
 }
 ```
@@ -127,8 +127,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[][]any**](array.md)
+[**[][]interface{}**](array.md)
 
 ### Authorization
 
@@ -174,15 +174,15 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     comment := "comment_example" // string | A freeform descriptive note. (optional)
     name := "name_example" // string | The name of the domain or domains associated with this service. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DomainAPI.CreateDomain(ctx, serviceID, versionID).Comment(comment).Name(name).Execute()
+    resp, r, err := apiClient.DomainAPI.CreateDomain(ctx, serviceId, versionId).Comment(comment).Name(name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DomainAPI.CreateDomain`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -198,8 +198,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -245,14 +245,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     domainName := "domainName_example" // string | The name of the domain or domains associated with this service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DomainAPI.DeleteDomain(ctx, serviceID, versionID, domainName).Execute()
+    resp, r, err := apiClient.DomainAPI.DeleteDomain(ctx, serviceId, versionId, domainName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DomainAPI.DeleteDomain`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -268,8 +268,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **domainName** | **string** | The name of the domain or domains associated with this service. | 
 
 ### Other Parameters
@@ -316,14 +316,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     domainName := "domainName_example" // string | The name of the domain or domains associated with this service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DomainAPI.GetDomain(ctx, serviceID, versionID, domainName).Execute()
+    resp, r, err := apiClient.DomainAPI.GetDomain(ctx, serviceId, versionId, domainName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DomainAPI.GetDomain`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -339,8 +339,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **domainName** | **string** | The name of the domain or domains associated with this service. | 
 
 ### Other Parameters
@@ -387,13 +387,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DomainAPI.ListDomains(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.DomainAPI.ListDomains(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DomainAPI.ListDomains`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -409,8 +409,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -456,8 +456,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     domainName := "domainName_example" // string | The name of the domain or domains associated with this service.
     comment := "comment_example" // string | A freeform descriptive note. (optional)
     name := "name_example" // string | The name of the domain or domains associated with this service. (optional)
@@ -465,7 +465,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DomainAPI.UpdateDomain(ctx, serviceID, versionID, domainName).Comment(comment).Name(name).Execute()
+    resp, r, err := apiClient.DomainAPI.UpdateDomain(ctx, serviceId, versionId, domainName).Comment(comment).Name(name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DomainAPI.UpdateDomain`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -481,8 +481,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **domainName** | **string** | The name of the domain or domains associated with this service. | 
 
 ### Other Parameters
@@ -508,3 +508,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

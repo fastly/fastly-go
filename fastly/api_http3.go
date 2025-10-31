@@ -28,68 +28,68 @@ var (
 	_ context.Context
 )
 
-// HTTP3API defines an interface for interacting with the resource.
-type HTTP3API interface {
+// Http3API defines an interface for interacting with the resource.
+type Http3API interface {
 
 	/*
-		CreateHTTP3 Enable support for HTTP/3
+		CreateHttp3 Enable support for HTTP/3
 
 		Enable HTTP/3 (QUIC) support for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
-		 @return APICreateHTTP3Request
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
+		 @return APICreateHttp3Request
 	*/
-	CreateHTTP3(ctx context.Context, serviceID string, versionID int32) APICreateHTTP3Request
+	CreateHttp3(ctx context.Context, serviceId string, versionId int32) APICreateHttp3Request
 
-	// CreateHTTP3Execute executes the request
-	//  @return HTTP3
-	CreateHTTP3Execute(r APICreateHTTP3Request) (*HTTP3, *http.Response, error)
+	// CreateHttp3Execute executes the request
+	//  @return Http3
+	CreateHttp3Execute(r APICreateHttp3Request) (*Http3, *http.Response, error)
 
 	/*
-		DeleteHTTP3 Disable support for HTTP/3
+		DeleteHttp3 Disable support for HTTP/3
 
 		Disable HTTP/3 (QUIC) support for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
-		 @return APIDeleteHTTP3Request
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
+		 @return APIDeleteHttp3Request
 	*/
-	DeleteHTTP3(ctx context.Context, serviceID string, versionID int32) APIDeleteHTTP3Request
+	DeleteHttp3(ctx context.Context, serviceId string, versionId int32) APIDeleteHttp3Request
 
-	// DeleteHTTP3Execute executes the request
+	// DeleteHttp3Execute executes the request
 	//  @return InlineResponse200
-	DeleteHTTP3Execute(r APIDeleteHTTP3Request) (*InlineResponse200, *http.Response, error)
+	DeleteHttp3Execute(r APIDeleteHttp3Request) (*InlineResponse200, *http.Response, error)
 
 	/*
-		GetHTTP3 Get HTTP/3 status
+		GetHttp3 Get HTTP/3 status
 
 		Get the status of HTTP/3 (QUIC) support for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
-		 @return APIGetHTTP3Request
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
+		 @return APIGetHttp3Request
 	*/
-	GetHTTP3(ctx context.Context, serviceID string, versionID int32) APIGetHTTP3Request
+	GetHttp3(ctx context.Context, serviceId string, versionId int32) APIGetHttp3Request
 
-	// GetHTTP3Execute executes the request
-	//  @return HTTP3
-	GetHTTP3Execute(r APIGetHTTP3Request) (*HTTP3, *http.Response, error)
+	// GetHttp3Execute executes the request
+	//  @return Http3
+	GetHttp3Execute(r APIGetHttp3Request) (*Http3, *http.Response, error)
 }
 
-// HTTP3APIService HTTP3API service
-type HTTP3APIService service
+// Http3APIService Http3API service
+type Http3APIService service
 
-// APICreateHTTP3Request represents a request for the resource.
-type APICreateHTTP3Request struct {
+// APICreateHttp3Request represents a request for the resource.
+type APICreateHttp3Request struct {
 	ctx             context.Context
-	APIService      HTTP3API
-	serviceID       string
-	versionID       int32
-	serviceID2      *string
+	APIService      Http3API
+	serviceId       string
+	versionId       int32
+	serviceId2      *string
 	version         *int32
 	createdAt       *time.Time
 	deletedAt       *time.Time
@@ -97,84 +97,84 @@ type APICreateHTTP3Request struct {
 	featureRevision *int32
 }
 
-// ServiceID2 returns a pointer to a request.
-func (r *APICreateHTTP3Request) ServiceID2(serviceID2 string) *APICreateHTTP3Request {
-	r.serviceID2 = &serviceID2
+// ServiceId2 returns a pointer to a request.
+func (r *APICreateHttp3Request) ServiceId2(serviceId2 string) *APICreateHttp3Request {
+	r.serviceId2 = &serviceId2
 	return r
 }
 
 // Version returns a pointer to a request.
-func (r *APICreateHTTP3Request) Version(version int32) *APICreateHTTP3Request {
+func (r *APICreateHttp3Request) Version(version int32) *APICreateHttp3Request {
 	r.version = &version
 	return r
 }
 
 // CreatedAt Date and time in ISO 8601 format.
-func (r *APICreateHTTP3Request) CreatedAt(createdAt time.Time) *APICreateHTTP3Request {
+func (r *APICreateHttp3Request) CreatedAt(createdAt time.Time) *APICreateHttp3Request {
 	r.createdAt = &createdAt
 	return r
 }
 
 // DeletedAt Date and time in ISO 8601 format.
-func (r *APICreateHTTP3Request) DeletedAt(deletedAt time.Time) *APICreateHTTP3Request {
+func (r *APICreateHttp3Request) DeletedAt(deletedAt time.Time) *APICreateHttp3Request {
 	r.deletedAt = &deletedAt
 	return r
 }
 
 // UpdatedAt Date and time in ISO 8601 format.
-func (r *APICreateHTTP3Request) UpdatedAt(updatedAt time.Time) *APICreateHTTP3Request {
+func (r *APICreateHttp3Request) UpdatedAt(updatedAt time.Time) *APICreateHttp3Request {
 	r.updatedAt = &updatedAt
 	return r
 }
 
 // FeatureRevision Revision number of the HTTP/3 feature implementation. Defaults to the most recent revision.
-func (r *APICreateHTTP3Request) FeatureRevision(featureRevision int32) *APICreateHTTP3Request {
+func (r *APICreateHttp3Request) FeatureRevision(featureRevision int32) *APICreateHttp3Request {
 	r.featureRevision = &featureRevision
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateHTTP3Request) Execute() (*HTTP3, *http.Response, error) {
-	return r.APIService.CreateHTTP3Execute(r)
+func (r APICreateHttp3Request) Execute() (*Http3, *http.Response, error) {
+	return r.APIService.CreateHttp3Execute(r)
 }
 
 /*
-CreateHTTP3 Enable support for HTTP/3
+CreateHttp3 Enable support for HTTP/3
 
 Enable HTTP/3 (QUIC) support for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
- @return APICreateHTTP3Request
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
+ @return APICreateHttp3Request
 */
-func (a *HTTP3APIService) CreateHTTP3(ctx context.Context, serviceID string, versionID int32) APICreateHTTP3Request {
-	return APICreateHTTP3Request{
+func (a *Http3APIService) CreateHttp3(ctx context.Context, serviceId string, versionId int32) APICreateHttp3Request {
+	return APICreateHttp3Request{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
-// CreateHTTP3Execute executes the request
-//  @return HTTP3
-func (a *HTTP3APIService) CreateHTTP3Execute(r APICreateHTTP3Request) (*HTTP3, *http.Response, error) {
+// CreateHttp3Execute executes the request
+//  @return Http3
+func (a *Http3APIService) CreateHttp3Execute(r APICreateHttp3Request) (*Http3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *HTTP3
+		localVarReturnValue *Http3
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HTTP3APIService.CreateHTTP3")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Http3APIService.CreateHttp3")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/http3"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -197,19 +197,19 @@ func (a *HTTP3APIService) CreateHTTP3Execute(r APICreateHTTP3Request) (*HTTP3, *
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.serviceID2 != nil {
-		paramJSON, err := parameterToJSON(*r.serviceID2)
+	if r.serviceId2 != nil {
+		paramJson, err := parameterToJSON(*r.serviceId2)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("service_id", paramJSON)
+		localVarFormParams.Add("service_id", paramJson)
 	}
 	if r.version != nil {
-		paramJSON, err := parameterToJSON(*r.version)
+		paramJson, err := parameterToJSON(*r.version)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("version", paramJSON)
+		localVarFormParams.Add("version", paramJson)
 	}
 	if r.createdAt != nil {
 		localVarFormParams.Add("created_at", parameterToString(*r.createdAt, ""))
@@ -287,41 +287,41 @@ func (a *HTTP3APIService) CreateHTTP3Execute(r APICreateHTTP3Request) (*HTTP3, *
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIDeleteHTTP3Request represents a request for the resource.
-type APIDeleteHTTP3Request struct {
+// APIDeleteHttp3Request represents a request for the resource.
+type APIDeleteHttp3Request struct {
 	ctx        context.Context
-	APIService HTTP3API
-	serviceID  string
-	versionID  int32
+	APIService Http3API
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDeleteHTTP3Request) Execute() (*InlineResponse200, *http.Response, error) {
-	return r.APIService.DeleteHTTP3Execute(r)
+func (r APIDeleteHttp3Request) Execute() (*InlineResponse200, *http.Response, error) {
+	return r.APIService.DeleteHttp3Execute(r)
 }
 
 /*
-DeleteHTTP3 Disable support for HTTP/3
+DeleteHttp3 Disable support for HTTP/3
 
 Disable HTTP/3 (QUIC) support for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
- @return APIDeleteHTTP3Request
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
+ @return APIDeleteHttp3Request
 */
-func (a *HTTP3APIService) DeleteHTTP3(ctx context.Context, serviceID string, versionID int32) APIDeleteHTTP3Request {
-	return APIDeleteHTTP3Request{
+func (a *Http3APIService) DeleteHttp3(ctx context.Context, serviceId string, versionId int32) APIDeleteHttp3Request {
+	return APIDeleteHttp3Request{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
-// DeleteHTTP3Execute executes the request
+// DeleteHttp3Execute executes the request
 //  @return InlineResponse200
-func (a *HTTP3APIService) DeleteHTTP3Execute(r APIDeleteHTTP3Request) (*InlineResponse200, *http.Response, error) {
+func (a *Http3APIService) DeleteHttp3Execute(r APIDeleteHttp3Request) (*InlineResponse200, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    any
@@ -329,14 +329,14 @@ func (a *HTTP3APIService) DeleteHTTP3Execute(r APIDeleteHTTP3Request) (*InlineRe
 		localVarReturnValue *InlineResponse200
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HTTP3APIService.DeleteHTTP3")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Http3APIService.DeleteHttp3")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/http3"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -423,56 +423,56 @@ func (a *HTTP3APIService) DeleteHTTP3Execute(r APIDeleteHTTP3Request) (*InlineRe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIGetHTTP3Request represents a request for the resource.
-type APIGetHTTP3Request struct {
+// APIGetHttp3Request represents a request for the resource.
+type APIGetHttp3Request struct {
 	ctx        context.Context
-	APIService HTTP3API
-	serviceID  string
-	versionID  int32
+	APIService Http3API
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetHTTP3Request) Execute() (*HTTP3, *http.Response, error) {
-	return r.APIService.GetHTTP3Execute(r)
+func (r APIGetHttp3Request) Execute() (*Http3, *http.Response, error) {
+	return r.APIService.GetHttp3Execute(r)
 }
 
 /*
-GetHTTP3 Get HTTP/3 status
+GetHttp3 Get HTTP/3 status
 
 Get the status of HTTP/3 (QUIC) support for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
- @return APIGetHTTP3Request
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
+ @return APIGetHttp3Request
 */
-func (a *HTTP3APIService) GetHTTP3(ctx context.Context, serviceID string, versionID int32) APIGetHTTP3Request {
-	return APIGetHTTP3Request{
+func (a *Http3APIService) GetHttp3(ctx context.Context, serviceId string, versionId int32) APIGetHttp3Request {
+	return APIGetHttp3Request{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
-// GetHTTP3Execute executes the request
-//  @return HTTP3
-func (a *HTTP3APIService) GetHTTP3Execute(r APIGetHTTP3Request) (*HTTP3, *http.Response, error) {
+// GetHttp3Execute executes the request
+//  @return Http3
+func (a *Http3APIService) GetHttp3Execute(r APIGetHttp3Request) (*Http3, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *HTTP3
+		localVarReturnValue *Http3
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HTTP3APIService.GetHTTP3")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "Http3APIService.GetHttp3")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/http3"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

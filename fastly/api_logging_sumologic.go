@@ -36,11 +36,11 @@ type LoggingSumologicAPI interface {
 		Create a Sumologic for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogSumologicRequest
 	*/
-	CreateLogSumologic(ctx context.Context, serviceID string, versionID int32) APICreateLogSumologicRequest
+	CreateLogSumologic(ctx context.Context, serviceId string, versionId int32) APICreateLogSumologicRequest
 
 	// CreateLogSumologicExecute executes the request
 	//  @return LoggingSumologicResponse
@@ -52,12 +52,12 @@ type LoggingSumologicAPI interface {
 		Delete the Sumologic for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingSumologicName The name for the real-time logging configuration.
 		 @return APIDeleteLogSumologicRequest
 	*/
-	DeleteLogSumologic(ctx context.Context, serviceID string, versionID int32, loggingSumologicName string) APIDeleteLogSumologicRequest
+	DeleteLogSumologic(ctx context.Context, serviceId string, versionId int32, loggingSumologicName string) APIDeleteLogSumologicRequest
 
 	// DeleteLogSumologicExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingSumologicAPI interface {
 		Get the Sumologic for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingSumologicName The name for the real-time logging configuration.
 		 @return APIGetLogSumologicRequest
 	*/
-	GetLogSumologic(ctx context.Context, serviceID string, versionID int32, loggingSumologicName string) APIGetLogSumologicRequest
+	GetLogSumologic(ctx context.Context, serviceId string, versionId int32, loggingSumologicName string) APIGetLogSumologicRequest
 
 	// GetLogSumologicExecute executes the request
 	//  @return LoggingSumologicResponse
@@ -86,11 +86,11 @@ type LoggingSumologicAPI interface {
 		List all of the Sumologics for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogSumologicRequest
 	*/
-	ListLogSumologic(ctx context.Context, serviceID string, versionID int32) APIListLogSumologicRequest
+	ListLogSumologic(ctx context.Context, serviceId string, versionId int32) APIListLogSumologicRequest
 
 	// ListLogSumologicExecute executes the request
 	//  @return []LoggingSumologicResponse
@@ -102,12 +102,12 @@ type LoggingSumologicAPI interface {
 		Update the Sumologic for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingSumologicName The name for the real-time logging configuration.
 		 @return APIUpdateLogSumologicRequest
 	*/
-	UpdateLogSumologic(ctx context.Context, serviceID string, versionID int32, loggingSumologicName string) APIUpdateLogSumologicRequest
+	UpdateLogSumologic(ctx context.Context, serviceId string, versionId int32, loggingSumologicName string) APIUpdateLogSumologicRequest
 
 	// UpdateLogSumologicExecute executes the request
 	//  @return LoggingSumologicResponse
@@ -121,8 +121,8 @@ type LoggingSumologicAPIService service
 type APICreateLogSumologicRequest struct {
 	ctx                 context.Context
 	APIService          LoggingSumologicAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -175,8 +175,8 @@ func (r *APICreateLogSumologicRequest) MessageType(messageType LoggingMessageTyp
 	return r
 }
 
-// URL The URL to post logs to.
-func (r *APICreateLogSumologicRequest) URL(url string) *APICreateLogSumologicRequest {
+// Url The URL to post logs to.
+func (r *APICreateLogSumologicRequest) Url(url string) *APICreateLogSumologicRequest {
 	r.url = &url
 	return r
 }
@@ -192,16 +192,16 @@ CreateLogSumologic Create a Sumologic log endpoint
 Create a Sumologic for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogSumologicRequest
 */
-func (a *LoggingSumologicAPIService) CreateLogSumologic(ctx context.Context, serviceID string, versionID int32) APICreateLogSumologicRequest {
+func (a *LoggingSumologicAPIService) CreateLogSumologic(ctx context.Context, serviceId string, versionId int32) APICreateLogSumologicRequest {
 	return APICreateLogSumologicRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -221,8 +221,8 @@ func (a *LoggingSumologicAPIService) CreateLogSumologicExecute(r APICreateLogSum
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/sumologic"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -337,8 +337,8 @@ func (a *LoggingSumologicAPIService) CreateLogSumologicExecute(r APICreateLogSum
 type APIDeleteLogSumologicRequest struct {
 	ctx                  context.Context
 	APIService           LoggingSumologicAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	loggingSumologicName string
 }
 
@@ -353,17 +353,17 @@ DeleteLogSumologic Delete a Sumologic log endpoint
 Delete the Sumologic for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingSumologicName The name for the real-time logging configuration.
  @return APIDeleteLogSumologicRequest
 */
-func (a *LoggingSumologicAPIService) DeleteLogSumologic(ctx context.Context, serviceID string, versionID int32, loggingSumologicName string) APIDeleteLogSumologicRequest {
+func (a *LoggingSumologicAPIService) DeleteLogSumologic(ctx context.Context, serviceId string, versionId int32, loggingSumologicName string) APIDeleteLogSumologicRequest {
 	return APIDeleteLogSumologicRequest{
 		APIService:           a,
 		ctx:                  ctx,
-		serviceID:            serviceID,
-		versionID:            versionID,
+		serviceId:            serviceId,
+		versionId:            versionId,
 		loggingSumologicName: loggingSumologicName,
 	}
 }
@@ -384,8 +384,8 @@ func (a *LoggingSumologicAPIService) DeleteLogSumologicExecute(r APIDeleteLogSum
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/sumologic/{logging_sumologic_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_sumologic_name"+"}", gourl.PathEscape(parameterToString(r.loggingSumologicName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -477,8 +477,8 @@ func (a *LoggingSumologicAPIService) DeleteLogSumologicExecute(r APIDeleteLogSum
 type APIGetLogSumologicRequest struct {
 	ctx                  context.Context
 	APIService           LoggingSumologicAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	loggingSumologicName string
 }
 
@@ -493,17 +493,17 @@ GetLogSumologic Get a Sumologic log endpoint
 Get the Sumologic for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingSumologicName The name for the real-time logging configuration.
  @return APIGetLogSumologicRequest
 */
-func (a *LoggingSumologicAPIService) GetLogSumologic(ctx context.Context, serviceID string, versionID int32, loggingSumologicName string) APIGetLogSumologicRequest {
+func (a *LoggingSumologicAPIService) GetLogSumologic(ctx context.Context, serviceId string, versionId int32, loggingSumologicName string) APIGetLogSumologicRequest {
 	return APIGetLogSumologicRequest{
 		APIService:           a,
 		ctx:                  ctx,
-		serviceID:            serviceID,
-		versionID:            versionID,
+		serviceId:            serviceId,
+		versionId:            versionId,
 		loggingSumologicName: loggingSumologicName,
 	}
 }
@@ -524,8 +524,8 @@ func (a *LoggingSumologicAPIService) GetLogSumologicExecute(r APIGetLogSumologic
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/sumologic/{logging_sumologic_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_sumologic_name"+"}", gourl.PathEscape(parameterToString(r.loggingSumologicName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -617,8 +617,8 @@ func (a *LoggingSumologicAPIService) GetLogSumologicExecute(r APIGetLogSumologic
 type APIListLogSumologicRequest struct {
 	ctx        context.Context
 	APIService LoggingSumologicAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -632,16 +632,16 @@ ListLogSumologic List Sumologic log endpoints
 List all of the Sumologics for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogSumologicRequest
 */
-func (a *LoggingSumologicAPIService) ListLogSumologic(ctx context.Context, serviceID string, versionID int32) APIListLogSumologicRequest {
+func (a *LoggingSumologicAPIService) ListLogSumologic(ctx context.Context, serviceId string, versionId int32) APIListLogSumologicRequest {
 	return APIListLogSumologicRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -661,8 +661,8 @@ func (a *LoggingSumologicAPIService) ListLogSumologicExecute(r APIListLogSumolog
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/sumologic"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -753,8 +753,8 @@ func (a *LoggingSumologicAPIService) ListLogSumologicExecute(r APIListLogSumolog
 type APIUpdateLogSumologicRequest struct {
 	ctx                  context.Context
 	APIService           LoggingSumologicAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	loggingSumologicName string
 	name                 *string
 	placement            *string
@@ -808,8 +808,8 @@ func (r *APIUpdateLogSumologicRequest) MessageType(messageType LoggingMessageTyp
 	return r
 }
 
-// URL The URL to post logs to.
-func (r *APIUpdateLogSumologicRequest) URL(url string) *APIUpdateLogSumologicRequest {
+// Url The URL to post logs to.
+func (r *APIUpdateLogSumologicRequest) Url(url string) *APIUpdateLogSumologicRequest {
 	r.url = &url
 	return r
 }
@@ -825,17 +825,17 @@ UpdateLogSumologic Update a Sumologic log endpoint
 Update the Sumologic for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingSumologicName The name for the real-time logging configuration.
  @return APIUpdateLogSumologicRequest
 */
-func (a *LoggingSumologicAPIService) UpdateLogSumologic(ctx context.Context, serviceID string, versionID int32, loggingSumologicName string) APIUpdateLogSumologicRequest {
+func (a *LoggingSumologicAPIService) UpdateLogSumologic(ctx context.Context, serviceId string, versionId int32, loggingSumologicName string) APIUpdateLogSumologicRequest {
 	return APIUpdateLogSumologicRequest{
 		APIService:           a,
 		ctx:                  ctx,
-		serviceID:            serviceID,
-		versionID:            versionID,
+		serviceId:            serviceId,
+		versionId:            versionId,
 		loggingSumologicName: loggingSumologicName,
 	}
 }
@@ -856,8 +856,8 @@ func (a *LoggingSumologicAPIService) UpdateLogSumologicExecute(r APIUpdateLogSum
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/sumologic/{logging_sumologic_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_sumologic_name"+"}", gourl.PathEscape(parameterToString(r.loggingSumologicName, "")))
 
 	localVarHeaderParams := make(map[string]string)

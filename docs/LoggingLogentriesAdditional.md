@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Port** | Pointer to **int32** | The port number. | [optional] [default to 20000]
 **Token** | Pointer to **string** | Use token based authentication. | [optional] 
-**UseTLS** | Pointer to [**LoggingUseTLSString**](LoggingUseTLSString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
+**UseTls** | Pointer to [**LoggingUseTlsString**](LoggingUseTlsString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
 **Region** | Pointer to **string** | The region to which to stream logs. | [optional] 
 
 ## Methods
@@ -78,30 +78,30 @@ SetToken sets Token field to given value.
 
 HasToken returns a boolean if a field has been set.
 
-### GetUseTLS
+### GetUseTls
 
-`func (o *LoggingLogentriesAdditional) GetUseTLS() LoggingUseTLSString`
+`func (o *LoggingLogentriesAdditional) GetUseTls() LoggingUseTlsString`
 
-GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
+GetUseTls returns the UseTls field if non-nil, zero value otherwise.
 
-### GetUseTLSOk
+### GetUseTlsOk
 
-`func (o *LoggingLogentriesAdditional) GetUseTLSOk() (*LoggingUseTLSString, bool)`
+`func (o *LoggingLogentriesAdditional) GetUseTlsOk() (*LoggingUseTlsString, bool)`
 
-GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
+GetUseTlsOk returns a tuple with the UseTls field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUseTLS
+### SetUseTls
 
-`func (o *LoggingLogentriesAdditional) SetUseTLS(v LoggingUseTLSString)`
+`func (o *LoggingLogentriesAdditional) SetUseTls(v LoggingUseTlsString)`
 
-SetUseTLS sets UseTLS field to given value.
+SetUseTls sets UseTls field to given value.
 
-### HasUseTLS
+### HasUseTls
 
-`func (o *LoggingLogentriesAdditional) HasUseTLS() bool`
+`func (o *LoggingLogentriesAdditional) HasUseTls() bool`
 
-HasUseTLS returns a boolean if a field has been set.
+HasUseTls returns a boolean if a field has been set.
 
 ### GetRegion
 
@@ -130,3 +130,5 @@ HasRegion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

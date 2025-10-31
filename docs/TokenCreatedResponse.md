@@ -10,11 +10,11 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **string** | Time-stamp (UTC) of when the token was created. | [optional] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ID** | Pointer to **string** |  | [optional] [readonly] 
-**UserID** | Pointer to **string** |  | [optional] [readonly] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
+**UserId** | Pointer to **string** |  | [optional] [readonly] 
 **LastUsedAt** | Pointer to **string** | Time-stamp (UTC) of when the token was last used. | [optional] [readonly] 
 **ExpiresAt** | Pointer to **string** | Time-stamp (UTC) of when the token will expire (optional). | [optional] 
-**IP** | Pointer to **string** | IP Address of the client that last used the token. | [optional] 
+**Ip** | Pointer to **string** | IP Address of the client that last used the token. | [optional] 
 **UserAgent** | Pointer to **string** | User-Agent header of the client that last used the token. | [optional] 
 **AccessToken** | Pointer to **string** | The alphanumeric string for accessing the API (only available on token creation). | [optional] 
 
@@ -207,55 +207,55 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *TokenCreatedResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetID
+### GetId
 
-`func (o *TokenCreatedResponse) GetID() string`
+`func (o *TokenCreatedResponse) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *TokenCreatedResponse) GetIDOk() (*string, bool)`
+`func (o *TokenCreatedResponse) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *TokenCreatedResponse) SetID(v string)`
+`func (o *TokenCreatedResponse) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *TokenCreatedResponse) HasID() bool`
+`func (o *TokenCreatedResponse) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
-### GetUserID
+### GetUserId
 
-`func (o *TokenCreatedResponse) GetUserID() string`
+`func (o *TokenCreatedResponse) GetUserId() string`
 
-GetUserID returns the UserID field if non-nil, zero value otherwise.
+GetUserId returns the UserId field if non-nil, zero value otherwise.
 
-### GetUserIDOk
+### GetUserIdOk
 
-`func (o *TokenCreatedResponse) GetUserIDOk() (*string, bool)`
+`func (o *TokenCreatedResponse) GetUserIdOk() (*string, bool)`
 
-GetUserIDOk returns a tuple with the UserID field if it's non-nil, zero value otherwise
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserID
+### SetUserId
 
-`func (o *TokenCreatedResponse) SetUserID(v string)`
+`func (o *TokenCreatedResponse) SetUserId(v string)`
 
-SetUserID sets UserID field to given value.
+SetUserId sets UserId field to given value.
 
-### HasUserID
+### HasUserId
 
-`func (o *TokenCreatedResponse) HasUserID() bool`
+`func (o *TokenCreatedResponse) HasUserId() bool`
 
-HasUserID returns a boolean if a field has been set.
+HasUserId returns a boolean if a field has been set.
 
 ### GetLastUsedAt
 
@@ -307,30 +307,30 @@ SetExpiresAt sets ExpiresAt field to given value.
 
 HasExpiresAt returns a boolean if a field has been set.
 
-### GetIP
+### GetIp
 
-`func (o *TokenCreatedResponse) GetIP() string`
+`func (o *TokenCreatedResponse) GetIp() string`
 
-GetIP returns the IP field if non-nil, zero value otherwise.
+GetIp returns the Ip field if non-nil, zero value otherwise.
 
-### GetIPOk
+### GetIpOk
 
-`func (o *TokenCreatedResponse) GetIPOk() (*string, bool)`
+`func (o *TokenCreatedResponse) GetIpOk() (*string, bool)`
 
-GetIPOk returns a tuple with the IP field if it's non-nil, zero value otherwise
+GetIpOk returns a tuple with the Ip field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIP
+### SetIp
 
-`func (o *TokenCreatedResponse) SetIP(v string)`
+`func (o *TokenCreatedResponse) SetIp(v string)`
 
-SetIP sets IP field to given value.
+SetIp sets Ip field to given value.
 
-### HasIP
+### HasIp
 
-`func (o *TokenCreatedResponse) HasIP() bool`
+`func (o *TokenCreatedResponse) HasIp() bool`
 
-HasIP returns a boolean if a field has been set.
+HasIp returns a boolean if a field has been set.
 
 ### GetUserAgent
 
@@ -384,3 +384,5 @@ HasAccessToken returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

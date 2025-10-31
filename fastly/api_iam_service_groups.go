@@ -36,14 +36,14 @@ type IamServiceGroupsAPI interface {
 		Add services in a service group.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceGroupID Alphanumeric string identifying the service group.
+		 @param serviceGroupId Alphanumeric string identifying the service group.
 		 @return APIAddServiceGroupServicesRequest
 	*/
-	AddServiceGroupServices(ctx context.Context, serviceGroupID string) APIAddServiceGroupServicesRequest
+	AddServiceGroupServices(ctx context.Context, serviceGroupId string) APIAddServiceGroupServicesRequest
 
 	// AddServiceGroupServicesExecute executes the request
-	//  @return map[string]any
-	AddServiceGroupServicesExecute(r APIAddServiceGroupServicesRequest) (map[string]any, *http.Response, error)
+	//  @return map[string]interface{}
+	AddServiceGroupServicesExecute(r APIAddServiceGroupServicesRequest) (map[string]interface{}, *http.Response, error)
 
 	/*
 		CreateAServiceGroup Create a service group
@@ -56,8 +56,8 @@ type IamServiceGroupsAPI interface {
 	CreateAServiceGroup(ctx context.Context) APICreateAServiceGroupRequest
 
 	// CreateAServiceGroupExecute executes the request
-	//  @return map[string]any
-	CreateAServiceGroupExecute(r APICreateAServiceGroupRequest) (map[string]any, *http.Response, error)
+	//  @return map[string]interface{}
+	CreateAServiceGroupExecute(r APICreateAServiceGroupRequest) (map[string]interface{}, *http.Response, error)
 
 	/*
 		DeleteAServiceGroup Delete a service group
@@ -65,10 +65,10 @@ type IamServiceGroupsAPI interface {
 		Delete a service group.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceGroupID Alphanumeric string identifying the service group.
+		 @param serviceGroupId Alphanumeric string identifying the service group.
 		 @return APIDeleteAServiceGroupRequest
 	*/
-	DeleteAServiceGroup(ctx context.Context, serviceGroupID string) APIDeleteAServiceGroupRequest
+	DeleteAServiceGroup(ctx context.Context, serviceGroupId string) APIDeleteAServiceGroupRequest
 
 	// DeleteAServiceGroupExecute executes the request
 	DeleteAServiceGroupExecute(r APIDeleteAServiceGroupRequest) (*http.Response, error)
@@ -79,14 +79,14 @@ type IamServiceGroupsAPI interface {
 		Get a service group.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceGroupID Alphanumeric string identifying the service group.
+		 @param serviceGroupId Alphanumeric string identifying the service group.
 		 @return APIGetAServiceGroupRequest
 	*/
-	GetAServiceGroup(ctx context.Context, serviceGroupID string) APIGetAServiceGroupRequest
+	GetAServiceGroup(ctx context.Context, serviceGroupId string) APIGetAServiceGroupRequest
 
 	// GetAServiceGroupExecute executes the request
-	//  @return map[string]any
-	GetAServiceGroupExecute(r APIGetAServiceGroupRequest) (map[string]any, *http.Response, error)
+	//  @return map[string]interface{}
+	GetAServiceGroupExecute(r APIGetAServiceGroupRequest) (map[string]interface{}, *http.Response, error)
 
 	/*
 		ListServiceGroupServices List services to a service group
@@ -94,14 +94,14 @@ type IamServiceGroupsAPI interface {
 		List services to a service group.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceGroupID Alphanumeric string identifying the service group.
+		 @param serviceGroupId Alphanumeric string identifying the service group.
 		 @return APIListServiceGroupServicesRequest
 	*/
-	ListServiceGroupServices(ctx context.Context, serviceGroupID string) APIListServiceGroupServicesRequest
+	ListServiceGroupServices(ctx context.Context, serviceGroupId string) APIListServiceGroupServicesRequest
 
 	// ListServiceGroupServicesExecute executes the request
-	//  @return map[string]any
-	ListServiceGroupServicesExecute(r APIListServiceGroupServicesRequest) (map[string]any, *http.Response, error)
+	//  @return map[string]interface{}
+	ListServiceGroupServicesExecute(r APIListServiceGroupServicesRequest) (map[string]interface{}, *http.Response, error)
 
 	/*
 		ListServiceGroups List service groups
@@ -114,8 +114,8 @@ type IamServiceGroupsAPI interface {
 	ListServiceGroups(ctx context.Context) APIListServiceGroupsRequest
 
 	// ListServiceGroupsExecute executes the request
-	//  @return map[string]any
-	ListServiceGroupsExecute(r APIListServiceGroupsRequest) (map[string]any, *http.Response, error)
+	//  @return map[string]interface{}
+	ListServiceGroupsExecute(r APIListServiceGroupsRequest) (map[string]interface{}, *http.Response, error)
 
 	/*
 		RemoveServiceGroupServices Remove services from a service group
@@ -123,10 +123,10 @@ type IamServiceGroupsAPI interface {
 		Remove services from a service group.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceGroupID Alphanumeric string identifying the service group.
+		 @param serviceGroupId Alphanumeric string identifying the service group.
 		 @return APIRemoveServiceGroupServicesRequest
 	*/
-	RemoveServiceGroupServices(ctx context.Context, serviceGroupID string) APIRemoveServiceGroupServicesRequest
+	RemoveServiceGroupServices(ctx context.Context, serviceGroupId string) APIRemoveServiceGroupServicesRequest
 
 	// RemoveServiceGroupServicesExecute executes the request
 	RemoveServiceGroupServicesExecute(r APIRemoveServiceGroupServicesRequest) (*http.Response, error)
@@ -137,14 +137,14 @@ type IamServiceGroupsAPI interface {
 		Update a service group.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceGroupID Alphanumeric string identifying the service group.
+		 @param serviceGroupId Alphanumeric string identifying the service group.
 		 @return APIUpdateAServiceGroupRequest
 	*/
-	UpdateAServiceGroup(ctx context.Context, serviceGroupID string) APIUpdateAServiceGroupRequest
+	UpdateAServiceGroup(ctx context.Context, serviceGroupId string) APIUpdateAServiceGroupRequest
 
 	// UpdateAServiceGroupExecute executes the request
-	//  @return map[string]any
-	UpdateAServiceGroupExecute(r APIUpdateAServiceGroupRequest) (map[string]any, *http.Response, error)
+	//  @return map[string]interface{}
+	UpdateAServiceGroupExecute(r APIUpdateAServiceGroupRequest) (map[string]interface{}, *http.Response, error)
 }
 
 // IamServiceGroupsAPIService IamServiceGroupsAPI service
@@ -154,18 +154,18 @@ type IamServiceGroupsAPIService service
 type APIAddServiceGroupServicesRequest struct {
 	ctx            context.Context
 	APIService     IamServiceGroupsAPI
-	serviceGroupID string
-	requestBody    *map[string]map[string]any
+	serviceGroupId string
+	requestBody    *map[string]map[string]interface{}
 }
 
 // RequestBody returns a pointer to a request.
-func (r *APIAddServiceGroupServicesRequest) RequestBody(requestBody map[string]map[string]any) *APIAddServiceGroupServicesRequest {
+func (r *APIAddServiceGroupServicesRequest) RequestBody(requestBody map[string]map[string]interface{}) *APIAddServiceGroupServicesRequest {
 	r.requestBody = &requestBody
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIAddServiceGroupServicesRequest) Execute() (map[string]any, *http.Response, error) {
+func (r APIAddServiceGroupServicesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.APIService.AddServiceGroupServicesExecute(r)
 }
 
@@ -175,25 +175,25 @@ AddServiceGroupServices Add services in a service group
 Add services in a service group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceGroupID Alphanumeric string identifying the service group.
+ @param serviceGroupId Alphanumeric string identifying the service group.
  @return APIAddServiceGroupServicesRequest
 */
-func (a *IamServiceGroupsAPIService) AddServiceGroupServices(ctx context.Context, serviceGroupID string) APIAddServiceGroupServicesRequest {
+func (a *IamServiceGroupsAPIService) AddServiceGroupServices(ctx context.Context, serviceGroupId string) APIAddServiceGroupServicesRequest {
 	return APIAddServiceGroupServicesRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceGroupID: serviceGroupID,
+		serviceGroupId: serviceGroupId,
 	}
 }
 
 // AddServiceGroupServicesExecute executes the request
-//  @return map[string]any
-func (a *IamServiceGroupsAPIService) AddServiceGroupServicesExecute(r APIAddServiceGroupServicesRequest) (map[string]any, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *IamServiceGroupsAPIService) AddServiceGroupServicesExecute(r APIAddServiceGroupServicesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue map[string]any
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.AddServiceGroupServices")
@@ -202,7 +202,7 @@ func (a *IamServiceGroupsAPIService) AddServiceGroupServicesExecute(r APIAddServ
 	}
 
 	localVarPath := localBasePath + "/service-groups/{service_group_id}/services"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -295,17 +295,17 @@ func (a *IamServiceGroupsAPIService) AddServiceGroupServicesExecute(r APIAddServ
 type APICreateAServiceGroupRequest struct {
 	ctx         context.Context
 	APIService  IamServiceGroupsAPI
-	requestBody *map[string]map[string]any
+	requestBody *map[string]map[string]interface{}
 }
 
 // RequestBody returns a pointer to a request.
-func (r *APICreateAServiceGroupRequest) RequestBody(requestBody map[string]map[string]any) *APICreateAServiceGroupRequest {
+func (r *APICreateAServiceGroupRequest) RequestBody(requestBody map[string]map[string]interface{}) *APICreateAServiceGroupRequest {
 	r.requestBody = &requestBody
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateAServiceGroupRequest) Execute() (map[string]any, *http.Response, error) {
+func (r APICreateAServiceGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.APIService.CreateAServiceGroupExecute(r)
 }
 
@@ -325,13 +325,13 @@ func (a *IamServiceGroupsAPIService) CreateAServiceGroup(ctx context.Context) AP
 }
 
 // CreateAServiceGroupExecute executes the request
-//  @return map[string]any
-func (a *IamServiceGroupsAPIService) CreateAServiceGroupExecute(r APICreateAServiceGroupRequest) (map[string]any, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *IamServiceGroupsAPIService) CreateAServiceGroupExecute(r APICreateAServiceGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue map[string]any
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.CreateAServiceGroup")
@@ -432,7 +432,7 @@ func (a *IamServiceGroupsAPIService) CreateAServiceGroupExecute(r APICreateAServ
 type APIDeleteAServiceGroupRequest struct {
 	ctx            context.Context
 	APIService     IamServiceGroupsAPI
-	serviceGroupID string
+	serviceGroupId string
 }
 
 // Execute calls the API using the request data configured.
@@ -446,14 +446,14 @@ DeleteAServiceGroup Delete a service group
 Delete a service group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceGroupID Alphanumeric string identifying the service group.
+ @param serviceGroupId Alphanumeric string identifying the service group.
  @return APIDeleteAServiceGroupRequest
 */
-func (a *IamServiceGroupsAPIService) DeleteAServiceGroup(ctx context.Context, serviceGroupID string) APIDeleteAServiceGroupRequest {
+func (a *IamServiceGroupsAPIService) DeleteAServiceGroup(ctx context.Context, serviceGroupId string) APIDeleteAServiceGroupRequest {
 	return APIDeleteAServiceGroupRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceGroupID: serviceGroupID,
+		serviceGroupId: serviceGroupId,
 	}
 }
 
@@ -471,7 +471,7 @@ func (a *IamServiceGroupsAPIService) DeleteAServiceGroupExecute(r APIDeleteAServ
 	}
 
 	localVarPath := localBasePath + "/service-groups/{service_group_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -553,11 +553,11 @@ func (a *IamServiceGroupsAPIService) DeleteAServiceGroupExecute(r APIDeleteAServ
 type APIGetAServiceGroupRequest struct {
 	ctx            context.Context
 	APIService     IamServiceGroupsAPI
-	serviceGroupID string
+	serviceGroupId string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetAServiceGroupRequest) Execute() (map[string]any, *http.Response, error) {
+func (r APIGetAServiceGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.APIService.GetAServiceGroupExecute(r)
 }
 
@@ -567,25 +567,25 @@ GetAServiceGroup Get a service group
 Get a service group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceGroupID Alphanumeric string identifying the service group.
+ @param serviceGroupId Alphanumeric string identifying the service group.
  @return APIGetAServiceGroupRequest
 */
-func (a *IamServiceGroupsAPIService) GetAServiceGroup(ctx context.Context, serviceGroupID string) APIGetAServiceGroupRequest {
+func (a *IamServiceGroupsAPIService) GetAServiceGroup(ctx context.Context, serviceGroupId string) APIGetAServiceGroupRequest {
 	return APIGetAServiceGroupRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceGroupID: serviceGroupID,
+		serviceGroupId: serviceGroupId,
 	}
 }
 
 // GetAServiceGroupExecute executes the request
-//  @return map[string]any
-func (a *IamServiceGroupsAPIService) GetAServiceGroupExecute(r APIGetAServiceGroupRequest) (map[string]any, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *IamServiceGroupsAPIService) GetAServiceGroupExecute(r APIGetAServiceGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue map[string]any
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.GetAServiceGroup")
@@ -594,7 +594,7 @@ func (a *IamServiceGroupsAPIService) GetAServiceGroupExecute(r APIGetAServiceGro
 	}
 
 	localVarPath := localBasePath + "/service-groups/{service_group_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -685,7 +685,7 @@ func (a *IamServiceGroupsAPIService) GetAServiceGroupExecute(r APIGetAServiceGro
 type APIListServiceGroupServicesRequest struct {
 	ctx            context.Context
 	APIService     IamServiceGroupsAPI
-	serviceGroupID string
+	serviceGroupId string
 	perPage        *int32
 	page           *int32
 }
@@ -703,7 +703,7 @@ func (r *APIListServiceGroupServicesRequest) Page(page int32) *APIListServiceGro
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListServiceGroupServicesRequest) Execute() (map[string]any, *http.Response, error) {
+func (r APIListServiceGroupServicesRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.APIService.ListServiceGroupServicesExecute(r)
 }
 
@@ -713,25 +713,25 @@ ListServiceGroupServices List services to a service group
 List services to a service group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceGroupID Alphanumeric string identifying the service group.
+ @param serviceGroupId Alphanumeric string identifying the service group.
  @return APIListServiceGroupServicesRequest
 */
-func (a *IamServiceGroupsAPIService) ListServiceGroupServices(ctx context.Context, serviceGroupID string) APIListServiceGroupServicesRequest {
+func (a *IamServiceGroupsAPIService) ListServiceGroupServices(ctx context.Context, serviceGroupId string) APIListServiceGroupServicesRequest {
 	return APIListServiceGroupServicesRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceGroupID: serviceGroupID,
+		serviceGroupId: serviceGroupId,
 	}
 }
 
 // ListServiceGroupServicesExecute executes the request
-//  @return map[string]any
-func (a *IamServiceGroupsAPIService) ListServiceGroupServicesExecute(r APIListServiceGroupServicesRequest) (map[string]any, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *IamServiceGroupsAPIService) ListServiceGroupServicesExecute(r APIListServiceGroupServicesRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue map[string]any
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.ListServiceGroupServices")
@@ -740,7 +740,7 @@ func (a *IamServiceGroupsAPIService) ListServiceGroupServicesExecute(r APIListSe
 	}
 
 	localVarPath := localBasePath + "/service-groups/{service_group_id}/services"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -854,7 +854,7 @@ func (r *APIListServiceGroupsRequest) Page(page int32) *APIListServiceGroupsRequ
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListServiceGroupsRequest) Execute() (map[string]any, *http.Response, error) {
+func (r APIListServiceGroupsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.APIService.ListServiceGroupsExecute(r)
 }
 
@@ -874,13 +874,13 @@ func (a *IamServiceGroupsAPIService) ListServiceGroups(ctx context.Context) APIL
 }
 
 // ListServiceGroupsExecute executes the request
-//  @return map[string]any
-func (a *IamServiceGroupsAPIService) ListServiceGroupsExecute(r APIListServiceGroupsRequest) (map[string]any, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *IamServiceGroupsAPIService) ListServiceGroupsExecute(r APIListServiceGroupsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue map[string]any
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.ListServiceGroups")
@@ -985,12 +985,12 @@ func (a *IamServiceGroupsAPIService) ListServiceGroupsExecute(r APIListServiceGr
 type APIRemoveServiceGroupServicesRequest struct {
 	ctx            context.Context
 	APIService     IamServiceGroupsAPI
-	serviceGroupID string
-	requestBody    *map[string]map[string]any
+	serviceGroupId string
+	requestBody    *map[string]map[string]interface{}
 }
 
 // RequestBody returns a pointer to a request.
-func (r *APIRemoveServiceGroupServicesRequest) RequestBody(requestBody map[string]map[string]any) *APIRemoveServiceGroupServicesRequest {
+func (r *APIRemoveServiceGroupServicesRequest) RequestBody(requestBody map[string]map[string]interface{}) *APIRemoveServiceGroupServicesRequest {
 	r.requestBody = &requestBody
 	return r
 }
@@ -1006,14 +1006,14 @@ RemoveServiceGroupServices Remove services from a service group
 Remove services from a service group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceGroupID Alphanumeric string identifying the service group.
+ @param serviceGroupId Alphanumeric string identifying the service group.
  @return APIRemoveServiceGroupServicesRequest
 */
-func (a *IamServiceGroupsAPIService) RemoveServiceGroupServices(ctx context.Context, serviceGroupID string) APIRemoveServiceGroupServicesRequest {
+func (a *IamServiceGroupsAPIService) RemoveServiceGroupServices(ctx context.Context, serviceGroupId string) APIRemoveServiceGroupServicesRequest {
 	return APIRemoveServiceGroupServicesRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceGroupID: serviceGroupID,
+		serviceGroupId: serviceGroupId,
 	}
 }
 
@@ -1031,7 +1031,7 @@ func (a *IamServiceGroupsAPIService) RemoveServiceGroupServicesExecute(r APIRemo
 	}
 
 	localVarPath := localBasePath + "/service-groups/{service_group_id}/services"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1115,18 +1115,18 @@ func (a *IamServiceGroupsAPIService) RemoveServiceGroupServicesExecute(r APIRemo
 type APIUpdateAServiceGroupRequest struct {
 	ctx            context.Context
 	APIService     IamServiceGroupsAPI
-	serviceGroupID string
-	requestBody    *map[string]map[string]any
+	serviceGroupId string
+	requestBody    *map[string]map[string]interface{}
 }
 
 // RequestBody returns a pointer to a request.
-func (r *APIUpdateAServiceGroupRequest) RequestBody(requestBody map[string]map[string]any) *APIUpdateAServiceGroupRequest {
+func (r *APIUpdateAServiceGroupRequest) RequestBody(requestBody map[string]map[string]interface{}) *APIUpdateAServiceGroupRequest {
 	r.requestBody = &requestBody
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIUpdateAServiceGroupRequest) Execute() (map[string]any, *http.Response, error) {
+func (r APIUpdateAServiceGroupRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.APIService.UpdateAServiceGroupExecute(r)
 }
 
@@ -1136,25 +1136,25 @@ UpdateAServiceGroup Update a service group
 Update a service group.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceGroupID Alphanumeric string identifying the service group.
+ @param serviceGroupId Alphanumeric string identifying the service group.
  @return APIUpdateAServiceGroupRequest
 */
-func (a *IamServiceGroupsAPIService) UpdateAServiceGroup(ctx context.Context, serviceGroupID string) APIUpdateAServiceGroupRequest {
+func (a *IamServiceGroupsAPIService) UpdateAServiceGroup(ctx context.Context, serviceGroupId string) APIUpdateAServiceGroupRequest {
 	return APIUpdateAServiceGroupRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceGroupID: serviceGroupID,
+		serviceGroupId: serviceGroupId,
 	}
 }
 
 // UpdateAServiceGroupExecute executes the request
-//  @return map[string]any
-func (a *IamServiceGroupsAPIService) UpdateAServiceGroupExecute(r APIUpdateAServiceGroupRequest) (map[string]any, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *IamServiceGroupsAPIService) UpdateAServiceGroupExecute(r APIUpdateAServiceGroupRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue map[string]any
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamServiceGroupsAPIService.UpdateAServiceGroup")
@@ -1163,7 +1163,7 @@ func (a *IamServiceGroupsAPIService) UpdateAServiceGroupExecute(r APIUpdateAServ
 	}
 
 	localVarPath := localBasePath + "/service-groups/{service_group_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_group_id"+"}", gourl.PathEscape(parameterToString(r.serviceGroupId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewBillingAddressVerificationErrorResponseErrors
 
-`func NewBillingAddressVerificationErrorResponseErrors(resourceType string, title string, detail string, status float32, ) *BillingAddressVerificationErrorResponseErrors`
+`func NewBillingAddressVerificationErrorResponseErrors(type_ string, title string, detail string, status float32, ) *BillingAddressVerificationErrorResponseErrors`
 
 NewBillingAddressVerificationErrorResponseErrors instantiates a new BillingAddressVerificationErrorResponseErrors object
 This constructor will assign default values to properties that have it defined,
@@ -136,3 +136,5 @@ HasCandidates returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

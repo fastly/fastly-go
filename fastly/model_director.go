@@ -49,8 +49,8 @@ func NewDirector() *Director {
 	this.Quorum = &quorum
 	var shield string = "null"
 	this.Shield = *NewNullableString(&shield)
-	var resourceType int32 = 1
-	this.Type = &resourceType
+	var type_ int32 = 1
+	this.Type = &type_
 	var retries int32 = 5
 	this.Retries = &retries
 	return &this
@@ -65,8 +65,8 @@ func NewDirectorWithDefaults() *Director {
 	this.Quorum = &quorum
 	var shield string = "null"
 	this.Shield = *NewNullableString(&shield)
-	var resourceType int32 = 1
-	this.Type = &resourceType
+	var type_ int32 = 1
+	this.Type = &type_
 	var retries int32 = 5
 	this.Retries = &retries
 	return &this

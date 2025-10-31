@@ -19,7 +19,7 @@ import (
 // ServiceAuthorizationDataRelationshipsUserData struct for ServiceAuthorizationDataRelationshipsUserData
 type ServiceAuthorizationDataRelationshipsUserData struct {
 	Type                 *TypeUser `json:"type,omitempty"`
-	ID                   *string   `json:"id,omitempty"`
+	Id                   *string   `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -31,8 +31,8 @@ type _ServiceAuthorizationDataRelationshipsUserData ServiceAuthorizationDataRela
 // will change when the set of required properties is changed
 func NewServiceAuthorizationDataRelationshipsUserData() *ServiceAuthorizationDataRelationshipsUserData {
 	this := ServiceAuthorizationDataRelationshipsUserData{}
-	var resourceType TypeUser = TYPEUSER_USER
-	this.Type = &resourceType
+	var type_ TypeUser = TYPEUSER_USER
+	this.Type = &type_
 	return &this
 }
 
@@ -41,8 +41,8 @@ func NewServiceAuthorizationDataRelationshipsUserData() *ServiceAuthorizationDat
 // but it doesn't guarantee that properties required by API are set
 func NewServiceAuthorizationDataRelationshipsUserDataWithDefaults() *ServiceAuthorizationDataRelationshipsUserData {
 	this := ServiceAuthorizationDataRelationshipsUserData{}
-	var resourceType TypeUser = TYPEUSER_USER
-	this.Type = &resourceType
+	var type_ TypeUser = TYPEUSER_USER
+	this.Type = &type_
 	return &this
 }
 
@@ -78,36 +78,36 @@ func (o *ServiceAuthorizationDataRelationshipsUserData) SetType(v TypeUser) {
 	o.Type = &v
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *ServiceAuthorizationDataRelationshipsUserData) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *ServiceAuthorizationDataRelationshipsUserData) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceAuthorizationDataRelationshipsUserData) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *ServiceAuthorizationDataRelationshipsUserData) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *ServiceAuthorizationDataRelationshipsUserData) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *ServiceAuthorizationDataRelationshipsUserData) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *ServiceAuthorizationDataRelationshipsUserData) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *ServiceAuthorizationDataRelationshipsUserData) SetId(v string) {
+	o.Id = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -117,8 +117,8 @@ func (o ServiceAuthorizationDataRelationshipsUserData) MarshalJSON() ([]byte, er
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 
 	for key, value := range o.AdditionalProperties {

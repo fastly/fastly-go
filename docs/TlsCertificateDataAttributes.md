@@ -1,4 +1,4 @@
-# TLSCertificateDataAttributes
+# TlsCertificateDataAttributes
 
 ## Properties
 
@@ -10,97 +10,99 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewTLSCertificateDataAttributes
+### NewTlsCertificateDataAttributes
 
-`func NewTLSCertificateDataAttributes() *TLSCertificateDataAttributes`
+`func NewTlsCertificateDataAttributes() *TlsCertificateDataAttributes`
 
-NewTLSCertificateDataAttributes instantiates a new TLSCertificateDataAttributes object
+NewTlsCertificateDataAttributes instantiates a new TlsCertificateDataAttributes object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSCertificateDataAttributesWithDefaults
+### NewTlsCertificateDataAttributesWithDefaults
 
-`func NewTLSCertificateDataAttributesWithDefaults() *TLSCertificateDataAttributes`
+`func NewTlsCertificateDataAttributesWithDefaults() *TlsCertificateDataAttributes`
 
-NewTLSCertificateDataAttributesWithDefaults instantiates a new TLSCertificateDataAttributes object
+NewTlsCertificateDataAttributesWithDefaults instantiates a new TlsCertificateDataAttributes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCertBlob
 
-`func (o *TLSCertificateDataAttributes) GetCertBlob() string`
+`func (o *TlsCertificateDataAttributes) GetCertBlob() string`
 
 GetCertBlob returns the CertBlob field if non-nil, zero value otherwise.
 
 ### GetCertBlobOk
 
-`func (o *TLSCertificateDataAttributes) GetCertBlobOk() (*string, bool)`
+`func (o *TlsCertificateDataAttributes) GetCertBlobOk() (*string, bool)`
 
 GetCertBlobOk returns a tuple with the CertBlob field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCertBlob
 
-`func (o *TLSCertificateDataAttributes) SetCertBlob(v string)`
+`func (o *TlsCertificateDataAttributes) SetCertBlob(v string)`
 
 SetCertBlob sets CertBlob field to given value.
 
 ### HasCertBlob
 
-`func (o *TLSCertificateDataAttributes) HasCertBlob() bool`
+`func (o *TlsCertificateDataAttributes) HasCertBlob() bool`
 
 HasCertBlob returns a boolean if a field has been set.
 
 ### GetName
 
-`func (o *TLSCertificateDataAttributes) GetName() string`
+`func (o *TlsCertificateDataAttributes) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *TLSCertificateDataAttributes) GetNameOk() (*string, bool)`
+`func (o *TlsCertificateDataAttributes) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *TLSCertificateDataAttributes) SetName(v string)`
+`func (o *TlsCertificateDataAttributes) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *TLSCertificateDataAttributes) HasName() bool`
+`func (o *TlsCertificateDataAttributes) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetAllowUntrustedRoot
 
-`func (o *TLSCertificateDataAttributes) GetAllowUntrustedRoot() bool`
+`func (o *TlsCertificateDataAttributes) GetAllowUntrustedRoot() bool`
 
 GetAllowUntrustedRoot returns the AllowUntrustedRoot field if non-nil, zero value otherwise.
 
 ### GetAllowUntrustedRootOk
 
-`func (o *TLSCertificateDataAttributes) GetAllowUntrustedRootOk() (*bool, bool)`
+`func (o *TlsCertificateDataAttributes) GetAllowUntrustedRootOk() (*bool, bool)`
 
 GetAllowUntrustedRootOk returns a tuple with the AllowUntrustedRoot field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAllowUntrustedRoot
 
-`func (o *TLSCertificateDataAttributes) SetAllowUntrustedRoot(v bool)`
+`func (o *TlsCertificateDataAttributes) SetAllowUntrustedRoot(v bool)`
 
 SetAllowUntrustedRoot sets AllowUntrustedRoot field to given value.
 
 ### HasAllowUntrustedRoot
 
-`func (o *TLSCertificateDataAttributes) HasAllowUntrustedRoot() bool`
+`func (o *TlsCertificateDataAttributes) HasAllowUntrustedRoot() bool`
 
 HasAllowUntrustedRoot returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

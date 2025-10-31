@@ -1,4 +1,4 @@
-# TLSSubscriptionResponseAttributesAllOf
+# TlsSubscriptionResponseAttributesAllOf
 
 ## Properties
 
@@ -9,72 +9,74 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewTLSSubscriptionResponseAttributesAllOf
+### NewTlsSubscriptionResponseAttributesAllOf
 
-`func NewTLSSubscriptionResponseAttributesAllOf() *TLSSubscriptionResponseAttributesAllOf`
+`func NewTlsSubscriptionResponseAttributesAllOf() *TlsSubscriptionResponseAttributesAllOf`
 
-NewTLSSubscriptionResponseAttributesAllOf instantiates a new TLSSubscriptionResponseAttributesAllOf object
+NewTlsSubscriptionResponseAttributesAllOf instantiates a new TlsSubscriptionResponseAttributesAllOf object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSSubscriptionResponseAttributesAllOfWithDefaults
+### NewTlsSubscriptionResponseAttributesAllOfWithDefaults
 
-`func NewTLSSubscriptionResponseAttributesAllOfWithDefaults() *TLSSubscriptionResponseAttributesAllOf`
+`func NewTlsSubscriptionResponseAttributesAllOfWithDefaults() *TlsSubscriptionResponseAttributesAllOf`
 
-NewTLSSubscriptionResponseAttributesAllOfWithDefaults instantiates a new TLSSubscriptionResponseAttributesAllOf object
+NewTlsSubscriptionResponseAttributesAllOfWithDefaults instantiates a new TlsSubscriptionResponseAttributesAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetState
 
-`func (o *TLSSubscriptionResponseAttributesAllOf) GetState() string`
+`func (o *TlsSubscriptionResponseAttributesAllOf) GetState() string`
 
 GetState returns the State field if non-nil, zero value otherwise.
 
 ### GetStateOk
 
-`func (o *TLSSubscriptionResponseAttributesAllOf) GetStateOk() (*string, bool)`
+`func (o *TlsSubscriptionResponseAttributesAllOf) GetStateOk() (*string, bool)`
 
 GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetState
 
-`func (o *TLSSubscriptionResponseAttributesAllOf) SetState(v string)`
+`func (o *TlsSubscriptionResponseAttributesAllOf) SetState(v string)`
 
 SetState sets State field to given value.
 
 ### HasState
 
-`func (o *TLSSubscriptionResponseAttributesAllOf) HasState() bool`
+`func (o *TlsSubscriptionResponseAttributesAllOf) HasState() bool`
 
 HasState returns a boolean if a field has been set.
 
 ### GetHasActiveOrder
 
-`func (o *TLSSubscriptionResponseAttributesAllOf) GetHasActiveOrder() bool`
+`func (o *TlsSubscriptionResponseAttributesAllOf) GetHasActiveOrder() bool`
 
 GetHasActiveOrder returns the HasActiveOrder field if non-nil, zero value otherwise.
 
 ### GetHasActiveOrderOk
 
-`func (o *TLSSubscriptionResponseAttributesAllOf) GetHasActiveOrderOk() (*bool, bool)`
+`func (o *TlsSubscriptionResponseAttributesAllOf) GetHasActiveOrderOk() (*bool, bool)`
 
 GetHasActiveOrderOk returns a tuple with the HasActiveOrder field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHasActiveOrder
 
-`func (o *TLSSubscriptionResponseAttributesAllOf) SetHasActiveOrder(v bool)`
+`func (o *TlsSubscriptionResponseAttributesAllOf) SetHasActiveOrder(v bool)`
 
 SetHasActiveOrder sets HasActiveOrder field to given value.
 
 ### HasHasActiveOrder
 
-`func (o *TLSSubscriptionResponseAttributesAllOf) HasHasActiveOrder() bool`
+`func (o *TlsSubscriptionResponseAttributesAllOf) HasHasActiveOrder() bool`
 
 HasHasActiveOrder returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

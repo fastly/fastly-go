@@ -23,18 +23,18 @@ type EventAttributes struct {
 	Admin *bool `json:"admin,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt  NullableTime `json:"created_at,omitempty"`
-	CustomerID *string      `json:"customer_id,omitempty"`
+	CustomerId *string      `json:"customer_id,omitempty"`
 	// Description of the event.
 	Description *string `json:"description,omitempty"`
 	// Type of event. Can be used with `filter[event_type]`
 	EventType *string `json:"event_type,omitempty"`
 	// IP addresses that the event was requested from.
-	IP *string `json:"ip,omitempty"`
+	Ip *string `json:"ip,omitempty"`
 	// Hash of key value pairs of additional information.
-	Metadata             map[string]map[string]any `json:"metadata,omitempty"`
-	ServiceID            *string                   `json:"service_id,omitempty"`
-	UserID               *string                   `json:"user_id,omitempty"`
-	TokenID              *string                   `json:"token_id,omitempty"`
+	Metadata             map[string]map[string]interface{} `json:"metadata,omitempty"`
+	ServiceId            *string                           `json:"service_id,omitempty"`
+	UserId               *string                           `json:"user_id,omitempty"`
+	TokenId              *string                           `json:"token_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -132,36 +132,36 @@ func (o *EventAttributes) UnsetCreatedAt() {
 	o.CreatedAt.Unset()
 }
 
-// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
-func (o *EventAttributes) GetCustomerID() string {
-	if o == nil || o.CustomerID == nil {
+// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
+func (o *EventAttributes) GetCustomerId() string {
+	if o == nil || o.CustomerId == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerID
+	return *o.CustomerId
 }
 
-// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
+// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventAttributes) GetCustomerIDOk() (*string, bool) {
-	if o == nil || o.CustomerID == nil {
+func (o *EventAttributes) GetCustomerIdOk() (*string, bool) {
+	if o == nil || o.CustomerId == nil {
 		return nil, false
 	}
-	return o.CustomerID, true
+	return o.CustomerId, true
 }
 
-// HasCustomerID returns a boolean if a field has been set.
-func (o *EventAttributes) HasCustomerID() bool {
-	if o != nil && o.CustomerID != nil {
+// HasCustomerId returns a boolean if a field has been set.
+func (o *EventAttributes) HasCustomerId() bool {
+	if o != nil && o.CustomerId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
-func (o *EventAttributes) SetCustomerID(v string) {
-	o.CustomerID = &v
+// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
+func (o *EventAttributes) SetCustomerId(v string) {
+	o.CustomerId = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -228,42 +228,42 @@ func (o *EventAttributes) SetEventType(v string) {
 	o.EventType = &v
 }
 
-// GetIP returns the IP field value if set, zero value otherwise.
-func (o *EventAttributes) GetIP() string {
-	if o == nil || o.IP == nil {
+// GetIp returns the Ip field value if set, zero value otherwise.
+func (o *EventAttributes) GetIp() string {
+	if o == nil || o.Ip == nil {
 		var ret string
 		return ret
 	}
-	return *o.IP
+	return *o.Ip
 }
 
-// GetIPOk returns a tuple with the IP field value if set, nil otherwise
+// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventAttributes) GetIPOk() (*string, bool) {
-	if o == nil || o.IP == nil {
+func (o *EventAttributes) GetIpOk() (*string, bool) {
+	if o == nil || o.Ip == nil {
 		return nil, false
 	}
-	return o.IP, true
+	return o.Ip, true
 }
 
-// HasIP returns a boolean if a field has been set.
-func (o *EventAttributes) HasIP() bool {
-	if o != nil && o.IP != nil {
+// HasIp returns a boolean if a field has been set.
+func (o *EventAttributes) HasIp() bool {
+	if o != nil && o.Ip != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetIP gets a reference to the given string and assigns it to the IP field.
-func (o *EventAttributes) SetIP(v string) {
-	o.IP = &v
+// SetIp gets a reference to the given string and assigns it to the Ip field.
+func (o *EventAttributes) SetIp(v string) {
+	o.Ip = &v
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *EventAttributes) GetMetadata() map[string]map[string]any {
+func (o *EventAttributes) GetMetadata() map[string]map[string]interface{} {
 	if o == nil || o.Metadata == nil {
-		var ret map[string]map[string]any
+		var ret map[string]map[string]interface{}
 		return ret
 	}
 	return o.Metadata
@@ -271,7 +271,7 @@ func (o *EventAttributes) GetMetadata() map[string]map[string]any {
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventAttributes) GetMetadataOk() (map[string]map[string]any, bool) {
+func (o *EventAttributes) GetMetadataOk() (map[string]map[string]interface{}, bool) {
 	if o == nil || o.Metadata == nil {
 		return nil, false
 	}
@@ -287,105 +287,105 @@ func (o *EventAttributes) HasMetadata() bool {
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]map[string]any and assigns it to the Metadata field.
-func (o *EventAttributes) SetMetadata(v map[string]map[string]any) {
+// SetMetadata gets a reference to the given map[string]map[string]interface{} and assigns it to the Metadata field.
+func (o *EventAttributes) SetMetadata(v map[string]map[string]interface{}) {
 	o.Metadata = v
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *EventAttributes) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *EventAttributes) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventAttributes) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *EventAttributes) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *EventAttributes) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *EventAttributes) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *EventAttributes) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *EventAttributes) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
-// GetUserID returns the UserID field value if set, zero value otherwise.
-func (o *EventAttributes) GetUserID() string {
-	if o == nil || o.UserID == nil {
+// GetUserId returns the UserId field value if set, zero value otherwise.
+func (o *EventAttributes) GetUserId() string {
+	if o == nil || o.UserId == nil {
 		var ret string
 		return ret
 	}
-	return *o.UserID
+	return *o.UserId
 }
 
-// GetUserIDOk returns a tuple with the UserID field value if set, nil otherwise
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventAttributes) GetUserIDOk() (*string, bool) {
-	if o == nil || o.UserID == nil {
+func (o *EventAttributes) GetUserIdOk() (*string, bool) {
+	if o == nil || o.UserId == nil {
 		return nil, false
 	}
-	return o.UserID, true
+	return o.UserId, true
 }
 
-// HasUserID returns a boolean if a field has been set.
-func (o *EventAttributes) HasUserID() bool {
-	if o != nil && o.UserID != nil {
+// HasUserId returns a boolean if a field has been set.
+func (o *EventAttributes) HasUserId() bool {
+	if o != nil && o.UserId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUserID gets a reference to the given string and assigns it to the UserID field.
-func (o *EventAttributes) SetUserID(v string) {
-	o.UserID = &v
+// SetUserId gets a reference to the given string and assigns it to the UserId field.
+func (o *EventAttributes) SetUserId(v string) {
+	o.UserId = &v
 }
 
-// GetTokenID returns the TokenID field value if set, zero value otherwise.
-func (o *EventAttributes) GetTokenID() string {
-	if o == nil || o.TokenID == nil {
+// GetTokenId returns the TokenId field value if set, zero value otherwise.
+func (o *EventAttributes) GetTokenId() string {
+	if o == nil || o.TokenId == nil {
 		var ret string
 		return ret
 	}
-	return *o.TokenID
+	return *o.TokenId
 }
 
-// GetTokenIDOk returns a tuple with the TokenID field value if set, nil otherwise
+// GetTokenIdOk returns a tuple with the TokenId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventAttributes) GetTokenIDOk() (*string, bool) {
-	if o == nil || o.TokenID == nil {
+func (o *EventAttributes) GetTokenIdOk() (*string, bool) {
+	if o == nil || o.TokenId == nil {
 		return nil, false
 	}
-	return o.TokenID, true
+	return o.TokenId, true
 }
 
-// HasTokenID returns a boolean if a field has been set.
-func (o *EventAttributes) HasTokenID() bool {
-	if o != nil && o.TokenID != nil {
+// HasTokenId returns a boolean if a field has been set.
+func (o *EventAttributes) HasTokenId() bool {
+	if o != nil && o.TokenId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTokenID gets a reference to the given string and assigns it to the TokenID field.
-func (o *EventAttributes) SetTokenID(v string) {
-	o.TokenID = &v
+// SetTokenId gets a reference to the given string and assigns it to the TokenId field.
+func (o *EventAttributes) SetTokenId(v string) {
+	o.TokenId = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -398,8 +398,8 @@ func (o EventAttributes) MarshalJSON() ([]byte, error) {
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
 	}
-	if o.CustomerID != nil {
-		toSerialize["customer_id"] = o.CustomerID
+	if o.CustomerId != nil {
+		toSerialize["customer_id"] = o.CustomerId
 	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
@@ -407,20 +407,20 @@ func (o EventAttributes) MarshalJSON() ([]byte, error) {
 	if o.EventType != nil {
 		toSerialize["event_type"] = o.EventType
 	}
-	if o.IP != nil {
-		toSerialize["ip"] = o.IP
+	if o.Ip != nil {
+		toSerialize["ip"] = o.Ip
 	}
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
-	if o.UserID != nil {
-		toSerialize["user_id"] = o.UserID
+	if o.UserId != nil {
+		toSerialize["user_id"] = o.UserId
 	}
-	if o.TokenID != nil {
-		toSerialize["token_id"] = o.TokenID
+	if o.TokenId != nil {
+		toSerialize["token_id"] = o.TokenId
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Product** | Pointer to [**NgwafResponseProductProduct**](NgwafResponseProductProduct.md) |  | [optional] 
-**Service** | Pointer to [**BotManagementResponseServiceService**](BotManagementResponseServiceService.md) |  | [optional] 
+**Service** | Pointer to [**ApiDiscoveryResponseServiceService**](ApiDiscoveryResponseServiceService.md) |  | [optional] 
 **Configuration** | Pointer to [**NgwafResponseConfigurationConfiguration**](NgwafResponseConfigurationConfiguration.md) |  | [optional] 
 **Links** | Pointer to [**NgwafResponseLinksLinks**](NgwafResponseLinksLinks.md) |  | [optional] 
 
@@ -55,20 +55,20 @@ HasProduct returns a boolean if a field has been set.
 
 ### GetService
 
-`func (o *NgwafResponseConfigure) GetService() BotManagementResponseServiceService`
+`func (o *NgwafResponseConfigure) GetService() ApiDiscoveryResponseServiceService`
 
 GetService returns the Service field if non-nil, zero value otherwise.
 
 ### GetServiceOk
 
-`func (o *NgwafResponseConfigure) GetServiceOk() (*BotManagementResponseServiceService, bool)`
+`func (o *NgwafResponseConfigure) GetServiceOk() (*ApiDiscoveryResponseServiceService, bool)`
 
 GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetService
 
-`func (o *NgwafResponseConfigure) SetService(v BotManagementResponseServiceService)`
+`func (o *NgwafResponseConfigure) SetService(v ApiDiscoveryResponseServiceService)`
 
 SetService sets Service field to given value.
 
@@ -130,3 +130,5 @@ HasLinks returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

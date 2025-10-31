@@ -18,8 +18,8 @@ import (
 
 // PublishItemFormats Transport-specific message payload representations to be used for delivery. At least one format (`http-response`, `http-stream`, and/or `ws-message`) must be specified. Messages are only delivered to subscribers interested in the provided formats. For example, the `ws-message` format will only be sent to WebSocket clients.
 type PublishItemFormats struct {
-	HTTPResponse         *HTTPResponseFormat `json:"http-response,omitempty"`
-	HTTPStream           *HTTPStreamFormat   `json:"http-stream,omitempty"`
+	HttpResponse         *HttpResponseFormat `json:"http-response,omitempty"`
+	HttpStream           *HttpStreamFormat   `json:"http-stream,omitempty"`
 	WsMessage            *WsMessageFormat    `json:"ws-message,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -43,68 +43,68 @@ func NewPublishItemFormatsWithDefaults() *PublishItemFormats {
 	return &this
 }
 
-// GetHTTPResponse returns the HTTPResponse field value if set, zero value otherwise.
-func (o *PublishItemFormats) GetHTTPResponse() HTTPResponseFormat {
-	if o == nil || o.HTTPResponse == nil {
-		var ret HTTPResponseFormat
+// GetHttpResponse returns the HttpResponse field value if set, zero value otherwise.
+func (o *PublishItemFormats) GetHttpResponse() HttpResponseFormat {
+	if o == nil || o.HttpResponse == nil {
+		var ret HttpResponseFormat
 		return ret
 	}
-	return *o.HTTPResponse
+	return *o.HttpResponse
 }
 
-// GetHTTPResponseOk returns a tuple with the HTTPResponse field value if set, nil otherwise
+// GetHttpResponseOk returns a tuple with the HttpResponse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PublishItemFormats) GetHTTPResponseOk() (*HTTPResponseFormat, bool) {
-	if o == nil || o.HTTPResponse == nil {
+func (o *PublishItemFormats) GetHttpResponseOk() (*HttpResponseFormat, bool) {
+	if o == nil || o.HttpResponse == nil {
 		return nil, false
 	}
-	return o.HTTPResponse, true
+	return o.HttpResponse, true
 }
 
-// HasHTTPResponse returns a boolean if a field has been set.
-func (o *PublishItemFormats) HasHTTPResponse() bool {
-	if o != nil && o.HTTPResponse != nil {
+// HasHttpResponse returns a boolean if a field has been set.
+func (o *PublishItemFormats) HasHttpResponse() bool {
+	if o != nil && o.HttpResponse != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHTTPResponse gets a reference to the given HTTPResponseFormat and assigns it to the HTTPResponse field.
-func (o *PublishItemFormats) SetHTTPResponse(v HTTPResponseFormat) {
-	o.HTTPResponse = &v
+// SetHttpResponse gets a reference to the given HttpResponseFormat and assigns it to the HttpResponse field.
+func (o *PublishItemFormats) SetHttpResponse(v HttpResponseFormat) {
+	o.HttpResponse = &v
 }
 
-// GetHTTPStream returns the HTTPStream field value if set, zero value otherwise.
-func (o *PublishItemFormats) GetHTTPStream() HTTPStreamFormat {
-	if o == nil || o.HTTPStream == nil {
-		var ret HTTPStreamFormat
+// GetHttpStream returns the HttpStream field value if set, zero value otherwise.
+func (o *PublishItemFormats) GetHttpStream() HttpStreamFormat {
+	if o == nil || o.HttpStream == nil {
+		var ret HttpStreamFormat
 		return ret
 	}
-	return *o.HTTPStream
+	return *o.HttpStream
 }
 
-// GetHTTPStreamOk returns a tuple with the HTTPStream field value if set, nil otherwise
+// GetHttpStreamOk returns a tuple with the HttpStream field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PublishItemFormats) GetHTTPStreamOk() (*HTTPStreamFormat, bool) {
-	if o == nil || o.HTTPStream == nil {
+func (o *PublishItemFormats) GetHttpStreamOk() (*HttpStreamFormat, bool) {
+	if o == nil || o.HttpStream == nil {
 		return nil, false
 	}
-	return o.HTTPStream, true
+	return o.HttpStream, true
 }
 
-// HasHTTPStream returns a boolean if a field has been set.
-func (o *PublishItemFormats) HasHTTPStream() bool {
-	if o != nil && o.HTTPStream != nil {
+// HasHttpStream returns a boolean if a field has been set.
+func (o *PublishItemFormats) HasHttpStream() bool {
+	if o != nil && o.HttpStream != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHTTPStream gets a reference to the given HTTPStreamFormat and assigns it to the HTTPStream field.
-func (o *PublishItemFormats) SetHTTPStream(v HTTPStreamFormat) {
-	o.HTTPStream = &v
+// SetHttpStream gets a reference to the given HttpStreamFormat and assigns it to the HttpStream field.
+func (o *PublishItemFormats) SetHttpStream(v HttpStreamFormat) {
+	o.HttpStream = &v
 }
 
 // GetWsMessage returns the WsMessage field value if set, zero value otherwise.
@@ -143,11 +143,11 @@ func (o *PublishItemFormats) SetWsMessage(v WsMessageFormat) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o PublishItemFormats) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.HTTPResponse != nil {
-		toSerialize["http-response"] = o.HTTPResponse
+	if o.HttpResponse != nil {
+		toSerialize["http-response"] = o.HttpResponse
 	}
-	if o.HTTPStream != nil {
-		toSerialize["http-stream"] = o.HTTPStream
+	if o.HttpStream != nil {
+		toSerialize["http-stream"] = o.HttpStream
 	}
 	if o.WsMessage != nil {
 		toSerialize["ws-message"] = o.WsMessage

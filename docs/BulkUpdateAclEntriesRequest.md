@@ -1,54 +1,56 @@
-# BulkUpdateACLEntriesRequest
+# BulkUpdateAclEntriesRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Entries** | Pointer to [**[]BulkUpdateACLEntry**](BulkUpdateACLEntry.md) |  | [optional] 
+**Entries** | Pointer to [**[]BulkUpdateAclEntry**](BulkUpdateAclEntry.md) |  | [optional] 
 
 ## Methods
 
-### NewBulkUpdateACLEntriesRequest
+### NewBulkUpdateAclEntriesRequest
 
-`func NewBulkUpdateACLEntriesRequest() *BulkUpdateACLEntriesRequest`
+`func NewBulkUpdateAclEntriesRequest() *BulkUpdateAclEntriesRequest`
 
-NewBulkUpdateACLEntriesRequest instantiates a new BulkUpdateACLEntriesRequest object
+NewBulkUpdateAclEntriesRequest instantiates a new BulkUpdateAclEntriesRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewBulkUpdateACLEntriesRequestWithDefaults
+### NewBulkUpdateAclEntriesRequestWithDefaults
 
-`func NewBulkUpdateACLEntriesRequestWithDefaults() *BulkUpdateACLEntriesRequest`
+`func NewBulkUpdateAclEntriesRequestWithDefaults() *BulkUpdateAclEntriesRequest`
 
-NewBulkUpdateACLEntriesRequestWithDefaults instantiates a new BulkUpdateACLEntriesRequest object
+NewBulkUpdateAclEntriesRequestWithDefaults instantiates a new BulkUpdateAclEntriesRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetEntries
 
-`func (o *BulkUpdateACLEntriesRequest) GetEntries() []BulkUpdateACLEntry`
+`func (o *BulkUpdateAclEntriesRequest) GetEntries() []BulkUpdateAclEntry`
 
 GetEntries returns the Entries field if non-nil, zero value otherwise.
 
 ### GetEntriesOk
 
-`func (o *BulkUpdateACLEntriesRequest) GetEntriesOk() (*[]BulkUpdateACLEntry, bool)`
+`func (o *BulkUpdateAclEntriesRequest) GetEntriesOk() (*[]BulkUpdateAclEntry, bool)`
 
 GetEntriesOk returns a tuple with the Entries field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntries
 
-`func (o *BulkUpdateACLEntriesRequest) SetEntries(v []BulkUpdateACLEntry)`
+`func (o *BulkUpdateAclEntriesRequest) SetEntries(v []BulkUpdateAclEntry)`
 
 SetEntries sets Entries field to given value.
 
 ### HasEntries
 
-`func (o *BulkUpdateACLEntriesRequest) HasEntries() bool`
+`func (o *BulkUpdateAclEntriesRequest) HasEntries() bool`
 
 HasEntries returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

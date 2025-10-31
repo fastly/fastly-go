@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// TLSCsrResponse struct for TLSCsrResponse
-type TLSCsrResponse struct {
-	Data                 *TLSCsrResponseData `json:"data,omitempty"`
+// TlsCsrResponse struct for TlsCsrResponse
+type TlsCsrResponse struct {
+	Data                 *TlsCsrResponseData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TLSCsrResponse TLSCsrResponse
+type _TlsCsrResponse TlsCsrResponse
 
-// NewTLSCsrResponse instantiates a new TLSCsrResponse object
+// NewTlsCsrResponse instantiates a new TlsCsrResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSCsrResponse() *TLSCsrResponse {
-	this := TLSCsrResponse{}
+func NewTlsCsrResponse() *TlsCsrResponse {
+	this := TlsCsrResponse{}
 	return &this
 }
 
-// NewTLSCsrResponseWithDefaults instantiates a new TLSCsrResponse object
+// NewTlsCsrResponseWithDefaults instantiates a new TlsCsrResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSCsrResponseWithDefaults() *TLSCsrResponse {
-	this := TLSCsrResponse{}
+func NewTlsCsrResponseWithDefaults() *TlsCsrResponse {
+	this := TlsCsrResponse{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *TLSCsrResponse) GetData() TLSCsrResponseData {
+func (o *TlsCsrResponse) GetData() TlsCsrResponseData {
 	if o == nil || o.Data == nil {
-		var ret TLSCsrResponseData
+		var ret TlsCsrResponseData
 		return ret
 	}
 	return *o.Data
@@ -52,7 +52,7 @@ func (o *TLSCsrResponse) GetData() TLSCsrResponseData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCsrResponse) GetDataOk() (*TLSCsrResponseData, bool) {
+func (o *TlsCsrResponse) GetDataOk() (*TlsCsrResponseData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *TLSCsrResponse) GetDataOk() (*TLSCsrResponseData, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *TLSCsrResponse) HasData() bool {
+func (o *TlsCsrResponse) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -68,14 +68,14 @@ func (o *TLSCsrResponse) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given TLSCsrResponseData and assigns it to the Data field.
-func (o *TLSCsrResponse) SetData(v TLSCsrResponseData) {
+// SetData gets a reference to the given TlsCsrResponseData and assigns it to the Data field.
+func (o *TlsCsrResponse) SetData(v TlsCsrResponseData) {
 	o.Data = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSCsrResponse) MarshalJSON() ([]byte, error) {
+func (o TlsCsrResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -90,11 +90,11 @@ func (o TLSCsrResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSCsrResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSCsrResponse := _TLSCsrResponse{}
+func (o *TlsCsrResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsCsrResponse := _TlsCsrResponse{}
 
-	if err = json.Unmarshal(bytes, &varTLSCsrResponse); err == nil {
-		*o = TLSCsrResponse(varTLSCsrResponse)
+	if err = json.Unmarshal(bytes, &varTlsCsrResponse); err == nil {
+		*o = TlsCsrResponse(varTlsCsrResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *TLSCsrResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTLSCsrResponse is a helper abstraction for handling nullable tlscsrresponse types.
-type NullableTLSCsrResponse struct {
-	value *TLSCsrResponse
+// NullableTlsCsrResponse is a helper abstraction for handling nullable tlscsrresponse types.
+type NullableTlsCsrResponse struct {
+	value *TlsCsrResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSCsrResponse) Get() *TLSCsrResponse {
+func (v NullableTlsCsrResponse) Get() *TlsCsrResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSCsrResponse) Set(val *TLSCsrResponse) {
+func (v *NullableTlsCsrResponse) Set(val *TlsCsrResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSCsrResponse) IsSet() bool {
+func (v NullableTlsCsrResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSCsrResponse) Unset() {
+func (v *NullableTlsCsrResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSCsrResponse returns a pointer to a new instance of NullableTLSCsrResponse.
-func NewNullableTLSCsrResponse(val *TLSCsrResponse) *NullableTLSCsrResponse {
-	return &NullableTLSCsrResponse{value: val, isSet: true}
+// NewNullableTlsCsrResponse returns a pointer to a new instance of NullableTlsCsrResponse.
+func NewNullableTlsCsrResponse(val *TlsCsrResponse) *NullableTlsCsrResponse {
+	return &NullableTlsCsrResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSCsrResponse) MarshalJSON() ([]byte, error) {
+func (v NullableTlsCsrResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSCsrResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsCsrResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

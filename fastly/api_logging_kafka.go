@@ -36,11 +36,11 @@ type LoggingKafkaAPI interface {
 		Create a Kafka logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogKafkaRequest
 	*/
-	CreateLogKafka(ctx context.Context, serviceID string, versionID int32) APICreateLogKafkaRequest
+	CreateLogKafka(ctx context.Context, serviceId string, versionId int32) APICreateLogKafkaRequest
 
 	// CreateLogKafkaExecute executes the request
 	//  @return LoggingKafkaResponsePost
@@ -52,12 +52,12 @@ type LoggingKafkaAPI interface {
 		Delete the Kafka logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingKafkaName The name for the real-time logging configuration.
 		 @return APIDeleteLogKafkaRequest
 	*/
-	DeleteLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIDeleteLogKafkaRequest
+	DeleteLogKafka(ctx context.Context, serviceId string, versionId int32, loggingKafkaName string) APIDeleteLogKafkaRequest
 
 	// DeleteLogKafkaExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingKafkaAPI interface {
 		Get the Kafka logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingKafkaName The name for the real-time logging configuration.
 		 @return APIGetLogKafkaRequest
 	*/
-	GetLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIGetLogKafkaRequest
+	GetLogKafka(ctx context.Context, serviceId string, versionId int32, loggingKafkaName string) APIGetLogKafkaRequest
 
 	// GetLogKafkaExecute executes the request
 	//  @return LoggingKafkaResponse
@@ -86,11 +86,11 @@ type LoggingKafkaAPI interface {
 		List all of the Kafka logging endpoints for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogKafkaRequest
 	*/
-	ListLogKafka(ctx context.Context, serviceID string, versionID int32) APIListLogKafkaRequest
+	ListLogKafka(ctx context.Context, serviceId string, versionId int32) APIListLogKafkaRequest
 
 	// ListLogKafkaExecute executes the request
 	//  @return []LoggingKafkaResponse
@@ -102,12 +102,12 @@ type LoggingKafkaAPI interface {
 		Update the Kafka logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingKafkaName The name for the real-time logging configuration.
 		 @return APIUpdateLogKafkaRequest
 	*/
-	UpdateLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIUpdateLogKafkaRequest
+	UpdateLogKafka(ctx context.Context, serviceId string, versionId int32, loggingKafkaName string) APIUpdateLogKafkaRequest
 
 	// UpdateLogKafkaExecute executes the request
 	//  @return LoggingKafkaResponse
@@ -121,8 +121,8 @@ type LoggingKafkaAPIService service
 type APICreateLogKafkaRequest struct {
 	ctx                 context.Context
 	APIService          LoggingKafkaAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -142,7 +142,7 @@ type APICreateLogKafkaRequest struct {
 	authMethod          *string
 	user                *string
 	password            *string
-	useTLS              *LoggingUseTLSString
+	useTls              *LoggingUseTlsString
 }
 
 // Name The name for the real-time logging configuration.
@@ -181,26 +181,26 @@ func (r *APICreateLogKafkaRequest) FormatVersion(formatVersion int32) *APICreate
 	return r
 }
 
-// TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
-func (r *APICreateLogKafkaRequest) TLSCaCert(tlsCaCert string) *APICreateLogKafkaRequest {
+// TlsCaCert A secure certificate to authenticate a server with. Must be in PEM format.
+func (r *APICreateLogKafkaRequest) TlsCaCert(tlsCaCert string) *APICreateLogKafkaRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
 
-// TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
-func (r *APICreateLogKafkaRequest) TLSClientCert(tlsClientCert string) *APICreateLogKafkaRequest {
+// TlsClientCert The client certificate used to make authenticated requests. Must be in PEM format.
+func (r *APICreateLogKafkaRequest) TlsClientCert(tlsClientCert string) *APICreateLogKafkaRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
 
-// TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
-func (r *APICreateLogKafkaRequest) TLSClientKey(tlsClientKey string) *APICreateLogKafkaRequest {
+// TlsClientKey The client private key used to make authenticated requests. Must be in PEM format.
+func (r *APICreateLogKafkaRequest) TlsClientKey(tlsClientKey string) *APICreateLogKafkaRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
 
-// TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-func (r *APICreateLogKafkaRequest) TLSHostname(tlsHostname string) *APICreateLogKafkaRequest {
+// TlsHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+func (r *APICreateLogKafkaRequest) TlsHostname(tlsHostname string) *APICreateLogKafkaRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
@@ -259,9 +259,9 @@ func (r *APICreateLogKafkaRequest) Password(password string) *APICreateLogKafkaR
 	return r
 }
 
-// UseTLS returns a pointer to a request.
-func (r *APICreateLogKafkaRequest) UseTLS(useTLS LoggingUseTLSString) *APICreateLogKafkaRequest {
-	r.useTLS = &useTLS
+// UseTls returns a pointer to a request.
+func (r *APICreateLogKafkaRequest) UseTls(useTls LoggingUseTlsString) *APICreateLogKafkaRequest {
+	r.useTls = &useTls
 	return r
 }
 
@@ -276,16 +276,16 @@ CreateLogKafka Create a Kafka log endpoint
 Create a Kafka logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogKafkaRequest
 */
-func (a *LoggingKafkaAPIService) CreateLogKafka(ctx context.Context, serviceID string, versionID int32) APICreateLogKafkaRequest {
+func (a *LoggingKafkaAPIService) CreateLogKafka(ctx context.Context, serviceId string, versionId int32) APICreateLogKafkaRequest {
 	return APICreateLogKafkaRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -305,8 +305,8 @@ func (a *LoggingKafkaAPIService) CreateLogKafkaExecute(r APICreateLogKafkaReques
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/kafka"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -386,8 +386,8 @@ func (a *LoggingKafkaAPIService) CreateLogKafkaExecute(r APICreateLogKafkaReques
 	if r.password != nil {
 		localVarFormParams.Add("password", parameterToString(*r.password, ""))
 	}
-	if r.useTLS != nil {
-		localVarFormParams.Add("use_tls", parameterToString(*r.useTLS, ""))
+	if r.useTls != nil {
+		localVarFormParams.Add("use_tls", parameterToString(*r.useTls, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -457,8 +457,8 @@ func (a *LoggingKafkaAPIService) CreateLogKafkaExecute(r APICreateLogKafkaReques
 type APIDeleteLogKafkaRequest struct {
 	ctx              context.Context
 	APIService       LoggingKafkaAPI
-	serviceID        string
-	versionID        int32
+	serviceId        string
+	versionId        int32
 	loggingKafkaName string
 }
 
@@ -473,17 +473,17 @@ DeleteLogKafka Delete the Kafka log endpoint
 Delete the Kafka logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingKafkaName The name for the real-time logging configuration.
  @return APIDeleteLogKafkaRequest
 */
-func (a *LoggingKafkaAPIService) DeleteLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIDeleteLogKafkaRequest {
+func (a *LoggingKafkaAPIService) DeleteLogKafka(ctx context.Context, serviceId string, versionId int32, loggingKafkaName string) APIDeleteLogKafkaRequest {
 	return APIDeleteLogKafkaRequest{
 		APIService:       a,
 		ctx:              ctx,
-		serviceID:        serviceID,
-		versionID:        versionID,
+		serviceId:        serviceId,
+		versionId:        versionId,
 		loggingKafkaName: loggingKafkaName,
 	}
 }
@@ -504,8 +504,8 @@ func (a *LoggingKafkaAPIService) DeleteLogKafkaExecute(r APIDeleteLogKafkaReques
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_kafka_name"+"}", gourl.PathEscape(parameterToString(r.loggingKafkaName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -597,8 +597,8 @@ func (a *LoggingKafkaAPIService) DeleteLogKafkaExecute(r APIDeleteLogKafkaReques
 type APIGetLogKafkaRequest struct {
 	ctx              context.Context
 	APIService       LoggingKafkaAPI
-	serviceID        string
-	versionID        int32
+	serviceId        string
+	versionId        int32
 	loggingKafkaName string
 }
 
@@ -613,17 +613,17 @@ GetLogKafka Get a Kafka log endpoint
 Get the Kafka logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingKafkaName The name for the real-time logging configuration.
  @return APIGetLogKafkaRequest
 */
-func (a *LoggingKafkaAPIService) GetLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIGetLogKafkaRequest {
+func (a *LoggingKafkaAPIService) GetLogKafka(ctx context.Context, serviceId string, versionId int32, loggingKafkaName string) APIGetLogKafkaRequest {
 	return APIGetLogKafkaRequest{
 		APIService:       a,
 		ctx:              ctx,
-		serviceID:        serviceID,
-		versionID:        versionID,
+		serviceId:        serviceId,
+		versionId:        versionId,
 		loggingKafkaName: loggingKafkaName,
 	}
 }
@@ -644,8 +644,8 @@ func (a *LoggingKafkaAPIService) GetLogKafkaExecute(r APIGetLogKafkaRequest) (*L
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_kafka_name"+"}", gourl.PathEscape(parameterToString(r.loggingKafkaName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -737,8 +737,8 @@ func (a *LoggingKafkaAPIService) GetLogKafkaExecute(r APIGetLogKafkaRequest) (*L
 type APIListLogKafkaRequest struct {
 	ctx        context.Context
 	APIService LoggingKafkaAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -752,16 +752,16 @@ ListLogKafka List Kafka log endpoints
 List all of the Kafka logging endpoints for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogKafkaRequest
 */
-func (a *LoggingKafkaAPIService) ListLogKafka(ctx context.Context, serviceID string, versionID int32) APIListLogKafkaRequest {
+func (a *LoggingKafkaAPIService) ListLogKafka(ctx context.Context, serviceId string, versionId int32) APIListLogKafkaRequest {
 	return APIListLogKafkaRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -781,8 +781,8 @@ func (a *LoggingKafkaAPIService) ListLogKafkaExecute(r APIListLogKafkaRequest) (
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/kafka"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -873,8 +873,8 @@ func (a *LoggingKafkaAPIService) ListLogKafkaExecute(r APIListLogKafkaRequest) (
 type APIUpdateLogKafkaRequest struct {
 	ctx              context.Context
 	APIService       LoggingKafkaAPI
-	serviceID        string
-	versionID        int32
+	serviceId        string
+	versionId        int32
 	loggingKafkaName string
 }
 
@@ -889,17 +889,17 @@ UpdateLogKafka Update the Kafka log endpoint
 Update the Kafka logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingKafkaName The name for the real-time logging configuration.
  @return APIUpdateLogKafkaRequest
 */
-func (a *LoggingKafkaAPIService) UpdateLogKafka(ctx context.Context, serviceID string, versionID int32, loggingKafkaName string) APIUpdateLogKafkaRequest {
+func (a *LoggingKafkaAPIService) UpdateLogKafka(ctx context.Context, serviceId string, versionId int32, loggingKafkaName string) APIUpdateLogKafkaRequest {
 	return APIUpdateLogKafkaRequest{
 		APIService:       a,
 		ctx:              ctx,
-		serviceID:        serviceID,
-		versionID:        versionID,
+		serviceId:        serviceId,
+		versionId:        versionId,
 		loggingKafkaName: loggingKafkaName,
 	}
 }
@@ -920,8 +920,8 @@ func (a *LoggingKafkaAPIService) UpdateLogKafkaExecute(r APIUpdateLogKafkaReques
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_kafka_name"+"}", gourl.PathEscape(parameterToString(r.loggingKafkaName, "")))
 
 	localVarHeaderParams := make(map[string]string)

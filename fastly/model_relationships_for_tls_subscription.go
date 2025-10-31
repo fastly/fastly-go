@@ -17,17 +17,17 @@ import (
 	"fmt"
 )
 
-// RelationshipsForTLSSubscription struct for RelationshipsForTLSSubscription
-type RelationshipsForTLSSubscription struct {
+// RelationshipsForTlsSubscription struct for RelationshipsForTlsSubscription
+type RelationshipsForTlsSubscription struct {
 	RelationshipCommonName                         *RelationshipCommonName
-	RelationshipTLSCertificates                    *RelationshipTLSCertificates
-	RelationshipTLSConfigurationForTLSSubscription *RelationshipTLSConfigurationForTLSSubscription
-	RelationshipTLSDomains                         *RelationshipTLSDomains
+	RelationshipTlsCertificates                    *RelationshipTlsCertificates
+	RelationshipTlsConfigurationForTlsSubscription *RelationshipTlsConfigurationForTlsSubscription
+	RelationshipTlsDomains                         *RelationshipTlsDomains
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipsForTLSSubscription) UnmarshalJSON(data []byte) error {
+func (o *RelationshipsForTlsSubscription) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into RelationshipCommonName
 	err = json.Unmarshal(data, &o.RelationshipCommonName)
@@ -41,109 +41,109 @@ func (o *RelationshipsForTLSSubscription) UnmarshalJSON(data []byte) error {
 		o.RelationshipCommonName = nil
 	}
 
-	// try to unmarshal JSON data into RelationshipTLSCertificates
-	err = json.Unmarshal(data, &o.RelationshipTLSCertificates)
+	// try to unmarshal JSON data into RelationshipTlsCertificates
+	err = json.Unmarshal(data, &o.RelationshipTlsCertificates)
 	if err == nil {
-		jsonRelationshipTLSCertificates, _ := json.Marshal(o.RelationshipTLSCertificates)
-		if string(jsonRelationshipTLSCertificates) != "{}" { // empty struct
-			return nil // data stored in o.RelationshipTLSCertificates, return on the first match
+		jsonRelationshipTlsCertificates, _ := json.Marshal(o.RelationshipTlsCertificates)
+		if string(jsonRelationshipTlsCertificates) != "{}" { // empty struct
+			return nil // data stored in o.RelationshipTlsCertificates, return on the first match
 		}
-		o.RelationshipTLSCertificates = nil
+		o.RelationshipTlsCertificates = nil
 	} else {
-		o.RelationshipTLSCertificates = nil
+		o.RelationshipTlsCertificates = nil
 	}
 
-	// try to unmarshal JSON data into RelationshipTLSConfigurationForTLSSubscription
-	err = json.Unmarshal(data, &o.RelationshipTLSConfigurationForTLSSubscription)
+	// try to unmarshal JSON data into RelationshipTlsConfigurationForTlsSubscription
+	err = json.Unmarshal(data, &o.RelationshipTlsConfigurationForTlsSubscription)
 	if err == nil {
-		jsonRelationshipTLSConfigurationForTLSSubscription, _ := json.Marshal(o.RelationshipTLSConfigurationForTLSSubscription)
-		if string(jsonRelationshipTLSConfigurationForTLSSubscription) != "{}" { // empty struct
-			return nil // data stored in o.RelationshipTLSConfigurationForTLSSubscription, return on the first match
+		jsonRelationshipTlsConfigurationForTlsSubscription, _ := json.Marshal(o.RelationshipTlsConfigurationForTlsSubscription)
+		if string(jsonRelationshipTlsConfigurationForTlsSubscription) != "{}" { // empty struct
+			return nil // data stored in o.RelationshipTlsConfigurationForTlsSubscription, return on the first match
 		}
-		o.RelationshipTLSConfigurationForTLSSubscription = nil
+		o.RelationshipTlsConfigurationForTlsSubscription = nil
 	} else {
-		o.RelationshipTLSConfigurationForTLSSubscription = nil
+		o.RelationshipTlsConfigurationForTlsSubscription = nil
 	}
 
-	// try to unmarshal JSON data into RelationshipTLSDomains
-	err = json.Unmarshal(data, &o.RelationshipTLSDomains)
+	// try to unmarshal JSON data into RelationshipTlsDomains
+	err = json.Unmarshal(data, &o.RelationshipTlsDomains)
 	if err == nil {
-		jsonRelationshipTLSDomains, _ := json.Marshal(o.RelationshipTLSDomains)
-		if string(jsonRelationshipTLSDomains) != "{}" { // empty struct
-			return nil // data stored in o.RelationshipTLSDomains, return on the first match
+		jsonRelationshipTlsDomains, _ := json.Marshal(o.RelationshipTlsDomains)
+		if string(jsonRelationshipTlsDomains) != "{}" { // empty struct
+			return nil // data stored in o.RelationshipTlsDomains, return on the first match
 		}
-		o.RelationshipTLSDomains = nil
+		o.RelationshipTlsDomains = nil
 	} else {
-		o.RelationshipTLSDomains = nil
+		o.RelationshipTlsDomains = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(RelationshipsForTLSSubscription)")
+	return fmt.Errorf("data failed to match schemas in anyOf(RelationshipsForTlsSubscription)")
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o *RelationshipsForTLSSubscription) MarshalJSON() ([]byte, error) {
+func (o *RelationshipsForTlsSubscription) MarshalJSON() ([]byte, error) {
 	if o.RelationshipCommonName != nil {
 		return json.Marshal(&o.RelationshipCommonName)
 	}
 
-	if o.RelationshipTLSCertificates != nil {
-		return json.Marshal(&o.RelationshipTLSCertificates)
+	if o.RelationshipTlsCertificates != nil {
+		return json.Marshal(&o.RelationshipTlsCertificates)
 	}
 
-	if o.RelationshipTLSConfigurationForTLSSubscription != nil {
-		return json.Marshal(&o.RelationshipTLSConfigurationForTLSSubscription)
+	if o.RelationshipTlsConfigurationForTlsSubscription != nil {
+		return json.Marshal(&o.RelationshipTlsConfigurationForTlsSubscription)
 	}
 
-	if o.RelationshipTLSDomains != nil {
-		return json.Marshal(&o.RelationshipTLSDomains)
+	if o.RelationshipTlsDomains != nil {
+		return json.Marshal(&o.RelationshipTlsDomains)
 	}
 
 	return nil, nil // no data in anyOf schemas
 }
 
-// NullableRelationshipsForTLSSubscription is a helper abstraction for handling nullable relationshipsfortlssubscription types.
-type NullableRelationshipsForTLSSubscription struct {
-	value *RelationshipsForTLSSubscription
+// NullableRelationshipsForTlsSubscription is a helper abstraction for handling nullable relationshipsfortlssubscription types.
+type NullableRelationshipsForTlsSubscription struct {
+	value *RelationshipsForTlsSubscription
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipsForTLSSubscription) Get() *RelationshipsForTLSSubscription {
+func (v NullableRelationshipsForTlsSubscription) Get() *RelationshipsForTlsSubscription {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipsForTLSSubscription) Set(val *RelationshipsForTLSSubscription) {
+func (v *NullableRelationshipsForTlsSubscription) Set(val *RelationshipsForTlsSubscription) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipsForTLSSubscription) IsSet() bool {
+func (v NullableRelationshipsForTlsSubscription) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipsForTLSSubscription) Unset() {
+func (v *NullableRelationshipsForTlsSubscription) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipsForTLSSubscription returns a pointer to a new instance of NullableRelationshipsForTLSSubscription.
-func NewNullableRelationshipsForTLSSubscription(val *RelationshipsForTLSSubscription) *NullableRelationshipsForTLSSubscription {
-	return &NullableRelationshipsForTLSSubscription{value: val, isSet: true}
+// NewNullableRelationshipsForTlsSubscription returns a pointer to a new instance of NullableRelationshipsForTlsSubscription.
+func NewNullableRelationshipsForTlsSubscription(val *RelationshipsForTlsSubscription) *NullableRelationshipsForTlsSubscription {
+	return &NullableRelationshipsForTlsSubscription{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipsForTLSSubscription) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipsForTlsSubscription) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipsForTLSSubscription) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipsForTlsSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

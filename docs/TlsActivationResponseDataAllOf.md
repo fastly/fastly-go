@@ -1,80 +1,82 @@
-# TLSActivationResponseDataAllOf
+# TlsActivationResponseDataAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 **Attributes** | Pointer to [**Timestamps**](Timestamps.md) |  | [optional] 
 
 ## Methods
 
-### NewTLSActivationResponseDataAllOf
+### NewTlsActivationResponseDataAllOf
 
-`func NewTLSActivationResponseDataAllOf() *TLSActivationResponseDataAllOf`
+`func NewTlsActivationResponseDataAllOf() *TlsActivationResponseDataAllOf`
 
-NewTLSActivationResponseDataAllOf instantiates a new TLSActivationResponseDataAllOf object
+NewTlsActivationResponseDataAllOf instantiates a new TlsActivationResponseDataAllOf object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSActivationResponseDataAllOfWithDefaults
+### NewTlsActivationResponseDataAllOfWithDefaults
 
-`func NewTLSActivationResponseDataAllOfWithDefaults() *TLSActivationResponseDataAllOf`
+`func NewTlsActivationResponseDataAllOfWithDefaults() *TlsActivationResponseDataAllOf`
 
-NewTLSActivationResponseDataAllOfWithDefaults instantiates a new TLSActivationResponseDataAllOf object
+NewTlsActivationResponseDataAllOfWithDefaults instantiates a new TlsActivationResponseDataAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetID
+### GetId
 
-`func (o *TLSActivationResponseDataAllOf) GetID() string`
+`func (o *TlsActivationResponseDataAllOf) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *TLSActivationResponseDataAllOf) GetIDOk() (*string, bool)`
+`func (o *TlsActivationResponseDataAllOf) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *TLSActivationResponseDataAllOf) SetID(v string)`
+`func (o *TlsActivationResponseDataAllOf) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *TLSActivationResponseDataAllOf) HasID() bool`
+`func (o *TlsActivationResponseDataAllOf) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *TLSActivationResponseDataAllOf) GetAttributes() Timestamps`
+`func (o *TlsActivationResponseDataAllOf) GetAttributes() Timestamps`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TLSActivationResponseDataAllOf) GetAttributesOk() (*Timestamps, bool)`
+`func (o *TlsActivationResponseDataAllOf) GetAttributesOk() (*Timestamps, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TLSActivationResponseDataAllOf) SetAttributes(v Timestamps)`
+`func (o *TlsActivationResponseDataAllOf) SetAttributes(v Timestamps)`
 
 SetAttributes sets Attributes field to given value.
 
 ### HasAttributes
 
-`func (o *TLSActivationResponseDataAllOf) HasAttributes() bool`
+`func (o *TlsActivationResponseDataAllOf) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -36,10 +36,10 @@ type StatsAPI interface {
 		Get the stats from a service for a block of time. This lists all stats by PoP location, starting with AMS. This call requires parameters to select block of time to query. Use either a timestamp range (using start_time and end_time) or a specified month/year combo (using month and year).
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetServiceStatsRequest
 	*/
-	GetServiceStats(ctx context.Context, serviceID string) APIGetServiceStatsRequest
+	GetServiceStats(ctx context.Context, serviceId string) APIGetServiceStatsRequest
 
 	// GetServiceStatsExecute executes the request
 	//  @return Stats
@@ -53,7 +53,7 @@ type StatsAPIService service
 type APIGetServiceStatsRequest struct {
 	ctx        context.Context
 	APIService StatsAPI
-	serviceID  string
+	serviceId  string
 	month      *string
 	year       *string
 	startTime  *int32
@@ -95,14 +95,14 @@ GetServiceStats Get stats for a service
 Get the stats from a service for a block of time. This lists all stats by PoP location, starting with AMS. This call requires parameters to select block of time to query. Use either a timestamp range (using start_time and end_time) or a specified month/year combo (using month and year).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetServiceStatsRequest
 */
-func (a *StatsAPIService) GetServiceStats(ctx context.Context, serviceID string) APIGetServiceStatsRequest {
+func (a *StatsAPIService) GetServiceStats(ctx context.Context, serviceId string) APIGetServiceStatsRequest {
 	return APIGetServiceStatsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -122,7 +122,7 @@ func (a *StatsAPIService) GetServiceStatsExecute(r APIGetServiceStatsRequest) (*
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/stats/summary"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

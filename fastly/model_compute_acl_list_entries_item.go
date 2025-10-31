@@ -16,8 +16,8 @@ import (
 	"encoding/json"
 )
 
-// ComputeACLListEntriesItem struct for ComputeACLListEntriesItem
-type ComputeACLListEntriesItem struct {
+// ComputeAclListEntriesItem struct for ComputeAclListEntriesItem
+type ComputeAclListEntriesItem struct {
 	// An IP prefix defined in Classless Inter-Domain Routing (CIDR) format, i.e. a valid IP address (v4 or v6) followed by a forward slash (/) and a prefix length (0-32 or 0-128, depending on address family).
 	Prefix *string `json:"prefix,omitempty"`
 	// One of \"ALLOW\" or \"BLOCK\".
@@ -25,27 +25,27 @@ type ComputeACLListEntriesItem struct {
 	AdditionalProperties map[string]any
 }
 
-type _ComputeACLListEntriesItem ComputeACLListEntriesItem
+type _ComputeAclListEntriesItem ComputeAclListEntriesItem
 
-// NewComputeACLListEntriesItem instantiates a new ComputeACLListEntriesItem object
+// NewComputeAclListEntriesItem instantiates a new ComputeAclListEntriesItem object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeACLListEntriesItem() *ComputeACLListEntriesItem {
-	this := ComputeACLListEntriesItem{}
+func NewComputeAclListEntriesItem() *ComputeAclListEntriesItem {
+	this := ComputeAclListEntriesItem{}
 	return &this
 }
 
-// NewComputeACLListEntriesItemWithDefaults instantiates a new ComputeACLListEntriesItem object
+// NewComputeAclListEntriesItemWithDefaults instantiates a new ComputeAclListEntriesItem object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewComputeACLListEntriesItemWithDefaults() *ComputeACLListEntriesItem {
-	this := ComputeACLListEntriesItem{}
+func NewComputeAclListEntriesItemWithDefaults() *ComputeAclListEntriesItem {
+	this := ComputeAclListEntriesItem{}
 	return &this
 }
 
 // GetPrefix returns the Prefix field value if set, zero value otherwise.
-func (o *ComputeACLListEntriesItem) GetPrefix() string {
+func (o *ComputeAclListEntriesItem) GetPrefix() string {
 	if o == nil || o.Prefix == nil {
 		var ret string
 		return ret
@@ -55,7 +55,7 @@ func (o *ComputeACLListEntriesItem) GetPrefix() string {
 
 // GetPrefixOk returns a tuple with the Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLListEntriesItem) GetPrefixOk() (*string, bool) {
+func (o *ComputeAclListEntriesItem) GetPrefixOk() (*string, bool) {
 	if o == nil || o.Prefix == nil {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *ComputeACLListEntriesItem) GetPrefixOk() (*string, bool) {
 }
 
 // HasPrefix returns a boolean if a field has been set.
-func (o *ComputeACLListEntriesItem) HasPrefix() bool {
+func (o *ComputeAclListEntriesItem) HasPrefix() bool {
 	if o != nil && o.Prefix != nil {
 		return true
 	}
@@ -72,12 +72,12 @@ func (o *ComputeACLListEntriesItem) HasPrefix() bool {
 }
 
 // SetPrefix gets a reference to the given string and assigns it to the Prefix field.
-func (o *ComputeACLListEntriesItem) SetPrefix(v string) {
+func (o *ComputeAclListEntriesItem) SetPrefix(v string) {
 	o.Prefix = &v
 }
 
 // GetAction returns the Action field value if set, zero value otherwise.
-func (o *ComputeACLListEntriesItem) GetAction() string {
+func (o *ComputeAclListEntriesItem) GetAction() string {
 	if o == nil || o.Action == nil {
 		var ret string
 		return ret
@@ -87,7 +87,7 @@ func (o *ComputeACLListEntriesItem) GetAction() string {
 
 // GetActionOk returns a tuple with the Action field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLListEntriesItem) GetActionOk() (*string, bool) {
+func (o *ComputeAclListEntriesItem) GetActionOk() (*string, bool) {
 	if o == nil || o.Action == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *ComputeACLListEntriesItem) GetActionOk() (*string, bool) {
 }
 
 // HasAction returns a boolean if a field has been set.
-func (o *ComputeACLListEntriesItem) HasAction() bool {
+func (o *ComputeAclListEntriesItem) HasAction() bool {
 	if o != nil && o.Action != nil {
 		return true
 	}
@@ -104,13 +104,13 @@ func (o *ComputeACLListEntriesItem) HasAction() bool {
 }
 
 // SetAction gets a reference to the given string and assigns it to the Action field.
-func (o *ComputeACLListEntriesItem) SetAction(v string) {
+func (o *ComputeAclListEntriesItem) SetAction(v string) {
 	o.Action = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ComputeACLListEntriesItem) MarshalJSON() ([]byte, error) {
+func (o ComputeAclListEntriesItem) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Prefix != nil {
 		toSerialize["prefix"] = o.Prefix
@@ -128,11 +128,11 @@ func (o ComputeACLListEntriesItem) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ComputeACLListEntriesItem) UnmarshalJSON(bytes []byte) (err error) {
-	varComputeACLListEntriesItem := _ComputeACLListEntriesItem{}
+func (o *ComputeAclListEntriesItem) UnmarshalJSON(bytes []byte) (err error) {
+	varComputeAclListEntriesItem := _ComputeAclListEntriesItem{}
 
-	if err = json.Unmarshal(bytes, &varComputeACLListEntriesItem); err == nil {
-		*o = ComputeACLListEntriesItem(varComputeACLListEntriesItem)
+	if err = json.Unmarshal(bytes, &varComputeAclListEntriesItem); err == nil {
+		*o = ComputeAclListEntriesItem(varComputeAclListEntriesItem)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -146,48 +146,48 @@ func (o *ComputeACLListEntriesItem) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableComputeACLListEntriesItem is a helper abstraction for handling nullable computeacllistentriesitem types.
-type NullableComputeACLListEntriesItem struct {
-	value *ComputeACLListEntriesItem
+// NullableComputeAclListEntriesItem is a helper abstraction for handling nullable computeacllistentriesitem types.
+type NullableComputeAclListEntriesItem struct {
+	value *ComputeAclListEntriesItem
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableComputeACLListEntriesItem) Get() *ComputeACLListEntriesItem {
+func (v NullableComputeAclListEntriesItem) Get() *ComputeAclListEntriesItem {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableComputeACLListEntriesItem) Set(val *ComputeACLListEntriesItem) {
+func (v *NullableComputeAclListEntriesItem) Set(val *ComputeAclListEntriesItem) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableComputeACLListEntriesItem) IsSet() bool {
+func (v NullableComputeAclListEntriesItem) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableComputeACLListEntriesItem) Unset() {
+func (v *NullableComputeAclListEntriesItem) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableComputeACLListEntriesItem returns a pointer to a new instance of NullableComputeACLListEntriesItem.
-func NewNullableComputeACLListEntriesItem(val *ComputeACLListEntriesItem) *NullableComputeACLListEntriesItem {
-	return &NullableComputeACLListEntriesItem{value: val, isSet: true}
+// NewNullableComputeAclListEntriesItem returns a pointer to a new instance of NullableComputeAclListEntriesItem.
+func NewNullableComputeAclListEntriesItem(val *ComputeAclListEntriesItem) *NullableComputeAclListEntriesItem {
+	return &NullableComputeAclListEntriesItem{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableComputeACLListEntriesItem) MarshalJSON() ([]byte, error) {
+func (v NullableComputeAclListEntriesItem) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableComputeACLListEntriesItem) UnmarshalJSON(src []byte) error {
+func (v *NullableComputeAclListEntriesItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

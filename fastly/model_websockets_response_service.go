@@ -18,7 +18,7 @@ import (
 
 // WebsocketsResponseService struct for WebsocketsResponseService
 type WebsocketsResponseService struct {
-	Service              *BotManagementResponseServiceService `json:"service,omitempty"`
+	Service              *ApiDiscoveryResponseServiceService `json:"service,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -42,9 +42,9 @@ func NewWebsocketsResponseServiceWithDefaults() *WebsocketsResponseService {
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *WebsocketsResponseService) GetService() BotManagementResponseServiceService {
+func (o *WebsocketsResponseService) GetService() ApiDiscoveryResponseServiceService {
 	if o == nil || o.Service == nil {
-		var ret BotManagementResponseServiceService
+		var ret ApiDiscoveryResponseServiceService
 		return ret
 	}
 	return *o.Service
@@ -52,7 +52,7 @@ func (o *WebsocketsResponseService) GetService() BotManagementResponseServiceSer
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WebsocketsResponseService) GetServiceOk() (*BotManagementResponseServiceService, bool) {
+func (o *WebsocketsResponseService) GetServiceOk() (*ApiDiscoveryResponseServiceService, bool) {
 	if o == nil || o.Service == nil {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *WebsocketsResponseService) HasService() bool {
 	return false
 }
 
-// SetService gets a reference to the given BotManagementResponseServiceService and assigns it to the Service field.
-func (o *WebsocketsResponseService) SetService(v BotManagementResponseServiceService) {
+// SetService gets a reference to the given ApiDiscoveryResponseServiceService and assigns it to the Service field.
+func (o *WebsocketsResponseService) SetService(v ApiDiscoveryResponseServiceService) {
 	o.Service = &v
 }
 

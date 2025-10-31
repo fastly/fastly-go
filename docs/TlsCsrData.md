@@ -1,80 +1,82 @@
-# TLSCsrData
+# TlsCsrData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTLSCsr**](TypeTLSCsr.md) |  | [optional] [default to TYPETLSCSR_CSR]
-**Attributes** | Pointer to [**TLSCsrDataAttributes**](TlsCsrDataAttributes.md) |  | [optional] 
+**Type** | Pointer to [**TypeTlsCsr**](TypeTlsCsr.md) |  | [optional] [default to TYPETLSCSR_CSR]
+**Attributes** | Pointer to [**TlsCsrDataAttributes**](TlsCsrDataAttributes.md) |  | [optional] 
 
 ## Methods
 
-### NewTLSCsrData
+### NewTlsCsrData
 
-`func NewTLSCsrData() *TLSCsrData`
+`func NewTlsCsrData() *TlsCsrData`
 
-NewTLSCsrData instantiates a new TLSCsrData object
+NewTlsCsrData instantiates a new TlsCsrData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSCsrDataWithDefaults
+### NewTlsCsrDataWithDefaults
 
-`func NewTLSCsrDataWithDefaults() *TLSCsrData`
+`func NewTlsCsrDataWithDefaults() *TlsCsrData`
 
-NewTLSCsrDataWithDefaults instantiates a new TLSCsrData object
+NewTlsCsrDataWithDefaults instantiates a new TlsCsrData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *TLSCsrData) GetType() TypeTLSCsr`
+`func (o *TlsCsrData) GetType() TypeTlsCsr`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *TLSCsrData) GetTypeOk() (*TypeTLSCsr, bool)`
+`func (o *TlsCsrData) GetTypeOk() (*TypeTlsCsr, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *TLSCsrData) SetType(v TypeTLSCsr)`
+`func (o *TlsCsrData) SetType(v TypeTlsCsr)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *TLSCsrData) HasType() bool`
+`func (o *TlsCsrData) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *TLSCsrData) GetAttributes() TLSCsrDataAttributes`
+`func (o *TlsCsrData) GetAttributes() TlsCsrDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TLSCsrData) GetAttributesOk() (*TLSCsrDataAttributes, bool)`
+`func (o *TlsCsrData) GetAttributesOk() (*TlsCsrDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TLSCsrData) SetAttributes(v TLSCsrDataAttributes)`
+`func (o *TlsCsrData) SetAttributes(v TlsCsrDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 ### HasAttributes
 
-`func (o *TLSCsrData) HasAttributes() bool`
+`func (o *TlsCsrData) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

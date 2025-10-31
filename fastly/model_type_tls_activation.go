@@ -17,51 +17,51 @@ import (
 	"fmt"
 )
 
-// TypeTLSActivation Resource type.
-type TypeTLSActivation string
+// TypeTlsActivation Resource type.
+type TypeTlsActivation string
 
-// List of resourceTypetls_activation
+// List of type_tls_activation
 const (
-	TYPETLSACTIVATION_TLS_ACTIVATION TypeTLSActivation = "tls_activation"
+	TYPETLSACTIVATION_TLS_ACTIVATION TypeTlsActivation = "tls_activation"
 )
 
-// AllowedTypeTLSActivationEnumValues All allowed values of TypeTLSActivation enum
-var AllowedTypeTLSActivationEnumValues = []TypeTLSActivation{
+// AllowedTypeTlsActivationEnumValues All allowed values of TypeTlsActivation enum
+var AllowedTypeTlsActivationEnumValues = []TypeTlsActivation{
 	"tls_activation",
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *TypeTLSActivation) UnmarshalJSON(src []byte) error {
+func (v *TypeTlsActivation) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := TypeTLSActivation(value)
-	for _, existing := range AllowedTypeTLSActivationEnumValues {
+	enumTypeValue := TypeTlsActivation(value)
+	for _, existing := range AllowedTypeTlsActivationEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid TypeTLSActivation", value)
+	return fmt.Errorf("%+v is not a valid TypeTlsActivation", value)
 }
 
-// NewTypeTLSActivationFromValue returns a pointer to a valid TypeTLSActivation
+// NewTypeTlsActivationFromValue returns a pointer to a valid TypeTlsActivation
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewTypeTLSActivationFromValue(v string) (*TypeTLSActivation, error) {
-	ev := TypeTLSActivation(v)
+func NewTypeTlsActivationFromValue(v string) (*TypeTlsActivation, error) {
+	ev := TypeTlsActivation(v)
 	if ev.IsValid() {
 		return &ev, nil
 	}
-	return nil, fmt.Errorf("invalid value '%v' for TypeTLSActivation: valid values are %v", v, AllowedTypeTLSActivationEnumValues)
+	return nil, fmt.Errorf("invalid value '%v' for TypeTlsActivation: valid values are %v", v, AllowedTypeTlsActivationEnumValues)
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v TypeTLSActivation) IsValid() bool {
-	for _, existing := range AllowedTypeTLSActivationEnumValues {
+func (v TypeTlsActivation) IsValid() bool {
+	for _, existing := range AllowedTypeTlsActivationEnumValues {
 		if existing == v {
 			return true
 		}
@@ -69,53 +69,53 @@ func (v TypeTLSActivation) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to resourceTypetls_activation value
-func (v TypeTLSActivation) Ptr() *TypeTLSActivation {
+// Ptr returns reference to type_tls_activation value
+func (v TypeTlsActivation) Ptr() *TypeTlsActivation {
 	return &v
 }
 
-// NullableTypeTLSActivation is a helper abstraction for handling nullable typetlsactivation types.
-type NullableTypeTLSActivation struct {
-	value *TypeTLSActivation
+// NullableTypeTlsActivation is a helper abstraction for handling nullable typetlsactivation types.
+type NullableTypeTlsActivation struct {
+	value *TypeTlsActivation
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTypeTLSActivation) Get() *TypeTLSActivation {
+func (v NullableTypeTlsActivation) Get() *TypeTlsActivation {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTypeTLSActivation) Set(val *TypeTLSActivation) {
+func (v *NullableTypeTlsActivation) Set(val *TypeTlsActivation) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTypeTLSActivation) IsSet() bool {
+func (v NullableTypeTlsActivation) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTypeTLSActivation) Unset() {
+func (v *NullableTypeTlsActivation) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTypeTLSActivation returns a pointer to a new instance of NullableTypeTLSActivation.
-func NewNullableTypeTLSActivation(val *TypeTLSActivation) *NullableTypeTLSActivation {
-	return &NullableTypeTLSActivation{value: val, isSet: true}
+// NewNullableTypeTlsActivation returns a pointer to a new instance of NullableTypeTlsActivation.
+func NewNullableTypeTlsActivation(val *TypeTlsActivation) *NullableTypeTlsActivation {
+	return &NullableTypeTlsActivation{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTypeTLSActivation) MarshalJSON() ([]byte, error) {
+func (v NullableTypeTlsActivation) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTypeTLSActivation) UnmarshalJSON(src []byte) error {
+func (v *NullableTypeTlsActivation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

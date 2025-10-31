@@ -20,7 +20,7 @@ import (
 // TypeStar Resource type
 type TypeStar string
 
-// List of resourceTypestar
+// List of type_star
 const (
 	TYPESTAR_STAR TypeStar = "star"
 )
@@ -69,7 +69,7 @@ func (v TypeStar) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to resourceTypestar value
+// Ptr returns reference to type_star value
 func (v TypeStar) Ptr() *TypeStar {
 	return &v
 }

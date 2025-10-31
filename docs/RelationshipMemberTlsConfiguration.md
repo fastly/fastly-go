@@ -1,80 +1,82 @@
-# RelationshipMemberTLSConfiguration
+# RelationshipMemberTlsConfiguration
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTLSConfiguration**](TypeTLSConfiguration.md) |  | [optional] [default to TYPETLSCONFIGURATION_TLS_CONFIGURATION]
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Type** | Pointer to [**TypeTlsConfiguration**](TypeTlsConfiguration.md) |  | [optional] [default to TYPETLSCONFIGURATION_TLS_CONFIGURATION]
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewRelationshipMemberTLSConfiguration
+### NewRelationshipMemberTlsConfiguration
 
-`func NewRelationshipMemberTLSConfiguration() *RelationshipMemberTLSConfiguration`
+`func NewRelationshipMemberTlsConfiguration() *RelationshipMemberTlsConfiguration`
 
-NewRelationshipMemberTLSConfiguration instantiates a new RelationshipMemberTLSConfiguration object
+NewRelationshipMemberTlsConfiguration instantiates a new RelationshipMemberTlsConfiguration object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipMemberTLSConfigurationWithDefaults
+### NewRelationshipMemberTlsConfigurationWithDefaults
 
-`func NewRelationshipMemberTLSConfigurationWithDefaults() *RelationshipMemberTLSConfiguration`
+`func NewRelationshipMemberTlsConfigurationWithDefaults() *RelationshipMemberTlsConfiguration`
 
-NewRelationshipMemberTLSConfigurationWithDefaults instantiates a new RelationshipMemberTLSConfiguration object
+NewRelationshipMemberTlsConfigurationWithDefaults instantiates a new RelationshipMemberTlsConfiguration object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *RelationshipMemberTLSConfiguration) GetType() TypeTLSConfiguration`
+`func (o *RelationshipMemberTlsConfiguration) GetType() TypeTlsConfiguration`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *RelationshipMemberTLSConfiguration) GetTypeOk() (*TypeTLSConfiguration, bool)`
+`func (o *RelationshipMemberTlsConfiguration) GetTypeOk() (*TypeTlsConfiguration, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *RelationshipMemberTLSConfiguration) SetType(v TypeTLSConfiguration)`
+`func (o *RelationshipMemberTlsConfiguration) SetType(v TypeTlsConfiguration)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *RelationshipMemberTLSConfiguration) HasType() bool`
+`func (o *RelationshipMemberTlsConfiguration) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
-### GetID
+### GetId
 
-`func (o *RelationshipMemberTLSConfiguration) GetID() string`
+`func (o *RelationshipMemberTlsConfiguration) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *RelationshipMemberTLSConfiguration) GetIDOk() (*string, bool)`
+`func (o *RelationshipMemberTlsConfiguration) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *RelationshipMemberTLSConfiguration) SetID(v string)`
+`func (o *RelationshipMemberTlsConfiguration) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *RelationshipMemberTLSConfiguration) HasID() bool`
+`func (o *RelationshipMemberTlsConfiguration) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

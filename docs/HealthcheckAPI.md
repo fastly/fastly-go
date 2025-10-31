@@ -32,9 +32,9 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
-    checkInterval := int32(56) // int32 | How often to run the health check in milliseconds. (optional)
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
+    checkInterval := int32(56) // int32 | How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour. (optional)
     comment := "comment_example" // string | A freeform descriptive note. (optional)
     expectedResponse := int32(56) // int32 | The status code expected from the host. (optional)
     headers := []string{"Inner_example"} // []string | Array of custom headers that will be added to the health check probes. (optional)
@@ -51,7 +51,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HealthcheckAPI.CreateHealthcheck(ctx, serviceID, versionID).CheckInterval(checkInterval).Comment(comment).ExpectedResponse(expectedResponse).Headers(headers).Host(host).HTTPVersion(httpVersion).Initial(initial).Method(method).Name(name).Path(path).Threshold(threshold).Timeout(timeout).Window(window).Execute()
+    resp, r, err := apiClient.HealthcheckAPI.CreateHealthcheck(ctx, serviceId, versionId).CheckInterval(checkInterval).Comment(comment).ExpectedResponse(expectedResponse).Headers(headers).Host(host).HttpVersion(httpVersion).Initial(initial).Method(method).Name(name).Path(path).Threshold(threshold).Timeout(timeout).Window(window).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HealthcheckAPI.CreateHealthcheck`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -67,8 +67,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -77,7 +77,7 @@ Other parameters are passed through a pointer to a apiCreateHealthcheckRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **checkInterval** | **int32** | How often to run the health check in milliseconds. |  **comment** | **string** | A freeform descriptive note. |  **expectedResponse** | **int32** | The status code expected from the host. |  **headers** | **[]string** | Array of custom headers that will be added to the health check probes. |  **host** | **string** | Which host to check. |  **httpVersion** | **string** | Whether to use version 1.0 or 1.1 HTTP. |  **initial** | **int32** | When loading a config, the initial number of probes to be seen as OK. |  **method** | **string** | Which HTTP method to use. |  **name** | **string** | The name of the health check. |  **path** | **string** | The path to check. |  **threshold** | **int32** | How many health checks must succeed to be considered healthy. |  **timeout** | **int32** | Timeout in milliseconds. |  **window** | **int32** | The number of most recent health check queries to keep for this health check. | 
+ **checkInterval** | **int32** | How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour. |  **comment** | **string** | A freeform descriptive note. |  **expectedResponse** | **int32** | The status code expected from the host. |  **headers** | **[]string** | Array of custom headers that will be added to the health check probes. |  **host** | **string** | Which host to check. |  **httpVersion** | **string** | Whether to use version 1.0 or 1.1 HTTP. |  **initial** | **int32** | When loading a config, the initial number of probes to be seen as OK. |  **method** | **string** | Which HTTP method to use. |  **name** | **string** | The name of the health check. |  **path** | **string** | The path to check. |  **threshold** | **int32** | How many health checks must succeed to be considered healthy. |  **timeout** | **int32** | Timeout in milliseconds. |  **window** | **int32** | The number of most recent health check queries to keep for this health check. | 
 
 ### Return type
 
@@ -114,14 +114,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     healthcheckName := "healthcheckName_example" // string | The name of the health check.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HealthcheckAPI.DeleteHealthcheck(ctx, serviceID, versionID, healthcheckName).Execute()
+    resp, r, err := apiClient.HealthcheckAPI.DeleteHealthcheck(ctx, serviceId, versionId, healthcheckName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HealthcheckAPI.DeleteHealthcheck`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -137,8 +137,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **healthcheckName** | **string** | The name of the health check. | 
 
 ### Other Parameters
@@ -185,14 +185,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     healthcheckName := "healthcheckName_example" // string | The name of the health check.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HealthcheckAPI.GetHealthcheck(ctx, serviceID, versionID, healthcheckName).Execute()
+    resp, r, err := apiClient.HealthcheckAPI.GetHealthcheck(ctx, serviceId, versionId, healthcheckName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HealthcheckAPI.GetHealthcheck`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -208,8 +208,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **healthcheckName** | **string** | The name of the health check. | 
 
 ### Other Parameters
@@ -256,13 +256,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HealthcheckAPI.ListHealthchecks(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.HealthcheckAPI.ListHealthchecks(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HealthcheckAPI.ListHealthchecks`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -278,8 +278,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -325,10 +325,10 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     healthcheckName := "healthcheckName_example" // string | The name of the health check.
-    checkInterval := int32(56) // int32 | How often to run the health check in milliseconds. (optional)
+    checkInterval := int32(56) // int32 | How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour. (optional)
     comment := "comment_example" // string | A freeform descriptive note. (optional)
     expectedResponse := int32(56) // int32 | The status code expected from the host. (optional)
     headers := []string{"Inner_example"} // []string | Array of custom headers that will be added to the health check probes. (optional)
@@ -345,7 +345,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HealthcheckAPI.UpdateHealthcheck(ctx, serviceID, versionID, healthcheckName).CheckInterval(checkInterval).Comment(comment).ExpectedResponse(expectedResponse).Headers(headers).Host(host).HTTPVersion(httpVersion).Initial(initial).Method(method).Name(name).Path(path).Threshold(threshold).Timeout(timeout).Window(window).Execute()
+    resp, r, err := apiClient.HealthcheckAPI.UpdateHealthcheck(ctx, serviceId, versionId, healthcheckName).CheckInterval(checkInterval).Comment(comment).ExpectedResponse(expectedResponse).Headers(headers).Host(host).HttpVersion(httpVersion).Initial(initial).Method(method).Name(name).Path(path).Threshold(threshold).Timeout(timeout).Window(window).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HealthcheckAPI.UpdateHealthcheck`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -361,8 +361,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **healthcheckName** | **string** | The name of the health check. | 
 
 ### Other Parameters
@@ -372,7 +372,7 @@ Other parameters are passed through a pointer to a apiUpdateHealthcheckRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **checkInterval** | **int32** | How often to run the health check in milliseconds. |  **comment** | **string** | A freeform descriptive note. |  **expectedResponse** | **int32** | The status code expected from the host. |  **headers** | **[]string** | Array of custom headers that will be added to the health check probes. |  **host** | **string** | Which host to check. |  **httpVersion** | **string** | Whether to use version 1.0 or 1.1 HTTP. |  **initial** | **int32** | When loading a config, the initial number of probes to be seen as OK. |  **method** | **string** | Which HTTP method to use. |  **name** | **string** | The name of the health check. |  **path** | **string** | The path to check. |  **threshold** | **int32** | How many health checks must succeed to be considered healthy. |  **timeout** | **int32** | Timeout in milliseconds. |  **window** | **int32** | The number of most recent health check queries to keep for this health check. | 
+ **checkInterval** | **int32** | How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour. |  **comment** | **string** | A freeform descriptive note. |  **expectedResponse** | **int32** | The status code expected from the host. |  **headers** | **[]string** | Array of custom headers that will be added to the health check probes. |  **host** | **string** | Which host to check. |  **httpVersion** | **string** | Whether to use version 1.0 or 1.1 HTTP. |  **initial** | **int32** | When loading a config, the initial number of probes to be seen as OK. |  **method** | **string** | Which HTTP method to use. |  **name** | **string** | The name of the health check. |  **path** | **string** | The path to check. |  **threshold** | **int32** | How many health checks must succeed to be considered healthy. |  **timeout** | **int32** | Timeout in milliseconds. |  **window** | **int32** | The number of most recent health check queries to keep for this health check. | 
 
 ### Return type
 
@@ -388,3 +388,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

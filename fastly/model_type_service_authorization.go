@@ -20,7 +20,7 @@ import (
 // TypeServiceAuthorization Resource type
 type TypeServiceAuthorization string
 
-// List of resourceTypeservice_authorization
+// List of type_service_authorization
 const (
 	TYPESERVICEAUTHORIZATION_SERVICE_AUTHORIZATION TypeServiceAuthorization = "service_authorization"
 )
@@ -69,7 +69,7 @@ func (v TypeServiceAuthorization) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to resourceTypeservice_authorization value
+// Ptr returns reference to type_service_authorization value
 func (v TypeServiceAuthorization) Ptr() *TypeServiceAuthorization {
 	return &v
 }

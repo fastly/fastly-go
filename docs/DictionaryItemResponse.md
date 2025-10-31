@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**DictionaryID** | Pointer to **string** |  | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**DictionaryId** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -186,55 +186,57 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *DictionaryItemResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetDictionaryID
+### GetDictionaryId
 
-`func (o *DictionaryItemResponse) GetDictionaryID() string`
+`func (o *DictionaryItemResponse) GetDictionaryId() string`
 
-GetDictionaryID returns the DictionaryID field if non-nil, zero value otherwise.
+GetDictionaryId returns the DictionaryId field if non-nil, zero value otherwise.
 
-### GetDictionaryIDOk
+### GetDictionaryIdOk
 
-`func (o *DictionaryItemResponse) GetDictionaryIDOk() (*string, bool)`
+`func (o *DictionaryItemResponse) GetDictionaryIdOk() (*string, bool)`
 
-GetDictionaryIDOk returns a tuple with the DictionaryID field if it's non-nil, zero value otherwise
+GetDictionaryIdOk returns a tuple with the DictionaryId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDictionaryID
+### SetDictionaryId
 
-`func (o *DictionaryItemResponse) SetDictionaryID(v string)`
+`func (o *DictionaryItemResponse) SetDictionaryId(v string)`
 
-SetDictionaryID sets DictionaryID field to given value.
+SetDictionaryId sets DictionaryId field to given value.
 
-### HasDictionaryID
+### HasDictionaryId
 
-`func (o *DictionaryItemResponse) HasDictionaryID() bool`
+`func (o *DictionaryItemResponse) HasDictionaryId() bool`
 
-HasDictionaryID returns a boolean if a field has been set.
+HasDictionaryId returns a boolean if a field has been set.
 
-### GetServiceID
+### GetServiceId
 
-`func (o *DictionaryItemResponse) GetServiceID() string`
+`func (o *DictionaryItemResponse) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *DictionaryItemResponse) GetServiceIDOk() (*string, bool)`
+`func (o *DictionaryItemResponse) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *DictionaryItemResponse) SetServiceID(v string)`
+`func (o *DictionaryItemResponse) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *DictionaryItemResponse) HasServiceID() bool`
+`func (o *DictionaryItemResponse) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

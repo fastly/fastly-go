@@ -95,12 +95,12 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreAPI.KvStoreDelete(ctx, storeID).Execute()
+    resp, r, err := apiClient.KvStoreAPI.KvStoreDelete(ctx, storeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStoreDelete`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -114,7 +114,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 
 ### Other Parameters
 
@@ -160,12 +160,12 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreAPI.KvStoreGet(ctx, storeID).Execute()
+    resp, r, err := apiClient.KvStoreAPI.KvStoreGet(ctx, storeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStoreGet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -181,7 +181,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 
 ### Other Parameters
 
@@ -239,7 +239,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStoreList`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `KvStoreList`: InlineResponse2005
+    // response from `KvStoreList`: InlineResponse2006
     fmt.Fprintf(os.Stdout, "Response from `KvStoreAPI.KvStoreList`: %v\n", resp)
 }
 ```
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -271,3 +271,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

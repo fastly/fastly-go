@@ -26,8 +26,8 @@ var (
 	_ context.Context
 )
 
-// TLSCsrsAPI defines an interface for interacting with the resource.
-type TLSCsrsAPI interface {
+// TlsCsrsAPI defines an interface for interacting with the resource.
+type TlsCsrsAPI interface {
 
 	/*
 		CreateCsr Create CSR
@@ -40,28 +40,28 @@ type TLSCsrsAPI interface {
 	CreateCsr(ctx context.Context) APICreateCsrRequest
 
 	// CreateCsrExecute executes the request
-	//  @return TLSCsrResponse
-	CreateCsrExecute(r APICreateCsrRequest) (*TLSCsrResponse, *http.Response, error)
+	//  @return TlsCsrResponse
+	CreateCsrExecute(r APICreateCsrRequest) (*TlsCsrResponse, *http.Response, error)
 }
 
-// TLSCsrsAPIService TLSCsrsAPI service
-type TLSCsrsAPIService service
+// TlsCsrsAPIService TlsCsrsAPI service
+type TlsCsrsAPIService service
 
 // APICreateCsrRequest represents a request for the resource.
 type APICreateCsrRequest struct {
 	ctx        context.Context
-	APIService TLSCsrsAPI
-	tlsCsr     *TLSCsr
+	APIService TlsCsrsAPI
+	tlsCsr     *TlsCsr
 }
 
-// TLSCsr returns a pointer to a request.
-func (r *APICreateCsrRequest) TLSCsr(tlsCsr TLSCsr) *APICreateCsrRequest {
+// TlsCsr returns a pointer to a request.
+func (r *APICreateCsrRequest) TlsCsr(tlsCsr TlsCsr) *APICreateCsrRequest {
 	r.tlsCsr = &tlsCsr
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateCsrRequest) Execute() (*TLSCsrResponse, *http.Response, error) {
+func (r APICreateCsrRequest) Execute() (*TlsCsrResponse, *http.Response, error) {
 	return r.APIService.CreateCsrExecute(r)
 }
 
@@ -73,7 +73,7 @@ Creates a certificate signing request (CSR).
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return APICreateCsrRequest
 */
-func (a *TLSCsrsAPIService) CreateCsr(ctx context.Context) APICreateCsrRequest {
+func (a *TlsCsrsAPIService) CreateCsr(ctx context.Context) APICreateCsrRequest {
 	return APICreateCsrRequest{
 		APIService: a,
 		ctx:        ctx,
@@ -81,16 +81,16 @@ func (a *TLSCsrsAPIService) CreateCsr(ctx context.Context) APICreateCsrRequest {
 }
 
 // CreateCsrExecute executes the request
-//  @return TLSCsrResponse
-func (a *TLSCsrsAPIService) CreateCsrExecute(r APICreateCsrRequest) (*TLSCsrResponse, *http.Response, error) {
+//  @return TlsCsrResponse
+func (a *TlsCsrsAPIService) CreateCsrExecute(r APICreateCsrRequest) (*TlsCsrResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TLSCsrResponse
+		localVarReturnValue *TlsCsrResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSCsrsAPIService.CreateCsr")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsCsrsAPIService.CreateCsr")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}

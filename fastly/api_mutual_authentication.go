@@ -31,32 +31,32 @@ var (
 type MutualAuthenticationAPI interface {
 
 	/*
-		CreateMutualTLSAuthentication Create a Mutual Authentication
+		CreateMutualTlsAuthentication Create a Mutual Authentication
 
 		Create a mutual authentication using a bundle of certificates to enable client-to-server mutual TLS.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APICreateMutualTLSAuthenticationRequest
+		 @return APICreateMutualTlsAuthenticationRequest
 	*/
-	CreateMutualTLSAuthentication(ctx context.Context) APICreateMutualTLSAuthenticationRequest
+	CreateMutualTlsAuthentication(ctx context.Context) APICreateMutualTlsAuthenticationRequest
 
-	// CreateMutualTLSAuthenticationExecute executes the request
+	// CreateMutualTlsAuthenticationExecute executes the request
 	//  @return MutualAuthenticationResponse
-	CreateMutualTLSAuthenticationExecute(r APICreateMutualTLSAuthenticationRequest) (*MutualAuthenticationResponse, *http.Response, error)
+	CreateMutualTlsAuthenticationExecute(r APICreateMutualTlsAuthenticationRequest) (*MutualAuthenticationResponse, *http.Response, error)
 
 	/*
-		DeleteMutualTLS Delete a Mutual TLS
+		DeleteMutualTls Delete a Mutual TLS
 
 		Remove a Mutual TLS authentication
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param mutualAuthenticationID Alphanumeric string identifying a mutual authentication.
-		 @return APIDeleteMutualTLSRequest
+		 @param mutualAuthenticationId Alphanumeric string identifying a mutual authentication.
+		 @return APIDeleteMutualTlsRequest
 	*/
-	DeleteMutualTLS(ctx context.Context, mutualAuthenticationID string) APIDeleteMutualTLSRequest
+	DeleteMutualTls(ctx context.Context, mutualAuthenticationId string) APIDeleteMutualTlsRequest
 
-	// DeleteMutualTLSExecute executes the request
-	DeleteMutualTLSExecute(r APIDeleteMutualTLSRequest) (*http.Response, error)
+	// DeleteMutualTlsExecute executes the request
+	DeleteMutualTlsExecute(r APIDeleteMutualTlsRequest) (*http.Response, error)
 
 	/*
 		GetMutualAuthentication Get a Mutual Authentication
@@ -64,10 +64,10 @@ type MutualAuthenticationAPI interface {
 		Show a Mutual Authentication.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param mutualAuthenticationID Alphanumeric string identifying a mutual authentication.
+		 @param mutualAuthenticationId Alphanumeric string identifying a mutual authentication.
 		 @return APIGetMutualAuthenticationRequest
 	*/
-	GetMutualAuthentication(ctx context.Context, mutualAuthenticationID string) APIGetMutualAuthenticationRequest
+	GetMutualAuthentication(ctx context.Context, mutualAuthenticationId string) APIGetMutualAuthenticationRequest
 
 	// GetMutualAuthenticationExecute executes the request
 	//  @return MutualAuthenticationResponse
@@ -93,10 +93,10 @@ type MutualAuthenticationAPI interface {
 		Update a Mutual Authentication.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param mutualAuthenticationID Alphanumeric string identifying a mutual authentication.
+		 @param mutualAuthenticationId Alphanumeric string identifying a mutual authentication.
 		 @return APIPatchMutualAuthenticationRequest
 	*/
-	PatchMutualAuthentication(ctx context.Context, mutualAuthenticationID string) APIPatchMutualAuthenticationRequest
+	PatchMutualAuthentication(ctx context.Context, mutualAuthenticationId string) APIPatchMutualAuthenticationRequest
 
 	// PatchMutualAuthenticationExecute executes the request
 	//  @return MutualAuthenticationResponse
@@ -106,42 +106,42 @@ type MutualAuthenticationAPI interface {
 // MutualAuthenticationAPIService MutualAuthenticationAPI service
 type MutualAuthenticationAPIService service
 
-// APICreateMutualTLSAuthenticationRequest represents a request for the resource.
-type APICreateMutualTLSAuthenticationRequest struct {
+// APICreateMutualTlsAuthenticationRequest represents a request for the resource.
+type APICreateMutualTlsAuthenticationRequest struct {
 	ctx                  context.Context
 	APIService           MutualAuthenticationAPI
 	mutualAuthentication *MutualAuthentication
 }
 
 // MutualAuthentication returns a pointer to a request.
-func (r *APICreateMutualTLSAuthenticationRequest) MutualAuthentication(mutualAuthentication MutualAuthentication) *APICreateMutualTLSAuthenticationRequest {
+func (r *APICreateMutualTlsAuthenticationRequest) MutualAuthentication(mutualAuthentication MutualAuthentication) *APICreateMutualTlsAuthenticationRequest {
 	r.mutualAuthentication = &mutualAuthentication
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateMutualTLSAuthenticationRequest) Execute() (*MutualAuthenticationResponse, *http.Response, error) {
-	return r.APIService.CreateMutualTLSAuthenticationExecute(r)
+func (r APICreateMutualTlsAuthenticationRequest) Execute() (*MutualAuthenticationResponse, *http.Response, error) {
+	return r.APIService.CreateMutualTlsAuthenticationExecute(r)
 }
 
 /*
-CreateMutualTLSAuthentication Create a Mutual Authentication
+CreateMutualTlsAuthentication Create a Mutual Authentication
 
 Create a mutual authentication using a bundle of certificates to enable client-to-server mutual TLS.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APICreateMutualTLSAuthenticationRequest
+ @return APICreateMutualTlsAuthenticationRequest
 */
-func (a *MutualAuthenticationAPIService) CreateMutualTLSAuthentication(ctx context.Context) APICreateMutualTLSAuthenticationRequest {
-	return APICreateMutualTLSAuthenticationRequest{
+func (a *MutualAuthenticationAPIService) CreateMutualTlsAuthentication(ctx context.Context) APICreateMutualTlsAuthenticationRequest {
+	return APICreateMutualTlsAuthenticationRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// CreateMutualTLSAuthenticationExecute executes the request
+// CreateMutualTlsAuthenticationExecute executes the request
 //  @return MutualAuthenticationResponse
-func (a *MutualAuthenticationAPIService) CreateMutualTLSAuthenticationExecute(r APICreateMutualTLSAuthenticationRequest) (*MutualAuthenticationResponse, *http.Response, error) {
+func (a *MutualAuthenticationAPIService) CreateMutualTlsAuthenticationExecute(r APICreateMutualTlsAuthenticationRequest) (*MutualAuthenticationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
@@ -149,7 +149,7 @@ func (a *MutualAuthenticationAPIService) CreateMutualTLSAuthenticationExecute(r 
 		localVarReturnValue *MutualAuthenticationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MutualAuthenticationAPIService.CreateMutualTLSAuthentication")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MutualAuthenticationAPIService.CreateMutualTlsAuthentication")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -243,50 +243,50 @@ func (a *MutualAuthenticationAPIService) CreateMutualTLSAuthenticationExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIDeleteMutualTLSRequest represents a request for the resource.
-type APIDeleteMutualTLSRequest struct {
+// APIDeleteMutualTlsRequest represents a request for the resource.
+type APIDeleteMutualTlsRequest struct {
 	ctx                    context.Context
 	APIService             MutualAuthenticationAPI
-	mutualAuthenticationID string
+	mutualAuthenticationId string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDeleteMutualTLSRequest) Execute() (*http.Response, error) {
-	return r.APIService.DeleteMutualTLSExecute(r)
+func (r APIDeleteMutualTlsRequest) Execute() (*http.Response, error) {
+	return r.APIService.DeleteMutualTlsExecute(r)
 }
 
 /*
-DeleteMutualTLS Delete a Mutual TLS
+DeleteMutualTls Delete a Mutual TLS
 
 Remove a Mutual TLS authentication
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param mutualAuthenticationID Alphanumeric string identifying a mutual authentication.
- @return APIDeleteMutualTLSRequest
+ @param mutualAuthenticationId Alphanumeric string identifying a mutual authentication.
+ @return APIDeleteMutualTlsRequest
 */
-func (a *MutualAuthenticationAPIService) DeleteMutualTLS(ctx context.Context, mutualAuthenticationID string) APIDeleteMutualTLSRequest {
-	return APIDeleteMutualTLSRequest{
+func (a *MutualAuthenticationAPIService) DeleteMutualTls(ctx context.Context, mutualAuthenticationId string) APIDeleteMutualTlsRequest {
+	return APIDeleteMutualTlsRequest{
 		APIService:             a,
 		ctx:                    ctx,
-		mutualAuthenticationID: mutualAuthenticationID,
+		mutualAuthenticationId: mutualAuthenticationId,
 	}
 }
 
-// DeleteMutualTLSExecute executes the request
-func (a *MutualAuthenticationAPIService) DeleteMutualTLSExecute(r APIDeleteMutualTLSRequest) (*http.Response, error) {
+// DeleteMutualTlsExecute executes the request
+func (a *MutualAuthenticationAPIService) DeleteMutualTlsExecute(r APIDeleteMutualTlsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   any
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MutualAuthenticationAPIService.DeleteMutualTLS")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MutualAuthenticationAPIService.DeleteMutualTls")
 	if err != nil {
 		return nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/mutual_authentications/{mutual_authentication_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"mutual_authentication_id"+"}", gourl.PathEscape(parameterToString(r.mutualAuthenticationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"mutual_authentication_id"+"}", gourl.PathEscape(parameterToString(r.mutualAuthenticationId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -368,7 +368,7 @@ func (a *MutualAuthenticationAPIService) DeleteMutualTLSExecute(r APIDeleteMutua
 type APIGetMutualAuthenticationRequest struct {
 	ctx                    context.Context
 	APIService             MutualAuthenticationAPI
-	mutualAuthenticationID string
+	mutualAuthenticationId string
 	include                *string
 }
 
@@ -389,14 +389,14 @@ GetMutualAuthentication Get a Mutual Authentication
 Show a Mutual Authentication.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param mutualAuthenticationID Alphanumeric string identifying a mutual authentication.
+ @param mutualAuthenticationId Alphanumeric string identifying a mutual authentication.
  @return APIGetMutualAuthenticationRequest
 */
-func (a *MutualAuthenticationAPIService) GetMutualAuthentication(ctx context.Context, mutualAuthenticationID string) APIGetMutualAuthenticationRequest {
+func (a *MutualAuthenticationAPIService) GetMutualAuthentication(ctx context.Context, mutualAuthenticationId string) APIGetMutualAuthenticationRequest {
 	return APIGetMutualAuthenticationRequest{
 		APIService:             a,
 		ctx:                    ctx,
-		mutualAuthenticationID: mutualAuthenticationID,
+		mutualAuthenticationId: mutualAuthenticationId,
 	}
 }
 
@@ -416,7 +416,7 @@ func (a *MutualAuthenticationAPIService) GetMutualAuthenticationExecute(r APIGet
 	}
 
 	localVarPath := localBasePath + "/tls/mutual_authentications/{mutual_authentication_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"mutual_authentication_id"+"}", gourl.PathEscape(parameterToString(r.mutualAuthenticationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"mutual_authentication_id"+"}", gourl.PathEscape(parameterToString(r.mutualAuthenticationId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -668,7 +668,7 @@ func (a *MutualAuthenticationAPIService) ListMutualAuthenticationsExecute(r APIL
 type APIPatchMutualAuthenticationRequest struct {
 	ctx                    context.Context
 	APIService             MutualAuthenticationAPI
-	mutualAuthenticationID string
+	mutualAuthenticationId string
 	mutualAuthentication   *MutualAuthentication
 }
 
@@ -689,14 +689,14 @@ PatchMutualAuthentication Update a Mutual Authentication
 Update a Mutual Authentication.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param mutualAuthenticationID Alphanumeric string identifying a mutual authentication.
+ @param mutualAuthenticationId Alphanumeric string identifying a mutual authentication.
  @return APIPatchMutualAuthenticationRequest
 */
-func (a *MutualAuthenticationAPIService) PatchMutualAuthentication(ctx context.Context, mutualAuthenticationID string) APIPatchMutualAuthenticationRequest {
+func (a *MutualAuthenticationAPIService) PatchMutualAuthentication(ctx context.Context, mutualAuthenticationId string) APIPatchMutualAuthenticationRequest {
 	return APIPatchMutualAuthenticationRequest{
 		APIService:             a,
 		ctx:                    ctx,
-		mutualAuthenticationID: mutualAuthenticationID,
+		mutualAuthenticationId: mutualAuthenticationId,
 	}
 }
 
@@ -716,7 +716,7 @@ func (a *MutualAuthenticationAPIService) PatchMutualAuthenticationExecute(r APIP
 	}
 
 	localVarPath := localBasePath + "/tls/mutual_authentications/{mutual_authentication_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"mutual_authentication_id"+"}", gourl.PathEscape(parameterToString(r.mutualAuthenticationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"mutual_authentication_id"+"}", gourl.PathEscape(parameterToString(r.mutualAuthenticationId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

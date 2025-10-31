@@ -19,7 +19,7 @@ import (
 
 // ServiceusagemetricsData struct for ServiceusagemetricsData
 type ServiceusagemetricsData struct {
-	CustomerID *string `json:"customer_id,omitempty"`
+	CustomerId *string `json:"customer_id,omitempty"`
 	// Date and time (in ISO 8601 format) for initiation point of a billing cycle, signifying the start of charges for a service or subscription.
 	StartTime *time.Time `json:"start_time,omitempty"`
 	// Date and time (in ISO 8601 format) for termination point of a billing cycle, signifying the end of charges for a service or subscription.
@@ -52,36 +52,36 @@ func NewServiceusagemetricsDataWithDefaults() *ServiceusagemetricsData {
 	return &this
 }
 
-// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
-func (o *ServiceusagemetricsData) GetCustomerID() string {
-	if o == nil || o.CustomerID == nil {
+// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
+func (o *ServiceusagemetricsData) GetCustomerId() string {
+	if o == nil || o.CustomerId == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerID
+	return *o.CustomerId
 }
 
-// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
+// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceusagemetricsData) GetCustomerIDOk() (*string, bool) {
-	if o == nil || o.CustomerID == nil {
+func (o *ServiceusagemetricsData) GetCustomerIdOk() (*string, bool) {
+	if o == nil || o.CustomerId == nil {
 		return nil, false
 	}
-	return o.CustomerID, true
+	return o.CustomerId, true
 }
 
-// HasCustomerID returns a boolean if a field has been set.
-func (o *ServiceusagemetricsData) HasCustomerID() bool {
-	if o != nil && o.CustomerID != nil {
+// HasCustomerId returns a boolean if a field has been set.
+func (o *ServiceusagemetricsData) HasCustomerId() bool {
+	if o != nil && o.CustomerId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
-func (o *ServiceusagemetricsData) SetCustomerID(v string) {
-	o.CustomerID = &v
+// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
+func (o *ServiceusagemetricsData) SetCustomerId(v string) {
+	o.CustomerId = &v
 }
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
@@ -280,8 +280,8 @@ func (o *ServiceusagemetricsData) SetMeta(v Metadata) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o ServiceusagemetricsData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.CustomerID != nil {
-		toSerialize["customer_id"] = o.CustomerID
+	if o.CustomerId != nil {
+		toSerialize["customer_id"] = o.CustomerId
 	}
 	if o.StartTime != nil {
 		toSerialize["start_time"] = o.StartTime

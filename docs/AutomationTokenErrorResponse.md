@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Detail** | Pointer to **string** |  | [optional] 
-**Errors** | Pointer to **[]any** |  | [optional] 
+**Errors** | Pointer to **[]interface{}** |  | [optional] 
 **Status** | Pointer to **int32** |  | [optional] 
 **Title** | Pointer to **string** |  | [optional] 
 
@@ -55,20 +55,20 @@ HasDetail returns a boolean if a field has been set.
 
 ### GetErrors
 
-`func (o *AutomationTokenErrorResponse) GetErrors() []any`
+`func (o *AutomationTokenErrorResponse) GetErrors() []interface{}`
 
 GetErrors returns the Errors field if non-nil, zero value otherwise.
 
 ### GetErrorsOk
 
-`func (o *AutomationTokenErrorResponse) GetErrorsOk() (*[]any, bool)`
+`func (o *AutomationTokenErrorResponse) GetErrorsOk() (*[]interface{}, bool)`
 
 GetErrorsOk returns a tuple with the Errors field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetErrors
 
-`func (o *AutomationTokenErrorResponse) SetErrors(v []any)`
+`func (o *AutomationTokenErrorResponse) SetErrors(v []interface{})`
 
 SetErrors sets Errors field to given value.
 
@@ -130,3 +130,5 @@ HasTitle returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

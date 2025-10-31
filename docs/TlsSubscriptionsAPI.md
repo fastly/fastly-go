@@ -1,4 +1,4 @@
-# TLSSubscriptionsAPI
+# TlsSubscriptionsAPI
 
 > [!NOTE]
 > All URIs are relative to `https://api.fastly.com`
@@ -6,12 +6,12 @@
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateGlobalsignEmailChallenge**](TlsSubscriptionsAPI.md#CreateGlobalsignEmailChallenge) | **POST** `/tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges` | Creates a GlobalSign email challenge.
-[**CreateTLSSub**](TlsSubscriptionsAPI.md#CreateTLSSub) | **POST** `/tls/subscriptions` | Create a TLS subscription
+[**CreateTlsSub**](TlsSubscriptionsAPI.md#CreateTlsSub) | **POST** `/tls/subscriptions` | Create a TLS subscription
 [**DeleteGlobalsignEmailChallenge**](TlsSubscriptionsAPI.md#DeleteGlobalsignEmailChallenge) | **DELETE** `/tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges/{globalsign_email_challenge_id}` | Delete a GlobalSign email challenge
-[**DeleteTLSSub**](TlsSubscriptionsAPI.md#DeleteTLSSub) | **DELETE** `/tls/subscriptions/{tls_subscription_id}` | Delete a TLS subscription
-[**GetTLSSub**](TlsSubscriptionsAPI.md#GetTLSSub) | **GET** `/tls/subscriptions/{tls_subscription_id}` | Get a TLS subscription
-[**ListTLSSubs**](TlsSubscriptionsAPI.md#ListTLSSubs) | **GET** `/tls/subscriptions` | List TLS subscriptions
-[**PatchTLSSub**](TlsSubscriptionsAPI.md#PatchTLSSub) | **PATCH** `/tls/subscriptions/{tls_subscription_id}` | Update a TLS subscription
+[**DeleteTlsSub**](TlsSubscriptionsAPI.md#DeleteTlsSub) | **DELETE** `/tls/subscriptions/{tls_subscription_id}` | Delete a TLS subscription
+[**GetTlsSub**](TlsSubscriptionsAPI.md#GetTlsSub) | **GET** `/tls/subscriptions/{tls_subscription_id}` | Get a TLS subscription
+[**ListTlsSubs**](TlsSubscriptionsAPI.md#ListTlsSubs) | **GET** `/tls/subscriptions` | List TLS subscriptions
+[**PatchTlsSub**](TlsSubscriptionsAPI.md#PatchTlsSub) | **PATCH** `/tls/subscriptions/{tls_subscription_id}` | Update a TLS subscription
 
 
 
@@ -34,20 +34,20 @@ import (
 )
 
 func main() {
-    tlsSubscriptionID := "tlsSubscriptionId_example" // string | Alphanumeric string identifying a TLS subscription.
-    tlsAuthorizationID := "tlsAuthorizationId_example" // string | Alphanumeric string identifying a TLS subscription.
-    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
+    tlsSubscriptionId := "tlsSubscriptionId_example" // string | Alphanumeric string identifying a TLS subscription.
+    tlsAuthorizationId := "tlsAuthorizationId_example" // string | Alphanumeric string identifying a TLS subscription.
+    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSSubscriptionsAPI.CreateGlobalsignEmailChallenge(ctx, tlsSubscriptionID, tlsAuthorizationID).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.TlsSubscriptionsAPI.CreateGlobalsignEmailChallenge(ctx, tlsSubscriptionId, tlsAuthorizationId).RequestBody(requestBody).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSSubscriptionsAPI.CreateGlobalsignEmailChallenge`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsSubscriptionsAPI.CreateGlobalsignEmailChallenge`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateGlobalsignEmailChallenge`: map[string]any
-    fmt.Fprintf(os.Stdout, "Response from `TLSSubscriptionsAPI.CreateGlobalsignEmailChallenge`: %v\n", resp)
+    // response from `CreateGlobalsignEmailChallenge`: map[string]interface{}
+    fmt.Fprintf(os.Stdout, "Response from `TlsSubscriptionsAPI.CreateGlobalsignEmailChallenge`: %v\n", resp)
 }
 ```
 
@@ -57,8 +57,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tlsSubscriptionID** | **string** | Alphanumeric string identifying a TLS subscription. | 
-**tlsAuthorizationID** | **string** | Alphanumeric string identifying a TLS subscription. | 
+**tlsSubscriptionId** | **string** | Alphanumeric string identifying a TLS subscription. | 
+**tlsAuthorizationId** | **string** | Alphanumeric string identifying a TLS subscription. | 
 
 ### Other Parameters
 
@@ -67,11 +67,11 @@ Other parameters are passed through a pointer to a apiCreateGlobalsignEmailChall
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]any** |  | 
+ **requestBody** | **map[string]map[string]interface{}** |  | 
 
 ### Return type
 
-**map[string]any**
+**map[string]interface{}**
 
 ### Authorization
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## CreateTLSSub
+## CreateTlsSub
 
 Create a TLS subscription
 
@@ -104,18 +104,18 @@ import (
 )
 
 func main() {
-    tlsSubscription := *openapiclient.NewTLSSubscription() // TLSSubscription |  (optional)
+    tlsSubscription := *openapiclient.NewTlsSubscription() // TlsSubscription |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSSubscriptionsAPI.CreateTLSSub(ctx).TLSSubscription(tlsSubscription).Execute()
+    resp, r, err := apiClient.TlsSubscriptionsAPI.CreateTlsSub(ctx).TlsSubscription(tlsSubscription).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSSubscriptionsAPI.CreateTLSSub`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsSubscriptionsAPI.CreateTlsSub`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateTLSSub`: TLSSubscriptionResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSSubscriptionsAPI.CreateTLSSub`: %v\n", resp)
+    // response from `CreateTlsSub`: TlsSubscriptionResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsSubscriptionsAPI.CreateTlsSub`: %v\n", resp)
 }
 ```
 
@@ -125,16 +125,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateTLSSubRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTlsSubRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tlsSubscription** | [**TLSSubscription**](TlsSubscription.md) |  | 
+ **tlsSubscription** | [**TlsSubscription**](TlsSubscription.md) |  | 
 
 ### Return type
 
-[**TLSSubscriptionResponse**](TlsSubscriptionResponse.md)
+[**TlsSubscriptionResponse**](TlsSubscriptionResponse.md)
 
 ### Authorization
 
@@ -167,16 +167,16 @@ import (
 )
 
 func main() {
-    tlsSubscriptionID := "tlsSubscriptionId_example" // string | Alphanumeric string identifying a TLS subscription.
-    tlsAuthorizationID := "tlsAuthorizationId_example" // string | Alphanumeric string identifying a TLS subscription.
-    globalsignEmailChallengeID := "gU3guUGZzb2W9Euo4Mo0r" // string | Alphanumeric string identifying a GlobalSign email challenge.
+    tlsSubscriptionId := "tlsSubscriptionId_example" // string | Alphanumeric string identifying a TLS subscription.
+    tlsAuthorizationId := "tlsAuthorizationId_example" // string | Alphanumeric string identifying a TLS subscription.
+    globalsignEmailChallengeId := "gU3guUGZzb2W9Euo4Mo0r" // string | Alphanumeric string identifying a GlobalSign email challenge.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSSubscriptionsAPI.DeleteGlobalsignEmailChallenge(ctx, tlsSubscriptionID, tlsAuthorizationID, globalsignEmailChallengeID).Execute()
+    resp, r, err := apiClient.TlsSubscriptionsAPI.DeleteGlobalsignEmailChallenge(ctx, tlsSubscriptionId, tlsAuthorizationId, globalsignEmailChallengeId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSSubscriptionsAPI.DeleteGlobalsignEmailChallenge`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsSubscriptionsAPI.DeleteGlobalsignEmailChallenge`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -188,9 +188,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tlsSubscriptionID** | **string** | Alphanumeric string identifying a TLS subscription. | 
-**tlsAuthorizationID** | **string** | Alphanumeric string identifying a TLS subscription. | 
-**globalsignEmailChallengeID** | **string** | Alphanumeric string identifying a GlobalSign email challenge. | 
+**tlsSubscriptionId** | **string** | Alphanumeric string identifying a TLS subscription. | 
+**tlsAuthorizationId** | **string** | Alphanumeric string identifying a TLS subscription. | 
+**globalsignEmailChallengeId** | **string** | Alphanumeric string identifying a GlobalSign email challenge. | 
 
 ### Other Parameters
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## DeleteTLSSub
+## DeleteTlsSub
 
 Delete a TLS subscription
 
@@ -236,14 +236,14 @@ import (
 )
 
 func main() {
-    tlsSubscriptionID := "tlsSubscriptionId_example" // string | Alphanumeric string identifying a TLS subscription.
+    tlsSubscriptionId := "tlsSubscriptionId_example" // string | Alphanumeric string identifying a TLS subscription.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSSubscriptionsAPI.DeleteTLSSub(ctx, tlsSubscriptionID).Execute()
+    resp, r, err := apiClient.TlsSubscriptionsAPI.DeleteTlsSub(ctx, tlsSubscriptionId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSSubscriptionsAPI.DeleteTLSSub`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsSubscriptionsAPI.DeleteTlsSub`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -255,11 +255,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tlsSubscriptionID** | **string** | Alphanumeric string identifying a TLS subscription. | 
+**tlsSubscriptionId** | **string** | Alphanumeric string identifying a TLS subscription. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteTLSSubRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteTlsSubRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## GetTLSSub
+## GetTlsSub
 
 Get a TLS subscription
 
@@ -301,19 +301,19 @@ import (
 )
 
 func main() {
-    tlsSubscriptionID := "tlsSubscriptionId_example" // string | Alphanumeric string identifying a TLS subscription.
+    tlsSubscriptionId := "tlsSubscriptionId_example" // string | Alphanumeric string identifying a TLS subscription.
     include := "tls_authorizations" // string | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, `tls_authorizations.self_managed_http_challenge`, and `tls_certificates`.  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSSubscriptionsAPI.GetTLSSub(ctx, tlsSubscriptionID).Include(include).Execute()
+    resp, r, err := apiClient.TlsSubscriptionsAPI.GetTlsSub(ctx, tlsSubscriptionId).Include(include).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSSubscriptionsAPI.GetTLSSub`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsSubscriptionsAPI.GetTlsSub`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetTLSSub`: TLSSubscriptionResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSSubscriptionsAPI.GetTLSSub`: %v\n", resp)
+    // response from `GetTlsSub`: TlsSubscriptionResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsSubscriptionsAPI.GetTlsSub`: %v\n", resp)
 }
 ```
 
@@ -323,11 +323,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tlsSubscriptionID** | **string** | Alphanumeric string identifying a TLS subscription. | 
+**tlsSubscriptionId** | **string** | Alphanumeric string identifying a TLS subscription. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetTLSSubRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTlsSubRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TLSSubscriptionResponse**](TlsSubscriptionResponse.md)
+[**TlsSubscriptionResponse**](TlsSubscriptionResponse.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## ListTLSSubs
+## ListTlsSubs
 
 List TLS subscriptions
 
@@ -370,7 +370,7 @@ import (
 
 func main() {
     filterState := "filterState_example" // string | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`).  (optional)
-    filterTLSDomainsID := "filterTLSDomainsId_example" // string | Limit the returned subscriptions to those that include the specific domain. (optional)
+    filterTlsDomainsId := "filterTlsDomainsId_example" // string | Limit the returned subscriptions to those that include the specific domain. (optional)
     filterHasActiveOrder := true // bool | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  (optional)
     filterCertificateAuthority := "filterCertificateAuthority_example" // string | Limit the returned subscriptions to a specific certification authority. Values may include `certainly`, `lets-encrypt`, or `globalsign`.  (optional)
     sort := "sort_example" // string | The order in which to list the results. (optional) (default to "-created_at")
@@ -381,13 +381,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSSubscriptionsAPI.ListTLSSubs(ctx).FilterState(filterState).FilterTLSDomainsID(filterTLSDomainsID).FilterHasActiveOrder(filterHasActiveOrder).FilterCertificateAuthority(filterCertificateAuthority).Sort(sort).Include(include).PageNumber(pageNumber).PageSize(pageSize).Execute()
+    resp, r, err := apiClient.TlsSubscriptionsAPI.ListTlsSubs(ctx).FilterState(filterState).FilterTlsDomainsId(filterTlsDomainsId).FilterHasActiveOrder(filterHasActiveOrder).FilterCertificateAuthority(filterCertificateAuthority).Sort(sort).Include(include).PageNumber(pageNumber).PageSize(pageSize).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSSubscriptionsAPI.ListTLSSubs`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsSubscriptionsAPI.ListTlsSubs`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListTLSSubs`: TLSSubscriptionsResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSSubscriptionsAPI.ListTLSSubs`: %v\n", resp)
+    // response from `ListTlsSubs`: TlsSubscriptionsResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsSubscriptionsAPI.ListTlsSubs`: %v\n", resp)
 }
 ```
 
@@ -397,16 +397,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListTLSSubsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListTlsSubsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filterState** | **string** | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]&#x3D;renewing`).  |  **filterTLSDomainsID** | **string** | Limit the returned subscriptions to those that include the specific domain. |  **filterHasActiveOrder** | **bool** | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  |  **filterCertificateAuthority** | **string** | Limit the returned subscriptions to a specific certification authority. Values may include `certainly`, `lets-encrypt`, or `globalsign`.  |  **sort** | **string** | The order in which to list the results. | [default to &quot;-created_at&quot;] **include** | **string** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, `tls_authorizations.self_managed_http_challenge`, and `tls_certificates`.  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20]
+ **filterState** | **string** | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]&#x3D;renewing`).  |  **filterTlsDomainsId** | **string** | Limit the returned subscriptions to those that include the specific domain. |  **filterHasActiveOrder** | **bool** | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  |  **filterCertificateAuthority** | **string** | Limit the returned subscriptions to a specific certification authority. Values may include `certainly`, `lets-encrypt`, or `globalsign`.  |  **sort** | **string** | The order in which to list the results. | [default to &quot;-created_at&quot;] **include** | **string** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, `tls_authorizations.self_managed_http_challenge`, and `tls_certificates`.  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20]
 
 ### Return type
 
-[**TLSSubscriptionsResponse**](TlsSubscriptionsResponse.md)
+[**TlsSubscriptionsResponse**](TlsSubscriptionsResponse.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## PatchTLSSub
+## PatchTlsSub
 
 Update a TLS subscription
 
@@ -439,20 +439,20 @@ import (
 )
 
 func main() {
-    tlsSubscriptionID := "tlsSubscriptionId_example" // string | Alphanumeric string identifying a TLS subscription.
+    tlsSubscriptionId := "tlsSubscriptionId_example" // string | Alphanumeric string identifying a TLS subscription.
     force := true // bool | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.  (optional)
-    tlsSubscription := *openapiclient.NewTLSSubscription() // TLSSubscription |  (optional)
+    tlsSubscription := *openapiclient.NewTlsSubscription() // TlsSubscription |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSSubscriptionsAPI.PatchTLSSub(ctx, tlsSubscriptionID).Force(force).TLSSubscription(tlsSubscription).Execute()
+    resp, r, err := apiClient.TlsSubscriptionsAPI.PatchTlsSub(ctx, tlsSubscriptionId).Force(force).TlsSubscription(tlsSubscription).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSSubscriptionsAPI.PatchTLSSub`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsSubscriptionsAPI.PatchTlsSub`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PatchTLSSub`: TLSSubscriptionResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSSubscriptionsAPI.PatchTLSSub`: %v\n", resp)
+    // response from `PatchTlsSub`: TlsSubscriptionResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsSubscriptionsAPI.PatchTlsSub`: %v\n", resp)
 }
 ```
 
@@ -462,20 +462,20 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tlsSubscriptionID** | **string** | Alphanumeric string identifying a TLS subscription. | 
+**tlsSubscriptionId** | **string** | Alphanumeric string identifying a TLS subscription. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiPatchTLSSubRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPatchTlsSubRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **force** | **bool** | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.  |  **tlsSubscription** | [**TLSSubscription**](TlsSubscription.md) |  | 
+ **force** | **bool** | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.  |  **tlsSubscription** | [**TlsSubscription**](TlsSubscription.md) |  | 
 
 ### Return type
 
-[**TLSSubscriptionResponse**](TlsSubscriptionResponse.md)
+[**TlsSubscriptionResponse**](TlsSubscriptionResponse.md)
 
 ### Authorization
 
@@ -487,3 +487,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/vnd.api+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

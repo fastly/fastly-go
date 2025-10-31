@@ -37,11 +37,11 @@ type ImageOptimizerDefaultSettingsAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIGetDefaultSettingsRequest
 	*/
-	GetDefaultSettings(ctx context.Context, serviceID string, versionID int32) APIGetDefaultSettingsRequest
+	GetDefaultSettings(ctx context.Context, serviceId string, versionId int32) APIGetDefaultSettingsRequest
 
 	// GetDefaultSettingsExecute executes the request
 	//  @return DefaultSettingsResponse
@@ -55,11 +55,11 @@ type ImageOptimizerDefaultSettingsAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIUpdateDefaultSettingsRequest
 	*/
-	UpdateDefaultSettings(ctx context.Context, serviceID string, versionID int32) APIUpdateDefaultSettingsRequest
+	UpdateDefaultSettings(ctx context.Context, serviceId string, versionId int32) APIUpdateDefaultSettingsRequest
 
 	// UpdateDefaultSettingsExecute executes the request
 	//  @return DefaultSettingsResponse
@@ -73,8 +73,8 @@ type ImageOptimizerDefaultSettingsAPIService service
 type APIGetDefaultSettingsRequest struct {
 	ctx        context.Context
 	APIService ImageOptimizerDefaultSettingsAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -89,16 +89,16 @@ Retrieve the current Image Optimizer default settings. All properties in the res
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIGetDefaultSettingsRequest
 */
-func (a *ImageOptimizerDefaultSettingsAPIService) GetDefaultSettings(ctx context.Context, serviceID string, versionID int32) APIGetDefaultSettingsRequest {
+func (a *ImageOptimizerDefaultSettingsAPIService) GetDefaultSettings(ctx context.Context, serviceId string, versionId int32) APIGetDefaultSettingsRequest {
 	return APIGetDefaultSettingsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -118,8 +118,8 @@ func (a *ImageOptimizerDefaultSettingsAPIService) GetDefaultSettingsExecute(r AP
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/image_optimizer_default_settings"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -219,8 +219,8 @@ func (a *ImageOptimizerDefaultSettingsAPIService) GetDefaultSettingsExecute(r AP
 type APIUpdateDefaultSettingsRequest struct {
 	ctx             context.Context
 	APIService      ImageOptimizerDefaultSettingsAPI
-	serviceID       string
-	versionID       int32
+	serviceId       string
+	versionId       int32
 	defaultSettings *DefaultSettings
 }
 
@@ -243,16 +243,16 @@ with all properties populated.
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIUpdateDefaultSettingsRequest
 */
-func (a *ImageOptimizerDefaultSettingsAPIService) UpdateDefaultSettings(ctx context.Context, serviceID string, versionID int32) APIUpdateDefaultSettingsRequest {
+func (a *ImageOptimizerDefaultSettingsAPIService) UpdateDefaultSettings(ctx context.Context, serviceId string, versionId int32) APIUpdateDefaultSettingsRequest {
 	return APIUpdateDefaultSettingsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -272,8 +272,8 @@ func (a *ImageOptimizerDefaultSettingsAPIService) UpdateDefaultSettingsExecute(r
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/image_optimizer_default_settings"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

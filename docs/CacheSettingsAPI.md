@@ -32,18 +32,18 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     action := "action_example" // string | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  (optional)
     cacheCondition := "cacheCondition_example" // string | Name of the cache condition controlling when this configuration applies. (optional)
     name := "name_example" // string | Name for the cache settings object. (optional)
-    staleTTL := "staleTtl_example" // string | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error'). (optional)
+    staleTtl := "staleTtl_example" // string | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error'). (optional)
     ttl := "ttl_example" // string | Maximum time to consider the object fresh in the cache (the cache 'time to live'). (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.CacheSettingsAPI.CreateCacheSettings(ctx, serviceID, versionID).Action(action).CacheCondition(cacheCondition).Name(name).StaleTTL(staleTTL).TTL(ttl).Execute()
+    resp, r, err := apiClient.CacheSettingsAPI.CreateCacheSettings(ctx, serviceId, versionId).Action(action).CacheCondition(cacheCondition).Name(name).StaleTtl(staleTtl).Ttl(ttl).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CacheSettingsAPI.CreateCacheSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,8 +59,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -69,7 +69,7 @@ Other parameters are passed through a pointer to a apiCreateCacheSettingsRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **string** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **name** | **string** | Name for the cache settings object. |  **staleTTL** | **string** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). |  **ttl** | **string** | Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;). | 
+ **action** | **string** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **name** | **string** | Name for the cache settings object. |  **staleTtl** | **string** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). |  **ttl** | **string** | Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;). | 
 
 ### Return type
 
@@ -106,14 +106,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     cacheSettingsName := "cacheSettingsName_example" // string | Name for the cache settings object.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.CacheSettingsAPI.DeleteCacheSettings(ctx, serviceID, versionID, cacheSettingsName).Execute()
+    resp, r, err := apiClient.CacheSettingsAPI.DeleteCacheSettings(ctx, serviceId, versionId, cacheSettingsName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CacheSettingsAPI.DeleteCacheSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -129,8 +129,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **cacheSettingsName** | **string** | Name for the cache settings object. | 
 
 ### Other Parameters
@@ -177,14 +177,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     cacheSettingsName := "cacheSettingsName_example" // string | Name for the cache settings object.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.CacheSettingsAPI.GetCacheSettings(ctx, serviceID, versionID, cacheSettingsName).Execute()
+    resp, r, err := apiClient.CacheSettingsAPI.GetCacheSettings(ctx, serviceId, versionId, cacheSettingsName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CacheSettingsAPI.GetCacheSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -200,8 +200,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **cacheSettingsName** | **string** | Name for the cache settings object. | 
 
 ### Other Parameters
@@ -248,13 +248,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.CacheSettingsAPI.ListCacheSettings(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.CacheSettingsAPI.ListCacheSettings(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CacheSettingsAPI.ListCacheSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -270,8 +270,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -317,19 +317,19 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     cacheSettingsName := "cacheSettingsName_example" // string | Name for the cache settings object.
     action := "action_example" // string | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  (optional)
     cacheCondition := "cacheCondition_example" // string | Name of the cache condition controlling when this configuration applies. (optional)
     name := "name_example" // string | Name for the cache settings object. (optional)
-    staleTTL := "staleTtl_example" // string | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error'). (optional)
+    staleTtl := "staleTtl_example" // string | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error'). (optional)
     ttl := "ttl_example" // string | Maximum time to consider the object fresh in the cache (the cache 'time to live'). (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.CacheSettingsAPI.UpdateCacheSettings(ctx, serviceID, versionID, cacheSettingsName).Action(action).CacheCondition(cacheCondition).Name(name).StaleTTL(staleTTL).TTL(ttl).Execute()
+    resp, r, err := apiClient.CacheSettingsAPI.UpdateCacheSettings(ctx, serviceId, versionId, cacheSettingsName).Action(action).CacheCondition(cacheCondition).Name(name).StaleTtl(staleTtl).Ttl(ttl).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CacheSettingsAPI.UpdateCacheSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -345,8 +345,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **cacheSettingsName** | **string** | Name for the cache settings object. | 
 
 ### Other Parameters
@@ -356,7 +356,7 @@ Other parameters are passed through a pointer to a apiUpdateCacheSettingsRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **string** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **name** | **string** | Name for the cache settings object. |  **staleTTL** | **string** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). |  **ttl** | **string** | Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;). | 
+ **action** | **string** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **name** | **string** | Name for the cache settings object. |  **staleTtl** | **string** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). |  **ttl** | **string** | Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;). | 
 
 ### Return type
 
@@ -372,3 +372,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

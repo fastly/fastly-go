@@ -33,14 +33,14 @@ type LoggingSumologicResponse struct {
 	FormatVersion *string             `json:"format_version,omitempty"`
 	MessageType   *LoggingMessageType `json:"message_type,omitempty"`
 	// The URL to post logs to.
-	URL *string `json:"url,omitempty"`
+	Url *string `json:"url,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
-	ServiceID            *string      `json:"service_id,omitempty"`
+	ServiceId            *string      `json:"service_id,omitempty"`
 	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -326,36 +326,36 @@ func (o *LoggingSumologicResponse) SetMessageType(v LoggingMessageType) {
 	o.MessageType = &v
 }
 
-// GetURL returns the URL field value if set, zero value otherwise.
-func (o *LoggingSumologicResponse) GetURL() string {
-	if o == nil || o.URL == nil {
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *LoggingSumologicResponse) GetUrl() string {
+	if o == nil || o.Url == nil {
 		var ret string
 		return ret
 	}
-	return *o.URL
+	return *o.Url
 }
 
-// GetURLOk returns a tuple with the URL field value if set, nil otherwise
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSumologicResponse) GetURLOk() (*string, bool) {
-	if o == nil || o.URL == nil {
+func (o *LoggingSumologicResponse) GetUrlOk() (*string, bool) {
+	if o == nil || o.Url == nil {
 		return nil, false
 	}
-	return o.URL, true
+	return o.Url, true
 }
 
-// HasURL returns a boolean if a field has been set.
-func (o *LoggingSumologicResponse) HasURL() bool {
-	if o != nil && o.URL != nil {
+// HasUrl returns a boolean if a field has been set.
+func (o *LoggingSumologicResponse) HasUrl() bool {
+	if o != nil && o.Url != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetURL gets a reference to the given string and assigns it to the URL field.
-func (o *LoggingSumologicResponse) SetURL(v string) {
-	o.URL = &v
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *LoggingSumologicResponse) SetUrl(v string) {
+	o.Url = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -487,36 +487,36 @@ func (o *LoggingSumologicResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *LoggingSumologicResponse) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *LoggingSumologicResponse) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingSumologicResponse) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *LoggingSumologicResponse) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *LoggingSumologicResponse) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *LoggingSumologicResponse) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *LoggingSumologicResponse) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *LoggingSumologicResponse) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -576,8 +576,8 @@ func (o LoggingSumologicResponse) MarshalJSON() ([]byte, error) {
 	if o.MessageType != nil {
 		toSerialize["message_type"] = o.MessageType
 	}
-	if o.URL != nil {
-		toSerialize["url"] = o.URL
+	if o.Url != nil {
+		toSerialize["url"] = o.Url
 	}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
@@ -588,8 +588,8 @@ func (o LoggingSumologicResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

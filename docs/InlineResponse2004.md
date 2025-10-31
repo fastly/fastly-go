@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExpiresAt** | Pointer to **string** | Time-stamp (GMT) when the domain_ownership validation will expire. | [optional] [readonly] 
+**Data** | Pointer to [**[]SuccessfulResponseAsObject**](SuccessfulResponseAsObject.md) |  | [optional] 
+**Meta** | Pointer to **interface{}** | Meta for the pagination. | [optional] 
 
 ## Methods
 
@@ -25,30 +26,67 @@ NewInlineResponse2004WithDefaults instantiates a new InlineResponse2004 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetExpiresAt
+### GetData
 
-`func (o *InlineResponse2004) GetExpiresAt() string`
+`func (o *InlineResponse2004) GetData() []SuccessfulResponseAsObject`
 
-GetExpiresAt returns the ExpiresAt field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetExpiresAtOk
+### GetDataOk
 
-`func (o *InlineResponse2004) GetExpiresAtOk() (*string, bool)`
+`func (o *InlineResponse2004) GetDataOk() (*[]SuccessfulResponseAsObject, bool)`
 
-GetExpiresAtOk returns a tuple with the ExpiresAt field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExpiresAt
+### SetData
 
-`func (o *InlineResponse2004) SetExpiresAt(v string)`
+`func (o *InlineResponse2004) SetData(v []SuccessfulResponseAsObject)`
 
-SetExpiresAt sets ExpiresAt field to given value.
+SetData sets Data field to given value.
 
-### HasExpiresAt
+### HasData
 
-`func (o *InlineResponse2004) HasExpiresAt() bool`
+`func (o *InlineResponse2004) HasData() bool`
 
-HasExpiresAt returns a boolean if a field has been set.
+HasData returns a boolean if a field has been set.
 
+### GetMeta
+
+`func (o *InlineResponse2004) GetMeta() interface{}`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *InlineResponse2004) GetMetaOk() (*interface{}, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *InlineResponse2004) SetMeta(v interface{})`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *InlineResponse2004) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
+### SetMetaNil
+
+`func (o *InlineResponse2004) SetMetaNil(b bool)`
+
+ SetMetaNil sets the value for Meta to be an explicit nil
+
+### UnsetMeta
+`func (o *InlineResponse2004) UnsetMeta()`
+
+UnsetMeta ensures that no value is present for Meta, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

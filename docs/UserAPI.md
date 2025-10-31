@@ -40,13 +40,14 @@ func main() {
     locked := true // bool | Indicates whether the is account is locked for editing or not. (optional)
     requireNewPassword := true // bool | Indicates if a new password is required at next login. (optional)
     role := openapiclient.role_user("user") // RoleUser |  (optional)
+    roles := []string{"6bKsDElwPt8vZXCArszK9x"} // []string | A list of role IDs assigned to the user. (optional)
     twoFactorAuthEnabled := true // bool | Indicates if 2FA is enabled on the user. (optional)
     twoFactorSetupRequired := true // bool | Indicates if 2FA is required by the user's customer account. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.UserAPI.CreateUser(ctx).Login(login).Name(name).LimitServices(limitServices).Locked(locked).RequireNewPassword(requireNewPassword).Role(role).TwoFactorAuthEnabled(twoFactorAuthEnabled).TwoFactorSetupRequired(twoFactorSetupRequired).Execute()
+    resp, r, err := apiClient.UserAPI.CreateUser(ctx).Login(login).Name(name).LimitServices(limitServices).Locked(locked).RequireNewPassword(requireNewPassword).Role(role).Roles(roles).TwoFactorAuthEnabled(twoFactorAuthEnabled).TwoFactorSetupRequired(twoFactorSetupRequired).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.CreateUser`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -67,7 +68,7 @@ Other parameters are passed through a pointer to a apiCreateUserRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **login** | **string** |  |  **name** | **string** | The real life name of the user. |  **limitServices** | **bool** | Indicates that the user has limited access to the customer&#39;s services. |  **locked** | **bool** | Indicates whether the is account is locked for editing or not. |  **requireNewPassword** | **bool** | Indicates if a new password is required at next login. |  **role** | [**RoleUser**](RoleUser.md) |  |  **twoFactorAuthEnabled** | **bool** | Indicates if 2FA is enabled on the user. |  **twoFactorSetupRequired** | **bool** | Indicates if 2FA is required by the user&#39;s customer account. | 
+ **login** | **string** |  |  **name** | **string** | The real life name of the user. |  **limitServices** | **bool** | Indicates that the user has limited access to the customer&#39;s services. |  **locked** | **bool** | Indicates whether the is account is locked for editing or not. |  **requireNewPassword** | **bool** | Indicates if a new password is required at next login. |  **role** | [**RoleUser**](RoleUser.md) |  |  **roles** | **[]string** | A list of role IDs assigned to the user. |  **twoFactorAuthEnabled** | **bool** | Indicates if 2FA is enabled on the user. |  **twoFactorSetupRequired** | **bool** | Indicates if 2FA is required by the user&#39;s customer account. | 
 
 ### Return type
 
@@ -104,12 +105,12 @@ import (
 )
 
 func main() {
-    userID := "userId_example" // string | Alphanumeric string identifying the user.
+    userId := "userId_example" // string | Alphanumeric string identifying the user.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.UserAPI.DeleteUser(ctx, userID).Execute()
+    resp, r, err := apiClient.UserAPI.DeleteUser(ctx, userId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.DeleteUser`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -125,7 +126,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userID** | **string** | Alphanumeric string identifying the user. | 
+**userId** | **string** | Alphanumeric string identifying the user. | 
 
 ### Other Parameters
 
@@ -230,12 +231,12 @@ import (
 )
 
 func main() {
-    userID := "userId_example" // string | Alphanumeric string identifying the user.
+    userId := "userId_example" // string | Alphanumeric string identifying the user.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.UserAPI.GetUser(ctx, userID).Execute()
+    resp, r, err := apiClient.UserAPI.GetUser(ctx, userId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.GetUser`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -251,7 +252,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userID** | **string** | Alphanumeric string identifying the user. | 
+**userId** | **string** | Alphanumeric string identifying the user. | 
 
 ### Other Parameters
 
@@ -364,20 +365,21 @@ import (
 )
 
 func main() {
-    userID := "userId_example" // string | Alphanumeric string identifying the user.
+    userId := "userId_example" // string | Alphanumeric string identifying the user.
     login := "login_example" // string |  (optional)
     name := "name_example" // string | The real life name of the user. (optional)
     limitServices := true // bool | Indicates that the user has limited access to the customer's services. (optional)
     locked := true // bool | Indicates whether the is account is locked for editing or not. (optional)
     requireNewPassword := true // bool | Indicates if a new password is required at next login. (optional)
     role := openapiclient.role_user("user") // RoleUser |  (optional)
+    roles := []string{"6bKsDElwPt8vZXCArszK9x"} // []string | A list of role IDs assigned to the user. (optional)
     twoFactorAuthEnabled := true // bool | Indicates if 2FA is enabled on the user. (optional)
     twoFactorSetupRequired := true // bool | Indicates if 2FA is required by the user's customer account. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.UserAPI.UpdateUser(ctx, userID).Login(login).Name(name).LimitServices(limitServices).Locked(locked).RequireNewPassword(requireNewPassword).Role(role).TwoFactorAuthEnabled(twoFactorAuthEnabled).TwoFactorSetupRequired(twoFactorSetupRequired).Execute()
+    resp, r, err := apiClient.UserAPI.UpdateUser(ctx, userId).Login(login).Name(name).LimitServices(limitServices).Locked(locked).RequireNewPassword(requireNewPassword).Role(role).Roles(roles).TwoFactorAuthEnabled(twoFactorAuthEnabled).TwoFactorSetupRequired(twoFactorSetupRequired).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `UserAPI.UpdateUser`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -393,7 +395,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userID** | **string** | Alphanumeric string identifying the user. | 
+**userId** | **string** | Alphanumeric string identifying the user. | 
 
 ### Other Parameters
 
@@ -402,7 +404,7 @@ Other parameters are passed through a pointer to a apiUpdateUserRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **login** | **string** |  |  **name** | **string** | The real life name of the user. |  **limitServices** | **bool** | Indicates that the user has limited access to the customer&#39;s services. |  **locked** | **bool** | Indicates whether the is account is locked for editing or not. |  **requireNewPassword** | **bool** | Indicates if a new password is required at next login. |  **role** | [**RoleUser**](RoleUser.md) |  |  **twoFactorAuthEnabled** | **bool** | Indicates if 2FA is enabled on the user. |  **twoFactorSetupRequired** | **bool** | Indicates if 2FA is required by the user&#39;s customer account. | 
+ **login** | **string** |  |  **name** | **string** | The real life name of the user. |  **limitServices** | **bool** | Indicates that the user has limited access to the customer&#39;s services. |  **locked** | **bool** | Indicates whether the is account is locked for editing or not. |  **requireNewPassword** | **bool** | Indicates if a new password is required at next login. |  **role** | [**RoleUser**](RoleUser.md) |  |  **roles** | **[]string** | A list of role IDs assigned to the user. |  **twoFactorAuthEnabled** | **bool** | Indicates if 2FA is enabled on the user. |  **twoFactorSetupRequired** | **bool** | Indicates if 2FA is required by the user&#39;s customer account. | 
 
 ### Return type
 
@@ -482,3 +484,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

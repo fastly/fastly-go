@@ -16,34 +16,34 @@ import (
 	"encoding/json"
 )
 
-// ComputeACLCreateAclsRequest struct for ComputeACLCreateAclsRequest
-type ComputeACLCreateAclsRequest struct {
+// ComputeAclCreateAclsRequest struct for ComputeAclCreateAclsRequest
+type ComputeAclCreateAclsRequest struct {
 	// Human readable name of store
 	Name                 *string `json:"name,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _ComputeACLCreateAclsRequest ComputeACLCreateAclsRequest
+type _ComputeAclCreateAclsRequest ComputeAclCreateAclsRequest
 
-// NewComputeACLCreateAclsRequest instantiates a new ComputeACLCreateAclsRequest object
+// NewComputeAclCreateAclsRequest instantiates a new ComputeAclCreateAclsRequest object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeACLCreateAclsRequest() *ComputeACLCreateAclsRequest {
-	this := ComputeACLCreateAclsRequest{}
+func NewComputeAclCreateAclsRequest() *ComputeAclCreateAclsRequest {
+	this := ComputeAclCreateAclsRequest{}
 	return &this
 }
 
-// NewComputeACLCreateAclsRequestWithDefaults instantiates a new ComputeACLCreateAclsRequest object
+// NewComputeAclCreateAclsRequestWithDefaults instantiates a new ComputeAclCreateAclsRequest object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewComputeACLCreateAclsRequestWithDefaults() *ComputeACLCreateAclsRequest {
-	this := ComputeACLCreateAclsRequest{}
+func NewComputeAclCreateAclsRequestWithDefaults() *ComputeAclCreateAclsRequest {
+	this := ComputeAclCreateAclsRequest{}
 	return &this
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *ComputeACLCreateAclsRequest) GetName() string {
+func (o *ComputeAclCreateAclsRequest) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -53,7 +53,7 @@ func (o *ComputeACLCreateAclsRequest) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLCreateAclsRequest) GetNameOk() (*string, bool) {
+func (o *ComputeAclCreateAclsRequest) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *ComputeACLCreateAclsRequest) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *ComputeACLCreateAclsRequest) HasName() bool {
+func (o *ComputeAclCreateAclsRequest) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -70,13 +70,13 @@ func (o *ComputeACLCreateAclsRequest) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ComputeACLCreateAclsRequest) SetName(v string) {
+func (o *ComputeAclCreateAclsRequest) SetName(v string) {
 	o.Name = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ComputeACLCreateAclsRequest) MarshalJSON() ([]byte, error) {
+func (o ComputeAclCreateAclsRequest) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -91,11 +91,11 @@ func (o ComputeACLCreateAclsRequest) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ComputeACLCreateAclsRequest) UnmarshalJSON(bytes []byte) (err error) {
-	varComputeACLCreateAclsRequest := _ComputeACLCreateAclsRequest{}
+func (o *ComputeAclCreateAclsRequest) UnmarshalJSON(bytes []byte) (err error) {
+	varComputeAclCreateAclsRequest := _ComputeAclCreateAclsRequest{}
 
-	if err = json.Unmarshal(bytes, &varComputeACLCreateAclsRequest); err == nil {
-		*o = ComputeACLCreateAclsRequest(varComputeACLCreateAclsRequest)
+	if err = json.Unmarshal(bytes, &varComputeAclCreateAclsRequest); err == nil {
+		*o = ComputeAclCreateAclsRequest(varComputeAclCreateAclsRequest)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -108,48 +108,48 @@ func (o *ComputeACLCreateAclsRequest) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableComputeACLCreateAclsRequest is a helper abstraction for handling nullable computeaclcreateaclsrequest types.
-type NullableComputeACLCreateAclsRequest struct {
-	value *ComputeACLCreateAclsRequest
+// NullableComputeAclCreateAclsRequest is a helper abstraction for handling nullable computeaclcreateaclsrequest types.
+type NullableComputeAclCreateAclsRequest struct {
+	value *ComputeAclCreateAclsRequest
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableComputeACLCreateAclsRequest) Get() *ComputeACLCreateAclsRequest {
+func (v NullableComputeAclCreateAclsRequest) Get() *ComputeAclCreateAclsRequest {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableComputeACLCreateAclsRequest) Set(val *ComputeACLCreateAclsRequest) {
+func (v *NullableComputeAclCreateAclsRequest) Set(val *ComputeAclCreateAclsRequest) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableComputeACLCreateAclsRequest) IsSet() bool {
+func (v NullableComputeAclCreateAclsRequest) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableComputeACLCreateAclsRequest) Unset() {
+func (v *NullableComputeAclCreateAclsRequest) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableComputeACLCreateAclsRequest returns a pointer to a new instance of NullableComputeACLCreateAclsRequest.
-func NewNullableComputeACLCreateAclsRequest(val *ComputeACLCreateAclsRequest) *NullableComputeACLCreateAclsRequest {
-	return &NullableComputeACLCreateAclsRequest{value: val, isSet: true}
+// NewNullableComputeAclCreateAclsRequest returns a pointer to a new instance of NullableComputeAclCreateAclsRequest.
+func NewNullableComputeAclCreateAclsRequest(val *ComputeAclCreateAclsRequest) *NullableComputeAclCreateAclsRequest {
+	return &NullableComputeAclCreateAclsRequest{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableComputeACLCreateAclsRequest) MarshalJSON() ([]byte, error) {
+func (v NullableComputeAclCreateAclsRequest) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableComputeACLCreateAclsRequest) UnmarshalJSON(src []byte) error {
+func (v *NullableComputeAclCreateAclsRequest) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

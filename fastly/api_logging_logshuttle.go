@@ -36,11 +36,11 @@ type LoggingLogshuttleAPI interface {
 		Create a Log Shuttle logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogLogshuttleRequest
 	*/
-	CreateLogLogshuttle(ctx context.Context, serviceID string, versionID int32) APICreateLogLogshuttleRequest
+	CreateLogLogshuttle(ctx context.Context, serviceId string, versionId int32) APICreateLogLogshuttleRequest
 
 	// CreateLogLogshuttleExecute executes the request
 	//  @return LoggingLogshuttleResponse
@@ -52,12 +52,12 @@ type LoggingLogshuttleAPI interface {
 		Delete the Log Shuttle logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingLogshuttleName The name for the real-time logging configuration.
 		 @return APIDeleteLogLogshuttleRequest
 	*/
-	DeleteLogLogshuttle(ctx context.Context, serviceID string, versionID int32, loggingLogshuttleName string) APIDeleteLogLogshuttleRequest
+	DeleteLogLogshuttle(ctx context.Context, serviceId string, versionId int32, loggingLogshuttleName string) APIDeleteLogLogshuttleRequest
 
 	// DeleteLogLogshuttleExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingLogshuttleAPI interface {
 		Get the Log Shuttle logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingLogshuttleName The name for the real-time logging configuration.
 		 @return APIGetLogLogshuttleRequest
 	*/
-	GetLogLogshuttle(ctx context.Context, serviceID string, versionID int32, loggingLogshuttleName string) APIGetLogLogshuttleRequest
+	GetLogLogshuttle(ctx context.Context, serviceId string, versionId int32, loggingLogshuttleName string) APIGetLogLogshuttleRequest
 
 	// GetLogLogshuttleExecute executes the request
 	//  @return LoggingLogshuttleResponse
@@ -86,11 +86,11 @@ type LoggingLogshuttleAPI interface {
 		List all of the Log Shuttle logging endpoints for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogLogshuttleRequest
 	*/
-	ListLogLogshuttle(ctx context.Context, serviceID string, versionID int32) APIListLogLogshuttleRequest
+	ListLogLogshuttle(ctx context.Context, serviceId string, versionId int32) APIListLogLogshuttleRequest
 
 	// ListLogLogshuttleExecute executes the request
 	//  @return []LoggingLogshuttleResponse
@@ -102,12 +102,12 @@ type LoggingLogshuttleAPI interface {
 		Update the Log Shuttle logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingLogshuttleName The name for the real-time logging configuration.
 		 @return APIUpdateLogLogshuttleRequest
 	*/
-	UpdateLogLogshuttle(ctx context.Context, serviceID string, versionID int32, loggingLogshuttleName string) APIUpdateLogLogshuttleRequest
+	UpdateLogLogshuttle(ctx context.Context, serviceId string, versionId int32, loggingLogshuttleName string) APIUpdateLogLogshuttleRequest
 
 	// UpdateLogLogshuttleExecute executes the request
 	//  @return LoggingLogshuttleResponse
@@ -121,8 +121,8 @@ type LoggingLogshuttleAPIService service
 type APICreateLogLogshuttleRequest struct {
 	ctx                 context.Context
 	APIService          LoggingLogshuttleAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -175,8 +175,8 @@ func (r *APICreateLogLogshuttleRequest) Token(token string) *APICreateLogLogshut
 	return r
 }
 
-// URL The URL to stream logs to.
-func (r *APICreateLogLogshuttleRequest) URL(url string) *APICreateLogLogshuttleRequest {
+// Url The URL to stream logs to.
+func (r *APICreateLogLogshuttleRequest) Url(url string) *APICreateLogLogshuttleRequest {
 	r.url = &url
 	return r
 }
@@ -192,16 +192,16 @@ CreateLogLogshuttle Create a Log Shuttle log endpoint
 Create a Log Shuttle logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogLogshuttleRequest
 */
-func (a *LoggingLogshuttleAPIService) CreateLogLogshuttle(ctx context.Context, serviceID string, versionID int32) APICreateLogLogshuttleRequest {
+func (a *LoggingLogshuttleAPIService) CreateLogLogshuttle(ctx context.Context, serviceId string, versionId int32) APICreateLogLogshuttleRequest {
 	return APICreateLogLogshuttleRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -221,8 +221,8 @@ func (a *LoggingLogshuttleAPIService) CreateLogLogshuttleExecute(r APICreateLogL
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/logshuttle"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -337,8 +337,8 @@ func (a *LoggingLogshuttleAPIService) CreateLogLogshuttleExecute(r APICreateLogL
 type APIDeleteLogLogshuttleRequest struct {
 	ctx                   context.Context
 	APIService            LoggingLogshuttleAPI
-	serviceID             string
-	versionID             int32
+	serviceId             string
+	versionId             int32
 	loggingLogshuttleName string
 }
 
@@ -353,17 +353,17 @@ DeleteLogLogshuttle Delete a Log Shuttle log endpoint
 Delete the Log Shuttle logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingLogshuttleName The name for the real-time logging configuration.
  @return APIDeleteLogLogshuttleRequest
 */
-func (a *LoggingLogshuttleAPIService) DeleteLogLogshuttle(ctx context.Context, serviceID string, versionID int32, loggingLogshuttleName string) APIDeleteLogLogshuttleRequest {
+func (a *LoggingLogshuttleAPIService) DeleteLogLogshuttle(ctx context.Context, serviceId string, versionId int32, loggingLogshuttleName string) APIDeleteLogLogshuttleRequest {
 	return APIDeleteLogLogshuttleRequest{
 		APIService:            a,
 		ctx:                   ctx,
-		serviceID:             serviceID,
-		versionID:             versionID,
+		serviceId:             serviceId,
+		versionId:             versionId,
 		loggingLogshuttleName: loggingLogshuttleName,
 	}
 }
@@ -384,8 +384,8 @@ func (a *LoggingLogshuttleAPIService) DeleteLogLogshuttleExecute(r APIDeleteLogL
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/logshuttle/{logging_logshuttle_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_logshuttle_name"+"}", gourl.PathEscape(parameterToString(r.loggingLogshuttleName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -477,8 +477,8 @@ func (a *LoggingLogshuttleAPIService) DeleteLogLogshuttleExecute(r APIDeleteLogL
 type APIGetLogLogshuttleRequest struct {
 	ctx                   context.Context
 	APIService            LoggingLogshuttleAPI
-	serviceID             string
-	versionID             int32
+	serviceId             string
+	versionId             int32
 	loggingLogshuttleName string
 }
 
@@ -493,17 +493,17 @@ GetLogLogshuttle Get a Log Shuttle log endpoint
 Get the Log Shuttle logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingLogshuttleName The name for the real-time logging configuration.
  @return APIGetLogLogshuttleRequest
 */
-func (a *LoggingLogshuttleAPIService) GetLogLogshuttle(ctx context.Context, serviceID string, versionID int32, loggingLogshuttleName string) APIGetLogLogshuttleRequest {
+func (a *LoggingLogshuttleAPIService) GetLogLogshuttle(ctx context.Context, serviceId string, versionId int32, loggingLogshuttleName string) APIGetLogLogshuttleRequest {
 	return APIGetLogLogshuttleRequest{
 		APIService:            a,
 		ctx:                   ctx,
-		serviceID:             serviceID,
-		versionID:             versionID,
+		serviceId:             serviceId,
+		versionId:             versionId,
 		loggingLogshuttleName: loggingLogshuttleName,
 	}
 }
@@ -524,8 +524,8 @@ func (a *LoggingLogshuttleAPIService) GetLogLogshuttleExecute(r APIGetLogLogshut
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/logshuttle/{logging_logshuttle_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_logshuttle_name"+"}", gourl.PathEscape(parameterToString(r.loggingLogshuttleName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -617,8 +617,8 @@ func (a *LoggingLogshuttleAPIService) GetLogLogshuttleExecute(r APIGetLogLogshut
 type APIListLogLogshuttleRequest struct {
 	ctx        context.Context
 	APIService LoggingLogshuttleAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -632,16 +632,16 @@ ListLogLogshuttle List Log Shuttle log endpoints
 List all of the Log Shuttle logging endpoints for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogLogshuttleRequest
 */
-func (a *LoggingLogshuttleAPIService) ListLogLogshuttle(ctx context.Context, serviceID string, versionID int32) APIListLogLogshuttleRequest {
+func (a *LoggingLogshuttleAPIService) ListLogLogshuttle(ctx context.Context, serviceId string, versionId int32) APIListLogLogshuttleRequest {
 	return APIListLogLogshuttleRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -661,8 +661,8 @@ func (a *LoggingLogshuttleAPIService) ListLogLogshuttleExecute(r APIListLogLogsh
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/logshuttle"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -753,8 +753,8 @@ func (a *LoggingLogshuttleAPIService) ListLogLogshuttleExecute(r APIListLogLogsh
 type APIUpdateLogLogshuttleRequest struct {
 	ctx                   context.Context
 	APIService            LoggingLogshuttleAPI
-	serviceID             string
-	versionID             int32
+	serviceId             string
+	versionId             int32
 	loggingLogshuttleName string
 	name                  *string
 	placement             *string
@@ -808,8 +808,8 @@ func (r *APIUpdateLogLogshuttleRequest) Token(token string) *APIUpdateLogLogshut
 	return r
 }
 
-// URL The URL to stream logs to.
-func (r *APIUpdateLogLogshuttleRequest) URL(url string) *APIUpdateLogLogshuttleRequest {
+// Url The URL to stream logs to.
+func (r *APIUpdateLogLogshuttleRequest) Url(url string) *APIUpdateLogLogshuttleRequest {
 	r.url = &url
 	return r
 }
@@ -825,17 +825,17 @@ UpdateLogLogshuttle Update a Log Shuttle log endpoint
 Update the Log Shuttle logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingLogshuttleName The name for the real-time logging configuration.
  @return APIUpdateLogLogshuttleRequest
 */
-func (a *LoggingLogshuttleAPIService) UpdateLogLogshuttle(ctx context.Context, serviceID string, versionID int32, loggingLogshuttleName string) APIUpdateLogLogshuttleRequest {
+func (a *LoggingLogshuttleAPIService) UpdateLogLogshuttle(ctx context.Context, serviceId string, versionId int32, loggingLogshuttleName string) APIUpdateLogLogshuttleRequest {
 	return APIUpdateLogLogshuttleRequest{
 		APIService:            a,
 		ctx:                   ctx,
-		serviceID:             serviceID,
-		versionID:             versionID,
+		serviceId:             serviceId,
+		versionId:             versionId,
 		loggingLogshuttleName: loggingLogshuttleName,
 	}
 }
@@ -856,8 +856,8 @@ func (a *LoggingLogshuttleAPIService) UpdateLogLogshuttleExecute(r APIUpdateLogL
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/logshuttle/{logging_logshuttle_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_logshuttle_name"+"}", gourl.PathEscape(parameterToString(r.loggingLogshuttleName, "")))
 
 	localVarHeaderParams := make(map[string]string)

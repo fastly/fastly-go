@@ -36,11 +36,11 @@ type LoggingNewrelicAPI interface {
 		Create a New Relic Logs logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogNewrelicRequest
 	*/
-	CreateLogNewrelic(ctx context.Context, serviceID string, versionID int32) APICreateLogNewrelicRequest
+	CreateLogNewrelic(ctx context.Context, serviceId string, versionId int32) APICreateLogNewrelicRequest
 
 	// CreateLogNewrelicExecute executes the request
 	//  @return LoggingNewrelicResponse
@@ -52,12 +52,12 @@ type LoggingNewrelicAPI interface {
 		Delete the New Relic Logs logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingNewrelicName The name for the real-time logging configuration.
 		 @return APIDeleteLogNewrelicRequest
 	*/
-	DeleteLogNewrelic(ctx context.Context, serviceID string, versionID int32, loggingNewrelicName string) APIDeleteLogNewrelicRequest
+	DeleteLogNewrelic(ctx context.Context, serviceId string, versionId int32, loggingNewrelicName string) APIDeleteLogNewrelicRequest
 
 	// DeleteLogNewrelicExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingNewrelicAPI interface {
 		Get the details of a New Relic Logs logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingNewrelicName The name for the real-time logging configuration.
 		 @return APIGetLogNewrelicRequest
 	*/
-	GetLogNewrelic(ctx context.Context, serviceID string, versionID int32, loggingNewrelicName string) APIGetLogNewrelicRequest
+	GetLogNewrelic(ctx context.Context, serviceId string, versionId int32, loggingNewrelicName string) APIGetLogNewrelicRequest
 
 	// GetLogNewrelicExecute executes the request
 	//  @return LoggingNewrelicResponse
@@ -86,11 +86,11 @@ type LoggingNewrelicAPI interface {
 		List all of the New Relic Logs logging objects for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogNewrelicRequest
 	*/
-	ListLogNewrelic(ctx context.Context, serviceID string, versionID int32) APIListLogNewrelicRequest
+	ListLogNewrelic(ctx context.Context, serviceId string, versionId int32) APIListLogNewrelicRequest
 
 	// ListLogNewrelicExecute executes the request
 	//  @return []LoggingNewrelicResponse
@@ -102,12 +102,12 @@ type LoggingNewrelicAPI interface {
 		Update a New Relic Logs logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingNewrelicName The name for the real-time logging configuration.
 		 @return APIUpdateLogNewrelicRequest
 	*/
-	UpdateLogNewrelic(ctx context.Context, serviceID string, versionID int32, loggingNewrelicName string) APIUpdateLogNewrelicRequest
+	UpdateLogNewrelic(ctx context.Context, serviceId string, versionId int32, loggingNewrelicName string) APIUpdateLogNewrelicRequest
 
 	// UpdateLogNewrelicExecute executes the request
 	//  @return LoggingNewrelicResponse
@@ -121,8 +121,8 @@ type LoggingNewrelicAPIService service
 type APICreateLogNewrelicRequest struct {
 	ctx                 context.Context
 	APIService          LoggingNewrelicAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -192,16 +192,16 @@ CreateLogNewrelic Create a New Relic log endpoint
 Create a New Relic Logs logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogNewrelicRequest
 */
-func (a *LoggingNewrelicAPIService) CreateLogNewrelic(ctx context.Context, serviceID string, versionID int32) APICreateLogNewrelicRequest {
+func (a *LoggingNewrelicAPIService) CreateLogNewrelic(ctx context.Context, serviceId string, versionId int32) APICreateLogNewrelicRequest {
 	return APICreateLogNewrelicRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -221,8 +221,8 @@ func (a *LoggingNewrelicAPIService) CreateLogNewrelicExecute(r APICreateLogNewre
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/newrelic"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -337,8 +337,8 @@ func (a *LoggingNewrelicAPIService) CreateLogNewrelicExecute(r APICreateLogNewre
 type APIDeleteLogNewrelicRequest struct {
 	ctx                 context.Context
 	APIService          LoggingNewrelicAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingNewrelicName string
 }
 
@@ -353,17 +353,17 @@ DeleteLogNewrelic Delete a New Relic log endpoint
 Delete the New Relic Logs logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingNewrelicName The name for the real-time logging configuration.
  @return APIDeleteLogNewrelicRequest
 */
-func (a *LoggingNewrelicAPIService) DeleteLogNewrelic(ctx context.Context, serviceID string, versionID int32, loggingNewrelicName string) APIDeleteLogNewrelicRequest {
+func (a *LoggingNewrelicAPIService) DeleteLogNewrelic(ctx context.Context, serviceId string, versionId int32, loggingNewrelicName string) APIDeleteLogNewrelicRequest {
 	return APIDeleteLogNewrelicRequest{
 		APIService:          a,
 		ctx:                 ctx,
-		serviceID:           serviceID,
-		versionID:           versionID,
+		serviceId:           serviceId,
+		versionId:           versionId,
 		loggingNewrelicName: loggingNewrelicName,
 	}
 }
@@ -384,8 +384,8 @@ func (a *LoggingNewrelicAPIService) DeleteLogNewrelicExecute(r APIDeleteLogNewre
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/newrelic/{logging_newrelic_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_newrelic_name"+"}", gourl.PathEscape(parameterToString(r.loggingNewrelicName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -477,8 +477,8 @@ func (a *LoggingNewrelicAPIService) DeleteLogNewrelicExecute(r APIDeleteLogNewre
 type APIGetLogNewrelicRequest struct {
 	ctx                 context.Context
 	APIService          LoggingNewrelicAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingNewrelicName string
 }
 
@@ -493,17 +493,17 @@ GetLogNewrelic Get a New Relic log endpoint
 Get the details of a New Relic Logs logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingNewrelicName The name for the real-time logging configuration.
  @return APIGetLogNewrelicRequest
 */
-func (a *LoggingNewrelicAPIService) GetLogNewrelic(ctx context.Context, serviceID string, versionID int32, loggingNewrelicName string) APIGetLogNewrelicRequest {
+func (a *LoggingNewrelicAPIService) GetLogNewrelic(ctx context.Context, serviceId string, versionId int32, loggingNewrelicName string) APIGetLogNewrelicRequest {
 	return APIGetLogNewrelicRequest{
 		APIService:          a,
 		ctx:                 ctx,
-		serviceID:           serviceID,
-		versionID:           versionID,
+		serviceId:           serviceId,
+		versionId:           versionId,
 		loggingNewrelicName: loggingNewrelicName,
 	}
 }
@@ -524,8 +524,8 @@ func (a *LoggingNewrelicAPIService) GetLogNewrelicExecute(r APIGetLogNewrelicReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/newrelic/{logging_newrelic_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_newrelic_name"+"}", gourl.PathEscape(parameterToString(r.loggingNewrelicName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -617,8 +617,8 @@ func (a *LoggingNewrelicAPIService) GetLogNewrelicExecute(r APIGetLogNewrelicReq
 type APIListLogNewrelicRequest struct {
 	ctx        context.Context
 	APIService LoggingNewrelicAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -632,16 +632,16 @@ ListLogNewrelic List New Relic log endpoints
 List all of the New Relic Logs logging objects for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogNewrelicRequest
 */
-func (a *LoggingNewrelicAPIService) ListLogNewrelic(ctx context.Context, serviceID string, versionID int32) APIListLogNewrelicRequest {
+func (a *LoggingNewrelicAPIService) ListLogNewrelic(ctx context.Context, serviceId string, versionId int32) APIListLogNewrelicRequest {
 	return APIListLogNewrelicRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -661,8 +661,8 @@ func (a *LoggingNewrelicAPIService) ListLogNewrelicExecute(r APIListLogNewrelicR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/newrelic"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -753,8 +753,8 @@ func (a *LoggingNewrelicAPIService) ListLogNewrelicExecute(r APIListLogNewrelicR
 type APIUpdateLogNewrelicRequest struct {
 	ctx                 context.Context
 	APIService          LoggingNewrelicAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingNewrelicName string
 	name                *string
 	placement           *string
@@ -825,17 +825,17 @@ UpdateLogNewrelic Update a New Relic log endpoint
 Update a New Relic Logs logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingNewrelicName The name for the real-time logging configuration.
  @return APIUpdateLogNewrelicRequest
 */
-func (a *LoggingNewrelicAPIService) UpdateLogNewrelic(ctx context.Context, serviceID string, versionID int32, loggingNewrelicName string) APIUpdateLogNewrelicRequest {
+func (a *LoggingNewrelicAPIService) UpdateLogNewrelic(ctx context.Context, serviceId string, versionId int32, loggingNewrelicName string) APIUpdateLogNewrelicRequest {
 	return APIUpdateLogNewrelicRequest{
 		APIService:          a,
 		ctx:                 ctx,
-		serviceID:           serviceID,
-		versionID:           versionID,
+		serviceId:           serviceId,
+		versionId:           versionId,
 		loggingNewrelicName: loggingNewrelicName,
 	}
 }
@@ -856,8 +856,8 @@ func (a *LoggingNewrelicAPIService) UpdateLogNewrelicExecute(r APIUpdateLogNewre
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/newrelic/{logging_newrelic_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_newrelic_name"+"}", gourl.PathEscape(parameterToString(r.loggingNewrelicName, "")))
 
 	localVarHeaderParams := make(map[string]string)

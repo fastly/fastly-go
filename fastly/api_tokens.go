@@ -64,10 +64,10 @@ type TokensAPI interface {
 		Get a single token by its id.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tokenID Alphanumeric string identifying a token.
+		 @param tokenId Alphanumeric string identifying a token.
 		 @return APIGetTokenRequest
 	*/
-	GetToken(ctx context.Context, tokenID string) APIGetTokenRequest
+	GetToken(ctx context.Context, tokenId string) APIGetTokenRequest
 
 	// GetTokenExecute executes the request
 	//  @return TokenResponse
@@ -93,10 +93,10 @@ type TokensAPI interface {
 		List all tokens belonging to a specific customer.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
+		 @param customerId Alphanumeric string identifying the customer.
 		 @return APIListTokensCustomerRequest
 	*/
-	ListTokensCustomer(ctx context.Context, customerID string) APIListTokensCustomerRequest
+	ListTokensCustomer(ctx context.Context, customerId string) APIListTokensCustomerRequest
 
 	// ListTokensCustomerExecute executes the request
 	//  @return []TokenResponse
@@ -122,10 +122,10 @@ type TokensAPI interface {
 		Revoke a specific token by its id.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tokenID Alphanumeric string identifying a token.
+		 @param tokenId Alphanumeric string identifying a token.
 		 @return APIRevokeTokenRequest
 	*/
-	RevokeToken(ctx context.Context, tokenID string) APIRevokeTokenRequest
+	RevokeToken(ctx context.Context, tokenId string) APIRevokeTokenRequest
 
 	// RevokeTokenExecute executes the request
 	RevokeTokenExecute(r APIRevokeTokenRequest) (*http.Response, error)
@@ -151,11 +151,11 @@ type TokensAPIService service
 type APIBulkRevokeTokensRequest struct {
 	ctx         context.Context
 	APIService  TokensAPI
-	requestBody *map[string]map[string]any
+	requestBody *map[string]map[string]interface{}
 }
 
 // RequestBody returns a pointer to a request.
-func (r *APIBulkRevokeTokensRequest) RequestBody(requestBody map[string]map[string]any) *APIBulkRevokeTokensRequest {
+func (r *APIBulkRevokeTokensRequest) RequestBody(requestBody map[string]map[string]interface{}) *APIBulkRevokeTokensRequest {
 	r.requestBody = &requestBody
 	return r
 }
@@ -416,7 +416,7 @@ func (a *TokensAPIService) CreateTokenExecute(r APICreateTokenRequest) (*TokenCr
 type APIGetTokenRequest struct {
 	ctx        context.Context
 	APIService TokensAPI
-	tokenID    string
+	tokenId    string
 }
 
 // Execute calls the API using the request data configured.
@@ -430,14 +430,14 @@ GetToken Get a token
 Get a single token by its id.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tokenID Alphanumeric string identifying a token.
+ @param tokenId Alphanumeric string identifying a token.
  @return APIGetTokenRequest
 */
-func (a *TokensAPIService) GetToken(ctx context.Context, tokenID string) APIGetTokenRequest {
+func (a *TokensAPIService) GetToken(ctx context.Context, tokenId string) APIGetTokenRequest {
 	return APIGetTokenRequest{
 		APIService: a,
 		ctx:        ctx,
-		tokenID:    tokenID,
+		tokenId:    tokenId,
 	}
 }
 
@@ -457,7 +457,7 @@ func (a *TokensAPIService) GetTokenExecute(r APIGetTokenRequest) (*TokenResponse
 	}
 
 	localVarPath := localBasePath + "/tokens/{token_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"token_id"+"}", gourl.PathEscape(parameterToString(r.tokenID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"token_id"+"}", gourl.PathEscape(parameterToString(r.tokenId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -724,7 +724,7 @@ func (a *TokensAPIService) GetTokenCurrentExecute(r APIGetTokenCurrentRequest) (
 type APIListTokensCustomerRequest struct {
 	ctx        context.Context
 	APIService TokensAPI
-	customerID string
+	customerId string
 }
 
 // Execute calls the API using the request data configured.
@@ -738,14 +738,14 @@ ListTokensCustomer List tokens for a customer
 List all tokens belonging to a specific customer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
+ @param customerId Alphanumeric string identifying the customer.
  @return APIListTokensCustomerRequest
 */
-func (a *TokensAPIService) ListTokensCustomer(ctx context.Context, customerID string) APIListTokensCustomerRequest {
+func (a *TokensAPIService) ListTokensCustomer(ctx context.Context, customerId string) APIListTokensCustomerRequest {
 	return APIListTokensCustomerRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
+		customerId: customerId,
 	}
 }
 
@@ -765,7 +765,7 @@ func (a *TokensAPIService) ListTokensCustomerExecute(r APIListTokensCustomerRequ
 	}
 
 	localVarPath := localBasePath + "/customer/{customer_id}/tokens"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1003,7 +1003,7 @@ func (a *TokensAPIService) ListTokensUserExecute(r APIListTokensUserRequest) ([]
 type APIRevokeTokenRequest struct {
 	ctx        context.Context
 	APIService TokensAPI
-	tokenID    string
+	tokenId    string
 }
 
 // Execute calls the API using the request data configured.
@@ -1017,14 +1017,14 @@ RevokeToken Revoke a token
 Revoke a specific token by its id.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tokenID Alphanumeric string identifying a token.
+ @param tokenId Alphanumeric string identifying a token.
  @return APIRevokeTokenRequest
 */
-func (a *TokensAPIService) RevokeToken(ctx context.Context, tokenID string) APIRevokeTokenRequest {
+func (a *TokensAPIService) RevokeToken(ctx context.Context, tokenId string) APIRevokeTokenRequest {
 	return APIRevokeTokenRequest{
 		APIService: a,
 		ctx:        ctx,
-		tokenID:    tokenID,
+		tokenId:    tokenId,
 	}
 }
 
@@ -1042,7 +1042,7 @@ func (a *TokensAPIService) RevokeTokenExecute(r APIRevokeTokenRequest) (*http.Re
 	}
 
 	localVarPath := localBasePath + "/tokens/{token_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"token_id"+"}", gourl.PathEscape(parameterToString(r.tokenID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"token_id"+"}", gourl.PathEscape(parameterToString(r.tokenId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

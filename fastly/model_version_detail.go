@@ -44,7 +44,7 @@ type VersionDetail struct {
 	// List of VCL files for this service.
 	Vcls []SchemasVclResponse `json:"vcls,omitempty"`
 	// A list of Wordpress rules with this service.
-	Wordpress            []*map[string]any `json:"wordpress,omitempty"`
+	Wordpress            []*map[string]interface{} `json:"wordpress,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -484,9 +484,9 @@ func (o *VersionDetail) SetVcls(v []SchemasVclResponse) {
 }
 
 // GetWordpress returns the Wordpress field value if set, zero value otherwise.
-func (o *VersionDetail) GetWordpress() []*map[string]any {
+func (o *VersionDetail) GetWordpress() []*map[string]interface{} {
 	if o == nil || o.Wordpress == nil {
-		var ret []*map[string]any
+		var ret []*map[string]interface{}
 		return ret
 	}
 	return o.Wordpress
@@ -494,7 +494,7 @@ func (o *VersionDetail) GetWordpress() []*map[string]any {
 
 // GetWordpressOk returns a tuple with the Wordpress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VersionDetail) GetWordpressOk() ([]*map[string]any, bool) {
+func (o *VersionDetail) GetWordpressOk() ([]*map[string]interface{}, bool) {
 	if o == nil || o.Wordpress == nil {
 		return nil, false
 	}
@@ -510,8 +510,8 @@ func (o *VersionDetail) HasWordpress() bool {
 	return false
 }
 
-// SetWordpress gets a reference to the given []*map[string]any and assigns it to the Wordpress field.
-func (o *VersionDetail) SetWordpress(v []*map[string]any) {
+// SetWordpress gets a reference to the given []*map[string]interface{} and assigns it to the Wordpress field.
+func (o *VersionDetail) SetWordpress(v []*map[string]interface{}) {
 	o.Wordpress = v
 }
 

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ID** | **string** | ID of the workspace. | 
+**Id** | **string** | ID of the workspace. | 
 **Name** | **string** | Name of the workspace. | 
 **TotalCount** | **int32** | Total request count | 
 **BlockedCount** | **int32** | Blocked request count | 
 **FlaggedCount** | **int32** | Flagged request count | 
 **AttackCount** | **int32** | Attack request count | 
-**AllFlaggedIPCount** | **int32** | Count of IPs that have been flagged | 
-**FlaggedIPCount** | **int32** | Count of currently flagged IPs | 
+**AllFlaggedIpCount** | **int32** | Count of IPs that have been flagged | 
+**FlaggedIpCount** | **int32** | Count of currently flagged IPs | 
 **TopAttackSignals** | [**[]AttackSignal**](AttackSignal.md) |  | 
 **TopAttackSources** | [**[]AttackSource**](AttackSource.md) |  | 
 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewAttackReport
 
-`func NewAttackReport(id string, name string, totalCount int32, blockedCount int32, flaggedCount int32, attackCount int32, allFlaggedIPCount int32, flaggedIPCount int32, topAttackSignals []AttackSignal, topAttackSources []AttackSource, ) *AttackReport`
+`func NewAttackReport(id string, name string, totalCount int32, blockedCount int32, flaggedCount int32, attackCount int32, allFlaggedIpCount int32, flaggedIpCount int32, topAttackSignals []AttackSignal, topAttackSources []AttackSource, ) *AttackReport`
 
 NewAttackReport instantiates a new AttackReport object
 This constructor will assign default values to properties that have it defined,
@@ -34,24 +34,24 @@ NewAttackReportWithDefaults instantiates a new AttackReport object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetID
+### GetId
 
-`func (o *AttackReport) GetID() string`
+`func (o *AttackReport) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *AttackReport) GetIDOk() (*string, bool)`
+`func (o *AttackReport) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *AttackReport) SetID(v string)`
+`func (o *AttackReport) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
 
 ### GetName
@@ -154,44 +154,44 @@ and a boolean to check if the value has been set.
 SetAttackCount sets AttackCount field to given value.
 
 
-### GetAllFlaggedIPCount
+### GetAllFlaggedIpCount
 
-`func (o *AttackReport) GetAllFlaggedIPCount() int32`
+`func (o *AttackReport) GetAllFlaggedIpCount() int32`
 
-GetAllFlaggedIPCount returns the AllFlaggedIPCount field if non-nil, zero value otherwise.
+GetAllFlaggedIpCount returns the AllFlaggedIpCount field if non-nil, zero value otherwise.
 
-### GetAllFlaggedIPCountOk
+### GetAllFlaggedIpCountOk
 
-`func (o *AttackReport) GetAllFlaggedIPCountOk() (*int32, bool)`
+`func (o *AttackReport) GetAllFlaggedIpCountOk() (*int32, bool)`
 
-GetAllFlaggedIPCountOk returns a tuple with the AllFlaggedIPCount field if it's non-nil, zero value otherwise
+GetAllFlaggedIpCountOk returns a tuple with the AllFlaggedIpCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAllFlaggedIPCount
+### SetAllFlaggedIpCount
 
-`func (o *AttackReport) SetAllFlaggedIPCount(v int32)`
+`func (o *AttackReport) SetAllFlaggedIpCount(v int32)`
 
-SetAllFlaggedIPCount sets AllFlaggedIPCount field to given value.
+SetAllFlaggedIpCount sets AllFlaggedIpCount field to given value.
 
 
-### GetFlaggedIPCount
+### GetFlaggedIpCount
 
-`func (o *AttackReport) GetFlaggedIPCount() int32`
+`func (o *AttackReport) GetFlaggedIpCount() int32`
 
-GetFlaggedIPCount returns the FlaggedIPCount field if non-nil, zero value otherwise.
+GetFlaggedIpCount returns the FlaggedIpCount field if non-nil, zero value otherwise.
 
-### GetFlaggedIPCountOk
+### GetFlaggedIpCountOk
 
-`func (o *AttackReport) GetFlaggedIPCountOk() (*int32, bool)`
+`func (o *AttackReport) GetFlaggedIpCountOk() (*int32, bool)`
 
-GetFlaggedIPCountOk returns a tuple with the FlaggedIPCount field if it's non-nil, zero value otherwise
+GetFlaggedIpCountOk returns a tuple with the FlaggedIpCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFlaggedIPCount
+### SetFlaggedIpCount
 
-`func (o *AttackReport) SetFlaggedIPCount(v int32)`
+`func (o *AttackReport) SetFlaggedIpCount(v int32)`
 
-SetFlaggedIPCount sets FlaggedIPCount field to given value.
+SetFlaggedIpCount sets FlaggedIpCount field to given value.
 
 
 ### GetTopAttackSignals
@@ -236,3 +236,5 @@ SetTopAttackSources sets TopAttackSources field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

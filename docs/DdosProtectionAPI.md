@@ -33,12 +33,12 @@ import (
 )
 
 func main() {
-    eventID := "eventId_example" // string | Unique ID of the event.
+    eventId := "eventId_example" // string | Unique ID of the event.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DdosProtectionAPI.DdosProtectionEventGet(ctx, eventID).Execute()
+    resp, r, err := apiClient.DdosProtectionAPI.DdosProtectionEventGet(ctx, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DdosProtectionAPI.DdosProtectionEventGet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,7 +54,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventID** | **string** | Unique ID of the event. | 
+**eventId** | **string** | Unique ID of the event. | 
 
 ### Other Parameters
 
@@ -103,7 +103,7 @@ import (
 func main() {
     cursor := "cursor_example" // string | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. (optional)
     limit := int32(56) // int32 | Limit how many results are returned. (optional) (default to 20)
-    serviceID := "serviceId_example" // string | Filter results based on a service_id. (optional)
+    serviceId := "serviceId_example" // string | Filter results based on a service_id. (optional)
     from := time.Now() // time.Time | Represents the start of a date-time range expressed in RFC 3339 format. (optional)
     to := time.Now() // time.Time | Represents the end of a date-time range expressed in RFC 3339 format. (optional)
     name := "name_example" // string |  (optional)
@@ -111,7 +111,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DdosProtectionAPI.DdosProtectionEventList(ctx).Cursor(cursor).Limit(limit).ServiceID(serviceID).From(from).To(to).Name(name).Execute()
+    resp, r, err := apiClient.DdosProtectionAPI.DdosProtectionEventList(ctx).Cursor(cursor).Limit(limit).ServiceId(serviceId).From(from).To(to).Name(name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DdosProtectionAPI.DdosProtectionEventList`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -132,7 +132,7 @@ Other parameters are passed through a pointer to a apiDdosProtectionEventListReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **string** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. |  **limit** | **int32** | Limit how many results are returned. | [default to 20] **serviceID** | **string** | Filter results based on a service_id. |  **from** | **time.Time** | Represents the start of a date-time range expressed in RFC 3339 format. |  **to** | **time.Time** | Represents the end of a date-time range expressed in RFC 3339 format. |  **name** | **string** |  | 
+ **cursor** | **string** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. |  **limit** | **int32** | Limit how many results are returned. | [default to 20] **serviceId** | **string** | Filter results based on a service_id. |  **from** | **time.Time** | Represents the start of a date-time range expressed in RFC 3339 format. |  **to** | **time.Time** | Represents the end of a date-time range expressed in RFC 3339 format. |  **name** | **string** |  | 
 
 ### Return type
 
@@ -169,14 +169,15 @@ import (
 )
 
 func main() {
-    eventID := "eventId_example" // string | Unique ID of the event.
+    eventId := "eventId_example" // string | Unique ID of the event.
     cursor := "cursor_example" // string | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. (optional)
     limit := int32(56) // int32 | Limit how many results are returned. (optional) (default to 20)
+    include := "include_example" // string | Include relationships. Optional. Comma-separated values. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DdosProtectionAPI.DdosProtectionEventRuleList(ctx, eventID).Cursor(cursor).Limit(limit).Execute()
+    resp, r, err := apiClient.DdosProtectionAPI.DdosProtectionEventRuleList(ctx, eventId).Cursor(cursor).Limit(limit).Include(include).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DdosProtectionAPI.DdosProtectionEventRuleList`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -192,7 +193,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventID** | **string** | Unique ID of the event. | 
+**eventId** | **string** | Unique ID of the event. | 
 
 ### Other Parameters
 
@@ -201,7 +202,7 @@ Other parameters are passed through a pointer to a apiDdosProtectionEventRuleLis
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cursor** | **string** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. |  **limit** | **int32** | Limit how many results are returned. | [default to 20]
+ **cursor** | **string** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. |  **limit** | **int32** | Limit how many results are returned. | [default to 20] **include** | **string** | Include relationships. Optional. Comma-separated values. | 
 
 ### Return type
 
@@ -238,12 +239,12 @@ import (
 )
 
 func main() {
-    ruleID := "ruleId_example" // string | Unique ID of the rule.
+    ruleId := "ruleId_example" // string | Unique ID of the rule.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DdosProtectionAPI.DdosProtectionRuleGet(ctx, ruleID).Execute()
+    resp, r, err := apiClient.DdosProtectionAPI.DdosProtectionRuleGet(ctx, ruleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DdosProtectionAPI.DdosProtectionRuleGet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -259,7 +260,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**ruleID** | **string** | Unique ID of the rule. | 
+**ruleId** | **string** | Unique ID of the rule. | 
 
 ### Other Parameters
 
@@ -305,13 +306,13 @@ import (
 )
 
 func main() {
-    ruleID := "ruleId_example" // string | Unique ID of the rule.
+    ruleId := "ruleId_example" // string | Unique ID of the rule.
     ddosProtectionRulePatch := *openapiclient.NewDdosProtectionRulePatch() // DdosProtectionRulePatch |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DdosProtectionAPI.DdosProtectionRulePatch(ctx, ruleID).DdosProtectionRulePatch(ddosProtectionRulePatch).Execute()
+    resp, r, err := apiClient.DdosProtectionAPI.DdosProtectionRulePatch(ctx, ruleId).DdosProtectionRulePatch(ddosProtectionRulePatch).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DdosProtectionAPI.DdosProtectionRulePatch`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -327,7 +328,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**ruleID** | **string** | Unique ID of the rule. | 
+**ruleId** | **string** | Unique ID of the rule. | 
 
 ### Other Parameters
 
@@ -373,13 +374,13 @@ import (
 )
 
 func main() {
-    eventID := "eventId_example" // string | Unique ID of the event.
-    ruleID := "ruleId_example" // string | Unique ID of the rule.
+    eventId := "eventId_example" // string | Unique ID of the event.
+    ruleId := "ruleId_example" // string | Unique ID of the rule.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DdosProtectionAPI.DdosProtectionTrafficStatsRuleGet(ctx, eventID, ruleID).Execute()
+    resp, r, err := apiClient.DdosProtectionAPI.DdosProtectionTrafficStatsRuleGet(ctx, eventId, ruleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DdosProtectionAPI.DdosProtectionTrafficStatsRuleGet`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -395,8 +396,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventID** | **string** | Unique ID of the event. | 
-**ruleID** | **string** | Unique ID of the rule. | 
+**eventId** | **string** | Unique ID of the event. | 
+**ruleId** | **string** | Unique ID of the rule. | 
 
 ### Other Parameters
 
@@ -421,3 +422,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

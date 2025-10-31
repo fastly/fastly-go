@@ -32,8 +32,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     name := "name_example" // string | The name for the real-time logging configuration. (optional)
     placement := "placement_example" // string | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  (optional)
     responseCondition := "responseCondition_example" // string | The name of an existing condition in the configured endpoint, or leave blank to always execute. (optional)
@@ -44,12 +44,12 @@ func main() {
     secretKey := "secretKey_example" // string | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified. (optional)
     accountName := "accountName_example" // string | The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided. (optional)
     topic := "topic_example" // string | The Google Cloud Pub/Sub topic to which logs will be published. Required. (optional)
-    projectID := "projectId_example" // string | Your Google Cloud Platform project ID. Required (optional)
+    projectId := "projectId_example" // string | Your Google Cloud Platform project ID. Required (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingPubsubAPI.CreateLogGcpPubsub(ctx, serviceID, versionID).Name(name).Placement(placement).ResponseCondition(responseCondition).Format(format).LogProcessingRegion(logProcessingRegion).FormatVersion(formatVersion).User(user).SecretKey(secretKey).AccountName(accountName).Topic(topic).ProjectID(projectID).Execute()
+    resp, r, err := apiClient.LoggingPubsubAPI.CreateLogGcpPubsub(ctx, serviceId, versionId).Name(name).Placement(placement).ResponseCondition(responseCondition).Format(format).LogProcessingRegion(logProcessingRegion).FormatVersion(formatVersion).User(user).SecretKey(secretKey).AccountName(accountName).Topic(topic).ProjectId(projectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoggingPubsubAPI.CreateLogGcpPubsub`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -65,8 +65,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -75,7 +75,7 @@ Other parameters are passed through a pointer to a apiCreateLogGcpPubsubRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string** | The name for the real-time logging configuration. |  **placement** | **string** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  |  **responseCondition** | **string** | The name of an existing condition in the configured endpoint, or leave blank to always execute. |  **format** | **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [default to &quot;%h %l %u %t \&quot;%r\&quot; %&amp;gt;s %b&quot;] **logProcessingRegion** | **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [default to &quot;none&quot;] **formatVersion** | **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [default to 2] **user** | **string** | Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified. |  **secretKey** | **string** | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified. |  **accountName** | **string** | The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided. |  **topic** | **string** | The Google Cloud Pub/Sub topic to which logs will be published. Required. |  **projectID** | **string** | Your Google Cloud Platform project ID. Required | 
+ **name** | **string** | The name for the real-time logging configuration. |  **placement** | **string** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  |  **responseCondition** | **string** | The name of an existing condition in the configured endpoint, or leave blank to always execute. |  **format** | **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [default to &quot;%h %l %u %t \&quot;%r\&quot; %&amp;gt;s %b&quot;] **logProcessingRegion** | **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [default to &quot;none&quot;] **formatVersion** | **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [default to 2] **user** | **string** | Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified. |  **secretKey** | **string** | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified. |  **accountName** | **string** | The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided. |  **topic** | **string** | The Google Cloud Pub/Sub topic to which logs will be published. Required. |  **projectId** | **string** | Your Google Cloud Platform project ID. Required | 
 
 ### Return type
 
@@ -112,14 +112,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     loggingGooglePubsubName := "loggingGooglePubsubName_example" // string | The name for the real-time logging configuration.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingPubsubAPI.DeleteLogGcpPubsub(ctx, serviceID, versionID, loggingGooglePubsubName).Execute()
+    resp, r, err := apiClient.LoggingPubsubAPI.DeleteLogGcpPubsub(ctx, serviceId, versionId, loggingGooglePubsubName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoggingPubsubAPI.DeleteLogGcpPubsub`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -135,8 +135,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **loggingGooglePubsubName** | **string** | The name for the real-time logging configuration. | 
 
 ### Other Parameters
@@ -183,14 +183,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     loggingGooglePubsubName := "loggingGooglePubsubName_example" // string | The name for the real-time logging configuration.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingPubsubAPI.GetLogGcpPubsub(ctx, serviceID, versionID, loggingGooglePubsubName).Execute()
+    resp, r, err := apiClient.LoggingPubsubAPI.GetLogGcpPubsub(ctx, serviceId, versionId, loggingGooglePubsubName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoggingPubsubAPI.GetLogGcpPubsub`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -206,8 +206,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **loggingGooglePubsubName** | **string** | The name for the real-time logging configuration. | 
 
 ### Other Parameters
@@ -254,13 +254,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingPubsubAPI.ListLogGcpPubsub(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.LoggingPubsubAPI.ListLogGcpPubsub(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoggingPubsubAPI.ListLogGcpPubsub`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -276,8 +276,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -323,8 +323,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     loggingGooglePubsubName := "loggingGooglePubsubName_example" // string | The name for the real-time logging configuration.
     name := "name_example" // string | The name for the real-time logging configuration. (optional)
     placement := "placement_example" // string | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  (optional)
@@ -336,12 +336,12 @@ func main() {
     secretKey := "secretKey_example" // string | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified. (optional)
     accountName := "accountName_example" // string | The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided. (optional)
     topic := "topic_example" // string | The Google Cloud Pub/Sub topic to which logs will be published. Required. (optional)
-    projectID := "projectId_example" // string | Your Google Cloud Platform project ID. Required (optional)
+    projectId := "projectId_example" // string | Your Google Cloud Platform project ID. Required (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingPubsubAPI.UpdateLogGcpPubsub(ctx, serviceID, versionID, loggingGooglePubsubName).Name(name).Placement(placement).ResponseCondition(responseCondition).Format(format).LogProcessingRegion(logProcessingRegion).FormatVersion(formatVersion).User(user).SecretKey(secretKey).AccountName(accountName).Topic(topic).ProjectID(projectID).Execute()
+    resp, r, err := apiClient.LoggingPubsubAPI.UpdateLogGcpPubsub(ctx, serviceId, versionId, loggingGooglePubsubName).Name(name).Placement(placement).ResponseCondition(responseCondition).Format(format).LogProcessingRegion(logProcessingRegion).FormatVersion(formatVersion).User(user).SecretKey(secretKey).AccountName(accountName).Topic(topic).ProjectId(projectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoggingPubsubAPI.UpdateLogGcpPubsub`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -357,8 +357,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **loggingGooglePubsubName** | **string** | The name for the real-time logging configuration. | 
 
 ### Other Parameters
@@ -368,7 +368,7 @@ Other parameters are passed through a pointer to a apiUpdateLogGcpPubsubRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string** | The name for the real-time logging configuration. |  **placement** | **string** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  |  **responseCondition** | **string** | The name of an existing condition in the configured endpoint, or leave blank to always execute. |  **format** | **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [default to &quot;%h %l %u %t \&quot;%r\&quot; %&amp;gt;s %b&quot;] **logProcessingRegion** | **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [default to &quot;none&quot;] **formatVersion** | **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [default to 2] **user** | **string** | Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified. |  **secretKey** | **string** | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified. |  **accountName** | **string** | The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided. |  **topic** | **string** | The Google Cloud Pub/Sub topic to which logs will be published. Required. |  **projectID** | **string** | Your Google Cloud Platform project ID. Required | 
+ **name** | **string** | The name for the real-time logging configuration. |  **placement** | **string** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  |  **responseCondition** | **string** | The name of an existing condition in the configured endpoint, or leave blank to always execute. |  **format** | **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [default to &quot;%h %l %u %t \&quot;%r\&quot; %&amp;gt;s %b&quot;] **logProcessingRegion** | **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [default to &quot;none&quot;] **formatVersion** | **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [default to 2] **user** | **string** | Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified. |  **secretKey** | **string** | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified. |  **accountName** | **string** | The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided. |  **topic** | **string** | The Google Cloud Pub/Sub topic to which logs will be published. Required. |  **projectId** | **string** | Your Google Cloud Platform project ID. Required | 
 
 ### Return type
 
@@ -384,3 +384,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

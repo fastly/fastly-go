@@ -28,13 +28,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     publishRequest := *openapiclient.NewPublishRequest([]openapiclient.PublishItem{*openapiclient.NewPublishItem("Channel_example", *openapiclient.NewPublishItemFormats())}) // PublishRequest |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.PublishAPI.Publish(ctx, serviceID).PublishRequest(publishRequest).Execute()
+    resp, r, err := apiClient.PublishAPI.Publish(ctx, serviceId).PublishRequest(publishRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PublishAPI.Publish`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -50,7 +50,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -75,3 +75,4 @@ Name | Type | Description  | Notes
 - **Accept**: text/plain
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

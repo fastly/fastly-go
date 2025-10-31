@@ -33,7 +33,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ContentAPI.ContentCheck(ctx).URL(url).Execute()
+    resp, r, err := apiClient.ContentAPI.ContentCheck(ctx).Url(url).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ContentAPI.ContentCheck`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -70,3 +70,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

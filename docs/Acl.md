@@ -1,4 +1,4 @@
-# ACL
+# Acl
 
 ## Properties
 
@@ -8,47 +8,49 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewACL
+### NewAcl
 
-`func NewACL() *ACL`
+`func NewAcl() *Acl`
 
-NewACL instantiates a new ACL object
+NewAcl instantiates a new Acl object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewACLWithDefaults
+### NewAclWithDefaults
 
-`func NewACLWithDefaults() *ACL`
+`func NewAclWithDefaults() *Acl`
 
-NewACLWithDefaults instantiates a new ACL object
+NewAclWithDefaults instantiates a new Acl object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetName
 
-`func (o *ACL) GetName() string`
+`func (o *Acl) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *ACL) GetNameOk() (*string, bool)`
+`func (o *Acl) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *ACL) SetName(v string)`
+`func (o *Acl) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *ACL) HasName() bool`
+`func (o *Acl) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

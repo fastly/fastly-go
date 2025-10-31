@@ -1,4 +1,4 @@
-# TLSSubscriptionResponseAttributes
+# TlsSubscriptionResponseAttributes
 
 ## Properties
 
@@ -12,177 +12,179 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewTLSSubscriptionResponseAttributes
+### NewTlsSubscriptionResponseAttributes
 
-`func NewTLSSubscriptionResponseAttributes() *TLSSubscriptionResponseAttributes`
+`func NewTlsSubscriptionResponseAttributes() *TlsSubscriptionResponseAttributes`
 
-NewTLSSubscriptionResponseAttributes instantiates a new TLSSubscriptionResponseAttributes object
+NewTlsSubscriptionResponseAttributes instantiates a new TlsSubscriptionResponseAttributes object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSSubscriptionResponseAttributesWithDefaults
+### NewTlsSubscriptionResponseAttributesWithDefaults
 
-`func NewTLSSubscriptionResponseAttributesWithDefaults() *TLSSubscriptionResponseAttributes`
+`func NewTlsSubscriptionResponseAttributesWithDefaults() *TlsSubscriptionResponseAttributes`
 
-NewTLSSubscriptionResponseAttributesWithDefaults instantiates a new TLSSubscriptionResponseAttributes object
+NewTlsSubscriptionResponseAttributesWithDefaults instantiates a new TlsSubscriptionResponseAttributes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCreatedAt
 
-`func (o *TLSSubscriptionResponseAttributes) GetCreatedAt() time.Time`
+`func (o *TlsSubscriptionResponseAttributes) GetCreatedAt() time.Time`
 
 GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
 ### GetCreatedAtOk
 
-`func (o *TLSSubscriptionResponseAttributes) GetCreatedAtOk() (*time.Time, bool)`
+`func (o *TlsSubscriptionResponseAttributes) GetCreatedAtOk() (*time.Time, bool)`
 
 GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedAt
 
-`func (o *TLSSubscriptionResponseAttributes) SetCreatedAt(v time.Time)`
+`func (o *TlsSubscriptionResponseAttributes) SetCreatedAt(v time.Time)`
 
 SetCreatedAt sets CreatedAt field to given value.
 
 ### HasCreatedAt
 
-`func (o *TLSSubscriptionResponseAttributes) HasCreatedAt() bool`
+`func (o *TlsSubscriptionResponseAttributes) HasCreatedAt() bool`
 
 HasCreatedAt returns a boolean if a field has been set.
 
 ### SetCreatedAtNil
 
-`func (o *TLSSubscriptionResponseAttributes) SetCreatedAtNil(b bool)`
+`func (o *TlsSubscriptionResponseAttributes) SetCreatedAtNil(b bool)`
 
  SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 
 ### UnsetCreatedAt
-`func (o *TLSSubscriptionResponseAttributes) UnsetCreatedAt()`
+`func (o *TlsSubscriptionResponseAttributes) UnsetCreatedAt()`
 
 UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
 ### GetDeletedAt
 
-`func (o *TLSSubscriptionResponseAttributes) GetDeletedAt() time.Time`
+`func (o *TlsSubscriptionResponseAttributes) GetDeletedAt() time.Time`
 
 GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
 
 ### GetDeletedAtOk
 
-`func (o *TLSSubscriptionResponseAttributes) GetDeletedAtOk() (*time.Time, bool)`
+`func (o *TlsSubscriptionResponseAttributes) GetDeletedAtOk() (*time.Time, bool)`
 
 GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeletedAt
 
-`func (o *TLSSubscriptionResponseAttributes) SetDeletedAt(v time.Time)`
+`func (o *TlsSubscriptionResponseAttributes) SetDeletedAt(v time.Time)`
 
 SetDeletedAt sets DeletedAt field to given value.
 
 ### HasDeletedAt
 
-`func (o *TLSSubscriptionResponseAttributes) HasDeletedAt() bool`
+`func (o *TlsSubscriptionResponseAttributes) HasDeletedAt() bool`
 
 HasDeletedAt returns a boolean if a field has been set.
 
 ### SetDeletedAtNil
 
-`func (o *TLSSubscriptionResponseAttributes) SetDeletedAtNil(b bool)`
+`func (o *TlsSubscriptionResponseAttributes) SetDeletedAtNil(b bool)`
 
  SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 
 ### UnsetDeletedAt
-`func (o *TLSSubscriptionResponseAttributes) UnsetDeletedAt()`
+`func (o *TlsSubscriptionResponseAttributes) UnsetDeletedAt()`
 
 UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
 ### GetUpdatedAt
 
-`func (o *TLSSubscriptionResponseAttributes) GetUpdatedAt() time.Time`
+`func (o *TlsSubscriptionResponseAttributes) GetUpdatedAt() time.Time`
 
 GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
 ### GetUpdatedAtOk
 
-`func (o *TLSSubscriptionResponseAttributes) GetUpdatedAtOk() (*time.Time, bool)`
+`func (o *TlsSubscriptionResponseAttributes) GetUpdatedAtOk() (*time.Time, bool)`
 
 GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedAt
 
-`func (o *TLSSubscriptionResponseAttributes) SetUpdatedAt(v time.Time)`
+`func (o *TlsSubscriptionResponseAttributes) SetUpdatedAt(v time.Time)`
 
 SetUpdatedAt sets UpdatedAt field to given value.
 
 ### HasUpdatedAt
 
-`func (o *TLSSubscriptionResponseAttributes) HasUpdatedAt() bool`
+`func (o *TlsSubscriptionResponseAttributes) HasUpdatedAt() bool`
 
 HasUpdatedAt returns a boolean if a field has been set.
 
 ### SetUpdatedAtNil
 
-`func (o *TLSSubscriptionResponseAttributes) SetUpdatedAtNil(b bool)`
+`func (o *TlsSubscriptionResponseAttributes) SetUpdatedAtNil(b bool)`
 
  SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 
 ### UnsetUpdatedAt
-`func (o *TLSSubscriptionResponseAttributes) UnsetUpdatedAt()`
+`func (o *TlsSubscriptionResponseAttributes) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 ### GetState
 
-`func (o *TLSSubscriptionResponseAttributes) GetState() string`
+`func (o *TlsSubscriptionResponseAttributes) GetState() string`
 
 GetState returns the State field if non-nil, zero value otherwise.
 
 ### GetStateOk
 
-`func (o *TLSSubscriptionResponseAttributes) GetStateOk() (*string, bool)`
+`func (o *TlsSubscriptionResponseAttributes) GetStateOk() (*string, bool)`
 
 GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetState
 
-`func (o *TLSSubscriptionResponseAttributes) SetState(v string)`
+`func (o *TlsSubscriptionResponseAttributes) SetState(v string)`
 
 SetState sets State field to given value.
 
 ### HasState
 
-`func (o *TLSSubscriptionResponseAttributes) HasState() bool`
+`func (o *TlsSubscriptionResponseAttributes) HasState() bool`
 
 HasState returns a boolean if a field has been set.
 
 ### GetHasActiveOrder
 
-`func (o *TLSSubscriptionResponseAttributes) GetHasActiveOrder() bool`
+`func (o *TlsSubscriptionResponseAttributes) GetHasActiveOrder() bool`
 
 GetHasActiveOrder returns the HasActiveOrder field if non-nil, zero value otherwise.
 
 ### GetHasActiveOrderOk
 
-`func (o *TLSSubscriptionResponseAttributes) GetHasActiveOrderOk() (*bool, bool)`
+`func (o *TlsSubscriptionResponseAttributes) GetHasActiveOrderOk() (*bool, bool)`
 
 GetHasActiveOrderOk returns a tuple with the HasActiveOrder field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHasActiveOrder
 
-`func (o *TLSSubscriptionResponseAttributes) SetHasActiveOrder(v bool)`
+`func (o *TlsSubscriptionResponseAttributes) SetHasActiveOrder(v bool)`
 
 SetHasActiveOrder sets HasActiveOrder field to given value.
 
 ### HasHasActiveOrder
 
-`func (o *TLSSubscriptionResponseAttributes) HasHasActiveOrder() bool`
+`func (o *TlsSubscriptionResponseAttributes) HasHasActiveOrder() bool`
 
 HasHasActiveOrder returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

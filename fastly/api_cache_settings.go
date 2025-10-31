@@ -36,11 +36,11 @@ type CacheSettingsAPI interface {
 		Create a cache settings object.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateCacheSettingsRequest
 	*/
-	CreateCacheSettings(ctx context.Context, serviceID string, versionID int32) APICreateCacheSettingsRequest
+	CreateCacheSettings(ctx context.Context, serviceId string, versionId int32) APICreateCacheSettingsRequest
 
 	// CreateCacheSettingsExecute executes the request
 	//  @return CacheSettingResponse
@@ -52,12 +52,12 @@ type CacheSettingsAPI interface {
 		Delete a specific cache settings object.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param cacheSettingsName Name for the cache settings object.
 		 @return APIDeleteCacheSettingsRequest
 	*/
-	DeleteCacheSettings(ctx context.Context, serviceID string, versionID int32, cacheSettingsName string) APIDeleteCacheSettingsRequest
+	DeleteCacheSettings(ctx context.Context, serviceId string, versionId int32, cacheSettingsName string) APIDeleteCacheSettingsRequest
 
 	// DeleteCacheSettingsExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type CacheSettingsAPI interface {
 		Get a specific cache settings object.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param cacheSettingsName Name for the cache settings object.
 		 @return APIGetCacheSettingsRequest
 	*/
-	GetCacheSettings(ctx context.Context, serviceID string, versionID int32, cacheSettingsName string) APIGetCacheSettingsRequest
+	GetCacheSettings(ctx context.Context, serviceId string, versionId int32, cacheSettingsName string) APIGetCacheSettingsRequest
 
 	// GetCacheSettingsExecute executes the request
 	//  @return CacheSettingResponse
@@ -86,11 +86,11 @@ type CacheSettingsAPI interface {
 		Get a list of all cache settings for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListCacheSettingsRequest
 	*/
-	ListCacheSettings(ctx context.Context, serviceID string, versionID int32) APIListCacheSettingsRequest
+	ListCacheSettings(ctx context.Context, serviceId string, versionId int32) APIListCacheSettingsRequest
 
 	// ListCacheSettingsExecute executes the request
 	//  @return []CacheSettingResponse
@@ -102,12 +102,12 @@ type CacheSettingsAPI interface {
 		Update a specific cache settings object.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param cacheSettingsName Name for the cache settings object.
 		 @return APIUpdateCacheSettingsRequest
 	*/
-	UpdateCacheSettings(ctx context.Context, serviceID string, versionID int32, cacheSettingsName string) APIUpdateCacheSettingsRequest
+	UpdateCacheSettings(ctx context.Context, serviceId string, versionId int32, cacheSettingsName string) APIUpdateCacheSettingsRequest
 
 	// UpdateCacheSettingsExecute executes the request
 	//  @return CacheSettingResponse
@@ -121,12 +121,12 @@ type CacheSettingsAPIService service
 type APICreateCacheSettingsRequest struct {
 	ctx            context.Context
 	APIService     CacheSettingsAPI
-	serviceID      string
-	versionID      int32
+	serviceId      string
+	versionId      int32
 	action         *string
 	cacheCondition *string
 	name           *string
-	staleTTL       *string
+	staleTtl       *string
 	ttl            *string
 }
 
@@ -148,14 +148,14 @@ func (r *APICreateCacheSettingsRequest) Name(name string) *APICreateCacheSetting
 	return r
 }
 
-// StaleTTL Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;).
-func (r *APICreateCacheSettingsRequest) StaleTTL(staleTTL string) *APICreateCacheSettingsRequest {
-	r.staleTTL = &staleTTL
+// StaleTtl Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;).
+func (r *APICreateCacheSettingsRequest) StaleTtl(staleTtl string) *APICreateCacheSettingsRequest {
+	r.staleTtl = &staleTtl
 	return r
 }
 
-// TTL Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;).
-func (r *APICreateCacheSettingsRequest) TTL(ttl string) *APICreateCacheSettingsRequest {
+// Ttl Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;).
+func (r *APICreateCacheSettingsRequest) Ttl(ttl string) *APICreateCacheSettingsRequest {
 	r.ttl = &ttl
 	return r
 }
@@ -171,16 +171,16 @@ CreateCacheSettings Create a cache settings object
 Create a cache settings object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateCacheSettingsRequest
 */
-func (a *CacheSettingsAPIService) CreateCacheSettings(ctx context.Context, serviceID string, versionID int32) APICreateCacheSettingsRequest {
+func (a *CacheSettingsAPIService) CreateCacheSettings(ctx context.Context, serviceId string, versionId int32) APICreateCacheSettingsRequest {
 	return APICreateCacheSettingsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -200,8 +200,8 @@ func (a *CacheSettingsAPIService) CreateCacheSettingsExecute(r APICreateCacheSet
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/cache_settings"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -233,8 +233,8 @@ func (a *CacheSettingsAPIService) CreateCacheSettingsExecute(r APICreateCacheSet
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
 	}
-	if r.staleTTL != nil {
-		localVarFormParams.Add("stale_ttl", parameterToString(*r.staleTTL, ""))
+	if r.staleTtl != nil {
+		localVarFormParams.Add("stale_ttl", parameterToString(*r.staleTtl, ""))
 	}
 	if r.ttl != nil {
 		localVarFormParams.Add("ttl", parameterToString(*r.ttl, ""))
@@ -307,8 +307,8 @@ func (a *CacheSettingsAPIService) CreateCacheSettingsExecute(r APICreateCacheSet
 type APIDeleteCacheSettingsRequest struct {
 	ctx               context.Context
 	APIService        CacheSettingsAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	cacheSettingsName string
 }
 
@@ -323,17 +323,17 @@ DeleteCacheSettings Delete a cache settings object
 Delete a specific cache settings object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param cacheSettingsName Name for the cache settings object.
  @return APIDeleteCacheSettingsRequest
 */
-func (a *CacheSettingsAPIService) DeleteCacheSettings(ctx context.Context, serviceID string, versionID int32, cacheSettingsName string) APIDeleteCacheSettingsRequest {
+func (a *CacheSettingsAPIService) DeleteCacheSettings(ctx context.Context, serviceId string, versionId int32, cacheSettingsName string) APIDeleteCacheSettingsRequest {
 	return APIDeleteCacheSettingsRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		cacheSettingsName: cacheSettingsName,
 	}
 }
@@ -354,8 +354,8 @@ func (a *CacheSettingsAPIService) DeleteCacheSettingsExecute(r APIDeleteCacheSet
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/cache_settings/{cache_settings_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"cache_settings_name"+"}", gourl.PathEscape(parameterToString(r.cacheSettingsName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -447,8 +447,8 @@ func (a *CacheSettingsAPIService) DeleteCacheSettingsExecute(r APIDeleteCacheSet
 type APIGetCacheSettingsRequest struct {
 	ctx               context.Context
 	APIService        CacheSettingsAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	cacheSettingsName string
 }
 
@@ -463,17 +463,17 @@ GetCacheSettings Get a cache settings object
 Get a specific cache settings object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param cacheSettingsName Name for the cache settings object.
  @return APIGetCacheSettingsRequest
 */
-func (a *CacheSettingsAPIService) GetCacheSettings(ctx context.Context, serviceID string, versionID int32, cacheSettingsName string) APIGetCacheSettingsRequest {
+func (a *CacheSettingsAPIService) GetCacheSettings(ctx context.Context, serviceId string, versionId int32, cacheSettingsName string) APIGetCacheSettingsRequest {
 	return APIGetCacheSettingsRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		cacheSettingsName: cacheSettingsName,
 	}
 }
@@ -494,8 +494,8 @@ func (a *CacheSettingsAPIService) GetCacheSettingsExecute(r APIGetCacheSettingsR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/cache_settings/{cache_settings_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"cache_settings_name"+"}", gourl.PathEscape(parameterToString(r.cacheSettingsName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -587,8 +587,8 @@ func (a *CacheSettingsAPIService) GetCacheSettingsExecute(r APIGetCacheSettingsR
 type APIListCacheSettingsRequest struct {
 	ctx        context.Context
 	APIService CacheSettingsAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -602,16 +602,16 @@ ListCacheSettings List cache settings objects
 Get a list of all cache settings for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListCacheSettingsRequest
 */
-func (a *CacheSettingsAPIService) ListCacheSettings(ctx context.Context, serviceID string, versionID int32) APIListCacheSettingsRequest {
+func (a *CacheSettingsAPIService) ListCacheSettings(ctx context.Context, serviceId string, versionId int32) APIListCacheSettingsRequest {
 	return APIListCacheSettingsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -631,8 +631,8 @@ func (a *CacheSettingsAPIService) ListCacheSettingsExecute(r APIListCacheSetting
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/cache_settings"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -723,13 +723,13 @@ func (a *CacheSettingsAPIService) ListCacheSettingsExecute(r APIListCacheSetting
 type APIUpdateCacheSettingsRequest struct {
 	ctx               context.Context
 	APIService        CacheSettingsAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	cacheSettingsName string
 	action            *string
 	cacheCondition    *string
 	name              *string
-	staleTTL          *string
+	staleTtl          *string
 	ttl               *string
 }
 
@@ -751,14 +751,14 @@ func (r *APIUpdateCacheSettingsRequest) Name(name string) *APIUpdateCacheSetting
 	return r
 }
 
-// StaleTTL Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;).
-func (r *APIUpdateCacheSettingsRequest) StaleTTL(staleTTL string) *APIUpdateCacheSettingsRequest {
-	r.staleTTL = &staleTTL
+// StaleTtl Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;).
+func (r *APIUpdateCacheSettingsRequest) StaleTtl(staleTtl string) *APIUpdateCacheSettingsRequest {
+	r.staleTtl = &staleTtl
 	return r
 }
 
-// TTL Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;).
-func (r *APIUpdateCacheSettingsRequest) TTL(ttl string) *APIUpdateCacheSettingsRequest {
+// Ttl Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;).
+func (r *APIUpdateCacheSettingsRequest) Ttl(ttl string) *APIUpdateCacheSettingsRequest {
 	r.ttl = &ttl
 	return r
 }
@@ -774,17 +774,17 @@ UpdateCacheSettings Update a cache settings object
 Update a specific cache settings object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param cacheSettingsName Name for the cache settings object.
  @return APIUpdateCacheSettingsRequest
 */
-func (a *CacheSettingsAPIService) UpdateCacheSettings(ctx context.Context, serviceID string, versionID int32, cacheSettingsName string) APIUpdateCacheSettingsRequest {
+func (a *CacheSettingsAPIService) UpdateCacheSettings(ctx context.Context, serviceId string, versionId int32, cacheSettingsName string) APIUpdateCacheSettingsRequest {
 	return APIUpdateCacheSettingsRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		cacheSettingsName: cacheSettingsName,
 	}
 }
@@ -805,8 +805,8 @@ func (a *CacheSettingsAPIService) UpdateCacheSettingsExecute(r APIUpdateCacheSet
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/cache_settings/{cache_settings_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"cache_settings_name"+"}", gourl.PathEscape(parameterToString(r.cacheSettingsName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -839,8 +839,8 @@ func (a *CacheSettingsAPIService) UpdateCacheSettingsExecute(r APIUpdateCacheSet
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
 	}
-	if r.staleTTL != nil {
-		localVarFormParams.Add("stale_ttl", parameterToString(*r.staleTTL, ""))
+	if r.staleTtl != nil {
+		localVarFormParams.Add("stale_ttl", parameterToString(*r.staleTtl, ""))
 	}
 	if r.ttl != nil {
 		localVarFormParams.Add("ttl", parameterToString(*r.ttl, ""))

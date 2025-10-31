@@ -17,20 +17,24 @@ import (
 	"fmt"
 )
 
-// RoleUser The permissions role assigned to the user. Can be `user`, `billing`, `engineer`, or `superuser`.
+// RoleUser The permissions role assigned to the user. Can be `user`, `tls_viewer`, `tls_admin`, `billing`, `engineer`, or `superuser`.
 type RoleUser string
 
 // List of role_user
 const (
-	ROLEUSER_USER      RoleUser = "user"
-	ROLEUSER_BILLING   RoleUser = "billing"
-	ROLEUSER_ENGINEER  RoleUser = "engineer"
-	ROLEUSER_SUPERUSER RoleUser = "superuser"
+	ROLEUSER_USER       RoleUser = "user"
+	ROLEUSER_TLS_VIEWER RoleUser = "tls_viewer"
+	ROLEUSER_TLS_ADMIN  RoleUser = "tls_admin"
+	ROLEUSER_BILLING    RoleUser = "billing"
+	ROLEUSER_ENGINEER   RoleUser = "engineer"
+	ROLEUSER_SUPERUSER  RoleUser = "superuser"
 )
 
 // AllowedRoleUserEnumValues All allowed values of RoleUser enum
 var AllowedRoleUserEnumValues = []RoleUser{
 	"user",
+	"tls_viewer",
+	"tls_admin",
 	"billing",
 	"engineer",
 	"superuser",

@@ -29,13 +29,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SettingsAPI.GetServiceSettings(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.SettingsAPI.GetServiceSettings(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.GetServiceSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,8 +51,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -98,17 +98,17 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     generalDefaultHost := "generalDefaultHost_example" // string | The default host name for the version. (optional)
-    generalDefaultTTL := int32(56) // int32 | The default time-to-live (TTL) for the version. (optional)
+    generalDefaultTtl := int32(56) // int32 | The default time-to-live (TTL) for the version. (optional)
     generalStaleIfError := true // bool | Enables serving a stale object if there is an error. (optional) (default to false)
-    generalStaleIfErrorTTL := int32(56) // int32 | The default time-to-live (TTL) for serving the stale object for the version. (optional) (default to 43200)
+    generalStaleIfErrorTtl := int32(56) // int32 | The default time-to-live (TTL) for serving the stale object for the version. (optional) (default to 43200)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SettingsAPI.UpdateServiceSettings(ctx, serviceID, versionID).GeneralDefaultHost(generalDefaultHost).GeneralDefaultTTL(generalDefaultTTL).GeneralStaleIfError(generalStaleIfError).GeneralStaleIfErrorTTL(generalStaleIfErrorTTL).Execute()
+    resp, r, err := apiClient.SettingsAPI.UpdateServiceSettings(ctx, serviceId, versionId).GeneralDefaultHost(generalDefaultHost).GeneralDefaultTtl(generalDefaultTtl).GeneralStaleIfError(generalStaleIfError).GeneralStaleIfErrorTtl(generalStaleIfErrorTtl).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SettingsAPI.UpdateServiceSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -124,8 +124,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -134,7 +134,7 @@ Other parameters are passed through a pointer to a apiUpdateServiceSettingsReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **generalDefaultHost** | **string** | The default host name for the version. |  **generalDefaultTTL** | **int32** | The default time-to-live (TTL) for the version. |  **generalStaleIfError** | **bool** | Enables serving a stale object if there is an error. | [default to false] **generalStaleIfErrorTTL** | **int32** | The default time-to-live (TTL) for serving the stale object for the version. | [default to 43200]
+ **generalDefaultHost** | **string** | The default host name for the version. |  **generalDefaultTtl** | **int32** | The default time-to-live (TTL) for the version. |  **generalStaleIfError** | **bool** | Enables serving a stale object if there is an error. | [default to false] **generalStaleIfErrorTtl** | **int32** | The default time-to-live (TTL) for serving the stale object for the version. | [default to 43200]
 
 ### Return type
 
@@ -150,3 +150,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

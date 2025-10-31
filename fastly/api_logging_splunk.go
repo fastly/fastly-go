@@ -36,11 +36,11 @@ type LoggingSplunkAPI interface {
 		Create a Splunk logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogSplunkRequest
 	*/
-	CreateLogSplunk(ctx context.Context, serviceID string, versionID int32) APICreateLogSplunkRequest
+	CreateLogSplunk(ctx context.Context, serviceId string, versionId int32) APICreateLogSplunkRequest
 
 	// CreateLogSplunkExecute executes the request
 	//  @return LoggingSplunkResponse
@@ -52,12 +52,12 @@ type LoggingSplunkAPI interface {
 		Delete the Splunk logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingSplunkName The name for the real-time logging configuration.
 		 @return APIDeleteLogSplunkRequest
 	*/
-	DeleteLogSplunk(ctx context.Context, serviceID string, versionID int32, loggingSplunkName string) APIDeleteLogSplunkRequest
+	DeleteLogSplunk(ctx context.Context, serviceId string, versionId int32, loggingSplunkName string) APIDeleteLogSplunkRequest
 
 	// DeleteLogSplunkExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingSplunkAPI interface {
 		Get the details for a Splunk logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingSplunkName The name for the real-time logging configuration.
 		 @return APIGetLogSplunkRequest
 	*/
-	GetLogSplunk(ctx context.Context, serviceID string, versionID int32, loggingSplunkName string) APIGetLogSplunkRequest
+	GetLogSplunk(ctx context.Context, serviceId string, versionId int32, loggingSplunkName string) APIGetLogSplunkRequest
 
 	// GetLogSplunkExecute executes the request
 	//  @return LoggingSplunkResponse
@@ -86,11 +86,11 @@ type LoggingSplunkAPI interface {
 		List all of the Splunk logging objects for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogSplunkRequest
 	*/
-	ListLogSplunk(ctx context.Context, serviceID string, versionID int32) APIListLogSplunkRequest
+	ListLogSplunk(ctx context.Context, serviceId string, versionId int32) APIListLogSplunkRequest
 
 	// ListLogSplunkExecute executes the request
 	//  @return []LoggingSplunkResponse
@@ -102,12 +102,12 @@ type LoggingSplunkAPI interface {
 		Update the Splunk logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingSplunkName The name for the real-time logging configuration.
 		 @return APIUpdateLogSplunkRequest
 	*/
-	UpdateLogSplunk(ctx context.Context, serviceID string, versionID int32, loggingSplunkName string) APIUpdateLogSplunkRequest
+	UpdateLogSplunk(ctx context.Context, serviceId string, versionId int32, loggingSplunkName string) APIUpdateLogSplunkRequest
 
 	// UpdateLogSplunkExecute executes the request
 	//  @return LoggingSplunkResponse
@@ -121,8 +121,8 @@ type LoggingSplunkAPIService service
 type APICreateLogSplunkRequest struct {
 	ctx                 context.Context
 	APIService          LoggingSplunkAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -137,7 +137,7 @@ type APICreateLogSplunkRequest struct {
 	requestMaxBytes     *int32
 	url                 *string
 	token               *string
-	useTLS              *LoggingUseTLSString
+	useTls              *LoggingUseTlsString
 }
 
 // Name The name for the real-time logging configuration.
@@ -176,26 +176,26 @@ func (r *APICreateLogSplunkRequest) FormatVersion(formatVersion int32) *APICreat
 	return r
 }
 
-// TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
-func (r *APICreateLogSplunkRequest) TLSCaCert(tlsCaCert string) *APICreateLogSplunkRequest {
+// TlsCaCert A secure certificate to authenticate a server with. Must be in PEM format.
+func (r *APICreateLogSplunkRequest) TlsCaCert(tlsCaCert string) *APICreateLogSplunkRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
 
-// TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
-func (r *APICreateLogSplunkRequest) TLSClientCert(tlsClientCert string) *APICreateLogSplunkRequest {
+// TlsClientCert The client certificate used to make authenticated requests. Must be in PEM format.
+func (r *APICreateLogSplunkRequest) TlsClientCert(tlsClientCert string) *APICreateLogSplunkRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
 
-// TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
-func (r *APICreateLogSplunkRequest) TLSClientKey(tlsClientKey string) *APICreateLogSplunkRequest {
+// TlsClientKey The client private key used to make authenticated requests. Must be in PEM format.
+func (r *APICreateLogSplunkRequest) TlsClientKey(tlsClientKey string) *APICreateLogSplunkRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
 
-// TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-func (r *APICreateLogSplunkRequest) TLSHostname(tlsHostname string) *APICreateLogSplunkRequest {
+// TlsHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+func (r *APICreateLogSplunkRequest) TlsHostname(tlsHostname string) *APICreateLogSplunkRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
@@ -212,8 +212,8 @@ func (r *APICreateLogSplunkRequest) RequestMaxBytes(requestMaxBytes int32) *APIC
 	return r
 }
 
-// URL The URL to post logs to.
-func (r *APICreateLogSplunkRequest) URL(url string) *APICreateLogSplunkRequest {
+// Url The URL to post logs to.
+func (r *APICreateLogSplunkRequest) Url(url string) *APICreateLogSplunkRequest {
 	r.url = &url
 	return r
 }
@@ -224,9 +224,9 @@ func (r *APICreateLogSplunkRequest) Token(token string) *APICreateLogSplunkReque
 	return r
 }
 
-// UseTLS returns a pointer to a request.
-func (r *APICreateLogSplunkRequest) UseTLS(useTLS LoggingUseTLSString) *APICreateLogSplunkRequest {
-	r.useTLS = &useTLS
+// UseTls returns a pointer to a request.
+func (r *APICreateLogSplunkRequest) UseTls(useTls LoggingUseTlsString) *APICreateLogSplunkRequest {
+	r.useTls = &useTls
 	return r
 }
 
@@ -241,16 +241,16 @@ CreateLogSplunk Create a Splunk log endpoint
 Create a Splunk logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogSplunkRequest
 */
-func (a *LoggingSplunkAPIService) CreateLogSplunk(ctx context.Context, serviceID string, versionID int32) APICreateLogSplunkRequest {
+func (a *LoggingSplunkAPIService) CreateLogSplunk(ctx context.Context, serviceId string, versionId int32) APICreateLogSplunkRequest {
 	return APICreateLogSplunkRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -270,8 +270,8 @@ func (a *LoggingSplunkAPIService) CreateLogSplunkExecute(r APICreateLogSplunkReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/splunk"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -336,8 +336,8 @@ func (a *LoggingSplunkAPIService) CreateLogSplunkExecute(r APICreateLogSplunkReq
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))
 	}
-	if r.useTLS != nil {
-		localVarFormParams.Add("use_tls", parameterToString(*r.useTLS, ""))
+	if r.useTls != nil {
+		localVarFormParams.Add("use_tls", parameterToString(*r.useTls, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -407,8 +407,8 @@ func (a *LoggingSplunkAPIService) CreateLogSplunkExecute(r APICreateLogSplunkReq
 type APIDeleteLogSplunkRequest struct {
 	ctx               context.Context
 	APIService        LoggingSplunkAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	loggingSplunkName string
 }
 
@@ -423,17 +423,17 @@ DeleteLogSplunk Delete a Splunk log endpoint
 Delete the Splunk logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingSplunkName The name for the real-time logging configuration.
  @return APIDeleteLogSplunkRequest
 */
-func (a *LoggingSplunkAPIService) DeleteLogSplunk(ctx context.Context, serviceID string, versionID int32, loggingSplunkName string) APIDeleteLogSplunkRequest {
+func (a *LoggingSplunkAPIService) DeleteLogSplunk(ctx context.Context, serviceId string, versionId int32, loggingSplunkName string) APIDeleteLogSplunkRequest {
 	return APIDeleteLogSplunkRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingSplunkName: loggingSplunkName,
 	}
 }
@@ -454,8 +454,8 @@ func (a *LoggingSplunkAPIService) DeleteLogSplunkExecute(r APIDeleteLogSplunkReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/splunk/{logging_splunk_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_splunk_name"+"}", gourl.PathEscape(parameterToString(r.loggingSplunkName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -547,8 +547,8 @@ func (a *LoggingSplunkAPIService) DeleteLogSplunkExecute(r APIDeleteLogSplunkReq
 type APIGetLogSplunkRequest struct {
 	ctx               context.Context
 	APIService        LoggingSplunkAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	loggingSplunkName string
 }
 
@@ -563,17 +563,17 @@ GetLogSplunk Get a Splunk log endpoint
 Get the details for a Splunk logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingSplunkName The name for the real-time logging configuration.
  @return APIGetLogSplunkRequest
 */
-func (a *LoggingSplunkAPIService) GetLogSplunk(ctx context.Context, serviceID string, versionID int32, loggingSplunkName string) APIGetLogSplunkRequest {
+func (a *LoggingSplunkAPIService) GetLogSplunk(ctx context.Context, serviceId string, versionId int32, loggingSplunkName string) APIGetLogSplunkRequest {
 	return APIGetLogSplunkRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingSplunkName: loggingSplunkName,
 	}
 }
@@ -594,8 +594,8 @@ func (a *LoggingSplunkAPIService) GetLogSplunkExecute(r APIGetLogSplunkRequest) 
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/splunk/{logging_splunk_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_splunk_name"+"}", gourl.PathEscape(parameterToString(r.loggingSplunkName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -687,8 +687,8 @@ func (a *LoggingSplunkAPIService) GetLogSplunkExecute(r APIGetLogSplunkRequest) 
 type APIListLogSplunkRequest struct {
 	ctx        context.Context
 	APIService LoggingSplunkAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -702,16 +702,16 @@ ListLogSplunk List Splunk log endpoints
 List all of the Splunk logging objects for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogSplunkRequest
 */
-func (a *LoggingSplunkAPIService) ListLogSplunk(ctx context.Context, serviceID string, versionID int32) APIListLogSplunkRequest {
+func (a *LoggingSplunkAPIService) ListLogSplunk(ctx context.Context, serviceId string, versionId int32) APIListLogSplunkRequest {
 	return APIListLogSplunkRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -731,8 +731,8 @@ func (a *LoggingSplunkAPIService) ListLogSplunkExecute(r APIListLogSplunkRequest
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/splunk"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -823,8 +823,8 @@ func (a *LoggingSplunkAPIService) ListLogSplunkExecute(r APIListLogSplunkRequest
 type APIUpdateLogSplunkRequest struct {
 	ctx                 context.Context
 	APIService          LoggingSplunkAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingSplunkName   string
 	name                *string
 	placement           *string
@@ -840,7 +840,7 @@ type APIUpdateLogSplunkRequest struct {
 	requestMaxBytes     *int32
 	url                 *string
 	token               *string
-	useTLS              *LoggingUseTLSString
+	useTls              *LoggingUseTlsString
 }
 
 // Name The name for the real-time logging configuration.
@@ -879,26 +879,26 @@ func (r *APIUpdateLogSplunkRequest) FormatVersion(formatVersion int32) *APIUpdat
 	return r
 }
 
-// TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
-func (r *APIUpdateLogSplunkRequest) TLSCaCert(tlsCaCert string) *APIUpdateLogSplunkRequest {
+// TlsCaCert A secure certificate to authenticate a server with. Must be in PEM format.
+func (r *APIUpdateLogSplunkRequest) TlsCaCert(tlsCaCert string) *APIUpdateLogSplunkRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
 
-// TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
-func (r *APIUpdateLogSplunkRequest) TLSClientCert(tlsClientCert string) *APIUpdateLogSplunkRequest {
+// TlsClientCert The client certificate used to make authenticated requests. Must be in PEM format.
+func (r *APIUpdateLogSplunkRequest) TlsClientCert(tlsClientCert string) *APIUpdateLogSplunkRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
 
-// TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
-func (r *APIUpdateLogSplunkRequest) TLSClientKey(tlsClientKey string) *APIUpdateLogSplunkRequest {
+// TlsClientKey The client private key used to make authenticated requests. Must be in PEM format.
+func (r *APIUpdateLogSplunkRequest) TlsClientKey(tlsClientKey string) *APIUpdateLogSplunkRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
 
-// TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-func (r *APIUpdateLogSplunkRequest) TLSHostname(tlsHostname string) *APIUpdateLogSplunkRequest {
+// TlsHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+func (r *APIUpdateLogSplunkRequest) TlsHostname(tlsHostname string) *APIUpdateLogSplunkRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
@@ -915,8 +915,8 @@ func (r *APIUpdateLogSplunkRequest) RequestMaxBytes(requestMaxBytes int32) *APIU
 	return r
 }
 
-// URL The URL to post logs to.
-func (r *APIUpdateLogSplunkRequest) URL(url string) *APIUpdateLogSplunkRequest {
+// Url The URL to post logs to.
+func (r *APIUpdateLogSplunkRequest) Url(url string) *APIUpdateLogSplunkRequest {
 	r.url = &url
 	return r
 }
@@ -927,9 +927,9 @@ func (r *APIUpdateLogSplunkRequest) Token(token string) *APIUpdateLogSplunkReque
 	return r
 }
 
-// UseTLS returns a pointer to a request.
-func (r *APIUpdateLogSplunkRequest) UseTLS(useTLS LoggingUseTLSString) *APIUpdateLogSplunkRequest {
-	r.useTLS = &useTLS
+// UseTls returns a pointer to a request.
+func (r *APIUpdateLogSplunkRequest) UseTls(useTls LoggingUseTlsString) *APIUpdateLogSplunkRequest {
+	r.useTls = &useTls
 	return r
 }
 
@@ -944,17 +944,17 @@ UpdateLogSplunk Update a Splunk log endpoint
 Update the Splunk logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingSplunkName The name for the real-time logging configuration.
  @return APIUpdateLogSplunkRequest
 */
-func (a *LoggingSplunkAPIService) UpdateLogSplunk(ctx context.Context, serviceID string, versionID int32, loggingSplunkName string) APIUpdateLogSplunkRequest {
+func (a *LoggingSplunkAPIService) UpdateLogSplunk(ctx context.Context, serviceId string, versionId int32, loggingSplunkName string) APIUpdateLogSplunkRequest {
 	return APIUpdateLogSplunkRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingSplunkName: loggingSplunkName,
 	}
 }
@@ -975,8 +975,8 @@ func (a *LoggingSplunkAPIService) UpdateLogSplunkExecute(r APIUpdateLogSplunkReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/splunk/{logging_splunk_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_splunk_name"+"}", gourl.PathEscape(parameterToString(r.loggingSplunkName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -1042,8 +1042,8 @@ func (a *LoggingSplunkAPIService) UpdateLogSplunkExecute(r APIUpdateLogSplunkReq
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))
 	}
-	if r.useTLS != nil {
-		localVarFormParams.Add("use_tls", parameterToString(*r.useTLS, ""))
+	if r.useTls != nil {
+		localVarFormParams.Add("use_tls", parameterToString(*r.useTls, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

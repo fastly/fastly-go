@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 **EmailHash** | Pointer to **string** | The alphanumeric string identifying a email login. | [optional] [readonly] 
-**CustomerID** | Pointer to **string** |  | [optional] [readonly] 
+**CustomerId** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewSchemasUserResponseReadOnlyWithDefaults instantiates a new SchemasUserRespons
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetID
+### GetId
 
-`func (o *SchemasUserResponseReadOnly) GetID() string`
+`func (o *SchemasUserResponseReadOnly) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *SchemasUserResponseReadOnly) GetIDOk() (*string, bool)`
+`func (o *SchemasUserResponseReadOnly) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *SchemasUserResponseReadOnly) SetID(v string)`
+`func (o *SchemasUserResponseReadOnly) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *SchemasUserResponseReadOnly) HasID() bool`
+`func (o *SchemasUserResponseReadOnly) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetEmailHash
 
@@ -77,30 +77,32 @@ SetEmailHash sets EmailHash field to given value.
 
 HasEmailHash returns a boolean if a field has been set.
 
-### GetCustomerID
+### GetCustomerId
 
-`func (o *SchemasUserResponseReadOnly) GetCustomerID() string`
+`func (o *SchemasUserResponseReadOnly) GetCustomerId() string`
 
-GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetCustomerIDOk
+### GetCustomerIdOk
 
-`func (o *SchemasUserResponseReadOnly) GetCustomerIDOk() (*string, bool)`
+`func (o *SchemasUserResponseReadOnly) GetCustomerIdOk() (*string, bool)`
 
-GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerID
+### SetCustomerId
 
-`func (o *SchemasUserResponseReadOnly) SetCustomerID(v string)`
+`func (o *SchemasUserResponseReadOnly) SetCustomerId(v string)`
 
-SetCustomerID sets CustomerID field to given value.
+SetCustomerId sets CustomerId field to given value.
 
-### HasCustomerID
+### HasCustomerId
 
-`func (o *SchemasUserResponseReadOnly) HasCustomerID() bool`
+`func (o *SchemasUserResponseReadOnly) HasCustomerId() bool`
 
-HasCustomerID returns a boolean if a field has been set.
+HasCustomerId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -36,14 +36,14 @@ type LoggingNewrelicotlpResponse struct {
 	// The region to which to stream logs.
 	Region *string `json:"region,omitempty"`
 	// (Optional) URL of the New Relic Trace Observer, if you are using New Relic Infinite Tracing.
-	URL NullableString `json:"url,omitempty"`
+	Url NullableString `json:"url,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
-	ServiceID            *string      `json:"service_id,omitempty"`
+	ServiceId            *string      `json:"service_id,omitempty"`
 	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -65,7 +65,7 @@ func NewLoggingNewrelicotlpResponse() *LoggingNewrelicotlpResponse {
 	var region string = "US"
 	this.Region = &region
 	var url string = "null"
-	this.URL = *NewNullableString(&url)
+	this.Url = *NewNullableString(&url)
 	return &this
 }
 
@@ -83,7 +83,7 @@ func NewLoggingNewrelicotlpResponseWithDefaults() *LoggingNewrelicotlpResponse {
 	var region string = "US"
 	this.Region = &region
 	var url string = "null"
-	this.URL = *NewNullableString(&url)
+	this.Url = *NewNullableString(&url)
 	return &this
 }
 
@@ -365,47 +365,47 @@ func (o *LoggingNewrelicotlpResponse) SetRegion(v string) {
 	o.Region = &v
 }
 
-// GetURL returns the URL field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingNewrelicotlpResponse) GetURL() string {
-	if o == nil || o.URL.Get() == nil {
+// GetUrl returns the Url field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingNewrelicotlpResponse) GetUrl() string {
+	if o == nil || o.Url.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.URL.Get()
+	return *o.Url.Get()
 }
 
-// GetURLOk returns a tuple with the URL field value if set, nil otherwise
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingNewrelicotlpResponse) GetURLOk() (*string, bool) {
+func (o *LoggingNewrelicotlpResponse) GetUrlOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.URL.Get(), o.URL.IsSet()
+	return o.Url.Get(), o.Url.IsSet()
 }
 
-// HasURL returns a boolean if a field has been set.
-func (o *LoggingNewrelicotlpResponse) HasURL() bool {
-	if o != nil && o.URL.IsSet() {
+// HasUrl returns a boolean if a field has been set.
+func (o *LoggingNewrelicotlpResponse) HasUrl() bool {
+	if o != nil && o.Url.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetURL gets a reference to the given NullableString and assigns it to the URL field.
-func (o *LoggingNewrelicotlpResponse) SetURL(v string) {
-	o.URL.Set(&v)
+// SetUrl gets a reference to the given NullableString and assigns it to the Url field.
+func (o *LoggingNewrelicotlpResponse) SetUrl(v string) {
+	o.Url.Set(&v)
 }
 
-// SetURLNil sets the value for URL to be an explicit nil
-func (o *LoggingNewrelicotlpResponse) SetURLNil() {
-	o.URL.Set(nil)
+// SetUrlNil sets the value for Url to be an explicit nil
+func (o *LoggingNewrelicotlpResponse) SetUrlNil() {
+	o.Url.Set(nil)
 }
 
-// UnsetURL ensures that no value is present for URL, not even an explicit nil
-func (o *LoggingNewrelicotlpResponse) UnsetURL() {
-	o.URL.Unset()
+// UnsetUrl ensures that no value is present for Url, not even an explicit nil
+func (o *LoggingNewrelicotlpResponse) UnsetUrl() {
+	o.Url.Unset()
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -537,36 +537,36 @@ func (o *LoggingNewrelicotlpResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *LoggingNewrelicotlpResponse) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *LoggingNewrelicotlpResponse) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingNewrelicotlpResponse) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *LoggingNewrelicotlpResponse) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *LoggingNewrelicotlpResponse) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *LoggingNewrelicotlpResponse) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *LoggingNewrelicotlpResponse) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *LoggingNewrelicotlpResponse) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -629,8 +629,8 @@ func (o LoggingNewrelicotlpResponse) MarshalJSON() ([]byte, error) {
 	if o.Region != nil {
 		toSerialize["region"] = o.Region
 	}
-	if o.URL.IsSet() {
-		toSerialize["url"] = o.URL.Get()
+	if o.Url.IsSet() {
+		toSerialize["url"] = o.Url.Get()
 	}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
@@ -641,8 +641,8 @@ func (o LoggingNewrelicotlpResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

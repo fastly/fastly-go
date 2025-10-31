@@ -16,8 +16,8 @@ import (
 	"encoding/json"
 )
 
-// ComputeACLLookup Defines the structure of an ACL Lookup response.
-type ComputeACLLookup struct {
+// ComputeAclLookup Defines the structure of an ACL Lookup response.
+type ComputeAclLookup struct {
 	// A valid IPv4 or IPv6 address and prefix in CIDR notation.
 	Prefix *string `json:"prefix,omitempty"`
 	// One of \"ALLOW\" or \"BLOCK\".
@@ -25,27 +25,27 @@ type ComputeACLLookup struct {
 	AdditionalProperties map[string]any
 }
 
-type _ComputeACLLookup ComputeACLLookup
+type _ComputeAclLookup ComputeAclLookup
 
-// NewComputeACLLookup instantiates a new ComputeACLLookup object
+// NewComputeAclLookup instantiates a new ComputeAclLookup object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeACLLookup() *ComputeACLLookup {
-	this := ComputeACLLookup{}
+func NewComputeAclLookup() *ComputeAclLookup {
+	this := ComputeAclLookup{}
 	return &this
 }
 
-// NewComputeACLLookupWithDefaults instantiates a new ComputeACLLookup object
+// NewComputeAclLookupWithDefaults instantiates a new ComputeAclLookup object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewComputeACLLookupWithDefaults() *ComputeACLLookup {
-	this := ComputeACLLookup{}
+func NewComputeAclLookupWithDefaults() *ComputeAclLookup {
+	this := ComputeAclLookup{}
 	return &this
 }
 
 // GetPrefix returns the Prefix field value if set, zero value otherwise.
-func (o *ComputeACLLookup) GetPrefix() string {
+func (o *ComputeAclLookup) GetPrefix() string {
 	if o == nil || o.Prefix == nil {
 		var ret string
 		return ret
@@ -55,7 +55,7 @@ func (o *ComputeACLLookup) GetPrefix() string {
 
 // GetPrefixOk returns a tuple with the Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLLookup) GetPrefixOk() (*string, bool) {
+func (o *ComputeAclLookup) GetPrefixOk() (*string, bool) {
 	if o == nil || o.Prefix == nil {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *ComputeACLLookup) GetPrefixOk() (*string, bool) {
 }
 
 // HasPrefix returns a boolean if a field has been set.
-func (o *ComputeACLLookup) HasPrefix() bool {
+func (o *ComputeAclLookup) HasPrefix() bool {
 	if o != nil && o.Prefix != nil {
 		return true
 	}
@@ -72,12 +72,12 @@ func (o *ComputeACLLookup) HasPrefix() bool {
 }
 
 // SetPrefix gets a reference to the given string and assigns it to the Prefix field.
-func (o *ComputeACLLookup) SetPrefix(v string) {
+func (o *ComputeAclLookup) SetPrefix(v string) {
 	o.Prefix = &v
 }
 
 // GetAction returns the Action field value if set, zero value otherwise.
-func (o *ComputeACLLookup) GetAction() string {
+func (o *ComputeAclLookup) GetAction() string {
 	if o == nil || o.Action == nil {
 		var ret string
 		return ret
@@ -87,7 +87,7 @@ func (o *ComputeACLLookup) GetAction() string {
 
 // GetActionOk returns a tuple with the Action field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLLookup) GetActionOk() (*string, bool) {
+func (o *ComputeAclLookup) GetActionOk() (*string, bool) {
 	if o == nil || o.Action == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *ComputeACLLookup) GetActionOk() (*string, bool) {
 }
 
 // HasAction returns a boolean if a field has been set.
-func (o *ComputeACLLookup) HasAction() bool {
+func (o *ComputeAclLookup) HasAction() bool {
 	if o != nil && o.Action != nil {
 		return true
 	}
@@ -104,13 +104,13 @@ func (o *ComputeACLLookup) HasAction() bool {
 }
 
 // SetAction gets a reference to the given string and assigns it to the Action field.
-func (o *ComputeACLLookup) SetAction(v string) {
+func (o *ComputeAclLookup) SetAction(v string) {
 	o.Action = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ComputeACLLookup) MarshalJSON() ([]byte, error) {
+func (o ComputeAclLookup) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Prefix != nil {
 		toSerialize["prefix"] = o.Prefix
@@ -128,11 +128,11 @@ func (o ComputeACLLookup) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ComputeACLLookup) UnmarshalJSON(bytes []byte) (err error) {
-	varComputeACLLookup := _ComputeACLLookup{}
+func (o *ComputeAclLookup) UnmarshalJSON(bytes []byte) (err error) {
+	varComputeAclLookup := _ComputeAclLookup{}
 
-	if err = json.Unmarshal(bytes, &varComputeACLLookup); err == nil {
-		*o = ComputeACLLookup(varComputeACLLookup)
+	if err = json.Unmarshal(bytes, &varComputeAclLookup); err == nil {
+		*o = ComputeAclLookup(varComputeAclLookup)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -146,48 +146,48 @@ func (o *ComputeACLLookup) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableComputeACLLookup is a helper abstraction for handling nullable computeacllookup types.
-type NullableComputeACLLookup struct {
-	value *ComputeACLLookup
+// NullableComputeAclLookup is a helper abstraction for handling nullable computeacllookup types.
+type NullableComputeAclLookup struct {
+	value *ComputeAclLookup
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableComputeACLLookup) Get() *ComputeACLLookup {
+func (v NullableComputeAclLookup) Get() *ComputeAclLookup {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableComputeACLLookup) Set(val *ComputeACLLookup) {
+func (v *NullableComputeAclLookup) Set(val *ComputeAclLookup) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableComputeACLLookup) IsSet() bool {
+func (v NullableComputeAclLookup) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableComputeACLLookup) Unset() {
+func (v *NullableComputeAclLookup) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableComputeACLLookup returns a pointer to a new instance of NullableComputeACLLookup.
-func NewNullableComputeACLLookup(val *ComputeACLLookup) *NullableComputeACLLookup {
-	return &NullableComputeACLLookup{value: val, isSet: true}
+// NewNullableComputeAclLookup returns a pointer to a new instance of NullableComputeAclLookup.
+func NewNullableComputeAclLookup(val *ComputeAclLookup) *NullableComputeAclLookup {
+	return &NullableComputeAclLookup{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableComputeACLLookup) MarshalJSON() ([]byte, error) {
+func (v NullableComputeAclLookup) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableComputeACLLookup) UnmarshalJSON(src []byte) error {
+func (v *NullableComputeAclLookup) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -36,13 +36,13 @@ type LoggingLogentriesAPI interface {
 		Create a Logentry for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogLogentriesRequest
 
 		Deprecated
 	*/
-	CreateLogLogentries(ctx context.Context, serviceID string, versionID int32) APICreateLogLogentriesRequest
+	CreateLogLogentries(ctx context.Context, serviceId string, versionId int32) APICreateLogLogentriesRequest
 
 	// CreateLogLogentriesExecute executes the request
 	//  @return LoggingLogentriesResponse
@@ -55,14 +55,14 @@ type LoggingLogentriesAPI interface {
 		Delete the Logentry for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingLogentriesName The name for the real-time logging configuration.
 		 @return APIDeleteLogLogentriesRequest
 
 		Deprecated
 	*/
-	DeleteLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIDeleteLogLogentriesRequest
+	DeleteLogLogentries(ctx context.Context, serviceId string, versionId int32, loggingLogentriesName string) APIDeleteLogLogentriesRequest
 
 	// DeleteLogLogentriesExecute executes the request
 	//  @return InlineResponse200
@@ -75,14 +75,14 @@ type LoggingLogentriesAPI interface {
 		Get the Logentry for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingLogentriesName The name for the real-time logging configuration.
 		 @return APIGetLogLogentriesRequest
 
 		Deprecated
 	*/
-	GetLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIGetLogLogentriesRequest
+	GetLogLogentries(ctx context.Context, serviceId string, versionId int32, loggingLogentriesName string) APIGetLogLogentriesRequest
 
 	// GetLogLogentriesExecute executes the request
 	//  @return LoggingLogentriesResponse
@@ -95,13 +95,13 @@ type LoggingLogentriesAPI interface {
 		List all of the Logentries for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogLogentriesRequest
 
 		Deprecated
 	*/
-	ListLogLogentries(ctx context.Context, serviceID string, versionID int32) APIListLogLogentriesRequest
+	ListLogLogentries(ctx context.Context, serviceId string, versionId int32) APIListLogLogentriesRequest
 
 	// ListLogLogentriesExecute executes the request
 	//  @return []LoggingLogentriesResponse
@@ -114,14 +114,14 @@ type LoggingLogentriesAPI interface {
 		Update the Logentry for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingLogentriesName The name for the real-time logging configuration.
 		 @return APIUpdateLogLogentriesRequest
 
 		Deprecated
 	*/
-	UpdateLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIUpdateLogLogentriesRequest
+	UpdateLogLogentries(ctx context.Context, serviceId string, versionId int32, loggingLogentriesName string) APIUpdateLogLogentriesRequest
 
 	// UpdateLogLogentriesExecute executes the request
 	//  @return LoggingLogentriesResponse
@@ -136,8 +136,8 @@ type LoggingLogentriesAPIService service
 type APICreateLogLogentriesRequest struct {
 	ctx                 context.Context
 	APIService          LoggingLogentriesAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -146,7 +146,7 @@ type APICreateLogLogentriesRequest struct {
 	formatVersion       *int32
 	port                *int32
 	token               *string
-	useTLS              *LoggingUseTLSString
+	useTls              *LoggingUseTlsString
 	region              *string
 }
 
@@ -198,9 +198,9 @@ func (r *APICreateLogLogentriesRequest) Token(token string) *APICreateLogLogentr
 	return r
 }
 
-// UseTLS returns a pointer to a request.
-func (r *APICreateLogLogentriesRequest) UseTLS(useTLS LoggingUseTLSString) *APICreateLogLogentriesRequest {
-	r.useTLS = &useTLS
+// UseTls returns a pointer to a request.
+func (r *APICreateLogLogentriesRequest) UseTls(useTls LoggingUseTlsString) *APICreateLogLogentriesRequest {
+	r.useTls = &useTls
 	return r
 }
 
@@ -221,18 +221,18 @@ CreateLogLogentries Create a Logentries log endpoint
 Create a Logentry for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogLogentriesRequest
 
 Deprecated
 */
-func (a *LoggingLogentriesAPIService) CreateLogLogentries(ctx context.Context, serviceID string, versionID int32) APICreateLogLogentriesRequest {
+func (a *LoggingLogentriesAPIService) CreateLogLogentries(ctx context.Context, serviceId string, versionId int32) APICreateLogLogentriesRequest {
 	return APICreateLogLogentriesRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -253,8 +253,8 @@ func (a *LoggingLogentriesAPIService) CreateLogLogentriesExecute(r APICreateLogL
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/logentries"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -301,8 +301,8 @@ func (a *LoggingLogentriesAPIService) CreateLogLogentriesExecute(r APICreateLogL
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))
 	}
-	if r.useTLS != nil {
-		localVarFormParams.Add("use_tls", parameterToString(*r.useTLS, ""))
+	if r.useTls != nil {
+		localVarFormParams.Add("use_tls", parameterToString(*r.useTls, ""))
 	}
 	if r.region != nil {
 		localVarFormParams.Add("region", parameterToString(*r.region, ""))
@@ -375,8 +375,8 @@ func (a *LoggingLogentriesAPIService) CreateLogLogentriesExecute(r APICreateLogL
 type APIDeleteLogLogentriesRequest struct {
 	ctx                   context.Context
 	APIService            LoggingLogentriesAPI
-	serviceID             string
-	versionID             int32
+	serviceId             string
+	versionId             int32
 	loggingLogentriesName string
 }
 
@@ -391,19 +391,19 @@ DeleteLogLogentries Delete a Logentries log endpoint
 Delete the Logentry for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingLogentriesName The name for the real-time logging configuration.
  @return APIDeleteLogLogentriesRequest
 
 Deprecated
 */
-func (a *LoggingLogentriesAPIService) DeleteLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIDeleteLogLogentriesRequest {
+func (a *LoggingLogentriesAPIService) DeleteLogLogentries(ctx context.Context, serviceId string, versionId int32, loggingLogentriesName string) APIDeleteLogLogentriesRequest {
 	return APIDeleteLogLogentriesRequest{
 		APIService:            a,
 		ctx:                   ctx,
-		serviceID:             serviceID,
-		versionID:             versionID,
+		serviceId:             serviceId,
+		versionId:             versionId,
 		loggingLogentriesName: loggingLogentriesName,
 	}
 }
@@ -425,8 +425,8 @@ func (a *LoggingLogentriesAPIService) DeleteLogLogentriesExecute(r APIDeleteLogL
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/logentries/{logging_logentries_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_logentries_name"+"}", gourl.PathEscape(parameterToString(r.loggingLogentriesName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -518,8 +518,8 @@ func (a *LoggingLogentriesAPIService) DeleteLogLogentriesExecute(r APIDeleteLogL
 type APIGetLogLogentriesRequest struct {
 	ctx                   context.Context
 	APIService            LoggingLogentriesAPI
-	serviceID             string
-	versionID             int32
+	serviceId             string
+	versionId             int32
 	loggingLogentriesName string
 }
 
@@ -534,19 +534,19 @@ GetLogLogentries Get a Logentries log endpoint
 Get the Logentry for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingLogentriesName The name for the real-time logging configuration.
  @return APIGetLogLogentriesRequest
 
 Deprecated
 */
-func (a *LoggingLogentriesAPIService) GetLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIGetLogLogentriesRequest {
+func (a *LoggingLogentriesAPIService) GetLogLogentries(ctx context.Context, serviceId string, versionId int32, loggingLogentriesName string) APIGetLogLogentriesRequest {
 	return APIGetLogLogentriesRequest{
 		APIService:            a,
 		ctx:                   ctx,
-		serviceID:             serviceID,
-		versionID:             versionID,
+		serviceId:             serviceId,
+		versionId:             versionId,
 		loggingLogentriesName: loggingLogentriesName,
 	}
 }
@@ -568,8 +568,8 @@ func (a *LoggingLogentriesAPIService) GetLogLogentriesExecute(r APIGetLogLogentr
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/logentries/{logging_logentries_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_logentries_name"+"}", gourl.PathEscape(parameterToString(r.loggingLogentriesName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -661,8 +661,8 @@ func (a *LoggingLogentriesAPIService) GetLogLogentriesExecute(r APIGetLogLogentr
 type APIListLogLogentriesRequest struct {
 	ctx        context.Context
 	APIService LoggingLogentriesAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -676,18 +676,18 @@ ListLogLogentries List Logentries log endpoints
 List all of the Logentries for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogLogentriesRequest
 
 Deprecated
 */
-func (a *LoggingLogentriesAPIService) ListLogLogentries(ctx context.Context, serviceID string, versionID int32) APIListLogLogentriesRequest {
+func (a *LoggingLogentriesAPIService) ListLogLogentries(ctx context.Context, serviceId string, versionId int32) APIListLogLogentriesRequest {
 	return APIListLogLogentriesRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -708,8 +708,8 @@ func (a *LoggingLogentriesAPIService) ListLogLogentriesExecute(r APIListLogLogen
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/logentries"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -800,8 +800,8 @@ func (a *LoggingLogentriesAPIService) ListLogLogentriesExecute(r APIListLogLogen
 type APIUpdateLogLogentriesRequest struct {
 	ctx                   context.Context
 	APIService            LoggingLogentriesAPI
-	serviceID             string
-	versionID             int32
+	serviceId             string
+	versionId             int32
 	loggingLogentriesName string
 	name                  *string
 	placement             *string
@@ -811,7 +811,7 @@ type APIUpdateLogLogentriesRequest struct {
 	formatVersion         *int32
 	port                  *int32
 	token                 *string
-	useTLS                *LoggingUseTLSString
+	useTls                *LoggingUseTlsString
 	region                *string
 }
 
@@ -863,9 +863,9 @@ func (r *APIUpdateLogLogentriesRequest) Token(token string) *APIUpdateLogLogentr
 	return r
 }
 
-// UseTLS returns a pointer to a request.
-func (r *APIUpdateLogLogentriesRequest) UseTLS(useTLS LoggingUseTLSString) *APIUpdateLogLogentriesRequest {
-	r.useTLS = &useTLS
+// UseTls returns a pointer to a request.
+func (r *APIUpdateLogLogentriesRequest) UseTls(useTls LoggingUseTlsString) *APIUpdateLogLogentriesRequest {
+	r.useTls = &useTls
 	return r
 }
 
@@ -886,19 +886,19 @@ UpdateLogLogentries Update a Logentries log endpoint
 Update the Logentry for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingLogentriesName The name for the real-time logging configuration.
  @return APIUpdateLogLogentriesRequest
 
 Deprecated
 */
-func (a *LoggingLogentriesAPIService) UpdateLogLogentries(ctx context.Context, serviceID string, versionID int32, loggingLogentriesName string) APIUpdateLogLogentriesRequest {
+func (a *LoggingLogentriesAPIService) UpdateLogLogentries(ctx context.Context, serviceId string, versionId int32, loggingLogentriesName string) APIUpdateLogLogentriesRequest {
 	return APIUpdateLogLogentriesRequest{
 		APIService:            a,
 		ctx:                   ctx,
-		serviceID:             serviceID,
-		versionID:             versionID,
+		serviceId:             serviceId,
+		versionId:             versionId,
 		loggingLogentriesName: loggingLogentriesName,
 	}
 }
@@ -920,8 +920,8 @@ func (a *LoggingLogentriesAPIService) UpdateLogLogentriesExecute(r APIUpdateLogL
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/logentries/{logging_logentries_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_logentries_name"+"}", gourl.PathEscape(parameterToString(r.loggingLogentriesName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -969,8 +969,8 @@ func (a *LoggingLogentriesAPIService) UpdateLogLogentriesExecute(r APIUpdateLogL
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))
 	}
-	if r.useTLS != nil {
-		localVarFormParams.Add("use_tls", parameterToString(*r.useTLS, ""))
+	if r.useTls != nil {
+		localVarFormParams.Add("use_tls", parameterToString(*r.useTls, ""))
 	}
 	if r.region != nil {
 		localVarFormParams.Add("region", parameterToString(*r.region, ""))

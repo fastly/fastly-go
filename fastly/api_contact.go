@@ -36,10 +36,10 @@ type ContactAPI interface {
 		Create a contact.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
+		 @param customerId Alphanumeric string identifying the customer.
 		 @return APICreateContactsRequest
 	*/
-	CreateContacts(ctx context.Context, customerID string) APICreateContactsRequest
+	CreateContacts(ctx context.Context, customerId string) APICreateContactsRequest
 
 	// CreateContactsExecute executes the request
 	//  @return ContactResponse
@@ -51,11 +51,11 @@ type ContactAPI interface {
 		Delete a contact.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
-		 @param contactID An alphanumeric string identifying the customer contact.
+		 @param customerId Alphanumeric string identifying the customer.
+		 @param contactId An alphanumeric string identifying the customer contact.
 		 @return APIDeleteContactRequest
 	*/
-	DeleteContact(ctx context.Context, customerID string, contactID string) APIDeleteContactRequest
+	DeleteContact(ctx context.Context, customerId string, contactId string) APIDeleteContactRequest
 
 	// DeleteContactExecute executes the request
 	//  @return InlineResponse200
@@ -67,10 +67,10 @@ type ContactAPI interface {
 		List all contacts from a specified customer ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
+		 @param customerId Alphanumeric string identifying the customer.
 		 @return APIListContactsRequest
 	*/
-	ListContacts(ctx context.Context, customerID string) APIListContactsRequest
+	ListContacts(ctx context.Context, customerId string) APIListContactsRequest
 
 	// ListContactsExecute executes the request
 	//  @return []SchemasContactResponse
@@ -84,18 +84,18 @@ type ContactAPIService service
 type APICreateContactsRequest struct {
 	ctx         context.Context
 	APIService  ContactAPI
-	customerID  string
-	userID      *string
+	customerId  string
+	userId      *string
 	contactType *string
 	name        *string
 	email       *string
 	phone       *string
-	customerID2 *string
+	customerId2 *string
 }
 
-// UserID The alphanumeric string representing the user for this customer contact.
-func (r *APICreateContactsRequest) UserID(userID string) *APICreateContactsRequest {
-	r.userID = &userID
+// UserId The alphanumeric string representing the user for this customer contact.
+func (r *APICreateContactsRequest) UserId(userId string) *APICreateContactsRequest {
+	r.userId = &userId
 	return r
 }
 
@@ -123,9 +123,9 @@ func (r *APICreateContactsRequest) Phone(phone string) *APICreateContactsRequest
 	return r
 }
 
-// CustomerID2 The alphanumeric string representing the customer for this customer contact.
-func (r *APICreateContactsRequest) CustomerID2(customerID2 string) *APICreateContactsRequest {
-	r.customerID2 = &customerID2
+// CustomerId2 The alphanumeric string representing the customer for this customer contact.
+func (r *APICreateContactsRequest) CustomerId2(customerId2 string) *APICreateContactsRequest {
+	r.customerId2 = &customerId2
 	return r
 }
 
@@ -140,14 +140,14 @@ CreateContacts Add a new customer contact
 Create a contact.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
+ @param customerId Alphanumeric string identifying the customer.
  @return APICreateContactsRequest
 */
-func (a *ContactAPIService) CreateContacts(ctx context.Context, customerID string) APICreateContactsRequest {
+func (a *ContactAPIService) CreateContacts(ctx context.Context, customerId string) APICreateContactsRequest {
 	return APICreateContactsRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
+		customerId: customerId,
 	}
 }
 
@@ -167,7 +167,7 @@ func (a *ContactAPIService) CreateContactsExecute(r APICreateContactsRequest) (*
 	}
 
 	localVarPath := localBasePath + "/customer/{customer_id}/contacts"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -190,8 +190,8 @@ func (a *ContactAPIService) CreateContactsExecute(r APICreateContactsRequest) (*
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.userID != nil {
-		localVarFormParams.Add("user_id", parameterToString(*r.userID, ""))
+	if r.userId != nil {
+		localVarFormParams.Add("user_id", parameterToString(*r.userId, ""))
 	}
 	if r.contactType != nil {
 		localVarFormParams.Add("contact_type", parameterToString(*r.contactType, ""))
@@ -205,8 +205,8 @@ func (a *ContactAPIService) CreateContactsExecute(r APICreateContactsRequest) (*
 	if r.phone != nil {
 		localVarFormParams.Add("phone", parameterToString(*r.phone, ""))
 	}
-	if r.customerID2 != nil {
-		localVarFormParams.Add("customer_id", parameterToString(*r.customerID2, ""))
+	if r.customerId2 != nil {
+		localVarFormParams.Add("customer_id", parameterToString(*r.customerId2, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -276,8 +276,8 @@ func (a *ContactAPIService) CreateContactsExecute(r APICreateContactsRequest) (*
 type APIDeleteContactRequest struct {
 	ctx        context.Context
 	APIService ContactAPI
-	customerID string
-	contactID  string
+	customerId string
+	contactId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -291,16 +291,16 @@ DeleteContact Delete a contact
 Delete a contact.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
- @param contactID An alphanumeric string identifying the customer contact.
+ @param customerId Alphanumeric string identifying the customer.
+ @param contactId An alphanumeric string identifying the customer contact.
  @return APIDeleteContactRequest
 */
-func (a *ContactAPIService) DeleteContact(ctx context.Context, customerID string, contactID string) APIDeleteContactRequest {
+func (a *ContactAPIService) DeleteContact(ctx context.Context, customerId string, contactId string) APIDeleteContactRequest {
 	return APIDeleteContactRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
-		contactID:  contactID,
+		customerId: customerId,
+		contactId:  contactId,
 	}
 }
 
@@ -320,8 +320,8 @@ func (a *ContactAPIService) DeleteContactExecute(r APIDeleteContactRequest) (*In
 	}
 
 	localVarPath := localBasePath + "/customer/{customer_id}/contacts/{contact_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"contact_id"+"}", gourl.PathEscape(parameterToString(r.contactID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"contact_id"+"}", gourl.PathEscape(parameterToString(r.contactId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -412,7 +412,7 @@ func (a *ContactAPIService) DeleteContactExecute(r APIDeleteContactRequest) (*In
 type APIListContactsRequest struct {
 	ctx        context.Context
 	APIService ContactAPI
-	customerID string
+	customerId string
 }
 
 // Execute calls the API using the request data configured.
@@ -426,14 +426,14 @@ ListContacts List contacts
 List all contacts from a specified customer ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
+ @param customerId Alphanumeric string identifying the customer.
  @return APIListContactsRequest
 */
-func (a *ContactAPIService) ListContacts(ctx context.Context, customerID string) APIListContactsRequest {
+func (a *ContactAPIService) ListContacts(ctx context.Context, customerId string) APIListContactsRequest {
 	return APIListContactsRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
+		customerId: customerId,
 	}
 }
 
@@ -453,7 +453,7 @@ func (a *ContactAPIService) ListContactsExecute(r APIListContactsRequest) ([]Sch
 	}
 
 	localVarPath := localBasePath + "/customer/{customer_id}/contacts"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

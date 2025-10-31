@@ -36,11 +36,11 @@ type LoggingDatadogAPI interface {
 		Create a Datadog logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogDatadogRequest
 	*/
-	CreateLogDatadog(ctx context.Context, serviceID string, versionID int32) APICreateLogDatadogRequest
+	CreateLogDatadog(ctx context.Context, serviceId string, versionId int32) APICreateLogDatadogRequest
 
 	// CreateLogDatadogExecute executes the request
 	//  @return LoggingDatadogResponse
@@ -52,12 +52,12 @@ type LoggingDatadogAPI interface {
 		Delete the Datadog logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingDatadogName The name for the real-time logging configuration.
 		 @return APIDeleteLogDatadogRequest
 	*/
-	DeleteLogDatadog(ctx context.Context, serviceID string, versionID int32, loggingDatadogName string) APIDeleteLogDatadogRequest
+	DeleteLogDatadog(ctx context.Context, serviceId string, versionId int32, loggingDatadogName string) APIDeleteLogDatadogRequest
 
 	// DeleteLogDatadogExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingDatadogAPI interface {
 		Get the details for a Datadog logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingDatadogName The name for the real-time logging configuration.
 		 @return APIGetLogDatadogRequest
 	*/
-	GetLogDatadog(ctx context.Context, serviceID string, versionID int32, loggingDatadogName string) APIGetLogDatadogRequest
+	GetLogDatadog(ctx context.Context, serviceId string, versionId int32, loggingDatadogName string) APIGetLogDatadogRequest
 
 	// GetLogDatadogExecute executes the request
 	//  @return LoggingDatadogResponse
@@ -86,11 +86,11 @@ type LoggingDatadogAPI interface {
 		List all of the Datadog logging objects for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogDatadogRequest
 	*/
-	ListLogDatadog(ctx context.Context, serviceID string, versionID int32) APIListLogDatadogRequest
+	ListLogDatadog(ctx context.Context, serviceId string, versionId int32) APIListLogDatadogRequest
 
 	// ListLogDatadogExecute executes the request
 	//  @return []LoggingDatadogResponse
@@ -102,12 +102,12 @@ type LoggingDatadogAPI interface {
 		Update the Datadog logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingDatadogName The name for the real-time logging configuration.
 		 @return APIUpdateLogDatadogRequest
 	*/
-	UpdateLogDatadog(ctx context.Context, serviceID string, versionID int32, loggingDatadogName string) APIUpdateLogDatadogRequest
+	UpdateLogDatadog(ctx context.Context, serviceId string, versionId int32, loggingDatadogName string) APIUpdateLogDatadogRequest
 
 	// UpdateLogDatadogExecute executes the request
 	//  @return LoggingDatadogResponse
@@ -121,8 +121,8 @@ type LoggingDatadogAPIService service
 type APICreateLogDatadogRequest struct {
 	ctx                 context.Context
 	APIService          LoggingDatadogAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -192,16 +192,16 @@ CreateLogDatadog Create a Datadog log endpoint
 Create a Datadog logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogDatadogRequest
 */
-func (a *LoggingDatadogAPIService) CreateLogDatadog(ctx context.Context, serviceID string, versionID int32) APICreateLogDatadogRequest {
+func (a *LoggingDatadogAPIService) CreateLogDatadog(ctx context.Context, serviceId string, versionId int32) APICreateLogDatadogRequest {
 	return APICreateLogDatadogRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -221,8 +221,8 @@ func (a *LoggingDatadogAPIService) CreateLogDatadogExecute(r APICreateLogDatadog
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/datadog"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -337,8 +337,8 @@ func (a *LoggingDatadogAPIService) CreateLogDatadogExecute(r APICreateLogDatadog
 type APIDeleteLogDatadogRequest struct {
 	ctx                context.Context
 	APIService         LoggingDatadogAPI
-	serviceID          string
-	versionID          int32
+	serviceId          string
+	versionId          int32
 	loggingDatadogName string
 }
 
@@ -353,17 +353,17 @@ DeleteLogDatadog Delete a Datadog log endpoint
 Delete the Datadog logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingDatadogName The name for the real-time logging configuration.
  @return APIDeleteLogDatadogRequest
 */
-func (a *LoggingDatadogAPIService) DeleteLogDatadog(ctx context.Context, serviceID string, versionID int32, loggingDatadogName string) APIDeleteLogDatadogRequest {
+func (a *LoggingDatadogAPIService) DeleteLogDatadog(ctx context.Context, serviceId string, versionId int32, loggingDatadogName string) APIDeleteLogDatadogRequest {
 	return APIDeleteLogDatadogRequest{
 		APIService:         a,
 		ctx:                ctx,
-		serviceID:          serviceID,
-		versionID:          versionID,
+		serviceId:          serviceId,
+		versionId:          versionId,
 		loggingDatadogName: loggingDatadogName,
 	}
 }
@@ -384,8 +384,8 @@ func (a *LoggingDatadogAPIService) DeleteLogDatadogExecute(r APIDeleteLogDatadog
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/datadog/{logging_datadog_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_datadog_name"+"}", gourl.PathEscape(parameterToString(r.loggingDatadogName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -477,8 +477,8 @@ func (a *LoggingDatadogAPIService) DeleteLogDatadogExecute(r APIDeleteLogDatadog
 type APIGetLogDatadogRequest struct {
 	ctx                context.Context
 	APIService         LoggingDatadogAPI
-	serviceID          string
-	versionID          int32
+	serviceId          string
+	versionId          int32
 	loggingDatadogName string
 }
 
@@ -493,17 +493,17 @@ GetLogDatadog Get a Datadog log endpoint
 Get the details for a Datadog logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingDatadogName The name for the real-time logging configuration.
  @return APIGetLogDatadogRequest
 */
-func (a *LoggingDatadogAPIService) GetLogDatadog(ctx context.Context, serviceID string, versionID int32, loggingDatadogName string) APIGetLogDatadogRequest {
+func (a *LoggingDatadogAPIService) GetLogDatadog(ctx context.Context, serviceId string, versionId int32, loggingDatadogName string) APIGetLogDatadogRequest {
 	return APIGetLogDatadogRequest{
 		APIService:         a,
 		ctx:                ctx,
-		serviceID:          serviceID,
-		versionID:          versionID,
+		serviceId:          serviceId,
+		versionId:          versionId,
 		loggingDatadogName: loggingDatadogName,
 	}
 }
@@ -524,8 +524,8 @@ func (a *LoggingDatadogAPIService) GetLogDatadogExecute(r APIGetLogDatadogReques
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/datadog/{logging_datadog_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_datadog_name"+"}", gourl.PathEscape(parameterToString(r.loggingDatadogName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -617,8 +617,8 @@ func (a *LoggingDatadogAPIService) GetLogDatadogExecute(r APIGetLogDatadogReques
 type APIListLogDatadogRequest struct {
 	ctx        context.Context
 	APIService LoggingDatadogAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -632,16 +632,16 @@ ListLogDatadog List Datadog log endpoints
 List all of the Datadog logging objects for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogDatadogRequest
 */
-func (a *LoggingDatadogAPIService) ListLogDatadog(ctx context.Context, serviceID string, versionID int32) APIListLogDatadogRequest {
+func (a *LoggingDatadogAPIService) ListLogDatadog(ctx context.Context, serviceId string, versionId int32) APIListLogDatadogRequest {
 	return APIListLogDatadogRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -661,8 +661,8 @@ func (a *LoggingDatadogAPIService) ListLogDatadogExecute(r APIListLogDatadogRequ
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/datadog"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -753,8 +753,8 @@ func (a *LoggingDatadogAPIService) ListLogDatadogExecute(r APIListLogDatadogRequ
 type APIUpdateLogDatadogRequest struct {
 	ctx                 context.Context
 	APIService          LoggingDatadogAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingDatadogName  string
 	name                *string
 	placement           *string
@@ -825,17 +825,17 @@ UpdateLogDatadog Update a Datadog log endpoint
 Update the Datadog logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingDatadogName The name for the real-time logging configuration.
  @return APIUpdateLogDatadogRequest
 */
-func (a *LoggingDatadogAPIService) UpdateLogDatadog(ctx context.Context, serviceID string, versionID int32, loggingDatadogName string) APIUpdateLogDatadogRequest {
+func (a *LoggingDatadogAPIService) UpdateLogDatadog(ctx context.Context, serviceId string, versionId int32, loggingDatadogName string) APIUpdateLogDatadogRequest {
 	return APIUpdateLogDatadogRequest{
 		APIService:         a,
 		ctx:                ctx,
-		serviceID:          serviceID,
-		versionID:          versionID,
+		serviceId:          serviceId,
+		versionId:          versionId,
 		loggingDatadogName: loggingDatadogName,
 	}
 }
@@ -856,8 +856,8 @@ func (a *LoggingDatadogAPIService) UpdateLogDatadogExecute(r APIUpdateLogDatadog
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/datadog/{logging_datadog_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_datadog_name"+"}", gourl.PathEscape(parameterToString(r.loggingDatadogName, "")))
 
 	localVarHeaderParams := make(map[string]string)

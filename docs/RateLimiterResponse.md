@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | A human readable name for the rate limiting rule. | [optional] 
-**URIDictionaryName** | Pointer to **NullableString** | The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited. | [optional] 
-**HTTPMethods** | Pointer to **[]string** | Array of HTTP methods to apply rate limiting to. | [optional] 
+**UriDictionaryName** | Pointer to **NullableString** | The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited. | [optional] 
+**HttpMethods** | Pointer to **[]string** | Array of HTTP methods to apply rate limiting to. | [optional] 
 **RpsLimit** | Pointer to **int32** | Upper limit of requests per second allowed by the rate limiter. | [optional] 
 **WindowSize** | Pointer to **int32** | Number of seconds during which the RPS limit must be exceeded in order to trigger a violation. | [optional] 
 **ClientKey** | Pointer to **[]string** | Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`. | [optional] 
@@ -16,12 +16,12 @@ Name | Type | Description | Notes
 **ResponseObjectName** | Pointer to **NullableString** | Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration. | [optional] 
 **LoggerType** | Pointer to **string** | Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries. | [optional] 
 **FeatureRevision** | Pointer to **int32** | Revision number of the rate limiting feature implementation. Defaults to the most recent revision. | [optional] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **int32** |  | [optional] [readonly] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ID** | Pointer to **string** | Alphanumeric string identifying the rate limiter. | [optional] 
+**Id** | Pointer to **string** | Alphanumeric string identifying the rate limiter. | [optional] 
 
 ## Methods
 
@@ -67,65 +67,65 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetURIDictionaryName
+### GetUriDictionaryName
 
-`func (o *RateLimiterResponse) GetURIDictionaryName() string`
+`func (o *RateLimiterResponse) GetUriDictionaryName() string`
 
-GetURIDictionaryName returns the URIDictionaryName field if non-nil, zero value otherwise.
+GetUriDictionaryName returns the UriDictionaryName field if non-nil, zero value otherwise.
 
-### GetURIDictionaryNameOk
+### GetUriDictionaryNameOk
 
-`func (o *RateLimiterResponse) GetURIDictionaryNameOk() (*string, bool)`
+`func (o *RateLimiterResponse) GetUriDictionaryNameOk() (*string, bool)`
 
-GetURIDictionaryNameOk returns a tuple with the URIDictionaryName field if it's non-nil, zero value otherwise
+GetUriDictionaryNameOk returns a tuple with the UriDictionaryName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURIDictionaryName
+### SetUriDictionaryName
 
-`func (o *RateLimiterResponse) SetURIDictionaryName(v string)`
+`func (o *RateLimiterResponse) SetUriDictionaryName(v string)`
 
-SetURIDictionaryName sets URIDictionaryName field to given value.
+SetUriDictionaryName sets UriDictionaryName field to given value.
 
-### HasURIDictionaryName
+### HasUriDictionaryName
 
-`func (o *RateLimiterResponse) HasURIDictionaryName() bool`
+`func (o *RateLimiterResponse) HasUriDictionaryName() bool`
 
-HasURIDictionaryName returns a boolean if a field has been set.
+HasUriDictionaryName returns a boolean if a field has been set.
 
-### SetURIDictionaryNameNil
+### SetUriDictionaryNameNil
 
-`func (o *RateLimiterResponse) SetURIDictionaryNameNil(b bool)`
+`func (o *RateLimiterResponse) SetUriDictionaryNameNil(b bool)`
 
- SetURIDictionaryNameNil sets the value for URIDictionaryName to be an explicit nil
+ SetUriDictionaryNameNil sets the value for UriDictionaryName to be an explicit nil
 
-### UnsetURIDictionaryName
-`func (o *RateLimiterResponse) UnsetURIDictionaryName()`
+### UnsetUriDictionaryName
+`func (o *RateLimiterResponse) UnsetUriDictionaryName()`
 
-UnsetURIDictionaryName ensures that no value is present for URIDictionaryName, not even an explicit nil
-### GetHTTPMethods
+UnsetUriDictionaryName ensures that no value is present for UriDictionaryName, not even an explicit nil
+### GetHttpMethods
 
-`func (o *RateLimiterResponse) GetHTTPMethods() []string`
+`func (o *RateLimiterResponse) GetHttpMethods() []string`
 
-GetHTTPMethods returns the HTTPMethods field if non-nil, zero value otherwise.
+GetHttpMethods returns the HttpMethods field if non-nil, zero value otherwise.
 
-### GetHTTPMethodsOk
+### GetHttpMethodsOk
 
-`func (o *RateLimiterResponse) GetHTTPMethodsOk() (*[]string, bool)`
+`func (o *RateLimiterResponse) GetHttpMethodsOk() (*[]string, bool)`
 
-GetHTTPMethodsOk returns a tuple with the HTTPMethods field if it's non-nil, zero value otherwise
+GetHttpMethodsOk returns a tuple with the HttpMethods field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHTTPMethods
+### SetHttpMethods
 
-`func (o *RateLimiterResponse) SetHTTPMethods(v []string)`
+`func (o *RateLimiterResponse) SetHttpMethods(v []string)`
 
-SetHTTPMethods sets HTTPMethods field to given value.
+SetHttpMethods sets HttpMethods field to given value.
 
-### HasHTTPMethods
+### HasHttpMethods
 
-`func (o *RateLimiterResponse) HasHTTPMethods() bool`
+`func (o *RateLimiterResponse) HasHttpMethods() bool`
 
-HasHTTPMethods returns a boolean if a field has been set.
+HasHttpMethods returns a boolean if a field has been set.
 
 ### GetRpsLimit
 
@@ -372,30 +372,30 @@ SetFeatureRevision sets FeatureRevision field to given value.
 
 HasFeatureRevision returns a boolean if a field has been set.
 
-### GetServiceID
+### GetServiceId
 
-`func (o *RateLimiterResponse) GetServiceID() string`
+`func (o *RateLimiterResponse) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *RateLimiterResponse) GetServiceIDOk() (*string, bool)`
+`func (o *RateLimiterResponse) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *RateLimiterResponse) SetServiceID(v string)`
+`func (o *RateLimiterResponse) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *RateLimiterResponse) HasServiceID() bool`
+`func (o *RateLimiterResponse) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -527,30 +527,32 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *RateLimiterResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetID
+### GetId
 
-`func (o *RateLimiterResponse) GetID() string`
+`func (o *RateLimiterResponse) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *RateLimiterResponse) GetIDOk() (*string, bool)`
+`func (o *RateLimiterResponse) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *RateLimiterResponse) SetID(v string)`
+`func (o *RateLimiterResponse) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *RateLimiterResponse) HasID() bool`
+`func (o *RateLimiterResponse) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

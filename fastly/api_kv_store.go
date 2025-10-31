@@ -50,10 +50,10 @@ type KvStoreAPI interface {
 		A KV store must be empty before it can be deleted. Attempting to delete a KV store that contains items will result in a response with a `409` status code.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param storeID
+		 @param storeId
 		 @return APIKvStoreDeleteRequest
 	*/
-	KvStoreDelete(ctx context.Context, storeID string) APIKvStoreDeleteRequest
+	KvStoreDelete(ctx context.Context, storeId string) APIKvStoreDeleteRequest
 
 	// KvStoreDeleteExecute executes the request
 	KvStoreDeleteExecute(r APIKvStoreDeleteRequest) (*http.Response, error)
@@ -64,10 +64,10 @@ type KvStoreAPI interface {
 		Get details of a KV store.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param storeID
+		 @param storeId
 		 @return APIKvStoreGetRequest
 	*/
-	KvStoreGet(ctx context.Context, storeID string) APIKvStoreGetRequest
+	KvStoreGet(ctx context.Context, storeId string) APIKvStoreGetRequest
 
 	// KvStoreGetExecute executes the request
 	//  @return KvStoreDetails
@@ -84,8 +84,8 @@ type KvStoreAPI interface {
 	KvStoreList(ctx context.Context) APIKvStoreListRequest
 
 	// KvStoreListExecute executes the request
-	//  @return InlineResponse2005
-	KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2005, *http.Response, error)
+	//  @return InlineResponse2006
+	KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2006, *http.Response, error)
 }
 
 // KvStoreAPIService KvStoreAPI service
@@ -242,7 +242,7 @@ func (a *KvStoreAPIService) KvStoreCreateExecute(r APIKvStoreCreateRequest) (*Kv
 type APIKvStoreDeleteRequest struct {
 	ctx        context.Context
 	APIService KvStoreAPI
-	storeID    string
+	storeId    string
 }
 
 // Execute calls the API using the request data configured.
@@ -256,14 +256,14 @@ KvStoreDelete Delete a KV store.
 A KV store must be empty before it can be deleted. Attempting to delete a KV store that contains items will result in a response with a `409` status code.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param storeID
+ @param storeId
  @return APIKvStoreDeleteRequest
 */
-func (a *KvStoreAPIService) KvStoreDelete(ctx context.Context, storeID string) APIKvStoreDeleteRequest {
+func (a *KvStoreAPIService) KvStoreDelete(ctx context.Context, storeId string) APIKvStoreDeleteRequest {
 	return APIKvStoreDeleteRequest{
 		APIService: a,
 		ctx:        ctx,
-		storeID:    storeID,
+		storeId:    storeId,
 	}
 }
 
@@ -281,7 +281,7 @@ func (a *KvStoreAPIService) KvStoreDeleteExecute(r APIKvStoreDeleteRequest) (*ht
 	}
 
 	localVarPath := localBasePath + "/resources/stores/kv/{store_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -363,7 +363,7 @@ func (a *KvStoreAPIService) KvStoreDeleteExecute(r APIKvStoreDeleteRequest) (*ht
 type APIKvStoreGetRequest struct {
 	ctx        context.Context
 	APIService KvStoreAPI
-	storeID    string
+	storeId    string
 }
 
 // Execute calls the API using the request data configured.
@@ -377,14 +377,14 @@ KvStoreGet Describe a KV store.
 Get details of a KV store.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param storeID
+ @param storeId
  @return APIKvStoreGetRequest
 */
-func (a *KvStoreAPIService) KvStoreGet(ctx context.Context, storeID string) APIKvStoreGetRequest {
+func (a *KvStoreAPIService) KvStoreGet(ctx context.Context, storeId string) APIKvStoreGetRequest {
 	return APIKvStoreGetRequest{
 		APIService: a,
 		ctx:        ctx,
-		storeID:    storeID,
+		storeId:    storeId,
 	}
 }
 
@@ -404,7 +404,7 @@ func (a *KvStoreAPIService) KvStoreGetExecute(r APIKvStoreGetRequest) (*KvStoreD
 	}
 
 	localVarPath := localBasePath + "/resources/stores/kv/{store_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -519,7 +519,7 @@ func (r *APIKvStoreListRequest) Name(name string) *APIKvStoreListRequest {
 }
 
 // Execute calls the API using the request data configured.
-func (r APIKvStoreListRequest) Execute() (*InlineResponse2005, *http.Response, error) {
+func (r APIKvStoreListRequest) Execute() (*InlineResponse2006, *http.Response, error) {
 	return r.APIService.KvStoreListExecute(r)
 }
 
@@ -539,13 +539,13 @@ func (a *KvStoreAPIService) KvStoreList(ctx context.Context) APIKvStoreListReque
 }
 
 // KvStoreListExecute executes the request
-//  @return InlineResponse2005
-func (a *KvStoreAPIService) KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2005, *http.Response, error) {
+//  @return InlineResponse2006
+func (a *KvStoreAPIService) KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2006, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse2005
+		localVarReturnValue *InlineResponse2006
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.KvStoreList")

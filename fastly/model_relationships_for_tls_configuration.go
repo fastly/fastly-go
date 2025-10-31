@@ -17,15 +17,15 @@ import (
 	"fmt"
 )
 
-// RelationshipsForTLSConfiguration struct for RelationshipsForTLSConfiguration
-type RelationshipsForTLSConfiguration struct {
+// RelationshipsForTlsConfiguration struct for RelationshipsForTlsConfiguration
+type RelationshipsForTlsConfiguration struct {
 	RelationshipService               *RelationshipService
-	RelationshipTLSDNSRecordsResponse *RelationshipTLSDNSRecordsResponse
+	RelationshipTlsDnsRecordsResponse *RelationshipTlsDnsRecordsResponse
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipsForTLSConfiguration) UnmarshalJSON(data []byte) error {
+func (o *RelationshipsForTlsConfiguration) UnmarshalJSON(data []byte) error {
 	var err error
 	// try to unmarshal JSON data into RelationshipService
 	err = json.Unmarshal(data, &o.RelationshipService)
@@ -39,77 +39,77 @@ func (o *RelationshipsForTLSConfiguration) UnmarshalJSON(data []byte) error {
 		o.RelationshipService = nil
 	}
 
-	// try to unmarshal JSON data into RelationshipTLSDNSRecordsResponse
-	err = json.Unmarshal(data, &o.RelationshipTLSDNSRecordsResponse)
+	// try to unmarshal JSON data into RelationshipTlsDnsRecordsResponse
+	err = json.Unmarshal(data, &o.RelationshipTlsDnsRecordsResponse)
 	if err == nil {
-		jsonRelationshipTLSDNSRecordsResponse, _ := json.Marshal(o.RelationshipTLSDNSRecordsResponse)
-		if string(jsonRelationshipTLSDNSRecordsResponse) != "{}" { // empty struct
-			return nil // data stored in o.RelationshipTLSDNSRecordsResponse, return on the first match
+		jsonRelationshipTlsDnsRecordsResponse, _ := json.Marshal(o.RelationshipTlsDnsRecordsResponse)
+		if string(jsonRelationshipTlsDnsRecordsResponse) != "{}" { // empty struct
+			return nil // data stored in o.RelationshipTlsDnsRecordsResponse, return on the first match
 		}
-		o.RelationshipTLSDNSRecordsResponse = nil
+		o.RelationshipTlsDnsRecordsResponse = nil
 	} else {
-		o.RelationshipTLSDNSRecordsResponse = nil
+		o.RelationshipTlsDnsRecordsResponse = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(RelationshipsForTLSConfiguration)")
+	return fmt.Errorf("data failed to match schemas in anyOf(RelationshipsForTlsConfiguration)")
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o *RelationshipsForTLSConfiguration) MarshalJSON() ([]byte, error) {
+func (o *RelationshipsForTlsConfiguration) MarshalJSON() ([]byte, error) {
 	if o.RelationshipService != nil {
 		return json.Marshal(&o.RelationshipService)
 	}
 
-	if o.RelationshipTLSDNSRecordsResponse != nil {
-		return json.Marshal(&o.RelationshipTLSDNSRecordsResponse)
+	if o.RelationshipTlsDnsRecordsResponse != nil {
+		return json.Marshal(&o.RelationshipTlsDnsRecordsResponse)
 	}
 
 	return nil, nil // no data in anyOf schemas
 }
 
-// NullableRelationshipsForTLSConfiguration is a helper abstraction for handling nullable relationshipsfortlsconfiguration types.
-type NullableRelationshipsForTLSConfiguration struct {
-	value *RelationshipsForTLSConfiguration
+// NullableRelationshipsForTlsConfiguration is a helper abstraction for handling nullable relationshipsfortlsconfiguration types.
+type NullableRelationshipsForTlsConfiguration struct {
+	value *RelationshipsForTlsConfiguration
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipsForTLSConfiguration) Get() *RelationshipsForTLSConfiguration {
+func (v NullableRelationshipsForTlsConfiguration) Get() *RelationshipsForTlsConfiguration {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipsForTLSConfiguration) Set(val *RelationshipsForTLSConfiguration) {
+func (v *NullableRelationshipsForTlsConfiguration) Set(val *RelationshipsForTlsConfiguration) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipsForTLSConfiguration) IsSet() bool {
+func (v NullableRelationshipsForTlsConfiguration) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipsForTLSConfiguration) Unset() {
+func (v *NullableRelationshipsForTlsConfiguration) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipsForTLSConfiguration returns a pointer to a new instance of NullableRelationshipsForTLSConfiguration.
-func NewNullableRelationshipsForTLSConfiguration(val *RelationshipsForTLSConfiguration) *NullableRelationshipsForTLSConfiguration {
-	return &NullableRelationshipsForTLSConfiguration{value: val, isSet: true}
+// NewNullableRelationshipsForTlsConfiguration returns a pointer to a new instance of NullableRelationshipsForTlsConfiguration.
+func NewNullableRelationshipsForTlsConfiguration(val *RelationshipsForTlsConfiguration) *NullableRelationshipsForTlsConfiguration {
+	return &NullableRelationshipsForTlsConfiguration{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipsForTLSConfiguration) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipsForTlsConfiguration) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipsForTLSConfiguration) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipsForTlsConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

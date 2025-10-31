@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | Pointer to [**TypeCustomer**](TypeCustomer.md) |  | [optional] [default to TYPECUSTOMER_CUSTOMER]
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -51,30 +51,32 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
-### GetID
+### GetId
 
-`func (o *RelationshipMemberCustomer) GetID() string`
+`func (o *RelationshipMemberCustomer) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *RelationshipMemberCustomer) GetIDOk() (*string, bool)`
+`func (o *RelationshipMemberCustomer) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *RelationshipMemberCustomer) SetID(v string)`
+`func (o *RelationshipMemberCustomer) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *RelationshipMemberCustomer) HasID() bool`
+`func (o *RelationshipMemberCustomer) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

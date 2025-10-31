@@ -28,15 +28,15 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    fromVersionID := int32(1) // int32 | The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
-    toVersionID := int32(2) // int32 | The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    fromVersionId := int32(1) // int32 | The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
+    toVersionId := int32(2) // int32 | The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
     format := "format_example" // string | Optional method to format the diff field. (optional) (default to "text")
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.VclDiffAPI.VclDiffServiceVersions(ctx, serviceID, fromVersionID, toVersionID).Format(format).Execute()
+    resp, r, err := apiClient.VclDiffAPI.VclDiffServiceVersions(ctx, serviceId, fromVersionId, toVersionId).Format(format).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `VclDiffAPI.VclDiffServiceVersions`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,9 +52,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**fromVersionID** | **int32** | The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc). | 
-**toVersionID** | **int32** | The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**fromVersionId** | **int32** | The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc). | 
+**toVersionId** | **int32** | The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`. | 
 
 ### Other Parameters
 
@@ -79,3 +79,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

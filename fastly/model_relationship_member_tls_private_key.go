@@ -16,40 +16,40 @@ import (
 	"encoding/json"
 )
 
-// RelationshipMemberTLSPrivateKey struct for RelationshipMemberTLSPrivateKey
-type RelationshipMemberTLSPrivateKey struct {
-	Type                 *TypeTLSPrivateKey `json:"type,omitempty"`
-	ID                   *string            `json:"id,omitempty"`
+// RelationshipMemberTlsPrivateKey struct for RelationshipMemberTlsPrivateKey
+type RelationshipMemberTlsPrivateKey struct {
+	Type                 *TypeTlsPrivateKey `json:"type,omitempty"`
+	Id                   *string            `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _RelationshipMemberTLSPrivateKey RelationshipMemberTLSPrivateKey
+type _RelationshipMemberTlsPrivateKey RelationshipMemberTlsPrivateKey
 
-// NewRelationshipMemberTLSPrivateKey instantiates a new RelationshipMemberTLSPrivateKey object
+// NewRelationshipMemberTlsPrivateKey instantiates a new RelationshipMemberTlsPrivateKey object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRelationshipMemberTLSPrivateKey() *RelationshipMemberTLSPrivateKey {
-	this := RelationshipMemberTLSPrivateKey{}
-	var resourceType TypeTLSPrivateKey = TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY
-	this.Type = &resourceType
+func NewRelationshipMemberTlsPrivateKey() *RelationshipMemberTlsPrivateKey {
+	this := RelationshipMemberTlsPrivateKey{}
+	var type_ TypeTlsPrivateKey = TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY
+	this.Type = &type_
 	return &this
 }
 
-// NewRelationshipMemberTLSPrivateKeyWithDefaults instantiates a new RelationshipMemberTLSPrivateKey object
+// NewRelationshipMemberTlsPrivateKeyWithDefaults instantiates a new RelationshipMemberTlsPrivateKey object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRelationshipMemberTLSPrivateKeyWithDefaults() *RelationshipMemberTLSPrivateKey {
-	this := RelationshipMemberTLSPrivateKey{}
-	var resourceType TypeTLSPrivateKey = TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY
-	this.Type = &resourceType
+func NewRelationshipMemberTlsPrivateKeyWithDefaults() *RelationshipMemberTlsPrivateKey {
+	this := RelationshipMemberTlsPrivateKey{}
+	var type_ TypeTlsPrivateKey = TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY
+	this.Type = &type_
 	return &this
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *RelationshipMemberTLSPrivateKey) GetType() TypeTLSPrivateKey {
+func (o *RelationshipMemberTlsPrivateKey) GetType() TypeTlsPrivateKey {
 	if o == nil || o.Type == nil {
-		var ret TypeTLSPrivateKey
+		var ret TypeTlsPrivateKey
 		return ret
 	}
 	return *o.Type
@@ -57,7 +57,7 @@ func (o *RelationshipMemberTLSPrivateKey) GetType() TypeTLSPrivateKey {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipMemberTLSPrivateKey) GetTypeOk() (*TypeTLSPrivateKey, bool) {
+func (o *RelationshipMemberTlsPrivateKey) GetTypeOk() (*TypeTlsPrivateKey, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *RelationshipMemberTLSPrivateKey) GetTypeOk() (*TypeTLSPrivateKey, bool)
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *RelationshipMemberTLSPrivateKey) HasType() bool {
+func (o *RelationshipMemberTlsPrivateKey) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -73,52 +73,52 @@ func (o *RelationshipMemberTLSPrivateKey) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given TypeTLSPrivateKey and assigns it to the Type field.
-func (o *RelationshipMemberTLSPrivateKey) SetType(v TypeTLSPrivateKey) {
+// SetType gets a reference to the given TypeTlsPrivateKey and assigns it to the Type field.
+func (o *RelationshipMemberTlsPrivateKey) SetType(v TypeTlsPrivateKey) {
 	o.Type = &v
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *RelationshipMemberTLSPrivateKey) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *RelationshipMemberTlsPrivateKey) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipMemberTLSPrivateKey) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *RelationshipMemberTlsPrivateKey) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *RelationshipMemberTLSPrivateKey) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *RelationshipMemberTlsPrivateKey) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *RelationshipMemberTLSPrivateKey) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *RelationshipMemberTlsPrivateKey) SetId(v string) {
+	o.Id = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o RelationshipMemberTLSPrivateKey) MarshalJSON() ([]byte, error) {
+func (o RelationshipMemberTlsPrivateKey) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -130,11 +130,11 @@ func (o RelationshipMemberTLSPrivateKey) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipMemberTLSPrivateKey) UnmarshalJSON(bytes []byte) (err error) {
-	varRelationshipMemberTLSPrivateKey := _RelationshipMemberTLSPrivateKey{}
+func (o *RelationshipMemberTlsPrivateKey) UnmarshalJSON(bytes []byte) (err error) {
+	varRelationshipMemberTlsPrivateKey := _RelationshipMemberTlsPrivateKey{}
 
-	if err = json.Unmarshal(bytes, &varRelationshipMemberTLSPrivateKey); err == nil {
-		*o = RelationshipMemberTLSPrivateKey(varRelationshipMemberTLSPrivateKey)
+	if err = json.Unmarshal(bytes, &varRelationshipMemberTlsPrivateKey); err == nil {
+		*o = RelationshipMemberTlsPrivateKey(varRelationshipMemberTlsPrivateKey)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -148,48 +148,48 @@ func (o *RelationshipMemberTLSPrivateKey) UnmarshalJSON(bytes []byte) (err error
 	return err
 }
 
-// NullableRelationshipMemberTLSPrivateKey is a helper abstraction for handling nullable relationshipmembertlsprivatekey types.
-type NullableRelationshipMemberTLSPrivateKey struct {
-	value *RelationshipMemberTLSPrivateKey
+// NullableRelationshipMemberTlsPrivateKey is a helper abstraction for handling nullable relationshipmembertlsprivatekey types.
+type NullableRelationshipMemberTlsPrivateKey struct {
+	value *RelationshipMemberTlsPrivateKey
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipMemberTLSPrivateKey) Get() *RelationshipMemberTLSPrivateKey {
+func (v NullableRelationshipMemberTlsPrivateKey) Get() *RelationshipMemberTlsPrivateKey {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipMemberTLSPrivateKey) Set(val *RelationshipMemberTLSPrivateKey) {
+func (v *NullableRelationshipMemberTlsPrivateKey) Set(val *RelationshipMemberTlsPrivateKey) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipMemberTLSPrivateKey) IsSet() bool {
+func (v NullableRelationshipMemberTlsPrivateKey) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipMemberTLSPrivateKey) Unset() {
+func (v *NullableRelationshipMemberTlsPrivateKey) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipMemberTLSPrivateKey returns a pointer to a new instance of NullableRelationshipMemberTLSPrivateKey.
-func NewNullableRelationshipMemberTLSPrivateKey(val *RelationshipMemberTLSPrivateKey) *NullableRelationshipMemberTLSPrivateKey {
-	return &NullableRelationshipMemberTLSPrivateKey{value: val, isSet: true}
+// NewNullableRelationshipMemberTlsPrivateKey returns a pointer to a new instance of NullableRelationshipMemberTlsPrivateKey.
+func NewNullableRelationshipMemberTlsPrivateKey(val *RelationshipMemberTlsPrivateKey) *NullableRelationshipMemberTlsPrivateKey {
+	return &NullableRelationshipMemberTlsPrivateKey{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipMemberTLSPrivateKey) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipMemberTlsPrivateKey) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipMemberTLSPrivateKey) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipMemberTlsPrivateKey) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

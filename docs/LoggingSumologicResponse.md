@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 **LogProcessingRegion** | Pointer to **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [optional] [default to "none"]
 **FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
 **MessageType** | Pointer to [**LoggingMessageType**](LoggingMessageType.md) |  | [optional] [default to LOGGINGMESSAGETYPE_CLASSIC]
-**URL** | Pointer to **string** | The URL to post logs to. | [optional] 
+**Url** | Pointer to **string** | The URL to post logs to. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
@@ -232,30 +232,30 @@ SetMessageType sets MessageType field to given value.
 
 HasMessageType returns a boolean if a field has been set.
 
-### GetURL
+### GetUrl
 
-`func (o *LoggingSumologicResponse) GetURL() string`
+`func (o *LoggingSumologicResponse) GetUrl() string`
 
-GetURL returns the URL field if non-nil, zero value otherwise.
+GetUrl returns the Url field if non-nil, zero value otherwise.
 
-### GetURLOk
+### GetUrlOk
 
-`func (o *LoggingSumologicResponse) GetURLOk() (*string, bool)`
+`func (o *LoggingSumologicResponse) GetUrlOk() (*string, bool)`
 
-GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURL
+### SetUrl
 
-`func (o *LoggingSumologicResponse) SetURL(v string)`
+`func (o *LoggingSumologicResponse) SetUrl(v string)`
 
-SetURL sets URL field to given value.
+SetUrl sets Url field to given value.
 
-### HasURL
+### HasUrl
 
-`func (o *LoggingSumologicResponse) HasURL() bool`
+`func (o *LoggingSumologicResponse) HasUrl() bool`
 
-HasURL returns a boolean if a field has been set.
+HasUrl returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -362,30 +362,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *LoggingSumologicResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceID
+### GetServiceId
 
-`func (o *LoggingSumologicResponse) GetServiceID() string`
+`func (o *LoggingSumologicResponse) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *LoggingSumologicResponse) GetServiceIDOk() (*string, bool)`
+`func (o *LoggingSumologicResponse) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *LoggingSumologicResponse) SetServiceID(v string)`
+`func (o *LoggingSumologicResponse) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *LoggingSumologicResponse) HasServiceID() bool`
+`func (o *LoggingSumologicResponse) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -414,3 +414,5 @@ HasVersion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

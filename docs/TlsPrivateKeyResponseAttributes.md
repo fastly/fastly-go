@@ -1,4 +1,4 @@
-# TLSPrivateKeyResponseAttributes
+# TlsPrivateKeyResponseAttributes
 
 ## Properties
 
@@ -15,252 +15,254 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewTLSPrivateKeyResponseAttributes
+### NewTlsPrivateKeyResponseAttributes
 
-`func NewTLSPrivateKeyResponseAttributes() *TLSPrivateKeyResponseAttributes`
+`func NewTlsPrivateKeyResponseAttributes() *TlsPrivateKeyResponseAttributes`
 
-NewTLSPrivateKeyResponseAttributes instantiates a new TLSPrivateKeyResponseAttributes object
+NewTlsPrivateKeyResponseAttributes instantiates a new TlsPrivateKeyResponseAttributes object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSPrivateKeyResponseAttributesWithDefaults
+### NewTlsPrivateKeyResponseAttributesWithDefaults
 
-`func NewTLSPrivateKeyResponseAttributesWithDefaults() *TLSPrivateKeyResponseAttributes`
+`func NewTlsPrivateKeyResponseAttributesWithDefaults() *TlsPrivateKeyResponseAttributes`
 
-NewTLSPrivateKeyResponseAttributesWithDefaults instantiates a new TLSPrivateKeyResponseAttributes object
+NewTlsPrivateKeyResponseAttributesWithDefaults instantiates a new TlsPrivateKeyResponseAttributes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCreatedAt
 
-`func (o *TLSPrivateKeyResponseAttributes) GetCreatedAt() time.Time`
+`func (o *TlsPrivateKeyResponseAttributes) GetCreatedAt() time.Time`
 
 GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
 
 ### GetCreatedAtOk
 
-`func (o *TLSPrivateKeyResponseAttributes) GetCreatedAtOk() (*time.Time, bool)`
+`func (o *TlsPrivateKeyResponseAttributes) GetCreatedAtOk() (*time.Time, bool)`
 
 GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCreatedAt
 
-`func (o *TLSPrivateKeyResponseAttributes) SetCreatedAt(v time.Time)`
+`func (o *TlsPrivateKeyResponseAttributes) SetCreatedAt(v time.Time)`
 
 SetCreatedAt sets CreatedAt field to given value.
 
 ### HasCreatedAt
 
-`func (o *TLSPrivateKeyResponseAttributes) HasCreatedAt() bool`
+`func (o *TlsPrivateKeyResponseAttributes) HasCreatedAt() bool`
 
 HasCreatedAt returns a boolean if a field has been set.
 
 ### SetCreatedAtNil
 
-`func (o *TLSPrivateKeyResponseAttributes) SetCreatedAtNil(b bool)`
+`func (o *TlsPrivateKeyResponseAttributes) SetCreatedAtNil(b bool)`
 
  SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
 
 ### UnsetCreatedAt
-`func (o *TLSPrivateKeyResponseAttributes) UnsetCreatedAt()`
+`func (o *TlsPrivateKeyResponseAttributes) UnsetCreatedAt()`
 
 UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
 ### GetDeletedAt
 
-`func (o *TLSPrivateKeyResponseAttributes) GetDeletedAt() time.Time`
+`func (o *TlsPrivateKeyResponseAttributes) GetDeletedAt() time.Time`
 
 GetDeletedAt returns the DeletedAt field if non-nil, zero value otherwise.
 
 ### GetDeletedAtOk
 
-`func (o *TLSPrivateKeyResponseAttributes) GetDeletedAtOk() (*time.Time, bool)`
+`func (o *TlsPrivateKeyResponseAttributes) GetDeletedAtOk() (*time.Time, bool)`
 
 GetDeletedAtOk returns a tuple with the DeletedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDeletedAt
 
-`func (o *TLSPrivateKeyResponseAttributes) SetDeletedAt(v time.Time)`
+`func (o *TlsPrivateKeyResponseAttributes) SetDeletedAt(v time.Time)`
 
 SetDeletedAt sets DeletedAt field to given value.
 
 ### HasDeletedAt
 
-`func (o *TLSPrivateKeyResponseAttributes) HasDeletedAt() bool`
+`func (o *TlsPrivateKeyResponseAttributes) HasDeletedAt() bool`
 
 HasDeletedAt returns a boolean if a field has been set.
 
 ### SetDeletedAtNil
 
-`func (o *TLSPrivateKeyResponseAttributes) SetDeletedAtNil(b bool)`
+`func (o *TlsPrivateKeyResponseAttributes) SetDeletedAtNil(b bool)`
 
  SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
 
 ### UnsetDeletedAt
-`func (o *TLSPrivateKeyResponseAttributes) UnsetDeletedAt()`
+`func (o *TlsPrivateKeyResponseAttributes) UnsetDeletedAt()`
 
 UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
 ### GetUpdatedAt
 
-`func (o *TLSPrivateKeyResponseAttributes) GetUpdatedAt() time.Time`
+`func (o *TlsPrivateKeyResponseAttributes) GetUpdatedAt() time.Time`
 
 GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
 
 ### GetUpdatedAtOk
 
-`func (o *TLSPrivateKeyResponseAttributes) GetUpdatedAtOk() (*time.Time, bool)`
+`func (o *TlsPrivateKeyResponseAttributes) GetUpdatedAtOk() (*time.Time, bool)`
 
 GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetUpdatedAt
 
-`func (o *TLSPrivateKeyResponseAttributes) SetUpdatedAt(v time.Time)`
+`func (o *TlsPrivateKeyResponseAttributes) SetUpdatedAt(v time.Time)`
 
 SetUpdatedAt sets UpdatedAt field to given value.
 
 ### HasUpdatedAt
 
-`func (o *TLSPrivateKeyResponseAttributes) HasUpdatedAt() bool`
+`func (o *TlsPrivateKeyResponseAttributes) HasUpdatedAt() bool`
 
 HasUpdatedAt returns a boolean if a field has been set.
 
 ### SetUpdatedAtNil
 
-`func (o *TLSPrivateKeyResponseAttributes) SetUpdatedAtNil(b bool)`
+`func (o *TlsPrivateKeyResponseAttributes) SetUpdatedAtNil(b bool)`
 
  SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
 
 ### UnsetUpdatedAt
-`func (o *TLSPrivateKeyResponseAttributes) UnsetUpdatedAt()`
+`func (o *TlsPrivateKeyResponseAttributes) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 ### GetName
 
-`func (o *TLSPrivateKeyResponseAttributes) GetName() string`
+`func (o *TlsPrivateKeyResponseAttributes) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *TLSPrivateKeyResponseAttributes) GetNameOk() (*string, bool)`
+`func (o *TlsPrivateKeyResponseAttributes) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *TLSPrivateKeyResponseAttributes) SetName(v string)`
+`func (o *TlsPrivateKeyResponseAttributes) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *TLSPrivateKeyResponseAttributes) HasName() bool`
+`func (o *TlsPrivateKeyResponseAttributes) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 ### GetKeyLength
 
-`func (o *TLSPrivateKeyResponseAttributes) GetKeyLength() int32`
+`func (o *TlsPrivateKeyResponseAttributes) GetKeyLength() int32`
 
 GetKeyLength returns the KeyLength field if non-nil, zero value otherwise.
 
 ### GetKeyLengthOk
 
-`func (o *TLSPrivateKeyResponseAttributes) GetKeyLengthOk() (*int32, bool)`
+`func (o *TlsPrivateKeyResponseAttributes) GetKeyLengthOk() (*int32, bool)`
 
 GetKeyLengthOk returns a tuple with the KeyLength field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyLength
 
-`func (o *TLSPrivateKeyResponseAttributes) SetKeyLength(v int32)`
+`func (o *TlsPrivateKeyResponseAttributes) SetKeyLength(v int32)`
 
 SetKeyLength sets KeyLength field to given value.
 
 ### HasKeyLength
 
-`func (o *TLSPrivateKeyResponseAttributes) HasKeyLength() bool`
+`func (o *TlsPrivateKeyResponseAttributes) HasKeyLength() bool`
 
 HasKeyLength returns a boolean if a field has been set.
 
 ### GetKeyType
 
-`func (o *TLSPrivateKeyResponseAttributes) GetKeyType() string`
+`func (o *TlsPrivateKeyResponseAttributes) GetKeyType() string`
 
 GetKeyType returns the KeyType field if non-nil, zero value otherwise.
 
 ### GetKeyTypeOk
 
-`func (o *TLSPrivateKeyResponseAttributes) GetKeyTypeOk() (*string, bool)`
+`func (o *TlsPrivateKeyResponseAttributes) GetKeyTypeOk() (*string, bool)`
 
 GetKeyTypeOk returns a tuple with the KeyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyType
 
-`func (o *TLSPrivateKeyResponseAttributes) SetKeyType(v string)`
+`func (o *TlsPrivateKeyResponseAttributes) SetKeyType(v string)`
 
 SetKeyType sets KeyType field to given value.
 
 ### HasKeyType
 
-`func (o *TLSPrivateKeyResponseAttributes) HasKeyType() bool`
+`func (o *TlsPrivateKeyResponseAttributes) HasKeyType() bool`
 
 HasKeyType returns a boolean if a field has been set.
 
 ### GetReplace
 
-`func (o *TLSPrivateKeyResponseAttributes) GetReplace() bool`
+`func (o *TlsPrivateKeyResponseAttributes) GetReplace() bool`
 
 GetReplace returns the Replace field if non-nil, zero value otherwise.
 
 ### GetReplaceOk
 
-`func (o *TLSPrivateKeyResponseAttributes) GetReplaceOk() (*bool, bool)`
+`func (o *TlsPrivateKeyResponseAttributes) GetReplaceOk() (*bool, bool)`
 
 GetReplaceOk returns a tuple with the Replace field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReplace
 
-`func (o *TLSPrivateKeyResponseAttributes) SetReplace(v bool)`
+`func (o *TlsPrivateKeyResponseAttributes) SetReplace(v bool)`
 
 SetReplace sets Replace field to given value.
 
 ### HasReplace
 
-`func (o *TLSPrivateKeyResponseAttributes) HasReplace() bool`
+`func (o *TlsPrivateKeyResponseAttributes) HasReplace() bool`
 
 HasReplace returns a boolean if a field has been set.
 
 ### GetPublicKeySha1
 
-`func (o *TLSPrivateKeyResponseAttributes) GetPublicKeySha1() string`
+`func (o *TlsPrivateKeyResponseAttributes) GetPublicKeySha1() string`
 
 GetPublicKeySha1 returns the PublicKeySha1 field if non-nil, zero value otherwise.
 
 ### GetPublicKeySha1Ok
 
-`func (o *TLSPrivateKeyResponseAttributes) GetPublicKeySha1Ok() (*string, bool)`
+`func (o *TlsPrivateKeyResponseAttributes) GetPublicKeySha1Ok() (*string, bool)`
 
 GetPublicKeySha1Ok returns a tuple with the PublicKeySha1 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPublicKeySha1
 
-`func (o *TLSPrivateKeyResponseAttributes) SetPublicKeySha1(v string)`
+`func (o *TlsPrivateKeyResponseAttributes) SetPublicKeySha1(v string)`
 
 SetPublicKeySha1 sets PublicKeySha1 field to given value.
 
 ### HasPublicKeySha1
 
-`func (o *TLSPrivateKeyResponseAttributes) HasPublicKeySha1() bool`
+`func (o *TlsPrivateKeyResponseAttributes) HasPublicKeySha1() bool`
 
 HasPublicKeySha1 returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -20,7 +20,7 @@ import (
 // TypeResource Resource type
 type TypeResource string
 
-// List of resourceTyperesource
+// List of type_resource
 const (
 	TYPERESOURCE_KV_STORE     TypeResource = "kv-store"
 	TYPERESOURCE_SECRET_STORE TypeResource = "secret-store"
@@ -73,7 +73,7 @@ func (v TypeResource) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to resourceTyperesource value
+// Ptr returns reference to type_resource value
 func (v TypeResource) Ptr() *TypeResource {
 	return &v
 }

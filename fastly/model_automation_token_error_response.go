@@ -18,10 +18,10 @@ import (
 
 // AutomationTokenErrorResponse struct for AutomationTokenErrorResponse
 type AutomationTokenErrorResponse struct {
-	Detail               *string `json:"detail,omitempty"`
-	Errors               []any   `json:"errors,omitempty"`
-	Status               *int32  `json:"status,omitempty"`
-	Title                *string `json:"title,omitempty"`
+	Detail               *string       `json:"detail,omitempty"`
+	Errors               []interface{} `json:"errors,omitempty"`
+	Status               *int32        `json:"status,omitempty"`
+	Title                *string       `json:"title,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -77,9 +77,9 @@ func (o *AutomationTokenErrorResponse) SetDetail(v string) {
 }
 
 // GetErrors returns the Errors field value if set, zero value otherwise.
-func (o *AutomationTokenErrorResponse) GetErrors() []any {
+func (o *AutomationTokenErrorResponse) GetErrors() []interface{} {
 	if o == nil || o.Errors == nil {
-		var ret []any
+		var ret []interface{}
 		return ret
 	}
 	return o.Errors
@@ -87,7 +87,7 @@ func (o *AutomationTokenErrorResponse) GetErrors() []any {
 
 // GetErrorsOk returns a tuple with the Errors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AutomationTokenErrorResponse) GetErrorsOk() ([]any, bool) {
+func (o *AutomationTokenErrorResponse) GetErrorsOk() ([]interface{}, bool) {
 	if o == nil || o.Errors == nil {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *AutomationTokenErrorResponse) HasErrors() bool {
 	return false
 }
 
-// SetErrors gets a reference to the given []any and assigns it to the Errors field.
-func (o *AutomationTokenErrorResponse) SetErrors(v []any) {
+// SetErrors gets a reference to the given []interface{} and assigns it to the Errors field.
+func (o *AutomationTokenErrorResponse) SetErrors(v []interface{}) {
 	o.Errors = v
 }
 

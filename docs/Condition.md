@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Name of the condition. Required. | [optional] 
 **Priority** | Pointer to **string** | A numeric string. Priority determines execution order. Lower numbers execute first. | [optional] [default to "100"]
 **Statement** | Pointer to **string** | A conditional expression in VCL used to determine if the condition is met. | [optional] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** | A numeric string that represents the service version. | [optional] 
 **Type** | Pointer to **string** | Type of the condition. Required. | [optional] 
 
@@ -141,30 +141,30 @@ SetStatement sets Statement field to given value.
 
 HasStatement returns a boolean if a field has been set.
 
-### GetServiceID
+### GetServiceId
 
-`func (o *Condition) GetServiceID() string`
+`func (o *Condition) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *Condition) GetServiceIDOk() (*string, bool)`
+`func (o *Condition) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *Condition) SetServiceID(v string)`
+`func (o *Condition) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *Condition) HasServiceID() bool`
+`func (o *Condition) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -218,3 +218,5 @@ HasType returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

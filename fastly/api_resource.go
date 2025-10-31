@@ -36,11 +36,11 @@ type ResourceAPI interface {
 		Create a link between a resource and a service version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateResourceRequest
 	*/
-	CreateResource(ctx context.Context, serviceID string, versionID int32) APICreateResourceRequest
+	CreateResource(ctx context.Context, serviceId string, versionId int32) APICreateResourceRequest
 
 	// CreateResourceExecute executes the request
 	//  @return ResourceResponse
@@ -52,12 +52,12 @@ type ResourceAPI interface {
 		Delete a link between a resource and a service version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param id An alphanumeric string identifying the resource link.
 		 @return APIDeleteResourceRequest
 	*/
-	DeleteResource(ctx context.Context, serviceID string, versionID int32, id string) APIDeleteResourceRequest
+	DeleteResource(ctx context.Context, serviceId string, versionId int32, id string) APIDeleteResourceRequest
 
 	// DeleteResourceExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type ResourceAPI interface {
 		Display a resource link by its identifier.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param id An alphanumeric string identifying the resource link.
 		 @return APIGetResourceRequest
 	*/
-	GetResource(ctx context.Context, serviceID string, versionID int32, id string) APIGetResourceRequest
+	GetResource(ctx context.Context, serviceId string, versionId int32, id string) APIGetResourceRequest
 
 	// GetResourceExecute executes the request
 	//  @return ResourceResponse
@@ -86,11 +86,11 @@ type ResourceAPI interface {
 		List links between resources and services
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListResourcesRequest
 	*/
-	ListResources(ctx context.Context, serviceID string, versionID int32) APIListResourcesRequest
+	ListResources(ctx context.Context, serviceId string, versionId int32) APIListResourcesRequest
 
 	// ListResourcesExecute executes the request
 	//  @return []ResourceResponse
@@ -102,12 +102,12 @@ type ResourceAPI interface {
 		Update a link between a resource and a service version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param id An alphanumeric string identifying the resource link.
 		 @return APIUpdateResourceRequest
 	*/
-	UpdateResource(ctx context.Context, serviceID string, versionID int32, id string) APIUpdateResourceRequest
+	UpdateResource(ctx context.Context, serviceId string, versionId int32, id string) APIUpdateResourceRequest
 
 	// UpdateResourceExecute executes the request
 	//  @return ResourceResponse
@@ -121,15 +121,15 @@ type ResourceAPIService service
 type APICreateResourceRequest struct {
 	ctx        context.Context
 	APIService ResourceAPI
-	serviceID  string
-	versionID  int32
-	resourceID *string
+	serviceId  string
+	versionId  int32
+	resourceId *string
 	name       *string
 }
 
-// ResourceID The ID of the underlying linked resource.
-func (r *APICreateResourceRequest) ResourceID(resourceID string) *APICreateResourceRequest {
-	r.resourceID = &resourceID
+// ResourceId The ID of the underlying linked resource.
+func (r *APICreateResourceRequest) ResourceId(resourceId string) *APICreateResourceRequest {
+	r.resourceId = &resourceId
 	return r
 }
 
@@ -150,16 +150,16 @@ CreateResource Create a resource link
 Create a link between a resource and a service version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateResourceRequest
 */
-func (a *ResourceAPIService) CreateResource(ctx context.Context, serviceID string, versionID int32) APICreateResourceRequest {
+func (a *ResourceAPIService) CreateResource(ctx context.Context, serviceId string, versionId int32) APICreateResourceRequest {
 	return APICreateResourceRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -179,8 +179,8 @@ func (a *ResourceAPIService) CreateResourceExecute(r APICreateResourceRequest) (
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/resource"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -203,8 +203,8 @@ func (a *ResourceAPIService) CreateResourceExecute(r APICreateResourceRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.resourceID != nil {
-		localVarFormParams.Add("resource_id", parameterToString(*r.resourceID, ""))
+	if r.resourceId != nil {
+		localVarFormParams.Add("resource_id", parameterToString(*r.resourceId, ""))
 	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
@@ -277,8 +277,8 @@ func (a *ResourceAPIService) CreateResourceExecute(r APICreateResourceRequest) (
 type APIDeleteResourceRequest struct {
 	ctx        context.Context
 	APIService ResourceAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	id         string
 }
 
@@ -293,17 +293,17 @@ DeleteResource Delete a resource link
 Delete a link between a resource and a service version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param id An alphanumeric string identifying the resource link.
  @return APIDeleteResourceRequest
 */
-func (a *ResourceAPIService) DeleteResource(ctx context.Context, serviceID string, versionID int32, id string) APIDeleteResourceRequest {
+func (a *ResourceAPIService) DeleteResource(ctx context.Context, serviceId string, versionId int32, id string) APIDeleteResourceRequest {
 	return APIDeleteResourceRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		id:         id,
 	}
 }
@@ -324,8 +324,8 @@ func (a *ResourceAPIService) DeleteResourceExecute(r APIDeleteResourceRequest) (
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/resource/{id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"id"+"}", gourl.PathEscape(parameterToString(r.id, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -417,8 +417,8 @@ func (a *ResourceAPIService) DeleteResourceExecute(r APIDeleteResourceRequest) (
 type APIGetResourceRequest struct {
 	ctx        context.Context
 	APIService ResourceAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	id         string
 }
 
@@ -433,17 +433,17 @@ GetResource Display a resource link
 Display a resource link by its identifier.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param id An alphanumeric string identifying the resource link.
  @return APIGetResourceRequest
 */
-func (a *ResourceAPIService) GetResource(ctx context.Context, serviceID string, versionID int32, id string) APIGetResourceRequest {
+func (a *ResourceAPIService) GetResource(ctx context.Context, serviceId string, versionId int32, id string) APIGetResourceRequest {
 	return APIGetResourceRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		id:         id,
 	}
 }
@@ -464,8 +464,8 @@ func (a *ResourceAPIService) GetResourceExecute(r APIGetResourceRequest) (*Resou
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/resource/{id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"id"+"}", gourl.PathEscape(parameterToString(r.id, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -557,8 +557,8 @@ func (a *ResourceAPIService) GetResourceExecute(r APIGetResourceRequest) (*Resou
 type APIListResourcesRequest struct {
 	ctx        context.Context
 	APIService ResourceAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -572,16 +572,16 @@ ListResources List resource links
 List links between resources and services
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListResourcesRequest
 */
-func (a *ResourceAPIService) ListResources(ctx context.Context, serviceID string, versionID int32) APIListResourcesRequest {
+func (a *ResourceAPIService) ListResources(ctx context.Context, serviceId string, versionId int32) APIListResourcesRequest {
 	return APIListResourcesRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -601,8 +601,8 @@ func (a *ResourceAPIService) ListResourcesExecute(r APIListResourcesRequest) ([]
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/resource"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -693,16 +693,16 @@ func (a *ResourceAPIService) ListResourcesExecute(r APIListResourcesRequest) ([]
 type APIUpdateResourceRequest struct {
 	ctx        context.Context
 	APIService ResourceAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	id         string
-	resourceID *string
+	resourceId *string
 	name       *string
 }
 
-// ResourceID The ID of the underlying linked resource.
-func (r *APIUpdateResourceRequest) ResourceID(resourceID string) *APIUpdateResourceRequest {
-	r.resourceID = &resourceID
+// ResourceId The ID of the underlying linked resource.
+func (r *APIUpdateResourceRequest) ResourceId(resourceId string) *APIUpdateResourceRequest {
+	r.resourceId = &resourceId
 	return r
 }
 
@@ -723,17 +723,17 @@ UpdateResource Update a resource link
 Update a link between a resource and a service version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param id An alphanumeric string identifying the resource link.
  @return APIUpdateResourceRequest
 */
-func (a *ResourceAPIService) UpdateResource(ctx context.Context, serviceID string, versionID int32, id string) APIUpdateResourceRequest {
+func (a *ResourceAPIService) UpdateResource(ctx context.Context, serviceId string, versionId int32, id string) APIUpdateResourceRequest {
 	return APIUpdateResourceRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		id:         id,
 	}
 }
@@ -754,8 +754,8 @@ func (a *ResourceAPIService) UpdateResourceExecute(r APIUpdateResourceRequest) (
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/resource/{id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"id"+"}", gourl.PathEscape(parameterToString(r.id, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -779,8 +779,8 @@ func (a *ResourceAPIService) UpdateResourceExecute(r APIUpdateResourceRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.resourceID != nil {
-		localVarFormParams.Add("resource_id", parameterToString(*r.resourceID, ""))
+	if r.resourceId != nil {
+		localVarFormParams.Add("resource_id", parameterToString(*r.resourceId, ""))
 	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))

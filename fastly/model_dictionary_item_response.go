@@ -29,8 +29,8 @@ type DictionaryItemResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
-	DictionaryID         *string      `json:"dictionary_id,omitempty"`
-	ServiceID            *string      `json:"service_id,omitempty"`
+	DictionaryId         *string      `json:"dictionary_id,omitempty"`
+	ServiceId            *string      `json:"service_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -246,68 +246,68 @@ func (o *DictionaryItemResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetDictionaryID returns the DictionaryID field value if set, zero value otherwise.
-func (o *DictionaryItemResponse) GetDictionaryID() string {
-	if o == nil || o.DictionaryID == nil {
+// GetDictionaryId returns the DictionaryId field value if set, zero value otherwise.
+func (o *DictionaryItemResponse) GetDictionaryId() string {
+	if o == nil || o.DictionaryId == nil {
 		var ret string
 		return ret
 	}
-	return *o.DictionaryID
+	return *o.DictionaryId
 }
 
-// GetDictionaryIDOk returns a tuple with the DictionaryID field value if set, nil otherwise
+// GetDictionaryIdOk returns a tuple with the DictionaryId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DictionaryItemResponse) GetDictionaryIDOk() (*string, bool) {
-	if o == nil || o.DictionaryID == nil {
+func (o *DictionaryItemResponse) GetDictionaryIdOk() (*string, bool) {
+	if o == nil || o.DictionaryId == nil {
 		return nil, false
 	}
-	return o.DictionaryID, true
+	return o.DictionaryId, true
 }
 
-// HasDictionaryID returns a boolean if a field has been set.
-func (o *DictionaryItemResponse) HasDictionaryID() bool {
-	if o != nil && o.DictionaryID != nil {
+// HasDictionaryId returns a boolean if a field has been set.
+func (o *DictionaryItemResponse) HasDictionaryId() bool {
+	if o != nil && o.DictionaryId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetDictionaryID gets a reference to the given string and assigns it to the DictionaryID field.
-func (o *DictionaryItemResponse) SetDictionaryID(v string) {
-	o.DictionaryID = &v
+// SetDictionaryId gets a reference to the given string and assigns it to the DictionaryId field.
+func (o *DictionaryItemResponse) SetDictionaryId(v string) {
+	o.DictionaryId = &v
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *DictionaryItemResponse) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *DictionaryItemResponse) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DictionaryItemResponse) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *DictionaryItemResponse) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *DictionaryItemResponse) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *DictionaryItemResponse) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *DictionaryItemResponse) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *DictionaryItemResponse) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -329,11 +329,11 @@ func (o DictionaryItemResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.DictionaryID != nil {
-		toSerialize["dictionary_id"] = o.DictionaryID
+	if o.DictionaryId != nil {
+		toSerialize["dictionary_id"] = o.DictionaryId
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 
 	for key, value := range o.AdditionalProperties {

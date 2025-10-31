@@ -37,11 +37,11 @@ type PackageAPI interface {
 		List detailed information about the Compute package for the specified service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIGetPackageRequest
 	*/
-	GetPackage(ctx context.Context, serviceID string, versionID int32) APIGetPackageRequest
+	GetPackage(ctx context.Context, serviceId string, versionId int32) APIGetPackageRequest
 
 	// GetPackageExecute executes the request
 	//  @return PackageResponse
@@ -53,11 +53,11 @@ type PackageAPI interface {
 		Upload a Compute package associated with the specified service version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIPutPackageRequest
 	*/
-	PutPackage(ctx context.Context, serviceID string, versionID int32) APIPutPackageRequest
+	PutPackage(ctx context.Context, serviceId string, versionId int32) APIPutPackageRequest
 
 	// PutPackageExecute executes the request
 	//  @return PackageResponse
@@ -71,8 +71,8 @@ type PackageAPIService service
 type APIGetPackageRequest struct {
 	ctx        context.Context
 	APIService PackageAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -86,16 +86,16 @@ GetPackage Get details of the service's Compute package.
 List detailed information about the Compute package for the specified service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIGetPackageRequest
 */
-func (a *PackageAPIService) GetPackage(ctx context.Context, serviceID string, versionID int32) APIGetPackageRequest {
+func (a *PackageAPIService) GetPackage(ctx context.Context, serviceId string, versionId int32) APIGetPackageRequest {
 	return APIGetPackageRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -115,8 +115,8 @@ func (a *PackageAPIService) GetPackageExecute(r APIGetPackageRequest) (*PackageR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/package"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -205,12 +205,12 @@ func (a *PackageAPIService) GetPackageExecute(r APIGetPackageRequest) (*PackageR
 
 // APIPutPackageRequest represents a request for the resource.
 type APIPutPackageRequest struct {
-	ctx            context.Context
-	APIService     PackageAPI
-	serviceID      string
-	versionID      int32
-	expect         *string
-	computePackage **os.File
+	ctx        context.Context
+	APIService PackageAPI
+	serviceId  string
+	versionId  int32
+	expect     *string
+	package_   **os.File
 }
 
 // Expect We recommend using the Expect header because it may identify issues with the request based upon the headers alone instead of requiring you to wait until the entire binary package upload has completed.
@@ -219,9 +219,9 @@ func (r *APIPutPackageRequest) Expect(expect string) *APIPutPackageRequest {
 	return r
 }
 
-// ComputePackage The content of the Wasm binary package.
-func (r *APIPutPackageRequest) ComputePackage(computePackage *os.File) *APIPutPackageRequest {
-	r.computePackage = &computePackage
+// Package_ The content of the Wasm binary package.
+func (r *APIPutPackageRequest) Package_(package_ *os.File) *APIPutPackageRequest {
+	r.package_ = &package_
 	return r
 }
 
@@ -236,16 +236,16 @@ PutPackage Upload a Compute package.
 Upload a Compute package associated with the specified service version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIPutPackageRequest
 */
-func (a *PackageAPIService) PutPackage(ctx context.Context, serviceID string, versionID int32) APIPutPackageRequest {
+func (a *PackageAPIService) PutPackage(ctx context.Context, serviceId string, versionId int32) APIPutPackageRequest {
 	return APIPutPackageRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -265,8 +265,8 @@ func (a *PackageAPIService) PutPackageExecute(r APIPutPackageRequest) (*PackageR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/package"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -292,23 +292,23 @@ func (a *PackageAPIService) PutPackageExecute(r APIPutPackageRequest) (*PackageR
 	if r.expect != nil {
 		localVarHeaderParams["expect"] = parameterToString(*r.expect, "")
 	}
-	var computePackageLocalVarFormFileName string
-	var computePackageLocalVarFileName string
-	var computePackageLocalVarFileBytes []byte
+	var package_LocalVarFormFileName string
+	var package_LocalVarFileName string
+	var package_LocalVarFileBytes []byte
 
-	computePackageLocalVarFormFileName = "package"
+	package_LocalVarFormFileName = "package"
 
-	var computePackageLocalVarFile *os.File
-	if r.computePackage != nil {
-		computePackageLocalVarFile = *r.computePackage
+	var package_LocalVarFile *os.File
+	if r.package_ != nil {
+		package_LocalVarFile = *r.package_
 	}
-	if computePackageLocalVarFile != nil {
-		fbs, _ := ioutil.ReadAll(computePackageLocalVarFile)
-		computePackageLocalVarFileBytes = fbs
-		computePackageLocalVarFileName = computePackageLocalVarFile.Name()
-		_ = computePackageLocalVarFile.Close()
+	if package_LocalVarFile != nil {
+		fbs, _ := ioutil.ReadAll(package_LocalVarFile)
+		package_LocalVarFileBytes = fbs
+		package_LocalVarFileName = package_LocalVarFile.Name()
+		_ = package_LocalVarFile.Close()
 	}
-	formFiles = append(formFiles, formFile{fileBytes: computePackageLocalVarFileBytes, fileName: computePackageLocalVarFileName, formFileName: computePackageLocalVarFormFileName})
+	formFiles = append(formFiles, formFile{fileBytes: package_LocalVarFileBytes, fileName: package_LocalVarFileName, formFileName: package_LocalVarFormFileName})
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

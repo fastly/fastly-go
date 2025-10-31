@@ -29,6 +29,8 @@ type UserResponse struct {
 	// Indicates if a new password is required at next login.
 	RequireNewPassword NullableBool `json:"require_new_password,omitempty"`
 	Role               *RoleUser    `json:"role,omitempty"`
+	// A list of role IDs assigned to the user.
+	Roles []string `json:"roles,omitempty"`
 	// Indicates if 2FA is enabled on the user.
 	TwoFactorAuthEnabled NullableBool `json:"two_factor_auth_enabled,omitempty"`
 	// Indicates if 2FA is required by the user's customer account.
@@ -39,10 +41,10 @@ type UserResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ID        *string      `json:"id,omitempty"`
+	Id        *string      `json:"id,omitempty"`
 	// The alphanumeric string identifying a email login.
 	EmailHash            *string `json:"email_hash,omitempty"`
-	CustomerID           *string `json:"customer_id,omitempty"`
+	CustomerId           *string `json:"customer_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -279,6 +281,38 @@ func (o *UserResponse) SetRole(v RoleUser) {
 	o.Role = &v
 }
 
+// GetRoles returns the Roles field value if set, zero value otherwise.
+func (o *UserResponse) GetRoles() []string {
+	if o == nil || o.Roles == nil {
+		var ret []string
+		return ret
+	}
+	return o.Roles
+}
+
+// GetRolesOk returns a tuple with the Roles field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *UserResponse) GetRolesOk() ([]string, bool) {
+	if o == nil || o.Roles == nil {
+		return nil, false
+	}
+	return o.Roles, true
+}
+
+// HasRoles returns a boolean if a field has been set.
+func (o *UserResponse) HasRoles() bool {
+	if o != nil && o.Roles != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRoles gets a reference to the given []string and assigns it to the Roles field.
+func (o *UserResponse) SetRoles(v []string) {
+	o.Roles = v
+}
+
 // GetTwoFactorAuthEnabled returns the TwoFactorAuthEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UserResponse) GetTwoFactorAuthEnabled() bool {
 	if o == nil || o.TwoFactorAuthEnabled.Get() == nil {
@@ -483,36 +517,36 @@ func (o *UserResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *UserResponse) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *UserResponse) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserResponse) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *UserResponse) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *UserResponse) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *UserResponse) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *UserResponse) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *UserResponse) SetId(v string) {
+	o.Id = &v
 }
 
 // GetEmailHash returns the EmailHash field value if set, zero value otherwise.
@@ -547,36 +581,36 @@ func (o *UserResponse) SetEmailHash(v string) {
 	o.EmailHash = &v
 }
 
-// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
-func (o *UserResponse) GetCustomerID() string {
-	if o == nil || o.CustomerID == nil {
+// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
+func (o *UserResponse) GetCustomerId() string {
+	if o == nil || o.CustomerId == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerID
+	return *o.CustomerId
 }
 
-// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
+// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *UserResponse) GetCustomerIDOk() (*string, bool) {
-	if o == nil || o.CustomerID == nil {
+func (o *UserResponse) GetCustomerIdOk() (*string, bool) {
+	if o == nil || o.CustomerId == nil {
 		return nil, false
 	}
-	return o.CustomerID, true
+	return o.CustomerId, true
 }
 
-// HasCustomerID returns a boolean if a field has been set.
-func (o *UserResponse) HasCustomerID() bool {
-	if o != nil && o.CustomerID != nil {
+// HasCustomerId returns a boolean if a field has been set.
+func (o *UserResponse) HasCustomerId() bool {
+	if o != nil && o.CustomerId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
-func (o *UserResponse) SetCustomerID(v string) {
-	o.CustomerID = &v
+// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
+func (o *UserResponse) SetCustomerId(v string) {
+	o.CustomerId = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -601,6 +635,9 @@ func (o UserResponse) MarshalJSON() ([]byte, error) {
 	if o.Role != nil {
 		toSerialize["role"] = o.Role
 	}
+	if o.Roles != nil {
+		toSerialize["roles"] = o.Roles
+	}
 	if o.TwoFactorAuthEnabled.IsSet() {
 		toSerialize["two_factor_auth_enabled"] = o.TwoFactorAuthEnabled.Get()
 	}
@@ -616,14 +653,14 @@ func (o UserResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 	if o.EmailHash != nil {
 		toSerialize["email_hash"] = o.EmailHash
 	}
-	if o.CustomerID != nil {
-		toSerialize["customer_id"] = o.CustomerID
+	if o.CustomerId != nil {
+		toSerialize["customer_id"] = o.CustomerId
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -651,6 +688,7 @@ func (o *UserResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "locked")
 		delete(additionalProperties, "require_new_password")
 		delete(additionalProperties, "role")
+		delete(additionalProperties, "roles")
 		delete(additionalProperties, "two_factor_auth_enabled")
 		delete(additionalProperties, "two_factor_setup_required")
 		delete(additionalProperties, "created_at")

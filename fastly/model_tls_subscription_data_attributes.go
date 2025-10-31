@@ -16,34 +16,34 @@ import (
 	"encoding/json"
 )
 
-// TLSSubscriptionDataAttributes struct for TLSSubscriptionDataAttributes
-type TLSSubscriptionDataAttributes struct {
+// TlsSubscriptionDataAttributes struct for TlsSubscriptionDataAttributes
+type TlsSubscriptionDataAttributes struct {
 	// The entity that issues and certifies the TLS certificates for your subscription, either `certainly`, `lets-encrypt`, or `globalsign`. To migrate the subscription from one certificate authority to another, such as to migrate from 'lets-encrypt' to 'certainly',  pass `certificate_authority` to the PATCH endpoint. To migrate from 'globalsign' to 'certainly', contact Fastly Support.
 	CertificateAuthority *string `json:"certificate_authority,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TLSSubscriptionDataAttributes TLSSubscriptionDataAttributes
+type _TlsSubscriptionDataAttributes TlsSubscriptionDataAttributes
 
-// NewTLSSubscriptionDataAttributes instantiates a new TLSSubscriptionDataAttributes object
+// NewTlsSubscriptionDataAttributes instantiates a new TlsSubscriptionDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSSubscriptionDataAttributes() *TLSSubscriptionDataAttributes {
-	this := TLSSubscriptionDataAttributes{}
+func NewTlsSubscriptionDataAttributes() *TlsSubscriptionDataAttributes {
+	this := TlsSubscriptionDataAttributes{}
 	return &this
 }
 
-// NewTLSSubscriptionDataAttributesWithDefaults instantiates a new TLSSubscriptionDataAttributes object
+// NewTlsSubscriptionDataAttributesWithDefaults instantiates a new TlsSubscriptionDataAttributes object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSSubscriptionDataAttributesWithDefaults() *TLSSubscriptionDataAttributes {
-	this := TLSSubscriptionDataAttributes{}
+func NewTlsSubscriptionDataAttributesWithDefaults() *TlsSubscriptionDataAttributes {
+	this := TlsSubscriptionDataAttributes{}
 	return &this
 }
 
 // GetCertificateAuthority returns the CertificateAuthority field value if set, zero value otherwise.
-func (o *TLSSubscriptionDataAttributes) GetCertificateAuthority() string {
+func (o *TlsSubscriptionDataAttributes) GetCertificateAuthority() string {
 	if o == nil || o.CertificateAuthority == nil {
 		var ret string
 		return ret
@@ -53,7 +53,7 @@ func (o *TLSSubscriptionDataAttributes) GetCertificateAuthority() string {
 
 // GetCertificateAuthorityOk returns a tuple with the CertificateAuthority field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSSubscriptionDataAttributes) GetCertificateAuthorityOk() (*string, bool) {
+func (o *TlsSubscriptionDataAttributes) GetCertificateAuthorityOk() (*string, bool) {
 	if o == nil || o.CertificateAuthority == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *TLSSubscriptionDataAttributes) GetCertificateAuthorityOk() (*string, bo
 }
 
 // HasCertificateAuthority returns a boolean if a field has been set.
-func (o *TLSSubscriptionDataAttributes) HasCertificateAuthority() bool {
+func (o *TlsSubscriptionDataAttributes) HasCertificateAuthority() bool {
 	if o != nil && o.CertificateAuthority != nil {
 		return true
 	}
@@ -70,13 +70,13 @@ func (o *TLSSubscriptionDataAttributes) HasCertificateAuthority() bool {
 }
 
 // SetCertificateAuthority gets a reference to the given string and assigns it to the CertificateAuthority field.
-func (o *TLSSubscriptionDataAttributes) SetCertificateAuthority(v string) {
+func (o *TlsSubscriptionDataAttributes) SetCertificateAuthority(v string) {
 	o.CertificateAuthority = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSSubscriptionDataAttributes) MarshalJSON() ([]byte, error) {
+func (o TlsSubscriptionDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.CertificateAuthority != nil {
 		toSerialize["certificate_authority"] = o.CertificateAuthority
@@ -91,11 +91,11 @@ func (o TLSSubscriptionDataAttributes) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSSubscriptionDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSSubscriptionDataAttributes := _TLSSubscriptionDataAttributes{}
+func (o *TlsSubscriptionDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsSubscriptionDataAttributes := _TlsSubscriptionDataAttributes{}
 
-	if err = json.Unmarshal(bytes, &varTLSSubscriptionDataAttributes); err == nil {
-		*o = TLSSubscriptionDataAttributes(varTLSSubscriptionDataAttributes)
+	if err = json.Unmarshal(bytes, &varTlsSubscriptionDataAttributes); err == nil {
+		*o = TlsSubscriptionDataAttributes(varTlsSubscriptionDataAttributes)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -108,48 +108,48 @@ func (o *TLSSubscriptionDataAttributes) UnmarshalJSON(bytes []byte) (err error) 
 	return err
 }
 
-// NullableTLSSubscriptionDataAttributes is a helper abstraction for handling nullable tlssubscriptiondataattributes types.
-type NullableTLSSubscriptionDataAttributes struct {
-	value *TLSSubscriptionDataAttributes
+// NullableTlsSubscriptionDataAttributes is a helper abstraction for handling nullable tlssubscriptiondataattributes types.
+type NullableTlsSubscriptionDataAttributes struct {
+	value *TlsSubscriptionDataAttributes
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSSubscriptionDataAttributes) Get() *TLSSubscriptionDataAttributes {
+func (v NullableTlsSubscriptionDataAttributes) Get() *TlsSubscriptionDataAttributes {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSSubscriptionDataAttributes) Set(val *TLSSubscriptionDataAttributes) {
+func (v *NullableTlsSubscriptionDataAttributes) Set(val *TlsSubscriptionDataAttributes) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSSubscriptionDataAttributes) IsSet() bool {
+func (v NullableTlsSubscriptionDataAttributes) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSSubscriptionDataAttributes) Unset() {
+func (v *NullableTlsSubscriptionDataAttributes) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSSubscriptionDataAttributes returns a pointer to a new instance of NullableTLSSubscriptionDataAttributes.
-func NewNullableTLSSubscriptionDataAttributes(val *TLSSubscriptionDataAttributes) *NullableTLSSubscriptionDataAttributes {
-	return &NullableTLSSubscriptionDataAttributes{value: val, isSet: true}
+// NewNullableTlsSubscriptionDataAttributes returns a pointer to a new instance of NullableTlsSubscriptionDataAttributes.
+func NewNullableTlsSubscriptionDataAttributes(val *TlsSubscriptionDataAttributes) *NullableTlsSubscriptionDataAttributes {
+	return &NullableTlsSubscriptionDataAttributes{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSSubscriptionDataAttributes) MarshalJSON() ([]byte, error) {
+func (v NullableTlsSubscriptionDataAttributes) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSSubscriptionDataAttributes) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsSubscriptionDataAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

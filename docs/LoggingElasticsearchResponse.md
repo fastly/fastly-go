@@ -10,21 +10,21 @@ Name | Type | Description | Notes
 **Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). Must produce valid JSON that Elasticsearch can ingest. | [optional] 
 **LogProcessingRegion** | Pointer to **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [optional] [default to "none"]
 **FormatVersion** | Pointer to **string** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to "2"]
-**TLSCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
-**TLSClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TLSClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TLSHostname** | Pointer to **NullableString** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to "null"]
+**TlsCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
+**TlsClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TlsClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TlsHostname** | Pointer to **NullableString** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to "null"]
 **RequestMaxEntries** | Pointer to **int32** | The maximum number of logs sent in one request. Defaults `0` for unbounded. | [optional] [default to 0]
 **RequestMaxBytes** | Pointer to **int32** | The maximum number of bytes sent in one request. Defaults `0` for unbounded. | [optional] [default to 0]
 **Index** | Pointer to **string** | The name of the Elasticsearch index to send documents (logs) to. The index must follow the Elasticsearch [index format rules](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html). We support [strftime](https://www.man7.org/linux/man-pages/man3/strftime.3.html) interpolated variables inside braces prefixed with a pound symbol. For example, `#{%F}` will interpolate as `YYYY-MM-DD` with today&#39;s date. | [optional] 
-**URL** | Pointer to **string** | The URL to stream logs to. Must use HTTPS. | [optional] 
+**Url** | Pointer to **string** | The URL to stream logs to. Must use HTTPS. | [optional] 
 **Pipeline** | Pointer to **NullableString** | The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html). | [optional] 
 **User** | Pointer to **NullableString** | Basic Auth username. | [optional] 
 **Password** | Pointer to **NullableString** | Basic Auth password. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
@@ -216,146 +216,146 @@ SetFormatVersion sets FormatVersion field to given value.
 
 HasFormatVersion returns a boolean if a field has been set.
 
-### GetTLSCaCert
+### GetTlsCaCert
 
-`func (o *LoggingElasticsearchResponse) GetTLSCaCert() string`
+`func (o *LoggingElasticsearchResponse) GetTlsCaCert() string`
 
-GetTLSCaCert returns the TLSCaCert field if non-nil, zero value otherwise.
+GetTlsCaCert returns the TlsCaCert field if non-nil, zero value otherwise.
 
-### GetTLSCaCertOk
+### GetTlsCaCertOk
 
-`func (o *LoggingElasticsearchResponse) GetTLSCaCertOk() (*string, bool)`
+`func (o *LoggingElasticsearchResponse) GetTlsCaCertOk() (*string, bool)`
 
-GetTLSCaCertOk returns a tuple with the TLSCaCert field if it's non-nil, zero value otherwise
+GetTlsCaCertOk returns a tuple with the TlsCaCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSCaCert
+### SetTlsCaCert
 
-`func (o *LoggingElasticsearchResponse) SetTLSCaCert(v string)`
+`func (o *LoggingElasticsearchResponse) SetTlsCaCert(v string)`
 
-SetTLSCaCert sets TLSCaCert field to given value.
+SetTlsCaCert sets TlsCaCert field to given value.
 
-### HasTLSCaCert
+### HasTlsCaCert
 
-`func (o *LoggingElasticsearchResponse) HasTLSCaCert() bool`
+`func (o *LoggingElasticsearchResponse) HasTlsCaCert() bool`
 
-HasTLSCaCert returns a boolean if a field has been set.
+HasTlsCaCert returns a boolean if a field has been set.
 
-### SetTLSCaCertNil
+### SetTlsCaCertNil
 
-`func (o *LoggingElasticsearchResponse) SetTLSCaCertNil(b bool)`
+`func (o *LoggingElasticsearchResponse) SetTlsCaCertNil(b bool)`
 
- SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
+ SetTlsCaCertNil sets the value for TlsCaCert to be an explicit nil
 
-### UnsetTLSCaCert
-`func (o *LoggingElasticsearchResponse) UnsetTLSCaCert()`
+### UnsetTlsCaCert
+`func (o *LoggingElasticsearchResponse) UnsetTlsCaCert()`
 
-UnsetTLSCaCert ensures that no value is present for TLSCaCert, not even an explicit nil
-### GetTLSClientCert
+UnsetTlsCaCert ensures that no value is present for TlsCaCert, not even an explicit nil
+### GetTlsClientCert
 
-`func (o *LoggingElasticsearchResponse) GetTLSClientCert() string`
+`func (o *LoggingElasticsearchResponse) GetTlsClientCert() string`
 
-GetTLSClientCert returns the TLSClientCert field if non-nil, zero value otherwise.
+GetTlsClientCert returns the TlsClientCert field if non-nil, zero value otherwise.
 
-### GetTLSClientCertOk
+### GetTlsClientCertOk
 
-`func (o *LoggingElasticsearchResponse) GetTLSClientCertOk() (*string, bool)`
+`func (o *LoggingElasticsearchResponse) GetTlsClientCertOk() (*string, bool)`
 
-GetTLSClientCertOk returns a tuple with the TLSClientCert field if it's non-nil, zero value otherwise
+GetTlsClientCertOk returns a tuple with the TlsClientCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSClientCert
+### SetTlsClientCert
 
-`func (o *LoggingElasticsearchResponse) SetTLSClientCert(v string)`
+`func (o *LoggingElasticsearchResponse) SetTlsClientCert(v string)`
 
-SetTLSClientCert sets TLSClientCert field to given value.
+SetTlsClientCert sets TlsClientCert field to given value.
 
-### HasTLSClientCert
+### HasTlsClientCert
 
-`func (o *LoggingElasticsearchResponse) HasTLSClientCert() bool`
+`func (o *LoggingElasticsearchResponse) HasTlsClientCert() bool`
 
-HasTLSClientCert returns a boolean if a field has been set.
+HasTlsClientCert returns a boolean if a field has been set.
 
-### SetTLSClientCertNil
+### SetTlsClientCertNil
 
-`func (o *LoggingElasticsearchResponse) SetTLSClientCertNil(b bool)`
+`func (o *LoggingElasticsearchResponse) SetTlsClientCertNil(b bool)`
 
- SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
+ SetTlsClientCertNil sets the value for TlsClientCert to be an explicit nil
 
-### UnsetTLSClientCert
-`func (o *LoggingElasticsearchResponse) UnsetTLSClientCert()`
+### UnsetTlsClientCert
+`func (o *LoggingElasticsearchResponse) UnsetTlsClientCert()`
 
-UnsetTLSClientCert ensures that no value is present for TLSClientCert, not even an explicit nil
-### GetTLSClientKey
+UnsetTlsClientCert ensures that no value is present for TlsClientCert, not even an explicit nil
+### GetTlsClientKey
 
-`func (o *LoggingElasticsearchResponse) GetTLSClientKey() string`
+`func (o *LoggingElasticsearchResponse) GetTlsClientKey() string`
 
-GetTLSClientKey returns the TLSClientKey field if non-nil, zero value otherwise.
+GetTlsClientKey returns the TlsClientKey field if non-nil, zero value otherwise.
 
-### GetTLSClientKeyOk
+### GetTlsClientKeyOk
 
-`func (o *LoggingElasticsearchResponse) GetTLSClientKeyOk() (*string, bool)`
+`func (o *LoggingElasticsearchResponse) GetTlsClientKeyOk() (*string, bool)`
 
-GetTLSClientKeyOk returns a tuple with the TLSClientKey field if it's non-nil, zero value otherwise
+GetTlsClientKeyOk returns a tuple with the TlsClientKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSClientKey
+### SetTlsClientKey
 
-`func (o *LoggingElasticsearchResponse) SetTLSClientKey(v string)`
+`func (o *LoggingElasticsearchResponse) SetTlsClientKey(v string)`
 
-SetTLSClientKey sets TLSClientKey field to given value.
+SetTlsClientKey sets TlsClientKey field to given value.
 
-### HasTLSClientKey
+### HasTlsClientKey
 
-`func (o *LoggingElasticsearchResponse) HasTLSClientKey() bool`
+`func (o *LoggingElasticsearchResponse) HasTlsClientKey() bool`
 
-HasTLSClientKey returns a boolean if a field has been set.
+HasTlsClientKey returns a boolean if a field has been set.
 
-### SetTLSClientKeyNil
+### SetTlsClientKeyNil
 
-`func (o *LoggingElasticsearchResponse) SetTLSClientKeyNil(b bool)`
+`func (o *LoggingElasticsearchResponse) SetTlsClientKeyNil(b bool)`
 
- SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
+ SetTlsClientKeyNil sets the value for TlsClientKey to be an explicit nil
 
-### UnsetTLSClientKey
-`func (o *LoggingElasticsearchResponse) UnsetTLSClientKey()`
+### UnsetTlsClientKey
+`func (o *LoggingElasticsearchResponse) UnsetTlsClientKey()`
 
-UnsetTLSClientKey ensures that no value is present for TLSClientKey, not even an explicit nil
-### GetTLSHostname
+UnsetTlsClientKey ensures that no value is present for TlsClientKey, not even an explicit nil
+### GetTlsHostname
 
-`func (o *LoggingElasticsearchResponse) GetTLSHostname() string`
+`func (o *LoggingElasticsearchResponse) GetTlsHostname() string`
 
-GetTLSHostname returns the TLSHostname field if non-nil, zero value otherwise.
+GetTlsHostname returns the TlsHostname field if non-nil, zero value otherwise.
 
-### GetTLSHostnameOk
+### GetTlsHostnameOk
 
-`func (o *LoggingElasticsearchResponse) GetTLSHostnameOk() (*string, bool)`
+`func (o *LoggingElasticsearchResponse) GetTlsHostnameOk() (*string, bool)`
 
-GetTLSHostnameOk returns a tuple with the TLSHostname field if it's non-nil, zero value otherwise
+GetTlsHostnameOk returns a tuple with the TlsHostname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSHostname
+### SetTlsHostname
 
-`func (o *LoggingElasticsearchResponse) SetTLSHostname(v string)`
+`func (o *LoggingElasticsearchResponse) SetTlsHostname(v string)`
 
-SetTLSHostname sets TLSHostname field to given value.
+SetTlsHostname sets TlsHostname field to given value.
 
-### HasTLSHostname
+### HasTlsHostname
 
-`func (o *LoggingElasticsearchResponse) HasTLSHostname() bool`
+`func (o *LoggingElasticsearchResponse) HasTlsHostname() bool`
 
-HasTLSHostname returns a boolean if a field has been set.
+HasTlsHostname returns a boolean if a field has been set.
 
-### SetTLSHostnameNil
+### SetTlsHostnameNil
 
-`func (o *LoggingElasticsearchResponse) SetTLSHostnameNil(b bool)`
+`func (o *LoggingElasticsearchResponse) SetTlsHostnameNil(b bool)`
 
- SetTLSHostnameNil sets the value for TLSHostname to be an explicit nil
+ SetTlsHostnameNil sets the value for TlsHostname to be an explicit nil
 
-### UnsetTLSHostname
-`func (o *LoggingElasticsearchResponse) UnsetTLSHostname()`
+### UnsetTlsHostname
+`func (o *LoggingElasticsearchResponse) UnsetTlsHostname()`
 
-UnsetTLSHostname ensures that no value is present for TLSHostname, not even an explicit nil
+UnsetTlsHostname ensures that no value is present for TlsHostname, not even an explicit nil
 ### GetRequestMaxEntries
 
 `func (o *LoggingElasticsearchResponse) GetRequestMaxEntries() int32`
@@ -431,30 +431,30 @@ SetIndex sets Index field to given value.
 
 HasIndex returns a boolean if a field has been set.
 
-### GetURL
+### GetUrl
 
-`func (o *LoggingElasticsearchResponse) GetURL() string`
+`func (o *LoggingElasticsearchResponse) GetUrl() string`
 
-GetURL returns the URL field if non-nil, zero value otherwise.
+GetUrl returns the Url field if non-nil, zero value otherwise.
 
-### GetURLOk
+### GetUrlOk
 
-`func (o *LoggingElasticsearchResponse) GetURLOk() (*string, bool)`
+`func (o *LoggingElasticsearchResponse) GetUrlOk() (*string, bool)`
 
-GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURL
+### SetUrl
 
-`func (o *LoggingElasticsearchResponse) SetURL(v string)`
+`func (o *LoggingElasticsearchResponse) SetUrl(v string)`
 
-SetURL sets URL field to given value.
+SetUrl sets Url field to given value.
 
-### HasURL
+### HasUrl
 
-`func (o *LoggingElasticsearchResponse) HasURL() bool`
+`func (o *LoggingElasticsearchResponse) HasUrl() bool`
 
-HasURL returns a boolean if a field has been set.
+HasUrl returns a boolean if a field has been set.
 
 ### GetPipeline
 
@@ -666,30 +666,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *LoggingElasticsearchResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceID
+### GetServiceId
 
-`func (o *LoggingElasticsearchResponse) GetServiceID() string`
+`func (o *LoggingElasticsearchResponse) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *LoggingElasticsearchResponse) GetServiceIDOk() (*string, bool)`
+`func (o *LoggingElasticsearchResponse) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *LoggingElasticsearchResponse) SetServiceID(v string)`
+`func (o *LoggingElasticsearchResponse) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *LoggingElasticsearchResponse) HasServiceID() bool`
+`func (o *LoggingElasticsearchResponse) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -718,3 +718,5 @@ HasVersion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

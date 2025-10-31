@@ -36,11 +36,11 @@ type BackendAPI interface {
 		Create a backend for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateBackendRequest
 	*/
-	CreateBackend(ctx context.Context, serviceID string, versionID int32) APICreateBackendRequest
+	CreateBackend(ctx context.Context, serviceId string, versionId int32) APICreateBackendRequest
 
 	// CreateBackendExecute executes the request
 	//  @return BackendResponse
@@ -52,12 +52,12 @@ type BackendAPI interface {
 		Delete the backend for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param backendName The name of the backend.
 		 @return APIDeleteBackendRequest
 	*/
-	DeleteBackend(ctx context.Context, serviceID string, versionID int32, backendName string) APIDeleteBackendRequest
+	DeleteBackend(ctx context.Context, serviceId string, versionId int32, backendName string) APIDeleteBackendRequest
 
 	// DeleteBackendExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type BackendAPI interface {
 		Get the backend for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param backendName The name of the backend.
 		 @return APIGetBackendRequest
 	*/
-	GetBackend(ctx context.Context, serviceID string, versionID int32, backendName string) APIGetBackendRequest
+	GetBackend(ctx context.Context, serviceId string, versionId int32, backendName string) APIGetBackendRequest
 
 	// GetBackendExecute executes the request
 	//  @return BackendResponse
@@ -86,11 +86,11 @@ type BackendAPI interface {
 		List all backends for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListBackendsRequest
 	*/
-	ListBackends(ctx context.Context, serviceID string, versionID int32) APIListBackendsRequest
+	ListBackends(ctx context.Context, serviceId string, versionId int32) APIListBackendsRequest
 
 	// ListBackendsExecute executes the request
 	//  @return []BackendResponse
@@ -102,12 +102,12 @@ type BackendAPI interface {
 		Update the backend for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param backendName The name of the backend.
 		 @return APIUpdateBackendRequest
 	*/
-	UpdateBackend(ctx context.Context, serviceID string, versionID int32, backendName string) APIUpdateBackendRequest
+	UpdateBackend(ctx context.Context, serviceId string, versionId int32, backendName string) APIUpdateBackendRequest
 
 	// UpdateBackendExecute executes the request
 	//  @return BackendResponse
@@ -121,8 +121,8 @@ type BackendAPIService service
 type APICreateBackendRequest struct {
 	ctx                  context.Context
 	APIService           BackendAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	address              *string
 	autoLoadbalance      *bool
 	betweenBytesTimeout  *int32
@@ -136,8 +136,8 @@ type APICreateBackendRequest struct {
 	ipv6                 *string
 	keepaliveTime        *int32
 	maxConn              *int32
-	maxTLSVersion        *string
-	minTLSVersion        *string
+	maxTlsVersion        *string
+	minTlsVersion        *string
 	name                 *string
 	overrideHost         *string
 	port                 *int32
@@ -239,15 +239,15 @@ func (r *APICreateBackendRequest) MaxConn(maxConn int32) *APICreateBackendReques
 	return r
 }
 
-// MaxTLSVersion Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
-func (r *APICreateBackendRequest) MaxTLSVersion(maxTLSVersion string) *APICreateBackendRequest {
-	r.maxTLSVersion = &maxTLSVersion
+// MaxTlsVersion Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
+func (r *APICreateBackendRequest) MaxTlsVersion(maxTlsVersion string) *APICreateBackendRequest {
+	r.maxTlsVersion = &maxTlsVersion
 	return r
 }
 
-// MinTLSVersion Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
-func (r *APICreateBackendRequest) MinTLSVersion(minTLSVersion string) *APICreateBackendRequest {
-	r.minTLSVersion = &minTLSVersion
+// MinTlsVersion Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
+func (r *APICreateBackendRequest) MinTlsVersion(minTlsVersion string) *APICreateBackendRequest {
+	r.minTlsVersion = &minTlsVersion
 	return r
 }
 
@@ -388,16 +388,16 @@ CreateBackend Create a backend
 Create a backend for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateBackendRequest
 */
-func (a *BackendAPIService) CreateBackend(ctx context.Context, serviceID string, versionID int32) APICreateBackendRequest {
+func (a *BackendAPIService) CreateBackend(ctx context.Context, serviceId string, versionId int32) APICreateBackendRequest {
 	return APICreateBackendRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -417,8 +417,8 @@ func (a *BackendAPIService) CreateBackendExecute(r APICreateBackendRequest) (*Ba
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/backend"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -480,11 +480,11 @@ func (a *BackendAPIService) CreateBackendExecute(r APICreateBackendRequest) (*Ba
 	if r.maxConn != nil {
 		localVarFormParams.Add("max_conn", parameterToString(*r.maxConn, ""))
 	}
-	if r.maxTLSVersion != nil {
-		localVarFormParams.Add("max_tls_version", parameterToString(*r.maxTLSVersion, ""))
+	if r.maxTlsVersion != nil {
+		localVarFormParams.Add("max_tls_version", parameterToString(*r.maxTlsVersion, ""))
 	}
-	if r.minTLSVersion != nil {
-		localVarFormParams.Add("min_tls_version", parameterToString(*r.minTLSVersion, ""))
+	if r.minTlsVersion != nil {
+		localVarFormParams.Add("min_tls_version", parameterToString(*r.minTlsVersion, ""))
 	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
@@ -617,8 +617,8 @@ func (a *BackendAPIService) CreateBackendExecute(r APICreateBackendRequest) (*Ba
 type APIDeleteBackendRequest struct {
 	ctx         context.Context
 	APIService  BackendAPI
-	serviceID   string
-	versionID   int32
+	serviceId   string
+	versionId   int32
 	backendName string
 }
 
@@ -633,17 +633,17 @@ DeleteBackend Delete a backend
 Delete the backend for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param backendName The name of the backend.
  @return APIDeleteBackendRequest
 */
-func (a *BackendAPIService) DeleteBackend(ctx context.Context, serviceID string, versionID int32, backendName string) APIDeleteBackendRequest {
+func (a *BackendAPIService) DeleteBackend(ctx context.Context, serviceId string, versionId int32, backendName string) APIDeleteBackendRequest {
 	return APIDeleteBackendRequest{
 		APIService:  a,
 		ctx:         ctx,
-		serviceID:   serviceID,
-		versionID:   versionID,
+		serviceId:   serviceId,
+		versionId:   versionId,
 		backendName: backendName,
 	}
 }
@@ -664,8 +664,8 @@ func (a *BackendAPIService) DeleteBackendExecute(r APIDeleteBackendRequest) (*In
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/backend/{backend_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"backend_name"+"}", gourl.PathEscape(parameterToString(r.backendName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -757,8 +757,8 @@ func (a *BackendAPIService) DeleteBackendExecute(r APIDeleteBackendRequest) (*In
 type APIGetBackendRequest struct {
 	ctx         context.Context
 	APIService  BackendAPI
-	serviceID   string
-	versionID   int32
+	serviceId   string
+	versionId   int32
 	backendName string
 }
 
@@ -773,17 +773,17 @@ GetBackend Describe a backend
 Get the backend for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param backendName The name of the backend.
  @return APIGetBackendRequest
 */
-func (a *BackendAPIService) GetBackend(ctx context.Context, serviceID string, versionID int32, backendName string) APIGetBackendRequest {
+func (a *BackendAPIService) GetBackend(ctx context.Context, serviceId string, versionId int32, backendName string) APIGetBackendRequest {
 	return APIGetBackendRequest{
 		APIService:  a,
 		ctx:         ctx,
-		serviceID:   serviceID,
-		versionID:   versionID,
+		serviceId:   serviceId,
+		versionId:   versionId,
 		backendName: backendName,
 	}
 }
@@ -804,8 +804,8 @@ func (a *BackendAPIService) GetBackendExecute(r APIGetBackendRequest) (*BackendR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/backend/{backend_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"backend_name"+"}", gourl.PathEscape(parameterToString(r.backendName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -897,8 +897,8 @@ func (a *BackendAPIService) GetBackendExecute(r APIGetBackendRequest) (*BackendR
 type APIListBackendsRequest struct {
 	ctx        context.Context
 	APIService BackendAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -912,16 +912,16 @@ ListBackends List backends
 List all backends for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListBackendsRequest
 */
-func (a *BackendAPIService) ListBackends(ctx context.Context, serviceID string, versionID int32) APIListBackendsRequest {
+func (a *BackendAPIService) ListBackends(ctx context.Context, serviceId string, versionId int32) APIListBackendsRequest {
 	return APIListBackendsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -941,8 +941,8 @@ func (a *BackendAPIService) ListBackendsExecute(r APIListBackendsRequest) ([]Bac
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/backend"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1033,8 +1033,8 @@ func (a *BackendAPIService) ListBackendsExecute(r APIListBackendsRequest) ([]Bac
 type APIUpdateBackendRequest struct {
 	ctx                  context.Context
 	APIService           BackendAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	backendName          string
 	address              *string
 	autoLoadbalance      *bool
@@ -1049,8 +1049,8 @@ type APIUpdateBackendRequest struct {
 	ipv6                 *string
 	keepaliveTime        *int32
 	maxConn              *int32
-	maxTLSVersion        *string
-	minTLSVersion        *string
+	maxTlsVersion        *string
+	minTlsVersion        *string
 	name                 *string
 	overrideHost         *string
 	port                 *int32
@@ -1152,15 +1152,15 @@ func (r *APIUpdateBackendRequest) MaxConn(maxConn int32) *APIUpdateBackendReques
 	return r
 }
 
-// MaxTLSVersion Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
-func (r *APIUpdateBackendRequest) MaxTLSVersion(maxTLSVersion string) *APIUpdateBackendRequest {
-	r.maxTLSVersion = &maxTLSVersion
+// MaxTlsVersion Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
+func (r *APIUpdateBackendRequest) MaxTlsVersion(maxTlsVersion string) *APIUpdateBackendRequest {
+	r.maxTlsVersion = &maxTlsVersion
 	return r
 }
 
-// MinTLSVersion Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
-func (r *APIUpdateBackendRequest) MinTLSVersion(minTLSVersion string) *APIUpdateBackendRequest {
-	r.minTLSVersion = &minTLSVersion
+// MinTlsVersion Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
+func (r *APIUpdateBackendRequest) MinTlsVersion(minTlsVersion string) *APIUpdateBackendRequest {
+	r.minTlsVersion = &minTlsVersion
 	return r
 }
 
@@ -1301,17 +1301,17 @@ UpdateBackend Update a backend
 Update the backend for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param backendName The name of the backend.
  @return APIUpdateBackendRequest
 */
-func (a *BackendAPIService) UpdateBackend(ctx context.Context, serviceID string, versionID int32, backendName string) APIUpdateBackendRequest {
+func (a *BackendAPIService) UpdateBackend(ctx context.Context, serviceId string, versionId int32, backendName string) APIUpdateBackendRequest {
 	return APIUpdateBackendRequest{
 		APIService:  a,
 		ctx:         ctx,
-		serviceID:   serviceID,
-		versionID:   versionID,
+		serviceId:   serviceId,
+		versionId:   versionId,
 		backendName: backendName,
 	}
 }
@@ -1332,8 +1332,8 @@ func (a *BackendAPIService) UpdateBackendExecute(r APIUpdateBackendRequest) (*Ba
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/backend/{backend_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"backend_name"+"}", gourl.PathEscape(parameterToString(r.backendName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -1396,11 +1396,11 @@ func (a *BackendAPIService) UpdateBackendExecute(r APIUpdateBackendRequest) (*Ba
 	if r.maxConn != nil {
 		localVarFormParams.Add("max_conn", parameterToString(*r.maxConn, ""))
 	}
-	if r.maxTLSVersion != nil {
-		localVarFormParams.Add("max_tls_version", parameterToString(*r.maxTLSVersion, ""))
+	if r.maxTlsVersion != nil {
+		localVarFormParams.Add("max_tls_version", parameterToString(*r.maxTlsVersion, ""))
 	}
-	if r.minTLSVersion != nil {
-		localVarFormParams.Add("min_tls_version", parameterToString(*r.minTLSVersion, ""))
+	if r.minTlsVersion != nil {
+		localVarFormParams.Add("min_tls_version", parameterToString(*r.minTlsVersion, ""))
 	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))

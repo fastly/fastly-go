@@ -31,14 +31,14 @@ import (
 
 func main() {
     directorName := "directorName_example" // string | Name for the Director.
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     backendName := "backendName_example" // string | The name of the backend.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DirectorBackendAPI.CreateDirectorBackend(ctx, directorName, serviceID, versionID, backendName).Execute()
+    resp, r, err := apiClient.DirectorBackendAPI.CreateDirectorBackend(ctx, directorName, serviceId, versionId, backendName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DirectorBackendAPI.CreateDirectorBackend`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -55,8 +55,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **directorName** | **string** | Name for the Director. | 
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **backendName** | **string** | The name of the backend. | 
 
 ### Other Parameters
@@ -104,14 +104,14 @@ import (
 
 func main() {
     directorName := "directorName_example" // string | Name for the Director.
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     backendName := "backendName_example" // string | The name of the backend.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DirectorBackendAPI.DeleteDirectorBackend(ctx, directorName, serviceID, versionID, backendName).Execute()
+    resp, r, err := apiClient.DirectorBackendAPI.DeleteDirectorBackend(ctx, directorName, serviceId, versionId, backendName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DirectorBackendAPI.DeleteDirectorBackend`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -128,8 +128,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **directorName** | **string** | Name for the Director. | 
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **backendName** | **string** | The name of the backend. | 
 
 ### Other Parameters
@@ -177,14 +177,14 @@ import (
 
 func main() {
     directorName := "directorName_example" // string | Name for the Director.
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     backendName := "backendName_example" // string | The name of the backend.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DirectorBackendAPI.GetDirectorBackend(ctx, directorName, serviceID, versionID, backendName).Execute()
+    resp, r, err := apiClient.DirectorBackendAPI.GetDirectorBackend(ctx, directorName, serviceId, versionId, backendName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DirectorBackendAPI.GetDirectorBackend`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -201,8 +201,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **directorName** | **string** | Name for the Director. | 
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **backendName** | **string** | The name of the backend. | 
 
 ### Other Parameters
@@ -228,3 +228,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

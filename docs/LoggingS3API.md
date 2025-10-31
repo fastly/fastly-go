@@ -32,8 +32,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     name := "name_example" // string | The name for the real-time logging configuration. (optional)
     placement := "placement_example" // string | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  (optional)
     responseCondition := "responseCondition_example" // string | The name of an existing condition in the configured endpoint, or leave blank to always execute. (optional)
@@ -54,14 +54,14 @@ func main() {
     publicKey := "publicKey_example" // string | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. (optional) (default to "null")
     redundancy := "redundancy_example" // string | The S3 redundancy level. (optional) (default to "null")
     secretKey := "secretKey_example" // string | The secret key for your S3 account. Not required if `iam_role` is provided. (optional)
-    serverSideEncryptionKmsKeyID := "serverSideEncryptionKmsKeyId_example" // string | Optional server-side KMS Key ID. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. (optional) (default to "null")
+    serverSideEncryptionKmsKeyId := "serverSideEncryptionKmsKeyId_example" // string | Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. (optional) (default to "null")
     serverSideEncryption := "serverSideEncryption_example" // string | Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption. (optional) (default to "null")
     fileMaxBytes := int32(56) // int32 | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.) (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingS3API.CreateLogAwsS3(ctx, serviceID, versionID).Name(name).Placement(placement).ResponseCondition(responseCondition).Format(format).LogProcessingRegion(logProcessingRegion).FormatVersion(formatVersion).MessageType(messageType).TimestampFormat(timestampFormat).CompressionCodec(compressionCodec).Period(period).GzipLevel(gzipLevel).AccessKey(accessKey).ACL(acl).BucketName(bucketName).Domain(domain).IamRole(iamRole).Path(path).PublicKey(publicKey).Redundancy(redundancy).SecretKey(secretKey).ServerSideEncryptionKmsKeyID(serverSideEncryptionKmsKeyID).ServerSideEncryption(serverSideEncryption).FileMaxBytes(fileMaxBytes).Execute()
+    resp, r, err := apiClient.LoggingS3API.CreateLogAwsS3(ctx, serviceId, versionId).Name(name).Placement(placement).ResponseCondition(responseCondition).Format(format).LogProcessingRegion(logProcessingRegion).FormatVersion(formatVersion).MessageType(messageType).TimestampFormat(timestampFormat).CompressionCodec(compressionCodec).Period(period).GzipLevel(gzipLevel).AccessKey(accessKey).Acl(acl).BucketName(bucketName).Domain(domain).IamRole(iamRole).Path(path).PublicKey(publicKey).Redundancy(redundancy).SecretKey(secretKey).ServerSideEncryptionKmsKeyId(serverSideEncryptionKmsKeyId).ServerSideEncryption(serverSideEncryption).FileMaxBytes(fileMaxBytes).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoggingS3API.CreateLogAwsS3`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -77,8 +77,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -87,7 +87,7 @@ Other parameters are passed through a pointer to a apiCreateLogAwsS3Request stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string** | The name for the real-time logging configuration. |  **placement** | **string** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  |  **responseCondition** | **string** | The name of an existing condition in the configured endpoint, or leave blank to always execute. |  **format** | **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [default to &quot;%h %l %u %t \&quot;%r\&quot; %&amp;gt;s %b&quot;] **logProcessingRegion** | **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [default to &quot;none&quot;] **formatVersion** | **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [default to 2] **messageType** | **string** | How the message should be formatted. | [default to &quot;classic&quot;] **timestampFormat** | **string** | A timestamp format |  **compressionCodec** | **string** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. |  **period** | **int32** | How frequently log files are finalized so they can be available for reading (in seconds). | [default to 3600] **gzipLevel** | **int32** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [default to 0] **accessKey** | **string** | The access key for your S3 account. Not required if `iam_role` is provided. |  **acl** | **string** | The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information. |  **bucketName** | **string** | The bucket name for S3 account. |  **domain** | **string** | The domain of the Amazon S3 endpoint. |  **iamRole** | **string** | The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if `access_key` and `secret_key` are provided. |  **path** | **string** | The path to upload logs to. | [default to &quot;null&quot;] **publicKey** | **string** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [default to &quot;null&quot;] **redundancy** | **string** | The S3 redundancy level. | [default to &quot;null&quot;] **secretKey** | **string** | The secret key for your S3 account. Not required if `iam_role` is provided. |  **serverSideEncryptionKmsKeyID** | **string** | Optional server-side KMS Key ID. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. | [default to &quot;null&quot;] **serverSideEncryption** | **string** | Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption. | [default to &quot;null&quot;] **fileMaxBytes** | **int32** | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.) | 
+ **name** | **string** | The name for the real-time logging configuration. |  **placement** | **string** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  |  **responseCondition** | **string** | The name of an existing condition in the configured endpoint, or leave blank to always execute. |  **format** | **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [default to &quot;%h %l %u %t \&quot;%r\&quot; %&amp;gt;s %b&quot;] **logProcessingRegion** | **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [default to &quot;none&quot;] **formatVersion** | **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [default to 2] **messageType** | **string** | How the message should be formatted. | [default to &quot;classic&quot;] **timestampFormat** | **string** | A timestamp format |  **compressionCodec** | **string** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. |  **period** | **int32** | How frequently log files are finalized so they can be available for reading (in seconds). | [default to 3600] **gzipLevel** | **int32** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [default to 0] **accessKey** | **string** | The access key for your S3 account. Not required if `iam_role` is provided. |  **acl** | **string** | The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information. |  **bucketName** | **string** | The bucket name for S3 account. |  **domain** | **string** | The domain of the Amazon S3 endpoint. |  **iamRole** | **string** | The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if `access_key` and `secret_key` are provided. |  **path** | **string** | The path to upload logs to. | [default to &quot;null&quot;] **publicKey** | **string** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [default to &quot;null&quot;] **redundancy** | **string** | The S3 redundancy level. | [default to &quot;null&quot;] **secretKey** | **string** | The secret key for your S3 account. Not required if `iam_role` is provided. |  **serverSideEncryptionKmsKeyId** | **string** | Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. | [default to &quot;null&quot;] **serverSideEncryption** | **string** | Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption. | [default to &quot;null&quot;] **fileMaxBytes** | **int32** | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.) | 
 
 ### Return type
 
@@ -124,14 +124,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     loggingS3Name := "loggingS3Name_example" // string | The name for the real-time logging configuration.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingS3API.DeleteLogAwsS3(ctx, serviceID, versionID, loggingS3Name).Execute()
+    resp, r, err := apiClient.LoggingS3API.DeleteLogAwsS3(ctx, serviceId, versionId, loggingS3Name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoggingS3API.DeleteLogAwsS3`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -147,8 +147,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **loggingS3Name** | **string** | The name for the real-time logging configuration. | 
 
 ### Other Parameters
@@ -195,14 +195,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     loggingS3Name := "loggingS3Name_example" // string | The name for the real-time logging configuration.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingS3API.GetLogAwsS3(ctx, serviceID, versionID, loggingS3Name).Execute()
+    resp, r, err := apiClient.LoggingS3API.GetLogAwsS3(ctx, serviceId, versionId, loggingS3Name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoggingS3API.GetLogAwsS3`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -218,8 +218,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **loggingS3Name** | **string** | The name for the real-time logging configuration. | 
 
 ### Other Parameters
@@ -266,13 +266,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingS3API.ListLogAwsS3(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.LoggingS3API.ListLogAwsS3(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoggingS3API.ListLogAwsS3`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -288,8 +288,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -335,8 +335,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     loggingS3Name := "loggingS3Name_example" // string | The name for the real-time logging configuration.
     name := "name_example" // string | The name for the real-time logging configuration. (optional)
     placement := "placement_example" // string | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  (optional)
@@ -358,14 +358,14 @@ func main() {
     publicKey := "publicKey_example" // string | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. (optional) (default to "null")
     redundancy := "redundancy_example" // string | The S3 redundancy level. (optional) (default to "null")
     secretKey := "secretKey_example" // string | The secret key for your S3 account. Not required if `iam_role` is provided. (optional)
-    serverSideEncryptionKmsKeyID := "serverSideEncryptionKmsKeyId_example" // string | Optional server-side KMS Key ID. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. (optional) (default to "null")
+    serverSideEncryptionKmsKeyId := "serverSideEncryptionKmsKeyId_example" // string | Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. (optional) (default to "null")
     serverSideEncryption := "serverSideEncryption_example" // string | Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption. (optional) (default to "null")
     fileMaxBytes := int32(56) // int32 | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.) (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.LoggingS3API.UpdateLogAwsS3(ctx, serviceID, versionID, loggingS3Name).Name(name).Placement(placement).ResponseCondition(responseCondition).Format(format).LogProcessingRegion(logProcessingRegion).FormatVersion(formatVersion).MessageType(messageType).TimestampFormat(timestampFormat).CompressionCodec(compressionCodec).Period(period).GzipLevel(gzipLevel).AccessKey(accessKey).ACL(acl).BucketName(bucketName).Domain(domain).IamRole(iamRole).Path(path).PublicKey(publicKey).Redundancy(redundancy).SecretKey(secretKey).ServerSideEncryptionKmsKeyID(serverSideEncryptionKmsKeyID).ServerSideEncryption(serverSideEncryption).FileMaxBytes(fileMaxBytes).Execute()
+    resp, r, err := apiClient.LoggingS3API.UpdateLogAwsS3(ctx, serviceId, versionId, loggingS3Name).Name(name).Placement(placement).ResponseCondition(responseCondition).Format(format).LogProcessingRegion(logProcessingRegion).FormatVersion(formatVersion).MessageType(messageType).TimestampFormat(timestampFormat).CompressionCodec(compressionCodec).Period(period).GzipLevel(gzipLevel).AccessKey(accessKey).Acl(acl).BucketName(bucketName).Domain(domain).IamRole(iamRole).Path(path).PublicKey(publicKey).Redundancy(redundancy).SecretKey(secretKey).ServerSideEncryptionKmsKeyId(serverSideEncryptionKmsKeyId).ServerSideEncryption(serverSideEncryption).FileMaxBytes(fileMaxBytes).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LoggingS3API.UpdateLogAwsS3`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -381,8 +381,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **loggingS3Name** | **string** | The name for the real-time logging configuration. | 
 
 ### Other Parameters
@@ -392,7 +392,7 @@ Other parameters are passed through a pointer to a apiUpdateLogAwsS3Request stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **string** | The name for the real-time logging configuration. |  **placement** | **string** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  |  **responseCondition** | **string** | The name of an existing condition in the configured endpoint, or leave blank to always execute. |  **format** | **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [default to &quot;%h %l %u %t \&quot;%r\&quot; %&amp;gt;s %b&quot;] **logProcessingRegion** | **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [default to &quot;none&quot;] **formatVersion** | **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [default to 2] **messageType** | **string** | How the message should be formatted. | [default to &quot;classic&quot;] **timestampFormat** | **string** | A timestamp format |  **compressionCodec** | **string** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. |  **period** | **int32** | How frequently log files are finalized so they can be available for reading (in seconds). | [default to 3600] **gzipLevel** | **int32** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [default to 0] **accessKey** | **string** | The access key for your S3 account. Not required if `iam_role` is provided. |  **acl** | **string** | The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information. |  **bucketName** | **string** | The bucket name for S3 account. |  **domain** | **string** | The domain of the Amazon S3 endpoint. |  **iamRole** | **string** | The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if `access_key` and `secret_key` are provided. |  **path** | **string** | The path to upload logs to. | [default to &quot;null&quot;] **publicKey** | **string** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [default to &quot;null&quot;] **redundancy** | **string** | The S3 redundancy level. | [default to &quot;null&quot;] **secretKey** | **string** | The secret key for your S3 account. Not required if `iam_role` is provided. |  **serverSideEncryptionKmsKeyID** | **string** | Optional server-side KMS Key ID. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. | [default to &quot;null&quot;] **serverSideEncryption** | **string** | Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption. | [default to &quot;null&quot;] **fileMaxBytes** | **int32** | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.) | 
+ **name** | **string** | The name for the real-time logging configuration. |  **placement** | **string** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  |  **responseCondition** | **string** | The name of an existing condition in the configured endpoint, or leave blank to always execute. |  **format** | **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [default to &quot;%h %l %u %t \&quot;%r\&quot; %&amp;gt;s %b&quot;] **logProcessingRegion** | **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [default to &quot;none&quot;] **formatVersion** | **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [default to 2] **messageType** | **string** | How the message should be formatted. | [default to &quot;classic&quot;] **timestampFormat** | **string** | A timestamp format |  **compressionCodec** | **string** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. |  **period** | **int32** | How frequently log files are finalized so they can be available for reading (in seconds). | [default to 3600] **gzipLevel** | **int32** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [default to 0] **accessKey** | **string** | The access key for your S3 account. Not required if `iam_role` is provided. |  **acl** | **string** | The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information. |  **bucketName** | **string** | The bucket name for S3 account. |  **domain** | **string** | The domain of the Amazon S3 endpoint. |  **iamRole** | **string** | The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if `access_key` and `secret_key` are provided. |  **path** | **string** | The path to upload logs to. | [default to &quot;null&quot;] **publicKey** | **string** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [default to &quot;null&quot;] **redundancy** | **string** | The S3 redundancy level. | [default to &quot;null&quot;] **secretKey** | **string** | The secret key for your S3 account. Not required if `iam_role` is provided. |  **serverSideEncryptionKmsKeyId** | **string** | Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. | [default to &quot;null&quot;] **serverSideEncryption** | **string** | Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption. | [default to &quot;null&quot;] **fileMaxBytes** | **int32** | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.) | 
 
 ### Return type
 
@@ -408,3 +408,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

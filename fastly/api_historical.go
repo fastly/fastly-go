@@ -79,10 +79,10 @@ type HistoricalAPI interface {
 		Fetches historical stats for a given service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetHistStatsServiceRequest
 	*/
-	GetHistStatsService(ctx context.Context, serviceID string) APIGetHistStatsServiceRequest
+	GetHistStatsService(ctx context.Context, serviceId string) APIGetHistStatsServiceRequest
 
 	// GetHistStatsServiceExecute executes the request
 	//  @return HistoricalStatsAggregatedResponse
@@ -94,11 +94,11 @@ type HistoricalAPI interface {
 		Fetches the specified field from the historical stats for a given service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @param field Name of the stats field.
 		 @return APIGetHistStatsServiceFieldRequest
 	*/
-	GetHistStatsServiceField(ctx context.Context, serviceID string, field string) APIGetHistStatsServiceFieldRequest
+	GetHistStatsServiceField(ctx context.Context, serviceId string, field string) APIGetHistStatsServiceFieldRequest
 
 	// GetHistStatsServiceFieldExecute executes the request
 	//  @return HistoricalStatsAggregatedResponse
@@ -686,7 +686,7 @@ func (a *HistoricalAPIService) GetHistStatsFieldExecute(r APIGetHistStatsFieldRe
 type APIGetHistStatsServiceRequest struct {
 	ctx        context.Context
 	APIService HistoricalAPI
-	serviceID  string
+	serviceId  string
 	from       *string
 	to         *string
 	by         *string
@@ -728,14 +728,14 @@ GetHistStatsService Get historical stats for a single service
 Fetches historical stats for a given service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetHistStatsServiceRequest
 */
-func (a *HistoricalAPIService) GetHistStatsService(ctx context.Context, serviceID string) APIGetHistStatsServiceRequest {
+func (a *HistoricalAPIService) GetHistStatsService(ctx context.Context, serviceId string) APIGetHistStatsServiceRequest {
 	return APIGetHistStatsServiceRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -755,7 +755,7 @@ func (a *HistoricalAPIService) GetHistStatsServiceExecute(r APIGetHistStatsServi
 	}
 
 	localVarPath := localBasePath + "/stats/service/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -858,7 +858,7 @@ func (a *HistoricalAPIService) GetHistStatsServiceExecute(r APIGetHistStatsServi
 type APIGetHistStatsServiceFieldRequest struct {
 	ctx        context.Context
 	APIService HistoricalAPI
-	serviceID  string
+	serviceId  string
 	field      string
 	from       *string
 	to         *string
@@ -901,15 +901,15 @@ GetHistStatsServiceField Get historical stats for a single service/field combina
 Fetches the specified field from the historical stats for a given service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @param field Name of the stats field.
  @return APIGetHistStatsServiceFieldRequest
 */
-func (a *HistoricalAPIService) GetHistStatsServiceField(ctx context.Context, serviceID string, field string) APIGetHistStatsServiceFieldRequest {
+func (a *HistoricalAPIService) GetHistStatsServiceField(ctx context.Context, serviceId string, field string) APIGetHistStatsServiceFieldRequest {
 	return APIGetHistStatsServiceFieldRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 		field:      field,
 	}
 }
@@ -930,7 +930,7 @@ func (a *HistoricalAPIService) GetHistStatsServiceFieldExecute(r APIGetHistStats
 	}
 
 	localVarPath := localBasePath + "/stats/service/{service_id}/field/{field}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"field"+"}", gourl.PathEscape(parameterToString(r.field, "")))
 
 	localVarHeaderParams := make(map[string]string)

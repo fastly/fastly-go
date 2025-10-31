@@ -30,9 +30,9 @@ type _DashboardItemPropertyVisualization DashboardItemPropertyVisualization
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDashboardItemPropertyVisualization(resourceType string, config DashboardItemPropertyVisualizationPropertyConfig) *DashboardItemPropertyVisualization {
+func NewDashboardItemPropertyVisualization(type_ string, config DashboardItemPropertyVisualizationPropertyConfig) *DashboardItemPropertyVisualization {
 	this := DashboardItemPropertyVisualization{}
-	this.Type = resourceType
+	this.Type = type_
 	this.Config = config
 	return &this
 }

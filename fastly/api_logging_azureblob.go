@@ -36,11 +36,11 @@ type LoggingAzureblobAPI interface {
 		Create an Azure Blob Storage logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogAzureRequest
 	*/
-	CreateLogAzure(ctx context.Context, serviceID string, versionID int32) APICreateLogAzureRequest
+	CreateLogAzure(ctx context.Context, serviceId string, versionId int32) APICreateLogAzureRequest
 
 	// CreateLogAzureExecute executes the request
 	//  @return LoggingAzureblobResponse
@@ -52,12 +52,12 @@ type LoggingAzureblobAPI interface {
 		Delete the Azure Blob Storage logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingAzureblobName The name for the real-time logging configuration.
 		 @return APIDeleteLogAzureRequest
 	*/
-	DeleteLogAzure(ctx context.Context, serviceID string, versionID int32, loggingAzureblobName string) APIDeleteLogAzureRequest
+	DeleteLogAzure(ctx context.Context, serviceId string, versionId int32, loggingAzureblobName string) APIDeleteLogAzureRequest
 
 	// DeleteLogAzureExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingAzureblobAPI interface {
 		Get the Azure Blob Storage logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingAzureblobName The name for the real-time logging configuration.
 		 @return APIGetLogAzureRequest
 	*/
-	GetLogAzure(ctx context.Context, serviceID string, versionID int32, loggingAzureblobName string) APIGetLogAzureRequest
+	GetLogAzure(ctx context.Context, serviceId string, versionId int32, loggingAzureblobName string) APIGetLogAzureRequest
 
 	// GetLogAzureExecute executes the request
 	//  @return LoggingAzureblobResponse
@@ -86,11 +86,11 @@ type LoggingAzureblobAPI interface {
 		List all of the Azure Blob Storage logging endpoints for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogAzureRequest
 	*/
-	ListLogAzure(ctx context.Context, serviceID string, versionID int32) APIListLogAzureRequest
+	ListLogAzure(ctx context.Context, serviceId string, versionId int32) APIListLogAzureRequest
 
 	// ListLogAzureExecute executes the request
 	//  @return []LoggingAzureblobResponse
@@ -102,12 +102,12 @@ type LoggingAzureblobAPI interface {
 		Update the Azure Blob Storage logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingAzureblobName The name for the real-time logging configuration.
 		 @return APIUpdateLogAzureRequest
 	*/
-	UpdateLogAzure(ctx context.Context, serviceID string, versionID int32, loggingAzureblobName string) APIUpdateLogAzureRequest
+	UpdateLogAzure(ctx context.Context, serviceId string, versionId int32, loggingAzureblobName string) APIUpdateLogAzureRequest
 
 	// UpdateLogAzureExecute executes the request
 	//  @return LoggingAzureblobResponse
@@ -121,8 +121,8 @@ type LoggingAzureblobAPIService service
 type APICreateLogAzureRequest struct {
 	ctx                 context.Context
 	APIService          LoggingAzureblobAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -255,16 +255,16 @@ CreateLogAzure Create an Azure Blob Storage log endpoint
 Create an Azure Blob Storage logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogAzureRequest
 */
-func (a *LoggingAzureblobAPIService) CreateLogAzure(ctx context.Context, serviceID string, versionID int32) APICreateLogAzureRequest {
+func (a *LoggingAzureblobAPIService) CreateLogAzure(ctx context.Context, serviceId string, versionId int32) APICreateLogAzureRequest {
 	return APICreateLogAzureRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -284,8 +284,8 @@ func (a *LoggingAzureblobAPIService) CreateLogAzureExecute(r APICreateLogAzureRe
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/azureblob"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -427,8 +427,8 @@ func (a *LoggingAzureblobAPIService) CreateLogAzureExecute(r APICreateLogAzureRe
 type APIDeleteLogAzureRequest struct {
 	ctx                  context.Context
 	APIService           LoggingAzureblobAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	loggingAzureblobName string
 }
 
@@ -443,17 +443,17 @@ DeleteLogAzure Delete the Azure Blob Storage log endpoint
 Delete the Azure Blob Storage logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingAzureblobName The name for the real-time logging configuration.
  @return APIDeleteLogAzureRequest
 */
-func (a *LoggingAzureblobAPIService) DeleteLogAzure(ctx context.Context, serviceID string, versionID int32, loggingAzureblobName string) APIDeleteLogAzureRequest {
+func (a *LoggingAzureblobAPIService) DeleteLogAzure(ctx context.Context, serviceId string, versionId int32, loggingAzureblobName string) APIDeleteLogAzureRequest {
 	return APIDeleteLogAzureRequest{
 		APIService:           a,
 		ctx:                  ctx,
-		serviceID:            serviceID,
-		versionID:            versionID,
+		serviceId:            serviceId,
+		versionId:            versionId,
 		loggingAzureblobName: loggingAzureblobName,
 	}
 }
@@ -474,8 +474,8 @@ func (a *LoggingAzureblobAPIService) DeleteLogAzureExecute(r APIDeleteLogAzureRe
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_azureblob_name"+"}", gourl.PathEscape(parameterToString(r.loggingAzureblobName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -567,8 +567,8 @@ func (a *LoggingAzureblobAPIService) DeleteLogAzureExecute(r APIDeleteLogAzureRe
 type APIGetLogAzureRequest struct {
 	ctx                  context.Context
 	APIService           LoggingAzureblobAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	loggingAzureblobName string
 }
 
@@ -583,17 +583,17 @@ GetLogAzure Get an Azure Blob Storage log endpoint
 Get the Azure Blob Storage logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingAzureblobName The name for the real-time logging configuration.
  @return APIGetLogAzureRequest
 */
-func (a *LoggingAzureblobAPIService) GetLogAzure(ctx context.Context, serviceID string, versionID int32, loggingAzureblobName string) APIGetLogAzureRequest {
+func (a *LoggingAzureblobAPIService) GetLogAzure(ctx context.Context, serviceId string, versionId int32, loggingAzureblobName string) APIGetLogAzureRequest {
 	return APIGetLogAzureRequest{
 		APIService:           a,
 		ctx:                  ctx,
-		serviceID:            serviceID,
-		versionID:            versionID,
+		serviceId:            serviceId,
+		versionId:            versionId,
 		loggingAzureblobName: loggingAzureblobName,
 	}
 }
@@ -614,8 +614,8 @@ func (a *LoggingAzureblobAPIService) GetLogAzureExecute(r APIGetLogAzureRequest)
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_azureblob_name"+"}", gourl.PathEscape(parameterToString(r.loggingAzureblobName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -707,8 +707,8 @@ func (a *LoggingAzureblobAPIService) GetLogAzureExecute(r APIGetLogAzureRequest)
 type APIListLogAzureRequest struct {
 	ctx        context.Context
 	APIService LoggingAzureblobAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -722,16 +722,16 @@ ListLogAzure List Azure Blob Storage log endpoints
 List all of the Azure Blob Storage logging endpoints for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogAzureRequest
 */
-func (a *LoggingAzureblobAPIService) ListLogAzure(ctx context.Context, serviceID string, versionID int32) APIListLogAzureRequest {
+func (a *LoggingAzureblobAPIService) ListLogAzure(ctx context.Context, serviceId string, versionId int32) APIListLogAzureRequest {
 	return APIListLogAzureRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -751,8 +751,8 @@ func (a *LoggingAzureblobAPIService) ListLogAzureExecute(r APIListLogAzureReques
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/azureblob"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -843,8 +843,8 @@ func (a *LoggingAzureblobAPIService) ListLogAzureExecute(r APIListLogAzureReques
 type APIUpdateLogAzureRequest struct {
 	ctx                  context.Context
 	APIService           LoggingAzureblobAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	loggingAzureblobName string
 	name                 *string
 	placement            *string
@@ -978,17 +978,17 @@ UpdateLogAzure Update an Azure Blob Storage log endpoint
 Update the Azure Blob Storage logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingAzureblobName The name for the real-time logging configuration.
  @return APIUpdateLogAzureRequest
 */
-func (a *LoggingAzureblobAPIService) UpdateLogAzure(ctx context.Context, serviceID string, versionID int32, loggingAzureblobName string) APIUpdateLogAzureRequest {
+func (a *LoggingAzureblobAPIService) UpdateLogAzure(ctx context.Context, serviceId string, versionId int32, loggingAzureblobName string) APIUpdateLogAzureRequest {
 	return APIUpdateLogAzureRequest{
 		APIService:           a,
 		ctx:                  ctx,
-		serviceID:            serviceID,
-		versionID:            versionID,
+		serviceId:            serviceId,
+		versionId:            versionId,
 		loggingAzureblobName: loggingAzureblobName,
 	}
 }
@@ -1009,8 +1009,8 @@ func (a *LoggingAzureblobAPIService) UpdateLogAzureExecute(r APIUpdateLogAzureRe
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_azureblob_name"+"}", gourl.PathEscape(parameterToString(r.loggingAzureblobName, "")))
 
 	localVarHeaderParams := make(map[string]string)

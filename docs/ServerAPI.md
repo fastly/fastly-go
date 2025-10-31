@@ -32,8 +32,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    poolID := "poolId_example" // string | Alphanumeric string identifying a Pool.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    poolId := "poolId_example" // string | Alphanumeric string identifying a Pool.
     weight := int32(56) // int32 | Weight (`1-100`) used to load balance this server against others. (optional) (default to 100)
     maxConn := int32(56) // int32 | Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`. (optional) (default to 0)
     port := int32(56) // int32 | Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS. (optional) (default to 80)
@@ -45,7 +45,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServerAPI.CreatePoolServer(ctx, serviceID, poolID).Weight(weight).MaxConn(maxConn).Port(port).Address(address).Comment(comment).Disabled(disabled).OverrideHost(overrideHost).Execute()
+    resp, r, err := apiClient.ServerAPI.CreatePoolServer(ctx, serviceId, poolId).Weight(weight).MaxConn(maxConn).Port(port).Address(address).Comment(comment).Disabled(disabled).OverrideHost(overrideHost).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerAPI.CreatePoolServer`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -61,8 +61,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**poolID** | **string** | Alphanumeric string identifying a Pool. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**poolId** | **string** | Alphanumeric string identifying a Pool. | 
 
 ### Other Parameters
 
@@ -108,14 +108,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    poolID := "poolId_example" // string | Alphanumeric string identifying a Pool.
-    serverID := "serverId_example" // string | Alphanumeric string identifying a Server.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    poolId := "poolId_example" // string | Alphanumeric string identifying a Pool.
+    serverId := "serverId_example" // string | Alphanumeric string identifying a Server.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServerAPI.DeletePoolServer(ctx, serviceID, poolID, serverID).Execute()
+    resp, r, err := apiClient.ServerAPI.DeletePoolServer(ctx, serviceId, poolId, serverId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerAPI.DeletePoolServer`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -131,9 +131,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**poolID** | **string** | Alphanumeric string identifying a Pool. | 
-**serverID** | **string** | Alphanumeric string identifying a Server. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**poolId** | **string** | Alphanumeric string identifying a Pool. | 
+**serverId** | **string** | Alphanumeric string identifying a Server. | 
 
 ### Other Parameters
 
@@ -179,14 +179,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    poolID := "poolId_example" // string | Alphanumeric string identifying a Pool.
-    serverID := "serverId_example" // string | Alphanumeric string identifying a Server.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    poolId := "poolId_example" // string | Alphanumeric string identifying a Pool.
+    serverId := "serverId_example" // string | Alphanumeric string identifying a Server.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServerAPI.GetPoolServer(ctx, serviceID, poolID, serverID).Execute()
+    resp, r, err := apiClient.ServerAPI.GetPoolServer(ctx, serviceId, poolId, serverId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerAPI.GetPoolServer`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -202,9 +202,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**poolID** | **string** | Alphanumeric string identifying a Pool. | 
-**serverID** | **string** | Alphanumeric string identifying a Server. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**poolId** | **string** | Alphanumeric string identifying a Pool. | 
+**serverId** | **string** | Alphanumeric string identifying a Server. | 
 
 ### Other Parameters
 
@@ -250,13 +250,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    poolID := "poolId_example" // string | Alphanumeric string identifying a Pool.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    poolId := "poolId_example" // string | Alphanumeric string identifying a Pool.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServerAPI.ListPoolServers(ctx, serviceID, poolID).Execute()
+    resp, r, err := apiClient.ServerAPI.ListPoolServers(ctx, serviceId, poolId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerAPI.ListPoolServers`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -272,8 +272,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**poolID** | **string** | Alphanumeric string identifying a Pool. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**poolId** | **string** | Alphanumeric string identifying a Pool. | 
 
 ### Other Parameters
 
@@ -319,9 +319,9 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    poolID := "poolId_example" // string | Alphanumeric string identifying a Pool.
-    serverID := "serverId_example" // string | Alphanumeric string identifying a Server.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    poolId := "poolId_example" // string | Alphanumeric string identifying a Pool.
+    serverId := "serverId_example" // string | Alphanumeric string identifying a Server.
     weight := int32(56) // int32 | Weight (`1-100`) used to load balance this server against others. (optional) (default to 100)
     maxConn := int32(56) // int32 | Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`. (optional) (default to 0)
     port := int32(56) // int32 | Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS. (optional) (default to 80)
@@ -333,7 +333,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServerAPI.UpdatePoolServer(ctx, serviceID, poolID, serverID).Weight(weight).MaxConn(maxConn).Port(port).Address(address).Comment(comment).Disabled(disabled).OverrideHost(overrideHost).Execute()
+    resp, r, err := apiClient.ServerAPI.UpdatePoolServer(ctx, serviceId, poolId, serverId).Weight(weight).MaxConn(maxConn).Port(port).Address(address).Comment(comment).Disabled(disabled).OverrideHost(overrideHost).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServerAPI.UpdatePoolServer`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -349,9 +349,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**poolID** | **string** | Alphanumeric string identifying a Pool. | 
-**serverID** | **string** | Alphanumeric string identifying a Server. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**poolId** | **string** | Alphanumeric string identifying a Pool. | 
+**serverId** | **string** | Alphanumeric string identifying a Server. | 
 
 ### Other Parameters
 
@@ -376,3 +376,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

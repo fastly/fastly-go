@@ -1,80 +1,82 @@
-# RelationshipTLSDNSRecordsResponseDNSRecordsData
+# RelationshipTlsDnsRecordsResponseDnsRecordsData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTLSDNSRecord**](TypeTLSDNSRecord.md) |  | [optional] [default to TYPETLSDNSRECORD_DNS_RECORD]
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Type** | Pointer to [**TypeTlsDnsRecord**](TypeTlsDnsRecord.md) |  | [optional] [default to TYPETLSDNSRECORD_DNS_RECORD]
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewRelationshipTLSDNSRecordsResponseDNSRecordsData
+### NewRelationshipTlsDnsRecordsResponseDnsRecordsData
 
-`func NewRelationshipTLSDNSRecordsResponseDNSRecordsData() *RelationshipTLSDNSRecordsResponseDNSRecordsData`
+`func NewRelationshipTlsDnsRecordsResponseDnsRecordsData() *RelationshipTlsDnsRecordsResponseDnsRecordsData`
 
-NewRelationshipTLSDNSRecordsResponseDNSRecordsData instantiates a new RelationshipTLSDNSRecordsResponseDNSRecordsData object
+NewRelationshipTlsDnsRecordsResponseDnsRecordsData instantiates a new RelationshipTlsDnsRecordsResponseDnsRecordsData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipTLSDNSRecordsResponseDNSRecordsDataWithDefaults
+### NewRelationshipTlsDnsRecordsResponseDnsRecordsDataWithDefaults
 
-`func NewRelationshipTLSDNSRecordsResponseDNSRecordsDataWithDefaults() *RelationshipTLSDNSRecordsResponseDNSRecordsData`
+`func NewRelationshipTlsDnsRecordsResponseDnsRecordsDataWithDefaults() *RelationshipTlsDnsRecordsResponseDnsRecordsData`
 
-NewRelationshipTLSDNSRecordsResponseDNSRecordsDataWithDefaults instantiates a new RelationshipTLSDNSRecordsResponseDNSRecordsData object
+NewRelationshipTlsDnsRecordsResponseDnsRecordsDataWithDefaults instantiates a new RelationshipTlsDnsRecordsResponseDnsRecordsData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) GetType() TypeTLSDNSRecord`
+`func (o *RelationshipTlsDnsRecordsResponseDnsRecordsData) GetType() TypeTlsDnsRecord`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) GetTypeOk() (*TypeTLSDNSRecord, bool)`
+`func (o *RelationshipTlsDnsRecordsResponseDnsRecordsData) GetTypeOk() (*TypeTlsDnsRecord, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) SetType(v TypeTLSDNSRecord)`
+`func (o *RelationshipTlsDnsRecordsResponseDnsRecordsData) SetType(v TypeTlsDnsRecord)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) HasType() bool`
+`func (o *RelationshipTlsDnsRecordsResponseDnsRecordsData) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
-### GetID
+### GetId
 
-`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) GetID() string`
+`func (o *RelationshipTlsDnsRecordsResponseDnsRecordsData) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) GetIDOk() (*string, bool)`
+`func (o *RelationshipTlsDnsRecordsResponseDnsRecordsData) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) SetID(v string)`
+`func (o *RelationshipTlsDnsRecordsResponseDnsRecordsData) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *RelationshipTLSDNSRecordsResponseDNSRecordsData) HasID() bool`
+`func (o *RelationshipTlsDnsRecordsResponseDnsRecordsData) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

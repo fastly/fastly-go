@@ -19,7 +19,7 @@ import (
 
 // HealthcheckResponse struct for HealthcheckResponse
 type HealthcheckResponse struct {
-	// How often to run the health check in milliseconds.
+	// How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour.
 	CheckInterval *int32 `json:"check_interval,omitempty"`
 	// A freeform descriptive note.
 	Comment NullableString `json:"comment,omitempty"`
@@ -30,7 +30,7 @@ type HealthcheckResponse struct {
 	// Which host to check.
 	Host *string `json:"host,omitempty"`
 	// Whether to use version 1.0 or 1.1 HTTP.
-	HTTPVersion *string `json:"http_version,omitempty"`
+	HttpVersion *string `json:"http_version,omitempty"`
 	// When loading a config, the initial number of probes to be seen as OK.
 	Initial *int32 `json:"initial,omitempty"`
 	// Which HTTP method to use.
@@ -45,7 +45,7 @@ type HealthcheckResponse struct {
 	Timeout *int32 `json:"timeout,omitempty"`
 	// The number of most recent health check queries to keep for this health check.
 	Window    *int32  `json:"window,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
+	ServiceId *string `json:"service_id,omitempty"`
 	Version   *int32  `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
@@ -246,36 +246,36 @@ func (o *HealthcheckResponse) SetHost(v string) {
 	o.Host = &v
 }
 
-// GetHTTPVersion returns the HTTPVersion field value if set, zero value otherwise.
-func (o *HealthcheckResponse) GetHTTPVersion() string {
-	if o == nil || o.HTTPVersion == nil {
+// GetHttpVersion returns the HttpVersion field value if set, zero value otherwise.
+func (o *HealthcheckResponse) GetHttpVersion() string {
+	if o == nil || o.HttpVersion == nil {
 		var ret string
 		return ret
 	}
-	return *o.HTTPVersion
+	return *o.HttpVersion
 }
 
-// GetHTTPVersionOk returns a tuple with the HTTPVersion field value if set, nil otherwise
+// GetHttpVersionOk returns a tuple with the HttpVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HealthcheckResponse) GetHTTPVersionOk() (*string, bool) {
-	if o == nil || o.HTTPVersion == nil {
+func (o *HealthcheckResponse) GetHttpVersionOk() (*string, bool) {
+	if o == nil || o.HttpVersion == nil {
 		return nil, false
 	}
-	return o.HTTPVersion, true
+	return o.HttpVersion, true
 }
 
-// HasHTTPVersion returns a boolean if a field has been set.
-func (o *HealthcheckResponse) HasHTTPVersion() bool {
-	if o != nil && o.HTTPVersion != nil {
+// HasHttpVersion returns a boolean if a field has been set.
+func (o *HealthcheckResponse) HasHttpVersion() bool {
+	if o != nil && o.HttpVersion != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHTTPVersion gets a reference to the given string and assigns it to the HTTPVersion field.
-func (o *HealthcheckResponse) SetHTTPVersion(v string) {
-	o.HTTPVersion = &v
+// SetHttpVersion gets a reference to the given string and assigns it to the HttpVersion field.
+func (o *HealthcheckResponse) SetHttpVersion(v string) {
+	o.HttpVersion = &v
 }
 
 // GetInitial returns the Initial field value if set, zero value otherwise.
@@ -502,36 +502,36 @@ func (o *HealthcheckResponse) SetWindow(v int32) {
 	o.Window = &v
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *HealthcheckResponse) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *HealthcheckResponse) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HealthcheckResponse) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *HealthcheckResponse) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *HealthcheckResponse) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *HealthcheckResponse) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *HealthcheckResponse) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *HealthcheckResponse) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -714,8 +714,8 @@ func (o HealthcheckResponse) MarshalJSON() ([]byte, error) {
 	if o.Host != nil {
 		toSerialize["host"] = o.Host
 	}
-	if o.HTTPVersion != nil {
-		toSerialize["http_version"] = o.HTTPVersion
+	if o.HttpVersion != nil {
+		toSerialize["http_version"] = o.HttpVersion
 	}
 	if o.Initial != nil {
 		toSerialize["initial"] = o.Initial
@@ -738,8 +738,8 @@ func (o HealthcheckResponse) MarshalJSON() ([]byte, error) {
 	if o.Window != nil {
 		toSerialize["window"] = o.Window
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

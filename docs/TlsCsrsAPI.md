@@ -1,4 +1,4 @@
-# TLSCsrsAPI
+# TlsCsrsAPI
 
 > [!NOTE]
 > All URIs are relative to `https://api.fastly.com`
@@ -28,18 +28,18 @@ import (
 )
 
 func main() {
-    tlsCsr := *openapiclient.NewTLSCsr() // TLSCsr |  (optional)
+    tlsCsr := *openapiclient.NewTlsCsr() // TlsCsr |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSCsrsAPI.CreateCsr(ctx).TLSCsr(tlsCsr).Execute()
+    resp, r, err := apiClient.TlsCsrsAPI.CreateCsr(ctx).TlsCsr(tlsCsr).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSCsrsAPI.CreateCsr`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsCsrsAPI.CreateCsr`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateCsr`: TLSCsrResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSCsrsAPI.CreateCsr`: %v\n", resp)
+    // response from `CreateCsr`: TlsCsrResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsCsrsAPI.CreateCsr`: %v\n", resp)
 }
 ```
 
@@ -54,11 +54,11 @@ Other parameters are passed through a pointer to a apiCreateCsrRequest struct vi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tlsCsr** | [**TLSCsr**](TlsCsr.md) |  | 
+ **tlsCsr** | [**TlsCsr**](TlsCsr.md) |  | 
 
 ### Return type
 
-[**TLSCsrResponse**](TlsCsrResponse.md)
+[**TlsCsrResponse**](TlsCsrResponse.md)
 
 ### Authorization
 
@@ -70,3 +70,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/vnd.api+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

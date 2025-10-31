@@ -27,7 +27,7 @@ type LoggingOpenstackAdditional struct {
 	// A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 	PublicKey NullableString `json:"public_key,omitempty"`
 	// Your OpenStack auth url.
-	URL *string `json:"url,omitempty"`
+	Url *string `json:"url,omitempty"`
 	// The username for your OpenStack account.
 	User                 *string `json:"user,omitempty"`
 	AdditionalProperties map[string]any
@@ -210,36 +210,36 @@ func (o *LoggingOpenstackAdditional) UnsetPublicKey() {
 	o.PublicKey.Unset()
 }
 
-// GetURL returns the URL field value if set, zero value otherwise.
-func (o *LoggingOpenstackAdditional) GetURL() string {
-	if o == nil || o.URL == nil {
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *LoggingOpenstackAdditional) GetUrl() string {
+	if o == nil || o.Url == nil {
 		var ret string
 		return ret
 	}
-	return *o.URL
+	return *o.Url
 }
 
-// GetURLOk returns a tuple with the URL field value if set, nil otherwise
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingOpenstackAdditional) GetURLOk() (*string, bool) {
-	if o == nil || o.URL == nil {
+func (o *LoggingOpenstackAdditional) GetUrlOk() (*string, bool) {
+	if o == nil || o.Url == nil {
 		return nil, false
 	}
-	return o.URL, true
+	return o.Url, true
 }
 
-// HasURL returns a boolean if a field has been set.
-func (o *LoggingOpenstackAdditional) HasURL() bool {
-	if o != nil && o.URL != nil {
+// HasUrl returns a boolean if a field has been set.
+func (o *LoggingOpenstackAdditional) HasUrl() bool {
+	if o != nil && o.Url != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetURL gets a reference to the given string and assigns it to the URL field.
-func (o *LoggingOpenstackAdditional) SetURL(v string) {
-	o.URL = &v
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *LoggingOpenstackAdditional) SetUrl(v string) {
+	o.Url = &v
 }
 
 // GetUser returns the User field value if set, zero value otherwise.
@@ -290,8 +290,8 @@ func (o LoggingOpenstackAdditional) MarshalJSON() ([]byte, error) {
 	if o.PublicKey.IsSet() {
 		toSerialize["public_key"] = o.PublicKey.Get()
 	}
-	if o.URL != nil {
-		toSerialize["url"] = o.URL
+	if o.Url != nil {
+		toSerialize["url"] = o.Url
 	}
 	if o.User != nil {
 		toSerialize["user"] = o.User

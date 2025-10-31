@@ -36,10 +36,10 @@ type BillingAddressAPI interface {
 		Add a billing address to a customer.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
+		 @param customerId Alphanumeric string identifying the customer.
 		 @return APIAddBillingAddrRequest
 	*/
-	AddBillingAddr(ctx context.Context, customerID string) APIAddBillingAddrRequest
+	AddBillingAddr(ctx context.Context, customerId string) APIAddBillingAddrRequest
 
 	// AddBillingAddrExecute executes the request
 	//  @return BillingAddressResponse
@@ -51,10 +51,10 @@ type BillingAddressAPI interface {
 		Delete a customer's billing address.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
+		 @param customerId Alphanumeric string identifying the customer.
 		 @return APIDeleteBillingAddrRequest
 	*/
-	DeleteBillingAddr(ctx context.Context, customerID string) APIDeleteBillingAddrRequest
+	DeleteBillingAddr(ctx context.Context, customerId string) APIDeleteBillingAddrRequest
 
 	// DeleteBillingAddrExecute executes the request
 	DeleteBillingAddrExecute(r APIDeleteBillingAddrRequest) (*http.Response, error)
@@ -65,10 +65,10 @@ type BillingAddressAPI interface {
 		Get a customer's billing address.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
+		 @param customerId Alphanumeric string identifying the customer.
 		 @return APIGetBillingAddrRequest
 	*/
-	GetBillingAddr(ctx context.Context, customerID string) APIGetBillingAddrRequest
+	GetBillingAddr(ctx context.Context, customerId string) APIGetBillingAddrRequest
 
 	// GetBillingAddrExecute executes the request
 	//  @return BillingAddressResponse
@@ -80,10 +80,10 @@ type BillingAddressAPI interface {
 		Update a customer's billing address. You may update only part of the customer's billing address.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
+		 @param customerId Alphanumeric string identifying the customer.
 		 @return APIUpdateBillingAddrRequest
 	*/
-	UpdateBillingAddr(ctx context.Context, customerID string) APIUpdateBillingAddrRequest
+	UpdateBillingAddr(ctx context.Context, customerId string) APIUpdateBillingAddrRequest
 
 	// UpdateBillingAddrExecute executes the request
 	//  @return BillingAddressResponse
@@ -97,7 +97,7 @@ type BillingAddressAPIService service
 type APIAddBillingAddrRequest struct {
 	ctx                   context.Context
 	APIService            BillingAddressAPI
-	customerID            string
+	customerId            string
 	billingAddressRequest *BillingAddressRequest
 }
 
@@ -118,14 +118,14 @@ AddBillingAddr Add a billing address to a customer
 Add a billing address to a customer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
+ @param customerId Alphanumeric string identifying the customer.
  @return APIAddBillingAddrRequest
 */
-func (a *BillingAddressAPIService) AddBillingAddr(ctx context.Context, customerID string) APIAddBillingAddrRequest {
+func (a *BillingAddressAPIService) AddBillingAddr(ctx context.Context, customerId string) APIAddBillingAddrRequest {
 	return APIAddBillingAddrRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
+		customerId: customerId,
 	}
 }
 
@@ -145,7 +145,7 @@ func (a *BillingAddressAPIService) AddBillingAddrExecute(r APIAddBillingAddrRequ
 	}
 
 	localVarPath := localBasePath + "/customer/{customer_id}/billing_address"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -247,7 +247,7 @@ func (a *BillingAddressAPIService) AddBillingAddrExecute(r APIAddBillingAddrRequ
 type APIDeleteBillingAddrRequest struct {
 	ctx        context.Context
 	APIService BillingAddressAPI
-	customerID string
+	customerId string
 }
 
 // Execute calls the API using the request data configured.
@@ -261,14 +261,14 @@ DeleteBillingAddr Delete a billing address
 Delete a customer's billing address.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
+ @param customerId Alphanumeric string identifying the customer.
  @return APIDeleteBillingAddrRequest
 */
-func (a *BillingAddressAPIService) DeleteBillingAddr(ctx context.Context, customerID string) APIDeleteBillingAddrRequest {
+func (a *BillingAddressAPIService) DeleteBillingAddr(ctx context.Context, customerId string) APIDeleteBillingAddrRequest {
 	return APIDeleteBillingAddrRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
+		customerId: customerId,
 	}
 }
 
@@ -286,7 +286,7 @@ func (a *BillingAddressAPIService) DeleteBillingAddrExecute(r APIDeleteBillingAd
 	}
 
 	localVarPath := localBasePath + "/customer/{customer_id}/billing_address"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -368,7 +368,7 @@ func (a *BillingAddressAPIService) DeleteBillingAddrExecute(r APIDeleteBillingAd
 type APIGetBillingAddrRequest struct {
 	ctx        context.Context
 	APIService BillingAddressAPI
-	customerID string
+	customerId string
 }
 
 // Execute calls the API using the request data configured.
@@ -382,14 +382,14 @@ GetBillingAddr Get a billing address
 Get a customer's billing address.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
+ @param customerId Alphanumeric string identifying the customer.
  @return APIGetBillingAddrRequest
 */
-func (a *BillingAddressAPIService) GetBillingAddr(ctx context.Context, customerID string) APIGetBillingAddrRequest {
+func (a *BillingAddressAPIService) GetBillingAddr(ctx context.Context, customerId string) APIGetBillingAddrRequest {
 	return APIGetBillingAddrRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
+		customerId: customerId,
 	}
 }
 
@@ -409,7 +409,7 @@ func (a *BillingAddressAPIService) GetBillingAddrExecute(r APIGetBillingAddrRequ
 	}
 
 	localVarPath := localBasePath + "/customer/{customer_id}/billing_address"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -500,7 +500,7 @@ func (a *BillingAddressAPIService) GetBillingAddrExecute(r APIGetBillingAddrRequ
 type APIUpdateBillingAddrRequest struct {
 	ctx                         context.Context
 	APIService                  BillingAddressAPI
-	customerID                  string
+	customerId                  string
 	updateBillingAddressRequest *UpdateBillingAddressRequest
 }
 
@@ -521,14 +521,14 @@ UpdateBillingAddr Update a billing address
 Update a customer's billing address. You may update only part of the customer's billing address.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
+ @param customerId Alphanumeric string identifying the customer.
  @return APIUpdateBillingAddrRequest
 */
-func (a *BillingAddressAPIService) UpdateBillingAddr(ctx context.Context, customerID string) APIUpdateBillingAddrRequest {
+func (a *BillingAddressAPIService) UpdateBillingAddr(ctx context.Context, customerId string) APIUpdateBillingAddrRequest {
 	return APIUpdateBillingAddrRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
+		customerId: customerId,
 	}
 }
 
@@ -548,7 +548,7 @@ func (a *BillingAddressAPIService) UpdateBillingAddrExecute(r APIUpdateBillingAd
 	}
 
 	localVarPath := localBasePath + "/customer/{customer_id}/billing_address"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

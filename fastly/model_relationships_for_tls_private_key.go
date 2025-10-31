@@ -17,99 +17,99 @@ import (
 	"fmt"
 )
 
-// RelationshipsForTLSPrivateKey struct for RelationshipsForTLSPrivateKey
-type RelationshipsForTLSPrivateKey struct {
-	RelationshipTLSActivations *RelationshipTLSActivations
-	RelationshipTLSDomains     *RelationshipTLSDomains
+// RelationshipsForTlsPrivateKey struct for RelationshipsForTlsPrivateKey
+type RelationshipsForTlsPrivateKey struct {
+	RelationshipTlsActivations *RelationshipTlsActivations
+	RelationshipTlsDomains     *RelationshipTlsDomains
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipsForTLSPrivateKey) UnmarshalJSON(data []byte) error {
+func (o *RelationshipsForTlsPrivateKey) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RelationshipTLSActivations
-	err = json.Unmarshal(data, &o.RelationshipTLSActivations)
+	// try to unmarshal JSON data into RelationshipTlsActivations
+	err = json.Unmarshal(data, &o.RelationshipTlsActivations)
 	if err == nil {
-		jsonRelationshipTLSActivations, _ := json.Marshal(o.RelationshipTLSActivations)
-		if string(jsonRelationshipTLSActivations) != "{}" { // empty struct
-			return nil // data stored in o.RelationshipTLSActivations, return on the first match
+		jsonRelationshipTlsActivations, _ := json.Marshal(o.RelationshipTlsActivations)
+		if string(jsonRelationshipTlsActivations) != "{}" { // empty struct
+			return nil // data stored in o.RelationshipTlsActivations, return on the first match
 		}
-		o.RelationshipTLSActivations = nil
+		o.RelationshipTlsActivations = nil
 	} else {
-		o.RelationshipTLSActivations = nil
+		o.RelationshipTlsActivations = nil
 	}
 
-	// try to unmarshal JSON data into RelationshipTLSDomains
-	err = json.Unmarshal(data, &o.RelationshipTLSDomains)
+	// try to unmarshal JSON data into RelationshipTlsDomains
+	err = json.Unmarshal(data, &o.RelationshipTlsDomains)
 	if err == nil {
-		jsonRelationshipTLSDomains, _ := json.Marshal(o.RelationshipTLSDomains)
-		if string(jsonRelationshipTLSDomains) != "{}" { // empty struct
-			return nil // data stored in o.RelationshipTLSDomains, return on the first match
+		jsonRelationshipTlsDomains, _ := json.Marshal(o.RelationshipTlsDomains)
+		if string(jsonRelationshipTlsDomains) != "{}" { // empty struct
+			return nil // data stored in o.RelationshipTlsDomains, return on the first match
 		}
-		o.RelationshipTLSDomains = nil
+		o.RelationshipTlsDomains = nil
 	} else {
-		o.RelationshipTLSDomains = nil
+		o.RelationshipTlsDomains = nil
 	}
 
-	return fmt.Errorf("data failed to match schemas in anyOf(RelationshipsForTLSPrivateKey)")
+	return fmt.Errorf("data failed to match schemas in anyOf(RelationshipsForTlsPrivateKey)")
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o *RelationshipsForTLSPrivateKey) MarshalJSON() ([]byte, error) {
-	if o.RelationshipTLSActivations != nil {
-		return json.Marshal(&o.RelationshipTLSActivations)
+func (o *RelationshipsForTlsPrivateKey) MarshalJSON() ([]byte, error) {
+	if o.RelationshipTlsActivations != nil {
+		return json.Marshal(&o.RelationshipTlsActivations)
 	}
 
-	if o.RelationshipTLSDomains != nil {
-		return json.Marshal(&o.RelationshipTLSDomains)
+	if o.RelationshipTlsDomains != nil {
+		return json.Marshal(&o.RelationshipTlsDomains)
 	}
 
 	return nil, nil // no data in anyOf schemas
 }
 
-// NullableRelationshipsForTLSPrivateKey is a helper abstraction for handling nullable relationshipsfortlsprivatekey types.
-type NullableRelationshipsForTLSPrivateKey struct {
-	value *RelationshipsForTLSPrivateKey
+// NullableRelationshipsForTlsPrivateKey is a helper abstraction for handling nullable relationshipsfortlsprivatekey types.
+type NullableRelationshipsForTlsPrivateKey struct {
+	value *RelationshipsForTlsPrivateKey
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipsForTLSPrivateKey) Get() *RelationshipsForTLSPrivateKey {
+func (v NullableRelationshipsForTlsPrivateKey) Get() *RelationshipsForTlsPrivateKey {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipsForTLSPrivateKey) Set(val *RelationshipsForTLSPrivateKey) {
+func (v *NullableRelationshipsForTlsPrivateKey) Set(val *RelationshipsForTlsPrivateKey) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipsForTLSPrivateKey) IsSet() bool {
+func (v NullableRelationshipsForTlsPrivateKey) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipsForTLSPrivateKey) Unset() {
+func (v *NullableRelationshipsForTlsPrivateKey) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipsForTLSPrivateKey returns a pointer to a new instance of NullableRelationshipsForTLSPrivateKey.
-func NewNullableRelationshipsForTLSPrivateKey(val *RelationshipsForTLSPrivateKey) *NullableRelationshipsForTLSPrivateKey {
-	return &NullableRelationshipsForTLSPrivateKey{value: val, isSet: true}
+// NewNullableRelationshipsForTlsPrivateKey returns a pointer to a new instance of NullableRelationshipsForTlsPrivateKey.
+func NewNullableRelationshipsForTlsPrivateKey(val *RelationshipsForTlsPrivateKey) *NullableRelationshipsForTlsPrivateKey {
+	return &NullableRelationshipsForTlsPrivateKey{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipsForTLSPrivateKey) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipsForTlsPrivateKey) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipsForTLSPrivateKey) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipsForTlsPrivateKey) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -18,13 +18,13 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 **AccessKey** | Pointer to **string** | Your OpenStack account access key. | [optional] 
 **BucketName** | Pointer to **string** | The name of your OpenStack container. | [optional] 
 **Path** | Pointer to **NullableString** | The path to upload logs to. | [optional] [default to "null"]
 **PublicKey** | Pointer to **NullableString** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to "null"]
-**URL** | Pointer to **string** | Your OpenStack auth url. | [optional] 
+**Url** | Pointer to **string** | Your OpenStack auth url. | [optional] 
 **User** | Pointer to **string** | The username for your OpenStack account. | [optional] 
 
 ## Methods
@@ -456,30 +456,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *LoggingOpenstackResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceID
+### GetServiceId
 
-`func (o *LoggingOpenstackResponse) GetServiceID() string`
+`func (o *LoggingOpenstackResponse) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *LoggingOpenstackResponse) GetServiceIDOk() (*string, bool)`
+`func (o *LoggingOpenstackResponse) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *LoggingOpenstackResponse) SetServiceID(v string)`
+`func (o *LoggingOpenstackResponse) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *LoggingOpenstackResponse) HasServiceID() bool`
+`func (o *LoggingOpenstackResponse) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -626,30 +626,30 @@ HasPublicKey returns a boolean if a field has been set.
 `func (o *LoggingOpenstackResponse) UnsetPublicKey()`
 
 UnsetPublicKey ensures that no value is present for PublicKey, not even an explicit nil
-### GetURL
+### GetUrl
 
-`func (o *LoggingOpenstackResponse) GetURL() string`
+`func (o *LoggingOpenstackResponse) GetUrl() string`
 
-GetURL returns the URL field if non-nil, zero value otherwise.
+GetUrl returns the Url field if non-nil, zero value otherwise.
 
-### GetURLOk
+### GetUrlOk
 
-`func (o *LoggingOpenstackResponse) GetURLOk() (*string, bool)`
+`func (o *LoggingOpenstackResponse) GetUrlOk() (*string, bool)`
 
-GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURL
+### SetUrl
 
-`func (o *LoggingOpenstackResponse) SetURL(v string)`
+`func (o *LoggingOpenstackResponse) SetUrl(v string)`
 
-SetURL sets URL field to given value.
+SetUrl sets Url field to given value.
 
-### HasURL
+### HasUrl
 
-`func (o *LoggingOpenstackResponse) HasURL() bool`
+`func (o *LoggingOpenstackResponse) HasUrl() bool`
 
-HasURL returns a boolean if a field has been set.
+HasUrl returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -678,3 +678,5 @@ HasUser returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

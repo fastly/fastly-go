@@ -18,10 +18,10 @@ Name | Type | Description | Notes
 **Errors** | Pointer to **int64** | Number of cache errors. | [optional] 
 **HitsTime** | Pointer to **float32** | Total amount of time spent processing cache hits (in seconds). | [optional] 
 **MissTime** | Pointer to **float32** | Total amount of time spent processing cache misses (in seconds). | [optional] 
-**MissHistogram** | Pointer to **map[string]map[string]any** | A histogram. The value in each bucket is the number of requests to the origin whose responses arrived during the time period represented by the bucket. The key of each bucket represents the upper bound (in response time) of that bucket. The buckets vary in width and cover the time periods 0-10ms (in 1ms increments), 10-250ms (in 10ms increments), 250-1,000ms (in 50ms increments), 1,000-3,000ms (in 100ms increments), 3,000-10,000ms (in 500 ms increments), 10,000-20,000ms (in 1,000ms increments), 20,000-60,000ms (in 5,000ms increments), and 60,000ms through infinity (in a single bucket). | [optional] 
+**MissHistogram** | Pointer to **map[string]map[string]interface{}** | A histogram. The value in each bucket is the number of requests to the origin whose responses arrived during the time period represented by the bucket. The key of each bucket represents the upper bound (in response time) of that bucket. The buckets vary in width and cover the time periods 0-10ms (in 1ms increments), 10-250ms (in 10ms increments), 250-1,000ms (in 50ms increments), 1,000-3,000ms (in 100ms increments), 3,000-10,000ms (in 500 ms increments), 10,000-20,000ms (in 1,000ms increments), 20,000-60,000ms (in 5,000ms increments), and 60,000ms through infinity (in a single bucket). | [optional] 
 **ComputeRequests** | Pointer to **int64** | The total number of requests that were received for your service by Fastly. | [optional] 
 **ComputeExecutionTimeMs** | Pointer to **float32** | The amount of active CPU time used to process your requests (in milliseconds). | [optional] 
-**ComputeRAMUsed** | Pointer to **int64** | The amount of RAM used for your service by Fastly (in bytes). | [optional] 
+**ComputeRamUsed** | Pointer to **int64** | The amount of RAM used for your service by Fastly (in bytes). | [optional] 
 **ComputeRequestTimeMs** | Pointer to **float32** | The total, actual amount of time used to process your requests, including active CPU time (in milliseconds). | [optional] 
 **ComputeRequestTimeBilledMs** | Pointer to **float32** | The total amount of request processing time you will be billed for, measured in 50 millisecond increments. | [optional] 
 **Shield** | Pointer to **int64** | Number of requests from edge to the shield POP. | [optional] 
@@ -34,8 +34,8 @@ Name | Type | Description | Notes
 **OtfpManifests** | Pointer to **int64** | Number of responses that were manifest files from the Fastly On-the-Fly Packaging service for video-on-demand. | [optional] 
 **Video** | Pointer to **int64** | Number of responses with the video segment or video manifest MIME type (i.e., application/x-mpegurl, application/vnd.apple.mpegurl, application/f4m, application/dash+xml, application/vnd.ms-sstr+xml, ideo/mp2t, audio/aac, video/f4f, video/x-flv, video/mp4, audio/mp4). | [optional] 
 **Pci** | Pointer to **int64** | Number of responses with the PCI flag turned on. | [optional] 
-**HTTP2** | Pointer to **int64** | Number of requests received over HTTP/2. | [optional] 
-**HTTP3** | Pointer to **int64** | Number of requests received over HTTP/3. | [optional] 
+**Http2** | Pointer to **int64** | Number of requests received over HTTP/2. | [optional] 
+**Http3** | Pointer to **int64** | Number of requests received over HTTP/3. | [optional] 
 **Restarts** | Pointer to **int64** | Number of restarts performed. | [optional] 
 **ReqHeaderBytes** | Pointer to **int64** | Total header bytes received. | [optional] 
 **ReqBodyBytes** | Pointer to **int64** | Total body bytes received. | [optional] 
@@ -92,11 +92,11 @@ Name | Type | Description | Notes
 **Status530** | Pointer to **int64** | Number of responses sent with status code 530. | [optional] 
 **Uncacheable** | Pointer to **int64** | Number of requests that were designated uncachable. | [optional] 
 **PassTime** | Pointer to **float32** | Total amount of time spent processing cache passes (in seconds). | [optional] 
-**TLS** | Pointer to **int64** | Number of requests that were received over TLS. | [optional] 
-**TLSV10** | Pointer to **int64** | Number of requests received over TLS 1.0. | [optional] 
-**TLSV11** | Pointer to **int64** | Number of requests received over TLS 1.1. | [optional] 
-**TLSV12** | Pointer to **int64** | Number of requests received over TLS 1.2. | [optional] 
-**TLSV13** | Pointer to **int64** | Number of requests received over TLS 1.3. | [optional] 
+**Tls** | Pointer to **int64** | Number of requests that were received over TLS. | [optional] 
+**TlsV10** | Pointer to **int64** | Number of requests received over TLS 1.0. | [optional] 
+**TlsV11** | Pointer to **int64** | Number of requests received over TLS 1.1. | [optional] 
+**TlsV12** | Pointer to **int64** | Number of requests received over TLS 1.2. | [optional] 
+**TlsV13** | Pointer to **int64** | Number of requests received over TLS 1.3. | [optional] 
 **ObjectSize1k** | Pointer to **int64** | Number of objects served that were under 1KB in size. | [optional] 
 **ObjectSize10k** | Pointer to **int64** | Number of objects served that were between 1KB and 10KB in size. | [optional] 
 **ObjectSize100k** | Pointer to **int64** | Number of objects served that were between 10KB and 100KB in size. | [optional] 
@@ -265,6 +265,7 @@ Name | Type | Description | Notes
 **RequestCollapseUsableCount** | Pointer to **int64** | Number of requests that were collapsed and satisfied by a usable cache object. | [optional] 
 **RequestCollapseUnusableCount** | Pointer to **int64** | Number of requests that were collapsed and unable to be satisfied by the resulting cache object. | [optional] 
 **ComputeCacheOperationsCount** | Pointer to **int64** | Number of cache operations executed by the Compute platform. | [optional] 
+**ApiDiscoveryRequestsCount** | Pointer to **int32** | Number of requests processed by the API Discovery engine. | [optional] 
 
 ## Methods
 
@@ -637,20 +638,20 @@ HasMissTime returns a boolean if a field has been set.
 
 ### GetMissHistogram
 
-`func (o *RealtimeMeasurements) GetMissHistogram() map[string]map[string]any`
+`func (o *RealtimeMeasurements) GetMissHistogram() map[string]map[string]interface{}`
 
 GetMissHistogram returns the MissHistogram field if non-nil, zero value otherwise.
 
 ### GetMissHistogramOk
 
-`func (o *RealtimeMeasurements) GetMissHistogramOk() (*map[string]map[string]any, bool)`
+`func (o *RealtimeMeasurements) GetMissHistogramOk() (*map[string]map[string]interface{}, bool)`
 
 GetMissHistogramOk returns a tuple with the MissHistogram field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMissHistogram
 
-`func (o *RealtimeMeasurements) SetMissHistogram(v map[string]map[string]any)`
+`func (o *RealtimeMeasurements) SetMissHistogram(v map[string]map[string]interface{})`
 
 SetMissHistogram sets MissHistogram field to given value.
 
@@ -710,30 +711,30 @@ SetComputeExecutionTimeMs sets ComputeExecutionTimeMs field to given value.
 
 HasComputeExecutionTimeMs returns a boolean if a field has been set.
 
-### GetComputeRAMUsed
+### GetComputeRamUsed
 
-`func (o *RealtimeMeasurements) GetComputeRAMUsed() int64`
+`func (o *RealtimeMeasurements) GetComputeRamUsed() int64`
 
-GetComputeRAMUsed returns the ComputeRAMUsed field if non-nil, zero value otherwise.
+GetComputeRamUsed returns the ComputeRamUsed field if non-nil, zero value otherwise.
 
-### GetComputeRAMUsedOk
+### GetComputeRamUsedOk
 
-`func (o *RealtimeMeasurements) GetComputeRAMUsedOk() (*int64, bool)`
+`func (o *RealtimeMeasurements) GetComputeRamUsedOk() (*int64, bool)`
 
-GetComputeRAMUsedOk returns a tuple with the ComputeRAMUsed field if it's non-nil, zero value otherwise
+GetComputeRamUsedOk returns a tuple with the ComputeRamUsed field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputeRAMUsed
+### SetComputeRamUsed
 
-`func (o *RealtimeMeasurements) SetComputeRAMUsed(v int64)`
+`func (o *RealtimeMeasurements) SetComputeRamUsed(v int64)`
 
-SetComputeRAMUsed sets ComputeRAMUsed field to given value.
+SetComputeRamUsed sets ComputeRamUsed field to given value.
 
-### HasComputeRAMUsed
+### HasComputeRamUsed
 
-`func (o *RealtimeMeasurements) HasComputeRAMUsed() bool`
+`func (o *RealtimeMeasurements) HasComputeRamUsed() bool`
 
-HasComputeRAMUsed returns a boolean if a field has been set.
+HasComputeRamUsed returns a boolean if a field has been set.
 
 ### GetComputeRequestTimeMs
 
@@ -1035,55 +1036,55 @@ SetPci sets Pci field to given value.
 
 HasPci returns a boolean if a field has been set.
 
-### GetHTTP2
+### GetHttp2
 
-`func (o *RealtimeMeasurements) GetHTTP2() int64`
+`func (o *RealtimeMeasurements) GetHttp2() int64`
 
-GetHTTP2 returns the HTTP2 field if non-nil, zero value otherwise.
+GetHttp2 returns the Http2 field if non-nil, zero value otherwise.
 
-### GetHTTP2Ok
+### GetHttp2Ok
 
-`func (o *RealtimeMeasurements) GetHTTP2Ok() (*int64, bool)`
+`func (o *RealtimeMeasurements) GetHttp2Ok() (*int64, bool)`
 
-GetHTTP2Ok returns a tuple with the HTTP2 field if it's non-nil, zero value otherwise
+GetHttp2Ok returns a tuple with the Http2 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHTTP2
+### SetHttp2
 
-`func (o *RealtimeMeasurements) SetHTTP2(v int64)`
+`func (o *RealtimeMeasurements) SetHttp2(v int64)`
 
-SetHTTP2 sets HTTP2 field to given value.
+SetHttp2 sets Http2 field to given value.
 
-### HasHTTP2
+### HasHttp2
 
-`func (o *RealtimeMeasurements) HasHTTP2() bool`
+`func (o *RealtimeMeasurements) HasHttp2() bool`
 
-HasHTTP2 returns a boolean if a field has been set.
+HasHttp2 returns a boolean if a field has been set.
 
-### GetHTTP3
+### GetHttp3
 
-`func (o *RealtimeMeasurements) GetHTTP3() int64`
+`func (o *RealtimeMeasurements) GetHttp3() int64`
 
-GetHTTP3 returns the HTTP3 field if non-nil, zero value otherwise.
+GetHttp3 returns the Http3 field if non-nil, zero value otherwise.
 
-### GetHTTP3Ok
+### GetHttp3Ok
 
-`func (o *RealtimeMeasurements) GetHTTP3Ok() (*int64, bool)`
+`func (o *RealtimeMeasurements) GetHttp3Ok() (*int64, bool)`
 
-GetHTTP3Ok returns a tuple with the HTTP3 field if it's non-nil, zero value otherwise
+GetHttp3Ok returns a tuple with the Http3 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHTTP3
+### SetHttp3
 
-`func (o *RealtimeMeasurements) SetHTTP3(v int64)`
+`func (o *RealtimeMeasurements) SetHttp3(v int64)`
 
-SetHTTP3 sets HTTP3 field to given value.
+SetHttp3 sets Http3 field to given value.
 
-### HasHTTP3
+### HasHttp3
 
-`func (o *RealtimeMeasurements) HasHTTP3() bool`
+`func (o *RealtimeMeasurements) HasHttp3() bool`
 
-HasHTTP3 returns a boolean if a field has been set.
+HasHttp3 returns a boolean if a field has been set.
 
 ### GetRestarts
 
@@ -2485,130 +2486,130 @@ SetPassTime sets PassTime field to given value.
 
 HasPassTime returns a boolean if a field has been set.
 
-### GetTLS
+### GetTls
 
-`func (o *RealtimeMeasurements) GetTLS() int64`
+`func (o *RealtimeMeasurements) GetTls() int64`
 
-GetTLS returns the TLS field if non-nil, zero value otherwise.
+GetTls returns the Tls field if non-nil, zero value otherwise.
 
-### GetTLSOk
+### GetTlsOk
 
-`func (o *RealtimeMeasurements) GetTLSOk() (*int64, bool)`
+`func (o *RealtimeMeasurements) GetTlsOk() (*int64, bool)`
 
-GetTLSOk returns a tuple with the TLS field if it's non-nil, zero value otherwise
+GetTlsOk returns a tuple with the Tls field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLS
+### SetTls
 
-`func (o *RealtimeMeasurements) SetTLS(v int64)`
+`func (o *RealtimeMeasurements) SetTls(v int64)`
 
-SetTLS sets TLS field to given value.
+SetTls sets Tls field to given value.
 
-### HasTLS
+### HasTls
 
-`func (o *RealtimeMeasurements) HasTLS() bool`
+`func (o *RealtimeMeasurements) HasTls() bool`
 
-HasTLS returns a boolean if a field has been set.
+HasTls returns a boolean if a field has been set.
 
-### GetTLSV10
+### GetTlsV10
 
-`func (o *RealtimeMeasurements) GetTLSV10() int64`
+`func (o *RealtimeMeasurements) GetTlsV10() int64`
 
-GetTLSV10 returns the TLSV10 field if non-nil, zero value otherwise.
+GetTlsV10 returns the TlsV10 field if non-nil, zero value otherwise.
 
-### GetTLSV10Ok
+### GetTlsV10Ok
 
-`func (o *RealtimeMeasurements) GetTLSV10Ok() (*int64, bool)`
+`func (o *RealtimeMeasurements) GetTlsV10Ok() (*int64, bool)`
 
-GetTLSV10Ok returns a tuple with the TLSV10 field if it's non-nil, zero value otherwise
+GetTlsV10Ok returns a tuple with the TlsV10 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSV10
+### SetTlsV10
 
-`func (o *RealtimeMeasurements) SetTLSV10(v int64)`
+`func (o *RealtimeMeasurements) SetTlsV10(v int64)`
 
-SetTLSV10 sets TLSV10 field to given value.
+SetTlsV10 sets TlsV10 field to given value.
 
-### HasTLSV10
+### HasTlsV10
 
-`func (o *RealtimeMeasurements) HasTLSV10() bool`
+`func (o *RealtimeMeasurements) HasTlsV10() bool`
 
-HasTLSV10 returns a boolean if a field has been set.
+HasTlsV10 returns a boolean if a field has been set.
 
-### GetTLSV11
+### GetTlsV11
 
-`func (o *RealtimeMeasurements) GetTLSV11() int64`
+`func (o *RealtimeMeasurements) GetTlsV11() int64`
 
-GetTLSV11 returns the TLSV11 field if non-nil, zero value otherwise.
+GetTlsV11 returns the TlsV11 field if non-nil, zero value otherwise.
 
-### GetTLSV11Ok
+### GetTlsV11Ok
 
-`func (o *RealtimeMeasurements) GetTLSV11Ok() (*int64, bool)`
+`func (o *RealtimeMeasurements) GetTlsV11Ok() (*int64, bool)`
 
-GetTLSV11Ok returns a tuple with the TLSV11 field if it's non-nil, zero value otherwise
+GetTlsV11Ok returns a tuple with the TlsV11 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSV11
+### SetTlsV11
 
-`func (o *RealtimeMeasurements) SetTLSV11(v int64)`
+`func (o *RealtimeMeasurements) SetTlsV11(v int64)`
 
-SetTLSV11 sets TLSV11 field to given value.
+SetTlsV11 sets TlsV11 field to given value.
 
-### HasTLSV11
+### HasTlsV11
 
-`func (o *RealtimeMeasurements) HasTLSV11() bool`
+`func (o *RealtimeMeasurements) HasTlsV11() bool`
 
-HasTLSV11 returns a boolean if a field has been set.
+HasTlsV11 returns a boolean if a field has been set.
 
-### GetTLSV12
+### GetTlsV12
 
-`func (o *RealtimeMeasurements) GetTLSV12() int64`
+`func (o *RealtimeMeasurements) GetTlsV12() int64`
 
-GetTLSV12 returns the TLSV12 field if non-nil, zero value otherwise.
+GetTlsV12 returns the TlsV12 field if non-nil, zero value otherwise.
 
-### GetTLSV12Ok
+### GetTlsV12Ok
 
-`func (o *RealtimeMeasurements) GetTLSV12Ok() (*int64, bool)`
+`func (o *RealtimeMeasurements) GetTlsV12Ok() (*int64, bool)`
 
-GetTLSV12Ok returns a tuple with the TLSV12 field if it's non-nil, zero value otherwise
+GetTlsV12Ok returns a tuple with the TlsV12 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSV12
+### SetTlsV12
 
-`func (o *RealtimeMeasurements) SetTLSV12(v int64)`
+`func (o *RealtimeMeasurements) SetTlsV12(v int64)`
 
-SetTLSV12 sets TLSV12 field to given value.
+SetTlsV12 sets TlsV12 field to given value.
 
-### HasTLSV12
+### HasTlsV12
 
-`func (o *RealtimeMeasurements) HasTLSV12() bool`
+`func (o *RealtimeMeasurements) HasTlsV12() bool`
 
-HasTLSV12 returns a boolean if a field has been set.
+HasTlsV12 returns a boolean if a field has been set.
 
-### GetTLSV13
+### GetTlsV13
 
-`func (o *RealtimeMeasurements) GetTLSV13() int64`
+`func (o *RealtimeMeasurements) GetTlsV13() int64`
 
-GetTLSV13 returns the TLSV13 field if non-nil, zero value otherwise.
+GetTlsV13 returns the TlsV13 field if non-nil, zero value otherwise.
 
-### GetTLSV13Ok
+### GetTlsV13Ok
 
-`func (o *RealtimeMeasurements) GetTLSV13Ok() (*int64, bool)`
+`func (o *RealtimeMeasurements) GetTlsV13Ok() (*int64, bool)`
 
-GetTLSV13Ok returns a tuple with the TLSV13 field if it's non-nil, zero value otherwise
+GetTlsV13Ok returns a tuple with the TlsV13 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSV13
+### SetTlsV13
 
-`func (o *RealtimeMeasurements) SetTLSV13(v int64)`
+`func (o *RealtimeMeasurements) SetTlsV13(v int64)`
 
-SetTLSV13 sets TLSV13 field to given value.
+SetTlsV13 sets TlsV13 field to given value.
 
-### HasTLSV13
+### HasTlsV13
 
-`func (o *RealtimeMeasurements) HasTLSV13() bool`
+`func (o *RealtimeMeasurements) HasTlsV13() bool`
 
-HasTLSV13 returns a boolean if a field has been set.
+HasTlsV13 returns a boolean if a field has been set.
 
 ### GetObjectSize1k
 
@@ -6810,5 +6811,32 @@ SetComputeCacheOperationsCount sets ComputeCacheOperationsCount field to given v
 
 HasComputeCacheOperationsCount returns a boolean if a field has been set.
 
+### GetApiDiscoveryRequestsCount
+
+`func (o *RealtimeMeasurements) GetApiDiscoveryRequestsCount() int32`
+
+GetApiDiscoveryRequestsCount returns the ApiDiscoveryRequestsCount field if non-nil, zero value otherwise.
+
+### GetApiDiscoveryRequestsCountOk
+
+`func (o *RealtimeMeasurements) GetApiDiscoveryRequestsCountOk() (*int32, bool)`
+
+GetApiDiscoveryRequestsCountOk returns a tuple with the ApiDiscoveryRequestsCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiDiscoveryRequestsCount
+
+`func (o *RealtimeMeasurements) SetApiDiscoveryRequestsCount(v int32)`
+
+SetApiDiscoveryRequestsCount sets ApiDiscoveryRequestsCount field to given value.
+
+### HasApiDiscoveryRequestsCount
+
+`func (o *RealtimeMeasurements) HasApiDiscoveryRequestsCount() bool`
+
+HasApiDiscoveryRequestsCount returns a boolean if a field has been set.
+
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

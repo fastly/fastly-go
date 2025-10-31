@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Services** | Pointer to **[]string** | List of service ids to limit the token | [optional] 
 **Scope** | Pointer to **string** |  | [optional] [default to "global"]
 **ExpiresAt** | Pointer to **NullableTime** | A UTC timestamp of when the token will expire. | [optional] 
-**TLSAccess** | Pointer to **bool** | Indicates whether TLS access is enabled for the token. | [optional] 
+**TlsAccess** | Pointer to **bool** | Indicates whether TLS access is enabled for the token. | [optional] 
 
 ## Methods
 
@@ -165,30 +165,32 @@ HasExpiresAt returns a boolean if a field has been set.
 `func (o *AutomationTokenCreateRequestAttributes) UnsetExpiresAt()`
 
 UnsetExpiresAt ensures that no value is present for ExpiresAt, not even an explicit nil
-### GetTLSAccess
+### GetTlsAccess
 
-`func (o *AutomationTokenCreateRequestAttributes) GetTLSAccess() bool`
+`func (o *AutomationTokenCreateRequestAttributes) GetTlsAccess() bool`
 
-GetTLSAccess returns the TLSAccess field if non-nil, zero value otherwise.
+GetTlsAccess returns the TlsAccess field if non-nil, zero value otherwise.
 
-### GetTLSAccessOk
+### GetTlsAccessOk
 
-`func (o *AutomationTokenCreateRequestAttributes) GetTLSAccessOk() (*bool, bool)`
+`func (o *AutomationTokenCreateRequestAttributes) GetTlsAccessOk() (*bool, bool)`
 
-GetTLSAccessOk returns a tuple with the TLSAccess field if it's non-nil, zero value otherwise
+GetTlsAccessOk returns a tuple with the TlsAccess field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSAccess
+### SetTlsAccess
 
-`func (o *AutomationTokenCreateRequestAttributes) SetTLSAccess(v bool)`
+`func (o *AutomationTokenCreateRequestAttributes) SetTlsAccess(v bool)`
 
-SetTLSAccess sets TLSAccess field to given value.
+SetTlsAccess sets TlsAccess field to given value.
 
-### HasTLSAccess
+### HasTlsAccess
 
-`func (o *AutomationTokenCreateRequestAttributes) HasTLSAccess() bool`
+`func (o *AutomationTokenCreateRequestAttributes) HasTlsAccess() bool`
 
-HasTLSAccess returns a boolean if a field has been set.
+HasTlsAccess returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -18,7 +18,7 @@ import (
 
 // ConfigStoreItemResponseAllOf struct for ConfigStoreItemResponseAllOf
 type ConfigStoreItemResponseAllOf struct {
-	StoreID              *string `json:"store_id,omitempty"`
+	StoreId              *string `json:"store_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -41,44 +41,44 @@ func NewConfigStoreItemResponseAllOfWithDefaults() *ConfigStoreItemResponseAllOf
 	return &this
 }
 
-// GetStoreID returns the StoreID field value if set, zero value otherwise.
-func (o *ConfigStoreItemResponseAllOf) GetStoreID() string {
-	if o == nil || o.StoreID == nil {
+// GetStoreId returns the StoreId field value if set, zero value otherwise.
+func (o *ConfigStoreItemResponseAllOf) GetStoreId() string {
+	if o == nil || o.StoreId == nil {
 		var ret string
 		return ret
 	}
-	return *o.StoreID
+	return *o.StoreId
 }
 
-// GetStoreIDOk returns a tuple with the StoreID field value if set, nil otherwise
+// GetStoreIdOk returns a tuple with the StoreId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConfigStoreItemResponseAllOf) GetStoreIDOk() (*string, bool) {
-	if o == nil || o.StoreID == nil {
+func (o *ConfigStoreItemResponseAllOf) GetStoreIdOk() (*string, bool) {
+	if o == nil || o.StoreId == nil {
 		return nil, false
 	}
-	return o.StoreID, true
+	return o.StoreId, true
 }
 
-// HasStoreID returns a boolean if a field has been set.
-func (o *ConfigStoreItemResponseAllOf) HasStoreID() bool {
-	if o != nil && o.StoreID != nil {
+// HasStoreId returns a boolean if a field has been set.
+func (o *ConfigStoreItemResponseAllOf) HasStoreId() bool {
+	if o != nil && o.StoreId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetStoreID gets a reference to the given string and assigns it to the StoreID field.
-func (o *ConfigStoreItemResponseAllOf) SetStoreID(v string) {
-	o.StoreID = &v
+// SetStoreId gets a reference to the given string and assigns it to the StoreId field.
+func (o *ConfigStoreItemResponseAllOf) SetStoreId(v string) {
+	o.StoreId = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o ConfigStoreItemResponseAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.StoreID != nil {
-		toSerialize["store_id"] = o.StoreID
+	if o.StoreId != nil {
+		toSerialize["store_id"] = o.StoreId
 	}
 
 	for key, value := range o.AdditionalProperties {

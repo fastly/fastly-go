@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CustomerID** | Pointer to **string** |  | [optional] [readonly] 
+**CustomerId** | Pointer to **string** |  | [optional] [readonly] 
 **Services** | Pointer to [**map[string]HistoricalUsageService**](HistoricalUsageService.md) | Organized by *service id*. | [optional] 
 **Total** | Pointer to [**map[string]HistoricalUsageData**](HistoricalUsageData.md) | Organized by *region*. | [optional] 
 
@@ -27,30 +27,30 @@ NewHistoricalUsageMonthResponseDataWithDefaults instantiates a new HistoricalUsa
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCustomerID
+### GetCustomerId
 
-`func (o *HistoricalUsageMonthResponseData) GetCustomerID() string`
+`func (o *HistoricalUsageMonthResponseData) GetCustomerId() string`
 
-GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetCustomerIDOk
+### GetCustomerIdOk
 
-`func (o *HistoricalUsageMonthResponseData) GetCustomerIDOk() (*string, bool)`
+`func (o *HistoricalUsageMonthResponseData) GetCustomerIdOk() (*string, bool)`
 
-GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerID
+### SetCustomerId
 
-`func (o *HistoricalUsageMonthResponseData) SetCustomerID(v string)`
+`func (o *HistoricalUsageMonthResponseData) SetCustomerId(v string)`
 
-SetCustomerID sets CustomerID field to given value.
+SetCustomerId sets CustomerId field to given value.
 
-### HasCustomerID
+### HasCustomerId
 
-`func (o *HistoricalUsageMonthResponseData) HasCustomerID() bool`
+`func (o *HistoricalUsageMonthResponseData) HasCustomerId() bool`
 
-HasCustomerID returns a boolean if a field has been set.
+HasCustomerId returns a boolean if a field has been set.
 
 ### GetServices
 
@@ -104,3 +104,5 @@ HasTotal returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

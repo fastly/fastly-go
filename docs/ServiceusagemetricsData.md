@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CustomerID** | Pointer to **string** |  | [optional] [readonly] 
+**CustomerId** | Pointer to **string** |  | [optional] [readonly] 
 **StartTime** | Pointer to **time.Time** | Date and time (in ISO 8601 format) for initiation point of a billing cycle, signifying the start of charges for a service or subscription. | [optional] 
 **EndTime** | Pointer to **time.Time** | Date and time (in ISO 8601 format) for termination point of a billing cycle, signifying the end of charges for a service or subscription. | [optional] 
 **UsageType** | Pointer to **string** | The usage type identifier for the usage. This is a single, billable metric for the product. | [optional] 
@@ -31,30 +31,30 @@ NewServiceusagemetricsDataWithDefaults instantiates a new ServiceusagemetricsDat
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCustomerID
+### GetCustomerId
 
-`func (o *ServiceusagemetricsData) GetCustomerID() string`
+`func (o *ServiceusagemetricsData) GetCustomerId() string`
 
-GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetCustomerIDOk
+### GetCustomerIdOk
 
-`func (o *ServiceusagemetricsData) GetCustomerIDOk() (*string, bool)`
+`func (o *ServiceusagemetricsData) GetCustomerIdOk() (*string, bool)`
 
-GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerID
+### SetCustomerId
 
-`func (o *ServiceusagemetricsData) SetCustomerID(v string)`
+`func (o *ServiceusagemetricsData) SetCustomerId(v string)`
 
-SetCustomerID sets CustomerID field to given value.
+SetCustomerId sets CustomerId field to given value.
 
-### HasCustomerID
+### HasCustomerId
 
-`func (o *ServiceusagemetricsData) HasCustomerID() bool`
+`func (o *ServiceusagemetricsData) HasCustomerId() bool`
 
-HasCustomerID returns a boolean if a field has been set.
+HasCustomerId returns a boolean if a field has been set.
 
 ### GetStartTime
 
@@ -208,3 +208,5 @@ HasMeta returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

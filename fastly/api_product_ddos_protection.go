@@ -36,10 +36,10 @@ type ProductDdosProtectionAPI interface {
 		Disable the DDoS Protection product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIDisableProductDdosProtectionRequest
 	*/
-	DisableProductDdosProtection(ctx context.Context, serviceID string) APIDisableProductDdosProtectionRequest
+	DisableProductDdosProtection(ctx context.Context, serviceId string) APIDisableProductDdosProtectionRequest
 
 	// DisableProductDdosProtectionExecute executes the request
 	DisableProductDdosProtectionExecute(r APIDisableProductDdosProtectionRequest) (*http.Response, error)
@@ -50,10 +50,10 @@ type ProductDdosProtectionAPI interface {
 		Enable the DDoS Protection product on a service in 'log' mode.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIEnableProductDdosProtectionRequest
 	*/
-	EnableProductDdosProtection(ctx context.Context, serviceID string) APIEnableProductDdosProtectionRequest
+	EnableProductDdosProtection(ctx context.Context, serviceId string) APIEnableProductDdosProtectionRequest
 
 	// EnableProductDdosProtectionExecute executes the request
 	//  @return DdosProtectionResponseEnable
@@ -65,10 +65,10 @@ type ProductDdosProtectionAPI interface {
 		Get the enablement status of the DDoS Protection product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetProductDdosProtectionRequest
 	*/
-	GetProductDdosProtection(ctx context.Context, serviceID string) APIGetProductDdosProtectionRequest
+	GetProductDdosProtection(ctx context.Context, serviceId string) APIGetProductDdosProtectionRequest
 
 	// GetProductDdosProtectionExecute executes the request
 	//  @return DdosProtectionResponseEnable
@@ -80,10 +80,10 @@ type ProductDdosProtectionAPI interface {
 		Get configuration of the DDoS Protection product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetProductDdosProtectionConfigurationRequest
 	*/
-	GetProductDdosProtectionConfiguration(ctx context.Context, serviceID string) APIGetProductDdosProtectionConfigurationRequest
+	GetProductDdosProtectionConfiguration(ctx context.Context, serviceId string) APIGetProductDdosProtectionConfigurationRequest
 
 	// GetProductDdosProtectionConfigurationExecute executes the request
 	//  @return DdosProtectionResponseConfigure
@@ -109,10 +109,10 @@ type ProductDdosProtectionAPI interface {
 		Update configuration of the DDoS Protection product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APISetProductDdosProtectionConfigurationRequest
 	*/
-	SetProductDdosProtectionConfiguration(ctx context.Context, serviceID string) APISetProductDdosProtectionConfigurationRequest
+	SetProductDdosProtectionConfiguration(ctx context.Context, serviceId string) APISetProductDdosProtectionConfigurationRequest
 
 	// SetProductDdosProtectionConfigurationExecute executes the request
 	//  @return DdosProtectionResponseConfigure
@@ -126,7 +126,7 @@ type ProductDdosProtectionAPIService service
 type APIDisableProductDdosProtectionRequest struct {
 	ctx        context.Context
 	APIService ProductDdosProtectionAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -140,14 +140,14 @@ DisableProductDdosProtection Disable product
 Disable the DDoS Protection product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIDisableProductDdosProtectionRequest
 */
-func (a *ProductDdosProtectionAPIService) DisableProductDdosProtection(ctx context.Context, serviceID string) APIDisableProductDdosProtectionRequest {
+func (a *ProductDdosProtectionAPIService) DisableProductDdosProtection(ctx context.Context, serviceId string) APIDisableProductDdosProtectionRequest {
 	return APIDisableProductDdosProtectionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -165,7 +165,7 @@ func (a *ProductDdosProtectionAPIService) DisableProductDdosProtectionExecute(r 
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/ddos_protection/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -247,7 +247,7 @@ func (a *ProductDdosProtectionAPIService) DisableProductDdosProtectionExecute(r 
 type APIEnableProductDdosProtectionRequest struct {
 	ctx        context.Context
 	APIService ProductDdosProtectionAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -261,14 +261,14 @@ EnableProductDdosProtection Enable product
 Enable the DDoS Protection product on a service in 'log' mode.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIEnableProductDdosProtectionRequest
 */
-func (a *ProductDdosProtectionAPIService) EnableProductDdosProtection(ctx context.Context, serviceID string) APIEnableProductDdosProtectionRequest {
+func (a *ProductDdosProtectionAPIService) EnableProductDdosProtection(ctx context.Context, serviceId string) APIEnableProductDdosProtectionRequest {
 	return APIEnableProductDdosProtectionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -288,7 +288,7 @@ func (a *ProductDdosProtectionAPIService) EnableProductDdosProtectionExecute(r A
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/ddos_protection/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -379,7 +379,7 @@ func (a *ProductDdosProtectionAPIService) EnableProductDdosProtectionExecute(r A
 type APIGetProductDdosProtectionRequest struct {
 	ctx        context.Context
 	APIService ProductDdosProtectionAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -393,14 +393,14 @@ GetProductDdosProtection Get product enablement status
 Get the enablement status of the DDoS Protection product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetProductDdosProtectionRequest
 */
-func (a *ProductDdosProtectionAPIService) GetProductDdosProtection(ctx context.Context, serviceID string) APIGetProductDdosProtectionRequest {
+func (a *ProductDdosProtectionAPIService) GetProductDdosProtection(ctx context.Context, serviceId string) APIGetProductDdosProtectionRequest {
 	return APIGetProductDdosProtectionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -420,7 +420,7 @@ func (a *ProductDdosProtectionAPIService) GetProductDdosProtectionExecute(r APIG
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/ddos_protection/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -511,7 +511,7 @@ func (a *ProductDdosProtectionAPIService) GetProductDdosProtectionExecute(r APIG
 type APIGetProductDdosProtectionConfigurationRequest struct {
 	ctx        context.Context
 	APIService ProductDdosProtectionAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -525,14 +525,14 @@ GetProductDdosProtectionConfiguration Get configuration
 Get configuration of the DDoS Protection product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetProductDdosProtectionConfigurationRequest
 */
-func (a *ProductDdosProtectionAPIService) GetProductDdosProtectionConfiguration(ctx context.Context, serviceID string) APIGetProductDdosProtectionConfigurationRequest {
+func (a *ProductDdosProtectionAPIService) GetProductDdosProtectionConfiguration(ctx context.Context, serviceId string) APIGetProductDdosProtectionConfigurationRequest {
 	return APIGetProductDdosProtectionConfigurationRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -552,7 +552,7 @@ func (a *ProductDdosProtectionAPIService) GetProductDdosProtectionConfigurationE
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/ddos_protection/services/{service_id}/configuration"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -771,7 +771,7 @@ func (a *ProductDdosProtectionAPIService) GetServicesProductDdosProtectionExecut
 type APISetProductDdosProtectionConfigurationRequest struct {
 	ctx                                      context.Context
 	APIService                               ProductDdosProtectionAPI
-	serviceID                                string
+	serviceId                                string
 	ddosProtectionRequestUpdateConfiguration *DdosProtectionRequestUpdateConfiguration
 }
 
@@ -792,14 +792,14 @@ SetProductDdosProtectionConfiguration Update configuration
 Update configuration of the DDoS Protection product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APISetProductDdosProtectionConfigurationRequest
 */
-func (a *ProductDdosProtectionAPIService) SetProductDdosProtectionConfiguration(ctx context.Context, serviceID string) APISetProductDdosProtectionConfigurationRequest {
+func (a *ProductDdosProtectionAPIService) SetProductDdosProtectionConfiguration(ctx context.Context, serviceId string) APISetProductDdosProtectionConfigurationRequest {
 	return APISetProductDdosProtectionConfigurationRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -819,7 +819,7 @@ func (a *ProductDdosProtectionAPIService) SetProductDdosProtectionConfigurationE
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/ddos_protection/services/{service_id}/configuration"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

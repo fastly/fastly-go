@@ -18,9 +18,9 @@ import (
 
 // FanoutResponseBodyEnable struct for FanoutResponseBodyEnable
 type FanoutResponseBodyEnable struct {
-	Product              *FanoutResponseProductProduct        `json:"product,omitempty"`
-	Service              *BotManagementResponseServiceService `json:"service,omitempty"`
-	Links                *FanoutResponseLinksLinks            `json:"_links,omitempty"`
+	Product              *FanoutResponseProductProduct       `json:"product,omitempty"`
+	Service              *ApiDiscoveryResponseServiceService `json:"service,omitempty"`
+	Links                *FanoutResponseLinksLinks           `json:"_links,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -76,9 +76,9 @@ func (o *FanoutResponseBodyEnable) SetProduct(v FanoutResponseProductProduct) {
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *FanoutResponseBodyEnable) GetService() BotManagementResponseServiceService {
+func (o *FanoutResponseBodyEnable) GetService() ApiDiscoveryResponseServiceService {
 	if o == nil || o.Service == nil {
-		var ret BotManagementResponseServiceService
+		var ret ApiDiscoveryResponseServiceService
 		return ret
 	}
 	return *o.Service
@@ -86,7 +86,7 @@ func (o *FanoutResponseBodyEnable) GetService() BotManagementResponseServiceServ
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FanoutResponseBodyEnable) GetServiceOk() (*BotManagementResponseServiceService, bool) {
+func (o *FanoutResponseBodyEnable) GetServiceOk() (*ApiDiscoveryResponseServiceService, bool) {
 	if o == nil || o.Service == nil {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *FanoutResponseBodyEnable) HasService() bool {
 	return false
 }
 
-// SetService gets a reference to the given BotManagementResponseServiceService and assigns it to the Service field.
-func (o *FanoutResponseBodyEnable) SetService(v BotManagementResponseServiceService) {
+// SetService gets a reference to the given ApiDiscoveryResponseServiceService and assigns it to the Service field.
+func (o *FanoutResponseBodyEnable) SetService(v ApiDiscoveryResponseServiceService) {
 	o.Service = &v
 }
 

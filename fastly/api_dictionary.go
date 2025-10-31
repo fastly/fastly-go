@@ -36,11 +36,11 @@ type DictionaryAPI interface {
 		Create named dictionary for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateDictionaryRequest
 	*/
-	CreateDictionary(ctx context.Context, serviceID string, versionID int32) APICreateDictionaryRequest
+	CreateDictionary(ctx context.Context, serviceId string, versionId int32) APICreateDictionaryRequest
 
 	// CreateDictionaryExecute executes the request
 	//  @return DictionaryResponse
@@ -52,12 +52,12 @@ type DictionaryAPI interface {
 		Delete named dictionary for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param dictionaryName Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
 		 @return APIDeleteDictionaryRequest
 	*/
-	DeleteDictionary(ctx context.Context, serviceID string, versionID int32, dictionaryName string) APIDeleteDictionaryRequest
+	DeleteDictionary(ctx context.Context, serviceId string, versionId int32, dictionaryName string) APIDeleteDictionaryRequest
 
 	// DeleteDictionaryExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type DictionaryAPI interface {
 		Retrieve a single dictionary by name for the version and service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param dictionaryName Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
 		 @return APIGetDictionaryRequest
 	*/
-	GetDictionary(ctx context.Context, serviceID string, versionID int32, dictionaryName string) APIGetDictionaryRequest
+	GetDictionary(ctx context.Context, serviceId string, versionId int32, dictionaryName string) APIGetDictionaryRequest
 
 	// GetDictionaryExecute executes the request
 	//  @return DictionaryResponse
@@ -86,11 +86,11 @@ type DictionaryAPI interface {
 		List all dictionaries for the version of the service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListDictionariesRequest
 	*/
-	ListDictionaries(ctx context.Context, serviceID string, versionID int32) APIListDictionariesRequest
+	ListDictionaries(ctx context.Context, serviceId string, versionId int32) APIListDictionariesRequest
 
 	// ListDictionariesExecute executes the request
 	//  @return []DictionaryResponse
@@ -102,12 +102,12 @@ type DictionaryAPI interface {
 		Update named dictionary for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param dictionaryName Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
 		 @return APIUpdateDictionaryRequest
 	*/
-	UpdateDictionary(ctx context.Context, serviceID string, versionID int32, dictionaryName string) APIUpdateDictionaryRequest
+	UpdateDictionary(ctx context.Context, serviceId string, versionId int32, dictionaryName string) APIUpdateDictionaryRequest
 
 	// UpdateDictionaryExecute executes the request
 	//  @return DictionaryResponse
@@ -121,8 +121,8 @@ type DictionaryAPIService service
 type APICreateDictionaryRequest struct {
 	ctx        context.Context
 	APIService DictionaryAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	name       *string
 	writeOnly  *bool
 }
@@ -150,16 +150,16 @@ CreateDictionary Create a dictionary
 Create named dictionary for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateDictionaryRequest
 */
-func (a *DictionaryAPIService) CreateDictionary(ctx context.Context, serviceID string, versionID int32) APICreateDictionaryRequest {
+func (a *DictionaryAPIService) CreateDictionary(ctx context.Context, serviceId string, versionId int32) APICreateDictionaryRequest {
 	return APICreateDictionaryRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -179,8 +179,8 @@ func (a *DictionaryAPIService) CreateDictionaryExecute(r APICreateDictionaryRequ
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/dictionary"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -277,8 +277,8 @@ func (a *DictionaryAPIService) CreateDictionaryExecute(r APICreateDictionaryRequ
 type APIDeleteDictionaryRequest struct {
 	ctx            context.Context
 	APIService     DictionaryAPI
-	serviceID      string
-	versionID      int32
+	serviceId      string
+	versionId      int32
 	dictionaryName string
 }
 
@@ -293,17 +293,17 @@ DeleteDictionary Delete a dictionary
 Delete named dictionary for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param dictionaryName Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
  @return APIDeleteDictionaryRequest
 */
-func (a *DictionaryAPIService) DeleteDictionary(ctx context.Context, serviceID string, versionID int32, dictionaryName string) APIDeleteDictionaryRequest {
+func (a *DictionaryAPIService) DeleteDictionary(ctx context.Context, serviceId string, versionId int32, dictionaryName string) APIDeleteDictionaryRequest {
 	return APIDeleteDictionaryRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceID:      serviceID,
-		versionID:      versionID,
+		serviceId:      serviceId,
+		versionId:      versionId,
 		dictionaryName: dictionaryName,
 	}
 }
@@ -324,8 +324,8 @@ func (a *DictionaryAPIService) DeleteDictionaryExecute(r APIDeleteDictionaryRequ
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/dictionary/{dictionary_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_name"+"}", gourl.PathEscape(parameterToString(r.dictionaryName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -417,8 +417,8 @@ func (a *DictionaryAPIService) DeleteDictionaryExecute(r APIDeleteDictionaryRequ
 type APIGetDictionaryRequest struct {
 	ctx            context.Context
 	APIService     DictionaryAPI
-	serviceID      string
-	versionID      int32
+	serviceId      string
+	versionId      int32
 	dictionaryName string
 }
 
@@ -433,17 +433,17 @@ GetDictionary Get a dictionary
 Retrieve a single dictionary by name for the version and service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param dictionaryName Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
  @return APIGetDictionaryRequest
 */
-func (a *DictionaryAPIService) GetDictionary(ctx context.Context, serviceID string, versionID int32, dictionaryName string) APIGetDictionaryRequest {
+func (a *DictionaryAPIService) GetDictionary(ctx context.Context, serviceId string, versionId int32, dictionaryName string) APIGetDictionaryRequest {
 	return APIGetDictionaryRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceID:      serviceID,
-		versionID:      versionID,
+		serviceId:      serviceId,
+		versionId:      versionId,
 		dictionaryName: dictionaryName,
 	}
 }
@@ -464,8 +464,8 @@ func (a *DictionaryAPIService) GetDictionaryExecute(r APIGetDictionaryRequest) (
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/dictionary/{dictionary_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_name"+"}", gourl.PathEscape(parameterToString(r.dictionaryName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -557,8 +557,8 @@ func (a *DictionaryAPIService) GetDictionaryExecute(r APIGetDictionaryRequest) (
 type APIListDictionariesRequest struct {
 	ctx        context.Context
 	APIService DictionaryAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -572,16 +572,16 @@ ListDictionaries List dictionaries
 List all dictionaries for the version of the service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListDictionariesRequest
 */
-func (a *DictionaryAPIService) ListDictionaries(ctx context.Context, serviceID string, versionID int32) APIListDictionariesRequest {
+func (a *DictionaryAPIService) ListDictionaries(ctx context.Context, serviceId string, versionId int32) APIListDictionariesRequest {
 	return APIListDictionariesRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -601,8 +601,8 @@ func (a *DictionaryAPIService) ListDictionariesExecute(r APIListDictionariesRequ
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/dictionary"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -693,8 +693,8 @@ func (a *DictionaryAPIService) ListDictionariesExecute(r APIListDictionariesRequ
 type APIUpdateDictionaryRequest struct {
 	ctx            context.Context
 	APIService     DictionaryAPI
-	serviceID      string
-	versionID      int32
+	serviceId      string
+	versionId      int32
 	dictionaryName string
 	name           *string
 	writeOnly      *bool
@@ -723,17 +723,17 @@ UpdateDictionary Update a dictionary
 Update named dictionary for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param dictionaryName Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
  @return APIUpdateDictionaryRequest
 */
-func (a *DictionaryAPIService) UpdateDictionary(ctx context.Context, serviceID string, versionID int32, dictionaryName string) APIUpdateDictionaryRequest {
+func (a *DictionaryAPIService) UpdateDictionary(ctx context.Context, serviceId string, versionId int32, dictionaryName string) APIUpdateDictionaryRequest {
 	return APIUpdateDictionaryRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceID:      serviceID,
-		versionID:      versionID,
+		serviceId:      serviceId,
+		versionId:      versionId,
 		dictionaryName: dictionaryName,
 	}
 }
@@ -754,8 +754,8 @@ func (a *DictionaryAPIService) UpdateDictionaryExecute(r APIUpdateDictionaryRequ
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/dictionary/{dictionary_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_name"+"}", gourl.PathEscape(parameterToString(r.dictionaryName, "")))
 
 	localVarHeaderParams := make(map[string]string)

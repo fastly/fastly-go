@@ -36,11 +36,11 @@ type ResponseObjectAPI interface {
 		Creates a new Response Object.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateResponseObjectRequest
 	*/
-	CreateResponseObject(ctx context.Context, serviceID string, versionID int32) APICreateResponseObjectRequest
+	CreateResponseObject(ctx context.Context, serviceId string, versionId int32) APICreateResponseObjectRequest
 
 	// CreateResponseObjectExecute executes the request
 	//  @return ResponseObjectResponse
@@ -52,12 +52,12 @@ type ResponseObjectAPI interface {
 		Deletes the specified Response Object.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param responseObjectName Name for the request settings.
 		 @return APIDeleteResponseObjectRequest
 	*/
-	DeleteResponseObject(ctx context.Context, serviceID string, versionID int32, responseObjectName string) APIDeleteResponseObjectRequest
+	DeleteResponseObject(ctx context.Context, serviceId string, versionId int32, responseObjectName string) APIDeleteResponseObjectRequest
 
 	// DeleteResponseObjectExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type ResponseObjectAPI interface {
 		Gets the specified Response Object.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param responseObjectName Name for the request settings.
 		 @return APIGetResponseObjectRequest
 	*/
-	GetResponseObject(ctx context.Context, serviceID string, versionID int32, responseObjectName string) APIGetResponseObjectRequest
+	GetResponseObject(ctx context.Context, serviceId string, versionId int32, responseObjectName string) APIGetResponseObjectRequest
 
 	// GetResponseObjectExecute executes the request
 	//  @return ResponseObjectResponse
@@ -86,11 +86,11 @@ type ResponseObjectAPI interface {
 		Returns all Response Objects for the specified service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListResponseObjectsRequest
 	*/
-	ListResponseObjects(ctx context.Context, serviceID string, versionID int32) APIListResponseObjectsRequest
+	ListResponseObjects(ctx context.Context, serviceId string, versionId int32) APIListResponseObjectsRequest
 
 	// ListResponseObjectsExecute executes the request
 	//  @return []ResponseObjectResponse
@@ -102,12 +102,12 @@ type ResponseObjectAPI interface {
 		Updates the specified Response Object.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param responseObjectName Name for the request settings.
 		 @return APIUpdateResponseObjectRequest
 	*/
-	UpdateResponseObject(ctx context.Context, serviceID string, versionID int32, responseObjectName string) APIUpdateResponseObjectRequest
+	UpdateResponseObject(ctx context.Context, serviceId string, versionId int32, responseObjectName string) APIUpdateResponseObjectRequest
 
 	// UpdateResponseObjectExecute executes the request
 	//  @return ResponseObjectResponse
@@ -121,8 +121,8 @@ type ResponseObjectAPIService service
 type APICreateResponseObjectRequest struct {
 	ctx                         context.Context
 	APIService                  ResponseObjectAPI
-	serviceID                   string
-	versionID                   int32
+	serviceId                   string
+	versionId                   int32
 	createResponseObjectRequest *CreateResponseObjectRequest
 }
 
@@ -143,16 +143,16 @@ CreateResponseObject Create a Response object
 Creates a new Response Object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateResponseObjectRequest
 */
-func (a *ResponseObjectAPIService) CreateResponseObject(ctx context.Context, serviceID string, versionID int32) APICreateResponseObjectRequest {
+func (a *ResponseObjectAPIService) CreateResponseObject(ctx context.Context, serviceId string, versionId int32) APICreateResponseObjectRequest {
 	return APICreateResponseObjectRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -172,8 +172,8 @@ func (a *ResponseObjectAPIService) CreateResponseObjectExecute(r APICreateRespon
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/response_object"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -266,8 +266,8 @@ func (a *ResponseObjectAPIService) CreateResponseObjectExecute(r APICreateRespon
 type APIDeleteResponseObjectRequest struct {
 	ctx                context.Context
 	APIService         ResponseObjectAPI
-	serviceID          string
-	versionID          int32
+	serviceId          string
+	versionId          int32
 	responseObjectName string
 }
 
@@ -282,17 +282,17 @@ DeleteResponseObject Delete a Response Object
 Deletes the specified Response Object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param responseObjectName Name for the request settings.
  @return APIDeleteResponseObjectRequest
 */
-func (a *ResponseObjectAPIService) DeleteResponseObject(ctx context.Context, serviceID string, versionID int32, responseObjectName string) APIDeleteResponseObjectRequest {
+func (a *ResponseObjectAPIService) DeleteResponseObject(ctx context.Context, serviceId string, versionId int32, responseObjectName string) APIDeleteResponseObjectRequest {
 	return APIDeleteResponseObjectRequest{
 		APIService:         a,
 		ctx:                ctx,
-		serviceID:          serviceID,
-		versionID:          versionID,
+		serviceId:          serviceId,
+		versionId:          versionId,
 		responseObjectName: responseObjectName,
 	}
 }
@@ -313,8 +313,8 @@ func (a *ResponseObjectAPIService) DeleteResponseObjectExecute(r APIDeleteRespon
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/response_object/{response_object_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"response_object_name"+"}", gourl.PathEscape(parameterToString(r.responseObjectName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -406,8 +406,8 @@ func (a *ResponseObjectAPIService) DeleteResponseObjectExecute(r APIDeleteRespon
 type APIGetResponseObjectRequest struct {
 	ctx                context.Context
 	APIService         ResponseObjectAPI
-	serviceID          string
-	versionID          int32
+	serviceId          string
+	versionId          int32
 	responseObjectName string
 }
 
@@ -422,17 +422,17 @@ GetResponseObject Get a Response object
 Gets the specified Response Object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param responseObjectName Name for the request settings.
  @return APIGetResponseObjectRequest
 */
-func (a *ResponseObjectAPIService) GetResponseObject(ctx context.Context, serviceID string, versionID int32, responseObjectName string) APIGetResponseObjectRequest {
+func (a *ResponseObjectAPIService) GetResponseObject(ctx context.Context, serviceId string, versionId int32, responseObjectName string) APIGetResponseObjectRequest {
 	return APIGetResponseObjectRequest{
 		APIService:         a,
 		ctx:                ctx,
-		serviceID:          serviceID,
-		versionID:          versionID,
+		serviceId:          serviceId,
+		versionId:          versionId,
 		responseObjectName: responseObjectName,
 	}
 }
@@ -453,8 +453,8 @@ func (a *ResponseObjectAPIService) GetResponseObjectExecute(r APIGetResponseObje
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/response_object/{response_object_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"response_object_name"+"}", gourl.PathEscape(parameterToString(r.responseObjectName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -546,8 +546,8 @@ func (a *ResponseObjectAPIService) GetResponseObjectExecute(r APIGetResponseObje
 type APIListResponseObjectsRequest struct {
 	ctx        context.Context
 	APIService ResponseObjectAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -561,16 +561,16 @@ ListResponseObjects List Response objects
 Returns all Response Objects for the specified service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListResponseObjectsRequest
 */
-func (a *ResponseObjectAPIService) ListResponseObjects(ctx context.Context, serviceID string, versionID int32) APIListResponseObjectsRequest {
+func (a *ResponseObjectAPIService) ListResponseObjects(ctx context.Context, serviceId string, versionId int32) APIListResponseObjectsRequest {
 	return APIListResponseObjectsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -590,8 +590,8 @@ func (a *ResponseObjectAPIService) ListResponseObjectsExecute(r APIListResponseO
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/response_object"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -682,8 +682,8 @@ func (a *ResponseObjectAPIService) ListResponseObjectsExecute(r APIListResponseO
 type APIUpdateResponseObjectRequest struct {
 	ctx                         context.Context
 	APIService                  ResponseObjectAPI
-	serviceID                   string
-	versionID                   int32
+	serviceId                   string
+	versionId                   int32
 	responseObjectName          string
 	createResponseObjectRequest *CreateResponseObjectRequest
 }
@@ -705,17 +705,17 @@ UpdateResponseObject Update a Response object
 Updates the specified Response Object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param responseObjectName Name for the request settings.
  @return APIUpdateResponseObjectRequest
 */
-func (a *ResponseObjectAPIService) UpdateResponseObject(ctx context.Context, serviceID string, versionID int32, responseObjectName string) APIUpdateResponseObjectRequest {
+func (a *ResponseObjectAPIService) UpdateResponseObject(ctx context.Context, serviceId string, versionId int32, responseObjectName string) APIUpdateResponseObjectRequest {
 	return APIUpdateResponseObjectRequest{
 		APIService:         a,
 		ctx:                ctx,
-		serviceID:          serviceID,
-		versionID:          versionID,
+		serviceId:          serviceId,
+		versionId:          versionId,
 		responseObjectName: responseObjectName,
 	}
 }
@@ -736,8 +736,8 @@ func (a *ResponseObjectAPIService) UpdateResponseObjectExecute(r APIUpdateRespon
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/response_object/{response_object_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"response_object_name"+"}", gourl.PathEscape(parameterToString(r.responseObjectName, "")))
 
 	localVarHeaderParams := make(map[string]string)

@@ -1,54 +1,56 @@
-# RelationshipTLSConfiguration
+# RelationshipTlsConfiguration
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TLSConfiguration** | Pointer to [**RelationshipTLSConfigurationTLSConfiguration**](RelationshipTLSConfigurationTLSConfiguration.md) |  | [optional] 
+**TlsConfiguration** | Pointer to [**RelationshipTlsConfigurationTlsConfiguration**](RelationshipTlsConfigurationTlsConfiguration.md) |  | [optional] 
 
 ## Methods
 
-### NewRelationshipTLSConfiguration
+### NewRelationshipTlsConfiguration
 
-`func NewRelationshipTLSConfiguration() *RelationshipTLSConfiguration`
+`func NewRelationshipTlsConfiguration() *RelationshipTlsConfiguration`
 
-NewRelationshipTLSConfiguration instantiates a new RelationshipTLSConfiguration object
+NewRelationshipTlsConfiguration instantiates a new RelationshipTlsConfiguration object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipTLSConfigurationWithDefaults
+### NewRelationshipTlsConfigurationWithDefaults
 
-`func NewRelationshipTLSConfigurationWithDefaults() *RelationshipTLSConfiguration`
+`func NewRelationshipTlsConfigurationWithDefaults() *RelationshipTlsConfiguration`
 
-NewRelationshipTLSConfigurationWithDefaults instantiates a new RelationshipTLSConfiguration object
+NewRelationshipTlsConfigurationWithDefaults instantiates a new RelationshipTlsConfiguration object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTLSConfiguration
+### GetTlsConfiguration
 
-`func (o *RelationshipTLSConfiguration) GetTLSConfiguration() RelationshipTLSConfigurationTLSConfiguration`
+`func (o *RelationshipTlsConfiguration) GetTlsConfiguration() RelationshipTlsConfigurationTlsConfiguration`
 
-GetTLSConfiguration returns the TLSConfiguration field if non-nil, zero value otherwise.
+GetTlsConfiguration returns the TlsConfiguration field if non-nil, zero value otherwise.
 
-### GetTLSConfigurationOk
+### GetTlsConfigurationOk
 
-`func (o *RelationshipTLSConfiguration) GetTLSConfigurationOk() (*RelationshipTLSConfigurationTLSConfiguration, bool)`
+`func (o *RelationshipTlsConfiguration) GetTlsConfigurationOk() (*RelationshipTlsConfigurationTlsConfiguration, bool)`
 
-GetTLSConfigurationOk returns a tuple with the TLSConfiguration field if it's non-nil, zero value otherwise
+GetTlsConfigurationOk returns a tuple with the TlsConfiguration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSConfiguration
+### SetTlsConfiguration
 
-`func (o *RelationshipTLSConfiguration) SetTLSConfiguration(v RelationshipTLSConfigurationTLSConfiguration)`
+`func (o *RelationshipTlsConfiguration) SetTlsConfiguration(v RelationshipTlsConfigurationTlsConfiguration)`
 
-SetTLSConfiguration sets TLSConfiguration field to given value.
+SetTlsConfiguration sets TlsConfiguration field to given value.
 
-### HasTLSConfiguration
+### HasTlsConfiguration
 
-`func (o *RelationshipTLSConfiguration) HasTLSConfiguration() bool`
+`func (o *RelationshipTlsConfiguration) HasTlsConfiguration() bool`
 
-HasTLSConfiguration returns a boolean if a field has been set.
+HasTlsConfiguration returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

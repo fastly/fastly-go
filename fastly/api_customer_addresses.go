@@ -64,10 +64,10 @@ type CustomerAddressesAPI interface {
 		Updates an address associated with a customer account.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param resourceType Alphanumeric type of the address being modified.
+		 @param type_ Alphanumeric type of the address being modified.
 		 @return APIUpdateCustomerAddressRequest
 	*/
-	UpdateCustomerAddress(ctx context.Context, resourceType string) APIUpdateCustomerAddressRequest
+	UpdateCustomerAddress(ctx context.Context, type_ string) APIUpdateCustomerAddressRequest
 
 	// UpdateCustomerAddressExecute executes the request
 	UpdateCustomerAddressExecute(r APIUpdateCustomerAddressRequest) (*http.Response, error)
@@ -426,7 +426,7 @@ func (a *CustomerAddressesAPIService) ListCustomerAddressesExecute(r APIListCust
 type APIUpdateCustomerAddressRequest struct {
 	ctx             context.Context
 	APIService      CustomerAddressesAPI
-	resourceType    string
+	type_           string
 	customerAddress *CustomerAddress
 }
 
@@ -447,14 +447,14 @@ UpdateCustomerAddress Updates an address associated with a customer account.
 Updates an address associated with a customer account.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param resourceType Alphanumeric type of the address being modified.
+ @param type_ Alphanumeric type of the address being modified.
  @return APIUpdateCustomerAddressRequest
 */
-func (a *CustomerAddressesAPIService) UpdateCustomerAddress(ctx context.Context, resourceType string) APIUpdateCustomerAddressRequest {
+func (a *CustomerAddressesAPIService) UpdateCustomerAddress(ctx context.Context, type_ string) APIUpdateCustomerAddressRequest {
 	return APIUpdateCustomerAddressRequest{
-		APIService:   a,
-		ctx:          ctx,
-		resourceType: resourceType,
+		APIService: a,
+		ctx:        ctx,
+		type_:      type_,
 	}
 }
 
@@ -472,7 +472,7 @@ func (a *CustomerAddressesAPIService) UpdateCustomerAddressExecute(r APIUpdateCu
 	}
 
 	localVarPath := localBasePath + "/billing/v3/customer-addresses/{type}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"type"+"}", gourl.PathEscape(parameterToString(r.resourceType, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"type"+"}", gourl.PathEscape(parameterToString(r.type_, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

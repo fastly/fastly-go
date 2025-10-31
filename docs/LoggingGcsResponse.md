@@ -21,12 +21,12 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 **BucketName** | Pointer to **string** | The name of the GCS bucket. | [optional] 
 **Path** | Pointer to **string** |  | [optional] [default to "/"]
 **PublicKey** | Pointer to **NullableString** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to "null"]
-**ProjectID** | Pointer to **string** | Your Google Cloud Platform project ID. Required | [optional] 
+**ProjectId** | Pointer to **string** | Your Google Cloud Platform project ID. Required | [optional] 
 
 ## Methods
 
@@ -532,30 +532,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *LoggingGcsResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceID
+### GetServiceId
 
-`func (o *LoggingGcsResponse) GetServiceID() string`
+`func (o *LoggingGcsResponse) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *LoggingGcsResponse) GetServiceIDOk() (*string, bool)`
+`func (o *LoggingGcsResponse) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *LoggingGcsResponse) SetServiceID(v string)`
+`func (o *LoggingGcsResponse) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *LoggingGcsResponse) HasServiceID() bool`
+`func (o *LoggingGcsResponse) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -667,30 +667,32 @@ HasPublicKey returns a boolean if a field has been set.
 `func (o *LoggingGcsResponse) UnsetPublicKey()`
 
 UnsetPublicKey ensures that no value is present for PublicKey, not even an explicit nil
-### GetProjectID
+### GetProjectId
 
-`func (o *LoggingGcsResponse) GetProjectID() string`
+`func (o *LoggingGcsResponse) GetProjectId() string`
 
-GetProjectID returns the ProjectID field if non-nil, zero value otherwise.
+GetProjectId returns the ProjectId field if non-nil, zero value otherwise.
 
-### GetProjectIDOk
+### GetProjectIdOk
 
-`func (o *LoggingGcsResponse) GetProjectIDOk() (*string, bool)`
+`func (o *LoggingGcsResponse) GetProjectIdOk() (*string, bool)`
 
-GetProjectIDOk returns a tuple with the ProjectID field if it's non-nil, zero value otherwise
+GetProjectIdOk returns a tuple with the ProjectId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProjectID
+### SetProjectId
 
-`func (o *LoggingGcsResponse) SetProjectID(v string)`
+`func (o *LoggingGcsResponse) SetProjectId(v string)`
 
-SetProjectID sets ProjectID field to given value.
+SetProjectId sets ProjectId field to given value.
 
-### HasProjectID
+### HasProjectId
 
-`func (o *LoggingGcsResponse) HasProjectID() bool`
+`func (o *LoggingGcsResponse) HasProjectId() bool`
 
-HasProjectID returns a boolean if a field has been set.
+HasProjectId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

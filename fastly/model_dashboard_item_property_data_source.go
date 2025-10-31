@@ -30,9 +30,9 @@ type _DashboardItemPropertyDataSource DashboardItemPropertyDataSource
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDashboardItemPropertyDataSource(resourceType string, config DashboardItemPropertyDataSourcePropertyConfig) *DashboardItemPropertyDataSource {
+func NewDashboardItemPropertyDataSource(type_ string, config DashboardItemPropertyDataSourcePropertyConfig) *DashboardItemPropertyDataSource {
 	this := DashboardItemPropertyDataSource{}
-	this.Type = resourceType
+	this.Type = type_
 	this.Config = config
 	return &this
 }

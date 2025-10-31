@@ -20,7 +20,7 @@ import (
 // TypeEvent Resource type
 type TypeEvent string
 
-// List of resourceTypeevent
+// List of type_event
 const (
 	TYPEEVENT_EVENT TypeEvent = "event"
 )
@@ -69,7 +69,7 @@ func (v TypeEvent) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to resourceTypeevent value
+// Ptr returns reference to type_event value
 func (v TypeEvent) Ptr() *TypeEvent {
 	return &v
 }

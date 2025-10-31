@@ -32,8 +32,8 @@ type _ServiceAuthorizationData ServiceAuthorizationData
 // will change when the set of required properties is changed
 func NewServiceAuthorizationData() *ServiceAuthorizationData {
 	this := ServiceAuthorizationData{}
-	var resourceType TypeServiceAuthorization = TYPESERVICEAUTHORIZATION_SERVICE_AUTHORIZATION
-	this.Type = &resourceType
+	var type_ TypeServiceAuthorization = TYPESERVICEAUTHORIZATION_SERVICE_AUTHORIZATION
+	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +42,8 @@ func NewServiceAuthorizationData() *ServiceAuthorizationData {
 // but it doesn't guarantee that properties required by API are set
 func NewServiceAuthorizationDataWithDefaults() *ServiceAuthorizationData {
 	this := ServiceAuthorizationData{}
-	var resourceType TypeServiceAuthorization = TYPESERVICEAUTHORIZATION_SERVICE_AUTHORIZATION
-	this.Type = &resourceType
+	var type_ TypeServiceAuthorization = TYPESERVICEAUTHORIZATION_SERVICE_AUTHORIZATION
+	this.Type = &type_
 	return &this
 }
 

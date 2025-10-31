@@ -32,15 +32,15 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
-    resourceID := "resourceId_example" // string | The ID of the underlying linked resource. (optional)
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
+    resourceId := "resourceId_example" // string | The ID of the underlying linked resource. (optional)
     name := "name_example" // string | The name of the resource link. Note this is separate from the resource store name and might not match the store name. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ResourceAPI.CreateResource(ctx, serviceID, versionID).ResourceID(resourceID).Name(name).Execute()
+    resp, r, err := apiClient.ResourceAPI.CreateResource(ctx, serviceId, versionId).ResourceId(resourceId).Name(name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ResourceAPI.CreateResource`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -56,8 +56,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -66,7 +66,7 @@ Other parameters are passed through a pointer to a apiCreateResourceRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resourceID** | **string** | The ID of the underlying linked resource. |  **name** | **string** | The name of the resource link. Note this is separate from the resource store name and might not match the store name. | 
+ **resourceId** | **string** | The ID of the underlying linked resource. |  **name** | **string** | The name of the resource link. Note this is separate from the resource store name and might not match the store name. | 
 
 ### Return type
 
@@ -103,14 +103,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     id := "id_example" // string | An alphanumeric string identifying the resource link.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ResourceAPI.DeleteResource(ctx, serviceID, versionID, id).Execute()
+    resp, r, err := apiClient.ResourceAPI.DeleteResource(ctx, serviceId, versionId, id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ResourceAPI.DeleteResource`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,8 +126,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **id** | **string** | An alphanumeric string identifying the resource link. | 
 
 ### Other Parameters
@@ -174,14 +174,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     id := "id_example" // string | An alphanumeric string identifying the resource link.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ResourceAPI.GetResource(ctx, serviceID, versionID, id).Execute()
+    resp, r, err := apiClient.ResourceAPI.GetResource(ctx, serviceId, versionId, id).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ResourceAPI.GetResource`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -197,8 +197,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **id** | **string** | An alphanumeric string identifying the resource link. | 
 
 ### Other Parameters
@@ -245,13 +245,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ResourceAPI.ListResources(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.ResourceAPI.ListResources(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ResourceAPI.ListResources`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -267,8 +267,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -314,16 +314,16 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     id := "id_example" // string | An alphanumeric string identifying the resource link.
-    resourceID := "resourceId_example" // string | The ID of the underlying linked resource. (optional)
+    resourceId := "resourceId_example" // string | The ID of the underlying linked resource. (optional)
     name := "name_example" // string | The name of the resource link. Note this is separate from the resource store name and might not match the store name. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ResourceAPI.UpdateResource(ctx, serviceID, versionID, id).ResourceID(resourceID).Name(name).Execute()
+    resp, r, err := apiClient.ResourceAPI.UpdateResource(ctx, serviceId, versionId, id).ResourceId(resourceId).Name(name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ResourceAPI.UpdateResource`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -339,8 +339,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **id** | **string** | An alphanumeric string identifying the resource link. | 
 
 ### Other Parameters
@@ -350,7 +350,7 @@ Other parameters are passed through a pointer to a apiUpdateResourceRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resourceID** | **string** | The ID of the underlying linked resource. |  **name** | **string** | The name of the resource link. Note this is separate from the resource store name and might not match the store name. | 
+ **resourceId** | **string** | The ID of the underlying linked resource. |  **name** | **string** | The name of the resource link. Note this is separate from the resource store name and might not match the store name. | 
 
 ### Return type
 
@@ -366,3 +366,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

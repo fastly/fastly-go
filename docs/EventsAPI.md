@@ -29,12 +29,12 @@ import (
 )
 
 func main() {
-    eventID := "eventId_example" // string | Alphanumeric string identifying an event.
+    eventId := "eventId_example" // string | Alphanumeric string identifying an event.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.EventsAPI.GetEvent(ctx, eventID).Execute()
+    resp, r, err := apiClient.EventsAPI.GetEvent(ctx, eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EventsAPI.GetEvent`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -50,7 +50,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventID** | **string** | Alphanumeric string identifying an event. | 
+**eventId** | **string** | Alphanumeric string identifying an event. | 
 
 ### Other Parameters
 
@@ -96,11 +96,11 @@ import (
 )
 
 func main() {
-    filterCustomerID := "x4xCwxxJxGCx123Rx5xTx" // string | Limit the results returned to a specific customer. (optional)
+    filterCustomerId := "x4xCwxxJxGCx123Rx5xTx" // string | Limit the results returned to a specific customer. (optional)
     filterEventType := "filterEventType_example" // string | Limit the returned events to a specific `event_type`. (optional)
-    filterServiceID := "filterServiceId_example" // string | Limit the results returned to a specific service. (optional)
-    filterUserID := "filterUserId_example" // string | Limit the results returned to a specific user. (optional)
-    filterTokenID := "filterTokenId_example" // string | Limit the returned events to a specific token. (optional)
+    filterServiceId := "filterServiceId_example" // string | Limit the results returned to a specific service. (optional)
+    filterUserId := "filterUserId_example" // string | Limit the results returned to a specific user. (optional)
+    filterTokenId := "filterTokenId_example" // string | Limit the returned events to a specific token. (optional)
     filterCreatedAt := "filterCreatedAt_example" // string | Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]=2022-01-12).  (optional)
     filterCreatedAtLte := "filterCreatedAtLte_example" // string | Return events on and before a date and time in ISO 8601 format.  (optional)
     filterCreatedAtLt := "filterCreatedAtLt_example" // string | Return events before a date and time in ISO 8601 format.  (optional)
@@ -113,7 +113,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.EventsAPI.ListEvents(ctx).FilterCustomerID(filterCustomerID).FilterEventType(filterEventType).FilterServiceID(filterServiceID).FilterUserID(filterUserID).FilterTokenID(filterTokenID).FilterCreatedAt(filterCreatedAt).FilterCreatedAtLte(filterCreatedAtLte).FilterCreatedAtLt(filterCreatedAtLt).FilterCreatedAtGte(filterCreatedAtGte).FilterCreatedAtGt(filterCreatedAtGt).PageNumber(pageNumber).PageSize(pageSize).Sort(sort).Execute()
+    resp, r, err := apiClient.EventsAPI.ListEvents(ctx).FilterCustomerId(filterCustomerId).FilterEventType(filterEventType).FilterServiceId(filterServiceId).FilterUserId(filterUserId).FilterTokenId(filterTokenId).FilterCreatedAt(filterCreatedAt).FilterCreatedAtLte(filterCreatedAtLte).FilterCreatedAtLt(filterCreatedAtLt).FilterCreatedAtGte(filterCreatedAtGte).FilterCreatedAtGt(filterCreatedAtGt).PageNumber(pageNumber).PageSize(pageSize).Sort(sort).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EventsAPI.ListEvents`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -134,7 +134,7 @@ Other parameters are passed through a pointer to a apiListEventsRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filterCustomerID** | **string** | Limit the results returned to a specific customer. |  **filterEventType** | **string** | Limit the returned events to a specific `event_type`. |  **filterServiceID** | **string** | Limit the results returned to a specific service. |  **filterUserID** | **string** | Limit the results returned to a specific user. |  **filterTokenID** | **string** | Limit the returned events to a specific token. |  **filterCreatedAt** | **string** | Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]&#x3D;2022-01-12).  |  **filterCreatedAtLte** | **string** | Return events on and before a date and time in ISO 8601 format.  |  **filterCreatedAtLt** | **string** | Return events before a date and time in ISO 8601 format.  |  **filterCreatedAtGte** | **string** | Return events on and after a date and time in ISO 8601 format.  |  **filterCreatedAtGt** | **string** | Return events after a date and time in ISO 8601 format.  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | The order in which to list the results by creation date. | [default to &quot;created_at&quot;]
+ **filterCustomerId** | **string** | Limit the results returned to a specific customer. |  **filterEventType** | **string** | Limit the returned events to a specific `event_type`. |  **filterServiceId** | **string** | Limit the results returned to a specific service. |  **filterUserId** | **string** | Limit the results returned to a specific user. |  **filterTokenId** | **string** | Limit the returned events to a specific token. |  **filterCreatedAt** | **string** | Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]&#x3D;2022-01-12).  |  **filterCreatedAtLte** | **string** | Return events on and before a date and time in ISO 8601 format.  |  **filterCreatedAtLt** | **string** | Return events before a date and time in ISO 8601 format.  |  **filterCreatedAtGte** | **string** | Return events on and after a date and time in ISO 8601 format.  |  **filterCreatedAtGt** | **string** | Return events after a date and time in ISO 8601 format.  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20] **sort** | **string** | The order in which to list the results by creation date. | [default to &quot;created_at&quot;]
 
 ### Return type
 
@@ -150,3 +150,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/vnd.api+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

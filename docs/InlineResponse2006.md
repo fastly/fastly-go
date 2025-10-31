@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to **[]string** |  | [optional] 
+**Data** | Pointer to [**[]KvStoreDetails**](KvStoreDetails.md) |  | [optional] 
 **Meta** | Pointer to [**PaginationCursorMeta**](PaginationCursorMeta.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *InlineResponse2006) GetData() []string`
+`func (o *InlineResponse2006) GetData() []KvStoreDetails`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *InlineResponse2006) GetDataOk() (*[]string, bool)`
+`func (o *InlineResponse2006) GetDataOk() (*[]KvStoreDetails, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *InlineResponse2006) SetData(v []string)`
+`func (o *InlineResponse2006) SetData(v []KvStoreDetails)`
 
 SetData sets Data field to given value.
 
@@ -78,3 +78,5 @@ HasMeta returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

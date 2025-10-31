@@ -1,4 +1,4 @@
-# TLSConfigurationDataAttributes
+# TlsConfigurationDataAttributes
 
 ## Properties
 
@@ -8,47 +8,49 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewTLSConfigurationDataAttributes
+### NewTlsConfigurationDataAttributes
 
-`func NewTLSConfigurationDataAttributes() *TLSConfigurationDataAttributes`
+`func NewTlsConfigurationDataAttributes() *TlsConfigurationDataAttributes`
 
-NewTLSConfigurationDataAttributes instantiates a new TLSConfigurationDataAttributes object
+NewTlsConfigurationDataAttributes instantiates a new TlsConfigurationDataAttributes object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSConfigurationDataAttributesWithDefaults
+### NewTlsConfigurationDataAttributesWithDefaults
 
-`func NewTLSConfigurationDataAttributesWithDefaults() *TLSConfigurationDataAttributes`
+`func NewTlsConfigurationDataAttributesWithDefaults() *TlsConfigurationDataAttributes`
 
-NewTLSConfigurationDataAttributesWithDefaults instantiates a new TLSConfigurationDataAttributes object
+NewTlsConfigurationDataAttributesWithDefaults instantiates a new TlsConfigurationDataAttributes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetName
 
-`func (o *TLSConfigurationDataAttributes) GetName() string`
+`func (o *TlsConfigurationDataAttributes) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *TLSConfigurationDataAttributes) GetNameOk() (*string, bool)`
+`func (o *TlsConfigurationDataAttributes) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *TLSConfigurationDataAttributes) SetName(v string)`
+`func (o *TlsConfigurationDataAttributes) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *TLSConfigurationDataAttributes) HasName() bool`
+`func (o *TlsConfigurationDataAttributes) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

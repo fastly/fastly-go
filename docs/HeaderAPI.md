@@ -32,8 +32,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     action := "action_example" // string | Accepts a string value. (optional)
     cacheCondition := "cacheCondition_example" // string | Name of the cache condition controlling when this configuration applies. (optional)
     dst := "dst_example" // string | Header to set. (optional)
@@ -43,14 +43,14 @@ func main() {
     responseCondition := "responseCondition_example" // string | Optional name of a response condition to apply. (optional)
     src := "src_example" // string | Variable to be used as a source for the header content. Does not apply to `delete` action. (optional)
     substitution := "substitution_example" // string | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. (optional)
-    resourceType := "resourceType_example" // string | Accepts a string value. (optional)
+    type_ := "type__example" // string | Accepts a string value. (optional)
     ignoreIfSet := "ignoreIfSet_example" // string | Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\\\"0\\\" = false, \\\"1\\\" = true) (optional)
     priority := "priority_example" // string | Priority determines execution order. Lower numbers execute first. (optional) (default to "100")
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HeaderAPI.CreateHeaderObject(ctx, serviceID, versionID).Action(action).CacheCondition(cacheCondition).Dst(dst).Name(name).Regex(regex).RequestCondition(requestCondition).ResponseCondition(responseCondition).Src(src).Substitution(substitution).ResourceType(resourceType).IgnoreIfSet(ignoreIfSet).Priority(priority).Execute()
+    resp, r, err := apiClient.HeaderAPI.CreateHeaderObject(ctx, serviceId, versionId).Action(action).CacheCondition(cacheCondition).Dst(dst).Name(name).Regex(regex).RequestCondition(requestCondition).ResponseCondition(responseCondition).Src(src).Substitution(substitution).Type_(type_).IgnoreIfSet(ignoreIfSet).Priority(priority).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HeaderAPI.CreateHeaderObject`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -66,8 +66,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -76,7 +76,7 @@ Other parameters are passed through a pointer to a apiCreateHeaderObjectRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **string** | Accepts a string value. |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **dst** | **string** | Header to set. |  **name** | **string** | A handle to refer to this Header object. |  **regex** | **string** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. |  **requestCondition** | **string** | Condition which, if met, will select this configuration during a request. Optional. |  **responseCondition** | **string** | Optional name of a response condition to apply. |  **src** | **string** | Variable to be used as a source for the header content. Does not apply to `delete` action. |  **substitution** | **string** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. |  **resourceType** | **string** | Accepts a string value. |  **ignoreIfSet** | **string** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. Numerical value (\\\&quot;0\\\&quot; &#x3D; false, \\\&quot;1\\\&quot; &#x3D; true) |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
+ **action** | **string** | Accepts a string value. |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **dst** | **string** | Header to set. |  **name** | **string** | A handle to refer to this Header object. |  **regex** | **string** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. |  **requestCondition** | **string** | Condition which, if met, will select this configuration during a request. Optional. |  **responseCondition** | **string** | Optional name of a response condition to apply. |  **src** | **string** | Variable to be used as a source for the header content. Does not apply to `delete` action. |  **substitution** | **string** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. |  **type_** | **string** | Accepts a string value. |  **ignoreIfSet** | **string** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. Numerical value (\\\&quot;0\\\&quot; &#x3D; false, \\\&quot;1\\\&quot; &#x3D; true) |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
 
 ### Return type
 
@@ -113,14 +113,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     headerName := "headerName_example" // string | A handle to refer to this Header object.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HeaderAPI.DeleteHeaderObject(ctx, serviceID, versionID, headerName).Execute()
+    resp, r, err := apiClient.HeaderAPI.DeleteHeaderObject(ctx, serviceId, versionId, headerName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HeaderAPI.DeleteHeaderObject`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -136,8 +136,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **headerName** | **string** | A handle to refer to this Header object. | 
 
 ### Other Parameters
@@ -184,14 +184,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     headerName := "headerName_example" // string | A handle to refer to this Header object.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HeaderAPI.GetHeaderObject(ctx, serviceID, versionID, headerName).Execute()
+    resp, r, err := apiClient.HeaderAPI.GetHeaderObject(ctx, serviceId, versionId, headerName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HeaderAPI.GetHeaderObject`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -207,8 +207,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **headerName** | **string** | A handle to refer to this Header object. | 
 
 ### Other Parameters
@@ -255,13 +255,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HeaderAPI.ListHeaderObjects(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.HeaderAPI.ListHeaderObjects(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HeaderAPI.ListHeaderObjects`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -277,8 +277,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -324,8 +324,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     headerName := "headerName_example" // string | A handle to refer to this Header object.
     action := "action_example" // string | Accepts a string value. (optional)
     cacheCondition := "cacheCondition_example" // string | Name of the cache condition controlling when this configuration applies. (optional)
@@ -336,14 +336,14 @@ func main() {
     responseCondition := "responseCondition_example" // string | Optional name of a response condition to apply. (optional)
     src := "src_example" // string | Variable to be used as a source for the header content. Does not apply to `delete` action. (optional)
     substitution := "substitution_example" // string | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. (optional)
-    resourceType := "resourceType_example" // string | Accepts a string value. (optional)
+    type_ := "type__example" // string | Accepts a string value. (optional)
     ignoreIfSet := "ignoreIfSet_example" // string | Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\\\"0\\\" = false, \\\"1\\\" = true) (optional)
     priority := "priority_example" // string | Priority determines execution order. Lower numbers execute first. (optional) (default to "100")
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HeaderAPI.UpdateHeaderObject(ctx, serviceID, versionID, headerName).Action(action).CacheCondition(cacheCondition).Dst(dst).Name(name).Regex(regex).RequestCondition(requestCondition).ResponseCondition(responseCondition).Src(src).Substitution(substitution).ResourceType(resourceType).IgnoreIfSet(ignoreIfSet).Priority(priority).Execute()
+    resp, r, err := apiClient.HeaderAPI.UpdateHeaderObject(ctx, serviceId, versionId, headerName).Action(action).CacheCondition(cacheCondition).Dst(dst).Name(name).Regex(regex).RequestCondition(requestCondition).ResponseCondition(responseCondition).Src(src).Substitution(substitution).Type_(type_).IgnoreIfSet(ignoreIfSet).Priority(priority).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HeaderAPI.UpdateHeaderObject`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -359,8 +359,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **headerName** | **string** | A handle to refer to this Header object. | 
 
 ### Other Parameters
@@ -370,7 +370,7 @@ Other parameters are passed through a pointer to a apiUpdateHeaderObjectRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **action** | **string** | Accepts a string value. |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **dst** | **string** | Header to set. |  **name** | **string** | A handle to refer to this Header object. |  **regex** | **string** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. |  **requestCondition** | **string** | Condition which, if met, will select this configuration during a request. Optional. |  **responseCondition** | **string** | Optional name of a response condition to apply. |  **src** | **string** | Variable to be used as a source for the header content. Does not apply to `delete` action. |  **substitution** | **string** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. |  **resourceType** | **string** | Accepts a string value. |  **ignoreIfSet** | **string** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. Numerical value (\\\&quot;0\\\&quot; &#x3D; false, \\\&quot;1\\\&quot; &#x3D; true) |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
+ **action** | **string** | Accepts a string value. |  **cacheCondition** | **string** | Name of the cache condition controlling when this configuration applies. |  **dst** | **string** | Header to set. |  **name** | **string** | A handle to refer to this Header object. |  **regex** | **string** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. |  **requestCondition** | **string** | Condition which, if met, will select this configuration during a request. Optional. |  **responseCondition** | **string** | Optional name of a response condition to apply. |  **src** | **string** | Variable to be used as a source for the header content. Does not apply to `delete` action. |  **substitution** | **string** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. |  **type_** | **string** | Accepts a string value. |  **ignoreIfSet** | **string** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. Numerical value (\\\&quot;0\\\&quot; &#x3D; false, \\\&quot;1\\\&quot; &#x3D; true) |  **priority** | **string** | Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;]
 
 ### Return type
 
@@ -386,3 +386,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

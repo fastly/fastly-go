@@ -26,7 +26,7 @@ type Condition struct {
 	Priority *string `json:"priority,omitempty"`
 	// A conditional expression in VCL used to determine if the condition is met.
 	Statement *string `json:"statement,omitempty"`
-	ServiceID *string `json:"service_id,omitempty"`
+	ServiceId *string `json:"service_id,omitempty"`
 	// A numeric string that represents the service version.
 	Version *string `json:"version,omitempty"`
 	// Type of the condition. Required.
@@ -196,36 +196,36 @@ func (o *Condition) SetStatement(v string) {
 	o.Statement = &v
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *Condition) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *Condition) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Condition) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *Condition) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *Condition) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *Condition) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *Condition) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *Condition) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -308,8 +308,8 @@ func (o Condition) MarshalJSON() ([]byte, error) {
 	if o.Statement != nil {
 		toSerialize["statement"] = o.Statement
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

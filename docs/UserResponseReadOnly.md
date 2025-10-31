@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 **EmailHash** | Pointer to **string** | The alphanumeric string identifying a email login. | [optional] [readonly] 
-**CustomerID** | Pointer to **string** |  | [optional] [readonly] 
+**CustomerId** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewUserResponseReadOnlyWithDefaults instantiates a new UserResponseReadOnly obje
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetID
+### GetId
 
-`func (o *UserResponseReadOnly) GetID() string`
+`func (o *UserResponseReadOnly) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *UserResponseReadOnly) GetIDOk() (*string, bool)`
+`func (o *UserResponseReadOnly) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *UserResponseReadOnly) SetID(v string)`
+`func (o *UserResponseReadOnly) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *UserResponseReadOnly) HasID() bool`
+`func (o *UserResponseReadOnly) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetEmailHash
 
@@ -77,30 +77,32 @@ SetEmailHash sets EmailHash field to given value.
 
 HasEmailHash returns a boolean if a field has been set.
 
-### GetCustomerID
+### GetCustomerId
 
-`func (o *UserResponseReadOnly) GetCustomerID() string`
+`func (o *UserResponseReadOnly) GetCustomerId() string`
 
-GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetCustomerIDOk
+### GetCustomerIdOk
 
-`func (o *UserResponseReadOnly) GetCustomerIDOk() (*string, bool)`
+`func (o *UserResponseReadOnly) GetCustomerIdOk() (*string, bool)`
 
-GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerID
+### SetCustomerId
 
-`func (o *UserResponseReadOnly) SetCustomerID(v string)`
+`func (o *UserResponseReadOnly) SetCustomerId(v string)`
 
-SetCustomerID sets CustomerID field to given value.
+SetCustomerId sets CustomerId field to given value.
 
-### HasCustomerID
+### HasCustomerId
 
-`func (o *UserResponseReadOnly) HasCustomerID() bool`
+`func (o *UserResponseReadOnly) HasCustomerId() bool`
 
-HasCustomerID returns a boolean if a field has been set.
+HasCustomerId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

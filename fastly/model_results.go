@@ -63,15 +63,15 @@ type Results struct {
 	// Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement).
 	Synth *int64 `json:"synth,omitempty"`
 	// Number of requests that were received over TLS.
-	TLS *int64 `json:"tls,omitempty"`
+	Tls *int64 `json:"tls,omitempty"`
 	// Number of requests received over TLS 1.0.
-	TLSV10 *int64 `json:"tls_v10,omitempty"`
+	TlsV10 *int64 `json:"tls_v10,omitempty"`
 	// Number of requests received over TLS 1.1.
-	TLSV11 *int64 `json:"tls_v11,omitempty"`
+	TlsV11 *int64 `json:"tls_v11,omitempty"`
 	// Number of requests received over TLS 1.2.
-	TLSV12 *int64 `json:"tls_v12,omitempty"`
+	TlsV12 *int64 `json:"tls_v12,omitempty"`
 	// Number of requests received over TLS 1.3.
-	TLSV13 *int64 `json:"tls_v13,omitempty"`
+	TlsV13 *int64 `json:"tls_v13,omitempty"`
 	// Number of requests sent by end users to Fastly.
 	EdgeRequests *int64 `json:"edge_requests,omitempty"`
 	// Total header bytes delivered from Fastly to the end user.
@@ -143,9 +143,9 @@ type Results struct {
 	// Total log bytes sent.
 	LogBytes *int64 `json:"log_bytes,omitempty"`
 	// Number of requests received over HTTP/2.
-	HTTP2 *int64 `json:"http2,omitempty"`
+	Http2 *int64 `json:"http2,omitempty"`
 	// Number of requests received over HTTP/3.
-	HTTP3 *int64 `json:"http3,omitempty"`
+	Http3 *int64 `json:"http3,omitempty"`
 	// Number of requests that triggered a WAF rule and were logged.
 	WafLogged *int64 `json:"waf_logged,omitempty"`
 	// Number of requests that triggered a WAF rule and were blocked.
@@ -309,7 +309,7 @@ type Results struct {
 	// Number of executions of the `vcl_predeliver` Varnish subroutine.
 	PredeliverSubCount *int64 `json:"predeliver_sub_count,omitempty"`
 	// Number of bytes transferred during TLS handshake.
-	TLSHandshakeSentBytes *int64 `json:"tls_handshake_sent_bytes,omitempty"`
+	TlsHandshakeSentBytes *int64 `json:"tls_handshake_sent_bytes,omitempty"`
 	// Total body bytes delivered for cache hits.
 	HitRespBodyBytes *int64 `json:"hit_resp_body_bytes,omitempty"`
 	// Total body bytes delivered for cache misses.
@@ -327,7 +327,7 @@ type Results struct {
 	// The total amount of request processing time you will be billed for, measured in 50 millisecond increments.
 	ComputeRequestTimeBilledMs *float32 `json:"compute_request_time_billed_ms,omitempty"`
 	// The amount of RAM used for your service by Fastly (in bytes).
-	ComputeRAMUsed *int64 `json:"compute_ram_used,omitempty"`
+	ComputeRamUsed *int64 `json:"compute_ram_used,omitempty"`
 	// The amount of active CPU time used to process your requests (in milliseconds).
 	ComputeExecutionTimeMs *float32 `json:"compute_execution_time_ms,omitempty"`
 	// Total header bytes received by the Compute platform.
@@ -555,8 +555,10 @@ type Results struct {
 	// Count of Edge WAF requests timed outcome.
 	NgwafRequestsTimeoutCount *int32 `json:"ngwaf_requests_timeout_count,omitempty"`
 	// Count of Edge WAF requests challenged.
-	NgwafRequestsChallengedCount *int32  `json:"ngwaf_requests_challenged_count,omitempty"`
-	ServiceID                    *string `json:"service_id,omitempty"`
+	NgwafRequestsChallengedCount *int32 `json:"ngwaf_requests_challenged_count,omitempty"`
+	// Number of requests processed by the API Discovery engine.
+	ApiDiscoveryRequestsCount *int32  `json:"api_discovery_requests_count,omitempty"`
+	ServiceId                 *string `json:"service_id,omitempty"`
 	// Timestamp for the start of the time period being reported
 	StartTime            *int64 `json:"start_time,omitempty"`
 	AdditionalProperties map[string]any
@@ -1296,164 +1298,164 @@ func (o *Results) SetSynth(v int64) {
 	o.Synth = &v
 }
 
-// GetTLS returns the TLS field value if set, zero value otherwise.
-func (o *Results) GetTLS() int64 {
-	if o == nil || o.TLS == nil {
+// GetTls returns the Tls field value if set, zero value otherwise.
+func (o *Results) GetTls() int64 {
+	if o == nil || o.Tls == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TLS
+	return *o.Tls
 }
 
-// GetTLSOk returns a tuple with the TLS field value if set, nil otherwise
+// GetTlsOk returns a tuple with the Tls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetTLSOk() (*int64, bool) {
-	if o == nil || o.TLS == nil {
+func (o *Results) GetTlsOk() (*int64, bool) {
+	if o == nil || o.Tls == nil {
 		return nil, false
 	}
-	return o.TLS, true
+	return o.Tls, true
 }
 
-// HasTLS returns a boolean if a field has been set.
-func (o *Results) HasTLS() bool {
-	if o != nil && o.TLS != nil {
+// HasTls returns a boolean if a field has been set.
+func (o *Results) HasTls() bool {
+	if o != nil && o.Tls != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLS gets a reference to the given int64 and assigns it to the TLS field.
-func (o *Results) SetTLS(v int64) {
-	o.TLS = &v
+// SetTls gets a reference to the given int64 and assigns it to the Tls field.
+func (o *Results) SetTls(v int64) {
+	o.Tls = &v
 }
 
-// GetTLSV10 returns the TLSV10 field value if set, zero value otherwise.
-func (o *Results) GetTLSV10() int64 {
-	if o == nil || o.TLSV10 == nil {
+// GetTlsV10 returns the TlsV10 field value if set, zero value otherwise.
+func (o *Results) GetTlsV10() int64 {
+	if o == nil || o.TlsV10 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TLSV10
+	return *o.TlsV10
 }
 
-// GetTLSV10Ok returns a tuple with the TLSV10 field value if set, nil otherwise
+// GetTlsV10Ok returns a tuple with the TlsV10 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetTLSV10Ok() (*int64, bool) {
-	if o == nil || o.TLSV10 == nil {
+func (o *Results) GetTlsV10Ok() (*int64, bool) {
+	if o == nil || o.TlsV10 == nil {
 		return nil, false
 	}
-	return o.TLSV10, true
+	return o.TlsV10, true
 }
 
-// HasTLSV10 returns a boolean if a field has been set.
-func (o *Results) HasTLSV10() bool {
-	if o != nil && o.TLSV10 != nil {
+// HasTlsV10 returns a boolean if a field has been set.
+func (o *Results) HasTlsV10() bool {
+	if o != nil && o.TlsV10 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSV10 gets a reference to the given int64 and assigns it to the TLSV10 field.
-func (o *Results) SetTLSV10(v int64) {
-	o.TLSV10 = &v
+// SetTlsV10 gets a reference to the given int64 and assigns it to the TlsV10 field.
+func (o *Results) SetTlsV10(v int64) {
+	o.TlsV10 = &v
 }
 
-// GetTLSV11 returns the TLSV11 field value if set, zero value otherwise.
-func (o *Results) GetTLSV11() int64 {
-	if o == nil || o.TLSV11 == nil {
+// GetTlsV11 returns the TlsV11 field value if set, zero value otherwise.
+func (o *Results) GetTlsV11() int64 {
+	if o == nil || o.TlsV11 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TLSV11
+	return *o.TlsV11
 }
 
-// GetTLSV11Ok returns a tuple with the TLSV11 field value if set, nil otherwise
+// GetTlsV11Ok returns a tuple with the TlsV11 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetTLSV11Ok() (*int64, bool) {
-	if o == nil || o.TLSV11 == nil {
+func (o *Results) GetTlsV11Ok() (*int64, bool) {
+	if o == nil || o.TlsV11 == nil {
 		return nil, false
 	}
-	return o.TLSV11, true
+	return o.TlsV11, true
 }
 
-// HasTLSV11 returns a boolean if a field has been set.
-func (o *Results) HasTLSV11() bool {
-	if o != nil && o.TLSV11 != nil {
+// HasTlsV11 returns a boolean if a field has been set.
+func (o *Results) HasTlsV11() bool {
+	if o != nil && o.TlsV11 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSV11 gets a reference to the given int64 and assigns it to the TLSV11 field.
-func (o *Results) SetTLSV11(v int64) {
-	o.TLSV11 = &v
+// SetTlsV11 gets a reference to the given int64 and assigns it to the TlsV11 field.
+func (o *Results) SetTlsV11(v int64) {
+	o.TlsV11 = &v
 }
 
-// GetTLSV12 returns the TLSV12 field value if set, zero value otherwise.
-func (o *Results) GetTLSV12() int64 {
-	if o == nil || o.TLSV12 == nil {
+// GetTlsV12 returns the TlsV12 field value if set, zero value otherwise.
+func (o *Results) GetTlsV12() int64 {
+	if o == nil || o.TlsV12 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TLSV12
+	return *o.TlsV12
 }
 
-// GetTLSV12Ok returns a tuple with the TLSV12 field value if set, nil otherwise
+// GetTlsV12Ok returns a tuple with the TlsV12 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetTLSV12Ok() (*int64, bool) {
-	if o == nil || o.TLSV12 == nil {
+func (o *Results) GetTlsV12Ok() (*int64, bool) {
+	if o == nil || o.TlsV12 == nil {
 		return nil, false
 	}
-	return o.TLSV12, true
+	return o.TlsV12, true
 }
 
-// HasTLSV12 returns a boolean if a field has been set.
-func (o *Results) HasTLSV12() bool {
-	if o != nil && o.TLSV12 != nil {
+// HasTlsV12 returns a boolean if a field has been set.
+func (o *Results) HasTlsV12() bool {
+	if o != nil && o.TlsV12 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSV12 gets a reference to the given int64 and assigns it to the TLSV12 field.
-func (o *Results) SetTLSV12(v int64) {
-	o.TLSV12 = &v
+// SetTlsV12 gets a reference to the given int64 and assigns it to the TlsV12 field.
+func (o *Results) SetTlsV12(v int64) {
+	o.TlsV12 = &v
 }
 
-// GetTLSV13 returns the TLSV13 field value if set, zero value otherwise.
-func (o *Results) GetTLSV13() int64 {
-	if o == nil || o.TLSV13 == nil {
+// GetTlsV13 returns the TlsV13 field value if set, zero value otherwise.
+func (o *Results) GetTlsV13() int64 {
+	if o == nil || o.TlsV13 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TLSV13
+	return *o.TlsV13
 }
 
-// GetTLSV13Ok returns a tuple with the TLSV13 field value if set, nil otherwise
+// GetTlsV13Ok returns a tuple with the TlsV13 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetTLSV13Ok() (*int64, bool) {
-	if o == nil || o.TLSV13 == nil {
+func (o *Results) GetTlsV13Ok() (*int64, bool) {
+	if o == nil || o.TlsV13 == nil {
 		return nil, false
 	}
-	return o.TLSV13, true
+	return o.TlsV13, true
 }
 
-// HasTLSV13 returns a boolean if a field has been set.
-func (o *Results) HasTLSV13() bool {
-	if o != nil && o.TLSV13 != nil {
+// HasTlsV13 returns a boolean if a field has been set.
+func (o *Results) HasTlsV13() bool {
+	if o != nil && o.TlsV13 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSV13 gets a reference to the given int64 and assigns it to the TLSV13 field.
-func (o *Results) SetTLSV13(v int64) {
-	o.TLSV13 = &v
+// SetTlsV13 gets a reference to the given int64 and assigns it to the TlsV13 field.
+func (o *Results) SetTlsV13(v int64) {
+	o.TlsV13 = &v
 }
 
 // GetEdgeRequests returns the EdgeRequests field value if set, zero value otherwise.
@@ -2576,68 +2578,68 @@ func (o *Results) SetLogBytes(v int64) {
 	o.LogBytes = &v
 }
 
-// GetHTTP2 returns the HTTP2 field value if set, zero value otherwise.
-func (o *Results) GetHTTP2() int64 {
-	if o == nil || o.HTTP2 == nil {
+// GetHttp2 returns the Http2 field value if set, zero value otherwise.
+func (o *Results) GetHttp2() int64 {
+	if o == nil || o.Http2 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.HTTP2
+	return *o.Http2
 }
 
-// GetHTTP2Ok returns a tuple with the HTTP2 field value if set, nil otherwise
+// GetHttp2Ok returns a tuple with the Http2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetHTTP2Ok() (*int64, bool) {
-	if o == nil || o.HTTP2 == nil {
+func (o *Results) GetHttp2Ok() (*int64, bool) {
+	if o == nil || o.Http2 == nil {
 		return nil, false
 	}
-	return o.HTTP2, true
+	return o.Http2, true
 }
 
-// HasHTTP2 returns a boolean if a field has been set.
-func (o *Results) HasHTTP2() bool {
-	if o != nil && o.HTTP2 != nil {
+// HasHttp2 returns a boolean if a field has been set.
+func (o *Results) HasHttp2() bool {
+	if o != nil && o.Http2 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHTTP2 gets a reference to the given int64 and assigns it to the HTTP2 field.
-func (o *Results) SetHTTP2(v int64) {
-	o.HTTP2 = &v
+// SetHttp2 gets a reference to the given int64 and assigns it to the Http2 field.
+func (o *Results) SetHttp2(v int64) {
+	o.Http2 = &v
 }
 
-// GetHTTP3 returns the HTTP3 field value if set, zero value otherwise.
-func (o *Results) GetHTTP3() int64 {
-	if o == nil || o.HTTP3 == nil {
+// GetHttp3 returns the Http3 field value if set, zero value otherwise.
+func (o *Results) GetHttp3() int64 {
+	if o == nil || o.Http3 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.HTTP3
+	return *o.Http3
 }
 
-// GetHTTP3Ok returns a tuple with the HTTP3 field value if set, nil otherwise
+// GetHttp3Ok returns a tuple with the Http3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetHTTP3Ok() (*int64, bool) {
-	if o == nil || o.HTTP3 == nil {
+func (o *Results) GetHttp3Ok() (*int64, bool) {
+	if o == nil || o.Http3 == nil {
 		return nil, false
 	}
-	return o.HTTP3, true
+	return o.Http3, true
 }
 
-// HasHTTP3 returns a boolean if a field has been set.
-func (o *Results) HasHTTP3() bool {
-	if o != nil && o.HTTP3 != nil {
+// HasHttp3 returns a boolean if a field has been set.
+func (o *Results) HasHttp3() bool {
+	if o != nil && o.Http3 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHTTP3 gets a reference to the given int64 and assigns it to the HTTP3 field.
-func (o *Results) SetHTTP3(v int64) {
-	o.HTTP3 = &v
+// SetHttp3 gets a reference to the given int64 and assigns it to the Http3 field.
+func (o *Results) SetHttp3(v int64) {
+	o.Http3 = &v
 }
 
 // GetWafLogged returns the WafLogged field value if set, zero value otherwise.
@@ -5232,36 +5234,36 @@ func (o *Results) SetPredeliverSubCount(v int64) {
 	o.PredeliverSubCount = &v
 }
 
-// GetTLSHandshakeSentBytes returns the TLSHandshakeSentBytes field value if set, zero value otherwise.
-func (o *Results) GetTLSHandshakeSentBytes() int64 {
-	if o == nil || o.TLSHandshakeSentBytes == nil {
+// GetTlsHandshakeSentBytes returns the TlsHandshakeSentBytes field value if set, zero value otherwise.
+func (o *Results) GetTlsHandshakeSentBytes() int64 {
+	if o == nil || o.TlsHandshakeSentBytes == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TLSHandshakeSentBytes
+	return *o.TlsHandshakeSentBytes
 }
 
-// GetTLSHandshakeSentBytesOk returns a tuple with the TLSHandshakeSentBytes field value if set, nil otherwise
+// GetTlsHandshakeSentBytesOk returns a tuple with the TlsHandshakeSentBytes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetTLSHandshakeSentBytesOk() (*int64, bool) {
-	if o == nil || o.TLSHandshakeSentBytes == nil {
+func (o *Results) GetTlsHandshakeSentBytesOk() (*int64, bool) {
+	if o == nil || o.TlsHandshakeSentBytes == nil {
 		return nil, false
 	}
-	return o.TLSHandshakeSentBytes, true
+	return o.TlsHandshakeSentBytes, true
 }
 
-// HasTLSHandshakeSentBytes returns a boolean if a field has been set.
-func (o *Results) HasTLSHandshakeSentBytes() bool {
-	if o != nil && o.TLSHandshakeSentBytes != nil {
+// HasTlsHandshakeSentBytes returns a boolean if a field has been set.
+func (o *Results) HasTlsHandshakeSentBytes() bool {
+	if o != nil && o.TlsHandshakeSentBytes != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSHandshakeSentBytes gets a reference to the given int64 and assigns it to the TLSHandshakeSentBytes field.
-func (o *Results) SetTLSHandshakeSentBytes(v int64) {
-	o.TLSHandshakeSentBytes = &v
+// SetTlsHandshakeSentBytes gets a reference to the given int64 and assigns it to the TlsHandshakeSentBytes field.
+func (o *Results) SetTlsHandshakeSentBytes(v int64) {
+	o.TlsHandshakeSentBytes = &v
 }
 
 // GetHitRespBodyBytes returns the HitRespBodyBytes field value if set, zero value otherwise.
@@ -5520,36 +5522,36 @@ func (o *Results) SetComputeRequestTimeBilledMs(v float32) {
 	o.ComputeRequestTimeBilledMs = &v
 }
 
-// GetComputeRAMUsed returns the ComputeRAMUsed field value if set, zero value otherwise.
-func (o *Results) GetComputeRAMUsed() int64 {
-	if o == nil || o.ComputeRAMUsed == nil {
+// GetComputeRamUsed returns the ComputeRamUsed field value if set, zero value otherwise.
+func (o *Results) GetComputeRamUsed() int64 {
+	if o == nil || o.ComputeRamUsed == nil {
 		var ret int64
 		return ret
 	}
-	return *o.ComputeRAMUsed
+	return *o.ComputeRamUsed
 }
 
-// GetComputeRAMUsedOk returns a tuple with the ComputeRAMUsed field value if set, nil otherwise
+// GetComputeRamUsedOk returns a tuple with the ComputeRamUsed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetComputeRAMUsedOk() (*int64, bool) {
-	if o == nil || o.ComputeRAMUsed == nil {
+func (o *Results) GetComputeRamUsedOk() (*int64, bool) {
+	if o == nil || o.ComputeRamUsed == nil {
 		return nil, false
 	}
-	return o.ComputeRAMUsed, true
+	return o.ComputeRamUsed, true
 }
 
-// HasComputeRAMUsed returns a boolean if a field has been set.
-func (o *Results) HasComputeRAMUsed() bool {
-	if o != nil && o.ComputeRAMUsed != nil {
+// HasComputeRamUsed returns a boolean if a field has been set.
+func (o *Results) HasComputeRamUsed() bool {
+	if o != nil && o.ComputeRamUsed != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeRAMUsed gets a reference to the given int64 and assigns it to the ComputeRAMUsed field.
-func (o *Results) SetComputeRAMUsed(v int64) {
-	o.ComputeRAMUsed = &v
+// SetComputeRamUsed gets a reference to the given int64 and assigns it to the ComputeRamUsed field.
+func (o *Results) SetComputeRamUsed(v int64) {
+	o.ComputeRamUsed = &v
 }
 
 // GetComputeExecutionTimeMs returns the ComputeExecutionTimeMs field value if set, zero value otherwise.
@@ -9174,36 +9176,68 @@ func (o *Results) SetNgwafRequestsChallengedCount(v int32) {
 	o.NgwafRequestsChallengedCount = &v
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *Results) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
-		var ret string
+// GetApiDiscoveryRequestsCount returns the ApiDiscoveryRequestsCount field value if set, zero value otherwise.
+func (o *Results) GetApiDiscoveryRequestsCount() int32 {
+	if o == nil || o.ApiDiscoveryRequestsCount == nil {
+		var ret int32
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ApiDiscoveryRequestsCount
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetApiDiscoveryRequestsCountOk returns a tuple with the ApiDiscoveryRequestsCount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Results) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *Results) GetApiDiscoveryRequestsCountOk() (*int32, bool) {
+	if o == nil || o.ApiDiscoveryRequestsCount == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ApiDiscoveryRequestsCount, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *Results) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasApiDiscoveryRequestsCount returns a boolean if a field has been set.
+func (o *Results) HasApiDiscoveryRequestsCount() bool {
+	if o != nil && o.ApiDiscoveryRequestsCount != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *Results) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetApiDiscoveryRequestsCount gets a reference to the given int32 and assigns it to the ApiDiscoveryRequestsCount field.
+func (o *Results) SetApiDiscoveryRequestsCount(v int32) {
+	o.ApiDiscoveryRequestsCount = &v
+}
+
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *Results) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ServiceId
+}
+
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
+		return nil, false
+	}
+	return o.ServiceId, true
+}
+
+// HasServiceId returns a boolean if a field has been set.
+func (o *Results) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *Results) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
@@ -9308,20 +9342,20 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.Synth != nil {
 		toSerialize["synth"] = o.Synth
 	}
-	if o.TLS != nil {
-		toSerialize["tls"] = o.TLS
+	if o.Tls != nil {
+		toSerialize["tls"] = o.Tls
 	}
-	if o.TLSV10 != nil {
-		toSerialize["tls_v10"] = o.TLSV10
+	if o.TlsV10 != nil {
+		toSerialize["tls_v10"] = o.TlsV10
 	}
-	if o.TLSV11 != nil {
-		toSerialize["tls_v11"] = o.TLSV11
+	if o.TlsV11 != nil {
+		toSerialize["tls_v11"] = o.TlsV11
 	}
-	if o.TLSV12 != nil {
-		toSerialize["tls_v12"] = o.TLSV12
+	if o.TlsV12 != nil {
+		toSerialize["tls_v12"] = o.TlsV12
 	}
-	if o.TLSV13 != nil {
-		toSerialize["tls_v13"] = o.TLSV13
+	if o.TlsV13 != nil {
+		toSerialize["tls_v13"] = o.TlsV13
 	}
 	if o.EdgeRequests != nil {
 		toSerialize["edge_requests"] = o.EdgeRequests
@@ -9428,11 +9462,11 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.LogBytes != nil {
 		toSerialize["log_bytes"] = o.LogBytes
 	}
-	if o.HTTP2 != nil {
-		toSerialize["http2"] = o.HTTP2
+	if o.Http2 != nil {
+		toSerialize["http2"] = o.Http2
 	}
-	if o.HTTP3 != nil {
-		toSerialize["http3"] = o.HTTP3
+	if o.Http3 != nil {
+		toSerialize["http3"] = o.Http3
 	}
 	if o.WafLogged != nil {
 		toSerialize["waf_logged"] = o.WafLogged
@@ -9677,8 +9711,8 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.PredeliverSubCount != nil {
 		toSerialize["predeliver_sub_count"] = o.PredeliverSubCount
 	}
-	if o.TLSHandshakeSentBytes != nil {
-		toSerialize["tls_handshake_sent_bytes"] = o.TLSHandshakeSentBytes
+	if o.TlsHandshakeSentBytes != nil {
+		toSerialize["tls_handshake_sent_bytes"] = o.TlsHandshakeSentBytes
 	}
 	if o.HitRespBodyBytes != nil {
 		toSerialize["hit_resp_body_bytes"] = o.HitRespBodyBytes
@@ -9704,8 +9738,8 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.ComputeRequestTimeBilledMs != nil {
 		toSerialize["compute_request_time_billed_ms"] = o.ComputeRequestTimeBilledMs
 	}
-	if o.ComputeRAMUsed != nil {
-		toSerialize["compute_ram_used"] = o.ComputeRAMUsed
+	if o.ComputeRamUsed != nil {
+		toSerialize["compute_ram_used"] = o.ComputeRamUsed
 	}
 	if o.ComputeExecutionTimeMs != nil {
 		toSerialize["compute_execution_time_ms"] = o.ComputeExecutionTimeMs
@@ -10046,8 +10080,11 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.NgwafRequestsChallengedCount != nil {
 		toSerialize["ngwaf_requests_challenged_count"] = o.NgwafRequestsChallengedCount
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ApiDiscoveryRequestsCount != nil {
+		toSerialize["api_discovery_requests_count"] = o.ApiDiscoveryRequestsCount
+	}
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.StartTime != nil {
 		toSerialize["start_time"] = o.StartTime
@@ -10340,6 +10377,7 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "ngwaf_requests_blocked_count")
 		delete(additionalProperties, "ngwaf_requests_timeout_count")
 		delete(additionalProperties, "ngwaf_requests_challenged_count")
+		delete(additionalProperties, "api_discovery_requests_count")
 		delete(additionalProperties, "service_id")
 		delete(additionalProperties, "start_time")
 		o.AdditionalProperties = additionalProperties

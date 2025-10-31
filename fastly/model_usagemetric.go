@@ -33,7 +33,7 @@ type Usagemetric struct {
 	// The raw units measured for the product.
 	RawQuantity *float32 `json:"raw_quantity,omitempty"`
 	// The product identifier associated with the usage type. This corresponds to a Fastly product offering.
-	ProductID *string `json:"product_id,omitempty"`
+	ProductId *string `json:"product_id,omitempty"`
 	// The date when the usage metric was last updated.
 	LastUpdatedAt        *string `json:"last_updated_at,omitempty"`
 	AdditionalProperties map[string]any
@@ -282,36 +282,36 @@ func (o *Usagemetric) SetRawQuantity(v float32) {
 	o.RawQuantity = &v
 }
 
-// GetProductID returns the ProductID field value if set, zero value otherwise.
-func (o *Usagemetric) GetProductID() string {
-	if o == nil || o.ProductID == nil {
+// GetProductId returns the ProductId field value if set, zero value otherwise.
+func (o *Usagemetric) GetProductId() string {
+	if o == nil || o.ProductId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ProductID
+	return *o.ProductId
 }
 
-// GetProductIDOk returns a tuple with the ProductID field value if set, nil otherwise
+// GetProductIdOk returns a tuple with the ProductId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Usagemetric) GetProductIDOk() (*string, bool) {
-	if o == nil || o.ProductID == nil {
+func (o *Usagemetric) GetProductIdOk() (*string, bool) {
+	if o == nil || o.ProductId == nil {
 		return nil, false
 	}
-	return o.ProductID, true
+	return o.ProductId, true
 }
 
-// HasProductID returns a boolean if a field has been set.
-func (o *Usagemetric) HasProductID() bool {
-	if o != nil && o.ProductID != nil {
+// HasProductId returns a boolean if a field has been set.
+func (o *Usagemetric) HasProductId() bool {
+	if o != nil && o.ProductId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetProductID gets a reference to the given string and assigns it to the ProductID field.
-func (o *Usagemetric) SetProductID(v string) {
-	o.ProductID = &v
+// SetProductId gets a reference to the given string and assigns it to the ProductId field.
+func (o *Usagemetric) SetProductId(v string) {
+	o.ProductId = &v
 }
 
 // GetLastUpdatedAt returns the LastUpdatedAt field value if set, zero value otherwise.
@@ -371,8 +371,8 @@ func (o Usagemetric) MarshalJSON() ([]byte, error) {
 	if o.RawQuantity != nil {
 		toSerialize["raw_quantity"] = o.RawQuantity
 	}
-	if o.ProductID != nil {
-		toSerialize["product_id"] = o.ProductID
+	if o.ProductId != nil {
+		toSerialize["product_id"] = o.ProductId
 	}
 	if o.LastUpdatedAt != nil {
 		toSerialize["last_updated_at"] = o.LastUpdatedAt

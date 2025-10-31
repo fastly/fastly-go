@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Region** | Pointer to **string** | The region that log data will be sent to. | [optional] [default to "US"]
 **Token** | Pointer to **string** | The token to use for authentication. | [optional] 
-**ProjectID** | Pointer to **string** | The name of the logfile within Scalyr. | [optional] [default to "logplex"]
+**ProjectId** | Pointer to **string** | The name of the logfile within Scalyr. | [optional] [default to "logplex"]
 
 ## Methods
 
@@ -77,30 +77,32 @@ SetToken sets Token field to given value.
 
 HasToken returns a boolean if a field has been set.
 
-### GetProjectID
+### GetProjectId
 
-`func (o *LoggingScalyrAdditional) GetProjectID() string`
+`func (o *LoggingScalyrAdditional) GetProjectId() string`
 
-GetProjectID returns the ProjectID field if non-nil, zero value otherwise.
+GetProjectId returns the ProjectId field if non-nil, zero value otherwise.
 
-### GetProjectIDOk
+### GetProjectIdOk
 
-`func (o *LoggingScalyrAdditional) GetProjectIDOk() (*string, bool)`
+`func (o *LoggingScalyrAdditional) GetProjectIdOk() (*string, bool)`
 
-GetProjectIDOk returns a tuple with the ProjectID field if it's non-nil, zero value otherwise
+GetProjectIdOk returns a tuple with the ProjectId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProjectID
+### SetProjectId
 
-`func (o *LoggingScalyrAdditional) SetProjectID(v string)`
+`func (o *LoggingScalyrAdditional) SetProjectId(v string)`
 
-SetProjectID sets ProjectID field to given value.
+SetProjectId sets ProjectId field to given value.
 
-### HasProjectID
+### HasProjectId
 
-`func (o *LoggingScalyrAdditional) HasProjectID() bool`
+`func (o *LoggingScalyrAdditional) HasProjectId() bool`
 
-HasProjectID returns a boolean if a field has been set.
+HasProjectId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

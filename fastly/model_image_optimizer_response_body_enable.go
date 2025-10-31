@@ -19,7 +19,7 @@ import (
 // ImageOptimizerResponseBodyEnable struct for ImageOptimizerResponseBodyEnable
 type ImageOptimizerResponseBodyEnable struct {
 	Product              *ImageOptimizerResponseProductProduct `json:"product,omitempty"`
-	Service              *BotManagementResponseServiceService  `json:"service,omitempty"`
+	Service              *ApiDiscoveryResponseServiceService   `json:"service,omitempty"`
 	Links                *ImageOptimizerResponseLinksLinks     `json:"_links,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -76,9 +76,9 @@ func (o *ImageOptimizerResponseBodyEnable) SetProduct(v ImageOptimizerResponsePr
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *ImageOptimizerResponseBodyEnable) GetService() BotManagementResponseServiceService {
+func (o *ImageOptimizerResponseBodyEnable) GetService() ApiDiscoveryResponseServiceService {
 	if o == nil || o.Service == nil {
-		var ret BotManagementResponseServiceService
+		var ret ApiDiscoveryResponseServiceService
 		return ret
 	}
 	return *o.Service
@@ -86,7 +86,7 @@ func (o *ImageOptimizerResponseBodyEnable) GetService() BotManagementResponseSer
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImageOptimizerResponseBodyEnable) GetServiceOk() (*BotManagementResponseServiceService, bool) {
+func (o *ImageOptimizerResponseBodyEnable) GetServiceOk() (*ApiDiscoveryResponseServiceService, bool) {
 	if o == nil || o.Service == nil {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *ImageOptimizerResponseBodyEnable) HasService() bool {
 	return false
 }
 
-// SetService gets a reference to the given BotManagementResponseServiceService and assigns it to the Service field.
-func (o *ImageOptimizerResponseBodyEnable) SetService(v BotManagementResponseServiceService) {
+// SetService gets a reference to the given ApiDiscoveryResponseServiceService and assigns it to the Service field.
+func (o *ImageOptimizerResponseBodyEnable) SetService(v ApiDiscoveryResponseServiceService) {
 	o.Service = &v
 }
 

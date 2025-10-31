@@ -36,10 +36,10 @@ type EventsAPI interface {
 		Get a specific event.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param eventID Alphanumeric string identifying an event.
+		 @param eventId Alphanumeric string identifying an event.
 		 @return APIGetEventRequest
 	*/
-	GetEvent(ctx context.Context, eventID string) APIGetEventRequest
+	GetEvent(ctx context.Context, eventId string) APIGetEventRequest
 
 	// GetEventExecute executes the request
 	//  @return EventResponse
@@ -67,7 +67,7 @@ type EventsAPIService service
 type APIGetEventRequest struct {
 	ctx        context.Context
 	APIService EventsAPI
-	eventID    string
+	eventId    string
 }
 
 // Execute calls the API using the request data configured.
@@ -81,14 +81,14 @@ GetEvent Get an event
 Get a specific event.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventID Alphanumeric string identifying an event.
+ @param eventId Alphanumeric string identifying an event.
  @return APIGetEventRequest
 */
-func (a *EventsAPIService) GetEvent(ctx context.Context, eventID string) APIGetEventRequest {
+func (a *EventsAPIService) GetEvent(ctx context.Context, eventId string) APIGetEventRequest {
 	return APIGetEventRequest{
 		APIService: a,
 		ctx:        ctx,
-		eventID:    eventID,
+		eventId:    eventId,
 	}
 }
 
@@ -108,7 +108,7 @@ func (a *EventsAPIService) GetEventExecute(r APIGetEventRequest) (*EventResponse
 	}
 
 	localVarPath := localBasePath + "/events/{event_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"event_id"+"}", gourl.PathEscape(parameterToString(r.eventID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"event_id"+"}", gourl.PathEscape(parameterToString(r.eventId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -199,11 +199,11 @@ func (a *EventsAPIService) GetEventExecute(r APIGetEventRequest) (*EventResponse
 type APIListEventsRequest struct {
 	ctx                context.Context
 	APIService         EventsAPI
-	filterCustomerID   *string
+	filterCustomerId   *string
 	filterEventType    *string
-	filterServiceID    *string
-	filterUserID       *string
-	filterTokenID      *string
+	filterServiceId    *string
+	filterUserId       *string
+	filterTokenId      *string
 	filterCreatedAt    *string
 	filterCreatedAtLte *string
 	filterCreatedAtLt  *string
@@ -214,9 +214,9 @@ type APIListEventsRequest struct {
 	sort               *string
 }
 
-// FilterCustomerID Limit the results returned to a specific customer.
-func (r *APIListEventsRequest) FilterCustomerID(filterCustomerID string) *APIListEventsRequest {
-	r.filterCustomerID = &filterCustomerID
+// FilterCustomerId Limit the results returned to a specific customer.
+func (r *APIListEventsRequest) FilterCustomerId(filterCustomerId string) *APIListEventsRequest {
+	r.filterCustomerId = &filterCustomerId
 	return r
 }
 
@@ -226,21 +226,21 @@ func (r *APIListEventsRequest) FilterEventType(filterEventType string) *APIListE
 	return r
 }
 
-// FilterServiceID Limit the results returned to a specific service.
-func (r *APIListEventsRequest) FilterServiceID(filterServiceID string) *APIListEventsRequest {
-	r.filterServiceID = &filterServiceID
+// FilterServiceId Limit the results returned to a specific service.
+func (r *APIListEventsRequest) FilterServiceId(filterServiceId string) *APIListEventsRequest {
+	r.filterServiceId = &filterServiceId
 	return r
 }
 
-// FilterUserID Limit the results returned to a specific user.
-func (r *APIListEventsRequest) FilterUserID(filterUserID string) *APIListEventsRequest {
-	r.filterUserID = &filterUserID
+// FilterUserId Limit the results returned to a specific user.
+func (r *APIListEventsRequest) FilterUserId(filterUserId string) *APIListEventsRequest {
+	r.filterUserId = &filterUserId
 	return r
 }
 
-// FilterTokenID Limit the returned events to a specific token.
-func (r *APIListEventsRequest) FilterTokenID(filterTokenID string) *APIListEventsRequest {
-	r.filterTokenID = &filterTokenID
+// FilterTokenId Limit the returned events to a specific token.
+func (r *APIListEventsRequest) FilterTokenId(filterTokenId string) *APIListEventsRequest {
+	r.filterTokenId = &filterTokenId
 	return r
 }
 
@@ -333,20 +333,20 @@ func (a *EventsAPIService) ListEventsExecute(r APIListEventsRequest) (*EventsRes
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
-	if r.filterCustomerID != nil {
-		localVarQueryParams.Add("filter[customer_id]", parameterToString(*r.filterCustomerID, ""))
+	if r.filterCustomerId != nil {
+		localVarQueryParams.Add("filter[customer_id]", parameterToString(*r.filterCustomerId, ""))
 	}
 	if r.filterEventType != nil {
 		localVarQueryParams.Add("filter[event_type]", parameterToString(*r.filterEventType, ""))
 	}
-	if r.filterServiceID != nil {
-		localVarQueryParams.Add("filter[service_id]", parameterToString(*r.filterServiceID, ""))
+	if r.filterServiceId != nil {
+		localVarQueryParams.Add("filter[service_id]", parameterToString(*r.filterServiceId, ""))
 	}
-	if r.filterUserID != nil {
-		localVarQueryParams.Add("filter[user_id]", parameterToString(*r.filterUserID, ""))
+	if r.filterUserId != nil {
+		localVarQueryParams.Add("filter[user_id]", parameterToString(*r.filterUserId, ""))
 	}
-	if r.filterTokenID != nil {
-		localVarQueryParams.Add("filter[token_id]", parameterToString(*r.filterTokenID, ""))
+	if r.filterTokenId != nil {
+		localVarQueryParams.Add("filter[token_id]", parameterToString(*r.filterTokenId, ""))
 	}
 	if r.filterCreatedAt != nil {
 		localVarQueryParams.Add("filter[created_at]", parameterToString(*r.filterCreatedAt, ""))

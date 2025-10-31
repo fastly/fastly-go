@@ -1,132 +1,134 @@
-# TLSCertificateResponseData
+# TlsCertificateResponseData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTLSCertificate**](TypeTLSCertificate.md) |  | [optional] [default to TYPETLSCERTIFICATE_TLS_CERTIFICATE]
-**Attributes** | Pointer to [**TLSCertificateResponseAttributes**](TlsCertificateResponseAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**RelationshipTLSDomains**](RelationshipTLSDomains.md) |  | [optional] 
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Type** | Pointer to [**TypeTlsCertificate**](TypeTlsCertificate.md) |  | [optional] [default to TYPETLSCERTIFICATE_TLS_CERTIFICATE]
+**Attributes** | Pointer to [**TlsCertificateResponseAttributes**](TlsCertificateResponseAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**RelationshipTlsDomains**](RelationshipTlsDomains.md) |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewTLSCertificateResponseData
+### NewTlsCertificateResponseData
 
-`func NewTLSCertificateResponseData() *TLSCertificateResponseData`
+`func NewTlsCertificateResponseData() *TlsCertificateResponseData`
 
-NewTLSCertificateResponseData instantiates a new TLSCertificateResponseData object
+NewTlsCertificateResponseData instantiates a new TlsCertificateResponseData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSCertificateResponseDataWithDefaults
+### NewTlsCertificateResponseDataWithDefaults
 
-`func NewTLSCertificateResponseDataWithDefaults() *TLSCertificateResponseData`
+`func NewTlsCertificateResponseDataWithDefaults() *TlsCertificateResponseData`
 
-NewTLSCertificateResponseDataWithDefaults instantiates a new TLSCertificateResponseData object
+NewTlsCertificateResponseDataWithDefaults instantiates a new TlsCertificateResponseData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *TLSCertificateResponseData) GetType() TypeTLSCertificate`
+`func (o *TlsCertificateResponseData) GetType() TypeTlsCertificate`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *TLSCertificateResponseData) GetTypeOk() (*TypeTLSCertificate, bool)`
+`func (o *TlsCertificateResponseData) GetTypeOk() (*TypeTlsCertificate, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *TLSCertificateResponseData) SetType(v TypeTLSCertificate)`
+`func (o *TlsCertificateResponseData) SetType(v TypeTlsCertificate)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *TLSCertificateResponseData) HasType() bool`
+`func (o *TlsCertificateResponseData) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *TLSCertificateResponseData) GetAttributes() TLSCertificateResponseAttributes`
+`func (o *TlsCertificateResponseData) GetAttributes() TlsCertificateResponseAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TLSCertificateResponseData) GetAttributesOk() (*TLSCertificateResponseAttributes, bool)`
+`func (o *TlsCertificateResponseData) GetAttributesOk() (*TlsCertificateResponseAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TLSCertificateResponseData) SetAttributes(v TLSCertificateResponseAttributes)`
+`func (o *TlsCertificateResponseData) SetAttributes(v TlsCertificateResponseAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 ### HasAttributes
 
-`func (o *TLSCertificateResponseData) HasAttributes() bool`
+`func (o *TlsCertificateResponseData) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *TLSCertificateResponseData) GetRelationships() RelationshipTLSDomains`
+`func (o *TlsCertificateResponseData) GetRelationships() RelationshipTlsDomains`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TLSCertificateResponseData) GetRelationshipsOk() (*RelationshipTLSDomains, bool)`
+`func (o *TlsCertificateResponseData) GetRelationshipsOk() (*RelationshipTlsDomains, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TLSCertificateResponseData) SetRelationships(v RelationshipTLSDomains)`
+`func (o *TlsCertificateResponseData) SetRelationships(v RelationshipTlsDomains)`
 
 SetRelationships sets Relationships field to given value.
 
 ### HasRelationships
 
-`func (o *TLSCertificateResponseData) HasRelationships() bool`
+`func (o *TlsCertificateResponseData) HasRelationships() bool`
 
 HasRelationships returns a boolean if a field has been set.
 
-### GetID
+### GetId
 
-`func (o *TLSCertificateResponseData) GetID() string`
+`func (o *TlsCertificateResponseData) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *TLSCertificateResponseData) GetIDOk() (*string, bool)`
+`func (o *TlsCertificateResponseData) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *TLSCertificateResponseData) SetID(v string)`
+`func (o *TlsCertificateResponseData) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *TLSCertificateResponseData) HasID() bool`
+`func (o *TlsCertificateResponseData) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

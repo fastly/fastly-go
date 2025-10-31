@@ -36,11 +36,11 @@ type LoggingGrafanacloudlogsAPI interface {
 		Create a Grafana Cloud Logs logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogGrafanacloudlogsRequest
 	*/
-	CreateLogGrafanacloudlogs(ctx context.Context, serviceID string, versionID int32) APICreateLogGrafanacloudlogsRequest
+	CreateLogGrafanacloudlogs(ctx context.Context, serviceId string, versionId int32) APICreateLogGrafanacloudlogsRequest
 
 	// CreateLogGrafanacloudlogsExecute executes the request
 	//  @return LoggingGrafanacloudlogsResponse
@@ -52,12 +52,12 @@ type LoggingGrafanacloudlogsAPI interface {
 		Delete the Grafana Cloud Logs logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingGrafanacloudlogsName The name for the real-time logging configuration.
 		 @return APIDeleteLogGrafanacloudlogsRequest
 	*/
-	DeleteLogGrafanacloudlogs(ctx context.Context, serviceID string, versionID int32, loggingGrafanacloudlogsName string) APIDeleteLogGrafanacloudlogsRequest
+	DeleteLogGrafanacloudlogs(ctx context.Context, serviceId string, versionId int32, loggingGrafanacloudlogsName string) APIDeleteLogGrafanacloudlogsRequest
 
 	// DeleteLogGrafanacloudlogsExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingGrafanacloudlogsAPI interface {
 		Get the details of a Grafana Cloud Logs logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingGrafanacloudlogsName The name for the real-time logging configuration.
 		 @return APIGetLogGrafanacloudlogsRequest
 	*/
-	GetLogGrafanacloudlogs(ctx context.Context, serviceID string, versionID int32, loggingGrafanacloudlogsName string) APIGetLogGrafanacloudlogsRequest
+	GetLogGrafanacloudlogs(ctx context.Context, serviceId string, versionId int32, loggingGrafanacloudlogsName string) APIGetLogGrafanacloudlogsRequest
 
 	// GetLogGrafanacloudlogsExecute executes the request
 	//  @return LoggingGrafanacloudlogsResponse
@@ -86,11 +86,11 @@ type LoggingGrafanacloudlogsAPI interface {
 		List all of the Grafana Cloud Logs logging objects for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogGrafanacloudlogsRequest
 	*/
-	ListLogGrafanacloudlogs(ctx context.Context, serviceID string, versionID int32) APIListLogGrafanacloudlogsRequest
+	ListLogGrafanacloudlogs(ctx context.Context, serviceId string, versionId int32) APIListLogGrafanacloudlogsRequest
 
 	// ListLogGrafanacloudlogsExecute executes the request
 	//  @return []LoggingGrafanacloudlogsResponse
@@ -102,12 +102,12 @@ type LoggingGrafanacloudlogsAPI interface {
 		Update a Grafana Cloud Logs logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingGrafanacloudlogsName The name for the real-time logging configuration.
 		 @return APIUpdateLogGrafanacloudlogsRequest
 	*/
-	UpdateLogGrafanacloudlogs(ctx context.Context, serviceID string, versionID int32, loggingGrafanacloudlogsName string) APIUpdateLogGrafanacloudlogsRequest
+	UpdateLogGrafanacloudlogs(ctx context.Context, serviceId string, versionId int32, loggingGrafanacloudlogsName string) APIUpdateLogGrafanacloudlogsRequest
 
 	// UpdateLogGrafanacloudlogsExecute executes the request
 	//  @return LoggingGrafanacloudlogsResponse
@@ -121,8 +121,8 @@ type LoggingGrafanacloudlogsAPIService service
 type APICreateLogGrafanacloudlogsRequest struct {
 	ctx                 context.Context
 	APIService          LoggingGrafanacloudlogsAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -177,8 +177,8 @@ func (r *APICreateLogGrafanacloudlogsRequest) User(user string) *APICreateLogGra
 	return r
 }
 
-// URL The URL of the Loki instance in your Grafana stack.
-func (r *APICreateLogGrafanacloudlogsRequest) URL(url string) *APICreateLogGrafanacloudlogsRequest {
+// Url The URL of the Loki instance in your Grafana stack.
+func (r *APICreateLogGrafanacloudlogsRequest) Url(url string) *APICreateLogGrafanacloudlogsRequest {
 	r.url = &url
 	return r
 }
@@ -206,16 +206,16 @@ CreateLogGrafanacloudlogs Create a Grafana Cloud Logs log endpoint
 Create a Grafana Cloud Logs logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogGrafanacloudlogsRequest
 */
-func (a *LoggingGrafanacloudlogsAPIService) CreateLogGrafanacloudlogs(ctx context.Context, serviceID string, versionID int32) APICreateLogGrafanacloudlogsRequest {
+func (a *LoggingGrafanacloudlogsAPIService) CreateLogGrafanacloudlogs(ctx context.Context, serviceId string, versionId int32) APICreateLogGrafanacloudlogsRequest {
 	return APICreateLogGrafanacloudlogsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -235,8 +235,8 @@ func (a *LoggingGrafanacloudlogsAPIService) CreateLogGrafanacloudlogsExecute(r A
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/grafanacloudlogs"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -357,8 +357,8 @@ func (a *LoggingGrafanacloudlogsAPIService) CreateLogGrafanacloudlogsExecute(r A
 type APIDeleteLogGrafanacloudlogsRequest struct {
 	ctx                         context.Context
 	APIService                  LoggingGrafanacloudlogsAPI
-	serviceID                   string
-	versionID                   int32
+	serviceId                   string
+	versionId                   int32
 	loggingGrafanacloudlogsName string
 }
 
@@ -373,17 +373,17 @@ DeleteLogGrafanacloudlogs Delete the Grafana Cloud Logs log endpoint
 Delete the Grafana Cloud Logs logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingGrafanacloudlogsName The name for the real-time logging configuration.
  @return APIDeleteLogGrafanacloudlogsRequest
 */
-func (a *LoggingGrafanacloudlogsAPIService) DeleteLogGrafanacloudlogs(ctx context.Context, serviceID string, versionID int32, loggingGrafanacloudlogsName string) APIDeleteLogGrafanacloudlogsRequest {
+func (a *LoggingGrafanacloudlogsAPIService) DeleteLogGrafanacloudlogs(ctx context.Context, serviceId string, versionId int32, loggingGrafanacloudlogsName string) APIDeleteLogGrafanacloudlogsRequest {
 	return APIDeleteLogGrafanacloudlogsRequest{
 		APIService:                  a,
 		ctx:                         ctx,
-		serviceID:                   serviceID,
-		versionID:                   versionID,
+		serviceId:                   serviceId,
+		versionId:                   versionId,
 		loggingGrafanacloudlogsName: loggingGrafanacloudlogsName,
 	}
 }
@@ -404,8 +404,8 @@ func (a *LoggingGrafanacloudlogsAPIService) DeleteLogGrafanacloudlogsExecute(r A
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/grafanacloudlogs/{logging_grafanacloudlogs_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_grafanacloudlogs_name"+"}", gourl.PathEscape(parameterToString(r.loggingGrafanacloudlogsName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -497,8 +497,8 @@ func (a *LoggingGrafanacloudlogsAPIService) DeleteLogGrafanacloudlogsExecute(r A
 type APIGetLogGrafanacloudlogsRequest struct {
 	ctx                         context.Context
 	APIService                  LoggingGrafanacloudlogsAPI
-	serviceID                   string
-	versionID                   int32
+	serviceId                   string
+	versionId                   int32
 	loggingGrafanacloudlogsName string
 }
 
@@ -513,17 +513,17 @@ GetLogGrafanacloudlogs Get a Grafana Cloud Logs log endpoint
 Get the details of a Grafana Cloud Logs logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingGrafanacloudlogsName The name for the real-time logging configuration.
  @return APIGetLogGrafanacloudlogsRequest
 */
-func (a *LoggingGrafanacloudlogsAPIService) GetLogGrafanacloudlogs(ctx context.Context, serviceID string, versionID int32, loggingGrafanacloudlogsName string) APIGetLogGrafanacloudlogsRequest {
+func (a *LoggingGrafanacloudlogsAPIService) GetLogGrafanacloudlogs(ctx context.Context, serviceId string, versionId int32, loggingGrafanacloudlogsName string) APIGetLogGrafanacloudlogsRequest {
 	return APIGetLogGrafanacloudlogsRequest{
 		APIService:                  a,
 		ctx:                         ctx,
-		serviceID:                   serviceID,
-		versionID:                   versionID,
+		serviceId:                   serviceId,
+		versionId:                   versionId,
 		loggingGrafanacloudlogsName: loggingGrafanacloudlogsName,
 	}
 }
@@ -544,8 +544,8 @@ func (a *LoggingGrafanacloudlogsAPIService) GetLogGrafanacloudlogsExecute(r APIG
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/grafanacloudlogs/{logging_grafanacloudlogs_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_grafanacloudlogs_name"+"}", gourl.PathEscape(parameterToString(r.loggingGrafanacloudlogsName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -637,8 +637,8 @@ func (a *LoggingGrafanacloudlogsAPIService) GetLogGrafanacloudlogsExecute(r APIG
 type APIListLogGrafanacloudlogsRequest struct {
 	ctx        context.Context
 	APIService LoggingGrafanacloudlogsAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -652,16 +652,16 @@ ListLogGrafanacloudlogs List Grafana Cloud Logs log endpoints
 List all of the Grafana Cloud Logs logging objects for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogGrafanacloudlogsRequest
 */
-func (a *LoggingGrafanacloudlogsAPIService) ListLogGrafanacloudlogs(ctx context.Context, serviceID string, versionID int32) APIListLogGrafanacloudlogsRequest {
+func (a *LoggingGrafanacloudlogsAPIService) ListLogGrafanacloudlogs(ctx context.Context, serviceId string, versionId int32) APIListLogGrafanacloudlogsRequest {
 	return APIListLogGrafanacloudlogsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -681,8 +681,8 @@ func (a *LoggingGrafanacloudlogsAPIService) ListLogGrafanacloudlogsExecute(r API
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/grafanacloudlogs"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -773,8 +773,8 @@ func (a *LoggingGrafanacloudlogsAPIService) ListLogGrafanacloudlogsExecute(r API
 type APIUpdateLogGrafanacloudlogsRequest struct {
 	ctx                         context.Context
 	APIService                  LoggingGrafanacloudlogsAPI
-	serviceID                   string
-	versionID                   int32
+	serviceId                   string
+	versionId                   int32
 	loggingGrafanacloudlogsName string
 	name                        *string
 	placement                   *string
@@ -830,8 +830,8 @@ func (r *APIUpdateLogGrafanacloudlogsRequest) User(user string) *APIUpdateLogGra
 	return r
 }
 
-// URL The URL of the Loki instance in your Grafana stack.
-func (r *APIUpdateLogGrafanacloudlogsRequest) URL(url string) *APIUpdateLogGrafanacloudlogsRequest {
+// Url The URL of the Loki instance in your Grafana stack.
+func (r *APIUpdateLogGrafanacloudlogsRequest) Url(url string) *APIUpdateLogGrafanacloudlogsRequest {
 	r.url = &url
 	return r
 }
@@ -859,17 +859,17 @@ UpdateLogGrafanacloudlogs Update a Grafana Cloud Logs log endpoint
 Update a Grafana Cloud Logs logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingGrafanacloudlogsName The name for the real-time logging configuration.
  @return APIUpdateLogGrafanacloudlogsRequest
 */
-func (a *LoggingGrafanacloudlogsAPIService) UpdateLogGrafanacloudlogs(ctx context.Context, serviceID string, versionID int32, loggingGrafanacloudlogsName string) APIUpdateLogGrafanacloudlogsRequest {
+func (a *LoggingGrafanacloudlogsAPIService) UpdateLogGrafanacloudlogs(ctx context.Context, serviceId string, versionId int32, loggingGrafanacloudlogsName string) APIUpdateLogGrafanacloudlogsRequest {
 	return APIUpdateLogGrafanacloudlogsRequest{
 		APIService:                  a,
 		ctx:                         ctx,
-		serviceID:                   serviceID,
-		versionID:                   versionID,
+		serviceId:                   serviceId,
+		versionId:                   versionId,
 		loggingGrafanacloudlogsName: loggingGrafanacloudlogsName,
 	}
 }
@@ -890,8 +890,8 @@ func (a *LoggingGrafanacloudlogsAPIService) UpdateLogGrafanacloudlogsExecute(r A
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/grafanacloudlogs/{logging_grafanacloudlogs_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_grafanacloudlogs_name"+"}", gourl.PathEscape(parameterToString(r.loggingGrafanacloudlogsName, "")))
 
 	localVarHeaderParams := make(map[string]string)

@@ -16,8 +16,8 @@ import (
 	"encoding/json"
 )
 
-// TLSSubscriptionResponseAttributesAllOf struct for TLSSubscriptionResponseAttributesAllOf
-type TLSSubscriptionResponseAttributesAllOf struct {
+// TlsSubscriptionResponseAttributesAllOf struct for TlsSubscriptionResponseAttributesAllOf
+type TlsSubscriptionResponseAttributesAllOf struct {
 	// The current state of your subscription.
 	State *string `json:"state,omitempty"`
 	// Subscription has an active order
@@ -25,27 +25,27 @@ type TLSSubscriptionResponseAttributesAllOf struct {
 	AdditionalProperties map[string]any
 }
 
-type _TLSSubscriptionResponseAttributesAllOf TLSSubscriptionResponseAttributesAllOf
+type _TlsSubscriptionResponseAttributesAllOf TlsSubscriptionResponseAttributesAllOf
 
-// NewTLSSubscriptionResponseAttributesAllOf instantiates a new TLSSubscriptionResponseAttributesAllOf object
+// NewTlsSubscriptionResponseAttributesAllOf instantiates a new TlsSubscriptionResponseAttributesAllOf object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSSubscriptionResponseAttributesAllOf() *TLSSubscriptionResponseAttributesAllOf {
-	this := TLSSubscriptionResponseAttributesAllOf{}
+func NewTlsSubscriptionResponseAttributesAllOf() *TlsSubscriptionResponseAttributesAllOf {
+	this := TlsSubscriptionResponseAttributesAllOf{}
 	return &this
 }
 
-// NewTLSSubscriptionResponseAttributesAllOfWithDefaults instantiates a new TLSSubscriptionResponseAttributesAllOf object
+// NewTlsSubscriptionResponseAttributesAllOfWithDefaults instantiates a new TlsSubscriptionResponseAttributesAllOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSSubscriptionResponseAttributesAllOfWithDefaults() *TLSSubscriptionResponseAttributesAllOf {
-	this := TLSSubscriptionResponseAttributesAllOf{}
+func NewTlsSubscriptionResponseAttributesAllOfWithDefaults() *TlsSubscriptionResponseAttributesAllOf {
+	this := TlsSubscriptionResponseAttributesAllOf{}
 	return &this
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *TLSSubscriptionResponseAttributesAllOf) GetState() string {
+func (o *TlsSubscriptionResponseAttributesAllOf) GetState() string {
 	if o == nil || o.State == nil {
 		var ret string
 		return ret
@@ -55,7 +55,7 @@ func (o *TLSSubscriptionResponseAttributesAllOf) GetState() string {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSSubscriptionResponseAttributesAllOf) GetStateOk() (*string, bool) {
+func (o *TlsSubscriptionResponseAttributesAllOf) GetStateOk() (*string, bool) {
 	if o == nil || o.State == nil {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *TLSSubscriptionResponseAttributesAllOf) GetStateOk() (*string, bool) {
 }
 
 // HasState returns a boolean if a field has been set.
-func (o *TLSSubscriptionResponseAttributesAllOf) HasState() bool {
+func (o *TlsSubscriptionResponseAttributesAllOf) HasState() bool {
 	if o != nil && o.State != nil {
 		return true
 	}
@@ -72,12 +72,12 @@ func (o *TLSSubscriptionResponseAttributesAllOf) HasState() bool {
 }
 
 // SetState gets a reference to the given string and assigns it to the State field.
-func (o *TLSSubscriptionResponseAttributesAllOf) SetState(v string) {
+func (o *TlsSubscriptionResponseAttributesAllOf) SetState(v string) {
 	o.State = &v
 }
 
 // GetHasActiveOrder returns the HasActiveOrder field value if set, zero value otherwise.
-func (o *TLSSubscriptionResponseAttributesAllOf) GetHasActiveOrder() bool {
+func (o *TlsSubscriptionResponseAttributesAllOf) GetHasActiveOrder() bool {
 	if o == nil || o.HasActiveOrder == nil {
 		var ret bool
 		return ret
@@ -87,7 +87,7 @@ func (o *TLSSubscriptionResponseAttributesAllOf) GetHasActiveOrder() bool {
 
 // GetHasActiveOrderOk returns a tuple with the HasActiveOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSSubscriptionResponseAttributesAllOf) GetHasActiveOrderOk() (*bool, bool) {
+func (o *TlsSubscriptionResponseAttributesAllOf) GetHasActiveOrderOk() (*bool, bool) {
 	if o == nil || o.HasActiveOrder == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *TLSSubscriptionResponseAttributesAllOf) GetHasActiveOrderOk() (*bool, b
 }
 
 // HasHasActiveOrder returns a boolean if a field has been set.
-func (o *TLSSubscriptionResponseAttributesAllOf) HasHasActiveOrder() bool {
+func (o *TlsSubscriptionResponseAttributesAllOf) HasHasActiveOrder() bool {
 	if o != nil && o.HasActiveOrder != nil {
 		return true
 	}
@@ -104,13 +104,13 @@ func (o *TLSSubscriptionResponseAttributesAllOf) HasHasActiveOrder() bool {
 }
 
 // SetHasActiveOrder gets a reference to the given bool and assigns it to the HasActiveOrder field.
-func (o *TLSSubscriptionResponseAttributesAllOf) SetHasActiveOrder(v bool) {
+func (o *TlsSubscriptionResponseAttributesAllOf) SetHasActiveOrder(v bool) {
 	o.HasActiveOrder = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSSubscriptionResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
+func (o TlsSubscriptionResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.State != nil {
 		toSerialize["state"] = o.State
@@ -128,11 +128,11 @@ func (o TLSSubscriptionResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSSubscriptionResponseAttributesAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSSubscriptionResponseAttributesAllOf := _TLSSubscriptionResponseAttributesAllOf{}
+func (o *TlsSubscriptionResponseAttributesAllOf) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsSubscriptionResponseAttributesAllOf := _TlsSubscriptionResponseAttributesAllOf{}
 
-	if err = json.Unmarshal(bytes, &varTLSSubscriptionResponseAttributesAllOf); err == nil {
-		*o = TLSSubscriptionResponseAttributesAllOf(varTLSSubscriptionResponseAttributesAllOf)
+	if err = json.Unmarshal(bytes, &varTlsSubscriptionResponseAttributesAllOf); err == nil {
+		*o = TlsSubscriptionResponseAttributesAllOf(varTlsSubscriptionResponseAttributesAllOf)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -146,48 +146,48 @@ func (o *TLSSubscriptionResponseAttributesAllOf) UnmarshalJSON(bytes []byte) (er
 	return err
 }
 
-// NullableTLSSubscriptionResponseAttributesAllOf is a helper abstraction for handling nullable tlssubscriptionresponseattributesallof types.
-type NullableTLSSubscriptionResponseAttributesAllOf struct {
-	value *TLSSubscriptionResponseAttributesAllOf
+// NullableTlsSubscriptionResponseAttributesAllOf is a helper abstraction for handling nullable tlssubscriptionresponseattributesallof types.
+type NullableTlsSubscriptionResponseAttributesAllOf struct {
+	value *TlsSubscriptionResponseAttributesAllOf
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSSubscriptionResponseAttributesAllOf) Get() *TLSSubscriptionResponseAttributesAllOf {
+func (v NullableTlsSubscriptionResponseAttributesAllOf) Get() *TlsSubscriptionResponseAttributesAllOf {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSSubscriptionResponseAttributesAllOf) Set(val *TLSSubscriptionResponseAttributesAllOf) {
+func (v *NullableTlsSubscriptionResponseAttributesAllOf) Set(val *TlsSubscriptionResponseAttributesAllOf) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSSubscriptionResponseAttributesAllOf) IsSet() bool {
+func (v NullableTlsSubscriptionResponseAttributesAllOf) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSSubscriptionResponseAttributesAllOf) Unset() {
+func (v *NullableTlsSubscriptionResponseAttributesAllOf) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSSubscriptionResponseAttributesAllOf returns a pointer to a new instance of NullableTLSSubscriptionResponseAttributesAllOf.
-func NewNullableTLSSubscriptionResponseAttributesAllOf(val *TLSSubscriptionResponseAttributesAllOf) *NullableTLSSubscriptionResponseAttributesAllOf {
-	return &NullableTLSSubscriptionResponseAttributesAllOf{value: val, isSet: true}
+// NewNullableTlsSubscriptionResponseAttributesAllOf returns a pointer to a new instance of NullableTlsSubscriptionResponseAttributesAllOf.
+func NewNullableTlsSubscriptionResponseAttributesAllOf(val *TlsSubscriptionResponseAttributesAllOf) *NullableTlsSubscriptionResponseAttributesAllOf {
+	return &NullableTlsSubscriptionResponseAttributesAllOf{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSSubscriptionResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableTlsSubscriptionResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSSubscriptionResponseAttributesAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsSubscriptionResponseAttributesAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -155,12 +155,12 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SecretStoreAPI.DeleteSecretStore(ctx, storeID).Execute()
+    resp, r, err := apiClient.SecretStoreAPI.DeleteSecretStore(ctx, storeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecretStoreAPI.DeleteSecretStore`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -174,7 +174,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 
 ### Other Parameters
 
@@ -220,12 +220,12 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SecretStoreAPI.GetSecretStore(ctx, storeID).Execute()
+    resp, r, err := apiClient.SecretStoreAPI.GetSecretStore(ctx, storeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecretStoreAPI.GetSecretStore`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -241,7 +241,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 
 ### Other Parameters
 
@@ -299,7 +299,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SecretStoreAPI.GetSecretStores`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetSecretStores`: InlineResponse2007
+    // response from `GetSecretStores`: InlineResponse2008
     fmt.Fprintf(os.Stdout, "Response from `SecretStoreAPI.GetSecretStores`: %v\n", resp)
 }
 ```
@@ -319,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse2008**](InlineResponse2008.md)
 
 ### Authorization
 
@@ -390,3 +390,4 @@ Other parameters are passed through a pointer to a apiSigningKeyRequest struct v
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

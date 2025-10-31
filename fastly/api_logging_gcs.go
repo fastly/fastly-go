@@ -36,11 +36,11 @@ type LoggingGcsAPI interface {
 		Create GCS logging for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogGcsRequest
 	*/
-	CreateLogGcs(ctx context.Context, serviceID string, versionID int32) APICreateLogGcsRequest
+	CreateLogGcs(ctx context.Context, serviceId string, versionId int32) APICreateLogGcsRequest
 
 	// CreateLogGcsExecute executes the request
 	//  @return LoggingGcsResponse
@@ -52,12 +52,12 @@ type LoggingGcsAPI interface {
 		Delete the GCS Logging for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingGcsName The name for the real-time logging configuration.
 		 @return APIDeleteLogGcsRequest
 	*/
-	DeleteLogGcs(ctx context.Context, serviceID string, versionID int32, loggingGcsName string) APIDeleteLogGcsRequest
+	DeleteLogGcs(ctx context.Context, serviceId string, versionId int32, loggingGcsName string) APIDeleteLogGcsRequest
 
 	// DeleteLogGcsExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingGcsAPI interface {
 		Get the GCS Logging for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingGcsName The name for the real-time logging configuration.
 		 @return APIGetLogGcsRequest
 	*/
-	GetLogGcs(ctx context.Context, serviceID string, versionID int32, loggingGcsName string) APIGetLogGcsRequest
+	GetLogGcs(ctx context.Context, serviceId string, versionId int32, loggingGcsName string) APIGetLogGcsRequest
 
 	// GetLogGcsExecute executes the request
 	//  @return LoggingGcsResponse
@@ -86,11 +86,11 @@ type LoggingGcsAPI interface {
 		List all of the GCS log endpoints for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogGcsRequest
 	*/
-	ListLogGcs(ctx context.Context, serviceID string, versionID int32) APIListLogGcsRequest
+	ListLogGcs(ctx context.Context, serviceId string, versionId int32) APIListLogGcsRequest
 
 	// ListLogGcsExecute executes the request
 	//  @return []LoggingGcsResponse
@@ -102,12 +102,12 @@ type LoggingGcsAPI interface {
 		Update the GCS for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingGcsName The name for the real-time logging configuration.
 		 @return APIUpdateLogGcsRequest
 	*/
-	UpdateLogGcs(ctx context.Context, serviceID string, versionID int32, loggingGcsName string) APIUpdateLogGcsRequest
+	UpdateLogGcs(ctx context.Context, serviceId string, versionId int32, loggingGcsName string) APIUpdateLogGcsRequest
 
 	// UpdateLogGcsExecute executes the request
 	//  @return LoggingGcsResponse
@@ -121,8 +121,8 @@ type LoggingGcsAPIService service
 type APICreateLogGcsRequest struct {
 	ctx                 context.Context
 	APIService          LoggingGcsAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -140,7 +140,7 @@ type APICreateLogGcsRequest struct {
 	bucketName          *string
 	path                *string
 	publicKey           *string
-	projectID           *string
+	projectId           *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -245,9 +245,9 @@ func (r *APICreateLogGcsRequest) PublicKey(publicKey string) *APICreateLogGcsReq
 	return r
 }
 
-// ProjectID Your Google Cloud Platform project ID. Required
-func (r *APICreateLogGcsRequest) ProjectID(projectID string) *APICreateLogGcsRequest {
-	r.projectID = &projectID
+// ProjectId Your Google Cloud Platform project ID. Required
+func (r *APICreateLogGcsRequest) ProjectId(projectId string) *APICreateLogGcsRequest {
+	r.projectId = &projectId
 	return r
 }
 
@@ -262,16 +262,16 @@ CreateLogGcs Create a GCS log endpoint
 Create GCS logging for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogGcsRequest
 */
-func (a *LoggingGcsAPIService) CreateLogGcs(ctx context.Context, serviceID string, versionID int32) APICreateLogGcsRequest {
+func (a *LoggingGcsAPIService) CreateLogGcs(ctx context.Context, serviceId string, versionId int32) APICreateLogGcsRequest {
 	return APICreateLogGcsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -291,8 +291,8 @@ func (a *LoggingGcsAPIService) CreateLogGcsExecute(r APICreateLogGcsRequest) (*L
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/gcs"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -361,17 +361,17 @@ func (a *LoggingGcsAPIService) CreateLogGcsExecute(r APICreateLogGcsRequest) (*L
 		localVarFormParams.Add("bucket_name", parameterToString(*r.bucketName, ""))
 	}
 	if r.path != nil {
-		paramJSON, err := parameterToJSON(*r.path)
+		paramJson, err := parameterToJSON(*r.path)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("path", paramJSON)
+		localVarFormParams.Add("path", paramJson)
 	}
 	if r.publicKey != nil {
 		localVarFormParams.Add("public_key", parameterToString(*r.publicKey, ""))
 	}
-	if r.projectID != nil {
-		localVarFormParams.Add("project_id", parameterToString(*r.projectID, ""))
+	if r.projectId != nil {
+		localVarFormParams.Add("project_id", parameterToString(*r.projectId, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -441,8 +441,8 @@ func (a *LoggingGcsAPIService) CreateLogGcsExecute(r APICreateLogGcsRequest) (*L
 type APIDeleteLogGcsRequest struct {
 	ctx            context.Context
 	APIService     LoggingGcsAPI
-	serviceID      string
-	versionID      int32
+	serviceId      string
+	versionId      int32
 	loggingGcsName string
 }
 
@@ -457,17 +457,17 @@ DeleteLogGcs Delete a GCS log endpoint
 Delete the GCS Logging for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingGcsName The name for the real-time logging configuration.
  @return APIDeleteLogGcsRequest
 */
-func (a *LoggingGcsAPIService) DeleteLogGcs(ctx context.Context, serviceID string, versionID int32, loggingGcsName string) APIDeleteLogGcsRequest {
+func (a *LoggingGcsAPIService) DeleteLogGcs(ctx context.Context, serviceId string, versionId int32, loggingGcsName string) APIDeleteLogGcsRequest {
 	return APIDeleteLogGcsRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceID:      serviceID,
-		versionID:      versionID,
+		serviceId:      serviceId,
+		versionId:      versionId,
 		loggingGcsName: loggingGcsName,
 	}
 }
@@ -488,8 +488,8 @@ func (a *LoggingGcsAPIService) DeleteLogGcsExecute(r APIDeleteLogGcsRequest) (*I
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/gcs/{logging_gcs_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_gcs_name"+"}", gourl.PathEscape(parameterToString(r.loggingGcsName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -581,8 +581,8 @@ func (a *LoggingGcsAPIService) DeleteLogGcsExecute(r APIDeleteLogGcsRequest) (*I
 type APIGetLogGcsRequest struct {
 	ctx            context.Context
 	APIService     LoggingGcsAPI
-	serviceID      string
-	versionID      int32
+	serviceId      string
+	versionId      int32
 	loggingGcsName string
 }
 
@@ -597,17 +597,17 @@ GetLogGcs Get a GCS log endpoint
 Get the GCS Logging for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingGcsName The name for the real-time logging configuration.
  @return APIGetLogGcsRequest
 */
-func (a *LoggingGcsAPIService) GetLogGcs(ctx context.Context, serviceID string, versionID int32, loggingGcsName string) APIGetLogGcsRequest {
+func (a *LoggingGcsAPIService) GetLogGcs(ctx context.Context, serviceId string, versionId int32, loggingGcsName string) APIGetLogGcsRequest {
 	return APIGetLogGcsRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceID:      serviceID,
-		versionID:      versionID,
+		serviceId:      serviceId,
+		versionId:      versionId,
 		loggingGcsName: loggingGcsName,
 	}
 }
@@ -628,8 +628,8 @@ func (a *LoggingGcsAPIService) GetLogGcsExecute(r APIGetLogGcsRequest) (*Logging
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/gcs/{logging_gcs_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_gcs_name"+"}", gourl.PathEscape(parameterToString(r.loggingGcsName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -721,8 +721,8 @@ func (a *LoggingGcsAPIService) GetLogGcsExecute(r APIGetLogGcsRequest) (*Logging
 type APIListLogGcsRequest struct {
 	ctx        context.Context
 	APIService LoggingGcsAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -736,16 +736,16 @@ ListLogGcs List GCS log endpoints
 List all of the GCS log endpoints for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogGcsRequest
 */
-func (a *LoggingGcsAPIService) ListLogGcs(ctx context.Context, serviceID string, versionID int32) APIListLogGcsRequest {
+func (a *LoggingGcsAPIService) ListLogGcs(ctx context.Context, serviceId string, versionId int32) APIListLogGcsRequest {
 	return APIListLogGcsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -765,8 +765,8 @@ func (a *LoggingGcsAPIService) ListLogGcsExecute(r APIListLogGcsRequest) ([]Logg
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/gcs"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -857,8 +857,8 @@ func (a *LoggingGcsAPIService) ListLogGcsExecute(r APIListLogGcsRequest) ([]Logg
 type APIUpdateLogGcsRequest struct {
 	ctx                 context.Context
 	APIService          LoggingGcsAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingGcsName      string
 	name                *string
 	placement           *string
@@ -877,7 +877,7 @@ type APIUpdateLogGcsRequest struct {
 	bucketName          *string
 	path                *string
 	publicKey           *string
-	projectID           *string
+	projectId           *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -982,9 +982,9 @@ func (r *APIUpdateLogGcsRequest) PublicKey(publicKey string) *APIUpdateLogGcsReq
 	return r
 }
 
-// ProjectID Your Google Cloud Platform project ID. Required
-func (r *APIUpdateLogGcsRequest) ProjectID(projectID string) *APIUpdateLogGcsRequest {
-	r.projectID = &projectID
+// ProjectId Your Google Cloud Platform project ID. Required
+func (r *APIUpdateLogGcsRequest) ProjectId(projectId string) *APIUpdateLogGcsRequest {
+	r.projectId = &projectId
 	return r
 }
 
@@ -999,17 +999,17 @@ UpdateLogGcs Update a GCS log endpoint
 Update the GCS for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingGcsName The name for the real-time logging configuration.
  @return APIUpdateLogGcsRequest
 */
-func (a *LoggingGcsAPIService) UpdateLogGcs(ctx context.Context, serviceID string, versionID int32, loggingGcsName string) APIUpdateLogGcsRequest {
+func (a *LoggingGcsAPIService) UpdateLogGcs(ctx context.Context, serviceId string, versionId int32, loggingGcsName string) APIUpdateLogGcsRequest {
 	return APIUpdateLogGcsRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceID:      serviceID,
-		versionID:      versionID,
+		serviceId:      serviceId,
+		versionId:      versionId,
 		loggingGcsName: loggingGcsName,
 	}
 }
@@ -1030,8 +1030,8 @@ func (a *LoggingGcsAPIService) UpdateLogGcsExecute(r APIUpdateLogGcsRequest) (*L
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/gcs/{logging_gcs_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_gcs_name"+"}", gourl.PathEscape(parameterToString(r.loggingGcsName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -1101,17 +1101,17 @@ func (a *LoggingGcsAPIService) UpdateLogGcsExecute(r APIUpdateLogGcsRequest) (*L
 		localVarFormParams.Add("bucket_name", parameterToString(*r.bucketName, ""))
 	}
 	if r.path != nil {
-		paramJSON, err := parameterToJSON(*r.path)
+		paramJson, err := parameterToJSON(*r.path)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("path", paramJSON)
+		localVarFormParams.Add("path", paramJson)
 	}
 	if r.publicKey != nil {
 		localVarFormParams.Add("public_key", parameterToString(*r.publicKey, ""))
 	}
-	if r.projectID != nil {
-		localVarFormParams.Add("project_id", parameterToString(*r.projectID, ""))
+	if r.projectId != nil {
+		localVarFormParams.Add("project_id", parameterToString(*r.projectId, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

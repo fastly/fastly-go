@@ -36,11 +36,11 @@ type LoggingFtpAPI interface {
 		Create a FTP for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogFtpRequest
 	*/
-	CreateLogFtp(ctx context.Context, serviceID string, versionID int32) APICreateLogFtpRequest
+	CreateLogFtp(ctx context.Context, serviceId string, versionId int32) APICreateLogFtpRequest
 
 	// CreateLogFtpExecute executes the request
 	//  @return LoggingFtpResponse
@@ -52,12 +52,12 @@ type LoggingFtpAPI interface {
 		Delete the FTP for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingFtpName The name for the real-time logging configuration.
 		 @return APIDeleteLogFtpRequest
 	*/
-	DeleteLogFtp(ctx context.Context, serviceID string, versionID int32, loggingFtpName string) APIDeleteLogFtpRequest
+	DeleteLogFtp(ctx context.Context, serviceId string, versionId int32, loggingFtpName string) APIDeleteLogFtpRequest
 
 	// DeleteLogFtpExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingFtpAPI interface {
 		Get the FTP for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingFtpName The name for the real-time logging configuration.
 		 @return APIGetLogFtpRequest
 	*/
-	GetLogFtp(ctx context.Context, serviceID string, versionID int32, loggingFtpName string) APIGetLogFtpRequest
+	GetLogFtp(ctx context.Context, serviceId string, versionId int32, loggingFtpName string) APIGetLogFtpRequest
 
 	// GetLogFtpExecute executes the request
 	//  @return LoggingFtpResponse
@@ -86,11 +86,11 @@ type LoggingFtpAPI interface {
 		List all of the FTPs for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogFtpRequest
 	*/
-	ListLogFtp(ctx context.Context, serviceID string, versionID int32) APIListLogFtpRequest
+	ListLogFtp(ctx context.Context, serviceId string, versionId int32) APIListLogFtpRequest
 
 	// ListLogFtpExecute executes the request
 	//  @return []LoggingFtpResponse
@@ -102,12 +102,12 @@ type LoggingFtpAPI interface {
 		Update the FTP for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingFtpName The name for the real-time logging configuration.
 		 @return APIUpdateLogFtpRequest
 	*/
-	UpdateLogFtp(ctx context.Context, serviceID string, versionID int32, loggingFtpName string) APIUpdateLogFtpRequest
+	UpdateLogFtp(ctx context.Context, serviceId string, versionId int32, loggingFtpName string) APIUpdateLogFtpRequest
 
 	// UpdateLogFtpExecute executes the request
 	//  @return LoggingFtpResponse
@@ -121,8 +121,8 @@ type LoggingFtpAPIService service
 type APICreateLogFtpRequest struct {
 	ctx                 context.Context
 	APIService          LoggingFtpAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -269,16 +269,16 @@ CreateLogFtp Create an FTP log endpoint
 Create a FTP for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogFtpRequest
 */
-func (a *LoggingFtpAPIService) CreateLogFtp(ctx context.Context, serviceID string, versionID int32) APICreateLogFtpRequest {
+func (a *LoggingFtpAPIService) CreateLogFtp(ctx context.Context, serviceId string, versionId int32) APICreateLogFtpRequest {
 	return APICreateLogFtpRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -298,8 +298,8 @@ func (a *LoggingFtpAPIService) CreateLogFtpExecute(r APICreateLogFtpRequest) (*L
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/ftp"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -447,8 +447,8 @@ func (a *LoggingFtpAPIService) CreateLogFtpExecute(r APICreateLogFtpRequest) (*L
 type APIDeleteLogFtpRequest struct {
 	ctx            context.Context
 	APIService     LoggingFtpAPI
-	serviceID      string
-	versionID      int32
+	serviceId      string
+	versionId      int32
 	loggingFtpName string
 }
 
@@ -463,17 +463,17 @@ DeleteLogFtp Delete an FTP log endpoint
 Delete the FTP for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingFtpName The name for the real-time logging configuration.
  @return APIDeleteLogFtpRequest
 */
-func (a *LoggingFtpAPIService) DeleteLogFtp(ctx context.Context, serviceID string, versionID int32, loggingFtpName string) APIDeleteLogFtpRequest {
+func (a *LoggingFtpAPIService) DeleteLogFtp(ctx context.Context, serviceId string, versionId int32, loggingFtpName string) APIDeleteLogFtpRequest {
 	return APIDeleteLogFtpRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceID:      serviceID,
-		versionID:      versionID,
+		serviceId:      serviceId,
+		versionId:      versionId,
 		loggingFtpName: loggingFtpName,
 	}
 }
@@ -494,8 +494,8 @@ func (a *LoggingFtpAPIService) DeleteLogFtpExecute(r APIDeleteLogFtpRequest) (*I
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/ftp/{logging_ftp_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_ftp_name"+"}", gourl.PathEscape(parameterToString(r.loggingFtpName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -587,8 +587,8 @@ func (a *LoggingFtpAPIService) DeleteLogFtpExecute(r APIDeleteLogFtpRequest) (*I
 type APIGetLogFtpRequest struct {
 	ctx            context.Context
 	APIService     LoggingFtpAPI
-	serviceID      string
-	versionID      int32
+	serviceId      string
+	versionId      int32
 	loggingFtpName string
 }
 
@@ -603,17 +603,17 @@ GetLogFtp Get an FTP log endpoint
 Get the FTP for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingFtpName The name for the real-time logging configuration.
  @return APIGetLogFtpRequest
 */
-func (a *LoggingFtpAPIService) GetLogFtp(ctx context.Context, serviceID string, versionID int32, loggingFtpName string) APIGetLogFtpRequest {
+func (a *LoggingFtpAPIService) GetLogFtp(ctx context.Context, serviceId string, versionId int32, loggingFtpName string) APIGetLogFtpRequest {
 	return APIGetLogFtpRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceID:      serviceID,
-		versionID:      versionID,
+		serviceId:      serviceId,
+		versionId:      versionId,
 		loggingFtpName: loggingFtpName,
 	}
 }
@@ -634,8 +634,8 @@ func (a *LoggingFtpAPIService) GetLogFtpExecute(r APIGetLogFtpRequest) (*Logging
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/ftp/{logging_ftp_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_ftp_name"+"}", gourl.PathEscape(parameterToString(r.loggingFtpName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -727,8 +727,8 @@ func (a *LoggingFtpAPIService) GetLogFtpExecute(r APIGetLogFtpRequest) (*Logging
 type APIListLogFtpRequest struct {
 	ctx        context.Context
 	APIService LoggingFtpAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -742,16 +742,16 @@ ListLogFtp List FTP log endpoints
 List all of the FTPs for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogFtpRequest
 */
-func (a *LoggingFtpAPIService) ListLogFtp(ctx context.Context, serviceID string, versionID int32) APIListLogFtpRequest {
+func (a *LoggingFtpAPIService) ListLogFtp(ctx context.Context, serviceId string, versionId int32) APIListLogFtpRequest {
 	return APIListLogFtpRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -771,8 +771,8 @@ func (a *LoggingFtpAPIService) ListLogFtpExecute(r APIListLogFtpRequest) ([]Logg
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/ftp"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -863,8 +863,8 @@ func (a *LoggingFtpAPIService) ListLogFtpExecute(r APIListLogFtpRequest) ([]Logg
 type APIUpdateLogFtpRequest struct {
 	ctx                 context.Context
 	APIService          LoggingFtpAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingFtpName      string
 	name                *string
 	placement           *string
@@ -1012,17 +1012,17 @@ UpdateLogFtp Update an FTP log endpoint
 Update the FTP for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingFtpName The name for the real-time logging configuration.
  @return APIUpdateLogFtpRequest
 */
-func (a *LoggingFtpAPIService) UpdateLogFtp(ctx context.Context, serviceID string, versionID int32, loggingFtpName string) APIUpdateLogFtpRequest {
+func (a *LoggingFtpAPIService) UpdateLogFtp(ctx context.Context, serviceId string, versionId int32, loggingFtpName string) APIUpdateLogFtpRequest {
 	return APIUpdateLogFtpRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceID:      serviceID,
-		versionID:      versionID,
+		serviceId:      serviceId,
+		versionId:      versionId,
 		loggingFtpName: loggingFtpName,
 	}
 }
@@ -1043,8 +1043,8 @@ func (a *LoggingFtpAPIService) UpdateLogFtpExecute(r APIUpdateLogFtpRequest) (*L
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/ftp/{logging_ftp_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_ftp_name"+"}", gourl.PathEscape(parameterToString(r.loggingFtpName, "")))
 
 	localVarHeaderParams := make(map[string]string)

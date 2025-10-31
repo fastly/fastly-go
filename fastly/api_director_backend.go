@@ -37,12 +37,12 @@ type DirectorBackendAPI interface {
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param directorName Name for the Director.
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param backendName The name of the backend.
 		 @return APICreateDirectorBackendRequest
 	*/
-	CreateDirectorBackend(ctx context.Context, directorName string, serviceID string, versionID int32, backendName string) APICreateDirectorBackendRequest
+	CreateDirectorBackend(ctx context.Context, directorName string, serviceId string, versionId int32, backendName string) APICreateDirectorBackendRequest
 
 	// CreateDirectorBackendExecute executes the request
 	//  @return DirectorBackend
@@ -55,12 +55,12 @@ type DirectorBackendAPI interface {
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param directorName Name for the Director.
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param backendName The name of the backend.
 		 @return APIDeleteDirectorBackendRequest
 	*/
-	DeleteDirectorBackend(ctx context.Context, directorName string, serviceID string, versionID int32, backendName string) APIDeleteDirectorBackendRequest
+	DeleteDirectorBackend(ctx context.Context, directorName string, serviceId string, versionId int32, backendName string) APIDeleteDirectorBackendRequest
 
 	// DeleteDirectorBackendExecute executes the request
 	//  @return InlineResponse200
@@ -73,12 +73,12 @@ type DirectorBackendAPI interface {
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param directorName Name for the Director.
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param backendName The name of the backend.
 		 @return APIGetDirectorBackendRequest
 	*/
-	GetDirectorBackend(ctx context.Context, directorName string, serviceID string, versionID int32, backendName string) APIGetDirectorBackendRequest
+	GetDirectorBackend(ctx context.Context, directorName string, serviceId string, versionId int32, backendName string) APIGetDirectorBackendRequest
 
 	// GetDirectorBackendExecute executes the request
 	//  @return DirectorBackend
@@ -93,8 +93,8 @@ type APICreateDirectorBackendRequest struct {
 	ctx          context.Context
 	APIService   DirectorBackendAPI
 	directorName string
-	serviceID    string
-	versionID    int32
+	serviceId    string
+	versionId    int32
 	backendName  string
 }
 
@@ -110,18 +110,18 @@ Establishes a relationship between a Backend and a Director. The Backend is then
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param directorName Name for the Director.
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param backendName The name of the backend.
  @return APICreateDirectorBackendRequest
 */
-func (a *DirectorBackendAPIService) CreateDirectorBackend(ctx context.Context, directorName string, serviceID string, versionID int32, backendName string) APICreateDirectorBackendRequest {
+func (a *DirectorBackendAPIService) CreateDirectorBackend(ctx context.Context, directorName string, serviceId string, versionId int32, backendName string) APICreateDirectorBackendRequest {
 	return APICreateDirectorBackendRequest{
 		APIService:   a,
 		ctx:          ctx,
 		directorName: directorName,
-		serviceID:    serviceID,
-		versionID:    versionID,
+		serviceId:    serviceId,
+		versionId:    versionId,
 		backendName:  backendName,
 	}
 }
@@ -143,8 +143,8 @@ func (a *DirectorBackendAPIService) CreateDirectorBackendExecute(r APICreateDire
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"director_name"+"}", gourl.PathEscape(parameterToString(r.directorName, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"backend_name"+"}", gourl.PathEscape(parameterToString(r.backendName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -237,8 +237,8 @@ type APIDeleteDirectorBackendRequest struct {
 	ctx          context.Context
 	APIService   DirectorBackendAPI
 	directorName string
-	serviceID    string
-	versionID    int32
+	serviceId    string
+	versionId    int32
 	backendName  string
 }
 
@@ -254,18 +254,18 @@ Deletes the relationship between a Backend and a Director. The Backend is no lon
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param directorName Name for the Director.
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param backendName The name of the backend.
  @return APIDeleteDirectorBackendRequest
 */
-func (a *DirectorBackendAPIService) DeleteDirectorBackend(ctx context.Context, directorName string, serviceID string, versionID int32, backendName string) APIDeleteDirectorBackendRequest {
+func (a *DirectorBackendAPIService) DeleteDirectorBackend(ctx context.Context, directorName string, serviceId string, versionId int32, backendName string) APIDeleteDirectorBackendRequest {
 	return APIDeleteDirectorBackendRequest{
 		APIService:   a,
 		ctx:          ctx,
 		directorName: directorName,
-		serviceID:    serviceID,
-		versionID:    versionID,
+		serviceId:    serviceId,
+		versionId:    versionId,
 		backendName:  backendName,
 	}
 }
@@ -287,8 +287,8 @@ func (a *DirectorBackendAPIService) DeleteDirectorBackendExecute(r APIDeleteDire
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"director_name"+"}", gourl.PathEscape(parameterToString(r.directorName, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"backend_name"+"}", gourl.PathEscape(parameterToString(r.backendName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -381,8 +381,8 @@ type APIGetDirectorBackendRequest struct {
 	ctx          context.Context
 	APIService   DirectorBackendAPI
 	directorName string
-	serviceID    string
-	versionID    int32
+	serviceId    string
+	versionId    int32
 	backendName  string
 }
 
@@ -398,18 +398,18 @@ Returns the relationship between a Backend and a Director. If the Backend has be
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param directorName Name for the Director.
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param backendName The name of the backend.
  @return APIGetDirectorBackendRequest
 */
-func (a *DirectorBackendAPIService) GetDirectorBackend(ctx context.Context, directorName string, serviceID string, versionID int32, backendName string) APIGetDirectorBackendRequest {
+func (a *DirectorBackendAPIService) GetDirectorBackend(ctx context.Context, directorName string, serviceId string, versionId int32, backendName string) APIGetDirectorBackendRequest {
 	return APIGetDirectorBackendRequest{
 		APIService:   a,
 		ctx:          ctx,
 		directorName: directorName,
-		serviceID:    serviceID,
-		versionID:    versionID,
+		serviceId:    serviceId,
+		versionId:    versionId,
 		backendName:  backendName,
 	}
 }
@@ -431,8 +431,8 @@ func (a *DirectorBackendAPIService) GetDirectorBackendExecute(r APIGetDirectorBa
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name}"
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"director_name"+"}", gourl.PathEscape(parameterToString(r.directorName, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"backend_name"+"}", gourl.PathEscape(parameterToString(r.backendName, "")))
 
 	localVarHeaderParams := make(map[string]string)

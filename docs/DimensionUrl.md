@@ -1,54 +1,56 @@
-# DimensionURL
+# DimensionUrl
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**URL** | Pointer to **string** | The URL path for this dimension. | [optional] 
+**Url** | Pointer to **string** | The URL path for this dimension. | [optional] 
 
 ## Methods
 
-### NewDimensionURL
+### NewDimensionUrl
 
-`func NewDimensionURL() *DimensionURL`
+`func NewDimensionUrl() *DimensionUrl`
 
-NewDimensionURL instantiates a new DimensionURL object
+NewDimensionUrl instantiates a new DimensionUrl object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewDimensionURLWithDefaults
+### NewDimensionUrlWithDefaults
 
-`func NewDimensionURLWithDefaults() *DimensionURL`
+`func NewDimensionUrlWithDefaults() *DimensionUrl`
 
-NewDimensionURLWithDefaults instantiates a new DimensionURL object
+NewDimensionUrlWithDefaults instantiates a new DimensionUrl object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetURL
+### GetUrl
 
-`func (o *DimensionURL) GetURL() string`
+`func (o *DimensionUrl) GetUrl() string`
 
-GetURL returns the URL field if non-nil, zero value otherwise.
+GetUrl returns the Url field if non-nil, zero value otherwise.
 
-### GetURLOk
+### GetUrlOk
 
-`func (o *DimensionURL) GetURLOk() (*string, bool)`
+`func (o *DimensionUrl) GetUrlOk() (*string, bool)`
 
-GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURL
+### SetUrl
 
-`func (o *DimensionURL) SetURL(v string)`
+`func (o *DimensionUrl) SetUrl(v string)`
 
-SetURL sets URL field to given value.
+SetUrl sets Url field to given value.
 
-### HasURL
+### HasUrl
 
-`func (o *DimensionURL) HasURL() bool`
+`func (o *DimensionUrl) HasUrl() bool`
 
-HasURL returns a boolean if a field has been set.
+HasUrl returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

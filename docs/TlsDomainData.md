@@ -1,106 +1,108 @@
-# TLSDomainData
+# TlsDomainData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ID** | Pointer to **string** | The domain name. | [optional] [readonly] 
-**Type** | Pointer to [**TypeTLSDomain**](TypeTLSDomain.md) |  | [optional] [default to TYPETLSDOMAIN_TLS_DOMAIN]
-**Relationships** | Pointer to [**RelationshipsForTLSDomain**](RelationshipsForTLSDomain.md) |  | [optional] 
+**Id** | Pointer to **string** | The domain name. | [optional] [readonly] 
+**Type** | Pointer to [**TypeTlsDomain**](TypeTlsDomain.md) |  | [optional] [default to TYPETLSDOMAIN_TLS_DOMAIN]
+**Relationships** | Pointer to [**RelationshipsForTlsDomain**](RelationshipsForTlsDomain.md) |  | [optional] 
 
 ## Methods
 
-### NewTLSDomainData
+### NewTlsDomainData
 
-`func NewTLSDomainData() *TLSDomainData`
+`func NewTlsDomainData() *TlsDomainData`
 
-NewTLSDomainData instantiates a new TLSDomainData object
+NewTlsDomainData instantiates a new TlsDomainData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSDomainDataWithDefaults
+### NewTlsDomainDataWithDefaults
 
-`func NewTLSDomainDataWithDefaults() *TLSDomainData`
+`func NewTlsDomainDataWithDefaults() *TlsDomainData`
 
-NewTLSDomainDataWithDefaults instantiates a new TLSDomainData object
+NewTlsDomainDataWithDefaults instantiates a new TlsDomainData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetID
+### GetId
 
-`func (o *TLSDomainData) GetID() string`
+`func (o *TlsDomainData) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *TLSDomainData) GetIDOk() (*string, bool)`
+`func (o *TlsDomainData) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *TLSDomainData) SetID(v string)`
+`func (o *TlsDomainData) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *TLSDomainData) HasID() bool`
+`func (o *TlsDomainData) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetType
 
-`func (o *TLSDomainData) GetType() TypeTLSDomain`
+`func (o *TlsDomainData) GetType() TypeTlsDomain`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *TLSDomainData) GetTypeOk() (*TypeTLSDomain, bool)`
+`func (o *TlsDomainData) GetTypeOk() (*TypeTlsDomain, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *TLSDomainData) SetType(v TypeTLSDomain)`
+`func (o *TlsDomainData) SetType(v TypeTlsDomain)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *TLSDomainData) HasType() bool`
+`func (o *TlsDomainData) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *TLSDomainData) GetRelationships() RelationshipsForTLSDomain`
+`func (o *TlsDomainData) GetRelationships() RelationshipsForTlsDomain`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TLSDomainData) GetRelationshipsOk() (*RelationshipsForTLSDomain, bool)`
+`func (o *TlsDomainData) GetRelationshipsOk() (*RelationshipsForTlsDomain, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TLSDomainData) SetRelationships(v RelationshipsForTLSDomain)`
+`func (o *TlsDomainData) SetRelationships(v RelationshipsForTlsDomain)`
 
 SetRelationships sets Relationships field to given value.
 
 ### HasRelationships
 
-`func (o *TLSDomainData) HasRelationships() bool`
+`func (o *TlsDomainData) HasRelationships() bool`
 
 HasRelationships returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

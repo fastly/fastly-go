@@ -18,10 +18,10 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 **AccessKey** | Pointer to **NullableString** | The access key for your S3 account. Not required if `iam_role` is provided. | [optional] 
-**ACL** | Pointer to **string** | The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information. | [optional] 
+**Acl** | Pointer to **string** | The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information. | [optional] 
 **BucketName** | Pointer to **string** | The bucket name for S3 account. | [optional] 
 **Domain** | Pointer to **string** | The domain of the Amazon S3 endpoint. | [optional] 
 **IamRole** | Pointer to **NullableString** | The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if `access_key` and `secret_key` are provided. | [optional] 
@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **PublicKey** | Pointer to **NullableString** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to "null"]
 **Redundancy** | Pointer to **NullableString** | The S3 redundancy level. | [optional] [default to "null"]
 **SecretKey** | Pointer to **NullableString** | The secret key for your S3 account. Not required if `iam_role` is provided. | [optional] 
-**ServerSideEncryptionKmsKeyID** | Pointer to **NullableString** | Optional server-side KMS Key ID. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. | [optional] [default to "null"]
+**ServerSideEncryptionKmsKeyId** | Pointer to **NullableString** | Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. | [optional] [default to "null"]
 **ServerSideEncryption** | Pointer to **NullableString** | Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption. | [optional] [default to "null"]
 **FileMaxBytes** | Pointer to **int32** | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.) | [optional] 
 
@@ -462,30 +462,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *LoggingS3Response) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceID
+### GetServiceId
 
-`func (o *LoggingS3Response) GetServiceID() string`
+`func (o *LoggingS3Response) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *LoggingS3Response) GetServiceIDOk() (*string, bool)`
+`func (o *LoggingS3Response) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *LoggingS3Response) SetServiceID(v string)`
+`func (o *LoggingS3Response) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *LoggingS3Response) HasServiceID() bool`
+`func (o *LoggingS3Response) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -547,30 +547,30 @@ HasAccessKey returns a boolean if a field has been set.
 `func (o *LoggingS3Response) UnsetAccessKey()`
 
 UnsetAccessKey ensures that no value is present for AccessKey, not even an explicit nil
-### GetACL
+### GetAcl
 
-`func (o *LoggingS3Response) GetACL() string`
+`func (o *LoggingS3Response) GetAcl() string`
 
-GetACL returns the ACL field if non-nil, zero value otherwise.
+GetAcl returns the Acl field if non-nil, zero value otherwise.
 
-### GetACLOk
+### GetAclOk
 
-`func (o *LoggingS3Response) GetACLOk() (*string, bool)`
+`func (o *LoggingS3Response) GetAclOk() (*string, bool)`
 
-GetACLOk returns a tuple with the ACL field if it's non-nil, zero value otherwise
+GetAclOk returns a tuple with the Acl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetACL
+### SetAcl
 
-`func (o *LoggingS3Response) SetACL(v string)`
+`func (o *LoggingS3Response) SetAcl(v string)`
 
-SetACL sets ACL field to given value.
+SetAcl sets Acl field to given value.
 
-### HasACL
+### HasAcl
 
-`func (o *LoggingS3Response) HasACL() bool`
+`func (o *LoggingS3Response) HasAcl() bool`
 
-HasACL returns a boolean if a field has been set.
+HasAcl returns a boolean if a field has been set.
 
 ### GetBucketName
 
@@ -797,41 +797,41 @@ HasSecretKey returns a boolean if a field has been set.
 `func (o *LoggingS3Response) UnsetSecretKey()`
 
 UnsetSecretKey ensures that no value is present for SecretKey, not even an explicit nil
-### GetServerSideEncryptionKmsKeyID
+### GetServerSideEncryptionKmsKeyId
 
-`func (o *LoggingS3Response) GetServerSideEncryptionKmsKeyID() string`
+`func (o *LoggingS3Response) GetServerSideEncryptionKmsKeyId() string`
 
-GetServerSideEncryptionKmsKeyID returns the ServerSideEncryptionKmsKeyID field if non-nil, zero value otherwise.
+GetServerSideEncryptionKmsKeyId returns the ServerSideEncryptionKmsKeyId field if non-nil, zero value otherwise.
 
-### GetServerSideEncryptionKmsKeyIDOk
+### GetServerSideEncryptionKmsKeyIdOk
 
-`func (o *LoggingS3Response) GetServerSideEncryptionKmsKeyIDOk() (*string, bool)`
+`func (o *LoggingS3Response) GetServerSideEncryptionKmsKeyIdOk() (*string, bool)`
 
-GetServerSideEncryptionKmsKeyIDOk returns a tuple with the ServerSideEncryptionKmsKeyID field if it's non-nil, zero value otherwise
+GetServerSideEncryptionKmsKeyIdOk returns a tuple with the ServerSideEncryptionKmsKeyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServerSideEncryptionKmsKeyID
+### SetServerSideEncryptionKmsKeyId
 
-`func (o *LoggingS3Response) SetServerSideEncryptionKmsKeyID(v string)`
+`func (o *LoggingS3Response) SetServerSideEncryptionKmsKeyId(v string)`
 
-SetServerSideEncryptionKmsKeyID sets ServerSideEncryptionKmsKeyID field to given value.
+SetServerSideEncryptionKmsKeyId sets ServerSideEncryptionKmsKeyId field to given value.
 
-### HasServerSideEncryptionKmsKeyID
+### HasServerSideEncryptionKmsKeyId
 
-`func (o *LoggingS3Response) HasServerSideEncryptionKmsKeyID() bool`
+`func (o *LoggingS3Response) HasServerSideEncryptionKmsKeyId() bool`
 
-HasServerSideEncryptionKmsKeyID returns a boolean if a field has been set.
+HasServerSideEncryptionKmsKeyId returns a boolean if a field has been set.
 
-### SetServerSideEncryptionKmsKeyIDNil
+### SetServerSideEncryptionKmsKeyIdNil
 
-`func (o *LoggingS3Response) SetServerSideEncryptionKmsKeyIDNil(b bool)`
+`func (o *LoggingS3Response) SetServerSideEncryptionKmsKeyIdNil(b bool)`
 
- SetServerSideEncryptionKmsKeyIDNil sets the value for ServerSideEncryptionKmsKeyID to be an explicit nil
+ SetServerSideEncryptionKmsKeyIdNil sets the value for ServerSideEncryptionKmsKeyId to be an explicit nil
 
-### UnsetServerSideEncryptionKmsKeyID
-`func (o *LoggingS3Response) UnsetServerSideEncryptionKmsKeyID()`
+### UnsetServerSideEncryptionKmsKeyId
+`func (o *LoggingS3Response) UnsetServerSideEncryptionKmsKeyId()`
 
-UnsetServerSideEncryptionKmsKeyID ensures that no value is present for ServerSideEncryptionKmsKeyID, not even an explicit nil
+UnsetServerSideEncryptionKmsKeyId ensures that no value is present for ServerSideEncryptionKmsKeyId, not even an explicit nil
 ### GetServerSideEncryption
 
 `func (o *LoggingS3Response) GetServerSideEncryption() string`
@@ -894,3 +894,5 @@ HasFileMaxBytes returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

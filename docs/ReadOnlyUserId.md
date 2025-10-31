@@ -1,4 +1,4 @@
-# ReadOnlyUserID
+# ReadOnlyUserId
 
 ## Properties
 
@@ -7,22 +7,24 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewReadOnlyUserID
+### NewReadOnlyUserId
 
-`func NewReadOnlyUserID() *ReadOnlyUserID`
+`func NewReadOnlyUserId() *ReadOnlyUserId`
 
-NewReadOnlyUserID instantiates a new ReadOnlyUserID object
+NewReadOnlyUserId instantiates a new ReadOnlyUserId object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewReadOnlyUserIDWithDefaults
+### NewReadOnlyUserIdWithDefaults
 
-`func NewReadOnlyUserIDWithDefaults() *ReadOnlyUserID`
+`func NewReadOnlyUserIdWithDefaults() *ReadOnlyUserId`
 
-NewReadOnlyUserIDWithDefaults instantiates a new ReadOnlyUserID object
+NewReadOnlyUserIdWithDefaults instantiates a new ReadOnlyUserId object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

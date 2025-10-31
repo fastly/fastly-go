@@ -27,110 +27,110 @@ var (
 	_ context.Context
 )
 
-// TLSConfigurationsAPI defines an interface for interacting with the resource.
-type TLSConfigurationsAPI interface {
+// TlsConfigurationsAPI defines an interface for interacting with the resource.
+type TlsConfigurationsAPI interface {
 
 	/*
-		GetTLSConfig Get a TLS configuration
+		GetTlsConfig Get a TLS configuration
 
 		Show a TLS configuration.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tlsConfigurationID Alphanumeric string identifying a TLS configuration.
-		 @return APIGetTLSConfigRequest
+		 @param tlsConfigurationId Alphanumeric string identifying a TLS configuration.
+		 @return APIGetTlsConfigRequest
 	*/
-	GetTLSConfig(ctx context.Context, tlsConfigurationID string) APIGetTLSConfigRequest
+	GetTlsConfig(ctx context.Context, tlsConfigurationId string) APIGetTlsConfigRequest
 
-	// GetTLSConfigExecute executes the request
-	//  @return TLSConfigurationResponse
-	GetTLSConfigExecute(r APIGetTLSConfigRequest) (*TLSConfigurationResponse, *http.Response, error)
+	// GetTlsConfigExecute executes the request
+	//  @return TlsConfigurationResponse
+	GetTlsConfigExecute(r APIGetTlsConfigRequest) (*TlsConfigurationResponse, *http.Response, error)
 
 	/*
-		ListTLSConfigs List TLS configurations
+		ListTlsConfigs List TLS configurations
 
 		List all TLS configurations.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APIListTLSConfigsRequest
+		 @return APIListTlsConfigsRequest
 	*/
-	ListTLSConfigs(ctx context.Context) APIListTLSConfigsRequest
+	ListTlsConfigs(ctx context.Context) APIListTlsConfigsRequest
 
-	// ListTLSConfigsExecute executes the request
-	//  @return TLSConfigurationsResponse
-	ListTLSConfigsExecute(r APIListTLSConfigsRequest) (*TLSConfigurationsResponse, *http.Response, error)
+	// ListTlsConfigsExecute executes the request
+	//  @return TlsConfigurationsResponse
+	ListTlsConfigsExecute(r APIListTlsConfigsRequest) (*TlsConfigurationsResponse, *http.Response, error)
 
 	/*
-		UpdateTLSConfig Update a TLS configuration
+		UpdateTlsConfig Update a TLS configuration
 
 		Update a TLS configuration.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tlsConfigurationID Alphanumeric string identifying a TLS configuration.
-		 @return APIUpdateTLSConfigRequest
+		 @param tlsConfigurationId Alphanumeric string identifying a TLS configuration.
+		 @return APIUpdateTlsConfigRequest
 	*/
-	UpdateTLSConfig(ctx context.Context, tlsConfigurationID string) APIUpdateTLSConfigRequest
+	UpdateTlsConfig(ctx context.Context, tlsConfigurationId string) APIUpdateTlsConfigRequest
 
-	// UpdateTLSConfigExecute executes the request
-	//  @return TLSConfigurationResponse
-	UpdateTLSConfigExecute(r APIUpdateTLSConfigRequest) (*TLSConfigurationResponse, *http.Response, error)
+	// UpdateTlsConfigExecute executes the request
+	//  @return TlsConfigurationResponse
+	UpdateTlsConfigExecute(r APIUpdateTlsConfigRequest) (*TlsConfigurationResponse, *http.Response, error)
 }
 
-// TLSConfigurationsAPIService TLSConfigurationsAPI service
-type TLSConfigurationsAPIService service
+// TlsConfigurationsAPIService TlsConfigurationsAPI service
+type TlsConfigurationsAPIService service
 
-// APIGetTLSConfigRequest represents a request for the resource.
-type APIGetTLSConfigRequest struct {
+// APIGetTlsConfigRequest represents a request for the resource.
+type APIGetTlsConfigRequest struct {
 	ctx                context.Context
-	APIService         TLSConfigurationsAPI
-	tlsConfigurationID string
+	APIService         TlsConfigurationsAPI
+	tlsConfigurationId string
 	include            *string
 }
 
 // Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;dns_records&#x60;.
-func (r *APIGetTLSConfigRequest) Include(include string) *APIGetTLSConfigRequest {
+func (r *APIGetTlsConfigRequest) Include(include string) *APIGetTlsConfigRequest {
 	r.include = &include
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetTLSConfigRequest) Execute() (*TLSConfigurationResponse, *http.Response, error) {
-	return r.APIService.GetTLSConfigExecute(r)
+func (r APIGetTlsConfigRequest) Execute() (*TlsConfigurationResponse, *http.Response, error) {
+	return r.APIService.GetTlsConfigExecute(r)
 }
 
 /*
-GetTLSConfig Get a TLS configuration
+GetTlsConfig Get a TLS configuration
 
 Show a TLS configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tlsConfigurationID Alphanumeric string identifying a TLS configuration.
- @return APIGetTLSConfigRequest
+ @param tlsConfigurationId Alphanumeric string identifying a TLS configuration.
+ @return APIGetTlsConfigRequest
 */
-func (a *TLSConfigurationsAPIService) GetTLSConfig(ctx context.Context, tlsConfigurationID string) APIGetTLSConfigRequest {
-	return APIGetTLSConfigRequest{
+func (a *TlsConfigurationsAPIService) GetTlsConfig(ctx context.Context, tlsConfigurationId string) APIGetTlsConfigRequest {
+	return APIGetTlsConfigRequest{
 		APIService:         a,
 		ctx:                ctx,
-		tlsConfigurationID: tlsConfigurationID,
+		tlsConfigurationId: tlsConfigurationId,
 	}
 }
 
-// GetTLSConfigExecute executes the request
-//  @return TLSConfigurationResponse
-func (a *TLSConfigurationsAPIService) GetTLSConfigExecute(r APIGetTLSConfigRequest) (*TLSConfigurationResponse, *http.Response, error) {
+// GetTlsConfigExecute executes the request
+//  @return TlsConfigurationResponse
+func (a *TlsConfigurationsAPIService) GetTlsConfigExecute(r APIGetTlsConfigRequest) (*TlsConfigurationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TLSConfigurationResponse
+		localVarReturnValue *TlsConfigurationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSConfigurationsAPIService.GetTLSConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsConfigurationsAPIService.GetTlsConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/configurations/{tls_configuration_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_configuration_id"+"}", gourl.PathEscape(parameterToString(r.tlsConfigurationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_configuration_id"+"}", gourl.PathEscape(parameterToString(r.tlsConfigurationId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -220,10 +220,10 @@ func (a *TLSConfigurationsAPIService) GetTLSConfigExecute(r APIGetTLSConfigReque
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIListTLSConfigsRequest represents a request for the resource.
-type APIListTLSConfigsRequest struct {
+// APIListTlsConfigsRequest represents a request for the resource.
+type APIListTlsConfigsRequest struct {
 	ctx        context.Context
-	APIService TLSConfigurationsAPI
+	APIService TlsConfigurationsAPI
 	filterBulk *string
 	include    *string
 	pageNumber *int32
@@ -231,60 +231,60 @@ type APIListTLSConfigsRequest struct {
 }
 
 // FilterBulk Optionally filters by the bulk attribute.
-func (r *APIListTLSConfigsRequest) FilterBulk(filterBulk string) *APIListTLSConfigsRequest {
+func (r *APIListTlsConfigsRequest) FilterBulk(filterBulk string) *APIListTlsConfigsRequest {
 	r.filterBulk = &filterBulk
 	return r
 }
 
 // Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;dns_records&#x60;.
-func (r *APIListTLSConfigsRequest) Include(include string) *APIListTLSConfigsRequest {
+func (r *APIListTlsConfigsRequest) Include(include string) *APIListTlsConfigsRequest {
 	r.include = &include
 	return r
 }
 
 // PageNumber Current page.
-func (r *APIListTLSConfigsRequest) PageNumber(pageNumber int32) *APIListTLSConfigsRequest {
+func (r *APIListTlsConfigsRequest) PageNumber(pageNumber int32) *APIListTlsConfigsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
 
 // PageSize Number of records per page.
-func (r *APIListTLSConfigsRequest) PageSize(pageSize int32) *APIListTLSConfigsRequest {
+func (r *APIListTlsConfigsRequest) PageSize(pageSize int32) *APIListTlsConfigsRequest {
 	r.pageSize = &pageSize
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListTLSConfigsRequest) Execute() (*TLSConfigurationsResponse, *http.Response, error) {
-	return r.APIService.ListTLSConfigsExecute(r)
+func (r APIListTlsConfigsRequest) Execute() (*TlsConfigurationsResponse, *http.Response, error) {
+	return r.APIService.ListTlsConfigsExecute(r)
 }
 
 /*
-ListTLSConfigs List TLS configurations
+ListTlsConfigs List TLS configurations
 
 List all TLS configurations.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APIListTLSConfigsRequest
+ @return APIListTlsConfigsRequest
 */
-func (a *TLSConfigurationsAPIService) ListTLSConfigs(ctx context.Context) APIListTLSConfigsRequest {
-	return APIListTLSConfigsRequest{
+func (a *TlsConfigurationsAPIService) ListTlsConfigs(ctx context.Context) APIListTlsConfigsRequest {
+	return APIListTlsConfigsRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// ListTLSConfigsExecute executes the request
-//  @return TLSConfigurationsResponse
-func (a *TLSConfigurationsAPIService) ListTLSConfigsExecute(r APIListTLSConfigsRequest) (*TLSConfigurationsResponse, *http.Response, error) {
+// ListTlsConfigsExecute executes the request
+//  @return TlsConfigurationsResponse
+func (a *TlsConfigurationsAPIService) ListTlsConfigsExecute(r APIListTlsConfigsRequest) (*TlsConfigurationsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TLSConfigurationsResponse
+		localVarReturnValue *TlsConfigurationsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSConfigurationsAPIService.ListTLSConfigs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsConfigurationsAPIService.ListTlsConfigs")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -388,59 +388,59 @@ func (a *TLSConfigurationsAPIService) ListTLSConfigsExecute(r APIListTLSConfigsR
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIUpdateTLSConfigRequest represents a request for the resource.
-type APIUpdateTLSConfigRequest struct {
+// APIUpdateTlsConfigRequest represents a request for the resource.
+type APIUpdateTlsConfigRequest struct {
 	ctx                context.Context
-	APIService         TLSConfigurationsAPI
-	tlsConfigurationID string
-	tlsConfiguration   *TLSConfiguration
+	APIService         TlsConfigurationsAPI
+	tlsConfigurationId string
+	tlsConfiguration   *TlsConfiguration
 }
 
-// TLSConfiguration returns a pointer to a request.
-func (r *APIUpdateTLSConfigRequest) TLSConfiguration(tlsConfiguration TLSConfiguration) *APIUpdateTLSConfigRequest {
+// TlsConfiguration returns a pointer to a request.
+func (r *APIUpdateTlsConfigRequest) TlsConfiguration(tlsConfiguration TlsConfiguration) *APIUpdateTlsConfigRequest {
 	r.tlsConfiguration = &tlsConfiguration
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIUpdateTLSConfigRequest) Execute() (*TLSConfigurationResponse, *http.Response, error) {
-	return r.APIService.UpdateTLSConfigExecute(r)
+func (r APIUpdateTlsConfigRequest) Execute() (*TlsConfigurationResponse, *http.Response, error) {
+	return r.APIService.UpdateTlsConfigExecute(r)
 }
 
 /*
-UpdateTLSConfig Update a TLS configuration
+UpdateTlsConfig Update a TLS configuration
 
 Update a TLS configuration.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tlsConfigurationID Alphanumeric string identifying a TLS configuration.
- @return APIUpdateTLSConfigRequest
+ @param tlsConfigurationId Alphanumeric string identifying a TLS configuration.
+ @return APIUpdateTlsConfigRequest
 */
-func (a *TLSConfigurationsAPIService) UpdateTLSConfig(ctx context.Context, tlsConfigurationID string) APIUpdateTLSConfigRequest {
-	return APIUpdateTLSConfigRequest{
+func (a *TlsConfigurationsAPIService) UpdateTlsConfig(ctx context.Context, tlsConfigurationId string) APIUpdateTlsConfigRequest {
+	return APIUpdateTlsConfigRequest{
 		APIService:         a,
 		ctx:                ctx,
-		tlsConfigurationID: tlsConfigurationID,
+		tlsConfigurationId: tlsConfigurationId,
 	}
 }
 
-// UpdateTLSConfigExecute executes the request
-//  @return TLSConfigurationResponse
-func (a *TLSConfigurationsAPIService) UpdateTLSConfigExecute(r APIUpdateTLSConfigRequest) (*TLSConfigurationResponse, *http.Response, error) {
+// UpdateTlsConfigExecute executes the request
+//  @return TlsConfigurationResponse
+func (a *TlsConfigurationsAPIService) UpdateTlsConfigExecute(r APIUpdateTlsConfigRequest) (*TlsConfigurationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TLSConfigurationResponse
+		localVarReturnValue *TlsConfigurationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSConfigurationsAPIService.UpdateTLSConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsConfigurationsAPIService.UpdateTlsConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/configurations/{tls_configuration_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_configuration_id"+"}", gourl.PathEscape(parameterToString(r.tlsConfigurationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_configuration_id"+"}", gourl.PathEscape(parameterToString(r.tlsConfigurationId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

@@ -1,80 +1,82 @@
-# RelationshipsForTLSDomain
+# RelationshipsForTlsDomain
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TLSSubscriptions** | Pointer to [**RelationshipTLSSubscriptionTLSSubscription**](RelationshipTLSSubscriptionTLSSubscription.md) |  | [optional] 
-**TLSActivations** | Pointer to [**RelationshipTLSActivationTLSActivation**](RelationshipTLSActivationTLSActivation.md) |  | [optional] 
+**TlsSubscriptions** | Pointer to [**RelationshipTlsSubscriptionTlsSubscription**](RelationshipTlsSubscriptionTlsSubscription.md) |  | [optional] 
+**TlsActivations** | Pointer to [**RelationshipTlsActivationTlsActivation**](RelationshipTlsActivationTlsActivation.md) |  | [optional] 
 
 ## Methods
 
-### NewRelationshipsForTLSDomain
+### NewRelationshipsForTlsDomain
 
-`func NewRelationshipsForTLSDomain() *RelationshipsForTLSDomain`
+`func NewRelationshipsForTlsDomain() *RelationshipsForTlsDomain`
 
-NewRelationshipsForTLSDomain instantiates a new RelationshipsForTLSDomain object
+NewRelationshipsForTlsDomain instantiates a new RelationshipsForTlsDomain object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipsForTLSDomainWithDefaults
+### NewRelationshipsForTlsDomainWithDefaults
 
-`func NewRelationshipsForTLSDomainWithDefaults() *RelationshipsForTLSDomain`
+`func NewRelationshipsForTlsDomainWithDefaults() *RelationshipsForTlsDomain`
 
-NewRelationshipsForTLSDomainWithDefaults instantiates a new RelationshipsForTLSDomain object
+NewRelationshipsForTlsDomainWithDefaults instantiates a new RelationshipsForTlsDomain object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTLSSubscriptions
+### GetTlsSubscriptions
 
-`func (o *RelationshipsForTLSDomain) GetTLSSubscriptions() RelationshipTLSSubscriptionTLSSubscription`
+`func (o *RelationshipsForTlsDomain) GetTlsSubscriptions() RelationshipTlsSubscriptionTlsSubscription`
 
-GetTLSSubscriptions returns the TLSSubscriptions field if non-nil, zero value otherwise.
+GetTlsSubscriptions returns the TlsSubscriptions field if non-nil, zero value otherwise.
 
-### GetTLSSubscriptionsOk
+### GetTlsSubscriptionsOk
 
-`func (o *RelationshipsForTLSDomain) GetTLSSubscriptionsOk() (*RelationshipTLSSubscriptionTLSSubscription, bool)`
+`func (o *RelationshipsForTlsDomain) GetTlsSubscriptionsOk() (*RelationshipTlsSubscriptionTlsSubscription, bool)`
 
-GetTLSSubscriptionsOk returns a tuple with the TLSSubscriptions field if it's non-nil, zero value otherwise
+GetTlsSubscriptionsOk returns a tuple with the TlsSubscriptions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSSubscriptions
+### SetTlsSubscriptions
 
-`func (o *RelationshipsForTLSDomain) SetTLSSubscriptions(v RelationshipTLSSubscriptionTLSSubscription)`
+`func (o *RelationshipsForTlsDomain) SetTlsSubscriptions(v RelationshipTlsSubscriptionTlsSubscription)`
 
-SetTLSSubscriptions sets TLSSubscriptions field to given value.
+SetTlsSubscriptions sets TlsSubscriptions field to given value.
 
-### HasTLSSubscriptions
+### HasTlsSubscriptions
 
-`func (o *RelationshipsForTLSDomain) HasTLSSubscriptions() bool`
+`func (o *RelationshipsForTlsDomain) HasTlsSubscriptions() bool`
 
-HasTLSSubscriptions returns a boolean if a field has been set.
+HasTlsSubscriptions returns a boolean if a field has been set.
 
-### GetTLSActivations
+### GetTlsActivations
 
-`func (o *RelationshipsForTLSDomain) GetTLSActivations() RelationshipTLSActivationTLSActivation`
+`func (o *RelationshipsForTlsDomain) GetTlsActivations() RelationshipTlsActivationTlsActivation`
 
-GetTLSActivations returns the TLSActivations field if non-nil, zero value otherwise.
+GetTlsActivations returns the TlsActivations field if non-nil, zero value otherwise.
 
-### GetTLSActivationsOk
+### GetTlsActivationsOk
 
-`func (o *RelationshipsForTLSDomain) GetTLSActivationsOk() (*RelationshipTLSActivationTLSActivation, bool)`
+`func (o *RelationshipsForTlsDomain) GetTlsActivationsOk() (*RelationshipTlsActivationTlsActivation, bool)`
 
-GetTLSActivationsOk returns a tuple with the TLSActivations field if it's non-nil, zero value otherwise
+GetTlsActivationsOk returns a tuple with the TlsActivations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSActivations
+### SetTlsActivations
 
-`func (o *RelationshipsForTLSDomain) SetTLSActivations(v RelationshipTLSActivationTLSActivation)`
+`func (o *RelationshipsForTlsDomain) SetTlsActivations(v RelationshipTlsActivationTlsActivation)`
 
-SetTLSActivations sets TLSActivations field to given value.
+SetTlsActivations sets TlsActivations field to given value.
 
-### HasTLSActivations
+### HasTlsActivations
 
-`func (o *RelationshipsForTLSDomain) HasTLSActivations() bool`
+`func (o *RelationshipsForTlsDomain) HasTlsActivations() bool`
 
-HasTLSActivations returns a boolean if a field has been set.
+HasTlsActivations returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

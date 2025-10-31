@@ -36,11 +36,11 @@ type LoggingNewrelicotlpAPI interface {
 		Create a New Relic OTLP logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogNewrelicotlpRequest
 	*/
-	CreateLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32) APICreateLogNewrelicotlpRequest
+	CreateLogNewrelicotlp(ctx context.Context, serviceId string, versionId int32) APICreateLogNewrelicotlpRequest
 
 	// CreateLogNewrelicotlpExecute executes the request
 	//  @return LoggingNewrelicotlpResponse
@@ -52,12 +52,12 @@ type LoggingNewrelicotlpAPI interface {
 		Delete the New Relic OTLP logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingNewrelicotlpName The name for the real-time logging configuration.
 		 @return APIDeleteLogNewrelicotlpRequest
 	*/
-	DeleteLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32, loggingNewrelicotlpName string) APIDeleteLogNewrelicotlpRequest
+	DeleteLogNewrelicotlp(ctx context.Context, serviceId string, versionId int32, loggingNewrelicotlpName string) APIDeleteLogNewrelicotlpRequest
 
 	// DeleteLogNewrelicotlpExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingNewrelicotlpAPI interface {
 		Get the details of a New Relic OTLP logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingNewrelicotlpName The name for the real-time logging configuration.
 		 @return APIGetLogNewrelicotlpRequest
 	*/
-	GetLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32, loggingNewrelicotlpName string) APIGetLogNewrelicotlpRequest
+	GetLogNewrelicotlp(ctx context.Context, serviceId string, versionId int32, loggingNewrelicotlpName string) APIGetLogNewrelicotlpRequest
 
 	// GetLogNewrelicotlpExecute executes the request
 	//  @return LoggingNewrelicotlpResponse
@@ -86,11 +86,11 @@ type LoggingNewrelicotlpAPI interface {
 		List all of the New Relic OTLP logging objects for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogNewrelicotlpRequest
 	*/
-	ListLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32) APIListLogNewrelicotlpRequest
+	ListLogNewrelicotlp(ctx context.Context, serviceId string, versionId int32) APIListLogNewrelicotlpRequest
 
 	// ListLogNewrelicotlpExecute executes the request
 	//  @return []LoggingNewrelicotlpResponse
@@ -102,12 +102,12 @@ type LoggingNewrelicotlpAPI interface {
 		Update a New Relic OTLP logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingNewrelicotlpName The name for the real-time logging configuration.
 		 @return APIUpdateLogNewrelicotlpRequest
 	*/
-	UpdateLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32, loggingNewrelicotlpName string) APIUpdateLogNewrelicotlpRequest
+	UpdateLogNewrelicotlp(ctx context.Context, serviceId string, versionId int32, loggingNewrelicotlpName string) APIUpdateLogNewrelicotlpRequest
 
 	// UpdateLogNewrelicotlpExecute executes the request
 	//  @return LoggingNewrelicotlpResponse
@@ -121,8 +121,8 @@ type LoggingNewrelicotlpAPIService service
 type APICreateLogNewrelicotlpRequest struct {
 	ctx                 context.Context
 	APIService          LoggingNewrelicotlpAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -182,8 +182,8 @@ func (r *APICreateLogNewrelicotlpRequest) Region(region string) *APICreateLogNew
 	return r
 }
 
-// URL (Optional) URL of the New Relic Trace Observer, if you are using New Relic Infinite Tracing.
-func (r *APICreateLogNewrelicotlpRequest) URL(url string) *APICreateLogNewrelicotlpRequest {
+// Url (Optional) URL of the New Relic Trace Observer, if you are using New Relic Infinite Tracing.
+func (r *APICreateLogNewrelicotlpRequest) Url(url string) *APICreateLogNewrelicotlpRequest {
 	r.url = &url
 	return r
 }
@@ -199,16 +199,16 @@ CreateLogNewrelicotlp Create a New Relic OTLP endpoint
 Create a New Relic OTLP logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogNewrelicotlpRequest
 */
-func (a *LoggingNewrelicotlpAPIService) CreateLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32) APICreateLogNewrelicotlpRequest {
+func (a *LoggingNewrelicotlpAPIService) CreateLogNewrelicotlp(ctx context.Context, serviceId string, versionId int32) APICreateLogNewrelicotlpRequest {
 	return APICreateLogNewrelicotlpRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -228,8 +228,8 @@ func (a *LoggingNewrelicotlpAPIService) CreateLogNewrelicotlpExecute(r APICreate
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/newrelicotlp"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -347,8 +347,8 @@ func (a *LoggingNewrelicotlpAPIService) CreateLogNewrelicotlpExecute(r APICreate
 type APIDeleteLogNewrelicotlpRequest struct {
 	ctx                     context.Context
 	APIService              LoggingNewrelicotlpAPI
-	serviceID               string
-	versionID               int32
+	serviceId               string
+	versionId               int32
 	loggingNewrelicotlpName string
 }
 
@@ -363,17 +363,17 @@ DeleteLogNewrelicotlp Delete a New Relic OTLP endpoint
 Delete the New Relic OTLP logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingNewrelicotlpName The name for the real-time logging configuration.
  @return APIDeleteLogNewrelicotlpRequest
 */
-func (a *LoggingNewrelicotlpAPIService) DeleteLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32, loggingNewrelicotlpName string) APIDeleteLogNewrelicotlpRequest {
+func (a *LoggingNewrelicotlpAPIService) DeleteLogNewrelicotlp(ctx context.Context, serviceId string, versionId int32, loggingNewrelicotlpName string) APIDeleteLogNewrelicotlpRequest {
 	return APIDeleteLogNewrelicotlpRequest{
 		APIService:              a,
 		ctx:                     ctx,
-		serviceID:               serviceID,
-		versionID:               versionID,
+		serviceId:               serviceId,
+		versionId:               versionId,
 		loggingNewrelicotlpName: loggingNewrelicotlpName,
 	}
 }
@@ -394,8 +394,8 @@ func (a *LoggingNewrelicotlpAPIService) DeleteLogNewrelicotlpExecute(r APIDelete
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/newrelicotlp/{logging_newrelicotlp_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_newrelicotlp_name"+"}", gourl.PathEscape(parameterToString(r.loggingNewrelicotlpName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -487,8 +487,8 @@ func (a *LoggingNewrelicotlpAPIService) DeleteLogNewrelicotlpExecute(r APIDelete
 type APIGetLogNewrelicotlpRequest struct {
 	ctx                     context.Context
 	APIService              LoggingNewrelicotlpAPI
-	serviceID               string
-	versionID               int32
+	serviceId               string
+	versionId               int32
 	loggingNewrelicotlpName string
 }
 
@@ -503,17 +503,17 @@ GetLogNewrelicotlp Get a New Relic OTLP endpoint
 Get the details of a New Relic OTLP logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingNewrelicotlpName The name for the real-time logging configuration.
  @return APIGetLogNewrelicotlpRequest
 */
-func (a *LoggingNewrelicotlpAPIService) GetLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32, loggingNewrelicotlpName string) APIGetLogNewrelicotlpRequest {
+func (a *LoggingNewrelicotlpAPIService) GetLogNewrelicotlp(ctx context.Context, serviceId string, versionId int32, loggingNewrelicotlpName string) APIGetLogNewrelicotlpRequest {
 	return APIGetLogNewrelicotlpRequest{
 		APIService:              a,
 		ctx:                     ctx,
-		serviceID:               serviceID,
-		versionID:               versionID,
+		serviceId:               serviceId,
+		versionId:               versionId,
 		loggingNewrelicotlpName: loggingNewrelicotlpName,
 	}
 }
@@ -534,8 +534,8 @@ func (a *LoggingNewrelicotlpAPIService) GetLogNewrelicotlpExecute(r APIGetLogNew
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/newrelicotlp/{logging_newrelicotlp_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_newrelicotlp_name"+"}", gourl.PathEscape(parameterToString(r.loggingNewrelicotlpName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -627,8 +627,8 @@ func (a *LoggingNewrelicotlpAPIService) GetLogNewrelicotlpExecute(r APIGetLogNew
 type APIListLogNewrelicotlpRequest struct {
 	ctx        context.Context
 	APIService LoggingNewrelicotlpAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -642,16 +642,16 @@ ListLogNewrelicotlp List New Relic OTLP endpoints
 List all of the New Relic OTLP logging objects for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogNewrelicotlpRequest
 */
-func (a *LoggingNewrelicotlpAPIService) ListLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32) APIListLogNewrelicotlpRequest {
+func (a *LoggingNewrelicotlpAPIService) ListLogNewrelicotlp(ctx context.Context, serviceId string, versionId int32) APIListLogNewrelicotlpRequest {
 	return APIListLogNewrelicotlpRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -671,8 +671,8 @@ func (a *LoggingNewrelicotlpAPIService) ListLogNewrelicotlpExecute(r APIListLogN
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/newrelicotlp"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -763,8 +763,8 @@ func (a *LoggingNewrelicotlpAPIService) ListLogNewrelicotlpExecute(r APIListLogN
 type APIUpdateLogNewrelicotlpRequest struct {
 	ctx                     context.Context
 	APIService              LoggingNewrelicotlpAPI
-	serviceID               string
-	versionID               int32
+	serviceId               string
+	versionId               int32
 	loggingNewrelicotlpName string
 	name                    *string
 	placement               *string
@@ -825,8 +825,8 @@ func (r *APIUpdateLogNewrelicotlpRequest) Region(region string) *APIUpdateLogNew
 	return r
 }
 
-// URL (Optional) URL of the New Relic Trace Observer, if you are using New Relic Infinite Tracing.
-func (r *APIUpdateLogNewrelicotlpRequest) URL(url string) *APIUpdateLogNewrelicotlpRequest {
+// Url (Optional) URL of the New Relic Trace Observer, if you are using New Relic Infinite Tracing.
+func (r *APIUpdateLogNewrelicotlpRequest) Url(url string) *APIUpdateLogNewrelicotlpRequest {
 	r.url = &url
 	return r
 }
@@ -842,17 +842,17 @@ UpdateLogNewrelicotlp Update a New Relic log endpoint
 Update a New Relic OTLP logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingNewrelicotlpName The name for the real-time logging configuration.
  @return APIUpdateLogNewrelicotlpRequest
 */
-func (a *LoggingNewrelicotlpAPIService) UpdateLogNewrelicotlp(ctx context.Context, serviceID string, versionID int32, loggingNewrelicotlpName string) APIUpdateLogNewrelicotlpRequest {
+func (a *LoggingNewrelicotlpAPIService) UpdateLogNewrelicotlp(ctx context.Context, serviceId string, versionId int32, loggingNewrelicotlpName string) APIUpdateLogNewrelicotlpRequest {
 	return APIUpdateLogNewrelicotlpRequest{
 		APIService:              a,
 		ctx:                     ctx,
-		serviceID:               serviceID,
-		versionID:               versionID,
+		serviceId:               serviceId,
+		versionId:               versionId,
 		loggingNewrelicotlpName: loggingNewrelicotlpName,
 	}
 }
@@ -873,8 +873,8 @@ func (a *LoggingNewrelicotlpAPIService) UpdateLogNewrelicotlpExecute(r APIUpdate
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/newrelicotlp/{logging_newrelicotlp_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_newrelicotlp_name"+"}", gourl.PathEscape(parameterToString(r.loggingNewrelicotlpName, "")))
 
 	localVarHeaderParams := make(map[string]string)

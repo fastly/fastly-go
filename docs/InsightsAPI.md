@@ -29,7 +29,7 @@ import (
 
 func main() {
     visualization := "visualization_example" // string | 
-    serviceID := "serviceId_example" // string | 
+    serviceId := "serviceId_example" // string | 
     start := "start_example" // string | 
     end := "end_example" // string | 
     pops := "pops_example" // string |  (optional)
@@ -40,7 +40,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.InsightsAPI.GetLogInsights(ctx).Visualization(visualization).ServiceID(serviceID).Start(start).End(end).Pops(pops).Domain(domain).DomainExactMatch(domainExactMatch).Limit(limit).Execute()
+    resp, r, err := apiClient.InsightsAPI.GetLogInsights(ctx).Visualization(visualization).ServiceId(serviceId).Start(start).End(end).Pops(pops).Domain(domain).DomainExactMatch(domainExactMatch).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InsightsAPI.GetLogInsights`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -61,7 +61,7 @@ Other parameters are passed through a pointer to a apiGetLogInsightsRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **visualization** | **string** |  |  **serviceID** | **string** |  |  **start** | **string** |  |  **end** | **string** |  |  **pops** | **string** |  |  **domain** | **string** |  |  **domainExactMatch** | **bool** |  |  **limit** | **float32** |  | 
+ **visualization** | **string** |  |  **serviceId** | **string** |  |  **start** | **string** |  |  **end** | **string** |  |  **pops** | **string** |  |  **domain** | **string** |  |  **domainExactMatch** | **bool** |  |  **limit** | **float32** |  | 
 
 ### Return type
 
@@ -77,3 +77,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

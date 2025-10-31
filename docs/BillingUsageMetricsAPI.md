@@ -29,7 +29,7 @@ import (
 )
 
 func main() {
-    productID := "productId_example" // string | The product identifier for the metrics returned (e.g., `cdn_usage`). This should be used along with `usage_type_name`. (optional)
+    productId := "productId_example" // string | The product identifier for the metrics returned (e.g., `cdn_usage`). This should be used along with `usage_type_name`. (optional)
     service := "service_example" // string | The service identifier for the metrics being requested. (optional)
     usageTypeName := "usageTypeName_example" // string | The usage type name for the metrics returned (e.g., `North America Requests`). This should be used along with `product_id`. (optional)
     startMonth := "2023-01" // string |  (optional)
@@ -40,7 +40,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BillingUsageMetricsAPI.GetServiceLevelUsage(ctx).ProductID(productID).Service(service).UsageTypeName(usageTypeName).StartMonth(startMonth).EndMonth(endMonth).Limit(limit).Cursor(cursor).Execute()
+    resp, r, err := apiClient.BillingUsageMetricsAPI.GetServiceLevelUsage(ctx).ProductId(productId).Service(service).UsageTypeName(usageTypeName).StartMonth(startMonth).EndMonth(endMonth).Limit(limit).Cursor(cursor).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingUsageMetricsAPI.GetServiceLevelUsage`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -61,7 +61,7 @@ Other parameters are passed through a pointer to a apiGetServiceLevelUsageReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **productID** | **string** | The product identifier for the metrics returned (e.g., `cdn_usage`). This should be used along with `usage_type_name`. |  **service** | **string** | The service identifier for the metrics being requested. |  **usageTypeName** | **string** | The usage type name for the metrics returned (e.g., `North America Requests`). This should be used along with `product_id`. |  **startMonth** | **string** |  |  **endMonth** | **string** |  |  **limit** | **string** | Number of results per page. The maximum is 10000. | [default to &quot;1000&quot;] **cursor** | **string** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. | 
+ **productId** | **string** | The product identifier for the metrics returned (e.g., `cdn_usage`). This should be used along with `usage_type_name`. |  **service** | **string** | The service identifier for the metrics being requested. |  **usageTypeName** | **string** | The usage type name for the metrics returned (e.g., `North America Requests`). This should be used along with `product_id`. |  **startMonth** | **string** |  |  **endMonth** | **string** |  |  **limit** | **string** | Number of results per page. The maximum is 10000. | [default to &quot;1000&quot;] **cursor** | **string** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. | 
 
 ### Return type
 
@@ -141,3 +141,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

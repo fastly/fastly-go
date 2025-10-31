@@ -1,54 +1,56 @@
-# ComputeACLUpdate
+# ComputeAclUpdate
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Entries** | Pointer to [**[]ComputeACLUpdateEntry**](ComputeACLUpdateEntry.md) |  | [optional] 
+**Entries** | Pointer to [**[]ComputeAclUpdateEntry**](ComputeAclUpdateEntry.md) |  | [optional] 
 
 ## Methods
 
-### NewComputeACLUpdate
+### NewComputeAclUpdate
 
-`func NewComputeACLUpdate() *ComputeACLUpdate`
+`func NewComputeAclUpdate() *ComputeAclUpdate`
 
-NewComputeACLUpdate instantiates a new ComputeACLUpdate object
+NewComputeAclUpdate instantiates a new ComputeAclUpdate object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewComputeACLUpdateWithDefaults
+### NewComputeAclUpdateWithDefaults
 
-`func NewComputeACLUpdateWithDefaults() *ComputeACLUpdate`
+`func NewComputeAclUpdateWithDefaults() *ComputeAclUpdate`
 
-NewComputeACLUpdateWithDefaults instantiates a new ComputeACLUpdate object
+NewComputeAclUpdateWithDefaults instantiates a new ComputeAclUpdate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetEntries
 
-`func (o *ComputeACLUpdate) GetEntries() []ComputeACLUpdateEntry`
+`func (o *ComputeAclUpdate) GetEntries() []ComputeAclUpdateEntry`
 
 GetEntries returns the Entries field if non-nil, zero value otherwise.
 
 ### GetEntriesOk
 
-`func (o *ComputeACLUpdate) GetEntriesOk() (*[]ComputeACLUpdateEntry, bool)`
+`func (o *ComputeAclUpdate) GetEntriesOk() (*[]ComputeAclUpdateEntry, bool)`
 
 GetEntriesOk returns a tuple with the Entries field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEntries
 
-`func (o *ComputeACLUpdate) SetEntries(v []ComputeACLUpdateEntry)`
+`func (o *ComputeAclUpdate) SetEntries(v []ComputeAclUpdateEntry)`
 
 SetEntries sets Entries field to given value.
 
 ### HasEntries
 
-`func (o *ComputeACLUpdate) HasEntries() bool`
+`func (o *ComputeAclUpdate) HasEntries() bool`
 
 HasEntries returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -33,13 +33,13 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
     secret := *openapiclient.NewSecret() // Secret |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SecretStoreItemAPI.CreateSecret(ctx, storeID).Secret(secret).Execute()
+    resp, r, err := apiClient.SecretStoreItemAPI.CreateSecret(ctx, storeId).Secret(secret).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecretStoreItemAPI.CreateSecret`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -55,7 +55,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 
 ### Other Parameters
 
@@ -101,13 +101,13 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
     secretName := "secretName_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SecretStoreItemAPI.DeleteSecret(ctx, storeID, secretName).Execute()
+    resp, r, err := apiClient.SecretStoreItemAPI.DeleteSecret(ctx, storeId, secretName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecretStoreItemAPI.DeleteSecret`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -121,7 +121,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 **secretName** | **string** |  | 
 
 ### Other Parameters
@@ -168,13 +168,13 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
     secretName := "secretName_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SecretStoreItemAPI.GetSecret(ctx, storeID, secretName).Execute()
+    resp, r, err := apiClient.SecretStoreItemAPI.GetSecret(ctx, storeId, secretName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecretStoreItemAPI.GetSecret`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -190,7 +190,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 **secretName** | **string** |  | 
 
 ### Other Parameters
@@ -237,19 +237,19 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
     cursor := "cursor_example" // string | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. (optional)
     limit := "limit_example" // string | Number of results per page. The maximum is 200. (optional) (default to "100")
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SecretStoreItemAPI.GetSecrets(ctx, storeID).Cursor(cursor).Limit(limit).Execute()
+    resp, r, err := apiClient.SecretStoreItemAPI.GetSecrets(ctx, storeId).Cursor(cursor).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecretStoreItemAPI.GetSecrets`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetSecrets`: InlineResponse2008
+    // response from `GetSecrets`: InlineResponse2009
     fmt.Fprintf(os.Stdout, "Response from `SecretStoreItemAPI.GetSecrets`: %v\n", resp)
 }
 ```
@@ -260,7 +260,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 
 ### Other Parameters
 
@@ -273,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2008**](InlineResponse2008.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 
@@ -306,13 +306,13 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
     secret := *openapiclient.NewSecret() // Secret |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SecretStoreItemAPI.MustRecreateSecret(ctx, storeID).Secret(secret).Execute()
+    resp, r, err := apiClient.SecretStoreItemAPI.MustRecreateSecret(ctx, storeId).Secret(secret).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecretStoreItemAPI.MustRecreateSecret`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -328,7 +328,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 
 ### Other Parameters
 
@@ -374,13 +374,13 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
     secret := *openapiclient.NewSecret() // Secret |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.SecretStoreItemAPI.RecreateSecret(ctx, storeID).Secret(secret).Execute()
+    resp, r, err := apiClient.SecretStoreItemAPI.RecreateSecret(ctx, storeId).Secret(secret).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SecretStoreItemAPI.RecreateSecret`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -396,7 +396,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 
 ### Other Parameters
 
@@ -421,3 +421,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

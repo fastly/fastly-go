@@ -36,11 +36,11 @@ type ConditionAPI interface {
 		Creates a new condition.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateConditionRequest
 	*/
-	CreateCondition(ctx context.Context, serviceID string, versionID int32) APICreateConditionRequest
+	CreateCondition(ctx context.Context, serviceId string, versionId int32) APICreateConditionRequest
 
 	// CreateConditionExecute executes the request
 	//  @return ConditionResponse
@@ -52,12 +52,12 @@ type ConditionAPI interface {
 		Deletes the specified condition.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param conditionName Name of the condition. Required.
 		 @return APIDeleteConditionRequest
 	*/
-	DeleteCondition(ctx context.Context, serviceID string, versionID int32, conditionName string) APIDeleteConditionRequest
+	DeleteCondition(ctx context.Context, serviceId string, versionId int32, conditionName string) APIDeleteConditionRequest
 
 	// DeleteConditionExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type ConditionAPI interface {
 		Gets the specified condition.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param conditionName Name of the condition. Required.
 		 @return APIGetConditionRequest
 	*/
-	GetCondition(ctx context.Context, serviceID string, versionID int32, conditionName string) APIGetConditionRequest
+	GetCondition(ctx context.Context, serviceId string, versionId int32, conditionName string) APIGetConditionRequest
 
 	// GetConditionExecute executes the request
 	//  @return ConditionResponse
@@ -86,11 +86,11 @@ type ConditionAPI interface {
 		Gets all conditions for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListConditionsRequest
 	*/
-	ListConditions(ctx context.Context, serviceID string, versionID int32) APIListConditionsRequest
+	ListConditions(ctx context.Context, serviceId string, versionId int32) APIListConditionsRequest
 
 	// ListConditionsExecute executes the request
 	//  @return []ConditionResponse
@@ -102,12 +102,12 @@ type ConditionAPI interface {
 		Updates the specified condition.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param conditionName Name of the condition. Required.
 		 @return APIUpdateConditionRequest
 	*/
-	UpdateCondition(ctx context.Context, serviceID string, versionID int32, conditionName string) APIUpdateConditionRequest
+	UpdateCondition(ctx context.Context, serviceId string, versionId int32, conditionName string) APIUpdateConditionRequest
 
 	// UpdateConditionExecute executes the request
 	//  @return ConditionResponse
@@ -119,17 +119,17 @@ type ConditionAPIService service
 
 // APICreateConditionRequest represents a request for the resource.
 type APICreateConditionRequest struct {
-	ctx          context.Context
-	APIService   ConditionAPI
-	serviceID    string
-	versionID    int32
-	comment      *string
-	name         *string
-	priority     *string
-	statement    *string
-	serviceID2   *string
-	version      *string
-	resourceType *string
+	ctx        context.Context
+	APIService ConditionAPI
+	serviceId  string
+	versionId  int32
+	comment    *string
+	name       *string
+	priority   *string
+	statement  *string
+	serviceId2 *string
+	version    *string
+	type_      *string
 }
 
 // Comment A freeform descriptive note.
@@ -156,9 +156,9 @@ func (r *APICreateConditionRequest) Statement(statement string) *APICreateCondit
 	return r
 }
 
-// ServiceID2 returns a pointer to a request.
-func (r *APICreateConditionRequest) ServiceID2(serviceID2 string) *APICreateConditionRequest {
-	r.serviceID2 = &serviceID2
+// ServiceId2 returns a pointer to a request.
+func (r *APICreateConditionRequest) ServiceId2(serviceId2 string) *APICreateConditionRequest {
+	r.serviceId2 = &serviceId2
 	return r
 }
 
@@ -168,9 +168,9 @@ func (r *APICreateConditionRequest) Version(version string) *APICreateConditionR
 	return r
 }
 
-// ResourceType Type of the condition. Required.
-func (r *APICreateConditionRequest) ResourceType(resourceType string) *APICreateConditionRequest {
-	r.resourceType = &resourceType
+// Type_ Type of the condition. Required.
+func (r *APICreateConditionRequest) Type_(type_ string) *APICreateConditionRequest {
+	r.type_ = &type_
 	return r
 }
 
@@ -185,16 +185,16 @@ CreateCondition Create a condition
 Creates a new condition.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateConditionRequest
 */
-func (a *ConditionAPIService) CreateCondition(ctx context.Context, serviceID string, versionID int32) APICreateConditionRequest {
+func (a *ConditionAPIService) CreateCondition(ctx context.Context, serviceId string, versionId int32) APICreateConditionRequest {
 	return APICreateConditionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -214,8 +214,8 @@ func (a *ConditionAPIService) CreateConditionExecute(r APICreateConditionRequest
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/condition"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -250,18 +250,18 @@ func (a *ConditionAPIService) CreateConditionExecute(r APICreateConditionRequest
 	if r.statement != nil {
 		localVarFormParams.Add("statement", parameterToString(*r.statement, ""))
 	}
-	if r.serviceID2 != nil {
-		paramJSON, err := parameterToJSON(*r.serviceID2)
+	if r.serviceId2 != nil {
+		paramJson, err := parameterToJSON(*r.serviceId2)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("service_id", paramJSON)
+		localVarFormParams.Add("service_id", paramJson)
 	}
 	if r.version != nil {
 		localVarFormParams.Add("version", parameterToString(*r.version, ""))
 	}
-	if r.resourceType != nil {
-		localVarFormParams.Add("type", parameterToString(*r.resourceType, ""))
+	if r.type_ != nil {
+		localVarFormParams.Add("type", parameterToString(*r.type_, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -331,8 +331,8 @@ func (a *ConditionAPIService) CreateConditionExecute(r APICreateConditionRequest
 type APIDeleteConditionRequest struct {
 	ctx           context.Context
 	APIService    ConditionAPI
-	serviceID     string
-	versionID     int32
+	serviceId     string
+	versionId     int32
 	conditionName string
 }
 
@@ -347,17 +347,17 @@ DeleteCondition Delete a condition
 Deletes the specified condition.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param conditionName Name of the condition. Required.
  @return APIDeleteConditionRequest
 */
-func (a *ConditionAPIService) DeleteCondition(ctx context.Context, serviceID string, versionID int32, conditionName string) APIDeleteConditionRequest {
+func (a *ConditionAPIService) DeleteCondition(ctx context.Context, serviceId string, versionId int32, conditionName string) APIDeleteConditionRequest {
 	return APIDeleteConditionRequest{
 		APIService:    a,
 		ctx:           ctx,
-		serviceID:     serviceID,
-		versionID:     versionID,
+		serviceId:     serviceId,
+		versionId:     versionId,
 		conditionName: conditionName,
 	}
 }
@@ -378,8 +378,8 @@ func (a *ConditionAPIService) DeleteConditionExecute(r APIDeleteConditionRequest
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/condition/{condition_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"condition_name"+"}", gourl.PathEscape(parameterToString(r.conditionName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -471,8 +471,8 @@ func (a *ConditionAPIService) DeleteConditionExecute(r APIDeleteConditionRequest
 type APIGetConditionRequest struct {
 	ctx           context.Context
 	APIService    ConditionAPI
-	serviceID     string
-	versionID     int32
+	serviceId     string
+	versionId     int32
 	conditionName string
 }
 
@@ -487,17 +487,17 @@ GetCondition Describe a condition
 Gets the specified condition.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param conditionName Name of the condition. Required.
  @return APIGetConditionRequest
 */
-func (a *ConditionAPIService) GetCondition(ctx context.Context, serviceID string, versionID int32, conditionName string) APIGetConditionRequest {
+func (a *ConditionAPIService) GetCondition(ctx context.Context, serviceId string, versionId int32, conditionName string) APIGetConditionRequest {
 	return APIGetConditionRequest{
 		APIService:    a,
 		ctx:           ctx,
-		serviceID:     serviceID,
-		versionID:     versionID,
+		serviceId:     serviceId,
+		versionId:     versionId,
 		conditionName: conditionName,
 	}
 }
@@ -518,8 +518,8 @@ func (a *ConditionAPIService) GetConditionExecute(r APIGetConditionRequest) (*Co
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/condition/{condition_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"condition_name"+"}", gourl.PathEscape(parameterToString(r.conditionName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -611,8 +611,8 @@ func (a *ConditionAPIService) GetConditionExecute(r APIGetConditionRequest) (*Co
 type APIListConditionsRequest struct {
 	ctx        context.Context
 	APIService ConditionAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -626,16 +626,16 @@ ListConditions List conditions
 Gets all conditions for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListConditionsRequest
 */
-func (a *ConditionAPIService) ListConditions(ctx context.Context, serviceID string, versionID int32) APIListConditionsRequest {
+func (a *ConditionAPIService) ListConditions(ctx context.Context, serviceId string, versionId int32) APIListConditionsRequest {
 	return APIListConditionsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -655,8 +655,8 @@ func (a *ConditionAPIService) ListConditionsExecute(r APIListConditionsRequest) 
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/condition"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -747,16 +747,16 @@ func (a *ConditionAPIService) ListConditionsExecute(r APIListConditionsRequest) 
 type APIUpdateConditionRequest struct {
 	ctx           context.Context
 	APIService    ConditionAPI
-	serviceID     string
-	versionID     int32
+	serviceId     string
+	versionId     int32
 	conditionName string
 	comment       *string
 	name          *string
 	priority      *string
 	statement     *string
-	serviceID2    *string
+	serviceId2    *string
 	version       *string
-	resourceType  *string
+	type_         *string
 }
 
 // Comment A freeform descriptive note.
@@ -783,9 +783,9 @@ func (r *APIUpdateConditionRequest) Statement(statement string) *APIUpdateCondit
 	return r
 }
 
-// ServiceID2 returns a pointer to a request.
-func (r *APIUpdateConditionRequest) ServiceID2(serviceID2 string) *APIUpdateConditionRequest {
-	r.serviceID2 = &serviceID2
+// ServiceId2 returns a pointer to a request.
+func (r *APIUpdateConditionRequest) ServiceId2(serviceId2 string) *APIUpdateConditionRequest {
+	r.serviceId2 = &serviceId2
 	return r
 }
 
@@ -795,9 +795,9 @@ func (r *APIUpdateConditionRequest) Version(version string) *APIUpdateConditionR
 	return r
 }
 
-// ResourceType Type of the condition. Required.
-func (r *APIUpdateConditionRequest) ResourceType(resourceType string) *APIUpdateConditionRequest {
-	r.resourceType = &resourceType
+// Type_ Type of the condition. Required.
+func (r *APIUpdateConditionRequest) Type_(type_ string) *APIUpdateConditionRequest {
+	r.type_ = &type_
 	return r
 }
 
@@ -812,17 +812,17 @@ UpdateCondition Update a condition
 Updates the specified condition.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param conditionName Name of the condition. Required.
  @return APIUpdateConditionRequest
 */
-func (a *ConditionAPIService) UpdateCondition(ctx context.Context, serviceID string, versionID int32, conditionName string) APIUpdateConditionRequest {
+func (a *ConditionAPIService) UpdateCondition(ctx context.Context, serviceId string, versionId int32, conditionName string) APIUpdateConditionRequest {
 	return APIUpdateConditionRequest{
 		APIService:    a,
 		ctx:           ctx,
-		serviceID:     serviceID,
-		versionID:     versionID,
+		serviceId:     serviceId,
+		versionId:     versionId,
 		conditionName: conditionName,
 	}
 }
@@ -843,8 +843,8 @@ func (a *ConditionAPIService) UpdateConditionExecute(r APIUpdateConditionRequest
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/condition/{condition_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"condition_name"+"}", gourl.PathEscape(parameterToString(r.conditionName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -880,18 +880,18 @@ func (a *ConditionAPIService) UpdateConditionExecute(r APIUpdateConditionRequest
 	if r.statement != nil {
 		localVarFormParams.Add("statement", parameterToString(*r.statement, ""))
 	}
-	if r.serviceID2 != nil {
-		paramJSON, err := parameterToJSON(*r.serviceID2)
+	if r.serviceId2 != nil {
+		paramJson, err := parameterToJSON(*r.serviceId2)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("service_id", paramJSON)
+		localVarFormParams.Add("service_id", paramJson)
 	}
 	if r.version != nil {
 		localVarFormParams.Add("version", parameterToString(*r.version, ""))
 	}
-	if r.resourceType != nil {
-		localVarFormParams.Add("type", parameterToString(*r.resourceType, ""))
+	if r.type_ != nil {
+		localVarFormParams.Add("type", parameterToString(*r.type_, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

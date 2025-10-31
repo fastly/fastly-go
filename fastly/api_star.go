@@ -50,10 +50,10 @@ type StarAPI interface {
 		Delete star.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param starID Alphanumeric string identifying a star.
+		 @param starId Alphanumeric string identifying a star.
 		 @return APIDeleteServiceStarRequest
 	*/
-	DeleteServiceStar(ctx context.Context, starID string) APIDeleteServiceStarRequest
+	DeleteServiceStar(ctx context.Context, starId string) APIDeleteServiceStarRequest
 
 	// DeleteServiceStarExecute executes the request
 	DeleteServiceStarExecute(r APIDeleteServiceStarRequest) (*http.Response, error)
@@ -64,10 +64,10 @@ type StarAPI interface {
 		Show star.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param starID Alphanumeric string identifying a star.
+		 @param starId Alphanumeric string identifying a star.
 		 @return APIGetServiceStarRequest
 	*/
-	GetServiceStar(ctx context.Context, starID string) APIGetServiceStarRequest
+	GetServiceStar(ctx context.Context, starId string) APIGetServiceStarRequest
 
 	// GetServiceStarExecute executes the request
 	//  @return StarResponse
@@ -232,7 +232,7 @@ func (a *StarAPIService) CreateServiceStarExecute(r APICreateServiceStarRequest)
 type APIDeleteServiceStarRequest struct {
 	ctx        context.Context
 	APIService StarAPI
-	starID     string
+	starId     string
 }
 
 // Execute calls the API using the request data configured.
@@ -246,14 +246,14 @@ DeleteServiceStar Delete a star
 Delete star.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param starID Alphanumeric string identifying a star.
+ @param starId Alphanumeric string identifying a star.
  @return APIDeleteServiceStarRequest
 */
-func (a *StarAPIService) DeleteServiceStar(ctx context.Context, starID string) APIDeleteServiceStarRequest {
+func (a *StarAPIService) DeleteServiceStar(ctx context.Context, starId string) APIDeleteServiceStarRequest {
 	return APIDeleteServiceStarRequest{
 		APIService: a,
 		ctx:        ctx,
-		starID:     starID,
+		starId:     starId,
 	}
 }
 
@@ -271,7 +271,7 @@ func (a *StarAPIService) DeleteServiceStarExecute(r APIDeleteServiceStarRequest)
 	}
 
 	localVarPath := localBasePath + "/stars/{star_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"star_id"+"}", gourl.PathEscape(parameterToString(r.starID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"star_id"+"}", gourl.PathEscape(parameterToString(r.starId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -353,7 +353,7 @@ func (a *StarAPIService) DeleteServiceStarExecute(r APIDeleteServiceStarRequest)
 type APIGetServiceStarRequest struct {
 	ctx        context.Context
 	APIService StarAPI
-	starID     string
+	starId     string
 }
 
 // Execute calls the API using the request data configured.
@@ -367,14 +367,14 @@ GetServiceStar Get a star
 Show star.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param starID Alphanumeric string identifying a star.
+ @param starId Alphanumeric string identifying a star.
  @return APIGetServiceStarRequest
 */
-func (a *StarAPIService) GetServiceStar(ctx context.Context, starID string) APIGetServiceStarRequest {
+func (a *StarAPIService) GetServiceStar(ctx context.Context, starId string) APIGetServiceStarRequest {
 	return APIGetServiceStarRequest{
 		APIService: a,
 		ctx:        ctx,
-		starID:     starID,
+		starId:     starId,
 	}
 }
 
@@ -394,7 +394,7 @@ func (a *StarAPIService) GetServiceStarExecute(r APIGetServiceStarRequest) (*Sta
 	}
 
 	localVarPath := localBasePath + "/stars/{star_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"star_id"+"}", gourl.PathEscape(parameterToString(r.starID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"star_id"+"}", gourl.PathEscape(parameterToString(r.starId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

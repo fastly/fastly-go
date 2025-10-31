@@ -29,7 +29,7 @@ type ConfigStoreItemResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
-	StoreID              *string      `json:"store_id,omitempty"`
+	StoreId              *string      `json:"store_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -245,36 +245,36 @@ func (o *ConfigStoreItemResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetStoreID returns the StoreID field value if set, zero value otherwise.
-func (o *ConfigStoreItemResponse) GetStoreID() string {
-	if o == nil || o.StoreID == nil {
+// GetStoreId returns the StoreId field value if set, zero value otherwise.
+func (o *ConfigStoreItemResponse) GetStoreId() string {
+	if o == nil || o.StoreId == nil {
 		var ret string
 		return ret
 	}
-	return *o.StoreID
+	return *o.StoreId
 }
 
-// GetStoreIDOk returns a tuple with the StoreID field value if set, nil otherwise
+// GetStoreIdOk returns a tuple with the StoreId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ConfigStoreItemResponse) GetStoreIDOk() (*string, bool) {
-	if o == nil || o.StoreID == nil {
+func (o *ConfigStoreItemResponse) GetStoreIdOk() (*string, bool) {
+	if o == nil || o.StoreId == nil {
 		return nil, false
 	}
-	return o.StoreID, true
+	return o.StoreId, true
 }
 
-// HasStoreID returns a boolean if a field has been set.
-func (o *ConfigStoreItemResponse) HasStoreID() bool {
-	if o != nil && o.StoreID != nil {
+// HasStoreId returns a boolean if a field has been set.
+func (o *ConfigStoreItemResponse) HasStoreId() bool {
+	if o != nil && o.StoreId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetStoreID gets a reference to the given string and assigns it to the StoreID field.
-func (o *ConfigStoreItemResponse) SetStoreID(v string) {
-	o.StoreID = &v
+// SetStoreId gets a reference to the given string and assigns it to the StoreId field.
+func (o *ConfigStoreItemResponse) SetStoreId(v string) {
+	o.StoreId = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -296,8 +296,8 @@ func (o ConfigStoreItemResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.StoreID != nil {
-		toSerialize["store_id"] = o.StoreID
+	if o.StoreId != nil {
+		toSerialize["store_id"] = o.StoreId
 	}
 
 	for key, value := range o.AdditionalProperties {

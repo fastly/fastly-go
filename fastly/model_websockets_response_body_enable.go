@@ -18,9 +18,9 @@ import (
 
 // WebsocketsResponseBodyEnable struct for WebsocketsResponseBodyEnable
 type WebsocketsResponseBodyEnable struct {
-	Product              *WebsocketsResponseProductProduct    `json:"product,omitempty"`
-	Service              *BotManagementResponseServiceService `json:"service,omitempty"`
-	Links                *WebsocketsResponseLinksLinks        `json:"_links,omitempty"`
+	Product              *WebsocketsResponseProductProduct   `json:"product,omitempty"`
+	Service              *ApiDiscoveryResponseServiceService `json:"service,omitempty"`
+	Links                *WebsocketsResponseLinksLinks       `json:"_links,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -76,9 +76,9 @@ func (o *WebsocketsResponseBodyEnable) SetProduct(v WebsocketsResponseProductPro
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *WebsocketsResponseBodyEnable) GetService() BotManagementResponseServiceService {
+func (o *WebsocketsResponseBodyEnable) GetService() ApiDiscoveryResponseServiceService {
 	if o == nil || o.Service == nil {
-		var ret BotManagementResponseServiceService
+		var ret ApiDiscoveryResponseServiceService
 		return ret
 	}
 	return *o.Service
@@ -86,7 +86,7 @@ func (o *WebsocketsResponseBodyEnable) GetService() BotManagementResponseService
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WebsocketsResponseBodyEnable) GetServiceOk() (*BotManagementResponseServiceService, bool) {
+func (o *WebsocketsResponseBodyEnable) GetServiceOk() (*ApiDiscoveryResponseServiceService, bool) {
 	if o == nil || o.Service == nil {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *WebsocketsResponseBodyEnable) HasService() bool {
 	return false
 }
 
-// SetService gets a reference to the given BotManagementResponseServiceService and assigns it to the Service field.
-func (o *WebsocketsResponseBodyEnable) SetService(v BotManagementResponseServiceService) {
+// SetService gets a reference to the given ApiDiscoveryResponseServiceService and assigns it to the Service field.
+func (o *WebsocketsResponseBodyEnable) SetService(v ApiDiscoveryResponseServiceService) {
 	o.Service = &v
 }
 

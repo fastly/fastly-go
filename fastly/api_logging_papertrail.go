@@ -36,11 +36,11 @@ type LoggingPapertrailAPI interface {
 		Create a Papertrail for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogPapertrailRequest
 	*/
-	CreateLogPapertrail(ctx context.Context, serviceID string, versionID int32) APICreateLogPapertrailRequest
+	CreateLogPapertrail(ctx context.Context, serviceId string, versionId int32) APICreateLogPapertrailRequest
 
 	// CreateLogPapertrailExecute executes the request
 	//  @return LoggingPapertrailResponse
@@ -52,12 +52,12 @@ type LoggingPapertrailAPI interface {
 		Delete the Papertrail for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingPapertrailName The name for the real-time logging configuration.
 		 @return APIDeleteLogPapertrailRequest
 	*/
-	DeleteLogPapertrail(ctx context.Context, serviceID string, versionID int32, loggingPapertrailName string) APIDeleteLogPapertrailRequest
+	DeleteLogPapertrail(ctx context.Context, serviceId string, versionId int32, loggingPapertrailName string) APIDeleteLogPapertrailRequest
 
 	// DeleteLogPapertrailExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingPapertrailAPI interface {
 		Get the Papertrail for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingPapertrailName The name for the real-time logging configuration.
 		 @return APIGetLogPapertrailRequest
 	*/
-	GetLogPapertrail(ctx context.Context, serviceID string, versionID int32, loggingPapertrailName string) APIGetLogPapertrailRequest
+	GetLogPapertrail(ctx context.Context, serviceId string, versionId int32, loggingPapertrailName string) APIGetLogPapertrailRequest
 
 	// GetLogPapertrailExecute executes the request
 	//  @return LoggingPapertrailResponse
@@ -86,11 +86,11 @@ type LoggingPapertrailAPI interface {
 		List all of the Papertrails for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogPapertrailRequest
 	*/
-	ListLogPapertrail(ctx context.Context, serviceID string, versionID int32) APIListLogPapertrailRequest
+	ListLogPapertrail(ctx context.Context, serviceId string, versionId int32) APIListLogPapertrailRequest
 
 	// ListLogPapertrailExecute executes the request
 	//  @return []LoggingPapertrailResponse
@@ -102,12 +102,12 @@ type LoggingPapertrailAPI interface {
 		Update the Papertrail for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingPapertrailName The name for the real-time logging configuration.
 		 @return APIUpdateLogPapertrailRequest
 	*/
-	UpdateLogPapertrail(ctx context.Context, serviceID string, versionID int32, loggingPapertrailName string) APIUpdateLogPapertrailRequest
+	UpdateLogPapertrail(ctx context.Context, serviceId string, versionId int32, loggingPapertrailName string) APIUpdateLogPapertrailRequest
 
 	// UpdateLogPapertrailExecute executes the request
 	//  @return LoggingPapertrailResponse
@@ -121,8 +121,8 @@ type LoggingPapertrailAPIService service
 type APICreateLogPapertrailRequest struct {
 	ctx                 context.Context
 	APIService          LoggingPapertrailAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -192,16 +192,16 @@ CreateLogPapertrail Create a Papertrail log endpoint
 Create a Papertrail for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogPapertrailRequest
 */
-func (a *LoggingPapertrailAPIService) CreateLogPapertrail(ctx context.Context, serviceID string, versionID int32) APICreateLogPapertrailRequest {
+func (a *LoggingPapertrailAPIService) CreateLogPapertrail(ctx context.Context, serviceId string, versionId int32) APICreateLogPapertrailRequest {
 	return APICreateLogPapertrailRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -221,8 +221,8 @@ func (a *LoggingPapertrailAPIService) CreateLogPapertrailExecute(r APICreateLogP
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/papertrail"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -337,8 +337,8 @@ func (a *LoggingPapertrailAPIService) CreateLogPapertrailExecute(r APICreateLogP
 type APIDeleteLogPapertrailRequest struct {
 	ctx                   context.Context
 	APIService            LoggingPapertrailAPI
-	serviceID             string
-	versionID             int32
+	serviceId             string
+	versionId             int32
 	loggingPapertrailName string
 }
 
@@ -353,17 +353,17 @@ DeleteLogPapertrail Delete a Papertrail log endpoint
 Delete the Papertrail for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingPapertrailName The name for the real-time logging configuration.
  @return APIDeleteLogPapertrailRequest
 */
-func (a *LoggingPapertrailAPIService) DeleteLogPapertrail(ctx context.Context, serviceID string, versionID int32, loggingPapertrailName string) APIDeleteLogPapertrailRequest {
+func (a *LoggingPapertrailAPIService) DeleteLogPapertrail(ctx context.Context, serviceId string, versionId int32, loggingPapertrailName string) APIDeleteLogPapertrailRequest {
 	return APIDeleteLogPapertrailRequest{
 		APIService:            a,
 		ctx:                   ctx,
-		serviceID:             serviceID,
-		versionID:             versionID,
+		serviceId:             serviceId,
+		versionId:             versionId,
 		loggingPapertrailName: loggingPapertrailName,
 	}
 }
@@ -384,8 +384,8 @@ func (a *LoggingPapertrailAPIService) DeleteLogPapertrailExecute(r APIDeleteLogP
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/papertrail/{logging_papertrail_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_papertrail_name"+"}", gourl.PathEscape(parameterToString(r.loggingPapertrailName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -477,8 +477,8 @@ func (a *LoggingPapertrailAPIService) DeleteLogPapertrailExecute(r APIDeleteLogP
 type APIGetLogPapertrailRequest struct {
 	ctx                   context.Context
 	APIService            LoggingPapertrailAPI
-	serviceID             string
-	versionID             int32
+	serviceId             string
+	versionId             int32
 	loggingPapertrailName string
 }
 
@@ -493,17 +493,17 @@ GetLogPapertrail Get a Papertrail log endpoint
 Get the Papertrail for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingPapertrailName The name for the real-time logging configuration.
  @return APIGetLogPapertrailRequest
 */
-func (a *LoggingPapertrailAPIService) GetLogPapertrail(ctx context.Context, serviceID string, versionID int32, loggingPapertrailName string) APIGetLogPapertrailRequest {
+func (a *LoggingPapertrailAPIService) GetLogPapertrail(ctx context.Context, serviceId string, versionId int32, loggingPapertrailName string) APIGetLogPapertrailRequest {
 	return APIGetLogPapertrailRequest{
 		APIService:            a,
 		ctx:                   ctx,
-		serviceID:             serviceID,
-		versionID:             versionID,
+		serviceId:             serviceId,
+		versionId:             versionId,
 		loggingPapertrailName: loggingPapertrailName,
 	}
 }
@@ -524,8 +524,8 @@ func (a *LoggingPapertrailAPIService) GetLogPapertrailExecute(r APIGetLogPapertr
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/papertrail/{logging_papertrail_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_papertrail_name"+"}", gourl.PathEscape(parameterToString(r.loggingPapertrailName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -617,8 +617,8 @@ func (a *LoggingPapertrailAPIService) GetLogPapertrailExecute(r APIGetLogPapertr
 type APIListLogPapertrailRequest struct {
 	ctx        context.Context
 	APIService LoggingPapertrailAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -632,16 +632,16 @@ ListLogPapertrail List Papertrail log endpoints
 List all of the Papertrails for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogPapertrailRequest
 */
-func (a *LoggingPapertrailAPIService) ListLogPapertrail(ctx context.Context, serviceID string, versionID int32) APIListLogPapertrailRequest {
+func (a *LoggingPapertrailAPIService) ListLogPapertrail(ctx context.Context, serviceId string, versionId int32) APIListLogPapertrailRequest {
 	return APIListLogPapertrailRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -661,8 +661,8 @@ func (a *LoggingPapertrailAPIService) ListLogPapertrailExecute(r APIListLogPaper
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/papertrail"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -753,8 +753,8 @@ func (a *LoggingPapertrailAPIService) ListLogPapertrailExecute(r APIListLogPaper
 type APIUpdateLogPapertrailRequest struct {
 	ctx                   context.Context
 	APIService            LoggingPapertrailAPI
-	serviceID             string
-	versionID             int32
+	serviceId             string
+	versionId             int32
 	loggingPapertrailName string
 	name                  *string
 	placement             *string
@@ -825,17 +825,17 @@ UpdateLogPapertrail Update a Papertrail log endpoint
 Update the Papertrail for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingPapertrailName The name for the real-time logging configuration.
  @return APIUpdateLogPapertrailRequest
 */
-func (a *LoggingPapertrailAPIService) UpdateLogPapertrail(ctx context.Context, serviceID string, versionID int32, loggingPapertrailName string) APIUpdateLogPapertrailRequest {
+func (a *LoggingPapertrailAPIService) UpdateLogPapertrail(ctx context.Context, serviceId string, versionId int32, loggingPapertrailName string) APIUpdateLogPapertrailRequest {
 	return APIUpdateLogPapertrailRequest{
 		APIService:            a,
 		ctx:                   ctx,
-		serviceID:             serviceID,
-		versionID:             versionID,
+		serviceId:             serviceId,
+		versionId:             versionId,
 		loggingPapertrailName: loggingPapertrailName,
 	}
 }
@@ -856,8 +856,8 @@ func (a *LoggingPapertrailAPIService) UpdateLogPapertrailExecute(r APIUpdateLogP
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/papertrail/{logging_papertrail_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_papertrail_name"+"}", gourl.PathEscape(parameterToString(r.loggingPapertrailName, "")))
 
 	localVarHeaderParams := make(map[string]string)

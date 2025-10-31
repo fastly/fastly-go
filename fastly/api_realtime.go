@@ -36,10 +36,10 @@ type RealtimeAPI interface {
 		Get data for the 120 seconds preceding the latest timestamp available for a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetStatsLast120SecondsRequest
 	*/
-	GetStatsLast120Seconds(ctx context.Context, serviceID string) APIGetStatsLast120SecondsRequest
+	GetStatsLast120Seconds(ctx context.Context, serviceId string) APIGetStatsLast120SecondsRequest
 
 	// GetStatsLast120SecondsExecute executes the request
 	//  @return Realtime
@@ -51,11 +51,11 @@ type RealtimeAPI interface {
 		Get data for the 120 seconds preceding the latest timestamp available for a service, up to a maximum of `max_entries` entries.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @param maxEntries Maximum number of results to show.
 		 @return APIGetStatsLast120SecondsLimitEntriesRequest
 	*/
-	GetStatsLast120SecondsLimitEntries(ctx context.Context, serviceID string, maxEntries int32) APIGetStatsLast120SecondsLimitEntriesRequest
+	GetStatsLast120SecondsLimitEntries(ctx context.Context, serviceId string, maxEntries int32) APIGetStatsLast120SecondsLimitEntriesRequest
 
 	// GetStatsLast120SecondsLimitEntriesExecute executes the request
 	//  @return Realtime
@@ -67,11 +67,11 @@ type RealtimeAPI interface {
 		Get real-time data for the specified reporting period. Specify `0` to get a single entry for the last complete second. The `Timestamp` field included in the response provides the time index of the latest entry in the dataset and can be provided as the `start_timestamp` of the next request for a seamless continuation of the dataset from one request to the next.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @param timestampInSeconds Timestamp in seconds (Unix epoch time).
 		 @return APIGetStatsLastSecondRequest
 	*/
-	GetStatsLastSecond(ctx context.Context, serviceID string, timestampInSeconds int32) APIGetStatsLastSecondRequest
+	GetStatsLastSecond(ctx context.Context, serviceId string, timestampInSeconds int32) APIGetStatsLastSecondRequest
 
 	// GetStatsLastSecondExecute executes the request
 	//  @return Realtime
@@ -85,7 +85,7 @@ type RealtimeAPIService service
 type APIGetStatsLast120SecondsRequest struct {
 	ctx        context.Context
 	APIService RealtimeAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -99,14 +99,14 @@ GetStatsLast120Seconds Get real-time data for the last 120 seconds
 Get data for the 120 seconds preceding the latest timestamp available for a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetStatsLast120SecondsRequest
 */
-func (a *RealtimeAPIService) GetStatsLast120Seconds(ctx context.Context, serviceID string) APIGetStatsLast120SecondsRequest {
+func (a *RealtimeAPIService) GetStatsLast120Seconds(ctx context.Context, serviceId string) APIGetStatsLast120SecondsRequest {
 	return APIGetStatsLast120SecondsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -126,7 +126,7 @@ func (a *RealtimeAPIService) GetStatsLast120SecondsExecute(r APIGetStatsLast120S
 	}
 
 	localVarPath := localBasePath + "/v1/channel/{service_id}/ts/h"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -217,7 +217,7 @@ func (a *RealtimeAPIService) GetStatsLast120SecondsExecute(r APIGetStatsLast120S
 type APIGetStatsLast120SecondsLimitEntriesRequest struct {
 	ctx        context.Context
 	APIService RealtimeAPI
-	serviceID  string
+	serviceId  string
 	maxEntries int32
 }
 
@@ -232,15 +232,15 @@ GetStatsLast120SecondsLimitEntries Get a limited number of real-time data entrie
 Get data for the 120 seconds preceding the latest timestamp available for a service, up to a maximum of `max_entries` entries.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @param maxEntries Maximum number of results to show.
  @return APIGetStatsLast120SecondsLimitEntriesRequest
 */
-func (a *RealtimeAPIService) GetStatsLast120SecondsLimitEntries(ctx context.Context, serviceID string, maxEntries int32) APIGetStatsLast120SecondsLimitEntriesRequest {
+func (a *RealtimeAPIService) GetStatsLast120SecondsLimitEntries(ctx context.Context, serviceId string, maxEntries int32) APIGetStatsLast120SecondsLimitEntriesRequest {
 	return APIGetStatsLast120SecondsLimitEntriesRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 		maxEntries: maxEntries,
 	}
 }
@@ -261,7 +261,7 @@ func (a *RealtimeAPIService) GetStatsLast120SecondsLimitEntriesExecute(r APIGetS
 	}
 
 	localVarPath := localBasePath + "/v1/channel/{service_id}/ts/h/limit/{max_entries}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"max_entries"+"}", gourl.PathEscape(parameterToString(r.maxEntries, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -353,7 +353,7 @@ func (a *RealtimeAPIService) GetStatsLast120SecondsLimitEntriesExecute(r APIGetS
 type APIGetStatsLastSecondRequest struct {
 	ctx                context.Context
 	APIService         RealtimeAPI
-	serviceID          string
+	serviceId          string
 	timestampInSeconds int32
 }
 
@@ -368,15 +368,15 @@ GetStatsLastSecond Get real-time data from specified time
 Get real-time data for the specified reporting period. Specify `0` to get a single entry for the last complete second. The `Timestamp` field included in the response provides the time index of the latest entry in the dataset and can be provided as the `start_timestamp` of the next request for a seamless continuation of the dataset from one request to the next.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @param timestampInSeconds Timestamp in seconds (Unix epoch time).
  @return APIGetStatsLastSecondRequest
 */
-func (a *RealtimeAPIService) GetStatsLastSecond(ctx context.Context, serviceID string, timestampInSeconds int32) APIGetStatsLastSecondRequest {
+func (a *RealtimeAPIService) GetStatsLastSecond(ctx context.Context, serviceId string, timestampInSeconds int32) APIGetStatsLastSecondRequest {
 	return APIGetStatsLastSecondRequest{
 		APIService:         a,
 		ctx:                ctx,
-		serviceID:          serviceID,
+		serviceId:          serviceId,
 		timestampInSeconds: timestampInSeconds,
 	}
 }
@@ -397,7 +397,7 @@ func (a *RealtimeAPIService) GetStatsLastSecondExecute(r APIGetStatsLastSecondRe
 	}
 
 	localVarPath := localBasePath + "/v1/channel/{service_id}/ts/{timestamp_in_seconds}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"timestamp_in_seconds"+"}", gourl.PathEscape(parameterToString(r.timestampInSeconds, "")))
 
 	localVarHeaderParams := make(map[string]string)

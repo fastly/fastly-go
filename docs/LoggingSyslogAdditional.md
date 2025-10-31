@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Hostname** | Pointer to **string** | The hostname used for the syslog endpoint. | [optional] 
 **Ipv4** | Pointer to **NullableString** | The IPv4 address used for the syslog endpoint. | [optional] 
 **Token** | Pointer to **NullableString** | Whether to prepend each message with a specific token. | [optional] [default to "null"]
-**UseTLS** | Pointer to [**LoggingUseTLSString**](LoggingUseTLSString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
+**UseTls** | Pointer to [**LoggingUseTlsString**](LoggingUseTlsString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
 
 ## Methods
 
@@ -149,30 +149,32 @@ HasToken returns a boolean if a field has been set.
 `func (o *LoggingSyslogAdditional) UnsetToken()`
 
 UnsetToken ensures that no value is present for Token, not even an explicit nil
-### GetUseTLS
+### GetUseTls
 
-`func (o *LoggingSyslogAdditional) GetUseTLS() LoggingUseTLSString`
+`func (o *LoggingSyslogAdditional) GetUseTls() LoggingUseTlsString`
 
-GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
+GetUseTls returns the UseTls field if non-nil, zero value otherwise.
 
-### GetUseTLSOk
+### GetUseTlsOk
 
-`func (o *LoggingSyslogAdditional) GetUseTLSOk() (*LoggingUseTLSString, bool)`
+`func (o *LoggingSyslogAdditional) GetUseTlsOk() (*LoggingUseTlsString, bool)`
 
-GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
+GetUseTlsOk returns a tuple with the UseTls field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUseTLS
+### SetUseTls
 
-`func (o *LoggingSyslogAdditional) SetUseTLS(v LoggingUseTLSString)`
+`func (o *LoggingSyslogAdditional) SetUseTls(v LoggingUseTlsString)`
 
-SetUseTLS sets UseTLS field to given value.
+SetUseTls sets UseTls field to given value.
 
-### HasUseTLS
+### HasUseTls
 
-`func (o *LoggingSyslogAdditional) HasUseTLS() bool`
+`func (o *LoggingSyslogAdditional) HasUseTls() bool`
 
-HasUseTLS returns a boolean if a field has been set.
+HasUseTls returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

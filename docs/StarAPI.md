@@ -94,12 +94,12 @@ import (
 )
 
 func main() {
-    starID := "starId_example" // string | Alphanumeric string identifying a star.
+    starId := "starId_example" // string | Alphanumeric string identifying a star.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.StarAPI.DeleteServiceStar(ctx, starID).Execute()
+    resp, r, err := apiClient.StarAPI.DeleteServiceStar(ctx, starId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StarAPI.DeleteServiceStar`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -113,7 +113,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**starID** | **string** | Alphanumeric string identifying a star. | 
+**starId** | **string** | Alphanumeric string identifying a star. | 
 
 ### Other Parameters
 
@@ -159,12 +159,12 @@ import (
 )
 
 func main() {
-    starID := "starId_example" // string | Alphanumeric string identifying a star.
+    starId := "starId_example" // string | Alphanumeric string identifying a star.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.StarAPI.GetServiceStar(ctx, starID).Execute()
+    resp, r, err := apiClient.StarAPI.GetServiceStar(ctx, starId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StarAPI.GetServiceStar`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**starID** | **string** | Alphanumeric string identifying a star. | 
+**starId** | **string** | Alphanumeric string identifying a star. | 
 
 ### Other Parameters
 
@@ -264,3 +264,4 @@ Other parameters are passed through a pointer to a apiListServiceStarsRequest st
 - **Accept**: application/vnd.api+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

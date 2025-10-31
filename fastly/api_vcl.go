@@ -36,11 +36,11 @@ type VclAPI interface {
 		Upload a VCL for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateCustomVclRequest
 	*/
-	CreateCustomVcl(ctx context.Context, serviceID string, versionID int32) APICreateCustomVclRequest
+	CreateCustomVcl(ctx context.Context, serviceId string, versionId int32) APICreateCustomVclRequest
 
 	// CreateCustomVclExecute executes the request
 	//  @return VclResponse
@@ -52,12 +52,12 @@ type VclAPI interface {
 		Delete the uploaded VCL for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param vclName The name of this VCL.
 		 @return APIDeleteCustomVclRequest
 	*/
-	DeleteCustomVcl(ctx context.Context, serviceID string, versionID int32, vclName string) APIDeleteCustomVclRequest
+	DeleteCustomVcl(ctx context.Context, serviceId string, versionId int32, vclName string) APIDeleteCustomVclRequest
 
 	// DeleteCustomVclExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type VclAPI interface {
 		Get the uploaded VCL for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param vclName The name of this VCL.
 		 @return APIGetCustomVclRequest
 	*/
-	GetCustomVcl(ctx context.Context, serviceID string, versionID int32, vclName string) APIGetCustomVclRequest
+	GetCustomVcl(ctx context.Context, serviceId string, versionId int32, vclName string) APIGetCustomVclRequest
 
 	// GetCustomVclExecute executes the request
 	//  @return VclResponse
@@ -86,11 +86,11 @@ type VclAPI interface {
 		Return boilerplate VCL with the service's TTL from the [settings](https://www.fastly.com/documentation/reference/api/vcl-services/settings/).
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIGetCustomVclBoilerplateRequest
 	*/
-	GetCustomVclBoilerplate(ctx context.Context, serviceID string, versionID int32) APIGetCustomVclBoilerplateRequest
+	GetCustomVclBoilerplate(ctx context.Context, serviceId string, versionId int32) APIGetCustomVclBoilerplateRequest
 
 	// GetCustomVclBoilerplateExecute executes the request
 	//  @return string
@@ -102,11 +102,11 @@ type VclAPI interface {
 		Display the generated VCL for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIGetCustomVclGeneratedRequest
 	*/
-	GetCustomVclGenerated(ctx context.Context, serviceID string, versionID int32) APIGetCustomVclGeneratedRequest
+	GetCustomVclGenerated(ctx context.Context, serviceId string, versionId int32) APIGetCustomVclGeneratedRequest
 
 	// GetCustomVclGeneratedExecute executes the request
 	//  @return VclResponse
@@ -118,11 +118,11 @@ type VclAPI interface {
 		Display the content of generated VCL with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIGetCustomVclGeneratedHighlightedRequest
 	*/
-	GetCustomVclGeneratedHighlighted(ctx context.Context, serviceID string, versionID int32) APIGetCustomVclGeneratedHighlightedRequest
+	GetCustomVclGeneratedHighlighted(ctx context.Context, serviceId string, versionId int32) APIGetCustomVclGeneratedHighlightedRequest
 
 	// GetCustomVclGeneratedHighlightedExecute executes the request
 	//  @return VclSyntaxHighlightingResponse
@@ -134,12 +134,12 @@ type VclAPI interface {
 		Get the uploaded VCL for a particular service and version with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param vclName The name of this VCL.
 		 @return APIGetCustomVclHighlightedRequest
 	*/
-	GetCustomVclHighlighted(ctx context.Context, serviceID string, versionID int32, vclName string) APIGetCustomVclHighlightedRequest
+	GetCustomVclHighlighted(ctx context.Context, serviceId string, versionId int32, vclName string) APIGetCustomVclHighlightedRequest
 
 	// GetCustomVclHighlightedExecute executes the request
 	//  @return VclSyntaxHighlightingResponse
@@ -151,12 +151,12 @@ type VclAPI interface {
 		Download the specified VCL.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param vclName The name of this VCL.
 		 @return APIGetCustomVclRawRequest
 	*/
-	GetCustomVclRaw(ctx context.Context, serviceID string, versionID int32, vclName string) APIGetCustomVclRawRequest
+	GetCustomVclRaw(ctx context.Context, serviceId string, versionId int32, vclName string) APIGetCustomVclRawRequest
 
 	// GetCustomVclRawExecute executes the request
 	//  @return string
@@ -182,10 +182,10 @@ type VclAPI interface {
 		Services may have flags set by a Fastly employee or by the purchase of products as addons to the service, which modify the way VCL is interpreted by that service.  This endpoint validates the submitted VCL in the context of the specified service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APILintVclForServiceRequest
 	*/
-	LintVclForService(ctx context.Context, serviceID string) APILintVclForServiceRequest
+	LintVclForService(ctx context.Context, serviceId string) APILintVclForServiceRequest
 
 	// LintVclForServiceExecute executes the request
 	//  @return ValidatorResult
@@ -197,11 +197,11 @@ type VclAPI interface {
 		List the uploaded VCLs for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListCustomVclRequest
 	*/
-	ListCustomVcl(ctx context.Context, serviceID string, versionID int32) APIListCustomVclRequest
+	ListCustomVcl(ctx context.Context, serviceId string, versionId int32) APIListCustomVclRequest
 
 	// ListCustomVclExecute executes the request
 	//  @return []VclResponse
@@ -213,12 +213,12 @@ type VclAPI interface {
 		Set the specified VCL as the main.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param vclName The name of this VCL.
 		 @return APISetCustomVclMainRequest
 	*/
-	SetCustomVclMain(ctx context.Context, serviceID string, versionID int32, vclName string) APISetCustomVclMainRequest
+	SetCustomVclMain(ctx context.Context, serviceId string, versionId int32, vclName string) APISetCustomVclMainRequest
 
 	// SetCustomVclMainExecute executes the request
 	//  @return VclResponse
@@ -230,12 +230,12 @@ type VclAPI interface {
 		Update the uploaded VCL for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param vclName The name of this VCL.
 		 @return APIUpdateCustomVclRequest
 	*/
-	UpdateCustomVcl(ctx context.Context, serviceID string, versionID int32, vclName string) APIUpdateCustomVclRequest
+	UpdateCustomVcl(ctx context.Context, serviceId string, versionId int32, vclName string) APIUpdateCustomVclRequest
 
 	// UpdateCustomVclExecute executes the request
 	//  @return VclResponse
@@ -249,8 +249,8 @@ type VclAPIService service
 type APICreateCustomVclRequest struct {
 	ctx        context.Context
 	APIService VclAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	content    *string
 	main       *bool
 	name       *string
@@ -285,16 +285,16 @@ CreateCustomVcl Create a custom VCL file
 Upload a VCL for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateCustomVclRequest
 */
-func (a *VclAPIService) CreateCustomVcl(ctx context.Context, serviceID string, versionID int32) APICreateCustomVclRequest {
+func (a *VclAPIService) CreateCustomVcl(ctx context.Context, serviceId string, versionId int32) APICreateCustomVclRequest {
 	return APICreateCustomVclRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -314,8 +314,8 @@ func (a *VclAPIService) CreateCustomVclExecute(r APICreateCustomVclRequest) (*Vc
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/vcl"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -415,8 +415,8 @@ func (a *VclAPIService) CreateCustomVclExecute(r APICreateCustomVclRequest) (*Vc
 type APIDeleteCustomVclRequest struct {
 	ctx        context.Context
 	APIService VclAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	vclName    string
 }
 
@@ -431,17 +431,17 @@ DeleteCustomVcl Delete a custom VCL file
 Delete the uploaded VCL for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param vclName The name of this VCL.
  @return APIDeleteCustomVclRequest
 */
-func (a *VclAPIService) DeleteCustomVcl(ctx context.Context, serviceID string, versionID int32, vclName string) APIDeleteCustomVclRequest {
+func (a *VclAPIService) DeleteCustomVcl(ctx context.Context, serviceId string, versionId int32, vclName string) APIDeleteCustomVclRequest {
 	return APIDeleteCustomVclRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		vclName:    vclName,
 	}
 }
@@ -462,8 +462,8 @@ func (a *VclAPIService) DeleteCustomVclExecute(r APIDeleteCustomVclRequest) (*In
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/vcl/{vcl_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"vcl_name"+"}", gourl.PathEscape(parameterToString(r.vclName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -555,8 +555,8 @@ func (a *VclAPIService) DeleteCustomVclExecute(r APIDeleteCustomVclRequest) (*In
 type APIGetCustomVclRequest struct {
 	ctx        context.Context
 	APIService VclAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	vclName    string
 	noContent  *string
 }
@@ -578,17 +578,17 @@ GetCustomVcl Get a custom VCL file
 Get the uploaded VCL for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param vclName The name of this VCL.
  @return APIGetCustomVclRequest
 */
-func (a *VclAPIService) GetCustomVcl(ctx context.Context, serviceID string, versionID int32, vclName string) APIGetCustomVclRequest {
+func (a *VclAPIService) GetCustomVcl(ctx context.Context, serviceId string, versionId int32, vclName string) APIGetCustomVclRequest {
 	return APIGetCustomVclRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		vclName:    vclName,
 	}
 }
@@ -609,8 +609,8 @@ func (a *VclAPIService) GetCustomVclExecute(r APIGetCustomVclRequest) (*VclRespo
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/vcl/{vcl_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"vcl_name"+"}", gourl.PathEscape(parameterToString(r.vclName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -705,8 +705,8 @@ func (a *VclAPIService) GetCustomVclExecute(r APIGetCustomVclRequest) (*VclRespo
 type APIGetCustomVclBoilerplateRequest struct {
 	ctx        context.Context
 	APIService VclAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -720,16 +720,16 @@ GetCustomVclBoilerplate Get boilerplate VCL
 Return boilerplate VCL with the service's TTL from the [settings](https://www.fastly.com/documentation/reference/api/vcl-services/settings/).
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIGetCustomVclBoilerplateRequest
 */
-func (a *VclAPIService) GetCustomVclBoilerplate(ctx context.Context, serviceID string, versionID int32) APIGetCustomVclBoilerplateRequest {
+func (a *VclAPIService) GetCustomVclBoilerplate(ctx context.Context, serviceId string, versionId int32) APIGetCustomVclBoilerplateRequest {
 	return APIGetCustomVclBoilerplateRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -749,8 +749,8 @@ func (a *VclAPIService) GetCustomVclBoilerplateExecute(r APIGetCustomVclBoilerpl
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/boilerplate"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -841,8 +841,8 @@ func (a *VclAPIService) GetCustomVclBoilerplateExecute(r APIGetCustomVclBoilerpl
 type APIGetCustomVclGeneratedRequest struct {
 	ctx        context.Context
 	APIService VclAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -856,16 +856,16 @@ GetCustomVclGenerated Get the generated VCL for a service
 Display the generated VCL for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIGetCustomVclGeneratedRequest
 */
-func (a *VclAPIService) GetCustomVclGenerated(ctx context.Context, serviceID string, versionID int32) APIGetCustomVclGeneratedRequest {
+func (a *VclAPIService) GetCustomVclGenerated(ctx context.Context, serviceId string, versionId int32) APIGetCustomVclGeneratedRequest {
 	return APIGetCustomVclGeneratedRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -885,8 +885,8 @@ func (a *VclAPIService) GetCustomVclGeneratedExecute(r APIGetCustomVclGeneratedR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/generated_vcl"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -977,8 +977,8 @@ func (a *VclAPIService) GetCustomVclGeneratedExecute(r APIGetCustomVclGeneratedR
 type APIGetCustomVclGeneratedHighlightedRequest struct {
 	ctx        context.Context
 	APIService VclAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -992,16 +992,16 @@ GetCustomVclGeneratedHighlighted Get the generated VCL with syntax highlighting
 Display the content of generated VCL with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIGetCustomVclGeneratedHighlightedRequest
 */
-func (a *VclAPIService) GetCustomVclGeneratedHighlighted(ctx context.Context, serviceID string, versionID int32) APIGetCustomVclGeneratedHighlightedRequest {
+func (a *VclAPIService) GetCustomVclGeneratedHighlighted(ctx context.Context, serviceId string, versionId int32) APIGetCustomVclGeneratedHighlightedRequest {
 	return APIGetCustomVclGeneratedHighlightedRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -1021,8 +1021,8 @@ func (a *VclAPIService) GetCustomVclGeneratedHighlightedExecute(r APIGetCustomVc
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/generated_vcl/content"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1113,8 +1113,8 @@ func (a *VclAPIService) GetCustomVclGeneratedHighlightedExecute(r APIGetCustomVc
 type APIGetCustomVclHighlightedRequest struct {
 	ctx        context.Context
 	APIService VclAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	vclName    string
 }
 
@@ -1129,17 +1129,17 @@ GetCustomVclHighlighted Get a custom VCL file with syntax highlighting
 Get the uploaded VCL for a particular service and version with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param vclName The name of this VCL.
  @return APIGetCustomVclHighlightedRequest
 */
-func (a *VclAPIService) GetCustomVclHighlighted(ctx context.Context, serviceID string, versionID int32, vclName string) APIGetCustomVclHighlightedRequest {
+func (a *VclAPIService) GetCustomVclHighlighted(ctx context.Context, serviceId string, versionId int32, vclName string) APIGetCustomVclHighlightedRequest {
 	return APIGetCustomVclHighlightedRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		vclName:    vclName,
 	}
 }
@@ -1160,8 +1160,8 @@ func (a *VclAPIService) GetCustomVclHighlightedExecute(r APIGetCustomVclHighligh
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/vcl/{vcl_name}/content"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"vcl_name"+"}", gourl.PathEscape(parameterToString(r.vclName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -1253,8 +1253,8 @@ func (a *VclAPIService) GetCustomVclHighlightedExecute(r APIGetCustomVclHighligh
 type APIGetCustomVclRawRequest struct {
 	ctx        context.Context
 	APIService VclAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	vclName    string
 }
 
@@ -1269,17 +1269,17 @@ GetCustomVclRaw Download a custom VCL file
 Download the specified VCL.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param vclName The name of this VCL.
  @return APIGetCustomVclRawRequest
 */
-func (a *VclAPIService) GetCustomVclRaw(ctx context.Context, serviceID string, versionID int32, vclName string) APIGetCustomVclRawRequest {
+func (a *VclAPIService) GetCustomVclRaw(ctx context.Context, serviceId string, versionId int32, vclName string) APIGetCustomVclRawRequest {
 	return APIGetCustomVclRawRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		vclName:    vclName,
 	}
 }
@@ -1300,8 +1300,8 @@ func (a *VclAPIService) GetCustomVclRawExecute(r APIGetCustomVclRawRequest) (str
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/vcl/{vcl_name}/download"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"vcl_name"+"}", gourl.PathEscape(parameterToString(r.vclName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -1533,7 +1533,7 @@ func (a *VclAPIService) LintVclDefaultExecute(r APILintVclDefaultRequest) (*Vali
 type APILintVclForServiceRequest struct {
 	ctx          context.Context
 	APIService   VclAPI
-	serviceID    string
+	serviceId    string
 	inlineObject *InlineObject
 }
 
@@ -1554,14 +1554,14 @@ LintVclForService Lint (validate) VCL using flags set for the service.
 Services may have flags set by a Fastly employee or by the purchase of products as addons to the service, which modify the way VCL is interpreted by that service.  This endpoint validates the submitted VCL in the context of the specified service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APILintVclForServiceRequest
 */
-func (a *VclAPIService) LintVclForService(ctx context.Context, serviceID string) APILintVclForServiceRequest {
+func (a *VclAPIService) LintVclForService(ctx context.Context, serviceId string) APILintVclForServiceRequest {
 	return APILintVclForServiceRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -1581,7 +1581,7 @@ func (a *VclAPIService) LintVclForServiceExecute(r APILintVclForServiceRequest) 
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/lint"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1677,8 +1677,8 @@ func (a *VclAPIService) LintVclForServiceExecute(r APILintVclForServiceRequest) 
 type APIListCustomVclRequest struct {
 	ctx        context.Context
 	APIService VclAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -1692,16 +1692,16 @@ ListCustomVcl List custom VCL files
 List the uploaded VCLs for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListCustomVclRequest
 */
-func (a *VclAPIService) ListCustomVcl(ctx context.Context, serviceID string, versionID int32) APIListCustomVclRequest {
+func (a *VclAPIService) ListCustomVcl(ctx context.Context, serviceId string, versionId int32) APIListCustomVclRequest {
 	return APIListCustomVclRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -1721,8 +1721,8 @@ func (a *VclAPIService) ListCustomVclExecute(r APIListCustomVclRequest) ([]VclRe
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/vcl"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1813,8 +1813,8 @@ func (a *VclAPIService) ListCustomVclExecute(r APIListCustomVclRequest) ([]VclRe
 type APISetCustomVclMainRequest struct {
 	ctx        context.Context
 	APIService VclAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	vclName    string
 }
 
@@ -1829,17 +1829,17 @@ SetCustomVclMain Set a custom VCL file as main
 Set the specified VCL as the main.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param vclName The name of this VCL.
  @return APISetCustomVclMainRequest
 */
-func (a *VclAPIService) SetCustomVclMain(ctx context.Context, serviceID string, versionID int32, vclName string) APISetCustomVclMainRequest {
+func (a *VclAPIService) SetCustomVclMain(ctx context.Context, serviceId string, versionId int32, vclName string) APISetCustomVclMainRequest {
 	return APISetCustomVclMainRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		vclName:    vclName,
 	}
 }
@@ -1860,8 +1860,8 @@ func (a *VclAPIService) SetCustomVclMainExecute(r APISetCustomVclMainRequest) (*
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/vcl/{vcl_name}/main"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"vcl_name"+"}", gourl.PathEscape(parameterToString(r.vclName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -1953,8 +1953,8 @@ func (a *VclAPIService) SetCustomVclMainExecute(r APISetCustomVclMainRequest) (*
 type APIUpdateCustomVclRequest struct {
 	ctx        context.Context
 	APIService VclAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	vclName    string
 	content    *string
 	main       *bool
@@ -1990,17 +1990,17 @@ UpdateCustomVcl Update a custom VCL file
 Update the uploaded VCL for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param vclName The name of this VCL.
  @return APIUpdateCustomVclRequest
 */
-func (a *VclAPIService) UpdateCustomVcl(ctx context.Context, serviceID string, versionID int32, vclName string) APIUpdateCustomVclRequest {
+func (a *VclAPIService) UpdateCustomVcl(ctx context.Context, serviceId string, versionId int32, vclName string) APIUpdateCustomVclRequest {
 	return APIUpdateCustomVclRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		vclName:    vclName,
 	}
 }
@@ -2021,8 +2021,8 @@ func (a *VclAPIService) UpdateCustomVclExecute(r APIUpdateCustomVclRequest) (*Vc
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/vcl/{vcl_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"vcl_name"+"}", gourl.PathEscape(parameterToString(r.vclName, "")))
 
 	localVarHeaderParams := make(map[string]string)

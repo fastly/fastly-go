@@ -23,7 +23,7 @@ type ServiceCreate struct {
 	// The name of the service.
 	Name *string `json:"name,omitempty"`
 	// Alphanumeric string identifying the customer.
-	CustomerID *string `json:"customer_id,omitempty"`
+	CustomerId *string `json:"customer_id,omitempty"`
 	// The type of this service.
 	Type                 *string `json:"type,omitempty"`
 	AdditionalProperties map[string]any
@@ -123,36 +123,36 @@ func (o *ServiceCreate) SetName(v string) {
 	o.Name = &v
 }
 
-// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
-func (o *ServiceCreate) GetCustomerID() string {
-	if o == nil || o.CustomerID == nil {
+// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
+func (o *ServiceCreate) GetCustomerId() string {
+	if o == nil || o.CustomerId == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerID
+	return *o.CustomerId
 }
 
-// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
+// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceCreate) GetCustomerIDOk() (*string, bool) {
-	if o == nil || o.CustomerID == nil {
+func (o *ServiceCreate) GetCustomerIdOk() (*string, bool) {
+	if o == nil || o.CustomerId == nil {
 		return nil, false
 	}
-	return o.CustomerID, true
+	return o.CustomerId, true
 }
 
-// HasCustomerID returns a boolean if a field has been set.
-func (o *ServiceCreate) HasCustomerID() bool {
-	if o != nil && o.CustomerID != nil {
+// HasCustomerId returns a boolean if a field has been set.
+func (o *ServiceCreate) HasCustomerId() bool {
+	if o != nil && o.CustomerId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
-func (o *ServiceCreate) SetCustomerID(v string) {
-	o.CustomerID = &v
+// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
+func (o *ServiceCreate) SetCustomerId(v string) {
+	o.CustomerId = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
@@ -197,8 +197,8 @@ func (o ServiceCreate) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.CustomerID != nil {
-		toSerialize["customer_id"] = o.CustomerID
+	if o.CustomerId != nil {
+		toSerialize["customer_id"] = o.CustomerId
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type

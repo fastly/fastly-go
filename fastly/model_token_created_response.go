@@ -31,14 +31,14 @@ type TokenCreatedResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ID        *string      `json:"id,omitempty"`
-	UserID    *string      `json:"user_id,omitempty"`
+	Id        *string      `json:"id,omitempty"`
+	UserId    *string      `json:"user_id,omitempty"`
 	// Time-stamp (UTC) of when the token was last used.
 	LastUsedAt *string `json:"last_used_at,omitempty"`
 	// Time-stamp (UTC) of when the token will expire (optional).
 	ExpiresAt *string `json:"expires_at,omitempty"`
 	// IP Address of the client that last used the token.
-	IP *string `json:"ip,omitempty"`
+	Ip *string `json:"ip,omitempty"`
 	// User-Agent header of the client that last used the token.
 	UserAgent *string `json:"user_agent,omitempty"`
 	// The alphanumeric string for accessing the API (only available on token creation).
@@ -283,68 +283,68 @@ func (o *TokenCreatedResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *TokenCreatedResponse) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *TokenCreatedResponse) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TokenCreatedResponse) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *TokenCreatedResponse) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *TokenCreatedResponse) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *TokenCreatedResponse) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *TokenCreatedResponse) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *TokenCreatedResponse) SetId(v string) {
+	o.Id = &v
 }
 
-// GetUserID returns the UserID field value if set, zero value otherwise.
-func (o *TokenCreatedResponse) GetUserID() string {
-	if o == nil || o.UserID == nil {
+// GetUserId returns the UserId field value if set, zero value otherwise.
+func (o *TokenCreatedResponse) GetUserId() string {
+	if o == nil || o.UserId == nil {
 		var ret string
 		return ret
 	}
-	return *o.UserID
+	return *o.UserId
 }
 
-// GetUserIDOk returns a tuple with the UserID field value if set, nil otherwise
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TokenCreatedResponse) GetUserIDOk() (*string, bool) {
-	if o == nil || o.UserID == nil {
+func (o *TokenCreatedResponse) GetUserIdOk() (*string, bool) {
+	if o == nil || o.UserId == nil {
 		return nil, false
 	}
-	return o.UserID, true
+	return o.UserId, true
 }
 
-// HasUserID returns a boolean if a field has been set.
-func (o *TokenCreatedResponse) HasUserID() bool {
-	if o != nil && o.UserID != nil {
+// HasUserId returns a boolean if a field has been set.
+func (o *TokenCreatedResponse) HasUserId() bool {
+	if o != nil && o.UserId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUserID gets a reference to the given string and assigns it to the UserID field.
-func (o *TokenCreatedResponse) SetUserID(v string) {
-	o.UserID = &v
+// SetUserId gets a reference to the given string and assigns it to the UserId field.
+func (o *TokenCreatedResponse) SetUserId(v string) {
+	o.UserId = &v
 }
 
 // GetLastUsedAt returns the LastUsedAt field value if set, zero value otherwise.
@@ -411,36 +411,36 @@ func (o *TokenCreatedResponse) SetExpiresAt(v string) {
 	o.ExpiresAt = &v
 }
 
-// GetIP returns the IP field value if set, zero value otherwise.
-func (o *TokenCreatedResponse) GetIP() string {
-	if o == nil || o.IP == nil {
+// GetIp returns the Ip field value if set, zero value otherwise.
+func (o *TokenCreatedResponse) GetIp() string {
+	if o == nil || o.Ip == nil {
 		var ret string
 		return ret
 	}
-	return *o.IP
+	return *o.Ip
 }
 
-// GetIPOk returns a tuple with the IP field value if set, nil otherwise
+// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TokenCreatedResponse) GetIPOk() (*string, bool) {
-	if o == nil || o.IP == nil {
+func (o *TokenCreatedResponse) GetIpOk() (*string, bool) {
+	if o == nil || o.Ip == nil {
 		return nil, false
 	}
-	return o.IP, true
+	return o.Ip, true
 }
 
-// HasIP returns a boolean if a field has been set.
-func (o *TokenCreatedResponse) HasIP() bool {
-	if o != nil && o.IP != nil {
+// HasIp returns a boolean if a field has been set.
+func (o *TokenCreatedResponse) HasIp() bool {
+	if o != nil && o.Ip != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetIP gets a reference to the given string and assigns it to the IP field.
-func (o *TokenCreatedResponse) SetIP(v string) {
-	o.IP = &v
+// SetIp gets a reference to the given string and assigns it to the Ip field.
+func (o *TokenCreatedResponse) SetIp(v string) {
+	o.Ip = &v
 }
 
 // GetUserAgent returns the UserAgent field value if set, zero value otherwise.
@@ -529,11 +529,11 @@ func (o TokenCreatedResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
-	if o.UserID != nil {
-		toSerialize["user_id"] = o.UserID
+	if o.UserId != nil {
+		toSerialize["user_id"] = o.UserId
 	}
 	if o.LastUsedAt != nil {
 		toSerialize["last_used_at"] = o.LastUsedAt
@@ -541,8 +541,8 @@ func (o TokenCreatedResponse) MarshalJSON() ([]byte, error) {
 	if o.ExpiresAt != nil {
 		toSerialize["expires_at"] = o.ExpiresAt
 	}
-	if o.IP != nil {
-		toSerialize["ip"] = o.IP
+	if o.Ip != nil {
+		toSerialize["ip"] = o.Ip
 	}
 	if o.UserAgent != nil {
 		toSerialize["user_agent"] = o.UserAgent

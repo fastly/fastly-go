@@ -16,36 +16,36 @@ import (
 	"encoding/json"
 )
 
-// ComputeACLCreateAclsResponse struct for ComputeACLCreateAclsResponse
-type ComputeACLCreateAclsResponse struct {
+// ComputeAclCreateAclsResponse struct for ComputeAclCreateAclsResponse
+type ComputeAclCreateAclsResponse struct {
 	// Human readable name of store
 	Name *string `json:"name,omitempty"`
 	// An example identifier (UUID).
-	ID                   *string `json:"id,omitempty"`
+	Id                   *string `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _ComputeACLCreateAclsResponse ComputeACLCreateAclsResponse
+type _ComputeAclCreateAclsResponse ComputeAclCreateAclsResponse
 
-// NewComputeACLCreateAclsResponse instantiates a new ComputeACLCreateAclsResponse object
+// NewComputeAclCreateAclsResponse instantiates a new ComputeAclCreateAclsResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeACLCreateAclsResponse() *ComputeACLCreateAclsResponse {
-	this := ComputeACLCreateAclsResponse{}
+func NewComputeAclCreateAclsResponse() *ComputeAclCreateAclsResponse {
+	this := ComputeAclCreateAclsResponse{}
 	return &this
 }
 
-// NewComputeACLCreateAclsResponseWithDefaults instantiates a new ComputeACLCreateAclsResponse object
+// NewComputeAclCreateAclsResponseWithDefaults instantiates a new ComputeAclCreateAclsResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewComputeACLCreateAclsResponseWithDefaults() *ComputeACLCreateAclsResponse {
-	this := ComputeACLCreateAclsResponse{}
+func NewComputeAclCreateAclsResponseWithDefaults() *ComputeAclCreateAclsResponse {
+	this := ComputeAclCreateAclsResponse{}
 	return &this
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *ComputeACLCreateAclsResponse) GetName() string {
+func (o *ComputeAclCreateAclsResponse) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -55,7 +55,7 @@ func (o *ComputeACLCreateAclsResponse) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLCreateAclsResponse) GetNameOk() (*string, bool) {
+func (o *ComputeAclCreateAclsResponse) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *ComputeACLCreateAclsResponse) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *ComputeACLCreateAclsResponse) HasName() bool {
+func (o *ComputeAclCreateAclsResponse) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -72,51 +72,51 @@ func (o *ComputeACLCreateAclsResponse) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *ComputeACLCreateAclsResponse) SetName(v string) {
+func (o *ComputeAclCreateAclsResponse) SetName(v string) {
 	o.Name = &v
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *ComputeACLCreateAclsResponse) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *ComputeAclCreateAclsResponse) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLCreateAclsResponse) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *ComputeAclCreateAclsResponse) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *ComputeACLCreateAclsResponse) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *ComputeAclCreateAclsResponse) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *ComputeACLCreateAclsResponse) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *ComputeAclCreateAclsResponse) SetId(v string) {
+	o.Id = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ComputeACLCreateAclsResponse) MarshalJSON() ([]byte, error) {
+func (o ComputeAclCreateAclsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -128,11 +128,11 @@ func (o ComputeACLCreateAclsResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ComputeACLCreateAclsResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varComputeACLCreateAclsResponse := _ComputeACLCreateAclsResponse{}
+func (o *ComputeAclCreateAclsResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varComputeAclCreateAclsResponse := _ComputeAclCreateAclsResponse{}
 
-	if err = json.Unmarshal(bytes, &varComputeACLCreateAclsResponse); err == nil {
-		*o = ComputeACLCreateAclsResponse(varComputeACLCreateAclsResponse)
+	if err = json.Unmarshal(bytes, &varComputeAclCreateAclsResponse); err == nil {
+		*o = ComputeAclCreateAclsResponse(varComputeAclCreateAclsResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -146,48 +146,48 @@ func (o *ComputeACLCreateAclsResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableComputeACLCreateAclsResponse is a helper abstraction for handling nullable computeaclcreateaclsresponse types.
-type NullableComputeACLCreateAclsResponse struct {
-	value *ComputeACLCreateAclsResponse
+// NullableComputeAclCreateAclsResponse is a helper abstraction for handling nullable computeaclcreateaclsresponse types.
+type NullableComputeAclCreateAclsResponse struct {
+	value *ComputeAclCreateAclsResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableComputeACLCreateAclsResponse) Get() *ComputeACLCreateAclsResponse {
+func (v NullableComputeAclCreateAclsResponse) Get() *ComputeAclCreateAclsResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableComputeACLCreateAclsResponse) Set(val *ComputeACLCreateAclsResponse) {
+func (v *NullableComputeAclCreateAclsResponse) Set(val *ComputeAclCreateAclsResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableComputeACLCreateAclsResponse) IsSet() bool {
+func (v NullableComputeAclCreateAclsResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableComputeACLCreateAclsResponse) Unset() {
+func (v *NullableComputeAclCreateAclsResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableComputeACLCreateAclsResponse returns a pointer to a new instance of NullableComputeACLCreateAclsResponse.
-func NewNullableComputeACLCreateAclsResponse(val *ComputeACLCreateAclsResponse) *NullableComputeACLCreateAclsResponse {
-	return &NullableComputeACLCreateAclsResponse{value: val, isSet: true}
+// NewNullableComputeAclCreateAclsResponse returns a pointer to a new instance of NullableComputeAclCreateAclsResponse.
+func NewNullableComputeAclCreateAclsResponse(val *ComputeAclCreateAclsResponse) *NullableComputeAclCreateAclsResponse {
+	return &NullableComputeAclCreateAclsResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableComputeACLCreateAclsResponse) MarshalJSON() ([]byte, error) {
+func (v NullableComputeAclCreateAclsResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableComputeACLCreateAclsResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableComputeAclCreateAclsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

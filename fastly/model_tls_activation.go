@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// TLSActivation struct for TLSActivation
-type TLSActivation struct {
-	Data                 *TLSActivationData `json:"data,omitempty"`
+// TlsActivation struct for TlsActivation
+type TlsActivation struct {
+	Data                 *TlsActivationData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TLSActivation TLSActivation
+type _TlsActivation TlsActivation
 
-// NewTLSActivation instantiates a new TLSActivation object
+// NewTlsActivation instantiates a new TlsActivation object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSActivation() *TLSActivation {
-	this := TLSActivation{}
+func NewTlsActivation() *TlsActivation {
+	this := TlsActivation{}
 	return &this
 }
 
-// NewTLSActivationWithDefaults instantiates a new TLSActivation object
+// NewTlsActivationWithDefaults instantiates a new TlsActivation object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSActivationWithDefaults() *TLSActivation {
-	this := TLSActivation{}
+func NewTlsActivationWithDefaults() *TlsActivation {
+	this := TlsActivation{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *TLSActivation) GetData() TLSActivationData {
+func (o *TlsActivation) GetData() TlsActivationData {
 	if o == nil || o.Data == nil {
-		var ret TLSActivationData
+		var ret TlsActivationData
 		return ret
 	}
 	return *o.Data
@@ -52,7 +52,7 @@ func (o *TLSActivation) GetData() TLSActivationData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSActivation) GetDataOk() (*TLSActivationData, bool) {
+func (o *TlsActivation) GetDataOk() (*TlsActivationData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *TLSActivation) GetDataOk() (*TLSActivationData, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *TLSActivation) HasData() bool {
+func (o *TlsActivation) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -68,14 +68,14 @@ func (o *TLSActivation) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given TLSActivationData and assigns it to the Data field.
-func (o *TLSActivation) SetData(v TLSActivationData) {
+// SetData gets a reference to the given TlsActivationData and assigns it to the Data field.
+func (o *TlsActivation) SetData(v TlsActivationData) {
 	o.Data = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSActivation) MarshalJSON() ([]byte, error) {
+func (o TlsActivation) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -90,11 +90,11 @@ func (o TLSActivation) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSActivation) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSActivation := _TLSActivation{}
+func (o *TlsActivation) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsActivation := _TlsActivation{}
 
-	if err = json.Unmarshal(bytes, &varTLSActivation); err == nil {
-		*o = TLSActivation(varTLSActivation)
+	if err = json.Unmarshal(bytes, &varTlsActivation); err == nil {
+		*o = TlsActivation(varTlsActivation)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *TLSActivation) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTLSActivation is a helper abstraction for handling nullable tlsactivation types.
-type NullableTLSActivation struct {
-	value *TLSActivation
+// NullableTlsActivation is a helper abstraction for handling nullable tlsactivation types.
+type NullableTlsActivation struct {
+	value *TlsActivation
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSActivation) Get() *TLSActivation {
+func (v NullableTlsActivation) Get() *TlsActivation {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSActivation) Set(val *TLSActivation) {
+func (v *NullableTlsActivation) Set(val *TlsActivation) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSActivation) IsSet() bool {
+func (v NullableTlsActivation) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSActivation) Unset() {
+func (v *NullableTlsActivation) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSActivation returns a pointer to a new instance of NullableTLSActivation.
-func NewNullableTLSActivation(val *TLSActivation) *NullableTLSActivation {
-	return &NullableTLSActivation{value: val, isSet: true}
+// NewNullableTlsActivation returns a pointer to a new instance of NullableTlsActivation.
+func NewNullableTlsActivation(val *TlsActivation) *NullableTlsActivation {
+	return &NullableTlsActivation{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSActivation) MarshalJSON() ([]byte, error) {
+func (v NullableTlsActivation) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSActivation) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsActivation) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

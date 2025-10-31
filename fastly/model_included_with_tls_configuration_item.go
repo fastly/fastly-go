@@ -16,74 +16,74 @@ import (
 	"encoding/json"
 )
 
-// IncludedWithTLSConfigurationItem struct for IncludedWithTLSConfigurationItem
-type IncludedWithTLSConfigurationItem struct {
+// IncludedWithTlsConfigurationItem struct for IncludedWithTlsConfigurationItem
+type IncludedWithTlsConfigurationItem struct {
 	// The IP address or hostname of the DNS record.
-	ID                   *string           `json:"id,omitempty"`
-	Type                 *TypeTLSDNSRecord `json:"type,omitempty"`
-	Attributes           *TLSDNSRecord     `json:"attributes,omitempty"`
+	Id                   *string           `json:"id,omitempty"`
+	Type                 *TypeTlsDnsRecord `json:"type,omitempty"`
+	Attributes           *TlsDnsRecord     `json:"attributes,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _IncludedWithTLSConfigurationItem IncludedWithTLSConfigurationItem
+type _IncludedWithTlsConfigurationItem IncludedWithTlsConfigurationItem
 
-// NewIncludedWithTLSConfigurationItem instantiates a new IncludedWithTLSConfigurationItem object
+// NewIncludedWithTlsConfigurationItem instantiates a new IncludedWithTlsConfigurationItem object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewIncludedWithTLSConfigurationItem() *IncludedWithTLSConfigurationItem {
-	this := IncludedWithTLSConfigurationItem{}
-	var resourceType TypeTLSDNSRecord = TYPETLSDNSRECORD_DNS_RECORD
-	this.Type = &resourceType
+func NewIncludedWithTlsConfigurationItem() *IncludedWithTlsConfigurationItem {
+	this := IncludedWithTlsConfigurationItem{}
+	var type_ TypeTlsDnsRecord = TYPETLSDNSRECORD_DNS_RECORD
+	this.Type = &type_
 	return &this
 }
 
-// NewIncludedWithTLSConfigurationItemWithDefaults instantiates a new IncludedWithTLSConfigurationItem object
+// NewIncludedWithTlsConfigurationItemWithDefaults instantiates a new IncludedWithTlsConfigurationItem object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewIncludedWithTLSConfigurationItemWithDefaults() *IncludedWithTLSConfigurationItem {
-	this := IncludedWithTLSConfigurationItem{}
-	var resourceType TypeTLSDNSRecord = TYPETLSDNSRECORD_DNS_RECORD
-	this.Type = &resourceType
+func NewIncludedWithTlsConfigurationItemWithDefaults() *IncludedWithTlsConfigurationItem {
+	this := IncludedWithTlsConfigurationItem{}
+	var type_ TypeTlsDnsRecord = TYPETLSDNSRECORD_DNS_RECORD
+	this.Type = &type_
 	return &this
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *IncludedWithTLSConfigurationItem) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *IncludedWithTlsConfigurationItem) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IncludedWithTLSConfigurationItem) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *IncludedWithTlsConfigurationItem) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *IncludedWithTLSConfigurationItem) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *IncludedWithTlsConfigurationItem) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *IncludedWithTLSConfigurationItem) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *IncludedWithTlsConfigurationItem) SetId(v string) {
+	o.Id = &v
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *IncludedWithTLSConfigurationItem) GetType() TypeTLSDNSRecord {
+func (o *IncludedWithTlsConfigurationItem) GetType() TypeTlsDnsRecord {
 	if o == nil || o.Type == nil {
-		var ret TypeTLSDNSRecord
+		var ret TypeTlsDnsRecord
 		return ret
 	}
 	return *o.Type
@@ -91,7 +91,7 @@ func (o *IncludedWithTLSConfigurationItem) GetType() TypeTLSDNSRecord {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IncludedWithTLSConfigurationItem) GetTypeOk() (*TypeTLSDNSRecord, bool) {
+func (o *IncludedWithTlsConfigurationItem) GetTypeOk() (*TypeTlsDnsRecord, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -99,7 +99,7 @@ func (o *IncludedWithTLSConfigurationItem) GetTypeOk() (*TypeTLSDNSRecord, bool)
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *IncludedWithTLSConfigurationItem) HasType() bool {
+func (o *IncludedWithTlsConfigurationItem) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -107,15 +107,15 @@ func (o *IncludedWithTLSConfigurationItem) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given TypeTLSDNSRecord and assigns it to the Type field.
-func (o *IncludedWithTLSConfigurationItem) SetType(v TypeTLSDNSRecord) {
+// SetType gets a reference to the given TypeTlsDnsRecord and assigns it to the Type field.
+func (o *IncludedWithTlsConfigurationItem) SetType(v TypeTlsDnsRecord) {
 	o.Type = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *IncludedWithTLSConfigurationItem) GetAttributes() TLSDNSRecord {
+func (o *IncludedWithTlsConfigurationItem) GetAttributes() TlsDnsRecord {
 	if o == nil || o.Attributes == nil {
-		var ret TLSDNSRecord
+		var ret TlsDnsRecord
 		return ret
 	}
 	return *o.Attributes
@@ -123,7 +123,7 @@ func (o *IncludedWithTLSConfigurationItem) GetAttributes() TLSDNSRecord {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *IncludedWithTLSConfigurationItem) GetAttributesOk() (*TLSDNSRecord, bool) {
+func (o *IncludedWithTlsConfigurationItem) GetAttributesOk() (*TlsDnsRecord, bool) {
 	if o == nil || o.Attributes == nil {
 		return nil, false
 	}
@@ -131,7 +131,7 @@ func (o *IncludedWithTLSConfigurationItem) GetAttributesOk() (*TLSDNSRecord, boo
 }
 
 // HasAttributes returns a boolean if a field has been set.
-func (o *IncludedWithTLSConfigurationItem) HasAttributes() bool {
+func (o *IncludedWithTlsConfigurationItem) HasAttributes() bool {
 	if o != nil && o.Attributes != nil {
 		return true
 	}
@@ -139,17 +139,17 @@ func (o *IncludedWithTLSConfigurationItem) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given TLSDNSRecord and assigns it to the Attributes field.
-func (o *IncludedWithTLSConfigurationItem) SetAttributes(v TLSDNSRecord) {
+// SetAttributes gets a reference to the given TlsDnsRecord and assigns it to the Attributes field.
+func (o *IncludedWithTlsConfigurationItem) SetAttributes(v TlsDnsRecord) {
 	o.Attributes = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o IncludedWithTLSConfigurationItem) MarshalJSON() ([]byte, error) {
+func (o IncludedWithTlsConfigurationItem) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -167,11 +167,11 @@ func (o IncludedWithTLSConfigurationItem) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *IncludedWithTLSConfigurationItem) UnmarshalJSON(bytes []byte) (err error) {
-	varIncludedWithTLSConfigurationItem := _IncludedWithTLSConfigurationItem{}
+func (o *IncludedWithTlsConfigurationItem) UnmarshalJSON(bytes []byte) (err error) {
+	varIncludedWithTlsConfigurationItem := _IncludedWithTlsConfigurationItem{}
 
-	if err = json.Unmarshal(bytes, &varIncludedWithTLSConfigurationItem); err == nil {
-		*o = IncludedWithTLSConfigurationItem(varIncludedWithTLSConfigurationItem)
+	if err = json.Unmarshal(bytes, &varIncludedWithTlsConfigurationItem); err == nil {
+		*o = IncludedWithTlsConfigurationItem(varIncludedWithTlsConfigurationItem)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -186,48 +186,48 @@ func (o *IncludedWithTLSConfigurationItem) UnmarshalJSON(bytes []byte) (err erro
 	return err
 }
 
-// NullableIncludedWithTLSConfigurationItem is a helper abstraction for handling nullable includedwithtlsconfigurationitem types.
-type NullableIncludedWithTLSConfigurationItem struct {
-	value *IncludedWithTLSConfigurationItem
+// NullableIncludedWithTlsConfigurationItem is a helper abstraction for handling nullable includedwithtlsconfigurationitem types.
+type NullableIncludedWithTlsConfigurationItem struct {
+	value *IncludedWithTlsConfigurationItem
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableIncludedWithTLSConfigurationItem) Get() *IncludedWithTLSConfigurationItem {
+func (v NullableIncludedWithTlsConfigurationItem) Get() *IncludedWithTlsConfigurationItem {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableIncludedWithTLSConfigurationItem) Set(val *IncludedWithTLSConfigurationItem) {
+func (v *NullableIncludedWithTlsConfigurationItem) Set(val *IncludedWithTlsConfigurationItem) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableIncludedWithTLSConfigurationItem) IsSet() bool {
+func (v NullableIncludedWithTlsConfigurationItem) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableIncludedWithTLSConfigurationItem) Unset() {
+func (v *NullableIncludedWithTlsConfigurationItem) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableIncludedWithTLSConfigurationItem returns a pointer to a new instance of NullableIncludedWithTLSConfigurationItem.
-func NewNullableIncludedWithTLSConfigurationItem(val *IncludedWithTLSConfigurationItem) *NullableIncludedWithTLSConfigurationItem {
-	return &NullableIncludedWithTLSConfigurationItem{value: val, isSet: true}
+// NewNullableIncludedWithTlsConfigurationItem returns a pointer to a new instance of NullableIncludedWithTlsConfigurationItem.
+func NewNullableIncludedWithTlsConfigurationItem(val *IncludedWithTlsConfigurationItem) *NullableIncludedWithTlsConfigurationItem {
+	return &NullableIncludedWithTlsConfigurationItem{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableIncludedWithTLSConfigurationItem) MarshalJSON() ([]byte, error) {
+func (v NullableIncludedWithTlsConfigurationItem) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableIncludedWithTLSConfigurationItem) UnmarshalJSON(src []byte) error {
+func (v *NullableIncludedWithTlsConfigurationItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -34,14 +34,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    dictionaryID := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    dictionaryId := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
     bulkUpdateDictionaryListRequest := *openapiclient.NewBulkUpdateDictionaryListRequest() // BulkUpdateDictionaryListRequest |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DictionaryItemAPI.BulkUpdateDictionaryItem(ctx, serviceID, dictionaryID).BulkUpdateDictionaryListRequest(bulkUpdateDictionaryListRequest).Execute()
+    resp, r, err := apiClient.DictionaryItemAPI.BulkUpdateDictionaryItem(ctx, serviceId, dictionaryId).BulkUpdateDictionaryListRequest(bulkUpdateDictionaryListRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DictionaryItemAPI.BulkUpdateDictionaryItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -57,8 +57,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**dictionaryID** | **string** | Alphanumeric string identifying a Dictionary. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**dictionaryId** | **string** | Alphanumeric string identifying a Dictionary. | 
 
 ### Other Parameters
 
@@ -104,15 +104,15 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    dictionaryID := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    dictionaryId := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
     itemKey := "itemKey_example" // string | Item key, maximum 256 characters. (optional)
     itemValue := "itemValue_example" // string | Item value, maximum 8000 characters. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DictionaryItemAPI.CreateDictionaryItem(ctx, serviceID, dictionaryID).ItemKey(itemKey).ItemValue(itemValue).Execute()
+    resp, r, err := apiClient.DictionaryItemAPI.CreateDictionaryItem(ctx, serviceId, dictionaryId).ItemKey(itemKey).ItemValue(itemValue).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DictionaryItemAPI.CreateDictionaryItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -128,8 +128,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**dictionaryID** | **string** | Alphanumeric string identifying a Dictionary. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**dictionaryId** | **string** | Alphanumeric string identifying a Dictionary. | 
 
 ### Other Parameters
 
@@ -175,14 +175,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    dictionaryID := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    dictionaryId := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
     dictionaryItemKey := "dictionaryItemKey_example" // string | Item key, maximum 256 characters.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DictionaryItemAPI.DeleteDictionaryItem(ctx, serviceID, dictionaryID, dictionaryItemKey).Execute()
+    resp, r, err := apiClient.DictionaryItemAPI.DeleteDictionaryItem(ctx, serviceId, dictionaryId, dictionaryItemKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DictionaryItemAPI.DeleteDictionaryItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -198,8 +198,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**dictionaryID** | **string** | Alphanumeric string identifying a Dictionary. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**dictionaryId** | **string** | Alphanumeric string identifying a Dictionary. | 
 **dictionaryItemKey** | **string** | Item key, maximum 256 characters. | 
 
 ### Other Parameters
@@ -246,14 +246,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    dictionaryID := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    dictionaryId := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
     dictionaryItemKey := "dictionaryItemKey_example" // string | Item key, maximum 256 characters.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DictionaryItemAPI.GetDictionaryItem(ctx, serviceID, dictionaryID, dictionaryItemKey).Execute()
+    resp, r, err := apiClient.DictionaryItemAPI.GetDictionaryItem(ctx, serviceId, dictionaryId, dictionaryItemKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DictionaryItemAPI.GetDictionaryItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -269,8 +269,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**dictionaryID** | **string** | Alphanumeric string identifying a Dictionary. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**dictionaryId** | **string** | Alphanumeric string identifying a Dictionary. | 
 **dictionaryItemKey** | **string** | Item key, maximum 256 characters. | 
 
 ### Other Parameters
@@ -317,8 +317,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    dictionaryID := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    dictionaryId := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
     page := int32(1) // int32 | Current page. (optional)
     perPage := int32(20) // int32 | Number of records per page. (optional) (default to 100)
     sort := "created" // string | Field on which to sort. (optional) (default to "created")
@@ -327,7 +327,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DictionaryItemAPI.ListDictionaryItems(ctx, serviceID, dictionaryID).Page(page).PerPage(perPage).Sort(sort).Direction(direction).Execute()
+    resp, r, err := apiClient.DictionaryItemAPI.ListDictionaryItems(ctx, serviceId, dictionaryId).Page(page).PerPage(perPage).Sort(sort).Direction(direction).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DictionaryItemAPI.ListDictionaryItems`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -343,8 +343,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**dictionaryID** | **string** | Alphanumeric string identifying a Dictionary. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**dictionaryId** | **string** | Alphanumeric string identifying a Dictionary. | 
 
 ### Other Parameters
 
@@ -390,8 +390,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    dictionaryID := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    dictionaryId := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
     dictionaryItemKey := "dictionaryItemKey_example" // string | Item key, maximum 256 characters.
     itemKey := "itemKey_example" // string | Item key, maximum 256 characters. (optional)
     itemValue := "itemValue_example" // string | Item value, maximum 8000 characters. (optional)
@@ -399,7 +399,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DictionaryItemAPI.UpdateDictionaryItem(ctx, serviceID, dictionaryID, dictionaryItemKey).ItemKey(itemKey).ItemValue(itemValue).Execute()
+    resp, r, err := apiClient.DictionaryItemAPI.UpdateDictionaryItem(ctx, serviceId, dictionaryId, dictionaryItemKey).ItemKey(itemKey).ItemValue(itemValue).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DictionaryItemAPI.UpdateDictionaryItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -415,8 +415,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**dictionaryID** | **string** | Alphanumeric string identifying a Dictionary. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**dictionaryId** | **string** | Alphanumeric string identifying a Dictionary. | 
 **dictionaryItemKey** | **string** | Item key, maximum 256 characters. | 
 
 ### Other Parameters
@@ -463,8 +463,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    dictionaryID := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    dictionaryId := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
     dictionaryItemKey := "dictionaryItemKey_example" // string | Item key, maximum 256 characters.
     itemKey := "itemKey_example" // string | Item key, maximum 256 characters. (optional)
     itemValue := "itemValue_example" // string | Item value, maximum 8000 characters. (optional)
@@ -472,7 +472,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DictionaryItemAPI.UpsertDictionaryItem(ctx, serviceID, dictionaryID, dictionaryItemKey).ItemKey(itemKey).ItemValue(itemValue).Execute()
+    resp, r, err := apiClient.DictionaryItemAPI.UpsertDictionaryItem(ctx, serviceId, dictionaryId, dictionaryItemKey).ItemKey(itemKey).ItemValue(itemValue).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DictionaryItemAPI.UpsertDictionaryItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -488,8 +488,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**dictionaryID** | **string** | Alphanumeric string identifying a Dictionary. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**dictionaryId** | **string** | Alphanumeric string identifying a Dictionary. | 
 **dictionaryItemKey** | **string** | Item key, maximum 256 characters. | 
 
 ### Other Parameters
@@ -515,3 +515,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

@@ -36,11 +36,11 @@ type LoggingSyslogAPI interface {
 		Create a Syslog for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogSyslogRequest
 	*/
-	CreateLogSyslog(ctx context.Context, serviceID string, versionID int32) APICreateLogSyslogRequest
+	CreateLogSyslog(ctx context.Context, serviceId string, versionId int32) APICreateLogSyslogRequest
 
 	// CreateLogSyslogExecute executes the request
 	//  @return LoggingSyslogResponse
@@ -52,12 +52,12 @@ type LoggingSyslogAPI interface {
 		Delete the Syslog for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingSyslogName The name for the real-time logging configuration.
 		 @return APIDeleteLogSyslogRequest
 	*/
-	DeleteLogSyslog(ctx context.Context, serviceID string, versionID int32, loggingSyslogName string) APIDeleteLogSyslogRequest
+	DeleteLogSyslog(ctx context.Context, serviceId string, versionId int32, loggingSyslogName string) APIDeleteLogSyslogRequest
 
 	// DeleteLogSyslogExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingSyslogAPI interface {
 		Get the Syslog for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingSyslogName The name for the real-time logging configuration.
 		 @return APIGetLogSyslogRequest
 	*/
-	GetLogSyslog(ctx context.Context, serviceID string, versionID int32, loggingSyslogName string) APIGetLogSyslogRequest
+	GetLogSyslog(ctx context.Context, serviceId string, versionId int32, loggingSyslogName string) APIGetLogSyslogRequest
 
 	// GetLogSyslogExecute executes the request
 	//  @return LoggingSyslogResponse
@@ -86,11 +86,11 @@ type LoggingSyslogAPI interface {
 		List all of the Syslogs for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogSyslogRequest
 	*/
-	ListLogSyslog(ctx context.Context, serviceID string, versionID int32) APIListLogSyslogRequest
+	ListLogSyslog(ctx context.Context, serviceId string, versionId int32) APIListLogSyslogRequest
 
 	// ListLogSyslogExecute executes the request
 	//  @return []LoggingSyslogResponse
@@ -102,12 +102,12 @@ type LoggingSyslogAPI interface {
 		Update the Syslog for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingSyslogName The name for the real-time logging configuration.
 		 @return APIUpdateLogSyslogRequest
 	*/
-	UpdateLogSyslog(ctx context.Context, serviceID string, versionID int32, loggingSyslogName string) APIUpdateLogSyslogRequest
+	UpdateLogSyslog(ctx context.Context, serviceId string, versionId int32, loggingSyslogName string) APIUpdateLogSyslogRequest
 
 	// UpdateLogSyslogExecute executes the request
 	//  @return LoggingSyslogResponse
@@ -121,8 +121,8 @@ type LoggingSyslogAPIService service
 type APICreateLogSyslogRequest struct {
 	ctx                 context.Context
 	APIService          LoggingSyslogAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -139,7 +139,7 @@ type APICreateLogSyslogRequest struct {
 	hostname            *string
 	ipv4                *string
 	token               *string
-	useTLS              *LoggingUseTLSString
+	useTls              *LoggingUseTlsString
 }
 
 // Name The name for the real-time logging configuration.
@@ -178,26 +178,26 @@ func (r *APICreateLogSyslogRequest) FormatVersion(formatVersion int32) *APICreat
 	return r
 }
 
-// TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
-func (r *APICreateLogSyslogRequest) TLSCaCert(tlsCaCert string) *APICreateLogSyslogRequest {
+// TlsCaCert A secure certificate to authenticate a server with. Must be in PEM format.
+func (r *APICreateLogSyslogRequest) TlsCaCert(tlsCaCert string) *APICreateLogSyslogRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
 
-// TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
-func (r *APICreateLogSyslogRequest) TLSClientCert(tlsClientCert string) *APICreateLogSyslogRequest {
+// TlsClientCert The client certificate used to make authenticated requests. Must be in PEM format.
+func (r *APICreateLogSyslogRequest) TlsClientCert(tlsClientCert string) *APICreateLogSyslogRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
 
-// TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
-func (r *APICreateLogSyslogRequest) TLSClientKey(tlsClientKey string) *APICreateLogSyslogRequest {
+// TlsClientKey The client private key used to make authenticated requests. Must be in PEM format.
+func (r *APICreateLogSyslogRequest) TlsClientKey(tlsClientKey string) *APICreateLogSyslogRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
 
-// TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-func (r *APICreateLogSyslogRequest) TLSHostname(tlsHostname string) *APICreateLogSyslogRequest {
+// TlsHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+func (r *APICreateLogSyslogRequest) TlsHostname(tlsHostname string) *APICreateLogSyslogRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
@@ -238,9 +238,9 @@ func (r *APICreateLogSyslogRequest) Token(token string) *APICreateLogSyslogReque
 	return r
 }
 
-// UseTLS returns a pointer to a request.
-func (r *APICreateLogSyslogRequest) UseTLS(useTLS LoggingUseTLSString) *APICreateLogSyslogRequest {
-	r.useTLS = &useTLS
+// UseTls returns a pointer to a request.
+func (r *APICreateLogSyslogRequest) UseTls(useTls LoggingUseTlsString) *APICreateLogSyslogRequest {
+	r.useTls = &useTls
 	return r
 }
 
@@ -255,16 +255,16 @@ CreateLogSyslog Create a syslog log endpoint
 Create a Syslog for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogSyslogRequest
 */
-func (a *LoggingSyslogAPIService) CreateLogSyslog(ctx context.Context, serviceID string, versionID int32) APICreateLogSyslogRequest {
+func (a *LoggingSyslogAPIService) CreateLogSyslog(ctx context.Context, serviceId string, versionId int32) APICreateLogSyslogRequest {
 	return APICreateLogSyslogRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -284,8 +284,8 @@ func (a *LoggingSyslogAPIService) CreateLogSyslogExecute(r APICreateLogSyslogReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/syslog"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -356,8 +356,8 @@ func (a *LoggingSyslogAPIService) CreateLogSyslogExecute(r APICreateLogSyslogReq
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))
 	}
-	if r.useTLS != nil {
-		localVarFormParams.Add("use_tls", parameterToString(*r.useTLS, ""))
+	if r.useTls != nil {
+		localVarFormParams.Add("use_tls", parameterToString(*r.useTls, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -427,8 +427,8 @@ func (a *LoggingSyslogAPIService) CreateLogSyslogExecute(r APICreateLogSyslogReq
 type APIDeleteLogSyslogRequest struct {
 	ctx               context.Context
 	APIService        LoggingSyslogAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	loggingSyslogName string
 }
 
@@ -443,17 +443,17 @@ DeleteLogSyslog Delete a syslog log endpoint
 Delete the Syslog for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingSyslogName The name for the real-time logging configuration.
  @return APIDeleteLogSyslogRequest
 */
-func (a *LoggingSyslogAPIService) DeleteLogSyslog(ctx context.Context, serviceID string, versionID int32, loggingSyslogName string) APIDeleteLogSyslogRequest {
+func (a *LoggingSyslogAPIService) DeleteLogSyslog(ctx context.Context, serviceId string, versionId int32, loggingSyslogName string) APIDeleteLogSyslogRequest {
 	return APIDeleteLogSyslogRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingSyslogName: loggingSyslogName,
 	}
 }
@@ -474,8 +474,8 @@ func (a *LoggingSyslogAPIService) DeleteLogSyslogExecute(r APIDeleteLogSyslogReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/syslog/{logging_syslog_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_syslog_name"+"}", gourl.PathEscape(parameterToString(r.loggingSyslogName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -567,8 +567,8 @@ func (a *LoggingSyslogAPIService) DeleteLogSyslogExecute(r APIDeleteLogSyslogReq
 type APIGetLogSyslogRequest struct {
 	ctx               context.Context
 	APIService        LoggingSyslogAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	loggingSyslogName string
 }
 
@@ -583,17 +583,17 @@ GetLogSyslog Get a syslog log endpoint
 Get the Syslog for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingSyslogName The name for the real-time logging configuration.
  @return APIGetLogSyslogRequest
 */
-func (a *LoggingSyslogAPIService) GetLogSyslog(ctx context.Context, serviceID string, versionID int32, loggingSyslogName string) APIGetLogSyslogRequest {
+func (a *LoggingSyslogAPIService) GetLogSyslog(ctx context.Context, serviceId string, versionId int32, loggingSyslogName string) APIGetLogSyslogRequest {
 	return APIGetLogSyslogRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingSyslogName: loggingSyslogName,
 	}
 }
@@ -614,8 +614,8 @@ func (a *LoggingSyslogAPIService) GetLogSyslogExecute(r APIGetLogSyslogRequest) 
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/syslog/{logging_syslog_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_syslog_name"+"}", gourl.PathEscape(parameterToString(r.loggingSyslogName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -707,8 +707,8 @@ func (a *LoggingSyslogAPIService) GetLogSyslogExecute(r APIGetLogSyslogRequest) 
 type APIListLogSyslogRequest struct {
 	ctx        context.Context
 	APIService LoggingSyslogAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -722,16 +722,16 @@ ListLogSyslog List Syslog log endpoints
 List all of the Syslogs for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogSyslogRequest
 */
-func (a *LoggingSyslogAPIService) ListLogSyslog(ctx context.Context, serviceID string, versionID int32) APIListLogSyslogRequest {
+func (a *LoggingSyslogAPIService) ListLogSyslog(ctx context.Context, serviceId string, versionId int32) APIListLogSyslogRequest {
 	return APIListLogSyslogRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -751,8 +751,8 @@ func (a *LoggingSyslogAPIService) ListLogSyslogExecute(r APIListLogSyslogRequest
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/syslog"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -843,8 +843,8 @@ func (a *LoggingSyslogAPIService) ListLogSyslogExecute(r APIListLogSyslogRequest
 type APIUpdateLogSyslogRequest struct {
 	ctx                 context.Context
 	APIService          LoggingSyslogAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingSyslogName   string
 	name                *string
 	placement           *string
@@ -862,7 +862,7 @@ type APIUpdateLogSyslogRequest struct {
 	hostname            *string
 	ipv4                *string
 	token               *string
-	useTLS              *LoggingUseTLSString
+	useTls              *LoggingUseTlsString
 }
 
 // Name The name for the real-time logging configuration.
@@ -901,26 +901,26 @@ func (r *APIUpdateLogSyslogRequest) FormatVersion(formatVersion int32) *APIUpdat
 	return r
 }
 
-// TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
-func (r *APIUpdateLogSyslogRequest) TLSCaCert(tlsCaCert string) *APIUpdateLogSyslogRequest {
+// TlsCaCert A secure certificate to authenticate a server with. Must be in PEM format.
+func (r *APIUpdateLogSyslogRequest) TlsCaCert(tlsCaCert string) *APIUpdateLogSyslogRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
 
-// TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
-func (r *APIUpdateLogSyslogRequest) TLSClientCert(tlsClientCert string) *APIUpdateLogSyslogRequest {
+// TlsClientCert The client certificate used to make authenticated requests. Must be in PEM format.
+func (r *APIUpdateLogSyslogRequest) TlsClientCert(tlsClientCert string) *APIUpdateLogSyslogRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
 
-// TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
-func (r *APIUpdateLogSyslogRequest) TLSClientKey(tlsClientKey string) *APIUpdateLogSyslogRequest {
+// TlsClientKey The client private key used to make authenticated requests. Must be in PEM format.
+func (r *APIUpdateLogSyslogRequest) TlsClientKey(tlsClientKey string) *APIUpdateLogSyslogRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
 
-// TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-func (r *APIUpdateLogSyslogRequest) TLSHostname(tlsHostname string) *APIUpdateLogSyslogRequest {
+// TlsHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+func (r *APIUpdateLogSyslogRequest) TlsHostname(tlsHostname string) *APIUpdateLogSyslogRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
@@ -961,9 +961,9 @@ func (r *APIUpdateLogSyslogRequest) Token(token string) *APIUpdateLogSyslogReque
 	return r
 }
 
-// UseTLS returns a pointer to a request.
-func (r *APIUpdateLogSyslogRequest) UseTLS(useTLS LoggingUseTLSString) *APIUpdateLogSyslogRequest {
-	r.useTLS = &useTLS
+// UseTls returns a pointer to a request.
+func (r *APIUpdateLogSyslogRequest) UseTls(useTls LoggingUseTlsString) *APIUpdateLogSyslogRequest {
+	r.useTls = &useTls
 	return r
 }
 
@@ -978,17 +978,17 @@ UpdateLogSyslog Update a syslog log endpoint
 Update the Syslog for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingSyslogName The name for the real-time logging configuration.
  @return APIUpdateLogSyslogRequest
 */
-func (a *LoggingSyslogAPIService) UpdateLogSyslog(ctx context.Context, serviceID string, versionID int32, loggingSyslogName string) APIUpdateLogSyslogRequest {
+func (a *LoggingSyslogAPIService) UpdateLogSyslog(ctx context.Context, serviceId string, versionId int32, loggingSyslogName string) APIUpdateLogSyslogRequest {
 	return APIUpdateLogSyslogRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingSyslogName: loggingSyslogName,
 	}
 }
@@ -1009,8 +1009,8 @@ func (a *LoggingSyslogAPIService) UpdateLogSyslogExecute(r APIUpdateLogSyslogReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/syslog/{logging_syslog_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_syslog_name"+"}", gourl.PathEscape(parameterToString(r.loggingSyslogName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -1082,8 +1082,8 @@ func (a *LoggingSyslogAPIService) UpdateLogSyslogExecute(r APIUpdateLogSyslogReq
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))
 	}
-	if r.useTLS != nil {
-		localVarFormParams.Add("use_tls", parameterToString(*r.useTLS, ""))
+	if r.useTls != nil {
+		localVarFormParams.Add("use_tls", parameterToString(*r.useTls, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

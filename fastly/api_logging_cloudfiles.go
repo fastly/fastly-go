@@ -36,11 +36,11 @@ type LoggingCloudfilesAPI interface {
 		Create a Cloud Files log endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogCloudfilesRequest
 	*/
-	CreateLogCloudfiles(ctx context.Context, serviceID string, versionID int32) APICreateLogCloudfilesRequest
+	CreateLogCloudfiles(ctx context.Context, serviceId string, versionId int32) APICreateLogCloudfilesRequest
 
 	// CreateLogCloudfilesExecute executes the request
 	//  @return LoggingCloudfilesResponse
@@ -52,12 +52,12 @@ type LoggingCloudfilesAPI interface {
 		Delete the Cloud Files log endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingCloudfilesName The name for the real-time logging configuration.
 		 @return APIDeleteLogCloudfilesRequest
 	*/
-	DeleteLogCloudfiles(ctx context.Context, serviceID string, versionID int32, loggingCloudfilesName string) APIDeleteLogCloudfilesRequest
+	DeleteLogCloudfiles(ctx context.Context, serviceId string, versionId int32, loggingCloudfilesName string) APIDeleteLogCloudfilesRequest
 
 	// DeleteLogCloudfilesExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingCloudfilesAPI interface {
 		Get the Cloud Files log endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingCloudfilesName The name for the real-time logging configuration.
 		 @return APIGetLogCloudfilesRequest
 	*/
-	GetLogCloudfiles(ctx context.Context, serviceID string, versionID int32, loggingCloudfilesName string) APIGetLogCloudfilesRequest
+	GetLogCloudfiles(ctx context.Context, serviceId string, versionId int32, loggingCloudfilesName string) APIGetLogCloudfilesRequest
 
 	// GetLogCloudfilesExecute executes the request
 	//  @return LoggingCloudfilesResponse
@@ -86,11 +86,11 @@ type LoggingCloudfilesAPI interface {
 		List all of the Cloud Files log endpoints for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogCloudfilesRequest
 	*/
-	ListLogCloudfiles(ctx context.Context, serviceID string, versionID int32) APIListLogCloudfilesRequest
+	ListLogCloudfiles(ctx context.Context, serviceId string, versionId int32) APIListLogCloudfilesRequest
 
 	// ListLogCloudfilesExecute executes the request
 	//  @return []LoggingCloudfilesResponse
@@ -102,12 +102,12 @@ type LoggingCloudfilesAPI interface {
 		Update the Cloud Files log endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingCloudfilesName The name for the real-time logging configuration.
 		 @return APIUpdateLogCloudfilesRequest
 	*/
-	UpdateLogCloudfiles(ctx context.Context, serviceID string, versionID int32, loggingCloudfilesName string) APIUpdateLogCloudfilesRequest
+	UpdateLogCloudfiles(ctx context.Context, serviceId string, versionId int32, loggingCloudfilesName string) APIUpdateLogCloudfilesRequest
 
 	// UpdateLogCloudfilesExecute executes the request
 	//  @return LoggingCloudfilesResponse
@@ -121,8 +121,8 @@ type LoggingCloudfilesAPIService service
 type APICreateLogCloudfilesRequest struct {
 	ctx                 context.Context
 	APIService          LoggingCloudfilesAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -255,16 +255,16 @@ CreateLogCloudfiles Create a Cloud Files log endpoint
 Create a Cloud Files log endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogCloudfilesRequest
 */
-func (a *LoggingCloudfilesAPIService) CreateLogCloudfiles(ctx context.Context, serviceID string, versionID int32) APICreateLogCloudfilesRequest {
+func (a *LoggingCloudfilesAPIService) CreateLogCloudfiles(ctx context.Context, serviceId string, versionId int32) APICreateLogCloudfilesRequest {
 	return APICreateLogCloudfilesRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -284,8 +284,8 @@ func (a *LoggingCloudfilesAPIService) CreateLogCloudfilesExecute(r APICreateLogC
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/cloudfiles"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -427,8 +427,8 @@ func (a *LoggingCloudfilesAPIService) CreateLogCloudfilesExecute(r APICreateLogC
 type APIDeleteLogCloudfilesRequest struct {
 	ctx                   context.Context
 	APIService            LoggingCloudfilesAPI
-	serviceID             string
-	versionID             int32
+	serviceId             string
+	versionId             int32
 	loggingCloudfilesName string
 }
 
@@ -443,17 +443,17 @@ DeleteLogCloudfiles Delete the Cloud Files log endpoint
 Delete the Cloud Files log endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingCloudfilesName The name for the real-time logging configuration.
  @return APIDeleteLogCloudfilesRequest
 */
-func (a *LoggingCloudfilesAPIService) DeleteLogCloudfiles(ctx context.Context, serviceID string, versionID int32, loggingCloudfilesName string) APIDeleteLogCloudfilesRequest {
+func (a *LoggingCloudfilesAPIService) DeleteLogCloudfiles(ctx context.Context, serviceId string, versionId int32, loggingCloudfilesName string) APIDeleteLogCloudfilesRequest {
 	return APIDeleteLogCloudfilesRequest{
 		APIService:            a,
 		ctx:                   ctx,
-		serviceID:             serviceID,
-		versionID:             versionID,
+		serviceId:             serviceId,
+		versionId:             versionId,
 		loggingCloudfilesName: loggingCloudfilesName,
 	}
 }
@@ -474,8 +474,8 @@ func (a *LoggingCloudfilesAPIService) DeleteLogCloudfilesExecute(r APIDeleteLogC
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/cloudfiles/{logging_cloudfiles_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_cloudfiles_name"+"}", gourl.PathEscape(parameterToString(r.loggingCloudfilesName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -567,8 +567,8 @@ func (a *LoggingCloudfilesAPIService) DeleteLogCloudfilesExecute(r APIDeleteLogC
 type APIGetLogCloudfilesRequest struct {
 	ctx                   context.Context
 	APIService            LoggingCloudfilesAPI
-	serviceID             string
-	versionID             int32
+	serviceId             string
+	versionId             int32
 	loggingCloudfilesName string
 }
 
@@ -583,17 +583,17 @@ GetLogCloudfiles Get a Cloud Files log endpoint
 Get the Cloud Files log endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingCloudfilesName The name for the real-time logging configuration.
  @return APIGetLogCloudfilesRequest
 */
-func (a *LoggingCloudfilesAPIService) GetLogCloudfiles(ctx context.Context, serviceID string, versionID int32, loggingCloudfilesName string) APIGetLogCloudfilesRequest {
+func (a *LoggingCloudfilesAPIService) GetLogCloudfiles(ctx context.Context, serviceId string, versionId int32, loggingCloudfilesName string) APIGetLogCloudfilesRequest {
 	return APIGetLogCloudfilesRequest{
 		APIService:            a,
 		ctx:                   ctx,
-		serviceID:             serviceID,
-		versionID:             versionID,
+		serviceId:             serviceId,
+		versionId:             versionId,
 		loggingCloudfilesName: loggingCloudfilesName,
 	}
 }
@@ -614,8 +614,8 @@ func (a *LoggingCloudfilesAPIService) GetLogCloudfilesExecute(r APIGetLogCloudfi
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/cloudfiles/{logging_cloudfiles_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_cloudfiles_name"+"}", gourl.PathEscape(parameterToString(r.loggingCloudfilesName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -707,8 +707,8 @@ func (a *LoggingCloudfilesAPIService) GetLogCloudfilesExecute(r APIGetLogCloudfi
 type APIListLogCloudfilesRequest struct {
 	ctx        context.Context
 	APIService LoggingCloudfilesAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -722,16 +722,16 @@ ListLogCloudfiles List Cloud Files log endpoints
 List all of the Cloud Files log endpoints for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogCloudfilesRequest
 */
-func (a *LoggingCloudfilesAPIService) ListLogCloudfiles(ctx context.Context, serviceID string, versionID int32) APIListLogCloudfilesRequest {
+func (a *LoggingCloudfilesAPIService) ListLogCloudfiles(ctx context.Context, serviceId string, versionId int32) APIListLogCloudfilesRequest {
 	return APIListLogCloudfilesRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -751,8 +751,8 @@ func (a *LoggingCloudfilesAPIService) ListLogCloudfilesExecute(r APIListLogCloud
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/cloudfiles"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -843,8 +843,8 @@ func (a *LoggingCloudfilesAPIService) ListLogCloudfilesExecute(r APIListLogCloud
 type APIUpdateLogCloudfilesRequest struct {
 	ctx                   context.Context
 	APIService            LoggingCloudfilesAPI
-	serviceID             string
-	versionID             int32
+	serviceId             string
+	versionId             int32
 	loggingCloudfilesName string
 	name                  *string
 	placement             *string
@@ -978,17 +978,17 @@ UpdateLogCloudfiles Update the Cloud Files log endpoint
 Update the Cloud Files log endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingCloudfilesName The name for the real-time logging configuration.
  @return APIUpdateLogCloudfilesRequest
 */
-func (a *LoggingCloudfilesAPIService) UpdateLogCloudfiles(ctx context.Context, serviceID string, versionID int32, loggingCloudfilesName string) APIUpdateLogCloudfilesRequest {
+func (a *LoggingCloudfilesAPIService) UpdateLogCloudfiles(ctx context.Context, serviceId string, versionId int32, loggingCloudfilesName string) APIUpdateLogCloudfilesRequest {
 	return APIUpdateLogCloudfilesRequest{
 		APIService:            a,
 		ctx:                   ctx,
-		serviceID:             serviceID,
-		versionID:             versionID,
+		serviceId:             serviceId,
+		versionId:             versionId,
 		loggingCloudfilesName: loggingCloudfilesName,
 	}
 }
@@ -1009,8 +1009,8 @@ func (a *LoggingCloudfilesAPIService) UpdateLogCloudfilesExecute(r APIUpdateLogC
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/cloudfiles/{logging_cloudfiles_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_cloudfiles_name"+"}", gourl.PathEscape(parameterToString(r.loggingCloudfilesName, "")))
 
 	localVarHeaderParams := make(map[string]string)

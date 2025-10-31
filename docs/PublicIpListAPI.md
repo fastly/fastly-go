@@ -1,11 +1,11 @@
-# PublicIPListAPI
+# PublicIpListAPI
 
 > [!NOTE]
 > All URIs are relative to `https://api.fastly.com`
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListFastlyIps**](PublicIPListAPI.md#ListFastlyIps) | **GET** `/public-ip-list` | List Fastly&#39;s public IPs
+[**ListFastlyIps**](PublicIpListAPI.md#ListFastlyIps) | **GET** `/public-ip-list` | List Fastly&#39;s public IPs
 
 
 
@@ -32,13 +32,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.PublicIPListAPI.ListFastlyIps(ctx).Execute()
+    resp, r, err := apiClient.PublicIpListAPI.ListFastlyIps(ctx).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `PublicIPListAPI.ListFastlyIps`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `PublicIpListAPI.ListFastlyIps`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListFastlyIps`: PublicIPList
-    fmt.Fprintf(os.Stdout, "Response from `PublicIPListAPI.ListFastlyIps`: %v\n", resp)
+    // response from `ListFastlyIps`: PublicIpList
+    fmt.Fprintf(os.Stdout, "Response from `PublicIpListAPI.ListFastlyIps`: %v\n", resp)
 }
 ```
 
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiListFastlyIpsRequest struc
 
 ### Return type
 
-[**PublicIPList**](PublicIPList.md)
+[**PublicIpList**](PublicIpList.md)
 
 ### Authorization
 
@@ -66,3 +66,4 @@ Other parameters are passed through a pointer to a apiListFastlyIpsRequest struc
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

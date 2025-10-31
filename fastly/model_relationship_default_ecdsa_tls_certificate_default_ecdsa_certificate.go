@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate struct for RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate
-type RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate struct {
-	Data                 *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificateData `json:"data,omitempty"`
+// RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate struct for RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate
+type RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate struct {
+	Data                 *RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate
+type _RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate
 
-// NewRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate instantiates a new RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate object
+// NewRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate instantiates a new RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate() *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate {
-	this := RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate{}
+func NewRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate() *RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate {
+	this := RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate{}
 	return &this
 }
 
-// NewRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificateWithDefaults instantiates a new RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate object
+// NewRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateWithDefaults instantiates a new RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificateWithDefaults() *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate {
-	this := RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate{}
+func NewRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateWithDefaults() *RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate {
+	this := RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) GetData() RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificateData {
+func (o *RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) GetData() RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData {
 	if o == nil || o.Data == nil {
-		var ret RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificateData
+		var ret RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData
 		return ret
 	}
 	return *o.Data
@@ -52,7 +52,7 @@ func (o *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) GetData(
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) GetDataOk() (*RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificateData, bool) {
+func (o *RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) GetDataOk() (*RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) GetDataO
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) HasData() bool {
+func (o *RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -68,14 +68,14 @@ func (o *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) HasData(
 	return false
 }
 
-// SetData gets a reference to the given RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificateData and assigns it to the Data field.
-func (o *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) SetData(v RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificateData) {
+// SetData gets a reference to the given RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData and assigns it to the Data field.
+func (o *RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) SetData(v RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData) {
 	o.Data = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) MarshalJSON() ([]byte, error) {
+func (o RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -90,11 +90,11 @@ func (o RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) MarshalJS
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) UnmarshalJSON(bytes []byte) (err error) {
-	varRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate := _RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate{}
+func (o *RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) UnmarshalJSON(bytes []byte) (err error) {
+	varRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate := _RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate{}
 
-	if err = json.Unmarshal(bytes, &varRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate); err == nil {
-		*o = RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate(varRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate)
+	if err = json.Unmarshal(bytes, &varRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate); err == nil {
+		*o = RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate(varRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) Unmarsha
 	return err
 }
 
-// NullableRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate is a helper abstraction for handling nullable relationshipdefaultecdsatlscertificatedefaultecdsacertificate types.
-type NullableRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate struct {
-	value *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate
+// NullableRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate is a helper abstraction for handling nullable relationshipdefaultecdsatlscertificatedefaultecdsacertificate types.
+type NullableRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate struct {
+	value *RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) Get() *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate {
+func (v NullableRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) Get() *RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) Set(val *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) {
+func (v *NullableRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) Set(val *RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) IsSet() bool {
+func (v NullableRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) Unset() {
+func (v *NullableRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate returns a pointer to a new instance of NullableRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate.
-func NewNullableRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate(val *RelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) *NullableRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate {
-	return &NullableRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate{value: val, isSet: true}
+// NewNullableRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate returns a pointer to a new instance of NullableRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate.
+func NewNullableRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate(val *RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) *NullableRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate {
+	return &NullableRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipDefaultEcdsaTLSCertificateDefaultEcdsaCertificate) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -16,8 +16,8 @@ import (
 	"encoding/json"
 )
 
-// ComputeACLUpdateEntry Defines the structure of an ACL update request entry.
-type ComputeACLUpdateEntry struct {
+// ComputeAclUpdateEntry Defines the structure of an ACL update request entry.
+type ComputeAclUpdateEntry struct {
 	// One of \"create\", \"update\", or \"delete\" indicating the operation to perform on the update.
 	Op *string `json:"op,omitempty"`
 	// An IP prefix defined in Classless Inter-Domain Routing (CIDR) format, i.e. a valid IP address (v4 or v6) followed by a forward slash (/) and a prefix length (0-32 or 0-128, depending on address family).
@@ -27,27 +27,27 @@ type ComputeACLUpdateEntry struct {
 	AdditionalProperties map[string]any
 }
 
-type _ComputeACLUpdateEntry ComputeACLUpdateEntry
+type _ComputeAclUpdateEntry ComputeAclUpdateEntry
 
-// NewComputeACLUpdateEntry instantiates a new ComputeACLUpdateEntry object
+// NewComputeAclUpdateEntry instantiates a new ComputeAclUpdateEntry object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeACLUpdateEntry() *ComputeACLUpdateEntry {
-	this := ComputeACLUpdateEntry{}
+func NewComputeAclUpdateEntry() *ComputeAclUpdateEntry {
+	this := ComputeAclUpdateEntry{}
 	return &this
 }
 
-// NewComputeACLUpdateEntryWithDefaults instantiates a new ComputeACLUpdateEntry object
+// NewComputeAclUpdateEntryWithDefaults instantiates a new ComputeAclUpdateEntry object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewComputeACLUpdateEntryWithDefaults() *ComputeACLUpdateEntry {
-	this := ComputeACLUpdateEntry{}
+func NewComputeAclUpdateEntryWithDefaults() *ComputeAclUpdateEntry {
+	this := ComputeAclUpdateEntry{}
 	return &this
 }
 
 // GetOp returns the Op field value if set, zero value otherwise.
-func (o *ComputeACLUpdateEntry) GetOp() string {
+func (o *ComputeAclUpdateEntry) GetOp() string {
 	if o == nil || o.Op == nil {
 		var ret string
 		return ret
@@ -57,7 +57,7 @@ func (o *ComputeACLUpdateEntry) GetOp() string {
 
 // GetOpOk returns a tuple with the Op field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLUpdateEntry) GetOpOk() (*string, bool) {
+func (o *ComputeAclUpdateEntry) GetOpOk() (*string, bool) {
 	if o == nil || o.Op == nil {
 		return nil, false
 	}
@@ -65,7 +65,7 @@ func (o *ComputeACLUpdateEntry) GetOpOk() (*string, bool) {
 }
 
 // HasOp returns a boolean if a field has been set.
-func (o *ComputeACLUpdateEntry) HasOp() bool {
+func (o *ComputeAclUpdateEntry) HasOp() bool {
 	if o != nil && o.Op != nil {
 		return true
 	}
@@ -74,12 +74,12 @@ func (o *ComputeACLUpdateEntry) HasOp() bool {
 }
 
 // SetOp gets a reference to the given string and assigns it to the Op field.
-func (o *ComputeACLUpdateEntry) SetOp(v string) {
+func (o *ComputeAclUpdateEntry) SetOp(v string) {
 	o.Op = &v
 }
 
 // GetPrefix returns the Prefix field value if set, zero value otherwise.
-func (o *ComputeACLUpdateEntry) GetPrefix() string {
+func (o *ComputeAclUpdateEntry) GetPrefix() string {
 	if o == nil || o.Prefix == nil {
 		var ret string
 		return ret
@@ -89,7 +89,7 @@ func (o *ComputeACLUpdateEntry) GetPrefix() string {
 
 // GetPrefixOk returns a tuple with the Prefix field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLUpdateEntry) GetPrefixOk() (*string, bool) {
+func (o *ComputeAclUpdateEntry) GetPrefixOk() (*string, bool) {
 	if o == nil || o.Prefix == nil {
 		return nil, false
 	}
@@ -97,7 +97,7 @@ func (o *ComputeACLUpdateEntry) GetPrefixOk() (*string, bool) {
 }
 
 // HasPrefix returns a boolean if a field has been set.
-func (o *ComputeACLUpdateEntry) HasPrefix() bool {
+func (o *ComputeAclUpdateEntry) HasPrefix() bool {
 	if o != nil && o.Prefix != nil {
 		return true
 	}
@@ -106,12 +106,12 @@ func (o *ComputeACLUpdateEntry) HasPrefix() bool {
 }
 
 // SetPrefix gets a reference to the given string and assigns it to the Prefix field.
-func (o *ComputeACLUpdateEntry) SetPrefix(v string) {
+func (o *ComputeAclUpdateEntry) SetPrefix(v string) {
 	o.Prefix = &v
 }
 
 // GetAction returns the Action field value if set, zero value otherwise.
-func (o *ComputeACLUpdateEntry) GetAction() string {
+func (o *ComputeAclUpdateEntry) GetAction() string {
 	if o == nil || o.Action == nil {
 		var ret string
 		return ret
@@ -121,7 +121,7 @@ func (o *ComputeACLUpdateEntry) GetAction() string {
 
 // GetActionOk returns a tuple with the Action field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLUpdateEntry) GetActionOk() (*string, bool) {
+func (o *ComputeAclUpdateEntry) GetActionOk() (*string, bool) {
 	if o == nil || o.Action == nil {
 		return nil, false
 	}
@@ -129,7 +129,7 @@ func (o *ComputeACLUpdateEntry) GetActionOk() (*string, bool) {
 }
 
 // HasAction returns a boolean if a field has been set.
-func (o *ComputeACLUpdateEntry) HasAction() bool {
+func (o *ComputeAclUpdateEntry) HasAction() bool {
 	if o != nil && o.Action != nil {
 		return true
 	}
@@ -138,13 +138,13 @@ func (o *ComputeACLUpdateEntry) HasAction() bool {
 }
 
 // SetAction gets a reference to the given string and assigns it to the Action field.
-func (o *ComputeACLUpdateEntry) SetAction(v string) {
+func (o *ComputeAclUpdateEntry) SetAction(v string) {
 	o.Action = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ComputeACLUpdateEntry) MarshalJSON() ([]byte, error) {
+func (o ComputeAclUpdateEntry) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Op != nil {
 		toSerialize["op"] = o.Op
@@ -165,11 +165,11 @@ func (o ComputeACLUpdateEntry) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ComputeACLUpdateEntry) UnmarshalJSON(bytes []byte) (err error) {
-	varComputeACLUpdateEntry := _ComputeACLUpdateEntry{}
+func (o *ComputeAclUpdateEntry) UnmarshalJSON(bytes []byte) (err error) {
+	varComputeAclUpdateEntry := _ComputeAclUpdateEntry{}
 
-	if err = json.Unmarshal(bytes, &varComputeACLUpdateEntry); err == nil {
-		*o = ComputeACLUpdateEntry(varComputeACLUpdateEntry)
+	if err = json.Unmarshal(bytes, &varComputeAclUpdateEntry); err == nil {
+		*o = ComputeAclUpdateEntry(varComputeAclUpdateEntry)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -184,48 +184,48 @@ func (o *ComputeACLUpdateEntry) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableComputeACLUpdateEntry is a helper abstraction for handling nullable computeaclupdateentry types.
-type NullableComputeACLUpdateEntry struct {
-	value *ComputeACLUpdateEntry
+// NullableComputeAclUpdateEntry is a helper abstraction for handling nullable computeaclupdateentry types.
+type NullableComputeAclUpdateEntry struct {
+	value *ComputeAclUpdateEntry
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableComputeACLUpdateEntry) Get() *ComputeACLUpdateEntry {
+func (v NullableComputeAclUpdateEntry) Get() *ComputeAclUpdateEntry {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableComputeACLUpdateEntry) Set(val *ComputeACLUpdateEntry) {
+func (v *NullableComputeAclUpdateEntry) Set(val *ComputeAclUpdateEntry) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableComputeACLUpdateEntry) IsSet() bool {
+func (v NullableComputeAclUpdateEntry) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableComputeACLUpdateEntry) Unset() {
+func (v *NullableComputeAclUpdateEntry) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableComputeACLUpdateEntry returns a pointer to a new instance of NullableComputeACLUpdateEntry.
-func NewNullableComputeACLUpdateEntry(val *ComputeACLUpdateEntry) *NullableComputeACLUpdateEntry {
-	return &NullableComputeACLUpdateEntry{value: val, isSet: true}
+// NewNullableComputeAclUpdateEntry returns a pointer to a new instance of NullableComputeAclUpdateEntry.
+func NewNullableComputeAclUpdateEntry(val *ComputeAclUpdateEntry) *NullableComputeAclUpdateEntry {
+	return &NullableComputeAclUpdateEntry{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableComputeACLUpdateEntry) MarshalJSON() ([]byte, error) {
+func (v NullableComputeAclUpdateEntry) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableComputeACLUpdateEntry) UnmarshalJSON(src []byte) error {
+func (v *NullableComputeAclUpdateEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -28,6 +28,8 @@ type User struct {
 	// Indicates if a new password is required at next login.
 	RequireNewPassword NullableBool `json:"require_new_password,omitempty"`
 	Role               *RoleUser    `json:"role,omitempty"`
+	// A list of role IDs assigned to the user.
+	Roles []string `json:"roles,omitempty"`
 	// Indicates if 2FA is enabled on the user.
 	TwoFactorAuthEnabled NullableBool `json:"two_factor_auth_enabled,omitempty"`
 	// Indicates if 2FA is required by the user's customer account.
@@ -268,6 +270,38 @@ func (o *User) SetRole(v RoleUser) {
 	o.Role = &v
 }
 
+// GetRoles returns the Roles field value if set, zero value otherwise.
+func (o *User) GetRoles() []string {
+	if o == nil || o.Roles == nil {
+		var ret []string
+		return ret
+	}
+	return o.Roles
+}
+
+// GetRolesOk returns a tuple with the Roles field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *User) GetRolesOk() ([]string, bool) {
+	if o == nil || o.Roles == nil {
+		return nil, false
+	}
+	return o.Roles, true
+}
+
+// HasRoles returns a boolean if a field has been set.
+func (o *User) HasRoles() bool {
+	if o != nil && o.Roles != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRoles gets a reference to the given []string and assigns it to the Roles field.
+func (o *User) SetRoles(v []string) {
+	o.Roles = v
+}
+
 // GetTwoFactorAuthEnabled returns the TwoFactorAuthEnabled field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *User) GetTwoFactorAuthEnabled() bool {
 	if o == nil || o.TwoFactorAuthEnabled.Get() == nil {
@@ -365,6 +399,9 @@ func (o User) MarshalJSON() ([]byte, error) {
 	if o.Role != nil {
 		toSerialize["role"] = o.Role
 	}
+	if o.Roles != nil {
+		toSerialize["roles"] = o.Roles
+	}
 	if o.TwoFactorAuthEnabled.IsSet() {
 		toSerialize["two_factor_auth_enabled"] = o.TwoFactorAuthEnabled.Get()
 	}
@@ -397,6 +434,7 @@ func (o *User) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "locked")
 		delete(additionalProperties, "require_new_password")
 		delete(additionalProperties, "role")
+		delete(additionalProperties, "roles")
 		delete(additionalProperties, "two_factor_auth_enabled")
 		delete(additionalProperties, "two_factor_setup_required")
 		o.AdditionalProperties = additionalProperties

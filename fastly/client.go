@@ -63,11 +63,11 @@ type APIClient struct {
 
 	// API Services
 
-	ACLAPI ACLAPI
+	AclAPI AclAPI
 
-	ACLEntryAPI ACLEntryAPI
+	AclEntryAPI AclEntryAPI
 
-	ACLsInComputeAPI ACLsInComputeAPI
+	AclsInComputeAPI AclsInComputeAPI
 
 	ApexRedirectAPI ApexRedirectAPI
 
@@ -111,6 +111,8 @@ type APIClient struct {
 
 	DirectorBackendAPI DirectorBackendAPI
 
+	DmDomainsAPI DmDomainsAPI
+
 	DomainAPI DomainAPI
 
 	DomainInspectorHistoricalAPI DomainInspectorHistoricalAPI
@@ -129,7 +131,7 @@ type APIClient struct {
 
 	HistoricalAPI HistoricalAPI
 
-	HTTP3API HTTP3API
+	Http3API Http3API
 
 	IamPermissionsAPI IamPermissionsAPI
 
@@ -171,7 +173,7 @@ type APIClient struct {
 
 	LoggingHoneycombAPI LoggingHoneycombAPI
 
-	LoggingHTTPSAPI LoggingHTTPSAPI
+	LoggingHttpsAPI LoggingHttpsAPI
 
 	LoggingKafkaAPI LoggingKafkaAPI
 
@@ -227,6 +229,8 @@ type APIClient struct {
 
 	ProductAiAcceleratorAPI ProductAiAcceleratorAPI
 
+	ProductApiDiscoveryAPI ProductApiDiscoveryAPI
+
 	ProductBotManagementAPI ProductBotManagementAPI
 
 	ProductBrotliCompressionAPI ProductBrotliCompressionAPI
@@ -249,7 +253,7 @@ type APIClient struct {
 
 	ProductWebsocketsAPI ProductWebsocketsAPI
 
-	PublicIPListAPI PublicIPListAPI
+	PublicIpListAPI PublicIpListAPI
 
 	PublishAPI PublishAPI
 
@@ -285,21 +289,21 @@ type APIClient struct {
 
 	SudoAPI SudoAPI
 
-	TLSActivationsAPI TLSActivationsAPI
+	TlsActivationsAPI TlsActivationsAPI
 
-	TLSBulkCertificatesAPI TLSBulkCertificatesAPI
+	TlsBulkCertificatesAPI TlsBulkCertificatesAPI
 
-	TLSCertificatesAPI TLSCertificatesAPI
+	TlsCertificatesAPI TlsCertificatesAPI
 
-	TLSConfigurationsAPI TLSConfigurationsAPI
+	TlsConfigurationsAPI TlsConfigurationsAPI
 
-	TLSCsrsAPI TLSCsrsAPI
+	TlsCsrsAPI TlsCsrsAPI
 
-	TLSDomainsAPI TLSDomainsAPI
+	TlsDomainsAPI TlsDomainsAPI
 
-	TLSPrivateKeysAPI TLSPrivateKeysAPI
+	TlsPrivateKeysAPI TlsPrivateKeysAPI
 
-	TLSSubscriptionsAPI TLSSubscriptionsAPI
+	TlsSubscriptionsAPI TlsSubscriptionsAPI
 
 	TokensAPI TokensAPI
 
@@ -331,9 +335,9 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.RateLimitRemaining = defaultRateLimit
 
 	// API Services
-	c.ACLAPI = (*ACLAPIService)(&c.common)
-	c.ACLEntryAPI = (*ACLEntryAPIService)(&c.common)
-	c.ACLsInComputeAPI = (*ACLsInComputeAPIService)(&c.common)
+	c.AclAPI = (*AclAPIService)(&c.common)
+	c.AclEntryAPI = (*AclEntryAPIService)(&c.common)
+	c.AclsInComputeAPI = (*AclsInComputeAPIService)(&c.common)
 	c.ApexRedirectAPI = (*ApexRedirectAPIService)(&c.common)
 	c.AutomationTokensAPI = (*AutomationTokensAPIService)(&c.common)
 	c.BackendAPI = (*BackendAPIService)(&c.common)
@@ -355,6 +359,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.DiffAPI = (*DiffAPIService)(&c.common)
 	c.DirectorAPI = (*DirectorAPIService)(&c.common)
 	c.DirectorBackendAPI = (*DirectorBackendAPIService)(&c.common)
+	c.DmDomainsAPI = (*DmDomainsAPIService)(&c.common)
 	c.DomainAPI = (*DomainAPIService)(&c.common)
 	c.DomainInspectorHistoricalAPI = (*DomainInspectorHistoricalAPIService)(&c.common)
 	c.DomainInspectorRealtimeAPI = (*DomainInspectorRealtimeAPIService)(&c.common)
@@ -364,7 +369,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.HeaderAPI = (*HeaderAPIService)(&c.common)
 	c.HealthcheckAPI = (*HealthcheckAPIService)(&c.common)
 	c.HistoricalAPI = (*HistoricalAPIService)(&c.common)
-	c.HTTP3API = (*HTTP3APIService)(&c.common)
+	c.Http3API = (*Http3APIService)(&c.common)
 	c.IamPermissionsAPI = (*IamPermissionsAPIService)(&c.common)
 	c.IamRolesAPI = (*IamRolesAPIService)(&c.common)
 	c.IamServiceGroupsAPI = (*IamServiceGroupsAPIService)(&c.common)
@@ -385,7 +390,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingGrafanacloudlogsAPI = (*LoggingGrafanacloudlogsAPIService)(&c.common)
 	c.LoggingHerokuAPI = (*LoggingHerokuAPIService)(&c.common)
 	c.LoggingHoneycombAPI = (*LoggingHoneycombAPIService)(&c.common)
-	c.LoggingHTTPSAPI = (*LoggingHTTPSAPIService)(&c.common)
+	c.LoggingHttpsAPI = (*LoggingHttpsAPIService)(&c.common)
 	c.LoggingKafkaAPI = (*LoggingKafkaAPIService)(&c.common)
 	c.LoggingKinesisAPI = (*LoggingKinesisAPIService)(&c.common)
 	c.LoggingLogentriesAPI = (*LoggingLogentriesAPIService)(&c.common)
@@ -413,6 +418,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.PoolAPI = (*PoolAPIService)(&c.common)
 	c.PopAPI = (*PopAPIService)(&c.common)
 	c.ProductAiAcceleratorAPI = (*ProductAiAcceleratorAPIService)(&c.common)
+	c.ProductApiDiscoveryAPI = (*ProductApiDiscoveryAPIService)(&c.common)
 	c.ProductBotManagementAPI = (*ProductBotManagementAPIService)(&c.common)
 	c.ProductBrotliCompressionAPI = (*ProductBrotliCompressionAPIService)(&c.common)
 	c.ProductDdosProtectionAPI = (*ProductDdosProtectionAPIService)(&c.common)
@@ -424,7 +430,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ProductObjectStorageAPI = (*ProductObjectStorageAPIService)(&c.common)
 	c.ProductOriginInspectorAPI = (*ProductOriginInspectorAPIService)(&c.common)
 	c.ProductWebsocketsAPI = (*ProductWebsocketsAPIService)(&c.common)
-	c.PublicIPListAPI = (*PublicIPListAPIService)(&c.common)
+	c.PublicIpListAPI = (*PublicIpListAPIService)(&c.common)
 	c.PublishAPI = (*PublishAPIService)(&c.common)
 	c.PurgeAPI = (*PurgeAPIService)(&c.common)
 	c.RateLimiterAPI = (*RateLimiterAPIService)(&c.common)
@@ -442,14 +448,14 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.StarAPI = (*StarAPIService)(&c.common)
 	c.StatsAPI = (*StatsAPIService)(&c.common)
 	c.SudoAPI = (*SudoAPIService)(&c.common)
-	c.TLSActivationsAPI = (*TLSActivationsAPIService)(&c.common)
-	c.TLSBulkCertificatesAPI = (*TLSBulkCertificatesAPIService)(&c.common)
-	c.TLSCertificatesAPI = (*TLSCertificatesAPIService)(&c.common)
-	c.TLSConfigurationsAPI = (*TLSConfigurationsAPIService)(&c.common)
-	c.TLSCsrsAPI = (*TLSCsrsAPIService)(&c.common)
-	c.TLSDomainsAPI = (*TLSDomainsAPIService)(&c.common)
-	c.TLSPrivateKeysAPI = (*TLSPrivateKeysAPIService)(&c.common)
-	c.TLSSubscriptionsAPI = (*TLSSubscriptionsAPIService)(&c.common)
+	c.TlsActivationsAPI = (*TlsActivationsAPIService)(&c.common)
+	c.TlsBulkCertificatesAPI = (*TlsBulkCertificatesAPIService)(&c.common)
+	c.TlsCertificatesAPI = (*TlsCertificatesAPIService)(&c.common)
+	c.TlsConfigurationsAPI = (*TlsConfigurationsAPIService)(&c.common)
+	c.TlsCsrsAPI = (*TlsCsrsAPIService)(&c.common)
+	c.TlsDomainsAPI = (*TlsDomainsAPIService)(&c.common)
+	c.TlsPrivateKeysAPI = (*TlsPrivateKeysAPIService)(&c.common)
+	c.TlsSubscriptionsAPI = (*TlsSubscriptionsAPIService)(&c.common)
 	c.TokensAPI = (*TokensAPIService)(&c.common)
 	c.UserAPI = (*UserAPIService)(&c.common)
 	c.VclAPI = (*VclAPIService)(&c.common)
@@ -754,7 +760,7 @@ func (c *APIClient) decode(v any, b []byte, contentType string) (err error) {
 		return nil
 	}
 	if f, ok := v.(**os.File); ok {
-		*f, err = ioutil.TempFile("", "HTTPClientFile")
+		*f, err = ioutil.TempFile("", "HttpClientFile")
 		if err != nil {
 			return err
 		}

@@ -36,16 +36,16 @@ type DomainAPI interface {
 		Checks the status of a specific domain's DNS record for a Service Version. Returns an array in the same format as domain/check_all.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param domainName The name of the domain or domains associated with this service.
 		 @return APICheckDomainRequest
 	*/
-	CheckDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APICheckDomainRequest
+	CheckDomain(ctx context.Context, serviceId string, versionId int32, domainName string) APICheckDomainRequest
 
 	// CheckDomainExecute executes the request
-	//  @return []any
-	CheckDomainExecute(r APICheckDomainRequest) ([]any, *http.Response, error)
+	//  @return []interface{}
+	CheckDomainExecute(r APICheckDomainRequest) ([]interface{}, *http.Response, error)
 
 	/*
 		CheckDomains Validate DNS configuration for all domains on a service
@@ -53,15 +53,15 @@ type DomainAPI interface {
 		Checks the status of all domains' DNS records for a Service Version. Returns an array of 3 items for each domain; the first is the details for the domain, the second is the current CNAME of the domain, and the third is a boolean indicating whether or not it has been properly setup to use Fastly.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICheckDomainsRequest
 	*/
-	CheckDomains(ctx context.Context, serviceID string, versionID int32) APICheckDomainsRequest
+	CheckDomains(ctx context.Context, serviceId string, versionId int32) APICheckDomainsRequest
 
 	// CheckDomainsExecute executes the request
-	//  @return [][]any
-	CheckDomainsExecute(r APICheckDomainsRequest) ([][]any, *http.Response, error)
+	//  @return [][]interface{}
+	CheckDomainsExecute(r APICheckDomainsRequest) ([][]interface{}, *http.Response, error)
 
 	/*
 		CreateDomain Add a domain name to a service
@@ -69,11 +69,11 @@ type DomainAPI interface {
 		Create a domain for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateDomainRequest
 	*/
-	CreateDomain(ctx context.Context, serviceID string, versionID int32) APICreateDomainRequest
+	CreateDomain(ctx context.Context, serviceId string, versionId int32) APICreateDomainRequest
 
 	// CreateDomainExecute executes the request
 	//  @return DomainResponse
@@ -85,12 +85,12 @@ type DomainAPI interface {
 		Delete the domain for a particular service and versions.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param domainName The name of the domain or domains associated with this service.
 		 @return APIDeleteDomainRequest
 	*/
-	DeleteDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APIDeleteDomainRequest
+	DeleteDomain(ctx context.Context, serviceId string, versionId int32, domainName string) APIDeleteDomainRequest
 
 	// DeleteDomainExecute executes the request
 	//  @return InlineResponse200
@@ -102,12 +102,12 @@ type DomainAPI interface {
 		Get the domain for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param domainName The name of the domain or domains associated with this service.
 		 @return APIGetDomainRequest
 	*/
-	GetDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APIGetDomainRequest
+	GetDomain(ctx context.Context, serviceId string, versionId int32, domainName string) APIGetDomainRequest
 
 	// GetDomainExecute executes the request
 	//  @return DomainResponse
@@ -119,11 +119,11 @@ type DomainAPI interface {
 		List all the domains for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListDomainsRequest
 	*/
-	ListDomains(ctx context.Context, serviceID string, versionID int32) APIListDomainsRequest
+	ListDomains(ctx context.Context, serviceId string, versionId int32) APIListDomainsRequest
 
 	// ListDomainsExecute executes the request
 	//  @return []DomainResponse
@@ -135,12 +135,12 @@ type DomainAPI interface {
 		Update the domain for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param domainName The name of the domain or domains associated with this service.
 		 @return APIUpdateDomainRequest
 	*/
-	UpdateDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APIUpdateDomainRequest
+	UpdateDomain(ctx context.Context, serviceId string, versionId int32, domainName string) APIUpdateDomainRequest
 
 	// UpdateDomainExecute executes the request
 	//  @return DomainResponse
@@ -154,13 +154,13 @@ type DomainAPIService service
 type APICheckDomainRequest struct {
 	ctx        context.Context
 	APIService DomainAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	domainName string
 }
 
 // Execute calls the API using the request data configured.
-func (r APICheckDomainRequest) Execute() ([]any, *http.Response, error) {
+func (r APICheckDomainRequest) Execute() ([]interface{}, *http.Response, error) {
 	return r.APIService.CheckDomainExecute(r)
 }
 
@@ -170,29 +170,29 @@ CheckDomain Validate DNS configuration for a single domain on a service
 Checks the status of a specific domain's DNS record for a Service Version. Returns an array in the same format as domain/check_all.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param domainName The name of the domain or domains associated with this service.
  @return APICheckDomainRequest
 */
-func (a *DomainAPIService) CheckDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APICheckDomainRequest {
+func (a *DomainAPIService) CheckDomain(ctx context.Context, serviceId string, versionId int32, domainName string) APICheckDomainRequest {
 	return APICheckDomainRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		domainName: domainName,
 	}
 }
 
 // CheckDomainExecute executes the request
-//  @return []any
-func (a *DomainAPIService) CheckDomainExecute(r APICheckDomainRequest) ([]any, *http.Response, error) {
+//  @return []interface{}
+func (a *DomainAPIService) CheckDomainExecute(r APICheckDomainRequest) ([]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue []any
+		localVarReturnValue []interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainAPIService.CheckDomain")
@@ -201,8 +201,8 @@ func (a *DomainAPIService) CheckDomainExecute(r APICheckDomainRequest) ([]any, *
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/domain/{domain_name}/check"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"domain_name"+"}", gourl.PathEscape(parameterToString(r.domainName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -294,12 +294,12 @@ func (a *DomainAPIService) CheckDomainExecute(r APICheckDomainRequest) ([]any, *
 type APICheckDomainsRequest struct {
 	ctx        context.Context
 	APIService DomainAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
-func (r APICheckDomainsRequest) Execute() ([][]any, *http.Response, error) {
+func (r APICheckDomainsRequest) Execute() ([][]interface{}, *http.Response, error) {
 	return r.APIService.CheckDomainsExecute(r)
 }
 
@@ -309,27 +309,27 @@ CheckDomains Validate DNS configuration for all domains on a service
 Checks the status of all domains' DNS records for a Service Version. Returns an array of 3 items for each domain; the first is the details for the domain, the second is the current CNAME of the domain, and the third is a boolean indicating whether or not it has been properly setup to use Fastly.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICheckDomainsRequest
 */
-func (a *DomainAPIService) CheckDomains(ctx context.Context, serviceID string, versionID int32) APICheckDomainsRequest {
+func (a *DomainAPIService) CheckDomains(ctx context.Context, serviceId string, versionId int32) APICheckDomainsRequest {
 	return APICheckDomainsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
 // CheckDomainsExecute executes the request
-//  @return [][]any
-func (a *DomainAPIService) CheckDomainsExecute(r APICheckDomainsRequest) ([][]any, *http.Response, error) {
+//  @return [][]interface{}
+func (a *DomainAPIService) CheckDomainsExecute(r APICheckDomainsRequest) ([][]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue [][]any
+		localVarReturnValue [][]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainAPIService.CheckDomains")
@@ -338,8 +338,8 @@ func (a *DomainAPIService) CheckDomainsExecute(r APICheckDomainsRequest) ([][]an
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/domain/check_all"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -430,8 +430,8 @@ func (a *DomainAPIService) CheckDomainsExecute(r APICheckDomainsRequest) ([][]an
 type APICreateDomainRequest struct {
 	ctx        context.Context
 	APIService DomainAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	comment    *string
 	name       *string
 }
@@ -459,16 +459,16 @@ CreateDomain Add a domain name to a service
 Create a domain for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateDomainRequest
 */
-func (a *DomainAPIService) CreateDomain(ctx context.Context, serviceID string, versionID int32) APICreateDomainRequest {
+func (a *DomainAPIService) CreateDomain(ctx context.Context, serviceId string, versionId int32) APICreateDomainRequest {
 	return APICreateDomainRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -488,8 +488,8 @@ func (a *DomainAPIService) CreateDomainExecute(r APICreateDomainRequest) (*Domai
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/domain"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -586,8 +586,8 @@ func (a *DomainAPIService) CreateDomainExecute(r APICreateDomainRequest) (*Domai
 type APIDeleteDomainRequest struct {
 	ctx        context.Context
 	APIService DomainAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	domainName string
 }
 
@@ -602,17 +602,17 @@ DeleteDomain Remove a domain from a service
 Delete the domain for a particular service and versions.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param domainName The name of the domain or domains associated with this service.
  @return APIDeleteDomainRequest
 */
-func (a *DomainAPIService) DeleteDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APIDeleteDomainRequest {
+func (a *DomainAPIService) DeleteDomain(ctx context.Context, serviceId string, versionId int32, domainName string) APIDeleteDomainRequest {
 	return APIDeleteDomainRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		domainName: domainName,
 	}
 }
@@ -633,8 +633,8 @@ func (a *DomainAPIService) DeleteDomainExecute(r APIDeleteDomainRequest) (*Inlin
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/domain/{domain_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"domain_name"+"}", gourl.PathEscape(parameterToString(r.domainName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -726,8 +726,8 @@ func (a *DomainAPIService) DeleteDomainExecute(r APIDeleteDomainRequest) (*Inlin
 type APIGetDomainRequest struct {
 	ctx        context.Context
 	APIService DomainAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	domainName string
 }
 
@@ -742,17 +742,17 @@ GetDomain Describe a domain
 Get the domain for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param domainName The name of the domain or domains associated with this service.
  @return APIGetDomainRequest
 */
-func (a *DomainAPIService) GetDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APIGetDomainRequest {
+func (a *DomainAPIService) GetDomain(ctx context.Context, serviceId string, versionId int32, domainName string) APIGetDomainRequest {
 	return APIGetDomainRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		domainName: domainName,
 	}
 }
@@ -773,8 +773,8 @@ func (a *DomainAPIService) GetDomainExecute(r APIGetDomainRequest) (*DomainRespo
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/domain/{domain_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"domain_name"+"}", gourl.PathEscape(parameterToString(r.domainName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -866,8 +866,8 @@ func (a *DomainAPIService) GetDomainExecute(r APIGetDomainRequest) (*DomainRespo
 type APIListDomainsRequest struct {
 	ctx        context.Context
 	APIService DomainAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -881,16 +881,16 @@ ListDomains List domains
 List all the domains for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListDomainsRequest
 */
-func (a *DomainAPIService) ListDomains(ctx context.Context, serviceID string, versionID int32) APIListDomainsRequest {
+func (a *DomainAPIService) ListDomains(ctx context.Context, serviceId string, versionId int32) APIListDomainsRequest {
 	return APIListDomainsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -910,8 +910,8 @@ func (a *DomainAPIService) ListDomainsExecute(r APIListDomainsRequest) ([]Domain
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/domain"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1002,8 +1002,8 @@ func (a *DomainAPIService) ListDomainsExecute(r APIListDomainsRequest) ([]Domain
 type APIUpdateDomainRequest struct {
 	ctx        context.Context
 	APIService DomainAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	domainName string
 	comment    *string
 	name       *string
@@ -1032,17 +1032,17 @@ UpdateDomain Update a domain
 Update the domain for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param domainName The name of the domain or domains associated with this service.
  @return APIUpdateDomainRequest
 */
-func (a *DomainAPIService) UpdateDomain(ctx context.Context, serviceID string, versionID int32, domainName string) APIUpdateDomainRequest {
+func (a *DomainAPIService) UpdateDomain(ctx context.Context, serviceId string, versionId int32, domainName string) APIUpdateDomainRequest {
 	return APIUpdateDomainRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		domainName: domainName,
 	}
 }
@@ -1063,8 +1063,8 @@ func (a *DomainAPIService) UpdateDomainExecute(r APIUpdateDomainRequest) (*Domai
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/domain/{domain_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"domain_name"+"}", gourl.PathEscape(parameterToString(r.domainName, "")))
 
 	localVarHeaderParams := make(map[string]string)

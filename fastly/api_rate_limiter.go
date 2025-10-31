@@ -36,11 +36,11 @@ type RateLimiterAPI interface {
 		Create a rate limiter for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateRateLimiterRequest
 	*/
-	CreateRateLimiter(ctx context.Context, serviceID string, versionID int32) APICreateRateLimiterRequest
+	CreateRateLimiter(ctx context.Context, serviceId string, versionId int32) APICreateRateLimiterRequest
 
 	// CreateRateLimiterExecute executes the request
 	//  @return RateLimiterResponse
@@ -52,10 +52,10 @@ type RateLimiterAPI interface {
 		Delete a rate limiter by its ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param rateLimiterID Alphanumeric string identifying the rate limiter.
+		 @param rateLimiterId Alphanumeric string identifying the rate limiter.
 		 @return APIDeleteRateLimiterRequest
 	*/
-	DeleteRateLimiter(ctx context.Context, rateLimiterID string) APIDeleteRateLimiterRequest
+	DeleteRateLimiter(ctx context.Context, rateLimiterId string) APIDeleteRateLimiterRequest
 
 	// DeleteRateLimiterExecute executes the request
 	//  @return InlineResponse200
@@ -67,10 +67,10 @@ type RateLimiterAPI interface {
 		Get a rate limiter by its ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param rateLimiterID Alphanumeric string identifying the rate limiter.
+		 @param rateLimiterId Alphanumeric string identifying the rate limiter.
 		 @return APIGetRateLimiterRequest
 	*/
-	GetRateLimiter(ctx context.Context, rateLimiterID string) APIGetRateLimiterRequest
+	GetRateLimiter(ctx context.Context, rateLimiterId string) APIGetRateLimiterRequest
 
 	// GetRateLimiterExecute executes the request
 	//  @return RateLimiterResponse
@@ -82,11 +82,11 @@ type RateLimiterAPI interface {
 		List all rate limiters for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListRateLimitersRequest
 	*/
-	ListRateLimiters(ctx context.Context, serviceID string, versionID int32) APIListRateLimitersRequest
+	ListRateLimiters(ctx context.Context, serviceId string, versionId int32) APIListRateLimitersRequest
 
 	// ListRateLimitersExecute executes the request
 	//  @return []RateLimiterResponse
@@ -98,10 +98,10 @@ type RateLimiterAPI interface {
 		Update a rate limiter by its ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param rateLimiterID Alphanumeric string identifying the rate limiter.
+		 @param rateLimiterId Alphanumeric string identifying the rate limiter.
 		 @return APIUpdateRateLimiterRequest
 	*/
-	UpdateRateLimiter(ctx context.Context, rateLimiterID string) APIUpdateRateLimiterRequest
+	UpdateRateLimiter(ctx context.Context, rateLimiterId string) APIUpdateRateLimiterRequest
 
 	// UpdateRateLimiterExecute executes the request
 	//  @return RateLimiterResponse
@@ -115,8 +115,8 @@ type RateLimiterAPIService service
 type APICreateRateLimiterRequest struct {
 	ctx                context.Context
 	APIService         RateLimiterAPI
-	serviceID          string
-	versionID          int32
+	serviceId          string
+	versionId          int32
 	name               *string
 	uriDictionaryName  *string
 	httpMethods        *[]string
@@ -136,14 +136,14 @@ func (r *APICreateRateLimiterRequest) Name(name string) *APICreateRateLimiterReq
 	return r
 }
 
-// URIDictionaryName The name of a Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited.
-func (r *APICreateRateLimiterRequest) URIDictionaryName(uriDictionaryName string) *APICreateRateLimiterRequest {
+// UriDictionaryName The name of a Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited.
+func (r *APICreateRateLimiterRequest) UriDictionaryName(uriDictionaryName string) *APICreateRateLimiterRequest {
 	r.uriDictionaryName = &uriDictionaryName
 	return r
 }
 
-// HTTPMethods Array of HTTP methods to apply rate limiting to.
-func (r *APICreateRateLimiterRequest) HTTPMethods(httpMethods []string) *APICreateRateLimiterRequest {
+// HttpMethods Array of HTTP methods to apply rate limiting to.
+func (r *APICreateRateLimiterRequest) HttpMethods(httpMethods []string) *APICreateRateLimiterRequest {
 	r.httpMethods = &httpMethods
 	return r
 }
@@ -207,16 +207,16 @@ CreateRateLimiter Create a rate limiter
 Create a rate limiter for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateRateLimiterRequest
 */
-func (a *RateLimiterAPIService) CreateRateLimiter(ctx context.Context, serviceID string, versionID int32) APICreateRateLimiterRequest {
+func (a *RateLimiterAPIService) CreateRateLimiter(ctx context.Context, serviceId string, versionId int32) APICreateRateLimiterRequest {
 	return APICreateRateLimiterRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -236,8 +236,8 @@ func (a *RateLimiterAPIService) CreateRateLimiterExecute(r APICreateRateLimiterR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/rate-limiters"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -361,7 +361,7 @@ func (a *RateLimiterAPIService) CreateRateLimiterExecute(r APICreateRateLimiterR
 type APIDeleteRateLimiterRequest struct {
 	ctx           context.Context
 	APIService    RateLimiterAPI
-	rateLimiterID string
+	rateLimiterId string
 }
 
 // Execute calls the API using the request data configured.
@@ -375,14 +375,14 @@ DeleteRateLimiter Delete a rate limiter
 Delete a rate limiter by its ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param rateLimiterID Alphanumeric string identifying the rate limiter.
+ @param rateLimiterId Alphanumeric string identifying the rate limiter.
  @return APIDeleteRateLimiterRequest
 */
-func (a *RateLimiterAPIService) DeleteRateLimiter(ctx context.Context, rateLimiterID string) APIDeleteRateLimiterRequest {
+func (a *RateLimiterAPIService) DeleteRateLimiter(ctx context.Context, rateLimiterId string) APIDeleteRateLimiterRequest {
 	return APIDeleteRateLimiterRequest{
 		APIService:    a,
 		ctx:           ctx,
-		rateLimiterID: rateLimiterID,
+		rateLimiterId: rateLimiterId,
 	}
 }
 
@@ -402,7 +402,7 @@ func (a *RateLimiterAPIService) DeleteRateLimiterExecute(r APIDeleteRateLimiterR
 	}
 
 	localVarPath := localBasePath + "/rate-limiters/{rate_limiter_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rate_limiter_id"+"}", gourl.PathEscape(parameterToString(r.rateLimiterID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rate_limiter_id"+"}", gourl.PathEscape(parameterToString(r.rateLimiterId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -493,7 +493,7 @@ func (a *RateLimiterAPIService) DeleteRateLimiterExecute(r APIDeleteRateLimiterR
 type APIGetRateLimiterRequest struct {
 	ctx           context.Context
 	APIService    RateLimiterAPI
-	rateLimiterID string
+	rateLimiterId string
 }
 
 // Execute calls the API using the request data configured.
@@ -507,14 +507,14 @@ GetRateLimiter Get a rate limiter
 Get a rate limiter by its ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param rateLimiterID Alphanumeric string identifying the rate limiter.
+ @param rateLimiterId Alphanumeric string identifying the rate limiter.
  @return APIGetRateLimiterRequest
 */
-func (a *RateLimiterAPIService) GetRateLimiter(ctx context.Context, rateLimiterID string) APIGetRateLimiterRequest {
+func (a *RateLimiterAPIService) GetRateLimiter(ctx context.Context, rateLimiterId string) APIGetRateLimiterRequest {
 	return APIGetRateLimiterRequest{
 		APIService:    a,
 		ctx:           ctx,
-		rateLimiterID: rateLimiterID,
+		rateLimiterId: rateLimiterId,
 	}
 }
 
@@ -534,7 +534,7 @@ func (a *RateLimiterAPIService) GetRateLimiterExecute(r APIGetRateLimiterRequest
 	}
 
 	localVarPath := localBasePath + "/rate-limiters/{rate_limiter_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rate_limiter_id"+"}", gourl.PathEscape(parameterToString(r.rateLimiterID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rate_limiter_id"+"}", gourl.PathEscape(parameterToString(r.rateLimiterId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -625,8 +625,8 @@ func (a *RateLimiterAPIService) GetRateLimiterExecute(r APIGetRateLimiterRequest
 type APIListRateLimitersRequest struct {
 	ctx        context.Context
 	APIService RateLimiterAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -640,16 +640,16 @@ ListRateLimiters List rate limiters
 List all rate limiters for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListRateLimitersRequest
 */
-func (a *RateLimiterAPIService) ListRateLimiters(ctx context.Context, serviceID string, versionID int32) APIListRateLimitersRequest {
+func (a *RateLimiterAPIService) ListRateLimiters(ctx context.Context, serviceId string, versionId int32) APIListRateLimitersRequest {
 	return APIListRateLimitersRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -669,8 +669,8 @@ func (a *RateLimiterAPIService) ListRateLimitersExecute(r APIListRateLimitersReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/rate-limiters"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -761,7 +761,7 @@ func (a *RateLimiterAPIService) ListRateLimitersExecute(r APIListRateLimitersReq
 type APIUpdateRateLimiterRequest struct {
 	ctx                context.Context
 	APIService         RateLimiterAPI
-	rateLimiterID      string
+	rateLimiterId      string
 	name               *string
 	uriDictionaryName  *string
 	httpMethods        *[]string
@@ -781,14 +781,14 @@ func (r *APIUpdateRateLimiterRequest) Name(name string) *APIUpdateRateLimiterReq
 	return r
 }
 
-// URIDictionaryName The name of a Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited.
-func (r *APIUpdateRateLimiterRequest) URIDictionaryName(uriDictionaryName string) *APIUpdateRateLimiterRequest {
+// UriDictionaryName The name of a Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited.
+func (r *APIUpdateRateLimiterRequest) UriDictionaryName(uriDictionaryName string) *APIUpdateRateLimiterRequest {
 	r.uriDictionaryName = &uriDictionaryName
 	return r
 }
 
-// HTTPMethods Array of HTTP methods to apply rate limiting to.
-func (r *APIUpdateRateLimiterRequest) HTTPMethods(httpMethods []string) *APIUpdateRateLimiterRequest {
+// HttpMethods Array of HTTP methods to apply rate limiting to.
+func (r *APIUpdateRateLimiterRequest) HttpMethods(httpMethods []string) *APIUpdateRateLimiterRequest {
 	r.httpMethods = &httpMethods
 	return r
 }
@@ -852,14 +852,14 @@ UpdateRateLimiter Update a rate limiter
 Update a rate limiter by its ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param rateLimiterID Alphanumeric string identifying the rate limiter.
+ @param rateLimiterId Alphanumeric string identifying the rate limiter.
  @return APIUpdateRateLimiterRequest
 */
-func (a *RateLimiterAPIService) UpdateRateLimiter(ctx context.Context, rateLimiterID string) APIUpdateRateLimiterRequest {
+func (a *RateLimiterAPIService) UpdateRateLimiter(ctx context.Context, rateLimiterId string) APIUpdateRateLimiterRequest {
 	return APIUpdateRateLimiterRequest{
 		APIService:    a,
 		ctx:           ctx,
-		rateLimiterID: rateLimiterID,
+		rateLimiterId: rateLimiterId,
 	}
 }
 
@@ -879,7 +879,7 @@ func (a *RateLimiterAPIService) UpdateRateLimiterExecute(r APIUpdateRateLimiterR
 	}
 
 	localVarPath := localBasePath + "/rate-limiters/{rate_limiter_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rate_limiter_id"+"}", gourl.PathEscape(parameterToString(r.rateLimiterID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rate_limiter_id"+"}", gourl.PathEscape(parameterToString(r.rateLimiterId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

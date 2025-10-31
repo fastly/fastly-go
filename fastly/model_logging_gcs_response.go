@@ -53,7 +53,7 @@ type LoggingGcsResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string      `json:"service_id,omitempty"`
+	ServiceId *string      `json:"service_id,omitempty"`
 	Version   *string      `json:"version,omitempty"`
 	// The name of the GCS bucket.
 	BucketName *string `json:"bucket_name,omitempty"`
@@ -61,7 +61,7 @@ type LoggingGcsResponse struct {
 	// A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 	PublicKey NullableString `json:"public_key,omitempty"`
 	// Your Google Cloud Platform project ID. Required
-	ProjectID            *string `json:"project_id,omitempty"`
+	ProjectId            *string `json:"project_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -726,36 +726,36 @@ func (o *LoggingGcsResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *LoggingGcsResponse) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *LoggingGcsResponse) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingGcsResponse) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *LoggingGcsResponse) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *LoggingGcsResponse) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *LoggingGcsResponse) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *LoggingGcsResponse) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *LoggingGcsResponse) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -897,36 +897,36 @@ func (o *LoggingGcsResponse) UnsetPublicKey() {
 	o.PublicKey.Unset()
 }
 
-// GetProjectID returns the ProjectID field value if set, zero value otherwise.
-func (o *LoggingGcsResponse) GetProjectID() string {
-	if o == nil || o.ProjectID == nil {
+// GetProjectId returns the ProjectId field value if set, zero value otherwise.
+func (o *LoggingGcsResponse) GetProjectId() string {
+	if o == nil || o.ProjectId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ProjectID
+	return *o.ProjectId
 }
 
-// GetProjectIDOk returns a tuple with the ProjectID field value if set, nil otherwise
+// GetProjectIdOk returns a tuple with the ProjectId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingGcsResponse) GetProjectIDOk() (*string, bool) {
-	if o == nil || o.ProjectID == nil {
+func (o *LoggingGcsResponse) GetProjectIdOk() (*string, bool) {
+	if o == nil || o.ProjectId == nil {
 		return nil, false
 	}
-	return o.ProjectID, true
+	return o.ProjectId, true
 }
 
-// HasProjectID returns a boolean if a field has been set.
-func (o *LoggingGcsResponse) HasProjectID() bool {
-	if o != nil && o.ProjectID != nil {
+// HasProjectId returns a boolean if a field has been set.
+func (o *LoggingGcsResponse) HasProjectId() bool {
+	if o != nil && o.ProjectId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetProjectID gets a reference to the given string and assigns it to the ProjectID field.
-func (o *LoggingGcsResponse) SetProjectID(v string) {
-	o.ProjectID = &v
+// SetProjectId gets a reference to the given string and assigns it to the ProjectId field.
+func (o *LoggingGcsResponse) SetProjectId(v string) {
+	o.ProjectId = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -984,8 +984,8 @@ func (o LoggingGcsResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
@@ -999,8 +999,8 @@ func (o LoggingGcsResponse) MarshalJSON() ([]byte, error) {
 	if o.PublicKey.IsSet() {
 		toSerialize["public_key"] = o.PublicKey.Get()
 	}
-	if o.ProjectID != nil {
-		toSerialize["project_id"] = o.ProjectID
+	if o.ProjectId != nil {
+		toSerialize["project_id"] = o.ProjectId
 	}
 
 	for key, value := range o.AdditionalProperties {

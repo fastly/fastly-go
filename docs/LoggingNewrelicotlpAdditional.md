@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [optional] [default to "{\"timestamp\":\"%{begin:%Y-%m-%dT%H:%M:%S}t\",\"time_elapsed\":\"%{time.elapsed.usec}V\",\"is_tls\":\"%{if(req.is_ssl, \\\"true\\\", \\\"false\\\")}V\",\"client_ip\":\"%{req.http.Fastly-Client-IP}V\",\"geo_city\":\"%{client.geo.city}V\",\"geo_country_code\":\"%{client.geo.country_code}V\",\"request\":\"%{req.request}V\",\"host\":\"%{req.http.Fastly-Orig-Host}V\",\"url\":\"%{json.escape(req.url)}V\",\"request_referer\":\"%{json.escape(req.http.Referer)}V\",\"request_user_agent\":\"%{json.escape(req.http.User-Agent)}V\",\"request_accept_language\":\"%{json.escape(req.http.Accept-Language)}V\",\"request_accept_charset\":\"%{json.escape(req.http.Accept-Charset)}V\",\"cache_status\":\"%{regsub(fastly_info.state, \\\"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\\\", \\\"\\\\2\\\\3\\\") }V\"}"]
 **Token** | Pointer to **string** | The Insert API key from the Account page of your New Relic account. Required. | [optional] 
 **Region** | Pointer to **string** | The region to which to stream logs. | [optional] [default to "US"]
-**URL** | Pointer to **NullableString** | (Optional) URL of the New Relic Trace Observer, if you are using New Relic Infinite Tracing. | [optional] [default to "null"]
+**Url** | Pointer to **NullableString** | (Optional) URL of the New Relic Trace Observer, if you are using New Relic Infinite Tracing. | [optional] [default to "null"]
 
 ## Methods
 
@@ -103,40 +103,42 @@ SetRegion sets Region field to given value.
 
 HasRegion returns a boolean if a field has been set.
 
-### GetURL
+### GetUrl
 
-`func (o *LoggingNewrelicotlpAdditional) GetURL() string`
+`func (o *LoggingNewrelicotlpAdditional) GetUrl() string`
 
-GetURL returns the URL field if non-nil, zero value otherwise.
+GetUrl returns the Url field if non-nil, zero value otherwise.
 
-### GetURLOk
+### GetUrlOk
 
-`func (o *LoggingNewrelicotlpAdditional) GetURLOk() (*string, bool)`
+`func (o *LoggingNewrelicotlpAdditional) GetUrlOk() (*string, bool)`
 
-GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURL
+### SetUrl
 
-`func (o *LoggingNewrelicotlpAdditional) SetURL(v string)`
+`func (o *LoggingNewrelicotlpAdditional) SetUrl(v string)`
 
-SetURL sets URL field to given value.
+SetUrl sets Url field to given value.
 
-### HasURL
+### HasUrl
 
-`func (o *LoggingNewrelicotlpAdditional) HasURL() bool`
+`func (o *LoggingNewrelicotlpAdditional) HasUrl() bool`
 
-HasURL returns a boolean if a field has been set.
+HasUrl returns a boolean if a field has been set.
 
-### SetURLNil
+### SetUrlNil
 
-`func (o *LoggingNewrelicotlpAdditional) SetURLNil(b bool)`
+`func (o *LoggingNewrelicotlpAdditional) SetUrlNil(b bool)`
 
- SetURLNil sets the value for URL to be an explicit nil
+ SetUrlNil sets the value for Url to be an explicit nil
 
-### UnsetURL
-`func (o *LoggingNewrelicotlpAdditional) UnsetURL()`
+### UnsetUrl
+`func (o *LoggingNewrelicotlpAdditional) UnsetUrl()`
 
-UnsetURL ensures that no value is present for URL, not even an explicit nil
+UnsetUrl ensures that no value is present for Url, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

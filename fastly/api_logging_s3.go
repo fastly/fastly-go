@@ -36,11 +36,11 @@ type LoggingS3API interface {
 		Create a S3 for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogAwsS3Request
 	*/
-	CreateLogAwsS3(ctx context.Context, serviceID string, versionID int32) APICreateLogAwsS3Request
+	CreateLogAwsS3(ctx context.Context, serviceId string, versionId int32) APICreateLogAwsS3Request
 
 	// CreateLogAwsS3Execute executes the request
 	//  @return LoggingS3Response
@@ -52,12 +52,12 @@ type LoggingS3API interface {
 		Delete the S3 for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingS3Name The name for the real-time logging configuration.
 		 @return APIDeleteLogAwsS3Request
 	*/
-	DeleteLogAwsS3(ctx context.Context, serviceID string, versionID int32, loggingS3Name string) APIDeleteLogAwsS3Request
+	DeleteLogAwsS3(ctx context.Context, serviceId string, versionId int32, loggingS3Name string) APIDeleteLogAwsS3Request
 
 	// DeleteLogAwsS3Execute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingS3API interface {
 		Get the S3 for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingS3Name The name for the real-time logging configuration.
 		 @return APIGetLogAwsS3Request
 	*/
-	GetLogAwsS3(ctx context.Context, serviceID string, versionID int32, loggingS3Name string) APIGetLogAwsS3Request
+	GetLogAwsS3(ctx context.Context, serviceId string, versionId int32, loggingS3Name string) APIGetLogAwsS3Request
 
 	// GetLogAwsS3Execute executes the request
 	//  @return LoggingS3Response
@@ -86,11 +86,11 @@ type LoggingS3API interface {
 		List all of the S3s for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogAwsS3Request
 	*/
-	ListLogAwsS3(ctx context.Context, serviceID string, versionID int32) APIListLogAwsS3Request
+	ListLogAwsS3(ctx context.Context, serviceId string, versionId int32) APIListLogAwsS3Request
 
 	// ListLogAwsS3Execute executes the request
 	//  @return []LoggingS3Response
@@ -102,12 +102,12 @@ type LoggingS3API interface {
 		Update the S3 for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingS3Name The name for the real-time logging configuration.
 		 @return APIUpdateLogAwsS3Request
 	*/
-	UpdateLogAwsS3(ctx context.Context, serviceID string, versionID int32, loggingS3Name string) APIUpdateLogAwsS3Request
+	UpdateLogAwsS3(ctx context.Context, serviceId string, versionId int32, loggingS3Name string) APIUpdateLogAwsS3Request
 
 	// UpdateLogAwsS3Execute executes the request
 	//  @return LoggingS3Response
@@ -121,8 +121,8 @@ type LoggingS3APIService service
 type APICreateLogAwsS3Request struct {
 	ctx                          context.Context
 	APIService                   LoggingS3API
-	serviceID                    string
-	versionID                    int32
+	serviceId                    string
+	versionId                    int32
 	name                         *string
 	placement                    *string
 	responseCondition            *string
@@ -143,7 +143,7 @@ type APICreateLogAwsS3Request struct {
 	publicKey                    *string
 	redundancy                   *string
 	secretKey                    *string
-	serverSideEncryptionKmsKeyID *string
+	serverSideEncryptionKmsKeyId *string
 	serverSideEncryption         *string
 	fileMaxBytes                 *int32
 }
@@ -220,8 +220,8 @@ func (r *APICreateLogAwsS3Request) AccessKey(accessKey string) *APICreateLogAwsS
 	return r
 }
 
-// ACL The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
-func (r *APICreateLogAwsS3Request) ACL(acl string) *APICreateLogAwsS3Request {
+// Acl The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
+func (r *APICreateLogAwsS3Request) Acl(acl string) *APICreateLogAwsS3Request {
 	r.acl = &acl
 	return r
 }
@@ -268,9 +268,9 @@ func (r *APICreateLogAwsS3Request) SecretKey(secretKey string) *APICreateLogAwsS
 	return r
 }
 
-// ServerSideEncryptionKmsKeyID Optional server-side KMS Key ID. Must be set if &#x60;server_side_encryption&#x60; is set to &#x60;aws:kms&#x60; or &#x60;AES256&#x60;.
-func (r *APICreateLogAwsS3Request) ServerSideEncryptionKmsKeyID(serverSideEncryptionKmsKeyID string) *APICreateLogAwsS3Request {
-	r.serverSideEncryptionKmsKeyID = &serverSideEncryptionKmsKeyID
+// ServerSideEncryptionKmsKeyId Optional server-side KMS Key Id. Must be set if &#x60;server_side_encryption&#x60; is set to &#x60;aws:kms&#x60; or &#x60;AES256&#x60;.
+func (r *APICreateLogAwsS3Request) ServerSideEncryptionKmsKeyId(serverSideEncryptionKmsKeyId string) *APICreateLogAwsS3Request {
+	r.serverSideEncryptionKmsKeyId = &serverSideEncryptionKmsKeyId
 	return r
 }
 
@@ -297,16 +297,16 @@ CreateLogAwsS3 Create an AWS S3 log endpoint
 Create a S3 for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogAwsS3Request
 */
-func (a *LoggingS3APIService) CreateLogAwsS3(ctx context.Context, serviceID string, versionID int32) APICreateLogAwsS3Request {
+func (a *LoggingS3APIService) CreateLogAwsS3(ctx context.Context, serviceId string, versionId int32) APICreateLogAwsS3Request {
 	return APICreateLogAwsS3Request{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -326,8 +326,8 @@ func (a *LoggingS3APIService) CreateLogAwsS3Execute(r APICreateLogAwsS3Request) 
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/s3"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -410,8 +410,8 @@ func (a *LoggingS3APIService) CreateLogAwsS3Execute(r APICreateLogAwsS3Request) 
 	if r.secretKey != nil {
 		localVarFormParams.Add("secret_key", parameterToString(*r.secretKey, ""))
 	}
-	if r.serverSideEncryptionKmsKeyID != nil {
-		localVarFormParams.Add("server_side_encryption_kms_key_id", parameterToString(*r.serverSideEncryptionKmsKeyID, ""))
+	if r.serverSideEncryptionKmsKeyId != nil {
+		localVarFormParams.Add("server_side_encryption_kms_key_id", parameterToString(*r.serverSideEncryptionKmsKeyId, ""))
 	}
 	if r.serverSideEncryption != nil {
 		localVarFormParams.Add("server_side_encryption", parameterToString(*r.serverSideEncryption, ""))
@@ -487,8 +487,8 @@ func (a *LoggingS3APIService) CreateLogAwsS3Execute(r APICreateLogAwsS3Request) 
 type APIDeleteLogAwsS3Request struct {
 	ctx           context.Context
 	APIService    LoggingS3API
-	serviceID     string
-	versionID     int32
+	serviceId     string
+	versionId     int32
 	loggingS3Name string
 }
 
@@ -503,17 +503,17 @@ DeleteLogAwsS3 Delete an AWS S3 log endpoint
 Delete the S3 for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingS3Name The name for the real-time logging configuration.
  @return APIDeleteLogAwsS3Request
 */
-func (a *LoggingS3APIService) DeleteLogAwsS3(ctx context.Context, serviceID string, versionID int32, loggingS3Name string) APIDeleteLogAwsS3Request {
+func (a *LoggingS3APIService) DeleteLogAwsS3(ctx context.Context, serviceId string, versionId int32, loggingS3Name string) APIDeleteLogAwsS3Request {
 	return APIDeleteLogAwsS3Request{
 		APIService:    a,
 		ctx:           ctx,
-		serviceID:     serviceID,
-		versionID:     versionID,
+		serviceId:     serviceId,
+		versionId:     versionId,
 		loggingS3Name: loggingS3Name,
 	}
 }
@@ -534,8 +534,8 @@ func (a *LoggingS3APIService) DeleteLogAwsS3Execute(r APIDeleteLogAwsS3Request) 
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/s3/{logging_s3_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_s3_name"+"}", gourl.PathEscape(parameterToString(r.loggingS3Name, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -627,8 +627,8 @@ func (a *LoggingS3APIService) DeleteLogAwsS3Execute(r APIDeleteLogAwsS3Request) 
 type APIGetLogAwsS3Request struct {
 	ctx           context.Context
 	APIService    LoggingS3API
-	serviceID     string
-	versionID     int32
+	serviceId     string
+	versionId     int32
 	loggingS3Name string
 }
 
@@ -643,17 +643,17 @@ GetLogAwsS3 Get an AWS S3 log endpoint
 Get the S3 for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingS3Name The name for the real-time logging configuration.
  @return APIGetLogAwsS3Request
 */
-func (a *LoggingS3APIService) GetLogAwsS3(ctx context.Context, serviceID string, versionID int32, loggingS3Name string) APIGetLogAwsS3Request {
+func (a *LoggingS3APIService) GetLogAwsS3(ctx context.Context, serviceId string, versionId int32, loggingS3Name string) APIGetLogAwsS3Request {
 	return APIGetLogAwsS3Request{
 		APIService:    a,
 		ctx:           ctx,
-		serviceID:     serviceID,
-		versionID:     versionID,
+		serviceId:     serviceId,
+		versionId:     versionId,
 		loggingS3Name: loggingS3Name,
 	}
 }
@@ -674,8 +674,8 @@ func (a *LoggingS3APIService) GetLogAwsS3Execute(r APIGetLogAwsS3Request) (*Logg
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/s3/{logging_s3_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_s3_name"+"}", gourl.PathEscape(parameterToString(r.loggingS3Name, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -767,8 +767,8 @@ func (a *LoggingS3APIService) GetLogAwsS3Execute(r APIGetLogAwsS3Request) (*Logg
 type APIListLogAwsS3Request struct {
 	ctx        context.Context
 	APIService LoggingS3API
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -782,16 +782,16 @@ ListLogAwsS3 List AWS S3 log endpoints
 List all of the S3s for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogAwsS3Request
 */
-func (a *LoggingS3APIService) ListLogAwsS3(ctx context.Context, serviceID string, versionID int32) APIListLogAwsS3Request {
+func (a *LoggingS3APIService) ListLogAwsS3(ctx context.Context, serviceId string, versionId int32) APIListLogAwsS3Request {
 	return APIListLogAwsS3Request{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -811,8 +811,8 @@ func (a *LoggingS3APIService) ListLogAwsS3Execute(r APIListLogAwsS3Request) ([]L
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/s3"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -903,8 +903,8 @@ func (a *LoggingS3APIService) ListLogAwsS3Execute(r APIListLogAwsS3Request) ([]L
 type APIUpdateLogAwsS3Request struct {
 	ctx                          context.Context
 	APIService                   LoggingS3API
-	serviceID                    string
-	versionID                    int32
+	serviceId                    string
+	versionId                    int32
 	loggingS3Name                string
 	name                         *string
 	placement                    *string
@@ -926,7 +926,7 @@ type APIUpdateLogAwsS3Request struct {
 	publicKey                    *string
 	redundancy                   *string
 	secretKey                    *string
-	serverSideEncryptionKmsKeyID *string
+	serverSideEncryptionKmsKeyId *string
 	serverSideEncryption         *string
 	fileMaxBytes                 *int32
 }
@@ -1003,8 +1003,8 @@ func (r *APIUpdateLogAwsS3Request) AccessKey(accessKey string) *APIUpdateLogAwsS
 	return r
 }
 
-// ACL The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
-func (r *APIUpdateLogAwsS3Request) ACL(acl string) *APIUpdateLogAwsS3Request {
+// Acl The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
+func (r *APIUpdateLogAwsS3Request) Acl(acl string) *APIUpdateLogAwsS3Request {
 	r.acl = &acl
 	return r
 }
@@ -1051,9 +1051,9 @@ func (r *APIUpdateLogAwsS3Request) SecretKey(secretKey string) *APIUpdateLogAwsS
 	return r
 }
 
-// ServerSideEncryptionKmsKeyID Optional server-side KMS Key ID. Must be set if &#x60;server_side_encryption&#x60; is set to &#x60;aws:kms&#x60; or &#x60;AES256&#x60;.
-func (r *APIUpdateLogAwsS3Request) ServerSideEncryptionKmsKeyID(serverSideEncryptionKmsKeyID string) *APIUpdateLogAwsS3Request {
-	r.serverSideEncryptionKmsKeyID = &serverSideEncryptionKmsKeyID
+// ServerSideEncryptionKmsKeyId Optional server-side KMS Key Id. Must be set if &#x60;server_side_encryption&#x60; is set to &#x60;aws:kms&#x60; or &#x60;AES256&#x60;.
+func (r *APIUpdateLogAwsS3Request) ServerSideEncryptionKmsKeyId(serverSideEncryptionKmsKeyId string) *APIUpdateLogAwsS3Request {
+	r.serverSideEncryptionKmsKeyId = &serverSideEncryptionKmsKeyId
 	return r
 }
 
@@ -1080,17 +1080,17 @@ UpdateLogAwsS3 Update an AWS S3 log endpoint
 Update the S3 for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingS3Name The name for the real-time logging configuration.
  @return APIUpdateLogAwsS3Request
 */
-func (a *LoggingS3APIService) UpdateLogAwsS3(ctx context.Context, serviceID string, versionID int32, loggingS3Name string) APIUpdateLogAwsS3Request {
+func (a *LoggingS3APIService) UpdateLogAwsS3(ctx context.Context, serviceId string, versionId int32, loggingS3Name string) APIUpdateLogAwsS3Request {
 	return APIUpdateLogAwsS3Request{
 		APIService:    a,
 		ctx:           ctx,
-		serviceID:     serviceID,
-		versionID:     versionID,
+		serviceId:     serviceId,
+		versionId:     versionId,
 		loggingS3Name: loggingS3Name,
 	}
 }
@@ -1111,8 +1111,8 @@ func (a *LoggingS3APIService) UpdateLogAwsS3Execute(r APIUpdateLogAwsS3Request) 
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/s3/{logging_s3_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_s3_name"+"}", gourl.PathEscape(parameterToString(r.loggingS3Name, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -1196,8 +1196,8 @@ func (a *LoggingS3APIService) UpdateLogAwsS3Execute(r APIUpdateLogAwsS3Request) 
 	if r.secretKey != nil {
 		localVarFormParams.Add("secret_key", parameterToString(*r.secretKey, ""))
 	}
-	if r.serverSideEncryptionKmsKeyID != nil {
-		localVarFormParams.Add("server_side_encryption_kms_key_id", parameterToString(*r.serverSideEncryptionKmsKeyID, ""))
+	if r.serverSideEncryptionKmsKeyId != nil {
+		localVarFormParams.Add("server_side_encryption_kms_key_id", parameterToString(*r.serverSideEncryptionKmsKeyId, ""))
 	}
 	if r.serverSideEncryption != nil {
 		localVarFormParams.Add("server_side_encryption", parameterToString(*r.serverSideEncryption, ""))

@@ -17,51 +17,51 @@ import (
 	"fmt"
 )
 
-// TypeTLSConfiguration Resource type
-type TypeTLSConfiguration string
+// TypeTlsConfiguration Resource type
+type TypeTlsConfiguration string
 
-// List of resourceTypetls_configuration
+// List of type_tls_configuration
 const (
-	TYPETLSCONFIGURATION_TLS_CONFIGURATION TypeTLSConfiguration = "tls_configuration"
+	TYPETLSCONFIGURATION_TLS_CONFIGURATION TypeTlsConfiguration = "tls_configuration"
 )
 
-// AllowedTypeTLSConfigurationEnumValues All allowed values of TypeTLSConfiguration enum
-var AllowedTypeTLSConfigurationEnumValues = []TypeTLSConfiguration{
+// AllowedTypeTlsConfigurationEnumValues All allowed values of TypeTlsConfiguration enum
+var AllowedTypeTlsConfigurationEnumValues = []TypeTlsConfiguration{
 	"tls_configuration",
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *TypeTLSConfiguration) UnmarshalJSON(src []byte) error {
+func (v *TypeTlsConfiguration) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := TypeTLSConfiguration(value)
-	for _, existing := range AllowedTypeTLSConfigurationEnumValues {
+	enumTypeValue := TypeTlsConfiguration(value)
+	for _, existing := range AllowedTypeTlsConfigurationEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid TypeTLSConfiguration", value)
+	return fmt.Errorf("%+v is not a valid TypeTlsConfiguration", value)
 }
 
-// NewTypeTLSConfigurationFromValue returns a pointer to a valid TypeTLSConfiguration
+// NewTypeTlsConfigurationFromValue returns a pointer to a valid TypeTlsConfiguration
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewTypeTLSConfigurationFromValue(v string) (*TypeTLSConfiguration, error) {
-	ev := TypeTLSConfiguration(v)
+func NewTypeTlsConfigurationFromValue(v string) (*TypeTlsConfiguration, error) {
+	ev := TypeTlsConfiguration(v)
 	if ev.IsValid() {
 		return &ev, nil
 	}
-	return nil, fmt.Errorf("invalid value '%v' for TypeTLSConfiguration: valid values are %v", v, AllowedTypeTLSConfigurationEnumValues)
+	return nil, fmt.Errorf("invalid value '%v' for TypeTlsConfiguration: valid values are %v", v, AllowedTypeTlsConfigurationEnumValues)
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v TypeTLSConfiguration) IsValid() bool {
-	for _, existing := range AllowedTypeTLSConfigurationEnumValues {
+func (v TypeTlsConfiguration) IsValid() bool {
+	for _, existing := range AllowedTypeTlsConfigurationEnumValues {
 		if existing == v {
 			return true
 		}
@@ -69,53 +69,53 @@ func (v TypeTLSConfiguration) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to resourceTypetls_configuration value
-func (v TypeTLSConfiguration) Ptr() *TypeTLSConfiguration {
+// Ptr returns reference to type_tls_configuration value
+func (v TypeTlsConfiguration) Ptr() *TypeTlsConfiguration {
 	return &v
 }
 
-// NullableTypeTLSConfiguration is a helper abstraction for handling nullable typetlsconfiguration types.
-type NullableTypeTLSConfiguration struct {
-	value *TypeTLSConfiguration
+// NullableTypeTlsConfiguration is a helper abstraction for handling nullable typetlsconfiguration types.
+type NullableTypeTlsConfiguration struct {
+	value *TypeTlsConfiguration
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTypeTLSConfiguration) Get() *TypeTLSConfiguration {
+func (v NullableTypeTlsConfiguration) Get() *TypeTlsConfiguration {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTypeTLSConfiguration) Set(val *TypeTLSConfiguration) {
+func (v *NullableTypeTlsConfiguration) Set(val *TypeTlsConfiguration) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTypeTLSConfiguration) IsSet() bool {
+func (v NullableTypeTlsConfiguration) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTypeTLSConfiguration) Unset() {
+func (v *NullableTypeTlsConfiguration) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTypeTLSConfiguration returns a pointer to a new instance of NullableTypeTLSConfiguration.
-func NewNullableTypeTLSConfiguration(val *TypeTLSConfiguration) *NullableTypeTLSConfiguration {
-	return &NullableTypeTLSConfiguration{value: val, isSet: true}
+// NewNullableTypeTlsConfiguration returns a pointer to a new instance of NullableTypeTlsConfiguration.
+func NewNullableTypeTlsConfiguration(val *TypeTlsConfiguration) *NullableTypeTlsConfiguration {
+	return &NullableTypeTlsConfiguration{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTypeTLSConfiguration) MarshalJSON() ([]byte, error) {
+func (v NullableTypeTlsConfiguration) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTypeTLSConfiguration) UnmarshalJSON(src []byte) error {
+func (v *NullableTypeTlsConfiguration) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

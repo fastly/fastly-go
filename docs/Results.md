@@ -26,11 +26,11 @@ Name | Type | Description | Notes
 **Uncacheable** | Pointer to **int64** | Number of requests that were designated uncachable. | [optional] 
 **Pipe** | Pointer to **int64** | Optional. Pipe operations performed (legacy feature). | [optional] 
 **Synth** | Pointer to **int64** | Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement). | [optional] 
-**TLS** | Pointer to **int64** | Number of requests that were received over TLS. | [optional] 
-**TLSV10** | Pointer to **int64** | Number of requests received over TLS 1.0. | [optional] 
-**TLSV11** | Pointer to **int64** | Number of requests received over TLS 1.1. | [optional] 
-**TLSV12** | Pointer to **int64** | Number of requests received over TLS 1.2. | [optional] 
-**TLSV13** | Pointer to **int64** | Number of requests received over TLS 1.3. | [optional] 
+**Tls** | Pointer to **int64** | Number of requests that were received over TLS. | [optional] 
+**TlsV10** | Pointer to **int64** | Number of requests received over TLS 1.0. | [optional] 
+**TlsV11** | Pointer to **int64** | Number of requests received over TLS 1.1. | [optional] 
+**TlsV12** | Pointer to **int64** | Number of requests received over TLS 1.2. | [optional] 
+**TlsV13** | Pointer to **int64** | Number of requests received over TLS 1.3. | [optional] 
 **EdgeRequests** | Pointer to **int64** | Number of requests sent by end users to Fastly. | [optional] 
 **EdgeRespHeaderBytes** | Pointer to **int64** | Total header bytes delivered from Fastly to the end user. | [optional] 
 **EdgeRespBodyBytes** | Pointer to **int64** | Total body bytes delivered from Fastly to the end user. | [optional] 
@@ -66,8 +66,8 @@ Name | Type | Description | Notes
 **Pci** | Pointer to **int64** | Number of responses with the PCI flag turned on. | [optional] 
 **Log** | Pointer to **int64** | Number of log lines sent. | [optional] 
 **LogBytes** | Pointer to **int64** | Total log bytes sent. | [optional] 
-**HTTP2** | Pointer to **int64** | Number of requests received over HTTP/2. | [optional] 
-**HTTP3** | Pointer to **int64** | Number of requests received over HTTP/3. | [optional] 
+**Http2** | Pointer to **int64** | Number of requests received over HTTP/2. | [optional] 
+**Http3** | Pointer to **int64** | Number of requests received over HTTP/3. | [optional] 
 **WafLogged** | Pointer to **int64** | Number of requests that triggered a WAF rule and were logged. | [optional] 
 **WafBlocked** | Pointer to **int64** | Number of requests that triggered a WAF rule and were blocked. | [optional] 
 **WafPassed** | Pointer to **int64** | Number of requests that triggered a WAF rule and were passed. | [optional] 
@@ -149,7 +149,7 @@ Name | Type | Description | Notes
 **PrehashSubCount** | Pointer to **int64** | Number of executions of the `vcl_prehash` Varnish subroutine. | [optional] 
 **PredeliverSubTime** | Pointer to **float32** | Time spent inside the `vcl_predeliver` Varnish subroutine (in seconds). | [optional] 
 **PredeliverSubCount** | Pointer to **int64** | Number of executions of the `vcl_predeliver` Varnish subroutine. | [optional] 
-**TLSHandshakeSentBytes** | Pointer to **int64** | Number of bytes transferred during TLS handshake. | [optional] 
+**TlsHandshakeSentBytes** | Pointer to **int64** | Number of bytes transferred during TLS handshake. | [optional] 
 **HitRespBodyBytes** | Pointer to **int64** | Total body bytes delivered for cache hits. | [optional] 
 **MissRespBodyBytes** | Pointer to **int64** | Total body bytes delivered for cache misses. | [optional] 
 **PassRespBodyBytes** | Pointer to **int64** | Total body bytes delivered for cache passes. | [optional] 
@@ -158,7 +158,7 @@ Name | Type | Description | Notes
 **ComputeRequests** | Pointer to **int64** | The total number of requests that were received for your service by Fastly. | [optional] 
 **ComputeRequestTimeMs** | Pointer to **float32** | The total, actual amount of time used to process your requests, including active CPU time (in milliseconds). | [optional] 
 **ComputeRequestTimeBilledMs** | Pointer to **float32** | The total amount of request processing time you will be billed for, measured in 50 millisecond increments. | [optional] 
-**ComputeRAMUsed** | Pointer to **int64** | The amount of RAM used for your service by Fastly (in bytes). | [optional] 
+**ComputeRamUsed** | Pointer to **int64** | The amount of RAM used for your service by Fastly (in bytes). | [optional] 
 **ComputeExecutionTimeMs** | Pointer to **float32** | The amount of active CPU time used to process your requests (in milliseconds). | [optional] 
 **ComputeReqHeaderBytes** | Pointer to **int64** | Total header bytes received by the Compute platform. | [optional] 
 **ComputeReqBodyBytes** | Pointer to **int64** | Total body bytes received by the Compute platform. | [optional] 
@@ -272,7 +272,8 @@ Name | Type | Description | Notes
 **NgwafRequestsBlockedCount** | Pointer to **int32** | Count of Next-Gen WAF (Edge WAF &amp; Core WAF) requests blocked. | [optional] 
 **NgwafRequestsTimeoutCount** | Pointer to **int32** | Count of Edge WAF requests timed outcome. | [optional] 
 **NgwafRequestsChallengedCount** | Pointer to **int32** | Count of Edge WAF requests challenged. | [optional] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ApiDiscoveryRequestsCount** | Pointer to **int32** | Number of requests processed by the API Discovery engine. | [optional] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **StartTime** | Pointer to **int64** | Timestamp for the start of the time period being reported | [optional] 
 
 ## Methods
@@ -854,130 +855,130 @@ SetSynth sets Synth field to given value.
 
 HasSynth returns a boolean if a field has been set.
 
-### GetTLS
+### GetTls
 
-`func (o *Results) GetTLS() int64`
+`func (o *Results) GetTls() int64`
 
-GetTLS returns the TLS field if non-nil, zero value otherwise.
+GetTls returns the Tls field if non-nil, zero value otherwise.
 
-### GetTLSOk
+### GetTlsOk
 
-`func (o *Results) GetTLSOk() (*int64, bool)`
+`func (o *Results) GetTlsOk() (*int64, bool)`
 
-GetTLSOk returns a tuple with the TLS field if it's non-nil, zero value otherwise
+GetTlsOk returns a tuple with the Tls field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLS
+### SetTls
 
-`func (o *Results) SetTLS(v int64)`
+`func (o *Results) SetTls(v int64)`
 
-SetTLS sets TLS field to given value.
+SetTls sets Tls field to given value.
 
-### HasTLS
+### HasTls
 
-`func (o *Results) HasTLS() bool`
+`func (o *Results) HasTls() bool`
 
-HasTLS returns a boolean if a field has been set.
+HasTls returns a boolean if a field has been set.
 
-### GetTLSV10
+### GetTlsV10
 
-`func (o *Results) GetTLSV10() int64`
+`func (o *Results) GetTlsV10() int64`
 
-GetTLSV10 returns the TLSV10 field if non-nil, zero value otherwise.
+GetTlsV10 returns the TlsV10 field if non-nil, zero value otherwise.
 
-### GetTLSV10Ok
+### GetTlsV10Ok
 
-`func (o *Results) GetTLSV10Ok() (*int64, bool)`
+`func (o *Results) GetTlsV10Ok() (*int64, bool)`
 
-GetTLSV10Ok returns a tuple with the TLSV10 field if it's non-nil, zero value otherwise
+GetTlsV10Ok returns a tuple with the TlsV10 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSV10
+### SetTlsV10
 
-`func (o *Results) SetTLSV10(v int64)`
+`func (o *Results) SetTlsV10(v int64)`
 
-SetTLSV10 sets TLSV10 field to given value.
+SetTlsV10 sets TlsV10 field to given value.
 
-### HasTLSV10
+### HasTlsV10
 
-`func (o *Results) HasTLSV10() bool`
+`func (o *Results) HasTlsV10() bool`
 
-HasTLSV10 returns a boolean if a field has been set.
+HasTlsV10 returns a boolean if a field has been set.
 
-### GetTLSV11
+### GetTlsV11
 
-`func (o *Results) GetTLSV11() int64`
+`func (o *Results) GetTlsV11() int64`
 
-GetTLSV11 returns the TLSV11 field if non-nil, zero value otherwise.
+GetTlsV11 returns the TlsV11 field if non-nil, zero value otherwise.
 
-### GetTLSV11Ok
+### GetTlsV11Ok
 
-`func (o *Results) GetTLSV11Ok() (*int64, bool)`
+`func (o *Results) GetTlsV11Ok() (*int64, bool)`
 
-GetTLSV11Ok returns a tuple with the TLSV11 field if it's non-nil, zero value otherwise
+GetTlsV11Ok returns a tuple with the TlsV11 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSV11
+### SetTlsV11
 
-`func (o *Results) SetTLSV11(v int64)`
+`func (o *Results) SetTlsV11(v int64)`
 
-SetTLSV11 sets TLSV11 field to given value.
+SetTlsV11 sets TlsV11 field to given value.
 
-### HasTLSV11
+### HasTlsV11
 
-`func (o *Results) HasTLSV11() bool`
+`func (o *Results) HasTlsV11() bool`
 
-HasTLSV11 returns a boolean if a field has been set.
+HasTlsV11 returns a boolean if a field has been set.
 
-### GetTLSV12
+### GetTlsV12
 
-`func (o *Results) GetTLSV12() int64`
+`func (o *Results) GetTlsV12() int64`
 
-GetTLSV12 returns the TLSV12 field if non-nil, zero value otherwise.
+GetTlsV12 returns the TlsV12 field if non-nil, zero value otherwise.
 
-### GetTLSV12Ok
+### GetTlsV12Ok
 
-`func (o *Results) GetTLSV12Ok() (*int64, bool)`
+`func (o *Results) GetTlsV12Ok() (*int64, bool)`
 
-GetTLSV12Ok returns a tuple with the TLSV12 field if it's non-nil, zero value otherwise
+GetTlsV12Ok returns a tuple with the TlsV12 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSV12
+### SetTlsV12
 
-`func (o *Results) SetTLSV12(v int64)`
+`func (o *Results) SetTlsV12(v int64)`
 
-SetTLSV12 sets TLSV12 field to given value.
+SetTlsV12 sets TlsV12 field to given value.
 
-### HasTLSV12
+### HasTlsV12
 
-`func (o *Results) HasTLSV12() bool`
+`func (o *Results) HasTlsV12() bool`
 
-HasTLSV12 returns a boolean if a field has been set.
+HasTlsV12 returns a boolean if a field has been set.
 
-### GetTLSV13
+### GetTlsV13
 
-`func (o *Results) GetTLSV13() int64`
+`func (o *Results) GetTlsV13() int64`
 
-GetTLSV13 returns the TLSV13 field if non-nil, zero value otherwise.
+GetTlsV13 returns the TlsV13 field if non-nil, zero value otherwise.
 
-### GetTLSV13Ok
+### GetTlsV13Ok
 
-`func (o *Results) GetTLSV13Ok() (*int64, bool)`
+`func (o *Results) GetTlsV13Ok() (*int64, bool)`
 
-GetTLSV13Ok returns a tuple with the TLSV13 field if it's non-nil, zero value otherwise
+GetTlsV13Ok returns a tuple with the TlsV13 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSV13
+### SetTlsV13
 
-`func (o *Results) SetTLSV13(v int64)`
+`func (o *Results) SetTlsV13(v int64)`
 
-SetTLSV13 sets TLSV13 field to given value.
+SetTlsV13 sets TlsV13 field to given value.
 
-### HasTLSV13
+### HasTlsV13
 
-`func (o *Results) HasTLSV13() bool`
+`func (o *Results) HasTlsV13() bool`
 
-HasTLSV13 returns a boolean if a field has been set.
+HasTlsV13 returns a boolean if a field has been set.
 
 ### GetEdgeRequests
 
@@ -1854,55 +1855,55 @@ SetLogBytes sets LogBytes field to given value.
 
 HasLogBytes returns a boolean if a field has been set.
 
-### GetHTTP2
+### GetHttp2
 
-`func (o *Results) GetHTTP2() int64`
+`func (o *Results) GetHttp2() int64`
 
-GetHTTP2 returns the HTTP2 field if non-nil, zero value otherwise.
+GetHttp2 returns the Http2 field if non-nil, zero value otherwise.
 
-### GetHTTP2Ok
+### GetHttp2Ok
 
-`func (o *Results) GetHTTP2Ok() (*int64, bool)`
+`func (o *Results) GetHttp2Ok() (*int64, bool)`
 
-GetHTTP2Ok returns a tuple with the HTTP2 field if it's non-nil, zero value otherwise
+GetHttp2Ok returns a tuple with the Http2 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHTTP2
+### SetHttp2
 
-`func (o *Results) SetHTTP2(v int64)`
+`func (o *Results) SetHttp2(v int64)`
 
-SetHTTP2 sets HTTP2 field to given value.
+SetHttp2 sets Http2 field to given value.
 
-### HasHTTP2
+### HasHttp2
 
-`func (o *Results) HasHTTP2() bool`
+`func (o *Results) HasHttp2() bool`
 
-HasHTTP2 returns a boolean if a field has been set.
+HasHttp2 returns a boolean if a field has been set.
 
-### GetHTTP3
+### GetHttp3
 
-`func (o *Results) GetHTTP3() int64`
+`func (o *Results) GetHttp3() int64`
 
-GetHTTP3 returns the HTTP3 field if non-nil, zero value otherwise.
+GetHttp3 returns the Http3 field if non-nil, zero value otherwise.
 
-### GetHTTP3Ok
+### GetHttp3Ok
 
-`func (o *Results) GetHTTP3Ok() (*int64, bool)`
+`func (o *Results) GetHttp3Ok() (*int64, bool)`
 
-GetHTTP3Ok returns a tuple with the HTTP3 field if it's non-nil, zero value otherwise
+GetHttp3Ok returns a tuple with the Http3 field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHTTP3
+### SetHttp3
 
-`func (o *Results) SetHTTP3(v int64)`
+`func (o *Results) SetHttp3(v int64)`
 
-SetHTTP3 sets HTTP3 field to given value.
+SetHttp3 sets Http3 field to given value.
 
-### HasHTTP3
+### HasHttp3
 
-`func (o *Results) HasHTTP3() bool`
+`func (o *Results) HasHttp3() bool`
 
-HasHTTP3 returns a boolean if a field has been set.
+HasHttp3 returns a boolean if a field has been set.
 
 ### GetWafLogged
 
@@ -3929,30 +3930,30 @@ SetPredeliverSubCount sets PredeliverSubCount field to given value.
 
 HasPredeliverSubCount returns a boolean if a field has been set.
 
-### GetTLSHandshakeSentBytes
+### GetTlsHandshakeSentBytes
 
-`func (o *Results) GetTLSHandshakeSentBytes() int64`
+`func (o *Results) GetTlsHandshakeSentBytes() int64`
 
-GetTLSHandshakeSentBytes returns the TLSHandshakeSentBytes field if non-nil, zero value otherwise.
+GetTlsHandshakeSentBytes returns the TlsHandshakeSentBytes field if non-nil, zero value otherwise.
 
-### GetTLSHandshakeSentBytesOk
+### GetTlsHandshakeSentBytesOk
 
-`func (o *Results) GetTLSHandshakeSentBytesOk() (*int64, bool)`
+`func (o *Results) GetTlsHandshakeSentBytesOk() (*int64, bool)`
 
-GetTLSHandshakeSentBytesOk returns a tuple with the TLSHandshakeSentBytes field if it's non-nil, zero value otherwise
+GetTlsHandshakeSentBytesOk returns a tuple with the TlsHandshakeSentBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSHandshakeSentBytes
+### SetTlsHandshakeSentBytes
 
-`func (o *Results) SetTLSHandshakeSentBytes(v int64)`
+`func (o *Results) SetTlsHandshakeSentBytes(v int64)`
 
-SetTLSHandshakeSentBytes sets TLSHandshakeSentBytes field to given value.
+SetTlsHandshakeSentBytes sets TlsHandshakeSentBytes field to given value.
 
-### HasTLSHandshakeSentBytes
+### HasTlsHandshakeSentBytes
 
-`func (o *Results) HasTLSHandshakeSentBytes() bool`
+`func (o *Results) HasTlsHandshakeSentBytes() bool`
 
-HasTLSHandshakeSentBytes returns a boolean if a field has been set.
+HasTlsHandshakeSentBytes returns a boolean if a field has been set.
 
 ### GetHitRespBodyBytes
 
@@ -4154,30 +4155,30 @@ SetComputeRequestTimeBilledMs sets ComputeRequestTimeBilledMs field to given val
 
 HasComputeRequestTimeBilledMs returns a boolean if a field has been set.
 
-### GetComputeRAMUsed
+### GetComputeRamUsed
 
-`func (o *Results) GetComputeRAMUsed() int64`
+`func (o *Results) GetComputeRamUsed() int64`
 
-GetComputeRAMUsed returns the ComputeRAMUsed field if non-nil, zero value otherwise.
+GetComputeRamUsed returns the ComputeRamUsed field if non-nil, zero value otherwise.
 
-### GetComputeRAMUsedOk
+### GetComputeRamUsedOk
 
-`func (o *Results) GetComputeRAMUsedOk() (*int64, bool)`
+`func (o *Results) GetComputeRamUsedOk() (*int64, bool)`
 
-GetComputeRAMUsedOk returns a tuple with the ComputeRAMUsed field if it's non-nil, zero value otherwise
+GetComputeRamUsedOk returns a tuple with the ComputeRamUsed field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetComputeRAMUsed
+### SetComputeRamUsed
 
-`func (o *Results) SetComputeRAMUsed(v int64)`
+`func (o *Results) SetComputeRamUsed(v int64)`
 
-SetComputeRAMUsed sets ComputeRAMUsed field to given value.
+SetComputeRamUsed sets ComputeRamUsed field to given value.
 
-### HasComputeRAMUsed
+### HasComputeRamUsed
 
-`func (o *Results) HasComputeRAMUsed() bool`
+`func (o *Results) HasComputeRamUsed() bool`
 
-HasComputeRAMUsed returns a boolean if a field has been set.
+HasComputeRamUsed returns a boolean if a field has been set.
 
 ### GetComputeExecutionTimeMs
 
@@ -7004,30 +7005,55 @@ SetNgwafRequestsChallengedCount sets NgwafRequestsChallengedCount field to given
 
 HasNgwafRequestsChallengedCount returns a boolean if a field has been set.
 
-### GetServiceID
+### GetApiDiscoveryRequestsCount
 
-`func (o *Results) GetServiceID() string`
+`func (o *Results) GetApiDiscoveryRequestsCount() int32`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetApiDiscoveryRequestsCount returns the ApiDiscoveryRequestsCount field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetApiDiscoveryRequestsCountOk
 
-`func (o *Results) GetServiceIDOk() (*string, bool)`
+`func (o *Results) GetApiDiscoveryRequestsCountOk() (*int32, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetApiDiscoveryRequestsCountOk returns a tuple with the ApiDiscoveryRequestsCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetApiDiscoveryRequestsCount
 
-`func (o *Results) SetServiceID(v string)`
+`func (o *Results) SetApiDiscoveryRequestsCount(v int32)`
 
-SetServiceID sets ServiceID field to given value.
+SetApiDiscoveryRequestsCount sets ApiDiscoveryRequestsCount field to given value.
 
-### HasServiceID
+### HasApiDiscoveryRequestsCount
 
-`func (o *Results) HasServiceID() bool`
+`func (o *Results) HasApiDiscoveryRequestsCount() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasApiDiscoveryRequestsCount returns a boolean if a field has been set.
+
+### GetServiceId
+
+`func (o *Results) GetServiceId() string`
+
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
+
+### GetServiceIdOk
+
+`func (o *Results) GetServiceIdOk() (*string, bool)`
+
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetServiceId
+
+`func (o *Results) SetServiceId(v string)`
+
+SetServiceId sets ServiceId field to given value.
+
+### HasServiceId
+
+`func (o *Results) HasServiceId() bool`
+
+HasServiceId returns a boolean if a field has been set.
 
 ### GetStartTime
 
@@ -7056,3 +7082,5 @@ HasStartTime returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

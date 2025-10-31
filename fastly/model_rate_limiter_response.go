@@ -22,9 +22,9 @@ type RateLimiterResponse struct {
 	// A human readable name for the rate limiting rule.
 	Name *string `json:"name,omitempty"`
 	// The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
-	URIDictionaryName NullableString `json:"uri_dictionary_name,omitempty"`
+	UriDictionaryName NullableString `json:"uri_dictionary_name,omitempty"`
 	// Array of HTTP methods to apply rate limiting to.
-	HTTPMethods []string `json:"http_methods,omitempty"`
+	HttpMethods []string `json:"http_methods,omitempty"`
 	// Upper limit of requests per second allowed by the rate limiter.
 	RpsLimit *int32 `json:"rps_limit,omitempty"`
 	// Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
@@ -43,7 +43,7 @@ type RateLimiterResponse struct {
 	LoggerType *string `json:"logger_type,omitempty"`
 	// Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
 	FeatureRevision *int32  `json:"feature_revision,omitempty"`
-	ServiceID       *string `json:"service_id,omitempty"`
+	ServiceId       *string `json:"service_id,omitempty"`
 	Version         *int32  `json:"version,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
@@ -52,7 +52,7 @@ type RateLimiterResponse struct {
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
 	// Alphanumeric string identifying the rate limiter.
-	ID                   *string `json:"id,omitempty"`
+	Id                   *string `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -107,79 +107,79 @@ func (o *RateLimiterResponse) SetName(v string) {
 	o.Name = &v
 }
 
-// GetURIDictionaryName returns the URIDictionaryName field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RateLimiterResponse) GetURIDictionaryName() string {
-	if o == nil || o.URIDictionaryName.Get() == nil {
+// GetUriDictionaryName returns the UriDictionaryName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *RateLimiterResponse) GetUriDictionaryName() string {
+	if o == nil || o.UriDictionaryName.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.URIDictionaryName.Get()
+	return *o.UriDictionaryName.Get()
 }
 
-// GetURIDictionaryNameOk returns a tuple with the URIDictionaryName field value if set, nil otherwise
+// GetUriDictionaryNameOk returns a tuple with the UriDictionaryName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RateLimiterResponse) GetURIDictionaryNameOk() (*string, bool) {
+func (o *RateLimiterResponse) GetUriDictionaryNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.URIDictionaryName.Get(), o.URIDictionaryName.IsSet()
+	return o.UriDictionaryName.Get(), o.UriDictionaryName.IsSet()
 }
 
-// HasURIDictionaryName returns a boolean if a field has been set.
-func (o *RateLimiterResponse) HasURIDictionaryName() bool {
-	if o != nil && o.URIDictionaryName.IsSet() {
+// HasUriDictionaryName returns a boolean if a field has been set.
+func (o *RateLimiterResponse) HasUriDictionaryName() bool {
+	if o != nil && o.UriDictionaryName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetURIDictionaryName gets a reference to the given NullableString and assigns it to the URIDictionaryName field.
-func (o *RateLimiterResponse) SetURIDictionaryName(v string) {
-	o.URIDictionaryName.Set(&v)
+// SetUriDictionaryName gets a reference to the given NullableString and assigns it to the UriDictionaryName field.
+func (o *RateLimiterResponse) SetUriDictionaryName(v string) {
+	o.UriDictionaryName.Set(&v)
 }
 
-// SetURIDictionaryNameNil sets the value for URIDictionaryName to be an explicit nil
-func (o *RateLimiterResponse) SetURIDictionaryNameNil() {
-	o.URIDictionaryName.Set(nil)
+// SetUriDictionaryNameNil sets the value for UriDictionaryName to be an explicit nil
+func (o *RateLimiterResponse) SetUriDictionaryNameNil() {
+	o.UriDictionaryName.Set(nil)
 }
 
-// UnsetURIDictionaryName ensures that no value is present for URIDictionaryName, not even an explicit nil
-func (o *RateLimiterResponse) UnsetURIDictionaryName() {
-	o.URIDictionaryName.Unset()
+// UnsetUriDictionaryName ensures that no value is present for UriDictionaryName, not even an explicit nil
+func (o *RateLimiterResponse) UnsetUriDictionaryName() {
+	o.UriDictionaryName.Unset()
 }
 
-// GetHTTPMethods returns the HTTPMethods field value if set, zero value otherwise.
-func (o *RateLimiterResponse) GetHTTPMethods() []string {
-	if o == nil || o.HTTPMethods == nil {
+// GetHttpMethods returns the HttpMethods field value if set, zero value otherwise.
+func (o *RateLimiterResponse) GetHttpMethods() []string {
+	if o == nil || o.HttpMethods == nil {
 		var ret []string
 		return ret
 	}
-	return o.HTTPMethods
+	return o.HttpMethods
 }
 
-// GetHTTPMethodsOk returns a tuple with the HTTPMethods field value if set, nil otherwise
+// GetHttpMethodsOk returns a tuple with the HttpMethods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RateLimiterResponse) GetHTTPMethodsOk() ([]string, bool) {
-	if o == nil || o.HTTPMethods == nil {
+func (o *RateLimiterResponse) GetHttpMethodsOk() ([]string, bool) {
+	if o == nil || o.HttpMethods == nil {
 		return nil, false
 	}
-	return o.HTTPMethods, true
+	return o.HttpMethods, true
 }
 
-// HasHTTPMethods returns a boolean if a field has been set.
-func (o *RateLimiterResponse) HasHTTPMethods() bool {
-	if o != nil && o.HTTPMethods != nil {
+// HasHttpMethods returns a boolean if a field has been set.
+func (o *RateLimiterResponse) HasHttpMethods() bool {
+	if o != nil && o.HttpMethods != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHTTPMethods gets a reference to the given []string and assigns it to the HTTPMethods field.
-func (o *RateLimiterResponse) SetHTTPMethods(v []string) {
-	o.HTTPMethods = v
+// SetHttpMethods gets a reference to the given []string and assigns it to the HttpMethods field.
+func (o *RateLimiterResponse) SetHttpMethods(v []string) {
+	o.HttpMethods = v
 }
 
 // GetRpsLimit returns the RpsLimit field value if set, zero value otherwise.
@@ -482,36 +482,36 @@ func (o *RateLimiterResponse) SetFeatureRevision(v int32) {
 	o.FeatureRevision = &v
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *RateLimiterResponse) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *RateLimiterResponse) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RateLimiterResponse) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *RateLimiterResponse) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *RateLimiterResponse) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *RateLimiterResponse) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *RateLimiterResponse) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *RateLimiterResponse) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -675,36 +675,36 @@ func (o *RateLimiterResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *RateLimiterResponse) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *RateLimiterResponse) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RateLimiterResponse) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *RateLimiterResponse) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *RateLimiterResponse) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *RateLimiterResponse) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *RateLimiterResponse) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *RateLimiterResponse) SetId(v string) {
+	o.Id = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -714,11 +714,11 @@ func (o RateLimiterResponse) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.URIDictionaryName.IsSet() {
-		toSerialize["uri_dictionary_name"] = o.URIDictionaryName.Get()
+	if o.UriDictionaryName.IsSet() {
+		toSerialize["uri_dictionary_name"] = o.UriDictionaryName.Get()
 	}
-	if o.HTTPMethods != nil {
-		toSerialize["http_methods"] = o.HTTPMethods
+	if o.HttpMethods != nil {
+		toSerialize["http_methods"] = o.HttpMethods
 	}
 	if o.RpsLimit != nil {
 		toSerialize["rps_limit"] = o.RpsLimit
@@ -747,8 +747,8 @@ func (o RateLimiterResponse) MarshalJSON() ([]byte, error) {
 	if o.FeatureRevision != nil {
 		toSerialize["feature_revision"] = o.FeatureRevision
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
@@ -762,8 +762,8 @@ func (o RateLimiterResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 
 	for key, value := range o.AdditionalProperties {

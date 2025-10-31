@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **Name** | Pointer to **string** | The name of the config store. | [optional] 
-**ID** | Pointer to **string** | An alphanumeric string identifying the config store. | [optional] 
+**Id** | Pointer to **string** | An alphanumeric string identifying the config store. | [optional] 
 
 ## Methods
 
@@ -159,30 +159,32 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetID
+### GetId
 
-`func (o *ConfigStoreResponse) GetID() string`
+`func (o *ConfigStoreResponse) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *ConfigStoreResponse) GetIDOk() (*string, bool)`
+`func (o *ConfigStoreResponse) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *ConfigStoreResponse) SetID(v string)`
+`func (o *ConfigStoreResponse) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *ConfigStoreResponse) HasID() bool`
+`func (o *ConfigStoreResponse) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

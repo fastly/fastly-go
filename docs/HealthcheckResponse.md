@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CheckInterval** | Pointer to **int32** | How often to run the health check in milliseconds. | [optional] 
+**CheckInterval** | Pointer to **int32** | How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour. | [optional] 
 **Comment** | Pointer to **NullableString** | A freeform descriptive note. | [optional] 
 **ExpectedResponse** | Pointer to **int32** | The status code expected from the host. | [optional] 
 **Headers** | Pointer to **[]string** | Array of custom headers that will be added to the health check probes. | [optional] 
 **Host** | Pointer to **string** | Which host to check. | [optional] 
-**HTTPVersion** | Pointer to **string** | Whether to use version 1.0 or 1.1 HTTP. | [optional] 
+**HttpVersion** | Pointer to **string** | Whether to use version 1.0 or 1.1 HTTP. | [optional] 
 **Initial** | Pointer to **int32** | When loading a config, the initial number of probes to be seen as OK. | [optional] 
 **Method** | Pointer to **string** | Which HTTP method to use. | [optional] 
 **Name** | Pointer to **string** | The name of the health check. | [optional] 
@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Threshold** | Pointer to **int32** | How many health checks must succeed to be considered healthy. | [optional] 
 **Timeout** | Pointer to **int32** | Timeout in milliseconds. | [optional] 
 **Window** | Pointer to **int32** | The number of most recent health check queries to keep for this health check. | [optional] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **int32** |  | [optional] [readonly] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -177,30 +177,30 @@ SetHost sets Host field to given value.
 
 HasHost returns a boolean if a field has been set.
 
-### GetHTTPVersion
+### GetHttpVersion
 
-`func (o *HealthcheckResponse) GetHTTPVersion() string`
+`func (o *HealthcheckResponse) GetHttpVersion() string`
 
-GetHTTPVersion returns the HTTPVersion field if non-nil, zero value otherwise.
+GetHttpVersion returns the HttpVersion field if non-nil, zero value otherwise.
 
-### GetHTTPVersionOk
+### GetHttpVersionOk
 
-`func (o *HealthcheckResponse) GetHTTPVersionOk() (*string, bool)`
+`func (o *HealthcheckResponse) GetHttpVersionOk() (*string, bool)`
 
-GetHTTPVersionOk returns a tuple with the HTTPVersion field if it's non-nil, zero value otherwise
+GetHttpVersionOk returns a tuple with the HttpVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHTTPVersion
+### SetHttpVersion
 
-`func (o *HealthcheckResponse) SetHTTPVersion(v string)`
+`func (o *HealthcheckResponse) SetHttpVersion(v string)`
 
-SetHTTPVersion sets HTTPVersion field to given value.
+SetHttpVersion sets HttpVersion field to given value.
 
-### HasHTTPVersion
+### HasHttpVersion
 
-`func (o *HealthcheckResponse) HasHTTPVersion() bool`
+`func (o *HealthcheckResponse) HasHttpVersion() bool`
 
-HasHTTPVersion returns a boolean if a field has been set.
+HasHttpVersion returns a boolean if a field has been set.
 
 ### GetInitial
 
@@ -377,30 +377,30 @@ SetWindow sets Window field to given value.
 
 HasWindow returns a boolean if a field has been set.
 
-### GetServiceID
+### GetServiceId
 
-`func (o *HealthcheckResponse) GetServiceID() string`
+`func (o *HealthcheckResponse) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *HealthcheckResponse) GetServiceIDOk() (*string, bool)`
+`func (o *HealthcheckResponse) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *HealthcheckResponse) SetServiceID(v string)`
+`func (o *HealthcheckResponse) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *HealthcheckResponse) HasServiceID() bool`
+`func (o *HealthcheckResponse) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -534,3 +534,5 @@ HasUpdatedAt returns a boolean if a field has been set.
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

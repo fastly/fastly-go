@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// TLSSubscription struct for TLSSubscription
-type TLSSubscription struct {
-	Data                 *TLSSubscriptionData `json:"data,omitempty"`
+// TlsSubscription struct for TlsSubscription
+type TlsSubscription struct {
+	Data                 *TlsSubscriptionData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TLSSubscription TLSSubscription
+type _TlsSubscription TlsSubscription
 
-// NewTLSSubscription instantiates a new TLSSubscription object
+// NewTlsSubscription instantiates a new TlsSubscription object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSSubscription() *TLSSubscription {
-	this := TLSSubscription{}
+func NewTlsSubscription() *TlsSubscription {
+	this := TlsSubscription{}
 	return &this
 }
 
-// NewTLSSubscriptionWithDefaults instantiates a new TLSSubscription object
+// NewTlsSubscriptionWithDefaults instantiates a new TlsSubscription object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSSubscriptionWithDefaults() *TLSSubscription {
-	this := TLSSubscription{}
+func NewTlsSubscriptionWithDefaults() *TlsSubscription {
+	this := TlsSubscription{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *TLSSubscription) GetData() TLSSubscriptionData {
+func (o *TlsSubscription) GetData() TlsSubscriptionData {
 	if o == nil || o.Data == nil {
-		var ret TLSSubscriptionData
+		var ret TlsSubscriptionData
 		return ret
 	}
 	return *o.Data
@@ -52,7 +52,7 @@ func (o *TLSSubscription) GetData() TLSSubscriptionData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSSubscription) GetDataOk() (*TLSSubscriptionData, bool) {
+func (o *TlsSubscription) GetDataOk() (*TlsSubscriptionData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *TLSSubscription) GetDataOk() (*TLSSubscriptionData, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *TLSSubscription) HasData() bool {
+func (o *TlsSubscription) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -68,14 +68,14 @@ func (o *TLSSubscription) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given TLSSubscriptionData and assigns it to the Data field.
-func (o *TLSSubscription) SetData(v TLSSubscriptionData) {
+// SetData gets a reference to the given TlsSubscriptionData and assigns it to the Data field.
+func (o *TlsSubscription) SetData(v TlsSubscriptionData) {
 	o.Data = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSSubscription) MarshalJSON() ([]byte, error) {
+func (o TlsSubscription) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -90,11 +90,11 @@ func (o TLSSubscription) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSSubscription) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSSubscription := _TLSSubscription{}
+func (o *TlsSubscription) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsSubscription := _TlsSubscription{}
 
-	if err = json.Unmarshal(bytes, &varTLSSubscription); err == nil {
-		*o = TLSSubscription(varTLSSubscription)
+	if err = json.Unmarshal(bytes, &varTlsSubscription); err == nil {
+		*o = TlsSubscription(varTlsSubscription)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *TLSSubscription) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTLSSubscription is a helper abstraction for handling nullable tlssubscription types.
-type NullableTLSSubscription struct {
-	value *TLSSubscription
+// NullableTlsSubscription is a helper abstraction for handling nullable tlssubscription types.
+type NullableTlsSubscription struct {
+	value *TlsSubscription
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSSubscription) Get() *TLSSubscription {
+func (v NullableTlsSubscription) Get() *TlsSubscription {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSSubscription) Set(val *TLSSubscription) {
+func (v *NullableTlsSubscription) Set(val *TlsSubscription) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSSubscription) IsSet() bool {
+func (v NullableTlsSubscription) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSSubscription) Unset() {
+func (v *NullableTlsSubscription) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSSubscription returns a pointer to a new instance of NullableTLSSubscription.
-func NewNullableTLSSubscription(val *TLSSubscription) *NullableTLSSubscription {
-	return &NullableTLSSubscription{value: val, isSet: true}
+// NewNullableTlsSubscription returns a pointer to a new instance of NullableTlsSubscription.
+func NewNullableTlsSubscription(val *TlsSubscription) *NullableTlsSubscription {
+	return &NullableTlsSubscription{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSSubscription) MarshalJSON() ([]byte, error) {
+func (v NullableTlsSubscription) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSSubscription) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsSubscription) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

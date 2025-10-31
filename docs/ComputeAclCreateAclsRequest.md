@@ -1,4 +1,4 @@
-# ComputeACLCreateAclsRequest
+# ComputeAclCreateAclsRequest
 
 ## Properties
 
@@ -8,47 +8,49 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewComputeACLCreateAclsRequest
+### NewComputeAclCreateAclsRequest
 
-`func NewComputeACLCreateAclsRequest() *ComputeACLCreateAclsRequest`
+`func NewComputeAclCreateAclsRequest() *ComputeAclCreateAclsRequest`
 
-NewComputeACLCreateAclsRequest instantiates a new ComputeACLCreateAclsRequest object
+NewComputeAclCreateAclsRequest instantiates a new ComputeAclCreateAclsRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewComputeACLCreateAclsRequestWithDefaults
+### NewComputeAclCreateAclsRequestWithDefaults
 
-`func NewComputeACLCreateAclsRequestWithDefaults() *ComputeACLCreateAclsRequest`
+`func NewComputeAclCreateAclsRequestWithDefaults() *ComputeAclCreateAclsRequest`
 
-NewComputeACLCreateAclsRequestWithDefaults instantiates a new ComputeACLCreateAclsRequest object
+NewComputeAclCreateAclsRequestWithDefaults instantiates a new ComputeAclCreateAclsRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetName
 
-`func (o *ComputeACLCreateAclsRequest) GetName() string`
+`func (o *ComputeAclCreateAclsRequest) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *ComputeACLCreateAclsRequest) GetNameOk() (*string, bool)`
+`func (o *ComputeAclCreateAclsRequest) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *ComputeACLCreateAclsRequest) SetName(v string)`
+`func (o *ComputeAclCreateAclsRequest) SetName(v string)`
 
 SetName sets Name field to given value.
 
 ### HasName
 
-`func (o *ComputeACLCreateAclsRequest) HasName() bool`
+`func (o *ComputeAclCreateAclsRequest) HasName() bool`
 
 HasName returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

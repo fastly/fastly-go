@@ -1,4 +1,4 @@
-# ComputeACLListMeta
+# ComputeAclListMeta
 
 ## Properties
 
@@ -8,47 +8,49 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewComputeACLListMeta
+### NewComputeAclListMeta
 
-`func NewComputeACLListMeta() *ComputeACLListMeta`
+`func NewComputeAclListMeta() *ComputeAclListMeta`
 
-NewComputeACLListMeta instantiates a new ComputeACLListMeta object
+NewComputeAclListMeta instantiates a new ComputeAclListMeta object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewComputeACLListMetaWithDefaults
+### NewComputeAclListMetaWithDefaults
 
-`func NewComputeACLListMetaWithDefaults() *ComputeACLListMeta`
+`func NewComputeAclListMetaWithDefaults() *ComputeAclListMeta`
 
-NewComputeACLListMetaWithDefaults instantiates a new ComputeACLListMeta object
+NewComputeAclListMetaWithDefaults instantiates a new ComputeAclListMeta object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetTotal
 
-`func (o *ComputeACLListMeta) GetTotal() int32`
+`func (o *ComputeAclListMeta) GetTotal() int32`
 
 GetTotal returns the Total field if non-nil, zero value otherwise.
 
 ### GetTotalOk
 
-`func (o *ComputeACLListMeta) GetTotalOk() (*int32, bool)`
+`func (o *ComputeAclListMeta) GetTotalOk() (*int32, bool)`
 
 GetTotalOk returns a tuple with the Total field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTotal
 
-`func (o *ComputeACLListMeta) SetTotal(v int32)`
+`func (o *ComputeAclListMeta) SetTotal(v int32)`
 
 SetTotal sets Total field to given value.
 
 ### HasTotal
 
-`func (o *ComputeACLListMeta) HasTotal() bool`
+`func (o *ComputeAclListMeta) HasTotal() bool`
 
 HasTotal returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

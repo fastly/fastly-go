@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 
 ### NewDashboardItemPropertyVisualization
 
-`func NewDashboardItemPropertyVisualization(resourceType string, config DashboardItemPropertyVisualizationPropertyConfig, ) *DashboardItemPropertyVisualization`
+`func NewDashboardItemPropertyVisualization(type_ string, config DashboardItemPropertyVisualizationPropertyConfig, ) *DashboardItemPropertyVisualization`
 
 NewDashboardItemPropertyVisualization instantiates a new DashboardItemPropertyVisualization object
 This constructor will assign default values to properties that have it defined,
@@ -68,3 +68,5 @@ SetConfig sets Config field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -32,7 +32,7 @@ type BillingAddressAttributes struct {
 	PostalCode *string `json:"postal_code,omitempty"`
 	// The state or province name.
 	State                NullableString `json:"state,omitempty"`
-	CustomerID           *string        `json:"customer_id,omitempty"`
+	CustomerId           *string        `json:"customer_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -323,36 +323,36 @@ func (o *BillingAddressAttributes) UnsetState() {
 	o.State.Unset()
 }
 
-// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
-func (o *BillingAddressAttributes) GetCustomerID() string {
-	if o == nil || o.CustomerID == nil {
+// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
+func (o *BillingAddressAttributes) GetCustomerId() string {
+	if o == nil || o.CustomerId == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerID
+	return *o.CustomerId
 }
 
-// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
+// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingAddressAttributes) GetCustomerIDOk() (*string, bool) {
-	if o == nil || o.CustomerID == nil {
+func (o *BillingAddressAttributes) GetCustomerIdOk() (*string, bool) {
+	if o == nil || o.CustomerId == nil {
 		return nil, false
 	}
-	return o.CustomerID, true
+	return o.CustomerId, true
 }
 
-// HasCustomerID returns a boolean if a field has been set.
-func (o *BillingAddressAttributes) HasCustomerID() bool {
-	if o != nil && o.CustomerID != nil {
+// HasCustomerId returns a boolean if a field has been set.
+func (o *BillingAddressAttributes) HasCustomerId() bool {
+	if o != nil && o.CustomerId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerID gets a reference to the given string and assigns it to the CustomerID field.
-func (o *BillingAddressAttributes) SetCustomerID(v string) {
-	o.CustomerID = &v
+// SetCustomerId gets a reference to the given string and assigns it to the CustomerId field.
+func (o *BillingAddressAttributes) SetCustomerId(v string) {
+	o.CustomerId = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -380,8 +380,8 @@ func (o BillingAddressAttributes) MarshalJSON() ([]byte, error) {
 	if o.State.IsSet() {
 		toSerialize["state"] = o.State.Get()
 	}
-	if o.CustomerID != nil {
-		toSerialize["customer_id"] = o.CustomerID
+	if o.CustomerId != nil {
+		toSerialize["customer_id"] = o.CustomerId
 	}
 
 	for key, value := range o.AdditionalProperties {

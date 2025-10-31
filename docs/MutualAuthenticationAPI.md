@@ -5,15 +5,15 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateMutualTLSAuthentication**](MutualAuthenticationAPI.md#CreateMutualTLSAuthentication) | **POST** `/tls/mutual_authentications` | Create a Mutual Authentication
-[**DeleteMutualTLS**](MutualAuthenticationAPI.md#DeleteMutualTLS) | **DELETE** `/tls/mutual_authentications/{mutual_authentication_id}` | Delete a Mutual TLS
+[**CreateMutualTlsAuthentication**](MutualAuthenticationAPI.md#CreateMutualTlsAuthentication) | **POST** `/tls/mutual_authentications` | Create a Mutual Authentication
+[**DeleteMutualTls**](MutualAuthenticationAPI.md#DeleteMutualTls) | **DELETE** `/tls/mutual_authentications/{mutual_authentication_id}` | Delete a Mutual TLS
 [**GetMutualAuthentication**](MutualAuthenticationAPI.md#GetMutualAuthentication) | **GET** `/tls/mutual_authentications/{mutual_authentication_id}` | Get a Mutual Authentication
 [**ListMutualAuthentications**](MutualAuthenticationAPI.md#ListMutualAuthentications) | **GET** `/tls/mutual_authentications` | List Mutual Authentications
 [**PatchMutualAuthentication**](MutualAuthenticationAPI.md#PatchMutualAuthentication) | **PATCH** `/tls/mutual_authentications/{mutual_authentication_id}` | Update a Mutual Authentication
 
 
 
-## CreateMutualTLSAuthentication
+## CreateMutualTlsAuthentication
 
 Create a Mutual Authentication
 
@@ -37,13 +37,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.MutualAuthenticationAPI.CreateMutualTLSAuthentication(ctx).MutualAuthentication(mutualAuthentication).Execute()
+    resp, r, err := apiClient.MutualAuthenticationAPI.CreateMutualTlsAuthentication(ctx).MutualAuthentication(mutualAuthentication).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MutualAuthenticationAPI.CreateMutualTLSAuthentication`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MutualAuthenticationAPI.CreateMutualTlsAuthentication`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateMutualTLSAuthentication`: MutualAuthenticationResponse
-    fmt.Fprintf(os.Stdout, "Response from `MutualAuthenticationAPI.CreateMutualTLSAuthentication`: %v\n", resp)
+    // response from `CreateMutualTlsAuthentication`: MutualAuthenticationResponse
+    fmt.Fprintf(os.Stdout, "Response from `MutualAuthenticationAPI.CreateMutualTlsAuthentication`: %v\n", resp)
 }
 ```
 
@@ -53,7 +53,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateMutualTLSAuthenticationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateMutualTlsAuthenticationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## DeleteMutualTLS
+## DeleteMutualTls
 
 Delete a Mutual TLS
 
@@ -95,14 +95,14 @@ import (
 )
 
 func main() {
-    mutualAuthenticationID := "mutualAuthenticationId_example" // string | Alphanumeric string identifying a mutual authentication.
+    mutualAuthenticationId := "mutualAuthenticationId_example" // string | Alphanumeric string identifying a mutual authentication.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.MutualAuthenticationAPI.DeleteMutualTLS(ctx, mutualAuthenticationID).Execute()
+    resp, r, err := apiClient.MutualAuthenticationAPI.DeleteMutualTls(ctx, mutualAuthenticationId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MutualAuthenticationAPI.DeleteMutualTLS`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MutualAuthenticationAPI.DeleteMutualTls`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -114,11 +114,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**mutualAuthenticationID** | **string** | Alphanumeric string identifying a mutual authentication. | 
+**mutualAuthenticationId** | **string** | Alphanumeric string identifying a mutual authentication. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteMutualTLSRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteMutualTlsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -160,13 +160,13 @@ import (
 )
 
 func main() {
-    mutualAuthenticationID := "mutualAuthenticationId_example" // string | Alphanumeric string identifying a mutual authentication.
+    mutualAuthenticationId := "mutualAuthenticationId_example" // string | Alphanumeric string identifying a mutual authentication.
     include := "include_example" // string | Comma-separated list of related objects to include (optional). Permitted values: `tls_activations`. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication.  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.MutualAuthenticationAPI.GetMutualAuthentication(ctx, mutualAuthenticationID).Include(include).Execute()
+    resp, r, err := apiClient.MutualAuthenticationAPI.GetMutualAuthentication(ctx, mutualAuthenticationId).Include(include).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MutualAuthenticationAPI.GetMutualAuthentication`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**mutualAuthenticationID** | **string** | Alphanumeric string identifying a mutual authentication. | 
+**mutualAuthenticationId** | **string** | Alphanumeric string identifying a mutual authentication. | 
 
 ### Other Parameters
 
@@ -293,13 +293,13 @@ import (
 )
 
 func main() {
-    mutualAuthenticationID := "mutualAuthenticationId_example" // string | Alphanumeric string identifying a mutual authentication.
+    mutualAuthenticationId := "mutualAuthenticationId_example" // string | Alphanumeric string identifying a mutual authentication.
     mutualAuthentication := *openapiclient.NewMutualAuthentication() // MutualAuthentication |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.MutualAuthenticationAPI.PatchMutualAuthentication(ctx, mutualAuthenticationID).MutualAuthentication(mutualAuthentication).Execute()
+    resp, r, err := apiClient.MutualAuthenticationAPI.PatchMutualAuthentication(ctx, mutualAuthenticationId).MutualAuthentication(mutualAuthentication).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MutualAuthenticationAPI.PatchMutualAuthentication`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -315,7 +315,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**mutualAuthenticationID** | **string** | Alphanumeric string identifying a mutual authentication. | 
+**mutualAuthenticationId** | **string** | Alphanumeric string identifying a mutual authentication. | 
 
 ### Other Parameters
 
@@ -340,3 +340,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/vnd.api+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

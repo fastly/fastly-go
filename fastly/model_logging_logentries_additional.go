@@ -22,7 +22,7 @@ type LoggingLogentriesAdditional struct {
 	Port *int32 `json:"port,omitempty"`
 	// Use token based authentication.
 	Token  *string              `json:"token,omitempty"`
-	UseTLS *LoggingUseTLSString `json:"use_tls,omitempty"`
+	UseTls *LoggingUseTlsString `json:"use_tls,omitempty"`
 	// The region to which to stream logs.
 	Region               *string `json:"region,omitempty"`
 	AdditionalProperties map[string]any
@@ -38,8 +38,8 @@ func NewLoggingLogentriesAdditional() *LoggingLogentriesAdditional {
 	this := LoggingLogentriesAdditional{}
 	var port int32 = 20000
 	this.Port = &port
-	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
-	this.UseTLS = &useTLS
+	var useTls LoggingUseTlsString = LOGGINGUSETLSSTRING_no_tls
+	this.UseTls = &useTls
 	return &this
 }
 
@@ -50,8 +50,8 @@ func NewLoggingLogentriesAdditionalWithDefaults() *LoggingLogentriesAdditional {
 	this := LoggingLogentriesAdditional{}
 	var port int32 = 20000
 	this.Port = &port
-	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
-	this.UseTLS = &useTLS
+	var useTls LoggingUseTlsString = LOGGINGUSETLSSTRING_no_tls
+	this.UseTls = &useTls
 	return &this
 }
 
@@ -119,36 +119,36 @@ func (o *LoggingLogentriesAdditional) SetToken(v string) {
 	o.Token = &v
 }
 
-// GetUseTLS returns the UseTLS field value if set, zero value otherwise.
-func (o *LoggingLogentriesAdditional) GetUseTLS() LoggingUseTLSString {
-	if o == nil || o.UseTLS == nil {
-		var ret LoggingUseTLSString
+// GetUseTls returns the UseTls field value if set, zero value otherwise.
+func (o *LoggingLogentriesAdditional) GetUseTls() LoggingUseTlsString {
+	if o == nil || o.UseTls == nil {
+		var ret LoggingUseTlsString
 		return ret
 	}
-	return *o.UseTLS
+	return *o.UseTls
 }
 
-// GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
+// GetUseTlsOk returns a tuple with the UseTls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingLogentriesAdditional) GetUseTLSOk() (*LoggingUseTLSString, bool) {
-	if o == nil || o.UseTLS == nil {
+func (o *LoggingLogentriesAdditional) GetUseTlsOk() (*LoggingUseTlsString, bool) {
+	if o == nil || o.UseTls == nil {
 		return nil, false
 	}
-	return o.UseTLS, true
+	return o.UseTls, true
 }
 
-// HasUseTLS returns a boolean if a field has been set.
-func (o *LoggingLogentriesAdditional) HasUseTLS() bool {
-	if o != nil && o.UseTLS != nil {
+// HasUseTls returns a boolean if a field has been set.
+func (o *LoggingLogentriesAdditional) HasUseTls() bool {
+	if o != nil && o.UseTls != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUseTLS gets a reference to the given LoggingUseTLSString and assigns it to the UseTLS field.
-func (o *LoggingLogentriesAdditional) SetUseTLS(v LoggingUseTLSString) {
-	o.UseTLS = &v
+// SetUseTls gets a reference to the given LoggingUseTlsString and assigns it to the UseTls field.
+func (o *LoggingLogentriesAdditional) SetUseTls(v LoggingUseTlsString) {
+	o.UseTls = &v
 }
 
 // GetRegion returns the Region field value if set, zero value otherwise.
@@ -193,8 +193,8 @@ func (o LoggingLogentriesAdditional) MarshalJSON() ([]byte, error) {
 	if o.Token != nil {
 		toSerialize["token"] = o.Token
 	}
-	if o.UseTLS != nil {
-		toSerialize["use_tls"] = o.UseTLS
+	if o.UseTls != nil {
+		toSerialize["use_tls"] = o.UseTls
 	}
 	if o.Region != nil {
 		toSerialize["region"] = o.Region

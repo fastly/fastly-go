@@ -1,80 +1,82 @@
-# RelationshipMemberTLSPrivateKey
+# RelationshipMemberTlsPrivateKey
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTLSPrivateKey**](TypeTLSPrivateKey.md) |  | [optional] [default to TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY]
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Type** | Pointer to [**TypeTlsPrivateKey**](TypeTlsPrivateKey.md) |  | [optional] [default to TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY]
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewRelationshipMemberTLSPrivateKey
+### NewRelationshipMemberTlsPrivateKey
 
-`func NewRelationshipMemberTLSPrivateKey() *RelationshipMemberTLSPrivateKey`
+`func NewRelationshipMemberTlsPrivateKey() *RelationshipMemberTlsPrivateKey`
 
-NewRelationshipMemberTLSPrivateKey instantiates a new RelationshipMemberTLSPrivateKey object
+NewRelationshipMemberTlsPrivateKey instantiates a new RelationshipMemberTlsPrivateKey object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipMemberTLSPrivateKeyWithDefaults
+### NewRelationshipMemberTlsPrivateKeyWithDefaults
 
-`func NewRelationshipMemberTLSPrivateKeyWithDefaults() *RelationshipMemberTLSPrivateKey`
+`func NewRelationshipMemberTlsPrivateKeyWithDefaults() *RelationshipMemberTlsPrivateKey`
 
-NewRelationshipMemberTLSPrivateKeyWithDefaults instantiates a new RelationshipMemberTLSPrivateKey object
+NewRelationshipMemberTlsPrivateKeyWithDefaults instantiates a new RelationshipMemberTlsPrivateKey object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *RelationshipMemberTLSPrivateKey) GetType() TypeTLSPrivateKey`
+`func (o *RelationshipMemberTlsPrivateKey) GetType() TypeTlsPrivateKey`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *RelationshipMemberTLSPrivateKey) GetTypeOk() (*TypeTLSPrivateKey, bool)`
+`func (o *RelationshipMemberTlsPrivateKey) GetTypeOk() (*TypeTlsPrivateKey, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *RelationshipMemberTLSPrivateKey) SetType(v TypeTLSPrivateKey)`
+`func (o *RelationshipMemberTlsPrivateKey) SetType(v TypeTlsPrivateKey)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *RelationshipMemberTLSPrivateKey) HasType() bool`
+`func (o *RelationshipMemberTlsPrivateKey) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
-### GetID
+### GetId
 
-`func (o *RelationshipMemberTLSPrivateKey) GetID() string`
+`func (o *RelationshipMemberTlsPrivateKey) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *RelationshipMemberTLSPrivateKey) GetIDOk() (*string, bool)`
+`func (o *RelationshipMemberTlsPrivateKey) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *RelationshipMemberTLSPrivateKey) SetID(v string)`
+`func (o *RelationshipMemberTlsPrivateKey) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *RelationshipMemberTLSPrivateKey) HasID() bool`
+`func (o *RelationshipMemberTlsPrivateKey) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

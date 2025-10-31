@@ -37,10 +37,10 @@ type DdosProtectionAPI interface {
 		Get event by ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param eventID Unique ID of the event.
+		 @param eventId Unique ID of the event.
 		 @return APIDdosProtectionEventGetRequest
 	*/
-	DdosProtectionEventGet(ctx context.Context, eventID string) APIDdosProtectionEventGetRequest
+	DdosProtectionEventGet(ctx context.Context, eventId string) APIDdosProtectionEventGetRequest
 
 	// DdosProtectionEventGetExecute executes the request
 	//  @return DdosProtectionEvent
@@ -66,10 +66,10 @@ type DdosProtectionAPI interface {
 		Get all rules for an event.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param eventID Unique ID of the event.
+		 @param eventId Unique ID of the event.
 		 @return APIDdosProtectionEventRuleListRequest
 	*/
-	DdosProtectionEventRuleList(ctx context.Context, eventID string) APIDdosProtectionEventRuleListRequest
+	DdosProtectionEventRuleList(ctx context.Context, eventId string) APIDdosProtectionEventRuleListRequest
 
 	// DdosProtectionEventRuleListExecute executes the request
 	//  @return InlineResponse2003
@@ -81,10 +81,10 @@ type DdosProtectionAPI interface {
 		Get a rule by ID.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param ruleID Unique ID of the rule.
+		 @param ruleId Unique ID of the rule.
 		 @return APIDdosProtectionRuleGetRequest
 	*/
-	DdosProtectionRuleGet(ctx context.Context, ruleID string) APIDdosProtectionRuleGetRequest
+	DdosProtectionRuleGet(ctx context.Context, ruleId string) APIDdosProtectionRuleGetRequest
 
 	// DdosProtectionRuleGetExecute executes the request
 	//  @return DdosProtectionRule
@@ -96,10 +96,10 @@ type DdosProtectionAPI interface {
 		Update rule.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param ruleID Unique ID of the rule.
+		 @param ruleId Unique ID of the rule.
 		 @return APIDdosProtectionRulePatchRequest
 	*/
-	DdosProtectionRulePatch(ctx context.Context, ruleID string) APIDdosProtectionRulePatchRequest
+	DdosProtectionRulePatch(ctx context.Context, ruleId string) APIDdosProtectionRulePatchRequest
 
 	// DdosProtectionRulePatchExecute executes the request
 	//  @return DdosProtectionRule
@@ -111,11 +111,11 @@ type DdosProtectionAPI interface {
 		Get traffic stats for a rule.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param eventID Unique ID of the event.
-		 @param ruleID Unique ID of the rule.
+		 @param eventId Unique ID of the event.
+		 @param ruleId Unique ID of the rule.
 		 @return APIDdosProtectionTrafficStatsRuleGetRequest
 	*/
-	DdosProtectionTrafficStatsRuleGet(ctx context.Context, eventID string, ruleID string) APIDdosProtectionTrafficStatsRuleGetRequest
+	DdosProtectionTrafficStatsRuleGet(ctx context.Context, eventId string, ruleId string) APIDdosProtectionTrafficStatsRuleGetRequest
 
 	// DdosProtectionTrafficStatsRuleGetExecute executes the request
 	//  @return DdosProtectionTrafficStats
@@ -129,7 +129,7 @@ type DdosProtectionAPIService service
 type APIDdosProtectionEventGetRequest struct {
 	ctx        context.Context
 	APIService DdosProtectionAPI
-	eventID    string
+	eventId    string
 }
 
 // Execute calls the API using the request data configured.
@@ -143,14 +143,14 @@ DdosProtectionEventGet Get event by ID
 Get event by ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventID Unique ID of the event.
+ @param eventId Unique ID of the event.
  @return APIDdosProtectionEventGetRequest
 */
-func (a *DdosProtectionAPIService) DdosProtectionEventGet(ctx context.Context, eventID string) APIDdosProtectionEventGetRequest {
+func (a *DdosProtectionAPIService) DdosProtectionEventGet(ctx context.Context, eventId string) APIDdosProtectionEventGetRequest {
 	return APIDdosProtectionEventGetRequest{
 		APIService: a,
 		ctx:        ctx,
-		eventID:    eventID,
+		eventId:    eventId,
 	}
 }
 
@@ -170,7 +170,7 @@ func (a *DdosProtectionAPIService) DdosProtectionEventGetExecute(r APIDdosProtec
 	}
 
 	localVarPath := localBasePath + "/ddos-protection/v1/events/{event_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"event_id"+"}", gourl.PathEscape(parameterToString(r.eventID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"event_id"+"}", gourl.PathEscape(parameterToString(r.eventId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -282,7 +282,7 @@ type APIDdosProtectionEventListRequest struct {
 	APIService DdosProtectionAPI
 	cursor     *string
 	limit      *int32
-	serviceID  *string
+	serviceId  *string
 	from       *time.Time
 	to         *time.Time
 	name       *string
@@ -300,9 +300,9 @@ func (r *APIDdosProtectionEventListRequest) Limit(limit int32) *APIDdosProtectio
 	return r
 }
 
-// ServiceID Filter results based on a service_id.
-func (r *APIDdosProtectionEventListRequest) ServiceID(serviceID string) *APIDdosProtectionEventListRequest {
-	r.serviceID = &serviceID
+// ServiceId Filter results based on a service_id.
+func (r *APIDdosProtectionEventListRequest) ServiceId(serviceId string) *APIDdosProtectionEventListRequest {
+	r.serviceId = &serviceId
 	return r
 }
 
@@ -371,8 +371,8 @@ func (a *DdosProtectionAPIService) DdosProtectionEventListExecute(r APIDdosProte
 	if r.limit != nil {
 		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
 	}
-	if r.serviceID != nil {
-		localVarQueryParams.Add("service_id", parameterToString(*r.serviceID, ""))
+	if r.serviceId != nil {
+		localVarQueryParams.Add("service_id", parameterToString(*r.serviceId, ""))
 	}
 	if r.from != nil {
 		localVarQueryParams.Add("from", parameterToString(*r.from, ""))
@@ -487,9 +487,10 @@ func (a *DdosProtectionAPIService) DdosProtectionEventListExecute(r APIDdosProte
 type APIDdosProtectionEventRuleListRequest struct {
 	ctx        context.Context
 	APIService DdosProtectionAPI
-	eventID    string
+	eventId    string
 	cursor     *string
 	limit      *int32
+	include    *string
 }
 
 // Cursor Cursor value from the &#x60;next_cursor&#x60; field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
@@ -504,6 +505,12 @@ func (r *APIDdosProtectionEventRuleListRequest) Limit(limit int32) *APIDdosProte
 	return r
 }
 
+// Include Include relationships. Optional. Comma-separated values.
+func (r *APIDdosProtectionEventRuleListRequest) Include(include string) *APIDdosProtectionEventRuleListRequest {
+	r.include = &include
+	return r
+}
+
 // Execute calls the API using the request data configured.
 func (r APIDdosProtectionEventRuleListRequest) Execute() (*InlineResponse2003, *http.Response, error) {
 	return r.APIService.DdosProtectionEventRuleListExecute(r)
@@ -515,14 +522,14 @@ DdosProtectionEventRuleList Get all rules for an event
 Get all rules for an event.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventID Unique ID of the event.
+ @param eventId Unique ID of the event.
  @return APIDdosProtectionEventRuleListRequest
 */
-func (a *DdosProtectionAPIService) DdosProtectionEventRuleList(ctx context.Context, eventID string) APIDdosProtectionEventRuleListRequest {
+func (a *DdosProtectionAPIService) DdosProtectionEventRuleList(ctx context.Context, eventId string) APIDdosProtectionEventRuleListRequest {
 	return APIDdosProtectionEventRuleListRequest{
 		APIService: a,
 		ctx:        ctx,
-		eventID:    eventID,
+		eventId:    eventId,
 	}
 }
 
@@ -542,7 +549,7 @@ func (a *DdosProtectionAPIService) DdosProtectionEventRuleListExecute(r APIDdosP
 	}
 
 	localVarPath := localBasePath + "/ddos-protection/v1/events/{event_id}/rules"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"event_id"+"}", gourl.PathEscape(parameterToString(r.eventID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"event_id"+"}", gourl.PathEscape(parameterToString(r.eventId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -553,6 +560,9 @@ func (a *DdosProtectionAPIService) DdosProtectionEventRuleListExecute(r APIDdosP
 	}
 	if r.limit != nil {
 		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	}
+	if r.include != nil {
+		localVarQueryParams.Add("include", parameterToString(*r.include, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -658,7 +668,7 @@ func (a *DdosProtectionAPIService) DdosProtectionEventRuleListExecute(r APIDdosP
 type APIDdosProtectionRuleGetRequest struct {
 	ctx        context.Context
 	APIService DdosProtectionAPI
-	ruleID     string
+	ruleId     string
 }
 
 // Execute calls the API using the request data configured.
@@ -672,14 +682,14 @@ DdosProtectionRuleGet Get a rule by ID
 Get a rule by ID.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ruleID Unique ID of the rule.
+ @param ruleId Unique ID of the rule.
  @return APIDdosProtectionRuleGetRequest
 */
-func (a *DdosProtectionAPIService) DdosProtectionRuleGet(ctx context.Context, ruleID string) APIDdosProtectionRuleGetRequest {
+func (a *DdosProtectionAPIService) DdosProtectionRuleGet(ctx context.Context, ruleId string) APIDdosProtectionRuleGetRequest {
 	return APIDdosProtectionRuleGetRequest{
 		APIService: a,
 		ctx:        ctx,
-		ruleID:     ruleID,
+		ruleId:     ruleId,
 	}
 }
 
@@ -699,7 +709,7 @@ func (a *DdosProtectionAPIService) DdosProtectionRuleGetExecute(r APIDdosProtect
 	}
 
 	localVarPath := localBasePath + "/ddos-protection/v1/rules/{rule_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_id"+"}", gourl.PathEscape(parameterToString(r.ruleID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_id"+"}", gourl.PathEscape(parameterToString(r.ruleId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -809,7 +819,7 @@ func (a *DdosProtectionAPIService) DdosProtectionRuleGetExecute(r APIDdosProtect
 type APIDdosProtectionRulePatchRequest struct {
 	ctx                     context.Context
 	APIService              DdosProtectionAPI
-	ruleID                  string
+	ruleId                  string
 	ddosProtectionRulePatch *DdosProtectionRulePatch
 }
 
@@ -830,14 +840,14 @@ DdosProtectionRulePatch Update rule
 Update rule.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param ruleID Unique ID of the rule.
+ @param ruleId Unique ID of the rule.
  @return APIDdosProtectionRulePatchRequest
 */
-func (a *DdosProtectionAPIService) DdosProtectionRulePatch(ctx context.Context, ruleID string) APIDdosProtectionRulePatchRequest {
+func (a *DdosProtectionAPIService) DdosProtectionRulePatch(ctx context.Context, ruleId string) APIDdosProtectionRulePatchRequest {
 	return APIDdosProtectionRulePatchRequest{
 		APIService: a,
 		ctx:        ctx,
-		ruleID:     ruleID,
+		ruleId:     ruleId,
 	}
 }
 
@@ -857,7 +867,7 @@ func (a *DdosProtectionAPIService) DdosProtectionRulePatchExecute(r APIDdosProte
 	}
 
 	localVarPath := localBasePath + "/ddos-protection/v1/rules/{rule_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_id"+"}", gourl.PathEscape(parameterToString(r.ruleID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_id"+"}", gourl.PathEscape(parameterToString(r.ruleId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -989,8 +999,8 @@ func (a *DdosProtectionAPIService) DdosProtectionRulePatchExecute(r APIDdosProte
 type APIDdosProtectionTrafficStatsRuleGetRequest struct {
 	ctx        context.Context
 	APIService DdosProtectionAPI
-	eventID    string
-	ruleID     string
+	eventId    string
+	ruleId     string
 }
 
 // Execute calls the API using the request data configured.
@@ -1004,16 +1014,16 @@ DdosProtectionTrafficStatsRuleGet Get traffic stats for a rule
 Get traffic stats for a rule.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventID Unique ID of the event.
- @param ruleID Unique ID of the rule.
+ @param eventId Unique ID of the event.
+ @param ruleId Unique ID of the rule.
  @return APIDdosProtectionTrafficStatsRuleGetRequest
 */
-func (a *DdosProtectionAPIService) DdosProtectionTrafficStatsRuleGet(ctx context.Context, eventID string, ruleID string) APIDdosProtectionTrafficStatsRuleGetRequest {
+func (a *DdosProtectionAPIService) DdosProtectionTrafficStatsRuleGet(ctx context.Context, eventId string, ruleId string) APIDdosProtectionTrafficStatsRuleGetRequest {
 	return APIDdosProtectionTrafficStatsRuleGetRequest{
 		APIService: a,
 		ctx:        ctx,
-		eventID:    eventID,
-		ruleID:     ruleID,
+		eventId:    eventId,
+		ruleId:     ruleId,
 	}
 }
 
@@ -1033,8 +1043,8 @@ func (a *DdosProtectionAPIService) DdosProtectionTrafficStatsRuleGetExecute(r AP
 	}
 
 	localVarPath := localBasePath + "/ddos-protection/v1/events/{event_id}/rules/{rule_id}/traffic-stats"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"event_id"+"}", gourl.PathEscape(parameterToString(r.eventID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_id"+"}", gourl.PathEscape(parameterToString(r.ruleID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"event_id"+"}", gourl.PathEscape(parameterToString(r.eventId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"rule_id"+"}", gourl.PathEscape(parameterToString(r.ruleId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Data** | Pointer to [**[]Dashboard**](Dashboard.md) |  | [optional] 
-**Meta** | Pointer to **any** | Meta for the pagination. | [optional] 
+**Meta** | Pointer to **interface{}** | Meta for the pagination. | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasData returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *ListDashboardsResponse) GetMeta() any`
+`func (o *ListDashboardsResponse) GetMeta() interface{}`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *ListDashboardsResponse) GetMetaOk() (*any, bool)`
+`func (o *ListDashboardsResponse) GetMetaOk() (*interface{}, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *ListDashboardsResponse) SetMeta(v any)`
+`func (o *ListDashboardsResponse) SetMeta(v interface{})`
 
 SetMeta sets Meta field to given value.
 
@@ -88,3 +88,5 @@ HasMeta returns a boolean if a field has been set.
 UnsetMeta ensures that no value is present for Meta, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
 **LogProcessingRegion** | Pointer to **string** | The geographic region where the logs will be processed before streaming. Valid values are `us`, `eu`, and `none` for global. | [optional] [default to "none"]
 **FormatVersion** | Pointer to **int32** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [default to 2]
-**TLSCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
-**TLSClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TLSClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
-**TLSHostname** | Pointer to **NullableString** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to "null"]
+**TlsCaCert** | Pointer to **NullableString** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to "null"]
+**TlsClientCert** | Pointer to **NullableString** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TlsClientKey** | Pointer to **NullableString** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to "null"]
+**TlsHostname** | Pointer to **NullableString** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to "null"]
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 **Topic** | Pointer to **string** | The Kafka topic to send logs to. Required. | [optional] 
 **Brokers** | Pointer to **string** | A comma-separated list of IP addresses or hostnames of Kafka brokers. Required. | [optional] 
@@ -28,7 +28,7 @@ Name | Type | Description | Notes
 **AuthMethod** | Pointer to **string** | SASL authentication method. | [optional] 
 **User** | Pointer to **string** | SASL user. | [optional] 
 **Password** | Pointer to **string** | SASL password. | [optional] 
-**UseTLS** | Pointer to [**LoggingUseTLSString**](LoggingUseTLSString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
+**UseTls** | Pointer to [**LoggingUseTlsString**](LoggingUseTlsString.md) |  | [optional] [default to LOGGINGUSETLSSTRING_no_tls]
 
 ## Methods
 
@@ -219,146 +219,146 @@ SetFormatVersion sets FormatVersion field to given value.
 
 HasFormatVersion returns a boolean if a field has been set.
 
-### GetTLSCaCert
+### GetTlsCaCert
 
-`func (o *LoggingKafkaResponsePost) GetTLSCaCert() string`
+`func (o *LoggingKafkaResponsePost) GetTlsCaCert() string`
 
-GetTLSCaCert returns the TLSCaCert field if non-nil, zero value otherwise.
+GetTlsCaCert returns the TlsCaCert field if non-nil, zero value otherwise.
 
-### GetTLSCaCertOk
+### GetTlsCaCertOk
 
-`func (o *LoggingKafkaResponsePost) GetTLSCaCertOk() (*string, bool)`
+`func (o *LoggingKafkaResponsePost) GetTlsCaCertOk() (*string, bool)`
 
-GetTLSCaCertOk returns a tuple with the TLSCaCert field if it's non-nil, zero value otherwise
+GetTlsCaCertOk returns a tuple with the TlsCaCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSCaCert
+### SetTlsCaCert
 
-`func (o *LoggingKafkaResponsePost) SetTLSCaCert(v string)`
+`func (o *LoggingKafkaResponsePost) SetTlsCaCert(v string)`
 
-SetTLSCaCert sets TLSCaCert field to given value.
+SetTlsCaCert sets TlsCaCert field to given value.
 
-### HasTLSCaCert
+### HasTlsCaCert
 
-`func (o *LoggingKafkaResponsePost) HasTLSCaCert() bool`
+`func (o *LoggingKafkaResponsePost) HasTlsCaCert() bool`
 
-HasTLSCaCert returns a boolean if a field has been set.
+HasTlsCaCert returns a boolean if a field has been set.
 
-### SetTLSCaCertNil
+### SetTlsCaCertNil
 
-`func (o *LoggingKafkaResponsePost) SetTLSCaCertNil(b bool)`
+`func (o *LoggingKafkaResponsePost) SetTlsCaCertNil(b bool)`
 
- SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
+ SetTlsCaCertNil sets the value for TlsCaCert to be an explicit nil
 
-### UnsetTLSCaCert
-`func (o *LoggingKafkaResponsePost) UnsetTLSCaCert()`
+### UnsetTlsCaCert
+`func (o *LoggingKafkaResponsePost) UnsetTlsCaCert()`
 
-UnsetTLSCaCert ensures that no value is present for TLSCaCert, not even an explicit nil
-### GetTLSClientCert
+UnsetTlsCaCert ensures that no value is present for TlsCaCert, not even an explicit nil
+### GetTlsClientCert
 
-`func (o *LoggingKafkaResponsePost) GetTLSClientCert() string`
+`func (o *LoggingKafkaResponsePost) GetTlsClientCert() string`
 
-GetTLSClientCert returns the TLSClientCert field if non-nil, zero value otherwise.
+GetTlsClientCert returns the TlsClientCert field if non-nil, zero value otherwise.
 
-### GetTLSClientCertOk
+### GetTlsClientCertOk
 
-`func (o *LoggingKafkaResponsePost) GetTLSClientCertOk() (*string, bool)`
+`func (o *LoggingKafkaResponsePost) GetTlsClientCertOk() (*string, bool)`
 
-GetTLSClientCertOk returns a tuple with the TLSClientCert field if it's non-nil, zero value otherwise
+GetTlsClientCertOk returns a tuple with the TlsClientCert field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSClientCert
+### SetTlsClientCert
 
-`func (o *LoggingKafkaResponsePost) SetTLSClientCert(v string)`
+`func (o *LoggingKafkaResponsePost) SetTlsClientCert(v string)`
 
-SetTLSClientCert sets TLSClientCert field to given value.
+SetTlsClientCert sets TlsClientCert field to given value.
 
-### HasTLSClientCert
+### HasTlsClientCert
 
-`func (o *LoggingKafkaResponsePost) HasTLSClientCert() bool`
+`func (o *LoggingKafkaResponsePost) HasTlsClientCert() bool`
 
-HasTLSClientCert returns a boolean if a field has been set.
+HasTlsClientCert returns a boolean if a field has been set.
 
-### SetTLSClientCertNil
+### SetTlsClientCertNil
 
-`func (o *LoggingKafkaResponsePost) SetTLSClientCertNil(b bool)`
+`func (o *LoggingKafkaResponsePost) SetTlsClientCertNil(b bool)`
 
- SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
+ SetTlsClientCertNil sets the value for TlsClientCert to be an explicit nil
 
-### UnsetTLSClientCert
-`func (o *LoggingKafkaResponsePost) UnsetTLSClientCert()`
+### UnsetTlsClientCert
+`func (o *LoggingKafkaResponsePost) UnsetTlsClientCert()`
 
-UnsetTLSClientCert ensures that no value is present for TLSClientCert, not even an explicit nil
-### GetTLSClientKey
+UnsetTlsClientCert ensures that no value is present for TlsClientCert, not even an explicit nil
+### GetTlsClientKey
 
-`func (o *LoggingKafkaResponsePost) GetTLSClientKey() string`
+`func (o *LoggingKafkaResponsePost) GetTlsClientKey() string`
 
-GetTLSClientKey returns the TLSClientKey field if non-nil, zero value otherwise.
+GetTlsClientKey returns the TlsClientKey field if non-nil, zero value otherwise.
 
-### GetTLSClientKeyOk
+### GetTlsClientKeyOk
 
-`func (o *LoggingKafkaResponsePost) GetTLSClientKeyOk() (*string, bool)`
+`func (o *LoggingKafkaResponsePost) GetTlsClientKeyOk() (*string, bool)`
 
-GetTLSClientKeyOk returns a tuple with the TLSClientKey field if it's non-nil, zero value otherwise
+GetTlsClientKeyOk returns a tuple with the TlsClientKey field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSClientKey
+### SetTlsClientKey
 
-`func (o *LoggingKafkaResponsePost) SetTLSClientKey(v string)`
+`func (o *LoggingKafkaResponsePost) SetTlsClientKey(v string)`
 
-SetTLSClientKey sets TLSClientKey field to given value.
+SetTlsClientKey sets TlsClientKey field to given value.
 
-### HasTLSClientKey
+### HasTlsClientKey
 
-`func (o *LoggingKafkaResponsePost) HasTLSClientKey() bool`
+`func (o *LoggingKafkaResponsePost) HasTlsClientKey() bool`
 
-HasTLSClientKey returns a boolean if a field has been set.
+HasTlsClientKey returns a boolean if a field has been set.
 
-### SetTLSClientKeyNil
+### SetTlsClientKeyNil
 
-`func (o *LoggingKafkaResponsePost) SetTLSClientKeyNil(b bool)`
+`func (o *LoggingKafkaResponsePost) SetTlsClientKeyNil(b bool)`
 
- SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
+ SetTlsClientKeyNil sets the value for TlsClientKey to be an explicit nil
 
-### UnsetTLSClientKey
-`func (o *LoggingKafkaResponsePost) UnsetTLSClientKey()`
+### UnsetTlsClientKey
+`func (o *LoggingKafkaResponsePost) UnsetTlsClientKey()`
 
-UnsetTLSClientKey ensures that no value is present for TLSClientKey, not even an explicit nil
-### GetTLSHostname
+UnsetTlsClientKey ensures that no value is present for TlsClientKey, not even an explicit nil
+### GetTlsHostname
 
-`func (o *LoggingKafkaResponsePost) GetTLSHostname() string`
+`func (o *LoggingKafkaResponsePost) GetTlsHostname() string`
 
-GetTLSHostname returns the TLSHostname field if non-nil, zero value otherwise.
+GetTlsHostname returns the TlsHostname field if non-nil, zero value otherwise.
 
-### GetTLSHostnameOk
+### GetTlsHostnameOk
 
-`func (o *LoggingKafkaResponsePost) GetTLSHostnameOk() (*string, bool)`
+`func (o *LoggingKafkaResponsePost) GetTlsHostnameOk() (*string, bool)`
 
-GetTLSHostnameOk returns a tuple with the TLSHostname field if it's non-nil, zero value otherwise
+GetTlsHostnameOk returns a tuple with the TlsHostname field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSHostname
+### SetTlsHostname
 
-`func (o *LoggingKafkaResponsePost) SetTLSHostname(v string)`
+`func (o *LoggingKafkaResponsePost) SetTlsHostname(v string)`
 
-SetTLSHostname sets TLSHostname field to given value.
+SetTlsHostname sets TlsHostname field to given value.
 
-### HasTLSHostname
+### HasTlsHostname
 
-`func (o *LoggingKafkaResponsePost) HasTLSHostname() bool`
+`func (o *LoggingKafkaResponsePost) HasTlsHostname() bool`
 
-HasTLSHostname returns a boolean if a field has been set.
+HasTlsHostname returns a boolean if a field has been set.
 
-### SetTLSHostnameNil
+### SetTlsHostnameNil
 
-`func (o *LoggingKafkaResponsePost) SetTLSHostnameNil(b bool)`
+`func (o *LoggingKafkaResponsePost) SetTlsHostnameNil(b bool)`
 
- SetTLSHostnameNil sets the value for TLSHostname to be an explicit nil
+ SetTlsHostnameNil sets the value for TlsHostname to be an explicit nil
 
-### UnsetTLSHostname
-`func (o *LoggingKafkaResponsePost) UnsetTLSHostname()`
+### UnsetTlsHostname
+`func (o *LoggingKafkaResponsePost) UnsetTlsHostname()`
 
-UnsetTLSHostname ensures that no value is present for TLSHostname, not even an explicit nil
+UnsetTlsHostname ensures that no value is present for TlsHostname, not even an explicit nil
 ### GetCreatedAt
 
 `func (o *LoggingKafkaResponsePost) GetCreatedAt() time.Time`
@@ -464,30 +464,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *LoggingKafkaResponsePost) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceID
+### GetServiceId
 
-`func (o *LoggingKafkaResponsePost) GetServiceID() string`
+`func (o *LoggingKafkaResponsePost) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *LoggingKafkaResponsePost) GetServiceIDOk() (*string, bool)`
+`func (o *LoggingKafkaResponsePost) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *LoggingKafkaResponsePost) SetServiceID(v string)`
+`func (o *LoggingKafkaResponsePost) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *LoggingKafkaResponsePost) HasServiceID() bool`
+`func (o *LoggingKafkaResponsePost) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -749,30 +749,32 @@ SetPassword sets Password field to given value.
 
 HasPassword returns a boolean if a field has been set.
 
-### GetUseTLS
+### GetUseTls
 
-`func (o *LoggingKafkaResponsePost) GetUseTLS() LoggingUseTLSString`
+`func (o *LoggingKafkaResponsePost) GetUseTls() LoggingUseTlsString`
 
-GetUseTLS returns the UseTLS field if non-nil, zero value otherwise.
+GetUseTls returns the UseTls field if non-nil, zero value otherwise.
 
-### GetUseTLSOk
+### GetUseTlsOk
 
-`func (o *LoggingKafkaResponsePost) GetUseTLSOk() (*LoggingUseTLSString, bool)`
+`func (o *LoggingKafkaResponsePost) GetUseTlsOk() (*LoggingUseTlsString, bool)`
 
-GetUseTLSOk returns a tuple with the UseTLS field if it's non-nil, zero value otherwise
+GetUseTlsOk returns a tuple with the UseTls field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUseTLS
+### SetUseTls
 
-`func (o *LoggingKafkaResponsePost) SetUseTLS(v LoggingUseTLSString)`
+`func (o *LoggingKafkaResponsePost) SetUseTls(v LoggingUseTlsString)`
 
-SetUseTLS sets UseTLS field to given value.
+SetUseTls sets UseTls field to given value.
 
-### HasUseTLS
+### HasUseTls
 
-`func (o *LoggingKafkaResponsePost) HasUseTLS() bool`
+`func (o *LoggingKafkaResponsePost) HasUseTls() bool`
 
-HasUseTLS returns a boolean if a field has been set.
+HasUseTls returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -21,9 +21,9 @@ type RateLimiter struct {
 	// A human readable name for the rate limiting rule.
 	Name *string `json:"name,omitempty"`
 	// The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
-	URIDictionaryName NullableString `json:"uri_dictionary_name,omitempty"`
+	UriDictionaryName NullableString `json:"uri_dictionary_name,omitempty"`
 	// Array of HTTP methods to apply rate limiting to.
-	HTTPMethods []string `json:"http_methods,omitempty"`
+	HttpMethods []string `json:"http_methods,omitempty"`
 	// Upper limit of requests per second allowed by the rate limiter.
 	RpsLimit *int32 `json:"rps_limit,omitempty"`
 	// Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
@@ -96,79 +96,79 @@ func (o *RateLimiter) SetName(v string) {
 	o.Name = &v
 }
 
-// GetURIDictionaryName returns the URIDictionaryName field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *RateLimiter) GetURIDictionaryName() string {
-	if o == nil || o.URIDictionaryName.Get() == nil {
+// GetUriDictionaryName returns the UriDictionaryName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *RateLimiter) GetUriDictionaryName() string {
+	if o == nil || o.UriDictionaryName.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.URIDictionaryName.Get()
+	return *o.UriDictionaryName.Get()
 }
 
-// GetURIDictionaryNameOk returns a tuple with the URIDictionaryName field value if set, nil otherwise
+// GetUriDictionaryNameOk returns a tuple with the UriDictionaryName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *RateLimiter) GetURIDictionaryNameOk() (*string, bool) {
+func (o *RateLimiter) GetUriDictionaryNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.URIDictionaryName.Get(), o.URIDictionaryName.IsSet()
+	return o.UriDictionaryName.Get(), o.UriDictionaryName.IsSet()
 }
 
-// HasURIDictionaryName returns a boolean if a field has been set.
-func (o *RateLimiter) HasURIDictionaryName() bool {
-	if o != nil && o.URIDictionaryName.IsSet() {
+// HasUriDictionaryName returns a boolean if a field has been set.
+func (o *RateLimiter) HasUriDictionaryName() bool {
+	if o != nil && o.UriDictionaryName.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetURIDictionaryName gets a reference to the given NullableString and assigns it to the URIDictionaryName field.
-func (o *RateLimiter) SetURIDictionaryName(v string) {
-	o.URIDictionaryName.Set(&v)
+// SetUriDictionaryName gets a reference to the given NullableString and assigns it to the UriDictionaryName field.
+func (o *RateLimiter) SetUriDictionaryName(v string) {
+	o.UriDictionaryName.Set(&v)
 }
 
-// SetURIDictionaryNameNil sets the value for URIDictionaryName to be an explicit nil
-func (o *RateLimiter) SetURIDictionaryNameNil() {
-	o.URIDictionaryName.Set(nil)
+// SetUriDictionaryNameNil sets the value for UriDictionaryName to be an explicit nil
+func (o *RateLimiter) SetUriDictionaryNameNil() {
+	o.UriDictionaryName.Set(nil)
 }
 
-// UnsetURIDictionaryName ensures that no value is present for URIDictionaryName, not even an explicit nil
-func (o *RateLimiter) UnsetURIDictionaryName() {
-	o.URIDictionaryName.Unset()
+// UnsetUriDictionaryName ensures that no value is present for UriDictionaryName, not even an explicit nil
+func (o *RateLimiter) UnsetUriDictionaryName() {
+	o.UriDictionaryName.Unset()
 }
 
-// GetHTTPMethods returns the HTTPMethods field value if set, zero value otherwise.
-func (o *RateLimiter) GetHTTPMethods() []string {
-	if o == nil || o.HTTPMethods == nil {
+// GetHttpMethods returns the HttpMethods field value if set, zero value otherwise.
+func (o *RateLimiter) GetHttpMethods() []string {
+	if o == nil || o.HttpMethods == nil {
 		var ret []string
 		return ret
 	}
-	return o.HTTPMethods
+	return o.HttpMethods
 }
 
-// GetHTTPMethodsOk returns a tuple with the HTTPMethods field value if set, nil otherwise
+// GetHttpMethodsOk returns a tuple with the HttpMethods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RateLimiter) GetHTTPMethodsOk() ([]string, bool) {
-	if o == nil || o.HTTPMethods == nil {
+func (o *RateLimiter) GetHttpMethodsOk() ([]string, bool) {
+	if o == nil || o.HttpMethods == nil {
 		return nil, false
 	}
-	return o.HTTPMethods, true
+	return o.HttpMethods, true
 }
 
-// HasHTTPMethods returns a boolean if a field has been set.
-func (o *RateLimiter) HasHTTPMethods() bool {
-	if o != nil && o.HTTPMethods != nil {
+// HasHttpMethods returns a boolean if a field has been set.
+func (o *RateLimiter) HasHttpMethods() bool {
+	if o != nil && o.HttpMethods != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHTTPMethods gets a reference to the given []string and assigns it to the HTTPMethods field.
-func (o *RateLimiter) SetHTTPMethods(v []string) {
-	o.HTTPMethods = v
+// SetHttpMethods gets a reference to the given []string and assigns it to the HttpMethods field.
+func (o *RateLimiter) SetHttpMethods(v []string) {
+	o.HttpMethods = v
 }
 
 // GetRpsLimit returns the RpsLimit field value if set, zero value otherwise.
@@ -478,11 +478,11 @@ func (o RateLimiter) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.URIDictionaryName.IsSet() {
-		toSerialize["uri_dictionary_name"] = o.URIDictionaryName.Get()
+	if o.UriDictionaryName.IsSet() {
+		toSerialize["uri_dictionary_name"] = o.UriDictionaryName.Get()
 	}
-	if o.HTTPMethods != nil {
-		toSerialize["http_methods"] = o.HTTPMethods
+	if o.HttpMethods != nil {
+		toSerialize["http_methods"] = o.HttpMethods
 	}
 	if o.RpsLimit != nil {
 		toSerialize["rps_limit"] = o.RpsLimit

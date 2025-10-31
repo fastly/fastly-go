@@ -32,8 +32,8 @@ type _ServiceInvitationData ServiceInvitationData
 // will change when the set of required properties is changed
 func NewServiceInvitationData() *ServiceInvitationData {
 	this := ServiceInvitationData{}
-	var resourceType TypeServiceInvitation = TYPESERVICEINVITATION_SERVICE_INVITATION
-	this.Type = &resourceType
+	var type_ TypeServiceInvitation = TYPESERVICEINVITATION_SERVICE_INVITATION
+	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +42,8 @@ func NewServiceInvitationData() *ServiceInvitationData {
 // but it doesn't guarantee that properties required by API are set
 func NewServiceInvitationDataWithDefaults() *ServiceInvitationData {
 	this := ServiceInvitationData{}
-	var resourceType TypeServiceInvitation = TYPESERVICEINVITATION_SERVICE_INVITATION
-	this.Type = &resourceType
+	var type_ TypeServiceInvitation = TYPESERVICEINVITATION_SERVICE_INVITATION
+	this.Type = &type_
 	return &this
 }
 

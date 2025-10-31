@@ -93,12 +93,12 @@ import (
 )
 
 func main() {
-    invitationID := "invitationId_example" // string | Alphanumeric string identifying an invitation.
+    invitationId := "invitationId_example" // string | Alphanumeric string identifying an invitation.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.InvitationsAPI.DeleteInvitation(ctx, invitationID).Execute()
+    resp, r, err := apiClient.InvitationsAPI.DeleteInvitation(ctx, invitationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InvitationsAPI.DeleteInvitation`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -112,7 +112,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**invitationID** | **string** | Alphanumeric string identifying an invitation. | 
+**invitationId** | **string** | Alphanumeric string identifying an invitation. | 
 
 ### Other Parameters
 
@@ -201,3 +201,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/vnd.api+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

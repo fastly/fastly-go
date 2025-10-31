@@ -16,69 +16,69 @@ import (
 	"encoding/json"
 )
 
-// RelationshipTLSSubscriptions struct for RelationshipTLSSubscriptions
-type RelationshipTLSSubscriptions struct {
-	TLSSubscriptions     *RelationshipTLSSubscriptionTLSSubscription `json:"tls_subscriptions,omitempty"`
+// RelationshipTlsSubscriptions struct for RelationshipTlsSubscriptions
+type RelationshipTlsSubscriptions struct {
+	TlsSubscriptions     *RelationshipTlsSubscriptionTlsSubscription `json:"tls_subscriptions,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _RelationshipTLSSubscriptions RelationshipTLSSubscriptions
+type _RelationshipTlsSubscriptions RelationshipTlsSubscriptions
 
-// NewRelationshipTLSSubscriptions instantiates a new RelationshipTLSSubscriptions object
+// NewRelationshipTlsSubscriptions instantiates a new RelationshipTlsSubscriptions object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRelationshipTLSSubscriptions() *RelationshipTLSSubscriptions {
-	this := RelationshipTLSSubscriptions{}
+func NewRelationshipTlsSubscriptions() *RelationshipTlsSubscriptions {
+	this := RelationshipTlsSubscriptions{}
 	return &this
 }
 
-// NewRelationshipTLSSubscriptionsWithDefaults instantiates a new RelationshipTLSSubscriptions object
+// NewRelationshipTlsSubscriptionsWithDefaults instantiates a new RelationshipTlsSubscriptions object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRelationshipTLSSubscriptionsWithDefaults() *RelationshipTLSSubscriptions {
-	this := RelationshipTLSSubscriptions{}
+func NewRelationshipTlsSubscriptionsWithDefaults() *RelationshipTlsSubscriptions {
+	this := RelationshipTlsSubscriptions{}
 	return &this
 }
 
-// GetTLSSubscriptions returns the TLSSubscriptions field value if set, zero value otherwise.
-func (o *RelationshipTLSSubscriptions) GetTLSSubscriptions() RelationshipTLSSubscriptionTLSSubscription {
-	if o == nil || o.TLSSubscriptions == nil {
-		var ret RelationshipTLSSubscriptionTLSSubscription
+// GetTlsSubscriptions returns the TlsSubscriptions field value if set, zero value otherwise.
+func (o *RelationshipTlsSubscriptions) GetTlsSubscriptions() RelationshipTlsSubscriptionTlsSubscription {
+	if o == nil || o.TlsSubscriptions == nil {
+		var ret RelationshipTlsSubscriptionTlsSubscription
 		return ret
 	}
-	return *o.TLSSubscriptions
+	return *o.TlsSubscriptions
 }
 
-// GetTLSSubscriptionsOk returns a tuple with the TLSSubscriptions field value if set, nil otherwise
+// GetTlsSubscriptionsOk returns a tuple with the TlsSubscriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipTLSSubscriptions) GetTLSSubscriptionsOk() (*RelationshipTLSSubscriptionTLSSubscription, bool) {
-	if o == nil || o.TLSSubscriptions == nil {
+func (o *RelationshipTlsSubscriptions) GetTlsSubscriptionsOk() (*RelationshipTlsSubscriptionTlsSubscription, bool) {
+	if o == nil || o.TlsSubscriptions == nil {
 		return nil, false
 	}
-	return o.TLSSubscriptions, true
+	return o.TlsSubscriptions, true
 }
 
-// HasTLSSubscriptions returns a boolean if a field has been set.
-func (o *RelationshipTLSSubscriptions) HasTLSSubscriptions() bool {
-	if o != nil && o.TLSSubscriptions != nil {
+// HasTlsSubscriptions returns a boolean if a field has been set.
+func (o *RelationshipTlsSubscriptions) HasTlsSubscriptions() bool {
+	if o != nil && o.TlsSubscriptions != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSSubscriptions gets a reference to the given RelationshipTLSSubscriptionTLSSubscription and assigns it to the TLSSubscriptions field.
-func (o *RelationshipTLSSubscriptions) SetTLSSubscriptions(v RelationshipTLSSubscriptionTLSSubscription) {
-	o.TLSSubscriptions = &v
+// SetTlsSubscriptions gets a reference to the given RelationshipTlsSubscriptionTlsSubscription and assigns it to the TlsSubscriptions field.
+func (o *RelationshipTlsSubscriptions) SetTlsSubscriptions(v RelationshipTlsSubscriptionTlsSubscription) {
+	o.TlsSubscriptions = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o RelationshipTLSSubscriptions) MarshalJSON() ([]byte, error) {
+func (o RelationshipTlsSubscriptions) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.TLSSubscriptions != nil {
-		toSerialize["tls_subscriptions"] = o.TLSSubscriptions
+	if o.TlsSubscriptions != nil {
+		toSerialize["tls_subscriptions"] = o.TlsSubscriptions
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -90,11 +90,11 @@ func (o RelationshipTLSSubscriptions) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipTLSSubscriptions) UnmarshalJSON(bytes []byte) (err error) {
-	varRelationshipTLSSubscriptions := _RelationshipTLSSubscriptions{}
+func (o *RelationshipTlsSubscriptions) UnmarshalJSON(bytes []byte) (err error) {
+	varRelationshipTlsSubscriptions := _RelationshipTlsSubscriptions{}
 
-	if err = json.Unmarshal(bytes, &varRelationshipTLSSubscriptions); err == nil {
-		*o = RelationshipTLSSubscriptions(varRelationshipTLSSubscriptions)
+	if err = json.Unmarshal(bytes, &varRelationshipTlsSubscriptions); err == nil {
+		*o = RelationshipTlsSubscriptions(varRelationshipTlsSubscriptions)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *RelationshipTLSSubscriptions) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableRelationshipTLSSubscriptions is a helper abstraction for handling nullable relationshiptlssubscriptions types.
-type NullableRelationshipTLSSubscriptions struct {
-	value *RelationshipTLSSubscriptions
+// NullableRelationshipTlsSubscriptions is a helper abstraction for handling nullable relationshiptlssubscriptions types.
+type NullableRelationshipTlsSubscriptions struct {
+	value *RelationshipTlsSubscriptions
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipTLSSubscriptions) Get() *RelationshipTLSSubscriptions {
+func (v NullableRelationshipTlsSubscriptions) Get() *RelationshipTlsSubscriptions {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipTLSSubscriptions) Set(val *RelationshipTLSSubscriptions) {
+func (v *NullableRelationshipTlsSubscriptions) Set(val *RelationshipTlsSubscriptions) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipTLSSubscriptions) IsSet() bool {
+func (v NullableRelationshipTlsSubscriptions) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipTLSSubscriptions) Unset() {
+func (v *NullableRelationshipTlsSubscriptions) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipTLSSubscriptions returns a pointer to a new instance of NullableRelationshipTLSSubscriptions.
-func NewNullableRelationshipTLSSubscriptions(val *RelationshipTLSSubscriptions) *NullableRelationshipTLSSubscriptions {
-	return &NullableRelationshipTLSSubscriptions{value: val, isSet: true}
+// NewNullableRelationshipTlsSubscriptions returns a pointer to a new instance of NullableRelationshipTlsSubscriptions.
+func NewNullableRelationshipTlsSubscriptions(val *RelationshipTlsSubscriptions) *NullableRelationshipTlsSubscriptions {
+	return &NullableRelationshipTlsSubscriptions{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipTLSSubscriptions) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipTlsSubscriptions) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipTLSSubscriptions) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipTlsSubscriptions) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

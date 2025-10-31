@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Product** | Pointer to [**BrotliCompressionResponseProductProduct**](BrotliCompressionResponseProductProduct.md) |  | [optional] 
-**Service** | Pointer to [**BotManagementResponseServiceService**](BotManagementResponseServiceService.md) |  | [optional] 
+**Service** | Pointer to [**ApiDiscoveryResponseServiceService**](ApiDiscoveryResponseServiceService.md) |  | [optional] 
 **Links** | Pointer to [**BrotliCompressionResponseLinksLinks**](BrotliCompressionResponseLinksLinks.md) |  | [optional] 
 
 ## Methods
@@ -54,20 +54,20 @@ HasProduct returns a boolean if a field has been set.
 
 ### GetService
 
-`func (o *BrotliCompressionResponseBodyEnable) GetService() BotManagementResponseServiceService`
+`func (o *BrotliCompressionResponseBodyEnable) GetService() ApiDiscoveryResponseServiceService`
 
 GetService returns the Service field if non-nil, zero value otherwise.
 
 ### GetServiceOk
 
-`func (o *BrotliCompressionResponseBodyEnable) GetServiceOk() (*BotManagementResponseServiceService, bool)`
+`func (o *BrotliCompressionResponseBodyEnable) GetServiceOk() (*ApiDiscoveryResponseServiceService, bool)`
 
 GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetService
 
-`func (o *BrotliCompressionResponseBodyEnable) SetService(v BotManagementResponseServiceService)`
+`func (o *BrotliCompressionResponseBodyEnable) SetService(v ApiDiscoveryResponseServiceService)`
 
 SetService sets Service field to given value.
 
@@ -104,3 +104,5 @@ HasLinks returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

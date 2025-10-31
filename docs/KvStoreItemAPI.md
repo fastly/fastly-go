@@ -31,7 +31,7 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
     key := "key_example" // string | 
     ifGenerationMatch := int32(56) // int32 |  (optional)
     force := true // bool |  (optional) (default to false)
@@ -39,7 +39,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreItemAPI.KvStoreDeleteItem(ctx, storeID, key).IfGenerationMatch(ifGenerationMatch).Force(force).Execute()
+    resp, r, err := apiClient.KvStoreItemAPI.KvStoreDeleteItem(ctx, storeId, key).IfGenerationMatch(ifGenerationMatch).Force(force).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.KvStoreDeleteItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +53,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 **key** | **string** |  | 
 
 ### Other Parameters
@@ -100,13 +100,13 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
     key := "key_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreItemAPI.KvStoreGetItem(ctx, storeID, key).Execute()
+    resp, r, err := apiClient.KvStoreItemAPI.KvStoreGetItem(ctx, storeId, key).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.KvStoreGetItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,7 +122,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 **key** | **string** |  | 
 
 ### Other Parameters
@@ -169,7 +169,7 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
     cursor := "cursor_example" // string |  (optional)
     limit := int32(56) // int32 |  (optional) (default to 100)
     prefix := "prefix_example" // string |  (optional)
@@ -178,12 +178,12 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreItemAPI.KvStoreListItemKeys(ctx, storeID).Cursor(cursor).Limit(limit).Prefix(prefix).Consistency(consistency).Execute()
+    resp, r, err := apiClient.KvStoreItemAPI.KvStoreListItemKeys(ctx, storeId).Cursor(cursor).Limit(limit).Prefix(prefix).Consistency(consistency).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.KvStoreListItemKeys`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `KvStoreListItemKeys`: InlineResponse2006
+    // response from `KvStoreListItemKeys`: InlineResponse2007
     fmt.Fprintf(os.Stdout, "Response from `KvStoreItemAPI.KvStoreListItemKeys`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 
 ### Other Parameters
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ import (
 )
 
 func main() {
-    storeID := "storeId_example" // string | 
+    storeId := "storeId_example" // string | 
     key := "key_example" // string | 
     ifGenerationMatch := int32(56) // int32 |  (optional)
     timeToLiveSec := int32(56) // int32 |  (optional)
@@ -254,7 +254,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreItemAPI.KvStoreUpsertItem(ctx, storeID, key).IfGenerationMatch(ifGenerationMatch).TimeToLiveSec(timeToLiveSec).Metadata(metadata).Add(add).Append(append).Prepend(prepend).BackgroundFetch(backgroundFetch).Body(body).Execute()
+    resp, r, err := apiClient.KvStoreItemAPI.KvStoreUpsertItem(ctx, storeId, key).IfGenerationMatch(ifGenerationMatch).TimeToLiveSec(timeToLiveSec).Metadata(metadata).Add(add).Append(append).Prepend(prepend).BackgroundFetch(backgroundFetch).Body(body).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreItemAPI.KvStoreUpsertItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -268,7 +268,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**storeID** | **string** |  | 
+**storeId** | **string** |  | 
 **key** | **string** |  | 
 
 ### Other Parameters
@@ -294,3 +294,4 @@ Name | Type | Description  | Notes
 - **Accept**: Not defined
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

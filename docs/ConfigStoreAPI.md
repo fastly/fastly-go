@@ -97,12 +97,12 @@ import (
 )
 
 func main() {
-    configStoreID := "configStoreId_example" // string | An alphanumeric string identifying the config store.
+    configStoreId := "configStoreId_example" // string | An alphanumeric string identifying the config store.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConfigStoreAPI.DeleteConfigStore(ctx, configStoreID).Execute()
+    resp, r, err := apiClient.ConfigStoreAPI.DeleteConfigStore(ctx, configStoreId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.DeleteConfigStore`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -118,7 +118,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configStoreID** | **string** | An alphanumeric string identifying the config store. | 
+**configStoreId** | **string** | An alphanumeric string identifying the config store. | 
 
 ### Other Parameters
 
@@ -164,12 +164,12 @@ import (
 )
 
 func main() {
-    configStoreID := "configStoreId_example" // string | An alphanumeric string identifying the config store.
+    configStoreId := "configStoreId_example" // string | An alphanumeric string identifying the config store.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConfigStoreAPI.GetConfigStore(ctx, configStoreID).Execute()
+    resp, r, err := apiClient.ConfigStoreAPI.GetConfigStore(ctx, configStoreId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.GetConfigStore`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -185,7 +185,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configStoreID** | **string** | An alphanumeric string identifying the config store. | 
+**configStoreId** | **string** | An alphanumeric string identifying the config store. | 
 
 ### Other Parameters
 
@@ -231,12 +231,12 @@ import (
 )
 
 func main() {
-    configStoreID := "configStoreId_example" // string | An alphanumeric string identifying the config store.
+    configStoreId := "configStoreId_example" // string | An alphanumeric string identifying the config store.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConfigStoreAPI.GetConfigStoreInfo(ctx, configStoreID).Execute()
+    resp, r, err := apiClient.ConfigStoreAPI.GetConfigStoreInfo(ctx, configStoreId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.GetConfigStoreInfo`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -252,7 +252,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configStoreID** | **string** | An alphanumeric string identifying the config store. | 
+**configStoreId** | **string** | An alphanumeric string identifying the config store. | 
 
 ### Other Parameters
 
@@ -298,17 +298,17 @@ import (
 )
 
 func main() {
-    configStoreID := "configStoreId_example" // string | An alphanumeric string identifying the config store.
+    configStoreId := "configStoreId_example" // string | An alphanumeric string identifying the config store.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConfigStoreAPI.ListConfigStoreServices(ctx, configStoreID).Execute()
+    resp, r, err := apiClient.ConfigStoreAPI.ListConfigStoreServices(ctx, configStoreId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.ListConfigStoreServices`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListConfigStoreServices`: map[string]any
+    // response from `ListConfigStoreServices`: map[string]interface{}
     fmt.Fprintf(os.Stdout, "Response from `ConfigStoreAPI.ListConfigStoreServices`: %v\n", resp)
 }
 ```
@@ -319,7 +319,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configStoreID** | **string** | An alphanumeric string identifying the config store. | 
+**configStoreId** | **string** | An alphanumeric string identifying the config store. | 
 
 ### Other Parameters
 
@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]any**
+**map[string]interface{}**
 
 ### Authorization
 
@@ -428,13 +428,13 @@ import (
 )
 
 func main() {
-    configStoreID := "configStoreId_example" // string | An alphanumeric string identifying the config store.
+    configStoreId := "configStoreId_example" // string | An alphanumeric string identifying the config store.
     name := "name_example" // string | The name of the config store. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConfigStoreAPI.UpdateConfigStore(ctx, configStoreID).Name(name).Execute()
+    resp, r, err := apiClient.ConfigStoreAPI.UpdateConfigStore(ctx, configStoreId).Name(name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreAPI.UpdateConfigStore`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -450,7 +450,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configStoreID** | **string** | An alphanumeric string identifying the config store. | 
+**configStoreId** | **string** | An alphanumeric string identifying the config store. | 
 
 ### Other Parameters
 
@@ -475,3 +475,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

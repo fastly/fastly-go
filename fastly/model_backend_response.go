@@ -46,9 +46,9 @@ type BackendResponse struct {
 	// Maximum number of concurrent connections this backend will accept.
 	MaxConn *int32 `json:"max_conn,omitempty"`
 	// Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
-	MaxTLSVersion NullableString `json:"max_tls_version,omitempty"`
+	MaxTlsVersion NullableString `json:"max_tls_version,omitempty"`
 	// Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
-	MinTLSVersion NullableString `json:"min_tls_version,omitempty"`
+	MinTlsVersion NullableString `json:"min_tls_version,omitempty"`
 	// The name of the backend.
 	Name *string `json:"name,omitempty"`
 	// If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL.
@@ -98,7 +98,7 @@ type BackendResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string      `json:"service_id,omitempty"`
+	ServiceId *string      `json:"service_id,omitempty"`
 	Version   *int32       `json:"version,omitempty"`
 	// Indicates whether the version of the service this backend is attached to accepts edits.
 	Locked               *bool `json:"locked,omitempty"`
@@ -633,90 +633,90 @@ func (o *BackendResponse) SetMaxConn(v int32) {
 	o.MaxConn = &v
 }
 
-// GetMaxTLSVersion returns the MaxTLSVersion field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BackendResponse) GetMaxTLSVersion() string {
-	if o == nil || o.MaxTLSVersion.Get() == nil {
+// GetMaxTlsVersion returns the MaxTlsVersion field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetMaxTlsVersion() string {
+	if o == nil || o.MaxTlsVersion.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.MaxTLSVersion.Get()
+	return *o.MaxTlsVersion.Get()
 }
 
-// GetMaxTLSVersionOk returns a tuple with the MaxTLSVersion field value if set, nil otherwise
+// GetMaxTlsVersionOk returns a tuple with the MaxTlsVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BackendResponse) GetMaxTLSVersionOk() (*string, bool) {
+func (o *BackendResponse) GetMaxTlsVersionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.MaxTLSVersion.Get(), o.MaxTLSVersion.IsSet()
+	return o.MaxTlsVersion.Get(), o.MaxTlsVersion.IsSet()
 }
 
-// HasMaxTLSVersion returns a boolean if a field has been set.
-func (o *BackendResponse) HasMaxTLSVersion() bool {
-	if o != nil && o.MaxTLSVersion.IsSet() {
+// HasMaxTlsVersion returns a boolean if a field has been set.
+func (o *BackendResponse) HasMaxTlsVersion() bool {
+	if o != nil && o.MaxTlsVersion.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxTLSVersion gets a reference to the given NullableString and assigns it to the MaxTLSVersion field.
-func (o *BackendResponse) SetMaxTLSVersion(v string) {
-	o.MaxTLSVersion.Set(&v)
+// SetMaxTlsVersion gets a reference to the given NullableString and assigns it to the MaxTlsVersion field.
+func (o *BackendResponse) SetMaxTlsVersion(v string) {
+	o.MaxTlsVersion.Set(&v)
 }
 
-// SetMaxTLSVersionNil sets the value for MaxTLSVersion to be an explicit nil
-func (o *BackendResponse) SetMaxTLSVersionNil() {
-	o.MaxTLSVersion.Set(nil)
+// SetMaxTlsVersionNil sets the value for MaxTlsVersion to be an explicit nil
+func (o *BackendResponse) SetMaxTlsVersionNil() {
+	o.MaxTlsVersion.Set(nil)
 }
 
-// UnsetMaxTLSVersion ensures that no value is present for MaxTLSVersion, not even an explicit nil
-func (o *BackendResponse) UnsetMaxTLSVersion() {
-	o.MaxTLSVersion.Unset()
+// UnsetMaxTlsVersion ensures that no value is present for MaxTlsVersion, not even an explicit nil
+func (o *BackendResponse) UnsetMaxTlsVersion() {
+	o.MaxTlsVersion.Unset()
 }
 
-// GetMinTLSVersion returns the MinTLSVersion field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BackendResponse) GetMinTLSVersion() string {
-	if o == nil || o.MinTLSVersion.Get() == nil {
+// GetMinTlsVersion returns the MinTlsVersion field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetMinTlsVersion() string {
+	if o == nil || o.MinTlsVersion.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.MinTLSVersion.Get()
+	return *o.MinTlsVersion.Get()
 }
 
-// GetMinTLSVersionOk returns a tuple with the MinTLSVersion field value if set, nil otherwise
+// GetMinTlsVersionOk returns a tuple with the MinTlsVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BackendResponse) GetMinTLSVersionOk() (*string, bool) {
+func (o *BackendResponse) GetMinTlsVersionOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.MinTLSVersion.Get(), o.MinTLSVersion.IsSet()
+	return o.MinTlsVersion.Get(), o.MinTlsVersion.IsSet()
 }
 
-// HasMinTLSVersion returns a boolean if a field has been set.
-func (o *BackendResponse) HasMinTLSVersion() bool {
-	if o != nil && o.MinTLSVersion.IsSet() {
+// HasMinTlsVersion returns a boolean if a field has been set.
+func (o *BackendResponse) HasMinTlsVersion() bool {
+	if o != nil && o.MinTlsVersion.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinTLSVersion gets a reference to the given NullableString and assigns it to the MinTLSVersion field.
-func (o *BackendResponse) SetMinTLSVersion(v string) {
-	o.MinTLSVersion.Set(&v)
+// SetMinTlsVersion gets a reference to the given NullableString and assigns it to the MinTlsVersion field.
+func (o *BackendResponse) SetMinTlsVersion(v string) {
+	o.MinTlsVersion.Set(&v)
 }
 
-// SetMinTLSVersionNil sets the value for MinTLSVersion to be an explicit nil
-func (o *BackendResponse) SetMinTLSVersionNil() {
-	o.MinTLSVersion.Set(nil)
+// SetMinTlsVersionNil sets the value for MinTlsVersion to be an explicit nil
+func (o *BackendResponse) SetMinTlsVersionNil() {
+	o.MinTlsVersion.Set(nil)
 }
 
-// UnsetMinTLSVersion ensures that no value is present for MinTLSVersion, not even an explicit nil
-func (o *BackendResponse) UnsetMinTLSVersion() {
-	o.MinTLSVersion.Unset()
+// UnsetMinTlsVersion ensures that no value is present for MinTlsVersion, not even an explicit nil
+func (o *BackendResponse) UnsetMinTlsVersion() {
+	o.MinTlsVersion.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -1688,36 +1688,36 @@ func (o *BackendResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *BackendResponse) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *BackendResponse) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BackendResponse) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *BackendResponse) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *BackendResponse) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *BackendResponse) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *BackendResponse) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *BackendResponse) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -1827,11 +1827,11 @@ func (o BackendResponse) MarshalJSON() ([]byte, error) {
 	if o.MaxConn != nil {
 		toSerialize["max_conn"] = o.MaxConn
 	}
-	if o.MaxTLSVersion.IsSet() {
-		toSerialize["max_tls_version"] = o.MaxTLSVersion.Get()
+	if o.MaxTlsVersion.IsSet() {
+		toSerialize["max_tls_version"] = o.MaxTlsVersion.Get()
 	}
-	if o.MinTLSVersion.IsSet() {
-		toSerialize["min_tls_version"] = o.MinTLSVersion.Get()
+	if o.MinTlsVersion.IsSet() {
+		toSerialize["min_tls_version"] = o.MinTlsVersion.Get()
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -1905,8 +1905,8 @@ func (o BackendResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

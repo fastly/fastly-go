@@ -50,10 +50,10 @@ type ServiceAPI interface {
 		Delete a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIDeleteServiceRequest
 	*/
-	DeleteService(ctx context.Context, serviceID string) APIDeleteServiceRequest
+	DeleteService(ctx context.Context, serviceId string) APIDeleteServiceRequest
 
 	// DeleteServiceExecute executes the request
 	//  @return InlineResponse200
@@ -65,10 +65,10 @@ type ServiceAPI interface {
 		Get a specific service by id.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetServiceRequest
 	*/
-	GetService(ctx context.Context, serviceID string) APIGetServiceRequest
+	GetService(ctx context.Context, serviceId string) APIGetServiceRequest
 
 	// GetServiceExecute executes the request
 	//  @return ServiceResponse
@@ -80,10 +80,10 @@ type ServiceAPI interface {
 		List detailed information on a specified service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetServiceDetailRequest
 	*/
-	GetServiceDetail(ctx context.Context, serviceID string) APIGetServiceDetailRequest
+	GetServiceDetail(ctx context.Context, serviceId string) APIGetServiceDetailRequest
 
 	// GetServiceDetailExecute executes the request
 	//  @return ServiceDetail
@@ -95,10 +95,10 @@ type ServiceAPI interface {
 		List the domains within a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIListServiceDomainsRequest
 	*/
-	ListServiceDomains(ctx context.Context, serviceID string) APIListServiceDomainsRequest
+	ListServiceDomains(ctx context.Context, serviceId string) APIListServiceDomainsRequest
 
 	// ListServiceDomainsExecute executes the request
 	//  @return []DomainResponse
@@ -138,10 +138,10 @@ type ServiceAPI interface {
 		Update a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIUpdateServiceRequest
 	*/
-	UpdateService(ctx context.Context, serviceID string) APIUpdateServiceRequest
+	UpdateService(ctx context.Context, serviceId string) APIUpdateServiceRequest
 
 	// UpdateServiceExecute executes the request
 	//  @return ServiceResponse
@@ -153,12 +153,12 @@ type ServiceAPIService service
 
 // APICreateServiceRequest represents a request for the resource.
 type APICreateServiceRequest struct {
-	ctx          context.Context
-	APIService   ServiceAPI
-	comment      *string
-	name         *string
-	customerID   *string
-	resourceType *string
+	ctx        context.Context
+	APIService ServiceAPI
+	comment    *string
+	name       *string
+	customerId *string
+	type_      *string
 }
 
 // Comment A freeform descriptive note.
@@ -173,15 +173,15 @@ func (r *APICreateServiceRequest) Name(name string) *APICreateServiceRequest {
 	return r
 }
 
-// CustomerID Alphanumeric string identifying the customer.
-func (r *APICreateServiceRequest) CustomerID(customerID string) *APICreateServiceRequest {
-	r.customerID = &customerID
+// CustomerId Alphanumeric string identifying the customer.
+func (r *APICreateServiceRequest) CustomerId(customerId string) *APICreateServiceRequest {
+	r.customerId = &customerId
 	return r
 }
 
-// ResourceType The type of this service.
-func (r *APICreateServiceRequest) ResourceType(resourceType string) *APICreateServiceRequest {
-	r.resourceType = &resourceType
+// Type_ The type of this service.
+func (r *APICreateServiceRequest) Type_(type_ string) *APICreateServiceRequest {
+	r.type_ = &type_
 	return r
 }
 
@@ -249,11 +249,11 @@ func (a *ServiceAPIService) CreateServiceExecute(r APICreateServiceRequest) (*Se
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
 	}
-	if r.customerID != nil {
-		localVarFormParams.Add("customer_id", parameterToString(*r.customerID, ""))
+	if r.customerId != nil {
+		localVarFormParams.Add("customer_id", parameterToString(*r.customerId, ""))
 	}
-	if r.resourceType != nil {
-		localVarFormParams.Add("type", parameterToString(*r.resourceType, ""))
+	if r.type_ != nil {
+		localVarFormParams.Add("type", parameterToString(*r.type_, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -323,7 +323,7 @@ func (a *ServiceAPIService) CreateServiceExecute(r APICreateServiceRequest) (*Se
 type APIDeleteServiceRequest struct {
 	ctx        context.Context
 	APIService ServiceAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -337,14 +337,14 @@ DeleteService Delete a service
 Delete a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIDeleteServiceRequest
 */
-func (a *ServiceAPIService) DeleteService(ctx context.Context, serviceID string) APIDeleteServiceRequest {
+func (a *ServiceAPIService) DeleteService(ctx context.Context, serviceId string) APIDeleteServiceRequest {
 	return APIDeleteServiceRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -364,7 +364,7 @@ func (a *ServiceAPIService) DeleteServiceExecute(r APIDeleteServiceRequest) (*In
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -455,7 +455,7 @@ func (a *ServiceAPIService) DeleteServiceExecute(r APIDeleteServiceRequest) (*In
 type APIGetServiceRequest struct {
 	ctx        context.Context
 	APIService ServiceAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -469,14 +469,14 @@ GetService Get a service
 Get a specific service by id.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetServiceRequest
 */
-func (a *ServiceAPIService) GetService(ctx context.Context, serviceID string) APIGetServiceRequest {
+func (a *ServiceAPIService) GetService(ctx context.Context, serviceId string) APIGetServiceRequest {
 	return APIGetServiceRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -496,7 +496,7 @@ func (a *ServiceAPIService) GetServiceExecute(r APIGetServiceRequest) (*ServiceR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -587,7 +587,7 @@ func (a *ServiceAPIService) GetServiceExecute(r APIGetServiceRequest) (*ServiceR
 type APIGetServiceDetailRequest struct {
 	ctx                  context.Context
 	APIService           ServiceAPI
-	serviceID            string
+	serviceId            string
 	version              *int32
 	filterVersionsActive *bool
 }
@@ -615,14 +615,14 @@ GetServiceDetail Get service details
 List detailed information on a specified service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetServiceDetailRequest
 */
-func (a *ServiceAPIService) GetServiceDetail(ctx context.Context, serviceID string) APIGetServiceDetailRequest {
+func (a *ServiceAPIService) GetServiceDetail(ctx context.Context, serviceId string) APIGetServiceDetailRequest {
 	return APIGetServiceDetailRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -642,7 +642,7 @@ func (a *ServiceAPIService) GetServiceDetailExecute(r APIGetServiceDetailRequest
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/details"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -739,7 +739,7 @@ func (a *ServiceAPIService) GetServiceDetailExecute(r APIGetServiceDetailRequest
 type APIListServiceDomainsRequest struct {
 	ctx        context.Context
 	APIService ServiceAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -753,14 +753,14 @@ ListServiceDomains List the domains within a service
 List the domains within a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIListServiceDomainsRequest
 */
-func (a *ServiceAPIService) ListServiceDomains(ctx context.Context, serviceID string) APIListServiceDomainsRequest {
+func (a *ServiceAPIService) ListServiceDomains(ctx context.Context, serviceId string) APIListServiceDomainsRequest {
 	return APIListServiceDomainsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -780,7 +780,7 @@ func (a *ServiceAPIService) ListServiceDomainsExecute(r APIListServiceDomainsReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/domain"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1178,10 +1178,10 @@ func (a *ServiceAPIService) SearchServiceExecute(r APISearchServiceRequest) (*Se
 type APIUpdateServiceRequest struct {
 	ctx        context.Context
 	APIService ServiceAPI
-	serviceID  string
+	serviceId  string
 	comment    *string
 	name       *string
-	customerID *string
+	customerId *string
 }
 
 // Comment A freeform descriptive note.
@@ -1196,9 +1196,9 @@ func (r *APIUpdateServiceRequest) Name(name string) *APIUpdateServiceRequest {
 	return r
 }
 
-// CustomerID Alphanumeric string identifying the customer.
-func (r *APIUpdateServiceRequest) CustomerID(customerID string) *APIUpdateServiceRequest {
-	r.customerID = &customerID
+// CustomerId Alphanumeric string identifying the customer.
+func (r *APIUpdateServiceRequest) CustomerId(customerId string) *APIUpdateServiceRequest {
+	r.customerId = &customerId
 	return r
 }
 
@@ -1213,14 +1213,14 @@ UpdateService Update a service
 Update a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIUpdateServiceRequest
 */
-func (a *ServiceAPIService) UpdateService(ctx context.Context, serviceID string) APIUpdateServiceRequest {
+func (a *ServiceAPIService) UpdateService(ctx context.Context, serviceId string) APIUpdateServiceRequest {
 	return APIUpdateServiceRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -1240,7 +1240,7 @@ func (a *ServiceAPIService) UpdateServiceExecute(r APIUpdateServiceRequest) (*Se
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1269,8 +1269,8 @@ func (a *ServiceAPIService) UpdateServiceExecute(r APIUpdateServiceRequest) (*Se
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
 	}
-	if r.customerID != nil {
-		localVarFormParams.Add("customer_id", parameterToString(*r.customerID, ""))
+	if r.customerId != nil {
+		localVarFormParams.Add("customer_id", parameterToString(*r.customerId, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

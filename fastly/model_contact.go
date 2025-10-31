@@ -19,7 +19,7 @@ import (
 // Contact struct for Contact
 type Contact struct {
 	// The alphanumeric string representing the user for this customer contact.
-	UserID NullableString `json:"user_id,omitempty"`
+	UserId NullableString `json:"user_id,omitempty"`
 	// The type of contact.
 	ContactType *string `json:"contact_type,omitempty"`
 	// The name of this contact, when user_id is not provided.
@@ -29,7 +29,7 @@ type Contact struct {
 	// The phone number for this contact. Required for primary, technical, and security contact types.
 	Phone NullableString `json:"phone,omitempty"`
 	// The alphanumeric string representing the customer for this customer contact.
-	CustomerID           NullableString `json:"customer_id,omitempty"`
+	CustomerId           NullableString `json:"customer_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -52,47 +52,47 @@ func NewContactWithDefaults() *Contact {
 	return &this
 }
 
-// GetUserID returns the UserID field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Contact) GetUserID() string {
-	if o == nil || o.UserID.Get() == nil {
+// GetUserId returns the UserId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Contact) GetUserId() string {
+	if o == nil || o.UserId.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.UserID.Get()
+	return *o.UserId.Get()
 }
 
-// GetUserIDOk returns a tuple with the UserID field value if set, nil otherwise
+// GetUserIdOk returns a tuple with the UserId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Contact) GetUserIDOk() (*string, bool) {
+func (o *Contact) GetUserIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.UserID.Get(), o.UserID.IsSet()
+	return o.UserId.Get(), o.UserId.IsSet()
 }
 
-// HasUserID returns a boolean if a field has been set.
-func (o *Contact) HasUserID() bool {
-	if o != nil && o.UserID.IsSet() {
+// HasUserId returns a boolean if a field has been set.
+func (o *Contact) HasUserId() bool {
+	if o != nil && o.UserId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetUserID gets a reference to the given NullableString and assigns it to the UserID field.
-func (o *Contact) SetUserID(v string) {
-	o.UserID.Set(&v)
+// SetUserId gets a reference to the given NullableString and assigns it to the UserId field.
+func (o *Contact) SetUserId(v string) {
+	o.UserId.Set(&v)
 }
 
-// SetUserIDNil sets the value for UserID to be an explicit nil
-func (o *Contact) SetUserIDNil() {
-	o.UserID.Set(nil)
+// SetUserIdNil sets the value for UserId to be an explicit nil
+func (o *Contact) SetUserIdNil() {
+	o.UserId.Set(nil)
 }
 
-// UnsetUserID ensures that no value is present for UserID, not even an explicit nil
-func (o *Contact) UnsetUserID() {
-	o.UserID.Unset()
+// UnsetUserId ensures that no value is present for UserId, not even an explicit nil
+func (o *Contact) UnsetUserId() {
+	o.UserId.Unset()
 }
 
 // GetContactType returns the ContactType field value if set, zero value otherwise.
@@ -256,55 +256,55 @@ func (o *Contact) UnsetPhone() {
 	o.Phone.Unset()
 }
 
-// GetCustomerID returns the CustomerID field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *Contact) GetCustomerID() string {
-	if o == nil || o.CustomerID.Get() == nil {
+// GetCustomerId returns the CustomerId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *Contact) GetCustomerId() string {
+	if o == nil || o.CustomerId.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.CustomerID.Get()
+	return *o.CustomerId.Get()
 }
 
-// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
+// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *Contact) GetCustomerIDOk() (*string, bool) {
+func (o *Contact) GetCustomerIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.CustomerID.Get(), o.CustomerID.IsSet()
+	return o.CustomerId.Get(), o.CustomerId.IsSet()
 }
 
-// HasCustomerID returns a boolean if a field has been set.
-func (o *Contact) HasCustomerID() bool {
-	if o != nil && o.CustomerID.IsSet() {
+// HasCustomerId returns a boolean if a field has been set.
+func (o *Contact) HasCustomerId() bool {
+	if o != nil && o.CustomerId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerID gets a reference to the given NullableString and assigns it to the CustomerID field.
-func (o *Contact) SetCustomerID(v string) {
-	o.CustomerID.Set(&v)
+// SetCustomerId gets a reference to the given NullableString and assigns it to the CustomerId field.
+func (o *Contact) SetCustomerId(v string) {
+	o.CustomerId.Set(&v)
 }
 
-// SetCustomerIDNil sets the value for CustomerID to be an explicit nil
-func (o *Contact) SetCustomerIDNil() {
-	o.CustomerID.Set(nil)
+// SetCustomerIdNil sets the value for CustomerId to be an explicit nil
+func (o *Contact) SetCustomerIdNil() {
+	o.CustomerId.Set(nil)
 }
 
-// UnsetCustomerID ensures that no value is present for CustomerID, not even an explicit nil
-func (o *Contact) UnsetCustomerID() {
-	o.CustomerID.Unset()
+// UnsetCustomerId ensures that no value is present for CustomerId, not even an explicit nil
+func (o *Contact) UnsetCustomerId() {
+	o.CustomerId.Unset()
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o Contact) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.UserID.IsSet() {
-		toSerialize["user_id"] = o.UserID.Get()
+	if o.UserId.IsSet() {
+		toSerialize["user_id"] = o.UserId.Get()
 	}
 	if o.ContactType != nil {
 		toSerialize["contact_type"] = o.ContactType
@@ -318,8 +318,8 @@ func (o Contact) MarshalJSON() ([]byte, error) {
 	if o.Phone.IsSet() {
 		toSerialize["phone"] = o.Phone.Get()
 	}
-	if o.CustomerID.IsSet() {
-		toSerialize["customer_id"] = o.CustomerID.Get()
+	if o.CustomerId.IsSet() {
+		toSerialize["customer_id"] = o.CustomerId.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {

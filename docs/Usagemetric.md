@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Unit** | Pointer to **string** | The unit for the usage as shown on an invoice. If there is no explicit unit, this field will be \&quot;unit\&quot; (e.g., a request with `product_id` of &#39;cdn_usage&#39; and `usage_type` of &#39;North America Requests&#39; has no unit, and will return \&quot;unit\&quot;). | [optional] 
 **Quantity** | Pointer to **float32** | The quantity of the usage for the product. | [optional] 
 **RawQuantity** | Pointer to **float32** | The raw units measured for the product. | [optional] 
-**ProductID** | Pointer to **string** | The product identifier associated with the usage type. This corresponds to a Fastly product offering. | [optional] 
+**ProductId** | Pointer to **string** | The product identifier associated with the usage type. This corresponds to a Fastly product offering. | [optional] 
 **LastUpdatedAt** | Pointer to **string** | The date when the usage metric was last updated. | [optional] 
 
 ## Methods
@@ -208,30 +208,30 @@ SetRawQuantity sets RawQuantity field to given value.
 
 HasRawQuantity returns a boolean if a field has been set.
 
-### GetProductID
+### GetProductId
 
-`func (o *Usagemetric) GetProductID() string`
+`func (o *Usagemetric) GetProductId() string`
 
-GetProductID returns the ProductID field if non-nil, zero value otherwise.
+GetProductId returns the ProductId field if non-nil, zero value otherwise.
 
-### GetProductIDOk
+### GetProductIdOk
 
-`func (o *Usagemetric) GetProductIDOk() (*string, bool)`
+`func (o *Usagemetric) GetProductIdOk() (*string, bool)`
 
-GetProductIDOk returns a tuple with the ProductID field if it's non-nil, zero value otherwise
+GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProductID
+### SetProductId
 
-`func (o *Usagemetric) SetProductID(v string)`
+`func (o *Usagemetric) SetProductId(v string)`
 
-SetProductID sets ProductID field to given value.
+SetProductId sets ProductId field to given value.
 
-### HasProductID
+### HasProductId
 
-`func (o *Usagemetric) HasProductID() bool`
+`func (o *Usagemetric) HasProductId() bool`
 
-HasProductID returns a boolean if a field has been set.
+HasProductId returns a boolean if a field has been set.
 
 ### GetLastUpdatedAt
 
@@ -260,3 +260,5 @@ HasLastUpdatedAt returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

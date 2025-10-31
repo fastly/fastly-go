@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewValidatorResultDataAttributesMessages
 
-`func NewValidatorResultDataAttributesMessages(resourceType string, warning bool, message string, tokens []map[string]TokensAdditionalProps, ) *ValidatorResultDataAttributesMessages`
+`func NewValidatorResultDataAttributesMessages(type_ string, warning bool, message string, tokens []map[string]TokensAdditionalProps, ) *ValidatorResultDataAttributesMessages`
 
 NewValidatorResultDataAttributesMessages instantiates a new ValidatorResultDataAttributesMessages object
 This constructor will assign default values to properties that have it defined,
@@ -110,3 +110,5 @@ SetTokens sets Tokens field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | Pointer to [**TypeServiceInvitation**](TypeServiceInvitation.md) |  | [optional] [default to TYPESERVICEINVITATION_SERVICE_INVITATION]
-**ID** | Pointer to **string** | Alphanumeric string identifying a service invitation. | [optional] [readonly] 
+**Id** | Pointer to **string** | Alphanumeric string identifying a service invitation. | [optional] [readonly] 
 
 ## Methods
 
@@ -51,30 +51,32 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
-### GetID
+### GetId
 
-`func (o *RelationshipMemberServiceInvitation) GetID() string`
+`func (o *RelationshipMemberServiceInvitation) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *RelationshipMemberServiceInvitation) GetIDOk() (*string, bool)`
+`func (o *RelationshipMemberServiceInvitation) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *RelationshipMemberServiceInvitation) SetID(v string)`
+`func (o *RelationshipMemberServiceInvitation) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *RelationshipMemberServiceInvitation) HasID() bool`
+`func (o *RelationshipMemberServiceInvitation) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

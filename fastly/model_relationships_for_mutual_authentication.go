@@ -19,23 +19,23 @@ import (
 
 // RelationshipsForMutualAuthentication struct for RelationshipsForMutualAuthentication
 type RelationshipsForMutualAuthentication struct {
-	RelationshipTLSActivations *RelationshipTLSActivations
+	RelationshipTlsActivations *RelationshipTlsActivations
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
 func (o *RelationshipsForMutualAuthentication) UnmarshalJSON(data []byte) error {
 	var err error
-	// try to unmarshal JSON data into RelationshipTLSActivations
-	err = json.Unmarshal(data, &o.RelationshipTLSActivations)
+	// try to unmarshal JSON data into RelationshipTlsActivations
+	err = json.Unmarshal(data, &o.RelationshipTlsActivations)
 	if err == nil {
-		jsonRelationshipTLSActivations, _ := json.Marshal(o.RelationshipTLSActivations)
-		if string(jsonRelationshipTLSActivations) != "{}" { // empty struct
-			return nil // data stored in o.RelationshipTLSActivations, return on the first match
+		jsonRelationshipTlsActivations, _ := json.Marshal(o.RelationshipTlsActivations)
+		if string(jsonRelationshipTlsActivations) != "{}" { // empty struct
+			return nil // data stored in o.RelationshipTlsActivations, return on the first match
 		}
-		o.RelationshipTLSActivations = nil
+		o.RelationshipTlsActivations = nil
 	} else {
-		o.RelationshipTLSActivations = nil
+		o.RelationshipTlsActivations = nil
 	}
 
 	return fmt.Errorf("data failed to match schemas in anyOf(RelationshipsForMutualAuthentication)")
@@ -44,8 +44,8 @@ func (o *RelationshipsForMutualAuthentication) UnmarshalJSON(data []byte) error 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o *RelationshipsForMutualAuthentication) MarshalJSON() ([]byte, error) {
-	if o.RelationshipTLSActivations != nil {
-		return json.Marshal(&o.RelationshipTLSActivations)
+	if o.RelationshipTlsActivations != nil {
+		return json.Marshal(&o.RelationshipTlsActivations)
 	}
 
 	return nil, nil // no data in anyOf schemas

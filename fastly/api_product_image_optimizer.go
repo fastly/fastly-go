@@ -36,10 +36,10 @@ type ProductImageOptimizerAPI interface {
 		Disable the Image Optimizer product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIDisableProductImageOptimizerRequest
 	*/
-	DisableProductImageOptimizer(ctx context.Context, serviceID string) APIDisableProductImageOptimizerRequest
+	DisableProductImageOptimizer(ctx context.Context, serviceId string) APIDisableProductImageOptimizerRequest
 
 	// DisableProductImageOptimizerExecute executes the request
 	DisableProductImageOptimizerExecute(r APIDisableProductImageOptimizerRequest) (*http.Response, error)
@@ -50,10 +50,10 @@ type ProductImageOptimizerAPI interface {
 		Enable the Image Optimizer product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIEnableProductImageOptimizerRequest
 	*/
-	EnableProductImageOptimizer(ctx context.Context, serviceID string) APIEnableProductImageOptimizerRequest
+	EnableProductImageOptimizer(ctx context.Context, serviceId string) APIEnableProductImageOptimizerRequest
 
 	// EnableProductImageOptimizerExecute executes the request
 	//  @return ImageOptimizerResponseBodyEnable
@@ -65,10 +65,10 @@ type ProductImageOptimizerAPI interface {
 		Get the enablement status of the Image Optimizer product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetProductImageOptimizerRequest
 	*/
-	GetProductImageOptimizer(ctx context.Context, serviceID string) APIGetProductImageOptimizerRequest
+	GetProductImageOptimizer(ctx context.Context, serviceId string) APIGetProductImageOptimizerRequest
 
 	// GetProductImageOptimizerExecute executes the request
 	//  @return ImageOptimizerResponseBodyEnable
@@ -96,7 +96,7 @@ type ProductImageOptimizerAPIService service
 type APIDisableProductImageOptimizerRequest struct {
 	ctx        context.Context
 	APIService ProductImageOptimizerAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -110,14 +110,14 @@ DisableProductImageOptimizer Disable product
 Disable the Image Optimizer product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIDisableProductImageOptimizerRequest
 */
-func (a *ProductImageOptimizerAPIService) DisableProductImageOptimizer(ctx context.Context, serviceID string) APIDisableProductImageOptimizerRequest {
+func (a *ProductImageOptimizerAPIService) DisableProductImageOptimizer(ctx context.Context, serviceId string) APIDisableProductImageOptimizerRequest {
 	return APIDisableProductImageOptimizerRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -135,7 +135,7 @@ func (a *ProductImageOptimizerAPIService) DisableProductImageOptimizerExecute(r 
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/image_optimizer/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -217,7 +217,7 @@ func (a *ProductImageOptimizerAPIService) DisableProductImageOptimizerExecute(r 
 type APIEnableProductImageOptimizerRequest struct {
 	ctx        context.Context
 	APIService ProductImageOptimizerAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -231,14 +231,14 @@ EnableProductImageOptimizer Enable product
 Enable the Image Optimizer product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIEnableProductImageOptimizerRequest
 */
-func (a *ProductImageOptimizerAPIService) EnableProductImageOptimizer(ctx context.Context, serviceID string) APIEnableProductImageOptimizerRequest {
+func (a *ProductImageOptimizerAPIService) EnableProductImageOptimizer(ctx context.Context, serviceId string) APIEnableProductImageOptimizerRequest {
 	return APIEnableProductImageOptimizerRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -258,7 +258,7 @@ func (a *ProductImageOptimizerAPIService) EnableProductImageOptimizerExecute(r A
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/image_optimizer/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -349,7 +349,7 @@ func (a *ProductImageOptimizerAPIService) EnableProductImageOptimizerExecute(r A
 type APIGetProductImageOptimizerRequest struct {
 	ctx        context.Context
 	APIService ProductImageOptimizerAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -363,14 +363,14 @@ GetProductImageOptimizer Get product enablement status
 Get the enablement status of the Image Optimizer product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetProductImageOptimizerRequest
 */
-func (a *ProductImageOptimizerAPIService) GetProductImageOptimizer(ctx context.Context, serviceID string) APIGetProductImageOptimizerRequest {
+func (a *ProductImageOptimizerAPIService) GetProductImageOptimizer(ctx context.Context, serviceId string) APIGetProductImageOptimizerRequest {
 	return APIGetProductImageOptimizerRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -390,7 +390,7 @@ func (a *ProductImageOptimizerAPIService) GetProductImageOptimizerExecute(r APIG
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/image_optimizer/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

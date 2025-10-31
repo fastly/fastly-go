@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CustomerID** | Pointer to **string** | The Customer ID associated with the invoice. | [optional] 
-**InvoiceID** | Pointer to **string** | An alphanumeric string identifying the invoice. | [optional] 
+**CustomerId** | Pointer to **string** | The Customer ID associated with the invoice. | [optional] 
+**InvoiceId** | Pointer to **string** | An alphanumeric string identifying the invoice. | [optional] 
 **BillingStartDate** | Pointer to **time.Time** | The date and time (in ISO 8601 format) for the initiation point of a billing cycle, signifying the start of charges for a service or subscription. | [optional] 
 **BillingEndDate** | Pointer to **time.Time** | The date and time (in ISO 8601 format) for the termination point of a billing cycle, signifying the end of charges for a service or subscription. | [optional] 
 **MonthlyTransactionAmount** | Pointer to **string** | The total billable amount for invoiced services charged within a single month. | [optional] 
@@ -30,55 +30,55 @@ NewMtdinvoiceWithDefaults instantiates a new Mtdinvoice object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCustomerID
+### GetCustomerId
 
-`func (o *Mtdinvoice) GetCustomerID() string`
+`func (o *Mtdinvoice) GetCustomerId() string`
 
-GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetCustomerIDOk
+### GetCustomerIdOk
 
-`func (o *Mtdinvoice) GetCustomerIDOk() (*string, bool)`
+`func (o *Mtdinvoice) GetCustomerIdOk() (*string, bool)`
 
-GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerID
+### SetCustomerId
 
-`func (o *Mtdinvoice) SetCustomerID(v string)`
+`func (o *Mtdinvoice) SetCustomerId(v string)`
 
-SetCustomerID sets CustomerID field to given value.
+SetCustomerId sets CustomerId field to given value.
 
-### HasCustomerID
+### HasCustomerId
 
-`func (o *Mtdinvoice) HasCustomerID() bool`
+`func (o *Mtdinvoice) HasCustomerId() bool`
 
-HasCustomerID returns a boolean if a field has been set.
+HasCustomerId returns a boolean if a field has been set.
 
-### GetInvoiceID
+### GetInvoiceId
 
-`func (o *Mtdinvoice) GetInvoiceID() string`
+`func (o *Mtdinvoice) GetInvoiceId() string`
 
-GetInvoiceID returns the InvoiceID field if non-nil, zero value otherwise.
+GetInvoiceId returns the InvoiceId field if non-nil, zero value otherwise.
 
-### GetInvoiceIDOk
+### GetInvoiceIdOk
 
-`func (o *Mtdinvoice) GetInvoiceIDOk() (*string, bool)`
+`func (o *Mtdinvoice) GetInvoiceIdOk() (*string, bool)`
 
-GetInvoiceIDOk returns a tuple with the InvoiceID field if it's non-nil, zero value otherwise
+GetInvoiceIdOk returns a tuple with the InvoiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetInvoiceID
+### SetInvoiceId
 
-`func (o *Mtdinvoice) SetInvoiceID(v string)`
+`func (o *Mtdinvoice) SetInvoiceId(v string)`
 
-SetInvoiceID sets InvoiceID field to given value.
+SetInvoiceId sets InvoiceId field to given value.
 
-### HasInvoiceID
+### HasInvoiceId
 
-`func (o *Mtdinvoice) HasInvoiceID() bool`
+`func (o *Mtdinvoice) HasInvoiceId() bool`
 
-HasInvoiceID returns a boolean if a field has been set.
+HasInvoiceId returns a boolean if a field has been set.
 
 ### GetBillingStartDate
 
@@ -182,3 +182,5 @@ HasTransactionLineItems returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -1,54 +1,56 @@
-# RelationshipTLSDNSRecordsRequestDNSRecords
+# RelationshipTlsDnsRecordsRequestDnsRecords
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**[]RelationshipTLSDNSRecordsRequestDNSRecordsData**](RelationshipTLSDNSRecordsRequestDNSRecordsData.md) |  | [optional] 
+**Data** | Pointer to [**[]RelationshipTlsDnsRecordsRequestDnsRecordsData**](RelationshipTlsDnsRecordsRequestDnsRecordsData.md) |  | [optional] 
 
 ## Methods
 
-### NewRelationshipTLSDNSRecordsRequestDNSRecords
+### NewRelationshipTlsDnsRecordsRequestDnsRecords
 
-`func NewRelationshipTLSDNSRecordsRequestDNSRecords() *RelationshipTLSDNSRecordsRequestDNSRecords`
+`func NewRelationshipTlsDnsRecordsRequestDnsRecords() *RelationshipTlsDnsRecordsRequestDnsRecords`
 
-NewRelationshipTLSDNSRecordsRequestDNSRecords instantiates a new RelationshipTLSDNSRecordsRequestDNSRecords object
+NewRelationshipTlsDnsRecordsRequestDnsRecords instantiates a new RelationshipTlsDnsRecordsRequestDnsRecords object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipTLSDNSRecordsRequestDNSRecordsWithDefaults
+### NewRelationshipTlsDnsRecordsRequestDnsRecordsWithDefaults
 
-`func NewRelationshipTLSDNSRecordsRequestDNSRecordsWithDefaults() *RelationshipTLSDNSRecordsRequestDNSRecords`
+`func NewRelationshipTlsDnsRecordsRequestDnsRecordsWithDefaults() *RelationshipTlsDnsRecordsRequestDnsRecords`
 
-NewRelationshipTLSDNSRecordsRequestDNSRecordsWithDefaults instantiates a new RelationshipTLSDNSRecordsRequestDNSRecords object
+NewRelationshipTlsDnsRecordsRequestDnsRecordsWithDefaults instantiates a new RelationshipTlsDnsRecordsRequestDnsRecords object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *RelationshipTLSDNSRecordsRequestDNSRecords) GetData() []RelationshipTLSDNSRecordsRequestDNSRecordsData`
+`func (o *RelationshipTlsDnsRecordsRequestDnsRecords) GetData() []RelationshipTlsDnsRecordsRequestDnsRecordsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *RelationshipTLSDNSRecordsRequestDNSRecords) GetDataOk() (*[]RelationshipTLSDNSRecordsRequestDNSRecordsData, bool)`
+`func (o *RelationshipTlsDnsRecordsRequestDnsRecords) GetDataOk() (*[]RelationshipTlsDnsRecordsRequestDnsRecordsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *RelationshipTLSDNSRecordsRequestDNSRecords) SetData(v []RelationshipTLSDNSRecordsRequestDNSRecordsData)`
+`func (o *RelationshipTlsDnsRecordsRequestDnsRecords) SetData(v []RelationshipTlsDnsRecordsRequestDnsRecordsData)`
 
 SetData sets Data field to given value.
 
 ### HasData
 
-`func (o *RelationshipTLSDNSRecordsRequestDNSRecords) HasData() bool`
+`func (o *RelationshipTlsDnsRecordsRequestDnsRecords) HasData() bool`
 
 HasData returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

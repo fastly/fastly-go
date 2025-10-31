@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServiceID** | Pointer to **string** | Specifies the ID of the service for which data should be returned. | [optional] 
+**ServiceId** | Pointer to **string** | Specifies the ID of the service for which data should be returned. | [optional] 
 **Start** | Pointer to **string** | Start time for the query as supplied in the request. | [optional] 
 **End** | Pointer to **string** | End time for the query as supplied in the request. | [optional] 
 **DomainExactMatch** | Pointer to **bool** | Value of the `domain_exact_match` filter as supplied in the request. | [optional] 
@@ -29,30 +29,30 @@ NewLogInsightsMetaFilterWithDefaults instantiates a new LogInsightsMetaFilter ob
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetServiceID
+### GetServiceId
 
-`func (o *LogInsightsMetaFilter) GetServiceID() string`
+`func (o *LogInsightsMetaFilter) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *LogInsightsMetaFilter) GetServiceIDOk() (*string, bool)`
+`func (o *LogInsightsMetaFilter) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *LogInsightsMetaFilter) SetServiceID(v string)`
+`func (o *LogInsightsMetaFilter) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *LogInsightsMetaFilter) HasServiceID() bool`
+`func (o *LogInsightsMetaFilter) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetStart
 
@@ -156,3 +156,5 @@ HasLimit returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

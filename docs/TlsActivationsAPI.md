@@ -1,19 +1,19 @@
-# TLSActivationsAPI
+# TlsActivationsAPI
 
 > [!NOTE]
 > All URIs are relative to `https://api.fastly.com`
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTLSActivation**](TlsActivationsAPI.md#CreateTLSActivation) | **POST** `/tls/activations` | Enable TLS for a domain using a custom certificate
-[**DeleteTLSActivation**](TlsActivationsAPI.md#DeleteTLSActivation) | **DELETE** `/tls/activations/{tls_activation_id}` | Disable TLS on a domain
-[**GetTLSActivation**](TlsActivationsAPI.md#GetTLSActivation) | **GET** `/tls/activations/{tls_activation_id}` | Get a TLS activation
-[**ListTLSActivations**](TlsActivationsAPI.md#ListTLSActivations) | **GET** `/tls/activations` | List TLS activations
-[**UpdateTLSActivation**](TlsActivationsAPI.md#UpdateTLSActivation) | **PATCH** `/tls/activations/{tls_activation_id}` | Update a certificate
+[**CreateTlsActivation**](TlsActivationsAPI.md#CreateTlsActivation) | **POST** `/tls/activations` | Enable TLS for a domain using a custom certificate
+[**DeleteTlsActivation**](TlsActivationsAPI.md#DeleteTlsActivation) | **DELETE** `/tls/activations/{tls_activation_id}` | Disable TLS on a domain
+[**GetTlsActivation**](TlsActivationsAPI.md#GetTlsActivation) | **GET** `/tls/activations/{tls_activation_id}` | Get a TLS activation
+[**ListTlsActivations**](TlsActivationsAPI.md#ListTlsActivations) | **GET** `/tls/activations` | List TLS activations
+[**UpdateTlsActivation**](TlsActivationsAPI.md#UpdateTlsActivation) | **PATCH** `/tls/activations/{tls_activation_id}` | Update a certificate
 
 
 
-## CreateTLSActivation
+## CreateTlsActivation
 
 Enable TLS for a domain using a custom certificate
 
@@ -32,18 +32,18 @@ import (
 )
 
 func main() {
-    tlsActivation := *openapiclient.NewTLSActivation() // TLSActivation |  (optional)
+    tlsActivation := *openapiclient.NewTlsActivation() // TlsActivation |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSActivationsAPI.CreateTLSActivation(ctx).TLSActivation(tlsActivation).Execute()
+    resp, r, err := apiClient.TlsActivationsAPI.CreateTlsActivation(ctx).TlsActivation(tlsActivation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSActivationsAPI.CreateTLSActivation`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsActivationsAPI.CreateTlsActivation`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateTLSActivation`: TLSActivationResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSActivationsAPI.CreateTLSActivation`: %v\n", resp)
+    // response from `CreateTlsActivation`: TlsActivationResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsActivationsAPI.CreateTlsActivation`: %v\n", resp)
 }
 ```
 
@@ -53,16 +53,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateTLSActivationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTlsActivationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tlsActivation** | [**TLSActivation**](TlsActivation.md) |  | 
+ **tlsActivation** | [**TlsActivation**](TlsActivation.md) |  | 
 
 ### Return type
 
-[**TLSActivationResponse**](TlsActivationResponse.md)
+[**TlsActivationResponse**](TlsActivationResponse.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## DeleteTLSActivation
+## DeleteTlsActivation
 
 Disable TLS on a domain
 
@@ -95,14 +95,14 @@ import (
 )
 
 func main() {
-    tlsActivationID := "tlsActivationId_example" // string | Alphanumeric string identifying a TLS activation.
+    tlsActivationId := "tlsActivationId_example" // string | Alphanumeric string identifying a TLS activation.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSActivationsAPI.DeleteTLSActivation(ctx, tlsActivationID).Execute()
+    resp, r, err := apiClient.TlsActivationsAPI.DeleteTlsActivation(ctx, tlsActivationId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSActivationsAPI.DeleteTLSActivation`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsActivationsAPI.DeleteTlsActivation`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -114,11 +114,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tlsActivationID** | **string** | Alphanumeric string identifying a TLS activation. | 
+**tlsActivationId** | **string** | Alphanumeric string identifying a TLS activation. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteTLSActivationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteTlsActivationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## GetTLSActivation
+## GetTlsActivation
 
 Get a TLS activation
 
@@ -160,19 +160,19 @@ import (
 )
 
 func main() {
-    tlsActivationID := "tlsActivationId_example" // string | Alphanumeric string identifying a TLS activation.
+    tlsActivationId := "tlsActivationId_example" // string | Alphanumeric string identifying a TLS activation.
     include := "tls_certificate,tls_configuration,tls_domain" // string | Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`.  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSActivationsAPI.GetTLSActivation(ctx, tlsActivationID).Include(include).Execute()
+    resp, r, err := apiClient.TlsActivationsAPI.GetTlsActivation(ctx, tlsActivationId).Include(include).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSActivationsAPI.GetTLSActivation`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsActivationsAPI.GetTlsActivation`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetTLSActivation`: TLSActivationResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSActivationsAPI.GetTLSActivation`: %v\n", resp)
+    // response from `GetTlsActivation`: TlsActivationResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsActivationsAPI.GetTlsActivation`: %v\n", resp)
 }
 ```
 
@@ -182,11 +182,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tlsActivationID** | **string** | Alphanumeric string identifying a TLS activation. | 
+**tlsActivationId** | **string** | Alphanumeric string identifying a TLS activation. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetTLSActivationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTlsActivationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TLSActivationResponse**](TlsActivationResponse.md)
+[**TlsActivationResponse**](TlsActivationResponse.md)
 
 ### Authorization
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## ListTLSActivations
+## ListTlsActivations
 
 List TLS activations
 
@@ -228,9 +228,9 @@ import (
 )
 
 func main() {
-    filterTLSCertificateID := "filterTLSCertificateId_example" // string | Limit the returned activations to a specific certificate. (optional)
-    filterTLSConfigurationID := "filterTLSConfigurationId_example" // string | Limit the returned activations to a specific TLS configuration. (optional)
-    filterTLSDomainID := "filterTLSDomainId_example" // string | Limit the returned rules to a specific domain name. (optional)
+    filterTlsCertificateId := "filterTlsCertificateId_example" // string | Limit the returned activations to a specific certificate. (optional)
+    filterTlsConfigurationId := "filterTlsConfigurationId_example" // string | Limit the returned activations to a specific TLS configuration. (optional)
+    filterTlsDomainId := "filterTlsDomainId_example" // string | Limit the returned rules to a specific domain name. (optional)
     include := "tls_certificate,tls_configuration,tls_domain" // string | Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`.  (optional)
     pageNumber := int32(1) // int32 | Current page. (optional)
     pageSize := int32(20) // int32 | Number of records per page. (optional) (default to 20)
@@ -238,13 +238,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSActivationsAPI.ListTLSActivations(ctx).FilterTLSCertificateID(filterTLSCertificateID).FilterTLSConfigurationID(filterTLSConfigurationID).FilterTLSDomainID(filterTLSDomainID).Include(include).PageNumber(pageNumber).PageSize(pageSize).Execute()
+    resp, r, err := apiClient.TlsActivationsAPI.ListTlsActivations(ctx).FilterTlsCertificateId(filterTlsCertificateId).FilterTlsConfigurationId(filterTlsConfigurationId).FilterTlsDomainId(filterTlsDomainId).Include(include).PageNumber(pageNumber).PageSize(pageSize).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSActivationsAPI.ListTLSActivations`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsActivationsAPI.ListTlsActivations`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListTLSActivations`: TLSActivationsResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSActivationsAPI.ListTLSActivations`: %v\n", resp)
+    // response from `ListTlsActivations`: TlsActivationsResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsActivationsAPI.ListTlsActivations`: %v\n", resp)
 }
 ```
 
@@ -254,16 +254,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListTLSActivationsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListTlsActivationsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filterTLSCertificateID** | **string** | Limit the returned activations to a specific certificate. |  **filterTLSConfigurationID** | **string** | Limit the returned activations to a specific TLS configuration. |  **filterTLSDomainID** | **string** | Limit the returned rules to a specific domain name. |  **include** | **string** | Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`.  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20]
+ **filterTlsCertificateId** | **string** | Limit the returned activations to a specific certificate. |  **filterTlsConfigurationId** | **string** | Limit the returned activations to a specific TLS configuration. |  **filterTlsDomainId** | **string** | Limit the returned rules to a specific domain name. |  **include** | **string** | Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`.  |  **pageNumber** | **int32** | Current page. |  **pageSize** | **int32** | Number of records per page. | [default to 20]
 
 ### Return type
 
-[**TLSActivationsResponse**](TlsActivationsResponse.md)
+[**TlsActivationsResponse**](TlsActivationsResponse.md)
 
 ### Authorization
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## UpdateTLSActivation
+## UpdateTlsActivation
 
 Update a certificate
 
@@ -296,19 +296,19 @@ import (
 )
 
 func main() {
-    tlsActivationID := "tlsActivationId_example" // string | Alphanumeric string identifying a TLS activation.
-    tlsActivation := *openapiclient.NewTLSActivation() // TLSActivation |  (optional)
+    tlsActivationId := "tlsActivationId_example" // string | Alphanumeric string identifying a TLS activation.
+    tlsActivation := *openapiclient.NewTlsActivation() // TlsActivation |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSActivationsAPI.UpdateTLSActivation(ctx, tlsActivationID).TLSActivation(tlsActivation).Execute()
+    resp, r, err := apiClient.TlsActivationsAPI.UpdateTlsActivation(ctx, tlsActivationId).TlsActivation(tlsActivation).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSActivationsAPI.UpdateTLSActivation`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsActivationsAPI.UpdateTlsActivation`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateTLSActivation`: TLSActivationResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSActivationsAPI.UpdateTLSActivation`: %v\n", resp)
+    // response from `UpdateTlsActivation`: TlsActivationResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsActivationsAPI.UpdateTlsActivation`: %v\n", resp)
 }
 ```
 
@@ -318,20 +318,20 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tlsActivationID** | **string** | Alphanumeric string identifying a TLS activation. | 
+**tlsActivationId** | **string** | Alphanumeric string identifying a TLS activation. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateTLSActivationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateTlsActivationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tlsActivation** | [**TLSActivation**](TlsActivation.md) |  | 
+ **tlsActivation** | [**TlsActivation**](TlsActivation.md) |  | 
 
 ### Return type
 
-[**TLSActivationResponse**](TlsActivationResponse.md)
+[**TlsActivationResponse**](TlsActivationResponse.md)
 
 ### Authorization
 
@@ -343,3 +343,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/vnd.api+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

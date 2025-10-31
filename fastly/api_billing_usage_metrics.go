@@ -65,7 +65,7 @@ type BillingUsageMetricsAPIService service
 type APIGetServiceLevelUsageRequest struct {
 	ctx           context.Context
 	APIService    BillingUsageMetricsAPI
-	productID     *string
+	productId     *string
 	service       *string
 	usageTypeName *string
 	startMonth    *string
@@ -74,9 +74,9 @@ type APIGetServiceLevelUsageRequest struct {
 	cursor        *string
 }
 
-// ProductID The product identifier for the metrics returned (e.g., &#x60;cdn_usage&#x60;). This should be used along with &#x60;usage_type_name&#x60;.
-func (r *APIGetServiceLevelUsageRequest) ProductID(productID string) *APIGetServiceLevelUsageRequest {
-	r.productID = &productID
+// ProductId The product identifier for the metrics returned (e.g., &#x60;cdn_usage&#x60;). This should be used along with &#x60;usage_type_name&#x60;.
+func (r *APIGetServiceLevelUsageRequest) ProductId(productId string) *APIGetServiceLevelUsageRequest {
+	r.productId = &productId
 	return r
 }
 
@@ -157,8 +157,8 @@ func (a *BillingUsageMetricsAPIService) GetServiceLevelUsageExecute(r APIGetServ
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
-	if r.productID != nil {
-		localVarQueryParams.Add("product_id", parameterToString(*r.productID, ""))
+	if r.productId != nil {
+		localVarQueryParams.Add("product_id", parameterToString(*r.productId, ""))
 	}
 	if r.service != nil {
 		localVarQueryParams.Add("service", parameterToString(*r.service, ""))

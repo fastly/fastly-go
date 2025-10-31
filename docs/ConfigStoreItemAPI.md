@@ -34,13 +34,13 @@ import (
 )
 
 func main() {
-    configStoreID := "configStoreId_example" // string | An alphanumeric string identifying the config store.
+    configStoreId := "configStoreId_example" // string | An alphanumeric string identifying the config store.
     bulkUpdateConfigStoreListRequest := *openapiclient.NewBulkUpdateConfigStoreListRequest() // BulkUpdateConfigStoreListRequest |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConfigStoreItemAPI.BulkUpdateConfigStoreItem(ctx, configStoreID).BulkUpdateConfigStoreListRequest(bulkUpdateConfigStoreListRequest).Execute()
+    resp, r, err := apiClient.ConfigStoreItemAPI.BulkUpdateConfigStoreItem(ctx, configStoreId).BulkUpdateConfigStoreListRequest(bulkUpdateConfigStoreListRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreItemAPI.BulkUpdateConfigStoreItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -56,7 +56,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configStoreID** | **string** | An alphanumeric string identifying the config store. | 
+**configStoreId** | **string** | An alphanumeric string identifying the config store. | 
 
 ### Other Parameters
 
@@ -102,14 +102,14 @@ import (
 )
 
 func main() {
-    configStoreID := "configStoreId_example" // string | An alphanumeric string identifying the config store.
+    configStoreId := "configStoreId_example" // string | An alphanumeric string identifying the config store.
     itemKey := "itemKey_example" // string | Item key, maximum 256 characters. (optional)
     itemValue := "itemValue_example" // string | Item value, maximum 8000 characters. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConfigStoreItemAPI.CreateConfigStoreItem(ctx, configStoreID).ItemKey(itemKey).ItemValue(itemValue).Execute()
+    resp, r, err := apiClient.ConfigStoreItemAPI.CreateConfigStoreItem(ctx, configStoreId).ItemKey(itemKey).ItemValue(itemValue).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreItemAPI.CreateConfigStoreItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -125,7 +125,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configStoreID** | **string** | An alphanumeric string identifying the config store. | 
+**configStoreId** | **string** | An alphanumeric string identifying the config store. | 
 
 ### Other Parameters
 
@@ -171,13 +171,13 @@ import (
 )
 
 func main() {
-    configStoreID := "configStoreId_example" // string | An alphanumeric string identifying the config store.
+    configStoreId := "configStoreId_example" // string | An alphanumeric string identifying the config store.
     configStoreItemKey := "configStoreItemKey_example" // string | Item key, maximum 256 characters.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConfigStoreItemAPI.DeleteConfigStoreItem(ctx, configStoreID, configStoreItemKey).Execute()
+    resp, r, err := apiClient.ConfigStoreItemAPI.DeleteConfigStoreItem(ctx, configStoreId, configStoreItemKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreItemAPI.DeleteConfigStoreItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -193,7 +193,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configStoreID** | **string** | An alphanumeric string identifying the config store. | 
+**configStoreId** | **string** | An alphanumeric string identifying the config store. | 
 **configStoreItemKey** | **string** | Item key, maximum 256 characters. | 
 
 ### Other Parameters
@@ -240,13 +240,13 @@ import (
 )
 
 func main() {
-    configStoreID := "configStoreId_example" // string | An alphanumeric string identifying the config store.
+    configStoreId := "configStoreId_example" // string | An alphanumeric string identifying the config store.
     configStoreItemKey := "configStoreItemKey_example" // string | Item key, maximum 256 characters.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConfigStoreItemAPI.GetConfigStoreItem(ctx, configStoreID, configStoreItemKey).Execute()
+    resp, r, err := apiClient.ConfigStoreItemAPI.GetConfigStoreItem(ctx, configStoreId, configStoreItemKey).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreItemAPI.GetConfigStoreItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configStoreID** | **string** | An alphanumeric string identifying the config store. | 
+**configStoreId** | **string** | An alphanumeric string identifying the config store. | 
 **configStoreItemKey** | **string** | Item key, maximum 256 characters. | 
 
 ### Other Parameters
@@ -309,12 +309,12 @@ import (
 )
 
 func main() {
-    configStoreID := "configStoreId_example" // string | An alphanumeric string identifying the config store.
+    configStoreId := "configStoreId_example" // string | An alphanumeric string identifying the config store.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConfigStoreItemAPI.ListConfigStoreItems(ctx, configStoreID).Execute()
+    resp, r, err := apiClient.ConfigStoreItemAPI.ListConfigStoreItems(ctx, configStoreId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreItemAPI.ListConfigStoreItems`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -330,7 +330,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configStoreID** | **string** | An alphanumeric string identifying the config store. | 
+**configStoreId** | **string** | An alphanumeric string identifying the config store. | 
 
 ### Other Parameters
 
@@ -376,7 +376,7 @@ import (
 )
 
 func main() {
-    configStoreID := "configStoreId_example" // string | An alphanumeric string identifying the config store.
+    configStoreId := "configStoreId_example" // string | An alphanumeric string identifying the config store.
     configStoreItemKey := "configStoreItemKey_example" // string | Item key, maximum 256 characters.
     itemKey := "itemKey_example" // string | Item key, maximum 256 characters. (optional)
     itemValue := "itemValue_example" // string | Item value, maximum 8000 characters. (optional)
@@ -384,7 +384,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConfigStoreItemAPI.UpdateConfigStoreItem(ctx, configStoreID, configStoreItemKey).ItemKey(itemKey).ItemValue(itemValue).Execute()
+    resp, r, err := apiClient.ConfigStoreItemAPI.UpdateConfigStoreItem(ctx, configStoreId, configStoreItemKey).ItemKey(itemKey).ItemValue(itemValue).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreItemAPI.UpdateConfigStoreItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -400,7 +400,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configStoreID** | **string** | An alphanumeric string identifying the config store. | 
+**configStoreId** | **string** | An alphanumeric string identifying the config store. | 
 **configStoreItemKey** | **string** | Item key, maximum 256 characters. | 
 
 ### Other Parameters
@@ -447,7 +447,7 @@ import (
 )
 
 func main() {
-    configStoreID := "configStoreId_example" // string | An alphanumeric string identifying the config store.
+    configStoreId := "configStoreId_example" // string | An alphanumeric string identifying the config store.
     configStoreItemKey := "configStoreItemKey_example" // string | Item key, maximum 256 characters.
     itemKey := "itemKey_example" // string | Item key, maximum 256 characters. (optional)
     itemValue := "itemValue_example" // string | Item value, maximum 8000 characters. (optional)
@@ -455,7 +455,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConfigStoreItemAPI.UpsertConfigStoreItem(ctx, configStoreID, configStoreItemKey).ItemKey(itemKey).ItemValue(itemValue).Execute()
+    resp, r, err := apiClient.ConfigStoreItemAPI.UpsertConfigStoreItem(ctx, configStoreId, configStoreItemKey).ItemKey(itemKey).ItemValue(itemValue).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConfigStoreItemAPI.UpsertConfigStoreItem`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -471,7 +471,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**configStoreID** | **string** | An alphanumeric string identifying the config store. | 
+**configStoreId** | **string** | An alphanumeric string identifying the config store. | 
 **configStoreItemKey** | **string** | Item key, maximum 256 characters. | 
 
 ### Other Parameters
@@ -497,3 +497,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

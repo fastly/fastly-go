@@ -21,7 +21,7 @@ type LoggingLogshuttleAdditional struct {
 	// The data authentication token associated with this endpoint.
 	Token NullableString `json:"token,omitempty"`
 	// The URL to stream logs to.
-	URL                  *string `json:"url,omitempty"`
+	Url                  *string `json:"url,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -87,36 +87,36 @@ func (o *LoggingLogshuttleAdditional) UnsetToken() {
 	o.Token.Unset()
 }
 
-// GetURL returns the URL field value if set, zero value otherwise.
-func (o *LoggingLogshuttleAdditional) GetURL() string {
-	if o == nil || o.URL == nil {
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *LoggingLogshuttleAdditional) GetUrl() string {
+	if o == nil || o.Url == nil {
 		var ret string
 		return ret
 	}
-	return *o.URL
+	return *o.Url
 }
 
-// GetURLOk returns a tuple with the URL field value if set, nil otherwise
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingLogshuttleAdditional) GetURLOk() (*string, bool) {
-	if o == nil || o.URL == nil {
+func (o *LoggingLogshuttleAdditional) GetUrlOk() (*string, bool) {
+	if o == nil || o.Url == nil {
 		return nil, false
 	}
-	return o.URL, true
+	return o.Url, true
 }
 
-// HasURL returns a boolean if a field has been set.
-func (o *LoggingLogshuttleAdditional) HasURL() bool {
-	if o != nil && o.URL != nil {
+// HasUrl returns a boolean if a field has been set.
+func (o *LoggingLogshuttleAdditional) HasUrl() bool {
+	if o != nil && o.Url != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetURL gets a reference to the given string and assigns it to the URL field.
-func (o *LoggingLogshuttleAdditional) SetURL(v string) {
-	o.URL = &v
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *LoggingLogshuttleAdditional) SetUrl(v string) {
+	o.Url = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -126,8 +126,8 @@ func (o LoggingLogshuttleAdditional) MarshalJSON() ([]byte, error) {
 	if o.Token.IsSet() {
 		toSerialize["token"] = o.Token.Get()
 	}
-	if o.URL != nil {
-		toSerialize["url"] = o.URL
+	if o.Url != nil {
+		toSerialize["url"] = o.Url
 	}
 
 	for key, value := range o.AdditionalProperties {

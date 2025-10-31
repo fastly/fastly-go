@@ -152,13 +152,13 @@ import (
 )
 
 func main() {
-    resourceType := "resourceType_example" // string | Alphanumeric type of the address being modified.
+    type_ := "type__example" // string | Alphanumeric type of the address being modified.
     customerAddress := *openapiclient.NewCustomerAddress() // CustomerAddress | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.CustomerAddressesAPI.UpdateCustomerAddress(ctx, resourceType).CustomerAddress(customerAddress).Execute()
+    resp, r, err := apiClient.CustomerAddressesAPI.UpdateCustomerAddress(ctx, type_).CustomerAddress(customerAddress).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerAddressesAPI.UpdateCustomerAddress`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -172,7 +172,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**resourceType** | **string** | Alphanumeric type of the address being modified. | 
+**type_** | **string** | Alphanumeric type of the address being modified. | 
 
 ### Other Parameters
 
@@ -197,3 +197,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

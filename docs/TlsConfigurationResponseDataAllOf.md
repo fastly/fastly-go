@@ -1,80 +1,82 @@
-# TLSConfigurationResponseDataAllOf
+# TlsConfigurationResponseDataAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ID** | Pointer to **string** |  | [optional] [readonly] 
-**Attributes** | Pointer to [**TLSConfigurationResponseAttributes**](TlsConfigurationResponseAttributes.md) |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
+**Attributes** | Pointer to [**TlsConfigurationResponseAttributes**](TlsConfigurationResponseAttributes.md) |  | [optional] 
 
 ## Methods
 
-### NewTLSConfigurationResponseDataAllOf
+### NewTlsConfigurationResponseDataAllOf
 
-`func NewTLSConfigurationResponseDataAllOf() *TLSConfigurationResponseDataAllOf`
+`func NewTlsConfigurationResponseDataAllOf() *TlsConfigurationResponseDataAllOf`
 
-NewTLSConfigurationResponseDataAllOf instantiates a new TLSConfigurationResponseDataAllOf object
+NewTlsConfigurationResponseDataAllOf instantiates a new TlsConfigurationResponseDataAllOf object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSConfigurationResponseDataAllOfWithDefaults
+### NewTlsConfigurationResponseDataAllOfWithDefaults
 
-`func NewTLSConfigurationResponseDataAllOfWithDefaults() *TLSConfigurationResponseDataAllOf`
+`func NewTlsConfigurationResponseDataAllOfWithDefaults() *TlsConfigurationResponseDataAllOf`
 
-NewTLSConfigurationResponseDataAllOfWithDefaults instantiates a new TLSConfigurationResponseDataAllOf object
+NewTlsConfigurationResponseDataAllOfWithDefaults instantiates a new TlsConfigurationResponseDataAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetID
+### GetId
 
-`func (o *TLSConfigurationResponseDataAllOf) GetID() string`
+`func (o *TlsConfigurationResponseDataAllOf) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *TLSConfigurationResponseDataAllOf) GetIDOk() (*string, bool)`
+`func (o *TlsConfigurationResponseDataAllOf) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *TLSConfigurationResponseDataAllOf) SetID(v string)`
+`func (o *TlsConfigurationResponseDataAllOf) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *TLSConfigurationResponseDataAllOf) HasID() bool`
+`func (o *TlsConfigurationResponseDataAllOf) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *TLSConfigurationResponseDataAllOf) GetAttributes() TLSConfigurationResponseAttributes`
+`func (o *TlsConfigurationResponseDataAllOf) GetAttributes() TlsConfigurationResponseAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TLSConfigurationResponseDataAllOf) GetAttributesOk() (*TLSConfigurationResponseAttributes, bool)`
+`func (o *TlsConfigurationResponseDataAllOf) GetAttributesOk() (*TlsConfigurationResponseAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TLSConfigurationResponseDataAllOf) SetAttributes(v TLSConfigurationResponseAttributes)`
+`func (o *TlsConfigurationResponseDataAllOf) SetAttributes(v TlsConfigurationResponseAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 ### HasAttributes
 
-`func (o *TLSConfigurationResponseDataAllOf) HasAttributes() bool`
+`func (o *TlsConfigurationResponseDataAllOf) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

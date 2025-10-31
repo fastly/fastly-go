@@ -1,132 +1,134 @@
-# TLSConfigurationResponseAttributesAllOf
+# TlsConfigurationResponseAttributesAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Default** | Pointer to **bool** | Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](https://www.fastly.com/documentation/reference/api/tls/custom-certs/activations/). | [optional] [readonly] 
-**HTTPProtocols** | Pointer to **[]string** | HTTP protocols available on your configuration. | [optional] [readonly] 
-**TLSProtocols** | Pointer to **[]string** | TLS protocols available on your configuration. | [optional] [readonly] 
+**HttpProtocols** | Pointer to **[]string** | HTTP protocols available on your configuration. | [optional] [readonly] 
+**TlsProtocols** | Pointer to **[]string** | TLS protocols available on your configuration. | [optional] [readonly] 
 **Bulk** | Pointer to **bool** | Signifies whether the configuration is used for Platform TLS or not. | [optional] [readonly] 
 
 ## Methods
 
-### NewTLSConfigurationResponseAttributesAllOf
+### NewTlsConfigurationResponseAttributesAllOf
 
-`func NewTLSConfigurationResponseAttributesAllOf() *TLSConfigurationResponseAttributesAllOf`
+`func NewTlsConfigurationResponseAttributesAllOf() *TlsConfigurationResponseAttributesAllOf`
 
-NewTLSConfigurationResponseAttributesAllOf instantiates a new TLSConfigurationResponseAttributesAllOf object
+NewTlsConfigurationResponseAttributesAllOf instantiates a new TlsConfigurationResponseAttributesAllOf object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSConfigurationResponseAttributesAllOfWithDefaults
+### NewTlsConfigurationResponseAttributesAllOfWithDefaults
 
-`func NewTLSConfigurationResponseAttributesAllOfWithDefaults() *TLSConfigurationResponseAttributesAllOf`
+`func NewTlsConfigurationResponseAttributesAllOfWithDefaults() *TlsConfigurationResponseAttributesAllOf`
 
-NewTLSConfigurationResponseAttributesAllOfWithDefaults instantiates a new TLSConfigurationResponseAttributesAllOf object
+NewTlsConfigurationResponseAttributesAllOfWithDefaults instantiates a new TlsConfigurationResponseAttributesAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetDefault
 
-`func (o *TLSConfigurationResponseAttributesAllOf) GetDefault() bool`
+`func (o *TlsConfigurationResponseAttributesAllOf) GetDefault() bool`
 
 GetDefault returns the Default field if non-nil, zero value otherwise.
 
 ### GetDefaultOk
 
-`func (o *TLSConfigurationResponseAttributesAllOf) GetDefaultOk() (*bool, bool)`
+`func (o *TlsConfigurationResponseAttributesAllOf) GetDefaultOk() (*bool, bool)`
 
 GetDefaultOk returns a tuple with the Default field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDefault
 
-`func (o *TLSConfigurationResponseAttributesAllOf) SetDefault(v bool)`
+`func (o *TlsConfigurationResponseAttributesAllOf) SetDefault(v bool)`
 
 SetDefault sets Default field to given value.
 
 ### HasDefault
 
-`func (o *TLSConfigurationResponseAttributesAllOf) HasDefault() bool`
+`func (o *TlsConfigurationResponseAttributesAllOf) HasDefault() bool`
 
 HasDefault returns a boolean if a field has been set.
 
-### GetHTTPProtocols
+### GetHttpProtocols
 
-`func (o *TLSConfigurationResponseAttributesAllOf) GetHTTPProtocols() []string`
+`func (o *TlsConfigurationResponseAttributesAllOf) GetHttpProtocols() []string`
 
-GetHTTPProtocols returns the HTTPProtocols field if non-nil, zero value otherwise.
+GetHttpProtocols returns the HttpProtocols field if non-nil, zero value otherwise.
 
-### GetHTTPProtocolsOk
+### GetHttpProtocolsOk
 
-`func (o *TLSConfigurationResponseAttributesAllOf) GetHTTPProtocolsOk() (*[]string, bool)`
+`func (o *TlsConfigurationResponseAttributesAllOf) GetHttpProtocolsOk() (*[]string, bool)`
 
-GetHTTPProtocolsOk returns a tuple with the HTTPProtocols field if it's non-nil, zero value otherwise
+GetHttpProtocolsOk returns a tuple with the HttpProtocols field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHTTPProtocols
+### SetHttpProtocols
 
-`func (o *TLSConfigurationResponseAttributesAllOf) SetHTTPProtocols(v []string)`
+`func (o *TlsConfigurationResponseAttributesAllOf) SetHttpProtocols(v []string)`
 
-SetHTTPProtocols sets HTTPProtocols field to given value.
+SetHttpProtocols sets HttpProtocols field to given value.
 
-### HasHTTPProtocols
+### HasHttpProtocols
 
-`func (o *TLSConfigurationResponseAttributesAllOf) HasHTTPProtocols() bool`
+`func (o *TlsConfigurationResponseAttributesAllOf) HasHttpProtocols() bool`
 
-HasHTTPProtocols returns a boolean if a field has been set.
+HasHttpProtocols returns a boolean if a field has been set.
 
-### GetTLSProtocols
+### GetTlsProtocols
 
-`func (o *TLSConfigurationResponseAttributesAllOf) GetTLSProtocols() []string`
+`func (o *TlsConfigurationResponseAttributesAllOf) GetTlsProtocols() []string`
 
-GetTLSProtocols returns the TLSProtocols field if non-nil, zero value otherwise.
+GetTlsProtocols returns the TlsProtocols field if non-nil, zero value otherwise.
 
-### GetTLSProtocolsOk
+### GetTlsProtocolsOk
 
-`func (o *TLSConfigurationResponseAttributesAllOf) GetTLSProtocolsOk() (*[]string, bool)`
+`func (o *TlsConfigurationResponseAttributesAllOf) GetTlsProtocolsOk() (*[]string, bool)`
 
-GetTLSProtocolsOk returns a tuple with the TLSProtocols field if it's non-nil, zero value otherwise
+GetTlsProtocolsOk returns a tuple with the TlsProtocols field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSProtocols
+### SetTlsProtocols
 
-`func (o *TLSConfigurationResponseAttributesAllOf) SetTLSProtocols(v []string)`
+`func (o *TlsConfigurationResponseAttributesAllOf) SetTlsProtocols(v []string)`
 
-SetTLSProtocols sets TLSProtocols field to given value.
+SetTlsProtocols sets TlsProtocols field to given value.
 
-### HasTLSProtocols
+### HasTlsProtocols
 
-`func (o *TLSConfigurationResponseAttributesAllOf) HasTLSProtocols() bool`
+`func (o *TlsConfigurationResponseAttributesAllOf) HasTlsProtocols() bool`
 
-HasTLSProtocols returns a boolean if a field has been set.
+HasTlsProtocols returns a boolean if a field has been set.
 
 ### GetBulk
 
-`func (o *TLSConfigurationResponseAttributesAllOf) GetBulk() bool`
+`func (o *TlsConfigurationResponseAttributesAllOf) GetBulk() bool`
 
 GetBulk returns the Bulk field if non-nil, zero value otherwise.
 
 ### GetBulkOk
 
-`func (o *TLSConfigurationResponseAttributesAllOf) GetBulkOk() (*bool, bool)`
+`func (o *TlsConfigurationResponseAttributesAllOf) GetBulkOk() (*bool, bool)`
 
 GetBulkOk returns a tuple with the Bulk field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBulk
 
-`func (o *TLSConfigurationResponseAttributesAllOf) SetBulk(v bool)`
+`func (o *TlsConfigurationResponseAttributesAllOf) SetBulk(v bool)`
 
 SetBulk sets Bulk field to given value.
 
 ### HasBulk
 
-`func (o *TLSConfigurationResponseAttributesAllOf) HasBulk() bool`
+`func (o *TlsConfigurationResponseAttributesAllOf) HasBulk() bool`
 
 HasBulk returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

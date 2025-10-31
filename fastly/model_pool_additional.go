@@ -25,13 +25,13 @@ type PoolAdditional struct {
 	// Condition which, if met, will select this configuration during a request. Optional.
 	RequestCondition NullableString `json:"request_condition,omitempty"`
 	// List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
-	TLSCiphers NullableString `json:"tls_ciphers,omitempty"`
+	TlsCiphers NullableString `json:"tls_ciphers,omitempty"`
 	// SNI hostname. Optional.
-	TLSSniHostname NullableString `json:"tls_sni_hostname,omitempty"`
+	TlsSniHostname NullableString `json:"tls_sni_hostname,omitempty"`
 	// Minimum allowed TLS version on connections to this server. Optional.
-	MinTLSVersion NullableInt32 `json:"min_tls_version,omitempty"`
+	MinTlsVersion NullableInt32 `json:"min_tls_version,omitempty"`
 	// Maximum allowed TLS version on connections to this server. Optional.
-	MaxTLSVersion NullableInt32 `json:"max_tls_version,omitempty"`
+	MaxTlsVersion NullableInt32 `json:"max_tls_version,omitempty"`
 	// Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
 	Healthcheck NullableString `json:"healthcheck,omitempty"`
 	// A freeform descriptive note.
@@ -188,176 +188,176 @@ func (o *PoolAdditional) UnsetRequestCondition() {
 	o.RequestCondition.Unset()
 }
 
-// GetTLSCiphers returns the TLSCiphers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolAdditional) GetTLSCiphers() string {
-	if o == nil || o.TLSCiphers.Get() == nil {
+// GetTlsCiphers returns the TlsCiphers field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolAdditional) GetTlsCiphers() string {
+	if o == nil || o.TlsCiphers.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSCiphers.Get()
+	return *o.TlsCiphers.Get()
 }
 
-// GetTLSCiphersOk returns a tuple with the TLSCiphers field value if set, nil otherwise
+// GetTlsCiphersOk returns a tuple with the TlsCiphers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolAdditional) GetTLSCiphersOk() (*string, bool) {
+func (o *PoolAdditional) GetTlsCiphersOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSCiphers.Get(), o.TLSCiphers.IsSet()
+	return o.TlsCiphers.Get(), o.TlsCiphers.IsSet()
 }
 
-// HasTLSCiphers returns a boolean if a field has been set.
-func (o *PoolAdditional) HasTLSCiphers() bool {
-	if o != nil && o.TLSCiphers.IsSet() {
+// HasTlsCiphers returns a boolean if a field has been set.
+func (o *PoolAdditional) HasTlsCiphers() bool {
+	if o != nil && o.TlsCiphers.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSCiphers gets a reference to the given NullableString and assigns it to the TLSCiphers field.
-func (o *PoolAdditional) SetTLSCiphers(v string) {
-	o.TLSCiphers.Set(&v)
+// SetTlsCiphers gets a reference to the given NullableString and assigns it to the TlsCiphers field.
+func (o *PoolAdditional) SetTlsCiphers(v string) {
+	o.TlsCiphers.Set(&v)
 }
 
-// SetTLSCiphersNil sets the value for TLSCiphers to be an explicit nil
-func (o *PoolAdditional) SetTLSCiphersNil() {
-	o.TLSCiphers.Set(nil)
+// SetTlsCiphersNil sets the value for TlsCiphers to be an explicit nil
+func (o *PoolAdditional) SetTlsCiphersNil() {
+	o.TlsCiphers.Set(nil)
 }
 
-// UnsetTLSCiphers ensures that no value is present for TLSCiphers, not even an explicit nil
-func (o *PoolAdditional) UnsetTLSCiphers() {
-	o.TLSCiphers.Unset()
+// UnsetTlsCiphers ensures that no value is present for TlsCiphers, not even an explicit nil
+func (o *PoolAdditional) UnsetTlsCiphers() {
+	o.TlsCiphers.Unset()
 }
 
-// GetTLSSniHostname returns the TLSSniHostname field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolAdditional) GetTLSSniHostname() string {
-	if o == nil || o.TLSSniHostname.Get() == nil {
+// GetTlsSniHostname returns the TlsSniHostname field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolAdditional) GetTlsSniHostname() string {
+	if o == nil || o.TlsSniHostname.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSSniHostname.Get()
+	return *o.TlsSniHostname.Get()
 }
 
-// GetTLSSniHostnameOk returns a tuple with the TLSSniHostname field value if set, nil otherwise
+// GetTlsSniHostnameOk returns a tuple with the TlsSniHostname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolAdditional) GetTLSSniHostnameOk() (*string, bool) {
+func (o *PoolAdditional) GetTlsSniHostnameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSSniHostname.Get(), o.TLSSniHostname.IsSet()
+	return o.TlsSniHostname.Get(), o.TlsSniHostname.IsSet()
 }
 
-// HasTLSSniHostname returns a boolean if a field has been set.
-func (o *PoolAdditional) HasTLSSniHostname() bool {
-	if o != nil && o.TLSSniHostname.IsSet() {
+// HasTlsSniHostname returns a boolean if a field has been set.
+func (o *PoolAdditional) HasTlsSniHostname() bool {
+	if o != nil && o.TlsSniHostname.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSSniHostname gets a reference to the given NullableString and assigns it to the TLSSniHostname field.
-func (o *PoolAdditional) SetTLSSniHostname(v string) {
-	o.TLSSniHostname.Set(&v)
+// SetTlsSniHostname gets a reference to the given NullableString and assigns it to the TlsSniHostname field.
+func (o *PoolAdditional) SetTlsSniHostname(v string) {
+	o.TlsSniHostname.Set(&v)
 }
 
-// SetTLSSniHostnameNil sets the value for TLSSniHostname to be an explicit nil
-func (o *PoolAdditional) SetTLSSniHostnameNil() {
-	o.TLSSniHostname.Set(nil)
+// SetTlsSniHostnameNil sets the value for TlsSniHostname to be an explicit nil
+func (o *PoolAdditional) SetTlsSniHostnameNil() {
+	o.TlsSniHostname.Set(nil)
 }
 
-// UnsetTLSSniHostname ensures that no value is present for TLSSniHostname, not even an explicit nil
-func (o *PoolAdditional) UnsetTLSSniHostname() {
-	o.TLSSniHostname.Unset()
+// UnsetTlsSniHostname ensures that no value is present for TlsSniHostname, not even an explicit nil
+func (o *PoolAdditional) UnsetTlsSniHostname() {
+	o.TlsSniHostname.Unset()
 }
 
-// GetMinTLSVersion returns the MinTLSVersion field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolAdditional) GetMinTLSVersion() int32 {
-	if o == nil || o.MinTLSVersion.Get() == nil {
+// GetMinTlsVersion returns the MinTlsVersion field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolAdditional) GetMinTlsVersion() int32 {
+	if o == nil || o.MinTlsVersion.Get() == nil {
 		var ret int32
 		return ret
 	}
-	return *o.MinTLSVersion.Get()
+	return *o.MinTlsVersion.Get()
 }
 
-// GetMinTLSVersionOk returns a tuple with the MinTLSVersion field value if set, nil otherwise
+// GetMinTlsVersionOk returns a tuple with the MinTlsVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolAdditional) GetMinTLSVersionOk() (*int32, bool) {
+func (o *PoolAdditional) GetMinTlsVersionOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.MinTLSVersion.Get(), o.MinTLSVersion.IsSet()
+	return o.MinTlsVersion.Get(), o.MinTlsVersion.IsSet()
 }
 
-// HasMinTLSVersion returns a boolean if a field has been set.
-func (o *PoolAdditional) HasMinTLSVersion() bool {
-	if o != nil && o.MinTLSVersion.IsSet() {
+// HasMinTlsVersion returns a boolean if a field has been set.
+func (o *PoolAdditional) HasMinTlsVersion() bool {
+	if o != nil && o.MinTlsVersion.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinTLSVersion gets a reference to the given NullableInt32 and assigns it to the MinTLSVersion field.
-func (o *PoolAdditional) SetMinTLSVersion(v int32) {
-	o.MinTLSVersion.Set(&v)
+// SetMinTlsVersion gets a reference to the given NullableInt32 and assigns it to the MinTlsVersion field.
+func (o *PoolAdditional) SetMinTlsVersion(v int32) {
+	o.MinTlsVersion.Set(&v)
 }
 
-// SetMinTLSVersionNil sets the value for MinTLSVersion to be an explicit nil
-func (o *PoolAdditional) SetMinTLSVersionNil() {
-	o.MinTLSVersion.Set(nil)
+// SetMinTlsVersionNil sets the value for MinTlsVersion to be an explicit nil
+func (o *PoolAdditional) SetMinTlsVersionNil() {
+	o.MinTlsVersion.Set(nil)
 }
 
-// UnsetMinTLSVersion ensures that no value is present for MinTLSVersion, not even an explicit nil
-func (o *PoolAdditional) UnsetMinTLSVersion() {
-	o.MinTLSVersion.Unset()
+// UnsetMinTlsVersion ensures that no value is present for MinTlsVersion, not even an explicit nil
+func (o *PoolAdditional) UnsetMinTlsVersion() {
+	o.MinTlsVersion.Unset()
 }
 
-// GetMaxTLSVersion returns the MaxTLSVersion field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolAdditional) GetMaxTLSVersion() int32 {
-	if o == nil || o.MaxTLSVersion.Get() == nil {
+// GetMaxTlsVersion returns the MaxTlsVersion field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolAdditional) GetMaxTlsVersion() int32 {
+	if o == nil || o.MaxTlsVersion.Get() == nil {
 		var ret int32
 		return ret
 	}
-	return *o.MaxTLSVersion.Get()
+	return *o.MaxTlsVersion.Get()
 }
 
-// GetMaxTLSVersionOk returns a tuple with the MaxTLSVersion field value if set, nil otherwise
+// GetMaxTlsVersionOk returns a tuple with the MaxTlsVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolAdditional) GetMaxTLSVersionOk() (*int32, bool) {
+func (o *PoolAdditional) GetMaxTlsVersionOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.MaxTLSVersion.Get(), o.MaxTLSVersion.IsSet()
+	return o.MaxTlsVersion.Get(), o.MaxTlsVersion.IsSet()
 }
 
-// HasMaxTLSVersion returns a boolean if a field has been set.
-func (o *PoolAdditional) HasMaxTLSVersion() bool {
-	if o != nil && o.MaxTLSVersion.IsSet() {
+// HasMaxTlsVersion returns a boolean if a field has been set.
+func (o *PoolAdditional) HasMaxTlsVersion() bool {
+	if o != nil && o.MaxTlsVersion.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxTLSVersion gets a reference to the given NullableInt32 and assigns it to the MaxTLSVersion field.
-func (o *PoolAdditional) SetMaxTLSVersion(v int32) {
-	o.MaxTLSVersion.Set(&v)
+// SetMaxTlsVersion gets a reference to the given NullableInt32 and assigns it to the MaxTlsVersion field.
+func (o *PoolAdditional) SetMaxTlsVersion(v int32) {
+	o.MaxTlsVersion.Set(&v)
 }
 
-// SetMaxTLSVersionNil sets the value for MaxTLSVersion to be an explicit nil
-func (o *PoolAdditional) SetMaxTLSVersionNil() {
-	o.MaxTLSVersion.Set(nil)
+// SetMaxTlsVersionNil sets the value for MaxTlsVersion to be an explicit nil
+func (o *PoolAdditional) SetMaxTlsVersionNil() {
+	o.MaxTlsVersion.Set(nil)
 }
 
-// UnsetMaxTLSVersion ensures that no value is present for MaxTLSVersion, not even an explicit nil
-func (o *PoolAdditional) UnsetMaxTLSVersion() {
-	o.MaxTLSVersion.Unset()
+// UnsetMaxTlsVersion ensures that no value is present for MaxTlsVersion, not even an explicit nil
+func (o *PoolAdditional) UnsetMaxTlsVersion() {
+	o.MaxTlsVersion.Unset()
 }
 
 // GetHealthcheck returns the Healthcheck field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -534,17 +534,17 @@ func (o PoolAdditional) MarshalJSON() ([]byte, error) {
 	if o.RequestCondition.IsSet() {
 		toSerialize["request_condition"] = o.RequestCondition.Get()
 	}
-	if o.TLSCiphers.IsSet() {
-		toSerialize["tls_ciphers"] = o.TLSCiphers.Get()
+	if o.TlsCiphers.IsSet() {
+		toSerialize["tls_ciphers"] = o.TlsCiphers.Get()
 	}
-	if o.TLSSniHostname.IsSet() {
-		toSerialize["tls_sni_hostname"] = o.TLSSniHostname.Get()
+	if o.TlsSniHostname.IsSet() {
+		toSerialize["tls_sni_hostname"] = o.TlsSniHostname.Get()
 	}
-	if o.MinTLSVersion.IsSet() {
-		toSerialize["min_tls_version"] = o.MinTLSVersion.Get()
+	if o.MinTlsVersion.IsSet() {
+		toSerialize["min_tls_version"] = o.MinTlsVersion.Get()
 	}
-	if o.MaxTLSVersion.IsSet() {
-		toSerialize["max_tls_version"] = o.MaxTLSVersion.Get()
+	if o.MaxTlsVersion.IsSet() {
+		toSerialize["max_tls_version"] = o.MaxTlsVersion.Get()
 	}
 	if o.Healthcheck.IsSet() {
 		toSerialize["healthcheck"] = o.Healthcheck.Get()

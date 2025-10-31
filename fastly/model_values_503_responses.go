@@ -19,11 +19,11 @@ import (
 // Values503Responses struct for Values503Responses
 type Values503Responses struct {
 	// The HTTP request path.
-	URL *string `json:"url,omitempty"`
+	Url *string `json:"url,omitempty"`
 	// The rate at which the reason in this dimension occurs among responses to this URL with a 503 status code.
-	RatePerURL *float32 `json:"rate_per_url,omitempty"`
+	RatePerUrl *float32 `json:"rate_per_url,omitempty"`
 	// The rate at which 503 status codes are returned for this URL.
-	Var503RatePerURL     *float32 `json:"503_rate_per_url,omitempty"`
+	Var503RatePerUrl     *float32 `json:"503_rate_per_url,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -46,114 +46,114 @@ func NewValues503ResponsesWithDefaults() *Values503Responses {
 	return &this
 }
 
-// GetURL returns the URL field value if set, zero value otherwise.
-func (o *Values503Responses) GetURL() string {
-	if o == nil || o.URL == nil {
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *Values503Responses) GetUrl() string {
+	if o == nil || o.Url == nil {
 		var ret string
 		return ret
 	}
-	return *o.URL
+	return *o.Url
 }
 
-// GetURLOk returns a tuple with the URL field value if set, nil otherwise
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Values503Responses) GetURLOk() (*string, bool) {
-	if o == nil || o.URL == nil {
+func (o *Values503Responses) GetUrlOk() (*string, bool) {
+	if o == nil || o.Url == nil {
 		return nil, false
 	}
-	return o.URL, true
+	return o.Url, true
 }
 
-// HasURL returns a boolean if a field has been set.
-func (o *Values503Responses) HasURL() bool {
-	if o != nil && o.URL != nil {
+// HasUrl returns a boolean if a field has been set.
+func (o *Values503Responses) HasUrl() bool {
+	if o != nil && o.Url != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetURL gets a reference to the given string and assigns it to the URL field.
-func (o *Values503Responses) SetURL(v string) {
-	o.URL = &v
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *Values503Responses) SetUrl(v string) {
+	o.Url = &v
 }
 
-// GetRatePerURL returns the RatePerURL field value if set, zero value otherwise.
-func (o *Values503Responses) GetRatePerURL() float32 {
-	if o == nil || o.RatePerURL == nil {
+// GetRatePerUrl returns the RatePerUrl field value if set, zero value otherwise.
+func (o *Values503Responses) GetRatePerUrl() float32 {
+	if o == nil || o.RatePerUrl == nil {
 		var ret float32
 		return ret
 	}
-	return *o.RatePerURL
+	return *o.RatePerUrl
 }
 
-// GetRatePerURLOk returns a tuple with the RatePerURL field value if set, nil otherwise
+// GetRatePerUrlOk returns a tuple with the RatePerUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Values503Responses) GetRatePerURLOk() (*float32, bool) {
-	if o == nil || o.RatePerURL == nil {
+func (o *Values503Responses) GetRatePerUrlOk() (*float32, bool) {
+	if o == nil || o.RatePerUrl == nil {
 		return nil, false
 	}
-	return o.RatePerURL, true
+	return o.RatePerUrl, true
 }
 
-// HasRatePerURL returns a boolean if a field has been set.
-func (o *Values503Responses) HasRatePerURL() bool {
-	if o != nil && o.RatePerURL != nil {
+// HasRatePerUrl returns a boolean if a field has been set.
+func (o *Values503Responses) HasRatePerUrl() bool {
+	if o != nil && o.RatePerUrl != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRatePerURL gets a reference to the given float32 and assigns it to the RatePerURL field.
-func (o *Values503Responses) SetRatePerURL(v float32) {
-	o.RatePerURL = &v
+// SetRatePerUrl gets a reference to the given float32 and assigns it to the RatePerUrl field.
+func (o *Values503Responses) SetRatePerUrl(v float32) {
+	o.RatePerUrl = &v
 }
 
-// GetVar503RatePerURL returns the Var503RatePerURL field value if set, zero value otherwise.
-func (o *Values503Responses) GetVar503RatePerURL() float32 {
-	if o == nil || o.Var503RatePerURL == nil {
+// GetVar503RatePerUrl returns the Var503RatePerUrl field value if set, zero value otherwise.
+func (o *Values503Responses) GetVar503RatePerUrl() float32 {
+	if o == nil || o.Var503RatePerUrl == nil {
 		var ret float32
 		return ret
 	}
-	return *o.Var503RatePerURL
+	return *o.Var503RatePerUrl
 }
 
-// GetVar503RatePerURLOk returns a tuple with the Var503RatePerURL field value if set, nil otherwise
+// GetVar503RatePerUrlOk returns a tuple with the Var503RatePerUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Values503Responses) GetVar503RatePerURLOk() (*float32, bool) {
-	if o == nil || o.Var503RatePerURL == nil {
+func (o *Values503Responses) GetVar503RatePerUrlOk() (*float32, bool) {
+	if o == nil || o.Var503RatePerUrl == nil {
 		return nil, false
 	}
-	return o.Var503RatePerURL, true
+	return o.Var503RatePerUrl, true
 }
 
-// HasVar503RatePerURL returns a boolean if a field has been set.
-func (o *Values503Responses) HasVar503RatePerURL() bool {
-	if o != nil && o.Var503RatePerURL != nil {
+// HasVar503RatePerUrl returns a boolean if a field has been set.
+func (o *Values503Responses) HasVar503RatePerUrl() bool {
+	if o != nil && o.Var503RatePerUrl != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetVar503RatePerURL gets a reference to the given float32 and assigns it to the Var503RatePerURL field.
-func (o *Values503Responses) SetVar503RatePerURL(v float32) {
-	o.Var503RatePerURL = &v
+// SetVar503RatePerUrl gets a reference to the given float32 and assigns it to the Var503RatePerUrl field.
+func (o *Values503Responses) SetVar503RatePerUrl(v float32) {
+	o.Var503RatePerUrl = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o Values503Responses) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.URL != nil {
-		toSerialize["url"] = o.URL
+	if o.Url != nil {
+		toSerialize["url"] = o.Url
 	}
-	if o.RatePerURL != nil {
-		toSerialize["rate_per_url"] = o.RatePerURL
+	if o.RatePerUrl != nil {
+		toSerialize["rate_per_url"] = o.RatePerUrl
 	}
-	if o.Var503RatePerURL != nil {
-		toSerialize["503_rate_per_url"] = o.Var503RatePerURL
+	if o.Var503RatePerUrl != nil {
+		toSerialize["503_rate_per_url"] = o.Var503RatePerUrl
 	}
 
 	for key, value := range o.AdditionalProperties {

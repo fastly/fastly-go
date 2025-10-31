@@ -23,6 +23,7 @@ type InvitationDataAttributes struct {
 	// Indicates the user has limited access to the customer's services.
 	LimitServices *bool     `json:"limit_services,omitempty"`
 	Role          *RoleUser `json:"role,omitempty"`
+	Roles         []string  `json:"roles,omitempty"`
 	// Indicates whether or not the invitation is active.
 	StatusCode           *int32 `json:"status_code,omitempty"`
 	AdditionalProperties map[string]any
@@ -143,6 +144,38 @@ func (o *InvitationDataAttributes) SetRole(v RoleUser) {
 	o.Role = &v
 }
 
+// GetRoles returns the Roles field value if set, zero value otherwise.
+func (o *InvitationDataAttributes) GetRoles() []string {
+	if o == nil || o.Roles == nil {
+		var ret []string
+		return ret
+	}
+	return o.Roles
+}
+
+// GetRolesOk returns a tuple with the Roles field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InvitationDataAttributes) GetRolesOk() ([]string, bool) {
+	if o == nil || o.Roles == nil {
+		return nil, false
+	}
+	return o.Roles, true
+}
+
+// HasRoles returns a boolean if a field has been set.
+func (o *InvitationDataAttributes) HasRoles() bool {
+	if o != nil && o.Roles != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRoles gets a reference to the given []string and assigns it to the Roles field.
+func (o *InvitationDataAttributes) SetRoles(v []string) {
+	o.Roles = v
+}
+
 // GetStatusCode returns the StatusCode field value if set, zero value otherwise.
 func (o *InvitationDataAttributes) GetStatusCode() int32 {
 	if o == nil || o.StatusCode == nil {
@@ -188,6 +221,9 @@ func (o InvitationDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Role != nil {
 		toSerialize["role"] = o.Role
 	}
+	if o.Roles != nil {
+		toSerialize["roles"] = o.Roles
+	}
 	if o.StatusCode != nil {
 		toSerialize["status_code"] = o.StatusCode
 	}
@@ -214,6 +250,7 @@ func (o *InvitationDataAttributes) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "email")
 		delete(additionalProperties, "limit_services")
 		delete(additionalProperties, "role")
+		delete(additionalProperties, "roles")
 		delete(additionalProperties, "status_code")
 		o.AdditionalProperties = additionalProperties
 	}

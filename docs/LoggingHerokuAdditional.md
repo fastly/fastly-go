@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Token** | Pointer to **string** | The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)). | [optional] 
-**URL** | Pointer to **string** | The URL to stream logs to. | [optional] 
+**Url** | Pointer to **string** | The URL to stream logs to. | [optional] 
 
 ## Methods
 
@@ -51,30 +51,32 @@ SetToken sets Token field to given value.
 
 HasToken returns a boolean if a field has been set.
 
-### GetURL
+### GetUrl
 
-`func (o *LoggingHerokuAdditional) GetURL() string`
+`func (o *LoggingHerokuAdditional) GetUrl() string`
 
-GetURL returns the URL field if non-nil, zero value otherwise.
+GetUrl returns the Url field if non-nil, zero value otherwise.
 
-### GetURLOk
+### GetUrlOk
 
-`func (o *LoggingHerokuAdditional) GetURLOk() (*string, bool)`
+`func (o *LoggingHerokuAdditional) GetUrlOk() (*string, bool)`
 
-GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURL
+### SetUrl
 
-`func (o *LoggingHerokuAdditional) SetURL(v string)`
+`func (o *LoggingHerokuAdditional) SetUrl(v string)`
 
-SetURL sets URL field to given value.
+SetUrl sets Url field to given value.
 
-### HasURL
+### HasUrl
 
-`func (o *LoggingHerokuAdditional) HasURL() bool`
+`func (o *LoggingHerokuAdditional) HasUrl() bool`
 
-HasURL returns a boolean if a field has been set.
+HasUrl returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

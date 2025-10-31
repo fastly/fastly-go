@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Admin** | Pointer to **bool** | Indicates if event was performed by Fastly. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**CustomerID** | Pointer to **string** |  | [optional] [readonly] 
+**CustomerId** | Pointer to **string** |  | [optional] [readonly] 
 **Description** | Pointer to **string** | Description of the event. | [optional] 
 **EventType** | Pointer to **string** | Type of event. Can be used with `filter[event_type]` | [optional] 
-**IP** | Pointer to **string** | IP addresses that the event was requested from. | [optional] 
-**Metadata** | Pointer to **map[string]map[string]any** | Hash of key value pairs of additional information. | [optional] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
-**UserID** | Pointer to **string** |  | [optional] [readonly] 
-**TokenID** | Pointer to **string** |  | [optional] [readonly] 
+**Ip** | Pointer to **string** | IP addresses that the event was requested from. | [optional] 
+**Metadata** | Pointer to **map[string]map[string]interface{}** | Hash of key value pairs of additional information. | [optional] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
+**UserId** | Pointer to **string** |  | [optional] [readonly] 
+**TokenId** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -94,30 +94,30 @@ HasCreatedAt returns a boolean if a field has been set.
 `func (o *EventAttributes) UnsetCreatedAt()`
 
 UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-### GetCustomerID
+### GetCustomerId
 
-`func (o *EventAttributes) GetCustomerID() string`
+`func (o *EventAttributes) GetCustomerId() string`
 
-GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetCustomerIDOk
+### GetCustomerIdOk
 
-`func (o *EventAttributes) GetCustomerIDOk() (*string, bool)`
+`func (o *EventAttributes) GetCustomerIdOk() (*string, bool)`
 
-GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerID
+### SetCustomerId
 
-`func (o *EventAttributes) SetCustomerID(v string)`
+`func (o *EventAttributes) SetCustomerId(v string)`
 
-SetCustomerID sets CustomerID field to given value.
+SetCustomerId sets CustomerId field to given value.
 
-### HasCustomerID
+### HasCustomerId
 
-`func (o *EventAttributes) HasCustomerID() bool`
+`func (o *EventAttributes) HasCustomerId() bool`
 
-HasCustomerID returns a boolean if a field has been set.
+HasCustomerId returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -169,47 +169,47 @@ SetEventType sets EventType field to given value.
 
 HasEventType returns a boolean if a field has been set.
 
-### GetIP
+### GetIp
 
-`func (o *EventAttributes) GetIP() string`
+`func (o *EventAttributes) GetIp() string`
 
-GetIP returns the IP field if non-nil, zero value otherwise.
+GetIp returns the Ip field if non-nil, zero value otherwise.
 
-### GetIPOk
+### GetIpOk
 
-`func (o *EventAttributes) GetIPOk() (*string, bool)`
+`func (o *EventAttributes) GetIpOk() (*string, bool)`
 
-GetIPOk returns a tuple with the IP field if it's non-nil, zero value otherwise
+GetIpOk returns a tuple with the Ip field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIP
+### SetIp
 
-`func (o *EventAttributes) SetIP(v string)`
+`func (o *EventAttributes) SetIp(v string)`
 
-SetIP sets IP field to given value.
+SetIp sets Ip field to given value.
 
-### HasIP
+### HasIp
 
-`func (o *EventAttributes) HasIP() bool`
+`func (o *EventAttributes) HasIp() bool`
 
-HasIP returns a boolean if a field has been set.
+HasIp returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *EventAttributes) GetMetadata() map[string]map[string]any`
+`func (o *EventAttributes) GetMetadata() map[string]map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *EventAttributes) GetMetadataOk() (*map[string]map[string]any, bool)`
+`func (o *EventAttributes) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *EventAttributes) SetMetadata(v map[string]map[string]any)`
+`func (o *EventAttributes) SetMetadata(v map[string]map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 
@@ -219,80 +219,82 @@ SetMetadata sets Metadata field to given value.
 
 HasMetadata returns a boolean if a field has been set.
 
-### GetServiceID
+### GetServiceId
 
-`func (o *EventAttributes) GetServiceID() string`
+`func (o *EventAttributes) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *EventAttributes) GetServiceIDOk() (*string, bool)`
+`func (o *EventAttributes) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *EventAttributes) SetServiceID(v string)`
+`func (o *EventAttributes) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *EventAttributes) HasServiceID() bool`
+`func (o *EventAttributes) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
-### GetUserID
+### GetUserId
 
-`func (o *EventAttributes) GetUserID() string`
+`func (o *EventAttributes) GetUserId() string`
 
-GetUserID returns the UserID field if non-nil, zero value otherwise.
+GetUserId returns the UserId field if non-nil, zero value otherwise.
 
-### GetUserIDOk
+### GetUserIdOk
 
-`func (o *EventAttributes) GetUserIDOk() (*string, bool)`
+`func (o *EventAttributes) GetUserIdOk() (*string, bool)`
 
-GetUserIDOk returns a tuple with the UserID field if it's non-nil, zero value otherwise
+GetUserIdOk returns a tuple with the UserId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetUserID
+### SetUserId
 
-`func (o *EventAttributes) SetUserID(v string)`
+`func (o *EventAttributes) SetUserId(v string)`
 
-SetUserID sets UserID field to given value.
+SetUserId sets UserId field to given value.
 
-### HasUserID
+### HasUserId
 
-`func (o *EventAttributes) HasUserID() bool`
+`func (o *EventAttributes) HasUserId() bool`
 
-HasUserID returns a boolean if a field has been set.
+HasUserId returns a boolean if a field has been set.
 
-### GetTokenID
+### GetTokenId
 
-`func (o *EventAttributes) GetTokenID() string`
+`func (o *EventAttributes) GetTokenId() string`
 
-GetTokenID returns the TokenID field if non-nil, zero value otherwise.
+GetTokenId returns the TokenId field if non-nil, zero value otherwise.
 
-### GetTokenIDOk
+### GetTokenIdOk
 
-`func (o *EventAttributes) GetTokenIDOk() (*string, bool)`
+`func (o *EventAttributes) GetTokenIdOk() (*string, bool)`
 
-GetTokenIDOk returns a tuple with the TokenID field if it's non-nil, zero value otherwise
+GetTokenIdOk returns a tuple with the TokenId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTokenID
+### SetTokenId
 
-`func (o *EventAttributes) SetTokenID(v string)`
+`func (o *EventAttributes) SetTokenId(v string)`
 
-SetTokenID sets TokenID field to given value.
+SetTokenId sets TokenId field to given value.
 
-### HasTokenID
+### HasTokenId
 
-`func (o *EventAttributes) HasTokenID() bool`
+`func (o *EventAttributes) HasTokenId() bool`
 
-HasTokenID returns a boolean if a field has been set.
+HasTokenId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

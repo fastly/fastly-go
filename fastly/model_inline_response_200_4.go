@@ -18,8 +18,9 @@ import (
 
 // InlineResponse2004 struct for InlineResponse2004
 type InlineResponse2004 struct {
-	// Time-stamp (GMT) when the domain_ownership validation will expire.
-	ExpiresAt            *string `json:"expires_at,omitempty"`
+	Data []SuccessfulResponseAsObject `json:"data,omitempty"`
+	// Meta for the pagination.
+	Meta                 interface{} `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -42,44 +43,80 @@ func NewInlineResponse2004WithDefaults() *InlineResponse2004 {
 	return &this
 }
 
-// GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise.
-func (o *InlineResponse2004) GetExpiresAt() string {
-	if o == nil || o.ExpiresAt == nil {
-		var ret string
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *InlineResponse2004) GetData() []SuccessfulResponseAsObject {
+	if o == nil || o.Data == nil {
+		var ret []SuccessfulResponseAsObject
 		return ret
 	}
-	return *o.ExpiresAt
+	return o.Data
 }
 
-// GetExpiresAtOk returns a tuple with the ExpiresAt field value if set, nil otherwise
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2004) GetExpiresAtOk() (*string, bool) {
-	if o == nil || o.ExpiresAt == nil {
+func (o *InlineResponse2004) GetDataOk() ([]SuccessfulResponseAsObject, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return o.ExpiresAt, true
+	return o.Data, true
 }
 
-// HasExpiresAt returns a boolean if a field has been set.
-func (o *InlineResponse2004) HasExpiresAt() bool {
-	if o != nil && o.ExpiresAt != nil {
+// HasData returns a boolean if a field has been set.
+func (o *InlineResponse2004) HasData() bool {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetExpiresAt gets a reference to the given string and assigns it to the ExpiresAt field.
-func (o *InlineResponse2004) SetExpiresAt(v string) {
-	o.ExpiresAt = &v
+// SetData gets a reference to the given []SuccessfulResponseAsObject and assigns it to the Data field.
+func (o *InlineResponse2004) SetData(v []SuccessfulResponseAsObject) {
+	o.Data = v
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *InlineResponse2004) GetMeta() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *InlineResponse2004) GetMetaOk() (*interface{}, bool) {
+	if o == nil || o.Meta == nil {
+		return nil, false
+	}
+	return &o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *InlineResponse2004) HasMeta() bool {
+	if o != nil && o.Meta != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given interface{} and assigns it to the Meta field.
+func (o *InlineResponse2004) SetMeta(v interface{}) {
+	o.Meta = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o InlineResponse2004) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ExpiresAt != nil {
-		toSerialize["expires_at"] = o.ExpiresAt
+	if o.Data != nil {
+		toSerialize["data"] = o.Data
+	}
+	if o.Meta != nil {
+		toSerialize["meta"] = o.Meta
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -101,7 +138,8 @@ func (o *InlineResponse2004) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "expires_at")
+		delete(additionalProperties, "data")
+		delete(additionalProperties, "meta")
 		o.AdditionalProperties = additionalProperties
 	}
 

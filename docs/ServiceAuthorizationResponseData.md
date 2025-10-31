@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to [**TypeServiceAuthorization**](TypeServiceAuthorization.md) |  | [optional] [default to TYPESERVICEAUTHORIZATION_SERVICE_AUTHORIZATION]
 **Attributes** | Pointer to [**Timestamps**](Timestamps.md) |  | [optional] 
 **Relationships** | Pointer to [**ServiceAuthorizationDataRelationships**](ServiceAuthorizationDataRelationships.md) |  | [optional] 
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -103,30 +103,32 @@ SetRelationships sets Relationships field to given value.
 
 HasRelationships returns a boolean if a field has been set.
 
-### GetID
+### GetId
 
-`func (o *ServiceAuthorizationResponseData) GetID() string`
+`func (o *ServiceAuthorizationResponseData) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *ServiceAuthorizationResponseData) GetIDOk() (*string, bool)`
+`func (o *ServiceAuthorizationResponseData) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *ServiceAuthorizationResponseData) SetID(v string)`
+`func (o *ServiceAuthorizationResponseData) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *ServiceAuthorizationResponseData) HasID() bool`
+`func (o *ServiceAuthorizationResponseData) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

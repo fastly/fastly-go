@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ID** | Pointer to **string** | Alphanumeric string identifying the service group. | [optional] 
+**Id** | Pointer to **string** | Alphanumeric string identifying the service group. | [optional] 
 **Object** | Pointer to **string** | The type of the object. | [optional] 
 **Name** | Pointer to **string** | Name of the service group. | [optional] 
 **Description** | Pointer to **string** | Description of the service group. | [optional] 
@@ -101,30 +101,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *IamServiceGroup) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetID
+### GetId
 
-`func (o *IamServiceGroup) GetID() string`
+`func (o *IamServiceGroup) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *IamServiceGroup) GetIDOk() (*string, bool)`
+`func (o *IamServiceGroup) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *IamServiceGroup) SetID(v string)`
+`func (o *IamServiceGroup) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *IamServiceGroup) HasID() bool`
+`func (o *IamServiceGroup) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetObject
 
@@ -228,3 +228,5 @@ HasServicesCount returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

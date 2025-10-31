@@ -16,44 +16,44 @@ import (
 	"encoding/json"
 )
 
-// ACLEntry struct for ACLEntry
-type ACLEntry struct {
+// AclEntry struct for AclEntry
+type AclEntry struct {
 	// Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
 	Negated *int32 `json:"negated,omitempty"`
 	// A freeform descriptive note.
 	Comment NullableString `json:"comment,omitempty"`
 	// An IP address.
-	IP *string `json:"ip,omitempty"`
+	Ip *string `json:"ip,omitempty"`
 	// Number of bits for the subnet mask applied to the IP address. For IPv4 addresses, a value of 32 represents the smallest subnet mask (1 address), 24 represents a class C subnet mask (256 addresses), 16 represents a class B subnet mask (65k addresses), and 8 is class A subnet mask (16m addresses). If not provided, no mask is applied.
 	Subnet               NullableInt32 `json:"subnet,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _ACLEntry ACLEntry
+type _AclEntry AclEntry
 
-// NewACLEntry instantiates a new ACLEntry object
+// NewAclEntry instantiates a new AclEntry object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewACLEntry() *ACLEntry {
-	this := ACLEntry{}
+func NewAclEntry() *AclEntry {
+	this := AclEntry{}
 	var negated int32 = 0
 	this.Negated = &negated
 	return &this
 }
 
-// NewACLEntryWithDefaults instantiates a new ACLEntry object
+// NewAclEntryWithDefaults instantiates a new AclEntry object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewACLEntryWithDefaults() *ACLEntry {
-	this := ACLEntry{}
+func NewAclEntryWithDefaults() *AclEntry {
+	this := AclEntry{}
 	var negated int32 = 0
 	this.Negated = &negated
 	return &this
 }
 
 // GetNegated returns the Negated field value if set, zero value otherwise.
-func (o *ACLEntry) GetNegated() int32 {
+func (o *AclEntry) GetNegated() int32 {
 	if o == nil || o.Negated == nil {
 		var ret int32
 		return ret
@@ -63,7 +63,7 @@ func (o *ACLEntry) GetNegated() int32 {
 
 // GetNegatedOk returns a tuple with the Negated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ACLEntry) GetNegatedOk() (*int32, bool) {
+func (o *AclEntry) GetNegatedOk() (*int32, bool) {
 	if o == nil || o.Negated == nil {
 		return nil, false
 	}
@@ -71,7 +71,7 @@ func (o *ACLEntry) GetNegatedOk() (*int32, bool) {
 }
 
 // HasNegated returns a boolean if a field has been set.
-func (o *ACLEntry) HasNegated() bool {
+func (o *AclEntry) HasNegated() bool {
 	if o != nil && o.Negated != nil {
 		return true
 	}
@@ -80,12 +80,12 @@ func (o *ACLEntry) HasNegated() bool {
 }
 
 // SetNegated gets a reference to the given int32 and assigns it to the Negated field.
-func (o *ACLEntry) SetNegated(v int32) {
+func (o *AclEntry) SetNegated(v int32) {
 	o.Negated = &v
 }
 
 // GetComment returns the Comment field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ACLEntry) GetComment() string {
+func (o *AclEntry) GetComment() string {
 	if o == nil || o.Comment.Get() == nil {
 		var ret string
 		return ret
@@ -96,7 +96,7 @@ func (o *ACLEntry) GetComment() string {
 // GetCommentOk returns a tuple with the Comment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ACLEntry) GetCommentOk() (*string, bool) {
+func (o *AclEntry) GetCommentOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -104,7 +104,7 @@ func (o *ACLEntry) GetCommentOk() (*string, bool) {
 }
 
 // HasComment returns a boolean if a field has been set.
-func (o *ACLEntry) HasComment() bool {
+func (o *AclEntry) HasComment() bool {
 	if o != nil && o.Comment.IsSet() {
 		return true
 	}
@@ -113,54 +113,54 @@ func (o *ACLEntry) HasComment() bool {
 }
 
 // SetComment gets a reference to the given NullableString and assigns it to the Comment field.
-func (o *ACLEntry) SetComment(v string) {
+func (o *AclEntry) SetComment(v string) {
 	o.Comment.Set(&v)
 }
 
 // SetCommentNil sets the value for Comment to be an explicit nil
-func (o *ACLEntry) SetCommentNil() {
+func (o *AclEntry) SetCommentNil() {
 	o.Comment.Set(nil)
 }
 
 // UnsetComment ensures that no value is present for Comment, not even an explicit nil
-func (o *ACLEntry) UnsetComment() {
+func (o *AclEntry) UnsetComment() {
 	o.Comment.Unset()
 }
 
-// GetIP returns the IP field value if set, zero value otherwise.
-func (o *ACLEntry) GetIP() string {
-	if o == nil || o.IP == nil {
+// GetIp returns the Ip field value if set, zero value otherwise.
+func (o *AclEntry) GetIp() string {
+	if o == nil || o.Ip == nil {
 		var ret string
 		return ret
 	}
-	return *o.IP
+	return *o.Ip
 }
 
-// GetIPOk returns a tuple with the IP field value if set, nil otherwise
+// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ACLEntry) GetIPOk() (*string, bool) {
-	if o == nil || o.IP == nil {
+func (o *AclEntry) GetIpOk() (*string, bool) {
+	if o == nil || o.Ip == nil {
 		return nil, false
 	}
-	return o.IP, true
+	return o.Ip, true
 }
 
-// HasIP returns a boolean if a field has been set.
-func (o *ACLEntry) HasIP() bool {
-	if o != nil && o.IP != nil {
+// HasIp returns a boolean if a field has been set.
+func (o *AclEntry) HasIp() bool {
+	if o != nil && o.Ip != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetIP gets a reference to the given string and assigns it to the IP field.
-func (o *ACLEntry) SetIP(v string) {
-	o.IP = &v
+// SetIp gets a reference to the given string and assigns it to the Ip field.
+func (o *AclEntry) SetIp(v string) {
+	o.Ip = &v
 }
 
 // GetSubnet returns the Subnet field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ACLEntry) GetSubnet() int32 {
+func (o *AclEntry) GetSubnet() int32 {
 	if o == nil || o.Subnet.Get() == nil {
 		var ret int32
 		return ret
@@ -171,7 +171,7 @@ func (o *ACLEntry) GetSubnet() int32 {
 // GetSubnetOk returns a tuple with the Subnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ACLEntry) GetSubnetOk() (*int32, bool) {
+func (o *AclEntry) GetSubnetOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -179,7 +179,7 @@ func (o *ACLEntry) GetSubnetOk() (*int32, bool) {
 }
 
 // HasSubnet returns a boolean if a field has been set.
-func (o *ACLEntry) HasSubnet() bool {
+func (o *AclEntry) HasSubnet() bool {
 	if o != nil && o.Subnet.IsSet() {
 		return true
 	}
@@ -188,23 +188,23 @@ func (o *ACLEntry) HasSubnet() bool {
 }
 
 // SetSubnet gets a reference to the given NullableInt32 and assigns it to the Subnet field.
-func (o *ACLEntry) SetSubnet(v int32) {
+func (o *AclEntry) SetSubnet(v int32) {
 	o.Subnet.Set(&v)
 }
 
 // SetSubnetNil sets the value for Subnet to be an explicit nil
-func (o *ACLEntry) SetSubnetNil() {
+func (o *AclEntry) SetSubnetNil() {
 	o.Subnet.Set(nil)
 }
 
 // UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
-func (o *ACLEntry) UnsetSubnet() {
+func (o *AclEntry) UnsetSubnet() {
 	o.Subnet.Unset()
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ACLEntry) MarshalJSON() ([]byte, error) {
+func (o AclEntry) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Negated != nil {
 		toSerialize["negated"] = o.Negated
@@ -212,8 +212,8 @@ func (o ACLEntry) MarshalJSON() ([]byte, error) {
 	if o.Comment.IsSet() {
 		toSerialize["comment"] = o.Comment.Get()
 	}
-	if o.IP != nil {
-		toSerialize["ip"] = o.IP
+	if o.Ip != nil {
+		toSerialize["ip"] = o.Ip
 	}
 	if o.Subnet.IsSet() {
 		toSerialize["subnet"] = o.Subnet.Get()
@@ -228,11 +228,11 @@ func (o ACLEntry) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ACLEntry) UnmarshalJSON(bytes []byte) (err error) {
-	varACLEntry := _ACLEntry{}
+func (o *AclEntry) UnmarshalJSON(bytes []byte) (err error) {
+	varAclEntry := _AclEntry{}
 
-	if err = json.Unmarshal(bytes, &varACLEntry); err == nil {
-		*o = ACLEntry(varACLEntry)
+	if err = json.Unmarshal(bytes, &varAclEntry); err == nil {
+		*o = AclEntry(varAclEntry)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -248,48 +248,48 @@ func (o *ACLEntry) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableACLEntry is a helper abstraction for handling nullable aclentry types.
-type NullableACLEntry struct {
-	value *ACLEntry
+// NullableAclEntry is a helper abstraction for handling nullable aclentry types.
+type NullableAclEntry struct {
+	value *AclEntry
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableACLEntry) Get() *ACLEntry {
+func (v NullableAclEntry) Get() *AclEntry {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableACLEntry) Set(val *ACLEntry) {
+func (v *NullableAclEntry) Set(val *AclEntry) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableACLEntry) IsSet() bool {
+func (v NullableAclEntry) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableACLEntry) Unset() {
+func (v *NullableAclEntry) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableACLEntry returns a pointer to a new instance of NullableACLEntry.
-func NewNullableACLEntry(val *ACLEntry) *NullableACLEntry {
-	return &NullableACLEntry{value: val, isSet: true}
+// NewNullableAclEntry returns a pointer to a new instance of NullableAclEntry.
+func NewNullableAclEntry(val *AclEntry) *NullableAclEntry {
+	return &NullableAclEntry{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableACLEntry) MarshalJSON() ([]byte, error) {
+func (v NullableAclEntry) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableACLEntry) UnmarshalJSON(src []byte) error {
+func (v *NullableAclEntry) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

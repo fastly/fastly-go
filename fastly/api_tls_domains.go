@@ -26,34 +26,34 @@ var (
 	_ context.Context
 )
 
-// TLSDomainsAPI defines an interface for interacting with the resource.
-type TLSDomainsAPI interface {
+// TlsDomainsAPI defines an interface for interacting with the resource.
+type TlsDomainsAPI interface {
 
 	/*
-		ListTLSDomains List TLS domains
+		ListTlsDomains List TLS domains
 
 		List all TLS domains.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APIListTLSDomainsRequest
+		 @return APIListTlsDomainsRequest
 	*/
-	ListTLSDomains(ctx context.Context) APIListTLSDomainsRequest
+	ListTlsDomains(ctx context.Context) APIListTlsDomainsRequest
 
-	// ListTLSDomainsExecute executes the request
-	//  @return TLSDomainsResponse
-	ListTLSDomainsExecute(r APIListTLSDomainsRequest) (*TLSDomainsResponse, *http.Response, error)
+	// ListTlsDomainsExecute executes the request
+	//  @return TlsDomainsResponse
+	ListTlsDomainsExecute(r APIListTlsDomainsRequest) (*TlsDomainsResponse, *http.Response, error)
 }
 
-// TLSDomainsAPIService TLSDomainsAPI service
-type TLSDomainsAPIService service
+// TlsDomainsAPIService TlsDomainsAPI service
+type TlsDomainsAPIService service
 
-// APIListTLSDomainsRequest represents a request for the resource.
-type APIListTLSDomainsRequest struct {
+// APIListTlsDomainsRequest represents a request for the resource.
+type APIListTlsDomainsRequest struct {
 	ctx                      context.Context
-	APIService               TLSDomainsAPI
+	APIService               TlsDomainsAPI
 	filterInUse              *string
-	filterTLSCertificatesID  *string
-	filterTLSSubscriptionsID *string
+	filterTlsCertificatesId  *string
+	filterTlsSubscriptionsId *string
 	include                  *string
 	sort                     *string
 	pageNumber               *int32
@@ -61,78 +61,78 @@ type APIListTLSDomainsRequest struct {
 }
 
 // FilterInUse Optional. Limit the returned domains to those currently using Fastly to terminate TLS with SNI (that is, domains considered \&quot;in use\&quot;) Permitted values: true, false.
-func (r *APIListTLSDomainsRequest) FilterInUse(filterInUse string) *APIListTLSDomainsRequest {
+func (r *APIListTlsDomainsRequest) FilterInUse(filterInUse string) *APIListTlsDomainsRequest {
 	r.filterInUse = &filterInUse
 	return r
 }
 
-// FilterTLSCertificatesID Optional. Limit the returned domains to those listed in the given TLS certificate&#39;s SAN list.
-func (r *APIListTLSDomainsRequest) FilterTLSCertificatesID(filterTLSCertificatesID string) *APIListTLSDomainsRequest {
-	r.filterTLSCertificatesID = &filterTLSCertificatesID
+// FilterTlsCertificatesId Optional. Limit the returned domains to those listed in the given TLS certificate&#39;s SAN list.
+func (r *APIListTlsDomainsRequest) FilterTlsCertificatesId(filterTlsCertificatesId string) *APIListTlsDomainsRequest {
+	r.filterTlsCertificatesId = &filterTlsCertificatesId
 	return r
 }
 
-// FilterTLSSubscriptionsID Optional. Limit the returned domains to those for a given TLS subscription.
-func (r *APIListTLSDomainsRequest) FilterTLSSubscriptionsID(filterTLSSubscriptionsID string) *APIListTLSDomainsRequest {
-	r.filterTLSSubscriptionsID = &filterTLSSubscriptionsID
+// FilterTlsSubscriptionsId Optional. Limit the returned domains to those for a given TLS subscription.
+func (r *APIListTlsDomainsRequest) FilterTlsSubscriptionsId(filterTlsSubscriptionsId string) *APIListTlsDomainsRequest {
+	r.filterTlsSubscriptionsId = &filterTlsSubscriptionsId
 	return r
 }
 
 // Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_activations&#x60;, &#x60;tls_certificates&#x60;, &#x60;tls_subscriptions&#x60;, &#x60;tls_subscriptions.tls_authorizations&#x60;, &#x60;tls_authorizations.globalsign_email_challenge&#x60;, and &#x60;tls_authorizations.self_managed_http_challenge&#x60;.
-func (r *APIListTLSDomainsRequest) Include(include string) *APIListTLSDomainsRequest {
+func (r *APIListTlsDomainsRequest) Include(include string) *APIListTlsDomainsRequest {
 	r.include = &include
 	return r
 }
 
 // Sort The order in which to list the results.
-func (r *APIListTLSDomainsRequest) Sort(sort string) *APIListTLSDomainsRequest {
+func (r *APIListTlsDomainsRequest) Sort(sort string) *APIListTlsDomainsRequest {
 	r.sort = &sort
 	return r
 }
 
 // PageNumber Current page.
-func (r *APIListTLSDomainsRequest) PageNumber(pageNumber int32) *APIListTLSDomainsRequest {
+func (r *APIListTlsDomainsRequest) PageNumber(pageNumber int32) *APIListTlsDomainsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
 
 // PageSize Number of records per page.
-func (r *APIListTLSDomainsRequest) PageSize(pageSize int32) *APIListTLSDomainsRequest {
+func (r *APIListTlsDomainsRequest) PageSize(pageSize int32) *APIListTlsDomainsRequest {
 	r.pageSize = &pageSize
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListTLSDomainsRequest) Execute() (*TLSDomainsResponse, *http.Response, error) {
-	return r.APIService.ListTLSDomainsExecute(r)
+func (r APIListTlsDomainsRequest) Execute() (*TlsDomainsResponse, *http.Response, error) {
+	return r.APIService.ListTlsDomainsExecute(r)
 }
 
 /*
-ListTLSDomains List TLS domains
+ListTlsDomains List TLS domains
 
 List all TLS domains.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APIListTLSDomainsRequest
+ @return APIListTlsDomainsRequest
 */
-func (a *TLSDomainsAPIService) ListTLSDomains(ctx context.Context) APIListTLSDomainsRequest {
-	return APIListTLSDomainsRequest{
+func (a *TlsDomainsAPIService) ListTlsDomains(ctx context.Context) APIListTlsDomainsRequest {
+	return APIListTlsDomainsRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// ListTLSDomainsExecute executes the request
-//  @return TLSDomainsResponse
-func (a *TLSDomainsAPIService) ListTLSDomainsExecute(r APIListTLSDomainsRequest) (*TLSDomainsResponse, *http.Response, error) {
+// ListTlsDomainsExecute executes the request
+//  @return TlsDomainsResponse
+func (a *TlsDomainsAPIService) ListTlsDomainsExecute(r APIListTlsDomainsRequest) (*TlsDomainsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TLSDomainsResponse
+		localVarReturnValue *TlsDomainsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSDomainsAPIService.ListTLSDomains")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsDomainsAPIService.ListTlsDomains")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -146,11 +146,11 @@ func (a *TLSDomainsAPIService) ListTLSDomainsExecute(r APIListTLSDomainsRequest)
 	if r.filterInUse != nil {
 		localVarQueryParams.Add("filter[in_use]", parameterToString(*r.filterInUse, ""))
 	}
-	if r.filterTLSCertificatesID != nil {
-		localVarQueryParams.Add("filter[tls_certificates.id]", parameterToString(*r.filterTLSCertificatesID, ""))
+	if r.filterTlsCertificatesId != nil {
+		localVarQueryParams.Add("filter[tls_certificates.id]", parameterToString(*r.filterTlsCertificatesId, ""))
 	}
-	if r.filterTLSSubscriptionsID != nil {
-		localVarQueryParams.Add("filter[tls_subscriptions.id]", parameterToString(*r.filterTLSSubscriptionsID, ""))
+	if r.filterTlsSubscriptionsId != nil {
+		localVarQueryParams.Add("filter[tls_subscriptions.id]", parameterToString(*r.filterTlsSubscriptionsId, ""))
 	}
 	if r.include != nil {
 		localVarQueryParams.Add("include", parameterToString(*r.include, ""))

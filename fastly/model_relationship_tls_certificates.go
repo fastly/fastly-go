@@ -16,69 +16,69 @@ import (
 	"encoding/json"
 )
 
-// RelationshipTLSCertificates struct for RelationshipTLSCertificates
-type RelationshipTLSCertificates struct {
-	TLSCertificates      *RelationshipTLSCertificatesTLSCertificates `json:"tls_certificates,omitempty"`
+// RelationshipTlsCertificates struct for RelationshipTlsCertificates
+type RelationshipTlsCertificates struct {
+	TlsCertificates      *RelationshipTlsCertificatesTlsCertificates `json:"tls_certificates,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _RelationshipTLSCertificates RelationshipTLSCertificates
+type _RelationshipTlsCertificates RelationshipTlsCertificates
 
-// NewRelationshipTLSCertificates instantiates a new RelationshipTLSCertificates object
+// NewRelationshipTlsCertificates instantiates a new RelationshipTlsCertificates object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRelationshipTLSCertificates() *RelationshipTLSCertificates {
-	this := RelationshipTLSCertificates{}
+func NewRelationshipTlsCertificates() *RelationshipTlsCertificates {
+	this := RelationshipTlsCertificates{}
 	return &this
 }
 
-// NewRelationshipTLSCertificatesWithDefaults instantiates a new RelationshipTLSCertificates object
+// NewRelationshipTlsCertificatesWithDefaults instantiates a new RelationshipTlsCertificates object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRelationshipTLSCertificatesWithDefaults() *RelationshipTLSCertificates {
-	this := RelationshipTLSCertificates{}
+func NewRelationshipTlsCertificatesWithDefaults() *RelationshipTlsCertificates {
+	this := RelationshipTlsCertificates{}
 	return &this
 }
 
-// GetTLSCertificates returns the TLSCertificates field value if set, zero value otherwise.
-func (o *RelationshipTLSCertificates) GetTLSCertificates() RelationshipTLSCertificatesTLSCertificates {
-	if o == nil || o.TLSCertificates == nil {
-		var ret RelationshipTLSCertificatesTLSCertificates
+// GetTlsCertificates returns the TlsCertificates field value if set, zero value otherwise.
+func (o *RelationshipTlsCertificates) GetTlsCertificates() RelationshipTlsCertificatesTlsCertificates {
+	if o == nil || o.TlsCertificates == nil {
+		var ret RelationshipTlsCertificatesTlsCertificates
 		return ret
 	}
-	return *o.TLSCertificates
+	return *o.TlsCertificates
 }
 
-// GetTLSCertificatesOk returns a tuple with the TLSCertificates field value if set, nil otherwise
+// GetTlsCertificatesOk returns a tuple with the TlsCertificates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipTLSCertificates) GetTLSCertificatesOk() (*RelationshipTLSCertificatesTLSCertificates, bool) {
-	if o == nil || o.TLSCertificates == nil {
+func (o *RelationshipTlsCertificates) GetTlsCertificatesOk() (*RelationshipTlsCertificatesTlsCertificates, bool) {
+	if o == nil || o.TlsCertificates == nil {
 		return nil, false
 	}
-	return o.TLSCertificates, true
+	return o.TlsCertificates, true
 }
 
-// HasTLSCertificates returns a boolean if a field has been set.
-func (o *RelationshipTLSCertificates) HasTLSCertificates() bool {
-	if o != nil && o.TLSCertificates != nil {
+// HasTlsCertificates returns a boolean if a field has been set.
+func (o *RelationshipTlsCertificates) HasTlsCertificates() bool {
+	if o != nil && o.TlsCertificates != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSCertificates gets a reference to the given RelationshipTLSCertificatesTLSCertificates and assigns it to the TLSCertificates field.
-func (o *RelationshipTLSCertificates) SetTLSCertificates(v RelationshipTLSCertificatesTLSCertificates) {
-	o.TLSCertificates = &v
+// SetTlsCertificates gets a reference to the given RelationshipTlsCertificatesTlsCertificates and assigns it to the TlsCertificates field.
+func (o *RelationshipTlsCertificates) SetTlsCertificates(v RelationshipTlsCertificatesTlsCertificates) {
+	o.TlsCertificates = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o RelationshipTLSCertificates) MarshalJSON() ([]byte, error) {
+func (o RelationshipTlsCertificates) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.TLSCertificates != nil {
-		toSerialize["tls_certificates"] = o.TLSCertificates
+	if o.TlsCertificates != nil {
+		toSerialize["tls_certificates"] = o.TlsCertificates
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -90,11 +90,11 @@ func (o RelationshipTLSCertificates) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipTLSCertificates) UnmarshalJSON(bytes []byte) (err error) {
-	varRelationshipTLSCertificates := _RelationshipTLSCertificates{}
+func (o *RelationshipTlsCertificates) UnmarshalJSON(bytes []byte) (err error) {
+	varRelationshipTlsCertificates := _RelationshipTlsCertificates{}
 
-	if err = json.Unmarshal(bytes, &varRelationshipTLSCertificates); err == nil {
-		*o = RelationshipTLSCertificates(varRelationshipTLSCertificates)
+	if err = json.Unmarshal(bytes, &varRelationshipTlsCertificates); err == nil {
+		*o = RelationshipTlsCertificates(varRelationshipTlsCertificates)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *RelationshipTLSCertificates) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableRelationshipTLSCertificates is a helper abstraction for handling nullable relationshiptlscertificates types.
-type NullableRelationshipTLSCertificates struct {
-	value *RelationshipTLSCertificates
+// NullableRelationshipTlsCertificates is a helper abstraction for handling nullable relationshiptlscertificates types.
+type NullableRelationshipTlsCertificates struct {
+	value *RelationshipTlsCertificates
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipTLSCertificates) Get() *RelationshipTLSCertificates {
+func (v NullableRelationshipTlsCertificates) Get() *RelationshipTlsCertificates {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipTLSCertificates) Set(val *RelationshipTLSCertificates) {
+func (v *NullableRelationshipTlsCertificates) Set(val *RelationshipTlsCertificates) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipTLSCertificates) IsSet() bool {
+func (v NullableRelationshipTlsCertificates) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipTLSCertificates) Unset() {
+func (v *NullableRelationshipTlsCertificates) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipTLSCertificates returns a pointer to a new instance of NullableRelationshipTLSCertificates.
-func NewNullableRelationshipTLSCertificates(val *RelationshipTLSCertificates) *NullableRelationshipTLSCertificates {
-	return &NullableRelationshipTLSCertificates{value: val, isSet: true}
+// NewNullableRelationshipTlsCertificates returns a pointer to a new instance of NullableRelationshipTlsCertificates.
+func NewNullableRelationshipTlsCertificates(val *RelationshipTlsCertificates) *NullableRelationshipTlsCertificates {
+	return &NullableRelationshipTlsCertificates{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipTLSCertificates) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipTlsCertificates) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipTLSCertificates) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipTlsCertificates) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

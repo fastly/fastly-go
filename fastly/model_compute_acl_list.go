@@ -16,36 +16,36 @@ import (
 	"encoding/json"
 )
 
-// ComputeACLList An example of an ACL list response.
-type ComputeACLList struct {
-	Data                 []ComputeACLCreateAclsResponse `json:"data,omitempty"`
-	Meta                 *ComputeACLListMeta            `json:"meta,omitempty"`
+// ComputeAclList An example of an ACL list response.
+type ComputeAclList struct {
+	Data                 []ComputeAclCreateAclsResponse `json:"data,omitempty"`
+	Meta                 *ComputeAclListMeta            `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _ComputeACLList ComputeACLList
+type _ComputeAclList ComputeAclList
 
-// NewComputeACLList instantiates a new ComputeACLList object
+// NewComputeAclList instantiates a new ComputeAclList object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeACLList() *ComputeACLList {
-	this := ComputeACLList{}
+func NewComputeAclList() *ComputeAclList {
+	this := ComputeAclList{}
 	return &this
 }
 
-// NewComputeACLListWithDefaults instantiates a new ComputeACLList object
+// NewComputeAclListWithDefaults instantiates a new ComputeAclList object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewComputeACLListWithDefaults() *ComputeACLList {
-	this := ComputeACLList{}
+func NewComputeAclListWithDefaults() *ComputeAclList {
+	this := ComputeAclList{}
 	return &this
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ComputeACLList) GetData() []ComputeACLCreateAclsResponse {
+func (o *ComputeAclList) GetData() []ComputeAclCreateAclsResponse {
 	if o == nil || o.Data == nil {
-		var ret []ComputeACLCreateAclsResponse
+		var ret []ComputeAclCreateAclsResponse
 		return ret
 	}
 	return o.Data
@@ -53,7 +53,7 @@ func (o *ComputeACLList) GetData() []ComputeACLCreateAclsResponse {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLList) GetDataOk() ([]ComputeACLCreateAclsResponse, bool) {
+func (o *ComputeAclList) GetDataOk() ([]ComputeAclCreateAclsResponse, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -61,7 +61,7 @@ func (o *ComputeACLList) GetDataOk() ([]ComputeACLCreateAclsResponse, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *ComputeACLList) HasData() bool {
+func (o *ComputeAclList) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -69,15 +69,15 @@ func (o *ComputeACLList) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []ComputeACLCreateAclsResponse and assigns it to the Data field.
-func (o *ComputeACLList) SetData(v []ComputeACLCreateAclsResponse) {
+// SetData gets a reference to the given []ComputeAclCreateAclsResponse and assigns it to the Data field.
+func (o *ComputeAclList) SetData(v []ComputeAclCreateAclsResponse) {
 	o.Data = v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ComputeACLList) GetMeta() ComputeACLListMeta {
+func (o *ComputeAclList) GetMeta() ComputeAclListMeta {
 	if o == nil || o.Meta == nil {
-		var ret ComputeACLListMeta
+		var ret ComputeAclListMeta
 		return ret
 	}
 	return *o.Meta
@@ -85,7 +85,7 @@ func (o *ComputeACLList) GetMeta() ComputeACLListMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLList) GetMetaOk() (*ComputeACLListMeta, bool) {
+func (o *ComputeAclList) GetMetaOk() (*ComputeAclListMeta, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *ComputeACLList) GetMetaOk() (*ComputeACLListMeta, bool) {
 }
 
 // HasMeta returns a boolean if a field has been set.
-func (o *ComputeACLList) HasMeta() bool {
+func (o *ComputeAclList) HasMeta() bool {
 	if o != nil && o.Meta != nil {
 		return true
 	}
@@ -101,14 +101,14 @@ func (o *ComputeACLList) HasMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given ComputeACLListMeta and assigns it to the Meta field.
-func (o *ComputeACLList) SetMeta(v ComputeACLListMeta) {
+// SetMeta gets a reference to the given ComputeAclListMeta and assigns it to the Meta field.
+func (o *ComputeAclList) SetMeta(v ComputeAclListMeta) {
 	o.Meta = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ComputeACLList) MarshalJSON() ([]byte, error) {
+func (o ComputeAclList) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
@@ -126,11 +126,11 @@ func (o ComputeACLList) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ComputeACLList) UnmarshalJSON(bytes []byte) (err error) {
-	varComputeACLList := _ComputeACLList{}
+func (o *ComputeAclList) UnmarshalJSON(bytes []byte) (err error) {
+	varComputeAclList := _ComputeAclList{}
 
-	if err = json.Unmarshal(bytes, &varComputeACLList); err == nil {
-		*o = ComputeACLList(varComputeACLList)
+	if err = json.Unmarshal(bytes, &varComputeAclList); err == nil {
+		*o = ComputeAclList(varComputeAclList)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -144,48 +144,48 @@ func (o *ComputeACLList) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableComputeACLList is a helper abstraction for handling nullable computeacllist types.
-type NullableComputeACLList struct {
-	value *ComputeACLList
+// NullableComputeAclList is a helper abstraction for handling nullable computeacllist types.
+type NullableComputeAclList struct {
+	value *ComputeAclList
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableComputeACLList) Get() *ComputeACLList {
+func (v NullableComputeAclList) Get() *ComputeAclList {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableComputeACLList) Set(val *ComputeACLList) {
+func (v *NullableComputeAclList) Set(val *ComputeAclList) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableComputeACLList) IsSet() bool {
+func (v NullableComputeAclList) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableComputeACLList) Unset() {
+func (v *NullableComputeAclList) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableComputeACLList returns a pointer to a new instance of NullableComputeACLList.
-func NewNullableComputeACLList(val *ComputeACLList) *NullableComputeACLList {
-	return &NullableComputeACLList{value: val, isSet: true}
+// NewNullableComputeAclList returns a pointer to a new instance of NullableComputeAclList.
+func NewNullableComputeAclList(val *ComputeAclList) *NullableComputeAclList {
+	return &NullableComputeAclList{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableComputeACLList) MarshalJSON() ([]byte, error) {
+func (v NullableComputeAclList) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableComputeACLList) UnmarshalJSON(src []byte) error {
+func (v *NullableComputeAclList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

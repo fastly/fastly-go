@@ -50,10 +50,10 @@ type InvitationsAPI interface {
 		Delete an invitation.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param invitationID Alphanumeric string identifying an invitation.
+		 @param invitationId Alphanumeric string identifying an invitation.
 		 @return APIDeleteInvitationRequest
 	*/
-	DeleteInvitation(ctx context.Context, invitationID string) APIDeleteInvitationRequest
+	DeleteInvitation(ctx context.Context, invitationId string) APIDeleteInvitationRequest
 
 	// DeleteInvitationExecute executes the request
 	DeleteInvitationExecute(r APIDeleteInvitationRequest) (*http.Response, error)
@@ -217,7 +217,7 @@ func (a *InvitationsAPIService) CreateInvitationExecute(r APICreateInvitationReq
 type APIDeleteInvitationRequest struct {
 	ctx          context.Context
 	APIService   InvitationsAPI
-	invitationID string
+	invitationId string
 }
 
 // Execute calls the API using the request data configured.
@@ -231,14 +231,14 @@ DeleteInvitation Delete an invitation
 Delete an invitation.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param invitationID Alphanumeric string identifying an invitation.
+ @param invitationId Alphanumeric string identifying an invitation.
  @return APIDeleteInvitationRequest
 */
-func (a *InvitationsAPIService) DeleteInvitation(ctx context.Context, invitationID string) APIDeleteInvitationRequest {
+func (a *InvitationsAPIService) DeleteInvitation(ctx context.Context, invitationId string) APIDeleteInvitationRequest {
 	return APIDeleteInvitationRequest{
 		APIService:   a,
 		ctx:          ctx,
-		invitationID: invitationID,
+		invitationId: invitationId,
 	}
 }
 
@@ -256,7 +256,7 @@ func (a *InvitationsAPIService) DeleteInvitationExecute(r APIDeleteInvitationReq
 	}
 
 	localVarPath := localBasePath + "/invitations/{invitation_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"invitation_id"+"}", gourl.PathEscape(parameterToString(r.invitationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"invitation_id"+"}", gourl.PathEscape(parameterToString(r.invitationId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

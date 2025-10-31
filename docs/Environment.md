@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] [readonly] 
-**ServiceID** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] [readonly] 
+**ServiceId** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] [readonly] 
 **ActiveVersion** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
@@ -52,30 +52,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetServiceID
+### GetServiceId
 
-`func (o *Environment) GetServiceID() string`
+`func (o *Environment) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *Environment) GetServiceIDOk() (*string, bool)`
+`func (o *Environment) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *Environment) SetServiceID(v string)`
+`func (o *Environment) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *Environment) HasServiceID() bool`
+`func (o *Environment) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetActiveVersion
 
@@ -104,3 +104,5 @@ HasActiveVersion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

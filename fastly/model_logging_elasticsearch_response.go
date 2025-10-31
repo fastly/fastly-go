@@ -32,13 +32,13 @@ type LoggingElasticsearchResponse struct {
 	// The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.
 	FormatVersion *string `json:"format_version,omitempty"`
 	// A secure certificate to authenticate a server with. Must be in PEM format.
-	TLSCaCert NullableString `json:"tls_ca_cert,omitempty"`
+	TlsCaCert NullableString `json:"tls_ca_cert,omitempty"`
 	// The client certificate used to make authenticated requests. Must be in PEM format.
-	TLSClientCert NullableString `json:"tls_client_cert,omitempty"`
+	TlsClientCert NullableString `json:"tls_client_cert,omitempty"`
 	// The client private key used to make authenticated requests. Must be in PEM format.
-	TLSClientKey NullableString `json:"tls_client_key,omitempty"`
+	TlsClientKey NullableString `json:"tls_client_key,omitempty"`
 	// The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-	TLSHostname NullableString `json:"tls_hostname,omitempty"`
+	TlsHostname NullableString `json:"tls_hostname,omitempty"`
 	// The maximum number of logs sent in one request. Defaults `0` for unbounded.
 	RequestMaxEntries *int32 `json:"request_max_entries,omitempty"`
 	// The maximum number of bytes sent in one request. Defaults `0` for unbounded.
@@ -46,7 +46,7 @@ type LoggingElasticsearchResponse struct {
 	// The name of the Elasticsearch index to send documents (logs) to. The index must follow the Elasticsearch [index format rules](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html). We support [strftime](https://www.man7.org/linux/man-pages/man3/strftime.3.html) interpolated variables inside braces prefixed with a pound symbol. For example, `#{%F}` will interpolate as `YYYY-MM-DD` with today's date.
 	Index *string `json:"index,omitempty"`
 	// The URL to stream logs to. Must use HTTPS.
-	URL *string `json:"url,omitempty"`
+	Url *string `json:"url,omitempty"`
 	// The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
 	Pipeline NullableString `json:"pipeline,omitempty"`
 	// Basic Auth username.
@@ -59,7 +59,7 @@ type LoggingElasticsearchResponse struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
-	ServiceID            *string      `json:"service_id,omitempty"`
+	ServiceId            *string      `json:"service_id,omitempty"`
 	Version              *string      `json:"version,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -77,13 +77,13 @@ func NewLoggingElasticsearchResponse() *LoggingElasticsearchResponse {
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
 	var tlsCaCert string = "null"
-	this.TLSCaCert = *NewNullableString(&tlsCaCert)
+	this.TlsCaCert = *NewNullableString(&tlsCaCert)
 	var tlsClientCert string = "null"
-	this.TLSClientCert = *NewNullableString(&tlsClientCert)
+	this.TlsClientCert = *NewNullableString(&tlsClientCert)
 	var tlsClientKey string = "null"
-	this.TLSClientKey = *NewNullableString(&tlsClientKey)
+	this.TlsClientKey = *NewNullableString(&tlsClientKey)
 	var tlsHostname string = "null"
-	this.TLSHostname = *NewNullableString(&tlsHostname)
+	this.TlsHostname = *NewNullableString(&tlsHostname)
 	var requestMaxEntries int32 = 0
 	this.RequestMaxEntries = &requestMaxEntries
 	var requestMaxBytes int32 = 0
@@ -101,13 +101,13 @@ func NewLoggingElasticsearchResponseWithDefaults() *LoggingElasticsearchResponse
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
 	var tlsCaCert string = "null"
-	this.TLSCaCert = *NewNullableString(&tlsCaCert)
+	this.TlsCaCert = *NewNullableString(&tlsCaCert)
 	var tlsClientCert string = "null"
-	this.TLSClientCert = *NewNullableString(&tlsClientCert)
+	this.TlsClientCert = *NewNullableString(&tlsClientCert)
 	var tlsClientKey string = "null"
-	this.TLSClientKey = *NewNullableString(&tlsClientKey)
+	this.TlsClientKey = *NewNullableString(&tlsClientKey)
 	var tlsHostname string = "null"
-	this.TLSHostname = *NewNullableString(&tlsHostname)
+	this.TlsHostname = *NewNullableString(&tlsHostname)
 	var requestMaxEntries int32 = 0
 	this.RequestMaxEntries = &requestMaxEntries
 	var requestMaxBytes int32 = 0
@@ -329,176 +329,176 @@ func (o *LoggingElasticsearchResponse) SetFormatVersion(v string) {
 	o.FormatVersion = &v
 }
 
-// GetTLSCaCert returns the TLSCaCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingElasticsearchResponse) GetTLSCaCert() string {
-	if o == nil || o.TLSCaCert.Get() == nil {
+// GetTlsCaCert returns the TlsCaCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingElasticsearchResponse) GetTlsCaCert() string {
+	if o == nil || o.TlsCaCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSCaCert.Get()
+	return *o.TlsCaCert.Get()
 }
 
-// GetTLSCaCertOk returns a tuple with the TLSCaCert field value if set, nil otherwise
+// GetTlsCaCertOk returns a tuple with the TlsCaCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingElasticsearchResponse) GetTLSCaCertOk() (*string, bool) {
+func (o *LoggingElasticsearchResponse) GetTlsCaCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSCaCert.Get(), o.TLSCaCert.IsSet()
+	return o.TlsCaCert.Get(), o.TlsCaCert.IsSet()
 }
 
-// HasTLSCaCert returns a boolean if a field has been set.
-func (o *LoggingElasticsearchResponse) HasTLSCaCert() bool {
-	if o != nil && o.TLSCaCert.IsSet() {
+// HasTlsCaCert returns a boolean if a field has been set.
+func (o *LoggingElasticsearchResponse) HasTlsCaCert() bool {
+	if o != nil && o.TlsCaCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSCaCert gets a reference to the given NullableString and assigns it to the TLSCaCert field.
-func (o *LoggingElasticsearchResponse) SetTLSCaCert(v string) {
-	o.TLSCaCert.Set(&v)
+// SetTlsCaCert gets a reference to the given NullableString and assigns it to the TlsCaCert field.
+func (o *LoggingElasticsearchResponse) SetTlsCaCert(v string) {
+	o.TlsCaCert.Set(&v)
 }
 
-// SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
-func (o *LoggingElasticsearchResponse) SetTLSCaCertNil() {
-	o.TLSCaCert.Set(nil)
+// SetTlsCaCertNil sets the value for TlsCaCert to be an explicit nil
+func (o *LoggingElasticsearchResponse) SetTlsCaCertNil() {
+	o.TlsCaCert.Set(nil)
 }
 
-// UnsetTLSCaCert ensures that no value is present for TLSCaCert, not even an explicit nil
-func (o *LoggingElasticsearchResponse) UnsetTLSCaCert() {
-	o.TLSCaCert.Unset()
+// UnsetTlsCaCert ensures that no value is present for TlsCaCert, not even an explicit nil
+func (o *LoggingElasticsearchResponse) UnsetTlsCaCert() {
+	o.TlsCaCert.Unset()
 }
 
-// GetTLSClientCert returns the TLSClientCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingElasticsearchResponse) GetTLSClientCert() string {
-	if o == nil || o.TLSClientCert.Get() == nil {
+// GetTlsClientCert returns the TlsClientCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingElasticsearchResponse) GetTlsClientCert() string {
+	if o == nil || o.TlsClientCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSClientCert.Get()
+	return *o.TlsClientCert.Get()
 }
 
-// GetTLSClientCertOk returns a tuple with the TLSClientCert field value if set, nil otherwise
+// GetTlsClientCertOk returns a tuple with the TlsClientCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingElasticsearchResponse) GetTLSClientCertOk() (*string, bool) {
+func (o *LoggingElasticsearchResponse) GetTlsClientCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSClientCert.Get(), o.TLSClientCert.IsSet()
+	return o.TlsClientCert.Get(), o.TlsClientCert.IsSet()
 }
 
-// HasTLSClientCert returns a boolean if a field has been set.
-func (o *LoggingElasticsearchResponse) HasTLSClientCert() bool {
-	if o != nil && o.TLSClientCert.IsSet() {
+// HasTlsClientCert returns a boolean if a field has been set.
+func (o *LoggingElasticsearchResponse) HasTlsClientCert() bool {
+	if o != nil && o.TlsClientCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSClientCert gets a reference to the given NullableString and assigns it to the TLSClientCert field.
-func (o *LoggingElasticsearchResponse) SetTLSClientCert(v string) {
-	o.TLSClientCert.Set(&v)
+// SetTlsClientCert gets a reference to the given NullableString and assigns it to the TlsClientCert field.
+func (o *LoggingElasticsearchResponse) SetTlsClientCert(v string) {
+	o.TlsClientCert.Set(&v)
 }
 
-// SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
-func (o *LoggingElasticsearchResponse) SetTLSClientCertNil() {
-	o.TLSClientCert.Set(nil)
+// SetTlsClientCertNil sets the value for TlsClientCert to be an explicit nil
+func (o *LoggingElasticsearchResponse) SetTlsClientCertNil() {
+	o.TlsClientCert.Set(nil)
 }
 
-// UnsetTLSClientCert ensures that no value is present for TLSClientCert, not even an explicit nil
-func (o *LoggingElasticsearchResponse) UnsetTLSClientCert() {
-	o.TLSClientCert.Unset()
+// UnsetTlsClientCert ensures that no value is present for TlsClientCert, not even an explicit nil
+func (o *LoggingElasticsearchResponse) UnsetTlsClientCert() {
+	o.TlsClientCert.Unset()
 }
 
-// GetTLSClientKey returns the TLSClientKey field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingElasticsearchResponse) GetTLSClientKey() string {
-	if o == nil || o.TLSClientKey.Get() == nil {
+// GetTlsClientKey returns the TlsClientKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingElasticsearchResponse) GetTlsClientKey() string {
+	if o == nil || o.TlsClientKey.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSClientKey.Get()
+	return *o.TlsClientKey.Get()
 }
 
-// GetTLSClientKeyOk returns a tuple with the TLSClientKey field value if set, nil otherwise
+// GetTlsClientKeyOk returns a tuple with the TlsClientKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingElasticsearchResponse) GetTLSClientKeyOk() (*string, bool) {
+func (o *LoggingElasticsearchResponse) GetTlsClientKeyOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSClientKey.Get(), o.TLSClientKey.IsSet()
+	return o.TlsClientKey.Get(), o.TlsClientKey.IsSet()
 }
 
-// HasTLSClientKey returns a boolean if a field has been set.
-func (o *LoggingElasticsearchResponse) HasTLSClientKey() bool {
-	if o != nil && o.TLSClientKey.IsSet() {
+// HasTlsClientKey returns a boolean if a field has been set.
+func (o *LoggingElasticsearchResponse) HasTlsClientKey() bool {
+	if o != nil && o.TlsClientKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSClientKey gets a reference to the given NullableString and assigns it to the TLSClientKey field.
-func (o *LoggingElasticsearchResponse) SetTLSClientKey(v string) {
-	o.TLSClientKey.Set(&v)
+// SetTlsClientKey gets a reference to the given NullableString and assigns it to the TlsClientKey field.
+func (o *LoggingElasticsearchResponse) SetTlsClientKey(v string) {
+	o.TlsClientKey.Set(&v)
 }
 
-// SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
-func (o *LoggingElasticsearchResponse) SetTLSClientKeyNil() {
-	o.TLSClientKey.Set(nil)
+// SetTlsClientKeyNil sets the value for TlsClientKey to be an explicit nil
+func (o *LoggingElasticsearchResponse) SetTlsClientKeyNil() {
+	o.TlsClientKey.Set(nil)
 }
 
-// UnsetTLSClientKey ensures that no value is present for TLSClientKey, not even an explicit nil
-func (o *LoggingElasticsearchResponse) UnsetTLSClientKey() {
-	o.TLSClientKey.Unset()
+// UnsetTlsClientKey ensures that no value is present for TlsClientKey, not even an explicit nil
+func (o *LoggingElasticsearchResponse) UnsetTlsClientKey() {
+	o.TlsClientKey.Unset()
 }
 
-// GetTLSHostname returns the TLSHostname field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingElasticsearchResponse) GetTLSHostname() string {
-	if o == nil || o.TLSHostname.Get() == nil {
+// GetTlsHostname returns the TlsHostname field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingElasticsearchResponse) GetTlsHostname() string {
+	if o == nil || o.TlsHostname.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSHostname.Get()
+	return *o.TlsHostname.Get()
 }
 
-// GetTLSHostnameOk returns a tuple with the TLSHostname field value if set, nil otherwise
+// GetTlsHostnameOk returns a tuple with the TlsHostname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingElasticsearchResponse) GetTLSHostnameOk() (*string, bool) {
+func (o *LoggingElasticsearchResponse) GetTlsHostnameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSHostname.Get(), o.TLSHostname.IsSet()
+	return o.TlsHostname.Get(), o.TlsHostname.IsSet()
 }
 
-// HasTLSHostname returns a boolean if a field has been set.
-func (o *LoggingElasticsearchResponse) HasTLSHostname() bool {
-	if o != nil && o.TLSHostname.IsSet() {
+// HasTlsHostname returns a boolean if a field has been set.
+func (o *LoggingElasticsearchResponse) HasTlsHostname() bool {
+	if o != nil && o.TlsHostname.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSHostname gets a reference to the given NullableString and assigns it to the TLSHostname field.
-func (o *LoggingElasticsearchResponse) SetTLSHostname(v string) {
-	o.TLSHostname.Set(&v)
+// SetTlsHostname gets a reference to the given NullableString and assigns it to the TlsHostname field.
+func (o *LoggingElasticsearchResponse) SetTlsHostname(v string) {
+	o.TlsHostname.Set(&v)
 }
 
-// SetTLSHostnameNil sets the value for TLSHostname to be an explicit nil
-func (o *LoggingElasticsearchResponse) SetTLSHostnameNil() {
-	o.TLSHostname.Set(nil)
+// SetTlsHostnameNil sets the value for TlsHostname to be an explicit nil
+func (o *LoggingElasticsearchResponse) SetTlsHostnameNil() {
+	o.TlsHostname.Set(nil)
 }
 
-// UnsetTLSHostname ensures that no value is present for TLSHostname, not even an explicit nil
-func (o *LoggingElasticsearchResponse) UnsetTLSHostname() {
-	o.TLSHostname.Unset()
+// UnsetTlsHostname ensures that no value is present for TlsHostname, not even an explicit nil
+func (o *LoggingElasticsearchResponse) UnsetTlsHostname() {
+	o.TlsHostname.Unset()
 }
 
 // GetRequestMaxEntries returns the RequestMaxEntries field value if set, zero value otherwise.
@@ -597,36 +597,36 @@ func (o *LoggingElasticsearchResponse) SetIndex(v string) {
 	o.Index = &v
 }
 
-// GetURL returns the URL field value if set, zero value otherwise.
-func (o *LoggingElasticsearchResponse) GetURL() string {
-	if o == nil || o.URL == nil {
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *LoggingElasticsearchResponse) GetUrl() string {
+	if o == nil || o.Url == nil {
 		var ret string
 		return ret
 	}
-	return *o.URL
+	return *o.Url
 }
 
-// GetURLOk returns a tuple with the URL field value if set, nil otherwise
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingElasticsearchResponse) GetURLOk() (*string, bool) {
-	if o == nil || o.URL == nil {
+func (o *LoggingElasticsearchResponse) GetUrlOk() (*string, bool) {
+	if o == nil || o.Url == nil {
 		return nil, false
 	}
-	return o.URL, true
+	return o.Url, true
 }
 
-// HasURL returns a boolean if a field has been set.
-func (o *LoggingElasticsearchResponse) HasURL() bool {
-	if o != nil && o.URL != nil {
+// HasUrl returns a boolean if a field has been set.
+func (o *LoggingElasticsearchResponse) HasUrl() bool {
+	if o != nil && o.Url != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetURL gets a reference to the given string and assigns it to the URL field.
-func (o *LoggingElasticsearchResponse) SetURL(v string) {
-	o.URL = &v
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *LoggingElasticsearchResponse) SetUrl(v string) {
+	o.Url = &v
 }
 
 // GetPipeline returns the Pipeline field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -887,36 +887,36 @@ func (o *LoggingElasticsearchResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *LoggingElasticsearchResponse) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *LoggingElasticsearchResponse) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingElasticsearchResponse) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *LoggingElasticsearchResponse) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *LoggingElasticsearchResponse) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *LoggingElasticsearchResponse) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *LoggingElasticsearchResponse) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *LoggingElasticsearchResponse) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -973,17 +973,17 @@ func (o LoggingElasticsearchResponse) MarshalJSON() ([]byte, error) {
 	if o.FormatVersion != nil {
 		toSerialize["format_version"] = o.FormatVersion
 	}
-	if o.TLSCaCert.IsSet() {
-		toSerialize["tls_ca_cert"] = o.TLSCaCert.Get()
+	if o.TlsCaCert.IsSet() {
+		toSerialize["tls_ca_cert"] = o.TlsCaCert.Get()
 	}
-	if o.TLSClientCert.IsSet() {
-		toSerialize["tls_client_cert"] = o.TLSClientCert.Get()
+	if o.TlsClientCert.IsSet() {
+		toSerialize["tls_client_cert"] = o.TlsClientCert.Get()
 	}
-	if o.TLSClientKey.IsSet() {
-		toSerialize["tls_client_key"] = o.TLSClientKey.Get()
+	if o.TlsClientKey.IsSet() {
+		toSerialize["tls_client_key"] = o.TlsClientKey.Get()
 	}
-	if o.TLSHostname.IsSet() {
-		toSerialize["tls_hostname"] = o.TLSHostname.Get()
+	if o.TlsHostname.IsSet() {
+		toSerialize["tls_hostname"] = o.TlsHostname.Get()
 	}
 	if o.RequestMaxEntries != nil {
 		toSerialize["request_max_entries"] = o.RequestMaxEntries
@@ -994,8 +994,8 @@ func (o LoggingElasticsearchResponse) MarshalJSON() ([]byte, error) {
 	if o.Index != nil {
 		toSerialize["index"] = o.Index
 	}
-	if o.URL != nil {
-		toSerialize["url"] = o.URL
+	if o.Url != nil {
+		toSerialize["url"] = o.Url
 	}
 	if o.Pipeline.IsSet() {
 		toSerialize["pipeline"] = o.Pipeline.Get()
@@ -1015,8 +1015,8 @@ func (o LoggingElasticsearchResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

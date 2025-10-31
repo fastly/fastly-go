@@ -19,7 +19,7 @@ import (
 // BrotliCompressionResponseBodyEnable struct for BrotliCompressionResponseBodyEnable
 type BrotliCompressionResponseBodyEnable struct {
 	Product              *BrotliCompressionResponseProductProduct `json:"product,omitempty"`
-	Service              *BotManagementResponseServiceService     `json:"service,omitempty"`
+	Service              *ApiDiscoveryResponseServiceService      `json:"service,omitempty"`
 	Links                *BrotliCompressionResponseLinksLinks     `json:"_links,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -76,9 +76,9 @@ func (o *BrotliCompressionResponseBodyEnable) SetProduct(v BrotliCompressionResp
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *BrotliCompressionResponseBodyEnable) GetService() BotManagementResponseServiceService {
+func (o *BrotliCompressionResponseBodyEnable) GetService() ApiDiscoveryResponseServiceService {
 	if o == nil || o.Service == nil {
-		var ret BotManagementResponseServiceService
+		var ret ApiDiscoveryResponseServiceService
 		return ret
 	}
 	return *o.Service
@@ -86,7 +86,7 @@ func (o *BrotliCompressionResponseBodyEnable) GetService() BotManagementResponse
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BrotliCompressionResponseBodyEnable) GetServiceOk() (*BotManagementResponseServiceService, bool) {
+func (o *BrotliCompressionResponseBodyEnable) GetServiceOk() (*ApiDiscoveryResponseServiceService, bool) {
 	if o == nil || o.Service == nil {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *BrotliCompressionResponseBodyEnable) HasService() bool {
 	return false
 }
 
-// SetService gets a reference to the given BotManagementResponseServiceService and assigns it to the Service field.
-func (o *BrotliCompressionResponseBodyEnable) SetService(v BotManagementResponseServiceService) {
+// SetService gets a reference to the given ApiDiscoveryResponseServiceService and assigns it to the Service field.
+func (o *BrotliCompressionResponseBodyEnable) SetService(v ApiDiscoveryResponseServiceService) {
 	o.Service = &v
 }
 

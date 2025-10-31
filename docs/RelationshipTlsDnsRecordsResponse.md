@@ -1,54 +1,56 @@
-# RelationshipTLSDNSRecordsResponse
+# RelationshipTlsDnsRecordsResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DNSRecords** | Pointer to [**RelationshipTLSDNSRecordsResponseDNSRecords**](RelationshipTLSDNSRecordsResponseDNSRecords.md) |  | [optional] 
+**DnsRecords** | Pointer to [**RelationshipTlsDnsRecordsResponseDnsRecords**](RelationshipTlsDnsRecordsResponseDnsRecords.md) |  | [optional] 
 
 ## Methods
 
-### NewRelationshipTLSDNSRecordsResponse
+### NewRelationshipTlsDnsRecordsResponse
 
-`func NewRelationshipTLSDNSRecordsResponse() *RelationshipTLSDNSRecordsResponse`
+`func NewRelationshipTlsDnsRecordsResponse() *RelationshipTlsDnsRecordsResponse`
 
-NewRelationshipTLSDNSRecordsResponse instantiates a new RelationshipTLSDNSRecordsResponse object
+NewRelationshipTlsDnsRecordsResponse instantiates a new RelationshipTlsDnsRecordsResponse object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipTLSDNSRecordsResponseWithDefaults
+### NewRelationshipTlsDnsRecordsResponseWithDefaults
 
-`func NewRelationshipTLSDNSRecordsResponseWithDefaults() *RelationshipTLSDNSRecordsResponse`
+`func NewRelationshipTlsDnsRecordsResponseWithDefaults() *RelationshipTlsDnsRecordsResponse`
 
-NewRelationshipTLSDNSRecordsResponseWithDefaults instantiates a new RelationshipTLSDNSRecordsResponse object
+NewRelationshipTlsDnsRecordsResponseWithDefaults instantiates a new RelationshipTlsDnsRecordsResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetDNSRecords
+### GetDnsRecords
 
-`func (o *RelationshipTLSDNSRecordsResponse) GetDNSRecords() RelationshipTLSDNSRecordsResponseDNSRecords`
+`func (o *RelationshipTlsDnsRecordsResponse) GetDnsRecords() RelationshipTlsDnsRecordsResponseDnsRecords`
 
-GetDNSRecords returns the DNSRecords field if non-nil, zero value otherwise.
+GetDnsRecords returns the DnsRecords field if non-nil, zero value otherwise.
 
-### GetDNSRecordsOk
+### GetDnsRecordsOk
 
-`func (o *RelationshipTLSDNSRecordsResponse) GetDNSRecordsOk() (*RelationshipTLSDNSRecordsResponseDNSRecords, bool)`
+`func (o *RelationshipTlsDnsRecordsResponse) GetDnsRecordsOk() (*RelationshipTlsDnsRecordsResponseDnsRecords, bool)`
 
-GetDNSRecordsOk returns a tuple with the DNSRecords field if it's non-nil, zero value otherwise
+GetDnsRecordsOk returns a tuple with the DnsRecords field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetDNSRecords
+### SetDnsRecords
 
-`func (o *RelationshipTLSDNSRecordsResponse) SetDNSRecords(v RelationshipTLSDNSRecordsResponseDNSRecords)`
+`func (o *RelationshipTlsDnsRecordsResponse) SetDnsRecords(v RelationshipTlsDnsRecordsResponseDnsRecords)`
 
-SetDNSRecords sets DNSRecords field to given value.
+SetDnsRecords sets DnsRecords field to given value.
 
-### HasDNSRecords
+### HasDnsRecords
 
-`func (o *RelationshipTLSDNSRecordsResponse) HasDNSRecords() bool`
+`func (o *RelationshipTlsDnsRecordsResponse) HasDnsRecords() bool`
 
-HasDNSRecords returns a boolean if a field has been set.
+HasDnsRecords returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

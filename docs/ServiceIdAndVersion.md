@@ -1,80 +1,82 @@
-# ServiceIDAndVersion
+# ServiceIdAndVersion
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewServiceIDAndVersion
+### NewServiceIdAndVersion
 
-`func NewServiceIDAndVersion() *ServiceIDAndVersion`
+`func NewServiceIdAndVersion() *ServiceIdAndVersion`
 
-NewServiceIDAndVersion instantiates a new ServiceIDAndVersion object
+NewServiceIdAndVersion instantiates a new ServiceIdAndVersion object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewServiceIDAndVersionWithDefaults
+### NewServiceIdAndVersionWithDefaults
 
-`func NewServiceIDAndVersionWithDefaults() *ServiceIDAndVersion`
+`func NewServiceIdAndVersionWithDefaults() *ServiceIdAndVersion`
 
-NewServiceIDAndVersionWithDefaults instantiates a new ServiceIDAndVersion object
+NewServiceIdAndVersionWithDefaults instantiates a new ServiceIdAndVersion object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetServiceID
+### GetServiceId
 
-`func (o *ServiceIDAndVersion) GetServiceID() string`
+`func (o *ServiceIdAndVersion) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *ServiceIDAndVersion) GetServiceIDOk() (*string, bool)`
+`func (o *ServiceIdAndVersion) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *ServiceIDAndVersion) SetServiceID(v string)`
+`func (o *ServiceIdAndVersion) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *ServiceIDAndVersion) HasServiceID() bool`
+`func (o *ServiceIdAndVersion) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
-`func (o *ServiceIDAndVersion) GetVersion() int32`
+`func (o *ServiceIdAndVersion) GetVersion() int32`
 
 GetVersion returns the Version field if non-nil, zero value otherwise.
 
 ### GetVersionOk
 
-`func (o *ServiceIDAndVersion) GetVersionOk() (*int32, bool)`
+`func (o *ServiceIdAndVersion) GetVersionOk() (*int32, bool)`
 
 GetVersionOk returns a tuple with the Version field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersion
 
-`func (o *ServiceIDAndVersion) SetVersion(v int32)`
+`func (o *ServiceIdAndVersion) SetVersion(v int32)`
 
 SetVersion sets Version field to given value.
 
 ### HasVersion
 
-`func (o *ServiceIDAndVersion) HasVersion() bool`
+`func (o *ServiceIdAndVersion) HasVersion() bool`
 
 HasVersion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

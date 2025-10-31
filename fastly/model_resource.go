@@ -19,7 +19,7 @@ import (
 // Resource struct for Resource
 type Resource struct {
 	// The ID of the underlying linked resource.
-	ResourceID *string `json:"resource_id,omitempty"`
+	ResourceId *string `json:"resource_id,omitempty"`
 	// The name of the resource link. Note this is separate from the resource store name and might not match the store name.
 	Name                 *string `json:"name,omitempty"`
 	AdditionalProperties map[string]any
@@ -44,36 +44,36 @@ func NewResourceWithDefaults() *Resource {
 	return &this
 }
 
-// GetResourceID returns the ResourceID field value if set, zero value otherwise.
-func (o *Resource) GetResourceID() string {
-	if o == nil || o.ResourceID == nil {
+// GetResourceId returns the ResourceId field value if set, zero value otherwise.
+func (o *Resource) GetResourceId() string {
+	if o == nil || o.ResourceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ResourceID
+	return *o.ResourceId
 }
 
-// GetResourceIDOk returns a tuple with the ResourceID field value if set, nil otherwise
+// GetResourceIdOk returns a tuple with the ResourceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Resource) GetResourceIDOk() (*string, bool) {
-	if o == nil || o.ResourceID == nil {
+func (o *Resource) GetResourceIdOk() (*string, bool) {
+	if o == nil || o.ResourceId == nil {
 		return nil, false
 	}
-	return o.ResourceID, true
+	return o.ResourceId, true
 }
 
-// HasResourceID returns a boolean if a field has been set.
-func (o *Resource) HasResourceID() bool {
-	if o != nil && o.ResourceID != nil {
+// HasResourceId returns a boolean if a field has been set.
+func (o *Resource) HasResourceId() bool {
+	if o != nil && o.ResourceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetResourceID gets a reference to the given string and assigns it to the ResourceID field.
-func (o *Resource) SetResourceID(v string) {
-	o.ResourceID = &v
+// SetResourceId gets a reference to the given string and assigns it to the ResourceId field.
+func (o *Resource) SetResourceId(v string) {
+	o.ResourceId = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -112,8 +112,8 @@ func (o *Resource) SetName(v string) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o Resource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ResourceID != nil {
-		toSerialize["resource_id"] = o.ResourceID
+	if o.ResourceId != nil {
+		toSerialize["resource_id"] = o.ResourceId
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

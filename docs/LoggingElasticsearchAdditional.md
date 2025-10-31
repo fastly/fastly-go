@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Index** | Pointer to **string** | The name of the Elasticsearch index to send documents (logs) to. The index must follow the Elasticsearch [index format rules](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html). We support [strftime](https://www.man7.org/linux/man-pages/man3/strftime.3.html) interpolated variables inside braces prefixed with a pound symbol. For example, `#{%F}` will interpolate as `YYYY-MM-DD` with today&#39;s date. | [optional] 
-**URL** | Pointer to **string** | The URL to stream logs to. Must use HTTPS. | [optional] 
+**Url** | Pointer to **string** | The URL to stream logs to. Must use HTTPS. | [optional] 
 **Pipeline** | Pointer to **NullableString** | The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html). | [optional] 
 **User** | Pointer to **NullableString** | Basic Auth username. | [optional] 
 **Password** | Pointer to **NullableString** | Basic Auth password. | [optional] 
@@ -55,30 +55,30 @@ SetIndex sets Index field to given value.
 
 HasIndex returns a boolean if a field has been set.
 
-### GetURL
+### GetUrl
 
-`func (o *LoggingElasticsearchAdditional) GetURL() string`
+`func (o *LoggingElasticsearchAdditional) GetUrl() string`
 
-GetURL returns the URL field if non-nil, zero value otherwise.
+GetUrl returns the Url field if non-nil, zero value otherwise.
 
-### GetURLOk
+### GetUrlOk
 
-`func (o *LoggingElasticsearchAdditional) GetURLOk() (*string, bool)`
+`func (o *LoggingElasticsearchAdditional) GetUrlOk() (*string, bool)`
 
-GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURL
+### SetUrl
 
-`func (o *LoggingElasticsearchAdditional) SetURL(v string)`
+`func (o *LoggingElasticsearchAdditional) SetUrl(v string)`
 
-SetURL sets URL field to given value.
+SetUrl sets Url field to given value.
 
-### HasURL
+### HasUrl
 
-`func (o *LoggingElasticsearchAdditional) HasURL() bool`
+`func (o *LoggingElasticsearchAdditional) HasUrl() bool`
 
-HasURL returns a boolean if a field has been set.
+HasUrl returns a boolean if a field has been set.
 
 ### GetPipeline
 
@@ -212,3 +212,5 @@ HasFormat returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BillingContactID** | Pointer to **NullableString** | The alphanumeric string representing the primary billing contact. | [optional] 
+**BillingContactId** | Pointer to **NullableString** | The alphanumeric string representing the primary billing contact. | [optional] 
 **BillingNetworkType** | Pointer to **string** | Customer&#39;s current network revenue type. | [optional] 
 **BillingRef** | Pointer to **NullableString** | Used for adding purchased orders to customer&#39;s account. | [optional] 
 **CanConfigureWordpress** | Pointer to **NullableBool** | Whether this customer can view or edit wordpress. | [optional] [readonly] 
@@ -18,16 +18,16 @@ Name | Type | Description | Notes
 **HasOpenstackLogging** | Pointer to **bool** | Specifies whether the account has enabled or not enabled openstack logging. | [optional] 
 **HasPci** | Pointer to **bool** | Specifies whether the account can edit PCI for a service. | [optional] 
 **HasPciPasswords** | Pointer to **bool** | Specifies whether PCI passwords are required for the account. | [optional] [readonly] 
-**IPWhitelist** | Pointer to **string** | The range of IP addresses authorized to access the customer account. | [optional] 
-**LegalContactID** | Pointer to **NullableString** | The alphanumeric string identifying the account&#39;s legal contact. | [optional] 
+**IpWhitelist** | Pointer to **string** | The range of IP addresses authorized to access the customer account. | [optional] 
+**LegalContactId** | Pointer to **NullableString** | The alphanumeric string identifying the account&#39;s legal contact. | [optional] 
 **Name** | Pointer to **string** | The name of the customer, generally the company name. | [optional] 
-**OwnerID** | Pointer to **string** | The alphanumeric string identifying the account owner. | [optional] 
+**OwnerId** | Pointer to **string** | The alphanumeric string identifying the account owner. | [optional] 
 **PhoneNumber** | Pointer to **string** | The phone number associated with the account. | [optional] 
 **PostalAddress** | Pointer to **NullableString** | The postal address associated with the account. | [optional] 
 **PricingPlan** | Pointer to **string** | The pricing plan this customer is under. | [optional] 
-**PricingPlanID** | Pointer to **string** | The alphanumeric string identifying the pricing plan. | [optional] 
-**SecurityContactID** | Pointer to **NullableString** | The alphanumeric string identifying the account&#39;s security contact. | [optional] 
-**TechnicalContactID** | Pointer to **NullableString** | The alphanumeric string identifying the account&#39;s technical contact. | [optional] 
+**PricingPlanId** | Pointer to **string** | The alphanumeric string identifying the pricing plan. | [optional] 
+**SecurityContactId** | Pointer to **NullableString** | The alphanumeric string identifying the account&#39;s security contact. | [optional] 
+**TechnicalContactId** | Pointer to **NullableString** | The alphanumeric string identifying the account&#39;s technical contact. | [optional] 
 
 ## Methods
 
@@ -48,41 +48,41 @@ NewCustomerWithDefaults instantiates a new Customer object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetBillingContactID
+### GetBillingContactId
 
-`func (o *Customer) GetBillingContactID() string`
+`func (o *Customer) GetBillingContactId() string`
 
-GetBillingContactID returns the BillingContactID field if non-nil, zero value otherwise.
+GetBillingContactId returns the BillingContactId field if non-nil, zero value otherwise.
 
-### GetBillingContactIDOk
+### GetBillingContactIdOk
 
-`func (o *Customer) GetBillingContactIDOk() (*string, bool)`
+`func (o *Customer) GetBillingContactIdOk() (*string, bool)`
 
-GetBillingContactIDOk returns a tuple with the BillingContactID field if it's non-nil, zero value otherwise
+GetBillingContactIdOk returns a tuple with the BillingContactId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBillingContactID
+### SetBillingContactId
 
-`func (o *Customer) SetBillingContactID(v string)`
+`func (o *Customer) SetBillingContactId(v string)`
 
-SetBillingContactID sets BillingContactID field to given value.
+SetBillingContactId sets BillingContactId field to given value.
 
-### HasBillingContactID
+### HasBillingContactId
 
-`func (o *Customer) HasBillingContactID() bool`
+`func (o *Customer) HasBillingContactId() bool`
 
-HasBillingContactID returns a boolean if a field has been set.
+HasBillingContactId returns a boolean if a field has been set.
 
-### SetBillingContactIDNil
+### SetBillingContactIdNil
 
-`func (o *Customer) SetBillingContactIDNil(b bool)`
+`func (o *Customer) SetBillingContactIdNil(b bool)`
 
- SetBillingContactIDNil sets the value for BillingContactID to be an explicit nil
+ SetBillingContactIdNil sets the value for BillingContactId to be an explicit nil
 
-### UnsetBillingContactID
-`func (o *Customer) UnsetBillingContactID()`
+### UnsetBillingContactId
+`func (o *Customer) UnsetBillingContactId()`
 
-UnsetBillingContactID ensures that no value is present for BillingContactID, not even an explicit nil
+UnsetBillingContactId ensures that no value is present for BillingContactId, not even an explicit nil
 ### GetBillingNetworkType
 
 `func (o *Customer) GetBillingNetworkType() string`
@@ -428,66 +428,66 @@ SetHasPciPasswords sets HasPciPasswords field to given value.
 
 HasHasPciPasswords returns a boolean if a field has been set.
 
-### GetIPWhitelist
+### GetIpWhitelist
 
-`func (o *Customer) GetIPWhitelist() string`
+`func (o *Customer) GetIpWhitelist() string`
 
-GetIPWhitelist returns the IPWhitelist field if non-nil, zero value otherwise.
+GetIpWhitelist returns the IpWhitelist field if non-nil, zero value otherwise.
 
-### GetIPWhitelistOk
+### GetIpWhitelistOk
 
-`func (o *Customer) GetIPWhitelistOk() (*string, bool)`
+`func (o *Customer) GetIpWhitelistOk() (*string, bool)`
 
-GetIPWhitelistOk returns a tuple with the IPWhitelist field if it's non-nil, zero value otherwise
+GetIpWhitelistOk returns a tuple with the IpWhitelist field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIPWhitelist
+### SetIpWhitelist
 
-`func (o *Customer) SetIPWhitelist(v string)`
+`func (o *Customer) SetIpWhitelist(v string)`
 
-SetIPWhitelist sets IPWhitelist field to given value.
+SetIpWhitelist sets IpWhitelist field to given value.
 
-### HasIPWhitelist
+### HasIpWhitelist
 
-`func (o *Customer) HasIPWhitelist() bool`
+`func (o *Customer) HasIpWhitelist() bool`
 
-HasIPWhitelist returns a boolean if a field has been set.
+HasIpWhitelist returns a boolean if a field has been set.
 
-### GetLegalContactID
+### GetLegalContactId
 
-`func (o *Customer) GetLegalContactID() string`
+`func (o *Customer) GetLegalContactId() string`
 
-GetLegalContactID returns the LegalContactID field if non-nil, zero value otherwise.
+GetLegalContactId returns the LegalContactId field if non-nil, zero value otherwise.
 
-### GetLegalContactIDOk
+### GetLegalContactIdOk
 
-`func (o *Customer) GetLegalContactIDOk() (*string, bool)`
+`func (o *Customer) GetLegalContactIdOk() (*string, bool)`
 
-GetLegalContactIDOk returns a tuple with the LegalContactID field if it's non-nil, zero value otherwise
+GetLegalContactIdOk returns a tuple with the LegalContactId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetLegalContactID
+### SetLegalContactId
 
-`func (o *Customer) SetLegalContactID(v string)`
+`func (o *Customer) SetLegalContactId(v string)`
 
-SetLegalContactID sets LegalContactID field to given value.
+SetLegalContactId sets LegalContactId field to given value.
 
-### HasLegalContactID
+### HasLegalContactId
 
-`func (o *Customer) HasLegalContactID() bool`
+`func (o *Customer) HasLegalContactId() bool`
 
-HasLegalContactID returns a boolean if a field has been set.
+HasLegalContactId returns a boolean if a field has been set.
 
-### SetLegalContactIDNil
+### SetLegalContactIdNil
 
-`func (o *Customer) SetLegalContactIDNil(b bool)`
+`func (o *Customer) SetLegalContactIdNil(b bool)`
 
- SetLegalContactIDNil sets the value for LegalContactID to be an explicit nil
+ SetLegalContactIdNil sets the value for LegalContactId to be an explicit nil
 
-### UnsetLegalContactID
-`func (o *Customer) UnsetLegalContactID()`
+### UnsetLegalContactId
+`func (o *Customer) UnsetLegalContactId()`
 
-UnsetLegalContactID ensures that no value is present for LegalContactID, not even an explicit nil
+UnsetLegalContactId ensures that no value is present for LegalContactId, not even an explicit nil
 ### GetName
 
 `func (o *Customer) GetName() string`
@@ -513,30 +513,30 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetOwnerID
+### GetOwnerId
 
-`func (o *Customer) GetOwnerID() string`
+`func (o *Customer) GetOwnerId() string`
 
-GetOwnerID returns the OwnerID field if non-nil, zero value otherwise.
+GetOwnerId returns the OwnerId field if non-nil, zero value otherwise.
 
-### GetOwnerIDOk
+### GetOwnerIdOk
 
-`func (o *Customer) GetOwnerIDOk() (*string, bool)`
+`func (o *Customer) GetOwnerIdOk() (*string, bool)`
 
-GetOwnerIDOk returns a tuple with the OwnerID field if it's non-nil, zero value otherwise
+GetOwnerIdOk returns a tuple with the OwnerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetOwnerID
+### SetOwnerId
 
-`func (o *Customer) SetOwnerID(v string)`
+`func (o *Customer) SetOwnerId(v string)`
 
-SetOwnerID sets OwnerID field to given value.
+SetOwnerId sets OwnerId field to given value.
 
-### HasOwnerID
+### HasOwnerId
 
-`func (o *Customer) HasOwnerID() bool`
+`func (o *Customer) HasOwnerId() bool`
 
-HasOwnerID returns a boolean if a field has been set.
+HasOwnerId returns a boolean if a field has been set.
 
 ### GetPhoneNumber
 
@@ -623,100 +623,102 @@ SetPricingPlan sets PricingPlan field to given value.
 
 HasPricingPlan returns a boolean if a field has been set.
 
-### GetPricingPlanID
+### GetPricingPlanId
 
-`func (o *Customer) GetPricingPlanID() string`
+`func (o *Customer) GetPricingPlanId() string`
 
-GetPricingPlanID returns the PricingPlanID field if non-nil, zero value otherwise.
+GetPricingPlanId returns the PricingPlanId field if non-nil, zero value otherwise.
 
-### GetPricingPlanIDOk
+### GetPricingPlanIdOk
 
-`func (o *Customer) GetPricingPlanIDOk() (*string, bool)`
+`func (o *Customer) GetPricingPlanIdOk() (*string, bool)`
 
-GetPricingPlanIDOk returns a tuple with the PricingPlanID field if it's non-nil, zero value otherwise
+GetPricingPlanIdOk returns a tuple with the PricingPlanId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPricingPlanID
+### SetPricingPlanId
 
-`func (o *Customer) SetPricingPlanID(v string)`
+`func (o *Customer) SetPricingPlanId(v string)`
 
-SetPricingPlanID sets PricingPlanID field to given value.
+SetPricingPlanId sets PricingPlanId field to given value.
 
-### HasPricingPlanID
+### HasPricingPlanId
 
-`func (o *Customer) HasPricingPlanID() bool`
+`func (o *Customer) HasPricingPlanId() bool`
 
-HasPricingPlanID returns a boolean if a field has been set.
+HasPricingPlanId returns a boolean if a field has been set.
 
-### GetSecurityContactID
+### GetSecurityContactId
 
-`func (o *Customer) GetSecurityContactID() string`
+`func (o *Customer) GetSecurityContactId() string`
 
-GetSecurityContactID returns the SecurityContactID field if non-nil, zero value otherwise.
+GetSecurityContactId returns the SecurityContactId field if non-nil, zero value otherwise.
 
-### GetSecurityContactIDOk
+### GetSecurityContactIdOk
 
-`func (o *Customer) GetSecurityContactIDOk() (*string, bool)`
+`func (o *Customer) GetSecurityContactIdOk() (*string, bool)`
 
-GetSecurityContactIDOk returns a tuple with the SecurityContactID field if it's non-nil, zero value otherwise
+GetSecurityContactIdOk returns a tuple with the SecurityContactId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSecurityContactID
+### SetSecurityContactId
 
-`func (o *Customer) SetSecurityContactID(v string)`
+`func (o *Customer) SetSecurityContactId(v string)`
 
-SetSecurityContactID sets SecurityContactID field to given value.
+SetSecurityContactId sets SecurityContactId field to given value.
 
-### HasSecurityContactID
+### HasSecurityContactId
 
-`func (o *Customer) HasSecurityContactID() bool`
+`func (o *Customer) HasSecurityContactId() bool`
 
-HasSecurityContactID returns a boolean if a field has been set.
+HasSecurityContactId returns a boolean if a field has been set.
 
-### SetSecurityContactIDNil
+### SetSecurityContactIdNil
 
-`func (o *Customer) SetSecurityContactIDNil(b bool)`
+`func (o *Customer) SetSecurityContactIdNil(b bool)`
 
- SetSecurityContactIDNil sets the value for SecurityContactID to be an explicit nil
+ SetSecurityContactIdNil sets the value for SecurityContactId to be an explicit nil
 
-### UnsetSecurityContactID
-`func (o *Customer) UnsetSecurityContactID()`
+### UnsetSecurityContactId
+`func (o *Customer) UnsetSecurityContactId()`
 
-UnsetSecurityContactID ensures that no value is present for SecurityContactID, not even an explicit nil
-### GetTechnicalContactID
+UnsetSecurityContactId ensures that no value is present for SecurityContactId, not even an explicit nil
+### GetTechnicalContactId
 
-`func (o *Customer) GetTechnicalContactID() string`
+`func (o *Customer) GetTechnicalContactId() string`
 
-GetTechnicalContactID returns the TechnicalContactID field if non-nil, zero value otherwise.
+GetTechnicalContactId returns the TechnicalContactId field if non-nil, zero value otherwise.
 
-### GetTechnicalContactIDOk
+### GetTechnicalContactIdOk
 
-`func (o *Customer) GetTechnicalContactIDOk() (*string, bool)`
+`func (o *Customer) GetTechnicalContactIdOk() (*string, bool)`
 
-GetTechnicalContactIDOk returns a tuple with the TechnicalContactID field if it's non-nil, zero value otherwise
+GetTechnicalContactIdOk returns a tuple with the TechnicalContactId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTechnicalContactID
+### SetTechnicalContactId
 
-`func (o *Customer) SetTechnicalContactID(v string)`
+`func (o *Customer) SetTechnicalContactId(v string)`
 
-SetTechnicalContactID sets TechnicalContactID field to given value.
+SetTechnicalContactId sets TechnicalContactId field to given value.
 
-### HasTechnicalContactID
+### HasTechnicalContactId
 
-`func (o *Customer) HasTechnicalContactID() bool`
+`func (o *Customer) HasTechnicalContactId() bool`
 
-HasTechnicalContactID returns a boolean if a field has been set.
+HasTechnicalContactId returns a boolean if a field has been set.
 
-### SetTechnicalContactIDNil
+### SetTechnicalContactIdNil
 
-`func (o *Customer) SetTechnicalContactIDNil(b bool)`
+`func (o *Customer) SetTechnicalContactIdNil(b bool)`
 
- SetTechnicalContactIDNil sets the value for TechnicalContactID to be an explicit nil
+ SetTechnicalContactIdNil sets the value for TechnicalContactId to be an explicit nil
 
-### UnsetTechnicalContactID
-`func (o *Customer) UnsetTechnicalContactID()`
+### UnsetTechnicalContactId
+`func (o *Customer) UnsetTechnicalContactId()`
 
-UnsetTechnicalContactID ensures that no value is present for TechnicalContactID, not even an explicit nil
+UnsetTechnicalContactId ensures that no value is present for TechnicalContactId, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

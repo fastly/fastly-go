@@ -32,13 +32,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RequestSettingsAPI.CreateRequestSettings(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.RequestSettingsAPI.CreateRequestSettings(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RequestSettingsAPI.CreateRequestSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,8 +54,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -101,14 +101,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     requestSettingsName := "requestSettingsName_example" // string | Name for the request settings.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RequestSettingsAPI.DeleteRequestSettings(ctx, serviceID, versionID, requestSettingsName).Execute()
+    resp, r, err := apiClient.RequestSettingsAPI.DeleteRequestSettings(ctx, serviceId, versionId, requestSettingsName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RequestSettingsAPI.DeleteRequestSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -124,8 +124,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **requestSettingsName** | **string** | Name for the request settings. | 
 
 ### Other Parameters
@@ -172,14 +172,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     requestSettingsName := "requestSettingsName_example" // string | Name for the request settings.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RequestSettingsAPI.GetRequestSettings(ctx, serviceID, versionID, requestSettingsName).Execute()
+    resp, r, err := apiClient.RequestSettingsAPI.GetRequestSettings(ctx, serviceId, versionId, requestSettingsName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RequestSettingsAPI.GetRequestSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -195,8 +195,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **requestSettingsName** | **string** | Name for the request settings. | 
 
 ### Other Parameters
@@ -243,13 +243,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RequestSettingsAPI.ListRequestSettings(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.RequestSettingsAPI.ListRequestSettings(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RequestSettingsAPI.ListRequestSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -265,8 +265,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -312,8 +312,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     requestSettingsName := "requestSettingsName_example" // string | Name for the request settings.
     action := "action_example" // string | Allows you to terminate request handling and immediately perform an action. (optional)
     defaultHost := "defaultHost_example" // string | Sets the host header. (optional)
@@ -331,7 +331,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RequestSettingsAPI.UpdateRequestSettings(ctx, serviceID, versionID, requestSettingsName).Action(action).DefaultHost(defaultHost).HashKeys(hashKeys).Name(name).RequestCondition(requestCondition).Xff(xff).BypassBusyWait(bypassBusyWait).ForceMiss(forceMiss).ForceSsl(forceSsl).GeoHeaders(geoHeaders).MaxStaleAge(maxStaleAge).TimerSupport(timerSupport).Execute()
+    resp, r, err := apiClient.RequestSettingsAPI.UpdateRequestSettings(ctx, serviceId, versionId, requestSettingsName).Action(action).DefaultHost(defaultHost).HashKeys(hashKeys).Name(name).RequestCondition(requestCondition).Xff(xff).BypassBusyWait(bypassBusyWait).ForceMiss(forceMiss).ForceSsl(forceSsl).GeoHeaders(geoHeaders).MaxStaleAge(maxStaleAge).TimerSupport(timerSupport).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RequestSettingsAPI.UpdateRequestSettings`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -347,8 +347,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **requestSettingsName** | **string** | Name for the request settings. | 
 
 ### Other Parameters
@@ -374,3 +374,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

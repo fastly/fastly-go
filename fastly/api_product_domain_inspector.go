@@ -36,10 +36,10 @@ type ProductDomainInspectorAPI interface {
 		Disable the Domain Inspector product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIDisableProductDomainInspectorRequest
 	*/
-	DisableProductDomainInspector(ctx context.Context, serviceID string) APIDisableProductDomainInspectorRequest
+	DisableProductDomainInspector(ctx context.Context, serviceId string) APIDisableProductDomainInspectorRequest
 
 	// DisableProductDomainInspectorExecute executes the request
 	DisableProductDomainInspectorExecute(r APIDisableProductDomainInspectorRequest) (*http.Response, error)
@@ -50,10 +50,10 @@ type ProductDomainInspectorAPI interface {
 		Enable the Domain Inspector product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIEnableProductDomainInspectorRequest
 	*/
-	EnableProductDomainInspector(ctx context.Context, serviceID string) APIEnableProductDomainInspectorRequest
+	EnableProductDomainInspector(ctx context.Context, serviceId string) APIEnableProductDomainInspectorRequest
 
 	// EnableProductDomainInspectorExecute executes the request
 	//  @return DomainInspectorResponseBodyEnable
@@ -65,10 +65,10 @@ type ProductDomainInspectorAPI interface {
 		Get the enablement status of the Domain Inspector product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetProductDomainInspectorRequest
 	*/
-	GetProductDomainInspector(ctx context.Context, serviceID string) APIGetProductDomainInspectorRequest
+	GetProductDomainInspector(ctx context.Context, serviceId string) APIGetProductDomainInspectorRequest
 
 	// GetProductDomainInspectorExecute executes the request
 	//  @return DomainInspectorResponseBodyEnable
@@ -96,7 +96,7 @@ type ProductDomainInspectorAPIService service
 type APIDisableProductDomainInspectorRequest struct {
 	ctx        context.Context
 	APIService ProductDomainInspectorAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -110,14 +110,14 @@ DisableProductDomainInspector Disable product
 Disable the Domain Inspector product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIDisableProductDomainInspectorRequest
 */
-func (a *ProductDomainInspectorAPIService) DisableProductDomainInspector(ctx context.Context, serviceID string) APIDisableProductDomainInspectorRequest {
+func (a *ProductDomainInspectorAPIService) DisableProductDomainInspector(ctx context.Context, serviceId string) APIDisableProductDomainInspectorRequest {
 	return APIDisableProductDomainInspectorRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -135,7 +135,7 @@ func (a *ProductDomainInspectorAPIService) DisableProductDomainInspectorExecute(
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/domain_inspector/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -217,7 +217,7 @@ func (a *ProductDomainInspectorAPIService) DisableProductDomainInspectorExecute(
 type APIEnableProductDomainInspectorRequest struct {
 	ctx        context.Context
 	APIService ProductDomainInspectorAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -231,14 +231,14 @@ EnableProductDomainInspector Enable product
 Enable the Domain Inspector product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIEnableProductDomainInspectorRequest
 */
-func (a *ProductDomainInspectorAPIService) EnableProductDomainInspector(ctx context.Context, serviceID string) APIEnableProductDomainInspectorRequest {
+func (a *ProductDomainInspectorAPIService) EnableProductDomainInspector(ctx context.Context, serviceId string) APIEnableProductDomainInspectorRequest {
 	return APIEnableProductDomainInspectorRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -258,7 +258,7 @@ func (a *ProductDomainInspectorAPIService) EnableProductDomainInspectorExecute(r
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/domain_inspector/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -349,7 +349,7 @@ func (a *ProductDomainInspectorAPIService) EnableProductDomainInspectorExecute(r
 type APIGetProductDomainInspectorRequest struct {
 	ctx        context.Context
 	APIService ProductDomainInspectorAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -363,14 +363,14 @@ GetProductDomainInspector Get product enablement status
 Get the enablement status of the Domain Inspector product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetProductDomainInspectorRequest
 */
-func (a *ProductDomainInspectorAPIService) GetProductDomainInspector(ctx context.Context, serviceID string) APIGetProductDomainInspectorRequest {
+func (a *ProductDomainInspectorAPIService) GetProductDomainInspector(ctx context.Context, serviceId string) APIGetProductDomainInspectorRequest {
 	return APIGetProductDomainInspectorRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -390,7 +390,7 @@ func (a *ProductDomainInspectorAPIService) GetProductDomainInspectorExecute(r AP
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/domain_inspector/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

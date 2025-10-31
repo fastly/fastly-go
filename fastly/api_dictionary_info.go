@@ -36,12 +36,12 @@ type DictionaryInfoAPI interface {
 		Retrieve metadata for a single dictionary by ID for a version and service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
-		 @param dictionaryID Alphanumeric string identifying a Dictionary.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
+		 @param dictionaryId Alphanumeric string identifying a Dictionary.
 		 @return APIGetDictionaryInfoRequest
 	*/
-	GetDictionaryInfo(ctx context.Context, serviceID string, versionID int32, dictionaryID string) APIGetDictionaryInfoRequest
+	GetDictionaryInfo(ctx context.Context, serviceId string, versionId int32, dictionaryId string) APIGetDictionaryInfoRequest
 
 	// GetDictionaryInfoExecute executes the request
 	//  @return DictionaryInfoResponse
@@ -55,9 +55,9 @@ type DictionaryInfoAPIService service
 type APIGetDictionaryInfoRequest struct {
 	ctx          context.Context
 	APIService   DictionaryInfoAPI
-	serviceID    string
-	versionID    int32
-	dictionaryID string
+	serviceId    string
+	versionId    int32
+	dictionaryId string
 }
 
 // Execute calls the API using the request data configured.
@@ -71,18 +71,18 @@ GetDictionaryInfo Get dictionary metadata
 Retrieve metadata for a single dictionary by ID for a version and service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
- @param dictionaryID Alphanumeric string identifying a Dictionary.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
+ @param dictionaryId Alphanumeric string identifying a Dictionary.
  @return APIGetDictionaryInfoRequest
 */
-func (a *DictionaryInfoAPIService) GetDictionaryInfo(ctx context.Context, serviceID string, versionID int32, dictionaryID string) APIGetDictionaryInfoRequest {
+func (a *DictionaryInfoAPIService) GetDictionaryInfo(ctx context.Context, serviceId string, versionId int32, dictionaryId string) APIGetDictionaryInfoRequest {
 	return APIGetDictionaryInfoRequest{
 		APIService:   a,
 		ctx:          ctx,
-		serviceID:    serviceID,
-		versionID:    versionID,
-		dictionaryID: dictionaryID,
+		serviceId:    serviceId,
+		versionId:    versionId,
+		dictionaryId: dictionaryId,
 	}
 }
 
@@ -102,9 +102,9 @@ func (a *DictionaryInfoAPIService) GetDictionaryInfoExecute(r APIGetDictionaryIn
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/dictionary/{dictionary_id}/info"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"dictionary_id"+"}", gourl.PathEscape(parameterToString(r.dictionaryId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

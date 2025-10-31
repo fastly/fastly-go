@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CommonName** | Pointer to [**RelationshipMemberTLSDomain**](RelationshipMemberTLSDomain.md) |  | [optional] 
+**CommonName** | Pointer to [**RelationshipMemberTlsDomain**](RelationshipMemberTlsDomain.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCommonName
 
-`func (o *RelationshipCommonName) GetCommonName() RelationshipMemberTLSDomain`
+`func (o *RelationshipCommonName) GetCommonName() RelationshipMemberTlsDomain`
 
 GetCommonName returns the CommonName field if non-nil, zero value otherwise.
 
 ### GetCommonNameOk
 
-`func (o *RelationshipCommonName) GetCommonNameOk() (*RelationshipMemberTLSDomain, bool)`
+`func (o *RelationshipCommonName) GetCommonNameOk() (*RelationshipMemberTlsDomain, bool)`
 
 GetCommonNameOk returns a tuple with the CommonName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCommonName
 
-`func (o *RelationshipCommonName) SetCommonName(v RelationshipMemberTLSDomain)`
+`func (o *RelationshipCommonName) SetCommonName(v RelationshipMemberTlsDomain)`
 
 SetCommonName sets CommonName field to given value.
 
@@ -52,3 +52,5 @@ HasCommonName returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

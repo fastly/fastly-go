@@ -16,70 +16,70 @@ import (
 	"encoding/json"
 )
 
-// DimensionURL struct for DimensionURL
-type DimensionURL struct {
+// DimensionUrl struct for DimensionUrl
+type DimensionUrl struct {
 	// The URL path for this dimension.
-	URL                  *string `json:"url,omitempty"`
+	Url                  *string `json:"url,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _DimensionURL DimensionURL
+type _DimensionUrl DimensionUrl
 
-// NewDimensionURL instantiates a new DimensionURL object
+// NewDimensionUrl instantiates a new DimensionUrl object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDimensionURL() *DimensionURL {
-	this := DimensionURL{}
+func NewDimensionUrl() *DimensionUrl {
+	this := DimensionUrl{}
 	return &this
 }
 
-// NewDimensionURLWithDefaults instantiates a new DimensionURL object
+// NewDimensionUrlWithDefaults instantiates a new DimensionUrl object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewDimensionURLWithDefaults() *DimensionURL {
-	this := DimensionURL{}
+func NewDimensionUrlWithDefaults() *DimensionUrl {
+	this := DimensionUrl{}
 	return &this
 }
 
-// GetURL returns the URL field value if set, zero value otherwise.
-func (o *DimensionURL) GetURL() string {
-	if o == nil || o.URL == nil {
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *DimensionUrl) GetUrl() string {
+	if o == nil || o.Url == nil {
 		var ret string
 		return ret
 	}
-	return *o.URL
+	return *o.Url
 }
 
-// GetURLOk returns a tuple with the URL field value if set, nil otherwise
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DimensionURL) GetURLOk() (*string, bool) {
-	if o == nil || o.URL == nil {
+func (o *DimensionUrl) GetUrlOk() (*string, bool) {
+	if o == nil || o.Url == nil {
 		return nil, false
 	}
-	return o.URL, true
+	return o.Url, true
 }
 
-// HasURL returns a boolean if a field has been set.
-func (o *DimensionURL) HasURL() bool {
-	if o != nil && o.URL != nil {
+// HasUrl returns a boolean if a field has been set.
+func (o *DimensionUrl) HasUrl() bool {
+	if o != nil && o.Url != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetURL gets a reference to the given string and assigns it to the URL field.
-func (o *DimensionURL) SetURL(v string) {
-	o.URL = &v
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *DimensionUrl) SetUrl(v string) {
+	o.Url = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o DimensionURL) MarshalJSON() ([]byte, error) {
+func (o DimensionUrl) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.URL != nil {
-		toSerialize["url"] = o.URL
+	if o.Url != nil {
+		toSerialize["url"] = o.Url
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -91,11 +91,11 @@ func (o DimensionURL) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *DimensionURL) UnmarshalJSON(bytes []byte) (err error) {
-	varDimensionURL := _DimensionURL{}
+func (o *DimensionUrl) UnmarshalJSON(bytes []byte) (err error) {
+	varDimensionUrl := _DimensionUrl{}
 
-	if err = json.Unmarshal(bytes, &varDimensionURL); err == nil {
-		*o = DimensionURL(varDimensionURL)
+	if err = json.Unmarshal(bytes, &varDimensionUrl); err == nil {
+		*o = DimensionUrl(varDimensionUrl)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -108,48 +108,48 @@ func (o *DimensionURL) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableDimensionURL is a helper abstraction for handling nullable dimensionurl types.
-type NullableDimensionURL struct {
-	value *DimensionURL
+// NullableDimensionUrl is a helper abstraction for handling nullable dimensionurl types.
+type NullableDimensionUrl struct {
+	value *DimensionUrl
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableDimensionURL) Get() *DimensionURL {
+func (v NullableDimensionUrl) Get() *DimensionUrl {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableDimensionURL) Set(val *DimensionURL) {
+func (v *NullableDimensionUrl) Set(val *DimensionUrl) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableDimensionURL) IsSet() bool {
+func (v NullableDimensionUrl) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableDimensionURL) Unset() {
+func (v *NullableDimensionUrl) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableDimensionURL returns a pointer to a new instance of NullableDimensionURL.
-func NewNullableDimensionURL(val *DimensionURL) *NullableDimensionURL {
-	return &NullableDimensionURL{value: val, isSet: true}
+// NewNullableDimensionUrl returns a pointer to a new instance of NullableDimensionUrl.
+func NewNullableDimensionUrl(val *DimensionUrl) *NullableDimensionUrl {
+	return &NullableDimensionUrl{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableDimensionURL) MarshalJSON() ([]byte, error) {
+func (v NullableDimensionUrl) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableDimensionURL) UnmarshalJSON(src []byte) error {
+func (v *NullableDimensionUrl) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

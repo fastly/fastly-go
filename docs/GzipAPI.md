@@ -32,8 +32,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     cacheCondition := "cacheCondition_example" // string | Name of the cache condition controlling when this configuration applies. (optional)
     contentTypes := "contentTypes_example" // string | Space-separated list of content types to compress. If you omit this field a default list will be used. (optional)
     extensions := "extensions_example" // string | Space-separated list of file extensions to compress. If you omit this field a default list will be used. (optional)
@@ -42,7 +42,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.GzipAPI.CreateGzipConfig(ctx, serviceID, versionID).CacheCondition(cacheCondition).ContentTypes(contentTypes).Extensions(extensions).Name(name).Execute()
+    resp, r, err := apiClient.GzipAPI.CreateGzipConfig(ctx, serviceId, versionId).CacheCondition(cacheCondition).ContentTypes(contentTypes).Extensions(extensions).Name(name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GzipAPI.CreateGzipConfig`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,8 +58,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -105,14 +105,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     gzipName := "gzipName_example" // string | Name of the gzip configuration.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.GzipAPI.DeleteGzipConfig(ctx, serviceID, versionID, gzipName).Execute()
+    resp, r, err := apiClient.GzipAPI.DeleteGzipConfig(ctx, serviceId, versionId, gzipName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GzipAPI.DeleteGzipConfig`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -128,8 +128,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **gzipName** | **string** | Name of the gzip configuration. | 
 
 ### Other Parameters
@@ -176,14 +176,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     gzipName := "gzipName_example" // string | Name of the gzip configuration.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.GzipAPI.GetGzipConfigs(ctx, serviceID, versionID, gzipName).Execute()
+    resp, r, err := apiClient.GzipAPI.GetGzipConfigs(ctx, serviceId, versionId, gzipName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GzipAPI.GetGzipConfigs`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -199,8 +199,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **gzipName** | **string** | Name of the gzip configuration. | 
 
 ### Other Parameters
@@ -247,13 +247,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.GzipAPI.ListGzipConfigs(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.GzipAPI.ListGzipConfigs(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GzipAPI.ListGzipConfigs`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -269,8 +269,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -316,8 +316,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     gzipName := "gzipName_example" // string | Name of the gzip configuration.
     cacheCondition := "cacheCondition_example" // string | Name of the cache condition controlling when this configuration applies. (optional)
     contentTypes := "contentTypes_example" // string | Space-separated list of content types to compress. If you omit this field a default list will be used. (optional)
@@ -327,7 +327,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.GzipAPI.UpdateGzipConfig(ctx, serviceID, versionID, gzipName).CacheCondition(cacheCondition).ContentTypes(contentTypes).Extensions(extensions).Name(name).Execute()
+    resp, r, err := apiClient.GzipAPI.UpdateGzipConfig(ctx, serviceId, versionId, gzipName).CacheCondition(cacheCondition).ContentTypes(contentTypes).Extensions(extensions).Name(name).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GzipAPI.UpdateGzipConfig`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -343,8 +343,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **gzipName** | **string** | Name of the gzip configuration. | 
 
 ### Other Parameters
@@ -370,3 +370,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

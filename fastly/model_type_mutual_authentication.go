@@ -20,7 +20,7 @@ import (
 // TypeMutualAuthentication Resource type
 type TypeMutualAuthentication string
 
-// List of resourceTypemutual_authentication
+// List of type_mutual_authentication
 const (
 	TYPEMUTUALAUTHENTICATION_MUTUAL_AUTHENTICATION TypeMutualAuthentication = "mutual_authentication"
 )
@@ -69,7 +69,7 @@ func (v TypeMutualAuthentication) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to resourceTypemutual_authentication value
+// Ptr returns reference to type_mutual_authentication value
 func (v TypeMutualAuthentication) Ptr() *TypeMutualAuthentication {
 	return &v
 }

@@ -21,9 +21,9 @@ type PublishItem struct {
 	// The channel to publish the message on.
 	Channel string `json:"channel"`
 	// The ID of the message.
-	ID *string `json:"id,omitempty"`
+	Id *string `json:"id,omitempty"`
 	// The ID of the previous message published on the same channel.
-	PrevID               *string            `json:"prev-id,omitempty"`
+	PrevId               *string            `json:"prev-id,omitempty"`
 	Formats              PublishItemFormats `json:"formats"`
 	AdditionalProperties map[string]any
 }
@@ -73,68 +73,68 @@ func (o *PublishItem) SetChannel(v string) {
 	o.Channel = v
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *PublishItem) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *PublishItem) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PublishItem) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *PublishItem) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *PublishItem) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *PublishItem) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *PublishItem) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *PublishItem) SetId(v string) {
+	o.Id = &v
 }
 
-// GetPrevID returns the PrevID field value if set, zero value otherwise.
-func (o *PublishItem) GetPrevID() string {
-	if o == nil || o.PrevID == nil {
+// GetPrevId returns the PrevId field value if set, zero value otherwise.
+func (o *PublishItem) GetPrevId() string {
+	if o == nil || o.PrevId == nil {
 		var ret string
 		return ret
 	}
-	return *o.PrevID
+	return *o.PrevId
 }
 
-// GetPrevIDOk returns a tuple with the PrevID field value if set, nil otherwise
+// GetPrevIdOk returns a tuple with the PrevId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PublishItem) GetPrevIDOk() (*string, bool) {
-	if o == nil || o.PrevID == nil {
+func (o *PublishItem) GetPrevIdOk() (*string, bool) {
+	if o == nil || o.PrevId == nil {
 		return nil, false
 	}
-	return o.PrevID, true
+	return o.PrevId, true
 }
 
-// HasPrevID returns a boolean if a field has been set.
-func (o *PublishItem) HasPrevID() bool {
-	if o != nil && o.PrevID != nil {
+// HasPrevId returns a boolean if a field has been set.
+func (o *PublishItem) HasPrevId() bool {
+	if o != nil && o.PrevId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPrevID gets a reference to the given string and assigns it to the PrevID field.
-func (o *PublishItem) SetPrevID(v string) {
-	o.PrevID = &v
+// SetPrevId gets a reference to the given string and assigns it to the PrevId field.
+func (o *PublishItem) SetPrevId(v string) {
+	o.PrevId = &v
 }
 
 // GetFormats returns the Formats field value
@@ -168,11 +168,11 @@ func (o PublishItem) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["channel"] = o.Channel
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
-	if o.PrevID != nil {
-		toSerialize["prev-id"] = o.PrevID
+	if o.PrevId != nil {
+		toSerialize["prev-id"] = o.PrevId
 	}
 	if true {
 		toSerialize["formats"] = o.Formats

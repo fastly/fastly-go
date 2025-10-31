@@ -16,41 +16,41 @@ import (
 	"encoding/json"
 )
 
-// RelationshipDefaultTLSCertificateDefaultCertificateData struct for RelationshipDefaultTLSCertificateDefaultCertificateData
-type RelationshipDefaultTLSCertificateDefaultCertificateData struct {
-	Type *TypeTLSCertificate `json:"type,omitempty"`
+// RelationshipDefaultTlsCertificateDefaultCertificateData struct for RelationshipDefaultTlsCertificateDefaultCertificateData
+type RelationshipDefaultTlsCertificateDefaultCertificateData struct {
+	Type *TypeTlsCertificate `json:"type,omitempty"`
 	// Alphanumeric string identifying the default TLS certificate.
-	ID                   *string `json:"id,omitempty"`
+	Id                   *string `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _RelationshipDefaultTLSCertificateDefaultCertificateData RelationshipDefaultTLSCertificateDefaultCertificateData
+type _RelationshipDefaultTlsCertificateDefaultCertificateData RelationshipDefaultTlsCertificateDefaultCertificateData
 
-// NewRelationshipDefaultTLSCertificateDefaultCertificateData instantiates a new RelationshipDefaultTLSCertificateDefaultCertificateData object
+// NewRelationshipDefaultTlsCertificateDefaultCertificateData instantiates a new RelationshipDefaultTlsCertificateDefaultCertificateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRelationshipDefaultTLSCertificateDefaultCertificateData() *RelationshipDefaultTLSCertificateDefaultCertificateData {
-	this := RelationshipDefaultTLSCertificateDefaultCertificateData{}
-	var resourceType TypeTLSCertificate = TYPETLSCERTIFICATE_TLS_CERTIFICATE
-	this.Type = &resourceType
+func NewRelationshipDefaultTlsCertificateDefaultCertificateData() *RelationshipDefaultTlsCertificateDefaultCertificateData {
+	this := RelationshipDefaultTlsCertificateDefaultCertificateData{}
+	var type_ TypeTlsCertificate = TYPETLSCERTIFICATE_TLS_CERTIFICATE
+	this.Type = &type_
 	return &this
 }
 
-// NewRelationshipDefaultTLSCertificateDefaultCertificateDataWithDefaults instantiates a new RelationshipDefaultTLSCertificateDefaultCertificateData object
+// NewRelationshipDefaultTlsCertificateDefaultCertificateDataWithDefaults instantiates a new RelationshipDefaultTlsCertificateDefaultCertificateData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRelationshipDefaultTLSCertificateDefaultCertificateDataWithDefaults() *RelationshipDefaultTLSCertificateDefaultCertificateData {
-	this := RelationshipDefaultTLSCertificateDefaultCertificateData{}
-	var resourceType TypeTLSCertificate = TYPETLSCERTIFICATE_TLS_CERTIFICATE
-	this.Type = &resourceType
+func NewRelationshipDefaultTlsCertificateDefaultCertificateDataWithDefaults() *RelationshipDefaultTlsCertificateDefaultCertificateData {
+	this := RelationshipDefaultTlsCertificateDefaultCertificateData{}
+	var type_ TypeTlsCertificate = TYPETLSCERTIFICATE_TLS_CERTIFICATE
+	this.Type = &type_
 	return &this
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) GetType() TypeTLSCertificate {
+func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) GetType() TypeTlsCertificate {
 	if o == nil || o.Type == nil {
-		var ret TypeTLSCertificate
+		var ret TypeTlsCertificate
 		return ret
 	}
 	return *o.Type
@@ -58,7 +58,7 @@ func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) GetType() Type
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) GetTypeOk() (*TypeTLSCertificate, bool) {
+func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) GetTypeOk() (*TypeTlsCertificate, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) GetTypeOk() (*
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) HasType() bool {
+func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -74,52 +74,52 @@ func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) HasType() bool
 	return false
 }
 
-// SetType gets a reference to the given TypeTLSCertificate and assigns it to the Type field.
-func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) SetType(v TypeTLSCertificate) {
+// SetType gets a reference to the given TypeTlsCertificate and assigns it to the Type field.
+func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) SetType(v TypeTlsCertificate) {
 	o.Type = &v
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) SetId(v string) {
+	o.Id = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o RelationshipDefaultTLSCertificateDefaultCertificateData) MarshalJSON() ([]byte, error) {
+func (o RelationshipDefaultTlsCertificateDefaultCertificateData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -131,11 +131,11 @@ func (o RelationshipDefaultTLSCertificateDefaultCertificateData) MarshalJSON() (
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) UnmarshalJSON(bytes []byte) (err error) {
-	varRelationshipDefaultTLSCertificateDefaultCertificateData := _RelationshipDefaultTLSCertificateDefaultCertificateData{}
+func (o *RelationshipDefaultTlsCertificateDefaultCertificateData) UnmarshalJSON(bytes []byte) (err error) {
+	varRelationshipDefaultTlsCertificateDefaultCertificateData := _RelationshipDefaultTlsCertificateDefaultCertificateData{}
 
-	if err = json.Unmarshal(bytes, &varRelationshipDefaultTLSCertificateDefaultCertificateData); err == nil {
-		*o = RelationshipDefaultTLSCertificateDefaultCertificateData(varRelationshipDefaultTLSCertificateDefaultCertificateData)
+	if err = json.Unmarshal(bytes, &varRelationshipDefaultTlsCertificateDefaultCertificateData); err == nil {
+		*o = RelationshipDefaultTlsCertificateDefaultCertificateData(varRelationshipDefaultTlsCertificateDefaultCertificateData)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -149,48 +149,48 @@ func (o *RelationshipDefaultTLSCertificateDefaultCertificateData) UnmarshalJSON(
 	return err
 }
 
-// NullableRelationshipDefaultTLSCertificateDefaultCertificateData is a helper abstraction for handling nullable relationshipdefaulttlscertificatedefaultcertificatedata types.
-type NullableRelationshipDefaultTLSCertificateDefaultCertificateData struct {
-	value *RelationshipDefaultTLSCertificateDefaultCertificateData
+// NullableRelationshipDefaultTlsCertificateDefaultCertificateData is a helper abstraction for handling nullable relationshipdefaulttlscertificatedefaultcertificatedata types.
+type NullableRelationshipDefaultTlsCertificateDefaultCertificateData struct {
+	value *RelationshipDefaultTlsCertificateDefaultCertificateData
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipDefaultTLSCertificateDefaultCertificateData) Get() *RelationshipDefaultTLSCertificateDefaultCertificateData {
+func (v NullableRelationshipDefaultTlsCertificateDefaultCertificateData) Get() *RelationshipDefaultTlsCertificateDefaultCertificateData {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipDefaultTLSCertificateDefaultCertificateData) Set(val *RelationshipDefaultTLSCertificateDefaultCertificateData) {
+func (v *NullableRelationshipDefaultTlsCertificateDefaultCertificateData) Set(val *RelationshipDefaultTlsCertificateDefaultCertificateData) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipDefaultTLSCertificateDefaultCertificateData) IsSet() bool {
+func (v NullableRelationshipDefaultTlsCertificateDefaultCertificateData) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipDefaultTLSCertificateDefaultCertificateData) Unset() {
+func (v *NullableRelationshipDefaultTlsCertificateDefaultCertificateData) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipDefaultTLSCertificateDefaultCertificateData returns a pointer to a new instance of NullableRelationshipDefaultTLSCertificateDefaultCertificateData.
-func NewNullableRelationshipDefaultTLSCertificateDefaultCertificateData(val *RelationshipDefaultTLSCertificateDefaultCertificateData) *NullableRelationshipDefaultTLSCertificateDefaultCertificateData {
-	return &NullableRelationshipDefaultTLSCertificateDefaultCertificateData{value: val, isSet: true}
+// NewNullableRelationshipDefaultTlsCertificateDefaultCertificateData returns a pointer to a new instance of NullableRelationshipDefaultTlsCertificateDefaultCertificateData.
+func NewNullableRelationshipDefaultTlsCertificateDefaultCertificateData(val *RelationshipDefaultTlsCertificateDefaultCertificateData) *NullableRelationshipDefaultTlsCertificateDefaultCertificateData {
+	return &NullableRelationshipDefaultTlsCertificateDefaultCertificateData{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipDefaultTLSCertificateDefaultCertificateData) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipDefaultTlsCertificateDefaultCertificateData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipDefaultTLSCertificateDefaultCertificateData) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipDefaultTlsCertificateDefaultCertificateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

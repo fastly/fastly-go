@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StoreID** | Pointer to **string** |  | [optional] [readonly] 
+**StoreId** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -25,30 +25,32 @@ NewConfigStoreItemResponseAllOfWithDefaults instantiates a new ConfigStoreItemRe
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetStoreID
+### GetStoreId
 
-`func (o *ConfigStoreItemResponseAllOf) GetStoreID() string`
+`func (o *ConfigStoreItemResponseAllOf) GetStoreId() string`
 
-GetStoreID returns the StoreID field if non-nil, zero value otherwise.
+GetStoreId returns the StoreId field if non-nil, zero value otherwise.
 
-### GetStoreIDOk
+### GetStoreIdOk
 
-`func (o *ConfigStoreItemResponseAllOf) GetStoreIDOk() (*string, bool)`
+`func (o *ConfigStoreItemResponseAllOf) GetStoreIdOk() (*string, bool)`
 
-GetStoreIDOk returns a tuple with the StoreID field if it's non-nil, zero value otherwise
+GetStoreIdOk returns a tuple with the StoreId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetStoreID
+### SetStoreId
 
-`func (o *ConfigStoreItemResponseAllOf) SetStoreID(v string)`
+`func (o *ConfigStoreItemResponseAllOf) SetStoreId(v string)`
 
-SetStoreID sets StoreID field to given value.
+SetStoreId sets StoreId field to given value.
 
-### HasStoreID
+### HasStoreId
 
-`func (o *ConfigStoreItemResponseAllOf) HasStoreID() bool`
+`func (o *ConfigStoreItemResponseAllOf) HasStoreId() bool`
 
-HasStoreID returns a boolean if a field has been set.
+HasStoreId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

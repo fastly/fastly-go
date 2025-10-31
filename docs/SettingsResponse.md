@@ -5,10 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **GeneralDefaultHost** | Pointer to **string** | The default host name for the version. | [optional] 
-**GeneralDefaultTTL** | Pointer to **int32** | The default time-to-live (TTL) for the version. | [optional] 
+**GeneralDefaultTtl** | Pointer to **int32** | The default time-to-live (TTL) for the version. | [optional] 
 **GeneralStaleIfError** | Pointer to **bool** | Enables serving a stale object if there is an error. | [optional] [default to false]
-**GeneralStaleIfErrorTTL** | Pointer to **int32** | The default time-to-live (TTL) for serving the stale object for the version. | [optional] [default to 43200]
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**GeneralStaleIfErrorTtl** | Pointer to **int32** | The default time-to-live (TTL) for serving the stale object for the version. | [optional] [default to 43200]
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
@@ -55,30 +55,30 @@ SetGeneralDefaultHost sets GeneralDefaultHost field to given value.
 
 HasGeneralDefaultHost returns a boolean if a field has been set.
 
-### GetGeneralDefaultTTL
+### GetGeneralDefaultTtl
 
-`func (o *SettingsResponse) GetGeneralDefaultTTL() int32`
+`func (o *SettingsResponse) GetGeneralDefaultTtl() int32`
 
-GetGeneralDefaultTTL returns the GeneralDefaultTTL field if non-nil, zero value otherwise.
+GetGeneralDefaultTtl returns the GeneralDefaultTtl field if non-nil, zero value otherwise.
 
-### GetGeneralDefaultTTLOk
+### GetGeneralDefaultTtlOk
 
-`func (o *SettingsResponse) GetGeneralDefaultTTLOk() (*int32, bool)`
+`func (o *SettingsResponse) GetGeneralDefaultTtlOk() (*int32, bool)`
 
-GetGeneralDefaultTTLOk returns a tuple with the GeneralDefaultTTL field if it's non-nil, zero value otherwise
+GetGeneralDefaultTtlOk returns a tuple with the GeneralDefaultTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGeneralDefaultTTL
+### SetGeneralDefaultTtl
 
-`func (o *SettingsResponse) SetGeneralDefaultTTL(v int32)`
+`func (o *SettingsResponse) SetGeneralDefaultTtl(v int32)`
 
-SetGeneralDefaultTTL sets GeneralDefaultTTL field to given value.
+SetGeneralDefaultTtl sets GeneralDefaultTtl field to given value.
 
-### HasGeneralDefaultTTL
+### HasGeneralDefaultTtl
 
-`func (o *SettingsResponse) HasGeneralDefaultTTL() bool`
+`func (o *SettingsResponse) HasGeneralDefaultTtl() bool`
 
-HasGeneralDefaultTTL returns a boolean if a field has been set.
+HasGeneralDefaultTtl returns a boolean if a field has been set.
 
 ### GetGeneralStaleIfError
 
@@ -105,55 +105,55 @@ SetGeneralStaleIfError sets GeneralStaleIfError field to given value.
 
 HasGeneralStaleIfError returns a boolean if a field has been set.
 
-### GetGeneralStaleIfErrorTTL
+### GetGeneralStaleIfErrorTtl
 
-`func (o *SettingsResponse) GetGeneralStaleIfErrorTTL() int32`
+`func (o *SettingsResponse) GetGeneralStaleIfErrorTtl() int32`
 
-GetGeneralStaleIfErrorTTL returns the GeneralStaleIfErrorTTL field if non-nil, zero value otherwise.
+GetGeneralStaleIfErrorTtl returns the GeneralStaleIfErrorTtl field if non-nil, zero value otherwise.
 
-### GetGeneralStaleIfErrorTTLOk
+### GetGeneralStaleIfErrorTtlOk
 
-`func (o *SettingsResponse) GetGeneralStaleIfErrorTTLOk() (*int32, bool)`
+`func (o *SettingsResponse) GetGeneralStaleIfErrorTtlOk() (*int32, bool)`
 
-GetGeneralStaleIfErrorTTLOk returns a tuple with the GeneralStaleIfErrorTTL field if it's non-nil, zero value otherwise
+GetGeneralStaleIfErrorTtlOk returns a tuple with the GeneralStaleIfErrorTtl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGeneralStaleIfErrorTTL
+### SetGeneralStaleIfErrorTtl
 
-`func (o *SettingsResponse) SetGeneralStaleIfErrorTTL(v int32)`
+`func (o *SettingsResponse) SetGeneralStaleIfErrorTtl(v int32)`
 
-SetGeneralStaleIfErrorTTL sets GeneralStaleIfErrorTTL field to given value.
+SetGeneralStaleIfErrorTtl sets GeneralStaleIfErrorTtl field to given value.
 
-### HasGeneralStaleIfErrorTTL
+### HasGeneralStaleIfErrorTtl
 
-`func (o *SettingsResponse) HasGeneralStaleIfErrorTTL() bool`
+`func (o *SettingsResponse) HasGeneralStaleIfErrorTtl() bool`
 
-HasGeneralStaleIfErrorTTL returns a boolean if a field has been set.
+HasGeneralStaleIfErrorTtl returns a boolean if a field has been set.
 
-### GetServiceID
+### GetServiceId
 
-`func (o *SettingsResponse) GetServiceID() string`
+`func (o *SettingsResponse) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *SettingsResponse) GetServiceIDOk() (*string, bool)`
+`func (o *SettingsResponse) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *SettingsResponse) SetServiceID(v string)`
+`func (o *SettingsResponse) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *SettingsResponse) HasServiceID() bool`
+`func (o *SettingsResponse) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -182,3 +182,5 @@ HasVersion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

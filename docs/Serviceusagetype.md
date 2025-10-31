@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ProductID** | Pointer to **string** | The product identifier associated with the usage type. This corresponds to a Fastly product offering. | [optional] 
+**ProductId** | Pointer to **string** | The product identifier associated with the usage type. This corresponds to a Fastly product offering. | [optional] 
 **Name** | Pointer to **string** | Full name of the product usage type as it might appear on a customer&#39;s invoice. | [optional] 
 
 ## Methods
@@ -26,30 +26,30 @@ NewServiceusagetypeWithDefaults instantiates a new Serviceusagetype object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetProductID
+### GetProductId
 
-`func (o *Serviceusagetype) GetProductID() string`
+`func (o *Serviceusagetype) GetProductId() string`
 
-GetProductID returns the ProductID field if non-nil, zero value otherwise.
+GetProductId returns the ProductId field if non-nil, zero value otherwise.
 
-### GetProductIDOk
+### GetProductIdOk
 
-`func (o *Serviceusagetype) GetProductIDOk() (*string, bool)`
+`func (o *Serviceusagetype) GetProductIdOk() (*string, bool)`
 
-GetProductIDOk returns a tuple with the ProductID field if it's non-nil, zero value otherwise
+GetProductIdOk returns a tuple with the ProductId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProductID
+### SetProductId
 
-`func (o *Serviceusagetype) SetProductID(v string)`
+`func (o *Serviceusagetype) SetProductId(v string)`
 
-SetProductID sets ProductID field to given value.
+SetProductId sets ProductId field to given value.
 
-### HasProductID
+### HasProductId
 
-`func (o *Serviceusagetype) HasProductID() bool`
+`func (o *Serviceusagetype) HasProductId() bool`
 
-HasProductID returns a boolean if a field has been set.
+HasProductId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -78,3 +78,5 @@ HasName returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

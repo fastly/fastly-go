@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **BucketName** | Pointer to **string** | The name of your OpenStack container. | [optional] 
 **Path** | Pointer to **NullableString** | The path to upload logs to. | [optional] [default to "null"]
 **PublicKey** | Pointer to **NullableString** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to "null"]
-**URL** | Pointer to **string** | Your OpenStack auth url. | [optional] 
+**Url** | Pointer to **string** | Your OpenStack auth url. | [optional] 
 **User** | Pointer to **string** | The username for your OpenStack account. | [optional] 
 
 ## Methods
@@ -150,30 +150,30 @@ HasPublicKey returns a boolean if a field has been set.
 `func (o *LoggingOpenstackAdditional) UnsetPublicKey()`
 
 UnsetPublicKey ensures that no value is present for PublicKey, not even an explicit nil
-### GetURL
+### GetUrl
 
-`func (o *LoggingOpenstackAdditional) GetURL() string`
+`func (o *LoggingOpenstackAdditional) GetUrl() string`
 
-GetURL returns the URL field if non-nil, zero value otherwise.
+GetUrl returns the Url field if non-nil, zero value otherwise.
 
-### GetURLOk
+### GetUrlOk
 
-`func (o *LoggingOpenstackAdditional) GetURLOk() (*string, bool)`
+`func (o *LoggingOpenstackAdditional) GetUrlOk() (*string, bool)`
 
-GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURL
+### SetUrl
 
-`func (o *LoggingOpenstackAdditional) SetURL(v string)`
+`func (o *LoggingOpenstackAdditional) SetUrl(v string)`
 
-SetURL sets URL field to given value.
+SetUrl sets Url field to given value.
 
-### HasURL
+### HasUrl
 
-`func (o *LoggingOpenstackAdditional) HasURL() bool`
+`func (o *LoggingOpenstackAdditional) HasUrl() bool`
 
-HasURL returns a boolean if a field has been set.
+HasUrl returns a boolean if a field has been set.
 
 ### GetUser
 
@@ -202,3 +202,5 @@ HasUser returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

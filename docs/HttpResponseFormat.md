@@ -1,4 +1,4 @@
-# HTTPResponseFormat
+# HttpResponseFormat
 
 ## Properties
 
@@ -12,147 +12,149 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewHTTPResponseFormat
+### NewHttpResponseFormat
 
-`func NewHTTPResponseFormat() *HTTPResponseFormat`
+`func NewHttpResponseFormat() *HttpResponseFormat`
 
-NewHTTPResponseFormat instantiates a new HTTPResponseFormat object
+NewHttpResponseFormat instantiates a new HttpResponseFormat object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewHTTPResponseFormatWithDefaults
+### NewHttpResponseFormatWithDefaults
 
-`func NewHTTPResponseFormatWithDefaults() *HTTPResponseFormat`
+`func NewHttpResponseFormatWithDefaults() *HttpResponseFormat`
 
-NewHTTPResponseFormatWithDefaults instantiates a new HTTPResponseFormat object
+NewHttpResponseFormatWithDefaults instantiates a new HttpResponseFormat object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCode
 
-`func (o *HTTPResponseFormat) GetCode() int32`
+`func (o *HttpResponseFormat) GetCode() int32`
 
 GetCode returns the Code field if non-nil, zero value otherwise.
 
 ### GetCodeOk
 
-`func (o *HTTPResponseFormat) GetCodeOk() (*int32, bool)`
+`func (o *HttpResponseFormat) GetCodeOk() (*int32, bool)`
 
 GetCodeOk returns a tuple with the Code field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCode
 
-`func (o *HTTPResponseFormat) SetCode(v int32)`
+`func (o *HttpResponseFormat) SetCode(v int32)`
 
 SetCode sets Code field to given value.
 
 ### HasCode
 
-`func (o *HTTPResponseFormat) HasCode() bool`
+`func (o *HttpResponseFormat) HasCode() bool`
 
 HasCode returns a boolean if a field has been set.
 
 ### GetReason
 
-`func (o *HTTPResponseFormat) GetReason() string`
+`func (o *HttpResponseFormat) GetReason() string`
 
 GetReason returns the Reason field if non-nil, zero value otherwise.
 
 ### GetReasonOk
 
-`func (o *HTTPResponseFormat) GetReasonOk() (*string, bool)`
+`func (o *HttpResponseFormat) GetReasonOk() (*string, bool)`
 
 GetReasonOk returns a tuple with the Reason field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReason
 
-`func (o *HTTPResponseFormat) SetReason(v string)`
+`func (o *HttpResponseFormat) SetReason(v string)`
 
 SetReason sets Reason field to given value.
 
 ### HasReason
 
-`func (o *HTTPResponseFormat) HasReason() bool`
+`func (o *HttpResponseFormat) HasReason() bool`
 
 HasReason returns a boolean if a field has been set.
 
 ### GetHeaders
 
-`func (o *HTTPResponseFormat) GetHeaders() map[string]string`
+`func (o *HttpResponseFormat) GetHeaders() map[string]string`
 
 GetHeaders returns the Headers field if non-nil, zero value otherwise.
 
 ### GetHeadersOk
 
-`func (o *HTTPResponseFormat) GetHeadersOk() (*map[string]string, bool)`
+`func (o *HttpResponseFormat) GetHeadersOk() (*map[string]string, bool)`
 
 GetHeadersOk returns a tuple with the Headers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHeaders
 
-`func (o *HTTPResponseFormat) SetHeaders(v map[string]string)`
+`func (o *HttpResponseFormat) SetHeaders(v map[string]string)`
 
 SetHeaders sets Headers field to given value.
 
 ### HasHeaders
 
-`func (o *HTTPResponseFormat) HasHeaders() bool`
+`func (o *HttpResponseFormat) HasHeaders() bool`
 
 HasHeaders returns a boolean if a field has been set.
 
 ### GetBody
 
-`func (o *HTTPResponseFormat) GetBody() string`
+`func (o *HttpResponseFormat) GetBody() string`
 
 GetBody returns the Body field if non-nil, zero value otherwise.
 
 ### GetBodyOk
 
-`func (o *HTTPResponseFormat) GetBodyOk() (*string, bool)`
+`func (o *HttpResponseFormat) GetBodyOk() (*string, bool)`
 
 GetBodyOk returns a tuple with the Body field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBody
 
-`func (o *HTTPResponseFormat) SetBody(v string)`
+`func (o *HttpResponseFormat) SetBody(v string)`
 
 SetBody sets Body field to given value.
 
 ### HasBody
 
-`func (o *HTTPResponseFormat) HasBody() bool`
+`func (o *HttpResponseFormat) HasBody() bool`
 
 HasBody returns a boolean if a field has been set.
 
 ### GetBodyBin
 
-`func (o *HTTPResponseFormat) GetBodyBin() string`
+`func (o *HttpResponseFormat) GetBodyBin() string`
 
 GetBodyBin returns the BodyBin field if non-nil, zero value otherwise.
 
 ### GetBodyBinOk
 
-`func (o *HTTPResponseFormat) GetBodyBinOk() (*string, bool)`
+`func (o *HttpResponseFormat) GetBodyBinOk() (*string, bool)`
 
 GetBodyBinOk returns a tuple with the BodyBin field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBodyBin
 
-`func (o *HTTPResponseFormat) SetBodyBin(v string)`
+`func (o *HttpResponseFormat) SetBodyBin(v string)`
 
 SetBodyBin sets BodyBin field to given value.
 
 ### HasBodyBin
 
-`func (o *HTTPResponseFormat) HasBodyBin() bool`
+`func (o *HttpResponseFormat) HasBodyBin() bool`
 
 HasBodyBin returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

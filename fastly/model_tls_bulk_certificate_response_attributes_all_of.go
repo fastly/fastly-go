@@ -17,8 +17,8 @@ import (
 	"time"
 )
 
-// TLSBulkCertificateResponseAttributesAllOf struct for TLSBulkCertificateResponseAttributesAllOf
-type TLSBulkCertificateResponseAttributesAllOf struct {
+// TlsBulkCertificateResponseAttributesAllOf struct for TlsBulkCertificateResponseAttributesAllOf
+type TlsBulkCertificateResponseAttributesAllOf struct {
 	// Time-stamp (GMT) when the certificate will expire. Must be in the future to be used to terminate TLS traffic.
 	NotAfter *time.Time `json:"not_after,omitempty"`
 	// Time-stamp (GMT) when the certificate will become valid. Must be in the past to be used to terminate TLS traffic.
@@ -28,27 +28,27 @@ type TLSBulkCertificateResponseAttributesAllOf struct {
 	AdditionalProperties map[string]any
 }
 
-type _TLSBulkCertificateResponseAttributesAllOf TLSBulkCertificateResponseAttributesAllOf
+type _TlsBulkCertificateResponseAttributesAllOf TlsBulkCertificateResponseAttributesAllOf
 
-// NewTLSBulkCertificateResponseAttributesAllOf instantiates a new TLSBulkCertificateResponseAttributesAllOf object
+// NewTlsBulkCertificateResponseAttributesAllOf instantiates a new TlsBulkCertificateResponseAttributesAllOf object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSBulkCertificateResponseAttributesAllOf() *TLSBulkCertificateResponseAttributesAllOf {
-	this := TLSBulkCertificateResponseAttributesAllOf{}
+func NewTlsBulkCertificateResponseAttributesAllOf() *TlsBulkCertificateResponseAttributesAllOf {
+	this := TlsBulkCertificateResponseAttributesAllOf{}
 	return &this
 }
 
-// NewTLSBulkCertificateResponseAttributesAllOfWithDefaults instantiates a new TLSBulkCertificateResponseAttributesAllOf object
+// NewTlsBulkCertificateResponseAttributesAllOfWithDefaults instantiates a new TlsBulkCertificateResponseAttributesAllOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSBulkCertificateResponseAttributesAllOfWithDefaults() *TLSBulkCertificateResponseAttributesAllOf {
-	this := TLSBulkCertificateResponseAttributesAllOf{}
+func NewTlsBulkCertificateResponseAttributesAllOfWithDefaults() *TlsBulkCertificateResponseAttributesAllOf {
+	this := TlsBulkCertificateResponseAttributesAllOf{}
 	return &this
 }
 
 // GetNotAfter returns the NotAfter field value if set, zero value otherwise.
-func (o *TLSBulkCertificateResponseAttributesAllOf) GetNotAfter() time.Time {
+func (o *TlsBulkCertificateResponseAttributesAllOf) GetNotAfter() time.Time {
 	if o == nil || o.NotAfter == nil {
 		var ret time.Time
 		return ret
@@ -58,7 +58,7 @@ func (o *TLSBulkCertificateResponseAttributesAllOf) GetNotAfter() time.Time {
 
 // GetNotAfterOk returns a tuple with the NotAfter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSBulkCertificateResponseAttributesAllOf) GetNotAfterOk() (*time.Time, bool) {
+func (o *TlsBulkCertificateResponseAttributesAllOf) GetNotAfterOk() (*time.Time, bool) {
 	if o == nil || o.NotAfter == nil {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *TLSBulkCertificateResponseAttributesAllOf) GetNotAfterOk() (*time.Time,
 }
 
 // HasNotAfter returns a boolean if a field has been set.
-func (o *TLSBulkCertificateResponseAttributesAllOf) HasNotAfter() bool {
+func (o *TlsBulkCertificateResponseAttributesAllOf) HasNotAfter() bool {
 	if o != nil && o.NotAfter != nil {
 		return true
 	}
@@ -75,12 +75,12 @@ func (o *TLSBulkCertificateResponseAttributesAllOf) HasNotAfter() bool {
 }
 
 // SetNotAfter gets a reference to the given time.Time and assigns it to the NotAfter field.
-func (o *TLSBulkCertificateResponseAttributesAllOf) SetNotAfter(v time.Time) {
+func (o *TlsBulkCertificateResponseAttributesAllOf) SetNotAfter(v time.Time) {
 	o.NotAfter = &v
 }
 
 // GetNotBefore returns the NotBefore field value if set, zero value otherwise.
-func (o *TLSBulkCertificateResponseAttributesAllOf) GetNotBefore() time.Time {
+func (o *TlsBulkCertificateResponseAttributesAllOf) GetNotBefore() time.Time {
 	if o == nil || o.NotBefore == nil {
 		var ret time.Time
 		return ret
@@ -90,7 +90,7 @@ func (o *TLSBulkCertificateResponseAttributesAllOf) GetNotBefore() time.Time {
 
 // GetNotBeforeOk returns a tuple with the NotBefore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSBulkCertificateResponseAttributesAllOf) GetNotBeforeOk() (*time.Time, bool) {
+func (o *TlsBulkCertificateResponseAttributesAllOf) GetNotBeforeOk() (*time.Time, bool) {
 	if o == nil || o.NotBefore == nil {
 		return nil, false
 	}
@@ -98,7 +98,7 @@ func (o *TLSBulkCertificateResponseAttributesAllOf) GetNotBeforeOk() (*time.Time
 }
 
 // HasNotBefore returns a boolean if a field has been set.
-func (o *TLSBulkCertificateResponseAttributesAllOf) HasNotBefore() bool {
+func (o *TlsBulkCertificateResponseAttributesAllOf) HasNotBefore() bool {
 	if o != nil && o.NotBefore != nil {
 		return true
 	}
@@ -107,12 +107,12 @@ func (o *TLSBulkCertificateResponseAttributesAllOf) HasNotBefore() bool {
 }
 
 // SetNotBefore gets a reference to the given time.Time and assigns it to the NotBefore field.
-func (o *TLSBulkCertificateResponseAttributesAllOf) SetNotBefore(v time.Time) {
+func (o *TlsBulkCertificateResponseAttributesAllOf) SetNotBefore(v time.Time) {
 	o.NotBefore = &v
 }
 
 // GetReplace returns the Replace field value if set, zero value otherwise.
-func (o *TLSBulkCertificateResponseAttributesAllOf) GetReplace() bool {
+func (o *TlsBulkCertificateResponseAttributesAllOf) GetReplace() bool {
 	if o == nil || o.Replace == nil {
 		var ret bool
 		return ret
@@ -122,7 +122,7 @@ func (o *TLSBulkCertificateResponseAttributesAllOf) GetReplace() bool {
 
 // GetReplaceOk returns a tuple with the Replace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSBulkCertificateResponseAttributesAllOf) GetReplaceOk() (*bool, bool) {
+func (o *TlsBulkCertificateResponseAttributesAllOf) GetReplaceOk() (*bool, bool) {
 	if o == nil || o.Replace == nil {
 		return nil, false
 	}
@@ -130,7 +130,7 @@ func (o *TLSBulkCertificateResponseAttributesAllOf) GetReplaceOk() (*bool, bool)
 }
 
 // HasReplace returns a boolean if a field has been set.
-func (o *TLSBulkCertificateResponseAttributesAllOf) HasReplace() bool {
+func (o *TlsBulkCertificateResponseAttributesAllOf) HasReplace() bool {
 	if o != nil && o.Replace != nil {
 		return true
 	}
@@ -139,13 +139,13 @@ func (o *TLSBulkCertificateResponseAttributesAllOf) HasReplace() bool {
 }
 
 // SetReplace gets a reference to the given bool and assigns it to the Replace field.
-func (o *TLSBulkCertificateResponseAttributesAllOf) SetReplace(v bool) {
+func (o *TlsBulkCertificateResponseAttributesAllOf) SetReplace(v bool) {
 	o.Replace = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSBulkCertificateResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
+func (o TlsBulkCertificateResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.NotAfter != nil {
 		toSerialize["not_after"] = o.NotAfter
@@ -166,11 +166,11 @@ func (o TLSBulkCertificateResponseAttributesAllOf) MarshalJSON() ([]byte, error)
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSBulkCertificateResponseAttributesAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSBulkCertificateResponseAttributesAllOf := _TLSBulkCertificateResponseAttributesAllOf{}
+func (o *TlsBulkCertificateResponseAttributesAllOf) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsBulkCertificateResponseAttributesAllOf := _TlsBulkCertificateResponseAttributesAllOf{}
 
-	if err = json.Unmarshal(bytes, &varTLSBulkCertificateResponseAttributesAllOf); err == nil {
-		*o = TLSBulkCertificateResponseAttributesAllOf(varTLSBulkCertificateResponseAttributesAllOf)
+	if err = json.Unmarshal(bytes, &varTlsBulkCertificateResponseAttributesAllOf); err == nil {
+		*o = TlsBulkCertificateResponseAttributesAllOf(varTlsBulkCertificateResponseAttributesAllOf)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -185,48 +185,48 @@ func (o *TLSBulkCertificateResponseAttributesAllOf) UnmarshalJSON(bytes []byte) 
 	return err
 }
 
-// NullableTLSBulkCertificateResponseAttributesAllOf is a helper abstraction for handling nullable tlsbulkcertificateresponseattributesallof types.
-type NullableTLSBulkCertificateResponseAttributesAllOf struct {
-	value *TLSBulkCertificateResponseAttributesAllOf
+// NullableTlsBulkCertificateResponseAttributesAllOf is a helper abstraction for handling nullable tlsbulkcertificateresponseattributesallof types.
+type NullableTlsBulkCertificateResponseAttributesAllOf struct {
+	value *TlsBulkCertificateResponseAttributesAllOf
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSBulkCertificateResponseAttributesAllOf) Get() *TLSBulkCertificateResponseAttributesAllOf {
+func (v NullableTlsBulkCertificateResponseAttributesAllOf) Get() *TlsBulkCertificateResponseAttributesAllOf {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSBulkCertificateResponseAttributesAllOf) Set(val *TLSBulkCertificateResponseAttributesAllOf) {
+func (v *NullableTlsBulkCertificateResponseAttributesAllOf) Set(val *TlsBulkCertificateResponseAttributesAllOf) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSBulkCertificateResponseAttributesAllOf) IsSet() bool {
+func (v NullableTlsBulkCertificateResponseAttributesAllOf) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSBulkCertificateResponseAttributesAllOf) Unset() {
+func (v *NullableTlsBulkCertificateResponseAttributesAllOf) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSBulkCertificateResponseAttributesAllOf returns a pointer to a new instance of NullableTLSBulkCertificateResponseAttributesAllOf.
-func NewNullableTLSBulkCertificateResponseAttributesAllOf(val *TLSBulkCertificateResponseAttributesAllOf) *NullableTLSBulkCertificateResponseAttributesAllOf {
-	return &NullableTLSBulkCertificateResponseAttributesAllOf{value: val, isSet: true}
+// NewNullableTlsBulkCertificateResponseAttributesAllOf returns a pointer to a new instance of NullableTlsBulkCertificateResponseAttributesAllOf.
+func NewNullableTlsBulkCertificateResponseAttributesAllOf(val *TlsBulkCertificateResponseAttributesAllOf) *NullableTlsBulkCertificateResponseAttributesAllOf {
+	return &NullableTlsBulkCertificateResponseAttributesAllOf{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSBulkCertificateResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableTlsBulkCertificateResponseAttributesAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSBulkCertificateResponseAttributesAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsBulkCertificateResponseAttributesAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

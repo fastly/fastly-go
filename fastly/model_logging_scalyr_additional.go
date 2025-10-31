@@ -23,7 +23,7 @@ type LoggingScalyrAdditional struct {
 	// The token to use for authentication.
 	Token *string `json:"token,omitempty"`
 	// The name of the logfile within Scalyr.
-	ProjectID            *string `json:"project_id,omitempty"`
+	ProjectId            *string `json:"project_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -37,8 +37,8 @@ func NewLoggingScalyrAdditional() *LoggingScalyrAdditional {
 	this := LoggingScalyrAdditional{}
 	var region string = "US"
 	this.Region = &region
-	var projectID string = "logplex"
-	this.ProjectID = &projectID
+	var projectId string = "logplex"
+	this.ProjectId = &projectId
 	return &this
 }
 
@@ -49,8 +49,8 @@ func NewLoggingScalyrAdditionalWithDefaults() *LoggingScalyrAdditional {
 	this := LoggingScalyrAdditional{}
 	var region string = "US"
 	this.Region = &region
-	var projectID string = "logplex"
-	this.ProjectID = &projectID
+	var projectId string = "logplex"
+	this.ProjectId = &projectId
 	return &this
 }
 
@@ -118,36 +118,36 @@ func (o *LoggingScalyrAdditional) SetToken(v string) {
 	o.Token = &v
 }
 
-// GetProjectID returns the ProjectID field value if set, zero value otherwise.
-func (o *LoggingScalyrAdditional) GetProjectID() string {
-	if o == nil || o.ProjectID == nil {
+// GetProjectId returns the ProjectId field value if set, zero value otherwise.
+func (o *LoggingScalyrAdditional) GetProjectId() string {
+	if o == nil || o.ProjectId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ProjectID
+	return *o.ProjectId
 }
 
-// GetProjectIDOk returns a tuple with the ProjectID field value if set, nil otherwise
+// GetProjectIdOk returns a tuple with the ProjectId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingScalyrAdditional) GetProjectIDOk() (*string, bool) {
-	if o == nil || o.ProjectID == nil {
+func (o *LoggingScalyrAdditional) GetProjectIdOk() (*string, bool) {
+	if o == nil || o.ProjectId == nil {
 		return nil, false
 	}
-	return o.ProjectID, true
+	return o.ProjectId, true
 }
 
-// HasProjectID returns a boolean if a field has been set.
-func (o *LoggingScalyrAdditional) HasProjectID() bool {
-	if o != nil && o.ProjectID != nil {
+// HasProjectId returns a boolean if a field has been set.
+func (o *LoggingScalyrAdditional) HasProjectId() bool {
+	if o != nil && o.ProjectId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetProjectID gets a reference to the given string and assigns it to the ProjectID field.
-func (o *LoggingScalyrAdditional) SetProjectID(v string) {
-	o.ProjectID = &v
+// SetProjectId gets a reference to the given string and assigns it to the ProjectId field.
+func (o *LoggingScalyrAdditional) SetProjectId(v string) {
+	o.ProjectId = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -160,8 +160,8 @@ func (o LoggingScalyrAdditional) MarshalJSON() ([]byte, error) {
 	if o.Token != nil {
 		toSerialize["token"] = o.Token
 	}
-	if o.ProjectID != nil {
-		toSerialize["project_id"] = o.ProjectID
+	if o.ProjectId != nil {
+		toSerialize["project_id"] = o.ProjectId
 	}
 
 	for key, value := range o.AdditionalProperties {

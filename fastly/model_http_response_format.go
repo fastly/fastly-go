@@ -16,8 +16,8 @@ import (
 	"encoding/json"
 )
 
-// HTTPResponseFormat Payload format for delivering to subscribers of whole HTTP responses (`response` hold mode). One of `body` or `body-bin` must be specified.
-type HTTPResponseFormat struct {
+// HttpResponseFormat Payload format for delivering to subscribers of whole HTTP responses (`response` hold mode). One of `body` or `body-bin` must be specified.
+type HttpResponseFormat struct {
 	// The HTTP status code.
 	Code *int32 `json:"code,omitempty"`
 	// The HTTP status string. Defaults to a string appropriate for `code`.
@@ -31,31 +31,31 @@ type HTTPResponseFormat struct {
 	AdditionalProperties map[string]any
 }
 
-type _HTTPResponseFormat HTTPResponseFormat
+type _HttpResponseFormat HttpResponseFormat
 
-// NewHTTPResponseFormat instantiates a new HTTPResponseFormat object
+// NewHttpResponseFormat instantiates a new HttpResponseFormat object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHTTPResponseFormat() *HTTPResponseFormat {
-	this := HTTPResponseFormat{}
+func NewHttpResponseFormat() *HttpResponseFormat {
+	this := HttpResponseFormat{}
 	var code int32 = 200
 	this.Code = &code
 	return &this
 }
 
-// NewHTTPResponseFormatWithDefaults instantiates a new HTTPResponseFormat object
+// NewHttpResponseFormatWithDefaults instantiates a new HttpResponseFormat object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewHTTPResponseFormatWithDefaults() *HTTPResponseFormat {
-	this := HTTPResponseFormat{}
+func NewHttpResponseFormatWithDefaults() *HttpResponseFormat {
+	this := HttpResponseFormat{}
 	var code int32 = 200
 	this.Code = &code
 	return &this
 }
 
 // GetCode returns the Code field value if set, zero value otherwise.
-func (o *HTTPResponseFormat) GetCode() int32 {
+func (o *HttpResponseFormat) GetCode() int32 {
 	if o == nil || o.Code == nil {
 		var ret int32
 		return ret
@@ -65,7 +65,7 @@ func (o *HTTPResponseFormat) GetCode() int32 {
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HTTPResponseFormat) GetCodeOk() (*int32, bool) {
+func (o *HttpResponseFormat) GetCodeOk() (*int32, bool) {
 	if o == nil || o.Code == nil {
 		return nil, false
 	}
@@ -73,7 +73,7 @@ func (o *HTTPResponseFormat) GetCodeOk() (*int32, bool) {
 }
 
 // HasCode returns a boolean if a field has been set.
-func (o *HTTPResponseFormat) HasCode() bool {
+func (o *HttpResponseFormat) HasCode() bool {
 	if o != nil && o.Code != nil {
 		return true
 	}
@@ -82,12 +82,12 @@ func (o *HTTPResponseFormat) HasCode() bool {
 }
 
 // SetCode gets a reference to the given int32 and assigns it to the Code field.
-func (o *HTTPResponseFormat) SetCode(v int32) {
+func (o *HttpResponseFormat) SetCode(v int32) {
 	o.Code = &v
 }
 
 // GetReason returns the Reason field value if set, zero value otherwise.
-func (o *HTTPResponseFormat) GetReason() string {
+func (o *HttpResponseFormat) GetReason() string {
 	if o == nil || o.Reason == nil {
 		var ret string
 		return ret
@@ -97,7 +97,7 @@ func (o *HTTPResponseFormat) GetReason() string {
 
 // GetReasonOk returns a tuple with the Reason field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HTTPResponseFormat) GetReasonOk() (*string, bool) {
+func (o *HttpResponseFormat) GetReasonOk() (*string, bool) {
 	if o == nil || o.Reason == nil {
 		return nil, false
 	}
@@ -105,7 +105,7 @@ func (o *HTTPResponseFormat) GetReasonOk() (*string, bool) {
 }
 
 // HasReason returns a boolean if a field has been set.
-func (o *HTTPResponseFormat) HasReason() bool {
+func (o *HttpResponseFormat) HasReason() bool {
 	if o != nil && o.Reason != nil {
 		return true
 	}
@@ -114,12 +114,12 @@ func (o *HTTPResponseFormat) HasReason() bool {
 }
 
 // SetReason gets a reference to the given string and assigns it to the Reason field.
-func (o *HTTPResponseFormat) SetReason(v string) {
+func (o *HttpResponseFormat) SetReason(v string) {
 	o.Reason = &v
 }
 
 // GetHeaders returns the Headers field value if set, zero value otherwise.
-func (o *HTTPResponseFormat) GetHeaders() map[string]string {
+func (o *HttpResponseFormat) GetHeaders() map[string]string {
 	if o == nil || o.Headers == nil {
 		var ret map[string]string
 		return ret
@@ -129,7 +129,7 @@ func (o *HTTPResponseFormat) GetHeaders() map[string]string {
 
 // GetHeadersOk returns a tuple with the Headers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HTTPResponseFormat) GetHeadersOk() (*map[string]string, bool) {
+func (o *HttpResponseFormat) GetHeadersOk() (*map[string]string, bool) {
 	if o == nil || o.Headers == nil {
 		return nil, false
 	}
@@ -137,7 +137,7 @@ func (o *HTTPResponseFormat) GetHeadersOk() (*map[string]string, bool) {
 }
 
 // HasHeaders returns a boolean if a field has been set.
-func (o *HTTPResponseFormat) HasHeaders() bool {
+func (o *HttpResponseFormat) HasHeaders() bool {
 	if o != nil && o.Headers != nil {
 		return true
 	}
@@ -146,12 +146,12 @@ func (o *HTTPResponseFormat) HasHeaders() bool {
 }
 
 // SetHeaders gets a reference to the given map[string]string and assigns it to the Headers field.
-func (o *HTTPResponseFormat) SetHeaders(v map[string]string) {
+func (o *HttpResponseFormat) SetHeaders(v map[string]string) {
 	o.Headers = &v
 }
 
 // GetBody returns the Body field value if set, zero value otherwise.
-func (o *HTTPResponseFormat) GetBody() string {
+func (o *HttpResponseFormat) GetBody() string {
 	if o == nil || o.Body == nil {
 		var ret string
 		return ret
@@ -161,7 +161,7 @@ func (o *HTTPResponseFormat) GetBody() string {
 
 // GetBodyOk returns a tuple with the Body field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HTTPResponseFormat) GetBodyOk() (*string, bool) {
+func (o *HttpResponseFormat) GetBodyOk() (*string, bool) {
 	if o == nil || o.Body == nil {
 		return nil, false
 	}
@@ -169,7 +169,7 @@ func (o *HTTPResponseFormat) GetBodyOk() (*string, bool) {
 }
 
 // HasBody returns a boolean if a field has been set.
-func (o *HTTPResponseFormat) HasBody() bool {
+func (o *HttpResponseFormat) HasBody() bool {
 	if o != nil && o.Body != nil {
 		return true
 	}
@@ -178,12 +178,12 @@ func (o *HTTPResponseFormat) HasBody() bool {
 }
 
 // SetBody gets a reference to the given string and assigns it to the Body field.
-func (o *HTTPResponseFormat) SetBody(v string) {
+func (o *HttpResponseFormat) SetBody(v string) {
 	o.Body = &v
 }
 
 // GetBodyBin returns the BodyBin field value if set, zero value otherwise.
-func (o *HTTPResponseFormat) GetBodyBin() string {
+func (o *HttpResponseFormat) GetBodyBin() string {
 	if o == nil || o.BodyBin == nil {
 		var ret string
 		return ret
@@ -193,7 +193,7 @@ func (o *HTTPResponseFormat) GetBodyBin() string {
 
 // GetBodyBinOk returns a tuple with the BodyBin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HTTPResponseFormat) GetBodyBinOk() (*string, bool) {
+func (o *HttpResponseFormat) GetBodyBinOk() (*string, bool) {
 	if o == nil || o.BodyBin == nil {
 		return nil, false
 	}
@@ -201,7 +201,7 @@ func (o *HTTPResponseFormat) GetBodyBinOk() (*string, bool) {
 }
 
 // HasBodyBin returns a boolean if a field has been set.
-func (o *HTTPResponseFormat) HasBodyBin() bool {
+func (o *HttpResponseFormat) HasBodyBin() bool {
 	if o != nil && o.BodyBin != nil {
 		return true
 	}
@@ -210,13 +210,13 @@ func (o *HTTPResponseFormat) HasBodyBin() bool {
 }
 
 // SetBodyBin gets a reference to the given string and assigns it to the BodyBin field.
-func (o *HTTPResponseFormat) SetBodyBin(v string) {
+func (o *HttpResponseFormat) SetBodyBin(v string) {
 	o.BodyBin = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o HTTPResponseFormat) MarshalJSON() ([]byte, error) {
+func (o HttpResponseFormat) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Code != nil {
 		toSerialize["code"] = o.Code
@@ -243,11 +243,11 @@ func (o HTTPResponseFormat) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *HTTPResponseFormat) UnmarshalJSON(bytes []byte) (err error) {
-	varHTTPResponseFormat := _HTTPResponseFormat{}
+func (o *HttpResponseFormat) UnmarshalJSON(bytes []byte) (err error) {
+	varHttpResponseFormat := _HttpResponseFormat{}
 
-	if err = json.Unmarshal(bytes, &varHTTPResponseFormat); err == nil {
-		*o = HTTPResponseFormat(varHTTPResponseFormat)
+	if err = json.Unmarshal(bytes, &varHttpResponseFormat); err == nil {
+		*o = HttpResponseFormat(varHttpResponseFormat)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -264,48 +264,48 @@ func (o *HTTPResponseFormat) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableHTTPResponseFormat is a helper abstraction for handling nullable httpresponseformat types.
-type NullableHTTPResponseFormat struct {
-	value *HTTPResponseFormat
+// NullableHttpResponseFormat is a helper abstraction for handling nullable httpresponseformat types.
+type NullableHttpResponseFormat struct {
+	value *HttpResponseFormat
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableHTTPResponseFormat) Get() *HTTPResponseFormat {
+func (v NullableHttpResponseFormat) Get() *HttpResponseFormat {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableHTTPResponseFormat) Set(val *HTTPResponseFormat) {
+func (v *NullableHttpResponseFormat) Set(val *HttpResponseFormat) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableHTTPResponseFormat) IsSet() bool {
+func (v NullableHttpResponseFormat) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableHTTPResponseFormat) Unset() {
+func (v *NullableHttpResponseFormat) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableHTTPResponseFormat returns a pointer to a new instance of NullableHTTPResponseFormat.
-func NewNullableHTTPResponseFormat(val *HTTPResponseFormat) *NullableHTTPResponseFormat {
-	return &NullableHTTPResponseFormat{value: val, isSet: true}
+// NewNullableHttpResponseFormat returns a pointer to a new instance of NullableHttpResponseFormat.
+func NewNullableHttpResponseFormat(val *HttpResponseFormat) *NullableHttpResponseFormat {
+	return &NullableHttpResponseFormat{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableHTTPResponseFormat) MarshalJSON() ([]byte, error) {
+func (v NullableHttpResponseFormat) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableHTTPResponseFormat) UnmarshalJSON(src []byte) error {
+func (v *NullableHttpResponseFormat) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

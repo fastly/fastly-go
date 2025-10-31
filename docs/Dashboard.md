@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ID** | Pointer to **string** | Dashboard identifier (UUID) | [optional] [readonly] 
+**Id** | Pointer to **string** | Dashboard identifier (UUID) | [optional] [readonly] 
 **Name** | Pointer to **string** | A human-readable name | [optional] 
 **Description** | Pointer to **string** | A short description of the dashboard | [optional] 
 **Items** | Pointer to [**[]DashboardItem**](DashboardItem.md) | A list of [dashboard items](#dashboard-item). | [optional] 
@@ -32,30 +32,30 @@ NewDashboardWithDefaults instantiates a new Dashboard object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetID
+### GetId
 
-`func (o *Dashboard) GetID() string`
+`func (o *Dashboard) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *Dashboard) GetIDOk() (*string, bool)`
+`func (o *Dashboard) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *Dashboard) SetID(v string)`
+`func (o *Dashboard) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *Dashboard) HasID() bool`
+`func (o *Dashboard) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -264,3 +264,5 @@ HasUpdatedBy returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

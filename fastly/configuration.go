@@ -43,8 +43,8 @@ var (
 	// ContextAPIKeys takes a string apikey as authentication for the request
 	ContextAPIKeys = contextKey("apiKeys")
 
-	// ContextHTTPSignatureAuth takes HTTPSignatureAuth as authentication for the request.
-	ContextHTTPSignatureAuth = contextKey("httpsignature")
+	// ContextHttpSignatureAuth takes HttpSignatureAuth as authentication for the request.
+	ContextHttpSignatureAuth = contextKey("httpsignature")
 
 	// ContextServerIndex uses a server configuration from the index.
 	ContextServerIndex = contextKey("serverIndex")
@@ -104,7 +104,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "fastly-go/1.0.0-beta.44",
+		UserAgent:     "fastly-go/1.0.0-beta.45",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
@@ -117,109 +117,109 @@ func NewConfiguration() *Configuration {
 			},
 		},
 		OperationServers: map[string]ServerConfigurations{
-			"ACLAPIService.CreateACL": {
+			"AclAPIService.CreateAcl": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLAPIService.DeleteACL": {
+			"AclAPIService.DeleteAcl": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLAPIService.GetACL": {
+			"AclAPIService.GetAcl": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLAPIService.ListACLs": {
+			"AclAPIService.ListAcls": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLAPIService.UpdateACL": {
+			"AclAPIService.UpdateAcl": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLEntryAPIService.BulkUpdateACLEntries": {
+			"AclEntryAPIService.BulkUpdateAclEntries": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLEntryAPIService.CreateACLEntry": {
+			"AclEntryAPIService.CreateAclEntry": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLEntryAPIService.DeleteACLEntry": {
+			"AclEntryAPIService.DeleteAclEntry": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLEntryAPIService.GetACLEntry": {
+			"AclEntryAPIService.GetAclEntry": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLEntryAPIService.ListACLEntries": {
+			"AclEntryAPIService.ListAclEntries": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLEntryAPIService.UpdateACLEntry": {
+			"AclEntryAPIService.UpdateAclEntry": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLsInComputeAPIService.ComputeACLCreateAcls": {
+			"AclsInComputeAPIService.ComputeAclCreateAcls": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLsInComputeAPIService.ComputeACLDeleteSAclID": {
+			"AclsInComputeAPIService.ComputeAclDeleteSAclId": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLsInComputeAPIService.ComputeACLListAclEntries": {
+			"AclsInComputeAPIService.ComputeAclListAclEntries": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLsInComputeAPIService.ComputeACLListAcls": {
+			"AclsInComputeAPIService.ComputeAclListAcls": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLsInComputeAPIService.ComputeACLListAclsSAclID": {
+			"AclsInComputeAPIService.ComputeAclListAclsSAclId": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLsInComputeAPIService.ComputeACLLookupAcls": {
+			"AclsInComputeAPIService.ComputeAclLookupAcls": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"ACLsInComputeAPIService.ComputeACLUpdateAcls": {
+			"AclsInComputeAPIService.ComputeAclUpdateAcls": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -261,13 +261,13 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"AutomationTokensAPIService.GetAutomationTokenID": {
+			"AutomationTokensAPIService.GetAutomationTokenId": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"AutomationTokensAPIService.GetAutomationTokensIDServices": {
+			"AutomationTokensAPIService.GetAutomationTokensIdServices": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -279,7 +279,7 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"AutomationTokensAPIService.RevokeAutomationTokenID": {
+			"AutomationTokensAPIService.RevokeAutomationTokenId": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -339,7 +339,7 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"BillingInvoicesAPIService.GetInvoiceByInvoiceID": {
+			"BillingInvoicesAPIService.GetInvoiceByInvoiceId": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -753,6 +753,36 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"DmDomainsAPIService.CreateDmDomain": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmDomainsAPIService.DeleteDmDomain": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmDomainsAPIService.GetDmDomain": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmDomainsAPIService.ListDmDomains": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmDomainsAPIService.UpdateDmDomain": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"DomainAPIService.CheckDomain": {
 				{
 					URL:         "https://api.fastly.com",
@@ -981,19 +1011,19 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"HTTP3APIService.CreateHTTP3": {
+			"Http3APIService.CreateHttp3": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"HTTP3APIService.DeleteHTTP3": {
+			"Http3APIService.DeleteHttp3": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"HTTP3APIService.GetHTTP3": {
+			"Http3APIService.GetHttp3": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -1005,49 +1035,13 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"IamRolesAPIService.AddRolePermissions": {
+			"IamRolesAPIService.IamV1RolesGet": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"IamRolesAPIService.CreateARole": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"IamRolesAPIService.DeleteARole": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"IamRolesAPIService.GetARole": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"IamRolesAPIService.ListRolePermissions": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"IamRolesAPIService.ListRoles": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"IamRolesAPIService.RemoveRolePermissions": {
-				{
-					URL:         "https://api.fastly.com",
-					Description: "No description provided",
-				},
-			},
-			"IamRolesAPIService.UpdateARole": {
+			"IamRolesAPIService.IamV1RolesList": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -1599,31 +1593,31 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"LoggingHTTPSAPIService.CreateLogHTTPS": {
+			"LoggingHttpsAPIService.CreateLogHttps": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"LoggingHTTPSAPIService.DeleteLogHTTPS": {
+			"LoggingHttpsAPIService.DeleteLogHttps": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"LoggingHTTPSAPIService.GetLogHTTPS": {
+			"LoggingHttpsAPIService.GetLogHttps": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"LoggingHTTPSAPIService.ListLogHTTPS": {
+			"LoggingHttpsAPIService.ListLogHttps": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"LoggingHTTPSAPIService.UpdateLogHTTPS": {
+			"LoggingHttpsAPIService.UpdateLogHttps": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2109,13 +2103,13 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"MutualAuthenticationAPIService.CreateMutualTLSAuthentication": {
+			"MutualAuthenticationAPIService.CreateMutualTlsAuthentication": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"MutualAuthenticationAPIService.DeleteMutualTLS": {
+			"MutualAuthenticationAPIService.DeleteMutualTls": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2296,6 +2290,30 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"ProductAiAcceleratorAPIService.GetAiAccelerator": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductApiDiscoveryAPIService.DisableProductApiDiscovery": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductApiDiscoveryAPIService.EnableProductApiDiscovery": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductApiDiscoveryAPIService.GetProductApiDiscovery": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductApiDiscoveryAPIService.GetServicesProductApiDiscovery": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2583,7 +2601,7 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"PublicIPListAPIService.ListFastlyIps": {
+			"PublicIpListAPIService.ListFastlyIps": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2607,7 +2625,7 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"PurgeAPIService.PurgeSingleURL": {
+			"PurgeAPIService.PurgeSingleUrl": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -3039,193 +3057,193 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"TLSActivationsAPIService.CreateTLSActivation": {
+			"TlsActivationsAPIService.CreateTlsActivation": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSActivationsAPIService.DeleteTLSActivation": {
+			"TlsActivationsAPIService.DeleteTlsActivation": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSActivationsAPIService.GetTLSActivation": {
+			"TlsActivationsAPIService.GetTlsActivation": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSActivationsAPIService.ListTLSActivations": {
+			"TlsActivationsAPIService.ListTlsActivations": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSActivationsAPIService.UpdateTLSActivation": {
+			"TlsActivationsAPIService.UpdateTlsActivation": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSBulkCertificatesAPIService.DeleteBulkTLSCert": {
+			"TlsBulkCertificatesAPIService.DeleteBulkTlsCert": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSBulkCertificatesAPIService.GetTLSBulkCert": {
+			"TlsBulkCertificatesAPIService.GetTlsBulkCert": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSBulkCertificatesAPIService.ListTLSBulkCerts": {
+			"TlsBulkCertificatesAPIService.ListTlsBulkCerts": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSBulkCertificatesAPIService.UpdateBulkTLSCert": {
+			"TlsBulkCertificatesAPIService.UpdateBulkTlsCert": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSBulkCertificatesAPIService.UploadTLSBulkCert": {
+			"TlsBulkCertificatesAPIService.UploadTlsBulkCert": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSCertificatesAPIService.CreateTLSCert": {
+			"TlsCertificatesAPIService.CreateTlsCert": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSCertificatesAPIService.DeleteTLSCert": {
+			"TlsCertificatesAPIService.DeleteTlsCert": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSCertificatesAPIService.GetTLSCert": {
+			"TlsCertificatesAPIService.GetTlsCert": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSCertificatesAPIService.GetTLSCertBlob": {
+			"TlsCertificatesAPIService.GetTlsCertBlob": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSCertificatesAPIService.ListTLSCerts": {
+			"TlsCertificatesAPIService.ListTlsCerts": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSCertificatesAPIService.UpdateTLSCert": {
+			"TlsCertificatesAPIService.UpdateTlsCert": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSConfigurationsAPIService.GetTLSConfig": {
+			"TlsConfigurationsAPIService.GetTlsConfig": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSConfigurationsAPIService.ListTLSConfigs": {
+			"TlsConfigurationsAPIService.ListTlsConfigs": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSConfigurationsAPIService.UpdateTLSConfig": {
+			"TlsConfigurationsAPIService.UpdateTlsConfig": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSCsrsAPIService.CreateCsr": {
+			"TlsCsrsAPIService.CreateCsr": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSDomainsAPIService.ListTLSDomains": {
+			"TlsDomainsAPIService.ListTlsDomains": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSPrivateKeysAPIService.CreateTLSKey": {
+			"TlsPrivateKeysAPIService.CreateTlsKey": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSPrivateKeysAPIService.DeleteTLSKey": {
+			"TlsPrivateKeysAPIService.DeleteTlsKey": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSPrivateKeysAPIService.GetTLSKey": {
+			"TlsPrivateKeysAPIService.GetTlsKey": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSPrivateKeysAPIService.ListTLSKeys": {
+			"TlsPrivateKeysAPIService.ListTlsKeys": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSSubscriptionsAPIService.CreateGlobalsignEmailChallenge": {
+			"TlsSubscriptionsAPIService.CreateGlobalsignEmailChallenge": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSSubscriptionsAPIService.CreateTLSSub": {
+			"TlsSubscriptionsAPIService.CreateTlsSub": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSSubscriptionsAPIService.DeleteGlobalsignEmailChallenge": {
+			"TlsSubscriptionsAPIService.DeleteGlobalsignEmailChallenge": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSSubscriptionsAPIService.DeleteTLSSub": {
+			"TlsSubscriptionsAPIService.DeleteTlsSub": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSSubscriptionsAPIService.GetTLSSub": {
+			"TlsSubscriptionsAPIService.GetTlsSub": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSSubscriptionsAPIService.ListTLSSubs": {
+			"TlsSubscriptionsAPIService.ListTlsSubs": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
 				},
 			},
-			"TLSSubscriptionsAPIService.PatchTLSSub": {
+			"TlsSubscriptionsAPIService.PatchTlsSub": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",

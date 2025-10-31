@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Locality** | Pointer to **NullableString** | Other locality. | [optional] 
 **PostalCode** | Pointer to **string** | Postal code (ZIP code for US addresses). | [optional] 
 **State** | Pointer to **NullableString** | The state or province name. | [optional] 
-**CustomerID** | Pointer to **string** |  | [optional] [readonly] 
+**CustomerId** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -247,30 +247,32 @@ HasState returns a boolean if a field has been set.
 `func (o *BillingAddressAttributes) UnsetState()`
 
 UnsetState ensures that no value is present for State, not even an explicit nil
-### GetCustomerID
+### GetCustomerId
 
-`func (o *BillingAddressAttributes) GetCustomerID() string`
+`func (o *BillingAddressAttributes) GetCustomerId() string`
 
-GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetCustomerIDOk
+### GetCustomerIdOk
 
-`func (o *BillingAddressAttributes) GetCustomerIDOk() (*string, bool)`
+`func (o *BillingAddressAttributes) GetCustomerIdOk() (*string, bool)`
 
-GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerID
+### SetCustomerId
 
-`func (o *BillingAddressAttributes) SetCustomerID(v string)`
+`func (o *BillingAddressAttributes) SetCustomerId(v string)`
 
-SetCustomerID sets CustomerID field to given value.
+SetCustomerId sets CustomerId field to given value.
 
-### HasCustomerID
+### HasCustomerId
 
-`func (o *BillingAddressAttributes) HasCustomerID() bool`
+`func (o *BillingAddressAttributes) HasCustomerId() bool`
 
-HasCustomerID returns a boolean if a field has been set.
+HasCustomerId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

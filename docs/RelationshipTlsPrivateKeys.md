@@ -1,54 +1,56 @@
-# RelationshipTLSPrivateKeys
+# RelationshipTlsPrivateKeys
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TLSPrivateKeys** | Pointer to [**RelationshipTLSPrivateKeysTLSPrivateKeys**](RelationshipTLSPrivateKeysTLSPrivateKeys.md) |  | [optional] 
+**TlsPrivateKeys** | Pointer to [**RelationshipTlsPrivateKeysTlsPrivateKeys**](RelationshipTlsPrivateKeysTlsPrivateKeys.md) |  | [optional] 
 
 ## Methods
 
-### NewRelationshipTLSPrivateKeys
+### NewRelationshipTlsPrivateKeys
 
-`func NewRelationshipTLSPrivateKeys() *RelationshipTLSPrivateKeys`
+`func NewRelationshipTlsPrivateKeys() *RelationshipTlsPrivateKeys`
 
-NewRelationshipTLSPrivateKeys instantiates a new RelationshipTLSPrivateKeys object
+NewRelationshipTlsPrivateKeys instantiates a new RelationshipTlsPrivateKeys object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipTLSPrivateKeysWithDefaults
+### NewRelationshipTlsPrivateKeysWithDefaults
 
-`func NewRelationshipTLSPrivateKeysWithDefaults() *RelationshipTLSPrivateKeys`
+`func NewRelationshipTlsPrivateKeysWithDefaults() *RelationshipTlsPrivateKeys`
 
-NewRelationshipTLSPrivateKeysWithDefaults instantiates a new RelationshipTLSPrivateKeys object
+NewRelationshipTlsPrivateKeysWithDefaults instantiates a new RelationshipTlsPrivateKeys object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTLSPrivateKeys
+### GetTlsPrivateKeys
 
-`func (o *RelationshipTLSPrivateKeys) GetTLSPrivateKeys() RelationshipTLSPrivateKeysTLSPrivateKeys`
+`func (o *RelationshipTlsPrivateKeys) GetTlsPrivateKeys() RelationshipTlsPrivateKeysTlsPrivateKeys`
 
-GetTLSPrivateKeys returns the TLSPrivateKeys field if non-nil, zero value otherwise.
+GetTlsPrivateKeys returns the TlsPrivateKeys field if non-nil, zero value otherwise.
 
-### GetTLSPrivateKeysOk
+### GetTlsPrivateKeysOk
 
-`func (o *RelationshipTLSPrivateKeys) GetTLSPrivateKeysOk() (*RelationshipTLSPrivateKeysTLSPrivateKeys, bool)`
+`func (o *RelationshipTlsPrivateKeys) GetTlsPrivateKeysOk() (*RelationshipTlsPrivateKeysTlsPrivateKeys, bool)`
 
-GetTLSPrivateKeysOk returns a tuple with the TLSPrivateKeys field if it's non-nil, zero value otherwise
+GetTlsPrivateKeysOk returns a tuple with the TlsPrivateKeys field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSPrivateKeys
+### SetTlsPrivateKeys
 
-`func (o *RelationshipTLSPrivateKeys) SetTLSPrivateKeys(v RelationshipTLSPrivateKeysTLSPrivateKeys)`
+`func (o *RelationshipTlsPrivateKeys) SetTlsPrivateKeys(v RelationshipTlsPrivateKeysTlsPrivateKeys)`
 
-SetTLSPrivateKeys sets TLSPrivateKeys field to given value.
+SetTlsPrivateKeys sets TlsPrivateKeys field to given value.
 
-### HasTLSPrivateKeys
+### HasTlsPrivateKeys
 
-`func (o *RelationshipTLSPrivateKeys) HasTLSPrivateKeys() bool`
+`func (o *RelationshipTlsPrivateKeys) HasTlsPrivateKeys() bool`
 
-HasTLSPrivateKeys returns a boolean if a field has been set.
+HasTlsPrivateKeys returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

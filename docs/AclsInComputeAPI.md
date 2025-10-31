@@ -1,21 +1,21 @@
-# ACLsInComputeAPI
+# AclsInComputeAPI
 
 > [!NOTE]
 > All URIs are relative to `https://api.fastly.com`
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ComputeACLCreateAcls**](AclsInComputeAPI.md#ComputeACLCreateAcls) | **POST** `/resources/acls` | Create a new ACL
-[**ComputeACLDeleteSAclID**](AclsInComputeAPI.md#ComputeACLDeleteSAclID) | **DELETE** `/resources/acls/{acl_id}` | Delete an ACL
-[**ComputeACLListAclEntries**](AclsInComputeAPI.md#ComputeACLListAclEntries) | **GET** `/resources/acls/{acl_id}/entries` | List an ACL
-[**ComputeACLListAcls**](AclsInComputeAPI.md#ComputeACLListAcls) | **GET** `/resources/acls` | List ACLs
-[**ComputeACLListAclsSAclID**](AclsInComputeAPI.md#ComputeACLListAclsSAclID) | **GET** `/resources/acls/{acl_id}` | Describe an ACL
-[**ComputeACLLookupAcls**](AclsInComputeAPI.md#ComputeACLLookupAcls) | **GET** `/resources/acls/{acl_id}/entry/{acl_ip}` | Lookup an ACL
-[**ComputeACLUpdateAcls**](AclsInComputeAPI.md#ComputeACLUpdateAcls) | **PATCH** `/resources/acls/{acl_id}/entries` | Update an ACL
+[**ComputeAclCreateAcls**](AclsInComputeAPI.md#ComputeAclCreateAcls) | **POST** `/resources/acls` | Create a new ACL
+[**ComputeAclDeleteSAclId**](AclsInComputeAPI.md#ComputeAclDeleteSAclId) | **DELETE** `/resources/acls/{acl_id}` | Delete an ACL
+[**ComputeAclListAclEntries**](AclsInComputeAPI.md#ComputeAclListAclEntries) | **GET** `/resources/acls/{acl_id}/entries` | List an ACL
+[**ComputeAclListAcls**](AclsInComputeAPI.md#ComputeAclListAcls) | **GET** `/resources/acls` | List ACLs
+[**ComputeAclListAclsSAclId**](AclsInComputeAPI.md#ComputeAclListAclsSAclId) | **GET** `/resources/acls/{acl_id}` | Describe an ACL
+[**ComputeAclLookupAcls**](AclsInComputeAPI.md#ComputeAclLookupAcls) | **GET** `/resources/acls/{acl_id}/entry/{acl_ip}` | Lookup an ACL
+[**ComputeAclUpdateAcls**](AclsInComputeAPI.md#ComputeAclUpdateAcls) | **PATCH** `/resources/acls/{acl_id}/entries` | Update an ACL
 
 
 
-## ComputeACLCreateAcls
+## ComputeAclCreateAcls
 
 Create a new ACL
 
@@ -34,18 +34,18 @@ import (
 )
 
 func main() {
-    computeACLCreateAclsRequest := *openapiclient.NewComputeACLCreateAclsRequest() // ComputeACLCreateAclsRequest |  (optional)
+    computeAclCreateAclsRequest := *openapiclient.NewComputeAclCreateAclsRequest() // ComputeAclCreateAclsRequest |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLsInComputeAPI.ComputeACLCreateAcls(ctx).ComputeACLCreateAclsRequest(computeACLCreateAclsRequest).Execute()
+    resp, r, err := apiClient.AclsInComputeAPI.ComputeAclCreateAcls(ctx).ComputeAclCreateAclsRequest(computeAclCreateAclsRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ACLsInComputeAPI.ComputeACLCreateAcls`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AclsInComputeAPI.ComputeAclCreateAcls`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ComputeACLCreateAcls`: ComputeACLCreateAclsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ACLsInComputeAPI.ComputeACLCreateAcls`: %v\n", resp)
+    // response from `ComputeAclCreateAcls`: ComputeAclCreateAclsResponse
+    fmt.Fprintf(os.Stdout, "Response from `AclsInComputeAPI.ComputeAclCreateAcls`: %v\n", resp)
 }
 ```
 
@@ -55,16 +55,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiComputeACLCreateAclsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiComputeAclCreateAclsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **computeACLCreateAclsRequest** | [**ComputeACLCreateAclsRequest**](ComputeACLCreateAclsRequest.md) |  | 
+ **computeAclCreateAclsRequest** | [**ComputeAclCreateAclsRequest**](ComputeAclCreateAclsRequest.md) |  | 
 
 ### Return type
 
-[**ComputeACLCreateAclsResponse**](ComputeACLCreateAclsResponse.md)
+[**ComputeAclCreateAclsResponse**](ComputeAclCreateAclsResponse.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## ComputeACLDeleteSAclID
+## ComputeAclDeleteSAclId
 
 Delete an ACL
 
@@ -97,14 +97,14 @@ import (
 )
 
 func main() {
-    aclID := "aclId_example" // string | 
+    aclId := "aclId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLsInComputeAPI.ComputeACLDeleteSAclID(ctx, aclID).Execute()
+    resp, r, err := apiClient.AclsInComputeAPI.ComputeAclDeleteSAclId(ctx, aclId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ACLsInComputeAPI.ComputeACLDeleteSAclID`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AclsInComputeAPI.ComputeAclDeleteSAclId`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -116,11 +116,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**aclID** | **string** |  | 
+**aclId** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiComputeACLDeleteSAclIDRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiComputeAclDeleteSAclIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## ComputeACLListAclEntries
+## ComputeAclListAclEntries
 
 List an ACL
 
@@ -162,20 +162,20 @@ import (
 )
 
 func main() {
-    aclID := "aclId_example" // string | 
+    aclId := "aclId_example" // string | 
     cursor := "cursor_example" // string |  (optional)
     limit := int32(56) // int32 |  (optional) (default to 100)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLsInComputeAPI.ComputeACLListAclEntries(ctx, aclID).Cursor(cursor).Limit(limit).Execute()
+    resp, r, err := apiClient.AclsInComputeAPI.ComputeAclListAclEntries(ctx, aclId).Cursor(cursor).Limit(limit).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ACLsInComputeAPI.ComputeACLListAclEntries`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AclsInComputeAPI.ComputeAclListAclEntries`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ComputeACLListAclEntries`: ComputeACLListEntries
-    fmt.Fprintf(os.Stdout, "Response from `ACLsInComputeAPI.ComputeACLListAclEntries`: %v\n", resp)
+    // response from `ComputeAclListAclEntries`: ComputeAclListEntries
+    fmt.Fprintf(os.Stdout, "Response from `AclsInComputeAPI.ComputeAclListAclEntries`: %v\n", resp)
 }
 ```
 
@@ -185,11 +185,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**aclID** | **string** |  | 
+**aclId** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiComputeACLListAclEntriesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiComputeAclListAclEntriesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComputeACLListEntries**](ComputeACLListEntries.md)
+[**ComputeAclListEntries**](ComputeAclListEntries.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## ComputeACLListAcls
+## ComputeAclListAcls
 
 List ACLs
 
@@ -235,13 +235,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLsInComputeAPI.ComputeACLListAcls(ctx).Execute()
+    resp, r, err := apiClient.AclsInComputeAPI.ComputeAclListAcls(ctx).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ACLsInComputeAPI.ComputeACLListAcls`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AclsInComputeAPI.ComputeAclListAcls`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ComputeACLListAcls`: ComputeACLList
-    fmt.Fprintf(os.Stdout, "Response from `ACLsInComputeAPI.ComputeACLListAcls`: %v\n", resp)
+    // response from `ComputeAclListAcls`: ComputeAclList
+    fmt.Fprintf(os.Stdout, "Response from `AclsInComputeAPI.ComputeAclListAcls`: %v\n", resp)
 }
 ```
 
@@ -251,13 +251,13 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiComputeACLListAclsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiComputeAclListAclsRequest struct via the builder pattern
 
 
 
 ### Return type
 
-[**ComputeACLList**](ComputeACLList.md)
+[**ComputeAclList**](ComputeAclList.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Other parameters are passed through a pointer to a apiComputeACLListAclsRequest 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## ComputeACLListAclsSAclID
+## ComputeAclListAclsSAclId
 
 Describe an ACL
 
@@ -290,18 +290,18 @@ import (
 )
 
 func main() {
-    aclID := "aclId_example" // string | 
+    aclId := "aclId_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLsInComputeAPI.ComputeACLListAclsSAclID(ctx, aclID).Execute()
+    resp, r, err := apiClient.AclsInComputeAPI.ComputeAclListAclsSAclId(ctx, aclId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ACLsInComputeAPI.ComputeACLListAclsSAclID`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AclsInComputeAPI.ComputeAclListAclsSAclId`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ComputeACLListAclsSAclID`: ComputeACLCreateAclsResponse
-    fmt.Fprintf(os.Stdout, "Response from `ACLsInComputeAPI.ComputeACLListAclsSAclID`: %v\n", resp)
+    // response from `ComputeAclListAclsSAclId`: ComputeAclCreateAclsResponse
+    fmt.Fprintf(os.Stdout, "Response from `AclsInComputeAPI.ComputeAclListAclsSAclId`: %v\n", resp)
 }
 ```
 
@@ -311,11 +311,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**aclID** | **string** |  | 
+**aclId** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiComputeACLListAclsSAclIDRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiComputeAclListAclsSAclIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComputeACLCreateAclsResponse**](ComputeACLCreateAclsResponse.md)
+[**ComputeAclCreateAclsResponse**](ComputeAclCreateAclsResponse.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## ComputeACLLookupAcls
+## ComputeAclLookupAcls
 
 Lookup an ACL
 
@@ -357,19 +357,19 @@ import (
 )
 
 func main() {
-    aclID := "aclId_example" // string | 
-    aclIP := "aclIp_example" // string | 
+    aclId := "aclId_example" // string | 
+    aclIp := "aclIp_example" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLsInComputeAPI.ComputeACLLookupAcls(ctx, aclID, aclIP).Execute()
+    resp, r, err := apiClient.AclsInComputeAPI.ComputeAclLookupAcls(ctx, aclId, aclIp).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ACLsInComputeAPI.ComputeACLLookupAcls`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AclsInComputeAPI.ComputeAclLookupAcls`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ComputeACLLookupAcls`: ComputeACLLookup
-    fmt.Fprintf(os.Stdout, "Response from `ACLsInComputeAPI.ComputeACLLookupAcls`: %v\n", resp)
+    // response from `ComputeAclLookupAcls`: ComputeAclLookup
+    fmt.Fprintf(os.Stdout, "Response from `AclsInComputeAPI.ComputeAclLookupAcls`: %v\n", resp)
 }
 ```
 
@@ -379,12 +379,12 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**aclID** | **string** |  | 
-**aclIP** | **string** |  | 
+**aclId** | **string** |  | 
+**aclIp** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiComputeACLLookupAclsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiComputeAclLookupAclsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -393,7 +393,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ComputeACLLookup**](ComputeACLLookup.md)
+[**ComputeAclLookup**](ComputeAclLookup.md)
 
 ### Authorization
 
@@ -407,7 +407,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## ComputeACLUpdateAcls
+## ComputeAclUpdateAcls
 
 Update an ACL
 
@@ -426,15 +426,15 @@ import (
 )
 
 func main() {
-    aclID := "aclId_example" // string | 
-    computeACLUpdate := *openapiclient.NewComputeACLUpdate() // ComputeACLUpdate |  (optional)
+    aclId := "aclId_example" // string | 
+    computeAclUpdate := *openapiclient.NewComputeAclUpdate() // ComputeAclUpdate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLsInComputeAPI.ComputeACLUpdateAcls(ctx, aclID).ComputeACLUpdate(computeACLUpdate).Execute()
+    resp, r, err := apiClient.AclsInComputeAPI.ComputeAclUpdateAcls(ctx, aclId).ComputeAclUpdate(computeAclUpdate).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ACLsInComputeAPI.ComputeACLUpdateAcls`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AclsInComputeAPI.ComputeAclUpdateAcls`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -446,16 +446,16 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**aclID** | **string** |  | 
+**aclId** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiComputeACLUpdateAclsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiComputeAclUpdateAclsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **computeACLUpdate** | [**ComputeACLUpdate**](ComputeACLUpdate.md) |  | 
+ **computeAclUpdate** | [**ComputeAclUpdate**](ComputeAclUpdate.md) |  | 
 
 ### Return type
 
@@ -471,3 +471,4 @@ Name | Type | Description  | Notes
 - **Accept**: Not defined
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

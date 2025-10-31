@@ -16,11 +16,11 @@ Name | Type | Description | Notes
 **Dataset** | Pointer to **string** | Your BigQuery dataset. | [optional] 
 **Table** | Pointer to **string** | Your BigQuery table. | [optional] 
 **TemplateSuffix** | Pointer to **NullableString** | BigQuery table name suffix template. Optional. | [optional] 
-**ProjectID** | Pointer to **string** | Your Google Cloud Platform project ID. Required | [optional] 
+**ProjectId** | Pointer to **string** | Your Google Cloud Platform project ID. Required | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
@@ -372,30 +372,30 @@ HasTemplateSuffix returns a boolean if a field has been set.
 `func (o *LoggingBigqueryResponse) UnsetTemplateSuffix()`
 
 UnsetTemplateSuffix ensures that no value is present for TemplateSuffix, not even an explicit nil
-### GetProjectID
+### GetProjectId
 
-`func (o *LoggingBigqueryResponse) GetProjectID() string`
+`func (o *LoggingBigqueryResponse) GetProjectId() string`
 
-GetProjectID returns the ProjectID field if non-nil, zero value otherwise.
+GetProjectId returns the ProjectId field if non-nil, zero value otherwise.
 
-### GetProjectIDOk
+### GetProjectIdOk
 
-`func (o *LoggingBigqueryResponse) GetProjectIDOk() (*string, bool)`
+`func (o *LoggingBigqueryResponse) GetProjectIdOk() (*string, bool)`
 
-GetProjectIDOk returns a tuple with the ProjectID field if it's non-nil, zero value otherwise
+GetProjectIdOk returns a tuple with the ProjectId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProjectID
+### SetProjectId
 
-`func (o *LoggingBigqueryResponse) SetProjectID(v string)`
+`func (o *LoggingBigqueryResponse) SetProjectId(v string)`
 
-SetProjectID sets ProjectID field to given value.
+SetProjectId sets ProjectId field to given value.
 
-### HasProjectID
+### HasProjectId
 
-`func (o *LoggingBigqueryResponse) HasProjectID() bool`
+`func (o *LoggingBigqueryResponse) HasProjectId() bool`
 
-HasProjectID returns a boolean if a field has been set.
+HasProjectId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -502,30 +502,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *LoggingBigqueryResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceID
+### GetServiceId
 
-`func (o *LoggingBigqueryResponse) GetServiceID() string`
+`func (o *LoggingBigqueryResponse) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *LoggingBigqueryResponse) GetServiceIDOk() (*string, bool)`
+`func (o *LoggingBigqueryResponse) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *LoggingBigqueryResponse) SetServiceID(v string)`
+`func (o *LoggingBigqueryResponse) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *LoggingBigqueryResponse) HasServiceID() bool`
+`func (o *LoggingBigqueryResponse) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -554,3 +554,5 @@ HasVersion returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

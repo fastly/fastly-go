@@ -36,11 +36,11 @@ type LoggingLogglyAPI interface {
 		Create a Loggly logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogLogglyRequest
 	*/
-	CreateLogLoggly(ctx context.Context, serviceID string, versionID int32) APICreateLogLogglyRequest
+	CreateLogLoggly(ctx context.Context, serviceId string, versionId int32) APICreateLogLogglyRequest
 
 	// CreateLogLogglyExecute executes the request
 	//  @return LoggingLogglyResponse
@@ -52,12 +52,12 @@ type LoggingLogglyAPI interface {
 		Delete the Loggly logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingLogglyName The name for the real-time logging configuration.
 		 @return APIDeleteLogLogglyRequest
 	*/
-	DeleteLogLoggly(ctx context.Context, serviceID string, versionID int32, loggingLogglyName string) APIDeleteLogLogglyRequest
+	DeleteLogLoggly(ctx context.Context, serviceId string, versionId int32, loggingLogglyName string) APIDeleteLogLogglyRequest
 
 	// DeleteLogLogglyExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingLogglyAPI interface {
 		Get the Loggly logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingLogglyName The name for the real-time logging configuration.
 		 @return APIGetLogLogglyRequest
 	*/
-	GetLogLoggly(ctx context.Context, serviceID string, versionID int32, loggingLogglyName string) APIGetLogLogglyRequest
+	GetLogLoggly(ctx context.Context, serviceId string, versionId int32, loggingLogglyName string) APIGetLogLogglyRequest
 
 	// GetLogLogglyExecute executes the request
 	//  @return LoggingLogglyResponse
@@ -86,11 +86,11 @@ type LoggingLogglyAPI interface {
 		List all Loggly logging objects for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogLogglyRequest
 	*/
-	ListLogLoggly(ctx context.Context, serviceID string, versionID int32) APIListLogLogglyRequest
+	ListLogLoggly(ctx context.Context, serviceId string, versionId int32) APIListLogLogglyRequest
 
 	// ListLogLogglyExecute executes the request
 	//  @return []LoggingLogglyResponse
@@ -102,12 +102,12 @@ type LoggingLogglyAPI interface {
 		Update the Loggly logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingLogglyName The name for the real-time logging configuration.
 		 @return APIUpdateLogLogglyRequest
 	*/
-	UpdateLogLoggly(ctx context.Context, serviceID string, versionID int32, loggingLogglyName string) APIUpdateLogLogglyRequest
+	UpdateLogLoggly(ctx context.Context, serviceId string, versionId int32, loggingLogglyName string) APIUpdateLogLogglyRequest
 
 	// UpdateLogLogglyExecute executes the request
 	//  @return LoggingLogglyResponse
@@ -121,8 +121,8 @@ type LoggingLogglyAPIService service
 type APICreateLogLogglyRequest struct {
 	ctx                 context.Context
 	APIService          LoggingLogglyAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -185,16 +185,16 @@ CreateLogLoggly Create a Loggly log endpoint
 Create a Loggly logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogLogglyRequest
 */
-func (a *LoggingLogglyAPIService) CreateLogLoggly(ctx context.Context, serviceID string, versionID int32) APICreateLogLogglyRequest {
+func (a *LoggingLogglyAPIService) CreateLogLoggly(ctx context.Context, serviceId string, versionId int32) APICreateLogLogglyRequest {
 	return APICreateLogLogglyRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -214,8 +214,8 @@ func (a *LoggingLogglyAPIService) CreateLogLogglyExecute(r APICreateLogLogglyReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/loggly"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -327,8 +327,8 @@ func (a *LoggingLogglyAPIService) CreateLogLogglyExecute(r APICreateLogLogglyReq
 type APIDeleteLogLogglyRequest struct {
 	ctx               context.Context
 	APIService        LoggingLogglyAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	loggingLogglyName string
 }
 
@@ -343,17 +343,17 @@ DeleteLogLoggly Delete a Loggly log endpoint
 Delete the Loggly logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingLogglyName The name for the real-time logging configuration.
  @return APIDeleteLogLogglyRequest
 */
-func (a *LoggingLogglyAPIService) DeleteLogLoggly(ctx context.Context, serviceID string, versionID int32, loggingLogglyName string) APIDeleteLogLogglyRequest {
+func (a *LoggingLogglyAPIService) DeleteLogLoggly(ctx context.Context, serviceId string, versionId int32, loggingLogglyName string) APIDeleteLogLogglyRequest {
 	return APIDeleteLogLogglyRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingLogglyName: loggingLogglyName,
 	}
 }
@@ -374,8 +374,8 @@ func (a *LoggingLogglyAPIService) DeleteLogLogglyExecute(r APIDeleteLogLogglyReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/loggly/{logging_loggly_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_loggly_name"+"}", gourl.PathEscape(parameterToString(r.loggingLogglyName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -467,8 +467,8 @@ func (a *LoggingLogglyAPIService) DeleteLogLogglyExecute(r APIDeleteLogLogglyReq
 type APIGetLogLogglyRequest struct {
 	ctx               context.Context
 	APIService        LoggingLogglyAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	loggingLogglyName string
 }
 
@@ -483,17 +483,17 @@ GetLogLoggly Get a Loggly log endpoint
 Get the Loggly logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingLogglyName The name for the real-time logging configuration.
  @return APIGetLogLogglyRequest
 */
-func (a *LoggingLogglyAPIService) GetLogLoggly(ctx context.Context, serviceID string, versionID int32, loggingLogglyName string) APIGetLogLogglyRequest {
+func (a *LoggingLogglyAPIService) GetLogLoggly(ctx context.Context, serviceId string, versionId int32, loggingLogglyName string) APIGetLogLogglyRequest {
 	return APIGetLogLogglyRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingLogglyName: loggingLogglyName,
 	}
 }
@@ -514,8 +514,8 @@ func (a *LoggingLogglyAPIService) GetLogLogglyExecute(r APIGetLogLogglyRequest) 
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/loggly/{logging_loggly_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_loggly_name"+"}", gourl.PathEscape(parameterToString(r.loggingLogglyName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -607,8 +607,8 @@ func (a *LoggingLogglyAPIService) GetLogLogglyExecute(r APIGetLogLogglyRequest) 
 type APIListLogLogglyRequest struct {
 	ctx        context.Context
 	APIService LoggingLogglyAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -622,16 +622,16 @@ ListLogLoggly List Loggly log endpoints
 List all Loggly logging objects for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogLogglyRequest
 */
-func (a *LoggingLogglyAPIService) ListLogLoggly(ctx context.Context, serviceID string, versionID int32) APIListLogLogglyRequest {
+func (a *LoggingLogglyAPIService) ListLogLoggly(ctx context.Context, serviceId string, versionId int32) APIListLogLogglyRequest {
 	return APIListLogLogglyRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -651,8 +651,8 @@ func (a *LoggingLogglyAPIService) ListLogLogglyExecute(r APIListLogLogglyRequest
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/loggly"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -743,8 +743,8 @@ func (a *LoggingLogglyAPIService) ListLogLogglyExecute(r APIListLogLogglyRequest
 type APIUpdateLogLogglyRequest struct {
 	ctx                 context.Context
 	APIService          LoggingLogglyAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingLogglyName   string
 	name                *string
 	placement           *string
@@ -808,17 +808,17 @@ UpdateLogLoggly Update a Loggly log endpoint
 Update the Loggly logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingLogglyName The name for the real-time logging configuration.
  @return APIUpdateLogLogglyRequest
 */
-func (a *LoggingLogglyAPIService) UpdateLogLoggly(ctx context.Context, serviceID string, versionID int32, loggingLogglyName string) APIUpdateLogLogglyRequest {
+func (a *LoggingLogglyAPIService) UpdateLogLoggly(ctx context.Context, serviceId string, versionId int32, loggingLogglyName string) APIUpdateLogLogglyRequest {
 	return APIUpdateLogLogglyRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingLogglyName: loggingLogglyName,
 	}
 }
@@ -839,8 +839,8 @@ func (a *LoggingLogglyAPIService) UpdateLogLogglyExecute(r APIUpdateLogLogglyReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/loggly/{logging_loggly_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_loggly_name"+"}", gourl.PathEscape(parameterToString(r.loggingLogglyName, "")))
 
 	localVarHeaderParams := make(map[string]string)

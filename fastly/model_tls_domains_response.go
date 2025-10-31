@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// TLSDomainsResponse struct for TLSDomainsResponse
-type TLSDomainsResponse struct {
+// TlsDomainsResponse struct for TlsDomainsResponse
+type TlsDomainsResponse struct {
 	Links                *PaginationLinks `json:"links,omitempty"`
 	Meta                 *PaginationMeta  `json:"meta,omitempty"`
-	Data                 []TLSDomainData  `json:"data,omitempty"`
+	Data                 []TlsDomainData  `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TLSDomainsResponse TLSDomainsResponse
+type _TlsDomainsResponse TlsDomainsResponse
 
-// NewTLSDomainsResponse instantiates a new TLSDomainsResponse object
+// NewTlsDomainsResponse instantiates a new TlsDomainsResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSDomainsResponse() *TLSDomainsResponse {
-	this := TLSDomainsResponse{}
+func NewTlsDomainsResponse() *TlsDomainsResponse {
+	this := TlsDomainsResponse{}
 	return &this
 }
 
-// NewTLSDomainsResponseWithDefaults instantiates a new TLSDomainsResponse object
+// NewTlsDomainsResponseWithDefaults instantiates a new TlsDomainsResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSDomainsResponseWithDefaults() *TLSDomainsResponse {
-	this := TLSDomainsResponse{}
+func NewTlsDomainsResponseWithDefaults() *TlsDomainsResponse {
+	this := TlsDomainsResponse{}
 	return &this
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *TLSDomainsResponse) GetLinks() PaginationLinks {
+func (o *TlsDomainsResponse) GetLinks() PaginationLinks {
 	if o == nil || o.Links == nil {
 		var ret PaginationLinks
 		return ret
@@ -54,7 +54,7 @@ func (o *TLSDomainsResponse) GetLinks() PaginationLinks {
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSDomainsResponse) GetLinksOk() (*PaginationLinks, bool) {
+func (o *TlsDomainsResponse) GetLinksOk() (*PaginationLinks, bool) {
 	if o == nil || o.Links == nil {
 		return nil, false
 	}
@@ -62,7 +62,7 @@ func (o *TLSDomainsResponse) GetLinksOk() (*PaginationLinks, bool) {
 }
 
 // HasLinks returns a boolean if a field has been set.
-func (o *TLSDomainsResponse) HasLinks() bool {
+func (o *TlsDomainsResponse) HasLinks() bool {
 	if o != nil && o.Links != nil {
 		return true
 	}
@@ -71,12 +71,12 @@ func (o *TLSDomainsResponse) HasLinks() bool {
 }
 
 // SetLinks gets a reference to the given PaginationLinks and assigns it to the Links field.
-func (o *TLSDomainsResponse) SetLinks(v PaginationLinks) {
+func (o *TlsDomainsResponse) SetLinks(v PaginationLinks) {
 	o.Links = &v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *TLSDomainsResponse) GetMeta() PaginationMeta {
+func (o *TlsDomainsResponse) GetMeta() PaginationMeta {
 	if o == nil || o.Meta == nil {
 		var ret PaginationMeta
 		return ret
@@ -86,7 +86,7 @@ func (o *TLSDomainsResponse) GetMeta() PaginationMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSDomainsResponse) GetMetaOk() (*PaginationMeta, bool) {
+func (o *TlsDomainsResponse) GetMetaOk() (*PaginationMeta, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -94,7 +94,7 @@ func (o *TLSDomainsResponse) GetMetaOk() (*PaginationMeta, bool) {
 }
 
 // HasMeta returns a boolean if a field has been set.
-func (o *TLSDomainsResponse) HasMeta() bool {
+func (o *TlsDomainsResponse) HasMeta() bool {
 	if o != nil && o.Meta != nil {
 		return true
 	}
@@ -103,14 +103,14 @@ func (o *TLSDomainsResponse) HasMeta() bool {
 }
 
 // SetMeta gets a reference to the given PaginationMeta and assigns it to the Meta field.
-func (o *TLSDomainsResponse) SetMeta(v PaginationMeta) {
+func (o *TlsDomainsResponse) SetMeta(v PaginationMeta) {
 	o.Meta = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *TLSDomainsResponse) GetData() []TLSDomainData {
+func (o *TlsDomainsResponse) GetData() []TlsDomainData {
 	if o == nil || o.Data == nil {
-		var ret []TLSDomainData
+		var ret []TlsDomainData
 		return ret
 	}
 	return o.Data
@@ -118,7 +118,7 @@ func (o *TLSDomainsResponse) GetData() []TLSDomainData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSDomainsResponse) GetDataOk() ([]TLSDomainData, bool) {
+func (o *TlsDomainsResponse) GetDataOk() ([]TlsDomainData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -126,7 +126,7 @@ func (o *TLSDomainsResponse) GetDataOk() ([]TLSDomainData, bool) {
 }
 
 // HasData returns a boolean if a field has been set.
-func (o *TLSDomainsResponse) HasData() bool {
+func (o *TlsDomainsResponse) HasData() bool {
 	if o != nil && o.Data != nil {
 		return true
 	}
@@ -134,14 +134,14 @@ func (o *TLSDomainsResponse) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []TLSDomainData and assigns it to the Data field.
-func (o *TLSDomainsResponse) SetData(v []TLSDomainData) {
+// SetData gets a reference to the given []TlsDomainData and assigns it to the Data field.
+func (o *TlsDomainsResponse) SetData(v []TlsDomainData) {
 	o.Data = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSDomainsResponse) MarshalJSON() ([]byte, error) {
+func (o TlsDomainsResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Links != nil {
 		toSerialize["links"] = o.Links
@@ -162,11 +162,11 @@ func (o TLSDomainsResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSDomainsResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSDomainsResponse := _TLSDomainsResponse{}
+func (o *TlsDomainsResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsDomainsResponse := _TlsDomainsResponse{}
 
-	if err = json.Unmarshal(bytes, &varTLSDomainsResponse); err == nil {
-		*o = TLSDomainsResponse(varTLSDomainsResponse)
+	if err = json.Unmarshal(bytes, &varTlsDomainsResponse); err == nil {
+		*o = TlsDomainsResponse(varTlsDomainsResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -181,48 +181,48 @@ func (o *TLSDomainsResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTLSDomainsResponse is a helper abstraction for handling nullable tlsdomainsresponse types.
-type NullableTLSDomainsResponse struct {
-	value *TLSDomainsResponse
+// NullableTlsDomainsResponse is a helper abstraction for handling nullable tlsdomainsresponse types.
+type NullableTlsDomainsResponse struct {
+	value *TlsDomainsResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSDomainsResponse) Get() *TLSDomainsResponse {
+func (v NullableTlsDomainsResponse) Get() *TlsDomainsResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSDomainsResponse) Set(val *TLSDomainsResponse) {
+func (v *NullableTlsDomainsResponse) Set(val *TlsDomainsResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSDomainsResponse) IsSet() bool {
+func (v NullableTlsDomainsResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSDomainsResponse) Unset() {
+func (v *NullableTlsDomainsResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSDomainsResponse returns a pointer to a new instance of NullableTLSDomainsResponse.
-func NewNullableTLSDomainsResponse(val *TLSDomainsResponse) *NullableTLSDomainsResponse {
-	return &NullableTLSDomainsResponse{value: val, isSet: true}
+// NewNullableTlsDomainsResponse returns a pointer to a new instance of NullableTlsDomainsResponse.
+func NewNullableTlsDomainsResponse(val *TlsDomainsResponse) *NullableTlsDomainsResponse {
+	return &NullableTlsDomainsResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSDomainsResponse) MarshalJSON() ([]byte, error) {
+func (v NullableTlsDomainsResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSDomainsResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsDomainsResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -20,7 +20,7 @@ import (
 // TypeCustomer Resource type
 type TypeCustomer string
 
-// List of resourceTypecustomer
+// List of type_customer
 const (
 	TYPECUSTOMER_CUSTOMER TypeCustomer = "customer"
 )
@@ -69,7 +69,7 @@ func (v TypeCustomer) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to resourceTypecustomer value
+// Ptr returns reference to type_customer value
 func (v TypeCustomer) Ptr() *TypeCustomer {
 	return &v
 }

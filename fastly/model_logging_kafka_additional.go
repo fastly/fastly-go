@@ -36,7 +36,7 @@ type LoggingKafkaAdditional struct {
 	User *string `json:"user,omitempty"`
 	// SASL password.
 	Password             *string              `json:"password,omitempty"`
-	UseTLS               *LoggingUseTLSString `json:"use_tls,omitempty"`
+	UseTls               *LoggingUseTlsString `json:"use_tls,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -52,8 +52,8 @@ func NewLoggingKafkaAdditional() *LoggingKafkaAdditional {
 	this.RequiredAcks = &requiredAcks
 	var requestMaxBytes int32 = 0
 	this.RequestMaxBytes = &requestMaxBytes
-	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
-	this.UseTLS = &useTLS
+	var useTls LoggingUseTlsString = LOGGINGUSETLSSTRING_no_tls
+	this.UseTls = &useTls
 	return &this
 }
 
@@ -66,8 +66,8 @@ func NewLoggingKafkaAdditionalWithDefaults() *LoggingKafkaAdditional {
 	this.RequiredAcks = &requiredAcks
 	var requestMaxBytes int32 = 0
 	this.RequestMaxBytes = &requestMaxBytes
-	var useTLS LoggingUseTLSString = LOGGINGUSETLSSTRING_no_tls
-	this.UseTLS = &useTLS
+	var useTls LoggingUseTlsString = LOGGINGUSETLSSTRING_no_tls
+	this.UseTls = &useTls
 	return &this
 }
 
@@ -370,36 +370,36 @@ func (o *LoggingKafkaAdditional) SetPassword(v string) {
 	o.Password = &v
 }
 
-// GetUseTLS returns the UseTLS field value if set, zero value otherwise.
-func (o *LoggingKafkaAdditional) GetUseTLS() LoggingUseTLSString {
-	if o == nil || o.UseTLS == nil {
-		var ret LoggingUseTLSString
+// GetUseTls returns the UseTls field value if set, zero value otherwise.
+func (o *LoggingKafkaAdditional) GetUseTls() LoggingUseTlsString {
+	if o == nil || o.UseTls == nil {
+		var ret LoggingUseTlsString
 		return ret
 	}
-	return *o.UseTLS
+	return *o.UseTls
 }
 
-// GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
+// GetUseTlsOk returns a tuple with the UseTls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingKafkaAdditional) GetUseTLSOk() (*LoggingUseTLSString, bool) {
-	if o == nil || o.UseTLS == nil {
+func (o *LoggingKafkaAdditional) GetUseTlsOk() (*LoggingUseTlsString, bool) {
+	if o == nil || o.UseTls == nil {
 		return nil, false
 	}
-	return o.UseTLS, true
+	return o.UseTls, true
 }
 
-// HasUseTLS returns a boolean if a field has been set.
-func (o *LoggingKafkaAdditional) HasUseTLS() bool {
-	if o != nil && o.UseTLS != nil {
+// HasUseTls returns a boolean if a field has been set.
+func (o *LoggingKafkaAdditional) HasUseTls() bool {
+	if o != nil && o.UseTls != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUseTLS gets a reference to the given LoggingUseTLSString and assigns it to the UseTLS field.
-func (o *LoggingKafkaAdditional) SetUseTLS(v LoggingUseTLSString) {
-	o.UseTLS = &v
+// SetUseTls gets a reference to the given LoggingUseTlsString and assigns it to the UseTls field.
+func (o *LoggingKafkaAdditional) SetUseTls(v LoggingUseTlsString) {
+	o.UseTls = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -433,8 +433,8 @@ func (o LoggingKafkaAdditional) MarshalJSON() ([]byte, error) {
 	if o.Password != nil {
 		toSerialize["password"] = o.Password
 	}
-	if o.UseTLS != nil {
-		toSerialize["use_tls"] = o.UseTLS
+	if o.UseTls != nil {
+		toSerialize["use_tls"] = o.UseTls
 	}
 
 	for key, value := range o.AdditionalProperties {

@@ -31,13 +31,13 @@ import (
 )
 
 func main() {
-    customerID := "customerId_example" // string | Alphanumeric string identifying the customer.
+    customerId := "customerId_example" // string | Alphanumeric string identifying the customer.
     billingAddressRequest := *openapiclient.NewBillingAddressRequest() // BillingAddressRequest | Billing address (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BillingAddressAPI.AddBillingAddr(ctx, customerID).BillingAddressRequest(billingAddressRequest).Execute()
+    resp, r, err := apiClient.BillingAddressAPI.AddBillingAddr(ctx, customerId).BillingAddressRequest(billingAddressRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingAddressAPI.AddBillingAddr`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +53,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerID** | **string** | Alphanumeric string identifying the customer. | 
+**customerId** | **string** | Alphanumeric string identifying the customer. | 
 
 ### Other Parameters
 
@@ -99,12 +99,12 @@ import (
 )
 
 func main() {
-    customerID := "customerId_example" // string | Alphanumeric string identifying the customer.
+    customerId := "customerId_example" // string | Alphanumeric string identifying the customer.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BillingAddressAPI.DeleteBillingAddr(ctx, customerID).Execute()
+    resp, r, err := apiClient.BillingAddressAPI.DeleteBillingAddr(ctx, customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingAddressAPI.DeleteBillingAddr`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -118,7 +118,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerID** | **string** | Alphanumeric string identifying the customer. | 
+**customerId** | **string** | Alphanumeric string identifying the customer. | 
 
 ### Other Parameters
 
@@ -164,12 +164,12 @@ import (
 )
 
 func main() {
-    customerID := "customerId_example" // string | Alphanumeric string identifying the customer.
+    customerId := "customerId_example" // string | Alphanumeric string identifying the customer.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BillingAddressAPI.GetBillingAddr(ctx, customerID).Execute()
+    resp, r, err := apiClient.BillingAddressAPI.GetBillingAddr(ctx, customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingAddressAPI.GetBillingAddr`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -185,7 +185,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerID** | **string** | Alphanumeric string identifying the customer. | 
+**customerId** | **string** | Alphanumeric string identifying the customer. | 
 
 ### Other Parameters
 
@@ -231,13 +231,13 @@ import (
 )
 
 func main() {
-    customerID := "customerId_example" // string | Alphanumeric string identifying the customer.
+    customerId := "customerId_example" // string | Alphanumeric string identifying the customer.
     updateBillingAddressRequest := *openapiclient.NewUpdateBillingAddressRequest() // UpdateBillingAddressRequest | One or more billing address attributes (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BillingAddressAPI.UpdateBillingAddr(ctx, customerID).UpdateBillingAddressRequest(updateBillingAddressRequest).Execute()
+    resp, r, err := apiClient.BillingAddressAPI.UpdateBillingAddr(ctx, customerId).UpdateBillingAddressRequest(updateBillingAddressRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingAddressAPI.UpdateBillingAddr`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerID** | **string** | Alphanumeric string identifying the customer. | 
+**customerId** | **string** | Alphanumeric string identifying the customer. | 
 
 ### Other Parameters
 
@@ -278,3 +278,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/vnd.api+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

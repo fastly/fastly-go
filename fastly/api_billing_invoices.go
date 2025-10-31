@@ -31,19 +31,19 @@ var (
 type BillingInvoicesAPI interface {
 
 	/*
-		GetInvoiceByInvoiceID Get invoice by ID.
+		GetInvoiceByInvoiceId Get invoice by ID.
 
 		Returns invoice associated with the invoice id.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param invoiceID
-		 @return APIGetInvoiceByInvoiceIDRequest
+		 @param invoiceId
+		 @return APIGetInvoiceByInvoiceIdRequest
 	*/
-	GetInvoiceByInvoiceID(ctx context.Context, invoiceID int32) APIGetInvoiceByInvoiceIDRequest
+	GetInvoiceByInvoiceId(ctx context.Context, invoiceId int32) APIGetInvoiceByInvoiceIdRequest
 
-	// GetInvoiceByInvoiceIDExecute executes the request
+	// GetInvoiceByInvoiceIdExecute executes the request
 	//  @return EomInvoiceResponse
-	GetInvoiceByInvoiceIDExecute(r APIGetInvoiceByInvoiceIDRequest) (*EomInvoiceResponse, *http.Response, error)
+	GetInvoiceByInvoiceIdExecute(r APIGetInvoiceByInvoiceIdRequest) (*EomInvoiceResponse, *http.Response, error)
 
 	/*
 		GetMonthToDateInvoice Get month-to-date invoice.
@@ -77,38 +77,38 @@ type BillingInvoicesAPI interface {
 // BillingInvoicesAPIService BillingInvoicesAPI service
 type BillingInvoicesAPIService service
 
-// APIGetInvoiceByInvoiceIDRequest represents a request for the resource.
-type APIGetInvoiceByInvoiceIDRequest struct {
+// APIGetInvoiceByInvoiceIdRequest represents a request for the resource.
+type APIGetInvoiceByInvoiceIdRequest struct {
 	ctx        context.Context
 	APIService BillingInvoicesAPI
-	invoiceID  int32
+	invoiceId  int32
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetInvoiceByInvoiceIDRequest) Execute() (*EomInvoiceResponse, *http.Response, error) {
-	return r.APIService.GetInvoiceByInvoiceIDExecute(r)
+func (r APIGetInvoiceByInvoiceIdRequest) Execute() (*EomInvoiceResponse, *http.Response, error) {
+	return r.APIService.GetInvoiceByInvoiceIdExecute(r)
 }
 
 /*
-GetInvoiceByInvoiceID Get invoice by ID.
+GetInvoiceByInvoiceId Get invoice by ID.
 
 Returns invoice associated with the invoice id.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param invoiceID
- @return APIGetInvoiceByInvoiceIDRequest
+ @param invoiceId
+ @return APIGetInvoiceByInvoiceIdRequest
 */
-func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceID(ctx context.Context, invoiceID int32) APIGetInvoiceByInvoiceIDRequest {
-	return APIGetInvoiceByInvoiceIDRequest{
+func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceId(ctx context.Context, invoiceId int32) APIGetInvoiceByInvoiceIdRequest {
+	return APIGetInvoiceByInvoiceIdRequest{
 		APIService: a,
 		ctx:        ctx,
-		invoiceID:  invoiceID,
+		invoiceId:  invoiceId,
 	}
 }
 
-// GetInvoiceByInvoiceIDExecute executes the request
+// GetInvoiceByInvoiceIdExecute executes the request
 //  @return EomInvoiceResponse
-func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceIDExecute(r APIGetInvoiceByInvoiceIDRequest) (*EomInvoiceResponse, *http.Response, error) {
+func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceIdExecute(r APIGetInvoiceByInvoiceIdRequest) (*EomInvoiceResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
@@ -116,13 +116,13 @@ func (a *BillingInvoicesAPIService) GetInvoiceByInvoiceIDExecute(r APIGetInvoice
 		localVarReturnValue *EomInvoiceResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInvoicesAPIService.GetInvoiceByInvoiceID")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInvoicesAPIService.GetInvoiceByInvoiceId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/billing/v3/invoices/{invoice_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"invoice_id"+"}", gourl.PathEscape(parameterToString(r.invoiceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"invoice_id"+"}", gourl.PathEscape(parameterToString(r.invoiceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

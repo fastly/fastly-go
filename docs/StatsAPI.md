@@ -28,7 +28,7 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     month := "05" // string | 2-digit month. (optional)
     year := "2020" // string | 4-digit year. (optional)
     startTime := int32(1608560817) // int32 | Epoch timestamp. Limits the results returned. (optional)
@@ -37,7 +37,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.StatsAPI.GetServiceStats(ctx, serviceID).Month(month).Year(year).StartTime(startTime).EndTime(endTime).Execute()
+    resp, r, err := apiClient.StatsAPI.GetServiceStats(ctx, serviceId).Month(month).Year(year).StartTime(startTime).EndTime(endTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StatsAPI.GetServiceStats`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +53,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -78,3 +78,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

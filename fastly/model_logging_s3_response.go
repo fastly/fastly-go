@@ -47,12 +47,12 @@ type LoggingS3Response struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string      `json:"service_id,omitempty"`
+	ServiceId *string      `json:"service_id,omitempty"`
 	Version   *string      `json:"version,omitempty"`
 	// The access key for your S3 account. Not required if `iam_role` is provided.
 	AccessKey NullableString `json:"access_key,omitempty"`
 	// The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
-	ACL *string `json:"acl,omitempty"`
+	Acl *string `json:"acl,omitempty"`
 	// The bucket name for S3 account.
 	BucketName *string `json:"bucket_name,omitempty"`
 	// The domain of the Amazon S3 endpoint.
@@ -67,8 +67,8 @@ type LoggingS3Response struct {
 	Redundancy NullableString `json:"redundancy,omitempty"`
 	// The secret key for your S3 account. Not required if `iam_role` is provided.
 	SecretKey NullableString `json:"secret_key,omitempty"`
-	// Optional server-side KMS Key ID. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
-	ServerSideEncryptionKmsKeyID NullableString `json:"server_side_encryption_kms_key_id,omitempty"`
+	// Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
+	ServerSideEncryptionKmsKeyId NullableString `json:"server_side_encryption_kms_key_id,omitempty"`
 	// Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
 	ServerSideEncryption NullableString `json:"server_side_encryption,omitempty"`
 	// The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
@@ -102,8 +102,8 @@ func NewLoggingS3Response() *LoggingS3Response {
 	this.PublicKey = *NewNullableString(&publicKey)
 	var redundancy string = "null"
 	this.Redundancy = *NewNullableString(&redundancy)
-	var serverSideEncryptionKmsKeyID string = "null"
-	this.ServerSideEncryptionKmsKeyID = *NewNullableString(&serverSideEncryptionKmsKeyID)
+	var serverSideEncryptionKmsKeyId string = "null"
+	this.ServerSideEncryptionKmsKeyId = *NewNullableString(&serverSideEncryptionKmsKeyId)
 	var serverSideEncryption string = "null"
 	this.ServerSideEncryption = *NewNullableString(&serverSideEncryption)
 	return &this
@@ -132,8 +132,8 @@ func NewLoggingS3ResponseWithDefaults() *LoggingS3Response {
 	this.PublicKey = *NewNullableString(&publicKey)
 	var redundancy string = "null"
 	this.Redundancy = *NewNullableString(&redundancy)
-	var serverSideEncryptionKmsKeyID string = "null"
-	this.ServerSideEncryptionKmsKeyID = *NewNullableString(&serverSideEncryptionKmsKeyID)
+	var serverSideEncryptionKmsKeyId string = "null"
+	this.ServerSideEncryptionKmsKeyId = *NewNullableString(&serverSideEncryptionKmsKeyId)
 	var serverSideEncryption string = "null"
 	this.ServerSideEncryption = *NewNullableString(&serverSideEncryption)
 	return &this
@@ -653,36 +653,36 @@ func (o *LoggingS3Response) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *LoggingS3Response) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *LoggingS3Response) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingS3Response) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *LoggingS3Response) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *LoggingS3Response) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *LoggingS3Response) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *LoggingS3Response) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *LoggingS3Response) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -760,36 +760,36 @@ func (o *LoggingS3Response) UnsetAccessKey() {
 	o.AccessKey.Unset()
 }
 
-// GetACL returns the ACL field value if set, zero value otherwise.
-func (o *LoggingS3Response) GetACL() string {
-	if o == nil || o.ACL == nil {
+// GetAcl returns the Acl field value if set, zero value otherwise.
+func (o *LoggingS3Response) GetAcl() string {
+	if o == nil || o.Acl == nil {
 		var ret string
 		return ret
 	}
-	return *o.ACL
+	return *o.Acl
 }
 
-// GetACLOk returns a tuple with the ACL field value if set, nil otherwise
+// GetAclOk returns a tuple with the Acl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingS3Response) GetACLOk() (*string, bool) {
-	if o == nil || o.ACL == nil {
+func (o *LoggingS3Response) GetAclOk() (*string, bool) {
+	if o == nil || o.Acl == nil {
 		return nil, false
 	}
-	return o.ACL, true
+	return o.Acl, true
 }
 
-// HasACL returns a boolean if a field has been set.
-func (o *LoggingS3Response) HasACL() bool {
-	if o != nil && o.ACL != nil {
+// HasAcl returns a boolean if a field has been set.
+func (o *LoggingS3Response) HasAcl() bool {
+	if o != nil && o.Acl != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetACL gets a reference to the given string and assigns it to the ACL field.
-func (o *LoggingS3Response) SetACL(v string) {
-	o.ACL = &v
+// SetAcl gets a reference to the given string and assigns it to the Acl field.
+func (o *LoggingS3Response) SetAcl(v string) {
+	o.Acl = &v
 }
 
 // GetBucketName returns the BucketName field value if set, zero value otherwise.
@@ -1071,47 +1071,47 @@ func (o *LoggingS3Response) UnsetSecretKey() {
 	o.SecretKey.Unset()
 }
 
-// GetServerSideEncryptionKmsKeyID returns the ServerSideEncryptionKmsKeyID field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *LoggingS3Response) GetServerSideEncryptionKmsKeyID() string {
-	if o == nil || o.ServerSideEncryptionKmsKeyID.Get() == nil {
+// GetServerSideEncryptionKmsKeyId returns the ServerSideEncryptionKmsKeyId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *LoggingS3Response) GetServerSideEncryptionKmsKeyId() string {
+	if o == nil || o.ServerSideEncryptionKmsKeyId.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServerSideEncryptionKmsKeyID.Get()
+	return *o.ServerSideEncryptionKmsKeyId.Get()
 }
 
-// GetServerSideEncryptionKmsKeyIDOk returns a tuple with the ServerSideEncryptionKmsKeyID field value if set, nil otherwise
+// GetServerSideEncryptionKmsKeyIdOk returns a tuple with the ServerSideEncryptionKmsKeyId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *LoggingS3Response) GetServerSideEncryptionKmsKeyIDOk() (*string, bool) {
+func (o *LoggingS3Response) GetServerSideEncryptionKmsKeyIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.ServerSideEncryptionKmsKeyID.Get(), o.ServerSideEncryptionKmsKeyID.IsSet()
+	return o.ServerSideEncryptionKmsKeyId.Get(), o.ServerSideEncryptionKmsKeyId.IsSet()
 }
 
-// HasServerSideEncryptionKmsKeyID returns a boolean if a field has been set.
-func (o *LoggingS3Response) HasServerSideEncryptionKmsKeyID() bool {
-	if o != nil && o.ServerSideEncryptionKmsKeyID.IsSet() {
+// HasServerSideEncryptionKmsKeyId returns a boolean if a field has been set.
+func (o *LoggingS3Response) HasServerSideEncryptionKmsKeyId() bool {
+	if o != nil && o.ServerSideEncryptionKmsKeyId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetServerSideEncryptionKmsKeyID gets a reference to the given NullableString and assigns it to the ServerSideEncryptionKmsKeyID field.
-func (o *LoggingS3Response) SetServerSideEncryptionKmsKeyID(v string) {
-	o.ServerSideEncryptionKmsKeyID.Set(&v)
+// SetServerSideEncryptionKmsKeyId gets a reference to the given NullableString and assigns it to the ServerSideEncryptionKmsKeyId field.
+func (o *LoggingS3Response) SetServerSideEncryptionKmsKeyId(v string) {
+	o.ServerSideEncryptionKmsKeyId.Set(&v)
 }
 
-// SetServerSideEncryptionKmsKeyIDNil sets the value for ServerSideEncryptionKmsKeyID to be an explicit nil
-func (o *LoggingS3Response) SetServerSideEncryptionKmsKeyIDNil() {
-	o.ServerSideEncryptionKmsKeyID.Set(nil)
+// SetServerSideEncryptionKmsKeyIdNil sets the value for ServerSideEncryptionKmsKeyId to be an explicit nil
+func (o *LoggingS3Response) SetServerSideEncryptionKmsKeyIdNil() {
+	o.ServerSideEncryptionKmsKeyId.Set(nil)
 }
 
-// UnsetServerSideEncryptionKmsKeyID ensures that no value is present for ServerSideEncryptionKmsKeyID, not even an explicit nil
-func (o *LoggingS3Response) UnsetServerSideEncryptionKmsKeyID() {
-	o.ServerSideEncryptionKmsKeyID.Unset()
+// UnsetServerSideEncryptionKmsKeyId ensures that no value is present for ServerSideEncryptionKmsKeyId, not even an explicit nil
+func (o *LoggingS3Response) UnsetServerSideEncryptionKmsKeyId() {
+	o.ServerSideEncryptionKmsKeyId.Unset()
 }
 
 // GetServerSideEncryption returns the ServerSideEncryption field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1235,8 +1235,8 @@ func (o LoggingS3Response) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
@@ -1244,8 +1244,8 @@ func (o LoggingS3Response) MarshalJSON() ([]byte, error) {
 	if o.AccessKey.IsSet() {
 		toSerialize["access_key"] = o.AccessKey.Get()
 	}
-	if o.ACL != nil {
-		toSerialize["acl"] = o.ACL
+	if o.Acl != nil {
+		toSerialize["acl"] = o.Acl
 	}
 	if o.BucketName != nil {
 		toSerialize["bucket_name"] = o.BucketName
@@ -1268,8 +1268,8 @@ func (o LoggingS3Response) MarshalJSON() ([]byte, error) {
 	if o.SecretKey.IsSet() {
 		toSerialize["secret_key"] = o.SecretKey.Get()
 	}
-	if o.ServerSideEncryptionKmsKeyID.IsSet() {
-		toSerialize["server_side_encryption_kms_key_id"] = o.ServerSideEncryptionKmsKeyID.Get()
+	if o.ServerSideEncryptionKmsKeyId.IsSet() {
+		toSerialize["server_side_encryption_kms_key_id"] = o.ServerSideEncryptionKmsKeyId.Get()
 	}
 	if o.ServerSideEncryption.IsSet() {
 		toSerialize["server_side_encryption"] = o.ServerSideEncryption.Get()

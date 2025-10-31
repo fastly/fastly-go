@@ -19,7 +19,7 @@ import (
 // DomainInspectorResponseBodyEnable struct for DomainInspectorResponseBodyEnable
 type DomainInspectorResponseBodyEnable struct {
 	Product              *DomainInspectorResponseProductProduct `json:"product,omitempty"`
-	Service              *BotManagementResponseServiceService   `json:"service,omitempty"`
+	Service              *ApiDiscoveryResponseServiceService    `json:"service,omitempty"`
 	Links                *DomainInspectorResponseLinksLinks     `json:"_links,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -76,9 +76,9 @@ func (o *DomainInspectorResponseBodyEnable) SetProduct(v DomainInspectorResponse
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *DomainInspectorResponseBodyEnable) GetService() BotManagementResponseServiceService {
+func (o *DomainInspectorResponseBodyEnable) GetService() ApiDiscoveryResponseServiceService {
 	if o == nil || o.Service == nil {
-		var ret BotManagementResponseServiceService
+		var ret ApiDiscoveryResponseServiceService
 		return ret
 	}
 	return *o.Service
@@ -86,7 +86,7 @@ func (o *DomainInspectorResponseBodyEnable) GetService() BotManagementResponseSe
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DomainInspectorResponseBodyEnable) GetServiceOk() (*BotManagementResponseServiceService, bool) {
+func (o *DomainInspectorResponseBodyEnable) GetServiceOk() (*ApiDiscoveryResponseServiceService, bool) {
 	if o == nil || o.Service == nil {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *DomainInspectorResponseBodyEnable) HasService() bool {
 	return false
 }
 
-// SetService gets a reference to the given BotManagementResponseServiceService and assigns it to the Service field.
-func (o *DomainInspectorResponseBodyEnable) SetService(v BotManagementResponseServiceService) {
+// SetService gets a reference to the given ApiDiscoveryResponseServiceService and assigns it to the Service field.
+func (o *DomainInspectorResponseBodyEnable) SetService(v ApiDiscoveryResponseServiceService) {
 	o.Service = &v
 }
 

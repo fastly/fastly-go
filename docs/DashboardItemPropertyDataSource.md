@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 
 ### NewDashboardItemPropertyDataSource
 
-`func NewDashboardItemPropertyDataSource(resourceType string, config DashboardItemPropertyDataSourcePropertyConfig, ) *DashboardItemPropertyDataSource`
+`func NewDashboardItemPropertyDataSource(type_ string, config DashboardItemPropertyDataSourcePropertyConfig, ) *DashboardItemPropertyDataSource`
 
 NewDashboardItemPropertyDataSource instantiates a new DashboardItemPropertyDataSource object
 This constructor will assign default values to properties that have it defined,
@@ -68,3 +68,5 @@ SetConfig sets Config field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

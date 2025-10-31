@@ -18,7 +18,7 @@ import (
 
 // InlineResponse2008 struct for InlineResponse2008
 type InlineResponse2008 struct {
-	Data                 []SecretResponse      `json:"data,omitempty"`
+	Data                 []SecretStoreResponse `json:"data,omitempty"`
 	Meta                 *PaginationCursorMeta `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -43,9 +43,9 @@ func NewInlineResponse2008WithDefaults() *InlineResponse2008 {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse2008) GetData() []SecretResponse {
+func (o *InlineResponse2008) GetData() []SecretStoreResponse {
 	if o == nil || o.Data == nil {
-		var ret []SecretResponse
+		var ret []SecretStoreResponse
 		return ret
 	}
 	return o.Data
@@ -53,7 +53,7 @@ func (o *InlineResponse2008) GetData() []SecretResponse {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2008) GetDataOk() ([]SecretResponse, bool) {
+func (o *InlineResponse2008) GetDataOk() ([]SecretStoreResponse, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *InlineResponse2008) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []SecretResponse and assigns it to the Data field.
-func (o *InlineResponse2008) SetData(v []SecretResponse) {
+// SetData gets a reference to the given []SecretStoreResponse and assigns it to the Data field.
+func (o *InlineResponse2008) SetData(v []SecretStoreResponse) {
 	o.Data = v
 }
 

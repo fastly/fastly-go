@@ -36,10 +36,10 @@ type CustomerAPI interface {
 		Delete a customer.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
+		 @param customerId Alphanumeric string identifying the customer.
 		 @return APIDeleteCustomerRequest
 	*/
-	DeleteCustomer(ctx context.Context, customerID string) APIDeleteCustomerRequest
+	DeleteCustomer(ctx context.Context, customerId string) APIDeleteCustomerRequest
 
 	// DeleteCustomerExecute executes the request
 	//  @return InlineResponse200
@@ -51,10 +51,10 @@ type CustomerAPI interface {
 		Get a specific customer.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
+		 @param customerId Alphanumeric string identifying the customer.
 		 @return APIGetCustomerRequest
 	*/
-	GetCustomer(ctx context.Context, customerID string) APIGetCustomerRequest
+	GetCustomer(ctx context.Context, customerId string) APIGetCustomerRequest
 
 	// GetCustomerExecute executes the request
 	//  @return CustomerResponse
@@ -80,10 +80,10 @@ type CustomerAPI interface {
 		List all users from a specified customer id.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
+		 @param customerId Alphanumeric string identifying the customer.
 		 @return APIListUsersRequest
 	*/
-	ListUsers(ctx context.Context, customerID string) APIListUsersRequest
+	ListUsers(ctx context.Context, customerId string) APIListUsersRequest
 
 	// ListUsersExecute executes the request
 	//  @return []SchemasUserResponse
@@ -95,10 +95,10 @@ type CustomerAPI interface {
 		Update a customer.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param customerID Alphanumeric string identifying the customer.
+		 @param customerId Alphanumeric string identifying the customer.
 		 @return APIUpdateCustomerRequest
 	*/
-	UpdateCustomer(ctx context.Context, customerID string) APIUpdateCustomerRequest
+	UpdateCustomer(ctx context.Context, customerId string) APIUpdateCustomerRequest
 
 	// UpdateCustomerExecute executes the request
 	//  @return CustomerResponse
@@ -112,7 +112,7 @@ type CustomerAPIService service
 type APIDeleteCustomerRequest struct {
 	ctx        context.Context
 	APIService CustomerAPI
-	customerID string
+	customerId string
 }
 
 // Execute calls the API using the request data configured.
@@ -126,14 +126,14 @@ DeleteCustomer Delete a customer
 Delete a customer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
+ @param customerId Alphanumeric string identifying the customer.
  @return APIDeleteCustomerRequest
 */
-func (a *CustomerAPIService) DeleteCustomer(ctx context.Context, customerID string) APIDeleteCustomerRequest {
+func (a *CustomerAPIService) DeleteCustomer(ctx context.Context, customerId string) APIDeleteCustomerRequest {
 	return APIDeleteCustomerRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
+		customerId: customerId,
 	}
 }
 
@@ -153,7 +153,7 @@ func (a *CustomerAPIService) DeleteCustomerExecute(r APIDeleteCustomerRequest) (
 	}
 
 	localVarPath := localBasePath + "/customer/{customer_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -244,7 +244,7 @@ func (a *CustomerAPIService) DeleteCustomerExecute(r APIDeleteCustomerRequest) (
 type APIGetCustomerRequest struct {
 	ctx        context.Context
 	APIService CustomerAPI
-	customerID string
+	customerId string
 }
 
 // Execute calls the API using the request data configured.
@@ -258,14 +258,14 @@ GetCustomer Get a customer
 Get a specific customer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
+ @param customerId Alphanumeric string identifying the customer.
  @return APIGetCustomerRequest
 */
-func (a *CustomerAPIService) GetCustomer(ctx context.Context, customerID string) APIGetCustomerRequest {
+func (a *CustomerAPIService) GetCustomer(ctx context.Context, customerId string) APIGetCustomerRequest {
 	return APIGetCustomerRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
+		customerId: customerId,
 	}
 }
 
@@ -285,7 +285,7 @@ func (a *CustomerAPIService) GetCustomerExecute(r APIGetCustomerRequest) (*Custo
 	}
 
 	localVarPath := localBasePath + "/customer/{customer_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -504,7 +504,7 @@ func (a *CustomerAPIService) GetLoggedInCustomerExecute(r APIGetLoggedInCustomer
 type APIListUsersRequest struct {
 	ctx        context.Context
 	APIService CustomerAPI
-	customerID string
+	customerId string
 }
 
 // Execute calls the API using the request data configured.
@@ -518,14 +518,14 @@ ListUsers List users
 List all users from a specified customer id.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
+ @param customerId Alphanumeric string identifying the customer.
  @return APIListUsersRequest
 */
-func (a *CustomerAPIService) ListUsers(ctx context.Context, customerID string) APIListUsersRequest {
+func (a *CustomerAPIService) ListUsers(ctx context.Context, customerId string) APIListUsersRequest {
 	return APIListUsersRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
+		customerId: customerId,
 	}
 }
 
@@ -545,7 +545,7 @@ func (a *CustomerAPIService) ListUsersExecute(r APIListUsersRequest) ([]SchemasU
 	}
 
 	localVarPath := localBasePath + "/customer/{customer_id}/users"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -636,8 +636,8 @@ func (a *CustomerAPIService) ListUsersExecute(r APIListUsersRequest) ([]SchemasU
 type APIUpdateCustomerRequest struct {
 	ctx                   context.Context
 	APIService            CustomerAPI
-	customerID            string
-	billingContactID      *string
+	customerId            string
+	billingContactId      *string
 	billingNetworkType    *string
 	billingRef            *string
 	canConfigureWordpress *bool
@@ -652,20 +652,20 @@ type APIUpdateCustomerRequest struct {
 	hasPci                *bool
 	hasPciPasswords       *bool
 	ipWhitelist           *string
-	legalContactID        *string
+	legalContactId        *string
 	name                  *string
-	ownerID               *string
+	ownerId               *string
 	phoneNumber           *string
 	postalAddress         *string
 	pricingPlan           *string
-	pricingPlanID         *string
-	securityContactID     *string
-	technicalContactID    *string
+	pricingPlanId         *string
+	securityContactId     *string
+	technicalContactId    *string
 }
 
-// BillingContactID The alphanumeric string representing the primary billing contact.
-func (r *APIUpdateCustomerRequest) BillingContactID(billingContactID string) *APIUpdateCustomerRequest {
-	r.billingContactID = &billingContactID
+// BillingContactId The alphanumeric string representing the primary billing contact.
+func (r *APIUpdateCustomerRequest) BillingContactId(billingContactId string) *APIUpdateCustomerRequest {
+	r.billingContactId = &billingContactId
 	return r
 }
 
@@ -747,15 +747,15 @@ func (r *APIUpdateCustomerRequest) HasPciPasswords(hasPciPasswords bool) *APIUpd
 	return r
 }
 
-// IPWhitelist The range of IP addresses authorized to access the customer account.
-func (r *APIUpdateCustomerRequest) IPWhitelist(ipWhitelist string) *APIUpdateCustomerRequest {
+// IpWhitelist The range of IP addresses authorized to access the customer account.
+func (r *APIUpdateCustomerRequest) IpWhitelist(ipWhitelist string) *APIUpdateCustomerRequest {
 	r.ipWhitelist = &ipWhitelist
 	return r
 }
 
-// LegalContactID The alphanumeric string identifying the account&#39;s legal contact.
-func (r *APIUpdateCustomerRequest) LegalContactID(legalContactID string) *APIUpdateCustomerRequest {
-	r.legalContactID = &legalContactID
+// LegalContactId The alphanumeric string identifying the account&#39;s legal contact.
+func (r *APIUpdateCustomerRequest) LegalContactId(legalContactId string) *APIUpdateCustomerRequest {
+	r.legalContactId = &legalContactId
 	return r
 }
 
@@ -765,9 +765,9 @@ func (r *APIUpdateCustomerRequest) Name(name string) *APIUpdateCustomerRequest {
 	return r
 }
 
-// OwnerID The alphanumeric string identifying the account owner.
-func (r *APIUpdateCustomerRequest) OwnerID(ownerID string) *APIUpdateCustomerRequest {
-	r.ownerID = &ownerID
+// OwnerId The alphanumeric string identifying the account owner.
+func (r *APIUpdateCustomerRequest) OwnerId(ownerId string) *APIUpdateCustomerRequest {
+	r.ownerId = &ownerId
 	return r
 }
 
@@ -789,21 +789,21 @@ func (r *APIUpdateCustomerRequest) PricingPlan(pricingPlan string) *APIUpdateCus
 	return r
 }
 
-// PricingPlanID The alphanumeric string identifying the pricing plan.
-func (r *APIUpdateCustomerRequest) PricingPlanID(pricingPlanID string) *APIUpdateCustomerRequest {
-	r.pricingPlanID = &pricingPlanID
+// PricingPlanId The alphanumeric string identifying the pricing plan.
+func (r *APIUpdateCustomerRequest) PricingPlanId(pricingPlanId string) *APIUpdateCustomerRequest {
+	r.pricingPlanId = &pricingPlanId
 	return r
 }
 
-// SecurityContactID The alphanumeric string identifying the account&#39;s security contact.
-func (r *APIUpdateCustomerRequest) SecurityContactID(securityContactID string) *APIUpdateCustomerRequest {
-	r.securityContactID = &securityContactID
+// SecurityContactId The alphanumeric string identifying the account&#39;s security contact.
+func (r *APIUpdateCustomerRequest) SecurityContactId(securityContactId string) *APIUpdateCustomerRequest {
+	r.securityContactId = &securityContactId
 	return r
 }
 
-// TechnicalContactID The alphanumeric string identifying the account&#39;s technical contact.
-func (r *APIUpdateCustomerRequest) TechnicalContactID(technicalContactID string) *APIUpdateCustomerRequest {
-	r.technicalContactID = &technicalContactID
+// TechnicalContactId The alphanumeric string identifying the account&#39;s technical contact.
+func (r *APIUpdateCustomerRequest) TechnicalContactId(technicalContactId string) *APIUpdateCustomerRequest {
+	r.technicalContactId = &technicalContactId
 	return r
 }
 
@@ -818,14 +818,14 @@ UpdateCustomer Update a customer
 Update a customer.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerID Alphanumeric string identifying the customer.
+ @param customerId Alphanumeric string identifying the customer.
  @return APIUpdateCustomerRequest
 */
-func (a *CustomerAPIService) UpdateCustomer(ctx context.Context, customerID string) APIUpdateCustomerRequest {
+func (a *CustomerAPIService) UpdateCustomer(ctx context.Context, customerId string) APIUpdateCustomerRequest {
 	return APIUpdateCustomerRequest{
 		APIService: a,
 		ctx:        ctx,
-		customerID: customerID,
+		customerId: customerId,
 	}
 }
 
@@ -845,7 +845,7 @@ func (a *CustomerAPIService) UpdateCustomerExecute(r APIUpdateCustomerRequest) (
 	}
 
 	localVarPath := localBasePath + "/customer/{customer_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"customer_id"+"}", gourl.PathEscape(parameterToString(r.customerId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -868,8 +868,8 @@ func (a *CustomerAPIService) UpdateCustomerExecute(r APIUpdateCustomerRequest) (
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.billingContactID != nil {
-		localVarFormParams.Add("billing_contact_id", parameterToString(*r.billingContactID, ""))
+	if r.billingContactId != nil {
+		localVarFormParams.Add("billing_contact_id", parameterToString(*r.billingContactId, ""))
 	}
 	if r.billingNetworkType != nil {
 		localVarFormParams.Add("billing_network_type", parameterToString(*r.billingNetworkType, ""))
@@ -913,14 +913,14 @@ func (a *CustomerAPIService) UpdateCustomerExecute(r APIUpdateCustomerRequest) (
 	if r.ipWhitelist != nil {
 		localVarFormParams.Add("ip_whitelist", parameterToString(*r.ipWhitelist, ""))
 	}
-	if r.legalContactID != nil {
-		localVarFormParams.Add("legal_contact_id", parameterToString(*r.legalContactID, ""))
+	if r.legalContactId != nil {
+		localVarFormParams.Add("legal_contact_id", parameterToString(*r.legalContactId, ""))
 	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
 	}
-	if r.ownerID != nil {
-		localVarFormParams.Add("owner_id", parameterToString(*r.ownerID, ""))
+	if r.ownerId != nil {
+		localVarFormParams.Add("owner_id", parameterToString(*r.ownerId, ""))
 	}
 	if r.phoneNumber != nil {
 		localVarFormParams.Add("phone_number", parameterToString(*r.phoneNumber, ""))
@@ -931,14 +931,14 @@ func (a *CustomerAPIService) UpdateCustomerExecute(r APIUpdateCustomerRequest) (
 	if r.pricingPlan != nil {
 		localVarFormParams.Add("pricing_plan", parameterToString(*r.pricingPlan, ""))
 	}
-	if r.pricingPlanID != nil {
-		localVarFormParams.Add("pricing_plan_id", parameterToString(*r.pricingPlanID, ""))
+	if r.pricingPlanId != nil {
+		localVarFormParams.Add("pricing_plan_id", parameterToString(*r.pricingPlanId, ""))
 	}
-	if r.securityContactID != nil {
-		localVarFormParams.Add("security_contact_id", parameterToString(*r.securityContactID, ""))
+	if r.securityContactId != nil {
+		localVarFormParams.Add("security_contact_id", parameterToString(*r.securityContactId, ""))
 	}
-	if r.technicalContactID != nil {
-		localVarFormParams.Add("technical_contact_id", parameterToString(*r.technicalContactID, ""))
+	if r.technicalContactId != nil {
+		localVarFormParams.Add("technical_contact_id", parameterToString(*r.technicalContactId, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

@@ -36,11 +36,11 @@ type LoggingSftpAPI interface {
 		Create a SFTP for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogSftpRequest
 	*/
-	CreateLogSftp(ctx context.Context, serviceID string, versionID int32) APICreateLogSftpRequest
+	CreateLogSftp(ctx context.Context, serviceId string, versionId int32) APICreateLogSftpRequest
 
 	// CreateLogSftpExecute executes the request
 	//  @return LoggingSftpResponse
@@ -52,12 +52,12 @@ type LoggingSftpAPI interface {
 		Delete the SFTP for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingSftpName The name for the real-time logging configuration.
 		 @return APIDeleteLogSftpRequest
 	*/
-	DeleteLogSftp(ctx context.Context, serviceID string, versionID int32, loggingSftpName string) APIDeleteLogSftpRequest
+	DeleteLogSftp(ctx context.Context, serviceId string, versionId int32, loggingSftpName string) APIDeleteLogSftpRequest
 
 	// DeleteLogSftpExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingSftpAPI interface {
 		Get the SFTP for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingSftpName The name for the real-time logging configuration.
 		 @return APIGetLogSftpRequest
 	*/
-	GetLogSftp(ctx context.Context, serviceID string, versionID int32, loggingSftpName string) APIGetLogSftpRequest
+	GetLogSftp(ctx context.Context, serviceId string, versionId int32, loggingSftpName string) APIGetLogSftpRequest
 
 	// GetLogSftpExecute executes the request
 	//  @return LoggingSftpResponse
@@ -86,11 +86,11 @@ type LoggingSftpAPI interface {
 		List all of the SFTPs for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogSftpRequest
 	*/
-	ListLogSftp(ctx context.Context, serviceID string, versionID int32) APIListLogSftpRequest
+	ListLogSftp(ctx context.Context, serviceId string, versionId int32) APIListLogSftpRequest
 
 	// ListLogSftpExecute executes the request
 	//  @return []LoggingSftpResponse
@@ -102,12 +102,12 @@ type LoggingSftpAPI interface {
 		Update the SFTP for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingSftpName The name for the real-time logging configuration.
 		 @return APIUpdateLogSftpRequest
 	*/
-	UpdateLogSftp(ctx context.Context, serviceID string, versionID int32, loggingSftpName string) APIUpdateLogSftpRequest
+	UpdateLogSftp(ctx context.Context, serviceId string, versionId int32, loggingSftpName string) APIUpdateLogSftpRequest
 
 	// UpdateLogSftpExecute executes the request
 	//  @return LoggingSftpResponse
@@ -121,8 +121,8 @@ type LoggingSftpAPIService service
 type APICreateLogSftpRequest struct {
 	ctx                 context.Context
 	APIService          LoggingSftpAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -246,8 +246,8 @@ func (r *APICreateLogSftpRequest) SecretKey(secretKey string) *APICreateLogSftpR
 	return r
 }
 
-// SSHKnownHosts A list of host keys for all hosts we can connect to over SFTP.
-func (r *APICreateLogSftpRequest) SSHKnownHosts(sshKnownHosts string) *APICreateLogSftpRequest {
+// SshKnownHosts A list of host keys for all hosts we can connect to over SFTP.
+func (r *APICreateLogSftpRequest) SshKnownHosts(sshKnownHosts string) *APICreateLogSftpRequest {
 	r.sshKnownHosts = &sshKnownHosts
 	return r
 }
@@ -269,16 +269,16 @@ CreateLogSftp Create an SFTP log endpoint
 Create a SFTP for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogSftpRequest
 */
-func (a *LoggingSftpAPIService) CreateLogSftp(ctx context.Context, serviceID string, versionID int32) APICreateLogSftpRequest {
+func (a *LoggingSftpAPIService) CreateLogSftp(ctx context.Context, serviceId string, versionId int32) APICreateLogSftpRequest {
 	return APICreateLogSftpRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -298,8 +298,8 @@ func (a *LoggingSftpAPIService) CreateLogSftpExecute(r APICreateLogSftpRequest) 
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/sftp"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -447,8 +447,8 @@ func (a *LoggingSftpAPIService) CreateLogSftpExecute(r APICreateLogSftpRequest) 
 type APIDeleteLogSftpRequest struct {
 	ctx             context.Context
 	APIService      LoggingSftpAPI
-	serviceID       string
-	versionID       int32
+	serviceId       string
+	versionId       int32
 	loggingSftpName string
 }
 
@@ -463,17 +463,17 @@ DeleteLogSftp Delete an SFTP log endpoint
 Delete the SFTP for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingSftpName The name for the real-time logging configuration.
  @return APIDeleteLogSftpRequest
 */
-func (a *LoggingSftpAPIService) DeleteLogSftp(ctx context.Context, serviceID string, versionID int32, loggingSftpName string) APIDeleteLogSftpRequest {
+func (a *LoggingSftpAPIService) DeleteLogSftp(ctx context.Context, serviceId string, versionId int32, loggingSftpName string) APIDeleteLogSftpRequest {
 	return APIDeleteLogSftpRequest{
 		APIService:      a,
 		ctx:             ctx,
-		serviceID:       serviceID,
-		versionID:       versionID,
+		serviceId:       serviceId,
+		versionId:       versionId,
 		loggingSftpName: loggingSftpName,
 	}
 }
@@ -494,8 +494,8 @@ func (a *LoggingSftpAPIService) DeleteLogSftpExecute(r APIDeleteLogSftpRequest) 
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/sftp/{logging_sftp_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_sftp_name"+"}", gourl.PathEscape(parameterToString(r.loggingSftpName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -587,8 +587,8 @@ func (a *LoggingSftpAPIService) DeleteLogSftpExecute(r APIDeleteLogSftpRequest) 
 type APIGetLogSftpRequest struct {
 	ctx             context.Context
 	APIService      LoggingSftpAPI
-	serviceID       string
-	versionID       int32
+	serviceId       string
+	versionId       int32
 	loggingSftpName string
 }
 
@@ -603,17 +603,17 @@ GetLogSftp Get an SFTP log endpoint
 Get the SFTP for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingSftpName The name for the real-time logging configuration.
  @return APIGetLogSftpRequest
 */
-func (a *LoggingSftpAPIService) GetLogSftp(ctx context.Context, serviceID string, versionID int32, loggingSftpName string) APIGetLogSftpRequest {
+func (a *LoggingSftpAPIService) GetLogSftp(ctx context.Context, serviceId string, versionId int32, loggingSftpName string) APIGetLogSftpRequest {
 	return APIGetLogSftpRequest{
 		APIService:      a,
 		ctx:             ctx,
-		serviceID:       serviceID,
-		versionID:       versionID,
+		serviceId:       serviceId,
+		versionId:       versionId,
 		loggingSftpName: loggingSftpName,
 	}
 }
@@ -634,8 +634,8 @@ func (a *LoggingSftpAPIService) GetLogSftpExecute(r APIGetLogSftpRequest) (*Logg
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/sftp/{logging_sftp_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_sftp_name"+"}", gourl.PathEscape(parameterToString(r.loggingSftpName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -727,8 +727,8 @@ func (a *LoggingSftpAPIService) GetLogSftpExecute(r APIGetLogSftpRequest) (*Logg
 type APIListLogSftpRequest struct {
 	ctx        context.Context
 	APIService LoggingSftpAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -742,16 +742,16 @@ ListLogSftp List SFTP log endpoints
 List all of the SFTPs for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogSftpRequest
 */
-func (a *LoggingSftpAPIService) ListLogSftp(ctx context.Context, serviceID string, versionID int32) APIListLogSftpRequest {
+func (a *LoggingSftpAPIService) ListLogSftp(ctx context.Context, serviceId string, versionId int32) APIListLogSftpRequest {
 	return APIListLogSftpRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -771,8 +771,8 @@ func (a *LoggingSftpAPIService) ListLogSftpExecute(r APIListLogSftpRequest) ([]L
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/sftp"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -863,8 +863,8 @@ func (a *LoggingSftpAPIService) ListLogSftpExecute(r APIListLogSftpRequest) ([]L
 type APIUpdateLogSftpRequest struct {
 	ctx                 context.Context
 	APIService          LoggingSftpAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingSftpName     string
 	name                *string
 	placement           *string
@@ -989,8 +989,8 @@ func (r *APIUpdateLogSftpRequest) SecretKey(secretKey string) *APIUpdateLogSftpR
 	return r
 }
 
-// SSHKnownHosts A list of host keys for all hosts we can connect to over SFTP.
-func (r *APIUpdateLogSftpRequest) SSHKnownHosts(sshKnownHosts string) *APIUpdateLogSftpRequest {
+// SshKnownHosts A list of host keys for all hosts we can connect to over SFTP.
+func (r *APIUpdateLogSftpRequest) SshKnownHosts(sshKnownHosts string) *APIUpdateLogSftpRequest {
 	r.sshKnownHosts = &sshKnownHosts
 	return r
 }
@@ -1012,17 +1012,17 @@ UpdateLogSftp Update an SFTP log endpoint
 Update the SFTP for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingSftpName The name for the real-time logging configuration.
  @return APIUpdateLogSftpRequest
 */
-func (a *LoggingSftpAPIService) UpdateLogSftp(ctx context.Context, serviceID string, versionID int32, loggingSftpName string) APIUpdateLogSftpRequest {
+func (a *LoggingSftpAPIService) UpdateLogSftp(ctx context.Context, serviceId string, versionId int32, loggingSftpName string) APIUpdateLogSftpRequest {
 	return APIUpdateLogSftpRequest{
 		APIService:      a,
 		ctx:             ctx,
-		serviceID:       serviceID,
-		versionID:       versionID,
+		serviceId:       serviceId,
+		versionId:       versionId,
 		loggingSftpName: loggingSftpName,
 	}
 }
@@ -1043,8 +1043,8 @@ func (a *LoggingSftpAPIService) UpdateLogSftpExecute(r APIUpdateLogSftpRequest) 
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/sftp/{logging_sftp_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_sftp_name"+"}", gourl.PathEscape(parameterToString(r.loggingSftpName, "")))
 
 	localVarHeaderParams := make(map[string]string)

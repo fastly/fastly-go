@@ -16,74 +16,74 @@ import (
 	"encoding/json"
 )
 
-// TLSCommonResponseAllOf1 struct for TLSCommonResponseAllOf1
-type TLSCommonResponseAllOf1 struct {
+// TlsCommonResponseAllOf1 struct for TlsCommonResponseAllOf1
+type TlsCommonResponseAllOf1 struct {
 	// Whether to use TLS.
-	UseTLS               *string `json:"use_tls,omitempty"`
+	UseTls               *string `json:"use_tls,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TLSCommonResponseAllOf1 TLSCommonResponseAllOf1
+type _TlsCommonResponseAllOf1 TlsCommonResponseAllOf1
 
-// NewTLSCommonResponseAllOf1 instantiates a new TLSCommonResponseAllOf1 object
+// NewTlsCommonResponseAllOf1 instantiates a new TlsCommonResponseAllOf1 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSCommonResponseAllOf1() *TLSCommonResponseAllOf1 {
-	this := TLSCommonResponseAllOf1{}
-	var useTLS string = "0"
-	this.UseTLS = &useTLS
+func NewTlsCommonResponseAllOf1() *TlsCommonResponseAllOf1 {
+	this := TlsCommonResponseAllOf1{}
+	var useTls string = "0"
+	this.UseTls = &useTls
 	return &this
 }
 
-// NewTLSCommonResponseAllOf1WithDefaults instantiates a new TLSCommonResponseAllOf1 object
+// NewTlsCommonResponseAllOf1WithDefaults instantiates a new TlsCommonResponseAllOf1 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSCommonResponseAllOf1WithDefaults() *TLSCommonResponseAllOf1 {
-	this := TLSCommonResponseAllOf1{}
-	var useTLS string = "0"
-	this.UseTLS = &useTLS
+func NewTlsCommonResponseAllOf1WithDefaults() *TlsCommonResponseAllOf1 {
+	this := TlsCommonResponseAllOf1{}
+	var useTls string = "0"
+	this.UseTls = &useTls
 	return &this
 }
 
-// GetUseTLS returns the UseTLS field value if set, zero value otherwise.
-func (o *TLSCommonResponseAllOf1) GetUseTLS() string {
-	if o == nil || o.UseTLS == nil {
+// GetUseTls returns the UseTls field value if set, zero value otherwise.
+func (o *TlsCommonResponseAllOf1) GetUseTls() string {
+	if o == nil || o.UseTls == nil {
 		var ret string
 		return ret
 	}
-	return *o.UseTLS
+	return *o.UseTls
 }
 
-// GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
+// GetUseTlsOk returns a tuple with the UseTls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCommonResponseAllOf1) GetUseTLSOk() (*string, bool) {
-	if o == nil || o.UseTLS == nil {
+func (o *TlsCommonResponseAllOf1) GetUseTlsOk() (*string, bool) {
+	if o == nil || o.UseTls == nil {
 		return nil, false
 	}
-	return o.UseTLS, true
+	return o.UseTls, true
 }
 
-// HasUseTLS returns a boolean if a field has been set.
-func (o *TLSCommonResponseAllOf1) HasUseTLS() bool {
-	if o != nil && o.UseTLS != nil {
+// HasUseTls returns a boolean if a field has been set.
+func (o *TlsCommonResponseAllOf1) HasUseTls() bool {
+	if o != nil && o.UseTls != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUseTLS gets a reference to the given string and assigns it to the UseTLS field.
-func (o *TLSCommonResponseAllOf1) SetUseTLS(v string) {
-	o.UseTLS = &v
+// SetUseTls gets a reference to the given string and assigns it to the UseTls field.
+func (o *TlsCommonResponseAllOf1) SetUseTls(v string) {
+	o.UseTls = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSCommonResponseAllOf1) MarshalJSON() ([]byte, error) {
+func (o TlsCommonResponseAllOf1) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.UseTLS != nil {
-		toSerialize["use_tls"] = o.UseTLS
+	if o.UseTls != nil {
+		toSerialize["use_tls"] = o.UseTls
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -95,11 +95,11 @@ func (o TLSCommonResponseAllOf1) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSCommonResponseAllOf1) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSCommonResponseAllOf1 := _TLSCommonResponseAllOf1{}
+func (o *TlsCommonResponseAllOf1) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsCommonResponseAllOf1 := _TlsCommonResponseAllOf1{}
 
-	if err = json.Unmarshal(bytes, &varTLSCommonResponseAllOf1); err == nil {
-		*o = TLSCommonResponseAllOf1(varTLSCommonResponseAllOf1)
+	if err = json.Unmarshal(bytes, &varTlsCommonResponseAllOf1); err == nil {
+		*o = TlsCommonResponseAllOf1(varTlsCommonResponseAllOf1)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -112,48 +112,48 @@ func (o *TLSCommonResponseAllOf1) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTLSCommonResponseAllOf1 is a helper abstraction for handling nullable tlscommonresponseallof1 types.
-type NullableTLSCommonResponseAllOf1 struct {
-	value *TLSCommonResponseAllOf1
+// NullableTlsCommonResponseAllOf1 is a helper abstraction for handling nullable tlscommonresponseallof1 types.
+type NullableTlsCommonResponseAllOf1 struct {
+	value *TlsCommonResponseAllOf1
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSCommonResponseAllOf1) Get() *TLSCommonResponseAllOf1 {
+func (v NullableTlsCommonResponseAllOf1) Get() *TlsCommonResponseAllOf1 {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSCommonResponseAllOf1) Set(val *TLSCommonResponseAllOf1) {
+func (v *NullableTlsCommonResponseAllOf1) Set(val *TlsCommonResponseAllOf1) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSCommonResponseAllOf1) IsSet() bool {
+func (v NullableTlsCommonResponseAllOf1) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSCommonResponseAllOf1) Unset() {
+func (v *NullableTlsCommonResponseAllOf1) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSCommonResponseAllOf1 returns a pointer to a new instance of NullableTLSCommonResponseAllOf1.
-func NewNullableTLSCommonResponseAllOf1(val *TLSCommonResponseAllOf1) *NullableTLSCommonResponseAllOf1 {
-	return &NullableTLSCommonResponseAllOf1{value: val, isSet: true}
+// NewNullableTlsCommonResponseAllOf1 returns a pointer to a new instance of NullableTlsCommonResponseAllOf1.
+func NewNullableTlsCommonResponseAllOf1(val *TlsCommonResponseAllOf1) *NullableTlsCommonResponseAllOf1 {
+	return &NullableTlsCommonResponseAllOf1{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSCommonResponseAllOf1) MarshalJSON() ([]byte, error) {
+func (v NullableTlsCommonResponseAllOf1) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSCommonResponseAllOf1) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsCommonResponseAllOf1) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

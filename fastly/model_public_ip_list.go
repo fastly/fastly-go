@@ -16,8 +16,8 @@ import (
 	"encoding/json"
 )
 
-// PublicIPList struct for PublicIPList
-type PublicIPList struct {
+// PublicIpList struct for PublicIpList
+type PublicIpList struct {
 	// Fastly's IPv4 ranges.
 	Addresses []string `json:"addresses,omitempty"`
 	// Fastly's IPv6 ranges.
@@ -25,27 +25,27 @@ type PublicIPList struct {
 	AdditionalProperties map[string]any
 }
 
-type _PublicIPList PublicIPList
+type _PublicIpList PublicIpList
 
-// NewPublicIPList instantiates a new PublicIPList object
+// NewPublicIpList instantiates a new PublicIpList object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPublicIPList() *PublicIPList {
-	this := PublicIPList{}
+func NewPublicIpList() *PublicIpList {
+	this := PublicIpList{}
 	return &this
 }
 
-// NewPublicIPListWithDefaults instantiates a new PublicIPList object
+// NewPublicIpListWithDefaults instantiates a new PublicIpList object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPublicIPListWithDefaults() *PublicIPList {
-	this := PublicIPList{}
+func NewPublicIpListWithDefaults() *PublicIpList {
+	this := PublicIpList{}
 	return &this
 }
 
 // GetAddresses returns the Addresses field value if set, zero value otherwise.
-func (o *PublicIPList) GetAddresses() []string {
+func (o *PublicIpList) GetAddresses() []string {
 	if o == nil || o.Addresses == nil {
 		var ret []string
 		return ret
@@ -55,7 +55,7 @@ func (o *PublicIPList) GetAddresses() []string {
 
 // GetAddressesOk returns a tuple with the Addresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PublicIPList) GetAddressesOk() ([]string, bool) {
+func (o *PublicIpList) GetAddressesOk() ([]string, bool) {
 	if o == nil || o.Addresses == nil {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *PublicIPList) GetAddressesOk() ([]string, bool) {
 }
 
 // HasAddresses returns a boolean if a field has been set.
-func (o *PublicIPList) HasAddresses() bool {
+func (o *PublicIpList) HasAddresses() bool {
 	if o != nil && o.Addresses != nil {
 		return true
 	}
@@ -72,12 +72,12 @@ func (o *PublicIPList) HasAddresses() bool {
 }
 
 // SetAddresses gets a reference to the given []string and assigns it to the Addresses field.
-func (o *PublicIPList) SetAddresses(v []string) {
+func (o *PublicIpList) SetAddresses(v []string) {
 	o.Addresses = v
 }
 
 // GetIpv6Addresses returns the Ipv6Addresses field value if set, zero value otherwise.
-func (o *PublicIPList) GetIpv6Addresses() []string {
+func (o *PublicIpList) GetIpv6Addresses() []string {
 	if o == nil || o.Ipv6Addresses == nil {
 		var ret []string
 		return ret
@@ -87,7 +87,7 @@ func (o *PublicIPList) GetIpv6Addresses() []string {
 
 // GetIpv6AddressesOk returns a tuple with the Ipv6Addresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PublicIPList) GetIpv6AddressesOk() ([]string, bool) {
+func (o *PublicIpList) GetIpv6AddressesOk() ([]string, bool) {
 	if o == nil || o.Ipv6Addresses == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *PublicIPList) GetIpv6AddressesOk() ([]string, bool) {
 }
 
 // HasIpv6Addresses returns a boolean if a field has been set.
-func (o *PublicIPList) HasIpv6Addresses() bool {
+func (o *PublicIpList) HasIpv6Addresses() bool {
 	if o != nil && o.Ipv6Addresses != nil {
 		return true
 	}
@@ -104,13 +104,13 @@ func (o *PublicIPList) HasIpv6Addresses() bool {
 }
 
 // SetIpv6Addresses gets a reference to the given []string and assigns it to the Ipv6Addresses field.
-func (o *PublicIPList) SetIpv6Addresses(v []string) {
+func (o *PublicIpList) SetIpv6Addresses(v []string) {
 	o.Ipv6Addresses = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o PublicIPList) MarshalJSON() ([]byte, error) {
+func (o PublicIpList) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Addresses != nil {
 		toSerialize["addresses"] = o.Addresses
@@ -128,11 +128,11 @@ func (o PublicIPList) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *PublicIPList) UnmarshalJSON(bytes []byte) (err error) {
-	varPublicIPList := _PublicIPList{}
+func (o *PublicIpList) UnmarshalJSON(bytes []byte) (err error) {
+	varPublicIpList := _PublicIpList{}
 
-	if err = json.Unmarshal(bytes, &varPublicIPList); err == nil {
-		*o = PublicIPList(varPublicIPList)
+	if err = json.Unmarshal(bytes, &varPublicIpList); err == nil {
+		*o = PublicIpList(varPublicIpList)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -146,48 +146,48 @@ func (o *PublicIPList) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullablePublicIPList is a helper abstraction for handling nullable publiciplist types.
-type NullablePublicIPList struct {
-	value *PublicIPList
+// NullablePublicIpList is a helper abstraction for handling nullable publiciplist types.
+type NullablePublicIpList struct {
+	value *PublicIpList
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullablePublicIPList) Get() *PublicIPList {
+func (v NullablePublicIpList) Get() *PublicIpList {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullablePublicIPList) Set(val *PublicIPList) {
+func (v *NullablePublicIpList) Set(val *PublicIpList) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullablePublicIPList) IsSet() bool {
+func (v NullablePublicIpList) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullablePublicIPList) Unset() {
+func (v *NullablePublicIpList) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullablePublicIPList returns a pointer to a new instance of NullablePublicIPList.
-func NewNullablePublicIPList(val *PublicIPList) *NullablePublicIPList {
-	return &NullablePublicIPList{value: val, isSet: true}
+// NewNullablePublicIpList returns a pointer to a new instance of NullablePublicIpList.
+func NewNullablePublicIpList(val *PublicIpList) *NullablePublicIpList {
+	return &NullablePublicIpList{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullablePublicIPList) MarshalJSON() ([]byte, error) {
+func (v NullablePublicIpList) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullablePublicIPList) UnmarshalJSON(src []byte) error {
+func (v *NullablePublicIpList) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

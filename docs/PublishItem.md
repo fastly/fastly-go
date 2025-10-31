@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Channel** | **string** | The channel to publish the message on. | 
-**ID** | Pointer to **string** | The ID of the message. | [optional] 
-**PrevID** | Pointer to **string** | The ID of the previous message published on the same channel. | [optional] 
+**Id** | Pointer to **string** | The ID of the message. | [optional] 
+**PrevId** | Pointer to **string** | The ID of the previous message published on the same channel. | [optional] 
 **Formats** | [**PublishItemFormats**](PublishItemFormats.md) |  | 
 
 ## Methods
@@ -48,55 +48,55 @@ and a boolean to check if the value has been set.
 SetChannel sets Channel field to given value.
 
 
-### GetID
+### GetId
 
-`func (o *PublishItem) GetID() string`
+`func (o *PublishItem) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *PublishItem) GetIDOk() (*string, bool)`
+`func (o *PublishItem) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *PublishItem) SetID(v string)`
+`func (o *PublishItem) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *PublishItem) HasID() bool`
+`func (o *PublishItem) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
-### GetPrevID
+### GetPrevId
 
-`func (o *PublishItem) GetPrevID() string`
+`func (o *PublishItem) GetPrevId() string`
 
-GetPrevID returns the PrevID field if non-nil, zero value otherwise.
+GetPrevId returns the PrevId field if non-nil, zero value otherwise.
 
-### GetPrevIDOk
+### GetPrevIdOk
 
-`func (o *PublishItem) GetPrevIDOk() (*string, bool)`
+`func (o *PublishItem) GetPrevIdOk() (*string, bool)`
 
-GetPrevIDOk returns a tuple with the PrevID field if it's non-nil, zero value otherwise
+GetPrevIdOk returns a tuple with the PrevId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPrevID
+### SetPrevId
 
-`func (o *PublishItem) SetPrevID(v string)`
+`func (o *PublishItem) SetPrevId(v string)`
 
-SetPrevID sets PrevID field to given value.
+SetPrevId sets PrevId field to given value.
 
-### HasPrevID
+### HasPrevId
 
-`func (o *PublishItem) HasPrevID() bool`
+`func (o *PublishItem) HasPrevId() bool`
 
-HasPrevID returns a boolean if a field has been set.
+HasPrevId returns a boolean if a field has been set.
 
 ### GetFormats
 
@@ -120,3 +120,5 @@ SetFormats sets Formats field to given value.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

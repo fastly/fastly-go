@@ -50,10 +50,10 @@ type ServiceAuthorizationsAPI interface {
 		Delete service authorization.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceAuthorizationID Alphanumeric string identifying a service authorization.
+		 @param serviceAuthorizationId Alphanumeric string identifying a service authorization.
 		 @return APIDeleteServiceAuthorizationRequest
 	*/
-	DeleteServiceAuthorization(ctx context.Context, serviceAuthorizationID string) APIDeleteServiceAuthorizationRequest
+	DeleteServiceAuthorization(ctx context.Context, serviceAuthorizationId string) APIDeleteServiceAuthorizationRequest
 
 	// DeleteServiceAuthorizationExecute executes the request
 	DeleteServiceAuthorizationExecute(r APIDeleteServiceAuthorizationRequest) (*http.Response, error)
@@ -69,8 +69,8 @@ type ServiceAuthorizationsAPI interface {
 	DeleteServiceAuthorization2(ctx context.Context) APIDeleteServiceAuthorization2Request
 
 	// DeleteServiceAuthorization2Execute executes the request
-	//  @return InlineResponse2009
-	DeleteServiceAuthorization2Execute(r APIDeleteServiceAuthorization2Request) (*InlineResponse2009, *http.Response, error)
+	//  @return InlineResponse20010
+	DeleteServiceAuthorization2Execute(r APIDeleteServiceAuthorization2Request) (*InlineResponse20010, *http.Response, error)
 
 	/*
 		ListServiceAuthorization List service authorizations
@@ -92,10 +92,10 @@ type ServiceAuthorizationsAPI interface {
 		Show service authorization.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceAuthorizationID Alphanumeric string identifying a service authorization.
+		 @param serviceAuthorizationId Alphanumeric string identifying a service authorization.
 		 @return APIShowServiceAuthorizationRequest
 	*/
-	ShowServiceAuthorization(ctx context.Context, serviceAuthorizationID string) APIShowServiceAuthorizationRequest
+	ShowServiceAuthorization(ctx context.Context, serviceAuthorizationId string) APIShowServiceAuthorizationRequest
 
 	// ShowServiceAuthorizationExecute executes the request
 	//  @return ServiceAuthorizationResponse
@@ -107,10 +107,10 @@ type ServiceAuthorizationsAPI interface {
 		Update service authorization.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceAuthorizationID Alphanumeric string identifying a service authorization.
+		 @param serviceAuthorizationId Alphanumeric string identifying a service authorization.
 		 @return APIUpdateServiceAuthorizationRequest
 	*/
-	UpdateServiceAuthorization(ctx context.Context, serviceAuthorizationID string) APIUpdateServiceAuthorizationRequest
+	UpdateServiceAuthorization(ctx context.Context, serviceAuthorizationId string) APIUpdateServiceAuthorizationRequest
 
 	// UpdateServiceAuthorizationExecute executes the request
 	//  @return ServiceAuthorizationResponse
@@ -275,7 +275,7 @@ func (a *ServiceAuthorizationsAPIService) CreateServiceAuthorizationExecute(r AP
 type APIDeleteServiceAuthorizationRequest struct {
 	ctx                    context.Context
 	APIService             ServiceAuthorizationsAPI
-	serviceAuthorizationID string
+	serviceAuthorizationId string
 }
 
 // Execute calls the API using the request data configured.
@@ -289,14 +289,14 @@ DeleteServiceAuthorization Delete service authorization
 Delete service authorization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceAuthorizationID Alphanumeric string identifying a service authorization.
+ @param serviceAuthorizationId Alphanumeric string identifying a service authorization.
  @return APIDeleteServiceAuthorizationRequest
 */
-func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization(ctx context.Context, serviceAuthorizationID string) APIDeleteServiceAuthorizationRequest {
+func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization(ctx context.Context, serviceAuthorizationId string) APIDeleteServiceAuthorizationRequest {
 	return APIDeleteServiceAuthorizationRequest{
 		APIService:             a,
 		ctx:                    ctx,
-		serviceAuthorizationID: serviceAuthorizationID,
+		serviceAuthorizationId: serviceAuthorizationId,
 	}
 }
 
@@ -314,7 +314,7 @@ func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorizationExecute(r AP
 	}
 
 	localVarPath := localBasePath + "/service-authorizations/{service_authorization_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_authorization_id"+"}", gourl.PathEscape(parameterToString(r.serviceAuthorizationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_authorization_id"+"}", gourl.PathEscape(parameterToString(r.serviceAuthorizationId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -396,17 +396,17 @@ func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorizationExecute(r AP
 type APIDeleteServiceAuthorization2Request struct {
 	ctx         context.Context
 	APIService  ServiceAuthorizationsAPI
-	requestBody *map[string]map[string]any
+	requestBody *map[string]map[string]interface{}
 }
 
 // RequestBody returns a pointer to a request.
-func (r *APIDeleteServiceAuthorization2Request) RequestBody(requestBody map[string]map[string]any) *APIDeleteServiceAuthorization2Request {
+func (r *APIDeleteServiceAuthorization2Request) RequestBody(requestBody map[string]map[string]interface{}) *APIDeleteServiceAuthorization2Request {
 	r.requestBody = &requestBody
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDeleteServiceAuthorization2Request) Execute() (*InlineResponse2009, *http.Response, error) {
+func (r APIDeleteServiceAuthorization2Request) Execute() (*InlineResponse20010, *http.Response, error) {
 	return r.APIService.DeleteServiceAuthorization2Execute(r)
 }
 
@@ -426,13 +426,13 @@ func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization2(ctx contex
 }
 
 // DeleteServiceAuthorization2Execute executes the request
-//  @return InlineResponse2009
-func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization2Execute(r APIDeleteServiceAuthorization2Request) (*InlineResponse2009, *http.Response, error) {
+//  @return InlineResponse20010
+func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization2Execute(r APIDeleteServiceAuthorization2Request) (*InlineResponse20010, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse2009
+		localVarReturnValue *InlineResponse20010
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthorizationsAPIService.DeleteServiceAuthorization2")
@@ -681,7 +681,7 @@ func (a *ServiceAuthorizationsAPIService) ListServiceAuthorizationExecute(r APIL
 type APIShowServiceAuthorizationRequest struct {
 	ctx                    context.Context
 	APIService             ServiceAuthorizationsAPI
-	serviceAuthorizationID string
+	serviceAuthorizationId string
 }
 
 // Execute calls the API using the request data configured.
@@ -695,14 +695,14 @@ ShowServiceAuthorization Show service authorization
 Show service authorization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceAuthorizationID Alphanumeric string identifying a service authorization.
+ @param serviceAuthorizationId Alphanumeric string identifying a service authorization.
  @return APIShowServiceAuthorizationRequest
 */
-func (a *ServiceAuthorizationsAPIService) ShowServiceAuthorization(ctx context.Context, serviceAuthorizationID string) APIShowServiceAuthorizationRequest {
+func (a *ServiceAuthorizationsAPIService) ShowServiceAuthorization(ctx context.Context, serviceAuthorizationId string) APIShowServiceAuthorizationRequest {
 	return APIShowServiceAuthorizationRequest{
 		APIService:             a,
 		ctx:                    ctx,
-		serviceAuthorizationID: serviceAuthorizationID,
+		serviceAuthorizationId: serviceAuthorizationId,
 	}
 }
 
@@ -722,7 +722,7 @@ func (a *ServiceAuthorizationsAPIService) ShowServiceAuthorizationExecute(r APIS
 	}
 
 	localVarPath := localBasePath + "/service-authorizations/{service_authorization_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_authorization_id"+"}", gourl.PathEscape(parameterToString(r.serviceAuthorizationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_authorization_id"+"}", gourl.PathEscape(parameterToString(r.serviceAuthorizationId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -813,7 +813,7 @@ func (a *ServiceAuthorizationsAPIService) ShowServiceAuthorizationExecute(r APIS
 type APIUpdateServiceAuthorizationRequest struct {
 	ctx                    context.Context
 	APIService             ServiceAuthorizationsAPI
-	serviceAuthorizationID string
+	serviceAuthorizationId string
 	serviceAuthorization   *ServiceAuthorization
 }
 
@@ -834,14 +834,14 @@ UpdateServiceAuthorization Update service authorization
 Update service authorization.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceAuthorizationID Alphanumeric string identifying a service authorization.
+ @param serviceAuthorizationId Alphanumeric string identifying a service authorization.
  @return APIUpdateServiceAuthorizationRequest
 */
-func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorization(ctx context.Context, serviceAuthorizationID string) APIUpdateServiceAuthorizationRequest {
+func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorization(ctx context.Context, serviceAuthorizationId string) APIUpdateServiceAuthorizationRequest {
 	return APIUpdateServiceAuthorizationRequest{
 		APIService:             a,
 		ctx:                    ctx,
-		serviceAuthorizationID: serviceAuthorizationID,
+		serviceAuthorizationId: serviceAuthorizationId,
 	}
 }
 
@@ -861,7 +861,7 @@ func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorizationExecute(r AP
 	}
 
 	localVarPath := localBasePath + "/service-authorizations/{service_authorization_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_authorization_id"+"}", gourl.PathEscape(parameterToString(r.serviceAuthorizationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_authorization_id"+"}", gourl.PathEscape(parameterToString(r.serviceAuthorizationId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -954,11 +954,11 @@ func (a *ServiceAuthorizationsAPIService) UpdateServiceAuthorizationExecute(r AP
 type APIUpdateServiceAuthorization2Request struct {
 	ctx         context.Context
 	APIService  ServiceAuthorizationsAPI
-	requestBody *map[string]map[string]any
+	requestBody *map[string]map[string]interface{}
 }
 
 // RequestBody returns a pointer to a request.
-func (r *APIUpdateServiceAuthorization2Request) RequestBody(requestBody map[string]map[string]any) *APIUpdateServiceAuthorization2Request {
+func (r *APIUpdateServiceAuthorization2Request) RequestBody(requestBody map[string]map[string]interface{}) *APIUpdateServiceAuthorization2Request {
 	r.requestBody = &requestBody
 	return r
 }

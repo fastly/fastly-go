@@ -36,11 +36,11 @@ type GzipAPI interface {
 		Create a named gzip configuration on a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateGzipConfigRequest
 	*/
-	CreateGzipConfig(ctx context.Context, serviceID string, versionID int32) APICreateGzipConfigRequest
+	CreateGzipConfig(ctx context.Context, serviceId string, versionId int32) APICreateGzipConfigRequest
 
 	// CreateGzipConfigExecute executes the request
 	//  @return GzipResponse
@@ -52,12 +52,12 @@ type GzipAPI interface {
 		Delete a named gzip configuration on a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param gzipName Name of the gzip configuration.
 		 @return APIDeleteGzipConfigRequest
 	*/
-	DeleteGzipConfig(ctx context.Context, serviceID string, versionID int32, gzipName string) APIDeleteGzipConfigRequest
+	DeleteGzipConfig(ctx context.Context, serviceId string, versionId int32, gzipName string) APIDeleteGzipConfigRequest
 
 	// DeleteGzipConfigExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type GzipAPI interface {
 		Get the gzip configuration for a particular service, version, and name.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param gzipName Name of the gzip configuration.
 		 @return APIGetGzipConfigsRequest
 	*/
-	GetGzipConfigs(ctx context.Context, serviceID string, versionID int32, gzipName string) APIGetGzipConfigsRequest
+	GetGzipConfigs(ctx context.Context, serviceId string, versionId int32, gzipName string) APIGetGzipConfigsRequest
 
 	// GetGzipConfigsExecute executes the request
 	//  @return GzipResponse
@@ -86,11 +86,11 @@ type GzipAPI interface {
 		List all gzip configurations for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListGzipConfigsRequest
 	*/
-	ListGzipConfigs(ctx context.Context, serviceID string, versionID int32) APIListGzipConfigsRequest
+	ListGzipConfigs(ctx context.Context, serviceId string, versionId int32) APIListGzipConfigsRequest
 
 	// ListGzipConfigsExecute executes the request
 	//  @return []GzipResponse
@@ -102,12 +102,12 @@ type GzipAPI interface {
 		Update a named gzip configuration on a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param gzipName Name of the gzip configuration.
 		 @return APIUpdateGzipConfigRequest
 	*/
-	UpdateGzipConfig(ctx context.Context, serviceID string, versionID int32, gzipName string) APIUpdateGzipConfigRequest
+	UpdateGzipConfig(ctx context.Context, serviceId string, versionId int32, gzipName string) APIUpdateGzipConfigRequest
 
 	// UpdateGzipConfigExecute executes the request
 	//  @return GzipResponse
@@ -121,8 +121,8 @@ type GzipAPIService service
 type APICreateGzipConfigRequest struct {
 	ctx            context.Context
 	APIService     GzipAPI
-	serviceID      string
-	versionID      int32
+	serviceId      string
+	versionId      int32
 	cacheCondition *string
 	contentTypes   *string
 	extensions     *string
@@ -164,16 +164,16 @@ CreateGzipConfig Create a gzip configuration
 Create a named gzip configuration on a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateGzipConfigRequest
 */
-func (a *GzipAPIService) CreateGzipConfig(ctx context.Context, serviceID string, versionID int32) APICreateGzipConfigRequest {
+func (a *GzipAPIService) CreateGzipConfig(ctx context.Context, serviceId string, versionId int32) APICreateGzipConfigRequest {
 	return APICreateGzipConfigRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -193,8 +193,8 @@ func (a *GzipAPIService) CreateGzipConfigExecute(r APICreateGzipConfigRequest) (
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/gzip"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -297,8 +297,8 @@ func (a *GzipAPIService) CreateGzipConfigExecute(r APICreateGzipConfigRequest) (
 type APIDeleteGzipConfigRequest struct {
 	ctx        context.Context
 	APIService GzipAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	gzipName   string
 }
 
@@ -313,17 +313,17 @@ DeleteGzipConfig Delete a gzip configuration
 Delete a named gzip configuration on a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param gzipName Name of the gzip configuration.
  @return APIDeleteGzipConfigRequest
 */
-func (a *GzipAPIService) DeleteGzipConfig(ctx context.Context, serviceID string, versionID int32, gzipName string) APIDeleteGzipConfigRequest {
+func (a *GzipAPIService) DeleteGzipConfig(ctx context.Context, serviceId string, versionId int32, gzipName string) APIDeleteGzipConfigRequest {
 	return APIDeleteGzipConfigRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		gzipName:   gzipName,
 	}
 }
@@ -344,8 +344,8 @@ func (a *GzipAPIService) DeleteGzipConfigExecute(r APIDeleteGzipConfigRequest) (
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/gzip/{gzip_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"gzip_name"+"}", gourl.PathEscape(parameterToString(r.gzipName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -437,8 +437,8 @@ func (a *GzipAPIService) DeleteGzipConfigExecute(r APIDeleteGzipConfigRequest) (
 type APIGetGzipConfigsRequest struct {
 	ctx        context.Context
 	APIService GzipAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	gzipName   string
 }
 
@@ -453,17 +453,17 @@ GetGzipConfigs Get a gzip configuration
 Get the gzip configuration for a particular service, version, and name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param gzipName Name of the gzip configuration.
  @return APIGetGzipConfigsRequest
 */
-func (a *GzipAPIService) GetGzipConfigs(ctx context.Context, serviceID string, versionID int32, gzipName string) APIGetGzipConfigsRequest {
+func (a *GzipAPIService) GetGzipConfigs(ctx context.Context, serviceId string, versionId int32, gzipName string) APIGetGzipConfigsRequest {
 	return APIGetGzipConfigsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		gzipName:   gzipName,
 	}
 }
@@ -484,8 +484,8 @@ func (a *GzipAPIService) GetGzipConfigsExecute(r APIGetGzipConfigsRequest) (*Gzi
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/gzip/{gzip_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"gzip_name"+"}", gourl.PathEscape(parameterToString(r.gzipName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -577,8 +577,8 @@ func (a *GzipAPIService) GetGzipConfigsExecute(r APIGetGzipConfigsRequest) (*Gzi
 type APIListGzipConfigsRequest struct {
 	ctx        context.Context
 	APIService GzipAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -592,16 +592,16 @@ ListGzipConfigs List gzip configurations
 List all gzip configurations for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListGzipConfigsRequest
 */
-func (a *GzipAPIService) ListGzipConfigs(ctx context.Context, serviceID string, versionID int32) APIListGzipConfigsRequest {
+func (a *GzipAPIService) ListGzipConfigs(ctx context.Context, serviceId string, versionId int32) APIListGzipConfigsRequest {
 	return APIListGzipConfigsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -621,8 +621,8 @@ func (a *GzipAPIService) ListGzipConfigsExecute(r APIListGzipConfigsRequest) ([]
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/gzip"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -713,8 +713,8 @@ func (a *GzipAPIService) ListGzipConfigsExecute(r APIListGzipConfigsRequest) ([]
 type APIUpdateGzipConfigRequest struct {
 	ctx            context.Context
 	APIService     GzipAPI
-	serviceID      string
-	versionID      int32
+	serviceId      string
+	versionId      int32
 	gzipName       string
 	cacheCondition *string
 	contentTypes   *string
@@ -757,17 +757,17 @@ UpdateGzipConfig Update a gzip configuration
 Update a named gzip configuration on a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param gzipName Name of the gzip configuration.
  @return APIUpdateGzipConfigRequest
 */
-func (a *GzipAPIService) UpdateGzipConfig(ctx context.Context, serviceID string, versionID int32, gzipName string) APIUpdateGzipConfigRequest {
+func (a *GzipAPIService) UpdateGzipConfig(ctx context.Context, serviceId string, versionId int32, gzipName string) APIUpdateGzipConfigRequest {
 	return APIUpdateGzipConfigRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		gzipName:   gzipName,
 	}
 }
@@ -788,8 +788,8 @@ func (a *GzipAPIService) UpdateGzipConfigExecute(r APIUpdateGzipConfigRequest) (
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/gzip/{gzip_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"gzip_name"+"}", gourl.PathEscape(parameterToString(r.gzipName, "")))
 
 	localVarHeaderParams := make(map[string]string)

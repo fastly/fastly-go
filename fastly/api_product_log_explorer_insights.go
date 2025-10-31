@@ -36,10 +36,10 @@ type ProductLogExplorerInsightsAPI interface {
 		Disable the Log Explorer & Insights product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIDisableProductLogExplorerInsightsRequest
 	*/
-	DisableProductLogExplorerInsights(ctx context.Context, serviceID string) APIDisableProductLogExplorerInsightsRequest
+	DisableProductLogExplorerInsights(ctx context.Context, serviceId string) APIDisableProductLogExplorerInsightsRequest
 
 	// DisableProductLogExplorerInsightsExecute executes the request
 	DisableProductLogExplorerInsightsExecute(r APIDisableProductLogExplorerInsightsRequest) (*http.Response, error)
@@ -50,10 +50,10 @@ type ProductLogExplorerInsightsAPI interface {
 		Enable the Log Explorer & Insights product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIEnableProductLogExplorerInsightsRequest
 	*/
-	EnableProductLogExplorerInsights(ctx context.Context, serviceID string) APIEnableProductLogExplorerInsightsRequest
+	EnableProductLogExplorerInsights(ctx context.Context, serviceId string) APIEnableProductLogExplorerInsightsRequest
 
 	// EnableProductLogExplorerInsightsExecute executes the request
 	//  @return LogExplorerInsightsResponseBodyEnable
@@ -65,10 +65,10 @@ type ProductLogExplorerInsightsAPI interface {
 		Get the enablement status of the Log Explorer & Insights product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetProductLogExplorerInsightsRequest
 	*/
-	GetProductLogExplorerInsights(ctx context.Context, serviceID string) APIGetProductLogExplorerInsightsRequest
+	GetProductLogExplorerInsights(ctx context.Context, serviceId string) APIGetProductLogExplorerInsightsRequest
 
 	// GetProductLogExplorerInsightsExecute executes the request
 	//  @return LogExplorerInsightsResponseBodyEnable
@@ -96,7 +96,7 @@ type ProductLogExplorerInsightsAPIService service
 type APIDisableProductLogExplorerInsightsRequest struct {
 	ctx        context.Context
 	APIService ProductLogExplorerInsightsAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -110,14 +110,14 @@ DisableProductLogExplorerInsights Disable product
 Disable the Log Explorer & Insights product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIDisableProductLogExplorerInsightsRequest
 */
-func (a *ProductLogExplorerInsightsAPIService) DisableProductLogExplorerInsights(ctx context.Context, serviceID string) APIDisableProductLogExplorerInsightsRequest {
+func (a *ProductLogExplorerInsightsAPIService) DisableProductLogExplorerInsights(ctx context.Context, serviceId string) APIDisableProductLogExplorerInsightsRequest {
 	return APIDisableProductLogExplorerInsightsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -135,7 +135,7 @@ func (a *ProductLogExplorerInsightsAPIService) DisableProductLogExplorerInsights
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/log_explorer_insights/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -217,7 +217,7 @@ func (a *ProductLogExplorerInsightsAPIService) DisableProductLogExplorerInsights
 type APIEnableProductLogExplorerInsightsRequest struct {
 	ctx        context.Context
 	APIService ProductLogExplorerInsightsAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -231,14 +231,14 @@ EnableProductLogExplorerInsights Enable product
 Enable the Log Explorer & Insights product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIEnableProductLogExplorerInsightsRequest
 */
-func (a *ProductLogExplorerInsightsAPIService) EnableProductLogExplorerInsights(ctx context.Context, serviceID string) APIEnableProductLogExplorerInsightsRequest {
+func (a *ProductLogExplorerInsightsAPIService) EnableProductLogExplorerInsights(ctx context.Context, serviceId string) APIEnableProductLogExplorerInsightsRequest {
 	return APIEnableProductLogExplorerInsightsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -258,7 +258,7 @@ func (a *ProductLogExplorerInsightsAPIService) EnableProductLogExplorerInsightsE
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/log_explorer_insights/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -349,7 +349,7 @@ func (a *ProductLogExplorerInsightsAPIService) EnableProductLogExplorerInsightsE
 type APIGetProductLogExplorerInsightsRequest struct {
 	ctx        context.Context
 	APIService ProductLogExplorerInsightsAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -363,14 +363,14 @@ GetProductLogExplorerInsights Get product enablement status
 Get the enablement status of the Log Explorer & Insights product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetProductLogExplorerInsightsRequest
 */
-func (a *ProductLogExplorerInsightsAPIService) GetProductLogExplorerInsights(ctx context.Context, serviceID string) APIGetProductLogExplorerInsightsRequest {
+func (a *ProductLogExplorerInsightsAPIService) GetProductLogExplorerInsights(ctx context.Context, serviceId string) APIGetProductLogExplorerInsightsRequest {
 	return APIGetProductLogExplorerInsightsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -390,7 +390,7 @@ func (a *ProductLogExplorerInsightsAPIService) GetProductLogExplorerInsightsExec
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/log_explorer_insights/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

@@ -16,282 +16,282 @@ import (
 	"encoding/json"
 )
 
-// TLSCommonResponse struct for TLSCommonResponse
-type TLSCommonResponse struct {
+// TlsCommonResponse struct for TlsCommonResponse
+type TlsCommonResponse struct {
 	// A secure certificate to authenticate a server with. Must be in PEM format.
-	TLSCaCert NullableString `json:"tls_ca_cert,omitempty"`
+	TlsCaCert NullableString `json:"tls_ca_cert,omitempty"`
 	// The client certificate used to make authenticated requests. Must be in PEM format.
-	TLSClientCert NullableString `json:"tls_client_cert,omitempty"`
+	TlsClientCert NullableString `json:"tls_client_cert,omitempty"`
 	// The client private key used to make authenticated requests. Must be in PEM format.
-	TLSClientKey NullableString `json:"tls_client_key,omitempty"`
+	TlsClientKey NullableString `json:"tls_client_key,omitempty"`
 	// The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
-	TLSCertHostname NullableString `json:"tls_cert_hostname,omitempty"`
+	TlsCertHostname NullableString `json:"tls_cert_hostname,omitempty"`
 	// Whether to use TLS.
-	UseTLS               *string `json:"use_tls,omitempty"`
+	UseTls               *string `json:"use_tls,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TLSCommonResponse TLSCommonResponse
+type _TlsCommonResponse TlsCommonResponse
 
-// NewTLSCommonResponse instantiates a new TLSCommonResponse object
+// NewTlsCommonResponse instantiates a new TlsCommonResponse object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSCommonResponse() *TLSCommonResponse {
-	this := TLSCommonResponse{}
+func NewTlsCommonResponse() *TlsCommonResponse {
+	this := TlsCommonResponse{}
 	var tlsCaCert string = "null"
-	this.TLSCaCert = *NewNullableString(&tlsCaCert)
+	this.TlsCaCert = *NewNullableString(&tlsCaCert)
 	var tlsClientCert string = "null"
-	this.TLSClientCert = *NewNullableString(&tlsClientCert)
+	this.TlsClientCert = *NewNullableString(&tlsClientCert)
 	var tlsClientKey string = "null"
-	this.TLSClientKey = *NewNullableString(&tlsClientKey)
+	this.TlsClientKey = *NewNullableString(&tlsClientKey)
 	var tlsCertHostname string = "null"
-	this.TLSCertHostname = *NewNullableString(&tlsCertHostname)
-	var useTLS string = "0"
-	this.UseTLS = &useTLS
+	this.TlsCertHostname = *NewNullableString(&tlsCertHostname)
+	var useTls string = "0"
+	this.UseTls = &useTls
 	return &this
 }
 
-// NewTLSCommonResponseWithDefaults instantiates a new TLSCommonResponse object
+// NewTlsCommonResponseWithDefaults instantiates a new TlsCommonResponse object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSCommonResponseWithDefaults() *TLSCommonResponse {
-	this := TLSCommonResponse{}
+func NewTlsCommonResponseWithDefaults() *TlsCommonResponse {
+	this := TlsCommonResponse{}
 	var tlsCaCert string = "null"
-	this.TLSCaCert = *NewNullableString(&tlsCaCert)
+	this.TlsCaCert = *NewNullableString(&tlsCaCert)
 	var tlsClientCert string = "null"
-	this.TLSClientCert = *NewNullableString(&tlsClientCert)
+	this.TlsClientCert = *NewNullableString(&tlsClientCert)
 	var tlsClientKey string = "null"
-	this.TLSClientKey = *NewNullableString(&tlsClientKey)
+	this.TlsClientKey = *NewNullableString(&tlsClientKey)
 	var tlsCertHostname string = "null"
-	this.TLSCertHostname = *NewNullableString(&tlsCertHostname)
-	var useTLS string = "0"
-	this.UseTLS = &useTLS
+	this.TlsCertHostname = *NewNullableString(&tlsCertHostname)
+	var useTls string = "0"
+	this.UseTls = &useTls
 	return &this
 }
 
-// GetTLSCaCert returns the TLSCaCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TLSCommonResponse) GetTLSCaCert() string {
-	if o == nil || o.TLSCaCert.Get() == nil {
+// GetTlsCaCert returns the TlsCaCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TlsCommonResponse) GetTlsCaCert() string {
+	if o == nil || o.TlsCaCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSCaCert.Get()
+	return *o.TlsCaCert.Get()
 }
 
-// GetTLSCaCertOk returns a tuple with the TLSCaCert field value if set, nil otherwise
+// GetTlsCaCertOk returns a tuple with the TlsCaCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TLSCommonResponse) GetTLSCaCertOk() (*string, bool) {
+func (o *TlsCommonResponse) GetTlsCaCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSCaCert.Get(), o.TLSCaCert.IsSet()
+	return o.TlsCaCert.Get(), o.TlsCaCert.IsSet()
 }
 
-// HasTLSCaCert returns a boolean if a field has been set.
-func (o *TLSCommonResponse) HasTLSCaCert() bool {
-	if o != nil && o.TLSCaCert.IsSet() {
+// HasTlsCaCert returns a boolean if a field has been set.
+func (o *TlsCommonResponse) HasTlsCaCert() bool {
+	if o != nil && o.TlsCaCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSCaCert gets a reference to the given NullableString and assigns it to the TLSCaCert field.
-func (o *TLSCommonResponse) SetTLSCaCert(v string) {
-	o.TLSCaCert.Set(&v)
+// SetTlsCaCert gets a reference to the given NullableString and assigns it to the TlsCaCert field.
+func (o *TlsCommonResponse) SetTlsCaCert(v string) {
+	o.TlsCaCert.Set(&v)
 }
 
-// SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
-func (o *TLSCommonResponse) SetTLSCaCertNil() {
-	o.TLSCaCert.Set(nil)
+// SetTlsCaCertNil sets the value for TlsCaCert to be an explicit nil
+func (o *TlsCommonResponse) SetTlsCaCertNil() {
+	o.TlsCaCert.Set(nil)
 }
 
-// UnsetTLSCaCert ensures that no value is present for TLSCaCert, not even an explicit nil
-func (o *TLSCommonResponse) UnsetTLSCaCert() {
-	o.TLSCaCert.Unset()
+// UnsetTlsCaCert ensures that no value is present for TlsCaCert, not even an explicit nil
+func (o *TlsCommonResponse) UnsetTlsCaCert() {
+	o.TlsCaCert.Unset()
 }
 
-// GetTLSClientCert returns the TLSClientCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TLSCommonResponse) GetTLSClientCert() string {
-	if o == nil || o.TLSClientCert.Get() == nil {
+// GetTlsClientCert returns the TlsClientCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TlsCommonResponse) GetTlsClientCert() string {
+	if o == nil || o.TlsClientCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSClientCert.Get()
+	return *o.TlsClientCert.Get()
 }
 
-// GetTLSClientCertOk returns a tuple with the TLSClientCert field value if set, nil otherwise
+// GetTlsClientCertOk returns a tuple with the TlsClientCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TLSCommonResponse) GetTLSClientCertOk() (*string, bool) {
+func (o *TlsCommonResponse) GetTlsClientCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSClientCert.Get(), o.TLSClientCert.IsSet()
+	return o.TlsClientCert.Get(), o.TlsClientCert.IsSet()
 }
 
-// HasTLSClientCert returns a boolean if a field has been set.
-func (o *TLSCommonResponse) HasTLSClientCert() bool {
-	if o != nil && o.TLSClientCert.IsSet() {
+// HasTlsClientCert returns a boolean if a field has been set.
+func (o *TlsCommonResponse) HasTlsClientCert() bool {
+	if o != nil && o.TlsClientCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSClientCert gets a reference to the given NullableString and assigns it to the TLSClientCert field.
-func (o *TLSCommonResponse) SetTLSClientCert(v string) {
-	o.TLSClientCert.Set(&v)
+// SetTlsClientCert gets a reference to the given NullableString and assigns it to the TlsClientCert field.
+func (o *TlsCommonResponse) SetTlsClientCert(v string) {
+	o.TlsClientCert.Set(&v)
 }
 
-// SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
-func (o *TLSCommonResponse) SetTLSClientCertNil() {
-	o.TLSClientCert.Set(nil)
+// SetTlsClientCertNil sets the value for TlsClientCert to be an explicit nil
+func (o *TlsCommonResponse) SetTlsClientCertNil() {
+	o.TlsClientCert.Set(nil)
 }
 
-// UnsetTLSClientCert ensures that no value is present for TLSClientCert, not even an explicit nil
-func (o *TLSCommonResponse) UnsetTLSClientCert() {
-	o.TLSClientCert.Unset()
+// UnsetTlsClientCert ensures that no value is present for TlsClientCert, not even an explicit nil
+func (o *TlsCommonResponse) UnsetTlsClientCert() {
+	o.TlsClientCert.Unset()
 }
 
-// GetTLSClientKey returns the TLSClientKey field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TLSCommonResponse) GetTLSClientKey() string {
-	if o == nil || o.TLSClientKey.Get() == nil {
+// GetTlsClientKey returns the TlsClientKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TlsCommonResponse) GetTlsClientKey() string {
+	if o == nil || o.TlsClientKey.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSClientKey.Get()
+	return *o.TlsClientKey.Get()
 }
 
-// GetTLSClientKeyOk returns a tuple with the TLSClientKey field value if set, nil otherwise
+// GetTlsClientKeyOk returns a tuple with the TlsClientKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TLSCommonResponse) GetTLSClientKeyOk() (*string, bool) {
+func (o *TlsCommonResponse) GetTlsClientKeyOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSClientKey.Get(), o.TLSClientKey.IsSet()
+	return o.TlsClientKey.Get(), o.TlsClientKey.IsSet()
 }
 
-// HasTLSClientKey returns a boolean if a field has been set.
-func (o *TLSCommonResponse) HasTLSClientKey() bool {
-	if o != nil && o.TLSClientKey.IsSet() {
+// HasTlsClientKey returns a boolean if a field has been set.
+func (o *TlsCommonResponse) HasTlsClientKey() bool {
+	if o != nil && o.TlsClientKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSClientKey gets a reference to the given NullableString and assigns it to the TLSClientKey field.
-func (o *TLSCommonResponse) SetTLSClientKey(v string) {
-	o.TLSClientKey.Set(&v)
+// SetTlsClientKey gets a reference to the given NullableString and assigns it to the TlsClientKey field.
+func (o *TlsCommonResponse) SetTlsClientKey(v string) {
+	o.TlsClientKey.Set(&v)
 }
 
-// SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
-func (o *TLSCommonResponse) SetTLSClientKeyNil() {
-	o.TLSClientKey.Set(nil)
+// SetTlsClientKeyNil sets the value for TlsClientKey to be an explicit nil
+func (o *TlsCommonResponse) SetTlsClientKeyNil() {
+	o.TlsClientKey.Set(nil)
 }
 
-// UnsetTLSClientKey ensures that no value is present for TLSClientKey, not even an explicit nil
-func (o *TLSCommonResponse) UnsetTLSClientKey() {
-	o.TLSClientKey.Unset()
+// UnsetTlsClientKey ensures that no value is present for TlsClientKey, not even an explicit nil
+func (o *TlsCommonResponse) UnsetTlsClientKey() {
+	o.TlsClientKey.Unset()
 }
 
-// GetTLSCertHostname returns the TLSCertHostname field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TLSCommonResponse) GetTLSCertHostname() string {
-	if o == nil || o.TLSCertHostname.Get() == nil {
+// GetTlsCertHostname returns the TlsCertHostname field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TlsCommonResponse) GetTlsCertHostname() string {
+	if o == nil || o.TlsCertHostname.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSCertHostname.Get()
+	return *o.TlsCertHostname.Get()
 }
 
-// GetTLSCertHostnameOk returns a tuple with the TLSCertHostname field value if set, nil otherwise
+// GetTlsCertHostnameOk returns a tuple with the TlsCertHostname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TLSCommonResponse) GetTLSCertHostnameOk() (*string, bool) {
+func (o *TlsCommonResponse) GetTlsCertHostnameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSCertHostname.Get(), o.TLSCertHostname.IsSet()
+	return o.TlsCertHostname.Get(), o.TlsCertHostname.IsSet()
 }
 
-// HasTLSCertHostname returns a boolean if a field has been set.
-func (o *TLSCommonResponse) HasTLSCertHostname() bool {
-	if o != nil && o.TLSCertHostname.IsSet() {
+// HasTlsCertHostname returns a boolean if a field has been set.
+func (o *TlsCommonResponse) HasTlsCertHostname() bool {
+	if o != nil && o.TlsCertHostname.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSCertHostname gets a reference to the given NullableString and assigns it to the TLSCertHostname field.
-func (o *TLSCommonResponse) SetTLSCertHostname(v string) {
-	o.TLSCertHostname.Set(&v)
+// SetTlsCertHostname gets a reference to the given NullableString and assigns it to the TlsCertHostname field.
+func (o *TlsCommonResponse) SetTlsCertHostname(v string) {
+	o.TlsCertHostname.Set(&v)
 }
 
-// SetTLSCertHostnameNil sets the value for TLSCertHostname to be an explicit nil
-func (o *TLSCommonResponse) SetTLSCertHostnameNil() {
-	o.TLSCertHostname.Set(nil)
+// SetTlsCertHostnameNil sets the value for TlsCertHostname to be an explicit nil
+func (o *TlsCommonResponse) SetTlsCertHostnameNil() {
+	o.TlsCertHostname.Set(nil)
 }
 
-// UnsetTLSCertHostname ensures that no value is present for TLSCertHostname, not even an explicit nil
-func (o *TLSCommonResponse) UnsetTLSCertHostname() {
-	o.TLSCertHostname.Unset()
+// UnsetTlsCertHostname ensures that no value is present for TlsCertHostname, not even an explicit nil
+func (o *TlsCommonResponse) UnsetTlsCertHostname() {
+	o.TlsCertHostname.Unset()
 }
 
-// GetUseTLS returns the UseTLS field value if set, zero value otherwise.
-func (o *TLSCommonResponse) GetUseTLS() string {
-	if o == nil || o.UseTLS == nil {
+// GetUseTls returns the UseTls field value if set, zero value otherwise.
+func (o *TlsCommonResponse) GetUseTls() string {
+	if o == nil || o.UseTls == nil {
 		var ret string
 		return ret
 	}
-	return *o.UseTLS
+	return *o.UseTls
 }
 
-// GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
+// GetUseTlsOk returns a tuple with the UseTls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCommonResponse) GetUseTLSOk() (*string, bool) {
-	if o == nil || o.UseTLS == nil {
+func (o *TlsCommonResponse) GetUseTlsOk() (*string, bool) {
+	if o == nil || o.UseTls == nil {
 		return nil, false
 	}
-	return o.UseTLS, true
+	return o.UseTls, true
 }
 
-// HasUseTLS returns a boolean if a field has been set.
-func (o *TLSCommonResponse) HasUseTLS() bool {
-	if o != nil && o.UseTLS != nil {
+// HasUseTls returns a boolean if a field has been set.
+func (o *TlsCommonResponse) HasUseTls() bool {
+	if o != nil && o.UseTls != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUseTLS gets a reference to the given string and assigns it to the UseTLS field.
-func (o *TLSCommonResponse) SetUseTLS(v string) {
-	o.UseTLS = &v
+// SetUseTls gets a reference to the given string and assigns it to the UseTls field.
+func (o *TlsCommonResponse) SetUseTls(v string) {
+	o.UseTls = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSCommonResponse) MarshalJSON() ([]byte, error) {
+func (o TlsCommonResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.TLSCaCert.IsSet() {
-		toSerialize["tls_ca_cert"] = o.TLSCaCert.Get()
+	if o.TlsCaCert.IsSet() {
+		toSerialize["tls_ca_cert"] = o.TlsCaCert.Get()
 	}
-	if o.TLSClientCert.IsSet() {
-		toSerialize["tls_client_cert"] = o.TLSClientCert.Get()
+	if o.TlsClientCert.IsSet() {
+		toSerialize["tls_client_cert"] = o.TlsClientCert.Get()
 	}
-	if o.TLSClientKey.IsSet() {
-		toSerialize["tls_client_key"] = o.TLSClientKey.Get()
+	if o.TlsClientKey.IsSet() {
+		toSerialize["tls_client_key"] = o.TlsClientKey.Get()
 	}
-	if o.TLSCertHostname.IsSet() {
-		toSerialize["tls_cert_hostname"] = o.TLSCertHostname.Get()
+	if o.TlsCertHostname.IsSet() {
+		toSerialize["tls_cert_hostname"] = o.TlsCertHostname.Get()
 	}
-	if o.UseTLS != nil {
-		toSerialize["use_tls"] = o.UseTLS
+	if o.UseTls != nil {
+		toSerialize["use_tls"] = o.UseTls
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -303,11 +303,11 @@ func (o TLSCommonResponse) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSCommonResponse) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSCommonResponse := _TLSCommonResponse{}
+func (o *TlsCommonResponse) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsCommonResponse := _TlsCommonResponse{}
 
-	if err = json.Unmarshal(bytes, &varTLSCommonResponse); err == nil {
-		*o = TLSCommonResponse(varTLSCommonResponse)
+	if err = json.Unmarshal(bytes, &varTlsCommonResponse); err == nil {
+		*o = TlsCommonResponse(varTlsCommonResponse)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -324,48 +324,48 @@ func (o *TLSCommonResponse) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTLSCommonResponse is a helper abstraction for handling nullable tlscommonresponse types.
-type NullableTLSCommonResponse struct {
-	value *TLSCommonResponse
+// NullableTlsCommonResponse is a helper abstraction for handling nullable tlscommonresponse types.
+type NullableTlsCommonResponse struct {
+	value *TlsCommonResponse
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSCommonResponse) Get() *TLSCommonResponse {
+func (v NullableTlsCommonResponse) Get() *TlsCommonResponse {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSCommonResponse) Set(val *TLSCommonResponse) {
+func (v *NullableTlsCommonResponse) Set(val *TlsCommonResponse) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSCommonResponse) IsSet() bool {
+func (v NullableTlsCommonResponse) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSCommonResponse) Unset() {
+func (v *NullableTlsCommonResponse) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSCommonResponse returns a pointer to a new instance of NullableTLSCommonResponse.
-func NewNullableTLSCommonResponse(val *TLSCommonResponse) *NullableTLSCommonResponse {
-	return &NullableTLSCommonResponse{value: val, isSet: true}
+// NewNullableTlsCommonResponse returns a pointer to a new instance of NullableTlsCommonResponse.
+func NewNullableTlsCommonResponse(val *TlsCommonResponse) *NullableTlsCommonResponse {
+	return &NullableTlsCommonResponse{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSCommonResponse) MarshalJSON() ([]byte, error) {
+func (v NullableTlsCommonResponse) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSCommonResponse) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsCommonResponse) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

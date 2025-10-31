@@ -36,11 +36,11 @@ type LoggingHoneycombAPI interface {
 		Create a Honeycomb logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogHoneycombRequest
 	*/
-	CreateLogHoneycomb(ctx context.Context, serviceID string, versionID int32) APICreateLogHoneycombRequest
+	CreateLogHoneycomb(ctx context.Context, serviceId string, versionId int32) APICreateLogHoneycombRequest
 
 	// CreateLogHoneycombExecute executes the request
 	//  @return LoggingHoneycombResponse
@@ -52,12 +52,12 @@ type LoggingHoneycombAPI interface {
 		Delete the Honeycomb logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingHoneycombName The name for the real-time logging configuration.
 		 @return APIDeleteLogHoneycombRequest
 	*/
-	DeleteLogHoneycomb(ctx context.Context, serviceID string, versionID int32, loggingHoneycombName string) APIDeleteLogHoneycombRequest
+	DeleteLogHoneycomb(ctx context.Context, serviceId string, versionId int32, loggingHoneycombName string) APIDeleteLogHoneycombRequest
 
 	// DeleteLogHoneycombExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingHoneycombAPI interface {
 		Get the details of a Honeycomb logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingHoneycombName The name for the real-time logging configuration.
 		 @return APIGetLogHoneycombRequest
 	*/
-	GetLogHoneycomb(ctx context.Context, serviceID string, versionID int32, loggingHoneycombName string) APIGetLogHoneycombRequest
+	GetLogHoneycomb(ctx context.Context, serviceId string, versionId int32, loggingHoneycombName string) APIGetLogHoneycombRequest
 
 	// GetLogHoneycombExecute executes the request
 	//  @return LoggingHoneycombResponse
@@ -86,11 +86,11 @@ type LoggingHoneycombAPI interface {
 		List all of the Honeycomb logging objects for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogHoneycombRequest
 	*/
-	ListLogHoneycomb(ctx context.Context, serviceID string, versionID int32) APIListLogHoneycombRequest
+	ListLogHoneycomb(ctx context.Context, serviceId string, versionId int32) APIListLogHoneycombRequest
 
 	// ListLogHoneycombExecute executes the request
 	//  @return []LoggingHoneycombResponse
@@ -102,12 +102,12 @@ type LoggingHoneycombAPI interface {
 		Update a Honeycomb logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingHoneycombName The name for the real-time logging configuration.
 		 @return APIUpdateLogHoneycombRequest
 	*/
-	UpdateLogHoneycomb(ctx context.Context, serviceID string, versionID int32, loggingHoneycombName string) APIUpdateLogHoneycombRequest
+	UpdateLogHoneycomb(ctx context.Context, serviceId string, versionId int32, loggingHoneycombName string) APIUpdateLogHoneycombRequest
 
 	// UpdateLogHoneycombExecute executes the request
 	//  @return LoggingHoneycombResponse
@@ -121,8 +121,8 @@ type LoggingHoneycombAPIService service
 type APICreateLogHoneycombRequest struct {
 	ctx                 context.Context
 	APIService          LoggingHoneycombAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -192,16 +192,16 @@ CreateLogHoneycomb Create a Honeycomb log endpoint
 Create a Honeycomb logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogHoneycombRequest
 */
-func (a *LoggingHoneycombAPIService) CreateLogHoneycomb(ctx context.Context, serviceID string, versionID int32) APICreateLogHoneycombRequest {
+func (a *LoggingHoneycombAPIService) CreateLogHoneycomb(ctx context.Context, serviceId string, versionId int32) APICreateLogHoneycombRequest {
 	return APICreateLogHoneycombRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -221,8 +221,8 @@ func (a *LoggingHoneycombAPIService) CreateLogHoneycombExecute(r APICreateLogHon
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/honeycomb"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -337,8 +337,8 @@ func (a *LoggingHoneycombAPIService) CreateLogHoneycombExecute(r APICreateLogHon
 type APIDeleteLogHoneycombRequest struct {
 	ctx                  context.Context
 	APIService           LoggingHoneycombAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	loggingHoneycombName string
 }
 
@@ -353,17 +353,17 @@ DeleteLogHoneycomb Delete the Honeycomb log endpoint
 Delete the Honeycomb logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingHoneycombName The name for the real-time logging configuration.
  @return APIDeleteLogHoneycombRequest
 */
-func (a *LoggingHoneycombAPIService) DeleteLogHoneycomb(ctx context.Context, serviceID string, versionID int32, loggingHoneycombName string) APIDeleteLogHoneycombRequest {
+func (a *LoggingHoneycombAPIService) DeleteLogHoneycomb(ctx context.Context, serviceId string, versionId int32, loggingHoneycombName string) APIDeleteLogHoneycombRequest {
 	return APIDeleteLogHoneycombRequest{
 		APIService:           a,
 		ctx:                  ctx,
-		serviceID:            serviceID,
-		versionID:            versionID,
+		serviceId:            serviceId,
+		versionId:            versionId,
 		loggingHoneycombName: loggingHoneycombName,
 	}
 }
@@ -384,8 +384,8 @@ func (a *LoggingHoneycombAPIService) DeleteLogHoneycombExecute(r APIDeleteLogHon
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/honeycomb/{logging_honeycomb_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_honeycomb_name"+"}", gourl.PathEscape(parameterToString(r.loggingHoneycombName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -477,8 +477,8 @@ func (a *LoggingHoneycombAPIService) DeleteLogHoneycombExecute(r APIDeleteLogHon
 type APIGetLogHoneycombRequest struct {
 	ctx                  context.Context
 	APIService           LoggingHoneycombAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	loggingHoneycombName string
 }
 
@@ -493,17 +493,17 @@ GetLogHoneycomb Get a Honeycomb log endpoint
 Get the details of a Honeycomb logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingHoneycombName The name for the real-time logging configuration.
  @return APIGetLogHoneycombRequest
 */
-func (a *LoggingHoneycombAPIService) GetLogHoneycomb(ctx context.Context, serviceID string, versionID int32, loggingHoneycombName string) APIGetLogHoneycombRequest {
+func (a *LoggingHoneycombAPIService) GetLogHoneycomb(ctx context.Context, serviceId string, versionId int32, loggingHoneycombName string) APIGetLogHoneycombRequest {
 	return APIGetLogHoneycombRequest{
 		APIService:           a,
 		ctx:                  ctx,
-		serviceID:            serviceID,
-		versionID:            versionID,
+		serviceId:            serviceId,
+		versionId:            versionId,
 		loggingHoneycombName: loggingHoneycombName,
 	}
 }
@@ -524,8 +524,8 @@ func (a *LoggingHoneycombAPIService) GetLogHoneycombExecute(r APIGetLogHoneycomb
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/honeycomb/{logging_honeycomb_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_honeycomb_name"+"}", gourl.PathEscape(parameterToString(r.loggingHoneycombName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -617,8 +617,8 @@ func (a *LoggingHoneycombAPIService) GetLogHoneycombExecute(r APIGetLogHoneycomb
 type APIListLogHoneycombRequest struct {
 	ctx        context.Context
 	APIService LoggingHoneycombAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -632,16 +632,16 @@ ListLogHoneycomb List Honeycomb log endpoints
 List all of the Honeycomb logging objects for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogHoneycombRequest
 */
-func (a *LoggingHoneycombAPIService) ListLogHoneycomb(ctx context.Context, serviceID string, versionID int32) APIListLogHoneycombRequest {
+func (a *LoggingHoneycombAPIService) ListLogHoneycomb(ctx context.Context, serviceId string, versionId int32) APIListLogHoneycombRequest {
 	return APIListLogHoneycombRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -661,8 +661,8 @@ func (a *LoggingHoneycombAPIService) ListLogHoneycombExecute(r APIListLogHoneyco
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/honeycomb"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -753,8 +753,8 @@ func (a *LoggingHoneycombAPIService) ListLogHoneycombExecute(r APIListLogHoneyco
 type APIUpdateLogHoneycombRequest struct {
 	ctx                  context.Context
 	APIService           LoggingHoneycombAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	loggingHoneycombName string
 	name                 *string
 	placement            *string
@@ -825,17 +825,17 @@ UpdateLogHoneycomb Update a Honeycomb log endpoint
 Update a Honeycomb logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingHoneycombName The name for the real-time logging configuration.
  @return APIUpdateLogHoneycombRequest
 */
-func (a *LoggingHoneycombAPIService) UpdateLogHoneycomb(ctx context.Context, serviceID string, versionID int32, loggingHoneycombName string) APIUpdateLogHoneycombRequest {
+func (a *LoggingHoneycombAPIService) UpdateLogHoneycomb(ctx context.Context, serviceId string, versionId int32, loggingHoneycombName string) APIUpdateLogHoneycombRequest {
 	return APIUpdateLogHoneycombRequest{
 		APIService:           a,
 		ctx:                  ctx,
-		serviceID:            serviceID,
-		versionID:            versionID,
+		serviceId:            serviceId,
+		versionId:            versionId,
 		loggingHoneycombName: loggingHoneycombName,
 	}
 }
@@ -856,8 +856,8 @@ func (a *LoggingHoneycombAPIService) UpdateLogHoneycombExecute(r APIUpdateLogHon
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/honeycomb/{logging_honeycomb_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_honeycomb_name"+"}", gourl.PathEscape(parameterToString(r.loggingHoneycombName, "")))
 
 	localVarHeaderParams := make(map[string]string)

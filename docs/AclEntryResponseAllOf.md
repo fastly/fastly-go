@@ -1,106 +1,108 @@
-# ACLEntryResponseAllOf
+# AclEntryResponseAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ACLID** | Pointer to **string** |  | [optional] [readonly] 
-**ID** | Pointer to **string** |  | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**AclId** | Pointer to **string** |  | [optional] [readonly] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewACLEntryResponseAllOf
+### NewAclEntryResponseAllOf
 
-`func NewACLEntryResponseAllOf() *ACLEntryResponseAllOf`
+`func NewAclEntryResponseAllOf() *AclEntryResponseAllOf`
 
-NewACLEntryResponseAllOf instantiates a new ACLEntryResponseAllOf object
+NewAclEntryResponseAllOf instantiates a new AclEntryResponseAllOf object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewACLEntryResponseAllOfWithDefaults
+### NewAclEntryResponseAllOfWithDefaults
 
-`func NewACLEntryResponseAllOfWithDefaults() *ACLEntryResponseAllOf`
+`func NewAclEntryResponseAllOfWithDefaults() *AclEntryResponseAllOf`
 
-NewACLEntryResponseAllOfWithDefaults instantiates a new ACLEntryResponseAllOf object
+NewAclEntryResponseAllOfWithDefaults instantiates a new AclEntryResponseAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetACLID
+### GetAclId
 
-`func (o *ACLEntryResponseAllOf) GetACLID() string`
+`func (o *AclEntryResponseAllOf) GetAclId() string`
 
-GetACLID returns the ACLID field if non-nil, zero value otherwise.
+GetAclId returns the AclId field if non-nil, zero value otherwise.
 
-### GetACLIDOk
+### GetAclIdOk
 
-`func (o *ACLEntryResponseAllOf) GetACLIDOk() (*string, bool)`
+`func (o *AclEntryResponseAllOf) GetAclIdOk() (*string, bool)`
 
-GetACLIDOk returns a tuple with the ACLID field if it's non-nil, zero value otherwise
+GetAclIdOk returns a tuple with the AclId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetACLID
+### SetAclId
 
-`func (o *ACLEntryResponseAllOf) SetACLID(v string)`
+`func (o *AclEntryResponseAllOf) SetAclId(v string)`
 
-SetACLID sets ACLID field to given value.
+SetAclId sets AclId field to given value.
 
-### HasACLID
+### HasAclId
 
-`func (o *ACLEntryResponseAllOf) HasACLID() bool`
+`func (o *AclEntryResponseAllOf) HasAclId() bool`
 
-HasACLID returns a boolean if a field has been set.
+HasAclId returns a boolean if a field has been set.
 
-### GetID
+### GetId
 
-`func (o *ACLEntryResponseAllOf) GetID() string`
+`func (o *AclEntryResponseAllOf) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *ACLEntryResponseAllOf) GetIDOk() (*string, bool)`
+`func (o *AclEntryResponseAllOf) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *ACLEntryResponseAllOf) SetID(v string)`
+`func (o *AclEntryResponseAllOf) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *ACLEntryResponseAllOf) HasID() bool`
+`func (o *AclEntryResponseAllOf) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
-### GetServiceID
+### GetServiceId
 
-`func (o *ACLEntryResponseAllOf) GetServiceID() string`
+`func (o *AclEntryResponseAllOf) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *ACLEntryResponseAllOf) GetServiceIDOk() (*string, bool)`
+`func (o *AclEntryResponseAllOf) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *ACLEntryResponseAllOf) SetServiceID(v string)`
+`func (o *AclEntryResponseAllOf) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *ACLEntryResponseAllOf) HasServiceID() bool`
+`func (o *AclEntryResponseAllOf) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

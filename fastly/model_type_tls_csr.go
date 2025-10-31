@@ -17,51 +17,51 @@ import (
 	"fmt"
 )
 
-// TypeTLSCsr CSR Resource Type
-type TypeTLSCsr string
+// TypeTlsCsr CSR Resource Type
+type TypeTlsCsr string
 
-// List of resourceTypetls_csr
+// List of type_tls_csr
 const (
-	TYPETLSCSR_CSR TypeTLSCsr = "csr"
+	TYPETLSCSR_CSR TypeTlsCsr = "csr"
 )
 
-// AllowedTypeTLSCsrEnumValues All allowed values of TypeTLSCsr enum
-var AllowedTypeTLSCsrEnumValues = []TypeTLSCsr{
+// AllowedTypeTlsCsrEnumValues All allowed values of TypeTlsCsr enum
+var AllowedTypeTlsCsrEnumValues = []TypeTlsCsr{
 	"csr",
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *TypeTLSCsr) UnmarshalJSON(src []byte) error {
+func (v *TypeTlsCsr) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := TypeTLSCsr(value)
-	for _, existing := range AllowedTypeTLSCsrEnumValues {
+	enumTypeValue := TypeTlsCsr(value)
+	for _, existing := range AllowedTypeTlsCsrEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid TypeTLSCsr", value)
+	return fmt.Errorf("%+v is not a valid TypeTlsCsr", value)
 }
 
-// NewTypeTLSCsrFromValue returns a pointer to a valid TypeTLSCsr
+// NewTypeTlsCsrFromValue returns a pointer to a valid TypeTlsCsr
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewTypeTLSCsrFromValue(v string) (*TypeTLSCsr, error) {
-	ev := TypeTLSCsr(v)
+func NewTypeTlsCsrFromValue(v string) (*TypeTlsCsr, error) {
+	ev := TypeTlsCsr(v)
 	if ev.IsValid() {
 		return &ev, nil
 	}
-	return nil, fmt.Errorf("invalid value '%v' for TypeTLSCsr: valid values are %v", v, AllowedTypeTLSCsrEnumValues)
+	return nil, fmt.Errorf("invalid value '%v' for TypeTlsCsr: valid values are %v", v, AllowedTypeTlsCsrEnumValues)
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v TypeTLSCsr) IsValid() bool {
-	for _, existing := range AllowedTypeTLSCsrEnumValues {
+func (v TypeTlsCsr) IsValid() bool {
+	for _, existing := range AllowedTypeTlsCsrEnumValues {
 		if existing == v {
 			return true
 		}
@@ -69,53 +69,53 @@ func (v TypeTLSCsr) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to resourceTypetls_csr value
-func (v TypeTLSCsr) Ptr() *TypeTLSCsr {
+// Ptr returns reference to type_tls_csr value
+func (v TypeTlsCsr) Ptr() *TypeTlsCsr {
 	return &v
 }
 
-// NullableTypeTLSCsr is a helper abstraction for handling nullable typetlscsr types.
-type NullableTypeTLSCsr struct {
-	value *TypeTLSCsr
+// NullableTypeTlsCsr is a helper abstraction for handling nullable typetlscsr types.
+type NullableTypeTlsCsr struct {
+	value *TypeTlsCsr
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTypeTLSCsr) Get() *TypeTLSCsr {
+func (v NullableTypeTlsCsr) Get() *TypeTlsCsr {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTypeTLSCsr) Set(val *TypeTLSCsr) {
+func (v *NullableTypeTlsCsr) Set(val *TypeTlsCsr) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTypeTLSCsr) IsSet() bool {
+func (v NullableTypeTlsCsr) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTypeTLSCsr) Unset() {
+func (v *NullableTypeTlsCsr) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTypeTLSCsr returns a pointer to a new instance of NullableTypeTLSCsr.
-func NewNullableTypeTLSCsr(val *TypeTLSCsr) *NullableTypeTLSCsr {
-	return &NullableTypeTLSCsr{value: val, isSet: true}
+// NewNullableTypeTlsCsr returns a pointer to a new instance of NullableTypeTlsCsr.
+func NewNullableTypeTlsCsr(val *TypeTlsCsr) *NullableTypeTlsCsr {
+	return &NullableTypeTlsCsr{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTypeTLSCsr) MarshalJSON() ([]byte, error) {
+func (v NullableTypeTlsCsr) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTypeTLSCsr) UnmarshalJSON(src []byte) error {
+func (v *NullableTypeTlsCsr) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -36,11 +36,11 @@ type LoggingElasticsearchAPI interface {
 		Create a Elasticsearch logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogElasticsearchRequest
 	*/
-	CreateLogElasticsearch(ctx context.Context, serviceID string, versionID int32) APICreateLogElasticsearchRequest
+	CreateLogElasticsearch(ctx context.Context, serviceId string, versionId int32) APICreateLogElasticsearchRequest
 
 	// CreateLogElasticsearchExecute executes the request
 	//  @return LoggingElasticsearchResponse
@@ -52,12 +52,12 @@ type LoggingElasticsearchAPI interface {
 		Delete the Elasticsearch logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingElasticsearchName The name for the real-time logging configuration.
 		 @return APIDeleteLogElasticsearchRequest
 	*/
-	DeleteLogElasticsearch(ctx context.Context, serviceID string, versionID int32, loggingElasticsearchName string) APIDeleteLogElasticsearchRequest
+	DeleteLogElasticsearch(ctx context.Context, serviceId string, versionId int32, loggingElasticsearchName string) APIDeleteLogElasticsearchRequest
 
 	// DeleteLogElasticsearchExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingElasticsearchAPI interface {
 		Get the Elasticsearch logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingElasticsearchName The name for the real-time logging configuration.
 		 @return APIGetLogElasticsearchRequest
 	*/
-	GetLogElasticsearch(ctx context.Context, serviceID string, versionID int32, loggingElasticsearchName string) APIGetLogElasticsearchRequest
+	GetLogElasticsearch(ctx context.Context, serviceId string, versionId int32, loggingElasticsearchName string) APIGetLogElasticsearchRequest
 
 	// GetLogElasticsearchExecute executes the request
 	//  @return LoggingElasticsearchResponse
@@ -86,11 +86,11 @@ type LoggingElasticsearchAPI interface {
 		List all of the Elasticsearch logging endpoints for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogElasticsearchRequest
 	*/
-	ListLogElasticsearch(ctx context.Context, serviceID string, versionID int32) APIListLogElasticsearchRequest
+	ListLogElasticsearch(ctx context.Context, serviceId string, versionId int32) APIListLogElasticsearchRequest
 
 	// ListLogElasticsearchExecute executes the request
 	//  @return []LoggingElasticsearchResponse
@@ -102,12 +102,12 @@ type LoggingElasticsearchAPI interface {
 		Update the Elasticsearch logging endpoint for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingElasticsearchName The name for the real-time logging configuration.
 		 @return APIUpdateLogElasticsearchRequest
 	*/
-	UpdateLogElasticsearch(ctx context.Context, serviceID string, versionID int32, loggingElasticsearchName string) APIUpdateLogElasticsearchRequest
+	UpdateLogElasticsearch(ctx context.Context, serviceId string, versionId int32, loggingElasticsearchName string) APIUpdateLogElasticsearchRequest
 
 	// UpdateLogElasticsearchExecute executes the request
 	//  @return LoggingElasticsearchResponse
@@ -121,8 +121,8 @@ type LoggingElasticsearchAPIService service
 type APICreateLogElasticsearchRequest struct {
 	ctx                 context.Context
 	APIService          LoggingElasticsearchAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -178,26 +178,26 @@ func (r *APICreateLogElasticsearchRequest) FormatVersion(formatVersion int32) *A
 	return r
 }
 
-// TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
-func (r *APICreateLogElasticsearchRequest) TLSCaCert(tlsCaCert string) *APICreateLogElasticsearchRequest {
+// TlsCaCert A secure certificate to authenticate a server with. Must be in PEM format.
+func (r *APICreateLogElasticsearchRequest) TlsCaCert(tlsCaCert string) *APICreateLogElasticsearchRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
 
-// TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
-func (r *APICreateLogElasticsearchRequest) TLSClientCert(tlsClientCert string) *APICreateLogElasticsearchRequest {
+// TlsClientCert The client certificate used to make authenticated requests. Must be in PEM format.
+func (r *APICreateLogElasticsearchRequest) TlsClientCert(tlsClientCert string) *APICreateLogElasticsearchRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
 
-// TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
-func (r *APICreateLogElasticsearchRequest) TLSClientKey(tlsClientKey string) *APICreateLogElasticsearchRequest {
+// TlsClientKey The client private key used to make authenticated requests. Must be in PEM format.
+func (r *APICreateLogElasticsearchRequest) TlsClientKey(tlsClientKey string) *APICreateLogElasticsearchRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
 
-// TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-func (r *APICreateLogElasticsearchRequest) TLSHostname(tlsHostname string) *APICreateLogElasticsearchRequest {
+// TlsHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+func (r *APICreateLogElasticsearchRequest) TlsHostname(tlsHostname string) *APICreateLogElasticsearchRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
@@ -220,8 +220,8 @@ func (r *APICreateLogElasticsearchRequest) Index(index string) *APICreateLogElas
 	return r
 }
 
-// URL The URL to stream logs to. Must use HTTPS.
-func (r *APICreateLogElasticsearchRequest) URL(url string) *APICreateLogElasticsearchRequest {
+// Url The URL to stream logs to. Must use HTTPS.
+func (r *APICreateLogElasticsearchRequest) Url(url string) *APICreateLogElasticsearchRequest {
 	r.url = &url
 	return r
 }
@@ -255,16 +255,16 @@ CreateLogElasticsearch Create an Elasticsearch log endpoint
 Create a Elasticsearch logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogElasticsearchRequest
 */
-func (a *LoggingElasticsearchAPIService) CreateLogElasticsearch(ctx context.Context, serviceID string, versionID int32) APICreateLogElasticsearchRequest {
+func (a *LoggingElasticsearchAPIService) CreateLogElasticsearch(ctx context.Context, serviceId string, versionId int32) APICreateLogElasticsearchRequest {
 	return APICreateLogElasticsearchRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -284,8 +284,8 @@ func (a *LoggingElasticsearchAPIService) CreateLogElasticsearchExecute(r APICrea
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/elasticsearch"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -427,8 +427,8 @@ func (a *LoggingElasticsearchAPIService) CreateLogElasticsearchExecute(r APICrea
 type APIDeleteLogElasticsearchRequest struct {
 	ctx                      context.Context
 	APIService               LoggingElasticsearchAPI
-	serviceID                string
-	versionID                int32
+	serviceId                string
+	versionId                int32
 	loggingElasticsearchName string
 }
 
@@ -443,17 +443,17 @@ DeleteLogElasticsearch Delete an Elasticsearch log endpoint
 Delete the Elasticsearch logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingElasticsearchName The name for the real-time logging configuration.
  @return APIDeleteLogElasticsearchRequest
 */
-func (a *LoggingElasticsearchAPIService) DeleteLogElasticsearch(ctx context.Context, serviceID string, versionID int32, loggingElasticsearchName string) APIDeleteLogElasticsearchRequest {
+func (a *LoggingElasticsearchAPIService) DeleteLogElasticsearch(ctx context.Context, serviceId string, versionId int32, loggingElasticsearchName string) APIDeleteLogElasticsearchRequest {
 	return APIDeleteLogElasticsearchRequest{
 		APIService:               a,
 		ctx:                      ctx,
-		serviceID:                serviceID,
-		versionID:                versionID,
+		serviceId:                serviceId,
+		versionId:                versionId,
 		loggingElasticsearchName: loggingElasticsearchName,
 	}
 }
@@ -474,8 +474,8 @@ func (a *LoggingElasticsearchAPIService) DeleteLogElasticsearchExecute(r APIDele
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/elasticsearch/{logging_elasticsearch_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_elasticsearch_name"+"}", gourl.PathEscape(parameterToString(r.loggingElasticsearchName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -567,8 +567,8 @@ func (a *LoggingElasticsearchAPIService) DeleteLogElasticsearchExecute(r APIDele
 type APIGetLogElasticsearchRequest struct {
 	ctx                      context.Context
 	APIService               LoggingElasticsearchAPI
-	serviceID                string
-	versionID                int32
+	serviceId                string
+	versionId                int32
 	loggingElasticsearchName string
 }
 
@@ -583,17 +583,17 @@ GetLogElasticsearch Get an Elasticsearch log endpoint
 Get the Elasticsearch logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingElasticsearchName The name for the real-time logging configuration.
  @return APIGetLogElasticsearchRequest
 */
-func (a *LoggingElasticsearchAPIService) GetLogElasticsearch(ctx context.Context, serviceID string, versionID int32, loggingElasticsearchName string) APIGetLogElasticsearchRequest {
+func (a *LoggingElasticsearchAPIService) GetLogElasticsearch(ctx context.Context, serviceId string, versionId int32, loggingElasticsearchName string) APIGetLogElasticsearchRequest {
 	return APIGetLogElasticsearchRequest{
 		APIService:               a,
 		ctx:                      ctx,
-		serviceID:                serviceID,
-		versionID:                versionID,
+		serviceId:                serviceId,
+		versionId:                versionId,
 		loggingElasticsearchName: loggingElasticsearchName,
 	}
 }
@@ -614,8 +614,8 @@ func (a *LoggingElasticsearchAPIService) GetLogElasticsearchExecute(r APIGetLogE
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/elasticsearch/{logging_elasticsearch_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_elasticsearch_name"+"}", gourl.PathEscape(parameterToString(r.loggingElasticsearchName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -707,8 +707,8 @@ func (a *LoggingElasticsearchAPIService) GetLogElasticsearchExecute(r APIGetLogE
 type APIListLogElasticsearchRequest struct {
 	ctx        context.Context
 	APIService LoggingElasticsearchAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -722,16 +722,16 @@ ListLogElasticsearch List Elasticsearch log endpoints
 List all of the Elasticsearch logging endpoints for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogElasticsearchRequest
 */
-func (a *LoggingElasticsearchAPIService) ListLogElasticsearch(ctx context.Context, serviceID string, versionID int32) APIListLogElasticsearchRequest {
+func (a *LoggingElasticsearchAPIService) ListLogElasticsearch(ctx context.Context, serviceId string, versionId int32) APIListLogElasticsearchRequest {
 	return APIListLogElasticsearchRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -751,8 +751,8 @@ func (a *LoggingElasticsearchAPIService) ListLogElasticsearchExecute(r APIListLo
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/elasticsearch"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -843,8 +843,8 @@ func (a *LoggingElasticsearchAPIService) ListLogElasticsearchExecute(r APIListLo
 type APIUpdateLogElasticsearchRequest struct {
 	ctx                      context.Context
 	APIService               LoggingElasticsearchAPI
-	serviceID                string
-	versionID                int32
+	serviceId                string
+	versionId                int32
 	loggingElasticsearchName string
 	name                     *string
 	placement                *string
@@ -901,26 +901,26 @@ func (r *APIUpdateLogElasticsearchRequest) FormatVersion(formatVersion int32) *A
 	return r
 }
 
-// TLSCaCert A secure certificate to authenticate a server with. Must be in PEM format.
-func (r *APIUpdateLogElasticsearchRequest) TLSCaCert(tlsCaCert string) *APIUpdateLogElasticsearchRequest {
+// TlsCaCert A secure certificate to authenticate a server with. Must be in PEM format.
+func (r *APIUpdateLogElasticsearchRequest) TlsCaCert(tlsCaCert string) *APIUpdateLogElasticsearchRequest {
 	r.tlsCaCert = &tlsCaCert
 	return r
 }
 
-// TLSClientCert The client certificate used to make authenticated requests. Must be in PEM format.
-func (r *APIUpdateLogElasticsearchRequest) TLSClientCert(tlsClientCert string) *APIUpdateLogElasticsearchRequest {
+// TlsClientCert The client certificate used to make authenticated requests. Must be in PEM format.
+func (r *APIUpdateLogElasticsearchRequest) TlsClientCert(tlsClientCert string) *APIUpdateLogElasticsearchRequest {
 	r.tlsClientCert = &tlsClientCert
 	return r
 }
 
-// TLSClientKey The client private key used to make authenticated requests. Must be in PEM format.
-func (r *APIUpdateLogElasticsearchRequest) TLSClientKey(tlsClientKey string) *APIUpdateLogElasticsearchRequest {
+// TlsClientKey The client private key used to make authenticated requests. Must be in PEM format.
+func (r *APIUpdateLogElasticsearchRequest) TlsClientKey(tlsClientKey string) *APIUpdateLogElasticsearchRequest {
 	r.tlsClientKey = &tlsClientKey
 	return r
 }
 
-// TLSHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-func (r *APIUpdateLogElasticsearchRequest) TLSHostname(tlsHostname string) *APIUpdateLogElasticsearchRequest {
+// TlsHostname The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+func (r *APIUpdateLogElasticsearchRequest) TlsHostname(tlsHostname string) *APIUpdateLogElasticsearchRequest {
 	r.tlsHostname = &tlsHostname
 	return r
 }
@@ -943,8 +943,8 @@ func (r *APIUpdateLogElasticsearchRequest) Index(index string) *APIUpdateLogElas
 	return r
 }
 
-// URL The URL to stream logs to. Must use HTTPS.
-func (r *APIUpdateLogElasticsearchRequest) URL(url string) *APIUpdateLogElasticsearchRequest {
+// Url The URL to stream logs to. Must use HTTPS.
+func (r *APIUpdateLogElasticsearchRequest) Url(url string) *APIUpdateLogElasticsearchRequest {
 	r.url = &url
 	return r
 }
@@ -978,17 +978,17 @@ UpdateLogElasticsearch Update an Elasticsearch log endpoint
 Update the Elasticsearch logging endpoint for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingElasticsearchName The name for the real-time logging configuration.
  @return APIUpdateLogElasticsearchRequest
 */
-func (a *LoggingElasticsearchAPIService) UpdateLogElasticsearch(ctx context.Context, serviceID string, versionID int32, loggingElasticsearchName string) APIUpdateLogElasticsearchRequest {
+func (a *LoggingElasticsearchAPIService) UpdateLogElasticsearch(ctx context.Context, serviceId string, versionId int32, loggingElasticsearchName string) APIUpdateLogElasticsearchRequest {
 	return APIUpdateLogElasticsearchRequest{
 		APIService:               a,
 		ctx:                      ctx,
-		serviceID:                serviceID,
-		versionID:                versionID,
+		serviceId:                serviceId,
+		versionId:                versionId,
 		loggingElasticsearchName: loggingElasticsearchName,
 	}
 }
@@ -1009,8 +1009,8 @@ func (a *LoggingElasticsearchAPIService) UpdateLogElasticsearchExecute(r APIUpda
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/elasticsearch/{logging_elasticsearch_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_elasticsearch_name"+"}", gourl.PathEscape(parameterToString(r.loggingElasticsearchName, "")))
 
 	localVarHeaderParams := make(map[string]string)

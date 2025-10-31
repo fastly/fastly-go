@@ -1,80 +1,82 @@
-# RelationshipsForTLSBulkCertificate
+# RelationshipsForTlsBulkCertificate
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TLSConfigurations** | Pointer to [**RelationshipTLSConfigurationsTLSConfigurations**](RelationshipTLSConfigurationsTLSConfigurations.md) |  | [optional] 
-**TLSDomains** | Pointer to [**RelationshipTLSDomainsTLSDomains**](RelationshipTLSDomainsTLSDomains.md) |  | [optional] 
+**TlsConfigurations** | Pointer to [**RelationshipTlsConfigurationsTlsConfigurations**](RelationshipTlsConfigurationsTlsConfigurations.md) |  | [optional] 
+**TlsDomains** | Pointer to [**RelationshipTlsDomainsTlsDomains**](RelationshipTlsDomainsTlsDomains.md) |  | [optional] 
 
 ## Methods
 
-### NewRelationshipsForTLSBulkCertificate
+### NewRelationshipsForTlsBulkCertificate
 
-`func NewRelationshipsForTLSBulkCertificate() *RelationshipsForTLSBulkCertificate`
+`func NewRelationshipsForTlsBulkCertificate() *RelationshipsForTlsBulkCertificate`
 
-NewRelationshipsForTLSBulkCertificate instantiates a new RelationshipsForTLSBulkCertificate object
+NewRelationshipsForTlsBulkCertificate instantiates a new RelationshipsForTlsBulkCertificate object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewRelationshipsForTLSBulkCertificateWithDefaults
+### NewRelationshipsForTlsBulkCertificateWithDefaults
 
-`func NewRelationshipsForTLSBulkCertificateWithDefaults() *RelationshipsForTLSBulkCertificate`
+`func NewRelationshipsForTlsBulkCertificateWithDefaults() *RelationshipsForTlsBulkCertificate`
 
-NewRelationshipsForTLSBulkCertificateWithDefaults instantiates a new RelationshipsForTLSBulkCertificate object
+NewRelationshipsForTlsBulkCertificateWithDefaults instantiates a new RelationshipsForTlsBulkCertificate object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTLSConfigurations
+### GetTlsConfigurations
 
-`func (o *RelationshipsForTLSBulkCertificate) GetTLSConfigurations() RelationshipTLSConfigurationsTLSConfigurations`
+`func (o *RelationshipsForTlsBulkCertificate) GetTlsConfigurations() RelationshipTlsConfigurationsTlsConfigurations`
 
-GetTLSConfigurations returns the TLSConfigurations field if non-nil, zero value otherwise.
+GetTlsConfigurations returns the TlsConfigurations field if non-nil, zero value otherwise.
 
-### GetTLSConfigurationsOk
+### GetTlsConfigurationsOk
 
-`func (o *RelationshipsForTLSBulkCertificate) GetTLSConfigurationsOk() (*RelationshipTLSConfigurationsTLSConfigurations, bool)`
+`func (o *RelationshipsForTlsBulkCertificate) GetTlsConfigurationsOk() (*RelationshipTlsConfigurationsTlsConfigurations, bool)`
 
-GetTLSConfigurationsOk returns a tuple with the TLSConfigurations field if it's non-nil, zero value otherwise
+GetTlsConfigurationsOk returns a tuple with the TlsConfigurations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSConfigurations
+### SetTlsConfigurations
 
-`func (o *RelationshipsForTLSBulkCertificate) SetTLSConfigurations(v RelationshipTLSConfigurationsTLSConfigurations)`
+`func (o *RelationshipsForTlsBulkCertificate) SetTlsConfigurations(v RelationshipTlsConfigurationsTlsConfigurations)`
 
-SetTLSConfigurations sets TLSConfigurations field to given value.
+SetTlsConfigurations sets TlsConfigurations field to given value.
 
-### HasTLSConfigurations
+### HasTlsConfigurations
 
-`func (o *RelationshipsForTLSBulkCertificate) HasTLSConfigurations() bool`
+`func (o *RelationshipsForTlsBulkCertificate) HasTlsConfigurations() bool`
 
-HasTLSConfigurations returns a boolean if a field has been set.
+HasTlsConfigurations returns a boolean if a field has been set.
 
-### GetTLSDomains
+### GetTlsDomains
 
-`func (o *RelationshipsForTLSBulkCertificate) GetTLSDomains() RelationshipTLSDomainsTLSDomains`
+`func (o *RelationshipsForTlsBulkCertificate) GetTlsDomains() RelationshipTlsDomainsTlsDomains`
 
-GetTLSDomains returns the TLSDomains field if non-nil, zero value otherwise.
+GetTlsDomains returns the TlsDomains field if non-nil, zero value otherwise.
 
-### GetTLSDomainsOk
+### GetTlsDomainsOk
 
-`func (o *RelationshipsForTLSBulkCertificate) GetTLSDomainsOk() (*RelationshipTLSDomainsTLSDomains, bool)`
+`func (o *RelationshipsForTlsBulkCertificate) GetTlsDomainsOk() (*RelationshipTlsDomainsTlsDomains, bool)`
 
-GetTLSDomainsOk returns a tuple with the TLSDomains field if it's non-nil, zero value otherwise
+GetTlsDomainsOk returns a tuple with the TlsDomains field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTLSDomains
+### SetTlsDomains
 
-`func (o *RelationshipsForTLSBulkCertificate) SetTLSDomains(v RelationshipTLSDomainsTLSDomains)`
+`func (o *RelationshipsForTlsBulkCertificate) SetTlsDomains(v RelationshipTlsDomainsTlsDomains)`
 
-SetTLSDomains sets TLSDomains field to given value.
+SetTlsDomains sets TlsDomains field to given value.
 
-### HasTLSDomains
+### HasTlsDomains
 
-`func (o *RelationshipsForTLSBulkCertificate) HasTLSDomains() bool`
+`func (o *RelationshipsForTlsBulkCertificate) HasTlsDomains() bool`
 
-HasTLSDomains returns a boolean if a field has been set.
+HasTlsDomains returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

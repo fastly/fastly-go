@@ -36,11 +36,11 @@ type RequestSettingsAPI interface {
 		Creates a new Request Settings object.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateRequestSettingsRequest
 	*/
-	CreateRequestSettings(ctx context.Context, serviceID string, versionID int32) APICreateRequestSettingsRequest
+	CreateRequestSettings(ctx context.Context, serviceId string, versionId int32) APICreateRequestSettingsRequest
 
 	// CreateRequestSettingsExecute executes the request
 	//  @return RequestSettingsResponse
@@ -52,12 +52,12 @@ type RequestSettingsAPI interface {
 		Removes the specified Request Settings object.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param requestSettingsName Name for the request settings.
 		 @return APIDeleteRequestSettingsRequest
 	*/
-	DeleteRequestSettings(ctx context.Context, serviceID string, versionID int32, requestSettingsName string) APIDeleteRequestSettingsRequest
+	DeleteRequestSettings(ctx context.Context, serviceId string, versionId int32, requestSettingsName string) APIDeleteRequestSettingsRequest
 
 	// DeleteRequestSettingsExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type RequestSettingsAPI interface {
 		Gets the specified Request Settings object.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param requestSettingsName Name for the request settings.
 		 @return APIGetRequestSettingsRequest
 	*/
-	GetRequestSettings(ctx context.Context, serviceID string, versionID int32, requestSettingsName string) APIGetRequestSettingsRequest
+	GetRequestSettings(ctx context.Context, serviceId string, versionId int32, requestSettingsName string) APIGetRequestSettingsRequest
 
 	// GetRequestSettingsExecute executes the request
 	//  @return RequestSettingsResponse
@@ -86,11 +86,11 @@ type RequestSettingsAPI interface {
 		Returns a list of all Request Settings objects for the given service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListRequestSettingsRequest
 	*/
-	ListRequestSettings(ctx context.Context, serviceID string, versionID int32) APIListRequestSettingsRequest
+	ListRequestSettings(ctx context.Context, serviceId string, versionId int32) APIListRequestSettingsRequest
 
 	// ListRequestSettingsExecute executes the request
 	//  @return []RequestSettingsResponse
@@ -102,12 +102,12 @@ type RequestSettingsAPI interface {
 		Updates the specified Request Settings object.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param requestSettingsName Name for the request settings.
 		 @return APIUpdateRequestSettingsRequest
 	*/
-	UpdateRequestSettings(ctx context.Context, serviceID string, versionID int32, requestSettingsName string) APIUpdateRequestSettingsRequest
+	UpdateRequestSettings(ctx context.Context, serviceId string, versionId int32, requestSettingsName string) APIUpdateRequestSettingsRequest
 
 	// UpdateRequestSettingsExecute executes the request
 	//  @return RequestSettingsResponse
@@ -121,8 +121,8 @@ type RequestSettingsAPIService service
 type APICreateRequestSettingsRequest struct {
 	ctx        context.Context
 	APIService RequestSettingsAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -136,16 +136,16 @@ CreateRequestSettings Create a Request Settings object
 Creates a new Request Settings object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateRequestSettingsRequest
 */
-func (a *RequestSettingsAPIService) CreateRequestSettings(ctx context.Context, serviceID string, versionID int32) APICreateRequestSettingsRequest {
+func (a *RequestSettingsAPIService) CreateRequestSettings(ctx context.Context, serviceId string, versionId int32) APICreateRequestSettingsRequest {
 	return APICreateRequestSettingsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -165,8 +165,8 @@ func (a *RequestSettingsAPIService) CreateRequestSettingsExecute(r APICreateRequ
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/request_settings"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -257,8 +257,8 @@ func (a *RequestSettingsAPIService) CreateRequestSettingsExecute(r APICreateRequ
 type APIDeleteRequestSettingsRequest struct {
 	ctx                 context.Context
 	APIService          RequestSettingsAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	requestSettingsName string
 }
 
@@ -273,17 +273,17 @@ DeleteRequestSettings Delete a Request Settings object
 Removes the specified Request Settings object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param requestSettingsName Name for the request settings.
  @return APIDeleteRequestSettingsRequest
 */
-func (a *RequestSettingsAPIService) DeleteRequestSettings(ctx context.Context, serviceID string, versionID int32, requestSettingsName string) APIDeleteRequestSettingsRequest {
+func (a *RequestSettingsAPIService) DeleteRequestSettings(ctx context.Context, serviceId string, versionId int32, requestSettingsName string) APIDeleteRequestSettingsRequest {
 	return APIDeleteRequestSettingsRequest{
 		APIService:          a,
 		ctx:                 ctx,
-		serviceID:           serviceID,
-		versionID:           versionID,
+		serviceId:           serviceId,
+		versionId:           versionId,
 		requestSettingsName: requestSettingsName,
 	}
 }
@@ -304,8 +304,8 @@ func (a *RequestSettingsAPIService) DeleteRequestSettingsExecute(r APIDeleteRequ
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"request_settings_name"+"}", gourl.PathEscape(parameterToString(r.requestSettingsName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -397,8 +397,8 @@ func (a *RequestSettingsAPIService) DeleteRequestSettingsExecute(r APIDeleteRequ
 type APIGetRequestSettingsRequest struct {
 	ctx                 context.Context
 	APIService          RequestSettingsAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	requestSettingsName string
 }
 
@@ -413,17 +413,17 @@ GetRequestSettings Get a Request Settings object
 Gets the specified Request Settings object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param requestSettingsName Name for the request settings.
  @return APIGetRequestSettingsRequest
 */
-func (a *RequestSettingsAPIService) GetRequestSettings(ctx context.Context, serviceID string, versionID int32, requestSettingsName string) APIGetRequestSettingsRequest {
+func (a *RequestSettingsAPIService) GetRequestSettings(ctx context.Context, serviceId string, versionId int32, requestSettingsName string) APIGetRequestSettingsRequest {
 	return APIGetRequestSettingsRequest{
 		APIService:          a,
 		ctx:                 ctx,
-		serviceID:           serviceID,
-		versionID:           versionID,
+		serviceId:           serviceId,
+		versionId:           versionId,
 		requestSettingsName: requestSettingsName,
 	}
 }
@@ -444,8 +444,8 @@ func (a *RequestSettingsAPIService) GetRequestSettingsExecute(r APIGetRequestSet
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"request_settings_name"+"}", gourl.PathEscape(parameterToString(r.requestSettingsName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -537,8 +537,8 @@ func (a *RequestSettingsAPIService) GetRequestSettingsExecute(r APIGetRequestSet
 type APIListRequestSettingsRequest struct {
 	ctx        context.Context
 	APIService RequestSettingsAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -552,16 +552,16 @@ ListRequestSettings List Request Settings objects
 Returns a list of all Request Settings objects for the given service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListRequestSettingsRequest
 */
-func (a *RequestSettingsAPIService) ListRequestSettings(ctx context.Context, serviceID string, versionID int32) APIListRequestSettingsRequest {
+func (a *RequestSettingsAPIService) ListRequestSettings(ctx context.Context, serviceId string, versionId int32) APIListRequestSettingsRequest {
 	return APIListRequestSettingsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -581,8 +581,8 @@ func (a *RequestSettingsAPIService) ListRequestSettingsExecute(r APIListRequestS
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/request_settings"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -673,8 +673,8 @@ func (a *RequestSettingsAPIService) ListRequestSettingsExecute(r APIListRequestS
 type APIUpdateRequestSettingsRequest struct {
 	ctx                 context.Context
 	APIService          RequestSettingsAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	requestSettingsName string
 	action              *string
 	defaultHost         *string
@@ -773,17 +773,17 @@ UpdateRequestSettings Update a Request Settings object
 Updates the specified Request Settings object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param requestSettingsName Name for the request settings.
  @return APIUpdateRequestSettingsRequest
 */
-func (a *RequestSettingsAPIService) UpdateRequestSettings(ctx context.Context, serviceID string, versionID int32, requestSettingsName string) APIUpdateRequestSettingsRequest {
+func (a *RequestSettingsAPIService) UpdateRequestSettings(ctx context.Context, serviceId string, versionId int32, requestSettingsName string) APIUpdateRequestSettingsRequest {
 	return APIUpdateRequestSettingsRequest{
 		APIService:          a,
 		ctx:                 ctx,
-		serviceID:           serviceID,
-		versionID:           versionID,
+		serviceId:           serviceId,
+		versionId:           versionId,
 		requestSettingsName: requestSettingsName,
 	}
 }
@@ -804,8 +804,8 @@ func (a *RequestSettingsAPIService) UpdateRequestSettingsExecute(r APIUpdateRequ
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"request_settings_name"+"}", gourl.PathEscape(parameterToString(r.requestSettingsName, "")))
 
 	localVarHeaderParams := make(map[string]string)

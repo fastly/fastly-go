@@ -20,7 +20,7 @@ import (
 // TypeBillingAddress Resource type
 type TypeBillingAddress string
 
-// List of resourceTypebilling_address
+// List of type_billing_address
 const (
 	TYPEBILLINGADDRESS_BILLING_ADDRESS TypeBillingAddress = "billing_address"
 )
@@ -69,7 +69,7 @@ func (v TypeBillingAddress) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to resourceTypebilling_address value
+// Ptr returns reference to type_billing_address value
 func (v TypeBillingAddress) Ptr() *TypeBillingAddress {
 	return &v
 }

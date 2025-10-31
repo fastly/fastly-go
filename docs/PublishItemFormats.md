@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HTTPResponse** | Pointer to [**HTTPResponseFormat**](HttpResponseFormat.md) |  | [optional] 
-**HTTPStream** | Pointer to [**HTTPStreamFormat**](HttpStreamFormat.md) |  | [optional] 
+**HttpResponse** | Pointer to [**HttpResponseFormat**](HttpResponseFormat.md) |  | [optional] 
+**HttpStream** | Pointer to [**HttpStreamFormat**](HttpStreamFormat.md) |  | [optional] 
 **WsMessage** | Pointer to [**WsMessageFormat**](WsMessageFormat.md) |  | [optional] 
 
 ## Methods
@@ -27,55 +27,55 @@ NewPublishItemFormatsWithDefaults instantiates a new PublishItemFormats object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetHTTPResponse
+### GetHttpResponse
 
-`func (o *PublishItemFormats) GetHTTPResponse() HTTPResponseFormat`
+`func (o *PublishItemFormats) GetHttpResponse() HttpResponseFormat`
 
-GetHTTPResponse returns the HTTPResponse field if non-nil, zero value otherwise.
+GetHttpResponse returns the HttpResponse field if non-nil, zero value otherwise.
 
-### GetHTTPResponseOk
+### GetHttpResponseOk
 
-`func (o *PublishItemFormats) GetHTTPResponseOk() (*HTTPResponseFormat, bool)`
+`func (o *PublishItemFormats) GetHttpResponseOk() (*HttpResponseFormat, bool)`
 
-GetHTTPResponseOk returns a tuple with the HTTPResponse field if it's non-nil, zero value otherwise
+GetHttpResponseOk returns a tuple with the HttpResponse field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHTTPResponse
+### SetHttpResponse
 
-`func (o *PublishItemFormats) SetHTTPResponse(v HTTPResponseFormat)`
+`func (o *PublishItemFormats) SetHttpResponse(v HttpResponseFormat)`
 
-SetHTTPResponse sets HTTPResponse field to given value.
+SetHttpResponse sets HttpResponse field to given value.
 
-### HasHTTPResponse
+### HasHttpResponse
 
-`func (o *PublishItemFormats) HasHTTPResponse() bool`
+`func (o *PublishItemFormats) HasHttpResponse() bool`
 
-HasHTTPResponse returns a boolean if a field has been set.
+HasHttpResponse returns a boolean if a field has been set.
 
-### GetHTTPStream
+### GetHttpStream
 
-`func (o *PublishItemFormats) GetHTTPStream() HTTPStreamFormat`
+`func (o *PublishItemFormats) GetHttpStream() HttpStreamFormat`
 
-GetHTTPStream returns the HTTPStream field if non-nil, zero value otherwise.
+GetHttpStream returns the HttpStream field if non-nil, zero value otherwise.
 
-### GetHTTPStreamOk
+### GetHttpStreamOk
 
-`func (o *PublishItemFormats) GetHTTPStreamOk() (*HTTPStreamFormat, bool)`
+`func (o *PublishItemFormats) GetHttpStreamOk() (*HttpStreamFormat, bool)`
 
-GetHTTPStreamOk returns a tuple with the HTTPStream field if it's non-nil, zero value otherwise
+GetHttpStreamOk returns a tuple with the HttpStream field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHTTPStream
+### SetHttpStream
 
-`func (o *PublishItemFormats) SetHTTPStream(v HTTPStreamFormat)`
+`func (o *PublishItemFormats) SetHttpStream(v HttpStreamFormat)`
 
-SetHTTPStream sets HTTPStream field to given value.
+SetHttpStream sets HttpStream field to given value.
 
-### HasHTTPStream
+### HasHttpStream
 
-`func (o *PublishItemFormats) HasHTTPStream() bool`
+`func (o *PublishItemFormats) HasHttpStream() bool`
 
-HasHTTPStream returns a boolean if a field has been set.
+HasHttpStream returns a boolean if a field has been set.
 
 ### GetWsMessage
 
@@ -104,3 +104,5 @@ HasWsMessage returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

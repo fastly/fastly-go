@@ -16,8 +16,8 @@ import (
 	"encoding/json"
 )
 
-// HTTPStreamFormat Payload format for delivering to subscribers of HTTP streaming response bodies (`stream` hold mode). One of `content` or `content-bin` must be specified.
-type HTTPStreamFormat struct {
+// HttpStreamFormat Payload format for delivering to subscribers of HTTP streaming response bodies (`stream` hold mode). One of `content` or `content-bin` must be specified.
+type HttpStreamFormat struct {
 	// A fragment of body data as a string.
 	Content *string `json:"content,omitempty"`
 	// A fragment of body data as a base64-encoded binary blob.
@@ -25,27 +25,27 @@ type HTTPStreamFormat struct {
 	AdditionalProperties map[string]any
 }
 
-type _HTTPStreamFormat HTTPStreamFormat
+type _HttpStreamFormat HttpStreamFormat
 
-// NewHTTPStreamFormat instantiates a new HTTPStreamFormat object
+// NewHttpStreamFormat instantiates a new HttpStreamFormat object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHTTPStreamFormat() *HTTPStreamFormat {
-	this := HTTPStreamFormat{}
+func NewHttpStreamFormat() *HttpStreamFormat {
+	this := HttpStreamFormat{}
 	return &this
 }
 
-// NewHTTPStreamFormatWithDefaults instantiates a new HTTPStreamFormat object
+// NewHttpStreamFormatWithDefaults instantiates a new HttpStreamFormat object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewHTTPStreamFormatWithDefaults() *HTTPStreamFormat {
-	this := HTTPStreamFormat{}
+func NewHttpStreamFormatWithDefaults() *HttpStreamFormat {
+	this := HttpStreamFormat{}
 	return &this
 }
 
 // GetContent returns the Content field value if set, zero value otherwise.
-func (o *HTTPStreamFormat) GetContent() string {
+func (o *HttpStreamFormat) GetContent() string {
 	if o == nil || o.Content == nil {
 		var ret string
 		return ret
@@ -55,7 +55,7 @@ func (o *HTTPStreamFormat) GetContent() string {
 
 // GetContentOk returns a tuple with the Content field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HTTPStreamFormat) GetContentOk() (*string, bool) {
+func (o *HttpStreamFormat) GetContentOk() (*string, bool) {
 	if o == nil || o.Content == nil {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *HTTPStreamFormat) GetContentOk() (*string, bool) {
 }
 
 // HasContent returns a boolean if a field has been set.
-func (o *HTTPStreamFormat) HasContent() bool {
+func (o *HttpStreamFormat) HasContent() bool {
 	if o != nil && o.Content != nil {
 		return true
 	}
@@ -72,12 +72,12 @@ func (o *HTTPStreamFormat) HasContent() bool {
 }
 
 // SetContent gets a reference to the given string and assigns it to the Content field.
-func (o *HTTPStreamFormat) SetContent(v string) {
+func (o *HttpStreamFormat) SetContent(v string) {
 	o.Content = &v
 }
 
 // GetContentBin returns the ContentBin field value if set, zero value otherwise.
-func (o *HTTPStreamFormat) GetContentBin() string {
+func (o *HttpStreamFormat) GetContentBin() string {
 	if o == nil || o.ContentBin == nil {
 		var ret string
 		return ret
@@ -87,7 +87,7 @@ func (o *HTTPStreamFormat) GetContentBin() string {
 
 // GetContentBinOk returns a tuple with the ContentBin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *HTTPStreamFormat) GetContentBinOk() (*string, bool) {
+func (o *HttpStreamFormat) GetContentBinOk() (*string, bool) {
 	if o == nil || o.ContentBin == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *HTTPStreamFormat) GetContentBinOk() (*string, bool) {
 }
 
 // HasContentBin returns a boolean if a field has been set.
-func (o *HTTPStreamFormat) HasContentBin() bool {
+func (o *HttpStreamFormat) HasContentBin() bool {
 	if o != nil && o.ContentBin != nil {
 		return true
 	}
@@ -104,13 +104,13 @@ func (o *HTTPStreamFormat) HasContentBin() bool {
 }
 
 // SetContentBin gets a reference to the given string and assigns it to the ContentBin field.
-func (o *HTTPStreamFormat) SetContentBin(v string) {
+func (o *HttpStreamFormat) SetContentBin(v string) {
 	o.ContentBin = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o HTTPStreamFormat) MarshalJSON() ([]byte, error) {
+func (o HttpStreamFormat) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Content != nil {
 		toSerialize["content"] = o.Content
@@ -128,11 +128,11 @@ func (o HTTPStreamFormat) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *HTTPStreamFormat) UnmarshalJSON(bytes []byte) (err error) {
-	varHTTPStreamFormat := _HTTPStreamFormat{}
+func (o *HttpStreamFormat) UnmarshalJSON(bytes []byte) (err error) {
+	varHttpStreamFormat := _HttpStreamFormat{}
 
-	if err = json.Unmarshal(bytes, &varHTTPStreamFormat); err == nil {
-		*o = HTTPStreamFormat(varHTTPStreamFormat)
+	if err = json.Unmarshal(bytes, &varHttpStreamFormat); err == nil {
+		*o = HttpStreamFormat(varHttpStreamFormat)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -146,48 +146,48 @@ func (o *HTTPStreamFormat) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableHTTPStreamFormat is a helper abstraction for handling nullable httpstreamformat types.
-type NullableHTTPStreamFormat struct {
-	value *HTTPStreamFormat
+// NullableHttpStreamFormat is a helper abstraction for handling nullable httpstreamformat types.
+type NullableHttpStreamFormat struct {
+	value *HttpStreamFormat
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableHTTPStreamFormat) Get() *HTTPStreamFormat {
+func (v NullableHttpStreamFormat) Get() *HttpStreamFormat {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableHTTPStreamFormat) Set(val *HTTPStreamFormat) {
+func (v *NullableHttpStreamFormat) Set(val *HttpStreamFormat) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableHTTPStreamFormat) IsSet() bool {
+func (v NullableHttpStreamFormat) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableHTTPStreamFormat) Unset() {
+func (v *NullableHttpStreamFormat) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableHTTPStreamFormat returns a pointer to a new instance of NullableHTTPStreamFormat.
-func NewNullableHTTPStreamFormat(val *HTTPStreamFormat) *NullableHTTPStreamFormat {
-	return &NullableHTTPStreamFormat{value: val, isSet: true}
+// NewNullableHttpStreamFormat returns a pointer to a new instance of NullableHttpStreamFormat.
+func NewNullableHttpStreamFormat(val *HttpStreamFormat) *NullableHttpStreamFormat {
+	return &NullableHttpStreamFormat{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableHTTPStreamFormat) MarshalJSON() ([]byte, error) {
+func (v NullableHttpStreamFormat) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableHTTPStreamFormat) UnmarshalJSON(src []byte) error {
+func (v *NullableHttpStreamFormat) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

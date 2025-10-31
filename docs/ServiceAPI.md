@@ -37,13 +37,13 @@ import (
 func main() {
     comment := "comment_example" // string | A freeform descriptive note. (optional)
     name := "name_example" // string | The name of the service. (optional)
-    customerID := "customerId_example" // string | Alphanumeric string identifying the customer. (optional)
-    resourceType := "resourceType_example" // string | The type of this service. (optional)
+    customerId := "customerId_example" // string | Alphanumeric string identifying the customer. (optional)
+    type_ := "type__example" // string | The type of this service. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServiceAPI.CreateService(ctx).Comment(comment).Name(name).CustomerID(customerID).ResourceType(resourceType).Execute()
+    resp, r, err := apiClient.ServiceAPI.CreateService(ctx).Comment(comment).Name(name).CustomerId(customerId).Type_(type_).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.CreateService`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,7 +64,7 @@ Other parameters are passed through a pointer to a apiCreateServiceRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **comment** | **string** | A freeform descriptive note. |  **name** | **string** | The name of the service. |  **customerID** | **string** | Alphanumeric string identifying the customer. |  **resourceType** | **string** | The type of this service. | 
+ **comment** | **string** | A freeform descriptive note. |  **name** | **string** | The name of the service. |  **customerId** | **string** | Alphanumeric string identifying the customer. |  **type_** | **string** | The type of this service. | 
 
 ### Return type
 
@@ -101,12 +101,12 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServiceAPI.DeleteService(ctx, serviceID).Execute()
+    resp, r, err := apiClient.ServiceAPI.DeleteService(ctx, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.DeleteService`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,7 +122,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -168,12 +168,12 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServiceAPI.GetService(ctx, serviceID).Execute()
+    resp, r, err := apiClient.ServiceAPI.GetService(ctx, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.GetService`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -189,7 +189,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -235,14 +235,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     version := int32(56) // int32 | Number identifying a version of the service. (optional)
     filterVersionsActive := true // bool | Limits the versions array to the active versions. Accepts `true` or `false` (defaults to false). (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServiceAPI.GetServiceDetail(ctx, serviceID).Version(version).FilterVersionsActive(filterVersionsActive).Execute()
+    resp, r, err := apiClient.ServiceAPI.GetServiceDetail(ctx, serviceId).Version(version).FilterVersionsActive(filterVersionsActive).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.GetServiceDetail`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -258,7 +258,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -304,12 +304,12 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServiceAPI.ListServiceDomains(ctx, serviceID).Execute()
+    resp, r, err := apiClient.ServiceAPI.ListServiceDomains(ctx, serviceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.ListServiceDomains`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -325,7 +325,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -500,15 +500,15 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     comment := "comment_example" // string | A freeform descriptive note. (optional)
     name := "name_example" // string | The name of the service. (optional)
-    customerID := "customerId_example" // string | Alphanumeric string identifying the customer. (optional)
+    customerId := "customerId_example" // string | Alphanumeric string identifying the customer. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ServiceAPI.UpdateService(ctx, serviceID).Comment(comment).Name(name).CustomerID(customerID).Execute()
+    resp, r, err := apiClient.ServiceAPI.UpdateService(ctx, serviceId).Comment(comment).Name(name).CustomerId(customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAPI.UpdateService`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -524,7 +524,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
 
 ### Other Parameters
 
@@ -533,7 +533,7 @@ Other parameters are passed through a pointer to a apiUpdateServiceRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **comment** | **string** | A freeform descriptive note. |  **name** | **string** | The name of the service. |  **customerID** | **string** | Alphanumeric string identifying the customer. | 
+ **comment** | **string** | A freeform descriptive note. |  **name** | **string** | The name of the service. |  **customerId** | **string** | Alphanumeric string identifying the customer. | 
 
 ### Return type
 
@@ -549,3 +549,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

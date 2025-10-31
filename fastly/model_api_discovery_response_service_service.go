@@ -16,68 +16,68 @@ import (
 	"encoding/json"
 )
 
-// BotManagementResponseServiceService struct for BotManagementResponseServiceService
-type BotManagementResponseServiceService struct {
+// ApiDiscoveryResponseServiceService struct for ApiDiscoveryResponseServiceService
+type ApiDiscoveryResponseServiceService struct {
 	// Service identifier
-	ID *string `json:"id,omitempty"`
+	Id *string `json:"id,omitempty"`
 	// Name of the object
 	Object               *string `json:"object,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _BotManagementResponseServiceService BotManagementResponseServiceService
+type _ApiDiscoveryResponseServiceService ApiDiscoveryResponseServiceService
 
-// NewBotManagementResponseServiceService instantiates a new BotManagementResponseServiceService object
+// NewApiDiscoveryResponseServiceService instantiates a new ApiDiscoveryResponseServiceService object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBotManagementResponseServiceService() *BotManagementResponseServiceService {
-	this := BotManagementResponseServiceService{}
+func NewApiDiscoveryResponseServiceService() *ApiDiscoveryResponseServiceService {
+	this := ApiDiscoveryResponseServiceService{}
 	return &this
 }
 
-// NewBotManagementResponseServiceServiceWithDefaults instantiates a new BotManagementResponseServiceService object
+// NewApiDiscoveryResponseServiceServiceWithDefaults instantiates a new ApiDiscoveryResponseServiceService object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewBotManagementResponseServiceServiceWithDefaults() *BotManagementResponseServiceService {
-	this := BotManagementResponseServiceService{}
+func NewApiDiscoveryResponseServiceServiceWithDefaults() *ApiDiscoveryResponseServiceService {
+	this := ApiDiscoveryResponseServiceService{}
 	return &this
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *BotManagementResponseServiceService) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *ApiDiscoveryResponseServiceService) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BotManagementResponseServiceService) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *ApiDiscoveryResponseServiceService) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *BotManagementResponseServiceService) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *ApiDiscoveryResponseServiceService) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *BotManagementResponseServiceService) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *ApiDiscoveryResponseServiceService) SetId(v string) {
+	o.Id = &v
 }
 
 // GetObject returns the Object field value if set, zero value otherwise.
-func (o *BotManagementResponseServiceService) GetObject() string {
+func (o *ApiDiscoveryResponseServiceService) GetObject() string {
 	if o == nil || o.Object == nil {
 		var ret string
 		return ret
@@ -87,7 +87,7 @@ func (o *BotManagementResponseServiceService) GetObject() string {
 
 // GetObjectOk returns a tuple with the Object field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BotManagementResponseServiceService) GetObjectOk() (*string, bool) {
+func (o *ApiDiscoveryResponseServiceService) GetObjectOk() (*string, bool) {
 	if o == nil || o.Object == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *BotManagementResponseServiceService) GetObjectOk() (*string, bool) {
 }
 
 // HasObject returns a boolean if a field has been set.
-func (o *BotManagementResponseServiceService) HasObject() bool {
+func (o *ApiDiscoveryResponseServiceService) HasObject() bool {
 	if o != nil && o.Object != nil {
 		return true
 	}
@@ -104,16 +104,16 @@ func (o *BotManagementResponseServiceService) HasObject() bool {
 }
 
 // SetObject gets a reference to the given string and assigns it to the Object field.
-func (o *BotManagementResponseServiceService) SetObject(v string) {
+func (o *ApiDiscoveryResponseServiceService) SetObject(v string) {
 	o.Object = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o BotManagementResponseServiceService) MarshalJSON() ([]byte, error) {
+func (o ApiDiscoveryResponseServiceService) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 	if o.Object != nil {
 		toSerialize["object"] = o.Object
@@ -128,11 +128,11 @@ func (o BotManagementResponseServiceService) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *BotManagementResponseServiceService) UnmarshalJSON(bytes []byte) (err error) {
-	varBotManagementResponseServiceService := _BotManagementResponseServiceService{}
+func (o *ApiDiscoveryResponseServiceService) UnmarshalJSON(bytes []byte) (err error) {
+	varApiDiscoveryResponseServiceService := _ApiDiscoveryResponseServiceService{}
 
-	if err = json.Unmarshal(bytes, &varBotManagementResponseServiceService); err == nil {
-		*o = BotManagementResponseServiceService(varBotManagementResponseServiceService)
+	if err = json.Unmarshal(bytes, &varApiDiscoveryResponseServiceService); err == nil {
+		*o = ApiDiscoveryResponseServiceService(varApiDiscoveryResponseServiceService)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -146,48 +146,48 @@ func (o *BotManagementResponseServiceService) UnmarshalJSON(bytes []byte) (err e
 	return err
 }
 
-// NullableBotManagementResponseServiceService is a helper abstraction for handling nullable botmanagementresponseserviceservice types.
-type NullableBotManagementResponseServiceService struct {
-	value *BotManagementResponseServiceService
+// NullableApiDiscoveryResponseServiceService is a helper abstraction for handling nullable apidiscoveryresponseserviceservice types.
+type NullableApiDiscoveryResponseServiceService struct {
+	value *ApiDiscoveryResponseServiceService
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableBotManagementResponseServiceService) Get() *BotManagementResponseServiceService {
+func (v NullableApiDiscoveryResponseServiceService) Get() *ApiDiscoveryResponseServiceService {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableBotManagementResponseServiceService) Set(val *BotManagementResponseServiceService) {
+func (v *NullableApiDiscoveryResponseServiceService) Set(val *ApiDiscoveryResponseServiceService) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableBotManagementResponseServiceService) IsSet() bool {
+func (v NullableApiDiscoveryResponseServiceService) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableBotManagementResponseServiceService) Unset() {
+func (v *NullableApiDiscoveryResponseServiceService) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableBotManagementResponseServiceService returns a pointer to a new instance of NullableBotManagementResponseServiceService.
-func NewNullableBotManagementResponseServiceService(val *BotManagementResponseServiceService) *NullableBotManagementResponseServiceService {
-	return &NullableBotManagementResponseServiceService{value: val, isSet: true}
+// NewNullableApiDiscoveryResponseServiceService returns a pointer to a new instance of NullableApiDiscoveryResponseServiceService.
+func NewNullableApiDiscoveryResponseServiceService(val *ApiDiscoveryResponseServiceService) *NullableApiDiscoveryResponseServiceService {
+	return &NullableApiDiscoveryResponseServiceService{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableBotManagementResponseServiceService) MarshalJSON() ([]byte, error) {
+func (v NullableApiDiscoveryResponseServiceService) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableBotManagementResponseServiceService) UnmarshalJSON(src []byte) error {
+func (v *NullableApiDiscoveryResponseServiceService) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

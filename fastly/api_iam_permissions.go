@@ -40,8 +40,8 @@ type IamPermissionsAPI interface {
 	ListPermissions(ctx context.Context) APIListPermissionsRequest
 
 	// ListPermissionsExecute executes the request
-	//  @return map[string]any
-	ListPermissionsExecute(r APIListPermissionsRequest) (map[string]any, *http.Response, error)
+	//  @return map[string]interface{}
+	ListPermissionsExecute(r APIListPermissionsRequest) (map[string]interface{}, *http.Response, error)
 }
 
 // IamPermissionsAPIService IamPermissionsAPI service
@@ -54,7 +54,7 @@ type APIListPermissionsRequest struct {
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListPermissionsRequest) Execute() (map[string]any, *http.Response, error) {
+func (r APIListPermissionsRequest) Execute() (map[string]interface{}, *http.Response, error) {
 	return r.APIService.ListPermissionsExecute(r)
 }
 
@@ -74,13 +74,13 @@ func (a *IamPermissionsAPIService) ListPermissions(ctx context.Context) APIListP
 }
 
 // ListPermissionsExecute executes the request
-//  @return map[string]any
-func (a *IamPermissionsAPIService) ListPermissionsExecute(r APIListPermissionsRequest) (map[string]any, *http.Response, error) {
+//  @return map[string]interface{}
+func (a *IamPermissionsAPIService) ListPermissionsExecute(r APIListPermissionsRequest) (map[string]interface{}, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue map[string]any
+		localVarReturnValue map[string]interface{}
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IamPermissionsAPIService.ListPermissions")

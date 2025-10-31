@@ -21,7 +21,7 @@ type LoggingHerokuAdditional struct {
 	// The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
 	Token *string `json:"token,omitempty"`
 	// The URL to stream logs to.
-	URL                  *string `json:"url,omitempty"`
+	Url                  *string `json:"url,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -76,36 +76,36 @@ func (o *LoggingHerokuAdditional) SetToken(v string) {
 	o.Token = &v
 }
 
-// GetURL returns the URL field value if set, zero value otherwise.
-func (o *LoggingHerokuAdditional) GetURL() string {
-	if o == nil || o.URL == nil {
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *LoggingHerokuAdditional) GetUrl() string {
+	if o == nil || o.Url == nil {
 		var ret string
 		return ret
 	}
-	return *o.URL
+	return *o.Url
 }
 
-// GetURLOk returns a tuple with the URL field value if set, nil otherwise
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingHerokuAdditional) GetURLOk() (*string, bool) {
-	if o == nil || o.URL == nil {
+func (o *LoggingHerokuAdditional) GetUrlOk() (*string, bool) {
+	if o == nil || o.Url == nil {
 		return nil, false
 	}
-	return o.URL, true
+	return o.Url, true
 }
 
-// HasURL returns a boolean if a field has been set.
-func (o *LoggingHerokuAdditional) HasURL() bool {
-	if o != nil && o.URL != nil {
+// HasUrl returns a boolean if a field has been set.
+func (o *LoggingHerokuAdditional) HasUrl() bool {
+	if o != nil && o.Url != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetURL gets a reference to the given string and assigns it to the URL field.
-func (o *LoggingHerokuAdditional) SetURL(v string) {
-	o.URL = &v
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *LoggingHerokuAdditional) SetUrl(v string) {
+	o.Url = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -115,8 +115,8 @@ func (o LoggingHerokuAdditional) MarshalJSON() ([]byte, error) {
 	if o.Token != nil {
 		toSerialize["token"] = o.Token
 	}
-	if o.URL != nil {
-		toSerialize["url"] = o.URL
+	if o.Url != nil {
+		toSerialize["url"] = o.Url
 	}
 
 	for key, value := range o.AdditionalProperties {

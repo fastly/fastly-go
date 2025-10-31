@@ -6,16 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ID** | Pointer to **string** | Unique ID of the rule. | [optional] 
+**Id** | Pointer to **string** | Unique ID of the rule. | [optional] 
 **Name** | Pointer to **string** | A human-readable name for the rule. | [optional] 
 **Action** | Pointer to **string** | Action types for a rule. Supported action values are default, block, log, off. The default action value follows the current protection mode of the associated service. | [optional] [default to "default"]
-**CustomerID** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
-**ServiceID** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
-**SourceIP** | Pointer to **NullableString** | Source IP address attribute. | [optional] 
+**CustomerId** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
+**ServiceId** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
+**SourceIp** | Pointer to **NullableString** | Source IP address attribute. | [optional] 
 **CountryCode** | Pointer to **NullableString** | Country code attribute. | [optional] 
 **Host** | Pointer to **NullableString** | Host attribute. | [optional] 
 **Asn** | Pointer to **NullableString** | ASN attribute. | [optional] 
-**SourceIPPrefix** | Pointer to **NullableString** | Source IP prefix attribute. | [optional] 
+**SourceIpPrefix** | Pointer to **NullableString** | Source IP prefix attribute. | [optional] 
 **AdditionalAttributes** | Pointer to **[]string** | Attribute category for additional, unlisted attributes used in a rule. | [optional] 
 
 ## Methods
@@ -107,30 +107,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *DdosProtectionRule) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetID
+### GetId
 
-`func (o *DdosProtectionRule) GetID() string`
+`func (o *DdosProtectionRule) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *DdosProtectionRule) GetIDOk() (*string, bool)`
+`func (o *DdosProtectionRule) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *DdosProtectionRule) SetID(v string)`
+`func (o *DdosProtectionRule) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *DdosProtectionRule) HasID() bool`
+`func (o *DdosProtectionRule) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -182,91 +182,91 @@ SetAction sets Action field to given value.
 
 HasAction returns a boolean if a field has been set.
 
-### GetCustomerID
+### GetCustomerId
 
-`func (o *DdosProtectionRule) GetCustomerID() string`
+`func (o *DdosProtectionRule) GetCustomerId() string`
 
-GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetCustomerIDOk
+### GetCustomerIdOk
 
-`func (o *DdosProtectionRule) GetCustomerIDOk() (*string, bool)`
+`func (o *DdosProtectionRule) GetCustomerIdOk() (*string, bool)`
 
-GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerID
+### SetCustomerId
 
-`func (o *DdosProtectionRule) SetCustomerID(v string)`
+`func (o *DdosProtectionRule) SetCustomerId(v string)`
 
-SetCustomerID sets CustomerID field to given value.
+SetCustomerId sets CustomerId field to given value.
 
-### HasCustomerID
+### HasCustomerId
 
-`func (o *DdosProtectionRule) HasCustomerID() bool`
+`func (o *DdosProtectionRule) HasCustomerId() bool`
 
-HasCustomerID returns a boolean if a field has been set.
+HasCustomerId returns a boolean if a field has been set.
 
-### GetServiceID
+### GetServiceId
 
-`func (o *DdosProtectionRule) GetServiceID() string`
+`func (o *DdosProtectionRule) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *DdosProtectionRule) GetServiceIDOk() (*string, bool)`
+`func (o *DdosProtectionRule) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *DdosProtectionRule) SetServiceID(v string)`
+`func (o *DdosProtectionRule) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *DdosProtectionRule) HasServiceID() bool`
+`func (o *DdosProtectionRule) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
-### GetSourceIP
+### GetSourceIp
 
-`func (o *DdosProtectionRule) GetSourceIP() string`
+`func (o *DdosProtectionRule) GetSourceIp() string`
 
-GetSourceIP returns the SourceIP field if non-nil, zero value otherwise.
+GetSourceIp returns the SourceIp field if non-nil, zero value otherwise.
 
-### GetSourceIPOk
+### GetSourceIpOk
 
-`func (o *DdosProtectionRule) GetSourceIPOk() (*string, bool)`
+`func (o *DdosProtectionRule) GetSourceIpOk() (*string, bool)`
 
-GetSourceIPOk returns a tuple with the SourceIP field if it's non-nil, zero value otherwise
+GetSourceIpOk returns a tuple with the SourceIp field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSourceIP
+### SetSourceIp
 
-`func (o *DdosProtectionRule) SetSourceIP(v string)`
+`func (o *DdosProtectionRule) SetSourceIp(v string)`
 
-SetSourceIP sets SourceIP field to given value.
+SetSourceIp sets SourceIp field to given value.
 
-### HasSourceIP
+### HasSourceIp
 
-`func (o *DdosProtectionRule) HasSourceIP() bool`
+`func (o *DdosProtectionRule) HasSourceIp() bool`
 
-HasSourceIP returns a boolean if a field has been set.
+HasSourceIp returns a boolean if a field has been set.
 
-### SetSourceIPNil
+### SetSourceIpNil
 
-`func (o *DdosProtectionRule) SetSourceIPNil(b bool)`
+`func (o *DdosProtectionRule) SetSourceIpNil(b bool)`
 
- SetSourceIPNil sets the value for SourceIP to be an explicit nil
+ SetSourceIpNil sets the value for SourceIp to be an explicit nil
 
-### UnsetSourceIP
-`func (o *DdosProtectionRule) UnsetSourceIP()`
+### UnsetSourceIp
+`func (o *DdosProtectionRule) UnsetSourceIp()`
 
-UnsetSourceIP ensures that no value is present for SourceIP, not even an explicit nil
+UnsetSourceIp ensures that no value is present for SourceIp, not even an explicit nil
 ### GetCountryCode
 
 `func (o *DdosProtectionRule) GetCountryCode() string`
@@ -372,41 +372,41 @@ HasAsn returns a boolean if a field has been set.
 `func (o *DdosProtectionRule) UnsetAsn()`
 
 UnsetAsn ensures that no value is present for Asn, not even an explicit nil
-### GetSourceIPPrefix
+### GetSourceIpPrefix
 
-`func (o *DdosProtectionRule) GetSourceIPPrefix() string`
+`func (o *DdosProtectionRule) GetSourceIpPrefix() string`
 
-GetSourceIPPrefix returns the SourceIPPrefix field if non-nil, zero value otherwise.
+GetSourceIpPrefix returns the SourceIpPrefix field if non-nil, zero value otherwise.
 
-### GetSourceIPPrefixOk
+### GetSourceIpPrefixOk
 
-`func (o *DdosProtectionRule) GetSourceIPPrefixOk() (*string, bool)`
+`func (o *DdosProtectionRule) GetSourceIpPrefixOk() (*string, bool)`
 
-GetSourceIPPrefixOk returns a tuple with the SourceIPPrefix field if it's non-nil, zero value otherwise
+GetSourceIpPrefixOk returns a tuple with the SourceIpPrefix field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSourceIPPrefix
+### SetSourceIpPrefix
 
-`func (o *DdosProtectionRule) SetSourceIPPrefix(v string)`
+`func (o *DdosProtectionRule) SetSourceIpPrefix(v string)`
 
-SetSourceIPPrefix sets SourceIPPrefix field to given value.
+SetSourceIpPrefix sets SourceIpPrefix field to given value.
 
-### HasSourceIPPrefix
+### HasSourceIpPrefix
 
-`func (o *DdosProtectionRule) HasSourceIPPrefix() bool`
+`func (o *DdosProtectionRule) HasSourceIpPrefix() bool`
 
-HasSourceIPPrefix returns a boolean if a field has been set.
+HasSourceIpPrefix returns a boolean if a field has been set.
 
-### SetSourceIPPrefixNil
+### SetSourceIpPrefixNil
 
-`func (o *DdosProtectionRule) SetSourceIPPrefixNil(b bool)`
+`func (o *DdosProtectionRule) SetSourceIpPrefixNil(b bool)`
 
- SetSourceIPPrefixNil sets the value for SourceIPPrefix to be an explicit nil
+ SetSourceIpPrefixNil sets the value for SourceIpPrefix to be an explicit nil
 
-### UnsetSourceIPPrefix
-`func (o *DdosProtectionRule) UnsetSourceIPPrefix()`
+### UnsetSourceIpPrefix
+`func (o *DdosProtectionRule) UnsetSourceIpPrefix()`
 
-UnsetSourceIPPrefix ensures that no value is present for SourceIPPrefix, not even an explicit nil
+UnsetSourceIpPrefix ensures that no value is present for SourceIpPrefix, not even an explicit nil
 ### GetAdditionalAttributes
 
 `func (o *DdosProtectionRule) GetAdditionalAttributes() []string`
@@ -434,3 +434,5 @@ HasAdditionalAttributes returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

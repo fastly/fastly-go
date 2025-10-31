@@ -27,159 +27,159 @@ var (
 	_ context.Context
 )
 
-// ACLsInComputeAPI defines an interface for interacting with the resource.
-type ACLsInComputeAPI interface {
+// AclsInComputeAPI defines an interface for interacting with the resource.
+type AclsInComputeAPI interface {
 
 	/*
-		ComputeACLCreateAcls Create a new ACL
+		ComputeAclCreateAcls Create a new ACL
 
 		Create a new ACL.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APIComputeACLCreateAclsRequest
+		 @return APIComputeAclCreateAclsRequest
 	*/
-	ComputeACLCreateAcls(ctx context.Context) APIComputeACLCreateAclsRequest
+	ComputeAclCreateAcls(ctx context.Context) APIComputeAclCreateAclsRequest
 
-	// ComputeACLCreateAclsExecute executes the request
-	//  @return ComputeACLCreateAclsResponse
-	ComputeACLCreateAclsExecute(r APIComputeACLCreateAclsRequest) (*ComputeACLCreateAclsResponse, *http.Response, error)
+	// ComputeAclCreateAclsExecute executes the request
+	//  @return ComputeAclCreateAclsResponse
+	ComputeAclCreateAclsExecute(r APIComputeAclCreateAclsRequest) (*ComputeAclCreateAclsResponse, *http.Response, error)
 
 	/*
-		ComputeACLDeleteSAclID Delete an ACL
+		ComputeAclDeleteSAclId Delete an ACL
 
 		Delete an ACL.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param aclID
-		 @return APIComputeACLDeleteSAclIDRequest
+		 @param aclId
+		 @return APIComputeAclDeleteSAclIdRequest
 	*/
-	ComputeACLDeleteSAclID(ctx context.Context, aclID string) APIComputeACLDeleteSAclIDRequest
+	ComputeAclDeleteSAclId(ctx context.Context, aclId string) APIComputeAclDeleteSAclIdRequest
 
-	// ComputeACLDeleteSAclIDExecute executes the request
-	ComputeACLDeleteSAclIDExecute(r APIComputeACLDeleteSAclIDRequest) (*http.Response, error)
+	// ComputeAclDeleteSAclIdExecute executes the request
+	ComputeAclDeleteSAclIdExecute(r APIComputeAclDeleteSAclIdRequest) (*http.Response, error)
 
 	/*
-		ComputeACLListAclEntries List an ACL
+		ComputeAclListAclEntries List an ACL
 
 		List an ACL.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param aclID
-		 @return APIComputeACLListAclEntriesRequest
+		 @param aclId
+		 @return APIComputeAclListAclEntriesRequest
 	*/
-	ComputeACLListAclEntries(ctx context.Context, aclID string) APIComputeACLListAclEntriesRequest
+	ComputeAclListAclEntries(ctx context.Context, aclId string) APIComputeAclListAclEntriesRequest
 
-	// ComputeACLListAclEntriesExecute executes the request
-	//  @return ComputeACLListEntries
-	ComputeACLListAclEntriesExecute(r APIComputeACLListAclEntriesRequest) (*ComputeACLListEntries, *http.Response, error)
+	// ComputeAclListAclEntriesExecute executes the request
+	//  @return ComputeAclListEntries
+	ComputeAclListAclEntriesExecute(r APIComputeAclListAclEntriesRequest) (*ComputeAclListEntries, *http.Response, error)
 
 	/*
-		ComputeACLListAcls List ACLs
+		ComputeAclListAcls List ACLs
 
 		List all ACLs.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APIComputeACLListAclsRequest
+		 @return APIComputeAclListAclsRequest
 	*/
-	ComputeACLListAcls(ctx context.Context) APIComputeACLListAclsRequest
+	ComputeAclListAcls(ctx context.Context) APIComputeAclListAclsRequest
 
-	// ComputeACLListAclsExecute executes the request
-	//  @return ComputeACLList
-	ComputeACLListAclsExecute(r APIComputeACLListAclsRequest) (*ComputeACLList, *http.Response, error)
+	// ComputeAclListAclsExecute executes the request
+	//  @return ComputeAclList
+	ComputeAclListAclsExecute(r APIComputeAclListAclsRequest) (*ComputeAclList, *http.Response, error)
 
 	/*
-		ComputeACLListAclsSAclID Describe an ACL
+		ComputeAclListAclsSAclId Describe an ACL
 
 		Describe an ACL.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param aclID
-		 @return APIComputeACLListAclsSAclIDRequest
+		 @param aclId
+		 @return APIComputeAclListAclsSAclIdRequest
 	*/
-	ComputeACLListAclsSAclID(ctx context.Context, aclID string) APIComputeACLListAclsSAclIDRequest
+	ComputeAclListAclsSAclId(ctx context.Context, aclId string) APIComputeAclListAclsSAclIdRequest
 
-	// ComputeACLListAclsSAclIDExecute executes the request
-	//  @return ComputeACLCreateAclsResponse
-	ComputeACLListAclsSAclIDExecute(r APIComputeACLListAclsSAclIDRequest) (*ComputeACLCreateAclsResponse, *http.Response, error)
+	// ComputeAclListAclsSAclIdExecute executes the request
+	//  @return ComputeAclCreateAclsResponse
+	ComputeAclListAclsSAclIdExecute(r APIComputeAclListAclsSAclIdRequest) (*ComputeAclCreateAclsResponse, *http.Response, error)
 
 	/*
-		ComputeACLLookupAcls Lookup an ACL
+		ComputeAclLookupAcls Lookup an ACL
 
 		Find a matching ACL entry for an IP address.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param aclID
-		 @param aclIP
-		 @return APIComputeACLLookupAclsRequest
+		 @param aclId
+		 @param aclIp
+		 @return APIComputeAclLookupAclsRequest
 	*/
-	ComputeACLLookupAcls(ctx context.Context, aclID string, aclIP string) APIComputeACLLookupAclsRequest
+	ComputeAclLookupAcls(ctx context.Context, aclId string, aclIp string) APIComputeAclLookupAclsRequest
 
-	// ComputeACLLookupAclsExecute executes the request
-	//  @return ComputeACLLookup
-	ComputeACLLookupAclsExecute(r APIComputeACLLookupAclsRequest) (*ComputeACLLookup, *http.Response, error)
+	// ComputeAclLookupAclsExecute executes the request
+	//  @return ComputeAclLookup
+	ComputeAclLookupAclsExecute(r APIComputeAclLookupAclsRequest) (*ComputeAclLookup, *http.Response, error)
 
 	/*
-		ComputeACLUpdateAcls Update an ACL
+		ComputeAclUpdateAcls Update an ACL
 
 		Update an ACL entry with a new operation or action, this allows you to modify an existing entry or delete it.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param aclID
-		 @return APIComputeACLUpdateAclsRequest
+		 @param aclId
+		 @return APIComputeAclUpdateAclsRequest
 	*/
-	ComputeACLUpdateAcls(ctx context.Context, aclID string) APIComputeACLUpdateAclsRequest
+	ComputeAclUpdateAcls(ctx context.Context, aclId string) APIComputeAclUpdateAclsRequest
 
-	// ComputeACLUpdateAclsExecute executes the request
-	ComputeACLUpdateAclsExecute(r APIComputeACLUpdateAclsRequest) (*http.Response, error)
+	// ComputeAclUpdateAclsExecute executes the request
+	ComputeAclUpdateAclsExecute(r APIComputeAclUpdateAclsRequest) (*http.Response, error)
 }
 
-// ACLsInComputeAPIService ACLsInComputeAPI service
-type ACLsInComputeAPIService service
+// AclsInComputeAPIService AclsInComputeAPI service
+type AclsInComputeAPIService service
 
-// APIComputeACLCreateAclsRequest represents a request for the resource.
-type APIComputeACLCreateAclsRequest struct {
+// APIComputeAclCreateAclsRequest represents a request for the resource.
+type APIComputeAclCreateAclsRequest struct {
 	ctx                         context.Context
-	APIService                  ACLsInComputeAPI
-	computeACLCreateAclsRequest *ComputeACLCreateAclsRequest
+	APIService                  AclsInComputeAPI
+	computeAclCreateAclsRequest *ComputeAclCreateAclsRequest
 }
 
-// ComputeACLCreateAclsRequest returns a pointer to a request.
-func (r *APIComputeACLCreateAclsRequest) ComputeACLCreateAclsRequest(computeACLCreateAclsRequest ComputeACLCreateAclsRequest) *APIComputeACLCreateAclsRequest {
-	r.computeACLCreateAclsRequest = &computeACLCreateAclsRequest
+// ComputeAclCreateAclsRequest returns a pointer to a request.
+func (r *APIComputeAclCreateAclsRequest) ComputeAclCreateAclsRequest(computeAclCreateAclsRequest ComputeAclCreateAclsRequest) *APIComputeAclCreateAclsRequest {
+	r.computeAclCreateAclsRequest = &computeAclCreateAclsRequest
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIComputeACLCreateAclsRequest) Execute() (*ComputeACLCreateAclsResponse, *http.Response, error) {
-	return r.APIService.ComputeACLCreateAclsExecute(r)
+func (r APIComputeAclCreateAclsRequest) Execute() (*ComputeAclCreateAclsResponse, *http.Response, error) {
+	return r.APIService.ComputeAclCreateAclsExecute(r)
 }
 
 /*
-ComputeACLCreateAcls Create a new ACL
+ComputeAclCreateAcls Create a new ACL
 
 Create a new ACL.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APIComputeACLCreateAclsRequest
+ @return APIComputeAclCreateAclsRequest
 */
-func (a *ACLsInComputeAPIService) ComputeACLCreateAcls(ctx context.Context) APIComputeACLCreateAclsRequest {
-	return APIComputeACLCreateAclsRequest{
+func (a *AclsInComputeAPIService) ComputeAclCreateAcls(ctx context.Context) APIComputeAclCreateAclsRequest {
+	return APIComputeAclCreateAclsRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// ComputeACLCreateAclsExecute executes the request
-//  @return ComputeACLCreateAclsResponse
-func (a *ACLsInComputeAPIService) ComputeACLCreateAclsExecute(r APIComputeACLCreateAclsRequest) (*ComputeACLCreateAclsResponse, *http.Response, error) {
+// ComputeAclCreateAclsExecute executes the request
+//  @return ComputeAclCreateAclsResponse
+func (a *AclsInComputeAPIService) ComputeAclCreateAclsExecute(r APIComputeAclCreateAclsRequest) (*ComputeAclCreateAclsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *ComputeACLCreateAclsResponse
+		localVarReturnValue *ComputeAclCreateAclsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLCreateAcls")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclsInComputeAPIService.ComputeAclCreateAcls")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -208,7 +208,7 @@ func (a *ACLsInComputeAPIService) ComputeACLCreateAclsExecute(r APIComputeACLCre
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.computeACLCreateAclsRequest
+	localVarPostBody = r.computeAclCreateAclsRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -273,50 +273,50 @@ func (a *ACLsInComputeAPIService) ComputeACLCreateAclsExecute(r APIComputeACLCre
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIComputeACLDeleteSAclIDRequest represents a request for the resource.
-type APIComputeACLDeleteSAclIDRequest struct {
+// APIComputeAclDeleteSAclIdRequest represents a request for the resource.
+type APIComputeAclDeleteSAclIdRequest struct {
 	ctx        context.Context
-	APIService ACLsInComputeAPI
-	aclID      string
+	APIService AclsInComputeAPI
+	aclId      string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIComputeACLDeleteSAclIDRequest) Execute() (*http.Response, error) {
-	return r.APIService.ComputeACLDeleteSAclIDExecute(r)
+func (r APIComputeAclDeleteSAclIdRequest) Execute() (*http.Response, error) {
+	return r.APIService.ComputeAclDeleteSAclIdExecute(r)
 }
 
 /*
-ComputeACLDeleteSAclID Delete an ACL
+ComputeAclDeleteSAclId Delete an ACL
 
 Delete an ACL.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param aclID
- @return APIComputeACLDeleteSAclIDRequest
+ @param aclId
+ @return APIComputeAclDeleteSAclIdRequest
 */
-func (a *ACLsInComputeAPIService) ComputeACLDeleteSAclID(ctx context.Context, aclID string) APIComputeACLDeleteSAclIDRequest {
-	return APIComputeACLDeleteSAclIDRequest{
+func (a *AclsInComputeAPIService) ComputeAclDeleteSAclId(ctx context.Context, aclId string) APIComputeAclDeleteSAclIdRequest {
+	return APIComputeAclDeleteSAclIdRequest{
 		APIService: a,
 		ctx:        ctx,
-		aclID:      aclID,
+		aclId:      aclId,
 	}
 }
 
-// ComputeACLDeleteSAclIDExecute executes the request
-func (a *ACLsInComputeAPIService) ComputeACLDeleteSAclIDExecute(r APIComputeACLDeleteSAclIDRequest) (*http.Response, error) {
+// ComputeAclDeleteSAclIdExecute executes the request
+func (a *AclsInComputeAPIService) ComputeAclDeleteSAclIdExecute(r APIComputeAclDeleteSAclIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   any
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLDeleteSAclID")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclsInComputeAPIService.ComputeAclDeleteSAclId")
 	if err != nil {
 		return nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/resources/acls/{acl_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -394,66 +394,66 @@ func (a *ACLsInComputeAPIService) ComputeACLDeleteSAclIDExecute(r APIComputeACLD
 	return localVarHTTPResponse, nil
 }
 
-// APIComputeACLListAclEntriesRequest represents a request for the resource.
-type APIComputeACLListAclEntriesRequest struct {
+// APIComputeAclListAclEntriesRequest represents a request for the resource.
+type APIComputeAclListAclEntriesRequest struct {
 	ctx        context.Context
-	APIService ACLsInComputeAPI
-	aclID      string
+	APIService AclsInComputeAPI
+	aclId      string
 	cursor     *string
 	limit      *int32
 }
 
 // Cursor returns a pointer to a request.
-func (r *APIComputeACLListAclEntriesRequest) Cursor(cursor string) *APIComputeACLListAclEntriesRequest {
+func (r *APIComputeAclListAclEntriesRequest) Cursor(cursor string) *APIComputeAclListAclEntriesRequest {
 	r.cursor = &cursor
 	return r
 }
 
 // Limit returns a pointer to a request.
-func (r *APIComputeACLListAclEntriesRequest) Limit(limit int32) *APIComputeACLListAclEntriesRequest {
+func (r *APIComputeAclListAclEntriesRequest) Limit(limit int32) *APIComputeAclListAclEntriesRequest {
 	r.limit = &limit
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIComputeACLListAclEntriesRequest) Execute() (*ComputeACLListEntries, *http.Response, error) {
-	return r.APIService.ComputeACLListAclEntriesExecute(r)
+func (r APIComputeAclListAclEntriesRequest) Execute() (*ComputeAclListEntries, *http.Response, error) {
+	return r.APIService.ComputeAclListAclEntriesExecute(r)
 }
 
 /*
-ComputeACLListAclEntries List an ACL
+ComputeAclListAclEntries List an ACL
 
 List an ACL.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param aclID
- @return APIComputeACLListAclEntriesRequest
+ @param aclId
+ @return APIComputeAclListAclEntriesRequest
 */
-func (a *ACLsInComputeAPIService) ComputeACLListAclEntries(ctx context.Context, aclID string) APIComputeACLListAclEntriesRequest {
-	return APIComputeACLListAclEntriesRequest{
+func (a *AclsInComputeAPIService) ComputeAclListAclEntries(ctx context.Context, aclId string) APIComputeAclListAclEntriesRequest {
+	return APIComputeAclListAclEntriesRequest{
 		APIService: a,
 		ctx:        ctx,
-		aclID:      aclID,
+		aclId:      aclId,
 	}
 }
 
-// ComputeACLListAclEntriesExecute executes the request
-//  @return ComputeACLListEntries
-func (a *ACLsInComputeAPIService) ComputeACLListAclEntriesExecute(r APIComputeACLListAclEntriesRequest) (*ComputeACLListEntries, *http.Response, error) {
+// ComputeAclListAclEntriesExecute executes the request
+//  @return ComputeAclListEntries
+func (a *AclsInComputeAPIService) ComputeAclListAclEntriesExecute(r APIComputeAclListAclEntriesRequest) (*ComputeAclListEntries, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *ComputeACLListEntries
+		localVarReturnValue *ComputeAclListEntries
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLListAclEntries")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclsInComputeAPIService.ComputeAclListAclEntries")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/resources/acls/{acl_id}/entries"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -546,43 +546,43 @@ func (a *ACLsInComputeAPIService) ComputeACLListAclEntriesExecute(r APIComputeAC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIComputeACLListAclsRequest represents a request for the resource.
-type APIComputeACLListAclsRequest struct {
+// APIComputeAclListAclsRequest represents a request for the resource.
+type APIComputeAclListAclsRequest struct {
 	ctx        context.Context
-	APIService ACLsInComputeAPI
+	APIService AclsInComputeAPI
 }
 
 // Execute calls the API using the request data configured.
-func (r APIComputeACLListAclsRequest) Execute() (*ComputeACLList, *http.Response, error) {
-	return r.APIService.ComputeACLListAclsExecute(r)
+func (r APIComputeAclListAclsRequest) Execute() (*ComputeAclList, *http.Response, error) {
+	return r.APIService.ComputeAclListAclsExecute(r)
 }
 
 /*
-ComputeACLListAcls List ACLs
+ComputeAclListAcls List ACLs
 
 List all ACLs.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APIComputeACLListAclsRequest
+ @return APIComputeAclListAclsRequest
 */
-func (a *ACLsInComputeAPIService) ComputeACLListAcls(ctx context.Context) APIComputeACLListAclsRequest {
-	return APIComputeACLListAclsRequest{
+func (a *AclsInComputeAPIService) ComputeAclListAcls(ctx context.Context) APIComputeAclListAclsRequest {
+	return APIComputeAclListAclsRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// ComputeACLListAclsExecute executes the request
-//  @return ComputeACLList
-func (a *ACLsInComputeAPIService) ComputeACLListAclsExecute(r APIComputeACLListAclsRequest) (*ComputeACLList, *http.Response, error) {
+// ComputeAclListAclsExecute executes the request
+//  @return ComputeAclList
+func (a *AclsInComputeAPIService) ComputeAclListAclsExecute(r APIComputeAclListAclsRequest) (*ComputeAclList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *ComputeACLList
+		localVarReturnValue *ComputeAclList
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLListAcls")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclsInComputeAPIService.ComputeAclListAcls")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -674,52 +674,52 @@ func (a *ACLsInComputeAPIService) ComputeACLListAclsExecute(r APIComputeACLListA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIComputeACLListAclsSAclIDRequest represents a request for the resource.
-type APIComputeACLListAclsSAclIDRequest struct {
+// APIComputeAclListAclsSAclIdRequest represents a request for the resource.
+type APIComputeAclListAclsSAclIdRequest struct {
 	ctx        context.Context
-	APIService ACLsInComputeAPI
-	aclID      string
+	APIService AclsInComputeAPI
+	aclId      string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIComputeACLListAclsSAclIDRequest) Execute() (*ComputeACLCreateAclsResponse, *http.Response, error) {
-	return r.APIService.ComputeACLListAclsSAclIDExecute(r)
+func (r APIComputeAclListAclsSAclIdRequest) Execute() (*ComputeAclCreateAclsResponse, *http.Response, error) {
+	return r.APIService.ComputeAclListAclsSAclIdExecute(r)
 }
 
 /*
-ComputeACLListAclsSAclID Describe an ACL
+ComputeAclListAclsSAclId Describe an ACL
 
 Describe an ACL.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param aclID
- @return APIComputeACLListAclsSAclIDRequest
+ @param aclId
+ @return APIComputeAclListAclsSAclIdRequest
 */
-func (a *ACLsInComputeAPIService) ComputeACLListAclsSAclID(ctx context.Context, aclID string) APIComputeACLListAclsSAclIDRequest {
-	return APIComputeACLListAclsSAclIDRequest{
+func (a *AclsInComputeAPIService) ComputeAclListAclsSAclId(ctx context.Context, aclId string) APIComputeAclListAclsSAclIdRequest {
+	return APIComputeAclListAclsSAclIdRequest{
 		APIService: a,
 		ctx:        ctx,
-		aclID:      aclID,
+		aclId:      aclId,
 	}
 }
 
-// ComputeACLListAclsSAclIDExecute executes the request
-//  @return ComputeACLCreateAclsResponse
-func (a *ACLsInComputeAPIService) ComputeACLListAclsSAclIDExecute(r APIComputeACLListAclsSAclIDRequest) (*ComputeACLCreateAclsResponse, *http.Response, error) {
+// ComputeAclListAclsSAclIdExecute executes the request
+//  @return ComputeAclCreateAclsResponse
+func (a *AclsInComputeAPIService) ComputeAclListAclsSAclIdExecute(r APIComputeAclListAclsSAclIdRequest) (*ComputeAclCreateAclsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *ComputeACLCreateAclsResponse
+		localVarReturnValue *ComputeAclCreateAclsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLListAclsSAclID")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclsInComputeAPIService.ComputeAclListAclsSAclId")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/resources/acls/{acl_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -806,56 +806,56 @@ func (a *ACLsInComputeAPIService) ComputeACLListAclsSAclIDExecute(r APIComputeAC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIComputeACLLookupAclsRequest represents a request for the resource.
-type APIComputeACLLookupAclsRequest struct {
+// APIComputeAclLookupAclsRequest represents a request for the resource.
+type APIComputeAclLookupAclsRequest struct {
 	ctx        context.Context
-	APIService ACLsInComputeAPI
-	aclID      string
-	aclIP      string
+	APIService AclsInComputeAPI
+	aclId      string
+	aclIp      string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIComputeACLLookupAclsRequest) Execute() (*ComputeACLLookup, *http.Response, error) {
-	return r.APIService.ComputeACLLookupAclsExecute(r)
+func (r APIComputeAclLookupAclsRequest) Execute() (*ComputeAclLookup, *http.Response, error) {
+	return r.APIService.ComputeAclLookupAclsExecute(r)
 }
 
 /*
-ComputeACLLookupAcls Lookup an ACL
+ComputeAclLookupAcls Lookup an ACL
 
 Find a matching ACL entry for an IP address.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param aclID
- @param aclIP
- @return APIComputeACLLookupAclsRequest
+ @param aclId
+ @param aclIp
+ @return APIComputeAclLookupAclsRequest
 */
-func (a *ACLsInComputeAPIService) ComputeACLLookupAcls(ctx context.Context, aclID string, aclIP string) APIComputeACLLookupAclsRequest {
-	return APIComputeACLLookupAclsRequest{
+func (a *AclsInComputeAPIService) ComputeAclLookupAcls(ctx context.Context, aclId string, aclIp string) APIComputeAclLookupAclsRequest {
+	return APIComputeAclLookupAclsRequest{
 		APIService: a,
 		ctx:        ctx,
-		aclID:      aclID,
-		aclIP:      aclIP,
+		aclId:      aclId,
+		aclIp:      aclIp,
 	}
 }
 
-// ComputeACLLookupAclsExecute executes the request
-//  @return ComputeACLLookup
-func (a *ACLsInComputeAPIService) ComputeACLLookupAclsExecute(r APIComputeACLLookupAclsRequest) (*ComputeACLLookup, *http.Response, error) {
+// ComputeAclLookupAclsExecute executes the request
+//  @return ComputeAclLookup
+func (a *AclsInComputeAPIService) ComputeAclLookupAclsExecute(r APIComputeAclLookupAclsRequest) (*ComputeAclLookup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *ComputeACLLookup
+		localVarReturnValue *ComputeAclLookup
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLLookupAcls")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclsInComputeAPIService.ComputeAclLookupAcls")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/resources/acls/{acl_id}/entry/{acl_ip}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_ip"+"}", gourl.PathEscape(parameterToString(r.aclIP, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_ip"+"}", gourl.PathEscape(parameterToString(r.aclIp, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -942,57 +942,57 @@ func (a *ACLsInComputeAPIService) ComputeACLLookupAclsExecute(r APIComputeACLLoo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIComputeACLUpdateAclsRequest represents a request for the resource.
-type APIComputeACLUpdateAclsRequest struct {
+// APIComputeAclUpdateAclsRequest represents a request for the resource.
+type APIComputeAclUpdateAclsRequest struct {
 	ctx              context.Context
-	APIService       ACLsInComputeAPI
-	aclID            string
-	computeACLUpdate *ComputeACLUpdate
+	APIService       AclsInComputeAPI
+	aclId            string
+	computeAclUpdate *ComputeAclUpdate
 }
 
-// ComputeACLUpdate returns a pointer to a request.
-func (r *APIComputeACLUpdateAclsRequest) ComputeACLUpdate(computeACLUpdate ComputeACLUpdate) *APIComputeACLUpdateAclsRequest {
-	r.computeACLUpdate = &computeACLUpdate
+// ComputeAclUpdate returns a pointer to a request.
+func (r *APIComputeAclUpdateAclsRequest) ComputeAclUpdate(computeAclUpdate ComputeAclUpdate) *APIComputeAclUpdateAclsRequest {
+	r.computeAclUpdate = &computeAclUpdate
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIComputeACLUpdateAclsRequest) Execute() (*http.Response, error) {
-	return r.APIService.ComputeACLUpdateAclsExecute(r)
+func (r APIComputeAclUpdateAclsRequest) Execute() (*http.Response, error) {
+	return r.APIService.ComputeAclUpdateAclsExecute(r)
 }
 
 /*
-ComputeACLUpdateAcls Update an ACL
+ComputeAclUpdateAcls Update an ACL
 
 Update an ACL entry with a new operation or action, this allows you to modify an existing entry or delete it.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param aclID
- @return APIComputeACLUpdateAclsRequest
+ @param aclId
+ @return APIComputeAclUpdateAclsRequest
 */
-func (a *ACLsInComputeAPIService) ComputeACLUpdateAcls(ctx context.Context, aclID string) APIComputeACLUpdateAclsRequest {
-	return APIComputeACLUpdateAclsRequest{
+func (a *AclsInComputeAPIService) ComputeAclUpdateAcls(ctx context.Context, aclId string) APIComputeAclUpdateAclsRequest {
+	return APIComputeAclUpdateAclsRequest{
 		APIService: a,
 		ctx:        ctx,
-		aclID:      aclID,
+		aclId:      aclId,
 	}
 }
 
-// ComputeACLUpdateAclsExecute executes the request
-func (a *ACLsInComputeAPIService) ComputeACLUpdateAclsExecute(r APIComputeACLUpdateAclsRequest) (*http.Response, error) {
+// ComputeAclUpdateAclsExecute executes the request
+func (a *AclsInComputeAPIService) ComputeAclUpdateAclsExecute(r APIComputeAclUpdateAclsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   any
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ACLsInComputeAPIService.ComputeACLUpdateAcls")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AclsInComputeAPIService.ComputeAclUpdateAcls")
 	if err != nil {
 		return nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/resources/acls/{acl_id}/entries"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"acl_id"+"}", gourl.PathEscape(parameterToString(r.aclId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1016,7 +1016,7 @@ func (a *ACLsInComputeAPIService) ComputeACLUpdateAclsExecute(r APIComputeACLUpd
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.computeACLUpdate
+	localVarPostBody = r.computeAclUpdate
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

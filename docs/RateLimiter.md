@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | A human readable name for the rate limiting rule. | [optional] 
-**URIDictionaryName** | Pointer to **NullableString** | The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited. | [optional] 
-**HTTPMethods** | Pointer to **[]string** | Array of HTTP methods to apply rate limiting to. | [optional] 
+**UriDictionaryName** | Pointer to **NullableString** | The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited. | [optional] 
+**HttpMethods** | Pointer to **[]string** | Array of HTTP methods to apply rate limiting to. | [optional] 
 **RpsLimit** | Pointer to **int32** | Upper limit of requests per second allowed by the rate limiter. | [optional] 
 **WindowSize** | Pointer to **int32** | Number of seconds during which the RPS limit must be exceeded in order to trigger a violation. | [optional] 
 **ClientKey** | Pointer to **[]string** | Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`. | [optional] 
@@ -61,65 +61,65 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetURIDictionaryName
+### GetUriDictionaryName
 
-`func (o *RateLimiter) GetURIDictionaryName() string`
+`func (o *RateLimiter) GetUriDictionaryName() string`
 
-GetURIDictionaryName returns the URIDictionaryName field if non-nil, zero value otherwise.
+GetUriDictionaryName returns the UriDictionaryName field if non-nil, zero value otherwise.
 
-### GetURIDictionaryNameOk
+### GetUriDictionaryNameOk
 
-`func (o *RateLimiter) GetURIDictionaryNameOk() (*string, bool)`
+`func (o *RateLimiter) GetUriDictionaryNameOk() (*string, bool)`
 
-GetURIDictionaryNameOk returns a tuple with the URIDictionaryName field if it's non-nil, zero value otherwise
+GetUriDictionaryNameOk returns a tuple with the UriDictionaryName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURIDictionaryName
+### SetUriDictionaryName
 
-`func (o *RateLimiter) SetURIDictionaryName(v string)`
+`func (o *RateLimiter) SetUriDictionaryName(v string)`
 
-SetURIDictionaryName sets URIDictionaryName field to given value.
+SetUriDictionaryName sets UriDictionaryName field to given value.
 
-### HasURIDictionaryName
+### HasUriDictionaryName
 
-`func (o *RateLimiter) HasURIDictionaryName() bool`
+`func (o *RateLimiter) HasUriDictionaryName() bool`
 
-HasURIDictionaryName returns a boolean if a field has been set.
+HasUriDictionaryName returns a boolean if a field has been set.
 
-### SetURIDictionaryNameNil
+### SetUriDictionaryNameNil
 
-`func (o *RateLimiter) SetURIDictionaryNameNil(b bool)`
+`func (o *RateLimiter) SetUriDictionaryNameNil(b bool)`
 
- SetURIDictionaryNameNil sets the value for URIDictionaryName to be an explicit nil
+ SetUriDictionaryNameNil sets the value for UriDictionaryName to be an explicit nil
 
-### UnsetURIDictionaryName
-`func (o *RateLimiter) UnsetURIDictionaryName()`
+### UnsetUriDictionaryName
+`func (o *RateLimiter) UnsetUriDictionaryName()`
 
-UnsetURIDictionaryName ensures that no value is present for URIDictionaryName, not even an explicit nil
-### GetHTTPMethods
+UnsetUriDictionaryName ensures that no value is present for UriDictionaryName, not even an explicit nil
+### GetHttpMethods
 
-`func (o *RateLimiter) GetHTTPMethods() []string`
+`func (o *RateLimiter) GetHttpMethods() []string`
 
-GetHTTPMethods returns the HTTPMethods field if non-nil, zero value otherwise.
+GetHttpMethods returns the HttpMethods field if non-nil, zero value otherwise.
 
-### GetHTTPMethodsOk
+### GetHttpMethodsOk
 
-`func (o *RateLimiter) GetHTTPMethodsOk() (*[]string, bool)`
+`func (o *RateLimiter) GetHttpMethodsOk() (*[]string, bool)`
 
-GetHTTPMethodsOk returns a tuple with the HTTPMethods field if it's non-nil, zero value otherwise
+GetHttpMethodsOk returns a tuple with the HttpMethods field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHTTPMethods
+### SetHttpMethods
 
-`func (o *RateLimiter) SetHTTPMethods(v []string)`
+`func (o *RateLimiter) SetHttpMethods(v []string)`
 
-SetHTTPMethods sets HTTPMethods field to given value.
+SetHttpMethods sets HttpMethods field to given value.
 
-### HasHTTPMethods
+### HasHttpMethods
 
-`func (o *RateLimiter) HasHTTPMethods() bool`
+`func (o *RateLimiter) HasHttpMethods() bool`
 
-HasHTTPMethods returns a boolean if a field has been set.
+HasHttpMethods returns a boolean if a field has been set.
 
 ### GetRpsLimit
 
@@ -368,3 +368,5 @@ HasFeatureRevision returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

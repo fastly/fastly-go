@@ -16,8 +16,8 @@ import (
 	"encoding/json"
 )
 
-// TLSDNSRecord struct for TLSDNSRecord
-type TLSDNSRecord struct {
+// TlsDnsRecord struct for TlsDnsRecord
+type TlsDnsRecord struct {
 	// Specifies the regions that will be used to route traffic. Select DNS records with a `global` region to route traffic to the most performant point of presence (POP) worldwide (global pricing will apply). Select DNS records with a `na/eu` region to exclusively land traffic on North American and European POPs.
 	Region *string `json:"region,omitempty"`
 	// The type of the DNS record. `A` specifies an IPv4 address to be used for an A record to be used for apex domains (e.g., `example.com`). `AAAA` specifies an IPv6 address for use in an A record for apex domains. `CNAME` specifies the hostname to be used for a CNAME record for subdomains or wildcard domains (e.g., `www.example.com` or `*.example.com`).
@@ -25,27 +25,27 @@ type TLSDNSRecord struct {
 	AdditionalProperties map[string]any
 }
 
-type _TLSDNSRecord TLSDNSRecord
+type _TlsDnsRecord TlsDnsRecord
 
-// NewTLSDNSRecord instantiates a new TLSDNSRecord object
+// NewTlsDnsRecord instantiates a new TlsDnsRecord object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSDNSRecord() *TLSDNSRecord {
-	this := TLSDNSRecord{}
+func NewTlsDnsRecord() *TlsDnsRecord {
+	this := TlsDnsRecord{}
 	return &this
 }
 
-// NewTLSDNSRecordWithDefaults instantiates a new TLSDNSRecord object
+// NewTlsDnsRecordWithDefaults instantiates a new TlsDnsRecord object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSDNSRecordWithDefaults() *TLSDNSRecord {
-	this := TLSDNSRecord{}
+func NewTlsDnsRecordWithDefaults() *TlsDnsRecord {
+	this := TlsDnsRecord{}
 	return &this
 }
 
 // GetRegion returns the Region field value if set, zero value otherwise.
-func (o *TLSDNSRecord) GetRegion() string {
+func (o *TlsDnsRecord) GetRegion() string {
 	if o == nil || o.Region == nil {
 		var ret string
 		return ret
@@ -55,7 +55,7 @@ func (o *TLSDNSRecord) GetRegion() string {
 
 // GetRegionOk returns a tuple with the Region field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSDNSRecord) GetRegionOk() (*string, bool) {
+func (o *TlsDnsRecord) GetRegionOk() (*string, bool) {
 	if o == nil || o.Region == nil {
 		return nil, false
 	}
@@ -63,7 +63,7 @@ func (o *TLSDNSRecord) GetRegionOk() (*string, bool) {
 }
 
 // HasRegion returns a boolean if a field has been set.
-func (o *TLSDNSRecord) HasRegion() bool {
+func (o *TlsDnsRecord) HasRegion() bool {
 	if o != nil && o.Region != nil {
 		return true
 	}
@@ -72,12 +72,12 @@ func (o *TLSDNSRecord) HasRegion() bool {
 }
 
 // SetRegion gets a reference to the given string and assigns it to the Region field.
-func (o *TLSDNSRecord) SetRegion(v string) {
+func (o *TlsDnsRecord) SetRegion(v string) {
 	o.Region = &v
 }
 
 // GetRecordType returns the RecordType field value if set, zero value otherwise.
-func (o *TLSDNSRecord) GetRecordType() string {
+func (o *TlsDnsRecord) GetRecordType() string {
 	if o == nil || o.RecordType == nil {
 		var ret string
 		return ret
@@ -87,7 +87,7 @@ func (o *TLSDNSRecord) GetRecordType() string {
 
 // GetRecordTypeOk returns a tuple with the RecordType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSDNSRecord) GetRecordTypeOk() (*string, bool) {
+func (o *TlsDnsRecord) GetRecordTypeOk() (*string, bool) {
 	if o == nil || o.RecordType == nil {
 		return nil, false
 	}
@@ -95,7 +95,7 @@ func (o *TLSDNSRecord) GetRecordTypeOk() (*string, bool) {
 }
 
 // HasRecordType returns a boolean if a field has been set.
-func (o *TLSDNSRecord) HasRecordType() bool {
+func (o *TlsDnsRecord) HasRecordType() bool {
 	if o != nil && o.RecordType != nil {
 		return true
 	}
@@ -104,13 +104,13 @@ func (o *TLSDNSRecord) HasRecordType() bool {
 }
 
 // SetRecordType gets a reference to the given string and assigns it to the RecordType field.
-func (o *TLSDNSRecord) SetRecordType(v string) {
+func (o *TlsDnsRecord) SetRecordType(v string) {
 	o.RecordType = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSDNSRecord) MarshalJSON() ([]byte, error) {
+func (o TlsDnsRecord) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Region != nil {
 		toSerialize["region"] = o.Region
@@ -128,11 +128,11 @@ func (o TLSDNSRecord) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSDNSRecord) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSDNSRecord := _TLSDNSRecord{}
+func (o *TlsDnsRecord) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsDnsRecord := _TlsDnsRecord{}
 
-	if err = json.Unmarshal(bytes, &varTLSDNSRecord); err == nil {
-		*o = TLSDNSRecord(varTLSDNSRecord)
+	if err = json.Unmarshal(bytes, &varTlsDnsRecord); err == nil {
+		*o = TlsDnsRecord(varTlsDnsRecord)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -146,48 +146,48 @@ func (o *TLSDNSRecord) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTLSDNSRecord is a helper abstraction for handling nullable tlsdnsrecord types.
-type NullableTLSDNSRecord struct {
-	value *TLSDNSRecord
+// NullableTlsDnsRecord is a helper abstraction for handling nullable tlsdnsrecord types.
+type NullableTlsDnsRecord struct {
+	value *TlsDnsRecord
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSDNSRecord) Get() *TLSDNSRecord {
+func (v NullableTlsDnsRecord) Get() *TlsDnsRecord {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSDNSRecord) Set(val *TLSDNSRecord) {
+func (v *NullableTlsDnsRecord) Set(val *TlsDnsRecord) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSDNSRecord) IsSet() bool {
+func (v NullableTlsDnsRecord) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSDNSRecord) Unset() {
+func (v *NullableTlsDnsRecord) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSDNSRecord returns a pointer to a new instance of NullableTLSDNSRecord.
-func NewNullableTLSDNSRecord(val *TLSDNSRecord) *NullableTLSDNSRecord {
-	return &NullableTLSDNSRecord{value: val, isSet: true}
+// NewNullableTlsDnsRecord returns a pointer to a new instance of NullableTlsDnsRecord.
+func NewNullableTlsDnsRecord(val *TlsDnsRecord) *NullableTlsDnsRecord {
+	return &NullableTlsDnsRecord{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSDNSRecord) MarshalJSON() ([]byte, error) {
+func (v NullableTlsDnsRecord) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSDNSRecord) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsDnsRecord) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

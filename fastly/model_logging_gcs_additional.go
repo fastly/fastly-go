@@ -24,7 +24,7 @@ type LoggingGcsAdditional struct {
 	// A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
 	PublicKey NullableString `json:"public_key,omitempty"`
 	// Your Google Cloud Platform project ID. Required
-	ProjectID            *string `json:"project_id,omitempty"`
+	ProjectId            *string `json:"project_id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -162,36 +162,36 @@ func (o *LoggingGcsAdditional) UnsetPublicKey() {
 	o.PublicKey.Unset()
 }
 
-// GetProjectID returns the ProjectID field value if set, zero value otherwise.
-func (o *LoggingGcsAdditional) GetProjectID() string {
-	if o == nil || o.ProjectID == nil {
+// GetProjectId returns the ProjectId field value if set, zero value otherwise.
+func (o *LoggingGcsAdditional) GetProjectId() string {
+	if o == nil || o.ProjectId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ProjectID
+	return *o.ProjectId
 }
 
-// GetProjectIDOk returns a tuple with the ProjectID field value if set, nil otherwise
+// GetProjectIdOk returns a tuple with the ProjectId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LoggingGcsAdditional) GetProjectIDOk() (*string, bool) {
-	if o == nil || o.ProjectID == nil {
+func (o *LoggingGcsAdditional) GetProjectIdOk() (*string, bool) {
+	if o == nil || o.ProjectId == nil {
 		return nil, false
 	}
-	return o.ProjectID, true
+	return o.ProjectId, true
 }
 
-// HasProjectID returns a boolean if a field has been set.
-func (o *LoggingGcsAdditional) HasProjectID() bool {
-	if o != nil && o.ProjectID != nil {
+// HasProjectId returns a boolean if a field has been set.
+func (o *LoggingGcsAdditional) HasProjectId() bool {
+	if o != nil && o.ProjectId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetProjectID gets a reference to the given string and assigns it to the ProjectID field.
-func (o *LoggingGcsAdditional) SetProjectID(v string) {
-	o.ProjectID = &v
+// SetProjectId gets a reference to the given string and assigns it to the ProjectId field.
+func (o *LoggingGcsAdditional) SetProjectId(v string) {
+	o.ProjectId = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -207,8 +207,8 @@ func (o LoggingGcsAdditional) MarshalJSON() ([]byte, error) {
 	if o.PublicKey.IsSet() {
 		toSerialize["public_key"] = o.PublicKey.Get()
 	}
-	if o.ProjectID != nil {
-		toSerialize["project_id"] = o.ProjectID
+	if o.ProjectId != nil {
+		toSerialize["project_id"] = o.ProjectId
 	}
 
 	for key, value := range o.AdditionalProperties {

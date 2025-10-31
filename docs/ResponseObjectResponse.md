@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** | The HTTP status code. | [optional] [default to "200"]
 **Response** | Pointer to **string** | The HTTP response. | [optional] [default to "Ok"]
 **RequestCondition** | Pointer to **NullableString** | Condition which, if met, will select this configuration during a request. Optional. | [optional] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **string** |  | [optional] [readonly] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -241,30 +241,30 @@ HasRequestCondition returns a boolean if a field has been set.
 `func (o *ResponseObjectResponse) UnsetRequestCondition()`
 
 UnsetRequestCondition ensures that no value is present for RequestCondition, not even an explicit nil
-### GetServiceID
+### GetServiceId
 
-`func (o *ResponseObjectResponse) GetServiceID() string`
+`func (o *ResponseObjectResponse) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *ResponseObjectResponse) GetServiceIDOk() (*string, bool)`
+`func (o *ResponseObjectResponse) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *ResponseObjectResponse) SetServiceID(v string)`
+`func (o *ResponseObjectResponse) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *ResponseObjectResponse) HasServiceID() bool`
+`func (o *ResponseObjectResponse) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -398,3 +398,5 @@ HasUpdatedAt returns a boolean if a field has been set.
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

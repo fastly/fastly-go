@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**URL** | Pointer to **string** | The HTTP request path. | [optional] 
+**Url** | Pointer to **string** | The HTTP request path. | [optional] 
 **RatePerStatus** | Pointer to **float32** | The URL accounts for this percentage of the status code in this dimension. | [optional] 
-**RatePerURL** | Pointer to **float32** | The rate at which the status code in this dimension occurs for this URL. | [optional] 
+**RatePerUrl** | Pointer to **float32** | The rate at which the status code in this dimension occurs for this URL. | [optional] 
 
 ## Methods
 
@@ -27,30 +27,30 @@ NewValuesStatusCodesWithDefaults instantiates a new ValuesStatusCodes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetURL
+### GetUrl
 
-`func (o *ValuesStatusCodes) GetURL() string`
+`func (o *ValuesStatusCodes) GetUrl() string`
 
-GetURL returns the URL field if non-nil, zero value otherwise.
+GetUrl returns the Url field if non-nil, zero value otherwise.
 
-### GetURLOk
+### GetUrlOk
 
-`func (o *ValuesStatusCodes) GetURLOk() (*string, bool)`
+`func (o *ValuesStatusCodes) GetUrlOk() (*string, bool)`
 
-GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURL
+### SetUrl
 
-`func (o *ValuesStatusCodes) SetURL(v string)`
+`func (o *ValuesStatusCodes) SetUrl(v string)`
 
-SetURL sets URL field to given value.
+SetUrl sets Url field to given value.
 
-### HasURL
+### HasUrl
 
-`func (o *ValuesStatusCodes) HasURL() bool`
+`func (o *ValuesStatusCodes) HasUrl() bool`
 
-HasURL returns a boolean if a field has been set.
+HasUrl returns a boolean if a field has been set.
 
 ### GetRatePerStatus
 
@@ -77,30 +77,32 @@ SetRatePerStatus sets RatePerStatus field to given value.
 
 HasRatePerStatus returns a boolean if a field has been set.
 
-### GetRatePerURL
+### GetRatePerUrl
 
-`func (o *ValuesStatusCodes) GetRatePerURL() float32`
+`func (o *ValuesStatusCodes) GetRatePerUrl() float32`
 
-GetRatePerURL returns the RatePerURL field if non-nil, zero value otherwise.
+GetRatePerUrl returns the RatePerUrl field if non-nil, zero value otherwise.
 
-### GetRatePerURLOk
+### GetRatePerUrlOk
 
-`func (o *ValuesStatusCodes) GetRatePerURLOk() (*float32, bool)`
+`func (o *ValuesStatusCodes) GetRatePerUrlOk() (*float32, bool)`
 
-GetRatePerURLOk returns a tuple with the RatePerURL field if it's non-nil, zero value otherwise
+GetRatePerUrlOk returns a tuple with the RatePerUrl field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRatePerURL
+### SetRatePerUrl
 
-`func (o *ValuesStatusCodes) SetRatePerURL(v float32)`
+`func (o *ValuesStatusCodes) SetRatePerUrl(v float32)`
 
-SetRatePerURL sets RatePerURL field to given value.
+SetRatePerUrl sets RatePerUrl field to given value.
 
-### HasRatePerURL
+### HasRatePerUrl
 
-`func (o *ValuesStatusCodes) HasRatePerURL() bool`
+`func (o *ValuesStatusCodes) HasRatePerUrl() bool`
 
-HasRatePerURL returns a boolean if a field has been set.
+HasRatePerUrl returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

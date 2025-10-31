@@ -1,10 +1,10 @@
-# LoggingHTTPSAdditional
+# LoggingHttpsAdditional
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**URL** | Pointer to **string** | The URL to send logs to. Must use HTTPS. Required. | [optional] 
+**Url** | Pointer to **string** | The URL to send logs to. Must use HTTPS. Required. | [optional] 
 **RequestMaxEntries** | Pointer to **int32** | The maximum number of logs sent in one request. Defaults `0` (10k). | [optional] [default to 0]
 **RequestMaxBytes** | Pointer to **int32** | The maximum number of bytes sent in one request. Defaults `0` (100MB). | [optional] [default to 0]
 **ContentType** | Pointer to **NullableString** | Content type of the header sent with the request. | [optional] [default to "null"]
@@ -12,307 +12,335 @@ Name | Type | Description | Notes
 **MessageType** | Pointer to [**LoggingMessageType**](LoggingMessageType.md) |  | [optional] [default to LOGGINGMESSAGETYPE_CLASSIC]
 **HeaderValue** | Pointer to **NullableString** | Value of the custom header sent with the request. | [optional] [default to "null"]
 **Method** | Pointer to **string** | HTTP method used for request. | [optional] [default to "POST"]
-**JSONFormat** | Pointer to **string** | Enforces valid JSON formatting for log entries. | [optional] 
+**JsonFormat** | Pointer to **string** | Enforces valid JSON formatting for log entries. | [optional] 
 **Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [optional] [default to "%h %l %u %t \"%r\" %&gt;s %b"]
+**Period** | Pointer to **int32** | How frequently, in seconds, batches of log data are sent to the HTTPS endpoint. A value of `0` sends logs at the same interval as the default, which is `5` seconds. | [optional] [default to 5]
 
 ## Methods
 
-### NewLoggingHTTPSAdditional
+### NewLoggingHttpsAdditional
 
-`func NewLoggingHTTPSAdditional() *LoggingHTTPSAdditional`
+`func NewLoggingHttpsAdditional() *LoggingHttpsAdditional`
 
-NewLoggingHTTPSAdditional instantiates a new LoggingHTTPSAdditional object
+NewLoggingHttpsAdditional instantiates a new LoggingHttpsAdditional object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewLoggingHTTPSAdditionalWithDefaults
+### NewLoggingHttpsAdditionalWithDefaults
 
-`func NewLoggingHTTPSAdditionalWithDefaults() *LoggingHTTPSAdditional`
+`func NewLoggingHttpsAdditionalWithDefaults() *LoggingHttpsAdditional`
 
-NewLoggingHTTPSAdditionalWithDefaults instantiates a new LoggingHTTPSAdditional object
+NewLoggingHttpsAdditionalWithDefaults instantiates a new LoggingHttpsAdditional object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetURL
+### GetUrl
 
-`func (o *LoggingHTTPSAdditional) GetURL() string`
+`func (o *LoggingHttpsAdditional) GetUrl() string`
 
-GetURL returns the URL field if non-nil, zero value otherwise.
+GetUrl returns the Url field if non-nil, zero value otherwise.
 
-### GetURLOk
+### GetUrlOk
 
-`func (o *LoggingHTTPSAdditional) GetURLOk() (*string, bool)`
+`func (o *LoggingHttpsAdditional) GetUrlOk() (*string, bool)`
 
-GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURL
+### SetUrl
 
-`func (o *LoggingHTTPSAdditional) SetURL(v string)`
+`func (o *LoggingHttpsAdditional) SetUrl(v string)`
 
-SetURL sets URL field to given value.
+SetUrl sets Url field to given value.
 
-### HasURL
+### HasUrl
 
-`func (o *LoggingHTTPSAdditional) HasURL() bool`
+`func (o *LoggingHttpsAdditional) HasUrl() bool`
 
-HasURL returns a boolean if a field has been set.
+HasUrl returns a boolean if a field has been set.
 
 ### GetRequestMaxEntries
 
-`func (o *LoggingHTTPSAdditional) GetRequestMaxEntries() int32`
+`func (o *LoggingHttpsAdditional) GetRequestMaxEntries() int32`
 
 GetRequestMaxEntries returns the RequestMaxEntries field if non-nil, zero value otherwise.
 
 ### GetRequestMaxEntriesOk
 
-`func (o *LoggingHTTPSAdditional) GetRequestMaxEntriesOk() (*int32, bool)`
+`func (o *LoggingHttpsAdditional) GetRequestMaxEntriesOk() (*int32, bool)`
 
 GetRequestMaxEntriesOk returns a tuple with the RequestMaxEntries field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequestMaxEntries
 
-`func (o *LoggingHTTPSAdditional) SetRequestMaxEntries(v int32)`
+`func (o *LoggingHttpsAdditional) SetRequestMaxEntries(v int32)`
 
 SetRequestMaxEntries sets RequestMaxEntries field to given value.
 
 ### HasRequestMaxEntries
 
-`func (o *LoggingHTTPSAdditional) HasRequestMaxEntries() bool`
+`func (o *LoggingHttpsAdditional) HasRequestMaxEntries() bool`
 
 HasRequestMaxEntries returns a boolean if a field has been set.
 
 ### GetRequestMaxBytes
 
-`func (o *LoggingHTTPSAdditional) GetRequestMaxBytes() int32`
+`func (o *LoggingHttpsAdditional) GetRequestMaxBytes() int32`
 
 GetRequestMaxBytes returns the RequestMaxBytes field if non-nil, zero value otherwise.
 
 ### GetRequestMaxBytesOk
 
-`func (o *LoggingHTTPSAdditional) GetRequestMaxBytesOk() (*int32, bool)`
+`func (o *LoggingHttpsAdditional) GetRequestMaxBytesOk() (*int32, bool)`
 
 GetRequestMaxBytesOk returns a tuple with the RequestMaxBytes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRequestMaxBytes
 
-`func (o *LoggingHTTPSAdditional) SetRequestMaxBytes(v int32)`
+`func (o *LoggingHttpsAdditional) SetRequestMaxBytes(v int32)`
 
 SetRequestMaxBytes sets RequestMaxBytes field to given value.
 
 ### HasRequestMaxBytes
 
-`func (o *LoggingHTTPSAdditional) HasRequestMaxBytes() bool`
+`func (o *LoggingHttpsAdditional) HasRequestMaxBytes() bool`
 
 HasRequestMaxBytes returns a boolean if a field has been set.
 
 ### GetContentType
 
-`func (o *LoggingHTTPSAdditional) GetContentType() string`
+`func (o *LoggingHttpsAdditional) GetContentType() string`
 
 GetContentType returns the ContentType field if non-nil, zero value otherwise.
 
 ### GetContentTypeOk
 
-`func (o *LoggingHTTPSAdditional) GetContentTypeOk() (*string, bool)`
+`func (o *LoggingHttpsAdditional) GetContentTypeOk() (*string, bool)`
 
 GetContentTypeOk returns a tuple with the ContentType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetContentType
 
-`func (o *LoggingHTTPSAdditional) SetContentType(v string)`
+`func (o *LoggingHttpsAdditional) SetContentType(v string)`
 
 SetContentType sets ContentType field to given value.
 
 ### HasContentType
 
-`func (o *LoggingHTTPSAdditional) HasContentType() bool`
+`func (o *LoggingHttpsAdditional) HasContentType() bool`
 
 HasContentType returns a boolean if a field has been set.
 
 ### SetContentTypeNil
 
-`func (o *LoggingHTTPSAdditional) SetContentTypeNil(b bool)`
+`func (o *LoggingHttpsAdditional) SetContentTypeNil(b bool)`
 
  SetContentTypeNil sets the value for ContentType to be an explicit nil
 
 ### UnsetContentType
-`func (o *LoggingHTTPSAdditional) UnsetContentType()`
+`func (o *LoggingHttpsAdditional) UnsetContentType()`
 
 UnsetContentType ensures that no value is present for ContentType, not even an explicit nil
 ### GetHeaderName
 
-`func (o *LoggingHTTPSAdditional) GetHeaderName() string`
+`func (o *LoggingHttpsAdditional) GetHeaderName() string`
 
 GetHeaderName returns the HeaderName field if non-nil, zero value otherwise.
 
 ### GetHeaderNameOk
 
-`func (o *LoggingHTTPSAdditional) GetHeaderNameOk() (*string, bool)`
+`func (o *LoggingHttpsAdditional) GetHeaderNameOk() (*string, bool)`
 
 GetHeaderNameOk returns a tuple with the HeaderName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHeaderName
 
-`func (o *LoggingHTTPSAdditional) SetHeaderName(v string)`
+`func (o *LoggingHttpsAdditional) SetHeaderName(v string)`
 
 SetHeaderName sets HeaderName field to given value.
 
 ### HasHeaderName
 
-`func (o *LoggingHTTPSAdditional) HasHeaderName() bool`
+`func (o *LoggingHttpsAdditional) HasHeaderName() bool`
 
 HasHeaderName returns a boolean if a field has been set.
 
 ### SetHeaderNameNil
 
-`func (o *LoggingHTTPSAdditional) SetHeaderNameNil(b bool)`
+`func (o *LoggingHttpsAdditional) SetHeaderNameNil(b bool)`
 
  SetHeaderNameNil sets the value for HeaderName to be an explicit nil
 
 ### UnsetHeaderName
-`func (o *LoggingHTTPSAdditional) UnsetHeaderName()`
+`func (o *LoggingHttpsAdditional) UnsetHeaderName()`
 
 UnsetHeaderName ensures that no value is present for HeaderName, not even an explicit nil
 ### GetMessageType
 
-`func (o *LoggingHTTPSAdditional) GetMessageType() LoggingMessageType`
+`func (o *LoggingHttpsAdditional) GetMessageType() LoggingMessageType`
 
 GetMessageType returns the MessageType field if non-nil, zero value otherwise.
 
 ### GetMessageTypeOk
 
-`func (o *LoggingHTTPSAdditional) GetMessageTypeOk() (*LoggingMessageType, bool)`
+`func (o *LoggingHttpsAdditional) GetMessageTypeOk() (*LoggingMessageType, bool)`
 
 GetMessageTypeOk returns a tuple with the MessageType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMessageType
 
-`func (o *LoggingHTTPSAdditional) SetMessageType(v LoggingMessageType)`
+`func (o *LoggingHttpsAdditional) SetMessageType(v LoggingMessageType)`
 
 SetMessageType sets MessageType field to given value.
 
 ### HasMessageType
 
-`func (o *LoggingHTTPSAdditional) HasMessageType() bool`
+`func (o *LoggingHttpsAdditional) HasMessageType() bool`
 
 HasMessageType returns a boolean if a field has been set.
 
 ### GetHeaderValue
 
-`func (o *LoggingHTTPSAdditional) GetHeaderValue() string`
+`func (o *LoggingHttpsAdditional) GetHeaderValue() string`
 
 GetHeaderValue returns the HeaderValue field if non-nil, zero value otherwise.
 
 ### GetHeaderValueOk
 
-`func (o *LoggingHTTPSAdditional) GetHeaderValueOk() (*string, bool)`
+`func (o *LoggingHttpsAdditional) GetHeaderValueOk() (*string, bool)`
 
 GetHeaderValueOk returns a tuple with the HeaderValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHeaderValue
 
-`func (o *LoggingHTTPSAdditional) SetHeaderValue(v string)`
+`func (o *LoggingHttpsAdditional) SetHeaderValue(v string)`
 
 SetHeaderValue sets HeaderValue field to given value.
 
 ### HasHeaderValue
 
-`func (o *LoggingHTTPSAdditional) HasHeaderValue() bool`
+`func (o *LoggingHttpsAdditional) HasHeaderValue() bool`
 
 HasHeaderValue returns a boolean if a field has been set.
 
 ### SetHeaderValueNil
 
-`func (o *LoggingHTTPSAdditional) SetHeaderValueNil(b bool)`
+`func (o *LoggingHttpsAdditional) SetHeaderValueNil(b bool)`
 
  SetHeaderValueNil sets the value for HeaderValue to be an explicit nil
 
 ### UnsetHeaderValue
-`func (o *LoggingHTTPSAdditional) UnsetHeaderValue()`
+`func (o *LoggingHttpsAdditional) UnsetHeaderValue()`
 
 UnsetHeaderValue ensures that no value is present for HeaderValue, not even an explicit nil
 ### GetMethod
 
-`func (o *LoggingHTTPSAdditional) GetMethod() string`
+`func (o *LoggingHttpsAdditional) GetMethod() string`
 
 GetMethod returns the Method field if non-nil, zero value otherwise.
 
 ### GetMethodOk
 
-`func (o *LoggingHTTPSAdditional) GetMethodOk() (*string, bool)`
+`func (o *LoggingHttpsAdditional) GetMethodOk() (*string, bool)`
 
 GetMethodOk returns a tuple with the Method field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMethod
 
-`func (o *LoggingHTTPSAdditional) SetMethod(v string)`
+`func (o *LoggingHttpsAdditional) SetMethod(v string)`
 
 SetMethod sets Method field to given value.
 
 ### HasMethod
 
-`func (o *LoggingHTTPSAdditional) HasMethod() bool`
+`func (o *LoggingHttpsAdditional) HasMethod() bool`
 
 HasMethod returns a boolean if a field has been set.
 
-### GetJSONFormat
+### GetJsonFormat
 
-`func (o *LoggingHTTPSAdditional) GetJSONFormat() string`
+`func (o *LoggingHttpsAdditional) GetJsonFormat() string`
 
-GetJSONFormat returns the JSONFormat field if non-nil, zero value otherwise.
+GetJsonFormat returns the JsonFormat field if non-nil, zero value otherwise.
 
-### GetJSONFormatOk
+### GetJsonFormatOk
 
-`func (o *LoggingHTTPSAdditional) GetJSONFormatOk() (*string, bool)`
+`func (o *LoggingHttpsAdditional) GetJsonFormatOk() (*string, bool)`
 
-GetJSONFormatOk returns a tuple with the JSONFormat field if it's non-nil, zero value otherwise
+GetJsonFormatOk returns a tuple with the JsonFormat field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetJSONFormat
+### SetJsonFormat
 
-`func (o *LoggingHTTPSAdditional) SetJSONFormat(v string)`
+`func (o *LoggingHttpsAdditional) SetJsonFormat(v string)`
 
-SetJSONFormat sets JSONFormat field to given value.
+SetJsonFormat sets JsonFormat field to given value.
 
-### HasJSONFormat
+### HasJsonFormat
 
-`func (o *LoggingHTTPSAdditional) HasJSONFormat() bool`
+`func (o *LoggingHttpsAdditional) HasJsonFormat() bool`
 
-HasJSONFormat returns a boolean if a field has been set.
+HasJsonFormat returns a boolean if a field has been set.
 
 ### GetFormat
 
-`func (o *LoggingHTTPSAdditional) GetFormat() string`
+`func (o *LoggingHttpsAdditional) GetFormat() string`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *LoggingHTTPSAdditional) GetFormatOk() (*string, bool)`
+`func (o *LoggingHttpsAdditional) GetFormatOk() (*string, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *LoggingHTTPSAdditional) SetFormat(v string)`
+`func (o *LoggingHttpsAdditional) SetFormat(v string)`
 
 SetFormat sets Format field to given value.
 
 ### HasFormat
 
-`func (o *LoggingHTTPSAdditional) HasFormat() bool`
+`func (o *LoggingHttpsAdditional) HasFormat() bool`
 
 HasFormat returns a boolean if a field has been set.
 
+### GetPeriod
+
+`func (o *LoggingHttpsAdditional) GetPeriod() int32`
+
+GetPeriod returns the Period field if non-nil, zero value otherwise.
+
+### GetPeriodOk
+
+`func (o *LoggingHttpsAdditional) GetPeriodOk() (*int32, bool)`
+
+GetPeriodOk returns a tuple with the Period field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPeriod
+
+`func (o *LoggingHttpsAdditional) SetPeriod(v int32)`
+
+SetPeriod sets Period field to given value.
+
+### HasPeriod
+
+`func (o *LoggingHttpsAdditional) HasPeriod() bool`
+
+HasPeriod returns a boolean if a field has been set.
+
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

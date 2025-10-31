@@ -16,41 +16,41 @@ import (
 	"encoding/json"
 )
 
-// RelationshipMemberTLSDomain struct for RelationshipMemberTLSDomain
-type RelationshipMemberTLSDomain struct {
-	Type *TypeTLSDomain `json:"type,omitempty"`
+// RelationshipMemberTlsDomain struct for RelationshipMemberTlsDomain
+type RelationshipMemberTlsDomain struct {
+	Type *TypeTlsDomain `json:"type,omitempty"`
 	// The domain name.
-	ID                   *string `json:"id,omitempty"`
+	Id                   *string `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _RelationshipMemberTLSDomain RelationshipMemberTLSDomain
+type _RelationshipMemberTlsDomain RelationshipMemberTlsDomain
 
-// NewRelationshipMemberTLSDomain instantiates a new RelationshipMemberTLSDomain object
+// NewRelationshipMemberTlsDomain instantiates a new RelationshipMemberTlsDomain object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRelationshipMemberTLSDomain() *RelationshipMemberTLSDomain {
-	this := RelationshipMemberTLSDomain{}
-	var resourceType TypeTLSDomain = TYPETLSDOMAIN_TLS_DOMAIN
-	this.Type = &resourceType
+func NewRelationshipMemberTlsDomain() *RelationshipMemberTlsDomain {
+	this := RelationshipMemberTlsDomain{}
+	var type_ TypeTlsDomain = TYPETLSDOMAIN_TLS_DOMAIN
+	this.Type = &type_
 	return &this
 }
 
-// NewRelationshipMemberTLSDomainWithDefaults instantiates a new RelationshipMemberTLSDomain object
+// NewRelationshipMemberTlsDomainWithDefaults instantiates a new RelationshipMemberTlsDomain object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewRelationshipMemberTLSDomainWithDefaults() *RelationshipMemberTLSDomain {
-	this := RelationshipMemberTLSDomain{}
-	var resourceType TypeTLSDomain = TYPETLSDOMAIN_TLS_DOMAIN
-	this.Type = &resourceType
+func NewRelationshipMemberTlsDomainWithDefaults() *RelationshipMemberTlsDomain {
+	this := RelationshipMemberTlsDomain{}
+	var type_ TypeTlsDomain = TYPETLSDOMAIN_TLS_DOMAIN
+	this.Type = &type_
 	return &this
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *RelationshipMemberTLSDomain) GetType() TypeTLSDomain {
+func (o *RelationshipMemberTlsDomain) GetType() TypeTlsDomain {
 	if o == nil || o.Type == nil {
-		var ret TypeTLSDomain
+		var ret TypeTlsDomain
 		return ret
 	}
 	return *o.Type
@@ -58,7 +58,7 @@ func (o *RelationshipMemberTLSDomain) GetType() TypeTLSDomain {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipMemberTLSDomain) GetTypeOk() (*TypeTLSDomain, bool) {
+func (o *RelationshipMemberTlsDomain) GetTypeOk() (*TypeTlsDomain, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -66,7 +66,7 @@ func (o *RelationshipMemberTLSDomain) GetTypeOk() (*TypeTLSDomain, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *RelationshipMemberTLSDomain) HasType() bool {
+func (o *RelationshipMemberTlsDomain) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -74,52 +74,52 @@ func (o *RelationshipMemberTLSDomain) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given TypeTLSDomain and assigns it to the Type field.
-func (o *RelationshipMemberTLSDomain) SetType(v TypeTLSDomain) {
+// SetType gets a reference to the given TypeTlsDomain and assigns it to the Type field.
+func (o *RelationshipMemberTlsDomain) SetType(v TypeTlsDomain) {
 	o.Type = &v
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *RelationshipMemberTLSDomain) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *RelationshipMemberTlsDomain) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RelationshipMemberTLSDomain) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *RelationshipMemberTlsDomain) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *RelationshipMemberTLSDomain) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *RelationshipMemberTlsDomain) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *RelationshipMemberTLSDomain) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *RelationshipMemberTlsDomain) SetId(v string) {
+	o.Id = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o RelationshipMemberTLSDomain) MarshalJSON() ([]byte, error) {
+func (o RelationshipMemberTlsDomain) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -131,11 +131,11 @@ func (o RelationshipMemberTLSDomain) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *RelationshipMemberTLSDomain) UnmarshalJSON(bytes []byte) (err error) {
-	varRelationshipMemberTLSDomain := _RelationshipMemberTLSDomain{}
+func (o *RelationshipMemberTlsDomain) UnmarshalJSON(bytes []byte) (err error) {
+	varRelationshipMemberTlsDomain := _RelationshipMemberTlsDomain{}
 
-	if err = json.Unmarshal(bytes, &varRelationshipMemberTLSDomain); err == nil {
-		*o = RelationshipMemberTLSDomain(varRelationshipMemberTLSDomain)
+	if err = json.Unmarshal(bytes, &varRelationshipMemberTlsDomain); err == nil {
+		*o = RelationshipMemberTlsDomain(varRelationshipMemberTlsDomain)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -149,48 +149,48 @@ func (o *RelationshipMemberTLSDomain) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableRelationshipMemberTLSDomain is a helper abstraction for handling nullable relationshipmembertlsdomain types.
-type NullableRelationshipMemberTLSDomain struct {
-	value *RelationshipMemberTLSDomain
+// NullableRelationshipMemberTlsDomain is a helper abstraction for handling nullable relationshipmembertlsdomain types.
+type NullableRelationshipMemberTlsDomain struct {
+	value *RelationshipMemberTlsDomain
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableRelationshipMemberTLSDomain) Get() *RelationshipMemberTLSDomain {
+func (v NullableRelationshipMemberTlsDomain) Get() *RelationshipMemberTlsDomain {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableRelationshipMemberTLSDomain) Set(val *RelationshipMemberTLSDomain) {
+func (v *NullableRelationshipMemberTlsDomain) Set(val *RelationshipMemberTlsDomain) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableRelationshipMemberTLSDomain) IsSet() bool {
+func (v NullableRelationshipMemberTlsDomain) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableRelationshipMemberTLSDomain) Unset() {
+func (v *NullableRelationshipMemberTlsDomain) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableRelationshipMemberTLSDomain returns a pointer to a new instance of NullableRelationshipMemberTLSDomain.
-func NewNullableRelationshipMemberTLSDomain(val *RelationshipMemberTLSDomain) *NullableRelationshipMemberTLSDomain {
-	return &NullableRelationshipMemberTLSDomain{value: val, isSet: true}
+// NewNullableRelationshipMemberTlsDomain returns a pointer to a new instance of NullableRelationshipMemberTlsDomain.
+func NewNullableRelationshipMemberTlsDomain(val *RelationshipMemberTlsDomain) *NullableRelationshipMemberTlsDomain {
+	return &NullableRelationshipMemberTlsDomain{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableRelationshipMemberTLSDomain) MarshalJSON() ([]byte, error) {
+func (v NullableRelationshipMemberTlsDomain) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableRelationshipMemberTLSDomain) UnmarshalJSON(src []byte) error {
+func (v *NullableRelationshipMemberTlsDomain) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

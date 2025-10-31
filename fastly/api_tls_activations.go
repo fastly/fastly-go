@@ -27,129 +27,129 @@ var (
 	_ context.Context
 )
 
-// TLSActivationsAPI defines an interface for interacting with the resource.
-type TLSActivationsAPI interface {
+// TlsActivationsAPI defines an interface for interacting with the resource.
+type TlsActivationsAPI interface {
 
 	/*
-		CreateTLSActivation Enable TLS for a domain using a custom certificate
+		CreateTlsActivation Enable TLS for a domain using a custom certificate
 
 		Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APICreateTLSActivationRequest
+		 @return APICreateTlsActivationRequest
 	*/
-	CreateTLSActivation(ctx context.Context) APICreateTLSActivationRequest
+	CreateTlsActivation(ctx context.Context) APICreateTlsActivationRequest
 
-	// CreateTLSActivationExecute executes the request
-	//  @return TLSActivationResponse
-	CreateTLSActivationExecute(r APICreateTLSActivationRequest) (*TLSActivationResponse, *http.Response, error)
+	// CreateTlsActivationExecute executes the request
+	//  @return TlsActivationResponse
+	CreateTlsActivationExecute(r APICreateTlsActivationRequest) (*TlsActivationResponse, *http.Response, error)
 
 	/*
-		DeleteTLSActivation Disable TLS on a domain
+		DeleteTlsActivation Disable TLS on a domain
 
 		Disable TLS on the domain associated with this TLS activation.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tlsActivationID Alphanumeric string identifying a TLS activation.
-		 @return APIDeleteTLSActivationRequest
+		 @param tlsActivationId Alphanumeric string identifying a TLS activation.
+		 @return APIDeleteTlsActivationRequest
 	*/
-	DeleteTLSActivation(ctx context.Context, tlsActivationID string) APIDeleteTLSActivationRequest
+	DeleteTlsActivation(ctx context.Context, tlsActivationId string) APIDeleteTlsActivationRequest
 
-	// DeleteTLSActivationExecute executes the request
-	DeleteTLSActivationExecute(r APIDeleteTLSActivationRequest) (*http.Response, error)
+	// DeleteTlsActivationExecute executes the request
+	DeleteTlsActivationExecute(r APIDeleteTlsActivationRequest) (*http.Response, error)
 
 	/*
-		GetTLSActivation Get a TLS activation
+		GetTlsActivation Get a TLS activation
 
 		Show a TLS activation.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tlsActivationID Alphanumeric string identifying a TLS activation.
-		 @return APIGetTLSActivationRequest
+		 @param tlsActivationId Alphanumeric string identifying a TLS activation.
+		 @return APIGetTlsActivationRequest
 	*/
-	GetTLSActivation(ctx context.Context, tlsActivationID string) APIGetTLSActivationRequest
+	GetTlsActivation(ctx context.Context, tlsActivationId string) APIGetTlsActivationRequest
 
-	// GetTLSActivationExecute executes the request
-	//  @return TLSActivationResponse
-	GetTLSActivationExecute(r APIGetTLSActivationRequest) (*TLSActivationResponse, *http.Response, error)
+	// GetTlsActivationExecute executes the request
+	//  @return TlsActivationResponse
+	GetTlsActivationExecute(r APIGetTlsActivationRequest) (*TlsActivationResponse, *http.Response, error)
 
 	/*
-		ListTLSActivations List TLS activations
+		ListTlsActivations List TLS activations
 
 		List all TLS activations.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @return APIListTLSActivationsRequest
+		 @return APIListTlsActivationsRequest
 	*/
-	ListTLSActivations(ctx context.Context) APIListTLSActivationsRequest
+	ListTlsActivations(ctx context.Context) APIListTlsActivationsRequest
 
-	// ListTLSActivationsExecute executes the request
-	//  @return TLSActivationsResponse
-	ListTLSActivationsExecute(r APIListTLSActivationsRequest) (*TLSActivationsResponse, *http.Response, error)
+	// ListTlsActivationsExecute executes the request
+	//  @return TlsActivationsResponse
+	ListTlsActivationsExecute(r APIListTlsActivationsRequest) (*TlsActivationsResponse, *http.Response, error)
 
 	/*
-		UpdateTLSActivation Update a certificate
+		UpdateTlsActivation Update a certificate
 
 		Update the certificate used to terminate TLS traffic for the domain associated with this TLS activation.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param tlsActivationID Alphanumeric string identifying a TLS activation.
-		 @return APIUpdateTLSActivationRequest
+		 @param tlsActivationId Alphanumeric string identifying a TLS activation.
+		 @return APIUpdateTlsActivationRequest
 	*/
-	UpdateTLSActivation(ctx context.Context, tlsActivationID string) APIUpdateTLSActivationRequest
+	UpdateTlsActivation(ctx context.Context, tlsActivationId string) APIUpdateTlsActivationRequest
 
-	// UpdateTLSActivationExecute executes the request
-	//  @return TLSActivationResponse
-	UpdateTLSActivationExecute(r APIUpdateTLSActivationRequest) (*TLSActivationResponse, *http.Response, error)
+	// UpdateTlsActivationExecute executes the request
+	//  @return TlsActivationResponse
+	UpdateTlsActivationExecute(r APIUpdateTlsActivationRequest) (*TlsActivationResponse, *http.Response, error)
 }
 
-// TLSActivationsAPIService TLSActivationsAPI service
-type TLSActivationsAPIService service
+// TlsActivationsAPIService TlsActivationsAPI service
+type TlsActivationsAPIService service
 
-// APICreateTLSActivationRequest represents a request for the resource.
-type APICreateTLSActivationRequest struct {
+// APICreateTlsActivationRequest represents a request for the resource.
+type APICreateTlsActivationRequest struct {
 	ctx           context.Context
-	APIService    TLSActivationsAPI
-	tlsActivation *TLSActivation
+	APIService    TlsActivationsAPI
+	tlsActivation *TlsActivation
 }
 
-// TLSActivation returns a pointer to a request.
-func (r *APICreateTLSActivationRequest) TLSActivation(tlsActivation TLSActivation) *APICreateTLSActivationRequest {
+// TlsActivation returns a pointer to a request.
+func (r *APICreateTlsActivationRequest) TlsActivation(tlsActivation TlsActivation) *APICreateTlsActivationRequest {
 	r.tlsActivation = &tlsActivation
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APICreateTLSActivationRequest) Execute() (*TLSActivationResponse, *http.Response, error) {
-	return r.APIService.CreateTLSActivationExecute(r)
+func (r APICreateTlsActivationRequest) Execute() (*TlsActivationResponse, *http.Response, error) {
+	return r.APIService.CreateTlsActivationExecute(r)
 }
 
 /*
-CreateTLSActivation Enable TLS for a domain using a custom certificate
+CreateTlsActivation Enable TLS for a domain using a custom certificate
 
 Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APICreateTLSActivationRequest
+ @return APICreateTlsActivationRequest
 */
-func (a *TLSActivationsAPIService) CreateTLSActivation(ctx context.Context) APICreateTLSActivationRequest {
-	return APICreateTLSActivationRequest{
+func (a *TlsActivationsAPIService) CreateTlsActivation(ctx context.Context) APICreateTlsActivationRequest {
+	return APICreateTlsActivationRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// CreateTLSActivationExecute executes the request
-//  @return TLSActivationResponse
-func (a *TLSActivationsAPIService) CreateTLSActivationExecute(r APICreateTLSActivationRequest) (*TLSActivationResponse, *http.Response, error) {
+// CreateTlsActivationExecute executes the request
+//  @return TlsActivationResponse
+func (a *TlsActivationsAPIService) CreateTlsActivationExecute(r APICreateTlsActivationRequest) (*TlsActivationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TLSActivationResponse
+		localVarReturnValue *TlsActivationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSActivationsAPIService.CreateTLSActivation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsActivationsAPIService.CreateTlsActivation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -243,50 +243,50 @@ func (a *TLSActivationsAPIService) CreateTLSActivationExecute(r APICreateTLSActi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIDeleteTLSActivationRequest represents a request for the resource.
-type APIDeleteTLSActivationRequest struct {
+// APIDeleteTlsActivationRequest represents a request for the resource.
+type APIDeleteTlsActivationRequest struct {
 	ctx             context.Context
-	APIService      TLSActivationsAPI
-	tlsActivationID string
+	APIService      TlsActivationsAPI
+	tlsActivationId string
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDeleteTLSActivationRequest) Execute() (*http.Response, error) {
-	return r.APIService.DeleteTLSActivationExecute(r)
+func (r APIDeleteTlsActivationRequest) Execute() (*http.Response, error) {
+	return r.APIService.DeleteTlsActivationExecute(r)
 }
 
 /*
-DeleteTLSActivation Disable TLS on a domain
+DeleteTlsActivation Disable TLS on a domain
 
 Disable TLS on the domain associated with this TLS activation.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tlsActivationID Alphanumeric string identifying a TLS activation.
- @return APIDeleteTLSActivationRequest
+ @param tlsActivationId Alphanumeric string identifying a TLS activation.
+ @return APIDeleteTlsActivationRequest
 */
-func (a *TLSActivationsAPIService) DeleteTLSActivation(ctx context.Context, tlsActivationID string) APIDeleteTLSActivationRequest {
-	return APIDeleteTLSActivationRequest{
+func (a *TlsActivationsAPIService) DeleteTlsActivation(ctx context.Context, tlsActivationId string) APIDeleteTlsActivationRequest {
+	return APIDeleteTlsActivationRequest{
 		APIService:      a,
 		ctx:             ctx,
-		tlsActivationID: tlsActivationID,
+		tlsActivationId: tlsActivationId,
 	}
 }
 
-// DeleteTLSActivationExecute executes the request
-func (a *TLSActivationsAPIService) DeleteTLSActivationExecute(r APIDeleteTLSActivationRequest) (*http.Response, error) {
+// DeleteTlsActivationExecute executes the request
+func (a *TlsActivationsAPIService) DeleteTlsActivationExecute(r APIDeleteTlsActivationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   any
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSActivationsAPIService.DeleteTLSActivation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsActivationsAPIService.DeleteTlsActivation")
 	if err != nil {
 		return nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/activations/{tls_activation_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_activation_id"+"}", gourl.PathEscape(parameterToString(r.tlsActivationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_activation_id"+"}", gourl.PathEscape(parameterToString(r.tlsActivationId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -364,59 +364,59 @@ func (a *TLSActivationsAPIService) DeleteTLSActivationExecute(r APIDeleteTLSActi
 	return localVarHTTPResponse, nil
 }
 
-// APIGetTLSActivationRequest represents a request for the resource.
-type APIGetTLSActivationRequest struct {
+// APIGetTlsActivationRequest represents a request for the resource.
+type APIGetTlsActivationRequest struct {
 	ctx             context.Context
-	APIService      TLSActivationsAPI
-	tlsActivationID string
+	APIService      TlsActivationsAPI
+	tlsActivationId string
 	include         *string
 }
 
 // Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;.
-func (r *APIGetTLSActivationRequest) Include(include string) *APIGetTLSActivationRequest {
+func (r *APIGetTlsActivationRequest) Include(include string) *APIGetTlsActivationRequest {
 	r.include = &include
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetTLSActivationRequest) Execute() (*TLSActivationResponse, *http.Response, error) {
-	return r.APIService.GetTLSActivationExecute(r)
+func (r APIGetTlsActivationRequest) Execute() (*TlsActivationResponse, *http.Response, error) {
+	return r.APIService.GetTlsActivationExecute(r)
 }
 
 /*
-GetTLSActivation Get a TLS activation
+GetTlsActivation Get a TLS activation
 
 Show a TLS activation.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tlsActivationID Alphanumeric string identifying a TLS activation.
- @return APIGetTLSActivationRequest
+ @param tlsActivationId Alphanumeric string identifying a TLS activation.
+ @return APIGetTlsActivationRequest
 */
-func (a *TLSActivationsAPIService) GetTLSActivation(ctx context.Context, tlsActivationID string) APIGetTLSActivationRequest {
-	return APIGetTLSActivationRequest{
+func (a *TlsActivationsAPIService) GetTlsActivation(ctx context.Context, tlsActivationId string) APIGetTlsActivationRequest {
+	return APIGetTlsActivationRequest{
 		APIService:      a,
 		ctx:             ctx,
-		tlsActivationID: tlsActivationID,
+		tlsActivationId: tlsActivationId,
 	}
 }
 
-// GetTLSActivationExecute executes the request
-//  @return TLSActivationResponse
-func (a *TLSActivationsAPIService) GetTLSActivationExecute(r APIGetTLSActivationRequest) (*TLSActivationResponse, *http.Response, error) {
+// GetTlsActivationExecute executes the request
+//  @return TlsActivationResponse
+func (a *TlsActivationsAPIService) GetTlsActivationExecute(r APIGetTlsActivationRequest) (*TlsActivationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TLSActivationResponse
+		localVarReturnValue *TlsActivationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSActivationsAPIService.GetTLSActivation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsActivationsAPIService.GetTlsActivation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/activations/{tls_activation_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_activation_id"+"}", gourl.PathEscape(parameterToString(r.tlsActivationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_activation_id"+"}", gourl.PathEscape(parameterToString(r.tlsActivationId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -506,85 +506,85 @@ func (a *TLSActivationsAPIService) GetTLSActivationExecute(r APIGetTLSActivation
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIListTLSActivationsRequest represents a request for the resource.
-type APIListTLSActivationsRequest struct {
+// APIListTlsActivationsRequest represents a request for the resource.
+type APIListTlsActivationsRequest struct {
 	ctx                      context.Context
-	APIService               TLSActivationsAPI
-	filterTLSCertificateID   *string
-	filterTLSConfigurationID *string
-	filterTLSDomainID        *string
+	APIService               TlsActivationsAPI
+	filterTlsCertificateId   *string
+	filterTlsConfigurationId *string
+	filterTlsDomainId        *string
 	include                  *string
 	pageNumber               *int32
 	pageSize                 *int32
 }
 
-// FilterTLSCertificateID Limit the returned activations to a specific certificate.
-func (r *APIListTLSActivationsRequest) FilterTLSCertificateID(filterTLSCertificateID string) *APIListTLSActivationsRequest {
-	r.filterTLSCertificateID = &filterTLSCertificateID
+// FilterTlsCertificateId Limit the returned activations to a specific certificate.
+func (r *APIListTlsActivationsRequest) FilterTlsCertificateId(filterTlsCertificateId string) *APIListTlsActivationsRequest {
+	r.filterTlsCertificateId = &filterTlsCertificateId
 	return r
 }
 
-// FilterTLSConfigurationID Limit the returned activations to a specific TLS configuration.
-func (r *APIListTLSActivationsRequest) FilterTLSConfigurationID(filterTLSConfigurationID string) *APIListTLSActivationsRequest {
-	r.filterTLSConfigurationID = &filterTLSConfigurationID
+// FilterTlsConfigurationId Limit the returned activations to a specific TLS configuration.
+func (r *APIListTlsActivationsRequest) FilterTlsConfigurationId(filterTlsConfigurationId string) *APIListTlsActivationsRequest {
+	r.filterTlsConfigurationId = &filterTlsConfigurationId
 	return r
 }
 
-// FilterTLSDomainID Limit the returned rules to a specific domain name.
-func (r *APIListTLSActivationsRequest) FilterTLSDomainID(filterTLSDomainID string) *APIListTLSActivationsRequest {
-	r.filterTLSDomainID = &filterTLSDomainID
+// FilterTlsDomainId Limit the returned rules to a specific domain name.
+func (r *APIListTlsActivationsRequest) FilterTlsDomainId(filterTlsDomainId string) *APIListTlsActivationsRequest {
+	r.filterTlsDomainId = &filterTlsDomainId
 	return r
 }
 
 // Include Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;.
-func (r *APIListTLSActivationsRequest) Include(include string) *APIListTLSActivationsRequest {
+func (r *APIListTlsActivationsRequest) Include(include string) *APIListTlsActivationsRequest {
 	r.include = &include
 	return r
 }
 
 // PageNumber Current page.
-func (r *APIListTLSActivationsRequest) PageNumber(pageNumber int32) *APIListTLSActivationsRequest {
+func (r *APIListTlsActivationsRequest) PageNumber(pageNumber int32) *APIListTlsActivationsRequest {
 	r.pageNumber = &pageNumber
 	return r
 }
 
 // PageSize Number of records per page.
-func (r *APIListTLSActivationsRequest) PageSize(pageSize int32) *APIListTLSActivationsRequest {
+func (r *APIListTlsActivationsRequest) PageSize(pageSize int32) *APIListTlsActivationsRequest {
 	r.pageSize = &pageSize
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListTLSActivationsRequest) Execute() (*TLSActivationsResponse, *http.Response, error) {
-	return r.APIService.ListTLSActivationsExecute(r)
+func (r APIListTlsActivationsRequest) Execute() (*TlsActivationsResponse, *http.Response, error) {
+	return r.APIService.ListTlsActivationsExecute(r)
 }
 
 /*
-ListTLSActivations List TLS activations
+ListTlsActivations List TLS activations
 
 List all TLS activations.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return APIListTLSActivationsRequest
+ @return APIListTlsActivationsRequest
 */
-func (a *TLSActivationsAPIService) ListTLSActivations(ctx context.Context) APIListTLSActivationsRequest {
-	return APIListTLSActivationsRequest{
+func (a *TlsActivationsAPIService) ListTlsActivations(ctx context.Context) APIListTlsActivationsRequest {
+	return APIListTlsActivationsRequest{
 		APIService: a,
 		ctx:        ctx,
 	}
 }
 
-// ListTLSActivationsExecute executes the request
-//  @return TLSActivationsResponse
-func (a *TLSActivationsAPIService) ListTLSActivationsExecute(r APIListTLSActivationsRequest) (*TLSActivationsResponse, *http.Response, error) {
+// ListTlsActivationsExecute executes the request
+//  @return TlsActivationsResponse
+func (a *TlsActivationsAPIService) ListTlsActivationsExecute(r APIListTlsActivationsRequest) (*TlsActivationsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TLSActivationsResponse
+		localVarReturnValue *TlsActivationsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSActivationsAPIService.ListTLSActivations")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsActivationsAPIService.ListTlsActivations")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
@@ -595,14 +595,14 @@ func (a *TLSActivationsAPIService) ListTLSActivationsExecute(r APIListTLSActivat
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
-	if r.filterTLSCertificateID != nil {
-		localVarQueryParams.Add("filter[tls_certificate.id]", parameterToString(*r.filterTLSCertificateID, ""))
+	if r.filterTlsCertificateId != nil {
+		localVarQueryParams.Add("filter[tls_certificate.id]", parameterToString(*r.filterTlsCertificateId, ""))
 	}
-	if r.filterTLSConfigurationID != nil {
-		localVarQueryParams.Add("filter[tls_configuration.id]", parameterToString(*r.filterTLSConfigurationID, ""))
+	if r.filterTlsConfigurationId != nil {
+		localVarQueryParams.Add("filter[tls_configuration.id]", parameterToString(*r.filterTlsConfigurationId, ""))
 	}
-	if r.filterTLSDomainID != nil {
-		localVarQueryParams.Add("filter[tls_domain.id]", parameterToString(*r.filterTLSDomainID, ""))
+	if r.filterTlsDomainId != nil {
+		localVarQueryParams.Add("filter[tls_domain.id]", parameterToString(*r.filterTlsDomainId, ""))
 	}
 	if r.include != nil {
 		localVarQueryParams.Add("include", parameterToString(*r.include, ""))
@@ -694,59 +694,59 @@ func (a *TLSActivationsAPIService) ListTLSActivationsExecute(r APIListTLSActivat
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-// APIUpdateTLSActivationRequest represents a request for the resource.
-type APIUpdateTLSActivationRequest struct {
+// APIUpdateTlsActivationRequest represents a request for the resource.
+type APIUpdateTlsActivationRequest struct {
 	ctx             context.Context
-	APIService      TLSActivationsAPI
-	tlsActivationID string
-	tlsActivation   *TLSActivation
+	APIService      TlsActivationsAPI
+	tlsActivationId string
+	tlsActivation   *TlsActivation
 }
 
-// TLSActivation returns a pointer to a request.
-func (r *APIUpdateTLSActivationRequest) TLSActivation(tlsActivation TLSActivation) *APIUpdateTLSActivationRequest {
+// TlsActivation returns a pointer to a request.
+func (r *APIUpdateTlsActivationRequest) TlsActivation(tlsActivation TlsActivation) *APIUpdateTlsActivationRequest {
 	r.tlsActivation = &tlsActivation
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIUpdateTLSActivationRequest) Execute() (*TLSActivationResponse, *http.Response, error) {
-	return r.APIService.UpdateTLSActivationExecute(r)
+func (r APIUpdateTlsActivationRequest) Execute() (*TlsActivationResponse, *http.Response, error) {
+	return r.APIService.UpdateTlsActivationExecute(r)
 }
 
 /*
-UpdateTLSActivation Update a certificate
+UpdateTlsActivation Update a certificate
 
 Update the certificate used to terminate TLS traffic for the domain associated with this TLS activation.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param tlsActivationID Alphanumeric string identifying a TLS activation.
- @return APIUpdateTLSActivationRequest
+ @param tlsActivationId Alphanumeric string identifying a TLS activation.
+ @return APIUpdateTlsActivationRequest
 */
-func (a *TLSActivationsAPIService) UpdateTLSActivation(ctx context.Context, tlsActivationID string) APIUpdateTLSActivationRequest {
-	return APIUpdateTLSActivationRequest{
+func (a *TlsActivationsAPIService) UpdateTlsActivation(ctx context.Context, tlsActivationId string) APIUpdateTlsActivationRequest {
+	return APIUpdateTlsActivationRequest{
 		APIService:      a,
 		ctx:             ctx,
-		tlsActivationID: tlsActivationID,
+		tlsActivationId: tlsActivationId,
 	}
 }
 
-// UpdateTLSActivationExecute executes the request
-//  @return TLSActivationResponse
-func (a *TLSActivationsAPIService) UpdateTLSActivationExecute(r APIUpdateTLSActivationRequest) (*TLSActivationResponse, *http.Response, error) {
+// UpdateTlsActivationExecute executes the request
+//  @return TlsActivationResponse
+func (a *TlsActivationsAPIService) UpdateTlsActivationExecute(r APIUpdateTlsActivationRequest) (*TlsActivationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *TLSActivationResponse
+		localVarReturnValue *TlsActivationResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TLSActivationsAPIService.UpdateTLSActivation")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TlsActivationsAPIService.UpdateTlsActivation")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tls/activations/{tls_activation_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_activation_id"+"}", gourl.PathEscape(parameterToString(r.tlsActivationID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"tls_activation_id"+"}", gourl.PathEscape(parameterToString(r.tlsActivationId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

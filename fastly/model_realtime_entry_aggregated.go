@@ -47,13 +47,13 @@ type RealtimeEntryAggregated struct {
 	// Total amount of time spent processing cache misses (in seconds).
 	MissTime *float32 `json:"miss_time,omitempty"`
 	// A histogram. The value in each bucket is the number of requests to the origin whose responses arrived during the time period represented by the bucket. The key of each bucket represents the upper bound (in response time) of that bucket. The buckets vary in width and cover the time periods 0-10ms (in 1ms increments), 10-250ms (in 10ms increments), 250-1,000ms (in 50ms increments), 1,000-3,000ms (in 100ms increments), 3,000-10,000ms (in 500 ms increments), 10,000-20,000ms (in 1,000ms increments), 20,000-60,000ms (in 5,000ms increments), and 60,000ms through infinity (in a single bucket).
-	MissHistogram map[string]map[string]any `json:"miss_histogram,omitempty"`
+	MissHistogram map[string]map[string]interface{} `json:"miss_histogram,omitempty"`
 	// The total number of requests that were received for your service by Fastly.
 	ComputeRequests *int64 `json:"compute_requests,omitempty"`
 	// The amount of active CPU time used to process your requests (in milliseconds).
 	ComputeExecutionTimeMs *float32 `json:"compute_execution_time_ms,omitempty"`
 	// The amount of RAM used for your service by Fastly (in bytes).
-	ComputeRAMUsed *int64 `json:"compute_ram_used,omitempty"`
+	ComputeRamUsed *int64 `json:"compute_ram_used,omitempty"`
 	// The total, actual amount of time used to process your requests, including active CPU time (in milliseconds).
 	ComputeRequestTimeMs *float32 `json:"compute_request_time_ms,omitempty"`
 	// The total amount of request processing time you will be billed for, measured in 50 millisecond increments.
@@ -79,9 +79,9 @@ type RealtimeEntryAggregated struct {
 	// Number of responses with the PCI flag turned on.
 	Pci *int64 `json:"pci,omitempty"`
 	// Number of requests received over HTTP/2.
-	HTTP2 *int64 `json:"http2,omitempty"`
+	Http2 *int64 `json:"http2,omitempty"`
 	// Number of requests received over HTTP/3.
-	HTTP3 *int64 `json:"http3,omitempty"`
+	Http3 *int64 `json:"http3,omitempty"`
 	// Number of restarts performed.
 	Restarts *int64 `json:"restarts,omitempty"`
 	// Total header bytes received.
@@ -195,15 +195,15 @@ type RealtimeEntryAggregated struct {
 	// Total amount of time spent processing cache passes (in seconds).
 	PassTime *float32 `json:"pass_time,omitempty"`
 	// Number of requests that were received over TLS.
-	TLS *int64 `json:"tls,omitempty"`
+	Tls *int64 `json:"tls,omitempty"`
 	// Number of requests received over TLS 1.0.
-	TLSV10 *int64 `json:"tls_v10,omitempty"`
+	TlsV10 *int64 `json:"tls_v10,omitempty"`
 	// Number of requests received over TLS 1.1.
-	TLSV11 *int64 `json:"tls_v11,omitempty"`
+	TlsV11 *int64 `json:"tls_v11,omitempty"`
 	// Number of requests received over TLS 1.2.
-	TLSV12 *int64 `json:"tls_v12,omitempty"`
+	TlsV12 *int64 `json:"tls_v12,omitempty"`
 	// Number of requests received over TLS 1.3.
-	TLSV13 *int64 `json:"tls_v13,omitempty"`
+	TlsV13 *int64 `json:"tls_v13,omitempty"`
 	// Number of objects served that were under 1KB in size.
 	ObjectSize1k *int64 `json:"object_size_1k,omitempty"`
 	// Number of objects served that were between 1KB and 10KB in size.
@@ -542,7 +542,9 @@ type RealtimeEntryAggregated struct {
 	RequestCollapseUnusableCount *int64 `json:"request_collapse_unusable_count,omitempty"`
 	// Number of cache operations executed by the Compute platform.
 	ComputeCacheOperationsCount *int64 `json:"compute_cache_operations_count,omitempty"`
-	AdditionalProperties        map[string]any
+	// Number of requests processed by the API Discovery engine.
+	ApiDiscoveryRequestsCount *int32 `json:"api_discovery_requests_count,omitempty"`
+	AdditionalProperties      map[string]any
 }
 
 type _RealtimeEntryAggregated RealtimeEntryAggregated
@@ -1013,9 +1015,9 @@ func (o *RealtimeEntryAggregated) SetMissTime(v float32) {
 }
 
 // GetMissHistogram returns the MissHistogram field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetMissHistogram() map[string]map[string]any {
+func (o *RealtimeEntryAggregated) GetMissHistogram() map[string]map[string]interface{} {
 	if o == nil || o.MissHistogram == nil {
-		var ret map[string]map[string]any
+		var ret map[string]map[string]interface{}
 		return ret
 	}
 	return o.MissHistogram
@@ -1023,7 +1025,7 @@ func (o *RealtimeEntryAggregated) GetMissHistogram() map[string]map[string]any {
 
 // GetMissHistogramOk returns a tuple with the MissHistogram field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetMissHistogramOk() (map[string]map[string]any, bool) {
+func (o *RealtimeEntryAggregated) GetMissHistogramOk() (map[string]map[string]interface{}, bool) {
 	if o == nil || o.MissHistogram == nil {
 		return nil, false
 	}
@@ -1039,8 +1041,8 @@ func (o *RealtimeEntryAggregated) HasMissHistogram() bool {
 	return false
 }
 
-// SetMissHistogram gets a reference to the given map[string]map[string]any and assigns it to the MissHistogram field.
-func (o *RealtimeEntryAggregated) SetMissHistogram(v map[string]map[string]any) {
+// SetMissHistogram gets a reference to the given map[string]map[string]interface{} and assigns it to the MissHistogram field.
+func (o *RealtimeEntryAggregated) SetMissHistogram(v map[string]map[string]interface{}) {
 	o.MissHistogram = v
 }
 
@@ -1108,36 +1110,36 @@ func (o *RealtimeEntryAggregated) SetComputeExecutionTimeMs(v float32) {
 	o.ComputeExecutionTimeMs = &v
 }
 
-// GetComputeRAMUsed returns the ComputeRAMUsed field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetComputeRAMUsed() int64 {
-	if o == nil || o.ComputeRAMUsed == nil {
+// GetComputeRamUsed returns the ComputeRamUsed field value if set, zero value otherwise.
+func (o *RealtimeEntryAggregated) GetComputeRamUsed() int64 {
+	if o == nil || o.ComputeRamUsed == nil {
 		var ret int64
 		return ret
 	}
-	return *o.ComputeRAMUsed
+	return *o.ComputeRamUsed
 }
 
-// GetComputeRAMUsedOk returns a tuple with the ComputeRAMUsed field value if set, nil otherwise
+// GetComputeRamUsedOk returns a tuple with the ComputeRamUsed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetComputeRAMUsedOk() (*int64, bool) {
-	if o == nil || o.ComputeRAMUsed == nil {
+func (o *RealtimeEntryAggregated) GetComputeRamUsedOk() (*int64, bool) {
+	if o == nil || o.ComputeRamUsed == nil {
 		return nil, false
 	}
-	return o.ComputeRAMUsed, true
+	return o.ComputeRamUsed, true
 }
 
-// HasComputeRAMUsed returns a boolean if a field has been set.
-func (o *RealtimeEntryAggregated) HasComputeRAMUsed() bool {
-	if o != nil && o.ComputeRAMUsed != nil {
+// HasComputeRamUsed returns a boolean if a field has been set.
+func (o *RealtimeEntryAggregated) HasComputeRamUsed() bool {
+	if o != nil && o.ComputeRamUsed != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeRAMUsed gets a reference to the given int64 and assigns it to the ComputeRAMUsed field.
-func (o *RealtimeEntryAggregated) SetComputeRAMUsed(v int64) {
-	o.ComputeRAMUsed = &v
+// SetComputeRamUsed gets a reference to the given int64 and assigns it to the ComputeRamUsed field.
+func (o *RealtimeEntryAggregated) SetComputeRamUsed(v int64) {
+	o.ComputeRamUsed = &v
 }
 
 // GetComputeRequestTimeMs returns the ComputeRequestTimeMs field value if set, zero value otherwise.
@@ -1524,68 +1526,68 @@ func (o *RealtimeEntryAggregated) SetPci(v int64) {
 	o.Pci = &v
 }
 
-// GetHTTP2 returns the HTTP2 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetHTTP2() int64 {
-	if o == nil || o.HTTP2 == nil {
+// GetHttp2 returns the Http2 field value if set, zero value otherwise.
+func (o *RealtimeEntryAggregated) GetHttp2() int64 {
+	if o == nil || o.Http2 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.HTTP2
+	return *o.Http2
 }
 
-// GetHTTP2Ok returns a tuple with the HTTP2 field value if set, nil otherwise
+// GetHttp2Ok returns a tuple with the Http2 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetHTTP2Ok() (*int64, bool) {
-	if o == nil || o.HTTP2 == nil {
+func (o *RealtimeEntryAggregated) GetHttp2Ok() (*int64, bool) {
+	if o == nil || o.Http2 == nil {
 		return nil, false
 	}
-	return o.HTTP2, true
+	return o.Http2, true
 }
 
-// HasHTTP2 returns a boolean if a field has been set.
-func (o *RealtimeEntryAggregated) HasHTTP2() bool {
-	if o != nil && o.HTTP2 != nil {
+// HasHttp2 returns a boolean if a field has been set.
+func (o *RealtimeEntryAggregated) HasHttp2() bool {
+	if o != nil && o.Http2 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHTTP2 gets a reference to the given int64 and assigns it to the HTTP2 field.
-func (o *RealtimeEntryAggregated) SetHTTP2(v int64) {
-	o.HTTP2 = &v
+// SetHttp2 gets a reference to the given int64 and assigns it to the Http2 field.
+func (o *RealtimeEntryAggregated) SetHttp2(v int64) {
+	o.Http2 = &v
 }
 
-// GetHTTP3 returns the HTTP3 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetHTTP3() int64 {
-	if o == nil || o.HTTP3 == nil {
+// GetHttp3 returns the Http3 field value if set, zero value otherwise.
+func (o *RealtimeEntryAggregated) GetHttp3() int64 {
+	if o == nil || o.Http3 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.HTTP3
+	return *o.Http3
 }
 
-// GetHTTP3Ok returns a tuple with the HTTP3 field value if set, nil otherwise
+// GetHttp3Ok returns a tuple with the Http3 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetHTTP3Ok() (*int64, bool) {
-	if o == nil || o.HTTP3 == nil {
+func (o *RealtimeEntryAggregated) GetHttp3Ok() (*int64, bool) {
+	if o == nil || o.Http3 == nil {
 		return nil, false
 	}
-	return o.HTTP3, true
+	return o.Http3, true
 }
 
-// HasHTTP3 returns a boolean if a field has been set.
-func (o *RealtimeEntryAggregated) HasHTTP3() bool {
-	if o != nil && o.HTTP3 != nil {
+// HasHttp3 returns a boolean if a field has been set.
+func (o *RealtimeEntryAggregated) HasHttp3() bool {
+	if o != nil && o.Http3 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetHTTP3 gets a reference to the given int64 and assigns it to the HTTP3 field.
-func (o *RealtimeEntryAggregated) SetHTTP3(v int64) {
-	o.HTTP3 = &v
+// SetHttp3 gets a reference to the given int64 and assigns it to the Http3 field.
+func (o *RealtimeEntryAggregated) SetHttp3(v int64) {
+	o.Http3 = &v
 }
 
 // GetRestarts returns the Restarts field value if set, zero value otherwise.
@@ -3380,164 +3382,164 @@ func (o *RealtimeEntryAggregated) SetPassTime(v float32) {
 	o.PassTime = &v
 }
 
-// GetTLS returns the TLS field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetTLS() int64 {
-	if o == nil || o.TLS == nil {
+// GetTls returns the Tls field value if set, zero value otherwise.
+func (o *RealtimeEntryAggregated) GetTls() int64 {
+	if o == nil || o.Tls == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TLS
+	return *o.Tls
 }
 
-// GetTLSOk returns a tuple with the TLS field value if set, nil otherwise
+// GetTlsOk returns a tuple with the Tls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetTLSOk() (*int64, bool) {
-	if o == nil || o.TLS == nil {
+func (o *RealtimeEntryAggregated) GetTlsOk() (*int64, bool) {
+	if o == nil || o.Tls == nil {
 		return nil, false
 	}
-	return o.TLS, true
+	return o.Tls, true
 }
 
-// HasTLS returns a boolean if a field has been set.
-func (o *RealtimeEntryAggregated) HasTLS() bool {
-	if o != nil && o.TLS != nil {
+// HasTls returns a boolean if a field has been set.
+func (o *RealtimeEntryAggregated) HasTls() bool {
+	if o != nil && o.Tls != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLS gets a reference to the given int64 and assigns it to the TLS field.
-func (o *RealtimeEntryAggregated) SetTLS(v int64) {
-	o.TLS = &v
+// SetTls gets a reference to the given int64 and assigns it to the Tls field.
+func (o *RealtimeEntryAggregated) SetTls(v int64) {
+	o.Tls = &v
 }
 
-// GetTLSV10 returns the TLSV10 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetTLSV10() int64 {
-	if o == nil || o.TLSV10 == nil {
+// GetTlsV10 returns the TlsV10 field value if set, zero value otherwise.
+func (o *RealtimeEntryAggregated) GetTlsV10() int64 {
+	if o == nil || o.TlsV10 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TLSV10
+	return *o.TlsV10
 }
 
-// GetTLSV10Ok returns a tuple with the TLSV10 field value if set, nil otherwise
+// GetTlsV10Ok returns a tuple with the TlsV10 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetTLSV10Ok() (*int64, bool) {
-	if o == nil || o.TLSV10 == nil {
+func (o *RealtimeEntryAggregated) GetTlsV10Ok() (*int64, bool) {
+	if o == nil || o.TlsV10 == nil {
 		return nil, false
 	}
-	return o.TLSV10, true
+	return o.TlsV10, true
 }
 
-// HasTLSV10 returns a boolean if a field has been set.
-func (o *RealtimeEntryAggregated) HasTLSV10() bool {
-	if o != nil && o.TLSV10 != nil {
+// HasTlsV10 returns a boolean if a field has been set.
+func (o *RealtimeEntryAggregated) HasTlsV10() bool {
+	if o != nil && o.TlsV10 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSV10 gets a reference to the given int64 and assigns it to the TLSV10 field.
-func (o *RealtimeEntryAggregated) SetTLSV10(v int64) {
-	o.TLSV10 = &v
+// SetTlsV10 gets a reference to the given int64 and assigns it to the TlsV10 field.
+func (o *RealtimeEntryAggregated) SetTlsV10(v int64) {
+	o.TlsV10 = &v
 }
 
-// GetTLSV11 returns the TLSV11 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetTLSV11() int64 {
-	if o == nil || o.TLSV11 == nil {
+// GetTlsV11 returns the TlsV11 field value if set, zero value otherwise.
+func (o *RealtimeEntryAggregated) GetTlsV11() int64 {
+	if o == nil || o.TlsV11 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TLSV11
+	return *o.TlsV11
 }
 
-// GetTLSV11Ok returns a tuple with the TLSV11 field value if set, nil otherwise
+// GetTlsV11Ok returns a tuple with the TlsV11 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetTLSV11Ok() (*int64, bool) {
-	if o == nil || o.TLSV11 == nil {
+func (o *RealtimeEntryAggregated) GetTlsV11Ok() (*int64, bool) {
+	if o == nil || o.TlsV11 == nil {
 		return nil, false
 	}
-	return o.TLSV11, true
+	return o.TlsV11, true
 }
 
-// HasTLSV11 returns a boolean if a field has been set.
-func (o *RealtimeEntryAggregated) HasTLSV11() bool {
-	if o != nil && o.TLSV11 != nil {
+// HasTlsV11 returns a boolean if a field has been set.
+func (o *RealtimeEntryAggregated) HasTlsV11() bool {
+	if o != nil && o.TlsV11 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSV11 gets a reference to the given int64 and assigns it to the TLSV11 field.
-func (o *RealtimeEntryAggregated) SetTLSV11(v int64) {
-	o.TLSV11 = &v
+// SetTlsV11 gets a reference to the given int64 and assigns it to the TlsV11 field.
+func (o *RealtimeEntryAggregated) SetTlsV11(v int64) {
+	o.TlsV11 = &v
 }
 
-// GetTLSV12 returns the TLSV12 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetTLSV12() int64 {
-	if o == nil || o.TLSV12 == nil {
+// GetTlsV12 returns the TlsV12 field value if set, zero value otherwise.
+func (o *RealtimeEntryAggregated) GetTlsV12() int64 {
+	if o == nil || o.TlsV12 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TLSV12
+	return *o.TlsV12
 }
 
-// GetTLSV12Ok returns a tuple with the TLSV12 field value if set, nil otherwise
+// GetTlsV12Ok returns a tuple with the TlsV12 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetTLSV12Ok() (*int64, bool) {
-	if o == nil || o.TLSV12 == nil {
+func (o *RealtimeEntryAggregated) GetTlsV12Ok() (*int64, bool) {
+	if o == nil || o.TlsV12 == nil {
 		return nil, false
 	}
-	return o.TLSV12, true
+	return o.TlsV12, true
 }
 
-// HasTLSV12 returns a boolean if a field has been set.
-func (o *RealtimeEntryAggregated) HasTLSV12() bool {
-	if o != nil && o.TLSV12 != nil {
+// HasTlsV12 returns a boolean if a field has been set.
+func (o *RealtimeEntryAggregated) HasTlsV12() bool {
+	if o != nil && o.TlsV12 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSV12 gets a reference to the given int64 and assigns it to the TLSV12 field.
-func (o *RealtimeEntryAggregated) SetTLSV12(v int64) {
-	o.TLSV12 = &v
+// SetTlsV12 gets a reference to the given int64 and assigns it to the TlsV12 field.
+func (o *RealtimeEntryAggregated) SetTlsV12(v int64) {
+	o.TlsV12 = &v
 }
 
-// GetTLSV13 returns the TLSV13 field value if set, zero value otherwise.
-func (o *RealtimeEntryAggregated) GetTLSV13() int64 {
-	if o == nil || o.TLSV13 == nil {
+// GetTlsV13 returns the TlsV13 field value if set, zero value otherwise.
+func (o *RealtimeEntryAggregated) GetTlsV13() int64 {
+	if o == nil || o.TlsV13 == nil {
 		var ret int64
 		return ret
 	}
-	return *o.TLSV13
+	return *o.TlsV13
 }
 
-// GetTLSV13Ok returns a tuple with the TLSV13 field value if set, nil otherwise
+// GetTlsV13Ok returns a tuple with the TlsV13 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntryAggregated) GetTLSV13Ok() (*int64, bool) {
-	if o == nil || o.TLSV13 == nil {
+func (o *RealtimeEntryAggregated) GetTlsV13Ok() (*int64, bool) {
+	if o == nil || o.TlsV13 == nil {
 		return nil, false
 	}
-	return o.TLSV13, true
+	return o.TlsV13, true
 }
 
-// HasTLSV13 returns a boolean if a field has been set.
-func (o *RealtimeEntryAggregated) HasTLSV13() bool {
-	if o != nil && o.TLSV13 != nil {
+// HasTlsV13 returns a boolean if a field has been set.
+func (o *RealtimeEntryAggregated) HasTlsV13() bool {
+	if o != nil && o.TlsV13 != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSV13 gets a reference to the given int64 and assigns it to the TLSV13 field.
-func (o *RealtimeEntryAggregated) SetTLSV13(v int64) {
-	o.TLSV13 = &v
+// SetTlsV13 gets a reference to the given int64 and assigns it to the TlsV13 field.
+func (o *RealtimeEntryAggregated) SetTlsV13(v int64) {
+	o.TlsV13 = &v
 }
 
 // GetObjectSize1k returns the ObjectSize1k field value if set, zero value otherwise.
@@ -8922,6 +8924,38 @@ func (o *RealtimeEntryAggregated) SetComputeCacheOperationsCount(v int64) {
 	o.ComputeCacheOperationsCount = &v
 }
 
+// GetApiDiscoveryRequestsCount returns the ApiDiscoveryRequestsCount field value if set, zero value otherwise.
+func (o *RealtimeEntryAggregated) GetApiDiscoveryRequestsCount() int32 {
+	if o == nil || o.ApiDiscoveryRequestsCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ApiDiscoveryRequestsCount
+}
+
+// GetApiDiscoveryRequestsCountOk returns a tuple with the ApiDiscoveryRequestsCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeEntryAggregated) GetApiDiscoveryRequestsCountOk() (*int32, bool) {
+	if o == nil || o.ApiDiscoveryRequestsCount == nil {
+		return nil, false
+	}
+	return o.ApiDiscoveryRequestsCount, true
+}
+
+// HasApiDiscoveryRequestsCount returns a boolean if a field has been set.
+func (o *RealtimeEntryAggregated) HasApiDiscoveryRequestsCount() bool {
+	if o != nil && o.ApiDiscoveryRequestsCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetApiDiscoveryRequestsCount gets a reference to the given int32 and assigns it to the ApiDiscoveryRequestsCount field.
+func (o *RealtimeEntryAggregated) SetApiDiscoveryRequestsCount(v int32) {
+	o.ApiDiscoveryRequestsCount = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o RealtimeEntryAggregated) MarshalJSON() ([]byte, error) {
@@ -8977,8 +9011,8 @@ func (o RealtimeEntryAggregated) MarshalJSON() ([]byte, error) {
 	if o.ComputeExecutionTimeMs != nil {
 		toSerialize["compute_execution_time_ms"] = o.ComputeExecutionTimeMs
 	}
-	if o.ComputeRAMUsed != nil {
-		toSerialize["compute_ram_used"] = o.ComputeRAMUsed
+	if o.ComputeRamUsed != nil {
+		toSerialize["compute_ram_used"] = o.ComputeRamUsed
 	}
 	if o.ComputeRequestTimeMs != nil {
 		toSerialize["compute_request_time_ms"] = o.ComputeRequestTimeMs
@@ -9016,11 +9050,11 @@ func (o RealtimeEntryAggregated) MarshalJSON() ([]byte, error) {
 	if o.Pci != nil {
 		toSerialize["pci"] = o.Pci
 	}
-	if o.HTTP2 != nil {
-		toSerialize["http2"] = o.HTTP2
+	if o.Http2 != nil {
+		toSerialize["http2"] = o.Http2
 	}
-	if o.HTTP3 != nil {
-		toSerialize["http3"] = o.HTTP3
+	if o.Http3 != nil {
+		toSerialize["http3"] = o.Http3
 	}
 	if o.Restarts != nil {
 		toSerialize["restarts"] = o.Restarts
@@ -9190,20 +9224,20 @@ func (o RealtimeEntryAggregated) MarshalJSON() ([]byte, error) {
 	if o.PassTime != nil {
 		toSerialize["pass_time"] = o.PassTime
 	}
-	if o.TLS != nil {
-		toSerialize["tls"] = o.TLS
+	if o.Tls != nil {
+		toSerialize["tls"] = o.Tls
 	}
-	if o.TLSV10 != nil {
-		toSerialize["tls_v10"] = o.TLSV10
+	if o.TlsV10 != nil {
+		toSerialize["tls_v10"] = o.TlsV10
 	}
-	if o.TLSV11 != nil {
-		toSerialize["tls_v11"] = o.TLSV11
+	if o.TlsV11 != nil {
+		toSerialize["tls_v11"] = o.TlsV11
 	}
-	if o.TLSV12 != nil {
-		toSerialize["tls_v12"] = o.TLSV12
+	if o.TlsV12 != nil {
+		toSerialize["tls_v12"] = o.TlsV12
 	}
-	if o.TLSV13 != nil {
-		toSerialize["tls_v13"] = o.TLSV13
+	if o.TlsV13 != nil {
+		toSerialize["tls_v13"] = o.TlsV13
 	}
 	if o.ObjectSize1k != nil {
 		toSerialize["object_size_1k"] = o.ObjectSize1k
@@ -9709,6 +9743,9 @@ func (o RealtimeEntryAggregated) MarshalJSON() ([]byte, error) {
 	if o.ComputeCacheOperationsCount != nil {
 		toSerialize["compute_cache_operations_count"] = o.ComputeCacheOperationsCount
 	}
+	if o.ApiDiscoveryRequestsCount != nil {
+		toSerialize["api_discovery_requests_count"] = o.ApiDiscoveryRequestsCount
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -9990,6 +10027,7 @@ func (o *RealtimeEntryAggregated) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "request_collapse_usable_count")
 		delete(additionalProperties, "request_collapse_unusable_count")
 		delete(additionalProperties, "compute_cache_operations_count")
+		delete(additionalProperties, "api_discovery_requests_count")
 		o.AdditionalProperties = additionalProperties
 	}
 

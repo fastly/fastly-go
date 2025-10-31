@@ -32,8 +32,8 @@ type _MutualAuthenticationData MutualAuthenticationData
 // will change when the set of required properties is changed
 func NewMutualAuthenticationData() *MutualAuthenticationData {
 	this := MutualAuthenticationData{}
-	var resourceType TypeMutualAuthentication = TYPEMUTUALAUTHENTICATION_MUTUAL_AUTHENTICATION
-	this.Type = &resourceType
+	var type_ TypeMutualAuthentication = TYPEMUTUALAUTHENTICATION_MUTUAL_AUTHENTICATION
+	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +42,8 @@ func NewMutualAuthenticationData() *MutualAuthenticationData {
 // but it doesn't guarantee that properties required by API are set
 func NewMutualAuthenticationDataWithDefaults() *MutualAuthenticationData {
 	this := MutualAuthenticationData{}
-	var resourceType TypeMutualAuthentication = TYPEMUTUALAUTHENTICATION_MUTUAL_AUTHENTICATION
-	this.Type = &resourceType
+	var type_ TypeMutualAuthentication = TYPEMUTUALAUTHENTICATION_MUTUAL_AUTHENTICATION
+	this.Type = &type_
 	return &this
 }
 

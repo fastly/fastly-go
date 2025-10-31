@@ -1,20 +1,20 @@
-# ACLEntryAPI
+# AclEntryAPI
 
 > [!NOTE]
 > All URIs are relative to `https://api.fastly.com`
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BulkUpdateACLEntries**](AclEntryAPI.md#BulkUpdateACLEntries) | **PATCH** `/service/{service_id}/acl/{acl_id}/entries` | Update multiple ACL entries
-[**CreateACLEntry**](AclEntryAPI.md#CreateACLEntry) | **POST** `/service/{service_id}/acl/{acl_id}/entry` | Create an ACL entry
-[**DeleteACLEntry**](AclEntryAPI.md#DeleteACLEntry) | **DELETE** `/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}` | Delete an ACL entry
-[**GetACLEntry**](AclEntryAPI.md#GetACLEntry) | **GET** `/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}` | Describe an ACL entry
-[**ListACLEntries**](AclEntryAPI.md#ListACLEntries) | **GET** `/service/{service_id}/acl/{acl_id}/entries` | List ACL entries
-[**UpdateACLEntry**](AclEntryAPI.md#UpdateACLEntry) | **PATCH** `/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}` | Update an ACL entry
+[**BulkUpdateAclEntries**](AclEntryAPI.md#BulkUpdateAclEntries) | **PATCH** `/service/{service_id}/acl/{acl_id}/entries` | Update multiple ACL entries
+[**CreateAclEntry**](AclEntryAPI.md#CreateAclEntry) | **POST** `/service/{service_id}/acl/{acl_id}/entry` | Create an ACL entry
+[**DeleteAclEntry**](AclEntryAPI.md#DeleteAclEntry) | **DELETE** `/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}` | Delete an ACL entry
+[**GetAclEntry**](AclEntryAPI.md#GetAclEntry) | **GET** `/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}` | Describe an ACL entry
+[**ListAclEntries**](AclEntryAPI.md#ListAclEntries) | **GET** `/service/{service_id}/acl/{acl_id}/entries` | List ACL entries
+[**UpdateAclEntry**](AclEntryAPI.md#UpdateAclEntry) | **PATCH** `/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}` | Update an ACL entry
 
 
 
-## BulkUpdateACLEntries
+## BulkUpdateAclEntries
 
 Update multiple ACL entries
 
@@ -33,20 +33,20 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    aclID := "aclId_example" // string | Alphanumeric string identifying a ACL.
-    bulkUpdateACLEntriesRequest := *openapiclient.NewBulkUpdateACLEntriesRequest() // BulkUpdateACLEntriesRequest |  (optional)
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    aclId := "aclId_example" // string | Alphanumeric string identifying a ACL.
+    bulkUpdateAclEntriesRequest := *openapiclient.NewBulkUpdateAclEntriesRequest() // BulkUpdateAclEntriesRequest |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLEntryAPI.BulkUpdateACLEntries(ctx, serviceID, aclID).BulkUpdateACLEntriesRequest(bulkUpdateACLEntriesRequest).Execute()
+    resp, r, err := apiClient.AclEntryAPI.BulkUpdateAclEntries(ctx, serviceId, aclId).BulkUpdateAclEntriesRequest(bulkUpdateAclEntriesRequest).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ACLEntryAPI.BulkUpdateACLEntries`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AclEntryAPI.BulkUpdateAclEntries`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `BulkUpdateACLEntries`: InlineResponse200
-    fmt.Fprintf(os.Stdout, "Response from `ACLEntryAPI.BulkUpdateACLEntries`: %v\n", resp)
+    // response from `BulkUpdateAclEntries`: InlineResponse200
+    fmt.Fprintf(os.Stdout, "Response from `AclEntryAPI.BulkUpdateAclEntries`: %v\n", resp)
 }
 ```
 
@@ -56,17 +56,17 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**aclID** | **string** | Alphanumeric string identifying a ACL. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**aclId** | **string** | Alphanumeric string identifying a ACL. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiBulkUpdateACLEntriesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiBulkUpdateAclEntriesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bulkUpdateACLEntriesRequest** | [**BulkUpdateACLEntriesRequest**](BulkUpdateACLEntriesRequest.md) |  | 
+ **bulkUpdateAclEntriesRequest** | [**BulkUpdateAclEntriesRequest**](BulkUpdateAclEntriesRequest.md) |  | 
 
 ### Return type
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## CreateACLEntry
+## CreateAclEntry
 
 Create an ACL entry
 
@@ -103,20 +103,20 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    aclID := "aclId_example" // string | Alphanumeric string identifying a ACL.
-    aclEntry := *openapiclient.NewACLEntry() // ACLEntry |  (optional)
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    aclId := "aclId_example" // string | Alphanumeric string identifying a ACL.
+    aclEntry := *openapiclient.NewAclEntry() // AclEntry |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLEntryAPI.CreateACLEntry(ctx, serviceID, aclID).ACLEntry(aclEntry).Execute()
+    resp, r, err := apiClient.AclEntryAPI.CreateAclEntry(ctx, serviceId, aclId).AclEntry(aclEntry).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ACLEntryAPI.CreateACLEntry`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AclEntryAPI.CreateAclEntry`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateACLEntry`: ACLEntryResponse
-    fmt.Fprintf(os.Stdout, "Response from `ACLEntryAPI.CreateACLEntry`: %v\n", resp)
+    // response from `CreateAclEntry`: AclEntryResponse
+    fmt.Fprintf(os.Stdout, "Response from `AclEntryAPI.CreateAclEntry`: %v\n", resp)
 }
 ```
 
@@ -126,21 +126,21 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**aclID** | **string** | Alphanumeric string identifying a ACL. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**aclId** | **string** | Alphanumeric string identifying a ACL. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateACLEntryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAclEntryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aclEntry** | [**ACLEntry**](AclEntry.md) |  | 
+ **aclEntry** | [**AclEntry**](AclEntry.md) |  | 
 
 ### Return type
 
-[**ACLEntryResponse**](AclEntryResponse.md)
+[**AclEntryResponse**](AclEntryResponse.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## DeleteACLEntry
+## DeleteAclEntry
 
 Delete an ACL entry
 
@@ -173,20 +173,20 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    aclID := "aclId_example" // string | Alphanumeric string identifying a ACL.
-    aclEntryID := "aclEntryId_example" // string | Alphanumeric string identifying an ACL Entry.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    aclId := "aclId_example" // string | Alphanumeric string identifying a ACL.
+    aclEntryId := "aclEntryId_example" // string | Alphanumeric string identifying an ACL Entry.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLEntryAPI.DeleteACLEntry(ctx, serviceID, aclID, aclEntryID).Execute()
+    resp, r, err := apiClient.AclEntryAPI.DeleteAclEntry(ctx, serviceId, aclId, aclEntryId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ACLEntryAPI.DeleteACLEntry`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AclEntryAPI.DeleteAclEntry`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeleteACLEntry`: InlineResponse200
-    fmt.Fprintf(os.Stdout, "Response from `ACLEntryAPI.DeleteACLEntry`: %v\n", resp)
+    // response from `DeleteAclEntry`: InlineResponse200
+    fmt.Fprintf(os.Stdout, "Response from `AclEntryAPI.DeleteAclEntry`: %v\n", resp)
 }
 ```
 
@@ -196,13 +196,13 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**aclID** | **string** | Alphanumeric string identifying a ACL. | 
-**aclEntryID** | **string** | Alphanumeric string identifying an ACL Entry. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**aclId** | **string** | Alphanumeric string identifying a ACL. | 
+**aclEntryId** | **string** | Alphanumeric string identifying an ACL Entry. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteACLEntryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteAclEntryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## GetACLEntry
+## GetAclEntry
 
 Describe an ACL entry
 
@@ -244,20 +244,20 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    aclID := "aclId_example" // string | Alphanumeric string identifying a ACL.
-    aclEntryID := "aclEntryId_example" // string | Alphanumeric string identifying an ACL Entry.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    aclId := "aclId_example" // string | Alphanumeric string identifying a ACL.
+    aclEntryId := "aclEntryId_example" // string | Alphanumeric string identifying an ACL Entry.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLEntryAPI.GetACLEntry(ctx, serviceID, aclID, aclEntryID).Execute()
+    resp, r, err := apiClient.AclEntryAPI.GetAclEntry(ctx, serviceId, aclId, aclEntryId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ACLEntryAPI.GetACLEntry`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AclEntryAPI.GetAclEntry`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetACLEntry`: ACLEntryResponse
-    fmt.Fprintf(os.Stdout, "Response from `ACLEntryAPI.GetACLEntry`: %v\n", resp)
+    // response from `GetAclEntry`: AclEntryResponse
+    fmt.Fprintf(os.Stdout, "Response from `AclEntryAPI.GetAclEntry`: %v\n", resp)
 }
 ```
 
@@ -267,13 +267,13 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**aclID** | **string** | Alphanumeric string identifying a ACL. | 
-**aclEntryID** | **string** | Alphanumeric string identifying an ACL Entry. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**aclId** | **string** | Alphanumeric string identifying a ACL. | 
+**aclEntryId** | **string** | Alphanumeric string identifying an ACL Entry. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetACLEntryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAclEntryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ACLEntryResponse**](AclEntryResponse.md)
+[**AclEntryResponse**](AclEntryResponse.md)
 
 ### Authorization
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## ListACLEntries
+## ListAclEntries
 
 List ACL entries
 
@@ -315,8 +315,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    aclID := "aclId_example" // string | Alphanumeric string identifying a ACL.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    aclId := "aclId_example" // string | Alphanumeric string identifying a ACL.
     page := int32(1) // int32 | Current page. (optional)
     perPage := int32(20) // int32 | Number of records per page. (optional) (default to 20)
     sort := "created" // string | Field on which to sort. (optional) (default to "created")
@@ -325,13 +325,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLEntryAPI.ListACLEntries(ctx, serviceID, aclID).Page(page).PerPage(perPage).Sort(sort).Direction(direction).Execute()
+    resp, r, err := apiClient.AclEntryAPI.ListAclEntries(ctx, serviceId, aclId).Page(page).PerPage(perPage).Sort(sort).Direction(direction).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ACLEntryAPI.ListACLEntries`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AclEntryAPI.ListAclEntries`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListACLEntries`: []ACLEntryResponse
-    fmt.Fprintf(os.Stdout, "Response from `ACLEntryAPI.ListACLEntries`: %v\n", resp)
+    // response from `ListAclEntries`: []AclEntryResponse
+    fmt.Fprintf(os.Stdout, "Response from `AclEntryAPI.ListAclEntries`: %v\n", resp)
 }
 ```
 
@@ -341,12 +341,12 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**aclID** | **string** | Alphanumeric string identifying a ACL. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**aclId** | **string** | Alphanumeric string identifying a ACL. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListACLEntriesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListAclEntriesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -355,7 +355,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ACLEntryResponse**](AclEntryResponse.md)
+[**[]AclEntryResponse**](AclEntryResponse.md)
 
 ### Authorization
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## UpdateACLEntry
+## UpdateAclEntry
 
 Update an ACL entry
 
@@ -388,21 +388,21 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    aclID := "aclId_example" // string | Alphanumeric string identifying a ACL.
-    aclEntryID := "aclEntryId_example" // string | Alphanumeric string identifying an ACL Entry.
-    aclEntry := *openapiclient.NewACLEntry() // ACLEntry |  (optional)
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    aclId := "aclId_example" // string | Alphanumeric string identifying a ACL.
+    aclEntryId := "aclEntryId_example" // string | Alphanumeric string identifying an ACL Entry.
+    aclEntry := *openapiclient.NewAclEntry() // AclEntry |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ACLEntryAPI.UpdateACLEntry(ctx, serviceID, aclID, aclEntryID).ACLEntry(aclEntry).Execute()
+    resp, r, err := apiClient.AclEntryAPI.UpdateAclEntry(ctx, serviceId, aclId, aclEntryId).AclEntry(aclEntry).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ACLEntryAPI.UpdateACLEntry`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `AclEntryAPI.UpdateAclEntry`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateACLEntry`: ACLEntryResponse
-    fmt.Fprintf(os.Stdout, "Response from `ACLEntryAPI.UpdateACLEntry`: %v\n", resp)
+    // response from `UpdateAclEntry`: AclEntryResponse
+    fmt.Fprintf(os.Stdout, "Response from `AclEntryAPI.UpdateAclEntry`: %v\n", resp)
 }
 ```
 
@@ -412,22 +412,22 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**aclID** | **string** | Alphanumeric string identifying a ACL. | 
-**aclEntryID** | **string** | Alphanumeric string identifying an ACL Entry. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**aclId** | **string** | Alphanumeric string identifying a ACL. | 
+**aclEntryId** | **string** | Alphanumeric string identifying an ACL Entry. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateACLEntryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateAclEntryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **aclEntry** | [**ACLEntry**](AclEntry.md) |  | 
+ **aclEntry** | [**AclEntry**](AclEntry.md) |  | 
 
 ### Return type
 
-[**ACLEntryResponse**](AclEntryResponse.md)
+[**AclEntryResponse**](AclEntryResponse.md)
 
 ### Authorization
 
@@ -439,3 +439,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

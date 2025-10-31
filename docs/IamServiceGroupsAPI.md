@@ -35,18 +35,18 @@ import (
 )
 
 func main() {
-    serviceGroupID := "serviceGroupId_example" // string | Alphanumeric string identifying the service group.
-    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
+    serviceGroupId := "serviceGroupId_example" // string | Alphanumeric string identifying the service group.
+    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamServiceGroupsAPI.AddServiceGroupServices(ctx, serviceGroupID).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.IamServiceGroupsAPI.AddServiceGroupServices(ctx, serviceGroupId).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamServiceGroupsAPI.AddServiceGroupServices`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `AddServiceGroupServices`: map[string]any
+    // response from `AddServiceGroupServices`: map[string]interface{}
     fmt.Fprintf(os.Stdout, "Response from `IamServiceGroupsAPI.AddServiceGroupServices`: %v\n", resp)
 }
 ```
@@ -57,7 +57,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceGroupID** | **string** | Alphanumeric string identifying the service group. | 
+**serviceGroupId** | **string** | Alphanumeric string identifying the service group. | 
 
 ### Other Parameters
 
@@ -66,11 +66,11 @@ Other parameters are passed through a pointer to a apiAddServiceGroupServicesReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]any** |  | 
+ **requestBody** | **map[string]map[string]interface{}** |  | 
 
 ### Return type
 
-**map[string]any**
+**map[string]interface{}**
 
 ### Authorization
 
@@ -103,7 +103,7 @@ import (
 )
 
 func main() {
-    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
+    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -113,7 +113,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamServiceGroupsAPI.CreateAServiceGroup`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateAServiceGroup`: map[string]any
+    // response from `CreateAServiceGroup`: map[string]interface{}
     fmt.Fprintf(os.Stdout, "Response from `IamServiceGroupsAPI.CreateAServiceGroup`: %v\n", resp)
 }
 ```
@@ -129,11 +129,11 @@ Other parameters are passed through a pointer to a apiCreateAServiceGroupRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]any** |  | 
+ **requestBody** | **map[string]map[string]interface{}** |  | 
 
 ### Return type
 
-**map[string]any**
+**map[string]interface{}**
 
 ### Authorization
 
@@ -166,12 +166,12 @@ import (
 )
 
 func main() {
-    serviceGroupID := "serviceGroupId_example" // string | Alphanumeric string identifying the service group.
+    serviceGroupId := "serviceGroupId_example" // string | Alphanumeric string identifying the service group.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamServiceGroupsAPI.DeleteAServiceGroup(ctx, serviceGroupID).Execute()
+    resp, r, err := apiClient.IamServiceGroupsAPI.DeleteAServiceGroup(ctx, serviceGroupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamServiceGroupsAPI.DeleteAServiceGroup`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -185,7 +185,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceGroupID** | **string** | Alphanumeric string identifying the service group. | 
+**serviceGroupId** | **string** | Alphanumeric string identifying the service group. | 
 
 ### Other Parameters
 
@@ -231,17 +231,17 @@ import (
 )
 
 func main() {
-    serviceGroupID := "serviceGroupId_example" // string | Alphanumeric string identifying the service group.
+    serviceGroupId := "serviceGroupId_example" // string | Alphanumeric string identifying the service group.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamServiceGroupsAPI.GetAServiceGroup(ctx, serviceGroupID).Execute()
+    resp, r, err := apiClient.IamServiceGroupsAPI.GetAServiceGroup(ctx, serviceGroupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamServiceGroupsAPI.GetAServiceGroup`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAServiceGroup`: map[string]any
+    // response from `GetAServiceGroup`: map[string]interface{}
     fmt.Fprintf(os.Stdout, "Response from `IamServiceGroupsAPI.GetAServiceGroup`: %v\n", resp)
 }
 ```
@@ -252,7 +252,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceGroupID** | **string** | Alphanumeric string identifying the service group. | 
+**serviceGroupId** | **string** | Alphanumeric string identifying the service group. | 
 
 ### Other Parameters
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]any**
+**map[string]interface{}**
 
 ### Authorization
 
@@ -298,19 +298,19 @@ import (
 )
 
 func main() {
-    serviceGroupID := "serviceGroupId_example" // string | Alphanumeric string identifying the service group.
+    serviceGroupId := "serviceGroupId_example" // string | Alphanumeric string identifying the service group.
     perPage := int32(20) // int32 | Number of records per page. (optional) (default to 20)
     page := int32(1) // int32 | Current page. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamServiceGroupsAPI.ListServiceGroupServices(ctx, serviceGroupID).PerPage(perPage).Page(page).Execute()
+    resp, r, err := apiClient.IamServiceGroupsAPI.ListServiceGroupServices(ctx, serviceGroupId).PerPage(perPage).Page(page).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamServiceGroupsAPI.ListServiceGroupServices`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListServiceGroupServices`: map[string]any
+    // response from `ListServiceGroupServices`: map[string]interface{}
     fmt.Fprintf(os.Stdout, "Response from `IamServiceGroupsAPI.ListServiceGroupServices`: %v\n", resp)
 }
 ```
@@ -321,7 +321,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceGroupID** | **string** | Alphanumeric string identifying the service group. | 
+**serviceGroupId** | **string** | Alphanumeric string identifying the service group. | 
 
 ### Other Parameters
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]any**
+**map[string]interface{}**
 
 ### Authorization
 
@@ -378,7 +378,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `IamServiceGroupsAPI.ListServiceGroups`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListServiceGroups`: map[string]any
+    // response from `ListServiceGroups`: map[string]interface{}
     fmt.Fprintf(os.Stdout, "Response from `IamServiceGroupsAPI.ListServiceGroups`: %v\n", resp)
 }
 ```
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**map[string]any**
+**map[string]interface{}**
 
 ### Authorization
 
@@ -431,13 +431,13 @@ import (
 )
 
 func main() {
-    serviceGroupID := "serviceGroupId_example" // string | Alphanumeric string identifying the service group.
-    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
+    serviceGroupId := "serviceGroupId_example" // string | Alphanumeric string identifying the service group.
+    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamServiceGroupsAPI.RemoveServiceGroupServices(ctx, serviceGroupID).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.IamServiceGroupsAPI.RemoveServiceGroupServices(ctx, serviceGroupId).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamServiceGroupsAPI.RemoveServiceGroupServices`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -451,7 +451,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceGroupID** | **string** | Alphanumeric string identifying the service group. | 
+**serviceGroupId** | **string** | Alphanumeric string identifying the service group. | 
 
 ### Other Parameters
 
@@ -460,7 +460,7 @@ Other parameters are passed through a pointer to a apiRemoveServiceGroupServices
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]any** |  | 
+ **requestBody** | **map[string]map[string]interface{}** |  | 
 
 ### Return type
 
@@ -497,18 +497,18 @@ import (
 )
 
 func main() {
-    serviceGroupID := "serviceGroupId_example" // string | Alphanumeric string identifying the service group.
-    requestBody := map[string]map[string]any{"key": map[string]any(123)} // map[string]map[string]any |  (optional)
+    serviceGroupId := "serviceGroupId_example" // string | Alphanumeric string identifying the service group.
+    requestBody := map[string]map[string]interface{}{"key": map[string]interface{}(123)} // map[string]map[string]interface{} |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.IamServiceGroupsAPI.UpdateAServiceGroup(ctx, serviceGroupID).RequestBody(requestBody).Execute()
+    resp, r, err := apiClient.IamServiceGroupsAPI.UpdateAServiceGroup(ctx, serviceGroupId).RequestBody(requestBody).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `IamServiceGroupsAPI.UpdateAServiceGroup`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateAServiceGroup`: map[string]any
+    // response from `UpdateAServiceGroup`: map[string]interface{}
     fmt.Fprintf(os.Stdout, "Response from `IamServiceGroupsAPI.UpdateAServiceGroup`: %v\n", resp)
 }
 ```
@@ -519,7 +519,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceGroupID** | **string** | Alphanumeric string identifying the service group. | 
+**serviceGroupId** | **string** | Alphanumeric string identifying the service group. | 
 
 ### Other Parameters
 
@@ -528,11 +528,11 @@ Other parameters are passed through a pointer to a apiUpdateAServiceGroupRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **requestBody** | **map[string]map[string]any** |  | 
+ **requestBody** | **map[string]map[string]interface{}** |  | 
 
 ### Return type
 
-**map[string]any**
+**map[string]interface{}**
 
 ### Authorization
 
@@ -544,3 +544,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

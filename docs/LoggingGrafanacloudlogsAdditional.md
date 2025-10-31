@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Format** | Pointer to **string** | A Fastly [log format string](https://www.fastly.com/documentation/guides/integrations/streaming-logs/custom-log-formats/). | [optional] 
 **User** | Pointer to **string** | The Grafana Cloud Logs Dataset you want to log to. | [optional] 
-**URL** | Pointer to **string** | The URL of the Loki instance in your Grafana stack. | [optional] 
+**Url** | Pointer to **string** | The URL of the Loki instance in your Grafana stack. | [optional] 
 **Token** | Pointer to **string** | The Grafana Access Policy token with `logs:write` access scoped to your Loki instance. | [optional] 
 **Index** | Pointer to **string** | The Stream Labels, a JSON string used to identify the stream. | [optional] 
 
@@ -79,30 +79,30 @@ SetUser sets User field to given value.
 
 HasUser returns a boolean if a field has been set.
 
-### GetURL
+### GetUrl
 
-`func (o *LoggingGrafanacloudlogsAdditional) GetURL() string`
+`func (o *LoggingGrafanacloudlogsAdditional) GetUrl() string`
 
-GetURL returns the URL field if non-nil, zero value otherwise.
+GetUrl returns the Url field if non-nil, zero value otherwise.
 
-### GetURLOk
+### GetUrlOk
 
-`func (o *LoggingGrafanacloudlogsAdditional) GetURLOk() (*string, bool)`
+`func (o *LoggingGrafanacloudlogsAdditional) GetUrlOk() (*string, bool)`
 
-GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURL
+### SetUrl
 
-`func (o *LoggingGrafanacloudlogsAdditional) SetURL(v string)`
+`func (o *LoggingGrafanacloudlogsAdditional) SetUrl(v string)`
 
-SetURL sets URL field to given value.
+SetUrl sets Url field to given value.
 
-### HasURL
+### HasUrl
 
-`func (o *LoggingGrafanacloudlogsAdditional) HasURL() bool`
+`func (o *LoggingGrafanacloudlogsAdditional) HasUrl() bool`
 
-HasURL returns a boolean if a field has been set.
+HasUrl returns a boolean if a field has been set.
 
 ### GetToken
 
@@ -156,3 +156,5 @@ HasIndex returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

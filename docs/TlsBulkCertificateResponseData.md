@@ -1,132 +1,134 @@
-# TLSBulkCertificateResponseData
+# TlsBulkCertificateResponseData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTLSBulkCertificate**](TypeTLSBulkCertificate.md) |  | [optional] [default to TYPETLSBULKCERTIFICATE_TLS_BULK_CERTIFICATE]
-**Attributes** | Pointer to [**TLSBulkCertificateResponseAttributes**](TlsBulkCertificateResponseAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**RelationshipsForTLSBulkCertificate**](RelationshipsForTLSBulkCertificate.md) |  | [optional] 
-**ID** | Pointer to **string** |  | [optional] [readonly] 
+**Type** | Pointer to [**TypeTlsBulkCertificate**](TypeTlsBulkCertificate.md) |  | [optional] [default to TYPETLSBULKCERTIFICATE_TLS_BULK_CERTIFICATE]
+**Attributes** | Pointer to [**TlsBulkCertificateResponseAttributes**](TlsBulkCertificateResponseAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**RelationshipsForTlsBulkCertificate**](RelationshipsForTlsBulkCertificate.md) |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
 
 ## Methods
 
-### NewTLSBulkCertificateResponseData
+### NewTlsBulkCertificateResponseData
 
-`func NewTLSBulkCertificateResponseData() *TLSBulkCertificateResponseData`
+`func NewTlsBulkCertificateResponseData() *TlsBulkCertificateResponseData`
 
-NewTLSBulkCertificateResponseData instantiates a new TLSBulkCertificateResponseData object
+NewTlsBulkCertificateResponseData instantiates a new TlsBulkCertificateResponseData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSBulkCertificateResponseDataWithDefaults
+### NewTlsBulkCertificateResponseDataWithDefaults
 
-`func NewTLSBulkCertificateResponseDataWithDefaults() *TLSBulkCertificateResponseData`
+`func NewTlsBulkCertificateResponseDataWithDefaults() *TlsBulkCertificateResponseData`
 
-NewTLSBulkCertificateResponseDataWithDefaults instantiates a new TLSBulkCertificateResponseData object
+NewTlsBulkCertificateResponseDataWithDefaults instantiates a new TlsBulkCertificateResponseData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *TLSBulkCertificateResponseData) GetType() TypeTLSBulkCertificate`
+`func (o *TlsBulkCertificateResponseData) GetType() TypeTlsBulkCertificate`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *TLSBulkCertificateResponseData) GetTypeOk() (*TypeTLSBulkCertificate, bool)`
+`func (o *TlsBulkCertificateResponseData) GetTypeOk() (*TypeTlsBulkCertificate, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *TLSBulkCertificateResponseData) SetType(v TypeTLSBulkCertificate)`
+`func (o *TlsBulkCertificateResponseData) SetType(v TypeTlsBulkCertificate)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *TLSBulkCertificateResponseData) HasType() bool`
+`func (o *TlsBulkCertificateResponseData) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *TLSBulkCertificateResponseData) GetAttributes() TLSBulkCertificateResponseAttributes`
+`func (o *TlsBulkCertificateResponseData) GetAttributes() TlsBulkCertificateResponseAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TLSBulkCertificateResponseData) GetAttributesOk() (*TLSBulkCertificateResponseAttributes, bool)`
+`func (o *TlsBulkCertificateResponseData) GetAttributesOk() (*TlsBulkCertificateResponseAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TLSBulkCertificateResponseData) SetAttributes(v TLSBulkCertificateResponseAttributes)`
+`func (o *TlsBulkCertificateResponseData) SetAttributes(v TlsBulkCertificateResponseAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 ### HasAttributes
 
-`func (o *TLSBulkCertificateResponseData) HasAttributes() bool`
+`func (o *TlsBulkCertificateResponseData) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *TLSBulkCertificateResponseData) GetRelationships() RelationshipsForTLSBulkCertificate`
+`func (o *TlsBulkCertificateResponseData) GetRelationships() RelationshipsForTlsBulkCertificate`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TLSBulkCertificateResponseData) GetRelationshipsOk() (*RelationshipsForTLSBulkCertificate, bool)`
+`func (o *TlsBulkCertificateResponseData) GetRelationshipsOk() (*RelationshipsForTlsBulkCertificate, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TLSBulkCertificateResponseData) SetRelationships(v RelationshipsForTLSBulkCertificate)`
+`func (o *TlsBulkCertificateResponseData) SetRelationships(v RelationshipsForTlsBulkCertificate)`
 
 SetRelationships sets Relationships field to given value.
 
 ### HasRelationships
 
-`func (o *TLSBulkCertificateResponseData) HasRelationships() bool`
+`func (o *TlsBulkCertificateResponseData) HasRelationships() bool`
 
 HasRelationships returns a boolean if a field has been set.
 
-### GetID
+### GetId
 
-`func (o *TLSBulkCertificateResponseData) GetID() string`
+`func (o *TlsBulkCertificateResponseData) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *TLSBulkCertificateResponseData) GetIDOk() (*string, bool)`
+`func (o *TlsBulkCertificateResponseData) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *TLSBulkCertificateResponseData) SetID(v string)`
+`func (o *TlsBulkCertificateResponseData) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *TLSBulkCertificateResponseData) HasID() bool`
+`func (o *TlsBulkCertificateResponseData) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

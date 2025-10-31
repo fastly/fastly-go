@@ -28,14 +28,14 @@ type AutomationTokenResponse struct {
 	Scope *string `json:"scope,omitempty"`
 	// (optional) A UTC timestamp of when the token will expire.
 	ExpiresAt  *string             `json:"expires_at,omitempty"`
-	ID         *ReadOnlyID         `json:"id,omitempty"`
-	CustomerID *ReadOnlyCustomerID `json:"customer_id,omitempty"`
+	Id         *ReadOnlyId         `json:"id,omitempty"`
+	CustomerId *ReadOnlyCustomerId `json:"customer_id,omitempty"`
 	// The IP address of the client that last used the token.
-	IP *string `json:"ip,omitempty"`
+	Ip *string `json:"ip,omitempty"`
 	// The User-Agent header of the client that last used the token.
 	UserAgent *string `json:"user_agent,omitempty"`
 	// Indicates whether TLS access is enabled for the token.
-	TLSAccess *bool `json:"tls_access,omitempty"`
+	TlsAccess *bool `json:"tls_access,omitempty"`
 	// A UTC timestamp of when the token was last used.
 	LastUsedAt *time.Time `json:"last_used_at,omitempty"`
 	// A UTC timestamp of when the token was created.
@@ -226,100 +226,100 @@ func (o *AutomationTokenResponse) SetExpiresAt(v string) {
 	o.ExpiresAt = &v
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *AutomationTokenResponse) GetID() ReadOnlyID {
-	if o == nil || o.ID == nil {
-		var ret ReadOnlyID
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *AutomationTokenResponse) GetId() ReadOnlyId {
+	if o == nil || o.Id == nil {
+		var ret ReadOnlyId
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AutomationTokenResponse) GetIDOk() (*ReadOnlyID, bool) {
-	if o == nil || o.ID == nil {
+func (o *AutomationTokenResponse) GetIdOk() (*ReadOnlyId, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *AutomationTokenResponse) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *AutomationTokenResponse) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given ReadOnlyID and assigns it to the ID field.
-func (o *AutomationTokenResponse) SetID(v ReadOnlyID) {
-	o.ID = &v
+// SetId gets a reference to the given ReadOnlyId and assigns it to the Id field.
+func (o *AutomationTokenResponse) SetId(v ReadOnlyId) {
+	o.Id = &v
 }
 
-// GetCustomerID returns the CustomerID field value if set, zero value otherwise.
-func (o *AutomationTokenResponse) GetCustomerID() ReadOnlyCustomerID {
-	if o == nil || o.CustomerID == nil {
-		var ret ReadOnlyCustomerID
+// GetCustomerId returns the CustomerId field value if set, zero value otherwise.
+func (o *AutomationTokenResponse) GetCustomerId() ReadOnlyCustomerId {
+	if o == nil || o.CustomerId == nil {
+		var ret ReadOnlyCustomerId
 		return ret
 	}
-	return *o.CustomerID
+	return *o.CustomerId
 }
 
-// GetCustomerIDOk returns a tuple with the CustomerID field value if set, nil otherwise
+// GetCustomerIdOk returns a tuple with the CustomerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AutomationTokenResponse) GetCustomerIDOk() (*ReadOnlyCustomerID, bool) {
-	if o == nil || o.CustomerID == nil {
+func (o *AutomationTokenResponse) GetCustomerIdOk() (*ReadOnlyCustomerId, bool) {
+	if o == nil || o.CustomerId == nil {
 		return nil, false
 	}
-	return o.CustomerID, true
+	return o.CustomerId, true
 }
 
-// HasCustomerID returns a boolean if a field has been set.
-func (o *AutomationTokenResponse) HasCustomerID() bool {
-	if o != nil && o.CustomerID != nil {
+// HasCustomerId returns a boolean if a field has been set.
+func (o *AutomationTokenResponse) HasCustomerId() bool {
+	if o != nil && o.CustomerId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerID gets a reference to the given ReadOnlyCustomerID and assigns it to the CustomerID field.
-func (o *AutomationTokenResponse) SetCustomerID(v ReadOnlyCustomerID) {
-	o.CustomerID = &v
+// SetCustomerId gets a reference to the given ReadOnlyCustomerId and assigns it to the CustomerId field.
+func (o *AutomationTokenResponse) SetCustomerId(v ReadOnlyCustomerId) {
+	o.CustomerId = &v
 }
 
-// GetIP returns the IP field value if set, zero value otherwise.
-func (o *AutomationTokenResponse) GetIP() string {
-	if o == nil || o.IP == nil {
+// GetIp returns the Ip field value if set, zero value otherwise.
+func (o *AutomationTokenResponse) GetIp() string {
+	if o == nil || o.Ip == nil {
 		var ret string
 		return ret
 	}
-	return *o.IP
+	return *o.Ip
 }
 
-// GetIPOk returns a tuple with the IP field value if set, nil otherwise
+// GetIpOk returns a tuple with the Ip field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AutomationTokenResponse) GetIPOk() (*string, bool) {
-	if o == nil || o.IP == nil {
+func (o *AutomationTokenResponse) GetIpOk() (*string, bool) {
+	if o == nil || o.Ip == nil {
 		return nil, false
 	}
-	return o.IP, true
+	return o.Ip, true
 }
 
-// HasIP returns a boolean if a field has been set.
-func (o *AutomationTokenResponse) HasIP() bool {
-	if o != nil && o.IP != nil {
+// HasIp returns a boolean if a field has been set.
+func (o *AutomationTokenResponse) HasIp() bool {
+	if o != nil && o.Ip != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetIP gets a reference to the given string and assigns it to the IP field.
-func (o *AutomationTokenResponse) SetIP(v string) {
-	o.IP = &v
+// SetIp gets a reference to the given string and assigns it to the Ip field.
+func (o *AutomationTokenResponse) SetIp(v string) {
+	o.Ip = &v
 }
 
 // GetUserAgent returns the UserAgent field value if set, zero value otherwise.
@@ -354,36 +354,36 @@ func (o *AutomationTokenResponse) SetUserAgent(v string) {
 	o.UserAgent = &v
 }
 
-// GetTLSAccess returns the TLSAccess field value if set, zero value otherwise.
-func (o *AutomationTokenResponse) GetTLSAccess() bool {
-	if o == nil || o.TLSAccess == nil {
+// GetTlsAccess returns the TlsAccess field value if set, zero value otherwise.
+func (o *AutomationTokenResponse) GetTlsAccess() bool {
+	if o == nil || o.TlsAccess == nil {
 		var ret bool
 		return ret
 	}
-	return *o.TLSAccess
+	return *o.TlsAccess
 }
 
-// GetTLSAccessOk returns a tuple with the TLSAccess field value if set, nil otherwise
+// GetTlsAccessOk returns a tuple with the TlsAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AutomationTokenResponse) GetTLSAccessOk() (*bool, bool) {
-	if o == nil || o.TLSAccess == nil {
+func (o *AutomationTokenResponse) GetTlsAccessOk() (*bool, bool) {
+	if o == nil || o.TlsAccess == nil {
 		return nil, false
 	}
-	return o.TLSAccess, true
+	return o.TlsAccess, true
 }
 
-// HasTLSAccess returns a boolean if a field has been set.
-func (o *AutomationTokenResponse) HasTLSAccess() bool {
-	if o != nil && o.TLSAccess != nil {
+// HasTlsAccess returns a boolean if a field has been set.
+func (o *AutomationTokenResponse) HasTlsAccess() bool {
+	if o != nil && o.TlsAccess != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSAccess gets a reference to the given bool and assigns it to the TLSAccess field.
-func (o *AutomationTokenResponse) SetTLSAccess(v bool) {
-	o.TLSAccess = &v
+// SetTlsAccess gets a reference to the given bool and assigns it to the TlsAccess field.
+func (o *AutomationTokenResponse) SetTlsAccess(v bool) {
+	o.TlsAccess = &v
 }
 
 // GetLastUsedAt returns the LastUsedAt field value if set, zero value otherwise.
@@ -469,20 +469,20 @@ func (o AutomationTokenResponse) MarshalJSON() ([]byte, error) {
 	if o.ExpiresAt != nil {
 		toSerialize["expires_at"] = o.ExpiresAt
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
-	if o.CustomerID != nil {
-		toSerialize["customer_id"] = o.CustomerID
+	if o.CustomerId != nil {
+		toSerialize["customer_id"] = o.CustomerId
 	}
-	if o.IP != nil {
-		toSerialize["ip"] = o.IP
+	if o.Ip != nil {
+		toSerialize["ip"] = o.Ip
 	}
 	if o.UserAgent != nil {
 		toSerialize["user_agent"] = o.UserAgent
 	}
-	if o.TLSAccess != nil {
-		toSerialize["tls_access"] = o.TLSAccess
+	if o.TlsAccess != nil {
+		toSerialize["tls_access"] = o.TlsAccess
 	}
 	if o.LastUsedAt != nil {
 		toSerialize["last_used_at"] = o.LastUsedAt

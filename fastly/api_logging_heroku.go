@@ -36,11 +36,11 @@ type LoggingHerokuAPI interface {
 		Create a Heroku for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogHerokuRequest
 	*/
-	CreateLogHeroku(ctx context.Context, serviceID string, versionID int32) APICreateLogHerokuRequest
+	CreateLogHeroku(ctx context.Context, serviceId string, versionId int32) APICreateLogHerokuRequest
 
 	// CreateLogHerokuExecute executes the request
 	//  @return LoggingHerokuResponse
@@ -52,12 +52,12 @@ type LoggingHerokuAPI interface {
 		Delete the Heroku for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingHerokuName The name for the real-time logging configuration.
 		 @return APIDeleteLogHerokuRequest
 	*/
-	DeleteLogHeroku(ctx context.Context, serviceID string, versionID int32, loggingHerokuName string) APIDeleteLogHerokuRequest
+	DeleteLogHeroku(ctx context.Context, serviceId string, versionId int32, loggingHerokuName string) APIDeleteLogHerokuRequest
 
 	// DeleteLogHerokuExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingHerokuAPI interface {
 		Get the Heroku for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingHerokuName The name for the real-time logging configuration.
 		 @return APIGetLogHerokuRequest
 	*/
-	GetLogHeroku(ctx context.Context, serviceID string, versionID int32, loggingHerokuName string) APIGetLogHerokuRequest
+	GetLogHeroku(ctx context.Context, serviceId string, versionId int32, loggingHerokuName string) APIGetLogHerokuRequest
 
 	// GetLogHerokuExecute executes the request
 	//  @return LoggingHerokuResponse
@@ -86,11 +86,11 @@ type LoggingHerokuAPI interface {
 		List all of the Herokus for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogHerokuRequest
 	*/
-	ListLogHeroku(ctx context.Context, serviceID string, versionID int32) APIListLogHerokuRequest
+	ListLogHeroku(ctx context.Context, serviceId string, versionId int32) APIListLogHerokuRequest
 
 	// ListLogHerokuExecute executes the request
 	//  @return []LoggingHerokuResponse
@@ -102,12 +102,12 @@ type LoggingHerokuAPI interface {
 		Update the Heroku for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingHerokuName The name for the real-time logging configuration.
 		 @return APIUpdateLogHerokuRequest
 	*/
-	UpdateLogHeroku(ctx context.Context, serviceID string, versionID int32, loggingHerokuName string) APIUpdateLogHerokuRequest
+	UpdateLogHeroku(ctx context.Context, serviceId string, versionId int32, loggingHerokuName string) APIUpdateLogHerokuRequest
 
 	// UpdateLogHerokuExecute executes the request
 	//  @return LoggingHerokuResponse
@@ -121,8 +121,8 @@ type LoggingHerokuAPIService service
 type APICreateLogHerokuRequest struct {
 	ctx                 context.Context
 	APIService          LoggingHerokuAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -175,8 +175,8 @@ func (r *APICreateLogHerokuRequest) Token(token string) *APICreateLogHerokuReque
 	return r
 }
 
-// URL The URL to stream logs to.
-func (r *APICreateLogHerokuRequest) URL(url string) *APICreateLogHerokuRequest {
+// Url The URL to stream logs to.
+func (r *APICreateLogHerokuRequest) Url(url string) *APICreateLogHerokuRequest {
 	r.url = &url
 	return r
 }
@@ -192,16 +192,16 @@ CreateLogHeroku Create a Heroku log endpoint
 Create a Heroku for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogHerokuRequest
 */
-func (a *LoggingHerokuAPIService) CreateLogHeroku(ctx context.Context, serviceID string, versionID int32) APICreateLogHerokuRequest {
+func (a *LoggingHerokuAPIService) CreateLogHeroku(ctx context.Context, serviceId string, versionId int32) APICreateLogHerokuRequest {
 	return APICreateLogHerokuRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -221,8 +221,8 @@ func (a *LoggingHerokuAPIService) CreateLogHerokuExecute(r APICreateLogHerokuReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/heroku"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -337,8 +337,8 @@ func (a *LoggingHerokuAPIService) CreateLogHerokuExecute(r APICreateLogHerokuReq
 type APIDeleteLogHerokuRequest struct {
 	ctx               context.Context
 	APIService        LoggingHerokuAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	loggingHerokuName string
 }
 
@@ -353,17 +353,17 @@ DeleteLogHeroku Delete the Heroku log endpoint
 Delete the Heroku for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingHerokuName The name for the real-time logging configuration.
  @return APIDeleteLogHerokuRequest
 */
-func (a *LoggingHerokuAPIService) DeleteLogHeroku(ctx context.Context, serviceID string, versionID int32, loggingHerokuName string) APIDeleteLogHerokuRequest {
+func (a *LoggingHerokuAPIService) DeleteLogHeroku(ctx context.Context, serviceId string, versionId int32, loggingHerokuName string) APIDeleteLogHerokuRequest {
 	return APIDeleteLogHerokuRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingHerokuName: loggingHerokuName,
 	}
 }
@@ -384,8 +384,8 @@ func (a *LoggingHerokuAPIService) DeleteLogHerokuExecute(r APIDeleteLogHerokuReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/heroku/{logging_heroku_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_heroku_name"+"}", gourl.PathEscape(parameterToString(r.loggingHerokuName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -477,8 +477,8 @@ func (a *LoggingHerokuAPIService) DeleteLogHerokuExecute(r APIDeleteLogHerokuReq
 type APIGetLogHerokuRequest struct {
 	ctx               context.Context
 	APIService        LoggingHerokuAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	loggingHerokuName string
 }
 
@@ -493,17 +493,17 @@ GetLogHeroku Get a Heroku log endpoint
 Get the Heroku for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingHerokuName The name for the real-time logging configuration.
  @return APIGetLogHerokuRequest
 */
-func (a *LoggingHerokuAPIService) GetLogHeroku(ctx context.Context, serviceID string, versionID int32, loggingHerokuName string) APIGetLogHerokuRequest {
+func (a *LoggingHerokuAPIService) GetLogHeroku(ctx context.Context, serviceId string, versionId int32, loggingHerokuName string) APIGetLogHerokuRequest {
 	return APIGetLogHerokuRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingHerokuName: loggingHerokuName,
 	}
 }
@@ -524,8 +524,8 @@ func (a *LoggingHerokuAPIService) GetLogHerokuExecute(r APIGetLogHerokuRequest) 
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/heroku/{logging_heroku_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_heroku_name"+"}", gourl.PathEscape(parameterToString(r.loggingHerokuName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -617,8 +617,8 @@ func (a *LoggingHerokuAPIService) GetLogHerokuExecute(r APIGetLogHerokuRequest) 
 type APIListLogHerokuRequest struct {
 	ctx        context.Context
 	APIService LoggingHerokuAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -632,16 +632,16 @@ ListLogHeroku List Heroku log endpoints
 List all of the Herokus for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogHerokuRequest
 */
-func (a *LoggingHerokuAPIService) ListLogHeroku(ctx context.Context, serviceID string, versionID int32) APIListLogHerokuRequest {
+func (a *LoggingHerokuAPIService) ListLogHeroku(ctx context.Context, serviceId string, versionId int32) APIListLogHerokuRequest {
 	return APIListLogHerokuRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -661,8 +661,8 @@ func (a *LoggingHerokuAPIService) ListLogHerokuExecute(r APIListLogHerokuRequest
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/heroku"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -753,8 +753,8 @@ func (a *LoggingHerokuAPIService) ListLogHerokuExecute(r APIListLogHerokuRequest
 type APIUpdateLogHerokuRequest struct {
 	ctx                 context.Context
 	APIService          LoggingHerokuAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingHerokuName   string
 	name                *string
 	placement           *string
@@ -808,8 +808,8 @@ func (r *APIUpdateLogHerokuRequest) Token(token string) *APIUpdateLogHerokuReque
 	return r
 }
 
-// URL The URL to stream logs to.
-func (r *APIUpdateLogHerokuRequest) URL(url string) *APIUpdateLogHerokuRequest {
+// Url The URL to stream logs to.
+func (r *APIUpdateLogHerokuRequest) Url(url string) *APIUpdateLogHerokuRequest {
 	r.url = &url
 	return r
 }
@@ -825,17 +825,17 @@ UpdateLogHeroku Update the Heroku log endpoint
 Update the Heroku for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingHerokuName The name for the real-time logging configuration.
  @return APIUpdateLogHerokuRequest
 */
-func (a *LoggingHerokuAPIService) UpdateLogHeroku(ctx context.Context, serviceID string, versionID int32, loggingHerokuName string) APIUpdateLogHerokuRequest {
+func (a *LoggingHerokuAPIService) UpdateLogHeroku(ctx context.Context, serviceId string, versionId int32, loggingHerokuName string) APIUpdateLogHerokuRequest {
 	return APIUpdateLogHerokuRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingHerokuName: loggingHerokuName,
 	}
 }
@@ -856,8 +856,8 @@ func (a *LoggingHerokuAPIService) UpdateLogHerokuExecute(r APIUpdateLogHerokuReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/heroku/{logging_heroku_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_heroku_name"+"}", gourl.PathEscape(parameterToString(r.loggingHerokuName, "")))
 
 	localVarHeaderParams := make(map[string]string)

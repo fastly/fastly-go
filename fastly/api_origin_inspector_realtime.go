@@ -36,10 +36,10 @@ type OriginInspectorRealtimeAPI interface {
 		Get data for the 120 seconds preceding the latest timestamp available for a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetOriginInspectorLast120SecondsRequest
 	*/
-	GetOriginInspectorLast120Seconds(ctx context.Context, serviceID string) APIGetOriginInspectorLast120SecondsRequest
+	GetOriginInspectorLast120Seconds(ctx context.Context, serviceId string) APIGetOriginInspectorLast120SecondsRequest
 
 	// GetOriginInspectorLast120SecondsExecute executes the request
 	//  @return OriginInspector
@@ -51,11 +51,11 @@ type OriginInspectorRealtimeAPI interface {
 		Get data for the `max_entries` seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @param maxEntries Maximum number of results to display.
 		 @return APIGetOriginInspectorLastMaxEntriesRequest
 	*/
-	GetOriginInspectorLastMaxEntries(ctx context.Context, serviceID string, maxEntries int32) APIGetOriginInspectorLastMaxEntriesRequest
+	GetOriginInspectorLastMaxEntries(ctx context.Context, serviceId string, maxEntries int32) APIGetOriginInspectorLastMaxEntriesRequest
 
 	// GetOriginInspectorLastMaxEntriesExecute executes the request
 	//  @return OriginInspector
@@ -69,11 +69,11 @@ type OriginInspectorRealtimeAPI interface {
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @param startTimestamp Timestamp in seconds (Unix epoch time).
 		 @return APIGetOriginInspectorLastSecondRequest
 	*/
-	GetOriginInspectorLastSecond(ctx context.Context, serviceID string, startTimestamp int32) APIGetOriginInspectorLastSecondRequest
+	GetOriginInspectorLastSecond(ctx context.Context, serviceId string, startTimestamp int32) APIGetOriginInspectorLastSecondRequest
 
 	// GetOriginInspectorLastSecondExecute executes the request
 	//  @return OriginInspector
@@ -87,7 +87,7 @@ type OriginInspectorRealtimeAPIService service
 type APIGetOriginInspectorLast120SecondsRequest struct {
 	ctx        context.Context
 	APIService OriginInspectorRealtimeAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -101,14 +101,14 @@ GetOriginInspectorLast120Seconds Get real-time origin data for the last 120 seco
 Get data for the 120 seconds preceding the latest timestamp available for a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetOriginInspectorLast120SecondsRequest
 */
-func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLast120Seconds(ctx context.Context, serviceID string) APIGetOriginInspectorLast120SecondsRequest {
+func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLast120Seconds(ctx context.Context, serviceId string) APIGetOriginInspectorLast120SecondsRequest {
 	return APIGetOriginInspectorLast120SecondsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -128,7 +128,7 @@ func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLast120SecondsExec
 	}
 
 	localVarPath := localBasePath + "/v1/origins/{service_id}/ts/h"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -219,7 +219,7 @@ func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLast120SecondsExec
 type APIGetOriginInspectorLastMaxEntriesRequest struct {
 	ctx        context.Context
 	APIService OriginInspectorRealtimeAPI
-	serviceID  string
+	serviceId  string
 	maxEntries int32
 }
 
@@ -234,15 +234,15 @@ GetOriginInspectorLastMaxEntries Get a limited number of real-time origin data e
 Get data for the `max_entries` seconds preceding the latest timestamp available for a service, up to a maximum of 120 entries.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @param maxEntries Maximum number of results to display.
  @return APIGetOriginInspectorLastMaxEntriesRequest
 */
-func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastMaxEntries(ctx context.Context, serviceID string, maxEntries int32) APIGetOriginInspectorLastMaxEntriesRequest {
+func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastMaxEntries(ctx context.Context, serviceId string, maxEntries int32) APIGetOriginInspectorLastMaxEntriesRequest {
 	return APIGetOriginInspectorLastMaxEntriesRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 		maxEntries: maxEntries,
 	}
 }
@@ -263,7 +263,7 @@ func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastMaxEntriesExec
 	}
 
 	localVarPath := localBasePath + "/v1/origins/{service_id}/ts/h/limit/{max_entries}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"max_entries"+"}", gourl.PathEscape(parameterToString(r.maxEntries, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -355,7 +355,7 @@ func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastMaxEntriesExec
 type APIGetOriginInspectorLastSecondRequest struct {
 	ctx            context.Context
 	APIService     OriginInspectorRealtimeAPI
-	serviceID      string
+	serviceId      string
 	startTimestamp int32
 }
 
@@ -372,15 +372,15 @@ Due to processing latency, the earliest entry in the response dataset may be ear
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @param startTimestamp Timestamp in seconds (Unix epoch time).
  @return APIGetOriginInspectorLastSecondRequest
 */
-func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastSecond(ctx context.Context, serviceID string, startTimestamp int32) APIGetOriginInspectorLastSecondRequest {
+func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastSecond(ctx context.Context, serviceId string, startTimestamp int32) APIGetOriginInspectorLastSecondRequest {
 	return APIGetOriginInspectorLastSecondRequest{
 		APIService:     a,
 		ctx:            ctx,
-		serviceID:      serviceID,
+		serviceId:      serviceId,
 		startTimestamp: startTimestamp,
 	}
 }
@@ -401,7 +401,7 @@ func (a *OriginInspectorRealtimeAPIService) GetOriginInspectorLastSecondExecute(
 	}
 
 	localVarPath := localBasePath + "/v1/origins/{service_id}/ts/{start_timestamp}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"start_timestamp"+"}", gourl.PathEscape(parameterToString(r.startTimestamp, "")))
 
 	localVarHeaderParams := make(map[string]string)

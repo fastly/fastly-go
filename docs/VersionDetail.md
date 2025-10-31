@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **Settings** | Pointer to [**VersionDetailSettings**](VersionDetailSettings.md) |  | [optional] 
 **Snippets** | Pointer to [**[]SchemasSnippetResponse**](SchemasSnippetResponse.md) | List of VCL snippets for this service. | [optional] 
 **Vcls** | Pointer to [**[]SchemasVclResponse**](SchemasVclResponse.md) | List of VCL files for this service. | [optional] 
-**Wordpress** | Pointer to **[]map[string]any** | A list of Wordpress rules with this service. | [optional] 
+**Wordpress** | Pointer to **[]map[string]interface{}** | A list of Wordpress rules with this service. | [optional] 
 
 ## Methods
 
@@ -365,20 +365,20 @@ HasVcls returns a boolean if a field has been set.
 
 ### GetWordpress
 
-`func (o *VersionDetail) GetWordpress() []*map[string]any`
+`func (o *VersionDetail) GetWordpress() []*map[string]interface{}`
 
 GetWordpress returns the Wordpress field if non-nil, zero value otherwise.
 
 ### GetWordpressOk
 
-`func (o *VersionDetail) GetWordpressOk() (*[]*map[string]any, bool)`
+`func (o *VersionDetail) GetWordpressOk() (*[]*map[string]interface{}, bool)`
 
 GetWordpressOk returns a tuple with the Wordpress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWordpress
 
-`func (o *VersionDetail) SetWordpress(v []*map[string]any)`
+`func (o *VersionDetail) SetWordpress(v []*map[string]interface{})`
 
 SetWordpress sets Wordpress field to given value.
 
@@ -390,3 +390,5 @@ HasWordpress returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

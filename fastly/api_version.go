@@ -36,11 +36,11 @@ type VersionAPI interface {
 		Activate the current version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIActivateServiceVersionRequest
 	*/
-	ActivateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIActivateServiceVersionRequest
+	ActivateServiceVersion(ctx context.Context, serviceId string, versionId int32) APIActivateServiceVersionRequest
 
 	// ActivateServiceVersionExecute executes the request
 	//  @return VersionResponse
@@ -52,12 +52,12 @@ type VersionAPI interface {
 		Activate a version on a given environment, i.e. "staging"
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param environmentName
 		 @return APIActivateServiceVersionEnvironmentRequest
 	*/
-	ActivateServiceVersionEnvironment(ctx context.Context, serviceID string, versionID int32, environmentName EnvironmentName) APIActivateServiceVersionEnvironmentRequest
+	ActivateServiceVersionEnvironment(ctx context.Context, serviceId string, versionId int32, environmentName EnvironmentName) APIActivateServiceVersionEnvironmentRequest
 
 	// ActivateServiceVersionEnvironmentExecute executes the request
 	//  @return VersionResponse
@@ -69,11 +69,11 @@ type VersionAPI interface {
 		Clone the current configuration into a new version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICloneServiceVersionRequest
 	*/
-	CloneServiceVersion(ctx context.Context, serviceID string, versionID int32) APICloneServiceVersionRequest
+	CloneServiceVersion(ctx context.Context, serviceId string, versionId int32) APICloneServiceVersionRequest
 
 	// CloneServiceVersionExecute executes the request
 	//  @return Version
@@ -85,10 +85,10 @@ type VersionAPI interface {
 		Create a version for a particular service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APICreateServiceVersionRequest
 	*/
-	CreateServiceVersion(ctx context.Context, serviceID string) APICreateServiceVersionRequest
+	CreateServiceVersion(ctx context.Context, serviceId string) APICreateServiceVersionRequest
 
 	// CreateServiceVersionExecute executes the request
 	//  @return VersionCreateResponse
@@ -100,11 +100,11 @@ type VersionAPI interface {
 		Deactivate the current version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIDeactivateServiceVersionRequest
 	*/
-	DeactivateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIDeactivateServiceVersionRequest
+	DeactivateServiceVersion(ctx context.Context, serviceId string, versionId int32) APIDeactivateServiceVersionRequest
 
 	// DeactivateServiceVersionExecute executes the request
 	//  @return VersionResponse
@@ -116,12 +116,12 @@ type VersionAPI interface {
 		Deactivate the current version on a given environment, i.e. "staging"
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param environmentName
 		 @return APIDeactivateServiceVersionEnvironmentRequest
 	*/
-	DeactivateServiceVersionEnvironment(ctx context.Context, serviceID string, versionID int32, environmentName EnvironmentName) APIDeactivateServiceVersionEnvironmentRequest
+	DeactivateServiceVersionEnvironment(ctx context.Context, serviceId string, versionId int32, environmentName EnvironmentName) APIDeactivateServiceVersionEnvironmentRequest
 
 	// DeactivateServiceVersionEnvironmentExecute executes the request
 	//  @return VersionResponse
@@ -133,11 +133,11 @@ type VersionAPI interface {
 		Get the version for a particular service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIGetServiceVersionRequest
 	*/
-	GetServiceVersion(ctx context.Context, serviceID string, versionID int32) APIGetServiceVersionRequest
+	GetServiceVersion(ctx context.Context, serviceId string, versionId int32) APIGetServiceVersionRequest
 
 	// GetServiceVersionExecute executes the request
 	//  @return VersionResponse
@@ -149,10 +149,10 @@ type VersionAPI interface {
 		List the versions for a particular service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIListServiceVersionsRequest
 	*/
-	ListServiceVersions(ctx context.Context, serviceID string) APIListServiceVersionsRequest
+	ListServiceVersions(ctx context.Context, serviceId string) APIListServiceVersionsRequest
 
 	// ListServiceVersionsExecute executes the request
 	//  @return []VersionResponse
@@ -164,11 +164,11 @@ type VersionAPI interface {
 		Locks the specified version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APILockServiceVersionRequest
 	*/
-	LockServiceVersion(ctx context.Context, serviceID string, versionID int32) APILockServiceVersionRequest
+	LockServiceVersion(ctx context.Context, serviceId string, versionId int32) APILockServiceVersionRequest
 
 	// LockServiceVersionExecute executes the request
 	//  @return Version
@@ -180,11 +180,11 @@ type VersionAPI interface {
 		Update a particular version for a particular service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIUpdateServiceVersionRequest
 	*/
-	UpdateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIUpdateServiceVersionRequest
+	UpdateServiceVersion(ctx context.Context, serviceId string, versionId int32) APIUpdateServiceVersionRequest
 
 	// UpdateServiceVersionExecute executes the request
 	//  @return VersionResponse
@@ -196,11 +196,11 @@ type VersionAPI interface {
 		Validate the version for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIValidateServiceVersionRequest
 	*/
-	ValidateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIValidateServiceVersionRequest
+	ValidateServiceVersion(ctx context.Context, serviceId string, versionId int32) APIValidateServiceVersionRequest
 
 	// ValidateServiceVersionExecute executes the request
 	//  @return InlineResponse200
@@ -214,8 +214,8 @@ type VersionAPIService service
 type APIActivateServiceVersionRequest struct {
 	ctx        context.Context
 	APIService VersionAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -229,16 +229,16 @@ ActivateServiceVersion Activate a service version
 Activate the current version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIActivateServiceVersionRequest
 */
-func (a *VersionAPIService) ActivateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIActivateServiceVersionRequest {
+func (a *VersionAPIService) ActivateServiceVersion(ctx context.Context, serviceId string, versionId int32) APIActivateServiceVersionRequest {
 	return APIActivateServiceVersionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -258,8 +258,8 @@ func (a *VersionAPIService) ActivateServiceVersionExecute(r APIActivateServiceVe
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/activate"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -350,8 +350,8 @@ func (a *VersionAPIService) ActivateServiceVersionExecute(r APIActivateServiceVe
 type APIActivateServiceVersionEnvironmentRequest struct {
 	ctx             context.Context
 	APIService      VersionAPI
-	serviceID       string
-	versionID       int32
+	serviceId       string
+	versionId       int32
 	environmentName EnvironmentName
 }
 
@@ -366,17 +366,17 @@ ActivateServiceVersionEnvironment Activate a service version on the specified en
 Activate a version on a given environment, i.e. "staging"
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param environmentName
  @return APIActivateServiceVersionEnvironmentRequest
 */
-func (a *VersionAPIService) ActivateServiceVersionEnvironment(ctx context.Context, serviceID string, versionID int32, environmentName EnvironmentName) APIActivateServiceVersionEnvironmentRequest {
+func (a *VersionAPIService) ActivateServiceVersionEnvironment(ctx context.Context, serviceId string, versionId int32, environmentName EnvironmentName) APIActivateServiceVersionEnvironmentRequest {
 	return APIActivateServiceVersionEnvironmentRequest{
 		APIService:      a,
 		ctx:             ctx,
-		serviceID:       serviceID,
-		versionID:       versionID,
+		serviceId:       serviceId,
+		versionId:       versionId,
 		environmentName: environmentName,
 	}
 }
@@ -397,8 +397,8 @@ func (a *VersionAPIService) ActivateServiceVersionEnvironmentExecute(r APIActiva
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/activate/{environment_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"environment_name"+"}", gourl.PathEscape(parameterToString(r.environmentName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -490,8 +490,8 @@ func (a *VersionAPIService) ActivateServiceVersionEnvironmentExecute(r APIActiva
 type APICloneServiceVersionRequest struct {
 	ctx        context.Context
 	APIService VersionAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -505,16 +505,16 @@ CloneServiceVersion Clone a service version
 Clone the current configuration into a new version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICloneServiceVersionRequest
 */
-func (a *VersionAPIService) CloneServiceVersion(ctx context.Context, serviceID string, versionID int32) APICloneServiceVersionRequest {
+func (a *VersionAPIService) CloneServiceVersion(ctx context.Context, serviceId string, versionId int32) APICloneServiceVersionRequest {
 	return APICloneServiceVersionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -534,8 +534,8 @@ func (a *VersionAPIService) CloneServiceVersionExecute(r APICloneServiceVersionR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/clone"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -626,7 +626,7 @@ func (a *VersionAPIService) CloneServiceVersionExecute(r APICloneServiceVersionR
 type APICreateServiceVersionRequest struct {
 	ctx        context.Context
 	APIService VersionAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -640,14 +640,14 @@ CreateServiceVersion Create a service version
 Create a version for a particular service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APICreateServiceVersionRequest
 */
-func (a *VersionAPIService) CreateServiceVersion(ctx context.Context, serviceID string) APICreateServiceVersionRequest {
+func (a *VersionAPIService) CreateServiceVersion(ctx context.Context, serviceId string) APICreateServiceVersionRequest {
 	return APICreateServiceVersionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -667,7 +667,7 @@ func (a *VersionAPIService) CreateServiceVersionExecute(r APICreateServiceVersio
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -758,8 +758,8 @@ func (a *VersionAPIService) CreateServiceVersionExecute(r APICreateServiceVersio
 type APIDeactivateServiceVersionRequest struct {
 	ctx        context.Context
 	APIService VersionAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -773,16 +773,16 @@ DeactivateServiceVersion Deactivate a service version
 Deactivate the current version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIDeactivateServiceVersionRequest
 */
-func (a *VersionAPIService) DeactivateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIDeactivateServiceVersionRequest {
+func (a *VersionAPIService) DeactivateServiceVersion(ctx context.Context, serviceId string, versionId int32) APIDeactivateServiceVersionRequest {
 	return APIDeactivateServiceVersionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -802,8 +802,8 @@ func (a *VersionAPIService) DeactivateServiceVersionExecute(r APIDeactivateServi
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/deactivate"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -894,8 +894,8 @@ func (a *VersionAPIService) DeactivateServiceVersionExecute(r APIDeactivateServi
 type APIDeactivateServiceVersionEnvironmentRequest struct {
 	ctx             context.Context
 	APIService      VersionAPI
-	serviceID       string
-	versionID       int32
+	serviceId       string
+	versionId       int32
 	environmentName EnvironmentName
 }
 
@@ -910,17 +910,17 @@ DeactivateServiceVersionEnvironment Deactivate a service version on an environme
 Deactivate the current version on a given environment, i.e. "staging"
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param environmentName
  @return APIDeactivateServiceVersionEnvironmentRequest
 */
-func (a *VersionAPIService) DeactivateServiceVersionEnvironment(ctx context.Context, serviceID string, versionID int32, environmentName EnvironmentName) APIDeactivateServiceVersionEnvironmentRequest {
+func (a *VersionAPIService) DeactivateServiceVersionEnvironment(ctx context.Context, serviceId string, versionId int32, environmentName EnvironmentName) APIDeactivateServiceVersionEnvironmentRequest {
 	return APIDeactivateServiceVersionEnvironmentRequest{
 		APIService:      a,
 		ctx:             ctx,
-		serviceID:       serviceID,
-		versionID:       versionID,
+		serviceId:       serviceId,
+		versionId:       versionId,
 		environmentName: environmentName,
 	}
 }
@@ -941,8 +941,8 @@ func (a *VersionAPIService) DeactivateServiceVersionEnvironmentExecute(r APIDeac
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/deactivate/{environment_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"environment_name"+"}", gourl.PathEscape(parameterToString(r.environmentName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -1034,8 +1034,8 @@ func (a *VersionAPIService) DeactivateServiceVersionEnvironmentExecute(r APIDeac
 type APIGetServiceVersionRequest struct {
 	ctx        context.Context
 	APIService VersionAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -1049,16 +1049,16 @@ GetServiceVersion Get a version of a service
 Get the version for a particular service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIGetServiceVersionRequest
 */
-func (a *VersionAPIService) GetServiceVersion(ctx context.Context, serviceID string, versionID int32) APIGetServiceVersionRequest {
+func (a *VersionAPIService) GetServiceVersion(ctx context.Context, serviceId string, versionId int32) APIGetServiceVersionRequest {
 	return APIGetServiceVersionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -1078,8 +1078,8 @@ func (a *VersionAPIService) GetServiceVersionExecute(r APIGetServiceVersionReque
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1170,7 +1170,7 @@ func (a *VersionAPIService) GetServiceVersionExecute(r APIGetServiceVersionReque
 type APIListServiceVersionsRequest struct {
 	ctx        context.Context
 	APIService VersionAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -1184,14 +1184,14 @@ ListServiceVersions List versions of a service
 List the versions for a particular service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIListServiceVersionsRequest
 */
-func (a *VersionAPIService) ListServiceVersions(ctx context.Context, serviceID string) APIListServiceVersionsRequest {
+func (a *VersionAPIService) ListServiceVersions(ctx context.Context, serviceId string) APIListServiceVersionsRequest {
 	return APIListServiceVersionsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -1211,7 +1211,7 @@ func (a *VersionAPIService) ListServiceVersionsExecute(r APIListServiceVersionsR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1302,8 +1302,8 @@ func (a *VersionAPIService) ListServiceVersionsExecute(r APIListServiceVersionsR
 type APILockServiceVersionRequest struct {
 	ctx        context.Context
 	APIService VersionAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -1317,16 +1317,16 @@ LockServiceVersion Lock a service version
 Locks the specified version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APILockServiceVersionRequest
 */
-func (a *VersionAPIService) LockServiceVersion(ctx context.Context, serviceID string, versionID int32) APILockServiceVersionRequest {
+func (a *VersionAPIService) LockServiceVersion(ctx context.Context, serviceId string, versionId int32) APILockServiceVersionRequest {
 	return APILockServiceVersionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -1346,8 +1346,8 @@ func (a *VersionAPIService) LockServiceVersionExecute(r APILockServiceVersionReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/lock"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1438,8 +1438,8 @@ func (a *VersionAPIService) LockServiceVersionExecute(r APILockServiceVersionReq
 type APIUpdateServiceVersionRequest struct {
 	ctx        context.Context
 	APIService VersionAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	active     *bool
 	comment    *string
 	deployed   *bool
@@ -1502,16 +1502,16 @@ UpdateServiceVersion Update a service version
 Update a particular version for a particular service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIUpdateServiceVersionRequest
 */
-func (a *VersionAPIService) UpdateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIUpdateServiceVersionRequest {
+func (a *VersionAPIService) UpdateServiceVersion(ctx context.Context, serviceId string, versionId int32) APIUpdateServiceVersionRequest {
 	return APIUpdateServiceVersionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -1531,8 +1531,8 @@ func (a *VersionAPIService) UpdateServiceVersionExecute(r APIUpdateServiceVersio
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -1644,8 +1644,8 @@ func (a *VersionAPIService) UpdateServiceVersionExecute(r APIUpdateServiceVersio
 type APIValidateServiceVersionRequest struct {
 	ctx        context.Context
 	APIService VersionAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -1659,16 +1659,16 @@ ValidateServiceVersion Validate a service version
 Validate the version for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIValidateServiceVersionRequest
 */
-func (a *VersionAPIService) ValidateServiceVersion(ctx context.Context, serviceID string, versionID int32) APIValidateServiceVersionRequest {
+func (a *VersionAPIService) ValidateServiceVersion(ctx context.Context, serviceId string, versionId int32) APIValidateServiceVersionRequest {
 	return APIValidateServiceVersionRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -1688,8 +1688,8 @@ func (a *VersionAPIService) ValidateServiceVersionExecute(r APIValidateServiceVe
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/validate"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

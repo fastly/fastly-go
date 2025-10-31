@@ -36,11 +36,11 @@ type LoggingScalyrAPI interface {
 		Create a Scalyr for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogScalyrRequest
 	*/
-	CreateLogScalyr(ctx context.Context, serviceID string, versionID int32) APICreateLogScalyrRequest
+	CreateLogScalyr(ctx context.Context, serviceId string, versionId int32) APICreateLogScalyrRequest
 
 	// CreateLogScalyrExecute executes the request
 	//  @return LoggingScalyrResponse
@@ -52,12 +52,12 @@ type LoggingScalyrAPI interface {
 		Delete the Scalyr for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingScalyrName The name for the real-time logging configuration.
 		 @return APIDeleteLogScalyrRequest
 	*/
-	DeleteLogScalyr(ctx context.Context, serviceID string, versionID int32, loggingScalyrName string) APIDeleteLogScalyrRequest
+	DeleteLogScalyr(ctx context.Context, serviceId string, versionId int32, loggingScalyrName string) APIDeleteLogScalyrRequest
 
 	// DeleteLogScalyrExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingScalyrAPI interface {
 		Get the Scalyr for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingScalyrName The name for the real-time logging configuration.
 		 @return APIGetLogScalyrRequest
 	*/
-	GetLogScalyr(ctx context.Context, serviceID string, versionID int32, loggingScalyrName string) APIGetLogScalyrRequest
+	GetLogScalyr(ctx context.Context, serviceId string, versionId int32, loggingScalyrName string) APIGetLogScalyrRequest
 
 	// GetLogScalyrExecute executes the request
 	//  @return LoggingScalyrResponse
@@ -86,11 +86,11 @@ type LoggingScalyrAPI interface {
 		List all of the Scalyrs for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogScalyrRequest
 	*/
-	ListLogScalyr(ctx context.Context, serviceID string, versionID int32) APIListLogScalyrRequest
+	ListLogScalyr(ctx context.Context, serviceId string, versionId int32) APIListLogScalyrRequest
 
 	// ListLogScalyrExecute executes the request
 	//  @return []LoggingScalyrResponse
@@ -102,12 +102,12 @@ type LoggingScalyrAPI interface {
 		Update the Scalyr for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingScalyrName The name for the real-time logging configuration.
 		 @return APIUpdateLogScalyrRequest
 	*/
-	UpdateLogScalyr(ctx context.Context, serviceID string, versionID int32, loggingScalyrName string) APIUpdateLogScalyrRequest
+	UpdateLogScalyr(ctx context.Context, serviceId string, versionId int32, loggingScalyrName string) APIUpdateLogScalyrRequest
 
 	// UpdateLogScalyrExecute executes the request
 	//  @return LoggingScalyrResponse
@@ -121,8 +121,8 @@ type LoggingScalyrAPIService service
 type APICreateLogScalyrRequest struct {
 	ctx                 context.Context
 	APIService          LoggingScalyrAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -131,7 +131,7 @@ type APICreateLogScalyrRequest struct {
 	formatVersion       *int32
 	region              *string
 	token               *string
-	projectID           *string
+	projectId           *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -182,9 +182,9 @@ func (r *APICreateLogScalyrRequest) Token(token string) *APICreateLogScalyrReque
 	return r
 }
 
-// ProjectID The name of the logfile within Scalyr.
-func (r *APICreateLogScalyrRequest) ProjectID(projectID string) *APICreateLogScalyrRequest {
-	r.projectID = &projectID
+// ProjectId The name of the logfile within Scalyr.
+func (r *APICreateLogScalyrRequest) ProjectId(projectId string) *APICreateLogScalyrRequest {
+	r.projectId = &projectId
 	return r
 }
 
@@ -199,16 +199,16 @@ CreateLogScalyr Create a Scalyr log endpoint
 Create a Scalyr for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogScalyrRequest
 */
-func (a *LoggingScalyrAPIService) CreateLogScalyr(ctx context.Context, serviceID string, versionID int32) APICreateLogScalyrRequest {
+func (a *LoggingScalyrAPIService) CreateLogScalyr(ctx context.Context, serviceId string, versionId int32) APICreateLogScalyrRequest {
 	return APICreateLogScalyrRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -228,8 +228,8 @@ func (a *LoggingScalyrAPIService) CreateLogScalyrExecute(r APICreateLogScalyrReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/scalyr"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -276,8 +276,8 @@ func (a *LoggingScalyrAPIService) CreateLogScalyrExecute(r APICreateLogScalyrReq
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))
 	}
-	if r.projectID != nil {
-		localVarFormParams.Add("project_id", parameterToString(*r.projectID, ""))
+	if r.projectId != nil {
+		localVarFormParams.Add("project_id", parameterToString(*r.projectId, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -347,8 +347,8 @@ func (a *LoggingScalyrAPIService) CreateLogScalyrExecute(r APICreateLogScalyrReq
 type APIDeleteLogScalyrRequest struct {
 	ctx               context.Context
 	APIService        LoggingScalyrAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	loggingScalyrName string
 }
 
@@ -363,17 +363,17 @@ DeleteLogScalyr Delete the Scalyr log endpoint
 Delete the Scalyr for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingScalyrName The name for the real-time logging configuration.
  @return APIDeleteLogScalyrRequest
 */
-func (a *LoggingScalyrAPIService) DeleteLogScalyr(ctx context.Context, serviceID string, versionID int32, loggingScalyrName string) APIDeleteLogScalyrRequest {
+func (a *LoggingScalyrAPIService) DeleteLogScalyr(ctx context.Context, serviceId string, versionId int32, loggingScalyrName string) APIDeleteLogScalyrRequest {
 	return APIDeleteLogScalyrRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingScalyrName: loggingScalyrName,
 	}
 }
@@ -394,8 +394,8 @@ func (a *LoggingScalyrAPIService) DeleteLogScalyrExecute(r APIDeleteLogScalyrReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/scalyr/{logging_scalyr_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_scalyr_name"+"}", gourl.PathEscape(parameterToString(r.loggingScalyrName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -487,8 +487,8 @@ func (a *LoggingScalyrAPIService) DeleteLogScalyrExecute(r APIDeleteLogScalyrReq
 type APIGetLogScalyrRequest struct {
 	ctx               context.Context
 	APIService        LoggingScalyrAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	loggingScalyrName string
 }
 
@@ -503,17 +503,17 @@ GetLogScalyr Get a Scalyr log endpoint
 Get the Scalyr for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingScalyrName The name for the real-time logging configuration.
  @return APIGetLogScalyrRequest
 */
-func (a *LoggingScalyrAPIService) GetLogScalyr(ctx context.Context, serviceID string, versionID int32, loggingScalyrName string) APIGetLogScalyrRequest {
+func (a *LoggingScalyrAPIService) GetLogScalyr(ctx context.Context, serviceId string, versionId int32, loggingScalyrName string) APIGetLogScalyrRequest {
 	return APIGetLogScalyrRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingScalyrName: loggingScalyrName,
 	}
 }
@@ -534,8 +534,8 @@ func (a *LoggingScalyrAPIService) GetLogScalyrExecute(r APIGetLogScalyrRequest) 
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/scalyr/{logging_scalyr_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_scalyr_name"+"}", gourl.PathEscape(parameterToString(r.loggingScalyrName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -627,8 +627,8 @@ func (a *LoggingScalyrAPIService) GetLogScalyrExecute(r APIGetLogScalyrRequest) 
 type APIListLogScalyrRequest struct {
 	ctx        context.Context
 	APIService LoggingScalyrAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -642,16 +642,16 @@ ListLogScalyr List Scalyr log endpoints
 List all of the Scalyrs for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogScalyrRequest
 */
-func (a *LoggingScalyrAPIService) ListLogScalyr(ctx context.Context, serviceID string, versionID int32) APIListLogScalyrRequest {
+func (a *LoggingScalyrAPIService) ListLogScalyr(ctx context.Context, serviceId string, versionId int32) APIListLogScalyrRequest {
 	return APIListLogScalyrRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -671,8 +671,8 @@ func (a *LoggingScalyrAPIService) ListLogScalyrExecute(r APIListLogScalyrRequest
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/scalyr"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -763,8 +763,8 @@ func (a *LoggingScalyrAPIService) ListLogScalyrExecute(r APIListLogScalyrRequest
 type APIUpdateLogScalyrRequest struct {
 	ctx                 context.Context
 	APIService          LoggingScalyrAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	loggingScalyrName   string
 	name                *string
 	placement           *string
@@ -774,7 +774,7 @@ type APIUpdateLogScalyrRequest struct {
 	formatVersion       *int32
 	region              *string
 	token               *string
-	projectID           *string
+	projectId           *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -825,9 +825,9 @@ func (r *APIUpdateLogScalyrRequest) Token(token string) *APIUpdateLogScalyrReque
 	return r
 }
 
-// ProjectID The name of the logfile within Scalyr.
-func (r *APIUpdateLogScalyrRequest) ProjectID(projectID string) *APIUpdateLogScalyrRequest {
-	r.projectID = &projectID
+// ProjectId The name of the logfile within Scalyr.
+func (r *APIUpdateLogScalyrRequest) ProjectId(projectId string) *APIUpdateLogScalyrRequest {
+	r.projectId = &projectId
 	return r
 }
 
@@ -842,17 +842,17 @@ UpdateLogScalyr Update the Scalyr log endpoint
 Update the Scalyr for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingScalyrName The name for the real-time logging configuration.
  @return APIUpdateLogScalyrRequest
 */
-func (a *LoggingScalyrAPIService) UpdateLogScalyr(ctx context.Context, serviceID string, versionID int32, loggingScalyrName string) APIUpdateLogScalyrRequest {
+func (a *LoggingScalyrAPIService) UpdateLogScalyr(ctx context.Context, serviceId string, versionId int32, loggingScalyrName string) APIUpdateLogScalyrRequest {
 	return APIUpdateLogScalyrRequest{
 		APIService:        a,
 		ctx:               ctx,
-		serviceID:         serviceID,
-		versionID:         versionID,
+		serviceId:         serviceId,
+		versionId:         versionId,
 		loggingScalyrName: loggingScalyrName,
 	}
 }
@@ -873,8 +873,8 @@ func (a *LoggingScalyrAPIService) UpdateLogScalyrExecute(r APIUpdateLogScalyrReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/scalyr/{logging_scalyr_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_scalyr_name"+"}", gourl.PathEscape(parameterToString(r.loggingScalyrName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -922,8 +922,8 @@ func (a *LoggingScalyrAPIService) UpdateLogScalyrExecute(r APIUpdateLogScalyrReq
 	if r.token != nil {
 		localVarFormParams.Add("token", parameterToString(*r.token, ""))
 	}
-	if r.projectID != nil {
-		localVarFormParams.Add("project_id", parameterToString(*r.projectID, ""))
+	if r.projectId != nil {
+		localVarFormParams.Add("project_id", parameterToString(*r.projectId, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

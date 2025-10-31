@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CheckInterval** | Pointer to **int32** | How often to run the health check in milliseconds. | [optional] 
+**CheckInterval** | Pointer to **int32** | How often to run the health check in milliseconds. Minimum 1 second, maximum 1 hour. | [optional] 
 **Comment** | Pointer to **NullableString** | A freeform descriptive note. | [optional] 
 **ExpectedResponse** | Pointer to **int32** | The status code expected from the host. | [optional] 
 **Headers** | Pointer to **[]string** | Array of custom headers that will be added to the health check probes. | [optional] 
 **Host** | Pointer to **string** | Which host to check. | [optional] 
-**HTTPVersion** | Pointer to **string** | Whether to use version 1.0 or 1.1 HTTP. | [optional] 
+**HttpVersion** | Pointer to **string** | Whether to use version 1.0 or 1.1 HTTP. | [optional] 
 **Initial** | Pointer to **int32** | When loading a config, the initial number of probes to be seen as OK. | [optional] 
 **Method** | Pointer to **string** | Which HTTP method to use. | [optional] 
 **Name** | Pointer to **string** | The name of the health check. | [optional] 
@@ -172,30 +172,30 @@ SetHost sets Host field to given value.
 
 HasHost returns a boolean if a field has been set.
 
-### GetHTTPVersion
+### GetHttpVersion
 
-`func (o *Healthcheck) GetHTTPVersion() string`
+`func (o *Healthcheck) GetHttpVersion() string`
 
-GetHTTPVersion returns the HTTPVersion field if non-nil, zero value otherwise.
+GetHttpVersion returns the HttpVersion field if non-nil, zero value otherwise.
 
-### GetHTTPVersionOk
+### GetHttpVersionOk
 
-`func (o *Healthcheck) GetHTTPVersionOk() (*string, bool)`
+`func (o *Healthcheck) GetHttpVersionOk() (*string, bool)`
 
-GetHTTPVersionOk returns a tuple with the HTTPVersion field if it's non-nil, zero value otherwise
+GetHttpVersionOk returns a tuple with the HttpVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetHTTPVersion
+### SetHttpVersion
 
-`func (o *Healthcheck) SetHTTPVersion(v string)`
+`func (o *Healthcheck) SetHttpVersion(v string)`
 
-SetHTTPVersion sets HTTPVersion field to given value.
+SetHttpVersion sets HttpVersion field to given value.
 
-### HasHTTPVersion
+### HasHttpVersion
 
-`func (o *Healthcheck) HasHTTPVersion() bool`
+`func (o *Healthcheck) HasHttpVersion() bool`
 
-HasHTTPVersion returns a boolean if a field has been set.
+HasHttpVersion returns a boolean if a field has been set.
 
 ### GetInitial
 
@@ -374,3 +374,5 @@ HasWindow returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

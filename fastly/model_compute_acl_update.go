@@ -16,35 +16,35 @@ import (
 	"encoding/json"
 )
 
-// ComputeACLUpdate Defines the structure of an ACL update request array.
-type ComputeACLUpdate struct {
-	Entries              []ComputeACLUpdateEntry `json:"entries,omitempty"`
+// ComputeAclUpdate Defines the structure of an ACL update request array.
+type ComputeAclUpdate struct {
+	Entries              []ComputeAclUpdateEntry `json:"entries,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _ComputeACLUpdate ComputeACLUpdate
+type _ComputeAclUpdate ComputeAclUpdate
 
-// NewComputeACLUpdate instantiates a new ComputeACLUpdate object
+// NewComputeAclUpdate instantiates a new ComputeAclUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewComputeACLUpdate() *ComputeACLUpdate {
-	this := ComputeACLUpdate{}
+func NewComputeAclUpdate() *ComputeAclUpdate {
+	this := ComputeAclUpdate{}
 	return &this
 }
 
-// NewComputeACLUpdateWithDefaults instantiates a new ComputeACLUpdate object
+// NewComputeAclUpdateWithDefaults instantiates a new ComputeAclUpdate object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewComputeACLUpdateWithDefaults() *ComputeACLUpdate {
-	this := ComputeACLUpdate{}
+func NewComputeAclUpdateWithDefaults() *ComputeAclUpdate {
+	this := ComputeAclUpdate{}
 	return &this
 }
 
 // GetEntries returns the Entries field value if set, zero value otherwise.
-func (o *ComputeACLUpdate) GetEntries() []ComputeACLUpdateEntry {
+func (o *ComputeAclUpdate) GetEntries() []ComputeAclUpdateEntry {
 	if o == nil || o.Entries == nil {
-		var ret []ComputeACLUpdateEntry
+		var ret []ComputeAclUpdateEntry
 		return ret
 	}
 	return o.Entries
@@ -52,7 +52,7 @@ func (o *ComputeACLUpdate) GetEntries() []ComputeACLUpdateEntry {
 
 // GetEntriesOk returns a tuple with the Entries field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ComputeACLUpdate) GetEntriesOk() ([]ComputeACLUpdateEntry, bool) {
+func (o *ComputeAclUpdate) GetEntriesOk() ([]ComputeAclUpdateEntry, bool) {
 	if o == nil || o.Entries == nil {
 		return nil, false
 	}
@@ -60,7 +60,7 @@ func (o *ComputeACLUpdate) GetEntriesOk() ([]ComputeACLUpdateEntry, bool) {
 }
 
 // HasEntries returns a boolean if a field has been set.
-func (o *ComputeACLUpdate) HasEntries() bool {
+func (o *ComputeAclUpdate) HasEntries() bool {
 	if o != nil && o.Entries != nil {
 		return true
 	}
@@ -68,14 +68,14 @@ func (o *ComputeACLUpdate) HasEntries() bool {
 	return false
 }
 
-// SetEntries gets a reference to the given []ComputeACLUpdateEntry and assigns it to the Entries field.
-func (o *ComputeACLUpdate) SetEntries(v []ComputeACLUpdateEntry) {
+// SetEntries gets a reference to the given []ComputeAclUpdateEntry and assigns it to the Entries field.
+func (o *ComputeAclUpdate) SetEntries(v []ComputeAclUpdateEntry) {
 	o.Entries = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o ComputeACLUpdate) MarshalJSON() ([]byte, error) {
+func (o ComputeAclUpdate) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Entries != nil {
 		toSerialize["entries"] = o.Entries
@@ -90,11 +90,11 @@ func (o ComputeACLUpdate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ComputeACLUpdate) UnmarshalJSON(bytes []byte) (err error) {
-	varComputeACLUpdate := _ComputeACLUpdate{}
+func (o *ComputeAclUpdate) UnmarshalJSON(bytes []byte) (err error) {
+	varComputeAclUpdate := _ComputeAclUpdate{}
 
-	if err = json.Unmarshal(bytes, &varComputeACLUpdate); err == nil {
-		*o = ComputeACLUpdate(varComputeACLUpdate)
+	if err = json.Unmarshal(bytes, &varComputeAclUpdate); err == nil {
+		*o = ComputeAclUpdate(varComputeAclUpdate)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -107,48 +107,48 @@ func (o *ComputeACLUpdate) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableComputeACLUpdate is a helper abstraction for handling nullable computeaclupdate types.
-type NullableComputeACLUpdate struct {
-	value *ComputeACLUpdate
+// NullableComputeAclUpdate is a helper abstraction for handling nullable computeaclupdate types.
+type NullableComputeAclUpdate struct {
+	value *ComputeAclUpdate
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableComputeACLUpdate) Get() *ComputeACLUpdate {
+func (v NullableComputeAclUpdate) Get() *ComputeAclUpdate {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableComputeACLUpdate) Set(val *ComputeACLUpdate) {
+func (v *NullableComputeAclUpdate) Set(val *ComputeAclUpdate) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableComputeACLUpdate) IsSet() bool {
+func (v NullableComputeAclUpdate) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableComputeACLUpdate) Unset() {
+func (v *NullableComputeAclUpdate) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableComputeACLUpdate returns a pointer to a new instance of NullableComputeACLUpdate.
-func NewNullableComputeACLUpdate(val *ComputeACLUpdate) *NullableComputeACLUpdate {
-	return &NullableComputeACLUpdate{value: val, isSet: true}
+// NewNullableComputeAclUpdate returns a pointer to a new instance of NullableComputeAclUpdate.
+func NewNullableComputeAclUpdate(val *ComputeAclUpdate) *NullableComputeAclUpdate {
+	return &NullableComputeAclUpdate{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableComputeACLUpdate) MarshalJSON() ([]byte, error) {
+func (v NullableComputeAclUpdate) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableComputeACLUpdate) UnmarshalJSON(src []byte) error {
+func (v *NullableComputeAclUpdate) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

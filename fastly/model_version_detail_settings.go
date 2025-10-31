@@ -21,11 +21,11 @@ type VersionDetailSettings struct {
 	// The default host name for the version.
 	GeneralDefaultHost *string `json:"general.default_host,omitempty"`
 	// The default time-to-live (TTL) for the version.
-	GeneralDefaultTTL *int32 `json:"general.default_ttl,omitempty"`
+	GeneralDefaultTtl *int32 `json:"general.default_ttl,omitempty"`
 	// Enables serving a stale object if there is an error.
 	GeneralStaleIfError *bool `json:"general.stale_if_error,omitempty"`
 	// The default time-to-live (TTL) for serving the stale object for the version.
-	GeneralStaleIfErrorTTL *int32 `json:"general.stale_if_error_ttl,omitempty"`
+	GeneralStaleIfErrorTtl *int32 `json:"general.stale_if_error_ttl,omitempty"`
 	AdditionalProperties   map[string]any
 }
 
@@ -39,8 +39,8 @@ func NewVersionDetailSettings() *VersionDetailSettings {
 	this := VersionDetailSettings{}
 	var generalStaleIfError bool = false
 	this.GeneralStaleIfError = &generalStaleIfError
-	var generalStaleIfErrorTTL int32 = 43200
-	this.GeneralStaleIfErrorTTL = &generalStaleIfErrorTTL
+	var generalStaleIfErrorTtl int32 = 43200
+	this.GeneralStaleIfErrorTtl = &generalStaleIfErrorTtl
 	return &this
 }
 
@@ -51,8 +51,8 @@ func NewVersionDetailSettingsWithDefaults() *VersionDetailSettings {
 	this := VersionDetailSettings{}
 	var generalStaleIfError bool = false
 	this.GeneralStaleIfError = &generalStaleIfError
-	var generalStaleIfErrorTTL int32 = 43200
-	this.GeneralStaleIfErrorTTL = &generalStaleIfErrorTTL
+	var generalStaleIfErrorTtl int32 = 43200
+	this.GeneralStaleIfErrorTtl = &generalStaleIfErrorTtl
 	return &this
 }
 
@@ -88,36 +88,36 @@ func (o *VersionDetailSettings) SetGeneralDefaultHost(v string) {
 	o.GeneralDefaultHost = &v
 }
 
-// GetGeneralDefaultTTL returns the GeneralDefaultTTL field value if set, zero value otherwise.
-func (o *VersionDetailSettings) GetGeneralDefaultTTL() int32 {
-	if o == nil || o.GeneralDefaultTTL == nil {
+// GetGeneralDefaultTtl returns the GeneralDefaultTtl field value if set, zero value otherwise.
+func (o *VersionDetailSettings) GetGeneralDefaultTtl() int32 {
+	if o == nil || o.GeneralDefaultTtl == nil {
 		var ret int32
 		return ret
 	}
-	return *o.GeneralDefaultTTL
+	return *o.GeneralDefaultTtl
 }
 
-// GetGeneralDefaultTTLOk returns a tuple with the GeneralDefaultTTL field value if set, nil otherwise
+// GetGeneralDefaultTtlOk returns a tuple with the GeneralDefaultTtl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VersionDetailSettings) GetGeneralDefaultTTLOk() (*int32, bool) {
-	if o == nil || o.GeneralDefaultTTL == nil {
+func (o *VersionDetailSettings) GetGeneralDefaultTtlOk() (*int32, bool) {
+	if o == nil || o.GeneralDefaultTtl == nil {
 		return nil, false
 	}
-	return o.GeneralDefaultTTL, true
+	return o.GeneralDefaultTtl, true
 }
 
-// HasGeneralDefaultTTL returns a boolean if a field has been set.
-func (o *VersionDetailSettings) HasGeneralDefaultTTL() bool {
-	if o != nil && o.GeneralDefaultTTL != nil {
+// HasGeneralDefaultTtl returns a boolean if a field has been set.
+func (o *VersionDetailSettings) HasGeneralDefaultTtl() bool {
+	if o != nil && o.GeneralDefaultTtl != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetGeneralDefaultTTL gets a reference to the given int32 and assigns it to the GeneralDefaultTTL field.
-func (o *VersionDetailSettings) SetGeneralDefaultTTL(v int32) {
-	o.GeneralDefaultTTL = &v
+// SetGeneralDefaultTtl gets a reference to the given int32 and assigns it to the GeneralDefaultTtl field.
+func (o *VersionDetailSettings) SetGeneralDefaultTtl(v int32) {
+	o.GeneralDefaultTtl = &v
 }
 
 // GetGeneralStaleIfError returns the GeneralStaleIfError field value if set, zero value otherwise.
@@ -152,36 +152,36 @@ func (o *VersionDetailSettings) SetGeneralStaleIfError(v bool) {
 	o.GeneralStaleIfError = &v
 }
 
-// GetGeneralStaleIfErrorTTL returns the GeneralStaleIfErrorTTL field value if set, zero value otherwise.
-func (o *VersionDetailSettings) GetGeneralStaleIfErrorTTL() int32 {
-	if o == nil || o.GeneralStaleIfErrorTTL == nil {
+// GetGeneralStaleIfErrorTtl returns the GeneralStaleIfErrorTtl field value if set, zero value otherwise.
+func (o *VersionDetailSettings) GetGeneralStaleIfErrorTtl() int32 {
+	if o == nil || o.GeneralStaleIfErrorTtl == nil {
 		var ret int32
 		return ret
 	}
-	return *o.GeneralStaleIfErrorTTL
+	return *o.GeneralStaleIfErrorTtl
 }
 
-// GetGeneralStaleIfErrorTTLOk returns a tuple with the GeneralStaleIfErrorTTL field value if set, nil otherwise
+// GetGeneralStaleIfErrorTtlOk returns a tuple with the GeneralStaleIfErrorTtl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VersionDetailSettings) GetGeneralStaleIfErrorTTLOk() (*int32, bool) {
-	if o == nil || o.GeneralStaleIfErrorTTL == nil {
+func (o *VersionDetailSettings) GetGeneralStaleIfErrorTtlOk() (*int32, bool) {
+	if o == nil || o.GeneralStaleIfErrorTtl == nil {
 		return nil, false
 	}
-	return o.GeneralStaleIfErrorTTL, true
+	return o.GeneralStaleIfErrorTtl, true
 }
 
-// HasGeneralStaleIfErrorTTL returns a boolean if a field has been set.
-func (o *VersionDetailSettings) HasGeneralStaleIfErrorTTL() bool {
-	if o != nil && o.GeneralStaleIfErrorTTL != nil {
+// HasGeneralStaleIfErrorTtl returns a boolean if a field has been set.
+func (o *VersionDetailSettings) HasGeneralStaleIfErrorTtl() bool {
+	if o != nil && o.GeneralStaleIfErrorTtl != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetGeneralStaleIfErrorTTL gets a reference to the given int32 and assigns it to the GeneralStaleIfErrorTTL field.
-func (o *VersionDetailSettings) SetGeneralStaleIfErrorTTL(v int32) {
-	o.GeneralStaleIfErrorTTL = &v
+// SetGeneralStaleIfErrorTtl gets a reference to the given int32 and assigns it to the GeneralStaleIfErrorTtl field.
+func (o *VersionDetailSettings) SetGeneralStaleIfErrorTtl(v int32) {
+	o.GeneralStaleIfErrorTtl = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -191,14 +191,14 @@ func (o VersionDetailSettings) MarshalJSON() ([]byte, error) {
 	if o.GeneralDefaultHost != nil {
 		toSerialize["general.default_host"] = o.GeneralDefaultHost
 	}
-	if o.GeneralDefaultTTL != nil {
-		toSerialize["general.default_ttl"] = o.GeneralDefaultTTL
+	if o.GeneralDefaultTtl != nil {
+		toSerialize["general.default_ttl"] = o.GeneralDefaultTtl
 	}
 	if o.GeneralStaleIfError != nil {
 		toSerialize["general.stale_if_error"] = o.GeneralStaleIfError
 	}
-	if o.GeneralStaleIfErrorTTL != nil {
-		toSerialize["general.stale_if_error_ttl"] = o.GeneralStaleIfErrorTTL
+	if o.GeneralStaleIfErrorTtl != nil {
+		toSerialize["general.stale_if_error_ttl"] = o.GeneralStaleIfErrorTtl
 	}
 
 	for key, value := range o.AdditionalProperties {

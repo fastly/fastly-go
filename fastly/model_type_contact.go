@@ -20,7 +20,7 @@ import (
 // TypeContact Resource type
 type TypeContact string
 
-// List of resourceTypecontact
+// List of type_contact
 const (
 	TYPECONTACT_CONTACT TypeContact = "contact"
 )
@@ -69,7 +69,7 @@ func (v TypeContact) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to resourceTypecontact value
+// Ptr returns reference to type_contact value
 func (v TypeContact) Ptr() *TypeContact {
 	return &v
 }

@@ -36,11 +36,11 @@ type LoggingPubsubAPI interface {
 		Create a Pub/Sub logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogGcpPubsubRequest
 	*/
-	CreateLogGcpPubsub(ctx context.Context, serviceID string, versionID int32) APICreateLogGcpPubsubRequest
+	CreateLogGcpPubsub(ctx context.Context, serviceId string, versionId int32) APICreateLogGcpPubsubRequest
 
 	// CreateLogGcpPubsubExecute executes the request
 	//  @return LoggingGooglePubsubResponse
@@ -52,12 +52,12 @@ type LoggingPubsubAPI interface {
 		Delete a Pub/Sub logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingGooglePubsubName The name for the real-time logging configuration.
 		 @return APIDeleteLogGcpPubsubRequest
 	*/
-	DeleteLogGcpPubsub(ctx context.Context, serviceID string, versionID int32, loggingGooglePubsubName string) APIDeleteLogGcpPubsubRequest
+	DeleteLogGcpPubsub(ctx context.Context, serviceId string, versionId int32, loggingGooglePubsubName string) APIDeleteLogGcpPubsubRequest
 
 	// DeleteLogGcpPubsubExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingPubsubAPI interface {
 		Get the details for a Pub/Sub logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingGooglePubsubName The name for the real-time logging configuration.
 		 @return APIGetLogGcpPubsubRequest
 	*/
-	GetLogGcpPubsub(ctx context.Context, serviceID string, versionID int32, loggingGooglePubsubName string) APIGetLogGcpPubsubRequest
+	GetLogGcpPubsub(ctx context.Context, serviceId string, versionId int32, loggingGooglePubsubName string) APIGetLogGcpPubsubRequest
 
 	// GetLogGcpPubsubExecute executes the request
 	//  @return LoggingGooglePubsubResponse
@@ -86,11 +86,11 @@ type LoggingPubsubAPI interface {
 		List all of the Pub/Sub logging objects for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogGcpPubsubRequest
 	*/
-	ListLogGcpPubsub(ctx context.Context, serviceID string, versionID int32) APIListLogGcpPubsubRequest
+	ListLogGcpPubsub(ctx context.Context, serviceId string, versionId int32) APIListLogGcpPubsubRequest
 
 	// ListLogGcpPubsubExecute executes the request
 	//  @return []LoggingGooglePubsubResponse
@@ -102,12 +102,12 @@ type LoggingPubsubAPI interface {
 		Update a Pub/Sub logging object for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingGooglePubsubName The name for the real-time logging configuration.
 		 @return APIUpdateLogGcpPubsubRequest
 	*/
-	UpdateLogGcpPubsub(ctx context.Context, serviceID string, versionID int32, loggingGooglePubsubName string) APIUpdateLogGcpPubsubRequest
+	UpdateLogGcpPubsub(ctx context.Context, serviceId string, versionId int32, loggingGooglePubsubName string) APIUpdateLogGcpPubsubRequest
 
 	// UpdateLogGcpPubsubExecute executes the request
 	//  @return LoggingGooglePubsubResponse
@@ -121,8 +121,8 @@ type LoggingPubsubAPIService service
 type APICreateLogGcpPubsubRequest struct {
 	ctx                 context.Context
 	APIService          LoggingPubsubAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -133,7 +133,7 @@ type APICreateLogGcpPubsubRequest struct {
 	secretKey           *string
 	accountName         *string
 	topic               *string
-	projectID           *string
+	projectId           *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -196,9 +196,9 @@ func (r *APICreateLogGcpPubsubRequest) Topic(topic string) *APICreateLogGcpPubsu
 	return r
 }
 
-// ProjectID Your Google Cloud Platform project ID. Required
-func (r *APICreateLogGcpPubsubRequest) ProjectID(projectID string) *APICreateLogGcpPubsubRequest {
-	r.projectID = &projectID
+// ProjectId Your Google Cloud Platform project ID. Required
+func (r *APICreateLogGcpPubsubRequest) ProjectId(projectId string) *APICreateLogGcpPubsubRequest {
+	r.projectId = &projectId
 	return r
 }
 
@@ -213,16 +213,16 @@ CreateLogGcpPubsub Create a GCP Cloud Pub/Sub log endpoint
 Create a Pub/Sub logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogGcpPubsubRequest
 */
-func (a *LoggingPubsubAPIService) CreateLogGcpPubsub(ctx context.Context, serviceID string, versionID int32) APICreateLogGcpPubsubRequest {
+func (a *LoggingPubsubAPIService) CreateLogGcpPubsub(ctx context.Context, serviceId string, versionId int32) APICreateLogGcpPubsubRequest {
 	return APICreateLogGcpPubsubRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -242,8 +242,8 @@ func (a *LoggingPubsubAPIService) CreateLogGcpPubsubExecute(r APICreateLogGcpPub
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/pubsub"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -296,8 +296,8 @@ func (a *LoggingPubsubAPIService) CreateLogGcpPubsubExecute(r APICreateLogGcpPub
 	if r.topic != nil {
 		localVarFormParams.Add("topic", parameterToString(*r.topic, ""))
 	}
-	if r.projectID != nil {
-		localVarFormParams.Add("project_id", parameterToString(*r.projectID, ""))
+	if r.projectId != nil {
+		localVarFormParams.Add("project_id", parameterToString(*r.projectId, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -367,8 +367,8 @@ func (a *LoggingPubsubAPIService) CreateLogGcpPubsubExecute(r APICreateLogGcpPub
 type APIDeleteLogGcpPubsubRequest struct {
 	ctx                     context.Context
 	APIService              LoggingPubsubAPI
-	serviceID               string
-	versionID               int32
+	serviceId               string
+	versionId               int32
 	loggingGooglePubsubName string
 }
 
@@ -383,17 +383,17 @@ DeleteLogGcpPubsub Delete a GCP Cloud Pub/Sub log endpoint
 Delete a Pub/Sub logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingGooglePubsubName The name for the real-time logging configuration.
  @return APIDeleteLogGcpPubsubRequest
 */
-func (a *LoggingPubsubAPIService) DeleteLogGcpPubsub(ctx context.Context, serviceID string, versionID int32, loggingGooglePubsubName string) APIDeleteLogGcpPubsubRequest {
+func (a *LoggingPubsubAPIService) DeleteLogGcpPubsub(ctx context.Context, serviceId string, versionId int32, loggingGooglePubsubName string) APIDeleteLogGcpPubsubRequest {
 	return APIDeleteLogGcpPubsubRequest{
 		APIService:              a,
 		ctx:                     ctx,
-		serviceID:               serviceID,
-		versionID:               versionID,
+		serviceId:               serviceId,
+		versionId:               versionId,
 		loggingGooglePubsubName: loggingGooglePubsubName,
 	}
 }
@@ -414,8 +414,8 @@ func (a *LoggingPubsubAPIService) DeleteLogGcpPubsubExecute(r APIDeleteLogGcpPub
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/pubsub/{logging_google_pubsub_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_google_pubsub_name"+"}", gourl.PathEscape(parameterToString(r.loggingGooglePubsubName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -507,8 +507,8 @@ func (a *LoggingPubsubAPIService) DeleteLogGcpPubsubExecute(r APIDeleteLogGcpPub
 type APIGetLogGcpPubsubRequest struct {
 	ctx                     context.Context
 	APIService              LoggingPubsubAPI
-	serviceID               string
-	versionID               int32
+	serviceId               string
+	versionId               int32
 	loggingGooglePubsubName string
 }
 
@@ -523,17 +523,17 @@ GetLogGcpPubsub Get a GCP Cloud Pub/Sub log endpoint
 Get the details for a Pub/Sub logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingGooglePubsubName The name for the real-time logging configuration.
  @return APIGetLogGcpPubsubRequest
 */
-func (a *LoggingPubsubAPIService) GetLogGcpPubsub(ctx context.Context, serviceID string, versionID int32, loggingGooglePubsubName string) APIGetLogGcpPubsubRequest {
+func (a *LoggingPubsubAPIService) GetLogGcpPubsub(ctx context.Context, serviceId string, versionId int32, loggingGooglePubsubName string) APIGetLogGcpPubsubRequest {
 	return APIGetLogGcpPubsubRequest{
 		APIService:              a,
 		ctx:                     ctx,
-		serviceID:               serviceID,
-		versionID:               versionID,
+		serviceId:               serviceId,
+		versionId:               versionId,
 		loggingGooglePubsubName: loggingGooglePubsubName,
 	}
 }
@@ -554,8 +554,8 @@ func (a *LoggingPubsubAPIService) GetLogGcpPubsubExecute(r APIGetLogGcpPubsubReq
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/pubsub/{logging_google_pubsub_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_google_pubsub_name"+"}", gourl.PathEscape(parameterToString(r.loggingGooglePubsubName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -647,8 +647,8 @@ func (a *LoggingPubsubAPIService) GetLogGcpPubsubExecute(r APIGetLogGcpPubsubReq
 type APIListLogGcpPubsubRequest struct {
 	ctx        context.Context
 	APIService LoggingPubsubAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -662,16 +662,16 @@ ListLogGcpPubsub List GCP Cloud Pub/Sub log endpoints
 List all of the Pub/Sub logging objects for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogGcpPubsubRequest
 */
-func (a *LoggingPubsubAPIService) ListLogGcpPubsub(ctx context.Context, serviceID string, versionID int32) APIListLogGcpPubsubRequest {
+func (a *LoggingPubsubAPIService) ListLogGcpPubsub(ctx context.Context, serviceId string, versionId int32) APIListLogGcpPubsubRequest {
 	return APIListLogGcpPubsubRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -691,8 +691,8 @@ func (a *LoggingPubsubAPIService) ListLogGcpPubsubExecute(r APIListLogGcpPubsubR
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/pubsub"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -783,8 +783,8 @@ func (a *LoggingPubsubAPIService) ListLogGcpPubsubExecute(r APIListLogGcpPubsubR
 type APIUpdateLogGcpPubsubRequest struct {
 	ctx                     context.Context
 	APIService              LoggingPubsubAPI
-	serviceID               string
-	versionID               int32
+	serviceId               string
+	versionId               int32
 	loggingGooglePubsubName string
 	name                    *string
 	placement               *string
@@ -796,7 +796,7 @@ type APIUpdateLogGcpPubsubRequest struct {
 	secretKey               *string
 	accountName             *string
 	topic                   *string
-	projectID               *string
+	projectId               *string
 }
 
 // Name The name for the real-time logging configuration.
@@ -859,9 +859,9 @@ func (r *APIUpdateLogGcpPubsubRequest) Topic(topic string) *APIUpdateLogGcpPubsu
 	return r
 }
 
-// ProjectID Your Google Cloud Platform project ID. Required
-func (r *APIUpdateLogGcpPubsubRequest) ProjectID(projectID string) *APIUpdateLogGcpPubsubRequest {
-	r.projectID = &projectID
+// ProjectId Your Google Cloud Platform project ID. Required
+func (r *APIUpdateLogGcpPubsubRequest) ProjectId(projectId string) *APIUpdateLogGcpPubsubRequest {
+	r.projectId = &projectId
 	return r
 }
 
@@ -876,17 +876,17 @@ UpdateLogGcpPubsub Update a GCP Cloud Pub/Sub log endpoint
 Update a Pub/Sub logging object for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingGooglePubsubName The name for the real-time logging configuration.
  @return APIUpdateLogGcpPubsubRequest
 */
-func (a *LoggingPubsubAPIService) UpdateLogGcpPubsub(ctx context.Context, serviceID string, versionID int32, loggingGooglePubsubName string) APIUpdateLogGcpPubsubRequest {
+func (a *LoggingPubsubAPIService) UpdateLogGcpPubsub(ctx context.Context, serviceId string, versionId int32, loggingGooglePubsubName string) APIUpdateLogGcpPubsubRequest {
 	return APIUpdateLogGcpPubsubRequest{
 		APIService:              a,
 		ctx:                     ctx,
-		serviceID:               serviceID,
-		versionID:               versionID,
+		serviceId:               serviceId,
+		versionId:               versionId,
 		loggingGooglePubsubName: loggingGooglePubsubName,
 	}
 }
@@ -907,8 +907,8 @@ func (a *LoggingPubsubAPIService) UpdateLogGcpPubsubExecute(r APIUpdateLogGcpPub
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/pubsub/{logging_google_pubsub_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_google_pubsub_name"+"}", gourl.PathEscape(parameterToString(r.loggingGooglePubsubName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -962,8 +962,8 @@ func (a *LoggingPubsubAPIService) UpdateLogGcpPubsubExecute(r APIUpdateLogGcpPub
 	if r.topic != nil {
 		localVarFormParams.Add("topic", parameterToString(*r.topic, ""))
 	}
-	if r.projectID != nil {
-		localVarFormParams.Add("project_id", parameterToString(*r.projectID, ""))
+	if r.projectId != nil {
+		localVarFormParams.Add("project_id", parameterToString(*r.projectId, ""))
 	}
 	if r.ctx != nil {
 		// API Key Authentication

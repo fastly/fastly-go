@@ -20,22 +20,22 @@ import (
 // PoolResponsePost struct for PoolResponsePost
 type PoolResponsePost struct {
 	// A secure certificate to authenticate a server with. Must be in PEM format.
-	TLSCaCert NullableString `json:"tls_ca_cert,omitempty"`
+	TlsCaCert NullableString `json:"tls_ca_cert,omitempty"`
 	// The client certificate used to make authenticated requests. Must be in PEM format.
-	TLSClientCert NullableString `json:"tls_client_cert,omitempty"`
+	TlsClientCert NullableString `json:"tls_client_cert,omitempty"`
 	// The client private key used to make authenticated requests. Must be in PEM format.
-	TLSClientKey NullableString `json:"tls_client_key,omitempty"`
+	TlsClientKey NullableString `json:"tls_client_key,omitempty"`
 	// The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
-	TLSCertHostname NullableString `json:"tls_cert_hostname,omitempty"`
+	TlsCertHostname NullableString `json:"tls_cert_hostname,omitempty"`
 	// Whether to use TLS.
-	UseTLS *string `json:"use_tls,omitempty"`
+	UseTls *string `json:"use_tls,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string      `json:"service_id,omitempty"`
+	ServiceId *string      `json:"service_id,omitempty"`
 	Version   *string      `json:"version,omitempty"`
 	// Name for the Pool.
 	Name *string `json:"name,omitempty"`
@@ -44,13 +44,13 @@ type PoolResponsePost struct {
 	// Condition which, if met, will select this configuration during a request. Optional.
 	RequestCondition NullableString `json:"request_condition,omitempty"`
 	// List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
-	TLSCiphers NullableString `json:"tls_ciphers,omitempty"`
+	TlsCiphers NullableString `json:"tls_ciphers,omitempty"`
 	// SNI hostname. Optional.
-	TLSSniHostname NullableString `json:"tls_sni_hostname,omitempty"`
+	TlsSniHostname NullableString `json:"tls_sni_hostname,omitempty"`
 	// Minimum allowed TLS version on connections to this server. Optional.
-	MinTLSVersion NullableInt32 `json:"min_tls_version,omitempty"`
+	MinTlsVersion NullableInt32 `json:"min_tls_version,omitempty"`
 	// Maximum allowed TLS version on connections to this server. Optional.
-	MaxTLSVersion NullableInt32 `json:"max_tls_version,omitempty"`
+	MaxTlsVersion NullableInt32 `json:"max_tls_version,omitempty"`
 	// Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
 	Healthcheck NullableString `json:"healthcheck,omitempty"`
 	// A freeform descriptive note.
@@ -68,8 +68,8 @@ type PoolResponsePost struct {
 	// Maximum number of connections.
 	MaxConnDefault *string `json:"max_conn_default,omitempty"`
 	// Be strict on checking TLS certs.
-	TLSCheckCert NullableString `json:"tls_check_cert,omitempty"`
-	ID           *string        `json:"id,omitempty"`
+	TlsCheckCert NullableString `json:"tls_check_cert,omitempty"`
+	Id           *string        `json:"id,omitempty"`
 	// Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
 	Quorum               *int32 `json:"quorum,omitempty"`
 	AdditionalProperties map[string]any
@@ -84,15 +84,15 @@ type _PoolResponsePost PoolResponsePost
 func NewPoolResponsePost() *PoolResponsePost {
 	this := PoolResponsePost{}
 	var tlsCaCert string = "null"
-	this.TLSCaCert = *NewNullableString(&tlsCaCert)
+	this.TlsCaCert = *NewNullableString(&tlsCaCert)
 	var tlsClientCert string = "null"
-	this.TLSClientCert = *NewNullableString(&tlsClientCert)
+	this.TlsClientCert = *NewNullableString(&tlsClientCert)
 	var tlsClientKey string = "null"
-	this.TLSClientKey = *NewNullableString(&tlsClientKey)
+	this.TlsClientKey = *NewNullableString(&tlsClientKey)
 	var tlsCertHostname string = "null"
-	this.TLSCertHostname = *NewNullableString(&tlsCertHostname)
-	var useTLS string = "0"
-	this.UseTLS = &useTLS
+	this.TlsCertHostname = *NewNullableString(&tlsCertHostname)
+	var useTls string = "0"
+	this.UseTls = &useTls
 	var shield string = "null"
 	this.Shield = *NewNullableString(&shield)
 	var overrideHost string = "null"
@@ -110,15 +110,15 @@ func NewPoolResponsePost() *PoolResponsePost {
 func NewPoolResponsePostWithDefaults() *PoolResponsePost {
 	this := PoolResponsePost{}
 	var tlsCaCert string = "null"
-	this.TLSCaCert = *NewNullableString(&tlsCaCert)
+	this.TlsCaCert = *NewNullableString(&tlsCaCert)
 	var tlsClientCert string = "null"
-	this.TLSClientCert = *NewNullableString(&tlsClientCert)
+	this.TlsClientCert = *NewNullableString(&tlsClientCert)
 	var tlsClientKey string = "null"
-	this.TLSClientKey = *NewNullableString(&tlsClientKey)
+	this.TlsClientKey = *NewNullableString(&tlsClientKey)
 	var tlsCertHostname string = "null"
-	this.TLSCertHostname = *NewNullableString(&tlsCertHostname)
-	var useTLS string = "0"
-	this.UseTLS = &useTLS
+	this.TlsCertHostname = *NewNullableString(&tlsCertHostname)
+	var useTls string = "0"
+	this.UseTls = &useTls
 	var shield string = "null"
 	this.Shield = *NewNullableString(&shield)
 	var overrideHost string = "null"
@@ -130,208 +130,208 @@ func NewPoolResponsePostWithDefaults() *PoolResponsePost {
 	return &this
 }
 
-// GetTLSCaCert returns the TLSCaCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponsePost) GetTLSCaCert() string {
-	if o == nil || o.TLSCaCert.Get() == nil {
+// GetTlsCaCert returns the TlsCaCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponsePost) GetTlsCaCert() string {
+	if o == nil || o.TlsCaCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSCaCert.Get()
+	return *o.TlsCaCert.Get()
 }
 
-// GetTLSCaCertOk returns a tuple with the TLSCaCert field value if set, nil otherwise
+// GetTlsCaCertOk returns a tuple with the TlsCaCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponsePost) GetTLSCaCertOk() (*string, bool) {
+func (o *PoolResponsePost) GetTlsCaCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSCaCert.Get(), o.TLSCaCert.IsSet()
+	return o.TlsCaCert.Get(), o.TlsCaCert.IsSet()
 }
 
-// HasTLSCaCert returns a boolean if a field has been set.
-func (o *PoolResponsePost) HasTLSCaCert() bool {
-	if o != nil && o.TLSCaCert.IsSet() {
+// HasTlsCaCert returns a boolean if a field has been set.
+func (o *PoolResponsePost) HasTlsCaCert() bool {
+	if o != nil && o.TlsCaCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSCaCert gets a reference to the given NullableString and assigns it to the TLSCaCert field.
-func (o *PoolResponsePost) SetTLSCaCert(v string) {
-	o.TLSCaCert.Set(&v)
+// SetTlsCaCert gets a reference to the given NullableString and assigns it to the TlsCaCert field.
+func (o *PoolResponsePost) SetTlsCaCert(v string) {
+	o.TlsCaCert.Set(&v)
 }
 
-// SetTLSCaCertNil sets the value for TLSCaCert to be an explicit nil
-func (o *PoolResponsePost) SetTLSCaCertNil() {
-	o.TLSCaCert.Set(nil)
+// SetTlsCaCertNil sets the value for TlsCaCert to be an explicit nil
+func (o *PoolResponsePost) SetTlsCaCertNil() {
+	o.TlsCaCert.Set(nil)
 }
 
-// UnsetTLSCaCert ensures that no value is present for TLSCaCert, not even an explicit nil
-func (o *PoolResponsePost) UnsetTLSCaCert() {
-	o.TLSCaCert.Unset()
+// UnsetTlsCaCert ensures that no value is present for TlsCaCert, not even an explicit nil
+func (o *PoolResponsePost) UnsetTlsCaCert() {
+	o.TlsCaCert.Unset()
 }
 
-// GetTLSClientCert returns the TLSClientCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponsePost) GetTLSClientCert() string {
-	if o == nil || o.TLSClientCert.Get() == nil {
+// GetTlsClientCert returns the TlsClientCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponsePost) GetTlsClientCert() string {
+	if o == nil || o.TlsClientCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSClientCert.Get()
+	return *o.TlsClientCert.Get()
 }
 
-// GetTLSClientCertOk returns a tuple with the TLSClientCert field value if set, nil otherwise
+// GetTlsClientCertOk returns a tuple with the TlsClientCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponsePost) GetTLSClientCertOk() (*string, bool) {
+func (o *PoolResponsePost) GetTlsClientCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSClientCert.Get(), o.TLSClientCert.IsSet()
+	return o.TlsClientCert.Get(), o.TlsClientCert.IsSet()
 }
 
-// HasTLSClientCert returns a boolean if a field has been set.
-func (o *PoolResponsePost) HasTLSClientCert() bool {
-	if o != nil && o.TLSClientCert.IsSet() {
+// HasTlsClientCert returns a boolean if a field has been set.
+func (o *PoolResponsePost) HasTlsClientCert() bool {
+	if o != nil && o.TlsClientCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSClientCert gets a reference to the given NullableString and assigns it to the TLSClientCert field.
-func (o *PoolResponsePost) SetTLSClientCert(v string) {
-	o.TLSClientCert.Set(&v)
+// SetTlsClientCert gets a reference to the given NullableString and assigns it to the TlsClientCert field.
+func (o *PoolResponsePost) SetTlsClientCert(v string) {
+	o.TlsClientCert.Set(&v)
 }
 
-// SetTLSClientCertNil sets the value for TLSClientCert to be an explicit nil
-func (o *PoolResponsePost) SetTLSClientCertNil() {
-	o.TLSClientCert.Set(nil)
+// SetTlsClientCertNil sets the value for TlsClientCert to be an explicit nil
+func (o *PoolResponsePost) SetTlsClientCertNil() {
+	o.TlsClientCert.Set(nil)
 }
 
-// UnsetTLSClientCert ensures that no value is present for TLSClientCert, not even an explicit nil
-func (o *PoolResponsePost) UnsetTLSClientCert() {
-	o.TLSClientCert.Unset()
+// UnsetTlsClientCert ensures that no value is present for TlsClientCert, not even an explicit nil
+func (o *PoolResponsePost) UnsetTlsClientCert() {
+	o.TlsClientCert.Unset()
 }
 
-// GetTLSClientKey returns the TLSClientKey field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponsePost) GetTLSClientKey() string {
-	if o == nil || o.TLSClientKey.Get() == nil {
+// GetTlsClientKey returns the TlsClientKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponsePost) GetTlsClientKey() string {
+	if o == nil || o.TlsClientKey.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSClientKey.Get()
+	return *o.TlsClientKey.Get()
 }
 
-// GetTLSClientKeyOk returns a tuple with the TLSClientKey field value if set, nil otherwise
+// GetTlsClientKeyOk returns a tuple with the TlsClientKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponsePost) GetTLSClientKeyOk() (*string, bool) {
+func (o *PoolResponsePost) GetTlsClientKeyOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSClientKey.Get(), o.TLSClientKey.IsSet()
+	return o.TlsClientKey.Get(), o.TlsClientKey.IsSet()
 }
 
-// HasTLSClientKey returns a boolean if a field has been set.
-func (o *PoolResponsePost) HasTLSClientKey() bool {
-	if o != nil && o.TLSClientKey.IsSet() {
+// HasTlsClientKey returns a boolean if a field has been set.
+func (o *PoolResponsePost) HasTlsClientKey() bool {
+	if o != nil && o.TlsClientKey.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSClientKey gets a reference to the given NullableString and assigns it to the TLSClientKey field.
-func (o *PoolResponsePost) SetTLSClientKey(v string) {
-	o.TLSClientKey.Set(&v)
+// SetTlsClientKey gets a reference to the given NullableString and assigns it to the TlsClientKey field.
+func (o *PoolResponsePost) SetTlsClientKey(v string) {
+	o.TlsClientKey.Set(&v)
 }
 
-// SetTLSClientKeyNil sets the value for TLSClientKey to be an explicit nil
-func (o *PoolResponsePost) SetTLSClientKeyNil() {
-	o.TLSClientKey.Set(nil)
+// SetTlsClientKeyNil sets the value for TlsClientKey to be an explicit nil
+func (o *PoolResponsePost) SetTlsClientKeyNil() {
+	o.TlsClientKey.Set(nil)
 }
 
-// UnsetTLSClientKey ensures that no value is present for TLSClientKey, not even an explicit nil
-func (o *PoolResponsePost) UnsetTLSClientKey() {
-	o.TLSClientKey.Unset()
+// UnsetTlsClientKey ensures that no value is present for TlsClientKey, not even an explicit nil
+func (o *PoolResponsePost) UnsetTlsClientKey() {
+	o.TlsClientKey.Unset()
 }
 
-// GetTLSCertHostname returns the TLSCertHostname field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponsePost) GetTLSCertHostname() string {
-	if o == nil || o.TLSCertHostname.Get() == nil {
+// GetTlsCertHostname returns the TlsCertHostname field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponsePost) GetTlsCertHostname() string {
+	if o == nil || o.TlsCertHostname.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSCertHostname.Get()
+	return *o.TlsCertHostname.Get()
 }
 
-// GetTLSCertHostnameOk returns a tuple with the TLSCertHostname field value if set, nil otherwise
+// GetTlsCertHostnameOk returns a tuple with the TlsCertHostname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponsePost) GetTLSCertHostnameOk() (*string, bool) {
+func (o *PoolResponsePost) GetTlsCertHostnameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSCertHostname.Get(), o.TLSCertHostname.IsSet()
+	return o.TlsCertHostname.Get(), o.TlsCertHostname.IsSet()
 }
 
-// HasTLSCertHostname returns a boolean if a field has been set.
-func (o *PoolResponsePost) HasTLSCertHostname() bool {
-	if o != nil && o.TLSCertHostname.IsSet() {
+// HasTlsCertHostname returns a boolean if a field has been set.
+func (o *PoolResponsePost) HasTlsCertHostname() bool {
+	if o != nil && o.TlsCertHostname.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSCertHostname gets a reference to the given NullableString and assigns it to the TLSCertHostname field.
-func (o *PoolResponsePost) SetTLSCertHostname(v string) {
-	o.TLSCertHostname.Set(&v)
+// SetTlsCertHostname gets a reference to the given NullableString and assigns it to the TlsCertHostname field.
+func (o *PoolResponsePost) SetTlsCertHostname(v string) {
+	o.TlsCertHostname.Set(&v)
 }
 
-// SetTLSCertHostnameNil sets the value for TLSCertHostname to be an explicit nil
-func (o *PoolResponsePost) SetTLSCertHostnameNil() {
-	o.TLSCertHostname.Set(nil)
+// SetTlsCertHostnameNil sets the value for TlsCertHostname to be an explicit nil
+func (o *PoolResponsePost) SetTlsCertHostnameNil() {
+	o.TlsCertHostname.Set(nil)
 }
 
-// UnsetTLSCertHostname ensures that no value is present for TLSCertHostname, not even an explicit nil
-func (o *PoolResponsePost) UnsetTLSCertHostname() {
-	o.TLSCertHostname.Unset()
+// UnsetTlsCertHostname ensures that no value is present for TlsCertHostname, not even an explicit nil
+func (o *PoolResponsePost) UnsetTlsCertHostname() {
+	o.TlsCertHostname.Unset()
 }
 
-// GetUseTLS returns the UseTLS field value if set, zero value otherwise.
-func (o *PoolResponsePost) GetUseTLS() string {
-	if o == nil || o.UseTLS == nil {
+// GetUseTls returns the UseTls field value if set, zero value otherwise.
+func (o *PoolResponsePost) GetUseTls() string {
+	if o == nil || o.UseTls == nil {
 		var ret string
 		return ret
 	}
-	return *o.UseTLS
+	return *o.UseTls
 }
 
-// GetUseTLSOk returns a tuple with the UseTLS field value if set, nil otherwise
+// GetUseTlsOk returns a tuple with the UseTls field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PoolResponsePost) GetUseTLSOk() (*string, bool) {
-	if o == nil || o.UseTLS == nil {
+func (o *PoolResponsePost) GetUseTlsOk() (*string, bool) {
+	if o == nil || o.UseTls == nil {
 		return nil, false
 	}
-	return o.UseTLS, true
+	return o.UseTls, true
 }
 
-// HasUseTLS returns a boolean if a field has been set.
-func (o *PoolResponsePost) HasUseTLS() bool {
-	if o != nil && o.UseTLS != nil {
+// HasUseTls returns a boolean if a field has been set.
+func (o *PoolResponsePost) HasUseTls() bool {
+	if o != nil && o.UseTls != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetUseTLS gets a reference to the given string and assigns it to the UseTLS field.
-func (o *PoolResponsePost) SetUseTLS(v string) {
-	o.UseTLS = &v
+// SetUseTls gets a reference to the given string and assigns it to the UseTls field.
+func (o *PoolResponsePost) SetUseTls(v string) {
+	o.UseTls = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -463,36 +463,36 @@ func (o *PoolResponsePost) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *PoolResponsePost) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *PoolResponsePost) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PoolResponsePost) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *PoolResponsePost) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *PoolResponsePost) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *PoolResponsePost) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *PoolResponsePost) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *PoolResponsePost) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -645,176 +645,176 @@ func (o *PoolResponsePost) UnsetRequestCondition() {
 	o.RequestCondition.Unset()
 }
 
-// GetTLSCiphers returns the TLSCiphers field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponsePost) GetTLSCiphers() string {
-	if o == nil || o.TLSCiphers.Get() == nil {
+// GetTlsCiphers returns the TlsCiphers field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponsePost) GetTlsCiphers() string {
+	if o == nil || o.TlsCiphers.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSCiphers.Get()
+	return *o.TlsCiphers.Get()
 }
 
-// GetTLSCiphersOk returns a tuple with the TLSCiphers field value if set, nil otherwise
+// GetTlsCiphersOk returns a tuple with the TlsCiphers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponsePost) GetTLSCiphersOk() (*string, bool) {
+func (o *PoolResponsePost) GetTlsCiphersOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSCiphers.Get(), o.TLSCiphers.IsSet()
+	return o.TlsCiphers.Get(), o.TlsCiphers.IsSet()
 }
 
-// HasTLSCiphers returns a boolean if a field has been set.
-func (o *PoolResponsePost) HasTLSCiphers() bool {
-	if o != nil && o.TLSCiphers.IsSet() {
+// HasTlsCiphers returns a boolean if a field has been set.
+func (o *PoolResponsePost) HasTlsCiphers() bool {
+	if o != nil && o.TlsCiphers.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSCiphers gets a reference to the given NullableString and assigns it to the TLSCiphers field.
-func (o *PoolResponsePost) SetTLSCiphers(v string) {
-	o.TLSCiphers.Set(&v)
+// SetTlsCiphers gets a reference to the given NullableString and assigns it to the TlsCiphers field.
+func (o *PoolResponsePost) SetTlsCiphers(v string) {
+	o.TlsCiphers.Set(&v)
 }
 
-// SetTLSCiphersNil sets the value for TLSCiphers to be an explicit nil
-func (o *PoolResponsePost) SetTLSCiphersNil() {
-	o.TLSCiphers.Set(nil)
+// SetTlsCiphersNil sets the value for TlsCiphers to be an explicit nil
+func (o *PoolResponsePost) SetTlsCiphersNil() {
+	o.TlsCiphers.Set(nil)
 }
 
-// UnsetTLSCiphers ensures that no value is present for TLSCiphers, not even an explicit nil
-func (o *PoolResponsePost) UnsetTLSCiphers() {
-	o.TLSCiphers.Unset()
+// UnsetTlsCiphers ensures that no value is present for TlsCiphers, not even an explicit nil
+func (o *PoolResponsePost) UnsetTlsCiphers() {
+	o.TlsCiphers.Unset()
 }
 
-// GetTLSSniHostname returns the TLSSniHostname field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponsePost) GetTLSSniHostname() string {
-	if o == nil || o.TLSSniHostname.Get() == nil {
+// GetTlsSniHostname returns the TlsSniHostname field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponsePost) GetTlsSniHostname() string {
+	if o == nil || o.TlsSniHostname.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSSniHostname.Get()
+	return *o.TlsSniHostname.Get()
 }
 
-// GetTLSSniHostnameOk returns a tuple with the TLSSniHostname field value if set, nil otherwise
+// GetTlsSniHostnameOk returns a tuple with the TlsSniHostname field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponsePost) GetTLSSniHostnameOk() (*string, bool) {
+func (o *PoolResponsePost) GetTlsSniHostnameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSSniHostname.Get(), o.TLSSniHostname.IsSet()
+	return o.TlsSniHostname.Get(), o.TlsSniHostname.IsSet()
 }
 
-// HasTLSSniHostname returns a boolean if a field has been set.
-func (o *PoolResponsePost) HasTLSSniHostname() bool {
-	if o != nil && o.TLSSniHostname.IsSet() {
+// HasTlsSniHostname returns a boolean if a field has been set.
+func (o *PoolResponsePost) HasTlsSniHostname() bool {
+	if o != nil && o.TlsSniHostname.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSSniHostname gets a reference to the given NullableString and assigns it to the TLSSniHostname field.
-func (o *PoolResponsePost) SetTLSSniHostname(v string) {
-	o.TLSSniHostname.Set(&v)
+// SetTlsSniHostname gets a reference to the given NullableString and assigns it to the TlsSniHostname field.
+func (o *PoolResponsePost) SetTlsSniHostname(v string) {
+	o.TlsSniHostname.Set(&v)
 }
 
-// SetTLSSniHostnameNil sets the value for TLSSniHostname to be an explicit nil
-func (o *PoolResponsePost) SetTLSSniHostnameNil() {
-	o.TLSSniHostname.Set(nil)
+// SetTlsSniHostnameNil sets the value for TlsSniHostname to be an explicit nil
+func (o *PoolResponsePost) SetTlsSniHostnameNil() {
+	o.TlsSniHostname.Set(nil)
 }
 
-// UnsetTLSSniHostname ensures that no value is present for TLSSniHostname, not even an explicit nil
-func (o *PoolResponsePost) UnsetTLSSniHostname() {
-	o.TLSSniHostname.Unset()
+// UnsetTlsSniHostname ensures that no value is present for TlsSniHostname, not even an explicit nil
+func (o *PoolResponsePost) UnsetTlsSniHostname() {
+	o.TlsSniHostname.Unset()
 }
 
-// GetMinTLSVersion returns the MinTLSVersion field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponsePost) GetMinTLSVersion() int32 {
-	if o == nil || o.MinTLSVersion.Get() == nil {
+// GetMinTlsVersion returns the MinTlsVersion field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponsePost) GetMinTlsVersion() int32 {
+	if o == nil || o.MinTlsVersion.Get() == nil {
 		var ret int32
 		return ret
 	}
-	return *o.MinTLSVersion.Get()
+	return *o.MinTlsVersion.Get()
 }
 
-// GetMinTLSVersionOk returns a tuple with the MinTLSVersion field value if set, nil otherwise
+// GetMinTlsVersionOk returns a tuple with the MinTlsVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponsePost) GetMinTLSVersionOk() (*int32, bool) {
+func (o *PoolResponsePost) GetMinTlsVersionOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.MinTLSVersion.Get(), o.MinTLSVersion.IsSet()
+	return o.MinTlsVersion.Get(), o.MinTlsVersion.IsSet()
 }
 
-// HasMinTLSVersion returns a boolean if a field has been set.
-func (o *PoolResponsePost) HasMinTLSVersion() bool {
-	if o != nil && o.MinTLSVersion.IsSet() {
+// HasMinTlsVersion returns a boolean if a field has been set.
+func (o *PoolResponsePost) HasMinTlsVersion() bool {
+	if o != nil && o.MinTlsVersion.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMinTLSVersion gets a reference to the given NullableInt32 and assigns it to the MinTLSVersion field.
-func (o *PoolResponsePost) SetMinTLSVersion(v int32) {
-	o.MinTLSVersion.Set(&v)
+// SetMinTlsVersion gets a reference to the given NullableInt32 and assigns it to the MinTlsVersion field.
+func (o *PoolResponsePost) SetMinTlsVersion(v int32) {
+	o.MinTlsVersion.Set(&v)
 }
 
-// SetMinTLSVersionNil sets the value for MinTLSVersion to be an explicit nil
-func (o *PoolResponsePost) SetMinTLSVersionNil() {
-	o.MinTLSVersion.Set(nil)
+// SetMinTlsVersionNil sets the value for MinTlsVersion to be an explicit nil
+func (o *PoolResponsePost) SetMinTlsVersionNil() {
+	o.MinTlsVersion.Set(nil)
 }
 
-// UnsetMinTLSVersion ensures that no value is present for MinTLSVersion, not even an explicit nil
-func (o *PoolResponsePost) UnsetMinTLSVersion() {
-	o.MinTLSVersion.Unset()
+// UnsetMinTlsVersion ensures that no value is present for MinTlsVersion, not even an explicit nil
+func (o *PoolResponsePost) UnsetMinTlsVersion() {
+	o.MinTlsVersion.Unset()
 }
 
-// GetMaxTLSVersion returns the MaxTLSVersion field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponsePost) GetMaxTLSVersion() int32 {
-	if o == nil || o.MaxTLSVersion.Get() == nil {
+// GetMaxTlsVersion returns the MaxTlsVersion field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponsePost) GetMaxTlsVersion() int32 {
+	if o == nil || o.MaxTlsVersion.Get() == nil {
 		var ret int32
 		return ret
 	}
-	return *o.MaxTLSVersion.Get()
+	return *o.MaxTlsVersion.Get()
 }
 
-// GetMaxTLSVersionOk returns a tuple with the MaxTLSVersion field value if set, nil otherwise
+// GetMaxTlsVersionOk returns a tuple with the MaxTlsVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponsePost) GetMaxTLSVersionOk() (*int32, bool) {
+func (o *PoolResponsePost) GetMaxTlsVersionOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.MaxTLSVersion.Get(), o.MaxTLSVersion.IsSet()
+	return o.MaxTlsVersion.Get(), o.MaxTlsVersion.IsSet()
 }
 
-// HasMaxTLSVersion returns a boolean if a field has been set.
-func (o *PoolResponsePost) HasMaxTLSVersion() bool {
-	if o != nil && o.MaxTLSVersion.IsSet() {
+// HasMaxTlsVersion returns a boolean if a field has been set.
+func (o *PoolResponsePost) HasMaxTlsVersion() bool {
+	if o != nil && o.MaxTlsVersion.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxTLSVersion gets a reference to the given NullableInt32 and assigns it to the MaxTLSVersion field.
-func (o *PoolResponsePost) SetMaxTLSVersion(v int32) {
-	o.MaxTLSVersion.Set(&v)
+// SetMaxTlsVersion gets a reference to the given NullableInt32 and assigns it to the MaxTlsVersion field.
+func (o *PoolResponsePost) SetMaxTlsVersion(v int32) {
+	o.MaxTlsVersion.Set(&v)
 }
 
-// SetMaxTLSVersionNil sets the value for MaxTLSVersion to be an explicit nil
-func (o *PoolResponsePost) SetMaxTLSVersionNil() {
-	o.MaxTLSVersion.Set(nil)
+// SetMaxTlsVersionNil sets the value for MaxTlsVersion to be an explicit nil
+func (o *PoolResponsePost) SetMaxTlsVersionNil() {
+	o.MaxTlsVersion.Set(nil)
 }
 
-// UnsetMaxTLSVersion ensures that no value is present for MaxTLSVersion, not even an explicit nil
-func (o *PoolResponsePost) UnsetMaxTLSVersion() {
-	o.MaxTLSVersion.Unset()
+// UnsetMaxTlsVersion ensures that no value is present for MaxTlsVersion, not even an explicit nil
+func (o *PoolResponsePost) UnsetMaxTlsVersion() {
+	o.MaxTlsVersion.Unset()
 }
 
 // GetHealthcheck returns the Healthcheck field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1106,79 +1106,79 @@ func (o *PoolResponsePost) SetMaxConnDefault(v string) {
 	o.MaxConnDefault = &v
 }
 
-// GetTLSCheckCert returns the TLSCheckCert field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *PoolResponsePost) GetTLSCheckCert() string {
-	if o == nil || o.TLSCheckCert.Get() == nil {
+// GetTlsCheckCert returns the TlsCheckCert field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PoolResponsePost) GetTlsCheckCert() string {
+	if o == nil || o.TlsCheckCert.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TLSCheckCert.Get()
+	return *o.TlsCheckCert.Get()
 }
 
-// GetTLSCheckCertOk returns a tuple with the TLSCheckCert field value if set, nil otherwise
+// GetTlsCheckCertOk returns a tuple with the TlsCheckCert field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *PoolResponsePost) GetTLSCheckCertOk() (*string, bool) {
+func (o *PoolResponsePost) GetTlsCheckCertOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TLSCheckCert.Get(), o.TLSCheckCert.IsSet()
+	return o.TlsCheckCert.Get(), o.TlsCheckCert.IsSet()
 }
 
-// HasTLSCheckCert returns a boolean if a field has been set.
-func (o *PoolResponsePost) HasTLSCheckCert() bool {
-	if o != nil && o.TLSCheckCert.IsSet() {
+// HasTlsCheckCert returns a boolean if a field has been set.
+func (o *PoolResponsePost) HasTlsCheckCert() bool {
+	if o != nil && o.TlsCheckCert.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTLSCheckCert gets a reference to the given NullableString and assigns it to the TLSCheckCert field.
-func (o *PoolResponsePost) SetTLSCheckCert(v string) {
-	o.TLSCheckCert.Set(&v)
+// SetTlsCheckCert gets a reference to the given NullableString and assigns it to the TlsCheckCert field.
+func (o *PoolResponsePost) SetTlsCheckCert(v string) {
+	o.TlsCheckCert.Set(&v)
 }
 
-// SetTLSCheckCertNil sets the value for TLSCheckCert to be an explicit nil
-func (o *PoolResponsePost) SetTLSCheckCertNil() {
-	o.TLSCheckCert.Set(nil)
+// SetTlsCheckCertNil sets the value for TlsCheckCert to be an explicit nil
+func (o *PoolResponsePost) SetTlsCheckCertNil() {
+	o.TlsCheckCert.Set(nil)
 }
 
-// UnsetTLSCheckCert ensures that no value is present for TLSCheckCert, not even an explicit nil
-func (o *PoolResponsePost) UnsetTLSCheckCert() {
-	o.TLSCheckCert.Unset()
+// UnsetTlsCheckCert ensures that no value is present for TlsCheckCert, not even an explicit nil
+func (o *PoolResponsePost) UnsetTlsCheckCert() {
+	o.TlsCheckCert.Unset()
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *PoolResponsePost) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *PoolResponsePost) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PoolResponsePost) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *PoolResponsePost) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *PoolResponsePost) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *PoolResponsePost) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *PoolResponsePost) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *PoolResponsePost) SetId(v string) {
+	o.Id = &v
 }
 
 // GetQuorum returns the Quorum field value if set, zero value otherwise.
@@ -1217,20 +1217,20 @@ func (o *PoolResponsePost) SetQuorum(v int32) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o PoolResponsePost) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.TLSCaCert.IsSet() {
-		toSerialize["tls_ca_cert"] = o.TLSCaCert.Get()
+	if o.TlsCaCert.IsSet() {
+		toSerialize["tls_ca_cert"] = o.TlsCaCert.Get()
 	}
-	if o.TLSClientCert.IsSet() {
-		toSerialize["tls_client_cert"] = o.TLSClientCert.Get()
+	if o.TlsClientCert.IsSet() {
+		toSerialize["tls_client_cert"] = o.TlsClientCert.Get()
 	}
-	if o.TLSClientKey.IsSet() {
-		toSerialize["tls_client_key"] = o.TLSClientKey.Get()
+	if o.TlsClientKey.IsSet() {
+		toSerialize["tls_client_key"] = o.TlsClientKey.Get()
 	}
-	if o.TLSCertHostname.IsSet() {
-		toSerialize["tls_cert_hostname"] = o.TLSCertHostname.Get()
+	if o.TlsCertHostname.IsSet() {
+		toSerialize["tls_cert_hostname"] = o.TlsCertHostname.Get()
 	}
-	if o.UseTLS != nil {
-		toSerialize["use_tls"] = o.UseTLS
+	if o.UseTls != nil {
+		toSerialize["use_tls"] = o.UseTls
 	}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
@@ -1241,8 +1241,8 @@ func (o PoolResponsePost) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
@@ -1256,17 +1256,17 @@ func (o PoolResponsePost) MarshalJSON() ([]byte, error) {
 	if o.RequestCondition.IsSet() {
 		toSerialize["request_condition"] = o.RequestCondition.Get()
 	}
-	if o.TLSCiphers.IsSet() {
-		toSerialize["tls_ciphers"] = o.TLSCiphers.Get()
+	if o.TlsCiphers.IsSet() {
+		toSerialize["tls_ciphers"] = o.TlsCiphers.Get()
 	}
-	if o.TLSSniHostname.IsSet() {
-		toSerialize["tls_sni_hostname"] = o.TLSSniHostname.Get()
+	if o.TlsSniHostname.IsSet() {
+		toSerialize["tls_sni_hostname"] = o.TlsSniHostname.Get()
 	}
-	if o.MinTLSVersion.IsSet() {
-		toSerialize["min_tls_version"] = o.MinTLSVersion.Get()
+	if o.MinTlsVersion.IsSet() {
+		toSerialize["min_tls_version"] = o.MinTlsVersion.Get()
 	}
-	if o.MaxTLSVersion.IsSet() {
-		toSerialize["max_tls_version"] = o.MaxTLSVersion.Get()
+	if o.MaxTlsVersion.IsSet() {
+		toSerialize["max_tls_version"] = o.MaxTlsVersion.Get()
 	}
 	if o.Healthcheck.IsSet() {
 		toSerialize["healthcheck"] = o.Healthcheck.Get()
@@ -1292,11 +1292,11 @@ func (o PoolResponsePost) MarshalJSON() ([]byte, error) {
 	if o.MaxConnDefault != nil {
 		toSerialize["max_conn_default"] = o.MaxConnDefault
 	}
-	if o.TLSCheckCert.IsSet() {
-		toSerialize["tls_check_cert"] = o.TLSCheckCert.Get()
+	if o.TlsCheckCert.IsSet() {
+		toSerialize["tls_check_cert"] = o.TlsCheckCert.Get()
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 	if o.Quorum != nil {
 		toSerialize["quorum"] = o.Quorum

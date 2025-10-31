@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**WorkspaceID** | Pointer to **string** | Workspace ID | [optional] 
+**WorkspaceId** | Pointer to **string** | Workspace ID | [optional] 
 **TrafficRamp** | Pointer to **string** | The percentage of traffic to inspect. | [optional] 
 
 ## Methods
@@ -26,30 +26,30 @@ NewNgwafResponseConfigurationConfigurationWithDefaults instantiates a new NgwafR
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetWorkspaceID
+### GetWorkspaceId
 
-`func (o *NgwafResponseConfigurationConfiguration) GetWorkspaceID() string`
+`func (o *NgwafResponseConfigurationConfiguration) GetWorkspaceId() string`
 
-GetWorkspaceID returns the WorkspaceID field if non-nil, zero value otherwise.
+GetWorkspaceId returns the WorkspaceId field if non-nil, zero value otherwise.
 
-### GetWorkspaceIDOk
+### GetWorkspaceIdOk
 
-`func (o *NgwafResponseConfigurationConfiguration) GetWorkspaceIDOk() (*string, bool)`
+`func (o *NgwafResponseConfigurationConfiguration) GetWorkspaceIdOk() (*string, bool)`
 
-GetWorkspaceIDOk returns a tuple with the WorkspaceID field if it's non-nil, zero value otherwise
+GetWorkspaceIdOk returns a tuple with the WorkspaceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetWorkspaceID
+### SetWorkspaceId
 
-`func (o *NgwafResponseConfigurationConfiguration) SetWorkspaceID(v string)`
+`func (o *NgwafResponseConfigurationConfiguration) SetWorkspaceId(v string)`
 
-SetWorkspaceID sets WorkspaceID field to given value.
+SetWorkspaceId sets WorkspaceId field to given value.
 
-### HasWorkspaceID
+### HasWorkspaceId
 
-`func (o *NgwafResponseConfigurationConfiguration) HasWorkspaceID() bool`
+`func (o *NgwafResponseConfigurationConfiguration) HasWorkspaceId() bool`
 
-HasWorkspaceID returns a boolean if a field has been set.
+HasWorkspaceId returns a boolean if a field has been set.
 
 ### GetTrafficRamp
 
@@ -78,3 +78,5 @@ HasTrafficRamp returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

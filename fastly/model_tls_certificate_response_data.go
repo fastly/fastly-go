@@ -16,42 +16,42 @@ import (
 	"encoding/json"
 )
 
-// TLSCertificateResponseData struct for TLSCertificateResponseData
-type TLSCertificateResponseData struct {
-	Type                 *TypeTLSCertificate               `json:"type,omitempty"`
-	Attributes           *TLSCertificateResponseAttributes `json:"attributes,omitempty"`
-	Relationships        *RelationshipTLSDomains           `json:"relationships,omitempty"`
-	ID                   *string                           `json:"id,omitempty"`
+// TlsCertificateResponseData struct for TlsCertificateResponseData
+type TlsCertificateResponseData struct {
+	Type                 *TypeTlsCertificate               `json:"type,omitempty"`
+	Attributes           *TlsCertificateResponseAttributes `json:"attributes,omitempty"`
+	Relationships        *RelationshipTlsDomains           `json:"relationships,omitempty"`
+	Id                   *string                           `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TLSCertificateResponseData TLSCertificateResponseData
+type _TlsCertificateResponseData TlsCertificateResponseData
 
-// NewTLSCertificateResponseData instantiates a new TLSCertificateResponseData object
+// NewTlsCertificateResponseData instantiates a new TlsCertificateResponseData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSCertificateResponseData() *TLSCertificateResponseData {
-	this := TLSCertificateResponseData{}
-	var resourceType TypeTLSCertificate = TYPETLSCERTIFICATE_TLS_CERTIFICATE
-	this.Type = &resourceType
+func NewTlsCertificateResponseData() *TlsCertificateResponseData {
+	this := TlsCertificateResponseData{}
+	var type_ TypeTlsCertificate = TYPETLSCERTIFICATE_TLS_CERTIFICATE
+	this.Type = &type_
 	return &this
 }
 
-// NewTLSCertificateResponseDataWithDefaults instantiates a new TLSCertificateResponseData object
+// NewTlsCertificateResponseDataWithDefaults instantiates a new TlsCertificateResponseData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSCertificateResponseDataWithDefaults() *TLSCertificateResponseData {
-	this := TLSCertificateResponseData{}
-	var resourceType TypeTLSCertificate = TYPETLSCERTIFICATE_TLS_CERTIFICATE
-	this.Type = &resourceType
+func NewTlsCertificateResponseDataWithDefaults() *TlsCertificateResponseData {
+	this := TlsCertificateResponseData{}
+	var type_ TypeTlsCertificate = TYPETLSCERTIFICATE_TLS_CERTIFICATE
+	this.Type = &type_
 	return &this
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *TLSCertificateResponseData) GetType() TypeTLSCertificate {
+func (o *TlsCertificateResponseData) GetType() TypeTlsCertificate {
 	if o == nil || o.Type == nil {
-		var ret TypeTLSCertificate
+		var ret TypeTlsCertificate
 		return ret
 	}
 	return *o.Type
@@ -59,7 +59,7 @@ func (o *TLSCertificateResponseData) GetType() TypeTLSCertificate {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCertificateResponseData) GetTypeOk() (*TypeTLSCertificate, bool) {
+func (o *TlsCertificateResponseData) GetTypeOk() (*TypeTlsCertificate, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -67,7 +67,7 @@ func (o *TLSCertificateResponseData) GetTypeOk() (*TypeTLSCertificate, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *TLSCertificateResponseData) HasType() bool {
+func (o *TlsCertificateResponseData) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -75,15 +75,15 @@ func (o *TLSCertificateResponseData) HasType() bool {
 	return false
 }
 
-// SetType gets a reference to the given TypeTLSCertificate and assigns it to the Type field.
-func (o *TLSCertificateResponseData) SetType(v TypeTLSCertificate) {
+// SetType gets a reference to the given TypeTlsCertificate and assigns it to the Type field.
+func (o *TlsCertificateResponseData) SetType(v TypeTlsCertificate) {
 	o.Type = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *TLSCertificateResponseData) GetAttributes() TLSCertificateResponseAttributes {
+func (o *TlsCertificateResponseData) GetAttributes() TlsCertificateResponseAttributes {
 	if o == nil || o.Attributes == nil {
-		var ret TLSCertificateResponseAttributes
+		var ret TlsCertificateResponseAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -91,7 +91,7 @@ func (o *TLSCertificateResponseData) GetAttributes() TLSCertificateResponseAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCertificateResponseData) GetAttributesOk() (*TLSCertificateResponseAttributes, bool) {
+func (o *TlsCertificateResponseData) GetAttributesOk() (*TlsCertificateResponseAttributes, bool) {
 	if o == nil || o.Attributes == nil {
 		return nil, false
 	}
@@ -99,7 +99,7 @@ func (o *TLSCertificateResponseData) GetAttributesOk() (*TLSCertificateResponseA
 }
 
 // HasAttributes returns a boolean if a field has been set.
-func (o *TLSCertificateResponseData) HasAttributes() bool {
+func (o *TlsCertificateResponseData) HasAttributes() bool {
 	if o != nil && o.Attributes != nil {
 		return true
 	}
@@ -107,15 +107,15 @@ func (o *TLSCertificateResponseData) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given TLSCertificateResponseAttributes and assigns it to the Attributes field.
-func (o *TLSCertificateResponseData) SetAttributes(v TLSCertificateResponseAttributes) {
+// SetAttributes gets a reference to the given TlsCertificateResponseAttributes and assigns it to the Attributes field.
+func (o *TlsCertificateResponseData) SetAttributes(v TlsCertificateResponseAttributes) {
 	o.Attributes = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TLSCertificateResponseData) GetRelationships() RelationshipTLSDomains {
+func (o *TlsCertificateResponseData) GetRelationships() RelationshipTlsDomains {
 	if o == nil || o.Relationships == nil {
-		var ret RelationshipTLSDomains
+		var ret RelationshipTlsDomains
 		return ret
 	}
 	return *o.Relationships
@@ -123,7 +123,7 @@ func (o *TLSCertificateResponseData) GetRelationships() RelationshipTLSDomains {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCertificateResponseData) GetRelationshipsOk() (*RelationshipTLSDomains, bool) {
+func (o *TlsCertificateResponseData) GetRelationshipsOk() (*RelationshipTlsDomains, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -131,7 +131,7 @@ func (o *TLSCertificateResponseData) GetRelationshipsOk() (*RelationshipTLSDomai
 }
 
 // HasRelationships returns a boolean if a field has been set.
-func (o *TLSCertificateResponseData) HasRelationships() bool {
+func (o *TlsCertificateResponseData) HasRelationships() bool {
 	if o != nil && o.Relationships != nil {
 		return true
 	}
@@ -139,46 +139,46 @@ func (o *TLSCertificateResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given RelationshipTLSDomains and assigns it to the Relationships field.
-func (o *TLSCertificateResponseData) SetRelationships(v RelationshipTLSDomains) {
+// SetRelationships gets a reference to the given RelationshipTlsDomains and assigns it to the Relationships field.
+func (o *TlsCertificateResponseData) SetRelationships(v RelationshipTlsDomains) {
 	o.Relationships = &v
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *TLSCertificateResponseData) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *TlsCertificateResponseData) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCertificateResponseData) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *TlsCertificateResponseData) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *TLSCertificateResponseData) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *TlsCertificateResponseData) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *TLSCertificateResponseData) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *TlsCertificateResponseData) SetId(v string) {
+	o.Id = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSCertificateResponseData) MarshalJSON() ([]byte, error) {
+func (o TlsCertificateResponseData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -189,8 +189,8 @@ func (o TLSCertificateResponseData) MarshalJSON() ([]byte, error) {
 	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -202,11 +202,11 @@ func (o TLSCertificateResponseData) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSCertificateResponseData) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSCertificateResponseData := _TLSCertificateResponseData{}
+func (o *TlsCertificateResponseData) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsCertificateResponseData := _TlsCertificateResponseData{}
 
-	if err = json.Unmarshal(bytes, &varTLSCertificateResponseData); err == nil {
-		*o = TLSCertificateResponseData(varTLSCertificateResponseData)
+	if err = json.Unmarshal(bytes, &varTlsCertificateResponseData); err == nil {
+		*o = TlsCertificateResponseData(varTlsCertificateResponseData)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -222,48 +222,48 @@ func (o *TLSCertificateResponseData) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableTLSCertificateResponseData is a helper abstraction for handling nullable tlscertificateresponsedata types.
-type NullableTLSCertificateResponseData struct {
-	value *TLSCertificateResponseData
+// NullableTlsCertificateResponseData is a helper abstraction for handling nullable tlscertificateresponsedata types.
+type NullableTlsCertificateResponseData struct {
+	value *TlsCertificateResponseData
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSCertificateResponseData) Get() *TLSCertificateResponseData {
+func (v NullableTlsCertificateResponseData) Get() *TlsCertificateResponseData {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSCertificateResponseData) Set(val *TLSCertificateResponseData) {
+func (v *NullableTlsCertificateResponseData) Set(val *TlsCertificateResponseData) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSCertificateResponseData) IsSet() bool {
+func (v NullableTlsCertificateResponseData) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSCertificateResponseData) Unset() {
+func (v *NullableTlsCertificateResponseData) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSCertificateResponseData returns a pointer to a new instance of NullableTLSCertificateResponseData.
-func NewNullableTLSCertificateResponseData(val *TLSCertificateResponseData) *NullableTLSCertificateResponseData {
-	return &NullableTLSCertificateResponseData{value: val, isSet: true}
+// NewNullableTlsCertificateResponseData returns a pointer to a new instance of NullableTlsCertificateResponseData.
+func NewNullableTlsCertificateResponseData(val *TlsCertificateResponseData) *NullableTlsCertificateResponseData {
+	return &NullableTlsCertificateResponseData{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSCertificateResponseData) MarshalJSON() ([]byte, error) {
+func (v NullableTlsCertificateResponseData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSCertificateResponseData) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsCertificateResponseData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

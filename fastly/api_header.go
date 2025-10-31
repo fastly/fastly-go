@@ -36,11 +36,11 @@ type HeaderAPI interface {
 		Creates a new Header object.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateHeaderObjectRequest
 	*/
-	CreateHeaderObject(ctx context.Context, serviceID string, versionID int32) APICreateHeaderObjectRequest
+	CreateHeaderObject(ctx context.Context, serviceId string, versionId int32) APICreateHeaderObjectRequest
 
 	// CreateHeaderObjectExecute executes the request
 	//  @return HeaderResponse
@@ -52,12 +52,12 @@ type HeaderAPI interface {
 		Deletes a Header object by name.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param headerName A handle to refer to this Header object.
 		 @return APIDeleteHeaderObjectRequest
 	*/
-	DeleteHeaderObject(ctx context.Context, serviceID string, versionID int32, headerName string) APIDeleteHeaderObjectRequest
+	DeleteHeaderObject(ctx context.Context, serviceId string, versionId int32, headerName string) APIDeleteHeaderObjectRequest
 
 	// DeleteHeaderObjectExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type HeaderAPI interface {
 		Retrieves a Header object by name.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param headerName A handle to refer to this Header object.
 		 @return APIGetHeaderObjectRequest
 	*/
-	GetHeaderObject(ctx context.Context, serviceID string, versionID int32, headerName string) APIGetHeaderObjectRequest
+	GetHeaderObject(ctx context.Context, serviceId string, versionId int32, headerName string) APIGetHeaderObjectRequest
 
 	// GetHeaderObjectExecute executes the request
 	//  @return HeaderResponse
@@ -86,11 +86,11 @@ type HeaderAPI interface {
 		Retrieves all Header objects for a particular Version of a Service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListHeaderObjectsRequest
 	*/
-	ListHeaderObjects(ctx context.Context, serviceID string, versionID int32) APIListHeaderObjectsRequest
+	ListHeaderObjects(ctx context.Context, serviceId string, versionId int32) APIListHeaderObjectsRequest
 
 	// ListHeaderObjectsExecute executes the request
 	//  @return []HeaderResponse
@@ -102,12 +102,12 @@ type HeaderAPI interface {
 		Modifies an existing Header object by name.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param headerName A handle to refer to this Header object.
 		 @return APIUpdateHeaderObjectRequest
 	*/
-	UpdateHeaderObject(ctx context.Context, serviceID string, versionID int32, headerName string) APIUpdateHeaderObjectRequest
+	UpdateHeaderObject(ctx context.Context, serviceId string, versionId int32, headerName string) APIUpdateHeaderObjectRequest
 
 	// UpdateHeaderObjectExecute executes the request
 	//  @return HeaderResponse
@@ -121,8 +121,8 @@ type HeaderAPIService service
 type APICreateHeaderObjectRequest struct {
 	ctx               context.Context
 	APIService        HeaderAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	action            *string
 	cacheCondition    *string
 	dst               *string
@@ -132,7 +132,7 @@ type APICreateHeaderObjectRequest struct {
 	responseCondition *string
 	src               *string
 	substitution      *string
-	resourceType      *string
+	type_             *string
 	ignoreIfSet       *string
 	priority          *string
 }
@@ -191,9 +191,9 @@ func (r *APICreateHeaderObjectRequest) Substitution(substitution string) *APICre
 	return r
 }
 
-// ResourceType Accepts a string value.
-func (r *APICreateHeaderObjectRequest) ResourceType(resourceType string) *APICreateHeaderObjectRequest {
-	r.resourceType = &resourceType
+// Type_ Accepts a string value.
+func (r *APICreateHeaderObjectRequest) Type_(type_ string) *APICreateHeaderObjectRequest {
+	r.type_ = &type_
 	return r
 }
 
@@ -220,16 +220,16 @@ CreateHeaderObject Create a Header object
 Creates a new Header object.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateHeaderObjectRequest
 */
-func (a *HeaderAPIService) CreateHeaderObject(ctx context.Context, serviceID string, versionID int32) APICreateHeaderObjectRequest {
+func (a *HeaderAPIService) CreateHeaderObject(ctx context.Context, serviceId string, versionId int32) APICreateHeaderObjectRequest {
 	return APICreateHeaderObjectRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -249,8 +249,8 @@ func (a *HeaderAPIService) CreateHeaderObjectExecute(r APICreateHeaderObjectRequ
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/header"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -292,11 +292,11 @@ func (a *HeaderAPIService) CreateHeaderObjectExecute(r APICreateHeaderObjectRequ
 		localVarFormParams.Add("request_condition", parameterToString(*r.requestCondition, ""))
 	}
 	if r.responseCondition != nil {
-		paramJSON, err := parameterToJSON(*r.responseCondition)
+		paramJson, err := parameterToJSON(*r.responseCondition)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("response_condition", paramJSON)
+		localVarFormParams.Add("response_condition", paramJson)
 	}
 	if r.src != nil {
 		localVarFormParams.Add("src", parameterToString(*r.src, ""))
@@ -304,8 +304,8 @@ func (a *HeaderAPIService) CreateHeaderObjectExecute(r APICreateHeaderObjectRequ
 	if r.substitution != nil {
 		localVarFormParams.Add("substitution", parameterToString(*r.substitution, ""))
 	}
-	if r.resourceType != nil {
-		localVarFormParams.Add("type", parameterToString(*r.resourceType, ""))
+	if r.type_ != nil {
+		localVarFormParams.Add("type", parameterToString(*r.type_, ""))
 	}
 	if r.ignoreIfSet != nil {
 		localVarFormParams.Add("ignore_if_set", parameterToString(*r.ignoreIfSet, ""))
@@ -381,8 +381,8 @@ func (a *HeaderAPIService) CreateHeaderObjectExecute(r APICreateHeaderObjectRequ
 type APIDeleteHeaderObjectRequest struct {
 	ctx        context.Context
 	APIService HeaderAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	headerName string
 }
 
@@ -397,17 +397,17 @@ DeleteHeaderObject Delete a Header object
 Deletes a Header object by name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param headerName A handle to refer to this Header object.
  @return APIDeleteHeaderObjectRequest
 */
-func (a *HeaderAPIService) DeleteHeaderObject(ctx context.Context, serviceID string, versionID int32, headerName string) APIDeleteHeaderObjectRequest {
+func (a *HeaderAPIService) DeleteHeaderObject(ctx context.Context, serviceId string, versionId int32, headerName string) APIDeleteHeaderObjectRequest {
 	return APIDeleteHeaderObjectRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		headerName: headerName,
 	}
 }
@@ -428,8 +428,8 @@ func (a *HeaderAPIService) DeleteHeaderObjectExecute(r APIDeleteHeaderObjectRequ
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/header/{header_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"header_name"+"}", gourl.PathEscape(parameterToString(r.headerName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -521,8 +521,8 @@ func (a *HeaderAPIService) DeleteHeaderObjectExecute(r APIDeleteHeaderObjectRequ
 type APIGetHeaderObjectRequest struct {
 	ctx        context.Context
 	APIService HeaderAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 	headerName string
 }
 
@@ -537,17 +537,17 @@ GetHeaderObject Get a Header object
 Retrieves a Header object by name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param headerName A handle to refer to this Header object.
  @return APIGetHeaderObjectRequest
 */
-func (a *HeaderAPIService) GetHeaderObject(ctx context.Context, serviceID string, versionID int32, headerName string) APIGetHeaderObjectRequest {
+func (a *HeaderAPIService) GetHeaderObject(ctx context.Context, serviceId string, versionId int32, headerName string) APIGetHeaderObjectRequest {
 	return APIGetHeaderObjectRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		headerName: headerName,
 	}
 }
@@ -568,8 +568,8 @@ func (a *HeaderAPIService) GetHeaderObjectExecute(r APIGetHeaderObjectRequest) (
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/header/{header_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"header_name"+"}", gourl.PathEscape(parameterToString(r.headerName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -661,8 +661,8 @@ func (a *HeaderAPIService) GetHeaderObjectExecute(r APIGetHeaderObjectRequest) (
 type APIListHeaderObjectsRequest struct {
 	ctx        context.Context
 	APIService HeaderAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -676,16 +676,16 @@ ListHeaderObjects List Header objects
 Retrieves all Header objects for a particular Version of a Service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListHeaderObjectsRequest
 */
-func (a *HeaderAPIService) ListHeaderObjects(ctx context.Context, serviceID string, versionID int32) APIListHeaderObjectsRequest {
+func (a *HeaderAPIService) ListHeaderObjects(ctx context.Context, serviceId string, versionId int32) APIListHeaderObjectsRequest {
 	return APIListHeaderObjectsRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -705,8 +705,8 @@ func (a *HeaderAPIService) ListHeaderObjectsExecute(r APIListHeaderObjectsReques
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/header"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -797,8 +797,8 @@ func (a *HeaderAPIService) ListHeaderObjectsExecute(r APIListHeaderObjectsReques
 type APIUpdateHeaderObjectRequest struct {
 	ctx               context.Context
 	APIService        HeaderAPI
-	serviceID         string
-	versionID         int32
+	serviceId         string
+	versionId         int32
 	headerName        string
 	action            *string
 	cacheCondition    *string
@@ -809,7 +809,7 @@ type APIUpdateHeaderObjectRequest struct {
 	responseCondition *string
 	src               *string
 	substitution      *string
-	resourceType      *string
+	type_             *string
 	ignoreIfSet       *string
 	priority          *string
 }
@@ -868,9 +868,9 @@ func (r *APIUpdateHeaderObjectRequest) Substitution(substitution string) *APIUpd
 	return r
 }
 
-// ResourceType Accepts a string value.
-func (r *APIUpdateHeaderObjectRequest) ResourceType(resourceType string) *APIUpdateHeaderObjectRequest {
-	r.resourceType = &resourceType
+// Type_ Accepts a string value.
+func (r *APIUpdateHeaderObjectRequest) Type_(type_ string) *APIUpdateHeaderObjectRequest {
+	r.type_ = &type_
 	return r
 }
 
@@ -897,17 +897,17 @@ UpdateHeaderObject Update a Header object
 Modifies an existing Header object by name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param headerName A handle to refer to this Header object.
  @return APIUpdateHeaderObjectRequest
 */
-func (a *HeaderAPIService) UpdateHeaderObject(ctx context.Context, serviceID string, versionID int32, headerName string) APIUpdateHeaderObjectRequest {
+func (a *HeaderAPIService) UpdateHeaderObject(ctx context.Context, serviceId string, versionId int32, headerName string) APIUpdateHeaderObjectRequest {
 	return APIUpdateHeaderObjectRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 		headerName: headerName,
 	}
 }
@@ -928,8 +928,8 @@ func (a *HeaderAPIService) UpdateHeaderObjectExecute(r APIUpdateHeaderObjectRequ
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/header/{header_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"header_name"+"}", gourl.PathEscape(parameterToString(r.headerName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -972,11 +972,11 @@ func (a *HeaderAPIService) UpdateHeaderObjectExecute(r APIUpdateHeaderObjectRequ
 		localVarFormParams.Add("request_condition", parameterToString(*r.requestCondition, ""))
 	}
 	if r.responseCondition != nil {
-		paramJSON, err := parameterToJSON(*r.responseCondition)
+		paramJson, err := parameterToJSON(*r.responseCondition)
 		if err != nil {
 			return localVarReturnValue, nil, err
 		}
-		localVarFormParams.Add("response_condition", paramJSON)
+		localVarFormParams.Add("response_condition", paramJson)
 	}
 	if r.src != nil {
 		localVarFormParams.Add("src", parameterToString(*r.src, ""))
@@ -984,8 +984,8 @@ func (a *HeaderAPIService) UpdateHeaderObjectExecute(r APIUpdateHeaderObjectRequ
 	if r.substitution != nil {
 		localVarFormParams.Add("substitution", parameterToString(*r.substitution, ""))
 	}
-	if r.resourceType != nil {
-		localVarFormParams.Add("type", parameterToString(*r.resourceType, ""))
+	if r.type_ != nil {
+		localVarFormParams.Add("type", parameterToString(*r.type_, ""))
 	}
 	if r.ignoreIfSet != nil {
 		localVarFormParams.Add("ignore_if_set", parameterToString(*r.ignoreIfSet, ""))

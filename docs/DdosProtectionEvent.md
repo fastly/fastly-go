@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ID** | Pointer to **string** | Unique ID of the event. | [optional] 
+**Id** | Pointer to **string** | Unique ID of the event. | [optional] 
 **Name** | Pointer to **string** | A human-readable name for the event. | [optional] 
-**CustomerID** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
-**ServiceID** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
+**CustomerId** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
+**ServiceId** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
 **StartedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **EndedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 
@@ -102,30 +102,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *DdosProtectionEvent) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetID
+### GetId
 
-`func (o *DdosProtectionEvent) GetID() string`
+`func (o *DdosProtectionEvent) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *DdosProtectionEvent) GetIDOk() (*string, bool)`
+`func (o *DdosProtectionEvent) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *DdosProtectionEvent) SetID(v string)`
+`func (o *DdosProtectionEvent) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *DdosProtectionEvent) HasID() bool`
+`func (o *DdosProtectionEvent) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -152,55 +152,55 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
-### GetCustomerID
+### GetCustomerId
 
-`func (o *DdosProtectionEvent) GetCustomerID() string`
+`func (o *DdosProtectionEvent) GetCustomerId() string`
 
-GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetCustomerIDOk
+### GetCustomerIdOk
 
-`func (o *DdosProtectionEvent) GetCustomerIDOk() (*string, bool)`
+`func (o *DdosProtectionEvent) GetCustomerIdOk() (*string, bool)`
 
-GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerID
+### SetCustomerId
 
-`func (o *DdosProtectionEvent) SetCustomerID(v string)`
+`func (o *DdosProtectionEvent) SetCustomerId(v string)`
 
-SetCustomerID sets CustomerID field to given value.
+SetCustomerId sets CustomerId field to given value.
 
-### HasCustomerID
+### HasCustomerId
 
-`func (o *DdosProtectionEvent) HasCustomerID() bool`
+`func (o *DdosProtectionEvent) HasCustomerId() bool`
 
-HasCustomerID returns a boolean if a field has been set.
+HasCustomerId returns a boolean if a field has been set.
 
-### GetServiceID
+### GetServiceId
 
-`func (o *DdosProtectionEvent) GetServiceID() string`
+`func (o *DdosProtectionEvent) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *DdosProtectionEvent) GetServiceIDOk() (*string, bool)`
+`func (o *DdosProtectionEvent) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *DdosProtectionEvent) SetServiceID(v string)`
+`func (o *DdosProtectionEvent) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *DdosProtectionEvent) HasServiceID() bool`
+`func (o *DdosProtectionEvent) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetStartedAt
 
@@ -274,3 +274,5 @@ HasEndedAt returns a boolean if a field has been set.
 UnsetEndedAt ensures that no value is present for EndedAt, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

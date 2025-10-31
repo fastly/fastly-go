@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **MessageType** | Pointer to [**LoggingMessageType**](LoggingMessageType.md) |  | [optional] [default to LOGGINGMESSAGETYPE_CLASSIC]
-**URL** | Pointer to **string** | The URL to post logs to. | [optional] 
+**Url** | Pointer to **string** | The URL to post logs to. | [optional] 
 
 ## Methods
 
@@ -51,30 +51,32 @@ SetMessageType sets MessageType field to given value.
 
 HasMessageType returns a boolean if a field has been set.
 
-### GetURL
+### GetUrl
 
-`func (o *LoggingSumologicAdditional) GetURL() string`
+`func (o *LoggingSumologicAdditional) GetUrl() string`
 
-GetURL returns the URL field if non-nil, zero value otherwise.
+GetUrl returns the Url field if non-nil, zero value otherwise.
 
-### GetURLOk
+### GetUrlOk
 
-`func (o *LoggingSumologicAdditional) GetURLOk() (*string, bool)`
+`func (o *LoggingSumologicAdditional) GetUrlOk() (*string, bool)`
 
-GetURLOk returns a tuple with the URL field if it's non-nil, zero value otherwise
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetURL
+### SetUrl
 
-`func (o *LoggingSumologicAdditional) SetURL(v string)`
+`func (o *LoggingSumologicAdditional) SetUrl(v string)`
 
-SetURL sets URL field to given value.
+SetUrl sets Url field to given value.
 
-### HasURL
+### HasUrl
 
-`func (o *LoggingSumologicAdditional) HasURL() bool`
+`func (o *LoggingSumologicAdditional) HasUrl() bool`
 
-HasURL returns a boolean if a field has been set.
+HasUrl returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

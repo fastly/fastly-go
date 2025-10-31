@@ -32,20 +32,20 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     comment := "comment_example" // string | A freeform descriptive note. (optional)
     name := "name_example" // string | Name of the condition. Required. (optional)
     priority := "priority_example" // string | A numeric string. Priority determines execution order. Lower numbers execute first. (optional) (default to "100")
     statement := "statement_example" // string | A conditional expression in VCL used to determine if the condition is met. (optional)
-    serviceID2 := "serviceId_example" // string |  (optional)
+    serviceId2 := "serviceId_example" // string |  (optional)
     version := "version_example" // string | A numeric string that represents the service version. (optional)
-    resourceType := "resourceType_example" // string | Type of the condition. Required. (optional)
+    type_ := "type__example" // string | Type of the condition. Required. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConditionAPI.CreateCondition(ctx, serviceID, versionID).Comment(comment).Name(name).Priority(priority).Statement(statement).ServiceID2(serviceID2).Version(version).ResourceType(resourceType).Execute()
+    resp, r, err := apiClient.ConditionAPI.CreateCondition(ctx, serviceId, versionId).Comment(comment).Name(name).Priority(priority).Statement(statement).ServiceId2(serviceId2).Version(version).Type_(type_).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConditionAPI.CreateCondition`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -61,8 +61,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -71,7 +71,7 @@ Other parameters are passed through a pointer to a apiCreateConditionRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **comment** | **string** | A freeform descriptive note. |  **name** | **string** | Name of the condition. Required. |  **priority** | **string** | A numeric string. Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;] **statement** | **string** | A conditional expression in VCL used to determine if the condition is met. |  **serviceID2** | **string** |  |  **version** | **string** | A numeric string that represents the service version. |  **resourceType** | **string** | Type of the condition. Required. | 
+ **comment** | **string** | A freeform descriptive note. |  **name** | **string** | Name of the condition. Required. |  **priority** | **string** | A numeric string. Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;] **statement** | **string** | A conditional expression in VCL used to determine if the condition is met. |  **serviceId2** | **string** |  |  **version** | **string** | A numeric string that represents the service version. |  **type_** | **string** | Type of the condition. Required. | 
 
 ### Return type
 
@@ -108,14 +108,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     conditionName := "conditionName_example" // string | Name of the condition. Required.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConditionAPI.DeleteCondition(ctx, serviceID, versionID, conditionName).Execute()
+    resp, r, err := apiClient.ConditionAPI.DeleteCondition(ctx, serviceId, versionId, conditionName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConditionAPI.DeleteCondition`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -131,8 +131,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **conditionName** | **string** | Name of the condition. Required. | 
 
 ### Other Parameters
@@ -179,14 +179,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     conditionName := "conditionName_example" // string | Name of the condition. Required.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConditionAPI.GetCondition(ctx, serviceID, versionID, conditionName).Execute()
+    resp, r, err := apiClient.ConditionAPI.GetCondition(ctx, serviceId, versionId, conditionName).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConditionAPI.GetCondition`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -202,8 +202,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **conditionName** | **string** | Name of the condition. Required. | 
 
 ### Other Parameters
@@ -250,13 +250,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConditionAPI.ListConditions(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.ConditionAPI.ListConditions(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConditionAPI.ListConditions`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -272,8 +272,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -319,21 +319,21 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     conditionName := "conditionName_example" // string | Name of the condition. Required.
     comment := "comment_example" // string | A freeform descriptive note. (optional)
     name := "name_example" // string | Name of the condition. Required. (optional)
     priority := "priority_example" // string | A numeric string. Priority determines execution order. Lower numbers execute first. (optional) (default to "100")
     statement := "statement_example" // string | A conditional expression in VCL used to determine if the condition is met. (optional)
-    serviceID2 := "serviceId_example" // string |  (optional)
+    serviceId2 := "serviceId_example" // string |  (optional)
     version := "version_example" // string | A numeric string that represents the service version. (optional)
-    resourceType := "resourceType_example" // string | Type of the condition. Required. (optional)
+    type_ := "type__example" // string | Type of the condition. Required. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ConditionAPI.UpdateCondition(ctx, serviceID, versionID, conditionName).Comment(comment).Name(name).Priority(priority).Statement(statement).ServiceID2(serviceID2).Version(version).ResourceType(resourceType).Execute()
+    resp, r, err := apiClient.ConditionAPI.UpdateCondition(ctx, serviceId, versionId, conditionName).Comment(comment).Name(name).Priority(priority).Statement(statement).ServiceId2(serviceId2).Version(version).Type_(type_).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ConditionAPI.UpdateCondition`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -349,8 +349,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 **conditionName** | **string** | Name of the condition. Required. | 
 
 ### Other Parameters
@@ -360,7 +360,7 @@ Other parameters are passed through a pointer to a apiUpdateConditionRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **comment** | **string** | A freeform descriptive note. |  **name** | **string** | Name of the condition. Required. |  **priority** | **string** | A numeric string. Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;] **statement** | **string** | A conditional expression in VCL used to determine if the condition is met. |  **serviceID2** | **string** |  |  **version** | **string** | A numeric string that represents the service version. |  **resourceType** | **string** | Type of the condition. Required. | 
+ **comment** | **string** | A freeform descriptive note. |  **name** | **string** | Name of the condition. Required. |  **priority** | **string** | A numeric string. Priority determines execution order. Lower numbers execute first. | [default to &quot;100&quot;] **statement** | **string** | A conditional expression in VCL used to determine if the condition is met. |  **serviceId2** | **string** |  |  **version** | **string** | A numeric string that represents the service version. |  **type_** | **string** | Type of the condition. Required. | 
 
 ### Return type
 
@@ -376,3 +376,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

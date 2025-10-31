@@ -36,11 +36,11 @@ type LoggingDigitaloceanAPI interface {
 		Create a DigitalOcean Space for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogDigoceanRequest
 	*/
-	CreateLogDigocean(ctx context.Context, serviceID string, versionID int32) APICreateLogDigoceanRequest
+	CreateLogDigocean(ctx context.Context, serviceId string, versionId int32) APICreateLogDigoceanRequest
 
 	// CreateLogDigoceanExecute executes the request
 	//  @return LoggingDigitaloceanResponse
@@ -52,12 +52,12 @@ type LoggingDigitaloceanAPI interface {
 		Delete the DigitalOcean Space for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingDigitaloceanName The name for the real-time logging configuration.
 		 @return APIDeleteLogDigoceanRequest
 	*/
-	DeleteLogDigocean(ctx context.Context, serviceID string, versionID int32, loggingDigitaloceanName string) APIDeleteLogDigoceanRequest
+	DeleteLogDigocean(ctx context.Context, serviceId string, versionId int32, loggingDigitaloceanName string) APIDeleteLogDigoceanRequest
 
 	// DeleteLogDigoceanExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingDigitaloceanAPI interface {
 		Get the DigitalOcean Space for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingDigitaloceanName The name for the real-time logging configuration.
 		 @return APIGetLogDigoceanRequest
 	*/
-	GetLogDigocean(ctx context.Context, serviceID string, versionID int32, loggingDigitaloceanName string) APIGetLogDigoceanRequest
+	GetLogDigocean(ctx context.Context, serviceId string, versionId int32, loggingDigitaloceanName string) APIGetLogDigoceanRequest
 
 	// GetLogDigoceanExecute executes the request
 	//  @return LoggingDigitaloceanResponse
@@ -86,11 +86,11 @@ type LoggingDigitaloceanAPI interface {
 		List all of the DigitalOcean Spaces for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogDigoceanRequest
 	*/
-	ListLogDigocean(ctx context.Context, serviceID string, versionID int32) APIListLogDigoceanRequest
+	ListLogDigocean(ctx context.Context, serviceId string, versionId int32) APIListLogDigoceanRequest
 
 	// ListLogDigoceanExecute executes the request
 	//  @return []LoggingDigitaloceanResponse
@@ -102,12 +102,12 @@ type LoggingDigitaloceanAPI interface {
 		Update the DigitalOcean Space for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingDigitaloceanName The name for the real-time logging configuration.
 		 @return APIUpdateLogDigoceanRequest
 	*/
-	UpdateLogDigocean(ctx context.Context, serviceID string, versionID int32, loggingDigitaloceanName string) APIUpdateLogDigoceanRequest
+	UpdateLogDigocean(ctx context.Context, serviceId string, versionId int32, loggingDigitaloceanName string) APIUpdateLogDigoceanRequest
 
 	// UpdateLogDigoceanExecute executes the request
 	//  @return LoggingDigitaloceanResponse
@@ -121,8 +121,8 @@ type LoggingDigitaloceanAPIService service
 type APICreateLogDigoceanRequest struct {
 	ctx                 context.Context
 	APIService          LoggingDigitaloceanAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -255,16 +255,16 @@ CreateLogDigocean Create a DigitalOcean Spaces log endpoint
 Create a DigitalOcean Space for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogDigoceanRequest
 */
-func (a *LoggingDigitaloceanAPIService) CreateLogDigocean(ctx context.Context, serviceID string, versionID int32) APICreateLogDigoceanRequest {
+func (a *LoggingDigitaloceanAPIService) CreateLogDigocean(ctx context.Context, serviceId string, versionId int32) APICreateLogDigoceanRequest {
 	return APICreateLogDigoceanRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -284,8 +284,8 @@ func (a *LoggingDigitaloceanAPIService) CreateLogDigoceanExecute(r APICreateLogD
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/digitalocean"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -427,8 +427,8 @@ func (a *LoggingDigitaloceanAPIService) CreateLogDigoceanExecute(r APICreateLogD
 type APIDeleteLogDigoceanRequest struct {
 	ctx                     context.Context
 	APIService              LoggingDigitaloceanAPI
-	serviceID               string
-	versionID               int32
+	serviceId               string
+	versionId               int32
 	loggingDigitaloceanName string
 }
 
@@ -443,17 +443,17 @@ DeleteLogDigocean Delete a DigitalOcean Spaces log endpoint
 Delete the DigitalOcean Space for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingDigitaloceanName The name for the real-time logging configuration.
  @return APIDeleteLogDigoceanRequest
 */
-func (a *LoggingDigitaloceanAPIService) DeleteLogDigocean(ctx context.Context, serviceID string, versionID int32, loggingDigitaloceanName string) APIDeleteLogDigoceanRequest {
+func (a *LoggingDigitaloceanAPIService) DeleteLogDigocean(ctx context.Context, serviceId string, versionId int32, loggingDigitaloceanName string) APIDeleteLogDigoceanRequest {
 	return APIDeleteLogDigoceanRequest{
 		APIService:              a,
 		ctx:                     ctx,
-		serviceID:               serviceID,
-		versionID:               versionID,
+		serviceId:               serviceId,
+		versionId:               versionId,
 		loggingDigitaloceanName: loggingDigitaloceanName,
 	}
 }
@@ -474,8 +474,8 @@ func (a *LoggingDigitaloceanAPIService) DeleteLogDigoceanExecute(r APIDeleteLogD
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/digitalocean/{logging_digitalocean_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_digitalocean_name"+"}", gourl.PathEscape(parameterToString(r.loggingDigitaloceanName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -567,8 +567,8 @@ func (a *LoggingDigitaloceanAPIService) DeleteLogDigoceanExecute(r APIDeleteLogD
 type APIGetLogDigoceanRequest struct {
 	ctx                     context.Context
 	APIService              LoggingDigitaloceanAPI
-	serviceID               string
-	versionID               int32
+	serviceId               string
+	versionId               int32
 	loggingDigitaloceanName string
 }
 
@@ -583,17 +583,17 @@ GetLogDigocean Get a DigitalOcean Spaces log endpoint
 Get the DigitalOcean Space for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingDigitaloceanName The name for the real-time logging configuration.
  @return APIGetLogDigoceanRequest
 */
-func (a *LoggingDigitaloceanAPIService) GetLogDigocean(ctx context.Context, serviceID string, versionID int32, loggingDigitaloceanName string) APIGetLogDigoceanRequest {
+func (a *LoggingDigitaloceanAPIService) GetLogDigocean(ctx context.Context, serviceId string, versionId int32, loggingDigitaloceanName string) APIGetLogDigoceanRequest {
 	return APIGetLogDigoceanRequest{
 		APIService:              a,
 		ctx:                     ctx,
-		serviceID:               serviceID,
-		versionID:               versionID,
+		serviceId:               serviceId,
+		versionId:               versionId,
 		loggingDigitaloceanName: loggingDigitaloceanName,
 	}
 }
@@ -614,8 +614,8 @@ func (a *LoggingDigitaloceanAPIService) GetLogDigoceanExecute(r APIGetLogDigocea
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/digitalocean/{logging_digitalocean_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_digitalocean_name"+"}", gourl.PathEscape(parameterToString(r.loggingDigitaloceanName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -707,8 +707,8 @@ func (a *LoggingDigitaloceanAPIService) GetLogDigoceanExecute(r APIGetLogDigocea
 type APIListLogDigoceanRequest struct {
 	ctx        context.Context
 	APIService LoggingDigitaloceanAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -722,16 +722,16 @@ ListLogDigocean List DigitalOcean Spaces log endpoints
 List all of the DigitalOcean Spaces for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogDigoceanRequest
 */
-func (a *LoggingDigitaloceanAPIService) ListLogDigocean(ctx context.Context, serviceID string, versionID int32) APIListLogDigoceanRequest {
+func (a *LoggingDigitaloceanAPIService) ListLogDigocean(ctx context.Context, serviceId string, versionId int32) APIListLogDigoceanRequest {
 	return APIListLogDigoceanRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -751,8 +751,8 @@ func (a *LoggingDigitaloceanAPIService) ListLogDigoceanExecute(r APIListLogDigoc
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/digitalocean"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -843,8 +843,8 @@ func (a *LoggingDigitaloceanAPIService) ListLogDigoceanExecute(r APIListLogDigoc
 type APIUpdateLogDigoceanRequest struct {
 	ctx                     context.Context
 	APIService              LoggingDigitaloceanAPI
-	serviceID               string
-	versionID               int32
+	serviceId               string
+	versionId               int32
 	loggingDigitaloceanName string
 	name                    *string
 	placement               *string
@@ -978,17 +978,17 @@ UpdateLogDigocean Update a DigitalOcean Spaces log endpoint
 Update the DigitalOcean Space for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingDigitaloceanName The name for the real-time logging configuration.
  @return APIUpdateLogDigoceanRequest
 */
-func (a *LoggingDigitaloceanAPIService) UpdateLogDigocean(ctx context.Context, serviceID string, versionID int32, loggingDigitaloceanName string) APIUpdateLogDigoceanRequest {
+func (a *LoggingDigitaloceanAPIService) UpdateLogDigocean(ctx context.Context, serviceId string, versionId int32, loggingDigitaloceanName string) APIUpdateLogDigoceanRequest {
 	return APIUpdateLogDigoceanRequest{
 		APIService:              a,
 		ctx:                     ctx,
-		serviceID:               serviceID,
-		versionID:               versionID,
+		serviceId:               serviceId,
+		versionId:               versionId,
 		loggingDigitaloceanName: loggingDigitaloceanName,
 	}
 }
@@ -1009,8 +1009,8 @@ func (a *LoggingDigitaloceanAPIService) UpdateLogDigoceanExecute(r APIUpdateLogD
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/digitalocean/{logging_digitalocean_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_digitalocean_name"+"}", gourl.PathEscape(parameterToString(r.loggingDigitaloceanName, "")))
 
 	localVarHeaderParams := make(map[string]string)

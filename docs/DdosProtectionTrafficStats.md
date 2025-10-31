@@ -6,9 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**CustomerID** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
-**ServiceID** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
+**CustomerId** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
+**ServiceId** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
 **Attributes** | Pointer to [**[]DdosProtectionAttributeStats**](DdosProtectionAttributeStats.md) |  | [optional] 
+**TrafficPercentage** | Pointer to **float32** | Rule traffic percentage for the event. | [optional] 
 
 ## Methods
 
@@ -99,55 +100,55 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *DdosProtectionTrafficStats) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetCustomerID
+### GetCustomerId
 
-`func (o *DdosProtectionTrafficStats) GetCustomerID() string`
+`func (o *DdosProtectionTrafficStats) GetCustomerId() string`
 
-GetCustomerID returns the CustomerID field if non-nil, zero value otherwise.
+GetCustomerId returns the CustomerId field if non-nil, zero value otherwise.
 
-### GetCustomerIDOk
+### GetCustomerIdOk
 
-`func (o *DdosProtectionTrafficStats) GetCustomerIDOk() (*string, bool)`
+`func (o *DdosProtectionTrafficStats) GetCustomerIdOk() (*string, bool)`
 
-GetCustomerIDOk returns a tuple with the CustomerID field if it's non-nil, zero value otherwise
+GetCustomerIdOk returns a tuple with the CustomerId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCustomerID
+### SetCustomerId
 
-`func (o *DdosProtectionTrafficStats) SetCustomerID(v string)`
+`func (o *DdosProtectionTrafficStats) SetCustomerId(v string)`
 
-SetCustomerID sets CustomerID field to given value.
+SetCustomerId sets CustomerId field to given value.
 
-### HasCustomerID
+### HasCustomerId
 
-`func (o *DdosProtectionTrafficStats) HasCustomerID() bool`
+`func (o *DdosProtectionTrafficStats) HasCustomerId() bool`
 
-HasCustomerID returns a boolean if a field has been set.
+HasCustomerId returns a boolean if a field has been set.
 
-### GetServiceID
+### GetServiceId
 
-`func (o *DdosProtectionTrafficStats) GetServiceID() string`
+`func (o *DdosProtectionTrafficStats) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *DdosProtectionTrafficStats) GetServiceIDOk() (*string, bool)`
+`func (o *DdosProtectionTrafficStats) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *DdosProtectionTrafficStats) SetServiceID(v string)`
+`func (o *DdosProtectionTrafficStats) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *DdosProtectionTrafficStats) HasServiceID() bool`
+`func (o *DdosProtectionTrafficStats) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetAttributes
 
@@ -174,5 +175,32 @@ SetAttributes sets Attributes field to given value.
 
 HasAttributes returns a boolean if a field has been set.
 
+### GetTrafficPercentage
+
+`func (o *DdosProtectionTrafficStats) GetTrafficPercentage() float32`
+
+GetTrafficPercentage returns the TrafficPercentage field if non-nil, zero value otherwise.
+
+### GetTrafficPercentageOk
+
+`func (o *DdosProtectionTrafficStats) GetTrafficPercentageOk() (*float32, bool)`
+
+GetTrafficPercentageOk returns a tuple with the TrafficPercentage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrafficPercentage
+
+`func (o *DdosProtectionTrafficStats) SetTrafficPercentage(v float32)`
+
+SetTrafficPercentage sets TrafficPercentage field to given value.
+
+### HasTrafficPercentage
+
+`func (o *DdosProtectionTrafficStats) HasTrafficPercentage() bool`
+
+HasTrafficPercentage returns a boolean if a field has been set.
+
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

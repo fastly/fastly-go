@@ -19,7 +19,7 @@ import (
 // DdosProtectionResponseEnable struct for DdosProtectionResponseEnable
 type DdosProtectionResponseEnable struct {
 	Product              *DdosProtectionResponseProductProduct `json:"product,omitempty"`
-	Service              *BotManagementResponseServiceService  `json:"service,omitempty"`
+	Service              *ApiDiscoveryResponseServiceService   `json:"service,omitempty"`
 	Links                *DdosProtectionResponseLinksLinks     `json:"_links,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -76,9 +76,9 @@ func (o *DdosProtectionResponseEnable) SetProduct(v DdosProtectionResponseProduc
 }
 
 // GetService returns the Service field value if set, zero value otherwise.
-func (o *DdosProtectionResponseEnable) GetService() BotManagementResponseServiceService {
+func (o *DdosProtectionResponseEnable) GetService() ApiDiscoveryResponseServiceService {
 	if o == nil || o.Service == nil {
-		var ret BotManagementResponseServiceService
+		var ret ApiDiscoveryResponseServiceService
 		return ret
 	}
 	return *o.Service
@@ -86,7 +86,7 @@ func (o *DdosProtectionResponseEnable) GetService() BotManagementResponseService
 
 // GetServiceOk returns a tuple with the Service field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DdosProtectionResponseEnable) GetServiceOk() (*BotManagementResponseServiceService, bool) {
+func (o *DdosProtectionResponseEnable) GetServiceOk() (*ApiDiscoveryResponseServiceService, bool) {
 	if o == nil || o.Service == nil {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *DdosProtectionResponseEnable) HasService() bool {
 	return false
 }
 
-// SetService gets a reference to the given BotManagementResponseServiceService and assigns it to the Service field.
-func (o *DdosProtectionResponseEnable) SetService(v BotManagementResponseServiceService) {
+// SetService gets a reference to the given ApiDiscoveryResponseServiceService and assigns it to the Service field.
+func (o *DdosProtectionResponseEnable) SetService(v ApiDiscoveryResponseServiceService) {
 	o.Service = &v
 }
 

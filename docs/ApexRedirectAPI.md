@@ -33,9 +33,9 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
-    serviceID2 := "serviceId_example" // string |  (optional)
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
+    serviceId2 := "serviceId_example" // string |  (optional)
     version := int32(56) // int32 |  (optional)
     createdAt := time.Now() // time.Time | Date and time in ISO 8601 format. (optional)
     deletedAt := time.Now() // time.Time | Date and time in ISO 8601 format. (optional)
@@ -47,7 +47,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApexRedirectAPI.CreateApexRedirect(ctx, serviceID, versionID).ServiceID2(serviceID2).Version(version).CreatedAt(createdAt).DeletedAt(deletedAt).UpdatedAt(updatedAt).StatusCode(statusCode).Domains(domains).FeatureRevision(featureRevision).Execute()
+    resp, r, err := apiClient.ApexRedirectAPI.CreateApexRedirect(ctx, serviceId, versionId).ServiceId2(serviceId2).Version(version).CreatedAt(createdAt).DeletedAt(deletedAt).UpdatedAt(updatedAt).StatusCode(statusCode).Domains(domains).FeatureRevision(featureRevision).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApexRedirectAPI.CreateApexRedirect`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -63,8 +63,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -73,7 +73,7 @@ Other parameters are passed through a pointer to a apiCreateApexRedirectRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serviceID2** | **string** |  |  **version** | **int32** |  |  **createdAt** | **time.Time** | Date and time in ISO 8601 format. |  **deletedAt** | **time.Time** | Date and time in ISO 8601 format. |  **updatedAt** | **time.Time** | Date and time in ISO 8601 format. |  **statusCode** | **int32** | HTTP status code used to redirect the client. |  **domains** | **[]string** | Array of apex domains that should redirect to their WWW subdomain. |  **featureRevision** | **int32** | Revision number of the apex redirect feature implementation. Defaults to the most recent revision. | 
+ **serviceId2** | **string** |  |  **version** | **int32** |  |  **createdAt** | **time.Time** | Date and time in ISO 8601 format. |  **deletedAt** | **time.Time** | Date and time in ISO 8601 format. |  **updatedAt** | **time.Time** | Date and time in ISO 8601 format. |  **statusCode** | **int32** | HTTP status code used to redirect the client. |  **domains** | **[]string** | Array of apex domains that should redirect to their WWW subdomain. |  **featureRevision** | **int32** | Revision number of the apex redirect feature implementation. Defaults to the most recent revision. | 
 
 ### Return type
 
@@ -110,12 +110,12 @@ import (
 )
 
 func main() {
-    apexRedirectID := "6QI9o6ZZrSP3y9gI0OhMwZ" // string | 
+    apexRedirectId := "6QI9o6ZZrSP3y9gI0OhMwZ" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApexRedirectAPI.DeleteApexRedirect(ctx, apexRedirectID).Execute()
+    resp, r, err := apiClient.ApexRedirectAPI.DeleteApexRedirect(ctx, apexRedirectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApexRedirectAPI.DeleteApexRedirect`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -131,7 +131,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**apexRedirectID** | **string** |  | 
+**apexRedirectId** | **string** |  | 
 
 ### Other Parameters
 
@@ -177,12 +177,12 @@ import (
 )
 
 func main() {
-    apexRedirectID := "6QI9o6ZZrSP3y9gI0OhMwZ" // string | 
+    apexRedirectId := "6QI9o6ZZrSP3y9gI0OhMwZ" // string | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApexRedirectAPI.GetApexRedirect(ctx, apexRedirectID).Execute()
+    resp, r, err := apiClient.ApexRedirectAPI.GetApexRedirect(ctx, apexRedirectId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApexRedirectAPI.GetApexRedirect`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -198,7 +198,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**apexRedirectID** | **string** |  | 
+**apexRedirectId** | **string** |  | 
 
 ### Other Parameters
 
@@ -244,13 +244,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApexRedirectAPI.ListApexRedirects(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.ApexRedirectAPI.ListApexRedirects(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApexRedirectAPI.ListApexRedirects`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -266,8 +266,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -314,8 +314,8 @@ import (
 )
 
 func main() {
-    apexRedirectID := "6QI9o6ZZrSP3y9gI0OhMwZ" // string | 
-    serviceID := "serviceId_example" // string |  (optional)
+    apexRedirectId := "6QI9o6ZZrSP3y9gI0OhMwZ" // string | 
+    serviceId := "serviceId_example" // string |  (optional)
     version := int32(56) // int32 |  (optional)
     createdAt := time.Now() // time.Time | Date and time in ISO 8601 format. (optional)
     deletedAt := time.Now() // time.Time | Date and time in ISO 8601 format. (optional)
@@ -327,7 +327,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ApexRedirectAPI.UpdateApexRedirect(ctx, apexRedirectID).ServiceID(serviceID).Version(version).CreatedAt(createdAt).DeletedAt(deletedAt).UpdatedAt(updatedAt).StatusCode(statusCode).Domains(domains).FeatureRevision(featureRevision).Execute()
+    resp, r, err := apiClient.ApexRedirectAPI.UpdateApexRedirect(ctx, apexRedirectId).ServiceId(serviceId).Version(version).CreatedAt(createdAt).DeletedAt(deletedAt).UpdatedAt(updatedAt).StatusCode(statusCode).Domains(domains).FeatureRevision(featureRevision).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ApexRedirectAPI.UpdateApexRedirect`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -343,7 +343,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**apexRedirectID** | **string** |  | 
+**apexRedirectId** | **string** |  | 
 
 ### Other Parameters
 
@@ -352,7 +352,7 @@ Other parameters are passed through a pointer to a apiUpdateApexRedirectRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **serviceID** | **string** |  |  **version** | **int32** |  |  **createdAt** | **time.Time** | Date and time in ISO 8601 format. |  **deletedAt** | **time.Time** | Date and time in ISO 8601 format. |  **updatedAt** | **time.Time** | Date and time in ISO 8601 format. |  **statusCode** | **int32** | HTTP status code used to redirect the client. |  **domains** | **[]string** | Array of apex domains that should redirect to their WWW subdomain. |  **featureRevision** | **int32** | Revision number of the apex redirect feature implementation. Defaults to the most recent revision. | 
+ **serviceId** | **string** |  |  **version** | **int32** |  |  **createdAt** | **time.Time** | Date and time in ISO 8601 format. |  **deletedAt** | **time.Time** | Date and time in ISO 8601 format. |  **updatedAt** | **time.Time** | Date and time in ISO 8601 format. |  **statusCode** | **int32** | HTTP status code used to redirect the client. |  **domains** | **[]string** | Array of apex domains that should redirect to their WWW subdomain. |  **featureRevision** | **int32** | Revision number of the apex redirect feature implementation. Defaults to the most recent revision. | 
 
 ### Return type
 
@@ -368,3 +368,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

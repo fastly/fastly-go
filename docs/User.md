@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Locked** | Pointer to **NullableBool** | Indicates whether the is account is locked for editing or not. | [optional] 
 **RequireNewPassword** | Pointer to **NullableBool** | Indicates if a new password is required at next login. | [optional] 
 **Role** | Pointer to [**RoleUser**](RoleUser.md) |  | [optional] 
+**Roles** | Pointer to **[]string** | A list of role IDs assigned to the user. | [optional] 
 **TwoFactorAuthEnabled** | Pointer to **NullableBool** | Indicates if 2FA is enabled on the user. | [optional] 
 **TwoFactorSetupRequired** | Pointer to **bool** | Indicates if 2FA is required by the user&#39;s customer account. | [optional] 
 
@@ -202,6 +203,31 @@ SetRole sets Role field to given value.
 
 HasRole returns a boolean if a field has been set.
 
+### GetRoles
+
+`func (o *User) GetRoles() []string`
+
+GetRoles returns the Roles field if non-nil, zero value otherwise.
+
+### GetRolesOk
+
+`func (o *User) GetRolesOk() (*[]string, bool)`
+
+GetRolesOk returns a tuple with the Roles field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoles
+
+`func (o *User) SetRoles(v []string)`
+
+SetRoles sets Roles field to given value.
+
+### HasRoles
+
+`func (o *User) HasRoles() bool`
+
+HasRoles returns a boolean if a field has been set.
+
 ### GetTwoFactorAuthEnabled
 
 `func (o *User) GetTwoFactorAuthEnabled() bool`
@@ -264,3 +290,5 @@ HasTwoFactorSetupRequired returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

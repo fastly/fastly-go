@@ -1,4 +1,4 @@
-# TLSCsrDataAttributes
+# TlsCsrDataAttributes
 
 ## Properties
 
@@ -15,321 +15,323 @@ Name | Type | Description | Notes
 **OrganizationalUnit** | Pointer to **string** | Organizational Unit (OU) - The internal division of the organization managing the certificate. | [optional] 
 **Email** | Pointer to **string** | Email Address (EMAIL) - The organizational contact for this. | [optional] 
 **KeyType** | Pointer to **string** | CSR Key Type. | [optional] 
-**RelationshipsTLSPrivateKeyID** | Pointer to **string** | Optional. An alphanumeric string identifying the private key you&#39;ve uploaded for use with your TLS certificate. If left blank, Fastly will create and manage a key for you. | [optional] 
+**RelationshipsTlsPrivateKeyId** | Pointer to **string** | Optional. An alphanumeric string identifying the private key you&#39;ve uploaded for use with your TLS certificate. If left blank, Fastly will create and manage a key for you. | [optional] 
 
 ## Methods
 
-### NewTLSCsrDataAttributes
+### NewTlsCsrDataAttributes
 
-`func NewTLSCsrDataAttributes(sans []string, ) *TLSCsrDataAttributes`
+`func NewTlsCsrDataAttributes(sans []string, ) *TlsCsrDataAttributes`
 
-NewTLSCsrDataAttributes instantiates a new TLSCsrDataAttributes object
+NewTlsCsrDataAttributes instantiates a new TlsCsrDataAttributes object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSCsrDataAttributesWithDefaults
+### NewTlsCsrDataAttributesWithDefaults
 
-`func NewTLSCsrDataAttributesWithDefaults() *TLSCsrDataAttributes`
+`func NewTlsCsrDataAttributesWithDefaults() *TlsCsrDataAttributes`
 
-NewTLSCsrDataAttributesWithDefaults instantiates a new TLSCsrDataAttributes object
+NewTlsCsrDataAttributesWithDefaults instantiates a new TlsCsrDataAttributes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetSans
 
-`func (o *TLSCsrDataAttributes) GetSans() []string`
+`func (o *TlsCsrDataAttributes) GetSans() []string`
 
 GetSans returns the Sans field if non-nil, zero value otherwise.
 
 ### GetSansOk
 
-`func (o *TLSCsrDataAttributes) GetSansOk() (*[]string, bool)`
+`func (o *TlsCsrDataAttributes) GetSansOk() (*[]string, bool)`
 
 GetSansOk returns a tuple with the Sans field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSans
 
-`func (o *TLSCsrDataAttributes) SetSans(v []string)`
+`func (o *TlsCsrDataAttributes) SetSans(v []string)`
 
 SetSans sets Sans field to given value.
 
 
 ### GetCommonName
 
-`func (o *TLSCsrDataAttributes) GetCommonName() string`
+`func (o *TlsCsrDataAttributes) GetCommonName() string`
 
 GetCommonName returns the CommonName field if non-nil, zero value otherwise.
 
 ### GetCommonNameOk
 
-`func (o *TLSCsrDataAttributes) GetCommonNameOk() (*string, bool)`
+`func (o *TlsCsrDataAttributes) GetCommonNameOk() (*string, bool)`
 
 GetCommonNameOk returns a tuple with the CommonName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCommonName
 
-`func (o *TLSCsrDataAttributes) SetCommonName(v string)`
+`func (o *TlsCsrDataAttributes) SetCommonName(v string)`
 
 SetCommonName sets CommonName field to given value.
 
 ### HasCommonName
 
-`func (o *TLSCsrDataAttributes) HasCommonName() bool`
+`func (o *TlsCsrDataAttributes) HasCommonName() bool`
 
 HasCommonName returns a boolean if a field has been set.
 
 ### GetCountry
 
-`func (o *TLSCsrDataAttributes) GetCountry() string`
+`func (o *TlsCsrDataAttributes) GetCountry() string`
 
 GetCountry returns the Country field if non-nil, zero value otherwise.
 
 ### GetCountryOk
 
-`func (o *TLSCsrDataAttributes) GetCountryOk() (*string, bool)`
+`func (o *TlsCsrDataAttributes) GetCountryOk() (*string, bool)`
 
 GetCountryOk returns a tuple with the Country field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCountry
 
-`func (o *TLSCsrDataAttributes) SetCountry(v string)`
+`func (o *TlsCsrDataAttributes) SetCountry(v string)`
 
 SetCountry sets Country field to given value.
 
 ### HasCountry
 
-`func (o *TLSCsrDataAttributes) HasCountry() bool`
+`func (o *TlsCsrDataAttributes) HasCountry() bool`
 
 HasCountry returns a boolean if a field has been set.
 
 ### GetState
 
-`func (o *TLSCsrDataAttributes) GetState() string`
+`func (o *TlsCsrDataAttributes) GetState() string`
 
 GetState returns the State field if non-nil, zero value otherwise.
 
 ### GetStateOk
 
-`func (o *TLSCsrDataAttributes) GetStateOk() (*string, bool)`
+`func (o *TlsCsrDataAttributes) GetStateOk() (*string, bool)`
 
 GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetState
 
-`func (o *TLSCsrDataAttributes) SetState(v string)`
+`func (o *TlsCsrDataAttributes) SetState(v string)`
 
 SetState sets State field to given value.
 
 ### HasState
 
-`func (o *TLSCsrDataAttributes) HasState() bool`
+`func (o *TlsCsrDataAttributes) HasState() bool`
 
 HasState returns a boolean if a field has been set.
 
 ### GetCity
 
-`func (o *TLSCsrDataAttributes) GetCity() string`
+`func (o *TlsCsrDataAttributes) GetCity() string`
 
 GetCity returns the City field if non-nil, zero value otherwise.
 
 ### GetCityOk
 
-`func (o *TLSCsrDataAttributes) GetCityOk() (*string, bool)`
+`func (o *TlsCsrDataAttributes) GetCityOk() (*string, bool)`
 
 GetCityOk returns a tuple with the City field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCity
 
-`func (o *TLSCsrDataAttributes) SetCity(v string)`
+`func (o *TlsCsrDataAttributes) SetCity(v string)`
 
 SetCity sets City field to given value.
 
 ### HasCity
 
-`func (o *TLSCsrDataAttributes) HasCity() bool`
+`func (o *TlsCsrDataAttributes) HasCity() bool`
 
 HasCity returns a boolean if a field has been set.
 
 ### GetPostalCode
 
-`func (o *TLSCsrDataAttributes) GetPostalCode() string`
+`func (o *TlsCsrDataAttributes) GetPostalCode() string`
 
 GetPostalCode returns the PostalCode field if non-nil, zero value otherwise.
 
 ### GetPostalCodeOk
 
-`func (o *TLSCsrDataAttributes) GetPostalCodeOk() (*string, bool)`
+`func (o *TlsCsrDataAttributes) GetPostalCodeOk() (*string, bool)`
 
 GetPostalCodeOk returns a tuple with the PostalCode field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPostalCode
 
-`func (o *TLSCsrDataAttributes) SetPostalCode(v string)`
+`func (o *TlsCsrDataAttributes) SetPostalCode(v string)`
 
 SetPostalCode sets PostalCode field to given value.
 
 ### HasPostalCode
 
-`func (o *TLSCsrDataAttributes) HasPostalCode() bool`
+`func (o *TlsCsrDataAttributes) HasPostalCode() bool`
 
 HasPostalCode returns a boolean if a field has been set.
 
 ### GetStreetAddress
 
-`func (o *TLSCsrDataAttributes) GetStreetAddress() string`
+`func (o *TlsCsrDataAttributes) GetStreetAddress() string`
 
 GetStreetAddress returns the StreetAddress field if non-nil, zero value otherwise.
 
 ### GetStreetAddressOk
 
-`func (o *TLSCsrDataAttributes) GetStreetAddressOk() (*string, bool)`
+`func (o *TlsCsrDataAttributes) GetStreetAddressOk() (*string, bool)`
 
 GetStreetAddressOk returns a tuple with the StreetAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStreetAddress
 
-`func (o *TLSCsrDataAttributes) SetStreetAddress(v string)`
+`func (o *TlsCsrDataAttributes) SetStreetAddress(v string)`
 
 SetStreetAddress sets StreetAddress field to given value.
 
 ### HasStreetAddress
 
-`func (o *TLSCsrDataAttributes) HasStreetAddress() bool`
+`func (o *TlsCsrDataAttributes) HasStreetAddress() bool`
 
 HasStreetAddress returns a boolean if a field has been set.
 
 ### GetOrganization
 
-`func (o *TLSCsrDataAttributes) GetOrganization() string`
+`func (o *TlsCsrDataAttributes) GetOrganization() string`
 
 GetOrganization returns the Organization field if non-nil, zero value otherwise.
 
 ### GetOrganizationOk
 
-`func (o *TLSCsrDataAttributes) GetOrganizationOk() (*string, bool)`
+`func (o *TlsCsrDataAttributes) GetOrganizationOk() (*string, bool)`
 
 GetOrganizationOk returns a tuple with the Organization field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganization
 
-`func (o *TLSCsrDataAttributes) SetOrganization(v string)`
+`func (o *TlsCsrDataAttributes) SetOrganization(v string)`
 
 SetOrganization sets Organization field to given value.
 
 ### HasOrganization
 
-`func (o *TLSCsrDataAttributes) HasOrganization() bool`
+`func (o *TlsCsrDataAttributes) HasOrganization() bool`
 
 HasOrganization returns a boolean if a field has been set.
 
 ### GetOrganizationalUnit
 
-`func (o *TLSCsrDataAttributes) GetOrganizationalUnit() string`
+`func (o *TlsCsrDataAttributes) GetOrganizationalUnit() string`
 
 GetOrganizationalUnit returns the OrganizationalUnit field if non-nil, zero value otherwise.
 
 ### GetOrganizationalUnitOk
 
-`func (o *TLSCsrDataAttributes) GetOrganizationalUnitOk() (*string, bool)`
+`func (o *TlsCsrDataAttributes) GetOrganizationalUnitOk() (*string, bool)`
 
 GetOrganizationalUnitOk returns a tuple with the OrganizationalUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrganizationalUnit
 
-`func (o *TLSCsrDataAttributes) SetOrganizationalUnit(v string)`
+`func (o *TlsCsrDataAttributes) SetOrganizationalUnit(v string)`
 
 SetOrganizationalUnit sets OrganizationalUnit field to given value.
 
 ### HasOrganizationalUnit
 
-`func (o *TLSCsrDataAttributes) HasOrganizationalUnit() bool`
+`func (o *TlsCsrDataAttributes) HasOrganizationalUnit() bool`
 
 HasOrganizationalUnit returns a boolean if a field has been set.
 
 ### GetEmail
 
-`func (o *TLSCsrDataAttributes) GetEmail() string`
+`func (o *TlsCsrDataAttributes) GetEmail() string`
 
 GetEmail returns the Email field if non-nil, zero value otherwise.
 
 ### GetEmailOk
 
-`func (o *TLSCsrDataAttributes) GetEmailOk() (*string, bool)`
+`func (o *TlsCsrDataAttributes) GetEmailOk() (*string, bool)`
 
 GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEmail
 
-`func (o *TLSCsrDataAttributes) SetEmail(v string)`
+`func (o *TlsCsrDataAttributes) SetEmail(v string)`
 
 SetEmail sets Email field to given value.
 
 ### HasEmail
 
-`func (o *TLSCsrDataAttributes) HasEmail() bool`
+`func (o *TlsCsrDataAttributes) HasEmail() bool`
 
 HasEmail returns a boolean if a field has been set.
 
 ### GetKeyType
 
-`func (o *TLSCsrDataAttributes) GetKeyType() string`
+`func (o *TlsCsrDataAttributes) GetKeyType() string`
 
 GetKeyType returns the KeyType field if non-nil, zero value otherwise.
 
 ### GetKeyTypeOk
 
-`func (o *TLSCsrDataAttributes) GetKeyTypeOk() (*string, bool)`
+`func (o *TlsCsrDataAttributes) GetKeyTypeOk() (*string, bool)`
 
 GetKeyTypeOk returns a tuple with the KeyType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKeyType
 
-`func (o *TLSCsrDataAttributes) SetKeyType(v string)`
+`func (o *TlsCsrDataAttributes) SetKeyType(v string)`
 
 SetKeyType sets KeyType field to given value.
 
 ### HasKeyType
 
-`func (o *TLSCsrDataAttributes) HasKeyType() bool`
+`func (o *TlsCsrDataAttributes) HasKeyType() bool`
 
 HasKeyType returns a boolean if a field has been set.
 
-### GetRelationshipsTLSPrivateKeyID
+### GetRelationshipsTlsPrivateKeyId
 
-`func (o *TLSCsrDataAttributes) GetRelationshipsTLSPrivateKeyID() string`
+`func (o *TlsCsrDataAttributes) GetRelationshipsTlsPrivateKeyId() string`
 
-GetRelationshipsTLSPrivateKeyID returns the RelationshipsTLSPrivateKeyID field if non-nil, zero value otherwise.
+GetRelationshipsTlsPrivateKeyId returns the RelationshipsTlsPrivateKeyId field if non-nil, zero value otherwise.
 
-### GetRelationshipsTLSPrivateKeyIDOk
+### GetRelationshipsTlsPrivateKeyIdOk
 
-`func (o *TLSCsrDataAttributes) GetRelationshipsTLSPrivateKeyIDOk() (*string, bool)`
+`func (o *TlsCsrDataAttributes) GetRelationshipsTlsPrivateKeyIdOk() (*string, bool)`
 
-GetRelationshipsTLSPrivateKeyIDOk returns a tuple with the RelationshipsTLSPrivateKeyID field if it's non-nil, zero value otherwise
+GetRelationshipsTlsPrivateKeyIdOk returns a tuple with the RelationshipsTlsPrivateKeyId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRelationshipsTLSPrivateKeyID
+### SetRelationshipsTlsPrivateKeyId
 
-`func (o *TLSCsrDataAttributes) SetRelationshipsTLSPrivateKeyID(v string)`
+`func (o *TlsCsrDataAttributes) SetRelationshipsTlsPrivateKeyId(v string)`
 
-SetRelationshipsTLSPrivateKeyID sets RelationshipsTLSPrivateKeyID field to given value.
+SetRelationshipsTlsPrivateKeyId sets RelationshipsTlsPrivateKeyId field to given value.
 
-### HasRelationshipsTLSPrivateKeyID
+### HasRelationshipsTlsPrivateKeyId
 
-`func (o *TLSCsrDataAttributes) HasRelationshipsTLSPrivateKeyID() bool`
+`func (o *TlsCsrDataAttributes) HasRelationshipsTlsPrivateKeyId() bool`
 
-HasRelationshipsTLSPrivateKeyID returns a boolean if a field has been set.
+HasRelationshipsTlsPrivateKeyId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

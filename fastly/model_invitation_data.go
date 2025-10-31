@@ -31,8 +31,8 @@ type _InvitationData InvitationData
 // will change when the set of required properties is changed
 func NewInvitationData() *InvitationData {
 	this := InvitationData{}
-	var resourceType TypeInvitation = TYPEINVITATION_INVITATION
-	this.Type = &resourceType
+	var type_ TypeInvitation = TYPEINVITATION_INVITATION
+	this.Type = &type_
 	return &this
 }
 
@@ -41,8 +41,8 @@ func NewInvitationData() *InvitationData {
 // but it doesn't guarantee that properties required by API are set
 func NewInvitationDataWithDefaults() *InvitationData {
 	this := InvitationData{}
-	var resourceType TypeInvitation = TYPEINVITATION_INVITATION
-	this.Type = &resourceType
+	var type_ TypeInvitation = TYPEINVITATION_INVITATION
+	this.Type = &type_
 	return &this
 }
 

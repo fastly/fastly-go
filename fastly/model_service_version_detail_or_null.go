@@ -39,7 +39,7 @@ type ServiceVersionDetailOrNull struct {
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt NullableTime `json:"updated_at,omitempty"`
-	ServiceID *string      `json:"service_id,omitempty"`
+	ServiceId *string      `json:"service_id,omitempty"`
 	// A list of environments where the service has been deployed.
 	Environments []Environment `json:"environments,omitempty"`
 	// List of backends associated to this service.
@@ -68,7 +68,7 @@ type ServiceVersionDetailOrNull struct {
 	// List of VCL files for this service.
 	Vcls []SchemasVclResponse `json:"vcls,omitempty"`
 	// A list of Wordpress rules with this service.
-	Wordpress            []*map[string]any `json:"wordpress,omitempty"`
+	Wordpress            []*map[string]interface{} `json:"wordpress,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -471,36 +471,36 @@ func (o *ServiceVersionDetailOrNull) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *ServiceVersionDetailOrNull) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *ServiceVersionDetailOrNull) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceVersionDetailOrNull) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *ServiceVersionDetailOrNull) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *ServiceVersionDetailOrNull) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *ServiceVersionDetailOrNull) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *ServiceVersionDetailOrNull) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *ServiceVersionDetailOrNull) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetEnvironments returns the Environments field value if set, zero value otherwise.
@@ -952,9 +952,9 @@ func (o *ServiceVersionDetailOrNull) SetVcls(v []SchemasVclResponse) {
 }
 
 // GetWordpress returns the Wordpress field value if set, zero value otherwise.
-func (o *ServiceVersionDetailOrNull) GetWordpress() []*map[string]any {
+func (o *ServiceVersionDetailOrNull) GetWordpress() []*map[string]interface{} {
 	if o == nil || o.Wordpress == nil {
-		var ret []*map[string]any
+		var ret []*map[string]interface{}
 		return ret
 	}
 	return o.Wordpress
@@ -962,7 +962,7 @@ func (o *ServiceVersionDetailOrNull) GetWordpress() []*map[string]any {
 
 // GetWordpressOk returns a tuple with the Wordpress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceVersionDetailOrNull) GetWordpressOk() ([]*map[string]any, bool) {
+func (o *ServiceVersionDetailOrNull) GetWordpressOk() ([]*map[string]interface{}, bool) {
 	if o == nil || o.Wordpress == nil {
 		return nil, false
 	}
@@ -978,8 +978,8 @@ func (o *ServiceVersionDetailOrNull) HasWordpress() bool {
 	return false
 }
 
-// SetWordpress gets a reference to the given []*map[string]any and assigns it to the Wordpress field.
-func (o *ServiceVersionDetailOrNull) SetWordpress(v []*map[string]any) {
+// SetWordpress gets a reference to the given []*map[string]interface{} and assigns it to the Wordpress field.
+func (o *ServiceVersionDetailOrNull) SetWordpress(v []*map[string]interface{}) {
 	o.Wordpress = v
 }
 
@@ -1017,8 +1017,8 @@ func (o ServiceVersionDetailOrNull) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.Environments != nil {
 		toSerialize["environments"] = o.Environments

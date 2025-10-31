@@ -1,4 +1,4 @@
-# ComputeACLListEntriesItem
+# ComputeAclListEntriesItem
 
 ## Properties
 
@@ -9,72 +9,74 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewComputeACLListEntriesItem
+### NewComputeAclListEntriesItem
 
-`func NewComputeACLListEntriesItem() *ComputeACLListEntriesItem`
+`func NewComputeAclListEntriesItem() *ComputeAclListEntriesItem`
 
-NewComputeACLListEntriesItem instantiates a new ComputeACLListEntriesItem object
+NewComputeAclListEntriesItem instantiates a new ComputeAclListEntriesItem object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewComputeACLListEntriesItemWithDefaults
+### NewComputeAclListEntriesItemWithDefaults
 
-`func NewComputeACLListEntriesItemWithDefaults() *ComputeACLListEntriesItem`
+`func NewComputeAclListEntriesItemWithDefaults() *ComputeAclListEntriesItem`
 
-NewComputeACLListEntriesItemWithDefaults instantiates a new ComputeACLListEntriesItem object
+NewComputeAclListEntriesItemWithDefaults instantiates a new ComputeAclListEntriesItem object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetPrefix
 
-`func (o *ComputeACLListEntriesItem) GetPrefix() string`
+`func (o *ComputeAclListEntriesItem) GetPrefix() string`
 
 GetPrefix returns the Prefix field if non-nil, zero value otherwise.
 
 ### GetPrefixOk
 
-`func (o *ComputeACLListEntriesItem) GetPrefixOk() (*string, bool)`
+`func (o *ComputeAclListEntriesItem) GetPrefixOk() (*string, bool)`
 
 GetPrefixOk returns a tuple with the Prefix field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrefix
 
-`func (o *ComputeACLListEntriesItem) SetPrefix(v string)`
+`func (o *ComputeAclListEntriesItem) SetPrefix(v string)`
 
 SetPrefix sets Prefix field to given value.
 
 ### HasPrefix
 
-`func (o *ComputeACLListEntriesItem) HasPrefix() bool`
+`func (o *ComputeAclListEntriesItem) HasPrefix() bool`
 
 HasPrefix returns a boolean if a field has been set.
 
 ### GetAction
 
-`func (o *ComputeACLListEntriesItem) GetAction() string`
+`func (o *ComputeAclListEntriesItem) GetAction() string`
 
 GetAction returns the Action field if non-nil, zero value otherwise.
 
 ### GetActionOk
 
-`func (o *ComputeACLListEntriesItem) GetActionOk() (*string, bool)`
+`func (o *ComputeAclListEntriesItem) GetActionOk() (*string, bool)`
 
 GetActionOk returns a tuple with the Action field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAction
 
-`func (o *ComputeACLListEntriesItem) SetAction(v string)`
+`func (o *ComputeAclListEntriesItem) SetAction(v string)`
 
 SetAction sets Action field to given value.
 
 ### HasAction
 
-`func (o *ComputeACLListEntriesItem) HasAction() bool`
+`func (o *ComputeAclListEntriesItem) HasAction() bool`
 
 HasAction returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

@@ -20,7 +20,7 @@ import (
 // CustomerResponse struct for CustomerResponse
 type CustomerResponse struct {
 	// The alphanumeric string representing the primary billing contact.
-	BillingContactID NullableString `json:"billing_contact_id,omitempty"`
+	BillingContactId NullableString `json:"billing_contact_id,omitempty"`
 	// Customer's current network revenue type.
 	BillingNetworkType *string `json:"billing_network_type,omitempty"`
 	// Used for adding purchased orders to customer's account.
@@ -48,13 +48,13 @@ type CustomerResponse struct {
 	// Specifies whether PCI passwords are required for the account.
 	HasPciPasswords *bool `json:"has_pci_passwords,omitempty"`
 	// The range of IP addresses authorized to access the customer account.
-	IPWhitelist *string `json:"ip_whitelist,omitempty"`
+	IpWhitelist *string `json:"ip_whitelist,omitempty"`
 	// The alphanumeric string identifying the account's legal contact.
-	LegalContactID NullableString `json:"legal_contact_id,omitempty"`
+	LegalContactId NullableString `json:"legal_contact_id,omitempty"`
 	// The name of the customer, generally the company name.
 	Name *string `json:"name,omitempty"`
 	// The alphanumeric string identifying the account owner.
-	OwnerID *string `json:"owner_id,omitempty"`
+	OwnerId *string `json:"owner_id,omitempty"`
 	// The phone number associated with the account.
 	PhoneNumber *string `json:"phone_number,omitempty"`
 	// The postal address associated with the account.
@@ -62,18 +62,18 @@ type CustomerResponse struct {
 	// The pricing plan this customer is under.
 	PricingPlan *string `json:"pricing_plan,omitempty"`
 	// The alphanumeric string identifying the pricing plan.
-	PricingPlanID *string `json:"pricing_plan_id,omitempty"`
+	PricingPlanId *string `json:"pricing_plan_id,omitempty"`
 	// The alphanumeric string identifying the account's security contact.
-	SecurityContactID NullableString `json:"security_contact_id,omitempty"`
+	SecurityContactId NullableString `json:"security_contact_id,omitempty"`
 	// The alphanumeric string identifying the account's technical contact.
-	TechnicalContactID NullableString `json:"technical_contact_id,omitempty"`
+	TechnicalContactId NullableString `json:"technical_contact_id,omitempty"`
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	DeletedAt NullableTime `json:"deleted_at,omitempty"`
 	// Date and time in ISO 8601 format.
 	UpdatedAt            NullableTime `json:"updated_at,omitempty"`
-	ID                   *string      `json:"id,omitempty"`
+	Id                   *string      `json:"id,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -96,47 +96,47 @@ func NewCustomerResponseWithDefaults() *CustomerResponse {
 	return &this
 }
 
-// GetBillingContactID returns the BillingContactID field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CustomerResponse) GetBillingContactID() string {
-	if o == nil || o.BillingContactID.Get() == nil {
+// GetBillingContactId returns the BillingContactId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CustomerResponse) GetBillingContactId() string {
+	if o == nil || o.BillingContactId.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.BillingContactID.Get()
+	return *o.BillingContactId.Get()
 }
 
-// GetBillingContactIDOk returns a tuple with the BillingContactID field value if set, nil otherwise
+// GetBillingContactIdOk returns a tuple with the BillingContactId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CustomerResponse) GetBillingContactIDOk() (*string, bool) {
+func (o *CustomerResponse) GetBillingContactIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.BillingContactID.Get(), o.BillingContactID.IsSet()
+	return o.BillingContactId.Get(), o.BillingContactId.IsSet()
 }
 
-// HasBillingContactID returns a boolean if a field has been set.
-func (o *CustomerResponse) HasBillingContactID() bool {
-	if o != nil && o.BillingContactID.IsSet() {
+// HasBillingContactId returns a boolean if a field has been set.
+func (o *CustomerResponse) HasBillingContactId() bool {
+	if o != nil && o.BillingContactId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetBillingContactID gets a reference to the given NullableString and assigns it to the BillingContactID field.
-func (o *CustomerResponse) SetBillingContactID(v string) {
-	o.BillingContactID.Set(&v)
+// SetBillingContactId gets a reference to the given NullableString and assigns it to the BillingContactId field.
+func (o *CustomerResponse) SetBillingContactId(v string) {
+	o.BillingContactId.Set(&v)
 }
 
-// SetBillingContactIDNil sets the value for BillingContactID to be an explicit nil
-func (o *CustomerResponse) SetBillingContactIDNil() {
-	o.BillingContactID.Set(nil)
+// SetBillingContactIdNil sets the value for BillingContactId to be an explicit nil
+func (o *CustomerResponse) SetBillingContactIdNil() {
+	o.BillingContactId.Set(nil)
 }
 
-// UnsetBillingContactID ensures that no value is present for BillingContactID, not even an explicit nil
-func (o *CustomerResponse) UnsetBillingContactID() {
-	o.BillingContactID.Unset()
+// UnsetBillingContactId ensures that no value is present for BillingContactId, not even an explicit nil
+func (o *CustomerResponse) UnsetBillingContactId() {
+	o.BillingContactId.Unset()
 }
 
 // GetBillingNetworkType returns the BillingNetworkType field value if set, zero value otherwise.
@@ -577,79 +577,79 @@ func (o *CustomerResponse) SetHasPciPasswords(v bool) {
 	o.HasPciPasswords = &v
 }
 
-// GetIPWhitelist returns the IPWhitelist field value if set, zero value otherwise.
-func (o *CustomerResponse) GetIPWhitelist() string {
-	if o == nil || o.IPWhitelist == nil {
+// GetIpWhitelist returns the IpWhitelist field value if set, zero value otherwise.
+func (o *CustomerResponse) GetIpWhitelist() string {
+	if o == nil || o.IpWhitelist == nil {
 		var ret string
 		return ret
 	}
-	return *o.IPWhitelist
+	return *o.IpWhitelist
 }
 
-// GetIPWhitelistOk returns a tuple with the IPWhitelist field value if set, nil otherwise
+// GetIpWhitelistOk returns a tuple with the IpWhitelist field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerResponse) GetIPWhitelistOk() (*string, bool) {
-	if o == nil || o.IPWhitelist == nil {
+func (o *CustomerResponse) GetIpWhitelistOk() (*string, bool) {
+	if o == nil || o.IpWhitelist == nil {
 		return nil, false
 	}
-	return o.IPWhitelist, true
+	return o.IpWhitelist, true
 }
 
-// HasIPWhitelist returns a boolean if a field has been set.
-func (o *CustomerResponse) HasIPWhitelist() bool {
-	if o != nil && o.IPWhitelist != nil {
+// HasIpWhitelist returns a boolean if a field has been set.
+func (o *CustomerResponse) HasIpWhitelist() bool {
+	if o != nil && o.IpWhitelist != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetIPWhitelist gets a reference to the given string and assigns it to the IPWhitelist field.
-func (o *CustomerResponse) SetIPWhitelist(v string) {
-	o.IPWhitelist = &v
+// SetIpWhitelist gets a reference to the given string and assigns it to the IpWhitelist field.
+func (o *CustomerResponse) SetIpWhitelist(v string) {
+	o.IpWhitelist = &v
 }
 
-// GetLegalContactID returns the LegalContactID field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CustomerResponse) GetLegalContactID() string {
-	if o == nil || o.LegalContactID.Get() == nil {
+// GetLegalContactId returns the LegalContactId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CustomerResponse) GetLegalContactId() string {
+	if o == nil || o.LegalContactId.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.LegalContactID.Get()
+	return *o.LegalContactId.Get()
 }
 
-// GetLegalContactIDOk returns a tuple with the LegalContactID field value if set, nil otherwise
+// GetLegalContactIdOk returns a tuple with the LegalContactId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CustomerResponse) GetLegalContactIDOk() (*string, bool) {
+func (o *CustomerResponse) GetLegalContactIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.LegalContactID.Get(), o.LegalContactID.IsSet()
+	return o.LegalContactId.Get(), o.LegalContactId.IsSet()
 }
 
-// HasLegalContactID returns a boolean if a field has been set.
-func (o *CustomerResponse) HasLegalContactID() bool {
-	if o != nil && o.LegalContactID.IsSet() {
+// HasLegalContactId returns a boolean if a field has been set.
+func (o *CustomerResponse) HasLegalContactId() bool {
+	if o != nil && o.LegalContactId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetLegalContactID gets a reference to the given NullableString and assigns it to the LegalContactID field.
-func (o *CustomerResponse) SetLegalContactID(v string) {
-	o.LegalContactID.Set(&v)
+// SetLegalContactId gets a reference to the given NullableString and assigns it to the LegalContactId field.
+func (o *CustomerResponse) SetLegalContactId(v string) {
+	o.LegalContactId.Set(&v)
 }
 
-// SetLegalContactIDNil sets the value for LegalContactID to be an explicit nil
-func (o *CustomerResponse) SetLegalContactIDNil() {
-	o.LegalContactID.Set(nil)
+// SetLegalContactIdNil sets the value for LegalContactId to be an explicit nil
+func (o *CustomerResponse) SetLegalContactIdNil() {
+	o.LegalContactId.Set(nil)
 }
 
-// UnsetLegalContactID ensures that no value is present for LegalContactID, not even an explicit nil
-func (o *CustomerResponse) UnsetLegalContactID() {
-	o.LegalContactID.Unset()
+// UnsetLegalContactId ensures that no value is present for LegalContactId, not even an explicit nil
+func (o *CustomerResponse) UnsetLegalContactId() {
+	o.LegalContactId.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -684,36 +684,36 @@ func (o *CustomerResponse) SetName(v string) {
 	o.Name = &v
 }
 
-// GetOwnerID returns the OwnerID field value if set, zero value otherwise.
-func (o *CustomerResponse) GetOwnerID() string {
-	if o == nil || o.OwnerID == nil {
+// GetOwnerId returns the OwnerId field value if set, zero value otherwise.
+func (o *CustomerResponse) GetOwnerId() string {
+	if o == nil || o.OwnerId == nil {
 		var ret string
 		return ret
 	}
-	return *o.OwnerID
+	return *o.OwnerId
 }
 
-// GetOwnerIDOk returns a tuple with the OwnerID field value if set, nil otherwise
+// GetOwnerIdOk returns a tuple with the OwnerId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerResponse) GetOwnerIDOk() (*string, bool) {
-	if o == nil || o.OwnerID == nil {
+func (o *CustomerResponse) GetOwnerIdOk() (*string, bool) {
+	if o == nil || o.OwnerId == nil {
 		return nil, false
 	}
-	return o.OwnerID, true
+	return o.OwnerId, true
 }
 
-// HasOwnerID returns a boolean if a field has been set.
-func (o *CustomerResponse) HasOwnerID() bool {
-	if o != nil && o.OwnerID != nil {
+// HasOwnerId returns a boolean if a field has been set.
+func (o *CustomerResponse) HasOwnerId() bool {
+	if o != nil && o.OwnerId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetOwnerID gets a reference to the given string and assigns it to the OwnerID field.
-func (o *CustomerResponse) SetOwnerID(v string) {
-	o.OwnerID = &v
+// SetOwnerId gets a reference to the given string and assigns it to the OwnerId field.
+func (o *CustomerResponse) SetOwnerId(v string) {
+	o.OwnerId = &v
 }
 
 // GetPhoneNumber returns the PhoneNumber field value if set, zero value otherwise.
@@ -823,122 +823,122 @@ func (o *CustomerResponse) SetPricingPlan(v string) {
 	o.PricingPlan = &v
 }
 
-// GetPricingPlanID returns the PricingPlanID field value if set, zero value otherwise.
-func (o *CustomerResponse) GetPricingPlanID() string {
-	if o == nil || o.PricingPlanID == nil {
+// GetPricingPlanId returns the PricingPlanId field value if set, zero value otherwise.
+func (o *CustomerResponse) GetPricingPlanId() string {
+	if o == nil || o.PricingPlanId == nil {
 		var ret string
 		return ret
 	}
-	return *o.PricingPlanID
+	return *o.PricingPlanId
 }
 
-// GetPricingPlanIDOk returns a tuple with the PricingPlanID field value if set, nil otherwise
+// GetPricingPlanIdOk returns a tuple with the PricingPlanId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerResponse) GetPricingPlanIDOk() (*string, bool) {
-	if o == nil || o.PricingPlanID == nil {
+func (o *CustomerResponse) GetPricingPlanIdOk() (*string, bool) {
+	if o == nil || o.PricingPlanId == nil {
 		return nil, false
 	}
-	return o.PricingPlanID, true
+	return o.PricingPlanId, true
 }
 
-// HasPricingPlanID returns a boolean if a field has been set.
-func (o *CustomerResponse) HasPricingPlanID() bool {
-	if o != nil && o.PricingPlanID != nil {
+// HasPricingPlanId returns a boolean if a field has been set.
+func (o *CustomerResponse) HasPricingPlanId() bool {
+	if o != nil && o.PricingPlanId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPricingPlanID gets a reference to the given string and assigns it to the PricingPlanID field.
-func (o *CustomerResponse) SetPricingPlanID(v string) {
-	o.PricingPlanID = &v
+// SetPricingPlanId gets a reference to the given string and assigns it to the PricingPlanId field.
+func (o *CustomerResponse) SetPricingPlanId(v string) {
+	o.PricingPlanId = &v
 }
 
-// GetSecurityContactID returns the SecurityContactID field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CustomerResponse) GetSecurityContactID() string {
-	if o == nil || o.SecurityContactID.Get() == nil {
+// GetSecurityContactId returns the SecurityContactId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CustomerResponse) GetSecurityContactId() string {
+	if o == nil || o.SecurityContactId.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.SecurityContactID.Get()
+	return *o.SecurityContactId.Get()
 }
 
-// GetSecurityContactIDOk returns a tuple with the SecurityContactID field value if set, nil otherwise
+// GetSecurityContactIdOk returns a tuple with the SecurityContactId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CustomerResponse) GetSecurityContactIDOk() (*string, bool) {
+func (o *CustomerResponse) GetSecurityContactIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.SecurityContactID.Get(), o.SecurityContactID.IsSet()
+	return o.SecurityContactId.Get(), o.SecurityContactId.IsSet()
 }
 
-// HasSecurityContactID returns a boolean if a field has been set.
-func (o *CustomerResponse) HasSecurityContactID() bool {
-	if o != nil && o.SecurityContactID.IsSet() {
+// HasSecurityContactId returns a boolean if a field has been set.
+func (o *CustomerResponse) HasSecurityContactId() bool {
+	if o != nil && o.SecurityContactId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetSecurityContactID gets a reference to the given NullableString and assigns it to the SecurityContactID field.
-func (o *CustomerResponse) SetSecurityContactID(v string) {
-	o.SecurityContactID.Set(&v)
+// SetSecurityContactId gets a reference to the given NullableString and assigns it to the SecurityContactId field.
+func (o *CustomerResponse) SetSecurityContactId(v string) {
+	o.SecurityContactId.Set(&v)
 }
 
-// SetSecurityContactIDNil sets the value for SecurityContactID to be an explicit nil
-func (o *CustomerResponse) SetSecurityContactIDNil() {
-	o.SecurityContactID.Set(nil)
+// SetSecurityContactIdNil sets the value for SecurityContactId to be an explicit nil
+func (o *CustomerResponse) SetSecurityContactIdNil() {
+	o.SecurityContactId.Set(nil)
 }
 
-// UnsetSecurityContactID ensures that no value is present for SecurityContactID, not even an explicit nil
-func (o *CustomerResponse) UnsetSecurityContactID() {
-	o.SecurityContactID.Unset()
+// UnsetSecurityContactId ensures that no value is present for SecurityContactId, not even an explicit nil
+func (o *CustomerResponse) UnsetSecurityContactId() {
+	o.SecurityContactId.Unset()
 }
 
-// GetTechnicalContactID returns the TechnicalContactID field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CustomerResponse) GetTechnicalContactID() string {
-	if o == nil || o.TechnicalContactID.Get() == nil {
+// GetTechnicalContactId returns the TechnicalContactId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CustomerResponse) GetTechnicalContactId() string {
+	if o == nil || o.TechnicalContactId.Get() == nil {
 		var ret string
 		return ret
 	}
-	return *o.TechnicalContactID.Get()
+	return *o.TechnicalContactId.Get()
 }
 
-// GetTechnicalContactIDOk returns a tuple with the TechnicalContactID field value if set, nil otherwise
+// GetTechnicalContactIdOk returns a tuple with the TechnicalContactId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CustomerResponse) GetTechnicalContactIDOk() (*string, bool) {
+func (o *CustomerResponse) GetTechnicalContactIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return o.TechnicalContactID.Get(), o.TechnicalContactID.IsSet()
+	return o.TechnicalContactId.Get(), o.TechnicalContactId.IsSet()
 }
 
-// HasTechnicalContactID returns a boolean if a field has been set.
-func (o *CustomerResponse) HasTechnicalContactID() bool {
-	if o != nil && o.TechnicalContactID.IsSet() {
+// HasTechnicalContactId returns a boolean if a field has been set.
+func (o *CustomerResponse) HasTechnicalContactId() bool {
+	if o != nil && o.TechnicalContactId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetTechnicalContactID gets a reference to the given NullableString and assigns it to the TechnicalContactID field.
-func (o *CustomerResponse) SetTechnicalContactID(v string) {
-	o.TechnicalContactID.Set(&v)
+// SetTechnicalContactId gets a reference to the given NullableString and assigns it to the TechnicalContactId field.
+func (o *CustomerResponse) SetTechnicalContactId(v string) {
+	o.TechnicalContactId.Set(&v)
 }
 
-// SetTechnicalContactIDNil sets the value for TechnicalContactID to be an explicit nil
-func (o *CustomerResponse) SetTechnicalContactIDNil() {
-	o.TechnicalContactID.Set(nil)
+// SetTechnicalContactIdNil sets the value for TechnicalContactId to be an explicit nil
+func (o *CustomerResponse) SetTechnicalContactIdNil() {
+	o.TechnicalContactId.Set(nil)
 }
 
-// UnsetTechnicalContactID ensures that no value is present for TechnicalContactID, not even an explicit nil
-func (o *CustomerResponse) UnsetTechnicalContactID() {
-	o.TechnicalContactID.Unset()
+// UnsetTechnicalContactId ensures that no value is present for TechnicalContactId, not even an explicit nil
+func (o *CustomerResponse) UnsetTechnicalContactId() {
+	o.TechnicalContactId.Unset()
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1070,44 +1070,44 @@ func (o *CustomerResponse) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *CustomerResponse) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *CustomerResponse) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerResponse) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *CustomerResponse) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *CustomerResponse) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *CustomerResponse) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *CustomerResponse) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *CustomerResponse) SetId(v string) {
+	o.Id = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o CustomerResponse) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.BillingContactID.IsSet() {
-		toSerialize["billing_contact_id"] = o.BillingContactID.Get()
+	if o.BillingContactId.IsSet() {
+		toSerialize["billing_contact_id"] = o.BillingContactId.Get()
 	}
 	if o.BillingNetworkType != nil {
 		toSerialize["billing_network_type"] = o.BillingNetworkType
@@ -1148,17 +1148,17 @@ func (o CustomerResponse) MarshalJSON() ([]byte, error) {
 	if o.HasPciPasswords != nil {
 		toSerialize["has_pci_passwords"] = o.HasPciPasswords
 	}
-	if o.IPWhitelist != nil {
-		toSerialize["ip_whitelist"] = o.IPWhitelist
+	if o.IpWhitelist != nil {
+		toSerialize["ip_whitelist"] = o.IpWhitelist
 	}
-	if o.LegalContactID.IsSet() {
-		toSerialize["legal_contact_id"] = o.LegalContactID.Get()
+	if o.LegalContactId.IsSet() {
+		toSerialize["legal_contact_id"] = o.LegalContactId.Get()
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.OwnerID != nil {
-		toSerialize["owner_id"] = o.OwnerID
+	if o.OwnerId != nil {
+		toSerialize["owner_id"] = o.OwnerId
 	}
 	if o.PhoneNumber != nil {
 		toSerialize["phone_number"] = o.PhoneNumber
@@ -1169,14 +1169,14 @@ func (o CustomerResponse) MarshalJSON() ([]byte, error) {
 	if o.PricingPlan != nil {
 		toSerialize["pricing_plan"] = o.PricingPlan
 	}
-	if o.PricingPlanID != nil {
-		toSerialize["pricing_plan_id"] = o.PricingPlanID
+	if o.PricingPlanId != nil {
+		toSerialize["pricing_plan_id"] = o.PricingPlanId
 	}
-	if o.SecurityContactID.IsSet() {
-		toSerialize["security_contact_id"] = o.SecurityContactID.Get()
+	if o.SecurityContactId.IsSet() {
+		toSerialize["security_contact_id"] = o.SecurityContactId.Get()
 	}
-	if o.TechnicalContactID.IsSet() {
-		toSerialize["technical_contact_id"] = o.TechnicalContactID.Get()
+	if o.TechnicalContactId.IsSet() {
+		toSerialize["technical_contact_id"] = o.TechnicalContactId.Get()
 	}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
@@ -1187,8 +1187,8 @@ func (o CustomerResponse) MarshalJSON() ([]byte, error) {
 	if o.UpdatedAt.IsSet() {
 		toSerialize["updated_at"] = o.UpdatedAt.Get()
 	}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 
 	for key, value := range o.AdditionalProperties {

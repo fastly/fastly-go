@@ -19,9 +19,9 @@ import (
 // TimeseriesResult struct for TimeseriesResult
 type TimeseriesResult struct {
 	// An object containing each requested dimension and time as properties.
-	Dimensions *map[string]map[string]any `json:"dimensions,omitempty"`
+	Dimensions *map[string]map[string]interface{} `json:"dimensions,omitempty"`
 	// An object containing each requested series as a property.
-	Values               map[string]map[string]any `json:"values,omitempty"`
+	Values               map[string]map[string]interface{} `json:"values,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -45,9 +45,9 @@ func NewTimeseriesResultWithDefaults() *TimeseriesResult {
 }
 
 // GetDimensions returns the Dimensions field value if set, zero value otherwise.
-func (o *TimeseriesResult) GetDimensions() map[string]map[string]any {
+func (o *TimeseriesResult) GetDimensions() map[string]map[string]interface{} {
 	if o == nil || o.Dimensions == nil {
-		var ret map[string]map[string]any
+		var ret map[string]map[string]interface{}
 		return ret
 	}
 	return *o.Dimensions
@@ -55,7 +55,7 @@ func (o *TimeseriesResult) GetDimensions() map[string]map[string]any {
 
 // GetDimensionsOk returns a tuple with the Dimensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TimeseriesResult) GetDimensionsOk() (*map[string]map[string]any, bool) {
+func (o *TimeseriesResult) GetDimensionsOk() (*map[string]map[string]interface{}, bool) {
 	if o == nil || o.Dimensions == nil {
 		return nil, false
 	}
@@ -71,15 +71,15 @@ func (o *TimeseriesResult) HasDimensions() bool {
 	return false
 }
 
-// SetDimensions gets a reference to the given map[string]map[string]any and assigns it to the Dimensions field.
-func (o *TimeseriesResult) SetDimensions(v map[string]map[string]any) {
+// SetDimensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Dimensions field.
+func (o *TimeseriesResult) SetDimensions(v map[string]map[string]interface{}) {
 	o.Dimensions = &v
 }
 
 // GetValues returns the Values field value if set, zero value otherwise.
-func (o *TimeseriesResult) GetValues() map[string]map[string]any {
+func (o *TimeseriesResult) GetValues() map[string]map[string]interface{} {
 	if o == nil || o.Values == nil {
-		var ret map[string]map[string]any
+		var ret map[string]map[string]interface{}
 		return ret
 	}
 	return o.Values
@@ -87,7 +87,7 @@ func (o *TimeseriesResult) GetValues() map[string]map[string]any {
 
 // GetValuesOk returns a tuple with the Values field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TimeseriesResult) GetValuesOk() (map[string]map[string]any, bool) {
+func (o *TimeseriesResult) GetValuesOk() (map[string]map[string]interface{}, bool) {
 	if o == nil || o.Values == nil {
 		return nil, false
 	}
@@ -103,8 +103,8 @@ func (o *TimeseriesResult) HasValues() bool {
 	return false
 }
 
-// SetValues gets a reference to the given map[string]map[string]any and assigns it to the Values field.
-func (o *TimeseriesResult) SetValues(v map[string]map[string]any) {
+// SetValues gets a reference to the given map[string]map[string]interface{} and assigns it to the Values field.
+func (o *TimeseriesResult) SetValues(v map[string]map[string]interface{}) {
 	o.Values = v
 }
 

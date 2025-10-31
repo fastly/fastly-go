@@ -1,106 +1,108 @@
-# TLSPrivateKeyData
+# TlsPrivateKeyData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to [**TypeTLSPrivateKey**](TypeTLSPrivateKey.md) |  | [optional] [default to TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY]
-**Attributes** | Pointer to [**TLSPrivateKeyDataAttributes**](TlsPrivateKeyDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**RelationshipsForTLSPrivateKey**](RelationshipsForTLSPrivateKey.md) |  | [optional] 
+**Type** | Pointer to [**TypeTlsPrivateKey**](TypeTlsPrivateKey.md) |  | [optional] [default to TYPETLSPRIVATEKEY_TLS_PRIVATE_KEY]
+**Attributes** | Pointer to [**TlsPrivateKeyDataAttributes**](TlsPrivateKeyDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**RelationshipsForTlsPrivateKey**](RelationshipsForTlsPrivateKey.md) |  | [optional] 
 
 ## Methods
 
-### NewTLSPrivateKeyData
+### NewTlsPrivateKeyData
 
-`func NewTLSPrivateKeyData() *TLSPrivateKeyData`
+`func NewTlsPrivateKeyData() *TlsPrivateKeyData`
 
-NewTLSPrivateKeyData instantiates a new TLSPrivateKeyData object
+NewTlsPrivateKeyData instantiates a new TlsPrivateKeyData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSPrivateKeyDataWithDefaults
+### NewTlsPrivateKeyDataWithDefaults
 
-`func NewTLSPrivateKeyDataWithDefaults() *TLSPrivateKeyData`
+`func NewTlsPrivateKeyDataWithDefaults() *TlsPrivateKeyData`
 
-NewTLSPrivateKeyDataWithDefaults instantiates a new TLSPrivateKeyData object
+NewTlsPrivateKeyDataWithDefaults instantiates a new TlsPrivateKeyData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *TLSPrivateKeyData) GetType() TypeTLSPrivateKey`
+`func (o *TlsPrivateKeyData) GetType() TypeTlsPrivateKey`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *TLSPrivateKeyData) GetTypeOk() (*TypeTLSPrivateKey, bool)`
+`func (o *TlsPrivateKeyData) GetTypeOk() (*TypeTlsPrivateKey, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *TLSPrivateKeyData) SetType(v TypeTLSPrivateKey)`
+`func (o *TlsPrivateKeyData) SetType(v TypeTlsPrivateKey)`
 
 SetType sets Type field to given value.
 
 ### HasType
 
-`func (o *TLSPrivateKeyData) HasType() bool`
+`func (o *TlsPrivateKeyData) HasType() bool`
 
 HasType returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *TLSPrivateKeyData) GetAttributes() TLSPrivateKeyDataAttributes`
+`func (o *TlsPrivateKeyData) GetAttributes() TlsPrivateKeyDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TLSPrivateKeyData) GetAttributesOk() (*TLSPrivateKeyDataAttributes, bool)`
+`func (o *TlsPrivateKeyData) GetAttributesOk() (*TlsPrivateKeyDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TLSPrivateKeyData) SetAttributes(v TLSPrivateKeyDataAttributes)`
+`func (o *TlsPrivateKeyData) SetAttributes(v TlsPrivateKeyDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 ### HasAttributes
 
-`func (o *TLSPrivateKeyData) HasAttributes() bool`
+`func (o *TlsPrivateKeyData) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *TLSPrivateKeyData) GetRelationships() RelationshipsForTLSPrivateKey`
+`func (o *TlsPrivateKeyData) GetRelationships() RelationshipsForTlsPrivateKey`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TLSPrivateKeyData) GetRelationshipsOk() (*RelationshipsForTLSPrivateKey, bool)`
+`func (o *TlsPrivateKeyData) GetRelationshipsOk() (*RelationshipsForTlsPrivateKey, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TLSPrivateKeyData) SetRelationships(v RelationshipsForTLSPrivateKey)`
+`func (o *TlsPrivateKeyData) SetRelationships(v RelationshipsForTlsPrivateKey)`
 
 SetRelationships sets Relationships field to given value.
 
 ### HasRelationships
 
-`func (o *TLSPrivateKeyData) HasRelationships() bool`
+`func (o *TlsPrivateKeyData) HasRelationships() bool`
 
 HasRelationships returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

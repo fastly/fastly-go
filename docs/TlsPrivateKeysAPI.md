@@ -1,18 +1,18 @@
-# TLSPrivateKeysAPI
+# TlsPrivateKeysAPI
 
 > [!NOTE]
 > All URIs are relative to `https://api.fastly.com`
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTLSKey**](TlsPrivateKeysAPI.md#CreateTLSKey) | **POST** `/tls/private_keys` | Create a TLS private key
-[**DeleteTLSKey**](TlsPrivateKeysAPI.md#DeleteTLSKey) | **DELETE** `/tls/private_keys/{tls_private_key_id}` | Delete a TLS private key
-[**GetTLSKey**](TlsPrivateKeysAPI.md#GetTLSKey) | **GET** `/tls/private_keys/{tls_private_key_id}` | Get a TLS private key
-[**ListTLSKeys**](TlsPrivateKeysAPI.md#ListTLSKeys) | **GET** `/tls/private_keys` | List TLS private keys
+[**CreateTlsKey**](TlsPrivateKeysAPI.md#CreateTlsKey) | **POST** `/tls/private_keys` | Create a TLS private key
+[**DeleteTlsKey**](TlsPrivateKeysAPI.md#DeleteTlsKey) | **DELETE** `/tls/private_keys/{tls_private_key_id}` | Delete a TLS private key
+[**GetTlsKey**](TlsPrivateKeysAPI.md#GetTlsKey) | **GET** `/tls/private_keys/{tls_private_key_id}` | Get a TLS private key
+[**ListTlsKeys**](TlsPrivateKeysAPI.md#ListTlsKeys) | **GET** `/tls/private_keys` | List TLS private keys
 
 
 
-## CreateTLSKey
+## CreateTlsKey
 
 Create a TLS private key
 
@@ -31,18 +31,18 @@ import (
 )
 
 func main() {
-    tlsPrivateKey := *openapiclient.NewTLSPrivateKey() // TLSPrivateKey |  (optional)
+    tlsPrivateKey := *openapiclient.NewTlsPrivateKey() // TlsPrivateKey |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSPrivateKeysAPI.CreateTLSKey(ctx).TLSPrivateKey(tlsPrivateKey).Execute()
+    resp, r, err := apiClient.TlsPrivateKeysAPI.CreateTlsKey(ctx).TlsPrivateKey(tlsPrivateKey).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSPrivateKeysAPI.CreateTLSKey`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsPrivateKeysAPI.CreateTlsKey`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateTLSKey`: TLSPrivateKeyResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSPrivateKeysAPI.CreateTLSKey`: %v\n", resp)
+    // response from `CreateTlsKey`: TlsPrivateKeyResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsPrivateKeysAPI.CreateTlsKey`: %v\n", resp)
 }
 ```
 
@@ -52,16 +52,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateTLSKeyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTlsKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tlsPrivateKey** | [**TLSPrivateKey**](TlsPrivateKey.md) |  | 
+ **tlsPrivateKey** | [**TlsPrivateKey**](TlsPrivateKey.md) |  | 
 
 ### Return type
 
-[**TLSPrivateKeyResponse**](TlsPrivateKeyResponse.md)
+[**TlsPrivateKeyResponse**](TlsPrivateKeyResponse.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## DeleteTLSKey
+## DeleteTlsKey
 
 Delete a TLS private key
 
@@ -94,14 +94,14 @@ import (
 )
 
 func main() {
-    tlsPrivateKeyID := "tlsPrivateKeyId_example" // string | Alphanumeric string identifying a private Key.
+    tlsPrivateKeyId := "tlsPrivateKeyId_example" // string | Alphanumeric string identifying a private Key.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSPrivateKeysAPI.DeleteTLSKey(ctx, tlsPrivateKeyID).Execute()
+    resp, r, err := apiClient.TlsPrivateKeysAPI.DeleteTlsKey(ctx, tlsPrivateKeyId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSPrivateKeysAPI.DeleteTLSKey`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsPrivateKeysAPI.DeleteTlsKey`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -113,11 +113,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tlsPrivateKeyID** | **string** | Alphanumeric string identifying a private Key. | 
+**tlsPrivateKeyId** | **string** | Alphanumeric string identifying a private Key. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteTLSKeyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteTlsKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## GetTLSKey
+## GetTlsKey
 
 Get a TLS private key
 
@@ -159,18 +159,18 @@ import (
 )
 
 func main() {
-    tlsPrivateKeyID := "tlsPrivateKeyId_example" // string | Alphanumeric string identifying a private Key.
+    tlsPrivateKeyId := "tlsPrivateKeyId_example" // string | Alphanumeric string identifying a private Key.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSPrivateKeysAPI.GetTLSKey(ctx, tlsPrivateKeyID).Execute()
+    resp, r, err := apiClient.TlsPrivateKeysAPI.GetTlsKey(ctx, tlsPrivateKeyId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSPrivateKeysAPI.GetTLSKey`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsPrivateKeysAPI.GetTlsKey`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetTLSKey`: TLSPrivateKeyResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSPrivateKeysAPI.GetTLSKey`: %v\n", resp)
+    // response from `GetTlsKey`: TlsPrivateKeyResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsPrivateKeysAPI.GetTlsKey`: %v\n", resp)
 }
 ```
 
@@ -180,11 +180,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**tlsPrivateKeyID** | **string** | Alphanumeric string identifying a private Key. | 
+**tlsPrivateKeyId** | **string** | Alphanumeric string identifying a private Key. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetTLSKeyRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTlsKeyRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TLSPrivateKeyResponse**](TlsPrivateKeyResponse.md)
+[**TlsPrivateKeyResponse**](TlsPrivateKeyResponse.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
-## ListTLSKeys
+## ListTlsKeys
 
 List TLS private keys
 
@@ -233,13 +233,13 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.TLSPrivateKeysAPI.ListTLSKeys(ctx).FilterInUse(filterInUse).PageNumber(pageNumber).PageSize(pageSize).Execute()
+    resp, r, err := apiClient.TlsPrivateKeysAPI.ListTlsKeys(ctx).FilterInUse(filterInUse).PageNumber(pageNumber).PageSize(pageSize).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `TLSPrivateKeysAPI.ListTLSKeys`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `TlsPrivateKeysAPI.ListTlsKeys`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListTLSKeys`: TLSPrivateKeysResponse
-    fmt.Fprintf(os.Stdout, "Response from `TLSPrivateKeysAPI.ListTLSKeys`: %v\n", resp)
+    // response from `ListTlsKeys`: TlsPrivateKeysResponse
+    fmt.Fprintf(os.Stdout, "Response from `TlsPrivateKeysAPI.ListTlsKeys`: %v\n", resp)
 }
 ```
 
@@ -249,7 +249,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListTLSKeysRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListTlsKeysRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TLSPrivateKeysResponse**](TlsPrivateKeysResponse.md)
+[**TlsPrivateKeysResponse**](TlsPrivateKeysResponse.md)
 
 ### Authorization
 
@@ -270,3 +270,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/vnd.api+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

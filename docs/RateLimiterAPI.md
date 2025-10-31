@@ -32,8 +32,8 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
     name := "name_example" // string | A human readable name for the rate limiting rule. (optional)
     uriDictionaryName := "uriDictionaryName_example" // string | The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited. (optional)
     httpMethods := []string{"Inner_example"} // []string | Array of HTTP methods to apply rate limiting to. (optional)
@@ -49,7 +49,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RateLimiterAPI.CreateRateLimiter(ctx, serviceID, versionID).Name(name).URIDictionaryName(uriDictionaryName).HTTPMethods(httpMethods).RpsLimit(rpsLimit).WindowSize(windowSize).ClientKey(clientKey).PenaltyBoxDuration(penaltyBoxDuration).Action(action).ResponseObjectName(responseObjectName).LoggerType(loggerType).FeatureRevision(featureRevision).Execute()
+    resp, r, err := apiClient.RateLimiterAPI.CreateRateLimiter(ctx, serviceId, versionId).Name(name).UriDictionaryName(uriDictionaryName).HttpMethods(httpMethods).RpsLimit(rpsLimit).WindowSize(windowSize).ClientKey(clientKey).PenaltyBoxDuration(penaltyBoxDuration).Action(action).ResponseObjectName(responseObjectName).LoggerType(loggerType).FeatureRevision(featureRevision).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RateLimiterAPI.CreateRateLimiter`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -65,8 +65,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -112,12 +112,12 @@ import (
 )
 
 func main() {
-    rateLimiterID := "rateLimiterId_example" // string | Alphanumeric string identifying the rate limiter.
+    rateLimiterId := "rateLimiterId_example" // string | Alphanumeric string identifying the rate limiter.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RateLimiterAPI.DeleteRateLimiter(ctx, rateLimiterID).Execute()
+    resp, r, err := apiClient.RateLimiterAPI.DeleteRateLimiter(ctx, rateLimiterId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RateLimiterAPI.DeleteRateLimiter`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -133,7 +133,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**rateLimiterID** | **string** | Alphanumeric string identifying the rate limiter. | 
+**rateLimiterId** | **string** | Alphanumeric string identifying the rate limiter. | 
 
 ### Other Parameters
 
@@ -179,12 +179,12 @@ import (
 )
 
 func main() {
-    rateLimiterID := "rateLimiterId_example" // string | Alphanumeric string identifying the rate limiter.
+    rateLimiterId := "rateLimiterId_example" // string | Alphanumeric string identifying the rate limiter.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RateLimiterAPI.GetRateLimiter(ctx, rateLimiterID).Execute()
+    resp, r, err := apiClient.RateLimiterAPI.GetRateLimiter(ctx, rateLimiterId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RateLimiterAPI.GetRateLimiter`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -200,7 +200,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**rateLimiterID** | **string** | Alphanumeric string identifying the rate limiter. | 
+**rateLimiterId** | **string** | Alphanumeric string identifying the rate limiter. | 
 
 ### Other Parameters
 
@@ -246,13 +246,13 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RateLimiterAPI.ListRateLimiters(ctx, serviceID, versionID).Execute()
+    resp, r, err := apiClient.RateLimiterAPI.ListRateLimiters(ctx, serviceId, versionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RateLimiterAPI.ListRateLimiters`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -268,8 +268,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
 
 ### Other Parameters
 
@@ -315,7 +315,7 @@ import (
 )
 
 func main() {
-    rateLimiterID := "rateLimiterId_example" // string | Alphanumeric string identifying the rate limiter.
+    rateLimiterId := "rateLimiterId_example" // string | Alphanumeric string identifying the rate limiter.
     name := "name_example" // string | A human readable name for the rate limiting rule. (optional)
     uriDictionaryName := "uriDictionaryName_example" // string | The name of a Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited. (optional)
     httpMethods := []string{"Inner_example"} // []string | Array of HTTP methods to apply rate limiting to. (optional)
@@ -331,7 +331,7 @@ func main() {
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.RateLimiterAPI.UpdateRateLimiter(ctx, rateLimiterID).Name(name).URIDictionaryName(uriDictionaryName).HTTPMethods(httpMethods).RpsLimit(rpsLimit).WindowSize(windowSize).ClientKey(clientKey).PenaltyBoxDuration(penaltyBoxDuration).Action(action).ResponseObjectName(responseObjectName).LoggerType(loggerType).FeatureRevision(featureRevision).Execute()
+    resp, r, err := apiClient.RateLimiterAPI.UpdateRateLimiter(ctx, rateLimiterId).Name(name).UriDictionaryName(uriDictionaryName).HttpMethods(httpMethods).RpsLimit(rpsLimit).WindowSize(windowSize).ClientKey(clientKey).PenaltyBoxDuration(penaltyBoxDuration).Action(action).ResponseObjectName(responseObjectName).LoggerType(loggerType).FeatureRevision(featureRevision).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RateLimiterAPI.UpdateRateLimiter`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -347,7 +347,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**rateLimiterID** | **string** | Alphanumeric string identifying the rate limiter. | 
+**rateLimiterId** | **string** | Alphanumeric string identifying the rate limiter. | 
 
 ### Other Parameters
 
@@ -372,3 +372,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

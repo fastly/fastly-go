@@ -28,14 +28,14 @@ import (
 )
 
 func main() {
-    serviceID := "serviceId_example" // string | Alphanumeric string identifying the service.
-    versionID := int32(56) // int32 | Integer identifying a service version.
-    dictionaryID := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    versionId := int32(56) // int32 | Integer identifying a service version.
+    dictionaryId := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.DictionaryInfoAPI.GetDictionaryInfo(ctx, serviceID, versionID, dictionaryID).Execute()
+    resp, r, err := apiClient.DictionaryInfoAPI.GetDictionaryInfo(ctx, serviceId, versionId, dictionaryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DictionaryInfoAPI.GetDictionaryInfo`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,9 +51,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**serviceID** | **string** | Alphanumeric string identifying the service. | 
-**versionID** | **int32** | Integer identifying a service version. | 
-**dictionaryID** | **string** | Alphanumeric string identifying a Dictionary. | 
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+**versionId** | **int32** | Integer identifying a service version. | 
+**dictionaryId** | **string** | Alphanumeric string identifying a Dictionary. | 
 
 ### Other Parameters
 
@@ -78,3 +78,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

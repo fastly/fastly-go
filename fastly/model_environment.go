@@ -20,7 +20,7 @@ import (
 type Environment struct {
 	Name *string `json:"name,omitempty"`
 	// Alphanumeric string identifying the service.
-	ServiceID            *string `json:"service_id,omitempty"`
+	ServiceId            *string `json:"service_id,omitempty"`
 	ActiveVersion        *int32  `json:"active_version,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -76,36 +76,36 @@ func (o *Environment) SetName(v string) {
 	o.Name = &v
 }
 
-// GetServiceID returns the ServiceID field value if set, zero value otherwise.
-func (o *Environment) GetServiceID() string {
-	if o == nil || o.ServiceID == nil {
+// GetServiceId returns the ServiceId field value if set, zero value otherwise.
+func (o *Environment) GetServiceId() string {
+	if o == nil || o.ServiceId == nil {
 		var ret string
 		return ret
 	}
-	return *o.ServiceID
+	return *o.ServiceId
 }
 
-// GetServiceIDOk returns a tuple with the ServiceID field value if set, nil otherwise
+// GetServiceIdOk returns a tuple with the ServiceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Environment) GetServiceIDOk() (*string, bool) {
-	if o == nil || o.ServiceID == nil {
+func (o *Environment) GetServiceIdOk() (*string, bool) {
+	if o == nil || o.ServiceId == nil {
 		return nil, false
 	}
-	return o.ServiceID, true
+	return o.ServiceId, true
 }
 
-// HasServiceID returns a boolean if a field has been set.
-func (o *Environment) HasServiceID() bool {
-	if o != nil && o.ServiceID != nil {
+// HasServiceId returns a boolean if a field has been set.
+func (o *Environment) HasServiceId() bool {
+	if o != nil && o.ServiceId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetServiceID gets a reference to the given string and assigns it to the ServiceID field.
-func (o *Environment) SetServiceID(v string) {
-	o.ServiceID = &v
+// SetServiceId gets a reference to the given string and assigns it to the ServiceId field.
+func (o *Environment) SetServiceId(v string) {
+	o.ServiceId = &v
 }
 
 // GetActiveVersion returns the ActiveVersion field value if set, zero value otherwise.
@@ -147,8 +147,8 @@ func (o Environment) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
-	if o.ServiceID != nil {
-		toSerialize["service_id"] = o.ServiceID
+	if o.ServiceId != nil {
+		toSerialize["service_id"] = o.ServiceId
 	}
 	if o.ActiveVersion != nil {
 		toSerialize["active_version"] = o.ActiveVersion

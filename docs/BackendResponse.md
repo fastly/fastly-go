@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **Ipv6** | Pointer to **NullableString** | IPv6 address of the backend. May be used as an alternative to `address` to set the backend location. | [optional] 
 **KeepaliveTime** | Pointer to **NullableInt32** | How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can. | [optional] 
 **MaxConn** | Pointer to **int32** | Maximum number of concurrent connections this backend will accept. | [optional] 
-**MaxTLSVersion** | Pointer to **NullableString** | Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
-**MinTLSVersion** | Pointer to **NullableString** | Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
+**MaxTlsVersion** | Pointer to **NullableString** | Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
+**MinTlsVersion** | Pointer to **NullableString** | Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
 **Name** | Pointer to **string** | The name of the backend. | [optional] 
 **OverrideHost** | Pointer to **NullableString** | If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL. | [optional] 
 **Port** | Pointer to **int32** | Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request. | [optional] 
@@ -43,7 +43,7 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**ServiceID** | Pointer to **string** |  | [optional] [readonly] 
+**ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **Version** | Pointer to **int32** |  | [optional] [readonly] 
 **Locked** | Pointer to **bool** | Indicates whether the version of the service this backend is attached to accepts edits. | [optional] [readonly] 
 
@@ -461,76 +461,76 @@ SetMaxConn sets MaxConn field to given value.
 
 HasMaxConn returns a boolean if a field has been set.
 
-### GetMaxTLSVersion
+### GetMaxTlsVersion
 
-`func (o *BackendResponse) GetMaxTLSVersion() string`
+`func (o *BackendResponse) GetMaxTlsVersion() string`
 
-GetMaxTLSVersion returns the MaxTLSVersion field if non-nil, zero value otherwise.
+GetMaxTlsVersion returns the MaxTlsVersion field if non-nil, zero value otherwise.
 
-### GetMaxTLSVersionOk
+### GetMaxTlsVersionOk
 
-`func (o *BackendResponse) GetMaxTLSVersionOk() (*string, bool)`
+`func (o *BackendResponse) GetMaxTlsVersionOk() (*string, bool)`
 
-GetMaxTLSVersionOk returns a tuple with the MaxTLSVersion field if it's non-nil, zero value otherwise
+GetMaxTlsVersionOk returns a tuple with the MaxTlsVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMaxTLSVersion
+### SetMaxTlsVersion
 
-`func (o *BackendResponse) SetMaxTLSVersion(v string)`
+`func (o *BackendResponse) SetMaxTlsVersion(v string)`
 
-SetMaxTLSVersion sets MaxTLSVersion field to given value.
+SetMaxTlsVersion sets MaxTlsVersion field to given value.
 
-### HasMaxTLSVersion
+### HasMaxTlsVersion
 
-`func (o *BackendResponse) HasMaxTLSVersion() bool`
+`func (o *BackendResponse) HasMaxTlsVersion() bool`
 
-HasMaxTLSVersion returns a boolean if a field has been set.
+HasMaxTlsVersion returns a boolean if a field has been set.
 
-### SetMaxTLSVersionNil
+### SetMaxTlsVersionNil
 
-`func (o *BackendResponse) SetMaxTLSVersionNil(b bool)`
+`func (o *BackendResponse) SetMaxTlsVersionNil(b bool)`
 
- SetMaxTLSVersionNil sets the value for MaxTLSVersion to be an explicit nil
+ SetMaxTlsVersionNil sets the value for MaxTlsVersion to be an explicit nil
 
-### UnsetMaxTLSVersion
-`func (o *BackendResponse) UnsetMaxTLSVersion()`
+### UnsetMaxTlsVersion
+`func (o *BackendResponse) UnsetMaxTlsVersion()`
 
-UnsetMaxTLSVersion ensures that no value is present for MaxTLSVersion, not even an explicit nil
-### GetMinTLSVersion
+UnsetMaxTlsVersion ensures that no value is present for MaxTlsVersion, not even an explicit nil
+### GetMinTlsVersion
 
-`func (o *BackendResponse) GetMinTLSVersion() string`
+`func (o *BackendResponse) GetMinTlsVersion() string`
 
-GetMinTLSVersion returns the MinTLSVersion field if non-nil, zero value otherwise.
+GetMinTlsVersion returns the MinTlsVersion field if non-nil, zero value otherwise.
 
-### GetMinTLSVersionOk
+### GetMinTlsVersionOk
 
-`func (o *BackendResponse) GetMinTLSVersionOk() (*string, bool)`
+`func (o *BackendResponse) GetMinTlsVersionOk() (*string, bool)`
 
-GetMinTLSVersionOk returns a tuple with the MinTLSVersion field if it's non-nil, zero value otherwise
+GetMinTlsVersionOk returns a tuple with the MinTlsVersion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMinTLSVersion
+### SetMinTlsVersion
 
-`func (o *BackendResponse) SetMinTLSVersion(v string)`
+`func (o *BackendResponse) SetMinTlsVersion(v string)`
 
-SetMinTLSVersion sets MinTLSVersion field to given value.
+SetMinTlsVersion sets MinTlsVersion field to given value.
 
-### HasMinTLSVersion
+### HasMinTlsVersion
 
-`func (o *BackendResponse) HasMinTLSVersion() bool`
+`func (o *BackendResponse) HasMinTlsVersion() bool`
 
-HasMinTLSVersion returns a boolean if a field has been set.
+HasMinTlsVersion returns a boolean if a field has been set.
 
-### SetMinTLSVersionNil
+### SetMinTlsVersionNil
 
-`func (o *BackendResponse) SetMinTLSVersionNil(b bool)`
+`func (o *BackendResponse) SetMinTlsVersionNil(b bool)`
 
- SetMinTLSVersionNil sets the value for MinTLSVersion to be an explicit nil
+ SetMinTlsVersionNil sets the value for MinTlsVersion to be an explicit nil
 
-### UnsetMinTLSVersion
-`func (o *BackendResponse) UnsetMinTLSVersion()`
+### UnsetMinTlsVersion
+`func (o *BackendResponse) UnsetMinTlsVersion()`
 
-UnsetMinTLSVersion ensures that no value is present for MinTLSVersion, not even an explicit nil
+UnsetMinTlsVersion ensures that no value is present for MinTlsVersion, not even an explicit nil
 ### GetName
 
 `func (o *BackendResponse) GetName() string`
@@ -1311,30 +1311,30 @@ HasUpdatedAt returns a boolean if a field has been set.
 `func (o *BackendResponse) UnsetUpdatedAt()`
 
 UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-### GetServiceID
+### GetServiceId
 
-`func (o *BackendResponse) GetServiceID() string`
+`func (o *BackendResponse) GetServiceId() string`
 
-GetServiceID returns the ServiceID field if non-nil, zero value otherwise.
+GetServiceId returns the ServiceId field if non-nil, zero value otherwise.
 
-### GetServiceIDOk
+### GetServiceIdOk
 
-`func (o *BackendResponse) GetServiceIDOk() (*string, bool)`
+`func (o *BackendResponse) GetServiceIdOk() (*string, bool)`
 
-GetServiceIDOk returns a tuple with the ServiceID field if it's non-nil, zero value otherwise
+GetServiceIdOk returns a tuple with the ServiceId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetServiceID
+### SetServiceId
 
-`func (o *BackendResponse) SetServiceID(v string)`
+`func (o *BackendResponse) SetServiceId(v string)`
 
-SetServiceID sets ServiceID field to given value.
+SetServiceId sets ServiceId field to given value.
 
-### HasServiceID
+### HasServiceId
 
-`func (o *BackendResponse) HasServiceID() bool`
+`func (o *BackendResponse) HasServiceId() bool`
 
-HasServiceID returns a boolean if a field has been set.
+HasServiceId returns a boolean if a field has been set.
 
 ### GetVersion
 
@@ -1388,3 +1388,5 @@ HasLocked returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

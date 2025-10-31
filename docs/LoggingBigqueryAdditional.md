@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Dataset** | Pointer to **string** | Your BigQuery dataset. | [optional] 
 **Table** | Pointer to **string** | Your BigQuery table. | [optional] 
 **TemplateSuffix** | Pointer to **NullableString** | BigQuery table name suffix template. Optional. | [optional] 
-**ProjectID** | Pointer to **string** | Your Google Cloud Platform project ID. Required | [optional] 
+**ProjectId** | Pointer to **string** | Your Google Cloud Platform project ID. Required | [optional] 
 
 ## Methods
 
@@ -165,30 +165,32 @@ HasTemplateSuffix returns a boolean if a field has been set.
 `func (o *LoggingBigqueryAdditional) UnsetTemplateSuffix()`
 
 UnsetTemplateSuffix ensures that no value is present for TemplateSuffix, not even an explicit nil
-### GetProjectID
+### GetProjectId
 
-`func (o *LoggingBigqueryAdditional) GetProjectID() string`
+`func (o *LoggingBigqueryAdditional) GetProjectId() string`
 
-GetProjectID returns the ProjectID field if non-nil, zero value otherwise.
+GetProjectId returns the ProjectId field if non-nil, zero value otherwise.
 
-### GetProjectIDOk
+### GetProjectIdOk
 
-`func (o *LoggingBigqueryAdditional) GetProjectIDOk() (*string, bool)`
+`func (o *LoggingBigqueryAdditional) GetProjectIdOk() (*string, bool)`
 
-GetProjectIDOk returns a tuple with the ProjectID field if it's non-nil, zero value otherwise
+GetProjectIdOk returns a tuple with the ProjectId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProjectID
+### SetProjectId
 
-`func (o *LoggingBigqueryAdditional) SetProjectID(v string)`
+`func (o *LoggingBigqueryAdditional) SetProjectId(v string)`
 
-SetProjectID sets ProjectID field to given value.
+SetProjectId sets ProjectId field to given value.
 
-### HasProjectID
+### HasProjectId
 
-`func (o *LoggingBigqueryAdditional) HasProjectID() bool`
+`func (o *LoggingBigqueryAdditional) HasProjectId() bool`
 
-HasProjectID returns a boolean if a field has been set.
+HasProjectId returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

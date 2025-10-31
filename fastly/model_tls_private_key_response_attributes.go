@@ -17,8 +17,8 @@ import (
 	"time"
 )
 
-// TLSPrivateKeyResponseAttributes struct for TLSPrivateKeyResponseAttributes
-type TLSPrivateKeyResponseAttributes struct {
+// TlsPrivateKeyResponseAttributes struct for TlsPrivateKeyResponseAttributes
+type TlsPrivateKeyResponseAttributes struct {
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -38,27 +38,27 @@ type TLSPrivateKeyResponseAttributes struct {
 	AdditionalProperties map[string]any
 }
 
-type _TLSPrivateKeyResponseAttributes TLSPrivateKeyResponseAttributes
+type _TlsPrivateKeyResponseAttributes TlsPrivateKeyResponseAttributes
 
-// NewTLSPrivateKeyResponseAttributes instantiates a new TLSPrivateKeyResponseAttributes object
+// NewTlsPrivateKeyResponseAttributes instantiates a new TlsPrivateKeyResponseAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSPrivateKeyResponseAttributes() *TLSPrivateKeyResponseAttributes {
-	this := TLSPrivateKeyResponseAttributes{}
+func NewTlsPrivateKeyResponseAttributes() *TlsPrivateKeyResponseAttributes {
+	this := TlsPrivateKeyResponseAttributes{}
 	return &this
 }
 
-// NewTLSPrivateKeyResponseAttributesWithDefaults instantiates a new TLSPrivateKeyResponseAttributes object
+// NewTlsPrivateKeyResponseAttributesWithDefaults instantiates a new TlsPrivateKeyResponseAttributes object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSPrivateKeyResponseAttributesWithDefaults() *TLSPrivateKeyResponseAttributes {
-	this := TLSPrivateKeyResponseAttributes{}
+func NewTlsPrivateKeyResponseAttributesWithDefaults() *TlsPrivateKeyResponseAttributes {
+	this := TlsPrivateKeyResponseAttributes{}
 	return &this
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TLSPrivateKeyResponseAttributes) GetCreatedAt() time.Time {
+func (o *TlsPrivateKeyResponseAttributes) GetCreatedAt() time.Time {
 	if o == nil || o.CreatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -69,7 +69,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetCreatedAt() time.Time {
 // GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TLSPrivateKeyResponseAttributes) GetCreatedAtOk() (*time.Time, bool) {
+func (o *TlsPrivateKeyResponseAttributes) GetCreatedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -77,7 +77,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetCreatedAtOk() (*time.Time, bool) {
 }
 
 // HasCreatedAt returns a boolean if a field has been set.
-func (o *TLSPrivateKeyResponseAttributes) HasCreatedAt() bool {
+func (o *TlsPrivateKeyResponseAttributes) HasCreatedAt() bool {
 	if o != nil && o.CreatedAt.IsSet() {
 		return true
 	}
@@ -86,22 +86,22 @@ func (o *TLSPrivateKeyResponseAttributes) HasCreatedAt() bool {
 }
 
 // SetCreatedAt gets a reference to the given NullableTime and assigns it to the CreatedAt field.
-func (o *TLSPrivateKeyResponseAttributes) SetCreatedAt(v time.Time) {
+func (o *TlsPrivateKeyResponseAttributes) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
 
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
-func (o *TLSPrivateKeyResponseAttributes) SetCreatedAtNil() {
+func (o *TlsPrivateKeyResponseAttributes) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
 }
 
 // UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-func (o *TLSPrivateKeyResponseAttributes) UnsetCreatedAt() {
+func (o *TlsPrivateKeyResponseAttributes) UnsetCreatedAt() {
 	o.CreatedAt.Unset()
 }
 
 // GetDeletedAt returns the DeletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TLSPrivateKeyResponseAttributes) GetDeletedAt() time.Time {
+func (o *TlsPrivateKeyResponseAttributes) GetDeletedAt() time.Time {
 	if o == nil || o.DeletedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -112,7 +112,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetDeletedAt() time.Time {
 // GetDeletedAtOk returns a tuple with the DeletedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TLSPrivateKeyResponseAttributes) GetDeletedAtOk() (*time.Time, bool) {
+func (o *TlsPrivateKeyResponseAttributes) GetDeletedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -120,7 +120,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetDeletedAtOk() (*time.Time, bool) {
 }
 
 // HasDeletedAt returns a boolean if a field has been set.
-func (o *TLSPrivateKeyResponseAttributes) HasDeletedAt() bool {
+func (o *TlsPrivateKeyResponseAttributes) HasDeletedAt() bool {
 	if o != nil && o.DeletedAt.IsSet() {
 		return true
 	}
@@ -129,22 +129,22 @@ func (o *TLSPrivateKeyResponseAttributes) HasDeletedAt() bool {
 }
 
 // SetDeletedAt gets a reference to the given NullableTime and assigns it to the DeletedAt field.
-func (o *TLSPrivateKeyResponseAttributes) SetDeletedAt(v time.Time) {
+func (o *TlsPrivateKeyResponseAttributes) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
 
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
-func (o *TLSPrivateKeyResponseAttributes) SetDeletedAtNil() {
+func (o *TlsPrivateKeyResponseAttributes) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
 }
 
 // UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-func (o *TLSPrivateKeyResponseAttributes) UnsetDeletedAt() {
+func (o *TlsPrivateKeyResponseAttributes) UnsetDeletedAt() {
 	o.DeletedAt.Unset()
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TLSPrivateKeyResponseAttributes) GetUpdatedAt() time.Time {
+func (o *TlsPrivateKeyResponseAttributes) GetUpdatedAt() time.Time {
 	if o == nil || o.UpdatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -155,7 +155,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetUpdatedAt() time.Time {
 // GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TLSPrivateKeyResponseAttributes) GetUpdatedAtOk() (*time.Time, bool) {
+func (o *TlsPrivateKeyResponseAttributes) GetUpdatedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -163,7 +163,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetUpdatedAtOk() (*time.Time, bool) {
 }
 
 // HasUpdatedAt returns a boolean if a field has been set.
-func (o *TLSPrivateKeyResponseAttributes) HasUpdatedAt() bool {
+func (o *TlsPrivateKeyResponseAttributes) HasUpdatedAt() bool {
 	if o != nil && o.UpdatedAt.IsSet() {
 		return true
 	}
@@ -172,22 +172,22 @@ func (o *TLSPrivateKeyResponseAttributes) HasUpdatedAt() bool {
 }
 
 // SetUpdatedAt gets a reference to the given NullableTime and assigns it to the UpdatedAt field.
-func (o *TLSPrivateKeyResponseAttributes) SetUpdatedAt(v time.Time) {
+func (o *TlsPrivateKeyResponseAttributes) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
 
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-func (o *TLSPrivateKeyResponseAttributes) SetUpdatedAtNil() {
+func (o *TlsPrivateKeyResponseAttributes) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
 }
 
 // UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-func (o *TLSPrivateKeyResponseAttributes) UnsetUpdatedAt() {
+func (o *TlsPrivateKeyResponseAttributes) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
-func (o *TLSPrivateKeyResponseAttributes) GetName() string {
+func (o *TlsPrivateKeyResponseAttributes) GetName() string {
 	if o == nil || o.Name == nil {
 		var ret string
 		return ret
@@ -197,7 +197,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSPrivateKeyResponseAttributes) GetNameOk() (*string, bool) {
+func (o *TlsPrivateKeyResponseAttributes) GetNameOk() (*string, bool) {
 	if o == nil || o.Name == nil {
 		return nil, false
 	}
@@ -205,7 +205,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetNameOk() (*string, bool) {
 }
 
 // HasName returns a boolean if a field has been set.
-func (o *TLSPrivateKeyResponseAttributes) HasName() bool {
+func (o *TlsPrivateKeyResponseAttributes) HasName() bool {
 	if o != nil && o.Name != nil {
 		return true
 	}
@@ -214,12 +214,12 @@ func (o *TLSPrivateKeyResponseAttributes) HasName() bool {
 }
 
 // SetName gets a reference to the given string and assigns it to the Name field.
-func (o *TLSPrivateKeyResponseAttributes) SetName(v string) {
+func (o *TlsPrivateKeyResponseAttributes) SetName(v string) {
 	o.Name = &v
 }
 
 // GetKeyLength returns the KeyLength field value if set, zero value otherwise.
-func (o *TLSPrivateKeyResponseAttributes) GetKeyLength() int32 {
+func (o *TlsPrivateKeyResponseAttributes) GetKeyLength() int32 {
 	if o == nil || o.KeyLength == nil {
 		var ret int32
 		return ret
@@ -229,7 +229,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetKeyLength() int32 {
 
 // GetKeyLengthOk returns a tuple with the KeyLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSPrivateKeyResponseAttributes) GetKeyLengthOk() (*int32, bool) {
+func (o *TlsPrivateKeyResponseAttributes) GetKeyLengthOk() (*int32, bool) {
 	if o == nil || o.KeyLength == nil {
 		return nil, false
 	}
@@ -237,7 +237,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetKeyLengthOk() (*int32, bool) {
 }
 
 // HasKeyLength returns a boolean if a field has been set.
-func (o *TLSPrivateKeyResponseAttributes) HasKeyLength() bool {
+func (o *TlsPrivateKeyResponseAttributes) HasKeyLength() bool {
 	if o != nil && o.KeyLength != nil {
 		return true
 	}
@@ -246,12 +246,12 @@ func (o *TLSPrivateKeyResponseAttributes) HasKeyLength() bool {
 }
 
 // SetKeyLength gets a reference to the given int32 and assigns it to the KeyLength field.
-func (o *TLSPrivateKeyResponseAttributes) SetKeyLength(v int32) {
+func (o *TlsPrivateKeyResponseAttributes) SetKeyLength(v int32) {
 	o.KeyLength = &v
 }
 
 // GetKeyType returns the KeyType field value if set, zero value otherwise.
-func (o *TLSPrivateKeyResponseAttributes) GetKeyType() string {
+func (o *TlsPrivateKeyResponseAttributes) GetKeyType() string {
 	if o == nil || o.KeyType == nil {
 		var ret string
 		return ret
@@ -261,7 +261,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetKeyType() string {
 
 // GetKeyTypeOk returns a tuple with the KeyType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSPrivateKeyResponseAttributes) GetKeyTypeOk() (*string, bool) {
+func (o *TlsPrivateKeyResponseAttributes) GetKeyTypeOk() (*string, bool) {
 	if o == nil || o.KeyType == nil {
 		return nil, false
 	}
@@ -269,7 +269,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetKeyTypeOk() (*string, bool) {
 }
 
 // HasKeyType returns a boolean if a field has been set.
-func (o *TLSPrivateKeyResponseAttributes) HasKeyType() bool {
+func (o *TlsPrivateKeyResponseAttributes) HasKeyType() bool {
 	if o != nil && o.KeyType != nil {
 		return true
 	}
@@ -278,12 +278,12 @@ func (o *TLSPrivateKeyResponseAttributes) HasKeyType() bool {
 }
 
 // SetKeyType gets a reference to the given string and assigns it to the KeyType field.
-func (o *TLSPrivateKeyResponseAttributes) SetKeyType(v string) {
+func (o *TlsPrivateKeyResponseAttributes) SetKeyType(v string) {
 	o.KeyType = &v
 }
 
 // GetReplace returns the Replace field value if set, zero value otherwise.
-func (o *TLSPrivateKeyResponseAttributes) GetReplace() bool {
+func (o *TlsPrivateKeyResponseAttributes) GetReplace() bool {
 	if o == nil || o.Replace == nil {
 		var ret bool
 		return ret
@@ -293,7 +293,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetReplace() bool {
 
 // GetReplaceOk returns a tuple with the Replace field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSPrivateKeyResponseAttributes) GetReplaceOk() (*bool, bool) {
+func (o *TlsPrivateKeyResponseAttributes) GetReplaceOk() (*bool, bool) {
 	if o == nil || o.Replace == nil {
 		return nil, false
 	}
@@ -301,7 +301,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetReplaceOk() (*bool, bool) {
 }
 
 // HasReplace returns a boolean if a field has been set.
-func (o *TLSPrivateKeyResponseAttributes) HasReplace() bool {
+func (o *TlsPrivateKeyResponseAttributes) HasReplace() bool {
 	if o != nil && o.Replace != nil {
 		return true
 	}
@@ -310,12 +310,12 @@ func (o *TLSPrivateKeyResponseAttributes) HasReplace() bool {
 }
 
 // SetReplace gets a reference to the given bool and assigns it to the Replace field.
-func (o *TLSPrivateKeyResponseAttributes) SetReplace(v bool) {
+func (o *TlsPrivateKeyResponseAttributes) SetReplace(v bool) {
 	o.Replace = &v
 }
 
 // GetPublicKeySha1 returns the PublicKeySha1 field value if set, zero value otherwise.
-func (o *TLSPrivateKeyResponseAttributes) GetPublicKeySha1() string {
+func (o *TlsPrivateKeyResponseAttributes) GetPublicKeySha1() string {
 	if o == nil || o.PublicKeySha1 == nil {
 		var ret string
 		return ret
@@ -325,7 +325,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetPublicKeySha1() string {
 
 // GetPublicKeySha1Ok returns a tuple with the PublicKeySha1 field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSPrivateKeyResponseAttributes) GetPublicKeySha1Ok() (*string, bool) {
+func (o *TlsPrivateKeyResponseAttributes) GetPublicKeySha1Ok() (*string, bool) {
 	if o == nil || o.PublicKeySha1 == nil {
 		return nil, false
 	}
@@ -333,7 +333,7 @@ func (o *TLSPrivateKeyResponseAttributes) GetPublicKeySha1Ok() (*string, bool) {
 }
 
 // HasPublicKeySha1 returns a boolean if a field has been set.
-func (o *TLSPrivateKeyResponseAttributes) HasPublicKeySha1() bool {
+func (o *TlsPrivateKeyResponseAttributes) HasPublicKeySha1() bool {
 	if o != nil && o.PublicKeySha1 != nil {
 		return true
 	}
@@ -342,13 +342,13 @@ func (o *TLSPrivateKeyResponseAttributes) HasPublicKeySha1() bool {
 }
 
 // SetPublicKeySha1 gets a reference to the given string and assigns it to the PublicKeySha1 field.
-func (o *TLSPrivateKeyResponseAttributes) SetPublicKeySha1(v string) {
+func (o *TlsPrivateKeyResponseAttributes) SetPublicKeySha1(v string) {
 	o.PublicKeySha1 = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSPrivateKeyResponseAttributes) MarshalJSON() ([]byte, error) {
+func (o TlsPrivateKeyResponseAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
@@ -384,11 +384,11 @@ func (o TLSPrivateKeyResponseAttributes) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSPrivateKeyResponseAttributes) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSPrivateKeyResponseAttributes := _TLSPrivateKeyResponseAttributes{}
+func (o *TlsPrivateKeyResponseAttributes) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsPrivateKeyResponseAttributes := _TlsPrivateKeyResponseAttributes{}
 
-	if err = json.Unmarshal(bytes, &varTLSPrivateKeyResponseAttributes); err == nil {
-		*o = TLSPrivateKeyResponseAttributes(varTLSPrivateKeyResponseAttributes)
+	if err = json.Unmarshal(bytes, &varTlsPrivateKeyResponseAttributes); err == nil {
+		*o = TlsPrivateKeyResponseAttributes(varTlsPrivateKeyResponseAttributes)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -408,48 +408,48 @@ func (o *TLSPrivateKeyResponseAttributes) UnmarshalJSON(bytes []byte) (err error
 	return err
 }
 
-// NullableTLSPrivateKeyResponseAttributes is a helper abstraction for handling nullable tlsprivatekeyresponseattributes types.
-type NullableTLSPrivateKeyResponseAttributes struct {
-	value *TLSPrivateKeyResponseAttributes
+// NullableTlsPrivateKeyResponseAttributes is a helper abstraction for handling nullable tlsprivatekeyresponseattributes types.
+type NullableTlsPrivateKeyResponseAttributes struct {
+	value *TlsPrivateKeyResponseAttributes
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSPrivateKeyResponseAttributes) Get() *TLSPrivateKeyResponseAttributes {
+func (v NullableTlsPrivateKeyResponseAttributes) Get() *TlsPrivateKeyResponseAttributes {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSPrivateKeyResponseAttributes) Set(val *TLSPrivateKeyResponseAttributes) {
+func (v *NullableTlsPrivateKeyResponseAttributes) Set(val *TlsPrivateKeyResponseAttributes) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSPrivateKeyResponseAttributes) IsSet() bool {
+func (v NullableTlsPrivateKeyResponseAttributes) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSPrivateKeyResponseAttributes) Unset() {
+func (v *NullableTlsPrivateKeyResponseAttributes) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSPrivateKeyResponseAttributes returns a pointer to a new instance of NullableTLSPrivateKeyResponseAttributes.
-func NewNullableTLSPrivateKeyResponseAttributes(val *TLSPrivateKeyResponseAttributes) *NullableTLSPrivateKeyResponseAttributes {
-	return &NullableTLSPrivateKeyResponseAttributes{value: val, isSet: true}
+// NewNullableTlsPrivateKeyResponseAttributes returns a pointer to a new instance of NullableTlsPrivateKeyResponseAttributes.
+func NewNullableTlsPrivateKeyResponseAttributes(val *TlsPrivateKeyResponseAttributes) *NullableTlsPrivateKeyResponseAttributes {
+	return &NullableTlsPrivateKeyResponseAttributes{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSPrivateKeyResponseAttributes) MarshalJSON() ([]byte, error) {
+func (v NullableTlsPrivateKeyResponseAttributes) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSPrivateKeyResponseAttributes) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsPrivateKeyResponseAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

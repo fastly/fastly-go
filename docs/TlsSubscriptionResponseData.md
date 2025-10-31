@@ -1,80 +1,82 @@
-# TLSSubscriptionResponseData
+# TlsSubscriptionResponseData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ID** | Pointer to **string** |  | [optional] [readonly] 
-**Attributes** | Pointer to [**TLSSubscriptionResponseAttributes**](TlsSubscriptionResponseAttributes.md) |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] [readonly] 
+**Attributes** | Pointer to [**TlsSubscriptionResponseAttributes**](TlsSubscriptionResponseAttributes.md) |  | [optional] 
 
 ## Methods
 
-### NewTLSSubscriptionResponseData
+### NewTlsSubscriptionResponseData
 
-`func NewTLSSubscriptionResponseData() *TLSSubscriptionResponseData`
+`func NewTlsSubscriptionResponseData() *TlsSubscriptionResponseData`
 
-NewTLSSubscriptionResponseData instantiates a new TLSSubscriptionResponseData object
+NewTlsSubscriptionResponseData instantiates a new TlsSubscriptionResponseData object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewTLSSubscriptionResponseDataWithDefaults
+### NewTlsSubscriptionResponseDataWithDefaults
 
-`func NewTLSSubscriptionResponseDataWithDefaults() *TLSSubscriptionResponseData`
+`func NewTlsSubscriptionResponseDataWithDefaults() *TlsSubscriptionResponseData`
 
-NewTLSSubscriptionResponseDataWithDefaults instantiates a new TLSSubscriptionResponseData object
+NewTlsSubscriptionResponseDataWithDefaults instantiates a new TlsSubscriptionResponseData object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetID
+### GetId
 
-`func (o *TLSSubscriptionResponseData) GetID() string`
+`func (o *TlsSubscriptionResponseData) GetId() string`
 
-GetID returns the ID field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetIDOk
+### GetIdOk
 
-`func (o *TLSSubscriptionResponseData) GetIDOk() (*string, bool)`
+`func (o *TlsSubscriptionResponseData) GetIdOk() (*string, bool)`
 
-GetIDOk returns a tuple with the ID field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetID
+### SetId
 
-`func (o *TLSSubscriptionResponseData) SetID(v string)`
+`func (o *TlsSubscriptionResponseData) SetId(v string)`
 
-SetID sets ID field to given value.
+SetId sets Id field to given value.
 
-### HasID
+### HasId
 
-`func (o *TLSSubscriptionResponseData) HasID() bool`
+`func (o *TlsSubscriptionResponseData) HasId() bool`
 
-HasID returns a boolean if a field has been set.
+HasId returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *TLSSubscriptionResponseData) GetAttributes() TLSSubscriptionResponseAttributes`
+`func (o *TlsSubscriptionResponseData) GetAttributes() TlsSubscriptionResponseAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TLSSubscriptionResponseData) GetAttributesOk() (*TLSSubscriptionResponseAttributes, bool)`
+`func (o *TlsSubscriptionResponseData) GetAttributesOk() (*TlsSubscriptionResponseAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TLSSubscriptionResponseData) SetAttributes(v TLSSubscriptionResponseAttributes)`
+`func (o *TlsSubscriptionResponseData) SetAttributes(v TlsSubscriptionResponseAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 ### HasAttributes
 
-`func (o *TLSSubscriptionResponseData) HasAttributes() bool`
+`func (o *TlsSubscriptionResponseData) HasAttributes() bool`
 
 HasAttributes returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

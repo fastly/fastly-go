@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Product** | Pointer to [**DomainInspectorResponseProductProduct**](DomainInspectorResponseProductProduct.md) |  | [optional] 
-**Service** | Pointer to [**BotManagementResponseServiceService**](BotManagementResponseServiceService.md) |  | [optional] 
+**Service** | Pointer to [**ApiDiscoveryResponseServiceService**](ApiDiscoveryResponseServiceService.md) |  | [optional] 
 **Links** | Pointer to [**DomainInspectorResponseLinksLinks**](DomainInspectorResponseLinksLinks.md) |  | [optional] 
 
 ## Methods
@@ -54,20 +54,20 @@ HasProduct returns a boolean if a field has been set.
 
 ### GetService
 
-`func (o *DomainInspectorResponseBodyEnable) GetService() BotManagementResponseServiceService`
+`func (o *DomainInspectorResponseBodyEnable) GetService() ApiDiscoveryResponseServiceService`
 
 GetService returns the Service field if non-nil, zero value otherwise.
 
 ### GetServiceOk
 
-`func (o *DomainInspectorResponseBodyEnable) GetServiceOk() (*BotManagementResponseServiceService, bool)`
+`func (o *DomainInspectorResponseBodyEnable) GetServiceOk() (*ApiDiscoveryResponseServiceService, bool)`
 
 GetServiceOk returns a tuple with the Service field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetService
 
-`func (o *DomainInspectorResponseBodyEnable) SetService(v BotManagementResponseServiceService)`
+`func (o *DomainInspectorResponseBodyEnable) SetService(v ApiDiscoveryResponseServiceService)`
 
 SetService sets Service field to given value.
 
@@ -104,3 +104,5 @@ HasLinks returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+

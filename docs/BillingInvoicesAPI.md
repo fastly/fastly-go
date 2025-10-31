@@ -5,13 +5,13 @@
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetInvoiceByInvoiceID**](BillingInvoicesAPI.md#GetInvoiceByInvoiceID) | **GET** `/billing/v3/invoices/{invoice_id}` | Get invoice by ID.
+[**GetInvoiceByInvoiceId**](BillingInvoicesAPI.md#GetInvoiceByInvoiceId) | **GET** `/billing/v3/invoices/{invoice_id}` | Get invoice by ID.
 [**GetMonthToDateInvoice**](BillingInvoicesAPI.md#GetMonthToDateInvoice) | **GET** `/billing/v3/invoices/month-to-date` | Get month-to-date invoice.
 [**ListInvoices**](BillingInvoicesAPI.md#ListInvoices) | **GET** `/billing/v3/invoices` | List of invoices.
 
 
 
-## GetInvoiceByInvoiceID
+## GetInvoiceByInvoiceId
 
 Get invoice by ID.
 
@@ -30,18 +30,18 @@ import (
 )
 
 func main() {
-    invoiceID := int32(4183280) // int32 | 
+    invoiceId := int32(4183280) // int32 | 
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.BillingInvoicesAPI.GetInvoiceByInvoiceID(ctx, invoiceID).Execute()
+    resp, r, err := apiClient.BillingInvoicesAPI.GetInvoiceByInvoiceId(ctx, invoiceId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `BillingInvoicesAPI.GetInvoiceByInvoiceID`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `BillingInvoicesAPI.GetInvoiceByInvoiceId`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetInvoiceByInvoiceID`: EomInvoiceResponse
-    fmt.Fprintf(os.Stdout, "Response from `BillingInvoicesAPI.GetInvoiceByInvoiceID`: %v\n", resp)
+    // response from `GetInvoiceByInvoiceId`: EomInvoiceResponse
+    fmt.Fprintf(os.Stdout, "Response from `BillingInvoicesAPI.GetInvoiceByInvoiceId`: %v\n", resp)
 }
 ```
 
@@ -51,11 +51,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**invoiceID** | **int32** |  | 
+**invoiceId** | **int32** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetInvoiceByInvoiceIDRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetInvoiceByInvoiceIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -201,3 +201,4 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+

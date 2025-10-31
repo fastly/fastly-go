@@ -17,8 +17,8 @@ import (
 	"time"
 )
 
-// TLSSubscriptionResponseAttributes struct for TLSSubscriptionResponseAttributes
-type TLSSubscriptionResponseAttributes struct {
+// TlsSubscriptionResponseAttributes struct for TlsSubscriptionResponseAttributes
+type TlsSubscriptionResponseAttributes struct {
 	// Date and time in ISO 8601 format.
 	CreatedAt NullableTime `json:"created_at,omitempty"`
 	// Date and time in ISO 8601 format.
@@ -32,27 +32,27 @@ type TLSSubscriptionResponseAttributes struct {
 	AdditionalProperties map[string]any
 }
 
-type _TLSSubscriptionResponseAttributes TLSSubscriptionResponseAttributes
+type _TlsSubscriptionResponseAttributes TlsSubscriptionResponseAttributes
 
-// NewTLSSubscriptionResponseAttributes instantiates a new TLSSubscriptionResponseAttributes object
+// NewTlsSubscriptionResponseAttributes instantiates a new TlsSubscriptionResponseAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSSubscriptionResponseAttributes() *TLSSubscriptionResponseAttributes {
-	this := TLSSubscriptionResponseAttributes{}
+func NewTlsSubscriptionResponseAttributes() *TlsSubscriptionResponseAttributes {
+	this := TlsSubscriptionResponseAttributes{}
 	return &this
 }
 
-// NewTLSSubscriptionResponseAttributesWithDefaults instantiates a new TLSSubscriptionResponseAttributes object
+// NewTlsSubscriptionResponseAttributesWithDefaults instantiates a new TlsSubscriptionResponseAttributes object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSSubscriptionResponseAttributesWithDefaults() *TLSSubscriptionResponseAttributes {
-	this := TLSSubscriptionResponseAttributes{}
+func NewTlsSubscriptionResponseAttributesWithDefaults() *TlsSubscriptionResponseAttributes {
+	this := TlsSubscriptionResponseAttributes{}
 	return &this
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TLSSubscriptionResponseAttributes) GetCreatedAt() time.Time {
+func (o *TlsSubscriptionResponseAttributes) GetCreatedAt() time.Time {
 	if o == nil || o.CreatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -63,7 +63,7 @@ func (o *TLSSubscriptionResponseAttributes) GetCreatedAt() time.Time {
 // GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TLSSubscriptionResponseAttributes) GetCreatedAtOk() (*time.Time, bool) {
+func (o *TlsSubscriptionResponseAttributes) GetCreatedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -71,7 +71,7 @@ func (o *TLSSubscriptionResponseAttributes) GetCreatedAtOk() (*time.Time, bool) 
 }
 
 // HasCreatedAt returns a boolean if a field has been set.
-func (o *TLSSubscriptionResponseAttributes) HasCreatedAt() bool {
+func (o *TlsSubscriptionResponseAttributes) HasCreatedAt() bool {
 	if o != nil && o.CreatedAt.IsSet() {
 		return true
 	}
@@ -80,22 +80,22 @@ func (o *TLSSubscriptionResponseAttributes) HasCreatedAt() bool {
 }
 
 // SetCreatedAt gets a reference to the given NullableTime and assigns it to the CreatedAt field.
-func (o *TLSSubscriptionResponseAttributes) SetCreatedAt(v time.Time) {
+func (o *TlsSubscriptionResponseAttributes) SetCreatedAt(v time.Time) {
 	o.CreatedAt.Set(&v)
 }
 
 // SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
-func (o *TLSSubscriptionResponseAttributes) SetCreatedAtNil() {
+func (o *TlsSubscriptionResponseAttributes) SetCreatedAtNil() {
 	o.CreatedAt.Set(nil)
 }
 
 // UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
-func (o *TLSSubscriptionResponseAttributes) UnsetCreatedAt() {
+func (o *TlsSubscriptionResponseAttributes) UnsetCreatedAt() {
 	o.CreatedAt.Unset()
 }
 
 // GetDeletedAt returns the DeletedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TLSSubscriptionResponseAttributes) GetDeletedAt() time.Time {
+func (o *TlsSubscriptionResponseAttributes) GetDeletedAt() time.Time {
 	if o == nil || o.DeletedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -106,7 +106,7 @@ func (o *TLSSubscriptionResponseAttributes) GetDeletedAt() time.Time {
 // GetDeletedAtOk returns a tuple with the DeletedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TLSSubscriptionResponseAttributes) GetDeletedAtOk() (*time.Time, bool) {
+func (o *TlsSubscriptionResponseAttributes) GetDeletedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -114,7 +114,7 @@ func (o *TLSSubscriptionResponseAttributes) GetDeletedAtOk() (*time.Time, bool) 
 }
 
 // HasDeletedAt returns a boolean if a field has been set.
-func (o *TLSSubscriptionResponseAttributes) HasDeletedAt() bool {
+func (o *TlsSubscriptionResponseAttributes) HasDeletedAt() bool {
 	if o != nil && o.DeletedAt.IsSet() {
 		return true
 	}
@@ -123,22 +123,22 @@ func (o *TLSSubscriptionResponseAttributes) HasDeletedAt() bool {
 }
 
 // SetDeletedAt gets a reference to the given NullableTime and assigns it to the DeletedAt field.
-func (o *TLSSubscriptionResponseAttributes) SetDeletedAt(v time.Time) {
+func (o *TlsSubscriptionResponseAttributes) SetDeletedAt(v time.Time) {
 	o.DeletedAt.Set(&v)
 }
 
 // SetDeletedAtNil sets the value for DeletedAt to be an explicit nil
-func (o *TLSSubscriptionResponseAttributes) SetDeletedAtNil() {
+func (o *TlsSubscriptionResponseAttributes) SetDeletedAtNil() {
 	o.DeletedAt.Set(nil)
 }
 
 // UnsetDeletedAt ensures that no value is present for DeletedAt, not even an explicit nil
-func (o *TLSSubscriptionResponseAttributes) UnsetDeletedAt() {
+func (o *TlsSubscriptionResponseAttributes) UnsetDeletedAt() {
 	o.DeletedAt.Unset()
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TLSSubscriptionResponseAttributes) GetUpdatedAt() time.Time {
+func (o *TlsSubscriptionResponseAttributes) GetUpdatedAt() time.Time {
 	if o == nil || o.UpdatedAt.Get() == nil {
 		var ret time.Time
 		return ret
@@ -149,7 +149,7 @@ func (o *TLSSubscriptionResponseAttributes) GetUpdatedAt() time.Time {
 // GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TLSSubscriptionResponseAttributes) GetUpdatedAtOk() (*time.Time, bool) {
+func (o *TlsSubscriptionResponseAttributes) GetUpdatedAtOk() (*time.Time, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -157,7 +157,7 @@ func (o *TLSSubscriptionResponseAttributes) GetUpdatedAtOk() (*time.Time, bool) 
 }
 
 // HasUpdatedAt returns a boolean if a field has been set.
-func (o *TLSSubscriptionResponseAttributes) HasUpdatedAt() bool {
+func (o *TlsSubscriptionResponseAttributes) HasUpdatedAt() bool {
 	if o != nil && o.UpdatedAt.IsSet() {
 		return true
 	}
@@ -166,22 +166,22 @@ func (o *TLSSubscriptionResponseAttributes) HasUpdatedAt() bool {
 }
 
 // SetUpdatedAt gets a reference to the given NullableTime and assigns it to the UpdatedAt field.
-func (o *TLSSubscriptionResponseAttributes) SetUpdatedAt(v time.Time) {
+func (o *TlsSubscriptionResponseAttributes) SetUpdatedAt(v time.Time) {
 	o.UpdatedAt.Set(&v)
 }
 
 // SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
-func (o *TLSSubscriptionResponseAttributes) SetUpdatedAtNil() {
+func (o *TlsSubscriptionResponseAttributes) SetUpdatedAtNil() {
 	o.UpdatedAt.Set(nil)
 }
 
 // UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
-func (o *TLSSubscriptionResponseAttributes) UnsetUpdatedAt() {
+func (o *TlsSubscriptionResponseAttributes) UnsetUpdatedAt() {
 	o.UpdatedAt.Unset()
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *TLSSubscriptionResponseAttributes) GetState() string {
+func (o *TlsSubscriptionResponseAttributes) GetState() string {
 	if o == nil || o.State == nil {
 		var ret string
 		return ret
@@ -191,7 +191,7 @@ func (o *TLSSubscriptionResponseAttributes) GetState() string {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSSubscriptionResponseAttributes) GetStateOk() (*string, bool) {
+func (o *TlsSubscriptionResponseAttributes) GetStateOk() (*string, bool) {
 	if o == nil || o.State == nil {
 		return nil, false
 	}
@@ -199,7 +199,7 @@ func (o *TLSSubscriptionResponseAttributes) GetStateOk() (*string, bool) {
 }
 
 // HasState returns a boolean if a field has been set.
-func (o *TLSSubscriptionResponseAttributes) HasState() bool {
+func (o *TlsSubscriptionResponseAttributes) HasState() bool {
 	if o != nil && o.State != nil {
 		return true
 	}
@@ -208,12 +208,12 @@ func (o *TLSSubscriptionResponseAttributes) HasState() bool {
 }
 
 // SetState gets a reference to the given string and assigns it to the State field.
-func (o *TLSSubscriptionResponseAttributes) SetState(v string) {
+func (o *TlsSubscriptionResponseAttributes) SetState(v string) {
 	o.State = &v
 }
 
 // GetHasActiveOrder returns the HasActiveOrder field value if set, zero value otherwise.
-func (o *TLSSubscriptionResponseAttributes) GetHasActiveOrder() bool {
+func (o *TlsSubscriptionResponseAttributes) GetHasActiveOrder() bool {
 	if o == nil || o.HasActiveOrder == nil {
 		var ret bool
 		return ret
@@ -223,7 +223,7 @@ func (o *TLSSubscriptionResponseAttributes) GetHasActiveOrder() bool {
 
 // GetHasActiveOrderOk returns a tuple with the HasActiveOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSSubscriptionResponseAttributes) GetHasActiveOrderOk() (*bool, bool) {
+func (o *TlsSubscriptionResponseAttributes) GetHasActiveOrderOk() (*bool, bool) {
 	if o == nil || o.HasActiveOrder == nil {
 		return nil, false
 	}
@@ -231,7 +231,7 @@ func (o *TLSSubscriptionResponseAttributes) GetHasActiveOrderOk() (*bool, bool) 
 }
 
 // HasHasActiveOrder returns a boolean if a field has been set.
-func (o *TLSSubscriptionResponseAttributes) HasHasActiveOrder() bool {
+func (o *TlsSubscriptionResponseAttributes) HasHasActiveOrder() bool {
 	if o != nil && o.HasActiveOrder != nil {
 		return true
 	}
@@ -240,13 +240,13 @@ func (o *TLSSubscriptionResponseAttributes) HasHasActiveOrder() bool {
 }
 
 // SetHasActiveOrder gets a reference to the given bool and assigns it to the HasActiveOrder field.
-func (o *TLSSubscriptionResponseAttributes) SetHasActiveOrder(v bool) {
+func (o *TlsSubscriptionResponseAttributes) SetHasActiveOrder(v bool) {
 	o.HasActiveOrder = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSSubscriptionResponseAttributes) MarshalJSON() ([]byte, error) {
+func (o TlsSubscriptionResponseAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.CreatedAt.IsSet() {
 		toSerialize["created_at"] = o.CreatedAt.Get()
@@ -273,11 +273,11 @@ func (o TLSSubscriptionResponseAttributes) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSSubscriptionResponseAttributes) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSSubscriptionResponseAttributes := _TLSSubscriptionResponseAttributes{}
+func (o *TlsSubscriptionResponseAttributes) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsSubscriptionResponseAttributes := _TlsSubscriptionResponseAttributes{}
 
-	if err = json.Unmarshal(bytes, &varTLSSubscriptionResponseAttributes); err == nil {
-		*o = TLSSubscriptionResponseAttributes(varTLSSubscriptionResponseAttributes)
+	if err = json.Unmarshal(bytes, &varTlsSubscriptionResponseAttributes); err == nil {
+		*o = TlsSubscriptionResponseAttributes(varTlsSubscriptionResponseAttributes)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -294,48 +294,48 @@ func (o *TLSSubscriptionResponseAttributes) UnmarshalJSON(bytes []byte) (err err
 	return err
 }
 
-// NullableTLSSubscriptionResponseAttributes is a helper abstraction for handling nullable tlssubscriptionresponseattributes types.
-type NullableTLSSubscriptionResponseAttributes struct {
-	value *TLSSubscriptionResponseAttributes
+// NullableTlsSubscriptionResponseAttributes is a helper abstraction for handling nullable tlssubscriptionresponseattributes types.
+type NullableTlsSubscriptionResponseAttributes struct {
+	value *TlsSubscriptionResponseAttributes
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSSubscriptionResponseAttributes) Get() *TLSSubscriptionResponseAttributes {
+func (v NullableTlsSubscriptionResponseAttributes) Get() *TlsSubscriptionResponseAttributes {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSSubscriptionResponseAttributes) Set(val *TLSSubscriptionResponseAttributes) {
+func (v *NullableTlsSubscriptionResponseAttributes) Set(val *TlsSubscriptionResponseAttributes) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSSubscriptionResponseAttributes) IsSet() bool {
+func (v NullableTlsSubscriptionResponseAttributes) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSSubscriptionResponseAttributes) Unset() {
+func (v *NullableTlsSubscriptionResponseAttributes) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSSubscriptionResponseAttributes returns a pointer to a new instance of NullableTLSSubscriptionResponseAttributes.
-func NewNullableTLSSubscriptionResponseAttributes(val *TLSSubscriptionResponseAttributes) *NullableTLSSubscriptionResponseAttributes {
-	return &NullableTLSSubscriptionResponseAttributes{value: val, isSet: true}
+// NewNullableTlsSubscriptionResponseAttributes returns a pointer to a new instance of NullableTlsSubscriptionResponseAttributes.
+func NewNullableTlsSubscriptionResponseAttributes(val *TlsSubscriptionResponseAttributes) *NullableTlsSubscriptionResponseAttributes {
+	return &NullableTlsSubscriptionResponseAttributes{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSSubscriptionResponseAttributes) MarshalJSON() ([]byte, error) {
+func (v NullableTlsSubscriptionResponseAttributes) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSSubscriptionResponseAttributes) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsSubscriptionResponseAttributes) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

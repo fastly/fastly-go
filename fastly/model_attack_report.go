@@ -19,7 +19,7 @@ import (
 // AttackReport struct for AttackReport
 type AttackReport struct {
 	// ID of the workspace.
-	ID string `json:"id"`
+	Id string `json:"id"`
 	// Name of the workspace.
 	Name string `json:"name"`
 	// Total request count
@@ -31,9 +31,9 @@ type AttackReport struct {
 	// Attack request count
 	AttackCount int32 `json:"attack_count"`
 	// Count of IPs that have been flagged
-	AllFlaggedIPCount int32 `json:"all_flagged_ip_count"`
+	AllFlaggedIpCount int32 `json:"all_flagged_ip_count"`
 	// Count of currently flagged IPs
-	FlaggedIPCount       int32          `json:"flagged_ip_count"`
+	FlaggedIpCount       int32          `json:"flagged_ip_count"`
 	TopAttackSignals     []AttackSignal `json:"top_attack_signals"`
 	TopAttackSources     []AttackSource `json:"top_attack_sources"`
 	AdditionalProperties map[string]any
@@ -45,16 +45,16 @@ type _AttackReport AttackReport
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttackReport(id string, name string, totalCount int32, blockedCount int32, flaggedCount int32, attackCount int32, allFlaggedIPCount int32, flaggedIPCount int32, topAttackSignals []AttackSignal, topAttackSources []AttackSource) *AttackReport {
+func NewAttackReport(id string, name string, totalCount int32, blockedCount int32, flaggedCount int32, attackCount int32, allFlaggedIpCount int32, flaggedIpCount int32, topAttackSignals []AttackSignal, topAttackSources []AttackSource) *AttackReport {
 	this := AttackReport{}
-	this.ID = id
+	this.Id = id
 	this.Name = name
 	this.TotalCount = totalCount
 	this.BlockedCount = blockedCount
 	this.FlaggedCount = flaggedCount
 	this.AttackCount = attackCount
-	this.AllFlaggedIPCount = allFlaggedIPCount
-	this.FlaggedIPCount = flaggedIPCount
+	this.AllFlaggedIpCount = allFlaggedIpCount
+	this.FlaggedIpCount = flaggedIpCount
 	this.TopAttackSignals = topAttackSignals
 	this.TopAttackSources = topAttackSources
 	return &this
@@ -68,28 +68,28 @@ func NewAttackReportWithDefaults() *AttackReport {
 	return &this
 }
 
-// GetID returns the ID field value
-func (o *AttackReport) GetID() string {
+// GetId returns the Id field value
+func (o *AttackReport) GetId() string {
 	if o == nil {
 		var ret string
 		return ret
 	}
 
-	return o.ID
+	return o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *AttackReport) GetIDOk() (*string, bool) {
+func (o *AttackReport) GetIdOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.ID, true
+	return &o.Id, true
 }
 
-// SetID sets field value
-func (o *AttackReport) SetID(v string) {
-	o.ID = v
+// SetId sets field value
+func (o *AttackReport) SetId(v string) {
+	o.Id = v
 }
 
 // GetName returns the Name field value
@@ -212,52 +212,52 @@ func (o *AttackReport) SetAttackCount(v int32) {
 	o.AttackCount = v
 }
 
-// GetAllFlaggedIPCount returns the AllFlaggedIPCount field value
-func (o *AttackReport) GetAllFlaggedIPCount() int32 {
+// GetAllFlaggedIpCount returns the AllFlaggedIpCount field value
+func (o *AttackReport) GetAllFlaggedIpCount() int32 {
 	if o == nil {
 		var ret int32
 		return ret
 	}
 
-	return o.AllFlaggedIPCount
+	return o.AllFlaggedIpCount
 }
 
-// GetAllFlaggedIPCountOk returns a tuple with the AllFlaggedIPCount field value
+// GetAllFlaggedIpCountOk returns a tuple with the AllFlaggedIpCount field value
 // and a boolean to check if the value has been set.
-func (o *AttackReport) GetAllFlaggedIPCountOk() (*int32, bool) {
+func (o *AttackReport) GetAllFlaggedIpCountOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.AllFlaggedIPCount, true
+	return &o.AllFlaggedIpCount, true
 }
 
-// SetAllFlaggedIPCount sets field value
-func (o *AttackReport) SetAllFlaggedIPCount(v int32) {
-	o.AllFlaggedIPCount = v
+// SetAllFlaggedIpCount sets field value
+func (o *AttackReport) SetAllFlaggedIpCount(v int32) {
+	o.AllFlaggedIpCount = v
 }
 
-// GetFlaggedIPCount returns the FlaggedIPCount field value
-func (o *AttackReport) GetFlaggedIPCount() int32 {
+// GetFlaggedIpCount returns the FlaggedIpCount field value
+func (o *AttackReport) GetFlaggedIpCount() int32 {
 	if o == nil {
 		var ret int32
 		return ret
 	}
 
-	return o.FlaggedIPCount
+	return o.FlaggedIpCount
 }
 
-// GetFlaggedIPCountOk returns a tuple with the FlaggedIPCount field value
+// GetFlaggedIpCountOk returns a tuple with the FlaggedIpCount field value
 // and a boolean to check if the value has been set.
-func (o *AttackReport) GetFlaggedIPCountOk() (*int32, bool) {
+func (o *AttackReport) GetFlaggedIpCountOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.FlaggedIPCount, true
+	return &o.FlaggedIpCount, true
 }
 
-// SetFlaggedIPCount sets field value
-func (o *AttackReport) SetFlaggedIPCount(v int32) {
-	o.FlaggedIPCount = v
+// SetFlaggedIpCount sets field value
+func (o *AttackReport) SetFlaggedIpCount(v int32) {
+	o.FlaggedIpCount = v
 }
 
 // GetTopAttackSignals returns the TopAttackSignals field value
@@ -313,7 +313,7 @@ func (o *AttackReport) SetTopAttackSources(v []AttackSource) {
 func (o AttackReport) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
-		toSerialize["id"] = o.ID
+		toSerialize["id"] = o.Id
 	}
 	if true {
 		toSerialize["name"] = o.Name
@@ -331,10 +331,10 @@ func (o AttackReport) MarshalJSON() ([]byte, error) {
 		toSerialize["attack_count"] = o.AttackCount
 	}
 	if true {
-		toSerialize["all_flagged_ip_count"] = o.AllFlaggedIPCount
+		toSerialize["all_flagged_ip_count"] = o.AllFlaggedIpCount
 	}
 	if true {
-		toSerialize["flagged_ip_count"] = o.FlaggedIPCount
+		toSerialize["flagged_ip_count"] = o.FlaggedIpCount
 	}
 	if true {
 		toSerialize["top_attack_signals"] = o.TopAttackSignals

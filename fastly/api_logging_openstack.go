@@ -36,11 +36,11 @@ type LoggingOpenstackAPI interface {
 		Create a openstack for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APICreateLogOpenstackRequest
 	*/
-	CreateLogOpenstack(ctx context.Context, serviceID string, versionID int32) APICreateLogOpenstackRequest
+	CreateLogOpenstack(ctx context.Context, serviceId string, versionId int32) APICreateLogOpenstackRequest
 
 	// CreateLogOpenstackExecute executes the request
 	//  @return LoggingOpenstackResponse
@@ -52,12 +52,12 @@ type LoggingOpenstackAPI interface {
 		Delete the openstack for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingOpenstackName The name for the real-time logging configuration.
 		 @return APIDeleteLogOpenstackRequest
 	*/
-	DeleteLogOpenstack(ctx context.Context, serviceID string, versionID int32, loggingOpenstackName string) APIDeleteLogOpenstackRequest
+	DeleteLogOpenstack(ctx context.Context, serviceId string, versionId int32, loggingOpenstackName string) APIDeleteLogOpenstackRequest
 
 	// DeleteLogOpenstackExecute executes the request
 	//  @return InlineResponse200
@@ -69,12 +69,12 @@ type LoggingOpenstackAPI interface {
 		Get the openstack for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingOpenstackName The name for the real-time logging configuration.
 		 @return APIGetLogOpenstackRequest
 	*/
-	GetLogOpenstack(ctx context.Context, serviceID string, versionID int32, loggingOpenstackName string) APIGetLogOpenstackRequest
+	GetLogOpenstack(ctx context.Context, serviceId string, versionId int32, loggingOpenstackName string) APIGetLogOpenstackRequest
 
 	// GetLogOpenstackExecute executes the request
 	//  @return LoggingOpenstackResponse
@@ -86,11 +86,11 @@ type LoggingOpenstackAPI interface {
 		List all of the openstacks for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @return APIListLogOpenstackRequest
 	*/
-	ListLogOpenstack(ctx context.Context, serviceID string, versionID int32) APIListLogOpenstackRequest
+	ListLogOpenstack(ctx context.Context, serviceId string, versionId int32) APIListLogOpenstackRequest
 
 	// ListLogOpenstackExecute executes the request
 	//  @return []LoggingOpenstackResponse
@@ -102,12 +102,12 @@ type LoggingOpenstackAPI interface {
 		Update the openstack for a particular service and version.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
-		 @param versionID Integer identifying a service version.
+		 @param serviceId Alphanumeric string identifying the service.
+		 @param versionId Integer identifying a service version.
 		 @param loggingOpenstackName The name for the real-time logging configuration.
 		 @return APIUpdateLogOpenstackRequest
 	*/
-	UpdateLogOpenstack(ctx context.Context, serviceID string, versionID int32, loggingOpenstackName string) APIUpdateLogOpenstackRequest
+	UpdateLogOpenstack(ctx context.Context, serviceId string, versionId int32, loggingOpenstackName string) APIUpdateLogOpenstackRequest
 
 	// UpdateLogOpenstackExecute executes the request
 	//  @return LoggingOpenstackResponse
@@ -121,8 +121,8 @@ type LoggingOpenstackAPIService service
 type APICreateLogOpenstackRequest struct {
 	ctx                 context.Context
 	APIService          LoggingOpenstackAPI
-	serviceID           string
-	versionID           int32
+	serviceId           string
+	versionId           int32
 	name                *string
 	placement           *string
 	responseCondition   *string
@@ -232,8 +232,8 @@ func (r *APICreateLogOpenstackRequest) PublicKey(publicKey string) *APICreateLog
 	return r
 }
 
-// URL Your OpenStack auth url.
-func (r *APICreateLogOpenstackRequest) URL(url string) *APICreateLogOpenstackRequest {
+// Url Your OpenStack auth url.
+func (r *APICreateLogOpenstackRequest) Url(url string) *APICreateLogOpenstackRequest {
 	r.url = &url
 	return r
 }
@@ -255,16 +255,16 @@ CreateLogOpenstack Create an OpenStack log endpoint
 Create a openstack for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APICreateLogOpenstackRequest
 */
-func (a *LoggingOpenstackAPIService) CreateLogOpenstack(ctx context.Context, serviceID string, versionID int32) APICreateLogOpenstackRequest {
+func (a *LoggingOpenstackAPIService) CreateLogOpenstack(ctx context.Context, serviceId string, versionId int32) APICreateLogOpenstackRequest {
 	return APICreateLogOpenstackRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -284,8 +284,8 @@ func (a *LoggingOpenstackAPIService) CreateLogOpenstackExecute(r APICreateLogOpe
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/openstack"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -427,8 +427,8 @@ func (a *LoggingOpenstackAPIService) CreateLogOpenstackExecute(r APICreateLogOpe
 type APIDeleteLogOpenstackRequest struct {
 	ctx                  context.Context
 	APIService           LoggingOpenstackAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	loggingOpenstackName string
 }
 
@@ -443,17 +443,17 @@ DeleteLogOpenstack Delete an OpenStack log endpoint
 Delete the openstack for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingOpenstackName The name for the real-time logging configuration.
  @return APIDeleteLogOpenstackRequest
 */
-func (a *LoggingOpenstackAPIService) DeleteLogOpenstack(ctx context.Context, serviceID string, versionID int32, loggingOpenstackName string) APIDeleteLogOpenstackRequest {
+func (a *LoggingOpenstackAPIService) DeleteLogOpenstack(ctx context.Context, serviceId string, versionId int32, loggingOpenstackName string) APIDeleteLogOpenstackRequest {
 	return APIDeleteLogOpenstackRequest{
 		APIService:           a,
 		ctx:                  ctx,
-		serviceID:            serviceID,
-		versionID:            versionID,
+		serviceId:            serviceId,
+		versionId:            versionId,
 		loggingOpenstackName: loggingOpenstackName,
 	}
 }
@@ -474,8 +474,8 @@ func (a *LoggingOpenstackAPIService) DeleteLogOpenstackExecute(r APIDeleteLogOpe
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/openstack/{logging_openstack_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_openstack_name"+"}", gourl.PathEscape(parameterToString(r.loggingOpenstackName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -567,8 +567,8 @@ func (a *LoggingOpenstackAPIService) DeleteLogOpenstackExecute(r APIDeleteLogOpe
 type APIGetLogOpenstackRequest struct {
 	ctx                  context.Context
 	APIService           LoggingOpenstackAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	loggingOpenstackName string
 }
 
@@ -583,17 +583,17 @@ GetLogOpenstack Get an OpenStack log endpoint
 Get the openstack for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingOpenstackName The name for the real-time logging configuration.
  @return APIGetLogOpenstackRequest
 */
-func (a *LoggingOpenstackAPIService) GetLogOpenstack(ctx context.Context, serviceID string, versionID int32, loggingOpenstackName string) APIGetLogOpenstackRequest {
+func (a *LoggingOpenstackAPIService) GetLogOpenstack(ctx context.Context, serviceId string, versionId int32, loggingOpenstackName string) APIGetLogOpenstackRequest {
 	return APIGetLogOpenstackRequest{
 		APIService:           a,
 		ctx:                  ctx,
-		serviceID:            serviceID,
-		versionID:            versionID,
+		serviceId:            serviceId,
+		versionId:            versionId,
 		loggingOpenstackName: loggingOpenstackName,
 	}
 }
@@ -614,8 +614,8 @@ func (a *LoggingOpenstackAPIService) GetLogOpenstackExecute(r APIGetLogOpenstack
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/openstack/{logging_openstack_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_openstack_name"+"}", gourl.PathEscape(parameterToString(r.loggingOpenstackName, "")))
 
 	localVarHeaderParams := make(map[string]string)
@@ -707,8 +707,8 @@ func (a *LoggingOpenstackAPIService) GetLogOpenstackExecute(r APIGetLogOpenstack
 type APIListLogOpenstackRequest struct {
 	ctx        context.Context
 	APIService LoggingOpenstackAPI
-	serviceID  string
-	versionID  int32
+	serviceId  string
+	versionId  int32
 }
 
 // Execute calls the API using the request data configured.
@@ -722,16 +722,16 @@ ListLogOpenstack List OpenStack log endpoints
 List all of the openstacks for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @return APIListLogOpenstackRequest
 */
-func (a *LoggingOpenstackAPIService) ListLogOpenstack(ctx context.Context, serviceID string, versionID int32) APIListLogOpenstackRequest {
+func (a *LoggingOpenstackAPIService) ListLogOpenstack(ctx context.Context, serviceId string, versionId int32) APIListLogOpenstackRequest {
 	return APIListLogOpenstackRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
-		versionID:  versionID,
+		serviceId:  serviceId,
+		versionId:  versionId,
 	}
 }
 
@@ -751,8 +751,8 @@ func (a *LoggingOpenstackAPIService) ListLogOpenstackExecute(r APIListLogOpensta
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/openstack"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -843,8 +843,8 @@ func (a *LoggingOpenstackAPIService) ListLogOpenstackExecute(r APIListLogOpensta
 type APIUpdateLogOpenstackRequest struct {
 	ctx                  context.Context
 	APIService           LoggingOpenstackAPI
-	serviceID            string
-	versionID            int32
+	serviceId            string
+	versionId            int32
 	loggingOpenstackName string
 	name                 *string
 	placement            *string
@@ -955,8 +955,8 @@ func (r *APIUpdateLogOpenstackRequest) PublicKey(publicKey string) *APIUpdateLog
 	return r
 }
 
-// URL Your OpenStack auth url.
-func (r *APIUpdateLogOpenstackRequest) URL(url string) *APIUpdateLogOpenstackRequest {
+// Url Your OpenStack auth url.
+func (r *APIUpdateLogOpenstackRequest) Url(url string) *APIUpdateLogOpenstackRequest {
 	r.url = &url
 	return r
 }
@@ -978,17 +978,17 @@ UpdateLogOpenstack Update an OpenStack log endpoint
 Update the openstack for a particular service and version.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
- @param versionID Integer identifying a service version.
+ @param serviceId Alphanumeric string identifying the service.
+ @param versionId Integer identifying a service version.
  @param loggingOpenstackName The name for the real-time logging configuration.
  @return APIUpdateLogOpenstackRequest
 */
-func (a *LoggingOpenstackAPIService) UpdateLogOpenstack(ctx context.Context, serviceID string, versionID int32, loggingOpenstackName string) APIUpdateLogOpenstackRequest {
+func (a *LoggingOpenstackAPIService) UpdateLogOpenstack(ctx context.Context, serviceId string, versionId int32, loggingOpenstackName string) APIUpdateLogOpenstackRequest {
 	return APIUpdateLogOpenstackRequest{
 		APIService:           a,
 		ctx:                  ctx,
-		serviceID:            serviceID,
-		versionID:            versionID,
+		serviceId:            serviceId,
+		versionId:            versionId,
 		loggingOpenstackName: loggingOpenstackName,
 	}
 }
@@ -1009,8 +1009,8 @@ func (a *LoggingOpenstackAPIService) UpdateLogOpenstackExecute(r APIUpdateLogOpe
 	}
 
 	localVarPath := localBasePath + "/service/{service_id}/version/{version_id}/logging/openstack/{logging_openstack_name}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"version_id"+"}", gourl.PathEscape(parameterToString(r.versionId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"logging_openstack_name"+"}", gourl.PathEscape(parameterToString(r.loggingOpenstackName, "")))
 
 	localVarHeaderParams := make(map[string]string)

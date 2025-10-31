@@ -36,10 +36,10 @@ type ProductOriginInspectorAPI interface {
 		Disable the Origin Inspector product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIDisableProductOriginInspectorRequest
 	*/
-	DisableProductOriginInspector(ctx context.Context, serviceID string) APIDisableProductOriginInspectorRequest
+	DisableProductOriginInspector(ctx context.Context, serviceId string) APIDisableProductOriginInspectorRequest
 
 	// DisableProductOriginInspectorExecute executes the request
 	DisableProductOriginInspectorExecute(r APIDisableProductOriginInspectorRequest) (*http.Response, error)
@@ -50,10 +50,10 @@ type ProductOriginInspectorAPI interface {
 		Enable the Origin Inspector product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIEnableProductOriginInspectorRequest
 	*/
-	EnableProductOriginInspector(ctx context.Context, serviceID string) APIEnableProductOriginInspectorRequest
+	EnableProductOriginInspector(ctx context.Context, serviceId string) APIEnableProductOriginInspectorRequest
 
 	// EnableProductOriginInspectorExecute executes the request
 	//  @return OriginInspectorResponseBodyEnable
@@ -65,10 +65,10 @@ type ProductOriginInspectorAPI interface {
 		Get the enablement status of the Origin Inspector product on a service.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceID Alphanumeric string identifying the service.
+		 @param serviceId Alphanumeric string identifying the service.
 		 @return APIGetProductOriginInspectorRequest
 	*/
-	GetProductOriginInspector(ctx context.Context, serviceID string) APIGetProductOriginInspectorRequest
+	GetProductOriginInspector(ctx context.Context, serviceId string) APIGetProductOriginInspectorRequest
 
 	// GetProductOriginInspectorExecute executes the request
 	//  @return OriginInspectorResponseBodyEnable
@@ -96,7 +96,7 @@ type ProductOriginInspectorAPIService service
 type APIDisableProductOriginInspectorRequest struct {
 	ctx        context.Context
 	APIService ProductOriginInspectorAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -110,14 +110,14 @@ DisableProductOriginInspector Disable product
 Disable the Origin Inspector product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIDisableProductOriginInspectorRequest
 */
-func (a *ProductOriginInspectorAPIService) DisableProductOriginInspector(ctx context.Context, serviceID string) APIDisableProductOriginInspectorRequest {
+func (a *ProductOriginInspectorAPIService) DisableProductOriginInspector(ctx context.Context, serviceId string) APIDisableProductOriginInspectorRequest {
 	return APIDisableProductOriginInspectorRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -135,7 +135,7 @@ func (a *ProductOriginInspectorAPIService) DisableProductOriginInspectorExecute(
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/origin_inspector/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -217,7 +217,7 @@ func (a *ProductOriginInspectorAPIService) DisableProductOriginInspectorExecute(
 type APIEnableProductOriginInspectorRequest struct {
 	ctx        context.Context
 	APIService ProductOriginInspectorAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -231,14 +231,14 @@ EnableProductOriginInspector Enable product
 Enable the Origin Inspector product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIEnableProductOriginInspectorRequest
 */
-func (a *ProductOriginInspectorAPIService) EnableProductOriginInspector(ctx context.Context, serviceID string) APIEnableProductOriginInspectorRequest {
+func (a *ProductOriginInspectorAPIService) EnableProductOriginInspector(ctx context.Context, serviceId string) APIEnableProductOriginInspectorRequest {
 	return APIEnableProductOriginInspectorRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -258,7 +258,7 @@ func (a *ProductOriginInspectorAPIService) EnableProductOriginInspectorExecute(r
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/origin_inspector/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
@@ -349,7 +349,7 @@ func (a *ProductOriginInspectorAPIService) EnableProductOriginInspectorExecute(r
 type APIGetProductOriginInspectorRequest struct {
 	ctx        context.Context
 	APIService ProductOriginInspectorAPI
-	serviceID  string
+	serviceId  string
 }
 
 // Execute calls the API using the request data configured.
@@ -363,14 +363,14 @@ GetProductOriginInspector Get product enablement status
 Get the enablement status of the Origin Inspector product on a service.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceID Alphanumeric string identifying the service.
+ @param serviceId Alphanumeric string identifying the service.
  @return APIGetProductOriginInspectorRequest
 */
-func (a *ProductOriginInspectorAPIService) GetProductOriginInspector(ctx context.Context, serviceID string) APIGetProductOriginInspectorRequest {
+func (a *ProductOriginInspectorAPIService) GetProductOriginInspector(ctx context.Context, serviceId string) APIGetProductOriginInspectorRequest {
 	return APIGetProductOriginInspectorRequest{
 		APIService: a,
 		ctx:        ctx,
-		serviceID:  serviceID,
+		serviceId:  serviceId,
 	}
 }
 
@@ -390,7 +390,7 @@ func (a *ProductOriginInspectorAPIService) GetProductOriginInspectorExecute(r AP
 	}
 
 	localVarPath := localBasePath + "/enabled-products/v1/origin_inspector/services/{service_id}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceID, "")))
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}

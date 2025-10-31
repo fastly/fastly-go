@@ -16,68 +16,68 @@ import (
 	"encoding/json"
 )
 
-// TLSCertificateResponseDataAllOf struct for TLSCertificateResponseDataAllOf
-type TLSCertificateResponseDataAllOf struct {
-	ID                   *string                           `json:"id,omitempty"`
-	Attributes           *TLSCertificateResponseAttributes `json:"attributes,omitempty"`
+// TlsCertificateResponseDataAllOf struct for TlsCertificateResponseDataAllOf
+type TlsCertificateResponseDataAllOf struct {
+	Id                   *string                           `json:"id,omitempty"`
+	Attributes           *TlsCertificateResponseAttributes `json:"attributes,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _TLSCertificateResponseDataAllOf TLSCertificateResponseDataAllOf
+type _TlsCertificateResponseDataAllOf TlsCertificateResponseDataAllOf
 
-// NewTLSCertificateResponseDataAllOf instantiates a new TLSCertificateResponseDataAllOf object
+// NewTlsCertificateResponseDataAllOf instantiates a new TlsCertificateResponseDataAllOf object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTLSCertificateResponseDataAllOf() *TLSCertificateResponseDataAllOf {
-	this := TLSCertificateResponseDataAllOf{}
+func NewTlsCertificateResponseDataAllOf() *TlsCertificateResponseDataAllOf {
+	this := TlsCertificateResponseDataAllOf{}
 	return &this
 }
 
-// NewTLSCertificateResponseDataAllOfWithDefaults instantiates a new TLSCertificateResponseDataAllOf object
+// NewTlsCertificateResponseDataAllOfWithDefaults instantiates a new TlsCertificateResponseDataAllOf object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewTLSCertificateResponseDataAllOfWithDefaults() *TLSCertificateResponseDataAllOf {
-	this := TLSCertificateResponseDataAllOf{}
+func NewTlsCertificateResponseDataAllOfWithDefaults() *TlsCertificateResponseDataAllOf {
+	this := TlsCertificateResponseDataAllOf{}
 	return &this
 }
 
-// GetID returns the ID field value if set, zero value otherwise.
-func (o *TLSCertificateResponseDataAllOf) GetID() string {
-	if o == nil || o.ID == nil {
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *TlsCertificateResponseDataAllOf) GetId() string {
+	if o == nil || o.Id == nil {
 		var ret string
 		return ret
 	}
-	return *o.ID
+	return *o.Id
 }
 
-// GetIDOk returns a tuple with the ID field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCertificateResponseDataAllOf) GetIDOk() (*string, bool) {
-	if o == nil || o.ID == nil {
+func (o *TlsCertificateResponseDataAllOf) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
-	return o.ID, true
+	return o.Id, true
 }
 
-// HasID returns a boolean if a field has been set.
-func (o *TLSCertificateResponseDataAllOf) HasID() bool {
-	if o != nil && o.ID != nil {
+// HasId returns a boolean if a field has been set.
+func (o *TlsCertificateResponseDataAllOf) HasId() bool {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetID gets a reference to the given string and assigns it to the ID field.
-func (o *TLSCertificateResponseDataAllOf) SetID(v string) {
-	o.ID = &v
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *TlsCertificateResponseDataAllOf) SetId(v string) {
+	o.Id = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *TLSCertificateResponseDataAllOf) GetAttributes() TLSCertificateResponseAttributes {
+func (o *TlsCertificateResponseDataAllOf) GetAttributes() TlsCertificateResponseAttributes {
 	if o == nil || o.Attributes == nil {
-		var ret TLSCertificateResponseAttributes
+		var ret TlsCertificateResponseAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -85,7 +85,7 @@ func (o *TLSCertificateResponseDataAllOf) GetAttributes() TLSCertificateResponse
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TLSCertificateResponseDataAllOf) GetAttributesOk() (*TLSCertificateResponseAttributes, bool) {
+func (o *TlsCertificateResponseDataAllOf) GetAttributesOk() (*TlsCertificateResponseAttributes, bool) {
 	if o == nil || o.Attributes == nil {
 		return nil, false
 	}
@@ -93,7 +93,7 @@ func (o *TLSCertificateResponseDataAllOf) GetAttributesOk() (*TLSCertificateResp
 }
 
 // HasAttributes returns a boolean if a field has been set.
-func (o *TLSCertificateResponseDataAllOf) HasAttributes() bool {
+func (o *TlsCertificateResponseDataAllOf) HasAttributes() bool {
 	if o != nil && o.Attributes != nil {
 		return true
 	}
@@ -101,17 +101,17 @@ func (o *TLSCertificateResponseDataAllOf) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given TLSCertificateResponseAttributes and assigns it to the Attributes field.
-func (o *TLSCertificateResponseDataAllOf) SetAttributes(v TLSCertificateResponseAttributes) {
+// SetAttributes gets a reference to the given TlsCertificateResponseAttributes and assigns it to the Attributes field.
+func (o *TlsCertificateResponseDataAllOf) SetAttributes(v TlsCertificateResponseAttributes) {
 	o.Attributes = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o TLSCertificateResponseDataAllOf) MarshalJSON() ([]byte, error) {
+func (o TlsCertificateResponseDataAllOf) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.ID != nil {
-		toSerialize["id"] = o.ID
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
 	}
 	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes
@@ -126,11 +126,11 @@ func (o TLSCertificateResponseDataAllOf) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *TLSCertificateResponseDataAllOf) UnmarshalJSON(bytes []byte) (err error) {
-	varTLSCertificateResponseDataAllOf := _TLSCertificateResponseDataAllOf{}
+func (o *TlsCertificateResponseDataAllOf) UnmarshalJSON(bytes []byte) (err error) {
+	varTlsCertificateResponseDataAllOf := _TlsCertificateResponseDataAllOf{}
 
-	if err = json.Unmarshal(bytes, &varTLSCertificateResponseDataAllOf); err == nil {
-		*o = TLSCertificateResponseDataAllOf(varTLSCertificateResponseDataAllOf)
+	if err = json.Unmarshal(bytes, &varTlsCertificateResponseDataAllOf); err == nil {
+		*o = TlsCertificateResponseDataAllOf(varTlsCertificateResponseDataAllOf)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -144,48 +144,48 @@ func (o *TLSCertificateResponseDataAllOf) UnmarshalJSON(bytes []byte) (err error
 	return err
 }
 
-// NullableTLSCertificateResponseDataAllOf is a helper abstraction for handling nullable tlscertificateresponsedataallof types.
-type NullableTLSCertificateResponseDataAllOf struct {
-	value *TLSCertificateResponseDataAllOf
+// NullableTlsCertificateResponseDataAllOf is a helper abstraction for handling nullable tlscertificateresponsedataallof types.
+type NullableTlsCertificateResponseDataAllOf struct {
+	value *TlsCertificateResponseDataAllOf
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableTLSCertificateResponseDataAllOf) Get() *TLSCertificateResponseDataAllOf {
+func (v NullableTlsCertificateResponseDataAllOf) Get() *TlsCertificateResponseDataAllOf {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableTLSCertificateResponseDataAllOf) Set(val *TLSCertificateResponseDataAllOf) {
+func (v *NullableTlsCertificateResponseDataAllOf) Set(val *TlsCertificateResponseDataAllOf) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableTLSCertificateResponseDataAllOf) IsSet() bool {
+func (v NullableTlsCertificateResponseDataAllOf) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableTLSCertificateResponseDataAllOf) Unset() {
+func (v *NullableTlsCertificateResponseDataAllOf) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableTLSCertificateResponseDataAllOf returns a pointer to a new instance of NullableTLSCertificateResponseDataAllOf.
-func NewNullableTLSCertificateResponseDataAllOf(val *TLSCertificateResponseDataAllOf) *NullableTLSCertificateResponseDataAllOf {
-	return &NullableTLSCertificateResponseDataAllOf{value: val, isSet: true}
+// NewNullableTlsCertificateResponseDataAllOf returns a pointer to a new instance of NullableTlsCertificateResponseDataAllOf.
+func NewNullableTlsCertificateResponseDataAllOf(val *TlsCertificateResponseDataAllOf) *NullableTlsCertificateResponseDataAllOf {
+	return &NullableTlsCertificateResponseDataAllOf{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableTLSCertificateResponseDataAllOf) MarshalJSON() ([]byte, error) {
+func (v NullableTlsCertificateResponseDataAllOf) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableTLSCertificateResponseDataAllOf) UnmarshalJSON(src []byte) error {
+func (v *NullableTlsCertificateResponseDataAllOf) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
