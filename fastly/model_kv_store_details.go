@@ -21,7 +21,11 @@ type KvStoreDetails struct {
 	// ID of the store.
 	Id *string `json:"id,omitempty"`
 	// Name of the store.
-	Name                 *string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty"`
+	// Timestamp at which the store was created.
+	CreatedAt *string `json:"created_at,omitempty"`
+	// Timestamp at which the store was last updated.
+	UpdatedAt            *string `json:"updated_at,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -108,6 +112,70 @@ func (o *KvStoreDetails) SetName(v string) {
 	o.Name = &v
 }
 
+// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
+func (o *KvStoreDetails) GetCreatedAt() string {
+	if o == nil || o.CreatedAt == nil {
+		var ret string
+		return ret
+	}
+	return *o.CreatedAt
+}
+
+// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KvStoreDetails) GetCreatedAtOk() (*string, bool) {
+	if o == nil || o.CreatedAt == nil {
+		return nil, false
+	}
+	return o.CreatedAt, true
+}
+
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *KvStoreDetails) HasCreatedAt() bool {
+	if o != nil && o.CreatedAt != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedAt gets a reference to the given string and assigns it to the CreatedAt field.
+func (o *KvStoreDetails) SetCreatedAt(v string) {
+	o.CreatedAt = &v
+}
+
+// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
+func (o *KvStoreDetails) GetUpdatedAt() string {
+	if o == nil || o.UpdatedAt == nil {
+		var ret string
+		return ret
+	}
+	return *o.UpdatedAt
+}
+
+// GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *KvStoreDetails) GetUpdatedAtOk() (*string, bool) {
+	if o == nil || o.UpdatedAt == nil {
+		return nil, false
+	}
+	return o.UpdatedAt, true
+}
+
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *KvStoreDetails) HasUpdatedAt() bool {
+	if o != nil && o.UpdatedAt != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUpdatedAt gets a reference to the given string and assigns it to the UpdatedAt field.
+func (o *KvStoreDetails) SetUpdatedAt(v string) {
+	o.UpdatedAt = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o KvStoreDetails) MarshalJSON() ([]byte, error) {
@@ -117,6 +185,12 @@ func (o KvStoreDetails) MarshalJSON() ([]byte, error) {
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.CreatedAt != nil {
+		toSerialize["created_at"] = o.CreatedAt
+	}
+	if o.UpdatedAt != nil {
+		toSerialize["updated_at"] = o.UpdatedAt
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -140,6 +214,8 @@ func (o *KvStoreDetails) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "name")
+		delete(additionalProperties, "created_at")
+		delete(additionalProperties, "updated_at")
 		o.AdditionalProperties = additionalProperties
 	}
 

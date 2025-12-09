@@ -121,6 +121,8 @@ type APIClient struct {
 
 	DomainOwnershipsAPI DomainOwnershipsAPI
 
+	DomainResearchAPI DomainResearchAPI
+
 	EventsAPI EventsAPI
 
 	GzipAPI GzipAPI
@@ -207,6 +209,8 @@ type APIClient struct {
 
 	LoggingSyslogAPI LoggingSyslogAPI
 
+	MetricsPlatformAPI MetricsPlatformAPI
+
 	MutualAuthenticationAPI MutualAuthenticationAPI
 
 	NgwafReportsAPI NgwafReportsAPI
@@ -238,6 +242,8 @@ type APIClient struct {
 	ProductDdosProtectionAPI ProductDdosProtectionAPI
 
 	ProductDomainInspectorAPI ProductDomainInspectorAPI
+
+	ProductDomainResearchAPI ProductDomainResearchAPI
 
 	ProductFanoutAPI ProductFanoutAPI
 
@@ -364,6 +370,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.DomainInspectorHistoricalAPI = (*DomainInspectorHistoricalAPIService)(&c.common)
 	c.DomainInspectorRealtimeAPI = (*DomainInspectorRealtimeAPIService)(&c.common)
 	c.DomainOwnershipsAPI = (*DomainOwnershipsAPIService)(&c.common)
+	c.DomainResearchAPI = (*DomainResearchAPIService)(&c.common)
 	c.EventsAPI = (*EventsAPIService)(&c.common)
 	c.GzipAPI = (*GzipAPIService)(&c.common)
 	c.HeaderAPI = (*HeaderAPIService)(&c.common)
@@ -407,6 +414,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingSplunkAPI = (*LoggingSplunkAPIService)(&c.common)
 	c.LoggingSumologicAPI = (*LoggingSumologicAPIService)(&c.common)
 	c.LoggingSyslogAPI = (*LoggingSyslogAPIService)(&c.common)
+	c.MetricsPlatformAPI = (*MetricsPlatformAPIService)(&c.common)
 	c.MutualAuthenticationAPI = (*MutualAuthenticationAPIService)(&c.common)
 	c.NgwafReportsAPI = (*NgwafReportsAPIService)(&c.common)
 	c.ObjectStorageAccessKeysAPI = (*ObjectStorageAccessKeysAPIService)(&c.common)
@@ -423,6 +431,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ProductBrotliCompressionAPI = (*ProductBrotliCompressionAPIService)(&c.common)
 	c.ProductDdosProtectionAPI = (*ProductDdosProtectionAPIService)(&c.common)
 	c.ProductDomainInspectorAPI = (*ProductDomainInspectorAPIService)(&c.common)
+	c.ProductDomainResearchAPI = (*ProductDomainResearchAPIService)(&c.common)
 	c.ProductFanoutAPI = (*ProductFanoutAPIService)(&c.common)
 	c.ProductImageOptimizerAPI = (*ProductImageOptimizerAPIService)(&c.common)
 	c.ProductLogExplorerInsightsAPI = (*ProductLogExplorerInsightsAPIService)(&c.common)

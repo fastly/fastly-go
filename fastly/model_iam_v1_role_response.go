@@ -20,6 +20,7 @@ import (
 type IamV1RoleResponse struct {
 	Id          *string `json:"id,omitempty"`
 	Name        *string `json:"name,omitempty"`
+	DisplayName *string `json:"display_name,omitempty"`
 	Description *string `json:"description,omitempty"`
 	// The set of permissions granted to this role.
 	Permissions          []string `json:"permissions,omitempty"`
@@ -109,6 +110,38 @@ func (o *IamV1RoleResponse) SetName(v string) {
 	o.Name = &v
 }
 
+// GetDisplayName returns the DisplayName field value if set, zero value otherwise.
+func (o *IamV1RoleResponse) GetDisplayName() string {
+	if o == nil || o.DisplayName == nil {
+		var ret string
+		return ret
+	}
+	return *o.DisplayName
+}
+
+// GetDisplayNameOk returns a tuple with the DisplayName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *IamV1RoleResponse) GetDisplayNameOk() (*string, bool) {
+	if o == nil || o.DisplayName == nil {
+		return nil, false
+	}
+	return o.DisplayName, true
+}
+
+// HasDisplayName returns a boolean if a field has been set.
+func (o *IamV1RoleResponse) HasDisplayName() bool {
+	if o != nil && o.DisplayName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayName gets a reference to the given string and assigns it to the DisplayName field.
+func (o *IamV1RoleResponse) SetDisplayName(v string) {
+	o.DisplayName = &v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *IamV1RoleResponse) GetDescription() string {
 	if o == nil || o.Description == nil {
@@ -183,6 +216,9 @@ func (o IamV1RoleResponse) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
+	if o.DisplayName != nil {
+		toSerialize["display_name"] = o.DisplayName
+	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}
@@ -211,6 +247,7 @@ func (o *IamV1RoleResponse) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "name")
+		delete(additionalProperties, "display_name")
 		delete(additionalProperties, "description")
 		delete(additionalProperties, "permissions")
 		o.AdditionalProperties = additionalProperties

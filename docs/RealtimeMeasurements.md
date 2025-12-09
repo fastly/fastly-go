@@ -266,6 +266,10 @@ Name | Type | Description | Notes
 **RequestCollapseUnusableCount** | Pointer to **int64** | Number of requests that were collapsed and unable to be satisfied by the resulting cache object. | [optional] 
 **ComputeCacheOperationsCount** | Pointer to **int64** | Number of cache operations executed by the Compute platform. | [optional] 
 **ApiDiscoveryRequestsCount** | Pointer to **int32** | Number of requests processed by the API Discovery engine. | [optional] 
+**ImgoptoComputeRequests** | Pointer to **int32** | The number of Image Optimizer requests made from Compute services. | [optional] 
+**DnsBillableResponsesCount** | Pointer to **int32** | Number of billable DNS responses (e.g., A, CNAME). | [optional] 
+**DnsNonbillableResponsesCount** | Pointer to **int32** | Number of non-billable DNS responses (e.g., NODATA, NXDOMAIN). | [optional] 
+**Upgrade** | Pointer to **int32** | Number of requests that resulted in a WebSocket upgrade. | [optional] 
 
 ## Methods
 
@@ -6835,6 +6839,106 @@ SetApiDiscoveryRequestsCount sets ApiDiscoveryRequestsCount field to given value
 `func (o *RealtimeMeasurements) HasApiDiscoveryRequestsCount() bool`
 
 HasApiDiscoveryRequestsCount returns a boolean if a field has been set.
+
+### GetImgoptoComputeRequests
+
+`func (o *RealtimeMeasurements) GetImgoptoComputeRequests() int32`
+
+GetImgoptoComputeRequests returns the ImgoptoComputeRequests field if non-nil, zero value otherwise.
+
+### GetImgoptoComputeRequestsOk
+
+`func (o *RealtimeMeasurements) GetImgoptoComputeRequestsOk() (*int32, bool)`
+
+GetImgoptoComputeRequestsOk returns a tuple with the ImgoptoComputeRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoComputeRequests
+
+`func (o *RealtimeMeasurements) SetImgoptoComputeRequests(v int32)`
+
+SetImgoptoComputeRequests sets ImgoptoComputeRequests field to given value.
+
+### HasImgoptoComputeRequests
+
+`func (o *RealtimeMeasurements) HasImgoptoComputeRequests() bool`
+
+HasImgoptoComputeRequests returns a boolean if a field has been set.
+
+### GetDnsBillableResponsesCount
+
+`func (o *RealtimeMeasurements) GetDnsBillableResponsesCount() int32`
+
+GetDnsBillableResponsesCount returns the DnsBillableResponsesCount field if non-nil, zero value otherwise.
+
+### GetDnsBillableResponsesCountOk
+
+`func (o *RealtimeMeasurements) GetDnsBillableResponsesCountOk() (*int32, bool)`
+
+GetDnsBillableResponsesCountOk returns a tuple with the DnsBillableResponsesCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDnsBillableResponsesCount
+
+`func (o *RealtimeMeasurements) SetDnsBillableResponsesCount(v int32)`
+
+SetDnsBillableResponsesCount sets DnsBillableResponsesCount field to given value.
+
+### HasDnsBillableResponsesCount
+
+`func (o *RealtimeMeasurements) HasDnsBillableResponsesCount() bool`
+
+HasDnsBillableResponsesCount returns a boolean if a field has been set.
+
+### GetDnsNonbillableResponsesCount
+
+`func (o *RealtimeMeasurements) GetDnsNonbillableResponsesCount() int32`
+
+GetDnsNonbillableResponsesCount returns the DnsNonbillableResponsesCount field if non-nil, zero value otherwise.
+
+### GetDnsNonbillableResponsesCountOk
+
+`func (o *RealtimeMeasurements) GetDnsNonbillableResponsesCountOk() (*int32, bool)`
+
+GetDnsNonbillableResponsesCountOk returns a tuple with the DnsNonbillableResponsesCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDnsNonbillableResponsesCount
+
+`func (o *RealtimeMeasurements) SetDnsNonbillableResponsesCount(v int32)`
+
+SetDnsNonbillableResponsesCount sets DnsNonbillableResponsesCount field to given value.
+
+### HasDnsNonbillableResponsesCount
+
+`func (o *RealtimeMeasurements) HasDnsNonbillableResponsesCount() bool`
+
+HasDnsNonbillableResponsesCount returns a boolean if a field has been set.
+
+### GetUpgrade
+
+`func (o *RealtimeMeasurements) GetUpgrade() int32`
+
+GetUpgrade returns the Upgrade field if non-nil, zero value otherwise.
+
+### GetUpgradeOk
+
+`func (o *RealtimeMeasurements) GetUpgradeOk() (*int32, bool)`
+
+GetUpgradeOk returns a tuple with the Upgrade field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpgrade
+
+`func (o *RealtimeMeasurements) SetUpgrade(v int32)`
+
+SetUpgrade sets Upgrade field to given value.
+
+### HasUpgrade
+
+`func (o *RealtimeMeasurements) HasUpgrade() bool`
+
+HasUpgrade returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

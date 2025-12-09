@@ -544,7 +544,15 @@ type RealtimeEntryAggregated struct {
 	ComputeCacheOperationsCount *int64 `json:"compute_cache_operations_count,omitempty"`
 	// Number of requests processed by the API Discovery engine.
 	ApiDiscoveryRequestsCount *int32 `json:"api_discovery_requests_count,omitempty"`
-	AdditionalProperties      map[string]any
+	// The number of Image Optimizer requests made from Compute services.
+	ImgoptoComputeRequests *int32 `json:"imgopto_compute_requests,omitempty"`
+	// Number of billable DNS responses (e.g., A, CNAME).
+	DnsBillableResponsesCount *int32 `json:"dns_billable_responses_count,omitempty"`
+	// Number of non-billable DNS responses (e.g., NODATA, NXDOMAIN).
+	DnsNonbillableResponsesCount *int32 `json:"dns_nonbillable_responses_count,omitempty"`
+	// Number of requests that resulted in a WebSocket upgrade.
+	Upgrade              *int32 `json:"upgrade,omitempty"`
+	AdditionalProperties map[string]any
 }
 
 type _RealtimeEntryAggregated RealtimeEntryAggregated
@@ -8956,6 +8964,134 @@ func (o *RealtimeEntryAggregated) SetApiDiscoveryRequestsCount(v int32) {
 	o.ApiDiscoveryRequestsCount = &v
 }
 
+// GetImgoptoComputeRequests returns the ImgoptoComputeRequests field value if set, zero value otherwise.
+func (o *RealtimeEntryAggregated) GetImgoptoComputeRequests() int32 {
+	if o == nil || o.ImgoptoComputeRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ImgoptoComputeRequests
+}
+
+// GetImgoptoComputeRequestsOk returns a tuple with the ImgoptoComputeRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeEntryAggregated) GetImgoptoComputeRequestsOk() (*int32, bool) {
+	if o == nil || o.ImgoptoComputeRequests == nil {
+		return nil, false
+	}
+	return o.ImgoptoComputeRequests, true
+}
+
+// HasImgoptoComputeRequests returns a boolean if a field has been set.
+func (o *RealtimeEntryAggregated) HasImgoptoComputeRequests() bool {
+	if o != nil && o.ImgoptoComputeRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImgoptoComputeRequests gets a reference to the given int32 and assigns it to the ImgoptoComputeRequests field.
+func (o *RealtimeEntryAggregated) SetImgoptoComputeRequests(v int32) {
+	o.ImgoptoComputeRequests = &v
+}
+
+// GetDnsBillableResponsesCount returns the DnsBillableResponsesCount field value if set, zero value otherwise.
+func (o *RealtimeEntryAggregated) GetDnsBillableResponsesCount() int32 {
+	if o == nil || o.DnsBillableResponsesCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DnsBillableResponsesCount
+}
+
+// GetDnsBillableResponsesCountOk returns a tuple with the DnsBillableResponsesCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeEntryAggregated) GetDnsBillableResponsesCountOk() (*int32, bool) {
+	if o == nil || o.DnsBillableResponsesCount == nil {
+		return nil, false
+	}
+	return o.DnsBillableResponsesCount, true
+}
+
+// HasDnsBillableResponsesCount returns a boolean if a field has been set.
+func (o *RealtimeEntryAggregated) HasDnsBillableResponsesCount() bool {
+	if o != nil && o.DnsBillableResponsesCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDnsBillableResponsesCount gets a reference to the given int32 and assigns it to the DnsBillableResponsesCount field.
+func (o *RealtimeEntryAggregated) SetDnsBillableResponsesCount(v int32) {
+	o.DnsBillableResponsesCount = &v
+}
+
+// GetDnsNonbillableResponsesCount returns the DnsNonbillableResponsesCount field value if set, zero value otherwise.
+func (o *RealtimeEntryAggregated) GetDnsNonbillableResponsesCount() int32 {
+	if o == nil || o.DnsNonbillableResponsesCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DnsNonbillableResponsesCount
+}
+
+// GetDnsNonbillableResponsesCountOk returns a tuple with the DnsNonbillableResponsesCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeEntryAggregated) GetDnsNonbillableResponsesCountOk() (*int32, bool) {
+	if o == nil || o.DnsNonbillableResponsesCount == nil {
+		return nil, false
+	}
+	return o.DnsNonbillableResponsesCount, true
+}
+
+// HasDnsNonbillableResponsesCount returns a boolean if a field has been set.
+func (o *RealtimeEntryAggregated) HasDnsNonbillableResponsesCount() bool {
+	if o != nil && o.DnsNonbillableResponsesCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDnsNonbillableResponsesCount gets a reference to the given int32 and assigns it to the DnsNonbillableResponsesCount field.
+func (o *RealtimeEntryAggregated) SetDnsNonbillableResponsesCount(v int32) {
+	o.DnsNonbillableResponsesCount = &v
+}
+
+// GetUpgrade returns the Upgrade field value if set, zero value otherwise.
+func (o *RealtimeEntryAggregated) GetUpgrade() int32 {
+	if o == nil || o.Upgrade == nil {
+		var ret int32
+		return ret
+	}
+	return *o.Upgrade
+}
+
+// GetUpgradeOk returns a tuple with the Upgrade field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeEntryAggregated) GetUpgradeOk() (*int32, bool) {
+	if o == nil || o.Upgrade == nil {
+		return nil, false
+	}
+	return o.Upgrade, true
+}
+
+// HasUpgrade returns a boolean if a field has been set.
+func (o *RealtimeEntryAggregated) HasUpgrade() bool {
+	if o != nil && o.Upgrade != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUpgrade gets a reference to the given int32 and assigns it to the Upgrade field.
+func (o *RealtimeEntryAggregated) SetUpgrade(v int32) {
+	o.Upgrade = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o RealtimeEntryAggregated) MarshalJSON() ([]byte, error) {
@@ -9746,6 +9882,18 @@ func (o RealtimeEntryAggregated) MarshalJSON() ([]byte, error) {
 	if o.ApiDiscoveryRequestsCount != nil {
 		toSerialize["api_discovery_requests_count"] = o.ApiDiscoveryRequestsCount
 	}
+	if o.ImgoptoComputeRequests != nil {
+		toSerialize["imgopto_compute_requests"] = o.ImgoptoComputeRequests
+	}
+	if o.DnsBillableResponsesCount != nil {
+		toSerialize["dns_billable_responses_count"] = o.DnsBillableResponsesCount
+	}
+	if o.DnsNonbillableResponsesCount != nil {
+		toSerialize["dns_nonbillable_responses_count"] = o.DnsNonbillableResponsesCount
+	}
+	if o.Upgrade != nil {
+		toSerialize["upgrade"] = o.Upgrade
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -10028,6 +10176,10 @@ func (o *RealtimeEntryAggregated) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "request_collapse_unusable_count")
 		delete(additionalProperties, "compute_cache_operations_count")
 		delete(additionalProperties, "api_discovery_requests_count")
+		delete(additionalProperties, "imgopto_compute_requests")
+		delete(additionalProperties, "dns_billable_responses_count")
+		delete(additionalProperties, "dns_nonbillable_responses_count")
+		delete(additionalProperties, "upgrade")
 		o.AdditionalProperties = additionalProperties
 	}
 

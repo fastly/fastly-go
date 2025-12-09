@@ -69,8 +69,8 @@ type ServiceAuthorizationsAPI interface {
 	DeleteServiceAuthorization2(ctx context.Context) APIDeleteServiceAuthorization2Request
 
 	// DeleteServiceAuthorization2Execute executes the request
-	//  @return InlineResponse20010
-	DeleteServiceAuthorization2Execute(r APIDeleteServiceAuthorization2Request) (*InlineResponse20010, *http.Response, error)
+	//  @return InlineResponse20011
+	DeleteServiceAuthorization2Execute(r APIDeleteServiceAuthorization2Request) (*InlineResponse20011, *http.Response, error)
 
 	/*
 		ListServiceAuthorization List service authorizations
@@ -406,7 +406,7 @@ func (r *APIDeleteServiceAuthorization2Request) RequestBody(requestBody map[stri
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDeleteServiceAuthorization2Request) Execute() (*InlineResponse20010, *http.Response, error) {
+func (r APIDeleteServiceAuthorization2Request) Execute() (*InlineResponse20011, *http.Response, error) {
 	return r.APIService.DeleteServiceAuthorization2Execute(r)
 }
 
@@ -426,13 +426,13 @@ func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization2(ctx contex
 }
 
 // DeleteServiceAuthorization2Execute executes the request
-//  @return InlineResponse20010
-func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization2Execute(r APIDeleteServiceAuthorization2Request) (*InlineResponse20010, *http.Response, error) {
+//  @return InlineResponse20011
+func (a *ServiceAuthorizationsAPIService) DeleteServiceAuthorization2Execute(r APIDeleteServiceAuthorization2Request) (*InlineResponse20011, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodDelete
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse20010
+		localVarReturnValue *InlineResponse20011
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ServiceAuthorizationsAPIService.DeleteServiceAuthorization2")

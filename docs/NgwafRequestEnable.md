@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **WorkspaceId** | **string** | The workspace to link. | 
+**TrafficRamp** | Pointer to **string** | The percentage of traffic to inspect. | [optional] 
 
 ## Methods
 
@@ -44,6 +45,31 @@ and a boolean to check if the value has been set.
 
 SetWorkspaceId sets WorkspaceId field to given value.
 
+
+### GetTrafficRamp
+
+`func (o *NgwafRequestEnable) GetTrafficRamp() string`
+
+GetTrafficRamp returns the TrafficRamp field if non-nil, zero value otherwise.
+
+### GetTrafficRampOk
+
+`func (o *NgwafRequestEnable) GetTrafficRampOk() (*string, bool)`
+
+GetTrafficRampOk returns a tuple with the TrafficRamp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrafficRamp
+
+`func (o *NgwafRequestEnable) SetTrafficRamp(v string)`
+
+SetTrafficRamp sets TrafficRamp field to given value.
+
+### HasTrafficRamp
+
+`func (o *NgwafRequestEnable) HasTrafficRamp() bool`
+
+HasTrafficRamp returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

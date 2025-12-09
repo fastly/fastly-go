@@ -84,8 +84,22 @@ type KvStoreAPI interface {
 	KvStoreList(ctx context.Context) APIKvStoreListRequest
 
 	// KvStoreListExecute executes the request
-	//  @return InlineResponse2006
-	KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2006, *http.Response, error)
+	//  @return InlineResponse2007
+	KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2007, *http.Response, error)
+
+	/*
+		KvStorePut Update a KV store.
+
+		Update the name of a KV store.
+
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param storeId
+		 @return APIKvStorePutRequest
+	*/
+	KvStorePut(ctx context.Context, storeId string) APIKvStorePutRequest
+
+	// KvStorePutExecute executes the request
+	KvStorePutExecute(r APIKvStorePutRequest) (*http.Response, error)
 }
 
 // KvStoreAPIService KvStoreAPI service
@@ -93,10 +107,10 @@ type KvStoreAPIService service
 
 // APIKvStoreCreateRequest represents a request for the resource.
 type APIKvStoreCreateRequest struct {
-	ctx                  context.Context
-	APIService           KvStoreAPI
-	location             *string
-	kvStoreRequestCreate *KvStoreRequestCreate
+	ctx                          context.Context
+	APIService                   KvStoreAPI
+	location                     *string
+	kvStoreRequestCreateOrUpdate *KvStoreRequestCreateOrUpdate
 }
 
 // Location returns a pointer to a request.
@@ -105,9 +119,9 @@ func (r *APIKvStoreCreateRequest) Location(location string) *APIKvStoreCreateReq
 	return r
 }
 
-// KvStoreRequestCreate returns a pointer to a request.
-func (r *APIKvStoreCreateRequest) KvStoreRequestCreate(kvStoreRequestCreate KvStoreRequestCreate) *APIKvStoreCreateRequest {
-	r.kvStoreRequestCreate = &kvStoreRequestCreate
+// KvStoreRequestCreateOrUpdate returns a pointer to a request.
+func (r *APIKvStoreCreateRequest) KvStoreRequestCreateOrUpdate(kvStoreRequestCreateOrUpdate KvStoreRequestCreateOrUpdate) *APIKvStoreCreateRequest {
+	r.kvStoreRequestCreateOrUpdate = &kvStoreRequestCreateOrUpdate
 	return r
 }
 
@@ -173,7 +187,7 @@ func (a *KvStoreAPIService) KvStoreCreateExecute(r APIKvStoreCreateRequest) (*Kv
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.kvStoreRequestCreate
+	localVarPostBody = r.kvStoreRequestCreateOrUpdate
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -519,7 +533,7 @@ func (r *APIKvStoreListRequest) Name(name string) *APIKvStoreListRequest {
 }
 
 // Execute calls the API using the request data configured.
-func (r APIKvStoreListRequest) Execute() (*InlineResponse2006, *http.Response, error) {
+func (r APIKvStoreListRequest) Execute() (*InlineResponse2007, *http.Response, error) {
 	return r.APIService.KvStoreListExecute(r)
 }
 
@@ -539,13 +553,13 @@ func (a *KvStoreAPIService) KvStoreList(ctx context.Context) APIKvStoreListReque
 }
 
 // KvStoreListExecute executes the request
-//  @return InlineResponse2006
-func (a *KvStoreAPIService) KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2006, *http.Response, error) {
+//  @return InlineResponse2007
+func (a *KvStoreAPIService) KvStoreListExecute(r APIKvStoreListRequest) (*InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse2006
+		localVarReturnValue *InlineResponse2007
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.KvStoreList")
@@ -647,4 +661,134 @@ func (a *KvStoreAPIService) KvStoreListExecute(r APIKvStoreListRequest) (*Inline
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIKvStorePutRequest represents a request for the resource.
+type APIKvStorePutRequest struct {
+	ctx                          context.Context
+	APIService                   KvStoreAPI
+	storeId                      string
+	kvStoreRequestCreateOrUpdate *KvStoreRequestCreateOrUpdate
+}
+
+// KvStoreRequestCreateOrUpdate returns a pointer to a request.
+func (r *APIKvStorePutRequest) KvStoreRequestCreateOrUpdate(kvStoreRequestCreateOrUpdate KvStoreRequestCreateOrUpdate) *APIKvStorePutRequest {
+	r.kvStoreRequestCreateOrUpdate = &kvStoreRequestCreateOrUpdate
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIKvStorePutRequest) Execute() (*http.Response, error) {
+	return r.APIService.KvStorePutExecute(r)
+}
+
+/*
+KvStorePut Update a KV store.
+
+Update the name of a KV store.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param storeId
+ @return APIKvStorePutRequest
+*/
+func (a *KvStoreAPIService) KvStorePut(ctx context.Context, storeId string) APIKvStorePutRequest {
+	return APIKvStorePutRequest{
+		APIService: a,
+		ctx:        ctx,
+		storeId:    storeId,
+	}
+}
+
+// KvStorePutExecute executes the request
+func (a *KvStoreAPIService) KvStorePutExecute(r APIKvStorePutRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodPut
+		localVarPostBody   any
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KvStoreAPIService.KvStorePut")
+	if err != nil {
+		return nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/resources/stores/kv/{store_id}"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"store_id"+"}", gourl.PathEscape(parameterToString(r.storeId, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.kvStoreRequestCreateOrUpdate
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarHTTPResponse, nil
 }

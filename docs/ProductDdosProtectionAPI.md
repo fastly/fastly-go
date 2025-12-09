@@ -99,11 +99,12 @@ import (
 
 func main() {
     serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    ddosProtectionRequestEnableMode := *openapiclient.NewDdosProtectionRequestEnableMode() // DdosProtectionRequestEnableMode |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.ProductDdosProtectionAPI.EnableProductDdosProtection(ctx, serviceId).Execute()
+    resp, r, err := apiClient.ProductDdosProtectionAPI.EnableProductDdosProtection(ctx, serviceId).DdosProtectionRequestEnableMode(ddosProtectionRequestEnableMode).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ProductDdosProtectionAPI.EnableProductDdosProtection`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -128,7 +129,7 @@ Other parameters are passed through a pointer to a apiEnableProductDdosProtectio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
+ **ddosProtectionRequestEnableMode** | [**DdosProtectionRequestEnableMode**](DdosProtectionRequestEnableMode.md) |  | 
 
 ### Return type
 
@@ -140,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

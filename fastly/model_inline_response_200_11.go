@@ -16,63 +16,69 @@ import (
 	"encoding/json"
 )
 
-// KvStoreRequestCreate struct for KvStoreRequestCreate
-type KvStoreRequestCreate struct {
-	// A human-readable name for the store. Refer to https://docs.fastly.com/products/compute-resource-limits#kv-store for limitations on the KV store name.
-	Name                 string `json:"name"`
+// InlineResponse20011 struct for InlineResponse20011
+type InlineResponse20011 struct {
+	Data                 []ServiceAuthorizationResponseData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _KvStoreRequestCreate KvStoreRequestCreate
+type _InlineResponse20011 InlineResponse20011
 
-// NewKvStoreRequestCreate instantiates a new KvStoreRequestCreate object
+// NewInlineResponse20011 instantiates a new InlineResponse20011 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKvStoreRequestCreate(name string) *KvStoreRequestCreate {
-	this := KvStoreRequestCreate{}
-	this.Name = name
+func NewInlineResponse20011() *InlineResponse20011 {
+	this := InlineResponse20011{}
 	return &this
 }
 
-// NewKvStoreRequestCreateWithDefaults instantiates a new KvStoreRequestCreate object
+// NewInlineResponse20011WithDefaults instantiates a new InlineResponse20011 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewKvStoreRequestCreateWithDefaults() *KvStoreRequestCreate {
-	this := KvStoreRequestCreate{}
+func NewInlineResponse20011WithDefaults() *InlineResponse20011 {
+	this := InlineResponse20011{}
 	return &this
 }
 
-// GetName returns the Name field value
-func (o *KvStoreRequestCreate) GetName() string {
-	if o == nil {
-		var ret string
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *InlineResponse20011) GetData() []ServiceAuthorizationResponseData {
+	if o == nil || o.Data == nil {
+		var ret []ServiceAuthorizationResponseData
 		return ret
 	}
-
-	return o.Name
+	return o.Data
 }
 
-// GetNameOk returns a tuple with the Name field value
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KvStoreRequestCreate) GetNameOk() (*string, bool) {
-	if o == nil {
+func (o *InlineResponse20011) GetDataOk() ([]ServiceAuthorizationResponseData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return &o.Name, true
+	return o.Data, true
 }
 
-// SetName sets field value
-func (o *KvStoreRequestCreate) SetName(v string) {
-	o.Name = v
+// HasData returns a boolean if a field has been set.
+func (o *InlineResponse20011) HasData() bool {
+	if o != nil && o.Data != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given []ServiceAuthorizationResponseData and assigns it to the Data field.
+func (o *InlineResponse20011) SetData(v []ServiceAuthorizationResponseData) {
+	o.Data = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o KvStoreRequestCreate) MarshalJSON() ([]byte, error) {
+func (o InlineResponse20011) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if true {
-		toSerialize["name"] = o.Name
+	if o.Data != nil {
+		toSerialize["data"] = o.Data
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -84,65 +90,65 @@ func (o KvStoreRequestCreate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *KvStoreRequestCreate) UnmarshalJSON(bytes []byte) (err error) {
-	varKvStoreRequestCreate := _KvStoreRequestCreate{}
+func (o *InlineResponse20011) UnmarshalJSON(bytes []byte) (err error) {
+	varInlineResponse20011 := _InlineResponse20011{}
 
-	if err = json.Unmarshal(bytes, &varKvStoreRequestCreate); err == nil {
-		*o = KvStoreRequestCreate(varKvStoreRequestCreate)
+	if err = json.Unmarshal(bytes, &varInlineResponse20011); err == nil {
+		*o = InlineResponse20011(varInlineResponse20011)
 	}
 
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "name")
+		delete(additionalProperties, "data")
 		o.AdditionalProperties = additionalProperties
 	}
 
 	return err
 }
 
-// NullableKvStoreRequestCreate is a helper abstraction for handling nullable kvstorerequestcreate types.
-type NullableKvStoreRequestCreate struct {
-	value *KvStoreRequestCreate
+// NullableInlineResponse20011 is a helper abstraction for handling nullable inlineresponse20011 types.
+type NullableInlineResponse20011 struct {
+	value *InlineResponse20011
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableKvStoreRequestCreate) Get() *KvStoreRequestCreate {
+func (v NullableInlineResponse20011) Get() *InlineResponse20011 {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableKvStoreRequestCreate) Set(val *KvStoreRequestCreate) {
+func (v *NullableInlineResponse20011) Set(val *InlineResponse20011) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableKvStoreRequestCreate) IsSet() bool {
+func (v NullableInlineResponse20011) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableKvStoreRequestCreate) Unset() {
+func (v *NullableInlineResponse20011) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableKvStoreRequestCreate returns a pointer to a new instance of NullableKvStoreRequestCreate.
-func NewNullableKvStoreRequestCreate(val *KvStoreRequestCreate) *NullableKvStoreRequestCreate {
-	return &NullableKvStoreRequestCreate{value: val, isSet: true}
+// NewNullableInlineResponse20011 returns a pointer to a new instance of NullableInlineResponse20011.
+func NewNullableInlineResponse20011(val *InlineResponse20011) *NullableInlineResponse20011 {
+	return &NullableInlineResponse20011{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableKvStoreRequestCreate) MarshalJSON() ([]byte, error) {
+func (v NullableInlineResponse20011) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableKvStoreRequestCreate) UnmarshalJSON(src []byte) error {
+func (v *NullableInlineResponse20011) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

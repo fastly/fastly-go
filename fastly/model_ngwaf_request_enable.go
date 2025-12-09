@@ -19,7 +19,9 @@ import (
 // NgwafRequestEnable struct for NgwafRequestEnable
 type NgwafRequestEnable struct {
 	// The workspace to link.
-	WorkspaceId          string `json:"workspace_id"`
+	WorkspaceId string `json:"workspace_id"`
+	// The percentage of traffic to inspect.
+	TrafficRamp          *string `json:"traffic_ramp,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -67,12 +69,47 @@ func (o *NgwafRequestEnable) SetWorkspaceId(v string) {
 	o.WorkspaceId = v
 }
 
+// GetTrafficRamp returns the TrafficRamp field value if set, zero value otherwise.
+func (o *NgwafRequestEnable) GetTrafficRamp() string {
+	if o == nil || o.TrafficRamp == nil {
+		var ret string
+		return ret
+	}
+	return *o.TrafficRamp
+}
+
+// GetTrafficRampOk returns a tuple with the TrafficRamp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NgwafRequestEnable) GetTrafficRampOk() (*string, bool) {
+	if o == nil || o.TrafficRamp == nil {
+		return nil, false
+	}
+	return o.TrafficRamp, true
+}
+
+// HasTrafficRamp returns a boolean if a field has been set.
+func (o *NgwafRequestEnable) HasTrafficRamp() bool {
+	if o != nil && o.TrafficRamp != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTrafficRamp gets a reference to the given string and assigns it to the TrafficRamp field.
+func (o *NgwafRequestEnable) SetTrafficRamp(v string) {
+	o.TrafficRamp = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o NgwafRequestEnable) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
 		toSerialize["workspace_id"] = o.WorkspaceId
+	}
+	if o.TrafficRamp != nil {
+		toSerialize["traffic_ramp"] = o.TrafficRamp
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -95,6 +132,7 @@ func (o *NgwafRequestEnable) UnmarshalJSON(bytes []byte) (err error) {
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "workspace_id")
+		delete(additionalProperties, "traffic_ramp")
 		o.AdditionalProperties = additionalProperties
 	}
 

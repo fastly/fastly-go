@@ -27,6 +27,10 @@ type DdosProtectionEvent struct {
 	Id *string `json:"id,omitempty"`
 	// A human-readable name for the event.
 	Name *string `json:"name,omitempty"`
+	// Number of requests classified as non-attack traffic for an event.
+	RequestsAllowed *int32 `json:"requests_allowed,omitempty"`
+	// Number of requests classified as DDoS attack traffic for an event.
+	RequestsDetected *int32 `json:"requests_detected,omitempty"`
 	// Alphanumeric string identifying the customer.
 	CustomerId *string `json:"customer_id,omitempty"`
 	// Alphanumeric string identifying the service.
@@ -207,6 +211,70 @@ func (o *DdosProtectionEvent) SetName(v string) {
 	o.Name = &v
 }
 
+// GetRequestsAllowed returns the RequestsAllowed field value if set, zero value otherwise.
+func (o *DdosProtectionEvent) GetRequestsAllowed() int32 {
+	if o == nil || o.RequestsAllowed == nil {
+		var ret int32
+		return ret
+	}
+	return *o.RequestsAllowed
+}
+
+// GetRequestsAllowedOk returns a tuple with the RequestsAllowed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DdosProtectionEvent) GetRequestsAllowedOk() (*int32, bool) {
+	if o == nil || o.RequestsAllowed == nil {
+		return nil, false
+	}
+	return o.RequestsAllowed, true
+}
+
+// HasRequestsAllowed returns a boolean if a field has been set.
+func (o *DdosProtectionEvent) HasRequestsAllowed() bool {
+	if o != nil && o.RequestsAllowed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestsAllowed gets a reference to the given int32 and assigns it to the RequestsAllowed field.
+func (o *DdosProtectionEvent) SetRequestsAllowed(v int32) {
+	o.RequestsAllowed = &v
+}
+
+// GetRequestsDetected returns the RequestsDetected field value if set, zero value otherwise.
+func (o *DdosProtectionEvent) GetRequestsDetected() int32 {
+	if o == nil || o.RequestsDetected == nil {
+		var ret int32
+		return ret
+	}
+	return *o.RequestsDetected
+}
+
+// GetRequestsDetectedOk returns a tuple with the RequestsDetected field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DdosProtectionEvent) GetRequestsDetectedOk() (*int32, bool) {
+	if o == nil || o.RequestsDetected == nil {
+		return nil, false
+	}
+	return o.RequestsDetected, true
+}
+
+// HasRequestsDetected returns a boolean if a field has been set.
+func (o *DdosProtectionEvent) HasRequestsDetected() bool {
+	if o != nil && o.RequestsDetected != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRequestsDetected gets a reference to the given int32 and assigns it to the RequestsDetected field.
+func (o *DdosProtectionEvent) SetRequestsDetected(v int32) {
+	o.RequestsDetected = &v
+}
+
 // GetCustomerId returns the CustomerId field value if set, zero value otherwise.
 func (o *DdosProtectionEvent) GetCustomerId() string {
 	if o == nil || o.CustomerId == nil {
@@ -373,6 +441,12 @@ func (o DdosProtectionEvent) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
+	if o.RequestsAllowed != nil {
+		toSerialize["requests_allowed"] = o.RequestsAllowed
+	}
+	if o.RequestsDetected != nil {
+		toSerialize["requests_detected"] = o.RequestsDetected
+	}
 	if o.CustomerId != nil {
 		toSerialize["customer_id"] = o.CustomerId
 	}
@@ -409,6 +483,8 @@ func (o *DdosProtectionEvent) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "updated_at")
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "name")
+		delete(additionalProperties, "requests_allowed")
+		delete(additionalProperties, "requests_detected")
 		delete(additionalProperties, "customer_id")
 		delete(additionalProperties, "service_id")
 		delete(additionalProperties, "started_at")

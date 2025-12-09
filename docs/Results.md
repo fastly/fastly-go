@@ -273,6 +273,10 @@ Name | Type | Description | Notes
 **NgwafRequestsTimeoutCount** | Pointer to **int32** | Count of Edge WAF requests timed outcome. | [optional] 
 **NgwafRequestsChallengedCount** | Pointer to **int32** | Count of Edge WAF requests challenged. | [optional] 
 **ApiDiscoveryRequestsCount** | Pointer to **int32** | Number of requests processed by the API Discovery engine. | [optional] 
+**ImgoptoComputeRequests** | Pointer to **int32** | The number of Image Optimizer requests made from Compute services. | [optional] 
+**DnsBillableResponsesCount** | Pointer to **int32** | Number of billable DNS responses (e.g., A, CNAME). | [optional] 
+**DnsNonbillableResponsesCount** | Pointer to **int32** | Number of non-billable DNS responses (e.g., NODATA, NXDOMAIN). | [optional] 
+**Upgrade** | Pointer to **int32** | Number of requests that resulted in a WebSocket upgrade. | [optional] 
 **ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **StartTime** | Pointer to **int64** | Timestamp for the start of the time period being reported | [optional] 
 
@@ -7029,6 +7033,106 @@ SetApiDiscoveryRequestsCount sets ApiDiscoveryRequestsCount field to given value
 `func (o *Results) HasApiDiscoveryRequestsCount() bool`
 
 HasApiDiscoveryRequestsCount returns a boolean if a field has been set.
+
+### GetImgoptoComputeRequests
+
+`func (o *Results) GetImgoptoComputeRequests() int32`
+
+GetImgoptoComputeRequests returns the ImgoptoComputeRequests field if non-nil, zero value otherwise.
+
+### GetImgoptoComputeRequestsOk
+
+`func (o *Results) GetImgoptoComputeRequestsOk() (*int32, bool)`
+
+GetImgoptoComputeRequestsOk returns a tuple with the ImgoptoComputeRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoComputeRequests
+
+`func (o *Results) SetImgoptoComputeRequests(v int32)`
+
+SetImgoptoComputeRequests sets ImgoptoComputeRequests field to given value.
+
+### HasImgoptoComputeRequests
+
+`func (o *Results) HasImgoptoComputeRequests() bool`
+
+HasImgoptoComputeRequests returns a boolean if a field has been set.
+
+### GetDnsBillableResponsesCount
+
+`func (o *Results) GetDnsBillableResponsesCount() int32`
+
+GetDnsBillableResponsesCount returns the DnsBillableResponsesCount field if non-nil, zero value otherwise.
+
+### GetDnsBillableResponsesCountOk
+
+`func (o *Results) GetDnsBillableResponsesCountOk() (*int32, bool)`
+
+GetDnsBillableResponsesCountOk returns a tuple with the DnsBillableResponsesCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDnsBillableResponsesCount
+
+`func (o *Results) SetDnsBillableResponsesCount(v int32)`
+
+SetDnsBillableResponsesCount sets DnsBillableResponsesCount field to given value.
+
+### HasDnsBillableResponsesCount
+
+`func (o *Results) HasDnsBillableResponsesCount() bool`
+
+HasDnsBillableResponsesCount returns a boolean if a field has been set.
+
+### GetDnsNonbillableResponsesCount
+
+`func (o *Results) GetDnsNonbillableResponsesCount() int32`
+
+GetDnsNonbillableResponsesCount returns the DnsNonbillableResponsesCount field if non-nil, zero value otherwise.
+
+### GetDnsNonbillableResponsesCountOk
+
+`func (o *Results) GetDnsNonbillableResponsesCountOk() (*int32, bool)`
+
+GetDnsNonbillableResponsesCountOk returns a tuple with the DnsNonbillableResponsesCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDnsNonbillableResponsesCount
+
+`func (o *Results) SetDnsNonbillableResponsesCount(v int32)`
+
+SetDnsNonbillableResponsesCount sets DnsNonbillableResponsesCount field to given value.
+
+### HasDnsNonbillableResponsesCount
+
+`func (o *Results) HasDnsNonbillableResponsesCount() bool`
+
+HasDnsNonbillableResponsesCount returns a boolean if a field has been set.
+
+### GetUpgrade
+
+`func (o *Results) GetUpgrade() int32`
+
+GetUpgrade returns the Upgrade field if non-nil, zero value otherwise.
+
+### GetUpgradeOk
+
+`func (o *Results) GetUpgradeOk() (*int32, bool)`
+
+GetUpgradeOk returns a tuple with the Upgrade field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpgrade
+
+`func (o *Results) SetUpgrade(v int32)`
+
+SetUpgrade sets Upgrade field to given value.
+
+### HasUpgrade
+
+`func (o *Results) HasUpgrade() bool`
+
+HasUpgrade returns a boolean if a field has been set.
 
 ### GetServiceId
 

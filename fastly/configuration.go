@@ -104,7 +104,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "fastly-go/1.0.0-beta.45",
+		UserAgent:     "fastly-go/1.0.0-beta.46",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
@@ -855,6 +855,18 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"DomainResearchAPIService.DomainStatus": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DomainResearchAPIService.SuggestDomains": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"EventsAPIService.GetEvent": {
 				{
 					URL:         "https://api.fastly.com",
@@ -1234,6 +1246,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"KvStoreAPIService.KvStoreList": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"KvStoreAPIService.KvStorePut": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2103,6 +2121,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"MetricsPlatformAPIService.GetPlatformMetricsServiceHistorical": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"MutualAuthenticationAPIService.CreateMutualTlsAuthentication": {
 				{
 					URL:         "https://api.fastly.com",
@@ -2422,6 +2446,24 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"ProductDomainInspectorAPIService.GetServicesProductDomainInspector": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductDomainResearchAPIService.DisableProductDomainResearch": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductDomainResearchAPIService.EnableDomainResearch": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductDomainResearchAPIService.GetDomainResearch": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",

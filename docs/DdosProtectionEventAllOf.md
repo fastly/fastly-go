@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | Unique ID of the event. | [optional] 
 **Name** | Pointer to **string** | A human-readable name for the event. | [optional] 
+**RequestsAllowed** | Pointer to **int32** | Number of requests classified as non-attack traffic for an event. | [optional] 
+**RequestsDetected** | Pointer to **int32** | Number of requests classified as DDoS attack traffic for an event. | [optional] 
 **CustomerId** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
 **ServiceId** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
 **StartedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -79,6 +81,56 @@ SetName sets Name field to given value.
 `func (o *DdosProtectionEventAllOf) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetRequestsAllowed
+
+`func (o *DdosProtectionEventAllOf) GetRequestsAllowed() int32`
+
+GetRequestsAllowed returns the RequestsAllowed field if non-nil, zero value otherwise.
+
+### GetRequestsAllowedOk
+
+`func (o *DdosProtectionEventAllOf) GetRequestsAllowedOk() (*int32, bool)`
+
+GetRequestsAllowedOk returns a tuple with the RequestsAllowed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestsAllowed
+
+`func (o *DdosProtectionEventAllOf) SetRequestsAllowed(v int32)`
+
+SetRequestsAllowed sets RequestsAllowed field to given value.
+
+### HasRequestsAllowed
+
+`func (o *DdosProtectionEventAllOf) HasRequestsAllowed() bool`
+
+HasRequestsAllowed returns a boolean if a field has been set.
+
+### GetRequestsDetected
+
+`func (o *DdosProtectionEventAllOf) GetRequestsDetected() int32`
+
+GetRequestsDetected returns the RequestsDetected field if non-nil, zero value otherwise.
+
+### GetRequestsDetectedOk
+
+`func (o *DdosProtectionEventAllOf) GetRequestsDetectedOk() (*int32, bool)`
+
+GetRequestsDetectedOk returns a tuple with the RequestsDetected field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequestsDetected
+
+`func (o *DdosProtectionEventAllOf) SetRequestsDetected(v int32)`
+
+SetRequestsDetected sets RequestsDetected field to given value.
+
+### HasRequestsDetected
+
+`func (o *DdosProtectionEventAllOf) HasRequestsDetected() bool`
+
+HasRequestsDetected returns a boolean if a field has been set.
 
 ### GetCustomerId
 

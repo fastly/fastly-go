@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**DisplayName** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Permissions** | Pointer to **[]string** | The set of permissions granted to this role. | [optional] 
 
@@ -77,6 +78,31 @@ SetName sets Name field to given value.
 `func (o *IamV1RoleResponse) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetDisplayName
+
+`func (o *IamV1RoleResponse) GetDisplayName() string`
+
+GetDisplayName returns the DisplayName field if non-nil, zero value otherwise.
+
+### GetDisplayNameOk
+
+`func (o *IamV1RoleResponse) GetDisplayNameOk() (*string, bool)`
+
+GetDisplayNameOk returns a tuple with the DisplayName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisplayName
+
+`func (o *IamV1RoleResponse) SetDisplayName(v string)`
+
+SetDisplayName sets DisplayName field to given value.
+
+### HasDisplayName
+
+`func (o *IamV1RoleResponse) HasDisplayName() bool`
+
+HasDisplayName returns a boolean if a field has been set.
 
 ### GetDescription
 

@@ -47,7 +47,7 @@ type ProductDdosProtectionAPI interface {
 	/*
 		EnableProductDdosProtection Enable product
 
-		Enable the DDoS Protection product on a service in 'log' mode.
+		Enable the DDoS Protection product on a service in default 'log' mode unless otherwise specified in the request body.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param serviceId Alphanumeric string identifying the service.
@@ -245,9 +245,16 @@ func (a *ProductDdosProtectionAPIService) DisableProductDdosProtectionExecute(r 
 
 // APIEnableProductDdosProtectionRequest represents a request for the resource.
 type APIEnableProductDdosProtectionRequest struct {
-	ctx        context.Context
-	APIService ProductDdosProtectionAPI
-	serviceId  string
+	ctx                             context.Context
+	APIService                      ProductDdosProtectionAPI
+	serviceId                       string
+	ddosProtectionRequestEnableMode *DdosProtectionRequestEnableMode
+}
+
+// DdosProtectionRequestEnableMode returns a pointer to a request.
+func (r *APIEnableProductDdosProtectionRequest) DdosProtectionRequestEnableMode(ddosProtectionRequestEnableMode DdosProtectionRequestEnableMode) *APIEnableProductDdosProtectionRequest {
+	r.ddosProtectionRequestEnableMode = &ddosProtectionRequestEnableMode
+	return r
 }
 
 // Execute calls the API using the request data configured.
@@ -258,7 +265,7 @@ func (r APIEnableProductDdosProtectionRequest) Execute() (*DdosProtectionRespons
 /*
 EnableProductDdosProtection Enable product
 
-Enable the DDoS Protection product on a service in 'log' mode.
+Enable the DDoS Protection product on a service in default 'log' mode unless otherwise specified in the request body.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceId Alphanumeric string identifying the service.
@@ -295,7 +302,7 @@ func (a *ProductDdosProtectionAPIService) EnableProductDdosProtectionExecute(r A
 	localVarFormParams := gourl.Values{}
 
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{}
+	localVarHTTPContentTypes := []string{"application/json"}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -311,6 +318,8 @@ func (a *ProductDdosProtectionAPIService) EnableProductDdosProtectionExecute(r A
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
+	// body params
+	localVarPostBody = r.ddosProtectionRequestEnableMode
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

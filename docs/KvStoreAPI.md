@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**KvStoreDelete**](KvStoreAPI.md#KvStoreDelete) | **DELETE** `/resources/stores/kv/{store_id}` | Delete a KV store.
 [**KvStoreGet**](KvStoreAPI.md#KvStoreGet) | **GET** `/resources/stores/kv/{store_id}` | Describe a KV store.
 [**KvStoreList**](KvStoreAPI.md#KvStoreList) | **GET** `/resources/stores/kv` | List all KV stores.
+[**KvStorePut**](KvStoreAPI.md#KvStorePut) | **PUT** `/resources/stores/kv/{store_id}` | Update a KV store.
 
 
 
@@ -32,12 +33,12 @@ import (
 
 func main() {
     location := "location_example" // string |  (optional)
-    kvStoreRequestCreate := *openapiclient.NewKvStoreRequestCreate("Name_example") // KvStoreRequestCreate |  (optional)
+    kvStoreRequestCreateOrUpdate := *openapiclient.NewKvStoreRequestCreateOrUpdate("Name_example") // KvStoreRequestCreateOrUpdate |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.KvStoreAPI.KvStoreCreate(ctx).Location(location).KvStoreRequestCreate(kvStoreRequestCreate).Execute()
+    resp, r, err := apiClient.KvStoreAPI.KvStoreCreate(ctx).Location(location).KvStoreRequestCreateOrUpdate(kvStoreRequestCreateOrUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStoreCreate`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,7 +59,7 @@ Other parameters are passed through a pointer to a apiKvStoreCreateRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **location** | **string** |  |  **kvStoreRequestCreate** | [**KvStoreRequestCreate**](KvStoreRequestCreate.md) |  | 
+ **location** | **string** |  |  **kvStoreRequestCreateOrUpdate** | [**KvStoreRequestCreateOrUpdate**](KvStoreRequestCreateOrUpdate.md) |  | 
 
 ### Return type
 
@@ -239,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStoreList`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `KvStoreList`: InlineResponse2006
+    // response from `KvStoreList`: InlineResponse2007
     fmt.Fprintf(os.Stdout, "Response from `KvStoreAPI.KvStoreList`: %v\n", resp)
 }
 ```
@@ -259,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -269,6 +270,72 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## KvStorePut
+
+Update a KV store.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    storeId := "storeId_example" // string | 
+    kvStoreRequestCreateOrUpdate := *openapiclient.NewKvStoreRequestCreateOrUpdate("Name_example") // KvStoreRequestCreateOrUpdate |  (optional)
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.KvStoreAPI.KvStorePut(ctx, storeId).KvStoreRequestCreateOrUpdate(kvStoreRequestCreateOrUpdate).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStorePut`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**storeId** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiKvStorePutRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **kvStoreRequestCreateOrUpdate** | [**KvStoreRequestCreateOrUpdate**](KvStoreRequestCreateOrUpdate.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
