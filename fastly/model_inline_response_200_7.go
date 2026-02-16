@@ -18,8 +18,9 @@ import (
 
 // InlineResponse2007 struct for InlineResponse2007
 type InlineResponse2007 struct {
-	Data                 []KvStoreDetails      `json:"data,omitempty"`
-	Meta                 *PaginationCursorMeta `json:"meta,omitempty"`
+	Data []SuccessfulResponseAsObject `json:"data,omitempty"`
+	// Meta for the pagination.
+	Meta                 interface{} `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -43,9 +44,9 @@ func NewInlineResponse2007WithDefaults() *InlineResponse2007 {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse2007) GetData() []KvStoreDetails {
+func (o *InlineResponse2007) GetData() []SuccessfulResponseAsObject {
 	if o == nil || o.Data == nil {
-		var ret []KvStoreDetails
+		var ret []SuccessfulResponseAsObject
 		return ret
 	}
 	return o.Data
@@ -53,7 +54,7 @@ func (o *InlineResponse2007) GetData() []KvStoreDetails {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2007) GetDataOk() ([]KvStoreDetails, bool) {
+func (o *InlineResponse2007) GetDataOk() ([]SuccessfulResponseAsObject, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -69,27 +70,28 @@ func (o *InlineResponse2007) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []KvStoreDetails and assigns it to the Data field.
-func (o *InlineResponse2007) SetData(v []KvStoreDetails) {
+// SetData gets a reference to the given []SuccessfulResponseAsObject and assigns it to the Data field.
+func (o *InlineResponse2007) SetData(v []SuccessfulResponseAsObject) {
 	o.Data = v
 }
 
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *InlineResponse2007) GetMeta() PaginationCursorMeta {
-	if o == nil || o.Meta == nil {
-		var ret PaginationCursorMeta
+// GetMeta returns the Meta field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *InlineResponse2007) GetMeta() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Meta
+	return o.Meta
 }
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2007) GetMetaOk() (*PaginationCursorMeta, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *InlineResponse2007) GetMetaOk() (*interface{}, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
-	return o.Meta, true
+	return &o.Meta, true
 }
 
 // HasMeta returns a boolean if a field has been set.
@@ -101,9 +103,9 @@ func (o *InlineResponse2007) HasMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given PaginationCursorMeta and assigns it to the Meta field.
-func (o *InlineResponse2007) SetMeta(v PaginationCursorMeta) {
-	o.Meta = &v
+// SetMeta gets a reference to the given interface{} and assigns it to the Meta field.
+func (o *InlineResponse2007) SetMeta(v interface{}) {
+	o.Meta = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.

@@ -33,6 +33,8 @@ type BackendResponse struct {
 	ConnectTimeout *int32 `json:"connect_timeout,omitempty"`
 	// Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
 	FirstByteTimeout *int32 `json:"first_byte_timeout,omitempty"`
+	// Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.fetch_timeout`.
+	FetchTimeout *int32 `json:"fetch_timeout,omitempty"`
 	// The name of the healthcheck to use with this backend.
 	Healthcheck NullableString `json:"healthcheck,omitempty"`
 	// The hostname of the backend. May be used as an alternative to `address` to set the backend location.
@@ -384,6 +386,38 @@ func (o *BackendResponse) HasFirstByteTimeout() bool {
 // SetFirstByteTimeout gets a reference to the given int32 and assigns it to the FirstByteTimeout field.
 func (o *BackendResponse) SetFirstByteTimeout(v int32) {
 	o.FirstByteTimeout = &v
+}
+
+// GetFetchTimeout returns the FetchTimeout field value if set, zero value otherwise.
+func (o *BackendResponse) GetFetchTimeout() int32 {
+	if o == nil || o.FetchTimeout == nil {
+		var ret int32
+		return ret
+	}
+	return *o.FetchTimeout
+}
+
+// GetFetchTimeoutOk returns a tuple with the FetchTimeout field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BackendResponse) GetFetchTimeoutOk() (*int32, bool) {
+	if o == nil || o.FetchTimeout == nil {
+		return nil, false
+	}
+	return o.FetchTimeout, true
+}
+
+// HasFetchTimeout returns a boolean if a field has been set.
+func (o *BackendResponse) HasFetchTimeout() bool {
+	if o != nil && o.FetchTimeout != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFetchTimeout gets a reference to the given int32 and assigns it to the FetchTimeout field.
+func (o *BackendResponse) SetFetchTimeout(v int32) {
+	o.FetchTimeout = &v
 }
 
 // GetHealthcheck returns the Healthcheck field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -1809,6 +1843,9 @@ func (o BackendResponse) MarshalJSON() ([]byte, error) {
 	if o.FirstByteTimeout != nil {
 		toSerialize["first_byte_timeout"] = o.FirstByteTimeout
 	}
+	if o.FetchTimeout != nil {
+		toSerialize["fetch_timeout"] = o.FetchTimeout
+	}
 	if o.Healthcheck.IsSet() {
 		toSerialize["healthcheck"] = o.Healthcheck.Get()
 	}
@@ -1941,6 +1978,7 @@ func (o *BackendResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "comment")
 		delete(additionalProperties, "connect_timeout")
 		delete(additionalProperties, "first_byte_timeout")
+		delete(additionalProperties, "fetch_timeout")
 		delete(additionalProperties, "healthcheck")
 		delete(additionalProperties, "hostname")
 		delete(additionalProperties, "ipv4")

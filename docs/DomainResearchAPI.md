@@ -107,7 +107,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DomainResearchAPI.SuggestDomains`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `SuggestDomains`: InlineResponse2006
+    // response from `SuggestDomains`: InlineResponse2009
     fmt.Fprintf(os.Stdout, "Response from `DomainResearchAPI.SuggestDomains`: %v\n", resp)
 }
 ```
@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse2009**](InlineResponse2009.md)
 
 ### Authorization
 

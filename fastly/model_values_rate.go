@@ -19,11 +19,8 @@ import (
 // ValuesRate struct for ValuesRate
 type ValuesRate struct {
 	// The percentage of requests matching the value in the current dimension.
-	Rate                 *float32 `json:"rate,omitempty"`
-	AdditionalProperties map[string]any
+	Rate *float32 `json:"rate,omitempty"`
 }
-
-type _ValuesRate ValuesRate
 
 // NewValuesRate instantiates a new ValuesRate object
 // This constructor will assign default values to properties that have it defined,
@@ -81,31 +78,7 @@ func (o ValuesRate) MarshalJSON() ([]byte, error) {
 	if o.Rate != nil {
 		toSerialize["rate"] = o.Rate
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ValuesRate) UnmarshalJSON(bytes []byte) (err error) {
-	varValuesRate := _ValuesRate{}
-
-	if err = json.Unmarshal(bytes, &varValuesRate); err == nil {
-		*o = ValuesRate(varValuesRate)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "rate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableValuesRate is a helper abstraction for handling nullable valuesrate types.

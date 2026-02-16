@@ -19,11 +19,8 @@ import (
 // DimensionStatusCode struct for DimensionStatusCode
 type DimensionStatusCode struct {
 	// The HTTP response code for this dimension.
-	StatusCode           *string `json:"status-code,omitempty"`
-	AdditionalProperties map[string]any
+	StatusCode *string `json:"status-code,omitempty"`
 }
-
-type _DimensionStatusCode DimensionStatusCode
 
 // NewDimensionStatusCode instantiates a new DimensionStatusCode object
 // This constructor will assign default values to properties that have it defined,
@@ -81,31 +78,7 @@ func (o DimensionStatusCode) MarshalJSON() ([]byte, error) {
 	if o.StatusCode != nil {
 		toSerialize["status-code"] = o.StatusCode
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *DimensionStatusCode) UnmarshalJSON(bytes []byte) (err error) {
-	varDimensionStatusCode := _DimensionStatusCode{}
-
-	if err = json.Unmarshal(bytes, &varDimensionStatusCode); err == nil {
-		*o = DimensionStatusCode(varDimensionStatusCode)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "status-code")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableDimensionStatusCode is a helper abstraction for handling nullable dimensionstatuscode types.

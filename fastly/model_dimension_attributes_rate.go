@@ -19,11 +19,8 @@ import (
 // DimensionAttributesRate struct for DimensionAttributesRate
 type DimensionAttributesRate struct {
 	// The rate at which the value in the current dimension occurs.
-	Rate                 *float32 `json:"rate,omitempty"`
-	AdditionalProperties map[string]any
+	Rate *float32 `json:"rate,omitempty"`
 }
-
-type _DimensionAttributesRate DimensionAttributesRate
 
 // NewDimensionAttributesRate instantiates a new DimensionAttributesRate object
 // This constructor will assign default values to properties that have it defined,
@@ -81,31 +78,7 @@ func (o DimensionAttributesRate) MarshalJSON() ([]byte, error) {
 	if o.Rate != nil {
 		toSerialize["rate"] = o.Rate
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *DimensionAttributesRate) UnmarshalJSON(bytes []byte) (err error) {
-	varDimensionAttributesRate := _DimensionAttributesRate{}
-
-	if err = json.Unmarshal(bytes, &varDimensionAttributesRate); err == nil {
-		*o = DimensionAttributesRate(varDimensionAttributesRate)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "rate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableDimensionAttributesRate is a helper abstraction for handling nullable dimensionattributesrate types.

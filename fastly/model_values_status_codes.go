@@ -23,11 +23,8 @@ type ValuesStatusCodes struct {
 	// The URL accounts for this percentage of the status code in this dimension.
 	RatePerStatus *float32 `json:"rate_per_status,omitempty"`
 	// The rate at which the status code in this dimension occurs for this URL.
-	RatePerUrl           *float32 `json:"rate_per_url,omitempty"`
-	AdditionalProperties map[string]any
+	RatePerUrl *float32 `json:"rate_per_url,omitempty"`
 }
-
-type _ValuesStatusCodes ValuesStatusCodes
 
 // NewValuesStatusCodes instantiates a new ValuesStatusCodes object
 // This constructor will assign default values to properties that have it defined,
@@ -155,33 +152,7 @@ func (o ValuesStatusCodes) MarshalJSON() ([]byte, error) {
 	if o.RatePerUrl != nil {
 		toSerialize["rate_per_url"] = o.RatePerUrl
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ValuesStatusCodes) UnmarshalJSON(bytes []byte) (err error) {
-	varValuesStatusCodes := _ValuesStatusCodes{}
-
-	if err = json.Unmarshal(bytes, &varValuesStatusCodes); err == nil {
-		*o = ValuesStatusCodes(varValuesStatusCodes)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "rate_per_status")
-		delete(additionalProperties, "rate_per_url")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableValuesStatusCodes is a helper abstraction for handling nullable valuesstatuscodes types.

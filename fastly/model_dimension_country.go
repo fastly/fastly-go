@@ -19,11 +19,8 @@ import (
 // DimensionCountry struct for DimensionCountry
 type DimensionCountry struct {
 	// The client's country for this dimension.
-	Country              *string `json:"country,omitempty"`
-	AdditionalProperties map[string]any
+	Country *string `json:"country,omitempty"`
 }
-
-type _DimensionCountry DimensionCountry
 
 // NewDimensionCountry instantiates a new DimensionCountry object
 // This constructor will assign default values to properties that have it defined,
@@ -81,31 +78,7 @@ func (o DimensionCountry) MarshalJSON() ([]byte, error) {
 	if o.Country != nil {
 		toSerialize["country"] = o.Country
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *DimensionCountry) UnmarshalJSON(bytes []byte) (err error) {
-	varDimensionCountry := _DimensionCountry{}
-
-	if err = json.Unmarshal(bytes, &varDimensionCountry); err == nil {
-		*o = DimensionCountry(varDimensionCountry)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "country")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableDimensionCountry is a helper abstraction for handling nullable dimensioncountry types.

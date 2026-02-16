@@ -19,11 +19,8 @@ import (
 // ValuesMisses struct for ValuesMisses
 type ValuesMisses struct {
 	// The miss rate for requests to the URL in the current dimension.
-	MissRate             *float32 `json:"miss_rate,omitempty"`
-	AdditionalProperties map[string]any
+	MissRate *float32 `json:"miss_rate,omitempty"`
 }
-
-type _ValuesMisses ValuesMisses
 
 // NewValuesMisses instantiates a new ValuesMisses object
 // This constructor will assign default values to properties that have it defined,
@@ -81,31 +78,7 @@ func (o ValuesMisses) MarshalJSON() ([]byte, error) {
 	if o.MissRate != nil {
 		toSerialize["miss_rate"] = o.MissRate
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ValuesMisses) UnmarshalJSON(bytes []byte) (err error) {
-	varValuesMisses := _ValuesMisses{}
-
-	if err = json.Unmarshal(bytes, &varValuesMisses); err == nil {
-		*o = ValuesMisses(varValuesMisses)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "miss_rate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableValuesMisses is a helper abstraction for handling nullable valuesmisses types.

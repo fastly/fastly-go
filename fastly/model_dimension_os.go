@@ -19,11 +19,8 @@ import (
 // DimensionOs struct for DimensionOs
 type DimensionOs struct {
 	// The client's operating system for this dimension.
-	Os                   *string `json:"os,omitempty"`
-	AdditionalProperties map[string]any
+	Os *string `json:"os,omitempty"`
 }
-
-type _DimensionOs DimensionOs
 
 // NewDimensionOs instantiates a new DimensionOs object
 // This constructor will assign default values to properties that have it defined,
@@ -81,31 +78,7 @@ func (o DimensionOs) MarshalJSON() ([]byte, error) {
 	if o.Os != nil {
 		toSerialize["os"] = o.Os
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *DimensionOs) UnmarshalJSON(bytes []byte) (err error) {
-	varDimensionOs := _DimensionOs{}
-
-	if err = json.Unmarshal(bytes, &varDimensionOs); err == nil {
-		*o = DimensionOs(varDimensionOs)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "os")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableDimensionOs is a helper abstraction for handling nullable dimensionos types.

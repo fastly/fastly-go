@@ -23,11 +23,8 @@ type ValuesCountryStats struct {
 	// The cache hit ratio for the region.
 	RegionChr *float32 `json:"region_chr,omitempty"`
 	// The error rate for the region.
-	RegionErrorRate      *float32 `json:"region_error_rate,omitempty"`
-	AdditionalProperties map[string]any
+	RegionErrorRate *float32 `json:"region_error_rate,omitempty"`
 }
-
-type _ValuesCountryStats ValuesCountryStats
 
 // NewValuesCountryStats instantiates a new ValuesCountryStats object
 // This constructor will assign default values to properties that have it defined,
@@ -155,33 +152,7 @@ func (o ValuesCountryStats) MarshalJSON() ([]byte, error) {
 	if o.RegionErrorRate != nil {
 		toSerialize["region_error_rate"] = o.RegionErrorRate
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ValuesCountryStats) UnmarshalJSON(bytes []byte) (err error) {
-	varValuesCountryStats := _ValuesCountryStats{}
-
-	if err = json.Unmarshal(bytes, &varValuesCountryStats); err == nil {
-		*o = ValuesCountryStats(varValuesCountryStats)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "region")
-		delete(additionalProperties, "region_chr")
-		delete(additionalProperties, "region_error_rate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableValuesCountryStats is a helper abstraction for handling nullable valuescountrystats types.

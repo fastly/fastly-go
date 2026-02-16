@@ -174,7 +174,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AutomationTokensAPI.GetAutomationTokensIdServices`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetAutomationTokensIdServices`: InlineResponse2001
+    // response from `GetAutomationTokensIdServices`: InlineResponse2004
     fmt.Fprintf(os.Stdout, "Response from `AutomationTokensAPI.GetAutomationTokensIdServices`: %v\n", resp)
 }
 ```
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 

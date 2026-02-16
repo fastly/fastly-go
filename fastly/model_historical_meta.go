@@ -22,6 +22,7 @@ type HistoricalMeta struct {
 	From                 *string `json:"from,omitempty"`
 	By                   *string `json:"by,omitempty"`
 	Region               *string `json:"region,omitempty"`
+	Datacenter           *string `json:"datacenter,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -172,6 +173,38 @@ func (o *HistoricalMeta) SetRegion(v string) {
 	o.Region = &v
 }
 
+// GetDatacenter returns the Datacenter field value if set, zero value otherwise.
+func (o *HistoricalMeta) GetDatacenter() string {
+	if o == nil || o.Datacenter == nil {
+		var ret string
+		return ret
+	}
+	return *o.Datacenter
+}
+
+// GetDatacenterOk returns a tuple with the Datacenter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HistoricalMeta) GetDatacenterOk() (*string, bool) {
+	if o == nil || o.Datacenter == nil {
+		return nil, false
+	}
+	return o.Datacenter, true
+}
+
+// HasDatacenter returns a boolean if a field has been set.
+func (o *HistoricalMeta) HasDatacenter() bool {
+	if o != nil && o.Datacenter != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDatacenter gets a reference to the given string and assigns it to the Datacenter field.
+func (o *HistoricalMeta) SetDatacenter(v string) {
+	o.Datacenter = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o HistoricalMeta) MarshalJSON() ([]byte, error) {
@@ -187,6 +220,9 @@ func (o HistoricalMeta) MarshalJSON() ([]byte, error) {
 	}
 	if o.Region != nil {
 		toSerialize["region"] = o.Region
+	}
+	if o.Datacenter != nil {
+		toSerialize["datacenter"] = o.Datacenter
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -212,6 +248,7 @@ func (o *HistoricalMeta) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "from")
 		delete(additionalProperties, "by")
 		delete(additionalProperties, "region")
+		delete(additionalProperties, "datacenter")
 		o.AdditionalProperties = additionalProperties
 	}
 

@@ -18,8 +18,9 @@ import (
 
 // InlineResponse2002 struct for InlineResponse2002
 type InlineResponse2002 struct {
-	Data                 []DdosProtectionEvent `json:"data,omitempty"`
-	Meta                 *PaginationCursorMeta `json:"meta,omitempty"`
+	Meta *Meta `json:"meta,omitempty"`
+	// The operations returned by the request.
+	Data                 []OperationGet `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -42,42 +43,10 @@ func NewInlineResponse2002WithDefaults() *InlineResponse2002 {
 	return &this
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse2002) GetData() []DdosProtectionEvent {
-	if o == nil || o.Data == nil {
-		var ret []DdosProtectionEvent
-		return ret
-	}
-	return o.Data
-}
-
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InlineResponse2002) GetDataOk() ([]DdosProtectionEvent, bool) {
-	if o == nil || o.Data == nil {
-		return nil, false
-	}
-	return o.Data, true
-}
-
-// HasData returns a boolean if a field has been set.
-func (o *InlineResponse2002) HasData() bool {
-	if o != nil && o.Data != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetData gets a reference to the given []DdosProtectionEvent and assigns it to the Data field.
-func (o *InlineResponse2002) SetData(v []DdosProtectionEvent) {
-	o.Data = v
-}
-
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *InlineResponse2002) GetMeta() PaginationCursorMeta {
+func (o *InlineResponse2002) GetMeta() Meta {
 	if o == nil || o.Meta == nil {
-		var ret PaginationCursorMeta
+		var ret Meta
 		return ret
 	}
 	return *o.Meta
@@ -85,7 +54,7 @@ func (o *InlineResponse2002) GetMeta() PaginationCursorMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2002) GetMetaOk() (*PaginationCursorMeta, bool) {
+func (o *InlineResponse2002) GetMetaOk() (*Meta, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -101,20 +70,52 @@ func (o *InlineResponse2002) HasMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given PaginationCursorMeta and assigns it to the Meta field.
-func (o *InlineResponse2002) SetMeta(v PaginationCursorMeta) {
+// SetMeta gets a reference to the given Meta and assigns it to the Meta field.
+func (o *InlineResponse2002) SetMeta(v Meta) {
 	o.Meta = &v
+}
+
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *InlineResponse2002) GetData() []OperationGet {
+	if o == nil || o.Data == nil {
+		var ret []OperationGet
+		return ret
+	}
+	return o.Data
+}
+
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InlineResponse2002) GetDataOk() ([]OperationGet, bool) {
+	if o == nil || o.Data == nil {
+		return nil, false
+	}
+	return o.Data, true
+}
+
+// HasData returns a boolean if a field has been set.
+func (o *InlineResponse2002) HasData() bool {
+	if o != nil && o.Data != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given []OperationGet and assigns it to the Data field.
+func (o *InlineResponse2002) SetData(v []OperationGet) {
+	o.Data = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o InlineResponse2002) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
-	}
 	if o.Meta != nil {
 		toSerialize["meta"] = o.Meta
+	}
+	if o.Data != nil {
+		toSerialize["data"] = o.Data
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -136,8 +137,8 @@ func (o *InlineResponse2002) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "data")
 		delete(additionalProperties, "meta")
+		delete(additionalProperties, "data")
 		o.AdditionalProperties = additionalProperties
 	}
 

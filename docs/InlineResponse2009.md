@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**[]SecretStoreResponse**](SecretStoreResponse.md) |  | [optional] 
-**Meta** | Pointer to [**PaginationCursorMeta**](PaginationCursorMeta.md) |  | [optional] 
+**Results** | Pointer to [**[]Suggestion**](Suggestion.md) |  | [optional] 
 
 ## Methods
 
@@ -26,55 +25,30 @@ NewInlineResponse2009WithDefaults instantiates a new InlineResponse2009 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetData
+### GetResults
 
-`func (o *InlineResponse2009) GetData() []SecretStoreResponse`
+`func (o *InlineResponse2009) GetResults() []Suggestion`
 
-GetData returns the Data field if non-nil, zero value otherwise.
+GetResults returns the Results field if non-nil, zero value otherwise.
 
-### GetDataOk
+### GetResultsOk
 
-`func (o *InlineResponse2009) GetDataOk() (*[]SecretStoreResponse, bool)`
+`func (o *InlineResponse2009) GetResultsOk() (*[]Suggestion, bool)`
 
-GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
+GetResultsOk returns a tuple with the Results field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetData
+### SetResults
 
-`func (o *InlineResponse2009) SetData(v []SecretStoreResponse)`
+`func (o *InlineResponse2009) SetResults(v []Suggestion)`
 
-SetData sets Data field to given value.
+SetResults sets Results field to given value.
 
-### HasData
+### HasResults
 
-`func (o *InlineResponse2009) HasData() bool`
+`func (o *InlineResponse2009) HasResults() bool`
 
-HasData returns a boolean if a field has been set.
-
-### GetMeta
-
-`func (o *InlineResponse2009) GetMeta() PaginationCursorMeta`
-
-GetMeta returns the Meta field if non-nil, zero value otherwise.
-
-### GetMetaOk
-
-`func (o *InlineResponse2009) GetMetaOk() (*PaginationCursorMeta, bool)`
-
-GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMeta
-
-`func (o *InlineResponse2009) SetMeta(v PaginationCursorMeta)`
-
-SetMeta sets Meta field to given value.
-
-### HasMeta
-
-`func (o *InlineResponse2009) HasMeta() bool`
-
-HasMeta returns a boolean if a field has been set.
+HasResults returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

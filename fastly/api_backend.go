@@ -130,6 +130,7 @@ type APICreateBackendRequest struct {
 	comment              *string
 	connectTimeout       *int32
 	firstByteTimeout     *int32
+	fetchTimeout         *int32
 	healthcheck          *string
 	hostname             *string
 	ipv4                 *string
@@ -200,6 +201,12 @@ func (r *APICreateBackendRequest) ConnectTimeout(connectTimeout int32) *APICreat
 // FirstByteTimeout Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic &#x60;503&#x60; response will be presented instead. May be set at runtime using &#x60;bereq.first_byte_timeout&#x60;.
 func (r *APICreateBackendRequest) FirstByteTimeout(firstByteTimeout int32) *APICreateBackendRequest {
 	r.firstByteTimeout = &firstByteTimeout
+	return r
+}
+
+// FetchTimeout Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic &#x60;503&#x60; response will be presented instead. May be set at runtime using &#x60;bereq.fetch_timeout&#x60;.
+func (r *APICreateBackendRequest) FetchTimeout(fetchTimeout int32) *APICreateBackendRequest {
+	r.fetchTimeout = &fetchTimeout
 	return r
 }
 
@@ -461,6 +468,9 @@ func (a *BackendAPIService) CreateBackendExecute(r APICreateBackendRequest) (*Ba
 	}
 	if r.firstByteTimeout != nil {
 		localVarFormParams.Add("first_byte_timeout", parameterToString(*r.firstByteTimeout, ""))
+	}
+	if r.fetchTimeout != nil {
+		localVarFormParams.Add("fetch_timeout", parameterToString(*r.fetchTimeout, ""))
 	}
 	if r.healthcheck != nil {
 		localVarFormParams.Add("healthcheck", parameterToString(*r.healthcheck, ""))
@@ -1043,6 +1053,7 @@ type APIUpdateBackendRequest struct {
 	comment              *string
 	connectTimeout       *int32
 	firstByteTimeout     *int32
+	fetchTimeout         *int32
 	healthcheck          *string
 	hostname             *string
 	ipv4                 *string
@@ -1113,6 +1124,12 @@ func (r *APIUpdateBackendRequest) ConnectTimeout(connectTimeout int32) *APIUpdat
 // FirstByteTimeout Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic &#x60;503&#x60; response will be presented instead. May be set at runtime using &#x60;bereq.first_byte_timeout&#x60;.
 func (r *APIUpdateBackendRequest) FirstByteTimeout(firstByteTimeout int32) *APIUpdateBackendRequest {
 	r.firstByteTimeout = &firstByteTimeout
+	return r
+}
+
+// FetchTimeout Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic &#x60;503&#x60; response will be presented instead. May be set at runtime using &#x60;bereq.fetch_timeout&#x60;.
+func (r *APIUpdateBackendRequest) FetchTimeout(fetchTimeout int32) *APIUpdateBackendRequest {
+	r.fetchTimeout = &fetchTimeout
 	return r
 }
 
@@ -1377,6 +1394,9 @@ func (a *BackendAPIService) UpdateBackendExecute(r APIUpdateBackendRequest) (*Ba
 	}
 	if r.firstByteTimeout != nil {
 		localVarFormParams.Add("first_byte_timeout", parameterToString(*r.firstByteTimeout, ""))
+	}
+	if r.fetchTimeout != nil {
+		localVarFormParams.Add("fetch_timeout", parameterToString(*r.fetchTimeout, ""))
 	}
 	if r.healthcheck != nil {
 		localVarFormParams.Add("healthcheck", parameterToString(*r.healthcheck, ""))

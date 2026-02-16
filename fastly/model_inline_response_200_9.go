@@ -18,8 +18,7 @@ import (
 
 // InlineResponse2009 struct for InlineResponse2009
 type InlineResponse2009 struct {
-	Data                 []SecretStoreResponse `json:"data,omitempty"`
-	Meta                 *PaginationCursorMeta `json:"meta,omitempty"`
+	Results              []Suggestion `json:"results,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -42,79 +41,44 @@ func NewInlineResponse2009WithDefaults() *InlineResponse2009 {
 	return &this
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse2009) GetData() []SecretStoreResponse {
-	if o == nil || o.Data == nil {
-		var ret []SecretStoreResponse
+// GetResults returns the Results field value if set, zero value otherwise.
+func (o *InlineResponse2009) GetResults() []Suggestion {
+	if o == nil || o.Results == nil {
+		var ret []Suggestion
 		return ret
 	}
-	return o.Data
+	return o.Results
 }
 
-// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// GetResultsOk returns a tuple with the Results field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2009) GetDataOk() ([]SecretStoreResponse, bool) {
-	if o == nil || o.Data == nil {
+func (o *InlineResponse2009) GetResultsOk() ([]Suggestion, bool) {
+	if o == nil || o.Results == nil {
 		return nil, false
 	}
-	return o.Data, true
+	return o.Results, true
 }
 
-// HasData returns a boolean if a field has been set.
-func (o *InlineResponse2009) HasData() bool {
-	if o != nil && o.Data != nil {
+// HasResults returns a boolean if a field has been set.
+func (o *InlineResponse2009) HasResults() bool {
+	if o != nil && o.Results != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given []SecretStoreResponse and assigns it to the Data field.
-func (o *InlineResponse2009) SetData(v []SecretStoreResponse) {
-	o.Data = v
-}
-
-// GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *InlineResponse2009) GetMeta() PaginationCursorMeta {
-	if o == nil || o.Meta == nil {
-		var ret PaginationCursorMeta
-		return ret
-	}
-	return *o.Meta
-}
-
-// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *InlineResponse2009) GetMetaOk() (*PaginationCursorMeta, bool) {
-	if o == nil || o.Meta == nil {
-		return nil, false
-	}
-	return o.Meta, true
-}
-
-// HasMeta returns a boolean if a field has been set.
-func (o *InlineResponse2009) HasMeta() bool {
-	if o != nil && o.Meta != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetMeta gets a reference to the given PaginationCursorMeta and assigns it to the Meta field.
-func (o *InlineResponse2009) SetMeta(v PaginationCursorMeta) {
-	o.Meta = &v
+// SetResults gets a reference to the given []Suggestion and assigns it to the Results field.
+func (o *InlineResponse2009) SetResults(v []Suggestion) {
+	o.Results = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o InlineResponse2009) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
-	}
-	if o.Meta != nil {
-		toSerialize["meta"] = o.Meta
+	if o.Results != nil {
+		toSerialize["results"] = o.Results
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -136,8 +100,7 @@ func (o *InlineResponse2009) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "data")
-		delete(additionalProperties, "meta")
+		delete(additionalProperties, "results")
 		o.AdditionalProperties = additionalProperties
 	}
 

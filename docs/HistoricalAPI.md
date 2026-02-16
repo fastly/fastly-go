@@ -40,12 +40,13 @@ func main() {
     to := "2020-04-09T18:14:30Z" // string | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  (optional) (default to "now")
     by := "day" // string | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  (optional) (default to "day")
     region := "usa" // string | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  (optional)
+    datacenter := "IAD,CHI" // string | Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/).  (optional)
     services := "services_example" // string | Limit the query to only the specified, comma-separated list of services.  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HistoricalAPI.GetHistStats(ctx).From(from).To(to).By(by).Region(region).Services(services).Execute()
+    resp, r, err := apiClient.HistoricalAPI.GetHistStats(ctx).From(from).To(to).By(by).Region(region).Datacenter(datacenter).Services(services).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoricalAPI.GetHistStats`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -66,7 +67,7 @@ Other parameters are passed through a pointer to a apiGetHistStatsRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **from** | **string** | Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as &#39;yesterday&#39;, or &#39;two weeks ago&#39;. Default varies based on the value of `by`.  |  **to** | **string** | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  | [default to &quot;now&quot;] **by** | **string** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [default to &quot;day&quot;] **region** | **string** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  |  **services** | **string** | Limit the query to only the specified, comma-separated list of services.  | 
+ **from** | **string** | Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as &#39;yesterday&#39;, or &#39;two weeks ago&#39;. Default varies based on the value of `by`.  |  **to** | **string** | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  | [default to &quot;now&quot;] **by** | **string** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [default to &quot;day&quot;] **region** | **string** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  |  **datacenter** | **string** | Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/).  |  **services** | **string** | Limit the query to only the specified, comma-separated list of services.  | 
 
 ### Return type
 
@@ -174,11 +175,12 @@ func main() {
     to := "2020-04-09T18:14:30Z" // string | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  (optional) (default to "now")
     by := "day" // string | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  (optional) (default to "day")
     region := "usa" // string | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  (optional)
+    datacenter := "IAD,CHI" // string | Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/).  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HistoricalAPI.GetHistStatsField(ctx, field).From(from).To(to).By(by).Region(region).Execute()
+    resp, r, err := apiClient.HistoricalAPI.GetHistStatsField(ctx, field).From(from).To(to).By(by).Region(region).Datacenter(datacenter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoricalAPI.GetHistStatsField`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -203,7 +205,7 @@ Other parameters are passed through a pointer to a apiGetHistStatsFieldRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **from** | **string** | Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as &#39;yesterday&#39;, or &#39;two weeks ago&#39;. Default varies based on the value of `by`.  |  **to** | **string** | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  | [default to &quot;now&quot;] **by** | **string** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [default to &quot;day&quot;] **region** | **string** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  | 
+ **from** | **string** | Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as &#39;yesterday&#39;, or &#39;two weeks ago&#39;. Default varies based on the value of `by`.  |  **to** | **string** | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  | [default to &quot;now&quot;] **by** | **string** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [default to &quot;day&quot;] **region** | **string** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  |  **datacenter** | **string** | Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/).  | 
 
 ### Return type
 
@@ -245,11 +247,12 @@ func main() {
     to := "2020-04-09T18:14:30Z" // string | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  (optional) (default to "now")
     by := "day" // string | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  (optional) (default to "day")
     region := "usa" // string | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  (optional)
+    datacenter := "IAD,CHI" // string | Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/).  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HistoricalAPI.GetHistStatsService(ctx, serviceId).From(from).To(to).By(by).Region(region).Execute()
+    resp, r, err := apiClient.HistoricalAPI.GetHistStatsService(ctx, serviceId).From(from).To(to).By(by).Region(region).Datacenter(datacenter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoricalAPI.GetHistStatsService`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -274,7 +277,7 @@ Other parameters are passed through a pointer to a apiGetHistStatsServiceRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **from** | **string** | Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as &#39;yesterday&#39;, or &#39;two weeks ago&#39;. Default varies based on the value of `by`.  |  **to** | **string** | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  | [default to &quot;now&quot;] **by** | **string** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [default to &quot;day&quot;] **region** | **string** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  | 
+ **from** | **string** | Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as &#39;yesterday&#39;, or &#39;two weeks ago&#39;. Default varies based on the value of `by`.  |  **to** | **string** | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  | [default to &quot;now&quot;] **by** | **string** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [default to &quot;day&quot;] **region** | **string** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  |  **datacenter** | **string** | Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/).  | 
 
 ### Return type
 
@@ -317,11 +320,12 @@ func main() {
     to := "2020-04-09T18:14:30Z" // string | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  (optional) (default to "now")
     by := "day" // string | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  (optional) (default to "day")
     region := "usa" // string | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  (optional)
+    datacenter := "IAD,CHI" // string | Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/).  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.HistoricalAPI.GetHistStatsServiceField(ctx, serviceId, field).From(from).To(to).By(by).Region(region).Execute()
+    resp, r, err := apiClient.HistoricalAPI.GetHistStatsServiceField(ctx, serviceId, field).From(from).To(to).By(by).Region(region).Datacenter(datacenter).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoricalAPI.GetHistStatsServiceField`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -347,7 +351,7 @@ Other parameters are passed through a pointer to a apiGetHistStatsServiceFieldRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **from** | **string** | Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as &#39;yesterday&#39;, or &#39;two weeks ago&#39;. Default varies based on the value of `by`.  |  **to** | **string** | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  | [default to &quot;now&quot;] **by** | **string** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [default to &quot;day&quot;] **region** | **string** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  | 
+ **from** | **string** | Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as &#39;yesterday&#39;, or &#39;two weeks ago&#39;. Default varies based on the value of `by`.  |  **to** | **string** | Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`.  | [default to &quot;now&quot;] **by** | **string** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [default to &quot;day&quot;] **region** | **string** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `mexico` - Mexico.   * `southamerica_std` - South America.  |  **datacenter** | **string** | Limit query to one or more Fastly POPs. For multiple POPs use a comma-seperated list of POPs. These must be all uppercase and be valid codes. A full list of POPs can be obtained from the [POPs endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/).  | 
 
 ### Return type
 

@@ -71,8 +71,8 @@ type AutomationTokensAPI interface {
 	GetAutomationTokensIdServices(ctx context.Context, id string) APIGetAutomationTokensIdServicesRequest
 
 	// GetAutomationTokensIdServicesExecute executes the request
-	//  @return InlineResponse2001
-	GetAutomationTokensIdServicesExecute(r APIGetAutomationTokensIdServicesRequest) (*InlineResponse2001, *http.Response, error)
+	//  @return InlineResponse2004
+	GetAutomationTokensIdServicesExecute(r APIGetAutomationTokensIdServicesRequest) (*InlineResponse2004, *http.Response, error)
 
 	/*
 		ListAutomationTokens List Customer Automation Tokens
@@ -417,7 +417,7 @@ func (r *APIGetAutomationTokensIdServicesRequest) Page(page int32) *APIGetAutoma
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetAutomationTokensIdServicesRequest) Execute() (*InlineResponse2001, *http.Response, error) {
+func (r APIGetAutomationTokensIdServicesRequest) Execute() (*InlineResponse2004, *http.Response, error) {
 	return r.APIService.GetAutomationTokensIdServicesExecute(r)
 }
 
@@ -439,13 +439,13 @@ func (a *AutomationTokensAPIService) GetAutomationTokensIdServices(ctx context.C
 }
 
 // GetAutomationTokensIdServicesExecute executes the request
-//  @return InlineResponse2001
-func (a *AutomationTokensAPIService) GetAutomationTokensIdServicesExecute(r APIGetAutomationTokensIdServicesRequest) (*InlineResponse2001, *http.Response, error) {
+//  @return InlineResponse2004
+func (a *AutomationTokensAPIService) GetAutomationTokensIdServicesExecute(r APIGetAutomationTokensIdServicesRequest) (*InlineResponse2004, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse2001
+		localVarReturnValue *InlineResponse2004
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.GetAutomationTokensIdServices")

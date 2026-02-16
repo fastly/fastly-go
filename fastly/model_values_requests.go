@@ -19,11 +19,8 @@ import (
 // ValuesRequests struct for ValuesRequests
 type ValuesRequests struct {
 	// The percentage of all requests made to the URL in the current dimension.
-	RequestPercentage    *float32 `json:"request_percentage,omitempty"`
-	AdditionalProperties map[string]any
+	RequestPercentage *float32 `json:"request_percentage,omitempty"`
 }
-
-type _ValuesRequests ValuesRequests
 
 // NewValuesRequests instantiates a new ValuesRequests object
 // This constructor will assign default values to properties that have it defined,
@@ -81,31 +78,7 @@ func (o ValuesRequests) MarshalJSON() ([]byte, error) {
 	if o.RequestPercentage != nil {
 		toSerialize["request_percentage"] = o.RequestPercentage
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ValuesRequests) UnmarshalJSON(bytes []byte) (err error) {
-	varValuesRequests := _ValuesRequests{}
-
-	if err = json.Unmarshal(bytes, &varValuesRequests); err == nil {
-		*o = ValuesRequests(varValuesRequests)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "request_percentage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableValuesRequests is a helper abstraction for handling nullable valuesrequests types.

@@ -23,11 +23,8 @@ type DimensionAttributesCountryStats struct {
 	// The error rate for the country.
 	CountryErrorRate *float32 `json:"country_error_rate,omitempty"`
 	// This country's percentage of the total requests.
-	CountryRequestRate   *float32 `json:"country_request_rate,omitempty"`
-	AdditionalProperties map[string]any
+	CountryRequestRate *float32 `json:"country_request_rate,omitempty"`
 }
-
-type _DimensionAttributesCountryStats DimensionAttributesCountryStats
 
 // NewDimensionAttributesCountryStats instantiates a new DimensionAttributesCountryStats object
 // This constructor will assign default values to properties that have it defined,
@@ -155,33 +152,7 @@ func (o DimensionAttributesCountryStats) MarshalJSON() ([]byte, error) {
 	if o.CountryRequestRate != nil {
 		toSerialize["country_request_rate"] = o.CountryRequestRate
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *DimensionAttributesCountryStats) UnmarshalJSON(bytes []byte) (err error) {
-	varDimensionAttributesCountryStats := _DimensionAttributesCountryStats{}
-
-	if err = json.Unmarshal(bytes, &varDimensionAttributesCountryStats); err == nil {
-		*o = DimensionAttributesCountryStats(varDimensionAttributesCountryStats)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "country_chr")
-		delete(additionalProperties, "country_error_rate")
-		delete(additionalProperties, "country_request_rate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableDimensionAttributesCountryStats is a helper abstraction for handling nullable dimensionattributescountrystats types.

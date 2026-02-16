@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to **[]string** | The service IDs of the services the token will have access to. Separate service IDs with a space. | [optional] 
+**Meta** | Pointer to [**Meta**](Meta.md) |  | [optional] 
+**Data** | Pointer to [**[]DiscoveredOperationGet**](DiscoveredOperationGet.md) | The discovered operations returned by the request. | [optional] 
 
 ## Methods
 
@@ -25,22 +26,47 @@ NewInlineResponse2001WithDefaults instantiates a new InlineResponse2001 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
+### GetMeta
+
+`func (o *InlineResponse2001) GetMeta() Meta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *InlineResponse2001) GetMetaOk() (*Meta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *InlineResponse2001) SetMeta(v Meta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *InlineResponse2001) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
+
 ### GetData
 
-`func (o *InlineResponse2001) GetData() []string`
+`func (o *InlineResponse2001) GetData() []DiscoveredOperationGet`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *InlineResponse2001) GetDataOk() (*[]string, bool)`
+`func (o *InlineResponse2001) GetDataOk() (*[]DiscoveredOperationGet, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *InlineResponse2001) SetData(v []string)`
+`func (o *InlineResponse2001) SetData(v []DiscoveredOperationGet)`
 
 SetData sets Data field to given value.
 

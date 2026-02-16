@@ -18,7 +18,7 @@ import (
 
 // InlineResponse20010 struct for InlineResponse20010
 type InlineResponse20010 struct {
-	Data                 []SecretResponse      `json:"data,omitempty"`
+	Data                 []KvStoreDetails      `json:"data,omitempty"`
 	Meta                 *PaginationCursorMeta `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -43,9 +43,9 @@ func NewInlineResponse20010WithDefaults() *InlineResponse20010 {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse20010) GetData() []SecretResponse {
+func (o *InlineResponse20010) GetData() []KvStoreDetails {
 	if o == nil || o.Data == nil {
-		var ret []SecretResponse
+		var ret []KvStoreDetails
 		return ret
 	}
 	return o.Data
@@ -53,7 +53,7 @@ func (o *InlineResponse20010) GetData() []SecretResponse {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse20010) GetDataOk() ([]SecretResponse, bool) {
+func (o *InlineResponse20010) GetDataOk() ([]KvStoreDetails, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *InlineResponse20010) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []SecretResponse and assigns it to the Data field.
-func (o *InlineResponse20010) SetData(v []SecretResponse) {
+// SetData gets a reference to the given []KvStoreDetails and assigns it to the Data field.
+func (o *InlineResponse20010) SetData(v []KvStoreDetails) {
 	o.Data = v
 }
 

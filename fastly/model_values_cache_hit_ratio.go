@@ -19,11 +19,8 @@ import (
 // ValuesCacheHitRatio struct for ValuesCacheHitRatio
 type ValuesCacheHitRatio struct {
 	// The cache hit ratio for the URL specified in the dimension.
-	CacheHitRatio        *float32 `json:"cache_hit_ratio,omitempty"`
-	AdditionalProperties map[string]any
+	CacheHitRatio *float32 `json:"cache_hit_ratio,omitempty"`
 }
-
-type _ValuesCacheHitRatio ValuesCacheHitRatio
 
 // NewValuesCacheHitRatio instantiates a new ValuesCacheHitRatio object
 // This constructor will assign default values to properties that have it defined,
@@ -81,31 +78,7 @@ func (o ValuesCacheHitRatio) MarshalJSON() ([]byte, error) {
 	if o.CacheHitRatio != nil {
 		toSerialize["cache_hit_ratio"] = o.CacheHitRatio
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ValuesCacheHitRatio) UnmarshalJSON(bytes []byte) (err error) {
-	varValuesCacheHitRatio := _ValuesCacheHitRatio{}
-
-	if err = json.Unmarshal(bytes, &varValuesCacheHitRatio); err == nil {
-		*o = ValuesCacheHitRatio(varValuesCacheHitRatio)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "cache_hit_ratio")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableValuesCacheHitRatio is a helper abstraction for handling nullable valuescachehitratio types.

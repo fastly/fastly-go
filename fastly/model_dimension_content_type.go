@@ -19,11 +19,8 @@ import (
 // DimensionContentType struct for DimensionContentType
 type DimensionContentType struct {
 	// The content type of the response for this dimension.
-	ContentType          *string `json:"content_type,omitempty"`
-	AdditionalProperties map[string]any
+	ContentType *string `json:"content_type,omitempty"`
 }
-
-type _DimensionContentType DimensionContentType
 
 // NewDimensionContentType instantiates a new DimensionContentType object
 // This constructor will assign default values to properties that have it defined,
@@ -81,31 +78,7 @@ func (o DimensionContentType) MarshalJSON() ([]byte, error) {
 	if o.ContentType != nil {
 		toSerialize["content_type"] = o.ContentType
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *DimensionContentType) UnmarshalJSON(bytes []byte) (err error) {
-	varDimensionContentType := _DimensionContentType{}
-
-	if err = json.Unmarshal(bytes, &varDimensionContentType); err == nil {
-		*o = DimensionContentType(varDimensionContentType)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "content_type")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableDimensionContentType is a helper abstraction for handling nullable dimensioncontenttype types.

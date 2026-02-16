@@ -19,11 +19,8 @@ import (
 // DimensionUrl struct for DimensionUrl
 type DimensionUrl struct {
 	// The URL path for this dimension.
-	Url                  *string `json:"url,omitempty"`
-	AdditionalProperties map[string]any
+	Url *string `json:"url,omitempty"`
 }
-
-type _DimensionUrl DimensionUrl
 
 // NewDimensionUrl instantiates a new DimensionUrl object
 // This constructor will assign default values to properties that have it defined,
@@ -81,31 +78,7 @@ func (o DimensionUrl) MarshalJSON() ([]byte, error) {
 	if o.Url != nil {
 		toSerialize["url"] = o.Url
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *DimensionUrl) UnmarshalJSON(bytes []byte) (err error) {
-	varDimensionUrl := _DimensionUrl{}
-
-	if err = json.Unmarshal(bytes, &varDimensionUrl); err == nil {
-		*o = DimensionUrl(varDimensionUrl)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableDimensionUrl is a helper abstraction for handling nullable dimensionurl types.

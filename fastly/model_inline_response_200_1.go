@@ -18,8 +18,9 @@ import (
 
 // InlineResponse2001 struct for InlineResponse2001
 type InlineResponse2001 struct {
-	// The service IDs of the services the token will have access to. Separate service IDs with a space.
-	Data                 []string `json:"data,omitempty"`
+	Meta *Meta `json:"meta,omitempty"`
+	// The discovered operations returned by the request.
+	Data                 []DiscoveredOperationGet `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -42,10 +43,42 @@ func NewInlineResponse2001WithDefaults() *InlineResponse2001 {
 	return &this
 }
 
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *InlineResponse2001) GetMeta() Meta {
+	if o == nil || o.Meta == nil {
+		var ret Meta
+		return ret
+	}
+	return *o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InlineResponse2001) GetMetaOk() (*Meta, bool) {
+	if o == nil || o.Meta == nil {
+		return nil, false
+	}
+	return o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *InlineResponse2001) HasMeta() bool {
+	if o != nil && o.Meta != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given Meta and assigns it to the Meta field.
+func (o *InlineResponse2001) SetMeta(v Meta) {
+	o.Meta = &v
+}
+
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse2001) GetData() []string {
+func (o *InlineResponse2001) GetData() []DiscoveredOperationGet {
 	if o == nil || o.Data == nil {
-		var ret []string
+		var ret []DiscoveredOperationGet
 		return ret
 	}
 	return o.Data
@@ -53,7 +86,7 @@ func (o *InlineResponse2001) GetData() []string {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2001) GetDataOk() ([]string, bool) {
+func (o *InlineResponse2001) GetDataOk() ([]DiscoveredOperationGet, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -69,8 +102,8 @@ func (o *InlineResponse2001) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []string and assigns it to the Data field.
-func (o *InlineResponse2001) SetData(v []string) {
+// SetData gets a reference to the given []DiscoveredOperationGet and assigns it to the Data field.
+func (o *InlineResponse2001) SetData(v []DiscoveredOperationGet) {
 	o.Data = v
 }
 
@@ -78,6 +111,9 @@ func (o *InlineResponse2001) SetData(v []string) {
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o InlineResponse2001) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
+	if o.Meta != nil {
+		toSerialize["meta"] = o.Meta
+	}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
@@ -101,6 +137,7 @@ func (o *InlineResponse2001) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		delete(additionalProperties, "meta")
 		delete(additionalProperties, "data")
 		o.AdditionalProperties = additionalProperties
 	}

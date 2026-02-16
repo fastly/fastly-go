@@ -21,11 +21,8 @@ type ValuesBandwidth struct {
 	// The average bandwidth in bytes for responses to requests to the URL in the current dimension.
 	AverageBandwidthBytes *float32 `json:"average_bandwidth_bytes,omitempty"`
 	// The total bandwidth percentage for all responses to requests to the URL in the current dimension.
-	BandwidthPercentage  *float32 `json:"bandwidth_percentage,omitempty"`
-	AdditionalProperties map[string]any
+	BandwidthPercentage *float32 `json:"bandwidth_percentage,omitempty"`
 }
-
-type _ValuesBandwidth ValuesBandwidth
 
 // NewValuesBandwidth instantiates a new ValuesBandwidth object
 // This constructor will assign default values to properties that have it defined,
@@ -118,32 +115,7 @@ func (o ValuesBandwidth) MarshalJSON() ([]byte, error) {
 	if o.BandwidthPercentage != nil {
 		toSerialize["bandwidth_percentage"] = o.BandwidthPercentage
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ValuesBandwidth) UnmarshalJSON(bytes []byte) (err error) {
-	varValuesBandwidth := _ValuesBandwidth{}
-
-	if err = json.Unmarshal(bytes, &varValuesBandwidth); err == nil {
-		*o = ValuesBandwidth(varValuesBandwidth)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "average_bandwidth_bytes")
-		delete(additionalProperties, "bandwidth_percentage")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableValuesBandwidth is a helper abstraction for handling nullable valuesbandwidth types.

@@ -145,7 +145,133 @@ type DomainInspectorMeasurements struct {
 	// Number of \"Client Error\" codes received from origin.
 	OriginStatus4xx *int64 `json:"origin_status_4xx,omitempty"`
 	// Number of \"Server Error\" codes received from origin.
-	OriginStatus5xx      *int64 `json:"origin_status_5xx,omitempty"`
+	OriginStatus5xx *int64 `json:"origin_status_5xx,omitempty"`
+	// Total body bytes sent to backends (origins) by the Compute platform.
+	ComputeBereqBodyBytes *int64 `json:"compute_bereq_body_bytes,omitempty"`
+	// Number of backend request errors, including timeouts, by the Compute platform.
+	ComputeBereqErrors *int64 `json:"compute_bereq_errors,omitempty"`
+	// Total header bytes sent to backends (origins) by the Compute platform.
+	ComputeBereqHeaderBytes *int64 `json:"compute_bereq_header_bytes,omitempty"`
+	// Number of backend requests started by the Compute platform.
+	ComputeBereqs *int64 `json:"compute_bereqs,omitempty"`
+	// Total body bytes received from backends (origins) by the Compute platform.
+	ComputeBerespBodyBytes *int64 `json:"compute_beresp_body_bytes,omitempty"`
+	// Total header bytes received from backends (origins) by the Compute platform.
+	ComputeBerespHeaderBytes *int64 `json:"compute_beresp_header_bytes,omitempty"`
+	// The amount of active CPU time used to process your requests (in milliseconds).
+	ComputeExecutionTimeMs *int64 `json:"compute_execution_time_ms,omitempty"`
+	// Number of \"Informational\" category status codes received from origin by the Compute platform.
+	ComputeOriginStatus1xx *int64 `json:"compute_origin_status_1xx,omitempty"`
+	// Number of responses received from origin with status code 200 (Success) by the Compute platform.
+	ComputeOriginStatus200 *int64 `json:"compute_origin_status_200,omitempty"`
+	// Number of responses received from origin with status code 204 (No Content) by the Compute platform.
+	ComputeOriginStatus204 *int64 `json:"compute_origin_status_204,omitempty"`
+	// Number of responses received from origin with status code 206 (Partial Content) by the Compute platform.
+	ComputeOriginStatus206 *int64 `json:"compute_origin_status_206,omitempty"`
+	// Number of \"Success\" status codes received from origin by the Compute platform.
+	ComputeOriginStatus2xx *int64 `json:"compute_origin_status_2xx,omitempty"`
+	// Number of responses received from origin with status code 301 (Moved Permanently) by the Compute platform.
+	ComputeOriginStatus301 *int64 `json:"compute_origin_status_301,omitempty"`
+	// Number of responses received from origin with status code 302 (Found) by the Compute platform.
+	ComputeOriginStatus302 *int64 `json:"compute_origin_status_302,omitempty"`
+	// Number of responses received from origin with status code 304 (Not Modified) by the Compute platform.
+	ComputeOriginStatus304 *int64 `json:"compute_origin_status_304,omitempty"`
+	// Number of \"Redirection\" codes received from origin by the Compute platform.
+	ComputeOriginStatus3xx *int64 `json:"compute_origin_status_3xx,omitempty"`
+	// Number of responses received from origin with status code 400 (Bad Request) by the Compute platform.
+	ComputeOriginStatus400 *int64 `json:"compute_origin_status_400,omitempty"`
+	// Number of responses received from origin with status code 401 (Unauthorized) by the Compute platform.
+	ComputeOriginStatus401 *int64 `json:"compute_origin_status_401,omitempty"`
+	// Number of responses received from origin with status code 403 (Forbidden) by the Compute platform.
+	ComputeOriginStatus403 *int64 `json:"compute_origin_status_403,omitempty"`
+	// Number of responses received from origin with status code 404 (Not Found) by the Compute platform.
+	ComputeOriginStatus404 *int64 `json:"compute_origin_status_404,omitempty"`
+	// Number of responses received from origin with status code 416 (Range Not Satisfiable) by the Compute platform.
+	ComputeOriginStatus416 *int64 `json:"compute_origin_status_416,omitempty"`
+	// Number of responses received from origin with status code 429 (Too Many Requests) by the Compute platform.
+	ComputeOriginStatus429 *int64 `json:"compute_origin_status_429,omitempty"`
+	// Number of \"Client Error\" codes received from origin by the Compute platform.
+	ComputeOriginStatus4xx *int64 `json:"compute_origin_status_4xx,omitempty"`
+	// Number of responses received from origin with status code 500 (Internal Server Error) by the Compute platform.
+	ComputeOriginStatus500 *int64 `json:"compute_origin_status_500,omitempty"`
+	// Number of responses received from origin with status code 501 (Not Implemented) by the Compute platform.
+	ComputeOriginStatus501 *int64 `json:"compute_origin_status_501,omitempty"`
+	// Number of responses received from origin with status code 502 (Bad Gateway) by the Compute platform.
+	ComputeOriginStatus502 *int64 `json:"compute_origin_status_502,omitempty"`
+	// Number of responses received from origin with status code 503 (Service Unavailable) by the Compute platform.
+	ComputeOriginStatus503 *int64 `json:"compute_origin_status_503,omitempty"`
+	// Number of responses received from origin with status code 504 (Gateway Timeout) by the Compute platform.
+	ComputeOriginStatus504 *int64 `json:"compute_origin_status_504,omitempty"`
+	// Number of responses received from origin with status code 505 (HTTP Version Not Supported) by the Compute platform.
+	ComputeOriginStatus505 *int64 `json:"compute_origin_status_505,omitempty"`
+	// Number of responses received from origin with status code 530 by the Compute platform.
+	ComputeOriginStatus530 *int64 `json:"compute_origin_status_530,omitempty"`
+	// Number of \"Server Error\" codes received from origin by the Compute platform.
+	ComputeOriginStatus5xx *int64 `json:"compute_origin_status_5xx,omitempty"`
+	// Total body bytes received by the Compute platform.
+	ComputeReqBodyBytes *int64 `json:"compute_req_body_bytes,omitempty"`
+	// Total header bytes received by the Compute platform.
+	ComputeReqHeaderBytes *int64 `json:"compute_req_header_bytes,omitempty"`
+	// The total amount of request processing time you will be billed for, measured in 50 millisecond increments.
+	ComputeRequestTimeBilledMs *int64 `json:"compute_request_time_billed_ms,omitempty"`
+	// The total amount of time used to process your requests, including active CPU time (in milliseconds).
+	ComputeRequestTimeMs *int64 `json:"compute_request_time_ms,omitempty"`
+	// The total number of requests that were received by the Compute platform.
+	ComputeRequest *int64 `json:"compute_request,omitempty"`
+	// Total body bytes sent from Compute to the end user.
+	ComputeRespBodyBytes *int64 `json:"compute_resp_body_bytes,omitempty"`
+	// Total header bytes sent from Compute to the end user.
+	ComputeRespHeaderBytes *int64 `json:"compute_resp_header_bytes,omitempty"`
+	// Number of responses delivered with status code 103 (Early Hints) by the Compute platform.
+	ComputeRespStatus103 *int64 `json:"compute_resp_status_103,omitempty"`
+	// Number of 1xx \"Informational\" category status codes delivered by the Compute platform.
+	ComputeRespStatus1xx *int64 `json:"compute_resp_status_1xx,omitempty"`
+	// Number of responses delivered with status code 200 (Success) by the Compute platform.
+	ComputeRespStatus200 *int64 `json:"compute_resp_status_200,omitempty"`
+	// Number of responses delivered with status code 204 (No Content) by the Compute platform.
+	ComputeRespStatus204 *int64 `json:"compute_resp_status_204,omitempty"`
+	// Number of responses delivered with status code 206 (Partial Content) by the Compute platform.
+	ComputeRespStatus206 *int64 `json:"compute_resp_status_206,omitempty"`
+	// Number of 2xx \"Success\" status codes delivered by the Compute platform.
+	ComputeRespStatus2xx *int64 `json:"compute_resp_status_2xx,omitempty"`
+	// Number of responses delivered with status code 301 (Moved Permanently) by the Compute platform.
+	ComputeRespStatus301 *int64 `json:"compute_resp_status_301,omitempty"`
+	// Number of responses delivered with status code 302 (Found) by the Compute platform.
+	ComputeRespStatus302 *int64 `json:"compute_resp_status_302,omitempty"`
+	// Number of responses delivered with status code 304 (Not Modified) by the Compute platform.
+	ComputeRespStatus304 *int64 `json:"compute_resp_status_304,omitempty"`
+	// Number of 3xx \"Redirection\" codes delivered by the Compute platform.
+	ComputeRespStatus3xx *int64 `json:"compute_resp_status_3xx,omitempty"`
+	// Number of responses delivered with status code 400 (Bad Request) by the Compute platform.
+	ComputeRespStatus400 *int64 `json:"compute_resp_status_400,omitempty"`
+	// Number of responses delivered with status code 401 (Unauthorized) by the Compute platform.
+	ComputeRespStatus401 *int64 `json:"compute_resp_status_401,omitempty"`
+	// Number of responses delivered with status code 403 (Forbidden) by the Compute platform.
+	ComputeRespStatus403 *int64 `json:"compute_resp_status_403,omitempty"`
+	// Number of responses delivered with status code 404 (Not Found) by the Compute platform.
+	ComputeRespStatus404 *int64 `json:"compute_resp_status_404,omitempty"`
+	// Number of responses delivered with status code 416 (Range Not Satisfiable) by the Compute platform.
+	ComputeRespStatus416 *int64 `json:"compute_resp_status_416,omitempty"`
+	// Number of responses delivered with status code 429 (Too Many Requests) by the Compute platform.
+	ComputeRespStatus429 *int64 `json:"compute_resp_status_429,omitempty"`
+	// Number of 4xx \"Client Error\" codes delivered by the Compute platform.
+	ComputeRespStatus4xx *int64 `json:"compute_resp_status_4xx,omitempty"`
+	// Number of responses delivered with status code 500 (Internal Server Error) by the Compute platform.
+	ComputeRespStatus500 *int64 `json:"compute_resp_status_500,omitempty"`
+	// Number of responses delivered with status code 501 (Not Implemented) by the Compute platform.
+	ComputeRespStatus501 *int64 `json:"compute_resp_status_501,omitempty"`
+	// Number of responses delivered with status code 502 (Bad Gateway) by the Compute platform.
+	ComputeRespStatus502 *int64 `json:"compute_resp_status_502,omitempty"`
+	// Number of responses delivered with status code 503 (Service Unavailable) by the Compute platform.
+	ComputeRespStatus503 *int64 `json:"compute_resp_status_503,omitempty"`
+	// Number of responses delivered with status code 504 (Gateway Timeout) by the Compute platform.
+	ComputeRespStatus504 *int64 `json:"compute_resp_status_504,omitempty"`
+	// Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform.
+	ComputeRespStatus505 *int64 `json:"compute_resp_status_505,omitempty"`
+	// Number of responses delivered with status code 530 by the Compute platform.
+	ComputeRespStatus530 *int64 `json:"compute_resp_status_530,omitempty"`
+	// Number of \"Server Error\" category status codes delivered by the Compute platform.
+	ComputeRespStatus5xx *int64 `json:"compute_resp_status_5xx,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -2216,6 +2342,2022 @@ func (o *DomainInspectorMeasurements) SetOriginStatus5xx(v int64) {
 	o.OriginStatus5xx = &v
 }
 
+// GetComputeBereqBodyBytes returns the ComputeBereqBodyBytes field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeBereqBodyBytes() int64 {
+	if o == nil || o.ComputeBereqBodyBytes == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeBereqBodyBytes
+}
+
+// GetComputeBereqBodyBytesOk returns a tuple with the ComputeBereqBodyBytes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeBereqBodyBytesOk() (*int64, bool) {
+	if o == nil || o.ComputeBereqBodyBytes == nil {
+		return nil, false
+	}
+	return o.ComputeBereqBodyBytes, true
+}
+
+// HasComputeBereqBodyBytes returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeBereqBodyBytes() bool {
+	if o != nil && o.ComputeBereqBodyBytes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeBereqBodyBytes gets a reference to the given int64 and assigns it to the ComputeBereqBodyBytes field.
+func (o *DomainInspectorMeasurements) SetComputeBereqBodyBytes(v int64) {
+	o.ComputeBereqBodyBytes = &v
+}
+
+// GetComputeBereqErrors returns the ComputeBereqErrors field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeBereqErrors() int64 {
+	if o == nil || o.ComputeBereqErrors == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeBereqErrors
+}
+
+// GetComputeBereqErrorsOk returns a tuple with the ComputeBereqErrors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeBereqErrorsOk() (*int64, bool) {
+	if o == nil || o.ComputeBereqErrors == nil {
+		return nil, false
+	}
+	return o.ComputeBereqErrors, true
+}
+
+// HasComputeBereqErrors returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeBereqErrors() bool {
+	if o != nil && o.ComputeBereqErrors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeBereqErrors gets a reference to the given int64 and assigns it to the ComputeBereqErrors field.
+func (o *DomainInspectorMeasurements) SetComputeBereqErrors(v int64) {
+	o.ComputeBereqErrors = &v
+}
+
+// GetComputeBereqHeaderBytes returns the ComputeBereqHeaderBytes field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeBereqHeaderBytes() int64 {
+	if o == nil || o.ComputeBereqHeaderBytes == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeBereqHeaderBytes
+}
+
+// GetComputeBereqHeaderBytesOk returns a tuple with the ComputeBereqHeaderBytes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeBereqHeaderBytesOk() (*int64, bool) {
+	if o == nil || o.ComputeBereqHeaderBytes == nil {
+		return nil, false
+	}
+	return o.ComputeBereqHeaderBytes, true
+}
+
+// HasComputeBereqHeaderBytes returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeBereqHeaderBytes() bool {
+	if o != nil && o.ComputeBereqHeaderBytes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeBereqHeaderBytes gets a reference to the given int64 and assigns it to the ComputeBereqHeaderBytes field.
+func (o *DomainInspectorMeasurements) SetComputeBereqHeaderBytes(v int64) {
+	o.ComputeBereqHeaderBytes = &v
+}
+
+// GetComputeBereqs returns the ComputeBereqs field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeBereqs() int64 {
+	if o == nil || o.ComputeBereqs == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeBereqs
+}
+
+// GetComputeBereqsOk returns a tuple with the ComputeBereqs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeBereqsOk() (*int64, bool) {
+	if o == nil || o.ComputeBereqs == nil {
+		return nil, false
+	}
+	return o.ComputeBereqs, true
+}
+
+// HasComputeBereqs returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeBereqs() bool {
+	if o != nil && o.ComputeBereqs != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeBereqs gets a reference to the given int64 and assigns it to the ComputeBereqs field.
+func (o *DomainInspectorMeasurements) SetComputeBereqs(v int64) {
+	o.ComputeBereqs = &v
+}
+
+// GetComputeBerespBodyBytes returns the ComputeBerespBodyBytes field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeBerespBodyBytes() int64 {
+	if o == nil || o.ComputeBerespBodyBytes == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeBerespBodyBytes
+}
+
+// GetComputeBerespBodyBytesOk returns a tuple with the ComputeBerespBodyBytes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeBerespBodyBytesOk() (*int64, bool) {
+	if o == nil || o.ComputeBerespBodyBytes == nil {
+		return nil, false
+	}
+	return o.ComputeBerespBodyBytes, true
+}
+
+// HasComputeBerespBodyBytes returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeBerespBodyBytes() bool {
+	if o != nil && o.ComputeBerespBodyBytes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeBerespBodyBytes gets a reference to the given int64 and assigns it to the ComputeBerespBodyBytes field.
+func (o *DomainInspectorMeasurements) SetComputeBerespBodyBytes(v int64) {
+	o.ComputeBerespBodyBytes = &v
+}
+
+// GetComputeBerespHeaderBytes returns the ComputeBerespHeaderBytes field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeBerespHeaderBytes() int64 {
+	if o == nil || o.ComputeBerespHeaderBytes == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeBerespHeaderBytes
+}
+
+// GetComputeBerespHeaderBytesOk returns a tuple with the ComputeBerespHeaderBytes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeBerespHeaderBytesOk() (*int64, bool) {
+	if o == nil || o.ComputeBerespHeaderBytes == nil {
+		return nil, false
+	}
+	return o.ComputeBerespHeaderBytes, true
+}
+
+// HasComputeBerespHeaderBytes returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeBerespHeaderBytes() bool {
+	if o != nil && o.ComputeBerespHeaderBytes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeBerespHeaderBytes gets a reference to the given int64 and assigns it to the ComputeBerespHeaderBytes field.
+func (o *DomainInspectorMeasurements) SetComputeBerespHeaderBytes(v int64) {
+	o.ComputeBerespHeaderBytes = &v
+}
+
+// GetComputeExecutionTimeMs returns the ComputeExecutionTimeMs field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeExecutionTimeMs() int64 {
+	if o == nil || o.ComputeExecutionTimeMs == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeExecutionTimeMs
+}
+
+// GetComputeExecutionTimeMsOk returns a tuple with the ComputeExecutionTimeMs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeExecutionTimeMsOk() (*int64, bool) {
+	if o == nil || o.ComputeExecutionTimeMs == nil {
+		return nil, false
+	}
+	return o.ComputeExecutionTimeMs, true
+}
+
+// HasComputeExecutionTimeMs returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeExecutionTimeMs() bool {
+	if o != nil && o.ComputeExecutionTimeMs != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeExecutionTimeMs gets a reference to the given int64 and assigns it to the ComputeExecutionTimeMs field.
+func (o *DomainInspectorMeasurements) SetComputeExecutionTimeMs(v int64) {
+	o.ComputeExecutionTimeMs = &v
+}
+
+// GetComputeOriginStatus1xx returns the ComputeOriginStatus1xx field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus1xx() int64 {
+	if o == nil || o.ComputeOriginStatus1xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus1xx
+}
+
+// GetComputeOriginStatus1xxOk returns a tuple with the ComputeOriginStatus1xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus1xxOk() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus1xx == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus1xx, true
+}
+
+// HasComputeOriginStatus1xx returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus1xx() bool {
+	if o != nil && o.ComputeOriginStatus1xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus1xx gets a reference to the given int64 and assigns it to the ComputeOriginStatus1xx field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus1xx(v int64) {
+	o.ComputeOriginStatus1xx = &v
+}
+
+// GetComputeOriginStatus200 returns the ComputeOriginStatus200 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus200() int64 {
+	if o == nil || o.ComputeOriginStatus200 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus200
+}
+
+// GetComputeOriginStatus200Ok returns a tuple with the ComputeOriginStatus200 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus200Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus200 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus200, true
+}
+
+// HasComputeOriginStatus200 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus200() bool {
+	if o != nil && o.ComputeOriginStatus200 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus200 gets a reference to the given int64 and assigns it to the ComputeOriginStatus200 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus200(v int64) {
+	o.ComputeOriginStatus200 = &v
+}
+
+// GetComputeOriginStatus204 returns the ComputeOriginStatus204 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus204() int64 {
+	if o == nil || o.ComputeOriginStatus204 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus204
+}
+
+// GetComputeOriginStatus204Ok returns a tuple with the ComputeOriginStatus204 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus204Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus204 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus204, true
+}
+
+// HasComputeOriginStatus204 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus204() bool {
+	if o != nil && o.ComputeOriginStatus204 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus204 gets a reference to the given int64 and assigns it to the ComputeOriginStatus204 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus204(v int64) {
+	o.ComputeOriginStatus204 = &v
+}
+
+// GetComputeOriginStatus206 returns the ComputeOriginStatus206 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus206() int64 {
+	if o == nil || o.ComputeOriginStatus206 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus206
+}
+
+// GetComputeOriginStatus206Ok returns a tuple with the ComputeOriginStatus206 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus206Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus206 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus206, true
+}
+
+// HasComputeOriginStatus206 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus206() bool {
+	if o != nil && o.ComputeOriginStatus206 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus206 gets a reference to the given int64 and assigns it to the ComputeOriginStatus206 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus206(v int64) {
+	o.ComputeOriginStatus206 = &v
+}
+
+// GetComputeOriginStatus2xx returns the ComputeOriginStatus2xx field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus2xx() int64 {
+	if o == nil || o.ComputeOriginStatus2xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus2xx
+}
+
+// GetComputeOriginStatus2xxOk returns a tuple with the ComputeOriginStatus2xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus2xxOk() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus2xx == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus2xx, true
+}
+
+// HasComputeOriginStatus2xx returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus2xx() bool {
+	if o != nil && o.ComputeOriginStatus2xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus2xx gets a reference to the given int64 and assigns it to the ComputeOriginStatus2xx field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus2xx(v int64) {
+	o.ComputeOriginStatus2xx = &v
+}
+
+// GetComputeOriginStatus301 returns the ComputeOriginStatus301 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus301() int64 {
+	if o == nil || o.ComputeOriginStatus301 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus301
+}
+
+// GetComputeOriginStatus301Ok returns a tuple with the ComputeOriginStatus301 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus301Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus301 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus301, true
+}
+
+// HasComputeOriginStatus301 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus301() bool {
+	if o != nil && o.ComputeOriginStatus301 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus301 gets a reference to the given int64 and assigns it to the ComputeOriginStatus301 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus301(v int64) {
+	o.ComputeOriginStatus301 = &v
+}
+
+// GetComputeOriginStatus302 returns the ComputeOriginStatus302 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus302() int64 {
+	if o == nil || o.ComputeOriginStatus302 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus302
+}
+
+// GetComputeOriginStatus302Ok returns a tuple with the ComputeOriginStatus302 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus302Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus302 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus302, true
+}
+
+// HasComputeOriginStatus302 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus302() bool {
+	if o != nil && o.ComputeOriginStatus302 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus302 gets a reference to the given int64 and assigns it to the ComputeOriginStatus302 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus302(v int64) {
+	o.ComputeOriginStatus302 = &v
+}
+
+// GetComputeOriginStatus304 returns the ComputeOriginStatus304 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus304() int64 {
+	if o == nil || o.ComputeOriginStatus304 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus304
+}
+
+// GetComputeOriginStatus304Ok returns a tuple with the ComputeOriginStatus304 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus304Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus304 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus304, true
+}
+
+// HasComputeOriginStatus304 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus304() bool {
+	if o != nil && o.ComputeOriginStatus304 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus304 gets a reference to the given int64 and assigns it to the ComputeOriginStatus304 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus304(v int64) {
+	o.ComputeOriginStatus304 = &v
+}
+
+// GetComputeOriginStatus3xx returns the ComputeOriginStatus3xx field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus3xx() int64 {
+	if o == nil || o.ComputeOriginStatus3xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus3xx
+}
+
+// GetComputeOriginStatus3xxOk returns a tuple with the ComputeOriginStatus3xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus3xxOk() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus3xx == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus3xx, true
+}
+
+// HasComputeOriginStatus3xx returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus3xx() bool {
+	if o != nil && o.ComputeOriginStatus3xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus3xx gets a reference to the given int64 and assigns it to the ComputeOriginStatus3xx field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus3xx(v int64) {
+	o.ComputeOriginStatus3xx = &v
+}
+
+// GetComputeOriginStatus400 returns the ComputeOriginStatus400 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus400() int64 {
+	if o == nil || o.ComputeOriginStatus400 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus400
+}
+
+// GetComputeOriginStatus400Ok returns a tuple with the ComputeOriginStatus400 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus400Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus400 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus400, true
+}
+
+// HasComputeOriginStatus400 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus400() bool {
+	if o != nil && o.ComputeOriginStatus400 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus400 gets a reference to the given int64 and assigns it to the ComputeOriginStatus400 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus400(v int64) {
+	o.ComputeOriginStatus400 = &v
+}
+
+// GetComputeOriginStatus401 returns the ComputeOriginStatus401 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus401() int64 {
+	if o == nil || o.ComputeOriginStatus401 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus401
+}
+
+// GetComputeOriginStatus401Ok returns a tuple with the ComputeOriginStatus401 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus401Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus401 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus401, true
+}
+
+// HasComputeOriginStatus401 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus401() bool {
+	if o != nil && o.ComputeOriginStatus401 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus401 gets a reference to the given int64 and assigns it to the ComputeOriginStatus401 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus401(v int64) {
+	o.ComputeOriginStatus401 = &v
+}
+
+// GetComputeOriginStatus403 returns the ComputeOriginStatus403 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus403() int64 {
+	if o == nil || o.ComputeOriginStatus403 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus403
+}
+
+// GetComputeOriginStatus403Ok returns a tuple with the ComputeOriginStatus403 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus403Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus403 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus403, true
+}
+
+// HasComputeOriginStatus403 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus403() bool {
+	if o != nil && o.ComputeOriginStatus403 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus403 gets a reference to the given int64 and assigns it to the ComputeOriginStatus403 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus403(v int64) {
+	o.ComputeOriginStatus403 = &v
+}
+
+// GetComputeOriginStatus404 returns the ComputeOriginStatus404 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus404() int64 {
+	if o == nil || o.ComputeOriginStatus404 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus404
+}
+
+// GetComputeOriginStatus404Ok returns a tuple with the ComputeOriginStatus404 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus404Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus404 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus404, true
+}
+
+// HasComputeOriginStatus404 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus404() bool {
+	if o != nil && o.ComputeOriginStatus404 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus404 gets a reference to the given int64 and assigns it to the ComputeOriginStatus404 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus404(v int64) {
+	o.ComputeOriginStatus404 = &v
+}
+
+// GetComputeOriginStatus416 returns the ComputeOriginStatus416 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus416() int64 {
+	if o == nil || o.ComputeOriginStatus416 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus416
+}
+
+// GetComputeOriginStatus416Ok returns a tuple with the ComputeOriginStatus416 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus416Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus416 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus416, true
+}
+
+// HasComputeOriginStatus416 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus416() bool {
+	if o != nil && o.ComputeOriginStatus416 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus416 gets a reference to the given int64 and assigns it to the ComputeOriginStatus416 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus416(v int64) {
+	o.ComputeOriginStatus416 = &v
+}
+
+// GetComputeOriginStatus429 returns the ComputeOriginStatus429 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus429() int64 {
+	if o == nil || o.ComputeOriginStatus429 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus429
+}
+
+// GetComputeOriginStatus429Ok returns a tuple with the ComputeOriginStatus429 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus429Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus429 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus429, true
+}
+
+// HasComputeOriginStatus429 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus429() bool {
+	if o != nil && o.ComputeOriginStatus429 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus429 gets a reference to the given int64 and assigns it to the ComputeOriginStatus429 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus429(v int64) {
+	o.ComputeOriginStatus429 = &v
+}
+
+// GetComputeOriginStatus4xx returns the ComputeOriginStatus4xx field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus4xx() int64 {
+	if o == nil || o.ComputeOriginStatus4xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus4xx
+}
+
+// GetComputeOriginStatus4xxOk returns a tuple with the ComputeOriginStatus4xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus4xxOk() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus4xx == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus4xx, true
+}
+
+// HasComputeOriginStatus4xx returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus4xx() bool {
+	if o != nil && o.ComputeOriginStatus4xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus4xx gets a reference to the given int64 and assigns it to the ComputeOriginStatus4xx field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus4xx(v int64) {
+	o.ComputeOriginStatus4xx = &v
+}
+
+// GetComputeOriginStatus500 returns the ComputeOriginStatus500 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus500() int64 {
+	if o == nil || o.ComputeOriginStatus500 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus500
+}
+
+// GetComputeOriginStatus500Ok returns a tuple with the ComputeOriginStatus500 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus500Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus500 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus500, true
+}
+
+// HasComputeOriginStatus500 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus500() bool {
+	if o != nil && o.ComputeOriginStatus500 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus500 gets a reference to the given int64 and assigns it to the ComputeOriginStatus500 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus500(v int64) {
+	o.ComputeOriginStatus500 = &v
+}
+
+// GetComputeOriginStatus501 returns the ComputeOriginStatus501 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus501() int64 {
+	if o == nil || o.ComputeOriginStatus501 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus501
+}
+
+// GetComputeOriginStatus501Ok returns a tuple with the ComputeOriginStatus501 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus501Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus501 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus501, true
+}
+
+// HasComputeOriginStatus501 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus501() bool {
+	if o != nil && o.ComputeOriginStatus501 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus501 gets a reference to the given int64 and assigns it to the ComputeOriginStatus501 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus501(v int64) {
+	o.ComputeOriginStatus501 = &v
+}
+
+// GetComputeOriginStatus502 returns the ComputeOriginStatus502 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus502() int64 {
+	if o == nil || o.ComputeOriginStatus502 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus502
+}
+
+// GetComputeOriginStatus502Ok returns a tuple with the ComputeOriginStatus502 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus502Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus502 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus502, true
+}
+
+// HasComputeOriginStatus502 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus502() bool {
+	if o != nil && o.ComputeOriginStatus502 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus502 gets a reference to the given int64 and assigns it to the ComputeOriginStatus502 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus502(v int64) {
+	o.ComputeOriginStatus502 = &v
+}
+
+// GetComputeOriginStatus503 returns the ComputeOriginStatus503 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus503() int64 {
+	if o == nil || o.ComputeOriginStatus503 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus503
+}
+
+// GetComputeOriginStatus503Ok returns a tuple with the ComputeOriginStatus503 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus503Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus503 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus503, true
+}
+
+// HasComputeOriginStatus503 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus503() bool {
+	if o != nil && o.ComputeOriginStatus503 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus503 gets a reference to the given int64 and assigns it to the ComputeOriginStatus503 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus503(v int64) {
+	o.ComputeOriginStatus503 = &v
+}
+
+// GetComputeOriginStatus504 returns the ComputeOriginStatus504 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus504() int64 {
+	if o == nil || o.ComputeOriginStatus504 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus504
+}
+
+// GetComputeOriginStatus504Ok returns a tuple with the ComputeOriginStatus504 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus504Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus504 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus504, true
+}
+
+// HasComputeOriginStatus504 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus504() bool {
+	if o != nil && o.ComputeOriginStatus504 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus504 gets a reference to the given int64 and assigns it to the ComputeOriginStatus504 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus504(v int64) {
+	o.ComputeOriginStatus504 = &v
+}
+
+// GetComputeOriginStatus505 returns the ComputeOriginStatus505 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus505() int64 {
+	if o == nil || o.ComputeOriginStatus505 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus505
+}
+
+// GetComputeOriginStatus505Ok returns a tuple with the ComputeOriginStatus505 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus505Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus505 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus505, true
+}
+
+// HasComputeOriginStatus505 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus505() bool {
+	if o != nil && o.ComputeOriginStatus505 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus505 gets a reference to the given int64 and assigns it to the ComputeOriginStatus505 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus505(v int64) {
+	o.ComputeOriginStatus505 = &v
+}
+
+// GetComputeOriginStatus530 returns the ComputeOriginStatus530 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus530() int64 {
+	if o == nil || o.ComputeOriginStatus530 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus530
+}
+
+// GetComputeOriginStatus530Ok returns a tuple with the ComputeOriginStatus530 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus530Ok() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus530 == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus530, true
+}
+
+// HasComputeOriginStatus530 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus530() bool {
+	if o != nil && o.ComputeOriginStatus530 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus530 gets a reference to the given int64 and assigns it to the ComputeOriginStatus530 field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus530(v int64) {
+	o.ComputeOriginStatus530 = &v
+}
+
+// GetComputeOriginStatus5xx returns the ComputeOriginStatus5xx field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus5xx() int64 {
+	if o == nil || o.ComputeOriginStatus5xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeOriginStatus5xx
+}
+
+// GetComputeOriginStatus5xxOk returns a tuple with the ComputeOriginStatus5xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeOriginStatus5xxOk() (*int64, bool) {
+	if o == nil || o.ComputeOriginStatus5xx == nil {
+		return nil, false
+	}
+	return o.ComputeOriginStatus5xx, true
+}
+
+// HasComputeOriginStatus5xx returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeOriginStatus5xx() bool {
+	if o != nil && o.ComputeOriginStatus5xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeOriginStatus5xx gets a reference to the given int64 and assigns it to the ComputeOriginStatus5xx field.
+func (o *DomainInspectorMeasurements) SetComputeOriginStatus5xx(v int64) {
+	o.ComputeOriginStatus5xx = &v
+}
+
+// GetComputeReqBodyBytes returns the ComputeReqBodyBytes field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeReqBodyBytes() int64 {
+	if o == nil || o.ComputeReqBodyBytes == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeReqBodyBytes
+}
+
+// GetComputeReqBodyBytesOk returns a tuple with the ComputeReqBodyBytes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeReqBodyBytesOk() (*int64, bool) {
+	if o == nil || o.ComputeReqBodyBytes == nil {
+		return nil, false
+	}
+	return o.ComputeReqBodyBytes, true
+}
+
+// HasComputeReqBodyBytes returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeReqBodyBytes() bool {
+	if o != nil && o.ComputeReqBodyBytes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeReqBodyBytes gets a reference to the given int64 and assigns it to the ComputeReqBodyBytes field.
+func (o *DomainInspectorMeasurements) SetComputeReqBodyBytes(v int64) {
+	o.ComputeReqBodyBytes = &v
+}
+
+// GetComputeReqHeaderBytes returns the ComputeReqHeaderBytes field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeReqHeaderBytes() int64 {
+	if o == nil || o.ComputeReqHeaderBytes == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeReqHeaderBytes
+}
+
+// GetComputeReqHeaderBytesOk returns a tuple with the ComputeReqHeaderBytes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeReqHeaderBytesOk() (*int64, bool) {
+	if o == nil || o.ComputeReqHeaderBytes == nil {
+		return nil, false
+	}
+	return o.ComputeReqHeaderBytes, true
+}
+
+// HasComputeReqHeaderBytes returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeReqHeaderBytes() bool {
+	if o != nil && o.ComputeReqHeaderBytes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeReqHeaderBytes gets a reference to the given int64 and assigns it to the ComputeReqHeaderBytes field.
+func (o *DomainInspectorMeasurements) SetComputeReqHeaderBytes(v int64) {
+	o.ComputeReqHeaderBytes = &v
+}
+
+// GetComputeRequestTimeBilledMs returns the ComputeRequestTimeBilledMs field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRequestTimeBilledMs() int64 {
+	if o == nil || o.ComputeRequestTimeBilledMs == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRequestTimeBilledMs
+}
+
+// GetComputeRequestTimeBilledMsOk returns a tuple with the ComputeRequestTimeBilledMs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRequestTimeBilledMsOk() (*int64, bool) {
+	if o == nil || o.ComputeRequestTimeBilledMs == nil {
+		return nil, false
+	}
+	return o.ComputeRequestTimeBilledMs, true
+}
+
+// HasComputeRequestTimeBilledMs returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRequestTimeBilledMs() bool {
+	if o != nil && o.ComputeRequestTimeBilledMs != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRequestTimeBilledMs gets a reference to the given int64 and assigns it to the ComputeRequestTimeBilledMs field.
+func (o *DomainInspectorMeasurements) SetComputeRequestTimeBilledMs(v int64) {
+	o.ComputeRequestTimeBilledMs = &v
+}
+
+// GetComputeRequestTimeMs returns the ComputeRequestTimeMs field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRequestTimeMs() int64 {
+	if o == nil || o.ComputeRequestTimeMs == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRequestTimeMs
+}
+
+// GetComputeRequestTimeMsOk returns a tuple with the ComputeRequestTimeMs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRequestTimeMsOk() (*int64, bool) {
+	if o == nil || o.ComputeRequestTimeMs == nil {
+		return nil, false
+	}
+	return o.ComputeRequestTimeMs, true
+}
+
+// HasComputeRequestTimeMs returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRequestTimeMs() bool {
+	if o != nil && o.ComputeRequestTimeMs != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRequestTimeMs gets a reference to the given int64 and assigns it to the ComputeRequestTimeMs field.
+func (o *DomainInspectorMeasurements) SetComputeRequestTimeMs(v int64) {
+	o.ComputeRequestTimeMs = &v
+}
+
+// GetComputeRequest returns the ComputeRequest field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRequest() int64 {
+	if o == nil || o.ComputeRequest == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRequest
+}
+
+// GetComputeRequestOk returns a tuple with the ComputeRequest field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRequestOk() (*int64, bool) {
+	if o == nil || o.ComputeRequest == nil {
+		return nil, false
+	}
+	return o.ComputeRequest, true
+}
+
+// HasComputeRequest returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRequest() bool {
+	if o != nil && o.ComputeRequest != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRequest gets a reference to the given int64 and assigns it to the ComputeRequest field.
+func (o *DomainInspectorMeasurements) SetComputeRequest(v int64) {
+	o.ComputeRequest = &v
+}
+
+// GetComputeRespBodyBytes returns the ComputeRespBodyBytes field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespBodyBytes() int64 {
+	if o == nil || o.ComputeRespBodyBytes == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespBodyBytes
+}
+
+// GetComputeRespBodyBytesOk returns a tuple with the ComputeRespBodyBytes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespBodyBytesOk() (*int64, bool) {
+	if o == nil || o.ComputeRespBodyBytes == nil {
+		return nil, false
+	}
+	return o.ComputeRespBodyBytes, true
+}
+
+// HasComputeRespBodyBytes returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespBodyBytes() bool {
+	if o != nil && o.ComputeRespBodyBytes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespBodyBytes gets a reference to the given int64 and assigns it to the ComputeRespBodyBytes field.
+func (o *DomainInspectorMeasurements) SetComputeRespBodyBytes(v int64) {
+	o.ComputeRespBodyBytes = &v
+}
+
+// GetComputeRespHeaderBytes returns the ComputeRespHeaderBytes field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespHeaderBytes() int64 {
+	if o == nil || o.ComputeRespHeaderBytes == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespHeaderBytes
+}
+
+// GetComputeRespHeaderBytesOk returns a tuple with the ComputeRespHeaderBytes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespHeaderBytesOk() (*int64, bool) {
+	if o == nil || o.ComputeRespHeaderBytes == nil {
+		return nil, false
+	}
+	return o.ComputeRespHeaderBytes, true
+}
+
+// HasComputeRespHeaderBytes returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespHeaderBytes() bool {
+	if o != nil && o.ComputeRespHeaderBytes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespHeaderBytes gets a reference to the given int64 and assigns it to the ComputeRespHeaderBytes field.
+func (o *DomainInspectorMeasurements) SetComputeRespHeaderBytes(v int64) {
+	o.ComputeRespHeaderBytes = &v
+}
+
+// GetComputeRespStatus103 returns the ComputeRespStatus103 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus103() int64 {
+	if o == nil || o.ComputeRespStatus103 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus103
+}
+
+// GetComputeRespStatus103Ok returns a tuple with the ComputeRespStatus103 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus103Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus103 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus103, true
+}
+
+// HasComputeRespStatus103 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus103() bool {
+	if o != nil && o.ComputeRespStatus103 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus103 gets a reference to the given int64 and assigns it to the ComputeRespStatus103 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus103(v int64) {
+	o.ComputeRespStatus103 = &v
+}
+
+// GetComputeRespStatus1xx returns the ComputeRespStatus1xx field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus1xx() int64 {
+	if o == nil || o.ComputeRespStatus1xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus1xx
+}
+
+// GetComputeRespStatus1xxOk returns a tuple with the ComputeRespStatus1xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus1xxOk() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus1xx == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus1xx, true
+}
+
+// HasComputeRespStatus1xx returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus1xx() bool {
+	if o != nil && o.ComputeRespStatus1xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus1xx gets a reference to the given int64 and assigns it to the ComputeRespStatus1xx field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus1xx(v int64) {
+	o.ComputeRespStatus1xx = &v
+}
+
+// GetComputeRespStatus200 returns the ComputeRespStatus200 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus200() int64 {
+	if o == nil || o.ComputeRespStatus200 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus200
+}
+
+// GetComputeRespStatus200Ok returns a tuple with the ComputeRespStatus200 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus200Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus200 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus200, true
+}
+
+// HasComputeRespStatus200 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus200() bool {
+	if o != nil && o.ComputeRespStatus200 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus200 gets a reference to the given int64 and assigns it to the ComputeRespStatus200 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus200(v int64) {
+	o.ComputeRespStatus200 = &v
+}
+
+// GetComputeRespStatus204 returns the ComputeRespStatus204 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus204() int64 {
+	if o == nil || o.ComputeRespStatus204 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus204
+}
+
+// GetComputeRespStatus204Ok returns a tuple with the ComputeRespStatus204 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus204Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus204 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus204, true
+}
+
+// HasComputeRespStatus204 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus204() bool {
+	if o != nil && o.ComputeRespStatus204 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus204 gets a reference to the given int64 and assigns it to the ComputeRespStatus204 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus204(v int64) {
+	o.ComputeRespStatus204 = &v
+}
+
+// GetComputeRespStatus206 returns the ComputeRespStatus206 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus206() int64 {
+	if o == nil || o.ComputeRespStatus206 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus206
+}
+
+// GetComputeRespStatus206Ok returns a tuple with the ComputeRespStatus206 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus206Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus206 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus206, true
+}
+
+// HasComputeRespStatus206 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus206() bool {
+	if o != nil && o.ComputeRespStatus206 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus206 gets a reference to the given int64 and assigns it to the ComputeRespStatus206 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus206(v int64) {
+	o.ComputeRespStatus206 = &v
+}
+
+// GetComputeRespStatus2xx returns the ComputeRespStatus2xx field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus2xx() int64 {
+	if o == nil || o.ComputeRespStatus2xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus2xx
+}
+
+// GetComputeRespStatus2xxOk returns a tuple with the ComputeRespStatus2xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus2xxOk() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus2xx == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus2xx, true
+}
+
+// HasComputeRespStatus2xx returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus2xx() bool {
+	if o != nil && o.ComputeRespStatus2xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus2xx gets a reference to the given int64 and assigns it to the ComputeRespStatus2xx field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus2xx(v int64) {
+	o.ComputeRespStatus2xx = &v
+}
+
+// GetComputeRespStatus301 returns the ComputeRespStatus301 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus301() int64 {
+	if o == nil || o.ComputeRespStatus301 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus301
+}
+
+// GetComputeRespStatus301Ok returns a tuple with the ComputeRespStatus301 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus301Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus301 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus301, true
+}
+
+// HasComputeRespStatus301 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus301() bool {
+	if o != nil && o.ComputeRespStatus301 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus301 gets a reference to the given int64 and assigns it to the ComputeRespStatus301 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus301(v int64) {
+	o.ComputeRespStatus301 = &v
+}
+
+// GetComputeRespStatus302 returns the ComputeRespStatus302 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus302() int64 {
+	if o == nil || o.ComputeRespStatus302 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus302
+}
+
+// GetComputeRespStatus302Ok returns a tuple with the ComputeRespStatus302 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus302Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus302 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus302, true
+}
+
+// HasComputeRespStatus302 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus302() bool {
+	if o != nil && o.ComputeRespStatus302 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus302 gets a reference to the given int64 and assigns it to the ComputeRespStatus302 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus302(v int64) {
+	o.ComputeRespStatus302 = &v
+}
+
+// GetComputeRespStatus304 returns the ComputeRespStatus304 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus304() int64 {
+	if o == nil || o.ComputeRespStatus304 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus304
+}
+
+// GetComputeRespStatus304Ok returns a tuple with the ComputeRespStatus304 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus304Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus304 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus304, true
+}
+
+// HasComputeRespStatus304 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus304() bool {
+	if o != nil && o.ComputeRespStatus304 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus304 gets a reference to the given int64 and assigns it to the ComputeRespStatus304 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus304(v int64) {
+	o.ComputeRespStatus304 = &v
+}
+
+// GetComputeRespStatus3xx returns the ComputeRespStatus3xx field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus3xx() int64 {
+	if o == nil || o.ComputeRespStatus3xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus3xx
+}
+
+// GetComputeRespStatus3xxOk returns a tuple with the ComputeRespStatus3xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus3xxOk() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus3xx == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus3xx, true
+}
+
+// HasComputeRespStatus3xx returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus3xx() bool {
+	if o != nil && o.ComputeRespStatus3xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus3xx gets a reference to the given int64 and assigns it to the ComputeRespStatus3xx field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus3xx(v int64) {
+	o.ComputeRespStatus3xx = &v
+}
+
+// GetComputeRespStatus400 returns the ComputeRespStatus400 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus400() int64 {
+	if o == nil || o.ComputeRespStatus400 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus400
+}
+
+// GetComputeRespStatus400Ok returns a tuple with the ComputeRespStatus400 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus400Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus400 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus400, true
+}
+
+// HasComputeRespStatus400 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus400() bool {
+	if o != nil && o.ComputeRespStatus400 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus400 gets a reference to the given int64 and assigns it to the ComputeRespStatus400 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus400(v int64) {
+	o.ComputeRespStatus400 = &v
+}
+
+// GetComputeRespStatus401 returns the ComputeRespStatus401 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus401() int64 {
+	if o == nil || o.ComputeRespStatus401 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus401
+}
+
+// GetComputeRespStatus401Ok returns a tuple with the ComputeRespStatus401 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus401Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus401 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus401, true
+}
+
+// HasComputeRespStatus401 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus401() bool {
+	if o != nil && o.ComputeRespStatus401 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus401 gets a reference to the given int64 and assigns it to the ComputeRespStatus401 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus401(v int64) {
+	o.ComputeRespStatus401 = &v
+}
+
+// GetComputeRespStatus403 returns the ComputeRespStatus403 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus403() int64 {
+	if o == nil || o.ComputeRespStatus403 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus403
+}
+
+// GetComputeRespStatus403Ok returns a tuple with the ComputeRespStatus403 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus403Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus403 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus403, true
+}
+
+// HasComputeRespStatus403 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus403() bool {
+	if o != nil && o.ComputeRespStatus403 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus403 gets a reference to the given int64 and assigns it to the ComputeRespStatus403 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus403(v int64) {
+	o.ComputeRespStatus403 = &v
+}
+
+// GetComputeRespStatus404 returns the ComputeRespStatus404 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus404() int64 {
+	if o == nil || o.ComputeRespStatus404 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus404
+}
+
+// GetComputeRespStatus404Ok returns a tuple with the ComputeRespStatus404 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus404Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus404 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus404, true
+}
+
+// HasComputeRespStatus404 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus404() bool {
+	if o != nil && o.ComputeRespStatus404 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus404 gets a reference to the given int64 and assigns it to the ComputeRespStatus404 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus404(v int64) {
+	o.ComputeRespStatus404 = &v
+}
+
+// GetComputeRespStatus416 returns the ComputeRespStatus416 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus416() int64 {
+	if o == nil || o.ComputeRespStatus416 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus416
+}
+
+// GetComputeRespStatus416Ok returns a tuple with the ComputeRespStatus416 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus416Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus416 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus416, true
+}
+
+// HasComputeRespStatus416 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus416() bool {
+	if o != nil && o.ComputeRespStatus416 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus416 gets a reference to the given int64 and assigns it to the ComputeRespStatus416 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus416(v int64) {
+	o.ComputeRespStatus416 = &v
+}
+
+// GetComputeRespStatus429 returns the ComputeRespStatus429 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus429() int64 {
+	if o == nil || o.ComputeRespStatus429 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus429
+}
+
+// GetComputeRespStatus429Ok returns a tuple with the ComputeRespStatus429 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus429Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus429 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus429, true
+}
+
+// HasComputeRespStatus429 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus429() bool {
+	if o != nil && o.ComputeRespStatus429 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus429 gets a reference to the given int64 and assigns it to the ComputeRespStatus429 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus429(v int64) {
+	o.ComputeRespStatus429 = &v
+}
+
+// GetComputeRespStatus4xx returns the ComputeRespStatus4xx field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus4xx() int64 {
+	if o == nil || o.ComputeRespStatus4xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus4xx
+}
+
+// GetComputeRespStatus4xxOk returns a tuple with the ComputeRespStatus4xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus4xxOk() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus4xx == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus4xx, true
+}
+
+// HasComputeRespStatus4xx returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus4xx() bool {
+	if o != nil && o.ComputeRespStatus4xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus4xx gets a reference to the given int64 and assigns it to the ComputeRespStatus4xx field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus4xx(v int64) {
+	o.ComputeRespStatus4xx = &v
+}
+
+// GetComputeRespStatus500 returns the ComputeRespStatus500 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus500() int64 {
+	if o == nil || o.ComputeRespStatus500 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus500
+}
+
+// GetComputeRespStatus500Ok returns a tuple with the ComputeRespStatus500 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus500Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus500 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus500, true
+}
+
+// HasComputeRespStatus500 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus500() bool {
+	if o != nil && o.ComputeRespStatus500 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus500 gets a reference to the given int64 and assigns it to the ComputeRespStatus500 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus500(v int64) {
+	o.ComputeRespStatus500 = &v
+}
+
+// GetComputeRespStatus501 returns the ComputeRespStatus501 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus501() int64 {
+	if o == nil || o.ComputeRespStatus501 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus501
+}
+
+// GetComputeRespStatus501Ok returns a tuple with the ComputeRespStatus501 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus501Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus501 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus501, true
+}
+
+// HasComputeRespStatus501 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus501() bool {
+	if o != nil && o.ComputeRespStatus501 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus501 gets a reference to the given int64 and assigns it to the ComputeRespStatus501 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus501(v int64) {
+	o.ComputeRespStatus501 = &v
+}
+
+// GetComputeRespStatus502 returns the ComputeRespStatus502 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus502() int64 {
+	if o == nil || o.ComputeRespStatus502 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus502
+}
+
+// GetComputeRespStatus502Ok returns a tuple with the ComputeRespStatus502 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus502Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus502 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus502, true
+}
+
+// HasComputeRespStatus502 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus502() bool {
+	if o != nil && o.ComputeRespStatus502 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus502 gets a reference to the given int64 and assigns it to the ComputeRespStatus502 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus502(v int64) {
+	o.ComputeRespStatus502 = &v
+}
+
+// GetComputeRespStatus503 returns the ComputeRespStatus503 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus503() int64 {
+	if o == nil || o.ComputeRespStatus503 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus503
+}
+
+// GetComputeRespStatus503Ok returns a tuple with the ComputeRespStatus503 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus503Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus503 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus503, true
+}
+
+// HasComputeRespStatus503 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus503() bool {
+	if o != nil && o.ComputeRespStatus503 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus503 gets a reference to the given int64 and assigns it to the ComputeRespStatus503 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus503(v int64) {
+	o.ComputeRespStatus503 = &v
+}
+
+// GetComputeRespStatus504 returns the ComputeRespStatus504 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus504() int64 {
+	if o == nil || o.ComputeRespStatus504 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus504
+}
+
+// GetComputeRespStatus504Ok returns a tuple with the ComputeRespStatus504 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus504Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus504 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus504, true
+}
+
+// HasComputeRespStatus504 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus504() bool {
+	if o != nil && o.ComputeRespStatus504 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus504 gets a reference to the given int64 and assigns it to the ComputeRespStatus504 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus504(v int64) {
+	o.ComputeRespStatus504 = &v
+}
+
+// GetComputeRespStatus505 returns the ComputeRespStatus505 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus505() int64 {
+	if o == nil || o.ComputeRespStatus505 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus505
+}
+
+// GetComputeRespStatus505Ok returns a tuple with the ComputeRespStatus505 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus505Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus505 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus505, true
+}
+
+// HasComputeRespStatus505 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus505() bool {
+	if o != nil && o.ComputeRespStatus505 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus505 gets a reference to the given int64 and assigns it to the ComputeRespStatus505 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus505(v int64) {
+	o.ComputeRespStatus505 = &v
+}
+
+// GetComputeRespStatus530 returns the ComputeRespStatus530 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus530() int64 {
+	if o == nil || o.ComputeRespStatus530 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus530
+}
+
+// GetComputeRespStatus530Ok returns a tuple with the ComputeRespStatus530 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus530Ok() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus530 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus530, true
+}
+
+// HasComputeRespStatus530 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus530() bool {
+	if o != nil && o.ComputeRespStatus530 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus530 gets a reference to the given int64 and assigns it to the ComputeRespStatus530 field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus530(v int64) {
+	o.ComputeRespStatus530 = &v
+}
+
+// GetComputeRespStatus5xx returns the ComputeRespStatus5xx field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus5xx() int64 {
+	if o == nil || o.ComputeRespStatus5xx == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeRespStatus5xx
+}
+
+// GetComputeRespStatus5xxOk returns a tuple with the ComputeRespStatus5xx field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetComputeRespStatus5xxOk() (*int64, bool) {
+	if o == nil || o.ComputeRespStatus5xx == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus5xx, true
+}
+
+// HasComputeRespStatus5xx returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasComputeRespStatus5xx() bool {
+	if o != nil && o.ComputeRespStatus5xx != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus5xx gets a reference to the given int64 and assigns it to the ComputeRespStatus5xx field.
+func (o *DomainInspectorMeasurements) SetComputeRespStatus5xx(v int64) {
+	o.ComputeRespStatus5xx = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o DomainInspectorMeasurements) MarshalJSON() ([]byte, error) {
@@ -2412,6 +4554,195 @@ func (o DomainInspectorMeasurements) MarshalJSON() ([]byte, error) {
 	if o.OriginStatus5xx != nil {
 		toSerialize["origin_status_5xx"] = o.OriginStatus5xx
 	}
+	if o.ComputeBereqBodyBytes != nil {
+		toSerialize["compute_bereq_body_bytes"] = o.ComputeBereqBodyBytes
+	}
+	if o.ComputeBereqErrors != nil {
+		toSerialize["compute_bereq_errors"] = o.ComputeBereqErrors
+	}
+	if o.ComputeBereqHeaderBytes != nil {
+		toSerialize["compute_bereq_header_bytes"] = o.ComputeBereqHeaderBytes
+	}
+	if o.ComputeBereqs != nil {
+		toSerialize["compute_bereqs"] = o.ComputeBereqs
+	}
+	if o.ComputeBerespBodyBytes != nil {
+		toSerialize["compute_beresp_body_bytes"] = o.ComputeBerespBodyBytes
+	}
+	if o.ComputeBerespHeaderBytes != nil {
+		toSerialize["compute_beresp_header_bytes"] = o.ComputeBerespHeaderBytes
+	}
+	if o.ComputeExecutionTimeMs != nil {
+		toSerialize["compute_execution_time_ms"] = o.ComputeExecutionTimeMs
+	}
+	if o.ComputeOriginStatus1xx != nil {
+		toSerialize["compute_origin_status_1xx"] = o.ComputeOriginStatus1xx
+	}
+	if o.ComputeOriginStatus200 != nil {
+		toSerialize["compute_origin_status_200"] = o.ComputeOriginStatus200
+	}
+	if o.ComputeOriginStatus204 != nil {
+		toSerialize["compute_origin_status_204"] = o.ComputeOriginStatus204
+	}
+	if o.ComputeOriginStatus206 != nil {
+		toSerialize["compute_origin_status_206"] = o.ComputeOriginStatus206
+	}
+	if o.ComputeOriginStatus2xx != nil {
+		toSerialize["compute_origin_status_2xx"] = o.ComputeOriginStatus2xx
+	}
+	if o.ComputeOriginStatus301 != nil {
+		toSerialize["compute_origin_status_301"] = o.ComputeOriginStatus301
+	}
+	if o.ComputeOriginStatus302 != nil {
+		toSerialize["compute_origin_status_302"] = o.ComputeOriginStatus302
+	}
+	if o.ComputeOriginStatus304 != nil {
+		toSerialize["compute_origin_status_304"] = o.ComputeOriginStatus304
+	}
+	if o.ComputeOriginStatus3xx != nil {
+		toSerialize["compute_origin_status_3xx"] = o.ComputeOriginStatus3xx
+	}
+	if o.ComputeOriginStatus400 != nil {
+		toSerialize["compute_origin_status_400"] = o.ComputeOriginStatus400
+	}
+	if o.ComputeOriginStatus401 != nil {
+		toSerialize["compute_origin_status_401"] = o.ComputeOriginStatus401
+	}
+	if o.ComputeOriginStatus403 != nil {
+		toSerialize["compute_origin_status_403"] = o.ComputeOriginStatus403
+	}
+	if o.ComputeOriginStatus404 != nil {
+		toSerialize["compute_origin_status_404"] = o.ComputeOriginStatus404
+	}
+	if o.ComputeOriginStatus416 != nil {
+		toSerialize["compute_origin_status_416"] = o.ComputeOriginStatus416
+	}
+	if o.ComputeOriginStatus429 != nil {
+		toSerialize["compute_origin_status_429"] = o.ComputeOriginStatus429
+	}
+	if o.ComputeOriginStatus4xx != nil {
+		toSerialize["compute_origin_status_4xx"] = o.ComputeOriginStatus4xx
+	}
+	if o.ComputeOriginStatus500 != nil {
+		toSerialize["compute_origin_status_500"] = o.ComputeOriginStatus500
+	}
+	if o.ComputeOriginStatus501 != nil {
+		toSerialize["compute_origin_status_501"] = o.ComputeOriginStatus501
+	}
+	if o.ComputeOriginStatus502 != nil {
+		toSerialize["compute_origin_status_502"] = o.ComputeOriginStatus502
+	}
+	if o.ComputeOriginStatus503 != nil {
+		toSerialize["compute_origin_status_503"] = o.ComputeOriginStatus503
+	}
+	if o.ComputeOriginStatus504 != nil {
+		toSerialize["compute_origin_status_504"] = o.ComputeOriginStatus504
+	}
+	if o.ComputeOriginStatus505 != nil {
+		toSerialize["compute_origin_status_505"] = o.ComputeOriginStatus505
+	}
+	if o.ComputeOriginStatus530 != nil {
+		toSerialize["compute_origin_status_530"] = o.ComputeOriginStatus530
+	}
+	if o.ComputeOriginStatus5xx != nil {
+		toSerialize["compute_origin_status_5xx"] = o.ComputeOriginStatus5xx
+	}
+	if o.ComputeReqBodyBytes != nil {
+		toSerialize["compute_req_body_bytes"] = o.ComputeReqBodyBytes
+	}
+	if o.ComputeReqHeaderBytes != nil {
+		toSerialize["compute_req_header_bytes"] = o.ComputeReqHeaderBytes
+	}
+	if o.ComputeRequestTimeBilledMs != nil {
+		toSerialize["compute_request_time_billed_ms"] = o.ComputeRequestTimeBilledMs
+	}
+	if o.ComputeRequestTimeMs != nil {
+		toSerialize["compute_request_time_ms"] = o.ComputeRequestTimeMs
+	}
+	if o.ComputeRequest != nil {
+		toSerialize["compute_request"] = o.ComputeRequest
+	}
+	if o.ComputeRespBodyBytes != nil {
+		toSerialize["compute_resp_body_bytes"] = o.ComputeRespBodyBytes
+	}
+	if o.ComputeRespHeaderBytes != nil {
+		toSerialize["compute_resp_header_bytes"] = o.ComputeRespHeaderBytes
+	}
+	if o.ComputeRespStatus103 != nil {
+		toSerialize["compute_resp_status_103"] = o.ComputeRespStatus103
+	}
+	if o.ComputeRespStatus1xx != nil {
+		toSerialize["compute_resp_status_1xx"] = o.ComputeRespStatus1xx
+	}
+	if o.ComputeRespStatus200 != nil {
+		toSerialize["compute_resp_status_200"] = o.ComputeRespStatus200
+	}
+	if o.ComputeRespStatus204 != nil {
+		toSerialize["compute_resp_status_204"] = o.ComputeRespStatus204
+	}
+	if o.ComputeRespStatus206 != nil {
+		toSerialize["compute_resp_status_206"] = o.ComputeRespStatus206
+	}
+	if o.ComputeRespStatus2xx != nil {
+		toSerialize["compute_resp_status_2xx"] = o.ComputeRespStatus2xx
+	}
+	if o.ComputeRespStatus301 != nil {
+		toSerialize["compute_resp_status_301"] = o.ComputeRespStatus301
+	}
+	if o.ComputeRespStatus302 != nil {
+		toSerialize["compute_resp_status_302"] = o.ComputeRespStatus302
+	}
+	if o.ComputeRespStatus304 != nil {
+		toSerialize["compute_resp_status_304"] = o.ComputeRespStatus304
+	}
+	if o.ComputeRespStatus3xx != nil {
+		toSerialize["compute_resp_status_3xx"] = o.ComputeRespStatus3xx
+	}
+	if o.ComputeRespStatus400 != nil {
+		toSerialize["compute_resp_status_400"] = o.ComputeRespStatus400
+	}
+	if o.ComputeRespStatus401 != nil {
+		toSerialize["compute_resp_status_401"] = o.ComputeRespStatus401
+	}
+	if o.ComputeRespStatus403 != nil {
+		toSerialize["compute_resp_status_403"] = o.ComputeRespStatus403
+	}
+	if o.ComputeRespStatus404 != nil {
+		toSerialize["compute_resp_status_404"] = o.ComputeRespStatus404
+	}
+	if o.ComputeRespStatus416 != nil {
+		toSerialize["compute_resp_status_416"] = o.ComputeRespStatus416
+	}
+	if o.ComputeRespStatus429 != nil {
+		toSerialize["compute_resp_status_429"] = o.ComputeRespStatus429
+	}
+	if o.ComputeRespStatus4xx != nil {
+		toSerialize["compute_resp_status_4xx"] = o.ComputeRespStatus4xx
+	}
+	if o.ComputeRespStatus500 != nil {
+		toSerialize["compute_resp_status_500"] = o.ComputeRespStatus500
+	}
+	if o.ComputeRespStatus501 != nil {
+		toSerialize["compute_resp_status_501"] = o.ComputeRespStatus501
+	}
+	if o.ComputeRespStatus502 != nil {
+		toSerialize["compute_resp_status_502"] = o.ComputeRespStatus502
+	}
+	if o.ComputeRespStatus503 != nil {
+		toSerialize["compute_resp_status_503"] = o.ComputeRespStatus503
+	}
+	if o.ComputeRespStatus504 != nil {
+		toSerialize["compute_resp_status_504"] = o.ComputeRespStatus504
+	}
+	if o.ComputeRespStatus505 != nil {
+		toSerialize["compute_resp_status_505"] = o.ComputeRespStatus505
+	}
+	if o.ComputeRespStatus530 != nil {
+		toSerialize["compute_resp_status_530"] = o.ComputeRespStatus530
+	}
+	if o.ComputeRespStatus5xx != nil {
+		toSerialize["compute_resp_status_5xx"] = o.ComputeRespStatus5xx
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -2496,6 +4827,69 @@ func (o *DomainInspectorMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "origin_status_3xx")
 		delete(additionalProperties, "origin_status_4xx")
 		delete(additionalProperties, "origin_status_5xx")
+		delete(additionalProperties, "compute_bereq_body_bytes")
+		delete(additionalProperties, "compute_bereq_errors")
+		delete(additionalProperties, "compute_bereq_header_bytes")
+		delete(additionalProperties, "compute_bereqs")
+		delete(additionalProperties, "compute_beresp_body_bytes")
+		delete(additionalProperties, "compute_beresp_header_bytes")
+		delete(additionalProperties, "compute_execution_time_ms")
+		delete(additionalProperties, "compute_origin_status_1xx")
+		delete(additionalProperties, "compute_origin_status_200")
+		delete(additionalProperties, "compute_origin_status_204")
+		delete(additionalProperties, "compute_origin_status_206")
+		delete(additionalProperties, "compute_origin_status_2xx")
+		delete(additionalProperties, "compute_origin_status_301")
+		delete(additionalProperties, "compute_origin_status_302")
+		delete(additionalProperties, "compute_origin_status_304")
+		delete(additionalProperties, "compute_origin_status_3xx")
+		delete(additionalProperties, "compute_origin_status_400")
+		delete(additionalProperties, "compute_origin_status_401")
+		delete(additionalProperties, "compute_origin_status_403")
+		delete(additionalProperties, "compute_origin_status_404")
+		delete(additionalProperties, "compute_origin_status_416")
+		delete(additionalProperties, "compute_origin_status_429")
+		delete(additionalProperties, "compute_origin_status_4xx")
+		delete(additionalProperties, "compute_origin_status_500")
+		delete(additionalProperties, "compute_origin_status_501")
+		delete(additionalProperties, "compute_origin_status_502")
+		delete(additionalProperties, "compute_origin_status_503")
+		delete(additionalProperties, "compute_origin_status_504")
+		delete(additionalProperties, "compute_origin_status_505")
+		delete(additionalProperties, "compute_origin_status_530")
+		delete(additionalProperties, "compute_origin_status_5xx")
+		delete(additionalProperties, "compute_req_body_bytes")
+		delete(additionalProperties, "compute_req_header_bytes")
+		delete(additionalProperties, "compute_request_time_billed_ms")
+		delete(additionalProperties, "compute_request_time_ms")
+		delete(additionalProperties, "compute_request")
+		delete(additionalProperties, "compute_resp_body_bytes")
+		delete(additionalProperties, "compute_resp_header_bytes")
+		delete(additionalProperties, "compute_resp_status_103")
+		delete(additionalProperties, "compute_resp_status_1xx")
+		delete(additionalProperties, "compute_resp_status_200")
+		delete(additionalProperties, "compute_resp_status_204")
+		delete(additionalProperties, "compute_resp_status_206")
+		delete(additionalProperties, "compute_resp_status_2xx")
+		delete(additionalProperties, "compute_resp_status_301")
+		delete(additionalProperties, "compute_resp_status_302")
+		delete(additionalProperties, "compute_resp_status_304")
+		delete(additionalProperties, "compute_resp_status_3xx")
+		delete(additionalProperties, "compute_resp_status_400")
+		delete(additionalProperties, "compute_resp_status_401")
+		delete(additionalProperties, "compute_resp_status_403")
+		delete(additionalProperties, "compute_resp_status_404")
+		delete(additionalProperties, "compute_resp_status_416")
+		delete(additionalProperties, "compute_resp_status_429")
+		delete(additionalProperties, "compute_resp_status_4xx")
+		delete(additionalProperties, "compute_resp_status_500")
+		delete(additionalProperties, "compute_resp_status_501")
+		delete(additionalProperties, "compute_resp_status_502")
+		delete(additionalProperties, "compute_resp_status_503")
+		delete(additionalProperties, "compute_resp_status_504")
+		delete(additionalProperties, "compute_resp_status_505")
+		delete(additionalProperties, "compute_resp_status_530")
+		delete(additionalProperties, "compute_resp_status_5xx")
 		o.AdditionalProperties = additionalProperties
 	}
 

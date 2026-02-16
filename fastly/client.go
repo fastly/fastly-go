@@ -71,6 +71,8 @@ type APIClient struct {
 
 	ApexRedirectAPI ApexRedirectAPI
 
+	ApisecurityOperationsAPI ApisecurityOperationsAPI
+
 	AutomationTokensAPI AutomationTokensAPI
 
 	BackendAPI BackendAPI
@@ -345,6 +347,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.AclEntryAPI = (*AclEntryAPIService)(&c.common)
 	c.AclsInComputeAPI = (*AclsInComputeAPIService)(&c.common)
 	c.ApexRedirectAPI = (*ApexRedirectAPIService)(&c.common)
+	c.ApisecurityOperationsAPI = (*ApisecurityOperationsAPIService)(&c.common)
 	c.AutomationTokensAPI = (*AutomationTokensAPIService)(&c.common)
 	c.BackendAPI = (*BackendAPIService)(&c.common)
 	c.BillingAddressAPI = (*BillingAddressAPIService)(&c.common)

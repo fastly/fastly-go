@@ -28,10 +28,10 @@ import (
 )
 
 func main() {
-    visualization := "visualization_example" // string | 
-    serviceId := "serviceId_example" // string | 
-    start := "start_example" // string | 
-    end := "end_example" // string | 
+    visualization := "top-url-by-requests" // string | 
+    serviceId := "1jlmtMz1ncwA0KC3TBGD0X" // string | 
+    start := "2024-01-01T14:30:23Z" // string | 
+    end := "2024-01-05T14:30:23Z" // string | 
     pops := "pops_example" // string |  (optional)
     domain := "domain_example" // string |  (optional)
     domainExactMatch := true // bool |  (optional)

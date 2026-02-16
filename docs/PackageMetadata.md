@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Description of the Compute package. | [optional] 
 **Authors** | Pointer to **[]string** | A list of package authors&#39; email addresses. | [optional] 
 **Language** | Pointer to **string** | The language of the Compute package. | [optional] 
-**Size** | Pointer to **int32** | Size of the Compute package in bytes. | [optional] 
-**Hashsum** | Pointer to **string** | Hash of the Compute package. | [optional] 
+**Size** | Pointer to **int32** | Size of the Compute package in bytes. This is deprecated along with `hashsum`. | [optional] 
+**Hashsum** | Pointer to **string** | Hash of the Compute package. This is deprecated in favor of `files_hash`. | [optional] 
 **FilesHash** | Pointer to **string** | Hash of the files within the Compute package. | [optional] 
 
 ## Methods

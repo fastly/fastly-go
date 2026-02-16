@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KvStoreAPI.KvStoreList`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `KvStoreList`: InlineResponse2007
+    // response from `KvStoreList`: InlineResponse20010
     fmt.Fprintf(os.Stdout, "Response from `KvStoreAPI.KvStoreList`: %v\n", resp)
 }
 ```
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse20010**](InlineResponse20010.md)
 
 ### Authorization
 

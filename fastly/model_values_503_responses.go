@@ -23,11 +23,8 @@ type Values503Responses struct {
 	// The rate at which the reason in this dimension occurs among responses to this URL with a 503 status code.
 	RatePerUrl *float32 `json:"rate_per_url,omitempty"`
 	// The rate at which 503 status codes are returned for this URL.
-	Var503RatePerUrl     *float32 `json:"503_rate_per_url,omitempty"`
-	AdditionalProperties map[string]any
+	Var503RatePerUrl *float32 `json:"503_rate_per_url,omitempty"`
 }
-
-type _Values503Responses Values503Responses
 
 // NewValues503Responses instantiates a new Values503Responses object
 // This constructor will assign default values to properties that have it defined,
@@ -155,33 +152,7 @@ func (o Values503Responses) MarshalJSON() ([]byte, error) {
 	if o.Var503RatePerUrl != nil {
 		toSerialize["503_rate_per_url"] = o.Var503RatePerUrl
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *Values503Responses) UnmarshalJSON(bytes []byte) (err error) {
-	varValues503Responses := _Values503Responses{}
-
-	if err = json.Unmarshal(bytes, &varValues503Responses); err == nil {
-		*o = Values503Responses(varValues503Responses)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "url")
-		delete(additionalProperties, "rate_per_url")
-		delete(additionalProperties, "503_rate_per_url")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableValues503Responses is a helper abstraction for handling nullable values503responses types.

@@ -57,8 +57,8 @@ type DomainResearchAPI interface {
 	SuggestDomains(ctx context.Context) APISuggestDomainsRequest
 
 	// SuggestDomainsExecute executes the request
-	//  @return InlineResponse2006
-	SuggestDomainsExecute(r APISuggestDomainsRequest) (*InlineResponse2006, *http.Response, error)
+	//  @return InlineResponse2009
+	SuggestDomainsExecute(r APISuggestDomainsRequest) (*InlineResponse2009, *http.Response, error)
 }
 
 // DomainResearchAPIService DomainResearchAPI service
@@ -255,7 +255,7 @@ func (r *APISuggestDomainsRequest) Vendor(vendor string) *APISuggestDomainsReque
 }
 
 // Execute calls the API using the request data configured.
-func (r APISuggestDomainsRequest) Execute() (*InlineResponse2006, *http.Response, error) {
+func (r APISuggestDomainsRequest) Execute() (*InlineResponse2009, *http.Response, error) {
 	return r.APIService.SuggestDomainsExecute(r)
 }
 
@@ -278,13 +278,13 @@ func (a *DomainResearchAPIService) SuggestDomains(ctx context.Context) APISugges
 }
 
 // SuggestDomainsExecute executes the request
-//  @return InlineResponse2006
-func (a *DomainResearchAPIService) SuggestDomainsExecute(r APISuggestDomainsRequest) (*InlineResponse2006, *http.Response, error) {
+//  @return InlineResponse2009
+func (a *DomainResearchAPIService) SuggestDomainsExecute(r APISuggestDomainsRequest) (*InlineResponse2009, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse2006
+		localVarReturnValue *InlineResponse2009
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DomainResearchAPIService.SuggestDomains")

@@ -21,11 +21,8 @@ type ValuesBrowser struct {
 	// The version of the client's browser.
 	BrowserVersion *string `json:"browser_version,omitempty"`
 	// The percentage of requests by this version of the browser specified in the dimension.
-	Rate                 *float32 `json:"rate,omitempty"`
-	AdditionalProperties map[string]any
+	Rate *float32 `json:"rate,omitempty"`
 }
-
-type _ValuesBrowser ValuesBrowser
 
 // NewValuesBrowser instantiates a new ValuesBrowser object
 // This constructor will assign default values to properties that have it defined,
@@ -118,32 +115,7 @@ func (o ValuesBrowser) MarshalJSON() ([]byte, error) {
 	if o.Rate != nil {
 		toSerialize["rate"] = o.Rate
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *ValuesBrowser) UnmarshalJSON(bytes []byte) (err error) {
-	varValuesBrowser := _ValuesBrowser{}
-
-	if err = json.Unmarshal(bytes, &varValuesBrowser); err == nil {
-		*o = ValuesBrowser(varValuesBrowser)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "browser_version")
-		delete(additionalProperties, "rate")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableValuesBrowser is a helper abstraction for handling nullable valuesbrowser types.

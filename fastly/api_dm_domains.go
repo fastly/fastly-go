@@ -84,8 +84,8 @@ type DmDomainsAPI interface {
 	ListDmDomains(ctx context.Context) APIListDmDomainsRequest
 
 	// ListDmDomainsExecute executes the request
-	//  @return InlineResponse2004
-	ListDmDomainsExecute(r APIListDmDomainsRequest) (*InlineResponse2004, *http.Response, error)
+	//  @return InlineResponse2007
+	ListDmDomainsExecute(r APIListDmDomainsRequest) (*InlineResponse2007, *http.Response, error)
 
 	/*
 		UpdateDmDomain Update a domain
@@ -552,7 +552,7 @@ func (r *APIListDmDomainsRequest) Limit(limit int32) *APIListDmDomainsRequest {
 }
 
 // Execute calls the API using the request data configured.
-func (r APIListDmDomainsRequest) Execute() (*InlineResponse2004, *http.Response, error) {
+func (r APIListDmDomainsRequest) Execute() (*InlineResponse2007, *http.Response, error) {
 	return r.APIService.ListDmDomainsExecute(r)
 }
 
@@ -572,13 +572,13 @@ func (a *DmDomainsAPIService) ListDmDomains(ctx context.Context) APIListDmDomain
 }
 
 // ListDmDomainsExecute executes the request
-//  @return InlineResponse2004
-func (a *DmDomainsAPIService) ListDmDomainsExecute(r APIListDmDomainsRequest) (*InlineResponse2004, *http.Response, error) {
+//  @return InlineResponse2007
+func (a *DmDomainsAPIService) ListDmDomainsExecute(r APIListDmDomainsRequest) (*InlineResponse2007, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse2004
+		localVarReturnValue *InlineResponse2007
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DmDomainsAPIService.ListDmDomains")

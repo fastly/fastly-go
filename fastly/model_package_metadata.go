@@ -26,9 +26,11 @@ type PackageMetadata struct {
 	Authors []string `json:"authors,omitempty"`
 	// The language of the Compute package.
 	Language *string `json:"language,omitempty"`
-	// Size of the Compute package in bytes.
+	// Size of the Compute package in bytes. This is deprecated along with `hashsum`.
+	// Deprecated
 	Size *int32 `json:"size,omitempty"`
-	// Hash of the Compute package.
+	// Hash of the Compute package. This is deprecated in favor of `files_hash`.
+	// Deprecated
 	Hashsum *string `json:"hashsum,omitempty"`
 	// Hash of the files within the Compute package.
 	FilesHash            *string `json:"files_hash,omitempty"`
@@ -183,6 +185,7 @@ func (o *PackageMetadata) SetLanguage(v string) {
 }
 
 // GetSize returns the Size field value if set, zero value otherwise.
+// Deprecated
 func (o *PackageMetadata) GetSize() int32 {
 	if o == nil || o.Size == nil {
 		var ret int32
@@ -193,6 +196,7 @@ func (o *PackageMetadata) GetSize() int32 {
 
 // GetSizeOk returns a tuple with the Size field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *PackageMetadata) GetSizeOk() (*int32, bool) {
 	if o == nil || o.Size == nil {
 		return nil, false
@@ -210,11 +214,13 @@ func (o *PackageMetadata) HasSize() bool {
 }
 
 // SetSize gets a reference to the given int32 and assigns it to the Size field.
+// Deprecated
 func (o *PackageMetadata) SetSize(v int32) {
 	o.Size = &v
 }
 
 // GetHashsum returns the Hashsum field value if set, zero value otherwise.
+// Deprecated
 func (o *PackageMetadata) GetHashsum() string {
 	if o == nil || o.Hashsum == nil {
 		var ret string
@@ -225,6 +231,7 @@ func (o *PackageMetadata) GetHashsum() string {
 
 // GetHashsumOk returns a tuple with the Hashsum field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *PackageMetadata) GetHashsumOk() (*string, bool) {
 	if o == nil || o.Hashsum == nil {
 		return nil, false
@@ -242,6 +249,7 @@ func (o *PackageMetadata) HasHashsum() bool {
 }
 
 // SetHashsum gets a reference to the given string and assigns it to the Hashsum field.
+// Deprecated
 func (o *PackageMetadata) SetHashsum(v string) {
 	o.Hashsum = &v
 }

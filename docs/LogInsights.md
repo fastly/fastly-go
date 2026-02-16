@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Dimensions** | Pointer to [**LogInsightsDimensions**](LogInsightsDimensions.md) |  | [optional] 
 **DimensionAttributes** | Pointer to [**LogInsightsDimensionAttributes**](LogInsightsDimensionAttributes.md) |  | [optional] 
-**Values** | Pointer to [**LogInsightsValues**](LogInsightsValues.md) |  | [optional] 
+**Values** | Pointer to [**[]LogInsightsValues**](LogInsightsValues.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasDimensionAttributes returns a boolean if a field has been set.
 
 ### GetValues
 
-`func (o *LogInsights) GetValues() LogInsightsValues`
+`func (o *LogInsights) GetValues() []LogInsightsValues`
 
 GetValues returns the Values field if non-nil, zero value otherwise.
 
 ### GetValuesOk
 
-`func (o *LogInsights) GetValuesOk() (*LogInsightsValues, bool)`
+`func (o *LogInsights) GetValuesOk() (*[]LogInsightsValues, bool)`
 
 GetValuesOk returns a tuple with the Values field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValues
 
-`func (o *LogInsights) SetValues(v LogInsightsValues)`
+`func (o *LogInsights) SetValues(v []LogInsightsValues)`
 
 SetValues sets Values field to given value.
 

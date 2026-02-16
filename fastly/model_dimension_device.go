@@ -19,11 +19,8 @@ import (
 // DimensionDevice struct for DimensionDevice
 type DimensionDevice struct {
 	// The client's device type for this dimension.
-	Device               *string `json:"device,omitempty"`
-	AdditionalProperties map[string]any
+	Device *string `json:"device,omitempty"`
 }
-
-type _DimensionDevice DimensionDevice
 
 // NewDimensionDevice instantiates a new DimensionDevice object
 // This constructor will assign default values to properties that have it defined,
@@ -81,31 +78,7 @@ func (o DimensionDevice) MarshalJSON() ([]byte, error) {
 	if o.Device != nil {
 		toSerialize["device"] = o.Device
 	}
-
-	for key, value := range o.AdditionalProperties {
-		toSerialize[key] = value
-	}
-
 	return json.Marshal(toSerialize)
-}
-
-// UnmarshalJSON implements the Unmarshaler interface.
-// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *DimensionDevice) UnmarshalJSON(bytes []byte) (err error) {
-	varDimensionDevice := _DimensionDevice{}
-
-	if err = json.Unmarshal(bytes, &varDimensionDevice); err == nil {
-		*o = DimensionDevice(varDimensionDevice)
-	}
-
-	additionalProperties := make(map[string]any)
-
-	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "device")
-		o.AdditionalProperties = additionalProperties
-	}
-
-	return err
 }
 
 // NullableDimensionDevice is a helper abstraction for handling nullable dimensiondevice types.

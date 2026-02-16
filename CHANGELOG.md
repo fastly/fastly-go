@@ -1,5 +1,22 @@
 # Changelog
 
+## [v1.0.0-beta.47](https://github.com/fastly/fastly-go/releases/tag/release/v1.0.0-beta.47) (2026-02-16)
+
+**Breaking Changes:**
+
+- deprecated(user): The Compute package metadata model `hashsum` and `size` fields have been deprecated.
+
+
+**Enhancements:**
+
+- feat(apisecurity-operations): Add new API Security Operations API.
+- feat(domain-inspector-realtime, domain-inspector-historical): Add new metrics `compute_*`.
+- feat(realtime, historical): Add new metrics `compute_resp_status_*`.
+- feat(realtime, historical): Add new metric `ngwaf_bot_analysis_request_count`.
+- feat(backend): Add support for `fetch_timeout` field.
+- feat(historical): Add support for `datacenter` query.
+
+
 ## [v1.0.0-beta.46](https://github.com/fastly/fastly-go/releases/tag/release/v1.0.0-beta.46) (2025-12-09)
 
 **Enhancements:**

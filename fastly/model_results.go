@@ -558,6 +558,46 @@ type Results struct {
 	NgwafRequestsChallengedCount *int32 `json:"ngwaf_requests_challenged_count,omitempty"`
 	// Number of requests processed by the API Discovery engine.
 	ApiDiscoveryRequestsCount *int32 `json:"api_discovery_requests_count,omitempty"`
+	// Number of responses delivered with status code 103 (Early Hints) by the Compute platform.
+	ComputeRespStatus103 *int32 `json:"compute_resp_status_103,omitempty"`
+	// Number of responses delivered with status code 200 (Success) by the Compute platform.
+	ComputeRespStatus200 *int32 `json:"compute_resp_status_200,omitempty"`
+	// Number of responses delivered with status code 204 (No Content) by the Compute platform.
+	ComputeRespStatus204 *int32 `json:"compute_resp_status_204,omitempty"`
+	// Number of responses delivered with status code 206 (Partial Content) by the Compute platform.
+	ComputeRespStatus206 *int32 `json:"compute_resp_status_206,omitempty"`
+	// Number of responses delivered with status code 301 (Moved Permanently) by the Compute platform.
+	ComputeRespStatus301 *int32 `json:"compute_resp_status_301,omitempty"`
+	// Number of responses delivered with status code 302 (Found) by the Compute platform.
+	ComputeRespStatus302 *int32 `json:"compute_resp_status_302,omitempty"`
+	// Number of responses delivered with status code 304 (Not Modified) by the Compute platform.
+	ComputeRespStatus304 *int32 `json:"compute_resp_status_304,omitempty"`
+	// Number of responses delivered with status code 400 (Bad Request) by the Compute platform.
+	ComputeRespStatus400 *int32 `json:"compute_resp_status_400,omitempty"`
+	// Number of responses delivered with status code 401 (Unauthorized) by the Compute platform.
+	ComputeRespStatus401 *int32 `json:"compute_resp_status_401,omitempty"`
+	// Number of responses delivered with status code 403 (Forbidden) by the Compute platform.
+	ComputeRespStatus403 *int32 `json:"compute_resp_status_403,omitempty"`
+	// Number of responses delivered with status code 404 (Not Found) by the Compute platform.
+	ComputeRespStatus404 *int32 `json:"compute_resp_status_404,omitempty"`
+	// Number of responses delivered with status code 416 (Range Not Satisfiable) by the Compute platform.
+	ComputeRespStatus416 *int32 `json:"compute_resp_status_416,omitempty"`
+	// Number of responses delivered with status code 429 (Too Many Requests) by the Compute platform.
+	ComputeRespStatus429 *int32 `json:"compute_resp_status_429,omitempty"`
+	// Number of responses delivered with status code 500 (Internal Server Error) by the Compute platform.
+	ComputeRespStatus500 *int32 `json:"compute_resp_status_500,omitempty"`
+	// Number of responses delivered with status code 501 (Not Implemented) by the Compute platform.
+	ComputeRespStatus501 *int32 `json:"compute_resp_status_501,omitempty"`
+	// Number of responses delivered with status code 502 (Bad Gateway) by the Compute platform.
+	ComputeRespStatus502 *int32 `json:"compute_resp_status_502,omitempty"`
+	// Number of responses delivered with status code 503 (Service Unavailable) by the Compute platform.
+	ComputeRespStatus503 *int32 `json:"compute_resp_status_503,omitempty"`
+	// Number of responses delivered with status code 504 (Gateway Timeout) by the Compute platform.
+	ComputeRespStatus504 *int32 `json:"compute_resp_status_504,omitempty"`
+	// Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform.
+	ComputeRespStatus505 *int32 `json:"compute_resp_status_505,omitempty"`
+	// Number of responses delivered with status code 530 by the Compute platform.
+	ComputeRespStatus530 *int32 `json:"compute_resp_status_530,omitempty"`
 	// The number of Image Optimizer requests made from Compute services.
 	ImgoptoComputeRequests *int32 `json:"imgopto_compute_requests,omitempty"`
 	// Number of billable DNS responses (e.g., A, CNAME).
@@ -565,8 +605,10 @@ type Results struct {
 	// Number of non-billable DNS responses (e.g., NODATA, NXDOMAIN).
 	DnsNonbillableResponsesCount *int32 `json:"dns_nonbillable_responses_count,omitempty"`
 	// Number of requests that resulted in a WebSocket upgrade.
-	Upgrade   *int32  `json:"upgrade,omitempty"`
-	ServiceId *string `json:"service_id,omitempty"`
+	Upgrade *int32 `json:"upgrade,omitempty"`
+	// Count of Next-Gen WAF Bot Management requests.
+	NgwafBotAnalysisRequestCount *int32  `json:"ngwaf_bot_analysis_request_count,omitempty"`
+	ServiceId                    *string `json:"service_id,omitempty"`
 	// Timestamp for the start of the time period being reported
 	StartTime            *int64 `json:"start_time,omitempty"`
 	AdditionalProperties map[string]any
@@ -9216,6 +9258,646 @@ func (o *Results) SetApiDiscoveryRequestsCount(v int32) {
 	o.ApiDiscoveryRequestsCount = &v
 }
 
+// GetComputeRespStatus103 returns the ComputeRespStatus103 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus103() int32 {
+	if o == nil || o.ComputeRespStatus103 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus103
+}
+
+// GetComputeRespStatus103Ok returns a tuple with the ComputeRespStatus103 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus103Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus103 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus103, true
+}
+
+// HasComputeRespStatus103 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus103() bool {
+	if o != nil && o.ComputeRespStatus103 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus103 gets a reference to the given int32 and assigns it to the ComputeRespStatus103 field.
+func (o *Results) SetComputeRespStatus103(v int32) {
+	o.ComputeRespStatus103 = &v
+}
+
+// GetComputeRespStatus200 returns the ComputeRespStatus200 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus200() int32 {
+	if o == nil || o.ComputeRespStatus200 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus200
+}
+
+// GetComputeRespStatus200Ok returns a tuple with the ComputeRespStatus200 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus200Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus200 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus200, true
+}
+
+// HasComputeRespStatus200 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus200() bool {
+	if o != nil && o.ComputeRespStatus200 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus200 gets a reference to the given int32 and assigns it to the ComputeRespStatus200 field.
+func (o *Results) SetComputeRespStatus200(v int32) {
+	o.ComputeRespStatus200 = &v
+}
+
+// GetComputeRespStatus204 returns the ComputeRespStatus204 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus204() int32 {
+	if o == nil || o.ComputeRespStatus204 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus204
+}
+
+// GetComputeRespStatus204Ok returns a tuple with the ComputeRespStatus204 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus204Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus204 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus204, true
+}
+
+// HasComputeRespStatus204 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus204() bool {
+	if o != nil && o.ComputeRespStatus204 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus204 gets a reference to the given int32 and assigns it to the ComputeRespStatus204 field.
+func (o *Results) SetComputeRespStatus204(v int32) {
+	o.ComputeRespStatus204 = &v
+}
+
+// GetComputeRespStatus206 returns the ComputeRespStatus206 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus206() int32 {
+	if o == nil || o.ComputeRespStatus206 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus206
+}
+
+// GetComputeRespStatus206Ok returns a tuple with the ComputeRespStatus206 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus206Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus206 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus206, true
+}
+
+// HasComputeRespStatus206 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus206() bool {
+	if o != nil && o.ComputeRespStatus206 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus206 gets a reference to the given int32 and assigns it to the ComputeRespStatus206 field.
+func (o *Results) SetComputeRespStatus206(v int32) {
+	o.ComputeRespStatus206 = &v
+}
+
+// GetComputeRespStatus301 returns the ComputeRespStatus301 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus301() int32 {
+	if o == nil || o.ComputeRespStatus301 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus301
+}
+
+// GetComputeRespStatus301Ok returns a tuple with the ComputeRespStatus301 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus301Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus301 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus301, true
+}
+
+// HasComputeRespStatus301 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus301() bool {
+	if o != nil && o.ComputeRespStatus301 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus301 gets a reference to the given int32 and assigns it to the ComputeRespStatus301 field.
+func (o *Results) SetComputeRespStatus301(v int32) {
+	o.ComputeRespStatus301 = &v
+}
+
+// GetComputeRespStatus302 returns the ComputeRespStatus302 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus302() int32 {
+	if o == nil || o.ComputeRespStatus302 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus302
+}
+
+// GetComputeRespStatus302Ok returns a tuple with the ComputeRespStatus302 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus302Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus302 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus302, true
+}
+
+// HasComputeRespStatus302 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus302() bool {
+	if o != nil && o.ComputeRespStatus302 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus302 gets a reference to the given int32 and assigns it to the ComputeRespStatus302 field.
+func (o *Results) SetComputeRespStatus302(v int32) {
+	o.ComputeRespStatus302 = &v
+}
+
+// GetComputeRespStatus304 returns the ComputeRespStatus304 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus304() int32 {
+	if o == nil || o.ComputeRespStatus304 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus304
+}
+
+// GetComputeRespStatus304Ok returns a tuple with the ComputeRespStatus304 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus304Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus304 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus304, true
+}
+
+// HasComputeRespStatus304 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus304() bool {
+	if o != nil && o.ComputeRespStatus304 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus304 gets a reference to the given int32 and assigns it to the ComputeRespStatus304 field.
+func (o *Results) SetComputeRespStatus304(v int32) {
+	o.ComputeRespStatus304 = &v
+}
+
+// GetComputeRespStatus400 returns the ComputeRespStatus400 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus400() int32 {
+	if o == nil || o.ComputeRespStatus400 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus400
+}
+
+// GetComputeRespStatus400Ok returns a tuple with the ComputeRespStatus400 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus400Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus400 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus400, true
+}
+
+// HasComputeRespStatus400 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus400() bool {
+	if o != nil && o.ComputeRespStatus400 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus400 gets a reference to the given int32 and assigns it to the ComputeRespStatus400 field.
+func (o *Results) SetComputeRespStatus400(v int32) {
+	o.ComputeRespStatus400 = &v
+}
+
+// GetComputeRespStatus401 returns the ComputeRespStatus401 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus401() int32 {
+	if o == nil || o.ComputeRespStatus401 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus401
+}
+
+// GetComputeRespStatus401Ok returns a tuple with the ComputeRespStatus401 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus401Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus401 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus401, true
+}
+
+// HasComputeRespStatus401 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus401() bool {
+	if o != nil && o.ComputeRespStatus401 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus401 gets a reference to the given int32 and assigns it to the ComputeRespStatus401 field.
+func (o *Results) SetComputeRespStatus401(v int32) {
+	o.ComputeRespStatus401 = &v
+}
+
+// GetComputeRespStatus403 returns the ComputeRespStatus403 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus403() int32 {
+	if o == nil || o.ComputeRespStatus403 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus403
+}
+
+// GetComputeRespStatus403Ok returns a tuple with the ComputeRespStatus403 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus403Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus403 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus403, true
+}
+
+// HasComputeRespStatus403 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus403() bool {
+	if o != nil && o.ComputeRespStatus403 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus403 gets a reference to the given int32 and assigns it to the ComputeRespStatus403 field.
+func (o *Results) SetComputeRespStatus403(v int32) {
+	o.ComputeRespStatus403 = &v
+}
+
+// GetComputeRespStatus404 returns the ComputeRespStatus404 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus404() int32 {
+	if o == nil || o.ComputeRespStatus404 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus404
+}
+
+// GetComputeRespStatus404Ok returns a tuple with the ComputeRespStatus404 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus404Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus404 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus404, true
+}
+
+// HasComputeRespStatus404 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus404() bool {
+	if o != nil && o.ComputeRespStatus404 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus404 gets a reference to the given int32 and assigns it to the ComputeRespStatus404 field.
+func (o *Results) SetComputeRespStatus404(v int32) {
+	o.ComputeRespStatus404 = &v
+}
+
+// GetComputeRespStatus416 returns the ComputeRespStatus416 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus416() int32 {
+	if o == nil || o.ComputeRespStatus416 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus416
+}
+
+// GetComputeRespStatus416Ok returns a tuple with the ComputeRespStatus416 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus416Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus416 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus416, true
+}
+
+// HasComputeRespStatus416 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus416() bool {
+	if o != nil && o.ComputeRespStatus416 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus416 gets a reference to the given int32 and assigns it to the ComputeRespStatus416 field.
+func (o *Results) SetComputeRespStatus416(v int32) {
+	o.ComputeRespStatus416 = &v
+}
+
+// GetComputeRespStatus429 returns the ComputeRespStatus429 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus429() int32 {
+	if o == nil || o.ComputeRespStatus429 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus429
+}
+
+// GetComputeRespStatus429Ok returns a tuple with the ComputeRespStatus429 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus429Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus429 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus429, true
+}
+
+// HasComputeRespStatus429 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus429() bool {
+	if o != nil && o.ComputeRespStatus429 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus429 gets a reference to the given int32 and assigns it to the ComputeRespStatus429 field.
+func (o *Results) SetComputeRespStatus429(v int32) {
+	o.ComputeRespStatus429 = &v
+}
+
+// GetComputeRespStatus500 returns the ComputeRespStatus500 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus500() int32 {
+	if o == nil || o.ComputeRespStatus500 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus500
+}
+
+// GetComputeRespStatus500Ok returns a tuple with the ComputeRespStatus500 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus500Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus500 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus500, true
+}
+
+// HasComputeRespStatus500 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus500() bool {
+	if o != nil && o.ComputeRespStatus500 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus500 gets a reference to the given int32 and assigns it to the ComputeRespStatus500 field.
+func (o *Results) SetComputeRespStatus500(v int32) {
+	o.ComputeRespStatus500 = &v
+}
+
+// GetComputeRespStatus501 returns the ComputeRespStatus501 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus501() int32 {
+	if o == nil || o.ComputeRespStatus501 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus501
+}
+
+// GetComputeRespStatus501Ok returns a tuple with the ComputeRespStatus501 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus501Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus501 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus501, true
+}
+
+// HasComputeRespStatus501 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus501() bool {
+	if o != nil && o.ComputeRespStatus501 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus501 gets a reference to the given int32 and assigns it to the ComputeRespStatus501 field.
+func (o *Results) SetComputeRespStatus501(v int32) {
+	o.ComputeRespStatus501 = &v
+}
+
+// GetComputeRespStatus502 returns the ComputeRespStatus502 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus502() int32 {
+	if o == nil || o.ComputeRespStatus502 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus502
+}
+
+// GetComputeRespStatus502Ok returns a tuple with the ComputeRespStatus502 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus502Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus502 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus502, true
+}
+
+// HasComputeRespStatus502 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus502() bool {
+	if o != nil && o.ComputeRespStatus502 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus502 gets a reference to the given int32 and assigns it to the ComputeRespStatus502 field.
+func (o *Results) SetComputeRespStatus502(v int32) {
+	o.ComputeRespStatus502 = &v
+}
+
+// GetComputeRespStatus503 returns the ComputeRespStatus503 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus503() int32 {
+	if o == nil || o.ComputeRespStatus503 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus503
+}
+
+// GetComputeRespStatus503Ok returns a tuple with the ComputeRespStatus503 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus503Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus503 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus503, true
+}
+
+// HasComputeRespStatus503 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus503() bool {
+	if o != nil && o.ComputeRespStatus503 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus503 gets a reference to the given int32 and assigns it to the ComputeRespStatus503 field.
+func (o *Results) SetComputeRespStatus503(v int32) {
+	o.ComputeRespStatus503 = &v
+}
+
+// GetComputeRespStatus504 returns the ComputeRespStatus504 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus504() int32 {
+	if o == nil || o.ComputeRespStatus504 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus504
+}
+
+// GetComputeRespStatus504Ok returns a tuple with the ComputeRespStatus504 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus504Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus504 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus504, true
+}
+
+// HasComputeRespStatus504 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus504() bool {
+	if o != nil && o.ComputeRespStatus504 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus504 gets a reference to the given int32 and assigns it to the ComputeRespStatus504 field.
+func (o *Results) SetComputeRespStatus504(v int32) {
+	o.ComputeRespStatus504 = &v
+}
+
+// GetComputeRespStatus505 returns the ComputeRespStatus505 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus505() int32 {
+	if o == nil || o.ComputeRespStatus505 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus505
+}
+
+// GetComputeRespStatus505Ok returns a tuple with the ComputeRespStatus505 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus505Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus505 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus505, true
+}
+
+// HasComputeRespStatus505 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus505() bool {
+	if o != nil && o.ComputeRespStatus505 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus505 gets a reference to the given int32 and assigns it to the ComputeRespStatus505 field.
+func (o *Results) SetComputeRespStatus505(v int32) {
+	o.ComputeRespStatus505 = &v
+}
+
+// GetComputeRespStatus530 returns the ComputeRespStatus530 field value if set, zero value otherwise.
+func (o *Results) GetComputeRespStatus530() int32 {
+	if o == nil || o.ComputeRespStatus530 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeRespStatus530
+}
+
+// GetComputeRespStatus530Ok returns a tuple with the ComputeRespStatus530 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeRespStatus530Ok() (*int32, bool) {
+	if o == nil || o.ComputeRespStatus530 == nil {
+		return nil, false
+	}
+	return o.ComputeRespStatus530, true
+}
+
+// HasComputeRespStatus530 returns a boolean if a field has been set.
+func (o *Results) HasComputeRespStatus530() bool {
+	if o != nil && o.ComputeRespStatus530 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeRespStatus530 gets a reference to the given int32 and assigns it to the ComputeRespStatus530 field.
+func (o *Results) SetComputeRespStatus530(v int32) {
+	o.ComputeRespStatus530 = &v
+}
+
 // GetImgoptoComputeRequests returns the ImgoptoComputeRequests field value if set, zero value otherwise.
 func (o *Results) GetImgoptoComputeRequests() int32 {
 	if o == nil || o.ImgoptoComputeRequests == nil {
@@ -9342,6 +10024,38 @@ func (o *Results) HasUpgrade() bool {
 // SetUpgrade gets a reference to the given int32 and assigns it to the Upgrade field.
 func (o *Results) SetUpgrade(v int32) {
 	o.Upgrade = &v
+}
+
+// GetNgwafBotAnalysisRequestCount returns the NgwafBotAnalysisRequestCount field value if set, zero value otherwise.
+func (o *Results) GetNgwafBotAnalysisRequestCount() int32 {
+	if o == nil || o.NgwafBotAnalysisRequestCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.NgwafBotAnalysisRequestCount
+}
+
+// GetNgwafBotAnalysisRequestCountOk returns a tuple with the NgwafBotAnalysisRequestCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetNgwafBotAnalysisRequestCountOk() (*int32, bool) {
+	if o == nil || o.NgwafBotAnalysisRequestCount == nil {
+		return nil, false
+	}
+	return o.NgwafBotAnalysisRequestCount, true
+}
+
+// HasNgwafBotAnalysisRequestCount returns a boolean if a field has been set.
+func (o *Results) HasNgwafBotAnalysisRequestCount() bool {
+	if o != nil && o.NgwafBotAnalysisRequestCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNgwafBotAnalysisRequestCount gets a reference to the given int32 and assigns it to the NgwafBotAnalysisRequestCount field.
+func (o *Results) SetNgwafBotAnalysisRequestCount(v int32) {
+	o.NgwafBotAnalysisRequestCount = &v
 }
 
 // GetServiceId returns the ServiceId field value if set, zero value otherwise.
@@ -10219,6 +10933,66 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.ApiDiscoveryRequestsCount != nil {
 		toSerialize["api_discovery_requests_count"] = o.ApiDiscoveryRequestsCount
 	}
+	if o.ComputeRespStatus103 != nil {
+		toSerialize["compute_resp_status_103"] = o.ComputeRespStatus103
+	}
+	if o.ComputeRespStatus200 != nil {
+		toSerialize["compute_resp_status_200"] = o.ComputeRespStatus200
+	}
+	if o.ComputeRespStatus204 != nil {
+		toSerialize["compute_resp_status_204"] = o.ComputeRespStatus204
+	}
+	if o.ComputeRespStatus206 != nil {
+		toSerialize["compute_resp_status_206"] = o.ComputeRespStatus206
+	}
+	if o.ComputeRespStatus301 != nil {
+		toSerialize["compute_resp_status_301"] = o.ComputeRespStatus301
+	}
+	if o.ComputeRespStatus302 != nil {
+		toSerialize["compute_resp_status_302"] = o.ComputeRespStatus302
+	}
+	if o.ComputeRespStatus304 != nil {
+		toSerialize["compute_resp_status_304"] = o.ComputeRespStatus304
+	}
+	if o.ComputeRespStatus400 != nil {
+		toSerialize["compute_resp_status_400"] = o.ComputeRespStatus400
+	}
+	if o.ComputeRespStatus401 != nil {
+		toSerialize["compute_resp_status_401"] = o.ComputeRespStatus401
+	}
+	if o.ComputeRespStatus403 != nil {
+		toSerialize["compute_resp_status_403"] = o.ComputeRespStatus403
+	}
+	if o.ComputeRespStatus404 != nil {
+		toSerialize["compute_resp_status_404"] = o.ComputeRespStatus404
+	}
+	if o.ComputeRespStatus416 != nil {
+		toSerialize["compute_resp_status_416"] = o.ComputeRespStatus416
+	}
+	if o.ComputeRespStatus429 != nil {
+		toSerialize["compute_resp_status_429"] = o.ComputeRespStatus429
+	}
+	if o.ComputeRespStatus500 != nil {
+		toSerialize["compute_resp_status_500"] = o.ComputeRespStatus500
+	}
+	if o.ComputeRespStatus501 != nil {
+		toSerialize["compute_resp_status_501"] = o.ComputeRespStatus501
+	}
+	if o.ComputeRespStatus502 != nil {
+		toSerialize["compute_resp_status_502"] = o.ComputeRespStatus502
+	}
+	if o.ComputeRespStatus503 != nil {
+		toSerialize["compute_resp_status_503"] = o.ComputeRespStatus503
+	}
+	if o.ComputeRespStatus504 != nil {
+		toSerialize["compute_resp_status_504"] = o.ComputeRespStatus504
+	}
+	if o.ComputeRespStatus505 != nil {
+		toSerialize["compute_resp_status_505"] = o.ComputeRespStatus505
+	}
+	if o.ComputeRespStatus530 != nil {
+		toSerialize["compute_resp_status_530"] = o.ComputeRespStatus530
+	}
 	if o.ImgoptoComputeRequests != nil {
 		toSerialize["imgopto_compute_requests"] = o.ImgoptoComputeRequests
 	}
@@ -10230,6 +11004,9 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	}
 	if o.Upgrade != nil {
 		toSerialize["upgrade"] = o.Upgrade
+	}
+	if o.NgwafBotAnalysisRequestCount != nil {
+		toSerialize["ngwaf_bot_analysis_request_count"] = o.NgwafBotAnalysisRequestCount
 	}
 	if o.ServiceId != nil {
 		toSerialize["service_id"] = o.ServiceId
@@ -10526,10 +11303,31 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "ngwaf_requests_timeout_count")
 		delete(additionalProperties, "ngwaf_requests_challenged_count")
 		delete(additionalProperties, "api_discovery_requests_count")
+		delete(additionalProperties, "compute_resp_status_103")
+		delete(additionalProperties, "compute_resp_status_200")
+		delete(additionalProperties, "compute_resp_status_204")
+		delete(additionalProperties, "compute_resp_status_206")
+		delete(additionalProperties, "compute_resp_status_301")
+		delete(additionalProperties, "compute_resp_status_302")
+		delete(additionalProperties, "compute_resp_status_304")
+		delete(additionalProperties, "compute_resp_status_400")
+		delete(additionalProperties, "compute_resp_status_401")
+		delete(additionalProperties, "compute_resp_status_403")
+		delete(additionalProperties, "compute_resp_status_404")
+		delete(additionalProperties, "compute_resp_status_416")
+		delete(additionalProperties, "compute_resp_status_429")
+		delete(additionalProperties, "compute_resp_status_500")
+		delete(additionalProperties, "compute_resp_status_501")
+		delete(additionalProperties, "compute_resp_status_502")
+		delete(additionalProperties, "compute_resp_status_503")
+		delete(additionalProperties, "compute_resp_status_504")
+		delete(additionalProperties, "compute_resp_status_505")
+		delete(additionalProperties, "compute_resp_status_530")
 		delete(additionalProperties, "imgopto_compute_requests")
 		delete(additionalProperties, "dns_billable_responses_count")
 		delete(additionalProperties, "dns_nonbillable_responses_count")
 		delete(additionalProperties, "upgrade")
+		delete(additionalProperties, "ngwaf_bot_analysis_request_count")
 		delete(additionalProperties, "service_id")
 		delete(additionalProperties, "start_time")
 		o.AdditionalProperties = additionalProperties

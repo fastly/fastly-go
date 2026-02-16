@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **From** | Pointer to **string** |  | [optional] 
 **By** | Pointer to **string** |  | [optional] 
 **Region** | Pointer to **string** |  | [optional] 
+**Datacenter** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetRegion sets Region field to given value.
 `func (o *HistoricalMeta) HasRegion() bool`
 
 HasRegion returns a boolean if a field has been set.
+
+### GetDatacenter
+
+`func (o *HistoricalMeta) GetDatacenter() string`
+
+GetDatacenter returns the Datacenter field if non-nil, zero value otherwise.
+
+### GetDatacenterOk
+
+`func (o *HistoricalMeta) GetDatacenterOk() (*string, bool)`
+
+GetDatacenterOk returns a tuple with the Datacenter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDatacenter
+
+`func (o *HistoricalMeta) SetDatacenter(v string)`
+
+SetDatacenter sets Datacenter field to given value.
+
+### HasDatacenter
+
+`func (o *HistoricalMeta) HasDatacenter() bool`
+
+HasDatacenter returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

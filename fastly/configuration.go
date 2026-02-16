@@ -104,7 +104,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "fastly-go/1.0.0-beta.46",
+		UserAgent:     "fastly-go/1.0.0-beta.47",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
@@ -250,6 +250,72 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"ApexRedirectAPIService.UpdateApexRedirect": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityCreateOperation": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityCreateOperationTag": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityDeleteOperation": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityDeleteOperationTag": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityGetOperation": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityGetOperationTag": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityListDiscoveredOperations": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityListOperationTags": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityListOperations": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityUpdateOperation": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityUpdateOperationTag": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",

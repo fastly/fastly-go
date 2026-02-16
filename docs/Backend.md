@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Comment** | Pointer to **NullableString** | A freeform descriptive note. | [optional] 
 **ConnectTimeout** | Pointer to **int32** | Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`. | [optional] 
 **FirstByteTimeout** | Pointer to **int32** | Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`. | [optional] 
+**FetchTimeout** | Pointer to **int32** | Maximum duration in milliseconds to wait for the entire response to be received after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.fetch_timeout`. | [optional] 
 **Healthcheck** | Pointer to **NullableString** | The name of the healthcheck to use with this backend. | [optional] 
 **Hostname** | Pointer to **NullableString** | The hostname of the backend. May be used as an alternative to `address` to set the backend location. | [optional] 
 **Ipv4** | Pointer to **NullableString** | IPv4 address of the backend. May be used as an alternative to `address` to set the backend location. | [optional] 
@@ -254,6 +255,31 @@ SetFirstByteTimeout sets FirstByteTimeout field to given value.
 `func (o *Backend) HasFirstByteTimeout() bool`
 
 HasFirstByteTimeout returns a boolean if a field has been set.
+
+### GetFetchTimeout
+
+`func (o *Backend) GetFetchTimeout() int32`
+
+GetFetchTimeout returns the FetchTimeout field if non-nil, zero value otherwise.
+
+### GetFetchTimeoutOk
+
+`func (o *Backend) GetFetchTimeoutOk() (*int32, bool)`
+
+GetFetchTimeoutOk returns a tuple with the FetchTimeout field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFetchTimeout
+
+`func (o *Backend) SetFetchTimeout(v int32)`
+
+SetFetchTimeout sets FetchTimeout field to given value.
+
+### HasFetchTimeout
+
+`func (o *Backend) HasFetchTimeout() bool`
+
+HasFetchTimeout returns a boolean if a field has been set.
 
 ### GetHealthcheck
 

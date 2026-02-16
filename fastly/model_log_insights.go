@@ -20,7 +20,7 @@ import (
 type LogInsights struct {
 	Dimensions           *LogInsightsDimensions          `json:"dimensions,omitempty"`
 	DimensionAttributes  *LogInsightsDimensionAttributes `json:"dimension_attributes,omitempty"`
-	Values               *LogInsightsValues              `json:"values,omitempty"`
+	Values               []LogInsightsValues             `json:"values,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -108,17 +108,17 @@ func (o *LogInsights) SetDimensionAttributes(v LogInsightsDimensionAttributes) {
 }
 
 // GetValues returns the Values field value if set, zero value otherwise.
-func (o *LogInsights) GetValues() LogInsightsValues {
+func (o *LogInsights) GetValues() []LogInsightsValues {
 	if o == nil || o.Values == nil {
-		var ret LogInsightsValues
+		var ret []LogInsightsValues
 		return ret
 	}
-	return *o.Values
+	return o.Values
 }
 
 // GetValuesOk returns a tuple with the Values field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LogInsights) GetValuesOk() (*LogInsightsValues, bool) {
+func (o *LogInsights) GetValuesOk() ([]LogInsightsValues, bool) {
 	if o == nil || o.Values == nil {
 		return nil, false
 	}
@@ -134,9 +134,9 @@ func (o *LogInsights) HasValues() bool {
 	return false
 }
 
-// SetValues gets a reference to the given LogInsightsValues and assigns it to the Values field.
-func (o *LogInsights) SetValues(v LogInsightsValues) {
-	o.Values = &v
+// SetValues gets a reference to the given []LogInsightsValues and assigns it to the Values field.
+func (o *LogInsights) SetValues(v []LogInsightsValues) {
+	o.Values = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.

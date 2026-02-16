@@ -18,7 +18,8 @@ import (
 
 // InlineResponse2006 struct for InlineResponse2006
 type InlineResponse2006 struct {
-	Results              []Suggestion `json:"results,omitempty"`
+	Data                 []DdosProtectionRuleWithStats `json:"data"`
+	Meta                 PaginationCursorMeta          `json:"meta"`
 	AdditionalProperties map[string]any
 }
 
@@ -28,8 +29,10 @@ type _InlineResponse2006 InlineResponse2006
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInlineResponse2006() *InlineResponse2006 {
+func NewInlineResponse2006(data []DdosProtectionRuleWithStats, meta PaginationCursorMeta) *InlineResponse2006 {
 	this := InlineResponse2006{}
+	this.Data = data
+	this.Meta = meta
 	return &this
 }
 
@@ -41,44 +44,63 @@ func NewInlineResponse2006WithDefaults() *InlineResponse2006 {
 	return &this
 }
 
-// GetResults returns the Results field value if set, zero value otherwise.
-func (o *InlineResponse2006) GetResults() []Suggestion {
-	if o == nil || o.Results == nil {
-		var ret []Suggestion
+// GetData returns the Data field value
+func (o *InlineResponse2006) GetData() []DdosProtectionRuleWithStats {
+	if o == nil {
+		var ret []DdosProtectionRuleWithStats
 		return ret
 	}
-	return o.Results
+
+	return o.Data
 }
 
-// GetResultsOk returns a tuple with the Results field value if set, nil otherwise
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2006) GetResultsOk() ([]Suggestion, bool) {
-	if o == nil || o.Results == nil {
+func (o *InlineResponse2006) GetDataOk() ([]DdosProtectionRuleWithStats, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Results, true
+	return o.Data, true
 }
 
-// HasResults returns a boolean if a field has been set.
-func (o *InlineResponse2006) HasResults() bool {
-	if o != nil && o.Results != nil {
-		return true
+// SetData sets field value
+func (o *InlineResponse2006) SetData(v []DdosProtectionRuleWithStats) {
+	o.Data = v
+}
+
+// GetMeta returns the Meta field value
+func (o *InlineResponse2006) GetMeta() PaginationCursorMeta {
+	if o == nil {
+		var ret PaginationCursorMeta
+		return ret
 	}
 
-	return false
+	return o.Meta
 }
 
-// SetResults gets a reference to the given []Suggestion and assigns it to the Results field.
-func (o *InlineResponse2006) SetResults(v []Suggestion) {
-	o.Results = v
+// GetMetaOk returns a tuple with the Meta field value
+// and a boolean to check if the value has been set.
+func (o *InlineResponse2006) GetMetaOk() (*PaginationCursorMeta, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return &o.Meta, true
+}
+
+// SetMeta sets field value
+func (o *InlineResponse2006) SetMeta(v PaginationCursorMeta) {
+	o.Meta = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o InlineResponse2006) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.Results != nil {
-		toSerialize["results"] = o.Results
+	if true {
+		toSerialize["data"] = o.Data
+	}
+	if true {
+		toSerialize["meta"] = o.Meta
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -100,7 +122,8 @@ func (o *InlineResponse2006) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "results")
+		delete(additionalProperties, "data")
+		delete(additionalProperties, "meta")
 		o.AdditionalProperties = additionalProperties
 	}
 

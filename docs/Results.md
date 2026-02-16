@@ -273,10 +273,31 @@ Name | Type | Description | Notes
 **NgwafRequestsTimeoutCount** | Pointer to **int32** | Count of Edge WAF requests timed outcome. | [optional] 
 **NgwafRequestsChallengedCount** | Pointer to **int32** | Count of Edge WAF requests challenged. | [optional] 
 **ApiDiscoveryRequestsCount** | Pointer to **int32** | Number of requests processed by the API Discovery engine. | [optional] 
+**ComputeRespStatus103** | Pointer to **int32** | Number of responses delivered with status code 103 (Early Hints) by the Compute platform. | [optional] 
+**ComputeRespStatus200** | Pointer to **int32** | Number of responses delivered with status code 200 (Success) by the Compute platform. | [optional] 
+**ComputeRespStatus204** | Pointer to **int32** | Number of responses delivered with status code 204 (No Content) by the Compute platform. | [optional] 
+**ComputeRespStatus206** | Pointer to **int32** | Number of responses delivered with status code 206 (Partial Content) by the Compute platform. | [optional] 
+**ComputeRespStatus301** | Pointer to **int32** | Number of responses delivered with status code 301 (Moved Permanently) by the Compute platform. | [optional] 
+**ComputeRespStatus302** | Pointer to **int32** | Number of responses delivered with status code 302 (Found) by the Compute platform. | [optional] 
+**ComputeRespStatus304** | Pointer to **int32** | Number of responses delivered with status code 304 (Not Modified) by the Compute platform. | [optional] 
+**ComputeRespStatus400** | Pointer to **int32** | Number of responses delivered with status code 400 (Bad Request) by the Compute platform. | [optional] 
+**ComputeRespStatus401** | Pointer to **int32** | Number of responses delivered with status code 401 (Unauthorized) by the Compute platform. | [optional] 
+**ComputeRespStatus403** | Pointer to **int32** | Number of responses delivered with status code 403 (Forbidden) by the Compute platform. | [optional] 
+**ComputeRespStatus404** | Pointer to **int32** | Number of responses delivered with status code 404 (Not Found) by the Compute platform. | [optional] 
+**ComputeRespStatus416** | Pointer to **int32** | Number of responses delivered with status code 416 (Range Not Satisfiable) by the Compute platform. | [optional] 
+**ComputeRespStatus429** | Pointer to **int32** | Number of responses delivered with status code 429 (Too Many Requests) by the Compute platform. | [optional] 
+**ComputeRespStatus500** | Pointer to **int32** | Number of responses delivered with status code 500 (Internal Server Error) by the Compute platform. | [optional] 
+**ComputeRespStatus501** | Pointer to **int32** | Number of responses delivered with status code 501 (Not Implemented) by the Compute platform. | [optional] 
+**ComputeRespStatus502** | Pointer to **int32** | Number of responses delivered with status code 502 (Bad Gateway) by the Compute platform. | [optional] 
+**ComputeRespStatus503** | Pointer to **int32** | Number of responses delivered with status code 503 (Service Unavailable) by the Compute platform. | [optional] 
+**ComputeRespStatus504** | Pointer to **int32** | Number of responses delivered with status code 504 (Gateway Timeout) by the Compute platform. | [optional] 
+**ComputeRespStatus505** | Pointer to **int32** | Number of responses delivered with status code 505 (HTTP Version Not Supported) by the Compute platform. | [optional] 
+**ComputeRespStatus530** | Pointer to **int32** | Number of responses delivered with status code 530 by the Compute platform. | [optional] 
 **ImgoptoComputeRequests** | Pointer to **int32** | The number of Image Optimizer requests made from Compute services. | [optional] 
 **DnsBillableResponsesCount** | Pointer to **int32** | Number of billable DNS responses (e.g., A, CNAME). | [optional] 
 **DnsNonbillableResponsesCount** | Pointer to **int32** | Number of non-billable DNS responses (e.g., NODATA, NXDOMAIN). | [optional] 
 **Upgrade** | Pointer to **int32** | Number of requests that resulted in a WebSocket upgrade. | [optional] 
+**NgwafBotAnalysisRequestCount** | Pointer to **int32** | Count of Next-Gen WAF Bot Management requests. | [optional] 
 **ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **StartTime** | Pointer to **int64** | Timestamp for the start of the time period being reported | [optional] 
 
@@ -7034,6 +7055,506 @@ SetApiDiscoveryRequestsCount sets ApiDiscoveryRequestsCount field to given value
 
 HasApiDiscoveryRequestsCount returns a boolean if a field has been set.
 
+### GetComputeRespStatus103
+
+`func (o *Results) GetComputeRespStatus103() int32`
+
+GetComputeRespStatus103 returns the ComputeRespStatus103 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus103Ok
+
+`func (o *Results) GetComputeRespStatus103Ok() (*int32, bool)`
+
+GetComputeRespStatus103Ok returns a tuple with the ComputeRespStatus103 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus103
+
+`func (o *Results) SetComputeRespStatus103(v int32)`
+
+SetComputeRespStatus103 sets ComputeRespStatus103 field to given value.
+
+### HasComputeRespStatus103
+
+`func (o *Results) HasComputeRespStatus103() bool`
+
+HasComputeRespStatus103 returns a boolean if a field has been set.
+
+### GetComputeRespStatus200
+
+`func (o *Results) GetComputeRespStatus200() int32`
+
+GetComputeRespStatus200 returns the ComputeRespStatus200 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus200Ok
+
+`func (o *Results) GetComputeRespStatus200Ok() (*int32, bool)`
+
+GetComputeRespStatus200Ok returns a tuple with the ComputeRespStatus200 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus200
+
+`func (o *Results) SetComputeRespStatus200(v int32)`
+
+SetComputeRespStatus200 sets ComputeRespStatus200 field to given value.
+
+### HasComputeRespStatus200
+
+`func (o *Results) HasComputeRespStatus200() bool`
+
+HasComputeRespStatus200 returns a boolean if a field has been set.
+
+### GetComputeRespStatus204
+
+`func (o *Results) GetComputeRespStatus204() int32`
+
+GetComputeRespStatus204 returns the ComputeRespStatus204 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus204Ok
+
+`func (o *Results) GetComputeRespStatus204Ok() (*int32, bool)`
+
+GetComputeRespStatus204Ok returns a tuple with the ComputeRespStatus204 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus204
+
+`func (o *Results) SetComputeRespStatus204(v int32)`
+
+SetComputeRespStatus204 sets ComputeRespStatus204 field to given value.
+
+### HasComputeRespStatus204
+
+`func (o *Results) HasComputeRespStatus204() bool`
+
+HasComputeRespStatus204 returns a boolean if a field has been set.
+
+### GetComputeRespStatus206
+
+`func (o *Results) GetComputeRespStatus206() int32`
+
+GetComputeRespStatus206 returns the ComputeRespStatus206 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus206Ok
+
+`func (o *Results) GetComputeRespStatus206Ok() (*int32, bool)`
+
+GetComputeRespStatus206Ok returns a tuple with the ComputeRespStatus206 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus206
+
+`func (o *Results) SetComputeRespStatus206(v int32)`
+
+SetComputeRespStatus206 sets ComputeRespStatus206 field to given value.
+
+### HasComputeRespStatus206
+
+`func (o *Results) HasComputeRespStatus206() bool`
+
+HasComputeRespStatus206 returns a boolean if a field has been set.
+
+### GetComputeRespStatus301
+
+`func (o *Results) GetComputeRespStatus301() int32`
+
+GetComputeRespStatus301 returns the ComputeRespStatus301 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus301Ok
+
+`func (o *Results) GetComputeRespStatus301Ok() (*int32, bool)`
+
+GetComputeRespStatus301Ok returns a tuple with the ComputeRespStatus301 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus301
+
+`func (o *Results) SetComputeRespStatus301(v int32)`
+
+SetComputeRespStatus301 sets ComputeRespStatus301 field to given value.
+
+### HasComputeRespStatus301
+
+`func (o *Results) HasComputeRespStatus301() bool`
+
+HasComputeRespStatus301 returns a boolean if a field has been set.
+
+### GetComputeRespStatus302
+
+`func (o *Results) GetComputeRespStatus302() int32`
+
+GetComputeRespStatus302 returns the ComputeRespStatus302 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus302Ok
+
+`func (o *Results) GetComputeRespStatus302Ok() (*int32, bool)`
+
+GetComputeRespStatus302Ok returns a tuple with the ComputeRespStatus302 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus302
+
+`func (o *Results) SetComputeRespStatus302(v int32)`
+
+SetComputeRespStatus302 sets ComputeRespStatus302 field to given value.
+
+### HasComputeRespStatus302
+
+`func (o *Results) HasComputeRespStatus302() bool`
+
+HasComputeRespStatus302 returns a boolean if a field has been set.
+
+### GetComputeRespStatus304
+
+`func (o *Results) GetComputeRespStatus304() int32`
+
+GetComputeRespStatus304 returns the ComputeRespStatus304 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus304Ok
+
+`func (o *Results) GetComputeRespStatus304Ok() (*int32, bool)`
+
+GetComputeRespStatus304Ok returns a tuple with the ComputeRespStatus304 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus304
+
+`func (o *Results) SetComputeRespStatus304(v int32)`
+
+SetComputeRespStatus304 sets ComputeRespStatus304 field to given value.
+
+### HasComputeRespStatus304
+
+`func (o *Results) HasComputeRespStatus304() bool`
+
+HasComputeRespStatus304 returns a boolean if a field has been set.
+
+### GetComputeRespStatus400
+
+`func (o *Results) GetComputeRespStatus400() int32`
+
+GetComputeRespStatus400 returns the ComputeRespStatus400 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus400Ok
+
+`func (o *Results) GetComputeRespStatus400Ok() (*int32, bool)`
+
+GetComputeRespStatus400Ok returns a tuple with the ComputeRespStatus400 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus400
+
+`func (o *Results) SetComputeRespStatus400(v int32)`
+
+SetComputeRespStatus400 sets ComputeRespStatus400 field to given value.
+
+### HasComputeRespStatus400
+
+`func (o *Results) HasComputeRespStatus400() bool`
+
+HasComputeRespStatus400 returns a boolean if a field has been set.
+
+### GetComputeRespStatus401
+
+`func (o *Results) GetComputeRespStatus401() int32`
+
+GetComputeRespStatus401 returns the ComputeRespStatus401 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus401Ok
+
+`func (o *Results) GetComputeRespStatus401Ok() (*int32, bool)`
+
+GetComputeRespStatus401Ok returns a tuple with the ComputeRespStatus401 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus401
+
+`func (o *Results) SetComputeRespStatus401(v int32)`
+
+SetComputeRespStatus401 sets ComputeRespStatus401 field to given value.
+
+### HasComputeRespStatus401
+
+`func (o *Results) HasComputeRespStatus401() bool`
+
+HasComputeRespStatus401 returns a boolean if a field has been set.
+
+### GetComputeRespStatus403
+
+`func (o *Results) GetComputeRespStatus403() int32`
+
+GetComputeRespStatus403 returns the ComputeRespStatus403 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus403Ok
+
+`func (o *Results) GetComputeRespStatus403Ok() (*int32, bool)`
+
+GetComputeRespStatus403Ok returns a tuple with the ComputeRespStatus403 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus403
+
+`func (o *Results) SetComputeRespStatus403(v int32)`
+
+SetComputeRespStatus403 sets ComputeRespStatus403 field to given value.
+
+### HasComputeRespStatus403
+
+`func (o *Results) HasComputeRespStatus403() bool`
+
+HasComputeRespStatus403 returns a boolean if a field has been set.
+
+### GetComputeRespStatus404
+
+`func (o *Results) GetComputeRespStatus404() int32`
+
+GetComputeRespStatus404 returns the ComputeRespStatus404 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus404Ok
+
+`func (o *Results) GetComputeRespStatus404Ok() (*int32, bool)`
+
+GetComputeRespStatus404Ok returns a tuple with the ComputeRespStatus404 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus404
+
+`func (o *Results) SetComputeRespStatus404(v int32)`
+
+SetComputeRespStatus404 sets ComputeRespStatus404 field to given value.
+
+### HasComputeRespStatus404
+
+`func (o *Results) HasComputeRespStatus404() bool`
+
+HasComputeRespStatus404 returns a boolean if a field has been set.
+
+### GetComputeRespStatus416
+
+`func (o *Results) GetComputeRespStatus416() int32`
+
+GetComputeRespStatus416 returns the ComputeRespStatus416 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus416Ok
+
+`func (o *Results) GetComputeRespStatus416Ok() (*int32, bool)`
+
+GetComputeRespStatus416Ok returns a tuple with the ComputeRespStatus416 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus416
+
+`func (o *Results) SetComputeRespStatus416(v int32)`
+
+SetComputeRespStatus416 sets ComputeRespStatus416 field to given value.
+
+### HasComputeRespStatus416
+
+`func (o *Results) HasComputeRespStatus416() bool`
+
+HasComputeRespStatus416 returns a boolean if a field has been set.
+
+### GetComputeRespStatus429
+
+`func (o *Results) GetComputeRespStatus429() int32`
+
+GetComputeRespStatus429 returns the ComputeRespStatus429 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus429Ok
+
+`func (o *Results) GetComputeRespStatus429Ok() (*int32, bool)`
+
+GetComputeRespStatus429Ok returns a tuple with the ComputeRespStatus429 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus429
+
+`func (o *Results) SetComputeRespStatus429(v int32)`
+
+SetComputeRespStatus429 sets ComputeRespStatus429 field to given value.
+
+### HasComputeRespStatus429
+
+`func (o *Results) HasComputeRespStatus429() bool`
+
+HasComputeRespStatus429 returns a boolean if a field has been set.
+
+### GetComputeRespStatus500
+
+`func (o *Results) GetComputeRespStatus500() int32`
+
+GetComputeRespStatus500 returns the ComputeRespStatus500 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus500Ok
+
+`func (o *Results) GetComputeRespStatus500Ok() (*int32, bool)`
+
+GetComputeRespStatus500Ok returns a tuple with the ComputeRespStatus500 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus500
+
+`func (o *Results) SetComputeRespStatus500(v int32)`
+
+SetComputeRespStatus500 sets ComputeRespStatus500 field to given value.
+
+### HasComputeRespStatus500
+
+`func (o *Results) HasComputeRespStatus500() bool`
+
+HasComputeRespStatus500 returns a boolean if a field has been set.
+
+### GetComputeRespStatus501
+
+`func (o *Results) GetComputeRespStatus501() int32`
+
+GetComputeRespStatus501 returns the ComputeRespStatus501 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus501Ok
+
+`func (o *Results) GetComputeRespStatus501Ok() (*int32, bool)`
+
+GetComputeRespStatus501Ok returns a tuple with the ComputeRespStatus501 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus501
+
+`func (o *Results) SetComputeRespStatus501(v int32)`
+
+SetComputeRespStatus501 sets ComputeRespStatus501 field to given value.
+
+### HasComputeRespStatus501
+
+`func (o *Results) HasComputeRespStatus501() bool`
+
+HasComputeRespStatus501 returns a boolean if a field has been set.
+
+### GetComputeRespStatus502
+
+`func (o *Results) GetComputeRespStatus502() int32`
+
+GetComputeRespStatus502 returns the ComputeRespStatus502 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus502Ok
+
+`func (o *Results) GetComputeRespStatus502Ok() (*int32, bool)`
+
+GetComputeRespStatus502Ok returns a tuple with the ComputeRespStatus502 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus502
+
+`func (o *Results) SetComputeRespStatus502(v int32)`
+
+SetComputeRespStatus502 sets ComputeRespStatus502 field to given value.
+
+### HasComputeRespStatus502
+
+`func (o *Results) HasComputeRespStatus502() bool`
+
+HasComputeRespStatus502 returns a boolean if a field has been set.
+
+### GetComputeRespStatus503
+
+`func (o *Results) GetComputeRespStatus503() int32`
+
+GetComputeRespStatus503 returns the ComputeRespStatus503 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus503Ok
+
+`func (o *Results) GetComputeRespStatus503Ok() (*int32, bool)`
+
+GetComputeRespStatus503Ok returns a tuple with the ComputeRespStatus503 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus503
+
+`func (o *Results) SetComputeRespStatus503(v int32)`
+
+SetComputeRespStatus503 sets ComputeRespStatus503 field to given value.
+
+### HasComputeRespStatus503
+
+`func (o *Results) HasComputeRespStatus503() bool`
+
+HasComputeRespStatus503 returns a boolean if a field has been set.
+
+### GetComputeRespStatus504
+
+`func (o *Results) GetComputeRespStatus504() int32`
+
+GetComputeRespStatus504 returns the ComputeRespStatus504 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus504Ok
+
+`func (o *Results) GetComputeRespStatus504Ok() (*int32, bool)`
+
+GetComputeRespStatus504Ok returns a tuple with the ComputeRespStatus504 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus504
+
+`func (o *Results) SetComputeRespStatus504(v int32)`
+
+SetComputeRespStatus504 sets ComputeRespStatus504 field to given value.
+
+### HasComputeRespStatus504
+
+`func (o *Results) HasComputeRespStatus504() bool`
+
+HasComputeRespStatus504 returns a boolean if a field has been set.
+
+### GetComputeRespStatus505
+
+`func (o *Results) GetComputeRespStatus505() int32`
+
+GetComputeRespStatus505 returns the ComputeRespStatus505 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus505Ok
+
+`func (o *Results) GetComputeRespStatus505Ok() (*int32, bool)`
+
+GetComputeRespStatus505Ok returns a tuple with the ComputeRespStatus505 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus505
+
+`func (o *Results) SetComputeRespStatus505(v int32)`
+
+SetComputeRespStatus505 sets ComputeRespStatus505 field to given value.
+
+### HasComputeRespStatus505
+
+`func (o *Results) HasComputeRespStatus505() bool`
+
+HasComputeRespStatus505 returns a boolean if a field has been set.
+
+### GetComputeRespStatus530
+
+`func (o *Results) GetComputeRespStatus530() int32`
+
+GetComputeRespStatus530 returns the ComputeRespStatus530 field if non-nil, zero value otherwise.
+
+### GetComputeRespStatus530Ok
+
+`func (o *Results) GetComputeRespStatus530Ok() (*int32, bool)`
+
+GetComputeRespStatus530Ok returns a tuple with the ComputeRespStatus530 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeRespStatus530
+
+`func (o *Results) SetComputeRespStatus530(v int32)`
+
+SetComputeRespStatus530 sets ComputeRespStatus530 field to given value.
+
+### HasComputeRespStatus530
+
+`func (o *Results) HasComputeRespStatus530() bool`
+
+HasComputeRespStatus530 returns a boolean if a field has been set.
+
 ### GetImgoptoComputeRequests
 
 `func (o *Results) GetImgoptoComputeRequests() int32`
@@ -7133,6 +7654,31 @@ SetUpgrade sets Upgrade field to given value.
 `func (o *Results) HasUpgrade() bool`
 
 HasUpgrade returns a boolean if a field has been set.
+
+### GetNgwafBotAnalysisRequestCount
+
+`func (o *Results) GetNgwafBotAnalysisRequestCount() int32`
+
+GetNgwafBotAnalysisRequestCount returns the NgwafBotAnalysisRequestCount field if non-nil, zero value otherwise.
+
+### GetNgwafBotAnalysisRequestCountOk
+
+`func (o *Results) GetNgwafBotAnalysisRequestCountOk() (*int32, bool)`
+
+GetNgwafBotAnalysisRequestCountOk returns a tuple with the NgwafBotAnalysisRequestCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNgwafBotAnalysisRequestCount
+
+`func (o *Results) SetNgwafBotAnalysisRequestCount(v int32)`
+
+SetNgwafBotAnalysisRequestCount sets NgwafBotAnalysisRequestCount field to given value.
+
+### HasNgwafBotAnalysisRequestCount
+
+`func (o *Results) HasNgwafBotAnalysisRequestCount() bool`
+
+HasNgwafBotAnalysisRequestCount returns a boolean if a field has been set.
 
 ### GetServiceId
 
