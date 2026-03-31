@@ -25,12 +25,14 @@ type DiscoveredOperationGet struct {
 	Domain string `json:"domain"`
 	// The path for the operation, which may include path parameters.
 	Path string `json:"path"`
-	// The current status of the operation.
-	Status *string `json:"status,omitempty"`
+	// The unique identifier of the discovered operation.
+	Id string `json:"id"`
 	// The timestamp when the operation was last updated.
 	UpdatedAt *time.Time `json:"updated_at,omitempty"`
 	// The timestamp when the operation was last seen in traffic.
-	LastSeenAt           *time.Time `json:"last_seen_at,omitempty"`
+	LastSeenAt *time.Time `json:"last_seen_at,omitempty"`
+	// Requests per second observed for this operation.
+	Rps                  *float32 `json:"rps,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -40,11 +42,12 @@ type _DiscoveredOperationGet DiscoveredOperationGet
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDiscoveredOperationGet(method string, domain string, path string) *DiscoveredOperationGet {
+func NewDiscoveredOperationGet(method string, domain string, path string, id string) *DiscoveredOperationGet {
 	this := DiscoveredOperationGet{}
 	this.Method = method
 	this.Domain = domain
 	this.Path = path
+	this.Id = id
 	return &this
 }
 
@@ -128,36 +131,28 @@ func (o *DiscoveredOperationGet) SetPath(v string) {
 	o.Path = v
 }
 
-// GetStatus returns the Status field value if set, zero value otherwise.
-func (o *DiscoveredOperationGet) GetStatus() string {
-	if o == nil || o.Status == nil {
+// GetId returns the Id field value
+func (o *DiscoveredOperationGet) GetId() string {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.Status
+
+	return o.Id
 }
 
-// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *DiscoveredOperationGet) GetStatusOk() (*string, bool) {
-	if o == nil || o.Status == nil {
+func (o *DiscoveredOperationGet) GetIdOk() (*string, bool) {
+	if o == nil {
 		return nil, false
 	}
-	return o.Status, true
+	return &o.Id, true
 }
 
-// HasStatus returns a boolean if a field has been set.
-func (o *DiscoveredOperationGet) HasStatus() bool {
-	if o != nil && o.Status != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *DiscoveredOperationGet) SetStatus(v string) {
-	o.Status = &v
+// SetId sets field value
+func (o *DiscoveredOperationGet) SetId(v string) {
+	o.Id = v
 }
 
 // GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
@@ -224,6 +219,38 @@ func (o *DiscoveredOperationGet) SetLastSeenAt(v time.Time) {
 	o.LastSeenAt = &v
 }
 
+// GetRps returns the Rps field value if set, zero value otherwise.
+func (o *DiscoveredOperationGet) GetRps() float32 {
+	if o == nil || o.Rps == nil {
+		var ret float32
+		return ret
+	}
+	return *o.Rps
+}
+
+// GetRpsOk returns a tuple with the Rps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DiscoveredOperationGet) GetRpsOk() (*float32, bool) {
+	if o == nil || o.Rps == nil {
+		return nil, false
+	}
+	return o.Rps, true
+}
+
+// HasRps returns a boolean if a field has been set.
+func (o *DiscoveredOperationGet) HasRps() bool {
+	if o != nil && o.Rps != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRps gets a reference to the given float32 and assigns it to the Rps field.
+func (o *DiscoveredOperationGet) SetRps(v float32) {
+	o.Rps = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o DiscoveredOperationGet) MarshalJSON() ([]byte, error) {
@@ -237,14 +264,17 @@ func (o DiscoveredOperationGet) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["path"] = o.Path
 	}
-	if o.Status != nil {
-		toSerialize["status"] = o.Status
+	if true {
+		toSerialize["id"] = o.Id
 	}
 	if o.UpdatedAt != nil {
 		toSerialize["updated_at"] = o.UpdatedAt
 	}
 	if o.LastSeenAt != nil {
 		toSerialize["last_seen_at"] = o.LastSeenAt
+	}
+	if o.Rps != nil {
+		toSerialize["rps"] = o.Rps
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -269,9 +299,10 @@ func (o *DiscoveredOperationGet) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "method")
 		delete(additionalProperties, "domain")
 		delete(additionalProperties, "path")
-		delete(additionalProperties, "status")
+		delete(additionalProperties, "id")
 		delete(additionalProperties, "updated_at")
 		delete(additionalProperties, "last_seen_at")
+		delete(additionalProperties, "rps")
 		o.AdditionalProperties = additionalProperties
 	}
 

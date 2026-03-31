@@ -16,31 +16,31 @@ import (
 	"encoding/json"
 )
 
-// OperationCreate struct for OperationCreate
-type OperationCreate struct {
+// OperationBulkCreateOperations struct for OperationBulkCreateOperations
+type OperationBulkCreateOperations struct {
 	// The HTTP method for the operation.
 	Method string `json:"method"`
 	// The domain for the operation.
 	Domain string `json:"domain"`
-	// The path for the operation, which may include path parameters.
+	// The path for the operation.
 	Path string `json:"path"`
 	// A description of what the operation does.
 	Description *string `json:"description,omitempty"`
-	// An array of operation tag IDs associated with this operation.
+	// An array of tag IDs to associate with this operation.
 	TagIds []string `json:"tag_ids,omitempty"`
 	// The status to assign to the operation. Defaults to SAVED if omitted.
 	Status               *string `json:"status,omitempty"`
 	AdditionalProperties map[string]any
 }
 
-type _OperationCreate OperationCreate
+type _OperationBulkCreateOperations OperationBulkCreateOperations
 
-// NewOperationCreate instantiates a new OperationCreate object
+// NewOperationBulkCreateOperations instantiates a new OperationBulkCreateOperations object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOperationCreate(method string, domain string, path string) *OperationCreate {
-	this := OperationCreate{}
+func NewOperationBulkCreateOperations(method string, domain string, path string) *OperationBulkCreateOperations {
+	this := OperationBulkCreateOperations{}
 	this.Method = method
 	this.Domain = domain
 	this.Path = path
@@ -49,18 +49,18 @@ func NewOperationCreate(method string, domain string, path string) *OperationCre
 	return &this
 }
 
-// NewOperationCreateWithDefaults instantiates a new OperationCreate object
+// NewOperationBulkCreateOperationsWithDefaults instantiates a new OperationBulkCreateOperations object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewOperationCreateWithDefaults() *OperationCreate {
-	this := OperationCreate{}
+func NewOperationBulkCreateOperationsWithDefaults() *OperationBulkCreateOperations {
+	this := OperationBulkCreateOperations{}
 	var status string = "SAVED"
 	this.Status = &status
 	return &this
 }
 
 // GetMethod returns the Method field value
-func (o *OperationCreate) GetMethod() string {
+func (o *OperationBulkCreateOperations) GetMethod() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -71,7 +71,7 @@ func (o *OperationCreate) GetMethod() string {
 
 // GetMethodOk returns a tuple with the Method field value
 // and a boolean to check if the value has been set.
-func (o *OperationCreate) GetMethodOk() (*string, bool) {
+func (o *OperationBulkCreateOperations) GetMethodOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -79,12 +79,12 @@ func (o *OperationCreate) GetMethodOk() (*string, bool) {
 }
 
 // SetMethod sets field value
-func (o *OperationCreate) SetMethod(v string) {
+func (o *OperationBulkCreateOperations) SetMethod(v string) {
 	o.Method = v
 }
 
 // GetDomain returns the Domain field value
-func (o *OperationCreate) GetDomain() string {
+func (o *OperationBulkCreateOperations) GetDomain() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -95,7 +95,7 @@ func (o *OperationCreate) GetDomain() string {
 
 // GetDomainOk returns a tuple with the Domain field value
 // and a boolean to check if the value has been set.
-func (o *OperationCreate) GetDomainOk() (*string, bool) {
+func (o *OperationBulkCreateOperations) GetDomainOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -103,12 +103,12 @@ func (o *OperationCreate) GetDomainOk() (*string, bool) {
 }
 
 // SetDomain sets field value
-func (o *OperationCreate) SetDomain(v string) {
+func (o *OperationBulkCreateOperations) SetDomain(v string) {
 	o.Domain = v
 }
 
 // GetPath returns the Path field value
-func (o *OperationCreate) GetPath() string {
+func (o *OperationBulkCreateOperations) GetPath() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -119,7 +119,7 @@ func (o *OperationCreate) GetPath() string {
 
 // GetPathOk returns a tuple with the Path field value
 // and a boolean to check if the value has been set.
-func (o *OperationCreate) GetPathOk() (*string, bool) {
+func (o *OperationBulkCreateOperations) GetPathOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -127,12 +127,12 @@ func (o *OperationCreate) GetPathOk() (*string, bool) {
 }
 
 // SetPath sets field value
-func (o *OperationCreate) SetPath(v string) {
+func (o *OperationBulkCreateOperations) SetPath(v string) {
 	o.Path = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
-func (o *OperationCreate) GetDescription() string {
+func (o *OperationBulkCreateOperations) GetDescription() string {
 	if o == nil || o.Description == nil {
 		var ret string
 		return ret
@@ -142,7 +142,7 @@ func (o *OperationCreate) GetDescription() string {
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationCreate) GetDescriptionOk() (*string, bool) {
+func (o *OperationBulkCreateOperations) GetDescriptionOk() (*string, bool) {
 	if o == nil || o.Description == nil {
 		return nil, false
 	}
@@ -150,7 +150,7 @@ func (o *OperationCreate) GetDescriptionOk() (*string, bool) {
 }
 
 // HasDescription returns a boolean if a field has been set.
-func (o *OperationCreate) HasDescription() bool {
+func (o *OperationBulkCreateOperations) HasDescription() bool {
 	if o != nil && o.Description != nil {
 		return true
 	}
@@ -159,12 +159,12 @@ func (o *OperationCreate) HasDescription() bool {
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *OperationCreate) SetDescription(v string) {
+func (o *OperationBulkCreateOperations) SetDescription(v string) {
 	o.Description = &v
 }
 
 // GetTagIds returns the TagIds field value if set, zero value otherwise.
-func (o *OperationCreate) GetTagIds() []string {
+func (o *OperationBulkCreateOperations) GetTagIds() []string {
 	if o == nil || o.TagIds == nil {
 		var ret []string
 		return ret
@@ -174,7 +174,7 @@ func (o *OperationCreate) GetTagIds() []string {
 
 // GetTagIdsOk returns a tuple with the TagIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationCreate) GetTagIdsOk() ([]string, bool) {
+func (o *OperationBulkCreateOperations) GetTagIdsOk() ([]string, bool) {
 	if o == nil || o.TagIds == nil {
 		return nil, false
 	}
@@ -182,7 +182,7 @@ func (o *OperationCreate) GetTagIdsOk() ([]string, bool) {
 }
 
 // HasTagIds returns a boolean if a field has been set.
-func (o *OperationCreate) HasTagIds() bool {
+func (o *OperationBulkCreateOperations) HasTagIds() bool {
 	if o != nil && o.TagIds != nil {
 		return true
 	}
@@ -191,12 +191,12 @@ func (o *OperationCreate) HasTagIds() bool {
 }
 
 // SetTagIds gets a reference to the given []string and assigns it to the TagIds field.
-func (o *OperationCreate) SetTagIds(v []string) {
+func (o *OperationBulkCreateOperations) SetTagIds(v []string) {
 	o.TagIds = v
 }
 
 // GetStatus returns the Status field value if set, zero value otherwise.
-func (o *OperationCreate) GetStatus() string {
+func (o *OperationBulkCreateOperations) GetStatus() string {
 	if o == nil || o.Status == nil {
 		var ret string
 		return ret
@@ -206,7 +206,7 @@ func (o *OperationCreate) GetStatus() string {
 
 // GetStatusOk returns a tuple with the Status field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OperationCreate) GetStatusOk() (*string, bool) {
+func (o *OperationBulkCreateOperations) GetStatusOk() (*string, bool) {
 	if o == nil || o.Status == nil {
 		return nil, false
 	}
@@ -214,7 +214,7 @@ func (o *OperationCreate) GetStatusOk() (*string, bool) {
 }
 
 // HasStatus returns a boolean if a field has been set.
-func (o *OperationCreate) HasStatus() bool {
+func (o *OperationBulkCreateOperations) HasStatus() bool {
 	if o != nil && o.Status != nil {
 		return true
 	}
@@ -223,13 +223,13 @@ func (o *OperationCreate) HasStatus() bool {
 }
 
 // SetStatus gets a reference to the given string and assigns it to the Status field.
-func (o *OperationCreate) SetStatus(v string) {
+func (o *OperationBulkCreateOperations) SetStatus(v string) {
 	o.Status = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (o OperationCreate) MarshalJSON() ([]byte, error) {
+func (o OperationBulkCreateOperations) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if true {
 		toSerialize["method"] = o.Method
@@ -259,11 +259,11 @@ func (o OperationCreate) MarshalJSON() ([]byte, error) {
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (o *OperationCreate) UnmarshalJSON(bytes []byte) (err error) {
-	varOperationCreate := _OperationCreate{}
+func (o *OperationBulkCreateOperations) UnmarshalJSON(bytes []byte) (err error) {
+	varOperationBulkCreateOperations := _OperationBulkCreateOperations{}
 
-	if err = json.Unmarshal(bytes, &varOperationCreate); err == nil {
-		*o = OperationCreate(varOperationCreate)
+	if err = json.Unmarshal(bytes, &varOperationBulkCreateOperations); err == nil {
+		*o = OperationBulkCreateOperations(varOperationBulkCreateOperations)
 	}
 
 	additionalProperties := make(map[string]any)
@@ -281,48 +281,48 @@ func (o *OperationCreate) UnmarshalJSON(bytes []byte) (err error) {
 	return err
 }
 
-// NullableOperationCreate is a helper abstraction for handling nullable operationcreate types.
-type NullableOperationCreate struct {
-	value *OperationCreate
+// NullableOperationBulkCreateOperations is a helper abstraction for handling nullable operationbulkcreateoperations types.
+type NullableOperationBulkCreateOperations struct {
+	value *OperationBulkCreateOperations
 	isSet bool
 }
 
 // Get returns the value.
-func (v NullableOperationCreate) Get() *OperationCreate {
+func (v NullableOperationBulkCreateOperations) Get() *OperationBulkCreateOperations {
 	return v.value
 }
 
 // Set modifies the value.
-func (v *NullableOperationCreate) Set(val *OperationCreate) {
+func (v *NullableOperationBulkCreateOperations) Set(val *OperationBulkCreateOperations) {
 	v.value = val
 	v.isSet = true
 }
 
 // IsSet indicates if the value was set.
-func (v NullableOperationCreate) IsSet() bool {
+func (v NullableOperationBulkCreateOperations) IsSet() bool {
 	return v.isSet
 }
 
 // Unset removes the value.
-func (v *NullableOperationCreate) Unset() {
+func (v *NullableOperationBulkCreateOperations) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-// NewNullableOperationCreate returns a pointer to a new instance of NullableOperationCreate.
-func NewNullableOperationCreate(val *OperationCreate) *NullableOperationCreate {
-	return &NullableOperationCreate{value: val, isSet: true}
+// NewNullableOperationBulkCreateOperations returns a pointer to a new instance of NullableOperationBulkCreateOperations.
+func NewNullableOperationBulkCreateOperations(val *OperationBulkCreateOperations) *NullableOperationBulkCreateOperations {
+	return &NullableOperationBulkCreateOperations{value: val, isSet: true}
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
-func (v NullableOperationCreate) MarshalJSON() ([]byte, error) {
+func (v NullableOperationBulkCreateOperations) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.
 // Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
-func (v *NullableOperationCreate) UnmarshalJSON(src []byte) error {
+func (v *NullableOperationBulkCreateOperations) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

@@ -104,7 +104,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "fastly-go/1.0.0-beta.47",
+		UserAgent:     "fastly-go/1.0.0-beta.48",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
@@ -250,6 +250,24 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"ApexRedirectAPIService.UpdateApexRedirect": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityBulkAddTagsToOperations": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityBulkCreateOperations": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ApisecurityOperationsAPIService.ApiSecurityBulkDeleteOperations": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",

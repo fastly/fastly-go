@@ -27,7 +27,9 @@ type OperationUpdate struct {
 	// A description of what the operation does.
 	Description *string `json:"description,omitempty"`
 	// An array of operation tag IDs associated with this operation.
-	TagIds               []string `json:"tag_ids,omitempty"`
+	TagIds []string `json:"tag_ids,omitempty"`
+	// The status of the operation.
+	Status               *string `json:"status,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -210,6 +212,38 @@ func (o *OperationUpdate) SetTagIds(v []string) {
 	o.TagIds = v
 }
 
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *OperationUpdate) GetStatus() string {
+	if o == nil || o.Status == nil {
+		var ret string
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OperationUpdate) GetStatusOk() (*string, bool) {
+	if o == nil || o.Status == nil {
+		return nil, false
+	}
+	return o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *OperationUpdate) HasStatus() bool {
+	if o != nil && o.Status != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given string and assigns it to the Status field.
+func (o *OperationUpdate) SetStatus(v string) {
+	o.Status = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o OperationUpdate) MarshalJSON() ([]byte, error) {
@@ -228,6 +262,9 @@ func (o OperationUpdate) MarshalJSON() ([]byte, error) {
 	}
 	if o.TagIds != nil {
 		toSerialize["tag_ids"] = o.TagIds
+	}
+	if o.Status != nil {
+		toSerialize["status"] = o.Status
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -254,6 +291,7 @@ func (o *OperationUpdate) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "path")
 		delete(additionalProperties, "description")
 		delete(additionalProperties, "tag_ids")
+		delete(additionalProperties, "status")
 		o.AdditionalProperties = additionalProperties
 	}
 

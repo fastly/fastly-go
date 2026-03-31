@@ -359,18 +359,29 @@ type Results struct {
 	// Number of backend requests started.
 	ComputeBereqs *int64 `json:"compute_bereqs,omitempty"`
 	// Number of backend request errors, including timeouts.
+	// Deprecated
 	ComputeBereqErrors *int64 `json:"compute_bereq_errors,omitempty"`
+	// Number of backend request errors, including timeouts.
+	ComputeServiceBereqError *int64 `json:"compute_service_bereq_error,omitempty"`
 	// Number of times a guest exceeded its resource limit, includes heap, stack, globals, and code execution timeout.
+	// Deprecated
 	ComputeResourceLimitExceeded *int64 `json:"compute_resource_limit_exceeded,omitempty"`
 	// Number of times a guest exceeded its heap limit.
+	// Deprecated
 	ComputeHeapLimitExceeded *int64 `json:"compute_heap_limit_exceeded,omitempty"`
+	// Number of times a guest exceeded its heap limit.
+	ComputeServiceMemoryExceededError *int64 `json:"compute_service_memory_exceeded_error,omitempty"`
 	// Number of times a guest exceeded its stack limit.
+	// Deprecated
 	ComputeStackLimitExceeded *int64 `json:"compute_stack_limit_exceeded,omitempty"`
 	// Number of times a guest exceeded its globals limit.
+	// Deprecated
 	ComputeGlobalsLimitExceeded *int64 `json:"compute_globals_limit_exceeded,omitempty"`
 	// Number of times a service experienced a guest code error.
+	// Deprecated
 	ComputeGuestErrors *int64 `json:"compute_guest_errors,omitempty"`
 	// Number of times a service experienced a guest runtime error.
+	// Deprecated
 	ComputeRuntimeErrors *int64 `json:"compute_runtime_errors,omitempty"`
 	// Body bytes delivered for edge hits.
 	EdgeHitRespBodyBytes *int64 `json:"edge_hit_resp_body_bytes,omitempty"`
@@ -607,8 +618,40 @@ type Results struct {
 	// Number of requests that resulted in a WebSocket upgrade.
 	Upgrade *int32 `json:"upgrade,omitempty"`
 	// Count of Next-Gen WAF Bot Management requests.
-	NgwafBotAnalysisRequestCount *int32  `json:"ngwaf_bot_analysis_request_count,omitempty"`
-	ServiceId                    *string `json:"service_id,omitempty"`
+	NgwafBotAnalysisRequestCount *int32 `json:"ngwaf_bot_analysis_request_count,omitempty"`
+	// Count of AVIF images delivered to end user by Image Optimizer.
+	ImgoptoAvifCount *int32 `json:"imgopto_avif_count,omitempty"`
+	// Count of JPEG images delivered to end user by Image Optimizer.
+	ImgoptoJpegCount *int32 `json:"imgopto_jpeg_count,omitempty"`
+	// Count of PNG images delivered to end user by Image Optimizer.
+	ImgoptoPngCount *int32 `json:"imgopto_png_count,omitempty"`
+	// Count of GIF images delivered to end user by Image Optimizer.
+	ImgoptoGifCount *int32 `json:"imgopto_gif_count,omitempty"`
+	// Count of WebP images delivered to end user by Image Optimizer.
+	ImgoptoWebpCount *int32 `json:"imgopto_webp_count,omitempty"`
+	// Count of JPEGXL images delivered to end user by Image Optimizer.
+	ImgoptoJpegxlCount *int32 `json:"imgopto_jpegxl_count,omitempty"`
+	// Count of SVG images delivered to end user by Image Optimizer.
+	ImgoptoSvgCount *int32 `json:"imgopto_svg_count,omitempty"`
+	// Count of MP4s delivered to end user by Image Optimizer.
+	ImgoptoMp4Count *int32 `json:"imgopto_mp4_count,omitempty"`
+	// Aggregate of fatal errors caused by exceeding allocated resource limits, specifically runtime duration, vCPU usage, and heap memory limits.
+	ComputeServiceResourceLimitsError *int32 `json:"compute_service_resource_limits_error,omitempty"`
+	// Fatal errors caused by service logic faults, including stack overflows, unreachable code traps, illegal memory access, or attempts to send multiple responses.
+	ComputeServiceRuntimeError *int32 `json:"compute_service_runtime_error,omitempty"`
+	// Fatal errors caused by the service path exceeding hop or service limits, or where a forwarding loop is detected via CDN-Loop headers.
+	ComputeServiceChainError *int32 `json:"compute_service_chain_error,omitempty"`
+	// Fatal errors caused by internal errors in Fastly’s Compute platform.
+	ComputePlatformInternalError *int32 `json:"compute_platform_internal_error,omitempty"`
+	// Fatal errors caused by exceeding the per-request runtime limit.
+	ComputeServiceTimeoutError *int32 `json:"compute_service_timeout_error,omitempty"`
+	// Fatal errors caused by exceeding the per-request vCPU time limit.
+	ComputeServiceVcpuExceededError *int32 `json:"compute_service_vcpu_exceeded_error,omitempty"`
+	// Non-fatal errors caused by attempts to exceed defined operational limits, such as simultaneous backend requests or cache transactions.
+	ComputeServiceLimitsError *int32 `json:"compute_service_limits_error,omitempty"`
+	// Fatal errors caused by unprocessable requests to the service, such as requests with malformed CDN-Loop headers or invalid purge credentials.
+	ComputePlatformInvalidRequestError *int32  `json:"compute_platform_invalid_request_error,omitempty"`
+	ServiceId                          *string `json:"service_id,omitempty"`
 	// Timestamp for the start of the time period being reported
 	StartTime            *int64 `json:"start_time,omitempty"`
 	AdditionalProperties map[string]any
@@ -6085,6 +6128,7 @@ func (o *Results) SetComputeBereqs(v int64) {
 }
 
 // GetComputeBereqErrors returns the ComputeBereqErrors field value if set, zero value otherwise.
+// Deprecated
 func (o *Results) GetComputeBereqErrors() int64 {
 	if o == nil || o.ComputeBereqErrors == nil {
 		var ret int64
@@ -6095,6 +6139,7 @@ func (o *Results) GetComputeBereqErrors() int64 {
 
 // GetComputeBereqErrorsOk returns a tuple with the ComputeBereqErrors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *Results) GetComputeBereqErrorsOk() (*int64, bool) {
 	if o == nil || o.ComputeBereqErrors == nil {
 		return nil, false
@@ -6112,11 +6157,45 @@ func (o *Results) HasComputeBereqErrors() bool {
 }
 
 // SetComputeBereqErrors gets a reference to the given int64 and assigns it to the ComputeBereqErrors field.
+// Deprecated
 func (o *Results) SetComputeBereqErrors(v int64) {
 	o.ComputeBereqErrors = &v
 }
 
+// GetComputeServiceBereqError returns the ComputeServiceBereqError field value if set, zero value otherwise.
+func (o *Results) GetComputeServiceBereqError() int64 {
+	if o == nil || o.ComputeServiceBereqError == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeServiceBereqError
+}
+
+// GetComputeServiceBereqErrorOk returns a tuple with the ComputeServiceBereqError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeServiceBereqErrorOk() (*int64, bool) {
+	if o == nil || o.ComputeServiceBereqError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqError, true
+}
+
+// HasComputeServiceBereqError returns a boolean if a field has been set.
+func (o *Results) HasComputeServiceBereqError() bool {
+	if o != nil && o.ComputeServiceBereqError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqError gets a reference to the given int64 and assigns it to the ComputeServiceBereqError field.
+func (o *Results) SetComputeServiceBereqError(v int64) {
+	o.ComputeServiceBereqError = &v
+}
+
 // GetComputeResourceLimitExceeded returns the ComputeResourceLimitExceeded field value if set, zero value otherwise.
+// Deprecated
 func (o *Results) GetComputeResourceLimitExceeded() int64 {
 	if o == nil || o.ComputeResourceLimitExceeded == nil {
 		var ret int64
@@ -6127,6 +6206,7 @@ func (o *Results) GetComputeResourceLimitExceeded() int64 {
 
 // GetComputeResourceLimitExceededOk returns a tuple with the ComputeResourceLimitExceeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *Results) GetComputeResourceLimitExceededOk() (*int64, bool) {
 	if o == nil || o.ComputeResourceLimitExceeded == nil {
 		return nil, false
@@ -6144,11 +6224,13 @@ func (o *Results) HasComputeResourceLimitExceeded() bool {
 }
 
 // SetComputeResourceLimitExceeded gets a reference to the given int64 and assigns it to the ComputeResourceLimitExceeded field.
+// Deprecated
 func (o *Results) SetComputeResourceLimitExceeded(v int64) {
 	o.ComputeResourceLimitExceeded = &v
 }
 
 // GetComputeHeapLimitExceeded returns the ComputeHeapLimitExceeded field value if set, zero value otherwise.
+// Deprecated
 func (o *Results) GetComputeHeapLimitExceeded() int64 {
 	if o == nil || o.ComputeHeapLimitExceeded == nil {
 		var ret int64
@@ -6159,6 +6241,7 @@ func (o *Results) GetComputeHeapLimitExceeded() int64 {
 
 // GetComputeHeapLimitExceededOk returns a tuple with the ComputeHeapLimitExceeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *Results) GetComputeHeapLimitExceededOk() (*int64, bool) {
 	if o == nil || o.ComputeHeapLimitExceeded == nil {
 		return nil, false
@@ -6176,11 +6259,45 @@ func (o *Results) HasComputeHeapLimitExceeded() bool {
 }
 
 // SetComputeHeapLimitExceeded gets a reference to the given int64 and assigns it to the ComputeHeapLimitExceeded field.
+// Deprecated
 func (o *Results) SetComputeHeapLimitExceeded(v int64) {
 	o.ComputeHeapLimitExceeded = &v
 }
 
+// GetComputeServiceMemoryExceededError returns the ComputeServiceMemoryExceededError field value if set, zero value otherwise.
+func (o *Results) GetComputeServiceMemoryExceededError() int64 {
+	if o == nil || o.ComputeServiceMemoryExceededError == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ComputeServiceMemoryExceededError
+}
+
+// GetComputeServiceMemoryExceededErrorOk returns a tuple with the ComputeServiceMemoryExceededError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeServiceMemoryExceededErrorOk() (*int64, bool) {
+	if o == nil || o.ComputeServiceMemoryExceededError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceMemoryExceededError, true
+}
+
+// HasComputeServiceMemoryExceededError returns a boolean if a field has been set.
+func (o *Results) HasComputeServiceMemoryExceededError() bool {
+	if o != nil && o.ComputeServiceMemoryExceededError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceMemoryExceededError gets a reference to the given int64 and assigns it to the ComputeServiceMemoryExceededError field.
+func (o *Results) SetComputeServiceMemoryExceededError(v int64) {
+	o.ComputeServiceMemoryExceededError = &v
+}
+
 // GetComputeStackLimitExceeded returns the ComputeStackLimitExceeded field value if set, zero value otherwise.
+// Deprecated
 func (o *Results) GetComputeStackLimitExceeded() int64 {
 	if o == nil || o.ComputeStackLimitExceeded == nil {
 		var ret int64
@@ -6191,6 +6308,7 @@ func (o *Results) GetComputeStackLimitExceeded() int64 {
 
 // GetComputeStackLimitExceededOk returns a tuple with the ComputeStackLimitExceeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *Results) GetComputeStackLimitExceededOk() (*int64, bool) {
 	if o == nil || o.ComputeStackLimitExceeded == nil {
 		return nil, false
@@ -6208,11 +6326,13 @@ func (o *Results) HasComputeStackLimitExceeded() bool {
 }
 
 // SetComputeStackLimitExceeded gets a reference to the given int64 and assigns it to the ComputeStackLimitExceeded field.
+// Deprecated
 func (o *Results) SetComputeStackLimitExceeded(v int64) {
 	o.ComputeStackLimitExceeded = &v
 }
 
 // GetComputeGlobalsLimitExceeded returns the ComputeGlobalsLimitExceeded field value if set, zero value otherwise.
+// Deprecated
 func (o *Results) GetComputeGlobalsLimitExceeded() int64 {
 	if o == nil || o.ComputeGlobalsLimitExceeded == nil {
 		var ret int64
@@ -6223,6 +6343,7 @@ func (o *Results) GetComputeGlobalsLimitExceeded() int64 {
 
 // GetComputeGlobalsLimitExceededOk returns a tuple with the ComputeGlobalsLimitExceeded field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *Results) GetComputeGlobalsLimitExceededOk() (*int64, bool) {
 	if o == nil || o.ComputeGlobalsLimitExceeded == nil {
 		return nil, false
@@ -6240,11 +6361,13 @@ func (o *Results) HasComputeGlobalsLimitExceeded() bool {
 }
 
 // SetComputeGlobalsLimitExceeded gets a reference to the given int64 and assigns it to the ComputeGlobalsLimitExceeded field.
+// Deprecated
 func (o *Results) SetComputeGlobalsLimitExceeded(v int64) {
 	o.ComputeGlobalsLimitExceeded = &v
 }
 
 // GetComputeGuestErrors returns the ComputeGuestErrors field value if set, zero value otherwise.
+// Deprecated
 func (o *Results) GetComputeGuestErrors() int64 {
 	if o == nil || o.ComputeGuestErrors == nil {
 		var ret int64
@@ -6255,6 +6378,7 @@ func (o *Results) GetComputeGuestErrors() int64 {
 
 // GetComputeGuestErrorsOk returns a tuple with the ComputeGuestErrors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *Results) GetComputeGuestErrorsOk() (*int64, bool) {
 	if o == nil || o.ComputeGuestErrors == nil {
 		return nil, false
@@ -6272,11 +6396,13 @@ func (o *Results) HasComputeGuestErrors() bool {
 }
 
 // SetComputeGuestErrors gets a reference to the given int64 and assigns it to the ComputeGuestErrors field.
+// Deprecated
 func (o *Results) SetComputeGuestErrors(v int64) {
 	o.ComputeGuestErrors = &v
 }
 
 // GetComputeRuntimeErrors returns the ComputeRuntimeErrors field value if set, zero value otherwise.
+// Deprecated
 func (o *Results) GetComputeRuntimeErrors() int64 {
 	if o == nil || o.ComputeRuntimeErrors == nil {
 		var ret int64
@@ -6287,6 +6413,7 @@ func (o *Results) GetComputeRuntimeErrors() int64 {
 
 // GetComputeRuntimeErrorsOk returns a tuple with the ComputeRuntimeErrors field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *Results) GetComputeRuntimeErrorsOk() (*int64, bool) {
 	if o == nil || o.ComputeRuntimeErrors == nil {
 		return nil, false
@@ -6304,6 +6431,7 @@ func (o *Results) HasComputeRuntimeErrors() bool {
 }
 
 // SetComputeRuntimeErrors gets a reference to the given int64 and assigns it to the ComputeRuntimeErrors field.
+// Deprecated
 func (o *Results) SetComputeRuntimeErrors(v int64) {
 	o.ComputeRuntimeErrors = &v
 }
@@ -10058,6 +10186,518 @@ func (o *Results) SetNgwafBotAnalysisRequestCount(v int32) {
 	o.NgwafBotAnalysisRequestCount = &v
 }
 
+// GetImgoptoAvifCount returns the ImgoptoAvifCount field value if set, zero value otherwise.
+func (o *Results) GetImgoptoAvifCount() int32 {
+	if o == nil || o.ImgoptoAvifCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ImgoptoAvifCount
+}
+
+// GetImgoptoAvifCountOk returns a tuple with the ImgoptoAvifCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetImgoptoAvifCountOk() (*int32, bool) {
+	if o == nil || o.ImgoptoAvifCount == nil {
+		return nil, false
+	}
+	return o.ImgoptoAvifCount, true
+}
+
+// HasImgoptoAvifCount returns a boolean if a field has been set.
+func (o *Results) HasImgoptoAvifCount() bool {
+	if o != nil && o.ImgoptoAvifCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImgoptoAvifCount gets a reference to the given int32 and assigns it to the ImgoptoAvifCount field.
+func (o *Results) SetImgoptoAvifCount(v int32) {
+	o.ImgoptoAvifCount = &v
+}
+
+// GetImgoptoJpegCount returns the ImgoptoJpegCount field value if set, zero value otherwise.
+func (o *Results) GetImgoptoJpegCount() int32 {
+	if o == nil || o.ImgoptoJpegCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ImgoptoJpegCount
+}
+
+// GetImgoptoJpegCountOk returns a tuple with the ImgoptoJpegCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetImgoptoJpegCountOk() (*int32, bool) {
+	if o == nil || o.ImgoptoJpegCount == nil {
+		return nil, false
+	}
+	return o.ImgoptoJpegCount, true
+}
+
+// HasImgoptoJpegCount returns a boolean if a field has been set.
+func (o *Results) HasImgoptoJpegCount() bool {
+	if o != nil && o.ImgoptoJpegCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImgoptoJpegCount gets a reference to the given int32 and assigns it to the ImgoptoJpegCount field.
+func (o *Results) SetImgoptoJpegCount(v int32) {
+	o.ImgoptoJpegCount = &v
+}
+
+// GetImgoptoPngCount returns the ImgoptoPngCount field value if set, zero value otherwise.
+func (o *Results) GetImgoptoPngCount() int32 {
+	if o == nil || o.ImgoptoPngCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ImgoptoPngCount
+}
+
+// GetImgoptoPngCountOk returns a tuple with the ImgoptoPngCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetImgoptoPngCountOk() (*int32, bool) {
+	if o == nil || o.ImgoptoPngCount == nil {
+		return nil, false
+	}
+	return o.ImgoptoPngCount, true
+}
+
+// HasImgoptoPngCount returns a boolean if a field has been set.
+func (o *Results) HasImgoptoPngCount() bool {
+	if o != nil && o.ImgoptoPngCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImgoptoPngCount gets a reference to the given int32 and assigns it to the ImgoptoPngCount field.
+func (o *Results) SetImgoptoPngCount(v int32) {
+	o.ImgoptoPngCount = &v
+}
+
+// GetImgoptoGifCount returns the ImgoptoGifCount field value if set, zero value otherwise.
+func (o *Results) GetImgoptoGifCount() int32 {
+	if o == nil || o.ImgoptoGifCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ImgoptoGifCount
+}
+
+// GetImgoptoGifCountOk returns a tuple with the ImgoptoGifCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetImgoptoGifCountOk() (*int32, bool) {
+	if o == nil || o.ImgoptoGifCount == nil {
+		return nil, false
+	}
+	return o.ImgoptoGifCount, true
+}
+
+// HasImgoptoGifCount returns a boolean if a field has been set.
+func (o *Results) HasImgoptoGifCount() bool {
+	if o != nil && o.ImgoptoGifCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImgoptoGifCount gets a reference to the given int32 and assigns it to the ImgoptoGifCount field.
+func (o *Results) SetImgoptoGifCount(v int32) {
+	o.ImgoptoGifCount = &v
+}
+
+// GetImgoptoWebpCount returns the ImgoptoWebpCount field value if set, zero value otherwise.
+func (o *Results) GetImgoptoWebpCount() int32 {
+	if o == nil || o.ImgoptoWebpCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ImgoptoWebpCount
+}
+
+// GetImgoptoWebpCountOk returns a tuple with the ImgoptoWebpCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetImgoptoWebpCountOk() (*int32, bool) {
+	if o == nil || o.ImgoptoWebpCount == nil {
+		return nil, false
+	}
+	return o.ImgoptoWebpCount, true
+}
+
+// HasImgoptoWebpCount returns a boolean if a field has been set.
+func (o *Results) HasImgoptoWebpCount() bool {
+	if o != nil && o.ImgoptoWebpCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImgoptoWebpCount gets a reference to the given int32 and assigns it to the ImgoptoWebpCount field.
+func (o *Results) SetImgoptoWebpCount(v int32) {
+	o.ImgoptoWebpCount = &v
+}
+
+// GetImgoptoJpegxlCount returns the ImgoptoJpegxlCount field value if set, zero value otherwise.
+func (o *Results) GetImgoptoJpegxlCount() int32 {
+	if o == nil || o.ImgoptoJpegxlCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ImgoptoJpegxlCount
+}
+
+// GetImgoptoJpegxlCountOk returns a tuple with the ImgoptoJpegxlCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetImgoptoJpegxlCountOk() (*int32, bool) {
+	if o == nil || o.ImgoptoJpegxlCount == nil {
+		return nil, false
+	}
+	return o.ImgoptoJpegxlCount, true
+}
+
+// HasImgoptoJpegxlCount returns a boolean if a field has been set.
+func (o *Results) HasImgoptoJpegxlCount() bool {
+	if o != nil && o.ImgoptoJpegxlCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImgoptoJpegxlCount gets a reference to the given int32 and assigns it to the ImgoptoJpegxlCount field.
+func (o *Results) SetImgoptoJpegxlCount(v int32) {
+	o.ImgoptoJpegxlCount = &v
+}
+
+// GetImgoptoSvgCount returns the ImgoptoSvgCount field value if set, zero value otherwise.
+func (o *Results) GetImgoptoSvgCount() int32 {
+	if o == nil || o.ImgoptoSvgCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ImgoptoSvgCount
+}
+
+// GetImgoptoSvgCountOk returns a tuple with the ImgoptoSvgCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetImgoptoSvgCountOk() (*int32, bool) {
+	if o == nil || o.ImgoptoSvgCount == nil {
+		return nil, false
+	}
+	return o.ImgoptoSvgCount, true
+}
+
+// HasImgoptoSvgCount returns a boolean if a field has been set.
+func (o *Results) HasImgoptoSvgCount() bool {
+	if o != nil && o.ImgoptoSvgCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImgoptoSvgCount gets a reference to the given int32 and assigns it to the ImgoptoSvgCount field.
+func (o *Results) SetImgoptoSvgCount(v int32) {
+	o.ImgoptoSvgCount = &v
+}
+
+// GetImgoptoMp4Count returns the ImgoptoMp4Count field value if set, zero value otherwise.
+func (o *Results) GetImgoptoMp4Count() int32 {
+	if o == nil || o.ImgoptoMp4Count == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ImgoptoMp4Count
+}
+
+// GetImgoptoMp4CountOk returns a tuple with the ImgoptoMp4Count field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetImgoptoMp4CountOk() (*int32, bool) {
+	if o == nil || o.ImgoptoMp4Count == nil {
+		return nil, false
+	}
+	return o.ImgoptoMp4Count, true
+}
+
+// HasImgoptoMp4Count returns a boolean if a field has been set.
+func (o *Results) HasImgoptoMp4Count() bool {
+	if o != nil && o.ImgoptoMp4Count != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImgoptoMp4Count gets a reference to the given int32 and assigns it to the ImgoptoMp4Count field.
+func (o *Results) SetImgoptoMp4Count(v int32) {
+	o.ImgoptoMp4Count = &v
+}
+
+// GetComputeServiceResourceLimitsError returns the ComputeServiceResourceLimitsError field value if set, zero value otherwise.
+func (o *Results) GetComputeServiceResourceLimitsError() int32 {
+	if o == nil || o.ComputeServiceResourceLimitsError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceResourceLimitsError
+}
+
+// GetComputeServiceResourceLimitsErrorOk returns a tuple with the ComputeServiceResourceLimitsError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeServiceResourceLimitsErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceResourceLimitsError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceResourceLimitsError, true
+}
+
+// HasComputeServiceResourceLimitsError returns a boolean if a field has been set.
+func (o *Results) HasComputeServiceResourceLimitsError() bool {
+	if o != nil && o.ComputeServiceResourceLimitsError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceResourceLimitsError gets a reference to the given int32 and assigns it to the ComputeServiceResourceLimitsError field.
+func (o *Results) SetComputeServiceResourceLimitsError(v int32) {
+	o.ComputeServiceResourceLimitsError = &v
+}
+
+// GetComputeServiceRuntimeError returns the ComputeServiceRuntimeError field value if set, zero value otherwise.
+func (o *Results) GetComputeServiceRuntimeError() int32 {
+	if o == nil || o.ComputeServiceRuntimeError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceRuntimeError
+}
+
+// GetComputeServiceRuntimeErrorOk returns a tuple with the ComputeServiceRuntimeError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeServiceRuntimeErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceRuntimeError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceRuntimeError, true
+}
+
+// HasComputeServiceRuntimeError returns a boolean if a field has been set.
+func (o *Results) HasComputeServiceRuntimeError() bool {
+	if o != nil && o.ComputeServiceRuntimeError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceRuntimeError gets a reference to the given int32 and assigns it to the ComputeServiceRuntimeError field.
+func (o *Results) SetComputeServiceRuntimeError(v int32) {
+	o.ComputeServiceRuntimeError = &v
+}
+
+// GetComputeServiceChainError returns the ComputeServiceChainError field value if set, zero value otherwise.
+func (o *Results) GetComputeServiceChainError() int32 {
+	if o == nil || o.ComputeServiceChainError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceChainError
+}
+
+// GetComputeServiceChainErrorOk returns a tuple with the ComputeServiceChainError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeServiceChainErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceChainError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceChainError, true
+}
+
+// HasComputeServiceChainError returns a boolean if a field has been set.
+func (o *Results) HasComputeServiceChainError() bool {
+	if o != nil && o.ComputeServiceChainError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceChainError gets a reference to the given int32 and assigns it to the ComputeServiceChainError field.
+func (o *Results) SetComputeServiceChainError(v int32) {
+	o.ComputeServiceChainError = &v
+}
+
+// GetComputePlatformInternalError returns the ComputePlatformInternalError field value if set, zero value otherwise.
+func (o *Results) GetComputePlatformInternalError() int32 {
+	if o == nil || o.ComputePlatformInternalError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputePlatformInternalError
+}
+
+// GetComputePlatformInternalErrorOk returns a tuple with the ComputePlatformInternalError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputePlatformInternalErrorOk() (*int32, bool) {
+	if o == nil || o.ComputePlatformInternalError == nil {
+		return nil, false
+	}
+	return o.ComputePlatformInternalError, true
+}
+
+// HasComputePlatformInternalError returns a boolean if a field has been set.
+func (o *Results) HasComputePlatformInternalError() bool {
+	if o != nil && o.ComputePlatformInternalError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputePlatformInternalError gets a reference to the given int32 and assigns it to the ComputePlatformInternalError field.
+func (o *Results) SetComputePlatformInternalError(v int32) {
+	o.ComputePlatformInternalError = &v
+}
+
+// GetComputeServiceTimeoutError returns the ComputeServiceTimeoutError field value if set, zero value otherwise.
+func (o *Results) GetComputeServiceTimeoutError() int32 {
+	if o == nil || o.ComputeServiceTimeoutError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceTimeoutError
+}
+
+// GetComputeServiceTimeoutErrorOk returns a tuple with the ComputeServiceTimeoutError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeServiceTimeoutErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceTimeoutError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceTimeoutError, true
+}
+
+// HasComputeServiceTimeoutError returns a boolean if a field has been set.
+func (o *Results) HasComputeServiceTimeoutError() bool {
+	if o != nil && o.ComputeServiceTimeoutError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceTimeoutError gets a reference to the given int32 and assigns it to the ComputeServiceTimeoutError field.
+func (o *Results) SetComputeServiceTimeoutError(v int32) {
+	o.ComputeServiceTimeoutError = &v
+}
+
+// GetComputeServiceVcpuExceededError returns the ComputeServiceVcpuExceededError field value if set, zero value otherwise.
+func (o *Results) GetComputeServiceVcpuExceededError() int32 {
+	if o == nil || o.ComputeServiceVcpuExceededError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceVcpuExceededError
+}
+
+// GetComputeServiceVcpuExceededErrorOk returns a tuple with the ComputeServiceVcpuExceededError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeServiceVcpuExceededErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceVcpuExceededError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceVcpuExceededError, true
+}
+
+// HasComputeServiceVcpuExceededError returns a boolean if a field has been set.
+func (o *Results) HasComputeServiceVcpuExceededError() bool {
+	if o != nil && o.ComputeServiceVcpuExceededError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceVcpuExceededError gets a reference to the given int32 and assigns it to the ComputeServiceVcpuExceededError field.
+func (o *Results) SetComputeServiceVcpuExceededError(v int32) {
+	o.ComputeServiceVcpuExceededError = &v
+}
+
+// GetComputeServiceLimitsError returns the ComputeServiceLimitsError field value if set, zero value otherwise.
+func (o *Results) GetComputeServiceLimitsError() int32 {
+	if o == nil || o.ComputeServiceLimitsError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceLimitsError
+}
+
+// GetComputeServiceLimitsErrorOk returns a tuple with the ComputeServiceLimitsError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputeServiceLimitsErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceLimitsError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceLimitsError, true
+}
+
+// HasComputeServiceLimitsError returns a boolean if a field has been set.
+func (o *Results) HasComputeServiceLimitsError() bool {
+	if o != nil && o.ComputeServiceLimitsError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceLimitsError gets a reference to the given int32 and assigns it to the ComputeServiceLimitsError field.
+func (o *Results) SetComputeServiceLimitsError(v int32) {
+	o.ComputeServiceLimitsError = &v
+}
+
+// GetComputePlatformInvalidRequestError returns the ComputePlatformInvalidRequestError field value if set, zero value otherwise.
+func (o *Results) GetComputePlatformInvalidRequestError() int32 {
+	if o == nil || o.ComputePlatformInvalidRequestError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputePlatformInvalidRequestError
+}
+
+// GetComputePlatformInvalidRequestErrorOk returns a tuple with the ComputePlatformInvalidRequestError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetComputePlatformInvalidRequestErrorOk() (*int32, bool) {
+	if o == nil || o.ComputePlatformInvalidRequestError == nil {
+		return nil, false
+	}
+	return o.ComputePlatformInvalidRequestError, true
+}
+
+// HasComputePlatformInvalidRequestError returns a boolean if a field has been set.
+func (o *Results) HasComputePlatformInvalidRequestError() bool {
+	if o != nil && o.ComputePlatformInvalidRequestError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputePlatformInvalidRequestError gets a reference to the given int32 and assigns it to the ComputePlatformInvalidRequestError field.
+func (o *Results) SetComputePlatformInvalidRequestError(v int32) {
+	o.ComputePlatformInvalidRequestError = &v
+}
+
 // GetServiceId returns the ServiceId field value if set, zero value otherwise.
 func (o *Results) GetServiceId() string {
 	if o == nil || o.ServiceId == nil {
@@ -10639,11 +11279,17 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.ComputeBereqErrors != nil {
 		toSerialize["compute_bereq_errors"] = o.ComputeBereqErrors
 	}
+	if o.ComputeServiceBereqError != nil {
+		toSerialize["compute_service_bereq_error"] = o.ComputeServiceBereqError
+	}
 	if o.ComputeResourceLimitExceeded != nil {
 		toSerialize["compute_resource_limit_exceeded"] = o.ComputeResourceLimitExceeded
 	}
 	if o.ComputeHeapLimitExceeded != nil {
 		toSerialize["compute_heap_limit_exceeded"] = o.ComputeHeapLimitExceeded
+	}
+	if o.ComputeServiceMemoryExceededError != nil {
+		toSerialize["compute_service_memory_exceeded_error"] = o.ComputeServiceMemoryExceededError
 	}
 	if o.ComputeStackLimitExceeded != nil {
 		toSerialize["compute_stack_limit_exceeded"] = o.ComputeStackLimitExceeded
@@ -11008,6 +11654,54 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.NgwafBotAnalysisRequestCount != nil {
 		toSerialize["ngwaf_bot_analysis_request_count"] = o.NgwafBotAnalysisRequestCount
 	}
+	if o.ImgoptoAvifCount != nil {
+		toSerialize["imgopto_avif_count"] = o.ImgoptoAvifCount
+	}
+	if o.ImgoptoJpegCount != nil {
+		toSerialize["imgopto_jpeg_count"] = o.ImgoptoJpegCount
+	}
+	if o.ImgoptoPngCount != nil {
+		toSerialize["imgopto_png_count"] = o.ImgoptoPngCount
+	}
+	if o.ImgoptoGifCount != nil {
+		toSerialize["imgopto_gif_count"] = o.ImgoptoGifCount
+	}
+	if o.ImgoptoWebpCount != nil {
+		toSerialize["imgopto_webp_count"] = o.ImgoptoWebpCount
+	}
+	if o.ImgoptoJpegxlCount != nil {
+		toSerialize["imgopto_jpegxl_count"] = o.ImgoptoJpegxlCount
+	}
+	if o.ImgoptoSvgCount != nil {
+		toSerialize["imgopto_svg_count"] = o.ImgoptoSvgCount
+	}
+	if o.ImgoptoMp4Count != nil {
+		toSerialize["imgopto_mp4_count"] = o.ImgoptoMp4Count
+	}
+	if o.ComputeServiceResourceLimitsError != nil {
+		toSerialize["compute_service_resource_limits_error"] = o.ComputeServiceResourceLimitsError
+	}
+	if o.ComputeServiceRuntimeError != nil {
+		toSerialize["compute_service_runtime_error"] = o.ComputeServiceRuntimeError
+	}
+	if o.ComputeServiceChainError != nil {
+		toSerialize["compute_service_chain_error"] = o.ComputeServiceChainError
+	}
+	if o.ComputePlatformInternalError != nil {
+		toSerialize["compute_platform_internal_error"] = o.ComputePlatformInternalError
+	}
+	if o.ComputeServiceTimeoutError != nil {
+		toSerialize["compute_service_timeout_error"] = o.ComputeServiceTimeoutError
+	}
+	if o.ComputeServiceVcpuExceededError != nil {
+		toSerialize["compute_service_vcpu_exceeded_error"] = o.ComputeServiceVcpuExceededError
+	}
+	if o.ComputeServiceLimitsError != nil {
+		toSerialize["compute_service_limits_error"] = o.ComputeServiceLimitsError
+	}
+	if o.ComputePlatformInvalidRequestError != nil {
+		toSerialize["compute_platform_invalid_request_error"] = o.ComputePlatformInvalidRequestError
+	}
 	if o.ServiceId != nil {
 		toSerialize["service_id"] = o.ServiceId
 	}
@@ -11205,8 +11899,10 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "compute_beresp_body_bytes")
 		delete(additionalProperties, "compute_bereqs")
 		delete(additionalProperties, "compute_bereq_errors")
+		delete(additionalProperties, "compute_service_bereq_error")
 		delete(additionalProperties, "compute_resource_limit_exceeded")
 		delete(additionalProperties, "compute_heap_limit_exceeded")
+		delete(additionalProperties, "compute_service_memory_exceeded_error")
 		delete(additionalProperties, "compute_stack_limit_exceeded")
 		delete(additionalProperties, "compute_globals_limit_exceeded")
 		delete(additionalProperties, "compute_guest_errors")
@@ -11328,6 +12024,22 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "dns_nonbillable_responses_count")
 		delete(additionalProperties, "upgrade")
 		delete(additionalProperties, "ngwaf_bot_analysis_request_count")
+		delete(additionalProperties, "imgopto_avif_count")
+		delete(additionalProperties, "imgopto_jpeg_count")
+		delete(additionalProperties, "imgopto_png_count")
+		delete(additionalProperties, "imgopto_gif_count")
+		delete(additionalProperties, "imgopto_webp_count")
+		delete(additionalProperties, "imgopto_jpegxl_count")
+		delete(additionalProperties, "imgopto_svg_count")
+		delete(additionalProperties, "imgopto_mp4_count")
+		delete(additionalProperties, "compute_service_resource_limits_error")
+		delete(additionalProperties, "compute_service_runtime_error")
+		delete(additionalProperties, "compute_service_chain_error")
+		delete(additionalProperties, "compute_platform_internal_error")
+		delete(additionalProperties, "compute_service_timeout_error")
+		delete(additionalProperties, "compute_service_vcpu_exceeded_error")
+		delete(additionalProperties, "compute_service_limits_error")
+		delete(additionalProperties, "compute_platform_invalid_request_error")
 		delete(additionalProperties, "service_id")
 		delete(additionalProperties, "start_time")
 		o.AdditionalProperties = additionalProperties

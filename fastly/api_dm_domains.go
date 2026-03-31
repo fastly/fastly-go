@@ -501,6 +501,7 @@ type APIListDmDomainsRequest struct {
 	ctx        context.Context
 	APIService DmDomainsAPI
 	fqdn       *string
+	fqdnMatch  *string
 	serviceId  *string
 	sort       *string
 	activated  *bool
@@ -512,6 +513,12 @@ type APIListDmDomainsRequest struct {
 // Fqdn returns a pointer to a request.
 func (r *APIListDmDomainsRequest) Fqdn(fqdn string) *APIListDmDomainsRequest {
 	r.fqdn = &fqdn
+	return r
+}
+
+// FqdnMatch (Optional) Filter fully-qualified domain name (FQDN) specifically by match type. If used, requires filtering by FQDN.
+func (r *APIListDmDomainsRequest) FqdnMatch(fqdnMatch string) *APIListDmDomainsRequest {
+	r.fqdnMatch = &fqdnMatch
 	return r
 }
 
@@ -594,6 +601,9 @@ func (a *DmDomainsAPIService) ListDmDomainsExecute(r APIListDmDomainsRequest) (*
 
 	if r.fqdn != nil {
 		localVarQueryParams.Add("fqdn", parameterToString(*r.fqdn, ""))
+	}
+	if r.fqdnMatch != nil {
+		localVarQueryParams.Add("fqdn_match", parameterToString(*r.fqdnMatch, ""))
 	}
 	if r.serviceId != nil {
 		localVarQueryParams.Add("service_id", parameterToString(*r.serviceId, ""))

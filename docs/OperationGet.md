@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **CreatedAt** | Pointer to **time.Time** | The timestamp when the operation was created. | [optional] [readonly] 
 **UpdatedAt** | **time.Time** | The timestamp when the operation was last updated. | [readonly] 
 **LastSeenAt** | Pointer to **time.Time** | The timestamp when the operation was last seen in traffic. | [optional] [readonly] 
+**Rps** | Pointer to **float32** | Requests per second observed for this operation. | [optional] [readonly] 
+**Status** | Pointer to **string** | The status of the operation. | [optional] [readonly] 
 
 ## Methods
 
@@ -232,6 +234,56 @@ SetLastSeenAt sets LastSeenAt field to given value.
 `func (o *OperationGet) HasLastSeenAt() bool`
 
 HasLastSeenAt returns a boolean if a field has been set.
+
+### GetRps
+
+`func (o *OperationGet) GetRps() float32`
+
+GetRps returns the Rps field if non-nil, zero value otherwise.
+
+### GetRpsOk
+
+`func (o *OperationGet) GetRpsOk() (*float32, bool)`
+
+GetRpsOk returns a tuple with the Rps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRps
+
+`func (o *OperationGet) SetRps(v float32)`
+
+SetRps sets Rps field to given value.
+
+### HasRps
+
+`func (o *OperationGet) HasRps() bool`
+
+HasRps returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *OperationGet) GetStatus() string`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *OperationGet) GetStatusOk() (*string, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *OperationGet) SetStatus(v string)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *OperationGet) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

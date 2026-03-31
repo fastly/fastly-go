@@ -18,6 +18,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	gourl "net/url"
+	"reflect"
 	"strconv"
 	"strings"
 )
@@ -29,6 +30,51 @@ var (
 
 // ApisecurityOperationsAPI defines an interface for interacting with the resource.
 type ApisecurityOperationsAPI interface {
+
+	/*
+		ApiSecurityBulkAddTagsToOperations Bulk add tags to operations
+
+		Add tags to multiple operations in a single request.
+
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceId The unique identifier of the service.
+		 @return APIApiSecurityBulkAddTagsToOperationsRequest
+	*/
+	ApiSecurityBulkAddTagsToOperations(ctx context.Context, serviceId string) APIApiSecurityBulkAddTagsToOperationsRequest
+
+	// ApiSecurityBulkAddTagsToOperationsExecute executes the request
+	//  @return InlineResponse2071
+	ApiSecurityBulkAddTagsToOperationsExecute(r APIApiSecurityBulkAddTagsToOperationsRequest) (*InlineResponse2071, *http.Response, error)
+
+	/*
+		ApiSecurityBulkCreateOperations Bulk create operations
+
+		Create multiple operations associated with a specific service in a single request.
+
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceId The unique identifier of the service.
+		 @return APIApiSecurityBulkCreateOperationsRequest
+	*/
+	ApiSecurityBulkCreateOperations(ctx context.Context, serviceId string) APIApiSecurityBulkCreateOperationsRequest
+
+	// ApiSecurityBulkCreateOperationsExecute executes the request
+	//  @return InlineResponse207
+	ApiSecurityBulkCreateOperationsExecute(r APIApiSecurityBulkCreateOperationsRequest) (*InlineResponse207, *http.Response, error)
+
+	/*
+		ApiSecurityBulkDeleteOperations Bulk delete operations
+
+		Delete multiple operations in a single request.
+
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param serviceId The unique identifier of the service.
+		 @return APIApiSecurityBulkDeleteOperationsRequest
+	*/
+	ApiSecurityBulkDeleteOperations(ctx context.Context, serviceId string) APIApiSecurityBulkDeleteOperationsRequest
+
+	// ApiSecurityBulkDeleteOperationsExecute executes the request
+	//  @return InlineResponse2071
+	ApiSecurityBulkDeleteOperationsExecute(r APIApiSecurityBulkDeleteOperationsRequest) (*InlineResponse2071, *http.Response, error)
 
 	/*
 		ApiSecurityCreateOperation Create operation
@@ -202,6 +248,576 @@ type ApisecurityOperationsAPI interface {
 
 // ApisecurityOperationsAPIService ApisecurityOperationsAPI service
 type ApisecurityOperationsAPIService service
+
+// APIApiSecurityBulkAddTagsToOperationsRequest represents a request for the resource.
+type APIApiSecurityBulkAddTagsToOperationsRequest struct {
+	ctx                  context.Context
+	APIService           ApisecurityOperationsAPI
+	serviceId            string
+	operationBulkAddTags *OperationBulkAddTags
+}
+
+// OperationBulkAddTags returns a pointer to a request.
+func (r *APIApiSecurityBulkAddTagsToOperationsRequest) OperationBulkAddTags(operationBulkAddTags OperationBulkAddTags) *APIApiSecurityBulkAddTagsToOperationsRequest {
+	r.operationBulkAddTags = &operationBulkAddTags
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIApiSecurityBulkAddTagsToOperationsRequest) Execute() (*InlineResponse2071, *http.Response, error) {
+	return r.APIService.ApiSecurityBulkAddTagsToOperationsExecute(r)
+}
+
+/*
+ApiSecurityBulkAddTagsToOperations Bulk add tags to operations
+
+Add tags to multiple operations in a single request.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serviceId The unique identifier of the service.
+ @return APIApiSecurityBulkAddTagsToOperationsRequest
+*/
+func (a *ApisecurityOperationsAPIService) ApiSecurityBulkAddTagsToOperations(ctx context.Context, serviceId string) APIApiSecurityBulkAddTagsToOperationsRequest {
+	return APIApiSecurityBulkAddTagsToOperationsRequest{
+		APIService: a,
+		ctx:        ctx,
+		serviceId:  serviceId,
+	}
+}
+
+// ApiSecurityBulkAddTagsToOperationsExecute executes the request
+//  @return InlineResponse2071
+func (a *ApisecurityOperationsAPIService) ApiSecurityBulkAddTagsToOperationsExecute(r APIApiSecurityBulkAddTagsToOperationsRequest) (*InlineResponse2071, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse2071
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApisecurityOperationsAPIService.ApiSecurityBulkAddTagsToOperations")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/operations-bulk-tags"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.operationBulkAddTags
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 401 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 429 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIApiSecurityBulkCreateOperationsRequest represents a request for the resource.
+type APIApiSecurityBulkCreateOperationsRequest struct {
+	ctx                 context.Context
+	APIService          ApisecurityOperationsAPI
+	serviceId           string
+	operationBulkCreate *OperationBulkCreate
+}
+
+// OperationBulkCreate returns a pointer to a request.
+func (r *APIApiSecurityBulkCreateOperationsRequest) OperationBulkCreate(operationBulkCreate OperationBulkCreate) *APIApiSecurityBulkCreateOperationsRequest {
+	r.operationBulkCreate = &operationBulkCreate
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIApiSecurityBulkCreateOperationsRequest) Execute() (*InlineResponse207, *http.Response, error) {
+	return r.APIService.ApiSecurityBulkCreateOperationsExecute(r)
+}
+
+/*
+ApiSecurityBulkCreateOperations Bulk create operations
+
+Create multiple operations associated with a specific service in a single request.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serviceId The unique identifier of the service.
+ @return APIApiSecurityBulkCreateOperationsRequest
+*/
+func (a *ApisecurityOperationsAPIService) ApiSecurityBulkCreateOperations(ctx context.Context, serviceId string) APIApiSecurityBulkCreateOperationsRequest {
+	return APIApiSecurityBulkCreateOperationsRequest{
+		APIService: a,
+		ctx:        ctx,
+		serviceId:  serviceId,
+	}
+}
+
+// ApiSecurityBulkCreateOperationsExecute executes the request
+//  @return InlineResponse207
+func (a *ApisecurityOperationsAPIService) ApiSecurityBulkCreateOperationsExecute(r APIApiSecurityBulkCreateOperationsRequest) (*InlineResponse207, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse207
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApisecurityOperationsAPIService.ApiSecurityBulkCreateOperations")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/operations-bulk"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.operationBulkCreate
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 401 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 429 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIApiSecurityBulkDeleteOperationsRequest represents a request for the resource.
+type APIApiSecurityBulkDeleteOperationsRequest struct {
+	ctx                 context.Context
+	APIService          ApisecurityOperationsAPI
+	serviceId           string
+	operationBulkDelete *OperationBulkDelete
+}
+
+// OperationBulkDelete returns a pointer to a request.
+func (r *APIApiSecurityBulkDeleteOperationsRequest) OperationBulkDelete(operationBulkDelete OperationBulkDelete) *APIApiSecurityBulkDeleteOperationsRequest {
+	r.operationBulkDelete = &operationBulkDelete
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIApiSecurityBulkDeleteOperationsRequest) Execute() (*InlineResponse2071, *http.Response, error) {
+	return r.APIService.ApiSecurityBulkDeleteOperationsExecute(r)
+}
+
+/*
+ApiSecurityBulkDeleteOperations Bulk delete operations
+
+Delete multiple operations in a single request.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param serviceId The unique identifier of the service.
+ @return APIApiSecurityBulkDeleteOperationsRequest
+*/
+func (a *ApisecurityOperationsAPIService) ApiSecurityBulkDeleteOperations(ctx context.Context, serviceId string) APIApiSecurityBulkDeleteOperationsRequest {
+	return APIApiSecurityBulkDeleteOperationsRequest{
+		APIService: a,
+		ctx:        ctx,
+		serviceId:  serviceId,
+	}
+}
+
+// ApiSecurityBulkDeleteOperationsExecute executes the request
+//  @return InlineResponse2071
+func (a *ApisecurityOperationsAPIService) ApiSecurityBulkDeleteOperationsExecute(r APIApiSecurityBulkDeleteOperationsRequest) (*InlineResponse2071, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *InlineResponse2071
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApisecurityOperationsAPIService.ApiSecurityBulkDeleteOperations")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api-security/v1/services/{service_id}/operations-bulk"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.operationBulkDelete
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 401 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 429 {
+			var v interface{}
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 // APIApiSecurityCreateOperationRequest represents a request for the resource.
 type APIApiSecurityCreateOperationRequest struct {
@@ -1296,14 +1912,28 @@ type APIApiSecurityListDiscoveredOperationsRequest struct {
 	ctx        context.Context
 	APIService ApisecurityOperationsAPI
 	serviceId  string
-	status     *string
+	method     *[]string
+	domain     *[]string
+	path       *string
 	limit      *int32
 	page       *int32
 }
 
-// Status Filter operations by status. Only operations with this status will be returned.
-func (r *APIApiSecurityListDiscoveredOperationsRequest) Status(status string) *APIApiSecurityListDiscoveredOperationsRequest {
-	r.status = &status
+// Method Filter operations by HTTP method.
+func (r *APIApiSecurityListDiscoveredOperationsRequest) Method(method []string) *APIApiSecurityListDiscoveredOperationsRequest {
+	r.method = &method
+	return r
+}
+
+// Domain Filter operations by fully-qualified domain name (exact match).
+func (r *APIApiSecurityListDiscoveredOperationsRequest) Domain(domain []string) *APIApiSecurityListDiscoveredOperationsRequest {
+	r.domain = &domain
+	return r
+}
+
+// Path Filter operations by path (exact match).
+func (r *APIApiSecurityListDiscoveredOperationsRequest) Path(path string) *APIApiSecurityListDiscoveredOperationsRequest {
+	r.path = &path
 	return r
 }
 
@@ -1363,8 +1993,30 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListDiscoveredOperationsExe
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
-	if r.status != nil {
-		localVarQueryParams.Add("status", parameterToString(*r.status, ""))
+	if r.method != nil {
+		t := *r.method
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("method", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("method", parameterToString(t, "multi"))
+		}
+	}
+	if r.domain != nil {
+		t := *r.domain
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("domain", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("domain", parameterToString(t, "multi"))
+		}
+	}
+	if r.path != nil {
+		localVarQueryParams.Add("path", parameterToString(*r.path, ""))
 	}
 	if r.limit != nil {
 		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
@@ -1507,6 +2159,20 @@ type APIApiSecurityListOperationTagsRequest struct {
 	ctx        context.Context
 	APIService ApisecurityOperationsAPI
 	serviceId  string
+	limit      *int32
+	page       *int32
+}
+
+// Limit The maximum number of operations to return per page.
+func (r *APIApiSecurityListOperationTagsRequest) Limit(limit int32) *APIApiSecurityListOperationTagsRequest {
+	r.limit = &limit
+	return r
+}
+
+// Page The page number to return.
+func (r *APIApiSecurityListOperationTagsRequest) Page(page int32) *APIApiSecurityListOperationTagsRequest {
+	r.page = &page
+	return r
 }
 
 // Execute calls the API using the request data configured.
@@ -1553,6 +2219,12 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationTagsExecute(r 
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
 
+	if r.limit != nil {
+		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	}
+	if r.page != nil {
+		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -1679,6 +2351,10 @@ type APIApiSecurityListOperationsRequest struct {
 	APIService ApisecurityOperationsAPI
 	serviceId  string
 	tagId      *string
+	status     *string
+	method     *[]string
+	domain     *[]string
+	path       *string
 	limit      *int32
 	page       *int32
 }
@@ -1686,6 +2362,30 @@ type APIApiSecurityListOperationsRequest struct {
 // TagId Filter operations by operation tag ID. Only operations associated with this operation tag will be returned.
 func (r *APIApiSecurityListOperationsRequest) TagId(tagId string) *APIApiSecurityListOperationsRequest {
 	r.tagId = &tagId
+	return r
+}
+
+// Status Filter operations by status. Defaults to SAVED if omitted.
+func (r *APIApiSecurityListOperationsRequest) Status(status string) *APIApiSecurityListOperationsRequest {
+	r.status = &status
+	return r
+}
+
+// Method Filter operations by HTTP method.
+func (r *APIApiSecurityListOperationsRequest) Method(method []string) *APIApiSecurityListOperationsRequest {
+	r.method = &method
+	return r
+}
+
+// Domain Filter operations by fully-qualified domain name (exact match).
+func (r *APIApiSecurityListOperationsRequest) Domain(domain []string) *APIApiSecurityListOperationsRequest {
+	r.domain = &domain
+	return r
+}
+
+// Path Filter operations by path (exact match).
+func (r *APIApiSecurityListOperationsRequest) Path(path string) *APIApiSecurityListOperationsRequest {
+	r.path = &path
 	return r
 }
 
@@ -1747,6 +2447,34 @@ func (a *ApisecurityOperationsAPIService) ApiSecurityListOperationsExecute(r API
 
 	if r.tagId != nil {
 		localVarQueryParams.Add("tag_id", parameterToString(*r.tagId, ""))
+	}
+	if r.status != nil {
+		localVarQueryParams.Add("status", parameterToString(*r.status, ""))
+	}
+	if r.method != nil {
+		t := *r.method
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("method", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("method", parameterToString(t, "multi"))
+		}
+	}
+	if r.domain != nil {
+		t := *r.domain
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("domain", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("domain", parameterToString(t, "multi"))
+		}
+	}
+	if r.path != nil {
+		localVarQueryParams.Add("path", parameterToString(*r.path, ""))
 	}
 	if r.limit != nil {
 		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))

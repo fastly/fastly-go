@@ -175,8 +175,10 @@ Name | Type | Description | Notes
 **ComputeBerespBodyBytes** | Pointer to **int64** | Total body bytes received from backends (origins) by the Compute platform. | [optional] 
 **ComputeBereqs** | Pointer to **int64** | Number of backend requests started. | [optional] 
 **ComputeBereqErrors** | Pointer to **int64** | Number of backend request errors, including timeouts. | [optional] 
+**ComputeServiceBereqError** | Pointer to **int64** | Number of backend request errors, including timeouts. | [optional] 
 **ComputeResourceLimitExceeded** | Pointer to **int64** | Number of times a guest exceeded its resource limit, includes heap, stack, globals, and code execution timeout. | [optional] 
 **ComputeHeapLimitExceeded** | Pointer to **int64** | Number of times a guest exceeded its heap limit. | [optional] 
+**ComputeServiceMemoryExceededError** | Pointer to **int64** | Number of times a guest exceeded its heap limit. | [optional] 
 **ComputeStackLimitExceeded** | Pointer to **int64** | Number of times a guest exceeded its stack limit. | [optional] 
 **ComputeGlobalsLimitExceeded** | Pointer to **int64** | Number of times a guest exceeded its globals limit. | [optional] 
 **ComputeGuestErrors** | Pointer to **int64** | Number of times a service experienced a guest code error. | [optional] 
@@ -298,6 +300,22 @@ Name | Type | Description | Notes
 **DnsNonbillableResponsesCount** | Pointer to **int32** | Number of non-billable DNS responses (e.g., NODATA, NXDOMAIN). | [optional] 
 **Upgrade** | Pointer to **int32** | Number of requests that resulted in a WebSocket upgrade. | [optional] 
 **NgwafBotAnalysisRequestCount** | Pointer to **int32** | Count of Next-Gen WAF Bot Management requests. | [optional] 
+**ImgoptoAvifCount** | Pointer to **int32** | Count of AVIF images delivered to end user by Image Optimizer. | [optional] 
+**ImgoptoJpegCount** | Pointer to **int32** | Count of JPEG images delivered to end user by Image Optimizer. | [optional] 
+**ImgoptoPngCount** | Pointer to **int32** | Count of PNG images delivered to end user by Image Optimizer. | [optional] 
+**ImgoptoGifCount** | Pointer to **int32** | Count of GIF images delivered to end user by Image Optimizer. | [optional] 
+**ImgoptoWebpCount** | Pointer to **int32** | Count of WebP images delivered to end user by Image Optimizer. | [optional] 
+**ImgoptoJpegxlCount** | Pointer to **int32** | Count of JPEGXL images delivered to end user by Image Optimizer. | [optional] 
+**ImgoptoSvgCount** | Pointer to **int32** | Count of SVG images delivered to end user by Image Optimizer. | [optional] 
+**ImgoptoMp4Count** | Pointer to **int32** | Count of MP4s delivered to end user by Image Optimizer. | [optional] 
+**ComputeServiceResourceLimitsError** | Pointer to **int32** | Aggregate of fatal errors caused by exceeding allocated resource limits, specifically runtime duration, vCPU usage, and heap memory limits. | [optional] 
+**ComputeServiceRuntimeError** | Pointer to **int32** | Fatal errors caused by service logic faults, including stack overflows, unreachable code traps, illegal memory access, or attempts to send multiple responses. | [optional] 
+**ComputeServiceChainError** | Pointer to **int32** | Fatal errors caused by the service path exceeding hop or service limits, or where a forwarding loop is detected via CDN-Loop headers. | [optional] 
+**ComputePlatformInternalError** | Pointer to **int32** | Fatal errors caused by internal errors in Fastly’s Compute platform. | [optional] 
+**ComputeServiceTimeoutError** | Pointer to **int32** | Fatal errors caused by exceeding the per-request runtime limit. | [optional] 
+**ComputeServiceVcpuExceededError** | Pointer to **int32** | Fatal errors caused by exceeding the per-request vCPU time limit. | [optional] 
+**ComputeServiceLimitsError** | Pointer to **int32** | Non-fatal errors caused by attempts to exceed defined operational limits, such as simultaneous backend requests or cache transactions. | [optional] 
+**ComputePlatformInvalidRequestError** | Pointer to **int32** | Fatal errors caused by unprocessable requests to the service, such as requests with malformed CDN-Loop headers or invalid purge credentials. | [optional] 
 **ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **StartTime** | Pointer to **int64** | Timestamp for the start of the time period being reported | [optional] 
 
@@ -4605,6 +4623,31 @@ SetComputeBereqErrors sets ComputeBereqErrors field to given value.
 
 HasComputeBereqErrors returns a boolean if a field has been set.
 
+### GetComputeServiceBereqError
+
+`func (o *Results) GetComputeServiceBereqError() int64`
+
+GetComputeServiceBereqError returns the ComputeServiceBereqError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqErrorOk
+
+`func (o *Results) GetComputeServiceBereqErrorOk() (*int64, bool)`
+
+GetComputeServiceBereqErrorOk returns a tuple with the ComputeServiceBereqError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqError
+
+`func (o *Results) SetComputeServiceBereqError(v int64)`
+
+SetComputeServiceBereqError sets ComputeServiceBereqError field to given value.
+
+### HasComputeServiceBereqError
+
+`func (o *Results) HasComputeServiceBereqError() bool`
+
+HasComputeServiceBereqError returns a boolean if a field has been set.
+
 ### GetComputeResourceLimitExceeded
 
 `func (o *Results) GetComputeResourceLimitExceeded() int64`
@@ -4654,6 +4697,31 @@ SetComputeHeapLimitExceeded sets ComputeHeapLimitExceeded field to given value.
 `func (o *Results) HasComputeHeapLimitExceeded() bool`
 
 HasComputeHeapLimitExceeded returns a boolean if a field has been set.
+
+### GetComputeServiceMemoryExceededError
+
+`func (o *Results) GetComputeServiceMemoryExceededError() int64`
+
+GetComputeServiceMemoryExceededError returns the ComputeServiceMemoryExceededError field if non-nil, zero value otherwise.
+
+### GetComputeServiceMemoryExceededErrorOk
+
+`func (o *Results) GetComputeServiceMemoryExceededErrorOk() (*int64, bool)`
+
+GetComputeServiceMemoryExceededErrorOk returns a tuple with the ComputeServiceMemoryExceededError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceMemoryExceededError
+
+`func (o *Results) SetComputeServiceMemoryExceededError(v int64)`
+
+SetComputeServiceMemoryExceededError sets ComputeServiceMemoryExceededError field to given value.
+
+### HasComputeServiceMemoryExceededError
+
+`func (o *Results) HasComputeServiceMemoryExceededError() bool`
+
+HasComputeServiceMemoryExceededError returns a boolean if a field has been set.
 
 ### GetComputeStackLimitExceeded
 
@@ -7679,6 +7747,406 @@ SetNgwafBotAnalysisRequestCount sets NgwafBotAnalysisRequestCount field to given
 `func (o *Results) HasNgwafBotAnalysisRequestCount() bool`
 
 HasNgwafBotAnalysisRequestCount returns a boolean if a field has been set.
+
+### GetImgoptoAvifCount
+
+`func (o *Results) GetImgoptoAvifCount() int32`
+
+GetImgoptoAvifCount returns the ImgoptoAvifCount field if non-nil, zero value otherwise.
+
+### GetImgoptoAvifCountOk
+
+`func (o *Results) GetImgoptoAvifCountOk() (*int32, bool)`
+
+GetImgoptoAvifCountOk returns a tuple with the ImgoptoAvifCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoAvifCount
+
+`func (o *Results) SetImgoptoAvifCount(v int32)`
+
+SetImgoptoAvifCount sets ImgoptoAvifCount field to given value.
+
+### HasImgoptoAvifCount
+
+`func (o *Results) HasImgoptoAvifCount() bool`
+
+HasImgoptoAvifCount returns a boolean if a field has been set.
+
+### GetImgoptoJpegCount
+
+`func (o *Results) GetImgoptoJpegCount() int32`
+
+GetImgoptoJpegCount returns the ImgoptoJpegCount field if non-nil, zero value otherwise.
+
+### GetImgoptoJpegCountOk
+
+`func (o *Results) GetImgoptoJpegCountOk() (*int32, bool)`
+
+GetImgoptoJpegCountOk returns a tuple with the ImgoptoJpegCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoJpegCount
+
+`func (o *Results) SetImgoptoJpegCount(v int32)`
+
+SetImgoptoJpegCount sets ImgoptoJpegCount field to given value.
+
+### HasImgoptoJpegCount
+
+`func (o *Results) HasImgoptoJpegCount() bool`
+
+HasImgoptoJpegCount returns a boolean if a field has been set.
+
+### GetImgoptoPngCount
+
+`func (o *Results) GetImgoptoPngCount() int32`
+
+GetImgoptoPngCount returns the ImgoptoPngCount field if non-nil, zero value otherwise.
+
+### GetImgoptoPngCountOk
+
+`func (o *Results) GetImgoptoPngCountOk() (*int32, bool)`
+
+GetImgoptoPngCountOk returns a tuple with the ImgoptoPngCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoPngCount
+
+`func (o *Results) SetImgoptoPngCount(v int32)`
+
+SetImgoptoPngCount sets ImgoptoPngCount field to given value.
+
+### HasImgoptoPngCount
+
+`func (o *Results) HasImgoptoPngCount() bool`
+
+HasImgoptoPngCount returns a boolean if a field has been set.
+
+### GetImgoptoGifCount
+
+`func (o *Results) GetImgoptoGifCount() int32`
+
+GetImgoptoGifCount returns the ImgoptoGifCount field if non-nil, zero value otherwise.
+
+### GetImgoptoGifCountOk
+
+`func (o *Results) GetImgoptoGifCountOk() (*int32, bool)`
+
+GetImgoptoGifCountOk returns a tuple with the ImgoptoGifCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoGifCount
+
+`func (o *Results) SetImgoptoGifCount(v int32)`
+
+SetImgoptoGifCount sets ImgoptoGifCount field to given value.
+
+### HasImgoptoGifCount
+
+`func (o *Results) HasImgoptoGifCount() bool`
+
+HasImgoptoGifCount returns a boolean if a field has been set.
+
+### GetImgoptoWebpCount
+
+`func (o *Results) GetImgoptoWebpCount() int32`
+
+GetImgoptoWebpCount returns the ImgoptoWebpCount field if non-nil, zero value otherwise.
+
+### GetImgoptoWebpCountOk
+
+`func (o *Results) GetImgoptoWebpCountOk() (*int32, bool)`
+
+GetImgoptoWebpCountOk returns a tuple with the ImgoptoWebpCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoWebpCount
+
+`func (o *Results) SetImgoptoWebpCount(v int32)`
+
+SetImgoptoWebpCount sets ImgoptoWebpCount field to given value.
+
+### HasImgoptoWebpCount
+
+`func (o *Results) HasImgoptoWebpCount() bool`
+
+HasImgoptoWebpCount returns a boolean if a field has been set.
+
+### GetImgoptoJpegxlCount
+
+`func (o *Results) GetImgoptoJpegxlCount() int32`
+
+GetImgoptoJpegxlCount returns the ImgoptoJpegxlCount field if non-nil, zero value otherwise.
+
+### GetImgoptoJpegxlCountOk
+
+`func (o *Results) GetImgoptoJpegxlCountOk() (*int32, bool)`
+
+GetImgoptoJpegxlCountOk returns a tuple with the ImgoptoJpegxlCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoJpegxlCount
+
+`func (o *Results) SetImgoptoJpegxlCount(v int32)`
+
+SetImgoptoJpegxlCount sets ImgoptoJpegxlCount field to given value.
+
+### HasImgoptoJpegxlCount
+
+`func (o *Results) HasImgoptoJpegxlCount() bool`
+
+HasImgoptoJpegxlCount returns a boolean if a field has been set.
+
+### GetImgoptoSvgCount
+
+`func (o *Results) GetImgoptoSvgCount() int32`
+
+GetImgoptoSvgCount returns the ImgoptoSvgCount field if non-nil, zero value otherwise.
+
+### GetImgoptoSvgCountOk
+
+`func (o *Results) GetImgoptoSvgCountOk() (*int32, bool)`
+
+GetImgoptoSvgCountOk returns a tuple with the ImgoptoSvgCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoSvgCount
+
+`func (o *Results) SetImgoptoSvgCount(v int32)`
+
+SetImgoptoSvgCount sets ImgoptoSvgCount field to given value.
+
+### HasImgoptoSvgCount
+
+`func (o *Results) HasImgoptoSvgCount() bool`
+
+HasImgoptoSvgCount returns a boolean if a field has been set.
+
+### GetImgoptoMp4Count
+
+`func (o *Results) GetImgoptoMp4Count() int32`
+
+GetImgoptoMp4Count returns the ImgoptoMp4Count field if non-nil, zero value otherwise.
+
+### GetImgoptoMp4CountOk
+
+`func (o *Results) GetImgoptoMp4CountOk() (*int32, bool)`
+
+GetImgoptoMp4CountOk returns a tuple with the ImgoptoMp4Count field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoMp4Count
+
+`func (o *Results) SetImgoptoMp4Count(v int32)`
+
+SetImgoptoMp4Count sets ImgoptoMp4Count field to given value.
+
+### HasImgoptoMp4Count
+
+`func (o *Results) HasImgoptoMp4Count() bool`
+
+HasImgoptoMp4Count returns a boolean if a field has been set.
+
+### GetComputeServiceResourceLimitsError
+
+`func (o *Results) GetComputeServiceResourceLimitsError() int32`
+
+GetComputeServiceResourceLimitsError returns the ComputeServiceResourceLimitsError field if non-nil, zero value otherwise.
+
+### GetComputeServiceResourceLimitsErrorOk
+
+`func (o *Results) GetComputeServiceResourceLimitsErrorOk() (*int32, bool)`
+
+GetComputeServiceResourceLimitsErrorOk returns a tuple with the ComputeServiceResourceLimitsError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceResourceLimitsError
+
+`func (o *Results) SetComputeServiceResourceLimitsError(v int32)`
+
+SetComputeServiceResourceLimitsError sets ComputeServiceResourceLimitsError field to given value.
+
+### HasComputeServiceResourceLimitsError
+
+`func (o *Results) HasComputeServiceResourceLimitsError() bool`
+
+HasComputeServiceResourceLimitsError returns a boolean if a field has been set.
+
+### GetComputeServiceRuntimeError
+
+`func (o *Results) GetComputeServiceRuntimeError() int32`
+
+GetComputeServiceRuntimeError returns the ComputeServiceRuntimeError field if non-nil, zero value otherwise.
+
+### GetComputeServiceRuntimeErrorOk
+
+`func (o *Results) GetComputeServiceRuntimeErrorOk() (*int32, bool)`
+
+GetComputeServiceRuntimeErrorOk returns a tuple with the ComputeServiceRuntimeError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceRuntimeError
+
+`func (o *Results) SetComputeServiceRuntimeError(v int32)`
+
+SetComputeServiceRuntimeError sets ComputeServiceRuntimeError field to given value.
+
+### HasComputeServiceRuntimeError
+
+`func (o *Results) HasComputeServiceRuntimeError() bool`
+
+HasComputeServiceRuntimeError returns a boolean if a field has been set.
+
+### GetComputeServiceChainError
+
+`func (o *Results) GetComputeServiceChainError() int32`
+
+GetComputeServiceChainError returns the ComputeServiceChainError field if non-nil, zero value otherwise.
+
+### GetComputeServiceChainErrorOk
+
+`func (o *Results) GetComputeServiceChainErrorOk() (*int32, bool)`
+
+GetComputeServiceChainErrorOk returns a tuple with the ComputeServiceChainError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceChainError
+
+`func (o *Results) SetComputeServiceChainError(v int32)`
+
+SetComputeServiceChainError sets ComputeServiceChainError field to given value.
+
+### HasComputeServiceChainError
+
+`func (o *Results) HasComputeServiceChainError() bool`
+
+HasComputeServiceChainError returns a boolean if a field has been set.
+
+### GetComputePlatformInternalError
+
+`func (o *Results) GetComputePlatformInternalError() int32`
+
+GetComputePlatformInternalError returns the ComputePlatformInternalError field if non-nil, zero value otherwise.
+
+### GetComputePlatformInternalErrorOk
+
+`func (o *Results) GetComputePlatformInternalErrorOk() (*int32, bool)`
+
+GetComputePlatformInternalErrorOk returns a tuple with the ComputePlatformInternalError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputePlatformInternalError
+
+`func (o *Results) SetComputePlatformInternalError(v int32)`
+
+SetComputePlatformInternalError sets ComputePlatformInternalError field to given value.
+
+### HasComputePlatformInternalError
+
+`func (o *Results) HasComputePlatformInternalError() bool`
+
+HasComputePlatformInternalError returns a boolean if a field has been set.
+
+### GetComputeServiceTimeoutError
+
+`func (o *Results) GetComputeServiceTimeoutError() int32`
+
+GetComputeServiceTimeoutError returns the ComputeServiceTimeoutError field if non-nil, zero value otherwise.
+
+### GetComputeServiceTimeoutErrorOk
+
+`func (o *Results) GetComputeServiceTimeoutErrorOk() (*int32, bool)`
+
+GetComputeServiceTimeoutErrorOk returns a tuple with the ComputeServiceTimeoutError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceTimeoutError
+
+`func (o *Results) SetComputeServiceTimeoutError(v int32)`
+
+SetComputeServiceTimeoutError sets ComputeServiceTimeoutError field to given value.
+
+### HasComputeServiceTimeoutError
+
+`func (o *Results) HasComputeServiceTimeoutError() bool`
+
+HasComputeServiceTimeoutError returns a boolean if a field has been set.
+
+### GetComputeServiceVcpuExceededError
+
+`func (o *Results) GetComputeServiceVcpuExceededError() int32`
+
+GetComputeServiceVcpuExceededError returns the ComputeServiceVcpuExceededError field if non-nil, zero value otherwise.
+
+### GetComputeServiceVcpuExceededErrorOk
+
+`func (o *Results) GetComputeServiceVcpuExceededErrorOk() (*int32, bool)`
+
+GetComputeServiceVcpuExceededErrorOk returns a tuple with the ComputeServiceVcpuExceededError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceVcpuExceededError
+
+`func (o *Results) SetComputeServiceVcpuExceededError(v int32)`
+
+SetComputeServiceVcpuExceededError sets ComputeServiceVcpuExceededError field to given value.
+
+### HasComputeServiceVcpuExceededError
+
+`func (o *Results) HasComputeServiceVcpuExceededError() bool`
+
+HasComputeServiceVcpuExceededError returns a boolean if a field has been set.
+
+### GetComputeServiceLimitsError
+
+`func (o *Results) GetComputeServiceLimitsError() int32`
+
+GetComputeServiceLimitsError returns the ComputeServiceLimitsError field if non-nil, zero value otherwise.
+
+### GetComputeServiceLimitsErrorOk
+
+`func (o *Results) GetComputeServiceLimitsErrorOk() (*int32, bool)`
+
+GetComputeServiceLimitsErrorOk returns a tuple with the ComputeServiceLimitsError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceLimitsError
+
+`func (o *Results) SetComputeServiceLimitsError(v int32)`
+
+SetComputeServiceLimitsError sets ComputeServiceLimitsError field to given value.
+
+### HasComputeServiceLimitsError
+
+`func (o *Results) HasComputeServiceLimitsError() bool`
+
+HasComputeServiceLimitsError returns a boolean if a field has been set.
+
+### GetComputePlatformInvalidRequestError
+
+`func (o *Results) GetComputePlatformInvalidRequestError() int32`
+
+GetComputePlatformInvalidRequestError returns the ComputePlatformInvalidRequestError field if non-nil, zero value otherwise.
+
+### GetComputePlatformInvalidRequestErrorOk
+
+`func (o *Results) GetComputePlatformInvalidRequestErrorOk() (*int32, bool)`
+
+GetComputePlatformInvalidRequestErrorOk returns a tuple with the ComputePlatformInvalidRequestError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputePlatformInvalidRequestError
+
+`func (o *Results) SetComputePlatformInvalidRequestError(v int32)`
+
+SetComputePlatformInvalidRequestError sets ComputePlatformInvalidRequestError field to given value.
+
+### HasComputePlatformInvalidRequestError
+
+`func (o *Results) HasComputePlatformInvalidRequestError() bool`
+
+HasComputePlatformInvalidRequestError returns a boolean if a field has been set.
 
 ### GetServiceId
 

@@ -7,15 +7,16 @@ Name | Type | Description | Notes
 **Method** | **string** | The HTTP method for the operation. | 
 **Domain** | **string** | The domain for the operation. | 
 **Path** | **string** | The path for the operation, which may include path parameters. | 
-**Status** | Pointer to **string** | The current status of the operation. | [optional] 
+**Id** | **string** | The unique identifier of the discovered operation. | [readonly] 
 **UpdatedAt** | Pointer to **time.Time** | The timestamp when the operation was last updated. | [optional] [readonly] 
 **LastSeenAt** | Pointer to **time.Time** | The timestamp when the operation was last seen in traffic. | [optional] [readonly] 
+**Rps** | Pointer to **float32** | Requests per second observed for this operation. | [optional] [readonly] 
 
 ## Methods
 
 ### NewDiscoveredOperationGet
 
-`func NewDiscoveredOperationGet(method string, domain string, path string, ) *DiscoveredOperationGet`
+`func NewDiscoveredOperationGet(method string, domain string, path string, id string, ) *DiscoveredOperationGet`
 
 NewDiscoveredOperationGet instantiates a new DiscoveredOperationGet object
 This constructor will assign default values to properties that have it defined,
@@ -90,30 +91,25 @@ and a boolean to check if the value has been set.
 SetPath sets Path field to given value.
 
 
-### GetStatus
+### GetId
 
-`func (o *DiscoveredOperationGet) GetStatus() string`
+`func (o *DiscoveredOperationGet) GetId() string`
 
-GetStatus returns the Status field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetStatusOk
+### GetIdOk
 
-`func (o *DiscoveredOperationGet) GetStatusOk() (*string, bool)`
+`func (o *DiscoveredOperationGet) GetIdOk() (*string, bool)`
 
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetStatus
+### SetId
 
-`func (o *DiscoveredOperationGet) SetStatus(v string)`
+`func (o *DiscoveredOperationGet) SetId(v string)`
 
-SetStatus sets Status field to given value.
+SetId sets Id field to given value.
 
-### HasStatus
-
-`func (o *DiscoveredOperationGet) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 
@@ -164,6 +160,31 @@ SetLastSeenAt sets LastSeenAt field to given value.
 `func (o *DiscoveredOperationGet) HasLastSeenAt() bool`
 
 HasLastSeenAt returns a boolean if a field has been set.
+
+### GetRps
+
+`func (o *DiscoveredOperationGet) GetRps() float32`
+
+GetRps returns the Rps field if non-nil, zero value otherwise.
+
+### GetRpsOk
+
+`func (o *DiscoveredOperationGet) GetRpsOk() (*float32, bool)`
+
+GetRpsOk returns a tuple with the Rps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRps
+
+`func (o *DiscoveredOperationGet) SetRps(v float32)`
+
+SetRps sets Rps field to given value.
+
+### HasRps
+
+`func (o *DiscoveredOperationGet) HasRps() bool`
+
+HasRps returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

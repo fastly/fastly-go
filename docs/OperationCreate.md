@@ -4,17 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Method** | Pointer to **string** | The HTTP method for the operation. | [optional] 
-**Domain** | Pointer to **string** | The domain for the operation. | [optional] 
-**Path** | Pointer to **string** | The path for the operation, which may include path parameters. | [optional] 
+**Method** | **string** | The HTTP method for the operation. | 
+**Domain** | **string** | The domain for the operation. | 
+**Path** | **string** | The path for the operation, which may include path parameters. | 
 **Description** | Pointer to **string** | A description of what the operation does. | [optional] 
 **TagIds** | Pointer to **[]string** | An array of operation tag IDs associated with this operation. | [optional] 
+**Status** | Pointer to **string** | The status to assign to the operation. Defaults to SAVED if omitted. | [optional] [default to "SAVED"]
 
 ## Methods
 
 ### NewOperationCreate
 
-`func NewOperationCreate() *OperationCreate`
+`func NewOperationCreate(method string, domain string, path string, ) *OperationCreate`
 
 NewOperationCreate instantiates a new OperationCreate object
 This constructor will assign default values to properties that have it defined,
@@ -48,11 +49,6 @@ and a boolean to check if the value has been set.
 
 SetMethod sets Method field to given value.
 
-### HasMethod
-
-`func (o *OperationCreate) HasMethod() bool`
-
-HasMethod returns a boolean if a field has been set.
 
 ### GetDomain
 
@@ -73,11 +69,6 @@ and a boolean to check if the value has been set.
 
 SetDomain sets Domain field to given value.
 
-### HasDomain
-
-`func (o *OperationCreate) HasDomain() bool`
-
-HasDomain returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -98,11 +89,6 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
-### HasPath
-
-`func (o *OperationCreate) HasPath() bool`
-
-HasPath returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -153,6 +139,31 @@ SetTagIds sets TagIds field to given value.
 `func (o *OperationCreate) HasTagIds() bool`
 
 HasTagIds returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *OperationCreate) GetStatus() string`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *OperationCreate) GetStatusOk() (*string, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *OperationCreate) SetStatus(v string)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *OperationCreate) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

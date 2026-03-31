@@ -4,15 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Status** | Pointer to **string** | The current status of the operation. | [optional] 
+**Id** | **string** | The unique identifier of the discovered operation. | [readonly] 
 **UpdatedAt** | Pointer to **time.Time** | The timestamp when the operation was last updated. | [optional] [readonly] 
 **LastSeenAt** | Pointer to **time.Time** | The timestamp when the operation was last seen in traffic. | [optional] [readonly] 
+**Rps** | Pointer to **float32** | Requests per second observed for this operation. | [optional] [readonly] 
 
 ## Methods
 
 ### NewDiscoveredOperationGetExtra
 
-`func NewDiscoveredOperationGetExtra() *DiscoveredOperationGetExtra`
+`func NewDiscoveredOperationGetExtra(id string, ) *DiscoveredOperationGetExtra`
 
 NewDiscoveredOperationGetExtra instantiates a new DiscoveredOperationGetExtra object
 This constructor will assign default values to properties that have it defined,
@@ -27,30 +28,25 @@ NewDiscoveredOperationGetExtraWithDefaults instantiates a new DiscoveredOperatio
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetStatus
+### GetId
 
-`func (o *DiscoveredOperationGetExtra) GetStatus() string`
+`func (o *DiscoveredOperationGetExtra) GetId() string`
 
-GetStatus returns the Status field if non-nil, zero value otherwise.
+GetId returns the Id field if non-nil, zero value otherwise.
 
-### GetStatusOk
+### GetIdOk
 
-`func (o *DiscoveredOperationGetExtra) GetStatusOk() (*string, bool)`
+`func (o *DiscoveredOperationGetExtra) GetIdOk() (*string, bool)`
 
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetStatus
+### SetId
 
-`func (o *DiscoveredOperationGetExtra) SetStatus(v string)`
+`func (o *DiscoveredOperationGetExtra) SetId(v string)`
 
-SetStatus sets Status field to given value.
+SetId sets Id field to given value.
 
-### HasStatus
-
-`func (o *DiscoveredOperationGetExtra) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
 
 ### GetUpdatedAt
 
@@ -101,6 +97,31 @@ SetLastSeenAt sets LastSeenAt field to given value.
 `func (o *DiscoveredOperationGetExtra) HasLastSeenAt() bool`
 
 HasLastSeenAt returns a boolean if a field has been set.
+
+### GetRps
+
+`func (o *DiscoveredOperationGetExtra) GetRps() float32`
+
+GetRps returns the Rps field if non-nil, zero value otherwise.
+
+### GetRpsOk
+
+`func (o *DiscoveredOperationGetExtra) GetRpsOk() (*float32, bool)`
+
+GetRpsOk returns a tuple with the Rps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRps
+
+`func (o *DiscoveredOperationGetExtra) SetRps(v float32)`
+
+SetRps sets Rps field to given value.
+
+### HasRps
+
+`func (o *DiscoveredOperationGetExtra) HasRps() bool`
+
+HasRps returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

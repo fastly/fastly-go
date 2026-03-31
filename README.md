@@ -18,7 +18,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go 1.0.0-beta.47
+	github.com/fastly/fastly-go 1.0.0-beta.48
 )
 ```
 
@@ -92,6 +92,9 @@ Class | Method | Description
 *ApexRedirectAPI* | [**GetApexRedirect**](docs/ApexRedirectAPI.md#getapexredirect) | Get an apex redirect
 *ApexRedirectAPI* | [**ListApexRedirects**](docs/ApexRedirectAPI.md#listapexredirects) | List apex redirects
 *ApexRedirectAPI* | [**UpdateApexRedirect**](docs/ApexRedirectAPI.md#updateapexredirect) | Update an apex redirect
+*ApisecurityOperationsAPI* | [**ApiSecurityBulkAddTagsToOperations**](docs/ApisecurityOperationsAPI.md#apisecuritybulkaddtagstooperations) | Bulk add tags to operations
+*ApisecurityOperationsAPI* | [**ApiSecurityBulkCreateOperations**](docs/ApisecurityOperationsAPI.md#apisecuritybulkcreateoperations) | Bulk create operations
+*ApisecurityOperationsAPI* | [**ApiSecurityBulkDeleteOperations**](docs/ApisecurityOperationsAPI.md#apisecuritybulkdeleteoperations) | Bulk delete operations
 *ApisecurityOperationsAPI* | [**ApiSecurityCreateOperation**](docs/ApisecurityOperationsAPI.md#apisecuritycreateoperation) | Create operation
 *ApisecurityOperationsAPI* | [**ApiSecurityCreateOperationTag**](docs/ApisecurityOperationsAPI.md#apisecuritycreateoperationtag) | Create operation tag
 *ApisecurityOperationsAPI* | [**ApiSecurityDeleteOperation**](docs/ApisecurityOperationsAPI.md#apisecuritydeleteoperation) | Delete operation
@@ -686,21 +689,27 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/ngwaf/v1/default-dashboards`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/custom-dashboards) (GET)
 - [`/ngwaf/v1/lists/{listID}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/lists) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/lists`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/lists) (GET, POST)
+- [`/ngwaf/v1/rules/{rule_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/rules) (DELETE, GET, PATCH)
+- [`/ngwaf/v1/rules`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/rules) (GET, POST)
 - [`/ngwaf/v1/signals/{signal_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/signals) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/signals`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/signals) (GET, POST)
 - [`/ngwaf/v1/timeseries`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/timeseries) (GET)
 - [`/ngwaf/v1/workspaces/{workspaceID}/lists/{listID}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/lists) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspaceID}/lists`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/lists) (GET, POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/alerts/{alert_id}/signing-key`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/workspace_alerts) (GET, POST)
+- [`/ngwaf/v1/workspaces/{workspace_id}/alerts/{alert_id}/test`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/workspace_alerts) (POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/alerts/{alert_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/workspace_alerts) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/alerts`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/workspace_alerts) (GET, POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/dashboards/{dashboard_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/custom-dashboards) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/dashboards`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/custom-dashboards) (GET, POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/default-dashboard`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/custom-dashboards) (GET, PUT)
+- [`/ngwaf/v1/workspaces/{workspace_id}/events/{event_id}/expire`](https://www.fastly.com/documentation/reference/api/ngwaf/events) (POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/events/{event_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/events) (GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/events`](https://www.fastly.com/documentation/reference/api/ngwaf/events) (GET)
 - [`/ngwaf/v1/workspaces/{workspace_id}/header-links/{header_link_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/header-links) (DELETE, GET, PUT)
 - [`/ngwaf/v1/workspaces/{workspace_id}/header-links`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/header-links) (GET, POST)
+- [`/ngwaf/v1/workspaces/{workspace_id}/rate-limited-sources/{source_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/rate-limited-sources) (DELETE, GET)
+- [`/ngwaf/v1/workspaces/{workspace_id}/rate-limited-sources`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/rate-limited-sources) (DELETE, GET)
 - [`/ngwaf/v1/workspaces/{workspace_id}/redactions/{redaction_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/redactions) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/redactions`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/redactions) (GET, POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/requests/{request_id}/report`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/requests) (POST)
@@ -708,8 +717,11 @@ The fastly-go API client currently does not support the following endpoints:
 - [`/ngwaf/v1/workspaces/{workspace_id}/requests`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/requests) (GET)
 - [`/ngwaf/v1/workspaces/{workspace_id}/rules/{rule_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/rules) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/rules`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/rules) (GET, POST)
+- [`/ngwaf/v1/workspaces/{workspace_id}/signals/{signal_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/signals) (DELETE, GET, PATCH)
+- [`/ngwaf/v1/workspaces/{workspace_id}/signals`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/signals) (GET, POST)
 - [`/ngwaf/v1/workspaces/{workspace_id}/thresholds/{threshold_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/thresholds) (DELETE, GET, PATCH)
 - [`/ngwaf/v1/workspaces/{workspace_id}/thresholds`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/thresholds) (GET, POST)
+- [`/ngwaf/v1/workspaces/{workspace_id}/timeseries/agents/{agent_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/timeseries) (GET)
 - [`/ngwaf/v1/workspaces/{workspace_id}/timeseries`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/timeseries) (GET)
 - [`/ngwaf/v1/workspaces/{workspace_id}/top-attacks`](https://www.fastly.com/documentation/reference/api/ngwaf/workspaces) (GET)
 - [`/ngwaf/v1/workspaces/{workspace_id}/virtual-patches/{virtual_patch_id}`](https://www.fastly.com/documentation/reference/api/ngwaf/v1/virtual-patches) (GET, PATCH)

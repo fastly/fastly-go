@@ -26,7 +26,11 @@ type OperationGetExtra struct {
 	// The timestamp when the operation was last updated.
 	UpdatedAt time.Time `json:"updated_at"`
 	// The timestamp when the operation was last seen in traffic.
-	LastSeenAt           *time.Time `json:"last_seen_at,omitempty"`
+	LastSeenAt *time.Time `json:"last_seen_at,omitempty"`
+	// Requests per second observed for this operation.
+	Rps *float32 `json:"rps,omitempty"`
+	// The status of the operation.
+	Status               *string `json:"status,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -163,6 +167,70 @@ func (o *OperationGetExtra) SetLastSeenAt(v time.Time) {
 	o.LastSeenAt = &v
 }
 
+// GetRps returns the Rps field value if set, zero value otherwise.
+func (o *OperationGetExtra) GetRps() float32 {
+	if o == nil || o.Rps == nil {
+		var ret float32
+		return ret
+	}
+	return *o.Rps
+}
+
+// GetRpsOk returns a tuple with the Rps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OperationGetExtra) GetRpsOk() (*float32, bool) {
+	if o == nil || o.Rps == nil {
+		return nil, false
+	}
+	return o.Rps, true
+}
+
+// HasRps returns a boolean if a field has been set.
+func (o *OperationGetExtra) HasRps() bool {
+	if o != nil && o.Rps != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRps gets a reference to the given float32 and assigns it to the Rps field.
+func (o *OperationGetExtra) SetRps(v float32) {
+	o.Rps = &v
+}
+
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *OperationGetExtra) GetStatus() string {
+	if o == nil || o.Status == nil {
+		var ret string
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OperationGetExtra) GetStatusOk() (*string, bool) {
+	if o == nil || o.Status == nil {
+		return nil, false
+	}
+	return o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *OperationGetExtra) HasStatus() bool {
+	if o != nil && o.Status != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given string and assigns it to the Status field.
+func (o *OperationGetExtra) SetStatus(v string) {
+	o.Status = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o OperationGetExtra) MarshalJSON() ([]byte, error) {
@@ -178,6 +246,12 @@ func (o OperationGetExtra) MarshalJSON() ([]byte, error) {
 	}
 	if o.LastSeenAt != nil {
 		toSerialize["last_seen_at"] = o.LastSeenAt
+	}
+	if o.Rps != nil {
+		toSerialize["rps"] = o.Rps
+	}
+	if o.Status != nil {
+		toSerialize["status"] = o.Status
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -203,6 +277,8 @@ func (o *OperationGetExtra) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "created_at")
 		delete(additionalProperties, "updated_at")
 		delete(additionalProperties, "last_seen_at")
+		delete(additionalProperties, "rps")
+		delete(additionalProperties, "status")
 		o.AdditionalProperties = additionalProperties
 	}
 
