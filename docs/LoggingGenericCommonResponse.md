@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MessageType** | Pointer to **string** | How the message should be formatted. | [optional] [default to "classic"]
+**MessageType** | Pointer to **string** | How the message should be formatted. | [optional] [default to "blank"]
 **TimestampFormat** | Pointer to **NullableString** | A timestamp format | [optional] [readonly] 
 **CompressionCodec** | Pointer to **string** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] 
 **Period** | Pointer to **string** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to "3600"]

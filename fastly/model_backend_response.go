@@ -43,14 +43,18 @@ type BackendResponse struct {
 	Ipv4 NullableString `json:"ipv4,omitempty"`
 	// IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
 	Ipv6 NullableString `json:"ipv6,omitempty"`
-	// How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can.
+	// How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can.
 	KeepaliveTime NullableInt32 `json:"keepalive_time,omitempty"`
 	// Maximum number of concurrent connections this backend will accept.
 	MaxConn *int32 `json:"max_conn,omitempty"`
+	// Maximum time from creation (in milliseconds) that a pooled HTTP keepalive connection will be eligible for reuse; 0 is treated as unlimited.
+	MaxLifetime NullableInt32 `json:"max_lifetime,omitempty"`
 	// Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
 	MaxTlsVersion NullableString `json:"max_tls_version,omitempty"`
 	// Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
 	MinTlsVersion NullableString `json:"min_tls_version,omitempty"`
+	// Maximum number of requests allowed over a single, pooled HTTP keepalive connection to this backend; 0 is treated as unlimited.
+	MaxUse NullableInt32 `json:"max_use,omitempty"`
 	// The name of the backend.
 	Name *string `json:"name,omitempty"`
 	// If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL.
@@ -667,6 +671,49 @@ func (o *BackendResponse) SetMaxConn(v int32) {
 	o.MaxConn = &v
 }
 
+// GetMaxLifetime returns the MaxLifetime field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetMaxLifetime() int32 {
+	if o == nil || o.MaxLifetime.Get() == nil {
+		var ret int32
+		return ret
+	}
+	return *o.MaxLifetime.Get()
+}
+
+// GetMaxLifetimeOk returns a tuple with the MaxLifetime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BackendResponse) GetMaxLifetimeOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MaxLifetime.Get(), o.MaxLifetime.IsSet()
+}
+
+// HasMaxLifetime returns a boolean if a field has been set.
+func (o *BackendResponse) HasMaxLifetime() bool {
+	if o != nil && o.MaxLifetime.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxLifetime gets a reference to the given NullableInt32 and assigns it to the MaxLifetime field.
+func (o *BackendResponse) SetMaxLifetime(v int32) {
+	o.MaxLifetime.Set(&v)
+}
+
+// SetMaxLifetimeNil sets the value for MaxLifetime to be an explicit nil
+func (o *BackendResponse) SetMaxLifetimeNil() {
+	o.MaxLifetime.Set(nil)
+}
+
+// UnsetMaxLifetime ensures that no value is present for MaxLifetime, not even an explicit nil
+func (o *BackendResponse) UnsetMaxLifetime() {
+	o.MaxLifetime.Unset()
+}
+
 // GetMaxTlsVersion returns the MaxTlsVersion field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BackendResponse) GetMaxTlsVersion() string {
 	if o == nil || o.MaxTlsVersion.Get() == nil {
@@ -751,6 +798,49 @@ func (o *BackendResponse) SetMinTlsVersionNil() {
 // UnsetMinTlsVersion ensures that no value is present for MinTlsVersion, not even an explicit nil
 func (o *BackendResponse) UnsetMinTlsVersion() {
 	o.MinTlsVersion.Unset()
+}
+
+// GetMaxUse returns the MaxUse field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BackendResponse) GetMaxUse() int32 {
+	if o == nil || o.MaxUse.Get() == nil {
+		var ret int32
+		return ret
+	}
+	return *o.MaxUse.Get()
+}
+
+// GetMaxUseOk returns a tuple with the MaxUse field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BackendResponse) GetMaxUseOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.MaxUse.Get(), o.MaxUse.IsSet()
+}
+
+// HasMaxUse returns a boolean if a field has been set.
+func (o *BackendResponse) HasMaxUse() bool {
+	if o != nil && o.MaxUse.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxUse gets a reference to the given NullableInt32 and assigns it to the MaxUse field.
+func (o *BackendResponse) SetMaxUse(v int32) {
+	o.MaxUse.Set(&v)
+}
+
+// SetMaxUseNil sets the value for MaxUse to be an explicit nil
+func (o *BackendResponse) SetMaxUseNil() {
+	o.MaxUse.Set(nil)
+}
+
+// UnsetMaxUse ensures that no value is present for MaxUse, not even an explicit nil
+func (o *BackendResponse) UnsetMaxUse() {
+	o.MaxUse.Unset()
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -1864,11 +1954,17 @@ func (o BackendResponse) MarshalJSON() ([]byte, error) {
 	if o.MaxConn != nil {
 		toSerialize["max_conn"] = o.MaxConn
 	}
+	if o.MaxLifetime.IsSet() {
+		toSerialize["max_lifetime"] = o.MaxLifetime.Get()
+	}
 	if o.MaxTlsVersion.IsSet() {
 		toSerialize["max_tls_version"] = o.MaxTlsVersion.Get()
 	}
 	if o.MinTlsVersion.IsSet() {
 		toSerialize["min_tls_version"] = o.MinTlsVersion.Get()
+	}
+	if o.MaxUse.IsSet() {
+		toSerialize["max_use"] = o.MaxUse.Get()
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -1985,8 +2081,10 @@ func (o *BackendResponse) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "ipv6")
 		delete(additionalProperties, "keepalive_time")
 		delete(additionalProperties, "max_conn")
+		delete(additionalProperties, "max_lifetime")
 		delete(additionalProperties, "max_tls_version")
 		delete(additionalProperties, "min_tls_version")
+		delete(additionalProperties, "max_use")
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "override_host")
 		delete(additionalProperties, "port")

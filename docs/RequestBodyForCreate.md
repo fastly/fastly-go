@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Fqdn** | **string** | The fully-qualified domain name for your domain. Can be created, but not updated. | 
 **ServiceId** | Pointer to **NullableString** | The `service_id` associated with your domain or `null` if there is no association. | [optional] 
+**RoutingConfigurationId** | Pointer to **NullableString** | The `routing_configuration_id` associated with your domain or `null` if there is no association. | [optional] 
 **Description** | Pointer to **string** | A freeform descriptive note. | [optional] 
 
 ## Methods
@@ -82,6 +83,41 @@ HasServiceId returns a boolean if a field has been set.
 `func (o *RequestBodyForCreate) UnsetServiceId()`
 
 UnsetServiceId ensures that no value is present for ServiceId, not even an explicit nil
+### GetRoutingConfigurationId
+
+`func (o *RequestBodyForCreate) GetRoutingConfigurationId() string`
+
+GetRoutingConfigurationId returns the RoutingConfigurationId field if non-nil, zero value otherwise.
+
+### GetRoutingConfigurationIdOk
+
+`func (o *RequestBodyForCreate) GetRoutingConfigurationIdOk() (*string, bool)`
+
+GetRoutingConfigurationIdOk returns a tuple with the RoutingConfigurationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoutingConfigurationId
+
+`func (o *RequestBodyForCreate) SetRoutingConfigurationId(v string)`
+
+SetRoutingConfigurationId sets RoutingConfigurationId field to given value.
+
+### HasRoutingConfigurationId
+
+`func (o *RequestBodyForCreate) HasRoutingConfigurationId() bool`
+
+HasRoutingConfigurationId returns a boolean if a field has been set.
+
+### SetRoutingConfigurationIdNil
+
+`func (o *RequestBodyForCreate) SetRoutingConfigurationIdNil(b bool)`
+
+ SetRoutingConfigurationIdNil sets the value for RoutingConfigurationId to be an explicit nil
+
+### UnsetRoutingConfigurationId
+`func (o *RequestBodyForCreate) UnsetRoutingConfigurationId()`
+
+UnsetRoutingConfigurationId ensures that no value is present for RoutingConfigurationId, not even an explicit nil
 ### GetDescription
 
 `func (o *RequestBodyForCreate) GetDescription() string`

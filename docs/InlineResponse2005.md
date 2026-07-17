@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**[]DdosProtectionEvent**](DdosProtectionEvent.md) |  | [optional] 
-**Meta** | Pointer to [**PaginationCursorMeta**](PaginationCursorMeta.md) |  | [optional] 
+**Data** | Pointer to [**[]Website**](Website.md) |  | [optional] 
+**Meta** | Pointer to [**PaginationMeta**](PaginationMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *InlineResponse2005) GetData() []DdosProtectionEvent`
+`func (o *InlineResponse2005) GetData() []Website`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *InlineResponse2005) GetDataOk() (*[]DdosProtectionEvent, bool)`
+`func (o *InlineResponse2005) GetDataOk() (*[]Website, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *InlineResponse2005) SetData(v []DdosProtectionEvent)`
+`func (o *InlineResponse2005) SetData(v []Website)`
 
 SetData sets Data field to given value.
 
@@ -53,20 +53,20 @@ HasData returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *InlineResponse2005) GetMeta() PaginationCursorMeta`
+`func (o *InlineResponse2005) GetMeta() PaginationMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *InlineResponse2005) GetMetaOk() (*PaginationCursorMeta, bool)`
+`func (o *InlineResponse2005) GetMetaOk() (*PaginationMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *InlineResponse2005) SetMeta(v PaginationCursorMeta)`
+`func (o *InlineResponse2005) SetMeta(v PaginationMeta)`
 
 SetMeta sets Meta field to given value.
 

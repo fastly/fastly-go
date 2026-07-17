@@ -59,7 +59,7 @@ func NewLoggingSumologicResponse() *LoggingSumologicResponse {
 	this.LogProcessingRegion = &logProcessingRegion
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
-	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_CLASSIC
+	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_BLANK
 	this.MessageType = &messageType
 	return &this
 }
@@ -75,7 +75,7 @@ func NewLoggingSumologicResponseWithDefaults() *LoggingSumologicResponse {
 	this.LogProcessingRegion = &logProcessingRegion
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
-	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_CLASSIC
+	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_BLANK
 	this.MessageType = &messageType
 	return &this
 }

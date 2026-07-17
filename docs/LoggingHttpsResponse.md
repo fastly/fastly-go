@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Url** | Pointer to **string** | The URL to send logs to. Must use HTTPS. Required. | [optional] 
 **ContentType** | Pointer to **NullableString** | Content type of the header sent with the request. | [optional] [default to "null"]
 **HeaderName** | Pointer to **NullableString** | Name of the custom header sent with the request. | [optional] [default to "null"]
-**MessageType** | Pointer to [**LoggingMessageType**](LoggingMessageType.md) |  | [optional] [default to LOGGINGMESSAGETYPE_CLASSIC]
+**MessageType** | Pointer to [**LoggingMessageType**](LoggingMessageType.md) |  | [optional] [default to LOGGINGMESSAGETYPE_BLANK]
 **HeaderValue** | Pointer to **NullableString** | Value of the custom header sent with the request. | [optional] [default to "null"]
 **Method** | Pointer to **string** | HTTP method used for request. | [optional] [default to "POST"]
 **JsonFormat** | Pointer to **string** | Enforces valid JSON formatting for log entries. | [optional] 

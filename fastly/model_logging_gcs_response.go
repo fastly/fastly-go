@@ -79,7 +79,7 @@ func NewLoggingGcsResponse() *LoggingGcsResponse {
 	this.LogProcessingRegion = &logProcessingRegion
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
-	var messageType string = "classic"
+	var messageType string = "blank"
 	this.MessageType = &messageType
 	var period string = "3600"
 	this.Period = &period
@@ -103,7 +103,7 @@ func NewLoggingGcsResponseWithDefaults() *LoggingGcsResponse {
 	this.LogProcessingRegion = &logProcessingRegion
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
-	var messageType string = "classic"
+	var messageType string = "blank"
 	this.MessageType = &messageType
 	var period string = "3600"
 	this.Period = &period

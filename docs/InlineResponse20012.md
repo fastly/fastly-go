@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**[]SecretStoreResponse**](SecretStoreResponse.md) |  | [optional] 
+**Data** | Pointer to [**[]DdosProtectionEvent**](DdosProtectionEvent.md) |  | [optional] 
 **Meta** | Pointer to [**PaginationCursorMeta**](PaginationCursorMeta.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *InlineResponse20012) GetData() []SecretStoreResponse`
+`func (o *InlineResponse20012) GetData() []DdosProtectionEvent`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *InlineResponse20012) GetDataOk() (*[]SecretStoreResponse, bool)`
+`func (o *InlineResponse20012) GetDataOk() (*[]DdosProtectionEvent, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *InlineResponse20012) SetData(v []SecretStoreResponse)`
+`func (o *InlineResponse20012) SetData(v []DdosProtectionEvent)`
 
 SetData sets Data field to given value.
 

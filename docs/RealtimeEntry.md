@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Recorded** | Pointer to [**RealtimeEntryRecorded**](RealtimeEntryRecorded.md) |  | [optional] 
 **Aggregated** | Pointer to [**RealtimeEntryAggregated**](RealtimeEntryAggregated.md) |  | [optional] 
-**Datacenter** | Pointer to [**map[string]RealtimeMeasurements**](RealtimeMeasurements.md) | Groups [measurements](#measurements-data-model) by POP. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details of POP identifiers. | [optional] 
+**Datacenter** | Pointer to [**RealtimeEntryDatacenter**](RealtimeEntryDatacenter.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasAggregated returns a boolean if a field has been set.
 
 ### GetDatacenter
 
-`func (o *RealtimeEntry) GetDatacenter() map[string]RealtimeMeasurements`
+`func (o *RealtimeEntry) GetDatacenter() RealtimeEntryDatacenter`
 
 GetDatacenter returns the Datacenter field if non-nil, zero value otherwise.
 
 ### GetDatacenterOk
 
-`func (o *RealtimeEntry) GetDatacenterOk() (*map[string]RealtimeMeasurements, bool)`
+`func (o *RealtimeEntry) GetDatacenterOk() (*RealtimeEntryDatacenter, bool)`
 
 GetDatacenterOk returns a tuple with the Datacenter field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDatacenter
 
-`func (o *RealtimeEntry) SetDatacenter(v map[string]RealtimeMeasurements)`
+`func (o *RealtimeEntry) SetDatacenter(v RealtimeEntryDatacenter)`
 
 SetDatacenter sets Datacenter field to given value.
 

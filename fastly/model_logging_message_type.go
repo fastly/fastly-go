@@ -22,18 +22,18 @@ type LoggingMessageType string
 
 // List of logging_message_type
 const (
+	LOGGINGMESSAGETYPE_BLANK   LoggingMessageType = "blank"
 	LOGGINGMESSAGETYPE_CLASSIC LoggingMessageType = "classic"
 	LOGGINGMESSAGETYPE_LOGGLY  LoggingMessageType = "loggly"
 	LOGGINGMESSAGETYPE_LOGPLEX LoggingMessageType = "logplex"
-	LOGGINGMESSAGETYPE_BLANK   LoggingMessageType = "blank"
 )
 
 // AllowedLoggingMessageTypeEnumValues All allowed values of LoggingMessageType enum
 var AllowedLoggingMessageTypeEnumValues = []LoggingMessageType{
+	"blank",
 	"classic",
 	"loggly",
 	"logplex",
-	"blank",
 }
 
 // UnmarshalJSON implements the Unmarshaler interface.

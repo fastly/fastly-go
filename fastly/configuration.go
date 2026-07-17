@@ -104,7 +104,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "fastly-go/1.0.0-beta.48",
+		UserAgent:     "fastly-go/1.0.0-beta.49",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
@@ -478,6 +478,126 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"CacheSettingsAPIService.UpdateCacheSettings": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspCreatePage": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspCreatePolicy": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspCreateWebsite": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspDeletePage": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspDeleteWebsite": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspGetPage": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspGetPolicy": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspGetScript": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspGetWebsite": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspListHeaderEvents": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspListHeaders": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspListPages": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspListPolicies": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspListPolicyReports": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspListScripts": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspListWebsites": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspUpdatePage": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspUpdatePolicy": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspUpdateScript": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ClientSideProtectionAPIService.CspUpdateWebsite": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -862,6 +982,138 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"DmDomainsAPIService.UpdateDmDomain": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.ActivateDmRoutingConfigDraft": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.CreateDmRoutingConfig": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.CreateDmRoutingConfigPath": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.CreateDmRoutingConfigRule": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.DeactivateDmRoutingConfig": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.DeleteDmRoutingConfig": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.DeleteDmRoutingConfigInactiveVersions": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.DeleteDmRoutingConfigPath": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.DeleteDmRoutingConfigRule": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.DiscardDmRoutingConfigDraft": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.GetDmRoutingConfig": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.GetDmRoutingConfigDraftDiff": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.GetDmRoutingConfigPath": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.GetDmRoutingConfigRule": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.ListDmRoutingConfigPaths": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.ListDmRoutingConfigRules": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.ListDmRoutingConfigVersions": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.ListDmRoutingConfigs": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.ReactivateDmRoutingConfigVersion": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.UpdateDmRoutingConfigDraft": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.UpdateDmRoutingConfigPath": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"DmRoutingConfigsAPIService.UpdateDmRoutingConfigRule": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2241,6 +2493,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"NgwafAgentKeysAPIService.NgwafListAgentKeys": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"NgwafReportsAPIService.GetAttacksReport": {
 				{
 					URL:         "https://api.fastly.com",
@@ -2248,6 +2506,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"NgwafReportsAPIService.GetSignalsReport": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NgwafSimulateAPIService.NgwafSimulateWafRequest": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2445,7 +2709,19 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"ProductBotManagementAPIService.GetProductBotManagementConfiguration": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"ProductBotManagementAPIService.GetServicesProductBotManagement": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductBotManagementAPIService.SetProductBotManagementConfiguration": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2596,6 +2872,24 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"ProductImageOptimizerAPIService.GetServicesProductImageOptimizer": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductKvStoreAPIService.DisableProductKvStore": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductKvStoreAPIService.EnableKvStore": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductKvStoreAPIService.GetKvStore": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",

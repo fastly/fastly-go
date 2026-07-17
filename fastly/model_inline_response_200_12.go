@@ -18,7 +18,7 @@ import (
 
 // InlineResponse20012 struct for InlineResponse20012
 type InlineResponse20012 struct {
-	Data                 []SecretStoreResponse `json:"data,omitempty"`
+	Data                 []DdosProtectionEvent `json:"data,omitempty"`
 	Meta                 *PaginationCursorMeta `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -43,9 +43,9 @@ func NewInlineResponse20012WithDefaults() *InlineResponse20012 {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse20012) GetData() []SecretStoreResponse {
+func (o *InlineResponse20012) GetData() []DdosProtectionEvent {
 	if o == nil || o.Data == nil {
-		var ret []SecretStoreResponse
+		var ret []DdosProtectionEvent
 		return ret
 	}
 	return o.Data
@@ -53,7 +53,7 @@ func (o *InlineResponse20012) GetData() []SecretStoreResponse {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse20012) GetDataOk() ([]SecretStoreResponse, bool) {
+func (o *InlineResponse20012) GetDataOk() ([]DdosProtectionEvent, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -69,8 +69,8 @@ func (o *InlineResponse20012) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []SecretStoreResponse and assigns it to the Data field.
-func (o *InlineResponse20012) SetData(v []SecretStoreResponse) {
+// SetData gets a reference to the given []DdosProtectionEvent and assigns it to the Data field.
+func (o *InlineResponse20012) SetData(v []DdosProtectionEvent) {
 	o.Data = v
 }
 

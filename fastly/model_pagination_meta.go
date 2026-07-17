@@ -16,16 +16,16 @@ import (
 	"encoding/json"
 )
 
-// PaginationMeta struct for PaginationMeta
+// PaginationMeta Cursor-based pagination metadata.
 type PaginationMeta struct {
-	// Current page.
-	CurrentPage *int32 `json:"current_page,omitempty"`
-	// Number of records per page.
-	PerPage *int32 `json:"per_page,omitempty"`
-	// Total records in result set.
-	RecordCount *int32 `json:"record_count,omitempty"`
-	// Total pages in result set.
-	TotalPages           *int32 `json:"total_pages,omitempty"`
+	// The number of records returned per page.
+	Limit *int32 `json:"limit,omitempty"`
+	// Cursor value used to retrieve the next page of results. Empty if there are no more results.
+	NextCursor *string `json:"next_cursor,omitempty"`
+	// Cursor value used to retrieve the previous page of results. Empty if there is no previous page.
+	PreviousCursor *string `json:"previous_cursor,omitempty"`
+	// The sort order applied to the results.
+	Sort                 *string `json:"sort,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -37,8 +37,6 @@ type _PaginationMeta PaginationMeta
 // will change when the set of required properties is changed
 func NewPaginationMeta() *PaginationMeta {
 	this := PaginationMeta{}
-	var perPage int32 = 20
-	this.PerPage = &perPage
 	return &this
 }
 
@@ -47,154 +45,152 @@ func NewPaginationMeta() *PaginationMeta {
 // but it doesn't guarantee that properties required by API are set
 func NewPaginationMetaWithDefaults() *PaginationMeta {
 	this := PaginationMeta{}
-	var perPage int32 = 20
-	this.PerPage = &perPage
 	return &this
 }
 
-// GetCurrentPage returns the CurrentPage field value if set, zero value otherwise.
-func (o *PaginationMeta) GetCurrentPage() int32 {
-	if o == nil || o.CurrentPage == nil {
+// GetLimit returns the Limit field value if set, zero value otherwise.
+func (o *PaginationMeta) GetLimit() int32 {
+	if o == nil || o.Limit == nil {
 		var ret int32
 		return ret
 	}
-	return *o.CurrentPage
+	return *o.Limit
 }
 
-// GetCurrentPageOk returns a tuple with the CurrentPage field value if set, nil otherwise
+// GetLimitOk returns a tuple with the Limit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaginationMeta) GetCurrentPageOk() (*int32, bool) {
-	if o == nil || o.CurrentPage == nil {
+func (o *PaginationMeta) GetLimitOk() (*int32, bool) {
+	if o == nil || o.Limit == nil {
 		return nil, false
 	}
-	return o.CurrentPage, true
+	return o.Limit, true
 }
 
-// HasCurrentPage returns a boolean if a field has been set.
-func (o *PaginationMeta) HasCurrentPage() bool {
-	if o != nil && o.CurrentPage != nil {
+// HasLimit returns a boolean if a field has been set.
+func (o *PaginationMeta) HasLimit() bool {
+	if o != nil && o.Limit != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrentPage gets a reference to the given int32 and assigns it to the CurrentPage field.
-func (o *PaginationMeta) SetCurrentPage(v int32) {
-	o.CurrentPage = &v
+// SetLimit gets a reference to the given int32 and assigns it to the Limit field.
+func (o *PaginationMeta) SetLimit(v int32) {
+	o.Limit = &v
 }
 
-// GetPerPage returns the PerPage field value if set, zero value otherwise.
-func (o *PaginationMeta) GetPerPage() int32 {
-	if o == nil || o.PerPage == nil {
-		var ret int32
+// GetNextCursor returns the NextCursor field value if set, zero value otherwise.
+func (o *PaginationMeta) GetNextCursor() string {
+	if o == nil || o.NextCursor == nil {
+		var ret string
 		return ret
 	}
-	return *o.PerPage
+	return *o.NextCursor
 }
 
-// GetPerPageOk returns a tuple with the PerPage field value if set, nil otherwise
+// GetNextCursorOk returns a tuple with the NextCursor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaginationMeta) GetPerPageOk() (*int32, bool) {
-	if o == nil || o.PerPage == nil {
+func (o *PaginationMeta) GetNextCursorOk() (*string, bool) {
+	if o == nil || o.NextCursor == nil {
 		return nil, false
 	}
-	return o.PerPage, true
+	return o.NextCursor, true
 }
 
-// HasPerPage returns a boolean if a field has been set.
-func (o *PaginationMeta) HasPerPage() bool {
-	if o != nil && o.PerPage != nil {
+// HasNextCursor returns a boolean if a field has been set.
+func (o *PaginationMeta) HasNextCursor() bool {
+	if o != nil && o.NextCursor != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetPerPage gets a reference to the given int32 and assigns it to the PerPage field.
-func (o *PaginationMeta) SetPerPage(v int32) {
-	o.PerPage = &v
+// SetNextCursor gets a reference to the given string and assigns it to the NextCursor field.
+func (o *PaginationMeta) SetNextCursor(v string) {
+	o.NextCursor = &v
 }
 
-// GetRecordCount returns the RecordCount field value if set, zero value otherwise.
-func (o *PaginationMeta) GetRecordCount() int32 {
-	if o == nil || o.RecordCount == nil {
-		var ret int32
+// GetPreviousCursor returns the PreviousCursor field value if set, zero value otherwise.
+func (o *PaginationMeta) GetPreviousCursor() string {
+	if o == nil || o.PreviousCursor == nil {
+		var ret string
 		return ret
 	}
-	return *o.RecordCount
+	return *o.PreviousCursor
 }
 
-// GetRecordCountOk returns a tuple with the RecordCount field value if set, nil otherwise
+// GetPreviousCursorOk returns a tuple with the PreviousCursor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaginationMeta) GetRecordCountOk() (*int32, bool) {
-	if o == nil || o.RecordCount == nil {
+func (o *PaginationMeta) GetPreviousCursorOk() (*string, bool) {
+	if o == nil || o.PreviousCursor == nil {
 		return nil, false
 	}
-	return o.RecordCount, true
+	return o.PreviousCursor, true
 }
 
-// HasRecordCount returns a boolean if a field has been set.
-func (o *PaginationMeta) HasRecordCount() bool {
-	if o != nil && o.RecordCount != nil {
+// HasPreviousCursor returns a boolean if a field has been set.
+func (o *PaginationMeta) HasPreviousCursor() bool {
+	if o != nil && o.PreviousCursor != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRecordCount gets a reference to the given int32 and assigns it to the RecordCount field.
-func (o *PaginationMeta) SetRecordCount(v int32) {
-	o.RecordCount = &v
+// SetPreviousCursor gets a reference to the given string and assigns it to the PreviousCursor field.
+func (o *PaginationMeta) SetPreviousCursor(v string) {
+	o.PreviousCursor = &v
 }
 
-// GetTotalPages returns the TotalPages field value if set, zero value otherwise.
-func (o *PaginationMeta) GetTotalPages() int32 {
-	if o == nil || o.TotalPages == nil {
-		var ret int32
+// GetSort returns the Sort field value if set, zero value otherwise.
+func (o *PaginationMeta) GetSort() string {
+	if o == nil || o.Sort == nil {
+		var ret string
 		return ret
 	}
-	return *o.TotalPages
+	return *o.Sort
 }
 
-// GetTotalPagesOk returns a tuple with the TotalPages field value if set, nil otherwise
+// GetSortOk returns a tuple with the Sort field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaginationMeta) GetTotalPagesOk() (*int32, bool) {
-	if o == nil || o.TotalPages == nil {
+func (o *PaginationMeta) GetSortOk() (*string, bool) {
+	if o == nil || o.Sort == nil {
 		return nil, false
 	}
-	return o.TotalPages, true
+	return o.Sort, true
 }
 
-// HasTotalPages returns a boolean if a field has been set.
-func (o *PaginationMeta) HasTotalPages() bool {
-	if o != nil && o.TotalPages != nil {
+// HasSort returns a boolean if a field has been set.
+func (o *PaginationMeta) HasSort() bool {
+	if o != nil && o.Sort != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetTotalPages gets a reference to the given int32 and assigns it to the TotalPages field.
-func (o *PaginationMeta) SetTotalPages(v int32) {
-	o.TotalPages = &v
+// SetSort gets a reference to the given string and assigns it to the Sort field.
+func (o *PaginationMeta) SetSort(v string) {
+	o.Sort = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o PaginationMeta) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if o.CurrentPage != nil {
-		toSerialize["current_page"] = o.CurrentPage
+	if o.Limit != nil {
+		toSerialize["limit"] = o.Limit
 	}
-	if o.PerPage != nil {
-		toSerialize["per_page"] = o.PerPage
+	if o.NextCursor != nil {
+		toSerialize["next_cursor"] = o.NextCursor
 	}
-	if o.RecordCount != nil {
-		toSerialize["record_count"] = o.RecordCount
+	if o.PreviousCursor != nil {
+		toSerialize["previous_cursor"] = o.PreviousCursor
 	}
-	if o.TotalPages != nil {
-		toSerialize["total_pages"] = o.TotalPages
+	if o.Sort != nil {
+		toSerialize["sort"] = o.Sort
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -216,10 +212,10 @@ func (o *PaginationMeta) UnmarshalJSON(bytes []byte) (err error) {
 	additionalProperties := make(map[string]any)
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
-		delete(additionalProperties, "current_page")
-		delete(additionalProperties, "per_page")
-		delete(additionalProperties, "record_count")
-		delete(additionalProperties, "total_pages")
+		delete(additionalProperties, "limit")
+		delete(additionalProperties, "next_cursor")
+		delete(additionalProperties, "previous_cursor")
+		delete(additionalProperties, "sort")
 		o.AdditionalProperties = additionalProperties
 	}
 

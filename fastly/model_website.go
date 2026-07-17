@@ -1,0 +1,306 @@
+// Package fastly is an API client library for interacting with most facets of the Fastly API.
+package fastly
+
+/*
+Fastly API
+
+Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/)
+
+API version: 1.0.0
+Contact: oss@fastly.com
+*/
+
+// This code is auto-generated; DO NOT EDIT.
+
+import (
+	"encoding/json"
+	"time"
+)
+
+// Website struct for Website
+type Website struct {
+	// Unique website identifier
+	Id *string `json:"id,omitempty"`
+	// Website domain
+	Domain *string `json:"domain,omitempty"`
+	// IDs of pages associated with this website
+	PageIds              []string   `json:"page_ids,omitempty"`
+	CreatedAt            *time.Time `json:"created_at,omitempty"`
+	UpdatedAt            *time.Time `json:"updated_at,omitempty"`
+	AdditionalProperties map[string]any
+}
+
+type _Website Website
+
+// NewWebsite instantiates a new Website object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewWebsite() *Website {
+	this := Website{}
+	return &this
+}
+
+// NewWebsiteWithDefaults instantiates a new Website object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewWebsiteWithDefaults() *Website {
+	this := Website{}
+	return &this
+}
+
+// GetId returns the Id field value if set, zero value otherwise.
+func (o *Website) GetId() string {
+	if o == nil || o.Id == nil {
+		var ret string
+		return ret
+	}
+	return *o.Id
+}
+
+// GetIdOk returns a tuple with the Id field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Website) GetIdOk() (*string, bool) {
+	if o == nil || o.Id == nil {
+		return nil, false
+	}
+	return o.Id, true
+}
+
+// HasId returns a boolean if a field has been set.
+func (o *Website) HasId() bool {
+	if o != nil && o.Id != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetId gets a reference to the given string and assigns it to the Id field.
+func (o *Website) SetId(v string) {
+	o.Id = &v
+}
+
+// GetDomain returns the Domain field value if set, zero value otherwise.
+func (o *Website) GetDomain() string {
+	if o == nil || o.Domain == nil {
+		var ret string
+		return ret
+	}
+	return *o.Domain
+}
+
+// GetDomainOk returns a tuple with the Domain field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Website) GetDomainOk() (*string, bool) {
+	if o == nil || o.Domain == nil {
+		return nil, false
+	}
+	return o.Domain, true
+}
+
+// HasDomain returns a boolean if a field has been set.
+func (o *Website) HasDomain() bool {
+	if o != nil && o.Domain != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDomain gets a reference to the given string and assigns it to the Domain field.
+func (o *Website) SetDomain(v string) {
+	o.Domain = &v
+}
+
+// GetPageIds returns the PageIds field value if set, zero value otherwise.
+func (o *Website) GetPageIds() []string {
+	if o == nil || o.PageIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.PageIds
+}
+
+// GetPageIdsOk returns a tuple with the PageIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Website) GetPageIdsOk() ([]string, bool) {
+	if o == nil || o.PageIds == nil {
+		return nil, false
+	}
+	return o.PageIds, true
+}
+
+// HasPageIds returns a boolean if a field has been set.
+func (o *Website) HasPageIds() bool {
+	if o != nil && o.PageIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPageIds gets a reference to the given []string and assigns it to the PageIds field.
+func (o *Website) SetPageIds(v []string) {
+	o.PageIds = v
+}
+
+// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
+func (o *Website) GetCreatedAt() time.Time {
+	if o == nil || o.CreatedAt == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.CreatedAt
+}
+
+// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Website) GetCreatedAtOk() (*time.Time, bool) {
+	if o == nil || o.CreatedAt == nil {
+		return nil, false
+	}
+	return o.CreatedAt, true
+}
+
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *Website) HasCreatedAt() bool {
+	if o != nil && o.CreatedAt != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedAt gets a reference to the given time.Time and assigns it to the CreatedAt field.
+func (o *Website) SetCreatedAt(v time.Time) {
+	o.CreatedAt = &v
+}
+
+// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
+func (o *Website) GetUpdatedAt() time.Time {
+	if o == nil || o.UpdatedAt == nil {
+		var ret time.Time
+		return ret
+	}
+	return *o.UpdatedAt
+}
+
+// GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Website) GetUpdatedAtOk() (*time.Time, bool) {
+	if o == nil || o.UpdatedAt == nil {
+		return nil, false
+	}
+	return o.UpdatedAt, true
+}
+
+// HasUpdatedAt returns a boolean if a field has been set.
+func (o *Website) HasUpdatedAt() bool {
+	if o != nil && o.UpdatedAt != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUpdatedAt gets a reference to the given time.Time and assigns it to the UpdatedAt field.
+func (o *Website) SetUpdatedAt(v time.Time) {
+	o.UpdatedAt = &v
+}
+
+// MarshalJSON implements the json.Marshaler interface.
+// Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
+func (o Website) MarshalJSON() ([]byte, error) {
+	toSerialize := map[string]any{}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
+	}
+	if o.Domain != nil {
+		toSerialize["domain"] = o.Domain
+	}
+	if o.PageIds != nil {
+		toSerialize["page_ids"] = o.PageIds
+	}
+	if o.CreatedAt != nil {
+		toSerialize["created_at"] = o.CreatedAt
+	}
+	if o.UpdatedAt != nil {
+		toSerialize["updated_at"] = o.UpdatedAt
+	}
+
+	for key, value := range o.AdditionalProperties {
+		toSerialize[key] = value
+	}
+
+	return json.Marshal(toSerialize)
+}
+
+// UnmarshalJSON implements the Unmarshaler interface.
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
+func (o *Website) UnmarshalJSON(bytes []byte) (err error) {
+	varWebsite := _Website{}
+
+	if err = json.Unmarshal(bytes, &varWebsite); err == nil {
+		*o = Website(varWebsite)
+	}
+
+	additionalProperties := make(map[string]any)
+
+	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
+		delete(additionalProperties, "id")
+		delete(additionalProperties, "domain")
+		delete(additionalProperties, "page_ids")
+		delete(additionalProperties, "created_at")
+		delete(additionalProperties, "updated_at")
+		o.AdditionalProperties = additionalProperties
+	}
+
+	return err
+}
+
+// NullableWebsite is a helper abstraction for handling nullable website types.
+type NullableWebsite struct {
+	value *Website
+	isSet bool
+}
+
+// Get returns the value.
+func (v NullableWebsite) Get() *Website {
+	return v.value
+}
+
+// Set modifies the value.
+func (v *NullableWebsite) Set(val *Website) {
+	v.value = val
+	v.isSet = true
+}
+
+// IsSet indicates if the value was set.
+func (v NullableWebsite) IsSet() bool {
+	return v.isSet
+}
+
+// Unset removes the value.
+func (v *NullableWebsite) Unset() {
+	v.value = nil
+	v.isSet = false
+}
+
+// NewNullableWebsite returns a pointer to a new instance of NullableWebsite.
+func NewNullableWebsite(val *Website) *NullableWebsite {
+	return &NullableWebsite{value: val, isSet: true}
+}
+
+// MarshalJSON implements the json.Marshaler interface.
+// Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
+func (v NullableWebsite) MarshalJSON() ([]byte, error) {
+	return json.Marshal(v.value)
+}
+
+// UnmarshalJSON implements the Unmarshaler interface.
+// Unmarshaler is the interface implemented by types that can unmarshal a JSON description of themselves.
+func (v *NullableWebsite) UnmarshalJSON(src []byte) error {
+	v.isSet = true
+	return json.Unmarshal(src, &v.value)
+}

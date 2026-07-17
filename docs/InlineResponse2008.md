@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExpiresAt** | Pointer to **string** | Time-stamp (GMT) when the domain_ownership validation will expire. | [optional] [readonly] 
+**Data** | Pointer to [**[]Policy**](Policy.md) |  | [optional] 
+**Meta** | Pointer to [**PaginationMeta**](PaginationMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -25,30 +26,55 @@ NewInlineResponse2008WithDefaults instantiates a new InlineResponse2008 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetExpiresAt
+### GetData
 
-`func (o *InlineResponse2008) GetExpiresAt() string`
+`func (o *InlineResponse2008) GetData() []Policy`
 
-GetExpiresAt returns the ExpiresAt field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetExpiresAtOk
+### GetDataOk
 
-`func (o *InlineResponse2008) GetExpiresAtOk() (*string, bool)`
+`func (o *InlineResponse2008) GetDataOk() (*[]Policy, bool)`
 
-GetExpiresAtOk returns a tuple with the ExpiresAt field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExpiresAt
+### SetData
 
-`func (o *InlineResponse2008) SetExpiresAt(v string)`
+`func (o *InlineResponse2008) SetData(v []Policy)`
 
-SetExpiresAt sets ExpiresAt field to given value.
+SetData sets Data field to given value.
 
-### HasExpiresAt
+### HasData
 
-`func (o *InlineResponse2008) HasExpiresAt() bool`
+`func (o *InlineResponse2008) HasData() bool`
 
-HasExpiresAt returns a boolean if a field has been set.
+HasData returns a boolean if a field has been set.
+
+### GetMeta
+
+`func (o *InlineResponse2008) GetMeta() PaginationMeta`
+
+GetMeta returns the Meta field if non-nil, zero value otherwise.
+
+### GetMetaOk
+
+`func (o *InlineResponse2008) GetMetaOk() (*PaginationMeta, bool)`
+
+GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeta
+
+`func (o *InlineResponse2008) SetMeta(v PaginationMeta)`
+
+SetMeta sets Meta field to given value.
+
+### HasMeta
+
+`func (o *InlineResponse2008) HasMeta() bool`
+
+HasMeta returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

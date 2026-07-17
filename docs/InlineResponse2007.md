@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**[]SuccessfulResponseAsObject**](SuccessfulResponseAsObject.md) |  | [optional] 
-**Meta** | Pointer to **interface{}** | Meta for the pagination. | [optional] 
+**Data** | Pointer to [**[]Script**](Script.md) |  | [optional] 
+**Meta** | Pointer to [**PaginationMeta**](PaginationMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *InlineResponse2007) GetData() []SuccessfulResponseAsObject`
+`func (o *InlineResponse2007) GetData() []Script`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *InlineResponse2007) GetDataOk() (*[]SuccessfulResponseAsObject, bool)`
+`func (o *InlineResponse2007) GetDataOk() (*[]Script, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *InlineResponse2007) SetData(v []SuccessfulResponseAsObject)`
+`func (o *InlineResponse2007) SetData(v []Script)`
 
 SetData sets Data field to given value.
 
@@ -53,20 +53,20 @@ HasData returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *InlineResponse2007) GetMeta() interface{}`
+`func (o *InlineResponse2007) GetMeta() PaginationMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *InlineResponse2007) GetMetaOk() (*interface{}, bool)`
+`func (o *InlineResponse2007) GetMetaOk() (*PaginationMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *InlineResponse2007) SetMeta(v interface{})`
+`func (o *InlineResponse2007) SetMeta(v PaginationMeta)`
 
 SetMeta sets Meta field to given value.
 
@@ -76,16 +76,6 @@ SetMeta sets Meta field to given value.
 
 HasMeta returns a boolean if a field has been set.
 
-### SetMetaNil
-
-`func (o *InlineResponse2007) SetMetaNil(b bool)`
-
- SetMetaNil sets the value for Meta to be an explicit nil
-
-### UnsetMeta
-`func (o *InlineResponse2007) UnsetMeta()`
-
-UnsetMeta ensures that no value is present for Meta, not even an explicit nil
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 

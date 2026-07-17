@@ -35,7 +35,7 @@ type _LoggingGenericCommon LoggingGenericCommon
 // will change when the set of required properties is changed
 func NewLoggingGenericCommon() *LoggingGenericCommon {
 	this := LoggingGenericCommon{}
-	var messageType string = "classic"
+	var messageType string = "blank"
 	this.MessageType = &messageType
 	return &this
 }
@@ -45,7 +45,7 @@ func NewLoggingGenericCommon() *LoggingGenericCommon {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingGenericCommonWithDefaults() *LoggingGenericCommon {
 	this := LoggingGenericCommon{}
-	var messageType string = "classic"
+	var messageType string = "blank"
 	this.MessageType = &messageType
 	return &this
 }

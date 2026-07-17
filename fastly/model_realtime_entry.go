@@ -18,10 +18,9 @@ import (
 
 // RealtimeEntry A list of records, each representing one second of time. The `Data` property provides access to [measurement data](#measurements-data-model) for that time period, grouped in various ways.
 type RealtimeEntry struct {
-	Recorded   *RealtimeEntryRecorded   `json:"recorded,omitempty"`
-	Aggregated *RealtimeEntryAggregated `json:"aggregated,omitempty"`
-	// Groups [measurements](#measurements-data-model) by POP. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details of POP identifiers.
-	Datacenter           *map[string]RealtimeMeasurements `json:"datacenter,omitempty"`
+	Recorded             *RealtimeEntryRecorded   `json:"recorded,omitempty"`
+	Aggregated           *RealtimeEntryAggregated `json:"aggregated,omitempty"`
+	Datacenter           *RealtimeEntryDatacenter `json:"datacenter,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -109,9 +108,9 @@ func (o *RealtimeEntry) SetAggregated(v RealtimeEntryAggregated) {
 }
 
 // GetDatacenter returns the Datacenter field value if set, zero value otherwise.
-func (o *RealtimeEntry) GetDatacenter() map[string]RealtimeMeasurements {
+func (o *RealtimeEntry) GetDatacenter() RealtimeEntryDatacenter {
 	if o == nil || o.Datacenter == nil {
-		var ret map[string]RealtimeMeasurements
+		var ret RealtimeEntryDatacenter
 		return ret
 	}
 	return *o.Datacenter
@@ -119,7 +118,7 @@ func (o *RealtimeEntry) GetDatacenter() map[string]RealtimeMeasurements {
 
 // GetDatacenterOk returns a tuple with the Datacenter field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RealtimeEntry) GetDatacenterOk() (*map[string]RealtimeMeasurements, bool) {
+func (o *RealtimeEntry) GetDatacenterOk() (*RealtimeEntryDatacenter, bool) {
 	if o == nil || o.Datacenter == nil {
 		return nil, false
 	}
@@ -135,8 +134,8 @@ func (o *RealtimeEntry) HasDatacenter() bool {
 	return false
 }
 
-// SetDatacenter gets a reference to the given map[string]RealtimeMeasurements and assigns it to the Datacenter field.
-func (o *RealtimeEntry) SetDatacenter(v map[string]RealtimeMeasurements) {
+// SetDatacenter gets a reference to the given RealtimeEntryDatacenter and assigns it to the Datacenter field.
+func (o *RealtimeEntry) SetDatacenter(v RealtimeEntryDatacenter) {
 	o.Datacenter = &v
 }
 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **TlsHostname** | Pointer to **NullableString** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to "null"]
 **Address** | Pointer to **string** | A hostname or IPv4 address. | [optional] 
 **Port** | Pointer to **int32** | The port number. | [optional] [default to 514]
-**MessageType** | Pointer to [**LoggingMessageType**](LoggingMessageType.md) |  | [optional] [default to LOGGINGMESSAGETYPE_CLASSIC]
+**MessageType** | Pointer to [**LoggingMessageType**](LoggingMessageType.md) |  | [optional] [default to LOGGINGMESSAGETYPE_BLANK]
 **Hostname** | Pointer to **string** | The hostname used for the syslog endpoint. | [optional] 
 **Ipv4** | Pointer to **NullableString** | The IPv4 address used for the syslog endpoint. | [optional] 
 **Token** | Pointer to **NullableString** | Whether to prepend each message with a specific token. | [optional] [default to "null"]

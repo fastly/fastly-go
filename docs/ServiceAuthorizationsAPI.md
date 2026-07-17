@@ -172,7 +172,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ServiceAuthorizationsAPI.DeleteServiceAuthorization2`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DeleteServiceAuthorization2`: InlineResponse20014
+    // response from `DeleteServiceAuthorization2`: InlineResponse20022
     fmt.Fprintf(os.Stdout, "Response from `ServiceAuthorizationsAPI.DeleteServiceAuthorization2`: %v\n", resp)
 }
 ```
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse20014**](InlineResponse20014.md)
+[**InlineResponse20022**](InlineResponse20022.md)
 
 ### Authorization
 

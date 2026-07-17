@@ -35,7 +35,7 @@ type _LoggingGenericCommonResponseAllOf LoggingGenericCommonResponseAllOf
 // will change when the set of required properties is changed
 func NewLoggingGenericCommonResponseAllOf() *LoggingGenericCommonResponseAllOf {
 	this := LoggingGenericCommonResponseAllOf{}
-	var messageType string = "classic"
+	var messageType string = "blank"
 	this.MessageType = &messageType
 	return &this
 }
@@ -45,7 +45,7 @@ func NewLoggingGenericCommonResponseAllOf() *LoggingGenericCommonResponseAllOf {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingGenericCommonResponseAllOfWithDefaults() *LoggingGenericCommonResponseAllOf {
 	this := LoggingGenericCommonResponseAllOf{}
-	var messageType string = "classic"
+	var messageType string = "blank"
 	this.MessageType = &messageType
 	return &this
 }

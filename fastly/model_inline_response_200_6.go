@@ -18,8 +18,8 @@ import (
 
 // InlineResponse2006 struct for InlineResponse2006
 type InlineResponse2006 struct {
-	Data                 []DdosProtectionRuleWithStats `json:"data"`
-	Meta                 PaginationCursorMeta          `json:"meta"`
+	Data                 []Page          `json:"data,omitempty"`
+	Meta                 *PaginationMeta `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -29,10 +29,8 @@ type _InlineResponse2006 InlineResponse2006
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInlineResponse2006(data []DdosProtectionRuleWithStats, meta PaginationCursorMeta) *InlineResponse2006 {
+func NewInlineResponse2006() *InlineResponse2006 {
 	this := InlineResponse2006{}
-	this.Data = data
-	this.Meta = meta
 	return &this
 }
 
@@ -44,62 +42,78 @@ func NewInlineResponse2006WithDefaults() *InlineResponse2006 {
 	return &this
 }
 
-// GetData returns the Data field value
-func (o *InlineResponse2006) GetData() []DdosProtectionRuleWithStats {
-	if o == nil {
-		var ret []DdosProtectionRuleWithStats
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *InlineResponse2006) GetData() []Page {
+	if o == nil || o.Data == nil {
+		var ret []Page
 		return ret
 	}
-
 	return o.Data
 }
 
-// GetDataOk returns a tuple with the Data field value
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2006) GetDataOk() ([]DdosProtectionRuleWithStats, bool) {
-	if o == nil {
+func (o *InlineResponse2006) GetDataOk() ([]Page, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
 }
 
-// SetData sets field value
-func (o *InlineResponse2006) SetData(v []DdosProtectionRuleWithStats) {
+// HasData returns a boolean if a field has been set.
+func (o *InlineResponse2006) HasData() bool {
+	if o != nil && o.Data != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given []Page and assigns it to the Data field.
+func (o *InlineResponse2006) SetData(v []Page) {
 	o.Data = v
 }
 
-// GetMeta returns the Meta field value
-func (o *InlineResponse2006) GetMeta() PaginationCursorMeta {
-	if o == nil {
-		var ret PaginationCursorMeta
+// GetMeta returns the Meta field value if set, zero value otherwise.
+func (o *InlineResponse2006) GetMeta() PaginationMeta {
+	if o == nil || o.Meta == nil {
+		var ret PaginationMeta
 		return ret
 	}
-
-	return o.Meta
+	return *o.Meta
 }
 
-// GetMetaOk returns a tuple with the Meta field value
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse2006) GetMetaOk() (*PaginationCursorMeta, bool) {
-	if o == nil {
+func (o *InlineResponse2006) GetMetaOk() (*PaginationMeta, bool) {
+	if o == nil || o.Meta == nil {
 		return nil, false
 	}
-	return &o.Meta, true
+	return o.Meta, true
 }
 
-// SetMeta sets field value
-func (o *InlineResponse2006) SetMeta(v PaginationCursorMeta) {
-	o.Meta = v
+// HasMeta returns a boolean if a field has been set.
+func (o *InlineResponse2006) HasMeta() bool {
+	if o != nil && o.Meta != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given PaginationMeta and assigns it to the Meta field.
+func (o *InlineResponse2006) SetMeta(v PaginationMeta) {
+	o.Meta = &v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o InlineResponse2006) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
-	if true {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	if true {
+	if o.Meta != nil {
 		toSerialize["meta"] = o.Meta
 	}
 

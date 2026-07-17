@@ -137,8 +137,10 @@ type APICreateBackendRequest struct {
 	ipv6                 *string
 	keepaliveTime        *int32
 	maxConn              *int32
+	maxLifetime          *int32
 	maxTlsVersion        *string
 	minTlsVersion        *string
+	maxUse               *int32
 	name                 *string
 	overrideHost         *string
 	port                 *int32
@@ -234,7 +236,7 @@ func (r *APICreateBackendRequest) Ipv6(ipv6 string) *APICreateBackendRequest {
 	return r
 }
 
-// KeepaliveTime How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can.
+// KeepaliveTime How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can.
 func (r *APICreateBackendRequest) KeepaliveTime(keepaliveTime int32) *APICreateBackendRequest {
 	r.keepaliveTime = &keepaliveTime
 	return r
@@ -243,6 +245,12 @@ func (r *APICreateBackendRequest) KeepaliveTime(keepaliveTime int32) *APICreateB
 // MaxConn Maximum number of concurrent connections this backend will accept.
 func (r *APICreateBackendRequest) MaxConn(maxConn int32) *APICreateBackendRequest {
 	r.maxConn = &maxConn
+	return r
+}
+
+// MaxLifetime Maximum time from creation (in milliseconds) that a pooled HTTP keepalive connection will be eligible for reuse; 0 is treated as unlimited.
+func (r *APICreateBackendRequest) MaxLifetime(maxLifetime int32) *APICreateBackendRequest {
+	r.maxLifetime = &maxLifetime
 	return r
 }
 
@@ -255,6 +263,12 @@ func (r *APICreateBackendRequest) MaxTlsVersion(maxTlsVersion string) *APICreate
 // MinTlsVersion Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
 func (r *APICreateBackendRequest) MinTlsVersion(minTlsVersion string) *APICreateBackendRequest {
 	r.minTlsVersion = &minTlsVersion
+	return r
+}
+
+// MaxUse Maximum number of requests allowed over a single, pooled HTTP keepalive connection to this backend; 0 is treated as unlimited.
+func (r *APICreateBackendRequest) MaxUse(maxUse int32) *APICreateBackendRequest {
+	r.maxUse = &maxUse
 	return r
 }
 
@@ -490,11 +504,17 @@ func (a *BackendAPIService) CreateBackendExecute(r APICreateBackendRequest) (*Ba
 	if r.maxConn != nil {
 		localVarFormParams.Add("max_conn", parameterToString(*r.maxConn, ""))
 	}
+	if r.maxLifetime != nil {
+		localVarFormParams.Add("max_lifetime", parameterToString(*r.maxLifetime, ""))
+	}
 	if r.maxTlsVersion != nil {
 		localVarFormParams.Add("max_tls_version", parameterToString(*r.maxTlsVersion, ""))
 	}
 	if r.minTlsVersion != nil {
 		localVarFormParams.Add("min_tls_version", parameterToString(*r.minTlsVersion, ""))
+	}
+	if r.maxUse != nil {
+		localVarFormParams.Add("max_use", parameterToString(*r.maxUse, ""))
 	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))
@@ -1060,8 +1080,10 @@ type APIUpdateBackendRequest struct {
 	ipv6                 *string
 	keepaliveTime        *int32
 	maxConn              *int32
+	maxLifetime          *int32
 	maxTlsVersion        *string
 	minTlsVersion        *string
+	maxUse               *int32
 	name                 *string
 	overrideHost         *string
 	port                 *int32
@@ -1157,7 +1179,7 @@ func (r *APIUpdateBackendRequest) Ipv6(ipv6 string) *APIUpdateBackendRequest {
 	return r
 }
 
-// KeepaliveTime How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can.
+// KeepaliveTime How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can.
 func (r *APIUpdateBackendRequest) KeepaliveTime(keepaliveTime int32) *APIUpdateBackendRequest {
 	r.keepaliveTime = &keepaliveTime
 	return r
@@ -1166,6 +1188,12 @@ func (r *APIUpdateBackendRequest) KeepaliveTime(keepaliveTime int32) *APIUpdateB
 // MaxConn Maximum number of concurrent connections this backend will accept.
 func (r *APIUpdateBackendRequest) MaxConn(maxConn int32) *APIUpdateBackendRequest {
 	r.maxConn = &maxConn
+	return r
+}
+
+// MaxLifetime Maximum time from creation (in milliseconds) that a pooled HTTP keepalive connection will be eligible for reuse; 0 is treated as unlimited.
+func (r *APIUpdateBackendRequest) MaxLifetime(maxLifetime int32) *APIUpdateBackendRequest {
+	r.maxLifetime = &maxLifetime
 	return r
 }
 
@@ -1178,6 +1206,12 @@ func (r *APIUpdateBackendRequest) MaxTlsVersion(maxTlsVersion string) *APIUpdate
 // MinTlsVersion Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic &#x60;503&#x60; error response will be generated.
 func (r *APIUpdateBackendRequest) MinTlsVersion(minTlsVersion string) *APIUpdateBackendRequest {
 	r.minTlsVersion = &minTlsVersion
+	return r
+}
+
+// MaxUse Maximum number of requests allowed over a single, pooled HTTP keepalive connection to this backend; 0 is treated as unlimited.
+func (r *APIUpdateBackendRequest) MaxUse(maxUse int32) *APIUpdateBackendRequest {
+	r.maxUse = &maxUse
 	return r
 }
 
@@ -1416,11 +1450,17 @@ func (a *BackendAPIService) UpdateBackendExecute(r APIUpdateBackendRequest) (*Ba
 	if r.maxConn != nil {
 		localVarFormParams.Add("max_conn", parameterToString(*r.maxConn, ""))
 	}
+	if r.maxLifetime != nil {
+		localVarFormParams.Add("max_lifetime", parameterToString(*r.maxLifetime, ""))
+	}
 	if r.maxTlsVersion != nil {
 		localVarFormParams.Add("max_tls_version", parameterToString(*r.maxTlsVersion, ""))
 	}
 	if r.minTlsVersion != nil {
 		localVarFormParams.Add("min_tls_version", parameterToString(*r.minTlsVersion, ""))
+	}
+	if r.maxUse != nil {
+		localVarFormParams.Add("max_use", parameterToString(*r.maxUse, ""))
 	}
 	if r.name != nil {
 		localVarFormParams.Add("name", parameterToString(*r.name, ""))

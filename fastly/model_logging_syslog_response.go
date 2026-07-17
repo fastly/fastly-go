@@ -86,7 +86,7 @@ func NewLoggingSyslogResponse() *LoggingSyslogResponse {
 	this.TlsHostname = *NewNullableString(&tlsHostname)
 	var port int32 = 514
 	this.Port = &port
-	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_CLASSIC
+	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_BLANK
 	this.MessageType = &messageType
 	var token string = "null"
 	this.Token = *NewNullableString(&token)
@@ -116,7 +116,7 @@ func NewLoggingSyslogResponseWithDefaults() *LoggingSyslogResponse {
 	this.TlsHostname = *NewNullableString(&tlsHostname)
 	var port int32 = 514
 	this.Port = &port
-	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_CLASSIC
+	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_BLANK
 	this.MessageType = &messageType
 	var token string = "null"
 	this.Token = *NewNullableString(&token)

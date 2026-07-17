@@ -94,8 +94,8 @@ type SecretStoreItemAPI interface {
 	GetSecrets(ctx context.Context, storeId string) APIGetSecretsRequest
 
 	// GetSecretsExecute executes the request
-	//  @return InlineResponse20013
-	GetSecretsExecute(r APIGetSecretsRequest) (*InlineResponse20013, *http.Response, error)
+	//  @return InlineResponse20021
+	GetSecretsExecute(r APIGetSecretsRequest) (*InlineResponse20021, *http.Response, error)
 
 	/*
 		MustRecreateSecret Recreate a secret in a store.
@@ -571,7 +571,7 @@ func (r *APIGetSecretsRequest) Limit(limit string) *APIGetSecretsRequest {
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetSecretsRequest) Execute() (*InlineResponse20013, *http.Response, error) {
+func (r APIGetSecretsRequest) Execute() (*InlineResponse20021, *http.Response, error) {
 	return r.APIService.GetSecretsExecute(r)
 }
 
@@ -593,13 +593,13 @@ func (a *SecretStoreItemAPIService) GetSecrets(ctx context.Context, storeId stri
 }
 
 // GetSecretsExecute executes the request
-//  @return InlineResponse20013
-func (a *SecretStoreItemAPIService) GetSecretsExecute(r APIGetSecretsRequest) (*InlineResponse20013, *http.Response, error) {
+//  @return InlineResponse20021
+func (a *SecretStoreItemAPIService) GetSecretsExecute(r APIGetSecretsRequest) (*InlineResponse20021, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse20013
+		localVarReturnValue *InlineResponse20021
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecretStoreItemAPIService.GetSecrets")

@@ -244,7 +244,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DmDomainsAPI.ListDmDomains`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListDmDomains`: InlineResponse2007
+    // response from `ListDmDomains`: InlineResponse20014
     fmt.Fprintf(os.Stdout, "Response from `DmDomainsAPI.ListDmDomains`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2007**](InlineResponse2007.md)
+[**InlineResponse20014**](InlineResponse20014.md)
 
 ### Authorization
 

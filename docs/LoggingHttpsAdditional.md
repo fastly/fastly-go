@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **RequestMaxBytes** | Pointer to **int32** | The maximum number of bytes sent in one request. Defaults `0` (100MB). | [optional] [default to 0]
 **ContentType** | Pointer to **NullableString** | Content type of the header sent with the request. | [optional] [default to "null"]
 **HeaderName** | Pointer to **NullableString** | Name of the custom header sent with the request. | [optional] [default to "null"]
-**MessageType** | Pointer to [**LoggingMessageType**](LoggingMessageType.md) |  | [optional] [default to LOGGINGMESSAGETYPE_CLASSIC]
+**MessageType** | Pointer to [**LoggingMessageType**](LoggingMessageType.md) |  | [optional] [default to LOGGINGMESSAGETYPE_BLANK]
 **HeaderValue** | Pointer to **NullableString** | Value of the custom header sent with the request. | [optional] [default to "null"]
 **Method** | Pointer to **string** | HTTP method used for request. | [optional] [default to "POST"]
 **JsonFormat** | Pointer to **string** | Enforces valid JSON formatting for log entries. | [optional] 

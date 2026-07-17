@@ -58,7 +58,7 @@ func NewLoggingHttpsAdditional() *LoggingHttpsAdditional {
 	this.ContentType = *NewNullableString(&contentType)
 	var headerName string = "null"
 	this.HeaderName = *NewNullableString(&headerName)
-	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_CLASSIC
+	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_BLANK
 	this.MessageType = &messageType
 	var headerValue string = "null"
 	this.HeaderValue = *NewNullableString(&headerValue)
@@ -84,7 +84,7 @@ func NewLoggingHttpsAdditionalWithDefaults() *LoggingHttpsAdditional {
 	this.ContentType = *NewNullableString(&contentType)
 	var headerName string = "null"
 	this.HeaderName = *NewNullableString(&headerName)
-	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_CLASSIC
+	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_BLANK
 	this.MessageType = &messageType
 	var headerValue string = "null"
 	this.HeaderValue = *NewNullableString(&headerValue)

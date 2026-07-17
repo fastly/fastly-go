@@ -22,6 +22,8 @@ type RequestBodyForCreate struct {
 	Fqdn string `json:"fqdn"`
 	// The `service_id` associated with your domain or `null` if there is no association.
 	ServiceId NullableString `json:"service_id,omitempty"`
+	// The `routing_configuration_id` associated with your domain or `null` if there is no association.
+	RoutingConfigurationId NullableString `json:"routing_configuration_id,omitempty"`
 	// A freeform descriptive note.
 	Description          *string `json:"description,omitempty"`
 	AdditionalProperties map[string]any
@@ -114,6 +116,49 @@ func (o *RequestBodyForCreate) UnsetServiceId() {
 	o.ServiceId.Unset()
 }
 
+// GetRoutingConfigurationId returns the RoutingConfigurationId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *RequestBodyForCreate) GetRoutingConfigurationId() string {
+	if o == nil || o.RoutingConfigurationId.Get() == nil {
+		var ret string
+		return ret
+	}
+	return *o.RoutingConfigurationId.Get()
+}
+
+// GetRoutingConfigurationIdOk returns a tuple with the RoutingConfigurationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *RequestBodyForCreate) GetRoutingConfigurationIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.RoutingConfigurationId.Get(), o.RoutingConfigurationId.IsSet()
+}
+
+// HasRoutingConfigurationId returns a boolean if a field has been set.
+func (o *RequestBodyForCreate) HasRoutingConfigurationId() bool {
+	if o != nil && o.RoutingConfigurationId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetRoutingConfigurationId gets a reference to the given NullableString and assigns it to the RoutingConfigurationId field.
+func (o *RequestBodyForCreate) SetRoutingConfigurationId(v string) {
+	o.RoutingConfigurationId.Set(&v)
+}
+
+// SetRoutingConfigurationIdNil sets the value for RoutingConfigurationId to be an explicit nil
+func (o *RequestBodyForCreate) SetRoutingConfigurationIdNil() {
+	o.RoutingConfigurationId.Set(nil)
+}
+
+// UnsetRoutingConfigurationId ensures that no value is present for RoutingConfigurationId, not even an explicit nil
+func (o *RequestBodyForCreate) UnsetRoutingConfigurationId() {
+	o.RoutingConfigurationId.Unset()
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *RequestBodyForCreate) GetDescription() string {
 	if o == nil || o.Description == nil {
@@ -156,6 +201,9 @@ func (o RequestBodyForCreate) MarshalJSON() ([]byte, error) {
 	if o.ServiceId.IsSet() {
 		toSerialize["service_id"] = o.ServiceId.Get()
 	}
+	if o.RoutingConfigurationId.IsSet() {
+		toSerialize["routing_configuration_id"] = o.RoutingConfigurationId.Get()
+	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}
@@ -181,6 +229,7 @@ func (o *RequestBodyForCreate) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "fqdn")
 		delete(additionalProperties, "service_id")
+		delete(additionalProperties, "routing_configuration_id")
 		delete(additionalProperties, "description")
 		o.AdditionalProperties = additionalProperties
 	}

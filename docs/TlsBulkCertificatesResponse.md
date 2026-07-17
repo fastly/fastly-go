@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**PaginationLinks**](PaginationLinks.md) |  | [optional] 
-**Meta** | Pointer to [**PaginationMeta**](PaginationMeta.md) |  | [optional] 
+**Meta** | Pointer to [**PaginationMeta1**](PaginationMeta1.md) |  | [optional] 
 **Data** | Pointer to [**[]TlsBulkCertificateResponseData**](TlsBulkCertificateResponseData.md) |  | [optional] 
 
 ## Methods
@@ -54,20 +54,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *TlsBulkCertificatesResponse) GetMeta() PaginationMeta`
+`func (o *TlsBulkCertificatesResponse) GetMeta() PaginationMeta1`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *TlsBulkCertificatesResponse) GetMetaOk() (*PaginationMeta, bool)`
+`func (o *TlsBulkCertificatesResponse) GetMetaOk() (*PaginationMeta1, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *TlsBulkCertificatesResponse) SetMeta(v PaginationMeta)`
+`func (o *TlsBulkCertificatesResponse) SetMeta(v PaginationMeta1)`
 
 SetMeta sets Meta field to given value.
 

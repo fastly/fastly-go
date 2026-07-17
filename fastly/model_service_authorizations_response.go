@@ -19,7 +19,7 @@ import (
 // ServiceAuthorizationsResponse struct for ServiceAuthorizationsResponse
 type ServiceAuthorizationsResponse struct {
 	Links                *PaginationLinks                   `json:"links,omitempty"`
-	Meta                 *PaginationMeta                    `json:"meta,omitempty"`
+	Meta                 *PaginationMeta1                   `json:"meta,omitempty"`
 	Data                 []ServiceAuthorizationResponseData `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -76,9 +76,9 @@ func (o *ServiceAuthorizationsResponse) SetLinks(v PaginationLinks) {
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *ServiceAuthorizationsResponse) GetMeta() PaginationMeta {
+func (o *ServiceAuthorizationsResponse) GetMeta() PaginationMeta1 {
 	if o == nil || o.Meta == nil {
-		var ret PaginationMeta
+		var ret PaginationMeta1
 		return ret
 	}
 	return *o.Meta
@@ -86,7 +86,7 @@ func (o *ServiceAuthorizationsResponse) GetMeta() PaginationMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServiceAuthorizationsResponse) GetMetaOk() (*PaginationMeta, bool) {
+func (o *ServiceAuthorizationsResponse) GetMetaOk() (*PaginationMeta1, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *ServiceAuthorizationsResponse) HasMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given PaginationMeta and assigns it to the Meta field.
-func (o *ServiceAuthorizationsResponse) SetMeta(v PaginationMeta) {
+// SetMeta gets a reference to the given PaginationMeta1 and assigns it to the Meta field.
+func (o *ServiceAuthorizationsResponse) SetMeta(v PaginationMeta1) {
 	o.Meta = &v
 }
 

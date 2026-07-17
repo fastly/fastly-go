@@ -8,7 +8,9 @@ Method | HTTP request | Description
 [**DisableProductBotManagement**](ProductBotManagementAPI.md#DisableProductBotManagement) | **DELETE** `/enabled-products/v1/bot_management/services/{service_id}` | Disable product
 [**EnableProductBotManagement**](ProductBotManagementAPI.md#EnableProductBotManagement) | **PUT** `/enabled-products/v1/bot_management/services/{service_id}` | Enable product
 [**GetProductBotManagement**](ProductBotManagementAPI.md#GetProductBotManagement) | **GET** `/enabled-products/v1/bot_management/services/{service_id}` | Get product enablement status
+[**GetProductBotManagementConfiguration**](ProductBotManagementAPI.md#GetProductBotManagementConfiguration) | **GET** `/enabled-products/v1/bot_management/services/{service_id}/configuration` | Get configuration
 [**GetServicesProductBotManagement**](ProductBotManagementAPI.md#GetServicesProductBotManagement) | **GET** `/enabled-products/v1/bot_management/services` | Get services with product enabled
+[**SetProductBotManagementConfiguration**](ProductBotManagementAPI.md#SetProductBotManagementConfiguration) | **PATCH** `/enabled-products/v1/bot_management/services/{service_id}/configuration` | Update configuration
 
 
 
@@ -211,6 +213,73 @@ Name | Type | Description  | Notes
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
 
+## GetProductBotManagementConfiguration
+
+Get configuration
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.ProductBotManagementAPI.GetProductBotManagementConfiguration(ctx, serviceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductBotManagementAPI.GetProductBotManagementConfiguration`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetProductBotManagementConfiguration`: BotManagementResponseConfigure
+    fmt.Fprintf(os.Stdout, "Response from `ProductBotManagementAPI.GetProductBotManagementConfiguration`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetProductBotManagementConfigurationRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**BotManagementResponseConfigure**](BotManagementResponseConfigure.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
 ## GetServicesProductBotManagement
 
 Get services with product enabled
@@ -265,6 +334,74 @@ Other parameters are passed through a pointer to a apiGetServicesProductBotManag
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## SetProductBotManagementConfiguration
+
+Update configuration
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    botManagementRequestUpdateConfiguration := *openapiclient.NewBotManagementRequestUpdateConfiguration("Contentguard_example") // BotManagementRequestUpdateConfiguration |  (optional)
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.ProductBotManagementAPI.SetProductBotManagementConfiguration(ctx, serviceId).BotManagementRequestUpdateConfiguration(botManagementRequestUpdateConfiguration).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ProductBotManagementAPI.SetProductBotManagementConfiguration`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `SetProductBotManagementConfiguration`: BotManagementResponseConfigure
+    fmt.Fprintf(os.Stdout, "Response from `ProductBotManagementAPI.SetProductBotManagementConfiguration`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**serviceId** | **string** | Alphanumeric string identifying the service. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSetProductBotManagementConfigurationRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **botManagementRequestUpdateConfiguration** | [**BotManagementRequestUpdateConfiguration**](BotManagementRequestUpdateConfiguration.md) |  | 
+
+### Return type
+
+[**BotManagementResponseConfigure**](BotManagementResponseConfigure.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

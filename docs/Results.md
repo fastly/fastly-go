@@ -68,9 +68,6 @@ Name | Type | Description | Notes
 **LogBytes** | Pointer to **int64** | Total log bytes sent. | [optional] 
 **Http2** | Pointer to **int64** | Number of requests received over HTTP/2. | [optional] 
 **Http3** | Pointer to **int64** | Number of requests received over HTTP/3. | [optional] 
-**WafLogged** | Pointer to **int64** | Number of requests that triggered a WAF rule and were logged. | [optional] 
-**WafBlocked** | Pointer to **int64** | Number of requests that triggered a WAF rule and were blocked. | [optional] 
-**WafPassed** | Pointer to **int64** | Number of requests that triggered a WAF rule and were passed. | [optional] 
 **AttackReqBodyBytes** | Pointer to **int64** | Total body bytes received from requests that triggered a WAF rule. | [optional] 
 **AttackReqHeaderBytes** | Pointer to **int64** | Total header bytes received from requests that triggered a WAF rule. | [optional] 
 **AttackLoggedReqBodyBytes** | Pointer to **int64** | Total body bytes received from requests that triggered a WAF rule that was logged. | [optional] 
@@ -316,6 +313,40 @@ Name | Type | Description | Notes
 **ComputeServiceVcpuExceededError** | Pointer to **int32** | Fatal errors caused by exceeding the per-request vCPU time limit. | [optional] 
 **ComputeServiceLimitsError** | Pointer to **int32** | Non-fatal errors caused by attempts to exceed defined operational limits, such as simultaneous backend requests or cache transactions. | [optional] 
 **ComputePlatformInvalidRequestError** | Pointer to **int32** | Fatal errors caused by unprocessable requests to the service, such as requests with malformed CDN-Loop headers or invalid purge credentials. | [optional] 
+**ComputeSandboxes** | Pointer to **int32** | Number of WebAssembly (Wasm) sandboxes created. | [optional] 
+**BotRequestsTotalCount** | Pointer to **int32** | Total number of Bot Management requests across all deployments. | [optional] 
+**BotEdgeRequestsAnalyzedCount** | Pointer to **int32** | Count of edge requests where bot detection analysis was performed. | [optional] 
+**BotEdgeRequestsDetectedCount** | Pointer to **int32** | Count of edge requests where a bot was detected. | [optional] 
+**BotEdgeRequestsVerifiedCount** | Pointer to **int32** | Count of edge requests where a verified bot was detected. | [optional] 
+**BotEdgeRequestsAiCrawlerCount** | Pointer to **int32** | Count of edge requests where an AI crawler was detected. | [optional] 
+**BotEdgeRequestsAiFetcherCount** | Pointer to **int32** | Count of edge requests where an AI fetcher was detected. | [optional] 
+**BotEdgeRequestsAccessibilityCount** | Pointer to **int32** | Count of edge requests where an accessibility bot was detected. | [optional] 
+**BotEdgeRequestsContentFetcherCount** | Pointer to **int32** | Count of edge requests where a content fetcher was detected. | [optional] 
+**BotEdgeRequestsMonitoringCount** | Pointer to **int32** | Count of edge requests where a monitoring and site tool was detected. | [optional] 
+**BotEdgeRequestsOnlineMarketingCount** | Pointer to **int32** | Count of edge requests where an online marketing bot was detected. | [optional] 
+**BotEdgeRequestsPagePreviewCount** | Pointer to **int32** | Count of edge requests where a page preview bot was detected. | [optional] 
+**BotEdgeRequestsPlatformIntegrationsCount** | Pointer to **int32** | Count of edge requests where a platform integration was detected. | [optional] 
+**BotEdgeRequestsResearchCount** | Pointer to **int32** | Count of edge requests where a research bot was detected. | [optional] 
+**BotEdgeRequestsSearchEngineCrawlerCount** | Pointer to **int32** | Count of edge requests where a search engine crawler was detected. | [optional] 
+**BotEdgeRequestsSearchEngineOptimizationCount** | Pointer to **int32** | Count of edge requests where a search engine optimization bot was detected. | [optional] 
+**BotEdgeRequestsSecurityToolsCount** | Pointer to **int32** | Count of edge requests where a security tool was detected. | [optional] 
+**ComputeHandoff** | Pointer to **int32** | The number of times Compute has handed off a request to the Fanout proxy or WebSocket proxy. | [optional] 
+**ComputeServiceBereqDnsError** | Pointer to **int32** | Number of backend requests from a Compute service that failed during DNS resolution. | [optional] 
+**ComputeServiceBereqConnTimeoutError** | Pointer to **int32** | Number of backend requests from a Compute service where the connection to the origin timed out before being established. | [optional] 
+**ComputeServiceBereqConnRefusedError** | Pointer to **int32** | Number of backend requests from a Compute service where the origin actively refused the connection. | [optional] 
+**ComputeServiceBereqConnOtherError** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to a connection error not classified as a timeout or refusal. | [optional] 
+**ComputeServiceBereqTlsServerCertError** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to a TLS certificate validation error (e.g., expired, untrusted CA, hostname mismatch). | [optional] 
+**ComputeServiceBereqTlsOtherError** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to a TLS error not classified as a certificate error. | [optional] 
+**ComputeServiceBereqHttpProtoV1Error** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to an HTTP/1.x protocol violation after the request was transmitted. | [optional] 
+**ComputeServiceBereqHttpProtoV2Error** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to an HTTP/2 protocol error, typically a `RST_STREAM` or `GO_AWAY` from the origin. | [optional] 
+**ComputeServiceBereqHttpIncompleteError** | Pointer to **int32** | Number of backend requests from a Compute service where the origin sent an incomplete HTTP response. | [optional] 
+**ComputeServiceBereqHttpTimeoutError** | Pointer to **int32** | Number of backend requests from a Compute service where the origin did not respond within the configured timeout period. | [optional] 
+**ComputeServiceBereqHttpOtherError** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to an HTTP-level error not classified in any category. | [optional] 
+**ComputeServiceBereqOtherError** | Pointer to **int32** | Number of backend requests from a Compute service that failed due to an error not classified into the DNS, connection, TLS, or HTTP categories. | [optional] 
+**ComputeServiceBereq5xxError** | Pointer to **int32** | Number of backend requests from a Compute service where the origin returned a 5xx status code. | [optional] 
+**ComputeServiceBereqConnError** | Pointer to **int32** | Number of backend requests from a Compute service that failed at the TCP connection level. Sum of `compute_service_bereq_conn_timeout_error`, `compute_service_bereq_conn_refused_error`, and `compute_service_bereq_conn_other_error`. | [optional] 
+**ComputeServiceBereqTlsError** | Pointer to **int32** | Number of backend requests from a Compute service that failed during the TLS handshake or session with the origin. Sum of `compute_service_bereq_tls_server_cert_error` and `compute_service_bereq_tls_other_error`. | [optional] 
+**ComputeServiceBereqHttpError** | Pointer to **int32** | Number of backend requests from a Compute service that failed at the HTTP protocol level. Sum of `compute_service_bereq_http_proto_v1_error`, `compute_service_bereq_http_proto_v2_error`, `compute_service_bereq_http_incomplete_error`, `compute_service_bereq_http_timeout_error`, and `compute_service_bereq_http_other_error`. | [optional] 
 **ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **StartTime** | Pointer to **int64** | Timestamp for the start of the time period being reported | [optional] 
 
@@ -1947,81 +1978,6 @@ SetHttp3 sets Http3 field to given value.
 `func (o *Results) HasHttp3() bool`
 
 HasHttp3 returns a boolean if a field has been set.
-
-### GetWafLogged
-
-`func (o *Results) GetWafLogged() int64`
-
-GetWafLogged returns the WafLogged field if non-nil, zero value otherwise.
-
-### GetWafLoggedOk
-
-`func (o *Results) GetWafLoggedOk() (*int64, bool)`
-
-GetWafLoggedOk returns a tuple with the WafLogged field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWafLogged
-
-`func (o *Results) SetWafLogged(v int64)`
-
-SetWafLogged sets WafLogged field to given value.
-
-### HasWafLogged
-
-`func (o *Results) HasWafLogged() bool`
-
-HasWafLogged returns a boolean if a field has been set.
-
-### GetWafBlocked
-
-`func (o *Results) GetWafBlocked() int64`
-
-GetWafBlocked returns the WafBlocked field if non-nil, zero value otherwise.
-
-### GetWafBlockedOk
-
-`func (o *Results) GetWafBlockedOk() (*int64, bool)`
-
-GetWafBlockedOk returns a tuple with the WafBlocked field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWafBlocked
-
-`func (o *Results) SetWafBlocked(v int64)`
-
-SetWafBlocked sets WafBlocked field to given value.
-
-### HasWafBlocked
-
-`func (o *Results) HasWafBlocked() bool`
-
-HasWafBlocked returns a boolean if a field has been set.
-
-### GetWafPassed
-
-`func (o *Results) GetWafPassed() int64`
-
-GetWafPassed returns the WafPassed field if non-nil, zero value otherwise.
-
-### GetWafPassedOk
-
-`func (o *Results) GetWafPassedOk() (*int64, bool)`
-
-GetWafPassedOk returns a tuple with the WafPassed field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetWafPassed
-
-`func (o *Results) SetWafPassed(v int64)`
-
-SetWafPassed sets WafPassed field to given value.
-
-### HasWafPassed
-
-`func (o *Results) HasWafPassed() bool`
-
-HasWafPassed returns a boolean if a field has been set.
 
 ### GetAttackReqBodyBytes
 
@@ -8147,6 +8103,856 @@ SetComputePlatformInvalidRequestError sets ComputePlatformInvalidRequestError fi
 `func (o *Results) HasComputePlatformInvalidRequestError() bool`
 
 HasComputePlatformInvalidRequestError returns a boolean if a field has been set.
+
+### GetComputeSandboxes
+
+`func (o *Results) GetComputeSandboxes() int32`
+
+GetComputeSandboxes returns the ComputeSandboxes field if non-nil, zero value otherwise.
+
+### GetComputeSandboxesOk
+
+`func (o *Results) GetComputeSandboxesOk() (*int32, bool)`
+
+GetComputeSandboxesOk returns a tuple with the ComputeSandboxes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeSandboxes
+
+`func (o *Results) SetComputeSandboxes(v int32)`
+
+SetComputeSandboxes sets ComputeSandboxes field to given value.
+
+### HasComputeSandboxes
+
+`func (o *Results) HasComputeSandboxes() bool`
+
+HasComputeSandboxes returns a boolean if a field has been set.
+
+### GetBotRequestsTotalCount
+
+`func (o *Results) GetBotRequestsTotalCount() int32`
+
+GetBotRequestsTotalCount returns the BotRequestsTotalCount field if non-nil, zero value otherwise.
+
+### GetBotRequestsTotalCountOk
+
+`func (o *Results) GetBotRequestsTotalCountOk() (*int32, bool)`
+
+GetBotRequestsTotalCountOk returns a tuple with the BotRequestsTotalCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotRequestsTotalCount
+
+`func (o *Results) SetBotRequestsTotalCount(v int32)`
+
+SetBotRequestsTotalCount sets BotRequestsTotalCount field to given value.
+
+### HasBotRequestsTotalCount
+
+`func (o *Results) HasBotRequestsTotalCount() bool`
+
+HasBotRequestsTotalCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsAnalyzedCount
+
+`func (o *Results) GetBotEdgeRequestsAnalyzedCount() int32`
+
+GetBotEdgeRequestsAnalyzedCount returns the BotEdgeRequestsAnalyzedCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsAnalyzedCountOk
+
+`func (o *Results) GetBotEdgeRequestsAnalyzedCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsAnalyzedCountOk returns a tuple with the BotEdgeRequestsAnalyzedCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsAnalyzedCount
+
+`func (o *Results) SetBotEdgeRequestsAnalyzedCount(v int32)`
+
+SetBotEdgeRequestsAnalyzedCount sets BotEdgeRequestsAnalyzedCount field to given value.
+
+### HasBotEdgeRequestsAnalyzedCount
+
+`func (o *Results) HasBotEdgeRequestsAnalyzedCount() bool`
+
+HasBotEdgeRequestsAnalyzedCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsDetectedCount
+
+`func (o *Results) GetBotEdgeRequestsDetectedCount() int32`
+
+GetBotEdgeRequestsDetectedCount returns the BotEdgeRequestsDetectedCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsDetectedCountOk
+
+`func (o *Results) GetBotEdgeRequestsDetectedCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsDetectedCountOk returns a tuple with the BotEdgeRequestsDetectedCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsDetectedCount
+
+`func (o *Results) SetBotEdgeRequestsDetectedCount(v int32)`
+
+SetBotEdgeRequestsDetectedCount sets BotEdgeRequestsDetectedCount field to given value.
+
+### HasBotEdgeRequestsDetectedCount
+
+`func (o *Results) HasBotEdgeRequestsDetectedCount() bool`
+
+HasBotEdgeRequestsDetectedCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsVerifiedCount
+
+`func (o *Results) GetBotEdgeRequestsVerifiedCount() int32`
+
+GetBotEdgeRequestsVerifiedCount returns the BotEdgeRequestsVerifiedCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsVerifiedCountOk
+
+`func (o *Results) GetBotEdgeRequestsVerifiedCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsVerifiedCountOk returns a tuple with the BotEdgeRequestsVerifiedCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsVerifiedCount
+
+`func (o *Results) SetBotEdgeRequestsVerifiedCount(v int32)`
+
+SetBotEdgeRequestsVerifiedCount sets BotEdgeRequestsVerifiedCount field to given value.
+
+### HasBotEdgeRequestsVerifiedCount
+
+`func (o *Results) HasBotEdgeRequestsVerifiedCount() bool`
+
+HasBotEdgeRequestsVerifiedCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsAiCrawlerCount
+
+`func (o *Results) GetBotEdgeRequestsAiCrawlerCount() int32`
+
+GetBotEdgeRequestsAiCrawlerCount returns the BotEdgeRequestsAiCrawlerCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsAiCrawlerCountOk
+
+`func (o *Results) GetBotEdgeRequestsAiCrawlerCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsAiCrawlerCountOk returns a tuple with the BotEdgeRequestsAiCrawlerCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsAiCrawlerCount
+
+`func (o *Results) SetBotEdgeRequestsAiCrawlerCount(v int32)`
+
+SetBotEdgeRequestsAiCrawlerCount sets BotEdgeRequestsAiCrawlerCount field to given value.
+
+### HasBotEdgeRequestsAiCrawlerCount
+
+`func (o *Results) HasBotEdgeRequestsAiCrawlerCount() bool`
+
+HasBotEdgeRequestsAiCrawlerCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsAiFetcherCount
+
+`func (o *Results) GetBotEdgeRequestsAiFetcherCount() int32`
+
+GetBotEdgeRequestsAiFetcherCount returns the BotEdgeRequestsAiFetcherCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsAiFetcherCountOk
+
+`func (o *Results) GetBotEdgeRequestsAiFetcherCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsAiFetcherCountOk returns a tuple with the BotEdgeRequestsAiFetcherCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsAiFetcherCount
+
+`func (o *Results) SetBotEdgeRequestsAiFetcherCount(v int32)`
+
+SetBotEdgeRequestsAiFetcherCount sets BotEdgeRequestsAiFetcherCount field to given value.
+
+### HasBotEdgeRequestsAiFetcherCount
+
+`func (o *Results) HasBotEdgeRequestsAiFetcherCount() bool`
+
+HasBotEdgeRequestsAiFetcherCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsAccessibilityCount
+
+`func (o *Results) GetBotEdgeRequestsAccessibilityCount() int32`
+
+GetBotEdgeRequestsAccessibilityCount returns the BotEdgeRequestsAccessibilityCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsAccessibilityCountOk
+
+`func (o *Results) GetBotEdgeRequestsAccessibilityCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsAccessibilityCountOk returns a tuple with the BotEdgeRequestsAccessibilityCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsAccessibilityCount
+
+`func (o *Results) SetBotEdgeRequestsAccessibilityCount(v int32)`
+
+SetBotEdgeRequestsAccessibilityCount sets BotEdgeRequestsAccessibilityCount field to given value.
+
+### HasBotEdgeRequestsAccessibilityCount
+
+`func (o *Results) HasBotEdgeRequestsAccessibilityCount() bool`
+
+HasBotEdgeRequestsAccessibilityCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsContentFetcherCount
+
+`func (o *Results) GetBotEdgeRequestsContentFetcherCount() int32`
+
+GetBotEdgeRequestsContentFetcherCount returns the BotEdgeRequestsContentFetcherCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsContentFetcherCountOk
+
+`func (o *Results) GetBotEdgeRequestsContentFetcherCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsContentFetcherCountOk returns a tuple with the BotEdgeRequestsContentFetcherCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsContentFetcherCount
+
+`func (o *Results) SetBotEdgeRequestsContentFetcherCount(v int32)`
+
+SetBotEdgeRequestsContentFetcherCount sets BotEdgeRequestsContentFetcherCount field to given value.
+
+### HasBotEdgeRequestsContentFetcherCount
+
+`func (o *Results) HasBotEdgeRequestsContentFetcherCount() bool`
+
+HasBotEdgeRequestsContentFetcherCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsMonitoringCount
+
+`func (o *Results) GetBotEdgeRequestsMonitoringCount() int32`
+
+GetBotEdgeRequestsMonitoringCount returns the BotEdgeRequestsMonitoringCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsMonitoringCountOk
+
+`func (o *Results) GetBotEdgeRequestsMonitoringCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsMonitoringCountOk returns a tuple with the BotEdgeRequestsMonitoringCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsMonitoringCount
+
+`func (o *Results) SetBotEdgeRequestsMonitoringCount(v int32)`
+
+SetBotEdgeRequestsMonitoringCount sets BotEdgeRequestsMonitoringCount field to given value.
+
+### HasBotEdgeRequestsMonitoringCount
+
+`func (o *Results) HasBotEdgeRequestsMonitoringCount() bool`
+
+HasBotEdgeRequestsMonitoringCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsOnlineMarketingCount
+
+`func (o *Results) GetBotEdgeRequestsOnlineMarketingCount() int32`
+
+GetBotEdgeRequestsOnlineMarketingCount returns the BotEdgeRequestsOnlineMarketingCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsOnlineMarketingCountOk
+
+`func (o *Results) GetBotEdgeRequestsOnlineMarketingCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsOnlineMarketingCountOk returns a tuple with the BotEdgeRequestsOnlineMarketingCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsOnlineMarketingCount
+
+`func (o *Results) SetBotEdgeRequestsOnlineMarketingCount(v int32)`
+
+SetBotEdgeRequestsOnlineMarketingCount sets BotEdgeRequestsOnlineMarketingCount field to given value.
+
+### HasBotEdgeRequestsOnlineMarketingCount
+
+`func (o *Results) HasBotEdgeRequestsOnlineMarketingCount() bool`
+
+HasBotEdgeRequestsOnlineMarketingCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsPagePreviewCount
+
+`func (o *Results) GetBotEdgeRequestsPagePreviewCount() int32`
+
+GetBotEdgeRequestsPagePreviewCount returns the BotEdgeRequestsPagePreviewCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsPagePreviewCountOk
+
+`func (o *Results) GetBotEdgeRequestsPagePreviewCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsPagePreviewCountOk returns a tuple with the BotEdgeRequestsPagePreviewCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsPagePreviewCount
+
+`func (o *Results) SetBotEdgeRequestsPagePreviewCount(v int32)`
+
+SetBotEdgeRequestsPagePreviewCount sets BotEdgeRequestsPagePreviewCount field to given value.
+
+### HasBotEdgeRequestsPagePreviewCount
+
+`func (o *Results) HasBotEdgeRequestsPagePreviewCount() bool`
+
+HasBotEdgeRequestsPagePreviewCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsPlatformIntegrationsCount
+
+`func (o *Results) GetBotEdgeRequestsPlatformIntegrationsCount() int32`
+
+GetBotEdgeRequestsPlatformIntegrationsCount returns the BotEdgeRequestsPlatformIntegrationsCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsPlatformIntegrationsCountOk
+
+`func (o *Results) GetBotEdgeRequestsPlatformIntegrationsCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsPlatformIntegrationsCountOk returns a tuple with the BotEdgeRequestsPlatformIntegrationsCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsPlatformIntegrationsCount
+
+`func (o *Results) SetBotEdgeRequestsPlatformIntegrationsCount(v int32)`
+
+SetBotEdgeRequestsPlatformIntegrationsCount sets BotEdgeRequestsPlatformIntegrationsCount field to given value.
+
+### HasBotEdgeRequestsPlatformIntegrationsCount
+
+`func (o *Results) HasBotEdgeRequestsPlatformIntegrationsCount() bool`
+
+HasBotEdgeRequestsPlatformIntegrationsCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsResearchCount
+
+`func (o *Results) GetBotEdgeRequestsResearchCount() int32`
+
+GetBotEdgeRequestsResearchCount returns the BotEdgeRequestsResearchCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsResearchCountOk
+
+`func (o *Results) GetBotEdgeRequestsResearchCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsResearchCountOk returns a tuple with the BotEdgeRequestsResearchCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsResearchCount
+
+`func (o *Results) SetBotEdgeRequestsResearchCount(v int32)`
+
+SetBotEdgeRequestsResearchCount sets BotEdgeRequestsResearchCount field to given value.
+
+### HasBotEdgeRequestsResearchCount
+
+`func (o *Results) HasBotEdgeRequestsResearchCount() bool`
+
+HasBotEdgeRequestsResearchCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsSearchEngineCrawlerCount
+
+`func (o *Results) GetBotEdgeRequestsSearchEngineCrawlerCount() int32`
+
+GetBotEdgeRequestsSearchEngineCrawlerCount returns the BotEdgeRequestsSearchEngineCrawlerCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsSearchEngineCrawlerCountOk
+
+`func (o *Results) GetBotEdgeRequestsSearchEngineCrawlerCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsSearchEngineCrawlerCountOk returns a tuple with the BotEdgeRequestsSearchEngineCrawlerCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsSearchEngineCrawlerCount
+
+`func (o *Results) SetBotEdgeRequestsSearchEngineCrawlerCount(v int32)`
+
+SetBotEdgeRequestsSearchEngineCrawlerCount sets BotEdgeRequestsSearchEngineCrawlerCount field to given value.
+
+### HasBotEdgeRequestsSearchEngineCrawlerCount
+
+`func (o *Results) HasBotEdgeRequestsSearchEngineCrawlerCount() bool`
+
+HasBotEdgeRequestsSearchEngineCrawlerCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsSearchEngineOptimizationCount
+
+`func (o *Results) GetBotEdgeRequestsSearchEngineOptimizationCount() int32`
+
+GetBotEdgeRequestsSearchEngineOptimizationCount returns the BotEdgeRequestsSearchEngineOptimizationCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsSearchEngineOptimizationCountOk
+
+`func (o *Results) GetBotEdgeRequestsSearchEngineOptimizationCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsSearchEngineOptimizationCountOk returns a tuple with the BotEdgeRequestsSearchEngineOptimizationCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsSearchEngineOptimizationCount
+
+`func (o *Results) SetBotEdgeRequestsSearchEngineOptimizationCount(v int32)`
+
+SetBotEdgeRequestsSearchEngineOptimizationCount sets BotEdgeRequestsSearchEngineOptimizationCount field to given value.
+
+### HasBotEdgeRequestsSearchEngineOptimizationCount
+
+`func (o *Results) HasBotEdgeRequestsSearchEngineOptimizationCount() bool`
+
+HasBotEdgeRequestsSearchEngineOptimizationCount returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsSecurityToolsCount
+
+`func (o *Results) GetBotEdgeRequestsSecurityToolsCount() int32`
+
+GetBotEdgeRequestsSecurityToolsCount returns the BotEdgeRequestsSecurityToolsCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsSecurityToolsCountOk
+
+`func (o *Results) GetBotEdgeRequestsSecurityToolsCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsSecurityToolsCountOk returns a tuple with the BotEdgeRequestsSecurityToolsCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsSecurityToolsCount
+
+`func (o *Results) SetBotEdgeRequestsSecurityToolsCount(v int32)`
+
+SetBotEdgeRequestsSecurityToolsCount sets BotEdgeRequestsSecurityToolsCount field to given value.
+
+### HasBotEdgeRequestsSecurityToolsCount
+
+`func (o *Results) HasBotEdgeRequestsSecurityToolsCount() bool`
+
+HasBotEdgeRequestsSecurityToolsCount returns a boolean if a field has been set.
+
+### GetComputeHandoff
+
+`func (o *Results) GetComputeHandoff() int32`
+
+GetComputeHandoff returns the ComputeHandoff field if non-nil, zero value otherwise.
+
+### GetComputeHandoffOk
+
+`func (o *Results) GetComputeHandoffOk() (*int32, bool)`
+
+GetComputeHandoffOk returns a tuple with the ComputeHandoff field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeHandoff
+
+`func (o *Results) SetComputeHandoff(v int32)`
+
+SetComputeHandoff sets ComputeHandoff field to given value.
+
+### HasComputeHandoff
+
+`func (o *Results) HasComputeHandoff() bool`
+
+HasComputeHandoff returns a boolean if a field has been set.
+
+### GetComputeServiceBereqDnsError
+
+`func (o *Results) GetComputeServiceBereqDnsError() int32`
+
+GetComputeServiceBereqDnsError returns the ComputeServiceBereqDnsError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqDnsErrorOk
+
+`func (o *Results) GetComputeServiceBereqDnsErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqDnsErrorOk returns a tuple with the ComputeServiceBereqDnsError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqDnsError
+
+`func (o *Results) SetComputeServiceBereqDnsError(v int32)`
+
+SetComputeServiceBereqDnsError sets ComputeServiceBereqDnsError field to given value.
+
+### HasComputeServiceBereqDnsError
+
+`func (o *Results) HasComputeServiceBereqDnsError() bool`
+
+HasComputeServiceBereqDnsError returns a boolean if a field has been set.
+
+### GetComputeServiceBereqConnTimeoutError
+
+`func (o *Results) GetComputeServiceBereqConnTimeoutError() int32`
+
+GetComputeServiceBereqConnTimeoutError returns the ComputeServiceBereqConnTimeoutError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqConnTimeoutErrorOk
+
+`func (o *Results) GetComputeServiceBereqConnTimeoutErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqConnTimeoutErrorOk returns a tuple with the ComputeServiceBereqConnTimeoutError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqConnTimeoutError
+
+`func (o *Results) SetComputeServiceBereqConnTimeoutError(v int32)`
+
+SetComputeServiceBereqConnTimeoutError sets ComputeServiceBereqConnTimeoutError field to given value.
+
+### HasComputeServiceBereqConnTimeoutError
+
+`func (o *Results) HasComputeServiceBereqConnTimeoutError() bool`
+
+HasComputeServiceBereqConnTimeoutError returns a boolean if a field has been set.
+
+### GetComputeServiceBereqConnRefusedError
+
+`func (o *Results) GetComputeServiceBereqConnRefusedError() int32`
+
+GetComputeServiceBereqConnRefusedError returns the ComputeServiceBereqConnRefusedError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqConnRefusedErrorOk
+
+`func (o *Results) GetComputeServiceBereqConnRefusedErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqConnRefusedErrorOk returns a tuple with the ComputeServiceBereqConnRefusedError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqConnRefusedError
+
+`func (o *Results) SetComputeServiceBereqConnRefusedError(v int32)`
+
+SetComputeServiceBereqConnRefusedError sets ComputeServiceBereqConnRefusedError field to given value.
+
+### HasComputeServiceBereqConnRefusedError
+
+`func (o *Results) HasComputeServiceBereqConnRefusedError() bool`
+
+HasComputeServiceBereqConnRefusedError returns a boolean if a field has been set.
+
+### GetComputeServiceBereqConnOtherError
+
+`func (o *Results) GetComputeServiceBereqConnOtherError() int32`
+
+GetComputeServiceBereqConnOtherError returns the ComputeServiceBereqConnOtherError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqConnOtherErrorOk
+
+`func (o *Results) GetComputeServiceBereqConnOtherErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqConnOtherErrorOk returns a tuple with the ComputeServiceBereqConnOtherError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqConnOtherError
+
+`func (o *Results) SetComputeServiceBereqConnOtherError(v int32)`
+
+SetComputeServiceBereqConnOtherError sets ComputeServiceBereqConnOtherError field to given value.
+
+### HasComputeServiceBereqConnOtherError
+
+`func (o *Results) HasComputeServiceBereqConnOtherError() bool`
+
+HasComputeServiceBereqConnOtherError returns a boolean if a field has been set.
+
+### GetComputeServiceBereqTlsServerCertError
+
+`func (o *Results) GetComputeServiceBereqTlsServerCertError() int32`
+
+GetComputeServiceBereqTlsServerCertError returns the ComputeServiceBereqTlsServerCertError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqTlsServerCertErrorOk
+
+`func (o *Results) GetComputeServiceBereqTlsServerCertErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqTlsServerCertErrorOk returns a tuple with the ComputeServiceBereqTlsServerCertError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqTlsServerCertError
+
+`func (o *Results) SetComputeServiceBereqTlsServerCertError(v int32)`
+
+SetComputeServiceBereqTlsServerCertError sets ComputeServiceBereqTlsServerCertError field to given value.
+
+### HasComputeServiceBereqTlsServerCertError
+
+`func (o *Results) HasComputeServiceBereqTlsServerCertError() bool`
+
+HasComputeServiceBereqTlsServerCertError returns a boolean if a field has been set.
+
+### GetComputeServiceBereqTlsOtherError
+
+`func (o *Results) GetComputeServiceBereqTlsOtherError() int32`
+
+GetComputeServiceBereqTlsOtherError returns the ComputeServiceBereqTlsOtherError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqTlsOtherErrorOk
+
+`func (o *Results) GetComputeServiceBereqTlsOtherErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqTlsOtherErrorOk returns a tuple with the ComputeServiceBereqTlsOtherError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqTlsOtherError
+
+`func (o *Results) SetComputeServiceBereqTlsOtherError(v int32)`
+
+SetComputeServiceBereqTlsOtherError sets ComputeServiceBereqTlsOtherError field to given value.
+
+### HasComputeServiceBereqTlsOtherError
+
+`func (o *Results) HasComputeServiceBereqTlsOtherError() bool`
+
+HasComputeServiceBereqTlsOtherError returns a boolean if a field has been set.
+
+### GetComputeServiceBereqHttpProtoV1Error
+
+`func (o *Results) GetComputeServiceBereqHttpProtoV1Error() int32`
+
+GetComputeServiceBereqHttpProtoV1Error returns the ComputeServiceBereqHttpProtoV1Error field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqHttpProtoV1ErrorOk
+
+`func (o *Results) GetComputeServiceBereqHttpProtoV1ErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqHttpProtoV1ErrorOk returns a tuple with the ComputeServiceBereqHttpProtoV1Error field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqHttpProtoV1Error
+
+`func (o *Results) SetComputeServiceBereqHttpProtoV1Error(v int32)`
+
+SetComputeServiceBereqHttpProtoV1Error sets ComputeServiceBereqHttpProtoV1Error field to given value.
+
+### HasComputeServiceBereqHttpProtoV1Error
+
+`func (o *Results) HasComputeServiceBereqHttpProtoV1Error() bool`
+
+HasComputeServiceBereqHttpProtoV1Error returns a boolean if a field has been set.
+
+### GetComputeServiceBereqHttpProtoV2Error
+
+`func (o *Results) GetComputeServiceBereqHttpProtoV2Error() int32`
+
+GetComputeServiceBereqHttpProtoV2Error returns the ComputeServiceBereqHttpProtoV2Error field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqHttpProtoV2ErrorOk
+
+`func (o *Results) GetComputeServiceBereqHttpProtoV2ErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqHttpProtoV2ErrorOk returns a tuple with the ComputeServiceBereqHttpProtoV2Error field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqHttpProtoV2Error
+
+`func (o *Results) SetComputeServiceBereqHttpProtoV2Error(v int32)`
+
+SetComputeServiceBereqHttpProtoV2Error sets ComputeServiceBereqHttpProtoV2Error field to given value.
+
+### HasComputeServiceBereqHttpProtoV2Error
+
+`func (o *Results) HasComputeServiceBereqHttpProtoV2Error() bool`
+
+HasComputeServiceBereqHttpProtoV2Error returns a boolean if a field has been set.
+
+### GetComputeServiceBereqHttpIncompleteError
+
+`func (o *Results) GetComputeServiceBereqHttpIncompleteError() int32`
+
+GetComputeServiceBereqHttpIncompleteError returns the ComputeServiceBereqHttpIncompleteError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqHttpIncompleteErrorOk
+
+`func (o *Results) GetComputeServiceBereqHttpIncompleteErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqHttpIncompleteErrorOk returns a tuple with the ComputeServiceBereqHttpIncompleteError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqHttpIncompleteError
+
+`func (o *Results) SetComputeServiceBereqHttpIncompleteError(v int32)`
+
+SetComputeServiceBereqHttpIncompleteError sets ComputeServiceBereqHttpIncompleteError field to given value.
+
+### HasComputeServiceBereqHttpIncompleteError
+
+`func (o *Results) HasComputeServiceBereqHttpIncompleteError() bool`
+
+HasComputeServiceBereqHttpIncompleteError returns a boolean if a field has been set.
+
+### GetComputeServiceBereqHttpTimeoutError
+
+`func (o *Results) GetComputeServiceBereqHttpTimeoutError() int32`
+
+GetComputeServiceBereqHttpTimeoutError returns the ComputeServiceBereqHttpTimeoutError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqHttpTimeoutErrorOk
+
+`func (o *Results) GetComputeServiceBereqHttpTimeoutErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqHttpTimeoutErrorOk returns a tuple with the ComputeServiceBereqHttpTimeoutError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqHttpTimeoutError
+
+`func (o *Results) SetComputeServiceBereqHttpTimeoutError(v int32)`
+
+SetComputeServiceBereqHttpTimeoutError sets ComputeServiceBereqHttpTimeoutError field to given value.
+
+### HasComputeServiceBereqHttpTimeoutError
+
+`func (o *Results) HasComputeServiceBereqHttpTimeoutError() bool`
+
+HasComputeServiceBereqHttpTimeoutError returns a boolean if a field has been set.
+
+### GetComputeServiceBereqHttpOtherError
+
+`func (o *Results) GetComputeServiceBereqHttpOtherError() int32`
+
+GetComputeServiceBereqHttpOtherError returns the ComputeServiceBereqHttpOtherError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqHttpOtherErrorOk
+
+`func (o *Results) GetComputeServiceBereqHttpOtherErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqHttpOtherErrorOk returns a tuple with the ComputeServiceBereqHttpOtherError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqHttpOtherError
+
+`func (o *Results) SetComputeServiceBereqHttpOtherError(v int32)`
+
+SetComputeServiceBereqHttpOtherError sets ComputeServiceBereqHttpOtherError field to given value.
+
+### HasComputeServiceBereqHttpOtherError
+
+`func (o *Results) HasComputeServiceBereqHttpOtherError() bool`
+
+HasComputeServiceBereqHttpOtherError returns a boolean if a field has been set.
+
+### GetComputeServiceBereqOtherError
+
+`func (o *Results) GetComputeServiceBereqOtherError() int32`
+
+GetComputeServiceBereqOtherError returns the ComputeServiceBereqOtherError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqOtherErrorOk
+
+`func (o *Results) GetComputeServiceBereqOtherErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqOtherErrorOk returns a tuple with the ComputeServiceBereqOtherError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqOtherError
+
+`func (o *Results) SetComputeServiceBereqOtherError(v int32)`
+
+SetComputeServiceBereqOtherError sets ComputeServiceBereqOtherError field to given value.
+
+### HasComputeServiceBereqOtherError
+
+`func (o *Results) HasComputeServiceBereqOtherError() bool`
+
+HasComputeServiceBereqOtherError returns a boolean if a field has been set.
+
+### GetComputeServiceBereq5xxError
+
+`func (o *Results) GetComputeServiceBereq5xxError() int32`
+
+GetComputeServiceBereq5xxError returns the ComputeServiceBereq5xxError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereq5xxErrorOk
+
+`func (o *Results) GetComputeServiceBereq5xxErrorOk() (*int32, bool)`
+
+GetComputeServiceBereq5xxErrorOk returns a tuple with the ComputeServiceBereq5xxError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereq5xxError
+
+`func (o *Results) SetComputeServiceBereq5xxError(v int32)`
+
+SetComputeServiceBereq5xxError sets ComputeServiceBereq5xxError field to given value.
+
+### HasComputeServiceBereq5xxError
+
+`func (o *Results) HasComputeServiceBereq5xxError() bool`
+
+HasComputeServiceBereq5xxError returns a boolean if a field has been set.
+
+### GetComputeServiceBereqConnError
+
+`func (o *Results) GetComputeServiceBereqConnError() int32`
+
+GetComputeServiceBereqConnError returns the ComputeServiceBereqConnError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqConnErrorOk
+
+`func (o *Results) GetComputeServiceBereqConnErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqConnErrorOk returns a tuple with the ComputeServiceBereqConnError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqConnError
+
+`func (o *Results) SetComputeServiceBereqConnError(v int32)`
+
+SetComputeServiceBereqConnError sets ComputeServiceBereqConnError field to given value.
+
+### HasComputeServiceBereqConnError
+
+`func (o *Results) HasComputeServiceBereqConnError() bool`
+
+HasComputeServiceBereqConnError returns a boolean if a field has been set.
+
+### GetComputeServiceBereqTlsError
+
+`func (o *Results) GetComputeServiceBereqTlsError() int32`
+
+GetComputeServiceBereqTlsError returns the ComputeServiceBereqTlsError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqTlsErrorOk
+
+`func (o *Results) GetComputeServiceBereqTlsErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqTlsErrorOk returns a tuple with the ComputeServiceBereqTlsError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqTlsError
+
+`func (o *Results) SetComputeServiceBereqTlsError(v int32)`
+
+SetComputeServiceBereqTlsError sets ComputeServiceBereqTlsError field to given value.
+
+### HasComputeServiceBereqTlsError
+
+`func (o *Results) HasComputeServiceBereqTlsError() bool`
+
+HasComputeServiceBereqTlsError returns a boolean if a field has been set.
+
+### GetComputeServiceBereqHttpError
+
+`func (o *Results) GetComputeServiceBereqHttpError() int32`
+
+GetComputeServiceBereqHttpError returns the ComputeServiceBereqHttpError field if non-nil, zero value otherwise.
+
+### GetComputeServiceBereqHttpErrorOk
+
+`func (o *Results) GetComputeServiceBereqHttpErrorOk() (*int32, bool)`
+
+GetComputeServiceBereqHttpErrorOk returns a tuple with the ComputeServiceBereqHttpError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComputeServiceBereqHttpError
+
+`func (o *Results) SetComputeServiceBereqHttpError(v int32)`
+
+SetComputeServiceBereqHttpError sets ComputeServiceBereqHttpError field to given value.
+
+### HasComputeServiceBereqHttpError
+
+`func (o *Results) HasComputeServiceBereqHttpError() bool`
+
+HasComputeServiceBereqHttpError returns a boolean if a field has been set.
 
 ### GetServiceId
 

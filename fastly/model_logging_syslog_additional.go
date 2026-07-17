@@ -37,7 +37,7 @@ type _LoggingSyslogAdditional LoggingSyslogAdditional
 // will change when the set of required properties is changed
 func NewLoggingSyslogAdditional() *LoggingSyslogAdditional {
 	this := LoggingSyslogAdditional{}
-	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_CLASSIC
+	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_BLANK
 	this.MessageType = &messageType
 	var token string = "null"
 	this.Token = *NewNullableString(&token)
@@ -51,7 +51,7 @@ func NewLoggingSyslogAdditional() *LoggingSyslogAdditional {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingSyslogAdditionalWithDefaults() *LoggingSyslogAdditional {
 	this := LoggingSyslogAdditional{}
-	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_CLASSIC
+	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_BLANK
 	this.MessageType = &messageType
 	var token string = "null"
 	this.Token = *NewNullableString(&token)

@@ -39,7 +39,7 @@ type _LoggingGenericCommonResponse LoggingGenericCommonResponse
 // will change when the set of required properties is changed
 func NewLoggingGenericCommonResponse() *LoggingGenericCommonResponse {
 	this := LoggingGenericCommonResponse{}
-	var messageType string = "classic"
+	var messageType string = "blank"
 	this.MessageType = &messageType
 	var period string = "3600"
 	this.Period = &period
@@ -53,7 +53,7 @@ func NewLoggingGenericCommonResponse() *LoggingGenericCommonResponse {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingGenericCommonResponseWithDefaults() *LoggingGenericCommonResponse {
 	this := LoggingGenericCommonResponse{}
-	var messageType string = "classic"
+	var messageType string = "blank"
 	this.MessageType = &messageType
 	var period string = "3600"
 	this.Period = &period

@@ -16,10 +16,12 @@ Name | Type | Description | Notes
 **Hostname** | Pointer to **NullableString** | The hostname of the backend. May be used as an alternative to `address` to set the backend location. | [optional] 
 **Ipv4** | Pointer to **NullableString** | IPv4 address of the backend. May be used as an alternative to `address` to set the backend location. | [optional] 
 **Ipv6** | Pointer to **NullableString** | IPv6 address of the backend. May be used as an alternative to `address` to set the backend location. | [optional] 
-**KeepaliveTime** | Pointer to **NullableInt32** | How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can. | [optional] 
+**KeepaliveTime** | Pointer to **NullableInt32** | How long (in seconds) to keep a persistent connection to the backend between requests. By default, Fastly keeps connections open as long as it can. | [optional] 
 **MaxConn** | Pointer to **int32** | Maximum number of concurrent connections this backend will accept. | [optional] 
+**MaxLifetime** | Pointer to **NullableInt32** | Maximum time from creation (in milliseconds) that a pooled HTTP keepalive connection will be eligible for reuse; 0 is treated as unlimited. | [optional] 
 **MaxTlsVersion** | Pointer to **NullableString** | Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
 **MinTlsVersion** | Pointer to **NullableString** | Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
+**MaxUse** | Pointer to **NullableInt32** | Maximum number of requests allowed over a single, pooled HTTP keepalive connection to this backend; 0 is treated as unlimited. | [optional] 
 **Name** | Pointer to **string** | The name of the backend. | [optional] 
 **OverrideHost** | Pointer to **NullableString** | If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL. | [optional] 
 **Port** | Pointer to **int32** | Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request. | [optional] 
@@ -481,6 +483,41 @@ SetMaxConn sets MaxConn field to given value.
 
 HasMaxConn returns a boolean if a field has been set.
 
+### GetMaxLifetime
+
+`func (o *Backend) GetMaxLifetime() int32`
+
+GetMaxLifetime returns the MaxLifetime field if non-nil, zero value otherwise.
+
+### GetMaxLifetimeOk
+
+`func (o *Backend) GetMaxLifetimeOk() (*int32, bool)`
+
+GetMaxLifetimeOk returns a tuple with the MaxLifetime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxLifetime
+
+`func (o *Backend) SetMaxLifetime(v int32)`
+
+SetMaxLifetime sets MaxLifetime field to given value.
+
+### HasMaxLifetime
+
+`func (o *Backend) HasMaxLifetime() bool`
+
+HasMaxLifetime returns a boolean if a field has been set.
+
+### SetMaxLifetimeNil
+
+`func (o *Backend) SetMaxLifetimeNil(b bool)`
+
+ SetMaxLifetimeNil sets the value for MaxLifetime to be an explicit nil
+
+### UnsetMaxLifetime
+`func (o *Backend) UnsetMaxLifetime()`
+
+UnsetMaxLifetime ensures that no value is present for MaxLifetime, not even an explicit nil
 ### GetMaxTlsVersion
 
 `func (o *Backend) GetMaxTlsVersion() string`
@@ -551,6 +588,41 @@ HasMinTlsVersion returns a boolean if a field has been set.
 `func (o *Backend) UnsetMinTlsVersion()`
 
 UnsetMinTlsVersion ensures that no value is present for MinTlsVersion, not even an explicit nil
+### GetMaxUse
+
+`func (o *Backend) GetMaxUse() int32`
+
+GetMaxUse returns the MaxUse field if non-nil, zero value otherwise.
+
+### GetMaxUseOk
+
+`func (o *Backend) GetMaxUseOk() (*int32, bool)`
+
+GetMaxUseOk returns a tuple with the MaxUse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxUse
+
+`func (o *Backend) SetMaxUse(v int32)`
+
+SetMaxUse sets MaxUse field to given value.
+
+### HasMaxUse
+
+`func (o *Backend) HasMaxUse() bool`
+
+HasMaxUse returns a boolean if a field has been set.
+
+### SetMaxUseNil
+
+`func (o *Backend) SetMaxUseNil(b bool)`
+
+ SetMaxUseNil sets the value for MaxUse to be an explicit nil
+
+### UnsetMaxUse
+`func (o *Backend) UnsetMaxUse()`
+
+UnsetMaxUse ensures that no value is present for MaxUse, not even an explicit nil
 ### GetName
 
 `func (o *Backend) GetName() string`

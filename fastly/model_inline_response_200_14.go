@@ -18,7 +18,9 @@ import (
 
 // InlineResponse20014 struct for InlineResponse20014
 type InlineResponse20014 struct {
-	Data                 []ServiceAuthorizationResponseData `json:"data,omitempty"`
+	Data []SuccessfulResponseAsObject `json:"data,omitempty"`
+	// Meta for the pagination.
+	Meta                 interface{} `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -42,9 +44,9 @@ func NewInlineResponse20014WithDefaults() *InlineResponse20014 {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse20014) GetData() []ServiceAuthorizationResponseData {
+func (o *InlineResponse20014) GetData() []SuccessfulResponseAsObject {
 	if o == nil || o.Data == nil {
-		var ret []ServiceAuthorizationResponseData
+		var ret []SuccessfulResponseAsObject
 		return ret
 	}
 	return o.Data
@@ -52,7 +54,7 @@ func (o *InlineResponse20014) GetData() []ServiceAuthorizationResponseData {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse20014) GetDataOk() ([]ServiceAuthorizationResponseData, bool) {
+func (o *InlineResponse20014) GetDataOk() ([]SuccessfulResponseAsObject, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -68,9 +70,42 @@ func (o *InlineResponse20014) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []ServiceAuthorizationResponseData and assigns it to the Data field.
-func (o *InlineResponse20014) SetData(v []ServiceAuthorizationResponseData) {
+// SetData gets a reference to the given []SuccessfulResponseAsObject and assigns it to the Data field.
+func (o *InlineResponse20014) SetData(v []SuccessfulResponseAsObject) {
 	o.Data = v
+}
+
+// GetMeta returns the Meta field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *InlineResponse20014) GetMeta() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Meta
+}
+
+// GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *InlineResponse20014) GetMetaOk() (*interface{}, bool) {
+	if o == nil || o.Meta == nil {
+		return nil, false
+	}
+	return &o.Meta, true
+}
+
+// HasMeta returns a boolean if a field has been set.
+func (o *InlineResponse20014) HasMeta() bool {
+	if o != nil && o.Meta != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMeta gets a reference to the given interface{} and assigns it to the Meta field.
+func (o *InlineResponse20014) SetMeta(v interface{}) {
+	o.Meta = v
 }
 
 // MarshalJSON implements the json.Marshaler interface.
@@ -79,6 +114,9 @@ func (o InlineResponse20014) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]any{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
+	}
+	if o.Meta != nil {
+		toSerialize["meta"] = o.Meta
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -101,6 +139,7 @@ func (o *InlineResponse20014) UnmarshalJSON(bytes []byte) (err error) {
 
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "data")
+		delete(additionalProperties, "meta")
 		o.AdditionalProperties = additionalProperties
 	}
 

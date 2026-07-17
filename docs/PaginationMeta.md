@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CurrentPage** | Pointer to **int32** | Current page. | [optional] 
-**PerPage** | Pointer to **int32** | Number of records per page. | [optional] [default to 20]
-**RecordCount** | Pointer to **int32** | Total records in result set. | [optional] 
-**TotalPages** | Pointer to **int32** | Total pages in result set. | [optional] 
+**Limit** | Pointer to **int32** | The number of records returned per page. | [optional] 
+**NextCursor** | Pointer to **string** | Cursor value used to retrieve the next page of results. Empty if there are no more results. | [optional] 
+**PreviousCursor** | Pointer to **string** | Cursor value used to retrieve the previous page of results. Empty if there is no previous page. | [optional] 
+**Sort** | Pointer to **string** | The sort order applied to the results. | [optional] 
 
 ## Methods
 
@@ -28,105 +28,105 @@ NewPaginationMetaWithDefaults instantiates a new PaginationMeta object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetCurrentPage
+### GetLimit
 
-`func (o *PaginationMeta) GetCurrentPage() int32`
+`func (o *PaginationMeta) GetLimit() int32`
 
-GetCurrentPage returns the CurrentPage field if non-nil, zero value otherwise.
+GetLimit returns the Limit field if non-nil, zero value otherwise.
 
-### GetCurrentPageOk
+### GetLimitOk
 
-`func (o *PaginationMeta) GetCurrentPageOk() (*int32, bool)`
+`func (o *PaginationMeta) GetLimitOk() (*int32, bool)`
 
-GetCurrentPageOk returns a tuple with the CurrentPage field if it's non-nil, zero value otherwise
+GetLimitOk returns a tuple with the Limit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetCurrentPage
+### SetLimit
 
-`func (o *PaginationMeta) SetCurrentPage(v int32)`
+`func (o *PaginationMeta) SetLimit(v int32)`
 
-SetCurrentPage sets CurrentPage field to given value.
+SetLimit sets Limit field to given value.
 
-### HasCurrentPage
+### HasLimit
 
-`func (o *PaginationMeta) HasCurrentPage() bool`
+`func (o *PaginationMeta) HasLimit() bool`
 
-HasCurrentPage returns a boolean if a field has been set.
+HasLimit returns a boolean if a field has been set.
 
-### GetPerPage
+### GetNextCursor
 
-`func (o *PaginationMeta) GetPerPage() int32`
+`func (o *PaginationMeta) GetNextCursor() string`
 
-GetPerPage returns the PerPage field if non-nil, zero value otherwise.
+GetNextCursor returns the NextCursor field if non-nil, zero value otherwise.
 
-### GetPerPageOk
+### GetNextCursorOk
 
-`func (o *PaginationMeta) GetPerPageOk() (*int32, bool)`
+`func (o *PaginationMeta) GetNextCursorOk() (*string, bool)`
 
-GetPerPageOk returns a tuple with the PerPage field if it's non-nil, zero value otherwise
+GetNextCursorOk returns a tuple with the NextCursor field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetPerPage
+### SetNextCursor
 
-`func (o *PaginationMeta) SetPerPage(v int32)`
+`func (o *PaginationMeta) SetNextCursor(v string)`
 
-SetPerPage sets PerPage field to given value.
+SetNextCursor sets NextCursor field to given value.
 
-### HasPerPage
+### HasNextCursor
 
-`func (o *PaginationMeta) HasPerPage() bool`
+`func (o *PaginationMeta) HasNextCursor() bool`
 
-HasPerPage returns a boolean if a field has been set.
+HasNextCursor returns a boolean if a field has been set.
 
-### GetRecordCount
+### GetPreviousCursor
 
-`func (o *PaginationMeta) GetRecordCount() int32`
+`func (o *PaginationMeta) GetPreviousCursor() string`
 
-GetRecordCount returns the RecordCount field if non-nil, zero value otherwise.
+GetPreviousCursor returns the PreviousCursor field if non-nil, zero value otherwise.
 
-### GetRecordCountOk
+### GetPreviousCursorOk
 
-`func (o *PaginationMeta) GetRecordCountOk() (*int32, bool)`
+`func (o *PaginationMeta) GetPreviousCursorOk() (*string, bool)`
 
-GetRecordCountOk returns a tuple with the RecordCount field if it's non-nil, zero value otherwise
+GetPreviousCursorOk returns a tuple with the PreviousCursor field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRecordCount
+### SetPreviousCursor
 
-`func (o *PaginationMeta) SetRecordCount(v int32)`
+`func (o *PaginationMeta) SetPreviousCursor(v string)`
 
-SetRecordCount sets RecordCount field to given value.
+SetPreviousCursor sets PreviousCursor field to given value.
 
-### HasRecordCount
+### HasPreviousCursor
 
-`func (o *PaginationMeta) HasRecordCount() bool`
+`func (o *PaginationMeta) HasPreviousCursor() bool`
 
-HasRecordCount returns a boolean if a field has been set.
+HasPreviousCursor returns a boolean if a field has been set.
 
-### GetTotalPages
+### GetSort
 
-`func (o *PaginationMeta) GetTotalPages() int32`
+`func (o *PaginationMeta) GetSort() string`
 
-GetTotalPages returns the TotalPages field if non-nil, zero value otherwise.
+GetSort returns the Sort field if non-nil, zero value otherwise.
 
-### GetTotalPagesOk
+### GetSortOk
 
-`func (o *PaginationMeta) GetTotalPagesOk() (*int32, bool)`
+`func (o *PaginationMeta) GetSortOk() (*string, bool)`
 
-GetTotalPagesOk returns a tuple with the TotalPages field if it's non-nil, zero value otherwise
+GetSortOk returns a tuple with the Sort field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetTotalPages
+### SetSort
 
-`func (o *PaginationMeta) SetTotalPages(v int32)`
+`func (o *PaginationMeta) SetSort(v string)`
 
-SetTotalPages sets TotalPages field to given value.
+SetSort sets Sort field to given value.
 
-### HasTotalPages
+### HasSort
 
-`func (o *PaginationMeta) HasTotalPages() bool`
+`func (o *PaginationMeta) HasSort() bool`
 
-HasTotalPages returns a boolean if a field has been set.
+HasSort returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

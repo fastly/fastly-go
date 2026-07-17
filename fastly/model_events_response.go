@@ -19,7 +19,7 @@ import (
 // EventsResponse struct for EventsResponse
 type EventsResponse struct {
 	Links                *PaginationLinks `json:"links,omitempty"`
-	Meta                 *PaginationMeta  `json:"meta,omitempty"`
+	Meta                 *PaginationMeta1 `json:"meta,omitempty"`
 	Data                 []Event          `json:"data,omitempty"`
 	AdditionalProperties map[string]any
 }
@@ -76,9 +76,9 @@ func (o *EventsResponse) SetLinks(v PaginationLinks) {
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *EventsResponse) GetMeta() PaginationMeta {
+func (o *EventsResponse) GetMeta() PaginationMeta1 {
 	if o == nil || o.Meta == nil {
-		var ret PaginationMeta
+		var ret PaginationMeta1
 		return ret
 	}
 	return *o.Meta
@@ -86,7 +86,7 @@ func (o *EventsResponse) GetMeta() PaginationMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventsResponse) GetMetaOk() (*PaginationMeta, bool) {
+func (o *EventsResponse) GetMetaOk() (*PaginationMeta1, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -102,8 +102,8 @@ func (o *EventsResponse) HasMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given PaginationMeta and assigns it to the Meta field.
-func (o *EventsResponse) SetMeta(v PaginationMeta) {
+// SetMeta gets a reference to the given PaginationMeta1 and assigns it to the Meta field.
+func (o *EventsResponse) SetMeta(v PaginationMeta1) {
 	o.Meta = &v
 }
 

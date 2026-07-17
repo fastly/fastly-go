@@ -18,8 +18,8 @@ import (
 
 // InlineResponse20011 struct for InlineResponse20011
 type InlineResponse20011 struct {
-	Data                 []string              `json:"data,omitempty"`
-	Meta                 *PaginationCursorMeta `json:"meta,omitempty"`
+	Data                 []HeaderEvent   `json:"data,omitempty"`
+	Meta                 *PaginationMeta `json:"meta,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -43,9 +43,9 @@ func NewInlineResponse20011WithDefaults() *InlineResponse20011 {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *InlineResponse20011) GetData() []string {
+func (o *InlineResponse20011) GetData() []HeaderEvent {
 	if o == nil || o.Data == nil {
-		var ret []string
+		var ret []HeaderEvent
 		return ret
 	}
 	return o.Data
@@ -53,7 +53,7 @@ func (o *InlineResponse20011) GetData() []string {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse20011) GetDataOk() ([]string, bool) {
+func (o *InlineResponse20011) GetDataOk() ([]HeaderEvent, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -69,15 +69,15 @@ func (o *InlineResponse20011) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []string and assigns it to the Data field.
-func (o *InlineResponse20011) SetData(v []string) {
+// SetData gets a reference to the given []HeaderEvent and assigns it to the Data field.
+func (o *InlineResponse20011) SetData(v []HeaderEvent) {
 	o.Data = v
 }
 
 // GetMeta returns the Meta field value if set, zero value otherwise.
-func (o *InlineResponse20011) GetMeta() PaginationCursorMeta {
+func (o *InlineResponse20011) GetMeta() PaginationMeta {
 	if o == nil || o.Meta == nil {
-		var ret PaginationCursorMeta
+		var ret PaginationMeta
 		return ret
 	}
 	return *o.Meta
@@ -85,7 +85,7 @@ func (o *InlineResponse20011) GetMeta() PaginationCursorMeta {
 
 // GetMetaOk returns a tuple with the Meta field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InlineResponse20011) GetMetaOk() (*PaginationCursorMeta, bool) {
+func (o *InlineResponse20011) GetMetaOk() (*PaginationMeta, bool) {
 	if o == nil || o.Meta == nil {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *InlineResponse20011) HasMeta() bool {
 	return false
 }
 
-// SetMeta gets a reference to the given PaginationCursorMeta and assigns it to the Meta field.
-func (o *InlineResponse20011) SetMeta(v PaginationCursorMeta) {
+// SetMeta gets a reference to the given PaginationMeta and assigns it to the Meta field.
+func (o *InlineResponse20011) SetMeta(v PaginationMeta) {
 	o.Meta = &v
 }
 

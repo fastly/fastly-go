@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**[]KvStoreDetails**](KvStoreDetails.md) |  | [optional] 
-**Meta** | Pointer to [**PaginationCursorMeta**](PaginationCursorMeta.md) |  | [optional] 
+**Data** | Pointer to [**[]SecurityHeader**](SecurityHeader.md) |  | [optional] 
+**Meta** | Pointer to [**PaginationMeta**](PaginationMeta.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *InlineResponse20010) GetData() []KvStoreDetails`
+`func (o *InlineResponse20010) GetData() []SecurityHeader`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *InlineResponse20010) GetDataOk() (*[]KvStoreDetails, bool)`
+`func (o *InlineResponse20010) GetDataOk() (*[]SecurityHeader, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *InlineResponse20010) SetData(v []KvStoreDetails)`
+`func (o *InlineResponse20010) SetData(v []SecurityHeader)`
 
 SetData sets Data field to given value.
 
@@ -53,20 +53,20 @@ HasData returns a boolean if a field has been set.
 
 ### GetMeta
 
-`func (o *InlineResponse20010) GetMeta() PaginationCursorMeta`
+`func (o *InlineResponse20010) GetMeta() PaginationMeta`
 
 GetMeta returns the Meta field if non-nil, zero value otherwise.
 
 ### GetMetaOk
 
-`func (o *InlineResponse20010) GetMetaOk() (*PaginationCursorMeta, bool)`
+`func (o *InlineResponse20010) GetMetaOk() (*PaginationMeta, bool)`
 
 GetMetaOk returns a tuple with the Meta field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMeta
 
-`func (o *InlineResponse20010) SetMeta(v PaginationCursorMeta)`
+`func (o *InlineResponse20010) SetMeta(v PaginationMeta)`
 
 SetMeta sets Meta field to given value.
 

@@ -82,7 +82,7 @@ func NewLoggingSftpResponse() *LoggingSftpResponse {
 	this.LogProcessingRegion = &logProcessingRegion
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
-	var messageType string = "classic"
+	var messageType string = "blank"
 	this.MessageType = &messageType
 	var path string = "null"
 	this.Path = *NewNullableString(&path)
@@ -110,7 +110,7 @@ func NewLoggingSftpResponseWithDefaults() *LoggingSftpResponse {
 	this.LogProcessingRegion = &logProcessingRegion
 	var formatVersion string = "2"
 	this.FormatVersion = &formatVersion
-	var messageType string = "classic"
+	var messageType string = "blank"
 	this.MessageType = &messageType
 	var path string = "null"
 	this.Path = *NewNullableString(&path)

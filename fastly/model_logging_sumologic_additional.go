@@ -32,7 +32,7 @@ type _LoggingSumologicAdditional LoggingSumologicAdditional
 // will change when the set of required properties is changed
 func NewLoggingSumologicAdditional() *LoggingSumologicAdditional {
 	this := LoggingSumologicAdditional{}
-	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_CLASSIC
+	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_BLANK
 	this.MessageType = &messageType
 	return &this
 }
@@ -42,7 +42,7 @@ func NewLoggingSumologicAdditional() *LoggingSumologicAdditional {
 // but it doesn't guarantee that properties required by API are set
 func NewLoggingSumologicAdditionalWithDefaults() *LoggingSumologicAdditional {
 	this := LoggingSumologicAdditional{}
-	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_CLASSIC
+	var messageType LoggingMessageType = LOGGINGMESSAGETYPE_BLANK
 	this.MessageType = &messageType
 	return &this
 }

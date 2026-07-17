@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ServiceId** | Pointer to **NullableString** | The `service_id` associated with your domain or `null` if there is no association. | [optional] 
+**RoutingConfigurationId** | Pointer to **NullableString** | The `routing_configuration_id` associated with your domain or `null` if there is no association. | [optional] 
 **Description** | Pointer to **string** | A freeform descriptive note. | [optional] 
 
 ## Methods
@@ -61,6 +62,41 @@ HasServiceId returns a boolean if a field has been set.
 `func (o *RequestBodyForUpdate) UnsetServiceId()`
 
 UnsetServiceId ensures that no value is present for ServiceId, not even an explicit nil
+### GetRoutingConfigurationId
+
+`func (o *RequestBodyForUpdate) GetRoutingConfigurationId() string`
+
+GetRoutingConfigurationId returns the RoutingConfigurationId field if non-nil, zero value otherwise.
+
+### GetRoutingConfigurationIdOk
+
+`func (o *RequestBodyForUpdate) GetRoutingConfigurationIdOk() (*string, bool)`
+
+GetRoutingConfigurationIdOk returns a tuple with the RoutingConfigurationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoutingConfigurationId
+
+`func (o *RequestBodyForUpdate) SetRoutingConfigurationId(v string)`
+
+SetRoutingConfigurationId sets RoutingConfigurationId field to given value.
+
+### HasRoutingConfigurationId
+
+`func (o *RequestBodyForUpdate) HasRoutingConfigurationId() bool`
+
+HasRoutingConfigurationId returns a boolean if a field has been set.
+
+### SetRoutingConfigurationIdNil
+
+`func (o *RequestBodyForUpdate) SetRoutingConfigurationIdNil(b bool)`
+
+ SetRoutingConfigurationIdNil sets the value for RoutingConfigurationId to be an explicit nil
+
+### UnsetRoutingConfigurationId
+`func (o *RequestBodyForUpdate) UnsetRoutingConfigurationId()`
+
+UnsetRoutingConfigurationId ensures that no value is present for RoutingConfigurationId, not even an explicit nil
 ### GetDescription
 
 `func (o *RequestBodyForUpdate) GetDescription() string`

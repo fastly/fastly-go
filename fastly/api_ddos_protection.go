@@ -57,8 +57,8 @@ type DdosProtectionAPI interface {
 	DdosProtectionEventList(ctx context.Context) APIDdosProtectionEventListRequest
 
 	// DdosProtectionEventListExecute executes the request
-	//  @return InlineResponse2005
-	DdosProtectionEventListExecute(r APIDdosProtectionEventListRequest) (*InlineResponse2005, *http.Response, error)
+	//  @return InlineResponse20012
+	DdosProtectionEventListExecute(r APIDdosProtectionEventListRequest) (*InlineResponse20012, *http.Response, error)
 
 	/*
 		DdosProtectionEventRuleList Get all rules for an event
@@ -72,8 +72,8 @@ type DdosProtectionAPI interface {
 	DdosProtectionEventRuleList(ctx context.Context, eventId string) APIDdosProtectionEventRuleListRequest
 
 	// DdosProtectionEventRuleListExecute executes the request
-	//  @return InlineResponse2006
-	DdosProtectionEventRuleListExecute(r APIDdosProtectionEventRuleListRequest) (*InlineResponse2006, *http.Response, error)
+	//  @return InlineResponse20013
+	DdosProtectionEventRuleListExecute(r APIDdosProtectionEventRuleListRequest) (*InlineResponse20013, *http.Response, error)
 
 	/*
 		DdosProtectionRuleGet Get a rule by ID
@@ -325,7 +325,7 @@ func (r *APIDdosProtectionEventListRequest) Name(name string) *APIDdosProtection
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDdosProtectionEventListRequest) Execute() (*InlineResponse2005, *http.Response, error) {
+func (r APIDdosProtectionEventListRequest) Execute() (*InlineResponse20012, *http.Response, error) {
 	return r.APIService.DdosProtectionEventListExecute(r)
 }
 
@@ -345,13 +345,13 @@ func (a *DdosProtectionAPIService) DdosProtectionEventList(ctx context.Context) 
 }
 
 // DdosProtectionEventListExecute executes the request
-//  @return InlineResponse2005
-func (a *DdosProtectionAPIService) DdosProtectionEventListExecute(r APIDdosProtectionEventListRequest) (*InlineResponse2005, *http.Response, error) {
+//  @return InlineResponse20012
+func (a *DdosProtectionAPIService) DdosProtectionEventListExecute(r APIDdosProtectionEventListRequest) (*InlineResponse20012, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse2005
+		localVarReturnValue *InlineResponse20012
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DdosProtectionAPIService.DdosProtectionEventList")
@@ -512,7 +512,7 @@ func (r *APIDdosProtectionEventRuleListRequest) Include(include string) *APIDdos
 }
 
 // Execute calls the API using the request data configured.
-func (r APIDdosProtectionEventRuleListRequest) Execute() (*InlineResponse2006, *http.Response, error) {
+func (r APIDdosProtectionEventRuleListRequest) Execute() (*InlineResponse20013, *http.Response, error) {
 	return r.APIService.DdosProtectionEventRuleListExecute(r)
 }
 
@@ -534,13 +534,13 @@ func (a *DdosProtectionAPIService) DdosProtectionEventRuleList(ctx context.Conte
 }
 
 // DdosProtectionEventRuleListExecute executes the request
-//  @return InlineResponse2006
-func (a *DdosProtectionAPIService) DdosProtectionEventRuleListExecute(r APIDdosProtectionEventRuleListRequest) (*InlineResponse2006, *http.Response, error) {
+//  @return InlineResponse20013
+func (a *DdosProtectionAPIService) DdosProtectionEventRuleListExecute(r APIDdosProtectionEventRuleListRequest) (*InlineResponse20013, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *InlineResponse2006
+		localVarReturnValue *InlineResponse20013
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DdosProtectionAPIService.DdosProtectionEventRuleList")

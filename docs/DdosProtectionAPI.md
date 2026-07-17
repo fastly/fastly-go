@@ -116,7 +116,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DdosProtectionAPI.DdosProtectionEventList`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DdosProtectionEventList`: InlineResponse2005
+    // response from `DdosProtectionEventList`: InlineResponse20012
     fmt.Fprintf(os.Stdout, "Response from `DdosProtectionAPI.DdosProtectionEventList`: %v\n", resp)
 }
 ```
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2005**](InlineResponse2005.md)
+[**InlineResponse20012**](InlineResponse20012.md)
 
 ### Authorization
 
@@ -182,7 +182,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DdosProtectionAPI.DdosProtectionEventRuleList`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `DdosProtectionEventRuleList`: InlineResponse2006
+    // response from `DdosProtectionEventRuleList`: InlineResponse20013
     fmt.Fprintf(os.Stdout, "Response from `DdosProtectionAPI.DdosProtectionEventRuleList`: %v\n", resp)
 }
 ```
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2006**](InlineResponse2006.md)
+[**InlineResponse20013**](InlineResponse20013.md)
 
 ### Authorization
 

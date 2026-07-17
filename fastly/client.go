@@ -85,6 +85,8 @@ type APIClient struct {
 
 	CacheSettingsAPI CacheSettingsAPI
 
+	ClientSideProtectionAPI ClientSideProtectionAPI
+
 	ConditionAPI ConditionAPI
 
 	ConfigStoreAPI ConfigStoreAPI
@@ -114,6 +116,8 @@ type APIClient struct {
 	DirectorBackendAPI DirectorBackendAPI
 
 	DmDomainsAPI DmDomainsAPI
+
+	DmRoutingConfigsAPI DmRoutingConfigsAPI
 
 	DomainAPI DomainAPI
 
@@ -215,7 +219,11 @@ type APIClient struct {
 
 	MutualAuthenticationAPI MutualAuthenticationAPI
 
+	NgwafAgentKeysAPI NgwafAgentKeysAPI
+
 	NgwafReportsAPI NgwafReportsAPI
+
+	NgwafSimulateAPI NgwafSimulateAPI
 
 	ObjectStorageAccessKeysAPI ObjectStorageAccessKeysAPI
 
@@ -250,6 +258,8 @@ type APIClient struct {
 	ProductFanoutAPI ProductFanoutAPI
 
 	ProductImageOptimizerAPI ProductImageOptimizerAPI
+
+	ProductKvStoreAPI ProductKvStoreAPI
 
 	ProductLogExplorerInsightsAPI ProductLogExplorerInsightsAPI
 
@@ -354,6 +364,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.BillingInvoicesAPI = (*BillingInvoicesAPIService)(&c.common)
 	c.BillingUsageMetricsAPI = (*BillingUsageMetricsAPIService)(&c.common)
 	c.CacheSettingsAPI = (*CacheSettingsAPIService)(&c.common)
+	c.ClientSideProtectionAPI = (*ClientSideProtectionAPIService)(&c.common)
 	c.ConditionAPI = (*ConditionAPIService)(&c.common)
 	c.ConfigStoreAPI = (*ConfigStoreAPIService)(&c.common)
 	c.ConfigStoreItemAPI = (*ConfigStoreItemAPIService)(&c.common)
@@ -369,6 +380,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.DirectorAPI = (*DirectorAPIService)(&c.common)
 	c.DirectorBackendAPI = (*DirectorBackendAPIService)(&c.common)
 	c.DmDomainsAPI = (*DmDomainsAPIService)(&c.common)
+	c.DmRoutingConfigsAPI = (*DmRoutingConfigsAPIService)(&c.common)
 	c.DomainAPI = (*DomainAPIService)(&c.common)
 	c.DomainInspectorHistoricalAPI = (*DomainInspectorHistoricalAPIService)(&c.common)
 	c.DomainInspectorRealtimeAPI = (*DomainInspectorRealtimeAPIService)(&c.common)
@@ -419,7 +431,9 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingSyslogAPI = (*LoggingSyslogAPIService)(&c.common)
 	c.MetricsPlatformAPI = (*MetricsPlatformAPIService)(&c.common)
 	c.MutualAuthenticationAPI = (*MutualAuthenticationAPIService)(&c.common)
+	c.NgwafAgentKeysAPI = (*NgwafAgentKeysAPIService)(&c.common)
 	c.NgwafReportsAPI = (*NgwafReportsAPIService)(&c.common)
+	c.NgwafSimulateAPI = (*NgwafSimulateAPIService)(&c.common)
 	c.ObjectStorageAccessKeysAPI = (*ObjectStorageAccessKeysAPIService)(&c.common)
 	c.ObservabilityCustomDashboardsAPI = (*ObservabilityCustomDashboardsAPIService)(&c.common)
 	c.ObservabilityTimeseriesAPI = (*ObservabilityTimeseriesAPIService)(&c.common)
@@ -437,6 +451,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ProductDomainResearchAPI = (*ProductDomainResearchAPIService)(&c.common)
 	c.ProductFanoutAPI = (*ProductFanoutAPIService)(&c.common)
 	c.ProductImageOptimizerAPI = (*ProductImageOptimizerAPIService)(&c.common)
+	c.ProductKvStoreAPI = (*ProductKvStoreAPIService)(&c.common)
 	c.ProductLogExplorerInsightsAPI = (*ProductLogExplorerInsightsAPIService)(&c.common)
 	c.ProductNgwafAPI = (*ProductNgwafAPIService)(&c.common)
 	c.ProductObjectStorageAPI = (*ProductObjectStorageAPIService)(&c.common)

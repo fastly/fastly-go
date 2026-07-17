@@ -92,12 +92,6 @@ type RealtimeMeasurements struct {
 	BereqHeaderBytes *int64 `json:"bereq_header_bytes,omitempty"`
 	// Total body bytes sent to origin.
 	BereqBodyBytes *int64 `json:"bereq_body_bytes,omitempty"`
-	// Number of requests that triggered a WAF rule and were blocked.
-	WafBlocked *int64 `json:"waf_blocked,omitempty"`
-	// Number of requests that triggered a WAF rule and were logged.
-	WafLogged *int64 `json:"waf_logged,omitempty"`
-	// Number of requests that triggered a WAF rule and were passed.
-	WafPassed *int64 `json:"waf_passed,omitempty"`
 	// Total header bytes received from requests that triggered a WAF rule.
 	AttackReqHeaderBytes *int64 `json:"attack_req_header_bytes,omitempty"`
 	// Total body bytes received from requests that triggered a WAF rule.
@@ -637,7 +631,75 @@ type RealtimeMeasurements struct {
 	ComputeServiceLimitsError *int32 `json:"compute_service_limits_error,omitempty"`
 	// Fatal errors caused by unprocessable requests to the service, such as requests with malformed CDN-Loop headers or invalid purge credentials.
 	ComputePlatformInvalidRequestError *int32 `json:"compute_platform_invalid_request_error,omitempty"`
-	AdditionalProperties               map[string]any
+	// Number of WebAssembly (Wasm) sandboxes created.
+	ComputeSandboxes *int32 `json:"compute_sandboxes,omitempty"`
+	// Total number of Bot Management requests across all deployments.
+	BotRequestsTotalCount *int32 `json:"bot_requests_total_count,omitempty"`
+	// Count of edge requests where bot detection analysis was performed.
+	BotEdgeRequestsAnalyzedCount *int32 `json:"bot_edge_requests_analyzed_count,omitempty"`
+	// Count of edge requests where a bot was detected.
+	BotEdgeRequestsDetectedCount *int32 `json:"bot_edge_requests_detected_count,omitempty"`
+	// Count of edge requests where a verified bot was detected.
+	BotEdgeRequestsVerifiedCount *int32 `json:"bot_edge_requests_verified_count,omitempty"`
+	// Count of edge requests where an AI crawler was detected.
+	BotEdgeRequestsAiCrawlerCount *int32 `json:"bot_edge_requests_ai_crawler_count,omitempty"`
+	// Count of edge requests where an AI fetcher was detected.
+	BotEdgeRequestsAiFetcherCount *int32 `json:"bot_edge_requests_ai_fetcher_count,omitempty"`
+	// Count of edge requests where an accessibility bot was detected.
+	BotEdgeRequestsAccessibilityCount *int32 `json:"bot_edge_requests_accessibility_count,omitempty"`
+	// Count of edge requests where a content fetcher was detected.
+	BotEdgeRequestsContentFetcherCount *int32 `json:"bot_edge_requests_content_fetcher_count,omitempty"`
+	// Count of edge requests where a monitoring and site tool was detected.
+	BotEdgeRequestsMonitoringCount *int32 `json:"bot_edge_requests_monitoring_count,omitempty"`
+	// Count of edge requests where an online marketing bot was detected.
+	BotEdgeRequestsOnlineMarketingCount *int32 `json:"bot_edge_requests_online_marketing_count,omitempty"`
+	// Count of edge requests where a page preview bot was detected.
+	BotEdgeRequestsPagePreviewCount *int32 `json:"bot_edge_requests_page_preview_count,omitempty"`
+	// Count of edge requests where a platform integration was detected.
+	BotEdgeRequestsPlatformIntegrationsCount *int32 `json:"bot_edge_requests_platform_integrations_count,omitempty"`
+	// Count of edge requests where a research bot was detected.
+	BotEdgeRequestsResearchCount *int32 `json:"bot_edge_requests_research_count,omitempty"`
+	// Count of edge requests where a search engine crawler was detected.
+	BotEdgeRequestsSearchEngineCrawlerCount *int32 `json:"bot_edge_requests_search_engine_crawler_count,omitempty"`
+	// Count of edge requests where a search engine optimization bot was detected.
+	BotEdgeRequestsSearchEngineOptimizationCount *int32 `json:"bot_edge_requests_search_engine_optimization_count,omitempty"`
+	// Count of edge requests where a security tool was detected.
+	BotEdgeRequestsSecurityToolsCount *int32 `json:"bot_edge_requests_security_tools_count,omitempty"`
+	// The number of times Compute has handed off a request to the Fanout proxy or WebSocket proxy.
+	ComputeHandoff *int32 `json:"compute_handoff,omitempty"`
+	// Number of backend requests from a Compute service that failed during DNS resolution.
+	ComputeServiceBereqDnsError *int32 `json:"compute_service_bereq_dns_error,omitempty"`
+	// Number of backend requests from a Compute service where the connection to the origin timed out before being established.
+	ComputeServiceBereqConnTimeoutError *int32 `json:"compute_service_bereq_conn_timeout_error,omitempty"`
+	// Number of backend requests from a Compute service where the origin actively refused the connection.
+	ComputeServiceBereqConnRefusedError *int32 `json:"compute_service_bereq_conn_refused_error,omitempty"`
+	// Number of backend requests from a Compute service that failed due to a connection error not classified as a timeout or refusal.
+	ComputeServiceBereqConnOtherError *int32 `json:"compute_service_bereq_conn_other_error,omitempty"`
+	// Number of backend requests from a Compute service that failed due to a TLS certificate validation error (e.g., expired, untrusted CA, hostname mismatch).
+	ComputeServiceBereqTlsServerCertError *int32 `json:"compute_service_bereq_tls_server_cert_error,omitempty"`
+	// Number of backend requests from a Compute service that failed due to a TLS error not classified as a certificate error.
+	ComputeServiceBereqTlsOtherError *int32 `json:"compute_service_bereq_tls_other_error,omitempty"`
+	// Number of backend requests from a Compute service that failed due to an HTTP/1.x protocol violation after the request was transmitted.
+	ComputeServiceBereqHttpProtoV1Error *int32 `json:"compute_service_bereq_http_proto_v1_error,omitempty"`
+	// Number of backend requests from a Compute service that failed due to an HTTP/2 protocol error, typically a `RST_STREAM` or `GO_AWAY` from the origin.
+	ComputeServiceBereqHttpProtoV2Error *int32 `json:"compute_service_bereq_http_proto_v2_error,omitempty"`
+	// Number of backend requests from a Compute service where the origin sent an incomplete HTTP response.
+	ComputeServiceBereqHttpIncompleteError *int32 `json:"compute_service_bereq_http_incomplete_error,omitempty"`
+	// Number of backend requests from a Compute service where the origin did not respond within the configured timeout period.
+	ComputeServiceBereqHttpTimeoutError *int32 `json:"compute_service_bereq_http_timeout_error,omitempty"`
+	// Number of backend requests from a Compute service that failed due to an HTTP-level error not classified in any category.
+	ComputeServiceBereqHttpOtherError *int32 `json:"compute_service_bereq_http_other_error,omitempty"`
+	// Number of backend requests from a Compute service that failed due to an error not classified into the DNS, connection, TLS, or HTTP categories.
+	ComputeServiceBereqOtherError *int32 `json:"compute_service_bereq_other_error,omitempty"`
+	// Number of backend requests from a Compute service where the origin returned a 5xx status code.
+	ComputeServiceBereq5xxError *int32 `json:"compute_service_bereq_5xx_error,omitempty"`
+	// Number of backend requests from a Compute service that failed at the TCP connection level. Sum of `compute_service_bereq_conn_timeout_error`, `compute_service_bereq_conn_refused_error`, and `compute_service_bereq_conn_other_error`.
+	ComputeServiceBereqConnError *int32 `json:"compute_service_bereq_conn_error,omitempty"`
+	// Number of backend requests from a Compute service that failed during the TLS handshake or session with the origin. Sum of `compute_service_bereq_tls_server_cert_error` and `compute_service_bereq_tls_other_error`.
+	ComputeServiceBereqTlsError *int32 `json:"compute_service_bereq_tls_error,omitempty"`
+	// Number of backend requests from a Compute service that failed at the HTTP protocol level. Sum of `compute_service_bereq_http_proto_v1_error`, `compute_service_bereq_http_proto_v2_error`, `compute_service_bereq_http_incomplete_error`, `compute_service_bereq_http_timeout_error`, and `compute_service_bereq_http_other_error`.
+	ComputeServiceBereqHttpError *int32 `json:"compute_service_bereq_http_error,omitempty"`
+	AdditionalProperties         map[string]any
 }
 
 type _RealtimeMeasurements RealtimeMeasurements
@@ -1841,102 +1903,6 @@ func (o *RealtimeMeasurements) HasBereqBodyBytes() bool {
 // SetBereqBodyBytes gets a reference to the given int64 and assigns it to the BereqBodyBytes field.
 func (o *RealtimeMeasurements) SetBereqBodyBytes(v int64) {
 	o.BereqBodyBytes = &v
-}
-
-// GetWafBlocked returns the WafBlocked field value if set, zero value otherwise.
-func (o *RealtimeMeasurements) GetWafBlocked() int64 {
-	if o == nil || o.WafBlocked == nil {
-		var ret int64
-		return ret
-	}
-	return *o.WafBlocked
-}
-
-// GetWafBlockedOk returns a tuple with the WafBlocked field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RealtimeMeasurements) GetWafBlockedOk() (*int64, bool) {
-	if o == nil || o.WafBlocked == nil {
-		return nil, false
-	}
-	return o.WafBlocked, true
-}
-
-// HasWafBlocked returns a boolean if a field has been set.
-func (o *RealtimeMeasurements) HasWafBlocked() bool {
-	if o != nil && o.WafBlocked != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetWafBlocked gets a reference to the given int64 and assigns it to the WafBlocked field.
-func (o *RealtimeMeasurements) SetWafBlocked(v int64) {
-	o.WafBlocked = &v
-}
-
-// GetWafLogged returns the WafLogged field value if set, zero value otherwise.
-func (o *RealtimeMeasurements) GetWafLogged() int64 {
-	if o == nil || o.WafLogged == nil {
-		var ret int64
-		return ret
-	}
-	return *o.WafLogged
-}
-
-// GetWafLoggedOk returns a tuple with the WafLogged field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RealtimeMeasurements) GetWafLoggedOk() (*int64, bool) {
-	if o == nil || o.WafLogged == nil {
-		return nil, false
-	}
-	return o.WafLogged, true
-}
-
-// HasWafLogged returns a boolean if a field has been set.
-func (o *RealtimeMeasurements) HasWafLogged() bool {
-	if o != nil && o.WafLogged != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetWafLogged gets a reference to the given int64 and assigns it to the WafLogged field.
-func (o *RealtimeMeasurements) SetWafLogged(v int64) {
-	o.WafLogged = &v
-}
-
-// GetWafPassed returns the WafPassed field value if set, zero value otherwise.
-func (o *RealtimeMeasurements) GetWafPassed() int64 {
-	if o == nil || o.WafPassed == nil {
-		var ret int64
-		return ret
-	}
-	return *o.WafPassed
-}
-
-// GetWafPassedOk returns a tuple with the WafPassed field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *RealtimeMeasurements) GetWafPassedOk() (*int64, bool) {
-	if o == nil || o.WafPassed == nil {
-		return nil, false
-	}
-	return o.WafPassed, true
-}
-
-// HasWafPassed returns a boolean if a field has been set.
-func (o *RealtimeMeasurements) HasWafPassed() bool {
-	if o != nil && o.WafPassed != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetWafPassed gets a reference to the given int64 and assigns it to the WafPassed field.
-func (o *RealtimeMeasurements) SetWafPassed(v int64) {
-	o.WafPassed = &v
 }
 
 // GetAttackReqHeaderBytes returns the AttackReqHeaderBytes field value if set, zero value otherwise.
@@ -10446,6 +10412,1094 @@ func (o *RealtimeMeasurements) SetComputePlatformInvalidRequestError(v int32) {
 	o.ComputePlatformInvalidRequestError = &v
 }
 
+// GetComputeSandboxes returns the ComputeSandboxes field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeSandboxes() int32 {
+	if o == nil || o.ComputeSandboxes == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeSandboxes
+}
+
+// GetComputeSandboxesOk returns a tuple with the ComputeSandboxes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeSandboxesOk() (*int32, bool) {
+	if o == nil || o.ComputeSandboxes == nil {
+		return nil, false
+	}
+	return o.ComputeSandboxes, true
+}
+
+// HasComputeSandboxes returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeSandboxes() bool {
+	if o != nil && o.ComputeSandboxes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeSandboxes gets a reference to the given int32 and assigns it to the ComputeSandboxes field.
+func (o *RealtimeMeasurements) SetComputeSandboxes(v int32) {
+	o.ComputeSandboxes = &v
+}
+
+// GetBotRequestsTotalCount returns the BotRequestsTotalCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotRequestsTotalCount() int32 {
+	if o == nil || o.BotRequestsTotalCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotRequestsTotalCount
+}
+
+// GetBotRequestsTotalCountOk returns a tuple with the BotRequestsTotalCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotRequestsTotalCountOk() (*int32, bool) {
+	if o == nil || o.BotRequestsTotalCount == nil {
+		return nil, false
+	}
+	return o.BotRequestsTotalCount, true
+}
+
+// HasBotRequestsTotalCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotRequestsTotalCount() bool {
+	if o != nil && o.BotRequestsTotalCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotRequestsTotalCount gets a reference to the given int32 and assigns it to the BotRequestsTotalCount field.
+func (o *RealtimeMeasurements) SetBotRequestsTotalCount(v int32) {
+	o.BotRequestsTotalCount = &v
+}
+
+// GetBotEdgeRequestsAnalyzedCount returns the BotEdgeRequestsAnalyzedCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsAnalyzedCount() int32 {
+	if o == nil || o.BotEdgeRequestsAnalyzedCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsAnalyzedCount
+}
+
+// GetBotEdgeRequestsAnalyzedCountOk returns a tuple with the BotEdgeRequestsAnalyzedCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsAnalyzedCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsAnalyzedCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsAnalyzedCount, true
+}
+
+// HasBotEdgeRequestsAnalyzedCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsAnalyzedCount() bool {
+	if o != nil && o.BotEdgeRequestsAnalyzedCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsAnalyzedCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsAnalyzedCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsAnalyzedCount(v int32) {
+	o.BotEdgeRequestsAnalyzedCount = &v
+}
+
+// GetBotEdgeRequestsDetectedCount returns the BotEdgeRequestsDetectedCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsDetectedCount() int32 {
+	if o == nil || o.BotEdgeRequestsDetectedCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsDetectedCount
+}
+
+// GetBotEdgeRequestsDetectedCountOk returns a tuple with the BotEdgeRequestsDetectedCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsDetectedCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsDetectedCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsDetectedCount, true
+}
+
+// HasBotEdgeRequestsDetectedCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsDetectedCount() bool {
+	if o != nil && o.BotEdgeRequestsDetectedCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsDetectedCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsDetectedCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsDetectedCount(v int32) {
+	o.BotEdgeRequestsDetectedCount = &v
+}
+
+// GetBotEdgeRequestsVerifiedCount returns the BotEdgeRequestsVerifiedCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsVerifiedCount() int32 {
+	if o == nil || o.BotEdgeRequestsVerifiedCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsVerifiedCount
+}
+
+// GetBotEdgeRequestsVerifiedCountOk returns a tuple with the BotEdgeRequestsVerifiedCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsVerifiedCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsVerifiedCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsVerifiedCount, true
+}
+
+// HasBotEdgeRequestsVerifiedCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsVerifiedCount() bool {
+	if o != nil && o.BotEdgeRequestsVerifiedCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsVerifiedCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsVerifiedCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsVerifiedCount(v int32) {
+	o.BotEdgeRequestsVerifiedCount = &v
+}
+
+// GetBotEdgeRequestsAiCrawlerCount returns the BotEdgeRequestsAiCrawlerCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsAiCrawlerCount() int32 {
+	if o == nil || o.BotEdgeRequestsAiCrawlerCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsAiCrawlerCount
+}
+
+// GetBotEdgeRequestsAiCrawlerCountOk returns a tuple with the BotEdgeRequestsAiCrawlerCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsAiCrawlerCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsAiCrawlerCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsAiCrawlerCount, true
+}
+
+// HasBotEdgeRequestsAiCrawlerCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsAiCrawlerCount() bool {
+	if o != nil && o.BotEdgeRequestsAiCrawlerCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsAiCrawlerCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsAiCrawlerCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsAiCrawlerCount(v int32) {
+	o.BotEdgeRequestsAiCrawlerCount = &v
+}
+
+// GetBotEdgeRequestsAiFetcherCount returns the BotEdgeRequestsAiFetcherCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsAiFetcherCount() int32 {
+	if o == nil || o.BotEdgeRequestsAiFetcherCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsAiFetcherCount
+}
+
+// GetBotEdgeRequestsAiFetcherCountOk returns a tuple with the BotEdgeRequestsAiFetcherCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsAiFetcherCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsAiFetcherCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsAiFetcherCount, true
+}
+
+// HasBotEdgeRequestsAiFetcherCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsAiFetcherCount() bool {
+	if o != nil && o.BotEdgeRequestsAiFetcherCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsAiFetcherCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsAiFetcherCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsAiFetcherCount(v int32) {
+	o.BotEdgeRequestsAiFetcherCount = &v
+}
+
+// GetBotEdgeRequestsAccessibilityCount returns the BotEdgeRequestsAccessibilityCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsAccessibilityCount() int32 {
+	if o == nil || o.BotEdgeRequestsAccessibilityCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsAccessibilityCount
+}
+
+// GetBotEdgeRequestsAccessibilityCountOk returns a tuple with the BotEdgeRequestsAccessibilityCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsAccessibilityCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsAccessibilityCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsAccessibilityCount, true
+}
+
+// HasBotEdgeRequestsAccessibilityCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsAccessibilityCount() bool {
+	if o != nil && o.BotEdgeRequestsAccessibilityCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsAccessibilityCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsAccessibilityCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsAccessibilityCount(v int32) {
+	o.BotEdgeRequestsAccessibilityCount = &v
+}
+
+// GetBotEdgeRequestsContentFetcherCount returns the BotEdgeRequestsContentFetcherCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsContentFetcherCount() int32 {
+	if o == nil || o.BotEdgeRequestsContentFetcherCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsContentFetcherCount
+}
+
+// GetBotEdgeRequestsContentFetcherCountOk returns a tuple with the BotEdgeRequestsContentFetcherCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsContentFetcherCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsContentFetcherCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsContentFetcherCount, true
+}
+
+// HasBotEdgeRequestsContentFetcherCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsContentFetcherCount() bool {
+	if o != nil && o.BotEdgeRequestsContentFetcherCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsContentFetcherCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsContentFetcherCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsContentFetcherCount(v int32) {
+	o.BotEdgeRequestsContentFetcherCount = &v
+}
+
+// GetBotEdgeRequestsMonitoringCount returns the BotEdgeRequestsMonitoringCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsMonitoringCount() int32 {
+	if o == nil || o.BotEdgeRequestsMonitoringCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsMonitoringCount
+}
+
+// GetBotEdgeRequestsMonitoringCountOk returns a tuple with the BotEdgeRequestsMonitoringCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsMonitoringCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsMonitoringCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsMonitoringCount, true
+}
+
+// HasBotEdgeRequestsMonitoringCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsMonitoringCount() bool {
+	if o != nil && o.BotEdgeRequestsMonitoringCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsMonitoringCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsMonitoringCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsMonitoringCount(v int32) {
+	o.BotEdgeRequestsMonitoringCount = &v
+}
+
+// GetBotEdgeRequestsOnlineMarketingCount returns the BotEdgeRequestsOnlineMarketingCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsOnlineMarketingCount() int32 {
+	if o == nil || o.BotEdgeRequestsOnlineMarketingCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsOnlineMarketingCount
+}
+
+// GetBotEdgeRequestsOnlineMarketingCountOk returns a tuple with the BotEdgeRequestsOnlineMarketingCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsOnlineMarketingCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsOnlineMarketingCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsOnlineMarketingCount, true
+}
+
+// HasBotEdgeRequestsOnlineMarketingCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsOnlineMarketingCount() bool {
+	if o != nil && o.BotEdgeRequestsOnlineMarketingCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsOnlineMarketingCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsOnlineMarketingCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsOnlineMarketingCount(v int32) {
+	o.BotEdgeRequestsOnlineMarketingCount = &v
+}
+
+// GetBotEdgeRequestsPagePreviewCount returns the BotEdgeRequestsPagePreviewCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsPagePreviewCount() int32 {
+	if o == nil || o.BotEdgeRequestsPagePreviewCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsPagePreviewCount
+}
+
+// GetBotEdgeRequestsPagePreviewCountOk returns a tuple with the BotEdgeRequestsPagePreviewCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsPagePreviewCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsPagePreviewCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsPagePreviewCount, true
+}
+
+// HasBotEdgeRequestsPagePreviewCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsPagePreviewCount() bool {
+	if o != nil && o.BotEdgeRequestsPagePreviewCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsPagePreviewCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsPagePreviewCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsPagePreviewCount(v int32) {
+	o.BotEdgeRequestsPagePreviewCount = &v
+}
+
+// GetBotEdgeRequestsPlatformIntegrationsCount returns the BotEdgeRequestsPlatformIntegrationsCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsPlatformIntegrationsCount() int32 {
+	if o == nil || o.BotEdgeRequestsPlatformIntegrationsCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsPlatformIntegrationsCount
+}
+
+// GetBotEdgeRequestsPlatformIntegrationsCountOk returns a tuple with the BotEdgeRequestsPlatformIntegrationsCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsPlatformIntegrationsCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsPlatformIntegrationsCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsPlatformIntegrationsCount, true
+}
+
+// HasBotEdgeRequestsPlatformIntegrationsCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsPlatformIntegrationsCount() bool {
+	if o != nil && o.BotEdgeRequestsPlatformIntegrationsCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsPlatformIntegrationsCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsPlatformIntegrationsCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsPlatformIntegrationsCount(v int32) {
+	o.BotEdgeRequestsPlatformIntegrationsCount = &v
+}
+
+// GetBotEdgeRequestsResearchCount returns the BotEdgeRequestsResearchCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsResearchCount() int32 {
+	if o == nil || o.BotEdgeRequestsResearchCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsResearchCount
+}
+
+// GetBotEdgeRequestsResearchCountOk returns a tuple with the BotEdgeRequestsResearchCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsResearchCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsResearchCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsResearchCount, true
+}
+
+// HasBotEdgeRequestsResearchCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsResearchCount() bool {
+	if o != nil && o.BotEdgeRequestsResearchCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsResearchCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsResearchCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsResearchCount(v int32) {
+	o.BotEdgeRequestsResearchCount = &v
+}
+
+// GetBotEdgeRequestsSearchEngineCrawlerCount returns the BotEdgeRequestsSearchEngineCrawlerCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsSearchEngineCrawlerCount() int32 {
+	if o == nil || o.BotEdgeRequestsSearchEngineCrawlerCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsSearchEngineCrawlerCount
+}
+
+// GetBotEdgeRequestsSearchEngineCrawlerCountOk returns a tuple with the BotEdgeRequestsSearchEngineCrawlerCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsSearchEngineCrawlerCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsSearchEngineCrawlerCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsSearchEngineCrawlerCount, true
+}
+
+// HasBotEdgeRequestsSearchEngineCrawlerCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsSearchEngineCrawlerCount() bool {
+	if o != nil && o.BotEdgeRequestsSearchEngineCrawlerCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsSearchEngineCrawlerCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsSearchEngineCrawlerCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsSearchEngineCrawlerCount(v int32) {
+	o.BotEdgeRequestsSearchEngineCrawlerCount = &v
+}
+
+// GetBotEdgeRequestsSearchEngineOptimizationCount returns the BotEdgeRequestsSearchEngineOptimizationCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsSearchEngineOptimizationCount() int32 {
+	if o == nil || o.BotEdgeRequestsSearchEngineOptimizationCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsSearchEngineOptimizationCount
+}
+
+// GetBotEdgeRequestsSearchEngineOptimizationCountOk returns a tuple with the BotEdgeRequestsSearchEngineOptimizationCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsSearchEngineOptimizationCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsSearchEngineOptimizationCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsSearchEngineOptimizationCount, true
+}
+
+// HasBotEdgeRequestsSearchEngineOptimizationCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsSearchEngineOptimizationCount() bool {
+	if o != nil && o.BotEdgeRequestsSearchEngineOptimizationCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsSearchEngineOptimizationCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsSearchEngineOptimizationCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsSearchEngineOptimizationCount(v int32) {
+	o.BotEdgeRequestsSearchEngineOptimizationCount = &v
+}
+
+// GetBotEdgeRequestsSecurityToolsCount returns the BotEdgeRequestsSecurityToolsCount field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsSecurityToolsCount() int32 {
+	if o == nil || o.BotEdgeRequestsSecurityToolsCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsSecurityToolsCount
+}
+
+// GetBotEdgeRequestsSecurityToolsCountOk returns a tuple with the BotEdgeRequestsSecurityToolsCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetBotEdgeRequestsSecurityToolsCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsSecurityToolsCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsSecurityToolsCount, true
+}
+
+// HasBotEdgeRequestsSecurityToolsCount returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasBotEdgeRequestsSecurityToolsCount() bool {
+	if o != nil && o.BotEdgeRequestsSecurityToolsCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsSecurityToolsCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsSecurityToolsCount field.
+func (o *RealtimeMeasurements) SetBotEdgeRequestsSecurityToolsCount(v int32) {
+	o.BotEdgeRequestsSecurityToolsCount = &v
+}
+
+// GetComputeHandoff returns the ComputeHandoff field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeHandoff() int32 {
+	if o == nil || o.ComputeHandoff == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeHandoff
+}
+
+// GetComputeHandoffOk returns a tuple with the ComputeHandoff field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeHandoffOk() (*int32, bool) {
+	if o == nil || o.ComputeHandoff == nil {
+		return nil, false
+	}
+	return o.ComputeHandoff, true
+}
+
+// HasComputeHandoff returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeHandoff() bool {
+	if o != nil && o.ComputeHandoff != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeHandoff gets a reference to the given int32 and assigns it to the ComputeHandoff field.
+func (o *RealtimeMeasurements) SetComputeHandoff(v int32) {
+	o.ComputeHandoff = &v
+}
+
+// GetComputeServiceBereqDnsError returns the ComputeServiceBereqDnsError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqDnsError() int32 {
+	if o == nil || o.ComputeServiceBereqDnsError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqDnsError
+}
+
+// GetComputeServiceBereqDnsErrorOk returns a tuple with the ComputeServiceBereqDnsError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqDnsErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqDnsError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqDnsError, true
+}
+
+// HasComputeServiceBereqDnsError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqDnsError() bool {
+	if o != nil && o.ComputeServiceBereqDnsError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqDnsError gets a reference to the given int32 and assigns it to the ComputeServiceBereqDnsError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqDnsError(v int32) {
+	o.ComputeServiceBereqDnsError = &v
+}
+
+// GetComputeServiceBereqConnTimeoutError returns the ComputeServiceBereqConnTimeoutError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqConnTimeoutError() int32 {
+	if o == nil || o.ComputeServiceBereqConnTimeoutError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqConnTimeoutError
+}
+
+// GetComputeServiceBereqConnTimeoutErrorOk returns a tuple with the ComputeServiceBereqConnTimeoutError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqConnTimeoutErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqConnTimeoutError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqConnTimeoutError, true
+}
+
+// HasComputeServiceBereqConnTimeoutError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqConnTimeoutError() bool {
+	if o != nil && o.ComputeServiceBereqConnTimeoutError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqConnTimeoutError gets a reference to the given int32 and assigns it to the ComputeServiceBereqConnTimeoutError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqConnTimeoutError(v int32) {
+	o.ComputeServiceBereqConnTimeoutError = &v
+}
+
+// GetComputeServiceBereqConnRefusedError returns the ComputeServiceBereqConnRefusedError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqConnRefusedError() int32 {
+	if o == nil || o.ComputeServiceBereqConnRefusedError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqConnRefusedError
+}
+
+// GetComputeServiceBereqConnRefusedErrorOk returns a tuple with the ComputeServiceBereqConnRefusedError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqConnRefusedErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqConnRefusedError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqConnRefusedError, true
+}
+
+// HasComputeServiceBereqConnRefusedError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqConnRefusedError() bool {
+	if o != nil && o.ComputeServiceBereqConnRefusedError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqConnRefusedError gets a reference to the given int32 and assigns it to the ComputeServiceBereqConnRefusedError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqConnRefusedError(v int32) {
+	o.ComputeServiceBereqConnRefusedError = &v
+}
+
+// GetComputeServiceBereqConnOtherError returns the ComputeServiceBereqConnOtherError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqConnOtherError() int32 {
+	if o == nil || o.ComputeServiceBereqConnOtherError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqConnOtherError
+}
+
+// GetComputeServiceBereqConnOtherErrorOk returns a tuple with the ComputeServiceBereqConnOtherError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqConnOtherErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqConnOtherError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqConnOtherError, true
+}
+
+// HasComputeServiceBereqConnOtherError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqConnOtherError() bool {
+	if o != nil && o.ComputeServiceBereqConnOtherError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqConnOtherError gets a reference to the given int32 and assigns it to the ComputeServiceBereqConnOtherError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqConnOtherError(v int32) {
+	o.ComputeServiceBereqConnOtherError = &v
+}
+
+// GetComputeServiceBereqTlsServerCertError returns the ComputeServiceBereqTlsServerCertError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqTlsServerCertError() int32 {
+	if o == nil || o.ComputeServiceBereqTlsServerCertError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqTlsServerCertError
+}
+
+// GetComputeServiceBereqTlsServerCertErrorOk returns a tuple with the ComputeServiceBereqTlsServerCertError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqTlsServerCertErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqTlsServerCertError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqTlsServerCertError, true
+}
+
+// HasComputeServiceBereqTlsServerCertError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqTlsServerCertError() bool {
+	if o != nil && o.ComputeServiceBereqTlsServerCertError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqTlsServerCertError gets a reference to the given int32 and assigns it to the ComputeServiceBereqTlsServerCertError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqTlsServerCertError(v int32) {
+	o.ComputeServiceBereqTlsServerCertError = &v
+}
+
+// GetComputeServiceBereqTlsOtherError returns the ComputeServiceBereqTlsOtherError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqTlsOtherError() int32 {
+	if o == nil || o.ComputeServiceBereqTlsOtherError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqTlsOtherError
+}
+
+// GetComputeServiceBereqTlsOtherErrorOk returns a tuple with the ComputeServiceBereqTlsOtherError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqTlsOtherErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqTlsOtherError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqTlsOtherError, true
+}
+
+// HasComputeServiceBereqTlsOtherError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqTlsOtherError() bool {
+	if o != nil && o.ComputeServiceBereqTlsOtherError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqTlsOtherError gets a reference to the given int32 and assigns it to the ComputeServiceBereqTlsOtherError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqTlsOtherError(v int32) {
+	o.ComputeServiceBereqTlsOtherError = &v
+}
+
+// GetComputeServiceBereqHttpProtoV1Error returns the ComputeServiceBereqHttpProtoV1Error field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqHttpProtoV1Error() int32 {
+	if o == nil || o.ComputeServiceBereqHttpProtoV1Error == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqHttpProtoV1Error
+}
+
+// GetComputeServiceBereqHttpProtoV1ErrorOk returns a tuple with the ComputeServiceBereqHttpProtoV1Error field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqHttpProtoV1ErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqHttpProtoV1Error == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqHttpProtoV1Error, true
+}
+
+// HasComputeServiceBereqHttpProtoV1Error returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqHttpProtoV1Error() bool {
+	if o != nil && o.ComputeServiceBereqHttpProtoV1Error != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqHttpProtoV1Error gets a reference to the given int32 and assigns it to the ComputeServiceBereqHttpProtoV1Error field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqHttpProtoV1Error(v int32) {
+	o.ComputeServiceBereqHttpProtoV1Error = &v
+}
+
+// GetComputeServiceBereqHttpProtoV2Error returns the ComputeServiceBereqHttpProtoV2Error field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqHttpProtoV2Error() int32 {
+	if o == nil || o.ComputeServiceBereqHttpProtoV2Error == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqHttpProtoV2Error
+}
+
+// GetComputeServiceBereqHttpProtoV2ErrorOk returns a tuple with the ComputeServiceBereqHttpProtoV2Error field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqHttpProtoV2ErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqHttpProtoV2Error == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqHttpProtoV2Error, true
+}
+
+// HasComputeServiceBereqHttpProtoV2Error returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqHttpProtoV2Error() bool {
+	if o != nil && o.ComputeServiceBereqHttpProtoV2Error != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqHttpProtoV2Error gets a reference to the given int32 and assigns it to the ComputeServiceBereqHttpProtoV2Error field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqHttpProtoV2Error(v int32) {
+	o.ComputeServiceBereqHttpProtoV2Error = &v
+}
+
+// GetComputeServiceBereqHttpIncompleteError returns the ComputeServiceBereqHttpIncompleteError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqHttpIncompleteError() int32 {
+	if o == nil || o.ComputeServiceBereqHttpIncompleteError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqHttpIncompleteError
+}
+
+// GetComputeServiceBereqHttpIncompleteErrorOk returns a tuple with the ComputeServiceBereqHttpIncompleteError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqHttpIncompleteErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqHttpIncompleteError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqHttpIncompleteError, true
+}
+
+// HasComputeServiceBereqHttpIncompleteError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqHttpIncompleteError() bool {
+	if o != nil && o.ComputeServiceBereqHttpIncompleteError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqHttpIncompleteError gets a reference to the given int32 and assigns it to the ComputeServiceBereqHttpIncompleteError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqHttpIncompleteError(v int32) {
+	o.ComputeServiceBereqHttpIncompleteError = &v
+}
+
+// GetComputeServiceBereqHttpTimeoutError returns the ComputeServiceBereqHttpTimeoutError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqHttpTimeoutError() int32 {
+	if o == nil || o.ComputeServiceBereqHttpTimeoutError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqHttpTimeoutError
+}
+
+// GetComputeServiceBereqHttpTimeoutErrorOk returns a tuple with the ComputeServiceBereqHttpTimeoutError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqHttpTimeoutErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqHttpTimeoutError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqHttpTimeoutError, true
+}
+
+// HasComputeServiceBereqHttpTimeoutError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqHttpTimeoutError() bool {
+	if o != nil && o.ComputeServiceBereqHttpTimeoutError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqHttpTimeoutError gets a reference to the given int32 and assigns it to the ComputeServiceBereqHttpTimeoutError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqHttpTimeoutError(v int32) {
+	o.ComputeServiceBereqHttpTimeoutError = &v
+}
+
+// GetComputeServiceBereqHttpOtherError returns the ComputeServiceBereqHttpOtherError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqHttpOtherError() int32 {
+	if o == nil || o.ComputeServiceBereqHttpOtherError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqHttpOtherError
+}
+
+// GetComputeServiceBereqHttpOtherErrorOk returns a tuple with the ComputeServiceBereqHttpOtherError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqHttpOtherErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqHttpOtherError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqHttpOtherError, true
+}
+
+// HasComputeServiceBereqHttpOtherError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqHttpOtherError() bool {
+	if o != nil && o.ComputeServiceBereqHttpOtherError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqHttpOtherError gets a reference to the given int32 and assigns it to the ComputeServiceBereqHttpOtherError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqHttpOtherError(v int32) {
+	o.ComputeServiceBereqHttpOtherError = &v
+}
+
+// GetComputeServiceBereqOtherError returns the ComputeServiceBereqOtherError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqOtherError() int32 {
+	if o == nil || o.ComputeServiceBereqOtherError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqOtherError
+}
+
+// GetComputeServiceBereqOtherErrorOk returns a tuple with the ComputeServiceBereqOtherError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqOtherErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqOtherError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqOtherError, true
+}
+
+// HasComputeServiceBereqOtherError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqOtherError() bool {
+	if o != nil && o.ComputeServiceBereqOtherError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqOtherError gets a reference to the given int32 and assigns it to the ComputeServiceBereqOtherError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqOtherError(v int32) {
+	o.ComputeServiceBereqOtherError = &v
+}
+
+// GetComputeServiceBereq5xxError returns the ComputeServiceBereq5xxError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereq5xxError() int32 {
+	if o == nil || o.ComputeServiceBereq5xxError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereq5xxError
+}
+
+// GetComputeServiceBereq5xxErrorOk returns a tuple with the ComputeServiceBereq5xxError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereq5xxErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereq5xxError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereq5xxError, true
+}
+
+// HasComputeServiceBereq5xxError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereq5xxError() bool {
+	if o != nil && o.ComputeServiceBereq5xxError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereq5xxError gets a reference to the given int32 and assigns it to the ComputeServiceBereq5xxError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereq5xxError(v int32) {
+	o.ComputeServiceBereq5xxError = &v
+}
+
+// GetComputeServiceBereqConnError returns the ComputeServiceBereqConnError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqConnError() int32 {
+	if o == nil || o.ComputeServiceBereqConnError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqConnError
+}
+
+// GetComputeServiceBereqConnErrorOk returns a tuple with the ComputeServiceBereqConnError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqConnErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqConnError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqConnError, true
+}
+
+// HasComputeServiceBereqConnError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqConnError() bool {
+	if o != nil && o.ComputeServiceBereqConnError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqConnError gets a reference to the given int32 and assigns it to the ComputeServiceBereqConnError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqConnError(v int32) {
+	o.ComputeServiceBereqConnError = &v
+}
+
+// GetComputeServiceBereqTlsError returns the ComputeServiceBereqTlsError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqTlsError() int32 {
+	if o == nil || o.ComputeServiceBereqTlsError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqTlsError
+}
+
+// GetComputeServiceBereqTlsErrorOk returns a tuple with the ComputeServiceBereqTlsError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqTlsErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqTlsError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqTlsError, true
+}
+
+// HasComputeServiceBereqTlsError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqTlsError() bool {
+	if o != nil && o.ComputeServiceBereqTlsError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqTlsError gets a reference to the given int32 and assigns it to the ComputeServiceBereqTlsError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqTlsError(v int32) {
+	o.ComputeServiceBereqTlsError = &v
+}
+
+// GetComputeServiceBereqHttpError returns the ComputeServiceBereqHttpError field value if set, zero value otherwise.
+func (o *RealtimeMeasurements) GetComputeServiceBereqHttpError() int32 {
+	if o == nil || o.ComputeServiceBereqHttpError == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ComputeServiceBereqHttpError
+}
+
+// GetComputeServiceBereqHttpErrorOk returns a tuple with the ComputeServiceBereqHttpError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeMeasurements) GetComputeServiceBereqHttpErrorOk() (*int32, bool) {
+	if o == nil || o.ComputeServiceBereqHttpError == nil {
+		return nil, false
+	}
+	return o.ComputeServiceBereqHttpError, true
+}
+
+// HasComputeServiceBereqHttpError returns a boolean if a field has been set.
+func (o *RealtimeMeasurements) HasComputeServiceBereqHttpError() bool {
+	if o != nil && o.ComputeServiceBereqHttpError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetComputeServiceBereqHttpError gets a reference to the given int32 and assigns it to the ComputeServiceBereqHttpError field.
+func (o *RealtimeMeasurements) SetComputeServiceBereqHttpError(v int32) {
+	o.ComputeServiceBereqHttpError = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o RealtimeMeasurements) MarshalJSON() ([]byte, error) {
@@ -10560,15 +11614,6 @@ func (o RealtimeMeasurements) MarshalJSON() ([]byte, error) {
 	}
 	if o.BereqBodyBytes != nil {
 		toSerialize["bereq_body_bytes"] = o.BereqBodyBytes
-	}
-	if o.WafBlocked != nil {
-		toSerialize["waf_blocked"] = o.WafBlocked
-	}
-	if o.WafLogged != nil {
-		toSerialize["waf_logged"] = o.WafLogged
-	}
-	if o.WafPassed != nil {
-		toSerialize["waf_passed"] = o.WafPassed
 	}
 	if o.AttackReqHeaderBytes != nil {
 		toSerialize["attack_req_header_bytes"] = o.AttackReqHeaderBytes
@@ -11365,6 +12410,108 @@ func (o RealtimeMeasurements) MarshalJSON() ([]byte, error) {
 	if o.ComputePlatformInvalidRequestError != nil {
 		toSerialize["compute_platform_invalid_request_error"] = o.ComputePlatformInvalidRequestError
 	}
+	if o.ComputeSandboxes != nil {
+		toSerialize["compute_sandboxes"] = o.ComputeSandboxes
+	}
+	if o.BotRequestsTotalCount != nil {
+		toSerialize["bot_requests_total_count"] = o.BotRequestsTotalCount
+	}
+	if o.BotEdgeRequestsAnalyzedCount != nil {
+		toSerialize["bot_edge_requests_analyzed_count"] = o.BotEdgeRequestsAnalyzedCount
+	}
+	if o.BotEdgeRequestsDetectedCount != nil {
+		toSerialize["bot_edge_requests_detected_count"] = o.BotEdgeRequestsDetectedCount
+	}
+	if o.BotEdgeRequestsVerifiedCount != nil {
+		toSerialize["bot_edge_requests_verified_count"] = o.BotEdgeRequestsVerifiedCount
+	}
+	if o.BotEdgeRequestsAiCrawlerCount != nil {
+		toSerialize["bot_edge_requests_ai_crawler_count"] = o.BotEdgeRequestsAiCrawlerCount
+	}
+	if o.BotEdgeRequestsAiFetcherCount != nil {
+		toSerialize["bot_edge_requests_ai_fetcher_count"] = o.BotEdgeRequestsAiFetcherCount
+	}
+	if o.BotEdgeRequestsAccessibilityCount != nil {
+		toSerialize["bot_edge_requests_accessibility_count"] = o.BotEdgeRequestsAccessibilityCount
+	}
+	if o.BotEdgeRequestsContentFetcherCount != nil {
+		toSerialize["bot_edge_requests_content_fetcher_count"] = o.BotEdgeRequestsContentFetcherCount
+	}
+	if o.BotEdgeRequestsMonitoringCount != nil {
+		toSerialize["bot_edge_requests_monitoring_count"] = o.BotEdgeRequestsMonitoringCount
+	}
+	if o.BotEdgeRequestsOnlineMarketingCount != nil {
+		toSerialize["bot_edge_requests_online_marketing_count"] = o.BotEdgeRequestsOnlineMarketingCount
+	}
+	if o.BotEdgeRequestsPagePreviewCount != nil {
+		toSerialize["bot_edge_requests_page_preview_count"] = o.BotEdgeRequestsPagePreviewCount
+	}
+	if o.BotEdgeRequestsPlatformIntegrationsCount != nil {
+		toSerialize["bot_edge_requests_platform_integrations_count"] = o.BotEdgeRequestsPlatformIntegrationsCount
+	}
+	if o.BotEdgeRequestsResearchCount != nil {
+		toSerialize["bot_edge_requests_research_count"] = o.BotEdgeRequestsResearchCount
+	}
+	if o.BotEdgeRequestsSearchEngineCrawlerCount != nil {
+		toSerialize["bot_edge_requests_search_engine_crawler_count"] = o.BotEdgeRequestsSearchEngineCrawlerCount
+	}
+	if o.BotEdgeRequestsSearchEngineOptimizationCount != nil {
+		toSerialize["bot_edge_requests_search_engine_optimization_count"] = o.BotEdgeRequestsSearchEngineOptimizationCount
+	}
+	if o.BotEdgeRequestsSecurityToolsCount != nil {
+		toSerialize["bot_edge_requests_security_tools_count"] = o.BotEdgeRequestsSecurityToolsCount
+	}
+	if o.ComputeHandoff != nil {
+		toSerialize["compute_handoff"] = o.ComputeHandoff
+	}
+	if o.ComputeServiceBereqDnsError != nil {
+		toSerialize["compute_service_bereq_dns_error"] = o.ComputeServiceBereqDnsError
+	}
+	if o.ComputeServiceBereqConnTimeoutError != nil {
+		toSerialize["compute_service_bereq_conn_timeout_error"] = o.ComputeServiceBereqConnTimeoutError
+	}
+	if o.ComputeServiceBereqConnRefusedError != nil {
+		toSerialize["compute_service_bereq_conn_refused_error"] = o.ComputeServiceBereqConnRefusedError
+	}
+	if o.ComputeServiceBereqConnOtherError != nil {
+		toSerialize["compute_service_bereq_conn_other_error"] = o.ComputeServiceBereqConnOtherError
+	}
+	if o.ComputeServiceBereqTlsServerCertError != nil {
+		toSerialize["compute_service_bereq_tls_server_cert_error"] = o.ComputeServiceBereqTlsServerCertError
+	}
+	if o.ComputeServiceBereqTlsOtherError != nil {
+		toSerialize["compute_service_bereq_tls_other_error"] = o.ComputeServiceBereqTlsOtherError
+	}
+	if o.ComputeServiceBereqHttpProtoV1Error != nil {
+		toSerialize["compute_service_bereq_http_proto_v1_error"] = o.ComputeServiceBereqHttpProtoV1Error
+	}
+	if o.ComputeServiceBereqHttpProtoV2Error != nil {
+		toSerialize["compute_service_bereq_http_proto_v2_error"] = o.ComputeServiceBereqHttpProtoV2Error
+	}
+	if o.ComputeServiceBereqHttpIncompleteError != nil {
+		toSerialize["compute_service_bereq_http_incomplete_error"] = o.ComputeServiceBereqHttpIncompleteError
+	}
+	if o.ComputeServiceBereqHttpTimeoutError != nil {
+		toSerialize["compute_service_bereq_http_timeout_error"] = o.ComputeServiceBereqHttpTimeoutError
+	}
+	if o.ComputeServiceBereqHttpOtherError != nil {
+		toSerialize["compute_service_bereq_http_other_error"] = o.ComputeServiceBereqHttpOtherError
+	}
+	if o.ComputeServiceBereqOtherError != nil {
+		toSerialize["compute_service_bereq_other_error"] = o.ComputeServiceBereqOtherError
+	}
+	if o.ComputeServiceBereq5xxError != nil {
+		toSerialize["compute_service_bereq_5xx_error"] = o.ComputeServiceBereq5xxError
+	}
+	if o.ComputeServiceBereqConnError != nil {
+		toSerialize["compute_service_bereq_conn_error"] = o.ComputeServiceBereqConnError
+	}
+	if o.ComputeServiceBereqTlsError != nil {
+		toSerialize["compute_service_bereq_tls_error"] = o.ComputeServiceBereqTlsError
+	}
+	if o.ComputeServiceBereqHttpError != nil {
+		toSerialize["compute_service_bereq_http_error"] = o.ComputeServiceBereqHttpError
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -11422,9 +12569,6 @@ func (o *RealtimeMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "req_body_bytes")
 		delete(additionalProperties, "bereq_header_bytes")
 		delete(additionalProperties, "bereq_body_bytes")
-		delete(additionalProperties, "waf_blocked")
-		delete(additionalProperties, "waf_logged")
-		delete(additionalProperties, "waf_passed")
 		delete(additionalProperties, "attack_req_header_bytes")
 		delete(additionalProperties, "attack_req_body_bytes")
 		delete(additionalProperties, "attack_resp_synth_bytes")
@@ -11690,6 +12834,40 @@ func (o *RealtimeMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "compute_service_vcpu_exceeded_error")
 		delete(additionalProperties, "compute_service_limits_error")
 		delete(additionalProperties, "compute_platform_invalid_request_error")
+		delete(additionalProperties, "compute_sandboxes")
+		delete(additionalProperties, "bot_requests_total_count")
+		delete(additionalProperties, "bot_edge_requests_analyzed_count")
+		delete(additionalProperties, "bot_edge_requests_detected_count")
+		delete(additionalProperties, "bot_edge_requests_verified_count")
+		delete(additionalProperties, "bot_edge_requests_ai_crawler_count")
+		delete(additionalProperties, "bot_edge_requests_ai_fetcher_count")
+		delete(additionalProperties, "bot_edge_requests_accessibility_count")
+		delete(additionalProperties, "bot_edge_requests_content_fetcher_count")
+		delete(additionalProperties, "bot_edge_requests_monitoring_count")
+		delete(additionalProperties, "bot_edge_requests_online_marketing_count")
+		delete(additionalProperties, "bot_edge_requests_page_preview_count")
+		delete(additionalProperties, "bot_edge_requests_platform_integrations_count")
+		delete(additionalProperties, "bot_edge_requests_research_count")
+		delete(additionalProperties, "bot_edge_requests_search_engine_crawler_count")
+		delete(additionalProperties, "bot_edge_requests_search_engine_optimization_count")
+		delete(additionalProperties, "bot_edge_requests_security_tools_count")
+		delete(additionalProperties, "compute_handoff")
+		delete(additionalProperties, "compute_service_bereq_dns_error")
+		delete(additionalProperties, "compute_service_bereq_conn_timeout_error")
+		delete(additionalProperties, "compute_service_bereq_conn_refused_error")
+		delete(additionalProperties, "compute_service_bereq_conn_other_error")
+		delete(additionalProperties, "compute_service_bereq_tls_server_cert_error")
+		delete(additionalProperties, "compute_service_bereq_tls_other_error")
+		delete(additionalProperties, "compute_service_bereq_http_proto_v1_error")
+		delete(additionalProperties, "compute_service_bereq_http_proto_v2_error")
+		delete(additionalProperties, "compute_service_bereq_http_incomplete_error")
+		delete(additionalProperties, "compute_service_bereq_http_timeout_error")
+		delete(additionalProperties, "compute_service_bereq_http_other_error")
+		delete(additionalProperties, "compute_service_bereq_other_error")
+		delete(additionalProperties, "compute_service_bereq_5xx_error")
+		delete(additionalProperties, "compute_service_bereq_conn_error")
+		delete(additionalProperties, "compute_service_bereq_tls_error")
+		delete(additionalProperties, "compute_service_bereq_http_error")
 		o.AdditionalProperties = additionalProperties
 	}
 
