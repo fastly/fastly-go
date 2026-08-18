@@ -27,97 +27,129 @@ var (
 	_ context.Context
 )
 
-// NgwafSimulateAPI defines an interface for interacting with the resource.
-type NgwafSimulateAPI interface {
+// LoggingEndpointErrorsAPI defines an interface for interacting with the resource.
+type LoggingEndpointErrorsAPI interface {
 
 	/*
-		NgwafSimulateWafRequest Simulate a WAF request
+		GetLogEndpointErrors Stream Log Endpoint Errors
 
-		Simulates a request through the workspace's WAF configuration and returns
-	the WAF response code and any signals that would be detected. The operation
-	is stateless — no simulation data is persisted.
+		Provides a near real-time stream of log errors through a hybrid short-polling model.
+	A client should make an initial request using the `from` parameter to specify a start time.
+	The `to` parameter should be used alongside the `from` parameter since the default bucket is 10 seconds.
+
+	For pagination, use the URLs provided in the Link header of the response. These contain
+	updated `from` timestamps for retrieving the next or previous page of logs.
+
+	Defaults to `application/x-ndjson` format. Use `Accept: application/json` header
+	to request standard JSON array format instead.
 
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param workspaceId The ID of the workspace.
-		 @return APINgwafSimulateWafRequestRequest
+		 @param serviceId
+		 @return APIGetLogEndpointErrorsRequest
 	*/
-	NgwafSimulateWafRequest(ctx context.Context, workspaceId string) APINgwafSimulateWafRequestRequest
+	GetLogEndpointErrors(ctx context.Context, serviceId string) APIGetLogEndpointErrorsRequest
 
-	// NgwafSimulateWafRequestExecute executes the request
-	//  @return WafSimulateResponse
-	NgwafSimulateWafRequestExecute(r APINgwafSimulateWafRequestRequest) (*WafSimulateResponse, *http.Response, error)
+	// GetLogEndpointErrorsExecute executes the request
+	//  @return string
+	GetLogEndpointErrorsExecute(r APIGetLogEndpointErrorsRequest) (string, *http.Response, error)
 }
 
-// NgwafSimulateAPIService NgwafSimulateAPI service
-type NgwafSimulateAPIService service
+// LoggingEndpointErrorsAPIService LoggingEndpointErrorsAPI service
+type LoggingEndpointErrorsAPIService service
 
-// APINgwafSimulateWafRequestRequest represents a request for the resource.
-type APINgwafSimulateWafRequestRequest struct {
-	ctx                context.Context
-	APIService         NgwafSimulateAPI
-	workspaceId        string
-	wafSimulateRequest *WafSimulateRequest
+// APIGetLogEndpointErrorsRequest represents a request for the resource.
+type APIGetLogEndpointErrorsRequest struct {
+	ctx            context.Context
+	APIService     LoggingEndpointErrorsAPI
+	serviceId      string
+	from           *int64
+	to             *int64
+	filterEndpoint *string
 }
 
-// WafSimulateRequest returns a pointer to a request.
-func (r *APINgwafSimulateWafRequestRequest) WafSimulateRequest(wafSimulateRequest WafSimulateRequest) *APINgwafSimulateWafRequestRequest {
-	r.wafSimulateRequest = &wafSimulateRequest
+// From returns a pointer to a request.
+func (r *APIGetLogEndpointErrorsRequest) From(from int64) *APIGetLogEndpointErrorsRequest {
+	r.from = &from
+	return r
+}
+
+// To returns a pointer to a request.
+func (r *APIGetLogEndpointErrorsRequest) To(to int64) *APIGetLogEndpointErrorsRequest {
+	r.to = &to
+	return r
+}
+
+// FilterEndpoint returns a pointer to a request.
+func (r *APIGetLogEndpointErrorsRequest) FilterEndpoint(filterEndpoint string) *APIGetLogEndpointErrorsRequest {
+	r.filterEndpoint = &filterEndpoint
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APINgwafSimulateWafRequestRequest) Execute() (*WafSimulateResponse, *http.Response, error) {
-	return r.APIService.NgwafSimulateWafRequestExecute(r)
+func (r APIGetLogEndpointErrorsRequest) Execute() (string, *http.Response, error) {
+	return r.APIService.GetLogEndpointErrorsExecute(r)
 }
 
 /*
-NgwafSimulateWafRequest Simulate a WAF request
+GetLogEndpointErrors Stream Log Endpoint Errors
 
-Simulates a request through the workspace's WAF configuration and returns
-the WAF response code and any signals that would be detected. The operation
-is stateless — no simulation data is persisted.
+Provides a near real-time stream of log errors through a hybrid short-polling model.
+A client should make an initial request using the `from` parameter to specify a start time.
+The `to` parameter should be used alongside the `from` parameter since the default bucket is 10 seconds.
+
+For pagination, use the URLs provided in the Link header of the response. These contain
+updated `from` timestamps for retrieving the next or previous page of logs.
+
+Defaults to `application/x-ndjson` format. Use `Accept: application/json` header
+to request standard JSON array format instead.
 
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param workspaceId The ID of the workspace.
- @return APINgwafSimulateWafRequestRequest
+ @param serviceId
+ @return APIGetLogEndpointErrorsRequest
 */
-func (a *NgwafSimulateAPIService) NgwafSimulateWafRequest(ctx context.Context, workspaceId string) APINgwafSimulateWafRequestRequest {
-	return APINgwafSimulateWafRequestRequest{
-		APIService:  a,
-		ctx:         ctx,
-		workspaceId: workspaceId,
+func (a *LoggingEndpointErrorsAPIService) GetLogEndpointErrors(ctx context.Context, serviceId string) APIGetLogEndpointErrorsRequest {
+	return APIGetLogEndpointErrorsRequest{
+		APIService: a,
+		ctx:        ctx,
+		serviceId:  serviceId,
 	}
 }
 
-// NgwafSimulateWafRequestExecute executes the request
-//  @return WafSimulateResponse
-func (a *NgwafSimulateAPIService) NgwafSimulateWafRequestExecute(r APINgwafSimulateWafRequestRequest) (*WafSimulateResponse, *http.Response, error) {
+// GetLogEndpointErrorsExecute executes the request
+//  @return string
+func (a *LoggingEndpointErrorsAPIService) GetLogEndpointErrorsExecute(r APIGetLogEndpointErrorsRequest) (string, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
+		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
 		formFiles           []formFile
-		localVarReturnValue *WafSimulateResponse
+		localVarReturnValue string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "NgwafSimulateAPIService.NgwafSimulateWafRequest")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LoggingEndpointErrorsAPIService.GetLogEndpointErrors")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/ngwaf/v1/workspaces/{workspace_id}/simulate"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"workspace_id"+"}", gourl.PathEscape(parameterToString(r.workspaceId, "")))
+	localVarPath := localBasePath + "/observability/service/{service_id}/logging/errors"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := gourl.Values{}
 	localVarFormParams := gourl.Values{}
-	if r.wafSimulateRequest == nil {
-		return localVarReturnValue, nil, reportError("wafSimulateRequest is required and must be specified")
-	}
 
+	if r.from != nil {
+		localVarQueryParams.Add("from", parameterToString(*r.from, ""))
+	}
+	if r.to != nil {
+		localVarQueryParams.Add("to", parameterToString(*r.to, ""))
+	}
+	if r.filterEndpoint != nil {
+		localVarQueryParams.Add("filter[endpoint]", parameterToString(*r.filterEndpoint, ""))
+	}
 	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
+	localVarHTTPContentTypes := []string{}
 
 	// set Content-Type header
 	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
@@ -126,15 +158,13 @@ func (a *NgwafSimulateAPIService) NgwafSimulateWafRequestExecute(r APINgwafSimul
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
+	localVarHTTPHeaderAccepts := []string{"application/x-ndjson", "application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	// body params
-	localVarPostBody = r.wafSimulateRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -171,18 +201,8 @@ func (a *NgwafSimulateAPIService) NgwafSimulateWafRequestExecute(r APINgwafSimul
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		if localVarHTTPResponse.StatusCode == 400 {
-			var v interface{}
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
 		if localVarHTTPResponse.StatusCode == 401 {
-			var v interface{}
+			var v ErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -192,7 +212,7 @@ func (a *NgwafSimulateAPIService) NgwafSimulateWafRequestExecute(r APINgwafSimul
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
-			var v interface{}
+			var v ErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()
@@ -202,17 +222,7 @@ func (a *NgwafSimulateAPIService) NgwafSimulateWafRequestExecute(r APINgwafSimul
 			return localVarReturnValue, localVarHTTPResponse, newErr
 		}
 		if localVarHTTPResponse.StatusCode == 404 {
-			var v interface{}
-			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
-			if err != nil {
-				newErr.error = err.Error()
-				return localVarReturnValue, localVarHTTPResponse, newErr
-			}
-			newErr.model = v
-			return localVarReturnValue, localVarHTTPResponse, newErr
-		}
-		if localVarHTTPResponse.StatusCode == 429 {
-			var v interface{}
+			var v ErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

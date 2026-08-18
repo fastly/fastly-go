@@ -712,8 +712,12 @@ type Results struct {
 	// Number of backend requests from a Compute service that failed during the TLS handshake or session with the origin. Sum of `compute_service_bereq_tls_server_cert_error` and `compute_service_bereq_tls_other_error`.
 	ComputeServiceBereqTlsError *int32 `json:"compute_service_bereq_tls_error,omitempty"`
 	// Number of backend requests from a Compute service that failed at the HTTP protocol level. Sum of `compute_service_bereq_http_proto_v1_error`, `compute_service_bereq_http_proto_v2_error`, `compute_service_bereq_http_incomplete_error`, `compute_service_bereq_http_timeout_error`, and `compute_service_bereq_http_other_error`.
-	ComputeServiceBereqHttpError *int32  `json:"compute_service_bereq_http_error,omitempty"`
-	ServiceId                    *string `json:"service_id,omitempty"`
+	ComputeServiceBereqHttpError *int32 `json:"compute_service_bereq_http_error,omitempty"`
+	// Number of Private Access Token challenges issued.
+	BotChallengesPatsIssued *int32 `json:"bot_challenges_pats_issued,omitempty"`
+	// Number of successful Private Access Token challenge solutions processed.
+	BotChallengesPatsSucceeded *int32  `json:"bot_challenges_pats_succeeded,omitempty"`
+	ServiceId                  *string `json:"service_id,omitempty"`
 	// Timestamp for the start of the time period being reported
 	StartTime            *int64 `json:"start_time,omitempty"`
 	AdditionalProperties map[string]any
@@ -11752,6 +11756,70 @@ func (o *Results) SetComputeServiceBereqHttpError(v int32) {
 	o.ComputeServiceBereqHttpError = &v
 }
 
+// GetBotChallengesPatsIssued returns the BotChallengesPatsIssued field value if set, zero value otherwise.
+func (o *Results) GetBotChallengesPatsIssued() int32 {
+	if o == nil || o.BotChallengesPatsIssued == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotChallengesPatsIssued
+}
+
+// GetBotChallengesPatsIssuedOk returns a tuple with the BotChallengesPatsIssued field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetBotChallengesPatsIssuedOk() (*int32, bool) {
+	if o == nil || o.BotChallengesPatsIssued == nil {
+		return nil, false
+	}
+	return o.BotChallengesPatsIssued, true
+}
+
+// HasBotChallengesPatsIssued returns a boolean if a field has been set.
+func (o *Results) HasBotChallengesPatsIssued() bool {
+	if o != nil && o.BotChallengesPatsIssued != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotChallengesPatsIssued gets a reference to the given int32 and assigns it to the BotChallengesPatsIssued field.
+func (o *Results) SetBotChallengesPatsIssued(v int32) {
+	o.BotChallengesPatsIssued = &v
+}
+
+// GetBotChallengesPatsSucceeded returns the BotChallengesPatsSucceeded field value if set, zero value otherwise.
+func (o *Results) GetBotChallengesPatsSucceeded() int32 {
+	if o == nil || o.BotChallengesPatsSucceeded == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotChallengesPatsSucceeded
+}
+
+// GetBotChallengesPatsSucceededOk returns a tuple with the BotChallengesPatsSucceeded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetBotChallengesPatsSucceededOk() (*int32, bool) {
+	if o == nil || o.BotChallengesPatsSucceeded == nil {
+		return nil, false
+	}
+	return o.BotChallengesPatsSucceeded, true
+}
+
+// HasBotChallengesPatsSucceeded returns a boolean if a field has been set.
+func (o *Results) HasBotChallengesPatsSucceeded() bool {
+	if o != nil && o.BotChallengesPatsSucceeded != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotChallengesPatsSucceeded gets a reference to the given int32 and assigns it to the BotChallengesPatsSucceeded field.
+func (o *Results) SetBotChallengesPatsSucceeded(v int32) {
+	o.BotChallengesPatsSucceeded = &v
+}
+
 // GetServiceId returns the ServiceId field value if set, zero value otherwise.
 func (o *Results) GetServiceId() string {
 	if o == nil || o.ServiceId == nil {
@@ -12849,6 +12917,12 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.ComputeServiceBereqHttpError != nil {
 		toSerialize["compute_service_bereq_http_error"] = o.ComputeServiceBereqHttpError
 	}
+	if o.BotChallengesPatsIssued != nil {
+		toSerialize["bot_challenges_pats_issued"] = o.BotChallengesPatsIssued
+	}
+	if o.BotChallengesPatsSucceeded != nil {
+		toSerialize["bot_challenges_pats_succeeded"] = o.BotChallengesPatsSucceeded
+	}
 	if o.ServiceId != nil {
 		toSerialize["service_id"] = o.ServiceId
 	}
@@ -13218,6 +13292,8 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "compute_service_bereq_conn_error")
 		delete(additionalProperties, "compute_service_bereq_tls_error")
 		delete(additionalProperties, "compute_service_bereq_http_error")
+		delete(additionalProperties, "bot_challenges_pats_issued")
+		delete(additionalProperties, "bot_challenges_pats_succeeded")
 		delete(additionalProperties, "service_id")
 		delete(additionalProperties, "start_time")
 		o.AdditionalProperties = additionalProperties

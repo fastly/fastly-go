@@ -347,6 +347,8 @@ Name | Type | Description | Notes
 **ComputeServiceBereqConnError** | Pointer to **int32** | Number of backend requests from a Compute service that failed at the TCP connection level. Sum of `compute_service_bereq_conn_timeout_error`, `compute_service_bereq_conn_refused_error`, and `compute_service_bereq_conn_other_error`. | [optional] 
 **ComputeServiceBereqTlsError** | Pointer to **int32** | Number of backend requests from a Compute service that failed during the TLS handshake or session with the origin. Sum of `compute_service_bereq_tls_server_cert_error` and `compute_service_bereq_tls_other_error`. | [optional] 
 **ComputeServiceBereqHttpError** | Pointer to **int32** | Number of backend requests from a Compute service that failed at the HTTP protocol level. Sum of `compute_service_bereq_http_proto_v1_error`, `compute_service_bereq_http_proto_v2_error`, `compute_service_bereq_http_incomplete_error`, `compute_service_bereq_http_timeout_error`, and `compute_service_bereq_http_other_error`. | [optional] 
+**BotChallengesPatsIssued** | Pointer to **int32** | Number of Private Access Token challenges issued. | [optional] 
+**BotChallengesPatsSucceeded** | Pointer to **int32** | Number of successful Private Access Token challenge solutions processed. | [optional] 
 **ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **StartTime** | Pointer to **int64** | Timestamp for the start of the time period being reported | [optional] 
 
@@ -8953,6 +8955,56 @@ SetComputeServiceBereqHttpError sets ComputeServiceBereqHttpError field to given
 `func (o *Results) HasComputeServiceBereqHttpError() bool`
 
 HasComputeServiceBereqHttpError returns a boolean if a field has been set.
+
+### GetBotChallengesPatsIssued
+
+`func (o *Results) GetBotChallengesPatsIssued() int32`
+
+GetBotChallengesPatsIssued returns the BotChallengesPatsIssued field if non-nil, zero value otherwise.
+
+### GetBotChallengesPatsIssuedOk
+
+`func (o *Results) GetBotChallengesPatsIssuedOk() (*int32, bool)`
+
+GetBotChallengesPatsIssuedOk returns a tuple with the BotChallengesPatsIssued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotChallengesPatsIssued
+
+`func (o *Results) SetBotChallengesPatsIssued(v int32)`
+
+SetBotChallengesPatsIssued sets BotChallengesPatsIssued field to given value.
+
+### HasBotChallengesPatsIssued
+
+`func (o *Results) HasBotChallengesPatsIssued() bool`
+
+HasBotChallengesPatsIssued returns a boolean if a field has been set.
+
+### GetBotChallengesPatsSucceeded
+
+`func (o *Results) GetBotChallengesPatsSucceeded() int32`
+
+GetBotChallengesPatsSucceeded returns the BotChallengesPatsSucceeded field if non-nil, zero value otherwise.
+
+### GetBotChallengesPatsSucceededOk
+
+`func (o *Results) GetBotChallengesPatsSucceededOk() (*int32, bool)`
+
+GetBotChallengesPatsSucceededOk returns a tuple with the BotChallengesPatsSucceeded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotChallengesPatsSucceeded
+
+`func (o *Results) SetBotChallengesPatsSucceeded(v int32)`
+
+SetBotChallengesPatsSucceeded sets BotChallengesPatsSucceeded field to given value.
+
+### HasBotChallengesPatsSucceeded
+
+`func (o *Results) HasBotChallengesPatsSucceeded() bool`
+
+HasBotChallengesPatsSucceeded returns a boolean if a field has been set.
 
 ### GetServiceId
 

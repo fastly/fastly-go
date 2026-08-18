@@ -272,6 +272,18 @@ type Values struct {
 	ComputeRespStatus530 *int64 `json:"compute_resp_status_530,omitempty"`
 	// Number of \"Server Error\" category status codes delivered by the Compute platform.
 	ComputeRespStatus5xx *int64 `json:"compute_resp_status_5xx,omitempty"`
+	// Number of requests received over HTTP/2.
+	Http2 *int64 `json:"http2,omitempty"`
+	// Number of requests received over HTTP/3.
+	Http3 *int64 `json:"http3,omitempty"`
+	// Number of requests received over TLS 1.0.
+	TlsV10 *int64 `json:"tls_v10,omitempty"`
+	// Number of requests received over TLS 1.1.
+	TlsV11 *int64 `json:"tls_v11,omitempty"`
+	// Number of requests received over TLS 1.2.
+	TlsV12 *int64 `json:"tls_v12,omitempty"`
+	// Number of requests received over TLS 1.3.
+	TlsV13               *int64 `json:"tls_v13,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -4358,6 +4370,198 @@ func (o *Values) SetComputeRespStatus5xx(v int64) {
 	o.ComputeRespStatus5xx = &v
 }
 
+// GetHttp2 returns the Http2 field value if set, zero value otherwise.
+func (o *Values) GetHttp2() int64 {
+	if o == nil || o.Http2 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.Http2
+}
+
+// GetHttp2Ok returns a tuple with the Http2 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Values) GetHttp2Ok() (*int64, bool) {
+	if o == nil || o.Http2 == nil {
+		return nil, false
+	}
+	return o.Http2, true
+}
+
+// HasHttp2 returns a boolean if a field has been set.
+func (o *Values) HasHttp2() bool {
+	if o != nil && o.Http2 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHttp2 gets a reference to the given int64 and assigns it to the Http2 field.
+func (o *Values) SetHttp2(v int64) {
+	o.Http2 = &v
+}
+
+// GetHttp3 returns the Http3 field value if set, zero value otherwise.
+func (o *Values) GetHttp3() int64 {
+	if o == nil || o.Http3 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.Http3
+}
+
+// GetHttp3Ok returns a tuple with the Http3 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Values) GetHttp3Ok() (*int64, bool) {
+	if o == nil || o.Http3 == nil {
+		return nil, false
+	}
+	return o.Http3, true
+}
+
+// HasHttp3 returns a boolean if a field has been set.
+func (o *Values) HasHttp3() bool {
+	if o != nil && o.Http3 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHttp3 gets a reference to the given int64 and assigns it to the Http3 field.
+func (o *Values) SetHttp3(v int64) {
+	o.Http3 = &v
+}
+
+// GetTlsV10 returns the TlsV10 field value if set, zero value otherwise.
+func (o *Values) GetTlsV10() int64 {
+	if o == nil || o.TlsV10 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.TlsV10
+}
+
+// GetTlsV10Ok returns a tuple with the TlsV10 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Values) GetTlsV10Ok() (*int64, bool) {
+	if o == nil || o.TlsV10 == nil {
+		return nil, false
+	}
+	return o.TlsV10, true
+}
+
+// HasTlsV10 returns a boolean if a field has been set.
+func (o *Values) HasTlsV10() bool {
+	if o != nil && o.TlsV10 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTlsV10 gets a reference to the given int64 and assigns it to the TlsV10 field.
+func (o *Values) SetTlsV10(v int64) {
+	o.TlsV10 = &v
+}
+
+// GetTlsV11 returns the TlsV11 field value if set, zero value otherwise.
+func (o *Values) GetTlsV11() int64 {
+	if o == nil || o.TlsV11 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.TlsV11
+}
+
+// GetTlsV11Ok returns a tuple with the TlsV11 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Values) GetTlsV11Ok() (*int64, bool) {
+	if o == nil || o.TlsV11 == nil {
+		return nil, false
+	}
+	return o.TlsV11, true
+}
+
+// HasTlsV11 returns a boolean if a field has been set.
+func (o *Values) HasTlsV11() bool {
+	if o != nil && o.TlsV11 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTlsV11 gets a reference to the given int64 and assigns it to the TlsV11 field.
+func (o *Values) SetTlsV11(v int64) {
+	o.TlsV11 = &v
+}
+
+// GetTlsV12 returns the TlsV12 field value if set, zero value otherwise.
+func (o *Values) GetTlsV12() int64 {
+	if o == nil || o.TlsV12 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.TlsV12
+}
+
+// GetTlsV12Ok returns a tuple with the TlsV12 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Values) GetTlsV12Ok() (*int64, bool) {
+	if o == nil || o.TlsV12 == nil {
+		return nil, false
+	}
+	return o.TlsV12, true
+}
+
+// HasTlsV12 returns a boolean if a field has been set.
+func (o *Values) HasTlsV12() bool {
+	if o != nil && o.TlsV12 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTlsV12 gets a reference to the given int64 and assigns it to the TlsV12 field.
+func (o *Values) SetTlsV12(v int64) {
+	o.TlsV12 = &v
+}
+
+// GetTlsV13 returns the TlsV13 field value if set, zero value otherwise.
+func (o *Values) GetTlsV13() int64 {
+	if o == nil || o.TlsV13 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.TlsV13
+}
+
+// GetTlsV13Ok returns a tuple with the TlsV13 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Values) GetTlsV13Ok() (*int64, bool) {
+	if o == nil || o.TlsV13 == nil {
+		return nil, false
+	}
+	return o.TlsV13, true
+}
+
+// HasTlsV13 returns a boolean if a field has been set.
+func (o *Values) HasTlsV13() bool {
+	if o != nil && o.TlsV13 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTlsV13 gets a reference to the given int64 and assigns it to the TlsV13 field.
+func (o *Values) SetTlsV13(v int64) {
+	o.TlsV13 = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o Values) MarshalJSON() ([]byte, error) {
@@ -4743,6 +4947,24 @@ func (o Values) MarshalJSON() ([]byte, error) {
 	if o.ComputeRespStatus5xx != nil {
 		toSerialize["compute_resp_status_5xx"] = o.ComputeRespStatus5xx
 	}
+	if o.Http2 != nil {
+		toSerialize["http2"] = o.Http2
+	}
+	if o.Http3 != nil {
+		toSerialize["http3"] = o.Http3
+	}
+	if o.TlsV10 != nil {
+		toSerialize["tls_v10"] = o.TlsV10
+	}
+	if o.TlsV11 != nil {
+		toSerialize["tls_v11"] = o.TlsV11
+	}
+	if o.TlsV12 != nil {
+		toSerialize["tls_v12"] = o.TlsV12
+	}
+	if o.TlsV13 != nil {
+		toSerialize["tls_v13"] = o.TlsV13
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -4890,6 +5112,12 @@ func (o *Values) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "compute_resp_status_505")
 		delete(additionalProperties, "compute_resp_status_530")
 		delete(additionalProperties, "compute_resp_status_5xx")
+		delete(additionalProperties, "http2")
+		delete(additionalProperties, "http3")
+		delete(additionalProperties, "tls_v10")
+		delete(additionalProperties, "tls_v11")
+		delete(additionalProperties, "tls_v12")
+		delete(additionalProperties, "tls_v13")
 		o.AdditionalProperties = additionalProperties
 	}
 

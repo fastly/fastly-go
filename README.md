@@ -18,7 +18,7 @@ Add the following to your project's `go.mod`:
 
 ```go.mod
 require (
-	github.com/fastly/fastly-go 1.0.0-beta.49
+	github.com/fastly/fastly-go 1.0.0-beta.50
 )
 ```
 
@@ -349,6 +349,7 @@ Class | Method | Description
 *LoggingElasticsearchAPI* | [**GetLogElasticsearch**](docs/LoggingElasticsearchAPI.md#getlogelasticsearch) | Get an Elasticsearch log endpoint
 *LoggingElasticsearchAPI* | [**ListLogElasticsearch**](docs/LoggingElasticsearchAPI.md#listlogelasticsearch) | List Elasticsearch log endpoints
 *LoggingElasticsearchAPI* | [**UpdateLogElasticsearch**](docs/LoggingElasticsearchAPI.md#updatelogelasticsearch) | Update an Elasticsearch log endpoint
+*LoggingEndpointErrorsAPI* | [**GetLogEndpointErrors**](docs/LoggingEndpointErrorsAPI.md#getlogendpointerrors) | Stream Log Endpoint Errors
 *LoggingFtpAPI* | [**CreateLogFtp**](docs/LoggingFtpAPI.md#createlogftp) | Create an FTP log endpoint
 *LoggingFtpAPI* | [**DeleteLogFtp**](docs/LoggingFtpAPI.md#deletelogftp) | Delete an FTP log endpoint
 *LoggingFtpAPI* | [**GetLogFtp**](docs/LoggingFtpAPI.md#getlogftp) | Get an FTP log endpoint

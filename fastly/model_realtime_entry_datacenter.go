@@ -699,7 +699,11 @@ type RealtimeEntryDatacenter struct {
 	ComputeServiceBereqTlsError *int32 `json:"compute_service_bereq_tls_error,omitempty"`
 	// Number of backend requests from a Compute service that failed at the HTTP protocol level. Sum of `compute_service_bereq_http_proto_v1_error`, `compute_service_bereq_http_proto_v2_error`, `compute_service_bereq_http_incomplete_error`, `compute_service_bereq_http_timeout_error`, and `compute_service_bereq_http_other_error`.
 	ComputeServiceBereqHttpError *int32 `json:"compute_service_bereq_http_error,omitempty"`
-	AdditionalProperties         map[string]any
+	// Number of Private Access Token challenges issued.
+	BotChallengesPatsIssued *int32 `json:"bot_challenges_pats_issued,omitempty"`
+	// Number of successful Private Access Token challenge solutions processed.
+	BotChallengesPatsSucceeded *int32 `json:"bot_challenges_pats_succeeded,omitempty"`
+	AdditionalProperties       map[string]any
 }
 
 type _RealtimeEntryDatacenter RealtimeEntryDatacenter
@@ -11500,6 +11504,70 @@ func (o *RealtimeEntryDatacenter) SetComputeServiceBereqHttpError(v int32) {
 	o.ComputeServiceBereqHttpError = &v
 }
 
+// GetBotChallengesPatsIssued returns the BotChallengesPatsIssued field value if set, zero value otherwise.
+func (o *RealtimeEntryDatacenter) GetBotChallengesPatsIssued() int32 {
+	if o == nil || o.BotChallengesPatsIssued == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotChallengesPatsIssued
+}
+
+// GetBotChallengesPatsIssuedOk returns a tuple with the BotChallengesPatsIssued field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeEntryDatacenter) GetBotChallengesPatsIssuedOk() (*int32, bool) {
+	if o == nil || o.BotChallengesPatsIssued == nil {
+		return nil, false
+	}
+	return o.BotChallengesPatsIssued, true
+}
+
+// HasBotChallengesPatsIssued returns a boolean if a field has been set.
+func (o *RealtimeEntryDatacenter) HasBotChallengesPatsIssued() bool {
+	if o != nil && o.BotChallengesPatsIssued != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotChallengesPatsIssued gets a reference to the given int32 and assigns it to the BotChallengesPatsIssued field.
+func (o *RealtimeEntryDatacenter) SetBotChallengesPatsIssued(v int32) {
+	o.BotChallengesPatsIssued = &v
+}
+
+// GetBotChallengesPatsSucceeded returns the BotChallengesPatsSucceeded field value if set, zero value otherwise.
+func (o *RealtimeEntryDatacenter) GetBotChallengesPatsSucceeded() int32 {
+	if o == nil || o.BotChallengesPatsSucceeded == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotChallengesPatsSucceeded
+}
+
+// GetBotChallengesPatsSucceededOk returns a tuple with the BotChallengesPatsSucceeded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RealtimeEntryDatacenter) GetBotChallengesPatsSucceededOk() (*int32, bool) {
+	if o == nil || o.BotChallengesPatsSucceeded == nil {
+		return nil, false
+	}
+	return o.BotChallengesPatsSucceeded, true
+}
+
+// HasBotChallengesPatsSucceeded returns a boolean if a field has been set.
+func (o *RealtimeEntryDatacenter) HasBotChallengesPatsSucceeded() bool {
+	if o != nil && o.BotChallengesPatsSucceeded != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotChallengesPatsSucceeded gets a reference to the given int32 and assigns it to the BotChallengesPatsSucceeded field.
+func (o *RealtimeEntryDatacenter) SetBotChallengesPatsSucceeded(v int32) {
+	o.BotChallengesPatsSucceeded = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o RealtimeEntryDatacenter) MarshalJSON() ([]byte, error) {
@@ -12512,6 +12580,12 @@ func (o RealtimeEntryDatacenter) MarshalJSON() ([]byte, error) {
 	if o.ComputeServiceBereqHttpError != nil {
 		toSerialize["compute_service_bereq_http_error"] = o.ComputeServiceBereqHttpError
 	}
+	if o.BotChallengesPatsIssued != nil {
+		toSerialize["bot_challenges_pats_issued"] = o.BotChallengesPatsIssued
+	}
+	if o.BotChallengesPatsSucceeded != nil {
+		toSerialize["bot_challenges_pats_succeeded"] = o.BotChallengesPatsSucceeded
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -12868,6 +12942,8 @@ func (o *RealtimeEntryDatacenter) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "compute_service_bereq_conn_error")
 		delete(additionalProperties, "compute_service_bereq_tls_error")
 		delete(additionalProperties, "compute_service_bereq_http_error")
+		delete(additionalProperties, "bot_challenges_pats_issued")
+		delete(additionalProperties, "bot_challenges_pats_succeeded")
 		o.AdditionalProperties = additionalProperties
 	}
 

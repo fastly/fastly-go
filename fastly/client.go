@@ -171,6 +171,8 @@ type APIClient struct {
 
 	LoggingElasticsearchAPI LoggingElasticsearchAPI
 
+	LoggingEndpointErrorsAPI LoggingEndpointErrorsAPI
+
 	LoggingFtpAPI LoggingFtpAPI
 
 	LoggingGcsAPI LoggingGcsAPI
@@ -407,6 +409,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingDatadogAPI = (*LoggingDatadogAPIService)(&c.common)
 	c.LoggingDigitaloceanAPI = (*LoggingDigitaloceanAPIService)(&c.common)
 	c.LoggingElasticsearchAPI = (*LoggingElasticsearchAPIService)(&c.common)
+	c.LoggingEndpointErrorsAPI = (*LoggingEndpointErrorsAPIService)(&c.common)
 	c.LoggingFtpAPI = (*LoggingFtpAPIService)(&c.common)
 	c.LoggingGcsAPI = (*LoggingGcsAPIService)(&c.common)
 	c.LoggingGrafanacloudlogsAPI = (*LoggingGrafanacloudlogsAPIService)(&c.common)

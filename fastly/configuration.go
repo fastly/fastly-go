@@ -104,7 +104,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "fastly-go/1.0.0-beta.49",
+		UserAgent:     "fastly-go/1.0.0-beta.50",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
@@ -1792,6 +1792,12 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"LoggingElasticsearchAPIService.UpdateLogElasticsearch": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"LoggingEndpointErrorsAPIService.GetLogEndpointErrors": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
