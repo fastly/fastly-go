@@ -166,6 +166,10 @@ type Results struct {
 	AttackRespSynthBytes *int64 `json:"attack_resp_synth_bytes,omitempty"`
 	// Number of responses that came from the Fastly Image Optimizer service. If the service receives 10 requests for an image, this stat will be 10 regardless of how many times the image was transformed.
 	Imgopto *int64 `json:"imgopto,omitempty"`
+	// The total image bytes that would have been delivered if the images had not been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer).
+	ImgoptoInputImageBytes *int64 `json:"imgopto_input_image_bytes,omitempty"`
+	// The total image bytes delivered that have been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer).
+	ImgoptoOutputImageBytes *int64 `json:"imgopto_output_image_bytes,omitempty"`
 	// Total body bytes delivered from the Fastly Image Optimizer service, including shield traffic.
 	ImgoptoRespBodyBytes *int64 `json:"imgopto_resp_body_bytes,omitempty"`
 	// Total header bytes delivered from the Fastly Image Optimizer service, including shield traffic.
@@ -716,8 +720,34 @@ type Results struct {
 	// Number of Private Access Token challenges issued.
 	BotChallengesPatsIssued *int32 `json:"bot_challenges_pats_issued,omitempty"`
 	// Number of successful Private Access Token challenge solutions processed.
-	BotChallengesPatsSucceeded *int32  `json:"bot_challenges_pats_succeeded,omitempty"`
-	ServiceId                  *string `json:"service_id,omitempty"`
+	BotChallengesPatsSucceeded *int32 `json:"bot_challenges_pats_succeeded,omitempty"`
+	// Number of edge requests where a headless bot was detected.
+	BotEdgeRequestsHeadlessCount *int32 `json:"bot_edge_requests_headless_count,omitempty"`
+	// Number of responses sent with status code 499 (Client Disconnected).
+	Status499 *int32 `json:"status_499,omitempty"`
+	// Number of requests received by AI Runtime Control.
+	ArcRequests *int32 `json:"arc_requests,omitempty"`
+	// The number of challenge-complete tokens checked while enforcing DDoS protection rules.
+	DdosChallengeCompleteTokensChecked *int32 `json:"ddos_challenge_complete_tokens_checked,omitempty"`
+	// The number of challenge-complete tokens that passed validation while enforcing DDoS protection rules.
+	DdosChallengeCompleteTokensPassed *int32 `json:"ddos_challenge_complete_tokens_passed,omitempty"`
+	// The number of challenge-complete tokens that failed validation while enforcing DDoS protection rules.
+	DdosChallengeCompleteTokensFailed *int32 `json:"ddos_challenge_complete_tokens_failed,omitempty"`
+	// The number of challenge-start tokens created while enforcing DDoS protection rules.
+	DdosChallengeStarts *int32 `json:"ddos_challenge_starts,omitempty"`
+	// Number of challenge-complete tokens issued as a result of a DDoS action. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success.
+	DdosChallengeCompleteTokensIssued *int32 `json:"ddos_challenge_complete_tokens_issued,omitempty"`
+	// Number of challenges issued from a DDoS action.
+	DdosChallengesIssued *int32 `json:"ddos_challenges_issued,omitempty"`
+	// Number of successful challenge solutions processed as a result of a DDoS action. For example, a correct CAPTCHA solution.
+	DdosChallengesSucceeded *int32 `json:"ddos_challenges_succeeded,omitempty"`
+	// Number of failed challenge solutions processed as a result of a DDoS action. For example, an incorrect CAPTCHA solution.
+	DdosChallengesFailed *int32 `json:"ddos_challenges_failed,omitempty"`
+	// Number of Private Access Token challenges issued as a result of a DDoS action.
+	DdosChallengesPatsIssued *int32 `json:"ddos_challenges_pats_issued,omitempty"`
+	// Number of successful Private Access Token challenge solutions processed as a result of a DDoS action.
+	DdosChallengesPatsSucceeded *int32  `json:"ddos_challenges_pats_succeeded,omitempty"`
+	ServiceId                   *string `json:"service_id,omitempty"`
 	// Timestamp for the start of the time period being reported
 	StartTime            *int64 `json:"start_time,omitempty"`
 	AdditionalProperties map[string]any
@@ -3119,6 +3149,70 @@ func (o *Results) HasImgopto() bool {
 // SetImgopto gets a reference to the given int64 and assigns it to the Imgopto field.
 func (o *Results) SetImgopto(v int64) {
 	o.Imgopto = &v
+}
+
+// GetImgoptoInputImageBytes returns the ImgoptoInputImageBytes field value if set, zero value otherwise.
+func (o *Results) GetImgoptoInputImageBytes() int64 {
+	if o == nil || o.ImgoptoInputImageBytes == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ImgoptoInputImageBytes
+}
+
+// GetImgoptoInputImageBytesOk returns a tuple with the ImgoptoInputImageBytes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetImgoptoInputImageBytesOk() (*int64, bool) {
+	if o == nil || o.ImgoptoInputImageBytes == nil {
+		return nil, false
+	}
+	return o.ImgoptoInputImageBytes, true
+}
+
+// HasImgoptoInputImageBytes returns a boolean if a field has been set.
+func (o *Results) HasImgoptoInputImageBytes() bool {
+	if o != nil && o.ImgoptoInputImageBytes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImgoptoInputImageBytes gets a reference to the given int64 and assigns it to the ImgoptoInputImageBytes field.
+func (o *Results) SetImgoptoInputImageBytes(v int64) {
+	o.ImgoptoInputImageBytes = &v
+}
+
+// GetImgoptoOutputImageBytes returns the ImgoptoOutputImageBytes field value if set, zero value otherwise.
+func (o *Results) GetImgoptoOutputImageBytes() int64 {
+	if o == nil || o.ImgoptoOutputImageBytes == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ImgoptoOutputImageBytes
+}
+
+// GetImgoptoOutputImageBytesOk returns a tuple with the ImgoptoOutputImageBytes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetImgoptoOutputImageBytesOk() (*int64, bool) {
+	if o == nil || o.ImgoptoOutputImageBytes == nil {
+		return nil, false
+	}
+	return o.ImgoptoOutputImageBytes, true
+}
+
+// HasImgoptoOutputImageBytes returns a boolean if a field has been set.
+func (o *Results) HasImgoptoOutputImageBytes() bool {
+	if o != nil && o.ImgoptoOutputImageBytes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImgoptoOutputImageBytes gets a reference to the given int64 and assigns it to the ImgoptoOutputImageBytes field.
+func (o *Results) SetImgoptoOutputImageBytes(v int64) {
+	o.ImgoptoOutputImageBytes = &v
 }
 
 // GetImgoptoRespBodyBytes returns the ImgoptoRespBodyBytes field value if set, zero value otherwise.
@@ -11820,6 +11914,422 @@ func (o *Results) SetBotChallengesPatsSucceeded(v int32) {
 	o.BotChallengesPatsSucceeded = &v
 }
 
+// GetBotEdgeRequestsHeadlessCount returns the BotEdgeRequestsHeadlessCount field value if set, zero value otherwise.
+func (o *Results) GetBotEdgeRequestsHeadlessCount() int32 {
+	if o == nil || o.BotEdgeRequestsHeadlessCount == nil {
+		var ret int32
+		return ret
+	}
+	return *o.BotEdgeRequestsHeadlessCount
+}
+
+// GetBotEdgeRequestsHeadlessCountOk returns a tuple with the BotEdgeRequestsHeadlessCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetBotEdgeRequestsHeadlessCountOk() (*int32, bool) {
+	if o == nil || o.BotEdgeRequestsHeadlessCount == nil {
+		return nil, false
+	}
+	return o.BotEdgeRequestsHeadlessCount, true
+}
+
+// HasBotEdgeRequestsHeadlessCount returns a boolean if a field has been set.
+func (o *Results) HasBotEdgeRequestsHeadlessCount() bool {
+	if o != nil && o.BotEdgeRequestsHeadlessCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBotEdgeRequestsHeadlessCount gets a reference to the given int32 and assigns it to the BotEdgeRequestsHeadlessCount field.
+func (o *Results) SetBotEdgeRequestsHeadlessCount(v int32) {
+	o.BotEdgeRequestsHeadlessCount = &v
+}
+
+// GetStatus499 returns the Status499 field value if set, zero value otherwise.
+func (o *Results) GetStatus499() int32 {
+	if o == nil || o.Status499 == nil {
+		var ret int32
+		return ret
+	}
+	return *o.Status499
+}
+
+// GetStatus499Ok returns a tuple with the Status499 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetStatus499Ok() (*int32, bool) {
+	if o == nil || o.Status499 == nil {
+		return nil, false
+	}
+	return o.Status499, true
+}
+
+// HasStatus499 returns a boolean if a field has been set.
+func (o *Results) HasStatus499() bool {
+	if o != nil && o.Status499 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus499 gets a reference to the given int32 and assigns it to the Status499 field.
+func (o *Results) SetStatus499(v int32) {
+	o.Status499 = &v
+}
+
+// GetArcRequests returns the ArcRequests field value if set, zero value otherwise.
+func (o *Results) GetArcRequests() int32 {
+	if o == nil || o.ArcRequests == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ArcRequests
+}
+
+// GetArcRequestsOk returns a tuple with the ArcRequests field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetArcRequestsOk() (*int32, bool) {
+	if o == nil || o.ArcRequests == nil {
+		return nil, false
+	}
+	return o.ArcRequests, true
+}
+
+// HasArcRequests returns a boolean if a field has been set.
+func (o *Results) HasArcRequests() bool {
+	if o != nil && o.ArcRequests != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetArcRequests gets a reference to the given int32 and assigns it to the ArcRequests field.
+func (o *Results) SetArcRequests(v int32) {
+	o.ArcRequests = &v
+}
+
+// GetDdosChallengeCompleteTokensChecked returns the DdosChallengeCompleteTokensChecked field value if set, zero value otherwise.
+func (o *Results) GetDdosChallengeCompleteTokensChecked() int32 {
+	if o == nil || o.DdosChallengeCompleteTokensChecked == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosChallengeCompleteTokensChecked
+}
+
+// GetDdosChallengeCompleteTokensCheckedOk returns a tuple with the DdosChallengeCompleteTokensChecked field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetDdosChallengeCompleteTokensCheckedOk() (*int32, bool) {
+	if o == nil || o.DdosChallengeCompleteTokensChecked == nil {
+		return nil, false
+	}
+	return o.DdosChallengeCompleteTokensChecked, true
+}
+
+// HasDdosChallengeCompleteTokensChecked returns a boolean if a field has been set.
+func (o *Results) HasDdosChallengeCompleteTokensChecked() bool {
+	if o != nil && o.DdosChallengeCompleteTokensChecked != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosChallengeCompleteTokensChecked gets a reference to the given int32 and assigns it to the DdosChallengeCompleteTokensChecked field.
+func (o *Results) SetDdosChallengeCompleteTokensChecked(v int32) {
+	o.DdosChallengeCompleteTokensChecked = &v
+}
+
+// GetDdosChallengeCompleteTokensPassed returns the DdosChallengeCompleteTokensPassed field value if set, zero value otherwise.
+func (o *Results) GetDdosChallengeCompleteTokensPassed() int32 {
+	if o == nil || o.DdosChallengeCompleteTokensPassed == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosChallengeCompleteTokensPassed
+}
+
+// GetDdosChallengeCompleteTokensPassedOk returns a tuple with the DdosChallengeCompleteTokensPassed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetDdosChallengeCompleteTokensPassedOk() (*int32, bool) {
+	if o == nil || o.DdosChallengeCompleteTokensPassed == nil {
+		return nil, false
+	}
+	return o.DdosChallengeCompleteTokensPassed, true
+}
+
+// HasDdosChallengeCompleteTokensPassed returns a boolean if a field has been set.
+func (o *Results) HasDdosChallengeCompleteTokensPassed() bool {
+	if o != nil && o.DdosChallengeCompleteTokensPassed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosChallengeCompleteTokensPassed gets a reference to the given int32 and assigns it to the DdosChallengeCompleteTokensPassed field.
+func (o *Results) SetDdosChallengeCompleteTokensPassed(v int32) {
+	o.DdosChallengeCompleteTokensPassed = &v
+}
+
+// GetDdosChallengeCompleteTokensFailed returns the DdosChallengeCompleteTokensFailed field value if set, zero value otherwise.
+func (o *Results) GetDdosChallengeCompleteTokensFailed() int32 {
+	if o == nil || o.DdosChallengeCompleteTokensFailed == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosChallengeCompleteTokensFailed
+}
+
+// GetDdosChallengeCompleteTokensFailedOk returns a tuple with the DdosChallengeCompleteTokensFailed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetDdosChallengeCompleteTokensFailedOk() (*int32, bool) {
+	if o == nil || o.DdosChallengeCompleteTokensFailed == nil {
+		return nil, false
+	}
+	return o.DdosChallengeCompleteTokensFailed, true
+}
+
+// HasDdosChallengeCompleteTokensFailed returns a boolean if a field has been set.
+func (o *Results) HasDdosChallengeCompleteTokensFailed() bool {
+	if o != nil && o.DdosChallengeCompleteTokensFailed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosChallengeCompleteTokensFailed gets a reference to the given int32 and assigns it to the DdosChallengeCompleteTokensFailed field.
+func (o *Results) SetDdosChallengeCompleteTokensFailed(v int32) {
+	o.DdosChallengeCompleteTokensFailed = &v
+}
+
+// GetDdosChallengeStarts returns the DdosChallengeStarts field value if set, zero value otherwise.
+func (o *Results) GetDdosChallengeStarts() int32 {
+	if o == nil || o.DdosChallengeStarts == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosChallengeStarts
+}
+
+// GetDdosChallengeStartsOk returns a tuple with the DdosChallengeStarts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetDdosChallengeStartsOk() (*int32, bool) {
+	if o == nil || o.DdosChallengeStarts == nil {
+		return nil, false
+	}
+	return o.DdosChallengeStarts, true
+}
+
+// HasDdosChallengeStarts returns a boolean if a field has been set.
+func (o *Results) HasDdosChallengeStarts() bool {
+	if o != nil && o.DdosChallengeStarts != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosChallengeStarts gets a reference to the given int32 and assigns it to the DdosChallengeStarts field.
+func (o *Results) SetDdosChallengeStarts(v int32) {
+	o.DdosChallengeStarts = &v
+}
+
+// GetDdosChallengeCompleteTokensIssued returns the DdosChallengeCompleteTokensIssued field value if set, zero value otherwise.
+func (o *Results) GetDdosChallengeCompleteTokensIssued() int32 {
+	if o == nil || o.DdosChallengeCompleteTokensIssued == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosChallengeCompleteTokensIssued
+}
+
+// GetDdosChallengeCompleteTokensIssuedOk returns a tuple with the DdosChallengeCompleteTokensIssued field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetDdosChallengeCompleteTokensIssuedOk() (*int32, bool) {
+	if o == nil || o.DdosChallengeCompleteTokensIssued == nil {
+		return nil, false
+	}
+	return o.DdosChallengeCompleteTokensIssued, true
+}
+
+// HasDdosChallengeCompleteTokensIssued returns a boolean if a field has been set.
+func (o *Results) HasDdosChallengeCompleteTokensIssued() bool {
+	if o != nil && o.DdosChallengeCompleteTokensIssued != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosChallengeCompleteTokensIssued gets a reference to the given int32 and assigns it to the DdosChallengeCompleteTokensIssued field.
+func (o *Results) SetDdosChallengeCompleteTokensIssued(v int32) {
+	o.DdosChallengeCompleteTokensIssued = &v
+}
+
+// GetDdosChallengesIssued returns the DdosChallengesIssued field value if set, zero value otherwise.
+func (o *Results) GetDdosChallengesIssued() int32 {
+	if o == nil || o.DdosChallengesIssued == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosChallengesIssued
+}
+
+// GetDdosChallengesIssuedOk returns a tuple with the DdosChallengesIssued field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetDdosChallengesIssuedOk() (*int32, bool) {
+	if o == nil || o.DdosChallengesIssued == nil {
+		return nil, false
+	}
+	return o.DdosChallengesIssued, true
+}
+
+// HasDdosChallengesIssued returns a boolean if a field has been set.
+func (o *Results) HasDdosChallengesIssued() bool {
+	if o != nil && o.DdosChallengesIssued != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosChallengesIssued gets a reference to the given int32 and assigns it to the DdosChallengesIssued field.
+func (o *Results) SetDdosChallengesIssued(v int32) {
+	o.DdosChallengesIssued = &v
+}
+
+// GetDdosChallengesSucceeded returns the DdosChallengesSucceeded field value if set, zero value otherwise.
+func (o *Results) GetDdosChallengesSucceeded() int32 {
+	if o == nil || o.DdosChallengesSucceeded == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosChallengesSucceeded
+}
+
+// GetDdosChallengesSucceededOk returns a tuple with the DdosChallengesSucceeded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetDdosChallengesSucceededOk() (*int32, bool) {
+	if o == nil || o.DdosChallengesSucceeded == nil {
+		return nil, false
+	}
+	return o.DdosChallengesSucceeded, true
+}
+
+// HasDdosChallengesSucceeded returns a boolean if a field has been set.
+func (o *Results) HasDdosChallengesSucceeded() bool {
+	if o != nil && o.DdosChallengesSucceeded != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosChallengesSucceeded gets a reference to the given int32 and assigns it to the DdosChallengesSucceeded field.
+func (o *Results) SetDdosChallengesSucceeded(v int32) {
+	o.DdosChallengesSucceeded = &v
+}
+
+// GetDdosChallengesFailed returns the DdosChallengesFailed field value if set, zero value otherwise.
+func (o *Results) GetDdosChallengesFailed() int32 {
+	if o == nil || o.DdosChallengesFailed == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosChallengesFailed
+}
+
+// GetDdosChallengesFailedOk returns a tuple with the DdosChallengesFailed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetDdosChallengesFailedOk() (*int32, bool) {
+	if o == nil || o.DdosChallengesFailed == nil {
+		return nil, false
+	}
+	return o.DdosChallengesFailed, true
+}
+
+// HasDdosChallengesFailed returns a boolean if a field has been set.
+func (o *Results) HasDdosChallengesFailed() bool {
+	if o != nil && o.DdosChallengesFailed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosChallengesFailed gets a reference to the given int32 and assigns it to the DdosChallengesFailed field.
+func (o *Results) SetDdosChallengesFailed(v int32) {
+	o.DdosChallengesFailed = &v
+}
+
+// GetDdosChallengesPatsIssued returns the DdosChallengesPatsIssued field value if set, zero value otherwise.
+func (o *Results) GetDdosChallengesPatsIssued() int32 {
+	if o == nil || o.DdosChallengesPatsIssued == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosChallengesPatsIssued
+}
+
+// GetDdosChallengesPatsIssuedOk returns a tuple with the DdosChallengesPatsIssued field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetDdosChallengesPatsIssuedOk() (*int32, bool) {
+	if o == nil || o.DdosChallengesPatsIssued == nil {
+		return nil, false
+	}
+	return o.DdosChallengesPatsIssued, true
+}
+
+// HasDdosChallengesPatsIssued returns a boolean if a field has been set.
+func (o *Results) HasDdosChallengesPatsIssued() bool {
+	if o != nil && o.DdosChallengesPatsIssued != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosChallengesPatsIssued gets a reference to the given int32 and assigns it to the DdosChallengesPatsIssued field.
+func (o *Results) SetDdosChallengesPatsIssued(v int32) {
+	o.DdosChallengesPatsIssued = &v
+}
+
+// GetDdosChallengesPatsSucceeded returns the DdosChallengesPatsSucceeded field value if set, zero value otherwise.
+func (o *Results) GetDdosChallengesPatsSucceeded() int32 {
+	if o == nil || o.DdosChallengesPatsSucceeded == nil {
+		var ret int32
+		return ret
+	}
+	return *o.DdosChallengesPatsSucceeded
+}
+
+// GetDdosChallengesPatsSucceededOk returns a tuple with the DdosChallengesPatsSucceeded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *Results) GetDdosChallengesPatsSucceededOk() (*int32, bool) {
+	if o == nil || o.DdosChallengesPatsSucceeded == nil {
+		return nil, false
+	}
+	return o.DdosChallengesPatsSucceeded, true
+}
+
+// HasDdosChallengesPatsSucceeded returns a boolean if a field has been set.
+func (o *Results) HasDdosChallengesPatsSucceeded() bool {
+	if o != nil && o.DdosChallengesPatsSucceeded != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDdosChallengesPatsSucceeded gets a reference to the given int32 and assigns it to the DdosChallengesPatsSucceeded field.
+func (o *Results) SetDdosChallengesPatsSucceeded(v int32) {
+	o.DdosChallengesPatsSucceeded = &v
+}
+
 // GetServiceId returns the ServiceId field value if set, zero value otherwise.
 func (o *Results) GetServiceId() string {
 	if o == nil || o.ServiceId == nil {
@@ -12109,6 +12619,12 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	}
 	if o.Imgopto != nil {
 		toSerialize["imgopto"] = o.Imgopto
+	}
+	if o.ImgoptoInputImageBytes != nil {
+		toSerialize["imgopto_input_image_bytes"] = o.ImgoptoInputImageBytes
+	}
+	if o.ImgoptoOutputImageBytes != nil {
+		toSerialize["imgopto_output_image_bytes"] = o.ImgoptoOutputImageBytes
 	}
 	if o.ImgoptoRespBodyBytes != nil {
 		toSerialize["imgopto_resp_body_bytes"] = o.ImgoptoRespBodyBytes
@@ -12923,6 +13439,45 @@ func (o Results) MarshalJSON() ([]byte, error) {
 	if o.BotChallengesPatsSucceeded != nil {
 		toSerialize["bot_challenges_pats_succeeded"] = o.BotChallengesPatsSucceeded
 	}
+	if o.BotEdgeRequestsHeadlessCount != nil {
+		toSerialize["bot_edge_requests_headless_count"] = o.BotEdgeRequestsHeadlessCount
+	}
+	if o.Status499 != nil {
+		toSerialize["status_499"] = o.Status499
+	}
+	if o.ArcRequests != nil {
+		toSerialize["arc_requests"] = o.ArcRequests
+	}
+	if o.DdosChallengeCompleteTokensChecked != nil {
+		toSerialize["ddos_challenge_complete_tokens_checked"] = o.DdosChallengeCompleteTokensChecked
+	}
+	if o.DdosChallengeCompleteTokensPassed != nil {
+		toSerialize["ddos_challenge_complete_tokens_passed"] = o.DdosChallengeCompleteTokensPassed
+	}
+	if o.DdosChallengeCompleteTokensFailed != nil {
+		toSerialize["ddos_challenge_complete_tokens_failed"] = o.DdosChallengeCompleteTokensFailed
+	}
+	if o.DdosChallengeStarts != nil {
+		toSerialize["ddos_challenge_starts"] = o.DdosChallengeStarts
+	}
+	if o.DdosChallengeCompleteTokensIssued != nil {
+		toSerialize["ddos_challenge_complete_tokens_issued"] = o.DdosChallengeCompleteTokensIssued
+	}
+	if o.DdosChallengesIssued != nil {
+		toSerialize["ddos_challenges_issued"] = o.DdosChallengesIssued
+	}
+	if o.DdosChallengesSucceeded != nil {
+		toSerialize["ddos_challenges_succeeded"] = o.DdosChallengesSucceeded
+	}
+	if o.DdosChallengesFailed != nil {
+		toSerialize["ddos_challenges_failed"] = o.DdosChallengesFailed
+	}
+	if o.DdosChallengesPatsIssued != nil {
+		toSerialize["ddos_challenges_pats_issued"] = o.DdosChallengesPatsIssued
+	}
+	if o.DdosChallengesPatsSucceeded != nil {
+		toSerialize["ddos_challenges_pats_succeeded"] = o.DdosChallengesPatsSucceeded
+	}
 	if o.ServiceId != nil {
 		toSerialize["service_id"] = o.ServiceId
 	}
@@ -13023,6 +13578,8 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "attack_passed_req_header_bytes")
 		delete(additionalProperties, "attack_resp_synth_bytes")
 		delete(additionalProperties, "imgopto")
+		delete(additionalProperties, "imgopto_input_image_bytes")
+		delete(additionalProperties, "imgopto_output_image_bytes")
 		delete(additionalProperties, "imgopto_resp_body_bytes")
 		delete(additionalProperties, "imgopto_resp_header_bytes")
 		delete(additionalProperties, "imgopto_shield")
@@ -13294,6 +13851,19 @@ func (o *Results) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "compute_service_bereq_http_error")
 		delete(additionalProperties, "bot_challenges_pats_issued")
 		delete(additionalProperties, "bot_challenges_pats_succeeded")
+		delete(additionalProperties, "bot_edge_requests_headless_count")
+		delete(additionalProperties, "status_499")
+		delete(additionalProperties, "arc_requests")
+		delete(additionalProperties, "ddos_challenge_complete_tokens_checked")
+		delete(additionalProperties, "ddos_challenge_complete_tokens_passed")
+		delete(additionalProperties, "ddos_challenge_complete_tokens_failed")
+		delete(additionalProperties, "ddos_challenge_starts")
+		delete(additionalProperties, "ddos_challenge_complete_tokens_issued")
+		delete(additionalProperties, "ddos_challenges_issued")
+		delete(additionalProperties, "ddos_challenges_succeeded")
+		delete(additionalProperties, "ddos_challenges_failed")
+		delete(additionalProperties, "ddos_challenges_pats_issued")
+		delete(additionalProperties, "ddos_challenges_pats_succeeded")
 		delete(additionalProperties, "service_id")
 		delete(additionalProperties, "start_time")
 		o.AdditionalProperties = additionalProperties

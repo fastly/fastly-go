@@ -283,7 +283,9 @@ type DomainInspectorMeasurements struct {
 	// Number of requests received over TLS 1.2.
 	TlsV12 *int64 `json:"tls_v12,omitempty"`
 	// Number of requests received over TLS 1.3.
-	TlsV13               *int64 `json:"tls_v13,omitempty"`
+	TlsV13 *int64 `json:"tls_v13,omitempty"`
+	// Number of responses sent with status code 499 (Client Disconnected).
+	Status499            *int64 `json:"status_499,omitempty"`
 	AdditionalProperties map[string]any
 }
 
@@ -4562,6 +4564,38 @@ func (o *DomainInspectorMeasurements) SetTlsV13(v int64) {
 	o.TlsV13 = &v
 }
 
+// GetStatus499 returns the Status499 field value if set, zero value otherwise.
+func (o *DomainInspectorMeasurements) GetStatus499() int64 {
+	if o == nil || o.Status499 == nil {
+		var ret int64
+		return ret
+	}
+	return *o.Status499
+}
+
+// GetStatus499Ok returns a tuple with the Status499 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DomainInspectorMeasurements) GetStatus499Ok() (*int64, bool) {
+	if o == nil || o.Status499 == nil {
+		return nil, false
+	}
+	return o.Status499, true
+}
+
+// HasStatus499 returns a boolean if a field has been set.
+func (o *DomainInspectorMeasurements) HasStatus499() bool {
+	if o != nil && o.Status499 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus499 gets a reference to the given int64 and assigns it to the Status499 field.
+func (o *DomainInspectorMeasurements) SetStatus499(v int64) {
+	o.Status499 = &v
+}
+
 // MarshalJSON implements the json.Marshaler interface.
 // Marshaler is the interface implemented by types that can marshal themselves into valid JSON.
 func (o DomainInspectorMeasurements) MarshalJSON() ([]byte, error) {
@@ -4965,6 +4999,9 @@ func (o DomainInspectorMeasurements) MarshalJSON() ([]byte, error) {
 	if o.TlsV13 != nil {
 		toSerialize["tls_v13"] = o.TlsV13
 	}
+	if o.Status499 != nil {
+		toSerialize["status_499"] = o.Status499
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -5118,6 +5155,7 @@ func (o *DomainInspectorMeasurements) UnmarshalJSON(bytes []byte) (err error) {
 		delete(additionalProperties, "tls_v11")
 		delete(additionalProperties, "tls_v12")
 		delete(additionalProperties, "tls_v13")
+		delete(additionalProperties, "status_499")
 		o.AdditionalProperties = additionalProperties
 	}
 

@@ -58,6 +58,8 @@ Name | Type | Description | Notes
 **OtfpShieldRespBodyBytes** | Pointer to **int64** | Total body bytes delivered via a shield for the Fastly On-the-Fly Packaging service for video-on-demand. | [optional] 
 **OtfpShieldTime** | Pointer to **float32** | Total amount of time spent delivering a response via a shield from the Fastly On-the-Fly Packaging service for video-on-demand (in seconds). | [optional] 
 **OtfpDeliverTime** | Pointer to **float32** | Total amount of time spent delivering a response from the Fastly On-the-Fly Packaging service for video-on-demand (in seconds). | [optional] 
+**ImgoptoInputImageBytes** | Pointer to **int64** | The total image bytes that would have been delivered if the images had not been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer). | [optional] 
+**ImgoptoOutputImageBytes** | Pointer to **int64** | The total image bytes delivered that have been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer). | [optional] 
 **ImgoptoRespHeaderBytes** | Pointer to **int64** | Total header bytes delivered from the Fastly Image Optimizer service, including shield traffic. | [optional] 
 **ImgoptoRespBodyBytes** | Pointer to **int64** | Total body bytes delivered from the Fastly Image Optimizer service, including shield traffic. | [optional] 
 **ImgoptoShieldRespHeaderBytes** | Pointer to **int64** | Total header bytes delivered via a shield from the Fastly Image Optimizer service. | [optional] 
@@ -342,6 +344,19 @@ Name | Type | Description | Notes
 **ComputeServiceBereqHttpError** | Pointer to **int32** | Number of backend requests from a Compute service that failed at the HTTP protocol level. Sum of `compute_service_bereq_http_proto_v1_error`, `compute_service_bereq_http_proto_v2_error`, `compute_service_bereq_http_incomplete_error`, `compute_service_bereq_http_timeout_error`, and `compute_service_bereq_http_other_error`. | [optional] 
 **BotChallengesPatsIssued** | Pointer to **int32** | Number of Private Access Token challenges issued. | [optional] 
 **BotChallengesPatsSucceeded** | Pointer to **int32** | Number of successful Private Access Token challenge solutions processed. | [optional] 
+**BotEdgeRequestsHeadlessCount** | Pointer to **int32** | Number of edge requests where a headless bot was detected. | [optional] 
+**Status499** | Pointer to **int32** | Number of responses sent with status code 499 (Client Disconnected). | [optional] 
+**ArcRequests** | Pointer to **int32** | Number of requests received by AI Runtime Control. | [optional] 
+**DdosChallengeCompleteTokensChecked** | Pointer to **int32** | The number of challenge-complete tokens checked while enforcing DDoS protection rules. | [optional] 
+**DdosChallengeCompleteTokensPassed** | Pointer to **int32** | The number of challenge-complete tokens that passed validation while enforcing DDoS protection rules. | [optional] 
+**DdosChallengeCompleteTokensFailed** | Pointer to **int32** | The number of challenge-complete tokens that failed validation while enforcing DDoS protection rules. | [optional] 
+**DdosChallengeStarts** | Pointer to **int32** | The number of challenge-start tokens created while enforcing DDoS protection rules. | [optional] 
+**DdosChallengeCompleteTokensIssued** | Pointer to **int32** | Number of challenge-complete tokens issued as a result of a DDoS action. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success. | [optional] 
+**DdosChallengesIssued** | Pointer to **int32** | Number of challenges issued from a DDoS action. | [optional] 
+**DdosChallengesSucceeded** | Pointer to **int32** | Number of successful challenge solutions processed as a result of a DDoS action. For example, a correct CAPTCHA solution. | [optional] 
+**DdosChallengesFailed** | Pointer to **int32** | Number of failed challenge solutions processed as a result of a DDoS action. For example, an incorrect CAPTCHA solution. | [optional] 
+**DdosChallengesPatsIssued** | Pointer to **int32** | Number of Private Access Token challenges issued as a result of a DDoS action. | [optional] 
+**DdosChallengesPatsSucceeded** | Pointer to **int32** | Number of successful Private Access Token challenge solutions processed as a result of a DDoS action. | [optional] 
 
 ## Methods
 
@@ -1711,6 +1726,56 @@ SetOtfpDeliverTime sets OtfpDeliverTime field to given value.
 `func (o *RealtimeEntryDatacenter) HasOtfpDeliverTime() bool`
 
 HasOtfpDeliverTime returns a boolean if a field has been set.
+
+### GetImgoptoInputImageBytes
+
+`func (o *RealtimeEntryDatacenter) GetImgoptoInputImageBytes() int64`
+
+GetImgoptoInputImageBytes returns the ImgoptoInputImageBytes field if non-nil, zero value otherwise.
+
+### GetImgoptoInputImageBytesOk
+
+`func (o *RealtimeEntryDatacenter) GetImgoptoInputImageBytesOk() (*int64, bool)`
+
+GetImgoptoInputImageBytesOk returns a tuple with the ImgoptoInputImageBytes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoInputImageBytes
+
+`func (o *RealtimeEntryDatacenter) SetImgoptoInputImageBytes(v int64)`
+
+SetImgoptoInputImageBytes sets ImgoptoInputImageBytes field to given value.
+
+### HasImgoptoInputImageBytes
+
+`func (o *RealtimeEntryDatacenter) HasImgoptoInputImageBytes() bool`
+
+HasImgoptoInputImageBytes returns a boolean if a field has been set.
+
+### GetImgoptoOutputImageBytes
+
+`func (o *RealtimeEntryDatacenter) GetImgoptoOutputImageBytes() int64`
+
+GetImgoptoOutputImageBytes returns the ImgoptoOutputImageBytes field if non-nil, zero value otherwise.
+
+### GetImgoptoOutputImageBytesOk
+
+`func (o *RealtimeEntryDatacenter) GetImgoptoOutputImageBytesOk() (*int64, bool)`
+
+GetImgoptoOutputImageBytesOk returns a tuple with the ImgoptoOutputImageBytes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoOutputImageBytes
+
+`func (o *RealtimeEntryDatacenter) SetImgoptoOutputImageBytes(v int64)`
+
+SetImgoptoOutputImageBytes sets ImgoptoOutputImageBytes field to given value.
+
+### HasImgoptoOutputImageBytes
+
+`func (o *RealtimeEntryDatacenter) HasImgoptoOutputImageBytes() bool`
+
+HasImgoptoOutputImageBytes returns a boolean if a field has been set.
 
 ### GetImgoptoRespHeaderBytes
 
@@ -8811,6 +8876,331 @@ SetBotChallengesPatsSucceeded sets BotChallengesPatsSucceeded field to given val
 `func (o *RealtimeEntryDatacenter) HasBotChallengesPatsSucceeded() bool`
 
 HasBotChallengesPatsSucceeded returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsHeadlessCount
+
+`func (o *RealtimeEntryDatacenter) GetBotEdgeRequestsHeadlessCount() int32`
+
+GetBotEdgeRequestsHeadlessCount returns the BotEdgeRequestsHeadlessCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsHeadlessCountOk
+
+`func (o *RealtimeEntryDatacenter) GetBotEdgeRequestsHeadlessCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsHeadlessCountOk returns a tuple with the BotEdgeRequestsHeadlessCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsHeadlessCount
+
+`func (o *RealtimeEntryDatacenter) SetBotEdgeRequestsHeadlessCount(v int32)`
+
+SetBotEdgeRequestsHeadlessCount sets BotEdgeRequestsHeadlessCount field to given value.
+
+### HasBotEdgeRequestsHeadlessCount
+
+`func (o *RealtimeEntryDatacenter) HasBotEdgeRequestsHeadlessCount() bool`
+
+HasBotEdgeRequestsHeadlessCount returns a boolean if a field has been set.
+
+### GetStatus499
+
+`func (o *RealtimeEntryDatacenter) GetStatus499() int32`
+
+GetStatus499 returns the Status499 field if non-nil, zero value otherwise.
+
+### GetStatus499Ok
+
+`func (o *RealtimeEntryDatacenter) GetStatus499Ok() (*int32, bool)`
+
+GetStatus499Ok returns a tuple with the Status499 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus499
+
+`func (o *RealtimeEntryDatacenter) SetStatus499(v int32)`
+
+SetStatus499 sets Status499 field to given value.
+
+### HasStatus499
+
+`func (o *RealtimeEntryDatacenter) HasStatus499() bool`
+
+HasStatus499 returns a boolean if a field has been set.
+
+### GetArcRequests
+
+`func (o *RealtimeEntryDatacenter) GetArcRequests() int32`
+
+GetArcRequests returns the ArcRequests field if non-nil, zero value otherwise.
+
+### GetArcRequestsOk
+
+`func (o *RealtimeEntryDatacenter) GetArcRequestsOk() (*int32, bool)`
+
+GetArcRequestsOk returns a tuple with the ArcRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArcRequests
+
+`func (o *RealtimeEntryDatacenter) SetArcRequests(v int32)`
+
+SetArcRequests sets ArcRequests field to given value.
+
+### HasArcRequests
+
+`func (o *RealtimeEntryDatacenter) HasArcRequests() bool`
+
+HasArcRequests returns a boolean if a field has been set.
+
+### GetDdosChallengeCompleteTokensChecked
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengeCompleteTokensChecked() int32`
+
+GetDdosChallengeCompleteTokensChecked returns the DdosChallengeCompleteTokensChecked field if non-nil, zero value otherwise.
+
+### GetDdosChallengeCompleteTokensCheckedOk
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengeCompleteTokensCheckedOk() (*int32, bool)`
+
+GetDdosChallengeCompleteTokensCheckedOk returns a tuple with the DdosChallengeCompleteTokensChecked field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengeCompleteTokensChecked
+
+`func (o *RealtimeEntryDatacenter) SetDdosChallengeCompleteTokensChecked(v int32)`
+
+SetDdosChallengeCompleteTokensChecked sets DdosChallengeCompleteTokensChecked field to given value.
+
+### HasDdosChallengeCompleteTokensChecked
+
+`func (o *RealtimeEntryDatacenter) HasDdosChallengeCompleteTokensChecked() bool`
+
+HasDdosChallengeCompleteTokensChecked returns a boolean if a field has been set.
+
+### GetDdosChallengeCompleteTokensPassed
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengeCompleteTokensPassed() int32`
+
+GetDdosChallengeCompleteTokensPassed returns the DdosChallengeCompleteTokensPassed field if non-nil, zero value otherwise.
+
+### GetDdosChallengeCompleteTokensPassedOk
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengeCompleteTokensPassedOk() (*int32, bool)`
+
+GetDdosChallengeCompleteTokensPassedOk returns a tuple with the DdosChallengeCompleteTokensPassed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengeCompleteTokensPassed
+
+`func (o *RealtimeEntryDatacenter) SetDdosChallengeCompleteTokensPassed(v int32)`
+
+SetDdosChallengeCompleteTokensPassed sets DdosChallengeCompleteTokensPassed field to given value.
+
+### HasDdosChallengeCompleteTokensPassed
+
+`func (o *RealtimeEntryDatacenter) HasDdosChallengeCompleteTokensPassed() bool`
+
+HasDdosChallengeCompleteTokensPassed returns a boolean if a field has been set.
+
+### GetDdosChallengeCompleteTokensFailed
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengeCompleteTokensFailed() int32`
+
+GetDdosChallengeCompleteTokensFailed returns the DdosChallengeCompleteTokensFailed field if non-nil, zero value otherwise.
+
+### GetDdosChallengeCompleteTokensFailedOk
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengeCompleteTokensFailedOk() (*int32, bool)`
+
+GetDdosChallengeCompleteTokensFailedOk returns a tuple with the DdosChallengeCompleteTokensFailed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengeCompleteTokensFailed
+
+`func (o *RealtimeEntryDatacenter) SetDdosChallengeCompleteTokensFailed(v int32)`
+
+SetDdosChallengeCompleteTokensFailed sets DdosChallengeCompleteTokensFailed field to given value.
+
+### HasDdosChallengeCompleteTokensFailed
+
+`func (o *RealtimeEntryDatacenter) HasDdosChallengeCompleteTokensFailed() bool`
+
+HasDdosChallengeCompleteTokensFailed returns a boolean if a field has been set.
+
+### GetDdosChallengeStarts
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengeStarts() int32`
+
+GetDdosChallengeStarts returns the DdosChallengeStarts field if non-nil, zero value otherwise.
+
+### GetDdosChallengeStartsOk
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengeStartsOk() (*int32, bool)`
+
+GetDdosChallengeStartsOk returns a tuple with the DdosChallengeStarts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengeStarts
+
+`func (o *RealtimeEntryDatacenter) SetDdosChallengeStarts(v int32)`
+
+SetDdosChallengeStarts sets DdosChallengeStarts field to given value.
+
+### HasDdosChallengeStarts
+
+`func (o *RealtimeEntryDatacenter) HasDdosChallengeStarts() bool`
+
+HasDdosChallengeStarts returns a boolean if a field has been set.
+
+### GetDdosChallengeCompleteTokensIssued
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengeCompleteTokensIssued() int32`
+
+GetDdosChallengeCompleteTokensIssued returns the DdosChallengeCompleteTokensIssued field if non-nil, zero value otherwise.
+
+### GetDdosChallengeCompleteTokensIssuedOk
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengeCompleteTokensIssuedOk() (*int32, bool)`
+
+GetDdosChallengeCompleteTokensIssuedOk returns a tuple with the DdosChallengeCompleteTokensIssued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengeCompleteTokensIssued
+
+`func (o *RealtimeEntryDatacenter) SetDdosChallengeCompleteTokensIssued(v int32)`
+
+SetDdosChallengeCompleteTokensIssued sets DdosChallengeCompleteTokensIssued field to given value.
+
+### HasDdosChallengeCompleteTokensIssued
+
+`func (o *RealtimeEntryDatacenter) HasDdosChallengeCompleteTokensIssued() bool`
+
+HasDdosChallengeCompleteTokensIssued returns a boolean if a field has been set.
+
+### GetDdosChallengesIssued
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengesIssued() int32`
+
+GetDdosChallengesIssued returns the DdosChallengesIssued field if non-nil, zero value otherwise.
+
+### GetDdosChallengesIssuedOk
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengesIssuedOk() (*int32, bool)`
+
+GetDdosChallengesIssuedOk returns a tuple with the DdosChallengesIssued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengesIssued
+
+`func (o *RealtimeEntryDatacenter) SetDdosChallengesIssued(v int32)`
+
+SetDdosChallengesIssued sets DdosChallengesIssued field to given value.
+
+### HasDdosChallengesIssued
+
+`func (o *RealtimeEntryDatacenter) HasDdosChallengesIssued() bool`
+
+HasDdosChallengesIssued returns a boolean if a field has been set.
+
+### GetDdosChallengesSucceeded
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengesSucceeded() int32`
+
+GetDdosChallengesSucceeded returns the DdosChallengesSucceeded field if non-nil, zero value otherwise.
+
+### GetDdosChallengesSucceededOk
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengesSucceededOk() (*int32, bool)`
+
+GetDdosChallengesSucceededOk returns a tuple with the DdosChallengesSucceeded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengesSucceeded
+
+`func (o *RealtimeEntryDatacenter) SetDdosChallengesSucceeded(v int32)`
+
+SetDdosChallengesSucceeded sets DdosChallengesSucceeded field to given value.
+
+### HasDdosChallengesSucceeded
+
+`func (o *RealtimeEntryDatacenter) HasDdosChallengesSucceeded() bool`
+
+HasDdosChallengesSucceeded returns a boolean if a field has been set.
+
+### GetDdosChallengesFailed
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengesFailed() int32`
+
+GetDdosChallengesFailed returns the DdosChallengesFailed field if non-nil, zero value otherwise.
+
+### GetDdosChallengesFailedOk
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengesFailedOk() (*int32, bool)`
+
+GetDdosChallengesFailedOk returns a tuple with the DdosChallengesFailed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengesFailed
+
+`func (o *RealtimeEntryDatacenter) SetDdosChallengesFailed(v int32)`
+
+SetDdosChallengesFailed sets DdosChallengesFailed field to given value.
+
+### HasDdosChallengesFailed
+
+`func (o *RealtimeEntryDatacenter) HasDdosChallengesFailed() bool`
+
+HasDdosChallengesFailed returns a boolean if a field has been set.
+
+### GetDdosChallengesPatsIssued
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengesPatsIssued() int32`
+
+GetDdosChallengesPatsIssued returns the DdosChallengesPatsIssued field if non-nil, zero value otherwise.
+
+### GetDdosChallengesPatsIssuedOk
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengesPatsIssuedOk() (*int32, bool)`
+
+GetDdosChallengesPatsIssuedOk returns a tuple with the DdosChallengesPatsIssued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengesPatsIssued
+
+`func (o *RealtimeEntryDatacenter) SetDdosChallengesPatsIssued(v int32)`
+
+SetDdosChallengesPatsIssued sets DdosChallengesPatsIssued field to given value.
+
+### HasDdosChallengesPatsIssued
+
+`func (o *RealtimeEntryDatacenter) HasDdosChallengesPatsIssued() bool`
+
+HasDdosChallengesPatsIssued returns a boolean if a field has been set.
+
+### GetDdosChallengesPatsSucceeded
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengesPatsSucceeded() int32`
+
+GetDdosChallengesPatsSucceeded returns the DdosChallengesPatsSucceeded field if non-nil, zero value otherwise.
+
+### GetDdosChallengesPatsSucceededOk
+
+`func (o *RealtimeEntryDatacenter) GetDdosChallengesPatsSucceededOk() (*int32, bool)`
+
+GetDdosChallengesPatsSucceededOk returns a tuple with the DdosChallengesPatsSucceeded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengesPatsSucceeded
+
+`func (o *RealtimeEntryDatacenter) SetDdosChallengesPatsSucceeded(v int32)`
+
+SetDdosChallengesPatsSucceeded sets DdosChallengesPatsSucceeded field to given value.
+
+### HasDdosChallengesPatsSucceeded
+
+`func (o *RealtimeEntryDatacenter) HasDdosChallengesPatsSucceeded() bool`
+
+HasDdosChallengesPatsSucceeded returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
