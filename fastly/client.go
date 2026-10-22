@@ -69,6 +69,16 @@ type APIClient struct {
 
 	AclsInComputeAPI AclsInComputeAPI
 
+	AiRuntimeControlProviderConnectionsAPI AiRuntimeControlProviderConnectionsAPI
+
+	AiRuntimeControlProvidersAPI AiRuntimeControlProvidersAPI
+
+	AiRuntimeControlSessionsAPI AiRuntimeControlSessionsAPI
+
+	AiRuntimeControlUsageMetricsAPI AiRuntimeControlUsageMetricsAPI
+
+	AiRuntimeControlVirtualKeysAPI AiRuntimeControlVirtualKeysAPI
+
 	ApexRedirectAPI ApexRedirectAPI
 
 	ApisecurityOperationsAPI ApisecurityOperationsAPI
@@ -82,6 +92,10 @@ type APIClient struct {
 	BillingInvoicesAPI BillingInvoicesAPI
 
 	BillingUsageMetricsAPI BillingUsageMetricsAPI
+
+	BotManagementAPI BotManagementAPI
+
+	BotRequestsMetricsAPI BotRequestsMetricsAPI
 
 	CacheSettingsAPI CacheSettingsAPI
 
@@ -221,6 +235,8 @@ type APIClient struct {
 
 	MutualAuthenticationAPI MutualAuthenticationAPI
 
+	NetworkProtectAPI NetworkProtectAPI
+
 	NgwafAgentKeysAPI NgwafAgentKeysAPI
 
 	NgwafReportsAPI NgwafReportsAPI
@@ -244,6 +260,8 @@ type APIClient struct {
 	PopAPI PopAPI
 
 	ProductAiAcceleratorAPI ProductAiAcceleratorAPI
+
+	ProductAiRuntimeControlAPI ProductAiRuntimeControlAPI
 
 	ProductApiDiscoveryAPI ProductApiDiscoveryAPI
 
@@ -358,6 +376,11 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.AclAPI = (*AclAPIService)(&c.common)
 	c.AclEntryAPI = (*AclEntryAPIService)(&c.common)
 	c.AclsInComputeAPI = (*AclsInComputeAPIService)(&c.common)
+	c.AiRuntimeControlProviderConnectionsAPI = (*AiRuntimeControlProviderConnectionsAPIService)(&c.common)
+	c.AiRuntimeControlProvidersAPI = (*AiRuntimeControlProvidersAPIService)(&c.common)
+	c.AiRuntimeControlSessionsAPI = (*AiRuntimeControlSessionsAPIService)(&c.common)
+	c.AiRuntimeControlUsageMetricsAPI = (*AiRuntimeControlUsageMetricsAPIService)(&c.common)
+	c.AiRuntimeControlVirtualKeysAPI = (*AiRuntimeControlVirtualKeysAPIService)(&c.common)
 	c.ApexRedirectAPI = (*ApexRedirectAPIService)(&c.common)
 	c.ApisecurityOperationsAPI = (*ApisecurityOperationsAPIService)(&c.common)
 	c.AutomationTokensAPI = (*AutomationTokensAPIService)(&c.common)
@@ -365,6 +388,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.BillingAddressAPI = (*BillingAddressAPIService)(&c.common)
 	c.BillingInvoicesAPI = (*BillingInvoicesAPIService)(&c.common)
 	c.BillingUsageMetricsAPI = (*BillingUsageMetricsAPIService)(&c.common)
+	c.BotManagementAPI = (*BotManagementAPIService)(&c.common)
+	c.BotRequestsMetricsAPI = (*BotRequestsMetricsAPIService)(&c.common)
 	c.CacheSettingsAPI = (*CacheSettingsAPIService)(&c.common)
 	c.ClientSideProtectionAPI = (*ClientSideProtectionAPIService)(&c.common)
 	c.ConditionAPI = (*ConditionAPIService)(&c.common)
@@ -434,6 +459,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.LoggingSyslogAPI = (*LoggingSyslogAPIService)(&c.common)
 	c.MetricsPlatformAPI = (*MetricsPlatformAPIService)(&c.common)
 	c.MutualAuthenticationAPI = (*MutualAuthenticationAPIService)(&c.common)
+	c.NetworkProtectAPI = (*NetworkProtectAPIService)(&c.common)
 	c.NgwafAgentKeysAPI = (*NgwafAgentKeysAPIService)(&c.common)
 	c.NgwafReportsAPI = (*NgwafReportsAPIService)(&c.common)
 	c.NgwafSimulateAPI = (*NgwafSimulateAPIService)(&c.common)
@@ -446,6 +472,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.PoolAPI = (*PoolAPIService)(&c.common)
 	c.PopAPI = (*PopAPIService)(&c.common)
 	c.ProductAiAcceleratorAPI = (*ProductAiAcceleratorAPIService)(&c.common)
+	c.ProductAiRuntimeControlAPI = (*ProductAiRuntimeControlAPIService)(&c.common)
 	c.ProductApiDiscoveryAPI = (*ProductApiDiscoveryAPIService)(&c.common)
 	c.ProductBotManagementAPI = (*ProductBotManagementAPIService)(&c.common)
 	c.ProductBrotliCompressionAPI = (*ProductBrotliCompressionAPIService)(&c.common)

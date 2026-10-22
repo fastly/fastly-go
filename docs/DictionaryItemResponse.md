@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ItemKey** | Pointer to **string** | Item key, maximum 256 characters. | [optional] 
+**ItemKey** | Pointer to **string** | Item key, maximum 255 characters. | [optional] 
 **ItemValue** | Pointer to **string** | Item value, maximum 8000 characters. | [optional] 
 **CreatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **DeletedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 

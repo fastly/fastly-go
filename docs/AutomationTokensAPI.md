@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**CreateAutomationToken**](AutomationTokensAPI.md#CreateAutomationToken) | **POST** `/automation-tokens` | Create Automation Token
 [**GetAutomationTokenId**](AutomationTokensAPI.md#GetAutomationTokenId) | **GET** `/automation-tokens/{id}` | Retrieve an Automation Token by ID
 [**GetAutomationTokensIdServices**](AutomationTokensAPI.md#GetAutomationTokensIdServices) | **GET** `/automation-tokens/{id}/services` | List Automation Token Services
+[**GetAutomationTokensIdWorkspaces**](AutomationTokensAPI.md#GetAutomationTokensIdWorkspaces) | **GET** `/automation-tokens/{id}/workspaces` | List Automation Token Workspaces
 [**ListAutomationTokens**](AutomationTokensAPI.md#ListAutomationTokens) | **GET** `/automation-tokens` | List Customer Automation Tokens
 [**RevokeAutomationTokenId**](AutomationTokensAPI.md#RevokeAutomationTokenId) | **DELETE** `/automation-tokens/{id}` | Revoke an Automation Token by ID
 
@@ -28,11 +29,12 @@ import (
     "context"
     "fmt"
     "os"
+    "time"
     "github.com/fastly/fastly-go/fastly"
 )
 
 func main() {
-    automationTokenCreateRequest := *openapiclient.NewAutomationTokenCreateRequest() // AutomationTokenCreateRequest |  (optional)
+    automationTokenCreateRequest := *openapiclient.NewAutomationTokenCreateRequest("Name_example", time.Now()) // AutomationTokenCreateRequest |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -71,7 +73,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: application/json, application/problem+json
 
 [Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
 
@@ -199,6 +201,75 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse2004**](InlineResponse2004.md)
+
+### Authorization
+
+[API Token](https://www.fastly.com/documentation/reference/api/#authentication)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, application/problem+json
+
+[Back to top](#) | [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)
+
+
+## GetAutomationTokensIdWorkspaces
+
+List Automation Token Workspaces
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    "github.com/fastly/fastly-go/fastly"
+)
+
+func main() {
+    id := "id_example" // string | The alphanumeric string identifying the automation token.
+    limit := int32(56) // int32 | Maximum number of workspaces to return per page. (optional) (default to 20)
+    cursor := "cursor_example" // string | Pagination cursor from a previous response. Pass the `next_cursor` value to retrieve the next page, or `previous_cursor` to go back. (optional)
+
+    cfg := fastly.NewConfiguration()
+    apiClient := fastly.NewAPIClient(cfg)
+    ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
+    resp, r, err := apiClient.AutomationTokensAPI.GetAutomationTokensIdWorkspaces(ctx, id).Limit(limit).Cursor(cursor).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AutomationTokensAPI.GetAutomationTokensIdWorkspaces`: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetAutomationTokensIdWorkspaces`: AutomationTokenWorkspacesResponse
+    fmt.Fprintf(os.Stdout, "Response from `AutomationTokensAPI.GetAutomationTokensIdWorkspaces`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | The alphanumeric string identifying the automation token. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAutomationTokensIdWorkspacesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int32** | Maximum number of workspaces to return per page. | [default to 20] **cursor** | **string** | Pagination cursor from a previous response. Pass the `next_cursor` value to retrieve the next page, or `previous_cursor` to go back. | 
+
+### Return type
+
+[**AutomationTokenWorkspacesResponse**](AutomationTokenWorkspacesResponse.md)
 
 ### Authorization
 

@@ -70,7 +70,7 @@ type DictionaryItemAPI interface {
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param serviceId Alphanumeric string identifying the service.
 		 @param dictionaryId Alphanumeric string identifying a Dictionary.
-		 @param dictionaryItemKey Item key, maximum 256 characters.
+		 @param dictionaryItemKey Item key, maximum 255 characters.
 		 @return APIDeleteDictionaryItemRequest
 	*/
 	DeleteDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIDeleteDictionaryItemRequest
@@ -87,7 +87,7 @@ type DictionaryItemAPI interface {
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param serviceId Alphanumeric string identifying the service.
 		 @param dictionaryId Alphanumeric string identifying a Dictionary.
-		 @param dictionaryItemKey Item key, maximum 256 characters.
+		 @param dictionaryItemKey Item key, maximum 255 characters.
 		 @return APIGetDictionaryItemRequest
 	*/
 	GetDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIGetDictionaryItemRequest
@@ -120,7 +120,7 @@ type DictionaryItemAPI interface {
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param serviceId Alphanumeric string identifying the service.
 		 @param dictionaryId Alphanumeric string identifying a Dictionary.
-		 @param dictionaryItemKey Item key, maximum 256 characters.
+		 @param dictionaryItemKey Item key, maximum 255 characters.
 		 @return APIUpdateDictionaryItemRequest
 	*/
 	UpdateDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIUpdateDictionaryItemRequest
@@ -137,7 +137,7 @@ type DictionaryItemAPI interface {
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		 @param serviceId Alphanumeric string identifying the service.
 		 @param dictionaryId Alphanumeric string identifying a Dictionary.
-		 @param dictionaryItemKey Item key, maximum 256 characters.
+		 @param dictionaryItemKey Item key, maximum 255 characters.
 		 @return APIUpsertDictionaryItemRequest
 	*/
 	UpsertDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIUpsertDictionaryItemRequest
@@ -305,7 +305,7 @@ type APICreateDictionaryItemRequest struct {
 	itemValue    *string
 }
 
-// ItemKey Item key, maximum 256 characters.
+// ItemKey Item key, maximum 255 characters.
 func (r *APICreateDictionaryItemRequest) ItemKey(itemKey string) *APICreateDictionaryItemRequest {
 	r.itemKey = &itemKey
 	return r
@@ -473,7 +473,7 @@ Delete DictionaryItem given service, dictionary ID, and item key.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceId Alphanumeric string identifying the service.
  @param dictionaryId Alphanumeric string identifying a Dictionary.
- @param dictionaryItemKey Item key, maximum 256 characters.
+ @param dictionaryItemKey Item key, maximum 255 characters.
  @return APIDeleteDictionaryItemRequest
 */
 func (a *DictionaryItemAPIService) DeleteDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIDeleteDictionaryItemRequest {
@@ -613,7 +613,7 @@ Retrieve a single DictionaryItem given service, dictionary ID and item key.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceId Alphanumeric string identifying the service.
  @param dictionaryId Alphanumeric string identifying a Dictionary.
- @param dictionaryItemKey Item key, maximum 256 characters.
+ @param dictionaryItemKey Item key, maximum 255 characters.
  @return APIGetDictionaryItemRequest
 */
 func (a *DictionaryItemAPIService) GetDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIGetDictionaryItemRequest {
@@ -918,7 +918,7 @@ type APIUpdateDictionaryItemRequest struct {
 	itemValue         *string
 }
 
-// ItemKey Item key, maximum 256 characters.
+// ItemKey Item key, maximum 255 characters.
 func (r *APIUpdateDictionaryItemRequest) ItemKey(itemKey string) *APIUpdateDictionaryItemRequest {
 	r.itemKey = &itemKey
 	return r
@@ -943,7 +943,7 @@ Update DictionaryItem given service, dictionary ID, item key, and item value.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceId Alphanumeric string identifying the service.
  @param dictionaryId Alphanumeric string identifying a Dictionary.
- @param dictionaryItemKey Item key, maximum 256 characters.
+ @param dictionaryItemKey Item key, maximum 255 characters.
  @return APIUpdateDictionaryItemRequest
 */
 func (a *DictionaryItemAPIService) UpdateDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIUpdateDictionaryItemRequest {
@@ -1078,7 +1078,7 @@ type APIUpsertDictionaryItemRequest struct {
 	itemValue         *string
 }
 
-// ItemKey Item key, maximum 256 characters.
+// ItemKey Item key, maximum 255 characters.
 func (r *APIUpsertDictionaryItemRequest) ItemKey(itemKey string) *APIUpsertDictionaryItemRequest {
 	r.itemKey = &itemKey
 	return r
@@ -1103,7 +1103,7 @@ Upsert DictionaryItem given service, dictionary ID, item key, and item value.
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param serviceId Alphanumeric string identifying the service.
  @param dictionaryId Alphanumeric string identifying a Dictionary.
- @param dictionaryItemKey Item key, maximum 256 characters.
+ @param dictionaryItemKey Item key, maximum 255 characters.
  @return APIUpsertDictionaryItemRequest
 */
 func (a *DictionaryItemAPIService) UpsertDictionaryItem(ctx context.Context, serviceId string, dictionaryId string, dictionaryItemKey string) APIUpsertDictionaryItemRequest {

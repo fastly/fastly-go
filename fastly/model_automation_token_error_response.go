@@ -16,7 +16,7 @@ import (
 	"encoding/json"
 )
 
-// AutomationTokenErrorResponse struct for AutomationTokenErrorResponse
+// AutomationTokenErrorResponse Error response format used by automation token endpoints.
 type AutomationTokenErrorResponse struct {
 	Detail               *string       `json:"detail,omitempty"`
 	Errors               []interface{} `json:"errors,omitempty"`

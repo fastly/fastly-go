@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Action** | Pointer to **string** | Action types for a rule. Supported action values are default, block, log, off. The default action value follows the current protection mode of the associated service. | [optional] [default to "default"]
+**Action** | Pointer to **string** | Action types for a rule. Supported action values are default, block, log, off, client_challenge. The default action value follows the current protection mode of the associated service. | [optional] [default to "default"]
 
 ## Methods
 

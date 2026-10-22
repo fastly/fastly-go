@@ -106,7 +106,7 @@ import (
 func main() {
     serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     dictionaryId := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
-    itemKey := "itemKey_example" // string | Item key, maximum 256 characters. (optional)
+    itemKey := "itemKey_example" // string | Item key, maximum 255 characters. (optional)
     itemValue := "itemValue_example" // string | Item value, maximum 8000 characters. (optional)
 
     cfg := fastly.NewConfiguration()
@@ -138,7 +138,7 @@ Other parameters are passed through a pointer to a apiCreateDictionaryItemReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemKey** | **string** | Item key, maximum 256 characters. |  **itemValue** | **string** | Item value, maximum 8000 characters. | 
+ **itemKey** | **string** | Item key, maximum 255 characters. |  **itemValue** | **string** | Item value, maximum 8000 characters. | 
 
 ### Return type
 
@@ -177,7 +177,7 @@ import (
 func main() {
     serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     dictionaryId := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
-    dictionaryItemKey := "dictionaryItemKey_example" // string | Item key, maximum 256 characters.
+    dictionaryItemKey := "dictionaryItemKey_example" // string | Item key, maximum 255 characters.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **serviceId** | **string** | Alphanumeric string identifying the service. | 
 **dictionaryId** | **string** | Alphanumeric string identifying a Dictionary. | 
-**dictionaryItemKey** | **string** | Item key, maximum 256 characters. | 
+**dictionaryItemKey** | **string** | Item key, maximum 255 characters. | 
 
 ### Other Parameters
 
@@ -248,7 +248,7 @@ import (
 func main() {
     serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     dictionaryId := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
-    dictionaryItemKey := "dictionaryItemKey_example" // string | Item key, maximum 256 characters.
+    dictionaryItemKey := "dictionaryItemKey_example" // string | Item key, maximum 255 characters.
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **serviceId** | **string** | Alphanumeric string identifying the service. | 
 **dictionaryId** | **string** | Alphanumeric string identifying a Dictionary. | 
-**dictionaryItemKey** | **string** | Item key, maximum 256 characters. | 
+**dictionaryItemKey** | **string** | Item key, maximum 255 characters. | 
 
 ### Other Parameters
 
@@ -392,8 +392,8 @@ import (
 func main() {
     serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     dictionaryId := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
-    dictionaryItemKey := "dictionaryItemKey_example" // string | Item key, maximum 256 characters.
-    itemKey := "itemKey_example" // string | Item key, maximum 256 characters. (optional)
+    dictionaryItemKey := "dictionaryItemKey_example" // string | Item key, maximum 255 characters.
+    itemKey := "itemKey_example" // string | Item key, maximum 255 characters. (optional)
     itemValue := "itemValue_example" // string | Item value, maximum 8000 characters. (optional)
 
     cfg := fastly.NewConfiguration()
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **serviceId** | **string** | Alphanumeric string identifying the service. | 
 **dictionaryId** | **string** | Alphanumeric string identifying a Dictionary. | 
-**dictionaryItemKey** | **string** | Item key, maximum 256 characters. | 
+**dictionaryItemKey** | **string** | Item key, maximum 255 characters. | 
 
 ### Other Parameters
 
@@ -426,7 +426,7 @@ Other parameters are passed through a pointer to a apiUpdateDictionaryItemReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemKey** | **string** | Item key, maximum 256 characters. |  **itemValue** | **string** | Item value, maximum 8000 characters. | 
+ **itemKey** | **string** | Item key, maximum 255 characters. |  **itemValue** | **string** | Item value, maximum 8000 characters. | 
 
 ### Return type
 
@@ -465,8 +465,8 @@ import (
 func main() {
     serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     dictionaryId := "dictionaryId_example" // string | Alphanumeric string identifying a Dictionary.
-    dictionaryItemKey := "dictionaryItemKey_example" // string | Item key, maximum 256 characters.
-    itemKey := "itemKey_example" // string | Item key, maximum 256 characters. (optional)
+    dictionaryItemKey := "dictionaryItemKey_example" // string | Item key, maximum 255 characters.
+    itemKey := "itemKey_example" // string | Item key, maximum 255 characters. (optional)
     itemValue := "itemValue_example" // string | Item value, maximum 8000 characters. (optional)
 
     cfg := fastly.NewConfiguration()
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
 **serviceId** | **string** | Alphanumeric string identifying the service. | 
 **dictionaryId** | **string** | Alphanumeric string identifying a Dictionary. | 
-**dictionaryItemKey** | **string** | Item key, maximum 256 characters. | 
+**dictionaryItemKey** | **string** | Item key, maximum 255 characters. | 
 
 ### Other Parameters
 
@@ -499,7 +499,7 @@ Other parameters are passed through a pointer to a apiUpsertDictionaryItemReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **itemKey** | **string** | Item key, maximum 256 characters. |  **itemValue** | **string** | Item value, maximum 8000 characters. | 
+ **itemKey** | **string** | Item key, maximum 255 characters. |  **itemValue** | **string** | Item value, maximum 8000 characters. | 
 
 ### Return type
 

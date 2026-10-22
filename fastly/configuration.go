@@ -104,7 +104,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "fastly-go/1.0.0-beta.50",
+		UserAgent:     "fastly-go/1.0.0-beta.52",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
@@ -220,6 +220,120 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"AclsInComputeAPIService.ComputeAclUpdateAcls": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlProviderConnectionsAPIService.ArcCreateProviderConnection": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlProviderConnectionsAPIService.ArcDeleteProviderConnection": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlProviderConnectionsAPIService.ArcGetProviderConnection": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlProviderConnectionsAPIService.ArcListProviderConnections": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlProviderConnectionsAPIService.ArcUpdateProviderConnection": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlProvidersAPIService.ArcGetBedrockSetup": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlProvidersAPIService.ArcGetModelsForProvider": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlProvidersAPIService.ArcGetSupportedProviders": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlSessionsAPIService.ArcGetSessionLogs": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlUsageMetricsAPIService.ArcExportUsageMetrics": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlUsageMetricsAPIService.ArcGetUsageMetrics": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlVirtualKeysAPIService.ArcCreateVirtualKey": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlVirtualKeysAPIService.ArcDeleteVirtualKey": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlVirtualKeysAPIService.ArcGetVirtualKey": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlVirtualKeysAPIService.ArcGetVirtualKeyFailover": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlVirtualKeysAPIService.ArcListVirtualKeys": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlVirtualKeysAPIService.ArcRotateVirtualKey": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlVirtualKeysAPIService.ArcUpdateVirtualKey": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"AiRuntimeControlVirtualKeysAPIService.ArcUpdateVirtualKeyFailover": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -357,6 +471,12 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
+			"AutomationTokensAPIService.GetAutomationTokensIdWorkspaces": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
 			"AutomationTokensAPIService.ListAutomationTokens": {
 				{
 					URL:         "https://api.fastly.com",
@@ -448,6 +568,72 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"BillingUsageMetricsAPIService.GetUsageMetrics": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"BotManagementAPIService.BotManagementGetBot": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"BotManagementAPIService.BotManagementGetCategory": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"BotManagementAPIService.BotManagementGetWorkspace": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"BotManagementAPIService.BotManagementListBots": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"BotManagementAPIService.BotManagementListCategories": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"BotManagementAPIService.BotManagementListCategoryBots": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"BotManagementAPIService.BotManagementListWorkspaces": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"BotManagementAPIService.BotManagementUpdateBot": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"BotManagementAPIService.BotManagementUpdateCategory": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"BotManagementAPIService.BotManagementUpdateWorkspace": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"BotRequestsMetricsAPIService.GetBotRequestMetricsServiceHistorical": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2463,7 +2649,13 @@ func NewConfiguration() *Configuration {
 					Description: "No description provided",
 				},
 			},
-			"MetricsPlatformAPIService.GetPlatformMetricsServiceHistorical": {
+			"MetricsPlatformAPIService.GetPlatformMetricsAggregateHistorical": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"MetricsPlatformAPIService.GetPlatformMetricsEntityHistorical": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2494,6 +2686,126 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"MutualAuthenticationAPIService.PatchMutualAuthentication": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.CreateNetworkProtectEndpoint": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.CreateNetworkProtectNetwork": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.CreateNetworkProtectPrefixList": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.CreateNetworkProtectRuleSet": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.DeleteNetworkProtectEndpoint": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.DeleteNetworkProtectNetwork": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.DeleteNetworkProtectPrefixList": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.DeleteNetworkProtectRuleSet": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.GetNetworkProtectEndpoint": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.GetNetworkProtectNetwork": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.GetNetworkProtectPrefixList": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.GetNetworkProtectRuleSet": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.ListNetworkProtectEndpoints": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.ListNetworkProtectNetworks": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.ListNetworkProtectPrefixLists": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.ListNetworkProtectRuleSets": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.UpdateNetworkProtectEndpoint": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.UpdateNetworkProtectNetwork": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.UpdateNetworkProtectPrefixList": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"NetworkProtectAPIService.UpdateNetworkProtectRuleSet": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",
@@ -2668,6 +2980,24 @@ func NewConfiguration() *Configuration {
 				},
 			},
 			"ProductAiAcceleratorAPIService.GetAiAccelerator": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductAiRuntimeControlAPIService.DisableProductAiRuntimeControl": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductAiRuntimeControlAPIService.EnableProductAiRuntimeControl": {
+				{
+					URL:         "https://api.fastly.com",
+					Description: "No description provided",
+				},
+			},
+			"ProductAiRuntimeControlAPIService.GetProductAiRuntimeControl": {
 				{
 					URL:         "https://api.fastly.com",
 					Description: "No description provided",

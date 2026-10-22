@@ -33,13 +33,14 @@ import (
 func main() {
     serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     fastlySoftPurge := int32(1) // int32 | If present, this header triggers the purge to be 'soft', which marks the affected object as stale rather than making it inaccessible.  Typically set to \"1\" when used, but the value is not important. (optional)
+    fastlyPurgeEnvironment := "staging" // string | Set to `staging` to purge the cache of the service's [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment. (optional)
     surrogateKey := "key_1 key_2 key_3" // string | Purge multiple surrogate key tags using a request header. Not required if a JSON POST body is specified. (optional)
     purgeResponse := *openapiclient.NewPurgeResponse() // PurgeResponse |  (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.PurgeAPI.BulkPurgeTag(ctx, serviceId).FastlySoftPurge(fastlySoftPurge).SurrogateKey(surrogateKey).PurgeResponse(purgeResponse).Execute()
+    resp, r, err := apiClient.PurgeAPI.BulkPurgeTag(ctx, serviceId).FastlySoftPurge(fastlySoftPurge).FastlyPurgeEnvironment(fastlyPurgeEnvironment).SurrogateKey(surrogateKey).PurgeResponse(purgeResponse).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PurgeAPI.BulkPurgeTag`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,7 +65,7 @@ Other parameters are passed through a pointer to a apiBulkPurgeTagRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fastlySoftPurge** | **int32** | If present, this header triggers the purge to be &#39;soft&#39;, which marks the affected object as stale rather than making it inaccessible.  Typically set to \&quot;1\&quot; when used, but the value is not important. |  **surrogateKey** | **string** | Purge multiple surrogate key tags using a request header. Not required if a JSON POST body is specified. |  **purgeResponse** | [**PurgeResponse**](PurgeResponse.md) |  | 
+ **fastlySoftPurge** | **int32** | If present, this header triggers the purge to be &#39;soft&#39;, which marks the affected object as stale rather than making it inaccessible.  Typically set to \&quot;1\&quot; when used, but the value is not important. |  **fastlyPurgeEnvironment** | **string** | Set to `staging` to purge the cache of the service&#39;s [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment. |  **surrogateKey** | **string** | Purge multiple surrogate key tags using a request header. Not required if a JSON POST body is specified. |  **purgeResponse** | [**PurgeResponse**](PurgeResponse.md) |  | 
 
 ### Return type
 
@@ -102,11 +103,12 @@ import (
 
 func main() {
     serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
+    fastlyPurgeEnvironment := "staging" // string | Set to `staging` to purge the cache of the service's [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.PurgeAPI.PurgeAll(ctx, serviceId).Execute()
+    resp, r, err := apiClient.PurgeAPI.PurgeAll(ctx, serviceId).FastlyPurgeEnvironment(fastlyPurgeEnvironment).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PurgeAPI.PurgeAll`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -131,7 +133,7 @@ Other parameters are passed through a pointer to a apiPurgeAllRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
+ **fastlyPurgeEnvironment** | **string** | Set to `staging` to purge the cache of the service&#39;s [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment. | 
 
 ### Return type
 
@@ -239,11 +241,12 @@ func main() {
     serviceId := "serviceId_example" // string | Alphanumeric string identifying the service.
     surrogateKey := "key_1" // string | Surrogate keys are used to efficiently purge content from cache. Instead of purging your entire site or individual URLs, you can tag related assets (like all images and descriptions associated with a single product) with surrogate keys, and these grouped URLs can be purged in a single request.
     fastlySoftPurge := int32(1) // int32 | If present, this header triggers the purge to be 'soft', which marks the affected object as stale rather than making it inaccessible.  Typically set to \"1\" when used, but the value is not important. (optional)
+    fastlyPurgeEnvironment := "staging" // string | Set to `staging` to purge the cache of the service's [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment. (optional)
 
     cfg := fastly.NewConfiguration()
     apiClient := fastly.NewAPIClient(cfg)
     ctx := fastly.NewAPIKeyContextFromEnv("FASTLY_API_TOKEN")
-    resp, r, err := apiClient.PurgeAPI.PurgeTag(ctx, serviceId, surrogateKey).FastlySoftPurge(fastlySoftPurge).Execute()
+    resp, r, err := apiClient.PurgeAPI.PurgeTag(ctx, serviceId, surrogateKey).FastlySoftPurge(fastlySoftPurge).FastlyPurgeEnvironment(fastlyPurgeEnvironment).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PurgeAPI.PurgeTag`: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -269,7 +272,7 @@ Other parameters are passed through a pointer to a apiPurgeTagRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fastlySoftPurge** | **int32** | If present, this header triggers the purge to be &#39;soft&#39;, which marks the affected object as stale rather than making it inaccessible.  Typically set to \&quot;1\&quot; when used, but the value is not important. | 
+ **fastlySoftPurge** | **int32** | If present, this header triggers the purge to be &#39;soft&#39;, which marks the affected object as stale rather than making it inaccessible.  Typically set to \&quot;1\&quot; when used, but the value is not important. |  **fastlyPurgeEnvironment** | **string** | Set to `staging` to purge the cache of the service&#39;s [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment. | 
 
 ### Return type
 

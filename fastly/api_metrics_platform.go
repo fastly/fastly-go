@@ -31,30 +31,44 @@ var (
 type MetricsPlatformAPI interface {
 
 	/*
-		GetPlatformMetricsServiceHistorical Get historical time series metrics for a single service
+		GetPlatformMetricsAggregateHistorical Get aggregated historical time series metrics for all entities
 
-		Fetches historical metrics for a single service for a given granularity.
+		Fetches historical metrics for all entities for a customer for a given granularity. Entity in this context refers to an instance of a Fastly resource, such as a VCL service, Compute service, or NGWAF workspace.
 
 		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		 @param serviceId Alphanumeric string identifying the service.
 		 @param granularity Duration of sample windows.
-		 @return APIGetPlatformMetricsServiceHistoricalRequest
+		 @return APIGetPlatformMetricsAggregateHistoricalRequest
 	*/
-	GetPlatformMetricsServiceHistorical(ctx context.Context, serviceId string, granularity string) APIGetPlatformMetricsServiceHistoricalRequest
+	GetPlatformMetricsAggregateHistorical(ctx context.Context, granularity string) APIGetPlatformMetricsAggregateHistoricalRequest
 
-	// GetPlatformMetricsServiceHistoricalExecute executes the request
+	// GetPlatformMetricsAggregateHistoricalExecute executes the request
 	//  @return PlatformMetricsResponse
-	GetPlatformMetricsServiceHistoricalExecute(r APIGetPlatformMetricsServiceHistoricalRequest) (*PlatformMetricsResponse, *http.Response, error)
+	GetPlatformMetricsAggregateHistoricalExecute(r APIGetPlatformMetricsAggregateHistoricalRequest) (*PlatformMetricsResponse, *http.Response, error)
+
+	/*
+		GetPlatformMetricsEntityHistorical Get historical time series metrics for a single entity.
+
+		Fetches historical metrics for a single entity for a given granularity. Entity in this context refers to an instance of a Fastly resource, such as a VCL service, Compute service, or NGWAF workspace.
+
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param entityId Alphanumeric string identifying the entity.
+		 @param granularity Duration of sample windows.
+		 @return APIGetPlatformMetricsEntityHistoricalRequest
+	*/
+	GetPlatformMetricsEntityHistorical(ctx context.Context, entityId string, granularity string) APIGetPlatformMetricsEntityHistoricalRequest
+
+	// GetPlatformMetricsEntityHistoricalExecute executes the request
+	//  @return PlatformMetricsResponse
+	GetPlatformMetricsEntityHistoricalExecute(r APIGetPlatformMetricsEntityHistoricalRequest) (*PlatformMetricsResponse, *http.Response, error)
 }
 
 // MetricsPlatformAPIService MetricsPlatformAPI service
 type MetricsPlatformAPIService service
 
-// APIGetPlatformMetricsServiceHistoricalRequest represents a request for the resource.
-type APIGetPlatformMetricsServiceHistoricalRequest struct {
+// APIGetPlatformMetricsAggregateHistoricalRequest represents a request for the resource.
+type APIGetPlatformMetricsAggregateHistoricalRequest struct {
 	ctx         context.Context
 	APIService  MetricsPlatformAPI
-	serviceId   string
 	granularity string
 	from        *string
 	to          *string
@@ -68,86 +82,84 @@ type APIGetPlatformMetricsServiceHistoricalRequest struct {
 }
 
 // From A valid RFC-8339-formatted date and time indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided &#x60;granularity&#x60; value.
-func (r *APIGetPlatformMetricsServiceHistoricalRequest) From(from string) *APIGetPlatformMetricsServiceHistoricalRequest {
+func (r *APIGetPlatformMetricsAggregateHistoricalRequest) From(from string) *APIGetPlatformMetricsAggregateHistoricalRequest {
 	r.from = &from
 	return r
 }
 
 // To A valid RFC-8339-formatted date and time indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided &#x60;granularity&#x60; value.
-func (r *APIGetPlatformMetricsServiceHistoricalRequest) To(to string) *APIGetPlatformMetricsServiceHistoricalRequest {
+func (r *APIGetPlatformMetricsAggregateHistoricalRequest) To(to string) *APIGetPlatformMetricsAggregateHistoricalRequest {
 	r.to = &to
 	return r
 }
 
-// Metric The metric(s) to retrieve. Multiple values should be comma-separated.
-func (r *APIGetPlatformMetricsServiceHistoricalRequest) Metric(metric string) *APIGetPlatformMetricsServiceHistoricalRequest {
+// Metric One or more metrics to retrieve. Multiple values should be comma-separated.
+func (r *APIGetPlatformMetricsAggregateHistoricalRequest) Metric(metric string) *APIGetPlatformMetricsAggregateHistoricalRequest {
 	r.metric = &metric
 	return r
 }
 
-// MetricSet The metric set(s) to retrieve. Multiple values should be comma-separated.
-func (r *APIGetPlatformMetricsServiceHistoricalRequest) MetricSet(metricSet string) *APIGetPlatformMetricsServiceHistoricalRequest {
+// MetricSet One or more metric sets to retrieve. Multiple values should be comma-separated. A metric set expands to a list of metrics; see the Metric Sets section above for the metrics in each set. A metric that appears in more than one requested set is returned once.
+func (r *APIGetPlatformMetricsAggregateHistoricalRequest) MetricSet(metricSet string) *APIGetPlatformMetricsAggregateHistoricalRequest {
 	r.metricSet = &metricSet
 	return r
 }
 
 // GroupBy Field to group_by in the query. For example, &#x60;group_by&#x3D;region&#x60; will return entries for grouped by timestamp and region.
-func (r *APIGetPlatformMetricsServiceHistoricalRequest) GroupBy(groupBy string) *APIGetPlatformMetricsServiceHistoricalRequest {
+func (r *APIGetPlatformMetricsAggregateHistoricalRequest) GroupBy(groupBy string) *APIGetPlatformMetricsAggregateHistoricalRequest {
 	r.groupBy = &groupBy
 	return r
 }
 
 // Region Limit query to one or more specific geographic regions. Values should be comma-separated.
-func (r *APIGetPlatformMetricsServiceHistoricalRequest) Region(region string) *APIGetPlatformMetricsServiceHistoricalRequest {
+func (r *APIGetPlatformMetricsAggregateHistoricalRequest) Region(region string) *APIGetPlatformMetricsAggregateHistoricalRequest {
 	r.region = &region
 	return r
 }
 
 // Datacenter Limit query to one or more specific POPs. Values should be comma-separated.
-func (r *APIGetPlatformMetricsServiceHistoricalRequest) Datacenter(datacenter string) *APIGetPlatformMetricsServiceHistoricalRequest {
+func (r *APIGetPlatformMetricsAggregateHistoricalRequest) Datacenter(datacenter string) *APIGetPlatformMetricsAggregateHistoricalRequest {
 	r.datacenter = &datacenter
 	return r
 }
 
 // Cursor Cursor value from the &#x60;next_cursor&#x60; field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
-func (r *APIGetPlatformMetricsServiceHistoricalRequest) Cursor(cursor string) *APIGetPlatformMetricsServiceHistoricalRequest {
+func (r *APIGetPlatformMetricsAggregateHistoricalRequest) Cursor(cursor string) *APIGetPlatformMetricsAggregateHistoricalRequest {
 	r.cursor = &cursor
 	return r
 }
 
 // Limit Number of results per page. The maximum is 10000.
-func (r *APIGetPlatformMetricsServiceHistoricalRequest) Limit(limit string) *APIGetPlatformMetricsServiceHistoricalRequest {
+func (r *APIGetPlatformMetricsAggregateHistoricalRequest) Limit(limit string) *APIGetPlatformMetricsAggregateHistoricalRequest {
 	r.limit = &limit
 	return r
 }
 
 // Execute calls the API using the request data configured.
-func (r APIGetPlatformMetricsServiceHistoricalRequest) Execute() (*PlatformMetricsResponse, *http.Response, error) {
-	return r.APIService.GetPlatformMetricsServiceHistoricalExecute(r)
+func (r APIGetPlatformMetricsAggregateHistoricalRequest) Execute() (*PlatformMetricsResponse, *http.Response, error) {
+	return r.APIService.GetPlatformMetricsAggregateHistoricalExecute(r)
 }
 
 /*
-GetPlatformMetricsServiceHistorical Get historical time series metrics for a single service
+GetPlatformMetricsAggregateHistorical Get aggregated historical time series metrics for all entities
 
-Fetches historical metrics for a single service for a given granularity.
+Fetches historical metrics for all entities for a customer for a given granularity. Entity in this context refers to an instance of a Fastly resource, such as a VCL service, Compute service, or NGWAF workspace.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param serviceId Alphanumeric string identifying the service.
  @param granularity Duration of sample windows.
- @return APIGetPlatformMetricsServiceHistoricalRequest
+ @return APIGetPlatformMetricsAggregateHistoricalRequest
 */
-func (a *MetricsPlatformAPIService) GetPlatformMetricsServiceHistorical(ctx context.Context, serviceId string, granularity string) APIGetPlatformMetricsServiceHistoricalRequest {
-	return APIGetPlatformMetricsServiceHistoricalRequest{
+func (a *MetricsPlatformAPIService) GetPlatformMetricsAggregateHistorical(ctx context.Context, granularity string) APIGetPlatformMetricsAggregateHistoricalRequest {
+	return APIGetPlatformMetricsAggregateHistoricalRequest{
 		APIService:  a,
 		ctx:         ctx,
-		serviceId:   serviceId,
 		granularity: granularity,
 	}
 }
 
-// GetPlatformMetricsServiceHistoricalExecute executes the request
+// GetPlatformMetricsAggregateHistoricalExecute executes the request
 //  @return PlatformMetricsResponse
-func (a *MetricsPlatformAPIService) GetPlatformMetricsServiceHistoricalExecute(r APIGetPlatformMetricsServiceHistoricalRequest) (*PlatformMetricsResponse, *http.Response, error) {
+func (a *MetricsPlatformAPIService) GetPlatformMetricsAggregateHistoricalExecute(r APIGetPlatformMetricsAggregateHistoricalRequest) (*PlatformMetricsResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    any
@@ -155,13 +167,238 @@ func (a *MetricsPlatformAPIService) GetPlatformMetricsServiceHistoricalExecute(r
 		localVarReturnValue *PlatformMetricsResponse
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsPlatformAPIService.GetPlatformMetricsServiceHistorical")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsPlatformAPIService.GetPlatformMetricsAggregateHistorical")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/metrics/platform/services/{service_id}/{granularity}"
-	localVarPath = strings.ReplaceAll(localVarPath, "{"+"service_id"+"}", gourl.PathEscape(parameterToString(r.serviceId, "")))
+	localVarPath := localBasePath + "/metrics/v2/platform/aggregate/{granularity}"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"granularity"+"}", gourl.PathEscape(parameterToString(r.granularity, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	if r.from != nil {
+		localVarQueryParams.Add("from", parameterToString(*r.from, ""))
+	}
+	if r.to != nil {
+		localVarQueryParams.Add("to", parameterToString(*r.to, ""))
+	}
+	if r.metric != nil {
+		localVarQueryParams.Add("metric", parameterToString(*r.metric, ""))
+	}
+	if r.metricSet != nil {
+		localVarQueryParams.Add("metric_set", parameterToString(*r.metricSet, ""))
+	}
+	if r.groupBy != nil {
+		localVarQueryParams.Add("group_by", parameterToString(*r.groupBy, ""))
+	}
+	if r.region != nil {
+		localVarQueryParams.Add("region", parameterToString(*r.region, ""))
+	}
+	if r.datacenter != nil {
+		localVarQueryParams.Add("datacenter", parameterToString(*r.datacenter, ""))
+	}
+	if r.cursor != nil {
+		localVarQueryParams.Add("cursor", parameterToString(*r.cursor, ""))
+	}
+	if r.limit != nil {
+		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIGetPlatformMetricsEntityHistoricalRequest represents a request for the resource.
+type APIGetPlatformMetricsEntityHistoricalRequest struct {
+	ctx         context.Context
+	APIService  MetricsPlatformAPI
+	entityId    string
+	granularity string
+	from        *string
+	to          *string
+	metric      *string
+	metricSet   *string
+	groupBy     *string
+	region      *string
+	datacenter  *string
+	cursor      *string
+	limit       *string
+}
+
+// From A valid RFC-8339-formatted date and time indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided &#x60;granularity&#x60; value.
+func (r *APIGetPlatformMetricsEntityHistoricalRequest) From(from string) *APIGetPlatformMetricsEntityHistoricalRequest {
+	r.from = &from
+	return r
+}
+
+// To A valid RFC-8339-formatted date and time indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided &#x60;granularity&#x60; value.
+func (r *APIGetPlatformMetricsEntityHistoricalRequest) To(to string) *APIGetPlatformMetricsEntityHistoricalRequest {
+	r.to = &to
+	return r
+}
+
+// Metric One or more metrics to retrieve. Multiple values should be comma-separated.
+func (r *APIGetPlatformMetricsEntityHistoricalRequest) Metric(metric string) *APIGetPlatformMetricsEntityHistoricalRequest {
+	r.metric = &metric
+	return r
+}
+
+// MetricSet One or more metric sets to retrieve. Multiple values should be comma-separated. A metric set expands to a list of metrics; see the Metric Sets section above for the metrics in each set. A metric that appears in more than one requested set is returned once.
+func (r *APIGetPlatformMetricsEntityHistoricalRequest) MetricSet(metricSet string) *APIGetPlatformMetricsEntityHistoricalRequest {
+	r.metricSet = &metricSet
+	return r
+}
+
+// GroupBy Field to group_by in the query. For example, &#x60;group_by&#x3D;region&#x60; will return entries for grouped by timestamp and region.
+func (r *APIGetPlatformMetricsEntityHistoricalRequest) GroupBy(groupBy string) *APIGetPlatformMetricsEntityHistoricalRequest {
+	r.groupBy = &groupBy
+	return r
+}
+
+// Region Limit query to one or more specific geographic regions. Values should be comma-separated.
+func (r *APIGetPlatformMetricsEntityHistoricalRequest) Region(region string) *APIGetPlatformMetricsEntityHistoricalRequest {
+	r.region = &region
+	return r
+}
+
+// Datacenter Limit query to one or more specific POPs. Values should be comma-separated.
+func (r *APIGetPlatformMetricsEntityHistoricalRequest) Datacenter(datacenter string) *APIGetPlatformMetricsEntityHistoricalRequest {
+	r.datacenter = &datacenter
+	return r
+}
+
+// Cursor Cursor value from the &#x60;next_cursor&#x60; field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
+func (r *APIGetPlatformMetricsEntityHistoricalRequest) Cursor(cursor string) *APIGetPlatformMetricsEntityHistoricalRequest {
+	r.cursor = &cursor
+	return r
+}
+
+// Limit Number of results per page. The maximum is 10000.
+func (r *APIGetPlatformMetricsEntityHistoricalRequest) Limit(limit string) *APIGetPlatformMetricsEntityHistoricalRequest {
+	r.limit = &limit
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIGetPlatformMetricsEntityHistoricalRequest) Execute() (*PlatformMetricsResponse, *http.Response, error) {
+	return r.APIService.GetPlatformMetricsEntityHistoricalExecute(r)
+}
+
+/*
+GetPlatformMetricsEntityHistorical Get historical time series metrics for a single entity.
+
+Fetches historical metrics for a single entity for a given granularity. Entity in this context refers to an instance of a Fastly resource, such as a VCL service, Compute service, or NGWAF workspace.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param entityId Alphanumeric string identifying the entity.
+ @param granularity Duration of sample windows.
+ @return APIGetPlatformMetricsEntityHistoricalRequest
+*/
+func (a *MetricsPlatformAPIService) GetPlatformMetricsEntityHistorical(ctx context.Context, entityId string, granularity string) APIGetPlatformMetricsEntityHistoricalRequest {
+	return APIGetPlatformMetricsEntityHistoricalRequest{
+		APIService:  a,
+		ctx:         ctx,
+		entityId:    entityId,
+		granularity: granularity,
+	}
+}
+
+// GetPlatformMetricsEntityHistoricalExecute executes the request
+//  @return PlatformMetricsResponse
+func (a *MetricsPlatformAPIService) GetPlatformMetricsEntityHistoricalExecute(r APIGetPlatformMetricsEntityHistoricalRequest) (*PlatformMetricsResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *PlatformMetricsResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MetricsPlatformAPIService.GetPlatformMetricsEntityHistorical")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/metrics/v2/platform/entities/{entity_id}/{granularity}"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"entity_id"+"}", gourl.PathEscape(parameterToString(r.entityId, "")))
 	localVarPath = strings.ReplaceAll(localVarPath, "{"+"granularity"+"}", gourl.PathEscape(parameterToString(r.granularity, "")))
 
 	localVarHeaderParams := make(map[string]string)

@@ -137,6 +137,7 @@ Name | Type | Description | Notes
 **TlsV11** | Pointer to **int64** | Number of requests received over TLS 1.1. | [optional] 
 **TlsV12** | Pointer to **int64** | Number of requests received over TLS 1.2. | [optional] 
 **TlsV13** | Pointer to **int64** | Number of requests received over TLS 1.3. | [optional] 
+**Status499** | Pointer to **int64** | Number of responses sent with status code 499 (Client Disconnected). | [optional] 
 
 ## Methods
 
@@ -3481,6 +3482,31 @@ SetTlsV13 sets TlsV13 field to given value.
 `func (o *Values) HasTlsV13() bool`
 
 HasTlsV13 returns a boolean if a field has been set.
+
+### GetStatus499
+
+`func (o *Values) GetStatus499() int64`
+
+GetStatus499 returns the Status499 field if non-nil, zero value otherwise.
+
+### GetStatus499Ok
+
+`func (o *Values) GetStatus499Ok() (*int64, bool)`
+
+GetStatus499Ok returns a tuple with the Status499 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus499
+
+`func (o *Values) SetStatus499(v int64)`
+
+SetStatus499 sets Status499 field to given value.
+
+### HasStatus499
+
+`func (o *Values) HasStatus499() bool`
+
+HasStatus499 returns a boolean if a field has been set.
 
 
 [Back to API list](../README.md#documentation-for-api-endpoints) | [Back to README](../README.md)

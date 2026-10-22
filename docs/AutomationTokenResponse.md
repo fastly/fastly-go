@@ -6,7 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The name of the token. | [optional] 
 **Role** | Pointer to **string** |  | [optional] 
-**Services** | Pointer to **[]string** | (Optional) The service IDs of the services the token will have access to. Separate service IDs with a space. If no services are specified, the token will have access to all services on the account.  | [optional] 
+**Roles** | Pointer to [**[]AutomationTokenRole**](AutomationTokenRole.md) | All roles assigned to the token. Each role includes an `id` and `name`. | [optional] 
+**Services** | Pointer to **[]string** | The service IDs of the services the token has access to. Empty when `limit_services` is `false` (full access) or when the token has no service access. | [optional] 
+**LimitServices** | Pointer to **bool** | When `true`, the token is restricted to only the services in the `services` array. When `false`, the token has access to all services. | [optional] 
+**LimitWorkspaces** | Pointer to **bool** | When `true`, the token is restricted to only the workspaces in the `workspaces` array. When `false`, the token has access to all workspaces. Only applies to roles that support workspace access. | [optional] 
+**Workspaces** | Pointer to **[]string** | The workspace IDs of the workspaces the token has access to. Returns an empty array for tokens without workspace access. | [optional] 
 **Scope** | Pointer to **string** | A space-delimited list of authorization scope. | [optional] [default to "global"]
 **ExpiresAt** | Pointer to **string** | (optional) A UTC timestamp of when the token will expire. | [optional] 
 **Id** | Pointer to [**ReadOnlyId**](ReadOnlyId.md) |  | [optional] 
@@ -86,6 +90,31 @@ SetRole sets Role field to given value.
 
 HasRole returns a boolean if a field has been set.
 
+### GetRoles
+
+`func (o *AutomationTokenResponse) GetRoles() []AutomationTokenRole`
+
+GetRoles returns the Roles field if non-nil, zero value otherwise.
+
+### GetRolesOk
+
+`func (o *AutomationTokenResponse) GetRolesOk() (*[]AutomationTokenRole, bool)`
+
+GetRolesOk returns a tuple with the Roles field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoles
+
+`func (o *AutomationTokenResponse) SetRoles(v []AutomationTokenRole)`
+
+SetRoles sets Roles field to given value.
+
+### HasRoles
+
+`func (o *AutomationTokenResponse) HasRoles() bool`
+
+HasRoles returns a boolean if a field has been set.
+
 ### GetServices
 
 `func (o *AutomationTokenResponse) GetServices() []string`
@@ -110,6 +139,81 @@ SetServices sets Services field to given value.
 `func (o *AutomationTokenResponse) HasServices() bool`
 
 HasServices returns a boolean if a field has been set.
+
+### GetLimitServices
+
+`func (o *AutomationTokenResponse) GetLimitServices() bool`
+
+GetLimitServices returns the LimitServices field if non-nil, zero value otherwise.
+
+### GetLimitServicesOk
+
+`func (o *AutomationTokenResponse) GetLimitServicesOk() (*bool, bool)`
+
+GetLimitServicesOk returns a tuple with the LimitServices field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLimitServices
+
+`func (o *AutomationTokenResponse) SetLimitServices(v bool)`
+
+SetLimitServices sets LimitServices field to given value.
+
+### HasLimitServices
+
+`func (o *AutomationTokenResponse) HasLimitServices() bool`
+
+HasLimitServices returns a boolean if a field has been set.
+
+### GetLimitWorkspaces
+
+`func (o *AutomationTokenResponse) GetLimitWorkspaces() bool`
+
+GetLimitWorkspaces returns the LimitWorkspaces field if non-nil, zero value otherwise.
+
+### GetLimitWorkspacesOk
+
+`func (o *AutomationTokenResponse) GetLimitWorkspacesOk() (*bool, bool)`
+
+GetLimitWorkspacesOk returns a tuple with the LimitWorkspaces field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLimitWorkspaces
+
+`func (o *AutomationTokenResponse) SetLimitWorkspaces(v bool)`
+
+SetLimitWorkspaces sets LimitWorkspaces field to given value.
+
+### HasLimitWorkspaces
+
+`func (o *AutomationTokenResponse) HasLimitWorkspaces() bool`
+
+HasLimitWorkspaces returns a boolean if a field has been set.
+
+### GetWorkspaces
+
+`func (o *AutomationTokenResponse) GetWorkspaces() []string`
+
+GetWorkspaces returns the Workspaces field if non-nil, zero value otherwise.
+
+### GetWorkspacesOk
+
+`func (o *AutomationTokenResponse) GetWorkspacesOk() (*[]string, bool)`
+
+GetWorkspacesOk returns a tuple with the Workspaces field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkspaces
+
+`func (o *AutomationTokenResponse) SetWorkspaces(v []string)`
+
+SetWorkspaces sets Workspaces field to given value.
+
+### HasWorkspaces
+
+`func (o *AutomationTokenResponse) HasWorkspaces() bool`
+
+HasWorkspaces returns a boolean if a field has been set.
 
 ### GetScope
 

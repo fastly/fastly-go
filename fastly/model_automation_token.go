@@ -20,10 +20,18 @@ import (
 type AutomationToken struct {
 	// The name of the token.
 	Name *string `json:"name,omitempty"`
-	// The role on the token.
+	// The primary role on the token. For tokens with multiple roles, this returns the highest-priority role for backwards compatibility.
 	Role *string `json:"role,omitempty"`
-	// (Optional) The service IDs of the services the token will have access to. Separate service IDs with a space. If no services are specified, the token will have access to all services on the account.
+	// All roles assigned to the token. Each role includes an `id` and `name`.
+	Roles []AutomationTokenRole `json:"roles,omitempty"`
+	// The service IDs of the services the token has access to. Empty when `limit_services` is `false` (full access) or when the token has no service access.
 	Services []string `json:"services,omitempty"`
+	// When `true`, the token is restricted to only the services in the `services` array. When `false`, the token has access to all services.
+	LimitServices *bool `json:"limit_services,omitempty"`
+	// When `true`, the token is restricted to only the workspaces in the `workspaces` array. When `false`, the token has access to all workspaces. Only applies to roles that support workspace access.
+	LimitWorkspaces *bool `json:"limit_workspaces,omitempty"`
+	// The workspace IDs of the workspaces the token has access to. Returns an empty array for tokens without workspace access.
+	Workspaces []string `json:"workspaces,omitempty"`
 	// A space-delimited list of authorization scope.
 	Scope *string `json:"scope,omitempty"`
 	// A UTC timestamp of when the token expires.
@@ -118,6 +126,38 @@ func (o *AutomationToken) SetRole(v string) {
 	o.Role = &v
 }
 
+// GetRoles returns the Roles field value if set, zero value otherwise.
+func (o *AutomationToken) GetRoles() []AutomationTokenRole {
+	if o == nil || o.Roles == nil {
+		var ret []AutomationTokenRole
+		return ret
+	}
+	return o.Roles
+}
+
+// GetRolesOk returns a tuple with the Roles field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomationToken) GetRolesOk() ([]AutomationTokenRole, bool) {
+	if o == nil || o.Roles == nil {
+		return nil, false
+	}
+	return o.Roles, true
+}
+
+// HasRoles returns a boolean if a field has been set.
+func (o *AutomationToken) HasRoles() bool {
+	if o != nil && o.Roles != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRoles gets a reference to the given []AutomationTokenRole and assigns it to the Roles field.
+func (o *AutomationToken) SetRoles(v []AutomationTokenRole) {
+	o.Roles = v
+}
+
 // GetServices returns the Services field value if set, zero value otherwise.
 func (o *AutomationToken) GetServices() []string {
 	if o == nil || o.Services == nil {
@@ -148,6 +188,102 @@ func (o *AutomationToken) HasServices() bool {
 // SetServices gets a reference to the given []string and assigns it to the Services field.
 func (o *AutomationToken) SetServices(v []string) {
 	o.Services = v
+}
+
+// GetLimitServices returns the LimitServices field value if set, zero value otherwise.
+func (o *AutomationToken) GetLimitServices() bool {
+	if o == nil || o.LimitServices == nil {
+		var ret bool
+		return ret
+	}
+	return *o.LimitServices
+}
+
+// GetLimitServicesOk returns a tuple with the LimitServices field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomationToken) GetLimitServicesOk() (*bool, bool) {
+	if o == nil || o.LimitServices == nil {
+		return nil, false
+	}
+	return o.LimitServices, true
+}
+
+// HasLimitServices returns a boolean if a field has been set.
+func (o *AutomationToken) HasLimitServices() bool {
+	if o != nil && o.LimitServices != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLimitServices gets a reference to the given bool and assigns it to the LimitServices field.
+func (o *AutomationToken) SetLimitServices(v bool) {
+	o.LimitServices = &v
+}
+
+// GetLimitWorkspaces returns the LimitWorkspaces field value if set, zero value otherwise.
+func (o *AutomationToken) GetLimitWorkspaces() bool {
+	if o == nil || o.LimitWorkspaces == nil {
+		var ret bool
+		return ret
+	}
+	return *o.LimitWorkspaces
+}
+
+// GetLimitWorkspacesOk returns a tuple with the LimitWorkspaces field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomationToken) GetLimitWorkspacesOk() (*bool, bool) {
+	if o == nil || o.LimitWorkspaces == nil {
+		return nil, false
+	}
+	return o.LimitWorkspaces, true
+}
+
+// HasLimitWorkspaces returns a boolean if a field has been set.
+func (o *AutomationToken) HasLimitWorkspaces() bool {
+	if o != nil && o.LimitWorkspaces != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLimitWorkspaces gets a reference to the given bool and assigns it to the LimitWorkspaces field.
+func (o *AutomationToken) SetLimitWorkspaces(v bool) {
+	o.LimitWorkspaces = &v
+}
+
+// GetWorkspaces returns the Workspaces field value if set, zero value otherwise.
+func (o *AutomationToken) GetWorkspaces() []string {
+	if o == nil || o.Workspaces == nil {
+		var ret []string
+		return ret
+	}
+	return o.Workspaces
+}
+
+// GetWorkspacesOk returns a tuple with the Workspaces field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AutomationToken) GetWorkspacesOk() ([]string, bool) {
+	if o == nil || o.Workspaces == nil {
+		return nil, false
+	}
+	return o.Workspaces, true
+}
+
+// HasWorkspaces returns a boolean if a field has been set.
+func (o *AutomationToken) HasWorkspaces() bool {
+	if o != nil && o.Workspaces != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetWorkspaces gets a reference to the given []string and assigns it to the Workspaces field.
+func (o *AutomationToken) SetWorkspaces(v []string) {
+	o.Workspaces = v
 }
 
 // GetScope returns the Scope field value if set, zero value otherwise.
@@ -224,8 +360,20 @@ func (o AutomationToken) MarshalJSON() ([]byte, error) {
 	if o.Role != nil {
 		toSerialize["role"] = o.Role
 	}
+	if o.Roles != nil {
+		toSerialize["roles"] = o.Roles
+	}
 	if o.Services != nil {
 		toSerialize["services"] = o.Services
+	}
+	if o.LimitServices != nil {
+		toSerialize["limit_services"] = o.LimitServices
+	}
+	if o.LimitWorkspaces != nil {
+		toSerialize["limit_workspaces"] = o.LimitWorkspaces
+	}
+	if o.Workspaces != nil {
+		toSerialize["workspaces"] = o.Workspaces
 	}
 	if o.Scope != nil {
 		toSerialize["scope"] = o.Scope
@@ -255,7 +403,11 @@ func (o *AutomationToken) UnmarshalJSON(bytes []byte) (err error) {
 	if err = json.Unmarshal(bytes, &additionalProperties); err == nil {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "role")
+		delete(additionalProperties, "roles")
 		delete(additionalProperties, "services")
+		delete(additionalProperties, "limit_services")
+		delete(additionalProperties, "limit_workspaces")
+		delete(additionalProperties, "workspaces")
 		delete(additionalProperties, "scope")
 		delete(additionalProperties, "expires_at")
 		o.AdditionalProperties = additionalProperties

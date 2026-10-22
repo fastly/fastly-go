@@ -27,7 +27,7 @@ type DdosProtectionRuleWithStats struct {
 	Id *string `json:"id,omitempty"`
 	// A human-readable name for the rule.
 	Name *string `json:"name,omitempty"`
-	// Action types for a rule. Supported action values are default, block, log, off. The default action value follows the current protection mode of the associated service.
+	// Action types for a rule. Supported action values are default, block, log, off, client_challenge. The default action value follows the current protection mode of the associated service.
 	Action *string `json:"action,omitempty"`
 	// Alphanumeric string identifying the customer.
 	CustomerId *string `json:"customer_id,omitempty"`

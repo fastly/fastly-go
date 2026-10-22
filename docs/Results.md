@@ -78,6 +78,8 @@ Name | Type | Description | Notes
 **AttackPassedReqHeaderBytes** | Pointer to **int64** | Total header bytes received from requests that triggered a WAF rule that was passed. | [optional] 
 **AttackRespSynthBytes** | Pointer to **int64** | Total bytes delivered for requests that triggered a WAF rule and returned a synthetic response. | [optional] 
 **Imgopto** | Pointer to **int64** | Number of responses that came from the Fastly Image Optimizer service. If the service receives 10 requests for an image, this stat will be 10 regardless of how many times the image was transformed. | [optional] 
+**ImgoptoInputImageBytes** | Pointer to **int64** | The total image bytes that would have been delivered if the images had not been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer). | [optional] 
+**ImgoptoOutputImageBytes** | Pointer to **int64** | The total image bytes delivered that have been transformed by the Fastly Image Optimizer. Bytes are counted once per client request. Byte counts exclude shield traffic and requests where Fastly Image Optimizer proxied a request without attempting to transform it (e.g., file types that are not supported by Image Optimizer). | [optional] 
 **ImgoptoRespBodyBytes** | Pointer to **int64** | Total body bytes delivered from the Fastly Image Optimizer service, including shield traffic. | [optional] 
 **ImgoptoRespHeaderBytes** | Pointer to **int64** | Total header bytes delivered from the Fastly Image Optimizer service, including shield traffic. | [optional] 
 **ImgoptoShield** | Pointer to **int64** | Number of responses that came from the Fastly Image Optimizer service via a shield. | [optional] 
@@ -349,6 +351,35 @@ Name | Type | Description | Notes
 **ComputeServiceBereqHttpError** | Pointer to **int32** | Number of backend requests from a Compute service that failed at the HTTP protocol level. Sum of `compute_service_bereq_http_proto_v1_error`, `compute_service_bereq_http_proto_v2_error`, `compute_service_bereq_http_incomplete_error`, `compute_service_bereq_http_timeout_error`, and `compute_service_bereq_http_other_error`. | [optional] 
 **BotChallengesPatsIssued** | Pointer to **int32** | Number of Private Access Token challenges issued. | [optional] 
 **BotChallengesPatsSucceeded** | Pointer to **int32** | Number of successful Private Access Token challenge solutions processed. | [optional] 
+**BotEdgeRequestsHeadlessCount** | Pointer to **int32** | Number of edge requests where a headless bot was detected. | [optional] 
+**Status499** | Pointer to **int32** | Number of responses sent with status code 499 (Client Disconnected). | [optional] 
+**ArcRequests** | Pointer to **int32** | Number of requests received by AI Runtime Control. | [optional] 
+**DdosChallengeCompleteTokensChecked** | Pointer to **int32** | The number of challenge-complete tokens checked while enforcing DDoS protection rules. | [optional] 
+**DdosChallengeCompleteTokensPassed** | Pointer to **int32** | The number of challenge-complete tokens that passed validation while enforcing DDoS protection rules. | [optional] 
+**DdosChallengeCompleteTokensFailed** | Pointer to **int32** | The number of challenge-complete tokens that failed validation while enforcing DDoS protection rules. | [optional] 
+**DdosChallengeStarts** | Pointer to **int32** | The number of challenge-start tokens created while enforcing DDoS protection rules. | [optional] 
+**DdosChallengeCompleteTokensIssued** | Pointer to **int32** | Number of challenge-complete tokens issued as a result of a DDoS action. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success. | [optional] 
+**DdosChallengesIssued** | Pointer to **int32** | Number of challenges issued from a DDoS action. | [optional] 
+**DdosChallengesSucceeded** | Pointer to **int32** | Number of successful challenge solutions processed as a result of a DDoS action. For example, a correct CAPTCHA solution. | [optional] 
+**DdosChallengesFailed** | Pointer to **int32** | Number of failed challenge solutions processed as a result of a DDoS action. For example, an incorrect CAPTCHA solution. | [optional] 
+**DdosChallengesPatsIssued** | Pointer to **int32** | Number of Private Access Token challenges issued as a result of a DDoS action. | [optional] 
+**DdosChallengesPatsSucceeded** | Pointer to **int32** | Number of successful Private Access Token challenge solutions processed as a result of a DDoS action. | [optional] 
+**ArcAiFirewallRequests** | Pointer to **int32** | Number of requests received by AI Firewall in AI Runtime Control. | [optional] 
+**ArcAiFirewallBlocked** | Pointer to **int32** | Number of requests blocked by AI Firewall in AI Runtime Control. | [optional] 
+**BotEdgeChallengeCompleteTokensIssued** | Pointer to **int32** | The number of challenge-complete tokens issued as a result of a ContentGuard action. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success. | [optional] 
+**BotEdgeChallengesIssued** | Pointer to **int32** | The number of challenges issued as a result of a ContentGuard action. | [optional] 
+**BotEdgeChallengesSucceeded** | Pointer to **int32** | The number of successful challenge solutions processed as a result of a ContentGuard action. For example, a correct CAPTCHA solution. | [optional] 
+**BotEdgeChallengesFailed** | Pointer to **int32** | The number of failed challenge solutions processed as a result of a ContentGuard action. For example, an incorrect CAPTCHA solution. | [optional] 
+**BotEdgeChallengesPatsIssued** | Pointer to **int32** | The number of Private Access Token challenges issued as a result of a ContentGuard action. | [optional] 
+**BotEdgeChallengesPatsSucceeded** | Pointer to **int32** | The number of successful Private Access Token challenge solutions processed as a result of a ContentGuard action. | [optional] 
+**NetprotectGreSentBytes** | Pointer to **int32** | Number of bytes sent via GRE tunnel. | [optional] 
+**NetprotectGreSentPackets** | Pointer to **int32** | Number of packets sent via GRE tunnel. | [optional] 
+**NetprotectReceivedBytes** | Pointer to **int32** | Number of ingress bytes received for network protection. | [optional] 
+**NetprotectReceivedPackets** | Pointer to **int32** | Number of ingress packets received for network protection. | [optional] 
+**NetprotectFirewallDroppedBytes** | Pointer to **int32** | Number of bytes dropped by network protection firewall. | [optional] 
+**NetprotectFirewallDroppedPackets** | Pointer to **int32** | Number of packets dropped by network protection firewall. | [optional] 
+**ApiEnforcementAllowedRequestsCount** | Pointer to **int32** | Number of requests allowed after evaluation by the API Enforcement engine. | [optional] 
+**ApiEnforcementFlaggedRequestsCount** | Pointer to **int32** | Number of requests flagged after evaluation by the API Enforcement engine. | [optional] 
 **ServiceId** | Pointer to **string** |  | [optional] [readonly] 
 **StartTime** | Pointer to **int64** | Timestamp for the start of the time period being reported | [optional] 
 
@@ -2230,6 +2261,56 @@ SetImgopto sets Imgopto field to given value.
 `func (o *Results) HasImgopto() bool`
 
 HasImgopto returns a boolean if a field has been set.
+
+### GetImgoptoInputImageBytes
+
+`func (o *Results) GetImgoptoInputImageBytes() int64`
+
+GetImgoptoInputImageBytes returns the ImgoptoInputImageBytes field if non-nil, zero value otherwise.
+
+### GetImgoptoInputImageBytesOk
+
+`func (o *Results) GetImgoptoInputImageBytesOk() (*int64, bool)`
+
+GetImgoptoInputImageBytesOk returns a tuple with the ImgoptoInputImageBytes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoInputImageBytes
+
+`func (o *Results) SetImgoptoInputImageBytes(v int64)`
+
+SetImgoptoInputImageBytes sets ImgoptoInputImageBytes field to given value.
+
+### HasImgoptoInputImageBytes
+
+`func (o *Results) HasImgoptoInputImageBytes() bool`
+
+HasImgoptoInputImageBytes returns a boolean if a field has been set.
+
+### GetImgoptoOutputImageBytes
+
+`func (o *Results) GetImgoptoOutputImageBytes() int64`
+
+GetImgoptoOutputImageBytes returns the ImgoptoOutputImageBytes field if non-nil, zero value otherwise.
+
+### GetImgoptoOutputImageBytesOk
+
+`func (o *Results) GetImgoptoOutputImageBytesOk() (*int64, bool)`
+
+GetImgoptoOutputImageBytesOk returns a tuple with the ImgoptoOutputImageBytes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImgoptoOutputImageBytes
+
+`func (o *Results) SetImgoptoOutputImageBytes(v int64)`
+
+SetImgoptoOutputImageBytes sets ImgoptoOutputImageBytes field to given value.
+
+### HasImgoptoOutputImageBytes
+
+`func (o *Results) HasImgoptoOutputImageBytes() bool`
+
+HasImgoptoOutputImageBytes returns a boolean if a field has been set.
 
 ### GetImgoptoRespBodyBytes
 
@@ -9005,6 +9086,731 @@ SetBotChallengesPatsSucceeded sets BotChallengesPatsSucceeded field to given val
 `func (o *Results) HasBotChallengesPatsSucceeded() bool`
 
 HasBotChallengesPatsSucceeded returns a boolean if a field has been set.
+
+### GetBotEdgeRequestsHeadlessCount
+
+`func (o *Results) GetBotEdgeRequestsHeadlessCount() int32`
+
+GetBotEdgeRequestsHeadlessCount returns the BotEdgeRequestsHeadlessCount field if non-nil, zero value otherwise.
+
+### GetBotEdgeRequestsHeadlessCountOk
+
+`func (o *Results) GetBotEdgeRequestsHeadlessCountOk() (*int32, bool)`
+
+GetBotEdgeRequestsHeadlessCountOk returns a tuple with the BotEdgeRequestsHeadlessCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeRequestsHeadlessCount
+
+`func (o *Results) SetBotEdgeRequestsHeadlessCount(v int32)`
+
+SetBotEdgeRequestsHeadlessCount sets BotEdgeRequestsHeadlessCount field to given value.
+
+### HasBotEdgeRequestsHeadlessCount
+
+`func (o *Results) HasBotEdgeRequestsHeadlessCount() bool`
+
+HasBotEdgeRequestsHeadlessCount returns a boolean if a field has been set.
+
+### GetStatus499
+
+`func (o *Results) GetStatus499() int32`
+
+GetStatus499 returns the Status499 field if non-nil, zero value otherwise.
+
+### GetStatus499Ok
+
+`func (o *Results) GetStatus499Ok() (*int32, bool)`
+
+GetStatus499Ok returns a tuple with the Status499 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus499
+
+`func (o *Results) SetStatus499(v int32)`
+
+SetStatus499 sets Status499 field to given value.
+
+### HasStatus499
+
+`func (o *Results) HasStatus499() bool`
+
+HasStatus499 returns a boolean if a field has been set.
+
+### GetArcRequests
+
+`func (o *Results) GetArcRequests() int32`
+
+GetArcRequests returns the ArcRequests field if non-nil, zero value otherwise.
+
+### GetArcRequestsOk
+
+`func (o *Results) GetArcRequestsOk() (*int32, bool)`
+
+GetArcRequestsOk returns a tuple with the ArcRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArcRequests
+
+`func (o *Results) SetArcRequests(v int32)`
+
+SetArcRequests sets ArcRequests field to given value.
+
+### HasArcRequests
+
+`func (o *Results) HasArcRequests() bool`
+
+HasArcRequests returns a boolean if a field has been set.
+
+### GetDdosChallengeCompleteTokensChecked
+
+`func (o *Results) GetDdosChallengeCompleteTokensChecked() int32`
+
+GetDdosChallengeCompleteTokensChecked returns the DdosChallengeCompleteTokensChecked field if non-nil, zero value otherwise.
+
+### GetDdosChallengeCompleteTokensCheckedOk
+
+`func (o *Results) GetDdosChallengeCompleteTokensCheckedOk() (*int32, bool)`
+
+GetDdosChallengeCompleteTokensCheckedOk returns a tuple with the DdosChallengeCompleteTokensChecked field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengeCompleteTokensChecked
+
+`func (o *Results) SetDdosChallengeCompleteTokensChecked(v int32)`
+
+SetDdosChallengeCompleteTokensChecked sets DdosChallengeCompleteTokensChecked field to given value.
+
+### HasDdosChallengeCompleteTokensChecked
+
+`func (o *Results) HasDdosChallengeCompleteTokensChecked() bool`
+
+HasDdosChallengeCompleteTokensChecked returns a boolean if a field has been set.
+
+### GetDdosChallengeCompleteTokensPassed
+
+`func (o *Results) GetDdosChallengeCompleteTokensPassed() int32`
+
+GetDdosChallengeCompleteTokensPassed returns the DdosChallengeCompleteTokensPassed field if non-nil, zero value otherwise.
+
+### GetDdosChallengeCompleteTokensPassedOk
+
+`func (o *Results) GetDdosChallengeCompleteTokensPassedOk() (*int32, bool)`
+
+GetDdosChallengeCompleteTokensPassedOk returns a tuple with the DdosChallengeCompleteTokensPassed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengeCompleteTokensPassed
+
+`func (o *Results) SetDdosChallengeCompleteTokensPassed(v int32)`
+
+SetDdosChallengeCompleteTokensPassed sets DdosChallengeCompleteTokensPassed field to given value.
+
+### HasDdosChallengeCompleteTokensPassed
+
+`func (o *Results) HasDdosChallengeCompleteTokensPassed() bool`
+
+HasDdosChallengeCompleteTokensPassed returns a boolean if a field has been set.
+
+### GetDdosChallengeCompleteTokensFailed
+
+`func (o *Results) GetDdosChallengeCompleteTokensFailed() int32`
+
+GetDdosChallengeCompleteTokensFailed returns the DdosChallengeCompleteTokensFailed field if non-nil, zero value otherwise.
+
+### GetDdosChallengeCompleteTokensFailedOk
+
+`func (o *Results) GetDdosChallengeCompleteTokensFailedOk() (*int32, bool)`
+
+GetDdosChallengeCompleteTokensFailedOk returns a tuple with the DdosChallengeCompleteTokensFailed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengeCompleteTokensFailed
+
+`func (o *Results) SetDdosChallengeCompleteTokensFailed(v int32)`
+
+SetDdosChallengeCompleteTokensFailed sets DdosChallengeCompleteTokensFailed field to given value.
+
+### HasDdosChallengeCompleteTokensFailed
+
+`func (o *Results) HasDdosChallengeCompleteTokensFailed() bool`
+
+HasDdosChallengeCompleteTokensFailed returns a boolean if a field has been set.
+
+### GetDdosChallengeStarts
+
+`func (o *Results) GetDdosChallengeStarts() int32`
+
+GetDdosChallengeStarts returns the DdosChallengeStarts field if non-nil, zero value otherwise.
+
+### GetDdosChallengeStartsOk
+
+`func (o *Results) GetDdosChallengeStartsOk() (*int32, bool)`
+
+GetDdosChallengeStartsOk returns a tuple with the DdosChallengeStarts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengeStarts
+
+`func (o *Results) SetDdosChallengeStarts(v int32)`
+
+SetDdosChallengeStarts sets DdosChallengeStarts field to given value.
+
+### HasDdosChallengeStarts
+
+`func (o *Results) HasDdosChallengeStarts() bool`
+
+HasDdosChallengeStarts returns a boolean if a field has been set.
+
+### GetDdosChallengeCompleteTokensIssued
+
+`func (o *Results) GetDdosChallengeCompleteTokensIssued() int32`
+
+GetDdosChallengeCompleteTokensIssued returns the DdosChallengeCompleteTokensIssued field if non-nil, zero value otherwise.
+
+### GetDdosChallengeCompleteTokensIssuedOk
+
+`func (o *Results) GetDdosChallengeCompleteTokensIssuedOk() (*int32, bool)`
+
+GetDdosChallengeCompleteTokensIssuedOk returns a tuple with the DdosChallengeCompleteTokensIssued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengeCompleteTokensIssued
+
+`func (o *Results) SetDdosChallengeCompleteTokensIssued(v int32)`
+
+SetDdosChallengeCompleteTokensIssued sets DdosChallengeCompleteTokensIssued field to given value.
+
+### HasDdosChallengeCompleteTokensIssued
+
+`func (o *Results) HasDdosChallengeCompleteTokensIssued() bool`
+
+HasDdosChallengeCompleteTokensIssued returns a boolean if a field has been set.
+
+### GetDdosChallengesIssued
+
+`func (o *Results) GetDdosChallengesIssued() int32`
+
+GetDdosChallengesIssued returns the DdosChallengesIssued field if non-nil, zero value otherwise.
+
+### GetDdosChallengesIssuedOk
+
+`func (o *Results) GetDdosChallengesIssuedOk() (*int32, bool)`
+
+GetDdosChallengesIssuedOk returns a tuple with the DdosChallengesIssued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengesIssued
+
+`func (o *Results) SetDdosChallengesIssued(v int32)`
+
+SetDdosChallengesIssued sets DdosChallengesIssued field to given value.
+
+### HasDdosChallengesIssued
+
+`func (o *Results) HasDdosChallengesIssued() bool`
+
+HasDdosChallengesIssued returns a boolean if a field has been set.
+
+### GetDdosChallengesSucceeded
+
+`func (o *Results) GetDdosChallengesSucceeded() int32`
+
+GetDdosChallengesSucceeded returns the DdosChallengesSucceeded field if non-nil, zero value otherwise.
+
+### GetDdosChallengesSucceededOk
+
+`func (o *Results) GetDdosChallengesSucceededOk() (*int32, bool)`
+
+GetDdosChallengesSucceededOk returns a tuple with the DdosChallengesSucceeded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengesSucceeded
+
+`func (o *Results) SetDdosChallengesSucceeded(v int32)`
+
+SetDdosChallengesSucceeded sets DdosChallengesSucceeded field to given value.
+
+### HasDdosChallengesSucceeded
+
+`func (o *Results) HasDdosChallengesSucceeded() bool`
+
+HasDdosChallengesSucceeded returns a boolean if a field has been set.
+
+### GetDdosChallengesFailed
+
+`func (o *Results) GetDdosChallengesFailed() int32`
+
+GetDdosChallengesFailed returns the DdosChallengesFailed field if non-nil, zero value otherwise.
+
+### GetDdosChallengesFailedOk
+
+`func (o *Results) GetDdosChallengesFailedOk() (*int32, bool)`
+
+GetDdosChallengesFailedOk returns a tuple with the DdosChallengesFailed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengesFailed
+
+`func (o *Results) SetDdosChallengesFailed(v int32)`
+
+SetDdosChallengesFailed sets DdosChallengesFailed field to given value.
+
+### HasDdosChallengesFailed
+
+`func (o *Results) HasDdosChallengesFailed() bool`
+
+HasDdosChallengesFailed returns a boolean if a field has been set.
+
+### GetDdosChallengesPatsIssued
+
+`func (o *Results) GetDdosChallengesPatsIssued() int32`
+
+GetDdosChallengesPatsIssued returns the DdosChallengesPatsIssued field if non-nil, zero value otherwise.
+
+### GetDdosChallengesPatsIssuedOk
+
+`func (o *Results) GetDdosChallengesPatsIssuedOk() (*int32, bool)`
+
+GetDdosChallengesPatsIssuedOk returns a tuple with the DdosChallengesPatsIssued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengesPatsIssued
+
+`func (o *Results) SetDdosChallengesPatsIssued(v int32)`
+
+SetDdosChallengesPatsIssued sets DdosChallengesPatsIssued field to given value.
+
+### HasDdosChallengesPatsIssued
+
+`func (o *Results) HasDdosChallengesPatsIssued() bool`
+
+HasDdosChallengesPatsIssued returns a boolean if a field has been set.
+
+### GetDdosChallengesPatsSucceeded
+
+`func (o *Results) GetDdosChallengesPatsSucceeded() int32`
+
+GetDdosChallengesPatsSucceeded returns the DdosChallengesPatsSucceeded field if non-nil, zero value otherwise.
+
+### GetDdosChallengesPatsSucceededOk
+
+`func (o *Results) GetDdosChallengesPatsSucceededOk() (*int32, bool)`
+
+GetDdosChallengesPatsSucceededOk returns a tuple with the DdosChallengesPatsSucceeded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDdosChallengesPatsSucceeded
+
+`func (o *Results) SetDdosChallengesPatsSucceeded(v int32)`
+
+SetDdosChallengesPatsSucceeded sets DdosChallengesPatsSucceeded field to given value.
+
+### HasDdosChallengesPatsSucceeded
+
+`func (o *Results) HasDdosChallengesPatsSucceeded() bool`
+
+HasDdosChallengesPatsSucceeded returns a boolean if a field has been set.
+
+### GetArcAiFirewallRequests
+
+`func (o *Results) GetArcAiFirewallRequests() int32`
+
+GetArcAiFirewallRequests returns the ArcAiFirewallRequests field if non-nil, zero value otherwise.
+
+### GetArcAiFirewallRequestsOk
+
+`func (o *Results) GetArcAiFirewallRequestsOk() (*int32, bool)`
+
+GetArcAiFirewallRequestsOk returns a tuple with the ArcAiFirewallRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArcAiFirewallRequests
+
+`func (o *Results) SetArcAiFirewallRequests(v int32)`
+
+SetArcAiFirewallRequests sets ArcAiFirewallRequests field to given value.
+
+### HasArcAiFirewallRequests
+
+`func (o *Results) HasArcAiFirewallRequests() bool`
+
+HasArcAiFirewallRequests returns a boolean if a field has been set.
+
+### GetArcAiFirewallBlocked
+
+`func (o *Results) GetArcAiFirewallBlocked() int32`
+
+GetArcAiFirewallBlocked returns the ArcAiFirewallBlocked field if non-nil, zero value otherwise.
+
+### GetArcAiFirewallBlockedOk
+
+`func (o *Results) GetArcAiFirewallBlockedOk() (*int32, bool)`
+
+GetArcAiFirewallBlockedOk returns a tuple with the ArcAiFirewallBlocked field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArcAiFirewallBlocked
+
+`func (o *Results) SetArcAiFirewallBlocked(v int32)`
+
+SetArcAiFirewallBlocked sets ArcAiFirewallBlocked field to given value.
+
+### HasArcAiFirewallBlocked
+
+`func (o *Results) HasArcAiFirewallBlocked() bool`
+
+HasArcAiFirewallBlocked returns a boolean if a field has been set.
+
+### GetBotEdgeChallengeCompleteTokensIssued
+
+`func (o *Results) GetBotEdgeChallengeCompleteTokensIssued() int32`
+
+GetBotEdgeChallengeCompleteTokensIssued returns the BotEdgeChallengeCompleteTokensIssued field if non-nil, zero value otherwise.
+
+### GetBotEdgeChallengeCompleteTokensIssuedOk
+
+`func (o *Results) GetBotEdgeChallengeCompleteTokensIssuedOk() (*int32, bool)`
+
+GetBotEdgeChallengeCompleteTokensIssuedOk returns a tuple with the BotEdgeChallengeCompleteTokensIssued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeChallengeCompleteTokensIssued
+
+`func (o *Results) SetBotEdgeChallengeCompleteTokensIssued(v int32)`
+
+SetBotEdgeChallengeCompleteTokensIssued sets BotEdgeChallengeCompleteTokensIssued field to given value.
+
+### HasBotEdgeChallengeCompleteTokensIssued
+
+`func (o *Results) HasBotEdgeChallengeCompleteTokensIssued() bool`
+
+HasBotEdgeChallengeCompleteTokensIssued returns a boolean if a field has been set.
+
+### GetBotEdgeChallengesIssued
+
+`func (o *Results) GetBotEdgeChallengesIssued() int32`
+
+GetBotEdgeChallengesIssued returns the BotEdgeChallengesIssued field if non-nil, zero value otherwise.
+
+### GetBotEdgeChallengesIssuedOk
+
+`func (o *Results) GetBotEdgeChallengesIssuedOk() (*int32, bool)`
+
+GetBotEdgeChallengesIssuedOk returns a tuple with the BotEdgeChallengesIssued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeChallengesIssued
+
+`func (o *Results) SetBotEdgeChallengesIssued(v int32)`
+
+SetBotEdgeChallengesIssued sets BotEdgeChallengesIssued field to given value.
+
+### HasBotEdgeChallengesIssued
+
+`func (o *Results) HasBotEdgeChallengesIssued() bool`
+
+HasBotEdgeChallengesIssued returns a boolean if a field has been set.
+
+### GetBotEdgeChallengesSucceeded
+
+`func (o *Results) GetBotEdgeChallengesSucceeded() int32`
+
+GetBotEdgeChallengesSucceeded returns the BotEdgeChallengesSucceeded field if non-nil, zero value otherwise.
+
+### GetBotEdgeChallengesSucceededOk
+
+`func (o *Results) GetBotEdgeChallengesSucceededOk() (*int32, bool)`
+
+GetBotEdgeChallengesSucceededOk returns a tuple with the BotEdgeChallengesSucceeded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeChallengesSucceeded
+
+`func (o *Results) SetBotEdgeChallengesSucceeded(v int32)`
+
+SetBotEdgeChallengesSucceeded sets BotEdgeChallengesSucceeded field to given value.
+
+### HasBotEdgeChallengesSucceeded
+
+`func (o *Results) HasBotEdgeChallengesSucceeded() bool`
+
+HasBotEdgeChallengesSucceeded returns a boolean if a field has been set.
+
+### GetBotEdgeChallengesFailed
+
+`func (o *Results) GetBotEdgeChallengesFailed() int32`
+
+GetBotEdgeChallengesFailed returns the BotEdgeChallengesFailed field if non-nil, zero value otherwise.
+
+### GetBotEdgeChallengesFailedOk
+
+`func (o *Results) GetBotEdgeChallengesFailedOk() (*int32, bool)`
+
+GetBotEdgeChallengesFailedOk returns a tuple with the BotEdgeChallengesFailed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeChallengesFailed
+
+`func (o *Results) SetBotEdgeChallengesFailed(v int32)`
+
+SetBotEdgeChallengesFailed sets BotEdgeChallengesFailed field to given value.
+
+### HasBotEdgeChallengesFailed
+
+`func (o *Results) HasBotEdgeChallengesFailed() bool`
+
+HasBotEdgeChallengesFailed returns a boolean if a field has been set.
+
+### GetBotEdgeChallengesPatsIssued
+
+`func (o *Results) GetBotEdgeChallengesPatsIssued() int32`
+
+GetBotEdgeChallengesPatsIssued returns the BotEdgeChallengesPatsIssued field if non-nil, zero value otherwise.
+
+### GetBotEdgeChallengesPatsIssuedOk
+
+`func (o *Results) GetBotEdgeChallengesPatsIssuedOk() (*int32, bool)`
+
+GetBotEdgeChallengesPatsIssuedOk returns a tuple with the BotEdgeChallengesPatsIssued field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeChallengesPatsIssued
+
+`func (o *Results) SetBotEdgeChallengesPatsIssued(v int32)`
+
+SetBotEdgeChallengesPatsIssued sets BotEdgeChallengesPatsIssued field to given value.
+
+### HasBotEdgeChallengesPatsIssued
+
+`func (o *Results) HasBotEdgeChallengesPatsIssued() bool`
+
+HasBotEdgeChallengesPatsIssued returns a boolean if a field has been set.
+
+### GetBotEdgeChallengesPatsSucceeded
+
+`func (o *Results) GetBotEdgeChallengesPatsSucceeded() int32`
+
+GetBotEdgeChallengesPatsSucceeded returns the BotEdgeChallengesPatsSucceeded field if non-nil, zero value otherwise.
+
+### GetBotEdgeChallengesPatsSucceededOk
+
+`func (o *Results) GetBotEdgeChallengesPatsSucceededOk() (*int32, bool)`
+
+GetBotEdgeChallengesPatsSucceededOk returns a tuple with the BotEdgeChallengesPatsSucceeded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBotEdgeChallengesPatsSucceeded
+
+`func (o *Results) SetBotEdgeChallengesPatsSucceeded(v int32)`
+
+SetBotEdgeChallengesPatsSucceeded sets BotEdgeChallengesPatsSucceeded field to given value.
+
+### HasBotEdgeChallengesPatsSucceeded
+
+`func (o *Results) HasBotEdgeChallengesPatsSucceeded() bool`
+
+HasBotEdgeChallengesPatsSucceeded returns a boolean if a field has been set.
+
+### GetNetprotectGreSentBytes
+
+`func (o *Results) GetNetprotectGreSentBytes() int32`
+
+GetNetprotectGreSentBytes returns the NetprotectGreSentBytes field if non-nil, zero value otherwise.
+
+### GetNetprotectGreSentBytesOk
+
+`func (o *Results) GetNetprotectGreSentBytesOk() (*int32, bool)`
+
+GetNetprotectGreSentBytesOk returns a tuple with the NetprotectGreSentBytes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetprotectGreSentBytes
+
+`func (o *Results) SetNetprotectGreSentBytes(v int32)`
+
+SetNetprotectGreSentBytes sets NetprotectGreSentBytes field to given value.
+
+### HasNetprotectGreSentBytes
+
+`func (o *Results) HasNetprotectGreSentBytes() bool`
+
+HasNetprotectGreSentBytes returns a boolean if a field has been set.
+
+### GetNetprotectGreSentPackets
+
+`func (o *Results) GetNetprotectGreSentPackets() int32`
+
+GetNetprotectGreSentPackets returns the NetprotectGreSentPackets field if non-nil, zero value otherwise.
+
+### GetNetprotectGreSentPacketsOk
+
+`func (o *Results) GetNetprotectGreSentPacketsOk() (*int32, bool)`
+
+GetNetprotectGreSentPacketsOk returns a tuple with the NetprotectGreSentPackets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetprotectGreSentPackets
+
+`func (o *Results) SetNetprotectGreSentPackets(v int32)`
+
+SetNetprotectGreSentPackets sets NetprotectGreSentPackets field to given value.
+
+### HasNetprotectGreSentPackets
+
+`func (o *Results) HasNetprotectGreSentPackets() bool`
+
+HasNetprotectGreSentPackets returns a boolean if a field has been set.
+
+### GetNetprotectReceivedBytes
+
+`func (o *Results) GetNetprotectReceivedBytes() int32`
+
+GetNetprotectReceivedBytes returns the NetprotectReceivedBytes field if non-nil, zero value otherwise.
+
+### GetNetprotectReceivedBytesOk
+
+`func (o *Results) GetNetprotectReceivedBytesOk() (*int32, bool)`
+
+GetNetprotectReceivedBytesOk returns a tuple with the NetprotectReceivedBytes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetprotectReceivedBytes
+
+`func (o *Results) SetNetprotectReceivedBytes(v int32)`
+
+SetNetprotectReceivedBytes sets NetprotectReceivedBytes field to given value.
+
+### HasNetprotectReceivedBytes
+
+`func (o *Results) HasNetprotectReceivedBytes() bool`
+
+HasNetprotectReceivedBytes returns a boolean if a field has been set.
+
+### GetNetprotectReceivedPackets
+
+`func (o *Results) GetNetprotectReceivedPackets() int32`
+
+GetNetprotectReceivedPackets returns the NetprotectReceivedPackets field if non-nil, zero value otherwise.
+
+### GetNetprotectReceivedPacketsOk
+
+`func (o *Results) GetNetprotectReceivedPacketsOk() (*int32, bool)`
+
+GetNetprotectReceivedPacketsOk returns a tuple with the NetprotectReceivedPackets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetprotectReceivedPackets
+
+`func (o *Results) SetNetprotectReceivedPackets(v int32)`
+
+SetNetprotectReceivedPackets sets NetprotectReceivedPackets field to given value.
+
+### HasNetprotectReceivedPackets
+
+`func (o *Results) HasNetprotectReceivedPackets() bool`
+
+HasNetprotectReceivedPackets returns a boolean if a field has been set.
+
+### GetNetprotectFirewallDroppedBytes
+
+`func (o *Results) GetNetprotectFirewallDroppedBytes() int32`
+
+GetNetprotectFirewallDroppedBytes returns the NetprotectFirewallDroppedBytes field if non-nil, zero value otherwise.
+
+### GetNetprotectFirewallDroppedBytesOk
+
+`func (o *Results) GetNetprotectFirewallDroppedBytesOk() (*int32, bool)`
+
+GetNetprotectFirewallDroppedBytesOk returns a tuple with the NetprotectFirewallDroppedBytes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetprotectFirewallDroppedBytes
+
+`func (o *Results) SetNetprotectFirewallDroppedBytes(v int32)`
+
+SetNetprotectFirewallDroppedBytes sets NetprotectFirewallDroppedBytes field to given value.
+
+### HasNetprotectFirewallDroppedBytes
+
+`func (o *Results) HasNetprotectFirewallDroppedBytes() bool`
+
+HasNetprotectFirewallDroppedBytes returns a boolean if a field has been set.
+
+### GetNetprotectFirewallDroppedPackets
+
+`func (o *Results) GetNetprotectFirewallDroppedPackets() int32`
+
+GetNetprotectFirewallDroppedPackets returns the NetprotectFirewallDroppedPackets field if non-nil, zero value otherwise.
+
+### GetNetprotectFirewallDroppedPacketsOk
+
+`func (o *Results) GetNetprotectFirewallDroppedPacketsOk() (*int32, bool)`
+
+GetNetprotectFirewallDroppedPacketsOk returns a tuple with the NetprotectFirewallDroppedPackets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNetprotectFirewallDroppedPackets
+
+`func (o *Results) SetNetprotectFirewallDroppedPackets(v int32)`
+
+SetNetprotectFirewallDroppedPackets sets NetprotectFirewallDroppedPackets field to given value.
+
+### HasNetprotectFirewallDroppedPackets
+
+`func (o *Results) HasNetprotectFirewallDroppedPackets() bool`
+
+HasNetprotectFirewallDroppedPackets returns a boolean if a field has been set.
+
+### GetApiEnforcementAllowedRequestsCount
+
+`func (o *Results) GetApiEnforcementAllowedRequestsCount() int32`
+
+GetApiEnforcementAllowedRequestsCount returns the ApiEnforcementAllowedRequestsCount field if non-nil, zero value otherwise.
+
+### GetApiEnforcementAllowedRequestsCountOk
+
+`func (o *Results) GetApiEnforcementAllowedRequestsCountOk() (*int32, bool)`
+
+GetApiEnforcementAllowedRequestsCountOk returns a tuple with the ApiEnforcementAllowedRequestsCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiEnforcementAllowedRequestsCount
+
+`func (o *Results) SetApiEnforcementAllowedRequestsCount(v int32)`
+
+SetApiEnforcementAllowedRequestsCount sets ApiEnforcementAllowedRequestsCount field to given value.
+
+### HasApiEnforcementAllowedRequestsCount
+
+`func (o *Results) HasApiEnforcementAllowedRequestsCount() bool`
+
+HasApiEnforcementAllowedRequestsCount returns a boolean if a field has been set.
+
+### GetApiEnforcementFlaggedRequestsCount
+
+`func (o *Results) GetApiEnforcementFlaggedRequestsCount() int32`
+
+GetApiEnforcementFlaggedRequestsCount returns the ApiEnforcementFlaggedRequestsCount field if non-nil, zero value otherwise.
+
+### GetApiEnforcementFlaggedRequestsCountOk
+
+`func (o *Results) GetApiEnforcementFlaggedRequestsCountOk() (*int32, bool)`
+
+GetApiEnforcementFlaggedRequestsCountOk returns a tuple with the ApiEnforcementFlaggedRequestsCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiEnforcementFlaggedRequestsCount
+
+`func (o *Results) SetApiEnforcementFlaggedRequestsCount(v int32)`
+
+SetApiEnforcementFlaggedRequestsCount sets ApiEnforcementFlaggedRequestsCount field to given value.
+
+### HasApiEnforcementFlaggedRequestsCount
+
+`func (o *Results) HasApiEnforcementFlaggedRequestsCount() bool`
+
+HasApiEnforcementFlaggedRequestsCount returns a boolean if a field has been set.
 
 ### GetServiceId
 

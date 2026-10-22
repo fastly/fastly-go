@@ -19,7 +19,7 @@ import (
 
 // DictionaryItemResponse struct for DictionaryItemResponse
 type DictionaryItemResponse struct {
-	// Item key, maximum 256 characters.
+	// Item key, maximum 255 characters.
 	ItemKey *string `json:"item_key,omitempty"`
 	// Item value, maximum 8000 characters.
 	ItemValue *string `json:"item_value,omitempty"`

@@ -75,6 +75,21 @@ type AutomationTokensAPI interface {
 	GetAutomationTokensIdServicesExecute(r APIGetAutomationTokensIdServicesRequest) (*InlineResponse2004, *http.Response, error)
 
 	/*
+		GetAutomationTokensIdWorkspaces List Automation Token Workspaces
+
+		Lists the Next-Gen WAF workspaces accessible by an automation token. Only applicable for tokens with roles that support workspace access (such as Next-Gen WAF roles).
+
+		 @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		 @param id The alphanumeric string identifying the automation token.
+		 @return APIGetAutomationTokensIdWorkspacesRequest
+	*/
+	GetAutomationTokensIdWorkspaces(ctx context.Context, id string) APIGetAutomationTokensIdWorkspacesRequest
+
+	// GetAutomationTokensIdWorkspacesExecute executes the request
+	//  @return AutomationTokenWorkspacesResponse
+	GetAutomationTokensIdWorkspacesExecute(r APIGetAutomationTokensIdWorkspacesRequest) (*AutomationTokenWorkspacesResponse, *http.Response, error)
+
+	/*
 		ListAutomationTokens List Customer Automation Tokens
 
 		Lists all automation tokens for a customer.
@@ -171,7 +186,7 @@ func (a *AutomationTokensAPIService) CreateAutomationTokenExecute(r APICreateAut
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"application/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -215,6 +230,35 @@ func (a *AutomationTokensAPIService) CreateAutomationTokenExecute(r APICreateAut
 		newErr := &GenericAPIError{
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v AutomationTokenErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 401 {
+			var v AutomationTokenErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v AutomationTokenErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
 		}
 		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
@@ -531,6 +575,187 @@ func (a *AutomationTokensAPIService) GetAutomationTokensIdServicesExecute(r APIG
 		}
 		if localVarHTTPResponse.StatusCode == 403 {
 			var v AutomationTokenErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	if localVarHTTPResponse.Request.Method != http.MethodGet && localVarHTTPResponse.Request.Method != http.MethodHead {
+		if remaining := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Remaining"); remaining != "" {
+			if i, err := strconv.Atoi(remaining); err == nil {
+				a.client.RateLimitRemaining = i
+			}
+		}
+		if reset := localVarHTTPResponse.Header.Get("Fastly-RateLimit-Reset"); reset != "" {
+			if i, err := strconv.Atoi(reset); err == nil {
+				a.client.RateLimitReset = i
+			}
+		}
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+// APIGetAutomationTokensIdWorkspacesRequest represents a request for the resource.
+type APIGetAutomationTokensIdWorkspacesRequest struct {
+	ctx        context.Context
+	APIService AutomationTokensAPI
+	id         string
+	limit      *int32
+	cursor     *string
+}
+
+// Limit Maximum number of workspaces to return per page.
+func (r *APIGetAutomationTokensIdWorkspacesRequest) Limit(limit int32) *APIGetAutomationTokensIdWorkspacesRequest {
+	r.limit = &limit
+	return r
+}
+
+// Cursor Pagination cursor from a previous response. Pass the &#x60;next_cursor&#x60; value to retrieve the next page, or &#x60;previous_cursor&#x60; to go back.
+func (r *APIGetAutomationTokensIdWorkspacesRequest) Cursor(cursor string) *APIGetAutomationTokensIdWorkspacesRequest {
+	r.cursor = &cursor
+	return r
+}
+
+// Execute calls the API using the request data configured.
+func (r APIGetAutomationTokensIdWorkspacesRequest) Execute() (*AutomationTokenWorkspacesResponse, *http.Response, error) {
+	return r.APIService.GetAutomationTokensIdWorkspacesExecute(r)
+}
+
+/*
+GetAutomationTokensIdWorkspaces List Automation Token Workspaces
+
+Lists the Next-Gen WAF workspaces accessible by an automation token. Only applicable for tokens with roles that support workspace access (such as Next-Gen WAF roles).
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param id The alphanumeric string identifying the automation token.
+ @return APIGetAutomationTokensIdWorkspacesRequest
+*/
+func (a *AutomationTokensAPIService) GetAutomationTokensIdWorkspaces(ctx context.Context, id string) APIGetAutomationTokensIdWorkspacesRequest {
+	return APIGetAutomationTokensIdWorkspacesRequest{
+		APIService: a,
+		ctx:        ctx,
+		id:         id,
+	}
+}
+
+// GetAutomationTokensIdWorkspacesExecute executes the request
+//  @return AutomationTokenWorkspacesResponse
+func (a *AutomationTokensAPIService) GetAutomationTokensIdWorkspacesExecute(r APIGetAutomationTokensIdWorkspacesRequest) (*AutomationTokenWorkspacesResponse, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    any
+		formFiles           []formFile
+		localVarReturnValue *AutomationTokenWorkspacesResponse
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AutomationTokensAPIService.GetAutomationTokensIdWorkspaces")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/automation-tokens/{id}/workspaces"
+	localVarPath = strings.ReplaceAll(localVarPath, "{"+"id"+"}", gourl.PathEscape(parameterToString(r.id, "")))
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := gourl.Values{}
+	localVarFormParams := gourl.Values{}
+
+	if r.limit != nil {
+		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	}
+	if r.cursor != nil {
+		localVarQueryParams.Add("cursor", parameterToString(*r.cursor, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json", "application/problem+json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["token"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Fastly-Key"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	_ = localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		if localVarHTTPResponse.StatusCode == 400 {
+			var v AutomationTokenUnversionedErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 403 {
+			var v AutomationTokenUnversionedErrorResponse
+			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+			if err != nil {
+				newErr.error = err.Error()
+				return localVarReturnValue, localVarHTTPResponse, newErr
+			}
+			newErr.model = v
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		if localVarHTTPResponse.StatusCode == 404 {
+			var v AutomationTokenUnversionedErrorResponse
 			err = a.client.decode(&v, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
 			if err != nil {
 				newErr.error = err.Error()

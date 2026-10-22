@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **UpdatedAt** | Pointer to **NullableTime** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **Id** | Pointer to **string** | Unique ID of the rule. | [optional] 
 **Name** | Pointer to **string** | A human-readable name for the rule. | [optional] 
-**Action** | Pointer to **string** | Action types for a rule. Supported action values are default, block, log, off. The default action value follows the current protection mode of the associated service. | [optional] [default to "default"]
+**Action** | Pointer to **string** | Action types for a rule. Supported action values are default, block, log, off, client_challenge. The default action value follows the current protection mode of the associated service. | [optional] [default to "default"]
 **CustomerId** | Pointer to **string** | Alphanumeric string identifying the customer. | [optional] 
 **ServiceId** | Pointer to **string** | Alphanumeric string identifying the service. | [optional] 
 **SourceIp** | Pointer to **NullableString** | Source IP address attribute. | [optional] 

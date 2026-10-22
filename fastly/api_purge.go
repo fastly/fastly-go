@@ -101,17 +101,24 @@ type PurgeAPIService service
 
 // APIBulkPurgeTagRequest represents a request for the resource.
 type APIBulkPurgeTagRequest struct {
-	ctx             context.Context
-	APIService      PurgeAPI
-	serviceId       string
-	fastlySoftPurge *int32
-	surrogateKey    *string
-	purgeResponse   *PurgeResponse
+	ctx                    context.Context
+	APIService             PurgeAPI
+	serviceId              string
+	fastlySoftPurge        *int32
+	fastlyPurgeEnvironment *string
+	surrogateKey           *string
+	purgeResponse          *PurgeResponse
 }
 
 // FastlySoftPurge If present, this header triggers the purge to be &#39;soft&#39;, which marks the affected object as stale rather than making it inaccessible.  Typically set to \&quot;1\&quot; when used, but the value is not important.
 func (r *APIBulkPurgeTagRequest) FastlySoftPurge(fastlySoftPurge int32) *APIBulkPurgeTagRequest {
 	r.fastlySoftPurge = &fastlySoftPurge
+	return r
+}
+
+// FastlyPurgeEnvironment Set to &#x60;staging&#x60; to purge the cache of the service&#39;s [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment.
+func (r *APIBulkPurgeTagRequest) FastlyPurgeEnvironment(fastlyPurgeEnvironment string) *APIBulkPurgeTagRequest {
+	r.fastlyPurgeEnvironment = &fastlyPurgeEnvironment
 	return r
 }
 
@@ -192,6 +199,9 @@ func (a *PurgeAPIService) BulkPurgeTagExecute(r APIBulkPurgeTagRequest) (map[str
 	if r.fastlySoftPurge != nil {
 		localVarHeaderParams["fastly-soft-purge"] = parameterToString(*r.fastlySoftPurge, "")
 	}
+	if r.fastlyPurgeEnvironment != nil {
+		localVarHeaderParams["fastly-purge-environment"] = parameterToString(*r.fastlyPurgeEnvironment, "")
+	}
 	if r.surrogateKey != nil {
 		localVarHeaderParams["surrogate-key"] = parameterToString(*r.surrogateKey, "")
 	}
@@ -263,9 +273,16 @@ func (a *PurgeAPIService) BulkPurgeTagExecute(r APIBulkPurgeTagRequest) (map[str
 
 // APIPurgeAllRequest represents a request for the resource.
 type APIPurgeAllRequest struct {
-	ctx        context.Context
-	APIService PurgeAPI
-	serviceId  string
+	ctx                    context.Context
+	APIService             PurgeAPI
+	serviceId              string
+	fastlyPurgeEnvironment *string
+}
+
+// FastlyPurgeEnvironment Set to &#x60;staging&#x60; to purge the cache of the service&#39;s [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment.
+func (r *APIPurgeAllRequest) FastlyPurgeEnvironment(fastlyPurgeEnvironment string) *APIPurgeAllRequest {
+	r.fastlyPurgeEnvironment = &fastlyPurgeEnvironment
+	return r
 }
 
 // Execute calls the API using the request data configured.
@@ -331,6 +348,9 @@ func (a *PurgeAPIService) PurgeAllExecute(r APIPurgeAllRequest) (*InlineResponse
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.fastlyPurgeEnvironment != nil {
+		localVarHeaderParams["fastly-purge-environment"] = parameterToString(*r.fastlyPurgeEnvironment, "")
 	}
 	if r.ctx != nil {
 		// API Key Authentication
@@ -540,16 +560,23 @@ func (a *PurgeAPIService) PurgeSingleUrlExecute(r APIPurgeSingleUrlRequest) (*Pu
 
 // APIPurgeTagRequest represents a request for the resource.
 type APIPurgeTagRequest struct {
-	ctx             context.Context
-	APIService      PurgeAPI
-	serviceId       string
-	surrogateKey    string
-	fastlySoftPurge *int32
+	ctx                    context.Context
+	APIService             PurgeAPI
+	serviceId              string
+	surrogateKey           string
+	fastlySoftPurge        *int32
+	fastlyPurgeEnvironment *string
 }
 
 // FastlySoftPurge If present, this header triggers the purge to be &#39;soft&#39;, which marks the affected object as stale rather than making it inaccessible.  Typically set to \&quot;1\&quot; when used, but the value is not important.
 func (r *APIPurgeTagRequest) FastlySoftPurge(fastlySoftPurge int32) *APIPurgeTagRequest {
 	r.fastlySoftPurge = &fastlySoftPurge
+	return r
+}
+
+// FastlyPurgeEnvironment Set to &#x60;staging&#x60; to purge the cache of the service&#39;s [staging environment](https://www.fastly.com/documentation/guides/getting-started/services/working-with-staging/) instead of its production environment. If this header is not present, the purge applies to the production environment.
+func (r *APIPurgeTagRequest) FastlyPurgeEnvironment(fastlyPurgeEnvironment string) *APIPurgeTagRequest {
+	r.fastlyPurgeEnvironment = &fastlyPurgeEnvironment
 	return r
 }
 
@@ -619,6 +646,9 @@ func (a *PurgeAPIService) PurgeTagExecute(r APIPurgeTagRequest) (*PurgeResponse,
 	}
 	if r.fastlySoftPurge != nil {
 		localVarHeaderParams["fastly-soft-purge"] = parameterToString(*r.fastlySoftPurge, "")
+	}
+	if r.fastlyPurgeEnvironment != nil {
+		localVarHeaderParams["fastly-purge-environment"] = parameterToString(*r.fastlyPurgeEnvironment, "")
 	}
 	if r.ctx != nil {
 		// API Key Authentication
